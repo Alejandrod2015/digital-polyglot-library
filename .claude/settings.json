@@ -19,6 +19,10 @@
           {
             "type": "command",
             "command": ".claude/safety/pre-cover-style-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/safety/pre-topic-guard.sh"
           }
         ]
       },
@@ -32,6 +36,10 @@
           {
             "type": "command",
             "command": ".claude/safety/pre-cover-style-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/safety/pre-emdash-guard.sh"
           }
         ]
       }
@@ -42,6 +50,14 @@
           {
             "type": "command",
             "command": ".claude/safety/stop-single-rec-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/safety/stop-recommendation-basis-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/safety/stop-story-audio-link-guard.sh"
           }
         ]
       }

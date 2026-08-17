@@ -70,7 +70,7 @@ async function main() {
     console.log(`  ${slug}  (${n} rows)`);
   }
 
-  // Same title within same journey + same arcType — soft dup signal
+  // Same title within same journey + same arcType; soft dup signal
   const softKey = (s) =>
     `${s.journeyId}::${(s.title ?? "").toLowerCase()}::${s.arcType ?? ""}`;
   const softCounts = new Map();
@@ -87,7 +87,7 @@ async function main() {
     console.log(`  ${k}`);
     for (const row of arr) {
       console.log(
-        `    - ${row.slug}  level=${row.level}  slot=${row.slotIndex}  status=${row.status}  topic=${row.topic ?? "—"}  created=${row.createdAt.toISOString().slice(0, 10)}`,
+        `    - ${row.slug}  level=${row.level}  slot=${row.slotIndex}  status=${row.status}  topic=${row.topic ?? "-"}  created=${row.createdAt.toISOString().slice(0, 10)}`,
       );
     }
   }
@@ -102,7 +102,7 @@ async function main() {
   console.log(`\n=== Per-journey inventory (${byJourney.size} journeys) ===`);
   for (const [, arr] of byJourney) {
     const j = arr[0].journey;
-    console.log(`\n  ${j.name}  [${j.language} / ${j.variant ?? "—"}]  · ${arr.length} stories`);
+    console.log(`\n  ${j.name}  [${j.language} / ${j.variant ?? "-"}]  · ${arr.length} stories`);
     const levelGroups = arr.reduce((acc, s) => {
       acc[s.level] = (acc[s.level] ?? []).concat(s);
       return acc;

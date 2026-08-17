@@ -1,0 +1,120 @@
+[
+  {
+    "title": "Anteile statt Miete",
+    "slug": "anteile-statt-miete",
+    "synopsis": "Die Traumwohnung gehört einer Genossenschaft, und der einzige Weg hinein führt über eine jahrelange Warteliste.",
+    "text": "Die Anzeige klang zu schön, um wahr zu sein: Altbau, hohe Decken, günstige Miete. Nora steht mit Ole vor einem roten Backsteinbau, hinter dessen Tor ein grüner Innenhof liegt. Eine Frau vom Vorstand führt sie herum.\n\nGreve: Schön, dass Sie da sind. Ich sage es gleich vorweg: Vermietet wird hier nicht. Wir sind eine Genossenschaft.\nNora: Das heißt, ich miete die Wohnung nicht, sondern was genau?\nGreve: Sie werden Mitglied und zeichnen Anteile. Dann wohnen Sie zur Nutzung, nicht zur Miete. Ein Unterschied wie Tag und Nacht.\nNora: Und die günstige Miete, mit der die Anzeige wirbt?\nGreve: Ist unser Prinzip. Keine Rendite, keine Spekulation. Dafür entscheidet über den Einzug allein die Warteliste.\nOle: Frag lieber gleich, wie lang die ist. Das ist der eigentliche Haken.\nNora: Gut. Wie lange stehe ich auf dieser Liste?\nGreve: Bei dieser Wohnung? Realistisch ein paar Jahre. Wer heute einzieht, hat sich vor Jahren beworben.\nNora: Jahre? Ich brauche ein Dach über dem Kopf, keine Rente.\nGreve: Verstehe ich. Aber wer einmal drin ist, bleibt oft ein Leben lang. Sicherheit hat hier Vorrang vor Tempo.\nOle: Genau das ist der Deal. Draußen zahlst du dich arm und fliegst schnell raus. Drinnen zahlst du wenig und bleibst.\nNora: Also günstig und sicher, aber quälend langsam. Der Norden als Wohnungsanzeige.\nGreve: So könnte man es sagen. Tragen Sie sich in die Liste ein, dann sehen wir weiter.\nNora: Und in der Zwischenzeit? Ich schlafe schließlich nicht auf der Warteliste.\nOle: In der Zwischenzeit suchen wir dir etwas auf dem freien Markt. Und das, Nora, wird der eigentliche Kampf.",
+    "arcType": "mini-cliffhanger",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "zu schön, um wahr zu sein",
+        "definition": "too good to be true; suspiciously perfect to actually be real"
+      },
+      {
+        "type": "noun",
+        "word": "Backsteinbau",
+        "definition": "a building made of the red brick typical of northern Germany"
+      },
+      {
+        "type": "noun",
+        "word": "Innenhof",
+        "definition": "an enclosed courtyard in the middle of a building block"
+      },
+      {
+        "type": "adverb",
+        "word": "vorweg",
+        "definition": "in advance; said or done ahead of the main point"
+      },
+      {
+        "type": "noun",
+        "word": "Genossenschaft",
+        "definition": "a cooperative whose members jointly own and run the housing"
+      },
+      {
+        "type": "verb",
+        "word": "zeichnen",
+        "definition": "to formally subscribe to or take up financial shares"
+      },
+      {
+        "type": "noun",
+        "word": "Anteile",
+        "definition": "shares you buy to hold a stake in something"
+      },
+      {
+        "type": "expression",
+        "word": "ein Unterschied wie Tag und Nacht",
+        "surface": "wie Tag und Nacht",
+        "definition": "a huge difference; two things utterly unlike each other"
+      },
+      {
+        "type": "verb",
+        "word": "werben",
+        "surface": "wirbt",
+        "definition": "to advertise or promote something to attract people's interest"
+      },
+      {
+        "type": "noun",
+        "word": "Rendite",
+        "definition": "the financial profit or return earned on an investment"
+      },
+      {
+        "type": "noun",
+        "word": "Einzug",
+        "definition": "the act of moving into a new home to live"
+      },
+      {
+        "type": "noun",
+        "word": "Warteliste",
+        "definition": "a list of people waiting in turn for something"
+      },
+      {
+        "type": "noun",
+        "word": "Haken",
+        "definition": "a hidden drawback or catch in an otherwise good deal"
+      },
+      {
+        "type": "verb",
+        "word": "einziehen",
+        "surface": "einzieht",
+        "definition": "to move into a new home in order to live there"
+      },
+      {
+        "type": "verb",
+        "word": "sich bewerben",
+        "surface": "beworben",
+        "definition": "to apply formally for a place, job or flat"
+      },
+      {
+        "type": "expression",
+        "word": "ein Dach über dem Kopf",
+        "definition": "a place to live; basic shelter and a roof"
+      },
+      {
+        "type": "noun",
+        "word": "Vorrang",
+        "definition": "priority; the right to come before something else"
+      },
+      {
+        "type": "adjective",
+        "word": "quälend",
+        "definition": "painfully slow or drawn out; causing a lingering distress"
+      },
+      {
+        "type": "adjective",
+        "word": "günstig",
+        "surface": "günstige",
+        "definition": "cheap and affordable; low in price for what you get"
+      },
+      {
+        "type": "expression",
+        "word": "sich arm zahlen",
+        "surface": "zahlst du dich arm",
+        "definition": "to spend so much on rent that it ruins you"
+      }
+    ],
+    "level": "c1",
+    "topic": "wohnen-in-der-hansestadt",
+    "slotIndex": 1
+  }
+]

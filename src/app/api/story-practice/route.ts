@@ -368,7 +368,7 @@ async function resolveNextStory(
 
 // Deterministic option shuffle. Curated/persisted sets often store the
 // correct answer as options[0] (it's the natural way to author them), and the
-// reader renders options in array order — so without this the right answer
+// reader renders options in array order; so without this the right answer
 // always lands in the same (top-left) slot across every exercise, which is an
 // obvious giveaway. Seeding the shuffle on the exercise id keeps the order
 // STABLE across reloads (no jarring reshuffle) while varying it per exercise,
@@ -402,7 +402,7 @@ function shuffleOptionsDeterministic(options: string[], seedStr: string): string
 }
 
 // Deterministic permutation of [0..n-1] for the given seed, so options AND any
-// parallel array (e.g. optionTranslations) can be shuffled together — otherwise
+// parallel array (e.g. optionTranslations) can be shuffled together; otherwise
 // the English gloss ends up under the wrong word.
 function shuffleIndices(n: number, seedStr: string): number[] {
   return shuffleOptionsDeterministic(Array.from({ length: n }, (_, i) => String(i)), seedStr).map(Number);
@@ -462,7 +462,7 @@ async function loadPersistedExercises(
 
   // #6 (audit 2026-07-24): los pares de match nunca traían voiceId (904/904
   // vacíos), así que el audio de palabra de match caía a la voz fallback
-  // colombiana (Hernando) en vez del narrador de la historia — acento
+  // colombiana (Hernando) en vez del narrador de la historia; acento
   // equivocado en journeys ES no-colombianos. Estampamos la voz del narrador
   // (misma resolución que la ruta live: practiceVoiceId gana sobre voiceId) en
   // cada par para que suene en la voz correcta, sin depender de rebuild mobile.

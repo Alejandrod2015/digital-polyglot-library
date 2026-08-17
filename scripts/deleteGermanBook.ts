@@ -95,7 +95,7 @@ async function main() {
   console.log(`   ✅ Backed up ${backupDocs.length} doc(s) to delete + ${inboundBackup.length} inbound doc(s)`);
   console.log(`   Restore: npx sanity dataset import ${backupPath} ${dataset} --replace`);
 
-  // Strip refs from inbound docs (we cannot repoint anywhere — there is no
+  // Strip refs from inbound docs (we cannot repoint anywhere; there is no
   // canonical German book to swap to, since we are removing German entirely).
   // Set the field to null where the ref was a single field, or filter the
   // arrays to drop matching items.

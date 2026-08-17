@@ -267,32 +267,32 @@ export const GERMAN_DIALOGUE_VOICES = {
 //     middle-aged); "sounds muffled / tapada". Rejected 2026-05-29 on Una pizca
 //     de canela Lucía audition.
 //   - Esperanza "6sefJctHkzCgLShKcnrI" (Serene and Assured, colombian middle-aged)
-//    ; "yells / too loud" in v3 + stability=0.5 context. Rejected 2026-05-29 on
+//     "yells / too loud" in v3 + stability=0.5 context. Rejected 2026-05-29 on
 //     Una pizca de canela Lucía audition.
 //
 // Old male LATAM audition (2026-06-01, hueco "abuelo"):
 //   - Benjamin "80lPKtzJMPh1vjYMUgwe" (Deep Smooth Rich, tagged mexican / es-MX)
-//    ; Mislabeled. Usuario lo escuchó (2026-06-01) y dijo "es español de España".
+//     Mislabeled. Usuario lo escuchó (2026-06-01) y dijo "es español de España".
 //     Recordatorio estructural: el accent tag de ElevenLabs lo pone el creador
 //     y no se verifica. Ver feedback_elevenlabs_accent_unreliable.md.
 //
 // Rioplatense audition (2026-06-01, El control no funciona Beatriz + Mateo):
 //   - Andrea "CDrROTHWaKY3O9vD3F3t" (Calm Balanced Didactic, argentine F middle-aged)
-//    ; Rejected 2026-06-01 on Beatriz audition.
+//     Rejected 2026-06-01 on Beatriz audition.
 //   - Argie "arMlPrYpUo1XH5F2zM6R" (Warm Argentine Female, F middle-aged)
-//    ; Rejected 2026-06-01 on Beatriz audition.
+//     Rejected 2026-06-01 on Beatriz audition.
 //   - Zeta "8Nz6hV5TPv151P6ZNEBV" (Calm Clear Authoritative, argentine F middle-aged)
-//    ; Rejected 2026-06-01 on Beatriz audition.
+//     Rejected 2026-06-01 on Beatriz audition.
 //   - Lisandro "nnTkGIqnpqpdIrWbRAtF" (Mellow and Suave, argentine M young)
-//    ; Rejected 2026-06-01 on Mateo audition.
+//     Rejected 2026-06-01 on Mateo audition.
 //   - Bautista "Hw05DSJqSd5iZ9AswbcE" (Smooth and Articulated, argentine M young)
-//    ; Rejected 2026-06-01 on Mateo audition.
+//     Rejected 2026-06-01 on Mateo audition.
 //   - Facundo "qnvusyIjzlSoWYJ0C2Nm" (Rhythmic and Expressive, argentine M young)
-//    ; Rejected 2026-06-01 on Mateo audition.
+//     Rejected 2026-06-01 on Mateo audition.
 //   - Eduardo "hWlKHuPiFgEVc4rtnFfm" (Natural Warm Professional, argentine M middle-aged)
-//    ; Rejected 2026-06-01 on Mateo audition.
+//     Rejected 2026-06-01 on Mateo audition.
 //   - Lucas "xcAUMhbpNX2WRGsuhjFy" (Solemn and calm, argentine M middle-aged)
-//    ; Rejected 2026-06-01 on Mateo audition.
+//     Rejected 2026-06-01 on Mateo audition.
 //
 // SPAIN-ONLY voices (do NOT use for LATAM stories; reserve for future Spain
 // catalog when we add Iberian Spanish journeys):
@@ -639,7 +639,7 @@ export async function normalizeLoudness(buffer: Buffer): Promise<Buffer> {
       await writeFile(inPath, buffer);
 
       // TWO-PASS LINEAR loudnorm. WHY (2026-07-26, usuario lo re-flageó): el
-      // `dynaudnorm` que había antes es un normalizador DINÁMICO — al inicio del
+      // `dynaudnorm` que había antes es un normalizador DINÁMICO; al inicio del
       // archivo su ventana no está llena y sube el gain gradualmente, dejando el
       // primer ~segundo con volumen bajo que luego sube. La ralentización a 2.7
       // (atempo) estiraba esa rampa y la hacía más audible. Two-pass loudnorm
@@ -739,7 +739,7 @@ export function parseDialogueSegments(storyText: string): DialogueSegment[] {
     narratorBuffer = [];
   };
   // A blank line ends a narrator PARAGRAPH (2026-07-09). It used to be skipped
-  // outright, so narrated prose collapsed into ONE segment — and since the gap
+  // outright, so narrated prose collapsed into ONE segment; and since the gap
   // (DIALOGUE_GAP_SEC) is inserted BETWEEN segments, a narrator story got no
   // paragraph pauses at all and ran on breathlessly. Multi-voice never showed it:
   // every turn is its own segment, so it got its gaps for free.
@@ -750,12 +750,12 @@ export function parseDialogueSegments(storyText: string): DialogueSegment[] {
   // single-voice story end on closing punctuation), but a stray blank line mid
   // sentence would silently cut narration in half and nobody would notice until
   // they heard it. If the buffer is not at a sentence end, the blank line is
-  // treated as a soft wrap and the paragraph keeps accumulating — so a mid
+  // treated as a soft wrap and the paragraph keeps accumulating; so a mid
   // sentence split is impossible by construction, not by luck.
   // `\s*` before the closing quote is not cosmetic: French typography puts a
   // space before the guillemet (`... oui. »`), so a tight regex would fail to
   // see the sentence end, skip the flush, and silently merge French paragraphs
-  // back into one segment — reintroducing this very bug for fr stories.
+  // back into one segment; reintroducing this very bug for fr stories.
   const SENTENCE_END = /[.!?…‽⁇⁉]\s*["»”’)\]]*$/u;
   const flushParagraph = () => {
     if (narratorBuffer.length === 0) return;
@@ -1546,8 +1546,8 @@ export async function generateAndUploadMultiVoiceAudio(args: {
   // ── HARD GUARANTEE against the seam-breath ("aire") ─────────────────────
   // The breath comes from request stitching (previous_text/next_text with real
   // neighbor context). For a SINGLE-VOICE NARRATOR render (every segment is the
-  // narrator) stitching buys nothing — the F0 anti-uptalk gate closes the
-  // endings instead — and only introduces the breath the user rejected. So when
+  // narrator) stitching buys nothing; the F0 anti-uptalk gate closes the
+  // endings instead; and only introduces the breath the user rejected. So when
   // the render is all-narrator we FORCE the gold config regardless of what the
   // caller passed: disableStitching (no breath) + antiUptalkGate (closed
   // endings). This makes it IMPOSSIBLE for any caller to reintroduce the aire by

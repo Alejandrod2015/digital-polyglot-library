@@ -3,7 +3,7 @@
  * directly (no Studio plumbing), generates 3 takes of the chosen cartoon
  * style for Beim Bäcker, uploads them to R2, prints public URLs.
  *
- * Style: Storyset/Freepik flat cartoon — stylized rounded faces, large almond
+ * Style: Storyset/Freepik flat cartoon; stylized rounded faces, large almond
  * eyes, soft gradient skin shading, cel-shaded clothing, friendly approachable
  * expressions. The 3 takes are independent generations of the SAME prompt so
  * we can compare model variance.

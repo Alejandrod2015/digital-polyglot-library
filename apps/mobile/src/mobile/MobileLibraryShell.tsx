@@ -681,7 +681,7 @@ type MobileProgressPayload = {
 
 // `meta` is resolved server-side against the real catalog (see
 // /api/mobile/library). It is optional because an older server, or a catalog
-// read that failed, simply omits it — the row's own title/coverUrl still
+// read that failed, simply omits it; the row's own title/coverUrl still
 // carry enough to render the card.
 type RemoteLibraryBookMeta = {
   slug?: string | null;
@@ -1276,7 +1276,7 @@ function resolvePracticeWordVoiceId(rawVoiceId: string | null | undefined): stri
   return v && !v.includes("/") ? v : PRACTICE_WORD_FALLBACK_VOICE_ID;
 }
 
-// FIX (2026-07-24, audit practice-audio #1 — el "200 pero device MUDO"):
+// FIX (2026-07-24, audit practice-audio #1; el "200 pero device MUDO"):
 // ningún FileSystem.downloadAsync validaba el status HTTP ni el tamaño del
 // archivo. Un 200 con cuerpo vacío/corrupto (o un 404 de la era-Modal) se
 // escribía igual a disco; Audio.Sound.createAsync resolvía sobre un mp3 de
@@ -2292,7 +2292,7 @@ export function MobileLibraryShell(args: {
   // #7 (audit 2026-07-24): id del ejercicio cuyo audio NO se pudo resolver
   // (fetch 404, sin url, o descarga inválida). En vez de dejar el botón mudo y
   // vivo sin señal (el usuario tocaba play y no pasaba nada), mostramos "Audio
-  // unavailable — tap to retry". Se limpia al reintentar o cambiar de ejercicio.
+  // unavailable. Tap to retry". Se limpia al reintentar o cambiar de ejercicio.
   const [practiceAudioFailedId, setPracticeAudioFailedId] = useState<string | null>(null);
   // Match mode audio: qué palabra está cargando / sonando ahora mismo,
   // para el spinner y el icono activo del botón de altavoz por palabra.
@@ -2921,7 +2921,7 @@ export function MobileLibraryShell(args: {
           // it's fuller than the server-derived one (multi-variant
           // protection: the server may collapse it) OR when disk's last
           // active journey exists on disk but is absent from the current
-          // list (server metadata was wiped/stale) — the disk snapshot
+          // list (server metadata was wiped/stale); the disk snapshot
           // is internally consistent, so we take it wholesale.
           const storedActiveInStored =
             stored.activeJourneyId != null &&
@@ -2935,8 +2935,8 @@ export function MobileLibraryShell(args: {
           const nextJourneys = restoreList ? stored.journeys : current.journeys;
           // Restore the active journey REGARDLESS of the list guard.
           // The old code only restored it alongside a fuller list, so a
-          // user who switched journeys offline (server POST failed) — or
-          // any offline cold start, or any server/disk divergence —
+          // user who switched journeys offline (server POST failed); or
+          // any offline cold start, or any server/disk divergence;
           // landed back on the default journey instead of their last
           // one. That's the "vuelve a un estado inicial" bug. Disk wins
           // over the current (server-derived) value here.
@@ -3069,7 +3069,7 @@ export function MobileLibraryShell(args: {
 
   // ── Android hardware / edge-swipe back ─────────────────────────────
   // Navigation here is custom (activeScreen + overlay booleans), not
-  // react-navigation, so nothing was consuming Android's back gesture — the
+  // react-navigation, so nothing was consuming Android's back gesture; the
   // Pixel edge-swipe fell straight through to the OS and FINISHED the
   // activity (i.e. exited the app) instead of going back inside the app.
   // We intercept `hardwareBackPress` and unwind our OWN stack in priority
@@ -3086,7 +3086,7 @@ export function MobileLibraryShell(args: {
       setPracticePaused(false);
       return true;
     }
-    // Transient overlays / sheets — close whichever is open.
+    // Transient overlays / sheets; close whichever is open.
     if (languageSwitchOpen) { setLanguageSwitchOpen(false); return true; }
     if (journeysPanelOpen) { setJourneysPanelOpen(false); return true; }
     if (journeyVariantPickerOpen) { setJourneyVariantPickerOpen(false); return true; }
@@ -3175,7 +3175,7 @@ export function MobileLibraryShell(args: {
   // We measure it ONCE (latched via `topBarMeasuredRef`) so the
   // floating sticky panel sits pixel-perfect on top of the in-flow
   // topic panel during the eclipse. Earlier we either:
-  //   - hardcoded it (wrong by 2–4 px on real devices, which made
+  //   - hardcoded it (wrong by 2-4 px on real devices, which made
   //     the sticky and the in-flow appear as a doubled / vibrating
   //     edge during overlap; the "flicker on eclipse" bug)
   //   - re-measured on every render (created a feedback loop with
@@ -4725,7 +4725,7 @@ export function MobileLibraryShell(args: {
         // (via ref, so the async closure isn't stale), else the default.
         // Without this a re-hydrate could overwrite the disk-restored
         // journey with journeys[0] and the disk-save effect would then
-        // persist that default — reopening on the wrong journey.
+        // persist that default; reopening on the wrong journey.
         const activeJourneyId = resolveActiveJourneyId(
           remoteActiveId,
           journeys,
@@ -5277,7 +5277,7 @@ export function MobileLibraryShell(args: {
   // Words scheduled to come back within the next hour (a just-failed word is
   // pushed to +10 min). These are NOT "due now" so they don't count in
   // duePracticeItems, but the orbit must not read "all caught up" while they
-  // exist — it shows a "review soon" state instead.
+  // exist; it shows a "review soon" state instead.
   const reviewSoon = useMemo(() => {
     const now = Date.now();
     const windowMs = 60 * 60 * 1000;
@@ -6127,7 +6127,7 @@ export function MobileLibraryShell(args: {
 
   // The shelf is the UNION of what you bought and what you saved locally, not
   // one or the other. It used to be `savedBooks.length > 0 ? saved : remote`,
-  // so a single locally saved book hid every purchase behind it — and new
+  // so a single locally saved book hid every purchase behind it; and new
   // installs seeded two sample books, which meant purchases were hidden by
   // default. Purchases come first and win on duplicates.
   const shelfBookCards = useMemo(() => {
@@ -10246,7 +10246,7 @@ export function MobileLibraryShell(args: {
     // PracticeSetEditor regenerates these from the editor surface.
     // P1 (2026-07-23): en modo meaning suena la PALABRA. Usa el clip de palabra
     // PRE-HORNEADO (audioClip.wordClipUrl); NUNCA el cachedUrl (que es el clip de
-    // la ORACIÓN — reproducirlo aquí hacía sonar la oración entera en vez de la
+    // la ORACIÓN; reproducirlo aquí hacía sonar la oración entera en vez de la
     // palabra). Si no hay wordClipUrl, cae a word-tts (la palabra) más abajo.
     const wordUrl = currentPracticeExercise.audioClip?.wordClipUrl ?? null;
     if (!uri && wordUrl) {
@@ -14109,7 +14109,7 @@ export function MobileLibraryShell(args: {
                                 : audioActive
                                   ? "Playing"
                                   : practiceAudioFailedId === currentPracticeExercise.id
-                                    ? "Audio unavailable — tap to retry"
+                                    ? "Audio unavailable. Tap to retry"
                                     : "Tap to listen"}
                           </Text>
                           {/* Intentionally NO word reveal under the
@@ -15752,7 +15752,7 @@ export function MobileLibraryShell(args: {
     if (!remoteJourney?.tracks?.length) return null;
     // Resolve the track for the ACTIVE journey robustly. The value from
     // getJourneyVariantFromPreferences is a VARIANT CODE ("mexico", "latam",
-    // "spain"), NEVER a track id (cuid) — so matching only on
+    // "spain"), NEVER a track id (cuid); so matching only on
     // `track.id === preferredTrackId` missed and fell back to `tracks[0]`
     // (often a C1 journey). That made a Beginner journey (Mexico A0) render
     // "Advanced" + C1 topics in the topic panels. Match, in order: explicit
@@ -16920,7 +16920,7 @@ export function MobileLibraryShell(args: {
           // The trade-off is that if a cover loads after the user
           // scrolls past its block, the sticky's swap point is off
           // by however much that block shifted. In practice covers
-          // load within the first 1–2s and the user is at the top,
+          // load within the first 1-2s and the user is at the top,
           // so this is barely visible. Stable beats precise.
           if (topicLayoutsRef.current.has(slug)) return;
           topicLayoutsRef.current.set(slug, {
@@ -18553,7 +18553,7 @@ export function MobileLibraryShell(args: {
           // La copia offline solo vale si se bajó de la MISMA url que sirve
           // el servidor ahora. Al re-renderizar una historia (cambio de voz,
           // re-pacing) cambia el nombre del mp3 en R2, pero
-          // `hydrateOfflineAssets` —que es quien detecta eso— solo corre
+          // `hydrateOfflineAssets` (que es quien detecta eso) solo corre
           // cuando el usuario descarga a mano, nunca al abrir el lector. El
           // resultado era el peor de los mundos: sonaba el AUDIO VIEJO del
           // disco mientras los TIMINGS se refrescaban desde la API contra el

@@ -1,4 +1,4 @@
-# Google Play launch runbook — Digital Polyglot (Android)
+# Google Play launch runbook; Digital Polyglot (Android)
 
 Estado a 2026-07-16. La app iOS ya existe; esto lleva la misma app a Play.
 Todo el código y los assets están hechos; lo que queda son pasos en dashboards
@@ -10,7 +10,7 @@ app ID `4973262390913816082`, hoy en Borrador / prueba interna.
 
 ---
 
-## 0. Borrado de cuenta (política de Play) — HECHO
+## 0. Borrado de cuenta (política de Play); HECHO
 
 Play exige un modo de borrar la cuenta y sus datos accesible sin reinstalar, y
 una URL pública para el Data Safety. Ya construido:
@@ -55,7 +55,7 @@ Un solo service account sirve para las dos cosas.
 Ya están puestas: `GOOGLE_PLAY_PACKAGE_NAME=com.digitalpolyglot.app` y
 `GOOGLE_PLAY_SHA256_CERT_FINGERPRINTS`.
 
-### Notificaciones en tiempo real (RTDN) — opcional pero recomendado
+### Notificaciones en tiempo real (RTDN); opcional pero recomendado
 
 Para que las renovaciones/cancelaciones se reflejen en el server sin que el
 usuario abra la app, Play publica RTDN a un topic de Pub/Sub que hace push a
@@ -86,8 +86,8 @@ la auth de todo el sitio.
 Play Console → Monetize → Subscriptions. Crea dos, con estos IDs EXACTOS (los
 espera el código, `billing.ts` los mapea a plan `premium`):
 
-- `premium_monthly` — base plan mensual, €14,99.
-- `premium_annual` — base plan anual, €149.
+- `premium_monthly`; base plan mensual, €14,99.
+- `premium_annual`; base plan anual, €149.
 
 Sin base plan activo el `offerToken` viene vacío y el botón de compra no
 arranca.
@@ -162,7 +162,7 @@ app).
 
 - Category: **Reference, News, or Educational**.
 - Violence: No. Sexuality: No. Controlled substances: No. Gambling: No.
-- Profanity / crude humor: **No** para el contenido inicial A1–B1.
+- Profanity / crude humor: **No** para el contenido inicial A1-B1.
   ATENCIÓN: si más adelante publicas historias C1 con lenguaje adulto/vulgar,
   vuelve al cuestionario y marca lenguaje "mild/infrequent"; el rating de Play
   se puede actualizar y no hacerlo es un riesgo de strike.
@@ -177,8 +177,8 @@ Generados en `apps/mobile/play-store-assets/` con
 `apps/mobile/scripts/build-play-assets.py` (regenerables; los titulares son
 editables en el dict del script):
 
-- `feature-graphic.png` — 1024x500 (obligatorio, no existía).
-- `play-screenshot-01..05.png` — 1600x2938 (ratio 1.836, dentro del 2:1 de
+- `feature-graphic.png`; 1024x500 (obligatorio, no existía).
+- `play-screenshot-01..05.png`; 1600x2938 (ratio 1.836, dentro del 2:1 de
   Play; las capturas iOS crudas a 2.17 lo violaban). Orden narrativo con
   titulares: real stories → tap any word → practice that sticks → remember 2× →
   a journey by theme.

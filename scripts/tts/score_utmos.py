@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Score audio files with UTMOS (predicted Mean Opinion Score 1.0–5.0).
+"""Score audio files with UTMOS (predicted Mean Opinion Score 1.0-5.0).
 
 UTMOS is a model trained on humans rating TTS naturalness. It catches the
 "intelligible but robotic" failure mode that Whisper WER misses.

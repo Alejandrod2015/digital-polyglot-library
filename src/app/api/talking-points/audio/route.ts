@@ -7,7 +7,7 @@ import { getPiece } from "@/lib/talkingPoints";
 // WHY a route and not a script: `@/lib/elevenlabs` pulls in `server-only`, so
 // it cannot be imported from tsx. The alternative was to re-implement the
 // pipeline in a script, and that pipeline is where the narration standard
-// lives — the approved-voice assertion, the loudness normalisation and the STT
+// lives; the approved-voice assertion, the loudness normalisation and the STT
 // quality check. A second copy would drift from it. So the render happens
 // inside Next, calling the exact function the Studio calls for a single-voice
 // story.

@@ -42,10 +42,10 @@ async function run() {
       const progressKey = `standalone:${story.slug}`;
       const audioFinished = completed.has(progressKey);
       if (audioFinished) {
-        console.log(`  audioFinished: ${story.level}/${story.topic}/${story.slug} — ${story.title}`);
+        console.log(`  audioFinished: ${story.level}/${story.topic}/${story.slug}; ${story.title}`);
       } else if (!nextFound) {
         nextFound = true;
-        console.log(`  >>> NEXT: ${story.level}/${story.topic}/${story.slug} — ${story.title}`);
+        console.log(`  >>> NEXT: ${story.level}/${story.topic}/${story.slug}; ${story.title}`);
       }
     }
     if (!nextFound) console.log("  >>> NO NEXT");

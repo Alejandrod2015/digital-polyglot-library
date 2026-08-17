@@ -491,11 +491,11 @@ function prettifyTopicLabel(slug: string): string {
 // every request.
 // Local preview only: on localhost (NODE_ENV !== production) the reader also
 // surfaces archived journeys and draft stories, so a journey can be previewed
-// in the real reader UI BEFORE it is published — without flipping any status
+// in the real reader UI BEFORE it is published; without flipping any status
 // in the shared Neon DB (which would also expose it in production). The
 // production build keeps the strict published/non-archived filters.
 // Scope the local preview to ONE specific in-progress journey (by id) instead
-// of surfacing every archived/legacy journey — otherwise the reader's "Switch
+// of surfacing every archived/legacy journey; otherwise the reader's "Switch
 // journey" list fills up with old archived content on localhost.
 // Una LISTA, no un id: puede haber más de un journey en obra a la vez, y con
 // un solo hueco el segundo quedaba invisible en el lector aunque sus historias
@@ -503,6 +503,7 @@ function prettifyTopicLabel(slug: string): string {
 const PREVIEW_JOURNEY_IDS = [
   "cmqtnagxp0000324lf3u73vg1", // German A0 (Traveler · Beginner), archived/draft
   "cmss0fkc40007j8dub1zpa1kc", // Traveler IT A0 italy (en obra, 2026-08)
+  "cmsvz6mz9000732gsgsfer0ko", // Friends ES spain A1 (en obra, 2026-08)
 ];
 const PREVIEW_DRAFTS = process.env.NODE_ENV !== "production";
 export const JOURNEY_STATUS_WHERE: Prisma.JourneyWhereInput = PREVIEW_DRAFTS
@@ -607,8 +608,8 @@ function slugifyTrackLabel(input: string): string {
 }
 
 // ── Stable, GLOBAL journey slug (makes share links work) ──
-// Derive the slug from the journey's OWN fields — `name-variant`, then the
-// level / a short id fragment ONLY when that collides — never from its
+// Derive the slug from the journey's OWN fields; `name-variant`, then the
+// level / a short id fragment ONLY when that collides; never from its
 // position in the result set. The old scheme was `slugify(name)` + an
 // order-based `-2/-3` counter, so the same slug (e.g. "friends-2") pointed at
 // different journeys depending on the viewer's language set. Now
@@ -647,7 +648,7 @@ export function buildJourneySlugMap(journeys: JourneySlugSource[]): Map<string, 
   // Self-descriptive: language code + name + variant + level, e.g.
   // "es-friends-latam-c1", "de-traveler-germany-a0". Every part comes from the
   // journey's own fields, so it is identical for every viewer AND stable over
-  // time — adding a sibling journey never changes an existing slug (the level
+  // time; adding a sibling journey never changes an existing slug (the level
   // is always present, so same name+variant at different levels never collide).
   const baseOf = (j: JourneySlugSource) =>
     [langCodeOf(j), nameSlugOf(j), slugifyTrackLabel((j.variant ?? "").toString()), levelSlugOf(j)]

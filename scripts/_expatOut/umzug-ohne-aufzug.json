@@ -1,0 +1,133 @@
+[
+  {
+    "title": "Umzug ohne Aufzug",
+    "slug": "umzug-ohne-aufzug",
+    "text": "Samstag, halb neun. Vor Timos Haus stapeln sich Kartons; der Altbau kontert mit fünftem Stock ohne Aufzug.\n\nTimo: Der Umzug ist das beste Fitnessprogramm der Stadt. Kostenlos, aber die Kündigung ist schwierig.\n\nNadia: Wie viele Kartons sind noch unten?\n\nTimo: Zwölf. Und das Bücherregal. Wer bis oben durchhält, kriegt das Zimmer mit Balkon.\n\nLea wartet in der leeren Küche mit dem Übergabeprotokoll.\n\nLea: Jede Schramme dokumentiert, jeder Zählerstand notiert. Hier unterschreiben, hier auch. Die Schramme an der Tür war schon vor mir da, die erbst du offiziell.\n\nNadia: Eine Wohnung mit Stammbaum. In Berlin hat wirklich alles eine Vorgeschichte.\n\nLea: Und der Herd zieht nach links. Wer das weiß, lebt besser. Steht in keinem Protokoll.\n\nTimo: Das Protokoll regelt die Vergangenheit. Den Herd regeln wir beim ersten gemeinsamen Kochen.\n\nBeim achten Karton summt das Handy: die Katzen-WG, nach neun Tagen Funkstille.\n\nNadia: »Liebe Nadia, nach reiflicher Überlegung...« Neun Tage reifliche Überlegung! Frau Schmidt hätte mich sofort genommen.\n\nTimo: Zu spät. Hier entscheidet keine Katze, nur die Treppe. Und die hast du gerade bestanden.\n\nAbends gibt es Pizza auf dem Übergabeprotokoll, Kartons als Möbel.\n\nNadia: Erst der Termin, dann der Vertrag, jetzt ein Zuhause mit klemmendem Herd. Langsam fühlt sich Berlin bewohnbar an.\n\nTimo: Genieß den Moment. Morgen kommt die Ummeldung, und das Bürgeramt vergisst niemanden.\n\nNadia: Dann auf den fünften Stock. Verdient, Schritt für Schritt.",
+    "synopsis": "Samstag, halb neun: Vor Timos Altbau stapeln sich Kartons, und der fünfte Stock ohne Aufzug wird zum Aufnahmeritual. Oben wartet Lea mit dem Übergabeprotokoll: jede Schramme dokumentiert, jeder Zählerstand notiert, und der Herd zieht links, was in keinem Protokoll steht. Beim achten Karton meldet sich die Katzen-WG nach neun Tagen Funkstille; zu spät. Abends gibt es Pizza auf dem Übergabeprotokoll, und morgen wartet schon die Ummeldung beim Bürgeramt.",
+    "arcType": "harmonic-close",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "der Altbau",
+        "surface": "Altbau",
+        "definition": "Pre-war building: high ceilings, wooden floors, rarely an elevator."
+      },
+      {
+        "type": "verb",
+        "word": "kontern",
+        "surface": "kontert",
+        "definition": "To counter, strike back with an argument or obstacle."
+      },
+      {
+        "type": "noun",
+        "word": "die Kündigung",
+        "surface": "Kündigung",
+        "definition": "Formal cancellation of a contract, job or membership."
+      },
+      {
+        "type": "verb",
+        "word": "durchhalten",
+        "surface": "durchhält",
+        "definition": "To hold out until the end without giving up."
+      },
+      {
+        "type": "noun",
+        "word": "die Schramme",
+        "surface": "Schramme",
+        "definition": "A scratch or scrape left as a mark on a surface."
+      },
+      {
+        "type": "verb",
+        "word": "erben",
+        "surface": "erbst",
+        "definition": "To inherit something and keep what the previous owner left you."
+      },
+      {
+        "type": "noun",
+        "word": "der Stammbaum",
+        "surface": "Stammbaum",
+        "definition": "A family tree showing the documented line of someone's ancestors."
+      },
+      {
+        "type": "noun",
+        "word": "die Vorgeschichte",
+        "surface": "Vorgeschichte",
+        "definition": "Backstory, the history behind a person or thing."
+      },
+      {
+        "type": "verb",
+        "word": "summen",
+        "surface": "summt",
+        "definition": "To hum or buzz, like a phone vibrating."
+      },
+      {
+        "type": "noun",
+        "word": "die Funkstille",
+        "surface": "Funkstille",
+        "definition": "Radio silence; a period with no contact at all."
+      },
+      {
+        "type": "expression",
+        "word": "nach reiflicher Überlegung",
+        "definition": "After careful consideration; formal phrase softening bad news.",
+        "surface": "Überlegung"
+      },
+      {
+        "type": "verb",
+        "word": "bestehen",
+        "surface": "bestanden",
+        "definition": "To pass a test or a trial that could have gone wrong."
+      },
+      {
+        "type": "verb",
+        "word": "klemmen",
+        "surface": "klemmendem",
+        "definition": "To jam or stick instead of moving smoothly."
+      },
+      {
+        "type": "adjective",
+        "word": "bewohnbar",
+        "definition": "Habitable, in a state where a person can actually live."
+      },
+      {
+        "type": "verb",
+        "word": "genießen",
+        "surface": "Genieß",
+        "definition": "To enjoy and savor a moment or pleasure."
+      },
+      {
+        "type": "noun",
+        "word": "die Ummeldung",
+        "surface": "Ummeldung",
+        "definition": "Re-registration of your address after moving within Germany."
+      },
+      {
+        "type": "adjective",
+        "word": "verdient",
+        "surface": "Verdient",
+        "definition": "Deserved: the honest result of real effort, not of luck."
+      },
+      {
+        "type": "expression",
+        "word": "Schritt für Schritt",
+        "definition": "Step by step, one small stage at a time until done.",
+        "surface": "Schritt"
+      },
+      {
+        "type": "noun",
+        "word": "der Herd",
+        "surface": "Herd",
+        "definition": "The stove in a kitchen, the flat surface where you cook."
+      },
+      {
+        "type": "verb",
+        "word": "regeln",
+        "surface": "regelt",
+        "definition": "To settle something and set the rule for how it works."
+      }
+    ],
+    "level": "c1",
+    "topic": "housing-and-flatshare",
+    "slotIndex": 3
+  }
+]

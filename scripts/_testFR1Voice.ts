@@ -59,7 +59,7 @@ const LINES = [
   }
   const html = `<!doctype html><meta charset="utf-8"><title>Test Stella FR</title>
 <body style="background:#0e1727;color:#eee;font-family:system-ui;max-width:640px;margin:40px auto;padding:0 16px">
-<h2>Test de voz — Stella · L'océan dit non</h2>
+<h2>Test de voz; Stella · L'océan dit non</h2>
 ${LINES.map((l) => `<div style="margin:18px 0;padding:14px;background:#102746;border-radius:12px">
 <b>${l.n}. ${l.label}</b><p style="color:#9fb3d1;font-size:14px">${l.text}</p>
 <audio controls preload="none" src="/_fr1-test/${l.n}.mp3" style="width:100%"></audio></div>`).join("")}

@@ -507,7 +507,7 @@ export default function PracticePage() {
   const storyReturnHref = searchParams.get("storyHref");
   const storyNextHref = searchParams.get("nextHref");
   const storyNextTitle = searchParams.get("nextTitle");
-  // "story" (default) or "topic" — when the next item starts a new topic (i.e.
+  // "story" (default) or "topic"; when the next item starts a new topic (i.e.
   // this was the last story of the current topic), the button reads "Next topic".
   const storyNextKind = searchParams.get("nextKind") === "topic" ? "topic" : "story";
   const journeyVariant = searchParams.get("variant");
@@ -1926,7 +1926,7 @@ export default function PracticePage() {
       // alemanas/italianas con fonética española.
       const wordLanguage = clip?.language ?? languageOverride ?? undefined;
       // #5 (audit 2026-07-24): si hay clip PRE-HORNEADO de la palabra
-      // (wordClipUrl), reproducirlo directo — el primer tier de la cadena de
+      // (wordClipUrl), reproducirlo directo; el primer tier de la cadena de
       // fuentes que la web se saltaba (siempre re-rendeaba via runtime).
       const preBakedWordUrl =
         typeof clip?.wordClipUrl === "string" && clip.wordClipUrl.trim() ? clip.wordClipUrl.trim() : null;
@@ -1986,7 +1986,7 @@ export default function PracticePage() {
 
     // Warm the browser HTTP cache by fetching the mp3 (R2 serves it `immutable`,
     // so the play button's later request is served instantly from cache).
-    // A detached <audio preload> is NOT reliable — browsers defer/skip preload
+    // A detached <audio preload> is NOT reliable; browsers defer/skip preload
     // of media not in the DOM. fetch() actually downloads + caches.
     const warm = (url: string | null | undefined) => {
       if (!url || typeof window === "undefined") return;
@@ -2213,7 +2213,7 @@ export default function PracticePage() {
     if (selectedMode || pendingCountdownMode) return;
     if (storyAutoStartedRef.current) return;
     storyAutoStartedRef.current = true;
-    // `?ex=` review/preview links open specific exercises directly — skip the
+    // `?ex=` review/preview links open specific exercises directly; skip the
     // 3-2-1 get-ready countdown (it's only for a real "start practicing" run).
     if (onlyExerciseParam) {
       openSession(reviewRecommendedMode, { pushHistory: false });
@@ -2789,7 +2789,7 @@ export default function PracticePage() {
                   >
                     <Confetti active={isPerfect} />
 
-                    {/* Celebration block (chips, ring, greeting) — fixed, always
+                    {/* Celebration block (chips, ring, greeting); fixed, always
                         fully visible (never clipped). */}
                     <div className="flex w-full shrink-0 flex-col items-center gap-3">
                     {/* Corner chips */}
@@ -2875,7 +2875,7 @@ export default function PracticePage() {
                       </div>
                     ) : null}
 
-                    {/* Words you practiced — fixed-height, always visible. Tap a
+                    {/* Words you practiced; fixed-height, always visible. Tap a
                         chip to save that word; the box scrolls only if there are
                         more rows than fit. */}
                     {practicedWords.length > 0 ? (

@@ -13,7 +13,7 @@
 // Cada uno se eligió leyendo el synopsis para que match el contenido
 // real, no random.
 //
-// SLUG y URL se preservan — sólo `title` cambia. Favorites,
+// SLUG y URL se preservan; sólo `title` cambia. Favorites,
 // ContinueListening y UserMetric (que referencian por slug) no se ven
 // afectados.
 
@@ -46,7 +46,7 @@ const RENAMES = [
   { id: "cmoglxwmx0004la048md4q7t9", from: "Trastevere al Tramonto", to: "Una sera con Marco" },
   // "Arte e Luci di Sera a Trastevere": evita "a", evoca lo visual.
   { id: "cmogn9tbi0001l204gwm99b6c", from: "Arte e Luci di Sera a Trastevere", to: "Notturno tra le vie" },
-  // Dos "Cacio e Pepe a Trastevere" — uno por slug, cada uno con
+  // Dos "Cacio e Pepe a Trastevere"; uno por slug, cada uno con
   // contenido distinto. Renombrar ambos para que se distingan.
   // (b1) Marco perfeccionando la ricetta
   { id: "cmoglxwmx0005la04zoiibtf1", from: "Cacio e Pepe a Trastevere", to: "La ricetta di Marco" },
@@ -55,7 +55,7 @@ const RENAMES = [
 ];
 
 async function main() {
-  console.log(`${APPLY ? "APPLY" : "DRY RUN"} — ${RENAMES.length} renames\n`);
+  console.log(`${APPLY ? "APPLY" : "DRY RUN"}; ${RENAMES.length} renames\n`);
 
   for (const r of RENAMES) {
     const existing = await prisma.journeyStory.findUnique({
@@ -68,7 +68,7 @@ async function main() {
     }
     if (existing.title !== r.from) {
       console.log(
-        `  ⚠ TITLE MISMATCH: ${r.id} — expected "${r.from}", DB has "${existing.title}". Skipping.`,
+        `  ⚠ TITLE MISMATCH: ${r.id}; expected "${r.from}", DB has "${existing.title}". Skipping.`,
       );
       continue;
     }

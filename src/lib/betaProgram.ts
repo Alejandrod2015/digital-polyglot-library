@@ -17,6 +17,7 @@ import {
   removeTester,
   isAscConfigured,
   getTesterState,
+  getTesterEmail,
   sendTesterInvitation,
 } from "@/lib/appStoreConnect";
 import {
@@ -415,14 +416,46 @@ export async function inviteApplicant(signupId: string): Promise<InviteOutcome> 
   //
   // Re-firing the invitation is safe: Apple treats a second one as a resend,
   // and answers 409 for someone who is already testing.
+  //
+  // Two ways this branch used to do nothing while answering `invited: true`,
+  // both found on 2026-08-16 with a tester who had written in twice saying the
+  // invitation never arrived:
+  //
+  //   1. The address moved. He asked us to use another one, we updated
+  //      `appleIdEmail`, and the tester Apple holds kept the old address, so
+  //      every resend went back to the inbox he had just told us was dead.
+  //      Apple has no rename: a different address is a different tester.
+  //   2. The state was INVITED, so the resend was skipped. But "Apple sent it
+  //      once, days ago" is not an answer to "it never arrived": a resend is
+  //      exactly what is being asked for. Only ACCEPTED and INSTALLED mean the
+  //      invitation did its job, and those are the states we skip now.
   if (signup.status === "invited" || signup.status === "accepted") {
     let inviteError: string | null = null;
     if (signup.ascTesterId && isAscConfigured()) {
-      const state = await getTesterState(signup.ascTesterId);
-      if (state === "NOT_INVITED") {
-        const inv = await sendTesterInvitation(signup.ascTesterId);
-        inviteError = inv.ok ? null : (inv.error ?? "Apple did not send the invitation");
-        console.log(`↻ Re-sent Apple invitation for ${signup.email}: ${inv.ok ? "ok" : inviteError}`);
+      const wantEmail = (signup.appleIdEmail?.trim() || signup.email).toLowerCase();
+      const haveEmail = await getTesterEmail(signup.ascTesterId);
+      if (haveEmail && haveEmail !== wantEmail) {
+        // Fresh tester on the address we were asked to use. The old one is
+        // left alone: removing it would drop an invitation they may still
+        // redeem, and Apple bills us nothing for the extra row.
+        const moved = await inviteTesterToBetaGroup({ email: wantEmail, firstName: signup.firstName });
+        inviteError = moved.ok
+          ? (moved.invitationSent ? null : (moved.invitationError ?? "Apple did not send the invitation"))
+          : (moved.error ?? "Apple rejected the new tester");
+        if (moved.ok && moved.testerId) {
+          await prisma.betaSignup.update({
+            where: { id: signupId },
+            data: { ascTesterId: moved.testerId, ascInvitedAt: new Date() },
+          });
+        }
+        console.log(`↪ Apple invite moved for ${signup.email}: ${haveEmail} -> ${wantEmail} (${moved.ok ? "ok" : inviteError})`);
+      } else {
+        const state = await getTesterState(signup.ascTesterId);
+        if (state !== "ACCEPTED" && state !== "INSTALLED") {
+          const inv = await sendTesterInvitation(signup.ascTesterId);
+          inviteError = inv.ok ? null : (inv.error ?? "Apple did not send the invitation");
+          console.log(`↻ Re-sent Apple invitation for ${signup.email} (state ${state ?? "unknown"}): ${inv.ok ? "ok" : inviteError}`);
+        }
       }
     }
     if (inviteError !== signup.ascError) {

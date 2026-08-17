@@ -71,7 +71,7 @@ async function notifySupport(
   if (!apiKey || !from || exhausted.length === 0) return;
 
   const lines = exhausted.map(
-    (e) => `• ${e.email} — ${e.books.join(", ")} — ${READER_BASE}/claim/${e.token}`
+    (e) => `• ${e.email} | ${e.books.join(", ")} | ${READER_BASE}/claim/${e.token}`
   );
   const text = [
     `${exhausted.length} paid buyer(s) still haven't redeemed after 2 reminders.`,

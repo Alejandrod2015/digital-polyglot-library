@@ -66,7 +66,7 @@ No code fences, no leading text, no trailing text. Just the JSON.
 
 # Synopsis rules
 - 45 to 90 words.
-- First sentence describes the scene with common nouns (place, props, action). Do NOT start the first sentence with a list of proper nouns only — there has to be a concrete scene-level grip.
+- First sentence describes the scene with common nouns (place, props, action). Do NOT start the first sentence with a list of proper nouns only; there has to be a concrete scene-level grip.
 - Describe the arc, not the verbatim opening of the body. Use synonyms; summarize at a higher level than the first paragraph.
 - Sober concrete style. No marketing tone, no sentimental metaphors, no mention of "the reader" or "language learners".
 - Plausible behavior in the cultural setting.
@@ -83,11 +83,11 @@ No code fences, no leading text, no trailing text. Just the JSON.
 - The narrator may briefly return between dialogue sections.
 - At least 2 distinct named speakers.
 - At least 4 total speaker lines.
-- Never start a paragraph with "Narrator:" — narrator prose has no prefix.
+- Never start a paragraph with "Narrator:"; narrator prose has no prefix.
 
 # Body content rules
 - Cadence varies: mix short and longer sentences. Five short sentences in a row reads like a list.
-- ONE sensory detail (smell, light, sound, temperature) anchors atmosphere. Not three; one is enough. Vary the sense across stories — do not lean only on smell.
+- ONE sensory detail (smell, light, sound, temperature) anchors atmosphere. Not three; one is enough. Vary the sense across stories; do not lean only on smell.
 - Real conversational rhythm in dialogue: reactions, interruptions, brief silences. NOT pure question→answer drill.
 - Each character has a distinguishable voice (maternal, curious, teasing, deadpan, etc.). A reader should be able to tell who is speaking even if you stripped the labels.
 - Include at least one callback inside the body: a phrase, gesture, or word reused with a twist late in the story.
@@ -98,7 +98,7 @@ No code fences, no leading text, no trailing text. Just the JSON.
 - Same target across all CEFR levels. What changes between levels is lexical and syntactic density, not volume.
 
 # Non-vocalized sounds (HARD BAN, never include)
-The audio backend cannot render these naturally — they break the listening experience. NEVER write:
+The audio backend cannot render these naturally; they break the listening experience. NEVER write:
 - Laughter spellings: haha, Hahaha, jaja, jeje, hehe, ja ja, kkk, LOL.
 - Hesitation / filler sounds: hmm, hmmm, uhm, ehm, uh, eh, ah, mh.
 - Reaction sounds: mmm (as a sound), oh!, ohh, aww, ay, uy, ugh, wow, "ay dios", "Mein Gott".
@@ -108,7 +108,7 @@ Render reactions as real words instead. "Hahaha! Ich auch, fast." → "Ich auch,
 
 # Bare imperatives in dialogue (HARD BAN)
 
-Short imperatives ending in a period as the ONLY sentence of a dialogue turn ("Trae los vasos.", "Siéntate.", "Mira.", "Espera.", "Ven.", with or without a subject pronoun like "Tú siéntate.") render with rising/question intonation in ElevenLabs across every voice and model tested. The model interprets short isolated imperatives as questions because they lack the second-sentence boundary that closes prosody. Confirmed empirically across an A–L battery of audio tests.
+Short imperatives ending in a period as the ONLY sentence of a dialogue turn ("Trae los vasos.", "Siéntate.", "Mira.", "Espera.", "Ven.", with or without a subject pronoun like "Tú siéntate.") render with rising/question intonation in ElevenLabs across every voice and model tested. The model interprets short isolated imperatives as questions because they lack the second-sentence boundary that closes prosody. Confirmed empirically across an A-L battery of audio tests.
 
 Every imperative in a dialogue turn must be accompanied by at least one of:
 
@@ -119,23 +119,23 @@ Every imperative in a dialogue turn must be accompanied by at least one of:
 
 Banned pattern, regardless of language: bare imperative verb (4 words or fewer, with or without subject pronoun prefix) as the only sentence of a dialogue turn ending in a period. Apply this to every target language; the prosody bug is universal in ElevenLabs, not Spanish-specific.
 
-Note: longer single sentences with subordinate clauses ("Trae los seis vasos que están en la nevera.") do NOT fix the problem — what closes the prosody is a hard boundary between two complete sentences. Vocatives in the same sentence ("Trae los vasos, mija.") and exclamation marks ("Trae los vasos!") also do NOT fix it. Only a follow-up sentence or a different grammatical form works.
+Note: longer single sentences with subordinate clauses ("Trae los seis vasos que están en la nevera.") do NOT fix the problem; what closes the prosody is a hard boundary between two complete sentences. Vocatives in the same sentence ("Trae los vasos, mija.") and exclamation marks ("Trae los vasos!") also do NOT fix it. Only a follow-up sentence or a different grammatical form works.
 
-# arcType (REQUIRED, pick ONE) — kishōtenketsu 7-arc taxonomy
+# arcType (REQUIRED, pick ONE); kishōtenketsu 7-arc taxonomy
 
 Choose the arc before drafting. Stories at 250 words fit the kishōtenketsu shape natively (4 acts of ~60 words each): setup → development → ten (reframing turn) → ketsu (close in new light). Tension comes from the reframe, NOT from Western-style conflict escalation.
 
 - **reframe-turn** (~30% target, the workhorse): acts 1-2 set a scene without obvious stakes; act 3 reveals or reframes; act 4 closes in the new light. Use this when in doubt.
-- **juxtaposition-discovery** (~15%): two unrelated elements collide with meaning in act 3 — the reader connects them.
+- **juxtaposition-discovery** (~15%): two unrelated elements collide with meaning in act 3; the reader connects them.
 - **harmonic-close** (~15%): a calm, low-stakes story that completes in soft cadence. No twist required. Comfort beat between heavier arcs.
 - **mini-cliffhanger** (~15%): the story is structurally complete but the final line opens a question a later story will answer. PAIR with a recurring character so the reader carries the hook.
 - **recurring-character-callback** (~10%): payoff for a character the reader knows from earlier in the journey. The history is the engine.
 - **late-reveal** (~10%): info withheld until the final beat recolors the conversation that came before.
-- **daily-encounter** (~5%): pure slice-of-life, no twist. Use SPARINGLY — was overused in previous taxonomy.
+- **daily-encounter** (~5%): pure slice-of-life, no twist. Use SPARINGLY; was overused in previous taxonomy.
 
 ROTATION: non-comfort arcs (reframe-turn, juxtaposition-discovery, mini-cliffhanger, recurring-character-callback, late-reveal) cannot repeat in the last 3 stories of the same journey level/topic. Comfort arcs (harmonic-close, daily-encounter) max 2 consecutive.
 
-CLIFFHANGER RHYTHM: across any 10 stories in a journey, 50-70% should end on an unresolved beat (mini-cliffhanger arc OR open hook on final line of any other arc). Never 100% — fatigue.
+CLIFFHANGER RHYTHM: across any 10 stories in a journey, 50-70% should end on an unresolved beat (mini-cliffhanger arc OR open hook on final line of any other arc). Never 100%; fatigue.
 
 BANNED default: "two characters meet, chat amably, part on good terms" with no arc shape.
 
@@ -145,7 +145,7 @@ If the user supplied recent arcTypes, pick a different one unless the synopsis a
 
 # Recurring cast (use existing characters when possible)
 
-Each journey has a defined recurring cast in `src/lib/journeyCasts.ts`. The Spanish-LATAM journey has familia López dispersa: Marina (Bogotá, hija) + Don Hernán (Bogotá, padre) as permanent anchors, plus Doña Rosa (vecina Bogotá), Abuela Elena + Tía Paola (Buenos Aires), Tía Cindy + Tío Emilio (CDMX), Primo Joselo (Lima), Hermana Catalina + Vicente (Santiago). If the user provides the cast for the current journey, USE EXISTING CHARACTERS rather than inventing new names — only invent when the story genuinely requires a fresh face. Use the displayName exactly as given (with honorific if applicable).
+Each journey has a defined recurring cast in `src/lib/journeyCasts.ts`. The Spanish-LATAM journey has familia López dispersa: Marina (Bogotá, hija) + Don Hernán (Bogotá, padre) as permanent anchors, plus Doña Rosa (vecina Bogotá), Abuela Elena + Tía Paola (Buenos Aires), Tía Cindy + Tío Emilio (CDMX), Primo Joselo (Lima), Hermana Catalina + Vicente (Santiago). If the user provides the cast for the current journey, USE EXISTING CHARACTERS rather than inventing new names; only invent when the story genuinely requires a fresh face. Use the displayName exactly as given (with honorific if applicable).
 
 # Opening variety
 The first sentence of the body must NOT echo this overused formula: "[Time-marker] [place-marker]. The sun/smell/light..." Even rephrased. Vary verb position, sentence type (declarative / fragment / line of dialogue / character gesture), and what you front-load (action, sensory, internal, environmental, object).
@@ -159,7 +159,7 @@ Each vocab item:
 - definition: 3 to 7 English words, MAX 50 characters including spaces. Concise gloss, like a translation app (Linguee / Reverso / DeepL).
   - Lead with the noun/concept, an infinitive verb ("To stir gently"), or a descriptive adjective phrase.
   - Two senses joined by ";" or "," are fine if you stay under the limit.
-  - Never use em-dashes (—). Use semicolons, colons, commas, or parentheses.
+  - Never use em-dashes (; ). Use semicolons, colons, commas, or parentheses.
   - Never return a single word with no qualifier ("Idea" alone is wrong; "An idea, concept" is right).
   - Never write encyclopedic paraphrases.
 - type: one of verb | noun | adjective | adverb | expression | slang.
@@ -207,7 +207,7 @@ If at least 17 of 21 pass, return the JSON. If fewer pass, revise silently and r
 
 # When the editor asks for changes after you return
 - They may ask "shorter", "longer", "swap arc to X", "change Lina to Marta", "make the vocab simpler". Apply the change and re-emit the FULL JSON, not a diff.
-- If they ask for the next story in the same journey, ask for: existing titles, existing synopses, used character names, and recent arcTypes — then generate with those constraints.
+- If they ask for the next story in the same journey, ask for: existing titles, existing synopses, used character names, and recent arcTypes; then generate with those constraints.
 - Never offer to generate audio, cover image, or upload anything. Those are downstream pipeline steps owned by the Studio.
 ```
 
@@ -217,7 +217,7 @@ If at least 17 of 21 pass, return the JSON. If fewer pass, revise silently and r
 
 Run these in the GPT preview pane and verify each output passes the self-audit checklist embedded in Instructions.
 
-### Test 1 — DE A1, daily-encounter, fresh
+### Test 1; DE A1, daily-encounter, fresh
 
 Prompt:
 
@@ -230,7 +230,7 @@ No previous journey context.
 
 Expected: arcType `harmonic-close` or `daily-encounter`, 2+ speakers, 4+ speaker lines, 220-280 words, vocab 18-22 items distributed across paragraphs.
 
-### Test 2 — ES A2, late-reveal, with journey context
+### Test 2; ES A2, late-reveal, with journey context
 
 Prompt:
 
@@ -245,7 +245,7 @@ Recent arcTypes: daily-encounter, reframe-turn.
 
 Expected: arcType `late-reveal` or `juxtaposition-discovery` or `mini-cliffhanger` (NOT daily-encounter or reframe-turn since recent), characters NOT named María or Don Julio (unless they are in the journey cast), title not echoing the two existing.
 
-### Test 3 — IT B1, plan-falls-short, minimum input
+### Test 3; IT B1, plan-falls-short, minimum input
 
 Prompt:
 
@@ -255,7 +255,7 @@ Italian, B1, plan-falls-short.
 
 Expected: GPT asks one clarifying question (about topic/setting) before generating.
 
-### Test 4 — Editor follow-up
+### Test 4; Editor follow-up
 
 After test 1, send: "Cambia el nombre del cliente regular a 'Klaus'. Mantén todo lo demás." Expect: full JSON re-emitted with the renamed character in BOTH synopsis and body.
 

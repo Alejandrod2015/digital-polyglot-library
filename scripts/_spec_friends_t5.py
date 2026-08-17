@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Tema 5 (el-desahogo, Buenos Aires) — REAUTORADO 2026-07-09 sobre las historias
+# Tema 5 (el-desahogo, Buenos Aires); REAUTORADO 2026-07-09 sobre las historias
 # NARRADOR (voseo). Reglas: docs/practice-exercises-redesign.md + scripts/_EXERCISE_SPEC.md.
 # Headline en forma de diccionario; flexion en [[ ]] o en la respuesta del cloze.
 SPECS = [

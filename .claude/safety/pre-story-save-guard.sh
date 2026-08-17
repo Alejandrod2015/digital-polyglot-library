@@ -21,7 +21,11 @@ REPO_ROOT="/Users/alejandrodelcarpio/digital-polyglot-library"
 AUDIT_LOG="$REPO_ROOT/.claude/safety/audit.log"
 ALLOWED_SAVER="saveStory.ts"          # the only sanctioned content saver
 WRITE_RE='journeyStory[[:space:]]*\.[[:space:]]*(create|createMany|update|updateMany|upsert)'
-CONTENT_RE='(text|vocab)[[:space:]]*:'
+# `text: value` is the normal shape; the bracket form (`obj["text"] = …`) is the
+# same write dressed up so the grep misses it, so it counts too. The leading
+# lowercase keeps TS indexed-access TYPES out (`StoryJSON["vocab"]` is a type,
+# not an assignment).
+CONTENT_RE='((text|vocab)[[:space:]]*:|[a-z_$][A-Za-z0-9_$]*\[["'"'"'](text|vocab)["'"'"']\][[:space:]]*=)'
 # Type annotations / declarations, NOT content writes. A `text: string` in a TS
 # type, or `text: true` in a prisma select, must NOT trip the gate — only a
 # `text:`/`vocab:` assigned an actual VALUE (content) does. Audio/dialogueSpec/
@@ -31,8 +35,20 @@ TYPE_RE='(text|vocab)[[:space:]]*:[[:space:]]*(string|number|boolean|any|unknown
 EXEC_RE='(^|[^[:alnum:]/])(tsx|ts-node|node|bun|deno)([^[:alnum:]]|$)'
 # True only if there is a text:/vocab: that is a real value assignment (not a
 # type annotation or a `select:{text:true}`).
-content_write_file() { grep -E "$CONTENT_RE" "$1" 2>/dev/null | grep -vqE "$TYPE_RE"; }
-content_write_str()  { printf '%s' "$1" | grep -E "$CONTENT_RE" | grep -vqE "$TYPE_RE"; }
+
+# The grep above is a PROXY for the contract, and it is too wide: a `text:`
+# nested inside an `audioFragments` entry is the sentence that fragment
+# narrates, not the story body. So before falling back to it, look at the
+# actual write and read the FIRST-LEVEL fields of its `data:` object. Only
+# `MEDIA_ONLY` (every data: parsed, none carrying first-level text/vocab)
+# clears the gate; `CONTENT` and `UNKNOWN` fall through to the grep, so
+# anything the classifier cannot read stays blocked. Fail closed.
+FIELDS_PY="$(dirname "$0")/story-content-fields.py"
+media_only_file() { [ -f "$FIELDS_PY" ] && [ "$(/usr/bin/python3 "$FIELDS_PY" "$1" 2>/dev/null)" = "MEDIA_ONLY" ]; }
+media_only_str()  { [ -f "$FIELDS_PY" ] && [ "$(printf '%s' "$1" | /usr/bin/python3 "$FIELDS_PY" - 2>/dev/null)" = "MEDIA_ONLY" ]; }
+
+content_write_file() { media_only_file "$1" && return 1; grep -E "$CONTENT_RE" "$1" 2>/dev/null | grep -vqE "$TYPE_RE"; }
+content_write_str()  { media_only_str "$1" && return 1; printf '%s' "$1" | grep -E "$CONTENT_RE" | grep -vqE "$TYPE_RE"; }
 
 touch "$AUDIT_LOG" 2>/dev/null || true
 

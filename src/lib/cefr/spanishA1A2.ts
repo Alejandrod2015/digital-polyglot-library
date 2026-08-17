@@ -35,7 +35,11 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "yo","tú","él","ella","nosotros","nosotras","vosotros","vosotras","ellos","ellas",
   "me","te","se","nos","os","le","les","la","lo","las","los",
   "alguien","nadie","algo","nada","alguno","ninguno","todo","cada","otro","mismo",
-  "mucho","poco","más","menos","muy","tan","tanto",
+  "mucho","muchísimo","poco","más","menos","muy","tan","tanto",
+  // Interrogativos. Los acentuados faltaban por completo: "dónde" se salvaba
+  // de casualidad porque la búsqueda quita tildes y cae en la conjunción
+  // "donde", pero "adónde" no tiene esa red y salía fuera de nivel hasta en C1.
+  "dónde","adónde","cómo","cuándo","cuánto","cuál","qué","quién",
 
   // ── Time / frequency ──
   "hoy","ayer","mañana","ahora","antes","después","luego","pronto","tarde","temprano",
@@ -52,6 +56,32 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "abuelo","abuela","tío","tía","primo","prima","sobrino","sobrina",
   "marido","esposo","esposa","mujer","hombre","niño","niña","bebé",
   "amigo","amiga","novio","novia","vecino","vecina","compañero","compañera",
+  // Huecos encontrados escribiendo el A1 España (2026-08-17). Los posesivos
+  // tónicos y `seguir` son de las primeras semanas de cualquier curso, y
+  // faltaban enteros, igual que faltaban los interrogativos con tilde.
+  "mío","mía","tuyo","tuya","suyo","suya","nuestro","nuestra",
+  "dueño","dueña","seguir","máquina","borrar",
+  "parar","entonces","turno","céntimo","céntimos","ningún","ninguna",
+  "deuda","quejarse","cantidad","precio","cambio","cola","suelo",
+  "único","única","pesar","reconocer","hielo","mojado","envuelto",
+  "aguantar","proponer","andar","andando","peinar","echar","equivocarse",
+  "chica","chico","acera","fachada","portal","horario","ruido","pareja",
+  "guiso","comedor","hambre","brazo","fregona","persiana","timbre","voz",
+  "caber","sombra","balcón","guardar","aguantar","avisar","descansillo",
+  "llover","gotear","repetir","atascarse","acercar","colocar","palanca",
+  "puertecita","torcido","rueda","bolígrafo","bolsillo","grifo","enchufe",
+  "desagüe","fregadero","cristal","cinta","dormitorio","rato","subirse",
+  "basura","directo","meterse","polvo","termo","toalla","pelo",
+  "doler","bata","medicamento","instrucciones","garganta","fiebre","tos",
+  "jarabe","tragar","espejo","escalón","banco","soltar","morder","doblar",
+  "ceja","asomar","complicarse","montar","hueco","esquina","harina","canela",
+  "bandeja","receta","vinagre","asentir","batir","apagar","cartel","toldo",
+  "espesar","sonar","salmorejo","empanada","bizcocho","aceituna","verbena",
+  "chocar","insistir","añadir","traducir","boda","excusa","postre","taller",
+  "costumbre","pijama","silencio","cartera","regalo","duda","vino","prima",
+  "enorme","educado","gritar","colgar","recoger","quitar","respirar",
+  "lejano","flecha","timidez","almacén","durar","escalón","apellido","estanco",
+  "cuñada","parentesco","barandilla","mesilla","tardar","repasar","escena","detalle",
   "señor","señora","señorita","persona","gente","alguien","todos",
   "joven","mayor","adulto","abuela","abuelo","nieto","nieta",
 
@@ -100,7 +130,7 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "farmacia","librería","peluquería","banco","correo","biblioteca","museo","teatro",
   "cine","restaurante","cafetería","bar","hotel","hospital","clínica","escuela",
   "colegio","instituto","universidad","oficina","fábrica","estación","aeropuerto",
-  "puerto","playa","montaña","río","lago","mar","bosque","campo","granja",
+  "puerto","playa","montaña","monte","río","lago","mar","bosque","campo","granja",
   "iglesia","catedral","templo","castillo","torre","fuente","monumento",
   "edificio","casa","piso","apartamento","hogar","local","entrada","salida",
 
@@ -120,7 +150,7 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "visitante","sendero","senda","feria","feria artesanal","puerto",
 
   // ── Nature / weather ──
-  "sol","luna","estrella","cielo","nube","lluvia","nieve","viento","hielo","tormenta",
+  "sol","luna","estrella","cielo","nube","lluvia","nieve","niebla","viento","hielo","tormenta",
   "calor","frío","temperatura","clima","tiempo",
   "árbol","flor","hoja","planta","rama","hierba","césped","arena","piedra","roca",
   "animal","perro","gato","pájaro","gallina","vaca","caballo","cerdo","oveja",
@@ -151,7 +181,7 @@ export const SPANISH_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "abrir","cerrar","encender","apagar","conectar","desconectar","colgar","quitar","poner",
   "lavar","secar","limpiar","barrer","planchar","cocinar","calentar","enfriar","cortar",
   "pelar","mezclar","probar","servir","ordenar","arreglar","reparar","romper","romperse","caer",
-  "caerse","levantarse","sentarse","acostarse","dormir","despertar","despertarse",
+  "caerse","levantarse","sentar","sentarse","acostarse","dormir","despertar","despertarse",
   "vestirse","desvestirse","ducharse","bañarse","peinarse","afeitarse","cepillar",
   "salir","entrar","viajar","visitar","conocer","saludar","despedirse","abrazar","besar",
   "llamar","invitar","pedir","ofrecer","aceptar","rechazar","decir","contar","mentir",

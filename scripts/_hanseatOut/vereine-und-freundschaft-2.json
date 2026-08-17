@@ -1,0 +1,120 @@
+[
+  {
+    "title": "Am Millerntor wird geschrien",
+    "slug": "am-millerntor-wird-geschrien",
+    "text": "Am Millerntor drängt sich die Menge in Braun und Weiß, und die sonst so zugeknöpften Hamburger brüllen aus voller Kehle. Fiete drückt Nora einen Schal in die Hand, Merle klatscht schon im Takt mit.\n\nFiete: Willkommen bei St. Pauli. Kein Verein, eine Haltung. Hier zählt nicht der Pokal, hier zählt, für wen du singst.\n\nNora: Und der Totenkopf überall? Das wirkt eher nach Piraten als nach Fußball.\n\nMerle: Ist auch so gemeint. St. Pauli ist der Underdog, der Kiez, das linke Herz der Stadt. Der HSV ist die feine Alster, wir sind die raue Hafenkante.\n\nNora: Also spaltet ein Fußball die ganze Stadt in zwei Lager?\n\nFiete: In die schönste Art von Streit. Frag einen Hamburger nach seinem Verein, und du kennst ihn besser als nach jedem langen Gespräch.\n\nNora: Und ihr, die ihr sonst kein Wort zu viel sagt, singt hier zwei Stunden am Stück?\n\nEin Tor fällt, und die Tribüne explodiert in einem einzigen Aufschrei.\n\nMerle: Das ist es. Zwei Stunden lang darfst du hier alles rauslassen, was die Woche über drin bleibt.\n\nNora: Ich verstehe. Der Fischmarkt am Sonntag, das Stadion am Samstag. Eure Ventile für die ganze Zurückhaltung.\n\nFiete: Genau. Unter der Woche Deckel drauf, am Wochenende Dampf ablassen. Sonst hält das keiner aus.\n\nNora: Dann brülle ich jetzt einfach mit, auch ohne die Gesänge schon zu kennen.\n\nMerle: Regeln gibt es hier keine, nur Herzblut. Die Texte lernst du beim dritten Spiel von allein.",
+    "synopsis": "Im Stadion von St. Pauli sieht Nora, wie die sonst so zugeknöpften Hamburger zwei Stunden lang alles herausbrüllen.",
+    "arcType": "juxtaposition-discovery",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Menge",
+        "definition": "a crowd; a large mass of people gathered together"
+      },
+      {
+        "type": "adjective",
+        "word": "zugeknöpft",
+        "definition": "buttoned-up; reserved and unwilling to open up to others"
+      },
+      {
+        "type": "expression",
+        "word": "aus voller Kehle",
+        "definition": "at the top of one's voice; as loudly as possible"
+      },
+      {
+        "type": "noun",
+        "word": "Schal",
+        "definition": "a scarf, here worn to show which team you support"
+      },
+      {
+        "type": "expression",
+        "word": "im Takt",
+        "definition": "in time; keeping to the beat or rhythm together"
+      },
+      {
+        "type": "verb",
+        "word": "brüllen",
+        "surface": "brüllen",
+        "definition": "to bellow; to shout very loudly and forcefully"
+      },
+      {
+        "type": "noun",
+        "word": "Totenkopf",
+        "definition": "a skull emblem, the defiant symbol of the St. Pauli club"
+      },
+      {
+        "type": "noun",
+        "word": "Underdog",
+        "definition": "the underdog; the weaker side expected to lose"
+      },
+      {
+        "type": "noun",
+        "word": "Kiez",
+        "definition": "a lively city neighbourhood with its own strong character"
+      },
+      {
+        "type": "verb",
+        "word": "spalten",
+        "surface": "spaltet",
+        "definition": "to split something into opposed camps or bitterly divide it"
+      },
+      {
+        "type": "noun",
+        "word": "Hafenkante",
+        "definition": "the rough working edge of the harbour along the water"
+      },
+      {
+        "type": "noun",
+        "word": "Tribüne",
+        "definition": "the stand where spectators sit or stand at a stadium"
+      },
+      {
+        "type": "verb",
+        "word": "explodieren",
+        "surface": "explodiert",
+        "definition": "to erupt suddenly, here of a roaring, exploding crowd"
+      },
+      {
+        "type": "verb",
+        "word": "klatschen",
+        "surface": "klatscht",
+        "definition": "to clap; to applaud by striking your hands together"
+      },
+      {
+        "type": "verb",
+        "word": "rauslassen",
+        "definition": "to let something out; to release pent-up feelings freely"
+      },
+      {
+        "type": "expression",
+        "word": "Dampf ablassen",
+        "surface": "Dampf ablassen",
+        "definition": "to let off steam; to release built-up tension or frustration"
+      },
+      {
+        "type": "expression",
+        "word": "Deckel drauf",
+        "definition": "to keep a lid on it; to hold feelings firmly in"
+      },
+      {
+        "type": "verb",
+        "word": "singen",
+        "surface": "singt",
+        "definition": "to sing, here to chant the songs at a match"
+      },
+      {
+        "type": "expression",
+        "word": "am Stück",
+        "definition": "at a stretch; continuously without any break in between"
+      },
+      {
+        "type": "noun",
+        "word": "Herzblut",
+        "definition": "heart and soul; deep passion poured into something"
+      }
+    ],
+    "level": "c1",
+    "topic": "vereine-und-freundschaft",
+    "slotIndex": 2
+  }
+]

@@ -92,7 +92,7 @@ function clean(s: string): string {
 }
 
 // Conectores y palabras "abiertas" que NUNCA pueden terminar una def
-// — quedan sonando incompletas ("Salt, the basic seasoning on almost",
+//; quedan sonando incompletas ("Salt, the basic seasoning on almost",
 // "Pipe tobacco whose lingering smell can saturate"). Si el trim cae
 // sobre uno de estos, bajamos una palabra atrás hasta tocar contenido.
 const TRAILING_CONNECTORS = new Set<string>([

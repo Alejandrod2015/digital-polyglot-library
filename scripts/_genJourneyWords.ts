@@ -24,8 +24,8 @@ import { practiceVoiceId } from "../src/lib/practiceVoice";
 import { assertVoiceApproved } from "../src/lib/approvedVoices";
 
 const prisma = new PrismaClient();
-const CACHE_VERSION = "v3"; // v3: dropped dynaudnorm — must match word-tts route
-// Voice is resolved per story (the story's narrator) — see practiceVoice.ts.
+const CACHE_VERSION = "v3"; // v3: dropped dynaudnorm; must match word-tts route
+// Voice is resolved per story (the story's narrator); see practiceVoice.ts.
 // Must match what the practice page requests at runtime for the same story.
 let VOICE = "";
 const MODEL = "eleven_turbo_v2_5";
@@ -176,7 +176,7 @@ async function renderWord(word: string, apiKey: string, outDir: string): Promise
       <div class="body"><div class="lbl">${d.word} <span>${d.method}${d.ok ? ` · ${d.tries}t · ${d.dur.toFixed(2)}s` : " · FAILED"}</span></div>
       ${d.ok ? `<audio controls preload="none" src="/_word-audition/${d.file}"></audio>` : ""}</div></div>`).join("");
   const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/><title>Palabras — ${slug}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/><title>Palabras; ${slug}</title>
 <style>:root{color-scheme:dark}body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0a1424;color:#e9eef7;padding:24px}
 h1{font-size:18px;margin:0 0 4px}p.sub{color:#8ea0bd;font-size:13px;margin:0 0 18px}
 .opt{display:flex;align-items:center;gap:14px;padding:12px;margin-bottom:12px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(52,211,153,.07)}
@@ -184,7 +184,7 @@ h1{font-size:18px;margin:0 0 4px}p.sub{color:#8ea0bd;font-size:13px;margin:0 0 1
 .num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;font-weight:800;background:#1d4ed8;color:#fff}
 .body{flex:1}.lbl{font-size:15px;font-weight:700}.lbl span{font-weight:400;color:#8ea0bd;font-size:11px;margin-left:6px}audio{width:100%;margin-top:8px}
 .tip{color:#8ea0bd;font-size:13px;margin-top:16px}</style></head><body>
-<h1>Palabras finales — ${slug} (voz Narrador2, turbo+es)</h1>
+<h1>Palabras finales; ${slug} (voz Narrador2, turbo+es)</h1>
 <p class="sub">Ya cacheadas en producción. Valida: dime el número de cualquiera que suene mal y la regenero.</p>
 ${opts}<p class="tip">Responde con números solo si algo está mal.</p></body></html>`;
   writeFileSync(join(process.cwd(), "public", "_word-audition.html"), html);

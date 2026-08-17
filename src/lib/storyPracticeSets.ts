@@ -2,7 +2,7 @@
  * Build + persist a JourneyStory's practice set. As of the pool-unification
  * migration (20260518180000) this set holds BOTH:
  *   - The 10 featured exercises that show on the end-of-story screen
- *     (orderIndex 0–9, featured=true).
+ *     (orderIndex 0-9, featured=true).
  *   - The extended pool (orderIndex 10+, featured=false) used by the
  *     Practice tab when picking exercises by language.
  *

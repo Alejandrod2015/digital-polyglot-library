@@ -8,7 +8,7 @@ const T=["el-cotorreo","la-carrilla","el-chisme","la-vacilada","el-desahogo","la
   rows.sort((a:any,b:any)=>T.indexOf(a.topic)-T.indexOf(b.topic)||a.slotIndex-b.slotIndex);
   let out="";
   for(const r of rows as any[]){
-    out+=`\n===== ${r.topic} #${r.slotIndex} — "${r.title}" [${r.arcType}] =====\n${r.text}\nVOCAB: ${(r.vocab as any[]).map(v=>v.word).join(", ")}\n`;
+    out+=`\n===== ${r.topic} #${r.slotIndex}; "${r.title}" [${r.arcType}] =====\n${r.text}\nVOCAB: ${(r.vocab as any[]).map(v=>v.word).join(", ")}\n`;
   }
   fs.writeFileSync("/tmp/friends_dump.txt",out);
   console.log("wrote /tmp/friends_dump.txt", out.length, "chars");

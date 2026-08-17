@@ -18,6 +18,9 @@ export const SPANISH_B1_LEMMAS: ReadonlySet<string> = new Set([
   // Emociones / actitudes B1
   "frustración","indignación","melancolía","nostalgia","decepción","desilusión",
   "esperanza","entusiasmo","orgullo","vergüenza","culpa","celos","envidia",
+  // "promesa" ya estaba aquí pero el verbo no, así que "promete" salía fuera
+  // de nivel hasta en C1. "cualquier/cualquiera" faltaban en las cuatro listas.
+  "prometer","cualquier","cualquiera",
   "compasión","empatía","simpatía","ternura","afecto","admiración","desprecio",
   "irritado","decepcionado","emocionado","ilusionado","frustrado","ofendido","herido",
   "agradecido","arrepentido","avergonzado","celoso","envidioso","resentido",

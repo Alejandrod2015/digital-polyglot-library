@@ -35,7 +35,7 @@ const PROMPT = [
   "Setting: covered open-air market in Medellín with corrugated metal roof letting in shafts of sunlight, stacked crates of vibrant tropical fruit (oranges, mangoes, papayas), hanging bunches of fresh herbs (ruda, cidrón), and a stack of fresh arepa de choclo in the foreground.",
   "Time of day: late morning, golden warm sunlight filtering through the metal roof.",
   "Style: Hand-drawn cartoon vector illustration in the style of contemporary editorial language-learning book covers (Duolingo, Babbel, Headspace, Notion). Clean rounded shapes, gentle line work, expressive but stylized faces.",
-  "Palette: bright vivid Colombian colors — saturated turquoise, papaya orange, lime green, coral pink, sunshine yellow. NOT earthy sepia. NOT muted. Crisp, lively, alegre.",
+  "Palette: bright vivid Colombian colors; saturated turquoise, papaya orange, lime green, coral pink, sunshine yellow. NOT earthy sepia. NOT muted. Crisp, lively, alegre.",
   "Composition: 3:2 horizontal landscape, characters in middle ground, market produce filling foreground, slight bokeh on background market stalls.",
 ].join(" ");
 

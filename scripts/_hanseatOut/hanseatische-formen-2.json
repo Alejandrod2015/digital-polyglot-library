@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Überfall mit Wein",
+    "slug": "ueberfall-mit-wein",
+    "text": "Weil Nora das ewige Vertagen satt hat, steht sie unangekündigt vor Merles Tür, eine Flasche Wein in der Hand, als Beweis für spontane Lebensfreude. Merle öffnet im Jogginganzug und erstarrt.\n\nMerle: Nora? Ist etwas passiert? Bist du in Ordnung?\n\nNora: Alles gut, ich war nur in der Nähe und dachte, ich schaue spontan vorbei. Überraschung!\n\nMerle: Jetzt? Na gut, komm rein. Es ist gerade nicht besonders aufgeräumt.\n\nIm Flur stapeln sich Wäschekörbe.\n\nNora: Eine Serie läuft, dein Abendessen steht da, für eine Person. Ich störe, das sehe ich jetzt. Ich wollte nur beweisen, dass man auch mal einfach klingeln kann.\n\nMerle: Kann man. Es fühlt sich nur an, als hätte jemand die Tür zu meinem Kopf geöffnet, ohne vorher zu klopfen.\n\nNora: Entschuldige. Ich dachte, ich tue uns beiden einen Gefallen.\n\nMerle: Ich weiß. Setz dich trotzdem. Aber der Wein macht das gerade nicht leichter, ehrlich gesagt.\n\nNora: Soll ich ihn wieder mitnehmen?\n\nMerle: Lass ihn hier. Aber trink ihn ein andermal mit mir, angekündigt.\n\nSie sitzen sich gegenüber, und zum ersten Mal weiß Nora nicht, was sie sagen soll. Merle lächelt höflich, aber angespannt.\n\nNora: Ich gehe wieder, oder? Es war keine gute Idee.\n\nMerle: Ein bisschen. Ruf das nächste Mal kurz an, dann freue ich mich wirklich. Heute habe ich dich eher ertragen.\n\nNora: Das tut weh, aber es ist fair.\n\nMerle: So meine ich es nicht böse. Ich mag dich. Ich mag nur keine Überfälle.\n\nNora steht auf, lässt den Wein da und geht mit heißen Ohren die Treppe hinunter.",
+    "synopsis": "Genervt vom ewigen Terminplanen taucht Nora unangekündigt bei Merle auf, und der spontane Besuch endet in unbequemer Stille.",
+    "arcType": "reframe-turn",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "vertagen",
+        "surface": "Vertagen",
+        "definition": "to postpone; to put something off to a later day"
+      },
+      {
+        "type": "verb",
+        "word": "satthaben",
+        "surface": "satt hat",
+        "definition": "to be fed up with; to be thoroughly sick of something"
+      },
+      {
+        "type": "adjective",
+        "word": "unangekündigt",
+        "definition": "unannounced; turning up with no warning given at all beforehand"
+      },
+      {
+        "type": "adjective",
+        "word": "spontan",
+        "definition": "spontaneous; done on impulse without planning it ahead"
+      },
+      {
+        "type": "noun",
+        "word": "Lebensfreude",
+        "definition": "zest for life; joyful energy and a love of living"
+      },
+      {
+        "type": "verb",
+        "word": "beweisen",
+        "definition": "to prove; to show that something is true by demonstration"
+      },
+      {
+        "type": "expression",
+        "word": "in der Nähe",
+        "definition": "nearby; close at hand and only a short distance away"
+      },
+      {
+        "type": "verb",
+        "word": "erstarren",
+        "surface": "erstarrt",
+        "definition": "to freeze up; to go rigid with shock or surprise"
+      },
+      {
+        "type": "noun",
+        "word": "Jogginganzug",
+        "definition": "a tracksuit worn for lounging around or for exercise"
+      },
+      {
+        "type": "adjective",
+        "word": "aufgeräumt",
+        "definition": "tidy; neat, with everything put in its place"
+      },
+      {
+        "type": "noun",
+        "word": "Flur",
+        "definition": "a hallway; the entrance corridor inside a home"
+      },
+      {
+        "type": "noun",
+        "word": "Wäschekorb",
+        "surface": "Wäschekörbe",
+        "definition": "a laundry basket for carrying dirty or clean washing"
+      },
+      {
+        "type": "noun",
+        "word": "Abendessen",
+        "definition": "dinner; the main meal eaten in the evening at home"
+      },
+      {
+        "type": "verb",
+        "word": "stören",
+        "surface": "störe",
+        "definition": "to disturb; to intrude on and interrupt someone"
+      },
+      {
+        "type": "expression",
+        "word": "einen Gefallen tun",
+        "surface": "einen Gefallen",
+        "definition": "to do someone a favour; to help them out kindly"
+      },
+      {
+        "type": "adjective",
+        "word": "angespannt",
+        "definition": "tense; strained, on edge and visibly ill at ease"
+      },
+      {
+        "type": "verb",
+        "word": "ertragen",
+        "definition": "to endure; to put up with something unpleasant"
+      },
+      {
+        "type": "expression",
+        "word": "ehrlich gesagt",
+        "definition": "to be honest; speaking frankly and openly for once"
+      },
+      {
+        "type": "noun",
+        "word": "Überfall",
+        "surface": "Überfälle",
+        "definition": "an ambush; here an unwelcome, out-of-the-blue surprise visit"
+      },
+      {
+        "type": "expression",
+        "word": "heiße Ohren",
+        "surface": "heißen Ohren",
+        "definition": "burning ears; the hot flush of sudden embarrassment"
+      }
+    ],
+    "level": "c1",
+    "topic": "hanseatische-formen",
+    "slotIndex": 2
+  }
+]

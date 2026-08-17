@@ -256,6 +256,70 @@ that ALWAYS runs before any Bash command. It does two things:
    user approves by ear does the user (or Claude, once the user has said the
    approval phrase) add the voiceId.
 
+8. **Gate de guiones largos (BLOQUEANTE, 2026-08-16).** Ni `—` (em, U+2014)
+   ni `–` (en, U+2013) entran en `src/`, `content/`, `apps/mobile/`,
+   `scripts/`, `docs/` ni `public/`. El hook PreToolUse
+   `.claude/safety/pre-emdash-guard.sh` (matcher `Edit|Write|MultiEdit`)
+   BLOQUEA la escritura; el lint `npm run lint:no-emdash` revisa esos seis
+   árboles y `npm run lint:no-emdash:db` barre toda columna de texto de la
+   base de datos, que es donde nadie mira. El hook `pre-push` corre el lint
+   de archivos antes de cada push y lo aborta si encuentra alguno, así que
+   ninguno llega a un build de Vercel; tarda un segundo y no tiene variable
+   de escape.
+
+   Sustitutos: `;` para dos cláusulas, `:` cuando lo que sigue explica lo
+   anterior o glosa una etiqueta, paréntesis para un inciso, o corta la
+   oración en dos. En un rango (`10-20`, `sep-oct`) y en una celda vacía de
+   tabla, el guion normal `-`. Sin escape por variable de entorno: solo lo
+   abre una frase explícita del usuario en su último mensaje ("permite el
+   em dash", "deja el guion largo").
+
+   Fuera de alcance porque no lo escribimos nosotros: `node_modules`,
+   `src/generated`, `vendor`, los proyectos nativos de iOS y Android, los
+   entornos virtuales de Python bajo `scripts/tts/` y los modelos de whisper.
+
+   Los exentos viven en **`scripts/no-emdash-allowlist.json`**, el mismo
+   archivo que leen el lint y el hook para que no se desincronicen, y va
+   **por carácter**: necesitar el en dash dentro de una regex no exime del
+   em dash. Dos motivos válidos y ninguno más: código DETECTOR que necesita
+   el carácter como literal (el validador de historias, los pre-validadores
+   `_val*.py`, las auditorías de glosas, los `journeysTable`), y
+   `src/data/books/**`, prosa publicada cuyos tiempos de karaoke guardan
+   offsets `charStart`/`charEnd` sobre el texto, así que cualquier edición
+   que cambie la longitud desincroniza el resaltado.
+
+   WHY: la regla llevaba desde el 2026-05-03 en memoria y el único gate que
+   existía vivía dentro del validador de historias, que cubre el cuerpo de
+   `JourneyStory` y nada más. Todo lo demás derivó: el 2026-08-16 el título
+   de la pestaña del navegador decía "Traveler / Portuguese A0" con guion
+   largo, el blog acumulaba 69, los comentarios de código 103, `scripts/`
+   271, `docs/` 197, las páginas generadas de `public/` 880 y la BD seis
+   etiquetas de nivel. Una regla sin gate no es una regla.
+
+9. **Gate de temas (BLOQUEANTE, 2026-08-17).** Un tema de journey nombra el
+   dominio léxico de sus tres historias y sale de lo que los usuarios
+   ESCRIBIERON (`BetaSignup.motivation` / `.applicationReason`), no del molde
+   de un curso de principiante. `assertTopicsGrounded`
+   (`src/lib/topicEvidence.ts`) TIRA si un tema no cita, literalmente, una
+   motivación que exista en la base. El hook `.claude/safety/pre-topic-guard.sh`
+   BLOQUEA cualquier ejecución que escriba en la tabla de temas sin llamarla;
+   lee también el `.ts` invocado, no solo la línea de comando. Leer y consultar
+   temas pasa sin gate.
+
+   WHY: el 2026-08-17, montando el Friends ES/Spain A1, dos de los siete temas
+   salieron de los datos y los otros cinco del molde: el bar, la compra, los
+   horarios, la casa y la farmacia. "Chemist & Doctor" prometía un médico que
+   no aparecía en ninguna historia y "Shops & Markets" repetía dos temas que el
+   A0 del mismo idioma ya cubría. El fallo solo se ve leyendo los siete juntos,
+   y para entonces ya hay 21 historias escritas y a punto de pagar su audio.
+
+   Las reglas de NOMBRE (ampersand y no "And", **etiqueta en inglés, salvo el
+   préstamo que ya ES inglés y no tiene equivalente, como "tapas"**, sin país, sin artículo
+   inicial, 2-4 palabras, Title Case, un slug = un label global, slug derivado
+   del nombre, filas nuevas con `isUniversal: false`) siguen viviendo en
+   `project_topic_naming_rule` y `project_topic_labels_mechanics`; el gate solo
+   comprueba la EVIDENCIA, que es lo que no estaba comprobando nadie.
+
 If the guard blocks a non-push command, **DO NOT** add
 `CLAUDE_AUTHORIZED=1` on your own to bypass it. That flag is for the
 user to type, or for you ONLY after the user has said the imperative

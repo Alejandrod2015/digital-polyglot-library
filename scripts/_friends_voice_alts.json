@@ -1,0 +1,89 @@
+{
+ "mx-f": {
+  "label": "Nayeli/Oaxaca (MX F)",
+  "three": [
+   {
+    "name": "Brittney - Relaxing, Calm and Meditative",
+    "id": "pjcYQlDFKMbcOUp6F5GD",
+    "age": "young",
+    "accent": "american",
+    "clones": 299497,
+    "file": "/_friends-voicetest-alts/mx-f-1.mp3"
+   },
+   {
+    "name": "Muskaan - Friendly, Calm and Inviting",
+    "id": "xoV6iGVuOGYHLWjXhVC7",
+    "age": "middle_aged",
+    "accent": "standard",
+    "clones": 208316,
+    "file": "/_friends-voicetest-alts/mx-f-2.mp3"
+   },
+   {
+    "name": "Marina - Soft, Clear and Warm",
+    "id": "ymDCYd8puC7gYjxIamPt",
+    "age": "middle_aged",
+    "accent": "standard",
+    "clones": 170748,
+    "file": "/_friends-voicetest-alts/mx-f-3.mp3"
+   }
+  ]
+ },
+ "ar-f": {
+  "label": "Flor/BsAs (AR F)",
+  "three": [
+   {
+    "name": "Valeria - Cheerful, Youthful, Catchy",
+    "id": "9oPKasc15pfAbMr7N6Gs",
+    "age": "middle_aged",
+    "accent": "argentine",
+    "clones": 106204,
+    "file": "/_friends-voicetest-alts/ar-f-1.mp3"
+   },
+   {
+    "name": "Ghizlane - Smooth, Distinctive and Calm",
+    "id": "u0TsaWvt0v8migutHM3M",
+    "age": "middle_aged",
+    "accent": "modern standard",
+    "clones": 103469,
+    "file": "/_friends-voicetest-alts/ar-f-2.mp3"
+   },
+   {
+    "name": "Sana - Calm, Soft and Honest",
+    "id": "mRdG9GYEjJmIzqbYTidv",
+    "age": "middle_aged",
+    "accent": "modern standard",
+    "clones": 88818,
+    "file": "/_friends-voicetest-alts/ar-f-3.mp3"
+   }
+  ]
+ },
+ "cl-m": {
+  "label": "Nico/Chile (CL M)",
+  "three": [
+   {
+    "name": "Cristian Cornejo - Spanish Chilean",
+    "id": "ClNifCEVq1smkl4M3aTk",
+    "age": "middle_aged",
+    "accent": "chilean",
+    "clones": 12880,
+    "file": "/_friends-voicetest-alts/cl-m-1.mp3"
+   },
+   {
+    "name": "Mateo - Calm, Neutral and Assured",
+    "id": "9ZVfdvBemUaGEWZgCiv0",
+    "age": "middle_aged",
+    "accent": "chilean",
+    "clones": 4356,
+    "file": "/_friends-voicetest-alts/cl-m-2.mp3"
+   },
+   {
+    "name": "Edgar - Rich, Serious and Steady",
+    "id": "6ZDFxWiAykFxCoe683WK",
+    "age": "middle_aged",
+    "accent": "chilean",
+    "clones": 2637,
+    "file": "/_friends-voicetest-alts/cl-m-3.mp3"
+   }
+  ]
+ }
+}

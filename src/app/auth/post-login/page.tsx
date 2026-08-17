@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 // client component. That made the whole login flow depend on hydration: if the
 // client bundle fails, is slow, or throws anywhere up the tree, the user is
 // left on an empty navy screen with no way out and no error. It happened, and
-// the server log showed the tell — a 200 on /auth/post-login and no follow-up
+// the server log showed the tell; a 200 on /auth/post-login and no follow-up
 // GET / at all.
 //
 // A redirect issued here reaches the browser as a real navigation before any

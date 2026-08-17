@@ -28,7 +28,7 @@ type Props = {
   onTapStats?: () => void;
   /** Called when the share button is tapped (copies the journey's stable URL). */
   onShare?: () => void;
-  /** True right after a successful copy — flips the share icon to a check. */
+  /** True right after a successful copy; flips the share icon to a check. */
   shareCopied?: boolean;
 };
 

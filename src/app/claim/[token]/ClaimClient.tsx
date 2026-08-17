@@ -46,7 +46,7 @@ export default function ClaimClient({ token }: { token: string }) {
 
         // The delivery failed but the purchase is intact: say so plainly and
         // offer a retry. Never present this as success, and never as a used
-        // link — both readings push the buyer to pay again.
+        // link; both readings push the buyer to pay again.
         if (res.status === 503 || data?.code === "notDelivered" || data?.code === "serverError") {
           setState({
             status: "notDelivered",
@@ -74,7 +74,7 @@ export default function ClaimClient({ token }: { token: string }) {
 
         // Signed-out visitor: the API did NOT redeem anything (it must never
         // mutate the token without a session). Prompt sign-in instead of
-        // showing a misleading "Books added" — after auth they land back here
+        // showing a misleading "Books added"; after auth they land back here
         // and the books are granted.
         if (data?.requiresAuth) {
           setState({

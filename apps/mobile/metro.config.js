@@ -36,7 +36,7 @@ config.resolver.extraNodeModules = {
   "@clerk/shared/error": path.resolve(projectNodeModules, "@clerk/shared/error"),
 };
 
-// Block real react-dom from workspace root — force shim usage
+// Block real react-dom from workspace root; force shim usage
 config.resolver.resolveRequest = (context, moduleName, platform) => {
   if (
     moduleName === "react-dom" ||

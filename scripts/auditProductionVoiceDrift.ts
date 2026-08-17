@@ -103,7 +103,7 @@ async function main() {
     }
   }
 
-  console.log("== UNCATALOGUED — en producción pero fuera del catálogo (corrige catálogo) ==");
+  console.log("== UNCATALOGUED; en producción pero fuera del catálogo (corrige catálogo) ==");
   if (uncatalogued.length === 0) {
     console.log("  (clean)");
   } else {
@@ -113,7 +113,7 @@ async function main() {
     }
   }
 
-  console.log("\n== DISCARDED-BUT-CASTED — voz rechazada sigue casteada (regen con reemplazo) ==");
+  console.log("\n== DISCARDED-BUT-CASTED; voz rechazada sigue casteada (regen con reemplazo) ==");
   if (discardedButCasted.length === 0) {
     console.log("  (clean)");
   } else {
@@ -124,7 +124,7 @@ async function main() {
     }
   }
 
-  console.log("\n== UNVERIFIED-CASTED — casteada pero accent sin auditar (escuchar antes de regen) ==");
+  console.log("\n== UNVERIFIED-CASTED; casteada pero accent sin auditar (escuchar antes de regen) ==");
   if (unverifiedCasted.length === 0) {
     console.log("  (clean)");
   } else {

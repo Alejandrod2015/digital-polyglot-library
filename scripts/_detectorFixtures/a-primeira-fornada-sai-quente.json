@@ -1,0 +1,2033 @@
+{
+ "slug": "a-primeira-fornada-sai-quente",
+ "url": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/generated/audio/A_primeira_fornada_sai_quente_multivoice_1786552177004_slow1786552253137.mp3",
+ "text": "A padaria abre às seis e meia, e a rua ainda está escura. Caio é o primeiro cliente do dia e senta na mesa da janela. O rádio toca baixo atrás do balcão.\n\nO padeiro tira uma bandeja do forno e o cheiro toma a sala. Os pães de queijo saem redondos, dourados e cheios de ar quente. Caio pede dois e espera de pé, sem pressa.\n\nO primeiro pão queima a ponta da língua dele. Ele sopra o segundo e espera meio minuto antes de morder. A casca estala e o recheio quase escorre.\n\nUm ônibus vazio passa na rua e ninguém desce. O padeiro liga a segunda fornada e assobia a mesma música do rádio. Caio come sem pressa, porque não tem para onde ir.\n\nA cidade acorda meia hora depois.",
+ "todas": [
+  [
+   {
+    "text": "A",
+    "start": 0.059,
+    "end": 0.14,
+    "type": "word",
+    "logprob": -0.00005018585216021165
+   },
+   {
+    "text": "primeira",
+    "start": 0.179,
+    "end": 0.399,
+    "type": "word",
+    "logprob": -0.00009131014667218551
+   },
+   {
+    "text": "fornada",
+    "start": 0.519,
+    "end": 0.939,
+    "type": "word",
+    "logprob": -0.00028083929119507696
+   },
+   {
+    "text": "sai",
+    "start": 1.039,
+    "end": 1.159,
+    "type": "word",
+    "logprob": -0.000006794906312279636
+   },
+   {
+    "text": "quente.",
+    "start": 1.199,
+    "end": 1.599,
+    "type": "word",
+    "logprob": -0.000011392824100247318
+   },
+   {
+    "text": "A",
+    "start": 2.279,
+    "end": 2.319,
+    "type": "word",
+    "logprob": -0.000013589766240329482
+   },
+   {
+    "text": "padaria",
+    "start": 2.399,
+    "end": 2.819,
+    "type": "word",
+    "logprob": -0.000011597273052237661
+   },
+   {
+    "text": "abre",
+    "start": 2.899,
+    "end": 3.059,
+    "type": "word",
+    "logprob": -0.00007378782902378589
+   },
+   {
+    "text": "às",
+    "start": 3.099,
+    "end": 3.199,
+    "type": "word",
+    "logprob": -0.00005936446541454643
+   },
+   {
+    "text": "6h30",
+    "start": 3.439,
+    "end": 3.919,
+    "type": "word",
+    "logprob": -0.07307967566884166
+   },
+   {
+    "text": "e",
+    "start": 4.259,
+    "end": 4.299,
+    "type": "word",
+    "logprob": -0.0000358813522325363
+   },
+   {
+    "text": "a",
+    "start": 4.36,
+    "end": 4.38,
+    "type": "word",
+    "logprob": -0.000001311301275563892
+   },
+   {
+    "text": "rua",
+    "start": 4.46,
+    "end": 4.599,
+    "type": "word",
+    "logprob": -0.07915157824754715
+   },
+   {
+    "text": "na",
+    "start": 4.639,
+    "end": 4.699,
+    "type": "word",
+    "logprob": -0.6246389150619507
+   },
+   {
+    "text": "Osirzoneu",
+    "start": 4.719,
+    "end": 5.38,
+    "type": "word",
+    "logprob": -0.9404893384449274
+   },
+   {
+    "text": "ainda",
+    "start": 5.44,
+    "end": 5.579,
+    "type": "word",
+    "logprob": -7.152555099310121e-7
+   },
+   {
+    "text": "está",
+    "start": 5.639,
+    "end": 5.819,
+    "type": "word",
+    "logprob": -0.000002264974000354414
+   },
+   {
+    "text": "escura.",
+    "start": 5.859,
+    "end": 6.319,
+    "type": "word",
+    "logprob": -0.00003363309458239071
+   },
+   {
+    "text": "Caio",
+    "start": 6.819,
+    "end": 7.039,
+    "type": "word",
+    "logprob": -0.0002861416019186436
+   },
+   {
+    "text": "é",
+    "start": 7.059,
+    "end": 7.079,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "o",
+    "start": 7.139,
+    "end": 7.159,
+    "type": "word",
+    "logprob": -4.768370445162873e-7
+   },
+   {
+    "text": "primeiro",
+    "start": 7.199,
+    "end": 7.5,
+    "type": "word",
+    "logprob": -0.000027417760065873154
+   },
+   {
+    "text": "cliente",
+    "start": 7.559,
+    "end": 7.839,
+    "type": "word",
+    "logprob": -0.000003933898824470816
+   },
+   {
+    "text": "do",
+    "start": 7.919,
+    "end": 8.019,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "dia",
+    "start": 8.099,
+    "end": 8.239,
+    "type": "word",
+    "logprob": -0.000010371154530730564
+   },
+   {
+    "text": "e",
+    "start": 8.279,
+    "end": 8.359,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "senta",
+    "start": 8.38,
+    "end": 8.639,
+    "type": "word",
+    "logprob": -0.000021266654948703943
+   },
+   {
+    "text": "na",
+    "start": 8.699,
+    "end": 8.779,
+    "type": "word",
+    "logprob": -0.0000010728830375228426
+   },
+   {
+    "text": "mesa",
+    "start": 8.819,
+    "end": 9.019,
+    "type": "word",
+    "logprob": -0.000011086402082582936
+   },
+   {
+    "text": "da",
+    "start": 9.079,
+    "end": 9.119,
+    "type": "word",
+    "logprob": -2.3841855067985307e-7
+   },
+   {
+    "text": "janela.",
+    "start": 9.22,
+    "end": 9.679,
+    "type": "word",
+    "logprob": -0.000004393703940357747
+   },
+   {
+    "text": "O",
+    "start": 10.139,
+    "end": 10.179,
+    "type": "word",
+    "logprob": -0.000002264974000354414
+   },
+   {
+    "text": "rádio",
+    "start": 10.279,
+    "end": 10.5,
+    "type": "word",
+    "logprob": -0.000008487657737532572
+   },
+   {
+    "text": "toca",
+    "start": 10.579,
+    "end": 10.84,
+    "type": "word",
+    "logprob": -0.0000046491513785440475
+   },
+   {
+    "text": "baixo",
+    "start": 10.88,
+    "end": 11.159,
+    "type": "word",
+    "logprob": -0.00018416139937471598
+   },
+   {
+    "text": "atrás",
+    "start": 11.199,
+    "end": 11.479,
+    "type": "word",
+    "logprob": -0.00009011816291604191
+   },
+   {
+    "text": "do",
+    "start": 11.519,
+    "end": 11.559,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "balcão.",
+    "start": 11.619,
+    "end": 12.219,
+    "type": "word",
+    "logprob": -0.000026667135362653687
+   },
+   {
+    "text": "O",
+    "start": 12.859,
+    "end": 12.92,
+    "type": "word",
+    "logprob": -0.0000069141146923357155
+   },
+   {
+    "text": "padeiro",
+    "start": 12.979,
+    "end": 13.299,
+    "type": "word",
+    "logprob": -0.00002852438143463587
+   },
+   {
+    "text": "tira",
+    "start": 13.38,
+    "end": 13.479,
+    "type": "word",
+    "logprob": -0.000032782016205601394
+   },
+   {
+    "text": "uma",
+    "start": 13.519,
+    "end": 13.619,
+    "type": "word",
+    "logprob": -0.000002264974000354414
+   },
+   {
+    "text": "bandeja",
+    "start": 13.679,
+    "end": 14.039,
+    "type": "word",
+    "logprob": -0.0008796160109341145
+   },
+   {
+    "text": "do",
+    "start": 14.099,
+    "end": 14.219,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "forno",
+    "start": 14.299,
+    "end": 14.579,
+    "type": "word",
+    "logprob": -0.000005006777428206988
+   },
+   {
+    "text": "e",
+    "start": 14.839,
+    "end": 14.859,
+    "type": "word",
+    "logprob": -3.576278118089249e-7
+   },
+   {
+    "text": "o",
+    "start": 14.92,
+    "end": 14.939,
+    "type": "word",
+    "logprob": -1.1920928244535389e-7
+   },
+   {
+    "text": "cheiro",
+    "start": 15.059,
+    "end": 15.319,
+    "type": "word",
+    "logprob": -0.000005662412519313875
+   },
+   {
+    "text": "toma",
+    "start": 15.439,
+    "end": 15.639,
+    "type": "word",
+    "logprob": -0.000019311717551317997
+   },
+   {
+    "text": "a",
+    "start": 15.659,
+    "end": 15.779,
+    "type": "word",
+    "logprob": -3.576278118089249e-7
+   },
+   {
+    "text": "sala.",
+    "start": 15.859,
+    "end": 16.199,
+    "type": "word",
+    "logprob": -0.0000029563849238911644
+   },
+   {
+    "text": "Os",
+    "start": 17.02,
+    "end": 17.139,
+    "type": "word",
+    "logprob": -0.000009417489309271332
+   },
+   {
+    "text": "pães",
+    "start": 17.219,
+    "end": 17.399,
+    "type": "word",
+    "logprob": -0.0004758815775574021
+   },
+   {
+    "text": "de",
+    "start": 17.44,
+    "end": 17.539,
+    "type": "word",
+    "logprob": -2.3841855067985307e-7
+   },
+   {
+    "text": "queijo",
+    "start": 17.6,
+    "end": 17.979,
+    "type": "word",
+    "logprob": -0.000025033452857314842
+   },
+   {
+    "text": "saem",
+    "start": 18.059,
+    "end": 18.239,
+    "type": "word",
+    "logprob": -0.0000011920917444285806
+   },
+   {
+    "text": "redondos,",
+    "start": 18.299,
+    "end": 18.979,
+    "type": "word",
+    "logprob": -0.00008151928138981172
+   },
+   {
+    "text": "dourados",
+    "start": 19.219,
+    "end": 19.859,
+    "type": "word",
+    "logprob": -0.000006079643412704172
+   },
+   {
+    "text": "e",
+    "start": 20.039,
+    "end": 20.079,
+    "type": "word",
+    "logprob": -5.960462772236497e-7
+   },
+   {
+    "text": "cheios",
+    "start": 20.219,
+    "end": 20.539,
+    "type": "word",
+    "logprob": -0.00006192730324983131
+   },
+   {
+    "text": "de",
+    "start": 20.579,
+    "end": 20.639,
+    "type": "word",
+    "logprob": -0.000002264974000354414
+   },
+   {
+    "text": "ar",
+    "start": 20.68,
+    "end": 20.799,
+    "type": "word",
+    "logprob": -0.0000011920922133867862
+   },
+   {
+    "text": "quente.",
+    "start": 20.859,
+    "end": 21.299,
+    "type": "word",
+    "logprob": -7.663451323683798e-7
+   },
+   {
+    "text": "Caio",
+    "start": 21.899,
+    "end": 22.159,
+    "type": "word",
+    "logprob": -0.000015496981859541847
+   },
+   {
+    "text": "pede",
+    "start": 22.239,
+    "end": 22.539,
+    "type": "word",
+    "logprob": -0.000015735502529423684
+   },
+   {
+    "text": "dois",
+    "start": 22.619,
+    "end": 22.879,
+    "type": "word",
+    "logprob": -0.000050424259825376794
+   },
+   {
+    "text": "e",
+    "start": 22.92,
+    "end": 22.959,
+    "type": "word",
+    "logprob": -4.768370445162873e-7
+   },
+   {
+    "text": "espera",
+    "start": 23.039,
+    "end": 23.319,
+    "type": "word",
+    "logprob": -0.000025510462364763953
+   },
+   {
+    "text": "de",
+    "start": 23.379,
+    "end": 23.5,
+    "type": "word",
+    "logprob": -7.152555099310121e-7
+   },
+   {
+    "text": "pé,",
+    "start": 23.559,
+    "end": 23.76,
+    "type": "word",
+    "logprob": -0.000015536770471650623
+   },
+   {
+    "text": "sem",
+    "start": 24,
+    "end": 24.159,
+    "type": "word",
+    "logprob": -3.576278118089249e-7
+   },
+   {
+    "text": "pressa.",
+    "start": 24.219,
+    "end": 24.619,
+    "type": "word",
+    "logprob": -0.00007085789443956563
+   },
+   {
+    "text": "O",
+    "start": 25.379,
+    "end": 25.459,
+    "type": "word",
+    "logprob": -0.000003576272320060525
+   },
+   {
+    "text": "primeiro",
+    "start": 25.519,
+    "end": 25.899,
+    "type": "word",
+    "logprob": -9.536738616588991e-7
+   },
+   {
+    "text": "pão",
+    "start": 26.079,
+    "end": 26.299,
+    "type": "word",
+    "logprob": -0.0000670320484914555
+   },
+   {
+    "text": "queima",
+    "start": 26.519,
+    "end": 26.739,
+    "type": "word",
+    "logprob": -0.00001180158858460345
+   },
+   {
+    "text": "a",
+    "start": 26.76,
+    "end": 26.879,
+    "type": "word",
+    "logprob": -1.1920928244535389e-7
+   },
+   {
+    "text": "ponta",
+    "start": 26.939,
+    "end": 27.219,
+    "type": "word",
+    "logprob": -0.0005782897584140301
+   },
+   {
+    "text": "da",
+    "start": 27.26,
+    "end": 27.319,
+    "type": "word",
+    "logprob": -0.000003576272320060525
+   },
+   {
+    "text": "língua",
+    "start": 27.399,
+    "end": 27.639,
+    "type": "word",
+    "logprob": -0.000008821448318485636
+   },
+   {
+    "text": "dele.",
+    "start": 27.699,
+    "end": 28.019,
+    "type": "word",
+    "logprob": -9.298320037487428e-7
+   },
+   {
+    "text": "Ele",
+    "start": 28.619,
+    "end": 28.739,
+    "type": "word",
+    "logprob": -0.000004172316494077677
+   },
+   {
+    "text": "sopra",
+    "start": 28.92,
+    "end": 29.199,
+    "type": "word",
+    "logprob": -0.0031684457790106535
+   },
+   {
+    "text": "o",
+    "start": 29.239,
+    "end": 29.299,
+    "type": "word",
+    "logprob": -2.3841855067985307e-7
+   },
+   {
+    "text": "segundo",
+    "start": 29.379,
+    "end": 29.779,
+    "type": "word",
+    "logprob": -0.0000034570634852570947
+   },
+   {
+    "text": "e",
+    "start": 29.819,
+    "end": 29.84,
+    "type": "word",
+    "logprob": -3.576278118089249e-7
+   },
+   {
+    "text": "espera",
+    "start": 29.959,
+    "end": 30.379,
+    "type": "word",
+    "logprob": -0.00003755022044060752
+   },
+   {
+    "text": "meio",
+    "start": 30.459,
+    "end": 30.659,
+    "type": "word",
+    "logprob": -0.0000867805938469246
+   },
+   {
+    "text": "minuto",
+    "start": 30.719,
+    "end": 31.059,
+    "type": "word",
+    "logprob": -0.0000033378546504536644
+   },
+   {
+    "text": "antes",
+    "start": 31.119,
+    "end": 31.26,
+    "type": "word",
+    "logprob": -0.0000027418097943154862
+   },
+   {
+    "text": "de",
+    "start": 31.319,
+    "end": 31.359,
+    "type": "word",
+    "logprob": -0.0000017881377516459906
+   },
+   {
+    "text": "morder.",
+    "start": 31.42,
+    "end": 31.839,
+    "type": "word",
+    "logprob": -0.0002528494838348446
+   },
+   {
+    "text": "A",
+    "start": 32.739,
+    "end": 32.839,
+    "type": "word",
+    "logprob": -0.000015020257706055418
+   },
+   {
+    "text": "casca",
+    "start": 32.919,
+    "end": 33.2,
+    "type": "word",
+    "logprob": -0.000007581666523037711
+   },
+   {
+    "text": "estala",
+    "start": 33.299,
+    "end": 33.779,
+    "type": "word",
+    "logprob": -0.00029654017271241173
+   },
+   {
+    "text": "e",
+    "start": 34.04,
+    "end": 34.059,
+    "type": "word",
+    "logprob": -1.1920928244535389e-7
+   },
+   {
+    "text": "o",
+    "start": 34.099,
+    "end": 34.119,
+    "type": "word",
+    "logprob": -3.576278118089249e-7
+   },
+   {
+    "text": "recheio",
+    "start": 34.18,
+    "end": 34.619,
+    "type": "word",
+    "logprob": -0.000013351237717935354
+   },
+   {
+    "text": "quase",
+    "start": 34.7,
+    "end": 34.979,
+    "type": "word",
+    "logprob": -0.0000016689286894688848
+   },
+   {
+    "text": "escorre.",
+    "start": 35.02,
+    "end": 35.579,
+    "type": "word",
+    "logprob": -0.0002248182134110266
+   },
+   {
+    "text": "Um",
+    "start": 36.459,
+    "end": 36.52,
+    "type": "word",
+    "logprob": -0.000011205610462639015
+   },
+   {
+    "text": "ônibus",
+    "start": 36.639,
+    "end": 36.959,
+    "type": "word",
+    "logprob": -0.000015735502529423684
+   },
+   {
+    "text": "vazio",
+    "start": 37.04,
+    "end": 37.519,
+    "type": "word",
+    "logprob": -3.576278118089249e-7
+   },
+   {
+    "text": "passa",
+    "start": 37.579,
+    "end": 37.84,
+    "type": "word",
+    "logprob": -0.00001585470999998506
+   },
+   {
+    "text": "na",
+    "start": 37.919,
+    "end": 38,
+    "type": "word",
+    "logprob": -7.152555099310121e-7
+   },
+   {
+    "text": "rua",
+    "start": 38.079,
+    "end": 38.18,
+    "type": "word",
+    "logprob": -0.000005602820692729438
+   },
+   {
+    "text": "e",
+    "start": 38.2,
+    "end": 38.239,
+    "type": "word",
+    "logprob": -5.960462772236497e-7
+   },
+   {
+    "text": "ninguém",
+    "start": 38.279,
+    "end": 38.52,
+    "type": "word",
+    "logprob": -0.0000015497195136049413
+   },
+   {
+    "text": "desce.",
+    "start": 38.599,
+    "end": 39,
+    "type": "word",
+    "logprob": -0.0000029404876139930516
+   },
+   {
+    "text": "O",
+    "start": 40.04,
+    "end": 40.159,
+    "type": "word",
+    "logprob": -0.000006079655122448457
+   },
+   {
+    "text": "padeiro",
+    "start": 40.219,
+    "end": 40.68,
+    "type": "word",
+    "logprob": -0.000023517811679799445
+   },
+   {
+    "text": "liga",
+    "start": 40.759,
+    "end": 40.919,
+    "type": "word",
+    "logprob": -0.000005125986263010418
+   },
+   {
+    "text": "a",
+    "start": 40.939,
+    "end": 41.039,
+    "type": "word",
+    "logprob": -1.1920928244535389e-7
+   },
+   {
+    "text": "segunda",
+    "start": 41.099,
+    "end": 41.479,
+    "type": "word",
+    "logprob": -0.000004410734163684538
+   },
+   {
+    "text": "fornada",
+    "start": 41.54,
+    "end": 42.34,
+    "type": "word",
+    "logprob": -0.000219932923601261
+   },
+   {
+    "text": "e",
+    "start": 42.399,
+    "end": 42.439,
+    "type": "word",
+    "logprob": -1.1920928244535389e-7
+   },
+   {
+    "text": "assobia",
+    "start": 42.459,
+    "end": 43.159,
+    "type": "word",
+    "logprob": -0.0008012875498804663
+   },
+   {
+    "text": "a",
+    "start": 43.239,
+    "end": 43.339,
+    "type": "word",
+    "logprob": -0.0000033378546504536644
+   },
+   {
+    "text": "mesma",
+    "start": 43.399,
+    "end": 43.7,
+    "type": "word",
+    "logprob": -0.0000019073468138230965
+   },
+   {
+    "text": "música",
+    "start": 43.819,
+    "end": 44.139,
+    "type": "word",
+    "logprob": -0.000004887569048150908
+   },
+   {
+    "text": "do",
+    "start": 44.219,
+    "end": 44.299,
+    "type": "word",
+    "logprob": -0.0000020265558760002023
+   },
+   {
+    "text": "rádio.",
+    "start": 44.34,
+    "end": 44.719,
+    "type": "word",
+    "logprob": -0.000004172314011915053
+   },
+   {
+    "text": "Caio",
+    "start": 45.36,
+    "end": 45.939,
+    "type": "word",
+    "logprob": -0.000006377661350143171
+   },
+   {
+    "text": "come",
+    "start": 46,
+    "end": 46.239,
+    "type": "word",
+    "logprob": -0.00002074220174108632
+   },
+   {
+    "text": "sem",
+    "start": 46.279,
+    "end": 46.479,
+    "type": "word",
+    "logprob": -4.768370445162873e-7
+   },
+   {
+    "text": "pressa",
+    "start": 46.5,
+    "end": 46.86,
+    "type": "word",
+    "logprob": -0.00005016573292474883
+   },
+   {
+    "text": "porque",
+    "start": 46.899,
+    "end": 47.159,
+    "type": "word",
+    "logprob": -0.005971093196421862
+   },
+   {
+    "text": "não",
+    "start": 47.219,
+    "end": 47.36,
+    "type": "word",
+    "logprob": -2.3841855067985307e-7
+   },
+   {
+    "text": "tem",
+    "start": 47.399,
+    "end": 47.52,
+    "type": "word",
+    "logprob": -0.000006318072337307967
+   },
+   {
+    "text": "pra",
+    "start": 47.559,
+    "end": 47.659,
+    "type": "word",
+    "logprob": -0.00014006110723130405
+   },
+   {
+    "text": "onde",
+    "start": 47.719,
+    "end": 47.919,
+    "type": "word",
+    "logprob": -0.000019311717551317997
+   },
+   {
+    "text": "ir.",
+    "start": 48,
+    "end": 48.159,
+    "type": "word",
+    "logprob": -9.934100617670083e-7
+   },
+   {
+    "text": "A",
+    "start": 48.959,
+    "end": 48.979,
+    "type": "word",
+    "logprob": -0.000010609570381348021
+   },
+   {
+    "text": "cidade",
+    "start": 49.099,
+    "end": 49.36,
+    "type": "word",
+    "logprob": -0.000004768360213347478
+   },
+   {
+    "text": "acorda",
+    "start": 49.459,
+    "end": 49.779,
+    "type": "word",
+    "logprob": -0.000011483758195633223
+   },
+   {
+    "text": "meia",
+    "start": 49.84,
+    "end": 50.039,
+    "type": "word",
+    "logprob": -0.000007152531907195225
+   },
+   {
+    "text": "hora",
+    "start": 50.079,
+    "end": 50.259,
+    "type": "word",
+    "logprob": -0.000006198863957251888
+   },
+   {
+    "text": "depois",
+    "start": 50.299,
+    "end": 50.74,
+    "type": "word",
+    "logprob": -0.0000036954811548639555
+   }
+  ],
+  [
+   {
+    "text": "A",
+    "start": 0.059,
+    "end": 0.14,
+    "type": "word",
+    "logprob": -0.000015616295058862306
+   },
+   {
+    "text": "primeira",
+    "start": 0.179,
+    "end": 0.399,
+    "type": "word",
+    "logprob": -0.00014935807848814875
+   },
+   {
+    "text": "fornada",
+    "start": 0.519,
+    "end": 0.939,
+    "type": "word",
+    "logprob": -0.00018460837391184474
+   },
+   {
+    "text": "sai",
+    "start": 1.039,
+    "end": 1.159,
+    "type": "word",
+    "logprob": -0.0000084638240878121
+   },
+   {
+    "text": "quente.",
+    "start": 1.199,
+    "end": 1.599,
+    "type": "word",
+    "logprob": -0.000006999258922795499
+   },
+   {
+    "text": "A",
+    "start": 2.279,
+    "end": 2.319,
+    "type": "word",
+    "logprob": -0.000007271740287251305
+   },
+   {
+    "text": "padaria",
+    "start": 2.399,
+    "end": 2.819,
+    "type": "word",
+    "logprob": -0.000010013513019657694
+   },
+   {
+    "text": "abre",
+    "start": 2.899,
+    "end": 3.059,
+    "type": "word",
+    "logprob": -0.00005578839045483619
+   },
+   {
+    "text": "às",
+    "start": 3.099,
+    "end": 3.199,
+    "type": "word",
+    "logprob": -0.000032782016205601394
+   },
+   {
+    "text": "6h30",
+    "start": 3.439,
+    "end": 3.919,
+    "type": "word",
+    "logprob": -0.04773152200504427
+   },
+   {
+    "text": "e",
+    "start": 4.259,
+    "end": 4.299,
+    "type": "word",
+    "logprob": -0.00001966933996300213
+   },
+   {
+    "text": "a",
+    "start": 4.36,
+    "end": 4.38,
+    "type": "word",
+    "logprob": -0.000005125986263010418
+   },
+   {
+    "text": "rua",
+    "start": 4.46,
+    "end": 4.599,
+    "type": "word",
+    "logprob": -0.07009561359882355
+   },
+   {
+    "text": "na",
+    "start": 4.639,
+    "end": 4.699,
+    "type": "word",
+    "logprob": -0.7126742601394653
+   },
+   {
+    "text": "Osirzoneu",
+    "start": 4.719,
+    "end": 5.38,
+    "type": "word",
+    "logprob": -0.7901071806419269
+   },
+   {
+    "text": "ainda",
+    "start": 5.44,
+    "end": 5.579,
+    "type": "word",
+    "logprob": -4.768370445162873e-7
+   },
+   {
+    "text": "está",
+    "start": 5.639,
+    "end": 5.819,
+    "type": "word",
+    "logprob": -0.0000029802276912960224
+   },
+   {
+    "text": "escura.",
+    "start": 5.859,
+    "end": 6.319,
+    "type": "word",
+    "logprob": -0.000021610550025538293
+   },
+   {
+    "text": "Caio",
+    "start": 6.819,
+    "end": 7.039,
+    "type": "word",
+    "logprob": -0.0002286527396790916
+   },
+   {
+    "text": "é",
+    "start": 7.059,
+    "end": 7.079,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "o",
+    "start": 7.139,
+    "end": 7.159,
+    "type": "word",
+    "logprob": -9.536738616588991e-7
+   },
+   {
+    "text": "primeiro",
+    "start": 7.199,
+    "end": 7.5,
+    "type": "word",
+    "logprob": -0.000020265373677830212
+   },
+   {
+    "text": "cliente",
+    "start": 7.559,
+    "end": 7.839,
+    "type": "word",
+    "logprob": -0.000004768360213347478
+   },
+   {
+    "text": "do",
+    "start": 7.919,
+    "end": 8.019,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "dia",
+    "start": 8.099,
+    "end": 8.239,
+    "type": "word",
+    "logprob": -0.000007152531907195225
+   },
+   {
+    "text": "e",
+    "start": 8.279,
+    "end": 8.359,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "senta",
+    "start": 8.38,
+    "end": 8.639,
+    "type": "word",
+    "logprob": -0.000018787162844091654
+   },
+   {
+    "text": "na",
+    "start": 8.699,
+    "end": 8.779,
+    "type": "word",
+    "logprob": -3.576278118089249e-7
+   },
+   {
+    "text": "mesa",
+    "start": 8.819,
+    "end": 9.019,
+    "type": "word",
+    "logprob": -0.000005364403477869928
+   },
+   {
+    "text": "da",
+    "start": 9.079,
+    "end": 9.14,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "janela.",
+    "start": 9.22,
+    "end": 9.619,
+    "type": "word",
+    "logprob": -0.000004564001090199911
+   },
+   {
+    "text": "O",
+    "start": 10.139,
+    "end": 10.179,
+    "type": "word",
+    "logprob": -0.000001311301275563892
+   },
+   {
+    "text": "rádio",
+    "start": 10.279,
+    "end": 10.5,
+    "type": "word",
+    "logprob": -0.000008821439399753217
+   },
+   {
+    "text": "toca",
+    "start": 10.579,
+    "end": 10.84,
+    "type": "word",
+    "logprob": -0.000004291525328881107
+   },
+   {
+    "text": "baixo",
+    "start": 10.88,
+    "end": 11.159,
+    "type": "word",
+    "logprob": -0.00014435203047469258
+   },
+   {
+    "text": "atrás",
+    "start": 11.199,
+    "end": 11.479,
+    "type": "word",
+    "logprob": -0.00014184899919200689
+   },
+   {
+    "text": "do",
+    "start": 11.519,
+    "end": 11.559,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "balcão.",
+    "start": 11.619,
+    "end": 12.219,
+    "type": "word",
+    "logprob": -0.000016348056793244075
+   },
+   {
+    "text": "O",
+    "start": 12.859,
+    "end": 12.92,
+    "type": "word",
+    "logprob": -0.000004172316494077677
+   },
+   {
+    "text": "padeiro",
+    "start": 12.979,
+    "end": 13.299,
+    "type": "word",
+    "logprob": -0.000028473291763475572
+   },
+   {
+    "text": "tira",
+    "start": 13.38,
+    "end": 13.479,
+    "type": "word",
+    "logprob": -0.00002109982233378105
+   },
+   {
+    "text": "uma",
+    "start": 13.519,
+    "end": 13.619,
+    "type": "word",
+    "logprob": -0.0000027418097943154862
+   },
+   {
+    "text": "bandeja",
+    "start": 13.679,
+    "end": 14.039,
+    "type": "word",
+    "logprob": -0.0012824652949348092
+   },
+   {
+    "text": "do",
+    "start": 14.099,
+    "end": 14.219,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "forno",
+    "start": 14.299,
+    "end": 14.579,
+    "type": "word",
+    "logprob": -0.0000066756979322235566
+   },
+   {
+    "text": "e",
+    "start": 14.839,
+    "end": 14.859,
+    "type": "word",
+    "logprob": -1.1920928244535389e-7
+   },
+   {
+    "text": "o",
+    "start": 14.92,
+    "end": 14.939,
+    "type": "word",
+    "logprob": -1.1920928244535389e-7
+   },
+   {
+    "text": "cheiro",
+    "start": 15.059,
+    "end": 15.319,
+    "type": "word",
+    "logprob": -0.000010073085817907668
+   },
+   {
+    "text": "toma",
+    "start": 15.439,
+    "end": 15.639,
+    "type": "word",
+    "logprob": -0.000012636104656849056
+   },
+   {
+    "text": "a",
+    "start": 15.659,
+    "end": 15.779,
+    "type": "word",
+    "logprob": -5.960462772236497e-7
+   },
+   {
+    "text": "sala.",
+    "start": 15.859,
+    "end": 16.199,
+    "type": "word",
+    "logprob": -0.000001811979200283531
+   },
+   {
+    "text": "Os",
+    "start": 17.02,
+    "end": 17.139,
+    "type": "word",
+    "logprob": -0.000007867782187531702
+   },
+   {
+    "text": "pães",
+    "start": 17.219,
+    "end": 17.399,
+    "type": "word",
+    "logprob": -0.00039510456551283824
+   },
+   {
+    "text": "de",
+    "start": 17.44,
+    "end": 17.539,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "queijo",
+    "start": 17.6,
+    "end": 17.979,
+    "type": "word",
+    "logprob": -0.000021516869196602784
+   },
+   {
+    "text": "saem",
+    "start": 18.059,
+    "end": 18.239,
+    "type": "word",
+    "logprob": -0.0000012516962755171335
+   },
+   {
+    "text": "redondos,",
+    "start": 18.299,
+    "end": 18.979,
+    "type": "word",
+    "logprob": -0.00005403878094512038
+   },
+   {
+    "text": "dourados",
+    "start": 19.219,
+    "end": 19.859,
+    "type": "word",
+    "logprob": -0.000007271721756296756
+   },
+   {
+    "text": "e",
+    "start": 20.039,
+    "end": 20.079,
+    "type": "word",
+    "logprob": -3.576278118089249e-7
+   },
+   {
+    "text": "cheios",
+    "start": 20.219,
+    "end": 20.539,
+    "type": "word",
+    "logprob": -0.00006359599683491979
+   },
+   {
+    "text": "de",
+    "start": 20.579,
+    "end": 20.639,
+    "type": "word",
+    "logprob": -0.0000017881377516459906
+   },
+   {
+    "text": "ar",
+    "start": 20.68,
+    "end": 20.799,
+    "type": "word",
+    "logprob": -7.152555099310121e-7
+   },
+   {
+    "text": "quente.",
+    "start": 20.879,
+    "end": 21.299,
+    "type": "word",
+    "logprob": -8.685244259660456e-7
+   },
+   {
+    "text": "Caio",
+    "start": 21.899,
+    "end": 22.199,
+    "type": "word",
+    "logprob": -0.00001573539492483178
+   },
+   {
+    "text": "pede",
+    "start": 22.239,
+    "end": 22.539,
+    "type": "word",
+    "logprob": -0.00002169585604860913
+   },
+   {
+    "text": "dois",
+    "start": 22.619,
+    "end": 22.879,
+    "type": "word",
+    "logprob": -0.000058410845667822286
+   },
+   {
+    "text": "e",
+    "start": 22.92,
+    "end": 22.959,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "espera",
+    "start": 23.039,
+    "end": 23.319,
+    "type": "word",
+    "logprob": -0.0000290866428258596
+   },
+   {
+    "text": "de",
+    "start": 23.379,
+    "end": 23.42,
+    "type": "word",
+    "logprob": -3.576278118089249e-7
+   },
+   {
+    "text": "pé,",
+    "start": 23.559,
+    "end": 23.76,
+    "type": "word",
+    "logprob": -0.000014225491507128632
+   },
+   {
+    "text": "sem",
+    "start": 24,
+    "end": 24.159,
+    "type": "word",
+    "logprob": -2.3841855067985307e-7
+   },
+   {
+    "text": "pressa.",
+    "start": 24.219,
+    "end": 24.619,
+    "type": "word",
+    "logprob": -0.0000985111650412104
+   },
+   {
+    "text": "O",
+    "start": 25.379,
+    "end": 25.459,
+    "type": "word",
+    "logprob": -0.000002264974000354414
+   },
+   {
+    "text": "primeiro",
+    "start": 25.519,
+    "end": 25.899,
+    "type": "word",
+    "logprob": -0.0000016689286894688848
+   },
+   {
+    "text": "pão",
+    "start": 26.079,
+    "end": 26.299,
+    "type": "word",
+    "logprob": -0.00008725556305459274
+   },
+   {
+    "text": "queima",
+    "start": 26.519,
+    "end": 26.739,
+    "type": "word",
+    "logprob": -0.000011265155933415372
+   },
+   {
+    "text": "a",
+    "start": 26.76,
+    "end": 26.879,
+    "type": "word",
+    "logprob": -1.1920928244535389e-7
+   },
+   {
+    "text": "ponta",
+    "start": 26.939,
+    "end": 27.219,
+    "type": "word",
+    "logprob": -0.0003965348470956087
+   },
+   {
+    "text": "da",
+    "start": 27.26,
+    "end": 27.34,
+    "type": "word",
+    "logprob": -0.000005006777428206988
+   },
+   {
+    "text": "língua",
+    "start": 27.399,
+    "end": 27.639,
+    "type": "word",
+    "logprob": -0.000006794906312279636
+   },
+   {
+    "text": "dele.",
+    "start": 27.699,
+    "end": 28.019,
+    "type": "word",
+    "logprob": -6.675718168480671e-7
+   },
+   {
+    "text": "Ele",
+    "start": 28.619,
+    "end": 28.739,
+    "type": "word",
+    "logprob": -0.000003933898824470816
+   },
+   {
+    "text": "sopra",
+    "start": 28.92,
+    "end": 29.199,
+    "type": "word",
+    "logprob": -0.002885822905227542
+   },
+   {
+    "text": "o",
+    "start": 29.239,
+    "end": 29.299,
+    "type": "word",
+    "logprob": -7.152555099310121e-7
+   },
+   {
+    "text": "segundo",
+    "start": 29.379,
+    "end": 29.779,
+    "type": "word",
+    "logprob": -0.000004887569048150908
+   },
+   {
+    "text": "e",
+    "start": 29.819,
+    "end": 29.84,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "espera",
+    "start": 29.959,
+    "end": 30.379,
+    "type": "word",
+    "logprob": -0.000036477376852417365
+   },
+   {
+    "text": "meio",
+    "start": 30.459,
+    "end": 30.659,
+    "type": "word",
+    "logprob": -0.00006854299135738984
+   },
+   {
+    "text": "minuto",
+    "start": 30.719,
+    "end": 31.059,
+    "type": "word",
+    "logprob": -0.0000027418097943154862
+   },
+   {
+    "text": "antes",
+    "start": 31.119,
+    "end": 31.26,
+    "type": "word",
+    "logprob": -0.000003576272320060525
+   },
+   {
+    "text": "de",
+    "start": 31.319,
+    "end": 31.359,
+    "type": "word",
+    "logprob": -0.0000010728830375228426
+   },
+   {
+    "text": "morder.",
+    "start": 31.42,
+    "end": 31.839,
+    "type": "word",
+    "logprob": -0.00030405544103879426
+   },
+   {
+    "text": "A",
+    "start": 32.739,
+    "end": 32.839,
+    "type": "word",
+    "logprob": -0.000016689160474925302
+   },
+   {
+    "text": "casca",
+    "start": 32.919,
+    "end": 33.2,
+    "type": "word",
+    "logprob": -0.000005030612851442129
+   },
+   {
+    "text": "estala",
+    "start": 33.299,
+    "end": 33.779,
+    "type": "word",
+    "logprob": -0.0002862281689886004
+   },
+   {
+    "text": "e",
+    "start": 34.04,
+    "end": 34.059,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "o",
+    "start": 34.099,
+    "end": 34.119,
+    "type": "word",
+    "logprob": -4.768370445162873e-7
+   },
+   {
+    "text": "recheio",
+    "start": 34.18,
+    "end": 34.619,
+    "type": "word",
+    "logprob": -0.000007493093700564454
+   },
+   {
+    "text": "quase",
+    "start": 34.7,
+    "end": 34.979,
+    "type": "word",
+    "logprob": -0.0000014305104514278355
+   },
+   {
+    "text": "escorre.",
+    "start": 35.02,
+    "end": 35.579,
+    "type": "word",
+    "logprob": -0.00021039887352714004
+   },
+   {
+    "text": "Um",
+    "start": 36.459,
+    "end": 36.52,
+    "type": "word",
+    "logprob": -0.000007033323527139146
+   },
+   {
+    "text": "ônibus",
+    "start": 36.639,
+    "end": 36.959,
+    "type": "word",
+    "logprob": -0.000011920858014491387
+   },
+   {
+    "text": "vazio",
+    "start": 37.04,
+    "end": 37.519,
+    "type": "word",
+    "logprob": -3.576278118089249e-7
+   },
+   {
+    "text": "passa",
+    "start": 37.579,
+    "end": 37.84,
+    "type": "word",
+    "logprob": -0.000014185804502631072
+   },
+   {
+    "text": "na",
+    "start": 37.919,
+    "end": 38,
+    "type": "word",
+    "logprob": -4.768370445162873e-7
+   },
+   {
+    "text": "rua",
+    "start": 38.079,
+    "end": 38.18,
+    "type": "word",
+    "logprob": -0.0000066756979322235566
+   },
+   {
+    "text": "e",
+    "start": 38.2,
+    "end": 38.239,
+    "type": "word",
+    "logprob": -4.768370445162873e-7
+   },
+   {
+    "text": "ninguém",
+    "start": 38.279,
+    "end": 38.52,
+    "type": "word",
+    "logprob": -0.000002145764938177308
+   },
+   {
+    "text": "desce.",
+    "start": 38.599,
+    "end": 39.079,
+    "type": "word",
+    "logprob": -0.0000020066858397171927
+   },
+   {
+    "text": "O",
+    "start": 40.04,
+    "end": 40.159,
+    "type": "word",
+    "logprob": -0.000003576272320060525
+   },
+   {
+    "text": "padeiro",
+    "start": 40.219,
+    "end": 40.68,
+    "type": "word",
+    "logprob": -0.000029001183322512653
+   },
+   {
+    "text": "liga",
+    "start": 40.759,
+    "end": 40.919,
+    "type": "word",
+    "logprob": -0.0000027418097943154862
+   },
+   {
+    "text": "a",
+    "start": 40.939,
+    "end": 41.039,
+    "type": "word",
+    "logprob": -1.1920928244535389e-7
+   },
+   {
+    "text": "segunda",
+    "start": 41.099,
+    "end": 41.479,
+    "type": "word",
+    "logprob": -0.0000027418097943154862
+   },
+   {
+    "text": "fornada",
+    "start": 41.54,
+    "end": 42.34,
+    "type": "word",
+    "logprob": -0.00020830584356141508
+   },
+   {
+    "text": "e",
+    "start": 42.399,
+    "end": 42.439,
+    "type": "word",
+    "logprob": 0
+   },
+   {
+    "text": "assobia",
+    "start": 42.459,
+    "end": 43.159,
+    "type": "word",
+    "logprob": -0.0005081768779616271
+   },
+   {
+    "text": "a",
+    "start": 43.239,
+    "end": 43.339,
+    "type": "word",
+    "logprob": -8.344646857949556e-7
+   },
+   {
+    "text": "mesma",
+    "start": 43.399,
+    "end": 43.7,
+    "type": "word",
+    "logprob": -0.0000020265558760002023
+   },
+   {
+    "text": "música",
+    "start": 43.819,
+    "end": 44.139,
+    "type": "word",
+    "logprob": -0.0000023841830625315197
+   },
+   {
+    "text": "do",
+    "start": 44.219,
+    "end": 44.299,
+    "type": "word",
+    "logprob": -3.576278118089249e-7
+   },
+   {
+    "text": "rádio.",
+    "start": 44.34,
+    "end": 44.719,
+    "type": "word",
+    "logprob": -0.000006775030584549313
+   },
+   {
+    "text": "Caio",
+    "start": 45.36,
+    "end": 45.939,
+    "type": "word",
+    "logprob": -0.000009477059052187542
+   },
+   {
+    "text": "come",
+    "start": 46,
+    "end": 46.239,
+    "type": "word",
+    "logprob": -0.00002038458114839159
+   },
+   {
+    "text": "sem",
+    "start": 46.279,
+    "end": 46.479,
+    "type": "word",
+    "logprob": -2.3841855067985307e-7
+   },
+   {
+    "text": "pressa",
+    "start": 46.5,
+    "end": 46.86,
+    "type": "word",
+    "logprob": -0.00003228522473364137
+   },
+   {
+    "text": "porque",
+    "start": 46.899,
+    "end": 47.159,
+    "type": "word",
+    "logprob": -0.0028558680787682533
+   },
+   {
+    "text": "não",
+    "start": 47.219,
+    "end": 47.36,
+    "type": "word",
+    "logprob": -3.576278118089249e-7
+   },
+   {
+    "text": "tem",
+    "start": 47.399,
+    "end": 47.52,
+    "type": "word",
+    "logprob": -0.000004887569048150908
+   },
+   {
+    "text": "pra",
+    "start": 47.559,
+    "end": 47.659,
+    "type": "word",
+    "logprob": -0.0002308817347511649
+   },
+   {
+    "text": "onde",
+    "start": 47.719,
+    "end": 47.919,
+    "type": "word",
+    "logprob": -0.000013351351299206726
+   },
+   {
+    "text": "ir.",
+    "start": 48,
+    "end": 48.159,
+    "type": "word",
+    "logprob": -0.00000111261912631259
+   },
+   {
+    "text": "A",
+    "start": 48.959,
+    "end": 48.979,
+    "type": "word",
+    "logprob": -0.000003099436753473128
+   },
+   {
+    "text": "cidade",
+    "start": 49.099,
+    "end": 49.36,
+    "type": "word",
+    "logprob": -0.000006437280717364047
+   },
+   {
+    "text": "acorda",
+    "start": 49.459,
+    "end": 49.779,
+    "type": "word",
+    "logprob": -0.000012715567663690308
+   },
+   {
+    "text": "meia",
+    "start": 49.84,
+    "end": 50.039,
+    "type": "word",
+    "logprob": -0.000005006777428206988
+   },
+   {
+    "text": "hora",
+    "start": 50.079,
+    "end": 50.259,
+    "type": "word",
+    "logprob": -0.000004887569048150908
+   },
+   {
+    "text": "depois",
+    "start": 50.299,
+    "end": 50.74,
+    "type": "word",
+    "logprob": -0.000004887569048150908
+   }
+  ]
+ ],
+ "sils": [
+  [
+   1.602812,
+   2.267166
+  ],
+  [
+   3.959501,
+   4.237846
+  ],
+  [
+   6.31483,
+   6.774036
+  ],
+  [
+   9.608866,
+   10.107914
+  ],
+  [
+   11.995578,
+   12.828798
+  ],
+  [
+   14.602608,
+   14.821134
+  ],
+  [
+   16.181293,
+   16.969274
+  ],
+  [
+   21.260522,
+   21.884195
+  ],
+  [
+   23.753696,
+   23.882766
+  ],
+  [
+   24.600272,
+   25.338594
+  ],
+  [
+   25.915057,
+   26.041655
+  ],
+  [
+   26.313515,
+   26.494785
+  ],
+  [
+   28.003696,
+   28.559615
+  ],
+  [
+   31.81746,
+   32.693424
+  ],
+  [
+   33.760249,
+   34.001746
+  ],
+  [
+   35.529093,
+   36.4022
+  ],
+  [
+   38.951905,
+   39.994082
+  ],
+  [
+   42.037755,
+   42.361247
+  ],
+  [
+   43.047982,
+   43.172676
+  ],
+  [
+   44.721224,
+   45.305556
+  ],
+  [
+   45.824535,
+   45.951565
+  ],
+  [
+   48.119751,
+   48.909683
+  ]
+ ]
+}

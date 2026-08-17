@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Tema 7 (el-weveo, Chile) — REAUTORADO 2026-07-09 sobre las historias NARRADOR
+# Tema 7 (el-weveo, Chile); REAUTORADO 2026-07-09 sobre las historias NARRADOR
 # (voseo chileno). Reglas: docs/practice-exercises-redesign.md + scripts/_EXERCISE_SPEC.md.
 # Headline en forma de diccionario; flexion en [[ ]] o en la respuesta del cloze.
 SPECS = [

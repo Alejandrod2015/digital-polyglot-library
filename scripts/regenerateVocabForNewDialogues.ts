@@ -235,14 +235,14 @@ async function applyPhase() {
   for (const slug of SLUGS) {
     const vocabFile = path.join(DIR, `${slug}-vocab.json`);
     if (!existsSync(vocabFile)) {
-      console.warn(`No vocab file for ${slug} at ${vocabFile} — skipping`);
+      console.warn(`No vocab file for ${slug} at ${vocabFile}; skipping`);
       continue;
     }
     const data = JSON.parse(readFileSync(vocabFile, "utf8")) as {
       vocab: { word: string; surface?: string; definition: string; type?: string }[];
     };
     if (!Array.isArray(data.vocab) || data.vocab.length === 0) {
-      console.warn(`Vocab file for ${slug} is empty — skipping`);
+      console.warn(`Vocab file for ${slug} is empty; skipping`);
       continue;
     }
     const fails: { word: string; reasons: string[]; w: number }[] = [];

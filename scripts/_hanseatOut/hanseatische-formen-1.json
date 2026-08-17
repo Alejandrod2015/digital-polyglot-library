@@ -1,0 +1,126 @@
+[
+  {
+    "title": "Das Du muss man anbieten",
+    "slug": "das-du-muss-man-anbieten",
+    "text": "Zur kleinen Einweihung in Noras Wohnung kommen nur drei Gäste, dafür bringt jeder etwas mit. Frau Boysen von nebenan stellt einen selbstgebackenen Kuchen auf den Tisch, Ole eine Flasche Wein.\n\nNora: Schön, dass du gekommen bist, Frau Boysen. Ich meine, dass Sie gekommen sind. Entschuldigung.\n\nBoysen: Kein Grund zur Eile. Das Sie hat seinen Sinn, solange man sich noch beschnuppert.\n\nNora: Nach dem zweiten Kaffee wäre ich anderswo längst per du. Hier komme ich mir vor wie in einem Tanzkurs.\n\nOle: Weil es einer ist. Das Du bietet man an, man nimmt es sich nicht. Meist tut es die ältere oder die hiesige Person.\n\nNora: Also muss ich warten, bis jemand es mir anbietet? Und wenn das nie passiert?\n\nBoysen: Dann haben Sie es sich nicht verdient. Aber so weit sind wir heute nicht.\n\nBoysen schneidet den Kuchen an und schiebt Nora das erste Stück hin.\n\nBoysen: Ich beobachte Sie seit dem Einzug. Sie halten den Hof sauber, Sie grüßen, Sie drängen sich nicht auf. Das genügt mir.\n\nNora: Das klingt fast nach einem Zeugnis.\n\nBoysen: Es ist eins. Ich denke, wir können uns duzen. Ich bin Grit.\n\nNora: Grit. Sehr gern. Ich bin ganz gerührt, ehrlich.\n\nOle: Merkst du, was gerade passiert ist? Das kriegen manche Nachbarn in zwanzig Jahren nicht.\n\nNora: Zwanzig Jahre? Dann behandle ich dieses Du als Auszeichnung.\n\nBoysen: Genau das ist es. Und jetzt iss dein Stück, bevor der Kuchen trocken wird.",
+    "synopsis": "Auf Noras Einweihung lernt sie, dass man das vertrauliche Du nicht nimmt, sondern geschenkt bekommt.",
+    "arcType": "recurring-character-callback",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Einweihung",
+        "definition": "a housewarming; a small party to celebrate a new home"
+      },
+      {
+        "type": "noun",
+        "word": "Gast",
+        "surface": "Gäste",
+        "definition": "a guest; someone invited to visit or to an event"
+      },
+      {
+        "type": "adjective",
+        "word": "selbstgebacken",
+        "surface": "selbstgebackenen",
+        "definition": "home-baked; made in one's own kitchen rather than bought"
+      },
+      {
+        "type": "expression",
+        "word": "Kein Grund zur Eile",
+        "definition": "no need to rush; there is plenty of time here"
+      },
+      {
+        "type": "expression",
+        "word": "sich beschnuppern",
+        "surface": "beschnuppert",
+        "definition": "to cautiously size each other up while getting acquainted"
+      },
+      {
+        "type": "expression",
+        "word": "per du sein",
+        "surface": "per du",
+        "definition": "to be on first-name, informal terms with someone"
+      },
+      {
+        "type": "expression",
+        "word": "das Du",
+        "surface": "Das Du",
+        "definition": "the informal you; being offered it is a social milestone"
+      },
+      {
+        "type": "verb",
+        "word": "anbieten",
+        "surface": "anbietet",
+        "definition": "to offer something to someone for them to take"
+      },
+      {
+        "type": "adjective",
+        "word": "hiesig",
+        "surface": "hiesige",
+        "definition": "local; belonging to this particular town or place"
+      },
+      {
+        "type": "verb",
+        "word": "sich aufdrängen",
+        "surface": "drängen sich",
+        "definition": "to impose yourself on others; to be pushy or intrusive"
+      },
+      {
+        "type": "verb",
+        "word": "sich verdienen",
+        "surface": "verdient",
+        "definition": "to earn something through your own effort or good conduct"
+      },
+      {
+        "type": "verb",
+        "word": "anschneiden",
+        "surface": "schneidet",
+        "definition": "to cut the first slice into something such as a cake"
+      },
+      {
+        "type": "verb",
+        "word": "beobachten",
+        "surface": "beobachte",
+        "definition": "to watch someone closely and steadily over a period"
+      },
+      {
+        "type": "verb",
+        "word": "genügen",
+        "surface": "genügt",
+        "definition": "to be enough; to satisfy a requirement or standard"
+      },
+      {
+        "type": "noun",
+        "word": "Zeugnis",
+        "definition": "a report or reference formally judging someone's conduct"
+      },
+      {
+        "type": "verb",
+        "word": "duzen",
+        "definition": "to address someone with the informal du rather than Sie"
+      },
+      {
+        "type": "adjective",
+        "word": "gerührt",
+        "definition": "moved; emotionally touched by something warm or kind"
+      },
+      {
+        "type": "noun",
+        "word": "Auszeichnung",
+        "definition": "a distinction or honour awarded for something special"
+      },
+      {
+        "type": "noun",
+        "word": "Stück",
+        "definition": "a piece; a portion cut from something larger"
+      },
+      {
+        "type": "adjective",
+        "word": "trocken",
+        "definition": "dry; here meaning stale and no longer fresh"
+      }
+    ],
+    "level": "c1",
+    "topic": "hanseatische-formen",
+    "slotIndex": 1
+  }
+]

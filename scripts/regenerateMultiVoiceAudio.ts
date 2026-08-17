@@ -68,7 +68,7 @@ const VOICE_ASSIGNMENTS: VoiceAssignment[] = [
     ambientFile: path.join(AMBIENT_DIR, "cafeteria_de.mp3"),
   },
   {
-    // Apfelkuchen in Wedding — Oma Hilde y Paul (9 años) horneando en el
+    // Apfelkuchen in Wedding; Oma Hilde y Paul (9 años) horneando en el
     // apartamento de la abuela. Original audio (2026-05-05) usó Sebastian
     // para Paul; rechazado por el usuario como "aburrida y de adulto".
     // Sebastian ahora está doblemente baneado (uptalk + adult-for-kid).
@@ -77,7 +77,7 @@ const VOICE_ASSIGNMENTS: VoiceAssignment[] = [
     voiceMap: {
       narrator: V.moritz,
       Hilde: V.eleonore,  // F mature, "Frau" roles
-      Paul: V.michael,    // M youthful + calm — Luca had mild uptone that read as uncertain. Michael is the catalog go-to for teen-and-younger from 2026-05-14 onward.
+      Paul: V.michael,    // M youthful + calm; Luca had mild uptone that read as uncertain. Michael is the catalog go-to for teen-and-younger from 2026-05-14 onward.
     },
     ambientFile: path.join(AMBIENT_DIR, "cafeteria_de.mp3"),
   },

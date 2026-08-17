@@ -102,3 +102,8 @@ __pycache__/
 # Artefactos de builds locales (ver memoria: builds desde worktree)
 apps/mobile/.dpl-entry.js
 apps/mobile/.expo/
+
+# Audio de trabajo de los re-tiros y pruebas de identidad (2026-08-17)
+/_reroll_*.mp3
+/_identity_*.mp3
+/scratchpad/

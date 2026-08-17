@@ -51,15 +51,24 @@ function silencios(url:string): Array<[number,number]> {
   return out;
 }
 
-/** Punto medio del silencio más cercano a t; si no hay ninguno cerca, t. */
+/**
+ * Frontera de corte para una palabra que empieza en `t`.
+ *
+ * Tiene que caer ANTES de que empiece la palabra, dentro del silencio que la
+ * precede. Buscar "el silencio más cercano" no vale: si el más cercano es el
+ * que viene DESPUÉS, el corte deja pegado el arranque de la palabra vieja y se
+ * oye dos veces ("Bia, Bia desce", 2026-08-17).
+ */
 function alSilencio(t:number, sils:Array<[number,number]>): number {
   let mejor = t, dist = Infinity;
   for (const [a,b] of sils) {
-    const medio = (a + b) / 2;
-    const d = Math.abs(medio - t);
-    if (d < dist && d < 1.2) { dist = d; mejor = medio; }
+    if (b > t + 0.02) continue;            // silencio posterior: no sirve
+    const d = t - b;                        // cuánto antes de la palabra acaba
+    if (d < dist && d < 1.5) { dist = d; mejor = (a + b) / 2; }
   }
-  return mejor;
+  // Sin silencio previo utilizable, un margen fijo antes de la palabra es
+  // mejor que cortar justo encima de ella.
+  return mejor === t ? Math.max(0, t - 0.06) : mejor;
 }
 
 (async()=>{
@@ -78,9 +87,10 @@ function alSilencio(t:number, sils:Array<[number,number]>): number {
   // Se recorre la transcripción en orden, consumiendo las palabras de cada
   // fragmento. Así cada uno queda anclado donde suena de verdad.
   const orden = [...frags].sort((a,b)=>a.index-b.index);
-  // Primero SOLO los inicios, anclando por las 3 primeras palabras del
+
+  // Primero SOLO los inicios, anclando por las 3 primeras palabras de cada
   // fragmento: una sola palabra ("Ele", "A") se repite por toda la historia y
-  // el cursor saltaba a la ocurrencia equivocada.
+  // el cursor saltaba a la ocurrencia equivocada, dejando fragmentos solapados.
   const inicios: number[] = [];
   let cursor = 0;
   for (const f of orden) {
@@ -95,7 +105,7 @@ function alSilencio(t:number, sils:Array<[number,number]>): number {
       }
       if (casan) { ini = i; break; }
     }
-    if (ini < 0) ini = cursor;              // no encontrado: se deja donde iba
+    if (ini < 0) ini = cursor;
     inicios.push(ini);
     cursor = ini + Math.max(1, objetivo.length - 2);
   }

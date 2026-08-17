@@ -1,0 +1,121 @@
+[
+  {
+    "title": "Ein Franzbrötchen ist keine Schnecke",
+    "slug": "ein-franzbroetchen-ist-keine-schnecke",
+    "text": "Als kleines Mitbringsel legt Nora eine Zimtschnecke aus dem neuen schwedischen Café auf Wiebkes Theke. Wiebke betrachtet das Gebäck, als hätte man ihr etwas Verdorbenes gebracht.\n\nWiebke: Das, mein Kind, ist eine Zimtschnecke. Gerollt, klebrig, aus Schweden. Bei mir bekommst du ein Franzbrötchen.\n\nNora: Ist das nicht dasselbe? Zimt, Zucker, Butter, alles drin.\n\nWiebke: Dasselbe? Ein Franzbrötchen wird flach gedrückt und im eigenen Zucker karamellisiert. Es rollt sich nicht, es liegt. Wie ein Hamburger eben.\n\nNora: Also ist die Form schon eine Weltanschauung.\n\nWiebke: Und ob. Das Franzbrötchen ist platt, ehrlich und ohne Schnickschnack. Ganz die Stadt eben.\n\nNora: Und warum ausgerechnet flach? Rund wäre doch praktischer zum Greifen.\n\nWiebke: Flach, weil es beim Backen zusammensinkt und der Zucker in die Falten läuft. Genau da sitzt der Geschmack.\n\nEin Stammkunde am Tresen nickt zustimmend und mischt sich ein.\n\nKunde: Sag bloß nicht Zimtschnecke, wenn ein Hamburger dabei ist. Das ist hier fast eine Beleidigung.\n\nNora: Verstanden. Es ist ein Franzbrötchen, es liegt flach, und es hat mit Schweden nichts zu tun.\n\nWiebke: Sehr gut. Und der Name? Kommt angeblich von den Franzosen und ihrem Butterteig, aus napoleonischer Zeit.\n\nNora: Ein französischer Name, ein Hamburger Herz. Das gefällt mir.\n\nWiebke: Merk dir das. Wer die Geschichte kennt, schmeckt das Gebäck anders.\n\nKunde: So ist es. Und jetzt probier eins, dann redest du nie wieder von Schnecken.\n\nNora: Dann esse ich es ehrfürchtig und nehme meine Schnecke schnell wieder mit.\n\nWiebke: Kluge Entscheidung. Das nächste zahlst du aber wieder, versteht sich.",
+    "synopsis": "Ein gut gemeintes Mitbringsel aus Schweden lehrt Nora, warum das flache Franzbrötchen für Hamburg eine Frage der Ehre ist.",
+    "arcType": "recurring-character-callback",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Mitbringsel",
+        "definition": "a small gift you bring along when visiting someone"
+      },
+      {
+        "type": "noun",
+        "word": "Zimtschnecke",
+        "definition": "a rolled, sticky cinnamon bun of Swedish origin"
+      },
+      {
+        "type": "verb",
+        "word": "betrachten",
+        "surface": "betrachtet",
+        "definition": "to look at something carefully and with considered attention"
+      },
+      {
+        "type": "noun",
+        "word": "Gebäck",
+        "definition": "baked goods such as pastries, buns and small cakes"
+      },
+      {
+        "type": "adjective",
+        "word": "verdorben",
+        "surface": "Verdorbenes",
+        "definition": "spoiled; gone bad and no longer fit to eat"
+      },
+      {
+        "type": "adjective",
+        "word": "klebrig",
+        "definition": "sticky; coated in something that clings to your fingers"
+      },
+      {
+        "type": "adjective",
+        "word": "flach",
+        "definition": "flat; low and level rather than round or raised"
+      },
+      {
+        "type": "verb",
+        "word": "drücken",
+        "surface": "gedrückt",
+        "definition": "to press or push something so that it goes flat"
+      },
+      {
+        "type": "verb",
+        "word": "karamellisieren",
+        "surface": "karamellisiert",
+        "definition": "to cook sugar until it browns into sweet, sticky caramel"
+      },
+      {
+        "type": "noun",
+        "word": "Weltanschauung",
+        "definition": "a whole worldview; a fundamental outlook on life"
+      },
+      {
+        "type": "adjective",
+        "word": "platt",
+        "definition": "flat and plain; here also down-to-earth and unpretentious"
+      },
+      {
+        "type": "noun",
+        "word": "Schnickschnack",
+        "definition": "frills; needless fancy extras that add no real value"
+      },
+      {
+        "type": "verb",
+        "word": "sich einmischen",
+        "surface": "mischt sich ein",
+        "definition": "to butt in; to get involved in others' business uninvited"
+      },
+      {
+        "type": "noun",
+        "word": "Beleidigung",
+        "definition": "an insult; a remark or act that offends someone"
+      },
+      {
+        "type": "expression",
+        "word": "nichts zu tun haben mit",
+        "surface": "nichts zu tun",
+        "definition": "to have no connection with something at all"
+      },
+      {
+        "type": "noun",
+        "word": "Butterteig",
+        "definition": "a rich pastry dough made with a lot of butter"
+      },
+      {
+        "type": "verb",
+        "word": "probieren",
+        "surface": "probier",
+        "definition": "to try or taste something to see what it is like"
+      },
+      {
+        "type": "adverb",
+        "word": "ehrfürchtig",
+        "definition": "reverently; with deep respect that borders on real awe"
+      },
+      {
+        "type": "expression",
+        "word": "versteht sich",
+        "definition": "of course; that goes without saying and needs no mention"
+      },
+      {
+        "type": "adverb",
+        "word": "zustimmend",
+        "definition": "approvingly; in a way that shows agreement with something"
+      }
+    ],
+    "level": "c1",
+    "topic": "alltag-an-der-elbe",
+    "slotIndex": 2
+  }
+]

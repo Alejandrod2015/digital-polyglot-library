@@ -1,5 +1,5 @@
 /**
- * RULE (2026-07) — practice audio voice follows the STORY'S country.
+ * RULE (2026-07); practice audio voice follows the STORY'S country.
  *
  * The isolated-word audio (▶ word) and the example-sentence clips (▶ sentence)
  * in the curated practice sets MUST be spoken in the story's OWN narrator voice,

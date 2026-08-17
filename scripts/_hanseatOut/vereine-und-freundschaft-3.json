@@ -1,0 +1,120 @@
+[
+  {
+    "title": "Merles zweiter Schlüssel",
+    "slug": "merles-zweiter-schluessel",
+    "text": "Der Schlüssel bleibt verschwunden, die Wohnungstür zu, und draußen fällt die erste Novemberkälte. Nora sitzt bei Wiebke in der warmen Backstube und telefoniert sich erfolglos durch ihre Kontakte.\n\nNora: Alle sind furchtbar nett am Telefon und alle haben furchtbar viel zu tun. Warm klingen sie, aber helfen kann keiner.\n\nWiebke: Das ist der Norden. Freundlich an der Oberfläche, aber praktisch wird es erst, wenn du gar nicht mehr fragst. Ruf die Leute an, die wenig reden.\n\nNora: Die wenig reden? Merle hat heute noch keinen ganzen Satz gesagt.\n\nWiebke: Eben. Ruf genau die an.\n\nZwanzig Minuten später steht Merle in der Tür, ohne Mantel, dafür mit einem zweiten Schlüssel in der Hand.\n\nMerle: Hier. Zweitschlüssel zu deiner Wohnung. Hab ich nach deinem Einzug nachmachen lassen.\n\nNora: Du hast einen Schlüssel zu meiner Wohnung? Einfach so, ohne ein Wort?\n\nMerle: Für genau so einen Tag. Sagen muss man das nicht, man macht es.\n\nNora: Und du kommst sofort, ohne Mantel, bei dieser Kälte?\n\nMerle: Ein Anruf, zehn Minuten Fußweg. Darüber redet man doch nicht lange.\n\nNora: Ich bin sprachlos. Die Kühlste von allen rettet mich als Erste.\n\nWiebke: Das ist die Kokosnuss, Kind. Außen hart, innen weich, und man kommt ewig nicht durch die Schale. Ist sie aber einmal auf, dann ganz.\n\nNora: Und ich habe die ganze Zeit die Lauten für die Warmen gehalten.\n\nWiebke: Anfängerfehler. Wärme misst man hier nicht in Worten, sondern in Taten.\n\nMerle: Falsch geraten. Zieh dir was über, es ist kalt. Dann trinken wir einen, wortlos, wie immer.",
+    "synopsis": "Ausgesperrt in der ersten Novemberkälte lernt Nora, dass im Norden die Stillsten die Ersten sind, die wirklich helfen.",
+    "arcType": "late-reveal",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Novemberkälte",
+        "definition": "the raw cold of November; early-winter chill in the air"
+      },
+      {
+        "type": "noun",
+        "word": "Backstube",
+        "definition": "the back room of a bakery where the baking is done"
+      },
+      {
+        "type": "adverb",
+        "word": "erfolglos",
+        "definition": "without success; failing to achieve the hoped-for result"
+      },
+      {
+        "type": "noun",
+        "word": "Kontakt",
+        "surface": "Kontakte",
+        "definition": "a contact; a person you know and can call on"
+      },
+      {
+        "type": "adverb",
+        "word": "furchtbar",
+        "definition": "terribly; here used loosely to mean very or extremely"
+      },
+      {
+        "type": "expression",
+        "word": "an der Oberfläche",
+        "definition": "on the surface; only superficially and not deep down"
+      },
+      {
+        "type": "adjective",
+        "word": "praktisch",
+        "definition": "practical; concerned with real action rather than mere words"
+      },
+      {
+        "type": "verb",
+        "word": "nachmachen",
+        "definition": "to have a copy made of something, such as a key"
+      },
+      {
+        "type": "noun",
+        "word": "Zweitschlüssel",
+        "definition": "a second, spare key kept in case of emergencies"
+      },
+      {
+        "type": "adjective",
+        "word": "sprachlos",
+        "definition": "speechless; too surprised or moved to say anything"
+      },
+      {
+        "type": "verb",
+        "word": "retten",
+        "surface": "rettet",
+        "definition": "to rescue or save someone from a difficult situation"
+      },
+      {
+        "type": "adjective",
+        "word": "kühl",
+        "surface": "Kühlste",
+        "definition": "cool; here of a person who seems emotionally distant and aloof"
+      },
+      {
+        "type": "noun",
+        "word": "Kokosnuss",
+        "definition": "a coconut; here a metaphor for someone hard outside, soft inside"
+      },
+      {
+        "type": "expression",
+        "word": "außen hart, innen weich",
+        "surface": "Außen hart, innen weich",
+        "definition": "tough on the outside but soft and warm-hearted within"
+      },
+      {
+        "type": "noun",
+        "word": "Schale",
+        "definition": "a shell; the hard protective outer layer around something"
+      },
+      {
+        "type": "expression",
+        "word": "durch die Schale kommen",
+        "surface": "durch die Schale",
+        "definition": "to get past someone's tough shell to their real self"
+      },
+      {
+        "type": "verb",
+        "word": "geraten",
+        "definition": "to guess; to end up judging something a particular way"
+      },
+      {
+        "type": "adverb",
+        "word": "wortlos",
+        "definition": "wordlessly; without saying a single word at all"
+      },
+      {
+        "type": "verb",
+        "word": "telefonieren",
+        "surface": "telefoniert",
+        "definition": "to make phone calls; to talk with someone by phone"
+      },
+      {
+        "type": "noun",
+        "word": "Mantel",
+        "definition": "a coat worn over your clothes against the cold"
+      }
+    ],
+    "level": "c1",
+    "topic": "vereine-und-freundschaft",
+    "slotIndex": 3
+  }
+]

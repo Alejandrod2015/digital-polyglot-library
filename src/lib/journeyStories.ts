@@ -96,7 +96,7 @@ function readerStatusWhere() {
   //
   // A list, not a single id, so several journeys can be in progress at once
   // (2026-07-09: added Friends ES C1 LATAM alongside the German A0).
-  // NOTE: the reader does NOT filter by Journey.status — a story with
+  // NOTE: the reader does NOT filter by Journey.status; a story with
   // status:"published" is reachable by direct URL in production even when its
   // journey is "archived". Keep in-progress journeys' stories in "draft" and
   // preview them via this list instead of publishing them.
@@ -113,6 +113,7 @@ function readerStatusWhere() {
       "cmrrrpru1000032nnzsmraa7h", // Friends ES C1 mexico (in progress)
       "cmrsiz1n40000320d6h8p8f5g", // Friends IT A0 italy (in progress)
     "cmss0fkc40007j8dub1zpa1kc", // Traveler IT A0 italy (in progress)
+    "cmsvz6mz9000732gsgsfer0ko", // Friends ES A1 spain (in progress)
   ];
   return process.env.NODE_ENV !== "production"
     ? { OR: [{ status: "published" as const }, { journeyId: { in: PREVIEW_JOURNEY_IDS } }] }

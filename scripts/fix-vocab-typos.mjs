@@ -52,7 +52,7 @@ function candidateForms(word, language) {
 
 function findInText(text, candidates, originalWord) {
   const tNorm = norm(text);
-  // 1) Simple substring de cualquier candidato — captura plurales,
+  // 1) Simple substring de cualquier candidato; captura plurales,
   //    conjugaciones, género donde el lemma es subset (tortilla en
   //    tortillas, bambino en bambini, etc.).
   for (const c of candidates) {

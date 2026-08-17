@@ -2,12 +2,12 @@
 //
 // Checks for Talking Points. Run: npx tsx scripts/_tpGateTest.ts
 //
-//   1. Plan gate — who can open the section.
-//   2. Vocabulary density — entries per 100 words, the journey figure.
-//   3. Surface forms — every entry occurs in the body as written.
-//   4. Type mix — not a list of nouns with a few verbs bolted on.
-//   5. Spread — entries distributed across paragraphs, not front-loaded.
-//   6. Photos — landscape enough for the reader band, licence usable.
+//   1. Plan gate; who can open the section.
+//   2. Vocabulary density; entries per 100 words, the journey figure.
+//   3. Surface forms; every entry occurs in the body as written.
+//   4. Type mix; not a list of nouns with a few verbs bolted on.
+//   5. Spread; entries distributed across paragraphs, not front-loaded.
+//   6. Photos; landscape enough for the reader band, licence usable.
 //
 // Every one of these exists because it failed silently first. The pieces
 // shipped at two entries per hundred words, a fifth of the journey figure;

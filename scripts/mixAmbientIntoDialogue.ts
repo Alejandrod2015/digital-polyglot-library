@@ -45,7 +45,7 @@ function ffmpegMixAmbient(
 ): Promise<void> {
   return new Promise((resolve, reject) => {
     // 1. ambient looped indefinitely (-stream_loop -1).
-    // 2. ambient at 10%, silenced under the narrator (offIntervals) — the bed
+    // 2. ambient at 10%, silenced under the narrator (offIntervals); the bed
     //    belongs to the scene, never the VO (feedback_ambient_not_under_narrator).
     // 3. amix takes both inputs; duration=first cuts to dialogue length.
     // 4. loudnorm normalizes the final mix to -16 LUFS.

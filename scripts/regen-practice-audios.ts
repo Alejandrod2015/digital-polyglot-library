@@ -225,7 +225,7 @@ async function main() {
       // display-form ("Mmm, _____!"). Sending that to Piper makes it skip
       // (or literally read) the underscores, so the audio ends up missing
       // the target word. The generator already stores the FULL sentence
-      // in `payload.audioClip.sentence` — prefer that when present, and
+      // in `payload.audioClip.sentence`; prefer that when present, and
       // fall back to replacing `_____` with the answer when not.
       const ttsText = resolveTTSText(ex);
       if (!ttsText) { skipped++; continue; }

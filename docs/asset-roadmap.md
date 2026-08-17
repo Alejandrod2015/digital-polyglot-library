@@ -6,9 +6,9 @@ Live tracking of the strategic work to convert Digital Polyglot into a B2B/exit-
 
 DPL is the instrument that captures three separately licensable corpora:
 
-- **Asset A — Multimodal Reading-Listening-Comprehension Corpus.** Story text + word-level audio alignment + per-user comprehension events + dialect/variant tagging. Buyers: AI labs (Anthropic, OpenAI, Mistral, Cohere).
-- **Asset B — AI Content-Generation Quality Corpus.** `AgentRun` history + `StoryDraft` + `QAReview` + audit scores. Training data for "how to make good language-learning content with structured QA." Buyers: education-tuned model labs, publishers (Pearson, Cornelsen, Klett).
-- **Asset C — Voice Diversity Library.** `ClonedVoice` + Modal/Piper pipeline + R2 cache + word-level alignment. Dialectal voices that ElevenLabs/Cartesia underserve. Buyers: TTS companies.
+- **Asset A; Multimodal Reading-Listening-Comprehension Corpus.** Story text + word-level audio alignment + per-user comprehension events + dialect/variant tagging. Buyers: AI labs (Anthropic, OpenAI, Mistral, Cohere).
+- **Asset B; AI Content-Generation Quality Corpus.** `AgentRun` history + `StoryDraft` + `QAReview` + audit scores. Training data for "how to make good language-learning content with structured QA." Buyers: education-tuned model labs, publishers (Pearson, Cornelsen, Klett).
+- **Asset C; Voice Diversity Library.** `ClonedVoice` + Modal/Piper pipeline + R2 cache + word-level alignment. Dialectal voices that ElevenLabs/Cartesia underserve. Buyers: TTS companies.
 
 **Product framing:** the app is for learners who want vocabulary in context with diverse content; positioning is on the breadth of authentic dialectal content and the in-context vocab loop, not on a demographic segment.
 
@@ -20,11 +20,11 @@ Three operational movidas execute the thesis. Order matters: each stage feeds th
 
 | Movida | Goal | Status | Started | Done |
 |---|---|---|---|---|
-| 1 | Data layer foundation | In progress | 2026-05-07 | — |
-| 2 | SRS engine on `Favorite` scaffolding | Not started | — | — |
-| 3 | Day-1 vocab-in-context positioning | Not started | — | — |
+| 1 | Data layer foundation | In progress | 2026-05-07 | - |
+| 2 | SRS engine on `Favorite` scaffolding | Not started | - | - |
+| 3 | Day-1 vocab-in-context positioning | Not started | - | - |
 
-## Movida 1 — Data layer foundation
+## Movida 1; Data layer foundation
 
 Schema fields for dialect/register tagging on `JourneyStory` + 6 new comprehension events in `ALLOWED_EVENT_TYPES` + ReaderScreen wiring to emit them.
 
@@ -48,10 +48,10 @@ vocab_marked_unknown   (accepted, not wired)
 ```
 
 The 5 not-yet-wired events fire when natural triggers exist:
-- `word_dwell` — long-press hold timer in ReaderScreen
-- `audio_segment_replay` — manual seek-back detection in audio player
-- `story_abandoned` — ReaderScreen unmount before completion
-- `vocab_marked_known` / `vocab_marked_unknown` — confidence flag UI (e.g. swipe in favorites, button in vocab popup)
+- `word_dwell`; long-press hold timer in ReaderScreen
+- `audio_segment_replay`; manual seek-back detection in audio player
+- `story_abandoned`; ReaderScreen unmount before completion
+- `vocab_marked_known` / `vocab_marked_unknown`; confidence flag UI (e.g. swipe in favorites, button in vocab popup)
 
 Each becomes its own follow-up commit when the corresponding UI lands.
 
@@ -69,7 +69,7 @@ Each becomes its own follow-up commit when the corresponding UI lands.
 
 The migration is additive (4 `ALTER TABLE ADD COLUMN IF NOT EXISTS`), zero risk to existing rows. Order matters because Prisma's `findUnique`/`findMany` without explicit `select` includes every schema column; if schema ships before DB has the columns, queries 500.
 
-## Movida 2 — SRS engine on Favorite scaffolding
+## Movida 2; SRS engine on Favorite scaffolding
 
 `Favorite` table already has `nextReviewAt`, `lastReviewedAt`, `streak`. The scaffolding is ~30% there. PATCH `/api/favorites` already accepts SRS update payload. What's missing is a real algorithm + the practice flow integration.
 
@@ -80,14 +80,14 @@ The migration is additive (4 `ALTER TABLE ADD COLUMN IF NOT EXISTS`), zero risk 
 | FSRS-4.5 algorithm in `src/lib/fsrs.ts` (+ tests + adapter from current Favorite shape) | Deployed to main |
 | Endpoint `GET /api/practice/due` (web + mobile mirror, ordered by dueness) | Deployed to main |
 | Integration with `practice_session_started` so practice loads SRS-due items first | Deployed (web; mobile pending) |
-| Update `nextReviewAt`/`streak` after each grade — server helper + `POST /api/practice/review` (web + mobile) | Deployed (helper + endpoints) |
+| Update `nextReviewAt`/`streak` after each grade; server helper + `POST /api/practice/review` (web + mobile) | Deployed (helper + endpoints) |
 | Auto-grade from practice flow (silent, no UX change) | Deployed (web; mobile pending) |
 
 The FSRS lib is self-contained: 4 exported functions (`reviewCard`, `newCard`, `favoriteToFsrsCard`, `compareByDueness`), default parameters, types. No callers yet; integration arrives piece by piece.
 
 **Why this matters for the asset:** converts the app from passive reader into a personalized living curriculum. Each user's SRS state becomes lock-in (losing it = losing months of progress). The signal generated is high-value training data for Asset A.
 
-## Movida 3 — Day-1 vocab-in-context positioning
+## Movida 3; Day-1 vocab-in-context positioning
 
 Branding/copy work, not engineering. Landing page + tagline + onboarding emphasize the in-context vocabulary loop and the breadth of authentic content (dialectal/regional variety available to any learner). Per user direction 2026-05-17, positioning does not target a demographic segment.
 

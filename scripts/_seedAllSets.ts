@@ -49,7 +49,7 @@ function genId(p: string, i: number): string {
     if (issues.length && force) console.log(`! ${slug}: ${issues.length} validator issue(s) overridden by --force`);
     // Resolve by slug REGARDLESS of status (2026-07-09). This used to require
     // status:"published", which had a perverse effect: to seed practice for a
-    // journey still in construction you had to publish its stories — and the
+    // journey still in construction you had to publish its stories; and the
     // reader does NOT filter by Journey.status, so a "published" story of an
     // archived/in-progress journey is reachable by direct URL IN PRODUCTION.
     // That is exactly why Friends and Hanseat ended up exposed. Practice sets

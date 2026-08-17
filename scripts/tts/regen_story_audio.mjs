@@ -228,7 +228,7 @@ async function main() {
     const stamp = new Date().toLocaleTimeString();
     console.log(`\n[${stamp}] (${idx + 1}/${stories.length}) ${story.title}`);
     if (!story.text || !story.title) {
-      console.log("  ⚠️ skipping — missing text/title");
+      console.log("  ⚠️ skipping; missing text/title");
       continue;
     }
     const langKey = story.journey.language.toLowerCase();

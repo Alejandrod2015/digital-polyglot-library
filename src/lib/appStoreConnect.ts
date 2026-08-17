@@ -14,16 +14,16 @@
 //
 // Required env (all must be set; otherwise isAscConfigured() is false and
 // callers surface "not configured" rather than silently doing nothing):
-//   ASC_KEY_ID      ; the 10-char Key ID of the .p8 App Store Connect key
-//   ASC_ISSUER_ID   ; the UUID issuer id shown above the key list
-//   ASC_PRIVATE_KEY ; contents of the .p8 file (PEM). Literal "\n" allowed.
-//   ASC_PRIVATE_KEY_PATH ; alternative to the above: a path to the .p8 file.
+//   ASC_KEY_ID      : the 10-char Key ID of the .p8 App Store Connect key
+//   ASC_ISSUER_ID   : the UUID issuer id shown above the key list
+//   ASC_PRIVATE_KEY : contents of the .p8 file (PEM). Literal "\n" allowed.
+//   ASC_PRIVATE_KEY_PATH : alternative to the above: a path to the .p8 file.
 //                          Use this locally so the PEM stays in .secrets/ and
 //                          never gets pasted into a dotenv file; on Vercel
 //                          there is no such file, so set ASC_PRIVATE_KEY.
-//   ASC_APP_ID      ; the numeric app id (6760942737 for Digital Polyglot)
-//   ASC_BETA_GROUP_ID ; optional; resolved from ASC_BETA_GROUP_NAME if absent
-//   ASC_BETA_GROUP_NAME ; optional; defaults to "Beta Testers"
+//   ASC_APP_ID      : the numeric app id (6760942737 for Digital Polyglot)
+//   ASC_BETA_GROUP_ID : optional; resolved from ASC_BETA_GROUP_NAME if absent
+//   ASC_BETA_GROUP_NAME : optional; defaults to "Beta Testers"
 
 import { createPrivateKey, sign as cryptoSign } from "node:crypto";
 import { readFileSync } from "node:fs";
@@ -449,6 +449,32 @@ export async function getTesterState(testerId: string): Promise<string | null> {
     return null;
   } catch (err) {
     console.error("Could not read tester state:", err);
+    return null;
+  }
+}
+
+/**
+ * The address Apple will actually mail the invitation to, read off the tester
+ * resource. Callers need it because our `appleIdEmail` is only OUR record of
+ * it: when an applicant tells us to use a different address, the tester Apple
+ * already holds keeps the old one, and every "resend" goes on landing in the
+ * inbox they told us they cannot read. That is not hypothetical, it is what
+ * happened to the tester who wrote in on 2026-08-15.
+ *
+ * Returns null when the tester is gone or the read fails, so callers can tell
+ * "different address" apart from "do not know".
+ */
+export async function getTesterEmail(testerId: string): Promise<string | null> {
+  const config = getAscConfig();
+  if (!config) return null;
+  try {
+    const res = await ascFetch<{ data?: { attributes?: { email?: string } } }>(
+      config,
+      `/v1/betaTesters/${testerId}`,
+    );
+    return res.data?.attributes?.email?.trim().toLowerCase() ?? null;
+  } catch (err) {
+    console.error("Could not read tester email:", err);
     return null;
   }
 }

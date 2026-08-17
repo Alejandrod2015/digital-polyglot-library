@@ -19,7 +19,7 @@ import { PrismaClient } from "../src/generated/prisma/index.js";
 
 const prisma = new PrismaClient();
 
-// Heurística de palabras universalmente conocidas — pueden colarse al
+// Heurística de palabras universalmente conocidas; pueden colarse al
 // vocab del LLM aunque cualquier English speaker ya las reconozca.
 const UNIVERSAL_WORDS = new Set([
   "ok", "no", "si", "yes", "hi", "hello", "café", "taxi", "hotel",
@@ -211,7 +211,7 @@ async function main() {
       const word = v.word ?? v.surface ?? "";
       const type = v.type ?? v.wordType ?? "";
       const def = (v.definition ?? v.translation ?? "").slice(0, 80);
-      console.log(`      • ${word} [${type}] — ${def}`);
+      console.log(`      • ${word} [${type}]; ${def}`);
     }
   }
 

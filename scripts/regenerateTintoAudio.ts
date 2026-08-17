@@ -55,7 +55,7 @@ function probeDuration(path: string): number {
 /**
  * Whisper.cpp-based phantom detector. Run whisper-cli at word granularity
  * (-ml 1) on the segment, get per-word timestamps. The end of the LAST
- * recognized word + 30 ms is the true end of speech — anything after is
+ * recognized word + 30 ms is the true end of speech; anything after is
  * either silence or a hallucinated phantom (which whisper drops because
  * it doesn't transcribe to anything that matches the expected text).
  *
@@ -156,7 +156,7 @@ async function processSlot(slot: number) {
   for (const f of ["concat.wav", "mixed.wav", "final.mp3", "concat_list.txt", "silence_350.wav"]) {
     rmSync(`${workDir}/${f}`, { force: true });
   }
-  // Also drop stale per-segment _align.mp3 derivatives — they get re-emitted.
+  // Also drop stale per-segment _align.mp3 derivatives; they get re-emitted.
   if (existsSync(workDir)) {
     for (const name of readdirSync(workDir)) {
       if (name.endsWith("_align.mp3")) rmSync(`${workDir}/${name}`, { force: true });

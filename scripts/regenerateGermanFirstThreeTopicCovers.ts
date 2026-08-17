@@ -97,7 +97,7 @@ async function main(): Promise<void> {
   for (const story of stories) {
     const synopsis = stripHtmlForCover(story.synopsis || story.text || "").slice(0, 1600);
     if (!synopsis) {
-      console.warn(`[skip] ${story.topic}/L${story.level}/slot${story.slotIndex} — empty synopsis`);
+      console.warn(`[skip] ${story.topic}/L${story.level}/slot${story.slotIndex}; empty synopsis`);
       continue;
     }
     const prompt = buildCoverPrompt({
@@ -113,7 +113,7 @@ async function main(): Promise<void> {
     const filename = `${fileBase || "story-cover"}-cool-cartoon-${Date.now()}.png`;
     const tag = `${story.topic}/L${story.level}/slot${story.slotIndex}`;
     try {
-      console.log(`[start] ${tag} — ${story.title}`);
+      console.log(`[start] ${tag}; ${story.title}`);
       const buffer = await generateCoverBuffer(prompt);
       const uploaded = await uploadPublicObject({
         key: `media/generated/images/${filename}`,

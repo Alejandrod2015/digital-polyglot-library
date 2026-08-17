@@ -5,8 +5,8 @@
  * sea consistente con el resto del UI.
  *
  * Toca DOS tablas:
- *   - dp_journeys_v1       (`Journey.name`)         — instancia por idioma/variant
- *   - dp_journey_types_v1  (`JourneyType.label`)    — los 8 tipos canónicos
+ *   - dp_journeys_v1       (`Journey.name`); instancia por idioma/variant
+ *   - dp_journey_types_v1  (`JourneyType.label`); los 8 tipos canónicos
  *
  * Mapping derivado de los 8 JourneyTypes en producción:
  *   Conversacional → Conversational
@@ -18,7 +18,7 @@
  *   Hospitalidad   → Hospitality
  *   Salud          → Health
  *
- * El slug (e.g. "academico" / "salud") NO se toca — sigue siendo el
+ * El slug (e.g. "academico" / "salud") NO se toca; sigue siendo el
  * de cuando se creó el row, así nada que dependa del slug se rompe.
  *
  * Usuarios EXISTENTES con journeys creados antes del rename siguen
@@ -41,7 +41,7 @@ const RENAMES: Record<string, string> = {
   "Negocios":       "Business",
   "Expatriado":     "Expat",
   "Académico":      "Academic",
-  // "Cultural" idéntico en ambos idiomas — omitido del map.
+  // "Cultural" idéntico en ambos idiomas; omitido del map.
   "Hospitalidad":   "Hospitality",
   "Salud":          "Health",
 };

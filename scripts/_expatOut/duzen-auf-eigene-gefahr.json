@@ -1,0 +1,144 @@
+[
+  {
+    "title": "Duzen auf eigene Gefahr",
+    "slug": "duzen-auf-eigene-gefahr",
+    "text": "Der Dienstausweis ist noch warm aus dem Drucker, da lernt Nadia die wichtigste Landkarte des Büros: wer du ist und wer Sie bleibt.\n\nPaul: Willkommen im Team. Ich bin Paul. Hier duzen sich alle, vom Praktikanten bis zur Technik.\n\nNadia: Alle? In meinem Vertrag stand irgendwas von förmlicher Unternehmenskultur.\n\nPaul: Die Kultur hat zwei Stockwerke. Hier unten du, im dritten Stock wohnt das Sie.\n\nNadia: Und was passiert, wenn man die Stockwerke verwechselt?\n\nPaul: Kollege Martin hat Frau Brandt einmal geduzt. Er bekam eine Woche lang Antworten aus einem Satz. Duzen auf eigene Gefahr.\n\nNadia: Und Videokonferenzen? Da sieht man die Stockwerke nicht.\n\nPaul: Deshalb schwitzen wir alle vor der ersten Mail. Anrede falsch, Woche ruiniert.\n\nMittags steht Nadia mit ihrem Tablett vor der Kaffeemaschine, direkt neben Frau Brandt.\n\nBrandt: Sie sind die Neue aus dem Projektteam. Nadia, richtig? Man hört Gutes.\n\nNadia: Danke! Ich freue mich sehr, du...\n\nDer Satz bleibt ihr im Hals stecken. Eine Sekunde dehnt sich wie Kaugummi.\n\nNadia: ...dass SIE sich Zeit für das Gespräch nehmen.\n\nBrandt: Gut gerettet. Präzision unter Druck; das Projekt wird Ihnen liegen. Dienstag, neun Uhr, Kickoff.\n\nAm Nachmittag schiebt Paul einen Zettel über den Schreibtisch: eine handgezeichnete Karte mit zwei Etagen.\n\nPaul: Deine Landkarte für die ersten Wochen. Und morgen zeige ich dir unsere heiligste Regel: den Feierabend.\n\nNadia: Erst die Anmeldung, jetzt die Anrede. Diese Stadt prüft wirklich alles.",
+    "synopsis": "Erster Arbeitstag: Der Dienstausweis ist noch warm, da lernt Nadia die wichtigste Landkarte des Büros: wer du ist und wer Sie bleibt. Paul erklärt die zwei Stockwerke der Unternehmenskultur, und an der Kaffeemaschine rettet sich Nadia in letzter Sekunde vor dem gefährlichsten Fehler des deutschen Büroalltags: Frau Brandt zu duzen. Morgen wartet die heiligste Regel von allen.",
+    "arcType": "juxtaposition-discovery",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "die Landkarte",
+        "surface": "Landkarte",
+        "definition": "Map; here, a mental map of unwritten social rules."
+      },
+      {
+        "type": "verb",
+        "word": "duzen",
+        "definition": "To address someone with the informal du form."
+      },
+      {
+        "type": "adjective",
+        "word": "förmlich",
+        "surface": "förmlicher",
+        "definition": "Formal, keeping official manners and a polite distance."
+      },
+      {
+        "type": "noun",
+        "word": "die Unternehmenskultur",
+        "surface": "Unternehmenskultur",
+        "definition": "Company culture; how people treat each other at work."
+      },
+      {
+        "type": "noun",
+        "word": "das Stockwerk",
+        "surface": "Stockwerke",
+        "definition": "Floor or storey of a building with several levels."
+      },
+      {
+        "type": "verb",
+        "word": "verwechseln",
+        "surface": "verwechselt",
+        "definition": "To mix up two things or people by mistake."
+      },
+      {
+        "type": "expression",
+        "word": "auf eigene Gefahr",
+        "definition": "At your own risk; nobody else takes responsibility.",
+        "surface": "Gefahr"
+      },
+      {
+        "type": "verb",
+        "word": "schwitzen",
+        "definition": "To sweat, from heat or from pure nerves."
+      },
+      {
+        "type": "noun",
+        "word": "die Anrede",
+        "surface": "Anrede",
+        "definition": "Form of address: du, Sie, or titles in letters."
+      },
+      {
+        "type": "verb",
+        "word": "ruinieren",
+        "surface": "ruiniert",
+        "definition": "To ruin or destroy something completely and quickly."
+      },
+      {
+        "type": "expression",
+        "word": "im Hals stecken bleiben",
+        "surface": "stecken",
+        "definition": "To get stuck in your throat, unable to finish."
+      },
+      {
+        "type": "verb",
+        "word": "sich dehnen",
+        "surface": "dehnt",
+        "definition": "To stretch out, becoming longer than it should."
+      },
+      {
+        "type": "noun",
+        "word": "der Kaugummi",
+        "surface": "Kaugummi",
+        "definition": "Chewing gum; famous for never letting go quickly."
+      },
+      {
+        "type": "verb",
+        "word": "retten",
+        "surface": "gerettet",
+        "definition": "To rescue or save someone from a disaster."
+      },
+      {
+        "type": "expression",
+        "word": "unter Druck",
+        "definition": "Under pressure, in a stressful and demanding moment.",
+        "surface": "Druck"
+      },
+      {
+        "type": "verb",
+        "word": "jemandem liegen",
+        "surface": "liegen",
+        "definition": "To suit someone; a task that fits your talents."
+      },
+      {
+        "type": "noun",
+        "word": "der Zettel",
+        "surface": "Zettel",
+        "definition": "Small piece of paper with a quick note."
+      },
+      {
+        "type": "adjective",
+        "word": "handgezeichnet",
+        "surface": "handgezeichnete",
+        "definition": "Hand-drawn, made with a pen and not printed."
+      },
+      {
+        "type": "noun",
+        "word": "die Etage",
+        "surface": "Etagen",
+        "definition": "Floor of a building; the elegant word for Stockwerk."
+      },
+      {
+        "type": "adjective",
+        "word": "heilig",
+        "surface": "heiligste",
+        "definition": "Holy, sacred; treated with the maximum possible respect."
+      },
+      {
+        "type": "noun",
+        "word": "der Feierabend",
+        "surface": "Feierabend",
+        "definition": "End of the workday; sacred German free time."
+      },
+      {
+        "type": "verb",
+        "word": "prüfen",
+        "surface": "prüft",
+        "definition": "To test or examine someone or something carefully."
+      }
+    ],
+    "level": "c1",
+    "topic": "work-and-office",
+    "slotIndex": 1
+  }
+]

@@ -4,7 +4,7 @@
 // there is ONE of it.
 //
 // WHY this exists: Talking Points needed the same reader, and it was being
-// rebuilt by hand — copying class names across, drifting on every detail, and
+// rebuilt by hand; copying class names across, drifting on every detail, and
 // guaranteed to drift again the next time the story page is touched. The
 // container, the title block, the cover slot, the player dock and the vocab
 // panel mount are identical for any reader we will ever have, so they live

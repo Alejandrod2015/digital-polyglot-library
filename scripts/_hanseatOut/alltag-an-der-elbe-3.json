@@ -1,0 +1,125 @@
+[
+  {
+    "title": "Elbe oder Alster",
+    "slug": "elbe-oder-alster",
+    "text": "Bei einem Sonntagsspaziergang bleibt Ole an der Elbe stehen und deutet auf die Kräne am anderen Ufer. Merle, die dazugestoßen ist, winkt ab und zeigt in die andere Richtung, zur Alster.\n\nOle: Das hier ist die Elbe. Salzig, laut, arbeitend. Hier schlägt das echte Herz der Stadt.\n\nMerle: Und dort liegt die Alster, mitten in der Stadt, ruhig und vornehm. Segelboote statt Containerschiffe.\n\nNora: Und ich muss mich für ein Gewässer entscheiden? Das klingt nach zwei rivalisierenden Vereinen.\n\nOle: So ähnlich. Sag mir, an welches Wasser du sonntags gehst, und ich sage dir, wer du bist.\n\nMerle: An der Alster joggt und rudert man. An der Elbe schaut man den Schiffen nach und schweigt.\n\nNora: Und was ist besser?\n\nOle: Falsche Frage. Es geht nicht um besser, es geht um Zugehörigkeit. Elbe oder Alster, das ist hier eine Entscheidung fürs Leben.\n\nSie gehen ein Stück am Wasser entlang, bis Nora vor einem alten Schwimmponton stehen bleibt.\n\nNora: Weißt du was? Ich rieche das Salz, ich sehe die Kräne und bin sofort ruhig. Dann ist es wohl die Elbe.\n\nOle: Gute Wahl. Wer die Kräne mag, nimmt die Stadt so, wie sie wirklich ist. Rau und ehrlich.\n\nMerle: Verräter. Aber eine gute Wahl. Die Alster verzeiht dir das, sie ist großmütig.\n\nNora: Und plötzlich habe ich ein Ufer, das zu mir gehört. Kein Amt hat es gestempelt, ich habe es einfach gespürt.\n\nMerle: So wird man hier heimisch. Nicht durch Papiere, sondern durch ein Stück Wasser.",
+    "synopsis": "Zwischen dem rauen Hafenwasser und dem vornehmen Stadtsee wählt Nora ihre Elbe und wird ganz ohne Amt heimisch.",
+    "arcType": "reframe-turn",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Sonntagsspaziergang",
+        "definition": "a leisurely Sunday walk taken purely for pleasure and rest"
+      },
+      {
+        "type": "verb",
+        "word": "deuten",
+        "surface": "deutet",
+        "definition": "to point at something to draw attention to it"
+      },
+      {
+        "type": "noun",
+        "word": "Ufer",
+        "definition": "the bank; the land right along a river or lake"
+      },
+      {
+        "type": "verb",
+        "word": "abwinken",
+        "surface": "winkt ab",
+        "definition": "to wave something off dismissively; to reject it with a gesture"
+      },
+      {
+        "type": "adjective",
+        "word": "salzig",
+        "surface": "Salzig",
+        "definition": "salty; tasting or smelling of salt like the sea"
+      },
+      {
+        "type": "adjective",
+        "word": "vornehm",
+        "definition": "genteel and refined; elegant in a dignified, upper-class way"
+      },
+      {
+        "type": "noun",
+        "word": "Segelboot",
+        "surface": "Segelboote",
+        "definition": "a sailing boat driven by the wind in its sails"
+      },
+      {
+        "type": "noun",
+        "word": "Containerschiff",
+        "surface": "Containerschiffe",
+        "definition": "a huge cargo ship that carries stacked freight containers"
+      },
+      {
+        "type": "noun",
+        "word": "Gewässer",
+        "definition": "a body of water such as a river, lake or sea"
+      },
+      {
+        "type": "verb",
+        "word": "sich entscheiden",
+        "surface": "entscheiden",
+        "definition": "to make up your mind and choose between the options"
+      },
+      {
+        "type": "noun",
+        "word": "Zugehörigkeit",
+        "definition": "a sense of belonging to a particular group or place"
+      },
+      {
+        "type": "verb",
+        "word": "rudern",
+        "surface": "rudert",
+        "definition": "to row a boat by pulling on the oars"
+      },
+      {
+        "type": "verb",
+        "word": "riechen",
+        "surface": "rieche",
+        "definition": "to smell; to take in a scent through the nose"
+      },
+      {
+        "type": "noun",
+        "word": "Schwimmponton",
+        "definition": "a floating platform moored at the water's edge"
+      },
+      {
+        "type": "adjective",
+        "word": "rau",
+        "surface": "Rau",
+        "definition": "rough; harsh and rugged rather than smooth or gentle"
+      },
+      {
+        "type": "verb",
+        "word": "verzeihen",
+        "surface": "verzeiht",
+        "definition": "to forgive someone for a wrong they did you"
+      },
+      {
+        "type": "adjective",
+        "word": "großmütig",
+        "definition": "magnanimous; generous and forgiving toward others out of strength"
+      },
+      {
+        "type": "noun",
+        "word": "Verräter",
+        "definition": "a traitor; someone who betrays a side or loyalty"
+      },
+      {
+        "type": "expression",
+        "word": "heimisch werden",
+        "surface": "heimisch",
+        "definition": "to come to feel at home and settled in a place"
+      },
+      {
+        "type": "expression",
+        "word": "Gute Wahl",
+        "definition": "good choice; a decision that was well and rightly made"
+      }
+    ],
+    "level": "c1",
+    "topic": "alltag-an-der-elbe",
+    "slotIndex": 3
+  }
+]

@@ -14,7 +14,7 @@ Foundational principle: el blog (`/blog/*`) sigue viviendo en `digitalpolyglot.c
 
 ## Order of operations
 
-### Step 1 — Pre-cutover (sin downtime)
+### Step 1; Pre-cutover (sin downtime)
 
 1. **DNS**: crear `wp.digitalpolyglot.com` como A record a `216.172.184.57` (mismo IP del WP origin). Esperar propagación (`dig +short wp.digitalpolyglot.com` debe devolver el IP).
 2. **WP hostname**: en WordPress (Settings → General), añadir `wp.digitalpolyglot.com` como dirección permitida. Si WP solo acepta `www.digitalpolyglot.com`, hay que actualizar `siteurl`/`home` o configurar un alias en el hosting. Verificar `curl -I https://wp.digitalpolyglot.com/blog/30-mexican-spanish-idioms-for-understanding-everyday-humor/` retorna 200.
@@ -22,7 +22,7 @@ Foundational principle: el blog (`/blog/*`) sigue viviendo en `digitalpolyglot.c
    - `/blog/30-mexican-spanish-idioms-for-understanding-everyday-humor/` carga el post WP completo
    - Imágenes y CSS del tema WP cargan (esto valida `/wp-content/*` rewrite)
 
-### Step 2 — Cutover
+### Step 2; Cutover
 
 1. **Vercel**: añadir `digitalpolyglot.com` y `www.digitalpolyglot.com` como dominios del proyecto Next.js.
 2. **DNS**: cambiar A record de `digitalpolyglot.com` y `www.digitalpolyglot.com` para que apunten a Vercel (`76.76.21.21` o el CNAME que Vercel indique).
@@ -33,7 +33,7 @@ Foundational principle: el blog (`/blog/*`) sigue viviendo en `digitalpolyglot.c
    - `curl -I https://digitalpolyglot.com/about-us` → 308 → `/`
    - `reader.digitalpolyglot.com/api/mobile/journey?language=de` → sigue funcionando para mobile
 
-### Step 3 — Beta migration (independiente, en paralelo)
+### Step 3; Beta migration (independiente, en paralelo)
 
 1. Confirmar con el usuario que el WP "Polycast" en `beta.digitalpolyglot.com` se puede apagar.
 2. Mover el dominio `beta.digitalpolyglot.com` al proyecto Vercel (o configurar Next.js para servir solo `/beta` en ese host).

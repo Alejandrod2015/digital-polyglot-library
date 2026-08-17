@@ -1,0 +1,118 @@
+[
+  {
+    "title": "Feierabend an der Elbe",
+    "slug": "feierabend-an-der-elbe",
+    "text": "Am Kai vor dem Speicher sammeln sich die Kollegen, jeder mit einer Flasche Alsterwasser in der Hand. Nora traut sich kaum dazu, so wortkarg wirkt die Runde. Ole winkt sie heran; neben ihm lehnt Merle aus der Buchhaltung am Geländer.\n\nOle: Komm her. Feierabend ist heilig, aber laut wird es hier trotzdem nie.\n\nNora: Genau das irritiert mich. Woanders reden nach der Arbeit alle gleichzeitig durcheinander.\n\nMerle: Hier redet man erst, wenn man wirklich etwas zu sagen hat. Der Rest ist Schweigen mit Aussicht.\n\nNora: Und ihr steht wirklich gern schweigend am Wasser?\n\nMerle: Gern und regelmäßig. Das ist unsere Art von Nähe. Kein Small Talk, nur zusammen dabei sein.\n\nNora: Und woran merke ich, dass ich wirklich dazugehöre?\n\nMerle: Daran, dass niemand mehr erklärt, warum gerade geschwiegen wird.\n\nOle: Sieh es so: Wer dich zum Kai einlädt, meint es ernst. Die Einladung ist mehr wert als jede Umarmung.\n\nCarstens kommt dazu, nickt in die Runde und stellt sich neben Nora ans Geländer.\n\nCarstens: Ordentliche Arbeit heute. Der Kunde hat unterschrieben.\n\nNora: Danke. Bekomme ich jetzt sogar zwei Sätze am Stück? Das grenzt an Verschwendung.\n\nCarstens: Feierabend. Da darf man ausnahmsweise großzügig sein.\n\nOle: Zwei Sätze von Carstens am Kai. Das schreibst du dir am besten rot an.\n\nNora: Rot angestrichen. Der Tag, an dem der Chef am Wasser fast gesprächig wurde. Dann stoße ich jetzt mit an, ganz schweigend, wie es sich gehört.\n\nMerle: So ist es. Genau so wirst du mit der Zeit eine von uns.\n\nNora: Vielleicht bin ich es schon. Ich habe seit zehn Minuten nichts gesagt und fühle mich zum ersten Mal richtig wohl.",
+    "synopsis": "Schweigend am Kai, ein Alsterwasser in der Hand, spürt Nora zum ersten Mal, dass sie dazugehört.",
+    "arcType": "harmonic-close",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Kai",
+        "definition": "a quay; the paved edge of a harbour along the water"
+      },
+      {
+        "type": "noun",
+        "word": "Alsterwasser",
+        "definition": "a northern shandy of beer mixed with lemonade or soda"
+      },
+      {
+        "type": "verb",
+        "word": "sich trauen",
+        "surface": "traut sich",
+        "definition": "to dare; to work up the nerve to do something"
+      },
+      {
+        "type": "adjective",
+        "word": "wortkarg",
+        "definition": "sparing with words; saying very little and rarely chatting"
+      },
+      {
+        "type": "noun",
+        "word": "Runde",
+        "definition": "the group of people gathered together in a small circle"
+      },
+      {
+        "type": "verb",
+        "word": "winken",
+        "surface": "winkt",
+        "definition": "to wave; to signal to someone with your hand"
+      },
+      {
+        "type": "adjective",
+        "word": "heilig",
+        "definition": "sacred; treated as untouchable and not to be disturbed"
+      },
+      {
+        "type": "adverb",
+        "word": "durcheinander",
+        "definition": "all at once and confusingly; chaotically over one another"
+      },
+      {
+        "type": "noun",
+        "word": "Aussicht",
+        "definition": "a view; the scene you can see into the distance"
+      },
+      {
+        "type": "adverb",
+        "word": "regelmäßig",
+        "definition": "regularly; happening again and again at steady intervals"
+      },
+      {
+        "type": "noun",
+        "word": "Nähe",
+        "definition": "closeness; a warm feeling of being emotionally near someone"
+      },
+      {
+        "type": "expression",
+        "word": "Small Talk",
+        "definition": "light casual chat about trivial things to fill silence"
+      },
+      {
+        "type": "verb",
+        "word": "einladen",
+        "surface": "einlädt",
+        "definition": "to invite someone to come and join you somewhere"
+      },
+      {
+        "type": "noun",
+        "word": "Einladung",
+        "definition": "an invitation; an offer asking someone to come along"
+      },
+      {
+        "type": "noun",
+        "word": "Geländer",
+        "definition": "a railing along an edge that you can hold or lean on"
+      },
+      {
+        "type": "noun",
+        "word": "Verschwendung",
+        "definition": "a waste; using far more of something than is needed"
+      },
+      {
+        "type": "adjective",
+        "word": "großzügig",
+        "definition": "generous; giving freely and more than strictly necessary"
+      },
+      {
+        "type": "adverb",
+        "word": "schweigend",
+        "surface": "schweigend",
+        "definition": "in silence; present but saying nothing at all"
+      },
+      {
+        "type": "expression",
+        "word": "wie es sich gehört",
+        "definition": "as is proper; the correct and fitting way to behave"
+      },
+      {
+        "type": "expression",
+        "word": "eine von uns",
+        "definition": "one of us; a fully accepted member of the group"
+      }
+    ],
+    "level": "c1",
+    "topic": "das-kontor",
+    "slotIndex": 3
+  }
+]

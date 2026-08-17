@@ -1,17 +1,17 @@
-# Curated practice set spec (Spanish LATAM, A2 — English-speaking learners)
+# Curated practice set spec (Spanish LATAM, A2; English-speaking learners)
 
 You author a curated practice set for ONE story. Read `scripts/_authoring.json`,
 find the object whose `slug` matches the one you were given, and use ONLY its
 `vocab` (each item has `word` lemma, `surface` inflected form, `type`, `def`
 English definition, `ex` example sentence from the story).
 
-## Coverage, mix & featured/pool (the template — mole/humo)
+## Coverage, mix & featured/pool (the template; mole/humo)
 - FULL COVERAGE: author one exercise per vocab word. EVERY vocab word must be
   taught by exactly one exercise; no word reused across exercises. A 20-word
   story → ~17 exercises; a 21-word story → ~18. (`match_meaning` teaches 4 words
   in a single object.)
-- MIX: exactly **1** `match_meaning`; **0–1** `listen_choose`; the rest split
-  between `meaning_in_context` (most) and `fill_blank`. No fixed 6/3/1 ratio —
+- MIX: exactly **1** `match_meaning`; **0-1** `listen_choose`; the rest split
+  between `meaning_in_context` (most) and `fill_blank`. No fixed 6/3/1 ratio ;
   let the vocab decide.
 - FEATURED vs POOL: exactly **10** exercises are FEATURED (the post-story
   session); the rest are the POOL (surfaced when the user taps Practice). Mark a
@@ -23,7 +23,7 @@ Write the result as a JSON array to `scripts/_sets/<slug>.json`, featured object
 first then pool. Output the file only. The seed (`_seedAllSets.ts`) runs
 `validateSet` and REFUSES to seed a set that breaks any rule below.
 
-## Audio voice (RULE — journey practice voice, 2026-07-03)
+## Audio voice (RULE; journey practice voice, 2026-07-03)
 All practice audio (isolated words AND example sentences) for Spanish-LATAM
 journey stories is spoken by the journey's STANDARD PRACTICE VOICE: Jhenny
 (`FXGrCtY3PEyfqczBAlqm`, "Jhenny - Warm, Fluid, Smooth", LATAM-neutral),
@@ -42,8 +42,8 @@ Resolution is centralized in `src/lib/practiceVoice.ts`
 
 ## Global rules
 - English scaffold. Spanish ONLY for the target word and the Spanish sentence.
-- NEVER use the em-dash character `—`. Use neutral Spanish (tú, not vos).
-- English glosses are SHORT (2–5 words), parallel in register/length within one
+- NEVER use the em-dash character `-`. Use neutral Spanish (tú, not vos).
+- English glosses are SHORT (2-5 words), parallel in register/length within one
   exercise. No glosses that give it away by being the only plausible one.
 - Do not mention the story plot; an exercise must stand on its own.
 
@@ -63,7 +63,7 @@ Resolution is centralized in `src/lib/practiceVoice.ts`
 ```
 - SENTENCE LENGTH ≤ ~14 words, trimmed to the clause that holds the marked word.
   Do NOT use the full story sentence when it carries setting clauses (names,
-  city/country, subordinate clauses) — it overflows the card and adds reading
+  city/country, subordinate clauses); it overflows the card and adds reading
   load. The word is shown above; the sentence only gives minimal context.
 - The headline `word` MUST be the DICTIONARY form, never the inflected form:
   singular for nouns, masculine singular for adjectives/participles, infinitive
@@ -84,7 +84,7 @@ Resolution is centralized in `src/lib/practiceVoice.ts`
   the sentence: a verb headline takes infinitive glosses ("to shout", never
   "shouts"/"shouting"/"shouted"); all 4 options in the same form ("to X").
 
-## fill_blank  (Context — tests word comprehension through a meaning-determined gap)
+## fill_blank  (Context; tests word comprehension through a meaning-determined gap)
 ```
 {
   "type": "fill_blank",
@@ -107,7 +107,7 @@ Resolution is centralized in `src/lib/practiceVoice.ts`
 - HARD LENGTH CAP: the sentence is ≤ 12 words (count the blank as one). Short and
   cotidiano. If you can't make the cue fit in ≤12 words, cut adjectives/clauses or
   pick a different word. Long cloze sentences are rejected.
-- HARD RULE — solvable by MEANING ALONE, never by story recall. A learner who
+- HARD RULE; solvable by MEANING ALONE, never by story recall. A learner who
   never read the story must pick the right word from the sentence's context. The
   sentence carries a semantic cue (cause/effect, object, descriptor) that ONLY
   the target word satisfies.
@@ -144,7 +144,7 @@ Resolution is centralized in `src/lib/practiceVoice.ts`
   position is handled downstream; do not worry about it. No `audioClip` (word
   audio is resolved at runtime via `word-tts`).
 
-## listen_choose  (optional — "Which word did you hear?" from a REAL story line)
+## listen_choose  (optional; "Which word did you hear?" from a REAL story line)
 ```
 {
   "type": "listen_choose", "featured": false,
@@ -162,7 +162,7 @@ Resolution is centralized in `src/lib/practiceVoice.ts`
 }
 ```
 - The audio is the REAL story fragment (character voice), so `sentence` MUST be
-  the exact fragment text and `voiceId` the speaker's — no audio is generated for
+  the exact fragment text and `voiceId` the speaker's; no audio is generated for
   this type. Distractors are other same-form conjugations (all "was X-ing", all
   "we X", …).
 
@@ -171,4 +171,4 @@ none reused; exactly 1 match, ≤1 listen; exactly 10 featured; every meaning
 sentence has a `[[ ]]` and ≤14 words; every fill ≤12 words with `translation` +
 `optionTranslations`; meaning/fill carry an `audioClip` with `sentence` +
 `targetWord`; listen carries `voiceId`; no em-dashes; options[0]===answer.
-Then run `npx tsx scripts/_validateSets.ts --only=<slug>` — it must print ✓.
+Then run `npx tsx scripts/_validateSets.ts --only=<slug>`; it must print ✓.

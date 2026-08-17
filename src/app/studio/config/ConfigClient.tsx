@@ -237,7 +237,7 @@ export default function ConfigClient() {
         <span style={{ fontSize: 13, color: "var(--muted)" }}>
           {source === "database" ? "Reglas personalizadas" : "Valores por defecto"}
           {updatedBy && (
-            <span> &mdash; editado por {updatedBy}</span>
+            <span>, editado por {updatedBy}</span>
           )}
           {updatedAt && (
             <span style={{ opacity: 0.6 }}> ({new Date(updatedAt).toLocaleDateString("es")})</span>
@@ -520,13 +520,13 @@ export default function ConfigClient() {
                 }}
               >
                 <div style={{ fontWeight: 700, color: LEVEL_COLORS[lvl], marginBottom: 4 }}>
-                  {lvl.toUpperCase()} &mdash; {r.label}
+                  {lvl.toUpperCase()}: {r.label}
                 </div>
                 <div style={{ color: "var(--muted)" }}>
-                  {r.wordCountRange.min}&ndash;{r.wordCountRange.max} palabras
+                  {r.wordCountRange.min}-{r.wordCountRange.max} palabras
                 </div>
                 <div style={{ color: "var(--muted)" }}>
-                  {r.vocabDensity.minItems}&ndash;{r.vocabDensity.maxItems} vocab
+                  {r.vocabDensity.minItems}-{r.vocabDensity.maxItems} vocab
                 </div>
                 <div style={{ color: "var(--muted)" }}>
                   {r.grammarStructures.length} estructuras

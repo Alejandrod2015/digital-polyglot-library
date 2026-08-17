@@ -1,0 +1,388 @@
+{
+ "la-esquina-no-perdona": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Daniela",
+   "voice": "J8BF9c7OgbHiqagCNoEj"
+  },
+  {
+   "speaker": "Andrés",
+   "voice": "beQfcCW5PgdTQs4cETaz"
+  },
+  {
+   "speaker": "Yuly",
+   "voice": "CUpuXTxjB4hhpAJNei6V"
+  }
+ ],
+ "ni-tardo-ni-perezoso": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Rodrigo",
+   "voice": "77K94gl6ZCRVTHG8Gi1w"
+  },
+  {
+   "speaker": "Itzel",
+   "voice": "m7yTemJqdIqrcNleANfX"
+  },
+  {
+   "speaker": "Nayeli",
+   "voice": "dZtUsFRKkioPsu9syJF6"
+  }
+ ],
+ "se-le-fue-la-lengua": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Julián",
+   "voice": "beQfcCW5PgdTQs4cETaz"
+  },
+  {
+   "speaker": "Marina",
+   "voice": "1ZhMG5ZZgJ6XpkOrB8Az"
+  },
+  {
+   "speaker": "Valeria",
+   "voice": "J8BF9c7OgbHiqagCNoEj"
+  }
+ ],
+ "el-maestro-tambien-cae": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Mateo",
+   "voice": "p1Q3ihQuPjyyENa1RGtl"
+  },
+  {
+   "speaker": "Renata",
+   "voice": "m7yTemJqdIqrcNleANfX"
+  },
+  {
+   "speaker": "Sofía",
+   "voice": "ewn5JTa3lNPY8QVuZJi6"
+  },
+  {
+   "speaker": "Pablo",
+   "voice": "DV9FrN0pQkPWIoxW5dvT"
+  }
+ ],
+ "el-que-tiene-un-amigo": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Itzel",
+   "voice": "m7yTemJqdIqrcNleANfX"
+  },
+  {
+   "speaker": "Rodrigo",
+   "voice": "77K94gl6ZCRVTHG8Gi1w"
+  },
+  {
+   "speaker": "Nayeli",
+   "voice": "dZtUsFRKkioPsu9syJF6"
+  }
+ ],
+ "el-chisme-de-la-esquina": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Marina",
+   "voice": "1ZhMG5ZZgJ6XpkOrB8Az"
+  },
+  {
+   "speaker": "Julián",
+   "voice": "beQfcCW5PgdTQs4cETaz"
+  },
+  {
+   "speaker": "Valeria",
+   "voice": "J8BF9c7OgbHiqagCNoEj"
+  }
+ ],
+ "borron-y-cuenta-nueva": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Marina",
+   "voice": "1ZhMG5ZZgJ6XpkOrB8Az"
+  },
+  {
+   "speaker": "Julián",
+   "voice": "beQfcCW5PgdTQs4cETaz"
+  },
+  {
+   "speaker": "Valeria",
+   "voice": "J8BF9c7OgbHiqagCNoEj"
+  }
+ ],
+ "un-ascenso-disfrazado": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Camila",
+   "voice": "6Mo5ciGH5nWiQacn5FYk"
+  },
+  {
+   "speaker": "Tomás",
+   "voice": "acHf5gp7AGOY30tJjvD4"
+  },
+  {
+   "speaker": "Flor",
+   "voice": "9rvdnhrYoXoUt4igKpBw"
+  }
+ ],
+ "el-psicologo-de-la-barra": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Flor",
+   "voice": "9rvdnhrYoXoUt4igKpBw"
+  },
+  {
+   "speaker": "Tomás",
+   "voice": "acHf5gp7AGOY30tJjvD4"
+  }
+ ],
+ "las-palabras-al-reves": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Diego",
+   "voice": "ulJB4yAMefhHYn0FWgGy"
+  },
+  {
+   "speaker": "Beto",
+   "voice": "UK00oAtGYBrHBUbesfMv"
+  },
+  {
+   "speaker": "Pilar",
+   "voice": "wnQAQM2xwHFeVXM7PQOq"
+  }
+ ],
+ "almuerzo-en-el-jato": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Beto",
+   "voice": "UK00oAtGYBrHBUbesfMv"
+  },
+  {
+   "speaker": "Diego",
+   "voice": "ulJB4yAMefhHYn0FWgGy"
+  },
+  {
+   "speaker": "Pilar",
+   "voice": "wnQAQM2xwHFeVXM7PQOq"
+  }
+ ],
+ "todo-es-weon": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Benjamín",
+   "voice": "6WgXEzo1HGn3i7ilT4Fh"
+  },
+  {
+   "speaker": "Nico",
+   "voice": "OFrdGXwCzoE56a9sp1fk"
+  },
+  {
+   "speaker": "Javiera",
+   "voice": "6Gr4AVmTax1pMJO0lHRK"
+  }
+ ],
+ "el-carrete-del-sabado": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Benjamín",
+   "voice": "6WgXEzo1HGn3i7ilT4Fh"
+  },
+  {
+   "speaker": "Nico",
+   "voice": "OFrdGXwCzoE56a9sp1fk"
+  },
+  {
+   "speaker": "Javiera",
+   "voice": "6Gr4AVmTax1pMJO0lHRK"
+  }
+ ],
+ "el-que-se-enoja-pierde": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Mateo",
+   "voice": "p1Q3ihQuPjyyENa1RGtl"
+  },
+  {
+   "speaker": "Sofía",
+   "voice": "ewn5JTa3lNPY8QVuZJi6"
+  },
+  {
+   "speaker": "Renata",
+   "voice": "m7yTemJqdIqrcNleANfX"
+  },
+  {
+   "speaker": "Pablo",
+   "voice": "DV9FrN0pQkPWIoxW5dvT"
+  }
+ ],
+ "la-chibola-los-supero": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Diego",
+   "voice": "ulJB4yAMefhHYn0FWgGy"
+  },
+  {
+   "speaker": "Pilar",
+   "voice": "wnQAQM2xwHFeVXM7PQOq"
+  },
+  {
+   "speaker": "Beto",
+   "voice": "UK00oAtGYBrHBUbesfMv"
+  }
+ ],
+ "asi-nacio-el-salado": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Sofía",
+   "voice": "ewn5JTa3lNPY8QVuZJi6"
+  },
+  {
+   "speaker": "Renata",
+   "voice": "m7yTemJqdIqrcNleANfX"
+  },
+  {
+   "speaker": "Pablo",
+   "voice": "DV9FrN0pQkPWIoxW5dvT"
+  },
+  {
+   "speaker": "Mateo",
+   "voice": "p1Q3ihQuPjyyENa1RGtl"
+  }
+ ],
+ "camaron-que-se-duerme": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Rodrigo",
+   "voice": "77K94gl6ZCRVTHG8Gi1w"
+  },
+  {
+   "speaker": "Itzel",
+   "voice": "m7yTemJqdIqrcNleANfX"
+  },
+  {
+   "speaker": "Nayeli",
+   "voice": "dZtUsFRKkioPsu9syJF6"
+  }
+ ],
+ "andres-rey-de-la-pista": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Andrés",
+   "voice": "beQfcCW5PgdTQs4cETaz"
+  },
+  {
+   "speaker": "Daniela",
+   "voice": "J8BF9c7OgbHiqagCNoEj"
+  },
+  {
+   "speaker": "Yuly",
+   "voice": "CUpuXTxjB4hhpAJNei6V"
+  }
+ ],
+ "se-dano-la-parranda": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Andrés",
+   "voice": "beQfcCW5PgdTQs4cETaz"
+  },
+  {
+   "speaker": "Daniela",
+   "voice": "J8BF9c7OgbHiqagCNoEj"
+  },
+  {
+   "speaker": "Yuly",
+   "voice": "CUpuXTxjB4hhpAJNei6V"
+  },
+  {
+   "speaker": "Guachimán",
+   "voice": "57D8YIbQSuE3REDPO6Vm"
+  }
+ ],
+ "un-asado-a-la-orilla": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Javiera",
+   "voice": "6Gr4AVmTax1pMJO0lHRK"
+  },
+  {
+   "speaker": "Benjamín",
+   "voice": "6WgXEzo1HGn3i7ilT4Fh"
+  },
+  {
+   "speaker": "Nico",
+   "voice": "OFrdGXwCzoE56a9sp1fk"
+  }
+ ],
+ "el-mismo-chabon": [
+  {
+   "speaker": "narrator",
+   "voice": "JW8DGEuLp9WxIS5IdxMM"
+  },
+  {
+   "speaker": "Camila",
+   "voice": "6Mo5ciGH5nWiQacn5FYk"
+  },
+  {
+   "speaker": "Flor",
+   "voice": "9rvdnhrYoXoUt4igKpBw"
+  }
+ ]
+}

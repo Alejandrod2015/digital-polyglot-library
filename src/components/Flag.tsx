@@ -52,7 +52,7 @@ const FLAGS: Record<string, React.ReactNode> = {
       <rect width="1" height="2" x="1" fill="#FFFFFF" />
       <rect width="1" height="2" x="2" fill="#CE1126" />
       {/* Real Mexican coat of arms (public-domain govt emblem), centered on
-          the white band. Raster so it renders faithfully — the full arms is
+          the white band. Raster so it renders faithfully; the full arms is
           too intricate to hand-vector legibly at pill scale. */}
       <image
         href="/flags/mx-coat.png"

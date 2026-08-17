@@ -1,0 +1,120 @@
+[
+  {
+    "title": "Moin, Neuland",
+    "slug": "moin-neuland",
+    "text": "Auf demselben Kopfsteinpflaster in Ottensen zieht eine Fremde ihren Koffer und übt laut eine viel zu lange Begrüßung. Nora, die gerade bei Wiebke Franzbrötchen holt, erkennt sich sofort wieder.\n\nSofia: Guten Morgen, ich wünsche Ihnen einen wunderschönen, angenehmen Tag! War das richtig? Ich will hier unbedingt höflich sein.\n\nNora: Fast. Aber spar dir die Hälfte. Hier sagt man einfach Moin, morgens, mittags, abends. Ein Wort für alles.\n\nSofia: Nur ein Wort? Das klingt so kurz, fast unfreundlich.\n\nNora: Das dachte ich am Anfang auch. Glaub mir, hinter dem einen Wort steckt mehr Wärme als hinter zehn höflichen Sätzen.\n\nWiebke reicht Nora die Tüte über die Theke und mustert die Neue mit stillem Wohlwollen.\n\nWiebke: Die Zweite, die du an die Hand nimmst. Vor einem Jahr standest du genau da, mit genau dem Blick.\n\nSofia: Und die Leute hier, sind die wirklich so verschlossen, wie alle sagen?\n\nNora: Verschlossen nicht. Sparsam mit Worten, großzügig mit Taten. Wer wenig fragt, meint es oft am ernstesten.\n\nSofia: Woher wissen Sie das alles schon nach so kurzer Zeit?\n\nNora: Weil mich vor einem Jahr jemand an genau dieser Theke an die Hand genommen hat. Jetzt bist du dran.\n\nNora bricht ihr Franzbrötchen in zwei Hälften und reicht Sofia die größere.\n\nNora: Der erste Trick heißt: nicht drängeln, nur dableiben. Der Rest kommt von allein.\n\nSofia: Danke. Und wie sage ich noch mal richtig hallo?\n\nNora: Moin. Mehr nicht. Und irgendwann sagst du es im Vorbeigehen, ohne nachzudenken, wie eine von hier.\n\nWiebke: So wird das. Aus dir wird auch noch eine Hamburgerin, Kind. Es dauert nur.",
+    "synopsis": "Ein Jahr später steht Nora selbst an Wiebkes Theke und nimmt eine neue Zugezogene an die Hand, genau so, wie es einst mit ihr geschah.",
+    "arcType": "harmonic-close",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Fremde",
+        "definition": "a stranger; a person you do not yet know"
+      },
+      {
+        "type": "noun",
+        "word": "Koffer",
+        "definition": "a suitcase for carrying clothes and belongings when travelling"
+      },
+      {
+        "type": "verb",
+        "word": "sich wiedererkennen",
+        "surface": "erkennt sich",
+        "definition": "to see yourself in someone; to recognise your own past self"
+      },
+      {
+        "type": "adverb",
+        "word": "unbedingt",
+        "definition": "absolutely; without fail, no matter what it takes"
+      },
+      {
+        "type": "verb",
+        "word": "sparen",
+        "surface": "spar",
+        "definition": "to save; here to spare yourself needless words or effort"
+      },
+      {
+        "type": "noun",
+        "word": "Hälfte",
+        "definition": "a half; one of two equal parts of something"
+      },
+      {
+        "type": "adjective",
+        "word": "unfreundlich",
+        "definition": "unfriendly; cold and not welcoming toward other people"
+      },
+      {
+        "type": "noun",
+        "word": "Wärme",
+        "definition": "warmth; kindly, affectionate feeling shown toward other people"
+      },
+      {
+        "type": "expression",
+        "word": "an die Hand nehmen",
+        "surface": "an die Hand",
+        "definition": "to take someone under your wing and guide them"
+      },
+      {
+        "type": "adjective",
+        "word": "verschlossen",
+        "definition": "closed-off; keeping your thoughts and feelings to yourself"
+      },
+      {
+        "type": "adjective",
+        "word": "still",
+        "surface": "stillem",
+        "definition": "quiet; silent and without any show or fuss about it"
+      },
+      {
+        "type": "noun",
+        "word": "Taten",
+        "definition": "deeds; concrete actions taken rather than just words spoken"
+      },
+      {
+        "type": "noun",
+        "word": "Wohlwollen",
+        "definition": "goodwill; a kindly, benevolent attitude of quiet approval toward someone"
+      },
+      {
+        "type": "verb",
+        "word": "brechen",
+        "surface": "bricht",
+        "definition": "to break something apart into separate pieces or halves"
+      },
+      {
+        "type": "noun",
+        "word": "Trick",
+        "definition": "a trick; a clever knack for getting something right"
+      },
+      {
+        "type": "verb",
+        "word": "drängeln",
+        "definition": "to push and jostle; to impatiently press forward"
+      },
+      {
+        "type": "verb",
+        "word": "dableiben",
+        "definition": "to stay put; to remain where you are instead of leaving"
+      },
+      {
+        "type": "verb",
+        "word": "nachdenken",
+        "surface": "nachzudenken",
+        "definition": "to think something over carefully in your own mind"
+      },
+      {
+        "type": "expression",
+        "word": "eine von hier",
+        "definition": "one of the locals; someone who truly belongs here"
+      },
+      {
+        "type": "adjective",
+        "word": "angenehm",
+        "definition": "pleasant; nice and thoroughly agreeable to be around"
+      }
+    ],
+    "level": "c1",
+    "topic": "sturm-und-gesundheit",
+    "slotIndex": 3
+  }
+]

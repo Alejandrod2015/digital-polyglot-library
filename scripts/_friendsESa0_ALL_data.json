@@ -1,0 +1,3810 @@
+[
+ {
+  "topic": "madrid",
+  "slotIndex": 1,
+  "title": "Marta enseña el Retiro",
+  "arcType": null,
+  "synopsis": "Lucía llega a Madrid y su amiga Marta la recibe en la estación. Juntas pasean por el Retiro y montan en una barca, pero Lucía tiene miedo de hablar español.",
+  "text": "Lucía baja del tren en Madrid. Su amiga Marta la espera en la estación. Marta lleva flores en la mano. Las dos amigas se abrazan muy contentas.\n\nMarta lleva a Lucía al parque del Retiro. Hay árboles altos y mucha gente. El sol brilla sobre el agua del lago. Lucía mira todo con ojos grandes.\n\nLucía habla despacio y con miedo. «Mi español es malo», dice Lucía. Marta le toca el brazo. «Tu español es bueno. Tranquila», responde Marta.\n\nLas amigas suben a una barca pequeña. Lucía rema y Marta canta una canción. El agua está fría y muy limpia. Un pato nada cerca de ellas.\n\nDespués, las dos comen un helado de fresa. Lucía saca una foto bonita del lago. Marta abraza a su amiga otra vez.",
+  "vocab": [
+   {
+    "word": "tren",
+    "surface": "tren",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Train; a vehicle that carries people on rails."
+   },
+   {
+    "word": "amiga",
+    "surface": "amiga",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Female friend; a girl or woman you like."
+   },
+   {
+    "word": "esperar",
+    "surface": "espera",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Waits; stays somewhere until someone arrives."
+   },
+   {
+    "word": "flor",
+    "surface": "flores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Flowers; the colorful part of many plants."
+   },
+   {
+    "word": "contento",
+    "surface": "contentas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Happy; feeling good and pleased."
+   },
+   {
+    "word": "parque",
+    "surface": "parque",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Park; a public green place with trees and paths."
+   },
+   {
+    "word": "árbol",
+    "surface": "árboles",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Trees; tall plants with a trunk and branches."
+   },
+   {
+    "word": "gente",
+    "surface": "gente",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "People; a group of men, women, and children."
+   },
+   {
+    "word": "brillar",
+    "surface": "brilla",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Shines; gives off bright light."
+   },
+   {
+    "word": "lago",
+    "surface": "lago",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Lake; a large area of water with land around."
+   },
+   {
+    "word": "despacio",
+    "surface": "despacio",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "Slowly; without hurry, at a low speed."
+   },
+   {
+    "word": "miedo",
+    "surface": "miedo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Fear; the bad feeling when you are scared."
+   },
+   {
+    "word": "español",
+    "surface": "español",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Spanish; the language people speak in Spain."
+   },
+   {
+    "word": "bueno",
+    "surface": "bueno",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Good; of nice or high quality."
+   },
+   {
+    "word": "responder",
+    "surface": "responde",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Answers; says something back to another person."
+   },
+   {
+    "word": "barca",
+    "surface": "barca",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Small boat; a little boat for the water."
+   },
+   {
+    "word": "remar",
+    "surface": "rema",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Rows; moves a boat using oars."
+   },
+   {
+    "word": "canción",
+    "surface": "canción",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Song; music with words that you sing."
+   },
+   {
+    "word": "frío",
+    "surface": "fría",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Cold; having a low temperature, not warm."
+   },
+   {
+    "word": "pato",
+    "surface": "pato",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Duck; a bird that swims on water."
+   },
+   {
+    "word": "helado",
+    "surface": "helado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Ice cream; a sweet cold food you eat."
+   },
+   {
+    "word": "fresa",
+    "surface": "fresa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Strawberry; a small sweet red fruit."
+   },
+   {
+    "word": "sacar",
+    "surface": "saca",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Takes out; pulls something out to use it."
+   },
+   {
+    "word": "otra vez",
+    "surface": "otra vez",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "Again; one more time."
+   }
+  ]
+ },
+ {
+  "topic": "madrid",
+  "slotIndex": 2,
+  "title": "Churros en la Gran Vía",
+  "arcType": null,
+  "synopsis": "En la Gran Vía empieza a llover y Lucía se pone triste. Marta y su hermano Diego encuentran un café, y los tres prueban chocolate caliente con churros.",
+  "text": "Las nubes grises cubren Madrid. Lucía y Marta caminan por la Gran Vía. Es la calle más famosa de la ciudad. Diego, el hermano de Marta, camina con ellas. Los tres miran las tiendas grandes.\n\nDe repente, empieza a llover. La lluvia cae fuerte sobre la calle. Lucía no tiene paraguas. «¡Qué frío!», dice Lucía triste.\n\nDiego ve un café pequeño en la esquina. Los tres amigos entran rápido. Dentro hace calor y huele muy bien. Una señora los saluda con una sonrisa.\n\nMarta pide chocolate caliente y churros para todos. El chocolate está muy caliente y dulce. Lucía prueba un churro. «¡Está delicioso!», grita Lucía feliz.\n\nFuera sigue la lluvia, pero dentro hay risas. Lucía moja otro churro en el chocolate. Marta saca el móvil y hace una foto.",
+  "vocab": [
+   {
+    "word": "nube",
+    "surface": "nubes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Clouds; the white or grey shapes in the sky."
+   },
+   {
+    "word": "gris",
+    "surface": "grises",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Grey; the color between black and white."
+   },
+   {
+    "word": "caminar",
+    "surface": "caminan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Walk; move on foot from place to place."
+   },
+   {
+    "word": "tienda",
+    "surface": "tiendas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Shops; places where you buy things."
+   },
+   {
+    "word": "famoso",
+    "surface": "famosa",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Famous; known by very many people."
+   },
+   {
+    "word": "lluvia",
+    "surface": "lluvia",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Rain; water that falls from the sky."
+   },
+   {
+    "word": "fuerte",
+    "surface": "fuerte",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Strong; with a lot of force or power."
+   },
+   {
+    "word": "calle",
+    "surface": "calle",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Street; a road in a town with houses."
+   },
+   {
+    "word": "paraguas",
+    "surface": "paraguas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Umbrella; a thing that keeps rain off you."
+   },
+   {
+    "word": "triste",
+    "surface": "triste",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Sad; not happy, feeling low."
+   },
+   {
+    "word": "esquina",
+    "surface": "esquina",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Corner; the place where two streets meet."
+   },
+   {
+    "word": "entrar",
+    "surface": "entran",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Enter; go inside a place."
+   },
+   {
+    "word": "calor",
+    "surface": "calor",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Heat; the warm feeling in the air."
+   },
+   {
+    "word": "oler",
+    "surface": "huele",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Smells; gives off an odor you can notice."
+   },
+   {
+    "word": "saludar",
+    "surface": "saluda",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Greets; says hello to someone."
+   },
+   {
+    "word": "pedir",
+    "surface": "pide",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Asks for; requests something you want."
+   },
+   {
+    "word": "churro",
+    "surface": "churros",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Churros; fried dough sticks eaten with chocolate."
+   },
+   {
+    "word": "probar",
+    "surface": "prueba",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Tastes; tries a little of some food."
+   },
+   {
+    "word": "delicioso",
+    "surface": "delicioso",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Delicious; tasting very good."
+   },
+   {
+    "word": "dulce",
+    "surface": "dulce",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Sweet; tasting like sugar."
+   },
+   {
+    "word": "seguir",
+    "surface": "sigue",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Continues; keeps going without stopping."
+   },
+   {
+    "word": "dentro",
+    "surface": "dentro",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "Inside; in the interior of a place."
+   },
+   {
+    "word": "risa",
+    "surface": "risas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Laughter; the happy sound people make laughing."
+   },
+   {
+    "word": "móvil",
+    "surface": "móvil",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Mobile phone; a small phone you carry."
+   }
+  ]
+ },
+ {
+  "topic": "madrid",
+  "slotIndex": 3,
+  "title": "Suena la Plaza Mayor",
+  "arcType": null,
+  "synopsis": "En la Plaza Mayor hay música y baile al atardecer. Lucía busca un regalo para su madre y encuentra un abanico rojo. Marta y Diego compran postales de Madrid.",
+  "text": "Una guitarra suena en la Plaza Mayor. Lucía y Marta llegan por la tarde. Diego las espera junto a una estatua. La plaza está llena de turistas.\n\nUn hombre toca música alegre con la guitarra. Mucha gente baila y aplaude. Lucía sonríe y mueve los pies. Marta baila con Diego en el centro.\n\nDespués, los amigos miran las tiendas de la plaza. Lucía busca un regalo para su madre. Encuentra un abanico rojo muy bonito. «Es perfecto», dice Lucía.\n\nDiego compra tres postales de Madrid. Marta paga un imán para su nevera. Lucía guarda el abanico en su bolso. En ese momento, echa de menos a su familia.\n\nEl cielo se pone naranja sobre la plaza. Los tres amigos comen calamares en un bar. Lucía manda una foto a su madre. Su madre responde con un corazón.",
+  "vocab": [
+   {
+    "word": "llegar",
+    "surface": "llegan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Arrive; get to a place."
+   },
+   {
+    "word": "sonar",
+    "surface": "suena",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Sounds; makes a noise you can hear."
+   },
+   {
+    "word": "tarde",
+    "surface": "tarde",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Afternoon; the time between noon and evening."
+   },
+   {
+    "word": "estatua",
+    "surface": "estatua",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Statue; a figure of stone or metal of a person."
+   },
+   {
+    "word": "turista",
+    "surface": "turistas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Tourists; people who travel to visit places."
+   },
+   {
+    "word": "hombre",
+    "surface": "hombre",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Man; an adult male person."
+   },
+   {
+    "word": "mover",
+    "surface": "mueve",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Moves; changes the position of something."
+   },
+   {
+    "word": "alegre",
+    "surface": "alegre",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Cheerful; happy and full of joy."
+   },
+   {
+    "word": "bailar",
+    "surface": "baila",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Dances; moves the body to music."
+   },
+   {
+    "word": "aplaudir",
+    "surface": "aplaude",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Claps; hits the hands together to show approval."
+   },
+   {
+    "word": "buscar",
+    "surface": "busca",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Looks for; tries to find something."
+   },
+   {
+    "word": "regalo",
+    "surface": "regalo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Gift; a thing you give to someone."
+   },
+   {
+    "word": "madre",
+    "surface": "madre",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Mother; a woman who has a child."
+   },
+   {
+    "word": "abanico",
+    "surface": "abanico",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Fan; a folding thing you wave to feel cooler."
+   },
+   {
+    "word": "bonito",
+    "surface": "bonito",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Pretty; nice and pleasant to look at."
+   },
+   {
+    "word": "comprar",
+    "surface": "compra",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Buys; gets something by paying money."
+   },
+   {
+    "word": "postal",
+    "surface": "postales",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Postcards; cards with a picture you send by mail."
+   },
+   {
+    "word": "pagar",
+    "surface": "paga",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Pays; gives money for something."
+   },
+   {
+    "word": "bolso",
+    "surface": "bolso",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Bag; a soft thing you carry items in."
+   },
+   {
+    "word": "guardar",
+    "surface": "guarda",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Puts away; keeps something in a safe place."
+   },
+   {
+    "word": "cielo",
+    "surface": "cielo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Sky; the space above us with clouds."
+   },
+   {
+    "word": "naranja",
+    "surface": "naranja",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Orange; the color of an orange fruit."
+   },
+   {
+    "word": "comer",
+    "surface": "comen",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Eat; take food into the mouth."
+   },
+   {
+    "word": "bar",
+    "surface": "bar",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Bar; a place to get drinks and small food."
+   },
+   {
+    "word": "corazón",
+    "surface": "corazón",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Heart; the shape that means love."
+   }
+  ]
+ },
+ {
+  "topic": "barcelona",
+  "slotIndex": 1,
+  "title": "La Barceloneta despierta",
+  "arcType": null,
+  "synopsis": "Lucía visita la Barceloneta con su amigo Pau. Ella tiene miedo del agua fría, pero el mar está caliente. Los dos nadan y Pau encuentra una concha para ella.",
+  "text": "El sol sube sobre la playa de la Barceloneta. Lucía camina en la arena con Pau, su amigo de Barcelona. Ella lleva una toalla azul. Pau lleva el agua y la fruta.\n\nEl mar está muy tranquilo. Lucía toca el agua con la mano. Ella tiene un poco de miedo del frío. Pero el agua está caliente. Lucía sonríe.\n\nPau salta al agua y llama a Lucía. Ella deja la toalla en la arena. Entra en el mar despacio. El agua toca sus pies.\n\nLos dos amigos nadan cerca de la orilla. Una ola pequeña llega y moja la cara de Lucía. Ella ríe mucho. Pau busca una concha blanca en el fondo.\n\nPau da la concha a Lucía. Los amigos comen la fruta en la arena. El mar suena bajo el sol. Barcelona espera a Lucía por la tarde.",
+  "vocab": [
+   {
+    "word": "sol",
+    "surface": "sol",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the bright light high in the sky"
+   },
+   {
+    "word": "subir",
+    "surface": "sube",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to go up or move higher"
+   },
+   {
+    "word": "playa",
+    "surface": "playa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the sandy land next to the sea"
+   },
+   {
+    "word": "caminar",
+    "surface": "camina",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to move on foot, to walk"
+   },
+   {
+    "word": "arena",
+    "surface": "arena",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the tiny yellow grains on a beach"
+   },
+   {
+    "word": "amigo",
+    "surface": "amigo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a boy or man you like and trust"
+   },
+   {
+    "word": "toalla",
+    "surface": "toalla",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "soft cloth you use to get dry"
+   },
+   {
+    "word": "agua",
+    "surface": "agua",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the clear liquid that people drink"
+   },
+   {
+    "word": "fruta",
+    "surface": "fruta",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "sweet food that grows on plants"
+   },
+   {
+    "word": "mar",
+    "surface": "mar",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the big body of salt water"
+   },
+   {
+    "word": "tranquilo",
+    "surface": "tranquilo",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "calm, quiet and without movement"
+   },
+   {
+    "word": "tocar",
+    "surface": "toca",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to put your hand on something"
+   },
+   {
+    "word": "miedo",
+    "surface": "miedo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the bad feeling when you are afraid"
+   },
+   {
+    "word": "caliente",
+    "surface": "caliente",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a warm or high temperature"
+   },
+   {
+    "word": "sonreír",
+    "surface": "sonríe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to make a happy face without laughing"
+   },
+   {
+    "word": "saltar",
+    "surface": "salta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to push your body up into the air"
+   },
+   {
+    "word": "llamar",
+    "surface": "llama",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to say a name so someone comes"
+   },
+   {
+    "word": "entrar",
+    "surface": "Entra",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to go inside a place or thing"
+   },
+   {
+    "word": "despacio",
+    "surface": "despacio",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "in a slow and careful way"
+   },
+   {
+    "word": "nadar",
+    "surface": "nadan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to move through water with your body"
+   },
+   {
+    "word": "orilla",
+    "surface": "orilla",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the edge where water meets the land"
+   },
+   {
+    "word": "ola",
+    "surface": "ola",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "moving water that rises on the sea"
+   },
+   {
+    "word": "mojar",
+    "surface": "moja",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to make something wet with water"
+   },
+   {
+    "word": "concha",
+    "surface": "concha",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the hard cover of a small sea animal"
+   }
+  ]
+ },
+ {
+  "topic": "barcelona",
+  "slotIndex": 2,
+  "title": "La Boquería huele a fruta",
+  "arcType": null,
+  "synopsis": "Pau lleva a Lucía al mercado de la Boquería. Ellos ven fruta, jamón y pescado. Una señora da una fresa a Lucía. Pau compra pan fresco y salen juntos a Las Ramblas.",
+  "text": "Pau llena una bolsa de naranjas en la Boquería. Lucía mira las paradas del mercado. Hay fruta de muchos colores. Todo huele muy bien.\n\nUna señora vende fresas rojas al lado de la puerta. Pau compra un poco. La señora da una fresa a Lucía. Lucía prueba la fruta dulce y abre los ojos.\n\nCerca hay jamón y pan fresco. Pau corta un trozo de pan con tomate. Lucía come despacio. El sabor es nuevo para ella.\n\nPau y Lucía siguen entre las paradas. Un hombre vende flores de colores. Otro señor vende pescado y queso. El mercado huele muy fuerte.\n\nPau paga y guarda la bolsa. Los dos salen a Las Ramblas. Hay mucha gente en la calle. Pau pone una naranja en la mano de Lucía.",
+  "vocab": [
+   {
+    "word": "llenar",
+    "surface": "llena",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to put things inside until it is full"
+   },
+   {
+    "word": "bolsa",
+    "surface": "bolsa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a soft bag for carrying things"
+   },
+   {
+    "word": "naranja",
+    "surface": "naranjas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a round orange fruit you can eat"
+   },
+   {
+    "word": "mirar",
+    "surface": "mira",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to look at something with your eyes"
+   },
+   {
+    "word": "parada",
+    "surface": "paradas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small table where a market sells goods"
+   },
+   {
+    "word": "mercado",
+    "surface": "mercado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a place where people buy and sell food"
+   },
+   {
+    "word": "color",
+    "surface": "colores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "what your eyes see, like red or blue"
+   },
+   {
+    "word": "oler",
+    "surface": "huele",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to have a smell that reaches the nose"
+   },
+   {
+    "word": "señora",
+    "surface": "señora",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a polite word for a grown woman"
+   },
+   {
+    "word": "vender",
+    "surface": "vende",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to give something for money"
+   },
+   {
+    "word": "fresa",
+    "surface": "fresas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small sweet red fruit of summer"
+   },
+   {
+    "word": "comprar",
+    "surface": "compra",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to get something by paying money"
+   },
+   {
+    "word": "probar",
+    "surface": "prueba",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to eat a little to know the taste"
+   },
+   {
+    "word": "dulce",
+    "surface": "dulce",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a taste like sugar or honey"
+   },
+   {
+    "word": "jamón",
+    "surface": "jamón",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "salted meat from a pig, common in Spain"
+   },
+   {
+    "word": "pan",
+    "surface": "pan",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "baked food made from flour and water"
+   },
+   {
+    "word": "cortar",
+    "surface": "corta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to cut something into parts with a knife"
+   },
+   {
+    "word": "trozo",
+    "surface": "trozo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small part cut from something bigger"
+   },
+   {
+    "word": "sabor",
+    "surface": "sabor",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the taste of food in your mouth"
+   },
+   {
+    "word": "flor",
+    "surface": "flores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the pretty colored part of a plant"
+   },
+   {
+    "word": "hombre",
+    "surface": "hombre",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a grown male person"
+   },
+   {
+    "word": "pescado",
+    "surface": "pescado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "fish that people cook and eat"
+   },
+   {
+    "word": "queso",
+    "surface": "queso",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "soft or hard food made from milk"
+   },
+   {
+    "word": "pagar",
+    "surface": "paga",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to give money for something you buy"
+   }
+  ]
+ },
+ {
+  "topic": "barcelona",
+  "slotIndex": 3,
+  "title": "Lucía mira la Sagrada Familia",
+  "arcType": null,
+  "synopsis": "Pau lleva a Lucía a ver la Sagrada Familia. La iglesia todavía no está terminada después de muchos años. Dentro, la luz de colores sorprende a Lucía y ella no quiere salir.",
+  "text": "Yo salgo del metro con Pau. Levanto la cabeza y veo la Sagrada Familia. La iglesia es muy alta. Sus torres suben hasta el cielo.\n\nPau me cuenta la historia. Un arquitecto empieza la iglesia mucho tiempo atrás. Todavía no está terminada. Cada día llegan más obreros al lugar.\n\nNosotros pasamos la puerta con calma. Dentro hay mucha luz de colores. Las ventanas parecen flores grandes. Yo abro la boca por la sorpresa.\n\nPau señala las columnas del centro. Parecen árboles de piedra. La gente habla en voz baja. Todos miran hacia arriba.\n\nYo quiero recordar este día para siempre. Pau me da la mano y ríe. Bajamos las escaleras poco a poco. Afuera, Barcelona sigue llena de gente.",
+  "vocab": [
+   {
+    "word": "salir",
+    "surface": "salgo",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to go out of a place"
+   },
+   {
+    "word": "levantar",
+    "surface": "Levanto",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to lift or raise something up"
+   },
+   {
+    "word": "cabeza",
+    "surface": "cabeza",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the top part of the body with the face"
+   },
+   {
+    "word": "ver",
+    "surface": "veo",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to notice something with your eyes"
+   },
+   {
+    "word": "iglesia",
+    "surface": "iglesia",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a building where people go to pray"
+   },
+   {
+    "word": "alto",
+    "surface": "alta",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "going far up from the ground"
+   },
+   {
+    "word": "torre",
+    "surface": "torres",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a tall narrow part of a building"
+   },
+   {
+    "word": "cielo",
+    "surface": "cielo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the wide space above you outside"
+   },
+   {
+    "word": "contar",
+    "surface": "cuenta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to tell a story to someone"
+   },
+   {
+    "word": "empezar",
+    "surface": "empieza",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to do the first part of something"
+   },
+   {
+    "word": "terminar",
+    "surface": "terminada",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to reach the end of something"
+   },
+   {
+    "word": "obrero",
+    "surface": "obreros",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a person who builds with their hands"
+   },
+   {
+    "word": "dentro",
+    "surface": "Dentro",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "in the inside part of a place"
+   },
+   {
+    "word": "luz",
+    "surface": "luz",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the brightness that lets you see"
+   },
+   {
+    "word": "ventana",
+    "surface": "ventanas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the glass opening in a wall"
+   },
+   {
+    "word": "sorpresa",
+    "surface": "sorpresa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the feeling when something happens you did not expect"
+   },
+   {
+    "word": "señalar",
+    "surface": "señala",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to point at something with your finger"
+   },
+   {
+    "word": "columna",
+    "surface": "columnas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a tall stone post that holds a roof"
+   },
+   {
+    "word": "árbol",
+    "surface": "árboles",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a big plant with a trunk and leaves"
+   },
+   {
+    "word": "piedra",
+    "surface": "piedra",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a hard piece of the ground or rock"
+   },
+   {
+    "word": "voz",
+    "surface": "voz",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the sound you make when you speak"
+   },
+   {
+    "word": "gente",
+    "surface": "gente",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a group of people together"
+   },
+   {
+    "word": "escalera",
+    "surface": "escaleras",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the steps you use to go up or down"
+   },
+   {
+    "word": "arriba",
+    "surface": "arriba",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "toward a higher place or position"
+   }
+  ]
+ },
+ {
+  "topic": "sevilla",
+  "slotIndex": 1,
+  "title": "Naranjas para dos amigas",
+  "arcType": null,
+  "synopsis": "Es el primer día de Lucía en Sevilla. Carmen quiere darle una bienvenida dulce, y el zumo de naranja del patio se convierte en su primer recuerdo juntas.",
+  "text": "El sol entra en la terraza. Lucía llega a Sevilla por la mañana. Carmen la espera en una mesa pequeña, cerca de la ventana. Las dos amigas se abrazan con fuerza. «¡Por fin estás aquí!», dice Carmen.\n\nEn la mesa hay dos vasos de zumo. Lucía mira el árbol del patio. El árbol tiene muchas naranjas maduras. «El zumo es de estas naranjas», dice Carmen. Lucía toma un poco. El zumo está muy dulce.\n\nLucía bebe más y sonríe. «¡Qué rico!», dice ella. Carmen ríe contenta. Un camarero trae pan y aceite. La mañana es tranquila y el aire huele a naranja. Las dos amigas hablan sin parar.\n\nLucía levanta su vaso otra vez. «Gracias por todo», dice ella. Carmen también levanta el suyo. «Bienvenida a Sevilla», dice Carmen. Las dos amigas están muy felices.",
+  "vocab": [
+   {
+    "word": "sol",
+    "surface": "sol",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the bright star that gives us light and heat"
+   },
+   {
+    "word": "terraza",
+    "surface": "terraza",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "an open outdoor area of a cafe or house"
+   },
+   {
+    "word": "llegar",
+    "surface": "llega",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to arrive at a place"
+   },
+   {
+    "word": "mañana",
+    "surface": "mañana",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the early part of the day before noon"
+   },
+   {
+    "word": "esperar",
+    "surface": "espera",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to wait for someone or something"
+   },
+   {
+    "word": "mesa",
+    "surface": "mesa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a flat piece of furniture where you eat"
+   },
+   {
+    "word": "pequeño",
+    "surface": "pequeña",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "small, not big in size"
+   },
+   {
+    "word": "amiga",
+    "surface": "amigas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a girl or woman friend"
+   },
+   {
+    "word": "abrazar",
+    "surface": "abrazan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to hold someone close with your arms"
+   },
+   {
+    "word": "por fin",
+    "surface": "Por fin",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "at last, after a long wait"
+   },
+   {
+    "word": "vaso",
+    "surface": "vasos",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a glass you drink juice or water from"
+   },
+   {
+    "word": "zumo",
+    "surface": "zumo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "juice pressed from fruit, common word in Spain"
+   },
+   {
+    "word": "naranja",
+    "surface": "naranjas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a round orange fruit"
+   },
+   {
+    "word": "árbol",
+    "surface": "árbol",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a tall plant with a trunk and branches"
+   },
+   {
+    "word": "patio",
+    "surface": "patio",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "an open inner yard of a house"
+   },
+   {
+    "word": "tomar",
+    "surface": "toma",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to take or drink something"
+   },
+   {
+    "word": "dulce",
+    "surface": "dulce",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a sweet taste like sugar"
+   },
+   {
+    "word": "beber",
+    "surface": "bebe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to drink a liquid"
+   },
+   {
+    "word": "sonreír",
+    "surface": "sonríe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to smile with your mouth"
+   },
+   {
+    "word": "contento",
+    "surface": "contenta",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "feeling happy and pleased inside"
+   },
+   {
+    "word": "camarero",
+    "surface": "camarero",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a waiter who serves food in Spain"
+   },
+   {
+    "word": "pan",
+    "surface": "pan",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "bread made from flour and water"
+   },
+   {
+    "word": "aire",
+    "surface": "aire",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the gas we breathe around us"
+   },
+   {
+    "word": "feliz",
+    "surface": "felices",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "feeling happy and glad"
+   }
+  ]
+ },
+ {
+  "topic": "sevilla",
+  "slotIndex": 2,
+  "title": "La Giralda desde arriba",
+  "arcType": null,
+  "synopsis": "Carmen lleva a Lucía a subir la Giralda. Desde arriba, la ciudad parece un mapa de tejados rojos, y un susto con las campanas termina en risas.",
+  "text": "Las campanas suenan fuerte. Lucía y Carmen caminan por una plaza pequeña y bonita. Delante de ellas está la Giralda, la torre más alta de Sevilla. Lucía mira arriba. «¡Qué grande!», dice ella.\n\nCarmen quiere subir a la torre. Las dos amigas suben despacio, paso a paso. No hay escaleras difíciles; el camino es una rampa larga y ancha. Lucía respira fuerte, pero está bien.\n\nArriba, la ciudad es hermosa. Lucía ve los tejados rojos y el río al fondo. El viento es fresco y agradable. Carmen señala su casa blanca cerca del puente. «Vivo allí, al lado del río», dice Carmen.\n\nDe repente, las campanas suenan otra vez, muy cerca. Lucía se ríe y se tapa los oídos. El sonido es enorme y bonito. Carmen y Lucía bajan juntas y muy contentas.",
+  "vocab": [
+   {
+    "word": "campana",
+    "surface": "campanas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a metal object in a tower that rings"
+   },
+   {
+    "word": "sonar",
+    "surface": "suenan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to make a sound, like a bell"
+   },
+   {
+    "word": "fuerte",
+    "surface": "fuerte",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "strong or very loud"
+   },
+   {
+    "word": "caminar",
+    "surface": "caminan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to walk, to go on foot"
+   },
+   {
+    "word": "plaza",
+    "surface": "plaza",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "an open public square in a town"
+   },
+   {
+    "word": "delante",
+    "surface": "Delante",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "in front, before something else"
+   },
+   {
+    "word": "torre",
+    "surface": "torre",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a tall narrow building or part of one"
+   },
+   {
+    "word": "alto",
+    "surface": "alta",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "high or very tall"
+   },
+   {
+    "word": "arriba",
+    "surface": "arriba",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "up, at a higher place"
+   },
+   {
+    "word": "subir",
+    "surface": "subir",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to go up to a higher place"
+   },
+   {
+    "word": "despacio",
+    "surface": "despacio",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "slowly, without any hurry"
+   },
+   {
+    "word": "difícil",
+    "surface": "difíciles",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "hard to do or complete"
+   },
+   {
+    "word": "rampa",
+    "surface": "rampa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a sloped path instead of stairs"
+   },
+   {
+    "word": "respirar",
+    "surface": "respira",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to take air into your body"
+   },
+   {
+    "word": "hermoso",
+    "surface": "hermosa",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "very pretty and nice to see"
+   },
+   {
+    "word": "tejado",
+    "surface": "tejados",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the roof on top of a house"
+   },
+   {
+    "word": "viento",
+    "surface": "viento",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "moving air we feel outdoors"
+   },
+   {
+    "word": "fresco",
+    "surface": "fresco",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "a little cold and pleasant"
+   },
+   {
+    "word": "señalar",
+    "surface": "señala",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to point at something with a finger"
+   },
+   {
+    "word": "puente",
+    "surface": "puente",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a structure you use to cross a river"
+   },
+   {
+    "word": "oído",
+    "surface": "oídos",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the part of the body you hear with"
+   },
+   {
+    "word": "bajar",
+    "surface": "bajan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to go down to a lower place"
+   },
+   {
+    "word": "rojo",
+    "surface": "rojos",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having the color red"
+   },
+   {
+    "word": "sonido",
+    "surface": "sonido",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "something that you hear with your ears"
+   }
+  ]
+ },
+ {
+  "topic": "sevilla",
+  "slotIndex": 3,
+  "title": "Triana y su cerámica azul",
+  "arcType": null,
+  "synopsis": "Lucía cruza el puente con Carmen hacia Triana, junto al río Guadalquivir. En una tienda Lucía compra un plato de cerámica azul para su madre. Al final el cielo se pone naranja sobre el río.",
+  "text": "Cruzo el puente con Carmen. Es la tarde y vamos al barrio de Triana. Carmen conoce cada calle de aquí. El río Guadalquivir está muy tranquilo. Un barco pequeño pasa despacio por el agua.\n\nCarmen y yo entramos en una tienda pequeña. La tienda vende platos de cerámica. Los platos tienen muchos colores bonitos. Yo compro un plato azul para mi madre. Carmen compra una taza pequeña también.\n\nSalimos a la calle otra vez. El cielo es naranja y rosa. La gente pasea y habla cerca del río. Una señora vende flores de muchos colores. Todo huele muy bien.\n\nCarmen y yo nos sentamos cerca del puente. Miramos el agua y el cielo juntas, en silencio. La tarde termina despacio. Yo guardo mi plato con cuidado. Sevilla me gusta mucho.",
+  "vocab": [
+   {
+    "word": "cruzar",
+    "surface": "Cruzo",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to go across from one side to the other"
+   },
+   {
+    "word": "tarde",
+    "surface": "tarde",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the part of the day after noon"
+   },
+   {
+    "word": "barrio",
+    "surface": "barrio",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a part or district of a city"
+   },
+   {
+    "word": "calle",
+    "surface": "calle",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a road in a town with houses"
+   },
+   {
+    "word": "conocer",
+    "surface": "conoce",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to know a place or a person"
+   },
+   {
+    "word": "tranquilo",
+    "surface": "tranquilo",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "calm and quiet, not busy"
+   },
+   {
+    "word": "barco",
+    "surface": "barco",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a boat that travels on the water"
+   },
+   {
+    "word": "pasar",
+    "surface": "pasa",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to go past or move by"
+   },
+   {
+    "word": "agua",
+    "surface": "agua",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the clear liquid we drink every day"
+   },
+   {
+    "word": "tienda",
+    "surface": "tienda",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small shop that sells things"
+   },
+   {
+    "word": "vender",
+    "surface": "vende",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to give something in return for money"
+   },
+   {
+    "word": "plato",
+    "surface": "platos",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a flat dish for food"
+   },
+   {
+    "word": "cerámica",
+    "surface": "cerámica",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "objects made of baked clay"
+   },
+   {
+    "word": "color",
+    "surface": "colores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "red, blue and other tones we see"
+   },
+   {
+    "word": "comprar",
+    "surface": "compro",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to buy something with money"
+   },
+   {
+    "word": "azul",
+    "surface": "azul",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "the color of a clear sky"
+   },
+   {
+    "word": "madre",
+    "surface": "madre",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the female parent of a child"
+   },
+   {
+    "word": "taza",
+    "surface": "taza",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small cup for coffee or tea"
+   },
+   {
+    "word": "cielo",
+    "surface": "cielo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the wide space above us with clouds"
+   },
+   {
+    "word": "gente",
+    "surface": "gente",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a group of people"
+   },
+   {
+    "word": "pasear",
+    "surface": "pasea",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to walk slowly for pleasure"
+   },
+   {
+    "word": "flor",
+    "surface": "flores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the colorful part of a plant"
+   },
+   {
+    "word": "sentarse",
+    "surface": "sentamos",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to rest on a chair or the ground"
+   },
+   {
+    "word": "cuidado",
+    "surface": "cuidado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "care and attention to avoid harm"
+   }
+  ]
+ },
+ {
+  "topic": "valencia",
+  "slotIndex": 1,
+  "title": "Naranjas en el mercado",
+  "arcType": null,
+  "synopsis": "Lucía visita a su amigo Vicente en Valencia. Los dos van al mercado y compran naranjas dulces. Vicente compra demasiadas y la bolsa pesa mucho. Una vendedora simpática los ayuda y los dos salen contentos.",
+  "text": "Lucía visita Valencia. Vicente es su amigo. Vicente vive en Valencia. Hoy los dos van al mercado. El mercado es grande y bonito.\n\nVicente compra naranjas. Las naranjas son de Valencia. Son muy dulces y frescas. Lucía toca la fruta con la mano. Todo huele muy bien. El olor de las naranjas es muy rico.\n\nUna mujer trabaja en el mercado. Se llama Marta. Marta vende fruta y verdura. Marta habla con Lucía. \"Estas naranjas son las mejores\", dice Marta.\n\nVicente compra muchas naranjas. La bolsa pesa mucho. Lucía se ríe. \"¿Comemos todas hoy?\", pregunta Lucía. Vicente dice que sí.\n\nLos dos salen a la calle. El sol brilla fuerte. Lucía come una naranja fresca. Está muy contenta. El día en Valencia es bonito.",
+  "vocab": [
+   {
+    "word": "visitar",
+    "surface": "visita",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to go and spend time with a person or place"
+   },
+   {
+    "word": "amigo",
+    "surface": "amigo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a person you know well and like a lot"
+   },
+   {
+    "word": "vivir",
+    "surface": "vive",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to have your home in a certain place or city"
+   },
+   {
+    "word": "mercado",
+    "surface": "mercado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a place with many stalls that sell food and things"
+   },
+   {
+    "word": "grande",
+    "surface": "grande",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "very big in size, not small at all"
+   },
+   {
+    "word": "comprar",
+    "surface": "compra",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to give money and get something in return"
+   },
+   {
+    "word": "naranja",
+    "surface": "naranjas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a round orange fruit that is typical of Valencia"
+   },
+   {
+    "word": "dulce",
+    "surface": "dulces",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a sweet taste, like sugar or honey"
+   },
+   {
+    "word": "fresco",
+    "surface": "frescas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "recently picked or made, not old or warm"
+   },
+   {
+    "word": "tocar",
+    "surface": "toca",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to put your hand on a thing or person"
+   },
+   {
+    "word": "fruta",
+    "surface": "fruta",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "sweet food that grows on trees and plants"
+   },
+   {
+    "word": "oler",
+    "surface": "huele",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to give off a smell that a nose can notice"
+   },
+   {
+    "word": "mujer",
+    "surface": "mujer",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a grown adult female person, not a man"
+   },
+   {
+    "word": "trabajar",
+    "surface": "trabaja",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to do a job, often for money each day"
+   },
+   {
+    "word": "vender",
+    "surface": "vende",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to give something to a buyer for money"
+   },
+   {
+    "word": "verdura",
+    "surface": "verdura",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "green food from a plant that you eat"
+   },
+   {
+    "word": "hablar",
+    "surface": "habla",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to say words out loud to another person"
+   },
+   {
+    "word": "mejor",
+    "surface": "mejores",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "better than the rest, the top of all"
+   },
+   {
+    "word": "bolsa",
+    "surface": "bolsa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a bag you use to carry things you buy"
+   },
+   {
+    "word": "pesar",
+    "surface": "pesa",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to be heavy or have a certain weight"
+   },
+   {
+    "word": "reírse",
+    "surface": "se ríe",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "to laugh out loud, often because something is funny"
+   },
+   {
+    "word": "preguntar",
+    "surface": "pregunta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to ask a question and wait for an answer"
+   },
+   {
+    "word": "calle",
+    "surface": "calle",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a road in a town with houses and shops"
+   },
+   {
+    "word": "brillar",
+    "surface": "brilla",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to shine and give a strong bright light"
+   },
+   {
+    "word": "contento",
+    "surface": "contenta",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "feeling happy and glad about something that happened"
+   }
+  ]
+ },
+ {
+  "topic": "valencia",
+  "slotIndex": 2,
+  "title": "Paella en la Malvarrosa",
+  "arcType": null,
+  "synopsis": "Vicente lleva a Lucía a la playa de la Malvarrosa. Los dos comen paella cerca del mar y todo es perfecto. Al final, un pájaro roba una gamba del plato y los dos se ríen juntos.",
+  "text": "Vicente lleva a Lucía a la playa. La playa se llama la Malvarrosa. Es una playa famosa de Valencia. Hace sol y calor. La arena es dorada.\n\nLos dos caminan cerca del mar. El agua es azul y tranquila. Lucía mete los pies en el agua. El agua está fría. Lucía sonríe mucho.\n\nVicente tiene una idea. \"Vamos a comer paella\", dice Vicente. Al lado de la playa hay un restaurante. La paella es el plato típico de aquí.\n\nEl camarero trae la comida. La paella es amarilla y huele de maravilla. Tiene arroz, pollo y verduras. Lucía prueba un poco. \"Está buenísima\", dice Lucía.\n\nLos dos comen despacio. El mar suena cerca. De repente, un pájaro roba una gamba del plato. Vicente y Lucía se ríen mucho.",
+  "vocab": [
+   {
+    "word": "llevar",
+    "surface": "lleva",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to take a person with you to a place"
+   },
+   {
+    "word": "playa",
+    "surface": "playa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a place with sand next to the sea"
+   },
+   {
+    "word": "famoso",
+    "surface": "famosa",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "known and liked by very many people everywhere"
+   },
+   {
+    "word": "calor",
+    "surface": "calor",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the feeling of hot air or hot weather"
+   },
+   {
+    "word": "arena",
+    "surface": "arena",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "many tiny bits of stone on a beach"
+   },
+   {
+    "word": "dorado",
+    "surface": "dorada",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a warm shiny color like bright gold"
+   },
+   {
+    "word": "caminar",
+    "surface": "caminan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to move on your feet from one place to another"
+   },
+   {
+    "word": "mar",
+    "surface": "mar",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the big body of salt water near a coast"
+   },
+   {
+    "word": "azul",
+    "surface": "azul",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having the color of a clear day sky"
+   },
+   {
+    "word": "meter",
+    "surface": "mete",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to put something inside another place or thing"
+   },
+   {
+    "word": "pie",
+    "surface": "pies",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the part of the body you stand on"
+   },
+   {
+    "word": "frío",
+    "surface": "fría",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a low temperature, not warm or hot"
+   },
+   {
+    "word": "sonreír",
+    "surface": "sonríe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to make a happy face with the mouth"
+   },
+   {
+    "word": "comer",
+    "surface": "comer",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to put food in your mouth and swallow it"
+   },
+   {
+    "word": "plato",
+    "surface": "plato",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a flat round dish that holds your food"
+   },
+   {
+    "word": "camarero",
+    "surface": "camarero",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a person who brings food to you in a restaurant"
+   },
+   {
+    "word": "amarillo",
+    "surface": "amarilla",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having the color of the sun or a lemon"
+   },
+   {
+    "word": "arroz",
+    "surface": "arroz",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "small white grains that people cook and eat"
+   },
+   {
+    "word": "pollo",
+    "surface": "pollo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the meat of a hen that people eat"
+   },
+   {
+    "word": "probar",
+    "surface": "prueba",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to eat a little to know how food tastes"
+   },
+   {
+    "word": "despacio",
+    "surface": "despacio",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "in a slow and calm way, without any hurry"
+   },
+   {
+    "word": "sonar",
+    "surface": "suena",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to make a noise that ears can hear"
+   },
+   {
+    "word": "pájaro",
+    "surface": "pájaro",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small animal with wings that can fly"
+   },
+   {
+    "word": "robar",
+    "surface": "roba",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to take a thing that is not yours"
+   },
+   {
+    "word": "de repente",
+    "surface": "De repente",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "in a fast and sudden way, without any warning"
+   }
+  ]
+ },
+ {
+  "topic": "valencia",
+  "slotIndex": 3,
+  "title": "La Ciudad de las Artes",
+  "arcType": null,
+  "synopsis": "Lucía y Vicente visitan la Ciudad de las Artes con Rosa, la hermana de Vicente. Ven peces dentro de un edificio moderno. Por la noche se encienden las luces y Lucía saca una foto un poco oscura.",
+  "text": "Lucía y Vicente visitan un lugar especial. Se llama la Ciudad de las Artes. Está en Valencia. Los edificios son blancos y modernos. Todo es muy alto.\n\nVicente mira el agua azul. Alrededor hay muchas fuentes. El cielo está claro y limpio. La luz es muy bonita. Lucía está sorprendida.\n\nRosa es la hermana de Vicente. Rosa llega en bici. \"¡Hola, Lucía!\", dice Rosa con una sonrisa. Los tres caminan juntos. Rosa conoce bien la ciudad.\n\nLos tres entran en un edificio. Dentro hay peces de muchos colores. Lucía mira un pez naranja. \"Qué bonito\", dice Lucía despacio. Rosa toca el cristal con el dedo.\n\nPor la noche, las luces se encienden. El agua brilla mucho. Lucía saca una foto. La foto sale un poco oscura. Los tres se ríen y vuelven a casa.",
+  "vocab": [
+   {
+    "word": "visitar",
+    "surface": "visitan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to go and see a place or a person"
+   },
+   {
+    "word": "lugar",
+    "surface": "lugar",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a point or space where something is or happens"
+   },
+   {
+    "word": "limpio",
+    "surface": "limpio",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "free of dirt or marks, clean and neat"
+   },
+   {
+    "word": "edificio",
+    "surface": "edificios",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a large building where people live or work"
+   },
+   {
+    "word": "blanco",
+    "surface": "blancos",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having the color of fresh snow or milk"
+   },
+   {
+    "word": "moderno",
+    "surface": "modernos",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "new in style, made in the present time"
+   },
+   {
+    "word": "alto",
+    "surface": "alto",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "reaching high up, far away from the ground"
+   },
+   {
+    "word": "mirar",
+    "surface": "mira",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to look at something or someone with your eyes"
+   },
+   {
+    "word": "fuente",
+    "surface": "fuentes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a structure that sends water up into the air"
+   },
+   {
+    "word": "cielo",
+    "surface": "cielo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the wide space above you in the day"
+   },
+   {
+    "word": "claro",
+    "surface": "claro",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "with plenty of light, easy to see through"
+   },
+   {
+    "word": "luz",
+    "surface": "luz",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the brightness that lets your eyes see things"
+   },
+   {
+    "word": "sorprendido",
+    "surface": "sorprendida",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "feeling surprise about a new or strange thing"
+   },
+   {
+    "word": "hermana",
+    "surface": "hermana",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a girl or woman with the same parents as you"
+   },
+   {
+    "word": "llegar",
+    "surface": "llega",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to arrive at a place after a trip"
+   },
+   {
+    "word": "sonrisa",
+    "surface": "sonrisa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a happy shape of the mouth that shows joy"
+   },
+   {
+    "word": "juntos",
+    "surface": "juntos",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "with each other, together in the same group"
+   },
+   {
+    "word": "conocer",
+    "surface": "conoce",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to know a place or person very well"
+   },
+   {
+    "word": "dentro",
+    "surface": "Dentro",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "in the inside part of a place or room"
+   },
+   {
+    "word": "pez",
+    "surface": "pez",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "an animal that lives and swims in water"
+   },
+   {
+    "word": "cristal",
+    "surface": "cristal",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the clear hard material of a window or glass"
+   },
+   {
+    "word": "dedo",
+    "surface": "dedo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "one of the five thin parts of a hand"
+   },
+   {
+    "word": "encenderse",
+    "surface": "se encienden",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "to turn on and start to give light"
+   },
+   {
+    "word": "oscuro",
+    "surface": "oscura",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "with little or no light, hard to see"
+   },
+   {
+    "word": "volver",
+    "surface": "vuelven",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to go back to a place you left before"
+   }
+  ]
+ },
+ {
+  "topic": "bilbao",
+  "slotIndex": 1,
+  "title": "Lucía llega a Bilbao",
+  "arcType": null,
+  "synopsis": "Un reencuentro entre dos amigos abre el viaje. El cielo gris no dura mucho, y la ciudad enseña sus puentes y su casco viejo bajo una luz nueva y suave.",
+  "text": "Lucía llega a Bilbao por la tarde. Ander espera en la estación con una sonrisa. Ander es un amigo de Lucía. Los dos se abrazan. Lucía está muy contenta.\n\nFuera llueve un poco. Ander abre un paraguas grande y negro. Los dos caminan cerca de la ría. El agua está tranquila. Lucía mira los puentes de la ciudad.\n\nAnder enseña el casco viejo. Las calles son estrechas y bonitas. Hay muchas tiendas pequeñas. Lucía saca una foto con el teléfono. Ander sonríe otra vez.\n\nDespués, el cielo cambia. La lluvia para poco a poco. Sale el sol. La ciudad brilla con luz suave. Lucía respira el aire limpio y fresco.\n\nAnder pregunta: «¿Te gusta mi ciudad?» Lucía dice que sí, mucho. Ella está cansada pero feliz. Mañana los dos visitan el museo famoso. Lucía quiere dormir ya.",
+  "vocab": [
+   {
+    "word": "llegar",
+    "surface": "llega",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to arrive at a place"
+   },
+   {
+    "word": "tarde",
+    "surface": "tarde",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the part of the day after noon"
+   },
+   {
+    "word": "estación",
+    "surface": "estación",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a place where trains stop for people"
+   },
+   {
+    "word": "abrazar",
+    "surface": "abrazan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to hold someone in your arms"
+   },
+   {
+    "word": "contento",
+    "surface": "contenta",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "happy and pleased about something"
+   },
+   {
+    "word": "llover",
+    "surface": "llueve",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "when water falls from the sky"
+   },
+   {
+    "word": "paraguas",
+    "surface": "paraguas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a thing you hold to stay dry in rain"
+   },
+   {
+    "word": "caminar",
+    "surface": "caminan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to move on your feet slowly"
+   },
+   {
+    "word": "ría",
+    "surface": "ría",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a river that meets the sea in Bilbao"
+   },
+   {
+    "word": "puente",
+    "surface": "puentes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a thing you walk on to cross water"
+   },
+   {
+    "word": "casco viejo",
+    "surface": "casco viejo",
+    "type": "phrase",
+    "register": "neutral",
+    "definition": "the old part of a city"
+   },
+   {
+    "word": "estrecho",
+    "surface": "estrechas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "not wide, with little space"
+   },
+   {
+    "word": "tienda",
+    "surface": "tiendas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a place where you buy things"
+   },
+   {
+    "word": "sacar",
+    "surface": "saca",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to take a photo with a camera"
+   },
+   {
+    "word": "sonreír",
+    "surface": "sonríe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to make a happy face with your mouth"
+   },
+   {
+    "word": "cielo",
+    "surface": "cielo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the space above us with clouds and sun"
+   },
+   {
+    "word": "brillar",
+    "surface": "brilla",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to shine with bright light"
+   },
+   {
+    "word": "sol",
+    "surface": "sol",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the bright star that gives us light"
+   },
+   {
+    "word": "aire",
+    "surface": "aire",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "what we breathe around us"
+   },
+   {
+    "word": "limpio",
+    "surface": "limpio",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "clean and free of dirt"
+   },
+   {
+    "word": "gustar",
+    "surface": "gusta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to like or enjoy something"
+   },
+   {
+    "word": "cansado",
+    "surface": "cansada",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "tired and needing rest"
+   },
+   {
+    "word": "feliz",
+    "surface": "feliz",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "happy and full of joy"
+   },
+   {
+    "word": "visitar",
+    "surface": "visitan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to go to see a place or person"
+   },
+   {
+    "word": "museo",
+    "surface": "museo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a place with art or old things to see"
+   }
+  ]
+ },
+ {
+  "topic": "bilbao",
+  "slotIndex": 2,
+  "title": "El museo Guggenheim",
+  "arcType": null,
+  "synopsis": "Una mañana en un museo enorme pone a prueba los ojos. Formas raras, un perro de flores y una araña gigante esperan a dos visitantes curiosos, entre el susto y la sorpresa.",
+  "text": "El museo Guggenheim abre a las diez. Lucía y Ander llegan temprano. El museo es muy grande y moderno. Las paredes brillan como plata. Lucía abre mucho los ojos.\n\nFuera hay un perro enorme. El perro es de muchas flores de colores. Los turistas sacan fotos. Un niño pequeño ríe cerca. Lucía toca una flor con cuidado.\n\nDentro, el arte es raro y bonito. Hay formas por todas partes. Lucía anda despacio. Ander lee los carteles. Los dos hablan en voz baja.\n\nDe repente, Lucía ve una araña. La araña es de metal y muy alta. Lucía siente un poco de miedo. Ander se ríe. «No es real», dice Ander.\n\nAl final, los dos salen del museo contentos. Lucía compra una postal bonita. Ella escribe un mensaje corto. El plan de mañana ya existe. Ander quiere ver más arte.",
+  "vocab": [
+   {
+    "word": "temprano",
+    "surface": "temprano",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "early, before the usual time"
+   },
+   {
+    "word": "grande",
+    "surface": "grande",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "big in size, not small"
+   },
+   {
+    "word": "moderno",
+    "surface": "moderno",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "new in style, not old"
+   },
+   {
+    "word": "pared",
+    "surface": "paredes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the flat sides of a room or building"
+   },
+   {
+    "word": "ojo",
+    "surface": "ojos",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the parts of the face you see with"
+   },
+   {
+    "word": "perro",
+    "surface": "perro",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "an animal that many people keep at home"
+   },
+   {
+    "word": "enorme",
+    "surface": "enorme",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "very big in size"
+   },
+   {
+    "word": "flor",
+    "surface": "flores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the colorful part of a plant"
+   },
+   {
+    "word": "turista",
+    "surface": "turistas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a person who travels to see new places"
+   },
+   {
+    "word": "tocar",
+    "surface": "toca",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to put your hand on something"
+   },
+   {
+    "word": "raro",
+    "surface": "raro",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "strange and not common"
+   },
+   {
+    "word": "forma",
+    "surface": "formas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the shape of a thing"
+   },
+   {
+    "word": "despacio",
+    "surface": "despacio",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "in a slow way, not fast"
+   },
+   {
+    "word": "cartel",
+    "surface": "carteles",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a sign with words on a wall"
+   },
+   {
+    "word": "andar",
+    "surface": "anda",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to move on your feet from place to place"
+   },
+   {
+    "word": "araña",
+    "surface": "araña",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small animal with eight legs"
+   },
+   {
+    "word": "alto",
+    "surface": "alta",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "tall, going up very high"
+   },
+   {
+    "word": "miedo",
+    "surface": "miedo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the feeling you have when you are scared"
+   },
+   {
+    "word": "reír",
+    "surface": "ríe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to laugh when something is funny"
+   },
+   {
+    "word": "real",
+    "surface": "real",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "true and not fake"
+   },
+   {
+    "word": "comprar",
+    "surface": "compra",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to buy something with money"
+   },
+   {
+    "word": "postal",
+    "surface": "postal",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a card you send from a trip"
+   },
+   {
+    "word": "mensaje",
+    "surface": "mensaje",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "words you write to another person"
+   },
+   {
+    "word": "corto",
+    "surface": "corto",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "short, not long in size"
+   },
+   {
+    "word": "plan",
+    "surface": "plan",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "an idea about what to do later"
+   }
+  ]
+ },
+ {
+  "topic": "bilbao",
+  "slotIndex": 3,
+  "title": "Pintxos en el casco viejo",
+  "arcType": null,
+  "synopsis": "La cena une a tres amigos en un bar del barrio antiguo. Un bocado de sabor fuerte asusta al principio, pero termina en una sorpresa muy rica y una noche alegre.",
+  "text": "Por la noche, Ander lleva a Lucía a un bar. Nerea espera en la puerta. Nerea es la amiga de Ander. Los tres entran juntos. El bar huele muy bien.\n\nEn la barra hay muchos pintxos. Los pintxos son pequeños y ricos. Cada pintxo tiene pan y algo encima. Lucía mira todo con hambre. Nerea pide varios platos.\n\nAnder pide una bebida para todos. Nerea toma un pintxo de tortilla. Lucía prueba uno de pescado. El sabor es muy fuerte. Lucía pone una cara rara.\n\nAl principio, Lucía duda. Después, ella sonríe mucho. «¡Está delicioso!», dice Lucía. Nerea aplaude contenta. Ander pide otro pintxo igual.\n\nLos tres comen y charlan un buen rato. La noche pasa muy rápido. Lucía guarda un bonito recuerdo. Nerea quiere volver mañana. Los amigos salen juntos y felices.",
+  "vocab": [
+   {
+    "word": "noche",
+    "surface": "noche",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the dark part of the day"
+   },
+   {
+    "word": "bar",
+    "surface": "bar",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a place where people eat and drink"
+   },
+   {
+    "word": "puerta",
+    "surface": "puerta",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the part you open to enter a room"
+   },
+   {
+    "word": "juntos",
+    "surface": "juntos",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "together, with other people"
+   },
+   {
+    "word": "oler",
+    "surface": "huele",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to feel a smell with your nose"
+   },
+   {
+    "word": "barra",
+    "surface": "barra",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the long table in a bar"
+   },
+   {
+    "word": "pintxo",
+    "surface": "pintxos",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small snack on bread in the Basque Country"
+   },
+   {
+    "word": "rico",
+    "surface": "ricos",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "very tasty and good to eat"
+   },
+   {
+    "word": "encima",
+    "surface": "encima",
+    "type": "preposition",
+    "register": "neutral",
+    "definition": "on top of something"
+   },
+   {
+    "word": "hambre",
+    "surface": "hambre",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the feeling of wanting to eat"
+   },
+   {
+    "word": "bebida",
+    "surface": "bebida",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "something you drink like water or juice"
+   },
+   {
+    "word": "probar",
+    "surface": "prueba",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to taste a bit of food"
+   },
+   {
+    "word": "pescado",
+    "surface": "pescado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "fish that people cook and eat"
+   },
+   {
+    "word": "sabor",
+    "surface": "sabor",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the taste of a food in your mouth"
+   },
+   {
+    "word": "fuerte",
+    "surface": "fuerte",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "strong, with a lot of force or taste"
+   },
+   {
+    "word": "al principio",
+    "surface": "al principio",
+    "type": "phrase",
+    "register": "neutral",
+    "definition": "at the first moment, in the beginning"
+   },
+   {
+    "word": "dudar",
+    "surface": "duda",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to feel not sure about something"
+   },
+   {
+    "word": "delicioso",
+    "surface": "delicioso",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "very good to eat, with great taste"
+   },
+   {
+    "word": "aplaudir",
+    "surface": "aplaude",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to hit your hands together to show joy"
+   },
+   {
+    "word": "igual",
+    "surface": "igual",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "the same, not different"
+   },
+   {
+    "word": "charlar",
+    "surface": "charlan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to talk in a friendly way"
+   },
+   {
+    "word": "rato",
+    "surface": "rato",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a short period of time"
+   },
+   {
+    "word": "rápido",
+    "surface": "rápido",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "in a fast way, with speed"
+   },
+   {
+    "word": "recuerdo",
+    "surface": "recuerdo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a memory of something nice"
+   },
+   {
+    "word": "volver",
+    "surface": "volver",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to go back to a place"
+   }
+  ]
+ },
+ {
+  "topic": "granada",
+  "slotIndex": 1,
+  "title": "Las tapas son gratis",
+  "arcType": null,
+  "synopsis": "Lucía llega a Granada y pasea con su amiga Nuria por el Albaicín. Tiene hambre y no sabe qué esperar. En un bar sencillo descubre algo muy típico de la ciudad.",
+  "text": "Lucía visita Granada este mes. Hoy está en Granada. Su amiga Nuria vive aquí. Nuria trabaja en una tienda pequeña. Las dos amigas caminan por el barrio del Albaicín.\n\nLa zona es muy bonita. Las calles son estrechas. Lucía mira las casas blancas. Todo parece muy antiguo. Desde arriba, ella ve la Alhambra. El palacio es enorme.\n\nLucía tiene hambre. Nuria entra en un bar pequeño. Ella pide dos refrescos. El camarero trae los refrescos. También trae un plato de comida.\n\nLucía está sorprendida. En Granada, las tapas son gratis. Las tapas están muy buenas. Nuria sonríe. \"Aquí siempre pasa esto\", dice Nuria. Lucía prueba el jamón. Está delicioso.\n\nEllas comen despacio. La tarde es tranquila. Las amigas hablan y ríen juntas. Lucía está muy contenta. Granada le gusta mucho.",
+  "vocab": [
+   {
+    "word": "visitar",
+    "surface": "visita",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to go and spend time in a place"
+   },
+   {
+    "word": "vivir",
+    "surface": "vive",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to have your home in a place"
+   },
+   {
+    "word": "trabajar",
+    "surface": "trabaja",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to do a job for money"
+   },
+   {
+    "word": "tienda",
+    "surface": "tienda",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a shop where you buy things"
+   },
+   {
+    "word": "barrio",
+    "surface": "barrio",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a part of a town or city"
+   },
+   {
+    "word": "calle",
+    "surface": "calles",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a road with houses in a town"
+   },
+   {
+    "word": "estrecho",
+    "surface": "estrechas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "narrow, with little space between the sides"
+   },
+   {
+    "word": "casa",
+    "surface": "casas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a building where people live"
+   },
+   {
+    "word": "mirar",
+    "surface": "mira",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to look at something with your eyes"
+   },
+   {
+    "word": "palacio",
+    "surface": "palacio",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a big grand house for a king"
+   },
+   {
+    "word": "tener hambre",
+    "surface": "tiene hambre",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "to feel that you need food"
+   },
+   {
+    "word": "pedir",
+    "surface": "pide",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to ask for something you want"
+   },
+   {
+    "word": "refresco",
+    "surface": "refrescos",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a cold sweet drink with bubbles"
+   },
+   {
+    "word": "camarero",
+    "surface": "camarero",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a man who serves food and drinks"
+   },
+   {
+    "word": "plato",
+    "surface": "plato",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a flat round dish for food"
+   },
+   {
+    "word": "sorprendido",
+    "surface": "sorprendida",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "feeling surprise at something you did not expect"
+   },
+   {
+    "word": "tapa",
+    "surface": "tapas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small plate of food in Spain"
+   },
+   {
+    "word": "gratis",
+    "surface": "gratis",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "costing no money at all"
+   },
+   {
+    "word": "sonreír",
+    "surface": "sonríe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to make a happy face with your mouth"
+   },
+   {
+    "word": "jamón",
+    "surface": "jamón",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "salted meat from the leg of a pig"
+   },
+   {
+    "word": "comer",
+    "surface": "comen",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to put food in your mouth"
+   },
+   {
+    "word": "despacio",
+    "surface": "despacio",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "in a slow and calm way"
+   },
+   {
+    "word": "tranquilo",
+    "surface": "tranquila",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "calm, quiet and without noise"
+   },
+   {
+    "word": "contento",
+    "surface": "contenta",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "feeling happy and pleased"
+   }
+  ]
+ },
+ {
+  "topic": "granada",
+  "slotIndex": 2,
+  "title": "El plan de Nuria",
+  "arcType": null,
+  "synopsis": "Nuria quiere enseñar la Alhambra a Lucía, pero las entradas se agotan. Las dos amigas se llevan una decepción. Entonces Nuria encuentra otra forma de ver el palacio.",
+  "text": "Nuria tiene una sorpresa para Lucía. Las dos amigas quieren ver la Alhambra. Lucía es la invitada. Nuria conoce bien la ciudad. Ellas salen temprano de casa.\n\nEl día está soleado. Ellas caminan por una cuesta larga. Lucía está cansada. Por fin llegan a la puerta del palacio. Hay mucha gente en la fila.\n\nNuria habla con un hombre. El hombre dice una mala noticia. Las entradas están agotadas. No quedan billetes para hoy. Nuria explica el problema con calma. Lucía está triste.\n\nPero Nuria tiene otra idea. Ellas suben a un mirador famoso. Desde allí, la vista es bonita. La Alhambra brilla con el sol. Las torres son de color dorado.\n\nLucía saca una foto. \"Este lugar es mágico\", dice ella. Nuria está feliz. Las dos se ríen juntas. Mañana vuelven con un plan mejor.",
+  "vocab": [
+   {
+    "word": "sorpresa",
+    "surface": "sorpresa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a nice thing you did not expect"
+   },
+   {
+    "word": "querer",
+    "surface": "quieren",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to want something or someone"
+   },
+   {
+    "word": "invitado",
+    "surface": "invitada",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a person you ask to come"
+   },
+   {
+    "word": "conocer",
+    "surface": "conoce",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to know a person or place well"
+   },
+   {
+    "word": "temprano",
+    "surface": "temprano",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "at an early time of day"
+   },
+   {
+    "word": "soleado",
+    "surface": "soleado",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "with a lot of bright sun"
+   },
+   {
+    "word": "cuesta",
+    "surface": "cuesta",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a road that goes up a hill"
+   },
+   {
+    "word": "cansado",
+    "surface": "cansada",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "needing to rest or sleep"
+   },
+   {
+    "word": "puerta",
+    "surface": "puerta",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the part you open to enter"
+   },
+   {
+    "word": "fila",
+    "surface": "fila",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a line of people waiting"
+   },
+   {
+    "word": "noticia",
+    "surface": "noticia",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "new information about something that happened"
+   },
+   {
+    "word": "entrada",
+    "surface": "entradas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a paper that lets you enter"
+   },
+   {
+    "word": "agotado",
+    "surface": "agotadas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "all sold and none left"
+   },
+   {
+    "word": "billete",
+    "surface": "billetes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small paper ticket you buy"
+   },
+   {
+    "word": "triste",
+    "surface": "triste",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "feeling sad and unhappy"
+   },
+   {
+    "word": "mirador",
+    "surface": "mirador",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a high place with a good view"
+   },
+   {
+    "word": "vista",
+    "surface": "vista",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "all you can see from a place"
+   },
+   {
+    "word": "brillar",
+    "surface": "brilla",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to shine with bright light"
+   },
+   {
+    "word": "torre",
+    "surface": "torres",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a tall narrow part of a building"
+   },
+   {
+    "word": "dorado",
+    "surface": "dorado",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having the color of gold"
+   },
+   {
+    "word": "sacar",
+    "surface": "saca",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to take out or make a photo"
+   },
+   {
+    "word": "lugar",
+    "surface": "lugar",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a place where something is"
+   },
+   {
+    "word": "feliz",
+    "surface": "feliz",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "feeling very happy inside"
+   },
+   {
+    "word": "mejor",
+    "surface": "mejor",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "more good than another thing"
+   }
+  ]
+ },
+ {
+  "topic": "granada",
+  "slotIndex": 3,
+  "title": "La nieve de Sierra Nevada",
+  "arcType": null,
+  "synopsis": "Lucía y Nuria toman un café y ven Sierra Nevada a lo lejos. Nuria propone subir a la montaña. Lucía nunca ha tocado la nieve y siente mucha emoción.",
+  "text": "Lucía y Nuria toman un café por la mañana. Lucía mira por la ventana. A lo lejos, hay montañas altas. Nuria explica algo importante. Esas montañas son Sierra Nevada.\n\nNuria propone un plan bonito. \"Vamos a ver la nieve\", dice ella. Lucía nunca ve la nieve en su país. Ella está muy emocionada. Las dos preparan ropa de abrigo.\n\nEl autobús sube por la carretera. El viaje dura una hora. Fuera hace mucho frío. Lucía se pone un gorro y unos guantes. Nuria lleva una bufanda gruesa.\n\nAl final llegan a la montaña. Todo está blanco. Lucía toca la nieve con las manos. La nieve está fría y suave. Ella se ríe de alegría.\n\nNuria hace una bola blanca. Ellas juegan un rato. La tarde es muy bonita. Lucía guarda este recuerdo para siempre.",
+  "vocab": [
+   {
+    "word": "tomar",
+    "surface": "toman",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to drink or have something"
+   },
+   {
+    "word": "mañana",
+    "surface": "mañana",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the early part of the day"
+   },
+   {
+    "word": "ventana",
+    "surface": "ventana",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the glass part of a wall"
+   },
+   {
+    "word": "montaña",
+    "surface": "montañas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a very high part of the land"
+   },
+   {
+    "word": "alto",
+    "surface": "altas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a big height"
+   },
+   {
+    "word": "proponer",
+    "surface": "propone",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to say an idea to someone"
+   },
+   {
+    "word": "nieve",
+    "surface": "nieve",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "soft white water that falls in winter"
+   },
+   {
+    "word": "país",
+    "surface": "país",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a land with its own people and name"
+   },
+   {
+    "word": "emocionado",
+    "surface": "emocionada",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "feeling very excited and happy"
+   },
+   {
+    "word": "abrigo",
+    "surface": "abrigo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a warm coat for cold days"
+   },
+   {
+    "word": "carretera",
+    "surface": "carretera",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a wide road for cars"
+   },
+   {
+    "word": "frío",
+    "surface": "frío",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a low temperature"
+   },
+   {
+    "word": "gorro",
+    "surface": "gorro",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a soft hat for your head"
+   },
+   {
+    "word": "guantes",
+    "surface": "guantes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "things you wear on your hands"
+   },
+   {
+    "word": "bufanda",
+    "surface": "bufanda",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a long cloth for your neck"
+   },
+   {
+    "word": "llegar",
+    "surface": "llegan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to arrive at a place"
+   },
+   {
+    "word": "tocar",
+    "surface": "toca",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to put your hand on something"
+   },
+   {
+    "word": "suave",
+    "surface": "suave",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "soft and nice to touch"
+   },
+   {
+    "word": "alegría",
+    "surface": "alegría",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a feeling of being very happy"
+   },
+   {
+    "word": "jugar",
+    "surface": "juegan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to play for fun"
+   },
+   {
+    "word": "rato",
+    "surface": "rato",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a short period of time"
+   },
+   {
+    "word": "bola",
+    "surface": "bola",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a round thing you can throw"
+   },
+   {
+    "word": "guardar",
+    "surface": "guarda",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to keep something safe"
+   },
+   {
+    "word": "recuerdo",
+    "surface": "recuerdo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a thing you remember from before"
+   }
+  ]
+ },
+ {
+  "topic": "san-sebastian",
+  "slotIndex": 1,
+  "title": "Lucía llega a San Sebastián",
+  "arcType": null,
+  "synopsis": "Lucía llega en tren y Iñaki la espera en la estación. Los dos amigos caminan hasta la playa de la Concha, comen un helado en la arena y disfrutan del sol.",
+  "text": "Yo soy Lucía. Iñaki es mi amigo de San Sebastián. Hoy yo llego en tren. Iñaki me espera en la estación. Él sonríe y toma mi maleta.\n\nNosotros caminamos juntos por la calle. Hace sol y el cielo está azul. Iñaki habla despacio. Yo entiendo casi todo. La ciudad es muy bonita y limpia.\n\nIñaki dice: la playa está cerca. Vamos a la playa de la Concha. La arena es suave y clara. El mar está tranquilo. Muchas personas nadan y juegan.\n\nYo miro el agua con calma. El agua está fría. Estoy muy contenta aquí. Iñaki compra dos helados. Uno es para mí y el otro es para él.\n\nNosotros comemos en la arena. El día es muy bueno. San Sebastián me gusta mucho. Iñaki también está feliz. Yo quiero volver mañana.",
+  "vocab": [
+   {
+    "word": "amigo",
+    "surface": "amigo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a person you like and trust"
+   },
+   {
+    "word": "llegar",
+    "surface": "llego",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "I arrive at a place"
+   },
+   {
+    "word": "tren",
+    "surface": "tren",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "long vehicle that runs on rails"
+   },
+   {
+    "word": "esperar",
+    "surface": "espera",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "waits for someone or something"
+   },
+   {
+    "word": "estación",
+    "surface": "estación",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "place where trains stop"
+   },
+   {
+    "word": "sonreír",
+    "surface": "sonríe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "makes a happy face"
+   },
+   {
+    "word": "maleta",
+    "surface": "maleta",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "bag for clothes when you travel"
+   },
+   {
+    "word": "juntos",
+    "surface": "juntos",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "with each other, not alone"
+   },
+   {
+    "word": "cielo",
+    "surface": "cielo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the sky above us"
+   },
+   {
+    "word": "despacio",
+    "surface": "despacio",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "in a slow way"
+   },
+   {
+    "word": "entender",
+    "surface": "entiendo",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "I know what it means"
+   },
+   {
+    "word": "ciudad",
+    "surface": "ciudad",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a big town with many people"
+   },
+   {
+    "word": "playa",
+    "surface": "playa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "sandy place next to the sea"
+   },
+   {
+    "word": "arena",
+    "surface": "arena",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "tiny grains on the beach"
+   },
+   {
+    "word": "suave",
+    "surface": "suave",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "soft and smooth to touch"
+   },
+   {
+    "word": "mar",
+    "surface": "mar",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the big salt water"
+   },
+   {
+    "word": "tranquilo",
+    "surface": "tranquilo",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "calm, quiet and still"
+   },
+   {
+    "word": "nadar",
+    "surface": "nadan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "they move through the water"
+   },
+   {
+    "word": "agua",
+    "surface": "agua",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the clear drink we need"
+   },
+   {
+    "word": "helado",
+    "surface": "helados",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "cold sweet food you lick"
+   },
+   {
+    "word": "comer",
+    "surface": "comemos",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "we eat food together"
+   },
+   {
+    "word": "gustar",
+    "surface": "gusta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to feel that something is nice"
+   },
+   {
+    "word": "feliz",
+    "surface": "feliz",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "full of joy and happy"
+   },
+   {
+    "word": "volver",
+    "surface": "volver",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to come back again"
+   },
+   {
+    "word": "mañana",
+    "surface": "mañana",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "the day after today"
+   }
+  ]
+ },
+ {
+  "topic": "san-sebastian",
+  "slotIndex": 2,
+  "title": "Ane trae más pintxos",
+  "arcType": null,
+  "synopsis": "Iñaki y Lucía pasean por el casco viejo y prueban pintxos en un bar. Una amiga, Ane, trabaja allí y trae varios platos. Lucía come jamón, queso y gambas, y todos salen muy contentos.",
+  "text": "Iñaki y Lucía pasean por el casco viejo. Las calles son estrechas y bonitas. Hay muchos bares aquí. La gente habla y ríe. Lucía mira todo con calma.\n\nIñaki pide unos pintxos para todos. Los pintxos son pequeños. Están sobre el pan. Lucía prueba uno de tortilla. Está muy rico.\n\nUna amiga llega al bar. Se llama Ane. Ane trabaja aquí. Ane trae tres platos. Todo huele muy bien.\n\nLucía prueba jamón, queso y gambas. Todo le gusta mucho. Iñaki bebe un vaso de sidra. Lucía bebe agua. Los dos hablan y ríen.\n\nEl bar está lleno de gente. Hay mucho ruido alegre. Lucía paga la cuenta. Ane sonríe y dice: gracias. Los amigos salen muy contentos.",
+  "vocab": [
+   {
+    "word": "pasear",
+    "surface": "pasean",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "they walk in a slow way"
+   },
+   {
+    "word": "casco viejo",
+    "surface": "casco viejo",
+    "type": "phrase",
+    "register": "neutral",
+    "definition": "the old part of a city"
+   },
+   {
+    "word": "calle",
+    "surface": "calles",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "roads inside a town"
+   },
+   {
+    "word": "estrecho",
+    "surface": "estrechas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "not wide, very thin"
+   },
+   {
+    "word": "bar",
+    "surface": "bares",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "places for drinks and snacks"
+   },
+   {
+    "word": "gente",
+    "surface": "gente",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a group of many people"
+   },
+   {
+    "word": "pintxo",
+    "surface": "pintxos",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "small snacks on bread"
+   },
+   {
+    "word": "pequeño",
+    "surface": "pequeños",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "not big in size"
+   },
+   {
+    "word": "pan",
+    "surface": "pan",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "food made from flour"
+   },
+   {
+    "word": "probar",
+    "surface": "prueba",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "tastes a little of something"
+   },
+   {
+    "word": "tortilla",
+    "surface": "tortilla",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "eggs and potato cooked flat"
+   },
+   {
+    "word": "rico",
+    "surface": "rico",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "with a very good taste"
+   },
+   {
+    "word": "amiga",
+    "surface": "amiga",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a female friend you like"
+   },
+   {
+    "word": "trabajar",
+    "surface": "trabaja",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "does a job for money"
+   },
+   {
+    "word": "traer",
+    "surface": "trae",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "brings something to you"
+   },
+   {
+    "word": "plato",
+    "surface": "platos",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "flat dishes for food"
+   },
+   {
+    "word": "jamón",
+    "surface": "jamón",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "salted meat from a pig"
+   },
+   {
+    "word": "queso",
+    "surface": "queso",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "food made from milk"
+   },
+   {
+    "word": "gamba",
+    "surface": "gambas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "small pink sea animals"
+   },
+   {
+    "word": "beber",
+    "surface": "bebe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "drinks water or juice"
+   },
+   {
+    "word": "sidra",
+    "surface": "sidra",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "apple drink with alcohol"
+   },
+   {
+    "word": "lleno",
+    "surface": "lleno",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "with no more free space"
+   },
+   {
+    "word": "ruido",
+    "surface": "ruido",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a loud strong sound"
+   },
+   {
+    "word": "pagar",
+    "surface": "paga",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "gives money for something"
+   },
+   {
+    "word": "cuenta",
+    "surface": "cuenta",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "paper that shows the price"
+   }
+  ]
+ },
+ {
+  "topic": "san-sebastian",
+  "slotIndex": 3,
+  "title": "Un funicular hasta Igueldo",
+  "arcType": null,
+  "synopsis": "Lucía tiene un poco de miedo a las alturas. Iñaki quiere mostrarle la mejor vista de San Sebastián. En lo alto pasa algo bonito y el miedo de Lucía desaparece poco a poco.",
+  "text": "Iñaki tiene un plan nuevo. Hoy Lucía y él suben al monte Igueldo. Un funicular pequeño los lleva arriba. Lucía se siente un poco nerviosa. Iñaki va tranquilo.\n\nEl funicular sube muy despacio. Lucía mira por la ventana. La bahía es enorme. La playa parece muy pequeña desde arriba. Lucía abre mucho los ojos.\n\nArriba hay un parque antiguo. Hay atracciones y luces de colores. El viento es fuerte hoy. Lucía ya no está nerviosa. Ahora ella ríe.\n\nIñaki señala el mar. El sol baja despacio. El cielo se vuelve naranja. Lucía saca una cámara. Ella hace una foto.\n\nLos dos bajan del monte. Para Iñaki, este lugar es el mejor. Lucía está de acuerdo. Ella sonríe mucho. Este día es genial.",
+  "vocab": [
+   {
+    "word": "plan",
+    "surface": "plan",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "an idea about what to do"
+   },
+   {
+    "word": "nuevo",
+    "surface": "nuevo",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "not old, just made"
+   },
+   {
+    "word": "subir",
+    "surface": "suben",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "they go up high"
+   },
+   {
+    "word": "monte",
+    "surface": "monte",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small high hill"
+   },
+   {
+    "word": "funicular",
+    "surface": "funicular",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "small train up a hill"
+   },
+   {
+    "word": "arriba",
+    "surface": "arriba",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "in a high place"
+   },
+   {
+    "word": "nervioso",
+    "surface": "nerviosa",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "a little scared and tense"
+   },
+   {
+    "word": "ventana",
+    "surface": "ventana",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "glass hole in a wall"
+   },
+   {
+    "word": "bahía",
+    "surface": "bahía",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "part of the sea near land"
+   },
+   {
+    "word": "enorme",
+    "surface": "enorme",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "extremely big in size"
+   },
+   {
+    "word": "parecer",
+    "surface": "parece",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "seems to look a certain way"
+   },
+   {
+    "word": "ojo",
+    "surface": "ojos",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "parts of the face for seeing"
+   },
+   {
+    "word": "antiguo",
+    "surface": "antiguo",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "very old from long ago"
+   },
+   {
+    "word": "atracción",
+    "surface": "atracciones",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "fun rides at a park"
+   },
+   {
+    "word": "luz",
+    "surface": "luces",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "bright lights you see"
+   },
+   {
+    "word": "color",
+    "surface": "colores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "red, blue and green tones"
+   },
+   {
+    "word": "viento",
+    "surface": "viento",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "air that moves outside fast"
+   },
+   {
+    "word": "fuerte",
+    "surface": "fuerte",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "with a lot of power"
+   },
+   {
+    "word": "reír",
+    "surface": "ríe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "makes a happy laughing sound"
+   },
+   {
+    "word": "señalar",
+    "surface": "señala",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "points with a finger"
+   },
+   {
+    "word": "sol",
+    "surface": "sol",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the bright star in day"
+   },
+   {
+    "word": "bajar",
+    "surface": "baja",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "moves down to a lower place"
+   },
+   {
+    "word": "naranja",
+    "surface": "naranja",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "the color of a carrot"
+   },
+   {
+    "word": "cámara",
+    "surface": "cámara",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "thing that takes pictures"
+   },
+   {
+    "word": "de acuerdo",
+    "surface": "de acuerdo",
+    "type": "phrase",
+    "register": "neutral",
+    "definition": "you think the same way"
+   }
+  ]
+ }
+]

@@ -10,7 +10,7 @@ import { prisma } from "@/lib/prisma";
  * harmless.
  *
  * IMPORTANT: every model with a scalar `userId` MUST be listed here, or a
- * deletion leaves orphaned personal data — exactly the compliance gap this
+ * deletion leaves orphaned personal data; exactly the compliance gap this
  * function was written to close. As of 2026-07 the models are the ten below;
  * when a new per-user model is added, add its `deleteMany` here too.
  */

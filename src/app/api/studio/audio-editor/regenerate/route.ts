@@ -107,7 +107,7 @@ export async function POST(request: Request) {
   // Approved-voices gate. This route calls ElevenLabs directly (not via
   // elevenlabs.ts), so it enforces the allowlist itself. Allow the voice if
   // it is approved OR already one of THIS story's own voices (narrator or a
-  // multivoice character) — re-rendering an already-shipped voice is safe;
+  // multivoice character); re-rendering an already-shipped voice is safe;
   // the gate exists to stop INTRODUCING a new unapproved voice. No env-var
   // bypass; the owner approves new voices.
   if (!isVoiceApproved(elVoiceId) && !storyOwnsVoice(story, elVoiceId)) {

@@ -116,7 +116,7 @@ export async function POST(req: Request) {
       console.warn(
         `⏭️ Sin edición digital (no se concede ni se emite claim): ${JSON.stringify(
           skippedNoDigital
-        )} — email=${email}. Si alguno DEBERÍA ser digital, cárgalo al catálogo y/o mapéalo en shopifybundles.ts.`
+        )}; email=${email}. Si alguno DEBERÍA ser digital, cárgalo al catálogo y/o mapéalo en shopifybundles.ts.`
       );
     }
 

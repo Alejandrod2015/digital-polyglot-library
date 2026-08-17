@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Tema 2 (la-carrilla, Oaxaca) — REAUTORADO 2026-07-09 sobre las historias NARRADOR.
+# Tema 2 (la-carrilla, Oaxaca); REAUTORADO 2026-07-09 sobre las historias NARRADOR.
 # Reglas: docs/practice-exercises-redesign.md + scripts/_EXERCISE_SPEC.md.
 # Headline en forma de diccionario; la flexion vive en [[ ]] o en la respuesta del
 # cloze. Cloze = frase FRESCA, resoluble por significado, nunca por la trama.

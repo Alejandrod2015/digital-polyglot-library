@@ -41,7 +41,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: `Unknown voiceId: ${voiceId}` }, { status: 400 });
     }
     // Fail-fast: an ElevenLabs voice must be on the approved allowlist
-    // (src/lib/approvedVoices.ts) before it can be attached to a story —
+    // (src/lib/approvedVoices.ts) before it can be attached to a story;
     // otherwise every regenerate/preview with it would be blocked anyway.
     const elId = voiceId.startsWith("elevenlabs/") ? voiceId.slice("elevenlabs/".length) : voiceId;
     if (!isVoiceApproved(elId)) {

@@ -1,5 +1,5 @@
 /**
- * saveStory.ts — THE ONLY sanctioned way to write JourneyStory CONTENT
+ * saveStory.ts; THE ONLY sanctioned way to write JourneyStory CONTENT
  * (title/slug/text/vocab/arcType/synopsis) to the database.
  *
  * WHY THIS EXISTS (hard rule, 2026-07-09): a pilot was reported as
@@ -36,7 +36,7 @@ try {
 
 import * as fs from "fs";
 import { PrismaClient } from "../src/generated/prisma";
-import { validateGeneratedStory, extractStoryMotifs, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
+import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
 
 /** Build the cross-story summary the canonical validator needs to run its
@@ -47,6 +47,11 @@ function summarize(d: any): ExistingStorySummary {
     const m = line.match(/^([A-ZÁÉÍÓÚÑ][a-záéíóúñü]+):\s/);
     if (m) names.add(m[1]);
   }
+  // Las líneas `Nombre: …` solo existen en el formato diálogo. En prosa
+  // narrada el reparto vive dentro del párrafo, así que hay que sacarlo del
+  // cuerpo con el MISMO extractor que usa el validador; si no, cada historia
+  // narrada declara cero personajes y la siguiente cree que todos son nuevos.
+  for (const n of extractProperNouns(String(d.text))) names.add(n);
   const firstPara = String(d.text).split(/\n{2,}/)[0] ?? "";
   const firstSentence = (firstPara.split(/(?<=[.!?])\s/)[0] ?? firstPara).trim();
   return {
@@ -87,19 +92,19 @@ function slugify(s: string): string {
   // C1-NARRATOR profile: single-voice narrated prose (3rd person + brief quotes),
   // NOT multi-voice dialogue. It legitimately fails the format checks that assume
   // "Speaker: line" turns. --narrator exempts EXACTLY those three format checks
-  // (dialogue-ratio, speakers-count, speaker-lines) and NOTHING else — modismos,
+  // (dialogue-ratio, speakers-count, speaker-lines) and NOTHING else; modismos,
   // defs, no-digits, arc, CEFR, distribution, cross-story dedup all still gate.
   const narrator = flag("narrator");
   const typographyOnly = flag("typography-only");
   // These checks all assume the multivoice "Speaker: line" format: they read
   // character names / turns from speaker labels, which a narrated prose story
-  // (names in the prose, not in labels) does not have. Exempt ONLY these — the
+  // (names in the prose, not in labels) does not have. Exempt ONLY these; the
   // same four the spec lists as known A0-narrator exemptions.
   //
   // vocab-count is NOT exempt (2026-07-09). It was, briefly, and that was a
   // mistake: the profile "replaced" the spec's hard minimum of 20 with a
   // homegrown minimum of 12, on the theory that pills stack in prose and read
-  // like a highlighted exercise. Our own A0 narrator precedent refutes it —
+  // like a highlighted exercise. Our own A0 narrator precedent refutes it ;
   // 22-26 items in 135-145 words, ~1 pill per 6 words, shipped and approved,
   // 3x denser. Relaxing a gate so the output passes is exactly what
   // `feedback_calibrate_gates_to_gold_standard` forbids. A high count is
@@ -244,7 +249,7 @@ function slugify(s: string): string {
     // This is the one piece of the narrator profile that earns its keep. The
     // canonical vocab-distribution check counts pills per AUTHORED paragraph,
     // but the reader throws narrated prose's "\n\n" away and re-groups it into
-    // 3-sentence blocks (src/lib/readerParagraphs) — so in narrator mode that
+    // 3-sentence blocks (src/lib/readerParagraphs); so in narrator mode that
     // check measures a structure nobody sees. Same rule, right object.
     //
     // CALIBRATION IS THE CANONICAL ONE, not a homegrown "max 3": cluster =
@@ -341,6 +346,37 @@ function slugify(s: string): string {
         },
       });
       console.log(`  saved ${d.topic}#${d.slotIndex} -> ${slug}${publish ? " (published)" : ""}`);
+
+      // SINCRONIZAR EL TEXTO DE LOS FRAGMENTOS DE AUDIO.
+      //
+      // `audioFragments` congela el texto de cada párrafo cuando se mide. Si la
+      // historia se reescribe después, re-tirar un fragmento vuelve a narrar la
+      // frase VIEJA, porque el generador lee ese campo y no el cuerpo. Pasó el
+      // 2026-08-17: se reescribió "Bia sobe a escada..." y la toma nueva
+      // repetía la frase que se acababa de cambiar.
+      //
+      // Va aquí y no en el script de medición porque tocar ese texto ES
+      // contenido de historia, y el contenido solo entra por este camino.
+      const fragmentos = slot.audioFragments as Array<{ index: number; text?: string }> | null;
+      if (Array.isArray(fragmentos) && fragmentos.length > 0) {
+        const parrafos = String(d.text ?? "").split(/\n\s*\n/).map((x: string) => x.trim()).filter(Boolean);
+        if (fragmentos.length === parrafos.length + 1) {
+          let tocados = 0;
+          const nuevos = [...fragmentos]
+            .sort((a, b) => a.index - b.index)
+            .map((f, i) => {
+              const esperado = i === 0 ? String(d.title).trim() : parrafos[i - 1];
+              if (esperado && String(f.text ?? "").trim() !== esperado) { tocados++; return { ...f, text: esperado }; }
+              return f;
+            });
+          if (tocados > 0) {
+            await prisma.journeyStory.update({ where: { id: slot.id }, data: { audioFragments: nuevos as never } });
+            console.log(`     ${tocados} fragmento(s) de audio re-sincronizados con el texto nuevo`);
+          }
+        } else {
+          console.log(`     aviso: ${fragmentos.length} fragmentos frente a ${parrafos.length + 1} párrafos; el audio quedó desfasado del texto`);
+        }
+      }
     }
   } finally {
     await prisma.$disconnect();

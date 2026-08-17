@@ -167,8 +167,8 @@ export async function GET(
         unresolvedBookIds = unresolved;
         if (unresolved.length > 0) {
           console.error(
-            `🚨 CLAIM SIN CATÁLOGO — userId=${userId} buyer=${redeemed.buyerEmail} ` +
-              `sin_resolver=${JSON.stringify(unresolved)} — NO materializado. ` +
+            `🚨 CLAIM SIN CATÁLOGO; userId=${userId} buyer=${redeemed.buyerEmail} ` +
+              `sin_resolver=${JSON.stringify(unresolved)}; NO materializado. ` +
               `Mapear en shopifybundles.ts o cargar el libro en el catálogo.`
           );
         }
@@ -208,8 +208,8 @@ export async function GET(
               const msg =
                 upsertErr instanceof Error ? upsertErr.message : String(upsertErr);
               console.error(
-                `🚨 CLAIM NO MATERIALIZADO — userId=${userId} buyer=${redeemed.buyerEmail} ` +
-                  `token=${token} libro=${r.bookId} error=${msg} — el comprador NO tiene ` +
+                `🚨 CLAIM NO MATERIALIZADO; userId=${userId} buyer=${redeemed.buyerEmail} ` +
+                  `token=${token} libro=${r.bookId} error=${msg}; el comprador NO tiene ` +
                   `este libro en My Library. La respuesta se lo dice y puede reintentar.`,
                 upsertErr
               );
@@ -226,8 +226,8 @@ export async function GET(
             // clienta a la que le pasó (2026-07-28) tuvo que pedir reembolso
             // por su cuenta porque nada avisó.
             console.warn(
-              `💸 CLAIM DUPLICADO — userId=${userId} buyer=${redeemed.buyerEmail} ` +
-                `token=${token} ya_tenia=${JSON.stringify([...ownedBefore])} — ` +
+              `💸 CLAIM DUPLICADO; userId=${userId} buyer=${redeemed.buyerEmail} ` +
+                `token=${token} ya_tenia=${JSON.stringify([...ownedBefore])}; ` +
                 `posible cobro doble, revisar reembolso.`
             );
           }
@@ -248,8 +248,8 @@ export async function GET(
           }
         }
         console.error(
-          `🚨 CLAIM NO MATERIALIZADO — userId=${userId} buyer=${redeemed.buyerEmail} ` +
-            `token=${token} libros=${JSON.stringify(redeemed.books)} error=${msg} — ` +
+          `🚨 CLAIM NO MATERIALIZADO; userId=${userId} buyer=${redeemed.buyerEmail} ` +
+            `token=${token} libros=${JSON.stringify(redeemed.books)} error=${msg}; ` +
             `el comprador NO tiene los libros en My Library.`,
           libErr
         );

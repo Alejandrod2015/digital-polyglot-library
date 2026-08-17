@@ -1,0 +1,3600 @@
+[
+ {
+  "topic": "buenos-aires",
+  "slotIndex": 1,
+  "title": "Feria de San Telmo",
+  "arcType": "reframe-turn",
+  "synopsis": "Para Juli, el bandoneón colgado del puesto de Tomás es apenas una excusa para cobrarle de más a cualquier despistado. Pero un disco olvidado entre la mercadería esconde un apellido que le da vuelta la tarde entera. ¿Qué hace una porteña cuando descubre que el objeto que estaba por regatear no tiene precio sino memoria, y que el vendedor que juzgó tan rápido guarda algo mucho más hondo?",
+  "text": "\"¿Cuánto pedís por el fuelle, Tomás?\", tanteó Juli mientras esquivaba a los turistas. Julieta, porteña de toda la vida, arrastraba a su amiga Delfina por la feria de San Telmo. Tomás, el anticuario de barba canosa, ni levantó la vista del cajón.\n\n\"Ese bandoneón no está a la venta, nena\", contestó, y se cebó un amargo. \"Lo tengo de adorno; no jode a nadie ahí colgado.\"\n\nJuli puso los ojos en blanco y lo tomó por un chanta más. De esos que le encajan cualquier baratija a los turistas por unos mangos de más. Delfina, mientras tanto, se copó con una pila de vinilos apoyada contra la pared.\n\n\"Che, mirá esto\", dijo, y le alcanzó un disco gastado con una orquesta de tango en la tapa. Tomás soltó todo de golpe. \"Ese lo grabó mi viejo, allá por el cincuenta y ocho\", murmuró. \"Tocaba justo el fuelle que vos querés comprar.\"\n\nDe golpe el bandoneón dejó de ser un adorno polvoriento. Juli lo miró distinto: ya no había chamuyo de vendedor. Había una herencia que el tipo no pensaba malvender.\n\nLa bronca se le hizo ternura sin pedir permiso. \"Perdoná, ni sabía\", dijo, y bajó la mano que ya buscaba la billetera. Tomás sonrió apenas y le cebó un mate también a ella. \"Sentate un rato, piba. Te cuento cómo sonaba esa orquesta.\"",
+  "vocab": [
+   {
+    "word": "fuelle",
+    "surface": "fuelle",
+    "type": "noun",
+    "register": "slang",
+    "definition": "Buenos Aires slang for the bandoneon, the squeezebox at the soul of tango."
+   },
+   {
+    "word": "tantear",
+    "surface": "tanteó",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to feel out or test a situation gently before you fully commit."
+   },
+   {
+    "word": "esquivar",
+    "surface": "esquivaba",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to dodge and weave around people or things so you avoid them."
+   },
+   {
+    "word": "arrastrar",
+    "surface": "arrastraba",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to drag or pull someone along, often when they would rather not go."
+   },
+   {
+    "word": "la feria",
+    "surface": "la feria",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "an open air weekend market with stalls selling antiques and old crafts."
+   },
+   {
+    "word": "el anticuario",
+    "surface": "anticuario",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a dealer who buys and resells old furniture, records, and curious objects."
+   },
+   {
+    "word": "cebar",
+    "surface": "cebó",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to prepare and pour rounds of mate for the others to sip."
+   },
+   {
+    "word": "el amargo",
+    "surface": "amargo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a round of mate drunk plain and bitter, with no sugar added."
+   },
+   {
+    "word": "el adorno",
+    "surface": "adorno",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a decorative object kept just for show and never actually used."
+   },
+   {
+    "word": "chanta",
+    "surface": "chanta",
+    "type": "noun",
+    "register": "slang",
+    "definition": "River Plate slang for a smooth talking fraud who never delivers."
+   },
+   {
+    "word": "encajar",
+    "surface": "encajan",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to palm off cheap junk onto a trusting buyer for easy cash."
+   },
+   {
+    "word": "la baratija",
+    "surface": "baratija",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a cheap flashy trinket sold to tourists at a fat markup."
+   },
+   {
+    "word": "mango",
+    "surface": "mangos",
+    "type": "noun",
+    "register": "slang",
+    "definition": "casual Argentine word for a peso, one small unit of money."
+   },
+   {
+    "word": "coparse",
+    "surface": "copó",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to get totally hooked on something and dive in with joy."
+   },
+   {
+    "word": "el vinilo",
+    "surface": "vinilos",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "an old vinyl record collectors love for its warm analog sound."
+   },
+   {
+    "word": "la orquesta",
+    "surface": "orquesta",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a band of musicians who play tango together up on stage."
+   },
+   {
+    "word": "chamuyo",
+    "surface": "chamuyo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "smooth sweet talk meant to charm, win over, or fool someone."
+   },
+   {
+    "word": "la herencia",
+    "surface": "herencia",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "something valuable handed down from a parent or older family member."
+   },
+   {
+    "word": "malvender",
+    "surface": "malvender",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to sell something precious for way less than it is truly worth."
+   },
+   {
+    "word": "bronca",
+    "surface": "bronca",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a hot rush of anger and resentment aimed at someone."
+   },
+   {
+    "word": "la billetera",
+    "surface": "billetera",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the small wallet where you tuck your cash and cards."
+   },
+   {
+    "word": "el mate",
+    "surface": "mate",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the bitter Argentine herbal tea sipped through a metal straw together."
+   }
+  ]
+ },
+ {
+  "topic": "buenos-aires",
+  "slotIndex": 2,
+  "title": "Milonga a media luz",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Juli es porteña hasta la médula, pero el baile de dos por cuatro siempre le quedó lejos, cosa de otra generación. Una tanda de recién llegados con las pantallas en alto amenaza con arruinarle la noche a puro ruido. Entonces un gesto silencioso pone a prueba si las viejas reglas del salón todavía pueden más que el bardo digital. ¿Y si el código que ella creía muerto termina llevándola también a bailar?",
+  "text": "El bandoneón arrancó un vals y las parejas se acomodaron en ronda sobre el piso gastado de La Catedral. Julieta, que de porteña tenía todo menos el tango en las patas, se sentó al lado de su amiga Malena. Enfrente, una tanda de recién llegados filmaba la pista con los celulares en alto.\n\n\"Mirá a esos\", le sopló Juli. \"Vienen a un templo y lo tratan como un boliche.\"\n\nMalena se rió sin despegar los ojos del salón. \"Esperá; la milonga los ordena sola.\"\n\nUn cabeceo cruzó la ronda y un bailarín levantó apenas el mentón. El pibe de la mesa ruidosa lo entendió, guardó el teléfono y se paró. En cuanto la abrazó, el bardo de afuera quedó lejos y adentro solo mandaba la música.\n\nJuli miró la escena como si recién cayera. Dos mundos que no parecían tener nada que ver de repente eran parte de la misma ronda. Aquel chico ahora seguía el compás como si lo llevara puesto de toda la vida.\n\n\"No lo puedo creer\", murmuró Juli desde su rincón. \"El código viejo se los tragó a todos.\"\n\nMalena le guiñó un ojo y le estiró la mano. \"¿Vas? El cabeceo también corre entre amigas.\"\n\nJuli dudó, dejó la birra sobre la mesa y se dejó llevar a la pista. Se paró muerta de vergüenza y de ganas.",
+  "vocab": [
+   {
+    "word": "el vals",
+    "surface": "vals",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a swaying tango waltz danced in three beats around the floor."
+   },
+   {
+    "word": "la ronda",
+    "surface": "ronda",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the circling lane of couples moving together around a dance floor."
+   },
+   {
+    "word": "el tango",
+    "surface": "tango",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the passionate porteño dance and music born in Buenos Aires ports."
+   },
+   {
+    "word": "en las patas",
+    "surface": "en las patas",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "having a natural knack for something, as if born doing it."
+   },
+   {
+    "word": "la pista",
+    "surface": "pista",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the open dance floor where couples move to the music."
+   },
+   {
+    "word": "soplar",
+    "surface": "sopló",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to whisper something quietly and quickly into a friend's ear."
+   },
+   {
+    "word": "el boliche",
+    "surface": "boliche",
+    "type": "noun",
+    "register": "slang",
+    "definition": "an Argentine nightclub where young people drink and dance late."
+   },
+   {
+    "word": "despegar",
+    "surface": "despegar",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to pull or peel something away from what it clings to."
+   },
+   {
+    "word": "la milonga",
+    "surface": "milonga",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a social dance night where people gather to dance tango."
+   },
+   {
+    "word": "el cabeceo",
+    "surface": "cabeceo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the silent nod tango dancers use to invite a partner."
+   },
+   {
+    "word": "el bailarín",
+    "surface": "bailarín",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a skilled dancer who moves with control and real style."
+   },
+   {
+    "word": "el mentón",
+    "surface": "mentón",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the chin, the front tip of the jaw below your mouth."
+   },
+   {
+    "word": "pibe",
+    "surface": "pibe",
+    "type": "noun",
+    "register": "slang",
+    "definition": "casual River Plate word for a young guy or kid."
+   },
+   {
+    "word": "bardo",
+    "surface": "bardo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "River Plate slang for noisy chaos, trouble, or a messy scene."
+   },
+   {
+    "word": "mandar",
+    "surface": "mandaba",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to be the one in charge and call all the shots."
+   },
+   {
+    "word": "caer",
+    "surface": "cayera",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to suddenly click and finally understand something you missed before now."
+   },
+   {
+    "word": "el compás",
+    "surface": "compás",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the steady musical beat that dancers follow with their feet."
+   },
+   {
+    "word": "el rincón",
+    "surface": "rincón",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a quiet corner tucked at the edge of a room."
+   },
+   {
+    "word": "tragar",
+    "surface": "tragó",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to swallow, or to pull something completely into itself."
+   },
+   {
+    "word": "guiñar un ojo",
+    "surface": "guiñó un ojo",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "to wink at someone, closing one eye as a quiet signal."
+   },
+   {
+    "word": "la birra",
+    "surface": "birra",
+    "type": "noun",
+    "register": "slang",
+    "definition": "casual Argentine word for a beer shared among friends."
+   },
+   {
+    "word": "la vergüenza",
+    "surface": "vergüenza",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the hot embarrassed feeling of shame in front of others."
+   }
+  ]
+ },
+ {
+  "topic": "buenos-aires",
+  "slotIndex": 3,
+  "title": "Camino a la Bombonera",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Media hora para el superclásico y Fede haría cualquier cosa por no espantar la suerte: cábalas, rezos, gestos absurdos que Juli le sigue entre risas. Consiguieron las entradas de puro milagro, así que nada podría salir mal. Salvo que, justo en el molinete, una lucecita roja y la cara de un empleado conviertan la fiesta más esperada del año en un problema que nadie sabe todavía cómo va a terminar.",
+  "text": "El bondi venía repleto y Fede se colgó del pasamanos. Llevaba la camiseta de Boca puesta como una bandera. Julieta se apretó a su lado, mareada por el olor a nervios que traía el colectivo.\n\nFaltaba media hora para el superclásico. Su amigo Fede, bostero de cuna, no paraba de mandarse cábalas. \"Tocá la entrada tres veces, dale\", le pidió, serio como en misa.\n\nJuli se rió, pero le hizo caso; con Fede y sus mufas no se jode. Bajaron en La Boca y la marea xeneize los llevó por Brandsen. Un pibe flaco vendía choripanes humeantes en la esquina, entre el humo del carbón y los cánticos de la hinchada.\n\nFede palpó el bolsillo por décima vez. Buscaba las dos entradas que había conseguido a pura labia con un revendedor. \"¿Las tenés? Decime que las tenés\", lo apuró Juli.\n\nFede sonrió, canchero, y las sacó como quien saca un trofeo. Llegaron al molinete con el corazón en la boca. Fede pasó primero: luz verde, adentro.\n\nJuli apoyó su entrada y el aparato pegó un pitido seco. Roja. El de seguridad la frenó con la mano en alto.\n\n\"Esta entrada ya fue usada, nena\", dijo, sin devolvérsela. Fede giró desde el otro lado del molinete, la cara blanca. Y atrás, la fila empujaba, mientras el estadio entero rugía un gol que ellos todavía no podían ver.",
+  "vocab": [
+   {
+    "word": "bondi",
+    "surface": "bondi",
+    "type": "noun",
+    "register": "slang",
+    "definition": "casual Buenos Aires word for a city bus or coach."
+   },
+   {
+    "word": "repleto",
+    "surface": "repleto",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "completely packed and full, with no free space left inside."
+   },
+   {
+    "word": "el pasamanos",
+    "surface": "pasamanos",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the handrail you grip to steady yourself while standing up."
+   },
+   {
+    "word": "la camiseta",
+    "surface": "camiseta",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the team jersey a football fan wears to the match."
+   },
+   {
+    "word": "el colectivo",
+    "surface": "colectivo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the everyday city bus that porteños ride around town."
+   },
+   {
+    "word": "el superclásico",
+    "surface": "superclásico",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the fierce Buenos Aires derby between Boca and River fans."
+   },
+   {
+    "word": "bostero",
+    "surface": "bostero",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "slang for a fan of the Boca Juniors football club."
+   },
+   {
+    "word": "de cuna",
+    "surface": "de cuna",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "being something from birth, deep in you since you were born."
+   },
+   {
+    "word": "cábala",
+    "surface": "cábalas",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a lucky ritual or superstition you repeat to court good fortune."
+   },
+   {
+    "word": "hacer caso",
+    "surface": "hizo caso",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "to pay attention and actually do what someone tells you."
+   },
+   {
+    "word": "la mufa",
+    "surface": "mufas",
+    "type": "noun",
+    "register": "slang",
+    "definition": "River Plate slang for bad luck or a jinx you carry."
+   },
+   {
+    "word": "xeneize",
+    "surface": "xeneize",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "nickname for Boca Juniors and its fans, from Genoese roots."
+   },
+   {
+    "word": "el choripán",
+    "surface": "choripanes",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a grilled chorizo sausage in bread, sold at Argentine matches."
+   },
+   {
+    "word": "palpar",
+    "surface": "palpó",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to pat and feel something with your hand to check it."
+   },
+   {
+    "word": "el bolsillo",
+    "surface": "bolsillo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the pocket in your clothes where you keep small things."
+   },
+   {
+    "word": "la labia",
+    "surface": "labia",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a smooth gift of gab for talking people into things."
+   },
+   {
+    "word": "el revendedor",
+    "surface": "revendedor",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a scalper who resells match tickets at inflated street prices."
+   },
+   {
+    "word": "apurar",
+    "surface": "apuró",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to rush or press someone to hurry up and answer."
+   },
+   {
+    "word": "canchero",
+    "surface": "canchero",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "cocky and smoothly self assured, showing off an easy skill."
+   },
+   {
+    "word": "el molinete",
+    "surface": "molinete",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the turnstile gate you pass through to enter a stadium."
+   },
+   {
+    "word": "corazón en la boca",
+    "surface": "corazón en la boca",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "gripped by nervous suspense, tense and bracing for what comes."
+   },
+   {
+    "word": "el gol",
+    "surface": "gol",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a goal, the scoring moment that makes a stadium erupt."
+   },
+   {
+    "word": "el pitido",
+    "surface": "pitido",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a short sharp electronic beep, like a scanner rejecting something."
+   }
+  ]
+ },
+ {
+  "topic": "cordoba",
+  "slotIndex": 1,
+  "title": "Ni en pedo el cuarteto",
+  "arcType": "recurring-character-callback",
+  "synopsis": "Recién bajada del micro, Juli se planta: por más fernet que le sirvan, ni en pedo va a bailar cuarteto ni a decir 'culiao' como los cordobeses. Ramiro, muerto de risa, le apuesta una picada a que se rinde antes del amanecer. Lo que la porteña no calcula es cuánto pegan la tonada, el bombo y una noche entera de joda, cuando el cuerpo decide bastante antes que el orgullo.",
+  "text": "Apenas baja del micro, Juli recibe de Ramiro un fernet con coca hasta el borde. En el patio de una casa vieja de barrio Güemes, en Córdoba, ya está armada la previa. El parlante suena a full y ya cayó una banda de amigos con hielo.\n\nCami, la prima que la aloja el finde, la abraza y grita que hoy la joda no se negocia. Los pibes destapan la birra fría y se ríen de su cara de porteña.\n\nMedio mareada de risa, Juli jura que ni en pedo va a bailar cuarteto. Tampoco piensa decir culiao como ellos, avisa muy segura.\n\nRamiro le choca el vaso y le apuesta una picada a que se manda las dos cosas antes del amanecer. La tonada cordobesa la envuelve, toda cantadita, y le suena a idioma nuevo.\n\nAlguien tira más choripán a la parrilla y el humo tapa el patio. Al rato entra el bombo por el parlante y todos se prenden.\n\nJuli se hace la dura y dice que ese ritmo es un embole. Jura que ella banca otra música, pero el cuerpo la traiciona. Cami la mete al medio del baile de una, sin preguntar.\n\nPara la medianoche, Juli grita el estribillo sin ninguna vergüenza. Ramiro la mira desde el costado, muerto de risa. Cuando termina el tema, ella lo abraza y le suelta un 'te quiero, culiao' que le sale del alma. Ramiro estira la mano, porque esa picada, esta vez, la paga la porteña.",
+  "vocab": [
+   {
+    "word": "el micro",
+    "surface": "micro",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a long distance coach bus that carries people between cities across the country"
+   },
+   {
+    "word": "el fernet con coca",
+    "surface": "fernet con coca",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a bitter herbal liquor mixed with cola, the classic drink of Córdoba"
+   },
+   {
+    "word": "la previa",
+    "surface": "previa",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the warm up drinks and hangout before going out at night"
+   },
+   {
+    "word": "a full",
+    "surface": "a full",
+    "type": "expression",
+    "register": "slang",
+    "definition": "at full blast, going all out with maximum energy and no holding back"
+   },
+   {
+    "word": "la banda",
+    "surface": "banda",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a whole bunch of people, a big crew of friends all together"
+   },
+   {
+    "word": "el finde",
+    "surface": "finde",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the weekend, the two free days people wait for all week long"
+   },
+   {
+    "word": "la joda",
+    "surface": "joda",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a wild night of partying, fun and messing around with friends"
+   },
+   {
+    "word": "la birra",
+    "surface": "birra",
+    "type": "noun",
+    "register": "slang",
+    "definition": "beer, the cheap cold kind you share from big bottles at a party"
+   },
+   {
+    "word": "ni en pedo",
+    "surface": "ni en pedo",
+    "type": "expression",
+    "register": "slang",
+    "definition": "no way, not a chance, absolutely not going to happen ever"
+   },
+   {
+    "word": "el cuarteto",
+    "surface": "cuarteto",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a fast, bouncy dance music born in Córdoba and loved by everyone"
+   },
+   {
+    "word": "culiao",
+    "surface": "culiao",
+    "type": "slang",
+    "register": "vulgar",
+    "definition": "a rough Córdoba word for dude, used here with real warmth and affection"
+   },
+   {
+    "word": "la picada",
+    "surface": "picada",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a shared plate of snacks, cheese and cold cuts you eat while drinking"
+   },
+   {
+    "word": "mandarse",
+    "surface": "manda",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to go for something bold, to just do the daring thing without hesitating"
+   },
+   {
+    "word": "la tonada",
+    "surface": "tonada",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the sing song accent of Córdoba, rising and falling like a little melody"
+   },
+   {
+    "word": "cantadito",
+    "surface": "cantadita",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "sung in a lilting, musical way, with a melody in the voice"
+   },
+   {
+    "word": "el choripán",
+    "surface": "choripán",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a grilled sausage split inside crusty bread, eaten at every gathering here"
+   },
+   {
+    "word": "el bombo",
+    "surface": "bombo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the big deep drum that drives the beat of Córdoba dance music"
+   },
+   {
+    "word": "prenderse",
+    "surface": "prenden",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to jump in and join something with energy, not wanting to miss out"
+   },
+   {
+    "word": "el embole",
+    "surface": "embole",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a dull, boring drag of a thing that makes you want to leave"
+   },
+   {
+    "word": "bancar",
+    "surface": "banca",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to put up with, support or back someone through whatever comes their way"
+   },
+   {
+    "word": "de una",
+    "surface": "de una",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "right away, for sure, without thinking twice about it at all"
+   },
+   {
+    "word": "el estribillo",
+    "surface": "estribillo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the catchy chorus of a song that everyone shouts back all together"
+   },
+   {
+    "word": "muerto de risa",
+    "surface": "muerto de risa",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "laughing so hard you can barely breathe, completely cracking up at something"
+   },
+   {
+    "word": "el pibe",
+    "surface": "pibes",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "young guys, the crew of friends who hang out and go out together"
+   }
+  ]
+ },
+ {
+  "topic": "cordoba",
+  "slotIndex": 2,
+  "title": "Cargadas y provoleta",
+  "arcType": "reframe-turn",
+  "synopsis": "Toda la tarde, en una quinta a las afueras de Córdoba, los cordobeses no paran de cargar a Juli: su tonada, su modo de pedir, su costumbre porteña de apurar todo. Ella lo aguanta hasta que la cargada le duele y piensa en rajar a la ciudad. Entonces Cami le tira una posta que le da vuelta la cabeza: acá, cuanto más te bardean, más adentro estás. Juli decide devolver cada chiste con la misma leche.",
+  "text": "El humo de la parrilla le pica los ojos a Juli mientras Ramiro da vuelta las achuras. Es la quinta de un amigo, a las afueras de Córdoba, con pileta y árboles enormes. Toda la banda cayó a hacer un asado de domingo.\n\nCami la presenta como la porteña y ahí nomás empieza la cargada. Ramiro le ceba un mate y le acerca una tabla para picar. Sobre las brasas se dora la provoleta y el olor abre el apetito.\n\nDurante toda la tarde le bardean la tonada y el laburo porteño. Al principio se ríe, pero la cargada no afloja y, dolida, siente que sobra. Le da bronca, aunque teme armar un bardo si contesta, así que se hace el gil.\n\nSe aleja un toque hacia el fondo, con ganas de zafar y volverse al centro. Cami la sigue, se sienta al lado y le tira la posta con buena onda. Le explica, sin vueltas, que la cargada es puro cariño cordobés.\n\nAl que les cae mal le hacen el vacío; con vos arman quilombo porque cuidás mal la guita, jode. Vos sos de las nuestras, flaca, le suelta al oído.\n\nCon eso claro, Juli se pone copada y entra al juego de una vez. Roba la mejor provoleta de las brasas y le grita a Ramiro que en Baires se morfa mejor.\n\nLe dice que su asado es un quilombo de humo y poca morfi. La quinta entera se caga de risa, y Ramiro, por primera vez, se queda sin respuesta.",
+  "vocab": [
+   {
+    "word": "la parrilla",
+    "surface": "parrilla",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the metal grill where the meat cooks slowly over the glowing coals"
+   },
+   {
+    "word": "las achuras",
+    "surface": "achuras",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the grilled innards like gut and glands, a prized part of the barbecue"
+   },
+   {
+    "word": "la quinta",
+    "surface": "quinta",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a country house with land just outside the city for weekend gatherings"
+   },
+   {
+    "word": "la pileta",
+    "surface": "pileta",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the swimming pool in a yard where everyone cools off in summer"
+   },
+   {
+    "word": "el asado",
+    "surface": "asado",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a slow barbecue of beef over wood coals, the heart of every weekend"
+   },
+   {
+    "word": "la cargada",
+    "surface": "cargada",
+    "type": "noun",
+    "register": "slang",
+    "definition": "friendly teasing and ribbing, poking fun at someone as a sign of closeness"
+   },
+   {
+    "word": "cebar",
+    "surface": "ceba",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to prepare and pour the mate, refilling the gourd for each person around"
+   },
+   {
+    "word": "picar",
+    "surface": "picar",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to nibble and snack on little bites of food before the main meal"
+   },
+   {
+    "word": "la provoleta",
+    "surface": "provoleta",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a thick slice of cheese grilled until golden and crispy at the edges"
+   },
+   {
+    "word": "bardear",
+    "surface": "bardean",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to rib and trash talk someone loudly, usually all in good fun"
+   },
+   {
+    "word": "el laburo",
+    "surface": "laburo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "work, the daily job you go to in order to earn your money"
+   },
+   {
+    "word": "dolida",
+    "surface": "dolida",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "hurt and wounded inside, feeling stung by something someone said or did"
+   },
+   {
+    "word": "el bardo",
+    "surface": "bardo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a mess or fuss, trouble that stirs up noise and hassle for everyone"
+   },
+   {
+    "word": "hacerse el gil",
+    "surface": "se hace el gil",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to play dumb and pretend you have no idea what is going on"
+   },
+   {
+    "word": "un toque",
+    "surface": "un toque",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "a little moment, a quick second, just a short while longer to wait"
+   },
+   {
+    "word": "zafar",
+    "surface": "zafar",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to get by, to escape a jam or wriggle out of some trouble"
+   },
+   {
+    "word": "la posta",
+    "surface": "posta",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the honest truth, the real deal straight up with nothing held back"
+   },
+   {
+    "word": "buena onda",
+    "surface": "buena onda",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "good vibes, a warm friendly feeling coming off a person or a place"
+   },
+   {
+    "word": "el quilombo",
+    "surface": "quilombo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a big chaotic mess, total disorder with noise and things out of control"
+   },
+   {
+    "word": "la guita",
+    "surface": "guita",
+    "type": "noun",
+    "register": "slang",
+    "definition": "money, cash, the dough you need to pay for anything at all"
+   },
+   {
+    "word": "flaca",
+    "surface": "flaca",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "an affectionate word for a girl or woman, like calling someone dear"
+   },
+   {
+    "word": "copada",
+    "surface": "copada",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "cool, great and fun, the kind of person or plan you really like"
+   },
+   {
+    "word": "morfar",
+    "surface": "morfa",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to eat, to dig into a big plate of food with real hunger"
+   },
+   {
+    "word": "la morfi",
+    "surface": "morfi",
+    "type": "noun",
+    "register": "slang",
+    "definition": "food, the grub, whatever tasty thing there is to eat at the moment"
+   }
+  ]
+ },
+ {
+  "topic": "cordoba",
+  "slotIndex": 3,
+  "title": "El cerro de Ramiro",
+  "arcType": "late-reveal",
+  "synopsis": "Ramiro insiste en subir a un cerro perdido de las sierras y maneja callado toda la ruta, revisando el celular como si escondiera algo. Cami esquiva cada pregunta y ceba mate para tapar el silencio. Juli sospecha que hay mala noticia y se hace mala sangre durante toda la subida. Arriba, con Córdoba entera a los pies, Ramiro por fin suelta la data que cambia el eje de esta amistad para siempre.",
+  "text": "Ramiro maneja callado por la ruta de las Altas Cumbres, con el mate frío entre las piernas. Juli mira las sierras por la ventanilla y no le cabe esa cara larga. Cami, atrás, prepara el termo y cambia de tema cada vez que alguien pregunta.\n\nSuben a una cabaña prestada para pasar el finde en el cerro. El plan era una juntada tranquila, pero Ramiro anda raro desde temprano. Cada tanto revisa el celular y se fuma un pucho solo, mirando lejos.\n\nEncaran la subida al mirador por un sendero de piedras sueltas. Suben trepando un rato largo y el paisaje los deja sin aire. A Juli le agarra un bajón raro y empieza a flashear que hizo algo mal.\n\nLe pregunta a Cami qué pasa, pero ella se hace la boluda y esquiva la data. Juli deja de hacerse mala sangre y decide encarar a Ramiro de frente. Arriba, con toda Córdoba a los pies, la vista la copa por completo.\n\nRamiro por fin se engancha a hablar y larga todo de golpe. Se muda a Buenos Aires en un mes por un laburo nuevo. Dejó una changa mala en Córdoba por una oportunidad zarpada.\n\nQuería que Juli viera este cerro antes de rajar de la provincia. Le confiesa que la va a extrañar y que es una amiga de fierro. Ahora la porteña le va a bancar el bondi y los primeros días en su ciudad.",
+  "vocab": [
+   {
+    "word": "la ruta",
+    "surface": "ruta",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the highway or open road that runs between towns across the country"
+   },
+   {
+    "word": "el mate",
+    "surface": "mate",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a bitter green herbal tea shared in a gourd through a metal straw"
+   },
+   {
+    "word": "la sierra",
+    "surface": "sierras",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the low rugged mountains around Córdoba, green hills full of rivers and rock"
+   },
+   {
+    "word": "el termo",
+    "surface": "termo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the thermos of hot water you carry to keep the mate going"
+   },
+   {
+    "word": "la cabaña",
+    "surface": "cabaña",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a small wooden cabin up in the hills for a weekend away"
+   },
+   {
+    "word": "el cerro",
+    "surface": "cerro",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a hill or small mountain you climb to reach a wide open view"
+   },
+   {
+    "word": "la juntada",
+    "surface": "juntada",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a get together, a casual gathering of friends to eat, drink and talk"
+   },
+   {
+    "word": "el pucho",
+    "surface": "pucho",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a cigarette, the smoke you light up outside during a break or chat"
+   },
+   {
+    "word": "la subida",
+    "surface": "subida",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the climb upward, the steep way going up a hill or a slope"
+   },
+   {
+    "word": "el mirador",
+    "surface": "mirador",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a lookout point high up where you stop to take in the view"
+   },
+   {
+    "word": "trepar",
+    "surface": "trepando",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to climb up scrambling with hands and feet over rocks and steep ground"
+   },
+   {
+    "word": "el bajón",
+    "surface": "bajón",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a sudden low, a sad heavy feeling that pulls your mood right down"
+   },
+   {
+    "word": "flashear",
+    "surface": "flashear",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to imagine wild things, to get carried away picturing stuff in your head"
+   },
+   {
+    "word": "la data",
+    "surface": "data",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the inside info, the useful facts and details someone passes on to you"
+   },
+   {
+    "word": "hacerse mala sangre",
+    "surface": "hacerse mala sangre",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "to fret and stew, to worry yourself sick over something bad"
+   },
+   {
+    "word": "copar",
+    "surface": "copa",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to totally win someone over, to grab and delight them completely"
+   },
+   {
+    "word": "engancharse",
+    "surface": "engancha",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to get hooked on something, drawn in so you cannot pull yourself away"
+   },
+   {
+    "word": "mudarse",
+    "surface": "muda",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to move house, to pack up your life and go live elsewhere"
+   },
+   {
+    "word": "la changa",
+    "surface": "changa",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a small odd job, quick casual work you pick up for some money"
+   },
+   {
+    "word": "zarpado",
+    "surface": "zarpada",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "way over the top, wild and outrageous in an impressive, jaw dropping way"
+   },
+   {
+    "word": "rajar",
+    "surface": "rajar",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to bolt and take off fast, to clear out of a place quickly"
+   },
+   {
+    "word": "extrañar",
+    "surface": "extrañar",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to miss someone or something badly, to ache for what is now far"
+   },
+   {
+    "word": "de fierro",
+    "surface": "de fierro",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "totally loyal and solid, a friend you can trust through anything at all"
+   },
+   {
+    "word": "el bondi",
+    "surface": "bondi",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the city bus you hop on to get around town for cheap"
+   }
+  ]
+ },
+ {
+  "topic": "rosario",
+  "slotIndex": 1,
+  "title": "La boga y el clásico",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Lucho asa pescado a la vera del Paraná mientras la radio ruge el clásico rosarino. Para Juli, porteña de paso, la quietud del río y el fervor por Central parecen mundos opuestos. ¿Qué une la paciencia del que pesca con el bramido del hincha? Entre humo y voseo, la visitante entiende que en Rosario esos dos sonidos laten en un mismo pecho.",
+  "text": "El humo de la parrilla se enrosca sobre la costanera y se pierde en el Paraná ancho. Sobre las brasas se dora una boga entera, fresca de esa misma mañana. Lucho, un rosarino que atiende el parador desde hace años, ceba un mate amargo sin apurarse. Le pasa la caña de pescar a Carla, su amiga guardavidas, que espera un pique a pocos metros.\n\nJuli, porteña de Palermo y de visita por el finde largo, los mira con envidia sana. En Buenos Aires nadie tiene esa paciencia de río. De la radio, en cambio, escupe a los gritos el relato del clásico. Central contra Newell's, la ciudad entera partida al medio.\n\nLucho es canalla hasta los huesos y putea contra el árbitro sin soltar el termo. «Che, Juli, esto no lo entendés en tu ciudad», larga con una sonrisa socarrona. «Acá el que no banca un cuadro no es de ningún lado, boluda.» Carla se ríe y tira la línea al agua sin contestar.\n\nPara ella, la pesca y la hinchada son la misma cosa. Aguantar callada, esperar, y estallar de golpe cuando pica. Juli mira el pescado que se dora y el aparato que escupe insultos. De repente los dos ruidos se le juntan en la cabeza.\n\nEl río le pide silencio; la cancha le pide grito. Y ninguno de los dos rosarinos afloja jamás. «Está de once», dice al fin, mordiendo el pescado con ganas. Lucho le ceba otro mate como si recién naciera del lado bueno del río.",
+  "vocab": [
+   {
+    "word": "la costanera",
+    "surface": "costanera",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the riverside avenue where people stroll, drink mate and watch the water"
+   },
+   {
+    "word": "la boga",
+    "surface": "boga",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a common freshwater fish from the Paraná that locals grill and eat"
+   },
+   {
+    "word": "cebar",
+    "surface": "ceba",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to prepare and pour the mate, refilling the gourd with hot water"
+   },
+   {
+    "word": "el mate",
+    "surface": "mate",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a bitter herbal drink shared from one gourd through a metal straw"
+   },
+   {
+    "word": "la caña",
+    "surface": "caña",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the long fishing rod used to catch fish in the river"
+   },
+   {
+    "word": "el guardavidas",
+    "surface": "guardavidas",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the lifeguard who watches swimmers and keeps the beach or pool safe"
+   },
+   {
+    "word": "el pique",
+    "surface": "pique",
+    "type": "noun",
+    "register": "slang",
+    "definition": "the sudden bite of a fish pulling on the fishing line"
+   },
+   {
+    "word": "el relato",
+    "surface": "relato",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the live radio play by play of a football match"
+   },
+   {
+    "word": "el clásico",
+    "surface": "clásico",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the big local derby between two rival football teams of a city"
+   },
+   {
+    "word": "canalla",
+    "surface": "canalla",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a fan of Rosario Central, one of the city's two football clubs"
+   },
+   {
+    "word": "putear",
+    "surface": "putea",
+    "type": "verb",
+    "register": "vulgar",
+    "definition": "to swear and curse loudly at someone, insulting them with rude words"
+   },
+   {
+    "word": "largar",
+    "surface": "larga",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to let something out, to blurt or toss out a remark"
+   },
+   {
+    "word": "socarrón",
+    "surface": "socarrona",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "smiling in a sly, teasing and slightly mocking way at someone"
+   },
+   {
+    "word": "bancar",
+    "surface": "banca",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to support and back a team or person through thick and thin"
+   },
+   {
+    "word": "el cuadro",
+    "surface": "cuadro",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a football team that a fan follows and cheers for loyally"
+   },
+   {
+    "word": "boludo",
+    "surface": "boluda",
+    "type": "noun",
+    "register": "vulgar",
+    "definition": "a mild Argentine insult for dude or idiot, often said among friends"
+   },
+   {
+    "word": "la pesca",
+    "surface": "pesca",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the activity of catching fish with a rod, net or line"
+   },
+   {
+    "word": "la hinchada",
+    "surface": "hinchada",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the crowd of loyal fans who chant and cheer for a team"
+   },
+   {
+    "word": "estallar",
+    "surface": "estallar",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to burst out suddenly, exploding with noise, joy or anger"
+   },
+   {
+    "word": "picar",
+    "surface": "pica",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "when a fish bites the hook and tugs the fishing line"
+   },
+   {
+    "word": "aflojar",
+    "surface": "afloja",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to give in or ease up, letting go of your firm stance"
+   },
+   {
+    "word": "de once",
+    "surface": "de once",
+    "type": "expression",
+    "register": "slang",
+    "definition": "a Rosario slang phrase meaning great, excellent or really good"
+   },
+   {
+    "word": "el pescado",
+    "surface": "pescado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "fish once it is caught and cooked, ready to be eaten"
+   }
+  ]
+ },
+ {
+  "topic": "rosario",
+  "slotIndex": 2,
+  "title": "Niebla en el Paraná",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Antes del amanecer, Nahuel lleva a Juli y a su prima Sofía en lancha hacia las islas del Paraná. La niebla borra la costa, un surubí pelea en la línea y la porteña se olvida del mareo. Entonces el teléfono del isleño vibra en el bolsillo mojado, le cambia la cara y corta el motor en seco. ¿Qué dice esa pantalla que lo deja mudo en medio del río?",
+  "text": "Todavía está oscuro cuando la lancha se despega del muelle y encara el Paraná. La niebla se traga la costa a los pocos metros. Nahuel, un isleño que se cría entre juncos y se gana el mango pescando, maneja el motor de memoria. A su lado va Sofía, su prima, que ceba mate para espantar el frío.\n\nJuli, la porteña, se agarra fuerte de la borda y trata de no marearse. Nunca había salido al río de madrugada. «Tranquila, che, el río te conoce antes de que vos lo conozcas a él», le dice Nahuel sin dar vuelta la cara. Sofía se ríe y le alcanza el mate humeante.\n\nEntre la bruma aparecen los camalotes, esas islas de plantas que la corriente arrastra río abajo. Un surubí golpea la línea y Nahuel lo pelea un rato largo antes de subirlo. Juli grita de la emoción y por un instante se olvida del mareo. La isla asoma como un lomo verde en medio del agua turbia.\n\nDe golpe, el teléfono de Nahuel vibra en el bolsillo mojado. Lo saca, lee la pantalla y se le borra la sonrisa de un saque. Corta el motor sin decir nada y la lancha queda meciéndose en el silencio. Sofía deja de cebar y lo mira asustada.\n\n«¿Qué pasó?», pregunta Juli, pero Nahuel no contesta. El isleño mira la pantalla, después mira la orilla lejana, y aprieta la mandíbula. «Agarrate», dice al fin, y mete el motor a fondo hacia la otra costa.",
+  "vocab": [
+   {
+    "word": "la lancha",
+    "surface": "lancha",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a small motorboat used to cross the river and reach the islands"
+   },
+   {
+    "word": "el isleño",
+    "surface": "isleño",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a person born and raised on the river islands of the Paraná"
+   },
+   {
+    "word": "el mango",
+    "surface": "mango",
+    "type": "noun",
+    "register": "slang",
+    "definition": "money in slang, a peso, what you earn to make a living"
+   },
+   {
+    "word": "el muelle",
+    "surface": "muelle",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the dock where boats tie up and passengers step on board"
+   },
+   {
+    "word": "la borda",
+    "surface": "borda",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the upper edge or side rail of a boat you grab"
+   },
+   {
+    "word": "marearse",
+    "surface": "marearse",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to get dizzy or seasick from the rocking of a boat"
+   },
+   {
+    "word": "la madrugada",
+    "surface": "madrugada",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the very early hours before dawn, when it is still dark"
+   },
+   {
+    "word": "humeante",
+    "surface": "humeante",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "giving off hot steam, like a fresh cup of mate does"
+   },
+   {
+    "word": "la bruma",
+    "surface": "bruma",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a light mist hanging over the river in the early morning"
+   },
+   {
+    "word": "el camalote",
+    "surface": "camalotes",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "floating clumps of river plants the current drags downstream"
+   },
+   {
+    "word": "la corriente",
+    "surface": "corriente",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the moving flow of water that pushes the boat downstream"
+   },
+   {
+    "word": "el surubí",
+    "surface": "surubí",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a large spotted catfish prized by fishermen of the Paraná river"
+   },
+   {
+    "word": "pelear",
+    "surface": "pelea",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to fight and struggle with the hooked fish before pulling it up"
+   },
+   {
+    "word": "turbio",
+    "surface": "turbia",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "muddy and cloudy, so you cannot see through the water"
+   },
+   {
+    "word": "vibrar",
+    "surface": "vibra",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to buzz and shake, like a phone ringing in your pocket"
+   },
+   {
+    "word": "la pantalla",
+    "surface": "pantalla",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the lit glass screen of a phone that shows the message"
+   },
+   {
+    "word": "de un saque",
+    "surface": "de un saque",
+    "type": "expression",
+    "register": "slang",
+    "definition": "all at once, in a single quick go without stopping"
+   },
+   {
+    "word": "mecer",
+    "surface": "meciéndose",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to rock gently back and forth, as a boat on water"
+   },
+   {
+    "word": "apretar",
+    "surface": "aprieta",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to clench or press hard, like tightening your jaw in worry"
+   },
+   {
+    "word": "la orilla",
+    "surface": "orilla",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the strip of land right at the edge of the river"
+   },
+   {
+    "word": "el motor",
+    "surface": "motor",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the engine that powers the boat across the river"
+   }
+  ]
+ },
+ {
+  "topic": "rosario",
+  "slotIndex": 3,
+  "title": "Rosario no pide permiso",
+  "arcType": "reframe-turn",
+  "synopsis": "Al pie del Monumento a la Bandera, Juli comete el pecado porteño de comparar todo con Buenos Aires. Ludmila y su novio Facundo, rosarinos de ley, se cansan de que los midan contra la capital. Pero desde el mirador, entre la bronca y el orgullo, la guía le cuenta de qué está hecha esta ciudad. ¿Puede una porteña dejar de ver a Rosario como la hermana menor de nadie?",
+  "text": "El río se abre enorme al pie del Monumento a la Bandera, blanco y filoso contra el cielo gris. Juli lo mira de arriba abajo y, sin pensarlo, suelta que le recuerda un poco al Obelisco. Ludmila, una rosarina que estudia historia y hace de guía los domingos, aprieta los labios pero no dice nada. A su lado, su novio Facundo, canchero y bocón, resopla fuerte.\n\n«Todo el día comparando, che», larga Facundo. «Para ustedes los porteños, el país arranca y termina en la General Paz.» Juli se pone colorada y trata de explicarse, pero se enreda sola.\n\nSuben la escalinata hasta el mirador mientras el viento del río les pega en la cara. Desde arriba, la ciudad se estira chata y ancha, sin la soberbia vertical de Buenos Aires. Ludmila se afloja un poco y empieza a contar, ya sin bronca.\n\n«Acá se izó por primera vez la bandera, boluda, no es un adorno», le dice, señalando el mástil. Le habla de Messi pateando en un potrero del barrio, del Che pibe, de Fontanarrosa dibujando en un café de la peatonal. Juli escucha y algo se le acomoda por dentro.\n\nDe pronto Rosario deja de ser, para ella, una copia más chica de su ciudad. No es la hermana menor de nadie: es un lugar que no le pide permiso a la capital para existir. «Perdón, tenés razón», admite, y Ludmila le pasa el mate sin rencor. Facundo se ríe y le tira un chiste sobre los porteños perdidos.",
+  "vocab": [
+   {
+    "word": "filoso",
+    "surface": "filoso",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "sharp edged and pointed, cutting a clean line against the sky"
+   },
+   {
+    "word": "soltar",
+    "surface": "suelta",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to blurt something out loud without thinking it over first"
+   },
+   {
+    "word": "la guía",
+    "surface": "guía",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a person who shows visitors around and explains a place"
+   },
+   {
+    "word": "canchero",
+    "surface": "canchero",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "cocky and self assured, acting cool and streetwise about everything"
+   },
+   {
+    "word": "bocón",
+    "surface": "bocón",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "loudmouthed, someone who talks too much and says whatever comes"
+   },
+   {
+    "word": "resoplar",
+    "surface": "resopla",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to snort and puff loudly, showing you are annoyed or tired"
+   },
+   {
+    "word": "colorado",
+    "surface": "colorada",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "red faced with embarrassment, blushing when you feel awkward"
+   },
+   {
+    "word": "enredarse",
+    "surface": "enreda",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to get tangled up in your own words while explaining something"
+   },
+   {
+    "word": "el mirador",
+    "surface": "mirador",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a high lookout point with a wide view over the city"
+   },
+   {
+    "word": "chato",
+    "surface": "chata",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "flat and low, spread out wide without tall buildings"
+   },
+   {
+    "word": "la soberbia",
+    "surface": "soberbia",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "arrogance and pride, the haughty air of looking down on others"
+   },
+   {
+    "word": "la bronca",
+    "surface": "bronca",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "anger and irritation, the resentment you feel toward someone"
+   },
+   {
+    "word": "izar",
+    "surface": "izó",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to raise a flag slowly up its pole for the first time"
+   },
+   {
+    "word": "el potrero",
+    "surface": "potrero",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a rough empty lot where kids play informal football matches"
+   },
+   {
+    "word": "el pibe",
+    "surface": "pibe",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a young kid or boy, common Argentine word for child"
+   },
+   {
+    "word": "la peatonal",
+    "surface": "peatonal",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the pedestrian street closed to cars, full of shops and cafes"
+   },
+   {
+    "word": "acomodarse",
+    "surface": "acomoda",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to settle and fall into place, feeling right and comfortable inside"
+   },
+   {
+    "word": "la hermana menor",
+    "surface": "hermana menor",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "the younger sister, used for something seen as smaller and lesser"
+   },
+   {
+    "word": "el rencor",
+    "surface": "rencor",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a bitter grudge you hold against someone after being hurt"
+   },
+   {
+    "word": "el chiste",
+    "surface": "chiste",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a joke told to make people laugh, often teasing someone"
+   },
+   {
+    "word": "la escalinata",
+    "surface": "escalinata",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a wide set of stone steps leading up to a monument"
+   },
+   {
+    "word": "el mástil",
+    "surface": "mástil",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the tall pole from which a flag is raised and flown"
+   }
+  ]
+ },
+ {
+  "topic": "mendoza",
+  "slotIndex": 1,
+  "title": "El reencuentro al pie del Aconcagua",
+  "arcType": "harmonic-close",
+  "synopsis": "Juli baja a Mendoza para un reencuentro con Bauti, el asador, y Rocío, dueña de un viñedo al pie de la cordillera. Trae facturas porteñas y fotos viejas de la facultad. Entre provoleta, malbec y torrontés, con el Aconcagua de fondo, los tres amigos comparten recuerdos y afecto, y la sobremesa se estira hasta el atardecer.",
+  "text": "Juli bajó del micro con una caja de facturas porteñas bajo el brazo, decidida a no caer con las manos vacías al reencuentro. La esperaban Bauti, el asador del grupo, y Rocío, dueña de un viñedo al pie de la cordillera. Los tres se conocían de pibes, de una época de guitarreadas y mates en Buenos Aires, antes de que la vida los desparramara.\n\nRocío los sentó bajo un parral, con el Aconcagua nevado de fondo. Bauti ya tenía el fuego prendido y una provoleta chorreando sobre la parrilla. Juli abrió la caja y repartió las facturas; al asador se le hizo agua la boca con las medialunas de su ciudad.\n\nMientras se doraba el vacío, ella sacó del bolso un puñado de fotos viejas de la facultad. Se cagaron de risa con esas pintas de antes, flacos y despeinados. Rocío sirvió un torrontés fresquito y brindaron por los que andaban lejos.\n\nBauti, que siempre se hacía el guapo, aflojó y confesó que los tenía re presentes, que la distancia le pesaba más de lo que largaba. Nadie armó un drama: Rocío le apoyó la mano en el hombro y le cebó un mate cargado.\n\nComieron sin protocolo, morfando despacio y pasándose el chimichurri. Rocío descorchó un malbec de la zona y Juli reconoció que ninguna vinoteca porteña le pisaba los talones. Charlaron de laburos, de amores y de proyectos a medio cocinar.\n\nLa sobremesa se estiró hasta que el sol se escondió detrás de la montaña. Juli sintió que, aunque viviera lejos, ese banquito bajo el parral seguía siendo suyo. Bauti alzó la copa y, sin chamuyo ni verso, brindó por los amigos de siempre.",
+  "vocab": [
+   {
+    "word": "micro",
+    "surface": "micro",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "intercity or city bus, the common way Argentines travel between towns"
+   },
+   {
+    "word": "facturas",
+    "surface": "facturas",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "sweet pastries Argentines eat with coffee or mate, usually bought by the dozen"
+   },
+   {
+    "word": "pibes",
+    "surface": "pibes",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "young people or guys, an informal term common throughout Argentine everyday speech"
+   },
+   {
+    "word": "guitarreadas",
+    "surface": "guitarreadas",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "informal gatherings where friends play guitar, sing and hang out together"
+   },
+   {
+    "word": "provoleta",
+    "surface": "provoleta",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "thick slice of provolone grilled until melted, a classic Argentine barbecue starter"
+   },
+   {
+    "word": "medialunas",
+    "surface": "medialunas",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "small sweet croissants typical of Argentine bakeries, eaten at breakfast or teatime"
+   },
+   {
+    "word": "asador",
+    "surface": "asador",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the friend who takes charge of grilling the meat, a prized Argentine social role"
+   },
+   {
+    "word": "se le hizo agua la boca",
+    "surface": "se le hizo agua la boca",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "his mouth watered with anticipation at seeing appetizing food"
+   },
+   {
+    "word": "vacío",
+    "surface": "vacío",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "flank cut of beef, one of the favourite pieces on an Argentine grill"
+   },
+   {
+    "word": "cagarse de risa",
+    "surface": "cagaron de risa",
+    "type": "expression",
+    "register": "vulgar",
+    "definition": "they burst out laughing hard, a crude and very common colloquial phrase"
+   },
+   {
+    "word": "pintas",
+    "surface": "pintas",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "someone's looks or appearance, often said with humour about how they dress"
+   },
+   {
+    "word": "fresquito",
+    "surface": "fresquito",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "pleasantly cool, an affectionate diminutive Argentines apply to drinks and weather"
+   },
+   {
+    "word": "hacerse el guapo",
+    "surface": "se hacía el guapo",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "he acted tough or brave, putting on a fearless front"
+   },
+   {
+    "word": "aflojar",
+    "surface": "aflojó",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "he softened or let his guard down after resisting emotionally"
+   },
+   {
+    "word": "largar",
+    "surface": "largaba",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "he let out or admitted, colloquial way of saying to utter something"
+   },
+   {
+    "word": "cebar",
+    "surface": "cebó",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "he prepared and served mate, pouring hot water over the leaves"
+   },
+   {
+    "word": "chimichurri",
+    "surface": "chimichurri",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "tangy herb and garlic sauce Argentines spoon over grilled meat"
+   },
+   {
+    "word": "morfar",
+    "surface": "morfando",
+    "type": "verb",
+    "register": "slang",
+    "definition": "eating heartily, classic Buenos Aires lunfardo slang for having a meal"
+   },
+   {
+    "word": "pisar los talones",
+    "surface": "pisaba los talones",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "came close to rivalling or matching something in quality"
+   },
+   {
+    "word": "laburos",
+    "surface": "laburos",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "jobs or work, a very common informal Argentine word for employment"
+   },
+   {
+    "word": "sobremesa",
+    "surface": "sobremesa",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "relaxed conversation that lingers at the table long after eating"
+   },
+   {
+    "word": "banquito",
+    "surface": "banquito",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "small low stool or bench, an affectionate everyday diminutive"
+   },
+   {
+    "word": "chamuyo",
+    "surface": "chamuyo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "smooth persuasive talk meant to charm or deceive, typical Buenos Aires slang"
+   },
+   {
+    "word": "verso",
+    "surface": "verso",
+    "type": "noun",
+    "register": "slang",
+    "definition": "empty talk or a lie, slang for insincere promises and excuses"
+   }
+  ]
+ },
+ {
+  "topic": "mendoza",
+  "slotIndex": 2,
+  "arcType": "recurring-character-callback",
+  "title": "El malbec que Bauti guardaba",
+  "synopsis": "Cada vez que hay visita, Bauti jura que esta noche sí abre la botella que atesora, y siempre encuentra una excusa para no hacerlo. Rocío ya perdió la cuenta y Juli sospecha que ese vino es pura leyenda. La pregunta que flota entre las parras es simple: ¿el eterno fanfarrón cumplirá por una vez lo que viene prometiendo, o seguirá siendo puro verso hasta el final?",
+  "text": "\"Esta noche sí abro la joya que tengo guardada\", prometió Bauti apenas los vio cruzar el portón de la bodega. Julieta, la porteña de visita, ya se sabía de memoria el chamuyo de su amigo viñatero y sus mil excusas de siempre.\n\n\"Es puro verso; ese fanfarrón promete la misma botella desde hace años\", le sopló Rocío al oído. Bauti los guió entre las parras cargadas, cortando algún racimo al pasar.\n\nEn el fondo del galpón, su reserva descansaba en una barrica. El vino iba añejando ahí, lejos del apuro del mundo. \"De esta cepa sale un malbec único\", presumió mientras servía un vaso cualquiera.\n\n\"Ese vino es puro terruño\", agregó, y Juli le siguió el juego. \"Dale, abrila de una, no seas amarrete\", lo picó ella. Bauti empinó el codo e hizo un brindis con el vino común.\n\nUna vez más, esquivó su vieja promesa con una sonrisa. Rocío señaló el atardecer que ya teñía la montaña. \"Un vino así no se toma al toque; pide su momento\", filosofó él.\n\nCuando cayó la noche, la cava quedó a media luz. Todos esperaban el enésimo cuento, pero esta vez Bauti sopló el polvo y la descorchó. El corcho saltó seco y un mosto perfumado llenó las copas. Chocaron los vasos de verdad, después de tantos años de puro verso, y hasta Rocío admitió que el malbec estaba bárbaro.",
+  "vocab": [
+   {
+    "word": "la bodega",
+    "surface": "bodega",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a winery where grapes turn into wine and bottles are kept"
+   },
+   {
+    "word": "el chamuyo",
+    "surface": "chamuyo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "smooth sweet talk meant to charm or fool the listener"
+   },
+   {
+    "word": "el viñatero",
+    "surface": "viñatero",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a person who grows grapevines and makes wine for a living"
+   },
+   {
+    "word": "el fanfarrón",
+    "surface": "fanfarrón",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a show off who brags loudly but rarely backs it up"
+   },
+   {
+    "word": "la parra",
+    "surface": "parras",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a grapevine climbing on wires or a frame overhead"
+   },
+   {
+    "word": "el racimo",
+    "surface": "racimo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a hanging bunch of grapes growing together on the vine"
+   },
+   {
+    "word": "la reserva",
+    "surface": "reserva",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a special wine aged longer and kept for the best moments"
+   },
+   {
+    "word": "la barrica",
+    "surface": "barrica",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a wooden barrel where wine rests and slowly gains flavour"
+   },
+   {
+    "word": "añejar",
+    "surface": "añejando",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to let wine age slowly over time so it grows finer"
+   },
+   {
+    "word": "la cepa",
+    "surface": "cepa",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the woody trunk and stock of a grapevine, also the grape variety"
+   },
+   {
+    "word": "el malbec",
+    "surface": "malbec",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the deep red grape and wine that made Mendoza famous"
+   },
+   {
+    "word": "el terruño",
+    "surface": "terruño",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the local soil and climate that give a wine its character"
+   },
+   {
+    "word": "de una",
+    "surface": "de una",
+    "type": "expression",
+    "register": "slang",
+    "definition": "right away, without waiting, do it now and quickly"
+   },
+   {
+    "word": "amarrete",
+    "surface": "amarrete",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "stingy and tight with money or things, hating to share"
+   },
+   {
+    "word": "empinar el codo",
+    "surface": "empinó el codo",
+    "type": "expression",
+    "register": "slang",
+    "definition": "to drink, literally to lift the elbow raising your glass"
+   },
+   {
+    "word": "el brindis",
+    "surface": "brindis",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the raised glass and words said to celebrate something together"
+   },
+   {
+    "word": "la promesa",
+    "surface": "promesa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a firm word that you will do something for someone later"
+   },
+   {
+    "word": "el atardecer",
+    "surface": "atardecer",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the time near sunset when the light turns warm and low"
+   },
+   {
+    "word": "al toque",
+    "surface": "al toque",
+    "type": "expression",
+    "register": "slang",
+    "definition": "instantly, in a second, done at once with no delay"
+   },
+   {
+    "word": "la cava",
+    "surface": "cava",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a cool underground cellar where wine bottles are stored to rest"
+   },
+   {
+    "word": "descorchar",
+    "surface": "descorchó",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to pull the cork out and finally open a wine bottle"
+   },
+   {
+    "word": "el corcho",
+    "surface": "corcho",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the soft plug that seals the top of a wine bottle"
+   },
+   {
+    "word": "el mosto",
+    "surface": "mosto",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the fresh pressed grape juice before it turns into wine"
+   },
+   {
+    "word": "bárbaro",
+    "surface": "bárbaro",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "great, wonderful, a warm way of saying really good"
+   }
+  ]
+ },
+ {
+  "topic": "mendoza",
+  "slotIndex": 3,
+  "arcType": "late-reveal",
+  "title": "Rocío y su primera vendimia",
+  "synopsis": "Antes del amanecer, Juli se suma a la cuadrilla que cosecha en la finca donde Rocío creció trabajando para otros. La jornada es dura, alegre y sudorosa, y nadie entiende por qué Rocío insistió tanto en tenerlos a todos ahí justo ese día. Recién cuando el sol baja, un papel doblado en su bolsillo explica por qué esta cosecha no se parece a ninguna de las anteriores.",
+  "text": "Todavía de noche, la cuadrilla ya bajaba los canastos de la camioneta. Julieta, la porteña, había madrugado con el resto para su primera vendimia.\n\nRocío, hija de viñateros, la esperaba entre las hileras con una tijera en la mano. Bauti, viejo amigo y peón de la finca, repartió los primeros mates. \"Se corta el racimo desde abajo, así\", explicó Rocío, y arrancó la faena.\n\nEl solazo todavía no pegaba, pero el trabajo prometía ser de sol a sol. Juli llenó su primer canasto y sintió el sudor bajarle por la espalda. \"Esto es laburar en serio, che\", jadeó, mientras la cuadrilla avanzaba entre las plantas.\n\nPor el surco corría el agua de la acequia que Rocío abría para regar. Al mediodía todos estaban reventados y con las manos manchadas. Para aflojar, se pusieron a pisar la uva en un lagar viejo. Bauti bromeó que semejante changa pagaba más en risas que en plata.\n\nA media tarde, con la cosecha casi lista, Rocío juntó a la cuadrilla bajo un parral. Sacó del bolsillo un papel doblado: era la escritura de la finca.\n\nEsa misma mañana, antes de la vendimia, lo había firmado ante el escribano. La tierra ya no era de sus patrones: ahora Rocío era la dueña de cada parcela y cada hilera. Por eso los había hecho vendimiar de sol a sol; quería que su gente pisara la primera cosecha realmente suya.",
+  "vocab": [
+   {
+    "word": "la cuadrilla",
+    "surface": "cuadrilla",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a work crew, a team of people labouring together at a task"
+   },
+   {
+    "word": "el canasto",
+    "surface": "canasto",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a large basket used to carry the cut grapes"
+   },
+   {
+    "word": "madrugar",
+    "surface": "madrugado",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to get up very early, well before the sun rises"
+   },
+   {
+    "word": "la vendimia",
+    "surface": "vendimia",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the grape harvest and the festive season around it in Mendoza"
+   },
+   {
+    "word": "la hilera",
+    "surface": "hileras",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a straight row, here of grapevines lined up in the field"
+   },
+   {
+    "word": "la tijera",
+    "surface": "tijera",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "scissors or shears used to cut the bunches from the vine"
+   },
+   {
+    "word": "el peón",
+    "surface": "peón",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a hired hand doing hard manual work on a farm"
+   },
+   {
+    "word": "la finca",
+    "surface": "finca",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a country estate or farm, here with its own vineyards"
+   },
+   {
+    "word": "la faena",
+    "surface": "faena",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the hard task or work of the day, the labour ahead"
+   },
+   {
+    "word": "el solazo",
+    "surface": "solazo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a harsh strong sun beating down hot on everyone"
+   },
+   {
+    "word": "de sol a sol",
+    "surface": "de sol a sol",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "from sunrise to sunset, working the whole long day through"
+   },
+   {
+    "word": "el sudor",
+    "surface": "sudor",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the wet drops your body makes when hot or working hard"
+   },
+   {
+    "word": "laburar",
+    "surface": "laburar",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to work, the everyday street word for having a job"
+   },
+   {
+    "word": "la acequia",
+    "surface": "acequia",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "an open channel that carries water to irrigate the dry land"
+   },
+   {
+    "word": "regar",
+    "surface": "regar",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to water plants or fields so the crops can grow"
+   },
+   {
+    "word": "reventado",
+    "surface": "reventados",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "totally worn out and exhausted after heavy effort"
+   },
+   {
+    "word": "pisar la uva",
+    "surface": "pisar la uva",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "to crush the grapes with bare feet in the old way"
+   },
+   {
+    "word": "la changa",
+    "surface": "changa",
+    "type": "noun",
+    "register": "slang",
+    "definition": "an odd job or bit of casual work for quick cash"
+   },
+   {
+    "word": "la cosecha",
+    "surface": "cosecha",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the crop gathered in, the picking of the ripe fruit"
+   },
+   {
+    "word": "la escritura",
+    "surface": "escritura",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the legal deed that proves who owns a piece of land"
+   },
+   {
+    "word": "firmar",
+    "surface": "firmado",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to sign your name on a paper to make it official"
+   },
+   {
+    "word": "el dueño",
+    "surface": "dueña",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the owner, the person to whom something legally belongs"
+   },
+   {
+    "word": "la parcela",
+    "surface": "parcela",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a marked plot of land, one piece of the whole field"
+   },
+   {
+    "word": "vendimiar",
+    "surface": "vendimiar",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to pick the ripe grapes off the vines at harvest"
+   }
+  ]
+ },
+ {
+  "topic": "bariloche",
+  "slotIndex": 1,
+  "title": "El Catedral no se apura",
+  "arcType": "reframe-turn",
+  "synopsis": "Juli, porteña impaciente, cree que su amigo guía Bruno pierde el tiempo a propósito y que en Bariloche todos son unos vagos. ¿Por qué se frena a cada rato en plena subida al Catedral en vez de apurar la cumbre? Cuando el temporal les cae encima, la ciudad y la montaña le pasan factura, y Juli descubre que lo que leía como desidia era la única forma de bajar viva.",
+  "text": "\"Apurá, Bruno, que perdemos la reserva del restaurante\", resopló Juli mientras trepaba por el faldeo del cerro Catedral con el celular en la mano.\n\nBruno, guía de montaña curtido en la zona, ni se inmutó ante el apuro. A su lado, Ailén, una amiga barilochense que atendía una chocolatería en el centro, se reía de la porteña y sus modos apurados.\n\n\"Acá en el sur nadie corre, che\", le tiró Bruno, y se frenó de nuevo a olfatear el aire y mirar el cielo.\n\nJuli bufaba, inquieta. Cada dos por tres el guía paraba, sopesaba el viento con la palma abierta y saludaba a algún baqueano que bajaba del filo.\n\nPara ella era pura desidia, un montañés al pedo haciendo tiempo. \"Este chabón me está cachando\", pensó, y apuró el paso sola, picada.\n\nAilén la frenó de un brazo. \"Tranca, boluda, Bruno sabe lo que hace\", le dijo bajito, \"vos hacele caso y seguile el ritmo\".\n\nArriba, la nieve empezó a arreciar de golpe y el sendero se borró en una ventisca blanca. Juli, helada hasta los huesos, entendió que la cumbre ya era un delirio y que su reloj no valía nada.\n\nBruno los hizo guarecerse en un refugio de piedra que venía calculando desde abajo, justo antes de que el temporal se pusiera bravo del todo.\n\nAdentro, con un mate humeando entre las manos, Juli recién cayó en la cuenta. Cada parada del guía no había sido vagancia; era su manera de leer la montaña.\n\n\"Perdón por bardearte, Rami\", murmuró, entregada. Él se encogió de hombros y cebó un cimarrón. \"En la ciudad manda el reloj; acá manda el cerro\", contestó, y le pasó el mate.",
+  "vocab": [
+   {
+    "word": "curtido",
+    "surface": "curtido",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "toughened and weathered by long experience, hardened by years working outdoors"
+   },
+   {
+    "word": "el baqueano",
+    "surface": "baqueano",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a local expert who knows the mountain trails and terrain by heart"
+   },
+   {
+    "word": "la desidia",
+    "surface": "desidia",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "laziness and neglect, a careless unwillingness to do anything with real effort"
+   },
+   {
+    "word": "el chabón",
+    "surface": "chabón",
+    "type": "noun",
+    "register": "slang",
+    "definition": "an informal Argentine word for a guy, a dude or random bloke"
+   },
+   {
+    "word": "cachar",
+    "surface": "cachando",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to tease or mess with someone, pulling their leg for fun"
+   },
+   {
+    "word": "picado",
+    "surface": "picada",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "annoyed and stung, worked up because your pride just got hurt"
+   },
+   {
+    "word": "tranca",
+    "surface": "Tranca",
+    "type": "expression",
+    "register": "slang",
+    "definition": "take it easy, calm down and stop rushing around so much"
+   },
+   {
+    "word": "bufar",
+    "surface": "bufaba",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to snort and huff with impatience, breathing loudly out of pure irritation"
+   },
+   {
+    "word": "el sendero",
+    "surface": "sendero",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a narrow path or trail for walking through hills and forest"
+   },
+   {
+    "word": "la ventisca",
+    "surface": "ventisca",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a blowing snowstorm with strong wind that hides everything in white"
+   },
+   {
+    "word": "la cumbre",
+    "surface": "cumbre",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the very top or summit of a mountain, its highest point"
+   },
+   {
+    "word": "el refugio",
+    "surface": "refugio",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a stone shelter in the mountains where climbers rest and wait out storms"
+   },
+   {
+    "word": "olfatear",
+    "surface": "olfatear",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to sniff the air, reading a smell to sense what is coming"
+   },
+   {
+    "word": "la vagancia",
+    "surface": "vagancia",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "laziness, the habit of dodging work and effort whenever you can"
+   },
+   {
+    "word": "la palma",
+    "surface": "palma",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the inner flat side of the hand, from wrist to fingers"
+   },
+   {
+    "word": "helado",
+    "surface": "helada",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "frozen stiff, extremely cold to the point of shivering really hard"
+   },
+   {
+    "word": "el faldeo",
+    "surface": "faldeo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the sloping side of a mountain in the Andes"
+   },
+   {
+    "word": "el cimarrón",
+    "surface": "cimarrón",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "mate served bitter, without any sugar added to it"
+   },
+   {
+    "word": "sopesar",
+    "surface": "sopesaba",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to weigh something carefully in your mind before deciding"
+   },
+   {
+    "word": "guarecerse",
+    "surface": "guarecerse",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to take cover somewhere safe from bad weather"
+   },
+   {
+    "word": "el filo",
+    "surface": "filo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the sharp top ridge line of a mountain"
+   },
+   {
+    "word": "hacer tiempo",
+    "surface": "haciendo tiempo",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "to do small things while waiting so time passes"
+   },
+   {
+    "word": "de golpe",
+    "surface": "de golpe",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "happening suddenly, with no warning at all, out of nowhere"
+   },
+   {
+    "word": "caer en la cuenta",
+    "surface": "cayó en la cuenta",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "to suddenly understand something you had not noticed before"
+   }
+  ]
+ },
+ {
+  "topic": "bariloche",
+  "slotIndex": 2,
+  "title": "Chocolate fino, mate amargo",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Para Juli, Bariloche se resume en las vidrieras de chocolate para turistas, y arrastra a su amiga Ailén a fotografiar la más top del centro. Pero Ailén, que hace bombones desde chica, se ríe: dice que el gusto de verdad no está en esa vidriera. Cuando el brillo dulce del escaparate choca con el mate más amargo a la orilla del lago, a Juli le cae la ficha de qué vino a buscar realmente al sur.",
+  "text": "Pegada al vidrio de la chocolatería más famosa del centro, Juli buscaba el ángulo justo para que entrara toda la vidriera en la foto.\n\nAilén, que amasaba chocolate en esa misma cuadra desde pibita, la miraba con una sonrisa torcida. Del otro lado del mostrador, Ciro, guardaparque y novio de Ailén, cargaba un termo enorme.\n\n\"Turisteás como cualquier gringo, Juli\", la chicaneó Ailén. \"Esto es la vidriera para la gilada; el gusto de verdad no está acá\".\n\nJuli no le creyó ni medio. Para ella, Bariloche era eso: chocolate caro, luces, cartel en inglés y colas de turistas sacando fotos.\n\nAilén la arrastró hasta la costa del lago, lejos del bulevar. Se sentaron sobre una piedra contra el viento, y Ciro cebó el primer mate, bien amargo, sin una sola gota de azúcar.\n\nEl contraste la dejó muda. Atrás, la golosina relucía dulce y prolija para la cámara; adelante, el amargo le raspaba la garganta y el lago pegaba un frío que cortaba.\n\n\"Lo dulce es la postal que te venden\", dijo Ciro, pasándole la bombilla. \"Lo amargo es lo que tomamos nosotros todos los días\".\n\nJuli tomó despacio, sin apurar la mano. En ese cruce entre la vidriera empalagosa y el mate helado, recién le cayó la ficha de qué había venido a buscar al sur.\n\nGuardó el celular en la campera, resignada. La foto de los bombones le quedó a medias, y a Juli ya no le importó un pito.",
+  "vocab": [
+   {
+    "word": "la vidriera",
+    "surface": "vidriera",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a shop window, the glass front where goods are displayed to passersby"
+   },
+   {
+    "word": "amasar",
+    "surface": "amasaba",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to knead and work a dough or paste with your hands"
+   },
+   {
+    "word": "torcido",
+    "surface": "torcida",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "crooked and twisted, here a sly smile bent to one side"
+   },
+   {
+    "word": "el mostrador",
+    "surface": "mostrador",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the counter in a shop where you are served and pay"
+   },
+   {
+    "word": "el termo",
+    "surface": "termo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a thermos flask that keeps water hot for making mate"
+   },
+   {
+    "word": "turistear",
+    "surface": "Turisteás",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to wander around gawking like a tourist, snapping photos of everything"
+   },
+   {
+    "word": "chicanear",
+    "surface": "chicaneó",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to needle or tease someone, taking a friendly dig at them"
+   },
+   {
+    "word": "la gilada",
+    "surface": "gilada",
+    "type": "noun",
+    "register": "slang",
+    "definition": "clueless gullible people, the crowd of suckers who fall for it"
+   },
+   {
+    "word": "ni medio",
+    "surface": "ni medio",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "not one bit, not at all, completely refusing to believe something"
+   },
+   {
+    "word": "la golosina",
+    "surface": "golosina",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a sweet treat, some candy or chocolate you nibble for pleasure"
+   },
+   {
+    "word": "raspar",
+    "surface": "raspaba",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to scrape and scratch roughly, here to sting the throat harshly"
+   },
+   {
+    "word": "prolijo",
+    "surface": "prolija",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "tidy and neatly done, arranged carefully with a clean finish"
+   },
+   {
+    "word": "la bombilla",
+    "surface": "bombilla",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the metal straw you sip mate through, filtering out the leaves"
+   },
+   {
+    "word": "empalagoso",
+    "surface": "empalagosa",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "sickly sweet to the point of being cloying and far too much"
+   },
+   {
+    "word": "caer la ficha",
+    "surface": "cayó la ficha",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "to finally get it, when the penny drops and you understand"
+   },
+   {
+    "word": "no importar un pito",
+    "surface": "importó un pito",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "to not care at all, to not give a damn about it"
+   },
+   {
+    "word": "el mate",
+    "surface": "mate",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the traditional hot herbal drink shared through a metal straw down south"
+   },
+   {
+    "word": "el gringo",
+    "surface": "gringo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a foreigner, usually a tourist from an English speaking country"
+   },
+   {
+    "word": "la cuadra",
+    "surface": "cuadra",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a city block, the stretch of street between two corners"
+   },
+   {
+    "word": "amargo",
+    "surface": "amargo",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "bitter and sharp on the tongue, without any sweetness at all"
+   },
+   {
+    "word": "la costa",
+    "surface": "costa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the shore, the strip of land right along the water"
+   },
+   {
+    "word": "la piedra",
+    "surface": "piedra",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a rock or stone, here one to sit on by the lake"
+   },
+   {
+    "word": "la campera",
+    "surface": "campera",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a jacket or coat you wear against the wind and cold"
+   }
+  ]
+ },
+ {
+  "topic": "bariloche",
+  "slotIndex": 3,
+  "title": "El kayak que no vuelve",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Juli rema por primera vez en aguas de verdad y casi se da vuelta apenas patea el viento del sur. Sus amigos la sacan del apuro, pero de vuelta aparece otro remero dado vuelta entre las olas, y Bruno no lo duda: se mete a socorrerlo mar adentro. Lo último que les llega es su voz cortada por la radio, mientras la tarde se apaga sobre la bahía y nadie sabe si el guía vuelve a la orilla.",
+  "text": "Un golpe de viento sur dobló los remos cuando cruzaban en kayak hacia la isla. Juli, porteña de pileta, tragó agua y puteó por lo bajo. Ciro, remero baqueano, y Bruno, el guía, la escoltaban de cerca.\n\n\"No le busqués la vuelta a la ola\", le gritó Ciro contra el viento. Juli, tozuda, quería cruzar de una para ganarle a la lluvia. Temía que se largara la tormenta de un momento a otro.\n\n\"A lo bestia no, che\", la atajó Bruno. \"Ni en pedo apurés acá; el lago te come si te hacés la viva\". Juli aflojó los brazos y bajó el ritmo, fastidiada.\n\nCerca de la orilla apareció un kayakista dado vuelta entre las olas. El tipo se hundía manoteando en el agua helada. Bruno no lo dudó: pegó la vuelta y fue a sacarlo mar adentro.\n\nCiro metió a Juli en la playa de piedras, con las manos tiesas de frío. Desde ahí veían el kayak naranja de Bruno achicarse contra el agua. La radio del guardaparque crepitó de golpe.\n\n\"Lo tengo, pero se viene fulero, no puedo mover\", se escuchó, y después nada. El viento sopló más fuerte y la tarde se apagó sobre el lago. Ciro ya empujaba el kayak al agua, con la mandíbula apretada.\n\nJuli agarró un remo sin pensarlo, temblando de miedo. Los dos miraron el agua negra, y el lago no devolvió respuesta.",
+  "vocab": [
+   {
+    "word": "putear",
+    "surface": "puteó",
+    "type": "verb",
+    "register": "vulgar",
+    "definition": "to swear and curse out loud, letting out a string of insults"
+   },
+   {
+    "word": "a lo bestia",
+    "surface": "a lo bestia",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "recklessly and with brute force, doing it wildly without any care"
+   },
+   {
+    "word": "ni en pedo",
+    "surface": "Ni en pedo",
+    "type": "expression",
+    "register": "vulgar",
+    "definition": "no way, not a chance, absolutely refusing to do that"
+   },
+   {
+    "word": "hacerse la viva",
+    "surface": "hacés la viva",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "to act clever and cut corners, thinking you can outsmart everyone"
+   },
+   {
+    "word": "buscar la vuelta",
+    "surface": "busqués la vuelta",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "to look for a clever angle or workaround to handle something"
+   },
+   {
+    "word": "dado vuelta",
+    "surface": "dado vuelta",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "flipped over and capsized, turned completely upside down in the water"
+   },
+   {
+    "word": "manotear",
+    "surface": "manoteando",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to flail and grab wildly with the hands, splashing around in panic"
+   },
+   {
+    "word": "tieso",
+    "surface": "tiesas",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "stiff and rigid, frozen so hard you can barely move"
+   },
+   {
+    "word": "fulero",
+    "surface": "fulero",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "ugly and bad, a situation looking grim and turning nasty fast"
+   },
+   {
+    "word": "atajar",
+    "surface": "atajó",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to cut someone off, stopping them before they go too far"
+   },
+   {
+    "word": "achicarse",
+    "surface": "achicarse",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to shrink and get smaller, here the kayak fading into the distance"
+   },
+   {
+    "word": "el kayak",
+    "surface": "kayak",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a narrow paddle boat you sit in low over the water"
+   },
+   {
+    "word": "la isla",
+    "surface": "isla",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a piece of land with water all the way around it"
+   },
+   {
+    "word": "la playa",
+    "surface": "playa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the shore or beach, here a stony strip at the lake edge"
+   },
+   {
+    "word": "la ola",
+    "surface": "ola",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a moving swell of water that rises and rolls across the surface"
+   },
+   {
+    "word": "la mandíbula",
+    "surface": "mandíbula",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the jaw, the lower bone of the face that holds your teeth"
+   },
+   {
+    "word": "crepitar",
+    "surface": "crepitó",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to crackle and sputter, the broken static sound a radio makes"
+   },
+   {
+    "word": "temblar",
+    "surface": "temblando",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to shake and tremble, your body shivering from cold or fear"
+   },
+   {
+    "word": "apretado",
+    "surface": "apretada",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "clenched and tight, pressed hard together with tension or effort"
+   },
+   {
+    "word": "largarse",
+    "surface": "largara",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to start suddenly, said of rain beginning to pour down hard"
+   },
+   {
+    "word": "apurar",
+    "surface": "apurés",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to rush and hurry, to speed up and do it faster"
+   },
+   {
+    "word": "pegar la vuelta",
+    "surface": "pegó la vuelta",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "to turn around and head back the way you came"
+   }
+  ]
+ },
+ {
+  "topic": "salta",
+  "slotIndex": 1,
+  "title": "Cada uno con su mitad",
+  "arcType": "daily-encounter",
+  "synopsis": "En una casa baja del centro de Salta, Julieta cae a la cocina de dos hermanos que preparan empanadas para el cumpleaños de una vecina. Micaela fríe y cuenta las docenas; Ariel, el guitarrero de la peña, hace más gancho robando bocados que ayudando. Entre cargadas, repulgues y olor a comino, la porteña descubre que los dos aprendieron la misma receta de la abuela y se reparten la cocina sin admitirlo. Una tarde salteña de hermanos, torrontés y familia que adopta sin trámite.",
+  "text": "Micaela reparte las empanadas recién fritas sobre un repasador y le pega un manotazo a Ariel, que ya está afanando una. En una casa baja del centro de Salta, Julieta, la porteña de gira, pasa la tarde con los hermanos. Micaela cocina para media cuadra; Ariel, guitarrero y anfitrión de la peña del barrio, hace más gancho robando que ayudando.\n\n«Son para el cumpleaños de la vecina, gil, no para tu panza», lo reta Micaela sin sacar la vista de la sartén. Ariel, puro chamuyo, jura que apenas controla la calidad del relleno. Juli se caga de risa: ella también era de afanar del plato ajeno, y le agarra el juego al toque.\n\nMicaela le hace un lugar y le pasa la espumadera para la próxima tanda. Entre las dos charlan de hermanos mandones mientras el aceite chisporrotea. Juli cuenta que el suyo también le morfaba la mitad de todo, y Micaela larga una carcajada. El relleno lleva papa, carne cortada a cuchillo y comino.\n\nAriel deja la guitarra apoyada, ceba un mate y, sin que nadie le pida nada, le baja el fuego a la sartén justo cuando el aceite estaba por pasarse. «El repulgue lo hace ella, pero el punto de la fritura lo manejo yo», tira, y Micaela pone los ojos en blanco, aunque no lo desmiente.\n\nResulta que los dos aprendieron lo mismo de la abuela, cada uno se quedó con su mitad y hacen bardo para no admitirlo. Afuera el cerro se pone colorado y alguien descorcha un torrontés. Micaela cuenta las empanadas de la vecina, Ariel le afana una, y Juli siente que cayó en una familia que la adoptó sin trámite.",
+  "vocab": [
+   {
+    "word": "afanar",
+    "surface": "afanando",
+    "type": "verb",
+    "register": "slang",
+    "definition": "swiping or nicking something quickly, usually food, before anyone can stop you"
+   },
+   {
+    "word": "manotazo",
+    "surface": "manotazo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a quick swat or grab made with the open hand"
+   },
+   {
+    "word": "gancho",
+    "surface": "gancho",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "personal charm or appeal that makes people warm to you"
+   },
+   {
+    "word": "repasador",
+    "surface": "repasador",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a cloth kitchen towel for drying dishes and wiping surfaces"
+   },
+   {
+    "word": "guitarrero",
+    "surface": "guitarrero",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "someone who plays guitar and sings at folk gatherings"
+   },
+   {
+    "word": "gil",
+    "surface": "gil",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a naive fool or sucker who is easily fooled"
+   },
+   {
+    "word": "panza",
+    "surface": "panza",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the belly or stomach, especially a round full one"
+   },
+   {
+    "word": "retar",
+    "surface": "reta",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "scolds or firmly tells someone off for misbehaving badly"
+   },
+   {
+    "word": "chamuyo",
+    "surface": "chamuyo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "smooth talk or sweet nonsense meant to charm or fool"
+   },
+   {
+    "word": "cagarse de risa",
+    "surface": "se caga de risa",
+    "type": "expression",
+    "register": "vulgar",
+    "definition": "cracks up laughing hard, an emphatic vulgar way to say it"
+   },
+   {
+    "word": "mandón",
+    "surface": "mandones",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "bossy people who like ordering everyone else around"
+   },
+   {
+    "word": "morfar",
+    "surface": "morfaba",
+    "type": "verb",
+    "register": "slang",
+    "definition": "was eating or scarfing food down with gusto"
+   },
+   {
+    "word": "largar",
+    "surface": "larga",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "lets out or releases something like a laugh or remark"
+   },
+   {
+    "word": "comino",
+    "surface": "comino",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "cumin, the warm spice central to Salta empanadas"
+   },
+   {
+    "word": "cebar",
+    "surface": "ceba",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "prepares and serves mate, pouring hot water over the leaves"
+   },
+   {
+    "word": "repulgue",
+    "surface": "repulgue",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the crimped decorative edge that seals an empanada shut"
+   },
+   {
+    "word": "poner los ojos en blanco",
+    "surface": "pone los ojos en blanco",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "rolls her eyes in mock exasperation or playful disbelief"
+   },
+   {
+    "word": "tirar",
+    "surface": "tira",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "tosses out a casual remark or comment offhandedly"
+   },
+   {
+    "word": "bardo",
+    "surface": "bardo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a fuss or playful commotion made over something minor"
+   },
+   {
+    "word": "cerro",
+    "surface": "cerro",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a hill or small mountain rising over the town"
+   },
+   {
+    "word": "torrontés",
+    "surface": "torrontés",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "an aromatic white wine grape typical of Salta province"
+   },
+   {
+    "word": "sin trámite",
+    "surface": "sin trámite",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "without any fuss, formalities, or bureaucratic delay involved"
+   }
+  ]
+ },
+ {
+  "topic": "salta",
+  "slotIndex": 2,
+  "title": "La porteña mete mano",
+  "arcType": "reframe-turn",
+  "synopsis": "Rumbo a Cafayate por la Quebrada de las Conchas, el remís de Fabián se planta en plena siesta, sin señal ni ayuda a la vista. Ariel y su primo ya daban por inútil a Julieta, la porteña que llevaban de paseo. El giro llega cuando ella no se hace problema y mete mano: criada entre el laburo de fierros de su viejo, encuentra la falla y los deja de nuevo en la ruta con un truco de taller, ganándose el respeto del norte.",
+  "text": "Julieta, porteña, viajaba de acompañante en el remís de Fabián, primo de Ariel, que se ganaba los mangos llevando turistas por los cerros. Ariel, dueño de una peña de coplas, iba atrás tirando charla. Enfilaban hacia Cafayate por la Quebrada de las Conchas, entre cardones y montañas rojas. 'Vos tranqui, che, esto lo hago dormido', tiró Fabián, chocho de hacer de guía.\n\nPasando la Garganta del Diablo, en plena siesta, el remís empezó a fallar y el motor se recalentó. Fabián frenó al costado, bajó a mirar y se quedó duro. '¿Qué macana es esta?', dijo Ariel, que de autos no sabía un pomo. No había señal ni un alma en la ruta. 'Estamos en el horno', soltó Fabián.\n\nLos primos ya la daban por perdida a la turista de ciudad. Pero Juli no se hizo problema: pidió las herramientas y metió mano sin dudar. Su viejo había tenido un taller y ella se crió entre grasa y laburo de fierros. En un rato encontró la falla y supo cómo salir del paso.\n\nCon una media de nailon armó un arreglo trucho pero firme. Los salteños, que la miraban como bicho raro, quedaron mudos cuando el auto prendió al toque. 'Mirá vos la porteña', se rió Ariel, colorado por la cargada.\n\nLlegaron a Cafayate al caer la tarde, justo para copar una mesa con torrontés bien frío. Ariel alzó la copa y le dedicó una copla, cambiando el tono guasón por uno de respeto. Fabián le juró que la vuelta la pagaba él. Juli, curtida y contenta, sintió que en el norte también sabían valorar a quien mete mano.",
+  "vocab": [
+   {
+    "word": "mango",
+    "surface": "los mangos",
+    "type": "noun",
+    "register": "slang",
+    "definition": "informal Argentine word for money or cash in everyday speech"
+   },
+   {
+    "word": "copla",
+    "surface": "coplas",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "short traditional sung verses of the Argentine northwest folk tradition"
+   },
+   {
+    "word": "cardón",
+    "surface": "cardones",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "tall columnar cactuses common across the arid Argentine northwest"
+   },
+   {
+    "word": "chocho",
+    "surface": "chocho",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "utterly delighted and proud, often over something quite small"
+   },
+   {
+    "word": "tranqui",
+    "surface": "tranqui",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "relaxed and calm, telling someone not to worry"
+   },
+   {
+    "word": "quedarse duro",
+    "surface": "quedó duro",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "froze up, unable to move or react from shock"
+   },
+   {
+    "word": "macana",
+    "surface": "macana",
+    "type": "slang",
+    "register": "slang",
+    "definition": "a mess or blunder, something that clearly went wrong"
+   },
+   {
+    "word": "pomo",
+    "surface": "un pomo",
+    "type": "expression",
+    "register": "slang",
+    "definition": "nothing at all, in a blunt dismissive Argentine sense"
+   },
+   {
+    "word": "horno",
+    "surface": "en el horno",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "in deep trouble with no easy way out"
+   },
+   {
+    "word": "hacerse problema",
+    "surface": "no se hizo problema",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "did not get worried or make a fuss about it"
+   },
+   {
+    "word": "meter mano",
+    "surface": "metió mano",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "got hands on it to fix or handle something directly"
+   },
+   {
+    "word": "viejo",
+    "surface": "viejo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "affectionate slang a person uses for their own father"
+   },
+   {
+    "word": "laburo",
+    "surface": "laburo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "work or a job, common Argentine slang from Italian"
+   },
+   {
+    "word": "fierros",
+    "surface": "fierros",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "cars and mechanics, literally iron pieces in casual talk"
+   },
+   {
+    "word": "trucho",
+    "surface": "trucho",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "makeshift or fake, put together in a rough way"
+   },
+   {
+    "word": "al toque",
+    "surface": "al toque",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "right away, instantly and with no delay at all"
+   },
+   {
+    "word": "bicho raro",
+    "surface": "bicho raro",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "an oddball, someone who seems strange or out of place"
+   },
+   {
+    "word": "cargada",
+    "surface": "la cargada",
+    "type": "slang",
+    "register": "slang",
+    "definition": "playful teasing or mockery aimed at someone among friends"
+   },
+   {
+    "word": "colorado",
+    "surface": "colorado",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "red in the face, here from embarrassment or shame"
+   },
+   {
+    "word": "copar",
+    "surface": "copar",
+    "type": "verb",
+    "register": "slang",
+    "definition": "to take over or claim a spot with real enthusiasm"
+   },
+   {
+    "word": "torrontés",
+    "surface": "torrontés",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "an aromatic white wine typical of Cafayate in Salta"
+   },
+   {
+    "word": "guasón",
+    "surface": "guasón",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "joking and teasing in manner, always ready for banter"
+   },
+   {
+    "word": "curtido",
+    "surface": "curtida",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "toughened and seasoned by hard experience over time"
+   },
+   {
+    "word": "caer la tarde",
+    "surface": "al caer la tarde",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "as evening falls and daylight starts to fade"
+   }
+  ]
+ },
+ {
+  "topic": "salta",
+  "slotIndex": 3,
+  "title": "Guitarra y torrontés",
+  "arcType": "harmonic-close",
+  "synopsis": "Terminada la peña, los que quedan se corren al patio, alrededor del fogón, y la noche se estira sin reloj. Ariel rasguea, Yamila canta y una botella de torrontés va rodando de mano en mano. Sin ninguna vuelta de tuerca, solo una guitarreada que se alarga hasta el amanecer, Juli deja de mirar la hora y siente que en el norte también tiene su gente.",
+  "text": "En el patio, Ariel atiza el fogón hasta que las brasas laten rojas bajo el algarrobo. Ya entrada la madrugada, la peña se corrió a la casa, y quedan los de siempre alrededor del fuego. Ariel toca la guitarra y el charango, y Yamila, cantora del barrio, marca el compás con la mano.\n\nAriel rasguea despacio una chacarera, y Yamila la sigue en contrapunto, con la voz bien baja. Alguien suma un legüero, y el golpe hondo se mete en el pecho de todos. Después viene una vidala triste, y Juli, que no la conoce, la tararea como puede.\n\nVa y viene el fernet, y también una botella de torrontés, y cada uno se sirve su trago sin que nadie lo pida. La ronda se arma sola, bien de onda, con Juli ya metida entre los salteños. «Sos piola vos, porteña», le dice Yamila, y le pasa la guitarra para que pruebe.\n\nLa sobremesa se estira sin reloj, entre risas y cuerdas flojas. Nadie habla de irse; está claro que todos van a hacer noche ahí, en una larga guitarreada. Yamila trae unas tortillas calentitas del rescoldo y las reparte.\n\nCuando Ariel propone otra al toque, ya nadie tiene sueño ni ganas de parar. La luna baja detrás del cerro y el cielo empieza a aclarar hacia el amanecer. Juli se queda ahí en plena trasnochada, desvelada y feliz, con la sensación de que en el norte también tiene su gente.",
+  "vocab": [
+   {
+    "word": "el patio",
+    "surface": "patio",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "an open inner yard where a house gathers for air and talk"
+   },
+   {
+    "word": "el fogón",
+    "surface": "fogón",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "an open fire circle where people cook, warm up and sing"
+   },
+   {
+    "word": "rasguear",
+    "surface": "rasguea",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to strum a guitar, brushing all the strings with your hand"
+   },
+   {
+    "word": "la chacarera",
+    "surface": "chacarera",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a lively northern Argentine folk dance in a quick stamping rhythm"
+   },
+   {
+    "word": "la vidala",
+    "surface": "vidala",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a slow, mournful northern song carried by a soft steady drum"
+   },
+   {
+    "word": "tararear",
+    "surface": "tararea",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to hum a tune softly without singing any of the words"
+   },
+   {
+    "word": "el trago",
+    "surface": "trago",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a drink or a swallow of something, often a strong one"
+   },
+   {
+    "word": "de onda",
+    "surface": "de onda",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "in a friendly good mood, an easy Argentine way to say kindly"
+   },
+   {
+    "word": "piola",
+    "surface": "piola",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "clever, cool and easy to get along with, common Argentine slang"
+   },
+   {
+    "word": "hacer noche",
+    "surface": "hacer noche",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "to spend the whole night somewhere instead of heading home"
+   },
+   {
+    "word": "la guitarreada",
+    "surface": "guitarreada",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a long casual jam where friends take turns playing guitar and singing"
+   },
+   {
+    "word": "calentito",
+    "surface": "calentitas",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "nice and warm, freshly heated and pleasant to hold or eat"
+   },
+   {
+    "word": "la luna",
+    "surface": "luna",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the moon, the bright round light that crosses the night sky"
+   },
+   {
+    "word": "el amanecer",
+    "surface": "amanecer",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "daybreak, the moment the sky first lightens and the sun returns"
+   },
+   {
+    "word": "desvelarse",
+    "surface": "desvelada",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to go without sleep, staying awake far into the night"
+   },
+   {
+    "word": "la cantora",
+    "surface": "cantora",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a woman who sings folk songs at local gatherings"
+   },
+   {
+    "word": "el rescoldo",
+    "surface": "rescoldo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the hot ash and embers left after a fire dies down"
+   },
+   {
+    "word": "atizar",
+    "surface": "atiza",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to poke a fire so it burns hotter and stronger"
+   },
+   {
+    "word": "el legüero",
+    "surface": "legüero",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a big deep drum used in Argentine folk music"
+   },
+   {
+    "word": "la tortilla",
+    "surface": "tortillas",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a flat country bread baked in the hot ashes"
+   },
+   {
+    "word": "el charango",
+    "surface": "charango",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a small Andean string instrument like a tiny guitar"
+   },
+   {
+    "word": "el contrapunto",
+    "surface": "contrapunto",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "two singers answering each other back and forth"
+   },
+   {
+    "word": "la trasnochada",
+    "surface": "trasnochada",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a long night spent awake with others until dawn"
+   }
+  ]
+ },
+ {
+  "topic": "mar-del-plata",
+  "slotIndex": 1,
+  "title": "El lobo que Seba alimenta",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Juli baja a Mar del Plata y Seba, que atiende un balneario todo el año, la lleva al puerto entre los lobos marinos. Reniega a los gritos de esos bichos que le arruinan las redes, hasta que un lobo viejo y tuerto se le acerca. Sole, la hermana moza, revela que su hermano le guarda la comida a ese animal cada tarde desde hace tres inviernos, y el gruñón queda en evidencia delante de todos.",
+  "text": "Sobre las piedras del puerto, Juli mira los barcos quietos. La trajo Seba, su amigo marplatense que atiende un balneario todo el año, y con ellos anda Sole, la hermana, moza en la peatonal. Seba refunfuña contra los lobos marinos, unos vagos que le arruinan las redes, le afanan el pescado y le arman un quilombo.\n\n\"Son una plaga, esos bichos; te dejan el muelle hecho un asco\", larga, y patea una caja vacía. Juli se ríe de su mala leche. Sole, en cambio, le cruza a la porteña una mirada pícara. El olor a sal y a pescado se mezcla con el viento del mar.\n\nCuando el sol raspa el agua, un lobo viejo y pelado se despega del montón y trepa hasta las rocas. Tiene un ojo nublado y una cicatriz en el lomo. Los demás braman, pero este avanza derecho, como si supiera adónde va.\n\nSeba, que hasta recién puteaba, se agacha sin chistar. Del bolsillo saca unas sardinas envueltas en papel y se las tira de a una. El animal las morfa y se queda cerca, resoplando.\n\n\"Se llama Tuerto y viene cada tarde desde hace tres inviernos\", suelta Sole, y Seba se pone colorado hasta las orejas. Contra todo su discurso, el tipo le guarda la comida al más viejo y jodido de la manada.\n\nJuli cae de golpe: el mismo que reniega a los gritos es el que baja a escondidas a cuidar al lobo que ya nadie quiere. Seba masculla que no invente, que es pura lástima. Pero Tuerto le apoya el hocico en la bota, y al gruñón se le escapa una sonrisa que no puede disimular.",
+  "vocab": [
+   {
+    "word": "refunfuñar",
+    "surface": "refunfuña",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "grumbles and complains under the breath with visible annoyance"
+   },
+   {
+    "word": "vago",
+    "surface": "vagos",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "lazy loafers, a dismissive slang name for idle guys"
+   },
+   {
+    "word": "afanar",
+    "surface": "afanan",
+    "type": "verb",
+    "register": "slang",
+    "definition": "steal something quickly, common slang across Argentine street speech"
+   },
+   {
+    "word": "quilombo",
+    "surface": "quilombo",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a big chaotic mess or uproar, strong River Plate slang"
+   },
+   {
+    "word": "bichos",
+    "surface": "bichos",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "critters or creatures, a dismissive casual word for animals"
+   },
+   {
+    "word": "patear",
+    "surface": "patea",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "kicks something hard with the foot in visible frustration"
+   },
+   {
+    "word": "mala leche",
+    "surface": "mala leche",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "bad temper or foul mood, a spiteful sour attitude"
+   },
+   {
+    "word": "pícara",
+    "surface": "pícara",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "sly and playfully mischievous, hinting at a hidden joke"
+   },
+   {
+    "word": "pelado",
+    "surface": "pelado",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "bald or with the fur worn away in patches"
+   },
+   {
+    "word": "despegarse",
+    "surface": "despega",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "breaks away and separates from a group or surface"
+   },
+   {
+    "word": "bramar",
+    "surface": "braman",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "roar loudly with deep animal cries, like sea lions"
+   },
+   {
+    "word": "nublado",
+    "surface": "nublado",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "clouded and dull, lacking clear sight or brightness"
+   },
+   {
+    "word": "putear",
+    "surface": "puteaba",
+    "type": "verb",
+    "register": "vulgar",
+    "definition": "was cursing and swearing loudly, strong vulgar Argentine speech"
+   },
+   {
+    "word": "chistar",
+    "surface": "chistar",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "utter the slightest word of protest, mostly used in negatives"
+   },
+   {
+    "word": "morfar",
+    "surface": "morfa",
+    "type": "verb",
+    "register": "slang",
+    "definition": "eats hungrily, a classic lunfardo slang word for eating"
+   },
+   {
+    "word": "colorado",
+    "surface": "colorado",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "red, and by extension blushing with embarrassment or shame"
+   },
+   {
+    "word": "soltar",
+    "surface": "suelta",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "blurts out a remark casually and without any warning"
+   },
+   {
+    "word": "tipo",
+    "surface": "tipo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "an informal word for a man or random guy"
+   },
+   {
+    "word": "jodido",
+    "surface": "jodido",
+    "type": "adjective",
+    "register": "vulgar",
+    "definition": "worn out, damaged, or in a rough beaten state"
+   },
+   {
+    "word": "renegar",
+    "surface": "reniega",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "grumbles and loudly rejects something he secretly still cares about"
+   },
+   {
+    "word": "a escondidas",
+    "surface": "a escondidas",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "secretly, doing something hidden so that nobody notices it"
+   },
+   {
+    "word": "gruñón",
+    "surface": "gruñón",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "grumpy person who complains and growls at everything around"
+   }
+  ]
+ },
+ {
+  "topic": "mar-del-plata",
+  "slotIndex": 2,
+  "title": "La sudestada nos encierra",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "El cielo se pone plomizo y la sudestada encierra a Juli, Seba y Sole adentro del bar de la peatonal. Entre truenos y velas, Sole larga que en Buenos Aires le ofrecieron un laburo fijo y que quizá deje la ciudad para siempre. Seba se queda duro. ¿Se va la única que se bancaba los inviernos, justo cuando la porteña empezaba a entenderla?",
+  "text": "Un trueno sacude los vidrios cuando los tres entran empapados al bar de la peatonal. Afuera, la sudestada empuja el agua contra la vereda y voltea las sombrillas. Seba, que atiende un balneario, y su hermana Sole sientan a Juli cerca del mostrador.\n\nEl patrón corta la luz y reparte velas por las mesas. En la penumbra, el bar huele a café y a lluvia. Seba le cuenta que un temporal bravo puede dejar la costa tapada de algas por días.\n\nSole, callada hasta entonces, revuelve el pocillo sin tomarlo. De golpe suelta que está podrida de laburar tres meses y bancar el resto en negro. Cuenta que una amiga le consiguió un puesto fijo en Buenos Aires.\n\nSeba deja el vaso de un golpe y masculla un \"che, quedate\" antes de quedarse mudo. Para él, que Sole se raje a la Capital es perder al último cómplice de sus inviernos. Juli siente de repente el peso de esa Buenos Aires que ella representa sin querer.\n\nAfuera el temporal arrecia y una rama golpea la persiana del bar. Sole mira a su hermano y después a Juli, buscando una señal. La porteña abre la boca, pero un apagón traga hasta el zumbido de la heladera.\n\nEn la penumbra quedan las tres respiraciones y el retumbar del mar embravecido. Seba raspa un fósforo y, a la luz temblorosa, encuentra los ojos de su hermana. Sole aprieta la taza fría y arranca a decir su decisión cuando otro trueno se traga sus palabras.",
+  "vocab": [
+   {
+    "word": "empapados",
+    "surface": "empapados",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "soaked through and dripping wet after being caught out in heavy rain"
+   },
+   {
+    "word": "la vereda",
+    "surface": "vereda",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the paved sidewalk beside a street where people walk in town"
+   },
+   {
+    "word": "la sudestada",
+    "surface": "sudestada",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a fierce coastal storm from the southeast that floods the shore"
+   },
+   {
+    "word": "el mostrador",
+    "surface": "mostrador",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the long counter in a bar or shop where you order"
+   },
+   {
+    "word": "el patrón",
+    "surface": "patrón",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the boss or owner who runs a bar, shop or business"
+   },
+   {
+    "word": "repartir",
+    "surface": "reparte",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to hand things out and share them around among several people"
+   },
+   {
+    "word": "las algas",
+    "surface": "algas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "slimy green seaweed that the sea washes onto the sand"
+   },
+   {
+    "word": "bravo",
+    "surface": "bravo",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "wild and rough, said of stormy weather or an angry sea"
+   },
+   {
+    "word": "el pocillo",
+    "surface": "pocillo",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a small cup for drinking strong coffee in one short serving"
+   },
+   {
+    "word": "podrida",
+    "surface": "podrida",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "totally fed up and sick of a boring, unfair situation"
+   },
+   {
+    "word": "bancar",
+    "surface": "bancar",
+    "type": "verb",
+    "register": "slang",
+    "definition": "Argentine slang for putting up with something hard or paying for it"
+   },
+   {
+    "word": "en negro",
+    "surface": "en negro",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "working for cash with no contract, taxes or legal papers"
+   },
+   {
+    "word": "mudo",
+    "surface": "mudo",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "silent and unable to speak, struck dumb by a strong feeling"
+   },
+   {
+    "word": "rajarse",
+    "surface": "raje",
+    "type": "verb",
+    "register": "slang",
+    "definition": "Argentine slang for bolting, leaving a place quickly and suddenly"
+   },
+   {
+    "word": "el cómplice",
+    "surface": "cómplice",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a close partner who shares your secrets and stands by you"
+   },
+   {
+    "word": "el peso",
+    "surface": "peso",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a heavy weight, here the emotional burden pressing on someone"
+   },
+   {
+    "word": "la rama",
+    "surface": "rama",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a branch that grows out from the trunk of a tree"
+   },
+   {
+    "word": "la persiana",
+    "surface": "persiana",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a rolling metal shutter that closes a window or a shopfront"
+   },
+   {
+    "word": "el apagón",
+    "surface": "apagón",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a sudden blackout when all the electric lights go out"
+   },
+   {
+    "word": "el zumbido",
+    "surface": "zumbido",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a low steady buzzing hum, like a fridge or an insect"
+   },
+   {
+    "word": "retumbar",
+    "surface": "retumbar",
+    "type": "verb",
+    "register": "colloquial",
+    "definition": "to boom and rumble loudly so the sound shakes the air"
+   },
+   {
+    "word": "embravecido",
+    "surface": "embravecido",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "grown wild and furious, said of a rough churning sea"
+   },
+   {
+    "word": "el fósforo",
+    "surface": "fósforo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small wooden match you strike to make a little flame"
+   },
+   {
+    "word": "temblorosa",
+    "surface": "temblorosa",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "shaky and trembling, flickering weakly like a small candle flame"
+   }
+  ]
+ },
+ {
+  "topic": "mar-del-plata",
+  "slotIndex": 3,
+  "title": "Doscientos alfajores para el finde",
+  "arcType": "reframe-turn",
+  "synopsis": "En pleno invierno marplatense, Seba se convence de que la tanda de dulce de leche que horneó le salió un papelón: oscura, espesa, impresentable para el encargo grande que necesita para sobrevivir la temporada muerta. Juli lo frena antes de que tire todo, y Sole aparece con una noticia que da vuelta el problema: eso que a Seba le daba vergüenza es justo lo que la clienta quería. Entre los tres corren contra reloj.",
+  "text": "En la cocina del balneario, con la temporada muerta y el viento sur golpeando las persianas, Seba llenaba una bandeja de tapas de alfajor. Al lado, su amiga Juli, la porteña que recorría el país, batía dulce de leche; Sole, la hermana de Seba, recién entraba de su turno de moza, con el delantal atado.\n\nSeba: Che, esto es un papelón. El dulce me salió oscuro y grueso, con gusto a otra época. Así no se lo puedo mandar a la dueña de la confitería.\n\nJuli: Pará la mano, bajá un cambio y dejame probarlo antes de tirar nada.\n\nJuli metió la cuchara y lo probó despacio.\n\nJuli: ¿Papelón? Esto es un dulce repostero de verdad, del que ya casi nadie se anima a hacer. Está para chuparse los dedos.\n\nSeba: No jodás. Yo lo quería impecable, tipo industrial, como el de las confiterías finas del centro.\n\nSole: Justo por eso te encargaron a vos, tarado. La mina quiere alfajores caseros, artesanales, no los berretas de fábrica que vende cualquiera.\n\nSeba se quedó mudo, lleno de harina.\n\nSeba: ¿En serio? Para mí era un mamarracho, algo para tirar a la basura.\n\nSole: Vino a probar la otra semana, mientras vos cerrabas el balneario. Se copó con el tuyo y te encargó doscientos para el finde largo.\n\nJuli: ¿Viste? Lo que te daba vergüenza es justo lo que te salva el invierno. Arranquemos ya, que contra reloj no llegamos ni a palos.\n\nEntre los tres armaron alfajores hasta la madrugada, tapa contra tapa, rellenos de ese dulce que Seba ya no pensaba tirar. Afuera seguía la sudestada; adentro, el olor a coco se comía todo.",
+  "vocab": [
+   {
+    "word": "persiana",
+    "surface": "persianas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the slatted window blinds that block sunlight and street noise"
+   },
+   {
+    "word": "bandeja",
+    "surface": "bandeja",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a flat tray you use to carry plates or food"
+   },
+   {
+    "word": "delantal",
+    "surface": "delantal",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "an apron you tie on to keep clothes clean while cooking"
+   },
+   {
+    "word": "tapa",
+    "surface": "tapas",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the two round cookie lids that sandwich an alfajor filling"
+   },
+   {
+    "word": "papelón",
+    "surface": "papelón",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "an embarrassing blunder that makes you look bad in public"
+   },
+   {
+    "word": "grueso",
+    "surface": "grueso",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "thick and dense in texture, not runny or watery at all"
+   },
+   {
+    "word": "dueña",
+    "surface": "dueña",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the woman who owns and runs a shop or business"
+   },
+   {
+    "word": "batir",
+    "surface": "batía",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to whisk or beat a mixture hard until it turns smooth"
+   },
+   {
+    "word": "bajá un cambio",
+    "surface": "bajá un cambio",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "calm down and stop overreacting, take it easy for now"
+   },
+   {
+    "word": "repostero",
+    "surface": "repostero",
+    "type": "adjective",
+    "register": "colloquial",
+    "definition": "made in the thick rich style that pastry bakers prefer"
+   },
+   {
+    "word": "chuparse los dedos",
+    "surface": "chuparse los dedos",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "so delicious that you lick your fingers after eating"
+   },
+   {
+    "word": "no jodás",
+    "surface": "no jodás",
+    "type": "expression",
+    "register": "vulgar",
+    "definition": "no way, you must be kidding me, said in disbelief"
+   },
+   {
+    "word": "impecable",
+    "surface": "impecable",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "perfectly clean and flawless, without a single visible defect"
+   },
+   {
+    "word": "tarado",
+    "surface": "tarado",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a dummy or idiot, tossed as a playful mild insult"
+   },
+   {
+    "word": "mina",
+    "surface": "mina",
+    "type": "noun",
+    "register": "slang",
+    "definition": "a woman or girl in casual Rioplatense street slang"
+   },
+   {
+    "word": "casero",
+    "surface": "caseros",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "homemade, cooked at home instead of in a factory"
+   },
+   {
+    "word": "berreta",
+    "surface": "berretas",
+    "type": "adjective",
+    "register": "slang",
+    "definition": "cheap and shoddy, low quality stuff made on the cheap"
+   },
+   {
+    "word": "se copó",
+    "surface": "se copó",
+    "type": "expression",
+    "register": "slang",
+    "definition": "she got really into it and loved it a lot"
+   },
+   {
+    "word": "finde",
+    "surface": "finde",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "the weekend, a short casual word for fin de semana"
+   },
+   {
+    "word": "contra reloj",
+    "surface": "contra reloj",
+    "type": "expression",
+    "register": "colloquial",
+    "definition": "against the clock, rushing hard to beat a deadline"
+   },
+   {
+    "word": "sudestada",
+    "surface": "sudestada",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a wet stormy southeast wind that batters the coast"
+   },
+   {
+    "word": "mamarracho",
+    "surface": "mamarracho",
+    "type": "noun",
+    "register": "colloquial",
+    "definition": "a botched ugly mess, something sloppy and badly done"
+   },
+   {
+    "word": "vergüenza",
+    "surface": "vergüenza",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the hot feeling of shame or embarrassment about something"
+   }
+  ]
+ }
+]

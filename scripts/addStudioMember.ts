@@ -1,5 +1,5 @@
 /**
- * One-shot: inserts a row into dp_studio_members. Idempotent — re-running
+ * One-shot: inserts a row into dp_studio_members. Idempotent; re-running
  * with the same email is a no-op.
  *
  * Run with: npx tsx scripts/addStudioMember.ts <email> <role> [name]

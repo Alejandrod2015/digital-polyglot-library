@@ -1,0 +1,33 @@
+[
+  {
+    "topic": "berlin",
+    "slotIndex": 1,
+    "title": "Nadia kriegt eine Schnauze",
+    "arcType": "reframe-turn",
+    "synopsis": "Timo schleppt Nadia endlich an den Späti zu seiner alten Clique, doch die begrüßt sie nur mit lauter Beleidigungen und Sprüchen über ihre Jacke und ihr Deutsch aus dem Lehrbuch. Nadia fühlt sich abgelehnt, bis ein höflich behandelter Kollege wieder abzieht. Da versteht sie, dass in diesem Kiez die Pöbelei die eigentliche Umarmung ist, und ranzt zum ersten Mal zurück.",
+    "text": "Seit einem Jahr wohnt Nadia in Kreuzberg, doch Timos alte Clique kennt sie kaum. An einem lauen Freitag schleppt Timo sie endlich an den Späti am Görli, wo seine Leute jeden Abend abhängen. Dort warten Micha, der mit der großen Fresse, und Jule, die noch schlagfertiger ist.\n\nKaum steht Nadia da, geht die Pöbelei los. \"Na, schleppst du jetzt Praktikantinnen an?\", ranzt Micha den Timo an. Auch Nadia bekommt ihr Fett weg: ihre Jacke sei voll assi, ihr Deutsch klinge wie aus dem Lehrbuch. Sie lächelt tapfer, fragt sich aber, was sie diesen Leuten getan hat.\n\nTimo drückt ihr eine Molle in die Hand und flüstert, sie solle sich keinen Kopf machen. Trotzdem bleibt Nadia steif. Als Jule fragt, woher sie komme, antwortet sie fast förmlich, und Micha prustet los: \"Boah, so brav, die zerbricht ja gleich.\"\n\nÜber den Abend hört Nadia genauer hin. Untereinander sind die drei noch viel ranziger. Micha nennt Timo einen verpeilten Vollpfosten, Jule kontert mit \"halt die Fresse, du Ehrenmann\", und alle lachen sich schlapp. Je fieser der Spruch, desto herzlicher das Grinsen.\n\nDann taucht ein neuer Kollege auf, und plötzlich sind alle superhöflich. Keiner pöbelt, keiner zieht ihn auf. Der Typ zieht bald wieder ab, und Nadia versteht mit einem Schlag: Wen die Berliner Schnauze in Ruhe lässt, den lässt sie in Wahrheit draußen.\n\nAlso holt sie Luft und ranzt zurück: \"Micha, ausgerechnet du redest von meiner Jacke?\" Einen Moment ist es still, dann brüllt die Runde vor Lachen. Micha hebt seine Molle: \"Die Olle hat eine Schnauze. Willkommen im Kiez, Diggi.\"",
+    "vocab": [
+      { "word": "der Späti", "surface": "Späti", "type": "noun", "register": "colloquial", "definition": "a small late night corner shop where Berliners buy cheap beer and hang out" },
+      { "word": "abhängen", "surface": "abhängen", "type": "verb", "register": "slang", "definition": "to hang out and loaf around somewhere with your friends and no real plan" },
+      { "word": "die Fresse", "surface": "Fresse", "type": "noun", "register": "vulgar", "definition": "a crude, blunt word for someone's mouth or gob, often meaning a loudmouth" },
+      { "word": "schlagfertig", "surface": "schlagfertiger", "type": "adjective", "register": "colloquial", "definition": "quick witted and always ready with a fast, sharp comeback in any exchange" },
+      { "word": "die Pöbelei", "surface": "Pöbelei", "type": "noun", "register": "slang", "definition": "loud, rude trash talk, the constant stream of insults friends throw at each other" },
+      { "word": "anranzen", "surface": "ranzt", "type": "verb", "register": "slang", "definition": "to snap or bark rudely at someone, usually half in jest among friends" },
+      { "word": "sein Fett wegbekommen", "surface": "Fett", "type": "expression", "register": "colloquial", "definition": "to get your share of the roasting, to become the target of the teasing" },
+      { "word": "assi", "surface": "assi", "type": "adjective", "register": "slang", "definition": "trashy, grubby or antisocial, short for asozial, a very common Berlin put down" },
+      { "word": "die Molle", "surface": "Molle", "type": "noun", "register": "slang", "definition": "an old Berlin word for a glass of beer, the classic Späti drink" },
+      { "word": "keinen Kopf machen", "surface": "Kopf", "type": "expression", "register": "colloquial", "definition": "not to worry about it, to stay relaxed and stop overthinking a situation" },
+      { "word": "losprusten", "surface": "prustet", "type": "verb", "register": "colloquial", "definition": "to suddenly burst out laughing, to snort with laughter you can no longer hold" },
+      { "word": "ranzig", "surface": "ranziger", "type": "adjective", "register": "slang", "definition": "grubby and nasty, here describing how brutally rude close friends get with one another" },
+      { "word": "verpeilt", "surface": "verpeilten", "type": "adjective", "register": "slang", "definition": "scatterbrained and disorganised, the kind of person who always loses the thread of things" },
+      { "word": "der Vollpfosten", "surface": "Vollpfosten", "type": "noun", "register": "slang", "definition": "a complete idiot, a total numbskull, one of the friendliest common German insults" },
+      { "word": "der Ehrenmann", "surface": "Ehrenmann", "type": "noun", "register": "slang", "definition": "youth slang for a truly reliable, decent guy, here used with heavy irony" },
+      { "word": "sich schlapp lachen", "surface": "schlapp", "type": "expression", "register": "colloquial", "definition": "to laugh yourself silly, to crack up completely at something really funny" },
+      { "word": "pöbeln", "surface": "pöbelt", "type": "verb", "register": "slang", "definition": "to mouth off and hurl loud, rude abuse at people, often just for fun" },
+      { "word": "die Berliner Schnauze", "surface": "Schnauze", "type": "noun", "register": "colloquial", "definition": "the blunt, cheeky Berlin way of talking, where rudeness actually signals warmth and acceptance" },
+      { "word": "in Ruhe lassen", "surface": "Ruhe", "type": "expression", "register": "neutral", "definition": "to leave someone alone and stop bothering them, here a subtle sign of exclusion" },
+      { "word": "der Kiez", "surface": "Kiez", "type": "noun", "register": "colloquial", "definition": "your immediate Berlin neighbourhood, the few blocks you know and call your own turf" },
+      { "word": "Diggi", "surface": "Diggi", "type": "noun", "register": "slang", "definition": "mate or bro, an everywhere Berlin form of address, a softer variant of Digga" }
+    ]
+  }
+]

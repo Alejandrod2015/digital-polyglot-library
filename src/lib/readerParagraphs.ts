@@ -1,5 +1,5 @@
 /**
- * readerParagraphs — how NARRATED prose actually reaches the screen.
+ * readerParagraphs; how NARRATED prose actually reaches the screen.
  *
  * The reader does NOT honour authored `\n\n`: splitSentences() flattens every
  * newline to a space and StoryContent re-groups the text into paragraphs of N

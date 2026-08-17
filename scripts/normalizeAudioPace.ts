@@ -9,14 +9,14 @@
  *
  * WHY: a fixed atempo (e.g. 0.90 for all) does NOT make stories sound equally
  * paced, because each story's native articulation rate differs (e.g. la-combi
- * native = 2.91 w/s, the fastest in the latam journey — which is why the
+ * native = 2.91 w/s, the fastest in the latam journey; which is why the
  * places-getting-around topic felt fast). The right approach is to measure
  * each story's speaking rate and compute the per-story atempo that lands it on
  * a single journey-wide TARGET rate.
  *
  * METRIC: articulation rate = total words / total speaking time, where speaking
  * time = sum(endSec - startSec) over audioFragments (EXCLUDES inter-segment
- * pauses). Computed instantly from audioFragments — no Scribe, no credits.
+ * pauses). Computed instantly from audioFragments; no Scribe, no credits.
  *
  * Usage:
  *   npx tsx scripts/normalizeAudioPace.ts --measure <slug> [<slug>...]
@@ -26,7 +26,7 @@
  * (ffmpeg, no TTS/credits), rescales fragment offsets, clears prevUrl, and
  * re-runs forced alignment so karaoke timings stay correct. Non-destructive to
  * the synthesis; idempotent-ish because it strips a prior `_slow<ts>` suffix
- * before re-encoding, but applying twice compounds atempo — measure first.
+ * before re-encoding, but applying twice compounds atempo; measure first.
  */
 import { config } from "dotenv";
 config({ path: ".env.local", quiet: true });
@@ -88,7 +88,7 @@ async function apply(slug: string, target: number, curOverride?: number) {
   if (Math.abs(ratio - 1) < 0.01) { console.log(`[${slug}] ya en objetivo (${cur} w/s)`); return; }
   // Load the word-timings module BEFORE mutating anything (2026-07-09). It used
   // to be imported at the end, after the slowed audio was already uploaded and
-  // written to the DB — so running this without
+  // written to the DB; so running this without
   // NODE_OPTIONS="--conditions=react-server" threw on the import and left the
   // story with NEW audio and OLD timings: the mp3 ran 100.9s while
   // audioWordTimings still said 92.7s, i.e. karaoke ~8s ahead by the end. And a

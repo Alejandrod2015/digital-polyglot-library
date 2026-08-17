@@ -3,10 +3,10 @@
  * Rewrite the first German story (Café in Kreuzberg) as a multi-voice dialogue.
  * Narrator (Moritz Morgenstern) reads the title + opening context paragraph;
  * Anna (ENNIAH) and Tom (Simon Sunday) carry the dialogue. Body text uses
- * `Speaker: line` per turn (no quotes — cleaner reader display).
+ * `Speaker: line` per turn (no quotes; cleaner reader display).
  *
  * Steps:
- *  1. Synthesize each spec segment via ElevenLabs (sequential — 5-concurrent cap).
+ *  1. Synthesize each spec segment via ElevenLabs (sequential; 5-concurrent cap).
  *  2. Concatenate with 0.4s silence between segments via ffmpeg.
  *  3. Upload merged MP3.
  *  4. Update JourneyStory: text, dialogueSpec, audioUrl, audioFilename, wordCount.
@@ -44,7 +44,7 @@ const NARRATION_PARAGRAPH =
   "aber alle Tische sind besetzt. Nur ein junger Mann sitzt allein am Fenster mit einem Buch. " +
   "Anna geht freundlich zu ihm.";
 
-// 9 dialogue turns, each ~20-30 words — substantive exchanges, no one-liners.
+// 9 dialogue turns, each ~20-30 words; substantive exchanges, no one-liners.
 const DIALOGUE = [
   { speaker: "Anna", voice: VOICE_ANNA, text:
     "Entschuldigung, alle anderen Tische sind voll. Ist der Platz neben dir noch frei? Ich möchte gern einen Kaffee trinken und vielleicht ein Stück Kuchen essen." },
@@ -72,7 +72,7 @@ const SPEC = [
   ...DIALOGUE,
 ];
 
-// Display text: opening paragraph (no title — title is stored separately on
+// Display text: opening paragraph (no title; title is stored separately on
 // the row), blank line, then `Speaker: line` per turn.
 const STORY_TEXT = [
   NARRATION_PARAGRAPH,
@@ -299,7 +299,7 @@ async function main() {
       });
       console.log(`✓ vocab updated (${vocab.length} items)`);
       vocab.slice(0, 25).forEach((v, i) =>
-        console.log(`    ${i + 1}. ${v.surface || v.word} — ${(v.definition || "").slice(0, 70)}`)
+        console.log(`    ${i + 1}. ${v.surface || v.word}; ${(v.definition || "").slice(0, 70)}`)
       );
     } catch (err) {
       console.warn(`⚠ vocab regen failed (${err.message}). Run manually from Studio → Regenerate Vocab.`);

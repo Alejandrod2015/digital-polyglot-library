@@ -1,0 +1,137 @@
+[
+  {
+    "title": "Hummel Hummel, Mors Mors",
+    "slug": "hummel-hummel-mors-mors",
+    "text": "An der Theke wirft ein Stammkunde Wiebke ein fröhliches Hummel Hummel hin, und sie schießt sofort zurück: Mors Mors. Nora bleibt mit ihrem Franzbrötchen ratlos stehen.\n\nNora: Was war das denn? Ein geheimes Passwort?\n\nWiebke: So ähnlich. Hummel Hummel, und die richtige Antwort ist Mors Mors. Das gehört hier einfach dazu.\n\nNora: Und was bedeutet es? Für mich klingt es nach reinem Unsinn.\n\nWiebke: Es geht auf Hans Hummel zurück, einen Wasserträger von früher. Die Leute riefen ihm den Spitznamen nach, und er antwortete mit etwas Unhöflichem.\n\nNora: Die Antwort war also ursprünglich eine Frechheit?\n\nWiebke: Genau. Heute ist es ein Gruß unter Eingeweihten. Wer richtig kontert, gehört dazu.\n\nOle kommt herein, hört das Stichwort und grinst.\n\nOle: Sie bringt dir gerade das Wichtigste bei. Damit blamierst du dich nie wieder auf dem Fischmarkt.\n\nNora: Und wenn mich jemand testet und mir nichts einfällt?\n\nOle: Dann bist du sofort enttarnt. Zugezogen, hört man auf der Stelle.\n\nWiebke: Die Hamburger machen das gern. Ein Fremder wird beiläufig geprüft, ob er die Antwort parat hat.\n\nNora: Ihr prüft die Leute also heimlich. Das ist gemein und gleichzeitig genial.\n\nOle: Kein Zettel, keine Regel. Nur ein Ruf, und du weißt, wer wirklich von hier ist.\n\nWiebke: Sie lernt schnell. Eben noch die Zugezogene, jetzt fast eine Kennerin.\n\nEin weiterer Kunde tritt ein, sieht Nora und ruft ihr grinsend Hummel Hummel zu. Sie holt kurz Luft.\n\nNora: Mors Mors.\n\nWiebke: Sitzt. Den Rest der Stadt schaffst du auch noch.",
+    "synopsis": "Ein Ruf, eine Antwort, ein Rätsel: Nora knackt Hamburgs geheimes Passwort Hummel Hummel.",
+    "arcType": "late-reveal",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "Hummel Hummel",
+        "definition": "a Hamburg call answered with Mors Mors, a local password"
+      },
+      {
+        "type": "expression",
+        "word": "Mors Mors",
+        "definition": "the required reply to the Hamburg greeting Hummel Hummel"
+      },
+      {
+        "type": "adjective",
+        "word": "fröhlich",
+        "surface": "fröhliches",
+        "definition": "cheerful; full of lighthearted good spirits and happiness"
+      },
+      {
+        "type": "noun",
+        "word": "Stammkunde",
+        "definition": "a regular customer who returns to the same shop often"
+      },
+      {
+        "type": "adjective",
+        "word": "ratlos",
+        "definition": "at a loss; unsure what to think, say or do"
+      },
+      {
+        "type": "noun",
+        "word": "Unsinn",
+        "definition": "nonsense; something with no sense or meaning at all"
+      },
+      {
+        "type": "noun",
+        "word": "Wasserträger",
+        "definition": "someone who once carried and delivered water for a living"
+      },
+      {
+        "type": "noun",
+        "word": "Spitzname",
+        "surface": "Spitznamen",
+        "definition": "a nickname; an informal name given to a person"
+      },
+      {
+        "type": "noun",
+        "word": "Frechheit",
+        "definition": "a cheeky, impudent remark or act that shows no respect"
+      },
+      {
+        "type": "noun",
+        "word": "Gruß",
+        "definition": "a word or gesture used to greet or acknowledge someone"
+      },
+      {
+        "type": "noun",
+        "word": "Eingeweihter",
+        "surface": "Eingeweihten",
+        "definition": "an insider who knows a secret or shared code"
+      },
+      {
+        "type": "verb",
+        "word": "kontern",
+        "surface": "kontert",
+        "definition": "to fire back a quick, fitting reply or counter"
+      },
+      {
+        "type": "noun",
+        "word": "Stichwort",
+        "definition": "a cue word that prompts a particular reaction or response"
+      },
+      {
+        "type": "verb",
+        "word": "blamieren",
+        "surface": "blamierst",
+        "definition": "to embarrass yourself and lose face in front of others"
+      },
+      {
+        "type": "verb",
+        "word": "enttarnen",
+        "surface": "enttarnt",
+        "definition": "to expose someone's hidden identity or true status"
+      },
+      {
+        "type": "adverb",
+        "word": "heimlich",
+        "definition": "secretly; done in a hidden way so others don't notice"
+      },
+      {
+        "type": "adjective",
+        "word": "parat",
+        "definition": "ready to hand; available for immediate use when needed"
+      },
+      {
+        "type": "verb",
+        "word": "prüfen",
+        "surface": "geprüft",
+        "definition": "to test or check something to see if it is right"
+      },
+      {
+        "type": "adjective",
+        "word": "gemein",
+        "definition": "mean; unkind in a deliberately hurtful, unfair way"
+      },
+      {
+        "type": "adjective",
+        "word": "genial",
+        "definition": "brilliant; showing great cleverness or truly inventive skill"
+      },
+      {
+        "type": "noun",
+        "word": "Kennerin",
+        "definition": "a woman with expert knowledge of a particular subject"
+      },
+      {
+        "type": "expression",
+        "word": "Luft holen",
+        "surface": "holt kurz Luft",
+        "definition": "to take a breath, especially to steady yourself before acting"
+      },
+      {
+        "type": "noun",
+        "word": "Fischmarkt",
+        "definition": "Hamburg's famous Sunday market by the harbour selling fish and more"
+      }
+    ],
+    "level": "c1",
+    "topic": "ankommen-im-norden",
+    "slotIndex": 3
+  }
+]

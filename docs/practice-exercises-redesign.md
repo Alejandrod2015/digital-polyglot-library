@@ -1,4 +1,4 @@
-# Practice Exercises — Rediseño (propuesta)
+# Practice Exercises; Rediseño (propuesta)
 
 Estado: propuesta para revisión. Autor: análisis sobre journey LATAM (2026-06).
 Objetivo: ejercicios **confiables y predecibles** (audio incluido) y
@@ -76,7 +76,7 @@ Quitar el `listen_choose` actual (palabra suelta + distractores random).
 No mostrar un set sin pasar cada ítem por esto (el autor lo corre, no el
 usuario):
 
-1. ¿Practica una palabra del vocab? (si no, fuera — ej. comprensión de trama en inglés)
+1. ¿Practica una palabra del vocab? (si no, fuera; ej. comprensión de trama en inglés)
 2. ¿Respuesta única? (ningún distractor sinónimo ni igual de válido)
 3. ¿Distractores mismo nivel CEFR (±1), misma categoría, insertables (género/persona/tiempo), sin nombres propios, minúscula?
 4. ¿La opción correcta NO se delata (no más larga/específica/detallada que las otras)?
@@ -85,9 +85,9 @@ usuario):
 7. ¿Sin etiqueta de hablante, sin em-dash, sin idioma mezclado en las opciones?
 8. ¿Match con significados desalineados de las palabras?
 9. ¿Resoluble solo sabiendo el idioma (no por descarte de nivel/longitud/categoría)?
-10. Gestalt: leer los ~9 seguidos — ¿variedad real de tipos? ¿algún patrón repetido?
+10. Gestalt: leer los ~9 seguidos; ¿variedad real de tipos? ¿algún patrón repetido?
 11. **Poca carga de texto.** Instrucción ≤ ~8 palabras; máximo UNA línea española corta; opciones de pocas palabras. NUNCA opciones que sean oraciones largas (eso fue el bug de la comprensión). Si un ítem exige leer mucho, se simplifica o se descarta.
-12. **Dificultad de distractores calibrada al nivel (CLAVE).** En **A2** los distractores son **claramente distintos** (significados obvios y separados) → el que entiende la oración elige el correcto. PROHIBIDO en A2: 4 opciones que son **sentidos de la misma palabra** (llevar = require/carry/take-time/wear) o casi-sinónimos — eso es discriminación de sentidos = **B1+**. Polisemia/idioms: testear su sentido básico o moverlos a niveles altos.
+12. **Dificultad de distractores calibrada al nivel (CLAVE).** En **A2** los distractores son **claramente distintos** (significados obvios y separados) → el que entiende la oración elige el correcto. PROHIBIDO en A2: 4 opciones que son **sentidos de la misma palabra** (llevar = require/carry/take-time/wear) o casi-sinónimos; eso es discriminación de sentidos = **B1+**. Polisemia/idioms: testear su sentido básico o moverlos a niveles altos.
 13. **Resaltar la palabra objetivo** en la oración de ejemplo (envolver en `[[palabra]]`; el renderer la pone en negrita/subrayada).
 
 ### Inventario de tipos (SOLO TEXTO, sin audio)
@@ -157,7 +157,7 @@ ejercicios buenos por historia, no 10 forzados. El audio añade una modalidad
 
 ---
 
-## 4. Distractores — el corazón del rediseño
+## 4. Distractores; el corazón del rediseño
 
 Un distractor válido cumple **todas**:
 
@@ -207,7 +207,7 @@ como contrato, y se **validan + bloquean**. Es costo único, revisable, editable
 
 ---
 
-## 5. Audio — arquitectura
+## 5. Audio; arquitectura
 
 **Dejar de clipear del master.** Cada ejercicio pre-renderiza su propio mp3:
 
@@ -222,11 +222,11 @@ como contrato, y se **validan + bloquean**. Es costo único, revisable, editable
   y re-render idempotente (caché content-addressed: mismo texto+voz = misma toma).
 
 **Costo (a confirmar contra el tier de ElevenLabs, no inventar $):** orden de
-magnitud = (nº ejercicios con audio) × (longitud de línea ≈ 10–15 palabras). Si
+magnitud = (nº ejercicios con audio) × (longitud de línea ≈ 10-15 palabras). Si
 ~10 featured/historia × 55 ≈ 550 líneas cortas, es un activo **perpetuo de una
 sola vez**. Las líneas de audio ya existen casi todas en los masters; alternativa
 **gratis** sería cortar el **turno** (frontera con silencio real `GAP_SEC`, de
-`audioFragments`) — determinista pero a veces incluye 2 oraciones. Recomendación:
+`audioFragments`); determinista pero a veces incluye 2 oraciones. Recomendación:
 **pre-render por ejercicio con voz de personaje** (confiable + exacto + on-brand);
 es justo el "gastar en créditos por algo confiable" que planteaste.
 
@@ -254,10 +254,10 @@ para cazar repetición de patrón/oración entre ítems.
 ## 7. Cambios de modelo
 
 `StoryPracticeExercise` (aditivo):
-- `audioText String?` — texto exacto renderizado.
-- `audioVoiceId String?` — voz usada.
-- `cefr String?` — nivel del ítem (para filtrar pool y validar distractores).
-- (opcional) `distractorSource String?` — `authored` | `pool` (auditoría).
+- `audioText String?`; texto exacto renderizado.
+- `audioVoiceId String?`; voz usada.
+- `cefr String?`; nivel del ítem (para filtrar pool y validar distractores).
+- (opcional) `distractorSource String?`; `authored` | `pool` (auditoría).
 
 Sin cambios destructivos; backfill perezoso.
 

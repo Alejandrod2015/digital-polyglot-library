@@ -246,7 +246,7 @@ function SourcesPanel({
 
   // Compact on purpose. The earlier version printed the institution, the
   // linked title, a summary of what the source supports, and the date it was
-  // checked — four lines each, so three sources weighed as much as the piece
+  // checked; four lines each, so three sources weighed as much as the piece
   // itself, at the exact moment the reader has finished and cares least.
   //
   // `supports`, `checkedAt` and `needsVerification` stay in the data: they are

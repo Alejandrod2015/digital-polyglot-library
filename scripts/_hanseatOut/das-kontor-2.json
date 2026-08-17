@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Understatement verkauft",
+    "slug": "understatement-verkauft",
+    "text": "Für den neuen Kunden hat Nora eine Präsentation voller Superlative gebaut: beste Qualität, schnellste Lieferung, unschlagbarer Preis. Carstens überfliegt die erste Folie und legt sie zur Seite.\n\nCarstens: Streichen Sie die Superlative. Alle.\n\nNora: Aber genau damit gewinnt man doch einen Kunden. Man muss auffallen.\n\nCarstens: Hier gewinnt man ihn, indem man nicht übertreibt. Ein Ehrbarer Kaufmann verspricht weniger, als er hält.\n\nNora: Und wenn die Konkurrenz das Blaue vom Himmel verspricht?\n\nCarstens: Dann liefert die Konkurrenz Enttäuschung, und wir liefern pünktlich. Der Kunde merkt sich, wer sein Wort hält.\n\nNora: Also lieber untertreiben als glänzen.\n\nCarstens: Untertreiben und dann übertreffen. Das ist die hohe Kunst.\n\nDer Kunde, Herr Voss, kommt herein. Nora stellt schlicht die Zahlen und Termine vor, ohne einen einzigen Superlativ.\n\nVoss: Kein großes Theater, keine Versprechen vom Mond. Angenehm. Bei den anderen war ich vor lauter Superlativen schon misstrauisch.\n\nNora: Wir sagen Ihnen lieber, was sicher geht, als was gut klingt.\n\nVoss: Das ist genau die Sprache, die ich hören will. Der Vertrag geht an Sie.\n\nNora: Darf ich fragen, was den Ausschlag gab? Ich war fast unhöflich zurückhaltend.\n\nVoss: Genau das. Wer nicht drängt, hat es meist nicht nötig. Vertrauen entsteht nicht durch Lautstärke.\n\nNora: Ich hätte schwören können, meine schwächere Version wäre die stärkere gewesen.\n\nCarstens: War sie auch. Understatement ist hier kein Stil, sondern ein Verkaufsargument.\n\nNora: Dann lege ich die Superlative endgültig ins Archiv. Sie haben ausgedient.\n\nOle: Merk dir das eine. Wer leise auftritt, wird am Ende am lautesten gehört.",
+    "synopsis": "Noras Präsentation strotzt vor Superlativen, doch Carstens weiß: Im Norden verkauft man mit Zurückhaltung.",
+    "arcType": "late-reveal",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Präsentation",
+        "definition": "a talk with slides used to present ideas to clients"
+      },
+      {
+        "type": "noun",
+        "word": "Superlativ",
+        "surface": "Superlative",
+        "definition": "an extreme boastful claim, like best, fastest or greatest"
+      },
+      {
+        "type": "noun",
+        "word": "Folie",
+        "definition": "a single slide in a presentation shown on screen"
+      },
+      {
+        "type": "verb",
+        "word": "überfliegen",
+        "surface": "überfliegt",
+        "definition": "to skim; to read something quickly without close attention"
+      },
+      {
+        "type": "verb",
+        "word": "streichen",
+        "surface": "Streichen",
+        "definition": "to delete or cut something out completely from a text"
+      },
+      {
+        "type": "verb",
+        "word": "auffallen",
+        "definition": "to stand out; to get noticed among many others"
+      },
+      {
+        "type": "verb",
+        "word": "übertreiben",
+        "surface": "übertreibt",
+        "definition": "to exaggerate; to make something sound bigger than it really is"
+      },
+      {
+        "type": "expression",
+        "word": "Ehrbarer Kaufmann",
+        "definition": "the honourable merchant ideal: reliability and modesty over showy promises"
+      },
+      {
+        "type": "expression",
+        "word": "das Blaue vom Himmel versprechen",
+        "surface": "das Blaue vom Himmel",
+        "definition": "to promise wildly more than one can ever deliver"
+      },
+      {
+        "type": "noun",
+        "word": "Konkurrenz",
+        "definition": "the competition; rival firms trying to win the same customers"
+      },
+      {
+        "type": "noun",
+        "word": "Enttäuschung",
+        "definition": "disappointment; the letdown when hopes are not met"
+      },
+      {
+        "type": "adjective",
+        "word": "pünktlich",
+        "definition": "on time; arriving or delivering exactly when promised"
+      },
+      {
+        "type": "expression",
+        "word": "sein Wort halten",
+        "surface": "sein Wort hält",
+        "definition": "to keep one's promise and do what one said"
+      },
+      {
+        "type": "adjective",
+        "word": "schlicht",
+        "definition": "plain and simple; without any decoration or fuss"
+      },
+      {
+        "type": "expression",
+        "word": "Versprechen vom Mond",
+        "definition": "far-fetched promises that could never realistically be kept"
+      },
+      {
+        "type": "adjective",
+        "word": "misstrauisch",
+        "definition": "suspicious; inclined to distrust and doubt other people's claims"
+      },
+      {
+        "type": "adjective",
+        "word": "unschlagbar",
+        "surface": "unschlagbarer",
+        "definition": "unbeatable; impossible for anyone else to top or beat"
+      },
+      {
+        "type": "noun",
+        "word": "Verkaufsargument",
+        "definition": "a selling point that persuades a customer to buy"
+      },
+      {
+        "type": "verb",
+        "word": "ausdienen",
+        "surface": "ausgedient",
+        "definition": "to have served its time; to be no longer useful"
+      },
+      {
+        "type": "noun",
+        "word": "Archiv",
+        "definition": "an archive; a store where old records are kept"
+      }
+    ],
+    "level": "c1",
+    "topic": "das-kontor",
+    "slotIndex": 2
+  }
+]

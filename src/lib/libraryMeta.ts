@@ -5,7 +5,7 @@
 // LibraryStory row against `@/data/books` (the static dump, 4 books in prod)
 // and dropped with `continue` anything it could not find. A buyer of a title
 // missing from the dump (Venice, Portuguese, Argentinian, Mexican) never saw
-// the book in My Library — one customer bought the same book twice thinking
+// the book in My Library; one customer bought the same book twice thinking
 // the purchase had failed. The dump is a build-time snapshot; the catalog
 // tables are the truth, so the lookup happens here, server-side, and the
 // client renders the saved title/cover when even this returns nothing.

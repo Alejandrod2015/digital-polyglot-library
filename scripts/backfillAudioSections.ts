@@ -1,6 +1,6 @@
 /**
  * Backfill `audioFragments` for an existing multi-voice story so it becomes
- * editable in the Studio audio editor — EXACTLY the method that produced
+ * editable in the Studio audio editor; EXACTLY the method that produced
  * La combi equivocada (which the user validated as good):
  *
  *   1. Scribe (ElevenLabs STT) the existing master → word-level timestamps.
@@ -11,7 +11,7 @@
  *      (ffmpeg silencedetect), falling back to the raw midpoint. This is
  *      what keeps cuts from clipping words.
  *   4. Slice the master at those boundaries into per-section files
- *      (re-encode, NO loudnorm — the master is already at catalog level)
+ *      (re-encode, NO loudnorm; the master is already at catalog level)
  *      and upload each to R2.
  *   5. Write `audioFragments` (index/speaker/voiceId/startSec/endSec/url/
  *      text). The master itself is NEVER rewritten → 0% risk to the audio
@@ -160,7 +160,7 @@ async function backfill(slug: string, dry: boolean) {
   const spec: any[] = Array.isArray(story.dialogueSpec) ? (story.dialogueSpec as any) : [];
   if (spec.length < 2) { console.log(`\n[${slug}] dialogueSpec too short (${spec.length})`); return; }
 
-  console.log(`\n[${slug}] ${spec.length} segments — scribing master…`);
+  console.log(`\n[${slug}] ${spec.length} segments; scribing master…`);
   const tmp = mkdtempSync(join(tmpdir(), "bf-"));
   const masterPath = join(tmp, "master.mp3");
   const masterBuf = await download(story.audioUrl);

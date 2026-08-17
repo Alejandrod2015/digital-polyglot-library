@@ -21,7 +21,7 @@ if (!ELEVENLABS_API_KEY) {
   process.exit(1);
 }
 
-// Carl — the default German voice (per src/lib/elevenlabs.ts line 122-124)
+// Carl, the default German voice (per src/lib/elevenlabs.ts line 122-124)
 const VOICE_ID = "Ww7Sq9tx9CCOiNOwWgsx";
 const VOICE_LABEL = "elevenlabs/carl";
 const MODEL_ID = "eleven_multilingual_v2";
@@ -151,7 +151,7 @@ async function main() {
     const stamp = new Date().toLocaleTimeString();
     console.log(`\n[${stamp}] (${idx + 1}/${stories.length}) ${story.title}`);
     if (!story.text || !story.title) {
-      console.log("  ⚠️ skipping — missing text/title");
+      console.log("  ⚠️ skipping; missing text/title");
       continue;
     }
     const narration = buildAudioNarrationText(story.title, story.text);

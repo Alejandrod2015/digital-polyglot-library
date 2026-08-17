@@ -829,6 +829,8 @@ type AcquisitionPayload = {
     targetLanguages: string[];
     /** Declarado en el formulario de beta, para quien aún no onboardeó. */
     betaLanguages?: string[];
+    /** Estado en el programa de beta, si esta persona solicitó. */
+    betaStatus?: string | null;
     /** Deducido de lo que abrió, cuando no hay nada declarado. */
     inferredLanguages?: string[];
     level: string | null;
@@ -855,6 +857,57 @@ function formatListened(seconds: number): string {
   const m = Math.floor(seconds / 60);
   const s = seconds % 60;
   return s === 0 ? `${m}m` : `${m}m ${s}s`;
+}
+
+/**
+ * Distintivo de beta tester en la fila del usuario.
+ *
+ * Existe porque el "(beta)" de la columna de idioma NO dice quién es la
+ * persona, dice de dónde sacamos el idioma que mostramos, y sólo aparece
+ * cuando no hubo onboarding. Un beta tester que sí completó el onboarding
+ * salía en la tabla exactamente igual que cualquier otro usuario. Este chip
+ * cuelga del email y siempre está, haya onboardeado o no.
+ *
+ * Se distingue a simple vista quién está DENTRO del programa (invitado o
+ * aceptado, mismos estados que `ACTIVE_STATUSES` en `src/lib/betaProgram.ts`)
+ * de quien sólo solicitó: mezclarlos era la mitad del problema original.
+ */
+const BETA_STATUS_LABEL: Record<string, string> = {
+  accepted: "aceptado",
+  invited: "invitado",
+  waitlist: "en espera",
+  pending: "sin triar",
+  declined: "rechazado",
+};
+const BETA_STATUS_IN = new Set(["invited", "accepted"]);
+
+function BetaBadge({ status }: { status: string }) {
+  const inProgram = BETA_STATUS_IN.has(status);
+  const label = BETA_STATUS_LABEL[status] ?? status;
+  return (
+    <span
+      title={
+        inProgram
+          ? `Beta tester (${label}). Está dentro del programa.`
+          : `Solicitó la beta (${label}). Todavía no está dentro del programa.`
+      }
+      style={{
+        marginLeft: 6,
+        padding: "1px 6px",
+        borderRadius: 4,
+        fontSize: 10,
+        fontWeight: 700,
+        letterSpacing: "0.04em",
+        textTransform: "uppercase",
+        whiteSpace: "nowrap",
+        color: inProgram ? "#fcd34d" : "var(--mx-muted, #94a3b8)",
+        backgroundColor: inProgram ? "rgba(252, 211, 77, 0.14)" : "rgba(148, 163, 184, 0.12)",
+        border: `1px solid ${inProgram ? "rgba(252, 211, 77, 0.3)" : "rgba(148, 163, 184, 0.22)"}`,
+      }}
+    >
+      beta · {label}
+    </span>
+  );
 }
 
 function FunnelBar({
@@ -1038,6 +1091,7 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                     <td style={{ padding: "4px 6px" }}>
                       {r.name ?? "-"}
                       <span style={{ opacity: 0.5 }}> · {r.email ?? "-"}</span>
+                      {r.betaStatus ? <BetaBadge status={r.betaStatus} /> : null}
                     </td>
                     <td style={{ padding: "4px 6px" }}>
                       {r.targetLanguages.length ? (
@@ -1049,11 +1103,15 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                         // Declarado por la persona, sólo que en el formulario de
                         // beta y no en el onboarding de la app. Es un dato suyo,
                         // no una suposición nuestra, así que se muestra normal y
-                        // sólo se marca de dónde salió.
+                        // sólo se marca de dónde salió. La etiqueta dice "de su
+                        // solicitud" y no "(beta)": lo segundo se leía como si
+                        // marcara a los beta testers, cuando el distintivo de
+                        // beta tester vive en la columna de usuario y esto sólo
+                        // habla de la procedencia del idioma.
                         <span title="Declarado en su solicitud de beta. Todavía no ha completado el onboarding de la app.">
                           {r.betaLanguages.join("/")}
                           {r.level ? ` · ${r.level}` : ""}
-                          <span style={{ opacity: 0.55 }}> (beta)</span>
+                          <span style={{ opacity: 0.55 }}> (de su solicitud)</span>
                         </span>
                       ) : r.inferredLanguages?.length ? (
                         // Deducido, no declarado, y se distingue a simple vista:

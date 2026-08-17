@@ -12,7 +12,7 @@
  * CONSERVATIVE by design: the splitter is dialogue-aware (it does NOT break
  * inside quoted speech + attribution: „…!", sagte er.), and if the reduced
  * candidate looks broken (starts with stray punctuation, drops the word, or is
- * too short) the ORIGINAL text is returned unchanged — we never swap in a worse
+ * too short) the ORIGINAL text is returned unchanged; we never swap in a worse
  * value.
  */
 

@@ -5,7 +5,7 @@ const path = require("path");
 /**
  * Patches ClerkViewFactory.configure() to explicitly await refreshEnvironment()
  * before returning. Without this, AuthView renders while Clerk.shared.environment
- * is still nil — showing only the title/subtitle with no email field or social buttons.
+ * is still nil; showing only the title/subtitle with no email field or social buttons.
  */
 module.exports = function patchClerkViewFactory(config) {
   return withDangerousMod(config, [
@@ -51,7 +51,7 @@ module.exports = function patchClerkViewFactory(config) {
       } else if (contents.includes("refreshEnvironment")) {
         console.log("✅ ClerkViewFactory.swift already patched, skipping");
       } else {
-        console.warn("⚠️  ClerkViewFactory.swift patch target not found — Clerk plugin may have changed its template");
+        console.warn("⚠️  ClerkViewFactory.swift patch target not found; Clerk plugin may have changed its template");
       }
 
       return modConfig;

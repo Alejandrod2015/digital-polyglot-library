@@ -105,7 +105,7 @@ export default function GA4Tracker({
   // Login / sign-up event, handed over by /auth/post-login as `?auth=`.
   //
   // It lives here rather than on that route because the route now redirects on
-  // the server, before any JavaScript runs — which is the whole point: a login
+  // the server, before any JavaScript runs; which is the whole point: a login
   // must not depend on hydration. The marker is removed from the URL as soon
   // as it is read, so a refresh or a back-navigation cannot double-count it,
   // and a shared link never carries it.

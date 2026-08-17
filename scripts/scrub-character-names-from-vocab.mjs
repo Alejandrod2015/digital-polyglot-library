@@ -8,7 +8,7 @@
 // texto plano.
 //
 // Conserva: vocab items que matcheen roles/títulos legítimos
-// (Guardabosques, Profe, Don, Doña) — sólo se eliminan first
+// (Guardabosques, Profe, Don, Doña); sólo se eliminan first
 // names, no roles. Heurística: si el token aparece TANTO solo como
 // speaker label (e.g. "Mateo:") como también precedido de un rol
 // (e.g. "Guardabosques Julio:"), se considera nombre propio. Roles
@@ -106,7 +106,7 @@ function stripVocabSpans(text, namesLc) {
 // estilo. Estrategia: edición textual directa sobre el contenido raw.
 // Más seguro: regex para encontrar cada `"word": "X"` + def y borrar
 // el item del array vocab del bloque correspondiente. Demasiado
-// frágil — mejor regenerar con JSON.stringify del objeto modificado.
+// frágil; mejor regenerar con JSON.stringify del objeto modificado.
 function reserialize(book) {
   return `import { Book } from "@/types/books";\n\nexport const ${book.id.replace(/-/g, "")}: Book = ${JSON.stringify(book, null, 2)};\n`;
 }

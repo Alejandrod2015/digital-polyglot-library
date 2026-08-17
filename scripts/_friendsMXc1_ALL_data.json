@@ -1,0 +1,3355 @@
+[
+  {
+    "topic": "ciudad-de-mexico",
+    "slotIndex": 1,
+    "title": "La Arena lo suelta solita",
+    "arcType": "daily-encounter",
+    "synopsis": "Regina, chilanga de hueso colorado, lleva a su compa Nacho a su primera función de lucha libre en la Arena México. Nacho llega tieso y callado, sin saber cómo comportarse entre el graderío. Ella no le enseña gran cosa: es la propia Arena, con su desmadre, sus mentadas coreadas y sus planchas, la que termina soltándolo. Para la última caída, Nacho grita más fuerte que nadie y ya pregunta cuándo cae la próxima.",
+    "text": "Regina, chilanga de hueso colorado, llevaba a Nacho, su compa del taller, a su primera función de lucha en la Arena México. Ella iba de guía: se sabía cada máscara, cada rudo y cada grito del graderío. «Aquí no vienes a ver, güey, vienes a gritar», le advirtió.\n\nSubieron entre el olor a tacos de canasta y cerveza tibia. Regina sentó a Nacho pegadito al ring, le puso una chela en la mano y le señaló al técnico que salía entre reflectores. «Ese es el bueno; cuando lo tiren, te paras y reclamas, ¿va?» Nacho asintió, apenado, sin soltar la lengua todavía.\n\nLa primera caída fue un desmadre. El rudo hizo trampa a placer, el réferi se hizo güey, y la Arena entera se vino abajo con una sola mentada coreada hasta el techo. Regina gritaba parada, señalando, insultando, y de reojo notó que Nacho ya no estaba tieso en su asiento.\n\nPara la segunda caída, Nacho ya berreaba con todo, rojo, feliz, mentándole la madre al rudo como si le debiera dinero. Regina se moría de risa. No le había enseñado nada; la Arena lo estaba haciendo solita, como hace con todos.\n\nCerraron con una plancha del técnico desde la tercera cuerda. Nacho abrazó a Regina sin pensarlo. «No manches, esto está bien chido», dijo, ronco de tanto gritar. Salieron sudados a la calle, y él ya preguntaba cuándo caía la próxima función.",
+    "vocab": [
+      {
+        "word": "de hueso colorado",
+        "surface": "de hueso colorado",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "completely and thoroughly what one claims to be, true to the core"
+      },
+      {
+        "word": "compa",
+        "surface": "compa",
+        "type": "noun",
+        "register": "slang",
+        "definition": "close friend or buddy in casual Mexican and Latin American speech"
+      },
+      {
+        "word": "güey",
+        "surface": "güey",
+        "type": "slang",
+        "register": "slang",
+        "definition": "extremely common Mexican filler word meaning dude, guy, or man"
+      },
+      {
+        "word": "chela",
+        "surface": "chela",
+        "type": "noun",
+        "register": "slang",
+        "definition": "a cold beer in casual Mexican and Latin American slang"
+      },
+      {
+        "word": "va",
+        "surface": "¿va?",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "casual tag meaning okay or agreed, confirming a plan or deal"
+      },
+      {
+        "word": "apenado",
+        "surface": "apenado",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "feeling shy or embarrassed, slightly awkward in a social situation"
+      },
+      {
+        "word": "soltar la lengua",
+        "surface": "soltar la lengua",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "to start talking freely and loosen up after being reserved"
+      },
+      {
+        "word": "desmadre",
+        "surface": "desmadre",
+        "type": "noun",
+        "register": "slang",
+        "definition": "a wild chaotic mess or rowdy uproar in Mexican slang"
+      },
+      {
+        "word": "hacerse güey",
+        "surface": "se hizo güey",
+        "type": "expression",
+        "register": "slang",
+        "definition": "played dumb or pretended not to notice something on purpose"
+      },
+      {
+        "word": "venirse abajo",
+        "surface": "se vino abajo",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "erupted or collapsed emotionally, everything breaking loose at once"
+      },
+      {
+        "word": "berreaba",
+        "surface": "berreaba",
+        "type": "verb",
+        "register": "slang",
+        "definition": "was yelling or bawling loudly with raw excitement"
+      },
+      {
+        "word": "con todo",
+        "surface": "con todo",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "with full force and total energy, holding nothing back"
+      },
+      {
+        "word": "mentar la madre",
+        "surface": "mentándole la madre",
+        "type": "expression",
+        "register": "vulgar",
+        "definition": "to hurl insults and curses aggressively at someone"
+      },
+      {
+        "word": "morirse de risa",
+        "surface": "se moría de risa",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "to laugh uncontrollably because something is extremely funny"
+      },
+      {
+        "word": "plancha",
+        "surface": "plancha",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a wrestling body splash launched from the ropes onto an opponent"
+      },
+      {
+        "word": "no manches",
+        "surface": "No manches",
+        "type": "expression",
+        "register": "slang",
+        "definition": "expression of disbelief meaning no way or come on"
+      },
+      {
+        "word": "chido",
+        "surface": "chido",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "really cool, great, or awesome in Mexican everyday slang"
+      },
+      {
+        "word": "ronco",
+        "surface": "ronco",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "hoarse in the voice from too much shouting or strain"
+      },
+      {
+        "word": "sudados",
+        "surface": "sudados",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "sweaty and drenched with perspiration after physical exertion"
+      },
+      {
+        "word": "tacos de canasta",
+        "surface": "tacos de canasta",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "steamed basket tacos sold cheap from a bicycle vendor"
+      },
+      {
+        "word": "el técnico",
+        "surface": "técnico",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the good guy wrestler the crowd cheers, opposite of the rudo"
+      }
+    ]
+  },
+  {
+    "topic": "ciudad-de-mexico",
+    "slotIndex": 2,
+    "title": "La chinampa de Marisol",
+    "arcType": "late-reveal",
+    "synopsis": "Marisol lleva a Regina a Xochimilco, pero no a la fiesta de trajinera con caguamas y marimba que ella esperaba. Reman en silencio hasta una chinampa sembrada de cempasúchil, donde Marisol maniobra la vara como una experta. Regina no reconoce a su amiga de oficina, ahora descalza y embarrada entre los surcos. Al caer la tarde, Marisol suelta la bomba que lo explica todo: renunció a su chamba para rescatar la chinampa familiar que iban a rematar.",
+    "text": "Regina se subió a la trajinera de Marisol, su amiga de toda la vida, sin saber bien a qué iban. No era paseo de fiesta: nada de marimba ni de caguamas, solo ellas dos remando hacia el canal más callado de Xochimilco. Marisol iba seria, cosa rara en ella.\n\nMarisol maniobraba la vara como si hubiera nacido en el agua. La hundía en el canal verdoso, esquivaba lirios y basura, y al fin amarró en una chinampa sembrada de lechugas y cempasúchil. «Ponte trucha, no te vayas a caer al canal», le advirtió a Regina, tendiéndole la mano callosa.\n\nCaminaron entre los surcos. Marisol arrancaba hierbas, revisaba el riego y hablaba de la tierra con un cariño que Regina nunca le había visto. La chilanga, que siempre conoció a su amiga fajada en juntas y trajes sastre, no cuadraba a esta Marisol descalza y embarrada hasta las rodillas.\n\nAl caer la tarde, Marisol soltó la bomba: había renunciado a la chamba, al sueldo, a la oficina, a todo. «Esta chinampa era de mi bisabuelo y la iban a rematar, güey. La compré yo, con mis ahorros.» Regina se quedó muda, con la boca abierta.\n\nEntonces todo cuadró: el silencio, la vara en sus manos, la mirada nueva. No era un paseo turístico ni una peda en trajinera. Marisol le estaba enseñando la apuesta más gruesa de su vida, y Regina, por primera vez, no supo qué decir.",
+    "vocab": [
+      {
+        "word": "trajinera",
+        "surface": "trajinera",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a flat colorful boat poled through the canals of Xochimilco"
+      },
+      {
+        "word": "caguamas",
+        "surface": "caguamas",
+        "type": "noun",
+        "register": "slang",
+        "definition": "large family size bottles of beer in Mexican slang"
+      },
+      {
+        "word": "remando",
+        "surface": "remando",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "rowing or poling a boat forward through the water"
+      },
+      {
+        "word": "de toda la vida",
+        "surface": "de toda la vida",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "lifelong, known and trusted for as long as one remembers"
+      },
+      {
+        "word": "amarrar",
+        "surface": "amarró",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "tied up or moored the boat securely to something"
+      },
+      {
+        "word": "chinampa",
+        "surface": "chinampa",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "an artificial farming island built on the lake canals of Xochimilco"
+      },
+      {
+        "word": "cempasúchil",
+        "surface": "cempasúchil",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the bright orange Mexican marigold flower used on Day of the Dead"
+      },
+      {
+        "word": "ponerse trucha",
+        "surface": "Ponte trucha",
+        "type": "expression",
+        "register": "slang",
+        "definition": "stay sharp and alert, watch out for something in Mexican slang"
+      },
+      {
+        "word": "fajada",
+        "surface": "fajada",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "grinding hard and working intensely without letting up at all"
+      },
+      {
+        "word": "no cuadrar",
+        "surface": "no cuadraba",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "did not add up or fit with what one expected"
+      },
+      {
+        "word": "embarrada",
+        "surface": "embarrada",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "smeared or covered in mud from the fields"
+      },
+      {
+        "word": "soltar la bomba",
+        "surface": "soltó la bomba",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "dropped the bombshell, revealing shocking news all at once"
+      },
+      {
+        "word": "chamba",
+        "surface": "chamba",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "job or paid work in everyday Mexican and Latin American speech"
+      },
+      {
+        "word": "rematar",
+        "surface": "rematar",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "to sell off cheaply or auction a property to the highest bidder"
+      },
+      {
+        "word": "güey",
+        "surface": "güey",
+        "type": "slang",
+        "register": "slang",
+        "definition": "extremely common Mexican filler word meaning dude, guy, or man"
+      },
+      {
+        "word": "muda",
+        "surface": "muda",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "speechless and unable to say a single word from shock"
+      },
+      {
+        "word": "peda",
+        "surface": "peda",
+        "type": "noun",
+        "register": "slang",
+        "definition": "a boozy party or heavy drinking session in Mexican slang"
+      },
+      {
+        "word": "gruesa",
+        "surface": "gruesa",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "huge, serious, or heavy in weight and consequence, slang usage"
+      },
+      {
+        "word": "apuesta",
+        "surface": "apuesta",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a bet or bold gamble taken on an uncertain outcome"
+      },
+      {
+        "word": "los lirios",
+        "surface": "lirios",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the floating water lilies that clog the calm Xochimilco canals"
+      },
+      {
+        "word": "la hierba",
+        "surface": "hierbas",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "weeds or wild plants pulled out from between the crops"
+      },
+      {
+        "word": "la lechuga",
+        "surface": "lechugas",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "lettuce, the leafy green grown in rows on the chinampa"
+      }
+    ]
+  },
+  {
+    "topic": "ciudad-de-mexico",
+    "slotIndex": 3,
+    "title": "Para eso está la banda",
+    "arcType": "harmonic-close",
+    "synopsis": "Corren a Chucho de la chamba y se encierra días en su depa de la Roma. Regina no le pregunta nada: lo saca casi a rastras a La Covadonga, su cantina de siempre, con dominó, botana y tequilas derechos. Entre partida y partida lo pica con recuerdos hasta que Chucho vuelve a cotorrear y a mentar madres contra su exjefe. Cierran con tacos al pastor en la banqueta, y él por fin respira hondo.",
+    "text": "Chucho, el mejor amigo de Regina desde la prepa, andaba de la fregada: lo habían corrido de la chamba y llevaba días encerrado en su depa de la Roma. Regina no le preguntó nada por teléfono; llegó a su puerta y lo sacó casi a rastras a la calle.\n\nLo llevó a La Covadonga, la cantina de siempre, y pidió lo mismo de siempre: dominó, una botana surtida y dos tequilas derechos. «Ni modo que te quedes ahí amargándote, güey», le dijo, barajando las fichas sobre la mesa de madera vieja. Chucho medio sonrió, todavía apagado.\n\nEntre partida y partida, Regina lo fue picando con recuerdos. Le sacó la vez que reprobaron juntos, la banda del barrio, las veces que él la había sacado a ella de un pozo. Chucho empezó a soltarse, a cotorrear, a mentar madres contra su exjefe con más coraje que tristeza.\n\nCerraron la noche con unos tacos al pastor en la esquina, con todo y piña, parados en la banqueta. «Gracias, neta», dijo Chucho con la boca llena. Regina le acomodó un zape cariñoso en la nuca. «Para eso está la banda, güey», respondió, encogiéndose de hombros.\n\nY ahí, entre salsa verde, humo de carbón y carcajadas, Chucho por fin respiró hondo. No estaba arreglado nada todavía, pero volvía a ser el mismo cabrón de siempre, y eso, para Regina, ya era un montón.",
+    "vocab": [
+      {
+        "word": "de la fregada",
+        "surface": "de la fregada",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "feeling awful, rough, or terrible about how things are going"
+      },
+      {
+        "word": "corrido",
+        "surface": "corrido",
+        "type": "verb",
+        "register": "slang",
+        "definition": "fired or kicked out abruptly from a job in Mexican speech"
+      },
+      {
+        "word": "depa",
+        "surface": "depa",
+        "type": "noun",
+        "register": "slang",
+        "definition": "a short casual word for an apartment or flat"
+      },
+      {
+        "word": "a rastras",
+        "surface": "a rastras",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "by dragging someone along reluctantly and against their will"
+      },
+      {
+        "word": "botana",
+        "surface": "botana",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a snack or appetizer served alongside drinks at a bar"
+      },
+      {
+        "word": "derechos",
+        "surface": "derechos",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "straight, meaning liquor served neat without ice or mixer"
+      },
+      {
+        "word": "ni modo",
+        "surface": "Ni modo",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "oh well, nothing to be done, accepting things as they are"
+      },
+      {
+        "word": "amargarse",
+        "surface": "amargándote",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "getting bitter and sulking, wallowing in your own gloom"
+      },
+      {
+        "word": "picando",
+        "surface": "picando",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "needling or egging someone on to provoke a reaction"
+      },
+      {
+        "word": "la banda",
+        "surface": "la banda",
+        "type": "noun",
+        "register": "slang",
+        "definition": "the crew or gang of close friends in Mexican slang"
+      },
+      {
+        "word": "soltarse",
+        "surface": "soltarse",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "to loosen up and open up after being closed off"
+      },
+      {
+        "word": "cotorrear",
+        "surface": "cotorrear",
+        "type": "verb",
+        "register": "slang",
+        "definition": "to chatter, joke, and hang out casually in Mexican slang"
+      },
+      {
+        "word": "mentar madres",
+        "surface": "mentar madres",
+        "type": "expression",
+        "register": "vulgar",
+        "definition": "to swear and curse furiously at someone in Mexican slang"
+      },
+      {
+        "word": "al pastor",
+        "surface": "al pastor",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "the marinated pork grilled on a vertical spit for tacos"
+      },
+      {
+        "word": "banqueta",
+        "surface": "banqueta",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the sidewalk or pavement beside a street in Mexican usage"
+      },
+      {
+        "word": "neta",
+        "surface": "neta",
+        "type": "expression",
+        "register": "slang",
+        "definition": "the honest truth, for real, sincerely in Mexican slang"
+      },
+      {
+        "word": "zape",
+        "surface": "zape",
+        "type": "noun",
+        "register": "slang",
+        "definition": "a light playful smack on the back of the head"
+      },
+      {
+        "word": "güey",
+        "surface": "güey",
+        "type": "slang",
+        "register": "slang",
+        "definition": "extremely common Mexican filler word meaning dude, guy, or man"
+      },
+      {
+        "word": "cabrón",
+        "surface": "cabrón",
+        "type": "noun",
+        "register": "vulgar",
+        "definition": "crude word for guy, used affectionately among close friends here"
+      },
+      {
+        "word": "un montón",
+        "surface": "un montón",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "a whole lot, a great deal, plenty in casual speech"
+      },
+      {
+        "word": "el carbón",
+        "surface": "carbón",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the charcoal whose smoke flavors the street tacos al pastor"
+      },
+      {
+        "word": "la salsa verde",
+        "surface": "salsa verde",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "green salsa of tomatillo and chili spooned over the tacos"
+      }
+    ]
+  },
+  {
+    "topic": "guadalajara",
+    "slotIndex": 1,
+    "title": "Birria antes del mediodía",
+    "arcType": "reframe-turn",
+    "synopsis": "Regina llega al mercado San Juan de Dios convencida, muy a lo chilango, de que la birria no es más que barbacoa con otro nombre. Su cuais Mauricio, tapatío orgulloso, la reta a probar un taco antes de abrir la boca. Entre el consomé humeante de doña Lupe y las bromas de la marchanta, la capitalina tendrá que tragarse su teoría junto con el primer bocado. ¿Aguantará su soberbia frente a la birria tapatía?",
+    "text": "Regina llegó al mercado San Juan de Dios con un hambre feroz y una teoría muy chilanga: la birria no era más que barbacoa disfrazada. Su cuais Mauricio, tapatío de hueso colorado, la jalaba entre los puestos sin dejar de burlarse. En el aire flotaba olor a consomé y a tortilla recién hecha.\n\n«¿Qué onda, mi Regina? Antes de opinar, primero le entras al taco», soltó él con retintín. Ella puso los ojos en blanco y respondió que en la capital también sabían de barbacoa. «Órale, pero aquí no se compara, neta», remató Mauricio.\n\nLa marchanta, doña Lupe, les sirvió dos tacos dorados y un caldo humeante que olía a fiesta. «Pruébenle, muchachos; esta birria lleva desde las cinco en la lumbre», presumió la señora. Regina le dio la primera mordida y se quedó callada un buen rato.\n\n«Ay, caray. Esto no es barbacoa ni de chiste», admitió por fin, todavía masticando. Mauricio estiró la mano para chocarla, muerto de orgullo por su tierra. «¿Ya viste? La raza de aquí no juega con su comida», dijo entre risas.\n\n«Retiro lo dicho; mi teoría estaba bien chafa», reconoció Regina hundiendo la cuchara en el caldo. Doña Lupe, sin dejar de atender, le guiñó un ojo. «Todos llegan creyendo que ya saben, mija, y se van pidiendo la receta», sentenció con calma. Mauricio pidió la segunda tanda para seguir cotorreando un rato largo, ya sin discutir quién tenía la razón.",
+    "vocab": [
+      {
+        "word": "birria",
+        "surface": "birria",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a Guadalajara stew of meat slow cooked in a spiced chili broth"
+      },
+      {
+        "word": "chilanga",
+        "surface": "chilanga",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "a woman from Mexico City, often said with playful teasing pride"
+      },
+      {
+        "word": "cuais",
+        "surface": "cuais",
+        "type": "noun",
+        "register": "slang",
+        "definition": "close buddy or pal in casual Mexican street slang"
+      },
+      {
+        "word": "tapatío",
+        "surface": "tapatío",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "someone or something native to Guadalajara in the state of Jalisco"
+      },
+      {
+        "word": "de hueso colorado",
+        "surface": "de hueso colorado",
+        "type": "expression",
+        "register": "slang",
+        "definition": "loyal to the core, devoted through and through to your roots"
+      },
+      {
+        "word": "jalar",
+        "surface": "jalaba",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "kept pulling someone along or dragging them to come, from jalar"
+      },
+      {
+        "word": "qué onda",
+        "surface": "Qué onda",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "casual greeting meaning what is up or how are you doing"
+      },
+      {
+        "word": "entrarle",
+        "surface": "le entras",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "you dive in and give it a try, from the verb entrarle"
+      },
+      {
+        "word": "órale",
+        "surface": "Órale",
+        "type": "expression",
+        "register": "slang",
+        "definition": "all purpose Mexican shout of agreement, surprise or encouragement"
+      },
+      {
+        "word": "neta",
+        "surface": "neta",
+        "type": "expression",
+        "register": "slang",
+        "definition": "the honest truth, used to stress that you truly mean it"
+      },
+      {
+        "word": "marchanta",
+        "surface": "marchanta",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a market stall vendor you buy from again and again"
+      },
+      {
+        "word": "caldo",
+        "surface": "caldo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a hot brothy soup here ladled beside the birria tacos"
+      },
+      {
+        "word": "caray",
+        "surface": "caray",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "mild exclamation of surprise standing in for a coarser word"
+      },
+      {
+        "word": "ni de chiste",
+        "surface": "ni de chiste",
+        "type": "expression",
+        "register": "slang",
+        "definition": "no way at all, not even remotely, not even joking"
+      },
+      {
+        "word": "la raza",
+        "surface": "La raza",
+        "type": "expression",
+        "register": "slang",
+        "definition": "the folks, your people or crew in warm Mexican slang"
+      },
+      {
+        "word": "chafa",
+        "surface": "chafa",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "cheap, shoddy or lame, of embarrassingly poor quality"
+      },
+      {
+        "word": "mija",
+        "surface": "mija",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "affectionate address meaning dear, a contraction of mi hija"
+      },
+      {
+        "word": "cotorrear",
+        "surface": "cotorreando",
+        "type": "verb",
+        "register": "slang",
+        "definition": "chatting and hanging out just for the fun of it"
+      },
+      {
+        "word": "lumbre",
+        "surface": "lumbre",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the open fire or hot coals used for slow cooking"
+      },
+      {
+        "word": "retintín",
+        "surface": "retintín",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a mocking sing song tone used to tease someone"
+      },
+      {
+        "word": "tanda",
+        "surface": "tanda",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a fresh round or batch, another serving brought out at once"
+      }
+    ]
+  },
+  {
+    "topic": "guadalajara",
+    "slotIndex": 2,
+    "title": "El mariachi y el penal",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "En la Plaza de los Mariachis, Regina se mueve como pez en el agua: ha venido a Guadalajara tantas veces que conoce cada cantina y cada truco de la noche. Su amiga tapatía Alondra esconde el celular bajo la mesa para seguir a las Chivas, apenada. Cuando Regina predice que el bolero y el gol caerán al mismo tiempo, la ciudad entera parece darle la razón. ¿Puede una chilanga conocer Guadalajara mejor que quien nació ahí?",
+    "text": "Aquella noche, en la Plaza de los Mariachis, Regina se movía como pez en el agua: había venido a Guadalajara tantas veces que se sabía cada cantina de memoria. A su lado, su amiga Alondra, tapatía de toda la vida, escondía el celular bajo la mesa siguiendo a las Chivas. «Tranquila, prima, que yo también le voy al futbol; no me lo tienes que ocultar», le dijo Regina.\n\nUn mariachi de trajes plateados se acomodó frente a ellas y arrancó con un bolero lentísimo. «En cuanto suban al clímax, va a caer el gol; tú confía en mí», susurró Regina guiñando un ojo. Alondra la miró incrédula, con la vista clavada en la pantalla, donde el árbitro marcaba un penal en el último minuto.\n\n«No manches, ¿cómo sabías?», soltó Alondra tapándose la boca. El trompetista, que también iba viendo el partido de reojo, sostuvo la nota más de la cuenta. En la plaza, medio público cantaba y la otra mitad rezaba por el arquero.\n\nEl delantero corrió, pateó, y la red se sacudió con el gol. Entonces el mariachi entero, sin ponerse de acuerdo, remató la canción con un grito que retumbó por toda la plaza. «¡Ándale, te lo dije! Aquí el bolero y el gol caen juntitos», festejó Regina, muerta de risa.\n\nAlondra guardó el celular, todavía sin creer lo que acababa de pasar. «No puede ser que tú, la chilanga, conozcas mi ciudad mejor que yo», reconoció, coreando la melodía a todo pulmón. Regina se acomodó en la silla, saboreando su papel de anfitriona, mientras las trompetas presumían el triunfo por toda la plaza.",
+    "vocab": [
+      {
+        "word": "pez en el agua",
+        "surface": "pez en el agua",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "completely in your element, at ease and thriving in a place"
+      },
+      {
+        "word": "cantina",
+        "surface": "cantina",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a traditional Mexican bar serving drinks and hearty botanas"
+      },
+      {
+        "word": "las Chivas",
+        "surface": "Chivas",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Guadalajara's beloved football club, formally Club Deportivo Guadalajara"
+      },
+      {
+        "word": "penal",
+        "surface": "penal",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a penalty kick awarded for a foul inside the box"
+      },
+      {
+        "word": "no manches",
+        "surface": "No manches",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "no way or you must be kidding, a softer clean exclamation"
+      },
+      {
+        "word": "de reojo",
+        "surface": "de reojo",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "out of the corner of your eye, glancing sideways discreetly"
+      },
+      {
+        "word": "rematar",
+        "surface": "remató",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "finished it off with a decisive final touch, from rematar"
+      },
+      {
+        "word": "ándale",
+        "surface": "Ándale",
+        "type": "expression",
+        "register": "slang",
+        "definition": "come on or way to go, a lively Mexican nudge of approval"
+      },
+      {
+        "word": "muerta de risa",
+        "surface": "muerta de risa",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "cracking up, laughing so hard you can barely stand"
+      },
+      {
+        "word": "corear",
+        "surface": "coreando",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "singing along in chorus with the whole crowd, from corear"
+      },
+      {
+        "word": "a todo pulmón",
+        "surface": "a todo pulmón",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "at the very top of your lungs, with full force"
+      },
+      {
+        "word": "presumir",
+        "surface": "presumían",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "were bragging or showing off, from the verb presumir"
+      },
+      {
+        "word": "irle a",
+        "surface": "le voy",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "to root for and support a particular sports team you love"
+      },
+      {
+        "word": "el mariachi",
+        "surface": "mariachi",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a Mexican band of trumpets, violins and guitars in charro suits"
+      },
+      {
+        "word": "el partido",
+        "surface": "partido",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the football match being played and followed on the phone"
+      },
+      {
+        "word": "el gol",
+        "surface": "gol",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a goal scored when the ball crosses into the net"
+      },
+      {
+        "word": "la pantalla",
+        "surface": "pantalla",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the phone screen she keeps watching the live match on"
+      },
+      {
+        "word": "el grito",
+        "surface": "grito",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a loud shout that bursts out from the whole crowd"
+      },
+      {
+        "word": "guiñar",
+        "surface": "guiñando",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "to wink, closing one eye quickly as a playful signal"
+      },
+      {
+        "word": "el celular",
+        "surface": "celular",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the cellphone, the everyday Mexican word for a mobile"
+      }
+    ]
+  },
+  {
+    "topic": "guadalajara",
+    "slotIndex": 3,
+    "title": "Tortas ahogadas para la cruda",
+    "arcType": "late-reveal",
+    "synopsis": "A la mañana siguiente, Regina despierta con una cruda monumental tras recorrer las cantinas de Tlaquepaque probando tequila. Su amiga Bere llega salvadora, con dos tortas ahogadas capaces de resucitar a cualquiera. Entre mordidas y salsa de chile de árbol, Regina presume el tequila añejo que tanto le gustó anoche y del que hasta se compró una botella. Lo que Bere le confiesa al final le arruina la presunción y le saca una carcajada enorme.",
+    "text": "A la mañana siguiente, Regina despertó con una cruda de campeonato y la boca como lija. La noche anterior, Bere, su amiga tapatía, la había paseado por las cantinas de Tlaquepaque probando tequila hasta perder la cuenta. «Pinche cruda; siento que me atropelló un camión», gruñó Regina desde la cama.\n\nBere llegó fresca como lechuga, cargando dos tortas ahogadas envueltas en papel. «Para esto no hay como una torta bien bañada de salsa», le prometió muy quitada de la pena. Regina le dio una mordida y el chile de árbol la hizo sudar al instante.\n\n«No mames, esta salsa sí levanta muertos», dijo Regina, ya más despabilada. Bere se rio y le confesó que el puesto era de su familia desde hacía tres generaciones. «Con razón me trataban tan bien anoche», comentó Regina atando cabos.\n\nEntre mordidas, Regina alabó el tequila añejo que tanto le había gustado y del que hasta se compró una botella. Bere hizo una mueca pícara antes de soltar la verdad. «Ese añejo tan fino que te encantó era el destilado casero de mi tío, no la botella cara», reveló aguantándose la risa.\n\nRegina se quedó con la torta a medio camino, entre la vergüenza y la carcajada. «O sea que me la pasé presumiendo un tequila patito», reclamó, sin poder enojarse de verdad. Bere le pasó una servilleta y brindó con su vaso de agua por la mejor cruda de su vida.",
+    "vocab": [
+      {
+        "word": "cruda",
+        "surface": "cruda",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a hangover, the rough morning after too much drinking"
+      },
+      {
+        "word": "como lija",
+        "surface": "como lija",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "bone dry and rough like sandpaper, said of a parched mouth"
+      },
+      {
+        "word": "pinche",
+        "surface": "Pinche",
+        "type": "adjective",
+        "register": "vulgar",
+        "definition": "damn or lousy, a coarse Mexican intensifier before a noun"
+      },
+      {
+        "word": "atropellar",
+        "surface": "atropelló",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "ran me over, hit me hard like a vehicle, from atropellar"
+      },
+      {
+        "word": "fresca como lechuga",
+        "surface": "fresca como lechuga",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "perfectly fresh and lively, not the least bit tired"
+      },
+      {
+        "word": "tortas ahogadas",
+        "surface": "tortas ahogadas",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a Guadalajara sandwich drowned in spicy tomato and chili sauce"
+      },
+      {
+        "word": "quitada de la pena",
+        "surface": "quitada de la pena",
+        "type": "expression",
+        "register": "slang",
+        "definition": "totally carefree and unbothered, without a hint of worry"
+      },
+      {
+        "word": "chile de árbol",
+        "surface": "chile de árbol",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a small fiery dried chili that packs an intense sharp heat"
+      },
+      {
+        "word": "no mames",
+        "surface": "No mames",
+        "type": "expression",
+        "register": "vulgar",
+        "definition": "no freaking way, a crude exclamation of shock or disbelief"
+      },
+      {
+        "word": "despabilada",
+        "surface": "despabilada",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "wide awake and sharp again after shaking off the drowsiness"
+      },
+      {
+        "word": "levanta muertos",
+        "surface": "levanta muertos",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "so potent it revives you, strong enough to wake the dead"
+      },
+      {
+        "word": "atando cabos",
+        "surface": "atando cabos",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "putting the clues together to figure something out"
+      },
+      {
+        "word": "añejo",
+        "surface": "añejo",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "aged, of tequila matured in oak for over a year"
+      },
+      {
+        "word": "mueca",
+        "surface": "mueca",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a twisted face or grimace expressing mischief or distaste"
+      },
+      {
+        "word": "pícara",
+        "surface": "pícara",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "mischievous and sly in a playful, cheeky sort of way"
+      },
+      {
+        "word": "destilado",
+        "surface": "destilado",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a distilled spirit made by heating and condensing the brew"
+      },
+      {
+        "word": "patito",
+        "surface": "patito",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "fake, knockoff or bootleg, of dubious low quality"
+      },
+      {
+        "word": "reclamar",
+        "surface": "reclamó",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "complained or protested, calling someone out, from reclamar"
+      },
+      {
+        "word": "mordida",
+        "surface": "mordida",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a bite, a single mouthful taken out of some food"
+      },
+      {
+        "word": "gruñir",
+        "surface": "gruñó",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "grumbled or groaned in a low annoyed voice, from gruñir"
+      },
+      {
+        "word": "servilleta",
+        "surface": "servilleta",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a paper or cloth napkin for wiping hands and mouth"
+      }
+    ]
+  },
+  {
+    "title": "Carne asada sin prisas",
+    "arcType": "daily-encounter",
+    "synopsis": "Regina cae de visita en el norte convencida de que ningún taco norteño le gana a los de su barrio chilango. Su carnal Beto la recibe con el asador prendido y la trae de bajada, defendiendo su ritual como todo un arte serio. Entre chelas y burlas, ella acaba viendo que la carne era lo de menos y que lo grande siempre fue la banda reunida hasta el amanecer.",
+    "text": "Regina llegó al patio de Beto con un hambre de días y las ganas de siempre de ver a los amigos. Beto, su carnal desde la escuela, ya tenía el asador listo junto al cantón, con una cubeta de chelas bien frías al lado.\n\nBeto: ¿Qué rollo, Regina? Aguántame tantito, que la carne de por acá no se apura ni con toda la prisa del mundo. Siéntate, toma una cerveza y deja el fuego en mis manos.\n\nRegina: No hombre, Beto, en mi tierra también sabemos prender fuego; no te pongas tan salsa por un poco de humo, güey.\n\nBeto: ¿A poco? La neta, prima, esto es todo un arte, y el metiche que le mueve la carne antes de tiempo la echa a perder. Aquí el que sabe, manda, y el que no, se calla y aprende.\n\nRegina: Órale, pues también quiero ayudar; se ve bien chido tu desmadre y no vine de tan lejos solo para mirar sentada.\n\nBeto: Primero cae la carne, luego lo demás; aquí nada se apura, así de serio es el jale, cabrón. No seas pinche con el fuego.\n\nEntre chelas y risas, a Regina se le bajó el orgullo poco a poco: la carne era apenas el pretexto de un relajo bien bueno, y lo que de verdad une a la banda es la plática larga hasta la madrugada.",
+    "vocab": [
+      {
+        "word": "carnal",
+        "surface": "carnal",
+        "type": "noun",
+        "register": "slang",
+        "definition": "A very close friend or bro in Mexican slang."
+      },
+      {
+        "word": "cantón",
+        "surface": "cantón",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Someone's house or home in casual Mexican street talk."
+      },
+      {
+        "word": "chela",
+        "surface": "chelas",
+        "type": "noun",
+        "register": "slang",
+        "definition": "A cold beer in relaxed Mexican and Latin American speech."
+      },
+      {
+        "word": "qué rollo",
+        "surface": "Qué rollo",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "A casual greeting like what is up among Mexican friends."
+      },
+      {
+        "word": "aguantar",
+        "surface": "Aguántame",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To wait a moment or hold on in Mexican speech."
+      },
+      {
+        "word": "tantito",
+        "surface": "tantito",
+        "type": "adverb",
+        "register": "colloquial",
+        "definition": "A little bit or a short while in Mexican speech."
+      },
+      {
+        "word": "no hombre",
+        "surface": "No hombre",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "An emphatic no way or come on in Mexican talk."
+      },
+      {
+        "word": "salsa",
+        "surface": "salsa",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "Acting cocky or full of yourself in Mexican slang."
+      },
+      {
+        "word": "a poco",
+        "surface": "A poco",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "Really or you do not say, showing playful disbelief in Mexico."
+      },
+      {
+        "word": "la neta",
+        "surface": "La neta",
+        "type": "expression",
+        "register": "slang",
+        "definition": "The honest truth or for real in Mexican slang."
+      },
+      {
+        "word": "prima",
+        "surface": "prima",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Cousin, also used warmly to address a close female friend."
+      },
+      {
+        "word": "metiche",
+        "surface": "metiche",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A nosy person who meddles where they are not wanted."
+      },
+      {
+        "word": "órale",
+        "surface": "Órale",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "An all purpose okay, wow, or come on in Mexico."
+      },
+      {
+        "word": "güey",
+        "surface": "güey",
+        "type": "slang",
+        "register": "slang",
+        "definition": "Dude or man, an extremely common Mexican filler for friends."
+      },
+      {
+        "word": "jale",
+        "surface": "jale",
+        "type": "noun",
+        "register": "slang",
+        "definition": "The task, job, or thing going on in Mexican slang."
+      },
+      {
+        "word": "relajo",
+        "surface": "relajo",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A fun uproar, messing around, or lively chaos among friends."
+      },
+      {
+        "word": "plática",
+        "surface": "plática",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A friendly chat or long relaxed conversation in Mexican speech."
+      },
+      {
+        "word": "cabrón",
+        "surface": "cabrón",
+        "type": "slang",
+        "register": "vulgar",
+        "definition": "A rude but common word for dude or something intense."
+      },
+      {
+        "word": "banda",
+        "surface": "banda",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Your crew, gang of friends, or the whole group."
+      },
+      {
+        "word": "pinche",
+        "surface": "pinche",
+        "type": "adjective",
+        "register": "vulgar",
+        "definition": "A crude Mexican word meaning lousy, damn, or worthless."
+      },
+      {
+        "word": "el asador",
+        "surface": "asador",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the grill setup where norteños cook their carne asada slowly"
+      },
+      {
+        "word": "la cubeta",
+        "surface": "cubeta",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a bucket, here full of ice and cold beers for sharing"
+      }
+    ],
+    "topic": "monterrey",
+    "slotIndex": 1
+  },
+  {
+    "title": "No te rajes, Chuy",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "A las seis de la mañana, Regina se planta en casa de Chuy con dos mochilas y la necedad de subir el cerro más famoso de la ciudad antes de que apriete el sol. Su cuate, crudo del reventón, se resiste con mil pretextos mientras ella lo pica sin piedad. A media subida, con la tormenta encima, Regina saca el teléfono y marca un número que nunca le había contado a nadie.",
+    "text": "Regina tocó la puerta de Chuy a las seis en punto, con dos mochilas y una terquedad que no aceptaba pretextos. Chuy salió a la puerta crudo y de mal humor, con el reventón de anoche todavía pegado al cuerpo; su cara de cuate flojo lo decía todo.\n\nChuy: ¿Quiúbole, Regina? Estás bien zafada; apenas amanece y ya quieres que suba ese cerro contigo. No manches, déjame dormir.\n\nRegina: Ándale, no te rajes; si salimos temprano llegamos a la punta sin gente y sin sol pesado. Va que va, te lo prometo. Nada más son dos horas de camino y una vista que se queda contigo para siempre.\n\nChuy: Sale, pues, cabrón, pero al bajar me invitas las cervezas; y si me caigo allá arriba, cargas con mi trokota de vuelta al cantón.\n\nRegina: No te hagas, güey; tú que tanto presumes tu chamba pesada y tu buena feria, ahora te achicas por un simple cerro como si nada. Muévete, que el sol no espera a nadie.\n\nChuy: Aguanta, morra, ya casi; pero mira el cielo, se puso bien gacho, y si nos cae el agua allá arriba, ya valí para siempre.\n\nLa morra jaló rápido cuesta arriba sin esperar respuesta; a medio cerro, a Chuy se le fue la pila y el agua ya estaba encima. Regina miró la cima, sacó el teléfono y marcó un número que nunca le contó a nadie.",
+    "vocab": [
+      {
+        "word": "cuate",
+        "surface": "cuate",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A buddy or close pal in casual Mexican speech."
+      },
+      {
+        "word": "crudo",
+        "surface": "crudo",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "Hungover after drinking too much the night before."
+      },
+      {
+        "word": "reventón",
+        "surface": "reventón",
+        "type": "noun",
+        "register": "slang",
+        "definition": "A big wild party or blowout in Mexican slang."
+      },
+      {
+        "word": "quiúbole",
+        "surface": "Quiúbole",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "A friendly what is up or how goes it in Mexico."
+      },
+      {
+        "word": "zafada",
+        "surface": "zafada",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "Crazy, unhinged, or out of your mind in Mexican slang."
+      },
+      {
+        "word": "ándale",
+        "surface": "Ándale",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "Come on, hurry up, or go ahead in Mexican speech."
+      },
+      {
+        "word": "rajarse",
+        "surface": "rajes",
+        "type": "verb",
+        "register": "slang",
+        "definition": "To chicken out or back down from something in Mexico."
+      },
+      {
+        "word": "va que va",
+        "surface": "Va que va",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "It is a deal or let us do it, Mexican style."
+      },
+      {
+        "word": "sale",
+        "surface": "Sale",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "Okay or sounds good, a quick Mexican way to agree."
+      },
+      {
+        "word": "cabrón",
+        "surface": "cabrón",
+        "type": "slang",
+        "register": "vulgar",
+        "definition": "A crude word for dude, or someone tough and clever."
+      },
+      {
+        "word": "trokota",
+        "surface": "trokota",
+        "type": "noun",
+        "register": "slang",
+        "definition": "A big pickup truck, prized in northern Mexican culture."
+      },
+      {
+        "word": "cantón",
+        "surface": "cantón",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Your house or place in relaxed Mexican street talk."
+      },
+      {
+        "word": "güey",
+        "surface": "güey",
+        "type": "slang",
+        "register": "slang",
+        "definition": "Dude or man, a super common Mexican word for friends."
+      },
+      {
+        "word": "feria",
+        "surface": "feria",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Money, cash, or dough in casual Mexican and Latin slang."
+      },
+      {
+        "word": "aguantar",
+        "surface": "Aguanta",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To hold on or wait up in Mexican everyday speech."
+      },
+      {
+        "word": "morra",
+        "surface": "morra",
+        "type": "noun",
+        "register": "slang",
+        "definition": "A girl or young woman in northern Mexican slang."
+      },
+      {
+        "word": "valer",
+        "surface": "valí",
+        "type": "verb",
+        "register": "slang",
+        "definition": "To be doomed or done for, as in ya valí."
+      },
+      {
+        "word": "gacho",
+        "surface": "gacho",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "Ugly, mean, or bad in common Mexican slang."
+      },
+      {
+        "word": "cima",
+        "surface": "cima",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The very top or summit of a hill or mountain."
+      },
+      {
+        "word": "pila",
+        "surface": "pila",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Your energy or battery, as in running out of steam."
+      },
+      {
+        "word": "la mochila",
+        "surface": "mochilas",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a backpack carried on the shoulders for hiking or travel"
+      }
+    ],
+    "topic": "monterrey",
+    "slotIndex": 2
+  },
+  {
+    "title": "Gorditas para la comadre",
+    "arcType": "harmonic-close",
+    "synopsis": "Al caer la tarde en el norte, Regina llega a casa de Marisol y la encuentra harta de la fábrica y del sueldo que no alcanza. Su comadre le confiesa que ya juntó para poner su propio puesto de gorditas, aunque medio mundo la tache de loca. Regina la escucha sin juzgar, la anima con el corazón y las dos brindan tranquilas mientras cierra la noche.",
+    "text": "Ya entrada la tarde, Regina se dejó caer en casa de Marisol, justo cuando su comadre volvía de la chamba con la cara larga y el sueldo apretado. La ciudad quedaba abajo, entre fábricas y humo, con un acordeón de fondo en la sala.\n\nMarisol: ¿Sabes qué, Regina? Ya me harté del jefe gritón, de partirme el lomo cada día por una paga que no completa ni la quincena. Y encima me piden que ponga buena cara y que no diga nada.\n\nRegina: Órale, con calma; ¿de plano ya lo decidiste o nomás lo dices encabronada por un mal día en el turno?\n\nMarisol: De plano, ya no hay vuelta. Ya tengo una feria en el cochinito y voy a poner mi propio changarro de gorditas en el barrio, aunque medio mundo me tache de loca. Prefiero mil veces trabajar para mí y no para un patrón que ni saluda.\n\nRegina: Échale sin miedo; un changarro así se levanta poco a poco, con clientes fieles y con el sazón de tu casa.\n\nMarisol: Eso quiero; con que me caiga el billete justo para la renta y la despensa, me doy por bien servida.\n\nBrindaron con el último trago, sin prisa ni drama. El acordeón siguió sonando en la sala. Marisol soltó una sonrisa por primera vez en meses, la neta más tranquila que nunca, y las dos se quedaron con la noche despacio encima.",
+    "vocab": [
+      {
+        "word": "comadre",
+        "surface": "comadre",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A very close woman friend, like family in Mexican culture."
+      },
+      {
+        "word": "chamba",
+        "surface": "chamba",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Work or a job in everyday Mexican and Latin speech."
+      },
+      {
+        "word": "sueldo",
+        "surface": "sueldo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The fixed wage a worker earns for a job."
+      },
+      {
+        "word": "jefe",
+        "surface": "jefe",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The boss or person in charge at a workplace."
+      },
+      {
+        "word": "partirse el lomo",
+        "surface": "partirme el lomo",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "To work extremely hard, breaking your back at a job."
+      },
+      {
+        "word": "quincena",
+        "surface": "quincena",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The paycheck a worker gets every two weeks."
+      },
+      {
+        "word": "de plano",
+        "surface": "de plano",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "Flatly, totally, or no doubt about it in Mexico."
+      },
+      {
+        "word": "nomás",
+        "surface": "nomás",
+        "type": "adverb",
+        "register": "colloquial",
+        "definition": "Just, only, or simply in casual Mexican speech."
+      },
+      {
+        "word": "encabronada",
+        "surface": "encabronada",
+        "type": "adjective",
+        "register": "vulgar",
+        "definition": "Really angry, mad, or furious in crude Mexican speech."
+      },
+      {
+        "word": "feria",
+        "surface": "feria",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Money, cash, or savings in casual Mexican street slang."
+      },
+      {
+        "word": "cochinito",
+        "surface": "cochinito",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A piggy bank or personal savings stash in Mexico."
+      },
+      {
+        "word": "changarro",
+        "surface": "changarro",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A small shop or humble family business in Mexico."
+      },
+      {
+        "word": "échale",
+        "surface": "Échale",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "Go for it or give it your all in Mexico."
+      },
+      {
+        "word": "sazón",
+        "surface": "sazón",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "The special flavor and knack a cook gives food."
+      },
+      {
+        "word": "billete",
+        "surface": "billete",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Money or cash, literally a paper bill in Mexico."
+      },
+      {
+        "word": "la neta",
+        "surface": "la neta",
+        "type": "expression",
+        "register": "slang",
+        "definition": "The honest truth or for real in Mexican slang."
+      },
+      {
+        "word": "trago",
+        "surface": "trago",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A drink or swig of liquor shared among friends."
+      },
+      {
+        "word": "la cara larga",
+        "surface": "cara larga",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "a long face, the glum look of someone worn down and fed up"
+      },
+      {
+        "word": "el acordeón",
+        "surface": "acordeón",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the accordion that drives northern Mexican norteño music at home"
+      },
+      {
+        "word": "las gorditas",
+        "surface": "gorditas",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "thick stuffed corn cakes griddled and filled with savory fillings"
+      },
+      {
+        "word": "el patrón",
+        "surface": "patrón",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the boss or owner you work for, here one who barely greets you"
+      }
+    ],
+    "topic": "monterrey",
+    "slotIndex": 3
+  },
+  {
+    "topic": "oaxaca",
+    "slotIndex": 1,
+    "title": "A Regina le ganó el mezcal",
+    "arcType": "reframe-turn",
+    "synopsis": "En una mezcalería de Tlacolula, Regina, la única chilanga del parche, se cree una catadora de mezcal de primera. Aldo, que viene de palenqueros, la deja echar choro y luego la reta a ordenar cuatro mezcales del más corriente al más fino. Los pone todos al revés, se queda callada y, por primera vez, pide que le enseñen en serio.",
+    "text": "En la barra de una mezcalería de Tlacolula, Regina, la única chilanga del parche, decía que de mezcal sabía un chorro. Nayeli, su comadre oaxaqueña, y Aldo, que venía de una familia de palenqueros, se miraron sin decir nada.\n\nRegina tomó el primer caballito, lo probó despacio y dio su veredicto. \"Este está joven, medio corriente, se nota que lo hicieron con prisa\", dijo, bien segura. Aldo apenas levantó la mirada y le sirvió otro sin discutir.\n\nLa neta es que Regina llevaba semanas cotorreando que su gusto era muy fino, que en la CDMX probaba de todo. Nayeli la dejó echar choro un rato y se guardó la risa. Con cada trago, la chilanga contaba una historia distinta sobre el agave y la tierra.\n\nAldo, sin prisa, le fue cambiando los caballitos. Cuando la vio bien confiada, le puso enfrente cuatro mezcales y le pidió ordenarlos del más corriente al más fino. Regina aceptó sin pensarlo, sintiéndose la muy chida.\n\nLos ordenó todos al revés. El que llamó chafa era un tobalá que costaba un ojo de la cara; el que juró de lujo salió el más naco del estante. Aldo se rió por lo bajo mientras cambiaba las botellas. \"Tu gusto chilango necesita más chamba\", le dijo Nayeli, bien divertida.\n\nRegina se quedó callada y, por primera vez en la noche, pidió que le explicaran de a de veras. Aldo, ahora sí, le enseñó qué era cada agave, trago por trago.",
+    "vocab": [
+      {
+        "word": "chilanga",
+        "surface": "chilanga",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a woman from Mexico City; the everyday word capital people use"
+      },
+      {
+        "word": "parche",
+        "surface": "parche",
+        "type": "noun",
+        "register": "slang",
+        "definition": "your crew or tight group of friends who hang out together"
+      },
+      {
+        "word": "un chorro",
+        "surface": "un chorro",
+        "type": "expression",
+        "register": "slang",
+        "definition": "a whole lot, a ton; a large amount of something"
+      },
+      {
+        "word": "comadre",
+        "surface": "comadre",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a very close female friend treated almost like family"
+      },
+      {
+        "word": "palenquero",
+        "surface": "palenqueros",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "an artisan who distills mezcal the traditional way in a palenque"
+      },
+      {
+        "word": "veredicto",
+        "surface": "veredicto",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a firm final judgment or opinion someone gives about something"
+      },
+      {
+        "word": "corriente",
+        "surface": "corriente",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "cheap and low quality; tacky or of a poor grade"
+      },
+      {
+        "word": "cotorrear",
+        "surface": "cotorreando",
+        "type": "verb",
+        "register": "slang",
+        "definition": "to chat and joke around, often teasing or bragging casually"
+      },
+      {
+        "word": "echar choro",
+        "surface": "echar choro",
+        "type": "expression",
+        "register": "slang",
+        "definition": "to talk a lot of smooth nonsense to convince or impress people"
+      },
+      {
+        "word": "agave",
+        "surface": "agave",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the spiky desert plant that mezcal and tequila come from"
+      },
+      {
+        "word": "caballito",
+        "surface": "caballitos",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the small narrow glass Mexicans use for tequila or mezcal"
+      },
+      {
+        "word": "trago",
+        "surface": "trago",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a swig or gulp of a drink, or the drink itself"
+      },
+      {
+        "word": "chida",
+        "surface": "chida",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "cool or great; here, feeling like a hotshot who knows everything"
+      },
+      {
+        "word": "chafa",
+        "surface": "chafa",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "cheap, shoddy, low quality; the opposite of good stuff"
+      },
+      {
+        "word": "tobalá",
+        "surface": "tobalá",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a prized wild agave used for fine, pricey artisanal mezcal"
+      },
+      {
+        "word": "costar un ojo de la cara",
+        "surface": "costaba un ojo de la cara",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "to be very expensive, to cost an arm and a leg"
+      },
+      {
+        "word": "naco",
+        "surface": "naco",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "tacky or low class; a common, mildly rude Mexican put down"
+      },
+      {
+        "word": "estante",
+        "surface": "estante",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a shelf where bottles or objects are lined up and stored"
+      },
+      {
+        "word": "chamba",
+        "surface": "chamba",
+        "type": "noun",
+        "register": "slang",
+        "definition": "work or effort; here, the practice needed to actually get good"
+      },
+      {
+        "word": "de a de veras",
+        "surface": "de a de veras",
+        "type": "expression",
+        "register": "slang",
+        "definition": "for real, seriously this time; no more messing around"
+      },
+      {
+        "word": "enseñar",
+        "surface": "enseñó",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "to teach someone, showing them how something works step by step"
+      }
+    ]
+  },
+  {
+    "topic": "oaxaca",
+    "slotIndex": 2,
+    "title": "El tequio no avisa",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Regina se imagina un fin de semana de hamaca y mezcalito, pero al amanecer Chucho la arranca de la cama para el tequio, el trabajo comunitario que el pueblo entero le debe al camino. Cargando piedras junto a puros desconocidos, medio encabronada, la chilanga topa con algo que no sabe nombrar: nadie cobra ni da las gracias, y aun así se mueven todos al mismo ritmo.",
+    "text": "Regina había llegado a Teotitlán del Valle con la idea de un finde bien tranquilo: hamaca, mezcalito y cero compromisos. Nayeli, que era de ahí, se aguantó la carrilla y no le avisó lo que venía.\n\nA las seis de la mañana tocaron el portón. Era Chucho, otro del parche, con dos palas al hombro. \"Órale, arriba, que hoy toca tequio\", gritó desde la calle, como si fueran las tres de la tarde.\n\nRegina no entendía ni madres. Nayeli le explicó, mientras le pasaba un café, que el tequio era trabajo comunitario: todo el pueblo salía a componer el camino, sin cobrar, porque así se hacían las cosas ahí. Rajarse estaba cabrón; era quedar mal con toda la comunidad.\n\nLa chilanga arrastró los pies, medio encabronada, convencida de que madrugar en sus vacaciones era una mamada. Cargó piedras, batió cemento y sudó como nunca junto a gente que ni conocía. Nadie le dio las gracias; simplemente se movían todos al mismo ritmo.\n\nA media mañana, sin darse cuenta, ya iba mandando a la raza y cotorreando sobre sus ampollas. Chucho la vio y se rió: \"¿No que muy citadina?\". Ella le aventó un guante de trabajo y siguió cargando piedras cuesta arriba.\n\nLo que había jurado un castigo se sentía distinto, aunque no supiera bien cómo nombrarlo. Cuando terminaron, el camino quedó parejito y alguien repartió tlayudas para todos. Regina le hincó el diente a la suya sentada en una piedra, con las manos hechas polvo y sin ganas de volver a la hamaca.",
+    "vocab": [
+      {
+        "word": "finde",
+        "surface": "finde",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "short for weekend; the casual clipped word for Saturday and Sunday"
+      },
+      {
+        "word": "mezcalito",
+        "surface": "mezcalito",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "an affectionate little word for a relaxed glass of mezcal"
+      },
+      {
+        "word": "aguantarse la carrilla",
+        "surface": "se aguantó la carrilla",
+        "type": "expression",
+        "register": "slang",
+        "definition": "to hold back the teasing you are dying to throw at someone"
+      },
+      {
+        "word": "portón",
+        "surface": "portón",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a big heavy front gate or door onto the street"
+      },
+      {
+        "word": "pala",
+        "surface": "palas",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a shovel; the tool for digging or moving dirt and gravel"
+      },
+      {
+        "word": "tequio",
+        "surface": "tequio",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "unpaid communal work every villager owes to the whole town"
+      },
+      {
+        "word": "no entender ni madres",
+        "surface": "no entendía ni madres",
+        "type": "expression",
+        "register": "vulgar",
+        "definition": "to not understand a damn thing about what is happening"
+      },
+      {
+        "word": "rajarse",
+        "surface": "Rajarse",
+        "type": "verb",
+        "register": "slang",
+        "definition": "to back out or chicken out of something you committed to"
+      },
+      {
+        "word": "cabrón",
+        "surface": "cabrón",
+        "type": "adjective",
+        "register": "vulgar",
+        "definition": "tough or rough; here, a bad move with a heavy social cost"
+      },
+      {
+        "word": "encabronada",
+        "surface": "encabronada",
+        "type": "adjective",
+        "register": "vulgar",
+        "definition": "pissed off, seriously annoyed; a strong, common Mexican word"
+      },
+      {
+        "word": "madrugar",
+        "surface": "madrugar",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "to get up very early, at dawn or before sunrise"
+      },
+      {
+        "word": "mamada",
+        "surface": "mamada",
+        "type": "noun",
+        "register": "vulgar",
+        "definition": "nonsense or a stupid pain; something ridiculous and not worth doing"
+      },
+      {
+        "word": "batir",
+        "surface": "batió",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "to mix or stir something thick, like cement, until it blends"
+      },
+      {
+        "word": "la raza",
+        "surface": "la raza",
+        "type": "noun",
+        "register": "slang",
+        "definition": "the people, the crew, the folks; everybody hanging around"
+      },
+      {
+        "word": "aventar",
+        "surface": "aventó",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "to throw or toss something at someone, often playfully"
+      },
+      {
+        "word": "cuesta arriba",
+        "surface": "cuesta arriba",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "uphill; up the slope, and by extension something hard going"
+      },
+      {
+        "word": "parejito",
+        "surface": "parejito",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "nice and even, smooth and flat with no bumps left"
+      },
+      {
+        "word": "hincarle el diente",
+        "surface": "le hincó el diente",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "to bite into food eagerly, to finally dig into something"
+      },
+      {
+        "word": "hecho polvo",
+        "surface": "hechas polvo",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "totally worn out and drained, with no energy left at all"
+      },
+      {
+        "word": "citadina",
+        "surface": "citadina",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "from the big city, a city dweller, sometimes said with a teasing edge"
+      }
+    ]
+  },
+  {
+    "topic": "oaxaca",
+    "slotIndex": 3,
+    "title": "Nayeli prende el comal",
+    "arcType": "harmonic-close",
+    "synopsis": "Regina se va de Oaxaca justo cuando le empieza a agarrar el modo. En vez de una despedida cursi, arma una cena con el parche y se pone a echar tortillas que le quedan fatal. Entre burlas, mezcal y la misma anécdota de siempre, su promesa de volver queda flotando sobre el comal, sin que nadie apueste demasiado a que la vaya a cumplir.",
+    "text": "Después de la Guelaguetza, Regina fue la que juntó al parche para cerrar su visita con una cena en forma. Nayeli prendió el comal; Aldo llegó con mezcal y Chucho con un alebrije a medio pintar que traía cargando desde el taller.\n\nMientras el comal agarraba temperatura, Regina echaba tortillas con unas manos que daban pena ajena. \"Se te van a romper, chilanga\", le dijo Aldo, quitándole la masa entre risas. Ella lo mandó a la goma y siguió intentando de todos modos.\n\nCayeron las tlayudas, el quesillo y hasta el chapulín para los valientes. Chucho contaba, por enésima vez, cómo se había perdido en el cerro buscando copal para su alebrije. Todos se sabían la historia de memoria, pero igual se carcajeaban como si fuera la primera vez.\n\nNayeli, entre humo y mezcal, le echó en cara a Regina que apenas le estaba agarrando la onda a Oaxaca justo cuando se iba. \"Neta que sí\", admitió la chilanga. \"Me falta un chorro por conocer.\" Se quedaron cotorreando mientras el comal seguía tronando bajo la olla.\n\nNo hubo despedida dramática ni discurso cursi. Aldo sirvió la última ronda, Chucho terminó de pintarle las alas al alebrije bajo la luz del foco, y Regina prometió volver antes de que se acabara el año. Nadie le hizo mucho caso a la promesa, porque esas cosas se cumplen o no. Nayeli solo dijo que sí con la cabeza, echó más leña y volteó otra tortilla en el comal.",
+    "vocab": [
+      {
+        "word": "Guelaguetza",
+        "surface": "Guelaguetza",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Oaxaca's huge July festival of Indigenous music, dance, and dress"
+      },
+      {
+        "word": "en forma",
+        "surface": "en forma",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "done properly and in full, the way it should be"
+      },
+      {
+        "word": "comal",
+        "surface": "comal",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the flat clay or metal griddle for cooking tortillas and tlayudas"
+      },
+      {
+        "word": "alebrije",
+        "surface": "alebrije",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a brightly painted Oaxacan wooden figure of a fantastical creature"
+      },
+      {
+        "word": "dar pena ajena",
+        "surface": "daban pena ajena",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "to be so awkward it embarrasses the people watching you"
+      },
+      {
+        "word": "masa",
+        "surface": "masa",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the corn dough used to make tortillas and tamales"
+      },
+      {
+        "word": "mandar a la goma",
+        "surface": "lo mandó a la goma",
+        "type": "expression",
+        "register": "slang",
+        "definition": "to tell someone to get lost or buzz off, half joking"
+      },
+      {
+        "word": "tlayuda",
+        "surface": "tlayudas",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a large crispy Oaxacan tortilla loaded with beans, cheese, and toppings"
+      },
+      {
+        "word": "quesillo",
+        "surface": "quesillo",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Oaxaca's stringy soft cheese, pulled and wound into a ball"
+      },
+      {
+        "word": "chapulín",
+        "surface": "chapulín",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a toasted grasshopper eaten as a crunchy Oaxacan snack"
+      },
+      {
+        "word": "cerro",
+        "surface": "cerro",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a hill or small mountain rising above the town"
+      },
+      {
+        "word": "copal",
+        "surface": "copal",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "soft aromatic wood, also the resin burned as incense in ceremonies"
+      },
+      {
+        "word": "carcajearse",
+        "surface": "se carcajeaban",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "to crack up, to laugh out loud all together"
+      },
+      {
+        "word": "echar en cara",
+        "surface": "le echó en cara",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "to throw something back at someone as a friendly reproach"
+      },
+      {
+        "word": "agarrar la onda",
+        "surface": "agarrando la onda",
+        "type": "expression",
+        "register": "slang",
+        "definition": "to catch on, to finally get the feel of something"
+      },
+      {
+        "word": "neta que sí",
+        "surface": "Neta que sí",
+        "type": "expression",
+        "register": "slang",
+        "definition": "totally true, for real yes; heartfelt and honest agreement"
+      },
+      {
+        "word": "cursi",
+        "surface": "cursi",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "corny or cheesy, sappy in a tacky sentimental way"
+      },
+      {
+        "word": "ronda",
+        "surface": "ronda",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a round of drinks poured for everyone at once"
+      },
+      {
+        "word": "foco",
+        "surface": "foco",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a light bulb; the everyday Mexican word for it"
+      },
+      {
+        "word": "leña",
+        "surface": "leña",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "firewood; the wood you burn to keep a fire going"
+      },
+      {
+        "word": "de todos modos",
+        "surface": "de todos modos",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "anyway, in any case; regardless of what just happened"
+      }
+    ]
+  },
+  {
+    "topic": "merida",
+    "slotIndex": 1,
+    "title": "El pib y el celular",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Regina, chilanga que graba reseñas de comida, llega al puesto de cochinita de su amigo Damián en Mérida decidida a sacar la toma perfecta del horno de tierra. Entre el humo y el recado negro, su celular se rinde por el calor justo en lo mejor. Con la pantalla muerta y la carne humeando, Regina se queda con el taco en la mano, sin decidir todavía si le urge más recuperar la señal o quedarse a comer sin cámara.",
+    "text": "Regina, chilanga que grababa reseñas de comida para su canal, llegó al puesto de Damián con el celular en alto y un hambre de días.\n\nDamián, yucateco que heredó el puesto de cochinita de su abuela, la recibió entre el humo del pib abierto en plena tierra.\n\n\"¿Qué onda, wach? Baja la cámara y saluda primero\", le soltó él, riéndose de la chilanga y sus prisas.\n\n\"No manches, Damián, esta toma vale oro\", contestó Regina sin despegar el teléfono. \"La neta, en la ciudad nadie cocina bajo tierra.\"\n\nDamián destapó el pib con toda la calma del mundo. El vapor subió cargado de recado negro y de hojas de plátano, y a Regina se le escapó un órale honesto.\n\n\"Esto lleva aquí desde mucho antes que tu canal\", le dijo él mientras deshebraba la carne. \"El horno de mi abuela nunca pidió batería.\"\n\nRegina siguió grabando hasta que el celular se le murió de golpe, vencido por el calor bravo del mediodía.\n\nSe quedó con la pantalla negra en la mano y la cochinita humeando en el plato, sin saber ni qué hacer.\n\n\"Ya valió\", murmuró. \"Se me apagó todo justo en lo más chido.\"\n\nDamián le pasó un taco y una chela bien fría, sin ningún drama. \"Pues cómetela mientras está chida, wach. Eso sí que no se guarda.\"\n\nRegina probó el taco tibio con el celular muerto en la otra mano. Miró la pantalla negra, luego el pib humeando, y de pronto ya no supo si le urgía más recuperar la señal o quedarse ahí, sin cámara, hasta que se acabara la carne.",
+    "vocab": [
+      {
+        "word": "chilanga",
+        "surface": "chilanga",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a woman born and raised in Mexico City, from the capital"
+      },
+      {
+        "word": "wach",
+        "surface": "wach",
+        "type": "noun",
+        "register": "slang",
+        "definition": "a non peninsular Mexican, often from the capital, said half teasing"
+      },
+      {
+        "word": "el pib",
+        "surface": "pib",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "an underground earth oven where Yucatecans cook meat wrapped and buried"
+      },
+      {
+        "word": "la cochinita",
+        "surface": "cochinita",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Yucatecan pork marinated in annatto and citrus, cooked until it shreds"
+      },
+      {
+        "word": "las prisas",
+        "surface": "prisas",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a constant rushed hurry, the habit of always running late somewhere"
+      },
+      {
+        "word": "la toma",
+        "surface": "toma",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a single camera shot captured while filming a video"
+      },
+      {
+        "word": "el vapor",
+        "surface": "vapor",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the hot steam released when a covered hot dish opens"
+      },
+      {
+        "word": "el recado",
+        "surface": "recado",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a Yucatecan paste of ground spices, annatto and chiles for seasoning"
+      },
+      {
+        "word": "el calor bravo",
+        "surface": "calor bravo",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "fierce oppressive heat that feels almost aggressive and hard to bear"
+      },
+      {
+        "word": "la chela",
+        "surface": "chela",
+        "type": "noun",
+        "register": "slang",
+        "definition": "a cold beer, everyday Mexican slang for a lager"
+      },
+      {
+        "word": "chida",
+        "surface": "chida",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "cool and great, something enjoyable and clearly worth your time"
+      },
+      {
+        "word": "tibio",
+        "surface": "tibio",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "pleasantly warm, neither hot nor cold to the touch"
+      },
+      {
+        "word": "ya valió",
+        "surface": "Ya valió",
+        "type": "expression",
+        "register": "slang",
+        "definition": "it is ruined now, the whole thing just fell apart"
+      },
+      {
+        "word": "yucateco",
+        "surface": "yucateco",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "from Yucatan, born and raised on the peninsula in the southeast"
+      },
+      {
+        "word": "canal",
+        "surface": "canal",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a personal online channel where someone posts videos regularly"
+      },
+      {
+        "word": "el horno",
+        "surface": "horno",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "an oven, here the buried earth pit used for slow cooking"
+      },
+      {
+        "word": "la pantalla",
+        "surface": "pantalla",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the glass screen of a phone that shows the picture"
+      },
+      {
+        "word": "la batería",
+        "surface": "batería",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the battery that powers a phone or a small device"
+      },
+      {
+        "word": "el taco",
+        "surface": "taco",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a folded tortilla filled with the shredded cochinita pork"
+      },
+      {
+        "word": "el plato",
+        "surface": "plato",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the plate the steaming cochinita is served on to eat"
+      }
+    ]
+  },
+  {
+    "topic": "merida",
+    "slotIndex": 2,
+    "title": "El cenote está helado",
+    "arcType": "late-reveal",
+    "synopsis": "Regina le tiene pavor al agua honda, pero su amiga yucateca Renata la cita en un cenote de Homún y flota abajo como si nada. Entre bromas, un pez y un salto de panzazo, Regina por fin se avienta y sale triunfante del agua turquesa. Ya secándose al sol nota que a Renata le tiemblan las manos, y entiende que la valiente de las dos cargaba el miedo más grande.",
+    "text": "El agua del cenote se veía turquesa y helada desde el borde. Regina, chilanga con pavor al agua honda, bajó las escaleras de piedra muy despacio. Se agarró del barandal con las dos manos y no se soltó.\n\nAbajo ya flotaba Renata, yucateca que la había citado en Homún desde temprano, tranquila como si nada.\n\n\"Bájale al drama, wey, el agua está buenísima\", le gritó Renata desde el fondo.\n\n\"Neta que no, está helada y ni le veo el suelo\", contestó Regina, pegada a la roca.\n\nUn chan pez le rozó el pie y Regina pegó un grito que rebotó en toda la caverna. \"Algo me tocó\", chilló, trepando de vuelta a la escalera.\n\nRenata se rió sin moverse. \"Es una mojarra, wach, no te va a comer. Aviéntate ya, que allá arriba el calor está bravo.\"\n\nRegina respiró hondo, se persignó y se aventó de panzazo al agua fría.\n\nCuando salió a flote, escupiendo agua, Renata la recibió con una carcajada y un aplauso limpio.\n\n\"¿Ves? No estaba tan cabrón\", le dijo, y la ayudó a llegar a la orilla de piedra.\n\nYa secándose al sol, Regina notó que a Renata le temblaban las manos.\n\n\"Oye, ¿tú estás bien?\", le preguntó, extrañada.\n\nRenata tardó en contestar. \"La neta, no me metía a un cenote desde que se ahogó mi primo aquí\", confesó bajito. \"Hoy me aventé porque viniste tú.\"\n\nRegina se quedó muda, con la piel de gallina que ya no era por el frío. La que parecía la valiente había cargado el miedo más grande todo el rato.",
+    "vocab": [
+      {
+        "word": "el pavor",
+        "surface": "pavor",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a deep paralyzing dread, an intense fear of something ahead"
+      },
+      {
+        "word": "el barandal",
+        "surface": "barandal",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a handrail along stairs or an edge to hold onto"
+      },
+      {
+        "word": "yucateca",
+        "surface": "yucateca",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "a woman from Yucatan, born and raised on the peninsula"
+      },
+      {
+        "word": "turquesa",
+        "surface": "turquesa",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "bright blue green, the vivid colour of shallow cenote water"
+      },
+      {
+        "word": "wey",
+        "surface": "wey",
+        "type": "noun",
+        "register": "slang",
+        "definition": "dude or man, a constant filler between friends in Mexico"
+      },
+      {
+        "word": "helada",
+        "surface": "helada",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "freezing cold, icy enough to make you gasp out loud"
+      },
+      {
+        "word": "chan",
+        "surface": "chan",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "little or small, a Maya word woven into Yucatecan speech"
+      },
+      {
+        "word": "chilló",
+        "surface": "chilló",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "let out a sharp high scream of fright or shock"
+      },
+      {
+        "word": "la mojarra",
+        "surface": "mojarra",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a small freshwater fish common in the local cenotes"
+      },
+      {
+        "word": "aventó",
+        "surface": "aventó",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "threw himself in, jumped with a sudden reckless push forward"
+      },
+      {
+        "word": "de panzazo",
+        "surface": "de panzazo",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "landing flat on the belly when you hit the water"
+      },
+      {
+        "word": "persignó",
+        "surface": "persignó",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "crossed herself quickly, making the sign of the cross"
+      },
+      {
+        "word": "cabrón",
+        "surface": "cabrón",
+        "type": "adjective",
+        "register": "vulgar",
+        "definition": "rough or seriously hard, mild swearing for something tough"
+      },
+      {
+        "word": "muda",
+        "surface": "muda",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "left speechless, unable to say a single word"
+      },
+      {
+        "word": "la orilla",
+        "surface": "orilla",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the edge or bank where the water meets the rock"
+      },
+      {
+        "word": "el grito",
+        "surface": "grito",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a sharp scream that bursts out from a sudden fright"
+      },
+      {
+        "word": "la piel de gallina",
+        "surface": "piel de gallina",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "goosebumps, the skin prickling from cold or from sheer fear"
+      },
+      {
+        "word": "a flote",
+        "surface": "a flote",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "back up on the surface, staying afloat after going under"
+      },
+      {
+        "word": "el aplauso",
+        "surface": "aplauso",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a clap of applause welcoming her back to the surface"
+      },
+      {
+        "word": "la roca",
+        "surface": "roca",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the bare rock wall she clings to at the edge"
+      },
+      {
+        "word": "el primo",
+        "surface": "primo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a cousin, here the one who drowned in this cenote"
+      }
+    ]
+  },
+  {
+    "topic": "merida",
+    "slotIndex": 3,
+    "title": "Marquesitas a medianoche",
+    "arcType": "harmonic-close",
+    "synopsis": "Regina no aguanta quedarse quieta y arrastra a medio barrio a la pista de la vaquería, donde su amigo Beto toca la jarana desde la tarima. Se hace un nudo con los pies hasta que una doña le marca el zapateado, y a media fiesta aparece Damián con marquesitas rellenas de queso de bola. Sin sorpresas ni lecciones, Regina termina meciéndose en una hamaca prestada, en paz.",
+    "text": "La jarana ya sonaba fuerte en la vaquería del barrio cuando Regina, chilanga incapaz de quedarse quieta con música, entró descalza, arrastrando a medio mundo hacia la pista.\n\nEn la tarima tocaba Beto, yucateco del pueblo, que la vio llegar y supo que la noche iba a estar cabrona.\n\n\"Órale, Beto, enséñame los pasos, no pienso quedarme sentada\", le pidió Regina, ya sin zapatos.\n\nBeto bajó un momento y se rió. \"Esto no es cumbia, wach: aquí el pie va cortito y la espalda derechita.\"\n\nRegina lo intentó y se hizo un nudo con sus propios pies, tan chistoso que hasta las doñas de las hamacas se carcajearon.\n\n\"No manches, esto está más difícil que subir a Chichén\", bufó, sudando por el calor.\n\nUna doña la jaló del brazo y le marcó el ritmo despacio, sin burla, hasta que Regina medio agarró el zapateado.\n\n\"¡Eso, wey, ya te salió!\", gritó Beto desde arriba, orgulloso de su alumna chilanga.\n\nA media pieza apareció Damián con una charola de marquesitas recién hechas, crujientes y rellenas de queso de bola.\n\n\"Me dijeron que la wach de los videos andaba bailando\", bromeó, pasándole una. \"Ya nomás te falta aprender a hacer cochinita.\"\n\nRegina mordió la marquesita caliente, con el queso derritiéndose, y se rió con la boca llena.\n\nTerminó la jarana rendida, meciéndose en una hamaca prestada, con Beto y Damián discutiendo de béisbol a su lado.\n\nNo hubo sorpresa ni lección esa noche, solo el barrio entero bailando bajo los focos y ella meciéndose despacio, en paz, hasta que se apagó la música.",
+    "vocab": [
+      {
+        "word": "la vaquería",
+        "surface": "vaquería",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a traditional Yucatecan village dance party with live jarana music"
+      },
+      {
+        "word": "la jarana",
+        "surface": "jarana",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the lively regional Yucatecan couple dance and its music"
+      },
+      {
+        "word": "la tarima",
+        "surface": "tarima",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a raised wooden platform where the band stands to play"
+      },
+      {
+        "word": "cabrona",
+        "surface": "cabrona",
+        "type": "adjective",
+        "register": "vulgar",
+        "definition": "wild and intense, mild swearing for a great rowdy night"
+      },
+      {
+        "word": "el zapateado",
+        "surface": "zapateado",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the quick stamping footwork that drives the jarana dance"
+      },
+      {
+        "word": "el nudo",
+        "surface": "nudo",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a knot, here her feet tangling clumsily over each other"
+      },
+      {
+        "word": "chistoso",
+        "surface": "chistoso",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "funny and amusing, the kind of thing that makes people laugh"
+      },
+      {
+        "word": "la hamaca",
+        "surface": "hamaca",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a woven hanging bed swung between two hooks, common in Yucatan"
+      },
+      {
+        "word": "carcajearon",
+        "surface": "carcajearon",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "burst into loud laughter together, cracking up openly"
+      },
+      {
+        "word": "bufó",
+        "surface": "bufó",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "huffed in frustration, snorting out air while annoyed"
+      },
+      {
+        "word": "la doña",
+        "surface": "doña",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a respectful term for an older established neighbourhood woman"
+      },
+      {
+        "word": "el ritmo",
+        "surface": "ritmo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the steady beat you follow when dancing to music"
+      },
+      {
+        "word": "la alumna",
+        "surface": "alumna",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a female student, someone being taught a new skill"
+      },
+      {
+        "word": "la charola",
+        "surface": "charola",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a serving tray for carrying food and drinks around"
+      },
+      {
+        "word": "la marquesita",
+        "surface": "marquesita",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a crisp rolled Yucatecan wafer filled with sweet and cheese"
+      },
+      {
+        "word": "crujientes",
+        "surface": "crujientes",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "crunchy and crisp, snapping loudly when you bite them"
+      },
+      {
+        "word": "el queso de bola",
+        "surface": "queso de bola",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a round Edam cheese Yucatecans melt into local dishes"
+      },
+      {
+        "word": "rendida",
+        "surface": "rendida",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "worn out and exhausted, totally drained of all energy"
+      },
+      {
+        "word": "la cumbia",
+        "surface": "cumbia",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a lively danceable Latin rhythm, not the jarana Beto plays"
+      },
+      {
+        "word": "el béisbol",
+        "surface": "béisbol",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "baseball, the sport Yucatecans follow with real everyday passion"
+      },
+      {
+        "word": "los focos",
+        "surface": "focos",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the light bulbs strung up over the neighborhood dance floor"
+      },
+      {
+        "word": "los videos",
+        "surface": "videos",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the food videos Regina films for her online channel"
+      }
+    ]
+  },
+  {
+    "title": "Chente afina la jarana",
+    "arcType": "reframe-turn",
+    "synopsis": "Regina se cree simple espectadora cuando llega a un fandango jarocho, café de olla en mano y ganas de puro cotorreo. Chente y Fabiola no la dejan esconderse en el rincón: entre carrilladas cariñosas la suben a la tarima a zapatear, torpe y a destiempo. Lo que empezó como adorno de postal se le vuelve un vacilón que la arrastra, y Regina descubre que el son no se mira desde la orilla.",
+    "text": "Chente movió un banco de madera hasta el centro del patio y puso la tarima donde iban a zapatear. Regina llegó con dos cafés de olla y se sentó en una esquina, segura de que su papel esa noche era solo mirar. Fabiola ya probaba las cuerdas de su jarana.\n\nChente: ¿Qué pasó, mi chava? No te me escondas en el rincón, que aquí toda la raza le entra al son.\n\nRegina: Yo nomás vine al cotorreo, Chente. El zapateado no es lo mío, neta.\n\nFabiola: Ándale, Regina, no te hagas del rogar; el tablado no da miedo y aquí nadie está de mirón.\n\nChente: Órale pues, agárrale el modo. Primero el paso sencillo, y ya después le picas más rápido.\n\nEl calor seguía fuerte aunque la noche ya estaba encima, y la tarima sonaba bajo los pies de la bola.\n\nRegina: Está bueno, ya voy. Pero si me trabo, se aguantan las carrilladas.\n\nChente: Nadie se ríe de ti aquí, chava; el fandango se goza, no se presume.\n\nRegina se subió al tablado con las piernas flojas y siguió el compás sin gracia, siempre un golpe detrás de los demás.\n\nFabiola: ¡Eso, mi Regina! Ya le hallaste el sabor; no eras tan matada como decías.\n\nRegina: Está chido esto, ya me prendió. Creía que el son jarocho era puro adorno de postal, y es un vacilón que te arrastra.\n\nChente: Ese es el chiste, chava; lo jarocho no se mira desde la orilla, se zapatea hasta que te duelen los pies y ya ni te fijas.",
+    "vocab": [
+      {
+        "word": "cotorreo",
+        "surface": "cotorreo",
+        "type": "noun",
+        "register": "slang",
+        "definition": "friendly hanging out with lots of joking and easy talk"
+      },
+      {
+        "word": "neta",
+        "surface": "neta",
+        "type": "slang",
+        "register": "slang",
+        "definition": "Mexican slang for the truth or honestly, no kidding at all"
+      },
+      {
+        "word": "no te hagas del rogar",
+        "surface": "no te hagas del rogar",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "to play hard to get, resisting before finally agreeing"
+      },
+      {
+        "word": "agárrale el modo",
+        "surface": "agárrale el modo",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "to get the hang of it and learn how it works"
+      },
+      {
+        "word": "le picas",
+        "surface": "le picas",
+        "type": "slang",
+        "register": "slang",
+        "definition": "to speed up or hurry along with something in Mexican slang"
+      },
+      {
+        "word": "la bola",
+        "surface": "la bola",
+        "type": "noun",
+        "register": "slang",
+        "definition": "the crowd or bunch of people, the whole gang together"
+      },
+      {
+        "word": "matada",
+        "surface": "matada",
+        "type": "slang",
+        "register": "slang",
+        "definition": "someone stiff or overly serious, a try hard in Mexican slang"
+      },
+      {
+        "word": "vacilón",
+        "surface": "vacilón",
+        "type": "noun",
+        "register": "slang",
+        "definition": "a fun and lively good time, a real blast with people"
+      },
+      {
+        "word": "chido",
+        "surface": "chido",
+        "type": "slang",
+        "register": "slang",
+        "definition": "cool, great or awesome, a very Mexican way to approve"
+      },
+      {
+        "word": "me prendió",
+        "surface": "me prendió",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "it got me excited or hooked on something right away"
+      },
+      {
+        "word": "tablado",
+        "surface": "tablado",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a raised wooden platform used for dancing the zapateado"
+      },
+      {
+        "word": "zapateado",
+        "surface": "zapateado",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "rhythmic foot stomping dance at the heart of son jarocho"
+      },
+      {
+        "word": "jarana",
+        "surface": "jarana",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a small guitar used to play son jarocho music"
+      },
+      {
+        "word": "son jarocho",
+        "surface": "son jarocho",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "traditional string and dance music from the state of Veracruz"
+      },
+      {
+        "word": "fandango",
+        "surface": "fandango",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a lively community party built around live son jarocho music"
+      },
+      {
+        "word": "carrilladas",
+        "surface": "carrilladas",
+        "type": "noun",
+        "register": "slang",
+        "definition": "teasing jokes and playful mockery aimed at a close friend"
+      },
+      {
+        "word": "me trabo",
+        "surface": "me trabo",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "to get stuck or freeze up while doing something"
+      },
+      {
+        "word": "mirón",
+        "surface": "mirón",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "an idle onlooker who just watches without ever joining in"
+      },
+      {
+        "word": "le hallaste el sabor",
+        "surface": "le hallaste el sabor",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "you found the groove and started really enjoying it"
+      },
+      {
+        "word": "le entra al son",
+        "surface": "le entra al son",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "everyone joins in and takes an active part in it"
+      },
+      {
+        "word": "la raza",
+        "surface": "la raza",
+        "type": "noun",
+        "register": "slang",
+        "definition": "the folks, the crew, one's own people in Mexican slang"
+      },
+      {
+        "word": "café de olla",
+        "surface": "cafés de olla",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "coffee brewed in a clay pot with cinnamon and raw sugar"
+      }
+    ],
+    "topic": "veracruz",
+    "slotIndex": 1
+  },
+  {
+    "title": "Mariscos para toda la raza",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "El puesto de mariscos se le llena a Beto justo cuando más batalla, así que Regina se amarra el mandil y salta detrás de la barra. Entre tostadas, vuelcos y coctel campechano, despacha a la clientela de volada y presume que la cosa no está tan grueso. Beto sonríe, pero baja la voz: por la entrada del mercado se acerca la dueña del local de junto, convencida de que él le bajó la receta, y la bronca apenas va a empezar.",
+    "text": "Beto destapó la hielera y acomodó los vuelcos de camarón mientras Regina se amarraba el mandil detrás de la barra. El olor a limón se colaba entre la clientela, y su compa corría con dos comandas.\n\nBeto: ¡Órale, cayó del cielo! Échame la mano tantito, que se me juntó la raza y ya ando hasta el gorro con tanto pedido.\n\nRegina: Órale, pásame el cucharón. ¿Qué les sirvo, el vuelco o el coctel campechano bien surtido?\n\nBeto: Sírveles lo que pidan y no te apures por el sazón; la salsa ya quedó bien picosa desde en la mañana.\n\nRegina despachó tostada tras tostada, cobrando de volada y dando el cambio sin fallar.\n\nRegina: Neta que esto no está tan grueso. Creí que ibas a batallar toda la tarde, y mírate, puro relajo y carrilla con la clientela que llega.\n\nBeto: Es que ya me hice al vaivén, comadre. Pero aguanta tantito, que ahí viene lo canijo del asunto.\n\nBeto bajó la voz y señaló con la barbilla hacia la entrada, donde una señora avanzaba directo al puesto.\n\nRegina: ¿Y esa quién es, por qué te pusiste pálido de repente, mi Beto?\n\nBeto: Esa, mi Regina, es la dueña del local de junto, y anda jurando por todos lados que le bajé la receta del aderezo. Ahorita mismo se va a armar.\n\nLa mujer llegó a la barra, se cruzó de brazos y clavó la mirada en la cazuela humeante, sin soltar una palabra.",
+    "vocab": [
+      {
+        "word": "échame la mano",
+        "surface": "échame la mano",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "to help me out or give me a hand with something"
+      },
+      {
+        "word": "hasta el gorro",
+        "surface": "hasta el gorro",
+        "type": "expression",
+        "register": "slang",
+        "definition": "completely fed up or swamped with far too much"
+      },
+      {
+        "word": "vuelco",
+        "surface": "vuelco",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a Veracruz style shrimp tostada piled high with seafood"
+      },
+      {
+        "word": "coctel campechano",
+        "surface": "coctel campechano",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a mixed seafood cocktail with shrimp, octopus and clams"
+      },
+      {
+        "word": "sazón",
+        "surface": "sazón",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the special seasoning touch that makes food taste just right"
+      },
+      {
+        "word": "picosa",
+        "surface": "picosa",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "nicely spicy and full of hot chili kick to it"
+      },
+      {
+        "word": "de volada",
+        "surface": "de volada",
+        "type": "expression",
+        "register": "slang",
+        "definition": "very fast, in a flash, done right away without delay"
+      },
+      {
+        "word": "grueso",
+        "surface": "grueso",
+        "type": "slang",
+        "register": "slang",
+        "definition": "intense, heavy or hard to handle, said in slang"
+      },
+      {
+        "word": "batallar",
+        "surface": "batallar",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "to struggle and have a rough time with something"
+      },
+      {
+        "word": "me hice al vaivén",
+        "surface": "me hice al vaivén",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "to get used to the swing and routine of something"
+      },
+      {
+        "word": "comadre",
+        "surface": "comadre",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a close woman friend treated almost like family in Mexico"
+      },
+      {
+        "word": "canijo",
+        "surface": "canijo",
+        "type": "slang",
+        "register": "slang",
+        "definition": "the tough, tricky or nasty part of a situation"
+      },
+      {
+        "word": "barbilla",
+        "surface": "barbilla",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the chin, the front point of the lower jaw"
+      },
+      {
+        "word": "se va a armar",
+        "surface": "se va a armar",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "a big fight or scene is about to break out"
+      },
+      {
+        "word": "le bajé",
+        "surface": "le bajé",
+        "type": "slang",
+        "register": "slang",
+        "definition": "to swipe or steal something away from someone, in slang"
+      },
+      {
+        "word": "aderezo",
+        "surface": "aderezo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a dressing or sauce that seasons and finishes a dish"
+      },
+      {
+        "word": "tostada",
+        "surface": "tostada",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a crisp fried tortilla topped with seafood or fresh salad"
+      },
+      {
+        "word": "cazuela",
+        "surface": "cazuela",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a wide clay pot used for cooking stews and sauces"
+      },
+      {
+        "word": "hielera",
+        "surface": "hielera",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "a cooler box that keeps the seafood cold on ice"
+      },
+      {
+        "word": "compa",
+        "surface": "compa",
+        "type": "slang",
+        "register": "slang",
+        "definition": "a buddy or close pal, shortened word in Mexican slang"
+      },
+      {
+        "word": "el camarón",
+        "surface": "camarón",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "shrimp, the small pink shellfish piled onto the seafood tostadas"
+      },
+      {
+        "word": "el limón",
+        "surface": "limón",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "lime, the small green citrus squeezed over the seafood for zing"
+      }
+    ],
+    "topic": "veracruz",
+    "slotIndex": 2
+  },
+  {
+    "title": "Rumbo a El Tajín",
+    "arcType": "harmonic-close",
+    "synopsis": "Antes del amanecer, Regina saca a rastras a sus comadres para ganarle al calor y al gentío rumbo a las ruinas totonacas. Nayeli refunfuña, todavía en chanclas y muerta de sueño, mientras Lupe calienta la camioneta y le sigue la corriente al plan. Cuando por fin ven a los voladores girar desde el palo, amarrados de los tobillos, hasta la más dormilona admite que madrugar valió la pena, y las tres se quedan gozando el descenso sin ninguna prisa.",
+    "text": "Regina golpeó la puerta de Nayeli antes de que saliera el sol y le aventó una mochila con tortas para el camino. Su comadre salió despeinada, en chanclas, sin entender tanta prisa. Lupe ya calentaba el motor.\n\nNayeli: ¿Estás loca o qué, Regina? ¿Por qué me sacas de la cama tan temprano? Ni los gallos andan despiertos todavía.\n\nRegina: Ándale, súbete rapidito, que si salimos tarde nos agarra el calor en la carretera y no la vas a aguantar.\n\nLupe: Déjala refunfuñar, Regina; tú traes el plan bien armado y nosotras nomás te seguimos la corriente.\n\nLa camioneta agarró la libre entre cañaverales, y el calor tropical ya apretaba a media mañana.\n\nNayeli: Bueno, ya que me arrastraste hasta acá, cuéntame el chisme completo. ¿Qué tanto quieres ver en la zona a estas horas?\n\nRegina: Quiero alcanzar a los voladores antes del gentío, y de paso comprar buena vainilla en el pueblo para llevarle un frasco a mi jefa.\n\nLlegaron a la explanada cuando los voladores ya trepaban el palo altísimo, amarrados de los tobillos y listos para girar.\n\nLupe: Neta que valió la pena madrugar; mira nomás cómo se avientan de cabeza, qué chulada de espectáculo.\n\nRegina: Te lo dije, Nayeli. Aquí lo bonito es verlo sin apuraciones, con la raza tranquila y sin que nadie te ande empujando.\n\nNayeli: Ya, ya, tenías razón; me sacaste temprano de la cama, pero valió cada minuto de sueño perdido.\n\nLas tres se quedaron viendo el descenso lento de los voladores, con la vainilla en la mochila y todo el día por delante.",
+    "vocab": [
+      {
+        "word": "aventó",
+        "surface": "aventó",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "to toss or throw something quickly toward someone"
+      },
+      {
+        "word": "tortas",
+        "surface": "tortas",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Mexican sandwiches served on a crusty white bread roll"
+      },
+      {
+        "word": "chanclas",
+        "surface": "chanclas",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "flip flops or simple open sandals worn in the heat"
+      },
+      {
+        "word": "gallos",
+        "surface": "gallos",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "roosters, the male birds that crow loudly at dawn"
+      },
+      {
+        "word": "súbete",
+        "surface": "súbete",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "to get in or climb aboard a car or truck"
+      },
+      {
+        "word": "calor",
+        "surface": "calor",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the heat, the high hot temperature of the day"
+      },
+      {
+        "word": "la libre",
+        "surface": "la libre",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the free public road instead of the paid toll highway"
+      },
+      {
+        "word": "te seguimos la corriente",
+        "surface": "te seguimos la corriente",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "to go along with someone just to avoid an argument"
+      },
+      {
+        "word": "refunfuñar",
+        "surface": "refunfuñar",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "to grumble and complain quietly under your own breath"
+      },
+      {
+        "word": "el chisme",
+        "surface": "el chisme",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the gossip or juicy news about other people's business"
+      },
+      {
+        "word": "voladores",
+        "surface": "voladores",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Totonac performers who spin down from a very tall pole"
+      },
+      {
+        "word": "mi jefa",
+        "surface": "mi jefa",
+        "type": "slang",
+        "register": "slang",
+        "definition": "an affectionate slang word for one's own mother"
+      },
+      {
+        "word": "explanada",
+        "surface": "explanada",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a wide open flat public square or paved esplanade"
+      },
+      {
+        "word": "tobillos",
+        "surface": "tobillos",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the ankles, the thin joints just above the feet"
+      },
+      {
+        "word": "madrugar",
+        "surface": "madrugar",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "to wake up and get going very early in the morning"
+      },
+      {
+        "word": "qué chulada",
+        "surface": "qué chulada",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "how lovely, what a beautiful sight, said in Mexico"
+      },
+      {
+        "word": "apuraciones",
+        "surface": "apuraciones",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "rushing, hurried worries and stress about the passing time"
+      },
+      {
+        "word": "la vainilla",
+        "surface": "vainilla",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "vanilla, the fragrant pod Veracruz is famous for growing and selling"
+      },
+      {
+        "word": "el motor",
+        "surface": "motor",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the engine of a car or a truck that makes it run"
+      },
+      {
+        "word": "el camino",
+        "surface": "camino",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the road or route you travel between two distant places"
+      },
+      {
+        "word": "el frasco",
+        "surface": "frasco",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "a small glass jar for holding vanilla, jam, or spices"
+      },
+      {
+        "word": "la cama",
+        "surface": "cama",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "the bed you sleep in, hard to leave before dawn"
+      }
+    ],
+    "topic": "veracruz",
+    "slotIndex": 3
+  },
+  {
+    "topic": "tijuana",
+    "slotIndex": 1,
+    "title": "La línea también almuerza",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Regina llega a Tijuana convencida de que comer pegado a la frontera es una imprudencia y un fastidio. Su amigo Cuau, en cambio, trata la garita como parte del paisaje diario. ¿Qué pasa cuando una chilanga terca descubre que el desorden que tanto critica esconde una manera entera de vivir la línea?",
+    "text": "\"No manches, wey, ¿en serio vamos a tragar aquí, pegados a la garita?\", soltó Regina esquivando el gentío. Cuau, tijuanense de hueso colorado, ya pedía dos tostadas de aleta en el carrito de mariscos. La chilanga miraba la fila de carros rumbo a la línea con cara de fuchi.\n\n\"Cállate y prueba, morra\", le dijo, y le encajó una tostada rebosante. Regina le dio la primera probada y se quedó muda. El aguachile picaba parejo, el pulpo estaba fresco y el limón le cortó la queja a media frase.\n\nA dos pasos, un chavo voceaba los precios en dólares y en pesos, según quién se arrimara al puesto. Regina notó que nadie llevaba prisa, aunque la espera para cruzar fuera eterna. El puesto y la línea convivían sin pelearse, y su berrinche de recién llegada de pronto sonaba fuera de lugar.\n\nCuau contó que su jefe pasaba de madrugada a chambear a San Diego y volvía molido en la noche. \"La neta, uno se acostumbra al vaivén\", dijo, encogiéndose de hombros. Para él la línea no era herida, sino una rutina tan suya como el chile.\n\nRegina se limpió la salsa del cachete y pidió otra ronda sin que se lo sugirieran. El carrito, el humo y aquel desmadre de vendedor bilingüe de golpe le cuadraba entero. A un lado hervía la fila rumbo al otro país; del otro, el limón y la sal seguían su propio ritmo, ajenos a la prisa.",
+    "vocab": [
+      {
+        "word": "wey",
+        "surface": "wey",
+        "type": "slang",
+        "register": "slang",
+        "definition": "Casual Mexican term for dude or guy among close friends"
+      },
+      {
+        "word": "garita",
+        "surface": "garita",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "The border checkpoint where cars wait to cross into another country"
+      },
+      {
+        "word": "gentío",
+        "surface": "gentío",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A dense noisy crowd of people packed into one place"
+      },
+      {
+        "word": "tragar",
+        "surface": "tragar",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To eat, often quickly or greedily, in casual speech"
+      },
+      {
+        "word": "fuchi",
+        "surface": "fuchi",
+        "type": "expression",
+        "register": "slang",
+        "definition": "Playful exclamation of disgust, similar to yuck in English"
+      },
+      {
+        "word": "rebosante",
+        "surface": "rebosante",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "Overflowing or piled high, filled beyond its normal capacity"
+      },
+      {
+        "word": "morra",
+        "surface": "morra",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Northern Mexican slang for a young woman or girl"
+      },
+      {
+        "word": "encajar",
+        "surface": "encajó",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To shove or force something onto someone almost without asking"
+      },
+      {
+        "word": "aguachile",
+        "surface": "aguachile",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Spicy shrimp dish cured in lime juice with chili and cucumber"
+      },
+      {
+        "word": "pulpo",
+        "surface": "pulpo",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Octopus, commonly served in Mexican seafood tostadas and cocktails"
+      },
+      {
+        "word": "chavo",
+        "surface": "chavo",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Casual Mexican word for a young guy or kid"
+      },
+      {
+        "word": "arrimarse",
+        "surface": "arrimara",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To move closer or approach, especially toward a stall or person"
+      },
+      {
+        "word": "cruzar",
+        "surface": "cruzar",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To cross the border from one country into another"
+      },
+      {
+        "word": "berrinche",
+        "surface": "berrinche",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A childish tantrum or fit of stubborn complaining"
+      },
+      {
+        "word": "madrugada",
+        "surface": "madrugada",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "The small hours before dawn, very early in the morning"
+      },
+      {
+        "word": "chambear",
+        "surface": "chambear",
+        "type": "verb",
+        "register": "slang",
+        "definition": "Mexican slang meaning to work or hold down a job"
+      },
+      {
+        "word": "vaivén",
+        "surface": "vaivén",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "The constant back and forth movement of people or things"
+      },
+      {
+        "word": "cachete",
+        "surface": "cachete",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "The fleshy cheek of the face in casual speech"
+      },
+      {
+        "word": "desmadre",
+        "surface": "desmadre",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Chaotic mess or wild disorder, mildly vulgar Mexican slang"
+      },
+      {
+        "word": "cuadrar",
+        "surface": "cuadraba",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To add up or finally make sense to someone"
+      },
+      {
+        "word": "ronda",
+        "surface": "ronda",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A round of food or drinks served to everyone"
+      },
+      {
+        "word": "la línea",
+        "surface": "la línea",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "the border line between Mexico and the United States nearby"
+      }
+    ]
+  },
+  {
+    "topic": "tijuana",
+    "slotIndex": 2,
+    "title": "Lo que esconde la Revu",
+    "arcType": "reframe-turn",
+    "synopsis": "Para Regina, la Avenida Revolución es una trampa de baratijas donde solo caen los turistas despistados. Su amiga Brenda insiste en que el barrio de verdad late en otra parte. Cuando una cervecería escondida y un mural sin pose le contradicen el desprecio, la chilanga tiene que decidir si su juicio rápido vale algo.",
+    "text": "Brenda arrastró a Regina por la Avenida Revolución, entre puestos de sombreros y burros pintados de cebra. La chilanga, medio fresa, torció la jeta ante tanta cháchara para el turista gringo. \"Esto es puro gancho para incautos, amiga\", refunfuñó por lo bajo mientras caminaban.\n\nSu amiga no le hizo caso y la metió a un callejón que olía a lúpulo tostado. Adentro, una cervecería pequeña servía chelas oscuras bajo un mural de una mujer con corona de nopales. \"Aquí no hay pose, güey; esto lo pintó pura banda de acá\", presumió Brenda con una sonrisa.\n\nRegina probó una cerveza espesa y amarga que le tumbó la desconfianza de un trago. En las bardas de la calle, muchos artistas de la zona habían tapado la mugre con color y con rabia. Su amiga le explicó que cada mural era un grito del barrio, no un simple adorno para la foto.\n\n\"Yo pensaba que la Revu era pura peda para el que viene de gabacho\", admitió Regina, ya sin la mueca. Brenda soltó una carcajada grande y le sirvió otra cerveza. \"Esa es solo la fachada; el barrio de a de veras late atrás\", le contestó tranquila.\n\nSalieron a la calle cuando la tarde se ponía anaranjada y las paredes brillaban distinto. Regina retrató un trazo enorme con el teléfono, sin sentirse turista ni por accidente. El mismo barrio que había mirado con desdén a media mañana ahora le parecía el más honesto de la ciudad.",
+    "vocab": [
+      {
+        "word": "arrastrar",
+        "surface": "arrastró",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To drag or pull someone along somewhat against their will"
+      },
+      {
+        "word": "jeta",
+        "surface": "jeta",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Slang for a person's face, often with a sour look"
+      },
+      {
+        "word": "cháchara",
+        "surface": "cháchara",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Cheap trinkets or junk sold to tourists at markets"
+      },
+      {
+        "word": "gancho",
+        "surface": "gancho",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A lure or hook meant to trap gullible buyers"
+      },
+      {
+        "word": "refunfuñar",
+        "surface": "refunfuñó",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To grumble or mutter complaints quietly under one's breath"
+      },
+      {
+        "word": "callejón",
+        "surface": "callejón",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A narrow alley running between buildings in a city"
+      },
+      {
+        "word": "lúpulo",
+        "surface": "lúpulo",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Hops, the bitter flower that gives craft beer its flavor"
+      },
+      {
+        "word": "chelas",
+        "surface": "chelas",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Casual Mexican slang word for cold beers shared among friends"
+      },
+      {
+        "word": "nopales",
+        "surface": "nopales",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Edible cactus pads, a staple of Mexican cooking and imagery"
+      },
+      {
+        "word": "espesa",
+        "surface": "espesa",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "Thick and dense in texture, like a heavy dark beer"
+      },
+      {
+        "word": "desconfianza",
+        "surface": "desconfianza",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A feeling of distrust or suspicion toward someone or something"
+      },
+      {
+        "word": "bardas",
+        "surface": "bardas",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Outer walls or fences that often carry painted murals"
+      },
+      {
+        "word": "mugre",
+        "surface": "mugre",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Grime or filth built up on a dirty neglected surface"
+      },
+      {
+        "word": "rabia",
+        "surface": "rabia",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Rage or fierce anger, here poured into street art"
+      },
+      {
+        "word": "peda",
+        "surface": "peda",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Vulgar Mexican slang for a drinking party or binge"
+      },
+      {
+        "word": "gabacho",
+        "surface": "gabacho",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Mexican slang for an American or the United States"
+      },
+      {
+        "word": "mueca",
+        "surface": "mueca",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A face someone makes to show clear dislike or disgust"
+      },
+      {
+        "word": "carcajada",
+        "surface": "carcajada",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A loud hearty burst of laughter that erupts suddenly"
+      },
+      {
+        "word": "fachada",
+        "surface": "fachada",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "The front of a building or a misleading outer appearance"
+      },
+      {
+        "word": "retratar",
+        "surface": "retrató",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To photograph or portray someone or something in an image"
+      },
+      {
+        "word": "trazo",
+        "surface": "trazo",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A brushstroke or bold line drawn by an artist"
+      },
+      {
+        "word": "desdén",
+        "surface": "desdén",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Scorn or contempt shown toward something considered beneath you"
+      }
+    ]
+  },
+  {
+    "topic": "tijuana",
+    "slotIndex": 3,
+    "title": "Anoche sonó un corrido",
+    "arcType": "late-reveal",
+    "synopsis": "De regreso del concierto, Regina va de copiloto en la troca de Beto, comiendo tacos y preguntando por la banda que tanto lo emocionó. Beto contesta con calma, como quien no quiere darle importancia al asunto. Solo al final la chilanga entiende por qué esa tocada en particular le pesaba tanto a su amigo.",
+    "text": "La troca de Beto olía a gasolina y a cumbia mientras bajaban despacio por la Zona Norte, ya pasada la medianoche. Regina, todavía sorda del concierto, iba de copiloto tarareando un corrido viejo. Beto, tijuanense flaco y de gorra, manejaba con una sola mano y saludaba a los conocidos con la otra.\n\nPararon en un puesto de tacos de adobada donde el trompo de carne giraba brillante junto al fuego. \"Dos de suadero, y no seas codo con la cebolla\", le pidió Regina al taquero con hambre. Beto se rio fuerte y sacó unos billetes arrugados de la bolsa del pantalón.\n\nEntre mordidas, ella le preguntó cómo le había caído tan bien la banda que tocó esa noche. \"Es que el bajista es mi carnal; crecimos juntos en la misma colonia\", contestó Beto sin levantar la vista. Regina asintió despacio, sin darle mucho peso al dato.\n\nÉl contó que de morros hacían ruido con unas guitarras piratas en una cochera vieja sin puerta. \"Yo iba a ser el cantante, pero me rajé y me quedé aquí al volante\", dijo, medio en broma. Regina sintió el peso callado que se escondía por debajo de la risa.\n\nHasta entonces cayó en cuenta de que Beto no la había llevado a cualquier tocada. La había arrimado a mirar de cerca la vida que él soltó por quedarse en la frontera. El corrido de la bocina, de repente, le supo muy distinto.",
+    "vocab": [
+      {
+        "word": "troca",
+        "surface": "troca",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Northern Mexican border slang for a pickup truck"
+      },
+      {
+        "word": "sorda",
+        "surface": "sorda",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "Deaf or unable to hear, here from loud concert noise"
+      },
+      {
+        "word": "tararear",
+        "surface": "tarareando",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To hum a tune softly without singing the words"
+      },
+      {
+        "word": "corrido",
+        "surface": "corrido",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A traditional Mexican narrative ballad telling stories of border life"
+      },
+      {
+        "word": "gorra",
+        "surface": "gorra",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A cap or casual hat worn on the head"
+      },
+      {
+        "word": "adobada",
+        "surface": "adobada",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Pork marinated in chili adobo, roasted for tacos"
+      },
+      {
+        "word": "trompo",
+        "surface": "trompo",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "The spinning cone of stacked meat at a taco stand"
+      },
+      {
+        "word": "suadero",
+        "surface": "suadero",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A cut of beef simmered soft for Mexican tacos"
+      },
+      {
+        "word": "codo",
+        "surface": "codo",
+        "type": "adjective",
+        "register": "slang",
+        "definition": "Mexican slang for a stingy person unwilling to share"
+      },
+      {
+        "word": "taquero",
+        "surface": "taquero",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "The cook who prepares and serves tacos at a stand"
+      },
+      {
+        "word": "mordidas",
+        "surface": "mordidas",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Quick bites taken out of food while eating on the go"
+      },
+      {
+        "word": "bajista",
+        "surface": "bajista",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "The musician who plays bass guitar in a band"
+      },
+      {
+        "word": "carnal",
+        "surface": "carnal",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Mexican slang for a very close friend treated like a brother"
+      },
+      {
+        "word": "colonia",
+        "surface": "colonia",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A residential neighborhood or district within a Mexican city"
+      },
+      {
+        "word": "asentir",
+        "surface": "asintió",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To nod in agreement or acknowledgment without saying anything"
+      },
+      {
+        "word": "morros",
+        "surface": "morros",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Casual Mexican slang for kids or young teenage boys"
+      },
+      {
+        "word": "piratas",
+        "surface": "piratas",
+        "type": "adjective",
+        "register": "colloquial",
+        "definition": "Fake or bootleg, like cheaply copied instruments or goods"
+      },
+      {
+        "word": "cochera",
+        "surface": "cochera",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A home garage where cars park or bands rehearse loudly"
+      },
+      {
+        "word": "rajarse",
+        "surface": "rajé",
+        "type": "verb",
+        "register": "slang",
+        "definition": "To chicken out or back down from a commitment"
+      },
+      {
+        "word": "volante",
+        "surface": "volante",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "The steering wheel of a car or truck"
+      },
+      {
+        "word": "tocada",
+        "surface": "tocada",
+        "type": "noun",
+        "register": "slang",
+        "definition": "Slang for a live music gig or informal concert"
+      },
+      {
+        "word": "bocina",
+        "surface": "bocina",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "A loudspeaker or car speaker that plays music loudly"
+      },
+      {
+        "word": "caer en cuenta",
+        "surface": "cayó en cuenta",
+        "type": "expression",
+        "register": "colloquial",
+        "definition": "To suddenly realize or become aware of something"
+      }
+    ]
+  }
+]

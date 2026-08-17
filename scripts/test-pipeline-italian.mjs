@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 🇮🇹 Test Pipeline — Italian (flujo completo real)
+ * 🇮🇹 Test Pipeline; Italian (flujo completo real)
  *
  * Prueba el flujo REAL del pipeline:
  *   Bootstrap (crear estructura) → Planner (detectar gaps) → Content (generar) → QA
@@ -48,11 +48,11 @@ function sep(title) { console.log(`\n${"─".repeat(55)}\n  ${title}\n${"─".re
 
 async function main() {
   // ── PASO 0: Verificar conexiones ──────────────────────────────────
-  sep("🔍 PASO 0 — Verificar conexiones");
+  sep("🔍 PASO 0; Verificar conexiones");
 
   try {
     const count = await prisma.storyDraft.count();
-    log("✅", `Base de datos OK — ${count} drafts existentes`);
+    log("✅", `Base de datos OK; ${count} drafts existentes`);
   } catch (e) {
     log("❌", `No se pudo conectar a la base de datos: ${e.message}`);
     process.exit(1);
@@ -64,14 +64,14 @@ async function main() {
       messages: [{ role: "user", content: "Rispondi solo: ciao" }],
       max_tokens: 5,
     });
-    log("✅", `OpenAI OK — "${test.choices[0]?.message?.content}"`);
+    log("✅", `OpenAI OK; "${test.choices[0]?.message?.content}"`);
   } catch (e) {
     log("❌", `OpenAI falló: ${e.message}`);
     process.exit(1);
   }
 
   // ── PASO 1: Verificar si italiano tiene estructura de journey ─────
-  sep("🏗️  PASO 1 — Verificar estructura de journey para italiano");
+  sep("🏗️  PASO 1; Verificar estructura de journey para italiano");
 
   // We can't import the Next.js modules directly (they depend on next/cache),
   // so we check Sanity directly for journeyVariantPlan
@@ -101,7 +101,7 @@ async function main() {
       log("✅", `Estructura de italiano ya existe: ${plan.levelCount} niveles, ${plan.topicCount} topics`);
       italianPlanExists = true;
     } else {
-      log("⚠️", "Italiano NO tiene estructura de journey — necesita bootstrap");
+      log("⚠️", "Italiano NO tiene estructura de journey; necesita bootstrap");
     }
   } catch (e) {
     log("❌", `Error consultando Sanity: ${e.message}`);
@@ -110,7 +110,7 @@ async function main() {
 
   // ── PASO 2: Bootstrap si es necesario ─────────────────────────────
   if (!italianPlanExists) {
-    sep("🏗️  PASO 2 — Bootstrap: crear estructura de journey para italiano");
+    sep("🏗️  PASO 2; Bootstrap: crear estructura de journey para italiano");
 
     // Try to find an existing plan in Sanity to use as template
     const allPlansQuery = encodeURIComponent('*[_type == "journeyVariantPlan"]{ _id, language, variantId, levels }');
@@ -132,10 +132,10 @@ async function main() {
         const count = (plan.levels || []).reduce((s, l) => s + (l.topics || []).length, 0);
         if (count > maxTopics) { maxTopics = count; template = plan; }
       }
-      log("📋", `Template de Sanity: ${template.language} (${template.variantId}) — ${maxTopics} topics`);
+      log("📋", `Template de Sanity: ${template.language} (${template.variantId}); ${maxTopics} topics`);
       templateLevels = template.levels;
     } else {
-      // No plans in Sanity — use the hardcoded fallback curriculum from the codebase
+      // No plans in Sanity; use the hardcoded fallback curriculum from the codebase
       log("ℹ️", "No hay planes en Sanity. Usando estructura hardcoded del curriculum español.");
       templateLevels = [
         {
@@ -238,15 +238,15 @@ async function main() {
     const totalTopics = newLevels.reduce((s, l) => s + l.topics.length, 0);
     log("✅", `Plan de italiano creado: ${newLevels.length} niveles, ${totalTopics} topics`);
     for (const level of newLevels) {
-      log("  📚", `${level.id.toUpperCase()}: ${level.topics.length} topics — ${level.topics.map(t => t.slug).join(", ")}`);
+      log("  📚", `${level.id.toUpperCase()}: ${level.topics.length} topics; ${level.topics.map(t => t.slug).join(", ")}`);
     }
   } else {
-    sep("⏭️  PASO 2 — Bootstrap (no necesario)");
+    sep("⏭️  PASO 2; Bootstrap (no necesario)");
     log("ℹ️", "Italiano ya tiene estructura, saltando bootstrap");
   }
 
-  // ── PASO 3: Planner — detectar gaps ───────────────────────────────
-  sep("📋 PASO 3 — Planner: detectar gaps para italiano");
+  // ── PASO 3: Planner; detectar gaps ───────────────────────────────
+  sep("📋 PASO 3; Planner: detectar gaps para italiano");
 
   // Count existing Italian stories in Sanity
   const italianStoriesQuery = encodeURIComponent('count(*[_type == "standaloneStory" && language == "italian" && journeyEligible == true])');
@@ -284,7 +284,7 @@ async function main() {
     log("🔍", `Slots totales: ${totalSlots}, existentes: ${existingStories}, gaps: ${gaps}`);
 
     if (gaps <= 0) {
-      log("✅", "No hay gaps — todo el contenido italiano ya existe");
+      log("✅", "No hay gaps; todo el contenido italiano ya existe");
       await prisma.$disconnect();
       return;
     }
@@ -319,7 +319,7 @@ async function main() {
             topicSlug: topic.slug,
             storySlot: 1,
             journeyFocus: "General",
-            title: `${topic.label} – ${level.id.toUpperCase()} – Slot 1 (italian italy)`,
+            title: `${topic.label}: ${level.id.toUpperCase()}: Slot 1 (italian italy)`,
             brief: {
               description: `Historia para el journey "${topic.slug}", slot 1. Nivel ${level.id.toUpperCase()}, italian (italy).`,
               reason: "missing",
@@ -335,14 +335,14 @@ async function main() {
           },
         });
         briefsCreated++;
-        log("📝", `Brief creado: ${topic.label} — ${level.id.toUpperCase()}`);
+        log("📝", `Brief creado: ${topic.label}; ${level.id.toUpperCase()}`);
       }
     }
     log("✅", `${briefsCreated} briefs creados (limitado a ${BRIEF_LIMIT} para test)`);
   }
 
-  // ── PASO 4: Content Agent — generar historias ─────────────────────
-  sep("✍️  PASO 4 — Content Agent: generar historias");
+  // ── PASO 4: Content Agent; generar historias ─────────────────────
+  sep("✍️  PASO 4; Content Agent: generar historias");
 
   const pendingBriefs = await prisma.curriculumBrief.findMany({
     where: { language: "italian", status: "draft" },
@@ -373,9 +373,9 @@ async function main() {
 Generate a story in Italian at CEFR ${level.toUpperCase()} level about the topic "${topic.replace(/-/g, ' ')}".
 Return valid JSON:
 {
-  "title": "string — title in Italian",
-  "text": "string — the story, 200-400 words, culturally authentic Italian setting",
-  "synopsis": "string — 1-2 sentence summary in English",
+  "title": "string; title in Italian",
+  "text": "string; the story, 200-400 words, culturally authentic Italian setting",
+  "synopsis": "string; 1-2 sentence summary in English",
   "vocab": [{ "word": "Italian word", "translation": "English", "example": "Example sentence in Italian" }]
 }
 
@@ -431,7 +431,7 @@ Requirements:
           data: { status: "generated" },
         });
 
-        log("  ✅", `"${story.title}" — ${story.text.length} chars, ${story.vocab?.length} vocab`);
+        log("  ✅", `"${story.title}"; ${story.text.length} chars, ${story.vocab?.length} vocab`);
 
         // ── QA check ──
         const markers = ["è", "che", "una", "il", "la", "di", "per", "non", "con", "sono", "ho", "molto"];
@@ -462,7 +462,7 @@ Requirements:
           data: { status: passed ? "qa_pass" : "qa_fail" },
         });
 
-        log("  🔎", `QA: ${score}/100 — ${passed ? "PASS" : "FAIL"} (italiano: ${italianScore}/${markers.length})`);
+        log("  🔎", `QA: ${score}/100; ${passed ? "PASS" : "FAIL"} (italiano: ${italianScore}/${markers.length})`);
 
         if (passed) {
           await prisma.storyDraft.update({
@@ -501,7 +501,7 @@ Requirements:
   `);
 
   for (const d of finalDrafts) {
-    log("  📖", `"${d.title}" — ${d.status}`);
+    log("  📖", `"${d.title}"; ${d.status}`);
   }
 
   if (!PUBLISH) {

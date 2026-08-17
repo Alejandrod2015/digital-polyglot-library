@@ -1,7 +1,7 @@
 /**
  * Rewrite bad vocabulary definitions in published JourneyStory rows.
  *
- * Workflow (no external LLM is called from this script — Claude Code does the
+ * Workflow (no external LLM is called from this script; Claude Code does the
  * rewriting in-conversation):
  *
  *   1) `--export` reads the DB, classifies every vocab definition against the

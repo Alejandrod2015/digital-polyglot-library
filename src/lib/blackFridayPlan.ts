@@ -63,7 +63,7 @@ export type BlackFridayPlan = {
 
 export const BLACK_FRIDAY_PLAN: BlackFridayPlan = {
   lastUpdated: "2026-06-04",
-  eventDate: "Vie 27 nov – Lun 30 nov 2026 (Cyber Monday)",
+  eventDate: "Vie 27 nov a Lun 30 nov 2026 (Cyber Monday)",
   pdfHref: "/black-friday/onepager.pdf",
   goal: "Maximizar nuevos suscriptores pagos",
   market: "US · freemium + trial 14d + Stripe web",
@@ -89,12 +89,12 @@ export const BLACK_FRIDAY_PLAN: BlackFridayPlan = {
     {
       title: "El pico es la noche de Cyber Monday",
       body:
-        "Lun 30 nov, 8–10 PM ET; no el viernes. CM 2025 marcó récord de $14.25B vs $11.8B del Black Friday. Concentrar el último push ahí.",
+        "Lun 30 nov, 8-10 PM ET; no el viernes. CM 2025 marcó récord de $14.25B vs $11.8B del Black Friday. Concentrar el último push ahí.",
     },
     {
       title: "Ganar en canales propios, no en paid",
       body:
-        "Los CPMs de Meta/Google se inflan 12–43% en Cyber Week; el remarketing convierte +58%. Construir lista barata en sep–oct y convertirla en la semana de BF.",
+        "Los CPMs de Meta/Google se inflan 12-43% en Cyber Week; el remarketing convierte +58%. Construir lista barata en sep-oct y convertirla en la semana de BF.",
     },
     {
       title: "No alargar el trial",
@@ -104,7 +104,7 @@ export const BLACK_FRIDAY_PLAN: BlackFridayPlan = {
     {
       title: "Arco multi-día, no un blast de un día",
       body:
-        "Teaser → early access → Black Friday → Cyber Monday → extensión. Ventana total ~14 días, dentro de la norma verificada de 10–34 días.",
+        "Teaser → early access → Black Friday → Cyber Monday → extensión. Ventana total ~14 días, dentro de la norma verificada de 10-34 días.",
     },
     {
       title: "Nada de lifetime (por ahora)",
@@ -152,13 +152,13 @@ export const BLACK_FRIDAY_PLAN: BlackFridayPlan = {
   ],
 
   calendar: [
-    { date: "Jun–Jul", phase: "Prep", detail: "Build promo + parametrizar precios + apretar free tier" },
+    { date: "Jun-Jul", phase: "Prep", detail: "Build promo + parametrizar precios + apretar free tier" },
     { date: "Ago", phase: "Prep", detail: "Oferta + creatividad; QA del cupón Stripe end-to-end; analytics de cohortes" },
-    { date: "Sep–Oct", phase: "Paid", detail: "Construir lista (email/SMS) barata; calentar pixel; reclutar micro-influencers" },
-    { date: "10–16 nov", phase: "Teaser", detail: "Waitlist 'avísame' + banner in-app" },
-    { date: "23–25 nov", phase: "Early access", detail: "Acceso solo-lista; desahoga la carga" },
-    { date: "27–30 nov", phase: "EVENTO", detail: "Email + SMS a volumen · peak CM lun 8–10 PM ET", peak: true },
-    { date: "1–6 dic", phase: "Extensión", detail: "'Extendido por demanda'; last chance final 24–48h a no-convertidos" },
+    { date: "Sep-Oct", phase: "Paid", detail: "Construir lista (email/SMS) barata; calentar pixel; reclutar micro-influencers" },
+    { date: "10-16 nov", phase: "Teaser", detail: "Waitlist 'avísame' + banner in-app" },
+    { date: "23-25 nov", phase: "Early access", detail: "Acceso solo-lista; desahoga la carga" },
+    { date: "27-30 nov", phase: "EVENTO", detail: "Email + SMS a volumen · peak CM lun 8-10 PM ET", peak: true },
+    { date: "1-6 dic", phase: "Extensión", detail: "'Extendido por demanda'; last chance final 24-48h a no-convertidos" },
   ],
 
   channels: [
@@ -181,9 +181,9 @@ export const BLACK_FRIDAY_PLAN: BlackFridayPlan = {
 
   retention: [
     "El lock anual ES la retención principal: difiere el acantilado a nov 2027.",
-    "Secuencia pre-renovación 30–45 días antes (oct 2027): recap de valor + precio $149 claro y temprano (evita price-shock).",
+    "Secuencia pre-renovación 30-45 días antes (oct 2027): recap de valor + precio $149 claro y temprano (evita price-shock).",
     "Save-flow de cancelación: ofrecer pausa + downgrade a mensual antes de cancelar (los save-flows reducen churn hasta ~39%).",
-    "Win-back 30–60 días post-cancel (recupera ~15–30%).",
+    "Win-back 30-60 días post-cancel (recupera ~15-30%).",
     "Trackear churn por fuente de adquisición a 30/60/90 días: los usuarios BF traen peor engagement.",
   ],
 
@@ -202,7 +202,7 @@ export const BLACK_FRIDAY_PLAN: BlackFridayPlan = {
     },
     {
       kind: "risk",
-      label: "Chargebacks ene–feb",
+      label: "Chargebacks ene-feb",
       body:
         "La 'avalancha de enero' (friendly fraud >45% de disputas). Mitigar con billing descriptor claro, precio de renovación visible, cancel path visible y recordatorios pre-renovación.",
     },

@@ -10,7 +10,7 @@
  *
  * Each question is tagged with a CEFR level (A1/A2/B1/B2). The 10
  * questions ramp up in difficulty: 2 A1 + 3 A2 + 3 B1 + 2 B2. The
- * resulting score (0–10) maps to a level via `levelFromScore`.
+ * resulting score (0-10) maps to a level via `levelFromScore`.
  *
  * This module ships hand-authored content for Spanish + German. Other
  * languages fall back to a generic placeholder set or hide the test

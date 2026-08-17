@@ -1,0 +1,137 @@
+[
+  {
+    "title": "Zwei Stempel bis zur Existenz",
+    "slug": "zwei-stempel-bis-zur-existenz",
+    "text": "Der Ersatzbus kriecht durch den Vormittagsverkehr. Nadia rechnet im Kopf.\n\nNadia: Elf Uhr sechs. Noch vierzehn Minuten, acht Haltestellen. Rechne du, ich kann nicht mehr.\n\nTimo: Entscheidend ist nur, die Wartemarke zu ziehen, bevor die Tafel deine Uhrzeit überspringt. Drinnen bist du im System.\n\nUm 11:17 stolpern sie durch die Glastür. Der Automat druckt: B 247. Auf der Tafel leuchtet B 244.\n\nTimo: B 244? Ankunft mit Stil. Drei Nummern sind hier eine halbe Ewigkeit.\n\nNadia: Drei Nummern Puffer. Dass eine Leuchttafel mich so rühren kann.\n\nTimo: Wenn deine Nummer aufleuchtet: Schalter neun. Lass dich von der Miene des Sachbearbeiters nicht beeindrucken.\n\nB 247. Herr Menzel blättert durch ihre Unterlagen wie durch eine Zeitschrift, die ihn mäßig interessiert.\n\nMenzel: Pass, Formular, Wohnungsgeberbestätigung. Sogar unterschrieben. Sie glauben nicht, wie oft genau daran alles scheitert.\n\nNadia: Ich habe dafür heute Morgen einen Vermieter in seiner Laube aufgespürt.\n\nMenzel: Dann haben Sie das Prinzip dieser Stadt schneller begriffen als die meisten. Zwei Stempel, und Sie existieren offiziell.\n\nEr schiebt die Anmeldebestätigung über den Tresen: ein Blatt, das Konto, Arbeitsvertrag und Handyvertrag freischaltet. Draußen wartet Timo mit Kaffee.\n\nTimo: Und jetzt, wo du offiziell existierst?\n\nNadia: Jetzt brauche ich eine Wohnung, die wirklich mir gehört. Meine Zwischenmiete ist befristet, sechs Wochen noch.\n\nTimo grinst in seinen Kaffee.\n\nTimo: Dann fängt der Spaß erst an. Gegen die Berliner Wohnungssuche war dieser Vormittag ein Spaziergang.",
+    "synopsis": "Ein Ersatzbus, der durch Neukölln kriecht, vierzehn Minuten Restzeit und eine Wartemarke mit drei Nummern Puffer: Nadias Termin hängt am seidenen Faden. Doch an Schalter neun wartet keine Katastrophe, sondern Herr Menzel, ein Sachbearbeiter, der Unterlagen schneller abarbeitet, als Berlin U-Bahnen ersetzt. Mit zwei Stempeln existiert Nadia offiziell. Bleibt ein letztes Problem: Ihre Zwischenmiete ist befristet, und die Wohnungssuche beginnt jetzt erst richtig.",
+    "arcType": "harmonic-close",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "kriechen",
+        "surface": "kriecht",
+        "definition": "To crawl; here, a bus moving desperately slowly through traffic."
+      },
+      {
+        "type": "noun",
+        "word": "die Wartemarke",
+        "surface": "Wartemarke",
+        "definition": "Numbered paper ticket that holds your place at government offices."
+      },
+      {
+        "type": "verb",
+        "word": "überspringen",
+        "surface": "überspringt",
+        "definition": "To skip over something, like a number being passed."
+      },
+      {
+        "type": "verb",
+        "word": "stolpern",
+        "definition": "To stumble or trip, often while rushing somewhere."
+      },
+      {
+        "type": "noun",
+        "word": "der Puffer",
+        "surface": "Puffer",
+        "definition": "Safety margin of time or numbers before things get critical."
+      },
+      {
+        "type": "verb",
+        "word": "rühren",
+        "definition": "To move someone emotionally, nearly to the point of tears."
+      },
+      {
+        "type": "verb",
+        "word": "aufleuchten",
+        "surface": "aufleuchtet",
+        "definition": "To light up suddenly on a screen or display."
+      },
+      {
+        "type": "noun",
+        "word": "der Sachbearbeiter",
+        "surface": "Sachbearbeiters",
+        "definition": "Official handling your file at a German government office."
+      },
+      {
+        "type": "verb",
+        "word": "blättern",
+        "surface": "blättert",
+        "definition": "To flip through pages or a stack of documents."
+      },
+      {
+        "type": "noun",
+        "word": "die Unterlagen",
+        "surface": "Unterlagen",
+        "definition": "All documents and paperwork required for an official application."
+      },
+      {
+        "type": "noun",
+        "word": "die Miene",
+        "surface": "Miene",
+        "definition": "The look on someone's face that shows what they feel."
+      },
+      {
+        "type": "verb",
+        "word": "scheitern",
+        "surface": "scheitert",
+        "definition": "To fail definitively, after a serious and hopeful attempt."
+      },
+      {
+        "type": "verb",
+        "word": "aufspüren",
+        "surface": "aufgespürt",
+        "definition": "To track someone down after a determined search."
+      },
+      {
+        "type": "verb",
+        "word": "begreifen",
+        "surface": "begriffen",
+        "definition": "To finally understand how something really works, deep down."
+      },
+      {
+        "type": "noun",
+        "word": "der Stempel",
+        "surface": "Stempel",
+        "definition": "Official rubber stamp that makes a document legally valid."
+      },
+      {
+        "type": "verb",
+        "word": "freischalten",
+        "surface": "freischaltet",
+        "definition": "To unlock or activate access to a service."
+      },
+      {
+        "type": "noun",
+        "word": "die Zwischenmiete",
+        "surface": "Zwischenmiete",
+        "definition": "Temporary sublet of someone's flat for a limited period."
+      },
+      {
+        "type": "adjective",
+        "word": "befristet",
+        "definition": "Valid only for a fixed, contractually limited period."
+      },
+      {
+        "type": "noun",
+        "word": "die Wohnungssuche",
+        "surface": "Wohnungssuche",
+        "definition": "The search for an apartment; a Berlin endurance sport."
+      },
+      {
+        "type": "verb",
+        "word": "grinsen",
+        "surface": "grinst",
+        "definition": "To grin broadly, often in a teasing, mischievous way."
+      },
+      {
+        "type": "expression",
+        "word": "eine halbe Ewigkeit",
+        "definition": "Half an eternity; hyperbole for an unbearably long wait.",
+        "surface": "Ewigkeit"
+      }
+    ],
+    "level": "c1",
+    "topic": "arrival-and-registration",
+    "slotIndex": 3
+  }
+]

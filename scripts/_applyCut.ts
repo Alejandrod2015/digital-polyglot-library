@@ -24,7 +24,7 @@ const TOK = /\p{L}+(?:-\p{L}+)*/gu;
   const cov = new Set(Object.keys(bundle.glosses));
   const miss = [...new Set([...text.matchAll(TOK)].map((m) => m[0].toLowerCase()))].filter((t) => !cov.has(t));
   const wc = text.split(/\s+/).length;
-  console.log(`${slug}: ${wc}w | vocab ${s.vocab.length}→${kept.length} (drop: ${dropped.map((v)=>v.word).join(", ")||"—"})`);
+  console.log(`${slug}: ${wc}w | vocab ${s.vocab.length}→${kept.length} (drop: ${dropped.map((v)=>v.word).join(", ")||"-"})`);
   if (miss.length) { console.log(`  ✗ GLOSS uncovered: ${miss.join(", ")}`); process.exit(1); }
   const data: any = { text, vocab: kept, wordCount: wc, vocabCount: kept.length };
   if (s.audioStatus === "ready") { data.audioUrl = null; data.audioStatus = "draft"; data.audioSegments = undefined; data.audioWordTimings = undefined; data.audioFragments = undefined; data.audioFilename = null; console.log("  (audio viejo limpiado)"); }

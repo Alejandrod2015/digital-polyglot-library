@@ -1605,7 +1605,7 @@ export default function HomeClient({
   const onboardingSteps = [
     {
       title: "What should we call you?",
-      body: "Optional — we'll use your first name to greet you. Feel free to skip.",
+      body: "Optional. We'll use your first name to greet you, and you can skip it.",
       render: (
         <input
           type="text"

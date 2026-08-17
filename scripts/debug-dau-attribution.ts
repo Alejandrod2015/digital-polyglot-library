@@ -18,12 +18,12 @@ async function listForRange(label: string, hoursAgo: number) {
   const ids = rows.map((r) => r.userId);
   console.log(`\n== ${label}: ${ids.length} userIds (sin filtro) ==`);
   for (const id of ids) {
-    let label = "—";
+    let label = "-";
     try {
       const u = await clerk.users.getUser(id);
       label = u.emailAddresses[0]?.emailAddress ?? "(sin email)";
     } catch {
-      label = "(Clerk 404 — userId huerfano)";
+      label = "(Clerk 404; userId huerfano)";
     }
     console.log(`  ${id.padEnd(40)} ${label}`);
   }

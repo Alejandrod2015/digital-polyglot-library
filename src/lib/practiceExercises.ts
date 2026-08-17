@@ -89,7 +89,7 @@ export type ListenChooseExercise = {
   // Optional per-option English gloss, parallel to `options`; shown under each
   // choice on reveal (same as fill_blank).
   optionTranslations?: string[] | null;
-  // Optional story audio segment to play instead of browser TTS — a real
+  // Optional story audio segment to play instead of browser TTS; a real
   // sentence-level clip from the story master (clean boundaries).
   audioClip?: PracticeAudioClip | null;
   answer: string;
@@ -417,7 +417,7 @@ function getDistractorWords(
   // target ("una ___ nerviosa") should prefer feminine-singular distractors so
   // the learner can't rule out masculine/plural options ("título", "botas") by
   // agreement instead of meaning. Falls back to the looser tiers below when the
-  // pool can't fill 4 — so it never starves the exercise. CEFR-band filtering
+  // pool can't fill 4; so it never starves the exercise. CEFR-band filtering
   // is intentionally NOT here: items carry no level yet (that's phase 1).
   const targetAgr = normalizeKey(item.language) === "spanish" ? spanishAgreement(item.word) : null;
   const agreementMatch = (candidate: PracticeFavoriteItem): boolean => {

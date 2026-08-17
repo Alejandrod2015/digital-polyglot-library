@@ -271,7 +271,7 @@
   --color-cyan: #0a8bb4;
   --color-xp: #6a9c2e;
 
-  /* Practice color tokens — LIGHT only. Dark keeps the defaults in :root. */
+  /* Practice color tokens, LIGHT only. Dark keeps the defaults in :root. */
   --prac-tunderline: #2256c9;             /* blue underline (user request) */
   --prac-btn-ok-bg:  #10b981;             /* darker green so white text reads */
   --prac-btn-ok-fg:  #ffffff;

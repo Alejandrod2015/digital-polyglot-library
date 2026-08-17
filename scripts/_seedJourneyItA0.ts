@@ -65,7 +65,7 @@ async function main() {
     },
   });
   if (existing) {
-    console.log(`YA EXISTE: ${existing.name} ${existing.language}/${existing.variant} (${existing.id}) — nada que hacer`);
+    console.log(`YA EXISTE: ${existing.name} ${existing.language}/${existing.variant} (${existing.id}); nada que hacer`);
     return;
   }
 

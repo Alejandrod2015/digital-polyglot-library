@@ -12,11 +12,15 @@ const p = new PrismaClient();
   const rev = JSON.parse(require("fs").readFileSync("scripts/_ptAudioReview.json","utf8")).historias as Record<string,{revisado:string|null;hallazgo:string|null;estado?:string;corregido:boolean}>;
   const slugs = await p.journeyStory.findMany({ where:{ journeyId:"cmsou2uk0000732mqa4oatcmn" }, select:{ topic:true, slotIndex:true, slug:true } });
   const slugDe = new Map(slugs.map(x=>[`${x.topic}#${x.slotIndex}`, x.slug ?? ""]));
-  console.log("Tema|#|Título|Audio|Frag|Revisión|Hallazgo|Corregido");
+  console.log("Tema|#|Título|Frag|Offsets|Revisión|Hallazgo|Corregido");
   for (const s of st) {
     const fr = Array.isArray(s.audioFragments) ? (s.audioFragments as unknown[]).length : 0;
     const r = rev[slugDe.get(`${s.topic}#${s.slotIndex}`) ?? ""] ?? { revisado:null, hallazgo:null, corregido:false };
     const revisión = !r.revisado ? "SIN REVISAR" : !r.hallazgo || r.estado === "falso positivo" ? "limpia" : r.estado === "confirmado" ? "defecto confirmado" : "defecto detectado";
-    console.log([s.topic, s.slotIndex, s.title ?? "-", s.audioUrl?"sí":"NO", fr||"NO", revisión, r.hallazgo ?? "-", r.corregido?"sí":"no"].join("|"));
+    const fragsArr = (s.audioFragments as Array<{endSec?:number}> | null) ?? [];
+    const fin = fragsArr.length ? Math.max(...fragsArr.map(x=>Number(x.endSec ?? 0))) : 0;
+    const offs = !fragsArr.length ? "-" : "ok";
+    console.log([s.topic, s.slotIndex, s.title ?? "-", fr||"NO", offs, revisión, r.hallazgo ?? "-", r.corregido?"sí":"no"].join("|"));
+    void fin;
   }
 })().finally(()=>p.$disconnect());

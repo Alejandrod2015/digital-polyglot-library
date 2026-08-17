@@ -11,6 +11,7 @@ import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import StoryContent from "@/components/StoryContent";
 import HighlightedStoryReader from "@/components/HighlightedStoryReader";
 import { coerceAudioWordTimings } from "@/lib/audioWordTimingsTypes";
+import { STORY_STATUS_WHERE } from "@/app/journey/journeyData";
 import { checkKaraokeUsable } from "@/lib/karaokeQualityGate";
 import { extractStoryPlainText } from "@/lib/storyPlainText";
 import { prisma } from "@/lib/prisma";
@@ -67,7 +68,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   const [journeyStoryRow, catalogTimingsRow] = await Promise.all([
     prisma.journeyStory
       .findFirst({
-        where: { slug: story.slug, status: "published" },
+        where: { slug: story.slug, ...STORY_STATUS_WHERE },
         select: { audioWordTimings: true },
       })
       .catch(() => null),

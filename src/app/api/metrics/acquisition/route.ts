@@ -24,6 +24,15 @@ type RecentSignup = {
   targetLanguages: string[];
   /** Declarado por la persona en el formulario de beta, si aplicó. */
   betaLanguages: string[];
+  /**
+   * Estado en el programa de beta (`BetaSignup.status`), o null si esta
+   * persona nunca solicitó. Va SEPARADO de `betaLanguages`: aquél dice de
+   * dónde salió el idioma que mostramos, éste dice quién es la persona.
+   * Confundirlos escondía beta testers: quien completó el onboarding tiene
+   * `targetLanguages`, así que nunca caía en la rama del idioma "de beta" y
+   * la tabla lo pintaba igual que a un usuario cualquiera.
+   */
+  betaStatus: string | null;
   /** Deducido de las historias que abrió, cuando no hay nada declarado. */
   inferredLanguages: string[];
   level: string | null;
@@ -301,7 +310,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     const betaRows = emailsCohorte.length
       ? await prisma.betaSignup.findMany({
           where: { email: { in: emailsCohorte } },
-          select: { email: true, targetLanguage: true, currentLevel: true },
+          select: { email: true, targetLanguage: true, currentLevel: true, status: true },
         })
       : [];
     const betaByEmail = new Map(betaRows.map((r) => [r.email.toLowerCase(), r]));
@@ -323,6 +332,7 @@ export async function GET(req: NextRequest): Promise<Response> {
           lastSignInAt: u.lastSignInAt ? new Date(u.lastSignInAt).toISOString() : null,
           targetLanguages: tls,
           betaLanguages: tls.length || !beta?.targetLanguage ? [] : [beta.targetLanguage],
+          betaStatus: beta?.status ?? null,
           inferredLanguages: tls.length || beta?.targetLanguage ? [] : inferredFor(u.id),
           level: declaredLevel ?? (tls.length ? null : beta?.currentLevel ?? null),
           onboarded: tls.length > 0,

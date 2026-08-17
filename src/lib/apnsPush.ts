@@ -7,11 +7,11 @@
 //
 // Required env (all must be set for sending; otherwise isApnsConfigured()
 // is false and callers should surface "not configured" instead of trying):
-//   APNS_KEY_ID     ; the 10-char Key ID of the .p8 APNs auth key
-//   APNS_TEAM_ID    ; Apple Developer Team ID (10 chars)
-//   APNS_AUTH_KEY   ; contents of the .p8 file (PEM). Literal "\n" allowed.
-//   APNS_BUNDLE_ID  ; the app bundle id (apns-topic)
-//   APNS_PRODUCTION ; "1"/"true" → api.push.apple.com, else sandbox
+//   APNS_KEY_ID     : the 10-char Key ID of the .p8 APNs auth key
+//   APNS_TEAM_ID    : Apple Developer Team ID (10 chars)
+//   APNS_AUTH_KEY   : contents of the .p8 file (PEM). Literal "\n" allowed.
+//   APNS_BUNDLE_ID  : the app bundle id (apns-topic)
+//   APNS_PRODUCTION : "1"/"true" → api.push.apple.com, else sandbox
 
 import http2 from "node:http2";
 import { createPrivateKey, sign as cryptoSign } from "node:crypto";

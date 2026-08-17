@@ -3,7 +3,7 @@
 // Talking Points browses; it does not walk.
 //
 // WHY (corrected 2026-08-05, third pass): the first two builds rendered this
-// with the journey path — topic banners and the zigzag of story cards. That
+// with the journey path; topic banners and the zigzag of story cards. That
 // path is a metaphor for PROGRESSION: in a journey, story 2 follows story 1
 // because they share characters, vocabulary and an arc, which is why the
 // continuity gates exist at all. Non-fiction has none of that. No piece here

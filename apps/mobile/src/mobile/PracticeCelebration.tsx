@@ -37,7 +37,7 @@ function buildParticles(width: number, height: number): Particle[] {
       // Particles linger so the confetti keeps falling while the ring
       // sweep (1.4s) + perfect chime (4.13s, fired ~0.5s in) play out.
       // Total audio runtime ≈ 4.6s; particle visibility ends at ~85% of
-      // its duration (per opacity interpolation below), so 4–5.5s keeps
+      // its duration (per opacity interpolation below), so 4-5.5s keeps
       // confetti on screen until just after the chime fades.
       duration: 4000 + Math.random() * 1500,
       rotateTo: dir * (180 + Math.random() * 360),

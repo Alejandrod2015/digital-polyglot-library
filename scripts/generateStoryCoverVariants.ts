@@ -1,7 +1,7 @@
 /**
  * One-off CLI: generate the 3 cover variants (cool / warm / earthy cartoon)
  * for a JourneyStory using the same prompt and dispatch the same Studio UI
- * uses (/api/studio/journeys/cover-variants). Does NOT auto-pick — uploads
+ * uses (/api/studio/journeys/cover-variants). Does NOT auto-pick; uploads
  * all three to R2 and prints the URLs so the user can choose.
  *
  * Default provider is `gemini-3-pro-image` because the cartoon prompt was

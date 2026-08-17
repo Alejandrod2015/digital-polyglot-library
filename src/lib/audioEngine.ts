@@ -1,5 +1,5 @@
 /**
- * Audio ENGINE discriminator — single source of truth for "is this voice
+ * Audio ENGINE discriminator; single source of truth for "is this voice
  * ElevenLabs?".
  *
  * POLICY (2026-07-24, user directive "solo ElevenLabs, o silencio"): the app

@@ -1,0 +1,63 @@
+[aprender-la-cumbia] El bebé duerme, así que camino sin _____ por el pasillo.  -> prisa / hambre / música / miedo
+[aprender-la-cumbia] El perro jaló tanto la correa que tuve que _____.  -> soltarlo / lavarlo / llamarlo / cargarlo
+[aprender-la-cumbia] Cuando caminas mirando el teléfono, es fácil _____ con un escalón.  -> tropezar / correr / descansar / saltar
+[del-mismo-pueblo] El examen era muy difícil, así que decidí _____.  -> rendirme / reírme / quedarme / prepararme
+[del-mismo-pueblo] El trabajo es perfecto para ti; no dejes pasar esta _____.  -> oportunidad / dirección / costumbre / distancia
+[del-mismo-pueblo] No lo planeamos: fue pura _____ que llegáramos al mismo tiempo.  -> casualidad / costumbre / decisión / velocidad
+[el-chofer-que-conoce-a-todos] No necesitas escribir una carta larga; con un mensaje corto _____.  -> basta / falta / pesa / tarda
+[el-chofer-que-conoce-a-todos] Alguien _____ el paraguas que dejaste en la silla del restaurante.  -> recogió / perdió / compró / vendió
+[el-chofer-que-conoce-a-todos] Cuando le dices algo gracioso, ella _____ y muestra los dientes.  -> sonríe / llora / grita / duerme
+[el-duende-del-patio] Cada noche _____ el jardín para que nadie robe nada.  -> vigilo / limpio / riego / pinto
+[el-duende-del-patio] Si tú bloqueas la puerta, entre los dos lo _____.  -> atrapamos / buscamos / llamamos / perdemos
+[el-duende-del-patio] Entrar al cuarto oscuro cuando todos tenían miedo fue algo muy _____.  -> valiente / miedoso / divertido / raro
+[el-kayak-se-va] El río tiene corriente muy fuerte; cruzarlo a nado es _____ .  -> peligroso / aburrido / tranquilo / conocido
+[el-kayak-se-va] La piscina está abierta y el agua perfecta; voy a _____.  -> nadar / correr / escalar / descansar
+[el-kayak-se-va] El sendero está cubierto de _____; camina con cuidado para no caerte.  -> piedras / flores / hojas / ramas
+[el-ladron-de-mangos] El gato comió tanto que está muy _____ y casi no camina.  -> gordo / rápido / triste / oscuro
+[el-ladron-de-mangos] El perro empezó a temblar y a esconderse porque tenía mucho _____.  -> miedo / gusto / sueño / trabajo
+[el-ladron-de-mangos] Tras la buena noticia, respiró profundo y se quedó _____.  -> tranquila / mojada / perdida / enojada
+[el-micro-del-domingo] Ya no quiero ir, así que _____ mi reserva en el hotel.  -> cancela / confirma / paga / busca
+[el-micro-del-domingo] Estudié mucho, pero igual puedo _____ si me pongo nervioso.  -> fallar / ganar / terminar / empezar
+[el-micro-del-domingo] Su hija ganó el primer lugar y ella estaba muy _____.  -> orgullosa / cansada / asustada / confundida
+[el-rescate-en-la-isla] El bote se fue solo y hubo que _____ a los niños.  -> rescatar / saludar / abandonar / llevar
+[el-rescate-en-la-isla] Perdieron las llaves y se quedaron _____ adentro sin poder salir.  -> atrapados / cansados / perdidos / confundidos
+[el-rescate-en-la-isla] El campamento fue largo, pero me _____ mucho con los juegos.  -> divertí / cansé / dormí / lastimé
+[esconder-al-perro] Ella no quiere que vean el regalo, así que lo _____.  -> esconde / rompe / busca / limpia
+[esconder-al-perro] El bebé lloraba fuerte, pero su mamá lo abrazó y _____.  -> calla / llora / come / corre
+[esconder-al-perro] Casi perdemos el tren, pero llegamos a tiempo y quedamos _____.  -> aliviados / cansados / enojados / aburridos
+[humo-en-la-cocina] El arroz huele horrible porque está _____ por el fuego alto.  -> quemado / hervido / salado / enfriado
+[humo-en-la-cocina] La alarma hace tanto _____ que nadie puede hablar en la cocina.  -> ruido / humo / olor / calor
+[humo-en-la-cocina] Los bomberos llegaron rápido porque había un _____ en el edificio.  -> incendio / mercado / accidente / ruido
+[la-combi-equivocada] Puse todos mis documentos y papeles importantes dentro de una _____.  -> carpeta / mochila / caja / bolsa
+[la-combi-equivocada] La combi iba _____ y no quedaba ningún lugar libre para sentarse.  -> llena / vacía / sucia / rota
+[la-combi-equivocada] Llegó tarde y se veía muy _____, con la frente arrugada.  -> preocupada / emocionada / tranquila / aburrida
+[la-fiesta-vuelve-a-la-calle] La lluvia _____ y la calle quedó seca para la fiesta.  -> paró / llegó / creció / cayó
+[la-fiesta-vuelve-a-la-calle] El sol _____ la ropa mojada en solo dos horas.  -> secó / lavó / dobló / manchó
+[la-fiesta-vuelve-a-la-calle] Si no sabes la respuesta, _____ algo para no quedar mal.  -> inventas / repites / olvidas / escuchas
+[la-isla-del-lago] Cuando subo muchas escaleras seguidas, me _____ muy rápido.  -> canso / pierdo / mareo / duermo
+[la-isla-del-lago] Los pescadores amarraron el bote al _____ para que no se fuera.  -> muelle / camino / lago / chaleco
+[la-isla-del-lago] No sabes nadar, pero no te preocupes: yo te _____ este verano.  -> enseño / aviso / busco / llevo
+[la-promesa-del-mole] Olvidaste el pan en el horno y lo _____.  -> quemaste / enfriaste / serviste / probaste
+[la-promesa-del-mole] Para saber si la mesa cabe, primero mido su _____.  -> tamaño / precio / color / peso
+[la-promesa-del-mole] Está lloviendo, así que los niños juegan _____, en la sala.  -> adentro / afuera / arriba / lejos
+[la-vigilancia] Cargaste cajas pesadas una hora y ahora te _____ la espalda.  -> duele / cansa / mueve / pesa
+[la-vigilancia] Faltan solo cinco minutos para llegar, _____ un poco más sin detenerte.  -> aguanta / descansa / regresa / camina
+[la-vigilancia] El cuarto estaba muy oscuro y tuve que _____ con la linterna.  -> alumbrar / buscar / entrar / limpiar
+[mama-conoce-al-perro] Somos dos hermanos y _____ las tareas para no hacer todo solos.  -> repartimos / olvidamos / compramos / pedimos
+[mama-conoce-al-perro] Prometieron llegar a las ocho y siempre _____ lo que dicen.  -> cumplen / olvidan / cambian / repiten
+[mama-conoce-al-perro] El cliente llamó con una _____ porque su pedido llegó tarde.  -> queja / sorpresa / pregunta / invitación
+[sin-cumbia-no-hay-fiesta] Nadie habla ni pone música; la fiesta está _____ esta noche.  -> callada / llena / animada / larga
+[sin-cumbia-no-hay-fiesta] Ella está al frente y _____ el baile para guiar al grupo.  -> dirige / aprende / graba / olvida
+[sin-cumbia-no-hay-fiesta] No puedes bailar bien si no escuchas el _____ de la música.  -> ritmo / baile / paso / color
+[tacos-para-todos] El cocinero se pone un _____ para no mancharse la ropa.  -> delantal / sombrero / bolso / cinturón
+[tacos-para-todos] Hay veinte apartamentos en ese _____, uno en cada piso.  -> edificio / mercado / jardín / camión
+[tacos-para-todos] Probó el postre y _____ tanto que pidió más.  -> le encantó / le faltó / le pesó / le costó
+[un-perro-bajo-la-lluvia] El bebé tenía hambre y llevaba una hora _____ sin parar.  -> llorando / corriendo / durmiendo / jugando
+[un-perro-bajo-la-lluvia] La torta no está: ¿_____ tú algo de la panadería?  -> trajiste / pediste / comiste / dejaste
+[un-perro-bajo-la-lluvia] Nadie _____ la billetera que encontré, así que la entregué.  -> reclama / pierde / guarda / compra
+[una-caja-y-una-maleta] Tocaron el timbre y era el _____ con un paquete.  -> repartidor / mecánico / carpintero / enfermero
+[una-caja-y-una-maleta] Anoté mal las fechas y ahora tengo un _____.  -> lío / rato / ruido / plan
+[una-caja-y-una-maleta] Encontró un apartamento más grande y decidió _____.  -> mudarse / viajar / salir / volver
+[vuelve-la-carpeta] Perdí mi billetera esta mañana, pero la _____ debajo de la silla.  -> encontré / perdí / compré / dejé
+[vuelve-la-carpeta] Le hice una pregunta difícil y se quedó _____, sin responder.  -> callada / contenta / ocupada / cansada
+[vuelve-la-carpeta] Antes del examen final siento muchos _____ en el estómago.  -> nervios / sueños / recuerdos / planes

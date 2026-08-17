@@ -1,0 +1,118 @@
+[
+  {
+    "title": "Bloß nicht schwärmen",
+    "slug": "bloss-nicht-schwaermen",
+    "text": "Vor der Haustür in Eimsbüttel drängen sich viele Bewerber, jeder mit einer Mappe unter dem Arm. Ole zieht Nora kurz zur Seite und spricht leise.\n\nOle: Eine Regel für da drinnen: Schwärme nicht. Wer die Wohnung zu toll findet, wirkt verzweifelt.\n\nNora: Aber sie ist toll. Soll ich lügen und gelangweilt tun?\n\nOle: Nicht gelangweilt. Nur sachlich. Der Vermieter hier vertraut dem, der ruhig bleibt.\n\nNora: Wo ich herkomme, bekommt die Wohnung, wer am meisten Begeisterung zeigt.\n\nOle: Hier ist es umgekehrt. Begeisterung wirkt verdächtig, Zurückhaltung wirkt seriös.\n\nDrinnen führt Herr Timm die Gruppe durch zwei helle Zimmer. Die anderen schwärmen laut, Nora nickt nur knapp.\n\nTimm: Und Sie? Sie sagen ja gar nichts.\n\nNora: Der Schnitt ist vernünftig, das Viertel ruhig. Ich könnte mir das gut vorstellen.\n\nTimm: Vernünftig. Das höre ich heute zum ersten Mal. Alle anderen reden von Traum und Liebe auf den ersten Blick.\n\nNora: Eine Wohnung ist ein Vertrag, kein Antrag. Ich prüfe, ob es passt, nicht ob es funkelt.\n\nTimm: Genau diese Haltung suche ich. Mieter, die schwärmen, werden nach einem Jahr enttäuscht.\n\nNora: Und wer nichts fühlt, bekommt den Zuschlag? Das klingt fast kühl.\n\nTimm: Nicht kühl, sondern verlässlich. Wer heute nicht schwärmt, klagt morgen nicht über jede Kleinigkeit.\n\nOle: Sie hat außerdem alle Papiere dabei. Gehaltsnachweis, Auskunft, alles vollständig.\n\nTimm: Das setze ich voraus. Entscheidend war der Satz mit dem Vertrag. Die Wohnung können Sie haben.\n\nNora: Einfach so? Ohne dass ich betteln muss?\n\nTimm: Betteln ist hier ein schlechtes Zeichen. Sie haben verstanden, wie der Norden tickt.",
+    "synopsis": "Wer die Wohnung zu toll findet, verliert sie. Nora gewinnt sie, indem sie nichts davon zeigt.",
+    "arcType": "reframe-turn",
+    "vocab": [
+      {
+        "type": "adverb",
+        "word": "leise",
+        "definition": "quietly; speaking softly in a low, discreet voice"
+      },
+      {
+        "type": "verb",
+        "word": "schwärmen",
+        "definition": "to gush; to talk about something with excited admiration"
+      },
+      {
+        "type": "adjective",
+        "word": "verzweifelt",
+        "definition": "desperate; driven by anxiety that things will go wrong"
+      },
+      {
+        "type": "adjective",
+        "word": "sachlich",
+        "definition": "matter-of-fact; focused on facts rather than feelings or drama"
+      },
+      {
+        "type": "noun",
+        "word": "Begeisterung",
+        "definition": "enthusiasm; a strong feeling of excited approval for something"
+      },
+      {
+        "type": "verb",
+        "word": "vertrauen",
+        "surface": "vertraut",
+        "definition": "to trust someone; to rely on their honesty and good faith"
+      },
+      {
+        "type": "noun",
+        "word": "Schnitt",
+        "definition": "the layout of a flat; how its rooms are arranged"
+      },
+      {
+        "type": "adjective",
+        "word": "vernünftig",
+        "definition": "sensible and reasonable; showing sound, practical good judgement"
+      },
+      {
+        "type": "noun",
+        "word": "Viertel",
+        "definition": "a neighbourhood; a distinct district within a larger city"
+      },
+      {
+        "type": "expression",
+        "word": "Liebe auf den ersten Blick",
+        "definition": "love at first sight; instant strong attraction on first meeting"
+      },
+      {
+        "type": "noun",
+        "word": "Vertrag",
+        "definition": "a binding agreement setting out what each side must do"
+      },
+      {
+        "type": "noun",
+        "word": "Antrag",
+        "definition": "a formal application or proposal submitted for approval"
+      },
+      {
+        "type": "verb",
+        "word": "funkeln",
+        "surface": "funkelt",
+        "definition": "to sparkle or glitter; to shine with bright flashing light"
+      },
+      {
+        "type": "noun",
+        "word": "Haltung",
+        "definition": "an attitude; a settled way of thinking and behaving"
+      },
+      {
+        "type": "noun",
+        "word": "Mieter",
+        "definition": "a tenant; someone who rents and lives in a property"
+      },
+      {
+        "type": "adjective",
+        "word": "enttäuscht",
+        "definition": "disappointed; let down because hopes were not met"
+      },
+      {
+        "type": "verb",
+        "word": "voraussetzen",
+        "surface": "voraus",
+        "definition": "to take something for granted as an obvious basic requirement"
+      },
+      {
+        "type": "verb",
+        "word": "betteln",
+        "definition": "to beg; to plead humbly for something you want"
+      },
+      {
+        "type": "expression",
+        "word": "ein schlechtes Zeichen",
+        "definition": "a bad sign; an indication that something will go wrong"
+      },
+      {
+        "type": "verb",
+        "word": "ticken",
+        "surface": "tickt",
+        "definition": "to work or function in a particular characteristic way"
+      }
+    ],
+    "level": "c1",
+    "topic": "wohnen-in-der-hansestadt",
+    "slotIndex": 2
+  }
+]

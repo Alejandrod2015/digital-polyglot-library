@@ -1,0 +1,698 @@
+[
+  {
+    "title": "Duzen auf eigene Gefahr",
+    "slug": "duzen-auf-eigene-gefahr",
+    "text": "Der Dienstausweis ist noch warm aus dem Drucker, da lernt Nadia die wichtigste Landkarte des Büros: wer du ist und wer Sie bleibt.\n\nPaul: Willkommen im Team. Ich bin Paul. Hier duzen sich alle, vom Praktikanten bis zur Technik.\n\nNadia: Alle? In meinem Vertrag stand irgendwas von förmlicher Unternehmenskultur.\n\nPaul: Die Kultur hat zwei Stockwerke. Hier unten du, im dritten Stock wohnt das Sie.\n\nNadia: Und was passiert, wenn man die Stockwerke verwechselt?\n\nPaul: Kollege Martin hat Frau Brandt einmal geduzt. Er bekam eine Woche lang Antworten aus einem Satz. Duzen auf eigene Gefahr.\n\nNadia: Und Videokonferenzen? Da sieht man die Stockwerke nicht.\n\nPaul: Deshalb schwitzen wir alle vor der ersten Mail. Anrede falsch, Woche ruiniert.\n\nMittags steht Nadia mit ihrem Tablett vor der Kaffeemaschine, direkt neben Frau Brandt.\n\nBrandt: Sie sind die Neue aus dem Projektteam. Nadia, richtig? Man hört Gutes.\n\nNadia: Danke! Ich freue mich sehr, du...\n\nDer Satz bleibt ihr im Hals stecken. Eine Sekunde dehnt sich wie Kaugummi.\n\nNadia: ...dass SIE sich Zeit für das Gespräch nehmen.\n\nBrandt: Gut gerettet. Präzision unter Druck; das Projekt wird Ihnen liegen. Dienstag, neun Uhr, Kickoff.\n\nAm Nachmittag schiebt Paul einen Zettel über den Schreibtisch: eine handgezeichnete Karte mit zwei Etagen.\n\nPaul: Deine Landkarte für die ersten Wochen. Und morgen zeige ich dir unsere heiligste Regel: den Feierabend.\n\nNadia: Erst die Anmeldung, jetzt die Anrede. Diese Stadt prüft wirklich alles.",
+    "synopsis": "Erster Arbeitstag: Der Dienstausweis ist noch warm, da lernt Nadia die wichtigste Landkarte des Büros: wer du ist und wer Sie bleibt. Paul erklärt die zwei Stockwerke der Unternehmenskultur, und an der Kaffeemaschine rettet sich Nadia in letzter Sekunde vor dem gefährlichsten Fehler des deutschen Büroalltags: Frau Brandt zu duzen. Morgen wartet die heiligste Regel von allen.",
+    "arcType": "juxtaposition-discovery",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "der Dienstausweis",
+        "surface": "Dienstausweis",
+        "definition": "Employee ID badge used for entering the workplace daily."
+      },
+      {
+        "type": "noun",
+        "word": "die Landkarte",
+        "surface": "Landkarte",
+        "definition": "Map; here, a mental map of unwritten social rules."
+      },
+      {
+        "type": "verb",
+        "word": "duzen",
+        "definition": "To address someone with the informal du form."
+      },
+      {
+        "type": "adjective",
+        "word": "förmlich",
+        "surface": "förmlicher",
+        "definition": "Formal, keeping official manners and a polite distance."
+      },
+      {
+        "type": "noun",
+        "word": "die Unternehmenskultur",
+        "surface": "Unternehmenskultur",
+        "definition": "Company culture; how people treat each other at work."
+      },
+      {
+        "type": "noun",
+        "word": "das Stockwerk",
+        "surface": "Stockwerke",
+        "definition": "Floor or storey of a building with several levels."
+      },
+      {
+        "type": "verb",
+        "word": "verwechseln",
+        "surface": "verwechselt",
+        "definition": "To mix up two things or people by mistake."
+      },
+      {
+        "type": "expression",
+        "word": "auf eigene Gefahr",
+        "definition": "At your own risk; nobody else takes responsibility."
+      },
+      {
+        "type": "verb",
+        "word": "schwitzen",
+        "definition": "To sweat, from heat or from pure nerves."
+      },
+      {
+        "type": "noun",
+        "word": "die Anrede",
+        "surface": "Anrede",
+        "definition": "Form of address: du, Sie, or titles in letters."
+      },
+      {
+        "type": "verb",
+        "word": "ruinieren",
+        "surface": "ruiniert",
+        "definition": "To ruin or destroy something completely and quickly."
+      },
+      {
+        "type": "expression",
+        "word": "im Hals stecken bleiben",
+        "surface": "im Hals stecken",
+        "definition": "To get stuck in your throat, unable to finish."
+      },
+      {
+        "type": "verb",
+        "word": "sich dehnen",
+        "surface": "dehnt",
+        "definition": "To stretch out, becoming longer than it should."
+      },
+      {
+        "type": "noun",
+        "word": "der Kaugummi",
+        "surface": "Kaugummi",
+        "definition": "Chewing gum; famous for never letting go quickly."
+      },
+      {
+        "type": "verb",
+        "word": "retten",
+        "surface": "gerettet",
+        "definition": "To rescue or save someone from a disaster."
+      },
+      {
+        "type": "expression",
+        "word": "unter Druck",
+        "definition": "Under pressure, in a stressful and demanding moment."
+      },
+      {
+        "type": "verb",
+        "word": "jemandem liegen",
+        "surface": "liegen",
+        "definition": "To suit someone; a task that fits your talents."
+      },
+      {
+        "type": "noun",
+        "word": "der Zettel",
+        "surface": "Zettel",
+        "definition": "Small piece of paper with a quick note."
+      },
+      {
+        "type": "adjective",
+        "word": "handgezeichnet",
+        "surface": "handgezeichnete",
+        "definition": "Hand-drawn, made with a pen and not printed."
+      },
+      {
+        "type": "noun",
+        "word": "die Etage",
+        "surface": "Etagen",
+        "definition": "Floor of a building; the elegant word for Stockwerk."
+      },
+      {
+        "type": "adjective",
+        "word": "heilig",
+        "surface": "heiligste",
+        "definition": "Holy, sacred; treated with the maximum possible respect."
+      },
+      {
+        "type": "noun",
+        "word": "der Feierabend",
+        "surface": "Feierabend",
+        "definition": "End of the workday; sacred German free time."
+      },
+      {
+        "type": "verb",
+        "word": "prüfen",
+        "surface": "prüft",
+        "definition": "To test or examine someone or something carefully."
+      }
+    ],
+    "level": "c1",
+    "topic": "work-and-office",
+    "slotIndex": 1
+  },
+  {
+    "title": "Bewerbungsgespräch mit Katze",
+    "slug": "bewerbungsgespraech-mit-katze",
+    "text": "Donnerstag, neunzehn Uhr, Sanderstraße. Elf Bewerber warten mit identischen Mappen, und Nadia umklammert ihre eigene wie ein Konzertticket.\n\nTimo: Elf Mappen für ein Zimmer. Das ist keine Besichtigung, das ist ein Vorsprechen.\n\nNadia: Ich habe Gehaltsnachweise, Schufa und ein Empfehlungsschreiben von meiner künftigen Chefin dabei. Fehlt eigentlich nur noch ein Führungszeugnis.\n\nTimo: Übertreib nicht gleich. Wichtig ist da drin nur eine Person, und die hat vier Pfoten.\n\nDrinnen führt Jonas im Eiltempo durchs Wohnzimmer. Auf dem Sofa thront eine graue Katze und mustert die Bewerber einzeln.\n\nJonas: Das ist Frau Schmidt. Offiziell gehört ihr das Sofa, inoffiziell die ganze Wohnung. Wer bleiben will, braucht ihren Segen.\n\nNadia: Und wie fällt die Entscheidung? Nach Sympathie oder nach Aktenlage?\n\nJonas: Bei uns nach Bauchgefühl, bei ihr nach Geruch. Bis jetzt hat sie noch jeden Fehler gerochen.\n\nNadia setzt sich, und Frau Schmidt springt ihr ohne Umweg auf den Schoß. Elf Mappen rascheln neidisch.\n\nNadia: Ich schwöre, ich habe mich nicht mit Thunfisch eingerieben.\n\nJonas: Genau das hat die letzte Mitbewohnerin auch gesagt. Wir melden uns bis Sonntag.\n\nNadia: Bis Sonntag? Drei Tage Wartezeit für vierzehn Quadratmeter.\n\nTimo: Willkommen auf dem Berliner Wohnungsmarkt. Immerhin arbeitet die Katze schneller als jedes Amt.\n\nNadia: Jetzt entscheidet also eine Katze über meinen Mietvertrag. Und das Verrückteste daran: Ich finde es fairer als alles andere auf diesem Markt.\n\nIhr Handy bleibt still. Donnerstag. Freitag. Samstag.",
+    "synopsis": "Elf Bewerber, identische Mappen, ein einziges WG-Zimmer in der Sanderstraße: Nadias erste Besichtigung ist kein Termin, sondern ein Vorsprechen. Jonas führt im Eiltempo durch die Wohnung, doch die Entscheidung fällt woanders: auf dem Sofa thront Frau Schmidt, die graue Katze der WG, und mustert die Kandidaten. Als sie ausgerechnet auf Nadias Schoß springt, rascheln elf Mappen neidisch. Dann beginnt das Warten auf die Antwort: Donnerstag, Freitag, Samstag.",
+    "arcType": "mini-cliffhanger",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "umklammern",
+        "surface": "umklammert",
+        "definition": "To clutch something tightly, afraid of letting go."
+      },
+      {
+        "type": "noun",
+        "word": "das Vorsprechen",
+        "surface": "Vorsprechen",
+        "definition": "An audition; performing before judges to win a role."
+      },
+      {
+        "type": "noun",
+        "word": "der Gehaltsnachweis",
+        "surface": "Gehaltsnachweise",
+        "definition": "Proof of salary; standard document for German rental applications."
+      },
+      {
+        "type": "noun",
+        "word": "die Schufa",
+        "surface": "Schufa",
+        "definition": "Germany's credit score agency; landlords demand its report."
+      },
+      {
+        "type": "noun",
+        "word": "das Empfehlungsschreiben",
+        "surface": "Empfehlungsschreiben",
+        "definition": "Letter of recommendation vouching for a person."
+      },
+      {
+        "type": "noun",
+        "word": "das Führungszeugnis",
+        "surface": "Führungszeugnis",
+        "definition": "Official certificate of good conduct from the authorities."
+      },
+      {
+        "type": "verb",
+        "word": "übertreiben",
+        "surface": "Übertreib",
+        "definition": "To exaggerate, take something further than needed."
+      },
+      {
+        "type": "expression",
+        "word": "im Eiltempo",
+        "definition": "At top speed, rushing through something."
+      },
+      {
+        "type": "verb",
+        "word": "thronen",
+        "surface": "thront",
+        "definition": "To sit enthroned, majestically above everyone else."
+      },
+      {
+        "type": "verb",
+        "word": "mustern",
+        "surface": "mustert",
+        "definition": "To inspect someone slowly and critically from head to toe."
+      },
+      {
+        "type": "adverb",
+        "word": "einzeln",
+        "definition": "One by one, individually."
+      },
+      {
+        "type": "adverb",
+        "word": "inoffiziell",
+        "definition": "Unofficially; true in practice though never declared."
+      },
+      {
+        "type": "noun",
+        "word": "der Segen",
+        "surface": "Segen",
+        "definition": "Blessing, approval from someone whose opinion rules."
+      },
+      {
+        "type": "noun",
+        "word": "die Aktenlage",
+        "surface": "Aktenlage",
+        "definition": "What the files say; bureaucratic term for documented facts."
+      },
+      {
+        "type": "noun",
+        "word": "das Bauchgefühl",
+        "surface": "Bauchgefühl",
+        "definition": "Gut feeling; intuition instead of rational analysis."
+      },
+      {
+        "type": "expression",
+        "word": "ohne Umweg",
+        "definition": "Directly, without any detour."
+      },
+      {
+        "type": "verb",
+        "word": "rascheln",
+        "definition": "To rustle, like paper or dry leaves moving."
+      },
+      {
+        "type": "adjective",
+        "word": "neidisch",
+        "definition": "Envious, resentful of someone else's luck."
+      },
+      {
+        "type": "verb",
+        "word": "einreiben",
+        "surface": "eingerieben",
+        "definition": "To rub a substance onto something or someone."
+      },
+      {
+        "type": "verb",
+        "word": "sich melden",
+        "surface": "melden",
+        "definition": "To get back in touch, respond with an answer."
+      },
+      {
+        "type": "adverb",
+        "word": "immerhin",
+        "definition": "At least, after all; concedes a small positive."
+      },
+      {
+        "type": "noun",
+        "word": "der Mietvertrag",
+        "surface": "Mietvertrag",
+        "definition": "Rental contract between tenant and landlord."
+      }
+    ],
+    "level": "c1",
+    "topic": "housing-and-flatshare",
+    "slotIndex": 1
+  },
+  {
+    "title": "Ein Antrag auf Freizeit",
+    "slug": "ein-antrag-auf-freizeit",
+    "text": "Nadia will nur Leute kennenlernen. Timo nickt und sagt den Satz, der in Deutschland alles einleitet.\n\nTimo: Dann brauchst du einen Verein. Freizeit macht man hier nicht allein; hier tritt man bei.\n\nNadia: Ich wollte doch nur ein paar Bälle spielen. Nicht Mitglied werden.\n\nTimo: Genau das ist der Widerspruch. Komm, ich zeig dir das Vereinsheim.\n\nHinter einem Tisch mit drei Ordnern wartet Herr Pohl, der Kassenwart, und mustert Nadia wie einen unvollständigen Antrag.\n\nPohl: Sie möchten mitspielen? Sehr schön. Dann füllen Sie bitte den Mitgliedsantrag aus, lesen die Satzung und überweisen die Aufnahmegebühr.\n\nNadia: Für Tischtennis?\n\nPohl: Für die Mitgliedschaft. Das Tischtennis ist inbegriffen.\n\nNadia: Und wenn ich erst mal nur reinschnuppern will?\n\nPohl: Dafür gibt es das Probetraining. Danach müssen Sie sich entscheiden. So will es die Satzung.\n\nTimo: Willkommen in der Vereinsmeierei. Ohne Formular kein Vergnügen.\n\nNadia: Elf Seiten Regeln für einen Ball übers Netz.\n\nPohl: Elf Seiten sichern den Verein. Über Ihre Aufnahme entscheidet übrigens die Mitgliederversammlung.\n\nNadia: Es gibt eine Abstimmung? Darüber, ob ich Tischtennis spielen darf?\n\nPohl: Selbstverständlich. Bis dahin spielen Sie auf Probe. Nächsten Donnerstagabend, hier im Vereinsheim.\n\nNeben der Tür wartet Ronja, den Schläger unterm Arm, und drückt Nadia einen Kaffee in die Hand.\n\nRonja: Lass dich nicht abschrecken. Aber eine Warnung: Bei jeder Aufnahme stimmt einer grundsätzlich dagegen. Und rate mal, wer am Donnerstag den Vorsitz führt.",
+    "synopsis": "Nadia will einfach nur Leute kennenlernen und ein paar Bälle spielen. Doch in Deutschland hat sogar der Feierabend eine Satzung: Wer mitspielen will, füllt einen Mitgliedsantrag aus, überweist eine Aufnahmegebühr und liest elf Seiten Vereinsrecht. Kassenwart Pohl empfängt sie wie einen unvollständigen Antrag, und ihre Aufnahme entscheidet ausgerechnet die Mitgliederversammlung. Am Ausgang flüstert Ronja eine Warnung: Bei jeder Aufnahme stimmt einer grundsätzlich dagegen, und rate mal, wer diesmal den Vorsitz führt.",
+    "arcType": "mini-cliffhanger",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "der Verein",
+        "surface": "Verein",
+        "definition": "A registered club Germans found for almost any shared activity."
+      },
+      {
+        "type": "verb",
+        "word": "beitreten",
+        "surface": "tritt man bei",
+        "definition": "To formally join a club or organisation as a member."
+      },
+      {
+        "type": "verb",
+        "word": "mustern",
+        "surface": "mustert",
+        "definition": "To look someone up and down, sizing them up carefully."
+      },
+      {
+        "type": "adjective",
+        "word": "unvollständig",
+        "surface": "unvollständigen",
+        "definition": "Incomplete, missing a part that really should be there."
+      },
+      {
+        "type": "noun",
+        "word": "der Kassenwart",
+        "surface": "Kassenwart",
+        "definition": "The elected treasurer who guards a club's money and its dues."
+      },
+      {
+        "type": "noun",
+        "word": "der Mitgliedsantrag",
+        "surface": "Mitgliedsantrag",
+        "definition": "The written application form you fill in to become a member."
+      },
+      {
+        "type": "verb",
+        "word": "ausfüllen",
+        "surface": "füllen Sie bitte den Mitgliedsantrag aus",
+        "definition": "To complete a form by writing in all the required information."
+      },
+      {
+        "type": "noun",
+        "word": "die Satzung",
+        "surface": "Satzung",
+        "definition": "The formal written bylaws that govern how a German club runs."
+      },
+      {
+        "type": "verb",
+        "word": "überweisen",
+        "surface": "überweisen",
+        "definition": "To transfer money from one bank account to another electronically."
+      },
+      {
+        "type": "noun",
+        "word": "die Aufnahmegebühr",
+        "surface": "Aufnahmegebühr",
+        "definition": "A one-off fee you pay to be admitted somewhere new."
+      },
+      {
+        "type": "adjective",
+        "word": "inbegriffen",
+        "surface": "inbegriffen",
+        "definition": "Already included in the price, with nothing extra to pay."
+      },
+      {
+        "type": "verb",
+        "word": "reinschnuppern",
+        "surface": "reinschnuppern",
+        "definition": "To try something out briefly to see whether you like it."
+      },
+      {
+        "type": "verb",
+        "word": "sich entscheiden",
+        "surface": "müssen Sie sich entscheiden",
+        "definition": "To make up your mind and finally commit to one option."
+      },
+      {
+        "type": "expression",
+        "word": "ohne Formular kein Vergnügen",
+        "surface": "Ohne Formular kein Vergnügen",
+        "definition": "A joke that in Germany fun always needs a form first."
+      },
+      {
+        "type": "noun",
+        "word": "die Vereinsmeierei",
+        "surface": "Vereinsmeierei",
+        "definition": "A mocking word for Germans' excessive love of clubs and rules."
+      },
+      {
+        "type": "noun",
+        "word": "die Mitgliederversammlung",
+        "surface": "Mitgliederversammlung",
+        "definition": "The general meeting where members vote on the club's decisions."
+      },
+      {
+        "type": "expression",
+        "word": "auf Probe",
+        "surface": "auf Probe",
+        "definition": "On a trial basis, not yet accepted as a full member."
+      },
+      {
+        "type": "noun",
+        "word": "die Abstimmung",
+        "surface": "Abstimmung",
+        "definition": "A vote taken so a group can decide something together."
+      },
+      {
+        "type": "verb",
+        "word": "abschrecken",
+        "surface": "abschrecken",
+        "definition": "To scare someone off so they give up before even starting."
+      },
+      {
+        "type": "adverb",
+        "word": "grundsätzlich",
+        "surface": "grundsätzlich",
+        "definition": "On principle, always and as a firm matter of habit."
+      },
+      {
+        "type": "expression",
+        "word": "dagegen stimmen",
+        "surface": "stimmt einer grundsätzlich dagegen",
+        "definition": "To vote no, against the proposal on the table."
+      },
+      {
+        "type": "noun",
+        "word": "der Vorsitz",
+        "surface": "Vorsitz",
+        "definition": "The chair of a meeting, the person who leads and decides."
+      }
+    ],
+    "level": "c1",
+    "topic": "friends-and-free-time",
+    "slotIndex": 1
+  },
+  {
+    "title": "Zwei Stempel bis zur Existenz",
+    "slug": "zwei-stempel-bis-zur-existenz",
+    "text": "Der Ersatzbus kriecht durch den Vormittagsverkehr. Nadia rechnet im Kopf.\n\nNadia: Elf Uhr sechs. Noch vierzehn Minuten, acht Haltestellen. Rechne du, ich kann nicht mehr.\n\nTimo: Entscheidend ist nur, die Wartemarke zu ziehen, bevor die Tafel deine Uhrzeit überspringt. Drinnen bist du im System.\n\nUm 11:17 stolpern sie durch die Glastür. Der Automat druckt: B 247. Auf der Tafel leuchtet B 244.\n\nTimo: B 244? Ankunft mit Stil. Drei Nummern sind hier eine halbe Ewigkeit.\n\nNadia: Drei Nummern Puffer. Dass eine Leuchttafel mich so rühren kann.\n\nTimo: Wenn deine Nummer aufleuchtet: Schalter neun. Lass dich von der Miene des Sachbearbeiters nicht beeindrucken.\n\nB 247. Herr Menzel blättert durch ihre Unterlagen wie durch eine Zeitschrift, die ihn mäßig interessiert.\n\nMenzel: Pass, Formular, Wohnungsgeberbestätigung. Sogar unterschrieben. Sie glauben nicht, wie oft genau daran alles scheitert.\n\nNadia: Ich habe dafür heute Morgen einen Vermieter in seiner Laube aufgespürt.\n\nMenzel: Dann haben Sie das Prinzip dieser Stadt schneller begriffen als die meisten. Zwei Stempel, und Sie existieren offiziell.\n\nEr schiebt die Anmeldebestätigung über den Tresen: ein Blatt, das Konto, Arbeitsvertrag und Handyvertrag freischaltet. Draußen wartet Timo mit Kaffee.\n\nTimo: Und jetzt, wo du offiziell existierst?\n\nNadia: Jetzt brauche ich eine Wohnung, die wirklich mir gehört. Meine Zwischenmiete ist befristet, sechs Wochen noch.\n\nTimo grinst in seinen Kaffee.\n\nTimo: Dann fängt der Spaß erst an. Gegen die Berliner Wohnungssuche war dieser Vormittag ein Spaziergang.",
+    "synopsis": "Ein Ersatzbus, der durch Neukölln kriecht, vierzehn Minuten Restzeit und eine Wartemarke mit drei Nummern Puffer: Nadias Termin hängt am seidenen Faden. Doch an Schalter neun wartet keine Katastrophe, sondern Herr Menzel, ein Sachbearbeiter, der Unterlagen schneller abarbeitet, als Berlin U-Bahnen ersetzt. Mit zwei Stempeln existiert Nadia offiziell. Bleibt ein letztes Problem: Ihre Zwischenmiete ist befristet, und die Wohnungssuche beginnt jetzt erst richtig.",
+    "arcType": "harmonic-close",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "kriechen",
+        "surface": "kriecht",
+        "definition": "To crawl; here, a bus moving desperately slowly through traffic."
+      },
+      {
+        "type": "noun",
+        "word": "die Wartemarke",
+        "surface": "Wartemarke",
+        "definition": "Numbered paper ticket that holds your place at government offices."
+      },
+      {
+        "type": "verb",
+        "word": "überspringen",
+        "surface": "überspringt",
+        "definition": "To skip over something, like a number being passed."
+      },
+      {
+        "type": "verb",
+        "word": "stolpern",
+        "definition": "To stumble or trip, often while rushing somewhere."
+      },
+      {
+        "type": "noun",
+        "word": "der Puffer",
+        "surface": "Puffer",
+        "definition": "Safety margin of time or numbers before things get critical."
+      },
+      {
+        "type": "verb",
+        "word": "rühren",
+        "definition": "To move someone emotionally, nearly to the point of tears."
+      },
+      {
+        "type": "verb",
+        "word": "aufleuchten",
+        "surface": "aufleuchtet",
+        "definition": "To light up suddenly on a screen or display."
+      },
+      {
+        "type": "noun",
+        "word": "der Sachbearbeiter",
+        "surface": "Sachbearbeiters",
+        "definition": "Official handling your file at a German government office."
+      },
+      {
+        "type": "verb",
+        "word": "blättern",
+        "surface": "blättert",
+        "definition": "To flip through pages or a stack of documents."
+      },
+      {
+        "type": "noun",
+        "word": "die Unterlagen",
+        "surface": "Unterlagen",
+        "definition": "All documents and paperwork required for an official application."
+      },
+      {
+        "type": "noun",
+        "word": "die Miene",
+        "surface": "Miene",
+        "definition": "Facial expression that reveals someone's attitude or current mood."
+      },
+      {
+        "type": "verb",
+        "word": "scheitern",
+        "surface": "scheitert",
+        "definition": "To fail definitively, after a serious and hopeful attempt."
+      },
+      {
+        "type": "verb",
+        "word": "aufspüren",
+        "surface": "aufgespürt",
+        "definition": "To track someone down after a determined search."
+      },
+      {
+        "type": "verb",
+        "word": "begreifen",
+        "surface": "begriffen",
+        "definition": "To truly grasp how something works, beyond surface understanding."
+      },
+      {
+        "type": "noun",
+        "word": "der Stempel",
+        "surface": "Stempel",
+        "definition": "Official rubber stamp that makes a document legally valid."
+      },
+      {
+        "type": "noun",
+        "word": "die Anmeldebestätigung",
+        "surface": "Anmeldebestätigung",
+        "definition": "Official proof of address registration; the key to German life."
+      },
+      {
+        "type": "verb",
+        "word": "freischalten",
+        "surface": "freischaltet",
+        "definition": "To unlock or activate access to a service."
+      },
+      {
+        "type": "noun",
+        "word": "die Zwischenmiete",
+        "surface": "Zwischenmiete",
+        "definition": "Temporary sublet of someone's flat for a limited period."
+      },
+      {
+        "type": "adjective",
+        "word": "befristet",
+        "definition": "Valid only for a fixed, contractually limited period."
+      },
+      {
+        "type": "noun",
+        "word": "die Wohnungssuche",
+        "surface": "Wohnungssuche",
+        "definition": "The search for an apartment; a Berlin endurance sport."
+      },
+      {
+        "type": "verb",
+        "word": "grinsen",
+        "surface": "grinst",
+        "definition": "To grin broadly, often in a teasing, mischievous way."
+      },
+      {
+        "type": "expression",
+        "word": "eine halbe Ewigkeit",
+        "definition": "Half an eternity; hyperbole for an unbearably long wait."
+      }
+    ],
+    "level": "c1",
+    "topic": "arrival-and-registration",
+    "slotIndex": 3
+  },
+  {
+    "title": "Umzug ohne Aufzug",
+    "slug": "umzug-ohne-aufzug",
+    "text": "Samstag, halb neun. Vor Timos Haus stapeln sich Kartons; der Altbau kontert mit fünftem Stock ohne Aufzug.\n\nTimo: Der Umzug ist das beste Fitnessprogramm der Stadt. Kostenlos, aber die Kündigung ist schwierig.\n\nNadia: Wie viele Kartons sind noch unten?\n\nTimo: Zwölf. Und das Bücherregal. Wer bis oben durchhält, kriegt das Zimmer mit Balkon.\n\nLea wartet in der leeren Küche mit dem Übergabeprotokoll.\n\nLea: Jede Schramme dokumentiert, jeder Zählerstand notiert. Hier unterschreiben, hier auch. Die Schramme an der Tür war schon vor mir da, die erbst du offiziell.\n\nNadia: Eine Wohnung mit Stammbaum. In Berlin hat wirklich alles eine Vorgeschichte.\n\nLea: Und der Herd zieht nach links. Wer das weiß, lebt besser. Steht in keinem Protokoll.\n\nTimo: Das Protokoll regelt die Vergangenheit. Den Herd regeln wir beim ersten gemeinsamen Kochen.\n\nBeim achten Karton summt das Handy: die Katzen-WG, nach neun Tagen Funkstille.\n\nNadia: »Liebe Nadia, nach reiflicher Überlegung...« Neun Tage reifliche Überlegung! Frau Schmidt hätte mich sofort genommen.\n\nTimo: Zu spät. Hier entscheidet keine Katze, nur die Treppe. Und die hast du gerade bestanden.\n\nAbends gibt es Pizza auf dem Übergabeprotokoll, Kartons als Möbel.\n\nNadia: Erst der Termin, dann der Vertrag, jetzt ein Zuhause mit klemmendem Herd. Langsam fühlt sich Berlin bewohnbar an.\n\nTimo: Genieß den Moment. Morgen kommt die Ummeldung, und das Bürgeramt vergisst niemanden.\n\nNadia: Dann auf den fünften Stock. Verdient, Schritt für Schritt.",
+    "synopsis": "Samstag, halb neun: Vor Timos Altbau stapeln sich Kartons, und der fünfte Stock ohne Aufzug wird zum Aufnahmeritual. Oben wartet Lea mit dem Übergabeprotokoll: jede Schramme dokumentiert, jeder Zählerstand notiert, und der Herd zieht links, was in keinem Protokoll steht. Beim achten Karton meldet sich die Katzen-WG nach neun Tagen Funkstille; zu spät. Abends gibt es Pizza auf dem Übergabeprotokoll, und morgen wartet schon die Ummeldung beim Bürgeramt.",
+    "arcType": "harmonic-close",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "der Altbau",
+        "surface": "Altbau",
+        "definition": "Pre-war building: high ceilings, wooden floors, rarely an elevator."
+      },
+      {
+        "type": "verb",
+        "word": "kontern",
+        "surface": "kontert",
+        "definition": "To counter, strike back with an argument or obstacle."
+      },
+      {
+        "type": "noun",
+        "word": "die Kündigung",
+        "surface": "Kündigung",
+        "definition": "Formal cancellation of a contract, job or membership."
+      },
+      {
+        "type": "verb",
+        "word": "durchhalten",
+        "surface": "durchhält",
+        "definition": "To hold out until the end without giving up."
+      },
+      {
+        "type": "noun",
+        "word": "das Übergabeprotokoll",
+        "surface": "Übergabeprotokoll",
+        "definition": "Handover report documenting a flat's condition, signed by both sides."
+      },
+      {
+        "type": "noun",
+        "word": "die Schramme",
+        "surface": "Schramme",
+        "definition": "Scratch or scrape mark on a surface."
+      },
+      {
+        "type": "noun",
+        "word": "der Zählerstand",
+        "surface": "Zählerstand",
+        "definition": "Meter reading for electricity, gas or water."
+      },
+      {
+        "type": "verb",
+        "word": "erben",
+        "surface": "erbst",
+        "definition": "To inherit something from whoever came before."
+      },
+      {
+        "type": "noun",
+        "word": "der Stammbaum",
+        "surface": "Stammbaum",
+        "definition": "Family tree; a documented line of ancestors."
+      },
+      {
+        "type": "noun",
+        "word": "die Vorgeschichte",
+        "surface": "Vorgeschichte",
+        "definition": "Backstory, the history behind a person or thing."
+      },
+      {
+        "type": "verb",
+        "word": "summen",
+        "surface": "summt",
+        "definition": "To hum or buzz, like a phone vibrating."
+      },
+      {
+        "type": "noun",
+        "word": "die Funkstille",
+        "surface": "Funkstille",
+        "definition": "Radio silence; a period with no contact at all."
+      },
+      {
+        "type": "expression",
+        "word": "nach reiflicher Überlegung",
+        "definition": "After careful consideration; formal phrase softening bad news."
+      },
+      {
+        "type": "verb",
+        "word": "bestehen",
+        "surface": "bestanden",
+        "definition": "To pass a test or trial successfully."
+      },
+      {
+        "type": "verb",
+        "word": "klemmen",
+        "surface": "klemmendem",
+        "definition": "To jam or stick instead of moving smoothly."
+      },
+      {
+        "type": "adjective",
+        "word": "bewohnbar",
+        "definition": "Habitable, fit to be lived in."
+      },
+      {
+        "type": "verb",
+        "word": "genießen",
+        "surface": "Genieß",
+        "definition": "To enjoy and savor a moment or pleasure."
+      },
+      {
+        "type": "noun",
+        "word": "die Ummeldung",
+        "surface": "Ummeldung",
+        "definition": "Re-registration of your address after moving within Germany."
+      },
+      {
+        "type": "adjective",
+        "word": "verdient",
+        "surface": "Verdient",
+        "definition": "Deserved, earned through real effort."
+      },
+      {
+        "type": "expression",
+        "word": "Schritt für Schritt",
+        "definition": "Step by step, gradually and steadily."
+      }
+    ],
+    "level": "c1",
+    "topic": "housing-and-flatshare",
+    "slotIndex": 3
+  }
+]

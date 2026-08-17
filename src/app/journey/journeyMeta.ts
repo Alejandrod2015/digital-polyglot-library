@@ -139,10 +139,10 @@ function titleCase(value: string): string {
     .join(" ");
 }
 
-/** Título social: "Expat — German C1" (sin sufijo de marca; lo añade el layout). */
+/** Título social: "Expat: German C1" (sin sufijo de marca; lo añade el layout). */
 export function journeyShareTitle(meta: JourneyShareMeta): string {
   const tail = [meta.language, meta.level].filter(Boolean).join(" ");
-  return tail ? `${meta.name} — ${tail}` : meta.name;
+  return tail ? `${meta.name}: ${tail}` : meta.name;
 }
 
 /**

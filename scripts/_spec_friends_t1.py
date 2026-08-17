@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Tema 1 (el-cotorreo, CDMX chilango) — REAUTORADO 2026-07-09 sobre las historias
+# Tema 1 (el-cotorreo, CDMX chilango); REAUTORADO 2026-07-09 sobre las historias
 # NARRADOR. El spec anterior era de la version multivoz: 48/54 ejercicios probaban
 # palabras que ya no existen en el texto. Reglas: docs/practice-exercises-redesign.md
 # + scripts/_EXERCISE_SPEC.md. Headline en forma de diccionario; la flexion vive

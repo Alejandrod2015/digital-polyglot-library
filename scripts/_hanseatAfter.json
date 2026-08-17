@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Anteile statt Miete",
+    "slug": "anteile-statt-miete",
+    "topic": "wohnen-in-der-hansestadt",
+    "slotIndex": 1,
+    "level": "c1",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Die Anzeige verspricht Altbau, Innenhof und eine Miete, die es in Hamburg eigentlich nicht mehr geben dürfte. Beim Rundgang erfährt Nora, dass hier niemand mietet: Man wird Mitglied, zeichnet Anteile und wartet. Frau Greve nennt die Wartezeit so ruhig, als spreche sie über den Wasserstand. Nora rechnet nach, und während sie noch rechnet, sagt Ole ihr, wo der eigentliche Kampf erst beginnt.",
+    "text": "Vor dem Tor riecht es nach Regen und Backstein. Nora zählt die Fenster. Ole zählt im Stillen die Jahre, die er auf so eine Wohnung gewartet hätte.\n\nGreve: Willkommen. Bevor Sie sich verlieben, ein Hinweis: Vermietet wird bei uns gar nichts. Wir sind eine Genossenschaft.\n\nNora: Gar nichts? Die Anzeige stand unter Wohnungen.\n\nGreve: Sie werden Mitglied und zeichnen Anteile. Danach wohnen Sie zur Nutzung. Das ist kein Wortspiel, das ist der ganze Unterschied.\n\nOle: Frag sie nach dem Haken. Irgendwo ist immer ein Haken.\n\nGreve: Kein Haken. Eine Reihenfolge.\n\nNora: Gut. Und wie lang ist diese Reihenfolge?\n\nGreve: Für diesen Grundriss, mit Hof und Südbalkon? Sieben Jahre. In guten Zeiten sechs.\n\nNora rechnet nach. In sieben Jahren spricht sie längst fließend Hamburgisch, hat zwei Umzüge hinter sich und weiß, wo welche Fähre ablegt.\n\nNora: Sieben Jahre. Das klingt zu schön, um wahr zu sein, nur andersherum.\n\nGreve: Sie sagen das, als wäre es eine schlechte Nachricht. Bei uns kündigt niemand von allein. Wer drin ist, bleibt.\n\nOle: Das ist der Handel. Draußen bekommst du in vier Wochen einen Schlüssel und in vier Jahren die Kündigung.\n\nNora: Also anstellen, warten und hoffen, dass mich unterwegs niemand überholt.\n\nGreve: Überholen kann Sie hier niemand. Die Liste vergisst nichts.\n\nDer Innenhof liegt hinter dem Tor, grün und völlig gleichgültig gegenüber Noras Zeitplan. Sie trägt sich trotzdem ein.\n\nNora: Und bis dahin? Auf einer Warteliste schläft es sich schlecht.\n\nOle: Bis dahin suchen wir auf dem freien Markt. Da wird nicht gewartet, Nora. Da wird gekämpft.",
+    "vocab": [
+      { "type": "noun", "word": "der Backstein", "surface": "Backstein", "definition": "Red brick, the material that gives northern German cities their colour." },
+      { "type": "expression", "word": "im Stillen", "surface": "Stillen", "definition": "Quietly and inwardly, without saying any of it out loud." },
+      { "type": "verb", "word": "vermieten", "surface": "Vermietet", "definition": "To rent a flat or a room out to a tenant." },
+      { "type": "noun", "word": "die Genossenschaft", "surface": "Genossenschaft", "definition": "A cooperative: the members own the building together and run it." },
+      { "type": "noun", "word": "die Anzeige", "surface": "Anzeige", "definition": "A small advertisement, for instance one offering a flat to let." },
+      { "type": "noun", "word": "der Anteil", "surface": "Anteile", "definition": "A share, the part of something jointly owned that is yours." },
+      { "type": "noun", "word": "das Wortspiel", "surface": "Wortspiel", "definition": "A play on words, a joke that turns on double meaning." },
+      { "type": "noun", "word": "der Haken", "surface": "Haken", "definition": "The hidden catch, the drawback nobody mentions in the offer." },
+      { "type": "noun", "word": "die Reihenfolge", "surface": "Reihenfolge", "definition": "The order in which things come, one after the other." },
+      { "type": "noun", "word": "der Grundriss", "surface": "Grundriss", "definition": "The floor plan, showing how the rooms of a flat lie." },
+      { "type": "verb", "word": "nachrechnen", "surface": "rechnet", "definition": "To do the sums again and see whether they add up." },
+      { "type": "adverb", "word": "längst", "surface": "längst", "definition": "Long since, well before the moment you are talking about." },
+      { "type": "adverb", "word": "fließend", "surface": "fließend", "definition": "Fluently, speaking without stopping to search for the next word." },
+      { "type": "noun", "word": "der Umzug", "surface": "Umzüge", "definition": "A move, the whole business of taking your home elsewhere." },
+      { "type": "verb", "word": "ablegen", "surface": "ablegt", "definition": "To cast off, when a boat leaves the quay and departs." },
+      { "type": "expression", "word": "zu schön, um wahr zu sein", "surface": "wahr", "definition": "Too good to be true; suspiciously perfect to be real." },
+      { "type": "expression", "word": "von allein", "surface": "allein", "definition": "By itself, without anyone having to make it happen." },
+      { "type": "verb", "word": "kündigen", "surface": "kündigt", "definition": "To give notice, ending a lease, a job or a contract." },
+      { "type": "noun", "word": "der Handel", "surface": "Handel", "definition": "A deal, the bargain that two sides agree to accept." },
+      { "type": "verb", "word": "sich anstellen", "surface": "anstellen", "definition": "To join a queue and wait your turn behind the others." },
+      { "type": "verb", "word": "überholen", "surface": "überholen", "definition": "To overtake someone, getting past them and ahead in line." },
+      { "type": "adjective", "word": "gleichgültig", "surface": "gleichgültig", "definition": "Indifferent, not caring at all one way or the other." },
+      { "type": "noun", "word": "die Warteliste", "surface": "Warteliste", "definition": "A waiting list of people queueing in turn for something." },
+      { "type": "verb", "word": "sich eintragen", "surface": "trägt", "definition": "To put your name down on a list or in a book." }
+    ]
+  }
+]

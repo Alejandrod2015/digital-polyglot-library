@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Probetörn",
+    "slug": "probetoern",
+    "text": "Der Wind steht schräg auf die Elbe, das Boot krängt hart, und Nora klammert sich an die nasse Reling. Dose steht am Ruder und ruft knappe Kommandos, die Fiete blitzschnell in Handgriffe übersetzt.\n\nDose: Vorschot dicht! Und nicht ins Wasser starren, das macht nur seekrank.\n\nNora: Welche Leine war die Vorschot? Es sind zu viele, und alle sehen gleich aus.\n\nFiete: Die in deiner rechten Hand. Zieh, bis das Segel steht. Fester. Fester!\n\nEine Bö erwischt das Boot, Gischt klatscht über Bord, und Nora verliert für einen Moment den Halt.\n\nNora: Das ist kein Ausflug, das ist ein Ringkampf mit dem Wetter.\n\nDose: Reden kostet Kraft. Klarieren, festhalten, atmen. In dieser Reihenfolge.\n\nFiete: Du machst das gar nicht schlecht. Nur deinen Magen musst du noch überreden.\n\nNora: Der Magen hört gerade auf keinen von uns.\n\nDose: Dann sieh zum Horizont, nicht auf die Wellen. Fester Punkt, fester Magen.\n\nNora: Horizont. Gut. Der bleibt wenigstens stehen.\n\nSie beißt die Zähne zusammen und hält den Kurs, bis die Ansteuerungstonne vorbeizieht. Dose nickt nur knapp.\n\nFiete: Das Nicken eben, hast du das gesehen? Das gibt es bei ihm selten.\n\nNora: Ich habe nur überlebt und eine Leine gehalten. Reicht das schon?\n\nDose: An Land wird geredet. Jetzt wird gesegelt. Das Ruder kommt gleich zu dir.\n\nNora: Zu mir? Ich kann das doch noch gar nicht.\n\nFiete: Genau deshalb. Hand ans Ruder, Blick nach vorn. Ob du bleibst, entscheidet die nächste Bö, nicht die Versammlung.",
+    "synopsis": "Beim Probetörn auf stürmischer Elbe zählt kein Formular mehr, nur die nasse Leine in Noras Hand und Doses knappes Nicken.",
+    "arcType": "mini-cliffhanger",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "schräg",
+        "definition": "at a slant; angled sideways rather than straight on"
+      },
+      {
+        "type": "verb",
+        "word": "krängen",
+        "surface": "krängt",
+        "definition": "to heel over; of a boat leaning far under the wind"
+      },
+      {
+        "type": "verb",
+        "word": "sich klammern",
+        "surface": "klammert",
+        "definition": "to cling on tightly to something out of fear"
+      },
+      {
+        "type": "noun",
+        "word": "Reling",
+        "definition": "the railing running around the edge of a boat's deck"
+      },
+      {
+        "type": "noun",
+        "word": "Ruder",
+        "definition": "the tiller or helm used to steer a boat"
+      },
+      {
+        "type": "adjective",
+        "word": "knapp",
+        "surface": "knappe",
+        "definition": "terse; brief and sparing, giving only what is needed"
+      },
+      {
+        "type": "noun",
+        "word": "Kommando",
+        "surface": "Kommandos",
+        "definition": "a sharp spoken order, especially barked on a boat"
+      },
+      {
+        "type": "adverb",
+        "word": "blitzschnell",
+        "definition": "lightning-fast; done in a tiny fraction of a second"
+      },
+      {
+        "type": "noun",
+        "word": "Handgriff",
+        "surface": "Handgriffe",
+        "definition": "a practised hand movement; a quick, deft manual action"
+      },
+      {
+        "type": "noun",
+        "word": "Vorschot",
+        "definition": "the foresail sheet, a line that trims the front sail"
+      },
+      {
+        "type": "verb",
+        "word": "starren",
+        "definition": "to stare fixedly and motionlessly at one single spot"
+      },
+      {
+        "type": "adjective",
+        "word": "seekrank",
+        "definition": "seasick; feeling sick from a boat's motion on the water"
+      },
+      {
+        "type": "noun",
+        "word": "Segel",
+        "definition": "a sail; the sheet of cloth that catches the wind"
+      },
+      {
+        "type": "noun",
+        "word": "Bö",
+        "definition": "a gust; a sudden sharp blast of wind"
+      },
+      {
+        "type": "noun",
+        "word": "Gischt",
+        "definition": "spray; the white foam thrown up by breaking water"
+      },
+      {
+        "type": "expression",
+        "word": "den Halt verlieren",
+        "surface": "den Halt",
+        "definition": "to lose your grip or footing and nearly fall"
+      },
+      {
+        "type": "expression",
+        "word": "die Zähne zusammenbeißen",
+        "surface": "die Zähne zusammen",
+        "definition": "to grit your teeth and push on through the pain"
+      },
+      {
+        "type": "verb",
+        "word": "klarieren",
+        "surface": "Klarieren",
+        "definition": "to clear and make the lines and gear ready on deck"
+      },
+      {
+        "type": "verb",
+        "word": "überreden",
+        "definition": "to talk round; to persuade someone into doing something"
+      },
+      {
+        "type": "noun",
+        "word": "Ansteuerungstonne",
+        "definition": "a marker buoy showing the safe way into a channel"
+      }
+    ],
+    "level": "c1",
+    "topic": "vereine-und-freundschaft",
+    "slotIndex": 1
+  }
+]

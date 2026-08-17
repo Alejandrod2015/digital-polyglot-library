@@ -12,7 +12,7 @@
  *
  *   2. Claude (yo, en chat) genera `data/vocab-shorten/output.json` con la
  *      misma shape pero la nueva `definition` corta. Hace falta UNA
- *      operación manual por mi parte — no requiere LLM API.
+ *      operación manual por mi parte; no requiere LLM API.
  *
  *   3. `--apply-rewrites`: lee `output.json` y persiste cada nueva
  *      definición al campo `JourneyStory.vocab`.
@@ -159,7 +159,7 @@ async function runApply() {
       if (!next) return v;
       if (definitionViolatesLimit(next)) {
         defsRejected += 1;
-        console.warn(`   · ${rewrite.slug ?? rewrite.storyId} / ${v.word}: rewrite still too long ("${next}" — ${next.length} chars, ${wordCount(next)} words), keeping original`);
+        console.warn(`   · ${rewrite.slug ?? rewrite.storyId} / ${v.word}: rewrite still too long ("${next}"; ${next.length} chars, ${wordCount(next)} words), keeping original`);
         return v;
       }
       touched += 1;

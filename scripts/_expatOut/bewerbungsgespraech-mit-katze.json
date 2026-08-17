@@ -1,0 +1,129 @@
+[
+  {
+    "title": "Bewerbungsgespräch mit Katze",
+    "slug": "bewerbungsgespraech-mit-katze",
+    "text": "Donnerstag, neunzehn Uhr, Sanderstraße. Elf Bewerber warten mit identischen Mappen, und Nadia umklammert ihre eigene wie ein Konzertticket.\n\nTimo: Elf Mappen für ein Zimmer. Das ist keine Besichtigung, das ist ein Vorsprechen.\n\nNadia: Ich habe Gehaltsnachweise, Schufa und ein Empfehlungsschreiben von meiner künftigen Chefin dabei. Fehlt eigentlich nur noch ein Führungszeugnis.\n\nTimo: Übertreib nicht gleich. Wichtig ist da drin nur eine Person, und die hat vier Pfoten.\n\nDrinnen führt Jonas im Eiltempo durchs Wohnzimmer. Auf dem Sofa thront eine graue Katze und mustert die Bewerber einzeln.\n\nJonas: Das ist Frau Schmidt. Offiziell gehört ihr das Sofa, inoffiziell die ganze Wohnung. Wer bleiben will, braucht ihren Segen.\n\nNadia: Und wie fällt die Entscheidung? Nach Sympathie oder nach Aktenlage?\n\nJonas: Bei uns nach Bauchgefühl, bei ihr nach Geruch. Bis jetzt hat sie noch jeden Fehler gerochen.\n\nNadia setzt sich, und Frau Schmidt springt ihr ohne Umweg auf den Schoß. Elf Mappen rascheln neidisch.\n\nNadia: Ich schwöre, ich habe mich nicht mit Thunfisch eingerieben.\n\nJonas: Genau das hat die letzte Mitbewohnerin auch gesagt. Wir melden uns bis Sonntag.\n\nNadia: Bis Sonntag? Drei Tage Wartezeit für vierzehn Quadratmeter.\n\nTimo: Willkommen auf dem Berliner Wohnungsmarkt. Immerhin arbeitet die Katze schneller als jedes Amt.\n\nNadia: Jetzt entscheidet also eine Katze über meinen Mietvertrag. Und das Verrückteste daran: Ich finde es fairer als alles andere auf diesem Markt.\n\nIhr Handy bleibt still. Donnerstag. Freitag. Samstag.",
+    "synopsis": "Elf Bewerber, identische Mappen, ein einziges WG-Zimmer in der Sanderstraße: Nadias erste Besichtigung ist kein Termin, sondern ein Vorsprechen. Jonas führt im Eiltempo durch die Wohnung, doch die Entscheidung fällt woanders: auf dem Sofa thront Frau Schmidt, die graue Katze der WG, und mustert die Kandidaten. Als sie ausgerechnet auf Nadias Schoß springt, rascheln elf Mappen neidisch. Dann beginnt das Warten auf die Antwort: Donnerstag, Freitag, Samstag.",
+    "arcType": "mini-cliffhanger",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "umklammern",
+        "surface": "umklammert",
+        "definition": "To clutch something tightly, afraid of letting go."
+      },
+      {
+        "type": "noun",
+        "word": "das Vorsprechen",
+        "surface": "Vorsprechen",
+        "definition": "An audition; performing before judges to win a role."
+      },
+      {
+        "type": "noun",
+        "word": "die Schufa",
+        "surface": "Schufa",
+        "definition": "Germany's credit score agency; landlords demand its report."
+      },
+      {
+        "type": "noun",
+        "word": "das Empfehlungsschreiben",
+        "surface": "Empfehlungsschreiben",
+        "definition": "A letter in which someone vouches in writing for your character."
+      },
+      {
+        "type": "verb",
+        "word": "übertreiben",
+        "surface": "Übertreib",
+        "definition": "To exaggerate, blowing something up far bigger than it really is."
+      },
+      {
+        "type": "expression",
+        "word": "im Eiltempo",
+        "definition": "At top speed, rushing through something in a visible hurry.",
+        "surface": "Eiltempo"
+      },
+      {
+        "type": "verb",
+        "word": "thronen",
+        "surface": "thront",
+        "definition": "To sit enthroned, placed majestically above everyone in the room."
+      },
+      {
+        "type": "verb",
+        "word": "mustern",
+        "surface": "mustert",
+        "definition": "To inspect someone slowly and critically from head to toe."
+      },
+      {
+        "type": "adverb",
+        "word": "einzeln",
+        "definition": "One by one, each of them taken separately in their turn."
+      },
+      {
+        "type": "adverb",
+        "word": "inoffiziell",
+        "definition": "Unofficially; true in daily practice although nobody has ever declared it."
+      },
+      {
+        "type": "noun",
+        "word": "der Segen",
+        "surface": "Segen",
+        "definition": "A blessing, the approval of whoever really rules the place."
+      },
+      {
+        "type": "noun",
+        "word": "die Aktenlage",
+        "surface": "Aktenlage",
+        "definition": "What the files say; bureaucratic term for documented facts."
+      },
+      {
+        "type": "noun",
+        "word": "das Bauchgefühl",
+        "surface": "Bauchgefühl",
+        "definition": "A gut feeling; the belly decides before the head can argue."
+      },
+      {
+        "type": "expression",
+        "word": "ohne Umweg",
+        "definition": "Straight there, by the shortest way, with no detour at all.",
+        "surface": "Umweg"
+      },
+      {
+        "type": "verb",
+        "word": "rascheln",
+        "definition": "To rustle, like paper or dry leaves moving."
+      },
+      {
+        "type": "adjective",
+        "word": "neidisch",
+        "definition": "Envious, quietly resentful that someone else got the luck."
+      },
+      {
+        "type": "verb",
+        "word": "einreiben",
+        "surface": "eingerieben",
+        "definition": "To rub a substance onto something or someone."
+      },
+      {
+        "type": "verb",
+        "word": "sich melden",
+        "surface": "melden",
+        "definition": "To get back in touch, respond with an answer."
+      },
+      {
+        "type": "adverb",
+        "word": "immerhin",
+        "definition": "At least, after all; concedes a small positive."
+      },
+      {
+        "type": "noun",
+        "word": "der Mietvertrag",
+        "surface": "Mietvertrag",
+        "definition": "The rental contract signed between a tenant and the landlord."
+      }
+    ],
+    "level": "c1",
+    "topic": "housing-and-flatshare",
+    "slotIndex": 1
+  }
+]

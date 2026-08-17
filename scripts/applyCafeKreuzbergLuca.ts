@@ -65,7 +65,7 @@ async function main() {
   for (const [v, n] of Object.entries(newByVoice)) console.log(`    ${n.toString().padStart(2)}× ${v}`);
 
   if (changed === 0) {
-    console.log("  (nada que aplicar — Liam ya no está)");
+    console.log("  (nada que aplicar; Liam ya no está)");
     await prisma.$disconnect();
     return;
   }

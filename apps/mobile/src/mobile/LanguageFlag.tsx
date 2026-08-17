@@ -282,7 +282,7 @@ export function LanguageFlag({
         <View style={{ flex: 1, backgroundColor: "#CE1126" }} />
         {/* Real coat of arms, centered EXACTLY on the white band. Overlay a
             row of 3 equal cells matching the tricolor and center the emblem in
-            the MIDDLE cell — this tracks the white band precisely at any size,
+            the MIDDLE cell; this tracks the white band precisely at any size,
             unlike pixel `left` math which the container border pushed ~1.5px
             right into the red band. */}
         <View

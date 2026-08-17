@@ -1,0 +1,83 @@
+[
+ {
+  "slot": "nayeli",
+  "name": "Regina",
+  "id": "9Godp7dNohUvXk6qp0gS",
+  "age": "young",
+  "clones": 9536,
+  "file": "/_friends-voicetest-alts/nayeli-Regina.mp3",
+  "bytes": 91469
+ },
+ {
+  "slot": "nayeli",
+  "name": "Fernanda",
+  "id": "ARmPWZKt7WpXh6QDHA6x",
+  "age": "middle_aged",
+  "clones": 2474,
+  "file": "/_friends-voicetest-alts/nayeli-Fernanda.mp3",
+  "bytes": 106623
+ },
+ {
+  "slot": "nayeli",
+  "name": "Ximena",
+  "id": "22dcXdsgE2CBQsk9cnTY",
+  "age": "middle_aged",
+  "clones": 1761,
+  "file": "/_friends-voicetest-alts/nayeli-Ximena.mp3",
+  "bytes": 144240
+ },
+ {
+  "slot": "flor",
+  "name": "Malena",
+  "id": "p7AwDmKvTdoHTBuueGvP",
+  "age": "young",
+  "clones": 30434,
+  "file": "/_friends-voicetest-alts/flor-Malena.mp3",
+  "bytes": 109132
+ },
+ {
+  "slot": "flor",
+  "name": "Lucia",
+  "id": "yA5jrK1S9cpCAojBYyMu",
+  "age": "young",
+  "clones": 11095,
+  "file": "/_friends-voicetest-alts/flor-Lucia.mp3",
+  "bytes": 120835
+ },
+ {
+  "slot": "flor",
+  "name": "Melisa",
+  "id": "4wDRKlxcHNOFO5kBvE81",
+  "age": "middle_aged",
+  "clones": 17086,
+  "file": "/_friends-voicetest-alts/flor-Melisa.mp3",
+  "bytes": 144240
+ },
+ {
+  "slot": "nico",
+  "name": "Cristian-Cornejo",
+  "id": "ClNifCEVq1smkl4M3aTk",
+  "age": "middle_aged",
+  "clones": 12880,
+  "file": "/_friends-voicetest-alts/nico-Cristian-Cornejo.mp3",
+  "bytes": 61485
+ },
+ {
+  "slot": "nico",
+  "name": "Mateo",
+  "id": "9ZVfdvBemUaGEWZgCiv0",
+  "age": "middle_aged",
+  "clones": 4356,
+  "file": "/_friends-voicetest-alts/nico-Mateo.mp3",
+  "bytes": 114983
+ },
+ {
+  "slot": "nico",
+  "name": "Edgar",
+  "id": "6ZDFxWiAykFxCoe683WK",
+  "age": "middle_aged",
+  "clones": 2637,
+  "file": "/_friends-voicetest-alts/nico-Edgar.mp3",
+  "bytes": 229922
+ }
+]

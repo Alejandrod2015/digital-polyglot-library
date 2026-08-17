@@ -20,7 +20,7 @@ export const maxDuration = 120;
  * (`audioUrl`) stays intact until the operator clicks "Guardar" → /promote,
  * which swaps preview → master and re-runs aeneas alignment so the karaoke
  * word-timings match the new audio. The operator's file is used verbatim
- * (no tempo/loudness processing) — they already edited it to taste.
+ * (no tempo/loudness processing); they already edited it to taste.
  */
 export async function POST(request: Request) {
   const { userId } = await auth();

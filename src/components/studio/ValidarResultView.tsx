@@ -178,7 +178,7 @@ export function humanize(check: Check): Humanized {
     case "dialogue-bare-imperative":
       return {
         text: "Imperativo breve aislado cierra un turno de diálogo",
-        hint: `ElevenLabs renderea "Trae los vasos." (imperativo solo, en punto, ≤4 palabras) con entonación de pregunta. Pasa en cualquier voz y modelo (probado A–L). Arregla con: segunda oración corta ("Trae los vasos. Gracias."), vocativo + cierre ("Come, mija. El caldo se enfría."), o reformula como pregunta/declarativa ("¿Me traes los vasos?" / "Necesito los vasos."). ${detail}`,
+        hint: `ElevenLabs renderea "Trae los vasos." (imperativo solo, en punto, ≤4 palabras) con entonación de pregunta. Pasa en cualquier voz y modelo (probado A-L). Arregla con: segunda oración corta ("Trae los vasos. Gracias."), vocativo + cierre ("Come, mija. El caldo se enfría."), o reformula como pregunta/declarativa ("¿Me traes los vasos?" / "Necesito los vasos."). ${detail}`,
       };
     case "title-uniqueness":
       return {

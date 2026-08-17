@@ -8,7 +8,7 @@
  *
  * What it does, per story:
  *   1. Skip if no audioUrl, no text, or already aligned.
- *   2. Call `generateWordTimingsForStory(storyId)` — runs aeneas via Modal,
+ *   2. Call `generateWordTimingsForStory(storyId)`; runs aeneas via Modal,
  *      writes per-word timings AND per-sentence audioSegments derived from
  *      those word timings.
  *   3. Move on. Keeps whisper segments untouched if alignment fails.

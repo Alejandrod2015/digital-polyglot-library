@@ -6,11 +6,11 @@
 // Three things this file is the source of truth for, and each exists because
 // getting it wrong is silent:
 //
-//   1. WHO CAN OPEN IT — `canAccessTalkingPoints`, polyglot and owner only.
+//   1. WHO CAN OPEN IT; `canAccessTalkingPoints`, polyglot and owner only.
 //      Both routes call it; hiding a nav link is not a gate.
-//   2. VOCABULARY DENSITY — ten entries per hundred words, the journey figure.
+//   2. VOCABULARY DENSITY; ten entries per hundred words, the journey figure.
 //      Below that a piece stops teaching and is just an article.
-//   3. SURFACE FORMS — every entry must occur in the body exactly as the
+//   3. SURFACE FORMS; every entry must occur in the body exactly as the
 //      highlighter will look for it, or it silently highlights nothing.
 //
 // (2) and (3) are enforced by `scripts/_tpGateTest.ts`, not by good intentions.
@@ -26,7 +26,7 @@ import warumKeineKarteTimings from "@/data/talkingPoints/warum-keine-karte.timin
  * Who can open Talking Points.
  *
  * Polyglot (and owner) only, like `/create`. The nav entry is hidden for
- * everyone else, but hiding a link is not a gate — every route calls this too.
+ * everyone else, but hiding a link is not a gate; every route calls this too.
  *
  * The development escape exists so the prototype is openable in a worktree
  * that has no Clerk keys and therefore no session at all. It can never fire in
@@ -97,7 +97,7 @@ export type TalkingVocab = {
   type: string;
   /**
    * Register, when the entry is not plain neutral prose. Same vocabulary the
-   * journey stories use — `colloquial`, `slang`, `regional`, `vulgar` — and
+   * journey stories use; `colloquial`, `slang`, `regional`, `vulgar`; and
    * the reason it matters is that a learner who cannot tell "el Kiez" from
    * "la vivienda" will use one of them in the wrong room.
    */
@@ -224,7 +224,7 @@ const SRC_BBK_KOSTEN: TalkingSource = {
 const SRC_BBK_MEINUNG: TalkingSource = {
   id: "bbk-bargeld-meinungsbild",
   org: "Deutsche Bundesbank",
-  title: "Bargeld in der deutschen Gesellschaft – ein aktuelles Meinungsbild",
+  title: "Bargeld in der deutschen Gesellschaft: ein aktuelles Meinungsbild",
   url: "https://publikationen.bundesbank.de/publikationen-de/berichte-studien/monatsberichte/bargeld-in-der-deutschen-gesellschaft-ein-aktuelles-meinungsbild-954600",
   supports:
     "69 % halten es für wichtig, selbst bar zahlen zu können; 72 % halten Bargeld für die Gesellschaft für wichtig. Wichtigste Argumente: Ausfallsicherheit bei Stromausfall oder Hackerangriff, Kinder lernen den Umgang mit Geld, Datenschutz und Anonymität, Inklusion. Mehr als die Hälfte sieht in Schwarzarbeit, Steuerhinterziehung und Geldwäsche einen Grund, Bargeld einzuschränken.",
@@ -1194,7 +1194,7 @@ export const VOCAB_MIN_OTHER = 2;
  * The reader's region badge expects a NAME, the way journey stories store it
  * ("Germany", "Spain"), not a code: it runs the value through `formatRegion`,
  * which title-cases whatever it gets, so a raw "DE" reaches the screen as
- * "De" — sitting right next to the language badge that already says "DE".
+ * "De"; sitting right next to the language badge that already says "DE".
  *
  * Returns null for a code that is not on the list, and the caller then draws
  * no region badge at all. A missing name is better than a mangled one, and

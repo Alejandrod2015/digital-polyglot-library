@@ -127,7 +127,7 @@ function shouldRemove(
   if (isProperNoun(word, language)) reasons.push("proper-noun");
   if (isLowValueStudyWord({ word, language, level, cefrLevel: level, type })) reasons.push("low-value");
   if (isCompoundOfTransparent(word, language)) reasons.push("compound");
-  // NOTE: deliberately skip isInvalidMultiwordVocab — its A2+ false positives
+  // NOTE: deliberately skip isInvalidMultiwordVocab; its A2+ false positives
   // (sich freuen, spazieren gehen, etc.) are valid pedagogical items.
   return { remove: reasons.length > 0, reasons };
 }

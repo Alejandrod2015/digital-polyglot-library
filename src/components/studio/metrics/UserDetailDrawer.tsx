@@ -232,7 +232,15 @@ export default function UserDetailDrawer({
                   </Chip>
                 )}
                 {!data?.plan && <Chip>sin plan</Chip>}
-                {data?.beta && <Chip tone="pos">beta: {data.beta.status}</Chip>}
+                {/* Tono según si está DENTRO del programa (invited/accepted,
+                    los `ACTIVE_STATUSES` de src/lib/betaProgram.ts) o sólo
+                    solicitó: en verde salía igual quien fue rechazado que
+                    quien es tester activo. */}
+                {data?.beta && (
+                  <Chip tone={["invited", "accepted"].includes(data.beta.status) ? "pos" : "muted"}>
+                    beta: {data.beta.status}
+                  </Chip>
+                )}
                 {u.pushTokens > 0 && (
                   <Chip tone="pos" title="Tiene la app instalada con push registrado">
                     push ×{u.pushTokens}

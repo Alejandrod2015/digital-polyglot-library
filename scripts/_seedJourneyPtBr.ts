@@ -56,7 +56,7 @@ async function main() {
     where: { language: JOURNEY.language, variant: JOURNEY.variant, levels: { has: "a0" } },
   });
   if (existing) {
-    console.log(`YA EXISTE: ${existing.name} ${existing.language}/${existing.variant} (${existing.id}) — nada que hacer`);
+    console.log(`YA EXISTE: ${existing.name} ${existing.language}/${existing.variant} (${existing.id}); nada que hacer`);
     return;
   }
 

@@ -67,6 +67,15 @@ async function main() {
   const takes = Number(arg("--takes", "3"));
   const tempo = Number(arg("--tempo", String(DEFAULT_NARRATION_TEMPO)));
   const apply = process.argv.includes("--apply");
+  // `--use-candidate` empalma el candidato que YA está en disco, sin sintetizar
+  // otro.
+  //
+  // POR QUÉ (2026-08-17). El flujo natural es: tirar una toma, transcribirla
+  // para comprobar que dice lo que debe, y entonces empalmarla. Pero `--apply`
+  // volvía a sintetizar, así que se empalmaba una toma DISTINTA de la
+  // verificada. Toda la tarde comprobando una y aplicando otra: por eso los
+  // másters salían con defectos que el candidato no tenía.
+  const useCandidate = process.argv.includes("--use-candidate");
   if (!slug || Number.isNaN(index)) {
     throw new Error("usage: _rerollSection.ts <slug> <fragmentIndex> [--takes N] [--tempo T] [--apply]");
   }
@@ -145,7 +154,7 @@ async function main() {
   const dir = mkdtempSync(path.join(tmpdir(), "reroll-"));
   const scored: Array<{ file: string; end: number | null; n: number }> = [];
 
-  for (let n = 1; n <= takes; n++) {
+  for (let n = 1; !useCandidate && n <= takes; n++) {
     const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${frag.voiceId}`, {
       method: "POST",
       headers: { "xi-api-key": apiKey, "Content-Type": "application/json" },
@@ -180,12 +189,18 @@ async function main() {
   const best = usable.length
     ? usable.reduce((m, s) => ((s.end as number) < (m.end as number) ? s : m))
     : scored[0];
-  console.log(`\nelegido: take ${best.n} (F0_end=${best.end === null ? "n/a" : best.end.toFixed(1)})`);
+  if (!useCandidate) {
+    console.log(`\nelegido: take ${best.n} (F0_end=${best.end === null ? "n/a" : best.end.toFixed(1)})`);
+  }
 
   const out = path.join(process.cwd(), `_reroll_${slug}_${index}.mp3`);
-  const normalized = await normalizeLoudness(readFileSync(best.file));
-  writeFileSync(out, normalized);
-  console.log(`candidato escrito en ${out}`);
+  const normalized = useCandidate ? readFileSync(out) : await normalizeLoudness(readFileSync(best.file));
+  if (useCandidate) {
+    console.log(`candidato REUTILIZADO de ${out} (el mismo que se verificó)`);
+  } else {
+    writeFileSync(out, normalized);
+    console.log(`candidato escrito en ${out}`);
+  }
 
   if (!apply) {
     console.log("\ndry run: R2 y la base sin tocar. Re-ejecuta con --apply para empalmarlo.");

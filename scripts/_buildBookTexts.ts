@@ -4,7 +4,7 @@
  *
  * Convenciones copiadas del texto ya publicado:
  *   prosa y acotaciones -> <p>…</p>  (las acotaciones pierden los paréntesis)
- *   diálogo "N: — x"    -> <blockquote>N: x</blockquote>  (sin la raya)
+ *   diálogo "N:; x"    -> <blockquote>N: x</blockquote>  (sin la raya)
  *   vocabulario del libro -> <span class="vocab-word" data-word="Palabra">,
  *   sólo en la primera aparición.
  *

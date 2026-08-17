@@ -376,15 +376,15 @@ export function findActiveJourney(
  * Resolve which journey id should be active after a server round-trip,
  * without ever DOWNGRADING a still-valid selection to the synthesized
  * default. Preference order:
- *   1. `remoteActiveId` — the server's value, if it points at a journey
+ *   1. `remoteActiveId`; the server's value, if it points at a journey
  *      we actually hold.
- *   2. `fallbackActiveId` — the value we already had in memory (or on
+ *   2. `fallbackActiveId`; the value we already had in memory (or on
  *      disk), if still valid. This is the guard: a hydrate/re-hydrate
  *      whose response omits or nulls `activeJourneyId` (e.g. the server
  *      metadata was wiped) must NOT clobber a good in-memory selection,
  *      because the disk-save effect would then persist the default and
  *      the next cold start would open the wrong journey.
- *   3. `journeys[0]` — last-resort synthesized default.
+ *   3. `journeys[0]`; last-resort synthesized default.
  * Returns null only when there are no journeys at all.
  */
 export function resolveActiveJourneyId(

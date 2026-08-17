@@ -15,6 +15,7 @@ import StoryContent from "@/components/StoryContent";
 import StoryReaderShell from "@/components/StoryReaderShell";
 import HighlightedStoryReader from "@/components/HighlightedStoryReader";
 import { coerceAudioWordTimings } from "@/lib/audioWordTimingsTypes";
+import { STORY_STATUS_WHERE } from "@/app/journey/journeyData";
 import { checkKaraokeUsable } from "@/lib/karaokeQualityGate";
 import { extractStoryPlainText } from "@/lib/storyPlainText";
 import TapGlossReader from "@/components/TapGlossReader";
@@ -301,9 +302,15 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   // OPT-IN word-level highlight payload. Only journey stories that have been
   // explicitly aligned via /api/studio/audio/word-timings get this populated.
   // Every other story stays on the existing StoryContent path untouched.
+  // El filtro es el MISMO que deja abrir la historia (`STORY_STATUS_WHERE`), no
+  // un `status: "published"` propio. Con el propio, un journey en obra se leía
+  // en localhost pero SIN karaoke: la página renderizaba por la lista de
+  // preview y esta consulta devolvía null, así que las marcas alineadas no
+  // llegaban nunca al lector. En producción el filtro sigue siendo
+  // published-only, que es lo que era antes.
   const journeyStoryRow = await prisma.journeyStory
     .findFirst({
-      where: { slug, status: "published" },
+      where: { slug, ...STORY_STATUS_WHERE },
       select: { audioWordTimings: true },
     })
     .catch(() => null);

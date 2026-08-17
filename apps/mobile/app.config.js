@@ -63,14 +63,14 @@ const config = {
   newArchEnabled: false,
   orientation: "portrait",
   userInterfaceStyle: "automatic",
-  // App icon (home screen). Square dP mark, 1024x1024, opaque (no alpha —
+  // App icon (home screen). Square dP mark, 1024x1024, opaque (no alpha;
   // App Store rejects alpha). Source: brand square logo. The native iOS
   // appiconset is also replaced directly for xcodebuild builds; this field
   // keeps prebuild/EAS in sync so the icon survives a regen.
   icon: "./assets/icon.png",
   assetBundlePatterns: ["**/*"],
   // (Native splash config moved to the `expo-splash-screen` plugin
-  // below — gives us `imageWidth` so the wordmark renders at the
+  // below; gives us `imageWidth` so the wordmark renders at the
   // same width the ExtendedSplash uses, eliminating the "logo size
   // pop" between native and React splashes.)
   plugins: [
@@ -101,7 +101,7 @@ const config = {
         // Why transparent + white fixes the "colored logo flash": Android 12
         // rejects a splash icon that has a solid (non-transparent) background
         // and falls back to the launcher icon, which is the COLORED dP on
-        // white — that was the flash the user saw. splash-android.png had a
+        // white; that was the flash the user saw. splash-android.png had a
         // solid navy fill; splash-android-fg.png is the same mark, recolored
         // white on transparent so Android accepts it as the system splash icon.
         android: {
@@ -122,7 +122,7 @@ const config = {
     // `autoIncrement: true` NO funciona aquí porque EAS no muta JS.
     // Bumpear manualmente cada release a (max submitted on App Store
     // Connect) + 1.
-    buildNumber: "311",
+    buildNumber: "312",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
       // Background audio: story playback keeps sounding when the app is
@@ -150,7 +150,7 @@ const config = {
     // cada subida a Play; Play rechaza un versionCode repetido o menor.
     // El 23 se subió al track interno el 2026-08-06 y ya está quemado, así que
     // el siguiente build tiene que salir con este 24 o Play lo rechaza.
-    versionCode: 24,
+    versionCode: 25,
     adaptiveIcon: {
       // Android recorta el foreground a un círculo/squircle según el launcher y
       // solo respeta el 66% central, así que reusar `icon.png` (el mark llena

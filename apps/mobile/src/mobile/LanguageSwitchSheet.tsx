@@ -52,7 +52,7 @@ export type LanguageSwitchEntry = {
   active: boolean;
   streak: number;
   xpTotal: number;
-  /** 0–100; currently rendered as ring color only; future SVG arc. */
+  /** 0-100; currently rendered as ring color only; future SVG arc. */
   progress: number;
 };
 

@@ -352,7 +352,7 @@ async function importBooks() {
 
   console.log(`🧾 Mutations prepared: ${mutations.length} docs (${idsToImport.length} books, ${totalStories} stories)`);
 
-  // Ajusta si quieres: 50–200 suele ir bien.
+  // Ajusta si quieres: 50-200 suele ir bien.
   // Demasiado grande puede fallar por payload/tiempo.
   const BATCH_SIZE = 80;
 

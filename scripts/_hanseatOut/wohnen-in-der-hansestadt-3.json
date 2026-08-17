@@ -1,0 +1,121 @@
+[
+  {
+    "title": "Der Hinterhof kennt dich",
+    "slug": "der-hinterhof-kennt-dich",
+    "text": "Zwischen Umzugskartons im dritten Stock sucht Nora den Wasserkocher, als es an der Tür klopft. Davor steht eine Nachbarin, in der Hand ein Brett mit Brot und Salz.\n\nBoysen: Boysen, von nebenan. Brot, damit es Ihnen nie ausgeht. Salz, damit das Leben Würze hat. Ein alter Brauch.\n\nNora: Das ist unglaublich lieb. Wollen Sie hereinkommen? Es ist noch ein Chaos, aber gern.\n\nBoysen: Lieber nicht. Sie haben zu tun. Ich wollte nur, dass Sie das Wichtigste im Haus wissen.\n\nNora: Und das wäre?\n\nBoysen: Der Hinterhof gehört allen. Fahrräder links, Mülltonnen rechts, und sonntags bleibt die Bohrmaschine aus.\n\nNora: Verstanden. Gibt es sonst noch Regeln, die ich kennen sollte?\n\nBoysen: Keine langen Regeln. Man grüßt, man hält den Hof sauber, man macht nach zehn keinen Lärm. Der Rest findet sich.\n\nNora: Früher kannte ich nicht einmal den Namen meiner Nachbarn.\n\nBoysen: Hier kennt der Hinterhof Sie schneller, als Ihnen lieb ist. Wer die Tonnen verwechselt, ist am nächsten Tag stadtbekannt.\n\nWiebke schaut kurz herein und stellt eine Tüte Franzbrötchen auf einen Karton.\n\nWiebke: Ein Einzug ohne Franzbrötchen gilt nicht. Und? Schon die erste Nachbarin kennengelernt?\n\nNora: Sie hat mir Brot und Salz gebracht und war nach zwei Minuten wieder weg.\n\nWiebke: Zwei Minuten und Brot und Salz? Von Frau Boysen ist das eine Umarmung.\n\nNora: Eine Umarmung ganz ohne Worte. Langsam verstehe ich, wie ihr das hier meint.\n\nWiebke: Genau so. Wer hier wenig sagt, meint oft am meisten.",
+    "synopsis": "Brot, Salz und drei knappe Sätze: Noras neue Nachbarin zeigt ihr, wie der Norden Willkommen sagt.",
+    "arcType": "harmonic-close",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Umzugskarton",
+        "surface": "Umzugskartons",
+        "definition": "a cardboard box used for packing belongings during a move"
+      },
+      {
+        "type": "noun",
+        "word": "Wasserkocher",
+        "definition": "an electric kettle used to boil water for drinks"
+      },
+      {
+        "type": "verb",
+        "word": "klopfen",
+        "surface": "klopft",
+        "definition": "to knock, for example on a door to be let in"
+      },
+      {
+        "type": "noun",
+        "word": "Nachbarin",
+        "definition": "a female neighbour; a woman who lives close to you"
+      },
+      {
+        "type": "expression",
+        "word": "Brot und Salz",
+        "definition": "a German housewarming gift of bread and salt for luck"
+      },
+      {
+        "type": "noun",
+        "word": "Brauch",
+        "definition": "a custom; a traditional practice handed down over time"
+      },
+      {
+        "type": "verb",
+        "word": "ausgehen",
+        "surface": "ausgeht",
+        "definition": "to run out; to be completely used up and gone"
+      },
+      {
+        "type": "adverb",
+        "word": "unglaublich",
+        "definition": "incredibly; to a degree that is hard to believe"
+      },
+      {
+        "type": "adjective",
+        "word": "lieb",
+        "definition": "sweet and kind; showing warm, thoughtful affection toward someone"
+      },
+      {
+        "type": "verb",
+        "word": "hereinkommen",
+        "definition": "to come inside; to enter a room or home"
+      },
+      {
+        "type": "noun",
+        "word": "Hinterhof",
+        "definition": "the shared backyard behind a block of city flats"
+      },
+      {
+        "type": "noun",
+        "word": "Mülltonne",
+        "surface": "Mülltonnen",
+        "definition": "a large bin where household rubbish is collected outside"
+      },
+      {
+        "type": "noun",
+        "word": "Bohrmaschine",
+        "definition": "an electric drill used for making holes in walls"
+      },
+      {
+        "type": "verb",
+        "word": "grüßen",
+        "surface": "grüßt",
+        "definition": "to greet; to acknowledge someone with a friendly word"
+      },
+      {
+        "type": "adverb",
+        "word": "sonntags",
+        "definition": "on Sundays; every Sunday as a fixed weekly rule"
+      },
+      {
+        "type": "expression",
+        "word": "der Rest findet sich",
+        "surface": "Der Rest findet sich",
+        "definition": "the rest will sort itself out on its own eventually"
+      },
+      {
+        "type": "verb",
+        "word": "verwechseln",
+        "surface": "verwechselt",
+        "definition": "to mix up two things by mistaking one for another"
+      },
+      {
+        "type": "adjective",
+        "word": "stadtbekannt",
+        "definition": "known all over town; talked about by the whole city"
+      },
+      {
+        "type": "adverb",
+        "word": "nebenan",
+        "definition": "next door; in the place immediately beside your own"
+      },
+      {
+        "type": "noun",
+        "word": "Umarmung",
+        "definition": "a hug; the act of holding someone warmly in your arms"
+      }
+    ],
+    "level": "c1",
+    "topic": "wohnen-in-der-hansestadt",
+    "slotIndex": 3
+  }
+]

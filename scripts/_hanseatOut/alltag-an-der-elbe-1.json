@@ -1,0 +1,120 @@
+[
+  {
+    "title": "Der Fischmarkt schreit",
+    "slug": "der-fischmarkt-schreit",
+    "text": "Während der Rest der Stadt sonntags noch schläft, tobt am Hafen die alte Fischauktionshalle. Ole schiebt Nora mitten hinein, wo ein Marktschreier hinter Bergen von Aalen sein Publikum anbrüllt.\n\nSchreier: Na, junge Frau, so blass um die Nase? Ich pack dir drei Räucheraale ein, leg zwei Makrelen dazu, und den Lachs gibt es fast geschenkt!\n\nNora: Ich wollte eigentlich nur ein einzelnes Brötchen. Nicht den halben Hafen.\n\nOle: Zu spät. Wer stehen bleibt, kauft. Das ist das Gesetz der Halle.\n\nSchreier: Hör auf deinen Freund! Tüte auf, Augen zu, und du gehst als glückliche Frau nach Hause!\n\nNora: Und das um diese Uhrzeit, mit dieser Lautstärke? Ich dachte, ihr Hamburger seid wortkarg.\n\nOle: Sind wir auch. Sechs Tage die Woche. Sonntags früh im Fischmarkt macht der Norden eine einzige Ausnahme.\n\nNora: Und niemand beschwert sich über den Lärm zu dieser Stunde?\n\nOle: Beschweren? Hier nicht. Der Fischmarkt darf, was sonst kein Mensch in dieser Stadt darf: laut sein.\n\nDer Schreier stopft ihr eine prall gefüllte Tüte in die Arme, ehe sie widersprechen kann.\n\nSchreier: Alles frisch, alles echt, und ein Strauß Blumen obendrauf, weil dein Gesicht mir gefällt!\n\nNora: Ich habe jetzt Fisch für eine Woche und keine Ahnung, wie das passiert ist.\n\nOle: So läuft das Theater. Du kommst wegen der Aussicht und gehst mit drei Kilo Aal.\n\nNora: Und danach? Gehen alle brav nach Hause?\n\nOle: Danach gibt es Livemusik und das erste Fischbrötchen des Tages. Wer hier durchhält, hat den Sonntag gewonnen.\n\nNora: Dann bleibe ich. Wenn der Norden schon einmal laut wird, will ich jeden Ruf mitnehmen.",
+    "synopsis": "Sonntags früh im Fischmarkt entdeckt Nora den einen Ort, an dem der wortkarge Norden aus voller Kehle brüllt.",
+    "arcType": "daily-encounter",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Fischauktionshalle",
+        "definition": "the old harbour hall where fish is sold and auctioned"
+      },
+      {
+        "type": "verb",
+        "word": "toben",
+        "surface": "tobt",
+        "definition": "to be in an uproar; to seethe with loud, wild activity"
+      },
+      {
+        "type": "noun",
+        "word": "Marktschreier",
+        "definition": "a market crier who loudly shouts out his wares to buyers"
+      },
+      {
+        "type": "verb",
+        "word": "anbrüllen",
+        "surface": "anbrüllt",
+        "definition": "to bellow at someone loudly and forcefully in their face"
+      },
+      {
+        "type": "adjective",
+        "word": "blass",
+        "definition": "pale; having little colour in the face, often from tiredness"
+      },
+      {
+        "type": "noun",
+        "word": "Aal",
+        "definition": "an eel; a long snake-like fish, here smoked as a delicacy"
+      },
+      {
+        "type": "noun",
+        "word": "Lachs",
+        "definition": "salmon; a prized pink-fleshed fish sold fresh or smoked"
+      },
+      {
+        "type": "expression",
+        "word": "fast geschenkt",
+        "definition": "almost for free; sold at a giveaway, ridiculously low price"
+      },
+      {
+        "type": "expression",
+        "word": "auf jemanden hören",
+        "surface": "Hör auf",
+        "definition": "to listen to and follow someone's advice or guidance"
+      },
+      {
+        "type": "noun",
+        "word": "Tüte",
+        "definition": "a bag, usually of paper or plastic, for carrying goods"
+      },
+      {
+        "type": "adjective",
+        "word": "glücklich",
+        "surface": "glückliche",
+        "definition": "happy and content; feeling lucky and thoroughly pleased"
+      },
+      {
+        "type": "noun",
+        "word": "Lautstärke",
+        "definition": "loudness; how much noise or volume something makes"
+      },
+      {
+        "type": "verb",
+        "word": "sich beschweren",
+        "surface": "beschwert",
+        "definition": "to complain; to formally object that something is wrong"
+      },
+      {
+        "type": "noun",
+        "word": "Ausnahme",
+        "definition": "an exception; a case that breaks the usual rule"
+      },
+      {
+        "type": "adjective",
+        "word": "prall",
+        "definition": "bulging; packed so full it is round and tight"
+      },
+      {
+        "type": "verb",
+        "word": "widersprechen",
+        "definition": "to contradict; to say the opposite of what was said"
+      },
+      {
+        "type": "adverb",
+        "word": "obendrauf",
+        "definition": "on top; thrown in as an extra bonus at the end"
+      },
+      {
+        "type": "verb",
+        "word": "durchhalten",
+        "surface": "durchhält",
+        "definition": "to hold out; to keep going until the end despite strain"
+      },
+      {
+        "type": "noun",
+        "word": "Fischbrötchen",
+        "definition": "a fish sandwich in a bread roll, a northern harbour staple"
+      },
+      {
+        "type": "verb",
+        "word": "mitnehmen",
+        "definition": "to take something along with you when you go"
+      }
+    ],
+    "level": "c1",
+    "topic": "alltag-an-der-elbe",
+    "slotIndex": 1
+  }
+]

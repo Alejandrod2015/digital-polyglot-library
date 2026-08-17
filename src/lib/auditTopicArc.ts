@@ -60,7 +60,7 @@ function normalize(text: string): string {
  * Deterministic continuity audit over a topic's stories. Returns issues; an
  * empty array means the deterministic checks pass (the semantic judge still
  * needs to run). `topicComplete` should be true when the topic is considered
- * finished (e.g. at publish/journey-completion) — only then is a final-slot
+ * finished (e.g. at publish/journey-completion); only then is a final-slot
  * cliffhanger a hard error rather than an in-progress hook.
  */
 export function auditTopicArc(
@@ -118,7 +118,7 @@ export type RepeatIssue = { id: string; severity: "warn"; message: string };
 
 /**
  * Cross-story repetition audit. Run this over the WHOLE journey (all topics /
- * levels), NOT per topic — the formulaic beats that fatigue a binge reader
+ * levels), NOT per topic; the formulaic beats that fatigue a binge reader
  * ("toma una foto pero…", "ya no es un extraño") recur across topics and
  * levels, so a topic-scoped pass misses them. `label` identifies each story in
  * the report (e.g. "a0/nature-adventure/slot 2").

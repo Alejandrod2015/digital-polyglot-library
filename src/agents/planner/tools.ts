@@ -99,7 +99,7 @@ export async function detectGaps(
 
 // Generate a brief title for a gap
 export function generateBriefTitle(gap: PlannerGap): string {
-  return `${gap.journeyTopic} – ${gap.level.toUpperCase()} – Slot ${gap.storySlot} (${gap.language} ${gap.variant})`;
+  return `${gap.journeyTopic}: ${gap.level.toUpperCase()}: Slot ${gap.storySlot} (${gap.language} ${gap.variant})`;
 }
 
 // Save briefs to database

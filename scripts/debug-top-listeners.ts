@@ -17,10 +17,10 @@ async function main() {
   });
   console.log("\n== Top userIds por audio_play/audio_complete (30d) ==");
   for (const row of rows) {
-    let email = "—";
+    let email = "-";
     try {
       const user = await clerk.users.getUser(row.userId);
-      email = user.emailAddresses.map((e) => e.emailAddress).join(", ") || "—";
+      email = user.emailAddresses.map((e) => e.emailAddress).join(", ") || "-";
     } catch {
       email = "(clerk lookup failed)";
     }

@@ -28,15 +28,32 @@ function run(args: string[]): Promise<string> {
   const pasadas = process.argv.find((a) => /^--x\d$/.test(a)) ?? "--x2";
   const slugs = [...new Set(fixture.casos.map((c) => c.slug))];
   console.log(`Comprobando ${fixture.casos.length} casos confirmados en ${slugs.length} historias (${pasadas})…\n`);
-  const salida = await run([...slugs, pasadas]);
+  // Contra la transcripción CONGELADA del máster que TENÍA el defecto, no
+  // contra el máster vivo. Corriendo contra el vivo, cada corrección volvía su
+  // caso "PERDIDO" y la prueba culpaba al detector de un audio ya arreglado
+  // (2026-08-17: 6 de 8 casos, todos corregidos ese día). Y encima pagaba STT
+  // cada vez. Para añadir un caso nuevo:
+  //   npx tsx scripts/_sttDetect.ts <slug> --audio <url del máster malo> --freeze --x2
+  const salida = await run([...slugs, pasadas, "--frozen"]);
 
-  // Una frase se considera CUBIERTA si aparece con al menos una señal ALTA.
+  // Una zona se considera CUBIERTA si hay una señal ALTA sobre ella.
+  //
+  // Se compara por ANCLA (la palabra que sonaba mal: "pras", "Sepava",
+  // "desencher"), no por la frase del texto. Comparar por frase daba falsos
+  // "PERDIDO": corregir un defecto a menudo implica REESCRIBIR la frase, así
+  // que la del caso ya no existe en el texto y el detector la sitúa en la
+  // nueva. La palabra defectuosa, en cambio, sigue estando en la
+  // transcripción congelada, que es lo que esta prueba mide.
   const bloques = salida.split(/\[ALTA\]/).slice(1);
   const frasesAltas = bloques.map((b) => (b.match(/frase: "([^"]+)"/) ?? [])[1] ?? "");
+  const textoAltas = bloques.map((b) => b.split("\n")[0] ?? "");
 
   let fallos = 0;
   for (const c of fixture.casos) {
-    const cubierto = frasesAltas.some((f) => f === c.frase);
+    const anclas = (c as { anclas?: string[] }).anclas ?? [];
+    const cubierto = frasesAltas.some((f) => f === c.frase)
+      || (anclas.length > 0 && anclas.some((a) =>
+           textoAltas.some((t) => t.toLowerCase().includes(a.toLowerCase()))));
     if (!cubierto) fallos++;
     console.log(`${cubierto ? "✓" : "✗ PERDIDO"}  ${c.slug}`);
     console.log(`     ${c.error}`);

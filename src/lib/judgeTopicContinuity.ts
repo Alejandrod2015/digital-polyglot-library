@@ -1,7 +1,7 @@
 // Topic-level continuity judge (semantic, Layer 2).
 //
 // Deterministic checks (auditTopicArc.ts) catch arcType / name / verbatim
-// repetition. They CANNOT catch a plot contradiction or a dropped thread —
+// repetition. They CANNOT catch a plot contradiction or a dropped thread ;
 // those need reading the stories in order and reasoning about the narrative.
 // This module sends a topic's ordered stories to an LLM and asks it to find:
 //   1. contradictions between stories (state established in one, broken later)
@@ -10,7 +10,7 @@
 //      no payoff anywhere in the topic)
 //
 // Born from the A1 LATAM incident (2026-06-26): the Places arc had Diego reach
-// the sea in story 1 then travel toward it "for the first time" in story 2 — a
+// the sea in story 1 then travel toward it "for the first time" in story 2; a
 // hard contradiction no regex sees. See docs/story-quality-spec.md and user
 // memory `feedback_story_arc_continuity_gate`.
 
@@ -27,7 +27,7 @@ export type ContinuityVerdict = {
   notes: string;
 };
 
-const SYSTEM = `You are a strict story-continuity reviewer for a language-learning app. You receive the ordered stories of ONE topic (slots 1..N) that share recurring characters and are read in sequence. The intended design is an EPISODIC SERIES: same characters, each story self-contained, occasional hooks that ARE paid off — NOT one continuous novel, and NOT unrelated vignettes.
+const SYSTEM = `You are a strict story-continuity reviewer for a language-learning app. You receive the ordered stories of ONE topic (slots 1..N) that share recurring characters and are read in sequence. The intended design is an EPISODIC SERIES: same characters, each story self-contained, occasional hooks that ARE paid off; NOT one continuous novel, and NOT unrelated vignettes.
 
 Find ONLY real defects, with the exact slot numbers and a short quote:
 1. contradictions: a fact/state established in an earlier slot is broken in a later slot (e.g. a character already reached a place, then is treated as not-yet-arrived).
@@ -39,7 +39,7 @@ Do NOT flag: stories being separate situations with the same cast (that is corre
 /**
  * Run the semantic continuity judge over a topic's stories. Requires
  * OPENAI_API_KEY in the environment (present in production; absent in some
- * local/CI envs — callers should treat a thrown error as "judge unavailable"
+ * local/CI envs; callers should treat a thrown error as "judge unavailable"
  * and fall back to the deterministic audit + a human read, never as "pass").
  */
 export async function judgeTopicContinuity(
@@ -60,7 +60,7 @@ export async function judgeTopicContinuity(
 
   const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
   const body = stories
-    .map((s) => `### SLOT ${s.slotIndex} — ${s.title ?? ""}\n${(s.text ?? "").trim()}`)
+    .map((s) => `### SLOT ${s.slotIndex}: ${s.title ?? ""}\n${(s.text ?? "").trim()}`)
     .join("\n\n");
 
   const response = await openai.chat.completions.create({

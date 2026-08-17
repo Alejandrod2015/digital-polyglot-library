@@ -11,7 +11,7 @@ import * as SplashScreen from "expo-splash-screen";
 // Has to run at module load (not inside a component) to win the race
 // against the native auto-hide.
 SplashScreen.preventAutoHideAsync().catch(() => {
-  // The promise rejects when called too late (already hidden) — safe
+  // The promise rejects when called too late (already hidden); safe
   // to ignore. The fallback is the default auto-hide behavior.
 });
 import {
@@ -39,7 +39,7 @@ import { nunitoFamilyForWeight } from "./src/theme/tokens";
  * Global Text patch: map `fontWeight` on every <Text> to the matching
  * Nunito family so existing components (which use fontWeight: "900"
  * etc.) pick up the right font file without any edit. Custom fonts in
- * RN don't honor fontWeight alone — the family name is authoritative.
+ * RN don't honor fontWeight alone; the family name is authoritative.
  * Runs once at module load, before any component renders.
  */
 const TextAny = Text as unknown as {
@@ -192,7 +192,7 @@ function MobileAppRoot() {
       ]);
       if (cancelled) return;
 
-      // If the token is structurally unparseable we drop it — no way the
+      // If the token is structurally unparseable we drop it; no way the
       // API will ever accept it. An EXPIRED token we keep: offline
       // cold-start needs some proof of prior sign-in, and online the
       // first 401 naturally triggers sign-out via the Shell.
@@ -208,7 +208,7 @@ function MobileAppRoot() {
 
       // Backfill defensivo del sessionAnchor: si tenemos token válido
       // pero NO hay anchor en disco, lo guardamos AHORA derivándolo
-      // del token. Importante: AWAIT (no fire-and-forget) — si la app
+      // del token. Importante: AWAIT (no fire-and-forget); si la app
       // se cerraba antes de que el write terminara, el archivo
       // quedaba sin escribir y la siguiente apertura offline tiraba
       // al usuario al AuthScreen. Con await garantizamos que el
@@ -429,7 +429,7 @@ function MobileAppRoot() {
     setPreviewModeOnly(false);
     // Clear the offline anchor so the AuthScreen actually renders.
     // Without this, an expired session that left an anchor behind keeps
-    // the app on MobileLibraryShell forever — Sign in becomes a no-op.
+    // the app on MobileLibraryShell forever; Sign in becomes a no-op.
     void clearSessionAnchor();
     setSessionAnchor(null);
   }, []);
@@ -442,7 +442,7 @@ function MobileAppRoot() {
   // through to AuthScreen and cause a visible login/signup flash on cold
   // start for already-logged-in users:
   //   1. Our SecureStore hydration is still in flight (`loadingSession`).
-  //   2. Clerk hasn't finished hydrating its own stored session yet — we
+  //   2. Clerk hasn't finished hydrating its own stored session yet; we
   //      don't know whether the user is signed in until `clerkLoaded` is
   //      true. BUT this is bypassed when we already have a valid local
   //      mobile JWT (`hasValidLocalSession`): we know the user is signed in
@@ -472,7 +472,7 @@ function MobileAppRoot() {
   // up by `preventAutoHideAsync()` at module load and the ONLY place that ever
   // calls `hideAsync()` is `ExtendedSplash`, which only mounts inside
   // `MobileLibraryShell`. A signed-out user is routed to `AuthScreen` (below),
-  // which never mounts the Shell — so the splash would stay frozen on top of
+  // which never mounts the Shell; so the splash would stay frozen on top of
   // the auth UI (visible but touch-transparent: the buttons underneath are
   // tappable but hidden). Fire hideAsync here once we've left the splash gate
   // and are NOT entering the Shell (signed-in / anchor / preview all go to the
@@ -480,7 +480,7 @@ function MobileAppRoot() {
   useEffect(() => {
     if (!shouldShowSplash && !sessionToken && !sessionAnchor && !previewModeOnly) {
       SplashScreen.hideAsync().catch(() => {
-        // Already hidden / not configured — ignore.
+        // Already hidden / not configured; ignore.
       });
     }
   }, [shouldShowSplash, sessionToken, sessionAnchor, previewModeOnly]);
@@ -496,7 +496,7 @@ function MobileAppRoot() {
 
   // Only show AuthScreen when there's NO evidence of a prior sign-in.
   // An anchor alone (no token) is still enough to enter the Shell in
-  // offline-degraded mode — the Shell's existing `isOffline` banner and
+  // offline-degraded mode; the Shell's existing `isOffline` banner and
   // cached snapshot cover the UX, and as soon as we go online again,
   // Clerk's auto-sync will mint a fresh token and everything hydrates.
   if (!sessionToken && !sessionAnchor && !previewModeOnly) {
@@ -544,7 +544,7 @@ export default function App() {
   // Block the app until Nunito is ready. While it's loading we keep the
   // same branded splash the rest of the app uses so there's no white
   // flash and no "font swap" visible to the user on cold start. If the
-  // fonts ever fail to load we still render the app — RN falls back to
+  // fonts ever fail to load we still render the app; RN falls back to
   // the system font rather than leaving the user stuck on the splash.
   const [fontsLoaded, fontError] = useFonts({
     Nunito_400Regular,
@@ -555,7 +555,7 @@ export default function App() {
 
   // Timeout defensivo. `useFonts` puede colgarse sin error en un cold
   // start offline si las fonts no estaban cacheadas y la red no
-  // responde — `fontsLoaded` permanece false y `fontError` nunca se
+  // responde; `fontsLoaded` permanece false y `fontError` nunca se
   // setea. Antes el app quedaba congelada en un View vacío con color
   // de fondo (el usuario veía "solo el azul, ni el logo"). Después de
   // 3 segundos, forzamos el render con system fonts como fallback.
@@ -568,13 +568,13 @@ export default function App() {
   }, []);
 
   if (!fontsLoaded && !fontError && !fontTimeout) {
-    // Render NOTHING during font loading — the native splash
+    // Render NOTHING during font loading; the native splash
     // (kept up via SplashScreen.preventAutoHideAsync at module
     // load) is still covering the screen, so the user sees
     // continuous "logo on dark bg" until ExtendedSplash takes
     // over. Earlier this branch rendered a separate static
     // splash image which the user perceived as "static logo for
-    // a few seconds, then animated logo" — two visible logo
+    // a few seconds, then animated logo"; two visible logo
     // states. Returning a plain background View eliminates that
     // intermediate state.
     return <View style={styles.safeArea} />;

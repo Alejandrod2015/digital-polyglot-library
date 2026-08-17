@@ -79,7 +79,7 @@ LANG_TO_CODE = {
     "ja": "j",
     "zh": "z",
     "hi": "h",
-    # German has no Kokoro support — code is a placeholder. We accept "de" so
+    # German has no Kokoro support; code is a placeholder. We accept "de" so
     # callers can pass --lang de when using non-Kokoro voices (bark/coqui),
     # which route by --voice-id and ignore --lang.
     "de": "g",
@@ -367,7 +367,7 @@ def synthesize_multivoice(
 
     parts: list[np.ndarray] = []
     # Narrator (out-of-scene VO) time ranges in seconds, so the caller can
-    # silence the ambient bed there — the bed belongs to the scene the
+    # silence the ambient bed there; the bed belongs to the scene the
     # characters inhabit, not to the narrator. See memory
     # `feedback_ambient_not_under_narrator`.
     narrator_intervals: list[tuple[float, float]] = []
@@ -441,7 +441,7 @@ def piper_model_path(voice_name: str) -> Path:
     return path
 
 
-# Default postprocess chain — kept light so Piper "high" voices (22 kHz) don't sound muffled.
+# Default postprocess chain; kept light so Piper "high" voices (22 kHz) don't sound muffled.
 #   - afftdn: FFT-based stationary noise reduction (removes Bark room tone / hum
 #     without touching the voice). nr=12 dB attenuation, nf=-25 dB noise floor estimate.
 #   - highpass 80Hz: kill subsonic rumble

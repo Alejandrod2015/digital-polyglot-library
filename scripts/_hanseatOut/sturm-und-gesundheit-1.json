@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Wenn das Wasser kehrt",
+    "slug": "wenn-das-wasser-kehrt",
+    "text": "Als die Sturmflut ihren Höchststand erreicht, zieht Ole Nora in Gummistiefeln hinunter zum Fischmarkt. Ein Dutzend Leute steht dort schweigend am Wasser und schaut zu, wie die Elbe über die Kaikante leckt.\n\nNora: Sollten wir nicht eher weg vom Wasser als hin? Das ist eine Flutwarnung, kein Feuerwerk.\n\nOle: Guck sie dir an. Keiner rennt, keiner filmt. Sie schauen nur.\n\nNora: Und du bist sicher, dass das gleich nicht die ganze Halle wegspült?\n\nOle: Bis zur Fischauktionshalle sind es noch zwei Stufen. Die kennt das Wasser auswendig.\n\nEin breitschultriger Mann im Ölzeug nickt Richtung Pegel, ohne den Blick zu heben.\n\nMann: Kehrt. Jetzt geht sie zurück.\n\nNora: Woran sehen Sie das? Ich sehe nur graues Wasser, das zittert.\n\nMann: An der Treppe. Eine Stufe war eben noch nass, jetzt trocknet sie. Das reicht.\n\nNora: Und ich habe die ganze Zeit auf eine Katastrophe gewartet.\n\nOle: Stattdessen schaust du der Elbe beim Atmen zu.\n\nNora: Komisch. Mein Puls wird gerade langsamer, nicht schneller.\n\nOle: Siehst du. Sie kommt und sie geht. Das war schon lange vor uns so.\n\nNora: Und ihr habt das als Kinder schon gemacht, einfach zusehen?\n\nOle: Jeden Herbst aufs Neue. Man wächst damit auf.\n\nNora: Kein Wort dazu von den anderen. Sie stehen einfach da und wissen es besser.\n\nMann: Reden hält das Wasser nicht auf. Gehen Sie heim, es ist vorbei.\n\nNora dreht sich an der Ecke noch einmal zum Wasser um, dann folgt sie den anderen nach Hause, wo morgen nur noch Treibholz liegen wird.",
+    "synopsis": "Statt vor der Sturmflut zu fliehen, steht Nora mit schweigenden Fremden am Wasser und sieht zu, wie die Flut kehrt.",
+    "arcType": "reframe-turn",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Sturmflut",
+        "definition": "a storm surge; a dangerous flood driven inland by a storm"
+      },
+      {
+        "type": "noun",
+        "word": "Höchststand",
+        "definition": "the peak level; the very highest point something reaches"
+      },
+      {
+        "type": "verb",
+        "word": "erreichen",
+        "surface": "erreicht",
+        "definition": "to reach; to arrive at a certain level or point"
+      },
+      {
+        "type": "noun",
+        "word": "Kaikante",
+        "definition": "the edge of the quay running along the water"
+      },
+      {
+        "type": "verb",
+        "word": "lecken",
+        "surface": "leckt",
+        "definition": "to lap; of water licking up over an edge"
+      },
+      {
+        "type": "noun",
+        "word": "Flutwarnung",
+        "definition": "a flood warning issued before dangerously high water"
+      },
+      {
+        "type": "verb",
+        "word": "wegspülen",
+        "surface": "wegspült",
+        "definition": "to wash away; to sweep something off with rushing water"
+      },
+      {
+        "type": "expression",
+        "word": "auswendig",
+        "definition": "by heart; knowing something so well no thought is needed"
+      },
+      {
+        "type": "noun",
+        "word": "Ölzeug",
+        "definition": "oilskins; waterproof gear worn against wind and spray"
+      },
+      {
+        "type": "adjective",
+        "word": "breitschultrig",
+        "surface": "breitschultriger",
+        "definition": "broad-shouldered; sturdily and powerfully built across the frame"
+      },
+      {
+        "type": "noun",
+        "word": "Pegel",
+        "definition": "a water gauge showing how high the water is standing"
+      },
+      {
+        "type": "verb",
+        "word": "heben",
+        "definition": "to lift; to raise something up to a higher position"
+      },
+      {
+        "type": "verb",
+        "word": "zittern",
+        "surface": "zittert",
+        "definition": "to tremble; to shake with tiny, rapid movements"
+      },
+      {
+        "type": "noun",
+        "word": "Stufe",
+        "definition": "a step; one of the treads in a flight of stairs"
+      },
+      {
+        "type": "noun",
+        "word": "Puls",
+        "definition": "the pulse; the steady beat of blood you can feel"
+      },
+      {
+        "type": "adjective",
+        "word": "langsam",
+        "surface": "langsamer",
+        "definition": "slow; here of a racing pulse gradually calming down"
+      },
+      {
+        "type": "verb",
+        "word": "zuschauen",
+        "surface": "schaut zu",
+        "definition": "to watch on; to look on as something slowly unfolds"
+      },
+      {
+        "type": "expression",
+        "word": "es ist vorbei",
+        "definition": "it is over; the danger or the trouble has now passed"
+      },
+      {
+        "type": "verb",
+        "word": "sich umdrehen",
+        "surface": "dreht sich",
+        "definition": "to turn around, here to look back one last time"
+      },
+      {
+        "type": "noun",
+        "word": "Treibholz",
+        "definition": "driftwood; wood washed ashore by the tide and waves"
+      }
+    ],
+    "level": "c1",
+    "topic": "sturm-und-gesundheit",
+    "slotIndex": 1
+  }
+]

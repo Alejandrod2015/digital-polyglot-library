@@ -10,7 +10,7 @@
 // Para cada uno propongo un título estructuralmente distinto que
 // match el contenido temático sugerido por el lugar + objeto. El
 // AgentRun no es audit externo (es la cola de trabajo de la
-// trabajadora) — está bien rebautizarlo. Se actualiza:
+// trabajadora); está bien rebautizarlo. Se actualiza:
 //   - input.raw (string JSON; reemplazo del campo "title")
 //   - input.payload.title (si existe)
 //   - output.parsed.title (si existe)

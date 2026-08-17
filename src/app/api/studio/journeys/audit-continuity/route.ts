@@ -15,7 +15,7 @@ export const maxDuration = 300;
  * For every topic in the journey it runs:
  *   - auditTopicArc (deterministic: final-slot cliffhanger, name/role conflict)
  *   - judgeTopicContinuity (LLM: contradictions, dropped threads, unresolved
- *     final hook) — best-effort; if OPENAI_API_KEY is missing it reports the
+ *     final hook); best-effort; if OPENAI_API_KEY is missing it reports the
  *     topic as "semantic: unavailable" rather than silently passing.
  * Plus a journey-wide cross-story repetition pass.
  *

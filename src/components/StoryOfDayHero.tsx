@@ -69,7 +69,7 @@ export default function StoryOfDayHero({ story, plan }: Props) {
     <section
       // Layout en `dp-sotd-hero` (globals.css): 1 col en móvil (imagen
       // como banner arriba, texto debajo), 2 cols en desktop con la
-      // imagen a la izquierda y cap de altura 360–440px. Sólo el
+      // imagen a la izquierda y cap de altura 360-440px. Sólo el
       // padding del card va inline.
       className="dp-sotd-hero relative rounded-3xl border border-[var(--card-border)] bg-[var(--card-bg)] overflow-hidden"
       style={{ padding: 16 }}

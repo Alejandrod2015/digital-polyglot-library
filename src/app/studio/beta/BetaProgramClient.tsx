@@ -502,7 +502,7 @@ function DemandPanel({ applicants, servedLanguages }: { applicants: Applicant[];
         <DemandBars
           rows={byLanguage}
           total={total}
-          empty="—"
+          empty="·"
           renderLabel={(key) => (
             <span style={{ color: served.has(key.toLowerCase()) ? ACCENT : "var(--foreground)" }}>
               {key}
@@ -547,7 +547,7 @@ function DemandPanel({ applicants, servedLanguages }: { applicants: Applicant[];
           title="Esperando un idioma que las reglas no aceptan"
           hint="Gente en la cola cuyo idioma queda fuera antes incluso de puntuarse. Aquí es donde se ve si una regla está reteniendo a alguien que ya podrías atender."
         >
-          <DemandBars rows={unservedWaiting} total={waiting.length} empty="—" />
+          <DemandBars rows={unservedWaiting} total={waiting.length} empty="·" />
         </DemandBlock>
       )}
 
@@ -562,11 +562,11 @@ function DemandPanel({ applicants, servedLanguages }: { applicants: Applicant[];
         </DemandBlock>
 
         <DemandBlock title="Con qué teléfono">
-          <DemandBars rows={tally(applicants, (a) => a.platform ?? "ios")} total={total} empty="—" />
+          <DemandBars rows={tally(applicants, (a) => a.platform ?? "ios")} total={total} empty="·" />
         </DemandBlock>
 
         <DemandBlock title="Desde qué nivel empiezan">
-          <DemandBars rows={tally(applicants, (a) => a.currentLevel)} total={total} empty="—" />
+          <DemandBars rows={tally(applicants, (a) => a.currentLevel)} total={total} empty="·" />
         </DemandBlock>
 
         <DemandBlock title="Cuánto tiempo dicen tener" hint="A la semana.">
@@ -582,7 +582,7 @@ function DemandPanel({ applicants, servedLanguages }: { applicants: Applicant[];
         </DemandBlock>
 
         <DemandBlock title="Qué idioma hablan ya">
-          <DemandBars rows={tally(applicants, (a) => a.nativeLanguage)} total={total} empty="—" />
+          <DemandBars rows={tally(applicants, (a) => a.nativeLanguage)} total={total} empty="·" />
         </DemandBlock>
 
         <DemandBlock title="En qué huso horario están" hint="Para saber a qué hora escribirles.">

@@ -1,0 +1,69 @@
+{
+  "_why": "Unicos archivos autorizados a contener guiones largos. Dos motivos y ninguno mas: (1) DETECTORES, codigo que busca o prohibe el caracter y lo necesita como literal dentro de una regex o una comprobacion; (2) src/data/books, prosa publicada cuyos tiempos de karaoke guardan offsets charStart/charEnd sobre el texto, asi que editarla desincroniza el resaltado. La lista es POR CARACTER: un archivo que necesita el en dash no queda exento del em dash. Anadir una entrada exige un motivo escrito. Lo leen scripts/checkNoEmDash.ts y .claude/safety/pre-emdash-guard.sh, para que el lint y el hook no se desincronicen.",
+  "em": {
+    "prefixes": [
+      "src/data/books/"
+    ],
+    "files": [
+      "scripts/_auditSpainJourney.ts",
+      "scripts/_buildBookTexts.ts",
+      "scripts/_buildCatalogTextFromManuscript.ts",
+      "scripts/_buildFriendsDEGlosses.ts",
+      "scripts/_buildFriendsSets.py",
+      "scripts/_buildSets.py",
+      "scripts/_journeysTable3.ts",
+      "scripts/_pickBestNarratives.py",
+      "scripts/_quotedSpeechAudit.ts",
+      "scripts/_sttStoryCheck.ts",
+      "scripts/_valExpat67.py",
+      "scripts/_valFriends.py",
+      "scripts/_valHamburg.py",
+      "scripts/_valHamburgRW.py",
+      "scripts/_valHamburgT2.py",
+      "scripts/_valHamburgT3.py",
+      "scripts/_valHamburgT4.py",
+      "scripts/_valHamburgT5.py",
+      "scripts/_valHamburgT6.py",
+      "scripts/_valHamburgT7.py",
+      "scripts/_validateSets.ts",
+      "scripts/autoShortenDefinitions.ts",
+      "scripts/checkNoEmDash.ts",
+      "scripts/checkNoEmDashDb.ts",
+      "scripts/createDialogueStoriesGermanA1.ts",
+      "scripts/journeysTable.ts",
+      "scripts/regenerateVocabForNewDialogues.ts",
+      "scripts/rewriteJourneyVocabDefs.ts",
+      "scripts/saveStory.ts",
+      "scripts/syncCatalogVocabFromDump.ts",
+      "src/lib/validateGeneratedStory.ts"
+    ]
+  },
+  "en": {
+    "prefixes": [
+      "src/data/books/"
+    ],
+    "files": [
+      "scripts/_auditSpainJourney.ts",
+      "scripts/_quotedSpeechAudit.ts",
+      "scripts/_sttStoryCheck.ts",
+      "scripts/_valExpat67.py",
+      "scripts/_valFriends.py",
+      "scripts/_valHamburg.py",
+      "scripts/_valHamburgRW.py",
+      "scripts/_valHamburgT2.py",
+      "scripts/_valHamburgT3.py",
+      "scripts/_valHamburgT4.py",
+      "scripts/_valHamburgT5.py",
+      "scripts/_valHamburgT6.py",
+      "scripts/_valHamburgT7.py",
+      "scripts/autoShortenDefinitions.ts",
+      "scripts/checkNoEmDash.ts",
+      "scripts/saveStory.ts",
+      "scripts/syncCatalogVocabFromDump.ts",
+      "src/app/stories/[slug]/page.tsx",
+      "src/lib/cefr/spanishLevelJudge.ts",
+      "src/lib/practiceExercises.ts",
+      "src/lib/validateGeneratedStory.ts"
+    ]
+  }
+}

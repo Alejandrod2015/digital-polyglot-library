@@ -1,0 +1,3096 @@
+[
+ {
+  "slug": "la-combi-equivocada",
+  "title": "La combi equivocada",
+  "synopsis": "Pilar llega del campo para su primera entrevista en Lima y se sube a la combi equivocada. Un joven, Diego, la ayuda, pero al bajar deja su carpeta con todos los papeles en la combi, que se va.",
+  "vocab": [
+   {
+    "word": "paradero",
+    "surface": "paradero",
+    "type": "noun",
+    "def": "A bus stop; the place where buses pick up passengers.",
+    "ex": "En el paradero, un cobrador grita los destinos muy rápido."
+   },
+   {
+    "word": "cobrador",
+    "surface": "cobrador",
+    "type": "noun",
+    "def": "The person on a bus who collects fares and calls stops.",
+    "ex": "En el paradero, un cobrador grita los destinos muy rápido."
+   },
+   {
+    "word": "gritar",
+    "surface": "grita",
+    "type": "verb",
+    "def": "To shout; to say something very loudly.",
+    "ex": "En el paradero, un cobrador grita los destinos muy rápido."
+   },
+   {
+    "word": "destinos",
+    "surface": "destinos",
+    "type": "noun",
+    "def": "Destinations; the places where a trip or route ends.",
+    "ex": "En el paradero, un cobrador grita los destinos muy rápido."
+   },
+   {
+    "word": "combi",
+    "surface": "combi",
+    "type": "noun",
+    "def": "A small shared minibus used for public transport in Peru.",
+    "ex": "¿Esta combi va al centro?"
+   },
+   {
+    "word": "ruta",
+    "surface": "ruta",
+    "type": "noun",
+    "def": "A route; the fixed path a bus follows through the city.",
+    "ex": "Yo me sé toda la ruta de memoria."
+   },
+   {
+    "word": "carpeta",
+    "surface": "carpeta",
+    "type": "noun",
+    "def": "A folder where you keep papers and documents together.",
+    "ex": "Pilar sube con su carpeta apretada contra el pecho."
+   },
+   {
+    "word": "pecho",
+    "surface": "pecho",
+    "type": "noun",
+    "def": "The chest; the front part of the upper body.",
+    "ex": "Pilar sube con su carpeta apretada contra el pecho."
+   },
+   {
+    "word": "llena",
+    "surface": "llena",
+    "type": "adjective",
+    "def": "Full; with no more room left inside.",
+    "ex": "La combi va llena y un joven llamado Diego le hace un sitio."
+   },
+   {
+    "word": "trabajo",
+    "surface": "trabajo",
+    "type": "noun",
+    "def": "Work or a job; what you are employed to do.",
+    "ex": "Pilar tiene su primera entrevista de trabajo a las nueve, pero acaba de llegar del campo y no conoce la ciudad."
+   },
+   {
+    "word": "costa",
+    "surface": "costa",
+    "type": "noun",
+    "def": "The coast; the land right next to the sea.",
+    "ex": "Esta combi nunca toca el centro; da la vuelta por la costa."
+   },
+   {
+    "word": "ventana",
+    "surface": "ventana",
+    "type": "noun",
+    "def": "A window; the glass opening you look out of.",
+    "ex": "Pilar mira por la ventana, preocupada."
+   },
+   {
+    "word": "preocupada",
+    "surface": "preocupada",
+    "type": "adjective",
+    "def": "Worried; feeling nervous that something bad may happen.",
+    "ex": "Pilar mira por la ventana, preocupada."
+   },
+   {
+    "word": "mar",
+    "surface": "mar",
+    "type": "noun",
+    "def": "The sea; the large body of salt water.",
+    "ex": "Las calles ya no son del centro y, a lo lejos, aparece el mar."
+   },
+   {
+    "word": "vuelta",
+    "surface": "vuelta",
+    "type": "noun",
+    "def": "A turn or loop; 'dar la vuelta' means to go around.",
+    "ex": "Esta combi nunca toca el centro; da la vuelta por la costa."
+   },
+   {
+    "word": "entrevista",
+    "surface": "entrevista",
+    "type": "noun",
+    "def": "A meeting where someone is asked questions, as for a job.",
+    "ex": "Pilar tiene su primera entrevista de trabajo a las nueve, pero acaba de llegar del campo y no conoce la ciudad."
+   },
+   {
+    "word": "asiento",
+    "surface": "asiento",
+    "type": "noun",
+    "def": "A seat; a place to sit on a bus or chair.",
+    "ex": "La dejé en el asiento."
+   },
+   {
+    "word": "memoria",
+    "surface": "memoria",
+    "type": "noun",
+    "def": "Memory; 'de memoria' means knowing something by heart.",
+    "ex": "Yo me sé toda la ruta de memoria."
+   },
+   {
+    "word": "carros",
+    "surface": "carros",
+    "type": "noun",
+    "def": "Cars; the vehicles that drive on the street.",
+    "ex": "La combi arranca y se pierde entre los carros."
+   },
+   {
+    "word": "apretada",
+    "surface": "apretada",
+    "type": "adjective",
+    "def": "Held tightly; pressed close against the body.",
+    "ex": "Pilar sube con su carpeta apretada contra el pecho."
+   }
+  ]
+ },
+ {
+  "slug": "sin-cumbia-no-hay-fiesta",
+  "title": "Sin cumbia no hay fiesta",
+  "synopsis": "El barrio prepara su fiesta, pero el señor que siempre dirige la cumbia está enfermo y nadie se sabe los pasos. Daniela encuentra un video del año pasado y convence a Andrés de aprenderla con ella antes del sábado.",
+  "vocab": [
+   {
+    "word": "banderas",
+    "surface": "banderas",
+    "type": "noun",
+    "def": "Flags; pieces of colored cloth hung up for a party.",
+    "ex": "Daniela, quien organiza la fiesta de su calle, cuelga banderas de colores de lado a lado, en Cartagena, Colombia."
+   },
+   {
+    "word": "colores",
+    "surface": "colores",
+    "type": "noun",
+    "def": "Colors; red, blue, green and the rest.",
+    "ex": "Daniela, quien organiza la fiesta de su calle, cuelga banderas de colores de lado a lado, en Cartagena, Colombia."
+   },
+   {
+    "word": "escalera",
+    "surface": "escalera",
+    "type": "noun",
+    "def": "A ladder; steps used to reach high places.",
+    "ex": "Su amigo Andrés sostiene la escalera desde abajo."
+   },
+   {
+    "word": "sostener",
+    "surface": "sostiene",
+    "type": "verb",
+    "def": "To hold; to keep something steady so it does not fall.",
+    "ex": "Su amigo Andrés sostiene la escalera desde abajo."
+   },
+   {
+    "word": "dirigir",
+    "surface": "dirige",
+    "type": "verb",
+    "def": "To lead; to guide a group, here in a dance.",
+    "ex": "Oye, ¿y este año quién dirige el baile de la cumbia?"
+   },
+   {
+    "word": "baile",
+    "surface": "baile",
+    "type": "noun",
+    "def": "A dance; moving the body to music.",
+    "ex": "Oye, ¿y este año quién dirige el baile de la cumbia?"
+   },
+   {
+    "word": "cumbia",
+    "surface": "cumbia",
+    "type": "noun",
+    "def": "Cumbia; a traditional Colombian dance and music style.",
+    "ex": "Oye, ¿y este año quién dirige el baile de la cumbia?"
+   },
+   {
+    "word": "cama",
+    "surface": "cama",
+    "type": "noun",
+    "def": "A bed; the furniture you sleep on.",
+    "ex": "Don Tomás, el que siempre la dirige, está enfermo en cama."
+   },
+   {
+    "word": "pasos",
+    "surface": "pasos",
+    "type": "noun",
+    "def": "Steps; the movements of the feet in a dance.",
+    "ex": "¿Y nadie más se sabe los pasos?"
+   },
+   {
+    "word": "animarse",
+    "surface": "anima",
+    "type": "verb",
+    "def": "To dare; to feel brave enough to try.",
+    "ex": "Nadie del barrio se anima."
+   },
+   {
+    "word": "olvidar",
+    "surface": "olvidó",
+    "type": "verb",
+    "def": "To forget; to lose the memory of how to do something.",
+    "ex": "Todos dicen que ya se les olvidó."
+   },
+   {
+    "word": "callada",
+    "surface": "callada",
+    "type": "adjective",
+    "def": "Quiet; without sound or music.",
+    "ex": "Entonces este año la calle se va a quedar callada y quieta."
+   },
+   {
+    "word": "quieta",
+    "surface": "quieta",
+    "type": "adjective",
+    "def": "Still; not moving at all.",
+    "ex": "Entonces este año la calle se va a quedar callada y quieta."
+   },
+   {
+    "word": "grabar",
+    "surface": "grabó",
+    "type": "verb",
+    "def": "To record; to save a video or sound to watch later.",
+    "ex": "El año pasado alguien grabó la cumbia en un video."
+   },
+   {
+    "word": "claro",
+    "surface": "claro",
+    "type": "adjective",
+    "def": "Clear; easy to see or understand.",
+    "ex": "Se ve todo claro."
+   },
+   {
+    "word": "aprender",
+    "surface": "aprendemos",
+    "type": "verb",
+    "def": "To learn; to come to know how to do something.",
+    "ex": "Pues lo aprendemos nosotros dos."
+   },
+   {
+    "word": "puerta",
+    "surface": "puerta",
+    "type": "noun",
+    "def": "A door; 'bailar como una puerta' means to dance very stiffly.",
+    "ex": "Pero yo bailo como una puerta, sin nada de ritmo."
+   },
+   {
+    "word": "ritmo",
+    "surface": "ritmo",
+    "type": "noun",
+    "def": "Rhythm; the steady beat you move or dance to.",
+    "ex": "Pero yo bailo como una puerta, sin nada de ritmo."
+   },
+   {
+    "word": "faltar",
+    "surface": "falta",
+    "type": "verb",
+    "def": "To be missing; to still need to be done.",
+    "ex": "El sábado es la fiesta del barrio y todavía falta mucho por hacer."
+   },
+   {
+    "word": "barrio",
+    "surface": "barrio",
+    "type": "noun",
+    "def": "A neighborhood; the part of a city where people live.",
+    "ex": "El sábado es la fiesta del barrio y todavía falta mucho por hacer."
+   }
+  ]
+ },
+ {
+  "slug": "la-promesa-del-mole",
+  "title": "La promesa del mole",
+  "synopsis": "En su departamento de la Ciudad de México, Sofía invita a unos amigos a cenar y promete cocinar mole, aunque apenas sabe cocinar. Con dos días por delante y la ayuda dudosa de su compañera Renata y su amigo Mateo, el plan ya huele a desastre.",
+  "vocab": [
+   {
+    "word": "colgar",
+    "surface": "cuelga",
+    "type": "verb",
+    "def": "To hang up; to end a phone call by putting it down.",
+    "ex": "Sofía, una joven de la Ciudad de México, cuelga el teléfono en su pequeño departamento con una sonrisa nerviosa."
+   },
+   {
+    "word": "sonrisa",
+    "surface": "sonrisa",
+    "type": "noun",
+    "def": "A smile; the happy or amused expression on a face.",
+    "ex": "Sofía, una joven de la Ciudad de México, cuelga el teléfono en su pequeño departamento con una sonrisa nerviosa."
+   },
+   {
+    "word": "vista",
+    "surface": "vista",
+    "type": "noun",
+    "def": "Sight or gaze; 'levanta la vista' means he looks up.",
+    "ex": "Mateo, un amigo que vino de visita, levanta la vista del sillón."
+   },
+   {
+    "word": "sospecha",
+    "surface": "sospecha",
+    "type": "noun",
+    "def": "Suspicion; a feeling that something is wrong or not honest.",
+    "ex": "Su compañera de piso, Renata, la mira con sospecha desde la mesa."
+   },
+   {
+    "word": "sillón",
+    "surface": "sillón",
+    "type": "noun",
+    "def": "An armchair; a soft, comfortable single seat with arm rests.",
+    "ex": "Mateo, un amigo que vino de visita, levanta la vista del sillón."
+   },
+   {
+    "word": "acabo de",
+    "surface": "acabo de",
+    "type": "phrase",
+    "def": "Expresses an action that happened just a moment ago.",
+    "ex": "acabo de invitar a unos amigos a cenar el sábado."
+   },
+   {
+    "word": "cenar",
+    "surface": "cenar",
+    "type": "verb",
+    "def": "To have dinner; to eat the evening meal.",
+    "ex": "acabo de invitar a unos amigos a cenar el sábado."
+   },
+   {
+    "word": "tamaño",
+    "surface": "tamaño",
+    "type": "noun",
+    "def": "Size; how big or small something is.",
+    "ex": "Sofía, nuestra cocina es del tamaño de una caja."
+   },
+   {
+    "word": "caja",
+    "surface": "caja",
+    "type": "noun",
+    "def": "A box; a container, used here to mean very small.",
+    "ex": "Sofía, nuestra cocina es del tamaño de una caja."
+   },
+   {
+    "word": "mole",
+    "surface": "mole",
+    "type": "noun",
+    "def": "A traditional Mexican sauce of chiles, spices, and often chocolate.",
+    "ex": "Ya lo sé, pero les dije que yo iba a cocinar mole."
+   },
+   {
+    "word": "quemar",
+    "surface": "quemaste",
+    "type": "verb",
+    "def": "To burn; to damage or spoil something with fire or heat.",
+    "ex": "Pero si la semana pasada quemaste el agua."
+   },
+   {
+    "word": "fácil",
+    "surface": "fácil",
+    "type": "adjective",
+    "def": "Easy; not hard to do.",
+    "ex": "Vi un video y se ve muy fácil."
+   },
+   {
+    "word": "llevar",
+    "surface": "lleva",
+    "type": "verb",
+    "def": "To carry; here, to require (how many things a dish needs).",
+    "ex": "¿Tú sabes cuántas cosas lleva un mole?"
+   },
+   {
+    "word": "adentro",
+    "surface": "adentro",
+    "type": "adverb",
+    "def": "Inside; toward or in the interior of something.",
+    "ex": "Renata abre el refrigerador y mira adentro con cara de preocupación."
+   },
+   {
+    "word": "casi",
+    "surface": "casi",
+    "type": "adverb",
+    "def": "Almost; very close to something but not completely.",
+    "ex": "Pues no tenemos casi nada."
+   },
+   {
+    "word": "avisar",
+    "surface": "aviso",
+    "type": "verb",
+    "def": "To warn; to let someone know something in advance.",
+    "ex": "Yo ayudo, pero les aviso que solo sé hacer quesadillas."
+   },
+   {
+    "word": "sacar",
+    "surface": "sacamos",
+    "type": "verb",
+    "def": "To pull off; here, to manage something difficult together.",
+    "ex": "Entre los tres lo sacamos."
+   },
+   {
+    "word": "mercado",
+    "surface": "mercado",
+    "type": "noun",
+    "def": "A market where people buy food and other fresh goods.",
+    "ex": "Mañana compramos todo en el mercado."
+   },
+   {
+    "word": "pedir",
+    "surface": "pedimos",
+    "type": "verb",
+    "def": "To order or ask for something, like food or help.",
+    "ex": "¿Y si mejor pedimos comida y ya?"
+   },
+   {
+    "word": "suerte",
+    "surface": "suerte",
+    "type": "noun",
+    "def": "Luck; good or bad fortune that happens by chance.",
+    "ex": "Vamos a necesitar mucha suerte con ese mole."
+   },
+   {
+    "word": "manos a la obra",
+    "surface": "manos a la obra",
+    "type": "phrase",
+    "def": "Let's get to work; an expression said to start a task.",
+    "ex": "Por eso mismo, manos a la obra."
+   }
+  ]
+ },
+ {
+  "slug": "el-duende-del-patio",
+  "title": "El duende del patio",
+  "synopsis": "Cada noche desaparecen mangos del árbol del patio y Rodrigo jura que es el duende, como decía su abuela. Itzel no le cree nada y lo convence de vigilar el árbol esa misma noche.",
+  "vocab": [
+   {
+    "word": "contar",
+    "surface": "cuenta",
+    "type": "verb",
+    "def": "To count; to say the numbers to know how many there are.",
+    "ex": "En Oaxaca, México, Itzel, una joven muy curiosa, cuenta los mangos del árbol de su patio con cara de enojo."
+   },
+   {
+    "word": "árbol",
+    "surface": "árbol",
+    "type": "noun",
+    "def": "A tree; a large plant with a trunk and branches.",
+    "ex": ""
+   },
+   {
+    "word": "enojo",
+    "surface": "enojo",
+    "type": "noun",
+    "def": "Anger; the feeling of being annoyed or upset.",
+    "ex": "En Oaxaca, México, Itzel, una joven muy curiosa, cuenta los mangos del árbol de su patio con cara de enojo."
+   },
+   {
+    "word": "divertido",
+    "surface": "divertido",
+    "type": "adjective",
+    "def": "Amused; finding something funny or entertaining.",
+    "ex": "Su amigo Rodrigo, quien pasó a visitarla, la observa divertido desde la puerta de la cocina."
+   },
+   {
+    "word": "faltar",
+    "surface": "faltan",
+    "type": "verb",
+    "def": "To be missing; to not be there when they should be.",
+    "ex": "Otra vez faltan mangos, Rodrigo."
+   },
+   {
+    "word": "acompañar",
+    "surface": "acompañas",
+    "type": "verb",
+    "def": "To accompany; to go along with someone.",
+    "ex": "Y tú me acompañas."
+   },
+   {
+    "word": "duende",
+    "surface": "duende",
+    "type": "noun",
+    "def": "A goblin or elf from folk tales; a small magical creature.",
+    "ex": "Ah, eso es el duende del patio."
+   },
+   {
+    "word": "dulce",
+    "surface": "dulce",
+    "type": "adjective",
+    "def": "Sweet; tasting like sugar or fruit.",
+    "ex": "Siempre se lleva la fruta más dulce del árbol."
+   },
+   {
+    "word": "jurar",
+    "surface": "juraba",
+    "type": "verb",
+    "def": "To swear; to insist strongly that something is true.",
+    "ex": "Mi abuela juraba que sí."
+   },
+   {
+    "word": "cuentos",
+    "surface": "cuentos",
+    "type": "noun",
+    "def": "Tales or stories, often invented or for children.",
+    "ex": "Tu abuela contaba cuentos bonitos, pero alguien real se está comiendo mi fruta."
+   },
+   {
+    "word": "pueblo",
+    "surface": "pueblo",
+    "type": "noun",
+    "def": "A town or village; also the people who live there.",
+    "ex": "Pues medio pueblo piensa igual que ella."
+   },
+   {
+    "word": "raro",
+    "surface": "raro",
+    "type": "adjective",
+    "def": "Strange or weird; not normal or hard to explain.",
+    "ex": "Eso es todavía más raro que los mangos."
+   },
+   {
+    "word": "se porta bien",
+    "surface": "se porta bien",
+    "type": "phrase",
+    "def": "Behaves well; acts nicely and causes no trouble.",
+    "ex": "Dicen que el duende se porta bien cuando lo tratan con respeto."
+   },
+   {
+    "word": "negar",
+    "surface": "niega",
+    "type": "verb",
+    "def": "To deny; 'negar con la cabeza' means to shake the head no.",
+    "ex": "Itzel mira el árbol, cruza los brazos y niega con la cabeza."
+   },
+   {
+    "word": "descubrir",
+    "surface": "descubrir",
+    "type": "verb",
+    "def": "To find out; to learn the truth about something hidden.",
+    "ex": "Voy a descubrir qué pasa de verdad."
+   },
+   {
+    "word": "valiente",
+    "surface": "valiente",
+    "type": "adjective",
+    "def": "Brave; showing courage and not being afraid.",
+    "ex": "¿Y cómo piensas hacer eso, tan moderna y tan valiente?"
+   },
+   {
+    "word": "vigilar",
+    "surface": "vigilo",
+    "type": "verb",
+    "def": "To keep watch; to guard something carefully.",
+    "ex": "Esta noche me quedo despierta y vigilo el árbol."
+   },
+   {
+    "word": "miedoso",
+    "surface": "miedoso",
+    "type": "adjective",
+    "def": "Fearful; a person who gets scared easily.",
+    "ex": "No seas miedoso."
+   },
+   {
+    "word": "atrapar",
+    "surface": "atrapamos",
+    "type": "verb",
+    "def": "To catch; to trap something or someone.",
+    "ex": "Entre los dos lo atrapamos, sea lo que sea."
+   },
+   {
+    "word": "correr",
+    "surface": "corriendo",
+    "type": "verb",
+    "def": "To run; to move fast on foot, often to escape.",
+    "ex": "Pero si aparece algo raro, yo salgo corriendo primero."
+   }
+  ]
+ },
+ {
+  "slug": "la-isla-del-lago",
+  "title": "La isla del lago",
+  "synopsis": "Javiera vuelve al sur y Benjamín la convence de remar en kayak a una isla del lago. Gloria los despide con comida y una advertencia sobre el clima.",
+  "vocab": [
+   {
+    "word": "lago",
+    "surface": "lago",
+    "type": "noun",
+    "def": "Lake; a large area of water surrounded by land.",
+    "ex": "El lago amanece azul y calmo en la Patagonia, en el sur de Chile."
+   },
+   {
+    "word": "remar",
+    "surface": "remar",
+    "type": "verb",
+    "def": "To row; to move a boat using oars.",
+    "ex": "Los dos suben al kayak y empiezan a remar."
+   },
+   {
+    "word": "isla",
+    "surface": "isla",
+    "type": "noun",
+    "def": "Island; land with water all around it.",
+    "ex": "Tenemos que ir en kayak hasta la isla del medio."
+   },
+   {
+    "word": "camino",
+    "surface": "camino",
+    "type": "noun",
+    "def": "Path or way; the route you take to a place.",
+    "ex": "Es bien fácil, yo te enseño en el camino."
+   },
+   {
+    "word": "comida",
+    "surface": "comida",
+    "type": "noun",
+    "def": "Food; what people eat.",
+    "ex": "Llevamos comida y pasamos el día allá."
+   },
+   {
+    "word": "cansarse",
+    "surface": "canso",
+    "type": "verb",
+    "def": "To get tired; to lose energy.",
+    "ex": "¿Y si me canso justo en la mitad del lago?"
+   },
+   {
+    "word": "pan",
+    "surface": "pan",
+    "type": "noun",
+    "def": "Bread; a basic food made from flour.",
+    "ex": "Gloria, la mamá de Javiera, sale al patio con una bolsa de pan y fruta para el viaje."
+   },
+   {
+    "word": "fruta",
+    "surface": "fruta",
+    "type": "noun",
+    "def": "Fruit; the sweet food that grows on plants.",
+    "ex": "Gloria, la mamá de Javiera, sale al patio con una bolsa de pan y fruta para el viaje."
+   },
+   {
+    "word": "viaje",
+    "surface": "viaje",
+    "type": "noun",
+    "def": "Trip or journey; travel from one place to another.",
+    "ex": "Gloria, la mamá de Javiera, sale al patio con una bolsa de pan y fruta para el viaje."
+   },
+   {
+    "word": "orilla",
+    "surface": "orilla",
+    "type": "noun",
+    "def": "Shore; the edge of a lake, river, or sea.",
+    "ex": "No, yo los miro desde la orilla."
+   },
+   {
+    "word": "avisar",
+    "surface": "avisar",
+    "type": "verb",
+    "def": "To let someone know; to warn or inform them.",
+    "ex": "Alguien tiene que avisar si pasa algo."
+   },
+   {
+    "word": "enseñar",
+    "surface": "enseño",
+    "type": "verb",
+    "def": "To teach; to show someone how to do something.",
+    "ex": "Es bien fácil, yo te enseño en el camino."
+   },
+   {
+    "word": "caerse",
+    "surface": "caíste",
+    "type": "verb",
+    "def": "To fall; to drop to the ground.",
+    "ex": "Eso mismo decías el día que te caíste al agua con zapatos y todo."
+   },
+   {
+    "word": "agua",
+    "surface": "agua",
+    "type": "noun",
+    "def": "Water; the clear liquid we drink.",
+    "ex": "Eso mismo decías el día que te caíste al agua con zapatos y todo."
+   },
+   {
+    "word": "zapato",
+    "surface": "zapatos",
+    "type": "noun",
+    "def": "Shoe; what you wear on your feet.",
+    "ex": "Eso mismo decías el día que te caíste al agua con zapatos y todo."
+   },
+   {
+    "word": "muelle",
+    "surface": "muelle",
+    "type": "noun",
+    "def": "Dock or pier; a platform at the edge of the water.",
+    "ex": "Fue una sola vez y el muelle estaba mojado."
+   },
+   {
+    "word": "mojado",
+    "surface": "mojado",
+    "type": "adjective",
+    "def": "Wet; covered or soaked with water.",
+    "ex": "Fue una sola vez y el muelle estaba mojado."
+   },
+   {
+    "word": "cerca",
+    "surface": "cerca",
+    "type": "adverb",
+    "def": "Near; a short distance away.",
+    "ex": "Hay algo ahí que en Santiago no tienes ni cerca."
+   },
+   {
+    "word": "chaleco",
+    "surface": "chalecos",
+    "type": "noun",
+    "def": "Vest (\"chaleco salvavidas\" = life jacket).",
+    "ex": "Lleven esta comida y pónganse bien los chalecos salvavidas."
+   },
+   {
+    "word": "alejarse",
+    "surface": "alejarse",
+    "type": "verb",
+    "def": "To move away; to go farther from something.",
+    "ex": "Gloria los mira alejarse despacio hacia el centro del lago."
+   }
+  ]
+ },
+ {
+  "slug": "un-perro-bajo-la-lluvia",
+  "title": "Un perro bajo la lluvia",
+  "synopsis": "Julián llega empapado al apartamento con un perrito que rescató de la lluvia escondido en la chaqueta. Marina le recuerda que el edificio no permite mascotas, pero el perrito tiembla de frío y no se atreve a echarlo. Tienen dos días antes de que llegue mamá.",
+  "vocab": [
+   {
+    "word": "empapado",
+    "surface": "empapado",
+    "type": "adjective",
+    "def": "Soaked; completely wet, as from heavy rain.",
+    "ex": "Julián, el hermano menor, entra a su apartamento de Bogotá, Colombia, empapado por la lluvia, con la chaqueta cerrada y abultada."
+   },
+   {
+    "word": "chaqueta",
+    "surface": "chaqueta",
+    "type": "noun",
+    "def": "A jacket; a short coat you wear over clothes.",
+    "ex": "Julián, el hermano menor, entra a su apartamento de Bogotá, Colombia, empapado por la lluvia, con la chaqueta cerrada y abultada."
+   },
+   {
+    "word": "mañana",
+    "surface": "mañana",
+    "type": "adverb",
+    "def": "Tomorrow; the day after today.",
+    "ex": "Mañana buscamos a su dueño o una solución."
+   },
+   {
+    "word": "hermana",
+    "surface": "hermana",
+    "type": "noun",
+    "def": "A sister; a girl or woman with the same parents.",
+    "ex": "Su hermana Marina levanta la vista del sofá y lo mira con sospecha."
+   },
+   {
+    "word": "perrito",
+    "surface": "perrito",
+    "type": "noun",
+    "def": "A little dog or puppy.",
+    "ex": "Adentro hay un perrito pequeño, mojado y temblando de frío."
+   },
+   {
+    "word": "mojado",
+    "surface": "mojado",
+    "type": "adjective",
+    "def": "Wet; covered or soaked with water.",
+    "ex": "Adentro hay un perrito pequeño, mojado y temblando de frío."
+   },
+   {
+    "word": "temblar",
+    "surface": "temblando",
+    "type": "verb",
+    "def": "To tremble; to shake, here from cold or fear.",
+    "ex": "Adentro hay un perrito pequeño, mojado y temblando de frío."
+   },
+   {
+    "word": "frío",
+    "surface": "frío",
+    "type": "noun",
+    "def": "Cold; a low temperature that makes you shiver.",
+    "ex": "Adentro hay un perrito pequeño, mojado y temblando de frío."
+   },
+   {
+    "word": "permitir",
+    "surface": "permite",
+    "type": "verb",
+    "def": "To allow; to let something be done.",
+    "ex": "El edificio no lo permite."
+   },
+   {
+    "word": "llorar",
+    "surface": "llorando",
+    "type": "verb",
+    "def": "To cry; to make sounds of pain or sadness.",
+    "ex": "Lo sé, pero estaba solo bajo la lluvia, llorando al lado de un carro."
+   },
+   {
+    "word": "carro",
+    "surface": "carro",
+    "type": "noun",
+    "def": "A car; the vehicle people drive on the road.",
+    "ex": "Lo sé, pero estaba solo bajo la lluvia, llorando al lado de un carro."
+   },
+   {
+    "word": "traer",
+    "surface": "trajiste",
+    "type": "verb",
+    "def": "To bring; to carry something to a place.",
+    "ex": "¿Y lo trajiste sin preguntarme nada?"
+   },
+   {
+    "word": "aguacero",
+    "surface": "aguacero",
+    "type": "noun",
+    "def": "A heavy rain shower; a sudden, strong downpour.",
+    "ex": "¿Querías dejarlo ahí, temblando, con este aguacero tan fuerte?"
+   },
+   {
+    "word": "sofá",
+    "surface": "sofá",
+    "type": "noun",
+    "def": "A sofa; a long, soft seat for several people.",
+    "ex": "Su hermana Marina levanta la vista del sofá y lo mira con sospecha."
+   },
+   {
+    "word": "cola",
+    "surface": "cola",
+    "type": "noun",
+    "def": "The tail; the part a dog wags when it's happy.",
+    "ex": "El perrito mira a Marina, mueve la cola despacio y le lame la mano."
+   },
+   {
+    "word": "lamer",
+    "surface": "lame",
+    "type": "verb",
+    "def": "To lick; to touch with the tongue, as a dog does.",
+    "ex": "El perrito mira a Marina, mueve la cola despacio y le lame la mano."
+   },
+   {
+    "word": "emocionarse",
+    "surface": "emociones",
+    "type": "verb",
+    "def": "To get excited; 'no te emociones' means don't get your hopes up.",
+    "ex": "No te emociones tanto."
+   },
+   {
+    "word": "dueño",
+    "surface": "dueño",
+    "type": "noun",
+    "def": "The owner; the person something belongs to.",
+    "ex": "Mañana buscamos a su dueño o una solución."
+   },
+   {
+    "word": "reclamar",
+    "surface": "reclama",
+    "type": "verb",
+    "def": "To claim; to come and ask for something as yours.",
+    "ex": "¿Y si nadie lo reclama?"
+   },
+   {
+    "word": "encariñarse",
+    "surface": "encariñó",
+    "type": "verb",
+    "def": "To grow fond; to start to love or get attached.",
+    "ex": ""
+   }
+  ]
+ },
+ {
+  "slug": "una-caja-y-una-maleta",
+  "title": "Una caja y una maleta",
+  "synopsis": "Camila lleva tres semanas sola en Buenos Aires y ya está haciendo las maletas para volverse a su pueblo. Tomás, el vecino del cuarto piso, le baja una caja mal entregada y le pide que se quede al menos un día más antes de rendirse con la ciudad.",
+  "vocab": [
+   {
+    "word": "maleta",
+    "surface": "maleta",
+    "type": "noun",
+    "def": "A suitcase; the bag you pack clothes in to travel.",
+    "ex": "Camila guarda su ropa en una maleta, sobre la cama de su departamento en Buenos Aires, Argentina."
+   },
+   {
+    "word": "ropa",
+    "surface": "ropa",
+    "type": "noun",
+    "def": "Clothes; the things you wear.",
+    "ex": "Camila guarda su ropa en una maleta, sobre la cama de su departamento en Buenos Aires, Argentina."
+   },
+   {
+    "word": "guardar",
+    "surface": "guarda",
+    "type": "verb",
+    "def": "To put away; to keep something in a safe place.",
+    "ex": "Camila guarda su ropa en una maleta, sobre la cama de su departamento en Buenos Aires, Argentina."
+   },
+   {
+    "word": "volverse",
+    "surface": "volverse",
+    "type": "verb",
+    "def": "To go back; to return to where you came from.",
+    "ex": "Lleva tres semanas en la ciudad, no conoce a nadie y ya casi decidió volverse a su pueblo."
+   },
+   {
+    "word": "pueblo",
+    "surface": "pueblo",
+    "type": "noun",
+    "def": "A small town; a place smaller than a city.",
+    "ex": "Lleva tres semanas en la ciudad, no conoce a nadie y ya casi decidió volverse a su pueblo."
+   },
+   {
+    "word": "repartidor",
+    "surface": "repartidor",
+    "type": "noun",
+    "def": "A delivery person who brings packages to your door.",
+    "ex": "El repartidor la dejó en tu puerta, qué lío."
+   },
+   {
+    "word": "lío",
+    "surface": "lío",
+    "type": "noun",
+    "def": "A mess or muddle; a confusing little problem.",
+    "ex": "El repartidor la dejó en tu puerta, qué lío."
+   },
+   {
+    "word": "empacar",
+    "surface": "empacando",
+    "type": "verb",
+    "def": "To pack; to put things into bags or boxes to leave.",
+    "ex": "Justo estoy empacando, así que llega a tiempo."
+   },
+   {
+    "word": "mudarse",
+    "surface": "mudar",
+    "type": "verb",
+    "def": "To move; to change the place where you live.",
+    "ex": "¿Te acabás de mudar o ya te vas?"
+   },
+   {
+    "word": "enorme",
+    "surface": "enorme",
+    "type": "adjective",
+    "def": "Huge; very, very big.",
+    "ex": "Esta ciudad es enorme y yo aquí no conozco a nadie."
+   },
+   {
+    "word": "ukelele",
+    "surface": "ukelele",
+    "type": "noun",
+    "def": "A ukulele; a small four-string guitar.",
+    "ex": "Tomás mira la maleta abierta y, sin querer, ve un ukelele guardado entre la ropa."
+   },
+   {
+    "word": "ganas",
+    "surface": "ganas",
+    "type": "noun",
+    "def": "Eagerness; 'con ganas' means with desire or enthusiasm.",
+    "ex": "Lo compré con muchas ganas y nunca aprendí."
+   },
+   {
+    "word": "aprender",
+    "surface": "aprendí",
+    "type": "verb",
+    "def": "To learn; to come to know how to do something.",
+    "ex": "Lo compré con muchas ganas y nunca aprendí."
+   },
+   {
+    "word": "común",
+    "surface": "común",
+    "type": "adjective",
+    "def": "Shared; 'algo en común' means something both people share.",
+    "ex": "Íbamos a tener algo en común."
+   },
+   {
+    "word": "micro",
+    "surface": "micro",
+    "type": "noun",
+    "def": "In Argentina, a long-distance bus.",
+    "ex": "mi micro a casa sale el domingo y ya está pagado."
+   },
+   {
+    "word": "pagado",
+    "surface": "pagado",
+    "type": "adjective",
+    "def": "Paid for; already bought and settled.",
+    "ex": "mi micro a casa sale el domingo y ya está pagado."
+   },
+   {
+    "word": "vecino",
+    "surface": "vecino",
+    "type": "noun",
+    "def": "A neighbor; a person who lives nearby.",
+    "ex": "Cuando suena la puerta y abre, se encuentra con un vecino del cuarto piso al que nunca ha visto, con una caja en las manos."
+   },
+   {
+    "word": "caja",
+    "surface": "caja",
+    "type": "noun",
+    "def": "A box; a container used to send things.",
+    "ex": "Cuando suena la puerta y abre, se encuentra con un vecino del cuarto piso al que nunca ha visto, con una caja en las manos."
+   },
+   {
+    "word": "manos",
+    "surface": "manos",
+    "type": "noun",
+    "def": "Hands; the parts of the body at the end of the arms.",
+    "ex": "Cuando suena la puerta y abre, se encuentra con un vecino del cuarto piso al que nunca ha visto, con una caja en las manos."
+   },
+   {
+    "word": "semanas",
+    "surface": "semanas",
+    "type": "noun",
+    "def": "Weeks; periods of seven days.",
+    "ex": "Lleva tres semanas en la ciudad, no conoce a nadie y ya casi decidió volverse a su pueblo."
+   }
+  ]
+ },
+ {
+  "slug": "aprender-la-cumbia",
+  "title": "Dos pies izquierdos",
+  "synopsis": "Daniela y Andrés practican la cumbia con el video, paso a paso. Justo cuando Andrés empieza a soltar el cuerpo, una lluvia fuerte cae sobre el patio la noche antes de la fiesta.",
+  "vocab": [
+   {
+    "word": "practicar",
+    "surface": "practican",
+    "type": "verb",
+    "def": "To practice; to do something again and again to improve.",
+    "ex": "Como nadie en el barrio sabe dirigir la cumbia para la fiesta del sábado, Daniela y su amigo Andrés practican los pasos en el patio de la casa de ella, en Cartagena, Colombia."
+   },
+   {
+    "word": "repetir",
+    "surface": "repite",
+    "type": "verb",
+    "def": "To repeat; to play or do the same thing again.",
+    "ex": "El teléfono, apoyado en una silla, repite el video de la cumbia una y otra vez."
+   },
+   {
+    "word": "tambor",
+    "surface": "tambor",
+    "type": "noun",
+    "def": "A drum; an instrument you hit to keep the beat.",
+    "ex": "Mira el ritmo del tambor."
+   },
+   {
+    "word": "golpe",
+    "surface": "golpe",
+    "type": "noun",
+    "def": "A beat or hit; here, each strike of the drum.",
+    "ex": "Un paso por cada golpe, sin ninguna prisa."
+   },
+   {
+    "word": "prisa",
+    "surface": "prisa",
+    "type": "noun",
+    "def": "Hurry; the need to do something fast.",
+    "ex": "Un paso por cada golpe, sin ninguna prisa."
+   },
+   {
+    "word": "suave",
+    "surface": "suave",
+    "type": "adjective",
+    "def": "Soft or gentle; smooth and not rough.",
+    "ex": "Más suave, que pareces un soldado marchando para la guerra."
+   },
+   {
+    "word": "soldado",
+    "surface": "soldado",
+    "type": "noun",
+    "def": "A soldier; a person who serves in the army.",
+    "ex": "Más suave, que pareces un soldado marchando para la guerra."
+   },
+   {
+    "word": "marchar",
+    "surface": "marchando",
+    "type": "verb",
+    "def": "To march; to walk with stiff, even steps.",
+    "ex": "Más suave, que pareces un soldado marchando para la guerra."
+   },
+   {
+    "word": "guerra",
+    "surface": "guerra",
+    "type": "noun",
+    "def": "War; armed fighting between countries or groups.",
+    "ex": "Más suave, que pareces un soldado marchando para la guerra."
+   },
+   {
+    "word": "cuerpo",
+    "surface": "cuerpo",
+    "type": "noun",
+    "def": "The body; the whole physical part of a person.",
+    "ex": "No todos nacimos con ritmo en el cuerpo."
+   },
+   {
+    "word": "hombros",
+    "surface": "hombros",
+    "type": "noun",
+    "def": "Shoulders; the parts where the arms meet the body.",
+    "ex": "Daniela se ríe y le mueve los hombros con las manos para soltarlo un poco."
+   },
+   {
+    "word": "brazos",
+    "surface": "brazos",
+    "type": "noun",
+    "def": "Arms; the limbs from the shoulder to the hand.",
+    "ex": "Suelta los brazos, que los tienes tiesos como un robot viejo."
+   },
+   {
+    "word": "manos",
+    "surface": "manos",
+    "type": "noun",
+    "def": "Hands; the body parts at the ends of the arms.",
+    "ex": "Daniela se ríe y le mueve los hombros con las manos para soltarlo un poco."
+   },
+   {
+    "word": "soltar",
+    "surface": "soltarlo",
+    "type": "verb",
+    "def": "To loosen; to relax and stop being tense.",
+    "ex": "Daniela se ríe y le mueve los hombros con las manos para soltarlo un poco."
+   },
+   {
+    "word": "perder",
+    "surface": "pierdo",
+    "type": "verb",
+    "def": "To lose track; to get confused and miss your place.",
+    "ex": "Uno, dos, y ya me pierdo."
+   },
+   {
+    "word": "falda",
+    "surface": "falda",
+    "type": "noun",
+    "def": "A skirt; clothing that hangs from the waist down.",
+    "ex": "Mira cómo muevo yo la falda, despacio, como el mar."
+   },
+   {
+    "word": "tropezar",
+    "surface": "tropezar",
+    "type": "verb",
+    "def": "To trip; to stumble and almost fall.",
+    "ex": "Ahora sí, mira, me salió esa vuelta sin tropezar."
+   },
+   {
+    "word": "gris",
+    "surface": "gris",
+    "type": "adjective",
+    "def": "Gray; the color between black and white.",
+    "ex": "De repente el cielo se pone gris y empiezan a caer gotas gordas sobre el patio."
+   },
+   {
+    "word": "gotas",
+    "surface": "gotas",
+    "type": "noun",
+    "def": "Drops; small bits of falling water, like rain.",
+    "ex": "De repente el cielo se pone gris y empiezan a caer gotas gordas sobre el patio."
+   },
+   {
+    "word": "llover",
+    "surface": "llover",
+    "type": "verb",
+    "def": "To rain; for water to fall from the sky.",
+    "ex": "Daniela, está empezando a llover bien fuerte."
+   }
+  ]
+ },
+ {
+  "slug": "la-vigilancia",
+  "title": "La vigilancia",
+  "synopsis": "Itzel y Rodrigo hacen guardia en el patio a oscuras. Tras una falsa alarma con el gato del vecino, oyen pasos chiquitos en el árbol y dos ojitos que brillan entre las hojas.",
+  "vocab": [
+   {
+    "word": "oscura",
+    "surface": "oscura",
+    "type": "adjective",
+    "def": "Dark; with little or no light.",
+    "ex": "La noche está oscura y llena de grillos, en el patio de la casa de Itzel, en Oaxaca."
+   },
+   {
+    "word": "callar",
+    "surface": "Calla",
+    "type": "verb",
+    "def": "To be quiet; to stop talking or making noise.",
+    "ex": "Calla un momento."
+   },
+   {
+    "word": "escondidos",
+    "surface": "escondidos",
+    "type": "adjective",
+    "def": "Hidden; placed where others cannot see them.",
+    "ex": "Ella y su amigo Rodrigo esperan escondidos detrás de unas macetas grandes, decididos a descubrir qué se roba los mangos del árbol cada noche."
+   },
+   {
+    "word": "gato",
+    "surface": "gato",
+    "type": "noun",
+    "def": "A cat; a common house pet.",
+    "ex": "Es nada más el gato del vecino paseando por la barda."
+   },
+   {
+    "word": "agachados",
+    "surface": "agachados",
+    "type": "adjective",
+    "def": "Crouched down; bent low toward the ground.",
+    "ex": "Llevamos ya dos horas aquí agachados, Itzel."
+   },
+   {
+    "word": "espalda",
+    "surface": "espalda",
+    "type": "noun",
+    "def": "The back; the rear part of the human body.",
+    "ex": "Me duele toda la espalda."
+   },
+   {
+    "word": "doler",
+    "surface": "duele",
+    "type": "verb",
+    "def": "To hurt; to cause pain in a part of the body.",
+    "ex": "Me duele toda la espalda."
+   },
+   {
+    "word": "aguantar",
+    "surface": "aguanta",
+    "type": "verb",
+    "def": "To hold on; to endure or wait a little longer.",
+    "ex": "Aguanta un poco más."
+   },
+   {
+    "word": "sombras",
+    "surface": "sombras",
+    "type": "noun",
+    "def": "Shadows; dark shapes where light does not reach.",
+    "ex": "De repente algo se mueve entre las sombras."
+   },
+   {
+    "word": "salto",
+    "surface": "salto",
+    "type": "noun",
+    "def": "A jump; a quick movement up from the ground.",
+    "ex": "Rodrigo se levanta de un salto, muerto del susto."
+   },
+   {
+    "word": "susto",
+    "surface": "susto",
+    "type": "noun",
+    "def": "A scare; a sudden feeling of fear or fright.",
+    "ex": "Rodrigo se levanta de un salto, muerto del susto."
+   },
+   {
+    "word": "linterna",
+    "surface": "linterna",
+    "type": "noun",
+    "def": "A flashlight; a small lamp you hold in your hand.",
+    "ex": "¡Prende la linterna, rápido!"
+   },
+   {
+    "word": "vecino",
+    "surface": "vecino",
+    "type": "noun",
+    "def": "A neighbor; a person who lives nearby.",
+    "ex": "Es nada más el gato del vecino paseando por la barda."
+   },
+   {
+    "word": "despacio",
+    "surface": "despacio",
+    "type": "adverb",
+    "def": "Slowly; without hurrying.",
+    "ex": "Espérate, voy a alumbrar despacio hacia el árbol."
+   },
+   {
+    "word": "suave",
+    "surface": "suave",
+    "type": "adjective",
+    "def": "Soft; gentle and quiet, not strong or loud.",
+    "ex": "Pasan los minutos hasta que un ruido suave baja del mango, como de pasos pequeños."
+   },
+   {
+    "word": "pasos",
+    "surface": "pasos",
+    "type": "noun",
+    "def": "Footsteps; the sound or marks of someone walking.",
+    "ex": "Pasan los minutos hasta que un ruido suave baja del mango, como de pasos pequeños."
+   },
+   {
+    "word": "alumbrar",
+    "surface": "alumbrar",
+    "type": "verb",
+    "def": "To light up; to point a light at something.",
+    "ex": "Espérate, voy a alumbrar despacio hacia el árbol."
+   },
+   {
+    "word": "luz",
+    "surface": "luz",
+    "type": "noun",
+    "def": "Light; here, the beam from the flashlight.",
+    "ex": "Rodrigo sube la luz poco a poco por el tronco del mango hasta las ramas altas."
+   },
+   {
+    "word": "brillar",
+    "surface": "brillan",
+    "type": "verb",
+    "def": "To shine; to give off or reflect bright light.",
+    "ex": "Dos ojos que brillan entre las hojas."
+   },
+   {
+    "word": "lugar",
+    "surface": "lugar",
+    "type": "noun",
+    "def": "A place or spot; where something belongs.",
+    "ex": "Vuelve a tu lugar y quédate quieto."
+   }
+  ]
+ },
+ {
+  "slug": "el-chofer-que-conoce-a-todos",
+  "title": "El chofer que conoce a todos",
+  "synopsis": "Diego lleva a Pilar donde Beto, un chofer joven que conoce a todos en la ruta. Encuentran la combi, pero una señora ya se llevó la carpeta diciendo que conocía a Pilar.",
+  "vocab": [
+   {
+    "word": "apoyado",
+    "surface": "apoyado",
+    "type": "adjective",
+    "def": "Leaning; resting against something for support.",
+    "ex": "Allí, apoyado en su combi, está Beto, un chofer joven y amigo de Diego."
+   },
+   {
+    "word": "chofer",
+    "surface": "chofer",
+    "type": "noun",
+    "def": "A driver; the person who drives a bus or car.",
+    "ex": "Allí, apoyado en su combi, está Beto, un chofer joven y amigo de Diego."
+   },
+   {
+    "word": "urgente",
+    "surface": "urgente",
+    "type": "adjective",
+    "def": "Urgent; needing to be done right away.",
+    "ex": "Necesitamos tu ayuda con algo urgente."
+   },
+   {
+    "word": "calma",
+    "surface": "calma",
+    "type": "noun",
+    "def": "Calm; 'con calma' means slowly and without stress.",
+    "ex": "Cuéntame con calma, que tenemos un rato."
+   },
+   {
+    "word": "rato",
+    "surface": "rato",
+    "type": "noun",
+    "def": "A while; a short period of time.",
+    "ex": "Cuéntame con calma, que tenemos un rato."
+   },
+   {
+    "word": "llamar",
+    "surface": "llamar",
+    "type": "verb",
+    "def": "To call; to phone someone or get their attention.",
+    "ex": "Beto saca su teléfono y empieza a llamar."
+   },
+   {
+    "word": "temprano",
+    "surface": "temprano",
+    "type": "adverb",
+    "def": "Early; before the usual or expected time.",
+    "ex": "¿Pasaste por el centro temprano?"
+   },
+   {
+    "word": "conocer",
+    "surface": "conocemos",
+    "type": "verb",
+    "def": "To know; to be familiar with people or places.",
+    "ex": "En esta ruta todos nos conocemos."
+   },
+   {
+    "word": "saber",
+    "surface": "sabe",
+    "type": "verb",
+    "def": "To know; here, to find out or get to learn something.",
+    "ex": "Algo siempre se sabe."
+   },
+   {
+    "word": "sonreír",
+    "surface": "sonríe",
+    "type": "verb",
+    "def": "To smile; to make a happy expression with the mouth.",
+    "ex": "Después de tres llamadas, Beto sonríe y guarda el teléfono."
+   },
+   {
+    "word": "guardar",
+    "surface": "guarda",
+    "type": "verb",
+    "def": "To put away; to keep something in a safe place.",
+    "ex": "Después de tres llamadas, Beto sonríe y guarda el teléfono."
+   },
+   {
+    "word": "pata",
+    "surface": "pata",
+    "type": "noun",
+    "def": "In Peru, a close friend or buddy (slang).",
+    "ex": "La combi es de mi pata el Flaco, ya viene para acá."
+   },
+   {
+    "word": "saludo",
+    "surface": "saludo",
+    "type": "noun",
+    "def": "A greeting; a friendly hello or wave.",
+    "ex": "Con un saludo basta."
+   },
+   {
+    "word": "bastar",
+    "surface": "basta",
+    "type": "verb",
+    "def": "To be enough; nothing more is needed.",
+    "ex": "Con un saludo basta."
+   },
+   {
+    "word": "señora",
+    "surface": "señora",
+    "type": "noun",
+    "def": "A lady; a polite word for a grown woman.",
+    "ex": "Una señora la recogió en el centro."
+   },
+   {
+    "word": "recoger",
+    "surface": "recogió",
+    "type": "verb",
+    "def": "To pick up; to take something that was left behind.",
+    "ex": "Una señora la recogió en el centro."
+   },
+   {
+    "word": "cuidar",
+    "surface": "cuidan",
+    "type": "verb",
+    "def": "To look after; to take care of someone.",
+    "ex": "Entre los de la ruta siempre se cuidan."
+   },
+   {
+    "word": "ayudar",
+    "surface": "ayudan",
+    "type": "verb",
+    "def": "To help; to make things easier for others.",
+    "ex": "Ustedes se ayudan entre todos."
+   },
+   {
+    "word": "aló",
+    "surface": "aló",
+    "type": "interjection",
+    "def": "'Hello' said when answering the telephone.",
+    "ex": "¿Aló, Lucho?"
+   },
+   {
+    "word": "listo",
+    "surface": "listo",
+    "type": "adjective",
+    "def": "Ready or done; 'listo' means it is all set.",
+    "ex": "Listo."
+   }
+  ]
+ },
+ {
+  "slug": "el-kayak-se-va",
+  "title": "El kayak se va",
+  "synopsis": "En la isla, Benjamín no amarró bien el kayak y este se va solo al medio del lago. Atrapados y sin bote, deciden hacerle una señal grande a Gloria desde la orilla.",
+  "vocab": [
+   {
+    "word": "árbol",
+    "surface": "árboles",
+    "type": "noun",
+    "def": "Tree; a tall plant with a trunk and branches.",
+    "ex": ""
+   },
+   {
+    "word": "playa",
+    "surface": "playa",
+    "type": "noun",
+    "def": "Beach; the sandy or stony edge by the water.",
+    "ex": "La isla está llena de árboles y tiene una pequeña playa de piedras, en medio del lago, en la Patagonia chilena."
+   },
+   {
+    "word": "piedra",
+    "surface": "piedras",
+    "type": "noun",
+    "def": "Stone; a hard piece of rock from the ground.",
+    "ex": "La isla está llena de árboles y tiene una pequeña playa de piedras, en medio del lago, en la Patagonia chilena."
+   },
+   {
+    "word": "montaña",
+    "surface": "montaña",
+    "type": "noun",
+    "def": "Mountain; a very high, large hill.",
+    "ex": "Se ve la montaña entera desde aquí."
+   },
+   {
+    "word": "boca",
+    "surface": "boca",
+    "type": "noun",
+    "def": "Mouth (\"con la boca abierta\" = open-mouthed, amazed).",
+    "ex": "Benjamín se levanta, mira hacia la playa de piedras y se queda con la boca abierta."
+   },
+   {
+    "word": "abierto",
+    "surface": "abierta",
+    "type": "adjective",
+    "def": "Open; not shut.",
+    "ex": "Benjamín se levanta, mira hacia la playa de piedras y se queda con la boca abierta."
+   },
+   {
+    "word": "amarrar",
+    "surface": "amarraste",
+    "type": "verb",
+    "def": "To tie up; to fasten with a rope.",
+    "ex": "¿Dónde lo amarraste?"
+   },
+   {
+    "word": "nadar",
+    "surface": "nadar",
+    "type": "verb",
+    "def": "To swim; to move through water with your body.",
+    "ex": "Puedo nadar y traerlo de vuelta."
+   },
+   {
+    "word": "helado",
+    "surface": "helada",
+    "type": "adjective",
+    "def": "Freezing; extremely cold.",
+    "ex": "El agua está muy helada y ya se está nublando."
+   },
+   {
+    "word": "nublarse",
+    "surface": "nublando",
+    "type": "verb",
+    "def": "To cloud over; for the sky to fill with clouds.",
+    "ex": "El agua está muy helada y ya se está nublando."
+   },
+   {
+    "word": "meterse",
+    "surface": "metas",
+    "type": "verb",
+    "def": "To get into (\"no te metas\" = don’t get in there).",
+    "ex": "No te metas, es peligroso."
+   },
+   {
+    "word": "peligroso",
+    "surface": "peligroso",
+    "type": "adjective",
+    "def": "Dangerous; likely to cause harm.",
+    "ex": "No te metas, es peligroso."
+   },
+   {
+    "word": "bote",
+    "surface": "bote",
+    "type": "noun",
+    "def": "Boat; a small craft for traveling on water.",
+    "ex": "Estamos en una isla, sin bote y sin agua."
+   },
+   {
+    "word": "señal",
+    "surface": "señal",
+    "type": "noun",
+    "def": "Signal or sign; something done to send a message.",
+    "ex": "Si le hacemos una señal bien grande, capaz que nos ve."
+   },
+   {
+    "word": "pequeño",
+    "surface": "pequeño",
+    "type": "adjective",
+    "def": "Small; little in size.",
+    "ex": "Los dos miran el kayak alejarse sobre el agua, cada vez más pequeño."
+   },
+   {
+    "word": "correr",
+    "surface": "corriendo",
+    "type": "verb",
+    "def": "To run; to move fast on your feet.",
+    "ex": "Voy corriendo por ella."
+   },
+   {
+    "word": "levantarse",
+    "surface": "levanta",
+    "type": "verb",
+    "def": "To get up; to rise to your feet.",
+    "ex": "Benjamín se levanta, mira hacia la playa de piedras y se queda con la boca abierta."
+   },
+   {
+    "word": "traer",
+    "surface": "traerlo",
+    "type": "verb",
+    "def": "To bring; to carry something to where you are.",
+    "ex": "Puedo nadar y traerlo de vuelta."
+   },
+   {
+    "word": "valer",
+    "surface": "valió",
+    "type": "verb",
+    "def": "To be worth (\"valió la pena\" = it was worth it).",
+    "ex": "Valió la pena remar tanto."
+   },
+   {
+    "word": "grande",
+    "surface": "grande",
+    "type": "adjective",
+    "def": "Big; large in size.",
+    "ex": "Si le hacemos una señal bien grande, capaz que nos ve."
+   }
+  ]
+ },
+ {
+  "slug": "del-mismo-pueblo",
+  "title": "Del mismo pueblo",
+  "synopsis": "Tomás le muestra a Camila el barrio para convencerla de quedarse. Hablando, descubren que los dos son del mismo pueblo, Tandil, y crecieron a dos cuadras. La ciudad enorme se siente de pronto más suya, pero ella ya le prometió a su familia que vuelve el domingo.",
+  "vocab": [
+   {
+    "word": "barrio",
+    "surface": "barrio",
+    "type": "noun",
+    "def": "A neighborhood; the part of a city where people live.",
+    "ex": "Es sábado y Tomás, el vecino que Camila conoció el día anterior, la lleva a caminar por el barrio de Palermo, en Buenos Aires, Argentina, para convencerla de quedarse en la ciudad."
+   },
+   {
+    "word": "plaza",
+    "surface": "plaza",
+    "type": "noun",
+    "def": "A square; an open public space in a town.",
+    "ex": "Le muestra la plaza, la panadería de la esquina y los árboles que dan sombra fresca."
+   },
+   {
+    "word": "panadería",
+    "surface": "panadería",
+    "type": "noun",
+    "def": "A bakery; a shop where bread is sold.",
+    "ex": "Le muestra la plaza, la panadería de la esquina y los árboles que dan sombra fresca."
+   },
+   {
+    "word": "sombra",
+    "surface": "sombra",
+    "type": "noun",
+    "def": "Shade; the cooler dark area away from the sun.",
+    "ex": "Le muestra la plaza, la panadería de la esquina y los árboles que dan sombra fresca."
+   },
+   {
+    "word": "fresca",
+    "surface": "fresca",
+    "type": "adjective",
+    "def": "Cool; pleasantly cold, not hot.",
+    "ex": "Le muestra la plaza, la panadería de la esquina y los árboles que dan sombra fresca."
+   },
+   {
+    "word": "sola",
+    "surface": "sola",
+    "type": "adjective",
+    "def": "Alone; with no company.",
+    "ex": "Pero un barrio lindo no me quita lo sola que me siento."
+   },
+   {
+    "word": "sentirse",
+    "surface": "siento",
+    "type": "verb",
+    "def": "To feel; 'me siento' tells how I am inside.",
+    "ex": "Pero un barrio lindo no me quita lo sola que me siento."
+   },
+   {
+    "word": "interior",
+    "surface": "interior",
+    "type": "noun",
+    "def": "In Argentina, the country areas outside the capital.",
+    "ex": "De un pueblo del interior, Tandil."
+   },
+   {
+    "word": "ubicar",
+    "surface": "ubicás",
+    "type": "verb",
+    "def": "To locate; to know where a place is.",
+    "ex": "Seguro ni lo ubicás en el mapa."
+   },
+   {
+    "word": "cerro",
+    "surface": "cerro",
+    "type": "noun",
+    "def": "A hill; a small mountain near a town.",
+    "ex": "Yo crecí ahí, cerca del cerro."
+   },
+   {
+    "word": "crecer",
+    "surface": "crecí",
+    "type": "verb",
+    "def": "To grow up; to spend your childhood somewhere.",
+    "ex": "Yo crecí ahí, cerca del cerro."
+   },
+   {
+    "word": "sorprendida",
+    "surface": "sorprendida",
+    "type": "adjective",
+    "def": "Surprised; feeling shock at something unexpected.",
+    "ex": "Después se ríe, sorprendida."
+   },
+   {
+    "word": "cuadras",
+    "surface": "cuadras",
+    "type": "noun",
+    "def": "Blocks; the distance between two street corners.",
+    "ex": "¡A dos cuadras tuyas!"
+   },
+   {
+    "word": "locura",
+    "surface": "locura",
+    "type": "noun",
+    "def": "Madness; 'qué locura' means how crazy or wild.",
+    "ex": "Qué locura."
+   },
+   {
+    "word": "casualidad",
+    "surface": "casualidad",
+    "type": "noun",
+    "def": "A coincidence; something that happens by chance.",
+    "ex": "Caminan en silencio un rato, los dos sorprendidos por la casualidad."
+   },
+   {
+    "word": "oportunidad",
+    "surface": "oportunidad",
+    "type": "noun",
+    "def": "A chance; a good moment to try something.",
+    "ex": "Quedate y dale una oportunidad a la ciudad."
+   },
+   {
+    "word": "rendirse",
+    "surface": "rendirme",
+    "type": "verb",
+    "def": "To give up; to stop trying.",
+    "ex": "Me dio miedo y decidí rendirme."
+   },
+   {
+    "word": "distinto",
+    "surface": "distinto",
+    "type": "adjective",
+    "def": "Different; not the same as another thing.",
+    "ex": "Eso es muy distinto."
+   },
+   {
+    "word": "miedo",
+    "surface": "miedo",
+    "type": "noun",
+    "def": "Fear; the feeling of being afraid.",
+    "ex": "Me dio miedo y decidí rendirme."
+   },
+   {
+    "word": "volver",
+    "surface": "vuelvo",
+    "type": "verb",
+    "def": "To go back; to return to a place.",
+    "ex": "Ya le dije a mi familia que vuelvo el domingo."
+   }
+  ]
+ },
+ {
+  "slug": "esconder-al-perro",
+  "title": "El secreto del sábado",
+  "synopsis": "Esconder al perrito es un caos: muerde un zapato y ladra fuerte. El vecino toca la puerta por el ruido y Julián lo despista. Marina admite que ya se encariñó y deciden hablar con mamá, que llega al día siguiente.",
+  "vocab": [
+   {
+    "word": "correr",
+    "surface": "corren",
+    "type": "verb",
+    "def": "To run; to move quickly on foot.",
+    "ex": "Marina y su hermano Julián corren detrás del perrito que él rescató de la lluvia y que ahora esconden de los vecinos; acaba de dejar un zapato mordido en la mitad de la sala."
+   },
+   {
+    "word": "zapato",
+    "surface": "zapato",
+    "type": "noun",
+    "def": "A shoe; what you wear on your foot.",
+    "ex": "Marina y su hermano Julián corren detrás del perrito que él rescató de la lluvia y que ahora esconden de los vecinos; acaba de dejar un zapato mordido en la mitad de la sala."
+   },
+   {
+    "word": "mordido",
+    "surface": "mordido",
+    "type": "adjective",
+    "def": "Chewed; bitten and damaged with the teeth.",
+    "ex": "Marina y su hermano Julián corren detrás del perrito que él rescató de la lluvia y que ahora esconden de los vecinos; acaba de dejar un zapato mordido en la mitad de la sala."
+   },
+   {
+    "word": "mitad",
+    "surface": "mitad",
+    "type": "noun",
+    "def": "The middle; 'en la mitad' means right in the center.",
+    "ex": "Marina y su hermano Julián corren detrás del perrito que él rescató de la lluvia y que ahora esconden de los vecinos; acaba de dejar un zapato mordido en la mitad de la sala."
+   },
+   {
+    "word": "sala",
+    "surface": "sala",
+    "type": "noun",
+    "def": "The living room; the main shared room of a home.",
+    "ex": "Marina y su hermano Julián corren detrás del perrito que él rescató de la lluvia y que ahora esconden de los vecinos; acaba de dejar un zapato mordido en la mitad de la sala."
+   },
+   {
+    "word": "comer",
+    "surface": "comió",
+    "type": "verb",
+    "def": "To eat; to chew and swallow food.",
+    "ex": "Se comió uno de mis zapatos nuevos."
+   },
+   {
+    "word": "sobrar",
+    "surface": "sobra",
+    "type": "verb",
+    "def": "To be left over; to be more than enough.",
+    "ex": "Energía le sobra."
+   },
+   {
+    "word": "quieto",
+    "surface": "quieto",
+    "type": "adjective",
+    "def": "Still; staying in one place without moving.",
+    "ex": "Lo que le falta es aprender a quedarse quieto."
+   },
+   {
+    "word": "ladrar",
+    "surface": "ladra",
+    "type": "verb",
+    "def": "To bark; to make the loud sound a dog makes.",
+    "ex": "El perrito ladra fuerte tres veces y los dos hermanos se quedan congelados del susto."
+   },
+   {
+    "word": "congelados",
+    "surface": "congelados",
+    "type": "adjective",
+    "def": "Frozen; here, unable to move from fear.",
+    "ex": "El perrito ladra fuerte tres veces y los dos hermanos se quedan congelados del susto."
+   },
+   {
+    "word": "callar",
+    "surface": "calla",
+    "type": "verb",
+    "def": "To be quiet; to stop making noise.",
+    "ex": "Baja la voz, calla."
+   },
+   {
+    "word": "escuchar",
+    "surface": "escucha",
+    "type": "verb",
+    "def": "To hear or listen; to notice a sound.",
+    "ex": "Si el vecino escucha, vamos a tener problemas."
+   },
+   {
+    "word": "esconder",
+    "surface": "esconde",
+    "type": "verb",
+    "def": "To hide; to put out of sight so no one finds it.",
+    "ex": "Marina esconde al perro en su cuarto y Julián abre la puerta despacio."
+   },
+   {
+    "word": "cuarto",
+    "surface": "cuarto",
+    "type": "noun",
+    "def": "A room; here, a bedroom.",
+    "ex": "Marina esconde al perro en su cuarto y Julián abre la puerta despacio."
+   },
+   {
+    "word": "jugar",
+    "surface": "jugar",
+    "type": "verb",
+    "def": "To play; to have fun, as a child or pet does.",
+    "ex": "Es que tiene mucha energía y no para de jugar."
+   },
+   {
+    "word": "molestia",
+    "surface": "molestia",
+    "type": "noun",
+    "def": "Bother; 'disculpe la molestia' means sorry for the trouble.",
+    "ex": "Disculpe la molestia, no vuelve a pasar."
+   },
+   {
+    "word": "aliviados",
+    "surface": "aliviados",
+    "type": "adjective",
+    "def": "Relieved; feeling better after a worry passes.",
+    "ex": "El vecino se va y los dos hermanos respiran aliviados detrás de la puerta."
+   },
+   {
+    "word": "descubrir",
+    "surface": "descubren",
+    "type": "verb",
+    "def": "To discover; to find out a secret or hidden thing.",
+    "ex": "Por poco nos descubren."
+   },
+   {
+    "word": "avisar",
+    "surface": "avisarnos",
+    "type": "verb",
+    "def": "To warn; to let someone know about something.",
+    "ex": "Pero míralo, se portó valiente, solo quería avisarnos."
+   },
+   {
+    "word": "delatar",
+    "surface": "delata",
+    "type": "verb",
+    "def": "To give away; to reveal a secret without meaning to.",
+    "ex": "Claro, nuestro perro guardián que casi nos delata."
+   }
+  ]
+ },
+ {
+  "slug": "humo-en-la-cocina",
+  "title": "Humo en la cocina",
+  "synopsis": "Llega el sábado y el mole de Sofía se quema entre humo y una alarma que no para. Con la cena arruinada y los invitados a media hora de llegar, Mateo propone una idea desesperada que a nadie le va a gustar.",
+  "vocab": [
+   {
+    "word": "campo de batalla",
+    "surface": "campo de batalla",
+    "type": "phrase",
+    "def": "A battlefield; here it means the kitchen is total chaos.",
+    "ex": "Es sábado por la tarde y la cocina ya es un campo de batalla."
+   },
+   {
+    "word": "ollas",
+    "surface": "ollas",
+    "type": "noun",
+    "def": "Pots; deep round containers used for cooking on a stove.",
+    "ex": "Sofía y su compañera Renata pelean con las ollas mientras Mateo, su amigo, corta cebolla en una esquina y llora un poco."
+   },
+   {
+    "word": "cebolla",
+    "surface": "cebolla",
+    "type": "noun",
+    "def": "An onion; a strong-smelling vegetable used in cooking.",
+    "ex": "Sofía y su compañera Renata pelean con las ollas mientras Mateo, su amigo, corta cebolla en una esquina y llora un poco."
+   },
+   {
+    "word": "esquina",
+    "surface": "esquina",
+    "type": "noun",
+    "def": "A corner; the place where two walls or streets meet.",
+    "ex": "Sofía y su compañera Renata pelean con las ollas mientras Mateo, su amigo, corta cebolla en una esquina y llora un poco."
+   },
+   {
+    "word": "llorar",
+    "surface": "llora",
+    "type": "verb",
+    "def": "To cry; to shed tears, here because of the onion.",
+    "ex": "Sofía y su compañera Renata pelean con las ollas mientras Mateo, su amigo, corta cebolla en una esquina y llora un poco."
+   },
+   {
+    "word": "fuego",
+    "surface": "fuego",
+    "type": "noun",
+    "def": "Fire or flame; here the heat under the stove.",
+    "ex": "El video dice fuego lento, Sofía."
+   },
+   {
+    "word": "oler",
+    "surface": "huele",
+    "type": "verb",
+    "def": "To smell; to give off an odor you notice with your nose.",
+    "ex": "Oigan, huele raro."
+   },
+   {
+    "word": "quemado",
+    "surface": "quemado",
+    "type": "adjective",
+    "def": "Burned; blackened or spoiled by too much fire or heat.",
+    "ex": "¿El mole tiene que oler así, a quemado?"
+   },
+   {
+    "word": "tapa",
+    "surface": "tapa",
+    "type": "noun",
+    "def": "A lid; the cover that closes the top of a pot.",
+    "ex": "Sofía levanta la tapa de la olla y una nube de humo gris sube hasta el techo."
+   },
+   {
+    "word": "nube",
+    "surface": "nube",
+    "type": "noun",
+    "def": "A cloud; here a thick mass of smoke in the air.",
+    "ex": "Sofía levanta la tapa de la olla y una nube de humo gris sube hasta el techo."
+   },
+   {
+    "word": "humo",
+    "surface": "humo",
+    "type": "noun",
+    "def": "Smoke; the gray cloud that rises from something burning.",
+    "ex": "Sofía levanta la tapa de la olla y una nube de humo gris sube hasta el techo."
+   },
+   {
+    "word": "techo",
+    "surface": "techo",
+    "type": "noun",
+    "def": "The ceiling; the upper inside surface of a room.",
+    "ex": "Sofía levanta la tapa de la olla y una nube de humo gris sube hasta el techo."
+   },
+   {
+    "word": "ventana",
+    "surface": "ventana",
+    "type": "noun",
+    "def": "A window; the glass opening in a wall for light and air.",
+    "ex": "¿Dónde está la ventana?"
+   },
+   {
+    "word": "mentir",
+    "surface": "mentía",
+    "type": "verb",
+    "def": "To lie; to not tell the truth.",
+    "ex": "Te dije que ese video mentía."
+   },
+   {
+    "word": "toalla",
+    "surface": "toalla",
+    "type": "noun",
+    "def": "A towel; a cloth used to dry or to wave around.",
+    "ex": "Voy por una toalla para apagarla."
+   },
+   {
+    "word": "agitar",
+    "surface": "agita",
+    "type": "verb",
+    "def": "To wave or shake something quickly back and forth.",
+    "ex": "Mateo agita la toalla debajo de la alarma, pero el ruido no se detiene."
+   },
+   {
+    "word": "ruido",
+    "surface": "ruido",
+    "type": "noun",
+    "def": "Noise; a loud or unpleasant sound.",
+    "ex": "Mateo agita la toalla debajo de la alarma, pero el ruido no se detiene."
+   },
+   {
+    "word": "detenerse",
+    "surface": "se detiene",
+    "type": "verb",
+    "def": "To stop; to come to an end and not continue.",
+    "ex": "Mateo agita la toalla debajo de la alarma, pero el ruido no se detiene."
+   },
+   {
+    "word": "incendio",
+    "surface": "incendio",
+    "type": "noun",
+    "def": "A fire; a large, dangerous blaze that burns a place.",
+    "ex": "Mis amigos llegan en media hora y la casa huele a incendio."
+   },
+   {
+    "word": "a estas alturas",
+    "surface": "a estas alturas",
+    "type": "phrase",
+    "def": "At this point; so late into the situation.",
+    "ex": "A estas alturas acepto cualquier idea, dime qué piensas."
+   }
+  ]
+ },
+ {
+  "slug": "tacos-para-todos",
+  "title": "Tacos para todos",
+  "synopsis": "Los amigos llegan a un departamento que huele a quemado, pero Mateo salva la noche pidiendo tacos al pastor para todos. Entre risas, Sofía descubre que a Pablo, el chico que le gusta, le encantó su pequeño desastre.",
+  "vocab": [
+   {
+    "word": "timbre",
+    "surface": "timbre",
+    "type": "noun",
+    "def": "A doorbell; the button or sound that announces a visitor.",
+    "ex": "Suena el timbre del departamento en la Ciudad de México."
+   },
+   {
+    "word": "delantal",
+    "surface": "delantal",
+    "type": "noun",
+    "def": "An apron; cloth worn over clothes to stay clean while cooking.",
+    "ex": "Sofía y su compañera Renata corren a abrir la puerta, todavía con el delantal lleno de manchas."
+   },
+   {
+    "word": "manchas",
+    "surface": "manchas",
+    "type": "noun",
+    "def": "Stains; dirty marks left on cloth or a surface.",
+    "ex": "Sofía y su compañera Renata corren a abrir la puerta, todavía con el delantal lleno de manchas."
+   },
+   {
+    "word": "lleno",
+    "surface": "lleno",
+    "type": "adjective",
+    "def": "Full; containing as much as it can hold.",
+    "ex": "Sofía y su compañera Renata corren a abrir la puerta, todavía con el delantal lleno de manchas."
+   },
+   {
+    "word": "pasar",
+    "surface": "pasen",
+    "type": "verb",
+    "def": "To come in; to enter (also: to pass, to happen).",
+    "ex": "Hola, pasen..."
+   },
+   {
+    "word": "olor",
+    "surface": "olor",
+    "type": "noun",
+    "def": "A smell or odor; what you notice through your nose.",
+    "ex": "perdón por el olor."
+   },
+   {
+    "word": "mesa",
+    "surface": "mesa",
+    "type": "noun",
+    "def": "A table; the furniture you set food on to eat.",
+    "ex": "Veinte minutos después, la mesa está llena de tacos, salsas y refrescos."
+   },
+   {
+    "word": "valiente",
+    "surface": "valiente",
+    "type": "adjective",
+    "def": "Brave; showing courage, said jokingly about the burned mole.",
+    "ex": "Fue un mole muy valiente."
+   },
+   {
+    "word": "luchar",
+    "surface": "luchó",
+    "type": "verb",
+    "def": "To fight; to struggle hard against something.",
+    "ex": "Luchó tres horas y al final perdió."
+   },
+   {
+    "word": "perder",
+    "surface": "perdió",
+    "type": "verb",
+    "def": "To lose; to not win or not keep something.",
+    "ex": "perdón por el olor."
+   },
+   {
+    "word": "enfermo",
+    "surface": "enfermo",
+    "type": "adjective",
+    "def": "Sick; feeling ill in the body.",
+    "ex": "Además, así nadie termina enfermo con tu mole negro."
+   },
+   {
+    "word": "contar",
+    "surface": "contar",
+    "type": "verb",
+    "def": "To tell; to share a story or piece of news.",
+    "ex": "Y ahora tienes una historia muy buena para contar durante años."
+   },
+   {
+    "word": "edificio",
+    "surface": "edificio",
+    "type": "noun",
+    "def": "A building; a structure with walls and a roof, like an apartment block.",
+    "ex": "La famosa noche en que Sofía casi quema el edificio por un mole."
+   },
+   {
+    "word": "poco",
+    "surface": "poco",
+    "type": "adverb",
+    "def": "A little; a small amount.",
+    "ex": "Solo fue un poco de humo, nada más."
+   },
+   {
+    "word": "servirse",
+    "surface": "se sirven",
+    "type": "verb",
+    "def": "To serve oneself; to take food onto your own plate.",
+    "ex": "Cuando los demás se sirven más tacos, Renata se acerca a Sofía y le habla en voz baja."
+   },
+   {
+    "word": "acercarse",
+    "surface": "se acerca",
+    "type": "verb",
+    "def": "To come closer; to move nearer to someone.",
+    "ex": "Cuando los demás se sirven más tacos, Renata se acerca a Sofía y le habla en voz baja."
+   },
+   {
+    "word": "en voz baja",
+    "surface": "en voz baja",
+    "type": "phrase",
+    "def": "In a low voice; speaking softly so others don't hear.",
+    "ex": "Cuando los demás se sirven más tacos, Renata se acerca a Sofía y le habla en voz baja."
+   },
+   {
+    "word": "encantar",
+    "surface": "le encantó",
+    "type": "verb",
+    "def": "To love; to like something very much.",
+    "ex": "Por cierto, a Pablo le encantó tu cena."
+   },
+   {
+    "word": "no paró de",
+    "surface": "no paró de",
+    "type": "phrase",
+    "def": "Didn't stop; kept doing something without a break.",
+    "ex": "No paró de mirarte."
+   },
+   {
+    "word": "conversar",
+    "surface": "conversan",
+    "type": "verb",
+    "def": "To chat; to talk together in a friendly way.",
+    "ex": "Todos comen y conversan juntos hasta muy tarde."
+   }
+  ]
+ },
+ {
+  "slug": "el-micro-del-domingo",
+  "title": "El micro del domingo",
+  "synopsis": "Es domingo y Camila baja con la maleta hacia el micro, convencida de que Tomás solo fue amable. Él la alcanza en la puerta y le hace ver que el trabajo falló, no ella. Camila cancela el pasaje y decide quedarse, pero por ella misma.",
+  "vocab": [
+   {
+    "word": "temprano",
+    "surface": "temprano",
+    "type": "adverb",
+    "def": "Early; before the usual time.",
+    "ex": "Es domingo temprano y Camila baja con su maleta hacia la parada del micro, en Buenos Aires, Argentina."
+   },
+   {
+    "word": "parada",
+    "surface": "parada",
+    "type": "noun",
+    "def": "A stop; the place where a bus picks you up.",
+    "ex": "Es domingo temprano y Camila baja con su maleta hacia la parada del micro, en Buenos Aires, Argentina."
+   },
+   {
+    "word": "aparecer",
+    "surface": "apareció",
+    "type": "verb",
+    "def": "To show up; to come into sight or arrive.",
+    "ex": "Tomás, su vecino, le había pedido un día para mostrarle que la ciudad valía la pena, pero después no apareció, así que ella ya decidió volverse a su pueblo, Tandil."
+   },
+   {
+    "word": "empujar",
+    "surface": "empuja",
+    "type": "verb",
+    "def": "To push; to press something to move it.",
+    "ex": "Camila empuja la puerta del edificio."
+   },
+   {
+    "word": "aliento",
+    "surface": "aliento",
+    "type": "noun",
+    "def": "Breath; 'sin aliento' means out of breath.",
+    "ex": "Justo entonces, Tomás llega corriendo, sin aliento."
+   },
+   {
+    "word": "mediodía",
+    "surface": "mediodía",
+    "type": "noun",
+    "def": "Noon; twelve o'clock in the middle of the day.",
+    "ex": "Pensé que el micro salía al mediodía, no tan temprano."
+   },
+   {
+    "word": "esperar",
+    "surface": "esperé",
+    "type": "verb",
+    "def": "To wait; to stay expecting someone.",
+    "ex": "¡Esperá!"
+   },
+   {
+    "word": "olvidar",
+    "surface": "olvidó",
+    "type": "verb",
+    "def": "To forget; 'se me olvidó' means it slipped my mind.",
+    "ex": "Pensé que se te olvidó."
+   },
+   {
+    "word": "convencer",
+    "surface": "convencerte",
+    "type": "verb",
+    "def": "To convince; to make someone change their mind.",
+    "ex": "Estuve toda la noche pensando cómo convencerte."
+   },
+   {
+    "word": "apenas",
+    "surface": "apenas",
+    "type": "adverb",
+    "def": "Barely; only just, hardly.",
+    "ex": "Apenas nos conocemos hace tres días."
+   },
+   {
+    "word": "dudar",
+    "surface": "dudando",
+    "type": "verb",
+    "def": "To hesitate; to be unsure which choice to make.",
+    "ex": "Camila baja la maleta al piso y lo mira, dudando entre dos caminos."
+   },
+   {
+    "word": "caminos",
+    "surface": "caminos",
+    "type": "noun",
+    "def": "Paths; here, two different choices in life.",
+    "ex": "Camila baja la maleta al piso y lo mira, dudando entre dos caminos."
+   },
+   {
+    "word": "fallar",
+    "surface": "fallar",
+    "type": "verb",
+    "def": "To fail; to not succeed at something.",
+    "ex": "Mirá, me da miedo quedarme y fallar otra vez delante de todos."
+   },
+   {
+    "word": "arrepentirse",
+    "surface": "arrepiento",
+    "type": "verb",
+    "def": "To regret; to be sorry you did something.",
+    "ex": "¿Y si me quedo y después me arrepiento?"
+   },
+   {
+    "word": "orgullosa",
+    "surface": "orgullosa",
+    "type": "adjective",
+    "def": "Proud; pleased and happy about someone or something.",
+    "ex": "Tu familia va a estar igual de orgullosa si te quedás y lo intentás."
+   },
+   {
+    "word": "intentar",
+    "surface": "intentás",
+    "type": "verb",
+    "def": "To try; to make an effort to do something.",
+    "ex": "Tu familia va a estar igual de orgullosa si te quedás y lo intentás."
+   },
+   {
+    "word": "salida",
+    "surface": "salida",
+    "type": "noun",
+    "def": "An exit or way out; here, the easy escape.",
+    "ex": "Volver es la salida fácil, y yo no vine hasta acá para eso."
+   },
+   {
+    "word": "respirar",
+    "surface": "respira",
+    "type": "verb",
+    "def": "To breathe; to take air in and out.",
+    "ex": "Camila saca el teléfono, respira hondo y cancela su pasaje del micro."
+   },
+   {
+    "word": "cancelar",
+    "surface": "cancela",
+    "type": "verb",
+    "def": "To cancel; to call off something already arranged.",
+    "ex": "Camila saca el teléfono, respira hondo y cancela su pasaje del micro."
+   },
+   {
+    "word": "pasaje",
+    "surface": "pasaje",
+    "type": "noun",
+    "def": "A ticket; what you buy to travel by bus or plane.",
+    "ex": "Camila saca el teléfono, respira hondo y cancela su pasaje del micro."
+   }
+  ]
+ },
+ {
+  "slug": "el-rescate-en-la-isla",
+  "title": "El rescate",
+  "synopsis": "Gloria los ve, llega remando con un vecino y los rescata entre risas. Vuelven riéndose del kayak perdido, y Javiera promete venir más seguido al sur.",
+  "vocab": [
+   {
+    "word": "nube",
+    "surface": "nubes",
+    "type": "noun",
+    "def": "Cloud; the white or grey shape in the sky.",
+    "ex": "El cielo se llena de nubes grises sobre el lago, en la Patagonia chilena."
+   },
+   {
+    "word": "agitar",
+    "surface": "agitan",
+    "type": "verb",
+    "def": "To wave or shake something in the air.",
+    "ex": "Javiera y su primo Benjamín, quienes se quedaron varados sin su kayak, agitan dos chaquetas de colores desde la playa de la isla."
+   },
+   {
+    "word": "chaqueta",
+    "surface": "chaquetas",
+    "type": "noun",
+    "def": "Jacket; a short coat for the upper body.",
+    "ex": "Javiera y su primo Benjamín, quienes se quedaron varados sin su kayak, agitan dos chaquetas de colores desde la playa de la isla."
+   },
+   {
+    "word": "separarse",
+    "surface": "separa",
+    "type": "verb",
+    "def": "To move apart; to leave from a place.",
+    "ex": "A lo lejos, un bote pequeño se separa de la orilla y empieza a avanzar hacia la isla."
+   },
+   {
+    "word": "avanzar",
+    "surface": "avanzar",
+    "type": "verb",
+    "def": "To advance; to move forward.",
+    "ex": "A lo lejos, un bote pequeño se separa de la orilla y empieza a avanzar hacia la isla."
+   },
+   {
+    "word": "culpa",
+    "surface": "culpa",
+    "type": "noun",
+    "def": "Fault or blame (\"tu culpa\" = your fault).",
+    "ex": "Tía, le juro que esta vez no fue del todo mi culpa."
+   },
+   {
+    "word": "divertirse",
+    "surface": "divertí",
+    "type": "verb",
+    "def": "To have fun; to enjoy yourself.",
+    "ex": "Pero igual me divertí como hace años no me divertía."
+   },
+   {
+    "word": "volver",
+    "surface": "vuelven",
+    "type": "verb",
+    "def": "To come back; to return to a place.",
+    "ex": "Los tres vuelven juntos sobre el agua, riéndose de la historia del kayak perdido."
+   },
+   {
+    "word": "seguido",
+    "surface": "seguido",
+    "type": "adverb",
+    "def": "Often (\"más seguido\" = more often).",
+    "ex": "Creo que voy a venir mucho más seguido."
+   },
+   {
+    "word": "encantar",
+    "surface": "encanta",
+    "type": "verb",
+    "def": "To love or delight in (\"me encanta\" = I love it).",
+    "ex": "Eso me encanta escucharlo."
+   },
+   {
+    "word": "juntos",
+    "surface": "juntos",
+    "type": "adverb",
+    "def": "Together; with one another.",
+    "ex": "Los tres vuelven juntos sobre el agua, riéndose de la historia del kayak perdido."
+   },
+   {
+    "word": "historia",
+    "surface": "historia",
+    "type": "noun",
+    "def": "Story; an account of events.",
+    "ex": "Los tres vuelven juntos sobre el agua, riéndose de la historia del kayak perdido."
+   },
+   {
+    "word": "color",
+    "surface": "colores",
+    "type": "noun",
+    "def": "Color (\"de colores\" = colorful, many colors).",
+    "ex": "Javiera y su primo Benjamín, quienes se quedaron varados sin su kayak, agitan dos chaquetas de colores desde la playa de la isla."
+   },
+   {
+    "word": "venir",
+    "surface": "viene",
+    "type": "verb",
+    "def": "To come; to move toward the speaker.",
+    "ex": "Viene un bote hacia acá."
+   },
+   {
+    "word": "serio",
+    "surface": "seria",
+    "type": "adjective",
+    "def": "Serious; not joking or smiling.",
+    "ex": "Gloria llega remando con el vecino, los mira con cara seria y después se ríe sin parar."
+   },
+   {
+    "word": "rescatar",
+    "surface": "rescatamos",
+    "type": "verb",
+    "def": "To rescue; to save someone from trouble.",
+    "ex": "El kayak lo rescatamos después."
+   },
+   {
+    "word": "lejos",
+    "surface": "lejos",
+    "type": "adverb",
+    "def": "Far; at a long distance away.",
+    "ex": "¿Tú crees que nos ve desde tan lejos?"
+   },
+   {
+    "word": "perdido",
+    "surface": "perdido",
+    "type": "adjective",
+    "def": "Lost; not found or gone missing.",
+    "ex": "Tu mamá nos tiene que ver desde lejos, porque el del kayak perdido fuiste tú."
+   },
+   {
+    "word": "vecino",
+    "surface": "vecino",
+    "type": "noun",
+    "def": "Neighbor; a person who lives nearby.",
+    "ex": "Es ella, con Raúl, el vecino."
+   },
+   {
+    "word": "atrapados",
+    "surface": "atrapados",
+    "type": "adjective",
+    "def": "Trapped; stuck somewhere with no way to get out.",
+    "ex": "Dos aventureros atrapados en una isla."
+   }
+  ]
+ },
+ {
+  "slug": "la-fiesta-vuelve-a-la-calle",
+  "title": "La fiesta vuelve a la calle",
+  "synopsis": "La lluvia para a tiempo y la calle se llena de gente. Daniela y Andrés bailan la cumbia que aprendieron y, poco a poco, el barrio entero se suma. La tradición vuelve, ahora en manos de los jóvenes.",
+  "vocab": [
+   {
+    "word": "amanecer",
+    "surface": "amanece",
+    "type": "verb",
+    "def": "To dawn; for the day to begin as the sun comes up.",
+    "ex": "La calle del barrio, en Cartagena, Colombia, amanece llena de globos y de gente."
+   },
+   {
+    "word": "globos",
+    "surface": "globos",
+    "type": "noun",
+    "def": "Balloons; light bags of air used to decorate a party.",
+    "ex": "La calle del barrio, en Cartagena, Colombia, amanece llena de globos y de gente."
+   },
+   {
+    "word": "gente",
+    "surface": "gente",
+    "type": "noun",
+    "def": "People; persons in general, a crowd.",
+    "ex": "La calle del barrio, en Cartagena, Colombia, amanece llena de globos y de gente."
+   },
+   {
+    "word": "nerviosos",
+    "surface": "nerviosos",
+    "type": "adjective",
+    "def": "Nervous; worried and a little scared.",
+    "ex": "Daniela y su amigo Andrés esperan nerviosos en una esquina."
+   },
+   {
+    "word": "lluvia",
+    "surface": "lluvia",
+    "type": "noun",
+    "def": "Rain; water that falls from the clouds.",
+    "ex": "La lluvia por fin paró de noche y el sol secó la calle a tiempo."
+   },
+   {
+    "word": "parar",
+    "surface": "paró",
+    "type": "verb",
+    "def": "To stop; to come to an end.",
+    "ex": "La lluvia por fin paró de noche y el sol secó la calle a tiempo."
+   },
+   {
+    "word": "secar",
+    "surface": "secó",
+    "type": "verb",
+    "def": "To dry; to take the water away from something wet.",
+    "ex": "La lluvia por fin paró de noche y el sol secó la calle a tiempo."
+   },
+   {
+    "word": "garganta",
+    "surface": "garganta",
+    "type": "noun",
+    "def": "The throat; where you feel nerves or a lump.",
+    "ex": "Tengo los nervios aquí, en la garganta."
+   },
+   {
+    "word": "ver",
+    "surface": "verás",
+    "type": "verb",
+    "def": "To see; 'ya verás' is used to say it will turn out fine.",
+    "ex": "Nos va a salir bien, ya verás."
+   },
+   {
+    "word": "trato hecho",
+    "surface": "trato hecho",
+    "type": "phrase",
+    "def": "'It's a deal'; said to agree on something.'",
+    "ex": "Trato hecho."
+   },
+   {
+    "word": "inventar",
+    "surface": "inventas",
+    "type": "verb",
+    "def": "To make up; to invent something on the spot.",
+    "ex": "Entonces los inventas con cara de segura y nadie se da cuenta."
+   },
+   {
+    "word": "segura",
+    "surface": "segura",
+    "type": "adjective",
+    "def": "Sure; confident, certain of yourself.",
+    "ex": "Entonces los inventas con cara de segura y nadie se da cuenta."
+   },
+   {
+    "word": "salir",
+    "surface": "salen",
+    "type": "verb",
+    "def": "To go out; to step out into a place.",
+    "ex": "Daniela y Andrés salen al centro de la calle y bailan la cumbia que aprendieron."
+   },
+   {
+    "word": "bailar",
+    "surface": "bailan",
+    "type": "verb",
+    "def": "To dance; to move the body to music.",
+    "ex": "Daniela y Andrés salen al centro de la calle y bailan la cumbia que aprendieron."
+   },
+   {
+    "word": "sumarse",
+    "surface": "sumando",
+    "type": "verb",
+    "def": "To join in; to add yourself to the group.",
+    "ex": "Se está sumando la calle entera."
+   },
+   {
+    "word": "aplaudir",
+    "surface": "aplaude",
+    "type": "verb",
+    "def": "To clap; to hit the hands together to show you like it.",
+    "ex": "La gente aplaude y, poco a poco, más vecinos se meten a bailar en plena calle."
+   },
+   {
+    "word": "vecinos",
+    "surface": "vecinos",
+    "type": "noun",
+    "def": "Neighbors; people who live nearby.",
+    "ex": "La gente aplaude y, poco a poco, más vecinos se meten a bailar en plena calle."
+   },
+   {
+    "word": "plena",
+    "surface": "plena",
+    "type": "adjective",
+    "def": "Full; 'en plena calle' means right in the middle of the street.",
+    "ex": "La gente aplaude y, poco a poco, más vecinos se meten a bailar en plena calle."
+   },
+   {
+    "word": "enseñar",
+    "surface": "enseñamos",
+    "type": "verb",
+    "def": "To teach; to show someone how to do something.",
+    "ex": "El año que viene se la enseñamos a los niños, paso por paso."
+   },
+   {
+    "word": "volver",
+    "surface": "volvió",
+    "type": "verb",
+    "def": "To come back; to return to where it was before.",
+    "ex": "La cumbia volvió a nuestro barrio."
+   }
+  ]
+ },
+ {
+  "slug": "el-ladron-de-mangos",
+  "title": "El ladrón de mangos",
+  "synopsis": "El duende resulta ser una mamá tlacuache que come por toda su familia: lleva cinco crías en el lomo. Itzel la deja en paz y, al final, Rodrigo le pone tortillas: su abuela tenía razón.",
+  "vocab": [
+   {
+    "word": "iluminar",
+    "surface": "ilumina",
+    "type": "verb",
+    "def": "To light up; to shine light onto something dark.",
+    "ex": "La linterna ilumina las ramas del mango, en el patio de la casa de Itzel, en Oaxaca."
+   },
+   {
+    "word": "ladrón",
+    "surface": "ladrón",
+    "type": "noun",
+    "def": "A thief; a person or animal that steals things.",
+    "ex": "Ella y su amigo Rodrigo se acercan despacio y por fin ven al ladrón de fruta."
+   },
+   {
+    "word": "animal",
+    "surface": "animal",
+    "type": "noun",
+    "def": "An animal; a living creature that is not a plant.",
+    "ex": "Solo un animal con muy buen gusto."
+   },
+   {
+    "word": "gordo",
+    "surface": "gordo",
+    "type": "adjective",
+    "def": "Fat; having a round, heavy body.",
+    "ex": "Un tlacuache gordo comiéndose mis mangos tan tranquilo."
+   },
+   {
+    "word": "masticar",
+    "surface": "masticando",
+    "type": "verb",
+    "def": "To chew; to bite food again and again in the mouth.",
+    "ex": "El tlacuache los mira sin ningún miedo y sigue masticando su mango."
+   },
+   {
+    "word": "familia",
+    "surface": "familia",
+    "type": "noun",
+    "def": "A family; parents, children and relatives together.",
+    "ex": "Come por ella y por toda su familia."
+   },
+   {
+    "word": "fantasma",
+    "surface": "fantasma",
+    "type": "noun",
+    "def": "A ghost; the spirit of a dead person in stories.",
+    "ex": "Te lo dije, no había ningún fantasma."
+   },
+   {
+    "word": "gusto",
+    "surface": "gusto",
+    "type": "noun",
+    "def": "Taste; here, a liking for good things to eat.",
+    "ex": "Solo un animal con muy buen gusto."
+   },
+   {
+    "word": "miedo",
+    "surface": "miedo",
+    "type": "noun",
+    "def": "Fear; the feeling of being afraid of something.",
+    "ex": "El tlacuache los mira sin ningún miedo y sigue masticando su mango."
+   },
+   {
+    "word": "dejar",
+    "surface": "dejamos",
+    "type": "verb",
+    "def": "To leave; 'dejar en paz' means to leave something alone.",
+    "ex": "¿La sacamos del patio o la dejamos en paz?"
+   },
+   {
+    "word": "cabeza",
+    "surface": "cabeza",
+    "type": "noun",
+    "def": "The head; 'niega con la cabeza' means shakes the head no.",
+    "ex": "Itzel mira a la mamá tlacuache y a sus crías un buen rato, y niega con la cabeza."
+   },
+   {
+    "word": "agarradas",
+    "surface": "agarradas",
+    "type": "adjective",
+    "def": "Holding on tightly; gripping onto something.",
+    "ex": "Tiene como cinco crías agarradas encima."
+   },
+   {
+    "word": "bocas",
+    "surface": "bocas",
+    "type": "noun",
+    "def": "Mouths; here, family members that need feeding.",
+    "ex": "Pobre, tiene muchas bocas que llenar."
+   },
+   {
+    "word": "llenar",
+    "surface": "llenar",
+    "type": "verb",
+    "def": "To fill; here, to feed many hungry mouths.",
+    "ex": "Pobre, tiene muchas bocas que llenar."
+   },
+   {
+    "word": "de sobra",
+    "surface": "de sobra",
+    "type": "phrase",
+    "def": "More than enough; plenty left over.",
+    "ex": "Total, mangos hay de sobra para ella y para nosotros."
+   },
+   {
+    "word": "paz",
+    "surface": "paz",
+    "type": "noun",
+    "def": "Peace; calm and quiet, without trouble.",
+    "ex": "¿La sacamos del patio o la dejamos en paz?"
+   },
+   {
+    "word": "razón",
+    "surface": "razón",
+    "type": "noun",
+    "def": "Reason; 'tener razón' means to be right about something.",
+    "ex": "Mi abuela tenía razón."
+   },
+   {
+    "word": "patas",
+    "surface": "patas",
+    "type": "noun",
+    "def": "The legs or feet of an animal.",
+    "ex": "Pero mi duende tiene cuatro patas y cinco hijos."
+   },
+   {
+    "word": "abuela",
+    "surface": "abuela",
+    "type": "noun",
+    "def": "A grandmother; the mother of your father or mother.",
+    "ex": "Mi abuela tenía razón."
+   },
+   {
+    "word": "tranquila",
+    "surface": "tranquila",
+    "type": "adjective",
+    "def": "Calm; relaxed and not worried or bothered.",
+    "ex": "Déjala tranquila."
+   }
+  ]
+ },
+ {
+  "slug": "vuelve-la-carpeta",
+  "title": "Vuelve la carpeta",
+  "synopsis": "Pilar llega tarde a la oficina y descubre que la señora de la carpeta es Carmen, su futura jefa, que la encontró y ató cabos. Empieza el trabajo y gana dos amigos en Lima.",
+  "vocab": [
+   {
+    "word": "tarde",
+    "surface": "tarde",
+    "type": "noun",
+    "def": "Late; after the expected time (also: the afternoon).",
+    "ex": "Pilar llega corriendo a la oficina en el centro de Lima, Perú, media hora tarde."
+   },
+   {
+    "word": "papeles",
+    "surface": "papeles",
+    "type": "noun",
+    "def": "Papers; documents you need for something official.",
+    "ex": "Estoy muy nerviosa y sin mis papeles."
+   },
+   {
+    "word": "mesa",
+    "surface": "mesa",
+    "type": "noun",
+    "def": "A table; furniture with a flat top and legs.",
+    "ex": "Sobre la mesa está su carpeta azul."
+   },
+   {
+    "word": "jefa",
+    "surface": "jefa",
+    "type": "noun",
+    "def": "A female boss; the woman in charge at work.",
+    "ex": "Soy Carmen Ríos, la jefa del área."
+   },
+   {
+    "word": "vergüenza",
+    "surface": "vergüenza",
+    "type": "noun",
+    "def": "Embarrassment; the bad feeling of being ashamed.",
+    "ex": "Qué vergüenza, llegué muy tarde."
+   },
+   {
+    "word": "semana",
+    "surface": "semana",
+    "type": "noun",
+    "def": "A week; a period of seven days.",
+    "ex": "Cualquiera se pierde la primera semana en Lima."
+   },
+   {
+    "word": "creer",
+    "surface": "creo",
+    "type": "verb",
+    "def": "To believe; to think something is true.",
+    "ex": "Te creo."
+   },
+   {
+    "word": "callada",
+    "surface": "callada",
+    "type": "adjective",
+    "def": "Silent; saying nothing for a moment.",
+    "ex": "Pilar se queda callada un segundo."
+   },
+   {
+    "word": "alivio",
+    "surface": "alivio",
+    "type": "noun",
+    "def": "Relief; the good feeling when a worry goes away.",
+    "ex": "Después se ríe, entre nervios y alivio."
+   },
+   {
+    "word": "devolver",
+    "surface": "devuelve",
+    "type": "verb",
+    "def": "To give back; to return something to its owner.",
+    "ex": "Carmen le devuelve la carpeta y le ofrece un café para empezar."
+   },
+   {
+    "word": "ofrecer",
+    "surface": "ofrece",
+    "type": "verb",
+    "def": "To offer; to give someone the chance to take something.",
+    "ex": "Carmen le devuelve la carpeta y le ofrece un café para empezar."
+   },
+   {
+    "word": "vereda",
+    "surface": "vereda",
+    "type": "noun",
+    "def": "The sidewalk; the path beside the street for walking.",
+    "ex": "Diego y Beto la esperan en la vereda."
+   },
+   {
+    "word": "peor",
+    "surface": "peor",
+    "type": "adjective",
+    "def": "Worst; the most bad of all.",
+    "ex": "Y la jefa ya conoce mi peor día."
+   },
+   {
+    "word": "camino",
+    "surface": "camino",
+    "type": "noun",
+    "def": "The road or way; the path you travel.",
+    "ex": "Aquí nunca estás sola en el camino."
+   },
+   {
+    "word": "bienvenida",
+    "surface": "bienvenida",
+    "type": "adjective",
+    "def": "Welcome; a warm word said to someone arriving.",
+    "ex": "Bienvenida a Lima, Pilar."
+   },
+   {
+    "word": "sola",
+    "surface": "sola",
+    "type": "adjective",
+    "def": "Alone; with no one else around.",
+    "ex": "Aquí nunca estás sola en el camino."
+   },
+   {
+    "word": "encontrar",
+    "surface": "encontré",
+    "type": "verb",
+    "def": "To find; to come across something that was lost.",
+    "ex": "La encontré en la combi esta mañana."
+   },
+   {
+    "word": "carta",
+    "surface": "carta",
+    "type": "noun",
+    "def": "A letter; a written message sent to someone.",
+    "ex": "Adentro estaba la carta para esta empresa."
+   },
+   {
+    "word": "empresa",
+    "surface": "empresa",
+    "type": "noun",
+    "def": "A company; a business where people work.",
+    "ex": "Adentro estaba la carta para esta empresa."
+   },
+   {
+    "word": "nervios",
+    "surface": "nervios",
+    "type": "noun",
+    "def": "Nerves; the jumpy feeling before something important.",
+    "ex": "Después se ríe, entre nervios y alivio."
+   }
+  ]
+ },
+ {
+  "slug": "mama-conoce-al-perro",
+  "title": "Convencer a mamá",
+  "synopsis": "Mamá llega el domingo y los hermanos confiesan lo del perro. Esta vez ella no cede de una: les recuerda que el edificio no permite mascotas y pregunta quién se va a hacer cargo. Marina y Julián se comprometen a repartirse todo y a buscar al dueño, y así se ganan que mamá hable con el administrador. El perro se queda, con condiciones, y lo llaman Lluvia.",
+  "vocab": [
+   {
+    "word": "golpes",
+    "surface": "golpes",
+    "type": "noun",
+    "def": "Knocks; the sounds of hitting a door.",
+    "ex": "Es domingo y suenan dos golpes en la puerta del apartamento de Bogotá, Colombia."
+   },
+   {
+    "word": "nerviosos",
+    "surface": "nerviosos",
+    "type": "adjective",
+    "def": "Nervous; worried and a little afraid.",
+    "ex": "Marina y Julián se miran nerviosos: su mamá llegó de visita y el perrito sigue escondido en el cuarto."
+   },
+   {
+    "word": "confesar",
+    "surface": "confesamos",
+    "type": "verb",
+    "def": "To confess; to admit something you hid.",
+    "ex": "Tranquila, lo confesamos juntos."
+   },
+   {
+    "word": "enterarse",
+    "surface": "enterar",
+    "type": "verb",
+    "def": "To find out; to learn about something.",
+    "ex": "Igual se va a enterar."
+   },
+   {
+    "word": "bolsa",
+    "surface": "bolsa",
+    "type": "noun",
+    "def": "A bag; here, one used to carry bread.",
+    "ex": "Su mamá entra con una sonrisa y una bolsa de pan caliente."
+   },
+   {
+    "word": "caras",
+    "surface": "caras",
+    "type": "noun",
+    "def": "Faces; here, the looks on their faces.",
+    "ex": "¿Y esas caras tan raras?"
+   },
+   {
+    "word": "romper",
+    "surface": "rompieron",
+    "type": "verb",
+    "def": "To break; to smash something into pieces.",
+    "ex": "Parece que rompieron un plato."
+   },
+   {
+    "word": "plato",
+    "surface": "plato",
+    "type": "noun",
+    "def": "A plate; the dish you eat food from.",
+    "ex": "Parece que rompieron un plato."
+   },
+   {
+    "word": "contar",
+    "surface": "contarte",
+    "type": "verb",
+    "def": "To tell; to share news or a story.",
+    "ex": "Mamá, tenemos que contarte algo, y por favor escúchanos hasta el final."
+   },
+   {
+    "word": "sacar",
+    "surface": "saca",
+    "type": "verb",
+    "def": "To take out; here, to walk the dog.",
+    "ex": "¿Quién lo saca, quién paga todo eso?"
+   },
+   {
+    "word": "juguete",
+    "surface": "juguete",
+    "type": "noun",
+    "def": "A toy; a thing children play with, not a responsibility.",
+    "ex": "Un perro no es un juguete."
+   },
+   {
+    "word": "repartir",
+    "surface": "repartimos",
+    "type": "verb",
+    "def": "To share out; to divide tasks between people.",
+    "ex": "Ya lo hablamos y nos repartimos cada tarea, en serio."
+   },
+   {
+    "word": "tarea",
+    "surface": "tarea",
+    "type": "noun",
+    "def": "A task or chore; a job that has to be done.",
+    "ex": "Ya lo hablamos y nos repartimos cada tarea, en serio."
+   },
+   {
+    "word": "buscar",
+    "surface": "buscando",
+    "type": "verb",
+    "def": "To look for; to try to find someone or something.",
+    "ex": "Y mañana preguntamos casa por casa, por si alguien lo está buscando."
+   },
+   {
+    "word": "convencer",
+    "surface": "convencemos",
+    "type": "verb",
+    "def": "To convince; to make someone agree with you.",
+    "ex": "Entonces lo convencemos entre todos, con hechos."
+   },
+   {
+    "word": "hechos",
+    "surface": "hechos",
+    "type": "noun",
+    "def": "Facts or actions; here, proof shown by doing.",
+    "ex": "Entonces lo convencemos entre todos, con hechos."
+   },
+   {
+    "word": "dormido",
+    "surface": "dormido",
+    "type": "adjective",
+    "def": "Asleep; sleeping.",
+    "ex": "Ve al perro ya dormido sobre el pie de Julián."
+   },
+   {
+    "word": "cumplir",
+    "surface": "cumplen",
+    "type": "verb",
+    "def": "To keep your word; to do the part you promised.",
+    "ex": "Hablo yo con el administrador, pero ustedes cumplen su parte."
+   },
+   {
+    "word": "queja",
+    "surface": "queja",
+    "type": "noun",
+    "def": "A complaint; words said when someone is unhappy.",
+    "ex": "Pero a la primera queja del vecino, lo hablamos de nuevo."
+   },
+   {
+    "word": "vecino",
+    "surface": "vecino",
+    "type": "noun",
+    "def": "A neighbor; a person who lives nearby.",
+    "ex": "Pero a la primera queja del vecino, lo hablamos de nuevo."
+   }
+  ]
+ }
+]

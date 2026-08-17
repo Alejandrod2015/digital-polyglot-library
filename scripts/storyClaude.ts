@@ -3,7 +3,7 @@
  *
  * Companion script for the `generate-story` skill. Lets Claude Code
  * generate JourneyStory content without going through the OpenAI-backed
- * Studio endpoints — Claude reads the journey context, produces the
+ * Studio endpoints; Claude reads the journey context, produces the
  * story JSON in-conversation, and this script saves it to the DB.
  *
  * Usage:

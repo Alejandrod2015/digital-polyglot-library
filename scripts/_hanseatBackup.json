@@ -1,0 +1,2604 @@
+[
+  {
+    "title": "Der Fischmarkt schreit",
+    "slug": "der-fischmarkt-schreit",
+    "text": "Während der Rest der Stadt sonntags noch schläft, tobt am Hafen die alte Fischauktionshalle. Ole schiebt Nora mitten hinein, wo ein Marktschreier hinter Bergen von Aalen sein Publikum anbrüllt.\n\nSchreier: Na, junge Frau, so blass um die Nase? Ich pack dir drei Räucheraale ein, leg zwei Makrelen dazu, und den Lachs gibt es fast geschenkt!\nNora: Ich wollte eigentlich nur ein einzelnes Brötchen. Nicht den halben Hafen.\nOle: Zu spät. Wer stehen bleibt, kauft. Das ist das Gesetz der Halle.\nSchreier: Hör auf deinen Freund! Tüte auf, Augen zu, und du gehst als glückliche Frau nach Hause!\nNora: Und das um diese Uhrzeit, mit dieser Lautstärke? Ich dachte, ihr Hamburger seid wortkarg.\nOle: Sind wir auch. Sechs Tage die Woche. Sonntags früh im Fischmarkt macht der Norden eine einzige Ausnahme.\nNora: Und niemand beschwert sich über den Lärm zu dieser Stunde?\nOle: Beschweren? Hier nicht. Der Fischmarkt darf, was sonst kein Mensch in dieser Stadt darf: laut sein.\n\nDer Schreier stopft ihr eine prall gefüllte Tüte in die Arme, ehe sie widersprechen kann.\n\nSchreier: Alles frisch, alles echt, und ein Strauß Blumen obendrauf, weil dein Gesicht mir gefällt!\nNora: Ich habe jetzt Fisch für eine Woche und keine Ahnung, wie das passiert ist.\nOle: So läuft das Theater. Du kommst wegen der Aussicht und gehst mit drei Kilo Aal.\nNora: Und danach? Gehen alle brav nach Hause?\nOle: Danach gibt es Livemusik und das erste Fischbrötchen des Tages. Wer hier durchhält, hat den Sonntag gewonnen.\nNora: Dann bleibe ich. Wenn der Norden schon einmal laut wird, will ich jeden Ruf mitnehmen.",
+    "synopsis": "Sonntags früh im Fischmarkt entdeckt Nora den einen Ort, an dem der wortkarge Norden aus voller Kehle brüllt.",
+    "arcType": "daily-encounter",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Fischauktionshalle",
+        "definition": "the old harbour hall where fish is sold and auctioned"
+      },
+      {
+        "type": "verb",
+        "word": "toben",
+        "surface": "tobt",
+        "definition": "to be in an uproar; to seethe with loud, wild activity"
+      },
+      {
+        "type": "noun",
+        "word": "Marktschreier",
+        "definition": "a market crier who loudly shouts out his wares to buyers"
+      },
+      {
+        "type": "verb",
+        "word": "anbrüllen",
+        "surface": "anbrüllt",
+        "definition": "to bellow at someone loudly and forcefully in their face"
+      },
+      {
+        "type": "adjective",
+        "word": "blass",
+        "definition": "pale; having little colour in the face, often from tiredness"
+      },
+      {
+        "type": "noun",
+        "word": "Aal",
+        "definition": "an eel; a long snake-like fish, here smoked as a delicacy"
+      },
+      {
+        "type": "noun",
+        "word": "Lachs",
+        "definition": "salmon; a prized pink-fleshed fish sold fresh or smoked"
+      },
+      {
+        "type": "expression",
+        "word": "fast geschenkt",
+        "definition": "almost for free; sold at a giveaway, ridiculously low price"
+      },
+      {
+        "type": "expression",
+        "word": "auf jemanden hören",
+        "surface": "Hör auf",
+        "definition": "to listen to and follow someone's advice or guidance"
+      },
+      {
+        "type": "noun",
+        "word": "Tüte",
+        "definition": "a bag, usually of paper or plastic, for carrying goods"
+      },
+      {
+        "type": "adjective",
+        "word": "glücklich",
+        "surface": "glückliche",
+        "definition": "happy and content; feeling lucky and thoroughly pleased"
+      },
+      {
+        "type": "noun",
+        "word": "Lautstärke",
+        "definition": "loudness; how much noise or volume something makes"
+      },
+      {
+        "type": "verb",
+        "word": "sich beschweren",
+        "surface": "beschwert",
+        "definition": "to complain; to formally object that something is wrong"
+      },
+      {
+        "type": "noun",
+        "word": "Ausnahme",
+        "definition": "an exception; a case that breaks the usual rule"
+      },
+      {
+        "type": "adjective",
+        "word": "prall",
+        "definition": "bulging; packed so full it is round and tight"
+      },
+      {
+        "type": "verb",
+        "word": "widersprechen",
+        "definition": "to contradict; to say the opposite of what was said"
+      },
+      {
+        "type": "adverb",
+        "word": "obendrauf",
+        "definition": "on top; thrown in as an extra bonus at the end"
+      },
+      {
+        "type": "verb",
+        "word": "durchhalten",
+        "surface": "durchhält",
+        "definition": "to hold out; to keep going until the end despite strain"
+      },
+      {
+        "type": "noun",
+        "word": "Fischbrötchen",
+        "definition": "a fish sandwich in a bread roll, a northern harbour staple"
+      },
+      {
+        "type": "verb",
+        "word": "mitnehmen",
+        "definition": "to take something along with you when you go"
+      }
+    ],
+    "level": "c1",
+    "topic": "alltag-an-der-elbe",
+    "slotIndex": 1,
+    "audioUrl": null
+  },
+  {
+    "title": "Ein Franzbrötchen ist keine Schnecke",
+    "slug": "ein-franzbroetchen-ist-keine-schnecke",
+    "text": "Als kleines Mitbringsel legt Nora eine Zimtschnecke aus dem neuen schwedischen Café auf Wiebkes Theke. Wiebke betrachtet das Gebäck, als hätte man ihr etwas Verdorbenes gebracht.\n\nWiebke: Das, mein Kind, ist eine Zimtschnecke. Gerollt, klebrig, aus Schweden. Bei mir bekommst du ein Franzbrötchen.\nNora: Ist das nicht dasselbe? Zimt, Zucker, Butter, alles drin.\nWiebke: Dasselbe? Ein Franzbrötchen wird flach gedrückt und im eigenen Zucker karamellisiert. Es rollt sich nicht, es liegt. Wie ein Hamburger eben.\nNora: Also ist die Form schon eine Weltanschauung.\nWiebke: Und ob. Das Franzbrötchen ist platt, ehrlich und ohne Schnickschnack. Ganz die Stadt eben.\nNora: Und warum ausgerechnet flach? Rund wäre doch praktischer zum Greifen.\nWiebke: Flach, weil es beim Backen zusammensinkt und der Zucker in die Falten läuft. Genau da sitzt der Geschmack.\n\nEin Stammkunde am Tresen nickt zustimmend und mischt sich ein.\n\nKunde: Sag bloß nicht Zimtschnecke, wenn ein Hamburger dabei ist. Das ist hier fast eine Beleidigung.\nNora: Verstanden. Es ist ein Franzbrötchen, es liegt flach, und es hat mit Schweden nichts zu tun.\nWiebke: Sehr gut. Und der Name? Kommt angeblich von den Franzosen und ihrem Butterteig, aus napoleonischer Zeit.\nNora: Ein französischer Name, ein Hamburger Herz. Das gefällt mir.\nWiebke: Merk dir das. Wer die Geschichte kennt, schmeckt das Gebäck anders.\nKunde: So ist es. Und jetzt probier eins, dann redest du nie wieder von Schnecken.\nNora: Dann esse ich es ehrfürchtig und nehme meine Schnecke schnell wieder mit.\nWiebke: Kluge Entscheidung. Das nächste zahlst du aber wieder, versteht sich.",
+    "synopsis": "Ein gut gemeintes Mitbringsel aus Schweden lehrt Nora, warum das flache Franzbrötchen für Hamburg eine Frage der Ehre ist.",
+    "arcType": "recurring-character-callback",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Mitbringsel",
+        "definition": "a small gift you bring along when visiting someone"
+      },
+      {
+        "type": "noun",
+        "word": "Zimtschnecke",
+        "definition": "a rolled, sticky cinnamon bun of Swedish origin"
+      },
+      {
+        "type": "verb",
+        "word": "betrachten",
+        "surface": "betrachtet",
+        "definition": "to look at something carefully and with considered attention"
+      },
+      {
+        "type": "noun",
+        "word": "Gebäck",
+        "definition": "baked goods such as pastries, buns and small cakes"
+      },
+      {
+        "type": "adjective",
+        "word": "verdorben",
+        "surface": "Verdorbenes",
+        "definition": "spoiled; gone bad and no longer fit to eat"
+      },
+      {
+        "type": "adjective",
+        "word": "klebrig",
+        "definition": "sticky; coated in something that clings to your fingers"
+      },
+      {
+        "type": "adjective",
+        "word": "flach",
+        "definition": "flat; low and level rather than round or raised"
+      },
+      {
+        "type": "verb",
+        "word": "drücken",
+        "surface": "gedrückt",
+        "definition": "to press or push something so that it goes flat"
+      },
+      {
+        "type": "verb",
+        "word": "karamellisieren",
+        "surface": "karamellisiert",
+        "definition": "to cook sugar until it browns into sweet, sticky caramel"
+      },
+      {
+        "type": "noun",
+        "word": "Weltanschauung",
+        "definition": "a whole worldview; a fundamental outlook on life"
+      },
+      {
+        "type": "adjective",
+        "word": "platt",
+        "definition": "flat and plain; here also down-to-earth and unpretentious"
+      },
+      {
+        "type": "noun",
+        "word": "Schnickschnack",
+        "definition": "frills; needless fancy extras that add no real value"
+      },
+      {
+        "type": "verb",
+        "word": "sich einmischen",
+        "surface": "mischt sich ein",
+        "definition": "to butt in; to get involved in others' business uninvited"
+      },
+      {
+        "type": "noun",
+        "word": "Beleidigung",
+        "definition": "an insult; a remark or act that offends someone"
+      },
+      {
+        "type": "expression",
+        "word": "nichts zu tun haben mit",
+        "surface": "nichts zu tun",
+        "definition": "to have no connection with something at all"
+      },
+      {
+        "type": "noun",
+        "word": "Butterteig",
+        "definition": "a rich pastry dough made with a lot of butter"
+      },
+      {
+        "type": "verb",
+        "word": "probieren",
+        "surface": "probier",
+        "definition": "to try or taste something to see what it is like"
+      },
+      {
+        "type": "adverb",
+        "word": "ehrfürchtig",
+        "definition": "reverently; with deep respect that borders on real awe"
+      },
+      {
+        "type": "expression",
+        "word": "versteht sich",
+        "definition": "of course; that goes without saying and needs no mention"
+      },
+      {
+        "type": "adverb",
+        "word": "zustimmend",
+        "definition": "approvingly; in a way that shows agreement with something"
+      }
+    ],
+    "level": "c1",
+    "topic": "alltag-an-der-elbe",
+    "slotIndex": 2,
+    "audioUrl": null
+  },
+  {
+    "title": "Elbe oder Alster",
+    "slug": "elbe-oder-alster",
+    "text": "Bei einem Sonntagsspaziergang bleibt Ole an der Elbe stehen und deutet auf die Kräne am anderen Ufer. Merle, die dazugestoßen ist, winkt ab und zeigt in die andere Richtung, zur Alster.\n\nOle: Das hier ist die Elbe. Salzig, laut, arbeitend. Hier schlägt das echte Herz der Stadt.\nMerle: Und dort liegt die Alster, mitten in der Stadt, ruhig und vornehm. Segelboote statt Containerschiffe.\nNora: Und ich muss mich für ein Gewässer entscheiden? Das klingt nach zwei rivalisierenden Vereinen.\nOle: So ähnlich. Sag mir, an welches Wasser du sonntags gehst, und ich sage dir, wer du bist.\nMerle: An der Alster joggt und rudert man. An der Elbe schaut man den Schiffen nach und schweigt.\nNora: Und was ist besser?\nOle: Falsche Frage. Es geht nicht um besser, es geht um Zugehörigkeit. Elbe oder Alster, das ist hier eine Entscheidung fürs Leben.\n\nSie gehen ein Stück am Wasser entlang, bis Nora vor einem alten Schwimmponton stehen bleibt.\n\nNora: Weißt du was? Ich rieche das Salz, ich sehe die Kräne und bin sofort ruhig. Dann ist es wohl die Elbe.\nOle: Gute Wahl. Wer die Kräne mag, nimmt die Stadt so, wie sie wirklich ist. Rau und ehrlich.\nMerle: Verräter. Aber eine gute Wahl. Die Alster verzeiht dir das, sie ist großmütig.\nNora: Und plötzlich habe ich ein Ufer, das zu mir gehört. Kein Amt hat es gestempelt, ich habe es einfach gespürt.\nMerle: So wird man hier heimisch. Nicht durch Papiere, sondern durch ein Stück Wasser.",
+    "synopsis": "Zwischen dem rauen Hafenwasser und dem vornehmen Stadtsee wählt Nora ihre Elbe und wird ganz ohne Amt heimisch.",
+    "arcType": "reframe-turn",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Sonntagsspaziergang",
+        "definition": "a leisurely Sunday walk taken purely for pleasure and rest"
+      },
+      {
+        "type": "verb",
+        "word": "deuten",
+        "surface": "deutet",
+        "definition": "to point at something to draw attention to it"
+      },
+      {
+        "type": "noun",
+        "word": "Ufer",
+        "definition": "the bank; the land right along a river or lake"
+      },
+      {
+        "type": "verb",
+        "word": "abwinken",
+        "surface": "winkt ab",
+        "definition": "to wave something off dismissively; to reject it with a gesture"
+      },
+      {
+        "type": "adjective",
+        "word": "salzig",
+        "surface": "Salzig",
+        "definition": "salty; tasting or smelling of salt like the sea"
+      },
+      {
+        "type": "adjective",
+        "word": "vornehm",
+        "definition": "genteel and refined; elegant in a dignified, upper-class way"
+      },
+      {
+        "type": "noun",
+        "word": "Segelboot",
+        "surface": "Segelboote",
+        "definition": "a sailing boat driven by the wind in its sails"
+      },
+      {
+        "type": "noun",
+        "word": "Containerschiff",
+        "surface": "Containerschiffe",
+        "definition": "a huge cargo ship that carries stacked freight containers"
+      },
+      {
+        "type": "noun",
+        "word": "Gewässer",
+        "definition": "a body of water such as a river, lake or sea"
+      },
+      {
+        "type": "verb",
+        "word": "sich entscheiden",
+        "surface": "entscheiden",
+        "definition": "to make up your mind and choose between the options"
+      },
+      {
+        "type": "noun",
+        "word": "Zugehörigkeit",
+        "definition": "a sense of belonging to a particular group or place"
+      },
+      {
+        "type": "verb",
+        "word": "rudern",
+        "surface": "rudert",
+        "definition": "to row a boat by pulling on the oars"
+      },
+      {
+        "type": "verb",
+        "word": "riechen",
+        "surface": "rieche",
+        "definition": "to smell; to take in a scent through the nose"
+      },
+      {
+        "type": "noun",
+        "word": "Schwimmponton",
+        "definition": "a floating platform moored at the water's edge"
+      },
+      {
+        "type": "adjective",
+        "word": "rau",
+        "surface": "Rau",
+        "definition": "rough; harsh and rugged rather than smooth or gentle"
+      },
+      {
+        "type": "verb",
+        "word": "verzeihen",
+        "surface": "verzeiht",
+        "definition": "to forgive someone for a wrong they did you"
+      },
+      {
+        "type": "adjective",
+        "word": "großmütig",
+        "definition": "magnanimous; generous and forgiving toward others out of strength"
+      },
+      {
+        "type": "noun",
+        "word": "Verräter",
+        "definition": "a traitor; someone who betrays a side or loyalty"
+      },
+      {
+        "type": "expression",
+        "word": "heimisch werden",
+        "surface": "heimisch",
+        "definition": "to come to feel at home and settled in a place"
+      },
+      {
+        "type": "expression",
+        "word": "Gute Wahl",
+        "definition": "good choice; a decision that was well and rightly made"
+      }
+    ],
+    "level": "c1",
+    "topic": "alltag-an-der-elbe",
+    "slotIndex": 3,
+    "audioUrl": null
+  },
+  {
+    "title": "Moin heißt den ganzen Tag",
+    "slug": "moin-heisst-den-ganzen-tag",
+    "text": "Nora zieht ihren Koffer über das Kopfsteinpflaster von Ottensen und nimmt sich vor, in Hamburg besonders höflich aufzutreten. Ole, ihr neuer Kollege, holt sie ab und grinst schon, bevor sie den Mund aufmacht.\n\nNora: Guten Morgen! Was für ein wunderschöner, frischer Vormittag hier im Norden.\nOle: Moin.\nNora: Nur Moin? Ich habe mir eine ganze Begrüßung zurechtgelegt.\nOle: Genau das ist der Fehler. Hier reicht ein Wort. Moin passt morgens, mittags und abends.\nNora: Ein einziges Wort für den ganzen Tag? Das kommt mir fast unhöflich vor.\nOle: Bei uns ist es das Gegenteil. Wer viele Worte macht, hält die anderen nur auf.\n\nSie gehen an einer Bäckerei vorbei. Hinter der Theke stapelt Wiebke die frischen Franzbrötchen.\n\nWiebke: Moin. Was darf es sein?\nNora: Guten Tag! Ich nehme zwei von diesen zimtigen Teilchen. Und Ihnen noch einen schönen Nachmittag.\nWiebke: Moin.\nNora: Sie sagen auch nachmittags Moin? Es ist doch längst nach dem Mittag.\nWiebke: Moin hat mit der Uhrzeit nichts zu tun. Moin heißt einfach: Ich sehe dich.\nNora: Und wenn ich abends komme, kurz vor Feierabend?\nWiebke: Dann sage ich auch Moin. Und wenn du Moin Moin sagst, gilt das hier schon als Geschwätz.\nOle: Sie hat recht. Zwei Moin, und du giltst sofort als gesprächig.\nNora: Bei mir zu Hause fragt man erst nach dem Befinden, dem Wetter, der ganzen Familie.\nOle: Das Wetter siehst du selbst. Und nach der Familie fragen wir, wenn wir dich kennen. In ein paar Jahren vielleicht.\nNora: In ein paar Jahren. Ihr nehmt das mit der Zurückhaltung wirklich ernst.\nWiebke: Wir sind sparsam mit Worten, nicht mit dem Herzen. Das verwechseln die Zugezogenen dauernd.\nNora: Also übe ich ab jetzt das kürzeste Wort meines Lebens.\nOle: Sag es einfach im Vorbeigehen, ohne stehen zu bleiben. Dann klingt es echt.\nNora: Moin.\nWiebke: Na also. Fast wie eine von hier.",
+    "synopsis": "Nora begrüßt Hamburg überschwänglich und lernt, dass hier ein einziges Wort für alles reicht: Moin.",
+    "arcType": "reframe-turn",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "Moin",
+        "definition": "a north German greeting used at any hour of the day"
+      },
+      {
+        "type": "noun",
+        "word": "Kopfsteinpflaster",
+        "definition": "an old road surface made of rounded stone paving blocks"
+      },
+      {
+        "type": "adjective",
+        "word": "höflich",
+        "definition": "polite and considerate in how you treat other people"
+      },
+      {
+        "type": "verb",
+        "word": "auftreten",
+        "surface": "aufzutreten",
+        "definition": "to behave or present yourself in a particular public way"
+      },
+      {
+        "type": "noun",
+        "word": "Fehler",
+        "definition": "a mistake; something done wrongly or an incorrect choice made"
+      },
+      {
+        "type": "verb",
+        "word": "reichen",
+        "surface": "reicht",
+        "definition": "to be enough or sufficient for a given purpose"
+      },
+      {
+        "type": "adjective",
+        "word": "unhöflich",
+        "definition": "rude; lacking good manners or basic politeness toward others"
+      },
+      {
+        "type": "noun",
+        "word": "Gegenteil",
+        "definition": "the opposite; something completely different from the thing mentioned"
+      },
+      {
+        "type": "verb",
+        "word": "aufhalten",
+        "surface": "hält",
+        "definition": "to delay someone or keep them from moving on"
+      },
+      {
+        "type": "noun",
+        "word": "Theke",
+        "definition": "a counter in a shop or bar where customers are served"
+      },
+      {
+        "type": "noun",
+        "word": "Franzbrötchen",
+        "definition": "a flattened Hamburg pastry with cinnamon and sugar, a local icon"
+      },
+      {
+        "type": "adjective",
+        "word": "zimtig",
+        "definition": "tasting or smelling strongly of cinnamon and warm baking spice"
+      },
+      {
+        "type": "noun",
+        "word": "Uhrzeit",
+        "definition": "the exact time of day as shown on a clock"
+      },
+      {
+        "type": "noun",
+        "word": "Feierabend",
+        "definition": "the end of the working day and the free time afterwards"
+      },
+      {
+        "type": "noun",
+        "word": "Geschwätz",
+        "definition": "idle chatter; talk regarded as excessive, empty or pointless"
+      },
+      {
+        "type": "adjective",
+        "word": "gesprächig",
+        "definition": "talkative; keen to chat at length with other people"
+      },
+      {
+        "type": "adverb",
+        "word": "dauernd",
+        "definition": "constantly; over and over again without ever letting up"
+      },
+      {
+        "type": "adjective",
+        "word": "sparsam",
+        "definition": "careful and economical, using little of something on purpose"
+      },
+      {
+        "type": "noun",
+        "word": "Zugezogene",
+        "definition": "a newcomer who has moved into a place from elsewhere"
+      },
+      {
+        "type": "verb",
+        "word": "üben",
+        "surface": "übe",
+        "definition": "to practise a skill repeatedly in order to improve it"
+      },
+      {
+        "type": "expression",
+        "word": "im Vorbeigehen",
+        "definition": "casually, while passing by, without stopping to make an effort"
+      },
+      {
+        "type": "expression",
+        "word": "Na also",
+        "definition": "there you go; said when someone finally gets it right"
+      },
+      {
+        "type": "verb",
+        "word": "zurechtlegen",
+        "surface": "zurechtgelegt",
+        "definition": "to prepare or arrange something in advance, ready for use"
+      }
+    ],
+    "level": "c1",
+    "topic": "ankommen-im-norden",
+    "slotIndex": 1,
+    "audioUrl": null
+  },
+  {
+    "title": "Es gibt kein schlechtes Wetter",
+    "slug": "es-gibt-kein-schlechtes-wetter",
+    "text": "Der Regen fällt seit Stunden seitwärts, und Nora steht ohne Schirm unter einem Vordach in der Schanze. Ole schlendert in einem gelben Ölmantel heran, als wäre bestes Wetter.\n\nNora: Wie hältst du das aus? Ich bin komplett durchnässt und friere.\nOle: Du hast das falsche Problem. Nicht der Regen ist schuld, sondern deine Jacke.\nNora: Meine Jacke ist teuer und angeblich wasserdicht.\nOle: Angeblich. Hier im Norden zählt nur, was den Test übersteht. Komm mit, wir besorgen dir was Ordentliches.\n\nIm Laden hängt eine ganze Wand voller gelber Regenmäntel. Eine Verkäuferin mustert Noras durchweichte Schuhe.\n\nVerkäuferin: Moin. Neu hier, richtig? Das sieht man an den Schuhen.\nNora: So offensichtlich? Ich dachte, ich wäre ganz gut vorbereitet.\nVerkäuferin: Ein Friesennerz und Gummistiefel, dann redest du nie wieder übers Wetter. Bei uns sagt man: Es gibt kein schlechtes Wetter, nur falsche Kleidung.\nNora: Das klingt fast wie ein Lebensmotto.\nVerkäuferin: Es ist eins. Wer hier auf Sonne wartet, wartet vergeblich.\nOle: Sie hat recht. Der Himmel ändert sich nicht, also änderst du dich.\nNora: Und die Leute joggen wirklich bei diesem Himmel? Ich habe unterwegs zwei gesehen.\nOle: Natürlich. Absagen wäre albern. Dann käme man von Oktober bis April kaum vor die Tür.\nNora: Andere würden sich bei so einem Wetter gar nicht erst aus dem Bett wagen.\nVerkäuferin: Dann hättet ihr hier ein echtes Problem. Zieh den Nerz an, geh raus, und der Regen wird dir gleichgültig.\n\nNora schlüpft in den gelben Mantel und tritt hinaus vor die Tür. Der Regen fällt weiter, aber er erreicht sie nicht mehr.\n\nNora: Unglaublich. Ich merke ihn kaum noch.\nOle: Willkommen im Norden. Jetzt fehlt nur noch, dass du ihn irgendwann sogar magst.",
+    "synopsis": "Durchnässt und fassungslos entdeckt Nora, dass der Norden kein schlechtes Wetter kennt, nur falsche Kleidung.",
+    "arcType": "juxtaposition-discovery",
+    "vocab": [
+      {
+        "type": "adverb",
+        "word": "seitwärts",
+        "definition": "sideways; toward the side rather than straight ahead of you"
+      },
+      {
+        "type": "noun",
+        "word": "Vordach",
+        "definition": "a small roof or canopy jutting out above a doorway"
+      },
+      {
+        "type": "adjective",
+        "word": "durchnässt",
+        "definition": "soaked through; completely wet from rain or water"
+      },
+      {
+        "type": "verb",
+        "word": "frieren",
+        "surface": "friere",
+        "definition": "to feel cold; to suffer from a low temperature"
+      },
+      {
+        "type": "adjective",
+        "word": "wasserdicht",
+        "definition": "waterproof; built so that no water can get through"
+      },
+      {
+        "type": "verb",
+        "word": "überstehen",
+        "surface": "übersteht",
+        "definition": "to get through a hard test or situation successfully"
+      },
+      {
+        "type": "adjective",
+        "word": "ordentlich",
+        "surface": "Ordentliches",
+        "definition": "proper and of decent quality; done the right way"
+      },
+      {
+        "type": "noun",
+        "word": "Regenmantel",
+        "surface": "Regenmäntel",
+        "definition": "a coat worn to keep you dry in the rain"
+      },
+      {
+        "type": "verb",
+        "word": "mustern",
+        "surface": "mustert",
+        "definition": "to look someone over carefully, sizing them up visually"
+      },
+      {
+        "type": "adjective",
+        "word": "durchweicht",
+        "surface": "durchweichte",
+        "definition": "thoroughly soaked and soggy from a lot of water"
+      },
+      {
+        "type": "adjective",
+        "word": "offensichtlich",
+        "definition": "obvious; easy to see or notice right away"
+      },
+      {
+        "type": "noun",
+        "word": "Friesennerz",
+        "definition": "a bright yellow oilskin rain jacket typical of northern Germany"
+      },
+      {
+        "type": "noun",
+        "word": "Gummistiefel",
+        "definition": "rubber boots that keep your feet dry in wet weather"
+      },
+      {
+        "type": "expression",
+        "word": "Es gibt kein schlechtes Wetter, nur falsche Kleidung",
+        "definition": "a northern motto: bad weather is really just the wrong clothing"
+      },
+      {
+        "type": "noun",
+        "word": "Lebensmotto",
+        "definition": "a guiding saying that sums up how someone lives"
+      },
+      {
+        "type": "adverb",
+        "word": "vergeblich",
+        "definition": "in vain; without the hoped-for result despite the effort"
+      },
+      {
+        "type": "noun",
+        "word": "Himmel",
+        "definition": "the sky, especially seen as the source of weather"
+      },
+      {
+        "type": "verb",
+        "word": "joggen",
+        "definition": "to run at a steady, gentle pace for exercise"
+      },
+      {
+        "type": "adjective",
+        "word": "albern",
+        "definition": "silly; foolish in a slightly childish, faintly ridiculous way"
+      },
+      {
+        "type": "adjective",
+        "word": "gleichgültig",
+        "definition": "indifferent; not caring about or bothered by something"
+      },
+      {
+        "type": "expression",
+        "word": "vor die Tür kommen",
+        "surface": "vor die Tür",
+        "definition": "to get out of the house and leave home at all"
+      }
+    ],
+    "level": "c1",
+    "topic": "ankommen-im-norden",
+    "slotIndex": 2,
+    "audioUrl": null
+  },
+  {
+    "title": "Hummel Hummel, Mors Mors",
+    "slug": "hummel-hummel-mors-mors",
+    "text": "An der Theke wirft ein Stammkunde Wiebke ein fröhliches Hummel Hummel hin, und sie schießt sofort zurück: Mors Mors. Nora bleibt mit ihrem Franzbrötchen ratlos stehen.\n\nNora: Was war das denn? Ein geheimes Passwort?\nWiebke: So ähnlich. Hummel Hummel, und die richtige Antwort ist Mors Mors. Das gehört hier einfach dazu.\nNora: Und was bedeutet es? Für mich klingt es nach reinem Unsinn.\nWiebke: Es geht auf Hans Hummel zurück, einen Wasserträger von früher. Die Leute riefen ihm den Spitznamen nach, und er antwortete mit etwas Unhöflichem.\nNora: Die Antwort war also ursprünglich eine Frechheit?\nWiebke: Genau. Heute ist es ein Gruß unter Eingeweihten. Wer richtig kontert, gehört dazu.\n\nOle kommt herein, hört das Stichwort und grinst.\n\nOle: Sie bringt dir gerade das Wichtigste bei. Damit blamierst du dich nie wieder auf dem Fischmarkt.\nNora: Und wenn mich jemand testet und mir nichts einfällt?\nOle: Dann bist du sofort enttarnt. Zugezogen, hört man auf der Stelle.\nWiebke: Die Hamburger machen das gern. Ein Fremder wird beiläufig geprüft, ob er die Antwort parat hat.\nNora: Ihr prüft die Leute also heimlich. Das ist gemein und gleichzeitig genial.\nOle: Kein Zettel, keine Regel. Nur ein Ruf, und du weißt, wer wirklich von hier ist.\nWiebke: Sie lernt schnell. Eben noch die Zugezogene, jetzt fast eine Kennerin.\n\nEin weiterer Kunde tritt ein, sieht Nora und ruft ihr grinsend Hummel Hummel zu. Sie holt kurz Luft.\n\nNora: Mors Mors.\nWiebke: Sitzt. Den Rest der Stadt schaffst du auch noch.",
+    "synopsis": "Ein Ruf, eine Antwort, ein Rätsel: Nora knackt Hamburgs geheimes Passwort Hummel Hummel.",
+    "arcType": "late-reveal",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "Hummel Hummel",
+        "definition": "a Hamburg call answered with Mors Mors, a local password"
+      },
+      {
+        "type": "expression",
+        "word": "Mors Mors",
+        "definition": "the required reply to the Hamburg greeting Hummel Hummel"
+      },
+      {
+        "type": "adjective",
+        "word": "fröhlich",
+        "surface": "fröhliches",
+        "definition": "cheerful; full of lighthearted good spirits and happiness"
+      },
+      {
+        "type": "noun",
+        "word": "Stammkunde",
+        "definition": "a regular customer who returns to the same shop often"
+      },
+      {
+        "type": "adjective",
+        "word": "ratlos",
+        "definition": "at a loss; unsure what to think, say or do"
+      },
+      {
+        "type": "noun",
+        "word": "Unsinn",
+        "definition": "nonsense; something with no sense or meaning at all"
+      },
+      {
+        "type": "noun",
+        "word": "Wasserträger",
+        "definition": "someone who once carried and delivered water for a living"
+      },
+      {
+        "type": "noun",
+        "word": "Spitzname",
+        "surface": "Spitznamen",
+        "definition": "a nickname; an informal name given to a person"
+      },
+      {
+        "type": "noun",
+        "word": "Frechheit",
+        "definition": "a cheeky, impudent remark or act that shows no respect"
+      },
+      {
+        "type": "noun",
+        "word": "Gruß",
+        "definition": "a word or gesture used to greet or acknowledge someone"
+      },
+      {
+        "type": "noun",
+        "word": "Eingeweihter",
+        "surface": "Eingeweihten",
+        "definition": "an insider who knows a secret or shared code"
+      },
+      {
+        "type": "verb",
+        "word": "kontern",
+        "surface": "kontert",
+        "definition": "to fire back a quick, fitting reply or counter"
+      },
+      {
+        "type": "noun",
+        "word": "Stichwort",
+        "definition": "a cue word that prompts a particular reaction or response"
+      },
+      {
+        "type": "verb",
+        "word": "blamieren",
+        "surface": "blamierst",
+        "definition": "to embarrass yourself and lose face in front of others"
+      },
+      {
+        "type": "verb",
+        "word": "enttarnen",
+        "surface": "enttarnt",
+        "definition": "to expose someone's hidden identity or true status"
+      },
+      {
+        "type": "adverb",
+        "word": "heimlich",
+        "definition": "secretly; done in a hidden way so others don't notice"
+      },
+      {
+        "type": "adjective",
+        "word": "parat",
+        "definition": "ready to hand; available for immediate use when needed"
+      },
+      {
+        "type": "verb",
+        "word": "prüfen",
+        "surface": "geprüft",
+        "definition": "to test or check something to see if it is right"
+      },
+      {
+        "type": "adjective",
+        "word": "gemein",
+        "definition": "mean; unkind in a deliberately hurtful, unfair way"
+      },
+      {
+        "type": "adjective",
+        "word": "genial",
+        "definition": "brilliant; showing great cleverness or truly inventive skill"
+      },
+      {
+        "type": "noun",
+        "word": "Kennerin",
+        "definition": "a woman with expert knowledge of a particular subject"
+      },
+      {
+        "type": "expression",
+        "word": "Luft holen",
+        "surface": "holt kurz Luft",
+        "definition": "to take a breath, especially to steady yourself before acting"
+      },
+      {
+        "type": "noun",
+        "word": "Fischmarkt",
+        "definition": "Hamburg's famous Sunday market by the harbour selling fish and more"
+      }
+    ],
+    "level": "c1",
+    "topic": "ankommen-im-norden",
+    "slotIndex": 3,
+    "audioUrl": null
+  },
+  {
+    "title": "Ein Kaufmann, ein Wort",
+    "slug": "ein-kaufmann-ein-wort",
+    "text": "Das Kontor liegt in einem alten Speicher an der Elbe, mit knarrenden Dielen und Blick auf die Kräne. Ole, der sie seit ihrer Ankunft eingewöhnt hat, bringt sie hinein; heute beginnt ihr erster Arbeitstag. Herr Carstens empfängt Nora mit einem festen Handschlag und keinem überflüssigen Wort.\n\nCarstens: Willkommen. Bei uns gilt: ein Kaufmann, ein Wort. Was Sie zusagen, halten Sie. Was Sie nicht halten können, sagen Sie nicht zu.\nNora: Verstanden. Und wo finde ich das alles schriftlich? Handbuch, Richtlinien, Prozesse?\nCarstens: Das meiste steht in keinem Handbuch. Ein Handschlag wiegt hier mehr als drei Seiten Vertrag.\nOle: Er meint das ernst. Wer hier per Handschlag zusagt und dann kneift, ist unten durch. Für immer.\nNora: In manchen Ländern hätte ein Anwalt dazu einiges zu sagen.\nCarstens: Anwälte kommen, wenn das Vertrauen schon weg ist. So weit lassen wir es gar nicht kommen.\n\nAm Nachmittag legt Nora ihm ihre erste Kalkulation vor. Carstens liest sie langsam und nickt einmal.\n\nCarstens: Kann man so machen.\nNora: Nur das? Ich habe zwei Tage daran gesessen. Ist es zu dünn?\nCarstens: Nein. Kann man so machen heißt: sauber, richtig, nichts auszusetzen.\nOle: Übersetzung für Zugezogene: Das ist ein Lob. Fast schon eine Umarmung.\nNora: Ein Lob, das wie eine Absage klingt. Wie soll ich hier je den Unterschied hören?\nCarstens: Mit der Zeit. Wer bei uns Beifall erwartet, wartet lange. Wer Vertrauen aufbaut, merkt es an kleineren Zeichen.\nOle: Und du hast gerade deine erste Vokabel gelernt: Kann man so machen.\nNora: Dann sammle ich sie eben, Vokabel für Vokabel. Bis ich eines Tages selbst nur noch nicke.",
+    "synopsis": "Am ersten Tag im Kontor lernt Nora, dass ein Handschlag mehr wiegt als jeder Vertrag.",
+    "arcType": "juxtaposition-discovery",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Kontor",
+        "definition": "an old-fashioned Hanseatic trading or merchant office in Hamburg"
+      },
+      {
+        "type": "noun",
+        "word": "Speicher",
+        "definition": "a warehouse, especially the old brick storehouses by the harbour"
+      },
+      {
+        "type": "adjective",
+        "word": "knarrend",
+        "surface": "knarrenden",
+        "definition": "creaking; making a rough scraping sound under weight or movement"
+      },
+      {
+        "type": "adjective",
+        "word": "fest",
+        "surface": "festen",
+        "definition": "firm and steady; held with strong, confident pressure"
+      },
+      {
+        "type": "adjective",
+        "word": "überflüssig",
+        "surface": "überflüssigen",
+        "definition": "unnecessary; not needed because it adds nothing useful"
+      },
+      {
+        "type": "noun",
+        "word": "Handschlag",
+        "definition": "a handshake, used here to seal a binding spoken agreement"
+      },
+      {
+        "type": "expression",
+        "word": "ein Kaufmann, ein Wort",
+        "definition": "a merchant's spoken word is as binding as a signed contract"
+      },
+      {
+        "type": "verb",
+        "word": "zusagen",
+        "surface": "zusagen",
+        "definition": "to promise or agree firmly to do something"
+      },
+      {
+        "type": "verb",
+        "word": "kneifen",
+        "surface": "kneift",
+        "definition": "to chicken out; to back out of something at the last moment"
+      },
+      {
+        "type": "expression",
+        "word": "unten durch sein",
+        "surface": "unten durch",
+        "definition": "to have lost all respect and be finished with someone"
+      },
+      {
+        "type": "noun",
+        "word": "Kalkulation",
+        "definition": "a worked-out calculation of costs, prices and figures for business"
+      },
+      {
+        "type": "expression",
+        "word": "kann man so machen",
+        "surface": "Kann man so machen",
+        "definition": "the highest dry Hanseatic praise: this is entirely fine, well done"
+      },
+      {
+        "type": "verb",
+        "word": "aussetzen",
+        "surface": "auszusetzen",
+        "definition": "to find fault with; to point out something to criticise"
+      },
+      {
+        "type": "noun",
+        "word": "Lob",
+        "definition": "praise; open approval expressed for a job well done"
+      },
+      {
+        "type": "adjective",
+        "word": "sauber",
+        "definition": "clean and correct; done properly with nothing to fix"
+      },
+      {
+        "type": "adjective",
+        "word": "dünn",
+        "definition": "thin; here meaning weak, flimsy or lacking substance"
+      },
+      {
+        "type": "noun",
+        "word": "Beifall",
+        "definition": "applause; loud, open approval shown for someone's performance"
+      },
+      {
+        "type": "verb",
+        "word": "aufbauen",
+        "surface": "aufbaut",
+        "definition": "to build up something gradually, such as trust or a business"
+      },
+      {
+        "type": "noun",
+        "word": "Zeichen",
+        "definition": "a sign; a small hint that points to something bigger"
+      },
+      {
+        "type": "noun",
+        "word": "Vokabel",
+        "definition": "a vocabulary item; a single word to learn in a language"
+      }
+    ],
+    "level": "c1",
+    "topic": "das-kontor",
+    "slotIndex": 1,
+    "audioUrl": null
+  },
+  {
+    "title": "Understatement verkauft",
+    "slug": "understatement-verkauft",
+    "text": "Für den neuen Kunden hat Nora eine Präsentation voller Superlative gebaut: beste Qualität, schnellste Lieferung, unschlagbarer Preis. Carstens überfliegt die erste Folie und legt sie zur Seite.\n\nCarstens: Streichen Sie die Superlative. Alle.\nNora: Aber genau damit gewinnt man doch einen Kunden. Man muss auffallen.\nCarstens: Hier gewinnt man ihn, indem man nicht übertreibt. Ein Ehrbarer Kaufmann verspricht weniger, als er hält.\nNora: Und wenn die Konkurrenz das Blaue vom Himmel verspricht?\nCarstens: Dann liefert die Konkurrenz Enttäuschung, und wir liefern pünktlich. Der Kunde merkt sich, wer sein Wort hält.\nNora: Also lieber untertreiben als glänzen.\nCarstens: Untertreiben und dann übertreffen. Das ist die hohe Kunst.\n\nDer Kunde, Herr Voss, kommt herein. Nora stellt schlicht die Zahlen und Termine vor, ohne einen einzigen Superlativ.\n\nVoss: Kein großes Theater, keine Versprechen vom Mond. Angenehm. Bei den anderen war ich vor lauter Superlativen schon misstrauisch.\nNora: Wir sagen Ihnen lieber, was sicher geht, als was gut klingt.\nVoss: Das ist genau die Sprache, die ich hören will. Der Vertrag geht an Sie.\nNora: Darf ich fragen, was den Ausschlag gab? Ich war fast unhöflich zurückhaltend.\nVoss: Genau das. Wer nicht drängt, hat es meist nicht nötig. Vertrauen entsteht nicht durch Lautstärke.\nNora: Ich hätte schwören können, meine schwächere Version wäre die stärkere gewesen.\nCarstens: War sie auch. Understatement ist hier kein Stil, sondern ein Verkaufsargument.\nNora: Dann lege ich die Superlative endgültig ins Archiv. Sie haben ausgedient.\nOle: Merk dir das eine. Wer leise auftritt, wird am Ende am lautesten gehört.",
+    "synopsis": "Noras Präsentation strotzt vor Superlativen, doch Carstens weiß: Im Norden verkauft man mit Zurückhaltung.",
+    "arcType": "late-reveal",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Präsentation",
+        "definition": "a talk with slides used to present ideas to clients"
+      },
+      {
+        "type": "noun",
+        "word": "Superlativ",
+        "surface": "Superlative",
+        "definition": "an extreme boastful claim, like best, fastest or greatest"
+      },
+      {
+        "type": "noun",
+        "word": "Folie",
+        "definition": "a single slide in a presentation shown on screen"
+      },
+      {
+        "type": "verb",
+        "word": "überfliegen",
+        "surface": "überfliegt",
+        "definition": "to skim; to read something quickly without close attention"
+      },
+      {
+        "type": "verb",
+        "word": "streichen",
+        "surface": "Streichen",
+        "definition": "to delete or cut something out completely from a text"
+      },
+      {
+        "type": "verb",
+        "word": "auffallen",
+        "definition": "to stand out; to get noticed among many others"
+      },
+      {
+        "type": "verb",
+        "word": "übertreiben",
+        "surface": "übertreibt",
+        "definition": "to exaggerate; to make something sound bigger than it really is"
+      },
+      {
+        "type": "expression",
+        "word": "Ehrbarer Kaufmann",
+        "definition": "the honourable merchant ideal: reliability and modesty over showy promises"
+      },
+      {
+        "type": "expression",
+        "word": "das Blaue vom Himmel versprechen",
+        "surface": "das Blaue vom Himmel",
+        "definition": "to promise wildly more than one can ever deliver"
+      },
+      {
+        "type": "noun",
+        "word": "Konkurrenz",
+        "definition": "the competition; rival firms trying to win the same customers"
+      },
+      {
+        "type": "noun",
+        "word": "Enttäuschung",
+        "definition": "disappointment; the letdown when hopes are not met"
+      },
+      {
+        "type": "adjective",
+        "word": "pünktlich",
+        "definition": "on time; arriving or delivering exactly when promised"
+      },
+      {
+        "type": "expression",
+        "word": "sein Wort halten",
+        "surface": "sein Wort hält",
+        "definition": "to keep one's promise and do what one said"
+      },
+      {
+        "type": "adjective",
+        "word": "schlicht",
+        "definition": "plain and simple; without any decoration or fuss"
+      },
+      {
+        "type": "expression",
+        "word": "Versprechen vom Mond",
+        "definition": "far-fetched promises that could never realistically be kept"
+      },
+      {
+        "type": "adjective",
+        "word": "misstrauisch",
+        "definition": "suspicious; inclined to distrust and doubt other people's claims"
+      },
+      {
+        "type": "adjective",
+        "word": "unschlagbar",
+        "surface": "unschlagbarer",
+        "definition": "unbeatable; impossible for anyone else to top or beat"
+      },
+      {
+        "type": "noun",
+        "word": "Verkaufsargument",
+        "definition": "a selling point that persuades a customer to buy"
+      },
+      {
+        "type": "verb",
+        "word": "ausdienen",
+        "surface": "ausgedient",
+        "definition": "to have served its time; to be no longer useful"
+      },
+      {
+        "type": "noun",
+        "word": "Archiv",
+        "definition": "an archive; a store where old records are kept"
+      }
+    ],
+    "level": "c1",
+    "topic": "das-kontor",
+    "slotIndex": 2,
+    "audioUrl": null
+  },
+  {
+    "title": "Feierabend an der Elbe",
+    "slug": "feierabend-an-der-elbe",
+    "text": "Am Kai vor dem Speicher sammeln sich die Kollegen, jeder mit einer Flasche Alsterwasser in der Hand. Nora traut sich kaum dazu, so wortkarg wirkt die Runde. Ole winkt sie heran; neben ihm lehnt Merle aus der Buchhaltung am Geländer.\n\nOle: Komm her. Feierabend ist heilig, aber laut wird es hier trotzdem nie.\nNora: Genau das irritiert mich. Woanders reden nach der Arbeit alle gleichzeitig durcheinander.\nMerle: Hier redet man erst, wenn man wirklich etwas zu sagen hat. Der Rest ist Schweigen mit Aussicht.\nNora: Und ihr steht wirklich gern schweigend am Wasser?\nMerle: Gern und regelmäßig. Das ist unsere Art von Nähe. Kein Small Talk, nur zusammen dabei sein.\nNora: Und woran merke ich, dass ich wirklich dazugehöre?\nMerle: Daran, dass niemand mehr erklärt, warum gerade geschwiegen wird.\nOle: Sieh es so: Wer dich zum Kai einlädt, meint es ernst. Die Einladung ist mehr wert als jede Umarmung.\n\nCarstens kommt dazu, nickt in die Runde und stellt sich neben Nora ans Geländer.\n\nCarstens: Ordentliche Arbeit heute. Der Kunde hat unterschrieben.\nNora: Danke. Bekomme ich jetzt sogar zwei Sätze am Stück? Das grenzt an Verschwendung.\nCarstens: Feierabend. Da darf man ausnahmsweise großzügig sein.\nOle: Zwei Sätze von Carstens am Kai. Das schreibst du dir am besten rot an.\nNora: Rot angestrichen. Der Tag, an dem der Chef am Wasser fast gesprächig wurde. Dann stoße ich jetzt mit an, ganz schweigend, wie es sich gehört.\nMerle: So ist es. Genau so wirst du mit der Zeit eine von uns.\nNora: Vielleicht bin ich es schon. Ich habe seit zehn Minuten nichts gesagt und fühle mich zum ersten Mal richtig wohl.",
+    "synopsis": "Schweigend am Kai, ein Alsterwasser in der Hand, spürt Nora zum ersten Mal, dass sie dazugehört.",
+    "arcType": "harmonic-close",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Kai",
+        "definition": "a quay; the paved edge of a harbour along the water"
+      },
+      {
+        "type": "noun",
+        "word": "Alsterwasser",
+        "definition": "a northern shandy of beer mixed with lemonade or soda"
+      },
+      {
+        "type": "verb",
+        "word": "sich trauen",
+        "surface": "traut sich",
+        "definition": "to dare; to work up the nerve to do something"
+      },
+      {
+        "type": "adjective",
+        "word": "wortkarg",
+        "definition": "sparing with words; saying very little and rarely chatting"
+      },
+      {
+        "type": "noun",
+        "word": "Runde",
+        "definition": "the group of people gathered together in a small circle"
+      },
+      {
+        "type": "verb",
+        "word": "winken",
+        "surface": "winkt",
+        "definition": "to wave; to signal to someone with your hand"
+      },
+      {
+        "type": "adjective",
+        "word": "heilig",
+        "definition": "sacred; treated as untouchable and not to be disturbed"
+      },
+      {
+        "type": "adverb",
+        "word": "durcheinander",
+        "definition": "all at once and confusingly; chaotically over one another"
+      },
+      {
+        "type": "noun",
+        "word": "Aussicht",
+        "definition": "a view; the scene you can see into the distance"
+      },
+      {
+        "type": "adverb",
+        "word": "regelmäßig",
+        "definition": "regularly; happening again and again at steady intervals"
+      },
+      {
+        "type": "noun",
+        "word": "Nähe",
+        "definition": "closeness; a warm feeling of being emotionally near someone"
+      },
+      {
+        "type": "expression",
+        "word": "Small Talk",
+        "definition": "light casual chat about trivial things to fill silence"
+      },
+      {
+        "type": "verb",
+        "word": "einladen",
+        "surface": "einlädt",
+        "definition": "to invite someone to come and join you somewhere"
+      },
+      {
+        "type": "noun",
+        "word": "Einladung",
+        "definition": "an invitation; an offer asking someone to come along"
+      },
+      {
+        "type": "noun",
+        "word": "Geländer",
+        "definition": "a railing along an edge that you can hold or lean on"
+      },
+      {
+        "type": "noun",
+        "word": "Verschwendung",
+        "definition": "a waste; using far more of something than is needed"
+      },
+      {
+        "type": "adjective",
+        "word": "großzügig",
+        "definition": "generous; giving freely and more than strictly necessary"
+      },
+      {
+        "type": "adverb",
+        "word": "schweigend",
+        "surface": "schweigend",
+        "definition": "in silence; present but saying nothing at all"
+      },
+      {
+        "type": "expression",
+        "word": "wie es sich gehört",
+        "definition": "as is proper; the correct and fitting way to behave"
+      },
+      {
+        "type": "expression",
+        "word": "eine von uns",
+        "definition": "one of us; a fully accepted member of the group"
+      }
+    ],
+    "level": "c1",
+    "topic": "das-kontor",
+    "slotIndex": 3,
+    "audioUrl": null
+  },
+  {
+    "title": "Das Du muss man anbieten",
+    "slug": "das-du-muss-man-anbieten",
+    "text": "Zur kleinen Einweihung in Noras Wohnung kommen nur drei Gäste, dafür bringt jeder etwas mit. Frau Boysen von nebenan stellt einen selbstgebackenen Kuchen auf den Tisch, Ole eine Flasche Wein.\n\nNora: Schön, dass du gekommen bist, Frau Boysen. Ich meine, dass Sie gekommen sind. Entschuldigung.\nBoysen: Kein Grund zur Eile. Das Sie hat seinen Sinn, solange man sich noch beschnuppert.\nNora: Nach dem zweiten Kaffee wäre ich anderswo längst per du. Hier komme ich mir vor wie in einem Tanzkurs.\nOle: Weil es einer ist. Das Du bietet man an, man nimmt es sich nicht. Meist tut es die ältere oder die hiesige Person.\nNora: Also muss ich warten, bis jemand es mir anbietet? Und wenn das nie passiert?\nBoysen: Dann haben Sie es sich nicht verdient. Aber so weit sind wir heute nicht.\n\nBoysen schneidet den Kuchen an und schiebt Nora das erste Stück hin.\n\nBoysen: Ich beobachte Sie seit dem Einzug. Sie halten den Hof sauber, Sie grüßen, Sie drängen sich nicht auf. Das genügt mir.\nNora: Das klingt fast nach einem Zeugnis.\nBoysen: Es ist eins. Ich denke, wir können uns duzen. Ich bin Grit.\nNora: Grit. Sehr gern. Ich bin ganz gerührt, ehrlich.\nOle: Merkst du, was gerade passiert ist? Das kriegen manche Nachbarn in zwanzig Jahren nicht.\nNora: Zwanzig Jahre? Dann behandle ich dieses Du als Auszeichnung.\nBoysen: Genau das ist es. Und jetzt iss dein Stück, bevor der Kuchen trocken wird.",
+    "synopsis": "Auf Noras Einweihung lernt sie, dass man das vertrauliche Du nicht nimmt, sondern geschenkt bekommt.",
+    "arcType": "recurring-character-callback",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Einweihung",
+        "definition": "a housewarming; a small party to celebrate a new home"
+      },
+      {
+        "type": "noun",
+        "word": "Gast",
+        "surface": "Gäste",
+        "definition": "a guest; someone invited to visit or to an event"
+      },
+      {
+        "type": "adjective",
+        "word": "selbstgebacken",
+        "surface": "selbstgebackenen",
+        "definition": "home-baked; made in one's own kitchen rather than bought"
+      },
+      {
+        "type": "expression",
+        "word": "Kein Grund zur Eile",
+        "definition": "no need to rush; there is plenty of time here"
+      },
+      {
+        "type": "expression",
+        "word": "sich beschnuppern",
+        "surface": "beschnuppert",
+        "definition": "to cautiously size each other up while getting acquainted"
+      },
+      {
+        "type": "expression",
+        "word": "per du sein",
+        "surface": "per du",
+        "definition": "to be on first-name, informal terms with someone"
+      },
+      {
+        "type": "expression",
+        "word": "das Du",
+        "surface": "Das Du",
+        "definition": "the informal you; being offered it is a social milestone"
+      },
+      {
+        "type": "verb",
+        "word": "anbieten",
+        "surface": "anbietet",
+        "definition": "to offer something to someone for them to take"
+      },
+      {
+        "type": "adjective",
+        "word": "hiesig",
+        "surface": "hiesige",
+        "definition": "local; belonging to this particular town or place"
+      },
+      {
+        "type": "verb",
+        "word": "sich aufdrängen",
+        "surface": "drängen sich",
+        "definition": "to impose yourself on others; to be pushy or intrusive"
+      },
+      {
+        "type": "verb",
+        "word": "sich verdienen",
+        "surface": "verdient",
+        "definition": "to earn something through your own effort or good conduct"
+      },
+      {
+        "type": "verb",
+        "word": "anschneiden",
+        "surface": "schneidet",
+        "definition": "to cut the first slice into something such as a cake"
+      },
+      {
+        "type": "verb",
+        "word": "beobachten",
+        "surface": "beobachte",
+        "definition": "to watch someone closely and steadily over a period"
+      },
+      {
+        "type": "verb",
+        "word": "genügen",
+        "surface": "genügt",
+        "definition": "to be enough; to satisfy a requirement or standard"
+      },
+      {
+        "type": "noun",
+        "word": "Zeugnis",
+        "definition": "a report or reference formally judging someone's conduct"
+      },
+      {
+        "type": "verb",
+        "word": "duzen",
+        "definition": "to address someone with the informal du rather than Sie"
+      },
+      {
+        "type": "adjective",
+        "word": "gerührt",
+        "definition": "moved; emotionally touched by something warm or kind"
+      },
+      {
+        "type": "noun",
+        "word": "Auszeichnung",
+        "definition": "a distinction or honour awarded for something special"
+      },
+      {
+        "type": "noun",
+        "word": "Stück",
+        "definition": "a piece; a portion cut from something larger"
+      },
+      {
+        "type": "adjective",
+        "word": "trocken",
+        "definition": "dry; here meaning stale and no longer fresh"
+      }
+    ],
+    "level": "c1",
+    "topic": "hanseatische-formen",
+    "slotIndex": 1,
+    "audioUrl": null
+  },
+  {
+    "title": "Überfall mit Wein",
+    "slug": "ueberfall-mit-wein",
+    "text": "Weil Nora das ewige Vertagen satt hat, steht sie unangekündigt vor Merles Tür, eine Flasche Wein in der Hand, als Beweis für spontane Lebensfreude. Merle öffnet im Jogginganzug und erstarrt.\n\nMerle: Nora? Ist etwas passiert? Bist du in Ordnung?\nNora: Alles gut, ich war nur in der Nähe und dachte, ich schaue spontan vorbei. Überraschung!\nMerle: Jetzt? Na gut, komm rein. Es ist gerade nicht besonders aufgeräumt.\n\nIm Flur stapeln sich Wäschekörbe.\n\nNora: Eine Serie läuft, dein Abendessen steht da, für eine Person. Ich störe, das sehe ich jetzt. Ich wollte nur beweisen, dass man auch mal einfach klingeln kann.\nMerle: Kann man. Es fühlt sich nur an, als hätte jemand die Tür zu meinem Kopf geöffnet, ohne vorher zu klopfen.\nNora: Entschuldige. Ich dachte, ich tue uns beiden einen Gefallen.\nMerle: Ich weiß. Setz dich trotzdem. Aber der Wein macht das gerade nicht leichter, ehrlich gesagt.\nNora: Soll ich ihn wieder mitnehmen?\nMerle: Lass ihn hier. Aber trink ihn ein andermal mit mir, angekündigt.\n\nSie sitzen sich gegenüber, und zum ersten Mal weiß Nora nicht, was sie sagen soll. Merle lächelt höflich, aber angespannt.\n\nNora: Ich gehe wieder, oder? Es war keine gute Idee.\nMerle: Ein bisschen. Ruf das nächste Mal kurz an, dann freue ich mich wirklich. Heute habe ich dich eher ertragen.\nNora: Das tut weh, aber es ist fair.\nMerle: So meine ich es nicht böse. Ich mag dich. Ich mag nur keine Überfälle.\n\nNora steht auf, lässt den Wein da und geht mit heißen Ohren die Treppe hinunter.",
+    "synopsis": "Genervt vom ewigen Terminplanen taucht Nora unangekündigt bei Merle auf, und der spontane Besuch endet in unbequemer Stille.",
+    "arcType": "reframe-turn",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "vertagen",
+        "surface": "Vertagen",
+        "definition": "to postpone; to put something off to a later day"
+      },
+      {
+        "type": "verb",
+        "word": "satthaben",
+        "surface": "satt hat",
+        "definition": "to be fed up with; to be thoroughly sick of something"
+      },
+      {
+        "type": "adjective",
+        "word": "unangekündigt",
+        "definition": "unannounced; turning up with no warning given at all beforehand"
+      },
+      {
+        "type": "adjective",
+        "word": "spontan",
+        "definition": "spontaneous; done on impulse without planning it ahead"
+      },
+      {
+        "type": "noun",
+        "word": "Lebensfreude",
+        "definition": "zest for life; joyful energy and a love of living"
+      },
+      {
+        "type": "verb",
+        "word": "beweisen",
+        "definition": "to prove; to show that something is true by demonstration"
+      },
+      {
+        "type": "expression",
+        "word": "in der Nähe",
+        "definition": "nearby; close at hand and only a short distance away"
+      },
+      {
+        "type": "verb",
+        "word": "erstarren",
+        "surface": "erstarrt",
+        "definition": "to freeze up; to go rigid with shock or surprise"
+      },
+      {
+        "type": "noun",
+        "word": "Jogginganzug",
+        "definition": "a tracksuit worn for lounging around or for exercise"
+      },
+      {
+        "type": "adjective",
+        "word": "aufgeräumt",
+        "definition": "tidy; neat, with everything put in its place"
+      },
+      {
+        "type": "noun",
+        "word": "Flur",
+        "definition": "a hallway; the entrance corridor inside a home"
+      },
+      {
+        "type": "noun",
+        "word": "Wäschekorb",
+        "surface": "Wäschekörbe",
+        "definition": "a laundry basket for carrying dirty or clean washing"
+      },
+      {
+        "type": "noun",
+        "word": "Abendessen",
+        "definition": "dinner; the main meal eaten in the evening at home"
+      },
+      {
+        "type": "verb",
+        "word": "stören",
+        "surface": "störe",
+        "definition": "to disturb; to intrude on and interrupt someone"
+      },
+      {
+        "type": "expression",
+        "word": "einen Gefallen tun",
+        "surface": "einen Gefallen",
+        "definition": "to do someone a favour; to help them out kindly"
+      },
+      {
+        "type": "adjective",
+        "word": "angespannt",
+        "definition": "tense; strained, on edge and visibly ill at ease"
+      },
+      {
+        "type": "verb",
+        "word": "ertragen",
+        "definition": "to endure; to put up with something unpleasant"
+      },
+      {
+        "type": "expression",
+        "word": "ehrlich gesagt",
+        "definition": "to be honest; speaking frankly and openly for once"
+      },
+      {
+        "type": "noun",
+        "word": "Überfall",
+        "surface": "Überfälle",
+        "definition": "an ambush; here an unwelcome, out-of-the-blue surprise visit"
+      },
+      {
+        "type": "expression",
+        "word": "heiße Ohren",
+        "surface": "heißen Ohren",
+        "definition": "burning ears; the hot flush of sudden embarrassment"
+      }
+    ],
+    "level": "c1",
+    "topic": "hanseatische-formen",
+    "slotIndex": 2,
+    "audioUrl": null
+  },
+  {
+    "title": "Man fragt nicht",
+    "slug": "man-fragt-nicht",
+    "text": "In der Teeküche des Kontors fragt Nora ihre Kollegin Merle beiläufig, was sie eigentlich verdiene. Merle stellt die Tasse ab und schweigt eine Sekunde zu lang.\n\nMerle: Das fragt man hier nicht. Nicht aus Kälte. Es geht dich schlicht nichts an, und das ist auch gut so.\nNora: Entschuldige. Bei mir daheim tauscht man so etwas offen aus, fast zur Begrüßung.\nMerle: Hier gilt das Gegenteil. Je näher man sich ist, desto weniger bohrt man.\nNora: Das leuchtet mir nicht ein. Dabei zeigt Interesse doch gerade, dass man sich kümmert.\nOle: Interesse ja, Verhör nein. Gehalt, Miete, Beziehung, Kinderwunsch: das fragt man nicht. Man wartet, bis es einer von selbst erzählt.\nNora: Und woran erkenne ich dann, ob mich jemand mag?\nMerle: Daran, dass er dich in Ruhe lässt und trotzdem da ist. Zurückhaltung ist hier ein Zeichen von Respekt.\n\nNora rührt in ihrem Tee und denkt eine Weile nach.\n\nNora: Also ist Nicht-Fragen bei euch das, was bei uns das Ausfragen ist.\nOle: Ganz genau. Wer bohrt, wirkt übergriffig, nicht herzlich.\nNora: Und Komplimente? Darf man wenigstens die offen machen?\nMerle: Sparsam. Ein zu großes Lob wirkt hier schnell aufdringlich. Lieber ein knappes Wort, das dann aber wirklich zählt.\nNora: Und wann darf man dann doch persönlich werden?\nMerle: Wenn der andere die Tür aufmacht. Vorher klopft man nicht einmal.\nNora: Gut. Dann nehme ich meine Frage von eben feierlich zurück.\nMerle: Angenommen. Und weil du fragst, ohne zu fragen: Mir geht es bestens.",
+    "synopsis": "Eine harmlose Frage nach dem Gehalt zeigt Nora, dass im Norden Nicht-Fragen das höchste Zeichen von Respekt ist.",
+    "arcType": "juxtaposition-discovery",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Teeküche",
+        "definition": "a small office kitchen for making tea, coffee and snacks"
+      },
+      {
+        "type": "adverb",
+        "word": "beiläufig",
+        "definition": "casually; in passing, without making it seem important"
+      },
+      {
+        "type": "verb",
+        "word": "schweigen",
+        "surface": "schweigt",
+        "definition": "to stay silent; to deliberately say nothing at all"
+      },
+      {
+        "type": "noun",
+        "word": "Kälte",
+        "definition": "coldness; an unfriendly, emotionally distant manner toward others"
+      },
+      {
+        "type": "expression",
+        "word": "das fragt man nicht",
+        "surface": "fragt man nicht",
+        "definition": "that is not something one is allowed to ask about"
+      },
+      {
+        "type": "verb",
+        "word": "bohren",
+        "surface": "bohrt",
+        "definition": "to press with prying questions someone would rather not answer"
+      },
+      {
+        "type": "verb",
+        "word": "einleuchten",
+        "surface": "leuchtet",
+        "definition": "to make immediate sense; to be readily clear and understandable"
+      },
+      {
+        "type": "verb",
+        "word": "sich kümmern",
+        "surface": "kümmert",
+        "definition": "to care about someone and look after their wellbeing"
+      },
+      {
+        "type": "noun",
+        "word": "Verhör",
+        "definition": "an interrogation; a harsh, prying session of pointed questions"
+      },
+      {
+        "type": "noun",
+        "word": "Gehalt",
+        "definition": "a salary; the fixed money one is paid for work"
+      },
+      {
+        "type": "noun",
+        "word": "Beziehung",
+        "definition": "a relationship, especially a romantic partnership between two people"
+      },
+      {
+        "type": "noun",
+        "word": "Kinderwunsch",
+        "definition": "the wish to have children of one's own someday"
+      },
+      {
+        "type": "expression",
+        "word": "in Ruhe lassen",
+        "surface": "in Ruhe lässt",
+        "definition": "to leave someone alone and stop bothering them"
+      },
+      {
+        "type": "noun",
+        "word": "Zurückhaltung",
+        "definition": "reserve; a restrained, undemonstrative manner toward other people"
+      },
+      {
+        "type": "noun",
+        "word": "Respekt",
+        "definition": "respect; regard shown for someone's worth or boundaries"
+      },
+      {
+        "type": "expression",
+        "word": "von selbst",
+        "definition": "of its own accord; without being prompted or asked"
+      },
+      {
+        "type": "adjective",
+        "word": "übergriffig",
+        "definition": "overstepping boundaries; intrusive in an inappropriate, presumptuous way"
+      },
+      {
+        "type": "adjective",
+        "word": "herzlich",
+        "definition": "warm-hearted; showing genuine warmth and friendliness toward people"
+      },
+      {
+        "type": "adverb",
+        "word": "feierlich",
+        "definition": "solemnly; in a formal, ceremonious and deliberate manner"
+      },
+      {
+        "type": "verb",
+        "word": "austauschen",
+        "surface": "tauscht",
+        "definition": "to exchange; to share things back and forth with others"
+      },
+      {
+        "type": "verb",
+        "word": "aufmachen",
+        "surface": "aufmacht",
+        "definition": "to open something, such as a door, for someone"
+      }
+    ],
+    "level": "c1",
+    "topic": "hanseatische-formen",
+    "slotIndex": 3,
+    "audioUrl": null
+  },
+  {
+    "title": "Wenn das Wasser kehrt",
+    "slug": "wenn-das-wasser-kehrt",
+    "text": "Als die Sturmflut ihren Höchststand erreicht, zieht Ole Nora in Gummistiefeln hinunter zum Fischmarkt. Ein Dutzend Leute steht dort schweigend am Wasser und schaut zu, wie die Elbe über die Kaikante leckt.\n\nNora: Sollten wir nicht eher weg vom Wasser als hin? Das ist eine Flutwarnung, kein Feuerwerk.\nOle: Guck sie dir an. Keiner rennt, keiner filmt. Sie schauen nur.\nNora: Und du bist sicher, dass das gleich nicht die ganze Halle wegspült?\nOle: Bis zur Fischauktionshalle sind es noch zwei Stufen. Die kennt das Wasser auswendig.\n\nEin breitschultriger Mann im Ölzeug nickt Richtung Pegel, ohne den Blick zu heben.\n\nMann: Kehrt. Jetzt geht sie zurück.\nNora: Woran sehen Sie das? Ich sehe nur graues Wasser, das zittert.\nMann: An der Treppe. Eine Stufe war eben noch nass, jetzt trocknet sie. Das reicht.\nNora: Und ich habe die ganze Zeit auf eine Katastrophe gewartet.\nOle: Stattdessen schaust du der Elbe beim Atmen zu.\nNora: Komisch. Mein Puls wird gerade langsamer, nicht schneller.\nOle: Siehst du. Sie kommt und sie geht. Das war schon lange vor uns so.\nNora: Und ihr habt das als Kinder schon gemacht, einfach zusehen?\nOle: Jeden Herbst aufs Neue. Man wächst damit auf.\nNora: Kein Wort dazu von den anderen. Sie stehen einfach da und wissen es besser.\nMann: Reden hält das Wasser nicht auf. Gehen Sie heim, es ist vorbei.\n\nNora dreht sich an der Ecke noch einmal zum Wasser um, dann folgt sie den anderen nach Hause, wo morgen nur noch Treibholz liegen wird.",
+    "synopsis": "Statt vor der Sturmflut zu fliehen, steht Nora mit schweigenden Fremden am Wasser und sieht zu, wie die Flut kehrt.",
+    "arcType": "reframe-turn",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Sturmflut",
+        "definition": "a storm surge; a dangerous flood driven inland by a storm"
+      },
+      {
+        "type": "noun",
+        "word": "Höchststand",
+        "definition": "the peak level; the very highest point something reaches"
+      },
+      {
+        "type": "verb",
+        "word": "erreichen",
+        "surface": "erreicht",
+        "definition": "to reach; to arrive at a certain level or point"
+      },
+      {
+        "type": "noun",
+        "word": "Kaikante",
+        "definition": "the edge of the quay running along the water"
+      },
+      {
+        "type": "verb",
+        "word": "lecken",
+        "surface": "leckt",
+        "definition": "to lap; of water licking up over an edge"
+      },
+      {
+        "type": "noun",
+        "word": "Flutwarnung",
+        "definition": "a flood warning issued before dangerously high water"
+      },
+      {
+        "type": "verb",
+        "word": "wegspülen",
+        "surface": "wegspült",
+        "definition": "to wash away; to sweep something off with rushing water"
+      },
+      {
+        "type": "expression",
+        "word": "auswendig",
+        "definition": "by heart; knowing something so well no thought is needed"
+      },
+      {
+        "type": "noun",
+        "word": "Ölzeug",
+        "definition": "oilskins; waterproof gear worn against wind and spray"
+      },
+      {
+        "type": "adjective",
+        "word": "breitschultrig",
+        "surface": "breitschultriger",
+        "definition": "broad-shouldered; sturdily and powerfully built across the frame"
+      },
+      {
+        "type": "noun",
+        "word": "Pegel",
+        "definition": "a water gauge showing how high the water is standing"
+      },
+      {
+        "type": "verb",
+        "word": "heben",
+        "definition": "to lift; to raise something up to a higher position"
+      },
+      {
+        "type": "verb",
+        "word": "zittern",
+        "surface": "zittert",
+        "definition": "to tremble; to shake with tiny, rapid movements"
+      },
+      {
+        "type": "noun",
+        "word": "Stufe",
+        "definition": "a step; one of the treads in a flight of stairs"
+      },
+      {
+        "type": "noun",
+        "word": "Puls",
+        "definition": "the pulse; the steady beat of blood you can feel"
+      },
+      {
+        "type": "adjective",
+        "word": "langsam",
+        "surface": "langsamer",
+        "definition": "slow; here of a racing pulse gradually calming down"
+      },
+      {
+        "type": "verb",
+        "word": "zuschauen",
+        "surface": "schaut zu",
+        "definition": "to watch on; to look on as something slowly unfolds"
+      },
+      {
+        "type": "expression",
+        "word": "es ist vorbei",
+        "definition": "it is over; the danger or the trouble has now passed"
+      },
+      {
+        "type": "verb",
+        "word": "sich umdrehen",
+        "surface": "dreht sich",
+        "definition": "to turn around, here to look back one last time"
+      },
+      {
+        "type": "noun",
+        "word": "Treibholz",
+        "definition": "driftwood; wood washed ashore by the tide and waves"
+      }
+    ],
+    "level": "c1",
+    "topic": "sturm-und-gesundheit",
+    "slotIndex": 1,
+    "audioUrl": null
+  },
+  {
+    "title": "Grog gegen alles",
+    "slug": "grog-gegen-alles",
+    "text": "Der Novembersturm hat Nora eine Erkältung beschert, und die Praxis bietet erst in Wochen einen Termin. Es klopft, und Grit steht mit einer dampfenden Kanne vor der Tür.\n\nGrit: Aufmachen, nicht reden. Ich habe Grog gekocht: heißes Wasser, brauner Zucker, ein Schuss Rum. Das norddeutsche Heilmittel Nummer eins.\nNora: Ich wollte gerade beim Arzt um einen Termin betteln. Der nächste kommt praktisch nächstes Jahr.\nGrit: Wegen einer Erkältung? Die kuriert sich von allein. Was der Arzt dir sagt, sage ich dir gratis: Wärme, Ruhe, Grog.\nNora: Kein Rezept, keine Tablette, nur ein heißes Getränk?\nGrit: Tabletten dämpfen, Grog wärmt von innen. Das eine kuriert, das andere tröstet.\nNora: Bei uns rennt man mit jedem Schnupfen zum Arzt. Hier soll ich mich einfach ins Bett legen?\nGrit: Auskurieren nennt man das. Wer sich verkriecht, ist in drei Tagen wieder auf den Beinen. Wer tapfer weiterarbeitet, in zwei Wochen.\n\nGrit stellt eine Wärmflasche aufs Sofa und zieht die Vorhänge zu.\n\nGrit: Der Grog ist gegen den Husten, die Wärmflasche gegen den Rest. Und morgen kommt Fiete und bringt Suppe.\nNora: Ihr organisiert eine ganze Pflegekette für einen simplen Schnupfen?\nGrit: Kein Aufheben, nur das Übliche. Man lässt hier keinen allein husten. Das gehört sich einfach.\nNora: Und wenn ich mich einmal revanchieren will?\nGrit: Dann kochst du beim nächsten Kranken den Grog. So ist das im Haus.\nNora: Und ich dachte immer, ich müsste hier alles mit mir selbst ausmachen.\nGrit: Bei Behörden ja. Bei Fieber nein. Trink aus, schlaf, und beschwer dich nicht.\nNora: Dann ergebe ich mich dem Grog und der nächsten Wärmflasche.",
+    "synopsis": "Mit einer Erkältung und einem Termin erst in Wochen entdeckt Nora das norddeutsche Heilmittel: Grog, Ruhe und eine ganze Nachbarschaft, die sich kümmert.",
+    "arcType": "daily-encounter",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Erkältung",
+        "definition": "a common cold; a mild illness with a runny nose and cough"
+      },
+      {
+        "type": "verb",
+        "word": "bescheren",
+        "surface": "beschert",
+        "definition": "to land someone with something unwelcome; to bring it upon them"
+      },
+      {
+        "type": "adjective",
+        "word": "dampfend",
+        "definition": "steaming; giving off hot, visible vapour into the air"
+      },
+      {
+        "type": "noun",
+        "word": "Grog",
+        "definition": "a hot northern drink of rum, sugar and boiling water"
+      },
+      {
+        "type": "noun",
+        "word": "Rum",
+        "definition": "a strong spirit distilled from sugar cane, warming in Grog"
+      },
+      {
+        "type": "noun",
+        "word": "Heilmittel",
+        "definition": "a remedy; something used to cure or ease an illness"
+      },
+      {
+        "type": "adverb",
+        "word": "gratis",
+        "definition": "free of charge; given for nothing at all"
+      },
+      {
+        "type": "verb",
+        "word": "kurieren",
+        "surface": "kuriert",
+        "definition": "to cure; to make an illness or ailment go away"
+      },
+      {
+        "type": "noun",
+        "word": "Schnupfen",
+        "definition": "a head cold; a blocked or runny, sniffly nose"
+      },
+      {
+        "type": "verb",
+        "word": "auskurieren",
+        "surface": "Auskurieren",
+        "definition": "to fully recover from an illness by resting until well"
+      },
+      {
+        "type": "verb",
+        "word": "sich verkriechen",
+        "surface": "verkriecht",
+        "definition": "to hole up; to hide away somewhere warm and cosy"
+      },
+      {
+        "type": "expression",
+        "word": "auf den Beinen",
+        "definition": "up and about; back on your feet and active again"
+      },
+      {
+        "type": "adverb",
+        "word": "tapfer",
+        "definition": "bravely; bearing hardship without a word of complaint"
+      },
+      {
+        "type": "noun",
+        "word": "Wärmflasche",
+        "definition": "a hot-water bottle held against the body for warmth"
+      },
+      {
+        "type": "noun",
+        "word": "Husten",
+        "definition": "a cough; the reflex of forcing air out of the throat"
+      },
+      {
+        "type": "noun",
+        "word": "Pflegekette",
+        "definition": "a chain of people taking turns to care for someone"
+      },
+      {
+        "type": "expression",
+        "word": "Kein Aufheben",
+        "definition": "no fuss; making no big deal out of something"
+      },
+      {
+        "type": "adjective",
+        "word": "simpel",
+        "surface": "simplen",
+        "definition": "simple; plain and ordinary, nothing complicated about it"
+      },
+      {
+        "type": "expression",
+        "word": "das gehört sich",
+        "surface": "gehört sich",
+        "definition": "that is the done thing; it is only proper and decent"
+      },
+      {
+        "type": "verb",
+        "word": "sich ergeben",
+        "surface": "ergebe",
+        "definition": "to give in; to surrender to something you cannot fight"
+      }
+    ],
+    "level": "c1",
+    "topic": "sturm-und-gesundheit",
+    "slotIndex": 2,
+    "audioUrl": null
+  },
+  {
+    "title": "Moin, Neuland",
+    "slug": "moin-neuland",
+    "text": "Auf demselben Kopfsteinpflaster in Ottensen zieht eine Fremde ihren Koffer und übt laut eine viel zu lange Begrüßung. Nora, die gerade bei Wiebke Franzbrötchen holt, erkennt sich sofort wieder.\n\nSofia: Guten Morgen, ich wünsche Ihnen einen wunderschönen, angenehmen Tag! War das richtig? Ich will hier unbedingt höflich sein.\nNora: Fast. Aber spar dir die Hälfte. Hier sagt man einfach Moin, morgens, mittags, abends. Ein Wort für alles.\nSofia: Nur ein Wort? Das klingt so kurz, fast unfreundlich.\nNora: Das dachte ich am Anfang auch. Glaub mir, hinter dem einen Wort steckt mehr Wärme als hinter zehn höflichen Sätzen.\n\nWiebke reicht Nora die Tüte über die Theke und mustert die Neue mit stillem Wohlwollen.\n\nWiebke: Die Zweite, die du an die Hand nimmst. Vor einem Jahr standest du genau da, mit genau dem Blick.\nSofia: Und die Leute hier, sind die wirklich so verschlossen, wie alle sagen?\nNora: Verschlossen nicht. Sparsam mit Worten, großzügig mit Taten. Wer wenig fragt, meint es oft am ernstesten.\nSofia: Woher wissen Sie das alles schon nach so kurzer Zeit?\nNora: Weil mich vor einem Jahr jemand an genau dieser Theke an die Hand genommen hat. Jetzt bist du dran.\n\nNora bricht ihr Franzbrötchen in zwei Hälften und reicht Sofia die größere.\n\nNora: Der erste Trick heißt: nicht drängeln, nur dableiben. Der Rest kommt von allein.\nSofia: Danke. Und wie sage ich noch mal richtig hallo?\nNora: Moin. Mehr nicht. Und irgendwann sagst du es im Vorbeigehen, ohne nachzudenken, wie eine von hier.\nWiebke: So wird das. Aus dir wird auch noch eine Hamburgerin, Kind. Es dauert nur.",
+    "synopsis": "Ein Jahr später steht Nora selbst an Wiebkes Theke und nimmt eine neue Zugezogene an die Hand, genau so, wie es einst mit ihr geschah.",
+    "arcType": "harmonic-close",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Fremde",
+        "definition": "a stranger; a person you do not yet know"
+      },
+      {
+        "type": "noun",
+        "word": "Koffer",
+        "definition": "a suitcase for carrying clothes and belongings when travelling"
+      },
+      {
+        "type": "verb",
+        "word": "sich wiedererkennen",
+        "surface": "erkennt sich",
+        "definition": "to see yourself in someone; to recognise your own past self"
+      },
+      {
+        "type": "adverb",
+        "word": "unbedingt",
+        "definition": "absolutely; without fail, no matter what it takes"
+      },
+      {
+        "type": "verb",
+        "word": "sparen",
+        "surface": "spar",
+        "definition": "to save; here to spare yourself needless words or effort"
+      },
+      {
+        "type": "noun",
+        "word": "Hälfte",
+        "definition": "a half; one of two equal parts of something"
+      },
+      {
+        "type": "adjective",
+        "word": "unfreundlich",
+        "definition": "unfriendly; cold and not welcoming toward other people"
+      },
+      {
+        "type": "noun",
+        "word": "Wärme",
+        "definition": "warmth; kindly, affectionate feeling shown toward other people"
+      },
+      {
+        "type": "expression",
+        "word": "an die Hand nehmen",
+        "surface": "an die Hand",
+        "definition": "to take someone under your wing and guide them"
+      },
+      {
+        "type": "adjective",
+        "word": "verschlossen",
+        "definition": "closed-off; keeping your thoughts and feelings to yourself"
+      },
+      {
+        "type": "adjective",
+        "word": "still",
+        "surface": "stillem",
+        "definition": "quiet; silent and without any show or fuss about it"
+      },
+      {
+        "type": "noun",
+        "word": "Taten",
+        "definition": "deeds; concrete actions taken rather than just words spoken"
+      },
+      {
+        "type": "noun",
+        "word": "Wohlwollen",
+        "definition": "goodwill; a kindly, benevolent attitude of quiet approval toward someone"
+      },
+      {
+        "type": "verb",
+        "word": "brechen",
+        "surface": "bricht",
+        "definition": "to break something apart into separate pieces or halves"
+      },
+      {
+        "type": "noun",
+        "word": "Trick",
+        "definition": "a trick; a clever knack for getting something right"
+      },
+      {
+        "type": "verb",
+        "word": "drängeln",
+        "definition": "to push and jostle; to impatiently press forward"
+      },
+      {
+        "type": "verb",
+        "word": "dableiben",
+        "definition": "to stay put; to remain where you are instead of leaving"
+      },
+      {
+        "type": "verb",
+        "word": "nachdenken",
+        "surface": "nachzudenken",
+        "definition": "to think something over carefully in your own mind"
+      },
+      {
+        "type": "expression",
+        "word": "eine von hier",
+        "definition": "one of the locals; someone who truly belongs here"
+      },
+      {
+        "type": "adjective",
+        "word": "angenehm",
+        "definition": "pleasant; nice and thoroughly agreeable to be around"
+      }
+    ],
+    "level": "c1",
+    "topic": "sturm-und-gesundheit",
+    "slotIndex": 3,
+    "audioUrl": null
+  },
+  {
+    "title": "Probetörn",
+    "slug": "probetoern",
+    "text": "Der Wind steht schräg auf die Elbe, das Boot krängt hart, und Nora klammert sich an die nasse Reling. Dose steht am Ruder und ruft knappe Kommandos, die Fiete blitzschnell in Handgriffe übersetzt.\n\nDose: Vorschot dicht! Und nicht ins Wasser starren, das macht nur seekrank.\nNora: Welche Leine war die Vorschot? Es sind zu viele, und alle sehen gleich aus.\nFiete: Die in deiner rechten Hand. Zieh, bis das Segel steht. Fester. Fester!\n\nEine Bö erwischt das Boot, Gischt klatscht über Bord, und Nora verliert für einen Moment den Halt.\n\nNora: Das ist kein Ausflug, das ist ein Ringkampf mit dem Wetter.\nDose: Reden kostet Kraft. Klarieren, festhalten, atmen. In dieser Reihenfolge.\nFiete: Du machst das gar nicht schlecht. Nur deinen Magen musst du noch überreden.\nNora: Der Magen hört gerade auf keinen von uns.\nDose: Dann sieh zum Horizont, nicht auf die Wellen. Fester Punkt, fester Magen.\nNora: Horizont. Gut. Der bleibt wenigstens stehen.\n\nSie beißt die Zähne zusammen und hält den Kurs, bis die Ansteuerungstonne vorbeizieht. Dose nickt nur knapp.\n\nFiete: Das Nicken eben, hast du das gesehen? Das gibt es bei ihm selten.\nNora: Ich habe nur überlebt und eine Leine gehalten. Reicht das schon?\nDose: An Land wird geredet. Jetzt wird gesegelt. Das Ruder kommt gleich zu dir.\nNora: Zu mir? Ich kann das doch noch gar nicht.\nFiete: Genau deshalb. Hand ans Ruder, Blick nach vorn. Ob du bleibst, entscheidet die nächste Bö, nicht die Versammlung.",
+    "synopsis": "Beim Probetörn auf stürmischer Elbe zählt kein Formular mehr, nur die nasse Leine in Noras Hand und Doses knappes Nicken.",
+    "arcType": "mini-cliffhanger",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "schräg",
+        "definition": "at a slant; angled sideways rather than straight on"
+      },
+      {
+        "type": "verb",
+        "word": "krängen",
+        "surface": "krängt",
+        "definition": "to heel over; of a boat leaning far under the wind"
+      },
+      {
+        "type": "verb",
+        "word": "sich klammern",
+        "surface": "klammert",
+        "definition": "to cling on tightly to something out of fear"
+      },
+      {
+        "type": "noun",
+        "word": "Reling",
+        "definition": "the railing running around the edge of a boat's deck"
+      },
+      {
+        "type": "noun",
+        "word": "Ruder",
+        "definition": "the tiller or helm used to steer a boat"
+      },
+      {
+        "type": "adjective",
+        "word": "knapp",
+        "surface": "knappe",
+        "definition": "terse; brief and sparing, giving only what is needed"
+      },
+      {
+        "type": "noun",
+        "word": "Kommando",
+        "surface": "Kommandos",
+        "definition": "a sharp spoken order, especially barked on a boat"
+      },
+      {
+        "type": "adverb",
+        "word": "blitzschnell",
+        "definition": "lightning-fast; done in a tiny fraction of a second"
+      },
+      {
+        "type": "noun",
+        "word": "Handgriff",
+        "surface": "Handgriffe",
+        "definition": "a practised hand movement; a quick, deft manual action"
+      },
+      {
+        "type": "noun",
+        "word": "Vorschot",
+        "definition": "the foresail sheet, a line that trims the front sail"
+      },
+      {
+        "type": "verb",
+        "word": "starren",
+        "definition": "to stare fixedly and motionlessly at one single spot"
+      },
+      {
+        "type": "adjective",
+        "word": "seekrank",
+        "definition": "seasick; feeling sick from a boat's motion on the water"
+      },
+      {
+        "type": "noun",
+        "word": "Segel",
+        "definition": "a sail; the sheet of cloth that catches the wind"
+      },
+      {
+        "type": "noun",
+        "word": "Bö",
+        "definition": "a gust; a sudden sharp blast of wind"
+      },
+      {
+        "type": "noun",
+        "word": "Gischt",
+        "definition": "spray; the white foam thrown up by breaking water"
+      },
+      {
+        "type": "expression",
+        "word": "den Halt verlieren",
+        "surface": "den Halt",
+        "definition": "to lose your grip or footing and nearly fall"
+      },
+      {
+        "type": "expression",
+        "word": "die Zähne zusammenbeißen",
+        "surface": "die Zähne zusammen",
+        "definition": "to grit your teeth and push on through the pain"
+      },
+      {
+        "type": "verb",
+        "word": "klarieren",
+        "surface": "Klarieren",
+        "definition": "to clear and make the lines and gear ready on deck"
+      },
+      {
+        "type": "verb",
+        "word": "überreden",
+        "definition": "to talk round; to persuade someone into doing something"
+      },
+      {
+        "type": "noun",
+        "word": "Ansteuerungstonne",
+        "definition": "a marker buoy showing the safe way into a channel"
+      }
+    ],
+    "level": "c1",
+    "topic": "vereine-und-freundschaft",
+    "slotIndex": 1,
+    "audioUrl": null
+  },
+  {
+    "title": "Am Millerntor wird geschrien",
+    "slug": "am-millerntor-wird-geschrien",
+    "text": "Am Millerntor drängt sich die Menge in Braun und Weiß, und die sonst so zugeknöpften Hamburger brüllen aus voller Kehle. Fiete drückt Nora einen Schal in die Hand, Merle klatscht schon im Takt mit.\n\nFiete: Willkommen bei St. Pauli. Kein Verein, eine Haltung. Hier zählt nicht der Pokal, hier zählt, für wen du singst.\nNora: Und der Totenkopf überall? Das wirkt eher nach Piraten als nach Fußball.\nMerle: Ist auch so gemeint. St. Pauli ist der Underdog, der Kiez, das linke Herz der Stadt. Der HSV ist die feine Alster, wir sind die raue Hafenkante.\nNora: Also spaltet ein Fußball die ganze Stadt in zwei Lager?\nFiete: In die schönste Art von Streit. Frag einen Hamburger nach seinem Verein, und du kennst ihn besser als nach jedem langen Gespräch.\nNora: Und ihr, die ihr sonst kein Wort zu viel sagt, singt hier zwei Stunden am Stück?\n\nEin Tor fällt, und die Tribüne explodiert in einem einzigen Aufschrei.\n\nMerle: Das ist es. Zwei Stunden lang darfst du hier alles rauslassen, was die Woche über drin bleibt.\nNora: Ich verstehe. Der Fischmarkt am Sonntag, das Stadion am Samstag. Eure Ventile für die ganze Zurückhaltung.\nFiete: Genau. Unter der Woche Deckel drauf, am Wochenende Dampf ablassen. Sonst hält das keiner aus.\nNora: Dann brülle ich jetzt einfach mit, auch ohne die Gesänge schon zu kennen.\nMerle: Regeln gibt es hier keine, nur Herzblut. Die Texte lernst du beim dritten Spiel von allein.",
+    "synopsis": "Im Stadion von St. Pauli sieht Nora, wie die sonst so zugeknöpften Hamburger zwei Stunden lang alles herausbrüllen.",
+    "arcType": "juxtaposition-discovery",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Menge",
+        "definition": "a crowd; a large mass of people gathered together"
+      },
+      {
+        "type": "adjective",
+        "word": "zugeknöpft",
+        "definition": "buttoned-up; reserved and unwilling to open up to others"
+      },
+      {
+        "type": "expression",
+        "word": "aus voller Kehle",
+        "definition": "at the top of one's voice; as loudly as possible"
+      },
+      {
+        "type": "noun",
+        "word": "Schal",
+        "definition": "a scarf, here worn to show which team you support"
+      },
+      {
+        "type": "expression",
+        "word": "im Takt",
+        "definition": "in time; keeping to the beat or rhythm together"
+      },
+      {
+        "type": "verb",
+        "word": "brüllen",
+        "surface": "brüllen",
+        "definition": "to bellow; to shout very loudly and forcefully"
+      },
+      {
+        "type": "noun",
+        "word": "Totenkopf",
+        "definition": "a skull emblem, the defiant symbol of the St. Pauli club"
+      },
+      {
+        "type": "noun",
+        "word": "Underdog",
+        "definition": "the underdog; the weaker side expected to lose"
+      },
+      {
+        "type": "noun",
+        "word": "Kiez",
+        "definition": "a lively city neighbourhood with its own strong character"
+      },
+      {
+        "type": "verb",
+        "word": "spalten",
+        "surface": "spaltet",
+        "definition": "to split something into opposed camps or bitterly divide it"
+      },
+      {
+        "type": "noun",
+        "word": "Hafenkante",
+        "definition": "the rough working edge of the harbour along the water"
+      },
+      {
+        "type": "noun",
+        "word": "Tribüne",
+        "definition": "the stand where spectators sit or stand at a stadium"
+      },
+      {
+        "type": "verb",
+        "word": "explodieren",
+        "surface": "explodiert",
+        "definition": "to erupt suddenly, here of a roaring, exploding crowd"
+      },
+      {
+        "type": "verb",
+        "word": "klatschen",
+        "surface": "klatscht",
+        "definition": "to clap; to applaud by striking your hands together"
+      },
+      {
+        "type": "verb",
+        "word": "rauslassen",
+        "definition": "to let something out; to release pent-up feelings freely"
+      },
+      {
+        "type": "expression",
+        "word": "Dampf ablassen",
+        "surface": "Dampf ablassen",
+        "definition": "to let off steam; to release built-up tension or frustration"
+      },
+      {
+        "type": "expression",
+        "word": "Deckel drauf",
+        "definition": "to keep a lid on it; to hold feelings firmly in"
+      },
+      {
+        "type": "verb",
+        "word": "singen",
+        "surface": "singt",
+        "definition": "to sing, here to chant the songs at a match"
+      },
+      {
+        "type": "expression",
+        "word": "am Stück",
+        "definition": "at a stretch; continuously without any break in between"
+      },
+      {
+        "type": "noun",
+        "word": "Herzblut",
+        "definition": "heart and soul; deep passion poured into something"
+      }
+    ],
+    "level": "c1",
+    "topic": "vereine-und-freundschaft",
+    "slotIndex": 2,
+    "audioUrl": null
+  },
+  {
+    "title": "Merles zweiter Schlüssel",
+    "slug": "merles-zweiter-schluessel",
+    "text": "Der Schlüssel bleibt verschwunden, die Wohnungstür zu, und draußen fällt die erste Novemberkälte. Nora sitzt bei Wiebke in der warmen Backstube und telefoniert sich erfolglos durch ihre Kontakte.\n\nNora: Alle sind furchtbar nett am Telefon und alle haben furchtbar viel zu tun. Warm klingen sie, aber helfen kann keiner.\nWiebke: Das ist der Norden. Freundlich an der Oberfläche, aber praktisch wird es erst, wenn du gar nicht mehr fragst. Ruf die Leute an, die wenig reden.\nNora: Die wenig reden? Merle hat heute noch keinen ganzen Satz gesagt.\nWiebke: Eben. Ruf genau die an.\n\nZwanzig Minuten später steht Merle in der Tür, ohne Mantel, dafür mit einem zweiten Schlüssel in der Hand.\n\nMerle: Hier. Zweitschlüssel zu deiner Wohnung. Hab ich nach deinem Einzug nachmachen lassen.\nNora: Du hast einen Schlüssel zu meiner Wohnung? Einfach so, ohne ein Wort?\nMerle: Für genau so einen Tag. Sagen muss man das nicht, man macht es.\nNora: Und du kommst sofort, ohne Mantel, bei dieser Kälte?\nMerle: Ein Anruf, zehn Minuten Fußweg. Darüber redet man doch nicht lange.\nNora: Ich bin sprachlos. Die Kühlste von allen rettet mich als Erste.\nWiebke: Das ist die Kokosnuss, Kind. Außen hart, innen weich, und man kommt ewig nicht durch die Schale. Ist sie aber einmal auf, dann ganz.\nNora: Und ich habe die ganze Zeit die Lauten für die Warmen gehalten.\nWiebke: Anfängerfehler. Wärme misst man hier nicht in Worten, sondern in Taten.\nMerle: Falsch geraten. Zieh dir was über, es ist kalt. Dann trinken wir einen, wortlos, wie immer.",
+    "synopsis": "Ausgesperrt in der ersten Novemberkälte lernt Nora, dass im Norden die Stillsten die Ersten sind, die wirklich helfen.",
+    "arcType": "late-reveal",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Novemberkälte",
+        "definition": "the raw cold of November; early-winter chill in the air"
+      },
+      {
+        "type": "noun",
+        "word": "Backstube",
+        "definition": "the back room of a bakery where the baking is done"
+      },
+      {
+        "type": "adverb",
+        "word": "erfolglos",
+        "definition": "without success; failing to achieve the hoped-for result"
+      },
+      {
+        "type": "noun",
+        "word": "Kontakt",
+        "surface": "Kontakte",
+        "definition": "a contact; a person you know and can call on"
+      },
+      {
+        "type": "adverb",
+        "word": "furchtbar",
+        "definition": "terribly; here used loosely to mean very or extremely"
+      },
+      {
+        "type": "expression",
+        "word": "an der Oberfläche",
+        "definition": "on the surface; only superficially and not deep down"
+      },
+      {
+        "type": "adjective",
+        "word": "praktisch",
+        "definition": "practical; concerned with real action rather than mere words"
+      },
+      {
+        "type": "verb",
+        "word": "nachmachen",
+        "definition": "to have a copy made of something, such as a key"
+      },
+      {
+        "type": "noun",
+        "word": "Zweitschlüssel",
+        "definition": "a second, spare key kept in case of emergencies"
+      },
+      {
+        "type": "adjective",
+        "word": "sprachlos",
+        "definition": "speechless; too surprised or moved to say anything"
+      },
+      {
+        "type": "verb",
+        "word": "retten",
+        "surface": "rettet",
+        "definition": "to rescue or save someone from a difficult situation"
+      },
+      {
+        "type": "adjective",
+        "word": "kühl",
+        "surface": "Kühlste",
+        "definition": "cool; here of a person who seems emotionally distant and aloof"
+      },
+      {
+        "type": "noun",
+        "word": "Kokosnuss",
+        "definition": "a coconut; here a metaphor for someone hard outside, soft inside"
+      },
+      {
+        "type": "expression",
+        "word": "außen hart, innen weich",
+        "surface": "Außen hart, innen weich",
+        "definition": "tough on the outside but soft and warm-hearted within"
+      },
+      {
+        "type": "noun",
+        "word": "Schale",
+        "definition": "a shell; the hard protective outer layer around something"
+      },
+      {
+        "type": "expression",
+        "word": "durch die Schale kommen",
+        "surface": "durch die Schale",
+        "definition": "to get past someone's tough shell to their real self"
+      },
+      {
+        "type": "verb",
+        "word": "geraten",
+        "definition": "to guess; to end up judging something a particular way"
+      },
+      {
+        "type": "adverb",
+        "word": "wortlos",
+        "definition": "wordlessly; without saying a single word at all"
+      },
+      {
+        "type": "verb",
+        "word": "telefonieren",
+        "surface": "telefoniert",
+        "definition": "to make phone calls; to talk with someone by phone"
+      },
+      {
+        "type": "noun",
+        "word": "Mantel",
+        "definition": "a coat worn over your clothes against the cold"
+      }
+    ],
+    "level": "c1",
+    "topic": "vereine-und-freundschaft",
+    "slotIndex": 3,
+    "audioUrl": null
+  },
+  {
+    "title": "Anteile statt Miete",
+    "slug": "anteile-statt-miete",
+    "text": "Vor dem Tor riecht es nach Regen und Backstein. Nora zählt die Fenster. Ole zählt im Stillen die Jahre, die er auf so eine Wohnung gewartet hätte.\n\nGreve: Willkommen. Bevor Sie sich verlieben, ein Hinweis: Vermietet wird bei uns gar nichts. Wir sind eine Genossenschaft.\n\nNora: Gar nichts? Die Anzeige stand unter Wohnungen.\n\nGreve: Sie werden Mitglied und zeichnen Anteile. Danach wohnen Sie zur Nutzung. Das ist kein Wortspiel, das ist der ganze Unterschied.\n\nOle: Frag sie nach dem Haken. Irgendwo ist immer ein Haken.\n\nGreve: Kein Haken. Eine Reihenfolge.\n\nNora: Gut. Und wie lang ist diese Reihenfolge?\n\nGreve: Für diesen Grundriss, mit Hof und Südbalkon? Sieben Jahre. In guten Zeiten sechs.\n\nNora rechnet nach. In sieben Jahren spricht sie längst fließend Hamburgisch, hat zwei Umzüge hinter sich und weiß, wo welche Fähre ablegt.\n\nNora: Sieben Jahre. Das klingt zu schön, um wahr zu sein, nur andersherum.\n\nGreve: Sie sagen das, als wäre es eine schlechte Nachricht. Bei uns kündigt niemand von allein. Wer drin ist, bleibt.\n\nOle: Das ist der Handel. Draußen bekommst du in vier Wochen einen Schlüssel und in vier Jahren die Kündigung.\n\nNora: Also anstellen, warten und hoffen, dass mich unterwegs niemand überholt.\n\nGreve: Überholen kann Sie hier niemand. Die Liste vergisst nichts.\n\nDer Innenhof liegt hinter dem Tor, grün und völlig gleichgültig gegenüber Noras Zeitplan. Sie trägt sich trotzdem ein.\n\nNora: Und bis dahin? Auf einer Warteliste schläft es sich schlecht.\n\nOle: Bis dahin suchen wir auf dem freien Markt. Da wird nicht gewartet, Nora. Da wird gekämpft.",
+    "synopsis": "Die Anzeige verspricht Altbau, Innenhof und eine Miete, die es in Hamburg eigentlich nicht mehr geben dürfte. Beim Rundgang erfährt Nora, dass hier niemand mietet: Man wird Mitglied, zeichnet Anteile und wartet. Frau Greve nennt die Wartezeit so ruhig, als spreche sie über den Wasserstand. Nora rechnet nach, und während sie noch rechnet, sagt Ole ihr, wo der eigentliche Kampf erst beginnt.",
+    "arcType": "mini-cliffhanger",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "der Backstein",
+        "surface": "Backstein",
+        "definition": "Red brick, the material that gives northern German cities their colour."
+      },
+      {
+        "type": "expression",
+        "word": "im Stillen",
+        "surface": "Stillen",
+        "definition": "Quietly and inwardly, without saying any of it out loud."
+      },
+      {
+        "type": "verb",
+        "word": "vermieten",
+        "surface": "Vermietet",
+        "definition": "To rent a flat or a room out to a tenant."
+      },
+      {
+        "type": "noun",
+        "word": "die Genossenschaft",
+        "surface": "Genossenschaft",
+        "definition": "A cooperative: the members own the building together and run it."
+      },
+      {
+        "type": "noun",
+        "word": "die Anzeige",
+        "surface": "Anzeige",
+        "definition": "A small advertisement, for instance one offering a flat to let."
+      },
+      {
+        "type": "noun",
+        "word": "der Anteil",
+        "surface": "Anteile",
+        "definition": "A share, the part of something jointly owned that is yours."
+      },
+      {
+        "type": "noun",
+        "word": "das Wortspiel",
+        "surface": "Wortspiel",
+        "definition": "A play on words, a joke that turns on double meaning."
+      },
+      {
+        "type": "noun",
+        "word": "der Haken",
+        "surface": "Haken",
+        "definition": "The hidden catch, the drawback nobody mentions in the offer."
+      },
+      {
+        "type": "noun",
+        "word": "die Reihenfolge",
+        "surface": "Reihenfolge",
+        "definition": "The order in which things come, one after the other."
+      },
+      {
+        "type": "noun",
+        "word": "der Grundriss",
+        "surface": "Grundriss",
+        "definition": "The floor plan, showing how the rooms of a flat lie."
+      },
+      {
+        "type": "verb",
+        "word": "nachrechnen",
+        "surface": "rechnet",
+        "definition": "To do the sums again and see whether they add up."
+      },
+      {
+        "type": "adverb",
+        "word": "längst",
+        "surface": "längst",
+        "definition": "Long since, well before the moment you are talking about."
+      },
+      {
+        "type": "adverb",
+        "word": "fließend",
+        "surface": "fließend",
+        "definition": "Fluently, speaking without stopping to search for the next word."
+      },
+      {
+        "type": "noun",
+        "word": "der Umzug",
+        "surface": "Umzüge",
+        "definition": "A move, the whole business of taking your home elsewhere."
+      },
+      {
+        "type": "verb",
+        "word": "ablegen",
+        "surface": "ablegt",
+        "definition": "To cast off, when a boat leaves the quay and departs."
+      },
+      {
+        "type": "expression",
+        "word": "zu schön, um wahr zu sein",
+        "surface": "wahr",
+        "definition": "Too good to be true; suspiciously perfect to be real."
+      },
+      {
+        "type": "expression",
+        "word": "von allein",
+        "surface": "allein",
+        "definition": "By itself, without anyone having to make it happen."
+      },
+      {
+        "type": "verb",
+        "word": "kündigen",
+        "surface": "kündigt",
+        "definition": "To give notice, ending a lease, a job or a contract."
+      },
+      {
+        "type": "noun",
+        "word": "der Handel",
+        "surface": "Handel",
+        "definition": "A deal, the bargain that two sides agree to accept."
+      },
+      {
+        "type": "verb",
+        "word": "sich anstellen",
+        "surface": "anstellen",
+        "definition": "To join a queue and wait your turn behind the others."
+      },
+      {
+        "type": "verb",
+        "word": "überholen",
+        "surface": "überholen",
+        "definition": "To overtake someone, getting past them and ahead in line."
+      },
+      {
+        "type": "adjective",
+        "word": "gleichgültig",
+        "surface": "gleichgültig",
+        "definition": "Indifferent, not caring at all one way or the other."
+      },
+      {
+        "type": "noun",
+        "word": "die Warteliste",
+        "surface": "Warteliste",
+        "definition": "A waiting list of people queueing in turn for something."
+      },
+      {
+        "type": "verb",
+        "word": "sich eintragen",
+        "surface": "trägt",
+        "definition": "To put your name down on a list or in a book."
+      }
+    ],
+    "level": "c1",
+    "topic": "wohnen-in-der-hansestadt",
+    "slotIndex": 1,
+    "audioUrl": null
+  },
+  {
+    "title": "Bloß nicht schwärmen",
+    "slug": "bloss-nicht-schwaermen",
+    "text": "Vor der Haustür in Eimsbüttel drängen sich viele Bewerber, jeder mit einer Mappe unter dem Arm. Ole zieht Nora kurz zur Seite und spricht leise.\n\nOle: Eine Regel für da drinnen: Schwärme nicht. Wer die Wohnung zu toll findet, wirkt verzweifelt.\nNora: Aber sie ist toll. Soll ich lügen und gelangweilt tun?\nOle: Nicht gelangweilt. Nur sachlich. Der Vermieter hier vertraut dem, der ruhig bleibt.\nNora: Wo ich herkomme, bekommt die Wohnung, wer am meisten Begeisterung zeigt.\nOle: Hier ist es umgekehrt. Begeisterung wirkt verdächtig, Zurückhaltung wirkt seriös.\n\nDrinnen führt Herr Timm die Gruppe durch zwei helle Zimmer. Die anderen schwärmen laut, Nora nickt nur knapp.\n\nTimm: Und Sie? Sie sagen ja gar nichts.\nNora: Der Schnitt ist vernünftig, das Viertel ruhig. Ich könnte mir das gut vorstellen.\nTimm: Vernünftig. Das höre ich heute zum ersten Mal. Alle anderen reden von Traum und Liebe auf den ersten Blick.\nNora: Eine Wohnung ist ein Vertrag, kein Antrag. Ich prüfe, ob es passt, nicht ob es funkelt.\nTimm: Genau diese Haltung suche ich. Mieter, die schwärmen, werden nach einem Jahr enttäuscht.\nNora: Und wer nichts fühlt, bekommt den Zuschlag? Das klingt fast kühl.\nTimm: Nicht kühl, sondern verlässlich. Wer heute nicht schwärmt, klagt morgen nicht über jede Kleinigkeit.\nOle: Sie hat außerdem alle Papiere dabei. Gehaltsnachweis, Auskunft, alles vollständig.\nTimm: Das setze ich voraus. Entscheidend war der Satz mit dem Vertrag. Die Wohnung können Sie haben.\nNora: Einfach so? Ohne dass ich betteln muss?\nTimm: Betteln ist hier ein schlechtes Zeichen. Sie haben verstanden, wie der Norden tickt.",
+    "synopsis": "Wer die Wohnung zu toll findet, verliert sie. Nora gewinnt sie, indem sie nichts davon zeigt.",
+    "arcType": "reframe-turn",
+    "vocab": [
+      {
+        "type": "adverb",
+        "word": "leise",
+        "definition": "quietly; speaking softly in a low, discreet voice"
+      },
+      {
+        "type": "verb",
+        "word": "schwärmen",
+        "definition": "to gush; to talk about something with excited admiration"
+      },
+      {
+        "type": "adjective",
+        "word": "verzweifelt",
+        "definition": "desperate; driven by anxiety that things will go wrong"
+      },
+      {
+        "type": "adjective",
+        "word": "sachlich",
+        "definition": "matter-of-fact; focused on facts rather than feelings or drama"
+      },
+      {
+        "type": "noun",
+        "word": "Begeisterung",
+        "definition": "enthusiasm; a strong feeling of excited approval for something"
+      },
+      {
+        "type": "verb",
+        "word": "vertrauen",
+        "surface": "vertraut",
+        "definition": "to trust someone; to rely on their honesty and good faith"
+      },
+      {
+        "type": "noun",
+        "word": "Schnitt",
+        "definition": "the layout of a flat; how its rooms are arranged"
+      },
+      {
+        "type": "adjective",
+        "word": "vernünftig",
+        "definition": "sensible and reasonable; showing sound, practical good judgement"
+      },
+      {
+        "type": "noun",
+        "word": "Viertel",
+        "definition": "a neighbourhood; a distinct district within a larger city"
+      },
+      {
+        "type": "expression",
+        "word": "Liebe auf den ersten Blick",
+        "definition": "love at first sight; instant strong attraction on first meeting"
+      },
+      {
+        "type": "noun",
+        "word": "Vertrag",
+        "definition": "a binding agreement setting out what each side must do"
+      },
+      {
+        "type": "noun",
+        "word": "Antrag",
+        "definition": "a formal application or proposal submitted for approval"
+      },
+      {
+        "type": "verb",
+        "word": "funkeln",
+        "surface": "funkelt",
+        "definition": "to sparkle or glitter; to shine with bright flashing light"
+      },
+      {
+        "type": "noun",
+        "word": "Haltung",
+        "definition": "an attitude; a settled way of thinking and behaving"
+      },
+      {
+        "type": "noun",
+        "word": "Mieter",
+        "definition": "a tenant; someone who rents and lives in a property"
+      },
+      {
+        "type": "adjective",
+        "word": "enttäuscht",
+        "definition": "disappointed; let down because hopes were not met"
+      },
+      {
+        "type": "verb",
+        "word": "voraussetzen",
+        "surface": "voraus",
+        "definition": "to take something for granted as an obvious basic requirement"
+      },
+      {
+        "type": "verb",
+        "word": "betteln",
+        "definition": "to beg; to plead humbly for something you want"
+      },
+      {
+        "type": "expression",
+        "word": "ein schlechtes Zeichen",
+        "definition": "a bad sign; an indication that something will go wrong"
+      },
+      {
+        "type": "verb",
+        "word": "ticken",
+        "surface": "tickt",
+        "definition": "to work or function in a particular characteristic way"
+      }
+    ],
+    "level": "c1",
+    "topic": "wohnen-in-der-hansestadt",
+    "slotIndex": 2,
+    "audioUrl": null
+  },
+  {
+    "title": "Der Hinterhof kennt dich",
+    "slug": "der-hinterhof-kennt-dich",
+    "text": "Zwischen Umzugskartons im dritten Stock sucht Nora den Wasserkocher, als es an der Tür klopft. Davor steht eine Nachbarin, in der Hand ein Brett mit Brot und Salz.\n\nBoysen: Boysen, von nebenan. Brot, damit es Ihnen nie ausgeht. Salz, damit das Leben Würze hat. Ein alter Brauch.\nNora: Das ist unglaublich lieb. Wollen Sie hereinkommen? Es ist noch ein Chaos, aber gern.\nBoysen: Lieber nicht. Sie haben zu tun. Ich wollte nur, dass Sie das Wichtigste im Haus wissen.\nNora: Und das wäre?\nBoysen: Der Hinterhof gehört allen. Fahrräder links, Mülltonnen rechts, und sonntags bleibt die Bohrmaschine aus.\nNora: Verstanden. Gibt es sonst noch Regeln, die ich kennen sollte?\nBoysen: Keine langen Regeln. Man grüßt, man hält den Hof sauber, man macht nach zehn keinen Lärm. Der Rest findet sich.\nNora: Früher kannte ich nicht einmal den Namen meiner Nachbarn.\nBoysen: Hier kennt der Hinterhof Sie schneller, als Ihnen lieb ist. Wer die Tonnen verwechselt, ist am nächsten Tag stadtbekannt.\n\nWiebke schaut kurz herein und stellt eine Tüte Franzbrötchen auf einen Karton.\n\nWiebke: Ein Einzug ohne Franzbrötchen gilt nicht. Und? Schon die erste Nachbarin kennengelernt?\nNora: Sie hat mir Brot und Salz gebracht und war nach zwei Minuten wieder weg.\nWiebke: Zwei Minuten und Brot und Salz? Von Frau Boysen ist das eine Umarmung.\nNora: Eine Umarmung ganz ohne Worte. Langsam verstehe ich, wie ihr das hier meint.\nWiebke: Genau so. Wer hier wenig sagt, meint oft am meisten.",
+    "synopsis": "Brot, Salz und drei knappe Sätze: Noras neue Nachbarin zeigt ihr, wie der Norden Willkommen sagt.",
+    "arcType": "harmonic-close",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Umzugskarton",
+        "surface": "Umzugskartons",
+        "definition": "a cardboard box used for packing belongings during a move"
+      },
+      {
+        "type": "noun",
+        "word": "Wasserkocher",
+        "definition": "an electric kettle used to boil water for drinks"
+      },
+      {
+        "type": "verb",
+        "word": "klopfen",
+        "surface": "klopft",
+        "definition": "to knock, for example on a door to be let in"
+      },
+      {
+        "type": "noun",
+        "word": "Nachbarin",
+        "definition": "a female neighbour; a woman who lives close to you"
+      },
+      {
+        "type": "expression",
+        "word": "Brot und Salz",
+        "definition": "a German housewarming gift of bread and salt for luck"
+      },
+      {
+        "type": "noun",
+        "word": "Brauch",
+        "definition": "a custom; a traditional practice handed down over time"
+      },
+      {
+        "type": "verb",
+        "word": "ausgehen",
+        "surface": "ausgeht",
+        "definition": "to run out; to be completely used up and gone"
+      },
+      {
+        "type": "adverb",
+        "word": "unglaublich",
+        "definition": "incredibly; to a degree that is hard to believe"
+      },
+      {
+        "type": "adjective",
+        "word": "lieb",
+        "definition": "sweet and kind; showing warm, thoughtful affection toward someone"
+      },
+      {
+        "type": "verb",
+        "word": "hereinkommen",
+        "definition": "to come inside; to enter a room or home"
+      },
+      {
+        "type": "noun",
+        "word": "Hinterhof",
+        "definition": "the shared backyard behind a block of city flats"
+      },
+      {
+        "type": "noun",
+        "word": "Mülltonne",
+        "surface": "Mülltonnen",
+        "definition": "a large bin where household rubbish is collected outside"
+      },
+      {
+        "type": "noun",
+        "word": "Bohrmaschine",
+        "definition": "an electric drill used for making holes in walls"
+      },
+      {
+        "type": "verb",
+        "word": "grüßen",
+        "surface": "grüßt",
+        "definition": "to greet; to acknowledge someone with a friendly word"
+      },
+      {
+        "type": "adverb",
+        "word": "sonntags",
+        "definition": "on Sundays; every Sunday as a fixed weekly rule"
+      },
+      {
+        "type": "expression",
+        "word": "der Rest findet sich",
+        "surface": "Der Rest findet sich",
+        "definition": "the rest will sort itself out on its own eventually"
+      },
+      {
+        "type": "verb",
+        "word": "verwechseln",
+        "surface": "verwechselt",
+        "definition": "to mix up two things by mistaking one for another"
+      },
+      {
+        "type": "adjective",
+        "word": "stadtbekannt",
+        "definition": "known all over town; talked about by the whole city"
+      },
+      {
+        "type": "adverb",
+        "word": "nebenan",
+        "definition": "next door; in the place immediately beside your own"
+      },
+      {
+        "type": "noun",
+        "word": "Umarmung",
+        "definition": "a hug; the act of holding someone warmly in your arms"
+      }
+    ],
+    "level": "c1",
+    "topic": "wohnen-in-der-hansestadt",
+    "slotIndex": 3,
+    "audioUrl": null
+  }
+]

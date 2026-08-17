@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Tema 6 (la-jerga, Lima) — REAUTORADO 2026-07-09 sobre las historias NARRADOR.
+# Tema 6 (la-jerga, Lima); REAUTORADO 2026-07-09 sobre las historias NARRADOR.
 # Reglas: docs/practice-exercises-redesign.md + scripts/_EXERCISE_SPEC.md.
 # Headline en forma de diccionario; flexion en [[ ]] o en la respuesta del cloze.
 SPECS = [

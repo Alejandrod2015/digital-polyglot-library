@@ -26,7 +26,7 @@ async function main() {
     },
   });
 
-  console.log(`\n=== AgentRun(validar) — ${runs.length} total ===\n`);
+  console.log(`\n=== AgentRun(validar); ${runs.length} total ===\n`);
 
   // Tally by stage flag inside input.
   const stageTally = { staged: 0, stage_blocked: 0, unknown: 0 };
@@ -43,7 +43,7 @@ async function main() {
   }, {});
   console.log("Status tally:", statusTally);
 
-  // Detalle de los staged ok — cruzo con JourneyStory para verificar
+  // Detalle de los staged ok; cruzo con JourneyStory para verificar
   // que el resultado tenga level/topic alineados con el input.
   console.log("\n--- Successful stagings (input.stage=staged) ---");
   const staged = runs.filter((r) => r.input?.stage === "staged");
@@ -102,12 +102,12 @@ async function main() {
   console.log(`\n--- Blocked stagings (server rejected validation) ---`);
   console.log(`Total: ${blocked.length}`);
   for (const r of blocked.slice(-5)) {
-    const reason = r.output?.reason ?? r.errorMessage ?? "—";
+    const reason = r.output?.reason ?? r.errorMessage ?? "-";
     const when = r.createdAt.toISOString().slice(0, 16).replace("T", " ");
     console.log(`  ${when}  reason: ${reason}`);
   }
 
-  // Validaciones simples (sin staging — solo verificó texto)
+  // Validaciones simples (sin staging; solo verificó texto)
   const simpleValidations = runs.filter(
     (r) => r.input?.stage !== "staged" && r.input?.stage !== "stage_blocked",
   );

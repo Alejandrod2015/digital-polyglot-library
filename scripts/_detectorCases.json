@@ -1,17 +1,94 @@
 {
-  "_comment": "Casos confirmados POR OÍDO por el usuario. Son la vara de medir del detector: si un cambio deja de encontrar cualquiera de estos, el cambio está mal. Se corre con scripts/_detectorRegress.ts.",
+  "_comment": "Casos confirmados POR OÍDO por el usuario. Son la vara de medir del detector: si un cambio deja de encontrar cualquiera de estos, el cambio está mal. Se corre con scripts/_detectorRegress.ts. Cada caso lleva ANCLAS: los trozos de texto que la señal ALTA debe contener. Se compara por ancla y no por frase porque corregir un defecto suele implicar reescribir la frase, y entonces la del caso ya no existe.",
   "casos": [
-    { "slug": "a-ladeira-guarda-mil-azulejos", "frase": "No fim da rua, uma escada larga aparece cheia de azulejos coloridos.", "error": "truncamiento (zimpraaa)", "confirmado": "2026-08-14" },
-    { "slug": "a-ultima-barca-para-niteroi", "frase": "Bia sobe a escada e acha um banco vazio de frente para a janela.", "error": "balbuceo entre frente y janela", "confirmado": "2026-08-14" },
-    { "slug": "a-ultima-barca-para-niteroi", "frase": "Lá em cima, o vento bate forte e o barulho da cidade fica para trás.", "error": "Sepava + hueco", "confirmado": "2026-08-14" },
-    { "slug": "a-areia-queima-os-pes", "frase": "Tiago atravessa a areia com passos rápidos até chegar lá.", "error": "truncado a-- + isso", "confirmado": "2026-08-14" },
-    { "slug": "um-balde-uma-onda", "frase": "Tiago passa no quiosque, senta ao lado e ajuda a encher o balde.", "error": "desencher", "confirmado": "2026-08-14" },
-    { "slug": "acabou-a-coxinha", "frase": "A fila da padaria dobra a esquina na hora do almoço.", "error": "inserta se: dobra-se", "confirmado": "2026-08-14 (prueba ciega)" },
-    { "slug": "a-cana-vira-caldo-doce", "frase": "Ele nem chega a perguntar o nome do moço.", "error": "inserta se: chega a se perguntar", "confirmado": "2026-08-14 (prueba ciega)" },
-    { "slug": "a-primeira-fornada-sai-quente", "frase": "A padaria abre às seis e meia, e a rua ainda está escura.", "error": "Osirzoneu", "confirmado": "2026-08-14 (prueba ciega)" }
+    {
+      "slug": "a-ladeira-guarda-mil-azulejos",
+      "frase": "No fim da rua, uma escada larga aparece cheia de azulejos coloridos.",
+      "error": "truncamiento (zimpraaa)",
+      "confirmado": "2026-08-14",
+      "anclas": [
+        "zimpra",
+        "--"
+      ]
+    },
+    {
+      "slug": "a-ultima-barca-para-niteroi",
+      "frase": "Bia sobe a escada e acha um banco vazio de frente para a janela.",
+      "error": "balbuceo entre frente y janela",
+      "confirmado": "2026-08-14",
+      "anclas": [
+        "repite \"pras",
+        "pras\", y \"pras",
+        "entre \"pras"
+      ]
+    },
+    {
+      "slug": "a-ultima-barca-para-niteroi",
+      "frase": "Lá em cima, o vento bate forte e o barulho da cidade fica para trás.",
+      "error": "Sepava + hueco",
+      "confirmado": "2026-08-14",
+      "anclas": [
+        "sepava"
+      ]
+    },
+    {
+      "slug": "a-areia-queima-os-pes",
+      "frase": "Tiago atravessa a areia com passos rápidos até chegar lá.",
+      "error": "truncado a-- + isso",
+      "confirmado": "2026-08-14",
+      "anclas": [
+        "a--",
+        "isso"
+      ]
+    },
+    {
+      "slug": "um-balde-uma-onda",
+      "frase": "Tiago passa no quiosque, senta ao lado e ajuda a encher o balde.",
+      "error": "desencher",
+      "confirmado": "2026-08-14",
+      "anclas": [
+        "desencher"
+      ]
+    },
+    {
+      "slug": "acabou-a-coxinha",
+      "frase": "A fila da padaria dobra a esquina na hora do almoço.",
+      "error": "inserta se: dobra-se",
+      "confirmado": "2026-08-14 (prueba ciega)",
+      "anclas": [
+        "dobra-se"
+      ]
+    },
+    {
+      "slug": "a-cana-vira-caldo-doce",
+      "frase": "Ele nem chega a perguntar o nome do moço.",
+      "error": "inserta se: chega a se perguntar",
+      "confirmado": "2026-08-14 (prueba ciega)",
+      "anclas": [
+        "INSERTADA: se oye \"se\""
+      ]
+    },
+    {
+      "slug": "a-primeira-fornada-sai-quente",
+      "frase": "A padaria abre às seis e meia, e a rua ainda está escura.",
+      "error": "Osirzoneu",
+      "confirmado": "2026-08-14 (prueba ciega)",
+      "anclas": [
+        "osirzoneu",
+        "zoneu"
+      ]
+    }
   ],
   "sanas": [
-    { "slug": "palmas-no-arpoador", "frase": "Tiago não entende por que a pedra inteira fica em silêncio.", "nota": "porque/por que suenan igual: NO es error" },
-    { "slug": "a-cana-vira-caldo-doce", "frase": "O caldo cai num balde de metal, doce e cheio de espuma.", "nota": "marcada por ritmo, el usuario no la reportó" }
+    {
+      "slug": "palmas-no-arpoador",
+      "frase": "Tiago não entende por que a pedra inteira fica em silêncio.",
+      "nota": "porque/por que suenan igual: NO es error"
+    },
+    {
+      "slug": "a-cana-vira-caldo-doce",
+      "frase": "O caldo cai num balde de metal, doce e cheio de espuma.",
+      "nota": "marcada por ritmo, el usuario no la reportó"
+    }
   ]
 }

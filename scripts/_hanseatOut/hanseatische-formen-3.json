@@ -1,0 +1,127 @@
+[
+  {
+    "title": "Man fragt nicht",
+    "slug": "man-fragt-nicht",
+    "text": "In der Teeküche des Kontors fragt Nora ihre Kollegin Merle beiläufig, was sie eigentlich verdiene. Merle stellt die Tasse ab und schweigt eine Sekunde zu lang.\n\nMerle: Das fragt man hier nicht. Nicht aus Kälte. Es geht dich schlicht nichts an, und das ist auch gut so.\n\nNora: Entschuldige. Bei mir daheim tauscht man so etwas offen aus, fast zur Begrüßung.\n\nMerle: Hier gilt das Gegenteil. Je näher man sich ist, desto weniger bohrt man.\n\nNora: Das leuchtet mir nicht ein. Dabei zeigt Interesse doch gerade, dass man sich kümmert.\n\nOle: Interesse ja, Verhör nein. Gehalt, Miete, Beziehung, Kinderwunsch: das fragt man nicht. Man wartet, bis es einer von selbst erzählt.\n\nNora: Und woran erkenne ich dann, ob mich jemand mag?\n\nMerle: Daran, dass er dich in Ruhe lässt und trotzdem da ist. Zurückhaltung ist hier ein Zeichen von Respekt.\n\nNora rührt in ihrem Tee und denkt eine Weile nach.\n\nNora: Also ist Nicht-Fragen bei euch das, was bei uns das Ausfragen ist.\n\nOle: Ganz genau. Wer bohrt, wirkt übergriffig, nicht herzlich.\n\nNora: Und Komplimente? Darf man wenigstens die offen machen?\n\nMerle: Sparsam. Ein zu großes Lob wirkt hier schnell aufdringlich. Lieber ein knappes Wort, das dann aber wirklich zählt.\n\nNora: Und wann darf man dann doch persönlich werden?\n\nMerle: Wenn der andere die Tür aufmacht. Vorher klopft man nicht einmal.\n\nNora: Gut. Dann nehme ich meine Frage von eben feierlich zurück.\n\nMerle: Angenommen. Und weil du fragst, ohne zu fragen: Mir geht es bestens.",
+    "synopsis": "Eine harmlose Frage nach dem Gehalt zeigt Nora, dass im Norden Nicht-Fragen das höchste Zeichen von Respekt ist.",
+    "arcType": "juxtaposition-discovery",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Teeküche",
+        "definition": "a small office kitchen for making tea, coffee and snacks"
+      },
+      {
+        "type": "adverb",
+        "word": "beiläufig",
+        "definition": "casually; in passing, without making it seem important"
+      },
+      {
+        "type": "verb",
+        "word": "schweigen",
+        "surface": "schweigt",
+        "definition": "to stay silent; to deliberately say nothing at all"
+      },
+      {
+        "type": "noun",
+        "word": "Kälte",
+        "definition": "coldness; an unfriendly, emotionally distant manner toward others"
+      },
+      {
+        "type": "expression",
+        "word": "das fragt man nicht",
+        "surface": "fragt man nicht",
+        "definition": "that is not something one is allowed to ask about"
+      },
+      {
+        "type": "verb",
+        "word": "bohren",
+        "surface": "bohrt",
+        "definition": "to press with prying questions someone would rather not answer"
+      },
+      {
+        "type": "verb",
+        "word": "einleuchten",
+        "surface": "leuchtet",
+        "definition": "to make immediate sense; to be readily clear and understandable"
+      },
+      {
+        "type": "verb",
+        "word": "sich kümmern",
+        "surface": "kümmert",
+        "definition": "to care about someone and look after their wellbeing"
+      },
+      {
+        "type": "noun",
+        "word": "Verhör",
+        "definition": "an interrogation; a harsh, prying session of pointed questions"
+      },
+      {
+        "type": "noun",
+        "word": "Gehalt",
+        "definition": "a salary; the fixed money one is paid for work"
+      },
+      {
+        "type": "noun",
+        "word": "Beziehung",
+        "definition": "a relationship, especially a romantic partnership between two people"
+      },
+      {
+        "type": "noun",
+        "word": "Kinderwunsch",
+        "definition": "the wish to have children of one's own someday"
+      },
+      {
+        "type": "expression",
+        "word": "in Ruhe lassen",
+        "surface": "in Ruhe lässt",
+        "definition": "to leave someone alone and stop bothering them"
+      },
+      {
+        "type": "noun",
+        "word": "Zurückhaltung",
+        "definition": "reserve; a restrained, undemonstrative manner toward other people"
+      },
+      {
+        "type": "noun",
+        "word": "Respekt",
+        "definition": "respect; regard shown for someone's worth or boundaries"
+      },
+      {
+        "type": "expression",
+        "word": "von selbst",
+        "definition": "of its own accord; without being prompted or asked"
+      },
+      {
+        "type": "adjective",
+        "word": "übergriffig",
+        "definition": "overstepping boundaries; intrusive in an inappropriate, presumptuous way"
+      },
+      {
+        "type": "adjective",
+        "word": "herzlich",
+        "definition": "warm-hearted; showing genuine warmth and friendliness toward people"
+      },
+      {
+        "type": "adverb",
+        "word": "feierlich",
+        "definition": "solemnly; in a formal, ceremonious and deliberate manner"
+      },
+      {
+        "type": "verb",
+        "word": "austauschen",
+        "surface": "tauscht",
+        "definition": "to exchange; to share things back and forth with others"
+      },
+      {
+        "type": "verb",
+        "word": "aufmachen",
+        "surface": "aufmacht",
+        "definition": "to open something, such as a door, for someone"
+      }
+    ],
+    "level": "c1",
+    "topic": "hanseatische-formen",
+    "slotIndex": 3
+  }
+]

@@ -8,7 +8,7 @@
 //
 //   2. Drop items cuya `word` está en lista de palabras universales
 //      (esto, igual, vos, aire, gente, horas, café, música,
-//      sonrisa, cerebro, ...) — no aportan a un aprendiz anglosajón.
+//      sonrisa, cerebro, ...); no aportan a un aprendiz anglosajón.
 //
 //   3. Inject `<span class="vocab-word" data-word="X">X</span>` en
 //      el texto de la historia para CADA vocab item sobreviviente,
@@ -30,7 +30,7 @@ const FILE = resolve(
 );
 const APPLY = process.argv.includes("--apply");
 
-// Palabras universales — un aprendiz anglosajón a nivel beginner
+// Palabras universales; un aprendiz anglosajón a nivel beginner
 // ya las reconoce o no necesita explicación. Lista conservadora.
 const UNIVERSAL = new Set(
   [

@@ -71,6 +71,20 @@
       ],
       "port": 3005,
       "autoPort": false
+    },
+    {
+      "_comment": "Puerto propio para verificar sin chocar con otros chats.",
+      "name": "next-dev-3007",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev:web",
+        "--",
+        "--port",
+        "3007"
+      ],
+      "port": 3007,
+      "autoPort": false
     }
   ]
 }

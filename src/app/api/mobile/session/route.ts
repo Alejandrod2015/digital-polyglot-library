@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
 
     // Stamp signupPlatform = "ios" on first mobile session (set-if-absent).
     // This fires on every app launch after Clerk auth, so it covers 100% of iOS
-    // users — even those who never listen and have no push token — feeding the
+    // users; even those who never listen and have no push token; feeding the
     // acquisition funnel a reliable platform instead of inferring it later.
     // Best-effort: a stamping failure must never block the session.
     if (typeof publicMetadata.signupPlatform !== "string" || !publicMetadata.signupPlatform) {

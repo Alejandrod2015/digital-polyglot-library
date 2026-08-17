@@ -1,5 +1,5 @@
 /**
- * High-quality TTS for a single practice sentence — ElevenLabs ONLY.
+ * High-quality TTS for a single practice sentence; ElevenLabs ONLY.
  *
  * POLICY (2026-07-24, user directive): NOTHING in the app may sound unless it
  * is ElevenLabs. The previous Modal/Piper/Kokoro path (local engines for
@@ -53,7 +53,7 @@ const ELEVEN_SENTENCE_VOICE: Record<string, string> = {
 };
 
 // Bumping CACHE_VERSION invalidates every previously cached R2 path without
-// deleting the bucket. v8: the ElevenLabs-only cutover — es/it clips that were
+// deleting the bucket. v8: the ElevenLabs-only cutover; es/it clips that were
 // previously served by Modal/Piper under v7 are unreachable under v8, so a play
 // re-renders them with the approved EL voice.
 const CACHE_VERSION = "v8";

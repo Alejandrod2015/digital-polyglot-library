@@ -183,7 +183,7 @@ async function main(): Promise<void> {
     const filename = `${fileBase}-cool-cartoon-manual-${Date.now()}.png`;
     const tag = `${story.topic}/slot${story.slotIndex}`;
     try {
-      console.log(`[start] ${tag} — ${story.title}`);
+      console.log(`[start] ${tag}; ${story.title}`);
       const buffer = await generateCoverBuffer(prompt);
       const uploaded = await uploadPublicObject({
         key: `media/generated/images/${filename}`,

@@ -1,0 +1,140 @@
+[
+  {
+    "title": "Ein Antrag auf Freizeit",
+    "slug": "ein-antrag-auf-freizeit",
+    "text": "Nadia will nur Leute kennenlernen. Timo nickt und sagt den Satz, der in Deutschland alles einleitet.\n\nTimo: Dann brauchst du einen Verein. Freizeit macht man hier nicht allein; hier tritt man bei.\n\nNadia: Ich wollte doch nur ein paar Bälle spielen. Nicht Mitglied werden.\n\nTimo: Genau das ist der Widerspruch. Komm, ich zeig dir das Vereinsheim.\n\nHinter einem Tisch mit drei Ordnern wartet Herr Pohl, der Kassenwart, und mustert Nadia wie einen unvollständigen Antrag.\n\nPohl: Sie möchten mitspielen? Sehr schön. Dann füllen Sie bitte den Mitgliedsantrag aus, lesen die Satzung und überweisen die Aufnahmegebühr.\n\nNadia: Für Tischtennis?\n\nPohl: Für die Mitgliedschaft. Das Tischtennis ist inbegriffen.\n\nNadia: Und wenn ich erst mal nur reinschnuppern will?\n\nPohl: Dafür gibt es das Probetraining. Danach müssen Sie sich entscheiden. So will es die Satzung.\n\nTimo: Willkommen in der Vereinsmeierei. Ohne Formular kein Vergnügen.\n\nNadia: Elf Seiten Regeln für einen Ball übers Netz.\n\nPohl: Elf Seiten sichern den Verein. Über Ihre Aufnahme entscheidet übrigens die Mitgliederversammlung.\n\nNadia: Es gibt eine Abstimmung? Darüber, ob ich Tischtennis spielen darf?\n\nPohl: Selbstverständlich. Bis dahin spielen Sie auf Probe. Nächsten Donnerstagabend, hier im Vereinsheim.\n\nNeben der Tür wartet Ronja, den Schläger unterm Arm, und drückt Nadia einen Kaffee in die Hand.\n\nRonja: Lass dich nicht abschrecken. Aber eine Warnung: Bei jeder Aufnahme stimmt einer grundsätzlich dagegen. Und rate mal, wer am Donnerstag den Vorsitz führt.",
+    "synopsis": "Nadia will einfach nur Leute kennenlernen und ein paar Bälle spielen. Doch in Deutschland hat sogar der Feierabend eine Satzung: Wer mitspielen will, füllt einen Mitgliedsantrag aus, überweist eine Aufnahmegebühr und liest elf Seiten Vereinsrecht. Kassenwart Pohl empfängt sie wie einen unvollständigen Antrag, und ihre Aufnahme entscheidet ausgerechnet die Mitgliederversammlung. Am Ausgang flüstert Ronja eine Warnung: Bei jeder Aufnahme stimmt einer grundsätzlich dagegen, und rate mal, wer diesmal den Vorsitz führt.",
+    "arcType": "mini-cliffhanger",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "der Verein",
+        "surface": "Verein",
+        "definition": "A registered club Germans found for almost any shared activity."
+      },
+      {
+        "type": "verb",
+        "word": "beitreten",
+        "surface": "tritt",
+        "definition": "To formally join a club or organisation as a member."
+      },
+      {
+        "type": "verb",
+        "word": "mustern",
+        "surface": "mustert",
+        "definition": "To look someone up and down, sizing them up carefully."
+      },
+      {
+        "type": "adjective",
+        "word": "unvollständig",
+        "surface": "unvollständigen",
+        "definition": "Incomplete, missing a part that really should be there."
+      },
+      {
+        "type": "noun",
+        "word": "der Kassenwart",
+        "surface": "Kassenwart",
+        "definition": "The elected treasurer who guards a club's money and its dues."
+      },
+      {
+        "type": "verb",
+        "word": "ausfüllen",
+        "surface": "füllen",
+        "definition": "To complete a form by writing in all the required information."
+      },
+      {
+        "type": "noun",
+        "word": "die Satzung",
+        "surface": "Satzung",
+        "definition": "The formal written bylaws that govern how a German club runs."
+      },
+      {
+        "type": "verb",
+        "word": "überweisen",
+        "surface": "überweisen",
+        "definition": "To transfer money from one bank account to another electronically."
+      },
+      {
+        "type": "noun",
+        "word": "die Aufnahmegebühr",
+        "surface": "Aufnahmegebühr",
+        "definition": "A one-off fee you pay to be admitted somewhere new."
+      },
+      {
+        "type": "adjective",
+        "word": "inbegriffen",
+        "surface": "inbegriffen",
+        "definition": "Already included in the price, with nothing extra to pay."
+      },
+      {
+        "type": "verb",
+        "word": "reinschnuppern",
+        "surface": "reinschnuppern",
+        "definition": "To try something out briefly to see whether you like it."
+      },
+      {
+        "type": "verb",
+        "word": "sich entscheiden",
+        "surface": "entscheiden",
+        "definition": "To make up your mind and finally commit to one option."
+      },
+      {
+        "type": "expression",
+        "word": "ohne Formular kein Vergnügen",
+        "surface": "Vergnügen",
+        "definition": "A joke that in Germany fun always needs a form first."
+      },
+      {
+        "type": "noun",
+        "word": "die Vereinsmeierei",
+        "surface": "Vereinsmeierei",
+        "definition": "A mocking word for Germans' excessive love of clubs and rules."
+      },
+      {
+        "type": "noun",
+        "word": "die Mitgliederversammlung",
+        "surface": "Mitgliederversammlung",
+        "definition": "The general meeting where members vote on the club's decisions."
+      },
+      {
+        "type": "expression",
+        "word": "auf Probe",
+        "surface": "Probe",
+        "definition": "On a trial basis, not yet accepted as a full member."
+      },
+      {
+        "type": "noun",
+        "word": "die Abstimmung",
+        "surface": "Abstimmung",
+        "definition": "A vote taken so a group can decide something together."
+      },
+      {
+        "type": "verb",
+        "word": "abschrecken",
+        "surface": "abschrecken",
+        "definition": "To scare someone off so they give up before even starting."
+      },
+      {
+        "type": "adverb",
+        "word": "grundsätzlich",
+        "surface": "grundsätzlich",
+        "definition": "On principle, always and as a firm matter of habit."
+      },
+      {
+        "type": "adverb",
+        "word": "dagegen",
+        "surface": "dagegen",
+        "definition": "Against it, opposed to what is being proposed right now."
+      },
+      {
+        "type": "noun",
+        "word": "der Vorsitz",
+        "surface": "Vorsitz",
+        "definition": "The chair of a meeting, the person who leads and decides."
+      }
+    ],
+    "level": "c1",
+    "topic": "friends-and-free-time",
+    "slotIndex": 1
+  }
+]

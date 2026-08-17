@@ -24,7 +24,7 @@ import { getPublicObjectUrl, uploadPublicObject } from "@/lib/objectStorage";
 export const maxDuration = 120;
 
 // v2: switch from eleven_multilingual_v2 (auto-detect language, which renders
-// lone words in the wrong language — Brazilian Portuguese accent on "fácil",
+// lone words in the wrong language; Brazilian Portuguese accent on "fácil",
 // "casi") to eleven_turbo_v2_5 with language_code forced to Spanish. The forced
 // language kills the wrong-accent problem entirely. Bumping the version
 // invalidates the v1 (mis-accented) clips.

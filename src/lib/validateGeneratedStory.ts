@@ -308,13 +308,19 @@ function getParagraphs(text: string): string[] {
 
 // Categorías sensoriales compartidas: las usa el aviso de sobrecarga (3+) y
 // el fallo por ausencia (0) del perfil narrador.
+// Vocabulario sensorial por categoría. Incluye español, PORTUGUÉS, alemán e
+// italiano: el check corre sobre journeys de todos esos idiomas y, con listas
+// solo en español, un cuerpo portugués perfectamente sensorial ("o vento bate
+// forte", "a água fria", "o cheiro toma a sala") daba CERO categorías y fallaba
+// entero. Detectado el 2026-08-17 al reescribir una frase del A0 portugués:
+// el check tumbaba la historia por no saber el idioma, no por el texto.
 const SENSE_CATEGORIES_SHARED: Record<string, RegExp> = {
-    smell: /\b(olor|aroma|perfume|huele|huelen|olía|olor[eo]s|olfato)\b/i,
-    light: /\b(luz|luces|iluminac|brilla|brilló|brillan|sombra|sombras|claroscuro|oscur[oa]|deslumbra)\b/i,
-    sound: /\b(sonido|sonidos|ruido|ruidos|silencio|suena|sonaba|sonaron|tronaba|trueno|ladrido|grito|murmullo|silbido|escuch[oóa]|oye|oyó)\b/i,
-    temperature: /\b(frío|fría|frio|caliente|calor|cálid[oa]|fresca|fresco|helad[oa]|hierve|tibi[oa]|gélid[oa]|templad[oa])\b/i,
-    touch: /\b(suave|áspero|aspero|rugoso|liso|húmedo|humedo|seco|seca|blando|duro|firme|pegajos[oa])\b/i,
-    taste: /\b(dulce|amargo|salado|ácido|acido|picante|sabor|saborea|gusta\s+a)\b/i,
+    smell: /\b(olor|aroma|perfume|huele|huelen|olía|olor[eo]s|olfato|cheiro|cheira|perfum[eo]|Geruch|riecht|Duft|odore|profumo)\b/i,
+    light: /\b(luz|luces|iluminac|brilla|brilló|brillan|sombra|sombras|claroscuro|oscur[oa]|deslumbra|luzes|brilha|brilhante|sombras?|escur[oa]|Licht|Schatten|dunkel|luce|luci|ombra|buio)\b/i,
+    sound: /\b(sonido|sonidos|ruido|ruidos|silencio|suena|sonaba|sonaron|tronaba|trueno|ladrido|grito|murmullo|silbido|escuch[oóa]|oye|oyó|som|sons|barulho|silêncio|silencio|soa|grita|assobia|escuta|ouve|Geräusch|Lärm|Stille|hört|klingt|suono|rumore|silenzio|sente)\b/i,
+    temperature: /\b(frío|fría|frio|caliente|calor|cálid[oa]|fresca|fresco|helad[oa]|hierve|tibi[oa]|gélid[oa]|templad[oa]|fria|quente|gelad[oa]|morn[oa]|kalt|warm|heiß|kühl|freddo|fredda|caldo|calda|tiepid[oa])\b/i,
+    touch: /\b(suave|áspero|aspero|rugoso|liso|húmedo|humedo|seco|seca|blando|duro|firme|pegajos[oa]|molhad[oa]|áspera|macio|liso|úmid[oa]|firme|vento|weich|rau|trocken|feucht|morbido|ruvido|bagnato|asciutto)\b/i,
+    taste: /\b(dulce|amargo|salado|ácido|acido|picante|sabor|saborea|gusta\s+a|doce|amarg[oa]|salgad[oa]|gosto|süß|bitter|salzig|Geschmack|dolce|amaro|salato|sapore)\b/i,
   };
 
 function extractSpeakerNames(text: string): string[] {

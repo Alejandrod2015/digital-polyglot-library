@@ -1,0 +1,63 @@
+[
+  {
+    "topic": "berlin",
+    "slotIndex": 2,
+    "title": "Einmal durchmachen mit Micha",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Micha wettet, dass Nadia keinen echten Berliner Nachtmarathon durchhält, doch sie dreht den Spieß um und schleift die müde Truppe am Morgen noch zum Club. Vor der Tür wartet ein Türsteher, der halb Berlin abweist, mustert Nadia lange und fragt sie etwas auf breitem Berlinerisch, das sie kaum versteht. Ob sie reinkommen, bleibt in dieser Nacht offen.",
+    "text": "Ein paar Wochen später hat Nadia den Dreh raus und gehört fest zur Truppe. An einem Samstag will Micha unbedingt beweisen, dass die Neue keinen echten Berliner Nachtmarathon durchhält. \"Alter, du pennst doch um zwei weg\", stichelt er, halb im Spaß.\n\nNadia lässt sich nicht lange bitten, denn sie hat Bock, es ihm zu zeigen. Jule grinst schon, weil sie ahnt, dass der Abend eskaliert. Timo warnt nur: \"Wenn ihr durchmachen wollt, esst vorher was Ordentliches, sonst seid ihr früh im Eimer.\"\n\nDie Truppe zieht von Kneipe zu Kneipe, immer weiter, bis die Sonne fast wieder hochkommt. Micha wird langsam müde und will nur noch einen Absacker und dann ab ins Bett. Doch jetzt ist es Nadia, die keine Ruhe gibt. \"Nee, Keule, jetzt gehen wir tanzen\", sagt sie und schleift die anderen Richtung Club.\n\nVor der Tür steht die Schlange, und ganz vorne wartet der Türsteher, breit wie ein Schrank. Sein Blick hat schon halb Berlin abgewiesen. Er mustert jeden von oben bis unten und lässt nur jeden Dritten rein.\n\nDie Truppe rückt Schritt für Schritt vor, und Micha wird auf einmal ganz kleinlaut. Jule flüstert, man solle bloß cool bleiben und nichts Dummes labern. Endlich sind sie dran. Der Türsteher hebt die Hand, schaut Nadia lange an und nuschelt ihr etwas auf breitem Berlinerisch zu, das sie beim besten Willen nicht versteht.",
+    "vocab": [
+      { "word": "den Dreh raushaben", "surface": "Dreh", "type": "expression", "register": "colloquial", "definition": "to have finally got the hang of how something actually works" },
+      { "word": "die Truppe", "surface": "Truppe", "type": "noun", "register": "colloquial", "definition": "the crew, the gang, the tight group of friends who always turn up together" },
+      { "word": "wegpennen", "surface": "pennst", "type": "verb", "register": "slang", "definition": "to konk out, to fall asleep somewhere before the night is even over" },
+      { "word": "sticheln", "surface": "stichelt", "type": "verb", "register": "colloquial", "definition": "to needle or tease someone with little digs, half joking and half provoking" },
+      { "word": "Bock haben", "surface": "Bock", "type": "expression", "register": "slang", "definition": "to be up for something, to really feel like doing it" },
+      { "word": "eskalieren", "surface": "eskaliert", "type": "verb", "register": "slang", "definition": "for a night out to get gloriously out of hand and go completely wild" },
+      { "word": "durchmachen", "surface": "durchmachen", "type": "verb", "register": "colloquial", "definition": "to pull an all nighter, to party straight through until the next morning" },
+      { "word": "im Eimer", "surface": "Eimer", "type": "expression", "register": "slang", "definition": "totally wrecked, exhausted or broken, good for nothing anymore" },
+      { "word": "die Kneipe", "surface": "Kneipe", "type": "noun", "register": "colloquial", "definition": "a pub or dive bar where a Berlin crew drifts through the night" },
+      { "word": "der Absacker", "surface": "Absacker", "type": "noun", "register": "colloquial", "definition": "one last nightcap, the final drink you swear will really be the last" },
+      { "word": "Keule", "surface": "Keule", "type": "noun", "register": "slang", "definition": "mate or pal, a very Berlin way to address a good friend" },
+      { "word": "schleifen", "surface": "schleift", "type": "verb", "register": "colloquial", "definition": "to drag someone along somewhere they were not planning to go" },
+      { "word": "die Schlange", "surface": "Schlange", "type": "noun", "register": "neutral", "definition": "the long queue of people waiting hopefully outside a Berlin club door" },
+      { "word": "breit wie ein Schrank", "surface": "Schrank", "type": "expression", "register": "colloquial", "definition": "built like a tank, enormously broad and solid across the shoulders" },
+      { "word": "der Türsteher", "surface": "Türsteher", "type": "noun", "register": "neutral", "definition": "the bouncer who decides at the door who gets into the club" },
+      { "word": "abweisen", "surface": "abgewiesen", "type": "verb", "register": "neutral", "definition": "to turn people away at the door, to refuse them entry without any pity" },
+      { "word": "mustern", "surface": "mustert", "type": "verb", "register": "colloquial", "definition": "to size someone up, to look them slowly up and down while judging them" },
+      { "word": "kleinlaut", "surface": "kleinlaut", "type": "adjective", "register": "colloquial", "definition": "suddenly meek and sheepish, all the big talk quietly gone" },
+      { "word": "cool bleiben", "surface": "cool", "type": "expression", "register": "slang", "definition": "to keep your cool, to stay relaxed and not let the nerves show" },
+      { "word": "labern", "surface": "labern", "type": "verb", "register": "slang", "definition": "to blab or waffle on, here meaning to say something stupid out loud" },
+      { "word": "nuscheln", "surface": "nuschelt", "type": "verb", "register": "colloquial", "definition": "to mumble unclearly, to swallow the words so nobody can understand them" }
+    ]
+  },
+  {
+    "topic": "berlin",
+    "slotIndex": 3,
+    "title": "Katerfrühstück am Görli",
+    "arcType": "harmonic-close",
+    "synopsis": "Nach der durchzechten Nacht gibt es keine Sieger mehr, nur noch drei Kater und viel Ruhe. Beim trägen Frühstück am Görli fällt zum ersten Mal alles Sticheln weg, und Nadia fragt sich, ob dieses lockere Schweigen mehr über echte Freundschaft sagt als jede laute Pöbelei. Ganz ohne großes Wort merkt sie an diesem Morgen, dass sie längst nicht mehr die Neue ist.",
+    "text": "Buletten, lauwarmer Kaffee und drei brummende Schädel: mehr braucht das Katerfrühstück am Görli heute nicht. Am Sonntag danach ist die ganze Truppe verkatert, redet wenig und blinzelt in die erste Sonne. Timo hat das Essen mitgebracht, alle anderen bringen nur ihren Kater mit.\n\nNiemand prahlt, niemand stichelt, es wird einfach nur gemütlich vor sich hin gegammelt. Micha liegt lang im Gras und behauptet steif und fest, er sei überhaupt nicht müde. \"Klar, Alter, du bist gestern fast im Stehen eingeschlafen\", sagt Jule trocken, und alle grinsen faul.\n\nStück für Stück rekonstruieren sie die Nacht, wie nach einer kleinen Schlacht. Wer wann schlappgemacht hat, wer die dümmsten Sprüche gerissen hat, und ob der Türsteher sie am Ende wirklich reingelassen hat. Die Geschichte wird mit jeder Runde ein bisschen größer und ein bisschen unwahrer.\n\nNadia hört zu, döst zwischendurch weg und lässt sich die Sonne ins Gesicht scheinen. Jule schnorrt sich eine Kippe und teilt sie ganz selbstverständlich mit ihr. Es ist dieses lockere Schweigen zwischen Freunden, in dem man nichts sagen muss und sich trotzdem alles gesagt hat.\n\nAn diesem trägen Morgen fällt kein großes Wort, und dazu braucht es auch keins. Sie muss niemandem mehr etwas beweisen, denn Micha hat ihr im Halbschlaf schon einen Platz fürs nächste Wochenende reserviert. Die letzte Kippe glüht langsam herunter, wandert von Hand zu Hand, und Nadia lässt sich zufrieden ins warme Gras zurücksinken.",
+    "vocab": [
+      { "word": "das Katerfrühstück", "surface": "Katerfrühstück", "type": "noun", "register": "colloquial", "definition": "the greasy late breakfast you eat together to survive a brutal hangover" },
+      { "word": "verkatert", "surface": "verkatert", "type": "adjective", "register": "colloquial", "definition": "badly hungover, fragile and slow the whole morning after a big night" },
+      { "word": "blinzeln", "surface": "blinzelt", "type": "verb", "register": "neutral", "definition": "to squint and blink, eyes not yet ready for the bright morning light" },
+      { "word": "die Bulette", "surface": "Buletten", "type": "noun", "register": "colloquial", "definition": "a Berlin meatball or burger patty, classic cheap comfort food eaten cold or warm" },
+      { "word": "prahlen", "surface": "prahlt", "type": "verb", "register": "neutral", "definition": "to brag and show off loudly about what you supposedly did or can do" },
+      { "word": "gammeln", "surface": "gegammelt", "type": "verb", "register": "slang", "definition": "to laze about doing absolutely nothing, to lounge around all lazy and slow" },
+      { "word": "trocken", "surface": "trocken", "type": "adjective", "register": "colloquial", "definition": "deadpan, dryly funny, delivering a sharp line with a completely straight face" },
+      { "word": "faul", "surface": "faul", "type": "adjective", "register": "neutral", "definition": "lazy and sluggish, moving as little as humanly possible on a slow morning" },
+      { "word": "rekonstruieren", "surface": "rekonstruieren", "type": "verb", "register": "neutral", "definition": "to piece the night back together, to reconstruct who did what and when" },
+      { "word": "schlappmachen", "surface": "schlappgemacht", "type": "verb", "register": "slang", "definition": "to give out and flake, to run out of steam and quit early" },
+      { "word": "einen Spruch reißen", "surface": "Sprüche", "type": "expression", "register": "slang", "definition": "to crack a cheeky one liner just to get a laugh" },
+      { "word": "wegdösen", "surface": "döst", "type": "verb", "register": "colloquial", "definition": "to doze off gently, to drift into a light half sleep for a while" },
+      { "word": "schnorren", "surface": "schnorrt", "type": "verb", "register": "slang", "definition": "to bum or cadge something off a friend, like a cigarette, without paying" },
+      { "word": "die Kippe", "surface": "Kippe", "type": "noun", "register": "slang", "definition": "a cigarette, the thing that gets passed around and shared without a thought" },
+      { "word": "locker", "surface": "lockere", "type": "adjective", "register": "colloquial", "definition": "easy and relaxed, the loose comfortable mood among friends who trust each other" },
+      { "word": "das Schweigen", "surface": "Schweigen", "type": "noun", "register": "neutral", "definition": "the comfortable silence between friends where nobody feels any need to talk" },
+      { "word": "träge", "surface": "trägen", "type": "adjective", "register": "neutral", "definition": "sluggish and slow moving, the heavy pace of a lazy hungover Sunday" },
+      { "word": "dazugehören", "surface": "dazu", "type": "expression", "register": "colloquial", "definition": "to belong, to be a full part of the group rather than an outsider" },
+      { "word": "sich beweisen", "surface": "beweisen", "type": "expression", "register": "neutral", "definition": "to prove yourself, to show the others you are worthy of the group" },
+      { "word": "gemütlich", "surface": "gemütlich", "type": "adjective", "register": "colloquial", "definition": "cosy and easygoing, warm and unhurried in that very German comfortable way" }
+    ]
+  }
+]

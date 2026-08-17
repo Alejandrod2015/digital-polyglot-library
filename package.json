@@ -19,7 +19,9 @@
     "qa:ux:audit:fix": "tsx scripts/uxAudit.ts --fix",
     "qa:mobile:interaction:preview": "echo 'maestro test .maestro/qa-interaction-preview.yaml'",
     "qa:mobile:interaction:auth": "echo 'maestro test .maestro/qa-interaction-authenticated.yaml'",
-    "media:upload-catalog": "tsx scripts/uploadCatalogMediaToObjectStorage.ts"
+    "media:upload-catalog": "tsx scripts/uploadCatalogMediaToObjectStorage.ts",
+    "lint:no-emdash": "tsx scripts/checkNoEmDash.ts",
+    "lint:no-emdash:db": "tsx scripts/checkNoEmDashDb.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",

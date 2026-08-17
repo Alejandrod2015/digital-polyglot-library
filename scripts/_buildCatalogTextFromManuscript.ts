@@ -5,7 +5,7 @@
  * Convenciones observadas en el texto que ya está publicado:
  *   - prosa            -> <p>…</p>
  *   - acotación (…)    -> <p>…</p>  sin los paréntesis
- *   - diálogo "N: — x" -> <blockquote>N: x</blockquote>  (sin la raya)
+ *   - diálogo "N:; x" -> <blockquote>N: x</blockquote>  (sin la raya)
  *   - las palabras de la lista de vocabulario DEL LIBRO (no las 44 glosas de
  *     la app) se envuelven en <span class="vocab-word" data-word="Palabra">,
  *     sólo en su PRIMERA aparición.

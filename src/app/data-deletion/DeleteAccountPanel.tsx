@@ -7,7 +7,7 @@ import { useUser, useClerk } from "@clerk/nextjs";
  * Self-service account + data deletion for a signed-in user. Rendered at the
  * top of /data-deletion (and its /de variant); the email-based instructions
  * below it stay as the fallback for anyone who can't sign in. Play requires a
- * readily discoverable way to delete the account and its data — this is it.
+ * readily discoverable way to delete the account and its data; this is it.
  *
  * Copy is localizable via the `copy` prop (defaults to English) so the German
  * page can reuse the same logic without duplicating the flow.

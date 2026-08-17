@@ -38,7 +38,7 @@ async function accessToken({ client_email, private_key }) {
 function priceOf(basePlan) {
   const cfgs = basePlan.regionalConfigs || [];
   const eur = cfgs.find((c) => c.price?.currencyCode === "EUR") || cfgs[0];
-  if (!eur?.price) return "—";
+  if (!eur?.price) return "-";
   const { currencyCode, units = "0", nanos = 0 } = eur.price;
   return `${units}.${String(Math.round(nanos / 1e7)).padStart(2, "0")} ${currencyCode}`;
 }
@@ -52,7 +52,7 @@ const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
 if (!res.ok) throw new Error(`subscriptions.list ${res.status}: ${await res.text()}`);
 const { subscriptions = [] } = await res.json();
 
-console.log(`\nPackage: ${PACKAGE}  —  ${subscriptions.length} subscription(s)\n`);
+console.log(`\nPackage: ${PACKAGE}; ${subscriptions.length} subscription(s)\n`);
 for (const s of subscriptions) {
   console.log(`• ${s.productId}`);
   for (const bp of s.basePlans || []) {

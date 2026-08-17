@@ -1,0 +1,3810 @@
+[
+ {
+  "topic": "ciudad-de-mexico",
+  "slotIndex": 1,
+  "title": "Xochimilco en trajinera",
+  "arcType": null,
+  "synopsis": "Sofía pasea en una trajinera por los canales de Xochimilco. Está sola, pero una familia vecina la invita a compartir su comida y su música.",
+  "text": "Sofía sube a una trajinera en Xochimilco. La trajinera es de muchos colores. Mateo es el señor del bote. Mateo tiene un sombrero grande. Sofía sonríe y saluda a Mateo.\n\nEl bote va despacio por el agua. Hay flores rojas y amarillas. Otra trajinera pasa cerca. Una familia come y canta. Sofía escucha la música.\n\nMateo mueve el bote con un palo largo. Él le habla a Sofía de las plantas. Sofía mira todo con calma. El sol brilla en el agua.\n\nLa familia de la otra trajinera saluda. Ellos invitan a Sofía a comer. Sofía acepta un plato de comida. Todos ríen juntos. Sofía se siente feliz.\n\nAl final del paseo, Sofía da las gracias. Mateo sonríe. Sofía guarda una foto del día. Sofía no quiere bajar de la trajinera.",
+  "vocab": [
+   {
+    "word": "subir",
+    "surface": "sube",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "climbs onto or gets on something"
+   },
+   {
+    "word": "trajinera",
+    "surface": "trajinera",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "colorful flat boat used in Xochimilco"
+   },
+   {
+    "word": "color",
+    "surface": "colores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "shades of red, blue and others"
+   },
+   {
+    "word": "señor",
+    "surface": "señor",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a grown man, or sir"
+   },
+   {
+    "word": "bote",
+    "surface": "bote",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small boat on water"
+   },
+   {
+    "word": "sombrero",
+    "surface": "sombrero",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a wide hat for the sun"
+   },
+   {
+    "word": "saludar",
+    "surface": "saluda",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "greets a person with words"
+   },
+   {
+    "word": "despacio",
+    "surface": "despacio",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "slowly, without any hurry"
+   },
+   {
+    "word": "agua",
+    "surface": "agua",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "clear liquid we drink"
+   },
+   {
+    "word": "flor",
+    "surface": "flores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "colorful parts that grow on plants"
+   },
+   {
+    "word": "amarillo",
+    "surface": "amarillas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "yellow, like lemons or the sun"
+   },
+   {
+    "word": "cerca",
+    "surface": "cerca",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "at a short distance away"
+   },
+   {
+    "word": "comida",
+    "surface": "comida",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the food, a meal you sit down to eat"
+   },
+   {
+    "word": "cantar",
+    "surface": "canta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "makes music with the voice"
+   },
+   {
+    "word": "escuchar",
+    "surface": "escucha",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "hears sounds with attention"
+   },
+   {
+    "word": "sonreír",
+    "surface": "sonríe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to smile, to show that you are happy"
+   },
+   {
+    "word": "mover",
+    "surface": "mueve",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "makes something change its place"
+   },
+   {
+    "word": "palo",
+    "surface": "palo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a long thin piece of wood"
+   },
+   {
+    "word": "planta",
+    "surface": "plantas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "green living things that grow"
+   },
+   {
+    "word": "calma",
+    "surface": "calma",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a quiet and peaceful feeling"
+   },
+   {
+    "word": "sol",
+    "surface": "sol",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the bright star in the sky"
+   },
+   {
+    "word": "brillar",
+    "surface": "brilla",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "shines with strong light"
+   },
+   {
+    "word": "invitar",
+    "surface": "invitan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "ask someone to join them"
+   },
+   {
+    "word": "plato",
+    "surface": "plato",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a dish that holds food"
+   },
+   {
+    "word": "gracias",
+    "surface": "gracias",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "word to thank another person"
+   }
+  ]
+ },
+ {
+  "topic": "ciudad-de-mexico",
+  "slotIndex": 2,
+  "title": "La Casa Azul de Coyoacán",
+  "arcType": null,
+  "synopsis": "En la Casa Azul, Sofía descubre la vida de Frida Kahlo. Una foto antigua la conmueve, y la guía Lucía la acompaña en ese momento.",
+  "text": "Sofía camina por las calles de Coyoacán. Las casas son azules y rosas. Lucía trabaja en la Casa Azul. Lucía es la guía del museo. Ella recibe a Sofía en la puerta.\n\nLa Casa Azul es la casa de Frida. Frida es una pintora famosa. En las paredes hay muchos cuadros. Sofía mira un cuadro con flores. El color es muy fuerte.\n\nLucía habla de la vida de Frida. Sofía escucha con atención. Ellas caminan por el jardín. Hay árboles y plantas verdes. Un gato duerme al sol.\n\nSofía ve una foto vieja de Frida. La foto la toca mucho. Sus ojos tienen lágrimas. Lucía le da un pañuelo. Las dos sonríen.\n\nAntes de salir, Sofía compra una postal. La postal tiene un cuadro azul. Sofía dice adiós a Lucía. Sofía quiere volver pronto a este barrio azul.",
+  "vocab": [
+   {
+    "word": "caminar",
+    "surface": "camina",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "moves on foot step by step"
+   },
+   {
+    "word": "calle",
+    "surface": "calles",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "roads between buildings in a city"
+   },
+   {
+    "word": "casa",
+    "surface": "casas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "buildings where people live"
+   },
+   {
+    "word": "azul",
+    "surface": "azules",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "the color of a clear sky"
+   },
+   {
+    "word": "rosa",
+    "surface": "rosas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "a soft pink color"
+   },
+   {
+    "word": "guía",
+    "surface": "guía",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "person who shows a place"
+   },
+   {
+    "word": "museo",
+    "surface": "museo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "place that shows art or history"
+   },
+   {
+    "word": "puerta",
+    "surface": "puerta",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "you open it to enter"
+   },
+   {
+    "word": "pintor",
+    "surface": "pintora",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "woman who makes paintings"
+   },
+   {
+    "word": "famoso",
+    "surface": "famosa",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "known by very many people"
+   },
+   {
+    "word": "pared",
+    "surface": "paredes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the sides of a room"
+   },
+   {
+    "word": "cuadro",
+    "surface": "cuadro",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a painting hung on a wall"
+   },
+   {
+    "word": "fuerte",
+    "surface": "fuerte",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "strong or very intense"
+   },
+   {
+    "word": "vida",
+    "surface": "vida",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the time a person lives"
+   },
+   {
+    "word": "atención",
+    "surface": "atención",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "careful focus on something"
+   },
+   {
+    "word": "jardín",
+    "surface": "jardín",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "outdoor place with plants and flowers"
+   },
+   {
+    "word": "árbol",
+    "surface": "árboles",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "tall plants with trunk and leaves"
+   },
+   {
+    "word": "gato",
+    "surface": "gato",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small animal that says meow"
+   },
+   {
+    "word": "dormir",
+    "surface": "duerme",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "rests with the eyes closed"
+   },
+   {
+    "word": "barrio",
+    "surface": "barrio",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a neighborhood, a part of a city"
+   },
+   {
+    "word": "lágrima",
+    "surface": "lágrimas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "drops that fall when crying"
+   },
+   {
+    "word": "pañuelo",
+    "surface": "pañuelo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "small cloth to dry the face"
+   },
+   {
+    "word": "comprar",
+    "surface": "compra",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "gives money to get something"
+   },
+   {
+    "word": "postal",
+    "surface": "postal",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a card you send by mail"
+   }
+  ]
+ },
+ {
+  "topic": "ciudad-de-mexico",
+  "slotIndex": 3,
+  "title": "El mercado del Zócalo",
+  "arcType": null,
+  "synopsis": "En un puesto de frutas del centro histórico, Sofía no reconoce una fruta roja. La vendedora Carmen le enseña su nombre y la sorprende con un regalo.",
+  "text": "Carmen vende fruta en un mercado del centro. El mercado está junto al Zócalo. Sofía llega con hambre. Ella mira las mesas llenas de fruta. Carmen le sonríe.\n\nEn la mesa hay mangos y papayas. También hay limones verdes. Sofía no conoce una fruta roja. Ella pregunta el nombre. Carmen dice que es una pitaya.\n\nCarmen corta un mango con cuidado. Le da un pedazo a Sofía. La fruta es dulce y jugosa. Sofía sonríe contenta.\n\nSofía busca dinero en su bolsa. Solo tiene un billete grande. Carmen ríe y niega con la mano. La pitaya es un regalo para ti. Sofía se pone muy contenta.\n\nSofía prueba la pitaya en la calle. El sabor es nuevo y rico. Ella promete volver al mercado. El centro huele a fruta fresca.",
+  "vocab": [
+   {
+    "word": "vender",
+    "surface": "vende",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "gives goods for money"
+   },
+   {
+    "word": "fruta",
+    "surface": "fruta",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "sweet food that grows on plants"
+   },
+   {
+    "word": "mercado",
+    "surface": "mercado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "place where people buy and sell"
+   },
+   {
+    "word": "centro",
+    "surface": "centro",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the middle area of a city"
+   },
+   {
+    "word": "hambre",
+    "surface": "hambre",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the need to eat something"
+   },
+   {
+    "word": "mesa",
+    "surface": "mesas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "flat surfaces with legs"
+   },
+   {
+    "word": "lleno",
+    "surface": "llenas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "full, with no empty space"
+   },
+   {
+    "word": "sonreír",
+    "surface": "sonríe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "shows a happy face"
+   },
+   {
+    "word": "mango",
+    "surface": "mangos",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "sweet tropical orange fruits"
+   },
+   {
+    "word": "papaya",
+    "surface": "papayas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "large soft orange tropical fruits"
+   },
+   {
+    "word": "limón",
+    "surface": "limones",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "small sour green or yellow fruits"
+   },
+   {
+    "word": "verde",
+    "surface": "verdes",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "the color of grass"
+   },
+   {
+    "word": "conocer",
+    "surface": "conoce",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "knows a person or thing"
+   },
+   {
+    "word": "preguntar",
+    "surface": "pregunta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "asks to get an answer"
+   },
+   {
+    "word": "nombre",
+    "surface": "nombre",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the word for a person or thing"
+   },
+   {
+    "word": "cortar",
+    "surface": "corta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "cuts into smaller pieces"
+   },
+   {
+    "word": "cuidado",
+    "surface": "cuidado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "care to not cause harm"
+   },
+   {
+    "word": "pedazo",
+    "surface": "pedazo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small part of something"
+   },
+   {
+    "word": "dulce",
+    "surface": "dulce",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "tasting like sugar or honey"
+   },
+   {
+    "word": "dinero",
+    "surface": "dinero",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "coins and bills for buying"
+   },
+   {
+    "word": "bolsa",
+    "surface": "bolsa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a bag to carry things"
+   },
+   {
+    "word": "billete",
+    "surface": "billete",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "paper money of some value"
+   },
+   {
+    "word": "regalo",
+    "surface": "regalo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "something you give for free"
+   },
+   {
+    "word": "sabor",
+    "surface": "sabor",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the taste of a food"
+   },
+   {
+    "word": "fresco",
+    "surface": "fresca",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "recently made or still cool"
+   }
+  ]
+ },
+ {
+  "topic": "oaxaca",
+  "slotIndex": 1,
+  "title": "Sofía prueba el mole",
+  "arcType": null,
+  "synopsis": "En un mercado de Oaxaca, doña Rosa vende mole y tlayudas a Sofía. La viajera prueba la salsa picante, y una fruta dulce le calma la boca.",
+  "text": "Sofía llega a Oaxaca, en México. Ella es una viajera muy curiosa. Sofía camina por el mercado grande. Una mujer amable se llama doña Rosa.\n\nDoña Rosa vende comida en su puesto. Ella prepara mole negro y tlayudas. El mole tiene chocolate y muchos chiles. La salsa es oscura y espesa.\n\n«¿Quieres probar el mole?», pregunta doña Rosa. «Sí, gracias», responde Sofía con una sonrisa. La viajera come un poco de tortilla con salsa. El mole es rico pero muy picante.\n\nSofía toma agua rápido porque su boca arde. Doña Rosa le da una fruta dulce. La fruta calma el picante al instante. Sofía respira tranquila otra vez.\n\nDespués, Sofía compra una tlayuda para el camino. Ella da las gracias a doña Rosa. El mercado huele a maíz y a café. Sofía guarda un buen recuerdo de Oaxaca.",
+  "vocab": [
+   {
+    "word": "viajera",
+    "surface": "viajera",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Female traveler; a woman who goes to places."
+   },
+   {
+    "word": "curioso",
+    "surface": "curiosa",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Curious; wanting to see and learn new things."
+   },
+   {
+    "word": "mercado",
+    "surface": "mercado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Market; a place where people sell food and goods."
+   },
+   {
+    "word": "amable",
+    "surface": "amable",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Kind; nice and friendly with other people."
+   },
+   {
+    "word": "vender",
+    "surface": "vende",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Sells; gives something in exchange for money."
+   },
+   {
+    "word": "puesto",
+    "surface": "puesto",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Stall; a small stand for selling things at a market."
+   },
+   {
+    "word": "preparar",
+    "surface": "prepara",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Prepares; makes food ready to eat."
+   },
+   {
+    "word": "mole",
+    "surface": "mole",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Mole; a thick Mexican sauce with chiles and chocolate."
+   },
+   {
+    "word": "tlayuda",
+    "surface": "tlayudas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Tlayudas; large crisp tortillas typical of Oaxaca."
+   },
+   {
+    "word": "chile",
+    "surface": "chiles",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Chiles; small hot peppers used in Mexican food."
+   },
+   {
+    "word": "salsa",
+    "surface": "salsa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Sauce; a soft mix poured over food."
+   },
+   {
+    "word": "probar",
+    "surface": "probar",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To try; to taste a little of some food."
+   },
+   {
+    "word": "sonrisa",
+    "surface": "sonrisa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Smile; a happy shape of the mouth."
+   },
+   {
+    "word": "tortilla",
+    "surface": "tortilla",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Tortilla; a flat round bread made of corn."
+   },
+   {
+    "word": "picante",
+    "surface": "picante",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Spicy; food that feels hot in the mouth."
+   },
+   {
+    "word": "boca",
+    "surface": "boca",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Mouth; the part of the face for eating and talking."
+   },
+   {
+    "word": "arder",
+    "surface": "arde",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Burns; feels very hot like fire."
+   },
+   {
+    "word": "fruta",
+    "surface": "fruta",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Fruit; a sweet food that grows on plants."
+   },
+   {
+    "word": "dulce",
+    "surface": "dulce",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Sweet; tasting like sugar or honey."
+   },
+   {
+    "word": "calmar",
+    "surface": "calma",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Calms; makes a strong feeling softer."
+   },
+   {
+    "word": "respirar",
+    "surface": "respira",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Breathes; takes air in and out."
+   },
+   {
+    "word": "comprar",
+    "surface": "compra",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Buys; pays money to get something."
+   },
+   {
+    "word": "camino",
+    "surface": "camino",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Way; the path a person walks along."
+   },
+   {
+    "word": "maíz",
+    "surface": "maíz",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Corn; a yellow grain used for tortillas."
+   },
+   {
+    "word": "recuerdo",
+    "surface": "recuerdo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Memory; something nice you keep in the mind."
+   }
+  ]
+ },
+ {
+  "topic": "oaxaca",
+  "slotIndex": 2,
+  "title": "Sofía sube a Monte Albán",
+  "arcType": null,
+  "synopsis": "Un guía joven, Mateo, acompaña a Sofía por las ruinas de Monte Albán. Ella siente miedo de la altura, pero llega arriba y mira el valle verde de Oaxaca.",
+  "text": "El sol brilla sobre las ruinas de Monte Albán. Sofía sube por el camino de piedra. Un guía joven se llama Mateo. Él saluda a la viajera con la mano.\n\nMonte Albán es una ciudad muy antigua. Las pirámides son grandes y silenciosas. Mateo explica la historia del lugar. Sofía escucha con mucha atención.\n\n«Mira ese templo», dice Mateo con orgullo. «Es enorme», responde Sofía. Ella camina despacio entre las piedras viejas. El viento sopla fuerte en la montaña.\n\nDe repente, Sofía siente miedo de la altura. Mateo le ofrece la mano con calma. Juntos llegan a la parte más alta. Desde arriba, el valle verde parece un mapa.\n\nSofía descansa un momento sobre una piedra caliente. Ella bebe agua y sonríe feliz. Mateo señala unas montañas a lo lejos. Oaxaca se ve pequeña y muy hermosa.",
+  "vocab": [
+   {
+    "word": "sol",
+    "surface": "sol",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Sun; the bright star that gives us light."
+   },
+   {
+    "word": "brillar",
+    "surface": "brilla",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Shines; gives off strong light."
+   },
+   {
+    "word": "ruina",
+    "surface": "ruinas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Ruins; old broken buildings from long ago."
+   },
+   {
+    "word": "subir",
+    "surface": "sube",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Climbs; goes up to a higher place."
+   },
+   {
+    "word": "piedra",
+    "surface": "piedra",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Stone; a hard piece of rock."
+   },
+   {
+    "word": "guía",
+    "surface": "guía",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Guide; a person who shows a place to visitors."
+   },
+   {
+    "word": "saludar",
+    "surface": "saluda",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Greets; says hello to someone."
+   },
+   {
+    "word": "antiguo",
+    "surface": "antigua",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Ancient; very old, from long ago."
+   },
+   {
+    "word": "pirámide",
+    "surface": "pirámides",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Pyramids; tall stone buildings with wide bases."
+   },
+   {
+    "word": "silencioso",
+    "surface": "silenciosas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Silent; making no sound."
+   },
+   {
+    "word": "explicar",
+    "surface": "explica",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Explains; tells how or why something is."
+   },
+   {
+    "word": "historia",
+    "surface": "historia",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "History; the story of the past."
+   },
+   {
+    "word": "escuchar",
+    "surface": "escucha",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Listens; pays attention to sounds or words."
+   },
+   {
+    "word": "templo",
+    "surface": "templo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Temple; an old building for prayer."
+   },
+   {
+    "word": "orgullo",
+    "surface": "orgullo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Pride; a good feeling about something yours."
+   },
+   {
+    "word": "enorme",
+    "surface": "enorme",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Huge; very, very big."
+   },
+   {
+    "word": "viento",
+    "surface": "viento",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Wind; air that moves outside."
+   },
+   {
+    "word": "soplar",
+    "surface": "sopla",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Blows; moves as air or wind."
+   },
+   {
+    "word": "miedo",
+    "surface": "miedo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Fear; the feeling of being afraid."
+   },
+   {
+    "word": "altura",
+    "surface": "altura",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Height; how high a place is."
+   },
+   {
+    "word": "mano",
+    "surface": "mano",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Hand; the body part at the end of the arm."
+   },
+   {
+    "word": "valle",
+    "surface": "valle",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Valley; low land between hills or mountains."
+   },
+   {
+    "word": "mapa",
+    "surface": "mapa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Map; a drawing of a place seen from above."
+   },
+   {
+    "word": "descansar",
+    "surface": "descansa",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Rests; stops to relax for a while."
+   },
+   {
+    "word": "montaña",
+    "surface": "montaña",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Mountain; a very high hill of rock."
+   }
+  ]
+ },
+ {
+  "topic": "oaxaca",
+  "slotIndex": 3,
+  "title": "Diego pinta alebrijes",
+  "arcType": null,
+  "synopsis": "En las calles de colores de Oaxaca, Sofía conoce a Diego, un artesano que pinta alebrijes de madera. Ella compra un jaguar y aprende que la figura es fuerte.",
+  "text": "Las calles de Oaxaca tienen muchos colores. Sofía pasea entre casas rosas y azules. Un artesano se llama Diego. Él trabaja en un taller pequeño.\n\nDiego pinta alebrijes de madera. Los alebrijes son animales de fantasía. Hay un dragón, un gato y un pájaro. Cada figura tiene puntos y líneas finas.\n\n«¿Te gusta este jaguar?», pregunta Diego. «Es precioso», dice Sofía muy contenta. Ella toca la madera suave con cuidado. Los colores brillan bajo la luz.\n\nSin querer, Sofía deja caer una figura pequeña. El alebrije cae pero no se rompe. Diego recoge el animal con cariño. «La madera es fuerte», dice tranquilo.\n\nSofía compra el jaguar de colores. Ella paga con una sonrisa grande. Diego envuelve la figura en papel. Sofía sale a la calle llena de sol.",
+  "vocab": [
+   {
+    "word": "calle",
+    "surface": "calles",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Streets; the roads between houses in a town."
+   },
+   {
+    "word": "color",
+    "surface": "colores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Colors; red, blue, green and more."
+   },
+   {
+    "word": "pasear",
+    "surface": "pasea",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Strolls; walks slowly for fun."
+   },
+   {
+    "word": "casa",
+    "surface": "casas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Houses; buildings where people live."
+   },
+   {
+    "word": "artesano",
+    "surface": "artesano",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Craftsman; a person who makes things by hand."
+   },
+   {
+    "word": "taller",
+    "surface": "taller",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Workshop; a room where things are made."
+   },
+   {
+    "word": "pintar",
+    "surface": "pinta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Paints; puts color on something."
+   },
+   {
+    "word": "alebrije",
+    "surface": "alebrijes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Alebrijes; bright Mexican figures of fantasy animals."
+   },
+   {
+    "word": "madera",
+    "surface": "madera",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Wood; the hard part that comes from trees."
+   },
+   {
+    "word": "fantasía",
+    "surface": "fantasía",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Fantasy; things that are not real, from the mind."
+   },
+   {
+    "word": "dragón",
+    "surface": "dragón",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Dragon; an imaginary animal with wings and fire."
+   },
+   {
+    "word": "gato",
+    "surface": "gato",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Cat; a small soft animal kept at home."
+   },
+   {
+    "word": "pájaro",
+    "surface": "pájaro",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Bird; a small animal with wings that flies."
+   },
+   {
+    "word": "figura",
+    "surface": "figura",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Figure; a small model of a shape or animal."
+   },
+   {
+    "word": "línea",
+    "surface": "líneas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Lines; long thin marks on a surface."
+   },
+   {
+    "word": "jaguar",
+    "surface": "jaguar",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Jaguar; a big wild cat from the Americas."
+   },
+   {
+    "word": "precioso",
+    "surface": "precioso",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Beautiful; very nice to look at."
+   },
+   {
+    "word": "tocar",
+    "surface": "toca",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Touches; puts a hand on something."
+   },
+   {
+    "word": "suave",
+    "surface": "suave",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Smooth; soft and nice to touch."
+   },
+   {
+    "word": "luz",
+    "surface": "luz",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Light; the brightness that lets us see."
+   },
+   {
+    "word": "caer",
+    "surface": "cae",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Falls; goes down to the ground."
+   },
+   {
+    "word": "romper",
+    "surface": "rompe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Breaks; splits into pieces."
+   },
+   {
+    "word": "recoger",
+    "surface": "recoge",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Picks up; lifts something from the ground."
+   },
+   {
+    "word": "pagar",
+    "surface": "paga",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Pays; gives money for something."
+   },
+   {
+    "word": "papel",
+    "surface": "papel",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Paper; a thin flat sheet for wrapping or writing."
+   }
+  ]
+ },
+ {
+  "topic": "merida",
+  "slotIndex": 1,
+  "title": "Rosa nada primero",
+  "arcType": null,
+  "synopsis": "Sofía tiene miedo del agua honda de un cenote, pero su guía salta primero y la anima. Al final, Sofía vence su miedo y disfruta el agua fría.",
+  "text": "Sofía viaja por México. Hoy llega a Mérida, en el sur del país. Rosa es una guía joven de la ciudad. Rosa recibe a Sofía con una sonrisa grande.\n\nHace mucho calor en la calle. Rosa lleva a Sofía a un cenote cerca. Un cenote es una piscina natural bajo la tierra. El agua es azul y muy fría.\n\nSofía mira el agua con miedo. «El agua está muy honda», dice Sofía. Rosa salta primero y ríe contenta. «Ven, el agua está rica», responde Rosa.\n\nSofía respira hondo y salta al agua. El agua fría cubre todo su cuerpo. Sofía sube a la superficie y grita feliz. El miedo se va muy rápido.\n\nLas dos amigas nadan juntas en el cenote. Rosa enseña una cueva pequeña y oscura. Sofía toca la roca húmeda con la mano. Después, las dos descansan al sol.",
+  "vocab": [
+   {
+    "word": "viajar",
+    "surface": "viaja",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Travels; goes from one place to another."
+   },
+   {
+    "word": "llegar",
+    "surface": "llega",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Arrives; gets to a place."
+   },
+   {
+    "word": "guía",
+    "surface": "guía",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Guide; person who shows a place to visitors."
+   },
+   {
+    "word": "sonrisa",
+    "surface": "sonrisa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Smile; the happy shape of the mouth."
+   },
+   {
+    "word": "joven",
+    "surface": "joven",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Young; not old, early in life."
+   },
+   {
+    "word": "calor",
+    "surface": "calor",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Heat; when the air is very hot."
+   },
+   {
+    "word": "cenote",
+    "surface": "cenote",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Cenote; a natural water hole in the ground."
+   },
+   {
+    "word": "piscina",
+    "surface": "piscina",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Pool; a place with water for swimming."
+   },
+   {
+    "word": "tierra",
+    "surface": "tierra",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Earth; the ground under our feet."
+   },
+   {
+    "word": "frío",
+    "surface": "fría",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Cold; with a low temperature."
+   },
+   {
+    "word": "miedo",
+    "surface": "miedo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Fear; the feeling of being scared."
+   },
+   {
+    "word": "hondo",
+    "surface": "honda",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Deep; going far down."
+   },
+   {
+    "word": "saltar",
+    "surface": "salta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Jumps; pushes the body up off the ground."
+   },
+   {
+    "word": "reír",
+    "surface": "ríe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Laughs; makes happy sounds with the voice."
+   },
+   {
+    "word": "rico",
+    "surface": "rica",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Nice or tasty; here the water feels good."
+   },
+   {
+    "word": "respirar",
+    "surface": "respira",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Breathes; takes air into the body."
+   },
+   {
+    "word": "cubrir",
+    "surface": "cubre",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Covers; goes over all of something."
+   },
+   {
+    "word": "cuerpo",
+    "surface": "cuerpo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Body; all the parts of a person."
+   },
+   {
+    "word": "superficie",
+    "surface": "superficie",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Surface; the top part of the water."
+   },
+   {
+    "word": "gritar",
+    "surface": "grita",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Shouts; says something very loud."
+   },
+   {
+    "word": "nadar",
+    "surface": "nadan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Swim; move through water with the body."
+   },
+   {
+    "word": "cueva",
+    "surface": "cueva",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Cave; a big hole in rock or ground."
+   },
+   {
+    "word": "oscuro",
+    "surface": "oscura",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Dark; with little or no light."
+   },
+   {
+    "word": "roca",
+    "surface": "roca",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Rock; a big hard stone."
+   },
+   {
+    "word": "húmedo",
+    "surface": "húmeda",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Wet; with a little water on it."
+   }
+  ]
+ },
+ {
+  "topic": "merida",
+  "slotIndex": 2,
+  "title": "La pirámide repite la voz",
+  "arcType": null,
+  "synopsis": "Mateo enseña a Sofía a aplaudir frente a una pirámide maya antigua. El eco contesta como un pájaro y ella recibe un regalo de piedra.",
+  "text": "La pirámide de Chichén Itzá sube al cielo. Sofía llega temprano con un grupo de turistas. Un guía local, Mateo, camina con el grupo. Mateo cuenta la historia de los mayas.\n\nEl sol pega muy fuerte al mediodía. Sofía mira la pirámide con la boca abierta. Mateo junta las manos y da una palmada. La pirámide repite el sonido como un pájaro.\n\nSofía también quiere aplaudir la pirámide. «Junta las manos así», dice Mateo. Sofía da una palmada un poco tímida. La pirámide contesta con un eco claro.\n\nSofía está feliz por el sonido mágico. Mateo saca una piedra pequeña de su bolsa. La piedra tiene un dibujo maya antiguo. «Es un regalo para ti», dice Mateo.\n\nSofía guarda la piedra con mucho cuidado. El grupo camina hacia la salida despacio. El calor sube todavía más en la tarde. Sofía mira la pirámide una última vez.",
+  "vocab": [
+   {
+    "word": "pirámide",
+    "surface": "pirámide",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Pyramid; a big stone building with a wide base."
+   },
+   {
+    "word": "cielo",
+    "surface": "cielo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Sky; the air high above the ground."
+   },
+   {
+    "word": "temprano",
+    "surface": "temprano",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "Early; before the usual time."
+   },
+   {
+    "word": "grupo",
+    "surface": "grupo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Group; several people together."
+   },
+   {
+    "word": "maya",
+    "surface": "mayas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Maya; an old people of southern Mexico."
+   },
+   {
+    "word": "sol",
+    "surface": "sol",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Sun; the bright star that gives light and heat."
+   },
+   {
+    "word": "fuerte",
+    "surface": "fuerte",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Strong; with a lot of force."
+   },
+   {
+    "word": "palmada",
+    "surface": "palmada",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Clap; the sound of two hands hitting."
+   },
+   {
+    "word": "sonido",
+    "surface": "sonido",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Sound; something you hear."
+   },
+   {
+    "word": "pájaro",
+    "surface": "pájaro",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Bird; a small animal that flies."
+   },
+   {
+    "word": "claro",
+    "surface": "claro",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Clear; easy to hear or see well."
+   },
+   {
+    "word": "aplaudir",
+    "surface": "aplaudir",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To clap; to hit the hands together."
+   },
+   {
+    "word": "tímido",
+    "surface": "tímida",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Shy; afraid to act in front of others."
+   },
+   {
+    "word": "contestar",
+    "surface": "contesta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Answers; says something back."
+   },
+   {
+    "word": "eco",
+    "surface": "eco",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Echo; a sound that comes back to you."
+   },
+   {
+    "word": "mágico",
+    "surface": "mágico",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Magic; strange and wonderful."
+   },
+   {
+    "word": "piedra",
+    "surface": "piedra",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Stone; a small hard rock."
+   },
+   {
+    "word": "bolsa",
+    "surface": "bolsa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Bag; a soft thing to carry objects."
+   },
+   {
+    "word": "dibujo",
+    "surface": "dibujo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Drawing; a picture made with lines."
+   },
+   {
+    "word": "regalo",
+    "surface": "regalo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Gift; a thing you give to someone."
+   },
+   {
+    "word": "guardar",
+    "surface": "guarda",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Keeps; puts something away safely."
+   },
+   {
+    "word": "cuidado",
+    "surface": "cuidado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Care; attention so nothing breaks."
+   },
+   {
+    "word": "salida",
+    "surface": "salida",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Exit; the way out of a place."
+   },
+   {
+    "word": "tarde",
+    "surface": "tarde",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Afternoon; the time after midday."
+   },
+   {
+    "word": "despacio",
+    "surface": "despacio",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "Slowly; without hurry, at a calm pace."
+   }
+  ]
+ },
+ {
+  "topic": "merida",
+  "slotIndex": 3,
+  "title": "Diego vende hamacas",
+  "arcType": null,
+  "synopsis": "Al anochecer, Sofía prueba cochinita pibil y compra una hamaca de colores. Esa misma noche cuelga la hamaca y mira las estrellas de Yucatán.",
+  "text": "Diego vende hamacas en el mercado de Mérida. Sofía camina por la plaza colonial al anochecer. Las casas viejas tienen colores muy bonitos. Sofía busca un recuerdo para su mamá.\n\nSofía toca una hamaca de muchos colores. «Esta hamaca es muy suave», dice Sofía. Diego abre la hamaca con las dos manos. «Aquí la gente duerme muy feliz», dice Diego.\n\nCerca del mercado hay una fonda pequeña. Una señora sirve cochinita pibil en tortillas. La carne huele a naranja y a especias. Sofía prueba un taco y sonríe mucho.\n\nEl calor del día baja poco a poco. Sofía compra la hamaca azul y roja. Diego regala una bolsa de dulces típicos. Sofía guarda todo en su mochila vieja.\n\nSofía cuelga la hamaca esa misma noche. La hamaca se mueve despacio con el viento. Sofía come un dulce típico y mira las estrellas. La noche de Mérida es fresca y tranquila.",
+  "vocab": [
+   {
+    "word": "vender",
+    "surface": "vende",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Sells; gives something for money."
+   },
+   {
+    "word": "hamaca",
+    "surface": "hamaca",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Hammock; a hanging bed of cloth or net."
+   },
+   {
+    "word": "mercado",
+    "surface": "mercado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Market; a place where people sell things."
+   },
+   {
+    "word": "plaza",
+    "surface": "plaza",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Square; an open public space in a town."
+   },
+   {
+    "word": "anochecer",
+    "surface": "anochecer",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Nightfall; when the day turns to night."
+   },
+   {
+    "word": "tocar",
+    "surface": "toca",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Touches; puts the hand on something."
+   },
+   {
+    "word": "suave",
+    "surface": "suave",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Soft; nice and gentle to touch."
+   },
+   {
+    "word": "abrir",
+    "surface": "abre",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Opens; makes something not closed."
+   },
+   {
+    "word": "gente",
+    "surface": "gente",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "People; men, women, and children."
+   },
+   {
+    "word": "dormir",
+    "surface": "duerme",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Sleeps; rests with the eyes closed."
+   },
+   {
+    "word": "fonda",
+    "surface": "fonda",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Small eatery; a simple place to eat food."
+   },
+   {
+    "word": "cochinita pibil",
+    "surface": "cochinita pibil",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Yucatán dish of pork cooked slowly in orange."
+   },
+   {
+    "word": "tortilla",
+    "surface": "tortillas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Tortilla; thin flat bread made from corn."
+   },
+   {
+    "word": "oler",
+    "surface": "huele",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Smells; gives off a smell you notice."
+   },
+   {
+    "word": "taco",
+    "surface": "taco",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Taco; a folded tortilla with food inside."
+   },
+   {
+    "word": "bajar",
+    "surface": "baja",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Goes down; gets lower."
+   },
+   {
+    "word": "comprar",
+    "surface": "compra",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Buys; gets something with money."
+   },
+   {
+    "word": "típico",
+    "surface": "típicos",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Typical; common in one place or region."
+   },
+   {
+    "word": "dulce",
+    "surface": "dulces",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Sweets; small sugary treats."
+   },
+   {
+    "word": "mochila",
+    "surface": "mochila",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Backpack; a bag you carry on your back."
+   },
+   {
+    "word": "colgar",
+    "surface": "cuelga",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Hangs; puts something up high."
+   },
+   {
+    "word": "mover",
+    "surface": "mueve",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Moves; changes place a little."
+   },
+   {
+    "word": "viento",
+    "surface": "viento",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Wind; air that moves outside."
+   },
+   {
+    "word": "estrella",
+    "surface": "estrellas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Stars; small bright lights in the night sky."
+   },
+   {
+    "word": "fresco",
+    "surface": "fresca",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Cool; a little cold in a nice way."
+   }
+  ]
+ },
+ {
+  "topic": "guanajuato",
+  "slotIndex": 1,
+  "title": "Sofía sube al funicular",
+  "arcType": null,
+  "synopsis": "Sofía llega a Guanajuato y conoce a Beto, un chico del funicular. Juntos suben al mirador del Pípila. Sofía tiene miedo, pero la ciudad de colores la deja sin palabras.",
+  "text": "Sofía llega a Guanajuato en autobús. Es su primer viaje por México. Beto trabaja en el funicular de la ciudad. Beto la saluda con una gran sonrisa. «Hola, ¿subes al mirador?», pregunta Beto.\n\nEl funicular sube por la montaña. Sofía mira por la ventana pequeña. Las casas tienen muchos colores. Hay casas rosas, verdes y amarillas. Sofía tiene un poco de miedo.\n\n«El funicular es muy seguro», dice Beto. Sofía respira despacio y sonríe. «Tu ciudad es muy bonita», dice Sofía. Poco a poco, el miedo se va.\n\nArriba está el mirador del Pípila. Sofía baja y camina hacia el muro. Toda la ciudad está a sus pies. Los callejones bajan como ríos de color. Sofía abre los ojos con sorpresa.\n\nBeto señala una iglesia amarilla muy alta. «Esa es la basílica», dice Beto. Sofía saca una foto de los tejados. El viento fresco mueve su pelo. Sofía da las gracias, muy feliz.",
+  "vocab": [
+   {
+    "word": "llegar",
+    "surface": "llega",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Arrives; comes to a place."
+   },
+   {
+    "word": "viaje",
+    "surface": "viaje",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Trip; when you go to another place."
+   },
+   {
+    "word": "autobús",
+    "surface": "autobús",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Bus; a big vehicle for many people."
+   },
+   {
+    "word": "trabajar",
+    "surface": "trabaja",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Works; does a job for money."
+   },
+   {
+    "word": "funicular",
+    "surface": "funicular",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Funicular; a small train that climbs a hill."
+   },
+   {
+    "word": "saludar",
+    "surface": "saluda",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Greets; says hello to someone."
+   },
+   {
+    "word": "sonrisa",
+    "surface": "sonrisa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Smile; a happy shape of the mouth."
+   },
+   {
+    "word": "montaña",
+    "surface": "montaña",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Mountain; a very high, big hill."
+   },
+   {
+    "word": "ventana",
+    "surface": "ventana",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Window; the glass opening in a wall."
+   },
+   {
+    "word": "casa",
+    "surface": "casas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Houses; the buildings where people live."
+   },
+   {
+    "word": "color",
+    "surface": "colores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Colors; red, blue or green, for example."
+   },
+   {
+    "word": "miedo",
+    "surface": "miedo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Fear; the feeling when you are scared."
+   },
+   {
+    "word": "seguro",
+    "surface": "seguro",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Safe; not dangerous at all."
+   },
+   {
+    "word": "respirar",
+    "surface": "respira",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Breathes; takes air in and out."
+   },
+   {
+    "word": "despacio",
+    "surface": "despacio",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "Slowly; in a slow way."
+   },
+   {
+    "word": "bonito",
+    "surface": "bonita",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Pretty; nice and good to see."
+   },
+   {
+    "word": "poco a poco",
+    "surface": "Poco a poco",
+    "type": "phrase",
+    "register": "neutral",
+    "definition": "Little by little; slowly, step by step."
+   },
+   {
+    "word": "callejón",
+    "surface": "callejones",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Alleys; narrow streets between the houses."
+   },
+   {
+    "word": "río",
+    "surface": "ríos",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Rivers; long lines of moving water."
+   },
+   {
+    "word": "sorpresa",
+    "surface": "sorpresa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Surprise; something you did not expect."
+   },
+   {
+    "word": "mirador",
+    "surface": "mirador",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Lookout; a high place with a nice view."
+   },
+   {
+    "word": "señalar",
+    "surface": "señala",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Points; shows something with a finger."
+   },
+   {
+    "word": "iglesia",
+    "surface": "iglesia",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Church; a building for praying to God."
+   },
+   {
+    "word": "viento",
+    "surface": "viento",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Wind; air that moves outside."
+   }
+  ]
+ },
+ {
+  "topic": "guanajuato",
+  "slotIndex": 2,
+  "title": "El Callejón del Beso",
+  "arcType": null,
+  "synopsis": "Sofía busca el Callejón del Beso y conoce a Rosa, una vendedora de dulces. Rosa le cuenta una vieja leyenda de amor. Entonces una pareja se besa en la escalera y todos aplauden.",
+  "text": "Sofía camina por un callejón muy estrecho. Rosa vende dulces cerca de la escalera. Rosa tiene una canasta llena de charamuscas. «¿Buscas el Callejón del Beso?», pregunta Rosa. «Sí, quiero verlo», responde Sofía.\n\nEl callejón es muy pequeño y estrecho. Dos balcones casi se tocan arriba. Sofía mira el lugar con sorpresa. «Es muy pequeño», dice Sofía sorprendida.\n\n«Aquí hay una vieja leyenda», dice Rosa. «Una chica y un chico se besan en el balcón.» Sofía escucha con mucha atención. La historia es triste y bonita.\n\nEn ese momento, una pareja sube la escalera. Los dos novios se besan en el escalón. La gente aplaude y toma fotos. Sofía sonríe y aplaude también.\n\nDespués, Sofía compra una charamusca a Rosa. La charamusca es dulce y muy rica. «Gracias por la historia», dice Sofía. Rosa le regala otra charamusca con una sonrisa.",
+  "vocab": [
+   {
+    "word": "caminar",
+    "surface": "camina",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Walks; moves on foot."
+   },
+   {
+    "word": "estrecho",
+    "surface": "estrecho",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Narrow; not wide at all."
+   },
+   {
+    "word": "vender",
+    "surface": "vende",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Sells; gives things for money."
+   },
+   {
+    "word": "escalera",
+    "surface": "escalera",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Stairs; steps you go up or down."
+   },
+   {
+    "word": "canasta",
+    "surface": "canasta",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Basket; an open bag made of straw."
+   },
+   {
+    "word": "charamusca",
+    "surface": "charamuscas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Charamuscas; sweet twisted candies from Guanajuato."
+   },
+   {
+    "word": "querer",
+    "surface": "quiero",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Want; would like to have something."
+   },
+   {
+    "word": "pequeño",
+    "surface": "pequeño",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Small; not big in size."
+   },
+   {
+    "word": "balcón",
+    "surface": "balcones",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Balconies; small floors outside the windows."
+   },
+   {
+    "word": "tocar",
+    "surface": "tocan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Touch; put a hand on something."
+   },
+   {
+    "word": "arriba",
+    "surface": "arriba",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "Up; in a higher place."
+   },
+   {
+    "word": "sorprendido",
+    "surface": "sorprendida",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Surprised; not ready for something new."
+   },
+   {
+    "word": "leyenda",
+    "surface": "leyenda",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Legend; an old story people tell."
+   },
+   {
+    "word": "chico",
+    "surface": "chico",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Boy; a young male person."
+   },
+   {
+    "word": "besar",
+    "surface": "besan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Kiss; touch with the lips."
+   },
+   {
+    "word": "escuchar",
+    "surface": "escucha",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Listens; pays attention to a sound."
+   },
+   {
+    "word": "historia",
+    "surface": "historia",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Story; a tale about people and events."
+   },
+   {
+    "word": "triste",
+    "surface": "triste",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Sad; not happy at all."
+   },
+   {
+    "word": "pareja",
+    "surface": "pareja",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Couple; two people who love each other."
+   },
+   {
+    "word": "novio",
+    "surface": "novios",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Boyfriends; two young people in love."
+   },
+   {
+    "word": "aplaudir",
+    "surface": "aplaude",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Claps; hits hands together to show joy."
+   },
+   {
+    "word": "gente",
+    "surface": "gente",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "People; many persons together."
+   },
+   {
+    "word": "comprar",
+    "surface": "compra",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Buys; pays money to get something."
+   },
+   {
+    "word": "rico",
+    "surface": "rica",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Tasty; food that tastes very good."
+   },
+   {
+    "word": "regalar",
+    "surface": "regala",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Gives; hands a present to someone."
+   }
+  ]
+ },
+ {
+  "topic": "guanajuato",
+  "slotIndex": 3,
+  "title": "Una noche de callejoneada",
+  "arcType": null,
+  "synopsis": "Es de noche y Sofía está cansada y sola en Guanajuato. Nico, un estudiante, la invita a la callejoneada. La música de los callejones llena la ciudad, y Sofía canta y baila muy feliz.",
+  "text": "Es de noche y yo camino sola por Guanajuato. Estoy cansada y un poco triste. Un chico toca la guitarra en la plaza. Se llama Nico y estudia en la universidad. «¿Quieres venir a la callejoneada?», me pregunta Nico.\n\nMuchos músicos llevan ropa antigua y negra. Ellos cantan y tocan por los callejones. La música llena toda la calle. Yo sigo al grupo con una sonrisa.\n\nSubimos por callejones estrechos y viejos. Mucha gente canta canciones alegres. Una señora abre su ventana y saluda. Yo ya no estoy triste ni cansada.\n\nNico me da una flor de papel. «Ahora cantas tú», me dice Nico. Yo tengo vergüenza, pero canto fuerte. Toda la gente aplaude y ríe conmigo.\n\nLa luna brilla sobre las casas de colores. Nico toca una última canción de amor. Yo cierro los ojos y sonrío. Yo bailo despacio en el callejón, muy feliz.",
+  "vocab": [
+   {
+    "word": "noche",
+    "surface": "noche",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Night; the dark time after the day."
+   },
+   {
+    "word": "solo",
+    "surface": "sola",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Alone; with no other people."
+   },
+   {
+    "word": "cansado",
+    "surface": "cansada",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Tired; needing rest and sleep."
+   },
+   {
+    "word": "universidad",
+    "surface": "universidad",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "University; a school for older students."
+   },
+   {
+    "word": "estudiar",
+    "surface": "estudia",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Studies; learns things at school."
+   },
+   {
+    "word": "venir",
+    "surface": "venir",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Come; move toward this place."
+   },
+   {
+    "word": "músico",
+    "surface": "músicos",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Musicians; people who play music."
+   },
+   {
+    "word": "ropa",
+    "surface": "ropa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Clothes; the things you wear."
+   },
+   {
+    "word": "antiguo",
+    "surface": "antigua",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Old; from many years ago."
+   },
+   {
+    "word": "cantar",
+    "surface": "cantan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Sing; make music with the voice."
+   },
+   {
+    "word": "calle",
+    "surface": "calle",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Street; a road inside a town."
+   },
+   {
+    "word": "canción",
+    "surface": "canciones",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Songs; music with words to sing."
+   },
+   {
+    "word": "alegre",
+    "surface": "alegres",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Cheerful; happy and full of joy."
+   },
+   {
+    "word": "señora",
+    "surface": "señora",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Lady; a grown woman."
+   },
+   {
+    "word": "abrir",
+    "surface": "abre",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Opens; makes something not closed."
+   },
+   {
+    "word": "flor",
+    "surface": "flor",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Flower; the pretty part of a plant."
+   },
+   {
+    "word": "papel",
+    "surface": "papel",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Paper; a thin sheet for writing."
+   },
+   {
+    "word": "vergüenza",
+    "surface": "vergüenza",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Shyness; the shy feeling of being watched."
+   },
+   {
+    "word": "fuerte",
+    "surface": "fuerte",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Loud; with a lot of sound."
+   },
+   {
+    "word": "reír",
+    "surface": "ríe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Laughs; makes a happy sound of fun."
+   },
+   {
+    "word": "luna",
+    "surface": "luna",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Moon; the light in the night sky."
+   },
+   {
+    "word": "brillar",
+    "surface": "brilla",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Shines; gives bright light."
+   },
+   {
+    "word": "último",
+    "surface": "última",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Last; the final one of all."
+   },
+   {
+    "word": "amor",
+    "surface": "amor",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Love; a strong warm feeling for someone."
+   },
+   {
+    "word": "bailar",
+    "surface": "bailo",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "Dances; moves the body to music."
+   }
+  ]
+ },
+ {
+  "topic": "puebla",
+  "slotIndex": 1,
+  "title": "La talavera azul",
+  "synopsis": "Sofía visita una tienda de talavera en Puebla. Rosa le muestra los platos de colores. Un plato resbala y Sofía lo agarra a tiempo.",
+  "arcType": null,
+  "text": "Sofía es una viajera. Ella visita Puebla hoy. La ciudad es antigua y famosa. Rosa trabaja en una tienda de talavera. La tienda está en una calle tranquila. Rosa saluda a Sofía con una gran sonrisa.\n\nLa tienda es pequeña y bonita. Hay muchos objetos en las mesas. Sofía mira muchos platos de colores. Un plato azul es muy especial. Sofía toca el plato con cuidado.\n\n«Este plato es de talavera», dice Rosa. «Es cerámica típica de Puebla.» Sofía escucha con atención. El plato tiene flores pintadas. Ella quiere comprar el plato azul.\n\nDe repente, el plato resbala. Sofía tiene miedo. Sus manos tiemblan un poco. Pero ella agarra el plato a tiempo. Rosa respira tranquila.\n\nSofía compra el plato azul. Es un recuerdo perfecto de Puebla. Ella guarda el plato en su bolsa. Ella está muy contenta. Rosa sonríe con cariño.",
+  "vocab": [
+   {
+    "word": "viajera",
+    "surface": "viajera",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a woman who travels to different places for fun"
+   },
+   {
+    "word": "visitar",
+    "surface": "visita",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "she goes to see a place or a person"
+   },
+   {
+    "word": "trabajar",
+    "surface": "trabaja",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "he or she does a job for money"
+   },
+   {
+    "word": "tienda",
+    "surface": "tienda",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small place where people buy and sell things"
+   },
+   {
+    "word": "talavera",
+    "surface": "talavera",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "colorful painted pottery that is typical of Puebla, Mexico"
+   },
+   {
+    "word": "saludar",
+    "surface": "saluda",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "she says hello to a person she meets"
+   },
+   {
+    "word": "pequeño",
+    "surface": "pequeña",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "small in size, not big or large at all"
+   },
+   {
+    "word": "bonito",
+    "surface": "bonita",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "nice and pretty to look at, very pleasant"
+   },
+   {
+    "word": "mirar",
+    "surface": "mira",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "she turns her eyes to see something with attention"
+   },
+   {
+    "word": "plato",
+    "surface": "plato",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a flat round dish that holds food or decoration"
+   },
+   {
+    "word": "color",
+    "surface": "colores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the many tones like red, blue and green together"
+   },
+   {
+    "word": "tocar",
+    "surface": "toca",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "she puts her hand on a thing gently"
+   },
+   {
+    "word": "con cuidado",
+    "surface": "con cuidado",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "doing something slowly and carefully to avoid any problem"
+   },
+   {
+    "word": "cerámica",
+    "surface": "cerámica",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "objects made from clay and baked until they are hard"
+   },
+   {
+    "word": "típico",
+    "surface": "típica",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "very common and traditional in one special place here"
+   },
+   {
+    "word": "escuchar",
+    "surface": "escucha",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "she pays attention to the words a person says"
+   },
+   {
+    "word": "querer",
+    "surface": "quiere",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "she wants to have or do a certain thing"
+   },
+   {
+    "word": "comprar",
+    "surface": "comprar",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to give money in order to get something you want"
+   },
+   {
+    "word": "resbalar",
+    "surface": "resbala",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "it slides suddenly and almost falls to the floor"
+   },
+   {
+    "word": "miedo",
+    "surface": "miedo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the scared feeling you get when something bad may happen"
+   },
+   {
+    "word": "agarrar",
+    "surface": "agarra",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "she takes and holds something firmly with her hand"
+   },
+   {
+    "word": "respirar",
+    "surface": "respira",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "she takes air into her body and lets it out"
+   },
+   {
+    "word": "recuerdo",
+    "surface": "recuerdo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small object you keep to remember a trip"
+   },
+   {
+    "word": "sonreír",
+    "surface": "sonríe",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "she makes a happy face with her mouth"
+   }
+  ]
+ },
+ {
+  "topic": "puebla",
+  "slotIndex": 2,
+  "title": "El mole poblano",
+  "synopsis": "Sofía prueba el mole poblano de Diego en el mercado. La comida es picante. Después, Diego le ofrece un dulce típico y ella mira la catedral.",
+  "arcType": null,
+  "text": "Sofía camina por el centro de Puebla. El sol brilla en el cielo. Muchas personas caminan por la plaza. Diego vende comida en un mercado grande. Él prepara mole poblano. El olor es delicioso.\n\n«El mole es muy famoso aquí», dice Diego. Sofía observa la salsa oscura. La salsa tiene muchos ingredientes. Ella tiene mucha hambre. Diego sirve un plato caliente.\n\nSofía prueba el mole. La comida es un poco picante. El mole es marrón y espeso. Su boca arde un momento. Ella toma agua rápido. Diego espera con paciencia.\n\nDespués, Diego ofrece un dulce típico. Es un camote de Puebla. El camote tiene color rosa. El dulce es suave. Sofía está feliz.\n\nDesde el mercado, Sofía mira la catedral. Es enorme y elegante. Las torres suben al cielo. Ella toma una foto. Sofía adora la comida de Puebla.",
+  "vocab": [
+   {
+    "word": "caminar",
+    "surface": "camina",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "she moves on foot from one place to another"
+   },
+   {
+    "word": "centro",
+    "surface": "centro",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the middle and main part of a town or city"
+   },
+   {
+    "word": "vender",
+    "surface": "vende",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "he gives things to people in return for money"
+   },
+   {
+    "word": "mercado",
+    "surface": "mercado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a place with many stands that sell food and goods"
+   },
+   {
+    "word": "preparar",
+    "surface": "prepara",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "he gets the food ready so people can eat"
+   },
+   {
+    "word": "olor",
+    "surface": "olor",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the thing you notice through your nose from food"
+   },
+   {
+    "word": "delicioso",
+    "surface": "delicioso",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a very pleasant taste that you enjoy a lot"
+   },
+   {
+    "word": "famoso",
+    "surface": "famoso",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "known and admired by very many people almost everywhere"
+   },
+   {
+    "word": "observar",
+    "surface": "observa",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "he looks at something with care for some time"
+   },
+   {
+    "word": "salsa",
+    "surface": "salsa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a thick liquid you pour over food for flavor"
+   },
+   {
+    "word": "hambre",
+    "surface": "hambre",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the empty feeling you get when you need food"
+   },
+   {
+    "word": "servir",
+    "surface": "sirve",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "he puts the food on a plate for someone"
+   },
+   {
+    "word": "caliente",
+    "surface": "caliente",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a high temperature that feels warm or hot"
+   },
+   {
+    "word": "probar",
+    "surface": "prueba",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "she tastes a small amount of food to try it"
+   },
+   {
+    "word": "picante",
+    "surface": "picante",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a strong hot flavor like chili on the tongue"
+   },
+   {
+    "word": "rápido",
+    "surface": "rápido",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "doing something in a very fast and quick way"
+   },
+   {
+    "word": "paciencia",
+    "surface": "paciencia",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the calm ability to wait without getting upset or angry"
+   },
+   {
+    "word": "ofrecer",
+    "surface": "ofrece",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "he gives something to a person as a gift"
+   },
+   {
+    "word": "dulce",
+    "surface": "dulce",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a sweet food often made with sugar for dessert"
+   },
+   {
+    "word": "camote",
+    "surface": "camote",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a sweet candy made from cooked sweet potato in Puebla"
+   },
+   {
+    "word": "suave",
+    "surface": "suave",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "soft and gentle to the touch, not hard at all"
+   },
+   {
+    "word": "catedral",
+    "surface": "catedral",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a very big and important church in a city"
+   },
+   {
+    "word": "enorme",
+    "surface": "enorme",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "very big in size, much larger than normal things"
+   },
+   {
+    "word": "espeso",
+    "surface": "espeso",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "thick, not runny and hard to pour"
+   }
+  ]
+ },
+ {
+  "topic": "puebla",
+  "slotIndex": 3,
+  "title": "Los dos volcanes",
+  "synopsis": "Mateo lleva a Sofía por las calles coloniales de Puebla. Las nubes esconden los volcanes. De pronto, el viento las mueve y la vista es espectacular.",
+  "arcType": null,
+  "text": "Yo soy Sofía. Camino por las calles coloniales de Puebla. Las paredes tienen tonos claros. Mateo es un guía local. Él conoce toda la historia. Él me muestra la ciudad.\n\nLas casas tienen colores bonitos. Muchas flores decoran las ventanas. Mateo señala unas montañas lejanas. «Son dos volcanes famosos», explica. Yo miro con curiosidad.\n\nPero hay muchas nubes en el cielo. Los volcanes no son visibles. Yo estoy un poco triste. Mateo mira el horizonte. Mateo dice: «Espera un momento.»\n\nDe pronto, el viento mueve las nubes. El cielo cambia de repente. Los dos volcanes aparecen enormes. La nieve cubre sus picos. La vista es espectacular. Yo miro la escena con alegría.\n\n«Gracias, Mateo», digo yo. Él sonríe contento. Este momento es muy especial. Puebla tiene paisajes increíbles. Hoy es un día perfecto.",
+  "vocab": [
+   {
+    "word": "caminar",
+    "surface": "Camino",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "I move on foot along a street or path"
+   },
+   {
+    "word": "calle",
+    "surface": "calles",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the roads in a town where people walk and drive"
+   },
+   {
+    "word": "colonial",
+    "surface": "coloniales",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "built long ago in the old Spanish style of building"
+   },
+   {
+    "word": "guía",
+    "surface": "guía",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a person who shows visitors around an interesting place"
+   },
+   {
+    "word": "mostrar",
+    "surface": "muestra",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "he lets me see something by pointing at it"
+   },
+   {
+    "word": "casa",
+    "surface": "casas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the buildings where families live and sleep every single day"
+   },
+   {
+    "word": "color",
+    "surface": "colores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the many tones like red, blue and green together"
+   },
+   {
+    "word": "bonito",
+    "surface": "bonitos",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "nice and pretty to look at, very pleasant indeed"
+   },
+   {
+    "word": "señalar",
+    "surface": "señala",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "he points at something with his hand or finger"
+   },
+   {
+    "word": "montaña",
+    "surface": "montañas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "very high land that rises far above the flat ground"
+   },
+   {
+    "word": "volcán",
+    "surface": "volcanes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "tall mountains that can send out fire and smoke"
+   },
+   {
+    "word": "curiosidad",
+    "surface": "curiosidad",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the strong wish to know or learn something new"
+   },
+   {
+    "word": "nube",
+    "surface": "nubes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the white or gray masses of water in the sky"
+   },
+   {
+    "word": "cielo",
+    "surface": "cielo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the wide space above you where you see clouds"
+   },
+   {
+    "word": "visible",
+    "surface": "visibles",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "able to be seen clearly with your own eyes"
+   },
+   {
+    "word": "triste",
+    "surface": "triste",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "feeling sad and unhappy about something at the moment"
+   },
+   {
+    "word": "alegría",
+    "surface": "alegría",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "joy, a happy feeling deep inside you"
+   },
+   {
+    "word": "viento",
+    "surface": "viento",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the moving air you feel outside on your face"
+   },
+   {
+    "word": "mover",
+    "surface": "mueve",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "it makes something change from one place to another"
+   },
+   {
+    "word": "aparecer",
+    "surface": "aparecen",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "they come into view where you can see them"
+   },
+   {
+    "word": "vista",
+    "surface": "vista",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the wide scene you see from a high place"
+   },
+   {
+    "word": "espectacular",
+    "surface": "espectacular",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "extremely impressive and beautiful to look at right now"
+   },
+   {
+    "word": "paisaje",
+    "surface": "paisajes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the wide natural views of land you can admire"
+   },
+   {
+    "word": "cubrir",
+    "surface": "cubre",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to cover, to hide something from view"
+   }
+  ]
+ },
+ {
+  "topic": "tulum",
+  "slotIndex": 1,
+  "title": "El mar es turquesa",
+  "arcType": null,
+  "synopsis": "Sofía llega al Caribe muy cansada. Ella no sabe si el largo camino vale la pena. Entonces el clima le da una pequeña sorpresa junto al mar.",
+  "text": "Por la tarde, Sofía llega a la playa de Tulum. Ella es una viajera de otro país. Diego trabaja en la playa. Diego saluda a Sofía con una sonrisa grande.\n\nEl mar es turquesa. La arena es blanca y muy suave. Hay muchas palmeras altas cerca del agua. Sofía respira despacio y descansa. El día es perfecto.\n\nSofía está cansada. El camino es muy largo. Diego le da un coco frío. El coco es natural y dulce. Sofía toma el agua con tranquilidad.\n\nDe repente, el cielo se llena de nubes. Cae una lluvia corta y tibia. Sofía corre bajo una palapa. Diego se ríe con ella.\n\nDespués, sale un arcoíris sobre el mar. Los colores son hermosos. Sofía toma una foto. Ella está muy feliz. El mar turquesa brilla bajo el arcoíris.",
+  "vocab": [
+   {
+    "word": "viajera",
+    "surface": "viajera",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a woman who travels to visit many different places"
+   },
+   {
+    "word": "playa",
+    "surface": "playa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the sandy shore found right beside the open sea"
+   },
+   {
+    "word": "saluda",
+    "surface": "saluda",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "greets a person with a friendly word or gesture"
+   },
+   {
+    "word": "sonrisa",
+    "surface": "sonrisa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a happy expression formed with the mouth and lips"
+   },
+   {
+    "word": "por la tarde",
+    "surface": "por la tarde",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "during the afternoon hours, before the evening slowly begins"
+   },
+   {
+    "word": "turquesa",
+    "surface": "turquesa",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a bright blue green color like tropical water"
+   },
+   {
+    "word": "arena",
+    "surface": "arena",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the tiny soft grains covering a wide open beach"
+   },
+   {
+    "word": "suave",
+    "surface": "suave",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "soft and smooth to the touch, not rough"
+   },
+   {
+    "word": "palmeras",
+    "surface": "palmeras",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "tall tropical trees with big leaves near beaches"
+   },
+   {
+    "word": "respira",
+    "surface": "respira",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "takes air into the body and lets it out"
+   },
+   {
+    "word": "cansada",
+    "surface": "cansada",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "feeling tired and needing some rest after effort"
+   },
+   {
+    "word": "largo",
+    "surface": "largo",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "measuring much distance from one end to another"
+   },
+   {
+    "word": "coco",
+    "surface": "coco",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a large tropical fruit with sweet water inside"
+   },
+   {
+    "word": "natural",
+    "surface": "natural",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "coming from nature and not made by machines"
+   },
+   {
+    "word": "dulce",
+    "surface": "dulce",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a pleasant sugary taste like ripe fruit"
+   },
+   {
+    "word": "de repente",
+    "surface": "De repente",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "in a sudden and quick way without any warning"
+   },
+   {
+    "word": "nubes",
+    "surface": "nubes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the white or gray masses floating in the sky"
+   },
+   {
+    "word": "lluvia",
+    "surface": "lluvia",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "water that falls from the clouds onto ground"
+   },
+   {
+    "word": "tibia",
+    "surface": "tibia",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "slightly warm, neither hot nor cold at all"
+   },
+   {
+    "word": "palapa",
+    "surface": "palapa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "an open shelter with a roof of dry palm"
+   },
+   {
+    "word": "arcoíris",
+    "surface": "arcoíris",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a colorful arc appearing in the sky after rain"
+   },
+   {
+    "word": "colores",
+    "surface": "colores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the different tones like red, green, and blue"
+   },
+   {
+    "word": "hermosos",
+    "surface": "hermosos",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "very pretty and pleasant for the eyes to see"
+   },
+   {
+    "word": "descansar",
+    "surface": "descansa",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "to rest, to stop and relax"
+   }
+  ]
+ },
+ {
+  "topic": "tulum",
+  "slotIndex": 2,
+  "title": "Tengo un poco de miedo",
+  "arcType": null,
+  "synopsis": "Sofía visita un cenote con agua muy fría. Ella tiene miedo del agua profunda. Su guía la ayuda, y algo bonito aparece bajo la superficie.",
+  "text": "Mi nombre es Sofía. Yo visito un cenote cerca de Tulum. Ana es mi guía local. Ana me explica todo con paciencia. Yo estoy muy contenta.\n\nEl cenote es una cueva con agua dulce. El agua es muy clara y fría. Hay plantas verdes en las paredes. El lugar es muy tranquilo. Yo tengo un poco de miedo.\n\nAna me da unas gafas para el snorkel. El agua es segura, dice Ana. Yo respiro hondo. Poco a poco, yo entro al agua.\n\nDe pronto, yo veo muchos peces. Los peces son pequeños y de colores. Ellos nadan cerca de mí. Yo estoy muy sorprendida.\n\nEl momento es mágico. Yo floto en silencio. Este día es muy especial. Ana sonríe desde la orilla. Ahora el agua ya no me da miedo.",
+  "vocab": [
+   {
+    "word": "visito",
+    "surface": "visito",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "goes to see a place for a short time"
+   },
+   {
+    "word": "cerca",
+    "surface": "cerca",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "at a short distance, not far from here"
+   },
+   {
+    "word": "guía",
+    "surface": "guía",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a person who shows visitors around a place"
+   },
+   {
+    "word": "explica",
+    "surface": "explica",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "makes something clear so other people can understand"
+   },
+   {
+    "word": "paciencia",
+    "surface": "paciencia",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the calm ability to wait without getting upset"
+   },
+   {
+    "word": "cueva",
+    "surface": "cueva",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a hollow natural space inside rock or ground"
+   },
+   {
+    "word": "clara",
+    "surface": "clara",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "easy to see through, transparent and very clean"
+   },
+   {
+    "word": "fría",
+    "surface": "fría",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "having a low temperature, cold to the touch"
+   },
+   {
+    "word": "plantas",
+    "surface": "plantas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "living green things that grow from the soil"
+   },
+   {
+    "word": "paredes",
+    "surface": "paredes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the tall vertical sides that enclose a space"
+   },
+   {
+    "word": "gafas",
+    "surface": "gafas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "glasses worn over the eyes for seeing better"
+   },
+   {
+    "word": "segura",
+    "surface": "segura",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "free from any danger, safe and not risky"
+   },
+   {
+    "word": "hondo",
+    "surface": "hondo",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "reaching far down, deeply toward the low bottom"
+   },
+   {
+    "word": "poco a poco",
+    "surface": "Poco a poco",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "slowly and gradually, one small step at a time"
+   },
+   {
+    "word": "entro",
+    "surface": "entro",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "goes into a place from the outside area"
+   },
+   {
+    "word": "de pronto",
+    "surface": "De pronto",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "in a sudden and unexpected very quick moment"
+   },
+   {
+    "word": "peces",
+    "surface": "peces",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "animals that live and swim in the water"
+   },
+   {
+    "word": "pequeños",
+    "surface": "pequeños",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "small in size, not big or large anywhere"
+   },
+   {
+    "word": "nadan",
+    "surface": "nadan",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "move through water using the body and limbs"
+   },
+   {
+    "word": "sorprendida",
+    "surface": "sorprendida",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "feeling sudden surprise from something new and unexpected"
+   },
+   {
+    "word": "cenote",
+    "surface": "cenote",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a natural water hole in the rock"
+   },
+   {
+    "word": "mágico",
+    "surface": "mágico",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "wonderful and very special, as if by magic"
+   },
+   {
+    "word": "floto",
+    "surface": "floto",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "stays resting on the surface of the water"
+   },
+   {
+    "word": "orilla",
+    "surface": "orilla",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the edge of land beside water or sea"
+   }
+  ]
+ },
+ {
+  "topic": "tulum",
+  "slotIndex": 3,
+  "title": "Las ruinas miran al mar",
+  "arcType": null,
+  "synopsis": "Sofía sube hasta unas ruinas mayas junto al mar. Ella quiere una foto perfecta. Pero un pequeño problema la obliga a mirar el paisaje de otra forma.",
+  "text": "Sofía camina hacia las ruinas mayas. Ella lleva un sombrero y una botella de agua. Rosa vende frutas cerca de la entrada. Rosa le ofrece una piña fresca.\n\nLas ruinas son muy antiguas. Ellas están sobre una colina verde. El mar azul brilla detrás de las piedras. Sofía observa el paisaje con calma.\n\nEntonces, una iguana aparece entre las rocas. La iguana es grande y muy quieta. Sofía la mira con curiosidad. Ella saca su cámara para una imagen.\n\nPero la cámara no tiene batería. Sofía suspira un poco. Rosa le dice una frase amable. La memoria es mejor que una simple foto.\n\nSofía guarda su cámara despacio. Ella observa la iguana y el mar. El viento del mar es cálido. Este recuerdo es muy especial.",
+  "vocab": [
+   {
+    "word": "hacia",
+    "surface": "hacia",
+    "type": "preposition",
+    "register": "neutral",
+    "definition": "in the direction of a certain place or point"
+   },
+   {
+    "word": "sombrero",
+    "surface": "sombrero",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a hat that protects the head from sun"
+   },
+   {
+    "word": "vende",
+    "surface": "vende",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "gives goods to people in return for money"
+   },
+   {
+    "word": "entrada",
+    "surface": "entrada",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the opening place where you go into somewhere"
+   },
+   {
+    "word": "ofrece",
+    "surface": "ofrece",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "gives or presents something to another person kindly"
+   },
+   {
+    "word": "ruinas",
+    "surface": "ruinas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the old broken remains of very ancient buildings"
+   },
+   {
+    "word": "antiguas",
+    "surface": "antiguas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "very old, from many centuries in the past"
+   },
+   {
+    "word": "colina",
+    "surface": "colina",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a small hill rising above the flat land"
+   },
+   {
+    "word": "brilla",
+    "surface": "brilla",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "shines with a bright light under the sun"
+   },
+   {
+    "word": "con calma",
+    "surface": "con calma",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "in a calm and relaxed way, without hurry"
+   },
+   {
+    "word": "iguana",
+    "surface": "iguana",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a large tropical lizard with rough green skin"
+   },
+   {
+    "word": "aparece",
+    "surface": "aparece",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "becomes visible and comes suddenly into clear view"
+   },
+   {
+    "word": "quieta",
+    "surface": "quieta",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "staying very still and calm, without any movement"
+   },
+   {
+    "word": "curiosidad",
+    "surface": "curiosidad",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a strong wish to learn or know something"
+   },
+   {
+    "word": "cámara",
+    "surface": "cámara",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a device used to take photos or videos"
+   },
+   {
+    "word": "batería",
+    "surface": "batería",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the part that stores power for a device"
+   },
+   {
+    "word": "suspira",
+    "surface": "suspira",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "lets out a long breath showing quiet emotion"
+   },
+   {
+    "word": "un poco",
+    "surface": "un poco",
+    "type": "expression",
+    "register": "neutral",
+    "definition": "a small amount or slight degree of something"
+   },
+   {
+    "word": "memoria",
+    "surface": "memoria",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the mind's power to remember and keep past things"
+   },
+   {
+    "word": "mejor",
+    "surface": "mejor",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "of higher quality or value than another compared thing"
+   },
+   {
+    "word": "guarda",
+    "surface": "guarda",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "puts something away safely into its own place"
+   },
+   {
+    "word": "viento",
+    "surface": "viento",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "the natural movement of air across the land"
+   },
+   {
+    "word": "cálido",
+    "surface": "cálido",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "pleasantly warm and gentle, but not too hot"
+   },
+   {
+    "word": "recuerdo",
+    "surface": "recuerdo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "a thing you remember from a past moment"
+   }
+  ]
+ },
+ {
+  "topic": "guadalajara",
+  "slotIndex": 1,
+  "title": "Suena el mariachi",
+  "arcType": null,
+  "synopsis": "Sofía no conoce a nadie en esta ciudad nueva. Un músico llamado Diego la invita a escuchar mariachis cerca de la fuente. La lluvia cambia el plan.",
+  "text": "Es de tarde cuando Sofía llega a Guadalajara y el mariachi suena en la plaza. Diego es un músico de la ciudad. Diego toca en la plaza con otros mariachis. Sofía camina hacia la música con mucha curiosidad.\n\nLos mariachis llevan trajes negros muy elegantes. Tocan guitarras y trompetas con energía. La música es alegre y muy fuerte. Sofía escucha la canción con una sonrisa.\n\n«Tu ciudad tiene música bonita», dice Sofía. Diego toca una canción especial para ella. La gente aplaude y canta cerca de la fuente. Sofía baila un poco entre los turistas.\n\nPoco después, empieza a llover sobre la plaza. Los turistas corren y buscan un café. Diego invita a Sofía a la catedral grande. Los dos miran las torres desde la puerta.\n\nLa lluvia termina muy rápido. El sol sale otra vez sobre la ciudad. Sofía saca una foto de los mariachis. Diego regala una flor a su nueva amiga.",
+  "vocab": [
+   {
+    "word": "llegar",
+    "surface": "llega",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To arrive; to reach a new place."
+   },
+   {
+    "word": "tarde",
+    "surface": "tarde",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Afternoon; the part of day after noon."
+   },
+   {
+    "word": "ciudad",
+    "surface": "ciudad",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "City; a big town with many people."
+   },
+   {
+    "word": "caminar",
+    "surface": "camina",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To walk; to go on your feet."
+   },
+   {
+    "word": "plaza",
+    "surface": "plaza",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Town square; an open space in a city."
+   },
+   {
+    "word": "curiosidad",
+    "surface": "curiosidad",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Curiosity; the wish to see or know things."
+   },
+   {
+    "word": "traje",
+    "surface": "trajes",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Suit; a set of formal, elegant clothes."
+   },
+   {
+    "word": "elegante",
+    "surface": "elegantes",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Elegant; nice and stylish to look at."
+   },
+   {
+    "word": "tocar",
+    "surface": "toca",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To play; to make sounds on an instrument."
+   },
+   {
+    "word": "trompeta",
+    "surface": "trompetas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Trumpet; a metal instrument you blow into."
+   },
+   {
+    "word": "energía",
+    "surface": "energía",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Energy; strong force and power in action."
+   },
+   {
+    "word": "torre",
+    "surface": "torres",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Tower; a tall narrow part of a building."
+   },
+   {
+    "word": "alegre",
+    "surface": "alegre",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Cheerful; happy and full of joy."
+   },
+   {
+    "word": "fuerte",
+    "surface": "fuerte",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Loud or strong; with a lot of power."
+   },
+   {
+    "word": "escuchar",
+    "surface": "escucha",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To listen; to pay attention to sounds."
+   },
+   {
+    "word": "canción",
+    "surface": "canción",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Song; music with words you can sing."
+   },
+   {
+    "word": "cantar",
+    "surface": "canta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To sing; to make music with your voice."
+   },
+   {
+    "word": "gente",
+    "surface": "gente",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "People; a group of persons together."
+   },
+   {
+    "word": "aplaudir",
+    "surface": "aplaude",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To clap; to hit hands to show you like it."
+   },
+   {
+    "word": "bailar",
+    "surface": "baila",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To dance; to move your body to music."
+   },
+   {
+    "word": "fuente",
+    "surface": "fuente",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Fountain; a place where water goes up."
+   },
+   {
+    "word": "llover",
+    "surface": "llover",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To rain; when water falls from the sky."
+   },
+   {
+    "word": "turista",
+    "surface": "turistas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Tourist; a person who visits a new place."
+   },
+   {
+    "word": "catedral",
+    "surface": "catedral",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Cathedral; a very big and old church."
+   }
+  ]
+ },
+ {
+  "topic": "guadalajara",
+  "slotIndex": 2,
+  "title": "La salsa quema",
+  "arcType": null,
+  "synopsis": "En el mercado, Rosa ofrece una torta con salsa muy picante. Sofía prueba un bocado y la boca le arde. ¿Puede terminar el plato entero?",
+  "text": "El mercado San Juan de Dios abre temprano. Sofía camina entre los puestos con mucha hambre. Rosa vende comida en un puesto pequeño. Rosa prepara tortas ahogadas para los clientes.\n\nEl mercado es grande y tiene muchos colores. Hay frutas frescas, ropa y zapatos. La gente compra y habla con energía. Sofía observa todo despacio y con calma.\n\n«¿Quieres probar una torta ahogada?», pregunta Rosa. La torta tiene una salsa roja muy picante. Sofía come un bocado con mucho cuidado. De repente, la salsa quema su boca.\n\nSofía toma agua rápido y respira hondo. Rosa la mira con cariño y le da una servilleta. «La salsa es picante, pero deliciosa», dice Sofía.\n\nAl final, Sofía termina toda la torta contenta. Después compra una fruta muy dulce. Las dos mujeres se despiden con una sonrisa.",
+  "vocab": [
+   {
+    "word": "temprano",
+    "surface": "temprano",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "Early; before the usual or normal time."
+   },
+   {
+    "word": "hambre",
+    "surface": "hambre",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Hunger; the need to eat some food."
+   },
+   {
+    "word": "vender",
+    "surface": "vende",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To sell; to give things for money."
+   },
+   {
+    "word": "puesto",
+    "surface": "puesto",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Stall; a small stand that sells things."
+   },
+   {
+    "word": "preparar",
+    "surface": "prepara",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To prepare; to make something ready."
+   },
+   {
+    "word": "mercado",
+    "surface": "mercado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Market; a place where people buy food."
+   },
+   {
+    "word": "grande",
+    "surface": "grande",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Big; large in size or space."
+   },
+   {
+    "word": "color",
+    "surface": "colores",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Color; red, blue, green and more."
+   },
+   {
+    "word": "fruta",
+    "surface": "frutas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Fruit; sweet food that grows on plants."
+   },
+   {
+    "word": "fresco",
+    "surface": "frescas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Fresh; new and not old or bad."
+   },
+   {
+    "word": "zapato",
+    "surface": "zapatos",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Shoe; a thing you wear on your foot."
+   },
+   {
+    "word": "despacio",
+    "surface": "despacio",
+    "type": "adverb",
+    "register": "neutral",
+    "definition": "Slowly; not fast, with calm steps."
+   },
+   {
+    "word": "probar",
+    "surface": "probar",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To taste; to try a bit of food."
+   },
+   {
+    "word": "salsa",
+    "surface": "salsa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Sauce; a wet mix you put on food."
+   },
+   {
+    "word": "picante",
+    "surface": "picante",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Spicy; hot and strong on your tongue."
+   },
+   {
+    "word": "bocado",
+    "surface": "bocado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Bite; a small piece of food you eat."
+   },
+   {
+    "word": "cuidado",
+    "surface": "cuidado",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Care; slow attention so nothing goes wrong."
+   },
+   {
+    "word": "agua",
+    "surface": "agua",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Water; the clear drink you need daily."
+   },
+   {
+    "word": "cariño",
+    "surface": "cariño",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Affection; a warm and kind feeling."
+   },
+   {
+    "word": "servilleta",
+    "surface": "servilleta",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Napkin; paper to clean your mouth or hands."
+   },
+   {
+    "word": "delicioso",
+    "surface": "deliciosa",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Delicious; food that tastes very good."
+   },
+   {
+    "word": "terminar",
+    "surface": "termina",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To finish; to end or complete something."
+   },
+   {
+    "word": "dulce",
+    "surface": "dulce",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Sweet; the taste of sugar or honey."
+   },
+   {
+    "word": "sonrisa",
+    "surface": "sonrisa",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Smile; a happy look with your mouth."
+   }
+  ]
+ },
+ {
+  "topic": "guadalajara",
+  "slotIndex": 3,
+  "title": "Pablo pinta un gato",
+  "arcType": null,
+  "synopsis": "Una viajera quiere un buen recuerdo para su familia. En un taller de figuras, la pieza que elige cae de repente. El susto dura muy poco.",
+  "text": "Un autobús lleva a Sofía a Tlaquepaque. Pablo es un artesano de la zona. Pablo hace figuras de barro en su taller. Sofía busca un regalo para su familia.\n\nLas calles de Tlaquepaque son bonitas y tranquilas. Hay tiendas con platos, jarros y colores vivos. Sofía mira una figura pequeña de un gato. La figura es delicada y muy original.\n\n«Esta figura es perfecta», dice Sofía con alegría. Pablo pinta el gato con mucha paciencia. Sofía paga con monedas y guarda el regalo. Sin aviso, el gato cae al suelo.\n\nSofía tiene miedo, pero el gato está entero. Pablo limpia la figura con un trapo suave. «El barro de aquí es muy bueno», dice Pablo.\n\nDespués, Sofía compra el collar pequeño de barro. Ella agradece el detalle de Pablo con emoción. Los dos toman un jugo antes de la tarde.",
+  "vocab": [
+   {
+    "word": "autobús",
+    "surface": "autobús",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Bus; a big vehicle that carries many people."
+   },
+   {
+    "word": "artesano",
+    "surface": "artesano",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Artisan; a person who makes things by hand."
+   },
+   {
+    "word": "barro",
+    "surface": "barro",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Clay; soft brown earth used to make pots."
+   },
+   {
+    "word": "taller",
+    "surface": "taller",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Workshop; a room where a person makes things."
+   },
+   {
+    "word": "regalo",
+    "surface": "regalo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Gift; a thing you give to someone."
+   },
+   {
+    "word": "calle",
+    "surface": "calles",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Street; a road with houses in a town."
+   },
+   {
+    "word": "tranquilo",
+    "surface": "tranquilas",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Calm; quiet and with no noise."
+   },
+   {
+    "word": "tienda",
+    "surface": "tiendas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Shop; a place where you buy things."
+   },
+   {
+    "word": "jarro",
+    "surface": "jarros",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Jug; a pot that holds water or milk."
+   },
+   {
+    "word": "delicado",
+    "surface": "delicada",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Delicate; soft and easy to break."
+   },
+   {
+    "word": "guardar",
+    "surface": "guarda",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To keep; to put a thing away safely."
+   },
+   {
+    "word": "pintar",
+    "surface": "pinta",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To paint; to put color on something."
+   },
+   {
+    "word": "paciencia",
+    "surface": "paciencia",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Patience; calm while you wait for something."
+   },
+   {
+    "word": "moneda",
+    "surface": "monedas",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Coin; small round metal money."
+   },
+   {
+    "word": "suelo",
+    "surface": "suelo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Floor; the ground you walk on inside."
+   },
+   {
+    "word": "miedo",
+    "surface": "miedo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Fear; the bad feeling when you are scared."
+   },
+   {
+    "word": "entero",
+    "surface": "entero",
+    "type": "adjective",
+    "register": "neutral",
+    "definition": "Whole; complete and not broken."
+   },
+   {
+    "word": "limpiar",
+    "surface": "limpia",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To clean; to take dirt off something."
+   },
+   {
+    "word": "trapo",
+    "surface": "trapo",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Cloth; a soft piece of fabric for cleaning."
+   },
+   {
+    "word": "collar",
+    "surface": "collar",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Necklace; a thing you wear on your neck."
+   },
+   {
+    "word": "agradecer",
+    "surface": "agradece",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To thank; to say you are happy for something."
+   },
+   {
+    "word": "detalle",
+    "surface": "detalle",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Detail; a small kind and thoughtful act."
+   },
+   {
+    "word": "emoción",
+    "surface": "emoción",
+    "type": "noun",
+    "register": "neutral",
+    "definition": "Emotion; a strong feeling inside you."
+   },
+   {
+    "word": "tomar",
+    "surface": "toman",
+    "type": "verb",
+    "register": "neutral",
+    "definition": "To have; to drink or take something."
+   }
+  ]
+ }
+]

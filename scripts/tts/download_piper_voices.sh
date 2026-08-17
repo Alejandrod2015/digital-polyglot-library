@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Downloads curated Piper voices (~400 MB total) into scripts/tts/piper-voices/
-# Idempotent — skips files that already exist. Re-run any time to refresh.
+# Idempotent; skips files that already exist. Re-run any time to refresh.
 set -euo pipefail
 
 cd "$(dirname "$0")"

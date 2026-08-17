@@ -1,0 +1,3740 @@
+[
+  {
+    "topic": "bologna",
+    "slotIndex": 1,
+    "title": "I tortellini di Paolo",
+    "arcType": null,
+    "synopsis": "Elena raggiunge Paolo per imparare i segreti della cucina bolognese. Tra uova, farina e brodo caldo, l'amico nasconde una dolce sorpresa che Elena non si aspetta affatto.",
+    "text": "Alla stazione di Bologna, Paolo aspetta la sua amica Elena. Il treno arriva puntuale e Elena scende felice. Paolo la abbraccia con affetto. «Ho una gran fame!», dice Elena. La casa di Paolo è vicina alla stazione.\n\nI due amici vanno subito in cucina. La stanza è calda. Un buon profumo di sugo riempie l'aria.\n\nOggi Paolo insegna a Elena i tortellini. Elena taglia la carne piccola piccola. Poi mescola le uova con la farina bianca.\n\nInsieme fanno la pasta sul tavolo di legno. Lavorano piano e ridono molto. Alla fine cuociono i tortellini in brodo caldo.\n\nI tortellini sono buonissimi. Elena chiede la ricetta, ma è un segreto di nonna. Poi Paolo porta un dolce con una candela: oggi è il compleanno di Elena! Lei sorride e dice grazie all'amico.",
+    "vocab": [
+      {
+        "word": "treno",
+        "surface": "treno",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Train; a vehicle that runs on rails."
+      },
+      {
+        "word": "aspettare",
+        "surface": "aspetta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To wait for someone or something to come."
+      },
+      {
+        "word": "abbracciare",
+        "surface": "abbraccia",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To hug; to hold someone in your arms."
+      },
+      {
+        "word": "fame",
+        "surface": "fame",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Hunger; the need or wish to eat."
+      },
+      {
+        "word": "casa",
+        "surface": "casa",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "House; the building where a person lives."
+      },
+      {
+        "word": "andare",
+        "surface": "vanno",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go; to move to another place."
+      },
+      {
+        "word": "subito",
+        "surface": "subito",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Immediately; right away without any waiting."
+      },
+      {
+        "word": "cucina",
+        "surface": "cucina",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Kitchen; the room where food is cooked."
+      },
+      {
+        "word": "sugo",
+        "surface": "sugo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Sauce; a thick liquid served over pasta."
+      },
+      {
+        "word": "tagliare",
+        "surface": "taglia",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To cut; to divide with a knife."
+      },
+      {
+        "word": "carne",
+        "surface": "carne",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Meat; animal flesh eaten as food."
+      },
+      {
+        "word": "mescolare",
+        "surface": "mescola",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To mix; to stir things together."
+      },
+      {
+        "word": "uovo",
+        "surface": "uova",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Eggs; oval food laid by hens."
+      },
+      {
+        "word": "farina",
+        "surface": "farina",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Flour; fine powder from grain for baking."
+      },
+      {
+        "word": "insieme",
+        "surface": "Insieme",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Together; with each other in one place."
+      },
+      {
+        "word": "fare",
+        "surface": "fanno",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To make; to create or produce something."
+      },
+      {
+        "word": "tavolo",
+        "surface": "tavolo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Table; furniture with a flat raised top."
+      },
+      {
+        "word": "legno",
+        "surface": "legno",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Wood; the hard material trees are made of."
+      },
+      {
+        "word": "brodo",
+        "surface": "brodo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Broth; hot liquid made by cooking meat."
+      },
+      {
+        "word": "buono",
+        "surface": "buonissimi",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Very good; extremely pleasant to taste."
+      },
+      {
+        "word": "chiedere",
+        "surface": "chiede",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To ask; to request an answer or thing."
+      },
+      {
+        "word": "nonna",
+        "surface": "nonna",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Grandmother; the mother of your parent."
+      },
+      {
+        "word": "dolce",
+        "surface": "dolce",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Dessert; a sweet food after a meal."
+      },
+      {
+        "word": "compleanno",
+        "surface": "compleanno",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Birthday; the yearly day someone was born."
+      }
+    ]
+  },
+  {
+    "topic": "bologna",
+    "slotIndex": 2,
+    "title": "Una passeggiata sotto i portici",
+    "arcType": null,
+    "synopsis": "Una mattina incerta minaccia pioggia, ma i lunghi portici di Bologna proteggono i due amici. Salgono verso una collina, dove una vista verde li aspetta in cima.",
+    "text": "La mattina è fresca e il cielo è grigio. Elena e il suo amico Paolo escono presto. «Oggi piove forse», dice Paolo.\n\nI due amici camminano sotto i portici. I portici sono lunghi e coprono la strada. Elena guarda le colonne rosse e alte.\n\nPoi comincia a piovere. La pioggia cade forte. Ma Elena e Paolo restano asciutti e tranquilli. Elena ride: «Che città intelligente!».\n\nSalgono una collina piano piano. Le gambe di Elena sono stanche. Contano i passi e cantano una canzone allegra.\n\nIn cima trovano una chiesa antica. Da lassù la vista è aperta e verde. Paolo indica i tetti rossi in basso.\n\nUn signore gentile offre due ombrelli agli amici. «Non servono oggi», risponde Paolo, e tutti sorridono. Poi il temporale finisce e il sole torna sopra Bologna.",
+    "vocab": [
+      {
+        "word": "uscire",
+        "surface": "escono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go out; to leave a place."
+      },
+      {
+        "word": "mattina",
+        "surface": "mattina",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Morning; the early part of the day."
+      },
+      {
+        "word": "presto",
+        "surface": "presto",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Early; before the usual expected time."
+      },
+      {
+        "word": "cielo",
+        "surface": "cielo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Sky; the space high above the earth."
+      },
+      {
+        "word": "camminare",
+        "surface": "camminano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To walk; to move forward on foot."
+      },
+      {
+        "word": "sotto",
+        "surface": "sotto",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Under; below or beneath something else."
+      },
+      {
+        "word": "coprire",
+        "surface": "coprono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To cover; to lie over and protect."
+      },
+      {
+        "word": "strada",
+        "surface": "strada",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Street; a road inside a town."
+      },
+      {
+        "word": "pioggia",
+        "surface": "pioggia",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Rain; water that falls from clouds."
+      },
+      {
+        "word": "cadere",
+        "surface": "cade",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To fall; to drop toward the ground."
+      },
+      {
+        "word": "restare",
+        "surface": "restano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To stay; to remain in one place."
+      },
+      {
+        "word": "asciutto",
+        "surface": "asciutti",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Dry; not wet at all."
+      },
+      {
+        "word": "salire",
+        "surface": "Salgono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To climb; to go up higher."
+      },
+      {
+        "word": "collina",
+        "surface": "collina",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Hill; a small raised area of land."
+      },
+      {
+        "word": "gamba",
+        "surface": "gambe",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Legs; body parts used for walking."
+      },
+      {
+        "word": "stanco",
+        "surface": "stanche",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Tired; needing rest after effort."
+      },
+      {
+        "word": "trovare",
+        "surface": "trovano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To find; to discover where something is."
+      },
+      {
+        "word": "chiesa",
+        "surface": "chiesa",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Church; a building for Christian worship."
+      },
+      {
+        "word": "cima",
+        "surface": "cima",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Top; the highest part of something."
+      },
+      {
+        "word": "tetto",
+        "surface": "tetti",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Roofs; the tops that cover buildings."
+      },
+      {
+        "word": "signore",
+        "surface": "signore",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Gentleman; a polite word for a man."
+      },
+      {
+        "word": "ombrello",
+        "surface": "ombrelli",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Umbrellas; objects that keep rain off you."
+      },
+      {
+        "word": "finire",
+        "surface": "finisce",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To end; to come to a stop."
+      },
+      {
+        "word": "sole",
+        "surface": "sole",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Sun; the star giving light and heat."
+      }
+    ]
+  },
+  {
+    "topic": "bologna",
+    "slotIndex": 3,
+    "title": "Sotto le due torri",
+    "arcType": null,
+    "synopsis": "Sotto le due torri, Elena alza gli occhi troppo a lungo e la testa le gira. Prima del treno, un ultimo saluto e una promessa golosa la aspettano.",
+    "text": "Elena e il suo amico Paolo passano l'ultimo giorno a Bologna. Paolo è un vero bolognese: conosce ogni angolo e mostra la città con gioia.\n\nI due amici alzano gli occhi verso le due torri. Una torre è dritta, l'altra pende un poco. Elena guarda in alto a lungo e sente un capogiro. Poi i due amici ridono forte.\n\nPoi entrano nel mercato. Un uomo vende formaggio e verdura fresca. L'odore di pane fresco riempie l'aria. Elena compra delle mele rosse e sceglie le più belle per il viaggio.\n\nPrima di partire, i due amici vanno alla stazione. Elena saluta Paolo e muove la mano nell'aria. «Torno presto, per i tortellini!», promette ridendo. Il treno parte piano e Bologna sparisce dietro il finestrino.",
+    "vocab": [
+      {
+        "word": "passare",
+        "surface": "passano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To spend time in a place."
+      },
+      {
+        "word": "giorno",
+        "surface": "giorno",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Day; the time of light before night."
+      },
+      {
+        "word": "vero",
+        "surface": "vero",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "True; real and not false."
+      },
+      {
+        "word": "conoscere",
+        "surface": "conosce",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To know; to be familiar with something."
+      },
+      {
+        "word": "mostrare",
+        "surface": "mostra",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To show; to let someone see something."
+      },
+      {
+        "word": "alzare",
+        "surface": "alzano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To raise; to lift something upward."
+      },
+      {
+        "word": "occhio",
+        "surface": "occhi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Eyes; the body parts used for seeing."
+      },
+      {
+        "word": "dritto",
+        "surface": "dritta",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Straight; not bent or leaning over."
+      },
+      {
+        "word": "pendere",
+        "surface": "pende",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To lean; to slope to one side."
+      },
+      {
+        "word": "poco",
+        "surface": "poco",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "A little; a small amount of something."
+      },
+      {
+        "word": "uomo",
+        "surface": "uomo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Man; an adult male person."
+      },
+      {
+        "word": "vendere",
+        "surface": "vende",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To sell; to give goods for money."
+      },
+      {
+        "word": "formaggio",
+        "surface": "formaggio",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Cheese; a solid food made from milk."
+      },
+      {
+        "word": "verdura",
+        "surface": "verdura",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Vegetables; plants grown to be eaten."
+      },
+      {
+        "word": "odore",
+        "surface": "odore",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Smell; the quality noticed with your nose."
+      },
+      {
+        "word": "comprare",
+        "surface": "compra",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To buy; to get something by paying."
+      },
+      {
+        "word": "mela",
+        "surface": "mele",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Apples; round fruits that grow on trees."
+      },
+      {
+        "word": "scegliere",
+        "surface": "sceglie",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To choose; to pick one among several."
+      },
+      {
+        "word": "partire",
+        "surface": "partire",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To leave; to depart from a place."
+      },
+      {
+        "word": "salutare",
+        "surface": "saluta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To greet; to say hello or goodbye."
+      },
+      {
+        "word": "mano",
+        "surface": "mano",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Hand; the body part ending the arm."
+      },
+      {
+        "word": "capogiro",
+        "surface": "capogiro",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Dizziness; a spinning feeling in the head."
+      },
+      {
+        "word": "ridere",
+        "surface": "ridono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To laugh; to smile and make happy sounds."
+      },
+      {
+        "word": "sparire",
+        "surface": "sparisce",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To disappear; to go out of sight."
+      }
+    ]
+  },
+  {
+    "topic": "firenze",
+    "slotIndex": 1,
+    "title": "Elena sale sul Duomo",
+    "arcType": null,
+    "synopsis": "Dalla cima del Duomo, Elena e Marco giocano a indovinare i monumenti di Firenze. Poi lei scopre un piccolo giardino verde nascosto tra le case e vuole trovarlo.",
+    "text": "Elena arriva a Firenze in treno. Il suo amico Marco vive in città da molti anni. Marco aspetta Elena alla stazione e la saluta con un sorriso.\n\nI due amici camminano insieme verso il Duomo. La chiesa è enorme e bianca. Elena alza la testa e resta senza parole.\n\nMarco compra due biglietti. «Saliamo fino in cima», dice Marco. I due amici salgono molti gradini. Elena è un poco stanca, ma continua.\n\nIn cima, la vista è splendida. Elena vede tutti i tetti rossi della città. Marco propone un gioco: indovinare i nomi dei monumenti. Elena indica una torre lontana e ride.\n\nPoi Elena guarda in basso e scopre un piccolo giardino verde tra le case. «Voglio vederlo», dice Elena. I due amici decidono di scendere e trovare quel giardino nascosto.",
+    "vocab": [
+      {
+        "word": "amico",
+        "surface": "amico",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Male friend; a man you like and trust."
+      },
+      {
+        "word": "vivere",
+        "surface": "vive",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To live; to have your home in a place."
+      },
+      {
+        "word": "aspettare",
+        "surface": "aspetta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To wait; to stay until someone comes."
+      },
+      {
+        "word": "salutare",
+        "surface": "saluta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To greet; to say hello to someone."
+      },
+      {
+        "word": "sorriso",
+        "surface": "sorriso",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Smile; a happy look with the mouth."
+      },
+      {
+        "word": "insieme",
+        "surface": "insieme",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Together; with each other in one place."
+      },
+      {
+        "word": "chiesa",
+        "surface": "chiesa",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Church; a building where people go to pray."
+      },
+      {
+        "word": "bianco",
+        "surface": "bianca",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "White; the color of fresh snow."
+      },
+      {
+        "word": "testa",
+        "surface": "testa",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Head; the top part of the body."
+      },
+      {
+        "word": "parola",
+        "surface": "parole",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Word; a unit of speech or writing."
+      },
+      {
+        "word": "comprare",
+        "surface": "compra",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To buy; to get something by paying money."
+      },
+      {
+        "word": "biglietto",
+        "surface": "biglietti",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Ticket; a paper that lets you enter."
+      },
+      {
+        "word": "salire",
+        "surface": "salgono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go up; to climb toward a higher place."
+      },
+      {
+        "word": "gradino",
+        "surface": "gradini",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Step; one part of a stair you climb."
+      },
+      {
+        "word": "stanco",
+        "surface": "stanca",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Tired; needing rest after effort."
+      },
+      {
+        "word": "vedere",
+        "surface": "vede",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To see; to notice with your eyes."
+      },
+      {
+        "word": "tetto",
+        "surface": "tetti",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Roof; the top cover of a building."
+      },
+      {
+        "word": "rosso",
+        "surface": "rossi",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Red; the color of blood or tomatoes."
+      },
+      {
+        "word": "gioco",
+        "surface": "gioco",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Game; a fun activity with rules to play."
+      },
+      {
+        "word": "indovinare",
+        "surface": "indovinare",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To guess; to say an answer without being sure."
+      },
+      {
+        "word": "torre",
+        "surface": "torre",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Tower; a tall narrow part of a building."
+      },
+      {
+        "word": "giardino",
+        "surface": "giardino",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Garden; a green place with plants and flowers."
+      },
+      {
+        "word": "scoprire",
+        "surface": "scopre",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To discover; to find something for the first time."
+      },
+      {
+        "word": "nascosto",
+        "surface": "nascosto",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Hidden; not easy to see or find."
+      }
+    ]
+  },
+  {
+    "topic": "firenze",
+    "slotIndex": 2,
+    "title": "Un tramonto sul Ponte Vecchio",
+    "arcType": null,
+    "synopsis": "Al tramonto Elena e Marco raggiungono il Ponte Vecchio, tra vetrine d'oro e musica. Un violinista suona mentre una coppia si scatta le foto di nozze.",
+    "text": "Oggi Elena e il suo amico Marco passeggiano lungo il fiume Arno. Marco conosce bene la città e fa da guida. Elena ascolta e guarda l'acqua che scorre.\n\nIl sole scende piano e diventa arancione. I due arrivano al Ponte Vecchio. Elena non è mai stata qui. Sul ponte ci sono molti piccoli negozi d'oro.\n\nElena si ferma davanti a una vetrina. Un anello brilla dietro il vetro. «È bellissimo», dice Elena a voce bassa.\n\nVicino al ponte, un violinista suona una melodia lenta. Poco lontano, una coppia si scatta le foto di nozze. La sposa sorride e il vestito bianco splende.\n\nLa musica è dolce e la luce dorata cade sul fiume. Elena è commossa e resta in silenzio. Poi guarda Marco e lo ringrazia con un sorriso.",
+    "vocab": [
+      {
+        "word": "passeggiare",
+        "surface": "passeggiano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To stroll; to walk slowly for pleasure."
+      },
+      {
+        "word": "fiume",
+        "surface": "fiume",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "River; a long stream of flowing water."
+      },
+      {
+        "word": "conoscere",
+        "surface": "conosce",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To know; to be familiar with something."
+      },
+      {
+        "word": "ascoltare",
+        "surface": "ascolta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To listen; to pay attention to sounds."
+      },
+      {
+        "word": "guardare",
+        "surface": "guarda",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To look; to turn your eyes toward something."
+      },
+      {
+        "word": "scorrere",
+        "surface": "scorre",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To flow; to move like running water."
+      },
+      {
+        "word": "sole",
+        "surface": "sole",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Sun; the bright star that gives us light."
+      },
+      {
+        "word": "scendere",
+        "surface": "scende",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go down; to move to a lower place."
+      },
+      {
+        "word": "piano",
+        "surface": "piano",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Slowly; in a soft and gentle way."
+      },
+      {
+        "word": "arancione",
+        "surface": "arancione",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Orange; the color of a ripe orange."
+      },
+      {
+        "word": "arrivare",
+        "surface": "arrivano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To arrive; to reach a place at last."
+      },
+      {
+        "word": "ponte",
+        "surface": "ponte",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Bridge; a way built to cross over water."
+      },
+      {
+        "word": "negozio",
+        "surface": "negozi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Shop; a place where you buy things."
+      },
+      {
+        "word": "vetrina",
+        "surface": "vetrina",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Shop window; the glass front of a store."
+      },
+      {
+        "word": "anello",
+        "surface": "anello",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Ring; a round band worn on a finger."
+      },
+      {
+        "word": "brillare",
+        "surface": "brilla",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To shine; to give off bright light."
+      },
+      {
+        "word": "voce",
+        "surface": "voce",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Voice; the sound a person makes speaking."
+      },
+      {
+        "word": "luce",
+        "surface": "luce",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Light; brightness that lets us see things."
+      },
+      {
+        "word": "suonare",
+        "surface": "suona",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To play music with an instrument."
+      },
+      {
+        "word": "coppia",
+        "surface": "coppia",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Couple; two people who love each other."
+      },
+      {
+        "word": "sposa",
+        "surface": "sposa",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Bride; a woman on her wedding day."
+      },
+      {
+        "word": "vestito",
+        "surface": "vestito",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Dress; a piece of clothing you wear."
+      },
+      {
+        "word": "dolce",
+        "surface": "dolce",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Sweet; gentle and pleasant to the senses."
+      },
+      {
+        "word": "ringraziare",
+        "surface": "ringrazia",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To thank; to say you are grateful."
+      }
+    ]
+  },
+  {
+    "topic": "firenze",
+    "slotIndex": 3,
+    "title": "La bistecca e il gatto",
+    "arcType": null,
+    "synopsis": "Una bistecca enorme mette alla prova l'appetito dei due amici. Ma la sorpresa più dolce arriva dopo, con un gelato e un piccolo ospite a quattro zampe.",
+    "text": "Di sera, la piccola trattoria è già piena di gente. Elena e il suo amico Marco cenano vicino alla finestra. Marco è molto affamato e anche Elena ha fame.\n\nIl cameriere porta una grande bistecca alla griglia. La carne è calda e profuma di rosmarino. I due amici tagliano la carne e mangiano lentamente.\n\n«Questa bistecca è troppo grande», dice Elena e ride. I due non riescono a finire tutto. Marco chiede al cameriere una scatola per la carne.\n\nDopo cena, i due amici escono e cercano un gelato. Elena sceglie il gusto al cioccolato. Marco preferisce la fragola e la crema.\n\nMentre camminano, un gatto nero li segue piano. Elena si china e offre un poco di gelato. Il gatto lecca il dito e fa le fusa. Elena ride e sente il cuore leggero.",
+    "vocab": [
+      {
+        "word": "sera",
+        "surface": "sera",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Evening; the time of day after sunset."
+      },
+      {
+        "word": "cenare",
+        "surface": "cenano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To have dinner; to eat the evening meal."
+      },
+      {
+        "word": "affamato",
+        "surface": "affamato",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Very hungry; badly needing something to eat."
+      },
+      {
+        "word": "fame",
+        "surface": "fame",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Hunger; the need or wish to eat."
+      },
+      {
+        "word": "portare",
+        "surface": "porta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To bring; to carry something to someone."
+      },
+      {
+        "word": "caldo",
+        "surface": "calda",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Hot; having a high temperature."
+      },
+      {
+        "word": "profumare",
+        "surface": "profuma",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To smell nice; to give a pleasant scent."
+      },
+      {
+        "word": "tagliare",
+        "surface": "tagliano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To cut; to divide with a knife."
+      },
+      {
+        "word": "troppo",
+        "surface": "troppo",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Too much; more than is needed."
+      },
+      {
+        "word": "finire",
+        "surface": "finire",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To finish; to bring to an end."
+      },
+      {
+        "word": "chiedere",
+        "surface": "chiede",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To ask; to request something from someone."
+      },
+      {
+        "word": "scatola",
+        "surface": "scatola",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Box; a thing you put things in."
+      },
+      {
+        "word": "uscire",
+        "surface": "escono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go out; to leave a place."
+      },
+      {
+        "word": "cercare",
+        "surface": "cercano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To look for; to try to find something."
+      },
+      {
+        "word": "scegliere",
+        "surface": "sceglie",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To choose; to pick one among options."
+      },
+      {
+        "word": "fragola",
+        "surface": "fragola",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Strawberry; a small sweet red fruit."
+      },
+      {
+        "word": "gatto",
+        "surface": "gatto",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Cat; a small furry animal kept as pet."
+      },
+      {
+        "word": "nero",
+        "surface": "nero",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Black; the darkest color, like the night."
+      },
+      {
+        "word": "offrire",
+        "surface": "offre",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To offer; to give or present to someone."
+      },
+      {
+        "word": "dito",
+        "surface": "dito",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Finger; one of the parts of the hand."
+      },
+      {
+        "word": "sentire",
+        "surface": "sente",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To feel; to notice an emotion or feeling inside."
+      },
+      {
+        "word": "cuore",
+        "surface": "cuore",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Heart; the organ that pumps your blood."
+      },
+      {
+        "word": "leggero",
+        "surface": "leggero",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Light; not heavy or easy to carry."
+      },
+      {
+        "word": "ridere",
+        "surface": "ride",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To laugh; to show joy with sounds."
+      }
+    ]
+  },
+  {
+    "topic": "milano",
+    "slotIndex": 1,
+    "title": "Elena e il Duomo di Milano",
+    "arcType": null,
+    "synopsis": "Sul tetto del Duomo, tra le guglie bianche, Luca propone un gioco. Poi Elena scopre una piccola statua di marmo. Riuscirà a lasciare Milano senza restare senza parole?",
+    "text": "Luca aspetta Elena alla stazione di Milano. I due amici si salutano felici. Luca vive in questa grande città e oggi fa da guida.\n\nInsieme camminano verso il centro. Poco dopo, Elena vede il Duomo. La chiesa è enorme e bianca. Elena alza gli occhi e resta senza parole. «Che meraviglia!», dice piano.\n\nLuca compra due biglietti. I due amici salgono sul tetto. Da lassù, tra le guglie di marmo, la vista è splendida.\n\n«Facciamo un gioco», propone Luca. «Chi trova più cose belle?» Elena guarda la città e indica un giardino lontano. I due amici sorridono.\n\nAll'improvviso, Elena scopre una piccola statua di marmo tra le guglie. Elena la osserva a lungo, in silenzio. Il vento è leggero. «Milano è magica», pensa Elena, piena di stupore.",
+    "vocab": [
+      {
+        "word": "aspettare",
+        "surface": "aspetta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To wait; to stay until something happens."
+      },
+      {
+        "word": "vivere",
+        "surface": "vive",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To live; to have your home in a place."
+      },
+      {
+        "word": "vedere",
+        "surface": "vede",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To see; to notice things with your eyes."
+      },
+      {
+        "word": "chiesa",
+        "surface": "chiesa",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Church; a building where Christians go to pray."
+      },
+      {
+        "word": "bianco",
+        "surface": "bianca",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "White; the colour of fresh snow."
+      },
+      {
+        "word": "alzare",
+        "surface": "alza",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To raise; to move something to a higher place."
+      },
+      {
+        "word": "occhio",
+        "surface": "occhi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Eyes; the two body parts we see with."
+      },
+      {
+        "word": "restare",
+        "surface": "resta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To stay; to remain in one place."
+      },
+      {
+        "word": "parola",
+        "surface": "parole",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Words; the units of language we speak."
+      },
+      {
+        "word": "dire",
+        "surface": "dice",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To say; to speak words to someone."
+      },
+      {
+        "word": "piano",
+        "surface": "piano",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Softly; in a quiet and slow way."
+      },
+      {
+        "word": "comprare",
+        "surface": "compra",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To buy; to get something by paying money."
+      },
+      {
+        "word": "biglietto",
+        "surface": "biglietti",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Tickets; small cards that let you enter."
+      },
+      {
+        "word": "salire",
+        "surface": "salgono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go up; to move to a higher level."
+      },
+      {
+        "word": "tetto",
+        "surface": "tetto",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Roof; the top cover of a building."
+      },
+      {
+        "word": "trovare",
+        "surface": "trova",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To find; to discover where something is."
+      },
+      {
+        "word": "felice",
+        "surface": "felici",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Happy; feeling joy and good inside."
+      },
+      {
+        "word": "guida",
+        "surface": "guida",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Guide; a person who shows you places."
+      },
+      {
+        "word": "camminare",
+        "surface": "camminano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To walk; to move on your feet."
+      },
+      {
+        "word": "guglia",
+        "surface": "guglie",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Spire; a tall thin point on a church."
+      },
+      {
+        "word": "marmo",
+        "surface": "marmo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Marble; a hard smooth stone for statues."
+      },
+      {
+        "word": "vista",
+        "surface": "vista",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "View; what you can see from a place."
+      },
+      {
+        "word": "gioco",
+        "surface": "gioco",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Game; a fun activity with rules."
+      },
+      {
+        "word": "guardare",
+        "surface": "guarda",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To look; to turn your eyes to something."
+      }
+    ]
+  },
+  {
+    "topic": "milano",
+    "slotIndex": 2,
+    "title": "L'aperitivo con Luca",
+    "arcType": null,
+    "synopsis": "Luca porta Elena a un locale pieno di gente per un rito serale milanese. Poi una vecchia conoscente arriva senza avviso. Chi pagherà alla fine della notte?",
+    "text": "Elena e Luca sono buoni amici. Questa sera Luca invita Elena a un aperitivo. In questa città l'aperitivo è una tradizione importante.\n\nI due amici entrano in un locale vicino al canale. Il posto è pieno di gente. Un cameriere porta due bicchieri e molti stuzzichini sul tavolo.\n\nElena assaggia le olive e il formaggio. Tutto è buono. «Che sapore!», esclama Elena con gioia. Luca beve un succo d'arancia perché domani lavora presto.\n\nDopo un poco, arriva anche Marta, un'altra ragazza. Elena non conosce Marta, ma subito le due donne ridono insieme. Le tre parlano a lungo della vita.\n\nAlla fine, Luca paga il conto. Elena vuole restituire i soldi, ma Luca dice di no. «Sei mia ospite», spiega Luca con calma. La serata finisce bene.",
+    "vocab": [
+      {
+        "word": "sera",
+        "surface": "sera",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Evening; the late part of the day."
+      },
+      {
+        "word": "buono",
+        "surface": "buono",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Good; nice and pleasant in quality."
+      },
+      {
+        "word": "amico",
+        "surface": "amici",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Friends; people you like and trust."
+      },
+      {
+        "word": "pieno",
+        "surface": "pieno",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Full; holding as much as possible."
+      },
+      {
+        "word": "gente",
+        "surface": "gente",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "People; persons in general."
+      },
+      {
+        "word": "portare",
+        "surface": "porta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To bring; to carry something to someone."
+      },
+      {
+        "word": "bicchiere",
+        "surface": "bicchieri",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Glasses; cups made of glass for drinking."
+      },
+      {
+        "word": "tavolo",
+        "surface": "tavolo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Table; furniture with a flat top and legs."
+      },
+      {
+        "word": "assaggiare",
+        "surface": "assaggia",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To taste; to try a little food."
+      },
+      {
+        "word": "formaggio",
+        "surface": "formaggio",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Cheese; a food made from milk."
+      },
+      {
+        "word": "bere",
+        "surface": "beve",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To drink; to take liquid into your mouth."
+      },
+      {
+        "word": "domani",
+        "surface": "domani",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Tomorrow; the day after today."
+      },
+      {
+        "word": "lavorare",
+        "surface": "lavora",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To work; to do a job for money."
+      },
+      {
+        "word": "presto",
+        "surface": "presto",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Early; before the usual time."
+      },
+      {
+        "word": "conoscere",
+        "surface": "conosce",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To know; to be familiar with a person."
+      },
+      {
+        "word": "subito",
+        "surface": "subito",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Immediately; without any delay at all."
+      },
+      {
+        "word": "ridere",
+        "surface": "ridono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To laugh; to make happy sounds with joy."
+      },
+      {
+        "word": "insieme",
+        "surface": "insieme",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Together; with one another in the same place."
+      },
+      {
+        "word": "parlare",
+        "surface": "parlano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To speak; to say words to people."
+      },
+      {
+        "word": "vita",
+        "surface": "vita",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Life; the time a person is alive."
+      },
+      {
+        "word": "pagare",
+        "surface": "paga",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To pay; to give money for something."
+      },
+      {
+        "word": "conto",
+        "surface": "conto",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Bill; the paper showing what you must pay."
+      },
+      {
+        "word": "soldi",
+        "surface": "soldi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Money; the coins and notes we spend."
+      },
+      {
+        "word": "volere",
+        "surface": "vuole",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To want; to wish to have something."
+      }
+    ]
+  },
+  {
+    "topic": "milano",
+    "slotIndex": 3,
+    "title": "Un giro sui Navigli",
+    "arcType": null,
+    "synopsis": "Un tram giallo corre lungo i vecchi canali dei Navigli. Elena cerca un piccolo ricordo del viaggio prima di salutare Luca. Come finirà quest'ultima giornata a Milano?",
+    "text": "Elena e il suo amico Luca hanno ancora un giorno insieme. Questa mattina Luca porta Elena a scoprire i Navigli. I Navigli sono dei vecchi canali pieni di vita.\n\nPer arrivare, i due amici prendono il tram. Il tram è giallo e attraversa tutta la città. Elena guarda fuori dal finestrino con curiosità.\n\nLungo i Navigli ci sono molti negozi. Un artista vende quadri colorati. Elena compra un ricordo per la sua famiglia: un piccolo quadro del ponte.\n\nPoi i due amici si fermano a guardare l'acqua. Alcune barche passano piano. Un vecchio ponte di ferro unisce le due rive.\n\nPrima di partire, Elena abbraccia forte Luca. «Grazie di tutto», dice con affetto. Promette di tornare presto. Un tram giallo passa lungo il canale e la luce dorata brilla sull'acqua.",
+    "vocab": [
+      {
+        "word": "giorno",
+        "surface": "giorno",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Day; the time between morning and night."
+      },
+      {
+        "word": "mattina",
+        "surface": "mattina",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Morning; the early part of the day."
+      },
+      {
+        "word": "scoprire",
+        "surface": "scoprire",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To discover; to find or learn something new."
+      },
+      {
+        "word": "vecchio",
+        "surface": "vecchi",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Old; having existed for a long time."
+      },
+      {
+        "word": "giallo",
+        "surface": "giallo",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Yellow; the colour of the bright sun."
+      },
+      {
+        "word": "attraversare",
+        "surface": "attraversa",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To cross; to go from one side to the other."
+      },
+      {
+        "word": "fuori",
+        "surface": "fuori",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Outside; not inside a place."
+      },
+      {
+        "word": "finestrino",
+        "surface": "finestrino",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Window; the glass opening in a train or bus."
+      },
+      {
+        "word": "negozio",
+        "surface": "negozi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Shops; places where you buy things."
+      },
+      {
+        "word": "vendere",
+        "surface": "vende",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To sell; to give something for money."
+      },
+      {
+        "word": "quadro",
+        "surface": "quadri",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Paintings; pictures made with paint on a surface."
+      },
+      {
+        "word": "ponte",
+        "surface": "ponte",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Bridge; a structure built across a river."
+      },
+      {
+        "word": "ricordo",
+        "surface": "ricordo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Memory; something kept to remember a moment."
+      },
+      {
+        "word": "abbracciare",
+        "surface": "abbraccia",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To hug; to hold someone with your arms."
+      },
+      {
+        "word": "tornare",
+        "surface": "tornare",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To return; to come back to a place."
+      },
+      {
+        "word": "partire",
+        "surface": "partire",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To leave; to go away from a place."
+      },
+      {
+        "word": "grazie",
+        "surface": "Grazie",
+        "type": "expression",
+        "register": "neutral",
+        "definition": "Thanks; a word to show you are grateful."
+      },
+      {
+        "word": "forte",
+        "surface": "forte",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Tightly; with much strength or force."
+      },
+      {
+        "word": "barca",
+        "surface": "barche",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Boat; a small vehicle that moves on water."
+      },
+      {
+        "word": "passare",
+        "surface": "passano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To pass; to go by a place."
+      },
+      {
+        "word": "ferro",
+        "surface": "ferro",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Iron; a hard strong grey metal."
+      },
+      {
+        "word": "luce",
+        "surface": "luce",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Light; the brightness that lets us see."
+      },
+      {
+        "word": "dorato",
+        "surface": "dorata",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Golden; having a warm yellow colour."
+      },
+      {
+        "word": "brillare",
+        "surface": "brilla",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To shine; to give bright light."
+      }
+    ]
+  },
+  {
+    "topic": "napoli",
+    "slotIndex": 1,
+    "title": "Elena e la pizza di Anna",
+    "arcType": null,
+    "synopsis": "Il primo giorno di Elena a Napoli comincia con la sua amica Anna e una piccola pizzeria. Ma chi lavora dietro il forno caldo? Una sorpresa dolce la aspetta.",
+    "text": "Il treno arriva a Napoli e Elena scende con la valigia. Sul binario c'è Anna, la sua amica del cuore. Anna abita in questa città vivace.\n\nLe due ragazze si abbracciano forte alla stazione. Anna è molto contenta. «Benvenuta a Napoli!», dice con gioia.\n\nPoi le amiche entrano in una pizzeria piccola. Il locale è pieno di gente allegra. Un cuoco lavora vicino al forno caldo. Le sue mani sono veloci.\n\nLa pizza esce rotonda e calda. Elena mangia una fetta e chiude gli occhi. «Che buona!», dice piano. Anche Anna mangia con fame.\n\nPoi arriva una sorpresa dolce. Il cuoco porta un piatto speciale al tavolo. Anna spiega tutto: il cuoco è suo fratello. Elena ringrazia e ride felice. La prima sera a Napoli è perfetta.",
+    "vocab": [
+      {
+        "word": "treno",
+        "surface": "treno",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Train; a vehicle that runs on rails."
+      },
+      {
+        "word": "amica",
+        "surface": "amica",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Female friend; a woman you like and trust."
+      },
+      {
+        "word": "abitare",
+        "surface": "abita",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To live somewhere; to have your home in a place."
+      },
+      {
+        "word": "ragazza",
+        "surface": "ragazze",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Girls; young female people."
+      },
+      {
+        "word": "abbracciare",
+        "surface": "abbracciano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To hug; to hold someone in your arms."
+      },
+      {
+        "word": "stazione",
+        "surface": "stazione",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Station; a place where trains stop."
+      },
+      {
+        "word": "contento",
+        "surface": "contenta",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Glad; pleased and satisfied."
+      },
+      {
+        "word": "dire",
+        "surface": "dice",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To say; to speak words to someone."
+      },
+      {
+        "word": "gioia",
+        "surface": "gioia",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Joy; a strong feeling of happiness."
+      },
+      {
+        "word": "entrare",
+        "surface": "entrano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To enter; to go into a place."
+      },
+      {
+        "word": "locale",
+        "surface": "locale",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Small venue; a bar or eating place."
+      },
+      {
+        "word": "pieno",
+        "surface": "pieno",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Full; holding all it can hold."
+      },
+      {
+        "word": "gente",
+        "surface": "gente",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "People; persons considered all together."
+      },
+      {
+        "word": "allegro",
+        "surface": "allegra",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Cheerful; happy and full of energy."
+      },
+      {
+        "word": "cuoco",
+        "surface": "cuoco",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Cook; a person who prepares food."
+      },
+      {
+        "word": "lavorare",
+        "surface": "lavora",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To work; to do a job."
+      },
+      {
+        "word": "forno",
+        "surface": "forno",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Oven; a hot box for baking food."
+      },
+      {
+        "word": "mano",
+        "surface": "mani",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Hands; the body parts used to hold."
+      },
+      {
+        "word": "veloce",
+        "surface": "veloci",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Fast; moving with great speed."
+      },
+      {
+        "word": "rotondo",
+        "surface": "rotonda",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Round; shaped like a circle."
+      },
+      {
+        "word": "fetta",
+        "surface": "fetta",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Slice; a thin flat piece of food."
+      },
+      {
+        "word": "chiudere",
+        "surface": "chiude",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To close; to shut something firmly."
+      },
+      {
+        "word": "valigia",
+        "surface": "valigia",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Suitcase; a bag for carrying clothes."
+      },
+      {
+        "word": "binario",
+        "surface": "binario",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Track; the rails where a train stops."
+      }
+    ]
+  },
+  {
+    "topic": "napoli",
+    "slotIndex": 2,
+    "title": "Una giornata sul lungomare",
+    "arcType": null,
+    "synopsis": "Elena e Anna passeggiano sul lungomare di Napoli sotto un cielo azzurro e caldo. Il mare è calmo, ma all'improvviso qualcosa salta tra le onde. Che cosa vede Elena vicino al porto?",
+    "text": "Il giorno dopo Elena e Anna vanno presto al lungomare. Oggi il tempo è bello e caldo. Il cielo è azzurro e l'aria sa di sale. Le amiche passeggiano lente lungo la riva.\n\nIl mare è calmo e pulito. Molte barche piccole galleggiano sull'acqua chiara. Un pescatore prepara la sua rete.\n\nIl pescatore canta una vecchia canzone napoletana. Elena ascolta con piacere. Batte piano le dita sul muro caldo.\n\n«Guarda là!», grida Anna. Un delfino salta vicino al porto. Il delfino nuota felice tra le onde. Elena apre la bocca per lo stupore. Che momento raro!\n\nPoi Elena e Anna comprano una granita fresca al limone. Le due amiche guardano il mare calmo e luminoso sotto il sole. L'acqua brilla e le barche dondolano piano. Il delfino resta il momento più bello di tutta la giornata.",
+    "vocab": [
+      {
+        "word": "cielo",
+        "surface": "cielo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Sky; the space above the earth."
+      },
+      {
+        "word": "aria",
+        "surface": "aria",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Air; the gas that we breathe."
+      },
+      {
+        "word": "passeggiare",
+        "surface": "passeggiano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To stroll; to walk slowly for pleasure."
+      },
+      {
+        "word": "lento",
+        "surface": "lente",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Slow; moving without much speed."
+      },
+      {
+        "word": "riva",
+        "surface": "riva",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Shore; the land next to water."
+      },
+      {
+        "word": "mare",
+        "surface": "mare",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Sea; a large area of salt water."
+      },
+      {
+        "word": "calmo",
+        "surface": "calmo",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Calm; quiet and without movement."
+      },
+      {
+        "word": "barca",
+        "surface": "barche",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Boats; small vessels for traveling on water."
+      },
+      {
+        "word": "galleggiare",
+        "surface": "galleggiano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To float; to stay on top of water."
+      },
+      {
+        "word": "acqua",
+        "surface": "acqua",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Water; the clear liquid we drink."
+      },
+      {
+        "word": "pescatore",
+        "surface": "pescatore",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Fisherman; a person who catches fish."
+      },
+      {
+        "word": "cantare",
+        "surface": "canta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To sing; to make music with your voice."
+      },
+      {
+        "word": "vecchio",
+        "surface": "vecchia",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Old; from a long time ago."
+      },
+      {
+        "word": "canzone",
+        "surface": "canzone",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Song; a short piece of music with words."
+      },
+      {
+        "word": "ascoltare",
+        "surface": "ascolta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To listen; to pay attention to sounds."
+      },
+      {
+        "word": "dito",
+        "surface": "dita",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Fingers; the thin parts of the hand."
+      },
+      {
+        "word": "gridare",
+        "surface": "grida",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To shout; to say something very loudly."
+      },
+      {
+        "word": "saltare",
+        "surface": "salta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To jump; to push yourself into the air."
+      },
+      {
+        "word": "porto",
+        "surface": "porto",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Port; a place where boats stop."
+      },
+      {
+        "word": "aprire",
+        "surface": "apre",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To open; to make something not closed."
+      },
+      {
+        "word": "bocca",
+        "surface": "bocca",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Mouth; the opening used for eating."
+      },
+      {
+        "word": "nuotare",
+        "surface": "nuota",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To swim; to move through the water."
+      },
+      {
+        "word": "onda",
+        "surface": "onde",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Waves; moving lines of water on the sea."
+      },
+      {
+        "word": "guardare",
+        "surface": "guardano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To watch; to look at something carefully."
+      }
+    ]
+  },
+  {
+    "topic": "napoli",
+    "slotIndex": 3,
+    "title": "Elena cucina per Anna",
+    "arcType": null,
+    "synopsis": "L'ultimo giorno a Napoli, Elena e Anna girano tra i banchi colorati del mercato. Ma questa volta è Elena a comprare qualcosa di speciale. Che sorpresa prepara per la sua amica stasera?",
+    "text": "L'ultimo giorno Elena e Anna visitano insieme il mercato del quartiere. C'è molta gente tra i banchi colorati. Il posto è vivo e allegro. Un venditore saluta le due amiche con un sorriso.\n\nIl banco è pieno di frutta e verdura fresca. Elena guarda i limoni gialli e profumati. Anna mostra anche i pomodori rossi.\n\nPoi Elena compra del pane caldo e alcuni frutti maturi. Il profumo del cibo riempie l'aria. Elena ha già un'idea speciale in mente.\n\nLa strada è stretta e viva. Elena tocca una mela e sorride gentile. Poi cerca i soldi per pagare tutto da sola.\n\nElena non porta via nessun regalo. Stasera cucina lei la cena per Anna, l'ospite ai fornelli per l'amica di casa. Prima le due si siedono e parlano felici. «A stasera!», promette Elena.",
+    "vocab": [
+      {
+        "word": "ultimo",
+        "surface": "ultimo",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Last; final in a series."
+      },
+      {
+        "word": "mercato",
+        "surface": "mercato",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Market; a place to buy and sell food."
+      },
+      {
+        "word": "quartiere",
+        "surface": "quartiere",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Neighborhood; one part of a city."
+      },
+      {
+        "word": "banco",
+        "surface": "banchi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Stalls; tables where goods are sold."
+      },
+      {
+        "word": "frutta",
+        "surface": "frutta",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Fruit; sweet food that grows on plants."
+      },
+      {
+        "word": "verdura",
+        "surface": "verdura",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Vegetables; plants that we eat as food."
+      },
+      {
+        "word": "venditore",
+        "surface": "venditore",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Seller; a person who sells things."
+      },
+      {
+        "word": "mostrare",
+        "surface": "mostra",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To show; to let someone see something."
+      },
+      {
+        "word": "limone",
+        "surface": "limoni",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Lemons; sour yellow round fruit."
+      },
+      {
+        "word": "giallo",
+        "surface": "gialli",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Yellow; the color of the sun."
+      },
+      {
+        "word": "comprare",
+        "surface": "compra",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To buy; to get something with money."
+      },
+      {
+        "word": "pane",
+        "surface": "pane",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Bread; a food made from flour."
+      },
+      {
+        "word": "maturo",
+        "surface": "maturi",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Ripe; ready to be eaten."
+      },
+      {
+        "word": "profumo",
+        "surface": "profumo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Smell; a pleasant scent in the air."
+      },
+      {
+        "word": "cibo",
+        "surface": "cibo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Food; what people and animals eat."
+      },
+      {
+        "word": "stretto",
+        "surface": "stretta",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Narrow; small from side to side."
+      },
+      {
+        "word": "toccare",
+        "surface": "tocca",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To touch; to put a hand on something."
+      },
+      {
+        "word": "soldi",
+        "surface": "soldi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Money; coins and notes for buying things."
+      },
+      {
+        "word": "pagare",
+        "surface": "pagare",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To pay; to give money for something."
+      },
+      {
+        "word": "gentile",
+        "surface": "gentile",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Kind; nice and caring to others."
+      },
+      {
+        "word": "sedersi",
+        "surface": "siedono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To sit down; to rest on a seat."
+      },
+      {
+        "word": "parlare",
+        "surface": "parlano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To talk; to speak with another person."
+      },
+      {
+        "word": "cucinare",
+        "surface": "cucina",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To cook; to make food ready to eat."
+      },
+      {
+        "word": "cena",
+        "surface": "cena",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Dinner; the main meal of the evening."
+      }
+    ]
+  },
+  {
+    "topic": "palermo",
+    "slotIndex": 1,
+    "title": "Elena e il mare di Palermo",
+    "arcType": null,
+    "synopsis": "Chiara porta Elena al mare di Palermo. L'acqua nasconde una sorpresa fredda e, al tramonto, le due amiche fanno un piano per il giorno dopo.",
+    "text": "Chiara aspetta la sua amica Elena vicino al mare di Palermo. Le due amiche si abbracciano con un grande sorriso. Il cielo è azzurro e l'aria è calda.\n\nLe amiche camminano sulla sabbia morbida. Elena guarda le onde e respira piano. Chiara toglie le scarpe e corre vicino all'acqua.\n\n«Vieni, l'acqua è bella!», dice Chiara. Elena mette i piedi nell'acqua, ma l'acqua è fredda. Elena ride forte.\n\nPoi le amiche si siedono sotto un ombrellone bianco. Mangiano un panino e bevono una bibita fresca. Il sole scende lentamente verso il mare.\n\nIl cielo diventa rosa e arancione. Le due amiche guardano il tramonto in silenzio. «Domani ti mostro il centro della città», dice Chiara. Elena è felice e pensa al nuovo giorno. Il porto si riempie di piccole luci gialle.",
+    "vocab": [
+      {
+        "word": "aspettare",
+        "surface": "aspetta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To wait; to stay until someone comes."
+      },
+      {
+        "word": "mare",
+        "surface": "mare",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Sea; the large body of salt water."
+      },
+      {
+        "word": "sorriso",
+        "surface": "sorriso",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Smile; a happy look on the face."
+      },
+      {
+        "word": "cielo",
+        "surface": "cielo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Sky; the space above us in the air."
+      },
+      {
+        "word": "caldo",
+        "surface": "calda",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Warm; having a pleasant high temperature."
+      },
+      {
+        "word": "camminare",
+        "surface": "camminano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To walk; to move on your feet."
+      },
+      {
+        "word": "sabbia",
+        "surface": "sabbia",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Sand; the soft grains on a beach."
+      },
+      {
+        "word": "morbido",
+        "surface": "morbida",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Soft; nice and gentle to touch."
+      },
+      {
+        "word": "onda",
+        "surface": "onde",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Wave; moving water that rises on the sea."
+      },
+      {
+        "word": "respirare",
+        "surface": "respira",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To breathe; to take air in and out."
+      },
+      {
+        "word": "togliere",
+        "surface": "toglie",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To take off; to remove something like shoes."
+      },
+      {
+        "word": "scarpa",
+        "surface": "scarpe",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Shoe; something you wear on your foot."
+      },
+      {
+        "word": "correre",
+        "surface": "corre",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To run; to move fast on your feet."
+      },
+      {
+        "word": "acqua",
+        "surface": "acqua",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Water; the clear liquid you drink."
+      },
+      {
+        "word": "piede",
+        "surface": "piedi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Foot; the body part you stand on."
+      },
+      {
+        "word": "freddo",
+        "surface": "fredda",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Cold; having a low temperature."
+      },
+      {
+        "word": "ridere",
+        "surface": "ride",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To laugh; to show you are happy or amused."
+      },
+      {
+        "word": "forte",
+        "surface": "forte",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Loudly; with a lot of sound or strength."
+      },
+      {
+        "word": "sedersi",
+        "surface": "siedono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To sit down; to rest on a seat."
+      },
+      {
+        "word": "sotto",
+        "surface": "sotto",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Under; below or beneath something."
+      },
+      {
+        "word": "bianco",
+        "surface": "bianco",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "White; the color of fresh snow."
+      },
+      {
+        "word": "bere",
+        "surface": "bevono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To drink; to take liquid into your mouth."
+      },
+      {
+        "word": "bibita",
+        "surface": "bibita",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "A cold sweet drink in a bottle."
+      },
+      {
+        "word": "scendere",
+        "surface": "scende",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go down; to move to a lower place."
+      }
+    ]
+  },
+  {
+    "topic": "palermo",
+    "slotIndex": 2,
+    "title": "Un cannolo in più",
+    "arcType": null,
+    "synopsis": "Tra frutta e voci, le amiche cercano qualcosa di dolce. Un venditore generoso aggiunge un dolce in più al sacchetto, e la mattina diventa una piccola festa inaspettata.",
+    "text": "Oggi Elena e Chiara vanno al mercato della città. Il mercato è pieno di gente e di colori. Elena non conosce questo posto, ma è molto curiosa.\n\nUn uomo vende frutta fresca. Chiara compra arance dolci e limoni gialli. «Questi limoni sono buonissimi», dice Chiara. Elena assaggia un pezzo di arancia.\n\nPoi le amiche cercano qualcosa di dolce. In un piccolo negozio ci sono i cannoli. Il signore riempie i cannoli con la crema bianca. Nell'aria c'è un odore delizioso.\n\nChiara paga due cannoli, ma il signore mette un terzo cannolo nel sacchetto. «Questo è un regalo per le ragazze», dice l'uomo. Elena resta sorpresa e ringrazia.\n\nLe due amiche escono dal mercato e trovano una panchina. Mangiano i cannoli insieme e ridono. La crema è dolce e il sole è alto. Elena pensa già al prossimo cannolo e ride.",
+    "vocab": [
+      {
+        "word": "oggi",
+        "surface": "Oggi",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Today; on this present day."
+      },
+      {
+        "word": "pieno",
+        "surface": "pieno",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Full; holding as much as possible."
+      },
+      {
+        "word": "gente",
+        "surface": "gente",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "People; a group of persons together."
+      },
+      {
+        "word": "conoscere",
+        "surface": "conosce",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To know; to be familiar with a place or person."
+      },
+      {
+        "word": "posto",
+        "surface": "posto",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Place; a particular area or spot."
+      },
+      {
+        "word": "uomo",
+        "surface": "uomo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Man; an adult male person."
+      },
+      {
+        "word": "vendere",
+        "surface": "vende",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To sell; to give something for money."
+      },
+      {
+        "word": "comprare",
+        "surface": "compra",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To buy; to get something by paying money."
+      },
+      {
+        "word": "arancia",
+        "surface": "arance",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Orange; a round sweet citrus fruit."
+      },
+      {
+        "word": "limone",
+        "surface": "limoni",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Lemon; a yellow sour citrus fruit."
+      },
+      {
+        "word": "cercare",
+        "surface": "cercano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To look for; to try to find something."
+      },
+      {
+        "word": "negozio",
+        "surface": "negozio",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Shop; a place where you buy things."
+      },
+      {
+        "word": "signore",
+        "surface": "signore",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Gentleman; a polite word for a man."
+      },
+      {
+        "word": "riempire",
+        "surface": "riempie",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To fill; to make something completely full."
+      },
+      {
+        "word": "odore",
+        "surface": "odore",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Smell; what you notice with your nose."
+      },
+      {
+        "word": "pagare",
+        "surface": "paga",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To pay; to give money for something."
+      },
+      {
+        "word": "terzo",
+        "surface": "terzo",
+        "type": "number",
+        "register": "neutral",
+        "definition": "Third; coming after the second one."
+      },
+      {
+        "word": "sacchetto",
+        "surface": "sacchetto",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Little bag; a small paper or plastic bag."
+      },
+      {
+        "word": "restare",
+        "surface": "resta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To stay; to remain in one state or place."
+      },
+      {
+        "word": "ringraziare",
+        "surface": "ringrazia",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To thank; to say you are grateful."
+      },
+      {
+        "word": "uscire",
+        "surface": "escono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go out; to leave a place."
+      },
+      {
+        "word": "trovare",
+        "surface": "trovano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To find; to come upon something you looked for."
+      },
+      {
+        "word": "panchina",
+        "surface": "panchina",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Bench; a long seat in a public place."
+      },
+      {
+        "word": "pensare",
+        "surface": "pensa",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To think; to have ideas in your mind."
+      }
+    ]
+  },
+  {
+    "topic": "palermo",
+    "slotIndex": 3,
+    "title": "Il teatro è chiuso stasera",
+    "arcType": null,
+    "synopsis": "Chiara prepara una serata a teatro con biglietti a sorpresa. Ma la porta è chiusa e i piani cambiano; una chitarra nella piazza salva la notte sotto le stelle.",
+    "text": "La sera Elena e Chiara camminano nel centro tranquillo. Le strade sono vuote e le luci sono gialle. Chiara vuole portare Elena davanti al teatro.\n\nIl teatro è enorme e ha molte colonne bianche. Elena alza gli occhi e apre la bocca. «È bellissimo», dice Elena piano.\n\nChiara ha un piano segreto. Nella borsa ci sono due biglietti per il concerto di stasera. Elena non sa niente e diventa felice. «Grazie mille!», grida Elena.\n\nMa la porta del teatro è chiusa. Un cartello dice che il concerto è domani. Le due amiche sono un po' tristi per la sfortuna.\n\nAllora Chiara ha un'idea. Nella piazza vicina, un uomo suona la chitarra. Le amiche ascoltano la musica sotto le stelle. Elena balla e canta con Chiara. Le stelle brillano sopra la piazza silenziosa.",
+    "vocab": [
+      {
+        "word": "sera",
+        "surface": "sera",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Evening; the last part of the day."
+      },
+      {
+        "word": "strada",
+        "surface": "strade",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Street; a road with houses in a town."
+      },
+      {
+        "word": "tranquillo",
+        "surface": "tranquillo",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Quiet; calm and without noise."
+      },
+      {
+        "word": "luce",
+        "surface": "luci",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Light; brightness that lets you see."
+      },
+      {
+        "word": "volere",
+        "surface": "vuole",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To want; to wish to have or do something."
+      },
+      {
+        "word": "alzare",
+        "surface": "alza",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To raise; to lift something to a higher place."
+      },
+      {
+        "word": "occhio",
+        "surface": "occhi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Eye; the body part you see with."
+      },
+      {
+        "word": "aprire",
+        "surface": "apre",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To open; to move something so it is not closed."
+      },
+      {
+        "word": "bocca",
+        "surface": "bocca",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Mouth; the body part you eat and speak with."
+      },
+      {
+        "word": "biglietto",
+        "surface": "biglietti",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Ticket; a paper that lets you enter a show."
+      },
+      {
+        "word": "stasera",
+        "surface": "stasera",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Tonight; during this evening."
+      },
+      {
+        "word": "sapere",
+        "surface": "sa",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To know; to have information about something."
+      },
+      {
+        "word": "diventare",
+        "surface": "diventa",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To become; to start to be something."
+      },
+      {
+        "word": "gridare",
+        "surface": "grida",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To shout; to say something in a loud voice."
+      },
+      {
+        "word": "porta",
+        "surface": "porta",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Door; the part you open to enter a room."
+      },
+      {
+        "word": "chiuso",
+        "surface": "chiusa",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Closed; shut and not open."
+      },
+      {
+        "word": "domani",
+        "surface": "domani",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Tomorrow; the day after today."
+      },
+      {
+        "word": "triste",
+        "surface": "tristi",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Sad; feeling unhappy about something."
+      },
+      {
+        "word": "sfortuna",
+        "surface": "sfortuna",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Bad luck; when things go badly by chance."
+      },
+      {
+        "word": "suonare",
+        "surface": "suona",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To play; to make music with an instrument."
+      },
+      {
+        "word": "ascoltare",
+        "surface": "ascoltano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To listen; to pay attention to a sound."
+      },
+      {
+        "word": "stella",
+        "surface": "stelle",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Star; a small light in the night sky."
+      },
+      {
+        "word": "ballare",
+        "surface": "balla",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To dance; to move your body to music."
+      },
+      {
+        "word": "cantare",
+        "surface": "canta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To sing; to make music with your voice."
+      }
+    ]
+  },
+  {
+    "topic": "roma",
+    "slotIndex": 1,
+    "title": "Elena arriva a Roma",
+    "arcType": null,
+    "synopsis": "Due amiche si ritrovano nella capitale. Dopo il pranzo, Giulia prepara una piccola sorpresa per Elena vicino a una fontana famosa. Un semplice gesto promette un ritorno futuro a Roma.",
+    "text": "Elena è una donna di trenta anni. Elena abita a Firenze, ma oggi visita Roma. La sua amica Giulia abita a Roma da due anni.\n\nLe due amiche camminano vicino al Colosseo. Il sole è caldo. Elena guarda il monumento e sorride. Il posto è molto bello.\n\nPoi le amiche mangiano una pizza in un piccolo ristorante. Bevono acqua fresca. La pizza è buona ed Elena è felice.\n\nDopo il pranzo, Giulia ha una sorpresa. Le due amiche prendono un caffè forte. Poi Giulia porta Elena alla Fontana di Trevi. La fontana è molto grande.\n\nGiulia dà una moneta a Elena. «Butta la moneta nella fontana», dice Giulia. «Così ritorni a Roma un giorno». Elena butta la moneta e ride. Roma è una città bellissima.",
+    "vocab": [
+      {
+        "word": "donna",
+        "surface": "donna",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Woman; an adult female person."
+      },
+      {
+        "word": "anno",
+        "surface": "anni",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Year; a period of twelve months."
+      },
+      {
+        "word": "abitare",
+        "surface": "abita",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To live somewhere; to have your home in a place."
+      },
+      {
+        "word": "visitare",
+        "surface": "visita",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To visit; to go and see a person or place."
+      },
+      {
+        "word": "amica",
+        "surface": "amica",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Female friend; a woman you like and trust."
+      },
+      {
+        "word": "camminare",
+        "surface": "camminano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To walk; to move forward on foot."
+      },
+      {
+        "word": "vicino",
+        "surface": "vicino",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Near; close to something."
+      },
+      {
+        "word": "caldo",
+        "surface": "caldo",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Hot; having a high temperature."
+      },
+      {
+        "word": "guardare",
+        "surface": "guarda",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To look at; to turn your eyes to something."
+      },
+      {
+        "word": "sorridere",
+        "surface": "sorride",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To smile; to show you are happy with your mouth."
+      },
+      {
+        "word": "posto",
+        "surface": "posto",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Place; a particular area or spot."
+      },
+      {
+        "word": "mangiare",
+        "surface": "mangiano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To eat; to put food in your mouth."
+      },
+      {
+        "word": "bere",
+        "surface": "Bevono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To drink; to take liquid into your mouth."
+      },
+      {
+        "word": "fresco",
+        "surface": "fresca",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Fresh and cool; pleasantly cold."
+      },
+      {
+        "word": "felice",
+        "surface": "felice",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Happy; feeling joy and pleasure."
+      },
+      {
+        "word": "pranzo",
+        "surface": "pranzo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Lunch; the meal eaten in the middle of the day."
+      },
+      {
+        "word": "sorpresa",
+        "surface": "sorpresa",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Surprise; something you did not expect."
+      },
+      {
+        "word": "forte",
+        "surface": "forte",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Strong; having much force or flavor."
+      },
+      {
+        "word": "grande",
+        "surface": "grande",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Big; large in size."
+      },
+      {
+        "word": "moneta",
+        "surface": "moneta",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Coin; a small round piece of metal money."
+      },
+      {
+        "word": "buttare",
+        "surface": "Butta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To throw; to send something through the air."
+      },
+      {
+        "word": "ritornare",
+        "surface": "ritorni",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To return; to come back to a place."
+      },
+      {
+        "word": "ridere",
+        "surface": "ride",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To laugh; to make sounds because you are happy."
+      },
+      {
+        "word": "città",
+        "surface": "città",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "City; a large town where many people live."
+      }
+    ]
+  },
+  {
+    "topic": "roma",
+    "slotIndex": 2,
+    "title": "Elena e Giulia a Trastevere",
+    "arcType": null,
+    "synopsis": "Le due amiche esplorano Trastevere tra colori, gelato e musica. Ma quando girano nei vicoli stretti perdono la strada. Dove finiranno le due ragazze in questo quartiere pieno di sorprese?",
+    "text": "Elena e Giulia sono buone amiche. Oggi le due ragazze camminano per Trastevere, un quartiere pieno di vita. Giulia conosce bene questo posto.\n\nTrastevere è un quartiere vecchio. Le strade sono strette e i muri sono gialli. Elena guarda le case e ascolta la musica.\n\nLe amiche entrano in un piccolo negozio. Giulia compra un gelato al limone. Elena prende un gelato al cioccolato. I gelati sono freddi e dolci.\n\nPoi le ragazze girano tra i vicoli. Vanno a destra, poi a sinistra. All'improvviso non trovano più la strada giusta. «Dove siamo?», chiede Elena, e le due amiche ridono forte.\n\nAlla fine arrivano in una piccola piazza tranquilla. Al centro c'è una vecchia fontana. L'acqua scende piano. Le amiche si siedono sul bordo e riposano insieme.",
+    "vocab": [
+      {
+        "word": "buono",
+        "surface": "buone",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Good; pleasant or of high quality."
+      },
+      {
+        "word": "ragazza",
+        "surface": "ragazze",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Girl; a young female person."
+      },
+      {
+        "word": "quartiere",
+        "surface": "quartiere",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Neighborhood; one part or area of a city."
+      },
+      {
+        "word": "pieno",
+        "surface": "pieno",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Full; holding as much as possible."
+      },
+      {
+        "word": "vita",
+        "surface": "vita",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Life; the time a person is alive."
+      },
+      {
+        "word": "conoscere",
+        "surface": "conosce",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To know; to be familiar with something."
+      },
+      {
+        "word": "vecchio",
+        "surface": "vecchio",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Old; having existed for many years."
+      },
+      {
+        "word": "strada",
+        "surface": "strade",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Street; a road in a town."
+      },
+      {
+        "word": "stretto",
+        "surface": "strette",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Narrow; not wide from side to side."
+      },
+      {
+        "word": "muro",
+        "surface": "muri",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Wall; a solid side of a building."
+      },
+      {
+        "word": "giallo",
+        "surface": "gialli",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Yellow; the color of the sun."
+      },
+      {
+        "word": "casa",
+        "surface": "case",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "House; a building where people live."
+      },
+      {
+        "word": "ascoltare",
+        "surface": "ascolta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To listen; to pay attention to sound."
+      },
+      {
+        "word": "entrare",
+        "surface": "entrano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To enter; to go inside a place."
+      },
+      {
+        "word": "negozio",
+        "surface": "negozio",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Shop; a place where you buy things."
+      },
+      {
+        "word": "comprare",
+        "surface": "compra",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To buy; to get something with money."
+      },
+      {
+        "word": "prendere",
+        "surface": "prende",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To take; to get something in your hand."
+      },
+      {
+        "word": "dolce",
+        "surface": "dolci",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Sweet; tasting like sugar or honey."
+      },
+      {
+        "word": "freddo",
+        "surface": "freddi",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Cold; having a low temperature."
+      },
+      {
+        "word": "girare",
+        "surface": "girano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To turn; to change direction while walking."
+      },
+      {
+        "word": "vicolo",
+        "surface": "vicoli",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Alley; a very narrow street between buildings."
+      },
+      {
+        "word": "trovare",
+        "surface": "trovano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To find; to discover where something is."
+      },
+      {
+        "word": "chiedere",
+        "surface": "chiede",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To ask; to say a question to someone."
+      },
+      {
+        "word": "scendere",
+        "surface": "scende",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go down; to move to a lower place."
+      }
+    ]
+  },
+  {
+    "topic": "roma",
+    "slotIndex": 3,
+    "title": "Le pesche di Campo de' Fiori",
+    "arcType": null,
+    "synopsis": "Al mercato di Campo de' Fiori tutto costa troppo. Giulia sa contrattare, ma Elena non ha mai provato. Riusciranno le due amiche a vincere un prezzo migliore per le pesche gialle?",
+    "text": "È mattina presto. Il mercato di Campo de' Fiori è già pieno di gente. Elena cammina tra i banchi con Giulia, la sua amica romana.\n\nSui tavoli ci sono mele rosse e pesche gialle. Ci sono anche molti fiori colorati. Elena guarda tutto con occhi curiosi.\n\nGiulia vuole comprare le pesche. Il venditore chiede sei euro. «È troppo caro!», dice Giulia. Lei sorride e offre quattro euro. L'uomo pensa un momento e poi accetta.\n\nAdesso tocca a Elena. Lei prova a contrattare per i fiori. «Tre euro?», domanda piano. Il venditore ride e dice di sì.\n\nLe due amiche pagano pochi soldi e sono contente. «Abbiamo fatto un buon affare!», dice Giulia. Poi le ragazze mangiano una pesca dolce vicino ai banchi del mercato.",
+    "vocab": [
+      {
+        "word": "mattina",
+        "surface": "mattina",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Morning; the early part of the day."
+      },
+      {
+        "word": "presto",
+        "surface": "presto",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Early; before the usual or expected time."
+      },
+      {
+        "word": "gente",
+        "surface": "gente",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "People; a group of persons."
+      },
+      {
+        "word": "banco",
+        "surface": "banchi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Stall; a table where goods are sold."
+      },
+      {
+        "word": "tavolo",
+        "surface": "tavoli",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Table; a flat surface on legs."
+      },
+      {
+        "word": "mela",
+        "surface": "mele",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Apple; a round fruit from a tree."
+      },
+      {
+        "word": "rosso",
+        "surface": "rosse",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Red; the color of blood."
+      },
+      {
+        "word": "pesca",
+        "surface": "pesche",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Peach; a soft sweet fruit with fuzzy skin."
+      },
+      {
+        "word": "fiore",
+        "surface": "fiori",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Flower; the colored part of a plant."
+      },
+      {
+        "word": "occhio",
+        "surface": "occhi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Eye; the body part used to see."
+      },
+      {
+        "word": "volere",
+        "surface": "vuole",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To want; to wish to have something."
+      },
+      {
+        "word": "venditore",
+        "surface": "venditore",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Seller; a person who sells things."
+      },
+      {
+        "word": "caro",
+        "surface": "caro",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Expensive; costing a lot of money."
+      },
+      {
+        "word": "troppo",
+        "surface": "troppo",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Too much; more than is needed."
+      },
+      {
+        "word": "offrire",
+        "surface": "offre",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To offer; to propose to give something."
+      },
+      {
+        "word": "pensare",
+        "surface": "pensa",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To think; to use your mind."
+      },
+      {
+        "word": "provare",
+        "surface": "prova",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To try; to attempt to do something."
+      },
+      {
+        "word": "domandare",
+        "surface": "domanda",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To ask; to request an answer politely."
+      },
+      {
+        "word": "pagare",
+        "surface": "pagano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To pay; to give money for something."
+      },
+      {
+        "word": "soldi",
+        "surface": "soldi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Money; coins and notes used to buy."
+      },
+      {
+        "word": "contento",
+        "surface": "contente",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Happy; pleased and satisfied."
+      },
+      {
+        "word": "affare",
+        "surface": "affare",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Deal; a good purchase at a low price."
+      },
+      {
+        "word": "molto",
+        "surface": "molti",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Many; a large number of things."
+      },
+      {
+        "word": "poco",
+        "surface": "pochi",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Few; a small number of things."
+      }
+    ]
+  },
+  {
+    "topic": "venezia",
+    "slotIndex": 1,
+    "title": "Elena sale in gondola",
+    "arcType": null,
+    "synopsis": "Sara porta Elena in gondola tra i canali di Venezia. Mentre il gondoliere canta, la barca svolta in un canale nascosto, dove Sara rivela un piccolo segreto sulla sua infanzia.",
+    "text": "È mattina sui canali di Venezia. Elena arriva vicino al ponte e guarda le vecchie gondole nere. La sua amica Sara vive qui e oggi le fa un giro speciale.\n\nLe due amiche salgono su una gondola stretta. L'acqua del canale è calma e verde. La barca nera scivola piano sull'acqua.\n\nLa gondola passa sotto un ponte piccolo. Elena guarda le vecchie case antiche e sorride.\n\nPoi Elena apre la bocca per la meraviglia. Il gondoliere canta una canzone lenta e triste.\n\nLa sua voce è calda e dolce. Elena ascolta bene e chiude gli occhi.\n\nPoi la gondola gira in un canale silenzioso. Là c'è una casa gialla e semplice. «Io sono nata qui», dice Sara piano. Elena non sapeva questo segreto. Le due amiche restano sull'acqua fino a sera, felici.",
+    "vocab": [
+      {
+        "word": "vivere",
+        "surface": "vive",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To live; to be alive or reside in a place."
+      },
+      {
+        "word": "vicino",
+        "surface": "vicino",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Near; close to something."
+      },
+      {
+        "word": "salire",
+        "surface": "salgono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go up; to get onto or climb something."
+      },
+      {
+        "word": "stretto",
+        "surface": "stretta",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Narrow; not wide, small from side to side."
+      },
+      {
+        "word": "acqua",
+        "surface": "acqua",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Water; the clear liquid we drink."
+      },
+      {
+        "word": "calmo",
+        "surface": "calma",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Calm; quiet and still, without movement."
+      },
+      {
+        "word": "verde",
+        "surface": "verde",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Green; the color of grass and leaves."
+      },
+      {
+        "word": "barca",
+        "surface": "barca",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Boat; a small craft that travels on water."
+      },
+      {
+        "word": "passare",
+        "surface": "passa",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To pass; to go by or move past something."
+      },
+      {
+        "word": "ponte",
+        "surface": "ponte",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Bridge; a structure built over water or a road."
+      },
+      {
+        "word": "piccolo",
+        "surface": "piccolo",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Small; little in size."
+      },
+      {
+        "word": "casa",
+        "surface": "case",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "House; a building where people live."
+      },
+      {
+        "word": "antico",
+        "surface": "antiche",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Ancient; very old, from long ago."
+      },
+      {
+        "word": "aprire",
+        "surface": "apre",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To open; to make something no longer closed."
+      },
+      {
+        "word": "bocca",
+        "surface": "bocca",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Mouth; the face part used to eat and talk."
+      },
+      {
+        "word": "cantare",
+        "surface": "canta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To sing; to make music with your voice."
+      },
+      {
+        "word": "canzone",
+        "surface": "canzone",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Song; a short piece of music with words."
+      },
+      {
+        "word": "lento",
+        "surface": "lenta",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Slow; moving with little speed."
+      },
+      {
+        "word": "voce",
+        "surface": "voce",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Voice; the sound a person makes when speaking."
+      },
+      {
+        "word": "dolce",
+        "surface": "dolce",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Sweet and gentle; pleasant to hear or taste."
+      },
+      {
+        "word": "ascoltare",
+        "surface": "ascolta",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To listen; to pay attention to a sound."
+      },
+      {
+        "word": "occhio",
+        "surface": "occhi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Eye; the body part used to see."
+      },
+      {
+        "word": "giro",
+        "surface": "giro",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Tour; a short trip around a place."
+      },
+      {
+        "word": "mattina",
+        "surface": "mattina",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Morning; the early part of the day."
+      }
+    ]
+  },
+  {
+    "topic": "venezia",
+    "slotIndex": 2,
+    "title": "Il mercato di Rialto",
+    "arcType": null,
+    "synopsis": "Dopo il mercato di Rialto, Sara ed Elena si perdono tra le calli strette di Venezia. Poi una piccola scoperta nascosta le aspetta in un campo tranquillo e silenzioso.",
+    "text": "Sara è la migliore amica di Elena. Oggi le due donne vanno insieme al mercato di Rialto. Il mercato del mattino è pieno di gente e di colori.\n\nSara compra del pesce fresco e un po' di verdura. Elena sceglie alcuni limoni gialli per la cena. I banchi del pesce sono colorati e profumati.\n\nDopo il mercato, le due amiche si perdono tra le calli strette di Venezia. Le strade diventano buie e vuote, senza rumore.\n\nA un tratto Elena trova una piccola libreria nascosta in un campo tranquillo. Elena e Sara entrano piano nel negozio silenzioso. Elena guarda i vecchi libri sugli scaffali di legno. «Che bella scoperta!», dice Elena felice. Poi le due amiche tornano a casa contente e stanche, senza fretta.",
+    "vocab": [
+      {
+        "word": "migliore",
+        "surface": "migliore",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Best; better than all the others."
+      },
+      {
+        "word": "andare",
+        "surface": "vanno",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go; to move toward a place."
+      },
+      {
+        "word": "pieno",
+        "surface": "pieno",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Full; holding as much as it can."
+      },
+      {
+        "word": "gente",
+        "surface": "gente",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "People; persons in general."
+      },
+      {
+        "word": "comprare",
+        "surface": "compra",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To buy; to get something by paying money."
+      },
+      {
+        "word": "pesce",
+        "surface": "pesce",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Fish; an animal that lives and swims in water."
+      },
+      {
+        "word": "fresco",
+        "surface": "fresco",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Fresh; recently made or picked, not old."
+      },
+      {
+        "word": "verdura",
+        "surface": "verdura",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Vegetables; plants we eat like beans and carrots."
+      },
+      {
+        "word": "scegliere",
+        "surface": "sceglie",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To choose; to pick one thing among many."
+      },
+      {
+        "word": "limone",
+        "surface": "limoni",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Lemon; a sour yellow fruit."
+      },
+      {
+        "word": "cena",
+        "surface": "cena",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Dinner; the meal eaten in the evening."
+      },
+      {
+        "word": "banco",
+        "surface": "banchi",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Stall; a table where a seller shows goods."
+      },
+      {
+        "word": "entrare",
+        "surface": "entrano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To enter; to go into a place."
+      },
+      {
+        "word": "tornare",
+        "surface": "tornano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To go back; to return to a place."
+      },
+      {
+        "word": "perdersi",
+        "surface": "perdono",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To get lost; to not find the way."
+      },
+      {
+        "word": "calle",
+        "surface": "calli",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Narrow street; a small alley in Venice."
+      },
+      {
+        "word": "strada",
+        "surface": "strade",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Street; a road where people walk or drive."
+      },
+      {
+        "word": "buio",
+        "surface": "buie",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Dark; without any light."
+      },
+      {
+        "word": "vuoto",
+        "surface": "vuote",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Empty; with nothing or nobody inside."
+      },
+      {
+        "word": "trovare",
+        "surface": "trova",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To find; to discover where something is."
+      },
+      {
+        "word": "nascosto",
+        "surface": "nascosta",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Hidden; not easy to see or find."
+      },
+      {
+        "word": "campo",
+        "surface": "campo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Small square; a little open space in Venice."
+      },
+      {
+        "word": "negozio",
+        "surface": "negozio",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Shop; a place where you buy things."
+      },
+      {
+        "word": "libro",
+        "surface": "libri",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Book; pages with words bound together to read."
+      }
+    ]
+  },
+  {
+    "topic": "venezia",
+    "slotIndex": 3,
+    "title": "Una canzone in piazza San Marco",
+    "arcType": null,
+    "synopsis": "In piazza San Marco un'orchestra suona per la gente. Sara chiede ai musicisti la canzone preferita di Elena, e tra i piccioni sorpresi succede qualcosa di dolce e inatteso.",
+    "text": "Elena e la sua amica Sara arrivano insieme in piazza San Marco. La piazza è molto larga, chiara e piena di luce. Molti piccioni volano intorno alle due donne.\n\nUn'orchestra suona una musica allegra davanti a un vecchio caffè. Elena batte le mani a tempo con la musica. Sara ordina due tazze di cioccolata calda e dolce.\n\nPoi Sara si avvicina all'orchestra con un sorriso. Sara chiede ai musicisti la canzone preferita di Elena. Il vecchio direttore annuisce e comincia a suonare piano.\n\nElena riconosce le note e sorride felice. Poi balla piano vicino al caffè. Fa qualche passo leggero e gira tra le colonne.\n\nMolti uccelli restano sorpresi vicino a Elena. La folla guarda la scena con gioia. Poi Sara abbraccia Elena e dice piano: «Benvenuta a casa». Elena è commossa e serena.",
+    "vocab": [
+      {
+        "word": "piccione",
+        "surface": "piccioni",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Pigeon; a common gray bird seen in cities."
+      },
+      {
+        "word": "volare",
+        "surface": "volano",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To fly; to move through the air."
+      },
+      {
+        "word": "intorno",
+        "surface": "intorno",
+        "type": "adverb",
+        "register": "neutral",
+        "definition": "Around; on every side of something."
+      },
+      {
+        "word": "suonare",
+        "surface": "suona",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To play music on an instrument."
+      },
+      {
+        "word": "allegro",
+        "surface": "allegra",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Cheerful; happy and full of joy."
+      },
+      {
+        "word": "battere",
+        "surface": "batte",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To beat or clap; to hit again and again."
+      },
+      {
+        "word": "mano",
+        "surface": "mani",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Hand; the body part at the end of the arm."
+      },
+      {
+        "word": "ordinare",
+        "surface": "ordina",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To order; to ask for food or drink."
+      },
+      {
+        "word": "tazza",
+        "surface": "tazze",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Cup; a small open dish you drink from."
+      },
+      {
+        "word": "cominciare",
+        "surface": "comincia",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To begin; to start doing something."
+      },
+      {
+        "word": "abbracciare",
+        "surface": "abbraccia",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To hug; to hold someone in your arms."
+      },
+      {
+        "word": "commosso",
+        "surface": "commossa",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Moved; feeling a strong and gentle emotion."
+      },
+      {
+        "word": "avvicinarsi",
+        "surface": "avvicina",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To approach; to come close to someone or something."
+      },
+      {
+        "word": "chiedere",
+        "surface": "chiede",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To ask; to request something from someone."
+      },
+      {
+        "word": "annuire",
+        "surface": "annuisce",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To nod; to move the head to say yes."
+      },
+      {
+        "word": "ballare",
+        "surface": "balla",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To dance; to move the body to music."
+      },
+      {
+        "word": "passo",
+        "surface": "passo",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Step; one movement of the foot while walking."
+      },
+      {
+        "word": "leggero",
+        "surface": "leggero",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Light; not heavy, soft and gentle."
+      },
+      {
+        "word": "sorpreso",
+        "surface": "sorpresi",
+        "type": "adjective",
+        "register": "neutral",
+        "definition": "Surprised; feeling sudden wonder at something."
+      },
+      {
+        "word": "folla",
+        "surface": "folla",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Crowd; many people gathered close together."
+      },
+      {
+        "word": "guardare",
+        "surface": "guarda",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To look; to turn the eyes toward something."
+      },
+      {
+        "word": "sorridere",
+        "surface": "sorride",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To smile; to show joy with the mouth."
+      },
+      {
+        "word": "girare",
+        "surface": "gira",
+        "type": "verb",
+        "register": "neutral",
+        "definition": "To turn; to spin around in a circle."
+      },
+      {
+        "word": "gioia",
+        "surface": "gioia",
+        "type": "noun",
+        "register": "neutral",
+        "definition": "Joy; a feeling of great happiness."
+      }
+    ]
+  }
+]

@@ -1,5 +1,5 @@
 /**
- * APPROVED VOICES — single source of truth for which ElevenLabs voiceIds may
+ * APPROVED VOICES: single source of truth for which ElevenLabs voiceIds may
  * be used to render PRODUCTION audio (story narration, practice clips, word
  * audio). This exists because on 2026-07-19 a story was narrated with a voice
  * the user had NOT approved ("Narrator AR - Lucas"), picked as a candidate.
@@ -10,11 +10,11 @@
  * and THROWS if the voice is not approved. There is no env-var bypass.
  *
  * WHO EDITS THIS FILE: the USER approves voices. Claude must NOT add an entry
- * on its own — a PreToolUse guard (.claude/safety/pre-voice-approval-guard.sh)
+ * on its own; a PreToolUse guard (.claude/safety/pre-voice-approval-guard.sh)
  * blocks edits to this file unless the user's most recent message contains an
  * explicit approval phrase ("aprueba la voz" / "apruebo la voz" / "voz aprobada").
  * Auditioning a candidate is done with FREE preview URLs or a throwaway 1-line
- * sample script that does NOT write to production — never by adding it here
+ * sample script that does NOT write to production; never by adding it here
  * pre-emptively.
  *
  * Seed (2026-07-19): the voiceIds already shipped on PUBLISHED (Live) stories,
@@ -26,8 +26,8 @@ export type ApprovedVoice = { note: string };
 
 export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   // Narrators / practice voices live on published journeys as of 2026-07-19.
-  yHD4CsKkghm19ToGLJEC: { note: "Narrator CO - Hernando (Friends CO, Traveler LATAM) — user-approved" },
-  FXGrCtY3PEyfqczBAlqm: { note: "Jhenny (practice LATAM / Friends) — user-approved" },
+  yHD4CsKkghm19ToGLJEC: { note: "Narrator CO - Hernando (Friends CO, Traveler LATAM); user-approved" },
+  FXGrCtY3PEyfqczBAlqm: { note: "Jhenny (practice LATAM / Friends); user-approved" },
   Ww7Sq9tx9CCOiNOwWgsx: { note: "Expat DE + Friends DE narrator (published)" },
   JW8DGEuLp9WxIS5IdxMM: { note: "Friends/Traveler LATAM narrator (published)" },
   MjtZn5tagxL1RO6w9ER5: { note: "Traveler LATAM voice (published)" },
@@ -41,41 +41,41 @@ export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   // ── Approved by the user 2026-07-20 (audition by ear), to cast the
   // remaining draft journeys. Italian + peninsular Spanish + the four
   // German character voices that already ship in Expat DE.
-  gfKKsLN1k0oYYN9n2dXX: { note: "Violetta (IT, f) — narradora + práctica de Friends IT A0 — user-approved 2026-07-20" },
-  "2EWay75ikIPKrY4w2j69": { note: "Nuria Storyteller & Calm (ES peninsular, f) — narradora + práctica de Friends ES Spain A0 — user-approved 2026-07-20" },
-  eHAEFkimnYz57pupUMcq: { note: "Javier Rojas Learning & Storytelling (ES peninsular, m) — narrador de Friends ES Spain A0 — user-approved 2026-07-28" },
-  jipeLrCHZ6ByxrU2JP9i: { note: "Maia Sweet Natural Storyteller (ES peninsular, f) — PRÁCTICA de Friends ES Spain A0 — user-approved 2026-07-28 (narración aún NO aprobada, pendiente audición)" },
-  SJJe86Va82zRzg6zi2dX: { note: "Ela Empathetic & Warm (DE, f) — Nora en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
-  WHaUUVTDq47Yqc9aDbkH: { note: "ENNIAH Friendly & Motivating (DE, f) — Wiebke en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
-  JDXBO1etYlVlJZRMoYzH: { note: "Marius Young Calm (DE, m) — Ole en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
-  MMwckqU477oQxnAk1SgA: { note: "Bench DE - Ben (DE, m) — Carstens en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
+  gfKKsLN1k0oYYN9n2dXX: { note: "Violetta (IT, f); narradora + práctica de Friends IT A0; user-approved 2026-07-20" },
+  "2EWay75ikIPKrY4w2j69": { note: "Nuria Storyteller & Calm (ES peninsular, f); narradora + práctica de Friends ES Spain A0; user-approved 2026-07-20" },
+  eHAEFkimnYz57pupUMcq: { note: "Javier Rojas Learning & Storytelling (ES peninsular, m); narrador de Friends ES Spain A0; user-approved 2026-07-28" },
+  jipeLrCHZ6ByxrU2JP9i: { note: "Maia Sweet Natural Storyteller (ES peninsular, f); PRÁCTICA de Friends ES Spain A0; user-approved 2026-07-28 (narración aún NO aprobada, pendiente audición)" },
+  SJJe86Va82zRzg6zi2dX: { note: "Ela Empathetic & Warm (DE, f); Nora en Hanseat DE C1; ya suena en Expat DE; user-approved 2026-07-20" },
+  WHaUUVTDq47Yqc9aDbkH: { note: "ENNIAH Friendly & Motivating (DE, f); Wiebke en Hanseat DE C1; ya suena en Expat DE; user-approved 2026-07-20" },
+  JDXBO1etYlVlJZRMoYzH: { note: "Marius Young Calm (DE, m); Ole en Hanseat DE C1; ya suena en Expat DE; user-approved 2026-07-20" },
+  MMwckqU477oQxnAk1SgA: { note: "Bench DE - Ben (DE, m); Carstens en Hanseat DE C1; ya suena en Expat DE; user-approved 2026-07-20" },
 
   // ── Completan el cast de Hanseat DE C1 (tiene 7 personajes recurrentes,
   // no 4). Las tres ya suenan en Expat DE. Aprobadas por el usuario 2026-07-20.
-  "9iYBWBbTzTDIt6imiMxp": { note: "Daien (DE, f) — Merle en Hanseat DE C1; ya suena en Expat DE — user-approved 2026-07-20" },
-  vmVmHDKBkkCgbLVIOJRb: { note: "Bench DE - Charlie (DE, m) — Boysen + Fiete (no coinciden) y masculinos puntuales en Hanseat — user-approved 2026-07-20" },
-  NE7AIW5DoJ7lUosXV2KR: { note: "Bench DE - Ela Cheerful (DE, f) — femeninas puntuales (Grit, Sofia, Verkäuferin) en Hanseat — user-approved 2026-07-20" },
+  "9iYBWBbTzTDIt6imiMxp": { note: "Daien (DE, f); Merle en Hanseat DE C1; ya suena en Expat DE; user-approved 2026-07-20" },
+  vmVmHDKBkkCgbLVIOJRb: { note: "Bench DE - Charlie (DE, m); Boysen + Fiete (no coinciden) y masculinos puntuales en Hanseat; user-approved 2026-07-20" },
+  NE7AIW5DoJ7lUosXV2KR: { note: "Bench DE - Ela Cheerful (DE, f); femeninas puntuales (Grit, Sofia, Verkäuferin) en Hanseat; user-approved 2026-07-20" },
 
   // ── Aprobada por el usuario 2026-07-29 tras oír un sample con las líneas
   // reales del personaje (audición: public/_lea-voces.html).
-  oNs4CSS4LR7hEoEykuS5: { note: "Rebecca Green Calm & Articulate (DE, f) — Lea en Expat DE (Umzug ohne Aufzug) — user-approved 2026-07-29" },
+  oNs4CSS4LR7hEoEykuS5: { note: "Rebecca Green Calm & Articulate (DE, f); Lea en Expat DE (Umzug ohne Aufzug); user-approved 2026-07-29" },
 
   // ── Aprobada por el usuario 2026-07-30 tras audición del shared library
   // (candelaria-narrador.html, candidata N7). Entra como Jorge en la historia
   // "El Día de la Candelaria" del catálogo MX, donde el narrador/Rafael es
   // Andreti (JW8DGEuLp9WxIS5IdxMM, ~108 Hz) y Jorge necesita un masculino
   // mexicano intermedio (~139 Hz) que no se pise ni con Rafael ni con Jhenny.
-  BALkepjFtWPcKCNjSuK0: { note: "César Barona Cheerful & Friendly (MX, m) — Jorge en El Día de la Candelaria (catálogo Short Stories in Mexican Spanish) — user-approved 2026-07-30" },
+  BALkepjFtWPcKCNjSuK0: { note: "César Barona Cheerful & Friendly (MX, m); Jorge en El Día de la Candelaria (catálogo Short Stories in Mexican Spanish); user-approved 2026-07-30" },
 
   // ── Primeras voces de portugués del proyecto. Aprobadas por el usuario el
   // 2026-08-12 tras oír las previews del shared library (public/_voces-pt-br.html),
   // para narrar y practicar Traveler PT-BR A0. Journey de narrador único: solo
   // dos hacen falta, las otras tres quedan de reserva.
-  RGymW84CSmfVugnA5tvA: { note: "Roberta Smooth and Confident (BR, f) — narradora de Traveler PT-BR A0 — user-approved 2026-08-12" },
-  "7iqXtOF3wl3pomwXFY7G": { note: "Fernanda Formal, Polite and Direct (BR, f) — práctica de Traveler PT-BR A0 — user-approved 2026-08-12" },
-  GDzHdQOi6jjf8zaXhCYD: { note: "Raquel Expressive and Energetic (BR, f) — reserva PT-BR — user-approved 2026-08-12" },
-  qPfM2laM0pRL4rrZtBGl: { note: "Sandro Dutra Articulated and Clear (BR, m) — reserva PT-BR — user-approved 2026-08-12" },
-  czvzJwIVS2asEKnthV40: { note: "Daniel Brazilian Conversational Voice (BR, m) — reserva PT-BR — user-approved 2026-08-12" },
+  RGymW84CSmfVugnA5tvA: { note: "Roberta Smooth and Confident (BR, f); narradora de Traveler PT-BR A0; user-approved 2026-08-12" },
+  "7iqXtOF3wl3pomwXFY7G": { note: "Fernanda Formal, Polite and Direct (BR, f); práctica de Traveler PT-BR A0; user-approved 2026-08-12" },
+  GDzHdQOi6jjf8zaXhCYD: { note: "Raquel Expressive and Energetic (BR, f); reserva PT-BR; user-approved 2026-08-12" },
+  qPfM2laM0pRL4rrZtBGl: { note: "Sandro Dutra Articulated and Clear (BR, m); reserva PT-BR; user-approved 2026-08-12" },
+  czvzJwIVS2asEKnthV40: { note: "Daniel Brazilian Conversational Voice (BR, m); reserva PT-BR; user-approved 2026-08-12" },
 };
 
 export function isVoiceApproved(voiceId: string | null | undefined): boolean {

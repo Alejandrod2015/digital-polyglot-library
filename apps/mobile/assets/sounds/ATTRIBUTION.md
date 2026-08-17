@@ -1,8 +1,8 @@
-# Sound assets — attribution
+# Sound assets: attribution
 
 All UI audio for the app and the web lives HERE, in `apps/mobile/assets/sounds/`
 (the web serves byte-identical copies from `public/sounds/`). There is no
-`assets/sfx/` any more — see "Why one folder" below.
+`assets/sfx/` any more; see "Why one folder" below.
 
 Sourced from the [Mixkit free sound library](https://mixkit.co/free-sound-effects/).
 The Mixkit License allows free commercial use with no attribution required; this
@@ -19,7 +19,7 @@ that existed at the time. **Do not reassign any of them without asking him.**
 | `practice-wrong.mp3`     | 1.25 s | every wrong answer                                | 2569   |
 | `practice-combo.mp3`     | 2.40 s | 2+ correct in a row (replaces `correct`, never on top) | 600 |
 | `practice-ring-fill.mp3` | 1.40 s | session end, under the result ring, only if ≥50% right | 2633 |
-| `practice-perfect.mp3`   | 4.13 s | session end with a perfect score                  | —      |
+| `practice-perfect.mp3`   | 4.13 s | session end with a perfect score                  | n/a    |
 
 Plus `journey-milestone-chime.mp3` (0.24 s), the only non-practice sound: it
 fires on a journey milestone.
@@ -41,7 +41,7 @@ contents. That cost a full night of debugging: the app loaded
 `sfx/practice-perfect.mp3` (2.4 s) as its victory sound while the web used
 `sounds/practice-perfect.mp3` (4.13 s), and the user reported four times that
 the sound he knew had stopped playing. Three fixes went into audio sessions and
-preloading — all correct, all irrelevant, because the file itself was the wrong
+preloading; all correct, all irrelevant, because the file itself was the wrong
 one.
 
 So: **one folder, and names that say what the sound is FOR, not where it came
@@ -72,7 +72,7 @@ Full text: https://mixkit.co/license/
 ## Swap pool
 
 Discarded-but-kept candidates live in `samples/practice-sound-candidates/` at
-the repo root. To swap, copy the candidate over the matching file here — that
+the repo root. To swap, copy the candidate over the matching file here; that
 is the whole procedure now that nothing is duplicated or base64-encoded.
 
 Keep new files at 44.1 kHz / mono and ≤140 KB.

@@ -1,5 +1,5 @@
 // Simulates the /api/mobile/journey route locally for a given userId,
-// using the production DATABASE_URL. Does NOT touch Clerk — instead,
+// using the production DATABASE_URL. Does NOT touch Clerk; instead,
 // you can pass the placementLevel manually via --placement to test
 // what the response would look like.
 

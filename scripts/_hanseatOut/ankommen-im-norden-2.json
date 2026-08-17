@@ -1,0 +1,126 @@
+[
+  {
+    "title": "Es gibt kein schlechtes Wetter",
+    "slug": "es-gibt-kein-schlechtes-wetter",
+    "text": "Der Regen fällt seit Stunden seitwärts, und Nora steht ohne Schirm unter einem Vordach in der Schanze. Ole schlendert in einem gelben Ölmantel heran, als wäre bestes Wetter.\n\nNora: Wie hältst du das aus? Ich bin komplett durchnässt und friere.\n\nOle: Du hast das falsche Problem. Nicht der Regen ist schuld, sondern deine Jacke.\n\nNora: Meine Jacke ist teuer und angeblich wasserdicht.\n\nOle: Angeblich. Hier im Norden zählt nur, was den Test übersteht. Komm mit, wir besorgen dir was Ordentliches.\n\nIm Laden hängt eine ganze Wand voller gelber Regenmäntel. Eine Verkäuferin mustert Noras durchweichte Schuhe.\n\nVerkäuferin: Moin. Neu hier, richtig? Das sieht man an den Schuhen.\n\nNora: So offensichtlich? Ich dachte, ich wäre ganz gut vorbereitet.\n\nVerkäuferin: Ein Friesennerz und Gummistiefel, dann redest du nie wieder übers Wetter. Bei uns sagt man: Es gibt kein schlechtes Wetter, nur falsche Kleidung.\n\nNora: Das klingt fast wie ein Lebensmotto.\n\nVerkäuferin: Es ist eins. Wer hier auf Sonne wartet, wartet vergeblich.\n\nOle: Sie hat recht. Der Himmel ändert sich nicht, also änderst du dich.\n\nNora: Und die Leute joggen wirklich bei diesem Himmel? Ich habe unterwegs zwei gesehen.\n\nOle: Natürlich. Absagen wäre albern. Dann käme man von Oktober bis April kaum vor die Tür.\n\nNora: Andere würden sich bei so einem Wetter gar nicht erst aus dem Bett wagen.\n\nVerkäuferin: Dann hättet ihr hier ein echtes Problem. Zieh den Nerz an, geh raus, und der Regen wird dir gleichgültig.\n\nNora schlüpft in den gelben Mantel und tritt hinaus vor die Tür. Der Regen fällt weiter, aber er erreicht sie nicht mehr.\n\nNora: Unglaublich. Ich merke ihn kaum noch.\n\nOle: Willkommen im Norden. Jetzt fehlt nur noch, dass du ihn irgendwann sogar magst.",
+    "synopsis": "Durchnässt und fassungslos entdeckt Nora, dass der Norden kein schlechtes Wetter kennt, nur falsche Kleidung.",
+    "arcType": "juxtaposition-discovery",
+    "vocab": [
+      {
+        "type": "adverb",
+        "word": "seitwärts",
+        "definition": "sideways; toward the side rather than straight ahead of you"
+      },
+      {
+        "type": "noun",
+        "word": "Vordach",
+        "definition": "a small roof or canopy jutting out above a doorway"
+      },
+      {
+        "type": "adjective",
+        "word": "durchnässt",
+        "definition": "soaked through; completely wet from rain or water"
+      },
+      {
+        "type": "verb",
+        "word": "frieren",
+        "surface": "friere",
+        "definition": "to feel cold; to suffer from a low temperature"
+      },
+      {
+        "type": "adjective",
+        "word": "wasserdicht",
+        "definition": "waterproof; built so that no water can get through"
+      },
+      {
+        "type": "verb",
+        "word": "überstehen",
+        "surface": "übersteht",
+        "definition": "to get through a hard test or situation successfully"
+      },
+      {
+        "type": "adjective",
+        "word": "ordentlich",
+        "surface": "Ordentliches",
+        "definition": "proper and of decent quality; done the right way"
+      },
+      {
+        "type": "noun",
+        "word": "Regenmantel",
+        "surface": "Regenmäntel",
+        "definition": "a coat worn to keep you dry in the rain"
+      },
+      {
+        "type": "verb",
+        "word": "mustern",
+        "surface": "mustert",
+        "definition": "to look someone over carefully, sizing them up visually"
+      },
+      {
+        "type": "adjective",
+        "word": "durchweicht",
+        "surface": "durchweichte",
+        "definition": "thoroughly soaked and soggy from a lot of water"
+      },
+      {
+        "type": "adjective",
+        "word": "offensichtlich",
+        "definition": "obvious; easy to see or notice right away"
+      },
+      {
+        "type": "noun",
+        "word": "Friesennerz",
+        "definition": "a bright yellow oilskin rain jacket typical of northern Germany"
+      },
+      {
+        "type": "noun",
+        "word": "Gummistiefel",
+        "definition": "rubber boots that keep your feet dry in wet weather"
+      },
+      {
+        "type": "expression",
+        "word": "Es gibt kein schlechtes Wetter, nur falsche Kleidung",
+        "definition": "a northern motto: bad weather is really just the wrong clothing"
+      },
+      {
+        "type": "noun",
+        "word": "Lebensmotto",
+        "definition": "a guiding saying that sums up how someone lives"
+      },
+      {
+        "type": "adverb",
+        "word": "vergeblich",
+        "definition": "in vain; without the hoped-for result despite the effort"
+      },
+      {
+        "type": "noun",
+        "word": "Himmel",
+        "definition": "the sky, especially seen as the source of weather"
+      },
+      {
+        "type": "verb",
+        "word": "joggen",
+        "definition": "to run at a steady, gentle pace for exercise"
+      },
+      {
+        "type": "adjective",
+        "word": "albern",
+        "definition": "silly; foolish in a slightly childish, faintly ridiculous way"
+      },
+      {
+        "type": "adjective",
+        "word": "gleichgültig",
+        "definition": "indifferent; not caring about or bothered by something"
+      },
+      {
+        "type": "expression",
+        "word": "vor die Tür kommen",
+        "surface": "vor die Tür",
+        "definition": "to get out of the house and leave home at all"
+      }
+    ],
+    "level": "c1",
+    "topic": "ankommen-im-norden",
+    "slotIndex": 2
+  }
+]

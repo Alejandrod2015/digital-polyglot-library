@@ -1,0 +1,123 @@
+[
+  {
+    "title": "Ein Kaufmann, ein Wort",
+    "slug": "ein-kaufmann-ein-wort",
+    "text": "Das Kontor liegt in einem alten Speicher an der Elbe, mit knarrenden Dielen und Blick auf die Kräne. Ole, der sie seit ihrer Ankunft eingewöhnt hat, bringt sie hinein; heute beginnt ihr erster Arbeitstag. Herr Carstens empfängt Nora mit einem festen Handschlag und keinem überflüssigen Wort.\n\nCarstens: Willkommen. Bei uns gilt: ein Kaufmann, ein Wort. Was Sie zusagen, halten Sie. Was Sie nicht halten können, sagen Sie nicht zu.\n\nNora: Verstanden. Und wo finde ich das alles schriftlich? Handbuch, Richtlinien, Prozesse?\n\nCarstens: Das meiste steht in keinem Handbuch. Ein Handschlag wiegt hier mehr als drei Seiten Vertrag.\n\nOle: Er meint das ernst. Wer hier per Handschlag zusagt und dann kneift, ist unten durch. Für immer.\n\nNora: In manchen Ländern hätte ein Anwalt dazu einiges zu sagen.\n\nCarstens: Anwälte kommen, wenn das Vertrauen schon weg ist. So weit lassen wir es gar nicht kommen.\n\nAm Nachmittag legt Nora ihm ihre erste Kalkulation vor. Carstens liest sie langsam und nickt einmal.\n\nCarstens: Kann man so machen.\n\nNora: Nur das? Ich habe zwei Tage daran gesessen. Ist es zu dünn?\n\nCarstens: Nein. Kann man so machen heißt: sauber, richtig, nichts auszusetzen.\n\nOle: Übersetzung für Zugezogene: Das ist ein Lob. Fast schon eine Umarmung.\n\nNora: Ein Lob, das wie eine Absage klingt. Wie soll ich hier je den Unterschied hören?\n\nCarstens: Mit der Zeit. Wer bei uns Beifall erwartet, wartet lange. Wer Vertrauen aufbaut, merkt es an kleineren Zeichen.\n\nOle: Und du hast gerade deine erste Vokabel gelernt: Kann man so machen.\n\nNora: Dann sammle ich sie eben, Vokabel für Vokabel. Bis ich eines Tages selbst nur noch nicke.",
+    "synopsis": "Am ersten Tag im Kontor lernt Nora, dass ein Handschlag mehr wiegt als jeder Vertrag.",
+    "arcType": "juxtaposition-discovery",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Kontor",
+        "definition": "an old-fashioned Hanseatic trading or merchant office in Hamburg"
+      },
+      {
+        "type": "noun",
+        "word": "Speicher",
+        "definition": "a warehouse, especially the old brick storehouses by the harbour"
+      },
+      {
+        "type": "adjective",
+        "word": "knarrend",
+        "surface": "knarrenden",
+        "definition": "creaking; making a rough scraping sound under weight or movement"
+      },
+      {
+        "type": "adjective",
+        "word": "fest",
+        "surface": "festen",
+        "definition": "firm and steady; held with strong, confident pressure"
+      },
+      {
+        "type": "adjective",
+        "word": "überflüssig",
+        "surface": "überflüssigen",
+        "definition": "unnecessary; not needed because it adds nothing useful"
+      },
+      {
+        "type": "noun",
+        "word": "Handschlag",
+        "definition": "a handshake, used here to seal a binding spoken agreement"
+      },
+      {
+        "type": "expression",
+        "word": "ein Kaufmann, ein Wort",
+        "definition": "a merchant's spoken word is as binding as a signed contract"
+      },
+      {
+        "type": "verb",
+        "word": "zusagen",
+        "surface": "zusagen",
+        "definition": "to promise or agree firmly to do something"
+      },
+      {
+        "type": "verb",
+        "word": "kneifen",
+        "surface": "kneift",
+        "definition": "to chicken out; to back out of something at the last moment"
+      },
+      {
+        "type": "expression",
+        "word": "unten durch sein",
+        "surface": "unten durch",
+        "definition": "to have lost all respect and be finished with someone"
+      },
+      {
+        "type": "noun",
+        "word": "Kalkulation",
+        "definition": "a worked-out calculation of costs, prices and figures for business"
+      },
+      {
+        "type": "expression",
+        "word": "kann man so machen",
+        "surface": "Kann man so machen",
+        "definition": "the highest dry Hanseatic praise: this is entirely fine, well done"
+      },
+      {
+        "type": "verb",
+        "word": "aussetzen",
+        "surface": "auszusetzen",
+        "definition": "to find fault with; to point out something to criticise"
+      },
+      {
+        "type": "noun",
+        "word": "Lob",
+        "definition": "praise; open approval expressed for a job well done"
+      },
+      {
+        "type": "adjective",
+        "word": "sauber",
+        "definition": "clean and correct; done properly with nothing to fix"
+      },
+      {
+        "type": "adjective",
+        "word": "dünn",
+        "definition": "thin; here meaning weak, flimsy or lacking substance"
+      },
+      {
+        "type": "noun",
+        "word": "Beifall",
+        "definition": "applause; loud, open approval shown for someone's performance"
+      },
+      {
+        "type": "verb",
+        "word": "aufbauen",
+        "surface": "aufbaut",
+        "definition": "to build up something gradually, such as trust or a business"
+      },
+      {
+        "type": "noun",
+        "word": "Zeichen",
+        "definition": "a sign; a small hint that points to something bigger"
+      },
+      {
+        "type": "noun",
+        "word": "Vokabel",
+        "definition": "a vocabulary item; a single word to learn in a language"
+      }
+    ],
+    "level": "c1",
+    "topic": "das-kontor",
+    "slotIndex": 1
+  }
+]

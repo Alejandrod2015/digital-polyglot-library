@@ -129,7 +129,7 @@ async function auditStory(storyId: string): Promise<void> {
     if (result.reason === "unique") { tag = "HEUR-UNIQUE"; heuristicUniqueCount += 1; }
     else if (result.reason === "ambiguous") { tag = `HEUR-AMBIG (${result.candidates.length})`; heuristicAmbigCount += 1; }
     else { tag = "NO-MATCH (TTS fallback)"; noMatchCount += 1; }
-    const segLabel = seg ? `${seg.id} ${seg.startSec.toFixed(2)}-${seg.endSec.toFixed(2)} ${seg.text.slice(0, 50)}` : "—";
+    const segLabel = seg ? `${seg.id} ${seg.startSec.toFixed(2)}-${seg.endSec.toFixed(2)} ${seg.text.slice(0, 50)}` : "-";
     console.log(`  [${tag.padEnd(22)}] word=${word.padEnd(16)} → ${segLabel}`);
   }
   console.log(

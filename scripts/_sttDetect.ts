@@ -17,6 +17,8 @@
 // que generaban 11 de 16 avisos falsos.
 import { config } from "dotenv"; config({ path: ".env.local", quiet:true }); config({ path: ".env", quiet:true });
 import { PrismaClient } from "../src/generated/prisma";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
+import { spawnSync } from "child_process";
 const p = new PrismaClient();
 const apiKey = process.env.ELEVENLABS_API_KEY!;
 
@@ -37,6 +39,38 @@ function canon(s: string): string {
   return t.replace(/\s+/g, " ").trim();
 }
 
+/**
+ * Tramos de SILENCIO REAL del audio.
+ *
+ * POR QUÉ (2026-08-17). Un hueco entre dos palabras transcritas puede ser dos
+ * cosas opuestas: la narradora respirando, o un balbuceo que el reconocedor no
+ * supo escribir. La duración no las separa: 0,72s entre "frente" y "janela"
+ * era un balbuceo que el usuario oyó, y 0,80s tras una coma era respiración
+ * normal, también comprobada por él. Lo que las separa es si en ese hueco hay
+ * SONIDO. Si ffmpeg no encuentra silencio ahí, algo está sonando y no es habla.
+ */
+function silencios(url: string): Array<[number, number]> {
+  const out: Array<[number, number]> = [];
+  let err = "";
+  try {
+    const r = spawnSync("ffmpeg", ["-i", url, "-af", "silencedetect=noise=-35dB:d=0.12", "-f", "null", "-"], { encoding: "utf8", maxBuffer: 32 * 1024 * 1024 });
+    err = String(r.stderr ?? "");
+  } catch { return out; }
+  let ini: number | null = null;
+  for (const m of err.matchAll(/silence_(start|end): ([\d.]+)/g)) {
+    if (m[1] === "start") ini = Number(m[2]);
+    else if (ini !== null) { out.push([ini, Number(m[2])]); ini = null; }
+  }
+  return out;
+}
+
+/** ¿El hueco [a,b] está cubierto por silencio de verdad? */
+function esSilencioReal(a: number, b: number, sils: Array<[number, number]>): boolean {
+  if (!sils.length) return true; // sin medida no se acusa a nadie
+  const solape = sils.reduce((n, [x, y]) => n + Math.max(0, Math.min(b, y) - Math.max(a, x)), 0);
+  return solape >= (b - a) * 0.6;
+}
+
 async function transcribe(buf: Buffer): Promise<{ words: W[]; text: string }> {
   const fd = new FormData();
   fd.append("model_id","scribe_v1"); fd.append("language_code","por"); fd.append("timestamps_granularity","word");
@@ -53,13 +87,52 @@ async function transcribe(buf: Buffer): Promise<{ words: W[]; text: string }> {
   const rows: Array<{ slug:string; sev:string; t:number; que:string; frase?:string }> = [];
   for (const slug of slugs) {
     const s = await p.journeyStory.findFirst({ where: { slug }, select: { title:true, text:true, audioUrl:true } });
-    if (!s?.audioUrl || !s.text) continue;
-    const buf = Buffer.from(await (await fetch(s.audioUrl)).arrayBuffer());
+    if (!s?.text) continue;
     const argPas = process.argv.find(a => /^--x\d$/.test(a));
     const pasadas = argPas ? Number(argPas.slice(3)) : 1;
     const todas: W[][] = [];
-    for (let k = 0; k < pasadas; k++) todas.push((await transcribe(buf)).words);
+
+    // TRANSCRIPCIÓN CONGELADA (2026-08-17). La regresión corría contra el
+    // máster VIVO, así que en cuanto se corregía un defecto el caso pasaba a
+    // "PERDIDO" y la prueba acusaba al detector de algo que había arreglado el
+    // audio. Además pagaba STT en cada corrida. Con `--frozen` lee la
+    // transcripción guardada del máster que TENÍA el defecto: determinista,
+    // gratis, y sigue valiendo después de corregir.
+    const fixture = `scripts/_detectorFixtures/${slug}.json`;
+    let sils: Array<[number, number]> = [];
+    if (process.argv.includes("--frozen")) {
+      if (!existsSync(fixture)) { console.log(`${slug}: sin transcripción congelada (${fixture})`); continue; }
+      const f = JSON.parse(readFileSync(fixture, "utf8")) as { text:string; todas:W[][]; sils?:Array<[number,number]> };
+      todas.push(...f.todas.slice(0, pasadas));
+      sils = f.sils ?? [];
+      s.text = f.text; // el texto de ENTONCES: el cuerpo puede haber cambiado
+    } else {
+      const iu = process.argv.indexOf("--audio");
+      const url = iu >= 0 ? process.argv[iu + 1] : s.audioUrl;
+      if (!url) continue;
+      const buf = Buffer.from(await (await fetch(url)).arrayBuffer());
+      sils = silencios(url);
+      for (let k = 0; k < pasadas; k++) todas.push((await transcribe(buf)).words);
+      if (process.argv.includes("--freeze")) {
+        mkdirSync("scripts/_detectorFixtures", { recursive: true });
+        writeFileSync(fixture, JSON.stringify({ slug, url, text: s.text, todas, sils }, null, 1));
+        console.log(`${slug}: congeladas ${todas.length} pasada(s) y ${sils.length} silencios en ${fixture}`);
+        continue;
+      }
+    }
     const textoCanon = canon(s.text);
+    // Nombres propios del texto. Excluir las que abren oración dejaba fuera
+    // justo a los personajes ("Vitor apaga…"), que es donde vive el ruido. El
+    // criterio que sí aguanta: va en mayúscula Y no aparece NUNCA en
+    // minúscula. Un nombre propio cumple las dos; "Nada", "Cada" o "Ele" no,
+    // porque el texto los usa también en minúscula.
+    const nombresTexto = (() => {
+      const mayus = new Set((s.text.match(/\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]{2,}\b/g) ?? [])
+        .map((n) => norm(n).replace(/-/g, "")));
+      const minus = new Set((s.text.match(/\b[a-záéíóúâêôãõç]{3,}\b/g) ?? [])
+        .map((n) => norm(n).replace(/-/g, "")));
+      return [...mayus].filter((n) => !minus.has(n));
+    })();
     // Oraciones del texto, para poder decir QUÉ FRASE hay que escuchar en vez
     // de un segundo suelto.
     const oraciones = s.text.split(/(?<=[.!?])\s+/).map(o => o.trim()).filter(Boolean);
@@ -109,7 +182,14 @@ async function transcribe(buf: Buffer): Promise<{ words: W[]; text: string }> {
       const cw = canon(w.text);
       const bare = norm(w.text).replace(/-/g, "");
       const esContraccion = EQUIV.some(([re]) => re.test(bare));
-      if (cw.length >= 4 && !textoCanon.includes(cw)) {
+      // El reconocedor escribe los números en CIFRA aunque la voz los diga en
+      // letra: "quarenta e cinco reais" vuelve como "R$45.", "às seis e meia"
+      // como "6h30", "doze" como "12". Nada de eso está en el texto, así que
+      // caía en la señal de palabra inventada. Es transcripción, no audio:
+      // tres falsos positivos seguidos (2026-08-17), y el usuario oyó dos de
+      // ellos para nada. Un token con dígitos y sin letras es siempre esto.
+      const esCifra = /\d/.test(w.text) && !/\p{L}{2,}/u.test(w.text.replace(/^R\$/i, ""));
+      if (!esCifra && cw.length >= 4 && !textoCanon.includes(cw)) {
         const raiz = bare.slice(0, Math.max(4, bare.length - 2));
         // El reconocedor reescribe nombres propios ("Thiago" por "Tiago"), así
         // que comparamos también sin la hache y sin dobles.
@@ -121,9 +201,28 @@ async function transcribe(buf: Buffer): Promise<{ words: W[]; text: string }> {
         const contieneUnaDelTexto = textoCanon.split(" ").some(
           (t) => t.length >= 4 && bare.startsWith(t) && bare.length > t.length + 1
         );
+        // El reconocedor reescribe los nombres propios a su grafía más común:
+        // "Victor" por Vitor, "Thiago" por Tiago, "Yara" por Iara. Son seis
+        // señales ALTAS por historia que no son audio, solo ortografía. Un
+        // nombre del texto a UNA letra de lo oído es eso, no un balbuceo; los
+        // defectos de verdad (desencher, Osirzoneu, meissa) están mucho más
+        // lejos de cualquier nombre.
+        const aUnaLetra = (a: string, b: string): boolean => {
+          if (Math.abs(a.length - b.length) > 1) return false;
+          let i = 0, j = 0, dif = 0;
+          while (i < a.length && j < b.length) {
+            if (a[i] === b[j]) { i++; j++; continue; }
+            if (++dif > 1) return false;
+            if (a.length > b.length) i++;
+            else if (b.length > a.length) j++;
+            else { i++; j++; }
+          }
+          return dif + (a.length - i) + (b.length - j) <= 1;
+        };
+        const esNombre = nombresTexto.some((n) => aUnaLetra(bare, n));
         const pareceDelTexto =
           !contieneUnaDelTexto &&
-          (textoCanon.includes(raiz) ||
+          (esNombre || textoCanon.includes(raiz) ||
             simple(textoCanon).includes(simple(bare)) ||
             (sinPlural.length >= 3 && new RegExp(`\\b${sinPlural}s?\\b`).test(textoCanon)));
         if (contieneUnaDelTexto) {
@@ -141,7 +240,7 @@ async function transcribe(buf: Buffer): Promise<{ words: W[]; text: string }> {
       // 3a-bis. INSERCIÓN CORTA. El umbral de 4 letras estaba puesto para no
       //     gritar con cada artículo, y es exactamente lo que escondió el "se"
       //     que el modelo mete en "chega a [se] perguntar".
-      if (cw.length > 0 && cw.length < 4 && i > 0 && i < words.length - 1) {
+      if (!esCifra && cw.length > 0 && cw.length < 4 && i > 0 && i < words.length - 1) {
         const antes = canon(words[i-1].text), despues = canon(words[i+1].text);
         const trio = `${antes} ${cw} ${despues}`.trim();
         const parAntes = `${antes} ${despues}`.trim();
@@ -163,7 +262,17 @@ async function transcribe(buf: Buffer): Promise<{ words: W[]; text: string }> {
         const chars = v.reduce((n, x) => n + norm(x.text).replace(/\s/g, "").length, 0);
         const cps = chars / Math.max(0.001, t1 - t0);
         const cruzaPunto = v.slice(0, -1).some(x => /[.!?]\s*$/.test(x.text));
-        if (!cruzaPunto && velocidadMediana > 0 && cps < velocidadMediana * 0.5) {
+        // Una cifra rompe la cuenta: "6h30" son 4 caracteres para tres
+        // palabras habladas ("seis e meia"), así que la ventana sale lentísima
+        // sin que el audio lo esté. Las dos señales de ritmo que hubo que
+        // descartar a mano el 2026-08-17 eran esto.
+        const conCifra = v.some(x => /\d/.test(x.text));
+        // Una ventana lenta cuyo tiempo muerto es SILENCIO de verdad es una
+        // pausa expresiva, no un balbuceo. Es lo que marcaba "de metal, doce e"
+        // en A cana, que el usuario nunca reportó.
+        const mudaLaVentana = esSilencioReal(t0, t1, sils) ||
+          (t1 - t0) > 0 && sils.reduce((n, [x, y]) => n + Math.max(0, Math.min(t1, y) - Math.max(t0, x)), 0) >= 0.35;
+        if (!cruzaPunto && !conCifra && !mudaLaVentana && velocidadMediana > 0 && cps < velocidadMediana * 0.5) {
           rows.push({ slug, sev:"ALTA", t: t0, que:`RITMO ROTO: "${v.map(x=>x.text).join(" ")}" tarda ${(t1-t0).toFixed(2)}s (${cps.toFixed(1)} car/s frente a ${velocidadMediana.toFixed(1)} de media)`, frase: oracionDe(i, words) });
         }
       }
@@ -179,8 +288,24 @@ async function transcribe(buf: Buffer): Promise<{ words: W[]; text: string }> {
         const previa = norm(words[i-1].text).replace(/[^a-z0-9]/g, "");
         const enTexto = new RegExp(`\\b${previa}\\b\\s*[.,;:!?]`).test(canon(s.text!).replace(/\s+/g, " "))
           || new RegExp(`\\b${previa}\\b\\s*[.,;:!?]`).test(norm(s.text!));
-        const trasPuntuacion = /[.!?]\s*$/.test(words[i-1].text) || enTexto;
-        if (h >= 0.6) rows.push({ slug, sev: trasPuntuacion ? "BAJA" : "ALTA", t, que:`hueco de ${h.toFixed(2)}s ${trasPuntuacion ? "tras pausa" : "EN MITAD DE FRASE"} entre "${words[i-1].text}" y "${w.text}"`, frase: oracionDe(i, words) });
+        // La coma cuenta igual que el punto: si el reconocedor cerró la
+        // palabra previa con CUALQUIER puntuación, la pausa está justificada.
+        // Antes solo miraba `.!?`, así que un hueco tras "rápido," subía a
+        // ALTA; el usuario lo oyó el 2026-08-17 y era respiración normal.
+        const trasPuntuacion = /[.,;:!?…]["'”’)]*\s*$/.test(words[i-1].text) || enTexto;
+        // La DURACIÓN no separa el defecto de la respiración: 0,72s entre
+        // "frente" y "janela" era un balbuceo y 0,80s tras coma era respirar,
+        // ambos comprobados al oído. Lo que separa es si en el hueco SUENA
+        // algo. Un hueco lleno de silencio real es la narradora respirando; un
+        // hueco sin silencio tiene sonido que el reconocedor no supo escribir,
+        // y eso es justo lo que hay que oír.
+        if (h >= 0.6) {
+          const mudo = esSilencioReal((words[i-1].end ?? 0), t, sils);
+          const sev = trasPuntuacion && mudo ? "BAJA" : mudo ? "MEDIA" : "ALTA";
+          const como = trasPuntuacion ? "tras pausa" : "EN MITAD DE FRASE";
+          const que = mudo ? `hueco de ${h.toFixed(2)}s ${como}` : `SONIDO NO RECONOCIDO: ${h.toFixed(2)}s ${como} sin silencio`;
+          rows.push({ slug, sev, t, que:`${que} entre "${words[i-1].text}" y "${w.text}"`, frase: oracionDe(i, words) });
+        }
       }
     }
     } // fin de una pasada

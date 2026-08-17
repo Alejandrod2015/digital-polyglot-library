@@ -24,7 +24,7 @@ import { apiFetch } from "../lib/api";
  * The two stores model the plans differently, so the plan list is built per
  * platform and then rendered uniformly:
  *  - iOS: two separate products, `premium_monthly` and `premium_annual`
- *    (StoreKit has no "base plans" — each duration is its own product).
+ *    (StoreKit has no "base plans"; each duration is its own product).
  *  - Android: one product, `premium_monthly`, with two base plans
  *    (`monthly`, `yearly`); each base plan carries its own offer token.
  * Either way the server verifies the purchase and both resolve to `premium`

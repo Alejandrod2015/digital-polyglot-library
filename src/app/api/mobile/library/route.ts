@@ -8,7 +8,7 @@ import { prisma } from "@/lib/prisma";
 
 // WHY (2026-07-29): this route used to return the raw LibraryBook /
 // LibraryStory rows, leaving the app to match them against the catalog it
-// bundles at build time — the exact lookup that made a paid book vanish from
+// bundles at build time; the exact lookup that made a paid book vanish from
 // My Library on the web (fixed in 07c898fd). A title published after the last
 // App Store build is absent from that bundle, so the purchase was dropped.
 // Sharing loadLibraryRows with /api/library means the server resolves the

@@ -38,12 +38,12 @@ import { practiceVoiceId } from "../src/lib/practiceVoice";
 import { assertVoiceApproved } from "../src/lib/approvedVoices";
 
 const prisma = new PrismaClient();
-// Voice is resolved per story (the story's narrator) — see practiceVoice.ts.
+// Voice is resolved per story (the story's narrator); see practiceVoice.ts.
 let VOICE = "";
 // multilingual_v2, NOT turbo: turbo_v2_5 is deprecated to the low-latency tier
 // with documented garbling; latency is irrelevant for pre-generated clips. v2
 // does not accept language_code, but a full Spanish sentence auto-detects fine
-// (isolated words do NOT — word-tts keeps turbo+language_code for that reason).
+// (isolated words do NOT; word-tts keeps turbo+language_code for that reason).
 const MODEL = "eleven_multilingual_v2";
 // (language_code intentionally not sent: v2 rejects it)
 // Neutral spoken context on both sides: the documented remedy for the upspeak
@@ -289,7 +289,7 @@ async function sttText(buf: Buffer, apiKey: string): Promise<string> {
 // QA both directions: every content word of the sentence must appear in the
 // transcription (a miss = garbled/dropped word), and the transcription must
 // not contain content words absent from the sentence (an extra = hallucinated
-// word — the "gracias" appended to the mole clip passed the old miss-only
+// word; the "gracias" appended to the mole clip passed the old miss-only
 // check). Scribe is accurate on short clean sentences, so slack is minimal.
 function transcriptOk(sentence: string, tx: string): boolean {
   const wantList = strip(sentence).split(" ").filter((w) => w.length >= 3);
@@ -461,11 +461,11 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
     writeFileSync(manifestPath, JSON.stringify({ voice: VOICE, items: mergedItems }, null, 2) + "\n");
     const takeOpts = mergedItems.map((d: any) => `
     <div class="opt ${d.ok ? "" : "bad"}"><div class="num">${d.n}</div>
-      <div class="body"><div class="lbl">${d.word} — take ${d.take} <span>${d.ok ? `${d.tries}t · ${d.dur.toFixed(2)}s` : "FAILED"}</span></div>
+      <div class="body"><div class="lbl">${d.word}; take ${d.take} <span>${d.ok ? `${d.tries}t · ${d.dur.toFixed(2)}s` : "FAILED"}</span></div>
       <div class="sen">${d.sentence}</div>
       ${d.ok ? `<audio controls preload="none" src="/_practice-clips/${d.file}"></audio>` : ""}</div></div>`).join("");
     const takesHtml = `<!doctype html><html lang="es"><head><meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/><title>Takes — ${slug}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/><title>Takes; ${slug}</title>
 <style>:root{color-scheme:dark}body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0a1424;color:#e9eef7;padding:24px}
 h1{font-size:18px;margin:0 0 4px}p.sub{color:#8ea0bd;font-size:13px;margin:0 0 18px}
 .opt{display:flex;align-items:flex-start;gap:14px;padding:12px;margin-bottom:12px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(52,211,153,.07)}
@@ -473,7 +473,7 @@ h1{font-size:18px;margin:0 0 4px}p.sub{color:#8ea0bd;font-size:13px;margin:0 0 1
 .num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;font-weight:800;background:#1d4ed8;color:#fff}
 .body{flex:1}.lbl{font-size:15px;font-weight:700}.lbl span{font-weight:400;color:#8ea0bd;font-size:11px;margin-left:6px}
 .sen{color:#c7d3e6;font-size:13px;margin:4px 0}audio{width:100%;margin-top:6px}</style></head><body>
-<h1>Takes candidatos — ${slug}</h1>
+<h1>Takes candidatos; ${slug}</h1>
 <p class="sub">NADA publicado aún (ni R2 ni DB). Dime un número por palabra y publico solo esos.</p>
 ${takeOpts}</body></html>`;
     writeFileSync(join(process.cwd(), "public", `_practice-clips-${slug}-takes.html`), takesHtml);
@@ -510,7 +510,7 @@ ${takeOpts}</body></html>`;
       <div class="sen">${d.sentence}</div>
       ${d.ok ? `<audio controls preload="none" src="/_practice-clips/${d.file}"></audio>` : ""}</div></div>`).join("");
   const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/><title>Clips — ${slug}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/><title>Clips; ${slug}</title>
 <style>:root{color-scheme:dark}body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0a1424;color:#e9eef7;padding:24px}
 h1{font-size:18px;margin:0 0 4px}p.sub{color:#8ea0bd;font-size:13px;margin:0 0 18px}
 .opt{display:flex;align-items:flex-start;gap:14px;padding:12px;margin-bottom:12px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(52,211,153,.07)}
@@ -518,7 +518,7 @@ h1{font-size:18px;margin:0 0 4px}p.sub{color:#8ea0bd;font-size:13px;margin:0 0 1
 .num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;font-weight:800;background:#1d4ed8;color:#fff}
 .body{flex:1}.lbl{font-size:15px;font-weight:700}.lbl span{font-weight:400;color:#8ea0bd;font-size:11px;margin-left:6px}
 .sen{color:#c7d3e6;font-size:13px;margin:4px 0}audio{width:100%;margin-top:6px}</style></head><body>
-<h1>Sentence-clips — ${slug} (voz Narrador2, oración completa)</h1>
+<h1>Sentence-clips; ${slug} (voz Narrador2, oración completa)</h1>
 <p class="sub">Ya cacheados en R2 y escritos al JSON. Dime el número de cualquiera que suene mal y lo regenero.</p>
 ${opts}</body></html>`;
   // --only runs write a separate page so the full-set audition page survives.

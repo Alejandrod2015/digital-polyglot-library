@@ -179,9 +179,9 @@ export const KARAOKE_BLOCKED_SLUGS: ReadonlySet<string> = new Set([
 
   // Not user-facing today (deprecated / unpublished journeys), listed so they
   // cannot start showing a bad highlight if those journeys are ever opened.
-  "una-pizca-de-canela", //        0.76 s, journey "Traveler — Legacy"
+  "una-pizca-de-canela", //        0.76 s, journey Traveler Legacy
   "el-libro-en-voz-alta", //       0.58 s, marked [DEPRECATED]
-  "trastevere-camera-quattro", //  0.51 s, journey "Traveler — Test"
+  "trastevere-camera-quattro", //  0.51 s, journey Traveler Test
 ]);
 
 export type KaraokeGateResult = { usable: boolean; reason?: string };

@@ -1,4 +1,4 @@
-# Generated stories — ES LATAM A1 / Food & Drink (2do tema)
+# Generated stories; ES LATAM A1 / Food & Drink (2do tema)
 
 5 historias generadas con el Custom GPT **DPL Multi-Voice Story Writer** ([link](https://chatgpt.com/g/g-6a07641293588191b353b6187d672744-dpl-multi-voice-story-writer)) para el segundo tema del journey español-LATAM A1 (`food-daily-life` en `src/app/journey/journeyCurriculum.ts`).
 
@@ -31,7 +31,7 @@ Todas pasan los checks principales:
 
 Anomalías menores detectadas (no bloqueantes):
 
-- **Story 2 (La pizarra de Surquillo)**: tiene `quedar` duplicado en vocab (surface `quedó` + `queda`) — viola la regla "no same-root duplicates", pero los dos sentidos son legítimamente distintos (parar de moverse vs. quedar disponible). Recomendado: dropear uno antes de subir al Studio.
+- **Story 2 (La pizarra de Surquillo)**: tiene `quedar` duplicado en vocab (surface `quedó` + `queda`); viola la regla "no same-root duplicates", pero los dos sentidos son legítimamente distintos (parar de moverse vs. quedar disponible). Recomendado: dropear uno antes de subir al Studio.
 - **Story 5 (Guayoyo en Chacaíto)**: body 210 palabras, debajo del target 220 (arriba del hard min 180). Para A1 está OK pero si se quiere ajustar, pedirle al GPT "alarga 30-40 palabras manteniendo todo".
 
 ## Cómo usar

@@ -36,10 +36,10 @@ async function step(name, fn) {
   console.log(`${"─".repeat(50)}`);
   try {
     const result = await fn();
-    console.log(`✅ ${name} — OK`);
+    console.log(`✅ ${name}; OK`);
     return result;
   } catch (e) {
-    console.error(`❌ ${name} — FAILED`);
+    console.error(`❌ ${name}; FAILED`);
     console.error(`   ${e.message}`);
     if (e.stack) console.error(`   ${e.stack.split("\n").slice(1, 3).join("\n   ")}`);
     return null;

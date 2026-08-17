@@ -10,7 +10,7 @@ caras, así que devolvía "pasa" sin haber medido nada. Aquí se trabaja sobre
 REGIONES DE PIEL, igual que `_deblush.py`, que sí funciona con dibujo.
 
 Qué mide:
-  RUBOR — dentro de cada región de piel, busca manchas rosadas compactas cuya
+  RUBOR; dentro de cada región de piel, busca manchas rosadas compactas cuya
   saturación se dispara respecto a la MEDIANA DE ESA MISMA REGIÓN. La
   comparación es relativa a propósito: un umbral fijo hacía fallar a
   `_deblush.py` en fondos cálidos de playa, que tomaba la pared por piel
