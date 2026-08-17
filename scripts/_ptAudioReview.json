@@ -1,0 +1,148 @@
+{
+ "_comment": "Estado de revisión del audio del journey PT-BR A0. 'confirmado' = el usuario lo oyó; 'detectado' = solo lo marcó el detector, sin oído humano. La corrección es aparte: detectar no es arreglar.",
+ "historias": {
+  "duas-moedas-para-copacabana": {
+   "revisado": "detector x2",
+   "hallazgo": null,
+   "estado": null,
+   "corregido": false
+  },
+  "a-ladeira-guarda-mil-azulejos": {
+   "revisado": "detector x2",
+   "hallazgo": "costura del empalme: hueco 1,44s a 39,2s",
+   "estado": "detectado",
+   "corregido": true
+  },
+  "a-ultima-barca-para-niteroi": {
+   "revisado": "detector x2 + oído",
+   "hallazgo": "balbuceo 33-37s + 'mas' insertado a 58s",
+   "estado": "confirmado",
+   "corregido": false
+  },
+  "a-areia-queima-os-pes": {
+   "revisado": "detector x2 + oído",
+   "hallazgo": "truncado a 35,9s",
+   "estado": "confirmado",
+   "corregido": false
+  },
+  "palmas-no-arpoador": {
+   "revisado": "detector x2",
+   "hallazgo": "'porque' por 'por que'",
+   "estado": "falso positivo",
+   "corregido": false
+  },
+  "um-balde-uma-onda": {
+   "revisado": "detector x2",
+   "hallazgo": "'desencher' a 11,0s",
+   "estado": "confirmado",
+   "corregido": false
+  },
+  "acabou-a-coxinha": {
+   "revisado": "detector x2",
+   "hallazgo": "'dobra-se' a 3,2s",
+   "estado": "confirmado",
+   "corregido": false
+  },
+  "a-cana-vira-caldo-doce": {
+   "revisado": "detector x2",
+   "hallazgo": "'se' insertado a 50,8s",
+   "estado": "confirmado",
+   "corregido": false
+  },
+  "a-primeira-fornada-sai-quente": {
+   "revisado": "detector x2",
+   "hallazgo": "'Mirupung' NUEVO a 4,7s (antes 'Osirzoneu')",
+   "estado": "detectado",
+   "corregido": true
+  },
+  "o-sanduiche-custa-caro": {
+   "revisado": "detector x2",
+   "hallazgo": "hueco 0,64s a 20,8s",
+   "estado": "detectado",
+   "corregido": false
+  },
+  "uma-fatia-gratis": {
+   "revisado": "detector x2",
+   "hallazgo": "hueco 0,80s a 25,2s",
+   "estado": "detectado",
+   "corregido": false
+  },
+  "sem-troco-na-banca": {
+   "revisado": "detector x2",
+   "hallazgo": "solo ruido de cifras",
+   "estado": "falso positivo",
+   "corregido": false
+  },
+  "o-acaraje-de-celia": {
+   "revisado": "detector x2",
+   "hallazgo": "'Yara' por 'Iara'",
+   "estado": "falso positivo",
+   "corregido": false
+  },
+  "cafe-no-mercado-modelo": {
+   "revisado": "detector x2",
+   "hallazgo": "truncado 'ans--' a 59,8s",
+   "estado": "detectado",
+   "corregido": false
+  },
+  "agua-de-coco-no-dique": {
+   "revisado": "detector x2",
+   "hallazgo": "'poça d'água' a 7,8s",
+   "estado": "detectado",
+   "corregido": false
+  },
+  "tinta-fresca-no-beco": {
+   "revisado": "detector x2",
+   "hallazgo": "solo 'Victor' por 'Vitor'",
+   "estado": "falso positivo",
+   "corregido": false
+  },
+  "a-parte-que-todo-mundo-canta": {
+   "revisado": "detector x2",
+   "hallazgo": "solo 'Victor' por 'Vitor'",
+   "estado": "falso positivo",
+   "corregido": false
+  },
+  "o-refrao-sai-na-rua": {
+   "revisado": "detector x2",
+   "hallazgo": "truncado 'as--' a 9,3s",
+   "estado": "detectado",
+   "corregido": false
+  },
+  "macacos-na-trilha": {
+   "revisado": null,
+   "hallazgo": null,
+   "corregido": false
+  },
+  "os-peixes-nao-tem-medo": {
+   "revisado": "detector x2",
+   "hallazgo": "'penca' a 36,1s",
+   "estado": "detectado",
+   "corregido": false
+  },
+  "a-chuva-dura-dez-minutos": {
+   "revisado": "detector x2",
+   "hallazgo": "dos huecos tras coma",
+   "estado": "detectado",
+   "corregido": false
+  },
+  "meu-rei-minha-filha": {
+   "revisado": "detector x2",
+   "hallazgo": null,
+   "estado": null,
+   "corregido": false
+  },
+  "um-berimbau-abre-a-roda": {
+   "revisado": "detector x2",
+   "hallazgo": null,
+   "estado": null,
+   "corregido": false
+  },
+  "tres-nos-na-fita": {
+   "revisado": "detector x2",
+   "hallazgo": null,
+   "estado": null,
+   "corregido": false
+  }
+ }
+}

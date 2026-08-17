@@ -2,7 +2,7 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
 import { prisma } from "@/lib/prisma";
-import { generateAndUploadAudio, generateAndUploadMultiVoiceAudio } from "@/lib/elevenlabs";
+import { generateAndUploadAudio, generateAndUploadMultiVoiceAudio, parseDialogueSegments } from "@/lib/elevenlabs";
 import { generateWordTimingsForStory } from "@/lib/audioWordTimings";
 import { multiVoiceGuardError } from "@/lib/multiVoiceGuard";
 import { auditTopicArc } from "@/lib/auditTopicArc";
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
   const guardError = multiVoiceGuardError({ storyText: story.text, dialogueSpec: story.dialogueSpec });
   if (guardError) return NextResponse.json({ error: guardError }, { status: 400 });
 
-  // CONTINUITY GATE — runs BEFORE generation because audio is the expensive,
+  // CONTINUITY GATE; runs BEFORE generation because audio is the expensive,
   // irreversible step (the A1 LATAM 2026-06-26 incident burned credits on
   // stories that were part of a broken arc). We check the WHOLE topic the
   // story belongs to: deterministic (final-slot cliffhanger, name/role) +
@@ -90,7 +90,39 @@ export async function POST(request: Request) {
     await prisma.journeyStory.update({ where: { id: storyId }, data: { audioStatus: "generating" } });
 
     type DialogueSeg = { speaker: string; voice: string; text: string };
-    const spec = story.dialogueSpec as DialogueSeg[] | null;
+    let spec = story.dialogueSpec as DialogueSeg[] | null;
+
+    // Prosa narrada SIN dialogueSpec: se construye uno de narrador en vez de
+    // caer a la rama de voz única.
+    //
+    // POR QUÉ (2026-08-14). La rama de voz única devuelve un máster de una
+    // pieza y no escribe `audioFragments`, así que después no hay dónde
+    // empalmar: arreglar una sola oración obliga a rehacer la historia entera
+    // y a pagarla entera. Pasó con las 3 historias nuevas del A0 portugués.
+    // El pipeline multivoz trocea por párrafo y cachea cada trozo por
+    // contenido, que es lo que permite re-tirar una frase suelta; una historia
+    // narrada es simplemente un reparto de un solo hablante.
+    //
+    // La voz sale de la historia y, si no la tiene, de sus hermanas publicadas
+    // del mismo journey: el narrador es del journey, no de la historia suelta.
+    if (!Array.isArray(spec) || spec.length === 0) {
+      let narratorVoice = story.voiceId?.replace(/^elevenlabs\//, "").trim() || "";
+      if (!narratorVoice) {
+        const hermana = await prisma.journeyStory.findFirst({
+          where: { journeyId: story.journeyId, status: "published", voiceId: { not: null } },
+          select: { voiceId: true },
+        });
+        narratorVoice = hermana?.voiceId?.replace(/^elevenlabs\//, "").trim() || "";
+      }
+      if (narratorVoice) {
+        const segmentos = parseDialogueSegments(story.text);
+        if (segmentos.length > 0) {
+          spec = segmentos.map((s) => ({ speaker: s.speaker, voice: narratorVoice, text: s.text }));
+          await prisma.journeyStory.update({ where: { id: story.id }, data: { dialogueSpec: spec as never } });
+        }
+      }
+    }
+
     const useMultiVoice = Array.isArray(spec) && spec.length > 0;
 
     let audioUrl: string;

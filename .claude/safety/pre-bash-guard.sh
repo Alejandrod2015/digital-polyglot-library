@@ -573,6 +573,40 @@ if printf '%s' "$COMMAND" | grep -qE '\b(tsx|ts-node|node|npx)\b'; then
     done
 fi
 
+# 6g. Narracion de historias: SOLO el pipeline por segmentos (2026-08-14).
+#     El audio de una JourneyStory se genera SIEMPRE con
+#     `generateAndUploadMultiVoiceAudio`, que trocea por parrafo, cachea cada
+#     trozo por contenido en media/multivoice-segments/ y escribe
+#     `audioFragments`. Eso es lo que permite RE-TIRAR una sola oracion cuando
+#     el TTS balbucea, sin pagar la historia entera.
+#
+#     `generateAndUploadAudio` (rama de voz unica) devuelve un master de una
+#     pieza y NO guarda fragmentos: una vez generado asi, corregir una frase
+#     obliga a rehacer la historia completa.
+#
+#     WHY: el 2026-08-14 escribi un script propio con esa rama y genere las 3
+#     historias nuevas del A0 portugues sin fragmentos, ademas de borrarles el
+#     dialogueSpec, que es lo que enruta al pipeline correcto. Tres historias
+#     quedaron sin poder corregirse por oracion. No cambio el sistema: elegi
+#     otro camino. Sin este gate, nada impedia repetirlo.
+#
+#     Se inspecciona el ARCHIVO .ts invocado, igual que 6e.
+if printf '%s' "$COMMAND" | grep -qE '\b(tsx|ts-node|node|npx)\b'; then
+    for _ts in $(printf '%s' "$COMMAND" | grep -oE '[A-Za-z0-9_./-]+\.ts'); do
+        [ -f "$_ts" ] || continue
+        # Solo aplica a scripts que escriben el audio de una JourneyStory.
+        if grep -qE 'journeyStory\.update' "$_ts" \
+           && grep -qE '\bgenerateAndUploadAudio\b' "$_ts" \
+           && ! grep -qE 'generateAndUploadMultiVoiceAudio' "$_ts"; then
+            block "Narracion de historia por la rama de VOZ UNICA. El script $_ts llama a generateAndUploadAudio, que devuelve un master de una pieza y NO escribe audioFragments: despues, arreglar una sola oracion obliga a rehacer la historia entera y a pagarla entera. El pipeline de journey stories es SIEMPRE generateAndUploadMultiVoiceAudio, que trocea por parrafo, cachea cada trozo y escribe audioFragments. Paso el 2026-08-14 con las 3 historias del A0 portugues."
+        fi
+        # Borrar el dialogueSpec es lo que desvia al pipeline equivocado.
+        if grep -qE 'dialogueSpec:\s*(undefined|Prisma\.(Db|Json)Null)' "$_ts"; then
+            block "El script $_ts BORRA dialogueSpec de una historia. Ese campo es lo que enruta el audio al pipeline por segmentos; sin el, la generacion cae a voz unica y la historia pierde la capacidad de re-tirar una oracion suelta. Si el reparto cambio, REESCRIBE el dialogueSpec con el texto nuevo en vez de borrarlo."
+        fi
+    done
+fi
+
 # 7. Hard-block: rm -rf on paths that look like the repo root or home.
 if printf '%s' "$COMMAND" | grep -qE '\brm[[:space:]]+-[rRfFv]+[[:space:]]+(/Users/[^/[:space:]]+/?[[:space:]]*$|~[[:space:]]*$|\$HOME[[:space:]]*$|\.\.[[:space:]]*$|/[[:space:]]*$|\*[[:space:]]*$)'; then
     block "rm -rf on a path that looks like \$HOME, /, or .. Never do this."

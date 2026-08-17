@@ -20,6 +20,7 @@ import { isGermanA1A2 } from "./cefr/germanA1A2";
 import { isItalianA1A2 } from "./cefr/italianA1A2";
 import { isPortugueseA1A2 } from "./cefr/portugueseA1A2";
 import { isFrenchA1A2 } from "./cefr/frenchA1A2";
+import { classifyName, getNameBank } from "@/lib/characterNames";
 
 // City list mirrored from src/lib/journeyCasts.ts. Inlined because the
 // real cast module pulls in elevenlabs.ts → prisma.ts → server-only,
@@ -304,6 +305,17 @@ function getParagraphs(text: string): string[] {
     .map((p) => p.trim())
     .filter(Boolean);
 }
+
+// Categorías sensoriales compartidas: las usa el aviso de sobrecarga (3+) y
+// el fallo por ausencia (0) del perfil narrador.
+const SENSE_CATEGORIES_SHARED: Record<string, RegExp> = {
+    smell: /\b(olor|aroma|perfume|huele|huelen|olía|olor[eo]s|olfato)\b/i,
+    light: /\b(luz|luces|iluminac|brilla|brilló|brillan|sombra|sombras|claroscuro|oscur[oa]|deslumbra)\b/i,
+    sound: /\b(sonido|sonidos|ruido|ruidos|silencio|suena|sonaba|sonaron|tronaba|trueno|ladrido|grito|murmullo|silbido|escuch[oóa]|oye|oyó)\b/i,
+    temperature: /\b(frío|fría|frio|caliente|calor|cálid[oa]|fresca|fresco|helad[oa]|hierve|tibi[oa]|gélid[oa]|templad[oa])\b/i,
+    touch: /\b(suave|áspero|aspero|rugoso|liso|húmedo|humedo|seco|seca|blando|duro|firme|pegajos[oa])\b/i,
+    taste: /\b(dulce|amargo|salado|ácido|acido|picante|sabor|saborea|gusta\s+a)\b/i,
+  };
 
 function extractSpeakerNames(text: string): string[] {
   const re = /^([\p{Lu}][\p{L}\p{M}.'\-]*(?:\s+[\p{Lu}][\p{L}\p{M}.'\-]*){0,3}):\s+\S/gmu;
@@ -849,8 +861,18 @@ export async function validateGeneratedStory(
   });
 
   const bodyWords = countWords(parsed.text);
-  // A0 gold bodies run 132-149 words; give the floor a calibrated window.
-  const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = isA0
+  // Niveles de UN MINUTO: A0 y A1. Los cuerpos gold del A0 corren 132-149
+  // palabras, que a las 134 palabras por minuto medidas sobre el A0 España
+  // (13 historias con duración real, rango 131-136 ppm) dan el minuto que el
+  // usuario fija como duración de una historia en estos dos niveles.
+  //
+  // A1 entró aquí el 2026-08-16 por decisión de producto, no para que pasara
+  // un texto: el A1 no es un A0 más largo, es el mismo minuto con más
+  // gramática dentro (perfecto, subordinadas, pronombres de objeto). La
+  // ventana se le da ESTRECHA, la misma del A0, para no abrir un agujero por
+  // el que luego entre un A1 de 100 palabras sin que salte nada.
+  const isOneMinuteTier = isA0 || (context.level ?? "").toUpperCase() === "A1";
+  const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = isOneMinuteTier
     ? [100, 190, 115, 170]
     : [180, 320, 220, 280];
   checks.push({
@@ -1101,14 +1123,7 @@ export async function validateGeneratedStory(
     // sensory CATEGORIES (smell, sight-light, sound, temperature,
     // touch, taste) in the body. 3+ categories = warn.
     {
-      const SENSE_CATEGORIES: Record<string, RegExp> = {
-        smell: /\b(olor|aroma|perfume|huele|huelen|olía|olor[eo]s|olfato)\b/i,
-        light: /\b(luz|luces|iluminac|brilla|brilló|brillan|sombra|sombras|claroscuro|oscur[oa]|deslumbra)\b/i,
-        sound: /\b(sonido|sonidos|ruido|ruidos|silencio|suena|sonaba|sonaron|tronaba|trueno|ladrido|grito|murmullo|silbido|escuch[oóa]|oye|oyó)\b/i,
-        temperature: /\b(frío|fría|frio|caliente|calor|cálid[oa]|fresca|fresco|helad[oa]|hierve|tibi[oa]|gélid[oa]|templad[oa])\b/i,
-        touch: /\b(suave|áspero|aspero|rugoso|liso|húmedo|humedo|seco|seca|blando|duro|firme|pegajos[oa])\b/i,
-        taste: /\b(dulce|amargo|salado|ácido|acido|picante|sabor|saborea|gusta\s+a)\b/i,
-      };
+      const SENSE_CATEGORIES = SENSE_CATEGORIES_SHARED;
       const presentCategories = Object.entries(SENSE_CATEGORIES)
         .filter(([, re]) => re.test(parsed.text))
         .map(([cat]) => cat);
@@ -1341,10 +1356,31 @@ export async function validateGeneratedStory(
         openingNarratorParas.push(p);
         if (openingNarratorParas.length >= 3) break;
       }
-      const openingNorm = norm(openingNarratorParas.join(" "));
+      const openingRaw = openingNarratorParas.join(" ");
+      const openingNorm = norm(openingRaw);
+      // Deburrado pero SIN bajar a minúsculas, para poder exigir que el
+      // topónimo venga capitalizado. Sin esta condición "Irene abre la boca"
+      // se leía como el barrio La Boca de Buenos Aires, y detrás caía el
+      // check de voseo exigiendo "hacés" en una historia ambientada en un
+      // pueblo de Málaga. Un nombre propio en español va en mayúscula; un
+      // sustantivo común, no. Esa es toda la diferencia que hace falta.
+      const openingCase = openingRaw.normalize("NFD").replace(/[̀-ͯ]/g, "");
+      const isCapitalized = (city: string): boolean => {
+        let from = 0;
+        for (;;) {
+          const idx = openingNorm.indexOf(city, from);
+          if (idx === -1) return false;
+          const src = openingCase.slice(idx, idx + city.length);
+          // Cada palabra del topónimo empieza en mayúscula ("La Boca"),
+          // salvo las partículas ("de", "del", "la" interna en "mar del plata").
+          const words = src.split(/\s+/);
+          if (words.every((w, i) => (i > 0 && /^(de|del|la|los|las)$/i.test(w)) || /^[A-ZÑ]/.test(w))) return true;
+          from = idx + 1;
+        }
+      };
       const orphanCities: string[] = [];
       for (const { cities, countries } of CITY_COUNTRY_MAP) {
-        const matchedCity = cities.find((c) => containsWord(openingNorm, c));
+        const matchedCity = cities.find((c) => containsWord(openingNorm, c) && isCapitalized(c));
         if (!matchedCity) continue;
         const hasCountry = countries.some((c) => containsWord(openingNorm, c));
         if (!hasCountry) orphanCities.push(matchedCity);
@@ -1369,8 +1405,12 @@ export async function validateGeneratedStory(
       // Detecta el setting por marcadores en el body. Las formas: el
       // pronombre `vos` + presente indicativo común (sos/tenés/querés/
       // decís/hacés/podés/sabés/comés/venís/salís).
+      // SIN la bandera `i`: son nombres propios y van en mayúscula. Con `i`,
+      // "Irene abre la boca" activaba el setting rioplatense y la historia,
+      // ambientada en un pueblo de Málaga, fallaba por no usar voseo. Lo mismo
+      // haría "la comida argentina". La mayúscula es la señal.
       const RIOPLATENSE_SETTING =
-        /\b(Argentina|Uruguay|Buenos Aires|Montevideo|Rosario|La Plata|Córdoba|Palermo|San Telmo|Recoleta|La Boca|Belgrano)\b/i.test(
+        /\b(Argentina|Uruguay|Buenos Aires|Montevideo|Rosario|La Plata|Córdoba|Palermo|San Telmo|Recoleta|La Boca|Belgrano)\b/.test(
           parsed.text,
         );
       const VOSEO_PATTERNS: Array<{ re: RegExp; form: string }> = [
@@ -1625,6 +1665,51 @@ export async function validateGeneratedStory(
     }
   }
 
+  // ─── generación de los nombres de personaje ────────────
+  //
+  // POR QUÉ (2026-08-14): las tres historias nuevas del A0 portugués salieron
+  // con Célia, Márcia, Zeca e Iara. Suenan brasileños y por eso pasaron todo,
+  // pero son nombres de la generación de los abuelos de los personajes. El
+  // criterio "que suene de la región" no basta: también tiene que sonar de la
+  // EDAD. Avisa, no bloquea, porque un personaje mayor con nombre de su época
+  // es correcto; lo que no vale es no haberlo pensado.
+  {
+    const nombres = new Set<string>();
+    for (const m of parsed.text.matchAll(/\b([A-ZÁÉÍÓÚÂÊÔÃÕÑÜ][a-záéíóúâêôãõçñüö]{2,})\b/g)) {
+      const w = m[1];
+      // Solo cuenta como nombre si NO abre frase: así se filtran los "Ela",
+      // "Uma", "Nara" de inicio de oración y las palabras normales.
+      const idx = m.index ?? 0;
+      const antes = parsed.text.slice(Math.max(0, idx - 2), idx);
+      if (/[.!?]\s$/.test(antes) || idx === 0) continue;
+      nombres.add(w);
+    }
+    const viejos: string[] = [];
+    const desconocidos: string[] = [];
+    for (const n of nombres) {
+      const clase = classifyName(n, context.language, context.variant);
+      if (clase === "older") viejos.push(n);
+      else if (clase === "unknown") desconocidos.push(n);
+    }
+    const bank = getNameBank(context.language, context.variant);
+    if (bank && viejos.length) {
+      checks.push({
+        id: "character-names-generation",
+        label: "Character names match the characters' generation",
+        status: "warn",
+        detail: `${viejos.join(", ")}: name(s) common two generations ago, not among young adults today. Stories are about adults in their twenties and thirties, so the cast should sound that age. Current picks for this region: ${bank.young.slice(0, 8).join(", ")}…`,
+      });
+    }
+    if (bank && desconocidos.length) {
+      checks.push({
+        id: "character-names-unverified",
+        label: "Character names checked against the region's name bank",
+        status: "warn",
+        detail: `${desconocidos.slice(0, 6).join(", ")}: not in the name bank for this region (src/lib/characterNames.ts). Not necessarily wrong, but nobody verified it reads as a real, current name there.`,
+      });
+    }
+  }
+
   // ─── longitud de frase en A0 ───────────────────────────
   //
   // El spec fija el suelo A0 como "one idea per short sentence", pero ningún
@@ -1689,6 +1774,86 @@ export async function validateGeneratedStory(
         ? undefined
         : "No quoted speech in a narrated story. The spec's A0/narrator register is third-person prose WITH brief quoted speech embedded in the narrator paragraphs; a story where nobody ever speaks reads like a report. Give a secondary character one short line.",
     });
+
+    // Apertura de una historia narrada (2026-08-16). La spec pide que el
+    // narrador establezca CUATRO cosas antes de la primera línea de diálogo:
+    // dónde, cuándo, atmósfera y quién es quién, y que ningún personaje hable
+    // sin haber sido presentado antes por nombre.
+    //
+    // Esto ya estaba escrito en docs/story-quality-spec.md y no lo cazaba
+    // nadie: `extractSpeakerNames` busca `Personaje:` a principio de línea, y
+    // en prosa con comillas encuentra CERO hablantes, así que la comprobación
+    // de "presentado antes de hablar" pasaba en vacío. Encima `--narrator`
+    // exime speakers-count y speaker-lines. Resultado: en formato narrador no
+    // quedaba ni una comprobación de apertura. Al eximir un formato hay que
+    // darle su equivalente, no dejarle el hueco.
+    {
+      const firstQuote = parsed.text.search(/[«"„]/);
+      const opening = firstQuote > 0 ? parsed.text.slice(0, firstQuote) : parsed.text;
+
+      // Quién habla: nombre propio pegado a un verbo de habla, en cualquiera
+      // de los dos órdenes ("dice Toñi" / "Toñi pregunta").
+      const SAY = "dice|dijo|pregunta|preguntó|contesta|contestó|responde|respondió|añade|añadió|grita|gritó|susurra|repite|repitió|explica|explicó";
+      const speakers = new Set<string>();
+      for (const re of [
+        new RegExp(`(?:${SAY})\\s+([\\p{Lu}][\\p{Ll}]+)`, "gu"),
+        new RegExp(`([\\p{Lu}][\\p{Ll}]+)\\s+(?:${SAY})`, "gu"),
+      ]) {
+        for (const m of parsed.text.matchAll(re)) speakers.add(m[1]);
+      }
+      // También los que hablan sin nombre propio: "le pregunta la panadera",
+      // "contesta el señor". Son la mitad de los casos reales y se escapaban
+      // del patrón de mayúscula inicial.
+      for (const re of [
+        new RegExp(`(?:${SAY})\\s+(?:el|la|un|una)\\s+([\\p{Ll}]+)`, "gu"),
+        new RegExp(`(?:el|la|un|una)\\s+([\\p{Ll}]+)\\s+(?:${SAY})`, "gu"),
+      ]) {
+        for (const m of parsed.text.matchAll(re)) speakers.add(m[1]);
+      }
+      const late = [...speakers].filter((n) => !opening.includes(n));
+
+      // Personajes que ya salieron en historias hermanas del mismo journey.
+      // A un recurrente NO se le vuelve a explicar quién es: eso crearía la
+      // misma muletilla en las 21 ("su vecina Toñi" tres veces seguidas), que
+      // es lo que prohíbe la sección de narration crutches. Lo que sí se le
+      // exige siempre es aparecer NOMBRADO en la apertura antes de hablar:
+      // eso no es reintroducir, es que el lector sepa quién habla.
+      const yaConocidos = new Set(
+        (context.existing ?? []).flatMap((e) => e.characterNames.map((n) => n.toLowerCase())),
+      );
+      const nuevos = late.filter((n) => !yaConocidos.has(n.toLowerCase()));
+      const recurrentes = late.filter((n) => yaConocidos.has(n.toLowerCase()));
+
+      checks.push({
+        id: "narrator-speaker-introduced",
+        label: "Every quoted speaker is named before the first quoted line",
+        status: late.length === 0 ? "pass" : "fail",
+        detail: late.length
+          ? [
+              nuevos.length
+                ? `Personaje NUEVO que habla sin presentar: ${nuevos.join(", ")}. La apertura tiene que decir quién es, con nombre y relación ("su vecina Toñi", "la panadera del bajo").`
+                : "",
+              recurrentes.length
+                ? `Recurrente que habla sin nombrar en la apertura: ${recurrentes.join(", ")}. NO hay que volver a explicar quién es, ya salió en otra historia del journey; basta con nombrarlo antes de la primera cita para que el lector sepa quién habla.`
+                : "",
+            ].filter(Boolean).join(" ")
+          : undefined,
+      });
+
+      // Atmósfera: al menos UN ancla sensorial. El detector de categorías ya
+      // existía pero solo se quejaba de 3 o más; cero no lo miraba nadie.
+      const senses = Object.entries(SENSE_CATEGORIES_SHARED)
+        .filter(([, re]) => re.test(parsed.text))
+        .map(([c]) => c);
+      checks.push({
+        id: "narrator-sensory-anchor",
+        label: "Body has at least one sensory anchor",
+        status: senses.length >= 1 ? "pass" : "fail",
+        detail: senses.length
+          ? undefined
+          : "Ninguna categoría sensorial (olor, luz, sonido, temperatura, tacto, sabor) en todo el cuerpo. La spec pide UN ancla sensorial que sitúe la atmósfera; sin ninguna, la apertura es una ficha técnica.",
+      });
+    }
   }
 
   // ─── arcType ───────────────────────────────────────────
@@ -2673,7 +2838,16 @@ export async function validateGeneratedStory(
   return finalize(checks, parsed);
 }
 
-function extractProperNouns(s: string): string[] {
+/**
+ * Se exporta porque `scripts/saveStory.ts` necesita EXACTAMENTE este criterio
+ * para saber qué personajes trae ya una historia hermana. Antes sacaba los
+ * nombres solo de las líneas `Nombre: …` del formato diálogo, y en prosa
+ * narrada no hay ninguna, así que la lista salía vacía SIEMPRE y
+ * `narrator-speaker-introduced` veía como nuevo a un personaje presentado dos
+ * historias antes. Mismo fallo que tuvo `names-match`: un extractor pensado
+ * para el diálogo devolviendo nada, en silencio, para el narrador.
+ */
+export function extractProperNouns(s: string): string[] {
   const set = new Set<string>();
   // Strategy: find Capitalized words/phrases that follow a lowercase token or
   // appear after the first sentence-leading position. Sentence-initial capitals
