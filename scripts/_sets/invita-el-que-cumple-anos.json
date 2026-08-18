@@ -1,0 +1,548 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "regalo,cartera,ronda,paquete",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "regalo",
+          "answer": "a present",
+          "options": [
+            "a present",
+            "a wallet",
+            "a round of drinks",
+            "a wrapped parcel"
+          ]
+        },
+        {
+          "word": "cartera",
+          "answer": "a wallet",
+          "options": [
+            "a present",
+            "a wallet",
+            "a round of drinks",
+            "a wrapped parcel"
+          ]
+        },
+        {
+          "word": "ronda",
+          "answer": "a round of drinks",
+          "options": [
+            "a present",
+            "a wallet",
+            "a round of drinks",
+            "a wrapped parcel"
+          ]
+        },
+        {
+          "word": "paquete",
+          "answer": "a wrapped parcel",
+          "options": [
+            "a present",
+            "a wallet",
+            "a round of drinks",
+            "a wrapped parcel"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "y ya está",
+    "sentence": "Nada, mujer, tú vas [[y ya está]], contesta la vecina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "and that is it",
+      "options": [
+        "and that is it",
+        "if you insist",
+        "one more time",
+        "as you like"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Nada, mujer, tú vas y ya está, contesta la vecina.",
+        "targetWord": "y ya está",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/633c5ab3b28e9a2b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al revés",
+    "sentence": "En su país es [[al revés]]: paga el que invita.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the other way round",
+      "options": [
+        "the other way round",
+        "exactly the same",
+        "far cheaper",
+        "much later"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "En su país es al revés: paga el que invita.",
+        "targetWord": "al revés",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9f191d0c558f0963.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cumpleañero",
+    "sentence": "Aquí paga el [[cumpleañero]], no los invitados.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the birthday person",
+      "options": [
+        "the birthday person",
+        "the owner",
+        "the oldest guest",
+        "the newcomer"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Aquí paga el cumpleañero, no los invitados.",
+        "targetWord": "cumpleañero",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5d93c3f200b08352.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "felicidades",
+    "sentence": "[[Felicidades]], le dice al llegar y le da dos besos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "congratulations",
+      "options": [
+        "congratulations",
+        "good luck",
+        "see you soon",
+        "thank you"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Felicidades, le dice al llegar y le da dos besos.",
+        "targetWord": "Felicidades",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/17ba7b69c47da7ce.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin levantar la vista",
+    "sentence": "Se lo explica [[sin levantar la vista]] del pescado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without looking up",
+      "options": [
+        "without looking up",
+        "in a whisper",
+        "from the door",
+        "after a while"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Se lo explica sin levantar la vista del pescado.",
+        "targetWord": "sin levantar la vista",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7205facc46169307.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "celebrar",
+    "sentence": "El viernes va a _____ su cumpleaños en el bar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "celebrar",
+      "options": [
+        "celebrar",
+        "cerrar",
+        "perder",
+        "alquilar"
+      ],
+      "translation": "On Friday he is going to _____ his birthday in the bar.",
+      "optionTranslations": [
+        "celebrate",
+        "close",
+        "lose",
+        "rent out"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "El viernes va a celebrar su cumpleaños en el bar.",
+        "targetWord": "celebrar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8504f1f06b1f70f9.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "gritar",
+    "sentence": "Con tanto ruido hay que _____ para pedir algo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gritar",
+      "options": [
+        "gritar",
+        "susurrar",
+        "escribir",
+        "esperar"
+      ],
+      "translation": "With so much noise you have to _____ to order anything.",
+      "optionTranslations": [
+        "shout",
+        "whisper",
+        "write",
+        "wait"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Con tanto ruido hay que gritar para pedir algo.",
+        "targetWord": "gritar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6b6db2ac1dedb517.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "chocar",
+    "sentence": "Levanta el vaso para _____ con los demás.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "chocar",
+      "options": [
+        "chocar",
+        "romper",
+        "llenar",
+        "secar"
+      ],
+      "translation": "She lifts her glass to _____ with the others.",
+      "optionTranslations": [
+        "clink",
+        "break",
+        "fill",
+        "dry"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Levanta el vaso para chocar con los demás.",
+        "targetWord": "chocar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ae774e81b03b67a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "repetir",
+    "sentence": "Se aprende la palabra y no para de _____ toda la noche.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "repetir",
+      "options": [
+        "repetir",
+        "callar",
+        "olvidar",
+        "dudar"
+      ],
+      "translation": "She learns the word and does not stop to _____ it all evening.",
+      "optionTranslations": [
+        "repeat",
+        "go quiet",
+        "forget",
+        "doubt"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Se aprende la palabra y no para de repetir toda la noche.",
+        "targetWord": "repetir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6acdb777c2292c84.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colgado",
+    "sentence": "Ve el papel [[colgado]] en la barra del bar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pinned up",
+      "options": [
+        "pinned up",
+        "torn up",
+        "folded away",
+        "face down"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Ve el papel colgado en la barra del bar.",
+        "targetWord": "colgado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "duda",
+    "sentence": "Se queda con una [[duda]] tonta que no sabe cómo preguntar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a doubt",
+      "options": [
+        "a doubt",
+        "a promise",
+        "a plan",
+        "a headache"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Se queda con una duda tonta que no sabe cómo preguntar.",
+        "targetWord": "duda",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "envuelto",
+    "sentence": "Llevo algo [[envuelto]] o algo de comer, pregunta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wrapped",
+      "options": [
+        "wrapped",
+        "homemade",
+        "expensive",
+        "warm"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Llevo algo envuelto o algo de comer, pregunta.",
+        "targetWord": "envuelto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cola del pan",
+    "sentence": "Se lo pregunta en la [[cola del pan]] por la mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the bread queue",
+      "options": [
+        "the bread queue",
+        "the church door",
+        "the bus stop",
+        "the town hall"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Se lo pregunta en la cola del pan por la mañana.",
+        "targetWord": "cola del pan",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "justo",
+    "sentence": "Aquí es [[justo]] al contrario de lo que ella pensaba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "exactly",
+      "options": [
+        "exactly",
+        "almost",
+        "hardly",
+        "sometimes"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Aquí es justo al contrario de lo que ella pensaba.",
+        "targetWord": "justo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escondido",
+    "sentence": "Deja el paquete [[escondido]] en el fondo del bolso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hidden",
+      "options": [
+        "hidden",
+        "open",
+        "wrapped",
+        "on show"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Deja el paquete escondido en el fondo del bolso.",
+        "targetWord": "escondido",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fritanga",
+    "sentence": "El bar huele a [[fritanga]] y está lleno de gente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "frying smell",
+      "options": [
+        "frying smell",
+        "fresh paint",
+        "wet floor",
+        "strong coffee"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "El bar huele a fritanga y está lleno de gente.",
+        "targetWord": "fritanga",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pedida",
+    "sentence": "La ronda ya está [[pedida]] cuando ella llega.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "already ordered",
+      "options": [
+        "already ordered",
+        "already paid",
+        "half drunk",
+        "still cold"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "La ronda ya está pedida cuando ella llega.",
+        "targetWord": "pedida",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "papel",
+    "sentence": "Un [[papel]] en la barra avisa del cumpleaños del viernes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a note",
+      "options": [
+        "a note",
+        "a photo",
+        "a bill",
+        "a menu"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Un papel en la barra avisa del cumpleaños del viernes.",
+        "targetWord": "papel",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "funcionar",
+    "sentence": "Así [[funciona]] aquí, le explica la pescadera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to work, to be done",
+      "options": [
+        "to work, to be done",
+        "to fail",
+        "to change",
+        "to end"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Así funciona aquí, le explica la pescadera.",
+        "targetWord": "funciona",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dejar",
+    "sentence": "Decide _____ el paquete dentro del bolso.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dejar",
+      "options": [
+        "dejar",
+        "abrir",
+        "romper",
+        "regalar"
+      ],
+      "translation": "She decides to _____ the parcel inside her bag.",
+      "optionTranslations": [
+        "leave",
+        "open",
+        "tear up",
+        "give away"
+      ],
+      "audioClip": {
+        "storySlug": "invita-el-que-cumple-anos",
+        "storySource": "user",
+        "sentence": "Decide dejar el paquete dentro del bolso.",
+        "targetWord": "dejar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

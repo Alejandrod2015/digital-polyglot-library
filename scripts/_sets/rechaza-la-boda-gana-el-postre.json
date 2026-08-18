@@ -1,0 +1,488 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "boda,coche,taller,postre",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "boda",
+          "answer": "a wedding",
+          "options": [
+            "a wedding",
+            "a car",
+            "a garage",
+            "pudding"
+          ]
+        },
+        {
+          "word": "coche",
+          "answer": "a car",
+          "options": [
+            "a wedding",
+            "a car",
+            "a garage",
+            "pudding"
+          ]
+        },
+        {
+          "word": "taller",
+          "answer": "a garage",
+          "options": [
+            "a wedding",
+            "a car",
+            "a garage",
+            "pudding"
+          ]
+        },
+        {
+          "word": "postre",
+          "answer": "pudding",
+          "options": [
+            "a wedding",
+            "a car",
+            "a garage",
+            "pudding"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar pereza",
+    "sentence": "No conoce a los novios y [[le da pereza]] el autobús.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "she cannot face it",
+      "options": [
+        "she cannot face it",
+        "she is excited",
+        "she is worried",
+        "she is in a hurry"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "No conoce a los novios y le da pereza el autobús.",
+        "targetWord": "le da pereza",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8fcf60a6c4a40f42.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "qué rabia",
+    "sentence": "Ay, [[qué rabia]], es que ese día viene mi hermana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "what a shame",
+      "options": [
+        "what a shame",
+        "how funny",
+        "never mind",
+        "of course"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "Ay, qué rabia, es que ese día viene mi hermana.",
+        "targetWord": "Qué rabia",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d1537bd7c650f09.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "otra vez será",
+    "sentence": "[[Otra vez será]], contesta la vecina sin mala cara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "another time then",
+      "options": [
+        "another time then",
+        "let me think",
+        "that is settled",
+        "as you wish"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "Otra vez será, contesta la vecina sin mala cara.",
+        "targetWord": "otra vez será",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0f40c906593de542.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "eso sí",
+    "sentence": "Acepta el café, [[eso sí]], solo si hay postre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mind you",
+      "options": [
+        "mind you",
+        "for once",
+        "in the end",
+        "by the way"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "Acepta el café, eso sí, solo si hay postre.",
+        "targetWord": "eso sí",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b75cd0e9183fb133.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deber una",
+    "sentence": "Ahora [[te debo una]], le dice antes de subir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "I owe you one",
+      "options": [
+        "I owe you one",
+        "I forgive you",
+        "I warned you",
+        "I told you so"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "Ahora te debo una, le dice antes de subir.",
+        "targetWord": "te debo una",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bb4ed077fe1c4816.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "novios",
+    "sentence": "No conoce a los [[novios]] de esa boda del sábado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the couple getting married",
+      "options": [
+        "the couple getting married",
+        "the guests",
+        "the neighbours",
+        "the musicians"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "No conoce a los novios de esa boda del sábado.",
+        "targetWord": "novios",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0589ca7d9d8bb704.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "respirar",
+    "sentence": "Antes de contestar necesita _____ un momento.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "respirar",
+      "options": [
+        "respirar",
+        "gritar",
+        "correr",
+        "comer"
+      ],
+      "translation": "Before answering she needs to _____ for a moment.",
+      "optionTranslations": [
+        "breathe",
+        "shout",
+        "run",
+        "eat"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "Antes de contestar necesita respirar un momento.",
+        "targetWord": "respirar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d9ff51bfd7dc2906.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "insistir",
+    "sentence": "La vecina lo acepta y no vuelve a _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "insistir",
+      "options": [
+        "insistir",
+        "pagar",
+        "cocinar",
+        "limpiar"
+      ],
+      "translation": "The neighbour accepts it and does not _____ again.",
+      "optionTranslations": [
+        "press on",
+        "pay",
+        "cook",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "La vecina lo acepta y no vuelve a insistir.",
+        "targetWord": "insistir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/75bc940730db0275.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "añadir",
+    "sentence": "Da una razón y luego decide _____ una fecha nueva.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "añadir",
+      "options": [
+        "añadir",
+        "borrar",
+        "repetir",
+        "esconder"
+      ],
+      "translation": "She gives one reason and then decides to _____ a new date.",
+      "optionTranslations": [
+        "add",
+        "erase",
+        "repeat",
+        "hide"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "Da una razón y luego decide añadir una fecha nueva.",
+        "targetWord": "añadir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a46af79e9925bdc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "excusa",
+    "sentence": "Antes habría puesto una [[excusa]] por mensaje.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an excuse",
+      "options": [
+        "an excuse",
+        "a question",
+        "a complaint",
+        "an order"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "Antes habría puesto una excusa por mensaje.",
+        "targetWord": "excusa",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mensaje",
+    "sentence": "Antes lo habría dicho por [[mensaje]], nunca de frente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a message",
+      "options": [
+        "a message",
+        "a letter",
+        "a shout",
+        "a knock"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "Antes lo habría dicho por mensaje, nunca de frente.",
+        "targetWord": "mensaje",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mala cara",
+    "sentence": "La vecina lo acepta sin poner [[mala cara]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sour face",
+      "options": [
+        "a sour face",
+        "a single word",
+        "any question",
+        "much noise"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "La vecina lo acepta sin poner mala cara.",
+        "targetWord": "mala cara",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "que viene",
+    "sentence": "Quedan para el sábado [[que viene]], no para este.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "coming, next",
+      "options": [
+        "coming, next",
+        "just gone",
+        "this very",
+        "every single"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "Quedan para el sábado que viene, no para este.",
+        "targetWord": "que viene",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hermana",
+    "sentence": "Es que ese día viene mi [[hermana]] de la ciudad.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sister",
+      "options": [
+        "a sister",
+        "an aunt",
+        "a cousin",
+        "a workmate"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "Es que ese día viene mi hermana de la ciudad.",
+        "targetWord": "hermana",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enseguida",
+    "sentence": "Contesta [[enseguida]], sin dejar ningún hueco raro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "straight away",
+      "options": [
+        "straight away",
+        "much later",
+        "in the end",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "Contesta enseguida, sin dejar ningún hueco raro.",
+        "targetWord": "enseguida",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pueblo vecino",
+    "sentence": "La boda es en el [[pueblo vecino]], a media hora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the next village",
+      "options": [
+        "the next village",
+        "the capital",
+        "the coast",
+        "the same street"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "La boda es en el pueblo vecino, a media hora.",
+        "targetWord": "pueblo vecino",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorprender",
+    "sentence": "La respuesta la [[sorprende]] porque nadie se enfada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to surprise",
+      "options": [
+        "to surprise",
+        "to bore",
+        "to worry",
+        "to annoy"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "La respuesta la sorprende porque nadie se enfada.",
+        "targetWord": "sorprende",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "traducir",
+    "sentence": "Esa noche ve que no ha [[traducido]] ninguna frase.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to translate",
+      "options": [
+        "to translate",
+        "to repeat",
+        "to write down",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "rechaza-la-boda-gana-el-postre",
+        "storySource": "user",
+        "sentence": "Esa noche ve que no ha traducido ninguna frase.",
+        "targetWord": "traducido",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

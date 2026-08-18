@@ -1,0 +1,548 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "aceite,servilleta,jamón,queso",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "aceite",
+          "answer": "cooking oil",
+          "options": [
+            "cooking oil",
+            "a napkin",
+            "cured ham",
+            "cheese"
+          ]
+        },
+        {
+          "word": "servilleta",
+          "answer": "a napkin",
+          "options": [
+            "cooking oil",
+            "a napkin",
+            "cured ham",
+            "cheese"
+          ]
+        },
+        {
+          "word": "jamón",
+          "answer": "cured ham",
+          "options": [
+            "cooking oil",
+            "a napkin",
+            "cured ham",
+            "cheese"
+          ]
+        },
+        {
+          "word": "queso",
+          "answer": "cheese",
+          "options": [
+            "cooking oil",
+            "a napkin",
+            "cured ham",
+            "cheese"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin preguntar",
+    "sentence": "Le pone una caña [[sin preguntar]], porque ya la conoce.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without asking",
+      "options": [
+        "without asking",
+        "after a while",
+        "by mistake",
+        "with a smile"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Le pone una caña sin preguntar, porque ya la conoce.",
+        "targetWord": "sin preguntar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8ed8f53ce056376.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mío",
+    "sentence": "Perdona, esto no es [[mío]], dice empujando el plato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mine",
+      "options": [
+        "mine",
+        "yours",
+        "ours",
+        "hers"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Perdona, esto no es mío, dice empujando el plato.",
+        "targetWord": "mío",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c5ff6cadb3107f2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tuyo",
+    "sentence": "Sí que es [[tuyo]], contesta él sin mirarla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "yours",
+      "options": [
+        "yours",
+        "mine",
+        "theirs",
+        "ours"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Sí que es tuyo, contesta él sin mirarla.",
+        "targetWord": "tuyo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d181b6ccca86a553.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin mirarla",
+    "sentence": "Contesta [[sin mirarla]], mientras sigue secando vasos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "without looking at her",
+      "options": [
+        "without looking at her",
+        "shouting at her",
+        "laughing with her",
+        "walking towards her"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Contesta sin mirarla, mientras sigue secando vasos.",
+        "targetWord": "sin mirarla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/01ef7539401cc4cf.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ponerse colorada",
+    "sentence": "[[Se pone colorada]] y guarda la servilleta en la mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to go red",
+      "options": [
+        "to go red",
+        "to stand up",
+        "to say sorry",
+        "to look away"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Se pone colorada y guarda la servilleta en la mano.",
+        "targetWord": "se pone colorada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/75f3b0508b1345c7.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "oler",
+    "sentence": "La cocina empieza a _____ a pan recién hecho.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "oler",
+      "options": [
+        "oler",
+        "sonar",
+        "pesar",
+        "caber"
+      ],
+      "translation": "The kitchen starts to _____ of freshly baked bread.",
+      "optionTranslations": [
+        "smell",
+        "sound",
+        "weigh",
+        "fit"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "La cocina empieza a oler a pan recién hecho.",
+        "targetWord": "oler",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e33cbea0bc1350a4.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "empujar",
+    "sentence": "No lo quiere y decide _____ el plato con la mano.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "empujar",
+      "options": [
+        "empujar",
+        "contar",
+        "pagar",
+        "limpiar"
+      ],
+      "translation": "She does not want it and decides to _____ the plate away by hand.",
+      "optionTranslations": [
+        "push",
+        "count",
+        "pay for",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "No lo quiere y decide empujar el plato con la mano.",
+        "targetWord": "empujar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9851639e3e4e3d1.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "venir",
+    "sentence": "Con la bebida suele _____ siempre algo de comer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "venir",
+      "options": [
+        "venir",
+        "costar",
+        "faltar",
+        "sobrar"
+      ],
+      "translation": "Something to eat usually _____ with the drink.",
+      "optionTranslations": [
+        "comes",
+        "costs",
+        "is missing",
+        "is left over"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Con la bebida suele venir siempre algo de comer.",
+        "targetWord": "venir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d92d06e93382bc2.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "reírse",
+    "sentence": "El hombre del periódico empieza a _____ y enseña su plato.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reírse",
+      "options": [
+        "reírse",
+        "callarse",
+        "levantarse",
+        "apartarse"
+      ],
+      "translation": "The man with the newspaper starts to _____ and shows his plate.",
+      "optionTranslations": [
+        "laugh",
+        "go quiet",
+        "stand up",
+        "move aside"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "El hombre del periódico empieza a reírse y enseña su plato.",
+        "targetWord": "reírse",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5d763412529c96da.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caliente",
+    "sentence": "El bar huele a aceite [[caliente]] a las ocho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hot",
+      "options": [
+        "hot",
+        "cold",
+        "clean",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "El bar huele a aceite caliente a las ocho.",
+        "targetWord": "caliente",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vaso",
+    "sentence": "Deja las llaves al lado del [[vaso]] en la barra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a glass",
+      "options": [
+        "a glass",
+        "a plate",
+        "a bottle",
+        "a chair"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Deja las llaves al lado del vaso en la barra.",
+        "targetWord": "vaso",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sola",
+    "sentence": "Entra [[sola]] y se pone en la barra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alone",
+      "options": [
+        "alone",
+        "late",
+        "tired",
+        "in a hurry"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Entra sola y se pone en la barra.",
+        "targetWord": "sola",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "papel",
+    "sentence": "Con la caña llega una servilleta de [[papel]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "paper",
+      "options": [
+        "paper",
+        "cloth",
+        "glass",
+        "metal"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Con la caña llega una servilleta de papel.",
+        "targetWord": "papel",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trozo",
+    "sentence": "El plato trae dos [[trozos]] de tortilla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a piece",
+      "options": [
+        "a piece",
+        "a bag",
+        "a bowl",
+        "a box"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "El plato trae dos trozos de tortilla.",
+        "targetWord": "trozos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tortilla",
+    "sentence": "El plato trae dos trozos de [[tortilla]] y nada más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "potato omelette",
+      "options": [
+        "potato omelette",
+        "fried fish",
+        "white rice",
+        "onion soup"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "El plato trae dos trozos de tortilla y nada más.",
+        "targetWord": "tortilla",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plato",
+    "sentence": "Con la caña llega un [[plato]] pequeño que nadie ha pedido.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a plate",
+      "options": [
+        "a plate",
+        "a bill",
+        "a menu",
+        "a napkin"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Con la caña llega un plato pequeño que nadie ha pedido.",
+        "targetWord": "plato",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Se come el segundo trozo [[despacio]], ya sin prisa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slowly",
+      "options": [
+        "slowly",
+        "standing up",
+        "in silence",
+        "by the door"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Se come el segundo trozo despacio, ya sin prisa.",
+        "targetWord": "despacio",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "sentence": "Le pone la caña sin preguntar porque ya la [[conoce]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to know somebody",
+      "options": [
+        "to know somebody",
+        "to owe somebody",
+        "to call somebody",
+        "to avoid somebody"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Le pone la caña sin preguntar porque ya la conoce.",
+        "targetWord": "conoce",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedarse",
+    "sentence": "[[Se queda]] con el plato delante sin saber qué hacer.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be left",
+      "options": [
+        "to be left",
+        "to pay up",
+        "to go out",
+        "to sit down"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Se queda con el plato delante sin saber qué hacer.",
+        "targetWord": "se queda",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "enseñar",
+    "sentence": "Levanta el plato para _____ que él tiene lo mismo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "enseñar",
+      "options": [
+        "enseñar",
+        "esconder",
+        "romper",
+        "pesar"
+      ],
+      "translation": "He lifts the plate to _____ that he has the same thing.",
+      "optionTranslations": [
+        "show",
+        "hide",
+        "break",
+        "weigh"
+      ],
+      "audioClip": {
+        "storySlug": "nadie-ha-pedido-esa-tapa",
+        "storySource": "user",
+        "sentence": "Levanta el plato para enseñar que él tiene lo mismo.",
+        "targetWord": "enseñar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

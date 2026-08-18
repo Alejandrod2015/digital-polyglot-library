@@ -584,6 +584,65 @@ export const GERMAN_EXPAT_B1_CAST: JourneyCast = {
 };
 
 /** Indexed by journey key for lookup. */
+/**
+ * Traveler PT-BR A1 (journey cmsyrge55000732u9oiu8wue3).
+ *
+ * POR QUÉ ESTE BRIEF EXISTE (2026-08-18). La primera historia del A1 se escribió
+ * con dos nombres sacados del banco y nada más: el lector no sabía quién era
+ * Rafaela, ni qué era Matheus de ella, ni por qué viajaban juntos. El validador
+ * la dio por buena porque solo comprueba que el nombre aparezca. El cast se
+ * decide al PLANEAR, no al escribir la frase.
+ *
+ * Por la regla de nativos, un Traveler no es un extranjero de visita: son dos
+ * brasileños recorriendo su propio país. La fricción entre ellos es el motor de
+ * las 21 historias y ya está en la primera: ella llega con prisa de ciudad, él
+ * vive donde el río manda los tiempos.
+ */
+const PORTUGUESE_BRAZIL_A1_CAST: JourneyCast = {
+  journeyKey: "portuguese-brazil",
+  countries: [
+    {
+      country: "Brasil",
+      members: [
+        {
+          slug: "rafaela",
+          displayName: "Rafaela",
+          voiceId: "7iqXtOF3wl3pomwXFY7G",
+          voiceSlot: "narrator",
+          age: "young",
+          relation: "protagonista; hermana menor de Matheus",
+          description:
+            "32 años, vive en São Paulo y trabaja en una agencia de viajes vendiendo " +
+            "destinos que nunca ha pisado. Se toma un mes para recorrer el país que " +
+            "vende. Mide todo en horas y en fotos; el viaje le va quitando las dos cosas. " +
+            "Sale en las 21 historias.",
+        },
+        {
+          slug: "matheus",
+          displayName: "Matheus",
+          voiceId: "7iqXtOF3wl3pomwXFY7G",
+          voiceSlot: "narrator",
+          age: "young",
+          relation: "hermano mayor de Rafaela",
+          description:
+            "36 años, se mudó de São Paulo a Manaus hace ocho años y trabaja llevando " +
+            "turistas por el río. Conoce el país por dentro y no explica de más. " +
+            "Aparece en la mitad de las historias; en las otras, Rafaela lo menciona " +
+            "o le escribe.",
+        },
+      ],
+      notes:
+        "Hermanos, no pareja ni amigos: la confianza para mandarle guardar el móvil " +
+        "en la primera página tiene que estar justificada. Los dos son brasileños, " +
+        "como exige la regla de voces por variante.",
+    },
+  ],
+  notes:
+    "Journey de tipo traveler: 2 personajes fijos, siete destinos, orden libre. " +
+    "La voz es una sola porque es prosa narrada, no diálogo repartido: " +
+    "Fernanda (7iqXtOF3wl3pomwXFY7G), la misma del A0 brasileño.",
+};
+
 export const JOURNEY_CASTS: Record<string, JourneyCast> = {
   "spanish-latam": SPANISH_LATAM_CAST,
   // 2026-07-07: el key german-germany pasa del Traveler beta (ARCHIVADO,
@@ -591,6 +650,7 @@ export const JOURNEY_CASTS: Record<string, JourneyCast> = {
   // al journey Expat B1 nuevo. GERMAN_TRAVELER_CAST queda arriba solo como
   // documentación histórica.
   "german-germany": GERMAN_EXPAT_B1_CAST,
+  "portuguese-brazil": PORTUGUESE_BRAZIL_A1_CAST,
 };
 
 export function getJourneyCast(

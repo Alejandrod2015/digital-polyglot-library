@@ -875,13 +875,23 @@ function renderKaraokeParagraph(args: {
     const leadGap = payloadText
       .slice(paragraph.charStart, words[firstWordIdx].charStart)
       .replace(/\n/g, " ");
-    if (leadGap.trim()) pushPlainRun(leadGap.trim());
+    // El hueco inicial (una comilla de apertura, un `¿`) se pega a la primera
+    // palabra en vez de ir en su propio chip: como chip suelto arrastraba el
+    // marginRight y en pantalla salía `" Hola,` con un espacio dentro.
+    let pendingPrefix = "";
+    const leadTrim = leadGap.trim();
+    if (leadTrim) {
+      if (/^[\p{L}\p{N}]/u.test(leadTrim)) pushPlainRun(leadTrim);
+      else pendingPrefix = leadTrim;
+    }
 
     const maxPhraseA = maxPhraseTokenSpan(vocabLookup);
     let iA = firstWordIdx;
     while (iA <= lastWordIdx) {
       const w = words[iA];
 
+      const prefijo = pendingPrefix;
+      pendingPrefix = "";
       let surface = w.text;
       let unitEnd = iA + 1;
       let lastCharEnd = w.charEnd;
@@ -946,10 +956,35 @@ function renderKaraokeParagraph(args: {
 
       // Trailing gap: attach leading punctuation ("," ".") to this word and
       // turn a trailing space into the chip's right margin.
+      //
+      // El hueco puede llevar puntuación a AMBOS lados del espacio:
+      // `Irene. "Buenas"` deja `. "` entre las dos palabras. Quedarse solo con
+      // el primer bloque (`.`) tiraba lo de después, así que en el Pixel se
+      // perdía la comilla de apertura del segundo entrecomillado y el `¿` de
+      // las preguntas (`escalón. "¿Tú` -> `escalón. Tú`). Lo que va tras el
+      // espacio se guarda y se pega DELANTE de la siguiente palabra.
       const nextStart = unitEnd <= lastWordIdx ? words[unitEnd].charStart : paragraph.charEnd;
       const trailGap = payloadText.slice(lastCharEnd, nextStart).replace(/\n/g, " ");
-      const punct = (trailGap.match(/^\S+/) || [""])[0];
-      const hasSpace = /\s/.test(trailGap);
+      // La puntuación de cierre (, . ; : ! ? » ") LIGA A LA IZQUIERDA y va con
+      // esta palabra aunque el hueco empiece por espacio; si no, salía
+      // `copal ,y`. La de apertura (¿ ¡ « " ( ) liga a la derecha y se guarda
+      // para la palabra siguiente.
+      // La comilla recta es ambigua: abre y cierra igual. Lo que la desambigua
+      // es el ESPACIO. `Irene. "Buenas"` deja el hueco `. "`: el punto va
+      // pegado a la palabra y cierra; la comilla viene tras un espacio y abre,
+      // así que va con la siguiente. Sin esto salía `Irene." Buenas"`.
+      const SOLO_CIERRE = /^[,.;:!?]+$/;   // nunca comillas ni paréntesis
+      const trozos = trailGap.split(/\s+/).filter(Boolean);
+      const pegadoALaPalabra = trozos.length > 0 && !/^\s/.test(trailGap);
+      let punct = "";
+      let prefijoSiguiente = "";
+      trozos.forEach((t, idx) => {
+        const cierraSeguro = idx === 0 && pegadoALaPalabra;
+        if ((cierraSeguro || SOLO_CIERRE.test(t)) && !prefijoSiguiente) punct += t;
+        else prefijoSiguiente += t;
+      });
+      const hasSpace = /\s/.test(trailGap) || prefijoSiguiente === "";
+      pendingPrefix = prefijoSiguiente;
 
       // Uniform structure for every word: <View><Text>. Only bg/padding/color
       // vary. Plain and active are identical in size (padding 0, lineHeight 26),
@@ -971,7 +1006,7 @@ function renderKaraokeParagraph(args: {
               fontWeight: bold ? ("700" as const) : ("400" as const),
             }}
           >
-            {surface}
+            {prefijo}{surface}
           </Text>
         </View>
       );

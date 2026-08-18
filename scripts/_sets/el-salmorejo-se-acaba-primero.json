@@ -1,0 +1,428 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "receta,ajo,vinagre,patatas",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "receta",
+          "answer": "a recipe",
+          "options": [
+            "a recipe",
+            "garlic",
+            "vinegar",
+            "crisps"
+          ]
+        },
+        {
+          "word": "ajo",
+          "answer": "garlic",
+          "options": [
+            "a recipe",
+            "garlic",
+            "vinegar",
+            "crisps"
+          ]
+        },
+        {
+          "word": "vinagre",
+          "answer": "vinegar",
+          "options": [
+            "a recipe",
+            "garlic",
+            "vinegar",
+            "crisps"
+          ]
+        },
+        {
+          "word": "patatas",
+          "answer": "crisps",
+          "options": [
+            "a recipe",
+            "garlic",
+            "vinegar",
+            "crisps"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "del bueno",
+    "sentence": "Este salmorejo es [[del bueno]], dice una vecina con el vaso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the good stuff",
+      "options": [
+        "the good stuff",
+        "the usual kind",
+        "the cheap sort",
+        "the light version"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "Este salmorejo es del bueno, dice una vecina con el vaso.",
+        "targetWord": "del bueno",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c9c01e0cb78c816d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "para ser de",
+    "sentence": "Está muy bueno [[para ser de]] fuera, comenta la vecina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "for somebody from",
+      "options": [
+        "for somebody from",
+        "instead of",
+        "as well as",
+        "apart from"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "Está muy bueno para ser de fuera, comenta la vecina.",
+        "targetWord": "para ser de",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08134e4bcb8081ee.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muy bueno",
+    "sentence": "Está [[muy bueno]], le dicen dos vecinas seguidas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "really good",
+      "options": [
+        "really good",
+        "quite nice",
+        "a bit odd",
+        "too salty"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "Está muy bueno, le dicen dos vecinas seguidas.",
+        "targetWord": "muy bueno",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ccbf80b12cb5d1b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "veinte minutos",
+    "sentence": "La bandeja se vacía en [[veinte minutos]] escasos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "twenty minutes",
+      "options": [
+        "twenty minutes",
+        "two hours",
+        "half a day",
+        "three days"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "La bandeja se vacía en veinte minutos escasos.",
+        "targetWord": "veinte minutos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1bff1a67e2239e9a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al pasar",
+    "sentence": "Lo comenta [[al pasar]], sin detenerse en la mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in passing",
+      "options": [
+        "in passing",
+        "very slowly",
+        "from her window",
+        "before leaving"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "Lo comenta al pasar, sin detenerse en la mesa.",
+        "targetWord": "al pasar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/51bc58db3923c934.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hueco",
+    "sentence": "Deja la bandeja en un [[hueco]] del final de la mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a gap",
+      "options": [
+        "a gap",
+        "a box",
+        "a shelf",
+        "a chair"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "Deja la bandeja en un hueco del final de la mesa.",
+        "targetWord": "hueco",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/134c5f746e5f402c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esquina",
+    "sentence": "La deja casi en la [[esquina]], donde nadie mira.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the corner",
+      "options": [
+        "the corner",
+        "the middle",
+        "the entrance",
+        "the front"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "La deja casi en la esquina, donde nadie mira.",
+        "targetWord": "esquina",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40220bccfeb3c1df.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plata",
+    "sentence": "Tapa la bandeja con papel de [[plata]] para bajarla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "foil",
+      "options": [
+        "foil",
+        "cloth",
+        "glass",
+        "wood"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "Tapa la bandeja con papel de plata para bajarla.",
+        "targetWord": "plata",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e7bb130aa8e68270.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "batir",
+    "sentence": "Corta el pan y el tomate y se pone a _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "batir",
+      "options": [
+        "batir",
+        "freír",
+        "hornear",
+        "congelar"
+      ],
+      "translation": "She cuts the bread and tomato and starts to _____.",
+      "optionTranslations": [
+        "blend",
+        "fry",
+        "bake",
+        "freeze"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "Corta el pan y el tomate y se pone a batir.",
+        "targetWord": "batir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96e646943ae6273f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vecinas",
+    "sentence": "Varias [[vecinas]] se acercan a preguntarle cómo lo hace.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "neighbours",
+      "options": [
+        "neighbours",
+        "waitresses",
+        "tourists",
+        "cousins"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "Varias vecinas se acercan a preguntarle cómo lo hace.",
+        "targetWord": "vecinas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vaso",
+    "sentence": "Una señora pregunta con el [[vaso]] todavía en la mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a glass",
+      "options": [
+        "a glass",
+        "a plate",
+        "a bag",
+        "a fork"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "Una señora pregunta con el vaso todavía en la mano.",
+        "targetWord": "vaso",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "levantarse",
+    "sentence": "El sábado [[se levanta]] pronto para cocinar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get up",
+      "options": [
+        "to get up",
+        "to lie down",
+        "to go out",
+        "to give up"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "El sábado se levanta pronto para cocinar.",
+        "targetWord": "se levanta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acercarse",
+    "sentence": "Dos vecinas [[se acercan]] a la bandeja vacía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come over",
+      "options": [
+        "to come over",
+        "to point at",
+        "to move away",
+        "to sit down"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "Dos vecinas se acercan a la bandeja vacía.",
+        "targetWord": "se acercan",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedar",
+    "sentence": "De las otras fuentes todavía [[quedan]] restos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be left",
+      "options": [
+        "to be left",
+        "to be missing",
+        "to be ready",
+        "to be sold"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "De las otras fuentes todavía quedan restos.",
+        "targetWord": "quedan",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "asentir",
+    "sentence": "La vecina [[asiente]] sin decir nada más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to nod",
+      "options": [
+        "to nod",
+        "to shout",
+        "to leave",
+        "to laugh"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "La vecina asiente sin decir nada más.",
+        "targetWord": "asiente",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "espesar",
+    "sentence": "Lo bate hasta que [[espesa]] del todo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to thicken",
+      "options": [
+        "to thicken",
+        "to boil",
+        "to cool",
+        "to burn"
+      ],
+      "audioClip": {
+        "storySlug": "el-salmorejo-se-acaba-primero",
+        "storySource": "user",
+        "sentence": "Lo bate hasta que espesa del todo.",
+        "targetWord": "espesa",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

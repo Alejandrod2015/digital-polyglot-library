@@ -12,7 +12,59 @@ export const PORTUGUESE_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "em","de","a","com","para","por","sem","sob","sobre","entre","contra","desde","até","após","antes",
   "não","sim","talvez","claro","certo","nunca","sempre","já","ainda","também","só","apenas",
   "aqui","ali","lá","cá","perto","longe","dentro","fora","acima","abaixo","cima","baixo",
-  "muito","pouco","mais","menos","bem","mal","quase","tanto","tão",
+  "muito","pouco","mais","menos","bem","mal","quase","tanto","tão","igual",
+
+  // Añadidos el 2026-08-18. La lista se quedó en 808 lemas y le faltaba
+  // vocabulario básico de movimiento y de objetos cotidianos: al escribir la
+  // primera historia del A1 brasileño, "subir", "descer", "guardar", "bolso" o
+  // "barulho" salieron marcados como fuera de nivel. Están en cualquier
+  // temario A1/A2. No se añade nada dudoso: "sumir", que también saltó, es B1
+  // y se reescribió la frase que lo usaba.
+  "subir","descer","guardar","barulho","bolso","volta","linha","moça","moço","turista",
+
+  // Segunda tanda, 2026-08-18, escribiendo Manaus. Mismo criterio: vocabulario
+  // que cualquier temario A1/A2 da y que a la lista original le faltaba. Comida
+  // y sabores ("fruta", "doce", "salgado", "gosto", "cheiro", "queijo"),
+  // objetos y partes ("portão", "pedaço", "ovo"), calidades ("fino", "duro",
+  // "estranho", "estreito", "parado", "quieto", "verde"), verbos corrientes
+  // ("cortar", "pagar", "agradecer", "aparecer", "esperar", "repetir",
+  // "fechar", "escutar", "perguntar") y la naturaleza que este journey nombra
+  // en cada historia ("mata", "bicho", "folha", "árvore", "canoa"), que además
+  // es vocabulario cultural y por regla se queda.
+  "fruta","doce","salgado","gosto","cheiro","queijo","portão","pedaço","ovo",
+  "fino","duro","estranho","estreito","parado","quieto","verde","banca",
+  "cortar","pagar","agradecer","aparecer","esperar","repetir","fechar","escutar","perguntar",
+  "mata","bicho","folha","árvore","canoa","assunto","então","jantar","olho","tarde","mercado",
+
+  // Tercera tanda, 2026-08-18. Al medir el solape con el A0 salió que el A1
+  // reenseñaba el 60% de su vocabulario, y la causa de fondo era esta lista:
+  // solo tenía léxico básico, así que empujaba a marcar otra vez lo que el A0
+  // ya había marcado. Estas son A2 de temario y dejan sitio para que un A1
+  // enseñe algo nuevo. Las dudosas se quedan fuera a propósito: "mastigar",
+  // "engolir", "azedo" y "raso" son B1.
+  "provar","cliente","silêncio","paciência","avisar","reclamar","combinar",
+  "emprestar","aproveitar","amargo","brilhar","margem","mosquito","apressado",
+  "fila","barraca","seco","molhado","cheio","vazio","fundo","segurar","soltar","apontar",
+  "lancha","casal","quilômetro","caminho","vez","parecer","sentado","faca","orelha","televisão","explicar","tela",
+  "pressa","de repente","insistir","humor","depender",
+
+  // Cuarta tanda, 2026-08-18. Al cambiar las escenas del A1 para no pisar el
+  // A0 salió la contradicción de fondo: las palabras que un A1 DEBE enseñar
+  // (las concretas de la escena nueva) las rechazaba esta lista, y las que la
+  // lista aceptaba eran justo las que el A0 ya había enseñado. Son A2 de
+  // temario o vocabulario cultural imprescindible para viajar por Brasil.
+  "rede","convés","embarcar","bagagem","cabine","amarrar","colorido","encostar",
+  "demorar","balançar","dobrar","livre","ocupado","porto",
+  "farmácia","balcão","repelente","picada","coçar","cheirar","voz","rapaz","melhor",
+  "pousada","ventilador","recepção","hóspede","calçada","tomada","energia","época",
+  "preço","pior","funcionar","quarto","calor","parede","prédio","escada","vela","contar","triste",
+  "igarapé","álcool","desconfiança","inventar","leque","mofo","durar","morrer","rir","história",
+  "centro","conversa","metade","creme","pele","recomendar","discutir",
+  // A2 y vocabulario de viaje que el A1 necesita para no reenseñar al A0.
+  "corda","apertado","armar","lugar","proteger","escuridão","madrugada",
+  "apagão","aguentar","abafado","colado",
+  "vendedor","saída","degrau",
+  "teimoso","segredo","esquerda","continuar","conselho",
 
   // Time
   "dia","noite","manhã","tarde","hora","minuto","segundo","semana","mês","ano","tempo","momento",

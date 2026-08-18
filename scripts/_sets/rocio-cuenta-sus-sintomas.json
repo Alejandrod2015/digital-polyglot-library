@@ -1,0 +1,518 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "fiebre,cuello,caja,ventilador",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "fiebre",
+          "answer": "a temperature",
+          "options": [
+            "a temperature",
+            "a neck",
+            "a box",
+            "a fan"
+          ]
+        },
+        {
+          "word": "cuello",
+          "answer": "a neck",
+          "options": [
+            "a temperature",
+            "a neck",
+            "a box",
+            "a fan"
+          ]
+        },
+        {
+          "word": "caja",
+          "answer": "a box",
+          "options": [
+            "a temperature",
+            "a neck",
+            "a box",
+            "a fan"
+          ]
+        },
+        {
+          "word": "ventilador",
+          "answer": "a fan",
+          "options": [
+            "a temperature",
+            "a neck",
+            "a box",
+            "a fan"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a ver",
+    "sentence": "[[A ver]], cuéntame qué te pasa, que hoy tenemos tiempo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "right then",
+      "options": [
+        "right then",
+        "hurry up",
+        "never mind",
+        "come back later"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "A ver, cuéntame qué te pasa, que hoy tenemos tiempo.",
+        "targetWord": "A ver",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/482b347564c56517.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por ella",
+    "sentence": "La vecina contesta [[por ella]] cada pregunta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in her place",
+      "options": [
+        "in her place",
+        "about her",
+        "against her",
+        "with her"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "La vecina contesta por ella cada pregunta.",
+        "targetWord": "por ella",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3d74480dbc9d2b31.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hablando de",
+    "sentence": "Las dos acaban [[hablando de]] su garganta delante suyo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "talking about",
+      "options": [
+        "talking about",
+        "laughing at",
+        "asking after",
+        "arguing over"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Las dos acaban hablando de su garganta delante suyo.",
+        "targetWord": "hablando de",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb0e187829a14d8d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aunque sea",
+    "sentence": "Quiere decir algo ella, [[aunque sea]] una frase corta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "even if only",
+      "options": [
+        "even if only",
+        "as long as",
+        "instead of",
+        "in case of"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Quiere decir algo ella, aunque sea una frase corta.",
+        "targetWord": "aunque sea",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7187e3dc7d132b5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de broma",
+    "sentence": "Se lo suelta en la puerta, y no [[de broma]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "as a joke",
+      "options": [
+        "as a joke",
+        "by mistake",
+        "in a whisper",
+        "out of pity"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Se lo suelta en la puerta, y no de broma.",
+        "targetWord": "de broma",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/314e661be0f7ad6e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "empezar",
+    "sentence": "Abre la boca para _____ la frase y no le sale.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "empezar",
+      "options": [
+        "empezar",
+        "cerrar",
+        "pagar",
+        "fregar"
+      ],
+      "translation": "She opens her mouth to _____ the sentence and it does not come out.",
+      "optionTranslations": [
+        "start",
+        "close",
+        "pay for",
+        "wash"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Abre la boca para empezar la frase y no le sale.",
+        "targetWord": "empezar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3453508120a3aa5e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "soltar",
+    "sentence": "Al final se lo va a _____ sin ningún cuidado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "soltar",
+      "options": [
+        "soltar",
+        "guardar",
+        "esconder",
+        "olvidar"
+      ],
+      "translation": "In the end she is going to _____ it with no softening at all.",
+      "optionTranslations": [
+        "come out with",
+        "keep",
+        "hide",
+        "forget"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Al final se lo va a soltar sin ningún cuidado.",
+        "targetWord": "soltar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1dfdfb3924493ae0.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "esperar",
+    "sentence": "Con dos señoras delante hay que _____ el turno.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esperar",
+      "options": [
+        "esperar",
+        "correr",
+        "pagar",
+        "gritar"
+      ],
+      "translation": "With two ladies ahead you have to _____ your turn.",
+      "optionTranslations": [
+        "wait for",
+        "run",
+        "pay for",
+        "shout"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Con dos señoras delante hay que esperar el turno.",
+        "targetWord": "esperar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4dc0925497a1dbb7.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "dormir",
+    "sentence": "Con la tos por la noche no consigue _____ dos horas seguidas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dormir",
+      "options": [
+        "dormir",
+        "comer",
+        "andar",
+        "hablar"
+      ],
+      "translation": "With the cough at night she cannot manage to _____ two hours in a row.",
+      "optionTranslations": [
+        "sleep",
+        "eat",
+        "walk",
+        "talk"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Con la tos por la noche no consigue dormir dos horas seguidas.",
+        "targetWord": "dormir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b6b40e10250ee940.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preocuparse",
+    "sentence": "Le dice que no [[se preocupe]] mientras bajan juntas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to worry",
+      "options": [
+        "to worry",
+        "to hurry",
+        "to complain",
+        "to insist"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Le dice que no se preocupe mientras bajan juntas.",
+        "targetWord": "se preocupe",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "señoras",
+    "sentence": "Hoy hay dos [[señoras]] esperando su turno dentro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ladies",
+      "options": [
+        "ladies",
+        "children",
+        "workmen",
+        "tourists"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Hoy hay dos señoras esperando su turno dentro.",
+        "targetWord": "señoras",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "puesto",
+    "sentence": "Hay un ventilador [[puesto]] que hace ruido en la esquina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "switched on",
+      "options": [
+        "switched on",
+        "broken down",
+        "newly bought",
+        "turned off"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Hay un ventilador puesto que hace ruido en la esquina.",
+        "targetWord": "puesto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un poco",
+    "sentence": "Dice que tiene [[un poco]] de fiebre, nada más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bit",
+      "options": [
+        "a bit",
+        "a lot",
+        "none",
+        "too much"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Dice que tiene un poco de fiebre, nada más.",
+        "targetWord": "un poco",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "instrucciones",
+    "sentence": "Repiten las [[instrucciones]] dos veces en la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the directions",
+      "options": [
+        "the directions",
+        "the prices",
+        "the names",
+        "the excuses"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Repiten las instrucciones dos veces en la puerta.",
+        "targetWord": "instrucciones",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dos veces",
+    "sentence": "Repiten las instrucciones [[dos veces]] antes de salir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "twice",
+      "options": [
+        "twice",
+        "once only",
+        "all morning",
+        "every day"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Repiten las instrucciones dos veces antes de salir.",
+        "targetWord": "dos veces",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tiempo",
+    "sentence": "Hoy tenemos [[tiempo]], dice la farmacéutica sin prisa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "time",
+      "options": [
+        "time",
+        "company",
+        "room",
+        "luck"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Hoy tenemos tiempo, dice la farmacéutica sin prisa.",
+        "targetWord": "tiempo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ruido",
+    "sentence": "El ventilador hace [[ruido]] encima de las tres.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "noise",
+      "options": [
+        "noise",
+        "shade",
+        "heat",
+        "light"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "El ventilador hace ruido encima de las tres.",
+        "targetWord": "ruido",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "morder",
+    "sentence": "Mañana se lo dices tú, que no [[muerde]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bite",
+      "options": [
+        "to bite",
+        "to shout",
+        "to charge",
+        "to refuse"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Mañana se lo dices tú, que no muerde.",
+        "targetWord": "muerde",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pararse",
+    "sentence": "Empieza la frase y [[se para]] en la tercera palabra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stop",
+      "options": [
+        "to stop",
+        "to repeat",
+        "to laugh",
+        "to leave"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-cuenta-sus-sintomas",
+        "storySource": "user",
+        "sentence": "Empieza la frase y se para en la tercera palabra.",
+        "targetWord": "se para",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

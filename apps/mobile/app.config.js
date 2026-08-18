@@ -79,6 +79,8 @@ const config = {
     "expo-notifications",
     "expo-iap",
     "./plugins/without-apple-signin",
+    // Solo hace algo cuando el build apunta a un http:// local; ver el plugin.
+    "./plugins/allow-local-cleartext",
     [
       "expo-splash-screen",
       {

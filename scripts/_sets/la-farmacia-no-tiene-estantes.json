@@ -1,0 +1,548 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "garganta,bata,banco,jabón",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "garganta",
+          "answer": "a throat",
+          "options": [
+            "a throat",
+            "a white coat",
+            "a bench",
+            "soap"
+          ]
+        },
+        {
+          "word": "bata",
+          "answer": "a white coat",
+          "options": [
+            "a throat",
+            "a white coat",
+            "a bench",
+            "soap"
+          ]
+        },
+        {
+          "word": "banco",
+          "answer": "a bench",
+          "options": [
+            "a throat",
+            "a white coat",
+            "a bench",
+            "soap"
+          ]
+        },
+        {
+          "word": "jabón",
+          "answer": "soap",
+          "options": [
+            "a throat",
+            "a white coat",
+            "a bench",
+            "soap"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a la vista",
+    "sentence": "En esta farmacia no hay nada [[a la vista]] del cliente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on show",
+      "options": [
+        "on show",
+        "for sale",
+        "on offer",
+        "in stock"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "En esta farmacia no hay nada a la vista del cliente.",
+        "targetWord": "a la vista",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/14884497d5ed99bb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por dónde empezar",
+    "sentence": "No sabe [[por dónde empezar]] a contar lo que le pasa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "where to start",
+      "options": [
+        "where to start",
+        "who to ask",
+        "what to pay",
+        "when to come back"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "No sabe por dónde empezar a contar lo que le pasa.",
+        "targetWord": "por dónde empezar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c37103b36170a02.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muchas gracias",
+    "sentence": "[[Muchas gracias]], dice, y sale sin comprar nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thank you very much",
+      "options": [
+        "thank you very much",
+        "good morning",
+        "see you soon",
+        "excuse me"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Muchas gracias, dice, y sale sin comprar nada.",
+        "targetWord": "Muchas gracias",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e74c58d2c49e476d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esa cara",
+    "sentence": "Con [[esa cara]] algo te pasa, le dice desde la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that look",
+      "options": [
+        "that look",
+        "that voice",
+        "that hurry",
+        "that bag"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Con esa cara algo te pasa, le dice desde la puerta.",
+        "targetWord": "esa cara",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee1d196fdc6c0a8c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de pie",
+    "sentence": "La farmacéutica ya está [[de pie]], lista para atender.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on her feet",
+      "options": [
+        "on her feet",
+        "on the phone",
+        "in the back",
+        "at lunch"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "La farmacéutica ya está de pie, lista para atender.",
+        "targetWord": "de pie",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/80f3706c34e3cf30.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "contar",
+    "sentence": "Le cuesta _____ lo que le pasa en otro idioma.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "contar",
+      "options": [
+        "contar",
+        "cobrar",
+        "cocinar",
+        "limpiar"
+      ],
+      "translation": "She finds it hard to _____ what is wrong with her in another language.",
+      "optionTranslations": [
+        "explain",
+        "charge",
+        "cook",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Le cuesta contar lo que le pasa en otro idioma.",
+        "targetWord": "contar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/97ac5a0db163cd32.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "mandar",
+    "sentence": "La vecina la va a _____ a la farmacia de la plaza.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mandar",
+      "options": [
+        "mandar",
+        "cobrar",
+        "esconder",
+        "olvidar"
+      ],
+      "translation": "The neighbour is going to _____ her to the pharmacy in the square.",
+      "optionTranslations": [
+        "send",
+        "charge",
+        "hide",
+        "forget"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "La vecina la va a mandar a la farmacia de la plaza.",
+        "targetWord": "mandar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cc3020c8d71d9d2f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sentarse",
+    "sentence": "Prefiere _____ en un banco antes de volver a entrar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sentarse",
+      "options": [
+        "sentarse",
+        "gritar",
+        "cocinar",
+        "conducir"
+      ],
+      "translation": "She prefers to _____ on a bench before going back in.",
+      "optionTranslations": [
+        "sit down",
+        "shout",
+        "cook",
+        "drive"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Prefiere sentarse en un banco antes de volver a entrar.",
+        "targetWord": "sentarse",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cf6aa8415fee5b1a.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "escribir",
+    "sentence": "Saca el móvil para _____ la palabra que le falta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escribir",
+      "options": [
+        "escribir",
+        "romper",
+        "tirar",
+        "fregar"
+      ],
+      "translation": "She takes out her phone to _____ the word she is missing.",
+      "optionTranslations": [
+        "type",
+        "break",
+        "throw away",
+        "wash up"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Saca el móvil para escribir la palabra que le falta.",
+        "targetWord": "escribir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61d77e7f2e32502e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "farmacéutica",
+    "sentence": "Detrás del mostrador está la [[farmacéutica]] con la bata blanca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the pharmacist",
+      "options": [
+        "the pharmacist",
+        "the doctor",
+        "the cashier",
+        "the cleaner"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Detrás del mostrador está la farmacéutica con la bata blanca.",
+        "targetWord": "farmacéutica",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quieta",
+    "sentence": "Abre la boca y se queda [[quieta]] un segundo largo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still",
+      "options": [
+        "still",
+        "seated",
+        "asleep",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Abre la boca y se queda quieta un segundo largo.",
+        "targetWord": "quieta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "demasiado",
+    "sentence": "Se queda callada un segundo [[demasiado]] largo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "too",
+      "options": [
+        "too",
+        "barely",
+        "almost",
+        "hardly"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Se queda callada un segundo demasiado largo.",
+        "targetWord": "demasiado",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "largo",
+    "sentence": "Ese silencio se hace [[largo]] delante del mostrador.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "long",
+      "options": [
+        "long",
+        "short",
+        "funny",
+        "quiet"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Ese silencio se hace largo delante del mostrador.",
+        "targetWord": "largo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "blanca",
+    "sentence": "La farmacéutica lleva la bata [[blanca]] de trabajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "white",
+      "options": [
+        "white",
+        "green",
+        "dirty",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "La farmacéutica lleva la bata blanca de trabajo.",
+        "targetWord": "blanca",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escalón",
+    "sentence": "Se sienta en el [[escalón]] de la puerta a mirar el móvil.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a step",
+      "options": [
+        "a step",
+        "a chair",
+        "a wall",
+        "a table"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Se sienta en el escalón de la puerta a mirar el móvil.",
+        "targetWord": "escalón",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "segundo",
+    "sentence": "Solo tarda un [[segundo]], pero se nota mucho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a second",
+      "options": [
+        "a second",
+        "an hour",
+        "a week",
+        "a month"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Solo tarda un segundo, pero se nota mucho.",
+        "targetWord": "segundo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "buenos días",
+    "sentence": "[[Buenos días]], dice al entrar en la farmacia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "good morning",
+      "options": [
+        "good morning",
+        "good luck",
+        "goodbye",
+        "how much"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Buenos días, dice al entrar en la farmacia.",
+        "targetWord": "Buenos días",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "levantar",
+    "sentence": "La farmacéutica [[levanta]] la cabeza al oír la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lift",
+      "options": [
+        "to lift",
+        "to lower",
+        "to close",
+        "to break"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "La farmacéutica levanta la cabeza al oír la puerta.",
+        "targetWord": "levanta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doler",
+    "sentence": "Le [[duele]] la garganta desde el sábado por la noche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hurt",
+      "options": [
+        "to hurt",
+        "to itch",
+        "to swell",
+        "to heal"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Le duele la garganta desde el sábado por la noche.",
+        "targetWord": "duele",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pagar",
+    "sentence": "Sale sin comprar nada y por eso no tiene que _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pagar",
+      "options": [
+        "pagar",
+        "dormir",
+        "correr",
+        "esperar"
+      ],
+      "translation": "She leaves without buying anything, so she does not have to _____.",
+      "optionTranslations": [
+        "pay",
+        "sleep",
+        "run",
+        "wait"
+      ],
+      "audioClip": {
+        "storySlug": "la-farmacia-no-tiene-estantes",
+        "storySource": "user",
+        "sentence": "Sale sin comprar nada y por eso no tiene que pagar.",
+        "targetWord": "pagar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

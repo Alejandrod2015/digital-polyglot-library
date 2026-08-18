@@ -232,6 +232,37 @@ function slugify(s: string): string {
   // anchor cross-story checks). Topic-by-topic saves put all 3 in one file,
   // so this enforces intra-topic dedup with no manual step.
   const allTitles: string[] = stories.map((s: any) => s.title);
+
+  // Vocabulario que YA enseñan OTROS journeys del mismo idioma. Sin esto cada
+  // historia se valida sola y nadie ve que el nivel entero está reenseñando lo
+  // anterior: las tres primeras del A1 brasileño repetían el 60% del A0
+  // (2026-08-18). Se excluye el journey propio, cuya repetición interna ya la
+  // vigila `vocab-repetition`.
+  const taughtElsewhere: string[] = await (async () => {
+    if (!journeyId) return [];
+    const p2 = new PrismaClient();
+    try {
+      const mio = await p2.journey.findUnique({ where: { id: journeyId }, select: { language: true } });
+      if (!mio) return [];
+      const otras = await p2.journeyStory.findMany({
+        where: {
+          journey: { language: mio.language, status: { not: "archived" } },
+          journeyId: { not: journeyId },
+        },
+        select: { vocab: true },
+      });
+      const out = new Set<string>();
+      for (const r of otras)
+        for (const v of ((r.vocab as Array<{ word?: unknown }> | null) ?? []))
+          if (v?.word) out.add(String(v.word));
+      return [...out];
+    } catch { return []; }
+    finally { await p2.$disconnect(); }
+  })();
+  if (taughtElsewhere.length) {
+    console.log(`vocabulario ya enseñado en otros journeys del idioma: ${taughtElsewhere.length} lemas`);
+  }
+
   const priorSummaries: ExistingStorySummary[] = [];
   const results: Array<{ d: any; ok: boolean; fails: string[]; warns: string[] }> = [];
   for (const d of stories) {
@@ -240,6 +271,7 @@ function slugify(s: string): string {
       language: ctx.language, level: ctx.level, variant: ctx.variant, topic: d.topic,
       journeyTitles: allTitles.filter((t) => t !== d.title),
       existing: [...priorSummaries],
+      taughtElsewhere,
     });
     priorSummaries.push(summarize(d));
     const hardFails = r.checks.filter((c) => c.status === "fail" && !(narrator && NARRATOR_EXEMPT.has(c.id)));

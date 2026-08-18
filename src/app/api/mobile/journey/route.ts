@@ -50,6 +50,19 @@ export async function GET(req: NextRequest): Promise<Response> {
     });
     language = latestJourneyStory?.journey?.language ?? "Spanish";
   }
+  // Puente entre journeys: al terminar uno hay que poder ofrecer el siguiente.
+  // Sin esto el usuario acaba las 21 historias y no pasa nada (un beta tester
+  // llevaba 13/21 en el A0 de España y 0/21 en el A1, sin enterarse de que
+  // existía). Se resuelve aquí y no en el cliente porque el puntero vive en la
+  // fila del journey, que el móvil no ve.
+  const journeysDelIdioma = await prisma.journey.findMany({
+    where: { language },
+    select: {
+      id: true, name: true, variant: true, levels: true, nextJourneyId: true, status: true,
+    },
+  });
+  const journeyPorId = new Map(journeysDelIdioma.map((j) => [j.id, j]));
+
   const user = await clerkClient.users.getUser(session.sub);
   const journeyFocus =
     typeof user.publicMetadata?.journeyFocus === "string"
@@ -229,9 +242,31 @@ export async function GET(req: NextRequest): Promise<Response> {
     };
   });
 
+  // Un track está terminado cuando no le queda ninguna historia por completar
+  // en ningún nivel. Se calcula sobre lo ya resumido, no con otra consulta.
+  const conSiguiente = summarizedTracks.map((track: any) => {
+    const niveles = track.levels ?? [];
+    const total = niveles.reduce(
+      (n: number, l: any) => n + (l.topics ?? []).reduce((m: number, t: any) => m + (t.requiredStoryCount ?? 0), 0), 0);
+    const hechas = niveles.reduce(
+      (n: number, l: any) => n + (l.topics ?? []).reduce((m: number, t: any) => m + (t.completedStoryCount ?? 0), 0), 0);
+    const terminado = total > 0 && hechas >= total;
+    const origen = journeysDelIdioma.find(
+      (j) => j.variant === track.variant && (j.levels ?? []).some((lv) => niveles.some((n: any) => n.id === lv)));
+    const sig = origen?.nextJourneyId ? journeyPorId.get(origen.nextJourneyId) : null;
+    return {
+      ...track,
+      complete: terminado,
+      nextJourney:
+        terminado && sig && sig.status === "active"
+          ? { id: sig.id, name: sig.name, variant: sig.variant, levels: sig.levels }
+          : null,
+    };
+  });
+
   return NextResponse.json({
     language,
     dueReviewCount: dueReviewItems.length,
-    tracks: summarizedTracks,
+    tracks: conSiguiente,
   });
 }

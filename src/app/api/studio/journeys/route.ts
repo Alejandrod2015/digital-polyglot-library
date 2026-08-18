@@ -1,6 +1,7 @@
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { isStudioMember } from "@/lib/studio-access";
+import { assertJourneyType, JourneyTypeError } from "@/lib/journeyType";
 import { prisma } from "@/lib/prisma";
 
 /**
@@ -82,11 +83,22 @@ export async function POST(request: Request) {
   // Collect all unique topics for the journey record
   const allTopics = [...new Set(storySlots.map((s) => s.topic))];
 
+  // El tipo se comprueba AQUÍ, que es donde se decide. Sin él no se sabe
+  // cuántos personajes fijos lleva el journey ni qué forma tienen sus temas.
+  let typeSlug: string;
+  try {
+    typeSlug = await assertJourneyType({ typeSlug: body.typeSlug, name, prisma });
+  } catch (e) {
+    if (e instanceof JourneyTypeError) return NextResponse.json({ error: e.message }, { status: 400 });
+    throw e;
+  }
+
   const journey = await prisma.journey.create({
     data: {
       name,
       language,
       variant,
+      typeSlug,
       levels,
       topics: allTopics,
       storiesPerTopic: spt,

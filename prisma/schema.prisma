@@ -251,9 +251,24 @@ model Journey {
   name            String
   language        String
   variant         String
+  /// Slug de `JourneyType` (viajero, expatriado, cultural...). El NOMBRE del
+  /// journey es la promesa al comprador y nunca es el tipo, así que sin esta
+  /// columna el tipo solo se adivinaba: "Hanseat" es un Expat y "Village Life
+  /// in Andalusia" no dice nada. De él dependen cuántos personajes fijos
+  /// lleva, si el orden de temas es obligado y qué son los siete temas.
+  typeSlug        String?
   levels          String[]
   topics          String[]
   storiesPerTopic Int           @default(1)
+  /// Journey que se ofrece al terminar ESTE. Hoy, al completar las 21
+  /// historias no pasa nada: el 2026-08-18 un beta tester iba 13/21 en el A0
+  /// de España y 0/21 en el A1 recién publicado, sin que nada le dijera que
+  /// existía. No se resuelve metiendo los dos niveles en una fila porque son
+  /// tipos distintos (conversacional y viajero) con otros personajes y otra
+  /// ciudad; el puente es un puntero, no una fusión.
+  nextJourneyId   String?
+  nextJourney     Journey?      @relation("JourneyChain", fields: [nextJourneyId], references: [id], onDelete: SetNull)
+  previousJourneys Journey[]    @relation("JourneyChain")
   status          JourneyStatus @default(active)
   createdBy       String?
   createdAt       DateTime      @default(now())
@@ -263,6 +278,8 @@ model Journey {
 
   @@index([status])
   @@index([language, variant])
+  @@index([typeSlug])
+  @@index([nextJourneyId])
   @@map("dp_journeys_v1")
 }
 

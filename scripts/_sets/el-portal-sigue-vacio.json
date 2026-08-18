@@ -1,0 +1,559 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "portal,persiana,reloj,timbre",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "portal",
+          "answer": "an entrance hall",
+          "options": [
+            "an entrance hall",
+            "a shutter",
+            "a clock",
+            "a doorbell"
+          ]
+        },
+        {
+          "word": "persiana",
+          "answer": "a shutter",
+          "options": [
+            "an entrance hall",
+            "a shutter",
+            "a clock",
+            "a doorbell"
+          ]
+        },
+        {
+          "word": "reloj",
+          "answer": "a clock",
+          "options": [
+            "an entrance hall",
+            "a shutter",
+            "a clock",
+            "a doorbell"
+          ]
+        },
+        {
+          "word": "timbre",
+          "answer": "a doorbell",
+          "options": [
+            "an entrance hall",
+            "a shutter",
+            "a clock",
+            "a doorbell"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por la tarde",
+    "sentence": "Quedamos [[por la tarde]] y bajamos andando al mercadillo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in the afternoon",
+      "options": [
+        "in the afternoon",
+        "at dawn",
+        "at midnight",
+        "on Sunday"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "Quedamos por la tarde y bajamos andando al mercadillo.",
+        "targetWord": "por la tarde",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/89e0918f4d06a9a5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "menos cinco",
+    "sentence": "A las cinco [[menos cinco]] ya está esperando abajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "five to",
+      "options": [
+        "five to",
+        "five past",
+        "half past",
+        "on the dot"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "A las cinco menos cinco ya está esperando abajo.",
+        "targetWord": "menos cinco",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/214dc25d873dbe8b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cada poco",
+    "sentence": "Sigue sola y mira el reloj [[cada poco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "every few minutes",
+      "options": [
+        "every few minutes",
+        "once a day",
+        "only at night",
+        "for the first time"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "Sigue sola y mira el reloj cada poco.",
+        "targetWord": "cada poco",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b65f68e91a752581.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "igual",
+    "sentence": "[[Igual]] he confundido el día, piensa mirando la calle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "maybe",
+      "options": [
+        "maybe",
+        "of course",
+        "never again",
+        "almost always"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "Igual he confundido el día, piensa mirando la calle.",
+        "targetWord": "Igual",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/17ed47b51e899f55.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pronto",
+    "sentence": "Ha bajado muy [[pronto]], media hora antes de la cita.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "early",
+      "options": [
+        "early",
+        "late",
+        "slowly",
+        "quietly"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "Ha bajado muy pronto, media hora antes de la cita.",
+        "targetWord": "pronto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dafd78f08cc3b02f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "propone",
+    "sentence": "No sabe qué hacer y le _____ un plan para el sábado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "propone",
+      "options": [
+        "propone",
+        "quita",
+        "prohíbe",
+        "cobra"
+      ],
+      "translation": "She does not know what to do and he _____ a plan for Saturday.",
+      "optionTranslations": [
+        "suggests",
+        "takes away",
+        "forbids",
+        "charges"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "No sabe qué hacer y le propone un plan para el sábado.",
+        "targetWord": "propone",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f59f15ec64f2af44.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "queda",
+    "sentence": "_____ con su vecina a las cinco en el portal.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "queda",
+      "options": [
+        "queda",
+        "discute",
+        "trabaja",
+        "come"
+      ],
+      "translation": "She _____ with her neighbour at five in the entrance hall.",
+      "optionTranslations": [
+        "arranges to meet",
+        "argues",
+        "works",
+        "eats"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "queda con su vecina a las cinco en el portal.",
+        "targetWord": "queda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/27059462001ac2cb.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "confunde",
+    "sentence": "Mira el calendario dos veces porque siempre _____ los días.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "confunde",
+      "options": [
+        "confunde",
+        "cuenta",
+        "apunta",
+        "cambia"
+      ],
+      "translation": "She checks the calendar twice because she always _____ the days.",
+      "optionTranslations": [
+        "mixes up",
+        "counts",
+        "writes down",
+        "changes"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "Mira el calendario dos veces porque siempre confunde los días.",
+        "targetWord": "confunde",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b6c7a165e020cdad.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "baja",
+    "sentence": "Cuando oye el timbre, _____ los tres pisos corriendo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "baja",
+      "options": [
+        "baja",
+        "sube",
+        "cierra",
+        "espera"
+      ],
+      "translation": "When she hears the doorbell, she _____ the three floors running.",
+      "optionTranslations": [
+        "goes down",
+        "goes up",
+        "closes",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "Cuando oye el timbre, baja los tres pisos corriendo.",
+        "targetWord": "baja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d18ecabbf4e7956.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "andando",
+    "sentence": "Bajamos [[andando]] al mercadillo, que está cerca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on foot",
+      "options": [
+        "on foot",
+        "by bus",
+        "by car",
+        "by bike"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "Bajamos andando al mercadillo, que está cerca.",
+        "targetWord": "andando",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2da02560dd14a7fd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "móvil",
+    "sentence": "Dice que sí y lo guarda en el [[móvil]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a mobile phone",
+      "options": [
+        "a mobile phone",
+        "a diary",
+        "a drawer",
+        "a pocket"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "Dice que sí y lo guarda en el móvil.",
+        "targetWord": "móvil",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fdc257fead15aa92.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "peinado",
+    "sentence": "A las cinco ya está abajo, [[peinada]] y con el bolso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "with her hair done",
+      "options": [
+        "with her hair done",
+        "half asleep",
+        "soaking wet",
+        "out of breath"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "A las cinco ya está abajo, peinada y con el bolso.",
+        "targetWord": "peinada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/edde805d99fca7e6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enfrente",
+    "sentence": "El bar de [[enfrente]] tiene la persiana echada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "opposite",
+      "options": [
+        "opposite",
+        "upstairs",
+        "around the corner",
+        "next door"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "El bar de enfrente tiene la persiana echada.",
+        "targetWord": "enfrente",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e61c18285afee9b5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "echado",
+    "sentence": "El bar tiene la persiana [[echada]] a esa hora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pulled down",
+      "options": [
+        "pulled down",
+        "newly painted",
+        "wide open",
+        "half broken"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "El bar tiene la persiana echada a esa hora.",
+        "targetWord": "echada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed0ff4a974d6e5c7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "darse la vuelta",
+    "sentence": "Oye un ruido y [[se da la vuelta]] enseguida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to turn round",
+      "options": [
+        "to turn round",
+        "to sit down",
+        "to go back up",
+        "to say goodbye"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "Oye un ruido y se da la vuelta enseguida.",
+        "targetWord": "se da la vuelta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b661b95aaabf9322.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abrirse",
+    "sentence": "A las seis la puerta [[se abre]] detrás de ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to open",
+      "options": [
+        "to open",
+        "to shut",
+        "to shake",
+        "to lock"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "A las seis la puerta se abre detrás de ella.",
+        "targetWord": "se abre",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bf50766feba853fc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ruido",
+    "sentence": "Escucha un [[ruido]] arriba y piensa que baja alguien.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a noise",
+      "options": [
+        "a noise",
+        "a smell",
+        "a light",
+        "a shadow"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "Escucha un ruido arriba y piensa que baja alguien.",
+        "targetWord": "ruido",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1cef8c039ff7d4b1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "y veinte",
+    "sentence": "A las seis [[y veinte]] sigue esperando en el portal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "twenty past",
+      "options": [
+        "twenty past",
+        "twenty to",
+        "half past",
+        "on the hour"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "A las seis y veinte sigue esperando en el portal.",
+        "targetWord": "y veinte",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ce60dc881d7f2d2e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escalera",
+    "sentence": "Sube por la [[escalera]] porque no hay ascensor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the stairs",
+      "options": [
+        "the stairs",
+        "the lift",
+        "the balcony",
+        "the corridor"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "Sube por la escalera porque no hay ascensor.",
+        "targetWord": "escalera",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc16cbe4fa31b23c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "guarda",
+    "sentence": "Apunta la hora y la _____ en el móvil.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "guarda",
+      "options": [
+        "guarda",
+        "borra",
+        "pierde",
+        "cambia"
+      ],
+      "translation": "She writes the time down and _____ it on her phone.",
+      "optionTranslations": [
+        "saves",
+        "deletes",
+        "loses",
+        "changes"
+      ],
+      "audioClip": {
+        "storySlug": "el-portal-sigue-vacio",
+        "storySource": "user",
+        "sentence": "Apunta la hora y la guarda en el móvil.",
+        "targetWord": "guarda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/acb46790fb9044df.mp3"
+      }
+    },
+    "featured": false
+  }
+]

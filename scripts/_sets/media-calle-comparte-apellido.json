@@ -1,0 +1,548 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "apellido,estanco,bizcocho,mesilla",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "apellido",
+          "answer": "a surname",
+          "options": [
+            "a surname",
+            "a tobacconist",
+            "sponge cake",
+            "a bedside table"
+          ]
+        },
+        {
+          "word": "estanco",
+          "answer": "a tobacconist",
+          "options": [
+            "a surname",
+            "a tobacconist",
+            "sponge cake",
+            "a bedside table"
+          ]
+        },
+        {
+          "word": "bizcocho",
+          "answer": "sponge cake",
+          "options": [
+            "a surname",
+            "a tobacconist",
+            "sponge cake",
+            "a bedside table"
+          ]
+        },
+        {
+          "word": "mesilla",
+          "answer": "a bedside table",
+          "options": [
+            "a surname",
+            "a tobacconist",
+            "sponge cake",
+            "a bedside table"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quién es quién",
+    "sentence": "Se sienta a contarle [[quién es quién]] en el pueblo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "who is who",
+      "options": [
+        "who is who",
+        "what is where",
+        "when things open",
+        "how much it costs"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Se sienta a contarle quién es quién en el pueblo.",
+        "targetWord": "quién es quién",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64b0555fb733cc6e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "total, que",
+    "sentence": "[[Total, que]] media calle es de la misma familia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "so basically",
+      "options": [
+        "so basically",
+        "even so",
+        "by the way",
+        "from now on"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Total, que media calle es de la misma familia.",
+        "targetWord": "Total, que",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7d3acb58237c02ca.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hablar mal",
+    "sentence": "Aquí nadie va a [[hablar mal]] de otro delante de nadie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to speak badly",
+      "options": [
+        "to speak badly",
+        "to ask after",
+        "to laugh with",
+        "to pay for"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Aquí nadie va a hablar mal de otro delante de nadie.",
+        "targetWord": "hablar mal",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a20bccfa6ac1a926.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "el de al lado",
+    "sentence": "[[El de al lado]] siempre resulta ser algo de alguien.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "whoever is next to you",
+      "options": [
+        "whoever is next to you",
+        "the one from before",
+        "the oldest one",
+        "the newest one"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "El de al lado siempre resulta ser algo de alguien.",
+        "targetWord": "el de al lado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7651e45d0bd1d202.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "algo de alguien",
+    "sentence": "Cualquiera resulta ser [[algo de alguien]] en esta calle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "related to somebody",
+      "options": [
+        "related to somebody",
+        "a stranger here",
+        "new in town",
+        "just a customer"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Cualquiera resulta ser algo de alguien en esta calle.",
+        "targetWord": "algo de alguien",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff6417cab3d7b154.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "arreglar",
+    "sentence": "En el pueblo hay un taller para _____ coches.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arreglar",
+      "options": [
+        "arreglar",
+        "conducir",
+        "alquilar",
+        "aparcar"
+      ],
+      "translation": "In the village there is a garage to _____ cars.",
+      "optionTranslations": [
+        "fix",
+        "drive",
+        "rent out",
+        "park"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "En el pueblo hay un taller para arreglar coches.",
+        "targetWord": "arreglar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36195d2dca5b4903.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "contar",
+    "sentence": "Baja el domingo para _____ quién es quién en la calle.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "contar",
+      "options": [
+        "contar",
+        "borrar",
+        "comprar",
+        "cerrar"
+      ],
+      "translation": "She comes down on Sunday to _____ who is who in the street.",
+      "optionTranslations": [
+        "explain",
+        "erase",
+        "buy",
+        "close"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Baja el domingo para contar quién es quién en la calle.",
+        "targetWord": "contar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16fb837430667a58.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "llenarse",
+    "sentence": "La servilleta empieza a _____ de flechas y nombres.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "llenarse",
+      "options": [
+        "llenarse",
+        "vaciarse",
+        "romperse",
+        "secarse"
+      ],
+      "translation": "The napkin starts to _____ with arrows and names.",
+      "optionTranslations": [
+        "fill up",
+        "empty out",
+        "tear",
+        "dry"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "La servilleta empieza a llenarse de flechas y nombres.",
+        "targetWord": "llenarse",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/83c0259de3a78c1c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "guardar",
+    "sentence": "Dobla la servilleta para _____ en la mesilla.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "guardar",
+      "options": [
+        "guardar",
+        "tirar",
+        "romper",
+        "repartir"
+      ],
+      "translation": "She folds the napkin to _____ it on the bedside table.",
+      "optionTranslations": [
+        "keep",
+        "throw away",
+        "tear up",
+        "hand out"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Dobla la servilleta para guardar en la mesilla.",
+        "targetWord": "guardar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4cadc2a4af2cf56.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuñada",
+    "sentence": "Mi [[cuñada]] es tía de esa chica del estanco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sister-in-law",
+      "options": [
+        "a sister-in-law",
+        "a granddaughter",
+        "a godmother",
+        "a neighbour"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Mi cuñada es tía de esa chica del estanco.",
+        "targetWord": "cuñada",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tía",
+    "sentence": "Mi cuñada es [[tía]] de esa chica del estanco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an aunt",
+      "options": [
+        "an aunt",
+        "a cousin",
+        "a niece",
+        "a daughter"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Mi cuñada es tía de esa chica del estanco.",
+        "targetWord": "tía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "flecha",
+    "sentence": "La servilleta se llena de [[flechas]] y de nombres.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an arrow",
+      "options": [
+        "an arrow",
+        "a stain",
+        "a number",
+        "a drawing"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "La servilleta se llena de flechas y de nombres.",
+        "targetWord": "flechas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "silencio",
+    "sentence": "Entiende por fin ese [[silencio]] de la primera semana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a silence",
+      "options": [
+        "a silence",
+        "a shout",
+        "a joke",
+        "a greeting"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Entiende por fin ese silencio de la primera semana.",
+        "targetWord": "silencio",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "timidez",
+    "sentence": "No era [[timidez]], era que todos se conocen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shyness",
+      "options": [
+        "shyness",
+        "bad temper",
+        "tiredness",
+        "bad luck"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "No era timidez, era que todos se conocen.",
+        "targetWord": "timidez",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parentesco",
+    "sentence": "El [[parentesco]] une a media calle sin que se note.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "family ties",
+      "options": [
+        "family ties",
+        "a old quarrel",
+        "a shared job",
+        "a street name"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "El parentesco une a media calle sin que se note.",
+        "targetWord": "parentesco",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lejano",
+    "sentence": "Son primos de verdad, no de esos [[lejanos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "distant",
+      "options": [
+        "distant",
+        "close",
+        "new",
+        "famous"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Son primos de verdad, no de esos lejanos.",
+        "targetWord": "lejanos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caliente",
+    "sentence": "Baja un bizcocho [[caliente]] el domingo por la tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "warm",
+      "options": [
+        "warm",
+        "frozen",
+        "stale",
+        "salty"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Baja un bizcocho caliente el domingo por la tarde.",
+        "targetWord": "caliente",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nombre",
+    "sentence": "Apunta dos [[nombres]] y ya se pierde en el tercero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a name",
+      "options": [
+        "a name",
+        "a price",
+        "a street",
+        "a date"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Apunta dos nombres y ya se pierde en el tercero.",
+        "targetWord": "nombres",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perderse",
+    "sentence": "Apunta dos nombres y ya [[se pierde]] en el tercero.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get lost",
+      "options": [
+        "to get lost",
+        "to give up",
+        "to write down",
+        "to speak up"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Apunta dos nombres y ya se pierde en el tercero.",
+        "targetWord": "se pierde",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "entender",
+    "sentence": "Ahora empieza a _____ por qué nadie criticaba a nadie.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "entender",
+      "options": [
+        "entender",
+        "olvidar",
+        "repetir",
+        "dudar"
+      ],
+      "translation": "Now she is starting to _____ why nobody criticised anybody.",
+      "optionTranslations": [
+        "understand",
+        "forget",
+        "repeat",
+        "doubt"
+      ],
+      "audioClip": {
+        "storySlug": "media-calle-comparte-apellido",
+        "storySource": "user",
+        "sentence": "Ahora empieza a entender por qué nadie criticaba a nadie.",
+        "targetWord": "entender",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,514 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "comedor,guiso,fregona,cubo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "comedor",
+          "answer": "a dining room",
+          "options": [
+            "a dining room",
+            "a stew",
+            "a mop",
+            "a bucket"
+          ]
+        },
+        {
+          "word": "guiso",
+          "answer": "a stew",
+          "options": [
+            "a dining room",
+            "a stew",
+            "a mop",
+            "a bucket"
+          ]
+        },
+        {
+          "word": "fregona",
+          "answer": "a mop",
+          "options": [
+            "a dining room",
+            "a stew",
+            "a mop",
+            "a bucket"
+          ]
+        },
+        {
+          "word": "cubo",
+          "answer": "a bucket",
+          "options": [
+            "a dining room",
+            "a stew",
+            "a mop",
+            "a bucket"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hambre",
+    "sentence": "Baja al bar con [[hambre]] y sin haber comido nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hunger",
+      "options": [
+        "hunger",
+        "thirst",
+        "sleep",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Baja al bar con hambre y sin haber comido nada.",
+        "targetWord": "hambre",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7cbb6e1c3c55b94.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "libre",
+    "sentence": "Hay mesas [[libres]] por todas partes a la una y media.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "free, empty",
+      "options": [
+        "free, empty",
+        "broken",
+        "reserved",
+        "dirty"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Hay mesas libres por todas partes a la una y media.",
+        "targetWord": "libres",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1b5e7ad5c72b0de6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llenarse",
+    "sentence": "El bar se [[llena]] de golpe y ya no cabe nadie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fill up",
+      "options": [
+        "to fill up",
+        "to empty out",
+        "to close down",
+        "to move away"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "El bar se llena de golpe y ya no cabe nadie.",
+        "targetWord": "llena",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/daa3f16a588238a8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de golpe",
+    "sentence": "El bar se llena [[de golpe]], sin ningún aviso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "all at once",
+      "options": [
+        "all at once",
+        "little by little",
+        "every evening",
+        "after closing"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "El bar se llena de golpe, sin ningún aviso.",
+        "targetWord": "de golpe",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9336aaf628648815.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacer cola",
+    "sentence": "Hoy vas a tener que [[hacer cola]] como todo el mundo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to queue up",
+      "options": [
+        "to queue up",
+        "to book a table",
+        "to pay first",
+        "to eat outside"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Hoy vas a tener que hacer cola como todo el mundo.",
+        "targetWord": "hacer cola",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/101087e4c905042b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "y media",
+    "sentence": "Baja a las dos [[y media]], no a la una.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half past",
+      "options": [
+        "half past",
+        "on the hour",
+        "quarter to",
+        "at midday"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Baja a las dos y media, no a la una.",
+        "targetWord": "y media",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b57061856fc41cf2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ni el gato",
+    "sentence": "A la una y media aquí no come [[ni el gato]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "not a soul",
+      "options": [
+        "not a soul",
+        "the whole town",
+        "only the owner",
+        "half the street"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "A la una y media aquí no come ni el gato.",
+        "targetWord": "ni el gato",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b4cb93785e278ff5.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "aguanta",
+    "sentence": "Está de pie en la cola, pero _____ sin quejarse.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aguanta",
+      "options": [
+        "aguanta",
+        "corre",
+        "sube",
+        "come"
+      ],
+      "translation": "She is standing in the queue, but she _____ without complaining.",
+      "optionTranslations": [
+        "holds out",
+        "runs",
+        "goes up",
+        "eats"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Está de pie en la cola, pero aguanta sin quejarse.",
+        "targetWord": "aguanta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/86de135efcc993cb.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cabe",
+    "sentence": "El comedor está tan lleno que no _____ una silla más.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cabe",
+      "options": [
+        "cabe",
+        "pesa",
+        "suena",
+        "huele"
+      ],
+      "translation": "The dining room is so full that not one more chair _____.",
+      "optionTranslations": [
+        "fits",
+        "weighs",
+        "sounds",
+        "smells"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "El comedor está tan lleno que no cabe una silla más.",
+        "targetWord": "cabe",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9f4c0f0867ab9a3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por todas partes",
+    "sentence": "Hay mesas libres [[por todas partes]] en el comedor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "everywhere",
+      "options": [
+        "everywhere",
+        "in one corner",
+        "near the door",
+        "upstairs"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Hay mesas libres por todas partes en el comedor.",
+        "targetWord": "por todas partes",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5351c9640b74e4b8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "media hora",
+    "sentence": "[[Media hora]] después el bar ya no tiene sitio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "half an hour",
+      "options": [
+        "half an hour",
+        "a whole day",
+        "a few seconds",
+        "two weeks"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Media hora después el bar ya no tiene sitio.",
+        "targetWord": "Media hora",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/adc824189f911976.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al pasar",
+    "sentence": "Se lo dice [[al pasar]], con seis platos en las manos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in passing",
+      "options": [
+        "in passing",
+        "very slowly",
+        "after closing",
+        "from the kitchen"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Se lo dice al pasar, con seis platos en las manos.",
+        "targetWord": "al pasar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f5563e54afa6b78a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a la hora de nadie",
+    "sentence": "Has comido [[a la hora de nadie]], le dice el dueño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at nobody's hour",
+      "options": [
+        "at nobody's hour",
+        "at the busiest time",
+        "before opening",
+        "at the usual time"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Has comido a la hora de nadie, le dice el dueño.",
+        "targetWord": "a la hora de nadie",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1f426a993358d92a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al día siguiente",
+    "sentence": "[[Al día siguiente]] espera un rato antes de bajar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the next day",
+      "options": [
+        "the next day",
+        "that same night",
+        "a month later",
+        "every summer"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Al día siguiente espera un rato antes de bajar.",
+        "targetWord": "Al día siguiente",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef5620efca6f17c7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pareja",
+    "sentence": "Una [[pareja]] deja la mesa y ella se sienta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a couple",
+      "options": [
+        "a couple",
+        "a waiter",
+        "a family",
+        "a neighbour"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Una pareja deja la mesa y ella se sienta.",
+        "targetWord": "pareja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/45706505ea21660b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sentarse",
+    "sentence": "Cuando queda una silla libre, [[se sienta]] enseguida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sit down",
+      "options": [
+        "to sit down",
+        "to stand up",
+        "to walk out",
+        "to look round"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Cuando queda una silla libre, se sienta enseguida.",
+        "targetWord": "se sienta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ea182a1dfe2b93a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contento",
+    "sentence": "Espera de pie, [[contenta]], hasta que hay sitio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pleased",
+      "options": [
+        "pleased",
+        "annoyed",
+        "tired",
+        "bored"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Espera de pie, contenta, hasta que hay sitio.",
+        "targetWord": "contenta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96ea0cdc18f85026.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encontrar",
+    "sentence": "Llega a las dos y [[encuentra]] el comedor lleno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to find",
+      "options": [
+        "to find",
+        "to leave",
+        "to book",
+        "to clean"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "Llega a las dos y encuentra el comedor lleno.",
+        "targetWord": "encuentra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac23f22664af4798.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerrar",
+    "sentence": "A las cuatro la cocina [[cierra]] y ya no sirven.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to close",
+      "options": [
+        "to close",
+        "to open",
+        "to fill",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "a-las-dos-no-cabe-nadie",
+        "storySource": "user",
+        "sentence": "A las cuatro la cocina cierra y ya no sirven.",
+        "targetWord": "cierra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/169af019930dfd3f.mp3"
+      }
+    },
+    "featured": false
+  }
+]

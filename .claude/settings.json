@@ -58,6 +58,10 @@
           {
             "type": "command",
             "command": ".claude/safety/stop-story-audio-link-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/safety/stop-word-budget-guard.sh"
           }
         ]
       }

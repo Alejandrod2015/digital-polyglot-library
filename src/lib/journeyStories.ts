@@ -101,6 +101,7 @@ function readerStatusWhere() {
   // journey is "archived". Keep in-progress journeys' stories in "draft" and
   // preview them via this list instead of publishing them.
   const PREVIEW_JOURNEY_IDS = [
+      "cmsyrge55000732u9oiu8wue3", // Traveler PT-BR A1 (en obra, 2026-08)
       "cmqtnagxp0000324lf3u73vg1", // German A0 (in progress)
       "cmrdqk484000032r4rt2vw4ej", // Friends ES C1 LATAM (in progress)
       "cmrdbz11t000032asrvo832i9", // Hanseat DE C1 (in progress; un-published 2026-07-09)

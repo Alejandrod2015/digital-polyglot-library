@@ -1,0 +1,548 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "bolsa,escalón,barandilla,almacén",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "bolsa",
+          "answer": "a shopping bag",
+          "options": [
+            "a shopping bag",
+            "a step",
+            "a handrail",
+            "a warehouse"
+          ]
+        },
+        {
+          "word": "escalón",
+          "answer": "a step",
+          "options": [
+            "a shopping bag",
+            "a step",
+            "a handrail",
+            "a warehouse"
+          ]
+        },
+        {
+          "word": "barandilla",
+          "answer": "a handrail",
+          "options": [
+            "a shopping bag",
+            "a step",
+            "a handrail",
+            "a warehouse"
+          ]
+        },
+        {
+          "word": "almacén",
+          "answer": "a warehouse",
+          "options": [
+            "a shopping bag",
+            "a step",
+            "a handrail",
+            "a warehouse"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin más",
+    "sentence": "Antes habría saludado y habría seguido [[sin más]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just like that",
+      "options": [
+        "just like that",
+        "very slowly",
+        "by mistake",
+        "one more time"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Antes habría saludado y habría seguido sin más.",
+        "targetWord": "sin más",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81be1d87cf5f7f14.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cambiar la cara",
+    "sentence": "Tarda un segundo y [[le cambia la cara]] al oírlo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "her face lights up",
+      "options": [
+        "her face lights up",
+        "she looks away",
+        "she says nothing",
+        "she starts again"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Tarda un segundo y le cambia la cara al oírlo.",
+        "targetWord": "le cambia la cara",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/68d7d4ad2e4339e9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mira que",
+    "sentence": "[[Mira que]] te acuerdas tú de todo, le dice riéndose.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fancy that",
+      "options": [
+        "fancy that",
+        "never mind",
+        "hurry up",
+        "listen here"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Mira que te acuerdas tú de todo, le dice riéndose.",
+        "targetWord": "Mira que",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29f1f048f902716b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pegarse",
+    "sentence": "Esto del pueblo ya [[se te ha pegado]], le dice.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "it has rubbed off on you",
+      "options": [
+        "it has rubbed off on you",
+        "it has worn you out",
+        "it has passed you by",
+        "it has caught you out"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Esto del pueblo ya se te ha pegado, le dice.",
+        "targetWord": "se te ha pegado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/44379f125d13b07c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin prisa",
+    "sentence": "Hablan ocho minutos [[sin prisa]] en dos metros de rellano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "unhurried",
+      "options": [
+        "unhurried",
+        "in a whisper",
+        "standing outside",
+        "without stopping"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Hablan ocho minutos sin prisa en dos metros de rellano.",
+        "targetWord": "sin prisa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8938a9b8e001b7f.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "encontrarse",
+    "sentence": "Un martes puede _____ con la vecina en la escalera.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "encontrarse",
+      "options": [
+        "encontrarse",
+        "despedirse",
+        "enfadarse",
+        "aburrirse"
+      ],
+      "translation": "On a Tuesday she may _____ the neighbour on the stairs.",
+      "optionTranslations": [
+        "run into",
+        "say goodbye to",
+        "get angry with",
+        "get bored with"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Un martes puede encontrarse con la vecina en la escalera.",
+        "targetWord": "encontrarse",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b51cb41d61d9c3f3.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tardar",
+    "sentence": "Con este tráfico vas a _____ mucho en llegar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tardar",
+      "options": [
+        "tardar",
+        "dormir",
+        "pagar",
+        "caber"
+      ],
+      "translation": "With this traffic you are going to _____ a long time getting there.",
+      "optionTranslations": [
+        "take",
+        "sleep",
+        "pay",
+        "fit"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Con este tráfico vas a tardar mucho en llegar.",
+        "targetWord": "tardar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3cc02a2e92575b51.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "acordarse",
+    "sentence": "Es difícil _____ del nombre de todos los vecinos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acordarse",
+      "options": [
+        "acordarse",
+        "reírse",
+        "quejarse",
+        "alejarse"
+      ],
+      "translation": "It is hard to _____ the name of every neighbour.",
+      "optionTranslations": [
+        "remember",
+        "laugh at",
+        "complain about",
+        "move away from"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Es difícil acordarse del nombre de todos los vecinos.",
+        "targetWord": "acordarse",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8d948cd3f99db0fa.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "durar",
+    "sentence": "Una charla en la escalera puede _____ ocho minutos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "durar",
+      "options": [
+        "durar",
+        "costar",
+        "pesar",
+        "sonar"
+      ],
+      "translation": "A chat on the stairs can _____ eight minutes.",
+      "optionTranslations": [
+        "last",
+        "cost",
+        "weigh",
+        "sound"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Una charla en la escalera puede durar ocho minutos.",
+        "targetWord": "durar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/297a9e40335b9ccc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ocho minutos",
+    "sentence": "La conversación dura [[ocho minutos]] en el rellano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "eight minutes",
+      "options": [
+        "eight minutes",
+        "eight seconds",
+        "a whole hour",
+        "half a day"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "La conversación dura ocho minutos en el rellano.",
+        "targetWord": "ocho minutos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de dos en dos",
+    "sentence": "Sube los escalones [[de dos en dos]] con la bolsa vacía.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "two at a time",
+      "options": [
+        "two at a time",
+        "one by one",
+        "very slowly",
+        "holding the rail"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Sube los escalones de dos en dos con la bolsa vacía.",
+        "targetWord": "de dos en dos",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ligera",
+    "sentence": "La bolsa le parece más [[ligera]] que al bajar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "light",
+      "options": [
+        "light",
+        "heavy",
+        "dirty",
+        "full"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "La bolsa le parece más ligera que al bajar.",
+        "targetWord": "ligera",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apoyada",
+    "sentence": "Se queda [[apoyada]] en la barandilla mientras hablan.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "leaning",
+      "options": [
+        "leaning",
+        "sitting",
+        "kneeling",
+        "hidden"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Se queda apoyada en la barandilla mientras hablan.",
+        "targetWord": "apoyada",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fría",
+    "sentence": "La barandilla está [[fría]] bajo la mano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cold",
+      "options": [
+        "cold",
+        "warm",
+        "wet",
+        "loose"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "La barandilla está fría bajo la mano.",
+        "targetWord": "fría",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rellano",
+    "sentence": "La conversación entera cabe en un [[rellano]] de dos metros.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a landing",
+      "options": [
+        "a landing",
+        "a kitchen",
+        "a terrace",
+        "a garage"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "La conversación entera cabe en un rellano de dos metros.",
+        "targetWord": "rellano",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "martes",
+    "sentence": "Un [[martes]] por la tarde se encuentran en la escalera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Tuesday",
+      "options": [
+        "Tuesday",
+        "Sunday",
+        "Saturday",
+        "Friday"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Un martes por la tarde se encuentran en la escalera.",
+        "targetWord": "martes",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "antes",
+    "sentence": "[[Antes]] habría saludado y habría seguido escaleras arriba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "before",
+      "options": [
+        "before",
+        "from now on",
+        "last summer",
+        "by chance"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Antes habría saludado y habría seguido escaleras arriba.",
+        "targetWord": "Antes",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "compra",
+    "sentence": "Baja con la [[compra]] en dos bolsas grandes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the shopping",
+      "options": [
+        "the shopping",
+        "the rubbish",
+        "the washing",
+        "the post"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Baja con la compra en dos bolsas grandes.",
+        "targetWord": "compra",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dormir",
+    "sentence": "Dice que ahora [[duerme]] mejor con el turno de mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sleep",
+      "options": [
+        "to sleep",
+        "to eat",
+        "to work",
+        "to travel"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Dice que ahora duerme mejor con el turno de mañana.",
+        "targetWord": "duerme",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bajar",
+    "sentence": "Prefiere _____ por la escalera con las dos bolsas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bajar",
+      "options": [
+        "bajar",
+        "dormir",
+        "cocinar",
+        "escribir"
+      ],
+      "translation": "She prefers to _____ the stairs with both bags.",
+      "optionTranslations": [
+        "go down",
+        "sleep",
+        "cook",
+        "write"
+      ],
+      "audioClip": {
+        "storySlug": "rocio-tarda-un-segundo",
+        "storySource": "user",
+        "sentence": "Prefiere bajar por la escalera con las dos bolsas.",
+        "targetWord": "bajar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

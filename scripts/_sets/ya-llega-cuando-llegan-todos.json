@@ -1,0 +1,559 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "horario,acera,fachada,descansillo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "horario",
+          "answer": "a timetable",
+          "options": [
+            "a timetable",
+            "the pavement",
+            "the front wall",
+            "a stair landing"
+          ]
+        },
+        {
+          "word": "acera",
+          "answer": "the pavement",
+          "options": [
+            "a timetable",
+            "the pavement",
+            "the front wall",
+            "a stair landing"
+          ]
+        },
+        {
+          "word": "fachada",
+          "answer": "the front wall",
+          "options": [
+            "a timetable",
+            "the pavement",
+            "the front wall",
+            "a stair landing"
+          ]
+        },
+        {
+          "word": "descansillo",
+          "answer": "a stair landing",
+          "options": [
+            "a timetable",
+            "the pavement",
+            "the front wall",
+            "a stair landing"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oye",
+    "sentence": "[[Oye]], tú ya te has hecho al pueblo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hey",
+      "options": [
+        "hey",
+        "well then",
+        "of course",
+        "see you"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Oye, tú ya te has hecho al pueblo.",
+        "targetWord": "Oye",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b78f58dd6c41c6e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "es que",
+    "sentence": "[[Es que]] nadie me ha dicho nunca a qué hora abre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the thing is",
+      "options": [
+        "the thing is",
+        "even so",
+        "from now on",
+        "as always"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Es que nadie me ha dicho nunca a qué hora abre.",
+        "targetWord": "Es que",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1941fe52ecfe6f7f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a las nueve",
+    "sentence": "Está cerrado, pero [[a las nueve]] se llena de gente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at nine",
+      "options": [
+        "at nine",
+        "at dawn",
+        "at noon",
+        "at midnight"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Está cerrado, pero a las nueve se llena de gente.",
+        "targetWord": "a las nueve",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/536e5bfe2c652ca5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hora",
+    "sentence": "Nadie le ha dicho a qué [[hora]] se hace nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "time of day",
+      "options": [
+        "time of day",
+        "a price",
+        "a place",
+        "a reason"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Nadie le ha dicho a qué hora se hace nada.",
+        "targetWord": "hora",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61a947fd430deb2f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacerse a",
+    "sentence": "Tú ya te has [[hecho al]] pueblo, le dice la vecina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get used to",
+      "options": [
+        "to get used to",
+        "to grow tired of",
+        "to move away from",
+        "to ask about"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Tú ya te has hecho al pueblo, le dice la vecina.",
+        "targetWord": "hecho al",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a91ad22a1484d4cf.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "explica",
+    "sentence": "Nadie le _____ nunca a qué hora abre el mercado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "explica",
+      "options": [
+        "explica",
+        "pregunta",
+        "prohíbe",
+        "cobra"
+      ],
+      "translation": "Nobody ever _____ to her what time the market opens.",
+      "optionTranslations": [
+        "explains",
+        "asks",
+        "forbids",
+        "charges"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Nadie le explica nunca a qué hora abre el mercado.",
+        "targetWord": "explica",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1b5194121e0a9607.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "responde",
+    "sentence": "Le hacen una pregunta fácil y _____ sin pensar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "responde",
+      "options": [
+        "responde",
+        "escucha",
+        "olvida",
+        "camina"
+      ],
+      "translation": "They ask her an easy question and she _____ without thinking.",
+      "optionTranslations": [
+        "answers",
+        "listens",
+        "forgets",
+        "walks"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Le hacen una pregunta fácil y responde sin pensar.",
+        "targetWord": "responde",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/984174bd9d100d13.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "avisa",
+    "sentence": "Si la tienda cierra antes, la vecina la _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "avisa",
+      "options": [
+        "avisa",
+        "acompaña",
+        "felicita",
+        "invita"
+      ],
+      "translation": "If the shop closes early, the neighbour _____ her.",
+      "optionTranslations": [
+        "warns",
+        "goes with",
+        "congratulates",
+        "invites"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Si la tienda cierra antes, la vecina la avisa.",
+        "targetWord": "avisa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/abdf91cb575b165d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cruza",
+    "sentence": "Sube por la escalera y se _____ con la vecina, que baja.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cruza",
+      "options": [
+        "cruza",
+        "enfada",
+        "queja",
+        "ríe"
+      ],
+      "translation": "She goes up the stairs and _____ the neighbour, who is coming down.",
+      "optionTranslations": [
+        "bumps into",
+        "gets angry with",
+        "complains to",
+        "laughs with"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Sube por la escalera y se cruza con la vecina, que baja.",
+        "targetWord": "cruza",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/45e89448cccc019f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sol",
+    "sentence": "Sube cuando el [[sol]] deja la fachada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the sun",
+      "options": [
+        "the sun",
+        "the wind",
+        "the rain",
+        "the shade"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Sube cuando el sol deja la fachada.",
+        "targetWord": "sol",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6dc7ad1e9aca5dc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin darle importancia",
+    "sentence": "Se lo dice [[sin darle importancia]], como quien comenta el tiempo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "casually",
+      "options": [
+        "casually",
+        "very seriously",
+        "in a whisper",
+        "with a shout"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Se lo dice sin darle importancia, como quien comenta el tiempo.",
+        "targetWord": "sin darle importancia",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/46bc614071b50541.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raro",
+    "sentence": "Antes bajaba a unas horas [[rarísimas]] para este pueblo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "odd",
+      "options": [
+        "odd",
+        "early",
+        "fixed",
+        "perfect"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Antes bajaba a unas horas rarísimas para este pueblo.",
+        "targetWord": "rarísimas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee225c09eac4f76c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pararse",
+    "sentence": "[[Se para]] en el descansillo para coger aire.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stop",
+      "options": [
+        "to stop",
+        "to run",
+        "to shout",
+        "to knock"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Se para en el descansillo para coger aire.",
+        "targetWord": "Se para",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4d05e110e790dba6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coger aire",
+    "sentence": "Se para en el descansillo para [[coger aire]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to catch your breath",
+      "options": [
+        "to catch your breath",
+        "to look out",
+        "to leave the bags",
+        "to check the time"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Se para en el descansillo para coger aire.",
+        "targetWord": "coger aire",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4d05e110e790dba6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chica",
+    "sentence": "Una [[chica]] nueva pregunta por el horario del bar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a young woman",
+      "options": [
+        "a young woman",
+        "an old man",
+        "a small child",
+        "a shopkeeper"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Una chica nueva pregunta por el horario del bar.",
+        "targetWord": "chica",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/49e97ac975188411.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerrado",
+    "sentence": "A esta hora está [[cerrado]], pero luego se llena.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "closed",
+      "options": [
+        "closed",
+        "empty",
+        "noisy",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "A esta hora está cerrado, pero luego se llena.",
+        "targetWord": "cerrado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2e63ae7493f5c4b6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "reír",
+    "sentence": "Contesta [[riéndose]] de sí misma en la escalera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to laugh",
+      "options": [
+        "to laugh",
+        "to cry",
+        "to shout",
+        "to whisper"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Contesta riéndose de sí misma en la escalera.",
+        "targetWord": "riéndose",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/166a0c0ac939fd95.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "antes",
+    "sentence": "[[Antes]] bajaba a unas horas rarísimas para el pueblo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "before",
+      "options": [
+        "before",
+        "from now on",
+        "every night",
+        "by accident"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Antes bajaba a unas horas rarísimas para el pueblo.",
+        "targetWord": "Antes",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85ea98390831c4e9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "edificio",
+    "sentence": "Las dos viven en el mismo [[edificio]] desde julio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a building",
+      "options": [
+        "a building",
+        "a street",
+        "a village",
+        "a floor"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "Las dos viven en el mismo edificio desde julio.",
+        "targetWord": "edificio",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f26868a75e82d5ea.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "queda",
+    "sentence": "No entra en casa: se _____ hablando en la puerta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "queda",
+      "options": [
+        "queda",
+        "sienta",
+        "calla",
+        "aparta"
+      ],
+      "translation": "She does not go inside: she _____ talking in the doorway.",
+      "optionTranslations": [
+        "stays",
+        "sits down",
+        "goes quiet",
+        "moves aside"
+      ],
+      "audioClip": {
+        "storySlug": "ya-llega-cuando-llegan-todos",
+        "storySource": "user",
+        "sentence": "No entra en casa: se queda hablando en la puerta.",
+        "targetWord": "queda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dac10cb1518e123e.mp3"
+      }
+    },
+    "featured": false
+  }
+]

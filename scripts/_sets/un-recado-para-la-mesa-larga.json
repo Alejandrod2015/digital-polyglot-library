@@ -1,0 +1,548 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "harina,canela,empanada,aceitunas",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "harina",
+          "answer": "flour",
+          "options": [
+            "flour",
+            "cinnamon",
+            "a savoury pie",
+            "olives"
+          ]
+        },
+        {
+          "word": "canela",
+          "answer": "cinnamon",
+          "options": [
+            "flour",
+            "cinnamon",
+            "a savoury pie",
+            "olives"
+          ]
+        },
+        {
+          "word": "empanada",
+          "answer": "a savoury pie",
+          "options": [
+            "flour",
+            "cinnamon",
+            "a savoury pie",
+            "olives"
+          ]
+        },
+        {
+          "word": "aceitunas",
+          "answer": "olives",
+          "options": [
+            "flour",
+            "cinnamon",
+            "a savoury pie",
+            "olives"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "algo de picar",
+    "sentence": "Trae [[algo de picar]], mujer, que aquí nadie mira.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "nibbles",
+      "options": [
+        "nibbles",
+        "a full meal",
+        "a bottle",
+        "a chair"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Trae algo de picar, mujer, que aquí nadie mira.",
+        "targetWord": "algo de picar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a7c28e40f4f9076d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lo que te salga",
+    "sentence": "Trae [[lo que te salga]], nadie va a decirte nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "whatever comes out",
+      "options": [
+        "whatever comes out",
+        "what we agreed",
+        "the usual thing",
+        "nothing at all"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Trae lo que te salga, nadie va a decirte nada.",
+        "targetWord": "lo que te salga",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3f71f3094cbe2141.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuántos vamos a ser",
+    "sentence": "Nadie le ha dicho [[cuántos vamos a ser]] mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "how many of us there are",
+      "options": [
+        "how many of us there are",
+        "what time it starts",
+        "where it will be",
+        "who is paying"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Nadie le ha dicho cuántos vamos a ser mañana.",
+        "targetWord": "cuántos vamos a ser",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2adca46bb622973d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vale",
+    "sentence": "Lo pones en la mesa larga, [[vale]], y se va.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "okay",
+      "options": [
+        "okay",
+        "please",
+        "sorry",
+        "again"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Lo pones en la mesa larga, vale, y se va.",
+        "targetWord": "vale",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/202ae3c72b098d1d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mesa larga",
+    "sentence": "Mañana lo pones en la [[mesa larga]] de la plaza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the long shared table",
+      "options": [
+        "the long shared table",
+        "the kitchen counter",
+        "the front step",
+        "the bar top"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Mañana lo pones en la mesa larga de la plaza.",
+        "targetWord": "mesa larga",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2b4f75c3ea7a840.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "traer",
+    "sentence": "Mañana tienes que _____ algo para la mesa larga.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "traer",
+      "options": [
+        "traer",
+        "cobrar",
+        "pedir",
+        "fregar"
+      ],
+      "translation": "Tomorrow you have to _____ something for the long table.",
+      "optionTranslations": [
+        "bring",
+        "charge",
+        "order",
+        "wash up"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Mañana tienes que traer algo para la mesa larga.",
+        "targetWord": "traer",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64d4dd481fa9e876.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "borrar",
+    "sentence": "Abre la lista del móvil y decide _____ todo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "borrar",
+      "options": [
+        "borrar",
+        "guardar",
+        "imprimir",
+        "enviar"
+      ],
+      "translation": "She opens the list on her phone and decides to _____ it all.",
+      "optionTranslations": [
+        "delete",
+        "save",
+        "print",
+        "send"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Abre la lista del móvil y decide borrar todo.",
+        "targetWord": "borrar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd8886f70c02af16.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "apagar",
+    "sentence": "A las once decide _____ la luz sin haber elegido.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "apagar",
+      "options": [
+        "apagar",
+        "encender",
+        "abrir",
+        "limpiar"
+      ],
+      "translation": "At eleven she decides to _____ the light without having chosen.",
+      "optionTranslations": [
+        "turn off",
+        "turn on",
+        "open",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "A las once decide apagar la luz sin haber elegido.",
+        "targetWord": "apagar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee0e261828c01252.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "decidir",
+    "sentence": "Lleva toda la tarde sin _____ qué llevar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "decidir",
+      "options": [
+        "decidir",
+        "cocinar",
+        "comprar",
+        "pagar"
+      ],
+      "translation": "She has spent all afternoon without _____ what to take.",
+      "optionTranslations": [
+        "deciding",
+        "cooking",
+        "buying",
+        "paying"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Lleva toda la tarde sin decidir qué llevar.",
+        "targetWord": "decidir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cb7e45e37c7fc2c3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perdida",
+    "sentence": "Sube a preguntar y baja igual de [[perdida]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lost",
+      "options": [
+        "lost",
+        "tired",
+        "annoyed",
+        "late"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Sube a preguntar y baja igual de perdida.",
+        "targetWord": "perdida",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tercero",
+    "sentence": "Sube al [[tercero]] a preguntar qué se lleva.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the third floor",
+      "options": [
+        "the third floor",
+        "the basement",
+        "the roof",
+        "the back door"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Sube al tercero a preguntar qué se lleva.",
+        "targetWord": "tercero",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bizcocho",
+    "sentence": "Una vecina va a llevar [[bizcocho]] y otra bebida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sponge cake",
+      "options": [
+        "sponge cake",
+        "fried fish",
+        "green salad",
+        "white rice"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Una vecina va a llevar bizcocho y otra bebida.",
+        "targetWord": "bizcocho",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "servilletas",
+    "sentence": "Otra dice que ella pone las [[servilletas]] y ya está.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "napkins",
+      "options": [
+        "napkins",
+        "the music",
+        "the chairs",
+        "the lights"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Otra dice que ella pone las servilletas y ya está.",
+        "targetWord": "servilletas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bebida",
+    "sentence": "Los del cuarto se encargan de la [[bebida]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the drink",
+      "options": [
+        "the drink",
+        "the bread",
+        "the cake",
+        "the ice"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Los del cuarto se encargan de la bebida.",
+        "targetWord": "bebida",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "igual de",
+    "sentence": "Baja [[igual de]] perdida que cuando subió.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just as",
+      "options": [
+        "just as",
+        "far less",
+        "a bit more",
+        "never as"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Baja igual de perdida que cuando subió.",
+        "targetWord": "igual de",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a las once",
+    "sentence": "[[A las once]] de la noche sigue sin decidir nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at eleven",
+      "options": [
+        "at eleven",
+        "at dawn",
+        "at noon",
+        "at eight"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "A las once de la noche sigue sin decidir nada.",
+        "targetWord": "a las once",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caber",
+    "sentence": "No sabe qué [[cabe]] dentro de esa palabra tan corta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fit",
+      "options": [
+        "to fit",
+        "to cost",
+        "to weigh",
+        "to sound"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "No sabe qué cabe dentro de esa palabra tan corta.",
+        "targetWord": "cabe",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "asomar",
+    "sentence": "La vecina [[asoma]] la cabeza con las manos llenas de harina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to poke",
+      "options": [
+        "to poke",
+        "to wash",
+        "to hide",
+        "to raise"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "La vecina asoma la cabeza con las manos llenas de harina.",
+        "targetWord": "asoma",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "complicarse",
+    "sentence": "No [[te compliques]], que aquí nadie mira eso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to make it hard for yourself",
+      "options": [
+        "to make it hard for yourself",
+        "to hurry yourself",
+        "to excuse yourself",
+        "to help yourself"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "No te compliques, que aquí nadie mira eso.",
+        "targetWord": "te compliques",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "montar",
+    "sentence": "Los vecinos empiezan a _____ la mesa en la plaza.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "montar",
+      "options": [
+        "montar",
+        "barrer",
+        "pintar",
+        "alquilar"
+      ],
+      "translation": "The neighbours start to _____ the table up in the square.",
+      "optionTranslations": [
+        "set",
+        "sweep",
+        "paint",
+        "rent"
+      ],
+      "audioClip": {
+        "storySlug": "un-recado-para-la-mesa-larga",
+        "storySource": "user",
+        "sentence": "Los vecinos empiezan a montar la mesa en la plaza.",
+        "targetWord": "montar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

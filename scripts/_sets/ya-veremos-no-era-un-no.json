@@ -1,0 +1,578 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "cena,vino,postre,pijama",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cena",
+          "answer": "dinner",
+          "options": [
+            "dinner",
+            "wine",
+            "pudding",
+            "pyjamas"
+          ]
+        },
+        {
+          "word": "vino",
+          "answer": "wine",
+          "options": [
+            "dinner",
+            "wine",
+            "pudding",
+            "pyjamas"
+          ]
+        },
+        {
+          "word": "postre",
+          "answer": "pudding",
+          "options": [
+            "dinner",
+            "wine",
+            "pudding",
+            "pyjamas"
+          ]
+        },
+        {
+          "word": "pijama",
+          "answer": "pyjamas",
+          "options": [
+            "dinner",
+            "wine",
+            "pudding",
+            "pyjamas"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ya veremos",
+    "sentence": "Uy, el jueves, [[ya veremos]] cómo ando esa semana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "we will see",
+      "options": [
+        "we will see",
+        "not a chance",
+        "of course yes",
+        "see you there"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Uy, el jueves, ya veremos cómo ando esa semana.",
+        "targetWord": "ya veremos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cc3bdfeaf19eb528.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "uy",
+    "sentence": "[[Uy]], el jueves lo tengo complicado, contesta con las bolsas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ooh, a doubt is coming",
+      "options": [
+        "ooh, a doubt is coming",
+        "great news",
+        "right away",
+        "never mind"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Uy, el jueves lo tengo complicado, contesta con las bolsas.",
+        "targetWord": "Uy",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa533714d5c7d945.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "educado",
+    "sentence": "Sube pensando que eso ha sido un no muy [[educado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "polite",
+      "options": [
+        "polite",
+        "rude",
+        "funny",
+        "clear"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Sube pensando que eso ha sido un no muy educado.",
+        "targetWord": "educado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/695eae2ae74fce3a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de frente",
+    "sentence": "Aquí un no no se dice [[de frente]] casi nunca.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "straight out",
+      "options": [
+        "straight out",
+        "by message",
+        "in writing",
+        "at the door"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Aquí un no no se dice de frente casi nunca.",
+        "targetWord": "de frente",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/21d718c5e3001a0b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "costumbre",
+    "sentence": "El jueves compra igual, por [[costumbre]], y hace tortilla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "habit",
+      "options": [
+        "habit",
+        "mistake",
+        "luck",
+        "order"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "El jueves compra igual, por costumbre, y hace tortilla.",
+        "targetWord": "costumbre",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a81b15495b405ec.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "invitar",
+    "sentence": "Hace tortilla para dos porque quiere _____ a la vecina.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "invitar",
+      "options": [
+        "invitar",
+        "pagar",
+        "llamar",
+        "ayudar"
+      ],
+      "translation": "She makes omelette for two because she wants to _____ the neighbour.",
+      "optionTranslations": [
+        "invite",
+        "pay",
+        "call",
+        "help"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Hace tortilla para dos porque quiere invitar a la vecina.",
+        "targetWord": "invitar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2fad16bb7f6d6bb.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pensar",
+    "sentence": "Sube despacio porque quiere _____ antes de contestar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pensar",
+      "options": [
+        "pensar",
+        "comer",
+        "correr",
+        "cantar"
+      ],
+      "translation": "She goes up slowly because she wants to _____ before answering.",
+      "optionTranslations": [
+        "think",
+        "eat",
+        "run",
+        "sing"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Sube despacio porque quiere pensar antes de contestar.",
+        "targetWord": "pensar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/75b4fec2bc22a695.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "quitar",
+    "sentence": "Pone dos platos y luego vuelve a _____ uno.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quitar",
+      "options": [
+        "quitar",
+        "fregar",
+        "romper",
+        "llenar"
+      ],
+      "translation": "She lays two plates and then goes back to _____ one.",
+      "optionTranslations": [
+        "take away",
+        "wash up",
+        "break",
+        "fill"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Pone dos platos y luego vuelve a quitar uno.",
+        "targetWord": "quitar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/13b7f6046d0b61e2.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "apagar",
+    "sentence": "Antes de sentarse decide _____ la luz del salón.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "apagar",
+      "options": [
+        "apagar",
+        "encender",
+        "abrir",
+        "subir"
+      ],
+      "translation": "Before sitting down she decides to _____ the living room light.",
+      "optionTranslations": [
+        "turn off",
+        "turn on",
+        "open",
+        "raise"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Antes de sentarse decide apagar la luz del salón.",
+        "targetWord": "apagar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/644d8f70709f34e8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esa semana",
+    "sentence": "Ya veremos cómo ando [[esa semana]], contesta ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "that week",
+      "options": [
+        "that week",
+        "last night",
+        "every winter",
+        "this minute"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Ya veremos cómo ando esa semana, contesta ella.",
+        "targetWord": "esa semana",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enorme",
+    "sentence": "Hace una tortilla [[enorme]] para dos personas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "huge",
+      "options": [
+        "huge",
+        "cold",
+        "salty",
+        "thin"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Hace una tortilla enorme para dos personas.",
+        "targetWord": "enorme",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tonta",
+    "sentence": "Quita el segundo plato con la mano un poco [[tonta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "silly",
+      "options": [
+        "silly",
+        "angry",
+        "quick",
+        "careful"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Quita el segundo plato con la mano un poco tonta.",
+        "targetWord": "tonta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vacía",
+    "sentence": "Mira la silla [[vacía]] y se sirve sola.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "empty",
+      "options": [
+        "empty",
+        "broken",
+        "wet",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Mira la silla vacía y se sirve sola.",
+        "targetWord": "vacía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "silencio",
+    "sentence": "Apaga la luz y la casa se queda en [[silencio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "silence",
+      "options": [
+        "silence",
+        "darkness",
+        "disorder",
+        "a hurry"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Apaga la luz y la casa se queda en silencio.",
+        "targetWord": "silencio",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luz",
+    "sentence": "Apaga la [[luz]] del salón antes de sentarse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the light",
+      "options": [
+        "the light",
+        "the oven",
+        "the radio",
+        "the tap"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Apaga la luz del salón antes de sentarse.",
+        "targetWord": "luz",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "telefonillo",
+    "sentence": "Suena el [[telefonillo]] tres veces seguidas desde la calle.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the door buzzer",
+      "options": [
+        "the door buzzer",
+        "the oven timer",
+        "the church bell",
+        "the mobile phone"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Suena el telefonillo tres veces seguidas desde la calle.",
+        "targetWord": "telefonillo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seguidas",
+    "sentence": "Suena tres veces [[seguidas]], sin dejar ningún hueco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in a row",
+      "options": [
+        "in a row",
+        "by mistake",
+        "very softly",
+        "much later"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Suena tres veces seguidas, sin dejar ningún hueco.",
+        "targetWord": "seguidas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prima",
+    "sentence": "Rocío sube con su [[prima]] y una botella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cousin",
+      "options": [
+        "a cousin",
+        "a sister",
+        "a daughter",
+        "a workmate"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Rocío sube con su prima y una botella.",
+        "targetWord": "prima",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sonar",
+    "sentence": "El telefonillo [[suena]] justo cuando ya se iba a dormir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ring",
+      "options": [
+        "to ring",
+        "to break",
+        "to open",
+        "to fall"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "El telefonillo suena justo cuando ya se iba a dormir.",
+        "targetWord": "suena",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "recoger",
+    "sentence": "Después de cenar se pone a _____ la cocina.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "recoger",
+      "options": [
+        "recoger",
+        "ensuciar",
+        "pintar",
+        "alquilar"
+      ],
+      "translation": "After dinner she starts to _____ the kitchen.",
+      "optionTranslations": [
+        "clear up",
+        "dirty",
+        "paint",
+        "rent out"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "Después de cenar se pone a recoger la cocina.",
+        "targetWord": "recoger",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "guardar",
+    "sentence": "No se lo come todo y prefiere _____ la mitad.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "guardar",
+      "options": [
+        "guardar",
+        "tirar",
+        "quemar",
+        "repartir"
+      ],
+      "translation": "She does not eat it all and prefers to _____ half of it.",
+      "optionTranslations": [
+        "keep",
+        "throw away",
+        "burn",
+        "share out"
+      ],
+      "audioClip": {
+        "storySlug": "ya-veremos-no-era-un-no",
+        "storySource": "user",
+        "sentence": "No se lo come todo y prefiere guardar la mitad.",
+        "targetWord": "guardar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

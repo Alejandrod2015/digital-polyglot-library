@@ -1,0 +1,548 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "cartel,horno,toldo,ceja",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cartel",
+          "answer": "a poster",
+          "options": [
+            "a poster",
+            "an oven",
+            "an awning",
+            "an eyebrow"
+          ]
+        },
+        {
+          "word": "horno",
+          "answer": "an oven",
+          "options": [
+            "a poster",
+            "an oven",
+            "an awning",
+            "an eyebrow"
+          ]
+        },
+        {
+          "word": "toldo",
+          "answer": "an awning",
+          "options": [
+            "a poster",
+            "an oven",
+            "an awning",
+            "an eyebrow"
+          ]
+        },
+        {
+          "word": "ceja",
+          "answer": "an eyebrow",
+          "options": [
+            "a poster",
+            "an oven",
+            "an awning",
+            "an eyebrow"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "claro",
+    "sentence": "[[Claro]], hija, si llevamos desde mayo con esto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "of course",
+      "options": [
+        "of course",
+        "not really",
+        "who knows",
+        "not yet"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "Claro, hija, si llevamos desde mayo con esto.",
+        "targetWord": "Claro",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3f369bd3dc545f40.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ya te dirán",
+    "sentence": "Tú vente el sábado, que [[ya te dirán]] lo demás.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "they will tell you",
+      "options": [
+        "they will tell you",
+        "you will read it",
+        "nobody knows",
+        "it is written"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "Tú vente el sábado, que ya te dirán lo demás.",
+        "targetWord": "ya te dirán",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b5da868f3484e886.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "del todo",
+    "sentence": "No lo entiende [[del todo]], pero se apunta igual.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "completely",
+      "options": [
+        "completely",
+        "at first",
+        "by chance",
+        "out loud"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "No lo entiende del todo, pero se apunta igual.",
+        "targetWord": "del todo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/750734373b225209.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por delante",
+    "sentence": "Le quedan dos días [[por delante]] y ninguna instrucción.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ahead",
+      "options": [
+        "ahead",
+        "behind",
+        "in between",
+        "to spare"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "Le quedan dos días por delante y ninguna instrucción.",
+        "targetWord": "por delante",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d94f076a5abfdc03.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "este año",
+    "sentence": "Esto es de [[este año]], pregunta señalando el cartel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "this year",
+      "options": [
+        "this year",
+        "last winter",
+        "next summer",
+        "the old days"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "Esto es de este año, pregunta señalando el cartel.",
+        "targetWord": "este año",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8209ec534a8f7568.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "leer",
+    "sentence": "Se para en la puerta para _____ el cartel nuevo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "leer",
+      "options": [
+        "leer",
+        "pintar",
+        "romper",
+        "colgar"
+      ],
+      "translation": "She stops at the door to _____ the new poster.",
+      "optionTranslations": [
+        "read",
+        "paint",
+        "tear down",
+        "hang up"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "Se para en la puerta para leer el cartel nuevo.",
+        "targetWord": "leer",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2ac7ca6bb561a08d.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "llevar",
+    "sentence": "El pueblo suele _____ medio año preparando la fiesta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "llevar",
+      "options": [
+        "llevar",
+        "cerrar",
+        "romper",
+        "cocinar"
+      ],
+      "translation": "The village usually _____ half a year preparing the fiesta.",
+      "optionTranslations": [
+        "spends",
+        "closes",
+        "breaks",
+        "cooks"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "El pueblo suele llevar medio año preparando la fiesta.",
+        "targetWord": "llevar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bec0e06b3c8e3d68.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "escuchar",
+    "sentence": "En el bar es difícil _____ bien con tanto ruido.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escuchar",
+      "options": [
+        "escuchar",
+        "gritar",
+        "escribir",
+        "pagar"
+      ],
+      "translation": "In the bar it is hard to _____ properly with so much noise.",
+      "optionTranslations": [
+        "listen",
+        "shout",
+        "write",
+        "pay"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "En el bar es difícil escuchar bien con tanto ruido.",
+        "targetWord": "escuchar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/73ee6ece100a7471.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pararse",
+    "sentence": "Prefiere _____ un momento delante del escaparate.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pararse",
+      "options": [
+        "pararse",
+        "correr",
+        "dormir",
+        "cocinar"
+      ],
+      "translation": "She prefers to _____ for a moment in front of the window.",
+      "optionTranslations": [
+        "stop",
+        "run",
+        "sleep",
+        "cook"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "Prefiere pararse un momento delante del escaparate.",
+        "targetWord": "pararse",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e1f30cf10088fd4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comisión",
+    "sentence": "Llevamos desde mayo con la [[comisión]] de la fiesta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the fiesta committee",
+      "options": [
+        "the fiesta committee",
+        "the town hall",
+        "the church choir",
+        "the football team"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "Llevamos desde mayo con la comisión de la fiesta.",
+        "targetWord": "comisión",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verbena",
+    "sentence": "El sábado hay [[verbena]] en la plaza hasta muy tarde.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a night dance",
+      "options": [
+        "a night dance",
+        "a market",
+        "a mass",
+        "a meeting"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "El sábado hay verbena en la plaza hasta muy tarde.",
+        "targetWord": "verbena",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pregón",
+    "sentence": "El viernes alguien lee el [[pregón]] desde el balcón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the opening speech",
+      "options": [
+        "the opening speech",
+        "the shopping list",
+        "the weather report",
+        "the football result"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "El viernes alguien lee el pregón desde el balcón.",
+        "targetWord": "pregón",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "charanga",
+    "sentence": "La [[charanga]] recorre las calles tocando muy fuerte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a brass band",
+      "options": [
+        "a brass band",
+        "a parade of cars",
+        "a group of dancers",
+        "a line of stalls"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "La charanga recorre las calles tocando muy fuerte.",
+        "targetWord": "charanga",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "invierno",
+    "sentence": "Lo decidieron en [[invierno]], mucho antes del cartel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "winter",
+      "options": [
+        "winter",
+        "autumn",
+        "spring",
+        "harvest time"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "Lo decidieron en invierno, mucho antes del cartel.",
+        "targetWord": "invierno",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aún",
+    "sentence": "Las barras están [[aún]] calientes del horno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still",
+      "options": [
+        "still",
+        "already",
+        "hardly",
+        "almost"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "Las barras están aún calientes del horno.",
+        "targetWord": "aún",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barra",
+    "sentence": "La panadera saca [[barras]] del horno a esa hora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a baguette",
+      "options": [
+        "a baguette",
+        "a cake",
+        "a biscuit",
+        "a pie"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "La panadera saca barras del horno a esa hora.",
+        "targetWord": "barras",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vente",
+    "sentence": "[[Vente]] el sábado y ya verás, le dice la panadera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "come along",
+      "options": [
+        "come along",
+        "stay home",
+        "hurry up",
+        "wait here"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "Vente el sábado y ya verás, le dice la panadera.",
+        "targetWord": "Vente",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acordarse",
+    "sentence": "Ahora [[se acuerda]] de todas las conversaciones de mayo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to remember",
+      "options": [
+        "to remember",
+        "to forget",
+        "to explain",
+        "to doubt"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "Ahora se acuerda de todas las conversaciones de mayo.",
+        "targetWord": "se acuerda",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "decidirse",
+    "sentence": "La fecha [[se decidió]] en una reunión de invierno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be settled",
+      "options": [
+        "to be settled",
+        "to be cancelled",
+        "to be written",
+        "to be repeated"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "La fecha se decidió en una reunión de invierno.",
+        "targetWord": "se decidió",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sacar",
+    "sentence": "La panadera entra a _____ las barras del horno.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sacar",
+      "options": [
+        "sacar",
+        "guardar",
+        "enfriar",
+        "tirar"
+      ],
+      "translation": "The baker goes in to _____ the loaves out of the oven.",
+      "optionTranslations": [
+        "take",
+        "put away",
+        "cool",
+        "throw away"
+      ],
+      "audioClip": {
+        "storySlug": "todos-lo-sabian-desde-mayo",
+        "storySource": "user",
+        "sentence": "La panadera entra a sacar las barras del horno.",
+        "targetWord": "sacar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

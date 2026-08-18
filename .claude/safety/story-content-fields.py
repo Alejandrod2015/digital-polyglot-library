@@ -30,7 +30,11 @@ CONTENT_FIELDS = {"text", "vocab"}
 WRITE = re.compile(r"journeyStory\s*\.\s*(?:create|createMany|update|updateMany|upsert)\b")
 # `data:` at the start of a property, not `metadata:` / `.data:`
 DATA_KEY = re.compile(r"(?<![\w$.])data\s*:")
-KEY = re.compile(r"""(?:^|[{,])\s*(?:(['"])(?P<q>[\w$]+)\1|(?P<b>[\w$]+))\s*:""")
+# `text: x` y `text,` son la MISMA escritura. El shorthand de ES6 no lleva dos
+# puntos, y sin esta rama `data: { status, title, text, vocab: v }` se leía como
+# si solo escribiera `vocab`: así se colaba `scripts/storyClaude.ts`, que guarda
+# el cuerpo de una historia sin pasar por el validador canónico (2026-08-18).
+KEY = re.compile(r"""(?:^|[{,])\s*(?:(['"])(?P<q>[\w$]+)\1|(?P<b>[\w$]+))\s*(?P<sep>:|,|\}|$)""")
 
 
 def skip_to_close(src: str, i: int) -> int:
@@ -84,7 +88,9 @@ def top_level_keys(obj: str):
             m = KEY.match(body, max(0, i - 1)) or (KEY.match(body, i) if i == 0 else None)
             if m:
                 keys.append(m.group("q") or m.group("b"))
-                i = m.end()
+                # Con `:` el valor viene después y hay que seguir leyendo desde
+                # ahí; con `,` o `}` el separador pertenece ya al siguiente par.
+                i = m.end() if m.group("sep") == ":" else m.end() - 1
                 continue
         i += 1
     return keys

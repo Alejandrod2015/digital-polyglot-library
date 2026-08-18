@@ -1,0 +1,428 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "jarabe,espejo,reloj,diccionario",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "jarabe",
+          "answer": "cough syrup",
+          "options": [
+            "cough syrup",
+            "a mirror",
+            "a clock",
+            "a dictionary"
+          ]
+        },
+        {
+          "word": "espejo",
+          "answer": "a mirror",
+          "options": [
+            "cough syrup",
+            "a mirror",
+            "a clock",
+            "a dictionary"
+          ]
+        },
+        {
+          "word": "reloj",
+          "answer": "a clock",
+          "options": [
+            "cough syrup",
+            "a mirror",
+            "a clock",
+            "a dictionary"
+          ]
+        },
+        {
+          "word": "diccionario",
+          "answer": "a dictionary",
+          "options": [
+            "cough syrup",
+            "a mirror",
+            "a clock",
+            "a dictionary"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tos seca",
+    "sentence": "Dice que tiene [[tos seca]] desde el fin de semana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a dry cough",
+      "options": [
+        "a dry cough",
+        "a bad back",
+        "a high fever",
+        "a sore knee"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "Dice que tiene tos seca desde el fin de semana.",
+        "targetWord": "tos seca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/47c25d59f0ab4ee3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al tragar",
+    "sentence": "Le duele sobre todo [[al tragar]], no al hablar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "when swallowing",
+      "options": [
+        "when swallowing",
+        "when walking",
+        "when sleeping",
+        "when eating"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "Le duele sobre todo al tragar, no al hablar.",
+        "targetWord": "al tragar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3dc975929d11aaca.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por orden",
+    "sentence": "Suelta las tres frases [[por orden]], sin saltarse ninguna.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in order",
+      "options": [
+        "in order",
+        "in a hurry",
+        "in a whisper",
+        "in English"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "Suelta las tres frases por orden, sin saltarse ninguna.",
+        "targetWord": "por orden",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2235eff460a1fc4e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de otra manera",
+    "sentence": "La farmacéutica la mira [[de otra manera]] al oírla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "differently",
+      "options": [
+        "differently",
+        "from far away",
+        "for a second",
+        "without stopping"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "La farmacéutica la mira de otra manera al oírla.",
+        "targetWord": "de otra manera",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/599230f1bea970f9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bien dicho",
+    "sentence": "[[Bien dicho]], le contesta ella con una sonrisa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "well said",
+      "options": [
+        "well said",
+        "say it again",
+        "never mind",
+        "too fast"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "Bien dicho, le contesta ella con una sonrisa.",
+        "targetWord": "Bien dicho",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e56d9cc1e5606808.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por si acaso",
+    "sentence": "Dobla el papel y lo guarda [[por si acaso]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just in case",
+      "options": [
+        "just in case",
+        "for the bin",
+        "as a gift",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "Dobla el papel y lo guarda por si acaso.",
+        "targetWord": "por si acaso",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/077f8b0385d06d5e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ordenado",
+    "sentence": "Lleva todo [[ordenado]] en un papel pequeño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in order",
+      "options": [
+        "in order",
+        "written twice",
+        "half finished",
+        "in English"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "Lleva todo ordenado en un papel pequeño.",
+        "targetWord": "ordenado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b6ec4f5a3ef58c4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abierto",
+    "sentence": "Sale de casa con el diccionario [[abierto]] en la mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "open",
+      "options": [
+        "open",
+        "closed",
+        "new",
+        "lost"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "Sale de casa con el diccionario abierto en la mesa.",
+        "targetWord": "abierto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c6f113aea093765.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sacar",
+    "sentence": "Mete la mano en el bolsillo para _____ el papel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sacar",
+      "options": [
+        "sacar",
+        "romper",
+        "perder",
+        "doblar"
+      ],
+      "translation": "She puts her hand in her pocket to _____ the paper.",
+      "optionTranslations": [
+        "take out",
+        "tear up",
+        "lose",
+        "fold"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "Mete la mano en el bolsillo para sacar el papel.",
+        "targetWord": "sacar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1a002fa9362e291.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sombra",
+    "sentence": "Baja a la plaza todavía en [[sombra]] a esa hora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shade",
+      "options": [
+        "shade",
+        "silence",
+        "fog",
+        "water"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "Baja a la plaza todavía en sombra a esa hora.",
+        "targetWord": "sombra",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "buenas",
+    "sentence": "[[Buenas]], hoy vengo preparada de casa, dice al entrar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hello",
+      "options": [
+        "hello",
+        "goodbye",
+        "sorry",
+        "please"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "Buenas, hoy vengo preparada de casa, dice al entrar.",
+        "targetWord": "Buenas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "decir que sí",
+    "sentence": "La farmacéutica [[dice que sí]] con la cabeza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to nod yes",
+      "options": [
+        "to nod yes",
+        "to say no",
+        "to think twice",
+        "to look away"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "La farmacéutica dice que sí con la cabeza.",
+        "targetWord": "dice que sí",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "señalar",
+    "sentence": "Le explica las horas [[señalando]] el reloj de la pared.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "pointing at",
+      "options": [
+        "pointing at",
+        "walking to",
+        "talking about",
+        "looking for"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "Le explica las horas señalando el reloj de la pared.",
+        "targetWord": "señalando",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prepararse",
+    "sentence": "El jueves [[se prepara]] antes de salir de casa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get ready",
+      "options": [
+        "to get ready",
+        "to give up",
+        "to lie down",
+        "to go back"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "El jueves se prepara antes de salir de casa.",
+        "targetWord": "se prepara",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doblar",
+    "sentence": "Fuera [[dobla]] el papel y lo guarda en el bolso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fold",
+      "options": [
+        "to fold",
+        "to tear",
+        "to sign",
+        "to lose"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "Fuera dobla el papel y lo guarda en el bolso.",
+        "targetWord": "dobla",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tragar",
+    "sentence": "Le duele al [[tragar]] desde el fin de semana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to swallow",
+      "options": [
+        "to swallow",
+        "to breathe",
+        "to shout",
+        "to chew"
+      ],
+      "audioClip": {
+        "storySlug": "sale-con-jarabe-y-sin-ayuda",
+        "storySource": "user",
+        "sentence": "Le duele al tragar desde el fin de semana.",
+        "targetWord": "tragar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

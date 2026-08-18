@@ -903,6 +903,13 @@ type MobileJourneyTrackSummary = {
   unlockedLevelCount: number;
   totalLevelCount: number;
   levels: MobileJourneyLevelSummary[];
+  /** true cuando no queda ninguna historia por completar en ningún nivel. */
+  complete?: boolean;
+  /** Journey que el servidor ofrece a continuación, solo si `complete`.
+   *  Existe porque al terminar las 21 historias no pasaba nada: el usuario
+   *  se quedaba mirando un track lleno de checks sin saber que había un
+   *  siguiente nivel publicado. */
+  nextJourney?: { id: string; name: string; variant?: string | null; levels: string[] } | null;
 };
 
 type MobileJourneyPayload = {
@@ -18156,6 +18163,25 @@ export function MobileLibraryShell(args: {
           </View>
         ))}
 
+        {/* Puente al siguiente journey. Antes, terminar las 21 historias no
+            llevaba a ninguna parte: el track se quedaba lleno de checks y el
+            siguiente nivel, ya publicado, no aparecía por ningún lado. El
+            servidor solo manda `nextJourney` cuando el track está completo. */}
+        {activeJourneyTrack?.complete && activeJourneyTrack?.nextJourney ? (
+          <View style={styles.journeyNextCard}>
+            <Text style={styles.journeyNextKicker}>JOURNEY COMPLETE</Text>
+            <Text style={styles.journeyNextTitle}>
+              {activeJourneyTrack?.nextJourney?.name ?? ""}
+              {activeJourneyTrack?.nextJourney?.levels?.length
+                ? `  ·  ${(activeJourneyTrack?.nextJourney?.levels ?? []).join(", ").toUpperCase()}`
+                : ""}
+            </Text>
+            <Text style={styles.journeyNextBody}>
+              You finished every story here. The next journey is ready.
+            </Text>
+          </View>
+        ) : null}
+
       </View>
       ) : null}
     </>
@@ -22254,6 +22280,24 @@ const styles = StyleSheet.create({
     // dimmer than the active level header without becoming a ghost.
     opacity: 0.85,
   },
+  journeyNextCard: {
+    marginTop: 26,
+    marginHorizontal: 8,
+    padding: 18,
+    borderRadius: 16,
+    backgroundColor: "#12233d",
+    borderWidth: 1,
+    borderColor: "#f8c15c",
+  },
+  journeyNextKicker: {
+    color: "#f8c15c",
+    fontSize: 12,
+    fontWeight: "700",
+    letterSpacing: 1.2,
+    marginBottom: 6,
+  },
+  journeyNextTitle: { color: "#eef4ff", fontSize: 19, fontWeight: "700", marginBottom: 4 },
+  journeyNextBody: { color: "#9fb3d1", fontSize: 14, lineHeight: 19 },
   journeyPathLevelBadge: {
     color: "#f5f7fb",
     fontSize: 26,

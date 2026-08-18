@@ -1,0 +1,548 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "barra,carta,caña,periódico",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "barra",
+          "answer": "a bar counter",
+          "options": [
+            "a bar counter",
+            "a menu",
+            "a small beer",
+            "a newspaper"
+          ]
+        },
+        {
+          "word": "carta",
+          "answer": "a menu",
+          "options": [
+            "a bar counter",
+            "a menu",
+            "a small beer",
+            "a newspaper"
+          ]
+        },
+        {
+          "word": "caña",
+          "answer": "a small beer",
+          "options": [
+            "a bar counter",
+            "a menu",
+            "a small beer",
+            "a newspaper"
+          ]
+        },
+        {
+          "word": "periódico",
+          "answer": "a newspaper",
+          "options": [
+            "a bar counter",
+            "a menu",
+            "a small beer",
+            "a newspaper"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lleno",
+    "sentence": "El bar está [[lleno]] de gente y de ruido un lunes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "full",
+      "options": [
+        "full",
+        "empty",
+        "closed",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "El bar está lleno de gente y de ruido un lunes.",
+        "targetWord": "lleno",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/341531b64340e449.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "al fondo",
+    "sentence": "Se sienta [[al fondo]], en la mesa más lejos de la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the back",
+      "options": [
+        "at the back",
+        "by the window",
+        "outside",
+        "in the middle"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Se sienta al fondo, en la mesa más lejos de la puerta.",
+        "targetWord": "al fondo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/42296428d50fa4a0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guapa",
+    "sentence": "Aquí no hay carta, [[guapa]], aquí se pide en la barra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "love, a friendly address",
+      "options": [
+        "love, a friendly address",
+        "pretty face",
+        "young lady",
+        "my dear wife"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Aquí no hay carta, guapa, aquí se pide en la barra.",
+        "targetWord": "guapa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c24f283291ee274d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en voz alta",
+    "sentence": "Lo pregunta [[en voz alta]], para que la oiga desde la barra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "out loud",
+      "options": [
+        "out loud",
+        "in a whisper",
+        "with a gesture",
+        "by phone"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Lo pregunta en voz alta, para que la oiga desde la barra.",
+        "targetWord": "en voz alta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c366c1e668625579.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "un buen rato",
+    "sentence": "Espera la carta [[un buen rato]] y no llega nadie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a good while",
+      "options": [
+        "a good while",
+        "a second",
+        "a whole week",
+        "every evening"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Espera la carta un buen rato y no llega nadie.",
+        "targetWord": "un buen rato",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c84602a167965423.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "traer",
+    "sentence": "Perdona, puedes _____ un vaso de agua.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "traer",
+      "options": [
+        "traer",
+        "cobrar",
+        "pagar",
+        "cruzar"
+      ],
+      "translation": "Excuse me, could you _____ a glass of water.",
+      "optionTranslations": [
+        "bring",
+        "charge",
+        "pay",
+        "cross"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Perdona, puedes traer un vaso de agua.",
+        "targetWord": "traer",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e24ceb140098f31.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pedir",
+    "sentence": "En este bar hay que _____ de pie en la barra.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pedir",
+      "options": [
+        "pedir",
+        "dormir",
+        "cocinar",
+        "pagar"
+      ],
+      "translation": "In this bar you have to _____ standing at the counter.",
+      "optionTranslations": [
+        "order",
+        "sleep",
+        "cook",
+        "pay"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "En este bar hay que pedir de pie en la barra.",
+        "targetWord": "pedir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c169ef6b2fc03839.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cruzar",
+    "sentence": "Deja la mesa y tiene que _____ el bar entero.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cruzar",
+      "options": [
+        "cruzar",
+        "subir",
+        "cerrar",
+        "limpiar"
+      ],
+      "translation": "She leaves the table and has to _____ the whole bar.",
+      "optionTranslations": [
+        "cross",
+        "go up",
+        "close",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Deja la mesa y tiene que cruzar el bar entero.",
+        "targetWord": "cruzar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95019e3bcad6f9f8.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "señalar",
+    "sentence": "No sabe el nombre y prefiere _____ con el dedo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "señalar",
+      "options": [
+        "señalar",
+        "escribir",
+        "guardar",
+        "repartir"
+      ],
+      "translation": "She does not know the name and prefers to _____ with her finger.",
+      "optionTranslations": [
+        "point",
+        "write",
+        "keep",
+        "hand out"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "No sabe el nombre y prefiere señalar con el dedo.",
+        "targetWord": "señalar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/340769194b871a59.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marchando",
+    "sentence": "[[Marchando]] una caña, contesta el dueño desde la barra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "coming right up",
+      "options": [
+        "coming right up",
+        "all gone",
+        "too late",
+        "on the house"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Marchando una caña, contesta el dueño desde la barra.",
+        "targetWord": "Marchando",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rodillas",
+    "sentence": "Se sienta y deja el bolso sobre las [[rodillas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the knees",
+      "options": [
+        "the knees",
+        "the shoulders",
+        "the elbows",
+        "the ankles"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Se sienta y deja el bolso sobre las rodillas.",
+        "targetWord": "rodillas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bolso",
+    "sentence": "Deja el [[bolso]] sobre las rodillas y espera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a handbag",
+      "options": [
+        "a handbag",
+        "a coat",
+        "a suitcase",
+        "a basket"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Deja el bolso sobre las rodillas y espera.",
+        "targetWord": "bolso",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dueño",
+    "sentence": "Detrás de la barra está el [[dueño]], que seca vasos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the owner",
+      "options": [
+        "the owner",
+        "a customer",
+        "a waiter",
+        "a cook"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Detrás de la barra está el dueño, que seca vasos.",
+        "targetWord": "dueño",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vacía",
+    "sentence": "La gente ya come, pero su mesa sigue [[vacía]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "empty",
+      "options": [
+        "empty",
+        "dirty",
+        "broken",
+        "reserved"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "La gente ya come, pero su mesa sigue vacía.",
+        "targetWord": "vacía",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perdona",
+    "sentence": "[[Perdona]], me traes la carta, pregunta desde la mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "excuse me",
+      "options": [
+        "excuse me",
+        "goodbye",
+        "thank you",
+        "of course"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Perdona, me traes la carta, pregunta desde la mesa.",
+        "targetWord": "Perdona",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pincho de tortilla",
+    "sentence": "Pide una caña y un [[pincho de tortilla]] en la barra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a slice of omelette",
+      "options": [
+        "a slice of omelette",
+        "a bowl of soup",
+        "a cup of coffee",
+        "a bread roll"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Pide una caña y un pincho de tortilla en la barra.",
+        "targetWord": "pincho de tortilla",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "oír",
+    "sentence": "El dueño la [[oye]] y levanta la cabeza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hear",
+      "options": [
+        "to hear",
+        "to see",
+        "to call",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "El dueño la oye y levanta la cabeza.",
+        "targetWord": "oye",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seguir",
+    "sentence": "La mesa [[sigue]] vacía mientras los demás comen.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stay, to remain",
+      "options": [
+        "to stay, to remain",
+        "to disappear",
+        "to fill up",
+        "to move"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "La mesa sigue vacía mientras los demás comen.",
+        "targetWord": "sigue",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "secar",
+    "sentence": "Detrás de la barra el dueño [[seca]] los vasos con un paño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dry",
+      "options": [
+        "to dry",
+        "to break",
+        "to fill",
+        "to count"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Detrás de la barra el dueño seca los vasos con un paño.",
+        "targetWord": "seca",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "salir",
+    "sentence": "Termina la caña y decide _____ a la plaza.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "salir",
+      "options": [
+        "salir",
+        "entrar",
+        "volver",
+        "esperar"
+      ],
+      "translation": "She finishes the beer and decides to _____ into the square.",
+      "optionTranslations": [
+        "go out",
+        "go in",
+        "come back",
+        "wait"
+      ],
+      "audioClip": {
+        "storySlug": "la-barra-manda",
+        "storySource": "user",
+        "sentence": "Termina la caña y decide salir a la plaza.",
+        "targetWord": "salir",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

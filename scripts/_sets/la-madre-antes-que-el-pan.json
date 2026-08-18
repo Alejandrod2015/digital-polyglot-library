@@ -1,0 +1,548 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "pan,mostrador,rodilla,puerta",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "pan",
+          "answer": "bread",
+          "options": [
+            "bread",
+            "a shop counter",
+            "a knee",
+            "a door"
+          ]
+        },
+        {
+          "word": "mostrador",
+          "answer": "a shop counter",
+          "options": [
+            "bread",
+            "a shop counter",
+            "a knee",
+            "a door"
+          ]
+        },
+        {
+          "word": "rodilla",
+          "answer": "a knee",
+          "options": [
+            "bread",
+            "a shop counter",
+            "a knee",
+            "a door"
+          ]
+        },
+        {
+          "word": "puerta",
+          "answer": "a door",
+          "options": [
+            "bread",
+            "a shop counter",
+            "a knee",
+            "a door"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "a por",
+    "sentence": "Entra [[a por]] una barra y no le da tiempo a saludar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fetch",
+      "options": [
+        "to fetch",
+        "instead of",
+        "along with",
+        "in front of"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Entra a por una barra y no le da tiempo a saludar.",
+        "targetWord": "a por",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f30e2d98059efbf8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sigue con",
+    "sentence": "Tu madre [[sigue con]] lo de la rodilla, pregunta la panadera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still has",
+      "options": [
+        "still has",
+        "has got over",
+        "never had",
+        "complains about"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Tu madre sigue con lo de la rodilla, pregunta la panadera.",
+        "targetWord": "sigue con",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/653f4c1f1f7fade0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parada",
+    "sentence": "Se queda [[parada]] porque no esperaba esa pregunta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "frozen, still",
+      "options": [
+        "frozen, still",
+        "delighted",
+        "in a hurry",
+        "half asleep"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Se queda parada porque no esperaba esa pregunta.",
+        "targetWord": "parada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/950c60542df4758f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mala idea",
+    "sentence": "Lo pregunta sin ninguna [[mala idea]], solo por saber.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bad intention",
+      "options": [
+        "bad intention",
+        "clear reason",
+        "real interest",
+        "spare time"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Lo pregunta sin ninguna mala idea, solo por saber.",
+        "targetWord": "mala idea",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4fa3fd449dba232.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "algo más",
+    "sentence": "La panadera espera [[algo más]] que una palabra suelta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "something more",
+      "options": [
+        "something more",
+        "much less",
+        "the same again",
+        "an apology"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "La panadera espera algo más que una palabra suelta.",
+        "targetWord": "algo más",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9f540d9351406841.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "saludar",
+    "sentence": "Entra con prisa y no le da tiempo ni a _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "saludar",
+      "options": [
+        "saludar",
+        "cocinar",
+        "pagar",
+        "limpiar"
+      ],
+      "translation": "She comes in in a hurry and does not even have time to _____.",
+      "optionTranslations": [
+        "say hello",
+        "cook",
+        "pay",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Entra con prisa y no le da tiempo ni a saludar.",
+        "targetWord": "saludar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a14d65611aa3da44.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "asentir",
+    "sentence": "No dice nada y se limita a _____ con la cabeza.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "asentir",
+      "options": [
+        "asentir",
+        "gritar",
+        "escribir",
+        "correr"
+      ],
+      "translation": "She says nothing and just _____ with her head.",
+      "optionTranslations": [
+        "nod",
+        "shout",
+        "write",
+        "run"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "No dice nada y se limita a asentir con la cabeza.",
+        "targetWord": "asentir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/94b6d0ace5b8b4bc.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "repasar",
+    "sentence": "Por la tarde vuelve a _____ la conversación en su cabeza.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "repasar",
+      "options": [
+        "repasar",
+        "borrar",
+        "cocinar",
+        "pagar"
+      ],
+      "translation": "In the afternoon she goes back to _____ the conversation in her head.",
+      "optionTranslations": [
+        "go over",
+        "erase",
+        "cook",
+        "pay for"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Por la tarde vuelve a repasar la conversación en su cabeza.",
+        "targetWord": "repasar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1550b0eab3b284a7.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "insistir",
+    "sentence": "La panadera calla y decide no _____ con la pregunta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "insistir",
+      "options": [
+        "insistir",
+        "cobrar",
+        "fregar",
+        "abrir"
+      ],
+      "translation": "The baker goes quiet and decides not to _____ with the question.",
+      "optionTranslations": [
+        "press on",
+        "charge",
+        "wash up",
+        "open"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "La panadera calla y decide no insistir con la pregunta.",
+        "targetWord": "insistir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4cc146051ea59090.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar tiempo",
+    "sentence": "No le [[da tiempo]] ni a saludar antes de la pregunta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to have time",
+      "options": [
+        "to have time",
+        "to feel like",
+        "to be allowed",
+        "to know how"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "No le da tiempo ni a saludar antes de la pregunta.",
+        "targetWord": "da tiempo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "respuesta",
+    "sentence": "Nota que la [[respuesta]] se le cae al suelo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an answer",
+      "options": [
+        "an answer",
+        "a question",
+        "a favour",
+        "a promise"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Nota que la respuesta se le cae al suelo.",
+        "targetWord": "respuesta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por si",
+    "sentence": "La panadera espera [[por si]] viene algo detrás.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in case",
+      "options": [
+        "in case",
+        "even though",
+        "as soon as",
+        "instead of"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "La panadera espera por si viene algo detrás.",
+        "targetWord": "por si",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agosto",
+    "sentence": "En [[agosto]] toda la familia viene al pueblo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "August",
+      "options": [
+        "August",
+        "March",
+        "November",
+        "January"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "En agosto toda la familia viene al pueblo.",
+        "targetWord": "agosto",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "niño",
+    "sentence": "Pregunta también por los [[niños]] y por el perro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a child",
+      "options": [
+        "a child",
+        "a cousin",
+        "a neighbour",
+        "a friend"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Pregunta también por los niños y por el perro.",
+        "targetWord": "niños",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "serie",
+    "sentence": "Una señora asiente como quien sigue una [[serie]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a series",
+      "options": [
+        "a series",
+        "a lesson",
+        "a match",
+        "a queue"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Una señora asiente como quien sigue una serie.",
+        "targetWord": "serie",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escena",
+    "sentence": "Por la tarde repasa la [[escena]] de la panadería.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a scene",
+      "options": [
+        "a scene",
+        "a shopping list",
+        "a phone call",
+        "a photograph"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Por la tarde repasa la escena de la panadería.",
+        "targetWord": "escena",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corta",
+    "sentence": "Su respuesta fue demasiado [[corta]] para lo que preguntaban.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "short",
+      "options": [
+        "short",
+        "rude",
+        "loud",
+        "slow"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Su respuesta fue demasiado corta para lo que preguntaban.",
+        "targetWord": "corta",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mejor",
+    "sentence": "Dice que su madre ya está mucho [[mejor]] que antes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "better",
+      "options": [
+        "better",
+        "worse",
+        "older",
+        "busier"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Dice que su madre ya está mucho mejor que antes.",
+        "targetWord": "mejor",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caerse",
+    "sentence": "Nota que la respuesta [[se cae]] al suelo entre las dos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fall flat",
+      "options": [
+        "to fall flat",
+        "to take off",
+        "to fit in",
+        "to come back"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Nota que la respuesta se cae al suelo entre las dos.",
+        "targetWord": "se cae",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "notar",
+    "sentence": "Por su cara es fácil _____ que algo no ha ido bien.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "notar",
+      "options": [
+        "notar",
+        "olvidar",
+        "romper",
+        "guardar"
+      ],
+      "translation": "From her face it is easy to _____ that something has gone wrong.",
+      "optionTranslations": [
+        "notice",
+        "forget",
+        "break",
+        "keep"
+      ],
+      "audioClip": {
+        "storySlug": "la-madre-antes-que-el-pan",
+        "storySource": "user",
+        "sentence": "Por su cara es fácil notar que algo no ha ido bien.",
+        "targetWord": "notar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]

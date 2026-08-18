@@ -76,6 +76,59 @@ en un "¿Cuál?". El fallo no era de criterio sino de cierre, así que se bloque
 el cierre. (Puesto el 2026-08-03 tras romperla ofreciendo "bajar el umbral del
 gate o re-tirar a mano".)
 
+## Presupuesto de palabras (BLOQUEANTE, hook `Stop`)
+
+Tope de **160 palabras de PROSA** por mensaje. No cuentan tablas, bloques de
+código, listas de enlaces ni las líneas `verified:` / `not verified:` / `base:`.
+Un informe con tabla puede ser largo; el texto corrido que lo rodea, no.
+
+Enforced por `.claude/safety/stop-word-budget-guard.sh` (hook `Stop`): lee el
+último mensaje del asistente y BLOQUEA el cierre (exit 2) si la prosa pasa del
+tope. Sin variable de escape, igual que los otros dos guards de cierre.
+
+Cuando bloquee, **reescribe, no partas el mensaje en dos**. Lo que sobra casi
+siempre es una de estas tres: recapitular lo ya dicho o lo que el usuario acaba
+de leer en la salida de un comando; explicar un razonamiento que nadie pidió; o
+repetir la conclusión al final con otras palabras.
+
+WHY: la regla de responder corto llevaba tiempo en memoria y se rompía igual
+siempre. El 2026-08-18 el usuario contó a mano dos mensajes seguidos: 311
+palabras para decir "dos arregladas, una no, la rehago". Pidió que dejara de
+pasar en todo el proyecto, no solo en esa conversación.
+
+## Portadas: prompt cerrado antes de la primera tirada (BLOQUEANTE)
+
+Antes de generar la PRIMERA portada de un journey, el prompt tiene que llevar
+ya las cuatro cosas. Si falta una, se paga en tiradas:
+
+1. **Ficha de personaje literal** por cada recurrente: edad, pelo (color, largo,
+   con o sin flequillo) y **color fijo de ropa**, repetida en cada escena. Decir
+   "una joven de pelo oscuro" deja elegir a Flux, y elige distinto cada vez.
+2. **Registro visual anclado** a una portada de referencia concreta, no solo el
+   candado de estilo: color plano saturado, línea gruesa, cal blanca, sol fuerte,
+   figuras a media distancia.
+3. **Reparto corto y COMPLETAMENTE descrito.** Cada persona del cuadro, nombrada.
+   Todo hueco sin describir ("dos adultos más al fondo") lo rellena el modelo con
+   un niño, un adolescente o un anciano, que son prohibición dura.
+4. **Prohibición de texto explícita**, y ningún objeto escribible en la escena.
+   Un periódico abierto o un cartel SIEMPRE salen con letras inventadas; el
+   periódico va doblado y cerrado, y los carteles no existen.
+
+**TOPE: 2 tiradas por portada.** Si un tema pasa de ahí, PARA y arregla el
+prompt o la escena; no sigas tirando. Cuando una escena falla dos veces por lo
+mismo, el problema es la escena, no la suerte.
+
+**Revisión: a tamaño completo, una por una.** La hoja de contactos sirve para
+juzgar coherencia entre portadas, y para nada más: a ese tamaño se esconden los
+niños del fondo y el texto pequeño. Los defectos se miden contra lo que cuenta
+la historia, no solo contra el candado.
+
+WHY: el A1 ES/Spain costó **80 tiradas para 21 portadas**, casi cuatro por
+portada. Con el prompt final habrían bastado unas 27, que es el ritmo de 1,3 que
+dieron los temas 3 al 7 en cuanto la ficha, el registro y el reparto estuvieron
+fijados. Las otras 53 fueron aprender lo que ya estaba en el proyecto. El
+usuario: "80 tiradas para 21 portadas, haces un trabajo pésimo". Tenía razón.
+
 ## Reporting status — no absolute claims
 
 **Never** declare a multi-item or multi-check task "done", "fully corrected",

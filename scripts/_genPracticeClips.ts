@@ -10,7 +10,8 @@
  * `listen_choose` is skipped (it replays a real story fragment via voiceId).
  * `match_meaning` is skipped (word audio is resolved at runtime by word-tts).
  *
- * Run: npx tsx scripts/_genPracticeClips.ts <slug> [--force] [--only=word1,word2]
+ * Run: npx tsx scripts/_genPracticeClips.ts <slug> [--featured] [--force] [--only=word1,word2]
+ * `--featured` renders only the 10 post-story exercises and skips the pool.
  * `--only` re-renders just those words (comma-separated, accent-insensitive)
  * even if they already have a clipUrl. Re-renders bump `audioClip.rev`, which
  * is part of the R2 key hash: R2 serves `immutable`, so a re-render MUST get a
@@ -347,6 +348,7 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
 (async () => {
   const slug = process.argv[2];
   const force = process.argv.includes("--force");
+  const soloFeatured = process.argv.includes("--featured");
   const onlyArg = process.argv.find((a) => a.startsWith("--only="));
   const only = onlyArg ? new Set(onlyArg.slice(7).split(",").map((w) => strip(w))) : null;
   const takesArg = process.argv.find((a) => a.startsWith("--takes="));
@@ -356,7 +358,7 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
   // committing a swap). Only honored together with --takes (local-only), so an
   // off-voice clip can never be published/seeded by accident.
   const voiceArg = process.argv.find((a) => a.startsWith("--voice="));
-  if (!slug) throw new Error("usage: _genPracticeClips.ts <slug> [--force] [--only=w1,w2] [--takes=N | --pick=n1,n2]");
+  if (!slug) throw new Error("usage: _genPracticeClips.ts <slug> [--featured] [--force] [--only=w1,w2] [--takes=N | --pick=n1,n2]");
   // Calibration/debug: run the tail gate on one file and exit.
   if (slug === "--tailcheck") { console.log(JSON.stringify(await tailClean(process.argv[3]))); return; }
 
@@ -423,7 +425,13 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
   const targets = exs
     .map((e, i) => ({ e, i }))
     .filter(({ e }) => (e.type === "meaning_in_context" || e.type === "fill_blank") && e.payload?.audioClip?.sentence)
-    .filter(({ e }) => (only ? only.has(strip(e.word)) : force || !e.payload.audioClip.clipUrl));
+    .filter(({ e }) => (only ? only.has(strip(e.word)) : force || !e.payload.audioClip.clipUrl))
+    // `--featured`: renderiza SOLO los 10 de la sesión de después de la historia.
+    // WHY (2026-08-18): de los 20 clips por historia, 9 caen en featured y 11 en
+    // el pool, que solo aparece si el usuario toca la pestaña Practice. Se
+    // pagaba el 55% del audio por material que puede no oír nadie. El pool se
+    // rellena después, cuando se sepa si se abre.
+    .filter(({ e }) => !soloFeatured || e.featured !== false);
   if (only && targets.length !== only.size)
     console.log(`WARN --only matched ${targets.length}/${only.size} words`);
 

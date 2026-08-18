@@ -79,6 +79,11 @@ export type ValidationContext = {
   topic?: string;
   /** Stories already in the same journey+level+topic. */
   existing?: ExistingStorySummary[];
+  /**
+   * Lemas de vocab que YA enseñan otros journeys del mismo idioma. Los llena
+   * saveStory.ts leyendo la base; vacío o ausente desactiva el check.
+   */
+  taughtElsewhere?: string[];
   /** Titles of every other story in the same journey (across all topics
    *  and levels). Used by the anchor-repetition and title-template-
    *  monotony checks. Pass `[]` or omit to skip those checks. */
@@ -1771,7 +1776,10 @@ export async function validateGeneratedStory(
   // ninguna no lo es, y ESO lo bloquea el gate de lote en scripts/saveStory.ts.
   const tieneTurnos = /^\s*[A-ZÁÉÍÓÚÑÜ][\wáéíóúñçüö' ]{1,20}:\s/m.test(parsed.text);
   if (!tieneTurnos) {
-    const hablaCitada = /[«»""„"]|(^|\n)\s*[-—–]\s+\S/.test(parsed.text);
+    // Las comillas CURVAS “” son las del catálogo desde el 2026-08-17, y la clase
+    // no las tenía: reconocía «», „ y las rectas, así que una historia narrada
+    // escrita con la convención vigente se marcaba como muda (2026-08-18).
+    const hablaCitada = /[«»“”""„"]|(^|\n)\s*[-—–]\s+\S/.test(parsed.text);
     checks.push({
       id: "narrator-quoted-speech",
       label: "Narrated prose contains brief quoted speech",
@@ -2817,6 +2825,46 @@ export async function validateGeneratedStory(
     const usedNames = new Set<string>();
     for (const e of existing) for (const n of e.characterNames) usedNames.add(n.toLowerCase());
     const nameClash = speakerNames.filter((n) => usedNames.has(n.toLowerCase()));
+    // Vocabulario que otro journey del idioma YA enseña.
+    //
+    // POR QUÉ (2026-08-18). Las tres primeras historias del A1 brasileño
+    // repetían 40 de sus 67 palabras del A0: un 60%. Cada historia pasaba
+    // sola porque nadie cruzaba su vocab con lo ya enseñado, y un nivel que
+    // reenseña seis de cada diez palabras no hace avanzar a nadie.
+    //
+    // Calibrado con el catálogo, no a ojo: entre el A0 y el A1 españoles el
+    // solape real es del 15%, entre dos journeys del MISMO nivel sube al
+    // 30-42%, y entre niveles lejanos (C1 contra A0) baja al 1-3%. Como esto
+    // compara niveles consecutivos del mismo idioma, la referencia es el 15%:
+    // se avisa al 25% y se bloquea al 35%.
+    // Mismo criterio que el resto del archivo: minúsculas sin tildes, y el
+    // prefijo del idioma fuera (el artículo alemán, por ejemplo).
+    const lema = (w: string) =>
+      stripPrefix(w.toLowerCase(), context.language).normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    const yaEnsenado = new Set((context.taughtElsewhere ?? []).map(lema));
+    if (yaEnsenado.size > 0 && parsed.vocab.length > 0) {
+      const repetidas = parsed.vocab
+        .map((v) => v.word)
+        .filter((w) => yaEnsenado.has(lema(w)));
+      const pct = Math.round((100 * repetidas.length) / parsed.vocab.length);
+      // CERO, no un porcentaje (2026-08-18). Un slot de vocab es la promesa
+      // "llévate esta palabra"; si otro journey del idioma ya la enseñó, el
+      // lector ya la tiene en su repaso y el slot está tirado. La única
+      // excepción legítima es la palabra que en esta escena significa OTRA
+      // cosa, y esa se justifica en su propia glosa, no en el umbral. Se
+      // toleran dos como colchón de lematización (plural, participio) antes de
+      // bloquear, pero cualquiera avisa.
+      checks.push({
+        id: "vocab-taught-elsewhere",
+        label: "Vocab is not already taught by another journey in this language (target: zero)",
+        status: repetidas.length > 2 ? "fail" : repetidas.length > 0 ? "warn" : "pass",
+        detail:
+          repetidas.length > 0
+            ? `${repetidas.length}/${parsed.vocab.length} (${pct}%) ya enseñadas: ${repetidas.slice(0, 8).join(", ")}${repetidas.length > 8 ? ` …+${repetidas.length - 8}` : ""}`
+            : undefined,
+      });
+    }
+
     checks.push({
       id: "names-cross-story",
       label: "Character names not reused from prior stories",

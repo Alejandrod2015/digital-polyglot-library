@@ -1,0 +1,548 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "tiza,madera,moneda,máquina",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "tiza",
+          "answer": "chalk",
+          "options": [
+            "chalk",
+            "wood",
+            "a coin",
+            "a till"
+          ]
+        },
+        {
+          "word": "madera",
+          "answer": "wood",
+          "options": [
+            "chalk",
+            "wood",
+            "a coin",
+            "a till"
+          ]
+        },
+        {
+          "word": "moneda",
+          "answer": "a coin",
+          "options": [
+            "chalk",
+            "wood",
+            "a coin",
+            "a till"
+          ]
+        },
+        {
+          "word": "máquina",
+          "answer": "a till",
+          "options": [
+            "chalk",
+            "wood",
+            "a coin",
+            "a till"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuenta",
+    "sentence": "No sabe cómo se pide aquí la [[cuenta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the bill",
+      "options": [
+        "the bill",
+        "the change",
+        "the menu",
+        "the receipt"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "No sabe cómo se pide aquí la cuenta.",
+        "targetWord": "cuenta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8c746760c084f7ba.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de memoria",
+    "sentence": "Contesta [[de memoria]], sin mirar ningún papel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "from memory",
+      "options": [
+        "from memory",
+        "out loud",
+        "in a hurry",
+        "by mistake"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Contesta de memoria, sin mirar ningún papel.",
+        "targetWord": "de memoria",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/adc13400585cc55f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de cerca",
+    "sentence": "Mira [[de cerca]] y ve unas rayas blancas en la barra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "close up",
+      "options": [
+        "close up",
+        "from the door",
+        "over her shoulder",
+        "through the window"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Mira de cerca y ve unas rayas blancas en la barra.",
+        "targetWord": "de cerca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f0b2cc1128cddf9a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raya",
+    "sentence": "Ve unas [[rayas]] blancas en la madera oscura.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a line, a mark",
+      "options": [
+        "a line, a mark",
+        "a stain",
+        "a crack",
+        "a shadow"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Ve unas rayas blancas en la madera oscura.",
+        "targetWord": "rayas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c803dc76f891e33.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "otra vez",
+    "sentence": "Al día siguiente desayuna allí [[otra vez]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "again",
+      "options": [
+        "again",
+        "at last",
+        "by chance",
+        "much later"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Al día siguiente desayuna allí otra vez.",
+        "targetWord": "otra vez",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c15d5c497eedac0e.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cobrar",
+    "sentence": "El dueño no usa la máquina para _____ a nadie.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cobrar",
+      "options": [
+        "cobrar",
+        "invitar",
+        "esperar",
+        "llamar"
+      ],
+      "translation": "The owner does not use the till to _____ anybody.",
+      "optionTranslations": [
+        "charge",
+        "treat",
+        "wait for",
+        "call"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "El dueño no usa la máquina para cobrar a nadie.",
+        "targetWord": "cobrar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fe813b24875c0e6b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sacar",
+    "sentence": "Abre el bolso para _____ el dinero.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sacar",
+      "options": [
+        "sacar",
+        "guardar",
+        "perder",
+        "contar"
+      ],
+      "translation": "She opens her bag to _____ the money.",
+      "optionTranslations": [
+        "take out",
+        "put away",
+        "lose",
+        "count"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Abre el bolso para sacar el dinero.",
+        "targetWord": "sacar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f47522cd4c35848b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "apuntar",
+    "sentence": "No quiere olvidarlo y decide _____ en un papel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "apuntar",
+      "options": [
+        "apuntar",
+        "borrar",
+        "romper",
+        "esconder"
+      ],
+      "translation": "She does not want to forget it and decides to _____ it on paper.",
+      "optionTranslations": [
+        "write it down",
+        "rub it out",
+        "tear it up",
+        "hide it"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "No quiere olvidarlo y decide apuntar en un papel.",
+        "targetWord": "apuntar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1069c9c933b4b216.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "borrar",
+    "sentence": "Al final del día pasa el codo para _____ las rayas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "borrar",
+      "options": [
+        "borrar",
+        "dibujar",
+        "contar",
+        "limpiar"
+      ],
+      "translation": "At the end of the day he wipes his elbow across to _____ the marks.",
+      "optionTranslations": [
+        "rub out",
+        "draw",
+        "count",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Al final del día pasa el codo para borrar las rayas.",
+        "targetWord": "borrar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9a2d757fc8a4efcc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tranquilo",
+    "sentence": "El bar está [[tranquilo]] un domingo por la mañana.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "quiet",
+      "options": [
+        "quiet",
+        "packed",
+        "noisy",
+        "closed"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "El bar está tranquilo un domingo por la mañana.",
+        "targetWord": "tranquilo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ocupado",
+    "sentence": "Solo hay dos mesas [[ocupadas]] a esa hora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "taken",
+      "options": [
+        "taken",
+        "free",
+        "broken",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Solo hay dos mesas ocupadas a esa hora.",
+        "targetWord": "ocupadas",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tostada",
+    "sentence": "Desayuna un café y una [[tostada]] en la barra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "toast with oil",
+      "options": [
+        "toast with oil",
+        "a fried egg",
+        "a slice of cake",
+        "a bowl of fruit"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Desayuna un café y una tostada en la barra.",
+        "targetWord": "tostada",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "zumo",
+    "sentence": "Pide también un [[zumo]] de naranja recién hecho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "juice",
+      "options": [
+        "juice",
+        "milk",
+        "water",
+        "wine"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Pide también un zumo de naranja recién hecho.",
+        "targetWord": "zumo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "codo",
+    "sentence": "Borra las rayas con el [[codo]], sin buscar un paño.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the elbow",
+      "options": [
+        "the elbow",
+        "the knee",
+        "the thumb",
+        "the shoulder"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Borra las rayas con el codo, sin buscar un paño.",
+        "targetWord": "codo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "encima de",
+    "sentence": "Deja las monedas [[encima de]] la barra de madera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "on top of",
+      "options": [
+        "on top of",
+        "underneath",
+        "far from",
+        "behind"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Deja las monedas encima de la barra de madera.",
+        "targetWord": "encima de",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "debajo",
+    "sentence": "Guarda el paño [[debajo]] de la barra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "underneath",
+      "options": [
+        "underneath",
+        "on top",
+        "outside",
+        "nearby"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Guarda el paño debajo de la barra.",
+        "targetWord": "debajo",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desayunar",
+    "sentence": "[[Desayuna]] en la barra y luego quiere marcharse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to have breakfast",
+      "options": [
+        "to have breakfast",
+        "to have dinner",
+        "to go shopping",
+        "to wash up"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Desayuna en la barra y luego quiere marcharse.",
+        "targetWord": "desayuna",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marcharse",
+    "sentence": "Desayuna en la barra y luego quiere [[marcharse]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to leave",
+      "options": [
+        "to leave",
+        "to sit down",
+        "to pay up",
+        "to order more"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Desayuna en la barra y luego quiere marcharse.",
+        "targetWord": "marcharse",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "buscar",
+    "sentence": "[[Busca]] al dueño con los ojos entre la gente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look for",
+      "options": [
+        "to look for",
+        "to greet",
+        "to avoid",
+        "to follow"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Busca al dueño con los ojos entre la gente.",
+        "targetWord": "busca",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pagar",
+    "sentence": "Deja dos monedas en la barra para _____ el café.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pagar",
+      "options": [
+        "pagar",
+        "pedir",
+        "probar",
+        "calentar"
+      ],
+      "translation": "She leaves two coins on the counter to _____ for the coffee.",
+      "optionTranslations": [
+        "pay",
+        "order",
+        "taste",
+        "heat up"
+      ],
+      "audioClip": {
+        "storySlug": "apunta-la-cuenta-con-tiza",
+        "storySource": "user",
+        "sentence": "Deja dos monedas en la barra para pagar el café.",
+        "targetWord": "pagar",
+        "language": "spanish"
+      }
+    },
+    "featured": false
+  }
+]
