@@ -63,7 +63,14 @@ async function main() {
   for (const r of rows) {
     console.log(`${r.firstName ?? "?"} <${r.email}>  status=${r.status} score=${r.score ?? "-"} platform=${r.platform ?? "ios"}`);
     if (DRY) {
-      console.log("  --dry: would invite to TestFlight and send the acceptance email. Nothing sent.\n");
+      // Named per platform, because the preview of an irreversible send is the
+      // worst place to describe the wrong channel: an Android invite never
+      // touches TestFlight, it is our mail with the Play links.
+      const canal =
+        (r.platform ?? "ios").toLowerCase() === "android"
+          ? "would send the Android acceptance email with the Play links"
+          : "would add them to TestFlight and send the acceptance email";
+      console.log(`  --dry: ${canal}. Nothing sent.\n`);
       continue;
     }
     // Imported lazily so --dry never even loads the sender.
