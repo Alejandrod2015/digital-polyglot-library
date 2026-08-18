@@ -254,12 +254,24 @@ export async function GET(req: NextRequest): Promise<Response> {
     const origen = journeysDelIdioma.find(
       (j) => j.variant === track.variant && (j.levels ?? []).some((lv) => niveles.some((n: any) => n.id === lv)));
     const sig = origen?.nextJourneyId ? journeyPorId.get(origen.nextJourneyId) : null;
+    // Se manda SIEMPRE que haya puntero, no solo al terminar. Esconderlo hasta
+    // el final significaba que la tarjeta no existía para nadie: el tester más
+    // avanzado iba 13/21. Y enseñar lo que viene mientras avanzas motiva más
+    // que descubrirlo cuando ya no queda nada por hacer. La app decide si la
+    // pinta encendida o atenuada con `remaining`.
     return {
       ...track,
       complete: terminado,
       nextJourney:
-        terminado && sig && sig.status === "active"
-          ? { id: sig.id, name: sig.name, variant: sig.variant, levels: sig.levels }
+        sig && sig.status === "active"
+          ? {
+              id: sig.id,
+              name: sig.name,
+              variant: sig.variant,
+              levels: sig.levels,
+              unlocked: terminado,
+              remaining: Math.max(0, total - hechas),
+            }
           : null,
     };
   });

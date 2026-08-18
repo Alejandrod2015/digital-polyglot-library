@@ -905,11 +905,21 @@ type MobileJourneyTrackSummary = {
   levels: MobileJourneyLevelSummary[];
   /** true cuando no queda ninguna historia por completar en ningún nivel. */
   complete?: boolean;
-  /** Journey que el servidor ofrece a continuación, solo si `complete`.
+  /** Journey que el servidor ofrece a continuación, siempre que haya puntero.
    *  Existe porque al terminar las 21 historias no pasaba nada: el usuario
    *  se quedaba mirando un track lleno de checks sin saber que había un
-   *  siguiente nivel publicado. */
-  nextJourney?: { id: string; name: string; variant?: string | null; levels: string[] } | null;
+   *  siguiente nivel publicado. Llega también a medio track, atenuado, porque
+   *  saber lo que viene mientras avanzas motiva más que descubrirlo al final. */
+  nextJourney?: {
+    id: string;
+    name: string;
+    variant?: string | null;
+    levels: string[];
+    /** false mientras queden historias por completar en este track. */
+    unlocked?: boolean;
+    /** cuántas historias faltan para desbloquearlo. */
+    remaining?: number;
+  } | null;
 };
 
 type MobileJourneyPayload = {
@@ -18165,11 +18175,21 @@ export function MobileLibraryShell(args: {
 
         {/* Puente al siguiente journey. Antes, terminar las 21 historias no
             llevaba a ninguna parte: el track se quedaba lleno de checks y el
-            siguiente nivel, ya publicado, no aparecía por ningún lado. El
-            servidor solo manda `nextJourney` cuando el track está completo. */}
-        {activeJourneyTrack?.complete && activeJourneyTrack?.nextJourney ? (
-          <View style={styles.journeyNextCard}>
-            <Text style={styles.journeyNextKicker}>JOURNEY COMPLETE</Text>
+            siguiente nivel, ya publicado, no aparecía por ningún lado. Ahora el
+            servidor manda `nextJourney` en cuanto hay puntero y `unlocked` dice
+            si ya se ganó, así que la tarjeta también existe a mitad de camino. */}
+        {activeJourneyTrack?.nextJourney ? (
+          <View
+            style={[
+              styles.journeyNextCard,
+              !activeJourneyTrack?.nextJourney?.unlocked ? styles.journeyNextCardLocked : null,
+            ]}
+          >
+            <Text style={styles.journeyNextKicker}>
+              {activeJourneyTrack?.nextJourney?.unlocked
+                ? "JOURNEY COMPLETE"
+                : `UP NEXT  ·  ${activeJourneyTrack?.nextJourney?.remaining ?? 0} STORIES TO GO`}
+            </Text>
             <Text style={styles.journeyNextTitle}>
               {activeJourneyTrack?.nextJourney?.name ?? ""}
               {activeJourneyTrack?.nextJourney?.levels?.length
@@ -18177,7 +18197,9 @@ export function MobileLibraryShell(args: {
                 : ""}
             </Text>
             <Text style={styles.journeyNextBody}>
-              You finished every story here. The next journey is ready.
+              {activeJourneyTrack?.nextJourney?.unlocked
+                ? "You finished every story here. The next journey is ready."
+                : "Finish this journey to unlock it."}
             </Text>
           </View>
         ) : null}
@@ -22296,6 +22318,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1.2,
     marginBottom: 6,
   },
+  journeyNextCardLocked: { borderColor: "#2b3d57", opacity: 0.72 },
   journeyNextTitle: { color: "#eef4ff", fontSize: 19, fontWeight: "700", marginBottom: 4 },
   journeyNextBody: { color: "#9fb3d1", fontSize: 14, lineHeight: 19 },
   journeyPathLevelBadge: {
