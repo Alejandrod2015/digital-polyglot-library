@@ -1,0 +1,546 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "sofá,paquete,llaves,rellano",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "sofá",
+     "answer": "a sofa",
+     "options": [
+      "a sofa",
+      "a parcel",
+      "keys",
+      "a landing"
+     ]
+    },
+    {
+     "word": "paquete",
+     "answer": "a parcel",
+     "options": [
+      "a sofa",
+      "a parcel",
+      "keys",
+      "a landing"
+     ]
+    },
+    {
+     "word": "llaves",
+     "answer": "keys",
+     "options": [
+      "a sofa",
+      "a parcel",
+      "keys",
+      "a landing"
+     ]
+    },
+    {
+     "word": "rellano",
+     "answer": "a landing",
+     "options": [
+      "a sofa",
+      "a parcel",
+      "keys",
+      "a landing"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "de pie",
+  "sentence": "Lo deja en la mesa y se queda [[de pie]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "standing",
+   "options": [
+    "standing",
+    "sitting down",
+    "half asleep",
+    "by the window"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "Lo deja en la mesa y se queda de pie.",
+    "targetWord": "de pie",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "al lado de",
+  "sentence": "Lleva cuatro meses [[al lado de]] mi sofá.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next to",
+   "options": [
+    "next to",
+    "far from",
+    "behind",
+    "underneath"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "Lleva cuatro meses al lado de mi sofá.",
+    "targetWord": "al lado de",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "con cuidado",
+  "sentence": "Lo toca [[con cuidado]] y busca un nombre por los lados.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "carefully",
+   "options": [
+    "carefully",
+    "quickly",
+    "angrily",
+    "by accident"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "Lo toca con cuidado y busca un nombre por los lados.",
+    "targetWord": "con cuidado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "olor",
+  "sentence": "En la escalera hay [[olor]] a café recién hecho.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a smell",
+   "options": [
+    "a smell",
+    "a noise",
+    "a shadow",
+    "a draught"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "En la escalera hay olor a café recién hecho.",
+    "targetWord": "olor",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vecina",
+  "sentence": "La [[vecina]] del piso de arriba llama a la puerta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a neighbour",
+   "options": [
+    "a neighbour",
+    "a cousin",
+    "a landlady",
+    "a postwoman"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "La vecina del piso de arriba llama a la puerta.",
+    "targetWord": "vecina",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pueblo",
+  "sentence": "En este [[pueblo]] casi todo el mundo se conoce.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a village",
+   "options": [
+    "a village",
+    "a city",
+    "a street",
+    "a region"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "En este pueblo casi todo el mundo se conoce.",
+    "targetWord": "pueblo",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pesa",
+  "sentence": "La maleta _____ tanto que necesita las dos manos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pesa",
+   "options": [
+    "pesa",
+    "cuesta",
+    "suena",
+    "cabe"
+   ],
+   "translation": "The suitcase _____ so much that she needs both hands.",
+   "optionTranslations": [
+    "weighs",
+    "costs",
+    "sounds",
+    "fits"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "La maleta pesa tanto que necesita las dos manos.",
+    "targetWord": "pesa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "espera",
+  "sentence": "_____ un momento, que ahora bajo con las llaves.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "espera",
+   "options": [
+    "espera",
+    "entra",
+    "pasa",
+    "corre"
+   ],
+   "translation": "_____ a moment, I am coming down with the keys.",
+   "optionTranslations": [
+    "wait",
+    "come in",
+    "come through",
+    "run"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "espera un momento, que ahora bajo con las llaves.",
+    "targetWord": "espera",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "llama",
+  "sentence": "_____ a la puerta tres veces y nadie contesta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "llama",
+   "options": [
+    "llama",
+    "vuelve",
+    "sale",
+    "mira"
+   ],
+   "translation": "She _____ at the door three times and nobody answers.",
+   "optionTranslations": [
+    "knocks",
+    "goes back",
+    "goes out",
+    "looks"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "llama a la puerta tres veces y nadie contesta.",
+    "targetWord": "llama",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "no hace falta",
+  "sentence": "[[No hace falta]], que ya lo subo yo luego.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "there is no need",
+   "options": [
+    "there is no need",
+    "it is not allowed",
+    "it does not fit",
+    "it is not ready"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "No hace falta, que ya lo subo yo luego.",
+    "targetWord": "No hace falta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escrito",
+  "sentence": "Y por qué no me has [[escrito]], pregunta desde la puerta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "written",
+   "options": [
+    "written",
+    "called",
+    "paid",
+    "answered"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "Y por qué no me has escrito, pregunta desde la puerta.",
+    "targetWord": "escrito",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nombre",
+  "sentence": "Busca un [[nombre]] por los lados del paquete.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a name",
+   "options": [
+    "a name",
+    "a price",
+    "a stamp",
+    "a date"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "Busca un nombre por los lados del paquete.",
+    "targetWord": "nombre",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "luego",
+  "sentence": "Y [[luego]], más bajo: ese paquete no es para ti.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "then, afterwards",
+   "options": [
+    "then, afterwards",
+    "before that",
+    "at once",
+    "never again"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "Y luego, más bajo: ese paquete no es para ti.",
+    "targetWord": "luego",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "temprano",
+  "sentence": "Llama a la puerta muy [[temprano]], antes de las ocho.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "early",
+   "options": [
+    "early",
+    "late",
+    "often",
+    "suddenly"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "Llama a la puerta muy temprano, antes de las ocho.",
+    "targetWord": "temprano",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "más bajo",
+  "sentence": "Lo dice [[más bajo]], para que no lo oiga nadie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in a lower voice",
+   "options": [
+    "in a lower voice",
+    "much louder",
+    "very slowly",
+    "from further away"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "Lo dice más bajo, para que no lo oiga nadie.",
+    "targetWord": "más bajo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cosa",
+  "sentence": "Es una [[cosa]] pequeña, envuelta en papel marrón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a thing",
+   "options": [
+    "a thing",
+    "a person",
+    "a place",
+    "a moment"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "Es una cosa pequeña, envuelta en papel marrón.",
+    "targetWord": "cosa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "marzo",
+  "sentence": "El paquete llega en [[marzo]], al principio de la primavera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "March",
+   "options": [
+    "March",
+    "August",
+    "December",
+    "October"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "El paquete llega en marzo, al principio de la primavera.",
+    "targetWord": "marzo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mira",
+  "sentence": "_____ el reloj y ve que ya son las nueve.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mira",
+   "options": [
+    "mira",
+    "come",
+    "cierra",
+    "guarda"
+   ],
+   "translation": "She _____ at the clock and sees it is already nine.",
+   "optionTranslations": [
+    "looks",
+    "eats",
+    "closes",
+    "puts away"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "mira el reloj y ve que ya son las nueve.",
+    "targetWord": "mira",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "toca",
+  "sentence": "_____ la pared con la mano para ver si está fría.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "toca",
+   "options": [
+    "toca",
+    "mira",
+    "aparta",
+    "mueve"
+   ],
+   "translation": "She _____ the wall with her hand to see if it is cold.",
+   "optionTranslations": [
+    "touches",
+    "looks at",
+    "moves aside",
+    "shifts"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "toca la pared con la mano para ver si está fría.",
+    "targetWord": "toca",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "recuerda",
+  "sentence": "No _____ dónde ha dejado las llaves esta mañana.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "recuerda",
+   "options": [
+    "recuerda",
+    "pregunta",
+    "cierra",
+    "escribe"
+   ],
+   "translation": "She does not _____ where she left the keys this morning.",
+   "optionTranslations": [
+    "remember",
+    "ask",
+    "close",
+    "write"
+   ],
+   "audioClip": {
+    "storySlug": "el-paquete-duerme-cuatro-meses",
+    "storySource": "user",
+    "sentence": "No recuerda dónde ha dejado las llaves esta mañana.",
+    "targetWord": "recuerda",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

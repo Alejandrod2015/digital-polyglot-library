@@ -450,6 +450,21 @@ fi
 RESEND_CURL_SEGMENTS="$(printf '%s' "$COMMAND" | { grep -oE 'curl[^|;&]*' || true; })"
 RESEND_MENTIONS="$(printf '%s' "$COMMAND" | { grep -o 'api\.resend\.com' || true; } | wc -l | tr -d '[:space:]')"
 RESEND_IN_CURL="$(printf '%s' "$RESEND_CURL_SEGMENTS" | { grep -o 'api\.resend\.com' || true; } | wc -l | tr -d '[:space:]')"
+#     CONFIGURAR NO ES ENVIAR (2026-08-17). La cuenta de Resend tiene rutas que
+#     no mandan nada a nadie: /domains (verificacion, tracking de aperturas),
+#     /api-keys, /audiences. Activar el tracking de aperturas es un PATCH a
+#     /domains y el gate lo bloqueaba por llevar cuerpo, pidiendo un verbo de
+#     correo que no pinta nada ahi. Lo que manda correo es /emails,
+#     /emails/batch y /broadcasts/<id>/send, y esos SIGUEN bloqueados:
+#     la exencion vale solo si TODAS las menciones son rutas de configuracion.
+RESEND_CONFIG_URLS="$(printf '%s' "$COMMAND" | { grep -oE 'api\.resend\.com/(domains|api-keys|audiences)([/?][^"'"'"' ]*)?' || true; } | wc -l | tr -d '[:space:]')"
+RESEND_SEND_URLS="$(printf '%s' "$COMMAND" | { grep -oE 'api\.resend\.com/(emails|broadcasts)' || true; } | wc -l | tr -d '[:space:]')"
+if [ "$RESEND_MENTIONS" -gt 0 ] && [ "$RESEND_SEND_URLS" -eq 0 ] \
+   && [ "$RESEND_CONFIG_URLS" -eq "$RESEND_MENTIONS" ] \
+   && [ "$RESEND_MENTIONS" -eq "$RESEND_IN_CURL" ] \
+   && ! printf '%s' "$COMMAND" | grep -qE '(^|[|;&[:space:]])(npx|node|npm|pnpm|yarn|tsx|bash|sh)[[:space:]]'; then
+    MAIL_PREVIEW_ONLY=1
+fi
 if [ "$RESEND_MENTIONS" -gt 0 ] && [ "$RESEND_MENTIONS" -eq "$RESEND_IN_CURL" ] \
    && ! printf '%s' "$RESEND_CURL_SEGMENTS" | grep -qE -- '-X[[:space:]]*"?(POST|PUT|PATCH|DELETE)|--request[[:space:]]*"?(POST|PUT|PATCH|DELETE)|(^|[[:space:]])-d([[:space:]]|=|@|['"'"'"{])|--data|--json|(^|[[:space:]])-F([[:space:]]|=|@)|--form|--upload-file|(^|[[:space:]])-T([[:space:]]|=|@)' \
    && ! printf '%s' "$COMMAND" | grep -qE '(^|[|;&[:space:]])(npx|node|npm|pnpm|yarn|tsx|bash|sh)[[:space:]]' \

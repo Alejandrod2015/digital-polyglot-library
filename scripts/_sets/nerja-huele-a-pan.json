@@ -1,0 +1,573 @@
+[
+  {
+    "type": "meaning_in_context",
+    "word": "buenas",
+    "sentence": "Hola, [[buenas]], dice al entrar en la tienda del pan.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a short hello",
+      "options": [
+        "a short hello",
+        "a quick goodbye",
+        "an apology",
+        "a thank you"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Hola, buenas, dice al entrar en la tienda del pan.",
+        "targetWord": "buenas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9958b74b2a98280.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "qué tal",
+    "sentence": "[[Qué tal]] tu madre, le pregunta la vecina desde el escalón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "how are things",
+      "options": [
+        "how are things",
+        "how much is it",
+        "where have you been",
+        "what is that"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Qué tal tu madre, le pregunta la vecina desde el escalón.",
+        "targetWord": "Qué tal",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/db99eba833d0f040.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saludo",
+    "sentence": "Aquí el [[saludo]] no es una palabra suelta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a greeting",
+      "options": [
+        "a greeting",
+        "a favour",
+        "a warning",
+        "a goodbye"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Aquí el saludo no es una palabra suelta.",
+        "targetWord": "saludo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/933cf20fa845492f.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conversación",
+    "sentence": "Diez minutos después la [[conversación]] sigue en la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a talk",
+      "options": [
+        "a talk",
+        "a silence",
+        "an argument",
+        "a message"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Diez minutos después la conversación sigue en la puerta.",
+        "targetWord": "conversación",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b43f88693b8907a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hija",
+    "sentence": "Aquí hace un calor que no es normal, [[hija]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "love, a warm address",
+      "options": [
+        "love, a warm address",
+        "my own daughter",
+        "a young girl",
+        "a close cousin"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Aquí hace un calor que no es normal, hija.",
+        "targetWord": "hija",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/950e0ecdf4851e4a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "la del primero",
+    "sentence": "Tú eres [[la del primero]], la que viene siempre de la capital.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the first-floor neighbour",
+      "options": [
+        "the first-floor neighbour",
+        "the first one in line",
+        "the one from before",
+        "the newest tenant"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Tú eres la del primero, la que viene siempre de la capital.",
+        "targetWord": "la del primero",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5cfdab3d9a8557bf.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "comprar",
+    "sentence": "Va a la panadería a _____ pan para la cena.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "comprar",
+      "options": [
+        "comprar",
+        "vender",
+        "guardar",
+        "cortar"
+      ],
+      "translation": "She goes to the bakery to _____ bread for dinner.",
+      "optionTranslations": [
+        "to buy",
+        "to sell",
+        "to keep",
+        "to cut"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Va a la panadería a comprar pan para la cena.",
+        "targetWord": "comprar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/79057949381b1812.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "sube",
+    "sentence": "Deja la maleta abajo y _____ a la terraza del último piso.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sube",
+      "options": [
+        "sube",
+        "cruza",
+        "entra",
+        "espera"
+      ],
+      "translation": "She leaves the suitcase downstairs and _____ to the top floor terrace.",
+      "optionTranslations": [
+        "goes up",
+        "crosses",
+        "goes in",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Deja la maleta abajo y sube a la terraza del último piso.",
+        "targetWord": "sube",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f0180a7bf88df9b.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "baja",
+    "sentence": "Cuando suena el timbre, _____ del cuarto piso a la calle.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "baja",
+      "options": [
+        "baja",
+        "llega",
+        "entra",
+        "espera"
+      ],
+      "translation": "When the bell rings, she _____ from the fourth floor to the street.",
+      "optionTranslations": [
+        "goes down",
+        "arrives",
+        "goes in",
+        "waits"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Cuando suena el timbre, baja del cuarto piso a la calle.",
+        "targetWord": "baja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2de8926dd83f5ce9.mp3"
+      }
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "mostrador,panadería,maleta,julio",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "mostrador",
+          "answer": "a shop counter",
+          "options": [
+            "a shop counter",
+            "a bakery",
+            "a suitcase",
+            "July"
+          ]
+        },
+        {
+          "word": "panadería",
+          "answer": "a bakery",
+          "options": [
+            "a shop counter",
+            "a bakery",
+            "a suitcase",
+            "July"
+          ]
+        },
+        {
+          "word": "maleta",
+          "answer": "a suitcase",
+          "options": [
+            "a shop counter",
+            "a bakery",
+            "a suitcase",
+            "July"
+          ]
+        },
+        {
+          "word": "julio",
+          "answer": "July",
+          "options": [
+            "a shop counter",
+            "a bakery",
+            "a suitcase",
+            "July"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bajo",
+    "sentence": "En el [[bajo]] está la vecina, que la ve subir la maleta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the ground floor flat",
+      "options": [
+        "the ground floor flat",
+        "the top floor",
+        "the front door",
+        "the inner patio"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "En el bajo está la vecina, que la ve subir la maleta.",
+        "targetWord": "bajo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dbedf11ab44d154f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sentado",
+    "sentence": "La vecina está [[sentada]] en el escalón, sin moverse.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "seated",
+      "options": [
+        "seated",
+        "standing",
+        "asleep",
+        "leaning"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "La vecina está sentada en el escalón, sin moverse.",
+        "targetWord": "sentada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d6c507e7ae12a985.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entender",
+    "sentence": "Entonces lo ha [[entendido]]: aquí saludar lleva su tiempo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to understand",
+      "options": [
+        "to understand",
+        "to forget",
+        "to explain",
+        "to doubt"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Entonces lo ha entendido: aquí saludar lleva su tiempo.",
+        "targetWord": "entendido",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/14d64b6b590fa7ae.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "minuto",
+    "sentence": "Ya lleva diez [[minutos]] hablando en la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a minute",
+      "options": [
+        "a minute",
+        "an hour",
+        "a second",
+        "a week"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Ya lleva diez minutos hablando en la puerta.",
+        "targetWord": "minutos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3109fc2ae7fabac.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viaje",
+    "sentence": "El [[viaje]] desde la capital dura casi seis horas en coche.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a trip",
+      "options": [
+        "a trip",
+        "a job",
+        "a house",
+        "a letter"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "El viaje desde la capital dura casi seis horas en coche.",
+        "targetWord": "viaje",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/453390b094f96264.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mañana",
+    "sentence": "Sube con el pan y con una pregunta nueva para [[mañana]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tomorrow",
+      "options": [
+        "tomorrow",
+        "tonight",
+        "last week",
+        "this morning"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Sube con el pan y con una pregunta nueva para mañana.",
+        "targetWord": "mañana",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8c7642939fbb4d2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nuevo",
+    "sentence": "Estrena una camiseta [[nueva]] el primer día de vacaciones.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "new",
+      "options": [
+        "new",
+        "old",
+        "difficult",
+        "short"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Estrena una camiseta nueva el primer día de vacaciones.",
+        "targetWord": "nueva",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a20e9137dc13ed34.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "contesta",
+    "sentence": "Le hablan desde la cocina y ella _____ sin levantarse.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "contesta",
+      "options": [
+        "contesta",
+        "escucha",
+        "olvida",
+        "camina"
+      ],
+      "translation": "They speak to her from the kitchen and she _____ without getting up.",
+      "optionTranslations": [
+        "answers",
+        "listens",
+        "forgets",
+        "walks"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Le hablan desde la cocina y ella contesta sin levantarse.",
+        "targetWord": "contesta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4775d6cce2605bd6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pregunta",
+    "sentence": "No sabe dónde está la panadería y _____ a una vecina.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pregunta",
+      "options": [
+        "pregunta",
+        "saluda",
+        "espera",
+        "olvida"
+      ],
+      "translation": "She does not know where the bakery is and _____ a neighbour.",
+      "optionTranslations": [
+        "asks",
+        "greets",
+        "waits for",
+        "forgets"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "No sabe dónde está la panadería y pregunta a una vecina.",
+        "targetWord": "pregunta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/97baeb3ca801ef47.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vuelve",
+    "sentence": "Se va de vacaciones en julio y _____ en septiembre.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vuelve",
+      "options": [
+        "vuelve",
+        "sale",
+        "empieza",
+        "termina"
+      ],
+      "translation": "She goes on holiday in July and _____ in September.",
+      "optionTranslations": [
+        "comes back",
+        "leaves",
+        "starts",
+        "finishes"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Se va de vacaciones en julio y vuelve en septiembre.",
+        "targetWord": "vuelve",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/064a4fc4b9fe1a3c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mueve",
+    "sentence": "Está tan cómoda que no se _____ del sofá.",
+    "featured": false,
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mueve",
+      "options": [
+        "mueve",
+        "cansa",
+        "moja",
+        "viste"
+      ],
+      "translation": "She is so comfortable that she does not _____ from the sofa.",
+      "optionTranslations": [
+        "move",
+        "get tired",
+        "get wet",
+        "get dressed"
+      ],
+      "audioClip": {
+        "storySlug": "nerja-huele-a-pan",
+        "storySource": "user",
+        "sentence": "Está tan cómoda que no se mueve del sofá.",
+        "targetWord": "mueve",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8a28f1cd70b34b7.mp3"
+      }
+    }
+  }
+]

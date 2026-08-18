@@ -1,0 +1,546 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "delantal,platos,escalera,cocina",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "delantal",
+     "answer": "an apron",
+     "options": [
+      "an apron",
+      "dishes",
+      "stairs",
+      "a kitchen"
+     ]
+    },
+    {
+     "word": "platos",
+     "answer": "dishes",
+     "options": [
+      "an apron",
+      "dishes",
+      "stairs",
+      "a kitchen"
+     ]
+    },
+    {
+     "word": "escalera",
+     "answer": "stairs",
+     "options": [
+      "an apron",
+      "dishes",
+      "stairs",
+      "a kitchen"
+     ]
+    },
+    {
+     "word": "cocina",
+     "answer": "a kitchen",
+     "options": [
+      "an apron",
+      "dishes",
+      "stairs",
+      "a kitchen"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piso de arriba",
+  "sentence": "La vecina del [[piso de arriba]] baja con dos bolsas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the flat above",
+   "options": [
+    "the flat above",
+    "the ground floor",
+    "the back room",
+    "the next building"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "La vecina del piso de arriba baja con dos bolsas.",
+    "targetWord": "piso de arriba",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se me ha ido la mano",
+  "sentence": "[[Se me ha ido la mano]] con la fruta esta semana.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "I overdid it",
+   "options": [
+    "I overdid it",
+    "I forgot it",
+    "I dropped it",
+    "I paid too much"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Se me ha ido la mano con la fruta esta semana.",
+    "targetWord": "Se me ha ido la mano",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sitio",
+  "sentence": "En la cocina ya no hay [[sitio]] para tanta fruta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "room, space",
+   "options": [
+    "room, space",
+    "time",
+    "money",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "En la cocina ya no hay sitio para tanta fruta.",
+    "targetWord": "sitio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "anda",
+  "sentence": "[[Anda]], pasa, que el café ya está hecho.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "go on, come on",
+   "options": [
+    "go on, come on",
+    "wait a moment",
+    "listen to me",
+    "let me see"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Anda, pasa, que el café ya está hecho.",
+    "targetWord": "Anda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mujer",
+  "sentence": "Pasa, [[mujer]], que no molestas nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "love, woman to woman",
+   "options": [
+    "love, woman to woman",
+    "my wife",
+    "a woman there",
+    "a lady friend"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Pasa, mujer, que no molestas nada.",
+    "targetWord": "mujer",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "error",
+  "sentence": "Las dos se ríen del [[error]] en la escalera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a mistake",
+   "options": [
+    "a mistake",
+    "a joke",
+    "a delay",
+    "a favour"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Las dos se ríen del error en la escalera.",
+    "targetWord": "error",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "abre",
+  "sentence": "Llaman al timbre y _____ la puerta enseguida.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "abre",
+   "options": [
+    "abre",
+    "cierra",
+    "pinta",
+    "barre"
+   ],
+   "translation": "The bell rings and she _____ the door straight away.",
+   "optionTranslations": [
+    "opens",
+    "closes",
+    "paints",
+    "sweeps"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Llaman al timbre y abre la puerta enseguida.",
+    "targetWord": "abre",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pasa",
+  "sentence": "No te quedes en la puerta, _____ a la cocina.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pasa",
+   "options": [
+    "pasa",
+    "espera",
+    "escucha",
+    "mira"
+   ],
+   "translation": "Do not stay in the doorway, _____ into the kitchen.",
+   "optionTranslations": [
+    "come in",
+    "wait",
+    "listen",
+    "look"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "No te quedes en la puerta, pasa a la cocina.",
+    "targetWord": "pasa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sube",
+  "sentence": "Vive arriba, así que _____ dos pisos cada día.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sube",
+   "options": [
+    "sube",
+    "baja",
+    "cruza",
+    "entra"
+   ],
+   "translation": "She lives upstairs, so she _____ two floors every day.",
+   "optionTranslations": [
+    "goes up",
+    "goes down",
+    "crosses",
+    "goes in"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Vive arriba, así que sube dos pisos cada día.",
+    "targetWord": "sube",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hija",
+  "sentence": "Perdona, [[hija]], que estos números están medio borrados.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "love, from an older woman",
+   "options": [
+    "love, from an older woman",
+    "my daughter",
+    "a little girl",
+    "a niece"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Perdona, hija, que estos números están medio borrados.",
+    "targetWord": "hija",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "semana",
+  "sentence": "Compra demasiado cada [[semana]] y luego no sabe dónde ponerlo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a week",
+   "options": [
+    "a week",
+    "a month",
+    "a year",
+    "a morning"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Compra demasiado cada semana y luego no sabe dónde ponerlo.",
+    "targetWord": "semana",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "día",
+  "sentence": "Unos [[días]] después vuelve del mercado con la bolsa llena.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a day",
+   "options": [
+    "a day",
+    "an hour",
+    "a season",
+    "a night"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Unos días después vuelve del mercado con la bolsa llena.",
+    "targetWord": "días",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "número",
+  "sentence": "Estos [[números]] están medio borrados y no se leen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a number",
+   "options": [
+    "a number",
+    "a letter",
+    "a label",
+    "a key"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Estos números están medio borrados y no se leen.",
+    "targetWord": "números",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dentro",
+  "sentence": "Estoy con los platos, contesta desde [[dentro]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "inside",
+   "options": [
+    "inside",
+    "outside",
+    "upstairs",
+    "nearby"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Estoy con los platos, contesta desde dentro.",
+    "targetWord": "dentro",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "húmedo",
+  "sentence": "Abre con las manos [[húmedas]] de fregar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "damp",
+   "options": [
+    "damp",
+    "dry",
+    "cold",
+    "dirty"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Abre con las manos húmedas de fregar.",
+    "targetWord": "húmedas",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mismo",
+  "sentence": "Tiene el [[mismo]] número de puerta que el hijo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the same",
+   "options": [
+    "the same",
+    "another",
+    "the next",
+    "the wrong"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Tiene el mismo número de puerta que el hijo.",
+    "targetWord": "mismo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pequeño",
+  "sentence": "Es una casa [[pequeña]], encima de la panadería.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small",
+   "options": [
+    "small",
+    "big",
+    "empty",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Es una casa pequeña, encima de la panadería.",
+    "targetWord": "pequeña",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "piensa",
+  "sentence": "No dice nada, solo lo _____ mientras friega.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "piensa",
+   "options": [
+    "piensa",
+    "canta",
+    "escribe",
+    "cuenta"
+   ],
+   "translation": "She says nothing, she only _____ it while she washes up.",
+   "optionTranslations": [
+    "thinks",
+    "sings",
+    "writes",
+    "tells"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "No dice nada, solo lo piensa mientras friega.",
+    "targetWord": "piensa",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "contesta",
+  "sentence": "Nadie coge el teléfono, pero al tercer tono _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "contesta",
+   "options": [
+    "contesta",
+    "cuelga",
+    "marca",
+    "suena"
+   ],
+   "translation": "Nobody picks up the phone, but on the third ring she _____.",
+   "optionTranslations": [
+    "answers",
+    "hangs up",
+    "dials",
+    "rings"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Nadie coge el teléfono, pero al tercer tono contesta.",
+    "targetWord": "contesta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "vuelve",
+  "sentence": "Sale a comprar y _____ a casa media hora después.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vuelve",
+   "options": [
+    "vuelve",
+    "llama",
+    "mira",
+    "espera"
+   ],
+   "translation": "She goes out shopping and _____ home half an hour later.",
+   "optionTranslations": [
+    "comes back",
+    "calls",
+    "looks",
+    "waits"
+   ],
+   "audioClip": {
+    "storySlug": "seis-naranjas-y-un-delantal",
+    "storySource": "user",
+    "sentence": "Sale a comprar y vuelve a casa media hora después.",
+    "targetWord": "vuelve",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]
