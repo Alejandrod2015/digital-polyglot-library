@@ -117,6 +117,28 @@ function isAndroid(a: Applicant): boolean {
 }
 
 /**
+ * Whose invitation goes through Google, not Apple. Mirrors `invitePlatform` in
+ * betaProgram: `both` is invited on iOS on purpose, so it is NOT a Play invite
+ * even though `isAndroid` counts it as Android for display.
+ */
+function usesPlayInvite(a: Applicant): boolean {
+  return (a.platform ?? "ios").toLowerCase() === "android";
+}
+
+/**
+ * Naming the person in the button and in a confirm, because the row in a given
+ * screen position is not the row that was there a minute ago: the queue is
+ * newest-first and reloads after every action, so a new application takes over
+ * the top slot. On 2026-08-18 that sent an acceptance to the applicant who had
+ * just arrived instead of the one on screen, and there was no way to tell from
+ * the click. Invite and decline both mail a real person, so both ask.
+ */
+function confirmPerson(a: Applicant, what: string): boolean {
+  const who = `${a.firstName ?? "(no name)"} <${a.email}>`;
+  return confirm(`${what}\n\n${who}`);
+}
+
+/**
  * Our status and Apple's state disagree in a way that hurts the tester.
  *
  * The case this exists for: we say `invited`, so the panel is green and the
@@ -1384,13 +1406,31 @@ function ReviewQueue({
           <NotesField applicant={a} busy={busy} onAction={onAction} />
 
           <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap", alignItems: "center" }}>
-            <button style={btn} disabled={busy === a.id} onClick={() => onAction(a.id, "invite")}>
-              {busy === a.id ? "Working..." : "Invite to TestFlight"}
+            <button
+              style={btn}
+              disabled={busy === a.id}
+              onClick={() => {
+                if (confirmPerson(a, usesPlayInvite(a) ? "Invite to the Play beta?" : "Invite to TestFlight?")) {
+                  void onAction(a.id, "invite");
+                }
+              }}
+            >
+              {busy === a.id
+                ? "Working..."
+                : `${usesPlayInvite(a) ? "Invite to Play beta" : "Invite to TestFlight"}: ${a.firstName ?? a.email}`}
             </button>
             <button style={ghostBtn} disabled={busy === a.id} onClick={() => onAction(a.id, "retriage")}>
               Re-run rules
             </button>
-            <button style={dangerBtn} disabled={busy === a.id} onClick={() => onAction(a.id, "decline")}>
+            <button
+              style={dangerBtn}
+              disabled={busy === a.id}
+              onClick={() => {
+                if (confirmPerson(a, "Decline this application? They get a rejection email.")) {
+                  void onAction(a.id, "decline");
+                }
+              }}
+            >
               Decline
             </button>
             {/* Deliberately last and unstyled as an action: declining writes to
