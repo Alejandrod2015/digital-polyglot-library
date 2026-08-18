@@ -295,6 +295,32 @@ function slugify(s: string): string {
       const isA0 = (ctx.level ?? "").toUpperCase() === "A0";
       const blockCap = isA0 ? 0.45 : 0.3;
       const blocks = renderedParagraphs(String(d.text));
+
+      // LA PRESENTACIÓN NO COMPARTE BLOQUE CON EL DIÁLOGO (2026-08-18).
+      //
+      // El lector tira los "\n\n" de la prosa narrada y reagrupa el texto de
+      // TRES frases en tres. Si la presentación del personaje ocupa una sola
+      // frase, el bloque se completa con las dos siguientes, que suelen ser
+      // diálogo: en pantalla, "Na barraca está Bruna, uma professora de surfe"
+      // salía pegado a "Primeira vez?". El usuario lo vio en la primera
+      // historia de Florianópolis y preguntó qué había pasado.
+      //
+      // La regla: si el primer bloque PRESENTA a alguien (nombre seguido de un
+      // sintagma que dice qué es), ese bloque no puede llevar habla citada.
+      // Abrir directamente con diálogo es legítimo y no dispara nada.
+      const primerBloque = blocks[0] ?? "";
+      const presenta = /\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+,\s+(um|uma)\s+\w+|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+\s+é\s+(um|uma)\s+\w+/.test(primerBloque);
+      if (presenta && /[“”]/.test(primerBloque)) {
+        hardFails.push({
+          id: "narrator-intro-block-shared", label: "", status: "fail",
+          detail:
+            "El primer bloque del lector mezcla la presentación del personaje con " +
+            "diálogo. El lector agrupa de tres frases en tres, así que la " +
+            "presentación tiene que ocupar ese bloque entera: dale tres frases " +
+            "de narración antes de la primera línea citada.",
+        } as never);
+      }
+
       const vocab = (d.vocab ?? []) as any[];
       const perBlock = blocks.map((b) => vocab.filter((v) => b.includes(v.surface ?? v.word)).length);
       const worst = perBlock.length ? Math.max(...perBlock) : 0;

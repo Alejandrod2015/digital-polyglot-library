@@ -66,6 +66,14 @@ export const PORTUGUESE_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "vendedor","saída","degrau",
   "teimoso","segredo","esquerda","continuar","conselho",
 
+  // Florianópolis, 2026-08-18: surf, dunas y la ropa que no seca. Vocabulario
+  // del tema, sin el cual el A1 no puede hablar de lo que pasa en la escena.
+  "prancha","aluguel","alugar","surfe","remar","remada","regra","engolir",
+  "tentativa","duna","descida","tábua","cera","cansar","dúvida","menino",
+  "prática","frear","grudar","cobrar","sozinho","varal","quintal","pesado","pia","muro","bandeira",
+  "cadê","voar","lado","topo","escorrer",
+  "dona","umidade","canto","pendurar","camiseta","toalha","aula","joelho",
+
   // Time
   "dia","noite","manhã","tarde","hora","minuto","segundo","semana","mês","ano","tempo","momento",
   "segunda","terça","quarta","quinta","sexta","sábado","domingo","fim de semana","feriado","férias",

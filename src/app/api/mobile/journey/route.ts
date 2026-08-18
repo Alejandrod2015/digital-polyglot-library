@@ -56,7 +56,10 @@ export async function GET(req: NextRequest): Promise<Response> {
   // existía). Se resuelve aquí y no en el cliente porque el puntero vive en la
   // fila del journey, que el móvil no ve.
   const journeysDelIdioma = await prisma.journey.findMany({
-    where: { language },
+    // insensitive: la sesión manda "Spanish" y la base guarda "spanish". Con
+    // la comparación exacta esto devolvía cero filas y el puente no aparecía
+    // nunca en la app, aunque probándolo con ?language=spanish funcionara.
+    where: { language: { equals: language, mode: "insensitive" } },
     select: {
       id: true, name: true, variant: true, levels: true, nextJourneyId: true, status: true,
     },

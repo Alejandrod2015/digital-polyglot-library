@@ -527,6 +527,21 @@ const getStudioJourneysForLanguage = unstable_cache(
       include: {
         stories: {
           where: { ...STORY_STATUS_WHERE, NOT: [{ text: null }, { title: null }] },
+          // Fuera las columnas gordas que este constructor no lee. Los tiempos
+          // de karaoke son una entrada por PALABRA y no se usan para pintar la
+          // lista de journeys; con ellas dentro, la entrada de `unstable_cache`
+          // del español llegó a 3,89 MB, por encima del tope de 2 MB de Next.
+          // La escritura en caché lanzaba, la respuesta se cortaba y el móvil
+          // enseñaba "No Spanish content yet" (2026-08-18, al publicar el A1
+          // de España y pasar de 7 a 8 journeys en ese idioma).
+          omit: {
+            audioWordTimings: true,   // 2,89 MB: una entrada por palabra
+            audioSegments: true,      // 0,72 MB
+            audioFragments: true,     // 0,60 MB
+            dialogueSpec: true,       // 0,16 MB
+            synopsis: true,           // 0,10 MB
+            auditOffenders: true,
+          },
           // Include `topic` in the order so stories with the same level/slot
           // don't get shuffled between topics; `slotIndex` is the sequence
           // within a topic, as assigned by the Studio creation flow.
@@ -538,7 +553,7 @@ const getStudioJourneysForLanguage = unstable_cache(
   // v8 (2026-08-13): subir el número invalida la entrada de forma
   // determinista en el deploy. `revalidateTag` no bastó para desatascar el
   // portugués, y una clave nueva no depende de que la invalidación se propague.
-  ["studio-journeys-by-language-v8"],
+  ["studio-journeys-by-language-v9"],
   { revalidate: 300, tags: ["published-journey-stories"] }
 );
 
