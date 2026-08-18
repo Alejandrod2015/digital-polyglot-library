@@ -279,6 +279,36 @@ const SFX_PRACTICE_WRONG = require("../../assets/sounds/practice-wrong.mp3");
 const SFX_PRACTICE_COMBO = require("../../assets/sounds/practice-combo.mp3");
 const SFX_PRACTICE_RING_FILL = require("../../assets/sounds/practice-ring-fill.mp3");
 const SFX_PRACTICE_PERFECT = require("../../assets/sounds/practice-perfect.mp3");
+/**
+ * Cuánto se RETRASA la revelación del acierto/fallo en Android para que caiga
+ * encima de su sonido, en vez de 150 ms por delante.
+ *
+ * Medido en el Pixel 6a el 2026-08-18, con el log `practice-sfx` de este mismo
+ * fichero: la animación se pinta a los 27 ms y el audio SALE a los 140-178 ms.
+ * La llamada de JS resuelve en 27 ms, así que el retraso no es nuestro: el
+ * volcado de `dumpsys audio` enseña la pista de expo-av con FLAG_DEEP_BUFFER,
+ * el camino de alta latencia de Android, y desde JS no se puede pedir el otro.
+ *
+ * Lo que se probó y NO sirvió, para que nadie lo repita:
+ *  - Un bucle de silencio para mantener despierta la salida: la pista quedaba
+ *    en `started` y el sonido seguía saliendo a los 193 ms.
+ *  - `androidImplementation: "MediaPlayer"`: bimodal, 0-15 ms unas veces y
+ *    287-396 ms otras. Un retraso intermitente es peor que uno constante.
+ *
+ * El número NO es el desfase medido, y esto importa: al retrasar la pintura, el
+ * hilo de JS deja de competir con el arranque del audio y el sonido se adelanta
+ * solo. Por eso se ajustó midiendo, no restando: con 150 ms la animación se iba
+ * 95 ms por DETRÁS, con 60 se quedaba 55 ms por delante, y con 100 las dos caen
+ * juntas. Siete respuestas seguidas en el Pixel 6a: +13, -1, 0, +18, +14, -1 ms
+ * de diferencia entre el audio y la pintura. Antes eran 140-178 ms.
+ *
+ * Si alguien vuelve a tocar esto, que lo mida con el log `practice-sfx` en vez
+ * de razonarlo: la primera cuenta que hice (retrasar justo el desfase medido)
+ * daba 150 y era el doble de lo que hacía falta.
+ *
+ * En iOS es 0: ahí el sonido ya cae sobre la animación.
+ */
+const PRACTICE_REVEAL_DELAY_MS = Platform.OS === "android" ? 100 : 0;
 
 type ReaderSelection = {
   book: Book;
@@ -8577,7 +8607,11 @@ export function MobileLibraryShell(args: {
       return;
     }
     revealedSlotIdRef.current = current.id;
-    setPracticeRevealed(true);
+    if (PRACTICE_REVEAL_DELAY_MS > 0) {
+      setTimeout(() => setPracticeRevealed(true), PRACTICE_REVEAL_DELAY_MS);
+    } else {
+      setPracticeRevealed(true);
+    }
     setPracticeTimedOut(true);
     setPracticeLastResult("wrong");
     setPracticeSessionStreak(0);
@@ -9070,7 +9104,11 @@ export function MobileLibraryShell(args: {
     const isCorrect = option === current.answer;
     practiceAnswerT0Ref.current = Date.now();
     revealedSlotIdRef.current = current.id;
-    setPracticeRevealed(true);
+    if (PRACTICE_REVEAL_DELAY_MS > 0) {
+      setTimeout(() => setPracticeRevealed(true), PRACTICE_REVEAL_DELAY_MS);
+    } else {
+      setPracticeRevealed(true);
+    }
     setPracticeTimedOut(timedOut);
     setPracticeReviewScores((currentScores) => ({
       ...currentScores,
