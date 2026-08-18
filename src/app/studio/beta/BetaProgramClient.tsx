@@ -147,6 +147,11 @@ function confirmPerson(a: Applicant, what: string): boolean {
  * silent from every angle except this one.
  */
 function appleAlarm(a: Applicant): string | null {
+  // An Android invitation never touches Apple, so having no tester id there is
+  // that row's normal state and not a failure. Until this line every Android
+  // invitee sat in the "Blocked at Apple" tile: on 2026-08-18 it read 2 with
+  // nothing blocked, which is how an alarm tile stops being read at all.
+  if (usesPlayInvite(a)) return null;
   if (!a.ascTesterId) {
     return a.status === "invited" || a.status === "accepted"
       ? "Marked as invited, but never registered with Apple."
@@ -1139,9 +1144,22 @@ function StatBar({
   // button never looks at it. So it read as a limit while nothing was limited.
   const using = applicants.filter((a) => (a.usage?.lastEventAt ?? null) !== null).length;
 
-  const items: Array<{ label: string; value: string; alarm?: boolean; primary?: boolean }> = [
+  const items: Array<{
+    label: string;
+    value: string;
+    note?: string;
+    alarm?: boolean;
+    primary?: boolean;
+  }> = [
     { label: "Needs review", value: String(waiting), primary: waiting > 0 },
-    { label: "Testers", value: `${using} using · ${stats.activeTesters} invited` },
+    // "10 using · 23 invited" read as two separate groups, as if 23 people were
+    // sitting on an invitation unused. They are one group: the 10 are part of
+    // the 23. A ratio plus one line of prose says which is which.
+    {
+      label: "Testers using the app",
+      value: `${using} / ${stats.activeTesters}`,
+      note: "opened it at least once, out of everyone with access",
+    },
     { label: "Open feedback", value: String(stats.openFeedback), primary: stats.openFeedback > 0 },
   ];
 
@@ -1213,6 +1231,11 @@ function StatBar({
             >
               {i.value}
             </div>
+            {i.note && (
+              <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 4, lineHeight: 1.4 }}>
+                {i.note}
+              </div>
+            )}
           </div>
         ))}
       </div>
