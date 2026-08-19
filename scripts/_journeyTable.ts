@@ -35,7 +35,7 @@ async function main() {
     const voc = (r.vocab as any[]) ?? [];
     const off = voc.filter((v) => fuera.has(String(v.word).toLowerCase())).map((v) => v.word);
     const rep = voc.filter((v) => (cuenta.get(String(v.word).toLowerCase()) ?? 0) > 1).map((v) => v.word);
-    console.log(`| ${nom} | ${r.slotIndex + 1} | ${r.title} | ${(r as any).arcType} | ${w} | ${Math.round((100 * cit) / w)}% | ${voc.length} | ${off.join(", ") || "0"} | ${rep.join(", ") || "0"} | ${/Matheus/.test(r.text) ? "sí" : "-"} | ${(r as any).coverImageUrl ? "sí" : "no"} | ${(r as any).audioUrl ? "sí" : "no"} |`);
+    console.log(`| ${nom} | ${r.slotIndex + 1} | ${r.title} | ${(r as any).arcType} | ${w} | ${Math.round((100 * cit) / w)}% | ${voc.length} | ${off.join(", ") || "0"} | ${rep.join(", ") || "0"} | ${/Matheus/.test(r.text) ? "sí" : "-"} | ${(r as any).coverUrl ? "sí" : "no"} | ${(r as any).audioUrl ? "sí" : "no"} |`);
   }
   console.log(`\nhistorias ${hechas.length}/${rows.length} · Matheus ${hechas.filter((r) => /Matheus/.test(r.text!)).length} · píldoras ${[...cuenta.values()].reduce((a, b) => a + b, 0)}, distintas ${cuenta.size}`);
   await p.$disconnect();
