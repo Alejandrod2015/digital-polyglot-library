@@ -811,7 +811,7 @@ type AcquisitionPayload = {
     last7d: number;
     last30d: number;
     inWindow: number;
-    byPlatform?: { ios: number; web: number; unknown: number };
+    byPlatform?: { ios: number; android?: number; web: number; unknown: number };
   };
   funnel: {
     signups: number;
@@ -824,6 +824,8 @@ type AcquisitionPayload = {
   recent: Array<{
     userId: string;
     name: string | null;
+    /** El nombre viene de su solicitud de beta porque Clerk no guardó ninguno. */
+    nameFromBeta?: boolean;
     email: string | null;
     createdAt: string;
     targetLanguages: string[];
@@ -846,7 +848,7 @@ type AcquisitionPayload = {
     completedStory: boolean;
     viewedPlans: boolean;
     paid: boolean;
-    platform: "ios" | "web" | null;
+    platform: "ios" | "android" | "web" | null;
   }>;
   clerkInstance: string;
 };
@@ -1045,6 +1047,9 @@ function AcquisitionView({ data }: { data: DashboardData }) {
             {acq.signups.byPlatform && (
               <div style={{ fontSize: 12, opacity: 0.8, display: "flex", gap: 12 }}>
                 <span title="App de iPhone">📱 iOS: {acq.signups.byPlatform.ios}</span>
+                {acq.signups.byPlatform.android ? (
+                  <span title="App de Android">Android: {acq.signups.byPlatform.android}</span>
+                ) : null}
                 <span title="Webapp">🌐 Web: {acq.signups.byPlatform.web}</span>
                 {acq.signups.byPlatform.unknown > 0 && (
                   <span title="Sin actividad medida aún">- s/d: {acq.signups.byPlatform.unknown}</span>
@@ -1089,7 +1094,23 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                   >
                     <td style={{ padding: "4px 6px" }}>{r.createdAt.slice(0, 10)}</td>
                     <td style={{ padding: "4px 6px" }}>
-                      {r.name ?? "-"}
+                      {r.name ? (
+                        r.nameFromBeta ? (
+                          // Mismo vocabulario que la columna de idioma: el dato
+                          // es suyo, sólo que lo escribió en la solicitud de
+                          // beta y no en el alta, porque Clerk no guarda nombre
+                          // cuando entras por código de email o con Apple
+                          // ocultándolo.
+                          <span title="Nombre de su solicitud de beta. Al darse de alta no dejó ninguno en Clerk.">
+                            {r.name}
+                            <span style={{ opacity: 0.55 }}> (de su solicitud)</span>
+                          </span>
+                        ) : (
+                          r.name
+                        )
+                      ) : (
+                        "-"
+                      )}
                       <span style={{ opacity: 0.5 }}> · {r.email ?? "-"}</span>
                       {r.betaStatus ? <BetaBadge status={r.betaStatus} /> : null}
                     </td>
@@ -1130,6 +1151,8 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                     <td style={{ padding: "4px 6px" }}>
                       {r.platform === "ios" ? (
                         <span title="App de iPhone">📱 iOS</span>
+                      ) : r.platform === "android" ? (
+                        <span title="App de Android">Android</span>
                       ) : r.platform === "web" ? (
                         <span title="Webapp">🌐 Web</span>
                       ) : (

@@ -33,7 +33,7 @@ export type UserDetail = {
     level: string | null;
     dailyMinutesGoal: number | null;
     remindersEnabled: boolean | null;
-    platform: "ios" | "web" | null;
+    platform: "ios" | "android" | "web" | null;
     signupPlatform: string | null;
     pushTokens: number;
     clerkFound: boolean;
@@ -83,7 +83,7 @@ export type UserDetail = {
     totalActiveMinutes: number;
     avgSessionMinutes: number;
     longestSessionMinutes: number;
-    byPlatform: { ios: number; web: number; unknown: number };
+    byPlatform: { ios: number; android?: number; web: number; unknown: number };
     daily: Array<{ date: string; events: number; minutes: number }>;
     recentSessions: Array<{
       startedAt: string;

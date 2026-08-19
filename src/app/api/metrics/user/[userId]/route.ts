@@ -252,6 +252,9 @@ export async function GET(
       clerkUser?.primaryEmailAddress?.emailAddress ??
       clerkUser?.emailAddresses?.[0]?.emailAddress ??
       null;
+    const clerkEmails = (clerkUser?.emailAddresses ?? [])
+      .map((e) => e.emailAddress)
+      .filter(Boolean);
 
     const [
       events,
@@ -310,9 +313,24 @@ export async function GET(
       prisma.favoriteCollection.count({ where: { userId } }),
       prisma.libraryStory.count({ where: { userId } }),
       prisma.libraryBook.count({ where: { userId } }),
-      email
-        ? prisma.betaSignup.findUnique({ where: { email } })
-        : Promise.resolve(null),
+      // Igual que en /api/metrics/acquisition: la solicitud puede estar
+      // guardada bajo el email del Apple ID o de la cuenta de Google, que es
+      // la que usó para instalar y con la que suele nacer la cuenta. Buscar
+      // sólo por el email del formulario escondía beta testers.
+      prisma.betaSignup.findFirst({
+        where: {
+          OR: [
+            { clerkUserId: userId },
+            ...(clerkEmails.length
+              ? [
+                  { email: { in: clerkEmails, mode: "insensitive" as const } },
+                  { appleIdEmail: { in: clerkEmails, mode: "insensitive" as const } },
+                  { googleEmail: { in: clerkEmails, mode: "insensitive" as const } },
+                ]
+              : []),
+          ],
+        },
+      }),
       prisma.betaFeedback.findMany({
         where: email ? { OR: [{ userId }, { email }] } : { userId },
         orderBy: { createdAt: "desc" },
@@ -370,10 +388,14 @@ export async function GET(
     }
 
     // Plataforma: se lee de metadata.platform en cada evento.
-    const platformCounts = { ios: 0, web: 0, unknown: 0 };
+    // "android" cuenta aparte: metido en el saco de iOS, la ficha afirmaba un
+    // iPhone que esta persona no tiene. "mobile" es el valor viejo y genérico,
+    // de cuando la app sólo existía en iPhone.
+    const platformCounts = { ios: 0, android: 0, web: 0, unknown: 0 };
     for (const e of rows) {
       const pf = str(meta(e).platform);
-      if (pf === "ios" || pf === "android" || pf === "mobile") platformCounts.ios += 1;
+      if (pf === "android") platformCounts.android += 1;
+      else if (pf === "ios" || pf === "mobile") platformCounts.ios += 1;
       else if (pf === "web") platformCounts.web += 1;
       else platformCounts.unknown += 1;
     }
@@ -635,16 +657,21 @@ export async function GET(
       ? (privateMd.mobilePushTokens as unknown[]).length
       : 0;
     const signupPlatform = str(publicMd.signupPlatform);
-    const inferredPlatform: "ios" | "web" | null =
-      signupPlatform === "ios" || signupPlatform === "web"
-        ? (signupPlatform as "ios" | "web")
-        : platformCounts.ios > platformCounts.web
-          ? "ios"
-          : platformCounts.web > 0
-            ? "web"
-            : pushTokens > 0
-              ? "ios"
-              : null;
+    const inferredPlatform: "ios" | "android" | "web" | null =
+      signupPlatform === "ios" || signupPlatform === "android" || signupPlatform === "web"
+        ? (signupPlatform as "ios" | "android" | "web")
+        : platformCounts.android > 0
+          ? "android"
+          : platformCounts.ios > platformCounts.web
+            ? "ios"
+            : platformCounts.web > 0
+              ? "web"
+              // El token de push no distingue sistema: sólo dice que la app
+              // está instalada. Los que lo tienen sin más señal son testers
+              // de iPhone, que son los únicos que la tuvieron antes del sello.
+              : pushTokens > 0
+                ? "ios"
+                : null;
 
     const payload = {
       user: {

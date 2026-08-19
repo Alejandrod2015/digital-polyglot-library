@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import type { Prisma } from "@/generated/prisma";
 import { prisma } from "@/lib/prisma";
 import { getActiveMobileSession } from "@/lib/mobileSession";
+import { mobilePlatformFromRequest } from "@/lib/mobilePlatform";
 
 type MetricBody = {
   storySlug: string;
@@ -103,7 +104,9 @@ export async function POST(req: NextRequest): Promise<Response> {
         value,
         metadata: {
           ...(metadata && typeof metadata === "object" ? (metadata as Record<string, unknown>) : {}),
-          platform: "ios",
+          // El cliente dice de qué sistema viene; antes esto era "ios" fijo,
+          // así que ningún evento de Android existía como tal.
+          platform: mobilePlatformFromRequest(req),
         } as Prisma.InputJsonValue,
       },
     });

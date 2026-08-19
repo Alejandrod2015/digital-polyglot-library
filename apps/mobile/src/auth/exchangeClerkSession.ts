@@ -1,3 +1,4 @@
+import { CLIENT_PLATFORM_HEADER, clientPlatform } from "../lib/api";
 import { mobileConfig } from "../config";
 
 type ExchangeResponse = {
@@ -11,6 +12,9 @@ export async function exchangeClerkSessionForMobileToken(
     method: "POST",
     headers: {
       Authorization: `Bearer ${clerkSessionToken}`,
+      // Es la primera llamada de la app, y de ella sale el sello de plataforma
+      // de la cuenta. Sin esto el servidor tenía que adivinar, y adivinaba iOS.
+      [CLIENT_PLATFORM_HEADER]: clientPlatform,
     },
   });
 

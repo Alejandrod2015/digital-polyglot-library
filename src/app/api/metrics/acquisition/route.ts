@@ -18,6 +18,14 @@ const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY!
 type RecentSignup = {
   userId: string;
   name: string | null;
+  /**
+   * true cuando el nombre sale de la solicitud de beta y no de Clerk. Quien
+   * se dio de alta con código por email o con Apple ocultando el nombre no
+   * deja `firstName` en Clerk, así que la tabla lo pintaba como "-" teniendo
+   * su nombre guardado en `BetaSignup`. Es dato suyo igual, sólo que de otro
+   * formulario, y por eso se marca de dónde salió en vez de mezclarlo.
+   */
+  nameFromBeta: boolean;
   email: string | null;
   createdAt: string;
   lastSignInAt: string | null;
@@ -57,7 +65,7 @@ type RecentSignup = {
   completedStory: boolean;
   viewedPlans: boolean;
   paid: boolean;
-  platform: "ios" | "web" | null;
+  platform: "ios" | "android" | "web" | null;
 };
 
 const TEAM_DOMAINS = ["muvn.de"];
@@ -244,23 +252,34 @@ export async function GET(req: NextRequest): Promise<Response> {
     // who were active before that, fall back to Clerk privateMetadata: anyone
     // with a registered mobile push token has the iOS app installed.
     const eventIos = new Set<string>();
+    const eventAndroid = new Set<string>();
     const eventWeb = new Set<string>();
     for (const e of audioEvents) {
       const m = e.metadata && typeof e.metadata === "object" ? (e.metadata as Record<string, unknown>) : null;
       const pf = typeof m?.platform === "string" ? m.platform : null;
-      if (pf === "ios" || pf === "android" || pf === "mobile") eventIos.add(e.userId);
+      // "android" ya no cae en el saco de iOS. Metía a los usuarios de Android
+      // en la columna del iPhone, que es justo lo que la columna promete que no
+      // pasa. "mobile" es el valor viejo y genérico: sin más información, esos
+      // eventos son de la época en que la app sólo existía en iPhone.
+      if (pf === "android") eventAndroid.add(e.userId);
+      else if (pf === "ios" || pf === "mobile") eventIos.add(e.userId);
       else if (pf === "web") eventWeb.add(e.userId);
     }
     const hasMobilePushToken = (u: (typeof cohort)[number]): boolean => {
       const pm = (u.privateMetadata ?? {}) as Record<string, unknown>;
       return Array.isArray(pm.mobilePushTokens) && pm.mobilePushTokens.length > 0;
     };
-    const platformFor = (u: (typeof cohort)[number]): "ios" | "web" | null => {
-      // Authoritative: stamped at signup by the mobile session route ("ios")
-      // and the web platform ping ("web"). Only legacy cohorts (created before
-      // stamping) fall through to activity/push-token inference below.
+    const platformFor = (u: (typeof cohort)[number]): "ios" | "android" | "web" | null => {
+      // Authoritative: stamped at signup by the mobile session route (el
+      // sistema que dice el propio cliente) and the web platform ping ("web").
+      // Only legacy cohorts (created before stamping) fall through to
+      // activity/push-token inference below.
       const sp = (u.publicMetadata as Record<string, unknown>)?.signupPlatform;
-      if (sp === "ios" || sp === "web") return sp;
+      if (sp === "ios" || sp === "android" || sp === "web") return sp;
+      if (eventAndroid.has(u.id)) return "android";
+      // El token de push no distingue sistema, así que sólo puede decir "tiene
+      // la app". Se queda en iOS porque los únicos que la tuvieron antes del
+      // sello son los testers de iPhone.
       if (eventIos.has(u.id) || hasMobilePushToken(u)) return "ios";
       if (eventWeb.has(u.id)) return "web";
       return null;
@@ -304,16 +323,61 @@ export async function GET(req: NextRequest): Promise<Response> {
     // para alguien de quien teníamos "Spanish · Beginner" guardado no era falta
     // de dato, era no ir a buscarlo. Va por delante de la deducción por
     // historias: esto lo declaró la persona, aquello lo suponemos nosotros.
+    //
+    // El cruce NO puede hacerse sólo por el email del formulario. En iOS el
+    // acceso es por invitación individual a la tienda, así que quien solicita
+    // deja DOS direcciones: la suya y la de su Apple ID o su cuenta de Google,
+    // que en 14 de 39 solicitudes no son la misma. La cuenta de la app nace de
+    // la segunda, así que buscar por la primera dejaba a beta testers
+    // enteros sin nombre y sin idioma, como si no hubieran rellenado nada.
+    // `clerkUserId`, cuando existe, es el vínculo fuerte y va primero.
     const emailsCohorte = cohort
-      .map((u) => (u.primaryEmailAddress?.emailAddress ?? u.emailAddresses?.[0]?.emailAddress ?? "").toLowerCase())
+      .flatMap((u) => (u.emailAddresses ?? []).map((e) => e.emailAddress?.toLowerCase()).filter(Boolean) as string[])
       .filter(Boolean);
     const betaRows = emailsCohorte.length
       ? await prisma.betaSignup.findMany({
-          where: { email: { in: emailsCohorte } },
-          select: { email: true, targetLanguage: true, currentLevel: true, status: true },
+          where: {
+            OR: [
+              { email: { in: emailsCohorte } },
+              { appleIdEmail: { in: emailsCohorte, mode: "insensitive" } },
+              { googleEmail: { in: emailsCohorte, mode: "insensitive" } },
+              { clerkUserId: { in: ids } },
+            ],
+          },
+          select: {
+            email: true,
+            appleIdEmail: true,
+            googleEmail: true,
+            clerkUserId: true,
+            firstName: true,
+            targetLanguage: true,
+            currentLevel: true,
+            status: true,
+          },
         })
       : [];
-    const betaByEmail = new Map(betaRows.map((r) => [r.email.toLowerCase(), r]));
+    type BetaRow = (typeof betaRows)[number];
+    const betaByEmail = new Map<string, BetaRow>();
+    const betaByClerkId = new Map<string, BetaRow>();
+    for (const r of betaRows) {
+      if (r.clerkUserId) betaByClerkId.set(r.clerkUserId, r);
+      // El email del formulario gana si dos filas comparten una dirección de
+      // tienda: es el que la persona nos dio como suyo.
+      for (const addr of [r.appleIdEmail, r.googleEmail]) {
+        const key = addr?.trim().toLowerCase();
+        if (key && !betaByEmail.has(key)) betaByEmail.set(key, r);
+      }
+      betaByEmail.set(r.email.toLowerCase(), r);
+    }
+    const betaFor = (u: (typeof cohort)[number]): BetaRow | undefined => {
+      const byId = betaByClerkId.get(u.id);
+      if (byId) return byId;
+      for (const e of u.emailAddresses ?? []) {
+        const hit = e.emailAddress ? betaByEmail.get(e.emailAddress.toLowerCase()) : undefined;
+        if (hit) return hit;
+      }
+      return undefined;
+    };
 
     const recent: RecentSignup[] = cohort
       .sort((a, b) => b.createdAt - a.createdAt)
@@ -322,11 +386,14 @@ export async function GET(req: NextRequest): Promise<Response> {
         const tls = Array.isArray(md.targetLanguages) ? (md.targetLanguages as string[]) : [];
         const heard = listenedTotalFor(u.id);
         const email = u.primaryEmailAddress?.emailAddress ?? u.emailAddresses?.[0]?.emailAddress ?? null;
-        const beta = email ? betaByEmail.get(email.toLowerCase()) : undefined;
+        const beta = betaFor(u);
         const declaredLevel = typeof md.preferredLevel === "string" ? (md.preferredLevel as string) : null;
+        const clerkName = [u.firstName, u.lastName].filter(Boolean).join(" ") || null;
+        const betaName = beta?.firstName?.trim() || null;
         return {
           userId: u.id,
-          name: [u.firstName, u.lastName].filter(Boolean).join(" ") || null,
+          name: clerkName ?? betaName,
+          nameFromBeta: !clerkName && Boolean(betaName),
           email,
           createdAt: new Date(u.createdAt).toISOString(),
           lastSignInAt: u.lastSignInAt ? new Date(u.lastSignInAt).toISOString() : null,
@@ -368,6 +435,7 @@ export async function GET(req: NextRequest): Promise<Response> {
         inWindow: C,
         byPlatform: {
           ios: recent.filter((r) => r.platform === "ios").length,
+          android: recent.filter((r) => r.platform === "android").length,
           web: recent.filter((r) => r.platform === "web").length,
           unknown: recent.filter((r) => r.platform === null).length,
         },

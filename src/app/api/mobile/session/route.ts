@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createMobileSessionToken } from "@/lib/mobileSession";
 import { prisma } from "@/lib/prisma";
 import { touchTesterActivity } from "@/lib/betaProgram";
+import { mobilePlatformFromRequest } from "@/lib/mobilePlatform";
 
 const clerkClient = createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY!,
@@ -47,18 +48,29 @@ export async function POST(req: NextRequest) {
 
     const publicMetadata = user.publicMetadata ?? {};
 
-    // Stamp signupPlatform = "ios" on first mobile session (set-if-absent).
-    // This fires on every app launch after Clerk auth, so it covers 100% of iOS
-    // users; even those who never listen and have no push token; feeding the
-    // acquisition funnel a reliable platform instead of inferring it later.
+    // Stamp signupPlatform on first mobile session. This fires on every app
+    // launch after Clerk auth, so it covers 100% of app users; even those who
+    // never listen and have no push token; feeding the acquisition funnel a
+    // reliable platform instead of inferring it later.
+    //
+    // El valor sale de la cabecera del cliente, no de una constante: hasta
+    // ahora se escribía "ios" para todo el mundo y quien entraba desde un
+    // Android quedaba sellado como usuario de iPhone. Por eso el sello móvil
+    // también se CORRIGE: si la cuenta ya dice "ios" y la app dice que es
+    // Android, gana la app, que es la única que sabe en qué teléfono corre.
+    // Un sello "web" no se toca: dice dónde nació la cuenta, y eso no cambia
+    // porque después se instale la app.
     // Best-effort: a stamping failure must never block the session.
-    if (typeof publicMetadata.signupPlatform !== "string" || !publicMetadata.signupPlatform) {
+    const mobilePlatform = mobilePlatformFromRequest(req);
+    const stamped = typeof publicMetadata.signupPlatform === "string" ? publicMetadata.signupPlatform : "";
+    const isMobileStamp = stamped === "ios" || stamped === "android";
+    if (!stamped || (isMobileStamp && stamped !== mobilePlatform)) {
       try {
         await clerkClient.users.updateUserMetadata(userId, {
-          publicMetadata: { ...publicMetadata, signupPlatform: "ios" },
+          publicMetadata: { ...publicMetadata, signupPlatform: mobilePlatform },
         });
       } catch (stampErr) {
-        console.error("Failed to stamp signupPlatform=ios:", stampErr);
+        console.error(`Failed to stamp signupPlatform=${mobilePlatform}:`, stampErr);
       }
     }
 

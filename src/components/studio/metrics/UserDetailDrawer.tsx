@@ -511,9 +511,14 @@ export default function UserDetailDrawer({
                   <KpiCard
                     label="Plataforma"
                     value={
-                      data.activity.byPlatform.ios > data.activity.byPlatform.web ? "iOS" : "Web"
+                      (data.activity.byPlatform.android ?? 0) > data.activity.byPlatform.ios &&
+                      (data.activity.byPlatform.android ?? 0) > data.activity.byPlatform.web
+                        ? "Android"
+                        : data.activity.byPlatform.ios > data.activity.byPlatform.web
+                          ? "iOS"
+                          : "Web"
                     }
-                    hint={`iOS ${data.activity.byPlatform.ios} · Web ${data.activity.byPlatform.web} · s/d ${data.activity.byPlatform.unknown}`}
+                    hint={`iOS ${data.activity.byPlatform.ios} · Android ${data.activity.byPlatform.android ?? 0} · Web ${data.activity.byPlatform.web} · s/d ${data.activity.byPlatform.unknown}`}
                   />
                 </div>
 

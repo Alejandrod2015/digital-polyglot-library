@@ -1,3 +1,15 @@
+import { Platform } from "react-native";
+
+/**
+ * Cada llamada dice desde qué sistema sale. El servidor lo sellaba como "ios"
+ * a mano, así que un usuario de Android aparecía en las métricas como si
+ * tuviera un iPhone. Es un dato que sólo el cliente conoce, y va aquí para que
+ * lo lleven todas las llamadas y no haya que acordarse en cada una.
+ */
+export const CLIENT_PLATFORM_HEADER = "X-DP-Platform";
+export const clientPlatform: "ios" | "android" =
+  Platform.OS === "android" ? "android" : "ios";
+
 export class ApiError extends Error {
   status: number;
 
@@ -55,6 +67,7 @@ export async function apiFetch<T>(args: {
         method,
         headers: {
           "Content-Type": "application/json",
+          [CLIENT_PLATFORM_HEADER]: clientPlatform,
           ...(token ? { Authorization: `Bearer ${token}` } : {}),
         },
         ...(body === undefined ? {} : { body: JSON.stringify(body) }),
