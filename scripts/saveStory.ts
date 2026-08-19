@@ -425,6 +425,13 @@ function slugify(s: string): string {
         data: {
           title: d.title, slug, text: d.text, vocab: d.vocab,
           arcType: d.arcType, synopsis: d.synopsis,
+          // Contadores derivados. NADIE los escribía: 293 de 564 historias del
+          // catálogo los tenían en null, incluidas las 21 del A1 de España, y
+          // cualquier informe que los use miente sin avisar. Se cuentan igual
+          // que en el validador (`countWords`, src/lib/validateGeneratedStory)
+          // para que el número signifique lo mismo en los dos sitios.
+          wordCount: String(d.text ?? "").trim().split(/\s+/).filter(Boolean).length,
+          vocabCount: Array.isArray(d.vocab) ? d.vocab.length : 0,
           ...(publish ? { status: "published" } : {}),
         },
       });
