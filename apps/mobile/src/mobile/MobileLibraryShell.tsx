@@ -16002,6 +16002,69 @@ export function MobileLibraryShell(args: {
     journeyAutoScrolledRef.current = null;
   }, [activeJourneyTrack?.id, globalJourneyNextStoryId]);
 
+  // Tocar la notificación tiene que llevar al journey que anuncia. Hasta hoy no
+  // había NINGÚN listener de respuesta en la app: abrir un push te dejaba donde
+  // estuvieras, y el `campaignId` que el servidor manda para atribuir la
+  // apertura no lo leía nadie. El id de journey que viaja en el payload ES el
+  // id del track (`tracks.push({ id: journey.id })` en journeyData), así que
+  // seleccionarlo es directo.
+  useEffect(() => {
+    let Notifications: typeof import("expo-notifications") | null = null;
+    try {
+      Notifications = require("expo-notifications") as typeof import("expo-notifications");
+    } catch {
+      return;
+    }
+    if (!Notifications) return;
+    let cancelled = false;
+
+    const open = async (response: unknown) => {
+      if (cancelled || !response || typeof response !== "object") return;
+      const notification = (response as { notification?: unknown }).notification as
+        | { request?: { identifier?: string; content?: { data?: Record<string, unknown> } } }
+        | undefined;
+      const data = notification?.request?.content?.data;
+      const journeyId = typeof data?.journeyId === "string" ? data.journeyId.trim() : "";
+      if (!journeyId) return;
+
+      // `getLastNotificationResponseAsync` sigue devolviendo el MISMO toque en
+      // cada arranque, así que sin esta marca la app saltaría al journey una y
+      // otra vez días después de que el usuario tocara el aviso.
+      const identifier = notification?.request?.identifier ?? journeyId;
+      try {
+        const seen = await SecureStore.getItemAsync("digital-polyglot/push-open-handled");
+        if (seen === identifier) return;
+        await SecureStore.setItemAsync("digital-polyglot/push-open-handled", identifier);
+      } catch {
+        // SecureStore no disponible: se abre igual, que es el mal menor.
+      }
+      if (cancelled) return;
+
+      const language = typeof data?.language === "string" ? data.language.trim() : "";
+      setActiveScreen("home");
+      setJourneyDetailTopicId(null);
+      if (language) {
+        setActiveJourneyLanguage(language);
+        void loadJourneyForLanguage(language);
+      }
+      setSelectedJourneyTrackId(journeyId);
+    };
+
+    const subscription = Notifications.addNotificationResponseReceivedListener((response) => {
+      void open(response);
+    });
+    // Arranque en frío: la app estaba cerrada, el toque ya ocurrió y el
+    // listener de arriba no llega a verlo.
+    void Notifications.getLastNotificationResponseAsync?.()
+      .then((response) => open(response))
+      .catch(() => {});
+
+    return () => {
+      cancelled = true;
+      subscription?.remove?.();
+    };
+  }, [loadJourneyForLanguage]);
+
   // Aviso al cerrar la ULTIMA historia del journey. El milestone ya existia
   // (es el mismo componente que dice "Checkpoint cleared"), pero solo lo
   // disparaba el final de una practica: quien terminaba el recorrido por audio

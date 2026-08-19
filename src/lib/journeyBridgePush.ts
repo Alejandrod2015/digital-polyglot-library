@@ -392,7 +392,7 @@ export async function sendBridgeTest(args: {
   const results = await sendApnsPush(tokens, {
     title: copy.title,
     body: copy.body,
-    data: { notificationType: BRIDGE_NOTIFICATION_KEY, journeyId: destino.id, test: true },
+    data: { notificationType: BRIDGE_NOTIFICATION_KEY, journeyId: destino.id, language: pair.language, test: true },
   });
   const delivered = results.filter((r) => r.ok).length;
   return { ok: delivered > 0, ...copy, delivered, failed: results.length - delivered, error: results.find((r) => !r.ok)?.reason };
@@ -481,7 +481,10 @@ export async function runJourneyBridgePush(args?: {
         const results = await sendApnsPush(tokens, {
           title: candidate.title,
           body: candidate.body,
-          data: { notificationType: BRIDGE_NOTIFICATION_KEY, journeyId: pair.toId },
+          // `language` viaja porque la app tiene que cambiar de idioma antes de
+          // poder seleccionar el track; sin él, tocar el aviso desde otro
+          // idioma no encuentra el journey.
+          data: { notificationType: BRIDGE_NOTIFICATION_KEY, journeyId: pair.toId, language: pair.language },
         });
         const delivered = results.filter((r) => r.ok).length;
         // El sello va aunque falle la entrega: si el token está muerto,
