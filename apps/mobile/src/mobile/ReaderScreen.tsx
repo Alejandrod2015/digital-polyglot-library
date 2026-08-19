@@ -1819,6 +1819,7 @@ export function ReaderScreen(args: {
   const [endOfStoryFace, setEndOfStoryFace] = useState<"practice" | "vote" | "comment">(
     "practice"
   );
+  const [completedStoryCount, setCompletedStoryCount] = useState(0);
   const [storyRatingLiked, setStoryRatingLiked] = useState<boolean | null>(null);
   /** Desde dónde se votó. Quien votó desde la tarjeta de práctica vuelve a
    *  ella al terminar: su "Start practice" seguía siendo el plan, y cerrarle
@@ -2012,7 +2013,11 @@ export function ReaderScreen(args: {
     let cancelled = false;
     void (async () => {
       const done = await loadCompletedStories(sessionUserId);
-      if (!cancelled && done.has(story.id)) setStoryCompleted(true);
+      if (cancelled) return;
+      if (done.has(story.id)) setStoryCompleted(true);
+      // Cuántas historias lleva terminadas esta cuenta, contando ésta. Es el
+      // número que decide si toca preguntar por la valoración.
+      setCompletedStoryCount(done.has(story.id) ? done.size : done.size + 1);
     })();
     return () => {
       cancelled = true;
@@ -2056,8 +2061,21 @@ export function ReaderScreen(args: {
     };
   }, [endOfStoryFace]);
 
-  /** Hay sesión y esta historia no está valorada todavía. */
-  const canRateStory = Boolean(sessionToken) && !storyAlreadyRated;
+  /**
+   * ¿Toca preguntar por esta historia?
+   *
+   * Hay sesión, la historia no está valorada, y le toca por turno: la PRIMERA
+   * historia que alguien termina siempre (ahí la impresión está entera y aún
+   * no hemos gastado ninguna pregunta), y a partir de ahí una de cada cinco.
+   *
+   * Cinco y no menos porque un tema son tres historias: preguntar cada dos o
+   * tres caería siempre en el mismo tema y devolvería la misma opinión escrita
+   * cinco veces. Cinco y no más porque un journey son 21 historias, así que el
+   * turno cae unas cuatro veces por journey, suficiente para ver si un tema
+   * concreto se cae sin convertir el final de historia en un peaje.
+   */
+  const isRatingTurn = completedStoryCount === 1 || completedStoryCount % 5 === 0;
+  const canRateStory = Boolean(sessionToken) && !storyAlreadyRated && isRatingTurn;
 
   async function postStoryRating(liked: boolean, comment?: string) {
     if (!sessionToken) return;

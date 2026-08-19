@@ -89,6 +89,15 @@ export async function POST(req: NextRequest) {
     email: session.email?.trim().toLowerCase() ?? null,
   };
 
+  // Se mira antes de escribir para saber QUÉ ha pasado de verdad: nace el voto,
+  // cambia de opinión, o llega el comentario después. El upsert por sí solo no
+  // lo distingue, y sin esa distinción las métricas contarían dos veces el
+  // mismo pulgar (el voto y su comentario viajan en dos POST).
+  const previous = await prisma.storyRating.findUnique({
+    where: { userId_storySlug: { userId: session.sub, storySlug } },
+    select: { id: true, liked: true, comment: true },
+  });
+
   const rating = await prisma.storyRating.upsert({
     where: { userId_storySlug: { userId: session.sub, storySlug } },
     create: { userId: session.sub, storySlug, comment, ...shared },
@@ -97,6 +106,39 @@ export async function POST(req: NextRequest) {
     // cuando el cuerpo trae uno.
     update: { ...shared, ...(comment ? { comment } : {}) },
   });
+
+  // Además de su tabla, el voto entra en métricas, que es donde vive todo lo
+  // demás que hace un lector (`audio_complete`, `vocab_clicked`). Así la señal
+  // se puede cruzar con el resto de la sesión sin inventar otro almacén.
+  const metricEvents: Array<{ eventType: string; value: number }> = [];
+  const votedNow = !previous || previous.liked !== body.liked;
+  if (votedNow) {
+    metricEvents.push({ eventType: "story_rated", value: body.liked ? 1 : 0 });
+  }
+  if (comment && comment !== previous?.comment) {
+    metricEvents.push({ eventType: "story_rating_comment", value: comment.length });
+  }
+
+  if (metricEvents.length > 0) {
+    await prisma.userMetric
+      .createMany({
+        data: metricEvents.map((event) => ({
+          userId: session.sub,
+          storySlug,
+          bookSlug: shared.bookSlug,
+          eventType: event.eventType,
+          value: event.value,
+          metadata: {
+            liked: body.liked,
+            hasComment: Boolean(comment ?? previous?.comment),
+            changedMind: Boolean(previous && previous.liked !== body.liked),
+          },
+        })),
+      })
+      // Perder una fila de métricas nunca puede costar el voto, que ya está
+      // escrito en su tabla y es el dato que importa.
+      .catch(() => undefined);
+  }
 
   return NextResponse.json({ ok: true, id: rating.id }, { status: 201 });
 }
