@@ -16002,6 +16002,51 @@ export function MobileLibraryShell(args: {
     journeyAutoScrolledRef.current = null;
   }, [activeJourneyTrack?.id, globalJourneyNextStoryId]);
 
+  // Aviso al cerrar la ULTIMA historia del journey. El milestone ya existia
+  // (es el mismo componente que dice "Checkpoint cleared"), pero solo lo
+  // disparaba el final de una practica: quien terminaba el recorrido por audio
+  // no veia absolutamente nada, que era justo el agujero que dejaba el track
+  // lleno de checks sin salida. Se marca en SecureStore para que salga una vez
+  // por journey y no en cada arranque de la app.
+  const journeyCompleteShownRef = useRef<Set<string>>(new Set());
+  useEffect(() => {
+    const track = activeJourneyTrack;
+    if (!track?.complete || !track.id) return;
+    if (journeyCompleteShownRef.current.has(track.id)) return;
+    journeyCompleteShownRef.current.add(track.id);
+    const storageKey = `digital-polyglot/journey-complete-seen/${track.id}`;
+    void (async () => {
+      try {
+        const seen = await SecureStore.getItemAsync(storageKey);
+        if (seen) return;
+      } catch {
+        // SecureStore no disponible: se enseña una vez por sesion y ya.
+      }
+      const next = track.nextJourney;
+      const nextLabel = next
+        ? `${next.name}${next.levels?.length ? ` ${next.levels.join(", ").toUpperCase()}` : ""}`
+        : null;
+      setJourneyMilestone({
+        title: "Journey complete",
+        body:
+          next?.unlocked && nextLabel
+            ? `You finished every story in ${track.label}. ${nextLabel} is open.`
+            : `You finished every story in ${track.label}. Nice work.`,
+        cta: next?.unlocked ? "See what's next" : "Back to journey",
+        onPress: () => {
+          setActiveScreen("home");
+          setJourneyDetailTopicId(null);
+          setJourneyMilestone(null);
+        },
+      });
+      try {
+        await SecureStore.setItemAsync(storageKey, "1");
+      } catch {
+        // noop
+      }
+    })();
+  }, [activeJourneyTrack]);
+
   // Center the "next" story pill vertically in the journey viewport
   // on first open. measureLayout reports the pill's Y inside the
   // shell ScrollView. We target (pillY + pillH/2 - viewport/2) so the
