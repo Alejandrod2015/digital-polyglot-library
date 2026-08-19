@@ -366,6 +366,14 @@ that ALWAYS runs before any Bash command. It does two things:
    A0 del mismo idioma ya cubría. El fallo solo se ve leyendo los siete juntos,
    y para entonces ya hay 21 historias escritas y a punto de pagar su audio.
 
+   **`motivation` es un DESPLEGABLE, no texto libre** (2026-08-19): los seis
+   valores viven en `src/lib/betaMotivations.ts` (`BETA_MOTIVATIONS`), los
+   importa el formulario, y el portón los DESCARTA del corpus. Solo cuentan lo
+   escrito por la opción "Other" y `applicationReason`, y una cita necesita 3
+   palabras y 15 caracteres. WHY: los siete temas de un Expat francés pasaron
+   citando seis de ellos la misma cadena "move abroad"; un clic de dos palabras
+   valía por siete decisiones de contenido.
+
    Las reglas de NOMBRE (ampersand y no "And", **etiqueta en inglés, salvo el
    préstamo que ya ES inglés y no tiene equivalente, como "tapas"**, sin país, sin artículo
    inicial, 2-4 palabras, Title Case, un slug = un label global, slug derivado

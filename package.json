@@ -13,6 +13,7 @@
     "ios": "npm run ios --prefix apps/mobile",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
     "qa:ux:web:capture": "tsx scripts/captureWebScreenshots.ts",
     "qa:ux:studio:capture": "QA_SCREENSHOT_CONFIG=qa/studio-screenshots.config.json tsx scripts/captureWebScreenshots.ts",
     "qa:ux:audit": "tsx scripts/uxAudit.ts",
@@ -72,6 +73,7 @@
     "tsx": "^4.20.6",
     "turndown": "^7.2.4",
     "typescript": "^5.9.3",
-    "vercel": "^50.32.5"
+    "vercel": "^50.32.5",
+    "vitest": "^4.1.11"
   }
 }

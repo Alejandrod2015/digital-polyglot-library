@@ -9,11 +9,38 @@
  * idioma ya cubría. El fallo solo se ve leyendo los siete juntos, y para
  * entonces ya hay 21 historias escritas.
  *
+ * WHY (2026-08-19): el portón daba por evidencia cualquier valor de
+ * `BetaSignup.motivation`, y ese campo es un DESPLEGABLE de seis opciones
+ * (`BETA_MOTIVATIONS`), no texto libre. Se propusieron los siete temas de un
+ * Expat francés citando seis de ellos la misma cadena "move abroad", y pasaron
+ * los siete: un clic de dos palabras valía por siete decisiones de contenido,
+ * que es exactamente el molde de curso que esto existe para impedir. Ahora los
+ * clics del desplegable NO son corpus, y una cita tiene un largo mínimo.
+ *
  * Hace UNA cosa: comprueba que cada tema cite, literalmente, algo que un
- * usuario escribió. Las reglas de nombre viven en la tabla de la spec y en el
+ * usuario ESCRIBIÓ. Las reglas de nombre viven en la tabla de la spec y en el
  * validador; no se duplican aquí.
  */
 import { PrismaClient } from "@/generated/prisma";
+import { isCannedMotivation } from "./betaMotivations";
+
+/**
+ * Largo mínimo de una cita, elegido mirando las citas reales de la base y no
+ * de memoria. Las frases que de verdad sostienen un tema son de este tamaño o
+ * mayores: "talk to neighbours" (3 palabras, 18), "only speaks Spanish" (19),
+ * "move there in 6-8 months" (24), "full business meetings" (22). Por debajo
+ * solo caben las etiquetas genéricas ("work", "move abroad", "my job"), que
+ * respaldan cualquier tema y por tanto no respaldan ninguno.
+ */
+const MIN_QUOTE_WORDS = 3;
+const MIN_QUOTE_CHARS = 15;
+
+const norm = (s: string) => s.toLowerCase().replace(/\s+/g, " ").trim();
+
+function quoteTooShort(q: string): boolean {
+  const v = norm(q);
+  return v.length < MIN_QUOTE_CHARS || v.split(" ").filter(Boolean).length < MIN_QUOTE_WORDS;
+}
 
 export type TopicProposal = {
   label: string;
@@ -40,14 +67,32 @@ export async function assertTopicsGrounded(opts: {
     select: { targetLanguage: true, motivation: true, applicationReason: true },
   });
   const wanted = opts.language.toLowerCase();
-  const corpus = all
-    .filter((r) => String(r.targetLanguage ?? "").toLowerCase() === wanted)
-    .flatMap((r) => [r.motivation, r.applicationReason].filter(Boolean) as string[])
-    .map((s) => s.toLowerCase().trim());
+  const rows = all.filter((r) => String(r.targetLanguage ?? "").toLowerCase() === wanted);
+
+  // `motivation` es un desplegable: solo cuenta como evidencia lo que la
+  // persona ESCRIBIÓ, que es lo que llega por la opción "Other" (el formulario
+  // guarda el texto, nunca la palabra "Other"). `applicationReason` sí es
+  // texto libre y cuenta entero.
+  let cannedClicks = 0;
+  const writtenMotivations: string[] = [];
+  const reasons: string[] = [];
+  for (const r of rows) {
+    const m = String(r.motivation ?? "").trim();
+    if (m) {
+      if (isCannedMotivation(m)) cannedClicks++;
+      else writtenMotivations.push(m);
+    }
+    const a = String(r.applicationReason ?? "").trim();
+    if (a) reasons.push(a);
+  }
+  const written = writtenMotivations.concat(reasons);
+  const corpus = written.map(norm);
 
   if (corpus.length === 0) {
     throw new TopicEvidenceError(
-      `Cero motivaciones escritas de ${opts.language} en BetaSignup. Sin datos no se eligen temas.`,
+      `Cero frases escritas de ${opts.language} en BetaSignup: ${rows.length} solicitudes, ` +
+      `${cannedClicks} motivaciones son clics del desplegable y ninguna dice de qué habla la ` +
+      `persona. Sin datos no se eligen temas.`,
     );
   }
 
@@ -74,18 +119,36 @@ export async function assertTopicsGrounded(opts: {
 
   const bad = nameProblems.concat(opts.proposals.flatMap((p) => {
     if (!p.evidence?.length) return [`"${p.label}": ninguna cita de usuario`];
-    const fake = p.evidence.filter((q) => !corpus.some((c) => c.includes(q.toLowerCase().trim())));
-    return fake.length ? [`"${p.label}": citas que no están en BetaSignup: ${fake.join(" / ")}`] : [];
+    const out: string[] = [];
+    const short = p.evidence.filter((q) => quoteTooShort(q));
+    if (short.length) {
+      out.push(
+        `citas demasiado cortas para sostener un tema (mínimo ${MIN_QUOTE_WORDS} palabras y ` +
+        `${MIN_QUOTE_CHARS} caracteres): ${short.join(" / ")}`,
+      );
+    }
+    const fake = p.evidence
+      .filter((q) => !quoteTooShort(q))
+      .filter((q) => !corpus.some((c) => c.includes(norm(q))));
+    if (fake.length) out.push(`citas que nadie escribió en BetaSignup: ${fake.join(" / ")}`);
+    // Una cita corta y otra inventada dejan el tema sin NINGUNA cita válida.
+    if (!out.length) return [];
+    return [`"${p.label}": ${out.join("; ")}`];
   }));
 
   // La tabla que faltaba: cada tema con cuánta gente hay detrás de su cita, y
   // al lado lo que YA cubren los otros journeys del idioma. Los fallos de
   // criterio ("Chemist" junto a "Health & Emergencies", con un solo
   // solicitante detrás) solo se ven comparando; sin esto se eligen a ciegas.
-  console.log(`\nTEMAS PROPUESTOS · ${corpus.length} motivaciones escritas de ${opts.language}`);
+  console.log(
+    `\nTEMAS PROPUESTOS · ${corpus.length} frases escritas de ${opts.language} ` +
+    `(${writtenMotivations.length} motivaciones escritas + ${reasons.length} applicationReason; ` +
+    `${cannedClicks} clics del desplegable descartados)`,
+  );
   for (const p of opts.proposals) {
-    const n = p.evidence.reduce(
-      (acc, q) => acc + corpus.filter((c) => c.includes(q.toLowerCase().trim())).length, 0);
+    const n = p.evidence
+      .filter((q) => !quoteTooShort(q))
+      .reduce((acc, q) => acc + corpus.filter((c) => c.includes(norm(q))).length, 0);
     console.log(`  ${p.label.padEnd(30)} ${String(n).padStart(3)} solicitantes  <- ${p.evidence.join(" / ")}`);
   }
   if (opts.existingLabels?.length) {
@@ -96,6 +159,8 @@ export async function assertTopicsGrounded(opts: {
   if (bad.length) {
     throw new TopicEvidenceError(
       `TEMAS SIN RESPALDO:\n  - ${bad.join("\n  - ")}\n\n` +
+      `Hay ${writtenMotivations.length} motivaciones escritas y ${reasons.length} applicationReason ` +
+      `de ${opts.language} (${cannedClicks} clics del desplegable no cuentan). ` +
       `Corre \`npx tsx scripts/userEvidence.ts ${opts.language}\` y elige desde ahí.`,
     );
   }

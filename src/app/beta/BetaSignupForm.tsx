@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { trackGa4Event } from "@/lib/ga4";
+// La lista vive en un módulo compartido: el portón de temas necesita saber
+// cuáles de estas respuestas son un clic y no una frase escrita.
+import { BETA_MOTIVATIONS } from "@/lib/betaMotivations";
 
 const NATIVE_LANGUAGES = [
   "English",
@@ -100,15 +103,6 @@ const WEEKLY_HOURS = [
   { value: "1-3", label: "1-3 hrs" },
   { value: "4-7", label: "4-7 hrs" },
   { value: "8+", label: "8+ hrs" },
-];
-
-const MOTIVATIONS = [
-  "Travel",
-  "Family connection",
-  "Work",
-  "Move abroad",
-  "Just for fun",
-  "Other",
 ];
 
 const REFERRAL_SOURCES = [
@@ -802,7 +796,7 @@ export default function BetaSignupForm() {
           <option value="" disabled>
             Pick one
           </option>
-          {MOTIVATIONS.map((m) => (
+          {BETA_MOTIVATIONS.map((m) => (
             <option key={m} value={m}>
               {m}
             </option>
