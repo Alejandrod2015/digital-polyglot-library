@@ -295,6 +295,62 @@ async function getIosTokens(userId: string): Promise<{ tokens: string[]; android
 }
 
 /**
+ * Envío de PRUEBA a un solo usuario, con el texto real del aviso. No mira la
+ * ventana, no mira si terminó nada y NO deja el sello de "ya avisado", así que
+ * se puede repetir. Existe para probarlo en un teléfono propio antes de que
+ * exista una cadena con destino publicado; el cron nunca llama a esto.
+ */
+export async function sendBridgeTest(args: {
+  userId: string;
+  toJourneyId?: string;
+}): Promise<{ ok: boolean; title?: string; body?: string; delivered?: number; failed?: number; error?: string }> {
+  if (!isApnsConfigured()) return { ok: false, error: "APNs sin configurar" };
+
+  const journeys = await prisma.journey.findMany({
+    select: { id: true, name: true, levels: true, variant: true, nextJourneyId: true, status: true },
+  });
+  const byId = new Map(journeys.map((j) => [j.id, j]));
+  const origen =
+    (args.toJourneyId
+      ? journeys.find((j) => j.nextJourneyId === args.toJourneyId)
+      : journeys.find((j) => j.nextJourneyId)) ?? null;
+  const destino = args.toJourneyId
+    ? byId.get(args.toJourneyId)
+    : origen?.nextJourneyId
+      ? byId.get(origen.nextJourneyId)
+      : null;
+  if (!destino) return { ok: false, error: "No hay journey destino que anunciar" };
+
+  const pair: BridgePair = {
+    fromId: origen?.id ?? destino.id,
+    fromLabel: origen ? journeyLabel(origen) : "your journey",
+    toId: destino.id,
+    toLabel: journeyLabel(destino),
+    fromSlugs: [],
+    toSlugs: [],
+  };
+  const copy = bridgeCopy(pair);
+
+  const { tokens, androidOnly, optedIn } = await getIosTokens(args.userId);
+  if (!optedIn) return { ok: false, error: `El usuario tiene ${BRIDGE_NOTIFICATION_KEY} desactivado`, ...copy };
+  if (tokens.length === 0) {
+    return {
+      ok: false,
+      error: androidOnly ? "Solo hay token de Android y no hay emisor FCM" : "Sin token de iOS registrado",
+      ...copy,
+    };
+  }
+
+  const results = await sendApnsPush(tokens, {
+    title: copy.title,
+    body: copy.body,
+    data: { notificationType: BRIDGE_NOTIFICATION_KEY, journeyId: destino.id, test: true },
+  });
+  const delivered = results.filter((r) => r.ok).length;
+  return { ok: delivered > 0, ...copy, delivered, failed: results.length - delivered, error: results.find((r) => !r.ok)?.reason };
+}
+
+/**
  * Calcula candidatos y, si `dryRun` es false Y el interruptor de entorno está
  * encendido, manda el aviso. Por defecto NO manda: es una acción hacia fuera y
  * el valor por defecto seguro es contar, no escribir a nadie.

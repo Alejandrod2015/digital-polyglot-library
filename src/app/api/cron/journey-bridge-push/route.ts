@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 300;
 
 import { NextResponse } from "next/server";
-import { getBridgePairs, getPartialProgress, runJourneyBridgePush } from "@/lib/journeyBridgePush";
+import { getBridgePairs, getPartialProgress, runJourneyBridgePush, sendBridgeTest } from "@/lib/journeyBridgePush";
 
 function isAuthorized(req: Request): boolean {
   const secret = process.env.CRON_SECRET;
@@ -26,6 +26,19 @@ export async function GET(req: Request) {
   }
 
   const url = new URL(req.url);
+
+  // `?test=<clerkUserId>` manda UN aviso, con el texto real, a ese usuario y a
+  // nadie mas. Es la unica forma de verlo en un telefono mientras no exista
+  // una cadena con destino publicado. No deja sello, asi que se puede repetir.
+  const testUserId = url.searchParams.get("test");
+  if (testUserId) {
+    const result = await sendBridgeTest({
+      userId: testUserId,
+      toJourneyId: url.searchParams.get("journey") ?? undefined,
+    });
+    return NextResponse.json({ test: true, ...result });
+  }
+
   const forcedDry = /^(1|true|yes)$/i.test(url.searchParams.get("dry") ?? "");
 
   const report = await runJourneyBridgePush(forcedDry ? { dryRun: true } : {});
