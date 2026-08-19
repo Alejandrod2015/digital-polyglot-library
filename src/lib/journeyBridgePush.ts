@@ -61,8 +61,16 @@ export type BridgePair = {
   fromLabel: string;
   toId: string;
   toLabel: string;
+  /** Idioma en el que se lee, ya capitalizado ("Portuguese"). */
+  language: string;
+  /** Nivel de cada lado, en mayúsculas ("A0", "A1"). */
+  fromLevel: string;
+  toLevel: string;
   fromSlugs: string[];
   toSlugs: string[];
+  /** Historias publicadas a cada lado; el aviso las cuenta. */
+  fromCount: number;
+  toCount: number;
 };
 
 export type BridgeCandidate = {
@@ -88,16 +96,37 @@ export type BridgeRunReport = {
   errors: string[];
 };
 
+function languageLabel(language: string | null | undefined): string {
+  const raw = (language ?? "").trim();
+  if (!raw) return "";
+  return raw.charAt(0).toUpperCase() + raw.slice(1).toLowerCase();
+}
+
+function levelLabel(levels: string[] | null | undefined): string {
+  return ((levels ?? [])[0] ?? "").toUpperCase();
+}
+
 function journeyLabel(journey: { name: string; levels: string[]; variant: string }): string {
   const level = (journey.levels ?? [])[0];
   return level ? `${journey.name} ${level.toUpperCase()}` : journey.name;
 }
 
-/** Copy del aviso. En inglés, como el resto de la UI del móvil. */
+/**
+ * Copy del aviso. En inglés, como el resto de la UI del móvil.
+ *
+ * Nombra el IDIOMA y el NIVEL, y cuenta historias. La primera versión decía
+ * "Traveler A1 is open": ni el idioma ni una idea de qué hay al otro lado, y
+ * "Traveler" es la etiqueta del TIPO, no algo que el lector reconozca. El
+ * título es una acción, no un estado.
+ */
 export function bridgeCopy(pair: BridgePair): { title: string; body: string } {
+  const from = [pair.language, pair.fromLevel].filter(Boolean).join(" ");
+  const to = [pair.language, pair.toLevel].filter(Boolean).join(" ");
+  const finished = pair.fromCount > 0 ? `all ${pair.fromCount} stories` : "every story";
+  const waiting = pair.toCount > 0 ? `The next ${pair.toCount} are waiting.` : "The next ones are waiting.";
   return {
-    title: `${pair.toLabel} is open`,
-    body: `You finished every story in ${pair.fromLabel}. The next one is ready when you are.`,
+    title: `Start ${to || pair.toLabel}`,
+    body: `You finished ${finished} in ${from || pair.fromLabel}. ${waiting}`,
   };
 }
 
@@ -176,8 +205,13 @@ export async function getBridgePairs(): Promise<{
       fromLabel: label.from,
       toId: to.id,
       toLabel: label.to,
+      language: languageLabel(from.language),
+      fromLevel: levelLabel(from.levels),
+      toLevel: levelLabel(to.levels),
       fromSlugs,
       toSlugs,
+      fromCount: fromSlugs.length,
+      toCount: toSlugs.length,
     });
   }
 
@@ -307,7 +341,7 @@ export async function sendBridgeTest(args: {
   if (!isApnsConfigured()) return { ok: false, error: "APNs sin configurar" };
 
   const journeys = await prisma.journey.findMany({
-    select: { id: true, name: true, levels: true, variant: true, nextJourneyId: true, status: true },
+    select: { id: true, name: true, levels: true, variant: true, language: true, nextJourneyId: true, status: true },
   });
   const byId = new Map(journeys.map((j) => [j.id, j]));
   const origen =
@@ -321,13 +355,27 @@ export async function sendBridgeTest(args: {
       : null;
   if (!destino) return { ok: false, error: "No hay journey destino que anunciar" };
 
+  // Las cuentas salen de la base también en la prueba: un aviso de muestra que
+  // dice "all 0 stories" no sirve para juzgar el texto.
+  const [fromCount, toCount] = await Promise.all([
+    origen
+      ? prisma.journeyStory.count({ where: { journeyId: origen.id, status: "published", slug: { not: null } } })
+      : Promise.resolve(0),
+    prisma.journeyStory.count({ where: { journeyId: destino.id, status: "published", slug: { not: null } } }),
+  ]);
+
   const pair: BridgePair = {
     fromId: origen?.id ?? destino.id,
     fromLabel: origen ? journeyLabel(origen) : "your journey",
     toId: destino.id,
     toLabel: journeyLabel(destino),
+    language: languageLabel(destino.language),
+    fromLevel: levelLabel(origen?.levels),
+    toLevel: levelLabel(destino.levels),
     fromSlugs: [],
     toSlugs: [],
+    fromCount,
+    toCount,
   };
   const copy = bridgeCopy(pair);
 
