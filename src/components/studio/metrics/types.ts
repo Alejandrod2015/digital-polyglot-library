@@ -144,6 +144,56 @@ export type DashboardData = {
       distribution: Array<{ bucket: string; users: number }>;
     };
   };
+  learning: {
+    practice: {
+      started: number;
+      completed: number;
+      completionRate: number;
+      avgAccuracyPercent: number;
+      practicingUsers: number;
+      byMode: Array<{
+        mode: string;
+        started: number;
+        completed: number;
+        completionRate: number;
+        avgAccuracyPercent: number;
+      }>;
+      accuracyDistribution: Array<{ bucket: string; sessions: number }>;
+    };
+    vocab: {
+      lookups: number;
+      uniqueWords: number;
+      lookingUpUsers: number;
+      lookupsPerReader: number;
+      topWords: Array<{
+        word: string;
+        language: string | null;
+        wordType: string | null;
+        lookups: number;
+        users: number;
+      }>;
+      bySource: Array<{ source: string; lookups: number }>;
+    };
+    byLanguage: Array<{
+      language: string;
+      lookups: number;
+      practiceCompleted: number;
+      avgAccuracyPercent: number;
+      users: number;
+    }>;
+    byLevel: Array<{
+      level: string;
+      practiceStarted: number;
+      practiceCompleted: number;
+      avgAccuracyPercent: number;
+      users: number;
+    }>;
+    levelUnattributed: {
+      sessions: number;
+      placeholder: number;
+      unknownStory: number;
+    };
+  };
 };
 
 export type PipelineData = {

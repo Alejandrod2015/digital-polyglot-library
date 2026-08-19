@@ -7,6 +7,13 @@ import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess"
 import { resolveUserEmails } from "@/lib/metricsUserEmails";
 import { books } from "@/data/books";
 import { getStandaloneStoriesByIds, getStandaloneStoriesBySlugs } from "@/lib/standaloneStories";
+import {
+  computeLearningMetrics,
+  emptyLearningMetrics,
+  type LearningMetrics,
+  type LearningPracticeRow,
+  type LearningVocabRow,
+} from "@/lib/learningMetrics";
 
 const METRICS_DASHBOARD_CACHE_TTL_MS = 60 * 1000;
 const RECENT_TRIAL_STARTS_LIMIT = 20;
@@ -235,6 +242,7 @@ type DashboardResponse = {
       distribution: Array<{ bucket: string; users: number }>;
     };
   };
+  learning: LearningMetrics;
 };
 
 type DashboardSection =
@@ -366,6 +374,7 @@ function createEmptyDashboardResponse(from: Date, to: Date, days: number): Dashb
         distribution: [],
       },
     },
+    learning: emptyLearningMetrics(),
   };
 }
 
@@ -475,6 +484,87 @@ async function resolveStoryLanguageMap(
     const lang = (s as { language?: string | null }).language;
     if (lang && !out.has(s.slug)) out.set(s.slug, normalizeLanguageCode(lang));
   }
+  return out;
+}
+
+/**
+ * Para cada storySlug devuelve su nivel CEFR en minúsculas (a0, a1, b1,
+ * c1...). Una historia de journey viaja con DOS identidades: el slug de
+ * verdad y la forma `journey-<id>` / `journey:<id>` que usa la app, así
+ * que se busca por las dos y se indexa siempre por la cadena original
+ * que vino en la métrica. Lo que no se resuelve queda fuera de la tabla
+ * por nivel en vez de caer en un cajón "desconocido" que no dice nada.
+ */
+async function resolveStoryLevelMap(
+  storySlugs: string[]
+): Promise<Map<string, string>> {
+  if (storySlugs.length === 0) return new Map();
+
+  const out = new Map<string, string>();
+  const idForm = new Map<string, string>();
+  for (const raw of storySlugs) {
+    const stripped = raw.replace(/^journey[-:]/, "");
+    if (stripped !== raw) idForm.set(stripped, raw);
+  }
+  const plainSlugs = storySlugs.filter((s) => !/^journey[-:]/.test(s));
+  const ids = [...idForm.keys()];
+
+  const [journeyBySlug, journeyById, standalone, catalog] = await Promise.all([
+    plainSlugs.length
+      ? prisma.journeyStory.findMany({
+          where: { slug: { in: plainSlugs } },
+          select: { slug: true, level: true },
+        })
+      : Promise.resolve([]),
+    ids.length
+      ? prisma.journeyStory.findMany({
+          where: { id: { in: ids } },
+          select: { id: true, level: true },
+        })
+      : Promise.resolve([]),
+    plainSlugs.length
+      ? prisma.standaloneStory.findMany({
+          where: { slug: { in: plainSlugs } },
+          select: { slug: true, level: true, cefrLevel: true },
+        })
+      : Promise.resolve([]),
+    plainSlugs.length
+      ? prisma.catalogStory.findMany({
+          where: { slug: { in: plainSlugs } },
+          select: { slug: true, level: true, cefrLevel: true },
+        })
+      : Promise.resolve([]),
+  ]);
+
+  // `level` y `cefrLevel` NO son la misma columna con dos nombres.
+  // `JourneyStory.level` sí guarda CEFR (a0...c2), pero en
+  // `StandaloneStory` y `CatalogStory` la que lleva CEFR es `cefrLevel`
+  // y `level` guarda una banda gruesa heredada del catálogo viejo
+  // (beginner / intermediate / advanced). Por eso se prefiere
+  // `cefrLevel` y `level` solo entra si tiene forma de código CEFR: al
+  // revés, el A0/A1/C1 de la tabla acababa conviviendo con un
+  // "INTERMEDIATE" que era la banda gruesa de una historia que sí tenía
+  // su b1 declarado al lado.
+  const CEFR_CODE = /^[abc][0-2]$/;
+  const put = (key: string | null | undefined, ...candidates: Array<string | null | undefined>) => {
+    if (!key || out.has(key)) return;
+    for (const raw of candidates) {
+      const value = raw?.trim().toLowerCase();
+      if (value && CEFR_CODE.test(value)) {
+        out.set(key, value);
+        return;
+      }
+    }
+  };
+
+  for (const r of journeyBySlug) put(r.slug, r.level);
+  for (const r of journeyById) {
+    const original = idForm.get(r.id);
+    if (original) put(original, r.level);
+  }
+  for (const r of standalone) put(r.slug, r.cefrLevel, r.level);
+  for (const r of catalog) put(r.slug, r.cefrLevel, r.level);
+
   return out;
 }
 
@@ -673,6 +763,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   const needsReminderFunnelData = needsFunnelsData;
   const needsTrialData = needsFunnelsData;
   const needsSignupData = needsOverviewData || needsAcquisitionData;
+  const needsLearningData = section === "learning";
 
   const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
   const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
@@ -722,6 +813,8 @@ export async function GET(req: NextRequest): Promise<Response> {
     prevActiveUsersRows,
     prevSavedStoriesTotal,
     prevSavedBooksTotal,
+    practiceRows,
+    vocabRows,
   ] =
     await Promise.all([
     needsEventData ? prisma.userMetric.findMany({
@@ -1099,6 +1192,42 @@ export async function GET(req: NextRequest): Promise<Response> {
         ...(bookSlug ? { bookId: bookSlug } : {}),
       },
     }) : Promise.resolve(0),
+    // ── Aprendizaje. Dos señales, y solo dos, porque son las únicas que
+    // la app emite de verdad: sesiones de práctica (con su precisión) y
+    // consultas de vocabulario. `journey_topic_checkpoint_complete` no
+    // tiene ni una fila y `journey_story_read` se quedó en 5 de mayo de
+    // 2026 (lo dispara solo el web), así que no se consultan.
+    needsLearningData ? prisma.userMetric.findMany({
+      where: {
+        ...excludeInternal,
+        createdAt: { gte: from, lte: to },
+        eventType: { in: ["practice_session_started", "practice_session_completed"] },
+        ...(storySlug ? { storySlug } : {}),
+        ...(bookSlug ? { bookSlug } : {}),
+      },
+      select: {
+        userId: true,
+        storySlug: true,
+        eventType: true,
+        metadata: true,
+      },
+      take: 20000,
+    }) : Promise.resolve([]),
+    needsLearningData ? prisma.userMetric.findMany({
+      where: {
+        ...excludeInternal,
+        createdAt: { gte: from, lte: to },
+        eventType: "vocab_clicked",
+        ...(storySlug ? { storySlug } : {}),
+        ...(bookSlug ? { bookSlug } : {}),
+      },
+      select: {
+        userId: true,
+        storySlug: true,
+        metadata: true,
+      },
+      take: 50000,
+    }) : Promise.resolve([]),
     ]);
 
   const plays = events.filter((e) => e.eventType === "audio_play").length;
@@ -1564,6 +1693,36 @@ export async function GET(req: NextRequest): Promise<Response> {
     };
   }
 
+  // ── Aprendizaje. Las consultas devuelven [] en el resto de secciones,
+  // así que esto sale a cero sin coste. La aritmética vive en
+  // `src/lib/learningMetrics.ts` para poder verificarla contra la base
+  // sin una sesión de Clerk delante.
+  const practiceList = practiceRows as LearningPracticeRow[];
+  const vocabList = vocabRows as LearningVocabRow[];
+  const learningSlugs = Array.from(
+    new Set([
+      ...practiceList.map((r) => r.storySlug),
+      ...vocabList.map((r) => r.storySlug),
+    ])
+  ).filter(Boolean);
+  const [learningLanguageMap, learningLevelMap] = needsLearningData
+    ? await Promise.all([
+        resolveStoryLanguageMap(
+          learningSlugs.filter((s) => !/^journey[-:]/.test(s))
+        ),
+        resolveStoryLevelMap(learningSlugs),
+      ])
+    : [new Map<string, string>(), new Map<string, string>()];
+
+  const learningPayload = computeLearningMetrics({
+    practiceRows: practiceList,
+    vocabRows: vocabList,
+    languageMap: learningLanguageMap,
+    levelMap: learningLevelMap,
+    normalizeLanguage: normalizeLanguageCode,
+  });
+
+
   const payload: DashboardResponse = {
     ...createEmptyDashboardResponse(from, to, days),
     ...(prevKpisPayload
@@ -1675,6 +1834,7 @@ export async function GET(req: NextRequest): Promise<Response> {
         distribution,
       },
     },
+    learning: learningPayload,
   };
 
   metricsDashboardCache.set(cacheKey, {

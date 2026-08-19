@@ -886,3 +886,627 @@ export function ComingSoonView({
     </div>
   );
 }
+
+// ── LearningView ─────────────────────────────────────────
+const PRACTICE_MODE_LABELS: Record<string, string> = {
+  context: "Contexto",
+  meaning: "Significado",
+  match: "Emparejar",
+  listening: "Escucha",
+  mixed: "Mixto",
+};
+
+/**
+ * El tipo de palabra llega en inglés desde el móvil (`wordType`) y el
+ * resto del panel está en español, así que se traduce al pintarlo. Lo
+ * que no esté en el mapa cae tal cual: es preferible una etiqueta en
+ * inglés a un hueco.
+ */
+const WORD_TYPE_LABELS: Record<string, string> = {
+  noun: "sustantivo",
+  verb: "verbo",
+  adjective: "adjetivo",
+  adverb: "adverbio",
+  pronoun: "pronombre",
+  preposition: "preposición",
+  conjunction: "conjunción",
+  article: "artículo",
+  interjection: "interjección",
+  expression: "expresión",
+  phrase: "expresión",
+  idiom: "modismo",
+  number: "número",
+  determiner: "determinante",
+};
+
+const VOCAB_SOURCE_LABELS: Record<string, string> = {
+  karaoke: "Karaoke",
+  quick_lookup: "Toque rápido",
+  vocab_list: "Lista de vocabulario",
+  "sin marcar": "Sin marcar",
+};
+
+/**
+ * Aprendizaje. Solo dos señales, porque son las dos que la app emite de
+ * verdad: sesiones de práctica (con su precisión) y consultas de
+ * vocabulario. El progreso por tema de journey NO está aquí a propósito:
+ * `journey_topic_checkpoint_complete` no tiene ni una fila y
+ * `journey_story_read` se quedó en cinco de mayo de 2026 porque solo lo
+ * dispara el web. Un panel a cero se lee como "nadie practica" cuando en
+ * realidad dice "nadie mide".
+ */
+export function LearningView({
+  learning,
+}: {
+  learning: DashboardData["learning"];
+}) {
+  const { practice, vocab, byLanguage, byLevel, levelUnattributed } = learning;
+  const hasPractice = practice.started > 0 || practice.completed > 0;
+  const hasVocab = vocab.lookups > 0;
+  const maxModeVolume = Math.max(
+    1,
+    ...practice.byMode.map((m) => m.started + m.completed)
+  );
+  const maxBucketSessions = Math.max(
+    1,
+    ...practice.accuracyDistribution.map((b) => b.sessions)
+  );
+  const maxWordLookups = Math.max(1, ...vocab.topWords.map((w) => w.lookups));
+
+  if (!hasPractice && !hasVocab) {
+    return (
+      <div className="mx-view">
+        <EmptyPanel
+          eyebrow="Sin datos"
+          title="Sin actividad de aprendizaje en el rango"
+          description="Nadie ha practicado ni consultado vocabulario entre estas fechas. Amplía el rango o quita los filtros de libro e historia."
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-view">
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Práctica</div>
+            <h3 className="mx-panel__title">Sesiones y precisión</h3>
+          </div>
+          <span className="mx-panel__hint">
+            la precisión se mide solo sobre sesiones terminadas
+          </span>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(5, 1fr)",
+            gap: 10,
+          }}
+        >
+          <KpiCard label="Sesiones iniciadas" value={practice.started} />
+          <KpiCard
+            label="Sesiones completadas"
+            value={practice.completed}
+            accent="xp"
+            hint={`${practice.completionRate}% de las iniciadas`}
+          />
+          <KpiCard
+            label="Precisión media"
+            value={practice.avgAccuracyPercent}
+            suffix="%"
+            accent="gold"
+          />
+          <KpiCard label="Usuarios que practican" value={practice.practicingUsers} />
+          <KpiCard
+            label="Sesiones por usuario"
+            value={
+              practice.practicingUsers > 0
+                ? Math.round(
+                    (practice.completed / practice.practicingUsers) * 10
+                  ) / 10
+                : 0
+            }
+            accent="cyan"
+          />
+        </div>
+
+        {practice.byMode.length > 0 && (
+          <>
+            <div className="mx-panel__sub">Por modo de ejercicio</div>
+            <div style={{ overflowX: "auto" }}>
+              <table
+                style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}
+              >
+                <thead>
+                  <tr style={{ textAlign: "left", opacity: 0.6 }}>
+                    <th style={{ padding: "4px 6px" }}>Modo</th>
+                    <th style={{ padding: "4px 6px" }}>Volumen</th>
+                    <th style={{ padding: "4px 6px", textAlign: "right" }}>
+                      Iniciadas
+                    </th>
+                    <th style={{ padding: "4px 6px", textAlign: "right" }}>
+                      Completadas
+                    </th>
+                    <th style={{ padding: "4px 6px", textAlign: "right" }}>
+                      Finalización
+                    </th>
+                    <th style={{ padding: "4px 6px", textAlign: "right" }}>
+                      Precisión
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {practice.byMode.map((m) => (
+                    <tr
+                      key={m.mode}
+                      style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+                    >
+                      <td style={{ padding: "4px 6px" }}>
+                        {PRACTICE_MODE_LABELS[m.mode] ?? m.mode}
+                      </td>
+                      <td style={{ padding: "4px 6px", width: "34%" }}>
+                        <div
+                          style={{
+                            height: 14,
+                            borderRadius: 5,
+                            background: "var(--mx-bg-input)",
+                            border: "1px solid var(--mx-border)",
+                            overflow: "hidden",
+                          }}
+                        >
+                          <div
+                            style={{
+                              width: `${Math.round(
+                                ((m.started + m.completed) / maxModeVolume) * 100
+                              )}%`,
+                              height: "100%",
+                              background: "var(--mx-accent)",
+                              opacity: 0.85,
+                            }}
+                          />
+                        </div>
+                      </td>
+                      <td
+                        className="mx-mono"
+                        style={{ padding: "4px 6px", textAlign: "right" }}
+                      >
+                        {fmt(m.started)}
+                      </td>
+                      <td
+                        className="mx-mono"
+                        style={{ padding: "4px 6px", textAlign: "right" }}
+                      >
+                        {fmt(m.completed)}
+                      </td>
+                      <td
+                        className="mx-mono"
+                        style={{ padding: "4px 6px", textAlign: "right" }}
+                      >
+                        {m.completionRate}%
+                      </td>
+                      <td
+                        className="mx-mono"
+                        style={{
+                          padding: "4px 6px",
+                          textAlign: "right",
+                          fontWeight: 700,
+                        }}
+                      >
+                        {m.completed > 0 ? `${m.avgAccuracyPercent}%` : "-"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {practice.byMode.some((m) => m.completed > m.started) && (
+              <p
+                style={{
+                  fontSize: 11.5,
+                  color: "var(--mx-muted)",
+                  margin: "8px 0 0",
+                }}
+              >
+                Algún modo tiene más sesiones completadas que iniciadas: son
+                sesiones que empezaron antes del rango y terminaron dentro. La
+                finalización se muestra con tope en 100%.
+              </p>
+            )}
+          </>
+        )}
+
+        {practice.completed > 0 && (
+          <>
+            <div className="mx-panel__sub">
+              Distribución de precisión (sesiones terminadas)
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              {practice.accuracyDistribution.map((row) => (
+                <div
+                  key={row.bucket}
+                  style={{ display: "flex", alignItems: "center", gap: 12 }}
+                >
+                  <span
+                    style={{
+                      width: 90,
+                      fontSize: 12,
+                      color: "var(--mx-muted)",
+                      fontFamily: "var(--mx-mono)",
+                    }}
+                  >
+                    {row.bucket}
+                  </span>
+                  <div
+                    style={{
+                      flex: 1,
+                      height: 18,
+                      borderRadius: 6,
+                      background: "var(--mx-bg-input)",
+                      border: "1px solid var(--mx-border)",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: `${Math.round(
+                          (row.sessions / maxBucketSessions) * 100
+                        )}%`,
+                        height: "100%",
+                        background: "var(--mx-xp)",
+                        opacity: 0.85,
+                      }}
+                    />
+                  </div>
+                  <span
+                    className="mx-mono"
+                    style={{
+                      width: 60,
+                      textAlign: "right",
+                      fontSize: 13,
+                      fontWeight: 700,
+                      color: "var(--mx-fg)",
+                    }}
+                  >
+                    {row.sessions}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Vocabulario</div>
+            <h3 className="mx-panel__title">Palabras que frenan la lectura</h3>
+          </div>
+          <span className="mx-panel__hint">
+            una consulta = un toque en una palabra del texto
+          </span>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: 10,
+          }}
+        >
+          <KpiCard label="Consultas" value={vocab.lookups} accent="cyan" />
+          <KpiCard label="Palabras distintas" value={vocab.uniqueWords} />
+          <KpiCard label="Usuarios que consultan" value={vocab.lookingUpUsers} />
+          <KpiCard
+            label="Consultas por usuario"
+            value={vocab.lookupsPerReader}
+            accent="gold"
+          />
+        </div>
+
+        {vocab.bySource.length > 0 && (
+          <>
+            <div className="mx-panel__sub">De dónde sale la consulta</div>
+            <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+              {vocab.bySource.map((row) => (
+                <span
+                  key={row.source}
+                  style={{
+                    fontSize: 12,
+                    padding: "4px 10px",
+                    borderRadius: 999,
+                    border: "1px solid var(--mx-border)",
+                    background: "var(--mx-bg-input)",
+                    color: "var(--mx-fg-soft)",
+                  }}
+                >
+                  {VOCAB_SOURCE_LABELS[row.source] ?? row.source}{" "}
+                  <strong className="mx-mono" style={{ color: "var(--mx-fg)" }}>
+                    {fmt(row.lookups)}
+                  </strong>
+                </span>
+              ))}
+            </div>
+          </>
+        )}
+
+        {vocab.topWords.length > 0 ? (
+          <>
+            <div className="mx-panel__sub">Las 25 más consultadas</div>
+            <div style={{ overflowX: "auto" }}>
+              <table
+                style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}
+              >
+                <thead>
+                  <tr style={{ textAlign: "left", opacity: 0.6 }}>
+                    <th style={{ padding: "4px 6px" }}>Palabra</th>
+                    <th style={{ padding: "4px 6px" }}>Idioma</th>
+                    <th style={{ padding: "4px 6px" }}>Tipo</th>
+                    <th style={{ padding: "4px 6px" }}>Consultas</th>
+                    <th style={{ padding: "4px 6px", textAlign: "right" }}>
+                      Usuarios
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {vocab.topWords.map((w) => (
+                    <tr
+                      key={`${w.language ?? "?"}-${w.word}`}
+                      style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+                    >
+                      <td style={{ padding: "4px 6px", fontWeight: 600 }}>
+                        {w.word}
+                      </td>
+                      <td style={{ padding: "4px 6px" }}>
+                        <LangTag code={w.language} />
+                      </td>
+                      <td style={{ padding: "4px 6px", color: "var(--mx-muted)" }}>
+                        {w.wordType
+                          ? WORD_TYPE_LABELS[w.wordType.toLowerCase()] ?? w.wordType
+                          : "-"}
+                      </td>
+                      <td style={{ padding: "4px 6px", width: "38%" }}>
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 8,
+                          }}
+                        >
+                          <div
+                            style={{
+                              flex: 1,
+                              height: 12,
+                              borderRadius: 5,
+                              background: "var(--mx-bg-input)",
+                              border: "1px solid var(--mx-border)",
+                              overflow: "hidden",
+                            }}
+                          >
+                            <div
+                              style={{
+                                width: `${Math.round(
+                                  (w.lookups / maxWordLookups) * 100
+                                )}%`,
+                                height: "100%",
+                                background: "var(--mx-cyan)",
+                                opacity: 0.85,
+                              }}
+                            />
+                          </div>
+                          <span
+                            className="mx-mono"
+                            style={{ width: 32, textAlign: "right", fontWeight: 700 }}
+                          >
+                            {w.lookups}
+                          </span>
+                        </div>
+                      </td>
+                      <td
+                        className="mx-mono"
+                        style={{ padding: "4px 6px", textAlign: "right" }}
+                      >
+                        {w.users}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        ) : (
+          <p style={{ fontSize: 12.5, color: "var(--mx-muted)", margin: 0 }}>
+            Ninguna consulta de vocabulario en el rango.
+          </p>
+        )}
+      </div>
+
+      <div className="mx-panel">
+        <div className="mx-panel__head">
+          <div>
+            <div className="mx-panel__eyebrow">Reparto</div>
+            <h3 className="mx-panel__title">Por idioma y por nivel</h3>
+          </div>
+          <span className="mx-panel__hint">
+            el nivel sale de la historia practicada, no del perfil
+          </span>
+        </div>
+
+        <div className="mx-panel__sub">Idioma</div>
+        {byLanguage.length > 0 ? (
+          <div style={{ overflowX: "auto", marginBottom: 14 }}>
+            <table
+              style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}
+            >
+              <thead>
+                <tr style={{ textAlign: "left", opacity: 0.6 }}>
+                  <th style={{ padding: "4px 6px" }}>Idioma</th>
+                  <th style={{ padding: "4px 6px", textAlign: "right" }}>
+                    Consultas
+                  </th>
+                  <th style={{ padding: "4px 6px", textAlign: "right" }}>
+                    Prácticas
+                  </th>
+                  <th style={{ padding: "4px 6px", textAlign: "right" }}>
+                    Precisión
+                  </th>
+                  <th style={{ padding: "4px 6px", textAlign: "right" }}>
+                    Usuarios
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {byLanguage.map((row) => (
+                  <tr
+                    key={row.language}
+                    style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+                  >
+                    <td style={{ padding: "4px 6px" }}>
+                      <LangTag code={row.language} />
+                    </td>
+                    <td
+                      className="mx-mono"
+                      style={{ padding: "4px 6px", textAlign: "right" }}
+                    >
+                      {fmt(row.lookups)}
+                    </td>
+                    <td
+                      className="mx-mono"
+                      style={{ padding: "4px 6px", textAlign: "right" }}
+                    >
+                      {fmt(row.practiceCompleted)}
+                    </td>
+                    <td
+                      className="mx-mono"
+                      style={{ padding: "4px 6px", textAlign: "right", fontWeight: 700 }}
+                    >
+                      {row.practiceCompleted > 0
+                        ? `${row.avgAccuracyPercent}%`
+                        : "-"}
+                    </td>
+                    <td
+                      className="mx-mono"
+                      style={{ padding: "4px 6px", textAlign: "right" }}
+                    >
+                      {row.users}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <p
+            style={{
+              fontSize: 12.5,
+              color: "var(--mx-muted)",
+              margin: "0 0 14px",
+            }}
+          >
+            Sin idioma resoluble en el rango.
+          </p>
+        )}
+
+        <div className="mx-panel__sub">Nivel</div>
+        {byLevel.length > 0 ? (
+          <div style={{ overflowX: "auto" }}>
+            <table
+              style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}
+            >
+              <thead>
+                <tr style={{ textAlign: "left", opacity: 0.6 }}>
+                  <th style={{ padding: "4px 6px" }}>Nivel</th>
+                  <th style={{ padding: "4px 6px", textAlign: "right" }}>
+                    Iniciadas
+                  </th>
+                  <th style={{ padding: "4px 6px", textAlign: "right" }}>
+                    Completadas
+                  </th>
+                  <th style={{ padding: "4px 6px", textAlign: "right" }}>
+                    Precisión
+                  </th>
+                  <th style={{ padding: "4px 6px", textAlign: "right" }}>
+                    Usuarios
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {byLevel.map((row) => (
+                  <tr
+                    key={row.level}
+                    style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+                  >
+                    <td
+                      className="mx-mono"
+                      style={{ padding: "4px 6px", textTransform: "uppercase" }}
+                    >
+                      {row.level}
+                    </td>
+                    <td
+                      className="mx-mono"
+                      style={{ padding: "4px 6px", textAlign: "right" }}
+                    >
+                      {fmt(row.practiceStarted)}
+                    </td>
+                    <td
+                      className="mx-mono"
+                      style={{ padding: "4px 6px", textAlign: "right" }}
+                    >
+                      {fmt(row.practiceCompleted)}
+                    </td>
+                    <td
+                      className="mx-mono"
+                      style={{ padding: "4px 6px", textAlign: "right", fontWeight: 700 }}
+                    >
+                      {row.practiceCompleted > 0
+                        ? `${row.avgAccuracyPercent}%`
+                        : "-"}
+                    </td>
+                    <td
+                      className="mx-mono"
+                      style={{ padding: "4px 6px", textAlign: "right" }}
+                    >
+                      {row.users}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <p style={{ fontSize: 12.5, color: "var(--mx-muted)", margin: 0 }}>
+            Ninguna sesión de práctica pudo atribuirse a un nivel. Pasa cuando
+            se practica sobre historias que no están en ningún catálogo con
+            nivel declarado.
+          </p>
+        )}
+
+        {levelUnattributed.sessions > 0 && (
+          <p
+            style={{
+              fontSize: 11.5,
+              color: "var(--mx-muted)",
+              margin: "10px 0 0",
+            }}
+          >
+            {levelUnattributed.sessions} sesiones quedan fuera de esta tabla
+            {levelUnattributed.placeholder > 0 && (
+              <>
+                {" "}
+                ({levelUnattributed.placeholder} sin historia asociada
+                {levelUnattributed.unknownStory > 0
+                  ? `, ${levelUnattributed.unknownStory} sobre historias sin nivel CEFR declarado`
+                  : ""}
+                )
+              </>
+            )}
+            {levelUnattributed.placeholder === 0 && (
+              <> (historias sin nivel CEFR declarado)</>
+            )}
+            , así que sus totales no suman los de arriba.
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}

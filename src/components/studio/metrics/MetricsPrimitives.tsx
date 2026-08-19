@@ -449,16 +449,22 @@ export function EmptyPanel({
   title,
   description,
   style,
+  // Por defecto anuncia lo que todavía no existe, que es para lo que se
+  // escribió. Una sección ya construida que se queda sin filas en el
+  // rango elegido usa el mismo panel pero NO puede decir
+  // "próximamente": lo que pasa ahí es que nadie hizo nada esos días.
+  eyebrow = "Próximamente",
 }: {
   title: string;
   description: string;
   style?: CSSProperties;
+  eyebrow?: string;
 }) {
   return (
     <div className="mx-panel" style={style}>
       <div className="mx-panel__head">
         <div>
-          <div className="mx-panel__eyebrow">Próximamente</div>
+          <div className="mx-panel__eyebrow">{eyebrow}</div>
           <h3 className="mx-panel__title">{title}</h3>
         </div>
       </div>

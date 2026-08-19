@@ -6,6 +6,7 @@ import {
   ComingSoonView,
   EngagementView,
   FunnelsView,
+  LearningView,
   ResumenView,
 } from "@/components/studio/metrics/MetricsViews";
 import {
@@ -121,6 +122,28 @@ const EMPTY_DATA: DashboardData = {
       avgMinutesLast7Days: 0,
       distribution: [],
     },
+  },
+  learning: {
+    practice: {
+      started: 0,
+      completed: 0,
+      completionRate: 0,
+      avgAccuracyPercent: 0,
+      practicingUsers: 0,
+      byMode: [],
+      accuracyDistribution: [],
+    },
+    vocab: {
+      lookups: 0,
+      uniqueWords: 0,
+      lookingUpUsers: 0,
+      lookupsPerReader: 0,
+      topWords: [],
+      bySource: [],
+    },
+    byLanguage: [],
+    byLevel: [],
+    levelUnattributed: { sessions: 0, placeholder: 0, unknownStory: 0 },
   },
 };
 
@@ -336,12 +359,7 @@ export default function MetricsDashboard() {
       return <AcquisitionView data={data} />;
     }
     if (section === "learning") {
-      return (
-        <ComingSoonView
-          title="Learning outcomes"
-          description="Retención de vocabulario, performance de streak y progreso por idioma/nivel."
-        />
-      );
+      return <LearningView learning={data.learning} />;
     }
     if (section === "experiments") {
       return (
