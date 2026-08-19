@@ -597,6 +597,12 @@ model BetaSignup {
   // will have these NULL; the form going forward requires them.
   motivation        String?
   applicationReason String?
+  // Lo que quieren PODER DECIR, y a quién (2026-08-19). `motivation` es un
+  // desplegable de seis opciones y `applicationReason` pregunta por la beta,
+  // así que ninguno dice de qué habla la persona: los cinco solicitantes de
+  // portugués contestaron sobre la app. Esta es la única columna con señal de
+  // dominio, y es la que lee el portón de temas (`src/lib/topicEvidence.ts`).
+  learningGoal      String?
   // Silent attribution captured from the browser at form mount:
   // utm_source/medium/campaign/content/term, document.referrer, and the
   // landing URL the visitor first arrived at. Lets us source traffic

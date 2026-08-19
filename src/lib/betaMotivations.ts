@@ -43,3 +43,22 @@ export function isCannedMotivation(value: string | null | undefined): boolean {
   const v = normalizeMotivation(value);
   return v.length > 0 && CANNED.has(v);
 }
+
+/**
+ * Suelo de lo que cuenta como una frase escrita, compartido por el formulario
+ * (que no deja enviar menos) y por el portón de temas (que no acepta una cita
+ * más corta). Tres palabras es lo que separa una frase de una etiqueta: "move
+ * abroad" y "my job" no dicen de qué habla nadie.
+ */
+export const MIN_EVIDENCE_WORDS = 3;
+export const MIN_EVIDENCE_CHARS = 15;
+
+export function countWords(text: string | null | undefined): number {
+  return String(text ?? "").trim().split(/\s+/).filter(Boolean).length;
+}
+
+/** true si el texto es demasiado corto para respaldar un tema. */
+export function tooShortForEvidence(text: string | null | undefined): boolean {
+  const v = String(text ?? "").toLowerCase().replace(/\s+/g, " ").trim();
+  return v.length < MIN_EVIDENCE_CHARS || countWords(v) < MIN_EVIDENCE_WORDS;
+}

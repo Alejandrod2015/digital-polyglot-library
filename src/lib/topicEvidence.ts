@@ -22,7 +22,7 @@
  * validador; no se duplican aquí.
  */
 import { PrismaClient } from "@/generated/prisma";
-import { isCannedMotivation } from "./betaMotivations";
+import { isCannedMotivation, MIN_EVIDENCE_CHARS, MIN_EVIDENCE_WORDS, tooShortForEvidence } from "./betaMotivations";
 
 /**
  * Largo mínimo de una cita, elegido mirando las citas reales de la base y no
@@ -32,15 +32,12 @@ import { isCannedMotivation } from "./betaMotivations";
  * solo caben las etiquetas genéricas ("work", "move abroad", "my job"), que
  * respaldan cualquier tema y por tanto no respaldan ninguno.
  */
-const MIN_QUOTE_WORDS = 3;
-const MIN_QUOTE_CHARS = 15;
+const MIN_QUOTE_WORDS = MIN_EVIDENCE_WORDS;
+const MIN_QUOTE_CHARS = MIN_EVIDENCE_CHARS;
 
 const norm = (s: string) => s.toLowerCase().replace(/\s+/g, " ").trim();
 
-function quoteTooShort(q: string): boolean {
-  const v = norm(q);
-  return v.length < MIN_QUOTE_CHARS || v.split(" ").filter(Boolean).length < MIN_QUOTE_WORDS;
-}
+const quoteTooShort = (q: string) => tooShortForEvidence(q);
 
 export type TopicProposal = {
   label: string;
@@ -64,7 +61,7 @@ export async function assertTopicsGrounded(opts: {
   // El campo es `targetLanguage`, no `language`, y el filtro va en JS porque
   // no es una columna de texto libre.
   const all = await prisma.betaSignup.findMany({
-    select: { targetLanguage: true, motivation: true, applicationReason: true },
+    select: { targetLanguage: true, motivation: true, learningGoal: true, applicationReason: true },
   });
   const wanted = opts.language.toLowerCase();
   const rows = all.filter((r) => String(r.targetLanguage ?? "").toLowerCase() === wanted);
@@ -77,11 +74,15 @@ export async function assertTopicsGrounded(opts: {
   const writtenMotivations: string[] = [];
   const reasons: string[] = [];
   for (const r of rows) {
+    // Antes del 2026-08-19, elegir "Other" guardaba el texto AQUÍ; desde
+    // entonces vive en `learningGoal` y este campo es siempre el clic.
     const m = String(r.motivation ?? "").trim();
     if (m) {
       if (isCannedMotivation(m)) cannedClicks++;
       else writtenMotivations.push(m);
     }
+    const g = String(r.learningGoal ?? "").trim();
+    if (g) writtenMotivations.push(g);
     const a = String(r.applicationReason ?? "").trim();
     if (a) reasons.push(a);
   }
@@ -142,7 +143,7 @@ export async function assertTopicsGrounded(opts: {
   // solicitante detrás) solo se ven comparando; sin esto se eligen a ciegas.
   console.log(
     `\nTEMAS PROPUESTOS · ${corpus.length} frases escritas de ${opts.language} ` +
-    `(${writtenMotivations.length} motivaciones escritas + ${reasons.length} applicationReason; ` +
+    `(${writtenMotivations.length} escritas en learningGoal + ${reasons.length} applicationReason; ` +
     `${cannedClicks} clics del desplegable descartados)`,
   );
   for (const p of opts.proposals) {
@@ -159,7 +160,7 @@ export async function assertTopicsGrounded(opts: {
   if (bad.length) {
     throw new TopicEvidenceError(
       `TEMAS SIN RESPALDO:\n  - ${bad.join("\n  - ")}\n\n` +
-      `Hay ${writtenMotivations.length} motivaciones escritas y ${reasons.length} applicationReason ` +
+      `Hay ${writtenMotivations.length} frases de learningGoal y ${reasons.length} applicationReason ` +
       `de ${opts.language} (${cannedClicks} clics del desplegable no cuentan). ` +
       `Corre \`npx tsx scripts/userEvidence.ts ${opts.language}\` y elige desde ahí.`,
     );

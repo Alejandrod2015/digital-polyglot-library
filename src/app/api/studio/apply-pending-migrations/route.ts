@@ -65,6 +65,14 @@ export async function POST() {
       ADD COLUMN IF NOT EXISTS "attribution" JSONB;
   `);
 
+  // ── 2026-08-19: `learningGoal`, la línea escrita que pregunta qué quieren
+  // poder decir y a quién. Sin ella el portón de temas no tiene de dónde sacar
+  // un tema: `motivation` es un clic y `applicationReason` habla de la app.
+  await prisma.$executeRawUnsafe(`
+    ALTER TABLE "dp_beta_signups_v1"
+      ADD COLUMN IF NOT EXISTS "learningGoal" TEXT;
+  `);
+
   // ── 2026-05-18: First-party visit log. See PageVisit in
   // schema.prisma. Server-side, no consent banner needed.
   await prisma.$executeRawUnsafe(`

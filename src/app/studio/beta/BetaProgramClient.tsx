@@ -56,6 +56,7 @@ type Applicant = {
   hasIPhone: boolean;
   weeklyHours: string | null;
   motivation: string | null;
+  learningGoal: string | null;
   referralSource: string | null;
   applicationReason: string | null;
   attribution: Attribution | null;
@@ -657,6 +658,11 @@ function ApplicationSummary({ a, showReason }: { a: Applicant; showReason: boole
         applied {onDate(a.createdAt)} ({ago(a.createdAt)})
         {a.invitedAt ? ` · invited ${onDate(a.invitedAt)} (${ago(a.invitedAt)})` : ""}
       </div>
+      {a.learningGoal && (
+        <div style={{ fontSize: 12, color: "var(--foreground)", marginTop: 6, fontStyle: "italic" }}>
+          quiere decir: {a.learningGoal}
+        </div>
+      )}
       {showReason && a.applicationReason && (
         <div
           style={{
@@ -946,6 +952,7 @@ export default function BetaProgramClient() {
       "currentLevel",
       "weeklyHours",
       "motivation",
+      "learningGoal",
       "referralSource",
       "applicationReason",
       "score",
@@ -976,6 +983,7 @@ export default function BetaProgramClient() {
           a.currentLevel,
           a.weeklyHours,
           a.motivation,
+          a.learningGoal,
           a.referralSource,
           a.applicationReason,
           a.score,

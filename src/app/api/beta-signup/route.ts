@@ -15,11 +15,14 @@ import { prisma } from "@/lib/prisma";
 import { sendBetaConfirmationEmail } from "@/lib/email";
 import { processApplication } from "@/lib/betaProgram";
 
+import { countWords, MIN_EVIDENCE_WORDS } from "@/lib/betaMotivations";
+
 const betaSignup = prisma.betaSignup;
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const APPLICATION_REASON_MIN = 20;
 const APPLICATION_REASON_MAX = 1000;
+const LEARNING_GOAL_MAX = 300;
 const MIN_SUBMIT_DELAY_MS = 2500;
 const RATE_LIMIT_MAX = 5;
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hora
@@ -76,6 +79,7 @@ type Body = {
   hasIPhone?: unknown;
   weeklyHours?: unknown;
   motivation?: unknown;
+  learningGoal?: unknown;
   referralSource?: unknown;
   applicationReason?: unknown;
   consent?: unknown;
@@ -198,6 +202,8 @@ export async function POST(req: NextRequest) {
   const hasIPhone = typeof body.hasIPhone === "boolean" ? body.hasIPhone : null;
   const weeklyHours = asTrimmedString(body.weeklyHours, 100);
   const motivation = asTrimmedString(body.motivation, 200);
+  // La única respuesta con señal de dominio: qué quieren poder decir y a quién.
+  const learningGoal = asTrimmedString(body.learningGoal, LEARNING_GOAL_MAX);
   const referralSource = asTrimmedString(body.referralSource, 200);
   const applicationReason = asTrimmedString(body.applicationReason, APPLICATION_REASON_MAX);
   const consent = body.consent === true;
@@ -252,6 +258,18 @@ export async function POST(req: NextRequest) {
   if (hasIPhone === null) return NextResponse.json({ error: "iPhone availability is required" }, { status: 400 });
   if (!weeklyHours) return NextResponse.json({ error: "Weekly hours is required" }, { status: 400 });
   if (!motivation) return NextResponse.json({ error: "Reason for learning is required" }, { status: 400 });
+  if (!learningGoal) {
+    return NextResponse.json(
+      { error: "Please tell us what you want to be able to say, and to whom" },
+      { status: 400 },
+    );
+  }
+  if (countWords(learningGoal) < MIN_EVIDENCE_WORDS) {
+    return NextResponse.json(
+      { error: `Please write at least ${MIN_EVIDENCE_WORDS} words about what you want to say` },
+      { status: 400 },
+    );
+  }
   if (!referralSource) {
     return NextResponse.json({ error: "Please tell us how you heard about us" }, { status: 400 });
   }
@@ -285,6 +303,7 @@ export async function POST(req: NextRequest) {
       hasIPhone,
       weeklyHours,
       motivation,
+      learningGoal,
       referralSource,
       applicationReason,
       attribution: attribution ?? undefined,

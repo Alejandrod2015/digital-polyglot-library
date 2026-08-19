@@ -11,6 +11,7 @@ const ROWS = [
   {
     targetLanguage: "French",
     motivation: "Move abroad",
+    learningGoal: null,
     applicationReason:
       "I received the email invitation and I am hoping this language app is one I'll actually " +
       "stick with to learn French. I plan to move there in 6-8 months.",
@@ -18,12 +19,14 @@ const ROWS = [
   {
     targetLanguage: "French",
     motivation: "Travel",
+    learningGoal: null,
     applicationReason:
       "I'd like to be able to contribute to the development of a useful app for language learners.",
   },
   {
     targetLanguage: "Spanish",
     motivation: "Holiday home in Spain and I wish to talk to neighbours",
+    learningGoal: null,
     applicationReason: null,
   },
 ];
@@ -64,7 +67,7 @@ describe("assertTopicsGrounded", () => {
       language: "French",
       proposals: [{ label: "Family & Relatives", evidence: ["family connection"] }],
       prisma: fakePrisma([
-        { targetLanguage: "French", motivation: "Family connection", applicationReason: "To try new ways to learn" },
+        { targetLanguage: "French", motivation: "Family connection", learningGoal: null, applicationReason: "To try new ways to learn" },
       ]),
     }).catch((e) => e);
 
@@ -83,7 +86,7 @@ describe("assertTopicsGrounded", () => {
     expect(String(err.message)).toContain("nadie escribió");
   });
 
-  it("cuenta motivaciones ESCRITAS, no filas, cuando falla", async () => {
+  it("cuenta las frases ESCRITAS, no las filas, cuando falla", async () => {
     const err = await assertTopicsGrounded({
       language: "French",
       proposals: [{ label: "Phone & Internet", evidence: ["move abroad"] }],
@@ -91,7 +94,7 @@ describe("assertTopicsGrounded", () => {
     }).catch((e) => e);
 
     // 2 clics + 2 applicationReason: cero motivaciones escritas.
-    expect(String(err.message)).toContain("Hay 0 motivaciones escritas y 2 applicationReason");
+    expect(String(err.message)).toContain("Hay 0 frases de learningGoal y 2 applicationReason");
   });
 
   it("acepta temas citando texto libre de verdad", async () => {
@@ -119,11 +122,30 @@ describe("assertTopicsGrounded", () => {
     ).resolves.toBeUndefined();
   });
 
+  it("acepta una cita de learningGoal, que es la línea escrita del formulario", async () => {
+    await expect(
+      assertTopicsGrounded({
+        language: "Portuguese",
+        proposals: [
+          { label: "Markets & Fruit", slug: "markets-and-fruit", evidence: ["buy fruit at the market"] },
+        ],
+        prisma: fakePrisma([
+          {
+            targetLanguage: "Portuguese",
+            motivation: "Travel",
+            learningGoal: "I want to buy fruit at the market without pointing",
+            applicationReason: "Curious about the new app",
+          },
+        ]),
+      }),
+    ).resolves.toBeUndefined();
+  });
+
   it("tira si el idioma solo tiene clics del desplegable", async () => {
     const err = await assertTopicsGrounded({
       language: "Polish",
       proposals: [{ label: "Family & Relatives", evidence: ["something"] }],
-      prisma: fakePrisma([{ targetLanguage: "Polish", motivation: "Work", applicationReason: null }]),
+      prisma: fakePrisma([{ targetLanguage: "Polish", motivation: "Work", learningGoal: null, applicationReason: null }]),
     }).catch((e) => e);
 
     expect(err).toBeInstanceOf(TopicEvidenceError);

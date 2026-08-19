@@ -23,18 +23,22 @@ async function run() {
     select: {
       email: true, firstName: true, status: true, targetLanguage: true,
       currentLevel: true, nativeLanguage: true, weeklyHours: true,
-      motivation: true, applicationReason: true, referralSource: true,
+      motivation: true, learningGoal: true, applicationReason: true, referralSource: true,
       createdAt: true,
     },
   });
   const filtered = LANG ? rows.filter((r) => (r.targetLanguage ?? "").toLowerCase().includes(LANG)) : rows;
 
-  const conMotivo = filtered.filter((r) => r.motivation?.trim());
-  console.log(`${filtered.length} solicitudes${LANG ? ` de ${LANG}` : ""} · ${conMotivo.length} con motivación escrita\n`);
+  const conMotivo = filtered.filter((r) => r.motivation?.trim() || r.learningGoal?.trim());
+  const conGoal = filtered.filter((r) => r.learningGoal?.trim());
+  console.log(`${filtered.length} solicitudes${LANG ? ` de ${LANG}` : ""} · ${conGoal.length} con learningGoal escrito\n`);
 
   for (const r of conMotivo) {
     console.log(`${(r.firstName ?? "?").padEnd(12)} ${r.targetLanguage} · ${r.currentLevel} · ${r.status} · ${r.weeklyHours ?? "?"} h/sem`);
-    console.log(`  para qué:  ${r.motivation!.trim()}`);
+    // El clic va primero porque segmenta; la frase escrita es la que sostiene
+    // un tema, y por eso se imprime aunque el clic falte.
+    if (r.motivation?.trim()) console.log(`  eligió:    ${r.motivation.trim()}`);
+    if (r.learningGoal?.trim()) console.log(`  quiere decir: ${r.learningGoal.trim()}`);
     if (r.applicationReason?.trim()) console.log(`  por qué aquí: ${r.applicationReason.trim()}`);
     console.log();
   }

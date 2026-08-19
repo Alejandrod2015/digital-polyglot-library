@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { trackGa4Event } from "@/lib/ga4";
 // La lista vive en un módulo compartido: el portón de temas necesita saber
 // cuáles de estas respuestas son un clic y no una frase escrita.
-import { BETA_MOTIVATIONS } from "@/lib/betaMotivations";
+import { BETA_MOTIVATIONS, countWords, MIN_EVIDENCE_WORDS } from "@/lib/betaMotivations";
 
 const NATIVE_LANGUAGES = [
   "English",
@@ -186,7 +186,7 @@ type FormState = {
   currentLevel: string;
   weeklyHours: string;
   motivation: string;
-  motivationOther: string;
+  learningGoal: string;
   referralSource: string;
   referralSourceOther: string;
   applicationReason: string;
@@ -212,7 +212,7 @@ const initialState: FormState = {
   currentLevel: "",
   weeklyHours: "",
   motivation: "",
-  motivationOther: "",
+  learningGoal: "",
   referralSource: "",
   referralSourceOther: "",
   applicationReason: "",
@@ -279,10 +279,6 @@ export default function BetaSignupForm() {
 
   function resolvedTargetLanguage(): string {
     return form.targetLanguage === "Other" ? form.targetLanguageOther.trim() : form.targetLanguage;
-  }
-
-  function resolvedMotivation(): string {
-    return form.motivation === "Other" ? form.motivationOther.trim() : form.motivation;
   }
 
   function resolvedReferralSource(): string {
@@ -366,9 +362,16 @@ export default function BetaSignupForm() {
       setError("Please pick how many hours per week you'll dedicate.");
       return;
     }
-    const motivation = resolvedMotivation();
+    const motivation = form.motivation;
     if (!motivation) {
       setError("Please tell us why you're learning.");
+      return;
+    }
+    const learningGoal = form.learningGoal.trim();
+    if (countWords(learningGoal) < MIN_EVIDENCE_WORDS) {
+      setError(
+        `Please write at least ${MIN_EVIDENCE_WORDS} words about what you want to be able to say.`,
+      );
       return;
     }
     const referralSource = resolvedReferralSource();
@@ -408,6 +411,7 @@ export default function BetaSignupForm() {
           hasIPhone: wantsIos,
           weeklyHours: form.weeklyHours,
           motivation,
+          learningGoal,
           referralSource,
           applicationReason,
           consent: form.consent,
@@ -802,17 +806,22 @@ export default function BetaSignupForm() {
             </option>
           ))}
         </select>
-        {form.motivation === "Other" && (
-          <input
-            type="text"
-            required
-            value={form.motivationOther}
-            onChange={(e) => update("motivationOther", e.target.value)}
-            className={`${inputStyle} mt-2`}
-            placeholder="Your reason"
-            maxLength={200}
-          />
-        )}
+      </div>
+
+      <div>
+        <label htmlFor="learningGoal" className={labelStyle}>
+          What do you want to be able to say, and to whom?
+        </label>
+        <input
+          id="learningGoal"
+          type="text"
+          required
+          value={form.learningGoal}
+          onChange={(e) => update("learningGoal", e.target.value)}
+          className={inputStyle}
+          placeholder="Order tapas at my local bar, chat with my neighbours"
+          maxLength={300}
+        />
       </div>
 
       <div>
