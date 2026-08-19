@@ -1173,3 +1173,43 @@ model RevokedUser {
   userId    String   @id
   revokedAt DateTime @default(now())
 }
+
+/// Un pulgar por persona e historia, con comentario opcional.
+///
+/// Vive en su propia tabla y no en `BetaFeedback` porque la pregunta que
+/// contesta es distinta: `BetaFeedback` es por build (qué se rompió en el
+/// 279), y esto es por CONTENIDO (qué historia gusta y cuál no), que es una
+/// media que hay que poder leer por historia sin filtrar por versión de app.
+///
+/// El voto se guarda en el toque del pulgar y el comentario llega, si llega,
+/// en una segunda llamada que hace upsert sobre la misma fila. Por eso
+/// `comment` es nullable y la clave única es (userId, storySlug): re-leer una
+/// historia y cambiar de opinión sustituye el voto, no lo duplica.
+model StoryRating {
+  id     String  @id @default(cuid())
+  userId String
+  email  String?
+
+  /// La identidad de la historia tal y como la conoce la app. El id de una
+  /// historia de journey viaja en dos formas (`journey:<id>` y
+  /// `journey-<id>`), así que el slug es lo que une de verdad entre
+  /// superficies; el id se guarda como referencia, no como clave.
+  storyId   String
+  storySlug String
+  bookSlug  String?
+
+  liked   Boolean
+  comment String?
+
+  platform    String?
+  appVersion  String?
+  buildNumber String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, storySlug])
+  @@index([storySlug])
+  @@index([createdAt])
+  @@map("dp_story_ratings_v1")
+}

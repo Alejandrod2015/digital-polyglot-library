@@ -4,11 +4,13 @@ import {
   AppState,
   Easing,
   InteractionManager,
+  Keyboard,
   Platform,
   Pressable,
   ScrollView,
   StyleSheet,
   Text,
+  TextInput,
   View,
   type NativeScrollEvent,
   type NativeSyntheticEvent,
@@ -31,8 +33,10 @@ import {
   type VocabItem,
   type VocabTypeKey,
 } from "@digital-polyglot/domain";
+import * as Application from "expo-application";
 import * as FileSystem from "expo-file-system/legacy";
 import { NativeAudioPlayer } from "./NativeAudioPlayer";
+import { loadRatedStoryKeys, markStoryRated } from "./storyRatingStorage";
 import { DownloadProgressRing } from "./DownloadProgressRing";
 import { ProgressiveImage } from "./ProgressiveImage";
 import { useAndroidBottomInset } from "./useAndroidBottomInset";
@@ -1802,6 +1806,32 @@ export function ReaderScreen(args: {
 
   const [endOfStoryPromptVisible, setEndOfStoryPromptVisible] = useState(false);
   /**
+   * Qué cara enseña el diálogo del final. Es el mismo diálogo, no un modal
+   * encima de otro: apilar dos capas oscuras sobre el lector para preguntar
+   * una tontería es exactamente lo que hace que la gente cierre sin mirar.
+   *
+   *   practice → la tarjeta de práctica de siempre, con la fila de pulgares
+   *              debajo de "Maybe later".
+   *   vote     → a lo que lleva "Maybe later" mientras no haya voto: quien no
+   *              va a practicar es justo el que hay que alcanzar.
+   *   comment  → tras votar. El voto YA está enviado cuando esta cara aparece.
+   */
+  const [endOfStoryFace, setEndOfStoryFace] = useState<"practice" | "vote" | "comment">(
+    "practice"
+  );
+  const [storyRatingLiked, setStoryRatingLiked] = useState<boolean | null>(null);
+  /** Desde dónde se votó. Quien votó desde la tarjeta de práctica vuelve a
+   *  ella al terminar: su "Start practice" seguía siendo el plan, y cerrarle
+   *  el diálogo por haber opinado sería cobrarle la opinión. Quien votó desde
+   *  "Maybe later" ya había dicho que se iba. */
+  const [storyRatingOrigin, setStoryRatingOrigin] = useState<"practice" | "later">("practice");
+  const [storyRatingComment, setStoryRatingComment] = useState("");
+  /** Ya valorada en otra sesión (disco) o hace un momento. No se repregunta. */
+  const [storyAlreadyRated, setStoryAlreadyRated] = useState(false);
+  /** Alto del teclado. El diálogo va centrado en un overlay absoluto, así que
+   *  sin esto la caja de texto se queda debajo del teclado en cuanto enfocas. */
+  const [ratingKeyboardHeight, setRatingKeyboardHeight] = useState(0);
+  /**
    * ¿Ya terminó el usuario esta historia? Es lo que abre la puerta a la
    * práctica, y va SEPARADO del popup a propósito:
    *
@@ -1989,6 +2019,103 @@ export function ReaderScreen(args: {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [story.id, sessionUserId]);
+
+  // Estado de la valoración, por historia. Se reinicia al cambiar de historia
+  // y se siembra desde disco: quien ya puntuó esta no vuelve a ver la fila.
+  useEffect(() => {
+    setEndOfStoryFace("practice");
+    setStoryRatingLiked(null);
+    setStoryRatingOrigin("practice");
+    setStoryRatingComment("");
+    setStoryAlreadyRated(false);
+    let cancelled = false;
+    void (async () => {
+      const rated = await loadRatedStoryKeys(sessionUserId ?? null);
+      if (!cancelled && rated.includes(story.slug)) setStoryAlreadyRated(true);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [story.slug, sessionUserId]);
+
+  // El teclado solo importa mientras la caja de texto existe.
+  useEffect(() => {
+    if (endOfStoryFace !== "comment") {
+      setRatingKeyboardHeight(0);
+      return;
+    }
+    const showEvent = Platform.OS === "ios" ? "keyboardWillShow" : "keyboardDidShow";
+    const hideEvent = Platform.OS === "ios" ? "keyboardWillHide" : "keyboardDidHide";
+    const show = Keyboard.addListener(showEvent, (event) => {
+      setRatingKeyboardHeight(event.endCoordinates?.height ?? 0);
+    });
+    const hide = Keyboard.addListener(hideEvent, () => setRatingKeyboardHeight(0));
+    return () => {
+      show.remove();
+      hide.remove();
+    };
+  }, [endOfStoryFace]);
+
+  /** Hay sesión y esta historia no está valorada todavía. */
+  const canRateStory = Boolean(sessionToken) && !storyAlreadyRated;
+
+  async function postStoryRating(liked: boolean, comment?: string) {
+    if (!sessionToken) return;
+    try {
+      await apiFetch<{ ok: boolean }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/mobile/story-rating",
+        token: sessionToken,
+        method: "POST",
+        timeoutMs: 15000,
+        body: {
+          storyId: story.id,
+          storySlug: story.slug,
+          bookSlug: book.slug,
+          liked,
+          ...(comment ? { comment } : {}),
+          platform: Platform.OS,
+          appVersion: Application.nativeApplicationVersion ?? undefined,
+          buildNumber: Application.nativeBuildVersion ?? undefined,
+        },
+      });
+    } catch {
+      // Un fallo de red no puede convertirse en un error en pantalla justo
+      // cuando la persona está saliendo de la historia.
+    }
+  }
+
+  function closeEndOfStoryPrompt() {
+    Keyboard.dismiss();
+    setEndOfStoryPromptVisible(false);
+    setEndOfStoryFace("practice");
+    setStoryRatingComment("");
+  }
+
+  // El toque del pulgar ES el envío. Lo que viene después (la caja de texto)
+  // ya no decide nada: por eso cerrarla, escribir o no escribir da igual.
+  function handleStoryVote(liked: boolean, origin: "practice" | "later") {
+    setStoryRatingOrigin(origin);
+    setStoryRatingLiked(liked);
+    setStoryAlreadyRated(true);
+    setEndOfStoryFace("comment");
+    void postStoryRating(liked);
+    void markStoryRated(sessionUserId ?? null, story.slug);
+  }
+
+  function handleStoryRatingSend() {
+    const trimmed = storyRatingComment.trim();
+    if (trimmed && storyRatingLiked !== null) {
+      void postStoryRating(storyRatingLiked, trimmed);
+    }
+    setStoryRatingComment("");
+    Keyboard.dismiss();
+    if (storyRatingOrigin === "practice") {
+      setEndOfStoryFace("practice");
+      return;
+    }
+    closeEndOfStoryPrompt();
+  }
 
   function maybeFireEndOfStoryPrompt() {
     if (!onOpenPractice) return;
@@ -2646,7 +2773,10 @@ export function ReaderScreen(args: {
 
       {endOfStoryPromptVisible && onOpenPractice ? (
         <View
-          style={styles.endOfStoryBackdrop}
+          style={[
+            styles.endOfStoryBackdrop,
+            ratingKeyboardHeight > 0 ? { paddingBottom: ratingKeyboardHeight } : null,
+          ]}
           accessibilityLabel="qa-reader-practice-prompt"
           testID="qa-reader-practice-prompt"
           pointerEvents="box-none"
@@ -2658,7 +2788,7 @@ export function ReaderScreen(args: {
             <Pressable
               style={StyleSheet.absoluteFillObject}
               accessibilityLabel="qa-reader-practice-prompt-dismiss"
-              onPress={() => setEndOfStoryPromptVisible(false)}
+              onPress={closeEndOfStoryPrompt}
             />
           </Animated.View>
           <Animated.View
@@ -2674,13 +2804,106 @@ export function ReaderScreen(args: {
             ]}
           >
             <Pressable
-              onPress={() => setEndOfStoryPromptVisible(false)}
+              onPress={closeEndOfStoryPrompt}
               style={styles.endOfStoryDialogClose}
               hitSlop={12}
               accessibilityLabel="qa-reader-practice-prompt-close"
             >
               <Feather name="x" size={18} color="#aebcd3" />
             </Pressable>
+            {endOfStoryFace === "comment" ? (
+              <>
+                <View
+                  style={[
+                    styles.storyRatingFaceRing,
+                    storyRatingLiked
+                      ? styles.storyRatingFaceRingUp
+                      : styles.storyRatingFaceRingDown,
+                  ]}
+                >
+                  <Feather
+                    name={storyRatingLiked ? "thumbs-up" : "thumbs-down"}
+                    size={24}
+                    color={storyRatingLiked ? "#9ce5c1" : "#aebcd3"}
+                  />
+                </View>
+                <Text style={styles.endOfStoryTitle}>
+                  {storyRatingLiked ? "Glad you liked it" : "Noted"}
+                </Text>
+                <Text style={styles.endOfStoryBody}>
+                  {storyRatingLiked ? "What worked for you?" : "What put you off?"}
+                </Text>
+                <TextInput
+                  value={storyRatingComment}
+                  onChangeText={setStoryRatingComment}
+                  placeholder={
+                    storyRatingLiked
+                      ? "The market scene stuck with me."
+                      : "Too many new words at once."
+                  }
+                  placeholderTextColor="#7f93ad"
+                  multiline
+                  maxLength={2000}
+                  style={styles.storyRatingInput}
+                  accessibilityLabel="qa-reader-rating-comment"
+                  testID="qa-reader-rating-comment"
+                />
+                <Pressable
+                  onPress={handleStoryRatingSend}
+                  accessibilityRole="button"
+                  accessibilityLabel="qa-reader-rating-send"
+                  testID="qa-reader-rating-send"
+                  style={styles.endOfStoryButton}
+                >
+                  <Feather name="send" size={15} color="#0e1727" />
+                  <Text style={styles.endOfStoryButtonText}>Send</Text>
+                </Pressable>
+              </>
+            ) : endOfStoryFace === "vote" ? (
+              <>
+                <View style={[styles.storyRatingFaceRing, styles.storyRatingFaceRingAsk]}>
+                  <Feather name="message-circle" size={24} color="#f8c15c" />
+                </View>
+                <Text style={styles.endOfStoryTitle}>Before you go</Text>
+                <Text style={styles.endOfStoryBody} numberOfLines={2}>
+                  How was &quot;{story.title}&quot;?
+                </Text>
+                {/* "Not for me" a la izquierda y "Liked it" a la derecha: la
+                    mayoría es diestra y el pulgar llega antes al lado derecho,
+                    que es además donde esta app pone siempre la acción que
+                    quiere que se toque. */}
+                <View style={styles.storyRatingRow}>
+                  <Pressable
+                    onPress={() => handleStoryVote(false, "later")}
+                    accessibilityRole="button"
+                    accessibilityLabel="qa-reader-rating-down"
+                    testID="qa-reader-rating-down"
+                    style={styles.storyRatingButton}
+                  >
+                    <Feather name="thumbs-down" size={16} color="#dbe9ff" />
+                    <Text style={styles.storyRatingButtonText}>Not for me</Text>
+                  </Pressable>
+                  <Pressable
+                    onPress={() => handleStoryVote(true, "later")}
+                    accessibilityRole="button"
+                    accessibilityLabel="qa-reader-rating-up"
+                    testID="qa-reader-rating-up"
+                    style={styles.storyRatingButton}
+                  >
+                    <Feather name="thumbs-up" size={16} color="#dbe9ff" />
+                    <Text style={styles.storyRatingButtonText}>Liked it</Text>
+                  </Pressable>
+                </View>
+                <Pressable
+                  onPress={closeEndOfStoryPrompt}
+                  accessibilityRole="button"
+                  style={styles.endOfStoryDialogSecondary}
+                >
+                  <Text style={styles.endOfStoryDialogSecondaryText}>Not now</Text>
+                </Pressable>
+              </>
+            ) : (
+              <>
             <View style={styles.endOfStoryTrophyRing}>
               <View style={styles.endOfStoryTrophy}>
                 <Feather name="zap" size={28} color="#0e1727" />
@@ -2729,12 +2952,56 @@ export function ReaderScreen(args: {
               </Pressable>
             </View>
             <Pressable
-              onPress={() => setEndOfStoryPromptVisible(false)}
+              onPress={() => {
+                // "Maybe later" deja de ser solo una salida: mientras no haya
+                // voto, es la segunda puerta a la pregunta. Quien no piensa
+                // practicar es justo el que nunca llegaba a opinar.
+                if (canRateStory) {
+                  setEndOfStoryFace("vote");
+                  return;
+                }
+                closeEndOfStoryPrompt();
+              }}
               accessibilityRole="button"
               style={styles.endOfStoryDialogSecondary}
             >
               <Text style={styles.endOfStoryDialogSecondaryText}>Maybe later</Text>
             </Pressable>
+            {!canRateStory && storyRatingLiked !== null ? (
+              <View style={[styles.storyRatingBlock, styles.storyRatingThanksRow]}>
+                <Feather name="check" size={14} color="#9ce5c1" />
+                <Text style={styles.storyRatingThanksText}>Thanks, noted</Text>
+              </View>
+            ) : null}
+            {canRateStory ? (
+              <View style={styles.storyRatingBlock}>
+                <Text style={styles.storyRatingPrompt}>How was this story?</Text>
+                <View style={styles.storyRatingRow}>
+                  <Pressable
+                    onPress={() => handleStoryVote(false, "practice")}
+                    accessibilityRole="button"
+                    accessibilityLabel="qa-reader-rating-down-inline"
+                    testID="qa-reader-rating-down-inline"
+                    style={styles.storyRatingButton}
+                  >
+                    <Feather name="thumbs-down" size={16} color="#dbe9ff" />
+                    <Text style={styles.storyRatingButtonText}>Not for me</Text>
+                  </Pressable>
+                  <Pressable
+                    onPress={() => handleStoryVote(true, "practice")}
+                    accessibilityRole="button"
+                    accessibilityLabel="qa-reader-rating-up-inline"
+                    testID="qa-reader-rating-up-inline"
+                    style={styles.storyRatingButton}
+                  >
+                    <Feather name="thumbs-up" size={16} color="#dbe9ff" />
+                    <Text style={styles.storyRatingButtonText}>Liked it</Text>
+                  </Pressable>
+                </View>
+              </View>
+            ) : null}
+              </>
+            )}
           </Animated.View>
         </View>
       ) : null}
@@ -3200,6 +3467,91 @@ const styles = StyleSheet.create({
     paddingHorizontal: 22,
     alignItems: "center",
     gap: 8,
+  },
+  storyRatingBlock: {
+    alignSelf: "stretch",
+    marginTop: 10,
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderTopColor: "rgba(255,255,255,0.09)",
+  },
+  storyRatingThanksRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 7,
+  },
+  storyRatingThanksText: {
+    color: "#9ce5c1",
+    fontSize: 13,
+    fontWeight: "700",
+  },
+  storyRatingPrompt: {
+    color: "#8aa0bd",
+    fontSize: 12,
+    fontWeight: "700",
+    textAlign: "center",
+    marginBottom: 8,
+  },
+  storyRatingRow: {
+    alignSelf: "stretch",
+    flexDirection: "row",
+    gap: 8,
+  },
+  storyRatingButton: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "#2d476b",
+    paddingVertical: 10,
+    paddingHorizontal: 6,
+  },
+  storyRatingButtonText: {
+    color: "#dbe9ff",
+    fontSize: 13,
+    fontWeight: "700",
+  },
+  storyRatingFaceRing: {
+    width: 56,
+    height: 56,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+    marginBottom: 4,
+  },
+  storyRatingFaceRingUp: {
+    backgroundColor: "rgba(156, 229, 193, 0.14)",
+    borderColor: "rgba(156, 229, 193, 0.3)",
+  },
+  storyRatingFaceRingDown: {
+    backgroundColor: "rgba(255,255,255,0.06)",
+    borderColor: "#2d476b",
+  },
+  storyRatingFaceRingAsk: {
+    backgroundColor: "rgba(248, 193, 92, 0.14)",
+    borderColor: "rgba(248, 193, 92, 0.28)",
+  },
+  storyRatingInput: {
+    alignSelf: "stretch",
+    minHeight: 76,
+    maxHeight: 140,
+    backgroundColor: "rgba(255,255,255,0.05)",
+    borderWidth: 1,
+    borderColor: "#2d476b",
+    borderRadius: 14,
+    paddingHorizontal: 12,
+    paddingVertical: 11,
+    color: "#eaf2ff",
+    fontSize: 14,
+    lineHeight: 20,
+    textAlignVertical: "top",
+    marginTop: 2,
+    marginBottom: 4,
   },
   endOfStoryDialogClose: {
     position: "absolute",
