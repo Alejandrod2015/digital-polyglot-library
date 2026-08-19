@@ -18,9 +18,11 @@ const STORAGE_FILE = `${FileSystem.documentDirectory ?? ""}story-ratings.json`;
 type StoredPayload = {
   version: 1;
   byUser: Record<string, string[]>;
+  /** Cuentas a las que ya se les preguntó al cerrar el panel. Una vez y nunca más. */
+  closeAskedByUser?: Record<string, boolean>;
 };
 
-const EMPTY: StoredPayload = { version: 1, byUser: {} };
+const EMPTY: StoredPayload = { version: 1, byUser: {}, closeAskedByUser: {} };
 
 async function readAll(): Promise<StoredPayload> {
   if (!FileSystem.documentDirectory) return EMPTY;
@@ -35,7 +37,12 @@ async function readAll(): Promise<StoredPayload> {
     for (const [userId, ids] of Object.entries(byUser)) {
       if (Array.isArray(ids)) clean[userId] = ids.filter((id): id is string => typeof id === "string");
     }
-    return { version: 1, byUser: clean };
+    const asked = parsed.closeAskedByUser;
+    return {
+      version: 1,
+      byUser: clean,
+      closeAskedByUser: asked && typeof asked === "object" ? (asked as Record<string, boolean>) : {},
+    };
   } catch {
     return EMPTY;
   }
@@ -62,5 +69,24 @@ export async function markStoryRated(userId: string | null, storyKey: string): P
     await FileSystem.writeAsStringAsync(STORAGE_FILE, JSON.stringify(all));
   } catch {
     // Fallar aquí solo significa volver a preguntar; nunca romper el lector.
+  }
+}
+
+/** ¿Ya se le preguntó a esta cuenta al cerrar el panel? */
+export async function hasCloseAskBeenUsed(userId: string | null): Promise<boolean> {
+  if (!userId) return true;
+  const all = await readAll();
+  return Boolean(all.closeAskedByUser?.[userId]);
+}
+
+/** Marca la pregunta de cierre como gastada. No se repite en toda la vida de la cuenta. */
+export async function markCloseAskUsed(userId: string | null): Promise<void> {
+  if (!userId || !FileSystem.documentDirectory) return;
+  try {
+    const all = await readAll();
+    all.closeAskedByUser = { ...(all.closeAskedByUser ?? {}), [userId]: true };
+    await FileSystem.writeAsStringAsync(STORAGE_FILE, JSON.stringify(all));
+  } catch {
+    // Igual que arriba: fallar aquí solo significa volver a preguntar una vez.
   }
 }

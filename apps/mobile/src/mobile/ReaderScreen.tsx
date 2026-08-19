@@ -36,7 +36,12 @@ import {
 import * as Application from "expo-application";
 import * as FileSystem from "expo-file-system/legacy";
 import { NativeAudioPlayer } from "./NativeAudioPlayer";
-import { loadRatedStoryKeys, markStoryRated } from "./storyRatingStorage";
+import {
+  hasCloseAskBeenUsed,
+  loadRatedStoryKeys,
+  markCloseAskUsed,
+  markStoryRated,
+} from "./storyRatingStorage";
 import { DownloadProgressRing } from "./DownloadProgressRing";
 import { ProgressiveImage } from "./ProgressiveImage";
 import { useAndroidBottomInset } from "./useAndroidBottomInset";
@@ -1819,7 +1824,8 @@ export function ReaderScreen(args: {
   const [endOfStoryFace, setEndOfStoryFace] = useState<"practice" | "vote" | "comment">(
     "practice"
   );
-  const [completedStoryCount, setCompletedStoryCount] = useState(0);
+  /** La pregunta al cerrar el panel ya se gastó en esta cuenta. */
+  const [closeAskUsed, setCloseAskUsed] = useState(true);
   const [storyRatingLiked, setStoryRatingLiked] = useState<boolean | null>(null);
   /** Desde dónde se votó. Quien votó desde la tarjeta de práctica vuelve a
    *  ella al terminar: su "Start practice" seguía siendo el plan, y cerrarle
@@ -2015,9 +2021,6 @@ export function ReaderScreen(args: {
       const done = await loadCompletedStories(sessionUserId);
       if (cancelled) return;
       if (done.has(story.id)) setStoryCompleted(true);
-      // Cuántas historias lleva terminadas esta cuenta, contando ésta. Es el
-      // número que decide si toca preguntar por la valoración.
-      setCompletedStoryCount(done.has(story.id) ? done.size : done.size + 1);
     })();
     return () => {
       cancelled = true;
@@ -2035,8 +2038,13 @@ export function ReaderScreen(args: {
     setStoryAlreadyRated(false);
     let cancelled = false;
     void (async () => {
-      const rated = await loadRatedStoryKeys(sessionUserId ?? null);
-      if (!cancelled && rated.includes(story.slug)) setStoryAlreadyRated(true);
+      const [rated, closeUsed] = await Promise.all([
+        loadRatedStoryKeys(sessionUserId ?? null),
+        hasCloseAskBeenUsed(sessionUserId ?? null),
+      ]);
+      if (cancelled) return;
+      if (rated.includes(story.slug)) setStoryAlreadyRated(true);
+      setCloseAskUsed(closeUsed);
     })();
     return () => {
       cancelled = true;
@@ -2062,20 +2070,12 @@ export function ReaderScreen(args: {
   }, [endOfStoryFace]);
 
   /**
-   * ¿Toca preguntar por esta historia?
-   *
-   * Hay sesión, la historia no está valorada, y le toca por turno: la PRIMERA
-   * historia que alguien termina siempre (ahí la impresión está entera y aún
-   * no hemos gastado ninguna pregunta), y a partir de ahí una de cada cinco.
-   *
-   * Cinco y no menos porque un tema son tres historias: preguntar cada dos o
-   * tres caería siempre en el mismo tema y devolvería la misma opinión escrita
-   * cinco veces. Cinco y no más porque un journey son 21 historias, así que el
-   * turno cae unas cuatro veces por journey, suficiente para ver si un tema
-   * concreto se cae sin convertir el final de historia en un peaje.
+   * Los pulgares salen en TODA historia sin valorar. Muestrear una de cada
+   * cinco no reparte el feedback al azar: reparte por posición, así que las
+   * historias 1, 5, 10, 15 y 20 acumularían todas las opiniones y el resto no
+   * tendría ninguna. Un toque cuesta lo mismo en todas.
    */
-  const isRatingTurn = completedStoryCount === 1 || completedStoryCount % 5 === 0;
-  const canRateStory = Boolean(sessionToken) && !storyAlreadyRated && isRatingTurn;
+  const canRateStory = Boolean(sessionToken) && !storyAlreadyRated;
 
   async function postStoryRating(liked: boolean, comment?: string) {
     if (!sessionToken) return;
@@ -2108,6 +2108,23 @@ export function ReaderScreen(args: {
     setEndOfStoryPromptVisible(false);
     setEndOfStoryFace("practice");
     setStoryRatingComment("");
+  }
+
+  /**
+   * Lo que ocurre al intentar cerrar el panel (la X, "Maybe later" o tocar
+   * fuera). La primera vez en la vida de la cuenta, en lugar de cerrarse,
+   * pregunta; a partir de ahí cierra sin más. Una sola vez porque el que cierra
+   * ya dijo que se iba: insistir en cada historia convierte la salida en un
+   * peaje y enseña a la gente a buscar la X sin leer.
+   */
+  function requestCloseEndOfStoryPrompt() {
+    if (!closeAskUsed && canRateStory && endOfStoryFace === "practice") {
+      setCloseAskUsed(true);
+      void markCloseAskUsed(sessionUserId ?? null);
+      setEndOfStoryFace("vote");
+      return;
+    }
+    closeEndOfStoryPrompt();
   }
 
   // El toque del pulgar ES el envío. Lo que viene después (la caja de texto)
@@ -2806,7 +2823,7 @@ export function ReaderScreen(args: {
             <Pressable
               style={StyleSheet.absoluteFillObject}
               accessibilityLabel="qa-reader-practice-prompt-dismiss"
-              onPress={closeEndOfStoryPrompt}
+              onPress={requestCloseEndOfStoryPrompt}
             />
           </Animated.View>
           <Animated.View
@@ -2822,7 +2839,7 @@ export function ReaderScreen(args: {
             ]}
           >
             <Pressable
-              onPress={closeEndOfStoryPrompt}
+              onPress={requestCloseEndOfStoryPrompt}
               style={styles.endOfStoryDialogClose}
               hitSlop={12}
               accessibilityLabel="qa-reader-practice-prompt-close"
@@ -2970,16 +2987,7 @@ export function ReaderScreen(args: {
               </Pressable>
             </View>
             <Pressable
-              onPress={() => {
-                // "Maybe later" deja de ser solo una salida: mientras no haya
-                // voto, es la segunda puerta a la pregunta. Quien no piensa
-                // practicar es justo el que nunca llegaba a opinar.
-                if (canRateStory) {
-                  setEndOfStoryFace("vote");
-                  return;
-                }
-                closeEndOfStoryPrompt();
-              }}
+              onPress={requestCloseEndOfStoryPrompt}
               accessibilityRole="button"
               style={styles.endOfStoryDialogSecondary}
             >
