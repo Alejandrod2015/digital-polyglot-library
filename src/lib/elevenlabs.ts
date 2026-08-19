@@ -77,11 +77,27 @@ const CONTENT_GATE_MAX_TAKES = 3;
 let contentGateWarned = false;
 
 /** Texto plano de un fragmento, vía scribe_v1. Null si el STT no responde. */
+/**
+ * El nombre del idioma que usa la app ("portuguese") NO es un código ISO, y
+ * mandarlo tal cual en `language_code` devuelve 400 y deja el gate sin correr:
+ * el 2026-08-19 la primera historia del A1 brasileño se renderizó con el aviso
+ * "gate de contenido saltado (STT 400)" y nadie comparó lo que dice la voz con
+ * el texto. Lo que no se sabe traducir se OMITE, que es seguro: sin el campo,
+ * scribe detecta el idioma solo (la muestra portuguesa salió con 0.94 de
+ * probabilidad para "por").
+ */
+const STT_ISO: Record<string, string> = {
+  spanish: "spa", portuguese: "por", german: "deu", italian: "ita",
+  french: "fra", english: "eng", es: "spa", pt: "por", de: "deu",
+  it: "ita", fr: "fra", en: "eng",
+};
+
 async function transcribeSegmentText(buffer: Buffer, apiKey: string, language?: string): Promise<string | null> {
   try {
     const fd = new FormData();
     fd.append("model_id", "scribe_v1");
-    if (language) fd.append("language_code", language);
+    const iso = language ? STT_ISO[language.trim().toLowerCase()] : undefined;
+    if (iso) fd.append("language_code", iso);
     fd.append("file", new Blob([new Uint8Array(buffer)], { type: "audio/mpeg" }), "seg.mp3");
     const res = await fetch("https://api.elevenlabs.io/v1/speech-to-text", {
       method: "POST", headers: { "xi-api-key": apiKey }, body: fd,
