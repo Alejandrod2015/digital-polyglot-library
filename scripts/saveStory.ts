@@ -238,29 +238,53 @@ function slugify(s: string): string {
   // anterior: las tres primeras del A1 brasileño repetían el 60% del A0
   // (2026-08-18). Se excluye el journey propio, cuya repetición interna ya la
   // vigila `vocab-repetition`.
-  const taughtElsewhere: string[] = await (async () => {
-    if (!journeyId) return [];
+  const { taughtElsewhere, taughtSameType } = await (async () => {
+    if (!journeyId) return { taughtElsewhere: [] as string[], taughtSameType: [] as string[] };
     const p2 = new PrismaClient();
     try {
-      const mio = await p2.journey.findUnique({ where: { id: journeyId }, select: { language: true } });
-      if (!mio) return [];
+      const mio = await p2.journey.findUnique({ where: { id: journeyId }, select: { language: true, typeSlug: true } });
+      if (!mio) return { taughtElsewhere: [] as string[], taughtSameType: [] as string[] };
       const otras = await p2.journeyStory.findMany({
         where: {
           journey: { language: mio.language, status: { not: "archived" } },
           journeyId: { not: journeyId },
         },
-        select: { vocab: true },
+        select: { vocab: true, journey: { select: { typeSlug: true } } },
       });
       const out = new Set<string>();
-      for (const r of otras)
+      const duro = new Set<string>();
+      for (const r of otras) {
+        // El mismo TIPO de journey (Traveler A0 -> Traveler A1) va al cubo
+        // duro; los de otro tipo, al blando de hasta dos por historia.
+        const destino = mio.typeSlug && r.journey?.typeSlug === mio.typeSlug ? duro : out;
         for (const v of ((r.vocab as Array<{ word?: unknown }> | null) ?? []))
-          if (v?.word) out.add(String(v.word));
-      return [...out];
-    } catch { return []; }
+          if (v?.word) destino.add(String(v.word));
+      }
+      // ...y el vocabulario de las historias YA GUARDADAS de ESTE journey que
+      // no vienen en este fichero. `vocab-repetition` solo compara contra lo
+      // que se valida en la misma tanda, así que una palabra enseñada tema a
+      // tema en tandas distintas pasaba sin que saltara nada: el 2026-08-19 el
+      // A1 brasileño tenía `segundo` en tres historias y otras ocho repetidas
+      // en dos. Al lector le sale dos veces la misma tarjeta.
+      const enTanda = new Set(stories.map((s: any) => `${s.topic}#${s.slotIndex}`));
+      const propias = await p2.journeyStory.findMany({
+        where: { journeyId },
+        select: { topic: true, slotIndex: true, vocab: true },
+      });
+      for (const r of propias) {
+        if (enTanda.has(`${r.topic}#${r.slotIndex}`)) continue;
+        for (const v of ((r.vocab as Array<{ word?: unknown }> | null) ?? []))
+          if (v?.word) duro.add(String(v.word));
+      }
+      return { taughtElsewhere: [...out], taughtSameType: [...duro] };
+    } catch { return { taughtElsewhere: [] as string[], taughtSameType: [] as string[] }; }
     finally { await p2.$disconnect(); }
   })();
-  if (taughtElsewhere.length) {
-    console.log(`vocabulario ya enseñado en otros journeys del idioma: ${taughtElsewhere.length} lemas`);
+  if (taughtSameType.length || taughtElsewhere.length) {
+    console.log(
+      `vocab ya enseñado: ${taughtSameType.length} lemas del mismo tipo (tope 0) · ` +
+        `${taughtElsewhere.length} de otros tipos (tope 2 por historia)`
+    );
   }
 
   const priorSummaries: ExistingStorySummary[] = [];
@@ -272,6 +296,7 @@ function slugify(s: string): string {
       journeyTitles: allTitles.filter((t) => t !== d.title),
       existing: [...priorSummaries],
       taughtElsewhere,
+      taughtSameType,
     });
     priorSummaries.push(summarize(d));
     const hardFails = r.checks.filter((c) => c.status === "fail" && !(narrator && NARRATOR_EXEMPT.has(c.id)));

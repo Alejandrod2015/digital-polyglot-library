@@ -1,20 +1,43 @@
-import { config } from "dotenv";
-config({ path: ".env.local", quiet: true }); config({ path: ".env", quiet: true });
+/**
+ * Tabla de estado de un journey, una fila por historia.
+ *
+ * POR QUÉ: al cerrar cada tema hace falta ver el journey entero de un vistazo,
+ * y las dos columnas que importan (vocabulario repetido fuera y dentro) solo se
+ * pueden calcular contra la base, no contra las notas del chat.
+ *
+ *   npx tsx --conditions react-server scripts/_journeyTable.ts <journeyId>
+ */
+import { config } from "dotenv"; config({ path: ".env.local", quiet: true }); config({ path: ".env", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
-const prisma = new PrismaClient();
-const LVL:any={a0:"Beginner",a1:"Elementary",a2:"Pre-Int",b1:"Intermediate",b2:"Upper-Int",c1:"Advanced",c2:"Mastery"};
-(async () => {
-  const journeys = await prisma.journey.findMany({ where:{ status:"active" }, select:{ id:true, name:true, language:true, variant:true, levels:true } }) as any[];
-  const rows:any[]=[];
-  for (const j of journeys) {
-    const pub = await prisma.journeyStory.count({ where:{ journeyId:j.id, status:"published" } });
-    const audio = await prisma.journeyStory.count({ where:{ journeyId:j.id, status:"published", audioStatus:"ready" } });
-    const cover = await prisma.journeyStory.count({ where:{ journeyId:j.id, status:"published", coverUrl:{ not:null } } });
-    let practice=0; try { practice = await prisma.journeyStory.count({ where:{ journeyId:j.id, status:"published", practiceSet:{ isNot:null } } }); } catch(e){ practice=-1; }
-    const lv=(j.levels||[]).map((x:string)=>LVL[x]||x).join("/");
-    rows.push({name:j.name,lang:j.language,variant:j.variant,lv,pub,audio,practice,cover});
+const p = new PrismaClient();
+const J = process.argv[2] ?? "cmsyrge55000732u9oiu8wue3";
+const NOM: Record<string, string> = { manaus: "Manaus", florianopolis: "Florianópolis", "foz-do-iguacu": "Foz do Iguaçu", olinda: "Olinda", belem: "Belém", pantanal: "Pantanal", "ouro-preto": "Ouro Preto" };
+async function main() {
+  const j = await p.journey.findUnique({ where: { id: J }, select: { topics: true, language: true } });
+  const orden = j?.topics ?? [];
+  const rows = await p.journeyStory.findMany({ where: { journeyId: J }, orderBy: [{ topic: "asc" }, { slotIndex: "asc" }] });
+  const otras = await p.journeyStory.findMany({ where: { journey: { language: j?.language }, journeyId: { not: J } }, select: { vocab: true } });
+  const fuera = new Set<string>();
+  for (const r of otras) for (const v of ((r.vocab as any[]) ?? [])) fuera.add(String(v.word).toLowerCase());
+  const hechas = rows.filter((r) => r.text);
+  const cuenta = new Map<string, number>();
+  for (const r of hechas) for (const v of ((r.vocab as any[]) ?? [])) {
+    const w = String(v.word).toLowerCase(); cuenta.set(w, (cuenta.get(w) ?? 0) + 1);
   }
-  rows.sort((a,b)=> (a.lang===b.lang?0:a.lang.localeCompare(b.lang)));
-  console.log(`\n${"JOURNEY".padEnd(10)}${"IDIOMA".padEnd(9)}${"VAR".padEnd(9)}${"NIVEL".padEnd(12)}${"HIST".padEnd(6)}${"AUDIO".padEnd(8)}${"PRÁCT".padEnd(8)}COVER`);
-  for(const r of rows) console.log(`${r.name.slice(0,9).padEnd(10)}${r.lang.slice(0,8).padEnd(9)}${(r.variant||"-").padEnd(9)}${r.lv.padEnd(12)}${String(r.pub).padEnd(6)}${(r.audio+"/"+r.pub).padEnd(8)}${(r.practice+"/"+r.pub).padEnd(8)}${r.cover}/${r.pub}`);
-})().finally(() => prisma.$disconnect());
+  console.log("| Tema | # | Historia | Arco | Pal. | Citado | Vocab | Ya en otro journey | Ya en este journey | Sale Matheus | Portada | Audio |");
+  console.log("|---|---|---|---|---|---|---|---|---|---|---|---|");
+  const temas = orden.length ? orden : [...new Set(rows.map((r) => r.topic))];
+  for (const t of temas) for (const r of rows.filter((x) => x.topic === t)) {
+    const nom = NOM[t] ?? t;
+    if (!r.text) { console.log(`| ${nom} | ${r.slotIndex + 1} | (vacío) | | | | | | | | | |`); continue; }
+    const w = r.text.split(/\s+/).length;
+    const cit = [...r.text.matchAll(/[“]([^”]*)[”]/g)].reduce((a, m) => a + m[1].split(/\s+/).length, 0);
+    const voc = (r.vocab as any[]) ?? [];
+    const off = voc.filter((v) => fuera.has(String(v.word).toLowerCase())).map((v) => v.word);
+    const rep = voc.filter((v) => (cuenta.get(String(v.word).toLowerCase()) ?? 0) > 1).map((v) => v.word);
+    console.log(`| ${nom} | ${r.slotIndex + 1} | ${r.title} | ${(r as any).arcType} | ${w} | ${Math.round((100 * cit) / w)}% | ${voc.length} | ${off.join(", ") || "0"} | ${rep.join(", ") || "0"} | ${/Matheus/.test(r.text) ? "sí" : "-"} | ${(r as any).coverImageUrl ? "sí" : "no"} | ${(r as any).audioUrl ? "sí" : "no"} |`);
+  }
+  console.log(`\nhistorias ${hechas.length}/${rows.length} · Matheus ${hechas.filter((r) => /Matheus/.test(r.text!)).length} · píldoras ${[...cuenta.values()].reduce((a, b) => a + b, 0)}, distintas ${cuenta.size}`);
+  await p.$disconnect();
+}
+main();

@@ -72,6 +72,35 @@ export const PORTUGUESE_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "tentativa","duna","descida","tábua","cera","cansar","dúvida","menino",
   "prática","frear","grudar","cobrar","sozinho","varal","quintal","pesado","pia","muro","bandeira",
   "cadê","voar","lado","topo","escorrer",
+
+  // Foz do Iguaçu, 2026-08-18: las cataratas y la frontera. Vocabulario de
+  // viaje sin el cual no se puede contar lo que pasa allí. Fuera lo que es B1
+  // (encharcado, aduana, crachá, catraca, guarda-volumes).
+  "capa","névoa","passarela","escorregar","catarata","queda","mirante","grade","poça","bota",
+  "fronteira","carimbo","documento","motorista","rodoviária","passaporte","poltrona","ponte",
+  "câmbio","guarani","real","calculadora","desconto","recibo","gorjeta",
+  "país","idioma","espanhol","sotaque","mapa","guia","horário","atraso","excursão","turma",
+  "pulseira","lanchonete","refrigerante","trovão","bateria","carregador","banheiro","seta",
+  "guarda","página","valer","maço","guichê","cotação","digitar","engano","convencer","tela","brigar",
+  // Olinda (carnaval y ciudad vieja, 2026-08-18)
+  "ladeira","carrinho","sombrinha","boneco","ateliê","corda","cola","tinta","bigode","esquina",
+  "campainha","banca","banda","círculo","ombro","bolso","torto","ensaio","praça","pedra",
+  // Belém (comida amazónica y mercados, 2026-08-18)
+  "arrepender","salvar","sério","total","motor","roncar","amanhecer","sono","receita",
+  // Ouro Preto (minas y ciudad barroca, 2026-08-19)
+  "corrente","ferro","morcego","toque","embrulhar",
+  "metro","cavar","machucar","curvado","pó","avental","lixa","base","lasca","peça","mole","badalada","morro","capela","padre","bule","costume","rezar",
+  "mina","ouro","mineiro","túnel","capacete","trilho","sabonete","santo","sino","missa","ingresso","república","lenha","fogão","neblina","úmido","risco","canivete","brilho","corrimão","guarda-chuva","eco",
+  // Pantanal (fauna y barcos, 2026-08-19)
+  "enfeite","pescaria","sorte","truque",
+  "vivo","deitado","atenção","diferença","boia","escama","cesta","desistir","reta",
+  "jacaré","capivara","arara","piranha","onça","gado","peão","popa","isca","anzol","vara","colete","poeira","porteira","cerca","barranco","barro","boiada","pescar","garça","rabo","mordida","lanterna","remo","boi","chifre","buzina","caminhonete",
+  "pingar","acontecer","açaí","tigela","grosso","farinha","frito","pote","sobremesa","estranhar","toldo","dinheiro","tacacá","cuia","jambu","gole","formigar","normal","goma","susto","tempero","gostoso","polpa","litro","isopor","doca","voo","derreter","congelado","tampa","fita","caroço","sobrar",
+  "doer","ensaiar","nuca","arrastar","suor","cansado","vareta","pincel","madeira","carnaval","fantasia","tambor",
+  "irregular","passar",
+  "esvaziar","dono","força","cansaço","cruz","largar","vencer","filmar","gigante",
+  "subida","plástico","segurar","cheirar","pesar","rir","palma","feira","roda","cuidar",
+  "entrada","atravessar","direto","aduana","papel","conferir","faltar","recibo","poltrona","mirante","poça",
   "dona","umidade","canto","pendurar","camiseta","toalha","aula","joelho",
 
   // Time

@@ -84,6 +84,15 @@ export type ValidationContext = {
    * saveStory.ts leyendo la base; vacío o ausente desactiva el check.
    */
   taughtElsewhere?: string[];
+  /**
+   * Lemas que ya enseña un journey del MISMO tipo (o este mismo journey en
+   * otra tanda). Aquí la tolerancia es cero: es la misma promesa y casi
+   * siempre el mismo comprador seguido, así que repetir una tarjeta es
+   * cobrarle dos veces por la misma palabra. `taughtElsewhere` queda para
+   * los journeys de OTRO tipo, donde el reencuentro en una escena distinta
+   * es lo que fija la palabra y se toleran hasta dos por historia.
+   */
+  taughtSameType?: string[];
   /** Titles of every other story in the same journey (across all topics
    *  and levels). Used by the anchor-repetition and title-template-
    *  monotony checks. Pass `[]` or omit to skip those checks. */
@@ -2841,6 +2850,28 @@ export async function validateGeneratedStory(
     // prefijo del idioma fuera (el artículo alemán, por ejemplo).
     const lema = (w: string) =>
       stripPrefix(w.toLowerCase(), context.language).normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    // Mismo tipo de journey (incluido este journey en otra tanda): cero.
+    //
+    // POR QUÉ el corte por tipo (2026-08-19). Con la regla de cero contra
+    // TODO el idioma, escribir el A1 brasileño obligó a meter 222 lemas
+    // nuevos en la lista de nivel mientras `praça`, `chuva`, `porta` y
+    // `calçada` seguían bloqueadas por el A0: el journey acababa enseñando
+    // `lasca` y `avental` antes que "plaza". Entre tipos distintos el
+    // reencuentro de una palabra en otra escena es justo lo que la fija, así
+    // que ahí se toleran dos; dentro del mismo tipo, ninguna.
+    const mismoTipo = new Set((context.taughtSameType ?? []).map(lema));
+    if (mismoTipo.size > 0 && parsed.vocab.length > 0) {
+      const repes = parsed.vocab.map((v) => v.word).filter((w) => mismoTipo.has(lema(w)));
+      checks.push({
+        id: "vocab-taught-same-type",
+        label: "Vocab not already taught by this journey or another of the same type (zero)",
+        status: repes.length > 0 ? "fail" : "pass",
+        detail: repes.length
+          ? `${repes.length}/${parsed.vocab.length} ya enseñadas: ${repes.slice(0, 8).join(", ")}${repes.length > 8 ? ` …+${repes.length - 8}` : ""}`
+          : undefined,
+      });
+    }
+
     const yaEnsenado = new Set((context.taughtElsewhere ?? []).map(lema));
     if (yaEnsenado.size > 0 && parsed.vocab.length > 0) {
       const repetidas = parsed.vocab
@@ -2856,7 +2887,7 @@ export async function validateGeneratedStory(
       // bloquear, pero cualquiera avisa.
       checks.push({
         id: "vocab-taught-elsewhere",
-        label: "Vocab is not already taught by another journey in this language (target: zero)",
+        label: "Vocab repeated from a DIFFERENT journey type: max 2 per story",
         status: repetidas.length > 2 ? "fail" : repetidas.length > 0 ? "warn" : "pass",
         detail:
           repetidas.length > 0
