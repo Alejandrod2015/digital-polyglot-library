@@ -254,8 +254,11 @@ export async function GET(req: NextRequest): Promise<Response> {
     const hechas = niveles.reduce(
       (n: number, l: any) => n + (l.topics ?? []).reduce((m: number, t: any) => m + (t.completedStoryCount ?? 0), 0), 0);
     const terminado = total > 0 && hechas >= total;
-    const origen = journeysDelIdioma.find(
-      (j) => j.variant === track.variant && (j.levels ?? []).some((lv) => niveles.some((n: any) => n.id === lv)));
+    // El id del track ES el id del journey. Emparejar por variante + nivel era
+    // ambiguo: hay journeys que llevan varios niveles (uno tiene seis), así que
+    // `find` devolvía el hermano equivocado y el puente salía null aunque el
+    // puntero estuviera puesto.
+    const origen = journeyPorId.get(track.id);
     const sig = origen?.nextJourneyId ? journeyPorId.get(origen.nextJourneyId) : null;
     // Se manda SIEMPRE que haya puntero, no solo al terminar. Esconderlo hasta
     // el final significaba que la tarjeta no existía para nadie: el tester más

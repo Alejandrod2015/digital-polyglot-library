@@ -17801,6 +17801,37 @@ export function MobileLibraryShell(args: {
           })
         : null}
 
+      {/* Puente al siguiente journey. Antes, terminar las 21 historias no
+            llevaba a ninguna parte: el track se quedaba lleno de checks y el
+            siguiente nivel, ya publicado, no aparecía por ningún lado. Ahora el
+            servidor manda `nextJourney` en cuanto hay puntero y `unlocked` dice
+            si ya se ganó, así que la tarjeta también existe a mitad de camino. */}
+        {activeJourneyTrack?.nextJourney ? (
+          <View
+            style={[
+              styles.journeyNextCard,
+              !activeJourneyTrack?.nextJourney?.unlocked ? styles.journeyNextCardLocked : null,
+            ]}
+          >
+            <Text style={styles.journeyNextKicker}>
+              {activeJourneyTrack?.nextJourney?.unlocked
+                ? "JOURNEY COMPLETE"
+                : `UP NEXT  ·  ${activeJourneyTrack?.nextJourney?.remaining ?? 0} STORIES TO GO`}
+            </Text>
+            <Text style={styles.journeyNextTitle}>
+              {activeJourneyTrack?.nextJourney?.name ?? ""}
+              {activeJourneyTrack?.nextJourney?.levels?.length
+                ? `  ·  ${(activeJourneyTrack?.nextJourney?.levels ?? []).join(", ").toUpperCase()}`
+                : ""}
+            </Text>
+            <Text style={styles.journeyNextBody}>
+              {activeJourneyTrack?.nextJourney?.unlocked
+                ? "You finished every story here. The next journey is ready."
+                : "Finish this journey to unlock it."}
+            </Text>
+          </View>
+        ) : null}
+
       {/* (Old nested-View rendering removed; the flat flatMap above
           replaces the section / level-block / topic-block wrappers
           so the topic panels can be direct children of the
@@ -18173,36 +18204,7 @@ export function MobileLibraryShell(args: {
           </View>
         ))}
 
-        {/* Puente al siguiente journey. Antes, terminar las 21 historias no
-            llevaba a ninguna parte: el track se quedaba lleno de checks y el
-            siguiente nivel, ya publicado, no aparecía por ningún lado. Ahora el
-            servidor manda `nextJourney` en cuanto hay puntero y `unlocked` dice
-            si ya se ganó, así que la tarjeta también existe a mitad de camino. */}
-        {activeJourneyTrack?.nextJourney ? (
-          <View
-            style={[
-              styles.journeyNextCard,
-              !activeJourneyTrack?.nextJourney?.unlocked ? styles.journeyNextCardLocked : null,
-            ]}
-          >
-            <Text style={styles.journeyNextKicker}>
-              {activeJourneyTrack?.nextJourney?.unlocked
-                ? "JOURNEY COMPLETE"
-                : `UP NEXT  ·  ${activeJourneyTrack?.nextJourney?.remaining ?? 0} STORIES TO GO`}
-            </Text>
-            <Text style={styles.journeyNextTitle}>
-              {activeJourneyTrack?.nextJourney?.name ?? ""}
-              {activeJourneyTrack?.nextJourney?.levels?.length
-                ? `  ·  ${(activeJourneyTrack?.nextJourney?.levels ?? []).join(", ").toUpperCase()}`
-                : ""}
-            </Text>
-            <Text style={styles.journeyNextBody}>
-              {activeJourneyTrack?.nextJourney?.unlocked
-                ? "You finished every story here. The next journey is ready."
-                : "Finish this journey to unlock it."}
-            </Text>
-          </View>
-        ) : null}
+
 
       </View>
       ) : null}
