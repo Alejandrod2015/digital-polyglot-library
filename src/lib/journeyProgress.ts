@@ -8,11 +8,17 @@ import {
 
 const COMPLETE_RATIO = 0.95;
 
-function toNumber(value: unknown): number | undefined {
+// Los dos eventos que cuentan como "historia terminada". Viven aquí y se
+// exportan porque el cron del puente entre journeys necesita exactamente la
+// misma regla: si se duplicara, un día una de las dos contaría el scroll y la
+// otra no, y el push saldria a quien no ha terminado.
+export const JOURNEY_COMPLETION_EVENT_TYPES = ["audio_complete", "continue_listening"] as const;
+
+export function toNumber(value: unknown): number | undefined {
   return typeof value === "number" && Number.isFinite(value) ? value : undefined;
 }
 
-function isCompletedFromAudio(progressSec?: number, audioDurationSec?: number): boolean {
+export function isCompletedFromAudio(progressSec?: number, audioDurationSec?: number): boolean {
   if (
     typeof progressSec !== "number" ||
     !Number.isFinite(progressSec) ||
@@ -45,7 +51,7 @@ export async function getCompletedJourneyStoryKeys(userIdOverride?: string): Pro
   const metrics = await prisma.userMetric.findMany({
     where: {
       userId,
-      eventType: { in: ["audio_complete", "continue_listening"] },
+      eventType: { in: [...JOURNEY_COMPLETION_EVENT_TYPES] },
     },
     select: {
       bookSlug: true,
