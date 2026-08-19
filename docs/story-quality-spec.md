@@ -145,27 +145,35 @@ The body (not just the vocab list) may reach **i+2** (A1 → up to A2/B1 lexis; 
 
 ### Criterios por nivel [2026-08-19]
 
-Lo que separa un nivel del siguiente es la **gramática**, no el tamaño. Los
-números marcan el techo para que una historia no se vaya de largo; la gramática
-es la que decide de qué nivel es.
+Lo que separa un nivel del siguiente es la **gramática**. Nada más. El cuerpo
+crece **22 palabras en total de A0 a C2**, repartidas en dos saltos de once, así
+que todos los niveles siguen siendo de un minuto de audio: lo que cambia es lo
+que cabe dentro del minuto, no el minuto.
 
-| Nivel | Gramática nueva (acumulativa) | Palabras | Sub. | Vocab | Léxico |
-|---|---|---|---|---|---|
-| A0 | solo presente | 135-180 | 0-20 | 20-26 | 2500 |
-| A1 | + pretérito perfecto, pronombres de objeto | 135-180 | 0-20 | 20-26 | 2500 |
-| A2 | + imperfecto en contraste con el pretérito | 135-180 | 0-20 | 20-26 | 2500 |
-| B1 | + condicional, estilo indirecto | 185-230 | 25-45 | 24-30 | 6000 |
-| B2 | + subjuntivo (presente e imperfecto) | 185-230 | 25-45 | 24-30 | 6000 |
-| C1 | + los cinco a la vez, y densos | 235-280 | 50-70 | 27-32 | libre |
-| C2 | + cambio de registro dentro de la escena | 235-280 | 50-70 | 27-32 | libre |
+| Nivel | Gramática nueva (acumulativa) | Palabras |
+|---|---|---|
+| A0 | solo presente | 128-155 |
+| A1 | + pretérito perfecto, pronombres de objeto | 128-155 |
+| A2 | + imperfecto en contraste con el pretérito | 128-155 |
+| B1 | + condicional, estilo indirecto | 140-166 |
+| B2 | + subjuntivo (presente e imperfecto) | 140-166 |
+| C1 | + los cinco a la vez, y densos | 150-177 |
+| C2 | + cambio de registro dentro de la escena | 150-177 |
 
-`Sub.` = oraciones subordinadas por cada 100 oraciones. `Léxico` = banda de
-frecuencia de la que salen las píldoras. Las tres bandas de longitud van
-pegadas, así que el salto en el borde son cinco palabras: dentro de un grupo
-los niveles miden lo mismo a propósito.
+**Lo que NO depende del nivel:**
 
-**En qué se basa.** Medido el 2026-08-19 sobre los ocho journeys de español
-(`scripts/_gramProbe.ts`), usos por cada 100 oraciones:
+- **Vocab**: mínimo 20 y en torno a una píldora cada nueve palabras del cuerpo
+  (regla de densidad, más abajo en este mismo documento). Si un nivel lleva más
+  píldoras es porque su cuerpo es más largo, no porque el nivel las pida.
+- **Subordinación y palabras por oración**: son CONSECUENCIA de la gramática, no
+  una casilla que se rellena. No hay estilo indirecto ni subjuntivo sin
+  subordinada. Se miden después, para comprobar dónde cayó la historia, no antes
+  para decidirla.
+- **Léxico**: de A0 a A2 sale de las 2500 palabras más frecuentes; de B1 en
+  adelante, libre.
+
+**Cómo se comprueba** (`scripts/_gramProbe.ts`, `scripts/_levelProbe3.ts`), medido
+el 2026-08-19 sobre los ocho journeys de español, usos por cada 100 oraciones:
 
 | | A0 (3 journeys) | A1 | C1 (4 journeys) |
 |---|---|---|---|
@@ -176,25 +184,27 @@ los niveles miden lo mismo a propósito.
 | Subjuntivo presente | 0-1 | 0 | 0-1 |
 | Pasiva | 0 | 0 | 0 |
 | Conectores de discurso | 0-3 | 0 | 0-1 |
+| Subordinadas | 9 (PT A0) | 13 (PT A1) | 45-60 |
 
 La primera versión de esta tabla la escribí de memoria del MCER y ponía la
 pasiva, el subjuntivo presente y los conectores de discurso como marcadores de
-B2 y C1. El catálogo dice que no: **la pasiva es cero incluso en C1**, el
-subjuntivo presente no pasa de 1 y los conectores salen igual en un A0 que en
-un C1. Lo que de verdad separa nuestro C1 es el imperfecto (24-52 contra 3 del
-A1) y el pretérito (21-38 contra 10).
+B2 y C1. El catálogo lo desmiente: **la pasiva es cero incluso en C1**, el
+subjuntivo presente no pasa de 1 y los conectores salen igual en un A0 que en un
+C1. Lo que de verdad separa nuestro C1 del A1 es el imperfecto (24-52 contra 3)
+y el pretérito (21-38 contra 10).
 
 **Avisos, para no leer esto como más firme de lo que es:**
 
 - **A2, B1 y B2 no tienen ni un journey escrito.** Esas tres filas son criterio,
   no medición.
-- Todo nuestro C1 es conversacional. La pasiva y los conectores pueden faltar
-  por el género, no por el nivel.
-- El validador **no** comprueba nada de esto todavía: sigue con su ventana de
-  un minuto para A0 y A1 (`isOneMinuteTier`) y 180-320 para el resto. Esta
-  tabla es la referencia para escribir, no un gate.
-- El A1 alemán en draft mide 209 palabras de mediana y se sale de la banda
-  A0-A2.
+- Todo nuestro C1 es conversacional. La pasiva y los conectores pueden faltar por
+  el género, no por el nivel.
+- **Los siete journeys C1 que ya existen miden 225-280 palabras**, cien por
+  encima de su fila. La tabla vale para lo que se escriba a partir de ahora; no
+  los invalida.
+- El validador **no** comprueba nada de esto todavía: sigue con su ventana de un
+  minuto para A0 y A1 (`isOneMinuteTier`) y 180-320 para el resto. Esta tabla es
+  la referencia para escribir, no un gate.
 
 ### Length
 
