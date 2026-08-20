@@ -1,7 +1,9 @@
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { books } from "@/data/books";
 import BackButton from "@/components/BackButton";
 import BookStorefront from "@/components/BookStorefront";
 import { getCatalogBook } from "@/lib/catalog";
+import { canReadWholeBook, getOwnedBooks, type Plan } from "@domain/access";
 
 type BookPageProps = {
   params: Promise<{ bookSlug: string }>;
@@ -33,6 +35,16 @@ export default async function BookPage({ params, searchParams }: BookPageProps) 
     storyNavParams.set("from", from.trim());
   }
   const storyNavSuffix = storyNavParams.toString() ? `?${storyNavParams.toString()}` : "";
+  // Quien ya tiene el libro no puede ver un CTA de compra en su propia ficha:
+  // es el reflejo que empuja a pagar dos veces. BookStorefront es cliente, asi
+  // que la propiedad se resuelve aqui (servidor) y baja como prop.
+  const { userId } = await auth();
+  const user = userId ? await currentUser() : null;
+  const ownsBook = canReadWholeBook({
+    plan: (user?.publicMetadata?.plan as Plan) ?? "free",
+    ownedBooks: getOwnedBooks(user?.publicMetadata),
+    bookSlug: book.slug,
+  });
   // Keep book page in browser history so back gesture/button returns to the book first.
   const replaceStoryNavigation = false;
 
@@ -45,6 +57,7 @@ export default async function BookPage({ params, searchParams }: BookPageProps) 
 
       <BookStorefront
         book={book}
+        ownsBook={ownsBook}
         storyNavSuffix={storyNavSuffix}
         replaceStoryNavigation={replaceStoryNavigation}
       />

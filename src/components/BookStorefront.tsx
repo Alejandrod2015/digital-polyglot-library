@@ -33,6 +33,8 @@ type BookCarouselItem = {
 
 type Props = {
   book: Book;
+  /** Resuelto en el servidor (Clerk): libro comprado, o plan que lo abre entero. */
+  ownsBook?: boolean;
   storyNavSuffix: string;
   replaceStoryNavigation?: boolean;
 };
@@ -64,6 +66,7 @@ function normalizeMatch(value?: string): string {
 
 export default function BookStorefront({
   book,
+  ownsBook = false,
   storyNavSuffix,
   replaceStoryNavigation = false,
 }: Props) {
@@ -353,7 +356,7 @@ export default function BookStorefront({
                 typeof book.cover === "string" && book.cover.length > 0 ? book.cover : "/covers/default.jpg"
               }
             />
-            {book.storeUrl ? (
+            {book.storeUrl && !ownsBook ? (
               <a
                 href={toExternalUrl(book.storeUrl)}
                 target="_blank"
