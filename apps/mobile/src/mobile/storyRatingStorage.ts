@@ -17,7 +17,12 @@ const STORAGE_FILE = `${FileSystem.documentDirectory ?? ""}story-ratings.json`;
 
 type StoredPayload = {
   version: 1;
-  byUser: Record<string, string[]>;
+  /** slug de la historia -> pulgar. Antes era una lista de slugs, sin el
+   *  sentido del voto; hacía falta el valor para poder pintar marcado el
+   *  pulgar elegido al volver a la pantalla. Las listas viejas se migran
+   *  al leerlas, contando cada slug como pulgar arriba desconocido: se
+   *  respeta que ya votó y se le deja cambiarlo de un toque. */
+  byUser: Record<string, Record<string, boolean>>;
   /** Cuentas a las que ya se les preguntó al cerrar el panel. Una vez y nunca más. */
   closeAskedByUser?: Record<string, boolean>;
 };
@@ -33,9 +38,20 @@ async function readAll(): Promise<StoredPayload> {
     const parsed = JSON.parse(raw) as Partial<StoredPayload>;
     const byUser = parsed?.byUser;
     if (!byUser || typeof byUser !== "object") return EMPTY;
-    const clean: Record<string, string[]> = {};
-    for (const [userId, ids] of Object.entries(byUser)) {
-      if (Array.isArray(ids)) clean[userId] = ids.filter((id): id is string => typeof id === "string");
+    const clean: Record<string, Record<string, boolean>> = {};
+    for (const [userId, value] of Object.entries(byUser)) {
+      if (Array.isArray(value)) {
+        // Formato viejo: lista de slugs.
+        clean[userId] = Object.fromEntries(
+          value.filter((id): id is string => typeof id === "string").map((id) => [id, true]),
+        );
+      } else if (value && typeof value === "object") {
+        clean[userId] = Object.fromEntries(
+          Object.entries(value as Record<string, unknown>).filter(
+            (entry): entry is [string, boolean] => typeof entry[1] === "boolean",
+          ),
+        );
+      }
     }
     const asked = parsed.closeAskedByUser;
     return {
@@ -48,24 +64,38 @@ async function readAll(): Promise<StoredPayload> {
   }
 }
 
-export async function loadRatedStoryKeys(userId: string | null): Promise<string[]> {
-  if (!userId) return [];
-  const all = await readAll();
-  return all.byUser[userId] ?? [];
+/**
+ * Clave de disco para un voto. La práctica se guarda aparte de la historia,
+ * con el mismo slug: son dos preguntas distintas y el pulgar de una no puede
+ * pintar marcada a la otra.
+ */
+export function ratingStorageKey(storySlug: string, surface: "story" | "practice"): string {
+  return surface === "practice" ? `practice:${storySlug}` : storySlug;
 }
 
-export async function markStoryRated(userId: string | null, storyKey: string): Promise<void> {
+/** Voto guardado por clave: true pulgar arriba, false abajo, ausente sin votar. */
+export async function loadRatedStoryVotes(
+  userId: string | null,
+): Promise<Record<string, boolean>> {
+  if (!userId) return {};
+  const all = await readAll();
+  return all.byUser[userId] ?? {};
+}
+
+export async function markStoryRated(
+  userId: string | null,
+  storyKey: string,
+  liked: boolean,
+): Promise<void> {
   if (!userId || !storyKey || !FileSystem.documentDirectory) return;
   try {
     const all = await readAll();
-    const current = all.byUser[userId] ?? [];
-    if (current.includes(storyKey)) return;
-    // Tope por cuenta: es una lista de "ya preguntado", no un historial. Las
-    // más viejas se caen primero y, en el peor caso, alguien que lleve
-    // cientos de historias vuelve a ver la pregunta en una que leyó hace
-    // mucho, que es un fallo sin consecuencia.
-    const next = [...current, storyKey].slice(-500);
-    all.byUser[userId] = next;
+    const current = all.byUser[userId] ?? {};
+    if (current[storyKey] === liked) return;
+    // Tope por cuenta: esto no es un historial, es lo justo para pintar el
+    // pulgar marcado al volver. Las más viejas se caen primero.
+    const entries = Object.entries({ ...current, [storyKey]: liked }).slice(-500);
+    all.byUser[userId] = Object.fromEntries(entries);
     await FileSystem.writeAsStringAsync(STORAGE_FILE, JSON.stringify(all));
   } catch {
     // Fallar aquí solo significa volver a preguntar; nunca romper el lector.

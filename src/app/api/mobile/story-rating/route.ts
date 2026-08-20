@@ -39,7 +39,11 @@ function str(v: unknown, max: number): string | null {
   return t ? t.slice(0, max) : null;
 }
 
+const VALID_SURFACES = ["story", "practice"] as const;
+type Surface = (typeof VALID_SURFACES)[number];
+
 type Body = {
+  surface?: unknown;
   storyId?: unknown;
   storySlug?: unknown;
   bookSlug?: unknown;
@@ -77,6 +81,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "liked must be a boolean" }, { status: 400 });
   }
 
+  // "story" = la historia; "practice" = los ejercicios de esa historia. Un
+  // cuerpo sin `surface` es la app vieja, que solo sabía valorar historias.
+  const rawSurface = str(body.surface, 20)?.toLowerCase();
+  const surface: Surface = rawSurface === "practice" ? "practice" : "story";
+
   const comment = str(body.comment, COMMENT_MAX);
   const platform = str(body.platform, 20)?.toLowerCase();
   const shared = {
@@ -94,13 +103,17 @@ export async function POST(req: NextRequest) {
   // lo distingue, y sin esa distinción las métricas contarían dos veces el
   // mismo pulgar (el voto y su comentario viajan en dos POST).
   const previous = await prisma.storyRating.findUnique({
-    where: { userId_storySlug: { userId: session.sub, storySlug } },
+    where: {
+      userId_storySlug_surface: { userId: session.sub, storySlug, surface },
+    },
     select: { id: true, liked: true, comment: true },
   });
 
   const rating = await prisma.storyRating.upsert({
-    where: { userId_storySlug: { userId: session.sub, storySlug } },
-    create: { userId: session.sub, storySlug, comment, ...shared },
+    where: {
+      userId_storySlug_surface: { userId: session.sub, storySlug, surface },
+    },
+    create: { userId: session.sub, storySlug, surface, comment, ...shared },
     // Un segundo POST sin comentario es el propio voto reenviado (por ejemplo
     // tras un reintento de red), no un borrado: solo se pisa el comentario
     // cuando el cuerpo trae uno.
@@ -112,11 +125,15 @@ export async function POST(req: NextRequest) {
   // se puede cruzar con el resto de la sesión sin inventar otro almacén.
   const metricEvents: Array<{ eventType: string; value: number }> = [];
   const votedNow = !previous || previous.liked !== body.liked;
+  const eventPrefix = surface === "practice" ? "practice" : "story";
   if (votedNow) {
-    metricEvents.push({ eventType: "story_rated", value: body.liked ? 1 : 0 });
+    metricEvents.push({ eventType: `${eventPrefix}_rated`, value: body.liked ? 1 : 0 });
   }
   if (comment && comment !== previous?.comment) {
-    metricEvents.push({ eventType: "story_rating_comment", value: comment.length });
+    metricEvents.push({
+      eventType: `${eventPrefix}_rating_comment`,
+      value: comment.length,
+    });
   }
 
   if (metricEvents.length > 0) {
@@ -129,6 +146,7 @@ export async function POST(req: NextRequest) {
           eventType: event.eventType,
           value: event.value,
           metadata: {
+            surface,
             liked: body.liked,
             hasComment: Boolean(comment ?? previous?.comment),
             changedMind: Boolean(previous && previous.liked !== body.liked),

@@ -13,6 +13,7 @@ import {
   useWindowDimensions,
   Easing,
   findNodeHandle,
+  Keyboard,
   KeyboardAvoidingView,
   Linking,
   Modal,
@@ -118,6 +119,8 @@ import { ProgressiveImage } from "./ProgressiveImage";
 import { useAndroidBottomInset } from "./useAndroidBottomInset";
 import { mobileCatalog } from "./catalog";
 import { fullMobileCatalog } from "./fullCatalog";
+import { RatingSentToast } from "./RatingSentToast";
+import { loadRatedStoryVotes, markStoryRated, ratingStorageKey } from "./storyRatingStorage";
 import { mobileConfig } from "../config";
 import { apiFetch, isApiErrorStatus } from "../lib/api";
 import {
@@ -1935,6 +1938,13 @@ function createSelectionFromGeneratedStory(story: MobileCreatedStory): ReaderSel
   };
 }
 
+/** Cache key for the add-journey picker's copy of a language's tracks. It is
+ *  deliberately a different namespace from the plain language key: the picker
+ *  holds every variant, the Journey tab holds only the learner's. */
+function journeyPickerCacheKey(language: string): string {
+  return `picker:${language.toLowerCase()}`;
+}
+
 function createSelectionFromStandaloneStory(story: MobileStandaloneStory): ReaderSelection {
   const language = story.language?.trim() || "Spanish";
   const region = story.region?.trim() || undefined;
@@ -2320,6 +2330,7 @@ export function MobileLibraryShell(args: {
   // "esto falla al practicar" sin preguntarle nada a nadie.
   const [feedbackScreen, setFeedbackScreen] = useState<string | null>(null);
   const canSendPracticeFeedback = Boolean(mobileConfig.apiBaseUrl && sessionToken);
+
   // Story ID that should wear the "next up" glow on the topic / book list
   // after a story-based practice session completes. Cleared after a few
   // seconds so the glow is attention-grabbing but not permanent.
@@ -2416,6 +2427,117 @@ export function MobileLibraryShell(args: {
   });
   const [practiceSeedItems, setPracticeSeedItems] = useState<PracticeFavoriteItem[] | null>(null);
   const [practiceLoadError, setPracticeLoadError] = useState<string | null>(null);
+  /** Valoración de la historia practicada, en el panel de fin de práctica.
+   *  Solo existe cuando la práctica salió de UNA historia: desde favoritos o
+   *  desde un tema entero no hay una historia a la que apuntar. */
+  const [practiceRatingLiked, setPracticeRatingLiked] = useState<boolean | null>(null);
+  const [practiceRatingComment, setPracticeRatingComment] = useState("");
+  const [practiceRatingBoxOpen, setPracticeRatingBoxOpen] = useState(false);
+  const [practiceRatingSent, setPracticeRatingSent] = useState(false);
+  /**
+   * Qué se está practicando, sea lo que sea. Antes esto era "la historia
+   * practicada" y solo existía cuando la práctica salía de una historia, así
+   * que desde un tema del journey o desde Favoritos no había forma de valorar
+   * la práctica: el bloque no se pintaba y la mitad de los caminos se quedaban
+   * mudos.
+   *
+   * La clave viaja en `storySlug` con `surface: "practice"`. Para un tema no es
+   * una historia, es el tema; el nombre de la columna se queda corto, pero la
+   * fila es de la práctica y no pisa nada.
+   */
+  const practiceRatingSubject = (() => {
+    if (practiceLaunchContext.source === "story") {
+      return {
+        key: practiceLaunchContext.storySlug,
+        bookSlug: practiceLaunchContext.bookSlug ?? null,
+      };
+    }
+    if (practiceLaunchContext.source === "journey") {
+      const variant = practiceLaunchContext.variantId ?? "default";
+      return {
+        key: `topic:${variant}:${practiceLaunchContext.levelId}:${practiceLaunchContext.topicId}`,
+        bookSlug: null,
+      };
+    }
+    return { key: "favorites", bookSlug: null };
+  })();
+
+  // Siembra el pulgar ya dado (por ejemplo, votado al final de la historia
+  // hace un minuto) para que el panel de práctica no vuelva a preguntar en
+  // frío algo que la persona ya contestó.
+  useEffect(() => {
+    setPracticeRatingBoxOpen(false);
+    setPracticeRatingSent(false);
+    setPracticeRatingComment("");
+    setPracticeRatingLiked(null);
+    if (!practiceRatingSubject.key) return;
+    let cancelled = false;
+    void (async () => {
+      const votes = await loadRatedStoryVotes(sessionUserId ?? null);
+      if (cancelled) return;
+      const previous = votes[ratingStorageKey(practiceRatingSubject.key, "practice")];
+      if (typeof previous === "boolean") setPracticeRatingLiked(previous);
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [practiceRatingSubject.key, sessionUserId]);
+
+
+  async function postPracticeStoryRating(liked: boolean, comment?: string) {
+    if (!practiceRatingSubject.key || !sessionToken) return;
+    try {
+      await apiFetch<{ ok: boolean }>({
+        baseUrl: mobileConfig.apiBaseUrl,
+        path: "/api/mobile/story-rating",
+        token: sessionToken,
+        method: "POST",
+        timeoutMs: 15000,
+        body: {
+          storyId: practiceRatingSubject.key,
+          storySlug: practiceRatingSubject.key,
+          bookSlug: practiceRatingSubject.bookSlug,
+          liked,
+          // La práctica va en su propia fila: valorar los ejercicios no puede
+          // sobrescribir lo que la persona opinó de la historia.
+          surface: "practice",
+          ...(comment ? { comment } : {}),
+          platform: Platform.OS,
+        },
+      });
+    } catch {
+      // El voto local ya está pintado; un fallo de red no puede convertirse en
+      // un error encima del panel de resultados.
+    }
+  }
+
+  function handlePracticeVote(liked: boolean) {
+    setPracticeRatingBoxOpen(true);
+    setPracticeRatingSent(false);
+    // Tocar el pulgar ya marcado abre la caja sin reenviar el voto.
+    if (practiceRatingLiked === liked) return;
+    setPracticeRatingLiked(liked);
+    void postPracticeStoryRating(liked);
+    void markStoryRated(
+      sessionUserId ?? null,
+      ratingStorageKey(practiceRatingSubject.key, "practice"),
+      liked,
+    );
+  }
+
+  function handlePracticeRatingSend() {
+    const trimmed = practiceRatingComment.trim();
+    if (trimmed && practiceRatingLiked !== null) {
+      void postPracticeStoryRating(practiceRatingLiked, trimmed);
+      // Acuse temporal: lo unico que la persona no puede comprobar por si
+      // misma es que el texto salio.
+      setPracticeRatingSent(true);
+    }
+    setPracticeRatingComment("");
+    setPracticeRatingBoxOpen(false);
+    Keyboard.dismiss();
+  }
   const [practiceReturnSelection, setPracticeReturnSelection] = useState<ReaderSelection | null>(null);
   // Screen the user was on when story-based practice was launched (typically
   // "journey" if they came from a topic detail, or "home" / "explore" etc.).
@@ -4518,10 +4640,17 @@ export function MobileLibraryShell(args: {
     []
   );
 
+  // The picker asks for EVERY variant of a language, and caches them apart from
+  // the Journey tab's own payload. The tab is filtered to the flavour the
+  // learner asked for (server side, since 2026-08-20), and sharing one cache
+  // key would leak that filtered list into the picker, or the picker's full
+  // list back into the tab. Picking "Spanish LATAM" here is a deliberate
+  // request for it, so the filter must not apply; the panel narrows the list to
+  // the pick on its own.
   const getTracksForLanguage = useCallback(
     async (language: string): Promise<JourneysPanelTrack[]> => {
       if (!sessionToken) return [];
-      const cacheKey = language.toLowerCase();
+      const cacheKey = journeyPickerCacheKey(language);
       const cached = journeyCacheByLanguageRef.current.get(cacheKey);
       if (cached?.tracks?.length) {
         return cached.tracks.map(trackToPanelEntry);
@@ -4529,7 +4658,7 @@ export function MobileLibraryShell(args: {
       try {
         const payload = await apiFetch<MobileJourneyPayload>({
           baseUrl: mobileConfig.apiBaseUrl,
-          path: `/api/mobile/journey?language=${encodeURIComponent(language)}`,
+          path: `/api/mobile/journey?language=${encodeURIComponent(language)}&variant=all`,
           token: sessionToken,
         });
         journeyCacheByLanguageRef.current.set(cacheKey, payload);
@@ -4549,7 +4678,7 @@ export function MobileLibraryShell(args: {
   // cache.
   const getTracksForLanguageSync = useCallback(
     (language: string): JourneysPanelTrack[] | null => {
-      const cached = journeyCacheByLanguageRef.current.get(language.toLowerCase());
+      const cached = journeyCacheByLanguageRef.current.get(journeyPickerCacheKey(language));
       if (!cached?.tracks?.length) return null;
       return cached.tracks.map(trackToPanelEntry);
     },
@@ -13704,20 +13833,6 @@ export function MobileLibraryShell(args: {
 
                 return (
                   <>
-                    {/* Chips en esquinas */}
-                    <View style={styles.practiceResultCornerChips}>
-                      <View style={styles.practiceResultCornerChip}>
-                        <Feather name="zap" size={13} color="#ffd25f" />
-                        <Text style={styles.practiceResultCornerChipValue}>+{xpTotal}</Text>
-                        <Text style={styles.practiceResultCornerChipLabel}>XP</Text>
-                      </View>
-                      <View style={styles.practiceResultCornerChip}>
-                        <MaterialCommunityIcons name="fire" size={13} color="#fb923c" />
-                        <Text style={styles.practiceResultCornerChipValue}>x{practiceMaxStreak}</Text>
-                        <Text style={styles.practiceResultCornerChipLabel}>COMBO</Text>
-                      </View>
-                    </View>
-
                     {/* Animated result ring: arc fills 0 → score/total
                         with a single color bucketed by accuracy (green
                         ≥80, amber ≥50, red below). Centre number counts
@@ -13729,31 +13844,38 @@ export function MobileLibraryShell(args: {
                       accuracyPct={accuracyPct}
                     />
 
-                    {/* Saludo + headline */}
+                    {/* Saludo + headline. El subtexto "X of N correct" salía
+                        justo debajo del anillo, que YA dice ese número; y la
+                        tarjeta de accuracy lo repetía en porcentaje. Con las
+                        tres cosas la valoración caía fuera de pantalla y había
+                        que hacer scroll para opinar. El subtexto se queda solo
+                        en el checkpoint, donde dice algo que el anillo no
+                        sabe: cuántos aciertos faltan para pasar. */}
                     <View style={styles.practiceResultMessage}>
                       <Text style={styles.practiceResultGreeting}>{greeting}</Text>
                       <Text style={styles.practiceResultHeadline}>{headline}</Text>
-                      <Text style={styles.practiceResultSubtext}>{subtext}</Text>
+                      {isCheckpoint ? (
+                        <Text style={styles.practiceResultSubtext}>{subtext}</Text>
+                      ) : null}
                     </View>
 
-                    {/* Stats fila 2 cards */}
-                    <View style={styles.practiceResultStatsRow}>
-                      <View style={styles.practiceResultStatCard}>
-                        <Feather name="target" size={20} color="#9fe8ff" />
-                        <View style={styles.practiceResultStatCardText}>
-                          <Text style={styles.practiceResultStatValueLarge}>{accuracyPct}%</Text>
-                          <Text style={styles.practiceResultStatLabelLarge}>accuracy</Text>
-                        </View>
+                    {/* Una fila de chips en vez de dos tarjetas grandes: XP,
+                        combo y tiempo caben en el alto de una sola. */}
+                    <View style={styles.practiceResultChipRow}>
+                      <View style={styles.practiceResultChip}>
+                        <Feather name="zap" size={12} color="#ffd25f" />
+                        <Text style={styles.practiceResultChipText}>+{xpTotal} XP</Text>
                       </View>
-                      <View style={styles.practiceResultStatCard}>
-                        <Feather name="clock" size={20} color="#f8c15c" />
-                        <View style={styles.practiceResultStatCardText}>
-                          <Text style={styles.practiceResultStatValueLarge}>
-                            {durationMs > 0 ? durationLabel : "-"}
-                          </Text>
-                          <Text style={styles.practiceResultStatLabelLarge}>time</Text>
-                        </View>
+                      <View style={styles.practiceResultChip}>
+                        <MaterialCommunityIcons name="fire" size={12} color="#fb923c" />
+                        <Text style={styles.practiceResultChipText}>x{practiceMaxStreak} combo</Text>
                       </View>
+                      {durationMs > 0 ? (
+                        <View style={styles.practiceResultChip}>
+                          <Feather name="clock" size={12} color="#f8c15c" />
+                          <Text style={styles.practiceResultChipText}>{durationLabel}</Text>
+                        </View>
+                      ) : null}
                     </View>
                   </>
                 );
@@ -13850,7 +13972,6 @@ export function MobileLibraryShell(args: {
 
                 return (
                   <View style={styles.practiceResultWhatsNext}>
-                    <Text style={styles.practiceResultWhatsNextLabel}>WHAT'S NEXT</Text>
                     <View style={styles.practiceResultWhatsNextRow}>
                       <Pressable
                         onPress={primaryAction.onPress}
@@ -13982,17 +14103,104 @@ export function MobileLibraryShell(args: {
                         a práctica ya pierde gente. Un texto discreto debajo
                         pregunta sin disputarle el sitio al "Next story". */}
                     {canSendPracticeFeedback ? (
-                      <Pressable
-                        onPress={() => setFeedbackScreen("practice complete")}
-                        style={styles.practiceResultFeedbackLink}
-                        accessibilityLabel="qa-practice-feedback"
-                        testID="qa-practice-feedback"
-                      >
-                        <Feather name="message-square" size={13} color="#8aa0bd" />
-                        <Text style={styles.practiceResultFeedbackLinkText}>
-                          How was that? Tell me in one line
-                        </Text>
-                      </Pressable>
+                      <View style={styles.practiceRatingBlock}>
+                        {practiceRatingBoxOpen ? (
+                          <>
+                            <Text style={styles.practiceRatingPrompt}>
+                              {practiceRatingLiked ? "Glad you liked it." : "Noted."}
+                              <Text style={styles.practiceRatingOptional}>
+                                {" "}
+                                {practiceRatingLiked ? "What worked?" : "What put you off?"} (optional)
+                              </Text>
+                            </Text>
+                            <TextInput
+                              value={practiceRatingComment}
+                              onChangeText={setPracticeRatingComment}
+                              placeholder={
+                                practiceRatingLiked
+                                  ? "The market scene stuck with me."
+                                  : "Too many new words at once."
+                              }
+                              placeholderTextColor="#7f93ad"
+                              multiline
+                              maxLength={2000}
+                              style={styles.practiceRatingInput}
+                              accessibilityLabel="qa-practice-rating-comment"
+                              testID="qa-practice-rating-comment"
+                            />
+                            <Pressable
+                              onPress={handlePracticeRatingSend}
+                              accessibilityRole="button"
+                              accessibilityLabel="qa-practice-rating-send"
+                              testID="qa-practice-rating-send"
+                              style={styles.practiceRatingSend}
+                            >
+                              <Feather name="send" size={13} color="#0a1424" />
+                              <Text style={styles.practiceRatingSendText}>Send</Text>
+                            </Pressable>
+                          </>
+                        ) : practiceRatingSent ? (
+                          <RatingSentToast onDone={() => setPracticeRatingSent(false)} />
+                        ) : (
+                          <>
+                            <Text style={styles.practiceRatingPrompt}>How was this practice?</Text>
+                            <View style={styles.practiceRatingRow}>
+                              <Pressable
+                                onPress={() => handlePracticeVote(false)}
+                                accessibilityRole="button"
+                                accessibilityLabel="qa-practice-rating-down"
+                                testID="qa-practice-rating-down"
+                                style={[
+                                  styles.practiceRatingButton,
+                                  practiceRatingLiked === false ? styles.practiceRatingButtonDown : null,
+                                ]}
+                              >
+                                <Feather
+                                  name="thumbs-down"
+                                  size={15}
+                                  color={practiceRatingLiked === false ? "#fb7185" : "#b8c9df"}
+                                />
+                                <Text
+                                  style={[
+                                    styles.practiceRatingButtonText,
+                                    practiceRatingLiked === false
+                                      ? styles.practiceRatingButtonTextDown
+                                      : null,
+                                  ]}
+                                >
+                                  Didn&apos;t like it
+                                </Text>
+                              </Pressable>
+                              <Pressable
+                                onPress={() => handlePracticeVote(true)}
+                                accessibilityRole="button"
+                                accessibilityLabel="qa-practice-rating-up"
+                                testID="qa-practice-rating-up"
+                                style={[
+                                  styles.practiceRatingButton,
+                                  practiceRatingLiked === true ? styles.practiceRatingButtonUp : null,
+                                ]}
+                              >
+                                <Feather
+                                  name="thumbs-up"
+                                  size={15}
+                                  color={practiceRatingLiked === true ? "#9ce5c1" : "#b8c9df"}
+                                />
+                                <Text
+                                  style={[
+                                    styles.practiceRatingButtonText,
+                                    practiceRatingLiked === true
+                                      ? styles.practiceRatingButtonTextUp
+                                      : null,
+                                  ]}
+                                >
+                                  Liked it
+                                </Text>
+                              </Pressable>
+                            </View>
+                          </>
+                        )}
+                      </View>
                     ) : null}
                   </View>
                 );
@@ -14765,6 +14973,26 @@ export function MobileLibraryShell(args: {
             // hechos fueron timeout/wrong, el score es 0 y el sheet
             // muestra "Don't give up" en lugar de un falso "Nice work".
             exercisesCorrect={practiceScore}
+            rating={
+              canSendPracticeFeedback
+                ? {
+                    liked: practiceRatingLiked,
+                    boxOpen: practiceRatingBoxOpen,
+                    justSent: practiceRatingSent,
+                    onSentDone: () => setPracticeRatingSent(false),
+                    onCloseBox: () => {
+                      // Volver a la cara de salida sin perder el borrador ni
+                      // el voto, igual que la X del diálogo del lector.
+                      Keyboard.dismiss();
+                      setPracticeRatingBoxOpen(false);
+                    },
+                    comment: practiceRatingComment,
+                    onVote: handlePracticeVote,
+                    onChangeComment: setPracticeRatingComment,
+                    onSend: handlePracticeRatingSend,
+                  }
+                : undefined
+            }
             onContinuePracticing={() => {
               // Cierra el sheet y reanuda. La pausa se levanta para
               // que el timer y el auto-advance retomen donde quedaron.
@@ -26273,6 +26501,30 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     gap: 8,
   },
+  practiceResultChipRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: 6,
+    marginTop: 2,
+    marginBottom: 10,
+  },
+  practiceResultChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.12)",
+    backgroundColor: "rgba(255,255,255,0.05)",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  practiceResultChipText: {
+    color: "#dbe9ff",
+    fontSize: 12,
+    fontWeight: "700",
+  },
   practiceResultCornerChips: {
     width: "100%",
     flexDirection: "row",
@@ -26501,6 +26753,90 @@ const styles = StyleSheet.create({
   },
   // Discreto a propósito: pregunta sin robarle el sitio a las acciones de
   // arriba, que son las que empujan a seguir.
+  practiceRatingBlock: {
+    alignSelf: "stretch",
+    marginTop: 12,
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderTopColor: "rgba(255,255,255,0.08)",
+  },
+  practiceRatingPrompt: {
+    color: "#8aa0bd",
+    fontSize: 12,
+    fontWeight: "700",
+    textAlign: "center",
+    marginBottom: 8,
+  },
+  practiceRatingOptional: {
+    color: "#7f93ad",
+    fontWeight: "600",
+  },
+  practiceRatingRow: {
+    flexDirection: "row",
+    gap: 8,
+  },
+  practiceRatingButton: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "#2a3f5c",
+    paddingVertical: 9,
+    paddingHorizontal: 6,
+  },
+  practiceRatingButtonUp: {
+    borderColor: "#9ce5c1",
+    backgroundColor: "rgba(156, 229, 193, 0.14)",
+  },
+  practiceRatingButtonDown: {
+    borderColor: "#fb7185",
+    backgroundColor: "rgba(251, 113, 133, 0.14)",
+  },
+  practiceRatingButtonText: {
+    color: "#dbe9ff",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  practiceRatingButtonTextUp: {
+    color: "#9ce5c1",
+  },
+  practiceRatingButtonTextDown: {
+    color: "#fb7185",
+  },
+  practiceRatingInput: {
+    alignSelf: "stretch",
+    minHeight: 64,
+    maxHeight: 120,
+    backgroundColor: "rgba(255,255,255,0.05)",
+    borderWidth: 1,
+    borderColor: "#2a3f5c",
+    borderRadius: 14,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    color: "#eaf2ff",
+    fontSize: 13,
+    lineHeight: 19,
+    textAlignVertical: "top",
+  },
+  practiceRatingSend: {
+    alignSelf: "stretch",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 7,
+    borderRadius: 999,
+    backgroundColor: "#f8c15c",
+    paddingVertical: 10,
+    marginTop: 8,
+  },
+  practiceRatingSendText: {
+    color: "#0a1424",
+    fontSize: 13,
+    fontWeight: "900",
+  },
   practiceResultFeedbackLink: {
     flexDirection: "row",
     alignItems: "center",

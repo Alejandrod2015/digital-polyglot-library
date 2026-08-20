@@ -1196,6 +1196,12 @@ model StoryRating {
   userId String
   email  String?
 
+  /// QUÉ se valora. Con `surface = "story"` es siempre una historia. Con
+  /// `surface = "practice"` es lo que se practicó, que no siempre es una
+  /// historia: puede ser un tema (`topic:<variante>:<nivel>:<tema>`) o el
+  /// repaso de favoritos (`favorites`). El nombre de la columna se quedó corto
+  /// cuando la valoración solo existía en el lector.
+  ///
   /// La identidad de la historia tal y como la conoce la app. El id de una
   /// historia de journey viaja en dos formas (`journey:<id>` y
   /// `journey-<id>`), así que el slug es lo que une de verdad entre
@@ -1203,6 +1209,13 @@ model StoryRating {
   storyId   String
   storySlug String
   bookSlug  String?
+
+  /// Qué se está valorando: la historia ("story") o la práctica de esa
+  /// historia ("practice"). Son preguntas distintas y hay que poder separarlas:
+  /// una historia puede gustar y sus ejercicios no. Sin esta columna el pulgar
+  /// de la práctica pisaba el de la historia, porque la clave única era solo
+  /// (userId, storySlug).
+  surface String  @default("story")
 
   liked   Boolean
   comment String?
@@ -1214,8 +1227,9 @@ model StoryRating {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@unique([userId, storySlug])
+  @@unique([userId, storySlug, surface])
   @@index([storySlug])
+  @@index([surface])
   @@index([createdAt])
   @@map("dp_story_ratings_v1")
 }

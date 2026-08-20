@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef } from "react";
-import { Animated, Easing, Pressable, StyleSheet, Text, View } from "react-native";
+import { Animated, Easing, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { RatingSentToast } from "./RatingSentToast";
 import { Feather } from "@expo/vector-icons";
 
 /**
@@ -44,6 +45,22 @@ export type PracticeExitSheetProps = {
    * (Home tab). Secondary action, link discreto debajo del primary.
    */
   onExitAnyway: () => void;
+  /** Valoración de la práctica. Ausente cuando no hay una historia detrás
+   *  (favoritos, tema entero) o cuando no hay sesión. */
+  rating?: {
+    liked: boolean | null;
+    boxOpen: boolean;
+    /** Acuse temporal tras enviar un comentario. */
+    justSent?: boolean;
+    /** Se llama cuando el acuse termina de desvanecerse. */
+    onSentDone?: () => void;
+    /** Cierra la cara de comentario y devuelve al panel de salida. */
+    onCloseBox?: () => void;
+    comment: string;
+    onVote: (liked: boolean) => void;
+    onChangeComment: (value: string) => void;
+    onSend: () => void;
+  };
 };
 
 type Phase = "empty" | "no-correct" | "partial" | "almost-done";
@@ -63,6 +80,7 @@ export function PracticeExitSheet({
   onContinuePracticing,
   onExitAnyway,
   resumesOnReturn,
+  rating,
 }: PracticeExitSheetProps) {
   const backdropOpacity = useRef(new Animated.Value(0)).current;
   const cardOpacity = useRef(new Animated.Value(0)).current;
@@ -174,13 +192,61 @@ export function PracticeExitSheet({
             "Continue practicing": cierra el sheet y reanuda. Coincide
             con el endOfStoryDialogClose del reader. */}
         <Pressable
-          onPress={onContinuePracticing}
+          onPress={rating?.boxOpen ? rating.onCloseBox : onContinuePracticing}
           style={styles.closeButton}
           hitSlop={12}
           accessibilityLabel="qa-practice-exit-close"
         >
           <Feather name="x" size={18} color="#aebcd3" />
         </Pressable>
+
+        {rating?.boxOpen ? (
+          <>
+            <View
+              style={[
+                styles.ratingFaceRing,
+                rating.liked ? styles.ratingFaceRingUp : styles.ratingFaceRingDown,
+              ]}
+            >
+              <Feather
+                name={rating.liked ? "thumbs-up" : "thumbs-down"}
+                size={24}
+                color={rating.liked ? "#9ce5c1" : "#aebcd3"}
+              />
+            </View>
+            <Text style={styles.title}>{rating.liked ? "Glad it works" : "Noted"}</Text>
+            <Text style={styles.body}>
+              {rating.liked ? "What worked?" : "What put you off?"}
+              <Text style={styles.ratingOptional}> (optional)</Text>
+            </Text>
+            <TextInput
+              value={rating.comment}
+              onChangeText={rating.onChangeComment}
+              placeholder={
+                rating.liked
+                  ? "The audio exercises are the useful ones."
+                  : "Too many repeats of the same word."
+              }
+              placeholderTextColor="#7f93ad"
+              multiline
+              maxLength={2000}
+              style={styles.ratingInput}
+              accessibilityLabel="qa-practice-exit-rating-comment"
+              testID="qa-practice-exit-rating-comment"
+            />
+            <Pressable
+              onPress={rating.onSend}
+              style={styles.ratingSend}
+              accessibilityRole="button"
+              accessibilityLabel="qa-practice-exit-rating-send"
+              testID="qa-practice-exit-rating-send"
+            >
+              <Feather name="send" size={15} color="#0e1727" />
+              <Text style={styles.ratingSendText}>Send</Text>
+            </Pressable>
+          </>
+        ) : (
+          <>
 
         {/* Trophy ring amarillo idéntico al del endOfStory; cambiamos
             sólo el icon: pausa porque la sesión está pausada. */}
@@ -205,6 +271,72 @@ export function PracticeExitSheet({
           <Text style={styles.primaryButtonText}>Continue practicing</Text>
         </Pressable>
 
+        {/* Fila de valoración. Tocar un pulgar NO abre una caja aquí dentro:
+            cambia la cara del panel entero, igual que el diálogo del lector.
+            Meter el comentario dentro del panel de salida mezclaba dos
+            preguntas en la misma tarjeta ("¿te vas?" y "¿qué te pareció?"). */}
+        {rating && !rating.boxOpen ? (
+          <View style={styles.ratingBlock}>
+            {rating.justSent ? (
+              <RatingSentToast onDone={rating.onSentDone} />
+            ) : (
+              <>
+                <Text style={styles.ratingPrompt}>How was this practice?</Text>
+                <View style={styles.ratingRow}>
+                  <Pressable
+                    onPress={() => rating.onVote(false)}
+                    style={[
+                      styles.ratingButton,
+                      rating.liked === false ? styles.ratingButtonDown : null,
+                    ]}
+                    accessibilityRole="button"
+                    accessibilityLabel="qa-practice-exit-rating-down"
+                    testID="qa-practice-exit-rating-down"
+                  >
+                    <Feather
+                      name="thumbs-down"
+                      size={15}
+                      color={rating.liked === false ? "#fb7185" : "#b8c9df"}
+                    />
+                    <Text
+                      style={[
+                        styles.ratingButtonText,
+                        rating.liked === false ? styles.ratingButtonTextDown : null,
+                      ]}
+                    >
+                      Didn&apos;t like it
+                    </Text>
+                  </Pressable>
+                  <Pressable
+                    onPress={() => rating.onVote(true)}
+                    style={[
+                      styles.ratingButton,
+                      rating.liked === true ? styles.ratingButtonUp : null,
+                    ]}
+                    accessibilityRole="button"
+                    accessibilityLabel="qa-practice-exit-rating-up"
+                    testID="qa-practice-exit-rating-up"
+                  >
+                    <Feather
+                      name="thumbs-up"
+                      size={15}
+                      color={rating.liked === true ? "#9ce5c1" : "#b8c9df"}
+                    />
+                    <Text
+                      style={[
+                        styles.ratingButtonText,
+                        rating.liked === true ? styles.ratingButtonTextUp : null,
+                      ]}
+                    >
+                      Liked it
+                    </Text>
+                  </Pressable>
+                </View>
+              </>
+            )}
+          </View>
+        ) : null}
+
         <Pressable
           onPress={onExitAnyway}
           style={styles.exitLink}
@@ -214,6 +346,8 @@ export function PracticeExitSheet({
         >
           <Text style={styles.exitLinkText}>Exit anyway</Text>
         </Pressable>
+          </>
+        )}
       </Animated.View>
     </View>
   );
@@ -226,6 +360,107 @@ export function PracticeExitSheet({
 // rediseño futuro debería actualizar AMBOS lados al mismo tiempo
 // (probablemente extrayendo a tokens del theme).
 const styles = StyleSheet.create({
+  ratingFaceRing: {
+    width: 56,
+    height: 56,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+    alignSelf: "center",
+  },
+  ratingFaceRingUp: {
+    backgroundColor: "rgba(156, 229, 193, 0.14)",
+    borderColor: "rgba(156, 229, 193, 0.3)",
+  },
+  ratingFaceRingDown: {
+    backgroundColor: "rgba(255,255,255,0.06)",
+    borderColor: "#2d476b",
+  },
+  ratingBlock: {
+    alignSelf: "stretch",
+    marginTop: 4,
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderTopColor: "rgba(255,255,255,0.09)",
+  },
+  ratingPrompt: {
+    color: "#8aa0bd",
+    fontSize: 12,
+    fontWeight: "700",
+    textAlign: "center",
+    marginBottom: 8,
+  },
+  ratingOptional: {
+    color: "#7f93ad",
+    fontWeight: "600",
+  },
+  ratingRow: {
+    flexDirection: "row",
+    gap: 8,
+  },
+  ratingButton: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "#2d476b",
+    paddingVertical: 9,
+    paddingHorizontal: 6,
+  },
+  ratingButtonUp: {
+    borderColor: "#9ce5c1",
+    backgroundColor: "rgba(156, 229, 193, 0.14)",
+  },
+  ratingButtonDown: {
+    borderColor: "#fb7185",
+    backgroundColor: "rgba(251, 113, 133, 0.14)",
+  },
+  ratingButtonText: {
+    color: "#dbe9ff",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  ratingButtonTextUp: {
+    color: "#9ce5c1",
+  },
+  ratingButtonTextDown: {
+    color: "#fb7185",
+  },
+  ratingInput: {
+    alignSelf: "stretch",
+    minHeight: 64,
+    maxHeight: 120,
+    backgroundColor: "rgba(255,255,255,0.05)",
+    borderWidth: 1,
+    borderColor: "#2d476b",
+    borderRadius: 14,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    color: "#eaf2ff",
+    fontSize: 13,
+    lineHeight: 19,
+    textAlignVertical: "top",
+  },
+  ratingSend: {
+    alignSelf: "stretch",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 7,
+    borderRadius: 999,
+    backgroundColor: "#f8c15c",
+    paddingVertical: 10,
+    marginTop: 8,
+  },
+  ratingSendText: {
+    color: "#0e1727",
+    fontSize: 13,
+    fontWeight: "900",
+  },
   container: {
     ...StyleSheet.absoluteFillObject,
     justifyContent: "center",

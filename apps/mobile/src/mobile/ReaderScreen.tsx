@@ -36,9 +36,10 @@ import {
 import * as Application from "expo-application";
 import * as FileSystem from "expo-file-system/legacy";
 import { NativeAudioPlayer } from "./NativeAudioPlayer";
+import { RatingSentToast } from "./RatingSentToast";
 import {
   hasCloseAskBeenUsed,
-  loadRatedStoryKeys,
+  loadRatedStoryVotes,
   markCloseAskUsed,
   markStoryRated,
 } from "./storyRatingStorage";
@@ -1833,6 +1834,10 @@ export function ReaderScreen(args: {
    *  "Maybe later" ya había dicho que se iba. */
   const [storyRatingOrigin, setStoryRatingOrigin] = useState<"practice" | "later">("practice");
   const [storyRatingComment, setStoryRatingComment] = useState("");
+  /** Acuse temporal tras enviar un comentario. Sin esto el texto desaparece y
+   *  no queda ni una señal de que salió: lo único que el usuario no puede ver
+   *  por sí mismo es justo eso. */
+  const [storyRatingJustSent, setStoryRatingJustSent] = useState(false);
   /** Ya valorada en otra sesión (disco) o hace un momento. No se repregunta. */
   const [storyAlreadyRated, setStoryAlreadyRated] = useState(false);
   /** Alto del teclado. El diálogo va centrado en un overlay absoluto, así que
@@ -2038,12 +2043,17 @@ export function ReaderScreen(args: {
     setStoryAlreadyRated(false);
     let cancelled = false;
     void (async () => {
-      const [rated, closeUsed] = await Promise.all([
-        loadRatedStoryKeys(sessionUserId ?? null),
+      const [votes, closeUsed] = await Promise.all([
+        loadRatedStoryVotes(sessionUserId ?? null),
         hasCloseAskBeenUsed(sessionUserId ?? null),
       ]);
       if (cancelled) return;
-      if (rated.includes(story.slug)) setStoryAlreadyRated(true);
+      const previousVote = votes[story.slug];
+      if (typeof previousVote === "boolean") {
+        setStoryAlreadyRated(true);
+        // El pulgar de la última vez, para pintarlo marcado al entrar.
+        setStoryRatingLiked(previousVote);
+      }
       setCloseAskUsed(closeUsed);
     })();
     return () => {
@@ -2076,6 +2086,11 @@ export function ReaderScreen(args: {
    * tendría ninguna. Un toque cuesta lo mismo en todas.
    */
   const canRateStory = Boolean(sessionToken) && !storyAlreadyRated;
+  /** La fila de pulgares se pinta siempre que haya sesión, votada o no: es la
+   *  única puerta que le queda a alguien para cambiar de opinión o añadir un
+   *  comentario después. Antes desaparecía tras votar y dejaba un "Thanks,
+   *  noted" que no llevaba a ningún sitio. */
+  const showRatingRow = Boolean(sessionToken);
 
   async function postStoryRating(liked: boolean, comment?: string) {
     if (!sessionToken) return;
@@ -2091,6 +2106,7 @@ export function ReaderScreen(args: {
           storySlug: story.slug,
           bookSlug: book.slug,
           liked,
+          surface: "story",
           ...(comment ? { comment } : {}),
           platform: Platform.OS,
           appVersion: Application.nativeApplicationVersion ?? undefined,
@@ -2123,8 +2139,9 @@ export function ReaderScreen(args: {
     // un paso. Sacar a alguien de la historia entera por cerrar una caja
     // opcional le cobra la opinion que acaba de dar.
     if (endOfStoryFace === "comment") {
+      // El borrador NO se borra: si vuelve a abrir la caja, lo que escribió a
+      // medias sigue ahí.
       Keyboard.dismiss();
-      setStoryRatingComment("");
       setEndOfStoryFace("practice");
       return;
     }
@@ -2141,26 +2158,39 @@ export function ReaderScreen(args: {
   // ya no decide nada: por eso cerrarla, escribir o no escribir da igual.
   function handleStoryVote(liked: boolean, origin: "practice" | "later") {
     setStoryRatingOrigin(origin);
+    setEndOfStoryFace("comment");
+    // Tocar el pulgar que YA estaba marcado no es un voto nuevo: es la puerta
+    // a la caja de comentario. Reenviarlo solo ensuciaría las métricas con un
+    // voto repetido que no cambia nada.
+    if (storyRatingLiked === liked) return;
     setStoryRatingLiked(liked);
     setStoryAlreadyRated(true);
-    setEndOfStoryFace("comment");
     void postStoryRating(liked);
-    void markStoryRated(sessionUserId ?? null, story.slug);
+    void markStoryRated(sessionUserId ?? null, story.slug, liked);
   }
 
   function handleStoryRatingSend() {
     const trimmed = storyRatingComment.trim();
-    if (trimmed && storyRatingLiked !== null) {
-      void postStoryRating(storyRatingLiked, trimmed);
+    const sentComment = Boolean(trimmed) && storyRatingLiked !== null;
+    if (sentComment) {
+      void postStoryRating(storyRatingLiked as boolean, trimmed);
     }
     setStoryRatingComment("");
     Keyboard.dismiss();
+    // Con comentario enviado SIEMPRE se vuelve al panel, venga de donde venga:
+    // el acuse vive ahí y cerrar de golpe se lo comería.
+    if (sentComment) {
+      setStoryRatingJustSent(true);
+      setEndOfStoryFace("practice");
+      return;
+    }
     if (storyRatingOrigin === "practice") {
       setEndOfStoryFace("practice");
       return;
     }
     closeEndOfStoryPrompt();
   }
+
 
   function maybeFireEndOfStoryPrompt() {
     if (!onOpenPractice) return;
@@ -2914,7 +2944,7 @@ export function ReaderScreen(args: {
                 <Text style={styles.endOfStoryBody} numberOfLines={2}>
                   How was &quot;{story.title}&quot;?
                 </Text>
-                {/* "Not for me" a la izquierda y "Liked it" a la derecha: la
+                {/* "Didn't like it" a la izquierda y "Liked it" a la derecha: la
                     mayoría es diestra y el pulgar llega antes al lado derecho,
                     que es además donde esta app pone siempre la acción que
                     quiere que se toque. */}
@@ -2927,7 +2957,7 @@ export function ReaderScreen(args: {
                     style={styles.storyRatingButton}
                   >
                     <Feather name="thumbs-down" size={16} color="#dbe9ff" />
-                    <Text style={styles.storyRatingButtonText}>Not for me</Text>
+                    <Text style={styles.storyRatingButtonText}>Didn&apos;t like it</Text>
                   </Pressable>
                   <Pressable
                     onPress={() => handleStoryVote(true, "later")}
@@ -3004,13 +3034,11 @@ export function ReaderScreen(args: {
             >
               <Text style={styles.endOfStoryDialogSecondaryText}>Maybe later</Text>
             </Pressable>
-            {!canRateStory && storyRatingLiked !== null ? (
-              <View style={[styles.storyRatingBlock, styles.storyRatingThanksRow]}>
-                <Feather name="check" size={14} color="#9ce5c1" />
-                <Text style={styles.storyRatingThanksText}>Thanks, noted</Text>
+            {showRatingRow && storyRatingJustSent ? (
+              <View style={styles.storyRatingBlock}>
+                <RatingSentToast onDone={() => setStoryRatingJustSent(false)} />
               </View>
-            ) : null}
-            {canRateStory ? (
+            ) : showRatingRow ? (
               <View style={styles.storyRatingBlock}>
                 <Text style={styles.storyRatingPrompt}>How was this story?</Text>
                 <View style={styles.storyRatingRow}>
@@ -3019,20 +3047,48 @@ export function ReaderScreen(args: {
                     accessibilityRole="button"
                     accessibilityLabel="qa-reader-rating-down-inline"
                     testID="qa-reader-rating-down-inline"
-                    style={styles.storyRatingButton}
+                    style={[
+                      styles.storyRatingButton,
+                      storyRatingLiked === false ? styles.storyRatingButtonDown : null,
+                    ]}
                   >
-                    <Feather name="thumbs-down" size={16} color="#dbe9ff" />
-                    <Text style={styles.storyRatingButtonText}>Not for me</Text>
+                    <Feather
+                      name="thumbs-down"
+                      size={16}
+                      color={storyRatingLiked === false ? "#fb7185" : "#dbe9ff"}
+                    />
+                    <Text
+                      style={[
+                        styles.storyRatingButtonText,
+                        storyRatingLiked === false ? styles.storyRatingButtonTextDown : null,
+                      ]}
+                    >
+                      Didn&apos;t like it
+                    </Text>
                   </Pressable>
                   <Pressable
                     onPress={() => handleStoryVote(true, "practice")}
                     accessibilityRole="button"
                     accessibilityLabel="qa-reader-rating-up-inline"
                     testID="qa-reader-rating-up-inline"
-                    style={styles.storyRatingButton}
+                    style={[
+                      styles.storyRatingButton,
+                      storyRatingLiked === true ? styles.storyRatingButtonUp : null,
+                    ]}
                   >
-                    <Feather name="thumbs-up" size={16} color="#dbe9ff" />
-                    <Text style={styles.storyRatingButtonText}>Liked it</Text>
+                    <Feather
+                      name="thumbs-up"
+                      size={16}
+                      color={storyRatingLiked === true ? "#9ce5c1" : "#dbe9ff"}
+                    />
+                    <Text
+                      style={[
+                        styles.storyRatingButtonText,
+                        storyRatingLiked === true ? styles.storyRatingButtonTextUp : null,
+                      ]}
+                    >
+                      Liked it
+                    </Text>
                   </Pressable>
                 </View>
               </View>
@@ -3511,6 +3567,20 @@ const styles = StyleSheet.create({
     paddingTop: 12,
     borderTopWidth: 1,
     borderTopColor: "rgba(255,255,255,0.09)",
+  },
+  storyRatingButtonUp: {
+    borderColor: "#9ce5c1",
+    backgroundColor: "rgba(156, 229, 193, 0.14)",
+  },
+  storyRatingButtonDown: {
+    borderColor: "#fb7185",
+    backgroundColor: "rgba(251, 113, 133, 0.14)",
+  },
+  storyRatingButtonTextUp: {
+    color: "#9ce5c1",
+  },
+  storyRatingButtonTextDown: {
+    color: "#fb7185",
   },
   storyRatingOptional: {
     color: "#8aa0bd",
