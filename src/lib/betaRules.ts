@@ -22,7 +22,22 @@ export type BetaRulesConfig = {
    * a pace you can actually read the feedback from.
    */
   maxActiveTesters: number;
-  /** Target languages the beta is currently recruiting for. */
+  /**
+   * How the recruiting list is decided. "auto" derives it from the languages
+   * that have at least one published journey, so shipping a language opens its
+   * door on its own; "manual" freezes `acceptedTargetLanguages` as typed.
+   *
+   * Auto is the default because the manual list is the kind of field nobody
+   * remembers to edit: it read ["Spanish","German"] on 2026-08-20 while
+   * Portuguese, Italian and Spanish journeys were all live, and six Portuguese
+   * applicants sat in the queue told we were "not recruiting Portuguese".
+   */
+  acceptedLanguagesMode: "auto" | "manual";
+  /**
+   * Target languages the beta is currently recruiting for. In auto mode this
+   * is REPLACED at read time by the derived list (see betaRulesConfig.ts) and
+   * the stored value is kept only as the fallback for switching to manual.
+   */
   acceptedTargetLanguages: string[];
   /** Master switch. Off = every application queues, nothing is auto-invited. */
   autoInviteEnabled: boolean;
@@ -57,6 +72,7 @@ export const DEFAULT_BETA_RULES: BetaRulesConfig = {
   autoAcceptAt: 60,
   autoDeclineBelow: 30,
   maxActiveTesters: 100,
+  acceptedLanguagesMode: "auto",
   acceptedTargetLanguages: ["Spanish", "German", "Italian", "French", "Portuguese"],
   autoInviteEnabled: true,
   betaEndsAt: null,

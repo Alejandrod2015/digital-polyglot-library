@@ -261,6 +261,14 @@ export async function PUT(req: NextRequest) {
     patch.appStoreReviewUrl = url || null;
   }
 
+  if (body.acceptedLanguagesMode !== undefined) {
+    const mode = body.acceptedLanguagesMode;
+    if (mode !== "auto" && mode !== "manual") {
+      return NextResponse.json({ error: "acceptedLanguagesMode must be auto or manual" }, { status: 400 });
+    }
+    patch.acceptedLanguagesMode = mode;
+  }
+
   if (body.acceptedTargetLanguages !== undefined) {
     if (!Array.isArray(body.acceptedTargetLanguages)) {
       return NextResponse.json({ error: "acceptedTargetLanguages must be an array" }, { status: 400 });

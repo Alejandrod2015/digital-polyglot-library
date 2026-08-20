@@ -223,6 +223,7 @@ type Rules = {
   autoAcceptAt: number;
   autoDeclineBelow: number;
   maxActiveTesters: number;
+  acceptedLanguagesMode: "auto" | "manual";
   acceptedTargetLanguages: string[];
   autoInviteEnabled: boolean;
   betaEndsAt: string | null;
@@ -1985,15 +1986,36 @@ function RulesPanel({
       </div>
 
       <div style={card}>
-        <div style={labelStyle()}>Recruiting for (comma separated)</div>
-        <input
-          style={{ ...inputStyle, marginTop: 4 }}
-          value={draft.acceptedTargetLanguages.join(", ")}
-          onChange={(e) =>
-            setDraft({ ...draft, acceptedTargetLanguages: e.target.value.split(",").map((s) => s.trim()).filter(Boolean) })
-          }
-        />
+        <div style={labelStyle()}>Recruiting for</div>
+        <label style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 6, fontSize: 13 }}>
+          <input
+            type="checkbox"
+            checked={draft.acceptedLanguagesMode === "auto"}
+            onChange={(e) =>
+              setDraft({ ...draft, acceptedLanguagesMode: e.target.checked ? "auto" : "manual" })
+            }
+          />
+          Follow the published journeys
+        </label>
+        {draft.acceptedLanguagesMode === "auto" ? (
+          // The list is read-only here on purpose: an editable box whose value
+          // the server overwrites on the next read is a lie about who is in
+          // charge. To pin a language, untick the box first.
+          <div style={{ fontSize: 13, marginTop: 8 }}>{rules.acceptedTargetLanguages.join(", ") || "None"}</div>
+        ) : (
+          <input
+            style={{ ...inputStyle, marginTop: 8 }}
+            value={draft.acceptedTargetLanguages.join(", ")}
+            placeholder="Spanish, German"
+            onChange={(e) =>
+              setDraft({ ...draft, acceptedTargetLanguages: e.target.value.split(",").map((s) => s.trim()).filter(Boolean) })
+            }
+          />
+        )}
         <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 4 }}>
+          {draft.acceptedLanguagesMode === "auto"
+            ? "Every language with at least one published journey. Publish one and its door opens by itself."
+            : "Typed by hand. Publishing a journey will not change this list."}{" "}
           Applications for anything else queue for review instead of being auto-invited.
         </div>
       </div>
