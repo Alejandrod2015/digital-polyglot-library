@@ -118,7 +118,13 @@ const REFERRAL_SOURCES = [
 const APPLICATION_REASON_MIN = 20;
 const APPLICATION_REASON_MAX = 1000;
 
-const ATTRIBUTION_STORAGE_KEY = "dp_beta_attribution_v1";
+// v2: guarda también CUÁNDO se capturó, y vive en localStorage en vez de
+// sessionStorage. Con sessionStorage, quien pulsaba el enlace de un correo y
+// aplicaba dos días después entraba como "directo", que es precisamente el
+// caso de la tienda: se descubre la beta comprando y se solicita más tarde.
+const ATTRIBUTION_STORAGE_KEY = "dp_beta_attribution_v2";
+/** Ventana de atribución. Más allá, el clic ya no explica la solicitud. */
+const ATTRIBUTION_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 
 type AttributionPayload = {
   utmSource?: string;
@@ -131,16 +137,60 @@ type AttributionPayload = {
   timezone?: string;
 };
 
-function readPersistedAttribution(): AttributionPayload | null {
-  if (typeof window === "undefined") return null;
+type StoredAttribution = AttributionPayload & { storedAt?: number };
+
+/** localStorage cuando se puede, sessionStorage cuando el navegador lo bloquea. */
+function attributionStores(): Storage[] {
+  if (typeof window === "undefined") return [];
+  const stores: Storage[] = [];
   try {
-    const raw = window.sessionStorage.getItem(ATTRIBUTION_STORAGE_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    return parsed && typeof parsed === "object" ? (parsed as AttributionPayload) : null;
+    stores.push(window.localStorage);
   } catch {
-    return null;
+    // localStorage bloqueado (Safari en privado, o cookies de terceros off).
   }
+  try {
+    stores.push(window.sessionStorage);
+  } catch {
+    // Sin almacenamiento: queda la copia en memoria de esta pestaña.
+  }
+  return stores;
+}
+
+function readPersistedAttribution(): StoredAttribution | null {
+  for (const store of attributionStores()) {
+    try {
+      const raw = store.getItem(ATTRIBUTION_STORAGE_KEY);
+      if (!raw) continue;
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== "object") continue;
+      const stored = parsed as StoredAttribution;
+      // Un toque caducado no se usa: mejor "directo" honesto que atribuir una
+      // solicitud de hoy a una campaña de hace medio año.
+      if (stored.storedAt && Date.now() - stored.storedAt > ATTRIBUTION_TTL_MS) continue;
+      return stored;
+    } catch {
+      // Entrada corrupta: se ignora y se vuelve a capturar.
+    }
+  }
+  return null;
+}
+
+function persistAttribution(payload: AttributionPayload): void {
+  const body = JSON.stringify({ ...payload, storedAt: Date.now() });
+  for (const store of attributionStores()) {
+    try {
+      store.setItem(ATTRIBUTION_STORAGE_KEY, body);
+    } catch {
+      // Almacenamiento lleno o bloqueado: seguimos con la copia en memoria.
+    }
+  }
+}
+
+/** Lo que se manda al servidor, sin el sello interno de cuándo se guardó. */
+function withoutStoredAt(stored: StoredAttribution): AttributionPayload {
+  const rest: StoredAttribution = { ...stored };
+  delete rest.storedAt;
+  return rest;
 }
 
 function captureAttribution(): AttributionPayload {
@@ -253,20 +303,21 @@ export default function BetaSignupForm() {
   const mountedAtRef = useRef<number>(Date.now());
 
   useEffect(() => {
+    const fresh = captureAttribution();
     const persisted = readPersistedAttribution();
-    if (persisted && Object.keys(persisted).length > 0) {
-      attributionRef.current = persisted;
+    // Se conserva el primer toque, con una excepción: una visita que TRAE
+    // campaña gana siempre a un toque guardado que no la traía. Sin esto,
+    // entrar directo una vez a /beta y volver luego desde el correo de la
+    // tienda dejaba la campaña sin registrar y la tienda parecía no traer a
+    // nadie.
+    const keepPersisted =
+      persisted && Object.keys(persisted).length > 0 && (Boolean(persisted.utmSource) || !fresh.utmSource);
+    if (keepPersisted && persisted) {
+      attributionRef.current = withoutStoredAt(persisted);
       return;
     }
-    const fresh = captureAttribution();
     attributionRef.current = fresh;
-    if (Object.keys(fresh).length > 0) {
-      try {
-        window.sessionStorage.setItem(ATTRIBUTION_STORAGE_KEY, JSON.stringify(fresh));
-      } catch {
-        // sessionStorage blocked: keep the in-memory copy and move on.
-      }
-    }
+    if (Object.keys(fresh).length > 0) persistAttribution(fresh);
   }, []);
 
   function update<K extends keyof FormState>(key: K, value: FormState[K]) {

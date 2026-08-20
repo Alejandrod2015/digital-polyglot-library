@@ -8,10 +8,16 @@
 // program needs you.
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  betaSourceGroupLabel,
+  classifyBetaSource,
+  EXPECTED_BETA_SOURCES,
+} from "@/lib/betaSource";
+import type { BetaSourceGroup } from "@/lib/betaSource";
 
 const ACCENT = "#14b8a6";
 
-type Tab = "review" | "demand" | "testers" | "feedback" | "releases" | "rules";
+type Tab = "review" | "demand" | "origin" | "testers" | "feedback" | "releases" | "rules";
 
 /**
  * Silent capture from the browser at form mount: where they came from and
@@ -606,7 +612,10 @@ function DemandPanel({ applicants, servedLanguages }: { applicants: Applicant[];
           <DemandBars rows={tally(applicants, (a) => a.motivation)} total={total} empty="sin respuesta" />
         </DemandBlock>
 
-        <DemandBlock title="Por dónde llegaron">
+        <DemandBlock
+          title="Por dónde dicen que llegaron"
+          hint="Lo que eligieron en el formulario. El origen medido está en la pestaña Origin, y no tienen por qué coincidir."
+        >
           <DemandBars rows={tally(applicants, (a) => a.referralSource)} total={total} empty="sin respuesta" />
         </DemandBlock>
 
@@ -621,6 +630,202 @@ function DemandPanel({ applicants, servedLanguages }: { applicants: Applicant[];
     </div>
   );
 }
+
+/* ── origen: qué canal trajo a cada tester ── */
+
+/** Un origen con lo único que decide si vale la pena: cuántos llegaron y
+ *  cuántos de esos siguen ahí. */
+type SourceRow = {
+  key: string;
+  label: string;
+  group: BetaSourceGroup;
+  total: number;
+  testers: number;
+  active: number;
+  /** El freebie, la lista de Brevo o el host, con su cuenta. */
+  details: Array<[string, number]>;
+  /** Solo en los que esperamos y todavía no llegaron: dónde vive el enlace. */
+  hint?: string;
+};
+
+const GROUP_COLORS: Record<BetaSourceGroup, string> = {
+  shop: "#f59e0b",
+  email: "#60a5fa",
+  social: "#c084fc",
+  search: "#34d399",
+  web: "#9aa7bd",
+  direct: "#9aa7bd",
+  internal: "#9aa7bd",
+  unmeasured: "#f87171",
+};
+
+function OriginPanel({ applicants }: { applicants: Applicant[] }) {
+  const rows = useMemo<SourceRow[]>(() => {
+    const acc = new Map<string, SourceRow & { detailCounts: Map<string, number> }>();
+    for (const a of applicants) {
+      const src = classifyBetaSource(a.attribution);
+      let row = acc.get(src.key);
+      if (!row) {
+        row = {
+          key: src.key,
+          label: src.label,
+          group: src.group,
+          total: 0,
+          testers: 0,
+          active: 0,
+          details: [],
+          detailCounts: new Map(),
+        };
+        acc.set(src.key, row);
+      }
+      row.total += 1;
+      if (a.status === "invited" || a.status === "accepted") row.testers += 1;
+      if (a.lastActiveAt) row.active += 1;
+      if (src.detail) row.detailCounts.set(src.detail, (row.detailCounts.get(src.detail) ?? 0) + 1);
+    }
+    // Los puntos de contacto que esperamos ver aparecen aunque estén a cero:
+    // un cero dice "publicado y no trae a nadie" o "todavía sin publicar", y
+    // una fila que falta no dice nada.
+    for (const expected of EXPECTED_BETA_SOURCES) {
+      if (acc.has(expected.key)) continue;
+      acc.set(expected.key, {
+        key: expected.key,
+        label: expected.label,
+        group: expected.group,
+        total: 0,
+        testers: 0,
+        active: 0,
+        details: [],
+        detailCounts: new Map(),
+        hint: expected.hint,
+      });
+    }
+    return Array.from(acc.values())
+      .map((r) => ({
+        ...r,
+        details: Array.from(r.detailCounts.entries()).sort((x, y) => y[1] - x[1]),
+      }))
+      .sort((x, y) => y.total - x.total || x.label.localeCompare(y.label));
+  }, [applicants]);
+
+  const total = applicants.length;
+  if (total === 0) {
+    return <div style={{ ...card, fontSize: 13, color: "var(--muted)" }}>Todavía no hay solicitudes.</div>;
+  }
+
+  const live = rows.filter((r) => r.total > 0);
+  const silent = rows.filter((r) => r.total === 0);
+  const unmeasured = rows.find((r) => r.key === "unmeasured")?.total ?? 0;
+  const bars: Array<[string, number]> = live.map((r) => [r.label, r.total]);
+  const byGroup = new Map<BetaSourceGroup, number>();
+  for (const r of live) byGroup.set(r.group, (byGroup.get(r.group) ?? 0) + r.total);
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+      <div style={{ ...card, fontSize: 12.5, color: "var(--muted)" }}>
+        {total} altas · {live.length} orígenes distintos · {unmeasured} sin medir. Esto sale de los utm y del
+        referrer que el navegador dejó al abrir /beta, no de lo que la persona dijo: el desplegable
+        &quot;How did you hear about us?&quot; no tiene opción de comprador, así que nunca va a cuadrar con una
+        campaña de la tienda.
+      </div>
+
+      <DemandBlock
+        title="De dónde vienen"
+        hint="Un utm_source nuevo aparece aquí solo, sin tocar código. Si una fuente que lanzaste no sale, el enlace no lleva utm o no está publicado."
+      >
+        <DemandBars
+          rows={bars}
+          total={total}
+          empty="ninguna alta trae origen"
+          renderLabel={(key) => {
+            const row = live.find((r) => r.label === key);
+            return (
+              <span style={{ color: row ? GROUP_COLORS[row.group] : "var(--foreground)" }}>{key}</span>
+            );
+          }}
+        />
+      </DemandBlock>
+
+      <DemandBlock
+        title="Qué origen trae gente que se queda"
+        hint="Altas es cuánta gente llegó; testers, cuántas pasaron el triaje; activos, cuántas abrieron la app alguna vez. Un origen con muchas altas y cero activos trae curiosos."
+      >
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5 }}>
+            <thead>
+              <tr style={{ color: "var(--muted)", textAlign: "left" }}>
+                <th style={originTh}>Origen</th>
+                <th style={{ ...originTh, textAlign: "right" }}>Altas</th>
+                <th style={{ ...originTh, textAlign: "right" }}>Testers</th>
+                <th style={{ ...originTh, textAlign: "right" }}>Activos</th>
+              </tr>
+            </thead>
+            <tbody>
+              {live.map((r) => (
+                <tr key={r.key} style={{ borderTop: "1px solid var(--card-border)" }}>
+                  <td style={originTd}>
+                    <span style={{ color: GROUP_COLORS[r.group], fontWeight: 600 }}>{r.label}</span>
+                    <span style={{ color: "var(--muted)", fontSize: 11 }}> · {betaSourceGroupLabel(r.group)}</span>
+                    {r.details.length > 0 && (
+                      <div style={{ color: "var(--muted)", fontSize: 11, marginTop: 2 }}>
+                        {r.details.map(([d, n]) => `${d} (${n})`).join(" · ")}
+                      </div>
+                    )}
+                  </td>
+                  <td style={{ ...originTd, textAlign: "right" }}>{r.total}</td>
+                  <td style={{ ...originTd, textAlign: "right" }}>{r.testers}</td>
+                  <td style={{ ...originTd, textAlign: "right", color: r.active > 0 ? ACCENT : "var(--muted)" }}>
+                    {r.active}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </DemandBlock>
+
+      {silent.length > 0 && (
+        <DemandBlock
+          title="Puntos de contacto que todavía no han traído a nadie"
+          hint="Están montados y esperando. Un cero aquí es publicación pendiente o enlace que nadie pulsa, y son dos cosas distintas: compruébalo antes de sacar conclusiones."
+        >
+          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            {silent.map((r) => (
+              <div key={r.key} style={{ fontSize: 12 }}>
+                <span style={{ color: "var(--muted)" }}>0 · </span>
+                <span>{r.label}</span>
+                {r.hint && <span style={{ color: "var(--muted)", fontSize: 11 }}> · {r.hint}</span>}
+              </div>
+            ))}
+          </div>
+        </DemandBlock>
+      )}
+
+      <DemandBlock
+        title="Por canal"
+        hint="La misma cuenta agrupada, para comparar tienda contra email contra redes sin que un punto de contacto nuevo cambie el reparto."
+      >
+        <DemandBars
+          rows={Array.from(byGroup.entries())
+            .map(([g, n]) => [betaSourceGroupLabel(g), n] as [string, number])
+            .sort((x, y) => y[1] - x[1])}
+          total={total}
+          empty="·"
+        />
+      </DemandBlock>
+
+      <div style={{ ...card, fontSize: 11.5, color: "var(--muted)" }}>
+        Lo que esta pestaña no puede ver: el origen se captura al abrir /beta y se guarda 30 días en ese
+        navegador, así que un clic de hoy sigue contando si la solicitud llega la semana que viene. Lo que se
+        pierde es cambiar de aparato o de navegador entre el clic y la solicitud, y a quien borra los datos del
+        sitio: esos caen en &quot;Directo o sin origen&quot;.
+      </div>
+    </div>
+  );
+}
+
+const originTh: React.CSSProperties = { padding: "0 8px 6px 0", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" };
+const originTd: React.CSSProperties = { padding: "7px 8px 7px 0", verticalAlign: "top" };
 
 /** One usage number with its label, sized so a row of them scans at a glance. */
 function Metric({ n, label }: { n: number; label: string }) {
@@ -653,7 +858,7 @@ function ApplicationSummary({ a, showReason }: { a: Applicant; showReason: boole
     <>
       <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
         {a.targetLanguage} · {a.currentLevel} · {a.weeklyHours ?? "?"} hrs/wk ·{" "}
-        {a.motivation ?? "?"} · via {a.referralSource ?? "?"}
+        {a.motivation ?? "?"} · dice: {a.referralSource ?? "?"}
       </div>
       <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
         applied {onDate(a.createdAt)} ({ago(a.createdAt)})
@@ -744,29 +949,52 @@ function shortHost(url: string): string {
   }
 }
 
-/** The campaign if there was one, the referring host otherwise, nothing if direct. */
-function formatSource(attr: Attribution | null): string | null {
-  if (!attr) return null;
-  if (attr.utmSource) {
-    return [attr.utmSource, attr.utmMedium, attr.utmCampaign].filter(Boolean).join("/");
-  }
-  return attr.referrer ? shortHost(attr.referrer) : null;
+/** Lo que llegó tal cual, para reconciliar con la campaña que lo lanzó. */
+function rawSource(attr: Attribution | null): string | undefined {
+  if (!attr) return undefined;
+  const parts = [attr.utmSource, attr.utmMedium, attr.utmCampaign, attr.utmContent].filter(Boolean);
+  if (parts.length > 0) return parts.join(" / ");
+  return attr.referrer ? shortHost(attr.referrer) : undefined;
 }
 
-/** Location and source on one muted line. Absent rather than blank when unknown. */
+/**
+ * Dónde estaba y de dónde vino, en una línea.
+ *
+ * El origen se pinta SIEMPRE, incluso cuando no hay ninguno: "sin utm" al
+ * lado de una solicitud que dice haber llegado comprando es justo la señal de
+ * que un punto de contacto de la tienda no lleva la etiqueta puesta, y una
+ * línea ausente no la da. La campaña y el contenido (el freebie concreto) van
+ * detrás, y el utm crudo queda en el title para reconciliar con la tienda.
+ */
 function AttributionLine({ attr }: { attr: Attribution | null }) {
   const location = formatLocation(attr);
-  const source = formatSource(attr);
-  if (!location && !source) return null;
+  const src = classifyBetaSource(attr);
+  const measured = src.group !== "direct" && src.group !== "unmeasured";
+  // La campaña y el host se caen cuando la etiqueta ya los dice: "Instagram ·
+  // instagram.com" y "Email: beta_launch · beta_launch" son la misma palabra dos veces.
+  const norm = (x: string) => x.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const label = norm(src.label);
+  const tail = [src.campaign, src.detail]
+    .filter((v): v is string => Boolean(v))
+    .filter((v) => {
+      const n = norm(v);
+      return !label.includes(n) && !n.includes(label);
+    })
+    .join(" · ");
   return (
     <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
       {location}
-      {location && source && " · "}
-      {source && (
-        <span style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace", fontSize: 11 }}>
-          via {source}
+      {location && " · "}
+      <span
+        title={rawSource(attr) ?? "sin utm ni referrer"}
+        style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace", fontSize: 11 }}
+      >
+        <span style={{ color: "var(--muted)" }}>origen: </span>
+        <span style={{ color: measured ? GROUP_COLORS[src.group] : "var(--muted)" }}>
+          {measured ? src.label : src.group === "unmeasured" ? "sin medir" : "sin utm"}
         </span>
-      )}
+        {tail && <span style={{ color: "var(--muted)" }}> · {tail}</span>}
+      </span>
     </div>
   );
 }
@@ -962,6 +1190,7 @@ export default function BetaProgramClient() {
       "notes",
       "country",
       "city",
+      "source",
       "utmSource",
       "utmMedium",
       "utmCampaign",
@@ -993,6 +1222,7 @@ export default function BetaProgramClient() {
           a.notes,
           attr.country,
           attr.city,
+          classifyBetaSource(a.attribution).label,
           attr.utmSource,
           attr.utmMedium,
           attr.utmCampaign,
@@ -1024,6 +1254,7 @@ export default function BetaProgramClient() {
   const tabs: Array<{ key: Tab; label: string; count?: number }> = [
     { key: "review", label: "Review queue", count: needsReview.length },
     { key: "demand", label: "Demand", count: data.applicants.length },
+    { key: "origin", label: "Origin", count: data.applicants.length },
     { key: "testers", label: "Testers", count: testers.length },
     { key: "feedback", label: "Feedback", count: data.stats.openFeedback },
     { key: "releases", label: "Build notes", count: data.releases.length },
@@ -1091,6 +1322,8 @@ export default function BetaProgramClient() {
         // eso es la que se pinta.
         <DemandPanel applicants={data.applicants} servedLanguages={data.rules.acceptedTargetLanguages} />
       )}
+
+      {tab === "origin" && <OriginPanel applicants={data.applicants} />}
 
       {tab === "testers" && (
         <>
