@@ -18,6 +18,8 @@ import {
   getPassedJourneyCheckpointKeys,
   getPracticedJourneyTopicKeys,
 } from "@/lib/journeyProgress";
+import { variantMatchesPreference } from "@/lib/languageVariant";
+import { resolveLearnerVariant } from "@/lib/learnerVariant";
 import { getActiveMobileSession } from "@/lib/mobileSession";
 import { getJourneyFocusFromLearningGoal, normalizeJourneyFocus } from "@/lib/onboarding";
 import { prisma } from "@/lib/prisma";
@@ -67,6 +69,21 @@ export async function GET(req: NextRequest): Promise<Response> {
   const journeyPorId = new Map(journeysDelIdioma.map((j) => [j.id, j]));
 
   const user = await clerkClient.users.getUser(session.sub);
+  // Which flavour of this language the learner asked for. Empty for anyone
+  // who never answered, and then nothing below filters.
+  //
+  // `?variant=all` opts out: that is the add-journey picker, which offers every
+  // flavour of a language on purpose (picking "Spanish LATAM" there is an
+  // explicit request for it) and filters to the pick on its own.
+  const showEveryVariant = req.nextUrl.searchParams.get("variant") === "all";
+  const learnerVariant = showEveryVariant
+    ? null
+    : await resolveLearnerVariant({
+        language,
+        publicMetadata: user.publicMetadata ?? null,
+        clerkUserId: session.sub,
+        emails: user.emailAddresses.map((address) => address.emailAddress),
+      });
   const journeyFocus =
     typeof user.publicMetadata?.journeyFocus === "string"
       ? normalizeJourneyFocus(user.publicMetadata.journeyFocus)
@@ -128,9 +145,40 @@ export async function GET(req: NextRequest): Promise<Response> {
       }
     }
   }
+  // Serve only the variant the learner asked for. A Spain learner was being
+  // offered the LATAM C1 Friends journey alongside his A0 Spain one and read
+  // two of its stories before writing in about the Mexican slang (2026-08-20);
+  // `targetVariant` had been collected at signup and used nowhere.
+  //
+  // The fallback is deliberate: filtering to zero means we hold content for
+  // this language but none in their flavour (an Austria learner, today), and an
+  // empty Journey tab is worse than one with the wrong accent. They keep what
+  // they had before.
+  //
+  // A journey the learner ADDED stays, whatever its variant: the picker walks
+  // them through language, then flavour, then track, so a LATAM journey sitting
+  // in that list was asked for out loud. Having merely read inside a track is
+  // not that signal, and must not be treated as one: the tester who reported
+  // this had finished the audio of two LATAM stories, which is how he found out
+  // they were there.
+  const addedTrackIds = new Set(
+    (Array.isArray(user.publicMetadata?.journeys) ? user.publicMetadata.journeys : [])
+      .flatMap((entry) =>
+        entry && typeof entry === "object"
+          ? [(entry as Record<string, unknown>).id, (entry as Record<string, unknown>).variant]
+          : []
+      )
+      .filter((value): value is string => typeof value === "string" && value.trim() !== "")
+  );
+  const matchingTracks = learnerVariant
+    ? rawTracks.filter(
+        (track) => variantMatchesPreference(learnerVariant, track.variant) || addedTrackIds.has(track.id)
+      )
+    : rawTracks;
   // Variable kept under the original name so the rest of the route reads
   // unchanged.
-  const tracks = rawTracks;
+  const tracks = matchingTracks.length > 0 ? matchingTracks : rawTracks;
+  const variantFilterApplied = tracks === matchingTracks && matchingTracks.length < rawTracks.length;
 
   const dueReviewProgressKeySet = new Set(
     dueReviewItems.map((item) => item.progressKey).filter((value): value is string => Boolean(value))
@@ -269,7 +317,9 @@ export async function GET(req: NextRequest): Promise<Response> {
       ...track,
       complete: terminado,
       nextJourney:
-        sig && sig.status === "active"
+        sig &&
+        sig.status === "active" &&
+        (!variantFilterApplied || variantMatchesPreference(learnerVariant, sig.variant))
           ? {
               id: sig.id,
               name: sig.name,
@@ -284,6 +334,9 @@ export async function GET(req: NextRequest): Promise<Response> {
 
   return NextResponse.json({
     language,
+    // What the list was filtered by, so the app can say so instead of leaving
+    // the learner wondering where the other journeys went.
+    variant: variantFilterApplied ? learnerVariant : null,
     dueReviewCount: dueReviewItems.length,
     tracks: conSiguiente,
   });

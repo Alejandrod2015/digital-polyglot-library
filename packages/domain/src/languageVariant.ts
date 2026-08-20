@@ -193,3 +193,124 @@ export function resolveContentVariant(args: {
 }): string | null {
   return normalizeVariant(args.variant) ?? inferVariantFromRegion(args.language, args.region);
 }
+
+// ── Content pools ──────────────────────────────────────────────────────────
+// Which content a learner should be OFFERED, given the variant they asked for.
+// Only Spanish has a pan-regional pool: a `latam` journey tours the region and
+// the country-specific ones (mexico, colombia, ...) read as the same Spanish to
+// a LATAM learner. Spain sits alone, which is the entire reason the question is
+// asked at signup. Every other language matches its own variant exactly.
+//
+// WHY (2026-08-20): `targetVariant` was collected at signup and then used
+// nowhere. A beta tester who asked for Spain because he has a holiday home
+// there was offered the LATAM C1 Friends journey in the same list as his A0
+// Spain one, opened two of its stories, and wrote in: "I had a bit too much
+// Mexican Spanish including slang [...] I don't want to be misunderstood by
+// Spanish locals when I try to converse."
+function poolOf(pool: string, spellings: readonly string[]): Record<string, string> {
+  return Object.fromEntries(spellings.map((spelling) => [spelling, pool]));
+}
+
+const SPANISH_LATAM_POOL = [
+  "latam",
+  "mexico",
+  "colombia",
+  "argentina",
+  "peru",
+  "chile",
+  "puerto-rico",
+  "panama",
+  "ecuador",
+  "dominican-republic",
+  "venezuela",
+  "cuba",
+  "bolivia",
+  "uruguay",
+  "paraguay",
+  "costa-rica",
+  "guatemala",
+  "honduras",
+  "el-salvador",
+  "nicaragua",
+] as const;
+
+// The same pool reached by every spelling that is already persisted somewhere:
+// Studio writes country names ("spain", "brazil"), the mobile picker writes
+// short codes ("es", "br"), and legacy rows hold locale tags. A spelling missing
+// from here matches nothing and the content disappears in silence, which is
+// exactly how Brazil broke once before (see LanguageFlag.regionFamily).
+const VARIANT_POOL: Record<string, string> = {
+  ...poolOf("spanish-spain", ["spain", "es", "espana", "españa"]),
+  ...poolOf("spanish-latam", [
+    ...SPANISH_LATAM_POOL,
+    "es-la",
+    "es-419",
+    "mx",
+    "co",
+    "ar",
+    "pe",
+    "cl",
+    "ec",
+    "ve",
+    "uy",
+    "py",
+    "bo",
+    "cr",
+    "pa",
+    "do",
+    "cu",
+    "gt",
+    "hn",
+    "sv",
+    "ni",
+    "pr",
+  ]),
+  ...poolOf("english-us", ["us", "usa", "en-us"]),
+  ...poolOf("english-uk", ["uk", "gb", "england", "britain", "united-kingdom", "en-gb"]),
+  ...poolOf("portuguese-brazil", ["brazil", "brasil", "br", "pt-br"]),
+  ...poolOf("portuguese-portugal", ["portugal", "pt", "pt-pt"]),
+  ...poolOf("german-germany", ["germany", "de", "deutschland"]),
+  ...poolOf("german-austria", ["austria", "at"]),
+  ...poolOf("french-france", ["france", "fr"]),
+  ...poolOf("french-canada", ["canada-fr", "ca-fr", "fr-ca"]),
+  ...poolOf("italian-italy", ["italy", "it", "italia"]),
+  ...poolOf("korean-south-korea", ["south-korea", "kr", "ko-kr"]),
+};
+
+/**
+ * The content pool a variant belongs to, or null for values we do not model
+ * ("other", "unsure", a free-typed country). A null pool means "no preference
+ * we can act on", never "show nothing".
+ */
+export function variantPool(value?: string | null): string | null {
+  const normalized = normalizeVariant(value);
+  if (!normalized) return null;
+  return VARIANT_POOL[normalized] ?? null;
+}
+
+/**
+ * Does this piece of content belong to the pool the learner asked for?
+ * Returns true whenever the preference is unknown or unmodelled, so an
+ * unrecognised value can never empty somebody's library.
+ */
+export function variantMatchesPreference(
+  preference?: string | null,
+  contentVariant?: string | null
+): boolean {
+  const wanted = variantPool(preference);
+  if (!wanted) return true;
+  const got = variantPool(contentVariant);
+  if (!got) return true;
+  return wanted === got;
+}
+
+/**
+ * The language a variant belongs to ("spanish", "german", ...), so a stale
+ * preference from another language is ignored instead of filtering everything
+ * out. Returns null for unmodelled values.
+ */
+export function languageOfVariant(value?: string | null): string | null {
+  const pool = variantPool(value);
+  if (!pool) return null;
+  return pool.slice(0, pool.indexOf("-"));
+}

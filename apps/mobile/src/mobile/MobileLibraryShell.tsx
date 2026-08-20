@@ -19336,6 +19336,11 @@ export function MobileLibraryShell(args: {
           id: journeyId(sel.language, sel.variant, journeyFocus),
           language: sel.language,
           variant: sel.variant,
+          // `region` carries the regional CODE ("spain"/"latam"/"us"...), which
+          // is what every variant filter reads. Leaving it null was how a Spain
+          // learner ended up with the whole Spanish catalogue in front of him:
+          // an empty region reads as "no preference" and shows every variant.
+          region: sel.variant,
           focus: journeyFocus,
           // Only the PRIMARY (first picked) language gets the placement-derived
           // level; the test/self-report was about that language. Secondary
@@ -19362,6 +19367,11 @@ export function MobileLibraryShell(args: {
         journeys,
         activeJourneyId: journeys[0]?.id ?? null,
       }));
+      // Persist them. Until now this list only ever lived in local state: the
+      // save above ran BEFORE it was built and never carried it, so the account
+      // kept whatever the legacy synthesizer produced, which is a journey with
+      // no variant at all.
+      void saveOnboardingPreferences({ journeys, activeJourneyId: journeys[0]?.id ?? null });
       // Set the active journey language so the journey screen lands
       // on the right path right away.
       const primaryLanguage = payload.selections[0]?.language ?? null;

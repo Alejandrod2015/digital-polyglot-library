@@ -177,7 +177,7 @@ const KNOWN_REGION_CODES = new Set<string>([
   "germany", "austria", "france", "canada-fr", "italy", "south-korea",
 ]);
 
-function normalizeJourneysArray(value: unknown): StoredJourney[] | null {
+function normalizeJourneysArray(value: unknown, preferredVariant?: string | null): StoredJourney[] | null {
   if (!Array.isArray(value)) return null;
   const out: StoredJourney[] = [];
   const seen = new Set<string>();
@@ -196,6 +196,16 @@ function normalizeJourneysArray(value: unknown): StoredJourney[] | null {
     // cuid de Studio Journey) y `region` está vacío, copiamos.
     if (!region && variant && KNOWN_REGION_CODES.has(variant.toLowerCase())) {
       region = variant.toLowerCase();
+    }
+    // Segundo backfill (2026-08-20): journeys que salieron del sintetizador
+    // legacy ANTES de que `preferredVariant` estuviera guardado se quedaron sin
+    // variante y sin región. Un journey sin región se lee en todas partes como
+    // "sin preferencia", y entonces el selector enseña TODAS las variantes del
+    // idioma. Le pasó a un tester que había pedido España dos veces y acabó
+    // dentro de dos historias con jerga mexicana. La preferencia de la cuenta
+    // es la respuesta que él dio: se aplica aquí y la fila queda arreglada.
+    if (!region && preferredVariant) {
+      region = preferredVariant;
     }
     out.push({
       id,
@@ -259,7 +269,13 @@ function serializePreferences(metadata: Record<string, unknown>) {
       typeof metadata.onboardingSurveyCompletedAt === "string" ? metadata.onboardingSurveyCompletedAt : null,
     onboardingTourCompletedAt:
       typeof metadata.onboardingTourCompletedAt === "string" ? metadata.onboardingTourCompletedAt : null,
-    journeys: normalizeJourneysArray(metadata.journeys) ?? [],
+    journeys:
+      normalizeJourneysArray(
+        metadata.journeys,
+        typeof metadata.preferredVariant === "string"
+          ? normalizeVariantPreference(metadata.preferredVariant)
+          : null
+      ) ?? [],
     activeJourneyId:
       typeof metadata.activeJourneyId === "string" && metadata.activeJourneyId.trim()
         ? metadata.activeJourneyId.trim()
@@ -358,7 +374,7 @@ export async function POST(req: NextRequest): Promise<Response> {
         : undefined
     : undefined;
   const journeys = Object.prototype.hasOwnProperty.call(payload, "journeys")
-    ? normalizeJourneysArray(payload.journeys)
+    ? normalizeJourneysArray(payload.journeys, preferredVariant ?? null)
     : undefined;
   const activeJourneyId = Object.prototype.hasOwnProperty.call(payload, "activeJourneyId")
     ? typeof payload.activeJourneyId === "string" && payload.activeJourneyId.trim()
