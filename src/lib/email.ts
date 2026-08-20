@@ -7,6 +7,7 @@ import {
   type LifecycleData,
 } from "@/lib/emails/lifecycle";
 import { shouldSendLifecycle, createEmailToken } from "@/lib/emailPreferences";
+import { publicBaseUrl } from "@/lib/emails/publicBaseUrl";
 
 /**
  * Confirmation sent after someone applies to the beta program at /beta.
@@ -181,7 +182,11 @@ export async function sendLifecycleEmail({
 
   // Signed token so unsubscribe / manage links work without a logged-in session.
   const token = createEmailToken(to);
-  const appBase = process.env.APP_BASE_URL ?? "https://digitalpolyglot.com";
+  // Por publicBaseUrl y no por env: en local `APP_BASE_URL` es localhost, y la
+  // cabecera de baja de un correo YA ENVIADO no se puede corregir después. El
+  // cuerpo ya pasaba por aquí; la cabecera se había quedado fuera, y se vio al
+  // invitar a un tester real desde una terminal el 2026-08-20.
+  const appBase = publicBaseUrl();
   const unsubscribeUrl = `${appBase}/api/email/unsubscribe?token=${encodeURIComponent(token)}`;
 
   const { subject, html, text } = LIFECYCLE_BUILDERS[kind]({ ...data, unsubscribeToken: token });
@@ -229,7 +234,8 @@ export async function sendClaimEmail({
 }): Promise<"sent" | "skipped" | "failed"> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.EMAIL_FROM;
-  const baseUrl = process.env.APP_BASE_URL ?? "https://reader.digitalpolyglot.com";
+  // El canje vive en el lector, así que ese es su respaldo público, no la web.
+  const baseUrl = publicBaseUrl(null, "https://reader.digitalpolyglot.com");
   const replyTo = "support@digitalpolyglot.com";
 
   if (!apiKey || !from) {

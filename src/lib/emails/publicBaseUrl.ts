@@ -21,16 +21,23 @@ const LOCAL = /^https?:\/\/(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])(:\d+)?/i;
 
 let avisado = false;
 
-/** `preferida` gana, salvo que apunte a una máquina local. */
-export function publicBaseUrl(preferida?: string | null): string {
-  const candidata = (preferida ?? process.env.APP_BASE_URL ?? PUBLICO).trim();
+/**
+ * `preferida` gana, salvo que apunte a una máquina local.
+ *
+ * `publicoPorDefecto` es para los correos que NO viven en el dominio de la
+ * web: los enlaces de canje apuntan al lector, y sustituir un localhost por
+ * la web pública los rompería igual, solo que de forma menos visible.
+ */
+export function publicBaseUrl(preferida?: string | null, publicoPorDefecto: string = PUBLICO): string {
+  const respaldo = LOCAL.test(publicoPorDefecto.trim()) ? PUBLICO : publicoPorDefecto.trim();
+  const candidata = (preferida ?? process.env.APP_BASE_URL ?? respaldo).trim();
   if (!LOCAL.test(candidata)) return candidata.replace(/\/+$/, "");
   if (!avisado) {
     avisado = true;
     console.warn(
-      `[email] APP_BASE_URL apunta a ${candidata}; los enlaces de los correos usarán ${PUBLICO}. ` +
+      `[email] APP_BASE_URL apunta a ${candidata}; los enlaces de los correos usarán ${respaldo}. ` +
         "Un host local en un correo enviado es un enlace roto para quien lo recibe.",
     );
   }
-  return PUBLICO;
+  return respaldo.replace(/\/+$/, "");
 }
