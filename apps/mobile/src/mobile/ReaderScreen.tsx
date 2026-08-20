@@ -2118,6 +2118,16 @@ export function ReaderScreen(args: {
    * peaje y enseña a la gente a buscar la X sin leer.
    */
   function requestCloseEndOfStoryPrompt() {
+    // Cerrar la caja de comentario vuelve al panel de practica, no al lector.
+    // El voto ya esta guardado, asi que esto no es abandonar nada: es deshacer
+    // un paso. Sacar a alguien de la historia entera por cerrar una caja
+    // opcional le cobra la opinion que acaba de dar.
+    if (endOfStoryFace === "comment") {
+      Keyboard.dismiss();
+      setStoryRatingComment("");
+      setEndOfStoryFace("practice");
+      return;
+    }
     if (!closeAskUsed && canRateStory && endOfStoryFace === "practice") {
       setCloseAskUsed(true);
       void markCloseAskUsed(sessionUserId ?? null);
@@ -2867,6 +2877,7 @@ export function ReaderScreen(args: {
                 </Text>
                 <Text style={styles.endOfStoryBody}>
                   {storyRatingLiked ? "What worked for you?" : "What put you off?"}
+                  <Text style={styles.storyRatingOptional}> (optional)</Text>
                 </Text>
                 <TextInput
                   value={storyRatingComment}
@@ -3500,6 +3511,10 @@ const styles = StyleSheet.create({
     paddingTop: 12,
     borderTopWidth: 1,
     borderTopColor: "rgba(255,255,255,0.09)",
+  },
+  storyRatingOptional: {
+    color: "#8aa0bd",
+    fontSize: 13,
   },
   storyRatingThanksRow: {
     flexDirection: "row",

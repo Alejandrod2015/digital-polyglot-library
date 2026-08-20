@@ -34,6 +34,7 @@ import {
   CEFR_DISPLAY_LABELS,
   LEVEL_LABELS,
   cefrDisplayLabel,
+  formatCefrDisplay,
   formatLanguage,
   formatLanguageAndRegion,
   formatLanguageCode,
@@ -4503,7 +4504,14 @@ export function MobileLibraryShell(args: {
     (track: MobileJourneyTrackSummary): JourneysPanelTrack => ({
       id: track.id,
       label: track.label,
-      levelLabel: cefrDisplayLabel(track.levels?.[0]?.id) ?? track.levels?.[0]?.title ?? null,
+      // Con codigo CEFR entre parentesis ("Elementary (A1)"): en el selector
+      // el nivel es lo UNICO que separa dos tracks del mismo nombre, y la
+      // palabra sola obliga a saberse la escala de memoria. En el lector no
+      // va, que ahi ya elegiste y el codigo solo seria ruido repetido en
+      // cada tema. Los A0 siguen sin letra porque A0 no existe en CEFR.
+      levelLabel: track.levels?.[0]?.id
+        ? formatCefrDisplay(track.levels[0].id)
+        : track.levels?.[0]?.title ?? null,
       levelCode: track.levels?.[0]?.id ?? null,
       variant: track.variant ?? null,
     }),
