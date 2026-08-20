@@ -4552,7 +4552,17 @@ export function MobileLibraryShell(args: {
   }, [preferences]);
 
   const loadJourneyForLanguage = useCallback(
-    async (language: string, options: { clearPrevious?: boolean } = {}) => {
+    async (
+      language: string,
+      options: {
+        clearPrevious?: boolean;
+        /** Track that MUST be in the payload, because the user asked for it by
+         *  name (a deep link). If the variant filter left it out, the fetch is
+         *  repeated unfiltered: an explicit request outranks the preference,
+         *  same rule the add-journey picker follows. */
+        requireTrackId?: string;
+      } = {}
+    ) => {
       if (!sessionToken) return;
       const cacheKey = language.toLowerCase();
       const cached = journeyCacheByLanguageRef.current.get(cacheKey);
@@ -4577,11 +4587,21 @@ export function MobileLibraryShell(args: {
       }
       setJourneyLanguageLoading(!cached);
       try {
-        const payload = await apiFetch<MobileJourneyPayload>({
+        let payload = await apiFetch<MobileJourneyPayload>({
           baseUrl: mobileConfig.apiBaseUrl,
           path: `/api/mobile/journey?language=${encodeURIComponent(language)}`,
           token: sessionToken,
         });
+        // El servidor sirve solo la variante del alumno. Si lo que pidio por
+        // enlace no esta ahi, se repite sin filtro; si no, la resolucion del
+        // track cae en `tracks[0]` y el enlace abre OTRO journey en silencio.
+        if (options.requireTrackId && !payload.tracks?.some((track) => track.id === options.requireTrackId)) {
+          payload = await apiFetch<MobileJourneyPayload>({
+            baseUrl: mobileConfig.apiBaseUrl,
+            path: `/api/mobile/journey?language=${encodeURIComponent(language)}&variant=all`,
+            token: sessionToken,
+          });
+        }
         journeyCacheByLanguageRef.current.set(cacheKey, payload);
         saveJourneyCacheToDisk();
         setRemoteJourney(payload);
@@ -16244,6 +16264,63 @@ export function MobileLibraryShell(args: {
   // apertura no lo leía nadie. El id de journey que viaja en el payload ES el
   // id del track (`tracks.push({ id: journey.id })` en journeyData), así que
   // seleccionarlo es directo.
+  // Enlace directo a UN journey: digitalpolyglot://journey/<trackId>?language=Spanish
+  //
+  // Vive fuera del handler de QA a proposito: aquel esta envuelto en `__DEV__` y
+  // solo existe en builds de desarrollo, asi que hasta hoy no habia forma de
+  // mandarle a nadie un enlace a un recorrido concreto. La unica via en
+  // produccion era el push del puente, que exige haber TERMINADO el anterior.
+  //
+  // Hace el mismo trabajo que el handler de push porque es el mismo trabajo:
+  // fijar idioma, cargar sus tracks y seleccionar el que se pide.
+  useEffect(() => {
+    let cancelled = false;
+
+    const openJourneyUrl = (url: string | null) => {
+      if (!url || cancelled) return;
+      let parsed: URL;
+      try {
+        parsed = new URL(url);
+      } catch {
+        return;
+      }
+      if (parsed.protocol !== "digitalpolyglot:" || parsed.hostname !== "journey") return;
+      // Se aceptan las dos formas: el id en la ruta o en `?id=`. Un cuid en la
+      // ruta es lo natural de escribir a mano; el query sobrevive mejor a los
+      // clientes de correo, que reescriben rutas.
+      const trackId =
+        parsed.pathname.replace(/^\/+/, "").trim() || (parsed.searchParams.get("id") ?? "").trim();
+      if (!trackId) return;
+      // `language` es obligatorio a proposito. Sin el no se sabe que payload
+      // cargar, y seleccionar un track de otro idioma cae en el fallback
+      // `tracks[0]`: el enlace abriria un journey distinto sin decir nada.
+      // Mejor no hacer nada que abrir el equivocado.
+      const language = (parsed.searchParams.get("language") ?? "").trim();
+      if (!language) return;
+
+      setSelectedBook(null);
+      setSelection(null);
+      setJourneyDetailTopicId(null);
+      setActiveScreen("home");
+      setActiveJourneyLanguage(language);
+      void loadJourneyForLanguage(language, { requireTrackId: trackId });
+      setSelectedJourneyTrackId(trackId);
+      shellScrollRef.current?.scrollTo({ y: 0, animated: false });
+    };
+
+    const subscription = Linking.addEventListener("url", ({ url }) => openJourneyUrl(url));
+    // Arranque en frio: la app estaba cerrada cuando tocaron el enlace, asi que
+    // el listener de arriba no llega a verlo nunca.
+    void Linking.getInitialURL()
+      .then((url) => openJourneyUrl(url))
+      .catch(() => undefined);
+
+    return () => {
+      cancelled = true;
+      subscription.remove();
+    };
+  }, [loadJourneyForLanguage]);
+
   useEffect(() => {
     let Notifications: typeof import("expo-notifications") | null = null;
     try {
