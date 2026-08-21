@@ -1001,6 +1001,26 @@ function getExerciseAnchor(exercise: PracticeExercise): string {
   }
 }
 
+/**
+ * Oración que este ejercicio va a SONAR, no la que muestra en pantalla.
+ *
+ * Es la clave de deduplicación de audio y tiene que salir del `audioClip`:
+ * el clip está direccionado por contenido (mismo texto = mismo mp3), así
+ * que dos ejercicios con la misma `audioClip.sentence` reproducen el mismo
+ * archivo aunque en pantalla se vean distintos. Justo lo que pasaba entre
+ * `fill_blank` y `meaning_in_context` de la misma frase: el primero muestra
+ * "Merle klatscht schon im _____ mit" y el segundo la frase entera, así que
+ * comparar `sentence` no los emparejaba, pero el audio era idéntico.
+ *
+ * `match_meaning` no lleva clip de frase (el audio de palabra se resuelve en
+ * runtime) y el `listen_choose` de este generador habla solo la palabra, así
+ * que ambos devuelven "" y nunca bloquean a nadie.
+ */
+export function getExerciseAudioSentence(exercise: PracticeExercise): string {
+  if (exercise.type === "match_meaning") return "";
+  return normalizeKey(exercise.audioClip?.sentence ?? "");
+}
+
 export function buildMixedPracticeSession(
   items: PracticeFavoriteItem[],
   plan: PracticeMode[],
@@ -1012,7 +1032,25 @@ export function buildMixedPracticeSession(
   );
   const nextIndexByMode = new Map<PracticeMode, number>(plan.map((mode) => [mode, 0]));
   const usedAnchors = new Set<string>();
+  // `buildPracticeSession` ya deduplica por oración, pero SOLO dentro de un
+  // modo y comparando la oración de pantalla. Al mezclar modos aquí eso no
+  // alcanzaba: el `fill_blank` de una palabra y el `meaning_in_context` de
+  // otra palabra de la MISMA frase pasaban los dos, y como el clip está
+  // direccionado por contenido, la sesión reproducía dos veces el mismo mp3.
+  // Comparamos por oración de AUDIO para que una frase suene una sola vez.
+  const usedAudioSentences = new Set<string>();
   const exercises: PracticeExercise[] = [];
+
+  const take = (candidate: PracticeExercise): boolean => {
+    const anchor = getExerciseAnchor(candidate);
+    if (usedAnchors.has(anchor)) return false;
+    const audioSentence = getExerciseAudioSentence(candidate);
+    if (audioSentence && usedAudioSentences.has(audioSentence)) return false;
+    usedAnchors.add(anchor);
+    if (audioSentence) usedAudioSentences.add(audioSentence);
+    exercises.push(candidate);
+    return true;
+  };
 
   for (const mode of plan) {
     if (exercises.length >= maxExercises) break;
@@ -1022,11 +1060,7 @@ export function buildMixedPracticeSession(
     while (index < session.length) {
       const candidate = session[index];
       index += 1;
-      const anchor = getExerciseAnchor(candidate);
-      if (usedAnchors.has(anchor)) continue;
-      usedAnchors.add(anchor);
-      exercises.push(candidate);
-      break;
+      if (take(candidate)) break;
     }
 
     nextIndexByMode.set(mode, index);
@@ -1042,10 +1076,7 @@ export function buildMixedPracticeSession(
     while (index < session.length && exercises.length < maxExercises) {
       const candidate = session[index];
       index += 1;
-      const anchor = getExerciseAnchor(candidate);
-      if (usedAnchors.has(anchor)) continue;
-      usedAnchors.add(anchor);
-      exercises.push(candidate);
+      take(candidate);
     }
 
     nextIndexByMode.set(mode, index);

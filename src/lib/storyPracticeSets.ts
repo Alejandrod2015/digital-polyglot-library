@@ -13,7 +13,7 @@
  */
 import { prisma } from "@/lib/prisma";
 import { buildPracticeItemsFromStory, rankItemsForFeatured } from "@/lib/storyPracticeItems";
-import { buildMixedPracticeSession, type PracticeExercise, type PracticeMode } from "@/lib/practiceExercises";
+import { buildMixedPracticeSession, getExerciseAudioSentence, type PracticeExercise, type PracticeMode } from "@/lib/practiceExercises";
 import { sanitizePracticeSentence } from "@/lib/sanitizePracticeSentence";
 
 const FEATURED_PLAN: PracticeMode[] = ["context", "meaning", "listening", "context", "meaning", "listening", "match", "context", "meaning", "context"];
@@ -97,9 +97,23 @@ export async function buildAndPersistStoryPracticeSet(
   // language and lemma, not by featured flag, so duplicates broaden the
   // pool rather than hurt it.
   const poolExtensionBudget = Math.max(0, POOL_TARGET_SIZE - featured.length);
-  const poolExtra = poolExtensionBudget > 0
+  const poolExtraRaw = poolExtensionBudget > 0
     ? buildMixedPracticeSession(items, POOL_EXTENSION_PLAN, poolExtensionBudget)
     : [];
+
+  // Cada llamada a `buildMixedPracticeSession` deduplica el audio dentro de
+  // SÍ misma, así que featured y pool pueden repetir frase entre ellos. Eso
+  // es inocuo mientras cada uno se sirva por separado (el API filtra por
+  // `featured`, nunca los mezcla en una respuesta), pero deja de serlo si
+  // featured se queda corto: abajo se marca featured por posición, y un
+  // item del pool ascendido a los 10 primeros sí compartiría sesión con la
+  // frase que ya venía de featured. Empujamos esos al final del pool para
+  // que el ascenso recaiga siempre en una frase todavía no oída.
+  const featuredAudio = new Set(featured.map(getExerciseAudioSentence).filter(Boolean));
+  const poolExtra = [
+    ...poolExtraRaw.filter((ex) => !featuredAudio.has(getExerciseAudioSentence(ex))),
+    ...poolExtraRaw.filter((ex) => featuredAudio.has(getExerciseAudioSentence(ex))),
+  ];
 
   const allExercises = [...featured, ...poolExtra];
   if (allExercises.length === 0) return { status: "skipped", reason: "no-vocab" };

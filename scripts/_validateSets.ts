@@ -127,6 +127,30 @@ export function validateSet(exs: any[], vocabWords?: string[]): string[] {
   const distinct = new Set(targetWords.map((w) => norm(w)));
   if (distinct.size !== targetWords.length) issues.push(`reused target words (${targetWords.length} used, ${distinct.size} distinct)`);
 
+  // Una oración = un ejercicio DENTRO de cada bucket. El clip de frase está
+  // direccionado por contenido (mismo texto = mismo mp3), así que dos
+  // ejercicios que comparten `audioClip.sentence` reproducen literalmente el
+  // mismo audio. Se compara por bucket porque el API sirve los 10 featured y
+  // el pool en respuestas separadas: repetir una frase entre featured y pool
+  // no llega nunca a los oídos de nadie, repetirla dentro de uno sí.
+  // Ojo: la comparación tiene que ser sobre `audioClip.sentence` y no sobre
+  // `sentence`, que en fill_blank lleva el hueco y no empareja con la frase
+  // entera del meaning_in_context aunque el audio sea el mismo.
+  for (const bucket of ["featured", "pool"] as const) {
+    const seen = new Map<string, string[]>();
+    for (let i = 0; i < exs.length; i++) {
+      const e = exs[i];
+      const isFeatured = e?.featured !== false;
+      if (isFeatured !== (bucket === "featured")) continue;
+      const sent = norm(e?.payload?.audioClip?.sentence);
+      if (!sent) continue;
+      seen.set(sent, [...(seen.get(sent) ?? []), `#${i} ${e.word}`]);
+    }
+    for (const [sent, who] of seen) {
+      if (who.length > 1) issues.push(`${bucket}: same audio reused by ${who.join(" + ")} ("${sent.slice(0, 48)}…")`);
+    }
+  }
+
   // Full vocab coverage (every vocab word taught by exactly one exercise).
   if (vocabWords && vocabWords.length) {
     const missing = vocabWords.filter((v) => !targetWords.some((t) => covers(t, v)));
