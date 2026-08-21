@@ -44,6 +44,28 @@ export const BETA_PLAN = "premium";
  */
 const ACTIVE_STATUSES = ["invited", "accepted"];
 
+/**
+ * Filas que dejamos al probar el programa sobre si mismo. El panel las oculta
+ * desde siempre, pero el contador de testers activos las sumaba, asi que la
+ * barra decia "30 / 20" con 29 testers reales. Vive aqui, y no en la ruta del
+ * Studio, para que la pantalla y el motor cuenten lo mismo.
+ */
+export const TEST_ROW_EMAIL = /betatest|postmigration|example\.com/i;
+
+/**
+ * El mismo filtro en SQL, para no traerse la tabla entera a memoria. Se
+ * escribe con `NOT` a nivel de where y no con `email: { not: { contains } }`:
+ * el `mode: "insensitive"` no viaja dentro de un `not` anidado y Prisma
+ * responde "Unknown argument `mode`".
+ */
+const NOT_A_TEST_ROW = {
+  NOT: [
+    { email: { contains: "betatest", mode: "insensitive" as const } },
+    { email: { contains: "postmigration", mode: "insensitive" as const } },
+    { email: { contains: "example.com", mode: "insensitive" as const } },
+  ],
+};
+
 /** Throttle for backfillBetaTesterLinks; see the note there. */
 const BACKFILL_COOLDOWN_MS = 60_000;
 let lastBackfillAt = 0;
@@ -66,7 +88,9 @@ export function betaBaseUrl(): string {
 }
 
 export async function countActiveTesters(): Promise<number> {
-  return prisma.betaSignup.count({ where: { status: { in: ACTIVE_STATUSES } } });
+  return prisma.betaSignup.count({
+    where: { status: { in: ACTIVE_STATUSES }, ...NOT_A_TEST_ROW },
+  });
 }
 
 /* ────────────────────────────────────────────── email ledger */

@@ -11,7 +11,7 @@ import type { BetaRulesConfig } from "@/lib/betaRules";
 import { getBetaRules, saveBetaRules } from "@/lib/betaRulesConfig";
 import { checkAscCredentials, ensureBetaGroup, listGroupTesterStates } from "@/lib/appStoreConnect";
 import { attachTesterGroup, getPlayBetaState } from "@/lib/googlePlayBeta";
-import { backfillBetaTesterLinks, countActiveTesters } from "@/lib/betaProgram";
+import { backfillBetaTesterLinks, countActiveTesters, TEST_ROW_EMAIL } from "@/lib/betaProgram";
 
 export const dynamic = "force-dynamic";
 
@@ -27,7 +27,7 @@ const FEEDBACK_LIMIT = 500;
 // exactly the condition the new "Blocked at Apple" alarm fires on. Left in, the
 // panel would show a permanent count of 1 for a person who does not exist, and
 // an alarm that is always on is an alarm nobody reads.
-const TEST_ROW = /betatest|postmigration|example\.com/i;
+const TEST_ROW = TEST_ROW_EMAIL;
 
 export async function GET(req: NextRequest) {
   const check = await requireBetaAdmin();
