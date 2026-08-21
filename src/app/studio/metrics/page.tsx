@@ -19,6 +19,9 @@ import type {
   MetricsSection,
   PipelineData,
 } from "@/components/studio/metrics/types";
+// Solo el tipo: `@/lib/metricsCohort` importa Prisma y no puede viajar al
+// bundle del cliente. Las etiquetas se declaran aqui abajo.
+import type { MetricsCohort } from "@/lib/metricsCohort";
 
 /**
  * Studio · Métricas. Editorial dashboard built on the `--mx-*` token
@@ -191,6 +194,24 @@ const MUTED_TABS: Array<{ key: MetricsSection; label: string; icon: string }> = 
 
 const RANGE_OPTIONS = ["7", "30", "90", "180"];
 
+/**
+ * Quién produjo los números. El eje es la persona, no la plataforma: un beta
+ * tester que además abre el lector web sigue siendo beta. "Público" es todo
+ * el que no está en el programa, compre libros o no.
+ */
+const COHORT_OPTIONS: Array<{ key: MetricsCohort; label: string; title: string }> = [
+  { key: "all", label: "Todos", title: "Beta y público juntos" },
+  { key: "beta", label: "Beta", title: "Solo los testers del programa (invited / accepted)" },
+  {
+    key: "public",
+    label: "Público",
+    title: "Todo el que no está en la beta: compradores de libros y altas libres",
+  },
+];
+
+/** Secciones que no salen de eventos de usuario, así que no admiten cohorte. */
+const COHORT_BLIND_SECTIONS: MetricsSection[] = ["content"];
+
 function formatRangeLabel(from: string, to: string) {
   if (!from || !to) return "-";
   return `${from.slice(0, 10)} → ${to.slice(0, 10)}`;
@@ -212,6 +233,7 @@ export default function MetricsDashboard() {
   const isCustom = customFrom !== "" && customTo !== "";
   const [bookSlug, setBookSlug] = useState("");
   const [storySlug, setStorySlug] = useState("");
+  const [cohort, setCohort] = useState<MetricsCohort>("all");
   const [section, setSection] = useState<MetricsSection>("overview");
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -270,6 +292,7 @@ export default function MetricsDashboard() {
       }
       if (bookSlug.trim()) qs.set("bookSlug", bookSlug.trim());
       if (storySlug.trim()) qs.set("storySlug", storySlug.trim());
+      qs.set("cohort", cohort);
       const res = await fetch(`/api/metrics/dashboard?${qs.toString()}`);
       if (!res.ok) {
         const body = await res.text().catch(() => "");
@@ -325,7 +348,7 @@ export default function MetricsDashboard() {
     setSectionCache({});
     void loadMetrics(section, true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bookSlug, days, storySlug, customFrom, customTo]);
+  }, [bookSlug, days, storySlug, customFrom, customTo, cohort]);
 
   function handleExport() {
     const qs = new URLSearchParams();
@@ -341,6 +364,7 @@ export default function MetricsDashboard() {
     }
     if (bookSlug.trim()) qs.set("bookSlug", bookSlug.trim());
     if (storySlug.trim()) qs.set("storySlug", storySlug.trim());
+    qs.set("cohort", cohort);
     window.location.href = `/api/metrics/export?${qs.toString()}`;
   }
 
@@ -356,7 +380,7 @@ export default function MetricsDashboard() {
       return <ContentView data={pipelineData} />;
     }
     if (section === "acquisition") {
-      return <AcquisitionView data={data} />;
+      return <AcquisitionView data={data} cohort={cohort} />;
     }
     if (section === "learning") {
       return <LearningView learning={data.learning} />;
@@ -428,6 +452,19 @@ export default function MetricsDashboard() {
           </span>
         </div>
 
+        {cohort !== "all" && COHORT_BLIND_SECTIONS.includes(section) ? (
+          // Esta sección no sale de eventos de usuario (el pipeline editorial
+          // no tiene a quién atribuirle nada), así que el filtro se dice en
+          // voz alta en vez de fingir que se aplicó.
+          <div
+            className="mx-panel"
+            style={{ padding: "8px 12px", fontSize: 12, color: "var(--mx-muted)" }}
+          >
+            El filtro de cohorte no aplica aquí: estos números salen del
+            pipeline editorial, no de lo que hace la gente en la app.
+          </div>
+        ) : null}
+
         <form
           autoComplete="off"
           className="mx-filters"
@@ -457,6 +494,30 @@ export default function MetricsDashboard() {
                     }
                   >
                     {option}d
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="mx-filters__group">
+            <span className="mx-filters__label">Cohorte</span>
+            <div className="mx-segmented">
+              {COHORT_OPTIONS.map((option) => {
+                const active = option.key === cohort;
+                return (
+                  <button
+                    type="button"
+                    key={option.key}
+                    title={option.title}
+                    onClick={() => setCohort(option.key)}
+                    className={
+                      active
+                        ? "mx-segmented__btn mx-segmented__btn--active"
+                        : "mx-segmented__btn"
+                    }
+                  >
+                    {option.label}
                   </button>
                 );
               })}
@@ -866,6 +927,8 @@ type AcquisitionPayload = {
     completedStory: boolean;
     viewedPlans: boolean;
     paid: boolean;
+    /** Redimió un claim de libro o tiene suscripción viva. */
+    bought?: boolean;
     platform: "ios" | "android" | "web" | null;
   }>;
   clerkInstance: string;
@@ -930,6 +993,36 @@ function BetaBadge({ status }: { status: string }) {
   );
 }
 
+/**
+ * Distintivo de comprador. Es el corte que queda DENTRO de "público" una vez
+ * que la cohorte saca a los beta testers del bote: quien pagó (un claim de
+ * libro de la tienda o una suscripción viva) frente a quien solo se dio de
+ * alta. Un beta tester también puede llevarlo; la cohorte dice quién es y
+ * esto dice qué hizo.
+ */
+function BuyerBadge() {
+  return (
+    <span
+      title="Compró: redimió un claim de libro o tiene una suscripción viva."
+      style={{
+        marginLeft: 6,
+        padding: "1px 6px",
+        borderRadius: 4,
+        fontSize: 10,
+        fontWeight: 700,
+        letterSpacing: "0.04em",
+        textTransform: "uppercase",
+        whiteSpace: "nowrap",
+        color: "#5ad19a",
+        backgroundColor: "rgba(90, 209, 154, 0.14)",
+        border: "1px solid rgba(90, 209, 154, 0.3)",
+      }}
+    >
+      compró
+    </span>
+  );
+}
+
 function FunnelBar({
   label,
   value,
@@ -967,7 +1060,13 @@ function FunnelBar({
   );
 }
 
-function AcquisitionView({ data }: { data: DashboardData }) {
+function AcquisitionView({
+  data,
+  cohort,
+}: {
+  data: DashboardData;
+  cohort: MetricsCohort;
+}) {
   const cf = data.checkoutFunnel;
   const days = data.range.days;
   const [acq, setAcq] = useState<AcquisitionPayload | null>(null);
@@ -981,7 +1080,7 @@ function AcquisitionView({ data }: { data: DashboardData }) {
     let cancelled = false;
     setLoading(true);
     setError(null);
-    fetch(`/api/metrics/acquisition?days=${days}`)
+    fetch(`/api/metrics/acquisition?days=${days}&cohort=${cohort}`)
       .then(async (r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
@@ -998,7 +1097,7 @@ function AcquisitionView({ data }: { data: DashboardData }) {
     return () => {
       cancelled = true;
     };
-  }, [days]);
+  }, [days, cohort]);
 
   const f = acq?.funnel;
   return (
@@ -1131,6 +1230,7 @@ function AcquisitionView({ data }: { data: DashboardData }) {
                       )}
                       <span style={{ opacity: 0.5 }}> · {r.email ?? "-"}</span>
                       {r.betaStatus ? <BetaBadge status={r.betaStatus} /> : null}
+                      {r.bought ? <BuyerBadge /> : null}
                     </td>
                     <td style={{ padding: "4px 6px" }}>
                       {r.targetLanguages.length ? (

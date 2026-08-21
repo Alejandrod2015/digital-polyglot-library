@@ -4,6 +4,7 @@ import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess";
+import { buildMetricsUserScope, parseMetricsCohort } from "@/lib/metricsCohort";
 
 /**
  * CSV export of the daily plays/completions series for the requested
@@ -36,20 +37,21 @@ export async function GET(req: NextRequest): Promise<Response> {
 
   const search = req.nextUrl.searchParams;
   const days = parseDays(search.get("days"));
+  const cohort = parseMetricsCohort(search.get("cohort"));
   const storySlug = search.get("storySlug")?.trim() || null;
   const bookSlug = search.get("bookSlug")?.trim() || null;
   const now = new Date();
   const from = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
 
-  // Same exclusion as the live dashboard: drop internal traffic so the
-  // CSV reflects external usage only.
+  // El mismo filtro que el dashboard en vivo: fuera el trafico interno, y
+  // solo la cohorte que se esta mirando, para que el CSV no diga otra cosa
+  // que la pantalla desde la que se pidio.
   const internalIds = await getInternalUserIds();
-  const excludeInternal =
-    internalIds.length > 0 ? { userId: { notIn: internalIds } } : {};
+  const userScope = await buildMetricsUserScope(cohort, internalIds);
 
   const rows = await prisma.userMetric.findMany({
     where: {
-      ...excludeInternal,
+      ...userScope,
       createdAt: { gte: from, lte: now },
       eventType: { in: ["audio_play", "audio_complete"] },
       ...(storySlug ? { storySlug } : {}),

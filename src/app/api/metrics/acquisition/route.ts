@@ -4,6 +4,7 @@ import { createClerkClient } from "@clerk/backend";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess";
+import { getBetaUserIds, parseMetricsCohort } from "@/lib/metricsCohort";
 import { resolveStoryLanguages } from "@/lib/storyLanguages";
 
 const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
@@ -65,6 +66,13 @@ type RecentSignup = {
   completedStory: boolean;
   viewedPlans: boolean;
   paid: boolean;
+  /**
+   * Compró: redimió un claim de libro (la tienda) o tiene una suscripción
+   * viva. Es el corte que separa, dentro de "público", a quien pagó de
+   * quien solo se dio de alta. Un beta tester puede ser comprador también;
+   * la cohorte manda y este distintivo solo describe.
+   */
+  bought: boolean;
   platform: "ios" | "android" | "web" | null;
 };
 
@@ -88,7 +96,8 @@ export async function GET(req: NextRequest): Promise<Response> {
   }
 
   const days = Math.max(1, Math.min(365, Number(req.nextUrl.searchParams.get("days") ?? "30")));
-  const cacheKey = `acq:${days}`;
+  const metricsCohort = parseMetricsCohort(req.nextUrl.searchParams.get("cohort"));
+  const cacheKey = `acq:${days}:${metricsCohort}`;
   if (cache && cache.key === cacheKey && Date.now() - cache.at < CACHE_TTL_MS) {
     return NextResponse.json(cache.payload);
   }
@@ -110,10 +119,22 @@ export async function GET(req: NextRequest): Promise<Response> {
       if (page.data.length < 100) break;
     }
 
-    const external = all.filter((u) => {
+    const externalAll = all.filter((u) => {
       const email = u.primaryEmailAddress?.emailAddress ?? u.emailAddresses?.[0]?.emailAddress ?? null;
       return !internalIds.has(u.id) && !isTeamEmail(email);
     });
+
+    // La cohorte se aplica AQUI, sobre las cuentas de Clerk, para que las
+    // altas, el embudo y la tabla hablen todos de la misma gente. Sin esto,
+    // esta pestana seguiria mostrando a todo el mundo mientras la cabecera
+    // dice "Beta".
+    const betaIds = new Set(await getBetaUserIds());
+    const external =
+      metricsCohort === "all"
+        ? externalAll
+        : externalAll.filter((u) =>
+            metricsCohort === "beta" ? betaIds.has(u.id) : !betaIds.has(u.id),
+          );
 
     const totalExternal = external.length;
     const signupsLast7d = external.filter((u) => u.createdAt >= d7).length;
@@ -124,7 +145,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     const ids = cohort.map((u) => u.id);
 
     // ── DB cross-reference (single round of grouped queries) ──
-    const [audioEvents, plansEvents, continueRows, entitlements] = await Promise.all([
+    const [audioEvents, plansEvents, continueRows, entitlements, claimRows] = await Promise.all([
       ids.length
         ? prisma.userMetric.findMany({
             where: { userId: { in: ids }, eventType: { in: ["story_opened", "audio_play", "audio_complete", "audio_pause", "continue_listening"] } },
@@ -148,6 +169,14 @@ export async function GET(req: NextRequest): Promise<Response> {
         ? prisma.billingEntitlement.findMany({
             where: { userId: { in: ids }, status: "active" },
             select: { userId: true, plan: true },
+          })
+        : Promise.resolve([]),
+      // Compradores de libros: el claim de la tienda es lo único que los
+      // identifica, porque una compra en Shopify no deja entitlement.
+      ids.length
+        ? prisma.claimToken.findMany({
+            where: { redeemedBy: { in: ids } },
+            select: { redeemedBy: true },
           })
         : Promise.resolve([]),
     ]);
@@ -246,6 +275,10 @@ export async function GET(req: NextRequest): Promise<Response> {
     const paidBy = new Set(
       entitlements.filter((e) => !(e.plan ?? "").toLowerCase().includes("free")).map((e) => e.userId)
     );
+    const boughtBy = new Set<string>([
+      ...claimRows.map((c) => c.redeemedBy).filter((id): id is string => Boolean(id)),
+      ...paidBy,
+    ]);
 
     // ── Platform split (iPhone app vs webapp) ──
     // Events are now stamped with metadata.platform at write time. For users
@@ -411,6 +444,7 @@ export async function GET(req: NextRequest): Promise<Response> {
           completedStory: completedBy.has(u.id),
           viewedPlans: plansBy.has(u.id),
           paid: paidBy.has(u.id),
+          bought: boughtBy.has(u.id),
           platform: platformFor(u),
         };
       });
