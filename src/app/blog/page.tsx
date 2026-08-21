@@ -257,7 +257,7 @@ export default function BlogIndex() {
         >
           <span>© {new Date().getFullYear()} Digital Polyglot</span>
           <nav style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
-            <a href="https://shop.digitalpolyglot.com" style={{ color: "rgba(255,255,255,0.45)" }}>Shop</a>
+            <a href="https://shop.digitalpolyglot.com?utm_source=digitalpolyglot.com&utm_medium=footer&utm_campaign=blog-footer" style={{ color: "rgba(255,255,255,0.45)" }}>Shop</a>
             <Link href="/privacy" style={{ color: "rgba(255,255,255,0.45)" }}>Privacy</Link>
             <Link href="/terms" style={{ color: "rgba(255,255,255,0.45)" }}>Terms</Link>
             <Link href="/impressum" style={{ color: "rgba(255,255,255,0.45)" }}>Impressum</Link>

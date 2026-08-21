@@ -16,7 +16,7 @@ export const spanishshortstorieson20mexicanwonders: Book = {
     "History & Places"
   ],
   "audioFolder": "",
-  "storeUrl": "https://shop.digitalpolyglot.com/products/spanish-short-stories-on-mexican-wonders?variant=56017679286607",
+  "storeUrl": "https://shop.digitalpolyglot.com/products/spanish-short-stories-on-mexican-wonders?variant=56017679286607&utm_source=Book-page&utm_medium=App&utm_campaign=Book-page&utm_content=sss-mx-wonders",
   "published": true,
   "language": "spanish",
   "region": "mexico",

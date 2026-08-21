@@ -10,7 +10,7 @@ export const shortstoriesinargentinianspanish: Book = {
   "subtitle": "Immerse Yourself in Argentine Culture with 20 Fun Short Stories and Essential Vocabulary",
   "cover": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/uploads/covers/630ac40ef29fe156b62aaaaa.png",
   "audioFolder": "",
-  "storeUrl": "https://shop.digitalpolyglot.com/products/short-stories-in-argentinian-spanish",
+  "storeUrl": "https://shop.digitalpolyglot.com/products/short-stories-in-argentinian-spanish?utm_source=Book-page&utm_medium=App&utm_campaign=Book-page&utm_content=sss-ar",
   "published": true,
   "language": "spanish",
   "variant": "latam",

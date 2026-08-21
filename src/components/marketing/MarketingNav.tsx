@@ -17,7 +17,7 @@ import styles from "./LandingPage.module.css";
 const LINKS: Array<{ href: string; label: string; external?: boolean }> = [
   { href: "/blog", label: "Blog" },
   { href: "/beta", label: "Beta" },
-  { href: "https://shop.digitalpolyglot.com", label: "Shop", external: true },
+  { href: "https://shop.digitalpolyglot.com?utm_source=digitalpolyglot.com&utm_medium=nav&utm_campaign=site-nav", label: "Shop", external: true },
 ];
 
 function track(cta: string) {

@@ -16,7 +16,7 @@ export const shortstoriesinargentinianspanishforbeginners: Book = {
     "Travel & Transportation"
   ],
   "audioFolder": "",
-  "storeUrl": "https://shop.digitalpolyglot.com/products/short-stories-in-argentinian-spanish-for-beginners",
+  "storeUrl": "https://shop.digitalpolyglot.com/products/short-stories-in-argentinian-spanish-for-beginners?utm_source=Book-page&utm_medium=App&utm_campaign=Book-page&utm_content=sss-ar-beginners",
   "published": true,
   "language": "spanish",
   "region": "argentina",

@@ -263,7 +263,7 @@ export default function LandingPage() {
           </span>
           <div className={styles.footLinks}>
             <Link href="/blog">Blog</Link>
-            <a href="https://shop.digitalpolyglot.com">Shop</a>
+            <a href="https://shop.digitalpolyglot.com?utm_source=digitalpolyglot.com&utm_medium=footer&utm_campaign=landing-footer">Shop</a>
             <Link href="/privacy">Privacy</Link>
             <Link href="/terms">Terms</Link>
             <Link href="/impressum">Impressum</Link>

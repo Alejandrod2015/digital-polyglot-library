@@ -10,7 +10,7 @@ export const shortstoriesinmexicanspanish: Book = {
   "subtitle": "Embark on a Language Journey with 20 Entertaining Short Stories and Essential Mexican Vocabulary",
   "cover": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/uploads/covers/a89b96772bf7421f19649c88.png",
   "audioFolder": "",
-  "storeUrl": "https://shop.digitalpolyglot.com/products/short-stories-in-mexican-spanish",
+  "storeUrl": "https://shop.digitalpolyglot.com/products/short-stories-in-mexican-spanish?utm_source=Book-page&utm_medium=App&utm_campaign=Book-page&utm_content=sss-mx",
   "published": true,
   "language": "spanish",
   "variant": "latam",
