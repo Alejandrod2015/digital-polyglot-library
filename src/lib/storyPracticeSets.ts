@@ -13,10 +13,15 @@
  */
 import { prisma } from "@/lib/prisma";
 import { buildPracticeItemsFromStory, rankItemsForFeatured } from "@/lib/storyPracticeItems";
-import { buildMixedPracticeSession, type PracticeExercise, type PracticeMode } from "@/lib/practiceExercises";
+import {
+  buildMixedPracticeSession,
+  MIXED_PRACTICE_PLAN,
+  type PracticeExercise,
+  type PracticeMode,
+} from "@/lib/practiceExercises";
 import { sanitizePracticeSentence } from "@/lib/sanitizePracticeSentence";
 
-const FEATURED_PLAN: PracticeMode[] = ["context", "meaning", "listening", "context", "meaning", "listening", "match", "context", "meaning", "context"];
+const FEATURED_PLAN: PracticeMode[] = MIXED_PRACTICE_PLAN;
 const POOL_EXTENSION_PLAN: PracticeMode[] = ["context", "meaning", "listening", "match", "context", "meaning", "listening", "match", "context", "meaning"];
 const FEATURED_SIZE = 10;
 // Hard cap on total pool size so generation cost stays bounded even for

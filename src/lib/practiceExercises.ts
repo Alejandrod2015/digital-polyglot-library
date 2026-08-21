@@ -1001,6 +1001,25 @@ function getExerciseAnchor(exercise: PracticeExercise): string {
   }
 }
 
+/**
+ * Reparto canónico de una sesión MIXTA: 4 contexto, 3 significado, 2 escucha
+ * y 1 emparejar. Es el plan que ya servía el set curado de cada historia; vive
+ * aquí para que el móvil pueda usar el mismo sin importar `storyPracticeSets`
+ * (que arrastra prisma) y para que los dos no puedan derivar.
+ */
+export const MIXED_PRACTICE_PLAN: PracticeMode[] = [
+  "context",
+  "meaning",
+  "listening",
+  "context",
+  "meaning",
+  "listening",
+  "match",
+  "context",
+  "meaning",
+  "context",
+];
+
 export function buildMixedPracticeSession(
   items: PracticeFavoriteItem[],
   plan: PracticeMode[],

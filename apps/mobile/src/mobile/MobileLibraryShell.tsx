@@ -188,7 +188,9 @@ import {
   getJourneyTopicCheckpointKey,
 } from "../../../../src/lib/journeyUnlock";
 import {
+  buildMixedPracticeSession,
   buildPracticeSession,
+  MIXED_PRACTICE_PLAN,
   getRecommendedPracticeModeFromOnboarding,
   getDuePracticeItems,
   getSpeechSynthesisLang,
@@ -977,8 +979,16 @@ type ProgressStat = {
 
 type PracticeModeKey = "meaning" | "context" | "listening" | "match";
 
+/**
+ * Modo a nivel de SESIÓN. Una tanda mixta reparte los cuatro modos, así que
+ * no puede etiquetarse con ninguno de ellos: el chrome de la sesión sale del
+ * ejercicio en curso y la métrica registra "mixed" en vez de fingir un modo
+ * que el alumno nunca eligió.
+ */
+type PracticeSessionMode = PracticeModeKey | "mixed";
+
 type PracticeModeCard = {
-  key: PracticeModeKey;
+  key: PracticeSessionMode;
   title: string;
   eyebrow: string;
   detail: string;
@@ -1116,6 +1126,22 @@ const PRACTICE_MODE_CARDS: PracticeModeCard[] = [
     icon: "link",
   },
 ];
+
+/**
+ * Las sesiones mixtas no salen en la órbita (no son un modo que se elija), pero
+ * necesitan carta para los dos momentos en los que no hay ejercicio en curso
+ * del que sacar el chrome: mientras carga y en la pantalla de resultado.
+ */
+const MIXED_PRACTICE_CARD: PracticeModeCard = {
+  key: "mixed",
+  title: "Practice",
+  eyebrow: "Mixed round",
+  detail: "Meaning, context, listening and match in one round.",
+  caption: "Best for a full pass over the words you just met.",
+  accent: tokenColor.xp,
+  background: "#1f7ee0",
+  icon: "zap",
+};
 
 const MIN_RELATED_PRACTICE_ITEMS = 3;
 const RELATED_PRACTICE_MAX = 20;
@@ -1651,18 +1677,24 @@ function buildPracticeExercises(
   return buildPracticeExercisesFromItems(buildPracticeFavorites(favorites), mode, review);
 }
 
-function buildPracticeExercisesFromItems(
-  source: PracticeFavoriteItem[],
-  mode: PracticeModeKey,
-  review = false,
-  prefs?: { interests: readonly string[]; learningGoal: OnboardingGoal | null; dailyMinutes: number | null }
-): PracticeExercise[] {
-  if (source.length === 0) return [];
+type PracticeBuildPrefs = {
+  interests: readonly string[];
+  learningGoal: OnboardingGoal | null;
+  dailyMinutes: number | null;
+};
 
+/** Orden con el que entran las palabras a cualquier tanda: dues primero,
+ *  sesgo de onboarding después, vencimiento como desempate. Extraído para que
+ *  la tanda de un solo modo y la mixta partan EXACTAMENTE del mismo orden. */
+function prioritizePracticeItems(
+  source: PracticeFavoriteItem[],
+  review: boolean,
+  prefs?: PracticeBuildPrefs
+): PracticeFavoriteItem[] {
   const dueItems = getDuePracticeItems(source);
   const prioritizedBase = review && dueItems.length > 0 ? dueItems : source;
   const prioritySeed = prefs ? sortPracticeItemsByOnboarding(prioritizedBase, prefs, review) : prioritizedBase;
-  const prioritized = [...prioritySeed].sort((a, b) => {
+  return [...prioritySeed].sort((a, b) => {
     const aDue = a.nextReviewAt ? Date.parse(a.nextReviewAt) : Number.NaN;
     const bDue = b.nextReviewAt ? Date.parse(b.nextReviewAt) : Number.NaN;
     if (Number.isFinite(aDue) && Number.isFinite(bDue) && aDue !== bDue) return aDue - bDue;
@@ -1670,8 +1702,43 @@ function buildPracticeExercisesFromItems(
     if (Number.isFinite(bDue)) return 1;
     return a.word.localeCompare(b.word);
   });
+}
 
-  const sharedExercises = buildPracticeSession(prioritized, mode, prefs);
+function buildPracticeExercisesFromItems(
+  source: PracticeFavoriteItem[],
+  mode: PracticeModeKey,
+  review = false,
+  prefs?: PracticeBuildPrefs
+): PracticeExercise[] {
+  if (source.length === 0) return [];
+
+  const sharedExercises = buildPracticeSession(prioritizePracticeItems(source, review, prefs), mode, prefs);
+
+  return sharedExercises.map(mapSharedExerciseToMobile);
+}
+
+/**
+ * Tanda MIXTA con el reparto canónico (4 contexto, 3 significado, 2 escucha,
+ * 1 emparejar), el mismo que sirve el set curado de las historias.
+ *
+ * Se usa en toda entrada de UN SOLO TAP: fin de historia, tema del journey,
+ * START de la órbita, "Practice all" y el recordatorio. Ahí el alumno no
+ * eligió modo, así que no hay modo que servirle; elegirlo por él era lo que
+ * dejaba la práctica en un solo formato.
+ */
+function buildMixedPracticeExercisesFromItems(
+  source: PracticeFavoriteItem[],
+  review = false,
+  prefs?: PracticeBuildPrefs
+): PracticeExercise[] {
+  if (source.length === 0) return [];
+
+  const sharedExercises = buildMixedPracticeSession(
+    prioritizePracticeItems(source, review, prefs),
+    MIXED_PRACTICE_PLAN,
+    10,
+    prefs
+  );
 
   return sharedExercises.map(mapSharedExerciseToMobile);
 }
@@ -2286,7 +2353,7 @@ export function MobileLibraryShell(args: {
   const [selectedBookDescriptionExpanded, setSelectedBookDescriptionExpanded] = useState(false);
   const bookDetailScrollRef = useRef<ScrollView | null>(null);
   const exploreSearchBlurTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const [activePracticeMode, setActivePracticeMode] = useState<PracticeModeKey | null>(null);
+  const [activePracticeMode, setActivePracticeMode] = useState<PracticeSessionMode | null>(null);
   const [lastPracticeActivityAt, setLastPracticeActivityAt] = useState<string | null>(null);
   const [practiceExercises, setPracticeExercises] = useState<PracticeExercise[]>([]);
   const [practiceIndex, setPracticeIndex] = useState(0);
@@ -5624,7 +5691,7 @@ export function MobileLibraryShell(args: {
   const activePracticeCard =
     PRACTICE_MODE_CARDS.find(
       (card) => card.key === (currentPracticeExercise?.mode ?? activePracticeMode)
-    ) ?? null;
+    ) ?? (activePracticeMode === "mixed" ? MIXED_PRACTICE_CARD : null);
   const currentPracticeFavoriteItem = useMemo<MobileFavoriteItem | null>(() => {
     if (!currentPracticeExercise || currentPracticeExercise.kind !== "multiple-choice") return null;
     return {
@@ -7983,7 +8050,7 @@ export function MobileLibraryShell(args: {
   }
 
   async function openPracticeMode(
-    mode: PracticeModeKey,
+    mode: PracticeSessionMode,
     review = false,
     overrideItems?: PracticeFavoriteItem[] | null,
     favoriteKind?: "due" | "all" | "related"
@@ -8003,9 +8070,13 @@ export function MobileLibraryShell(args: {
     // el tap. Sin esto, el botón START de la orbita queda dead cuando
     // el chip muestra 0.
     let effectiveMode = mode;
-    let exercises = buildPracticeExercisesFromItems(sourceItems, effectiveMode, review, onboardingPracticePrefs);
+    const buildForMode = (m: PracticeSessionMode, rev: boolean) =>
+      m === "mixed"
+        ? buildMixedPracticeExercisesFromItems(sourceItems, rev, onboardingPracticePrefs)
+        : buildPracticeExercisesFromItems(sourceItems, m, rev, onboardingPracticePrefs);
+    let exercises = buildForMode(effectiveMode, review);
     if (exercises.length === 0 && review) {
-      exercises = buildPracticeExercisesFromItems(sourceItems, effectiveMode, false, onboardingPracticePrefs);
+      exercises = buildForMode(effectiveMode, false);
     }
     // Fix-flow fallback: el WHAT'S NEXT "Fix N" pasa los pocos items
     // fallados como overrideItems. Si el modo activo era match (≥4
@@ -8209,7 +8280,7 @@ export function MobileLibraryShell(args: {
     const exercises =
       persistedExercises && persistedExercises.length > 0
         ? persistedExercises.map(mapSharedExerciseToMobile)
-        : buildPracticeExercisesFromItems(items, "context", false, onboardingPracticePrefs);
+        : buildMixedPracticeExercisesFromItems(items, false, onboardingPracticePrefs);
     if (exercises.length === 0) {
       setPracticeLoadError("This story does not have practice items yet.");
       setActiveScreen("practice");
@@ -8229,7 +8300,7 @@ export function MobileLibraryShell(args: {
     setPracticeReturnSelection(selection);
     setPracticePreviousScreen(activeScreen);
     setPracticeLoadError(null);
-    setActivePracticeMode("context");
+    setActivePracticeMode("mixed");
     setPracticeExercises(exercises);
     setPracticeIndex(0);
     setPracticeScore(0);
@@ -8308,7 +8379,7 @@ export function MobileLibraryShell(args: {
     // immediately with a loading indicator so the reader doesn't sit
     // visible while the network request resolves.
     setPracticeLaunchLoading(true);
-    setActivePracticeMode("context");
+    setActivePracticeMode("mixed");
     // Limpiar los ejercicios ANTES del await de red. Sin esto la sesión queda
     // marcada como abierta (activePracticeMode truthy) mientras el conteo
     // todavía no existe, y `practiceExercises` conserva los de la ronda
@@ -8414,16 +8485,14 @@ export function MobileLibraryShell(args: {
 
       const items = Array.isArray(payload.items) ? payload.items : [];
       const reviewMeta = payload.review && typeof payload.review === "object" ? payload.review : null;
-      const defaultMode =
-        args.kind === "checkpoint"
-          ? "context"
-          : args.review
-            ? getRecommendedPracticeModeFromItems(items)
-            : "context";
+      // El checkpoint ya trae su tanda mezclada del servidor
+      // (buildTopicCheckpointPracticeSession). El resto la mezcla aquí con el
+      // mismo plan: antes el modo por defecto era "context", así que un tema
+      // entero se practicaba con un único formato.
       const exercises =
         args.kind === "checkpoint" && Array.isArray(payload.exercises) && payload.exercises.length > 0
           ? payload.exercises.map(mapSharedExerciseToMobile)
-          : buildPracticeExercisesFromItems(items, defaultMode, true, onboardingPracticePrefs);
+          : buildMixedPracticeExercisesFromItems(items, true, onboardingPracticePrefs);
       if (exercises.length === 0) {
         setPracticeLoadError("This journey topic is not ready for practice yet.");
         setActiveScreen("practice");
@@ -8449,7 +8518,7 @@ export function MobileLibraryShell(args: {
       });
       setPracticeReturnSelection(null);
       setPracticeLoadError(null);
-      setActivePracticeMode("context");
+      setActivePracticeMode("mixed");
       setPracticeExercises(exercises);
       setPracticeIndex(0);
       setPracticeScore(0);
@@ -13559,7 +13628,7 @@ export function MobileLibraryShell(args: {
             // racha/XP/nivel: sin datos del servidor no se pinta, en vez de
             // pintar ceros que parecen reales.
             hasProgressData={Boolean(remoteProgress?.gamification)}
-            onStart={() => void openPracticeMode(recommendedPracticeMode ?? "meaning", true)}
+            onStart={() => void openPracticeMode("mixed", true)}
             onPickSkill={(mode) => void openPracticeMode(mode, true)}
             emptyState={favoriteWords.length === 0}
             onEmptyTap={() => setSaveWordsHintVisible(true)}
@@ -13951,7 +14020,7 @@ export function MobileLibraryShell(args: {
                 } else if (dueFavoritesCount > 0 && !isCheckpoint) {
                   const estMin = Math.max(1, Math.round((dueFavoritesCount * 10) / 60));
                   primaryAction = {
-                    onPress: () => void openPracticeMode(recommendedPracticeMode, true),
+                    onPress: () => void openPracticeMode("mixed", true),
                     title: "Review",
                     subtitle: `${dueFavoritesCount} due · ${estMin} min`,
                     icon: "play",
@@ -15289,7 +15358,7 @@ export function MobileLibraryShell(args: {
                 const itemsForPractice = filteredFavoriteCards.map((c) => c.item);
                 setActiveScreen("practice");
                 void openPracticeMode(
-                  recommendedPracticeMode,
+                  "mixed",
                   false,
                   buildPracticeFavorites(itemsForPractice),
                   "all"
@@ -16765,10 +16834,10 @@ export function MobileLibraryShell(args: {
 
     if (target.kind === "practiceDue") {
       setActiveScreen("practice");
-      void openPracticeMode(recommendedPracticeMode, true, undefined, "due");
+      void openPracticeMode("mixed", true, undefined, "due");
       void trackReminderMetric("reminder_destination_opened", {
         targetKind: target.kind,
-        mode: recommendedPracticeMode,
+        mode: "mixed",
       });
       onHandledReminderNavigation?.();
       return;
@@ -16781,7 +16850,7 @@ export function MobileLibraryShell(args: {
       });
       onHandledReminderNavigation?.();
     }
-  }, [onHandledReminderNavigation, openSelection, pendingReminderNavigation, recommendedPracticeMode]);
+  }, [onHandledReminderNavigation, openSelection, pendingReminderNavigation]);
 
   useEffect(() => {
     let cancelled = false;
