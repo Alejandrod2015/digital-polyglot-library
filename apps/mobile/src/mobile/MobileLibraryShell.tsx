@@ -3428,6 +3428,15 @@ export function MobileLibraryShell(args: {
   // y=0.
   const [showJourneyScrollTop, setShowJourneyScrollTop] = useState(false);
   const showJourneyScrollTopRef = useRef(false);
+  // Dirección de la flecha del FAB del journey. El botón no vuelve
+  // arriba: centra la historia "next", que tanto puede estar por
+  // encima como por debajo de donde el usuario está mirando. La
+  // flecha se calcula contra la Y medida del pill (ver
+  // `journeyNextNodeCenterRef`); mientras no haya medida, "up".
+  const [journeyFabDirection, setJourneyFabDirection] = useState<
+    "up" | "down"
+  >("up");
+  const journeyFabDirectionRef = useRef<"up" | "down">("up");
 
   // Two reasons to force the onboarding to show up after the gate:
   //   - "test"   → polyglot menu entry. Selections are NOT persisted;
@@ -16321,6 +16330,56 @@ export function MobileLibraryShell(args: {
   // node; we measure its offset inside shellScrollRef and jump there.
   const journeyNextNodeRef = useRef<View | null>(null);
   const journeyAutoScrolledRef = useRef<string | null>(null);
+  // Centro vertical medido del pill "next" dentro del shell
+  // ScrollView. Lo rellena cada medida (auto-center on open, onLayout
+  // del pill, tap del FAB) y lo lee el handler de scroll para decidir
+  // hacia dónde apunta la flecha. null = todavía sin medir.
+  const journeyNextNodeCenterRef = useRef<number | null>(null);
+  // Scroll target del FAB a partir del centro medido: el mismo 45%
+  // del viewport que usa el auto-center on open, clampado a 0.
+  const journeyFabTargetY = useCallback((center: number) => {
+    const { height: viewportH } = Dimensions.get("window");
+    return Math.max(0, center - viewportH * 0.45);
+  }, []);
+  // Recalcula la flecha comparando el destino con la posición actual.
+  // Banda muerta de 24pt para que no parpadee cuando el usuario ya
+  // está prácticamente encima del pill.
+  const syncJourneyFabDirection = useCallback(
+    (scrollY: number) => {
+      const center = journeyNextNodeCenterRef.current;
+      if (center == null) return;
+      const target = journeyFabTargetY(center);
+      const delta = target - scrollY;
+      if (Math.abs(delta) < 24) return;
+      const next = delta > 0 ? "down" : "up";
+      if (next !== journeyFabDirectionRef.current) {
+        journeyFabDirectionRef.current = next;
+        setJourneyFabDirection(next);
+      }
+    },
+    [journeyFabTargetY]
+  );
+  // Mide el pill "next" contra el ScrollView y guarda su centro.
+  const measureJourneyNextCenter = useCallback(() => {
+    const pill = journeyNextNodeRef.current;
+    const scroll = shellScrollRef.current;
+    if (!pill || !scroll || typeof pill.measureLayout !== "function") return;
+    try {
+      pill.measureLayout(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        scroll as any,
+        (_x: number, y: number, _w: number, h: number) => {
+          journeyNextNodeCenterRef.current = y + h / 2;
+          syncJourneyFabDirection(shellScrollYRef.current);
+        },
+        () => {
+          // Nodo desmontado; la próxima medida lo reintenta.
+        }
+      );
+    } catch {
+      // idem
+    }
+  }, [syncJourneyFabDirection]);
   useEffect(() => {
     // Reset when the track changes so the auto-scroll fires again for
     // the new track's next.
@@ -16390,6 +16449,9 @@ export function MobileLibraryShell(args: {
     };
   }, [loadJourneyForLanguage]);
 
+  /** Historia que un aviso pidió abrir, en espera de que cargue su journey. */
+  const pendingPushStoryRef = useRef<{ slug: string; atMs: number } | null>(null);
+
   useEffect(() => {
     let Notifications: typeof import("expo-notifications") | null = null;
     try {
@@ -16430,6 +16492,12 @@ export function MobileLibraryShell(args: {
         void loadJourneyForLanguage(language);
       }
       setSelectedJourneyTrackId(journeyId);
+
+      // Avisos que apuntan a UNA historia (el de "historia a medias") mandan
+      // también su slug. El track todavía no está cargado en este punto, así
+      // que se apunta y lo abre el efecto de abajo en cuanto llegue.
+      const storySlug = typeof data?.storySlug === "string" ? data.storySlug.trim() : "";
+      pendingPushStoryRef.current = storySlug ? { slug: storySlug, atMs: Date.now() } : null;
     };
 
     const subscription = Notifications.addNotificationResponseReceivedListener((response) => {
@@ -16446,6 +16514,32 @@ export function MobileLibraryShell(args: {
       subscription?.remove?.();
     };
   }, [loadJourneyForLanguage]);
+
+  // Segunda mitad del toque en un aviso de historia: el handler de arriba pide
+  // el journey y deja el slug apuntado; aquí, en cuanto el track llega, se
+  // busca esa historia y se abre. Sin esto el aviso deja al alumno en la
+  // portada del recorrido y la historia que le prometía el texto la tiene que
+  // encontrar él solo.
+  useEffect(() => {
+    const pending = pendingPushStoryRef.current;
+    if (!pending || !activeJourneyTrack) return;
+    // Caducidad: si el track que llega no trae la historia (idioma distinto,
+    // payload viejo), no se queda esperando para abrirla media hora después.
+    if (Date.now() - pending.atMs > 30_000) {
+      pendingPushStoryRef.current = null;
+      return;
+    }
+    for (const level of activeJourneyTrack.levels) {
+      for (const topic of level.topics) {
+        const story = topic.stories.find((entry) => entry.storySlug === pending.slug);
+        if (story) {
+          pendingPushStoryRef.current = null;
+          void openJourneyStory(story);
+          return;
+        }
+      }
+    }
+  }, [activeJourneyTrack]);
 
   // Aviso al cerrar la ULTIMA historia del journey. El milestone ya existia
   // (es el mismo componente que dice "Checkpoint cleared"), pero solo lo
@@ -16539,6 +16633,7 @@ export function MobileLibraryShell(args: {
           scroll as any,
           (_x: number, y: number, _w: number, h: number) => {
             if (cancelled) return;
+            journeyNextNodeCenterRef.current = y + h / 2;
             const { height: viewportH } = Dimensions.get("window");
             // Use 45% of viewport instead of 50% so the pill sits
             // slightly above center; reading naturally pulls the eye
@@ -17129,6 +17224,16 @@ export function MobileLibraryShell(args: {
             journeyNextNodeRef.current = node;
           }
         }}
+        onLayout={
+          isNextAction
+            ? () => {
+                // Cada relayout del pill (paneles sticky que se
+                // montan, cambio de topic) mueve su Y; volvemos a
+                // medir para que la flecha no quede al revés.
+                measureJourneyNextCenter();
+              }
+            : undefined
+        }
         style={[
           styles.journeyPathNodeRow,
           { paddingLeft: waveOffsetPx },
@@ -17631,8 +17736,11 @@ export function MobileLibraryShell(args: {
         showJourneyScrollTopRef.current = shouldShow;
         setShowJourneyScrollTop(shouldShow);
       }
+      // La flecha del FAB sigue al pill "next": si está por debajo de
+      // donde el usuario mira, apunta hacia abajo.
+      syncJourneyFabDirection(y);
     },
-    [recomputeStickyTopic]
+    [recomputeStickyTopic, syncJourneyFabDirection]
   );
 
   // Reset the sticky topic when the user leaves the journey screen
@@ -17650,6 +17758,13 @@ export function MobileLibraryShell(args: {
       if (showJourneyScrollTopRef.current) {
         showJourneyScrollTopRef.current = false;
         setShowJourneyScrollTop(false);
+      }
+      // Medida del pill "next" invalidada: al volver, el path se
+      // remonta y la Y anterior ya no vale.
+      journeyNextNodeCenterRef.current = null;
+      if (journeyFabDirectionRef.current !== "up") {
+        journeyFabDirectionRef.current = "up";
+        setJourneyFabDirection("up");
       }
     }
   }, [activeScreen, journeyDetailTopicId]);
@@ -19988,13 +20103,15 @@ export function MobileLibraryShell(args: {
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 scroll as any,
                 (_x: number, y: number, _w: number, h: number) => {
-                  const { height: viewportH } = Dimensions.get("window");
                   // 45% del viewport (mismo offset que el auto-center
                   // on open): la mirada lee un poco arriba del centro
                   // geométrico, así el pill queda donde el usuario lo
                   // espera ver al "ir a lo que toca".
-                  const target = Math.max(0, y + h / 2 - viewportH * 0.45);
-                  scroll.scrollTo({ y: target, animated: true });
+                  journeyNextNodeCenterRef.current = y + h / 2;
+                  scroll.scrollTo({
+                    y: journeyFabTargetY(y + h / 2),
+                    animated: true,
+                  });
                 },
                 () => {
                   scroll.scrollTo({ y: 0, animated: true });
@@ -20011,7 +20128,11 @@ export function MobileLibraryShell(args: {
             pressed ? styles.journeyScrollTopButtonPressed : null,
           ]}
         >
-          <Feather name="chevron-up" size={22} color="#0c1626" />
+          <Feather
+            name={journeyFabDirection === "down" ? "chevron-down" : "chevron-up"}
+            size={22}
+            color="#0c1626"
+          />
         </Pressable>
       ) : null}
 

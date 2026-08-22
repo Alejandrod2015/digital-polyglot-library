@@ -85,25 +85,29 @@ function spokenWords(raw: string | null): { spoken: number; total: number } {
  * no nativos (Nadia tiene Visum y Aufenthaltstitel, Mira pregunta "sprechen
  * Sie Deutsch?"). Solo la lectura humana los ve.
  *
- * Auditado 2026-08-17 sobre los 16 journeys live+draft.
- * Para refrescar: `npx tsx scripts/_auditNativeSpeakerGate.ts` da las historias
- * con marcador léxico; los personajes se cuentan leyendo esas historias. Si el
- * audit marca un journey que aquí figura con 0, este mapa está desfasado.
+ * Auditado 2026-08-17 sobre los 16 journeys live+draft; reindexado por ID el
+ * 2026-08-21. La clave es el `Journey.id` y no idioma/variante/nombre porque
+ * ese texto NO identifica un journey: los dos Expat alemanes C1 (Berlín y
+ * Hamburgo) comparten idioma, variante, nombre y nivel, y mientras Hamburgo se
+ * llamó "Hanseat" la colisión no se veía. Con clave de texto, además, cada
+ * renombrado dejaba la entrada huérfana y la fila pasaba a decir 0, que es
+ * peor que no decir nada.
+ *
+ * Para refrescar: se cuentan leyendo las historias del journey; el gate léxico
+ * solo da pistas. Si un journey de la tabla no está aquí, sale 0 SIN haberlo
+ * medido.
  */
 const NON_NATIVE_CHARS: Record<string, { n: number; who: string }> = {
-  "german/germany/Expat":      { n: 2, who: "Nadia (21 hist., premisa), Mira (1)" },
-  "german/germany/Friends":    { n: 1, who: "Nadia (5 hist.)" },
-  "spanish/spain/Friends/a1":  { n: 1, who: "Irene (9 hist.)" },
-  "spanish/spain/Friends/a0":  { n: 1, who: "Lucía (2 hist.)" },
-  "spanish/latam/Traveler":    { n: 1, who: "Ana (3 hist.)" },
-  "spanish/mexico/Traveler":   { n: 1, who: "Sofía (1 hist.)" },
-  "italian/italy/Traveler":    { n: 1, who: "Irene (1 hist.)" },
+  cmr92f0qz000032ff1dfd4fgx: { n: 2, who: "Nadia (21 hist., premisa), Mira (1)" },  // Expat de/de c1 (Berlín)
+  cmrdbz11t000032asrvo832i9: { n: 2, who: "Nora (21 hist., premisa), Sofia (1)" },  // Expat de/de c1 (Hamburgo)
+  cmroo4w4v0000324ow1o9qlcp: { n: 1, who: "Nadia (5 hist.)" },                      // Friends de/de c1
+  cmsvz6mz9000732gsgsfer0ko: { n: 1, who: "Irene (21 hist., premisa)" },            // Traveler es/spain a1
+  cmrr5hnbl000032k1esry5n8g: { n: 1, who: "Lucía (2 hist.)" },                      // Friends es/spain a0
+  cmqrtaj1p000032qtda86z6um: { n: 1, who: "Ana (3 hist.)" },                        // Traveler es/latam a0
+  cmrrqjd2n000032nvnp2tryzg: { n: 1, who: "Sofía (1 hist.)" },                      // Traveler es/mexico a0
+  cmss0fkc40007j8dub1zpa1kc: { n: 1, who: "Irene (1 hist.)" },                      // Traveler it/italy a0
 };
-/** Clave con nivel primero (dos journeys comparten idioma/variante/nombre). */
-const nonNative = (lang: string, variant: string, name: string, levels: string[]) =>
-  NON_NATIVE_CHARS[`${lang}/${variant}/${name}/${levels[0] ?? ""}`] ??
-  NON_NATIVE_CHARS[`${lang}/${variant}/${name}`] ??
-  { n: 0, who: "" };
+const nonNative = (id: string) => NON_NATIVE_CHARS[id] ?? { n: 0, who: "" };
 
 const vname = (id?: string | null) => {
   if (!id) return "-";
@@ -120,7 +124,7 @@ async function main() {
   const js = await p.journey.findMany({
     where: { status: { in: ["active", "draft"] } }, // live + draft; NUNCA archived
     select: {
-      name: true, language: true, variant: true, status: true, levels: true,
+      id: true, name: true, language: true, variant: true, status: true, levels: true,
       stories: {
         select: {
           status: true, audioUrl: true, coverUrl: true, cast: true, text: true,
@@ -153,8 +157,10 @@ async function main() {
     const totalW = sp.reduce((n, x) => n + x.total, 0);
     const citado = totalW === 0 ? "-" : `${((spoken / totalW) * 100).toFixed(1)}`;
     const est = j.status === "active" ? "LIVE" : "DRAFT";
-    const nn = nonNative(j.language, j.variant, j.name, j.levels);
-    if (nn.n) notas.push(`${j.name} ${j.language}/${j.variant} ${j.levels.join("/")}: ${nn.who}`);
+    const nn = nonNative(j.id);
+    // El estado desempata las dos filas que comparten tipo, idioma, variante y
+    // nivel (los dos Expat alemanes C1: Berlín live, Hamburgo draft).
+    if (nn.n) notas.push(`${est} ${j.name} ${j.language}/${j.variant} ${j.levels.join("/")}: ${nn.who}`);
     console.log(`${est}|${j.name}|${j.language}/${j.variant}|${j.levels.join("/") || "-"}|${estilo}|${citado}|${nn.n}|${vname(mode(S.map((s) => s.voiceId)))}|${vname(mode(S.map((s) => s.practiceVoiceId)))}|${pub}/${S.length}|${narr}|${cov}|${clips}`);
   }
   if (notas.length) {

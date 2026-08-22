@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import PlanPanel from "./PlanPanel";
+
 type NotificationChannel = "local" | "remote" | "both";
 
 type NotificationType = {
@@ -84,7 +86,7 @@ export default function NotificacionesClient() {
   const [error, setError] = useState<string | null>(null);
   const [savingKey, setSavingKey] = useState<string | null>(null);
   const [savedKey, setSavedKey] = useState<string | null>(null);
-  const [tab, setTab] = useState<"tipos" | "campanas" | "efectividad">("tipos");
+  const [tab, setTab] = useState<"plan" | "tipos" | "campanas" | "efectividad">("plan");
 
   useEffect(() => {
     fetch("/api/studio/notifications")
@@ -136,7 +138,7 @@ export default function NotificacionesClient() {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div style={{ display: "flex", gap: 8 }}>
-        {(["tipos", "campanas", "efectividad"] as const).map((key) => (
+        {(["plan", "tipos", "campanas", "efectividad"] as const).map((key) => (
           <button
             key={key}
             type="button"
@@ -152,12 +154,20 @@ export default function NotificacionesClient() {
               cursor: "pointer",
             }}
           >
-            {key === "tipos" ? "Tipos" : key === "campanas" ? "Campañas push" : "Efectividad"}
+            {key === "plan"
+              ? "Plan"
+              : key === "tipos"
+                ? "Tipos"
+                : key === "campanas"
+                  ? "Campañas push"
+                  : "Efectividad"}
           </button>
         ))}
       </div>
 
-      {tab === "efectividad" ? (
+      {tab === "plan" ? (
+        <PlanPanel />
+      ) : tab === "efectividad" ? (
         <EffectivenessPanel />
       ) : tab === "campanas" ? (
         <CampaignsPanel types={types ?? []} />

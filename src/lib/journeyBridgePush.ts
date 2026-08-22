@@ -120,13 +120,16 @@ function journeyLabel(journey: { name: string; levels: string[]; variant: string
  * título es una acción, no un estado.
  */
 export function bridgeCopy(pair: BridgePair): { title: string; body: string } {
-  const from = [pair.language, pair.fromLevel].filter(Boolean).join(" ");
   const to = [pair.language, pair.toLevel].filter(Boolean).join(" ");
-  const finished = pair.fromCount > 0 ? `all ${pair.fromCount} stories` : "every story";
-  const waiting = pair.toCount > 0 ? `The next ${pair.toCount} are waiting.` : "The next ones are waiting.";
+  // El aviso habla del contenido que espera, nunca de lo que el alumno hizo o
+  // dejó de hacer (regla de voz en `smartNotificationPlan.ts`).
+  const stories =
+    pair.toCount > 0
+      ? `${pair.toCount} new stories, one step up from where you just were.`
+      : "New stories, one step up from where you just were.";
   return {
-    title: `Start ${to || pair.toLabel}`,
-    body: `You finished ${finished} in ${from || pair.fromLabel}. ${waiting}`,
+    title: `${to || pair.toLabel} is open`,
+    body: stories,
   };
 }
 

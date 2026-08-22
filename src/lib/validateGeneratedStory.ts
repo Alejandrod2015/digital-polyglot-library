@@ -328,18 +328,23 @@ function getParagraphs(text: string): string[] {
 // forte", "a água fria", "o cheiro toma a sala") daba CERO categorías y fallaba
 // entero. Detectado el 2026-08-17 al reescribir una frase del A0 portugués:
 // el check tumbaba la historia por no saber el idioma, no por el texto.
+// El francés se añadió el 2026-08-21: sin su léxico, las seis primeras
+// historias del Expat FR A0 fallaban `narrator-sensory-anchor` las seis
+// teniendo anclas claras ("l'air sent la peinture", "l'odeur du café",
+// "les pièces sont froides"). Un idioma que el detector no conoce da CERO
+// categorías, que no es lo mismo que no tener ancla.
 const SENSE_CATEGORIES_SHARED: Record<string, RegExp> = {
     // Las formas de PASADO estaban fuera: el detector solo conocía el presente
     // ("ouve", "cheira", "brilha"), así que una historia narrada en pretérito
     // daba CERO categorías y fallaba entera. Detectado el 2026-08-19 al pasar a
     // pretérito las siete historias que cierran cada tema del A1 brasileño:
     // "ouviu uma vareta partir" es una ancla de sonido perfectamente válida.
-    smell: /\b(olor|aroma|perfume|huele|huelen|olía|olor[eo]s|olfato|cheiro|cheira|cheirou|cheirava|perfum[eo]|Geruch|riecht|Duft|odore|profumo)\b/i,
-    light: /\b(luz|luces|iluminac|brilla|brilló|brillan|sombra|sombras|claroscuro|oscur[oa]|deslumbra|luzes|brilha|brilhou|brilhava|brilhante|escureceu|sombras?|escur[oa]|Licht|Schatten|dunkel|luce|luci|ombra|buio)\b/i,
-    sound: /\b(sonido|sonidos|ruido|ruidos|silencio|suena|sonaba|sonaron|tronaba|trueno|ladrido|grito|murmullo|silbido|escuch[oóa]|oye|oyó|som|sons|barulho|silêncio|silencio|soa|soou|grita|gritou|assobia|assobiou|escuta|escutou|ouve|ouviu|ouvia|Geräusch|Lärm|Stille|hört|klingt|suono|rumore|silenzio|sente)\b/i,
-    temperature: /\b(frío|fría|frio|caliente|calor|cálid[oa]|fresca|fresco|helad[oa]|hierve|tibi[oa]|gélid[oa]|templad[oa]|fria|quente|gelad[oa]|morn[oa]|esquentou|esfriou|kalt|warm|heiß|kühl|freddo|fredda|caldo|calda|tiepid[oa])\b/i,
-    touch: /\b(suave|áspero|aspero|rugoso|liso|húmedo|humedo|seco|seca|blando|duro|firme|pegajos[oa]|molhad[oa]|áspera|macio|liso|úmid[oa]|firme|vento|weich|rau|trocken|feucht|morbido|ruvido|bagnato|asciutto)\b/i,
-    taste: /\b(dulce|amargo|salado|ácido|acido|picante|sabor|saborea|gusta\s+a|doce|amarg[oa]|salgad[oa]|gosto|süß|bitter|salzig|Geschmack|dolce|amaro|salato|sapore)\b/i,
+    smell: /\b(olor|aroma|perfume|huele|huelen|olía|olor[eo]s|olfato|cheiro|cheira|cheirou|cheirava|perfum[eo]|Geruch|riecht|Duft|odore|profumo|odeur|odeurs|parfum|sent|sentait|senteur)\b/i,
+    light: /\b(luz|luces|iluminac|brilla|brilló|brillan|sombra|sombras|claroscuro|oscur[oa]|deslumbra|luzes|brilha|brilhou|brilhava|brilhante|escureceu|sombras?|escur[oa]|Licht|Schatten|dunkel|luce|luci|ombra|buio|lumière|lumières|brille|brillait|ombre|ombres|sombre|obscur|éclaire|éclairé)\b/i,
+    sound: /\b(sonido|sonidos|ruido|ruidos|silencio|suena|sonaba|sonaron|tronaba|trueno|ladrido|grito|murmullo|silbido|escuch[oóa]|oye|oyó|som|sons|barulho|silêncio|silencio|soa|soou|grita|gritou|assobia|assobiou|escuta|escutou|ouve|ouviu|ouvia|Geräusch|Lärm|Stille|hört|klingt|suono|rumore|silenzio|sente|bruit|bruits|silence|sonne|sonnait|entend|entendait|crie|cria|murmure|écoute|écoutait)\b/i,
+    temperature: /\b(frío|fría|frio|caliente|calor|cálid[oa]|fresca|fresco|helad[oa]|hierve|tibi[oa]|gélid[oa]|templad[oa]|fria|quente|gelad[oa]|morn[oa]|esquentou|esfriou|kalt|warm|heiß|kühl|freddo|fredda|caldo|calda|tiepid[oa]|froid|froide|froides|chaud|chaude|chaleur|tiède|glacé|glacée|frais|fraîche)\b/i,
+    touch: /\b(suave|áspero|aspero|rugoso|liso|húmedo|humedo|seco|seca|blando|duro|firme|pegajos[oa]|molhad[oa]|áspera|macio|liso|úmid[oa]|firme|vento|weich|rau|trocken|feucht|morbido|ruvido|bagnato|asciutto|doux|douce|rugueux|lisse|mouillé|mouillée|humide|trempé|trempée|rêche)\b/i,
+    taste: /\b(dulce|amargo|salado|ácido|acido|picante|sabor|saborea|gusta\s+a|doce|amarg[oa]|salgad[oa]|gosto|süß|bitter|salzig|Geschmack|dolce|amaro|salato|sapore|sucré|amer|amère|salé|salée|goût|saveur|épicé)\b/i,
   };
 
 function extractSpeakerNames(text: string): string[] {
@@ -1143,6 +1148,39 @@ export async function validateGeneratedStory(
       }
     }
 
+    // Estilo de comillas (2026-08-21). El catálogo escribe el habla citada con
+    // comillas CURVAS “” desde el 2026-08-17. Las angulares «» y las rectas ""
+    // están prohibidas en el cuerpo.
+    //
+    // El resto del validador conoce los cuatro estilos (angulares, curvas,
+    // rectas y bajas alemanas) para DETECTAR habla citada, y eso NO es una
+    // regla de estilo: describe lo que hay escrito, no lo que se decidió. Sin
+    // este check, la decisión solo vivía en el script de migración que la
+    // aplicó, y volvió a perderse en cuanto se escribió un journey nuevo (las
+    // seis primeras del Expat FR A0 salieron enteras con «»).
+    //
+    // Deuda conocida al añadirlo: el Traveler ES/Spain A1 (LIVE) usa rectas.
+    // Se marca a propósito; el gate no se calibra hacia abajo para taparlo.
+    {
+      const angulares = (parsed.text.match(/[«»]/g) ?? []).length;
+      const rectas = (parsed.text.match(/["\u201F\u2033]/g) ?? []).length;
+      const bajas = (parsed.text.match(/„/g) ?? []).length;
+      const malas = angulares + rectas + bajas;
+      const partes = [
+        angulares ? `${angulares} angulares («»)` : null,
+        rectas ? `${rectas} rectas (")` : null,
+        bajas ? `${bajas} bajas alemanas („)` : null,
+      ].filter(Boolean);
+      checks.push({
+        id: "body-quote-style",
+        label: "Quoted speech uses the catalogue's curly quotes",
+        status: malas === 0 ? "pass" : "fail",
+        detail: malas === 0
+          ? undefined
+          : `Comillas fuera del estándar en el cuerpo: ${partes.join(", ")}. El catálogo escribe el habla citada con curvas “…” desde el 2026-08-17; las angulares y las rectas están prohibidas.`,
+      });
+    }
+
     // Sensory overload. The spec asks for ONE sensory anchor per
     // story; multiple senses dilute the atmosphere. We count distinct
     // sensory CATEGORIES (smell, sight-light, sound, temperature,
@@ -1816,7 +1854,7 @@ export async function validateGeneratedStory(
     // quedaba ni una comprobación de apertura. Al eximir un formato hay que
     // darle su equivalente, no dejarle el hueco.
     {
-      const firstQuote = parsed.text.search(/[«"„]/);
+      const firstQuote = parsed.text.search(/[«“"„]/);
       const opening = firstQuote > 0 ? parsed.text.slice(0, firstQuote) : parsed.text;
 
       // Quién habla: nombre propio pegado a un verbo de habla, en cualquiera

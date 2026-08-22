@@ -161,7 +161,8 @@ function slugify(s: string): string {
       for (const d of stories) {
         const slot = await prisma.journeyStory.findFirst({
           where: { journeyId, topic: d.topic, slotIndex: d.slotIndex },
-          select: { id: true, slug: true, title: true, text: true, synopsis: true, vocab: true },
+          select: { id: true, slug: true, title: true, text: true, synopsis: true, vocab: true,
+                    audioSegments: true, audioFragments: true, audioWordTimings: true },
         });
         if (!slot) { console.error(`FAIL: sin slot para ${d.topic}#${d.slotIndex}. Nada escrito.`); process.exit(1); }
         const fields: Record<string, string> = {};
@@ -203,12 +204,75 @@ function slugify(s: string): string {
           const after = d[field];
           if (typeof before !== "string" || typeof after !== "string") continue;
           if (before === after) continue;
-          if (before.length !== after.length || canon(before) !== canon(after)) {
-            console.error(`FAIL ${slot.slug ?? slot.id} .${field}: el cambio NO es solo de comillas. Nada escrito.`);
+          const sameLength = before.length === after.length && canon(before) === canon(after);
+          // Espacios repetidos. Un espacio de más metido DESPUÉS de renderizar
+          // el audio corre todos los `charStart/charEnd` de ahí en adelante y
+          // el karaoke resalta la palabra anterior: el 2026-08-21, en
+          // `despues-del-carnaval`, 115 de 142 palabras. Quitarlo no es
+          // editorial (nadie ve un espacio doble) y el gate canónico no puede
+          // arreglarlo, porque rechaza la historia por deuda ajena.
+          //
+          // El permiso es estrecho a propósito: el texto solo puede diferir en
+          // comillas y en RUNS de espacios, y si la historia tiene karaoke el
+          // cambio se escribe solo si lo deja PERFECTAMENTE alineado. Esa
+          // comprobación es más dura que la de longitud, no más blanda.
+          const collapse = (v: string) => canon(v).replace(/[^\S\n]+/g, " ");
+          const onlySpacing = !sameLength && collapse(before) === collapse(after);
+          if (!sameLength && !onlySpacing) {
+            console.error(`FAIL ${slot.slug ?? slot.id} .${field}: el cambio NO es solo de comillas ni de espacios. Nada escrito.`);
             process.exit(1);
+          }
+          if (onlySpacing && field === "text") {
+            const wt = slot.audioWordTimings as { words?: Array<{ text: string; charStart: number; charEnd: number }> } | null;
+            const words = wt?.words ?? [];
+            const off = words.filter((w) => after.slice(w.charStart, w.charEnd) !== w.text).length;
+            if (words.length && off > 0) {
+              console.error(`FAIL ${slot.slug ?? slot.id} .text: quitar los espacios deja ${off}/${words.length} palabras del karaoke sin alinear. Nada escrito.`);
+              process.exit(1);
+            }
+            const antes = words.filter((w) => before.slice(w.charStart, w.charEnd) !== w.text).length;
+            console.log(`  [espacios] ${slot.slug ?? slot.id}: ${before.length - after.length} caracteres menos; karaoke ${antes} -> 0 desalineadas.`);
           }
           fields[field] = after;
           swaps += countQuotes(after);
+        }
+        // Los ESPEJOS del cuerpo. `audioSegments[].text` y `audioFragments[].text`
+        // guardan la oración tal como se narró, así que tras migrar el cuerpo
+        // se quedan con las comillas viejas: el 2026-08-21 el A1 de España
+        // quedó con el cuerpo en curvas y sus 13 segmentos en rectas. No se
+        // ven en el lector, pero son la misma frase escrita de dos maneras.
+        //
+        // El mapeo es posicional y no una sustitución a ciegas: un segmento
+        // puede abrir comilla y cerrarla en el siguiente. Como este modo ya
+        // garantiza que el cuerpo nuevo mide lo mismo que el viejo, el tramo
+        // equivalente de un fragmento es el MISMO rango de índices.
+        if (typeof slot.text === "string") {
+          // El cuerpo de referencia es el nuevo si esta tanda lo cambia, y el
+          // que ya está en la base si el cuerpo se migró antes que sus espejos.
+          const after = typeof fields.text === "string" ? fields.text : slot.text;
+          // `canon` sustituye cada comilla por un carácter neutro y NO la borra,
+          // así que conserva la longitud: el índice hallado sobre el cuerpo
+          // canonizado es ya el índice real. (Restando posiciones como si canon
+          // borrara, el tramo salía corrido un carácter y no migraba nada.)
+          const canonAfter = canon(after);
+          for (const key of ["audioSegments", "audioFragments"] as const) {
+            const arr = slot[key] as Array<Record<string, unknown>> | null;
+            if (!Array.isArray(arr)) continue;
+            let changed = false;
+            const next = arr.map((item) => {
+              const t = typeof item.text === "string" ? item.text : null;
+              if (!t || !countQuotes(t)) return item;
+              const ct = canon(t);
+              const at = canonAfter.indexOf(ct);
+              if (at < 0 || canonAfter.indexOf(ct, at + 1) >= 0) return item; // ausente o ambiguo
+              const cand = after.slice(at, at + t.length);
+              if (cand.length !== t.length || canon(cand) !== ct || cand === t) return item;
+              changed = true;
+              swaps += countQuotes(cand);
+              return { ...item, text: cand };
+            });
+            if (changed) (fields as Record<string, unknown>)[key] = next;
+          }
         }
         if (Object.keys(fields).length) plan.push({ id: slot.id, slug: slot.slug ?? slot.id, fields, swaps });
       }

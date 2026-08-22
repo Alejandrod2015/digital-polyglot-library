@@ -57,6 +57,15 @@ export const CHARACTER_NAMES: Record<string, NameBank> = {
     young: ["Giulia", "Sofia", "Chiara", "Martina", "Alessandro", "Lorenzo", "Matteo", "Riccardo"],
     older: ["Rosa", "Giuseppe", "Carmela", "Ennio"],
   },
+  // Francia. El banco faltaba entero y el primer journey francés (Expat A0,
+  // Lyon) se escribió sin él, así que ningún nombre se contrastaba con nada.
+  "french/france": {
+    young: [
+      "Manon", "Camille", "Chloé", "Léa", "Louise", "Clara", "Pauline", "Juliette",
+      "Hugo", "Théo", "Maxime", "Antoine", "Julien", "Baptiste", "Nicolas", "Romain",
+    ],
+    older: ["Martine", "Françoise", "Sylvie", "Michel", "Bernard", "Gérard"],
+  },
 };
 
 /** Clave del banco a partir del idioma y la variante del journey. */

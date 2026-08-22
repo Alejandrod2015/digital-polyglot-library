@@ -37,6 +37,10 @@
     {
       "path": "/api/cron/journey-bridge-push",
       "schedule": "0 17 * * *"
+    },
+    {
+      "path": "/api/cron/resume-story-push",
+      "schedule": "0 18 * * *"
     }
   ]
 }
