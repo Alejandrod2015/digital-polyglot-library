@@ -8,7 +8,7 @@ export default async function NotificacionesPage() {
   return (
     <StudioShell
       title="Notificaciones"
-      description="Edita el texto, la hora y el estado de cada tipo de notificación. El móvil agenda los tipos activos localmente; los usuarios eligen cuáles reciben."
+      description="El plan de avisos inteligentes, el texto y la hora de cada tipo, las campañas push y su efectividad. El móvil agenda los tipos activos localmente; los usuarios eligen cuáles reciben."
       breadcrumbs={[
         { label: "Studio", href: "/studio" },
         { label: "Notificaciones" },

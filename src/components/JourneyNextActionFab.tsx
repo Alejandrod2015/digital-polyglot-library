@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 type Props = {
   /** Whether there's a current next-action story on the page. When
@@ -17,6 +17,8 @@ type Props = {
  *   (b) the user has scrolled away from it (it's not in the viewport).
  * - Tap → smooth-scrolls the next story card into ~45 % from the top
  *   of the viewport, matching the auto-center used on journey open.
+ * - The chevron points where the card actually is: down when the next
+ *   story sits below the fold, up when the user scrolled past it.
  *
  * Locates the active card via `[data-journey-next="true"]` written by
  * JourneyStoryCard when its state is "next". One per page; the
@@ -26,6 +28,7 @@ type Props = {
  */
 export default function JourneyNextActionFab({ hasNext }: Props) {
   const [visible, setVisible] = useState(false);
+  const [direction, setDirection] = useState<"up" | "down">("up");
 
   useEffect(() => {
     if (!hasNext) {
@@ -45,6 +48,9 @@ export default function JourneyNextActionFab({ hasNext }: Props) {
       // the FAB hidden when the card sits just above the tab bar.
       const inView = rect.top >= -20 && rect.bottom <= viewport - 80;
       setVisible(!inView);
+      // The card is below the fold when its top edge is past the
+      // 45 % line we scroll it to; otherwise the user is below it.
+      setDirection(rect.top > viewport * 0.45 ? "down" : "up");
     }
     check();
     window.addEventListener("scroll", check, { passive: true });
@@ -82,7 +88,11 @@ export default function JourneyNextActionFab({ hasNext }: Props) {
         bottom: "calc(96px + env(safe-area-inset-bottom, 0px))",
       }}
     >
-      <ChevronUp className="h-6 w-6" strokeWidth={2.6} />
+      {direction === "down" ? (
+        <ChevronDown className="h-6 w-6" strokeWidth={2.6} />
+      ) : (
+        <ChevronUp className="h-6 w-6" strokeWidth={2.6} />
+      )}
     </button>
   );
 }

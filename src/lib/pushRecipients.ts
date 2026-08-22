@@ -10,6 +10,7 @@ import { createClerkClient } from "@clerk/backend";
 import {
   normalizeNotificationPrefs,
   isNotificationTypeKey,
+  type NotificationTypeKey,
 } from "@/lib/notifications";
 
 const clerkClient = createClerkClient({
@@ -83,4 +84,44 @@ export async function resolvePushRecipients(args: {
   }
 
   return { tokens: Array.from(tokens), userCount: matchedUsers.size };
+}
+
+export type UserPushTarget = {
+  /** Tokens APNs del usuario. */
+  tokens: string[];
+  /** No tiene token de iOS pero sí de otro proveedor (hoy, Android sin emisor). */
+  androidOnly: boolean;
+  /** Si tiene encendido ese tipo de notificación. */
+  optedIn: boolean;
+};
+
+/**
+ * La misma resolución que `resolvePushRecipients`, pero para UN usuario: los
+ * avisos que nacen de una señal suya (historia a medias, palabra olvidada) ya
+ * saben a quién van, y recorrer la lista entera de Clerk para encontrarlo sería
+ * absurdo. `androidOnly` se devuelve aparte para que quien informa distinga
+ * "no le llega porque no hay emisor FCM" de "falló la entrega".
+ */
+export async function getUserPushTarget(
+  userId: string,
+  typeKey: NotificationTypeKey,
+): Promise<UserPushTarget> {
+  const user = await clerkClient.users.getUser(userId);
+  const publicMeta = (user.publicMetadata as Record<string, unknown>) ?? {};
+  const prefs = normalizeNotificationPrefs(
+    publicMeta.notificationPrefs,
+    publicMeta.remindersEnabled === true,
+  );
+  const raw = ((user.privateMetadata as Record<string, unknown>) ?? {}).mobilePushTokens;
+  const entries = Array.isArray(raw) ? (raw as StoredToken[]) : [];
+  const tokens: string[] = [];
+  let other = 0;
+  for (const entry of entries) {
+    if (!entry || typeof entry !== "object") continue;
+    const value = typeof entry.token === "string" ? entry.token.trim() : "";
+    if (!value) continue;
+    if (entry.provider === "apns") tokens.push(value);
+    else other += 1;
+  }
+  return { tokens, androidOnly: tokens.length === 0 && other > 0, optedIn: prefs[typeKey] === true };
 }

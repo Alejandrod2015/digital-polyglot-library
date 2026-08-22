@@ -251,11 +251,13 @@ model Journey {
   name            String
   language        String
   variant         String
-  /// Slug de `JourneyType` (viajero, expatriado, cultural...). El NOMBRE del
-  /// journey es la promesa al comprador y nunca es el tipo, así que sin esta
-  /// columna el tipo solo se adivinaba: "Hanseat" es un Expat y "Village Life
-  /// in Andalusia" no dice nada. De él dependen cuántos personajes fijos
-  /// lleva, si el orden de temas es obligado y qué son los siete temas.
+  /// Slug de `JourneyType` (viajero, expatriado, cultural...). Los journeys NO
+  /// tienen nombre propio: `name` lleva la etiqueta del tipo (Traveler,
+  /// Friends, Expat) y un journey se identifica por tipo + idioma + variante +
+  /// nivel. Esta columna es la forma canónica del tipo, y de ella dependen
+  /// cuántos personajes fijos lleva, si el orden de temas es obligado y qué
+  /// son los siete temas. Cuando un journey llevaba título inventado
+  /// ("Hanseat", "New Life in Lyon") el tipo real quedaba tapado.
   typeSlug        String?
   levels          String[]
   topics          String[]
