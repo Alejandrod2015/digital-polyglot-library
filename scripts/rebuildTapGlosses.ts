@@ -132,6 +132,20 @@ const INGLES = new Set([
   "his","her","its","verb","noun","adjective","adverb","form","past","plural","singular",
   "subjunctive","imperative","literally","also","as","if","were","from","with","meaning",
   "feminine","masculine","name","city","street","informal","slang","polite",
+  "participle","comparative","superlative","declined","conjugated","lemma","article",
+  "dative","accusative","genitive","nominative","neuter","reflexive","here","word",
+]);
+
+/** Articulos: `(die Absage)`, `(el trato)`, `(la casa)` no citan una expresion,
+ *  citan el LEMA con su genero, que es la convencion de estos bundles. Solo
+ *  vale para el par exacto articulo + palabra; en cuanto hay una tercera
+ *  palabra (`bajar la cabeza`) vuelve a ser una expresion. `al` y `del` NO
+ *  entran: viven dentro de modismos (`al horno`, `de sobra`). */
+const ARTICULOS = new Set([
+  "der","die","das","den","dem","des","ein","eine","einen","einem","einer",
+  "el","la","los","las","un","una","unos","unas",
+  "il","lo","gli","le","i","uno",
+  "o","os","as","um","uma","les","des","du",
 ]);
 
 /** Trozos de una glosa que pretenden citar una expresion: lo que va entre
@@ -140,10 +154,18 @@ function fragmentosCitados(g: string): string[] {
   const out: string[] = [];
   for (const m of g.matchAll(/\(([^)]+)\)/g)) out.push(m[1]);
   for (const trozo of g.split(";")) {
+    // Una clausula con parentesis dentro no es una cita, es la glosa partida
+    // por la mitad ("are (sein" de "are (sein, du form)").
+    if (trozo.includes("(") || trozo.includes(")")) continue;
     const coma = trozo.indexOf(",");
     if (coma > 0) out.push(trozo.slice(0, coma));
   }
-  return out.map((t) => t.trim().toLowerCase()).filter((t) => t.split(/\s+/).length >= 2);
+  return out
+    // Fuera lo que no es lengua: "zu + dem", "ab 6:58".
+    .filter((t) => !/[+\d]/.test(t))
+    // La cita se compara contra el corpus, que no lleva la puntuacion final.
+    .map((t) => t.trim().toLowerCase().replace(/[!?.,:;]+$/, ""))
+    .filter((t) => t.split(/\s+/).length >= 2);
 }
 
 /** true si la glosa cita una expresion ESPANOLA que no existe en este corpus,
@@ -152,6 +174,15 @@ export function citaAjena(gloss: string, corpus: string): boolean {
   for (const frag of fragmentosCitados(gloss)) {
     const palabras = frag.split(/[^\p{L}]+/u).filter(Boolean);
     if (palabras.some((w) => INGLES.has(w))) continue; // es ingles, no cita nada
+    // `(die Absage)` cita el lema con su genero; `(auf das)` cita la
+    // contraccion. En cuanto hay una tercera palabra vuelve a ser expresion.
+    if (palabras.length === 2 && (ARTICULOS.has(palabras[0]) || ARTICULOS.has(palabras[1]))) continue;
+    // Y la prueba que de verdad separa "va, goes down" de "(al horno)": una
+    // cita en el idioma de la historia tiene AL MENOS UNA palabra que sale en
+    // el corpus. Si no sale ninguna, el fragmento esta en ingles y es la
+    // traduccion, no una expresion. Sin esto, "went out" y "takes out" se
+    // marcaban como modismos espanoles ausentes.
+    if (!palabras.some((w) => new RegExp(`(^|[^\\p{L}])${w}([^\\p{L}]|$)`, "u").test(corpus))) continue;
     if (!corpus.includes(frag)) return true;
   }
   return false;

@@ -1,0 +1,883 @@
+[ge] ab | from (a point in time); from 6:58 on (ab 6:58) | Merle, die dazugestoßen ist, winkt ab und zeigt in die andere Richtung, zur Alster.
+[ge] abendessen | dinner (das Abendessen) | Nora: Eine Serie läuft, dein Abendessen steht da, für eine Person.
+[ge] abends | in the evening(s) | Ronja: Der Kater frisst morgens und abends, die Pflanzen zweimal die Woche.
+[ge] absage | rejection, refusal (die Absage) | Falls Sie nicht zuständig sind, hätte ich die Absage gern schriftlich.
+[ge] absagen | rejections (die Absage) | Nadia: Drei Ämter, drei Absagen, ein Kreis.
+[ge] ahnung | idea, clue (die Ahnung); no idea (Keine Ahnung) | Timo: Keine Ahnung.
+[ge] allein | alone; here: just (the word alone) | Die Texte lernst du beim dritten Spiel von allein.
+[ge] allen | (to) all, everyone | Boysen: Der Hinterhof gehört allen.
+[ge] als | as; than; when | Das wirkt eher nach Piraten als nach Fußball.
+[ge] altbau | pre-war building: high ceilings, rarely an elevator (der Altbau) | Katja: Siebzig Quadratmeter, Altbau, zwei Straßen weiter, Miete aus einem anderen Jahrzehnt.
+[ge] alten | old (alt, declined) | Das Kontor liegt in einem alten Speicher an der Elbe, mit knarrenden Dielen und Blick auf die K
+[ge] alter | old; (slang) mate, dude | Ein alter Ofen steht in der Ecke.
+[ge] am | at the, on the (an + dem) | Am Millerntor wird geschrien.
+[ge] amt | government office (das Amt) | Immerhin arbeitet die Katze schneller als jedes Amt.
+[ge] anderen | other (declined) | Die anderen schwärmen laut, Nora nickt nur knapp.
+[ge] anders | different(ly), otherwise | (NO APARECE)
+[ge] anfang | beginning (der Anfang); from the start (von Anfang an) | Nora: Das dachte ich am Anfang auch.
+[ge] angekündigt | announced (ankündigen, participle) | Der Brief hat nur einen weiteren Brief angekündigt, und dann kam dieser Termin.
+[ge] ankunft | arrival (die Ankunft) | Timo: Das ist der gesündeste Satz seit deiner Ankunft.
+[ge] antwort | answer, reply (die Antwort) | Eine Stunde später hängt Nadias Antwort im Treppenhaus: Hiermit werden sämtliche Vorwürfe zurüc
+[ge] antwortet | answers, replies (antworten) | Als Jule fragt, woher sie komme, antwortet sie fast förmlich, und Micha prustet los: “Boah, so 
+[ge] anzeige | display, indicator (die Anzeige) | Die Anzeige flackert.
+[ge] arbeitet | works (arbeiten) | Immerhin arbeitet die Katze schneller als jedes Amt.
+[ge] arm | arm (der Arm) | Vor der Haustür in Eimsbüttel drängen sich viele Bewerber, jeder mit einer Mappe unter dem Arm.
+[ge] art | way, manner; kind | Fiete: In die schönste Art von Streit.
+[ge] aufs | onto the (auf das) | Ronny schmeißt vor lauter Freude eine ganze Runde Currywurst raus und ruft, heute Abend gehe hi
+[ge] aus | out, out of; to spit out) (here part of: spuckt ... aus (ausspucken) | Am Millerntor drängt sich die Menge in Braun und Weiß, und die sonst so zugeknöpften Hamburger 
+[ge] ausgerechnet | of all things; marks an ironic coincidence | Nora: Und warum ausgerechnet flach?
+[ge] bedeutet | means (bedeuten) | (NO APARECE)
+[ge] beginnt | begins (beginnen) | Hausmeister Wollny empfängt Nadia mit Schlüsselbund und beginnt die Führung ausgerechnet im Tre
+[ge] beim | at the (bei + dem) | Die Texte lernst du beim dritten Spiel von allein.
+[ge] bekomme | get, receive (bekommen) | Ich bekomme nirgends einen Termin.
+[ge] bekommt | gets, receives (bekommen) | Den Schlüssel bekommt nicht jeder, glaub mir.
+[ge] beschwert | complains (sich beschweren) | Aber meistens ist es nur der Rücken, der sich beschwert.
+[ge] besser | better (gut) | Frag einen Hamburger nach seinem Verein, und du kennst ihn besser als nach jedem langen Gespräc
+[ge] beste | best (gut) | Drittens: Der Rest ist das Beste, was dieses Team seit Jahren abgeliefert hat.
+[ge] besten | best (gut, superlative declined) | Das schreibst du dir am besten rot an.
+[ge] besucht | visits (besuchen) | In Dortmund besucht Nadia mit ihrem Berliner Kumpel Timo dessen alten Schulfreund, der seit Jah
+[ge] beweis | proof, evidence (der Beweis) | Brandt: Sind der Beweis, dass ich den dritten ernst meine.
+[ge] bewerber | applicants (der Bewerber) | Elf Bewerber warten mit identischen Mappen, und Nadia umklammert ihre eigene wie ein Konzerttic
+[ge] bietet | offers (bieten) | Wer einmal dort sitzt, gehört dazu; und irgendwann bietet dir dort sogar der Förmlichste das Du
+[ge] bin | am (sein) | Ronja: Ich bin zwei Wochen weg.
+[ge] bist | are (sein, du form) | Nora: Schön, dass du gekommen bist, Frau Boysen.
+[ge] blech | sheet metal; a baking tray | Hinter der Theke wuchtet Sepp gerade ein heißes Blech aus dem Ofen, ein grauhaariger Grantler, 
+[ge] bleibst | you stay (bleiben) | Ob du bleibst, entscheidet die nächste Bö, nicht die Versammlung.
+[ge] bleibt | stays, remains (bleiben) | Ihr Handy bleibt still.
+[ge] blick | look, gaze (der Blick) | Alle anderen reden von Traum und Liebe auf den ersten Blick.
+[ge] bloß | definitely not, no way (bloß nicht!) | Bloß nicht schwärmen.
+[ge] blumen | flowers (die Blume) | Schreier: Alles frisch, alles echt, und ein Strauß Blumen obendrauf, weil dein Gesicht mir gefä
+[ge] bohrmaschine | electric drill (die Bohrmaschine) | Fahrräder links, Mülltonnen rechts, und sonntags bleibt die Bohrmaschine aus.
+[ge] bord | on board (an Bord) | Eine Bö erwischt das Boot, Gischt klatscht über Bord, und Nora verliert für einen Moment den Ha
+[ge] brauche | need (brauchen) | Ich brauche bis elf Ihre Unterschrift, sonst platzt mein Termin beim Bürgeramt.
+[ge] braucht | needs (brauchen) | Wer bleiben will, braucht ihren Segen.
+[ge] bricht | breaks (brechen) | Wer es bricht, dem vertraut man auch die Planung nicht.
+[ge] brief | letter (der Brief) | Ein Brief kündigt Briefe an.
+[ge] briefe | letters (der Brief) | Ein Brief kündigt Briefe an.
+[ge] bringen | to bring; bring (Bringen Sie, from formal) | “Die bringen Glück.
+[ge] bringt | brings (bringen) | Zwei Wochen später gedeihen alle Pflanzen, und Ronja bringt aus dem Urlaub etwas mit.
+[ge] da | there; there's one (da ist einer) | Da wird nicht gewartet, Nora.
+[ge] dabei | I have it on me) (on me, with me (habe ich dabei) | Ole: Sie hat außerdem alle Papiere dabei.
+[ge] dachte | thought (denken) | Lindner: Und ich dachte, hier draußen findet mich keiner.
+[ge] dahin | until then (bis dahin) | Bis dahin spielen Sie auf Probe.
+[ge] daneben | next to it; beside the point | An der Wand hängt ein altes Werbeschild aus DDR Zeiten, daneben ein vergilbtes Foto der alten B
+[ge] daran | at that; at precisely that point (genau daran) | Ich habe zwei Tage daran gesessen.
+[ge] darf | may, is allowed to (dürfen) | Darüber, ob ich Tischtennis spielen darf?
+[ge] das | the; that | Das wirkt eher nach Piraten als nach Fußball.
+[ge] dass | that (conjunction) | Timo: Die schriftliche Bestätigung deines Vermieters, dass du bei ihm wohnst.
+[ge] dasselbe | the same (neuter) | Eine Stunde Wartezeit, ein neuer Schalter, dasselbe Lächeln.
+[ge] dauert | takes, lasts (dauern) | Es dauert nur.
+[ge] davon | of it, from it; away | Sie ist längst Teil davon, dem sie nun selbst so manchen kleinen Gefallen schuldet.
+[ge] dazu | to it; along with it | Ich pack dir drei Räucheraale ein, leg zwei Makrelen dazu, und den Lachs gibt es fast geschenkt
+[ge] decken | ceilings (Decke) | (NO APARECE)
+[ge] dein | your; are you serious? (Dein Ernst?) | Und jetzt iss dein Stück, bevor der Kuchen trocken wird.
+[ge] deinem | your (dative, dein) | Nadia: Vor einem Jahr stand ich genau hier, mit deinem Blick.
+[ge] deinen | your (accusative) | Nadia: Du gibst mir deinen Schlüssel?
+[ge] deiner | your (dative) | Timo: Das ist der gesündeste Satz seit deiner Ankunft.
+[ge] dem | the (dative) | Auf dem Sofa thront eine graue Katze und mustert die Bewerber einzeln.
+[ge] demselben | the same (derselbe, dative) | Vor Katjas Späti stehen drei Menschen mit demselben verlorenen Blick.
+[ge] den | the (accusative) | Alle anderen reden von Traum und Liebe auf den ersten Blick.
+[ge] denkt | thinks (denken) | Nadia denkt an Timo, Katja, Ronja und einen Kater, der ihr vertraut.
+[ge] denn | then; because; (particle) | “Wie krank denn?
+[ge] der | the; who, which | Ronja: Der Kater frisst morgens und abends, die Pflanzen zweimal die Woche.
+[ge] des | of the (genitive) | Ole: Danach gibt es Livemusik und das erste Fischbrötchen des Tages.
+[ge] dich | you (accusative) | Ohne die schicken sie dich wieder nach Hause: freundlich, aber gnadenlos.
+[ge] die | the; who, which | Wichtig ist da drin nur eine Person, und die hat vier Pfoten.
+[ge] diesem | this (dative) | Und das Verrückteste daran: Ich finde es fairer als alles andere auf diesem Markt.
+[ge] diesen | this (accusative) | Greve: Für diesen Grundriss, mit Hof und Südbalkon?
+[ge] dieses | this (neuter) | Dann behandle ich dieses Du als Auszeichnung.
+[ge] dir | you (dative) | Ich pack dir drei Räucheraale ein, leg zwei Makrelen dazu, und den Lachs gibt es fast geschenkt
+[ge] doch | though, after all (emphasis particle) | Rund wäre doch praktischer zum Greifen.
+[ge] dran | at it; one's turn (colloquial) | Jetzt bist du dran.
+[ge] dreht | turns (drehen); turns around (dreht sich um) | Nora dreht sich an der Ecke noch einmal zum Wasser um, dann folgt sie den anderen nach Hause, w
+[ge] drin | inside (colloquial for darin) | Wichtig ist da drin nur eine Person, und die hat vier Pfoten.
+[ge] dritte | third; the third one (die Dritte) | Sie sind die Dritte diesen Monat; die Formulare habe ich auf Vorrat.
+[ge] drückt | presses, pushes (drücken) | Ronja drückt Nadia einen Wohnungsschlüssel in die Hand, als wäre es nichts.
+[ge] dunkle | dark (dunkel) | Um halb sieben ist das Stockwerk ein Museum: leere Stühle, dunkle Bildschirme, nur Nadias Lampe
+[ge] durchhält | holds out to the end (durchhalten) | Wer hier durchhält, hat den Sonntag gewonnen.
+[ge] duzen | to use informal du with someone | Duzen auf eigene Gefahr.
+[ge] dünn | thin; here: flimsy, weak | Ist es zu dünn?
+[ge] echte | real, genuine (echt) | Korbinian haut vergnügt auf den Tisch und lacht, da schau her, unser Madl redt scho wie eine ec
+[ge] ecke | corner (die Ecke) | Nora dreht sich an der Ecke noch einmal zum Wasser um, dann folgt sie den anderen nach Hause, w
+[ge] eher | sooner, rather; sooner X than Y (eher X als Y) | Hier kriegst du eher Karten für ein ausverkauftes Konzert als einen Termin beim Bürgeramt.
+[ge] eigene | own (eigen) | Elf Bewerber warten mit identischen Mappen, und Nadia umklammert ihre eigene wie ein Konzerttic
+[ge] eigenen | own (declined) | Ein Franzbrötchen wird flach gedrückt und im eigenen Zucker karamellisiert.
+[ge] ein | a, an; one | Nora: Also spaltet ein Fußball die ganze Stadt in zwei Lager?
+[ge] einem | a, an (dative) | Ein Tor fällt, und die Tribüne explodiert in einem einzigen Aufschrei.
+[ge] einen | a, an (accusative) | Fiete drückt Nora einen Schal in die Hand, Merle klatscht schon im Takt mit.
+[ge] einer | one (of them); a (dative) | Auf einer Warteliste schläft es sich schlecht.
+[ge] einfach | simply, just; easy | Nora: Dann brülle ich jetzt einfach mit, auch ohne die Gesänge schon zu kennen.
+[ge] einladung | invitation (die Einladung) | Die Einladung ist mehr wert als jede Umarmung.
+[ge] einzige | the only one (einzig) | Die einzige Behörde, bei der schon die Ankündigung ernst ist.
+[ge] einziges | single, only (einzig, declined) | Nora: Ein einziges Wort für den ganzen Tag?
+[ge] empfängt | receives, welcomes (empfangen) | Hausmeister Wollny empfängt Nadia mit Schlüsselbund und beginnt die Führung ausgerechnet im Tre
+[ge] enger | narrower; closer (eng) | Nadia steckt den Zettel ein und spürt, dass Timos Berlin und dieses Leipzig enger zusammenhänge
+[ge] entscheidet | decides (entscheiden) | Nadia: Jetzt entscheidet also eine Katze über meinen Mietvertrag.
+[ge] entscheidung | decision (die Entscheidung) | Nadia: Und wie fällt die Entscheidung?
+[ge] entschuldigung | apology; excuse me (die Entschuldigung) | Mira: Entschuldigung, sprechen Sie Deutsch?
+[ge] erklärt | explains (erklären) | Am Späti erklärt Katja die Rangordnung, ganz amtlich.
+[ge] ernst | serious (der Ernst); seriously? (Dein Ernst?) | Die einzige Behörde, bei der schon die Ankündigung ernst ist.
+[ge] erst | only, not until; for now (erst mal) | Nora: Andere würden sich bei so einem Wetter gar nicht erst aus dem Bett wagen.
+[ge] erste | first (erst, declined) | Boysen schneidet den Kuchen an und schiebt Nora das erste Stück hin.
+[ge] erzählt | tells, recounts (erzählen) | Beim Essen erzählt Kalle von vierzig Jahren auffe Arbeit, vom alten Bulli, von durchmalochten N
+[ge] esse | eat (essen, ich form) | (NO APARECE)
+[ge] fahrt | a ride, journey; you drive (fahren) | Vor allem ein Gschaftlhuber vom Nebentisch, der jedem ungefragt Ratschläge gibt, bringt ihn ric
+[ge] fallen | to fall (fallen) | Nadia lässt die Sonne durch die Kastanien fallen und spürt, wie das Lachen der Runde ganz mühel
+[ge] fehler | mistake (der Fehler) | Bis jetzt hat sie noch jeden Fehler gerochen.
+[ge] fehlt | is missing (fehlen) | Fehlt eigentlich nur noch ein Führungszeugnis.
+[ge] feierabend | end of the workday, sacred free time (der Feierabend) | Feierabend an der Elbe.
+[ge] fenster | window; here: assigned time slot (das Fenster) | Nora zählt die Fenster.
+[ge] fett | fat, greasy; (slang) cool, awesome | Die andere Richtung ist ein kleiner Imbiss direkt am Wasser, und es riecht nach Fett und Salz.
+[ge] finde | find, think (finden) | Und das Verrückteste daran: Ich finde es fairer als alles andere auf diesem Markt.
+[ge] findet | finds (finden) | Lindner: Und ich dachte, hier draußen findet mich keiner.
+[ge] flasche | bottle (die Flasche) | Nadia stellt ihre Flasche ab, ganz langsam.
+[ge] flur | corridor, hallway (der Flur) | Der Flur der Ausländerbehörde riecht nach Automatenkaffee und Weltgeschichte.
+[ge] folie | presentation slide (die Folie) | Brandt: Erstens: Folie vier ist überflüssig.
+[ge] frag | ask (fragen) | Frag einen Hamburger nach seinem Verein, und du kennst ihn besser als nach jedem langen Gespräc
+[ge] frage | question (die Frage) | Ole: Falsche Frage.
+[ge] fragst | you ask (fragen) | Und weil du fragst, ohne zu fragen: Mir geht es bestens.
+[ge] fragt | asks (fragen) | “Du musst die Neue aus Berlin sein, oder?”, fragt Meike.
+[ge] frau | Mrs.; woman (die Frau) | Frau Boysen von nebenan stellt einen selbstgebackenen Kuchen auf den Tisch, Ole eine Flasche We
+[ge] freitag | Friday (der Freitag) | Der Freitag ist immer lang.”
+[ge] freue | I am glad (ich freue mich, from sich freuen) | Ich freue mich sehr, du...
+[ge] frischen | fresh (frisch) | Bene schneidet einen frischen Laib in dicke Scheiben und legt sie neben die Butter.
+[ge] frischer | fresh, crisp (frisch) | Was für ein wunderschöner, frischer Vormittag hier im Norden.
+[ge] früh | early; too early (zu früh) | Sonntags früh im Fischmarkt macht der Norden eine einzige Ausnahme.
+[ge] früher | earlier; formerly, in the past | (NO APARECE)
+[ge] fällt | falls; the decision is made (die Entscheidung fällt) | Ein Tor fällt, und die Tribüne explodiert in einem einzigen Aufschrei.
+[ge] fühlt | feels (fühlen); feels like (fühlt sich an) | Nora: Und wer nichts fühlt, bekommt den Zuschlag?
+[ge] führt | leads, guides (führen) | Drinnen führt Herr Timm die Gruppe durch zwei helle Zimmer.
+[ge] füllt | fills (füllen) | Nadia reibt die Salbe ein und füllt die Wärmflasche; beide raten dasselbe.
+[ge] fürs | for the (für das) | Sie muss niemandem mehr etwas beweisen, denn Micha hat ihr im Halbschlaf schon einen Platz fürs
+[ge] ganze | whole (ganz) | Nora: Also spaltet ein Fußball die ganze Stadt in zwei Lager?
+[ge] ganzen | whole, all the (colloquial) | Merle hat heute noch keinen ganzen Satz gesagt.
+[ge] gar | nothing at all (gar nichts) | Bevor Sie sich verlieben, ein Hinweis: Vermietet wird bei uns gar nichts.
+[ge] gedacht | thought (denken) | (NO APARECE)
+[ge] gegen | against; compared with | Grog gegen alles.
+[ge] geh | go! (gehen) | Geh zum Orthopäden.
+[ge] gehe | go (gehen) | Oder ich gehe.”
+[ge] gehst | go (gehen) | Timo: Oder du gehst über den Hausarzt.
+[ge] geht | goes; go ahead (Geht vor, from gehen) | Es geht nicht um besser, es geht um Zugehörigkeit.
+[ge] gehört | belongs (gehören) | Boysen: Der Hinterhof gehört allen.
+[ge] gemeint | meant (meinen) | Timo: Nicht bös gemeint.
+[ge] genommen | taken (nehmen); would have taken me (hätte mich genommen) | Nora: Weil mich vor einem Jahr jemand an genau dieser Theke an die Hand genommen hat.
+[ge] gern | gladly; would like (hätte gern) | Sehr gern.
+[ge] gesagt | said (sagen) | Jonas: Genau das hat die letzte Mitbewohnerin auch gesagt.
+[ge] gesicht | face (das Gesicht) | Schreier: Alles frisch, alles echt, und ein Strauß Blumen obendrauf, weil dein Gesicht mir gefä
+[ge] gespräch | conversation, talk (das Gespräch) | Nadia: ...dass SIE sich Zeit für das Gespräch nehmen.
+[ge] gewinnt | wins (gewinnen) | Zahl es einfach; diesen Kampf gewinnt keiner.
+[ge] gibt | gives (geben); there is (es gibt) | Merle: Regeln gibt es hier keine, nur Herzblut.
+[ge] gießt | waters, pours (gießen) | Gießt du meine Pflanzen?
+[ge] gilt | is considered as (gilt als, from gelten) | Hier gilt: Wer ehrlich kritisiert, meint es ernst mit Ihnen.
+[ge] glatt | smooth; slippery | “Trink langsam, sonst legt di des glatt um.”
+[ge] glaub | believe (glauben) | Den Schlüssel bekommt nicht jeder, glaub mir.
+[ge] glaubt | believes, thinks (glauben) | Nadia glaubt ihm kein Wort.
+[ge] gleitet | glides (gleiten) | Ein Ausflugsschiff gleitet still vorbei, und seine Lichter tanzen auf dem dunklen Wasser.
+[ge] glück | luck; happiness | “Komm, wir versuchen es auf gut Glück einfach mal mit dem Fenster hinten”, schlägt Nadia entsch
+[ge] grinst | grins (grinsen) | Timo grinst in seinen Kaffee.
+[ge] grüßen | greetings (der Gruß, dative); to greet | Mit freundlichen Grüßen, das Treppenhaus.
+[ge] gut | good; alright then (na gut) | Nora: Gut.
+[ge] gute | good (gut, declined) | Mira: Gute Besserung wünscht mir hier sonst keiner.
+[ge] guten | good (gut, declined) | Formulare gehören in dieser Stadt zu jeder guten Nachricht.
+[ge] gäste | guests (der Gast) | Gäste sind nach Anmeldung herzlich willkommen.
+[ge] habe | have (haben) | Nadia: Ich habe Gehaltsnachweise, Schufa und ein Empfehlungsschreiben von meiner künftigen Chef
+[ge] haken | the catch, hidden downside (der Haken) | Der Haken hängt im Keller; mehr verrate ich nicht.
+[ge] halb | half; half past EIGHT (halb neun) | Das Schloss ist halb kaputt.
+[ge] halben | half (declined) | Nicht den halben Hafen.
+[ge] halt | hold on tight (halt dich fest, from halten) | Eine Bö erwischt das Boot, Gischt klatscht über Bord, und Nora verliert für einen Moment den Ha
+[ge] hamburg | Hamburg (the city) | Er denkt an den Brief aus Hamburg.
+[ge] hast | have (haben, du form) | Ole: Und du hast gerade deine erste Vokabel gelernt: Kann man so machen.
+[ge] hat | has (haben) | Wichtig ist da drin nur eine Person, und die hat vier Pfoten.
+[ge] haus | house, building (das Haus) | Ich wollte nur, dass Sie das Wichtigste im Haus wissen.
+[ge] hause | home (nach Hause, from ward) | Nadia geht nach Hause, den Schlüssel in der Tasche.
+[ge] haut | skin; hits (hauen) | Korbinian haut vergnügt auf den Tisch und lacht, da schau her, unser Madl redt scho wie eine ec
+[ge] hebt | raises, lifts (heben) | Sophie steht vor dem Haus und hebt die Hand.
+[ge] heißt | means, is called (heißen) | Kann man so machen heißt: sauber, richtig, nichts auszusetzen.
+[ge] her | here, this way (zeig mal her) | Ole: Komm her.
+[ge] herkomme | where I come from (wo ich herkomme, from herkommen) | Wo ich herkomme, sind sie Loyalität.
+[ge] herr | Mr. (der Herr) | Neun Uhr zwölf, und Herr Lindner bleibt spurlos verschwunden.
+[ge] herzlich | warm, cordial; welcome (herzlich willkommen) | Wer bohrt, wirkt übergriffig, nicht herzlich.
+[ge] himmel | sky (der Himmel) | Der Himmel ändert sich nicht, also änderst du dich.
+[ge] hin | there (direction); there alone (allein hin) | Boysen schneidet den Kuchen an und schiebt Nora das erste Stück hin.
+[ge] holt | fetches, gets (holen) | Sie holt für die Runde ein paar kühle Radler und verteilt frische Brezn über den langen Tisch.
+[ge] hält | holds (halten) | Sonst hält das keiner aus.
+[ge] hände | hands (Hand) | Mit einem lauten Rumms wirft Steffi den Kofferraum ihres klapprigen Wagens zu und wischt sich d
+[ge] hängt | hangs (hängen) | Neumann: Ihr Aufenthaltstitel hängt an Ihrer Tätigkeit.
+[ge] hätte | would have (haben, Konjunktiv II) | Ole zählt im Stillen die Jahre, die er auf so eine Wohnung gewartet hätte.
+[ge] hör | listen (hören, imperative); listen up (Hör zu) | Nadia: Hör zu: Der Fall Pizzakarton wurde aufgeklärt, dritter Stock, man bittet um Entschuldigu
+[ge] höre | hear (hören) | (NO APARECE)
+[ge] hören | to listen; listen (Hören Sie, from formal) | Brandt: Hören Sie.
+[ge] hört | hears (hören); one hears (man hört) | Ole kommt herein, hört das Stichwort und grinst.
+[ge] ihm | him (dative) | Am Nachmittag legt Nora ihm ihre erste Kalkulation vor.
+[ge] ihn | him (accusative) | Frag einen Hamburger nach seinem Verein, und du kennst ihn besser als nach jedem langen Gespräc
+[ge] ihnen | you (formal, dative); them | Brot, damit es Ihnen nie ausgeht.
+[ge] ihr | her; their | Nora: Und ihr, die ihr sonst kein Wort zu viel sagt, singt hier zwei Stunden am Stück?
+[ge] ihre | her; your (formal) | Am Nachmittag legt Nora ihm ihre erste Kalkulation vor.
+[ge] ihrem | her; your, formal (dative) | Kommt angeblich von den Franzosen und ihrem Butterteig, aus napoleonischer Zeit.
+[ge] ihren | her, your (declined) | Nora zieht ihren Koffer über das Kopfsteinpflaster von Ottensen und nimmt sich vor, in Hamburg 
+[ge] ihrer | her; your, formal (dative fem.) | Ole, der sie seit ihrer Ankunft eingewöhnt hat, bringt sie hinein; heute beginnt ihr erster Arb
+[ge] im | in the (in + dem) | Fiete drückt Nora einen Schal in die Hand, Merle klatscht schon im Takt mit.
+[ge] indem | by doing; the way in which | Brandt: Loyalität zeigt man hier, indem man um fünf fertig ist.
+[ge] ins | into the (in das) | Micha wird langsam müde und will nur noch einen Absacker und dann ab ins Bett.
+[ge] ist | is (sein) | Das ist keine Besichtigung, das ist ein Vorsprechen.
+[ge] ja | yes; indeed (emphasis particle) | Sie sagen ja gar nichts.
+[ge] jahr | year (das Jahr) | Mieter, die schwärmen, werden nach einem Jahr enttäuscht.
+[ge] jahre | years (das Jahr) | Mein Visum läuft noch anderthalb Jahre.
+[ge] jahren | years (das Jahr, dative) | In sieben Jahren spricht sie längst fließend Hamburgisch, hat zwei Umzüge hinter sich und weiß,
+[ge] kaffee | coffee (der Kaffee) | Nora: Nach dem zweiten Kaffee wäre ich anderswo längst per du.
+[ge] kampf | fight, battle (der Kampf) | Zahl es einfach; diesen Kampf gewinnt keiner.
+[ge] kann | can (können) | Die Tür öffnet Frau Siebert: Lesebrille, strenger Scheitel, ein Blick, der Zettel schreiben kan
+[ge] kannst | can, are able to (können) | “Kannst du gehen?”
+[ge] karton | cardboard box (der Karton) | Zu Hause wartet das neue Regal, seit einer Woche im Karton.
+[ge] kauft | buys (kaufen) | Sie kauft das Brot vom Vortag, feilscht auf dem Markt und dreht jeden Cent zweimal um.
+[ge] kaut | chews (kauen) | Er kaut, überlegt und wischt sich den Schaum von der Lippe.
+[ge] kehrt | returns (zurückkehren; kehrt ... zurück) | Wenn das Wasser kehrt.
+[ge] keine | no, not a (kein) | Merle: Regeln gibt es hier keine, nur Herzblut.
+[ge] keinem | no, not a (kein, dative) | Steht in keinem Protokoll.
+[ge] keller | basement, cellar (der Keller) | Im Keller wohnt die Hausordnung.
+[ge] kennst | you know (kennen) | Frag einen Hamburger nach seinem Verein, und du kennst ihn besser als nach jedem langen Gespräc
+[ge] kennt | knows (kennen) | Timo kennt die Wahrheit hinter der Warteschleife.
+[ge] kiez | neighborhood (Berlin word, der Kiez) | Pauli ist der Underdog, der Kiez, das linke Herz der Stadt.
+[ge] kind | child; also a warm 'dear' when addressing someone | Kind, du brauchst Franzbranntwein und eine Wärmflasche.
+[ge] kirche | church (die Kirche) | (NO APARECE)
+[ge] klingeln | to ring a doorbell | Klingeln und miteinander reden?
+[ge] klingt | sounds (klingen) | Timo: Auf die Frau, die das Sie überlebt hat und jetzt Chefin klingt.
+[ge] klopft | knocks (klopfen); someone knocks (es klopft) | Zwischen Umzugskartons im dritten Stock sucht Nora den Wasserkocher, als es an der Tür klopft.
+[ge] kollege | colleague, male (der Kollege) | Ole, ihr neuer Kollege, holt sie ab und grinst schon, bevor sie den Mund aufmacht.
+[ge] kollegen | colleagues (der Kollege) | (NO APARECE)
+[ge] komm | come (kommen) | Timo: Komm mit.
+[ge] kommen | to come; come along (Kommen Sie) | Zur kleinen Einweihung in Noras Wohnung kommen nur drei Gäste, dafür bringt jeder etwas mit.
+[ge] kommst | come (kommen, du form); coming? (Kommst du?) | Du kommst wegen der Aussicht und gehst mit drei Kilo Aal.
+[ge] kommt | comes (kommen) | Termin um zwanzig vor sieben; selbst die Sonne kommt später.
+[ge] komplimente | compliments (das Kompliment) | Bei uns verpackt man Kritik normalerweise in Komplimente.
+[ge] kontert | counters, strikes back (kontern) | Wer richtig kontert, gehört dazu.
+[ge] kopf | head (der Kopf); in her head (im Kopf) | Es fühlt sich nur an, als hätte jemand die Tür zu meinem Kopf geöffnet, ohne vorher zu klopfen.
+[ge] kostet | costs (kosten) | Das Porto kostet mehr als die Information.
+[ge] kuchen | cake (der Kuchen) | Sonntag, kurz nach acht, Erdgeschoss: Nadia mit einem Kuchen, und Timo, der sich selbst eingela
+[ge] köln | Cologne (city) | Seit zwei Jahren lebt sie nun in Berlin und lernt mühsam Deutsch, doch dieses laute Köln verwir
+[ge] könnte | could (können, Konjunktiv II) | Ich könnte mir das gut vorstellen.
+[ge] kündigung | formal cancellation of a contract (die Kündigung) | Kostenlos, aber die Kündigung ist schwierig.
+[ge] laden | shop (der Laden); load the page (Seite laden) | Im Laden hängt eine ganze Wand voller gelber Regenmäntel.
+[ge] lampe | lamp (die Lampe) | Um halb sieben ist das Stockwerk ein Museum: leere Stühle, dunkle Bildschirme, nur Nadias Lampe
+[ge] land | country, land (das Land) | Timo: Willkommen im Land der Ankündigungen.
+[ge] lang | long; for a whole week (eine Woche lang) | Zwei Stunden lang darfst du hier alles rauslassen, was die Woche über drin bleibt.
+[ge] langen | long (inflected) | Sie stehen in langen, geraden Reihen.
+[ge] langsam | slowly; gradually | Langsam verstehe ich, wie ihr das hier meint.
+[ge] lass | let (lassen); let me guess (lass mich raten) | Timo: Lass mich raten.
+[ge] lauter | because of so much (vor lauter) | Bei den anderen war ich vor lauter Superlativen schon misstrauisch.
+[ge] leben | life (das Leben) | Salz, damit das Leben Würze hat.
+[ge] lebt | lives (leben) | Wer sich einliest, lebt hier friedlich.
+[ge] legt | lays, puts (legen); presents (legt vor) | Als kleines Mitbringsel legt Nora eine Zimtschnecke aus dem neuen schwedischen Café auf Wiebkes
+[ge] lehnt | leans (lehnen) | Am Tresen lehnt Ronja, hört mit, und legt Nadia eine Hand auf die Schulter.
+[ge] lernt | learns (lernen) | Der Dienstausweis ist noch warm aus dem Drucker, da lernt Nadia die wichtigste Landkarte des Bü
+[ge] letzte | last (letzt-) | Der letzte Umschlag geht an die Schule in Leipzig.
+[ge] leuchtet | shines, is lit (leuchten) | Auf der Tafel leuchtet B 244.
+[ge] leuten | people (dative) | Sie lächelt tapfer, fragt sich aber, was sie diesen Leuten getan hat.
+[ge] liebe | dear (letter opening); love | Nadia: “Liebe Nadia, nach reiflicher Überlegung...”
+[ge] liegen | to lie; it will suit you (das wird Ihnen liegen) | Präzision unter Druck; das Projekt wird Ihnen liegen.
+[ge] liegt | lies; is due to (liegen) | Der Innenhof liegt hinter dem Tor, grün und völlig gleichgültig gegenüber Noras Zeitplan.
+[ge] liest | reads (lesen) | Nadia liest den Zettel dreimal.
+[ge] loch | hole (das Loch) | Die Bohrmaschine schafft genau ein Loch.
+[ge] luft | air (die Luft); in the air (in der Luft) | Sie holt kurz Luft.
+[ge] lächelt | smiles (lächeln) | Nadia lächelt und weiß zum ersten Mal, dass sie wirklich angekommen ist.
+[ge] lärm | noise (der Lärm) | Der Lärm von neulich ist vergessen; wer solche Zettel schreibt, gehört zu diesem Haus.
+[ge] lässt | lets (lassen); can be done (lässt sich) | Man lässt hier keinen allein husten.
+[ge] läuft | runs; here: nothing works (laufen) | Ole: So läuft das Theater.
+[ge] machen | to make, do; to finish (fertig machen) | Carstens: Kann man so machen.
+[ge] machst | do, make (machen) | (NO APARECE)
+[ge] macht | makes, does (machen) | Katja: Ein Paket annehmen macht man für jeden.
+[ge] mag | likes (mögen) | Daneben stapelt sich ein zünftiges Vesper, wie man es im Schwabenland am liebsten mag.
+[ge] magen | stomach (der Magen) | Ihr Magen: nicht mehr ganz korrekt.
+[ge] magst | you like (mögen) | “Setz di her, du magst doch a Maß, oder?”
+[ge] mal | time(s); for now (erst mal) | Das höre ich heute zum ersten Mal.
+[ge] malt | paints (malen) | Frauke stimmt leise ein altes plattdeutsches Lied an, Hauke brummt die Melodie mit, und draußen
+[ge] man | one, you (impersonal) | Katja: Ein Paket annehmen macht man für jeden.
+[ge] manche | some (people) | Das kriegen manche Nachbarn in zwanzig Jahren nicht.
+[ge] mantel | coat (der Mantel) | Dann kommen Schritte näher, und Frau Brandt steht da, den Mantel über dem Arm.
+[ge] markt | market (der Markt) | Ole: Bis dahin suchen wir auf dem freien Markt.
+[ge] mehr | more; no longer (nicht mehr) | Ein Handschlag wiegt hier mehr als drei Seiten Vertrag.
+[ge] meinem | my (dative) | In meinem Vertrag stand irgendwas von förmlicher Unternehmenskultur.
+[ge] meiner | my (dative) | Nora: Früher kannte ich nicht einmal den Namen meiner Nachbarn.
+[ge] meint | means (meinen); is serious about it (meint es ernst) | Langsam verstehe ich, wie ihr das hier meint.
+[ge] meisten | most people (die meisten) | Frau Nadia, Sie sind besser vorbereitet als die meisten Deutschen.
+[ge] merk | note it, remember (merken) | Merk dir das, dann verstehst du dieses Land.
+[ge] mich | me (accusative) | Nora: Also anstellen, warten und hoffen, dass mich unterwegs niemand überholt.
+[ge] miete | rent (die Miete) | Nadia: Gewöhn dich dran; Geduld ist hier die halbe Miete.
+[ge] mieter | tenants (der Mieter) | Ordentlicher aufgereiht als meine Mieter.
+[ge] minuten | minutes (die Minute) | Nora: Sie hat mir Brot und Salz gebracht und war nach zwei Minuten wieder weg.
+[ge] mir | me (dative) | Nadia: Du gibst mir deinen Schlüssel?
+[ge] misst | measures (messen) | “Der misst hier jeden Krümel mit dem Muggeseggele”, flüstert er Nadia zu.
+[ge] moment | moment (der Moment) | Eine Bö erwischt das Boot, Gischt klatscht über Bord, und Nora verliert für einen Moment den Ha
+[ge] monat | month (der Monat) | Sie sind die Dritte diesen Monat; die Formulare habe ich auf Vorrat.
+[ge] monaten | months (dative) | Hier bin ich nach Monaten noch die neue Bekanntschaft, nie die Freundin.
+[ge] morgen | morning; this morning (heute Morgen) | Wer heute nicht schwärmt, klagt morgen nicht über jede Kleinigkeit.
+[ge] museum | museum (das Museum) | Um halb sieben ist das Stockwerk ein Museum: leere Stühle, dunkle Bildschirme, nur Nadias Lampe
+[ge] muss | must (müssen); nobody has to (niemand muss) | Ohne dass ich betteln muss?
+[ge] musst | must, have to (müssen) | Du musst ein Schreiben aufsetzen.
+[ge] mustert | inspects critically from head to toe (mustern) | Eine Verkäuferin mustert Noras durchweichte Schuhe.
+[ge] na | well; alright then (na gut) | Schreier: Na, junge Frau, so blass um die Nase?
+[ge] nach | after; home (to; nach Hause) | Das wirkt eher nach Piraten als nach Fußball.
+[ge] nachbarn | neighbors (der Nachbar) | Das kriegen manche Nachbarn in zwanzig Jahren nicht.
+[ge] nachmittag | afternoon (der Nachmittag) | Am Nachmittag legt Nora ihm ihre erste Kalkulation vor.
+[ge] nachricht | message, news (die Nachricht) | Greve: Sie sagen das, als wäre es eine schlechte Nachricht.
+[ge] nacht | night (die Nacht) | (NO APARECE)
+[ge] name | name (der Name) | Ihr Name, korrekt geschrieben.
+[ge] namen | name (der Name, declined) | Nora: Früher kannte ich nicht einmal den Namen meiner Nachbarn.
+[ge] nase | nose; blass um die Nase | Schreier: Na, junge Frau, so blass um die Nase?
+[ge] nehme | take (nehmen); I assume (nehme ich an) | Lindner: Wohnungsgeberbestätigung, nehme ich an.
+[ge] nennt | calls, names (nennen) | Micha nennt Timo einen verpeilten Vollpfosten, Jule kontert mit “halt die Fresse, du Ehrenmann”
+[ge] neue | the new one, newcomer (die Neue, from female) | Wiebke reicht Nora die Tüte über die Theke und mustert die Neue mit stillem Wohlwollen.
+[ge] neuer | new (neu, declined) | Ole, ihr neuer Kollege, holt sie ab und grinst schon, bevor sie den Mund aufmacht.
+[ge] nickt | nods (nicken) | Timo nickt und sagt den Satz, der in Deutschland alles einleitet.
+[ge] nimm | take! (nehmen) | Alter Schwede, nimm schon mit, poltert er und schiebt Timo gleich noch einen Werkzeugkasten rüb
+[ge] nimmst | you take; an die Hand nehmen (nehmen) | Wiebke: Die Zweite, die du an die Hand nimmst.
+[ge] nimmt | takes (nehmen) | Sie nimmt ihren Ordner, geht zwei Schritte, dreht sich noch einmal um.
+[ge] noch | still, yet; fourteen more (noch vierzehn) | Das Sie hat seinen Sinn, solange man sich noch beschnuppert.
+[ge] nummer | number (die Nummer) | Er hält einen Umschlag hoch, Beweisstück Nummer eins.
+[ge] nächsten | next (nächst, declined) | Wer die Tonnen verwechselt, ist am nächsten Tag stadtbekannt.
+[ge] näher | approach) (nearer, closer (näher kommen) | Je näher man sich ist, desto weniger bohrt man.
+[ge] organisiert | organized (organisieren) | Wer hier regelmäßig lange bleibt, gilt nicht als fleißig, sondern als schlecht organisiert.
+[ge] paar | a few, a couple of (ein paar) | In ein paar Jahren vielleicht.
+[ge] packt | grabs, packs (packen) | Neben ihr packt Jana, die auf dem Markt Blumen verkauft, eine Runde Kölsch aus.
+[ge] papier | paper, document (das Papier) | Der Briefkasten klemmt vor lauter Papier.
+[ge] papiere | papers, documents (das Papier) | Die Papiere legt sie einzeln vor, wie Trümpfe.
+[ge] passiert | happened (passieren) | Nadia: Und was passiert, wenn man die Stockwerke verwechselt?
+[ge] person | person (die Person) | Wichtig ist da drin nur eine Person, und die hat vier Pfoten.
+[ge] pfeift | whistles (pfeifen) | Draußen pfeift der Wind ums Haus, drinnen ist es dafür mollig warm.
+[ge] prinzip | principle (das Prinzip) | Brandt: Das Sandwich-Prinzip.
+[ge] problem | problem (das Problem) | Nadia: Dann habe ich ein Problem.
+[ge] präsentation | presentation (die Präsentation) | Drei Dinge zu Ihrer Präsentation.
+[ge] prüft | tests, examines (prüfen) | Diese Stadt prüft wirklich alles.
+[ge] punkt | at seven sharp (Punkt sieben) | Punkt sieben spuckt das Portal die stornierten Termine aus.
+[ge] qualität | quality (die Qualität) | (NO APARECE)
+[ge] rand | edge, rim; the sidelines | Niemand hier trinkt aus bloßer Höflichkeit, und keine steife Besucherin sitzt am Rand, während 
+[ge] raus | out; phone out (Handy raus) | Zieh den Nerz an, geh raus, und der Regen wird dir gleichgültig.
+[ge] rechnet | calculates (rechnen) | Nora rechnet nach.
+[ge] recht | to prove someone right (recht geben, from das Recht) | Ole: Sie hat recht.
+[ge] rede | talk; speech (reden) | Das sei doch Pillepalle, mault er, nich der Rede wert.
+[ge] redest | you talk (reden) | Also holt sie Luft und ranzt zurück: “Micha, ausgerechnet du redest von meiner Jacke?”
+[ge] redet | talks (reden); wer redet, verliert | Merle: Hier redet man erst, wenn man wirklich etwas zu sagen hat.
+[ge] regal | shelf (das Regal) | Oder eine Schraube für das Regal?
+[ge] regel | rule (die Regel) | Und morgen zeige ich dir unsere heiligste Regel: den Feierabend.
+[ge] regeln | rules (die Regel); as verb: to settle | Nadia: Elf Seiten Regeln für einen Ball übers Netz.
+[ge] reicht | is enough (reichen) | Hier reicht ein Wort.
+[ge] respekt | respect; nice job | Timo: Respekt, beim ersten Anlauf.
+[ge] rest | the rest, remainder (der Rest) | Den Rest schaffst du schon.
+[ge] riecht | smells (riechen) | Der Flur der Ausländerbehörde riecht nach Automatenkaffee und Weltgeschichte.
+[ge] rost | grill grate; rust | Rauch quillt über den Zaun, als Kalle das Grillgut auf den Rost wuchtet und dabei lauthals fluc
+[ge] rot | red; to mark red (rot anstreichen) | Das schreibst du dir am besten rot an.
+[ge] ruft | calls (rufen); phones (ruft an) | Ein weiterer Kunde tritt ein, sieht Nora und ruft ihr grinsend Hummel Hummel zu.
+[ge] ruhe | quiet, peace (die Ruhe) | Was der Arzt dir sagt, sage ich dir gratis: Wärme, Ruhe, Grog.
+[ge] runde | the group; a round (of drinks) | Zwei runde Türme stehen am Anfang.
+[ge] sag | say (sagen, imperative) | Kunde: Sag bloß nicht Zimtschnecke, wenn ein Hamburger dabei ist.
+[ge] sage | say (sagen, ich form) | (NO APARECE)
+[ge] sagst | you say (sagen) | Und wenn du Moin Moin sagst, gilt das hier schon als Geschwätz.
+[ge] sagt | says (sagen) | Das sagt dir nur keiner.
+[ge] samstag | Saturday (der Samstag) | Der Fischmarkt am Sonntag, das Stadion am Samstag.
+[ge] satz | sentence (der Satz) | Entscheidend war der Satz mit dem Vertrag.
+[ge] schaffst | manage, get done (schaffen) | Den Rest schaffst du schon.
+[ge] schafft | manages, achieves (schaffen) | Mein Vater schafft noch eine im Jahr.”
+[ge] schaut | looks (schauen) | Timo schaut auf die Uhr, dann auf Nadia; das Grinsen ist verschwunden.
+[ge] schickt | sends (schicken) | Draußen geht die Sonne auf; Nadia schickt Timo eine Sprachnachricht.
+[ge] schiebt | pushes, slides (schieben) | Boysen schneidet den Kuchen an und schiebt Nora das erste Stück hin.
+[ge] schloss | closed; shut (schließen) | Das verflixte alte Schloss klemmt aber sofort, dreht sich keinen Millimeter, und Micha motzt le
+[ge] schmalen | narrow (schmal) | Der Wagen holpert über einen schmalen Feldweg, tief hinein ins Grüne, wo längst kein Handynetz 
+[ge] schmeckt | tastes (schmecken) | “Na, schmeckt's, oder guckst du lieber Beton an?”, nölt Hauke trocken und beißt genüsslich in s
+[ge] schneller | faster (schnell) | Immerhin arbeitet die Katze schneller als jedes Amt.
+[ge] schreibst | you write (schreiben) | Das schreibst du dir am besten rot an.
+[ge] schritte | steps, footsteps (der Schritt) | Dann kommen Schritte näher, und Frau Brandt steht da, den Mantel über dem Arm.
+[ge] schuhe | shoes (Schuh) | Eine Verkäuferin mustert Noras durchweichte Schuhe.
+[ge] schuhen | shoes (Schuh) | Der Kies knirscht unter Nadias Schuhen, als sie zwischen den langen Bänken nach einem Platz suc
+[ge] schultern | shoulders (Schulter) | Er schiebt ihr einen Halve Hahn über die Theke und zuckt mit den Schultern.
+[ge] schweigt | stays silent (schweigen) | An der Elbe schaut man den Schiffen nach und schweigt.
+[ge] schwester | sister (die Schwester) | Siebert: Die Schwester war es.
+[ge] sehe | I see (sehen) | Ich rieche das Salz, ich sehe die Kräne und bin sofort ruhig.
+[ge] seid | you are (sein, plural) | “Da seid ihr ja!”
+[ge] sein | to be; also: his | Das klingt zu schön, um wahr zu sein, nur andersherum.
+[ge] seinem | his (dative) | Frag einen Hamburger nach seinem Verein, und du kennst ihn besser als nach jedem langen Gespräc
+[ge] seinen | his (accusative) | Das Sie hat seinen Sinn, solange man sich noch beschnuppert.
+[ge] seit | since, for (a time span) | Boysen: Ich beobachte Sie seit dem Einzug.
+[ge] seite | page (die Seite); load the page (Seite laden) | Ole zieht Nora kurz zur Seite und spricht leise.
+[ge] seiten | pages (die Seite) | Nadia: Elf Seiten Regeln für einen Ball übers Netz.
+[ge] sekunde | second (die Sekunde) | Eine Sekunde dehnt sich wie Kaugummi.
+[ge] selber | oneself; yourself | Am Abend aber merkt Nadia, dass er keineswegs nur für sich selber spart.
+[ge] selbst | even; myself/itself | Bis ich eines Tages selbst nur noch nicke.
+[ge] setzen | sit down, formal (Setzen Sie sich, from sich setzen) | Brandt: Setzen Sie sich.
+[ge] sich | oneself (reflexive) | Am Millerntor drängt sich die Menge in Braun und Weiß, und die sonst so zugeknöpften Hamburger 
+[ge] sicher | surely, certainly; safe | Nora: Wir sagen Ihnen lieber, was sicher geht, als was gut klingt.
+[ge] sie | she; they; you (formal) | Bevor Sie sich verlieben, ein Hinweis: Vermietet wird bei uns gar nichts.
+[ge] siehst | you don't look like (du siehst nicht aus, from aussehen) | (NO APARECE)
+[ge] sieht | sees (sehen) | Da sieht man die Stockwerke nicht.
+[ge] sind | are (sein) | Sie sind die Dritte diesen Monat; die Formulare habe ich auf Vorrat.
+[ge] sitzt | sits (sitzen) | Wer einmal dort sitzt, gehört dazu; und irgendwann bietet dir dort sogar der Förmlichste das Du
+[ge] small | small (English loan) | Small Talk ist die Schale, der Stammtisch ist der Kern.
+[ge] sofa | sofa (das Sofa) | Auf dem Sofa thront eine graue Katze und mustert die Bewerber einzeln.
+[ge] sonne | sun (die Sonne) | Wer hier auf Sonne wartet, wartet vergeblich.
+[ge] sonntag | Sunday (der Sonntag) | Der Fischmarkt am Sonntag, das Stadion am Samstag.
+[ge] spielt | plays (spielen) | (NO APARECE)
+[ge] spontan | spontaneous(ly) | Nadia: Und wenn die Wäsche spontan schmutzig wird?
+[ge] spricht | speaks (sprechen) | In sieben Jahren spricht sie längst fließend Hamburgisch, hat zwei Umzüge hinter sich und weiß,
+[ge] springt | jumps (springen) | Nadia setzt sich, und Frau Schmidt springt ihr ohne Umweg auf den Schoß.
+[ge] spät | late; too late (zu spät) | Ole: Zu spät.
+[ge] stadt | city (die Stadt) | Pauli ist der Underdog, der Kiez, das linke Herz der Stadt.
+[ge] stand | stood; was written (stehen, past) | Nadia: Vor einem Jahr stand ich genau hier, mit deinem Blick.
+[ge] stapeln | to pile up (sich stapeln) | Vor Timos Haus stapeln sich Kartons; der Altbau kontert mit fünftem Stock ohne Aufzug.
+[ge] stapelt | stacks (stapeln) | Hinter der Theke stapelt Wiebke die frischen Franzbrötchen.
+[ge] steckt | is stuck, is placed (stecken) | Glaub mir, hinter dem einen Wort steckt mehr Wärme als hinter zehn höflichen Sätzen.
+[ge] steg | a jetty; footbridge | Konrad, der Wirt, Steffi, die Töpferin, und ihr Freund Micha haben Nadia auf ein Feierabendbier
+[ge] steht | stands; is written in (steht in, from stehen) | Davor steht eine Nachbarin, in der Hand ein Brett mit Brot und Salz.
+[ge] stellt | puts (stellen); puts down (stellt ab) | Frau Boysen von nebenan stellt einen selbstgebackenen Kuchen auf den Tisch, Ole eine Flasche We
+[ge] stil | style; in style (mit Stil) | Ankunft mit Stil.
+[ge] stillen | quiet; still (stillen) | Doch jeden Cent rechnet er laut vor, und Nadia hält ihn im Stillen für richtig geizig.
+[ge] stimmt | votes; is correct (stimmen) | “Diesmal stimmt es wirklich.”
+[ge] stock | floor, storey (der Stock) | Hier unten du, im dritten Stock wohnt das Sie.
+[ge] stufen | steps (Stufe) | Ole: Bis zur Fischauktionshalle sind es noch zwei Stufen.
+[ge] stunde | hour (die Stunde) | Eine Stunde später hängt Nadias Antwort im Treppenhaus: Hiermit werden sämtliche Vorwürfe zurüc
+[ge] stunden | hours (die Stunde) | Dann bleiben uns jetzt exakt vier Stunden.
+[ge] suchen | to look for; we've been looking for you (wir suchen Sie) | (NO APARECE)
+[ge] sucht | searches; looks for (suchen) | “Die Schule hier sucht eine Lehrerin”, sagt Sophie.
+[ge] tafel | board (die Tafel) | Timo: Entscheidend ist nur, die Wartemarke zu ziehen, bevor die Tafel deine Uhrzeit überspringt
+[ge] tag | day (der Tag) | Wer die Tonnen verwechselt, ist am nächsten Tag stadtbekannt.
+[ge] tage | days (der Tag) | Drei Tage Wartezeit für vierzehn Quadratmeter.
+[ge] tagen | days (der Tag, dative) | Wer sich verkriecht, ist in drei Tagen wieder auf den Beinen.
+[ge] talk | talk (English loan) | Small Talk ist die Schale, der Stammtisch ist der Kern.
+[ge] telefoniert | phones, calls (telefonieren) | Nora sitzt bei Wiebke in der warmen Backstube und telefoniert sich erfolglos durch ihre Kontakt
+[ge] termin | appointment (der Termin) | Hier kriegst du eher Karten für ein ausverkauftes Konzert als einen Termin beim Bürgeramt.
+[ge] termine | appointments (der Termin) | Punkt sieben spuckt das Portal die stornierten Termine aus.
+[ge] teure | expensive (teuer) | Auf dem Rückweg rechnet Nadia: billige Miete, teure Freiheit.
+[ge] theke | counter (die Theke) | Als kleines Mitbringsel legt Nora eine Zimtschnecke aus dem neuen schwedischen Café auf Wiebkes
+[ge] tippt | types (tippen) | “Und hier”, sagt Hannah und tippt auf den Eibsee.
+[ge] tonnen | bins (die Tonne) | Ich habe Respekt vor fünf Tonnen.
+[ge] tor | a goal (in football); a gate | Ein Affe aus Bronze sitzt neben dem Tor der Alten Brücke.
+[ge] treppe | stairs (die Treppe) | An der Treppe zur U-Bahn dann das gelbe Schild, und Timos Gesicht verliert jede Gelassenheit: E
+[ge] tresen | counter (der Tresen) | Ein Stammkunde am Tresen nickt zustimmend und mischt sich ein.
+[ge] tritt | steps; joins (treten, beitreten) | Freizeit macht man hier nicht allein; hier tritt man bei.
+[ge] tun | to do | (NO APARECE)
+[ge] tür | door (die Tür) | Zwischen Umzugskartons im dritten Stock sucht Nora den Wasserkocher, als es an der Tür klopft.
+[ge] ufer | the bank, shore (of a river) | Beide setzen sich auf die Stufen am Ufer.
+[ge] uhrzeit | time of day (die Uhrzeit) | Du stehst hier sicher nicht zum Vergnügen um diese Uhrzeit.
+[ge] um | at (a time); around | Das klingt zu schön, um wahr zu sein, nur andersherum.
+[ge] umschlag | envelope (der Umschlag) | Er hält einen Umschlag hoch, Beweisstück Nummer eins.
+[ge] unterschrieben | signed (unterschreiben) | Sogar unterschrieben.
+[ge] verdient | deserved, earned (verdienen) | Boysen: Dann haben Sie es sich nicht verdient.
+[ge] vergiss | forget! (vergessen) | “Vergiss die offizielle Kasse, dat läuft hier alles über Klüngel”, sagt Katrin und schneidet ru
+[ge] vergisst | forgets (vergessen) | Du vergisst das Glas, nach Farben sortiert.
+[ge] verkaufe | sell (verkaufen, ich form) | Sonntags verkaufe ich nur Überlebensmittel.
+[ge] verkauft | sells (verkaufen) | (NO APARECE)
+[ge] verliert | loses (verlieren) | An der Treppe zur U-Bahn dann das gelbe Schild, und Timos Gesicht verliert jede Gelassenheit: E
+[ge] vermieter | landlord (der Vermieter) | Mein Vermieter ist seit einer Woche wie vom Erdboden verschluckt.
+[ge] verschwunden | disappeared (verschwinden) | Timo schaut auf die Uhr, dann auf Nadia; das Grinsen ist verschwunden.
+[ge] versprechen | promise (das Versprechen) | Feierabend ist ein Versprechen.
+[ge] verspricht | promises (versprechen) | “Keine Sorge, gleich gibt es Broiler frisch vom Grill, dann sieht die Welt schon anders aus”, v
+[ge] verstanden | understood (verstehen) | Ich habe das Feedback verstanden.
+[ge] verstehe | understand (verstehen) | Ich verstehe dieses Formular nicht.
+[ge] versteht | understands (verstehen) | Nadia versteht allmählich, warum hier alle eine Thermoskanne dabeihaben.
+[ge] vertrag | contract (der Vertrag) | In meinem Vertrag stand irgendwas von förmlicher Unternehmenskultur.
+[ge] vertrauen | trust (das Vertrauen); to trust | Brandt: Die Probezeit läuft weiter; das Vertrauen nicht erst ab Bestehen.
+[ge] vertraut | trusts (vertrauen) | Der Vermieter hier vertraut dem, der ruhig bleibt.
+[ge] verwechselt | mixes up (verwechseln) | Nadia: Und was passiert, wenn man die Stockwerke verwechselt?
+[ge] viertel | quarter; quarter to seven (Viertel vor sieben) | Nora: Der Schnitt ist vernünftig, das Viertel ruhig.
+[ge] voller | full of (voll) | Am Millerntor drängt sich die Menge in Braun und Weiß, und die sonst so zugeknöpften Hamburger 
+[ge] vom | from the (von + dem) | Mein Vermieter ist seit einer Woche wie vom Erdboden verschluckt.
+[ge] vorbereitet | prepared (vorbereiten) | Frau Nadia, Sie sind besser vorbereitet als die meisten Deutschen.
+[ge] vormittag | morning, forenoon (der Vormittag) | Gegen die Berliner Wohnungssuche war dieser Vormittag ein Spaziergang.
+[ge] war | was (sein) | Die Nacht war kurz und voller Konjunktive: hätte, wäre, könnte.
+[ge] warte | wait (warten); hang on (warte) | Aber warte: Absender Ausländerbehörde.
+[ge] wartet | waits (warten) | Hinter ihr wartet Timo mit dem gelassenen Blick eines Menschen, der das schon durchgestanden ha
+[ge] weh | that hurts (das tut weh) | Nora: Das tut weh, aber es ist fair.
+[ge] weich | soft; innen weich | Außen hart, innen weich, und man kommt ewig nicht durch die Schale.
+[ge] weiter | further, on; you keep counting (rechne du weiter) | Der Regen fällt weiter, aber er erreicht sie nicht mehr.
+[ge] weiß | knows (wissen) | Am Millerntor drängt sich die Menge in Braun und Weiß, und die sonst so zugeknöpften Hamburger 
+[ge] weißt | know (wissen, du form) | Und weißt du, was das Verrückteste ist?
+[ge] wellen | waves (Welle) | Dose: Dann sieh zum Horizont, nicht auf die Wellen.
+[ge] wer | who; whoever | Wer drin ist, bleibt.
+[ge] werden | will (future); to become | Greve: Sie werden Mitglied und zeichnen Anteile.
+[ge] wetter | weather (das Wetter) | Es gibt kein schlechtes Wetter.
+[ge] wichtigste | most important (wichtig, superlative) | Der Dienstausweis ist noch warm aus dem Drucker, da lernt Nadia die wichtigste Landkarte des Bü
+[ge] wie | how; like, as | Elf Bewerber warten mit identischen Mappen, und Nadia umklammert ihre eigene wie ein Konzerttic
+[ge] wiegt | weighs (wiegen) | Nadia summt Bastis Melodie leise mit, den Kopf an Janas Schulter gelehnt, und dieser stille Fro
+[ge] will | wants (wollen) | Wer bleiben will, braucht ihren Segen.
+[ge] winzige | tiny (winzig) | Nadia lehnt sich zurück, spürt die Wärme der Glut und sieht zu, wie winzige Funken über dem dun
+[ge] wird | becomes; is being (werden) | Am Millerntor wird geschrien.
+[ge] wirft | throws (werfen) | Fröhlich pfeifend wirft Bene den letzten Besen in die Ecke und ruft die müde Truppe in seine wa
+[ge] wirkt | seems, appears (wirken) | Das wirkt eher nach Piraten als nach Fußball.
+[ge] wissen | to know (facts) | Mira: Woher wissen Sie das alles?
+[ge] woche | week (die Woche) | Zwei Stunden lang darfst du hier alles rauslassen, was die Woche über drin bleibt.
+[ge] wochen | weeks (die Woche) | Draußen bekommst du in vier Wochen einen Schlüssel und in vier Jahren die Kündigung.
+[ge] wohnt | lives (wohnen) | “Meine Kusine wohnt dort.
+[ge] wohnung | apartment (die Wohnung) | Ole zählt im Stillen die Jahre, die er auf so eine Wohnung gewartet hätte.
+[ge] wollte | wanted (wollen, past) | Nora: Ich wollte eigentlich nur ein einzelnes Brötchen.
+[ge] wort | word (das Wort) | Nora: Und ihr, die ihr sonst kein Wort zu viel sagt, singt hier zwei Stunden am Stück?
+[ge] worte | words (das Wort) | Nora: Eine Umarmung ganz ohne Worte.
+[ge] wurde | was, became (werden, past); passive marker | Nadia: Hör zu: Der Fall Pizzakarton wurde aufgeklärt, dritter Stock, man bittet um Entschuldigu
+[ge] wächst | grows (wachsen) | (NO APARECE)
+[ge] während | during; while | Während des Films kein Wort.
+[ge] wäre | would be (sein, Konjunktiv II) | Greve: Sie sagen das, als wäre es eine schlechte Nachricht.
+[ge] zahlt | pays (zahlen) | Den zahlt hier jeder Haushalt, ob du fernsiehst oder nicht.
+[ge] zeigt | shows (zeigen) | Brandt: Loyalität zeigt man hier, indem man um fünf fertig ist.
+[ge] zeit | time (die Zeit) | Ronja: Dann wird es Zeit.
+[ge] zettel | note, slip of paper (der Zettel) | Ole: Kein Zettel, keine Regel.
+[ge] zieht | pulls (ziehen); moves (zieht nach Leipzig); drifts (der Herd zieht) | Ole zieht Nora kurz zur Seite und spricht leise.
+[ge] zimmer | room (das Zimmer) | Timo: Elf Mappen für ein Zimmer.
+[ge] zu | to; into towers (too; zu Türmen) | Nora: Und ihr, die ihr sonst kein Wort zu viel sagt, singt hier zwei Stunden am Stück?
+[ge] zuckt | twitches; shrugs (zucken) | Er schiebt ihr einen Halve Hahn über die Theke und zuckt mit den Schultern.
+[ge] zum | to the (zu + dem) | Du stehst hier sicher nicht zum Vergnügen um diese Uhrzeit.
+[ge] zur | to the (zu + der) | An der Treppe zur U-Bahn dann das gelbe Schild, und Timos Gesicht verliert jede Gelassenheit: E
+[ge] zurück | back; returns (kehrt ... zurück) | An der Theke wirft ein Stammkunde Wiebke ein fröhliches Hummel Hummel hin, und sie schießt sofo
+[ge] zweite | second (zweit, declined) | Darunter, kleiner geschrieben, eine zweite Nachricht.
+[ge] zweiten | second (zweit, declined) | Nadia gießt Kaffee in einen zweiten Becher und reicht ihn weiter.
+[ge] zählt | counts (zählen); does not count (zählt nicht) | Und Pfand zählt nicht; Pfand ist kein Müll, Pfand ist Währung.
+[ge] öffnet | opens (öffnen) | Nadia öffnet den Ordner: Register eins bis fünf, farbig markiert.
+[ge] über | over, across; about | Nadia: Jetzt entscheidet also eine Katze über meinen Mietvertrag.
+[ge] überhaupt | at all; actually, in general | Micha liegt lang im Gras und behauptet steif und fest, er sei überhaupt nicht müde.
+[ge] überlebt | survived (überleben) | Timo: Auf die Frau, die das Sie überlebt hat und jetzt Chefin klingt.
+[ge] übers | over the (über das) | Verkäuferin: Ein Friesennerz und Gummistiefel, dann redest du nie wieder übers Wetter.
+[it] a | to; at | Elena arriva a Roma.
+[it] agli | to the | Un signore gentile offre due ombrelli agli amici.
+[it] al | to the; at the | Le due amiche camminano vicino al Colosseo.
+[it] all | to the; at the | All'improvviso non trovano più la strada giusta.
+[it] alla | to the; at the | Poi Giulia porta Elena alla Fontana di Trevi.
+[it] alle | to the; at the | Molti piccioni volano intorno alle due donne.
+[it] alte | tall; high | Elena guarda le colonne rosse e alte.
+[it] alza | raises; lifts | Elena alza gli occhi e resta senza parole.
+[it] alzano | they raise; they lift | I due amici alzano gli occhi verso le due torri.
+[it] amico | friend (male) | Il suo amico Marco vive in città da molti anni.
+[it] anche | also; too | Anna mostra anche i pomodori rossi.
+[it] ancora | still; again | Elena e il suo amico Luca hanno ancora un giorno insieme.
+[it] arancia | orange (fruit) | Luca beve un succo d'arancia perché domani lavora presto.
+[it] arancione | orange (color) | Il cielo diventa rosa e arancione.
+[it] banco | stall; counter | Il banco è pieno di frutta e verdura fresca.
+[it] bassa | low; short | “È bellissimo”, dice Elena a voce bassa.
+[it] bene | well; fine | Giulia conosce bene questo posto.
+[it] binario | platform; track | Sul binario c'è Anna, la sua amica del cuore.
+[it] bordo | edge; on board | Le amiche si siedono sul bordo e riposano insieme.
+[it] borsa | bag; purse | Nella borsa ci sono due biglietti per il concerto di stasera.
+[it] calda | warm; hot | Il cielo è azzurro e l'aria è calda.
+[it] caldo | warm; hot | Il sole è caldo.
+[it] destra | right (side) | Vanno a destra, poi a sinistra.
+[it] finestrino | window (car, train) | Il treno parte piano e Bologna sparisce dietro il finestrino.
+[it] gli | the; to him | Elena alza gli occhi e resta senza parole.
+[it] la | the; her | La sua amica Giulia abita a Roma da due anni.
+[it] le | the; them | Le due amiche camminano vicino al Colosseo.
+[it] lo | the; it, him | Poi guarda Marco e lo ringrazia con un sorriso.
+[it] lungo | long; along | Elena la osserva a lungo, in silenzio.
+[it] sue | his, her (plural) | Le sue mani sono veloci.
+[it] trastevere | Trastevere (Rome neighborhood) | Elena e Giulia a Trastevere.
+[it] trattoria | trattoria (restaurant) | Di sera, la piccola trattoria è già piena di gente.
+[sp] agarrando | finding the groove (agarrar el ritmo) | Nayeli, entre humo y mezcal, le echó en cara a Regina que apenas le estaba agarrando la onda a 
+[sp] ahogadas | drowned (in sauce) | Tortas ahogadas para la cruda.
+[sp] aires | Aires (Buenos Aires) | Se muda a Buenos Aires en un mes por un laburo nuevo.
+[sp] al | to the | Juli se caga de risa: ella también era de afanar del plato ajeno, y le agarra el juego al toque
+[sp] alcanzaba | was not enough (no le alcanzaba) | Manu apenas alcanzaba a ver el atardecer sobre las piedras.
+[sp] alebrije | an alebrije (folk figure) | Nayeli prendió el comal; Aldo llegó con mezcal y Chucho con un alebrije a medio pintar que traí
+[sp] alma | with all your heart (con el alma) | No había señal ni un alma en la ruta.
+[sp] alturas | heights; by that point (a esas alturas) | De perdis, esa sí los agarró a los cuatro viendo a la cámara, y a esas alturas ya les valía mad
+[sp] amarrado | not even by force (ni amarrado) | En la Mesa de los Santos, a media hora de Bucaramanga, Nubia ya se había amarrado el equipo sin
+[sp] ana | Ana (name) | Ana es la guía.
+[sp] andaban | were (doing), going about | Rocío sirvió un torrontés fresquito y brindaron por los que andaban lejos.
+[sp] andrés | Andrés (name) | Cuando Andrés llegó por ellas, encontró a la rola sirviéndose un segundo vaso, más caleña que n
+[sp] apretó | squeezed, shook (hand) | Julieta se apretó a su lado, mareada por el olor a nervios que traía el colectivo.
+[sp] atando | putting the pieces together (atar cabos) | “Con razón me trataban tan bien anoche”, comentó Regina atando cabos.
+[sp] aventó | threw; went for it (se aventó) | Regina respiró hondo, se persignó y se aventó de panzazo al agua fría.
+[sp] avivó | wised up, caught on (avivarse) | (NO APARECE)
+[sp] bajar | to admit defeat (bajar la cabeza) | Ella suelta su pregón igual, sin bajar la sonrisa ni el brazo.
+[sp] bajarle | to turn it down, ease off | Juli llenó su primer canasto y sintió el sudor bajarle por la espalda.
+[sp] bajita | low, quiet (voice) | “Si se entera, nos va a poner una madriza”, bromeó Nayeli en voz bajita.
+[sp] bandeja | handed on a plate (servido en bandeja) | En la cocina del balneario, con la temporada muerta y el viento sur golpeando las persianas, Se
+[sp] banderas | red flags (banderas rojas) | Hablaba de señales, de códigos y de banderas rojas como todo un experto del tema.
+[sp] barranquilla | Barranquilla (city) | El aceite ya chisporroteaba en el fogón cuando Manu empujó la reja del patio, en pleno Barranqu
+[sp] benjamín | Benjamín (name) | Benjamín se puso a cargo de la parrilla, jurando que la carne le salía seca.
+[sp] beto | Beto (name) | La troca de Beto olía a gasolina y a cumbia mientras bajaban despacio por la Zona Norte, ya pas
+[sp] bogotá | Bogotá (capital) | A dos cuadras de los gomelos trotadores, otra Bogotá entera jugaba tejo desde el amanecer.
+[sp] bomba | to drop a bombshell (soltar la bomba) | Al caer la tarde, Marisol soltó la bomba: había renunciado a la chamba, al sueldo, a la oficina
+[sp] buenas | in a good mood (de buenas) | Desde el primer minuto, ella aplaudía cuando no era y se quedaba muda en las jugadas buenas.
+[sp] buenos | Buenos (Aires) | Se muda a Buenos Aires en un mes por un laburo nuevo.
+[sp] burlarse | to make fun | (NO APARECE)
+[sp] cabrón | dude, bastard | Beto: Primero cae la carne, luego lo demás; aquí nada se apura, así de serio es el jale, cabrón
+[sp] caigo | to land on my feet (caer parado) | Chuy: Sale, pues, cabrón, pero al bajar me invitas las cervezas; y si me caigo allá arriba, car
+[sp] camila | Camila (name) | Camila no da más.
+[sp] camilo | Camilo (name) | A su lado iba Camilo, su parcero de toda la vida, y Nico, el amigo que organizaba el parche cad
+[sp] cantar | to admit defeat (cantar la retirada) | Justo cuando iba a cantar la retirada, la puerta se abrió de golpe.
+[sp] carla | Carla (name) | Le pasa la caña de pescar a Carla, su amiga guardavidas, que espera un pique a pocos metros.
+[sp] carmen | Carmen (name) | Las campanas suenan fuerte mientras Lucía y Carmen caminan por una plaza pequeña y bonita.
+[sp] cartagena | Cartagena (city) | En Cartagena, la rola llevaba dos días detrás de la misma postal turística.
+[sp] catedral | La Catedral (venue) | El Catedral no se apura.
+[sp] caía | his world fell apart (se le caía el mundo) | Salieron sudados a la calle, y él ya preguntaba cuándo caía la próxima función.
+[sp] cenote | a cenote (sinkhole pool) | El cenote está helado.
+[sp] central | Rosario Central (team) | Central contra Newell's, la ciudad entera partida al medio.
+[sp] cepa | stock, root (origin) | “De esta cepa sale un malbec único”, presumió mientras servía un vaso cualquiera.
+[sp] cerrada | thick, hard to follow (slang) | Miles de bicicletas rodaban por la Séptima cerrada al tráfico, y Manuela pedaleaba feliz entre 
+[sp] chabón | guy, dude | “Este chabón me está cachando”, pensó, y apuró el paso sola, picada.
+[sp] chata | shorty, a fond nickname (chato) | Desde arriba, la ciudad se estira chata y ancha, sin la soberbia vertical de Buenos Aires.
+[sp] chavo | guy, kid | A dos pasos, un chavo voceaba los precios en dólares y en pesos, según quién se arrimara al pue
+[sp] che | hey, dude | Seba: Che, esto es un papelón.
+[sp] chichén | Chichén Itzá (ruins) | “No manches, esto está más difícil que subir a Chichén”, bufó, sudando por el calor.
+[sp] choro | thief; cool, tough | Nayeli la dejó echar choro un rato y se guardó la risa.
+[sp] cielo | to protest loudly (pegar el grito al cielo) | “Acá en el sur nadie corre, che”, le tiró Bruno, y se frenó de nuevo a olfatear el aire y mirar
+[sp] común | ordinary, table (wine) | Bauti empinó el codo e hizo un brindis con el vino común.
+[sp] conchas | shells (place name) | Enfilaban hacia Cafayate por la Quebrada de las Conchas, entre cardones y montañas rojas.
+[sp] corta | he cuts (the engine) | El patrón corta la luz y reparte velas por las mesas.
+[sp] cortó | cut; broke up | El aguachile picaba parejo, el pulpo estaba fresco y el limón le cortó la queja a media frase.
+[sp] cruzó | crossed fingers (cruzar los dedos) | Un cabeceo cruzó la ronda y un bailarín levantó apenas el mentón.
+[sp] cuadra | block (street) | Micaela cocina para media cuadra; Ariel, guitarrero y anfitrión de la peña del barrio, hace más
+[sp] cuadras | blocks (streets) | La corneta del picó ruge y el corrinche se oye a tres cuadras.
+[sp] cuadro | a team (to support) | “Acá el que no banca un cuadro no es de ningún lado, boluda.”
+[sp] cuenta | account; bill | Juli cuenta que el suyo también le morfaba la mitad de todo, y Micaela larga una carcajada.
+[sp] cuentas | accounts; you tell | Manuela abrió el portátil sobre una mesa pegajosa y trató de cuadrar las cuentas del viaje mien
+[sp] cumbia | cumbia (dance) | La troca de Beto olía a gasolina y a cumbia mientras bajaban despacio por la Zona Norte, ya pas
+[sp] dado | to go around (dar vueltas) | Cerca de la orilla apareció un kayakista dado vuelta entre las olas.
+[sp] daniela | Daniela (name) | Daniela ya se estaba riendo antes de que él diera el primer paso.
+[sp] darle | to give him | Regina asintió despacio, sin darle mucho peso al dato.
+[sp] darse | to give oneself; realize | Manu, contagiada por el bullicio, empezó a soltar uno que otro grito sin darse cuenta.
+[sp] dejaba | would not let up (no lo dejaba) | Julián llegó del camello bien cascado y con un guayabo del sábado que no lo dejaba.
+[sp] dejarlo | to leave it | Julián: Lo sé, pero estaba bajo la lluvia y no fui capaz de dejarlo ahí.
+[sp] deje | do not leave me (no me deje) | “¡Epa, prima, deje ese teléfono y agárrese un tinto!”, le gritó Wílmer desde el corral, con el 
+[sp] derecha | to stand up straight (pararse derecha) | Pilar se paró derecha, saboreando su pequeña victoria en plena vereda.
+[sp] diego | Diego (name) | Cuau contó que su jefe pasaba de madrugada a chambear a San Diego y volvía molido en la noche.
+[sp] difícil | to play hard to get (hacerse la difícil) | “No manches, esto está más difícil que subir a Chichén”, bufó, sudando por el calor.
+[sp] diga | say (subjunctive) | “Pa' que no diga que en Bucaramanga la dejamos ir con las manos vacías”, gruñó, sin mirarla.
+[sp] doblaron | to crack up (doblarse de risa) | Doblaron por una calle lateral y el paisaje cambió por completo.
+[sp] dueña | owner (female) | Así no se lo puedo mandar a la dueña de la confitería.
+[sp] dura | hard, tough; lasts | Juli se hace la dura y dice que ese ritmo es un embole.
+[sp] e | and (before words starting with i) | Bauti empinó el codo e hizo un brindis con el vino común.
+[sp] echar | to throw, put; kick out | Nayeli la dejó echar choro un rato y se guardó la risa.
+[sp] elena | Elena (name) | Santa Elena huele a sancocho.
+[sp] ellas | they, them (women) | Cuando Andrés llegó por ellas, encontró a la rola sirviéndose un segundo vaso, más caleña que n
+[sp] embargo | however (sin embargo) | Esa madrugada, sin embargo, el viejo arrancó un pasaje que la dejó pegada al asiento.
+[sp] encima | on top; besides | Se le fue encima a Yina, brincando como una loca, mientras Ronny lloraba de la risa.
+[sp] enojarse | to get angry | “O sea que me la pasé presumiendo un tequila patito”, reclamó, sin poder enojarse de verdad.
+[sp] entrada | entrance; ticket | “Tocá la entrada tres veces, dale”, le pidió, serio como en misa.
+[sp] esa | that (one) | Ailén, que amasaba chocolate en esa misma cuadra desde pibita, la miraba con una sonrisa torcid
+[sp] ese | that (one) | En ese cruce entre la vidriera empalagosa y el mate helado, recién le cayó la ficha de qué habí
+[sp] esta | this (one) | “Esta entrada ya fue usada, nena”, dijo, sin devolvérsela.
+[sp] este | this (one); um | “Este chabón me está cachando”, pensó, y apuró el paso sola, picada.
+[sp] están | that is what they are for (para eso están) | (NO APARECE)
+[sp] extraña | strange; misses | Y sin embargo, era justo esa clase de tarde la que después uno extraña.
+[sp] falta | without fail (sin falta) | (NO APARECE)
+[sp] felices | happy (plural) | Manuela había vuelto a Villavicencio para las fiestas, y esta vez sus amigos la sentaron en pri
+[sp] flaca | skinny girl; babe | Vos sos de las nuestras, flaca, le suelta al oído.
+[sp] flor | flower; great (slang) | (NO APARECE)
+[sp] foco | the lightbulb moment (prenderse el foco) | Aldo sirvió la última ronda, Chucho terminó de pintarle las alas al alebrije bajo la luz del fo
+[sp] forma | properly, in style (en forma) | Manuela abrazó a los dos y entendió que esa franqueza sin rodeos era, a su manera, la forma san
+[sp] frente | front; forehead | Juli deja de hacerse mala sangre y decide encarar a Ramiro de frente.
+[sp] fresa | preppy, snobby (Mexican) | La chilanga, medio fresa, torció la jeta ante tanta cháchara para el turista gringo.
+[sp] fresco | fresh; cheeky | (NO APARECE)
+[sp] frías | cold (plural) | Beto, su carnal desde la escuela, ya tenía el asador listo junto al cantón, con una cubeta de c
+[sp] fuego | a trial by fire (prueba de fuego) | Ariel deja la guitarra apoyada, ceba un mate y, sin que nadie le pida nada, le baja el fuego a 
+[sp] fuera | outside; were | Reinaldo templaba las cuerdas del arpa sin apuro, como si la noche no fuera a acabarse.
+[sp] gol | goal (soccer) | Y atrás, la fila empujaba, mientras el estadio entero rugía un gol que ellos todavía no podían 
+[sp] gorra | for free (de gorra) | Beto, tijuanense flaco y de gorra, manejaba con una sola mano y saludaba a los conocidos con la
+[sp] gratis | free (no cost) | “El descaro es gratis”, dice ella y guarda la moneda en el delantal.
+[sp] guadalajara | Guadalajara (city) | Aquella noche, en la Plaza de los Mariachis, Regina se movía como pez en el agua: había venido 
+[sp] guayabo | hangover (Colombian) | Manu ya sentía el guayabo del otro día asomarse, pero le importó un pepino.
+[sp] güey | dude, man (Mexican) | Regina: No hombre, Beto, en mi tierra también sabemos prender fuego; no te pongas tan salsa por
+[sp] ha | has (auxiliary) | Afuera, los pelaos ya hablan de trasnochar hasta el amanecer, pero nadie dice en voz alta lo qu
+[sp] había | there was; had | Buscaba las dos entradas que había conseguido a pura labia con un revendedor.
+[sp] habían | there were; had | (NO APARECE)
+[sp] hace | does, makes; ago | Micaela cocina para media cuadra; Ariel, guitarrero y anfitrión de la peña del barrio, hace más
+[sp] hilo | on tenterhooks (con el alma en un hilo) | Yésica siguió el hilo de esos ojos y masculló entre dientes que esa era la que le había partido
+[sp] hondo | to breathe deep (respirar hondo) | Alguien suma un legüero, y el golpe hondo se mete en el pecho de todos.
+[sp] horno | in deep trouble (al horno) | “Estamos en el horno”, soltó Fabián.
+[sp] igual | same; anyway | (NO APARECE)
+[sp] irse | to leave | Nadie habla de irse; está claro que todos van a hacer noche ahí, en una larga guitarreada.
+[sp] itzel | Itzel (name) | No hubo carrilla esta vez, porque Itzel andaba con el ánimo por los suelos.
+[sp] javiera | Javiera (name) | Nico y Javiera lo weviaban: de seco no tenía ni el apodo.
+[sp] joda | joke, mess around (Argentine) | Cami, la prima que la aloja el finde, la abraza y grita que hoy la joda no se negocia.
+[sp] juan | Juan (name) | Regina llegó al mercado San Juan de Dios con un hambre feroz y una teoría muy chilanga: la birr
+[sp] juego | game; I play | Juli se caga de risa: ella también era de afanar del plato ajeno, y le agarra el juego al toque
+[sp] julián | Julián (name) | Julián fue el primero en dar la cara y reconocer que había hablado de más.
+[sp] justo | just, exactly; fair | Ariel deja la guitarra apoyada, ceba un mate y, sin que nadie le pida nada, le baja el fuego a 
+[sp] la | the; her, it | En una casa baja del centro de Salta, Julieta, la porteña de gira, pasa la tarde con los herman
+[sp] laburo | work, job (Argentine) | Durante toda la tarde le bardean la tonada y el laburo porteño.
+[sp] largo | long; get lost | Se copó con el tuyo y te encargó doscientos para el finde largo.
+[sp] las | the; them | Micaela reparte las empanadas recién fritas sobre un repasador y le pega un manotazo a Ariel, q
+[sp] le | to him, her, it | Micaela reparte las empanadas recién fritas sobre un repasador y le pega un manotazo a Ariel, q
+[sp] lengua | a loose tongue (lengua floja) | A su lado, Nubia, la comadre que no se muerde la lengua, ya tenía servido su plato.
+[sp] les | to them, you all | Al que les cae mal le hacen el vacío; con vos arman quilombo porque cuidás mal la guita, jode.
+[sp] lima | Lima (city); lime | En el paradero, esperando la combi bajo el cielo gris de Lima, Diego saludó a Pilar a toda velo
+[sp] listo | ready; smart | “En Bogotá primero le preguntan a uno si está listo”, protestó.
+[sp] los | the; them | En una casa baja del centro de Salta, Julieta, la porteña de gira, pasa la tarde con los herman
+[sp] lucas | Lucas; grand, thousands | Con ese pituto pensaba quedar como rey sin gastar casi nada de lucas.
+[sp] lucho | Lucho (name) | Lucho, un rosarino que atiende el parador desde hace años, ceba un mate amargo sin apurarse.
+[sp] lucía | Lucía (name) | Iñaki y Lucía pasean por el casco viejo, entre calles estrechas y bonitas.
+[sp] lugar | instead of (en lugar de) | Micaela le hace un lugar y le pasa la espumadera para la próxima tanda.
+[sp] madres | to not matter at all (valer madres) | (NO APARECE)
+[sp] madrid | Madrid (city) | Las nubes grises cubren Madrid, y Lucía y Marta caminan por la Gran Vía, la calle más famosa de
+[sp] man | guy, dude | El man está en su salsa, mamando gallo con cada uno que llega.
+[sp] manada | herd, pack (of people) | Contra todo su discurso, el tipo le guarda la comida al más viejo y jodido de la manada.
+[sp] mango | mango; a buck | Nahuel, un isleño que se cría entre juncos y se gana el mango pescando, maneja el motor de memo
+[sp] mano | hand; bro, dude | El de seguridad la frenó con la mano en alto.
+[sp] marina | Marina; navy | Marina admitió que su prueba de la lengua floja tampoco había estado muy chévere.
+[sp] marta | Marta (name) | Las nubes grises cubren Madrid, y Lucía y Marta caminan por la Gran Vía, la calle más famosa de
+[sp] mateo | Mateo (name) | Cuando por fin apareció la morra, Mateo la recibió con una cara de falsa sorpresa.
+[sp] mañana | tomorrow; morning | Sobre las brasas se dora una boga entera, fresca de esa misma mañana.
+[sp] media | half; stocking | Micaela cocina para media cuadra; Ariel, guitarrero y anfitrión de la peña del barrio, hace más
+[sp] medio | half; kind of | Juli no le creyó ni medio.
+[sp] mija | dear, honey (girl) | Yina, la dueña del puesto de fritos de la esquina, le gritó un “Qué más, mija”
+[sp] mirarla | to look at her | “Pa' que no diga que en Bucaramanga la dejamos ir con las manos vacías”, gruñó, sin mirarla.
+[sp] misma | same (fem.) | Ailén, que amasaba chocolate en esa misma cuadra desde pibita, la miraba con una sonrisa torcid
+[sp] mole | mole (sauce) | ¿El mole tiene que oler así, a quemado?
+[sp] moneda | paying back in kind (con la misma moneda) | “El descaro es gratis”, dice ella y guarda la moneda en el delantal.
+[sp] montó | teased (montó chercha) | Alguien montó el picó en el patio y sonó, bajito, la champeta de toda la vida.
+[sp] moverse | to move | Renata se rió sin moverse.
+[sp] muerta | dead; starving (muerta de hambre) | En la cocina del balneario, con la temporada muerta y el viento sur golpeando las persianas, Se
+[sp] muertos | dead; freezing (muertos de frío) | Era un contrapunteo antiguo, donde el cantante improvisaba versos sobre el llano y sus muertos.
+[sp] méxico | Mexico (country) | Regina, chilanga de hueso colorado, llevaba a Nacho, su compa del taller, a su primera función 
+[sp] nayeli | Nayeli (name) | Nayeli, su comadre oaxaqueña, y Aldo, que venía de una familia de palenqueros, se miraron sin d
+[sp] nico | Nico (name) | A su lado iba Camilo, su parcero de toda la vida, y Nico, el amigo que organizaba el parche cad
+[sp] ninguna | none, not any (fem.) | Rocío descorchó un malbec de la zona y Juli reconoció que ninguna vinoteca porteña le pisaba lo
+[sp] nombre | name; no way | La afición entera gritaba su nombre; el animal bufaba, escarbando la tierra con rabia.
+[sp] nubes | walking on air (en las nubes) | Las nubes grises cubren Madrid, y Lucía y Marta caminan por la Gran Vía, la calle más famosa de
+[sp] nueva | new (fem.) | Entonces todo cuadró: el silencio, la vara en sus manos, la mirada nueva.
+[sp] oaxaca | Oaxaca (place) | Nayeli, entre humo y mezcal, le echó en cara a Regina que apenas le estaba agarrando la onda a 
+[sp] ofenderse | to take offense | (NO APARECE)
+[sp] ojo | eye; watch out | Tiene un ojo nublado y una cicatriz en el lomo.
+[sp] ombe | man, dude (excl.) | “Esto sí es la vaina buena, ombe”, dice doña Petrona.
+[sp] otra | another (fem.) | El dulce me salió oscuro y grueso, con gusto a otra época.
+[sp] otras | others (fem.) | La había dejado colgada dos veces y encima chamuyaba a otras minas al mismo tiempo.
+[sp] pablo | Pablo (name) | Pablo estuvo especialmente culero, contando la vez que los dejó afuera de un cine.
+[sp] palermo | Palermo (neighborhood) | Juli, porteña de Palermo y de visita por el finde largo, los mira con envidia sana.
+[sp] pancho | Pancho; hot dog; fuss | (NO APARECE)
+[sp] parce | buddy, mate; classic Colombian | “Parce, esta vez sí le cumplo, ¿oíste?”, grita Tato desde el fogón apenas Manu cruza la puerta.
+[sp] partido | penniless (sin un peso partido) | Yina, su comadre y vendedora de raspao, ya tenía la nevera repleta de birras para ver el partid
+[sp] paró | stood up straight (pararse derecha) | El pibe de la mesa ruidosa lo entendió, guardó el teléfono y se paró.
+[sp] pasada | past, last (fem.) | La troca de Beto olía a gasolina y a cumbia mientras bajaban despacio por la Zona Norte, ya pas
+[sp] pasar | to spend (time) | Suben a una cabaña prestada para pasar el finde en el cerro.
+[sp] pasen | come in, pass (you all) | “Pasen, causas, siéntanse en su casa, que ya casi sale el ceviche”, los recibió contento.
+[sp] paso | step; I pass | “Este chabón me está cachando”, pensó, y apuró el paso sola, picada.
+[sp] pastor | al pastor (taco style) | Cerraron la noche con unos tacos al pastor en la esquina, con todo y piña, parados en la banque
+[sp] pasé | I spent (time) | “O sea que me la pasé presumiendo un tequila patito”, reclamó, sin poder enojarse de verdad.
+[sp] pata | buddy, friend; paw | Le fue traduciendo despacio que causa y pata querían decir amigo del alma.
+[sp] patas | to blunder badly (meter las patas) | Julieta, que de porteña tenía todo menos el tango en las patas, se sentó al lado de su amiga Ma
+[sp] pato | duck; broke | Al principio Manuela parecía un pato mareado, contando pasos como si fueran facturas pendientes
+[sp] pecho | a tight ache in the chest (apretar el pecho) | Alguien suma un legüero, y el golpe hondo se mete en el pecho de todos.
+[sp] pedazos | in bits and pieces (a pedazos) | Recordaba a pedazos la noche, pero la cara de todos se la recordaba completa.
+[sp] pedirle | to ask him/her | Entonces entiende el nerviosismo y los cuchicheos: estos dos berracos solo buscaban la manera e
+[sp] pedo | problem, mess; drunk | Para ella era pura desidia, un montañés al pedo haciendo tiempo.
+[sp] pedís | you ask (price) | “¿Cuánto pedís por el fuelle, Tomás?”, tanteó Juli mientras esquivaba a los turistas.
+[sp] pega | hits, sticks; job | Micaela reparte las empanadas recién fritas sobre un repasador y le pega un manotazo a Ariel, q
+[sp] pegada | blasting music (champeta pegada) | Pegada al vidrio de la chocolatería más famosa del centro, Juli buscaba el ángulo justo para qu
+[sp] pelao | kid, guy; broke | Manu pensó que sería el cumpleaños de algún pelao del barrio y se resignó a acompañar.
+[sp] pelearse | to fight each other | El puesto y la línea convivían sin pelearse, y su berrinche de recién llegada de pronto sonaba 
+[sp] pensaba | was not going to (no lo pensaba) | Entre los tres armaron alfajores hasta la madrugada, tapa contra tapa, rellenos de ese dulce qu
+[sp] pensarlo | to think it over | Juli agarró un remo sin pensarlo, temblando de miedo.
+[sp] perdido | lost; had already lost (ya había perdido) | Chucho contaba, por enésima vez, cómo se había perdido en el cerro buscando copal para su alebr
+[sp] perro | dog; dude | Fuera hay un perro enorme, hecho de muchas flores de colores.
+[sp] persona | in person (en persona) | Justo ahí le sonó el celular con un mensaje del jefe en persona.
+[sp] pesos | pesos (money) | Yiría no baja de mil pesos, y él se aleja con cara de estafado.
+[sp] pibe | kid, guy | Un pibe flaco vendía choripanes humeantes en la esquina, entre el humo del carbón y los cántico
+[sp] pibes | young guys (porteño) | Los tres se conocían de pibes, de una época de guitarreadas y mates en Buenos Aires, antes de q
+[sp] pida | asks (subjunctive) | Ariel deja la guitarra apoyada, ceba un mate y, sin que nadie le pida nada, le baja el fuego a 
+[sp] pilar | pillar; Pilar (name) | Pilar, que ya iba cachando la jerga, soltó un par de palabras nuevas como yapa.
+[sp] pintura | paint; also a painting | Con cuidado, toca la madera suave, todavía fresca de pintura.
+[sp] pista | clue; dance floor | Enfrente, una tanda de recién llegados filmaba la pista con los celulares en alto.
+[sp] piña | pineapple; punch | Cerraron la noche con unos tacos al pastor en la esquina, con todo y piña, parados en la banque
+[sp] plantó | planted himself, blocking (plantarse) | El bajo retumbó más fuerte y la mujer se plantó justo frente a Andrés, tan cerca que se rozaban
+[sp] plena | right in the middle of (en plena mesa) | Juli se queda ahí en plena trasnochada, desvelada y feliz, con la sensación de que en el norte 
+[sp] poco | little by little (poco a poco) | Juli lo mira de arriba abajo y, sin pensarlo, suelta que le recuerda un poco al Obelisco.
+[sp] ponerse | to start to, to get | Andrés la agarró de la mano y la obligó a soltar el cuerpo, a dejar de cuadrar y ponerse a sent
+[sp] precio | dirt cheap (a precio de risa) | Un muchacho quiere la foto y después regatea el precio de una sola cocada.
+[sp] pregunta | question; asks | Cami, atrás, prepara el termo y cambia de tema cada vez que alguien pregunta.
+[sp] prendió | the lightbulb went on (prenderse el foco) | Los salteños, que la miraban como bicho raro, quedaron mudos cuando el auto prendió al toque.
+[sp] prima | cousin (female) | Cami, la prima que la aloja el finde, la abraza y grita que hoy la joda no se negocia.
+[sp] primo | cousin; buddy | Julieta, porteña, viajaba de acompañante en el remís de Fabián, primo de Ariel, que se ganaba l
+[sp] pronóstico | against all odds (contra todo pronóstico) | Afuera seguía cayendo el aguacero, pero adentro, contra todo pronóstico, el páramo se sentía ti
+[sp] puesto | got his act together (puesto las pilas) | Cuenta que una amiga le consiguió un puesto fijo en Buenos Aires.
+[sp] pura | pure; nothing but | Buscaba las dos entradas que había conseguido a pura labia con un revendedor.
+[sp] puro | pure; just, only | Ariel, puro chamuyo, jura que apenas controla la calidad del relleno.
+[sp] quedado | stayed (quedarse) | Sofía cierra los ojos y baila despacio en el callejón, feliz de haberse quedado.
+[sp] quedarme | to stay | “Órale, Beto, enséñame los pasos, no pienso quedarme sentada”, le pidió Regina, ya sin zapatos.
+[sp] quedarse | to stay | antes de quedarse mudo.
+[sp] quieta | to leave alone (dejar quieta) | (NO APARECE)
+[sp] rajarse | to chicken out | Rajarse estaba cabrón; era quedar mal con toda la comunidad.
+[sp] reconoce | is recognized (se reconoce) | Un amigo de a de veras se reconoce así: aparece con tlayudas justo cuando el mundo se te cae.
+[sp] renata | Renata (name) | Abajo ya flotaba Renata, yucateca que la había citado en Homún desde temprano, tranquila como s
+[sp] renegando | grumbling and toiling (renegar) | De repente Manu cayó en la cuenta de algo que llevaba años renegando.
+[sp] repente | suddenly (de repente) | De repente los dos ruidos se le juntan en la cabeza.
+[sp] responderle | to answer him back | Manu no atinó a responderle nada a su prima, que ya la miraba asustada.
+[sp] retiro | the Retiro (park) | “Retiro lo dicho; mi teoría estaba bien chafa”, reconoció Regina hundiendo la cuchara en el cal
+[sp] reírse | to laugh | “Ajá, llegó la rola”, soltó Ronny, muerto de risa, y Manu no pudo evitar reírse también.
+[sp] rico | rich; tasty | Está muy rico.
+[sp] ridículo | to humiliate (dejar en ridículo) | La traga lo miró de arriba abajo, como si lo fuera a dejar en ridículo.
+[sp] ritmo | to find the groove (agarrar el ritmo) | “Tranca, boluda, Bruno sabe lo que hace”, le dijo bajito, “vos hacele caso y seguile el ritmo”.
+[sp] rocío | Rocío (name) | “Es puro verso; ese fanfarrón promete la misma botella desde hace años”, le sopló Rocío al oído
+[sp] rodrigo | Rodrigo (name) | Rodrigo llegó cargado de tlayudas, diciendo que nadie llora con la panza llena.
+[sp] rojas | red flags (banderas rojas) | En el patio, Ariel atiza el fogón hasta que las brasas laten rojas bajo el algarrobo.
+[sp] sabroso | to dance with flavor (bailar sabroso) | Manu probó una, se quedó callada y admitió que estaba demasiado sabroso para hablar.
+[sp] sacan | to take | (NO APARECE)
+[sp] sacando | pulling it off (sacar adelante) | Para ella, Bariloche era eso: chocolate caro, luces, cartel en inglés y colas de turistas sacan
+[sp] sacarlo | to wind him up (sacar de casillas) | Bruno no lo dudó: pegó la vuelta y fue a sacarlo mar adentro.
+[sp] sale | goes out; okay | “De esta cepa sale un malbec único”, presumió mientras servía un vaso cualquiera.
+[sp] salga | goes out (on a date) | Yiría planta la carpa antes de que salga el sol y acomoda la pesa sobre un cajón.
+[sp] salida | exit; outing | Sin decir palabra, se abrió paso a codazos entre el gentío sudoroso hacia la salida.
+[sp] salido | to go out | Nunca había salido al río de madrugada.
+[sp] saludaba | to greet | Cada dos por tres el guía paraba, sopesaba el viento con la palma abierta y saludaba a algún ba
+[sp] salía | would not go out (no salía) | Ronny entraba y salía con sillas prestadas, esquivando misterioso cada pregunta de la rola.
+[sp] seas | to be | “Dale, abrila de una, no seas amarrete”, lo picó ella.
+[sp] seco | dry; ace, great | Juli apoyó su entrada y el aparato pegó un pitido seco.
+[sp] seguro | sure; insurance | “Seguro, cabro, mira que si llegái sin nada, te funamos delante de todos”, lo picó.
+[sp] sentido | sense; meaning | El bajón se le dio vuelta y de golpe todo tenía otro sentido.
+[sp] sentirse | to feel | Regina retrató un trazo enorme con el teléfono, sin sentirse turista ni por accidente.
+[sp] sentó | sat down; suited | Rocío los sentó bajo un parral, con el Aconcagua nevado de fondo.
+[sp] servido | handed on a plate (servido en bandeja) | A su lado, Nubia, la comadre que no se muerde la lengua, ya tenía servido su plato.
+[sp] servía | to pour | “De esta cepa sale un malbec único”, presumió mientras servía un vaso cualquiera.
+[sp] señalando | to point | “Acá se izó por primera vez la bandera, boluda, no es un adorno”, le dice, señalando el mástil.
+[sp] señaló | to point | Rocío señaló el atardecer que ya teñía la montaña.
+[sp] sientan | to seat | Seba, que atiende un balneario, y su hermana Sole sientan a Juli cerca del mostrador.
+[sp] siente | to feel | Micaela cuenta las empanadas de la vecina, Ariel le afana una, y Juli siente que cayó en una fa
+[sp] sobra | plenty to spare (de sobra) | Al principio se ríe, pero la cargada no afloja y, dolida, siente que sobra.
+[sp] sofía | Sofia (name) | A su lado va Sofía, su prima, que ceba mate para espantar el frío.
+[sp] soltarse | to loosen up | Chucho empezó a soltarse, a cotorrear, a mentar madres contra su exjefe con más coraje que tris
+[sp] sonríe | to smile | (NO APARECE)
+[sp] sostiene | to sustain | (NO APARECE)
+[sp] subió | went to her head (subírsele a la cabeza) | Regina se subió al tablado con las piernas flojas y siguió el compás sin gracia, siempre un gol
+[sp] suena | to sound | El parlante suena a full y ya cayó una banda de amigos con hielo.
+[sp] sus | his, her, their (plural) | Juli se rió, pero le hizo caso; con Fede y sus mufas no se jode.
+[sp] tenés | you have (voseo) | “¿Las tenés?
+[sp] tinto | red wine; black coffee (Col.) | (NO APARECE)
+[sp] tira | to toss | “El repulgue lo hace ella, pero el punto de la fritura lo manejo yo”, tira, y Micaela pone los 
+[sp] tlaquepaque | Tlaquepaque (crafts town) | La noche anterior, Bere, su amiga tapatía, la había paseado por las cantinas de Tlaquepaque pro
+[sp] tlayudas | tlayudas (Oaxacan dish) | Cuando terminaron, el camino quedó parejito y alguien repartió tlayudas para todos.
+[sp] toda | all, whole (fem.) | Toda la banda cayó a hacer un asado de domingo.
+[sp] todas | all (feminine) | (NO APARECE)
+[sp] toma | to drink | “Un vino así no se toma al toque; pide su momento”, filosofó él.
+[sp] tomás | Tomas (name) | “¿Cuánto pedís por el fuelle, Tomás?”, tanteó Juli mientras esquivaba a los turistas.
+[sp] tomó | drank down (se tomó) | Juli tomó despacio, sin apurar la mano.
+[sp] toque | touch; drag/hit (slang) | Juli se caga de risa: ella también era de afanar del plato ajeno, y le agarra el juego al toque
+[sp] trabaja | to work | (NO APARECE)
+[sp] trae | to bring | Yamila trae unas tortillas calentitas del rescoldo y las reparte.
+[sp] traga | swallows, is smitten (Col.) | La porteña abre la boca, pero un apagón traga hasta el zumbido de la heladera.
+[sp] tranquila | calm, relax (fem.) | El plan era una juntada tranquila, pero Ramiro anda raro desde temprano.
+[sp] trapo | a worn out raspy voice (voz de trapo) | “No me manden a rumbear, parceros, que vengo muerto”, pidió con voz de trapo.
+[sp] tras | one after another (uno tras otro) | El polvo de la manga de coleo se levantó cuando el primer jinete salió disparado tras el toro.
+[sp] trata | to try | Juli, la porteña, se agarra fuerte de la borda y trata de no marearse.
+[sp] tratan | to treat | “Vienen a un templo y lo tratan como un boliche.”
+[sp] trato | a deal (sellar el trato) | Sellaron el trato con un brindis de chocolate, chocando las tazas como si fueran polas.
+[sp] una | a, one (fem.) | Micaela reparte las empanadas recién fritas sobre un repasador y le pega un manotazo a Ariel, q
+[sp] unas | some (fem.) | Del bolsillo saca unas sardinas envueltas en papel y se las tira de a una.
+[sp] usted | you (formal) | “Prima, usted anda con el reloj metido en la cabeza”, le dijo Yaneth, su esposa, meciéndose des
+[sp] vacías | empty (feminine plural) | Juli bajó del micro con una caja de facturas porteñas bajo el brazo, decidida a no caer con las
+[sp] vaina | thing, thingy (Col./Ven.) | “Vienen a cerrar la vaina”, avisa Deivis, y la multitud se corre hacia el portón.
+[sp] vale | okay; it's worth | Manuela bailaba pegada a Vale, su prima parrandera de toda la vida.
+[sp] valor | to gather courage (armarse de valor) | Yuly le pasó una birra fría para darle valor antes del intento.
+[sp] van | to go | Nadie habla de irse; está claro que todos van a hacer noche ahí, en una larga guitarreada.
+[sp] vara | to take teasing without cracking (aguantar vara) | Marisol maniobraba la vara como si hubiera nacido en el agua.
+[sp] vasos | glasses (drinking) | Chocaron los vasos de verdad, después de tantos años de puro verso, y hasta Rocío admitió que e
+[sp] vayas | do not screw it up (no la vayas a embarrar) | “Ponte trucha, no te vayas a caer al canal”, le advirtió a Regina, tendiéndole la mano callosa.
+[sp] vea | sees (subjunctive) | Que doña Rosa las vea primero.
+[sp] veras | for real (de a de veras) | Regina se quedó callada y, por primera vez en la noche, pidió que le explicaran de a de veras.
+[sp] verdes | green (plural) | Abajo, el valle se abría entre tejados naranjas y sembrados verdes.
+[sp] verla | to see her/it | Manuela había vuelto a Villavicencio para las fiestas, y esta vez sus amigos la sentaron en pri
+[sp] verlo | to see him | Aquí lo bonito es verlo sin apuraciones, con la raza tranquila y sin que nadie te ande empujand
+[sp] verse | to see each other, look | Los tenis no eran por fresa, sino para verse decente frente a los turistas.
+[sp] vibra | to vibrate | De golpe, el teléfono de Nahuel vibra en el bolsillo mojado.
+[sp] vieja | old woman, girl (slang) | Una vez más, esquivó su vieja promesa con una sonrisa.
+[sp] viejos | old folks; parents (slang) | (NO APARECE)
+[sp] vino | wine; he/she came | Sole: Vino a probar la otra semana, mientras vos cerrabas el balneario.
+[sp] vive | to live | (NO APARECE)
+[sp] volada | spaced out; whim (Mex.) | Regina despachó tostada tras tostada, cobrando de volada y dando el cambio sin fallar.
+[sp] volverse | to go back | Se aleja un toque hacia el fondo, con ganas de zafar y volverse al centro.
+[sp] vos | you (Arg.) | Al que les cae mal le hacen el vacío; con vos arman quilombo porque cuidás mal la guita, jode.
+[sp] xochimilco | Xochimilco (canals area) | No era paseo de fiesta: nada de marimba ni de caguamas, solo ellas dos remando hacia el canal m
+[sp] área | area manager (jefa de área) | El viejo la felicitaba por el proyecto y la ascendía a jefa de área.
+[sp] órale | wow, come on (Mex.) | “Órale, pero aquí no se compara, neta”, remató Mauricio.

@@ -20,6 +20,7 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import { PrismaClient } from "../src/generated/prisma";
 import { extractStoryPlainText } from "../src/lib/storyPlainText";
+import { citaAjena } from "./rebuildTapGlosses";
 
 const DIR = path.resolve(__dirname, "../src/data/tapGlosses");
 type Gloss = { g: string; t?: string };
@@ -34,6 +35,9 @@ function bundle(name: string) {
 async function run() {
   const name = process.argv[2];
   const tsv = process.argv.includes("--tsv");
+  // --flags: solo las copias con una senal MECANICA de que traen la frase de
+  // otro journey. No sustituye a la lectura; adelanta lo que si es automatico.
+  const soloFlags = process.argv.includes("--flags");
   if (!name) {
     console.error("uso: reviewCopiedGlosses.ts <bundle> [--tsv]");
     process.exit(1);
@@ -65,15 +69,36 @@ async function run() {
     for (const o of plano.split(/(?<=[.!?"”])\s+/)) frases.push([s.slug, o.trim()]);
   }
 
+  const corpus = stories
+    .map((s) => `${s.title ?? ""} ${extractStoryPlainText(s.text ?? "")}`)
+    .join(" ")
+    .toLowerCase();
+
+  /** Senales mecanicas de copia ajena. */
+  function banderas(g: string): string[] {
+    const b: string[] = [];
+    if (citaAjena(g, corpus)) b.push("CITA-AJENA");
+    // "here: X" dice "en ESTA oracion significa X", y la oracion es otra.
+    if (/\bhere:/i.test(g)) b.push("HERE");
+    // Parentesis descuadrados: la glosa se rompio al escribirla.
+    if ((g.match(/\(/g) ?? []).length !== (g.match(/\)/g) ?? []).length) b.push("PARENTESIS");
+    return b;
+  }
+
   let sinFrase = 0;
+  let marcadas = 0;
   for (const w of copiadas) {
     const re = new RegExp(`(^|[^\\p{L}])${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^\\p{L}]|$)`, "iu");
     const hit = frases.find(([, o]) => re.test(o));
     if (!hit) sinFrase += 1;
     const frase = hit ? hit[1] : "(NO APARECE)";
-    console.log(tsv ? `${w}\t${mine.glosses[w].g}\t${frase}` : `${w} | ${mine.glosses[w].g} | ${frase}`);
+    const b = banderas(mine.glosses[w].g);
+    if (b.length) marcadas += 1;
+    if (soloFlags && !b.length) continue;
+    const marca = b.length ? `[${b.join(",")}] ` : "";
+    console.log(tsv ? `${marca}${w}\t${mine.glosses[w].g}\t${frase}` : `${marca}${w} | ${mine.glosses[w].g} | ${frase}`);
   }
-  console.error(`\n${copiadas.length} copiadas (${sinFrase} sin frase). Leelas contra su oracion.`);
+  console.error(`\n${copiadas.length} copiadas, ${marcadas} con senal mecanica (${sinFrase} sin frase). Las demas solo se ven leyendo.`);
 }
 
 run();
