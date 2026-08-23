@@ -11,6 +11,17 @@ export type StoryVocabItem = {
   definition: string;
   surface?: string;
   type?: string;
+  /**
+   * Palabra ANCLADA a su escena (`truffade`, `accordéon`, `cheville`): abre esa
+   * historia y no se le promete reuso. Las demás son PORTABLES y tienen que
+   * reencontrarse por el journey ([[project_vocab_recirculation_ladder]]).
+   *
+   * Lo marca quien escribe, al elegir el vocab, porque es una decisión de
+   * diseño y ningún detector la acierta: `la glace` es anclada en la historia
+   * del tobillo y portable en cualquier otra. Sin la marca, la escalera mide
+   * juntas dos cosas distintas y exige que el acordeón vuelva tres veces.
+   */
+  anchor?: boolean;
 };
 
 export type StoryPayload = {

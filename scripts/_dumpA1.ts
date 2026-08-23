@@ -1,13 +1,16 @@
 import { config } from "dotenv";
 config({ path: ".env.local", quiet: true }); config({ path: ".env", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
-const prisma = new PrismaClient();
-const J = "cmovi4cvi000032q37a4823h3";
-(async () => {
-  const s = await prisma.journeyStory.findFirst({ where: { journeyId: J, slug: "la-combi-equivocada" }, select: { level: true, vocab: true, text: true } });
-  const v: any[] = Array.isArray(s?.vocab) ? (s!.vocab as any) : [];
-  console.log(`level=${s?.level} | ${v.length} vocab:`);
-  for (const it of v) console.log(`  ${(it.word||"").padEnd(16)} [${it.type}] surf=${it.surface??"-"} :: ${it.definition}`);
-  console.log("\n===== TEXTO =====\n" + s?.text);
-  await prisma.$disconnect();
+import * as fs from "fs";
+const p = new PrismaClient();
+(async()=>{
+  const A="cmqfnp3tf000032afygkqp8z2";
+  const j = await p.journey.findUnique({ where:{id:A}, select:{topics:true, variant:true}});
+  const orden:string[] = (j?.topics as string[]) ?? [];
+  const ss = await p.journeyStory.findMany({ where:{journeyId:A},
+    select:{ topic:true, slotIndex:true, title:true, slug:true, synopsis:true, text:true, vocab:true, arcType:true, dialogueSpec:true }});
+  ss.sort((a,b)=>(orden.indexOf(a.topic)-orden.indexOf(b.topic))||(a.slotIndex-b.slotIndex));
+  console.log("variant:", j?.variant, "| con dialogueSpec:", ss.filter(s=>s.dialogueSpec).length, "de", ss.length);
+  fs.writeFileSync("/tmp/de-a1-all.json", JSON.stringify(ss.map(({dialogueSpec, ...r})=>r), null, 2));
+  await p.$disconnect();
 })();

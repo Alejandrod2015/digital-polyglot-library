@@ -74,6 +74,9 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
   // historia de cada tema se narra en pasado y con solo el presente el reparto
   // salia vacio (`protagonista ?`).
   PT: "diz|disse|pergunta|perguntou|responde|respondeu|avisa|avisou|repete|repetiu|conta|contou|explica|explicou|grita|gritou|chama|chamou|pede|pediu|ri|riu|ensina|ensinou|escreve|escreveu",
+  // Frances (2026-08-23). Sin esta lista el reparto salia vacio y el cierre a
+  // solas decia "protagonista ?" en las 21: castOf caia en la lista alemana.
+  FR: "dit|demande|répond|ajoute|explique|répète|crie|écrit|raconte|promet|rit|appelle|propose|corrige|note",
 };
 function castOf(stories: JourneyStoryInput[], lang: string): string[] {
   const HABLA = HABLA_POR_IDIOMA[lang] ?? HABLA_POR_IDIOMA.DE;
@@ -355,7 +358,7 @@ export function validateJourneyStories(
       //     que el participio se pide de una lista blanca de verbos de accion.
       // Adverbios y sustantivos que acaban como un imperfecto sin serlo.
       const PRESENTE_EN_AIT = /^(?:sait|fait|plaît|plait|connaît|connait|paraît|parait|naît|nait|vaut|faut|jamais|mais|frais|vrais|désormais|français|palais|relais|balais)$/;
-      const PARTICIPIOS = "(?:allé|allée|venu|venue|arrivé|arrivée|resté|restée|sorti|sortie|monté|montée|descendu|descendue|parti|partie|entré|entrée|pris|prise|mis|mise|dit|dite|vu|vue|fait|faite|écrit|écrite|répondu|compris|comprise|proposé|proposée|réparé|réparée|acheté|achetée|donné|donnée|trouvé|trouvée|perdu|perdue|oublié|oubliée|appelé|appelée|changé|changée|décidé|décidée|signé|signée)";
+      const PARTICIPIOS = "(?:allé|allée|venu|venue|arrivé|arrivée|resté|restée|sorti|sortie|monté|montée|descendu|descendue|parti|partie|entré|entrée|pris|prise|mis|mise|dit|dite|vu|vue|écrit|écrite|répondu|compris|comprise|proposé|proposée|réparé|réparée|acheté|achetée|donné|donnée|trouvé|trouvée|perdu|perdue|oublié|oubliée|appelé|appelée|changé|changée|décidé|décidée|signé|signée)";
       const AUX = "(?:ai|as|a|avons|avez|ont|suis|es|est|sommes|êtes|sont)";
       // `\b` de JavaScript es ASCII: en "Léa" ve un limite antes de la "a"
       // final y "Léa écrit" pasaba por "a + ecrit", un passe compose que no
@@ -472,27 +475,59 @@ export function validateJourneyStories(
   // el que se puso el 3,0 de A0 (por debajo de los tres publicados: 4,21, 3,17
   // y 3,09). Que sea menos de la mitad que en A0 no esta explicado; lo honesto
   // es medirlo, no adivinar por que.
+  // AJUSTE 2026-08-23: la media se mide sobre las plazas PORTABLES, no sobre
+  // todas. Las ancladas a la escena (`truffade`, `accordéon`, `cheville`) no
+  // prometen reuso; meterlas en la media obliga a que el acordeón vuelva tres
+  // veces, que es escribir para el marcador. Como contrapeso, a las portables
+  // se les pide el ideal de la escalera (4) y las ancladas no pueden pasar del
+  // 30% de las plazas.
+  //
+  // Se marcan con `anchor: true` en el item de vocab. Un journey que no marque
+  // nada se mide como antes, con TODAS las plazas y el suelo de su nivel, para
+  // no cambiarle la vara a lo que ya estaba medido.
   const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 1.6 };
+  // A las portables se les pide el MISMO suelo medido del nivel, no el ideal de
+  // 4: el 3,0 salió de journeys publicados que no marcan ancladas, así que
+  // exigir 4 sería inventar un número. Lo que cambia es QUÉ entra en la media.
+  const TOPE_ANCLADAS = 0.30;
   const suelo = MEDIA_MINIMA[level];
   if (suelo === undefined) {
     noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
-      `Sin umbral calibrado para ${level || "?"}: el catalogo en ese nivel va de 0,8 a 1,5 y no hay un buen precedente del que sacar el liston. Medir antes de gatear.`);
+      `El catalogo no da un liston medido para ${level || "?"}; poner uno seria inventarlo.`);
   } else if (!stories.some((s) => s.vocab && s.vocab.length)) {
     noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
-      "No se paso el vocab de las historias; sin el no se puede contar un encuentro.");
+      "Las historias llegaron sin vocab.");
   } else {
     const tok = (t: string) => (t.toLowerCase().match(/\p{L}+/gu) ?? []);
     const cuerpos = stories.map((s) => new Set(tok(s.text)));
     const clave = (v: { word: string; surface?: string | null }) =>
       String(v.surface ?? v.word).toLowerCase().replace(/^(der|die|das|le|la|el|il|o|a)\s+/, "");
-    const enc: number[] = [];
+    const todas: Array<{ n: number; anchor: boolean }> = [];
     for (const s of stories) for (const v of s.vocab ?? [])
-      enc.push(cuerpos.filter((c) => c.has(clave(v))).length);
-    const media = enc.length ? enc.reduce((a, b) => a + b, 0) / enc.length : 0;
-    const unaVez = enc.filter((n) => n <= 1).length;
-    push("journey-vocab-recirculation", `Cada plaza de vocab se reencuentra (media ${suelo} o mas en ${level})`,
-      media >= suelo,
-      `media ${media.toFixed(2)} encuentros por plaza (ideal 4, liston de los buenos ${suelo}) · ${unaVez}/${enc.length} salen una sola vez`);
+      todas.push({ n: cuerpos.filter((c) => c.has(clave(v))).length, anchor: Boolean((v as { anchor?: boolean }).anchor) });
+    const marca = todas.some((x) => x.anchor);
+    if (!marca) {
+      const media = todas.reduce((a, b) => a + b.n, 0) / todas.length;
+      const unaVez = todas.filter((x) => x.n <= 1).length;
+      push("journey-vocab-recirculation", `Cada plaza de vocab se reencuentra (media ${suelo} o mas en ${level})`,
+        media >= suelo,
+        `media ${media.toFixed(2)} encuentros por plaza (ideal 4, liston de los buenos ${suelo}) · ${unaVez}/${todas.length} salen una sola vez · sin marcar ancladas`);
+    } else {
+      const port = todas.filter((x) => !x.anchor);
+      const anc = todas.filter((x) => x.anchor);
+      const media = port.reduce((a, b) => a + b.n, 0) / (port.length || 1);
+      const cuota = anc.length / todas.length;
+      const pide = suelo;
+      const unaVez = port.filter((x) => x.n <= 1).length;
+      const okMedia = media >= pide;
+      const okCuota = cuota <= TOPE_ANCLADAS;
+      push("journey-vocab-recirculation",
+        `Las portables se reencuentran (media ${pide} o mas en ${level}) y las ancladas no pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`,
+        okMedia && okCuota,
+        `portables: media ${media.toFixed(2)} sobre ${port.length} plazas · ${unaVez} salen una sola vez` +
+        ` | ancladas: ${anc.length}/${todas.length} (${Math.round(cuota * 100)}%)` +
+        `${okCuota ? "" : `; pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`}`);
+    }
   }
 
   // ── 13. El RENDER, no el texto ─────────────────────────────
