@@ -791,151 +791,127 @@
     "title": "Der Zug nach Triberg",
     "slug": "der-zug-nach-triberg",
     "synopsis": "Noah ist Förster im Schwarzwald und holt Hannah ohne Anruf vom Bahnsteig. Am ersten Abend fragt er sie, was sie hier eigentlich sucht.",
-    "text": "Seine grüne Weste leuchtet schon von Weitem. Noah trägt sie und wartet auf dem Bahnsteig. Der Zug aus Freiburg hält am Nachmittag in Triberg.\n\nNoah ist Förster im Schwarzwald und kennt Hannah seit der Universität. Er nimmt ihren Rucksack und lächelt.\n\n“Du bist müde.”\n\n“Ich bin seit Juni unterwegs.”\n\n“Und was suchst du hier?”\n\nHannah schaut auf ihre Schuhe. Hannah und Noah gehen durch den Ort zu seinem Haus am Rand vom Wald.\n\nDer Wald riecht nach Harz und nach Pilzen. Noah öffnet die Tür.\n\nDas Zimmer drinnen ist einfach und sauber, und ein alter Ofen steht in der Ecke.\n\n“Ich habe wenig Platz”, sagt Noah. “Du hast das Sofa. Und ich arbeite morgen um fünf.”\n\n“Ich komme ohne Anruf. Ich weiß.”\n\n“Du kommst überhaupt. Das ist mehr als sonst.”\n\nHannah legt eine Tafel Schokolade auf den Ofen. Noah schneidet Brot und Wurst, und die zwei alten Freunde reden bis nach Mitternacht.",
+    "text": "Noah wartet auf dem Bahnsteig in Triberg. Man sieht seine grüne Weste schon von Weitem.\n\nNoah ist Förster im Schwarzwald. Er kennt Hannah seit der Universität.\n\nDer Zug aus Freiburg hält am Nachmittag. Der Bus in den Ort fährt zweimal am Tag. Noah nimmt ihren Rucksack.\n\n“Du bist müde.”\n\n“Ich bin seit Juni unterwegs.”\n\n“Und was suchst du hier?”\n\nHannah sieht auf ihre Schuhe. Sie denkt an die Schule in Leipzig und gibt keine Antwort.\n\nDie beiden gehen zu seinem Haus am Rand vom Wald. Der Wald riecht nach Harz und nach Pilzen.\n\nNoah öffnet die Tür. Der Winter ist hier sehr still. Das Zimmer drinnen ist einfach und sauber. Ein alter Ofen steht in der Ecke.\n\n“Ich habe wenig Platz. Du hast das Sofa. Und ich arbeite morgen um fünf.”\n\n“Ich komme ohne Anruf. Ich weiß.”\n\n“Du kommst überhaupt. Das ist mehr als sonst.”\n\n“Und morgen früh?”\n\n“Um fünf.”\n\nHannah legt Schokolade auf den Ofen. Noah schneidet Brot und Wurst. Die zwei alten Freunde reden bis nach Mitternacht.",
     "vocab": [
       {
         "type": "noun",
-        "word": "der Schwarzwald",
-        "surface": "Schwarzwald",
-        "definition": "The Black Forest; a big forest region in south Germany."
-      },
-      {
-        "type": "verb",
-        "word": "halten",
-        "surface": "hält",
-        "definition": "To stop; here, a train stops at a station."
-      },
-      {
-        "type": "noun",
-        "word": "der Bahnsteig",
-        "surface": "Bahnsteig",
-        "definition": "A platform; where you wait for a train."
-      },
-      {
-        "type": "verb",
-        "word": "tragen",
-        "surface": "trägt",
-        "definition": "To wear or carry something on your body."
-      },
-      {
-        "type": "noun",
-        "word": "die Universität",
-        "surface": "Universität",
-        "definition": "A university; where young adults study after school."
+        "word": "die Weste",
+        "surface": "Weste",
+        "definition": "A waistcoat; a sleeveless jacket worn over a shirt."
       },
       {
         "type": "noun",
         "word": "der Förster",
         "surface": "Förster",
-        "definition": "A forester; the person who looks after a forest."
-      },
-      {
-        "type": "verb",
-        "word": "lächeln",
-        "surface": "lächelt",
-        "definition": "To smile; to make a friendly face."
+        "definition": "A forester; the man whose work is looking after a forest."
       },
       {
         "type": "noun",
         "word": "der Ort",
         "surface": "Ort",
-        "definition": "A place; here, a small village or town."
+        "definition": "A village; a small place where people live."
       },
       {
         "type": "noun",
         "word": "der Rand",
         "surface": "Rand",
-        "definition": "The edge; where something ends and stops."
+        "definition": "The edge; the outer line where something stops."
       },
       {
         "type": "noun",
         "word": "der Wald",
         "surface": "Wald",
-        "definition": "A forest; a large area full of trees."
-      },
-      {
-        "type": "verb",
-        "word": "riechen",
-        "surface": "riecht",
-        "definition": "To smell; to give off a smell in the air."
+        "definition": "A forest; a large area thickly covered with trees."
       },
       {
         "type": "noun",
         "word": "das Harz",
         "surface": "Harz",
-        "definition": "Resin; the sticky stuff that comes from pine trees."
+        "definition": "Resin; the sticky liquid that comes out of pine trees."
       },
       {
         "type": "noun",
-        "word": "der Pilz",
-        "surface": "Pilzen",
-        "definition": "Mushrooms; they grow on the forest floor."
-      },
-      {
-        "type": "verb",
-        "word": "öffnen",
-        "surface": "öffnet",
-        "definition": "To open; to make a door or box not shut."
+        "word": "der Ofen",
+        "surface": "Ofen",
+        "definition": "A stove; the iron box that burns wood and heats a room."
       },
       {
         "type": "noun",
-        "word": "die Tür",
-        "surface": "Tür",
-        "definition": "A door; you go through it into a room."
-      },
-      {
-        "type": "verb",
-        "word": "schneiden",
-        "surface": "schneidet",
-        "definition": "To cut; to divide something with a knife."
+        "word": "das Sofa",
+        "surface": "Sofa",
+        "definition": "A sofa; the long soft seat you can also sleep on."
       },
       {
         "type": "noun",
-        "word": "der Morgen",
-        "surface": "Morgen",
-        "definition": "The morning; the first hours of the day."
+        "word": "der Anruf",
+        "surface": "Anruf",
+        "definition": "A phone call; the act of ringing someone up."
+      },
+      {
+        "type": "noun",
+        "word": "die Schokolade",
+        "surface": "Schokolade",
+        "definition": "Chocolate; the sweet brown food made from cocoa."
+      },
+      {
+        "type": "noun",
+        "word": "das Brot",
+        "surface": "Brot",
+        "definition": "Bread; the basic food baked from flour."
+      },
+      {
+        "type": "noun",
+        "word": "die Wurst",
+        "surface": "Wurst",
+        "definition": "Sausage; the meat food cut in slices for bread."
+      },
+      {
+        "type": "noun",
+        "word": "die Universität",
+        "surface": "Universität",
+        "definition": "A university; where the two of them first met as students."
+      },
+      {
+        "type": "noun",
+        "word": "der Bahnsteig",
+        "surface": "Bahnsteig",
+        "definition": "A platform; the long strip beside the rails where you wait."
       },
       {
         "type": "noun",
         "word": "der Zug",
         "surface": "Zug",
-        "definition": "A train; the vehicle that runs on rails."
-      },
-      {
-        "type": "verb",
-        "word": "legen",
-        "surface": "legt",
-        "definition": "To lay or put something somewhere gently."
-      },
-      {
-        "type": "verb",
-        "word": "warten",
-        "surface": "wartet",
-        "definition": "To wait; to stay until someone or something comes."
-      },
-      {
-        "type": "verb",
-        "word": "kennen",
-        "surface": "kennt",
-        "definition": "To know a person or place from experience."
+        "definition": "A train; the long vehicle that runs on rails between towns."
       },
       {
         "type": "noun",
-        "word": "das Zimmer",
-        "surface": "Zimmer",
-        "definition": "A room; one space inside a building."
+        "word": "das Haus",
+        "surface": "Haus",
+        "definition": "A house; the building a person lives in."
       },
       {
         "type": "noun",
-        "word": "der Platz",
-        "surface": "Platz",
-        "definition": "A square; an open public space between buildings."
+        "word": "der Freund",
+        "surface": "Freunde",
+        "definition": "A friend; a person you have known and trusted for a long time."
+      },
+      {
+        "type": "noun",
+        "word": "der Schuh",
+        "surface": "Schuhe",
+        "definition": "A shoe; what you wear on your foot."
       },
       {
         "type": "verb",
-        "word": "schauen",
-        "surface": "schaut",
-        "definition": "To look; to turn your eyes towards something."
+        "word": "öffnen",
+        "surface": "öffnet",
+        "definition": "To open; to move a door so a person can go through."
+      },
+      {
+        "type": "adjective",
+        "word": "sauber",
+        "surface": "sauber",
+        "definition": "Clean; with no dirt on it."
       }
     ],
     "arcType": null
@@ -946,31 +922,103 @@
     "title": "Nebel über dem Pfad",
     "slug": "nebel-uber-dem-pfad",
     "synopsis": "Der Nebel kommt schnell zwischen die Tannen. Hannah verliert den Pfad, rutscht auf einem nassen Stein und wandert diese Woche nicht mehr.",
-    "text": "Zwei Reihen Tannen stehen hoch und sehr eng am Pfad.\n\nDer Boden ist weich von Nadeln.\n\nNoah geht vorne und zeigt früh am Morgen auf eine Spur.\n\n“Ein Reh”, sagt er. “Wahrscheinlich heute Nacht.”\n\nHannah sieht nur braune Erde und glaubt ihm trotzdem. Der Nebel kommt schnell zwischen die Bäume, und die Welt wird grau.\n\nHannah verliert den Pfad und rutscht auf einem nassen Stein.\n\n“Noah!”\n\nEr ist sofort da. Ihr Bein tut weh, und der Knöchel wird dick.\n\n“Kannst du gehen?”\n\n“Ein bisschen.”\n\n“Dann gehen wir langsam. Ich zähle die Kurven, und du nimmst meinen Arm.”\n\nNoah ist ruhig und sicher. Sie brauchen drei Stunden und erreichen die Wiese über dem Nebel.\n\nAlles unten liegt weiß. Noah zeigt auf die Wiese.\n\n“Deshalb wohne ich hier. Die Stadt ist mir zu voll.”\n\nHannah sitzt im Gras. Ihre Beine sind schwer, aber ihr Kopf ist frei.\n\n“Diese Woche wanderst du nicht mehr”, sagt Noah.",
+    "text": "Zwei Reihen Tannen stehen hoch und sehr eng am Pfad. Der Boden ist weich von Nadeln.\n\nNoah geht vorne. Er zeigt früh am Morgen auf eine Spur.\n\n“Ein Reh. Wahrscheinlich heute Nacht.”\n\nHannah sieht nur braune Erde. Sie glaubt ihm trotzdem.\n\nDer Nebel kommt plötzlich zwischen die Bäume. Hannah verliert den Pfad. Sie rutscht auf einem nassen Stein.\n\n“Noah!”\n\nEr ist sofort da. Ihr Bein tut weh, und der Knöchel wird dick.\n\n“Kannst du gehen?”\n\n“Ein bisschen.”\n\n“Dann gehen wir langsam. Ich helfe dir. Ich zähle die Kurven, und du nimmst meinen Arm.”\n\nNoah ist ruhig und sicher. Er nimmt ihre Tasche und die beiden brauchen drei Stunden.\n\nSie erreichen die Wiese über dem Nebel. Alles unten liegt weiß. Der Wald darunter ist nicht mehr zu sehen.\n\n“Deshalb wohne ich hier. Die Stadt ist mir zu voll.”\n\nHannah sitzt im Gras. Ihre Beine sind schwer, aber ihr Kopf ist frei.\n\n“Diese Woche wanderst du nicht mehr.”",
     "vocab": [
       {
-        "type": "adverb",
-        "word": "früh",
-        "surface": "früh",
-        "definition": "Early; near the start of the day."
+        "type": "noun",
+        "word": "die Reihe",
+        "surface": "Reihen",
+        "definition": "A row; a line of things standing one behind the other."
       },
       {
         "type": "noun",
-        "word": "der Pfad",
-        "surface": "Pfad",
-        "definition": "A narrow path through a forest or field."
+        "word": "die Nadel",
+        "surface": "Nadeln",
+        "definition": "A needle; here the thin pointed leaf of a pine tree."
       },
       {
         "type": "noun",
-        "word": "die Tanne",
-        "surface": "Tannen",
-        "definition": "Fir trees; tall dark trees of the Black Forest."
+        "word": "das Reh",
+        "surface": "Reh",
+        "definition": "A deer; the shy wild animal of the forest."
+      },
+      {
+        "type": "noun",
+        "word": "die Erde",
+        "surface": "Erde",
+        "definition": "Soil; the brown ground under your feet."
+      },
+      {
+        "type": "noun",
+        "word": "der Knöchel",
+        "surface": "Knöchel",
+        "definition": "An ankle; the joint between the leg and the foot."
+      },
+      {
+        "type": "noun",
+        "word": "die Kurve",
+        "surface": "Kurven",
+        "definition": "A bend; a place where a path turns."
+      },
+      {
+        "type": "noun",
+        "word": "das Gras",
+        "surface": "Gras",
+        "definition": "Grass; the green plants that cover a meadow."
+      },
+      {
+        "type": "noun",
+        "word": "die Stunde",
+        "surface": "Stunden",
+        "definition": "An hour; the sixty minutes that make one part of a day."
+      },
+      {
+        "type": "noun",
+        "word": "der Arm",
+        "surface": "Arm",
+        "definition": "An arm; the long part of the body between shoulder and hand."
+      },
+      {
+        "type": "noun",
+        "word": "der Kopf",
+        "surface": "Kopf",
+        "definition": "A head; the top part of the body, above the neck."
+      },
+      {
+        "type": "noun",
+        "word": "die Woche",
+        "surface": "Woche",
+        "definition": "A week; the seven days from Monday to Sunday."
+      },
+      {
+        "type": "verb",
+        "word": "rutschen",
+        "surface": "rutscht",
+        "definition": "To slip; to slide suddenly and lose your footing."
+      },
+      {
+        "type": "verb",
+        "word": "brauchen",
+        "surface": "brauchen",
+        "definition": "To need; to require something in order to manage."
+      },
+      {
+        "type": "verb",
+        "word": "wandern",
+        "surface": "wanderst",
+        "definition": "To hike; to walk a long way in the countryside."
+      },
+      {
+        "type": "verb",
+        "word": "verlieren",
+        "surface": "verliert",
+        "definition": "To lose; to no longer have or find something."
       },
       {
         "type": "adjective",
-        "word": "hoch",
-        "surface": "hoch",
-        "definition": "High or tall; going far up."
+        "word": "nass",
+        "surface": "nassen",
+        "definition": "Wet; covered with water."
       },
       {
         "type": "adjective",
@@ -979,124 +1027,22 @@
         "definition": "Narrow; with little space between the sides."
       },
       {
-        "type": "noun",
-        "word": "der Boden",
-        "surface": "Boden",
-        "definition": "The ground; the surface you walk on."
-      },
-      {
         "type": "adjective",
         "word": "weich",
         "surface": "weich",
-        "definition": "Soft; easy to press with your hand."
-      },
-      {
-        "type": "noun",
-        "word": "die Nadel",
-        "surface": "Nadeln",
-        "definition": "Needles; the thin leaves of a fir tree."
-      },
-      {
-        "type": "adverb",
-        "word": "vorne",
-        "surface": "vorne",
-        "definition": "In front; at the head of a group."
-      },
-      {
-        "type": "noun",
-        "word": "die Spur",
-        "surface": "Spur",
-        "definition": "A track or mark left by an animal."
-      },
-      {
-        "type": "noun",
-        "word": "das Reh",
-        "surface": "Reh",
-        "definition": "A roe deer; a small shy forest animal."
-      },
-      {
-        "type": "adverb",
-        "word": "wahrscheinlich",
-        "surface": "Wahrscheinlich",
-        "definition": "Probably; most likely but not for sure."
-      },
-      {
-        "type": "verb",
-        "word": "glauben",
-        "surface": "glaubt",
-        "definition": "To believe; to think that something is true."
-      },
-      {
-        "type": "noun",
-        "word": "der Nebel",
-        "surface": "Nebel",
-        "definition": "Fog; thick grey air you cannot see through."
+        "definition": "Soft; easy to press, not hard."
       },
       {
         "type": "adjective",
-        "word": "grau",
-        "surface": "grau",
-        "definition": "Grey; the colour between black and white."
-      },
-      {
-        "type": "adjective",
-        "word": "frei",
-        "surface": "frei",
-        "definition": "Free; here, clear and without heavy thoughts."
-      },
-      {
-        "type": "adjective",
-        "word": "voll",
-        "surface": "voll",
-        "definition": "Full; with no space left for more."
-      },
-      {
-        "type": "adjective",
-        "word": "weiß",
-        "surface": "weiß",
-        "definition": "White; the colour of snow or milk."
-      },
-      {
-        "type": "noun",
-        "word": "der Morgen",
-        "surface": "Morgen",
-        "definition": "The morning; the first hours of the day."
-      },
-      {
-        "type": "adverb",
-        "word": "unten",
-        "surface": "unten",
-        "definition": "Down there; at the bottom of something."
-      },
-      {
-        "type": "noun",
-        "word": "der Stein",
-        "surface": "Stein",
-        "definition": "Stone; the hard material of old buildings."
-      },
-      {
-        "type": "adjective",
-        "word": "schnell",
-        "surface": "schnell",
-        "definition": "Fast; moving with great speed."
-      },
-      {
-        "type": "noun",
-        "word": "die Stunde",
-        "surface": "Stunden",
-        "definition": "An hour; sixty minutes of time."
-      },
-      {
-        "type": "adverb",
-        "word": "trotzdem",
-        "surface": "trotzdem",
-        "definition": "Even so; in spite of what was just said."
+        "word": "braun",
+        "surface": "braune",
+        "definition": "Brown; the colour of earth or of tree bark."
       },
       {
         "type": "adverb",
         "word": "sofort",
         "surface": "sofort",
-        "definition": "Immediately; without waiting at all."
+        "definition": "At once; in the very same moment, without waiting."
       }
     ],
     "arcType": null
@@ -1107,19 +1053,19 @@
     "title": "Die Kuckucksuhr von Noahs Vater",
     "slug": "die-kuckucksuhr-von-noahs-vater",
     "synopsis": "In der Werkstatt seines Vaters sagt Noah, dass die Kuckucksuhren im Winter enden. Hannah bekommt einen geschnitzten Vogel und ein Geheimnis dazu.",
-    "text": "Viele Kuckucksuhren warten auf dem Regal. Die Werkstatt von Noahs Vater ist eng.\n\nHolzstücke und Werkzeug liegen überall. Hannah sitzt mit dem dicken Knöchel auf einem Hocker, und Noah führt ihre Hand über das kalte Werkzeug.\n\n“Jede Uhr braucht drei Wochen”, sagt er. “Mein Vater schafft noch eine im Jahr.”\n\nHannah nimmt eine Uhr vorsichtig in die Hand. Sie ist schwer und riecht nach Öl.\n\nSein Vater ist heute unten im Ort. Seine Hände zittern jetzt bei jedem Schnitt.\n\n“Und du? Du kennst jeden Griff.”\n\n“Ich bin Förster. Die Werkstatt schließt nächsten Winter.”\n\n“Sagst du ihm das?”\n\n“Nein. Und du sagst es auch nicht.”\n\nNoah schnitzt einen kleinen Vogel. Sein Messer ist scharf und dünn. Die Späne fallen auf den Tisch.\n\n“Für dich. Der Vogel ist nicht fertig, aber er fliegt trotzdem.”\n\nHannah steckt den Vogel in die Tasche und drückt seine Hand.",
+    "text": "Viele Kuckucksuhren warten auf dem Regal. Die Werkstatt von Noahs Vater ist eng.\n\nHolzstücke und Werkzeug liegen überall. Hannah sitzt mit dem dicken Knöchel auf einem Hocker. Der Hocker ist niedrig und hart.\n\nNoah führt ihre Hand über das Werkzeug.\n\n“Jede Uhr braucht drei Wochen. Mein Vater schafft noch eine im Jahr.”\n\nHannah nimmt eine Uhr vorsichtig in beide Hände. Das Metall darin ist kalt. Das Holz riecht nach Öl.\n\nSein Vater ist heute unten im Ort. Er nennt jede Uhr beim Namen. Er trinkt dort jeden Morgen einen Kaffee. Seine Hände zittern jetzt bei jedem Schnitt.\n\n“Und du? Du kennst jeden Griff.”\n\n“Ich bin Förster. Die Werkstatt schließt nächsten Winter.”\n\n“Sagst du ihm das?”\n\n“Nein. Und du sagst es auch nicht.”\n\nNoah schnitzt einen kleinen Vogel. Sein Messer ist scharf und dünn. Brot und Wurst liegen neben dem Werkzeug. Die Späne fallen auf den Tisch.\n\n“Für dich. Der Vogel ist nicht fertig, aber er fliegt trotzdem.”\n\nHannah steckt den Vogel in die Tasche. Sie drückt seine Hand.",
     "vocab": [
       {
-        "type": "verb",
-        "word": "führen",
-        "surface": "führt",
-        "definition": "To lead; to take a person to a place."
+        "type": "noun",
+        "word": "die Kuckucksuhr",
+        "surface": "Kuckucksuhren",
+        "definition": "A cuckoo clock; the carved wooden clock of the Black Forest."
       },
       {
         "type": "noun",
         "word": "die Werkstatt",
         "surface": "Werkstatt",
-        "definition": "A workshop; the room where things are made by hand."
+        "definition": "A workshop; the room where a craftsman works with his hands."
       },
       {
         "type": "noun",
@@ -1131,127 +1077,103 @@
         "type": "noun",
         "word": "das Werkzeug",
         "surface": "Werkzeug",
-        "definition": "Tools; the things you work with by hand."
+        "definition": "Tools; the things a person works with."
       },
       {
         "type": "noun",
-        "word": "das Regal",
-        "surface": "Regal",
-        "definition": "A shelf; a board on a wall for objects."
-      },
-      {
-        "type": "noun",
-        "word": "die Kuckucksuhr",
-        "surface": "Kuckucksuhren",
-        "definition": "Cuckoo clocks; wooden clocks with a bird inside."
-      },
-      {
-        "type": "noun",
-        "word": "die Woche",
-        "surface": "Wochen",
-        "definition": "A week; seven days of time."
-      },
-      {
-        "type": "verb",
-        "word": "brauchen",
-        "surface": "braucht",
-        "definition": "To need; to have to have something."
-      },
-      {
-        "type": "adverb",
-        "word": "vorsichtig",
-        "surface": "vorsichtig",
-        "definition": "Carefully; slowly, so nothing gets broken."
-      },
-      {
-        "type": "adjective",
-        "word": "schwer",
-        "surface": "schwer",
-        "definition": "Heavy; with a lot of weight to carry."
+        "word": "der Hocker",
+        "surface": "Hocker",
+        "definition": "A stool; a low seat with no back."
       },
       {
         "type": "noun",
         "word": "das Öl",
         "surface": "Öl",
-        "definition": "Oil; a thick liquid used in machines."
+        "definition": "Oil; the thick liquid used on wood and on machines."
+      },
+      {
+        "type": "noun",
+        "word": "der Griff",
+        "surface": "Griff",
+        "definition": "A grip; the practised way a hand takes hold of a tool."
+      },
+      {
+        "type": "noun",
+        "word": "der Winter",
+        "surface": "Winter",
+        "definition": "Winter; the cold season at the end of the year."
+      },
+      {
+        "type": "noun",
+        "word": "das Messer",
+        "surface": "Messer",
+        "definition": "A knife; the blade used for cutting or carving."
+      },
+      {
+        "type": "noun",
+        "word": "der Span",
+        "surface": "Späne",
+        "definition": "A shaving; the thin curl of wood a knife cuts away."
+      },
+      {
+        "type": "noun",
+        "word": "das Holzstück",
+        "surface": "Holzstücke",
+        "definition": "A piece of wood; a block waiting to be carved."
+      },
+      {
+        "type": "noun",
+        "word": "das Holz",
+        "surface": "Holz",
+        "definition": "Wood; the hard material that trees are made of."
+      },
+      {
+        "type": "noun",
+        "word": "die Woche",
+        "surface": "Wochen",
+        "definition": "A week; the seven days from Monday to Sunday."
+      },
+      {
+        "type": "noun",
+        "word": "der Förster",
+        "surface": "Förster",
+        "definition": "A forester; the man whose work is looking after a forest."
       },
       {
         "type": "verb",
         "word": "schnitzen",
         "surface": "schnitzt",
-        "definition": "To carve; to cut a shape out of wood."
+        "definition": "To carve; to cut a shape out of wood with a knife."
+      },
+      {
+        "type": "verb",
+        "word": "schließen",
+        "surface": "schließt",
+        "definition": "To close; to stop working or to shut for good."
+      },
+      {
+        "type": "verb",
+        "word": "stecken",
+        "surface": "steckt",
+        "definition": "To put; to slide a small thing into a pocket or a bag."
+      },
+      {
+        "type": "verb",
+        "word": "brauchen",
+        "surface": "braucht",
+        "definition": "To need; to require something in order to manage."
+      },
+      {
+        "type": "verb",
+        "word": "zittern",
+        "surface": "zittern",
+        "definition": "To tremble; to shake slightly without meaning to."
       },
       {
         "type": "adjective",
         "word": "scharf",
         "surface": "scharf",
         "definition": "Sharp; with an edge that cuts easily."
-      },
-      {
-        "type": "noun",
-        "word": "der Span",
-        "surface": "Späne",
-        "definition": "Wood shavings; small curls cut off a piece of wood."
-      },
-      {
-        "type": "verb",
-        "word": "fallen",
-        "surface": "fallen",
-        "definition": "To fall; to drop down towards the ground."
-      },
-      {
-        "type": "verb",
-        "word": "stecken",
-        "surface": "steckt",
-        "definition": "To put or slip something into a small space."
-      },
-      {
-        "type": "adverb",
-        "word": "trotzdem",
-        "surface": "trotzdem",
-        "definition": "Even so; in spite of what was just said."
-      },
-      {
-        "type": "noun",
-        "word": "das Holzstück",
-        "surface": "Holzstücke",
-        "definition": "Pieces of wood; small blocks kept for carving."
-      },
-      {
-        "type": "noun",
-        "word": "die Hand",
-        "surface": "Hand",
-        "definition": "A hand; the part of the arm you hold with."
-      },
-      {
-        "type": "adverb",
-        "word": "jeden",
-        "surface": "jeden",
-        "definition": "Every; each one without exception."
-      },
-      {
-        "type": "noun",
-        "word": "der Tisch",
-        "surface": "Tisch",
-        "definition": "A table; furniture with a flat top for eating."
-      },
-      {
-        "type": "verb",
-        "word": "riechen",
-        "surface": "riecht",
-        "definition": "To smell; to give off a smell in the air."
-      },
-      {
-        "type": "adverb",
-        "word": "unten",
-        "surface": "unten",
-        "definition": "Down there; at the bottom of something."
-      },
-      {
-        "type": "noun",
-        "word": "der Winter",
-        "surface": "Winter",
-        "definition": "Winter; the cold dark season of the year."
       }
     ],
     "arcType": null
@@ -1262,151 +1184,127 @@
     "title": "Die Fähre nach Meersburg",
     "slug": "die-fahre-nach-meersburg",
     "synopsis": "Emilia wartet am Hafen von Meersburg und redet die ganze Zeit über das Wetter. Sie hat etwas zu sagen, aber nicht heute.",
-    "text": "Die Möwen kreisen über dem Deck der Fähre. Hannah und Elias stehen an der Anlegestelle in Konstanz, und die Fähre nach Meersburg kommt pünktlich.\n\nDer See ist heute ruhig und glatt. Emilia wartet drüben am Hafen.\n\nEmilia ist eine alte Freundin aus der Schule in Leipzig. Ihre Haare sind jetzt kurz und grau, und sie kennt Hannah seit dem ersten Tag.\n\n“Da seid ihr ja!”, ruft Emilia. Ihre Stimme klingt zu fröhlich.\n\nEmilia führt die zwei durch die Gassen. Die Häuser haben bunte Fensterläden. Emilia zeigt nach oben.\n\n“Die Burg da ist tausend Jahre alt.”\n\n“Emilia, was hast du?”\n\n“Ich muss euch etwas sagen. Aber nicht jetzt.”\n\n“Du redest zu viel über das Wetter.”\n\n“Ich weiß. Lass mich.”\n\nHannah dreht sich zu Elias. Er zuckt mit den Schultern und versteht auch nichts.\n\n“Morgen”, sagt Emilia leise. “Morgen draußen auf dem Wasser.”",
+    "text": "Hannah und Elias stehen an der Anlegestelle in Konstanz. Die Fähre nach Meersburg kommt pünktlich.\n\nAndere Leute stehen mit ihren Taschen an Deck. Möwen kreisen darüber. Ein Hund liegt neben einem Korb. Der See ist heute ruhig.\n\nEmilia wartet drüben am Hafen. Sie ist eine alte Freundin aus der Schule in Leipzig.\n\nIhre Haare sind jetzt sehr kurz. Sie trägt ein graues Hemd und kennt Hannah seit dem ersten Tag.\n\n“Da seid ihr ja!”\n\nIhre Stimme klingt zu fröhlich.\n\nEmilia führt die zwei durch die Gassen. Sie fragt nach Hannahs Arbeit in der Schule. Die Häuser haben bunte Fensterläden. Emilia zeigt nach oben.\n\n“Die Burg da ist tausend Jahre alt.”\n\nEmilia legt die Hand auf die alte Mauer.\n\n“Emilia, was hast du?”\n\n“Ich muss euch etwas sagen. Aber nicht jetzt.”\n\n“Du redest zu viel über das Wetter.”\n\n“Ich weiß. Lass mich.”\n\nHannah dreht sich zu Elias. Er versteht auch nichts.\n\n“Morgen”, sagt Emilia leise. “Morgen draußen auf dem Wasser.”",
     "vocab": [
       {
         "type": "noun",
         "word": "die Anlegestelle",
         "surface": "Anlegestelle",
-        "definition": "A landing place where boats stop for people."
+        "definition": "A landing stage; the place where a ferry ties up."
       },
       {
         "type": "noun",
         "word": "die Fähre",
         "surface": "Fähre",
-        "definition": "A ferry; a boat that carries people across water."
-      },
-      {
-        "type": "adjective",
-        "word": "pünktlich",
-        "surface": "pünktlich",
-        "definition": "On time; exactly at the right moment."
-      },
-      {
-        "type": "noun",
-        "word": "die Möwe",
-        "surface": "Möwen",
-        "definition": "Seagulls; white birds that live near water."
+        "definition": "A ferry; the boat that carries people across water on a fixed route."
       },
       {
         "type": "noun",
         "word": "das Deck",
         "surface": "Deck",
-        "definition": "The deck; the open floor of a boat."
-      },
-      {
-        "type": "adverb",
-        "word": "drüben",
-        "surface": "drüben",
-        "definition": "Over there; on the other side of something."
-      },
-      {
-        "type": "noun",
-        "word": "der Hafen",
-        "surface": "Hafen",
-        "definition": "A harbour; the place where boats come in."
+        "definition": "A deck; the open floor of a boat where passengers stand."
       },
       {
         "type": "noun",
         "word": "der See",
         "surface": "See",
-        "definition": "A lake; a large body of still water."
+        "definition": "A lake; a large body of still water inside the land."
       },
       {
-        "type": "adjective",
-        "word": "ruhig",
-        "surface": "ruhig",
-        "definition": "Calm; without movement or trouble."
+        "type": "noun",
+        "word": "die Freundin",
+        "surface": "Freundin",
+        "definition": "A female friend; a woman you have known for a long time."
+      },
+      {
+        "type": "noun",
+        "word": "das Hemd",
+        "surface": "Hemd",
+        "definition": "A shirt; the light garment worn on the upper body."
       },
       {
         "type": "noun",
         "word": "die Gasse",
         "surface": "Gassen",
-        "definition": "Lanes; very narrow streets in an old town."
-      },
-      {
-        "type": "adjective",
-        "word": "bunt",
-        "surface": "bunte",
-        "definition": "Colourful; with many bright colours together."
+        "definition": "An alley; a very narrow street between old houses."
       },
       {
         "type": "noun",
         "word": "der Fensterladen",
         "surface": "Fensterläden",
-        "definition": "Shutters; wooden covers on the outside of windows."
+        "definition": "A shutter; the wooden panel that closes over a window."
       },
       {
         "type": "noun",
         "word": "die Burg",
         "surface": "Burg",
-        "definition": "A fortress; a strong old castle on a hill."
+        "definition": "A castle; the old fortified building above a town."
+      },
+      {
+        "type": "noun",
+        "word": "die Möwe",
+        "surface": "Möwen",
+        "definition": "A gull; the white sea bird that follows boats."
+      },
+      {
+        "type": "noun",
+        "word": "das Haar",
+        "surface": "Haare",
+        "definition": "Hair; what grows on a person's head."
+      },
+      {
+        "type": "noun",
+        "word": "der Tag",
+        "surface": "Tag",
+        "definition": "A day; the twenty four hours from one midnight to the next."
       },
       {
         "type": "verb",
-        "word": "drehen",
-        "surface": "dreht",
-        "definition": "To turn; to move the body to face another way."
+        "word": "kreisen",
+        "surface": "kreisen",
+        "definition": "To circle; to fly round and round in the air."
       },
       {
         "type": "verb",
-        "word": "kennen",
-        "surface": "kennt",
-        "definition": "To know a person from earlier times."
-      },
-      {
-        "type": "noun",
-        "word": "die Schule",
-        "surface": "Schule",
-        "definition": "A school; where teachers give lessons."
-      },
-      {
-        "type": "adjective",
-        "word": "leise",
-        "surface": "leise",
-        "definition": "Quiet; making very little sound."
-      },
-      {
-        "type": "noun",
-        "word": "der Morgen",
-        "surface": "Morgen",
-        "definition": "The morning; the first hours of the day."
-      },
-      {
-        "type": "noun",
-        "word": "das Wasser",
-        "surface": "Wasser",
-        "definition": "Water; the liquid of seas, rivers and rain."
-      },
-      {
-        "type": "verb",
-        "word": "warten",
-        "surface": "wartet",
-        "definition": "To wait; to stay until someone or something comes."
-      },
-      {
-        "type": "noun",
-        "word": "das Jahr",
-        "surface": "Jahre",
-        "definition": "A year; twelve months of time."
-      },
-      {
-        "type": "adverb",
-        "word": "oben",
-        "surface": "oben",
-        "definition": "Up there; at the top of something."
-      },
-      {
-        "type": "adjective",
-        "word": "kurz",
-        "surface": "kurz",
-        "definition": "Short; here, for only a little time."
+        "word": "verstehen",
+        "surface": "versteht",
+        "definition": "To understand; to see clearly what a person means."
       },
       {
         "type": "verb",
         "word": "führen",
         "surface": "führt",
-        "definition": "To lead; to take a person to a place."
+        "definition": "To lead; to take someone along and show the way."
+      },
+      {
+        "type": "adjective",
+        "word": "bunt",
+        "surface": "bunte",
+        "definition": "Colourful; painted in many bright colours."
+      },
+      {
+        "type": "adjective",
+        "word": "kurz",
+        "surface": "kurz",
+        "definition": "Short; cut close to the head and not long."
+      },
+      {
+        "type": "noun",
+        "word": "der Hund",
+        "surface": "Hund",
+        "definition": "A dog; the animal many people keep at home."
+      },
+      {
+        "type": "adverb",
+        "word": "oben",
+        "surface": "oben",
+        "definition": "Up there; in or towards a higher place."
+      },
+      {
+        "type": "noun",
+        "word": "die Mauer",
+        "surface": "Mauer",
+        "definition": "A wall; a thick old wall of stone in a town."
       }
     ],
     "arcType": null
@@ -1417,31 +1315,19 @@
     "title": "Kaltes Wasser vor der Insel Mainau",
     "slug": "kaltes-wasser-vor-der-insel-mainau",
     "synopsis": "Emilia springt vor der Insel Mainau ins kalte Wasser. Dort sagt sie, was sie seit Februar weiß, und bittet Hannah um den Monat Oktober.",
-    "text": "Emilia startet den Motor am kleinen Boot; er braucht immer drei Versuche.\n\nEmilia mietet es für einen halben Tag und fährt in Richtung Insel Mainau.\n\nDas Wasser vor der Insel ist tief und kalt.\n\nEmilia stoppt den Motor mitten auf dem See.\n\n“Ich springe. Kommt ihr auch?”\n\nHannah lässt die Schuhe im Boot und springt hinterher. Das Wasser ist eisig, und ihre Haut wird sofort rot.\n\nElias bleibt an Bord und hält das Handtuch bereit. Die zwei Frauen schwimmen neben dem Boot. Emilias Hand am Rand ist fest.\n\n“Ich bin krank. Seit Februar.”\n\n“Wie krank?”\n\n“Sie operieren mich im Oktober. Kommst du?”\n\n“Im Oktober unterschreibe ich in Leipzig.”\n\n“Das ist derselbe Monat”, sagt Elias vom Boot.\n\nHannah schwimmt langsam neben ihr. Ihre Finger sind schon ganz weiß.\n\n“Ich komme trotzdem. Ich bin die Erste im Zimmer.”\n\nKeine von beiden schwimmt als Erste zum Boot.",
+    "text": "Emilia startet den Motor am kleinen Boot. Er braucht immer drei Versuche.\n\nEmilia mietet das Boot für einen halben Tag. Sie fährt in Richtung Insel Mainau.\n\nDas Wasser vor der Insel ist tief. Emilia stoppt den Motor mitten auf dem See.\n\n“Ich springe. Kommt ihr auch?”\n\nHannah lässt die Schuhe im Boot. Sie springt hinterher.\n\nDas Wasser ist eisig kalt. Ihre Haut wird sofort rot.\n\nElias bleibt an Bord. Er hält das Handtuch und ihre Tasche bereit.\n\nDie zwei Frauen schwimmen neben dem Boot. Ihre Köpfe bleiben über dem Wasser. Emilias Hand am Rand ist fest.\n\n“Ich bin krank. Seit Februar.”\n\n“Wie krank denn? Sag es mir.”\n\n“Sie operieren mich im Oktober. Kommst du?”\n\n“Im Oktober unterschreibe ich in Leipzig.”\n\n“Das ist derselbe Monat”, sagt Elias vom Boot.\n\nHannah schwimmt langsam neben ihr. Ihre Finger sind schon ganz weiß.\n\n“Ich komme trotzdem. Ich bin die Erste im Zimmer.”\n\nKeine von beiden schwimmt als Erste zum Boot.",
     "vocab": [
-      {
-        "type": "verb",
-        "word": "mieten",
-        "surface": "mietet",
-        "definition": "To rent; to pay to use something for a time."
-      },
       {
         "type": "noun",
         "word": "der Motor",
         "surface": "Motor",
-        "definition": "An engine; the machine that makes a boat move."
+        "definition": "An engine; the machine that drives a boat."
       },
       {
         "type": "noun",
         "word": "der Versuch",
         "surface": "Versuche",
-        "definition": "Attempts; the times you try to do something."
-      },
-      {
-        "type": "noun",
-        "word": "die Richtung",
-        "surface": "Richtung",
-        "definition": "A direction; the way that you are going."
+        "definition": "An attempt; one try at doing something."
       },
       {
         "type": "noun",
@@ -1450,124 +1336,106 @@
         "definition": "An island; land with water all around it."
       },
       {
-        "type": "adjective",
-        "word": "tief",
-        "surface": "tief",
-        "definition": "Deep; going a long way down from the top."
-      },
-      {
-        "type": "verb",
-        "word": "stoppen",
-        "surface": "stoppt",
-        "definition": "To stop; to make a machine cease working."
-      },
-      {
-        "type": "verb",
-        "word": "springen",
-        "surface": "springe",
-        "definition": "To jump; to push yourself off the ground."
+        "type": "noun",
+        "word": "der Finger",
+        "surface": "Finger",
+        "definition": "A finger; one of the five parts at the end of the hand."
       },
       {
         "type": "noun",
-        "word": "der Schuh",
-        "surface": "Schuhe",
-        "definition": "Shoes; you wear them on your feet."
-      },
-      {
-        "type": "adverb",
-        "word": "sofort",
-        "surface": "sofort",
-        "definition": "Immediately; without waiting at all."
-      },
-      {
-        "type": "noun",
-        "word": "das Bord",
-        "surface": "Bord",
-        "definition": "On board; inside or on top of a boat."
-      },
-      {
-        "type": "adjective",
-        "word": "fest",
-        "surface": "fest",
-        "definition": "Firmly, tightly; without letting go."
+        "word": "die Haut",
+        "surface": "Haut",
+        "definition": "Skin; the outer covering of the body."
       },
       {
         "type": "noun",
         "word": "der Februar",
         "surface": "Februar",
-        "definition": "February; the second month of the year."
-      },
-      {
-        "type": "adjective",
-        "word": "erste",
-        "surface": "Erste",
-        "definition": "First; before all the others in order."
+        "definition": "February; the second and shortest month of the year."
       },
       {
         "type": "noun",
-        "word": "der Finger",
-        "surface": "Finger",
-        "definition": "Fingers; the five thin parts of a hand."
-      },
-      {
-        "type": "adjective",
-        "word": "weiß",
-        "surface": "weiß",
-        "definition": "White; the colour of snow or milk."
+        "word": "das Handtuch",
+        "surface": "Handtuch",
+        "definition": "A towel; the cloth you dry yourself with."
       },
       {
         "type": "noun",
-        "word": "die Hand",
-        "surface": "Hand",
-        "definition": "A hand; the part of the arm you hold with."
+        "word": "die Frau",
+        "surface": "Frauen",
+        "definition": "A woman; an adult female person."
+      },
+      {
+        "type": "noun",
+        "word": "das Boot",
+        "surface": "Boot",
+        "definition": "A boat; a small craft that carries people over water."
+      },
+      {
+        "type": "noun",
+        "word": "der Rand",
+        "surface": "Rand",
+        "definition": "The rim; the outer edge you can hold on to."
+      },
+      {
+        "type": "noun",
+        "word": "der Schuh",
+        "surface": "Schuhe",
+        "definition": "A shoe; what you wear on your foot."
+      },
+      {
+        "type": "noun",
+        "word": "der Oktober",
+        "surface": "Oktober",
+        "definition": "October; the tenth month of the year, when both things fall."
+      },
+      {
+        "type": "noun",
+        "word": "der Tag",
+        "surface": "Tag",
+        "definition": "A day; the twenty four hours from one midnight to the next."
       },
       {
         "type": "verb",
-        "word": "bleiben",
-        "surface": "bleibt",
-        "definition": "To stay; to remain in the same place."
-      },
-      {
-        "type": "noun",
-        "word": "das Wasser",
-        "surface": "Wasser",
-        "definition": "Water; the liquid of seas, rivers and rain."
+        "word": "schwimmen",
+        "surface": "schwimmen",
+        "definition": "To swim; to move through water with the body."
       },
       {
         "type": "verb",
-        "word": "fahren",
-        "surface": "fährt",
-        "definition": "To travel or go by vehicle, such as a train."
+        "word": "springen",
+        "surface": "springt",
+        "definition": "To jump; to push off and leave the ground or the boat."
       },
       {
         "type": "adjective",
-        "word": "kalt",
-        "surface": "kalt",
-        "definition": "Cold; with a low temperature."
+        "word": "rot",
+        "surface": "rot",
+        "definition": "Red; the colour skin turns in very cold water."
       },
       {
         "type": "noun",
-        "word": "das Zimmer",
-        "surface": "Zimmer",
-        "definition": "A room; one space inside a building."
+        "word": "der Monat",
+        "surface": "Monat",
+        "definition": "A month; one of the twelve parts of a year."
       },
       {
-        "type": "verb",
-        "word": "halten",
-        "surface": "hält",
-        "definition": "To stop; here, a train stops at a station."
+        "type": "adjective",
+        "word": "eisig",
+        "surface": "eisig",
+        "definition": "Icy; painfully cold to the skin."
+      },
+      {
+        "type": "adjective",
+        "word": "krank",
+        "surface": "krank",
+        "definition": "Ill; not healthy and in need of treatment."
       },
       {
         "type": "noun",
         "word": "der See",
         "surface": "See",
-        "definition": "A lake; a large body of still water."
-      },
-      {
-        "type": "adverb",
-        "word": "trotzdem",
-        "surface": "trotzdem",
-        "definition": "Even so; in spite of what was just said."
+        "definition": "A lake; a large body of still water inside the land."
       }
     ],
     "arcType": null
@@ -1578,79 +1446,61 @@
     "title": "Emilias Garten in Meersburg",
     "slug": "emilias-garten-in-meersburg",
     "synopsis": "Niemand spricht über den Februar. Die drei arbeiten einen Tag in Emilias Garten, Hannah verspricht jeden Monat zu kommen, und Elias glaubt ihr nicht.",
-    "text": "Reben wachsen am Hang über dem See. Sie stehen in langen, geraden Reihen, und die Erde am Hang ist warm.\n\nEmilia schneidet heute die alten Zweige. Hannah sammelt sie in einem Korb, und Elias repariert den Zaun am Weg.\n\nNiemand spricht über den Februar. Alle drei decken am Mittag den Tisch unter dem Apfelbaum: Brot, frischer Fisch aus dem See, kalter Most.\n\n“Die Luft hier ist gut”, sagt Emilia. “Bleibt doch eine Woche.”\n\n“Ich komme jeden Monat”, antwortet Hannah. “Mit der Fähre.”\n\nEmilia legt ihr einen Schlüssel in die Hand.\n\n“Dann nimm den. Für den Garten.”\n\nDie Sonne liegt flach über dem Wasser, und alles glänzt golden. Emilia lächelt und glaubt ihr sofort. Hannah und Elias fahren am Abend nach Hause.\n\n“Jeden Monat”, sagt Elias im Zug. “Von Leipzig aus. Sechs Stunden.”\n\n“Diesmal stimmt es.”\n\n“Das sagst du jedes Mal.”\n\nHannah schließt die Hand um den Schlüssel.",
+    "text": "Viele Reben wachsen am Hang über dem See. Sie stehen in langen, geraden Reihen.\n\nEmilia schneidet heute die alten Zweige. Ihre Schuhe stehen voller Erde. Hannah sammelt sie in einem Korb. Elias repariert den Zaun am Rand.\n\nNiemand spricht über den Februar. Die Reihen haben kein Ende. Elias sieht alle zehn Minuten auf die Uhr.\n\nAlle drei decken am Mittag den Tisch unter dem Apfelbaum.\n\nBrot, frischer Fisch aus dem See und kalter Most stehen auf dem Tisch. Emilia füllt drei Gläser.\n\nDer Most schmeckt süß und sauer.\n\n“Die Luft hier ist gut. Bleibt doch eine Woche.”\n\n“Ich komme jeden Monat”, antwortet Hannah. “Mit der Fähre. Jeden Monat.”\n\nEmilia legt ihr einen Schlüssel in die Hand.\n\n“Dann nimm den. Für den Garten.”\n\nDie Sonne liegt flach über dem Wasser. Emilia lächelt und glaubt ihr sofort.\n\nHannah und Elias fahren am Abend nach Hause.\n\n“Jeden Monat. Von Leipzig aus. Sechs Stunden.”\n\n“Diesmal stimmt es wirklich.”\n\n“Das will ich sehen.”\n\n“Das sagst du jedes Mal.”\n\nHannah schließt die Hand um den Schlüssel.",
     "vocab": [
-      {
-        "type": "noun",
-        "word": "der Hang",
-        "surface": "Hang",
-        "definition": "A slope; ground that goes up at an angle."
-      },
       {
         "type": "noun",
         "word": "die Rebe",
         "surface": "Reben",
-        "definition": "Vines; the plants that grapes grow on."
-      },
-      {
-        "type": "verb",
-        "word": "wachsen",
-        "surface": "wachsen",
-        "definition": "To grow; to become bigger over time."
+        "definition": "A vine; the plant that grapes grow on."
       },
       {
         "type": "noun",
-        "word": "die Reihe",
-        "surface": "Reihen",
-        "definition": "Rows; straight lines of things side by side."
+        "word": "der Hang",
+        "surface": "Hang",
+        "definition": "A slope; ground that rises at an angle."
       },
       {
         "type": "noun",
         "word": "der Zweig",
         "surface": "Zweige",
-        "definition": "Branches; the thin arms of a plant or tree."
-      },
-      {
-        "type": "verb",
-        "word": "sammeln",
-        "surface": "sammelt",
-        "definition": "To collect; to gather things into one place."
+        "definition": "A branch; a small woody arm of a plant."
       },
       {
         "type": "noun",
         "word": "der Korb",
         "surface": "Korb",
-        "definition": "A basket; an open bag made of woven wood."
-      },
-      {
-        "type": "verb",
-        "word": "reparieren",
-        "surface": "repariert",
-        "definition": "To repair; to make a broken thing work again."
+        "definition": "A basket; the open container woven from thin strips of wood."
       },
       {
         "type": "noun",
         "word": "der Zaun",
         "surface": "Zaun",
-        "definition": "A fence; a low wall of wood around a garden."
+        "definition": "A fence; the low barrier along a path or a field."
       },
       {
         "type": "noun",
         "word": "der Apfelbaum",
         "surface": "Apfelbaum",
-        "definition": "An apple tree; it gives apples in autumn."
-      },
-      {
-        "type": "noun",
-        "word": "der Fisch",
-        "surface": "Fisch",
-        "definition": "Fish; an animal that lives and swims in water."
+        "definition": "An apple tree; the tree the table is laid under."
       },
       {
         "type": "noun",
         "word": "der Most",
         "surface": "Most",
-        "definition": "Must; a cloudy drink pressed from fresh apples."
+        "definition": "Cider; the cold drink pressed from apples."
+      },
+      {
+        "type": "noun",
+        "word": "die Luft",
+        "surface": "Luft",
+        "definition": "Air; what you breathe."
+      },
+      {
+        "type": "noun",
+        "word": "die Reihe",
+        "surface": "Reihen",
+        "definition": "A row; a line of things standing one behind the other."
       },
       {
         "type": "noun",
@@ -1659,70 +1509,64 @@
         "definition": "A month; one of the twelve parts of a year."
       },
       {
-        "type": "adverb",
-        "word": "jeden",
-        "surface": "jeden",
-        "definition": "Every; each one without exception."
+        "type": "noun",
+        "word": "das Brot",
+        "surface": "Brot",
+        "definition": "Bread; the basic food baked from flour."
       },
       {
         "type": "noun",
-        "word": "die Luft",
-        "surface": "Luft",
-        "definition": "Air; what you breathe in and out."
+        "word": "der Fisch",
+        "surface": "Fisch",
+        "definition": "A fish; the animal that lives in water and is eaten."
       },
       {
         "type": "noun",
-        "word": "die Hand",
-        "surface": "Hand",
-        "definition": "A hand; the part of the arm you hold with."
+        "word": "die Fähre",
+        "surface": "Fähre",
+        "definition": "A ferry; the boat that crosses the lake on a fixed route."
+      },
+      {
+        "type": "noun",
+        "word": "das Glas",
+        "surface": "Gläser",
+        "definition": "A glass; the clear vessel you drink from."
       },
       {
         "type": "verb",
-        "word": "bleiben",
-        "surface": "bleibt",
-        "definition": "To stay; to remain in the same place."
-      },
-      {
-        "type": "noun",
-        "word": "das Wasser",
-        "surface": "Wasser",
-        "definition": "Water; the liquid of seas, rivers and rain."
+        "word": "sammeln",
+        "surface": "sammelt",
+        "definition": "To gather; to pick things up and collect them together."
       },
       {
         "type": "verb",
-        "word": "antworten",
-        "surface": "antwortet",
-        "definition": "To answer; to reply to a question."
-      },
-      {
-        "type": "noun",
-        "word": "der Zug",
-        "surface": "Zug",
-        "definition": "A train; the vehicle that runs on rails."
+        "word": "reparieren",
+        "surface": "repariert",
+        "definition": "To mend; to make something whole again."
       },
       {
         "type": "verb",
-        "word": "legen",
-        "surface": "legt",
-        "definition": "To lay or put something somewhere gently."
+        "word": "schließen",
+        "surface": "schließt",
+        "definition": "To close; to shut a hand or a door."
       },
       {
-        "type": "noun",
-        "word": "der Tisch",
-        "surface": "Tisch",
-        "definition": "A table; furniture with a flat top for eating."
+        "type": "adjective",
+        "word": "süß",
+        "surface": "süß",
+        "definition": "Sweet; tasting of sugar."
       },
       {
-        "type": "noun",
-        "word": "der See",
-        "surface": "See",
-        "definition": "A lake; a large body of still water."
+        "type": "adjective",
+        "word": "sauer",
+        "surface": "sauer",
+        "definition": "Sour; sharp on the tongue, like a lemon."
       },
       {
-        "type": "noun",
-        "word": "die Stunde",
-        "surface": "Stunden",
-        "definition": "An hour; sixty minutes of time."
+        "type": "verb",
+        "word": "füllen",
+        "surface": "füllt",
+        "definition": "To fill; to put liquid into a glass until it is full."
       }
     ],
     "arcType": null

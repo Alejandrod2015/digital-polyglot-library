@@ -1,0 +1,15 @@
+import * as fs from "fs";
+const B="/Users/alejandrodelcarpio/digital-polyglot-library/.claude/worktrees/practical-austin-02dea1/scripts/_deA0Rewrite";
+const a0=JSON.parse(fs.readFileSync(B+"/de-a0-v9.json","utf8"));
+const tok=(t:string)=>(t.toLowerCase().match(/\p{L}+/gu)??[]);
+const cuerpos=a0.map((s:any)=>new Set(tok(String(s.text))));
+const clave=(x:string)=>x.toLowerCase().replace(/^(der|die|das)\s+/,"");
+const uso=new Map<string,{slots:number; enc:number; donde:number[]}>();
+a0.forEach((s:any,i:number)=>{ for(const v of s.vocab){ const k=clave(String(v.surface));
+  const e=uso.get(k)??{slots:0,enc:0,donde:[]}; e.slots++; e.donde.push(i+1); uso.set(k,e); }});
+for(const [k,e] of uso) e.enc=cuerpos.filter((c:Set<string>)=>c.has(k)).length;
+const filas=[...uso.entries()].map(([k,e])=>({k,...e}));
+const ganancia=filas.filter(f=>f.enc<3).sort((a,b)=>b.slots-a.slots||a.enc-b.enc);
+console.log("superficies con 2 plazas y pocos encuentros (cada cuerpo nuevo suma 2):");
+console.log(ganancia.filter(f=>f.slots===2).map(f=>`${f.k}(enc${f.enc},h${f.donde.join("+")})`).join(" "));
+console.log("\ndeficit total de encuentros para llegar a 3,0:", Math.round(3*420 - filas.reduce((a,f)=>a+f.enc*f.slots,0)));

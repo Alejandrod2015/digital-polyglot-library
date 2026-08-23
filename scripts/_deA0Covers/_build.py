@@ -73,7 +73,7 @@ FICHA = {
  "broad shoulders and large working hands, almond eyes with a blue iris; he "
  "always wears the same clothes: a navy blue knitted sweater and dark work "
  "trousers"),
-"marie": ("Marie, a woman of 48, middle aged and NOT elderly, dark brown hair "
+"marie": ("Katrin, a woman of 48, middle aged and NOT elderly, dark brown hair "
  "with no grey pinned up in a loose bun, smooth skin with only soft laugh "
  "lines, almond eyes with a dark brown iris; she always wears the same "
  "clothes: a plum purple apron over a cream blouse and a long dark skirt"),
@@ -262,12 +262,12 @@ scene("der-leuchtturm-von-kap-arkona",
  ["hannah", "leon"])
 
 # --- Topic 6: Nuernberg -------------------------------------------------
-scene("maries-lebkuchen-am-hauptmarkt",
+scene("katrins-lebkuchen-am-hauptmarkt",
  "A busy Friday morning at a gingerbread stall on the big market square in "
  "Nuernberg, the ornate church front behind. The stall counter is stacked "
  "with round gingerbread biscuits and colourful old painted tin boxes "
  "decorated only with simple flower patterns and no writing at all; there are "
- "no price signs, no boards and no labels anywhere on the stall. Marie leans "
+ "no price signs, no boards and no labels anywhere on the stall. Katrin leans "
  "over the counter holding out one piece of gingerbread to Hannah, who takes "
  "it; one customer waits to one side. Warm morning light, saturated reds and "
  "golds.",
@@ -279,7 +279,7 @@ scene("zinnfiguren-in-der-werkstatt-kleeblatt",
  "Inside a narrow, warm pewter caster's workshop. A craftsman tips a small "
  "ladle of glowing molten metal carefully into a heavy grey stone mould on "
  "the bench; a tiny finished knight figure the size of a thumb stands on the "
- "bench beside it. Marie watches from close by with her hands folded, "
+ "bench beside it. Katrin watches from close by with her hands folded, "
  "speaking quietly; Hannah stands next to her looking down at the little "
  "figure. Warm orange glow from the metal against cool grey stone.",
  ["hannah", "marie"],
@@ -290,9 +290,9 @@ scene("zinnfiguren-in-der-werkstatt-kleeblatt",
 scene("bratwurst-am-kettensteg",
  "Midday on the stone steps at the water's edge beside the old iron chain "
  "footbridge hanging over the narrow river in Nuernberg, thin grey smoke from "
- "a grill drifting through the lane behind. Marie and Hannah sit side by side "
+ "a grill drifting through the lane behind. Katrin and Hannah sit side by side "
  "on the steps, each holding a bread roll with small grilled sausages in it; "
- "Marie is chewing slowly and looking at the water with wet eyes; Hannah has "
+ "Katrin is chewing slowly and looking at the water with wet eyes; Hannah has "
  "turned towards her. Ducks sleep on the stones under the bridge. Bright "
  "midday light, warm greys and greens.",
  ["hannah", "marie"])

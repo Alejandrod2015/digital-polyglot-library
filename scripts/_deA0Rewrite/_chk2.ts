@@ -16,7 +16,7 @@ const J="cmt0a8vb1000m32p1x7r5ba28";
   const duro=new Set<string>(), blando=new Set<string>();
   for(const r of otras){ const d = r.journey?.typeSlug===mio!.typeSlug ? duro : blando;
     for(const v of ((r.vocab as any[])??[])) if(v?.word) d.add(lema(String(v.word))); }
-  const a0=JSON.parse(fs.readFileSync("" + __dirname + "/de-a0-v2.json","utf8"));
+  const a0=JSON.parse(fs.readFileSync("" + __dirname + "/de-a0-v5.json","utf8"));
   const yaSlot=new Map<string,string>(); for(const s of a0) for(const v of (s.vocab??[])) yaSlot.set(lema(v.word), s.title);
   const cand = process.argv.slice(2);
   for(const w of cand){ const k=lema(w);

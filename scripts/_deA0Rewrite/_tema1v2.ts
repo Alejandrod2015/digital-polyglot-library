@@ -41,7 +41,7 @@ a0[1].vocab = [
  V("noun","der Morgen","Morgen","The morning; the first hours of the day, before midday."),
  V("noun","das Schiff","Schiff","A ship; a large boat that carries people or goods on water."),
  V("noun","der Stein","Stein","Stone; the hard grey material a bridge or a wall is built of."),
- V("noun","die Hand","Hände","A hand; the part of the body at the end of the arm."),
+ V("noun","die Hand","Hand","A hand; the part of the body at the end of the arm."),
  V("noun","der Arm","Arm","An arm; the long part of the body between shoulder and hand."),
  V("noun","das Zimmer","Zimmer","A room; one of the separate spaces inside a house."),
  V("noun","die Tasche","Tasche","A bag; the soft thing you carry your belongings in."),
