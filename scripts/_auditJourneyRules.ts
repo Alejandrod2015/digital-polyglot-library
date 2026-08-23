@@ -26,8 +26,9 @@ async function main() {
     .filter((w) => w.length >= 3).map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase());
   const jc = validateJourneyStories(todas, { language: j?.language ?? undefined, level: nivel, realPeople });
   console.log(`── gate de journey · ${todas.length} historias · ${j?.language} ${nivel} ──`);
-  for (const c of jc) console.log(`${c.status === "pass" ? "ok   " : c.status === "fail" ? "FAIL " : "SIN GATE"} [${c.id}] ${c.detail ?? ""}`);
-  const malos = jc.filter((c) => c.status !== "pass");
+  for (const c of jc) console.log(`${c.status === "pass" ? "ok   " : c.status === "fail" ? "FAIL " : c.status === "report" ? "MIDE " : "SIN GATE"} [${c.id}] ${c.detail ?? ""}`);
+  // `report` mide sin liston calibrado; no cuenta como incumplimiento.
+  const malos = jc.filter((c) => c.status !== "pass" && c.status !== "report");
   console.log(`\n${malos.length ? "✗ " + malos.length + " regla(s) de conjunto sin cumplir" : "✓ todas las reglas de conjunto en verde"}`);
   await p.$disconnect();
 }

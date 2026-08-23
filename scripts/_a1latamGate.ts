@@ -23,7 +23,7 @@ const p = new PrismaClient();
                      vocab: f.vocab as never, language: j.language, level: j.levels[0] }));
     console.log(`\n===== ${j.name} ${j.language}/${j.variant} ${JSON.stringify(j.levels)} (${todas.length} historias)`);
     for (const c of validateJourneyStories(todas, { language: j.language, level: j.levels[0], realPeople: real }))
-      console.log(`  ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : "SIN "} [${c.id}] ${(c.detail ?? "").slice(0, 300)}`);
+      console.log(`  ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : c.status === "report" ? "MIDE" : "SIN "} [${c.id}] ${(c.detail ?? "").slice(0, 300)}`);
   }
   await p.$disconnect();
 })();

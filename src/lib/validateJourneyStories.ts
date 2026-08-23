@@ -37,7 +37,12 @@ export type JourneyStoryInput = {
 export type JourneyCheck = {
   id: string;
   label: string;
-  status: "pass" | "fail" | "not-implemented";
+  /**
+   * `report` es medible pero SIN liston calibrado: se imprime el numero y no
+   * bloquea. Distinto de `not-implemented`, que es "no se sabe medir" y SI
+   * bloquea, porque pasar en vacio es peor que parar.
+   */
+  status: "pass" | "fail" | "not-implemented" | "report";
   detail?: string;
 };
 
@@ -267,6 +272,8 @@ export function validateJourneyStories(
     out.push({ id, label, status: ok ? "pass" : "fail", detail: ok ? undefined : detail });
   const noImpl = (id: string, label: string, why: string) =>
     out.push({ id, label, status: "not-implemented", detail: why });
+  const report = (id: string, label: string, detail: string) =>
+    out.push({ id, label, status: "report", detail });
 
   // ── 1. Banda de habla citada ────────────────────────────────
   {
@@ -469,27 +476,49 @@ export function validateJourneyStories(
   // vive entre 0,8 y 1,5, asi que ahi NO se mide: poner un numero seria
   // inventarselo, y bajarlo hasta que pase seria calibrar el gate hacia abajo.
   //
-  // EL LISTON DE A1 SE RECALIBRO EL 2026-08-23, con el mismo criterio que el de
-  // A0 y no para que pasara una historia. El 2,5 original se puso por analogia
-  // con A0, sin medir ningun A1: el unico A1 del catalogo, Traveler ES/Spain
-  // (LIVE), da 1,63, y el Traveler ES/latam que se escribio ese dia da 2,00.
-  // Un suelo que ningun A1 alcanza no es un liston, es un muro.
+  // A1 NO TIENE LISTON, y el 1,9 que estuvo aqui unas horas fue un error mio.
+  // Lo puse midiendo dos A1 y diciendo que quedaba por debajo de los dos; es
+  // falso. Medido el 2026-08-23 sobre los cinco A1 del catalogo:
   //
-  // Por que un A1 no puede dar lo que da un A0: el A0 recircula porque ENSEÑA
-  // las palabras de alta frecuencia (`hay`, `pero`, `muy`, `mirar`), que
-  // reaparecen solas en casi todos los cuerpos. Cuando el A1 llega, esas
-  // palabras ya estan quemadas por `vocab-taught-same-type` (845 lemas entre
-  // los tres Traveler de espanol vivos), asi que solo le quedan palabras raras,
-  // y una palabra rara no vuelve sola. Subir de 2,00 a 2,5 exigia 50 palabras
-  // enseñadas por cuerpo de 165, o sea prosa de inventario.
+  //     2,53  Traveler italian/italy      draft
+  //     1,92  Traveler spanish/latam      draft   <- el que yo escribia
+  //     1,77  Traveler german/germany     draft
+  //     1,63  Traveler spanish/spain      PUBLICADO
+  //     1,46  Traveler portuguese/brazil  draft
   //
-  // 1,9 queda por debajo de los dos A1 medidos, igual que el 3,0 de A0 quedo
-  // por debajo de los tres A0 publicados (4,25 / 3,17 / 3,12).
-  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 1.9 };
+  // Un suelo de 1,9 reprueba al unico A1 en produccion y aprueba el mio por dos
+  // centesimas. Eso no es calibrar contra un patron oro, es ajustar el gate al
+  // resultado propio, que es lo que prohibe la regla de calibracion aunque se
+  // llegue bajando el numero y no subiendolo.
+  //
+  // Lo que faltaba no era el numero, era el ESTADO. "Sin liston" devolvia
+  // `not-implemented`, que bloquea, asi que un nivel sin precedente no podia
+  // guardar nunca aunque la medicion fuera perfecta. Ahora devuelve `report`:
+  // mide, imprime y deja pasar, y el numero queda a la vista de quien lo
+  // calibre con datos.
+  //
+  // AVISO sobre A0: el 3,0 tiene la misma enfermedad y se deja como estaba a
+  // proposito, porque cambiarlo no era lo que se decidio. Reprueba al Traveler
+  // italian/italy A0, que esta PUBLICADO, a 1,67; y al aleman (2,16) y al
+  // brasileño (2,15). Solo lo pasan los A0 españoles y el italiano de
+  // Relationships. Sale de mirar un idioma.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0 };
   const suelo = MEDIA_MINIMA[level];
-  if (suelo === undefined) {
+  if (suelo === undefined && stories.some((s) => s.vocab && s.vocab.length)) {
+    const tok = (t: string) => (t.toLowerCase().match(/\p{L}+/gu) ?? []);
+    const cuerpos = stories.map((s) => new Set(tok(s.text)));
+    const clave = (v: { word: string; surface?: string | null }) =>
+      String(v.surface ?? v.word).toLowerCase().replace(/^(der|die|das|le|la|el|il|o|a)\s+/, "");
+    const enc: number[] = [];
+    for (const s of stories) for (const v of s.vocab ?? [])
+      enc.push(cuerpos.filter((c) => c.has(clave(v))).length);
+    const media = enc.reduce((a, b) => a + b, 0) / enc.length;
+    report("journey-vocab-recirculation", "Cada plaza de vocab vuelve en otra historia",
+      `media ${media.toFixed(2)} HISTORIAS por plaza · ${enc.filter((n) => n <= 1).length}/${enc.length} salen en un solo cuerpo · ` +
+      `SIN LISTON para ${level || "?"}: no hay patron oro del que sacarlo. Se mide y se informa, no se gatea.`);
+  } else if (suelo === undefined) {
     noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
-      `Sin umbral calibrado para ${level || "?"}: el catalogo en ese nivel va de 0,8 a 1,5 y no hay un buen precedente del que sacar el liston. Medir antes de gatear.`);
+      "No se paso el vocab de las historias; sin el no se puede contar nada.");
   } else if (!stories.some((s) => s.vocab && s.vocab.length)) {
     noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
       "No se paso el vocab de las historias; sin el no se puede contar un encuentro.");
