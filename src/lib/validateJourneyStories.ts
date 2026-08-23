@@ -74,6 +74,9 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
   // historia de cada tema se narra en pasado y con solo el presente el reparto
   // salia vacio (`protagonista ?`).
   PT: "diz|disse|pergunta|perguntou|responde|respondeu|avisa|avisou|repete|repetiu|conta|contou|explica|explicou|grita|gritou|chama|chamou|pede|pediu|ri|riu|ensina|ensinou|escreve|escreveu",
+  // Italiano: presente, que es el tiempo del corpus italiano publicado, mas los
+  // verbos de habla que de verdad salen pegados al nombre en prosa narrada.
+  IT: "dice|chiede|risponde|ripete|spiega|racconta|grida|chiama|aggiunge|ammette|promette|conta|scrive|legge|ride|sorride|indica|avverte|insiste|protesta|mormora|sospira|annuisce|tace",
 };
 function castOf(stories: JourneyStoryInput[], lang: string): string[] {
   const HABLA = HABLA_POR_IDIOMA[lang] ?? HABLA_POR_IDIOMA.DE;
@@ -141,9 +144,34 @@ const FORMAS_PT: Array<[string, (n: string) => RegExp]> = [
   ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+(?:${VERBO_SER_PT})\\b`, "iu")],
 ];
 
+/**
+ * Las tres formas aprobadas en ITALIANO, calcadas de las portuguesas
+ * ([[feedback_introduce_characters]]) porque la regla es la misma y lo unico
+ * que cambia es la lengua:
+ *
+ *   aposicion   Rosa, una ragazza di Torino, carica la valigia...
+ *   chi         Chi apre il cancello e Teo, un barista di Napoli che...
+ *   nombre      Teo lavora al bar dello zio da sei anni.
+ *
+ * La tercera pide un verbo que DIGA QUE ES la persona (oficio, papel o cuanto
+ * lleva ahi); "Rosa arriva" no presenta a nadie y por eso su verbo no entra.
+ */
+const NUC_IT = "(?:[a-zà-ù']+\\s+){0,3}[a-zà-ù]+";
+const VERBO_SER_IT =
+  "(?:è|era|fa|faceva|lavora|lavorava|vive|viveva|abita|abitava|guida|guidava|" +
+  "vende|vendeva|insegna|insegnava|gestisce|gestiva|ripara|riparava|cura|curava|" +
+  "cucina|cucinava|suona|suonava|studia|studiava|pesca|pescava|coltiva|coltivava|" +
+  "serve|serviva|apre|apriva|porta|portava|affitta|affittava|consegna|consegnava)";
+const FORMAS_IT: Array<[string, (n: string) => RegExp]> = [
+  ["aposicion", (n) => new RegExp(`${n},\\s+(?:un|uno|una|un')\\s*${NUC_IT}`, "iu")],
+  ["chi", (n) => new RegExp(`\\bChi\\s+[a-zà-ù]+(?:\\s+[a-zà-ù]+){0,2}\\s+è\\s+${n}\\b`, "iu")],
+  ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+(?:${VERBO_SER_IT})\\b`, "iu")],
+];
+
 const FORMAS_POR_IDIOMA: Record<string, Array<[string, (n: string) => RegExp]>> = {
   DE: FORMAS_DE,
   PT: FORMAS_PT,
+  IT: FORMAS_IT,
 };
 
 /** Forma de la apertura: que clase de sujeto abre la primera frase. */
@@ -156,6 +184,24 @@ function openingShapePT(text: string): string {
   if (/^(No|Na|Nos|Nas|Do|Da|Dos|Das|Ao|À|Em|Entre|Dentro|Atrás|Depois|Antes|Sobre|Debaixo)$/.test(w)) return "lugar o tiempo delante";
   if (/^(Às|Aos|Quinze|Dois|Duas|Três|Quatro|Cinco|Seis|Sete|Oito|Dez|Vinte|Trinta|Meia|Cada|Todo|Toda)$/.test(w)) return "hora o cantidad";
   if (/^Quem\b/.test(f)) return "quem + verbo";
+  if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
+  return "otra";
+}
+
+/** Forma de la apertura en italiano. Mismo criterio que la portuguesa. */
+function openingShapeIT(text: string): string {
+  const f = sentences(text)[0] ?? "";
+  const w = (f.split(/\s+/)[0] ?? "").replace(/[.,:;]$/, "");
+  if (f.startsWith(QUOTE_OPEN)) return "replica directa";
+  if (/^Chi\b/.test(f)) return "chi + verbo";
+  // La hora va ANTES que el lugar porque "Alle sette" es las dos cosas a la vez
+  // y lo que hace de sujeto aplazado es la hora.
+  if (/^(Alle|All'|Verso|Mezz'|Due|Tre|Quattro|Cinque|Sei|Sette|Otto|Nove|Dieci|Undici|Dodici|Venti|Trenta|Cento|Mille|Ogni|Tutti|Tutte|Pochi|Poche|Molti|Molte|Nessuno|Nessuna|Qualcuno)$/.test(w))
+    return "hora o cantidad";
+  if (/^(Il|Lo|La|I|Gli|Le|L')$/.test(w)) return "articulo definido + sustantivo";
+  if (/^(Un|Uno|Una|Un')$/.test(w)) return "articulo indefinido + sustantivo";
+  if (/^(A|Al|Allo|Ai|Agli|In|Nel|Nello|Nella|Nei|Negli|Nelle|Su|Sul|Sullo|Sulla|Sui|Sugli|Sulle|Da|Dal|Dallo|Dalla|Dai|Dagli|Dalle|Davanti|Dietro|Dopo|Prima|Sopra|Sotto|Fuori|Dentro|Tra|Fra|Verso|Lungo|Accanto|Intorno|Oltre|Durante|Quando|Mentre|Appena|Poi|Adesso|Ora|Oggi|Ieri|Domani|Stamattina|Stasera|Dentro)$/.test(w))
+    return "lugar o tiempo delante";
   if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
   return "otra";
 }
@@ -255,7 +301,7 @@ export function validateJourneyStories(
   {
     const porForma = new Map<string, string[]>();
     for (const s of stories) {
-      const f = lang === "PT" ? openingShapePT(s.text) : openingShape(s.text);
+      const f = lang === "PT" ? openingShapePT(s.text) : lang === "IT" ? openingShapeIT(s.text) : openingShape(s.text);
       porForma.set(f, [...(porForma.get(f) ?? []), s.slug]);
     }
     const tope = Math.max(2, Math.ceil(stories.length / 3));
@@ -332,7 +378,10 @@ export function validateJourneyStories(
 
   // ── 8. Ni ancianos ni ninos ────────────────────────────────
   {
-    const EDAD = /\b(Kind|Kinder|Junge|Jungen|Mädchen|Baby|Enkel\w*|Oma|Opa|Großmutter|Großvater|Rentner\w*|Greis\w*|Teenager)\b/g;
+    // El detector solo conocia el aleman, asi que sobre un cuerpo italiano o
+    // portugues pasaba en vacio y parecia cobertura. Se anaden IT y PT/ES, que
+    // son los idiomas del catalogo con journeys vivos.
+    const EDAD = /\b(Kind|Kinder|Junge|Jungen|Mädchen|Baby|Enkel\w*|Oma|Opa|Großmutter|Großvater|Rentner\w*|Greis\w*|Teenager|bambin[oaie]|bambin[ae]|ragazzin[oaie]|nonn[oaie]|anzian[oaie]|neonat[oaie]|adolescent[ei]|pensionat[oaie]|vecchiett[oaie]|crianç?[ae]s?|menin[oa]s?|avô|avó|avós|idos[oa]s?|niñ[oa]s?|abuel[oa]s?|ancian[oa]s?)\b/gi;
     const halladas = new Set<string>();
     for (const s of stories) for (const m of s.text.matchAll(EDAD)) halladas.add(m[0]);
     push("journey-no-elderly-no-children", "Ni ancianos ni ninos en contenido nuevo",
@@ -341,7 +390,7 @@ export function validateJourneyStories(
 
   // ── 9. Sin comentarios sobre el acento ─────────────────────
   {
-    const AC = /\b(Akzent|Dialekt|Mundart|acento|sotaque|accent)\b/gi;
+    const AC = /\b(Akzent|Dialekt|Mundart|acento|sotaque|accent|accento|dialetto|cadenza)\b/gi;
     const halladas = new Set<string>();
     for (const s of stories) for (const m of s.text.matchAll(AC)) halladas.add(m[0]);
     push("journey-no-accent-mentions", "Las historias no comentan el acento de nadie",

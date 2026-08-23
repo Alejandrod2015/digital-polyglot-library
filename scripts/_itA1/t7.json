@@ -1,0 +1,407 @@
+[
+ {
+  "topic": "bureaucracy-and-paperwork",
+  "slotIndex": 1,
+  "title": "Lo sportello chiude alle dodici",
+  "slug": "lo-sportello-chiude-alle-dodici",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Alle undici e quaranta del quattordici il numerino di Rosa è il quarantuno e sul tabellone lampeggia il trentotto, e lo sportello chiude alle dodici in punto. Chi aspetta con il contratto in mano è l'uomo del garage di via Lincoln, che con questa consegna non c'entra niente e ci ha comunque messo la mattina. Restano venti minuti e un modulo che nessuno dei due sapeva di dover firmare.",
+  "text": "Lo sportello chiude alle dodici e il numerino di Rosa è il quarantuno. Nel silenzio Teo si siede accanto a Nico, che lavora al garage di via Lincoln da quattro anni e tiene il contratto. “Il tabellone va piano, però alle dodici chiudono”, dice Nico a Rosa, che stringe la busta dei documenti.\n\n“Se non timbrano oggi, tutto passa al prossimo mercoledì e la scadenza salta”, spiega Nico. Rosa tira fuori dalla busta la patente, il passaporto e il libretto della macchina. Teo conta i numeri che mancano e manda un messaggio al capo con il cellulare.\n\nAlle dodici meno cinque succede quello che nessuno aspettava. L'impiegata guarda i fogli, mette un timbro e ne chiede un altro. “Questo modulo lo deve firmare chi consegna e non chi riceve”, dice lei.\n\nRosa firma sopra il timbro e la donna scrive le dodici e uno. “È passato un minuto e non lo scrivo, però la prossima volta arrivate prima”, dice. Fuori Nico ride come uno che ha vinto e non è mai stato ricco, e la multa del casello arriva spedita.",
+  "vocab": [
+   {
+    "word": "sportello",
+    "surface": "sportello",
+    "type": "noun",
+    "definition": "Counter window; the small opening where an office serves you."
+   },
+   {
+    "word": "numerino",
+    "surface": "numerino",
+    "type": "noun",
+    "definition": "Queue ticket; the little paper with your number on it."
+   },
+   {
+    "word": "contratto",
+    "surface": "contratto",
+    "type": "noun",
+    "definition": "Contract; the paper two sides sign to agree on a job."
+   },
+   {
+    "word": "prossimo",
+    "surface": "prossimo",
+    "type": "adjective",
+    "definition": "Next; the one that comes straight after this one."
+   },
+   {
+    "word": "mercoledì",
+    "surface": "mercoledì",
+    "type": "noun",
+    "definition": "Wednesday; the day in the middle of the working week."
+   },
+   {
+    "word": "scadenza",
+    "surface": "scadenza",
+    "type": "noun",
+    "definition": "Deadline; the last day something can still be done."
+   },
+   {
+    "word": "patente",
+    "surface": "patente",
+    "type": "noun",
+    "definition": "Driving licence; the card that says you are allowed to drive."
+   },
+   {
+    "word": "passaporto",
+    "surface": "passaporto",
+    "type": "noun",
+    "definition": "Passport; the small book you show to cross a border."
+   },
+   {
+    "word": "documento",
+    "surface": "documenti",
+    "type": "noun",
+    "definition": "Document; an official paper with your name on it."
+   },
+   {
+    "word": "mandare",
+    "surface": "manda",
+    "type": "verb",
+    "definition": "To send; to make something go to another person or place."
+   },
+   {
+    "word": "succedere",
+    "surface": "succede",
+    "type": "verb",
+    "definition": "To happen; to take place without anybody planning it."
+   },
+   {
+    "word": "impiegata",
+    "surface": "impiegata",
+    "type": "noun",
+    "definition": "Female clerk; the woman who works behind an office counter."
+   },
+   {
+    "word": "timbro",
+    "surface": "timbro",
+    "type": "noun",
+    "definition": "Stamp; the ink mark an office puts on a paper to make it valid."
+   },
+   {
+    "word": "modulo",
+    "surface": "modulo",
+    "type": "noun",
+    "definition": "Form; the sheet with empty lines you have to fill in."
+   },
+   {
+    "word": "firmare",
+    "surface": "firma",
+    "type": "verb",
+    "definition": "To sign; to write your own name at the bottom of a paper."
+   },
+   {
+    "word": "consegnare",
+    "surface": "consegna",
+    "type": "verb",
+    "definition": "To hand over; to give a thing to the person waiting for it."
+   },
+   {
+    "word": "vincere",
+    "surface": "vinto",
+    "type": "verb",
+    "definition": "To win; to come first or to get what you were fighting for."
+   },
+   {
+    "word": "ricco",
+    "surface": "ricco",
+    "type": "adjective",
+    "definition": "Rich; with a lot of money and no worry about it."
+   },
+   {
+    "word": "multa",
+    "surface": "multa",
+    "type": "noun",
+    "definition": "Fine; the money you pay when you break a traffic rule."
+   },
+   {
+    "word": "spedire",
+    "surface": "spedita",
+    "type": "verb",
+    "definition": "To post; to send a letter or a parcel through the post office."
+   },
+   {
+    "word": "busta",
+    "surface": "busta",
+    "type": "noun",
+    "definition": "Envelope; the paper cover you keep letters or papers inside."
+   }
+  ]
+ },
+ {
+  "topic": "bureaucracy-and-paperwork",
+  "slotIndex": 2,
+  "title": "Al terzo modulo Rosa firma",
+  "slug": "al-terzo-modulo-rosa-firma",
+  "arcType": "reframe-turn",
+  "synopsis": "Al terzo modulo Rosa capisce che una consegna non finisce con un timbro, perché il garage vuole un verbale con dentro tutti i danni della macchina. Mentre lei scrive la riga più cara del viaggio, Teo si lava, si rade e si veste per un aereo delle sei. Poi Nico apre la busta arrivata da Torino, e quello che c'è scritto lì dentro cambia chi deve delle scuse a chi.",
+  "text": "Al terzo modulo Rosa capisce che la consegna non finisce con un timbro. L'impiegato apre un portatile e vuole un verbale con scritti tutti i danni. Teo intanto si lava, si spoglia e si rade nel bagno, con la camicia pulita sul braccio.\n\n“Il graffio lo devi scrivere tu, con la data di oggi e la tua firma”, spiega Nico. Rosa scrive del graffio sulla portiera, la riga più cara del viaggio, e mette la firma. Teo si veste con una camicia nuova, si pettina e mette una cravatta corta.\n\nPoi Nico apre la busta e tira fuori i documenti marroni del garage. Sotto la targa c'è già scritto graffio portiera destra, e Teo controlla l'ora dell'aereo. “L'assicurazione copre i danni vecchi”, aggiunge Nico, “e questo è vecchio di un anno, guarda la data di agosto.”\n\nLa cosa la sorprende, Rosa non si sente intelligente e la stanchezza torna. “Mi dispiace”, dice lei, “dovevo crederti già sul ponte, quella sera, e invece non l'ho fatto.” Teo prende un taxi per l'aeroporto con l'abito piegato, e Nico guarda la macchina come una cosa bella.",
+  "vocab": [
+   {
+    "word": "verbale",
+    "surface": "verbale",
+    "type": "noun",
+    "definition": "Written report; the page where damage is listed and signed."
+   },
+   {
+    "word": "impiegato",
+    "surface": "impiegato",
+    "type": "noun",
+    "definition": "Clerk; the man who works behind an office counter."
+   },
+   {
+    "word": "lavarsi",
+    "surface": "lava",
+    "type": "verb",
+    "definition": "To wash yourself; to clean your own face, hands or body."
+   },
+   {
+    "word": "spogliarsi",
+    "surface": "spoglia",
+    "type": "verb",
+    "definition": "To undress; to take off the clothes you are wearing."
+   },
+   {
+    "word": "radersi",
+    "surface": "rade",
+    "type": "verb",
+    "definition": "To shave; to cut the hair off your face with a blade."
+   },
+   {
+    "word": "marrone",
+    "surface": "marroni",
+    "type": "adjective",
+    "definition": "Brown; the colour of wood, coffee or dry leaves."
+   },
+   {
+    "word": "nuovo",
+    "surface": "nuova",
+    "type": "adjective",
+    "definition": "New; just bought or just made, never used before."
+   },
+   {
+    "word": "firma",
+    "surface": "firma",
+    "type": "noun",
+    "definition": "Signature; your own name written by hand at the bottom."
+   },
+   {
+    "word": "vestirsi",
+    "surface": "veste",
+    "type": "verb",
+    "definition": "To get dressed; to put your clothes on before going out."
+   },
+   {
+    "word": "pettinarsi",
+    "surface": "pettina",
+    "type": "verb",
+    "definition": "To comb your hair; to put it in order with a comb."
+   },
+   {
+    "word": "cravatta",
+    "surface": "cravatta",
+    "type": "noun",
+    "definition": "Tie; the long strip of cloth men knot around the collar."
+   },
+   {
+    "word": "corto",
+    "surface": "corta",
+    "type": "adjective",
+    "definition": "Short; not long enough for what it has to cover."
+   },
+   {
+    "word": "assicurazione",
+    "surface": "assicurazione",
+    "type": "noun",
+    "definition": "Insurance; what you pay so somebody else covers the damage."
+   },
+   {
+    "word": "sorprendere",
+    "surface": "sorprende",
+    "type": "verb",
+    "definition": "To surprise; to be different from what somebody expected."
+   },
+   {
+    "word": "intelligente",
+    "surface": "intelligente",
+    "type": "adjective",
+    "definition": "Clever; quick to understand how things really are."
+   },
+   {
+    "word": "taxi",
+    "surface": "taxi",
+    "type": "noun",
+    "definition": "Taxi; the car you pay to take you where you ask."
+   },
+   {
+    "word": "aeroporto",
+    "surface": "aeroporto",
+    "type": "noun",
+    "definition": "Airport; the place where planes land and take off."
+   },
+   {
+    "word": "abito",
+    "surface": "abito",
+    "type": "noun",
+    "definition": "Suit or dress; the smart clothes you keep for special days."
+   },
+   {
+    "word": "bello",
+    "surface": "bella",
+    "type": "adjective",
+    "definition": "Beautiful; nice to look at or good to have."
+   },
+   {
+    "word": "portatile",
+    "surface": "portatile",
+    "type": "noun",
+    "definition": "Laptop; the computer you can close and carry with you."
+   },
+   {
+    "word": "aereo",
+    "surface": "aereo",
+    "type": "noun",
+    "definition": "Plane; the machine with wings that flies people between cities."
+   }
+  ]
+ },
+ {
+  "topic": "bureaucracy-and-paperwork",
+  "slotIndex": 3,
+  "title": "Nico offre dodici consegne",
+  "slug": "nico-offre-dodici-consegne",
+  "arcType": "harmonic-close",
+  "synopsis": "Nico abita sopra il garage, in un appartamento con un quadro storto e uno scaffale di manuali, e Rosa sale a ritirare quello che le spetta. Sul tavolo c'è la proposta che aspettava da sei anni senza saperlo: una consegna al mese, da gennaio a dicembre, con una data fissa per il pagamento. Per la prima volta Rosa non risponde subito di sì.",
+  "text": "Nico abita sopra il garage, in un appartamento con la finestra sul cortile. Nel soggiorno fa caldo, con un quadro storto, uno scaffale e un aspirapolvere. Rosa sale a ritirare quello che le spetta, con la ricevuta in mano.\n\n“Torino-Palermo una volta al mese, da gennaio a dicembre, e ti paghiamo sempre il quindici”, propone Nico. Rosa pensa a sua sorella, che da anni le chiede uno stipendio normale. Sul tavolo c'è una vecchia foto con sua mamma, suo papà e uno zio.\n\n“Ci penso fino a venerdì”, risponde Rosa, e per una volta non dice subito di sì. “Pensaci pure, però il quindici parte comunque una macchina, con te oppure senza di te”, aggiunge Nico. Fuori un ragazzo lava un furgone con un secchio, e la macchina grigia non c'è più.\n\nSul treno Rosa apre la mappa, mangia due panini e prova un film che non finisce. Alle nove scrive a Teo: “Com'è andato il matrimonio, e la cravatta è sopravvissuta alla festa?”. La risposta arriva lunga, con tre foto, e la relazione fra i due cambia forma.",
+  "vocab": [
+   {
+    "word": "appartamento",
+    "surface": "appartamento",
+    "type": "noun",
+    "definition": "Flat; a home on one floor inside a bigger building."
+   },
+   {
+    "word": "soggiorno",
+    "surface": "soggiorno",
+    "type": "noun",
+    "definition": "Living room; the room with the sofa where people sit together."
+   },
+   {
+    "word": "quadro",
+    "surface": "quadro",
+    "type": "noun",
+    "definition": "Picture; a painting or a photo hanging on a wall."
+   },
+   {
+    "word": "scaffale",
+    "surface": "scaffale",
+    "type": "noun",
+    "definition": "Shelf unit; the boards on a wall where books are kept."
+   },
+   {
+    "word": "ritirare",
+    "surface": "ritirare",
+    "type": "verb",
+    "definition": "To collect; to go and pick up something that is yours."
+   },
+   {
+    "word": "gennaio",
+    "surface": "gennaio",
+    "type": "noun",
+    "definition": "January; the first month of the year in Italy."
+   },
+   {
+    "word": "dicembre",
+    "surface": "dicembre",
+    "type": "noun",
+    "definition": "December; the last month of the year, with Christmas in it."
+   },
+   {
+    "word": "sorella",
+    "surface": "sorella",
+    "type": "noun",
+    "definition": "Sister; the daughter of your own mother and father."
+   },
+   {
+    "word": "relazione",
+    "surface": "relazione",
+    "type": "noun",
+    "definition": "Relationship; the way two people get on over the years."
+   },
+   {
+    "word": "mamma",
+    "surface": "mamma",
+    "type": "noun",
+    "definition": "Mum; the warm everyday word Italians use for their mother."
+   },
+   {
+    "word": "papà",
+    "surface": "papà",
+    "type": "noun",
+    "definition": "Dad; the warm everyday word Italians use for their father."
+   },
+   {
+    "word": "venerdì",
+    "surface": "venerdì",
+    "type": "noun",
+    "definition": "Friday; the last day of the Italian working week."
+   },
+   {
+    "word": "secchio",
+    "surface": "secchio",
+    "type": "noun",
+    "definition": "Bucket; the round container you carry water in."
+   },
+   {
+    "word": "mappa",
+    "surface": "mappa",
+    "type": "noun",
+    "definition": "Map; the drawing that shows roads and towns on paper."
+   },
+   {
+    "word": "bici",
+    "surface": "bici",
+    "type": "noun",
+    "definition": "Bike; the short everyday word Italians use for a bicycle."
+   },
+   {
+    "word": "aspirapolvere",
+    "surface": "aspirapolvere",
+    "type": "noun",
+    "definition": "Vacuum cleaner; the machine that sucks the dust off a floor."
+   },
+   {
+    "word": "film",
+    "surface": "film",
+    "type": "noun",
+    "definition": "Film; the story you watch on a screen for two hours."
+   },
+   {
+    "word": "treno",
+    "surface": "treno",
+    "type": "noun",
+    "definition": "Train; the long line of carriages that runs on rails."
+   },
+   {
+    "word": "zio",
+    "surface": "zio",
+    "type": "noun",
+    "definition": "Uncle; the brother of your mother or of your father."
+   },
+   {
+    "word": "forma",
+    "surface": "forma",
+    "type": "noun",
+    "definition": "Shape; the outside line of a thing, or the way it works."
+   }
+  ]
+ }
+]

@@ -132,6 +132,59 @@ export const ITALIAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   "bugia","sogno","piano","viaggio","festa","compleanno","matrimonio","funerale",
   "riunione","appuntamento","intervista","conversazione","telefonata","chiamata",
   "salute","malattia","dolore","medicina","cura","sport","musica","canzone","film",
+
+  // ── Ampliacion 2026-08-23: viaje por carretera, alojamiento, salud, telefono
+  // y ventanilla ─────────────────────────────────────────────────────────────
+  //
+  // La lista original (792 lemas) es "el principiante practico" de casa: cocina,
+  // familia, escuela, ropa. No tiene NADA de lo que un A1/A2 de viaje necesita,
+  // asi que empujaba a ensenar justo lo que el A0 ya habia ensenado. Mismo caso
+  // y mismo remedio que el portugues, que paso de 808 a ~950 lemas por esto
+  // ([[feedback_vocab_zero_overlap_across_journeys]]).
+  //
+  // CRITERIO: entra lo que esta en cualquier temario A1/A2 (Contatto A1/A2,
+  // Nuovo Espresso 1-2, CILS A1/A2 tienen unidades enteras de "in albergo",
+  // "dal medico", "in viaggio", "alla posta"). NO entra lo que solo hace falta
+  // para que pase una historia concreta: `frizione`, `tergicristallo`,
+  // `segnavia`, `raccomandata` o `verbale` son B1 y se quedan fuera a proposito;
+  // usarlas cuesta una de las dos plazas fuera de nivel que el gate permite por
+  // historia, que es justo lo que debe costar un ancla.
+
+  // Carretera y coche
+  "autostrada","benzina","distributore","parcheggio","parcheggiare","guidare","patente",
+  "multa","targa","freno","frenare","volante","curva","galleria","traffico","chilometro",
+  "velocità","limite","camion","furgone","faro","portiera","sorpassare","accelerare",
+  "navigatore","corsia","gomma","pneumatico","incidente","stanchezza",
+
+  // Telefono y corriente
+  "messaggio","batteria","carica","caricabatterie","presa","rete","password","tasto",
+  "foto","registrare","silenzioso","scaricare","ricaricare","collegare","credito",
+
+  // Alojamiento
+  "prenotare","prenotazione","chiave","doccia","rubinetto","materasso","sveglia",
+  "ricevuta","lampadina","zanzara","cortile","campanello","comodino","ospite",
+
+  // Campo y monte
+  "pino","ramo","sentiero","fango","nebbia","riposare","seguire","perdersi","sudare",
+  "bagnato","insetto","castagna","radice","torcia","salita","discesa","sasso",
+
+  // Fiesta de pueblo
+  "banda","tromba","tamburo","santo","statua","griglia","salsiccia","sindaco","ballo",
+  "discorso","microfono","bandiera","fumo","piazza",
+
+  // Farmacia y medico
+  "farmacia","farmacista","ricetta","sciroppo","pastiglia","cerotto","febbre",
+  "termometro","tosse","raffreddore","gola","dottore","medico","riposo","ambulanza",
+  "caviglia","respirare",
+
+  // Ventanilla y papeles
+  "modulo","firma","firmare","timbro","timbrare","sportello","documento","busta",
+  "consegnare","consegna","ritirare","controllare","impiegato","impiegata","scrivania",
+  "fotocopia","contratto","ufficio","orario","fila",
+
+  // Verbos y estados de uso diario que faltaban
+  "riuscire","smettere","rimanere","promettere","svuotare","riempire","aspettare",
+  "spiegare","ripetere","decidere","provare","succedere","servire","costare","pagare",
 ]);
 
 export function isItalianA1A2(word: string): boolean {

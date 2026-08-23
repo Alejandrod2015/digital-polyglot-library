@@ -1,0 +1,407 @@
+[
+ {
+  "topic": "forest-and-hiking",
+  "slotIndex": 1,
+  "title": "Il sentiero dei castagni",
+  "slug": "il-sentiero-dei-castagni",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Alle sei di mattina la macchina si ferma in un piazzale di terra sotto un rifugio dell'Appennino, e la donna che lo apre spiega dove comincia il sentiero. Teo vuole salire fino a un bosco di castagni di cui suo padre parlava da sempre, e Rosa gli concede due ore che non ha. Quello che i due trovano lassù non è quello che Teo aveva in testa da vent'anni.",
+  "text": "Alle sei la macchina si ferma in un piazzale di terra e Teo scende con la giacca. Chi apre il rifugio è Gaia, la donna di Livorno che d'estate ci lavora. Intorno ci sono la montagna, alberi vecchi, piante basse, api e silenzio.\n\n“Il sentiero da seguire è a sinistra, due ore e mezza fra i castagni”, spiega Gaia. Teo vuole andare perché suo padre parlava di quel bosco da sempre. Rosa guarda le foglie e pensa alla consegna e alla scadenza.\n\nDopo venti minuti le scarpe di Teo sono piene di fango e la caviglia di Rosa fa male. “Qui i funghi crescono anche ad agosto, me lo diceva sempre lui”, dice a Rosa. Lei inciampa su una radice, vede una farfalla sulla mano e un topo che scappa.\n\nIl castagno più grande è caduto durante l'inverno e in primavera non è ripartito. “Non è come me lo raccontava lui”, dice Teo, “però sono contento di averlo visto almeno una volta, prima o poi.” Con questo clima non torna, e Rosa non parla delle ore perse né della benzina.",
+  "vocab": [
+   {
+    "word": "terra",
+    "surface": "terra",
+    "type": "noun",
+    "definition": "Earth or ground; the soil you walk on when there is no road."
+   },
+   {
+    "word": "rifugio",
+    "surface": "rifugio",
+    "type": "noun",
+    "definition": "Mountain hut where walkers eat and sleep high up in the hills."
+   },
+   {
+    "word": "montagna",
+    "surface": "montagna",
+    "type": "noun",
+    "definition": "Mountain; a very high hill with rock and snow on top."
+   },
+   {
+    "word": "albero",
+    "surface": "alberi",
+    "type": "noun",
+    "definition": "Tree; the tall plant with a trunk, branches and green leaves."
+   },
+   {
+    "word": "pianta",
+    "surface": "piante",
+    "type": "noun",
+    "definition": "Plant; anything green that grows out of the ground."
+   },
+   {
+    "word": "ape",
+    "surface": "api",
+    "type": "noun",
+    "definition": "Bee; the small yellow and black insect that makes honey."
+   },
+   {
+    "word": "sentiero",
+    "surface": "sentiero",
+    "type": "noun",
+    "definition": "Path; the narrow way through a wood or up a hill."
+   },
+   {
+    "word": "seguire",
+    "surface": "seguire",
+    "type": "verb",
+    "definition": "To follow; to go behind somebody or along a line."
+   },
+   {
+    "word": "castagna",
+    "surface": "castagni",
+    "type": "noun",
+    "definition": "Chestnut; the brown nut Italians roast in autumn, and its tree."
+   },
+   {
+    "word": "padre",
+    "surface": "padre",
+    "type": "noun",
+    "definition": "Father; the man whose son or daughter you are."
+   },
+   {
+    "word": "foglia",
+    "surface": "foglie",
+    "type": "noun",
+    "definition": "Leaf; the flat green part that falls from a tree in autumn."
+   },
+   {
+    "word": "fango",
+    "surface": "fango",
+    "type": "noun",
+    "definition": "Mud; wet earth that sticks to your shoes after the rain."
+   },
+   {
+    "word": "fungo",
+    "surface": "funghi",
+    "type": "noun",
+    "definition": "Mushroom; the small round plant that grows in a wet wood."
+   },
+   {
+    "word": "crescere",
+    "surface": "crescono",
+    "type": "verb",
+    "definition": "To grow; to get bigger, said of plants, animals or people."
+   },
+   {
+    "word": "radice",
+    "surface": "radice",
+    "type": "noun",
+    "definition": "Root; the part of a plant that stays under the ground."
+   },
+   {
+    "word": "farfalla",
+    "surface": "farfalla",
+    "type": "noun",
+    "definition": "Butterfly; the insect with big coloured wings that flies slowly."
+   },
+   {
+    "word": "topo",
+    "surface": "topo",
+    "type": "noun",
+    "definition": "Mouse; the small grey animal that runs into a hole."
+   },
+   {
+    "word": "cadere",
+    "surface": "caduto",
+    "type": "verb",
+    "definition": "To fall; to go down to the ground and stay there."
+   },
+   {
+    "word": "inverno",
+    "surface": "inverno",
+    "type": "noun",
+    "definition": "Winter; the cold months between December and March."
+   },
+   {
+    "word": "primavera",
+    "surface": "primavera",
+    "type": "noun",
+    "definition": "Spring; the months when the trees get their leaves back."
+   },
+   {
+    "word": "clima",
+    "surface": "clima",
+    "type": "noun",
+    "definition": "Climate; the kind of weather a place usually has."
+   }
+  ]
+ },
+ {
+  "topic": "forest-and-hiking",
+  "slotIndex": 2,
+  "title": "La nebbia sale dal fondo",
+  "slug": "la-nebbia-sale-dal-fondo",
+  "arcType": "reframe-turn",
+  "synopsis": "La nebbia sale dal fondo della valle in venti minuti e copre il sentiero, i segni gialli sugli alberi e tutto il resto. Rosa vuole scendere in fretta perché la consegna è il quattordici, e in fretta sbaglia due volte la direzione senza dirlo. Chi ritrova la strada è quello che per tutto il viaggio ha voluto soltanto fermarsi, e per farlo chiude gli occhi.",
+  "text": "La nebbia sale dal fondo della valle e in venti minuti copre tutto. Gli alberi diventano ombre e Rosa, senza mappa e senza guanti, perde i segni gialli. Il maglione e la camicia di Teo sono bagnati, i calzini pieni dentro gli stivali, e lei si è persa.\n\n“Fermati un attimo e ascolta quello che arriva dal basso”, dice Teo. Dal fondo arrivano i campanacci delle mucche e la voce di un uccello. Teo scende di lì, coraggioso come non è mai stato in macchina.\n\nPoi compare una fattoria con due pecore, un cavallo e le galline. “Mio zio faceva il pastore vicino a Benevento, questi animali li conosco tutti da quando ero piccolo”, spiega lui. Rosa lo segue con la caviglia che fa male e per la prima volta non ha fretta.\n\nUna donna indica il rifugio e più sotto si vede un lago. La nebbia la spaventa e Rosa accende la torcia. “Domani si guida e basta”, dice lei, “e non ci fermiamo prima di Salerno, per nessun motivo al mondo.”",
+  "vocab": [
+   {
+    "word": "nebbia",
+    "surface": "nebbia",
+    "type": "noun",
+    "definition": "Fog; thick white air that stops you seeing far ahead."
+   },
+   {
+    "word": "guanto",
+    "surface": "guanti",
+    "type": "noun",
+    "definition": "Glove; what you put on your hands when it is cold."
+   },
+   {
+    "word": "maglione",
+    "surface": "maglione",
+    "type": "noun",
+    "definition": "Jumper; the thick wool top you wear over a shirt."
+   },
+   {
+    "word": "calzino",
+    "surface": "calzini",
+    "type": "noun",
+    "definition": "Sock; the short soft cover for your foot inside a shoe."
+   },
+   {
+    "word": "stivale",
+    "surface": "stivali",
+    "type": "noun",
+    "definition": "Boot; the tall shoe that covers part of your leg."
+   },
+   {
+    "word": "perdersi",
+    "surface": "persa",
+    "type": "verb",
+    "definition": "To get lost; to stop knowing where you are or which way to go."
+   },
+   {
+    "word": "attimo",
+    "surface": "attimo",
+    "type": "noun",
+    "definition": "Instant; a very short moment, much shorter than a minute."
+   },
+   {
+    "word": "mucca",
+    "surface": "mucche",
+    "type": "noun",
+    "definition": "Cow; the big farm animal that gives milk every day."
+   },
+   {
+    "word": "uccello",
+    "surface": "uccello",
+    "type": "noun",
+    "definition": "Bird; the animal with feathers that sings and flies."
+   },
+   {
+    "word": "coraggioso",
+    "surface": "coraggioso",
+    "type": "adjective",
+    "definition": "Brave; able to act when other people are afraid."
+   },
+   {
+    "word": "fattoria",
+    "surface": "fattoria",
+    "type": "noun",
+    "definition": "Farm; the house and land where animals are kept."
+   },
+   {
+    "word": "pecora",
+    "surface": "pecore",
+    "type": "noun",
+    "definition": "Sheep; the white farm animal with thick soft wool."
+   },
+   {
+    "word": "cavallo",
+    "surface": "cavallo",
+    "type": "noun",
+    "definition": "Horse; the big animal people ride or use to pull a cart."
+   },
+   {
+    "word": "gallina",
+    "surface": "galline",
+    "type": "noun",
+    "definition": "Hen; the farm bird that gives you eggs every morning."
+   },
+   {
+    "word": "pastore",
+    "surface": "pastore",
+    "type": "noun",
+    "definition": "Shepherd; the person who walks all day behind a flock of sheep."
+   },
+   {
+    "word": "animale",
+    "surface": "animali",
+    "type": "noun",
+    "definition": "Animal; any living thing that is not a plant or a person."
+   },
+   {
+    "word": "lago",
+    "surface": "lago",
+    "type": "noun",
+    "definition": "Lake; a large area of still water with land all around."
+   },
+   {
+    "word": "spaventare",
+    "surface": "spaventa",
+    "type": "verb",
+    "definition": "To frighten; to make somebody feel afraid of something."
+   },
+   {
+    "word": "torcia",
+    "surface": "torcia",
+    "type": "noun",
+    "definition": "Torch; the small lamp you carry to see in the dark."
+   },
+   {
+    "word": "motivo",
+    "surface": "motivo",
+    "type": "noun",
+    "definition": "Reason; the why behind a thing somebody does or says."
+   }
+  ]
+ },
+ {
+  "topic": "forest-and-hiking",
+  "slotIndex": 3,
+  "title": "Il rifugio chiude a ottobre",
+  "slug": "il-rifugio-chiude-a-ottobre",
+  "arcType": "daily-encounter",
+  "synopsis": "Dopo la tempesta Gaia riapre il rifugio e mette in tavola quello che ha, perché in agosto lassù non passa quasi nessuno e la roba va mangiata. Racconta che a ottobre chiude tutto e scende a Livorno, e che ogni marzo decide se tornare su. Teo esce a chiamare il suo capo per chiedere tre giorni in più, e rientra con una risposta corta.",
+  "text": "Dopo la tempesta Gaia riapre il rifugio e mette a tavola quello che ha. C'è una zuppa di fagioli in una ciotola grande e mezzo salame tagliato. Fuori le nuvole passano basse, la macchina è bagnata e sa di autunno.\n\n“In agosto quassù salgono in venti al giorno, a ottobre chiudo e scendo a Livorno”, racconta Gaia. Rosa mangia due volte, fagioli e patate, con lo stesso cucchiaio, e beve un caffè. Teo taglia il prosciutto e riempie una caraffa d'acqua per tutti e tre.\n\n“Ogni anno a marzo decido se torno su, e ogni anno torno”, aggiunge Gaia. Rosa fa consegne da sei anni, senza vacanze, senza stipendio e senza riposo. Fra loro tre non c'è amicizia, solo una sera che passa piano.\n\nTeo esce con il cellulare e il caricabatterie e chiama il capo. Rientra dopo dieci minuti, si siede e beve il tè che Gaia gli prepara. “Tre giorni, e il turno lo copre un collega”, dice, “poi però devo essere alla riunione di lunedì.”",
+  "vocab": [
+   {
+    "word": "tempesta",
+    "surface": "tempesta",
+    "type": "noun",
+    "definition": "Storm; heavy rain with strong wind and dark low clouds."
+   },
+   {
+    "word": "zuppa",
+    "surface": "zuppa",
+    "type": "noun",
+    "definition": "Soup; a thick hot dish with bread or beans inside it."
+   },
+   {
+    "word": "fagioli",
+    "surface": "fagioli",
+    "type": "noun",
+    "definition": "Beans; the small dry seeds cooked for hours in Italian soups."
+   },
+   {
+    "word": "ciotola",
+    "surface": "ciotola",
+    "type": "noun",
+    "definition": "Bowl; the deep round dish you eat soup from."
+   },
+   {
+    "word": "salame",
+    "surface": "salame",
+    "type": "noun",
+    "definition": "Salami; the dry sausage Italians cut in thin round slices."
+   },
+   {
+    "word": "autunno",
+    "surface": "autunno",
+    "type": "noun",
+    "definition": "Autumn; the months when the leaves fall and the air cools."
+   },
+   {
+    "word": "ottobre",
+    "surface": "ottobre",
+    "type": "noun",
+    "definition": "October; the month when the weather turns cold in the hills."
+   },
+   {
+    "word": "patata",
+    "surface": "patate",
+    "type": "noun",
+    "definition": "Potato; the round vegetable that grows under the ground."
+   },
+   {
+    "word": "cucchiaio",
+    "surface": "cucchiaio",
+    "type": "noun",
+    "definition": "Spoon; what you eat soup with at the table."
+   },
+   {
+    "word": "prosciutto",
+    "surface": "prosciutto",
+    "type": "noun",
+    "definition": "Ham; the salted meat Italians cut in very thin slices."
+   },
+   {
+    "word": "caraffa",
+    "surface": "caraffa",
+    "type": "noun",
+    "definition": "Jug; the open container you bring water to the table in."
+   },
+   {
+    "word": "anno",
+    "surface": "anno",
+    "type": "noun",
+    "definition": "Year; the twelve months from January to December."
+   },
+   {
+    "word": "marzo",
+    "surface": "marzo",
+    "type": "noun",
+    "definition": "March; the first month of spring in Italy."
+   },
+   {
+    "word": "vacanza",
+    "surface": "vacanze",
+    "type": "noun",
+    "definition": "Holiday; the days you stop working and go somewhere else."
+   },
+   {
+    "word": "amicizia",
+    "surface": "amicizia",
+    "type": "noun",
+    "definition": "Friendship; the bond between two people who like each other."
+   },
+   {
+    "word": "capo",
+    "surface": "capo",
+    "type": "noun",
+    "definition": "Boss; the person who tells you what to do at work."
+   },
+   {
+    "word": "tè",
+    "surface": "tè",
+    "type": "noun",
+    "definition": "Tea; the hot drink you make with leaves and hot water."
+   },
+   {
+    "word": "collega",
+    "surface": "collega",
+    "type": "noun",
+    "definition": "Colleague; a person who works in the same place as you."
+   },
+   {
+    "word": "riunione",
+    "surface": "riunione",
+    "type": "noun",
+    "definition": "Meeting; when people at work sit together to decide things."
+   },
+   {
+    "word": "stipendio",
+    "surface": "stipendio",
+    "type": "noun",
+    "definition": "Salary; the money that arrives every month from a steady job."
+   },
+   {
+    "word": "preparare",
+    "surface": "prepara",
+    "type": "verb",
+    "definition": "To prepare; to get something ready before it is needed."
+   }
+  ]
+ }
+]

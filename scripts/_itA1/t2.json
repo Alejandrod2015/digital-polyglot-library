@@ -1,0 +1,407 @@
+[
+ {
+  "topic": "phones-and-signal",
+  "slotIndex": 1,
+  "title": "Il campo arriva solo sul ponte",
+  "slug": "il-campo-arriva-solo-sul-ponte",
+  "arcType": "recurring-character-callback",
+  "synopsis": "In fondo a una valle della Lunigiana c'è una trattoria con quattro tavoli, e la donna che ci cucina è Irene. Rosa arriva con il cellulare morto e una foto da cercare, e scopre che lì dentro il telefono non prende e che la sola presa libera sta dietro il frigorifero. Irene le dà corrente, una minestra e la frase che in quella valle vale per tutto.",
+  "text": "Irene cucina in una trattoria della Lunigiana da otto anni. Nella sala ci sono quattro tavoli e una lavagna con il menù. Rosa entra con il cellulare senza batteria e sente l'odore della pentola: cipolla e pomodoro.\n\n“Il telefono qui non prende, siamo in fondo alla valle e il campo arriva solo sul ponte”, spiega Irene. La rete della trattoria ha una password vicino alla cucina, ma non basta. Rosa cerca una presa con corrente e il caricabatterie resta nel bagagliaio, sotto la coperta e il cuscino.\n\nTeo torna dalla macchina con il filo e Irene taglia due carote con un coltello. Poi scalda la minestra e la porta in tavola con due panini. “Dieci minuti e mangiate qualcosa, un telefono non si aspetta a stomaco vuoto”, dice lei.\n\nAlla fine il cellulare si collega alla rete e arriva un messaggio del garage. Rosa mette il suono in silenzioso, finisce il piatto e paga due caffè. “Aspetta che finisce”, dice Irene, “qui arriva tutto quanto, solo un po' più tardi che altrove.”",
+  "vocab": [
+   {
+    "word": "lavagna",
+    "surface": "lavagna",
+    "type": "noun",
+    "definition": "Blackboard; the dark board people write on with white chalk."
+   },
+   {
+    "word": "menù",
+    "surface": "menù",
+    "type": "noun",
+    "definition": "Menu; the list of what the kitchen can cook for you today."
+   },
+   {
+    "word": "odore",
+    "surface": "odore",
+    "type": "noun",
+    "definition": "Smell; what reaches your nose from food or from a place."
+   },
+   {
+    "word": "pentola",
+    "surface": "pentola",
+    "type": "noun",
+    "definition": "Pot; the deep metal pan you cook soup or pasta in."
+   },
+   {
+    "word": "cipolla",
+    "surface": "cipolla",
+    "type": "noun",
+    "definition": "Onion; the round white vegetable that makes your eyes water."
+   },
+   {
+    "word": "pomodoro",
+    "surface": "pomodoro",
+    "type": "noun",
+    "definition": "Tomato; the red round fruit at the base of most Italian sauces."
+   },
+   {
+    "word": "rete",
+    "surface": "rete",
+    "type": "noun",
+    "definition": "Network; the wifi or phone line that lets you go online."
+   },
+   {
+    "word": "password",
+    "surface": "password",
+    "type": "noun",
+    "definition": "Password; the secret word you type to get onto a network."
+   },
+   {
+    "word": "presa",
+    "surface": "presa",
+    "type": "noun",
+    "definition": "Socket; the hole in the wall where you plug something in."
+   },
+   {
+    "word": "corrente",
+    "surface": "corrente",
+    "type": "noun",
+    "definition": "Electric power; what comes out of the wall and feeds a phone."
+   },
+   {
+    "word": "caricabatterie",
+    "surface": "caricabatterie",
+    "type": "noun",
+    "definition": "Charger; the cable and plug that fill a phone with power again."
+   },
+   {
+    "word": "tagliare",
+    "surface": "taglia",
+    "type": "verb",
+    "definition": "To cut; to divide something with a knife or scissors."
+   },
+   {
+    "word": "carota",
+    "surface": "carote",
+    "type": "noun",
+    "definition": "Carrot; the long orange vegetable you cut into a soup."
+   },
+   {
+    "word": "coltello",
+    "surface": "coltello",
+    "type": "noun",
+    "definition": "Knife; the sharp tool you cut food with in the kitchen."
+   },
+   {
+    "word": "scaldare",
+    "surface": "scalda",
+    "type": "verb",
+    "definition": "To heat; to make food or a room warmer than before."
+   },
+   {
+    "word": "minestra",
+    "surface": "minestra",
+    "type": "noun",
+    "definition": "Soup; a hot dish of water with vegetables or beans in it."
+   },
+   {
+    "word": "stomaco",
+    "surface": "stomaco",
+    "type": "noun",
+    "definition": "Stomach; the part of the body where the food you eat goes."
+   },
+   {
+    "word": "collegare",
+    "surface": "collega",
+    "type": "verb",
+    "definition": "To connect; to join a phone to a network or to a cable."
+   },
+   {
+    "word": "silenzioso",
+    "surface": "silenzioso",
+    "type": "adjective",
+    "definition": "Silent; making no sound at all, like a phone with no ring."
+   },
+   {
+    "word": "piatto",
+    "surface": "piatto",
+    "type": "noun",
+    "definition": "Plate, and also the dish of food that is served on it."
+   },
+   {
+    "word": "caffè",
+    "surface": "caffè",
+    "type": "noun",
+    "definition": "Coffee; the small strong cup Italians drink standing at a bar."
+   }
+  ]
+ },
+ {
+  "topic": "phones-and-signal",
+  "slotIndex": 2,
+  "title": "Quaranta foto e nessuna faccia",
+  "slug": "quaranta-foto-e-nessuna-faccia",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "La rete della trattoria è troppo lenta per quaranta foto, così Irene manda i due alla biblioteca del paese, dove ci sono tre computer e una stampante. Rosa apre finalmente le immagini e trova portiere, targhe e cofani di macchine che non sono la loro. Quello che Teo dice guardando quella lista non parla del graffio, e Rosa non ha una risposta pronta.",
+  "text": "Il paese ha una biblioteca con tre computer, una stampante e due finestre alte. Irene ha spiegato a Rosa e a Teo che lì la rete va bene e c'è una presa. Rosa si siede a una scrivania, scrive la password con una matita e accende lo schermo.\n\n“Un'ora e siamo di nuovo in strada”, promette Rosa, e apre le quaranta foto insieme. “Questa è di martedì scorso, la macchina è bianca, quindi la nostra viene dopo”, aggiunge. Teo, con il maglione sulle spalle, guarda una libreria in un angolo scuro e non aiuta.\n\nLa foto del quattro agosto non c'è, perché quel giorno Rosa aveva dimenticato di farla. Adesso non ci crede e fa una fotocopia difficile del graffio sulla portiera. “Quaranta foto di macchine e nessuna di una persona, neanche una”, dice Teo.\n\nUna studentessa torna al suo esame di giugno all'università. Rosa mette il foglio nella busta dei documenti e spegne lo schermo con due tasti. “Il graffio lo paghiamo a metà”, dice lei alla fine, “però non oggi e non qui.”",
+  "vocab": [
+   {
+    "word": "biblioteca",
+    "surface": "biblioteca",
+    "type": "noun",
+    "definition": "Library; the quiet place where books are kept and lent out."
+   },
+   {
+    "word": "computer",
+    "surface": "computer",
+    "type": "noun",
+    "definition": "Computer; the machine with a screen you work or study on."
+   },
+   {
+    "word": "stampante",
+    "surface": "stampante",
+    "type": "noun",
+    "definition": "Printer; the machine that puts what is on the screen onto paper."
+   },
+   {
+    "word": "matita",
+    "surface": "matita",
+    "type": "noun",
+    "definition": "Pencil; the wooden stick you write with and can rub out."
+   },
+   {
+    "word": "scrivania",
+    "surface": "scrivania",
+    "type": "noun",
+    "definition": "Desk; the table you sit at to write or use a computer."
+   },
+   {
+    "word": "martedì",
+    "surface": "martedì",
+    "type": "noun",
+    "definition": "Tuesday; the second day of the Italian working week."
+   },
+   {
+    "word": "libreria",
+    "surface": "libreria",
+    "type": "noun",
+    "definition": "Bookcase, and also the shop where you go to buy books."
+   },
+   {
+    "word": "scuro",
+    "surface": "scuro",
+    "type": "adjective",
+    "definition": "Dark; with little light, or close to black in colour."
+   },
+   {
+    "word": "agosto",
+    "surface": "agosto",
+    "type": "noun",
+    "definition": "August; the hot month when half of Italy closes and leaves."
+   },
+   {
+    "word": "dimenticare",
+    "surface": "dimenticato",
+    "type": "verb",
+    "definition": "To forget; not to remember a thing you meant to do."
+   },
+   {
+    "word": "credere",
+    "surface": "crede",
+    "type": "verb",
+    "definition": "To believe; to think that something is true."
+   },
+   {
+    "word": "fotocopia",
+    "surface": "fotocopia",
+    "type": "noun",
+    "definition": "Photocopy; the paper copy a machine makes of another paper."
+   },
+   {
+    "word": "studentessa",
+    "surface": "studentessa",
+    "type": "noun",
+    "definition": "Female student; a young woman who studies at school or university."
+   },
+   {
+    "word": "esame",
+    "surface": "esame",
+    "type": "noun",
+    "definition": "Exam; the test you have to pass at the end of a course."
+   },
+   {
+    "word": "giugno",
+    "surface": "giugno",
+    "type": "noun",
+    "definition": "June; the month when the Italian school year finishes."
+   },
+   {
+    "word": "spegnere",
+    "surface": "spegne",
+    "type": "verb",
+    "definition": "To switch off; to stop a light, an engine or a screen."
+   },
+   {
+    "word": "tasto",
+    "surface": "tasti",
+    "type": "noun",
+    "definition": "Key or button; the small part you press on a keyboard."
+   },
+   {
+    "word": "aiutare",
+    "surface": "aiuta",
+    "type": "verb",
+    "definition": "To help; to do something that makes things easier for somebody."
+   },
+   {
+    "word": "difficile",
+    "surface": "difficile",
+    "type": "adjective",
+    "definition": "Difficult; needing effort because it is not easy to do."
+   },
+   {
+    "word": "alto",
+    "surface": "alte",
+    "type": "adjective",
+    "definition": "High or tall; going far up from the ground."
+   },
+   {
+    "word": "università",
+    "surface": "università",
+    "type": "noun",
+    "definition": "University; where students go to study after finishing school."
+   }
+  ]
+ },
+ {
+  "topic": "phones-and-signal",
+  "slotIndex": 3,
+  "title": "Sul ponte prende tutto",
+  "slug": "sul-ponte-prende-tutto",
+  "arcType": "late-reveal",
+  "synopsis": "Dopo cena i due salgono a piedi fino al ponte vecchio, che è l'unico posto della valle dove il telefono prende davvero. Teo chiede il cellulare di Rosa per chiamare sua madre, e sullo schermo compare prima un messaggio del garage con una data che spiega tutto il viaggio. Rosa se ne accorge tardi, e quello che Teo fa dopo le pesa più di una discussione.",
+  "text": "Dopo cena, con la torcia e il maglione, Rosa e Teo salgono al ponte. L'aria è umida, il bosco è scuro e sopra i rami c'è la luna. L'erba del sentiero è bagnata e sul parapetto il telefono prende quattro tacche.\n\n“Il mio è morto, mi presti il tuo che chiamo mia madre prima di notte”, chiede Teo. Rosa gli passa il cellulare e guarda verso il fiume. Sullo schermo, sopra la tastiera, compare un messaggio del garage di Torino.\n\nIl messaggio dice che il saldo arriva il venti, non il quattordici. Rosa non ha stipendio fisso e fino alla consegna resta povera, senza riposo e preoccupata. “Il casello di ieri”, dice Teo, “non era per i dodici euro, e tu me lo hai lasciato credere.”\n\nRosa prende il telefono, lo mette in tasca con la chiave della macchina e non spiega la verità. Teo chiama sua madre e sente che la zia lo invita al matrimonio. “Domani guido io la prima ora, e domenica sera ti riporto a casa”, dice, e paga lui.",
+  "vocab": [
+   {
+    "word": "cena",
+    "surface": "cena",
+    "type": "noun",
+    "definition": "Dinner; the meal Italians eat in the evening, quite late."
+   },
+   {
+    "word": "umido",
+    "surface": "umida",
+    "type": "adjective",
+    "definition": "Damp; with water in the air or on a surface."
+   },
+   {
+    "word": "bosco",
+    "surface": "bosco",
+    "type": "noun",
+    "definition": "Wood; a lot of trees growing together on a hillside."
+   },
+   {
+    "word": "ramo",
+    "surface": "rami",
+    "type": "noun",
+    "definition": "Branch; the arm of a tree that grows out of the trunk."
+   },
+   {
+    "word": "luna",
+    "surface": "luna",
+    "type": "noun",
+    "definition": "Moon; the round light in the sky at night."
+   },
+   {
+    "word": "notte",
+    "surface": "notte",
+    "type": "noun",
+    "definition": "Night; the dark hours between the evening and the morning."
+   },
+   {
+    "word": "tastiera",
+    "surface": "tastiera",
+    "type": "noun",
+    "definition": "Keyboard; all the keys together on a phone or computer."
+   },
+   {
+    "word": "messaggio",
+    "surface": "messaggio",
+    "type": "noun",
+    "definition": "Message; the short text you send or get on a phone."
+   },
+   {
+    "word": "fiume",
+    "surface": "fiume",
+    "type": "noun",
+    "definition": "River; the water that runs down a valley to the sea."
+   },
+   {
+    "word": "stipendio",
+    "surface": "stipendio",
+    "type": "noun",
+    "definition": "Salary; the money that arrives every month from a job."
+   },
+   {
+    "word": "riposo",
+    "surface": "riposo",
+    "type": "noun",
+    "definition": "Rest; time with no driving and no work, so the body mends."
+   },
+   {
+    "word": "povero",
+    "surface": "povera",
+    "type": "adjective",
+    "definition": "Poor; with very little money for the things you need."
+   },
+   {
+    "word": "mentire",
+    "surface": "mentito",
+    "type": "verb",
+    "definition": "To lie; to say something you know is not true."
+   },
+   {
+    "word": "verità",
+    "surface": "verità",
+    "type": "noun",
+    "definition": "Truth; what really happened, said without changing it."
+   },
+   {
+    "word": "zia",
+    "surface": "zia",
+    "type": "noun",
+    "definition": "Aunt; the sister of your mother or of your father."
+   },
+   {
+    "word": "invitare",
+    "surface": "invita",
+    "type": "verb",
+    "definition": "To invite; to ask somebody to come to a place or a party."
+   },
+   {
+    "word": "matrimonio",
+    "surface": "matrimonio",
+    "type": "noun",
+    "definition": "Wedding; the day two people marry and everybody eats a lot."
+   },
+   {
+    "word": "erba",
+    "surface": "erba",
+    "type": "noun",
+    "definition": "Grass; the low green plants that cover a field or a path."
+   },
+   {
+    "word": "preoccupato",
+    "surface": "preoccupata",
+    "type": "adjective",
+    "definition": "Worried; with a problem in your head that will not leave."
+   },
+   {
+    "word": "madre",
+    "surface": "madre",
+    "type": "noun",
+    "definition": "Mother; the woman whose son or daughter you are."
+   }
+  ]
+ }
+]

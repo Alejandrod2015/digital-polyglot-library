@@ -1,0 +1,413 @@
+[
+ {
+  "topic": "rooms-and-keys",
+  "slotIndex": 1,
+  "title": "Una chiave sola per due",
+  "slug": "una-chiave-sola-per-due",
+  "arcType": "reframe-turn",
+  "synopsis": "Alle nove di sera, davanti a un cancello di campagna vicino a Siena, la macchina si ferma e apre una donna che tiene due camere e prepara la colazione. La prenotazione parlava di due letti separati, ma la stanza in fondo è occupata da lunedì e non si libera. Marta porta una coperta in più, e la notte si decide in tre secondi senza che nessuno dei due la discuta davvero.",
+  "text": "Davanti al cancello di una casa di campagna la macchina si ferma di notte. Chi apre è Marta, una donna di Siena che tiene due camere e fa la colazione. Nel cortile una lampadina accende la portiera sporca e il graffio.\n\n“La prenotazione era per due letti separati, però la stanza in fondo è occupata da lunedì e non si libera”, dice Marta. Dentro l'aria è tiepida, ci sono un armadio, un comodino e nessuna presa. Rosa sale con la busta dei documenti, il caricabatterie e il cellulare senza batteria.\n\nMarta torna con un cuscino, una coperta pulita e due panini. “Il divano è comodo, ci dorme mio fratello quando viene d'estate”, dice lei. Poi spegne la luce del corridoio e sale di sopra.\n\nTeo prende il maglione e la giacca dal bagagliaio e va sul divano. “Domani ti sveglio io alle sei, tu dormi in un letto vero”, dice dal buio. Rosa mette la sveglia, si siede sul materasso duro con la caviglia che fa male, e guarda il tappeto.",
+  "vocab": [
+   {
+    "word": "campagna",
+    "surface": "campagna",
+    "type": "noun",
+    "definition": "Countryside; the fields and farms outside a town or a city."
+   },
+   {
+    "word": "camera",
+    "surface": "camere",
+    "type": "noun",
+    "definition": "Room; the room you sleep in at home or in a hotel."
+   },
+   {
+    "word": "colazione",
+    "surface": "colazione",
+    "type": "noun",
+    "definition": "Breakfast; the first food of the day, often coffee and biscuits."
+   },
+   {
+    "word": "cortile",
+    "surface": "cortile",
+    "type": "noun",
+    "definition": "Yard; the open space between the walls of a house."
+   },
+   {
+    "word": "tiepido",
+    "surface": "tiepida",
+    "type": "adjective",
+    "definition": "Warm but not hot; the air of a summer evening outside."
+   },
+   {
+    "word": "lampadina",
+    "surface": "lampadina",
+    "type": "noun",
+    "definition": "Light bulb; the small glass ball that gives light in a lamp."
+   },
+   {
+    "word": "prenotazione",
+    "surface": "prenotazione",
+    "type": "noun",
+    "definition": "Booking; the room or table you asked for before arriving."
+   },
+   {
+    "word": "letto",
+    "surface": "letti",
+    "type": "noun",
+    "definition": "Bed; the piece of furniture you lie down on to sleep."
+   },
+   {
+    "word": "stanza",
+    "surface": "stanza",
+    "type": "noun",
+    "definition": "Room; any room inside a house, big or small."
+   },
+   {
+    "word": "lunedì",
+    "surface": "lunedì",
+    "type": "noun",
+    "definition": "Monday; the first day of the Italian working week."
+   },
+   {
+    "word": "armadio",
+    "surface": "armadio",
+    "type": "noun",
+    "definition": "Wardrobe; the tall cupboard where you hang your clothes."
+   },
+   {
+    "word": "comodino",
+    "surface": "comodino",
+    "type": "noun",
+    "definition": "Bedside table; the small table next to the head of a bed."
+   },
+   {
+    "word": "cuscino",
+    "surface": "cuscino",
+    "type": "noun",
+    "definition": "Pillow; the soft thing you put your head on at night."
+   },
+   {
+    "word": "coperta",
+    "surface": "coperta",
+    "type": "noun",
+    "definition": "Blanket; the warm cover you pull over you in bed."
+   },
+   {
+    "word": "pulito",
+    "surface": "pulita",
+    "type": "adjective",
+    "definition": "Clean; with no dirt and no dust on it at all."
+   },
+   {
+    "word": "fratello",
+    "surface": "fratello",
+    "type": "noun",
+    "definition": "Brother; the son of your own mother and father."
+   },
+   {
+    "word": "corridoio",
+    "surface": "corridoio",
+    "type": "noun",
+    "definition": "Corridor; the long narrow space that joins the rooms."
+   },
+   {
+    "word": "divano",
+    "surface": "divano",
+    "type": "noun",
+    "definition": "Sofa; the long soft seat in a living room."
+   },
+   {
+    "word": "sveglia",
+    "surface": "sveglia",
+    "type": "noun",
+    "definition": "Alarm clock; what wakes you up at the hour you chose."
+   },
+   {
+    "word": "materasso",
+    "surface": "materasso",
+    "type": "noun",
+    "definition": "Mattress; the thick soft part of a bed you lie on."
+   },
+   {
+    "word": "duro",
+    "surface": "duro",
+    "type": "adjective",
+    "definition": "Hard; not soft when you press it with your hand."
+   },
+   {
+    "word": "tappeto",
+    "surface": "tappeto",
+    "type": "noun",
+    "definition": "Rug or carpet; the cloth on the floor you walk on."
+   }
+  ]
+ },
+ {
+  "topic": "rooms-and-keys",
+  "slotIndex": 2,
+  "title": "La colazione lasciata fuori",
+  "slug": "la-colazione-lasciata-fuori",
+  "arcType": "harmonic-close",
+  "synopsis": "Marta esce alle cinque e lascia sulla terrazza il latte, il miele e sei biscotti, come fa con tutti gli ospiti. Rosa scende alle sei, ha la casa per sé e conta i soldi sul letto, e il conto non torna. Quando Marta rientra chiede meno di quello che dice la prenotazione, e Rosa deve decidere in un secondo se accettare un favore o mettersi a discutere.",
+  "text": "Marta esce alle cinque e sulla terrazza lascia la colazione per due. Ci sono latte, miele, marmellata e sei biscotti sotto un piatto. Rosa scende alle sei con la caviglia gonfia, trova Teo sul divano e sente odore di pane.\n\nNel bagno il rubinetto perde e sopra lo specchio ci sono sapone e spazzolino. “Lasciami dormire venti minuti, poi la doccia la faccio io”, dice Teo. Rosa conta il credito sul letto, due volte, e il conto non torna.\n\nMarta rientra alle otto e prende un foglio dal cassetto. “Per la stanza mi dai quaranta euro e basta, perché un ospite in meno paga meno”, dice lei. Poi scrive la ricevuta a mano, la mette nella busta e regala i biscotti che restano.\n\nTeo scende in pigiama, con i capelli bagnati, e mangia in piedi. “Grazie della camera e della torta, io torno a settembre con più tempo e meno fretta”, promette. Rosa mette la ricevuta con i documenti, preoccupata, e non dice quanto le resta.",
+  "vocab": [
+   {
+    "word": "terrazza",
+    "surface": "terrazza",
+    "type": "noun",
+    "definition": "Terrace; the flat open space outside a house where you sit."
+   },
+   {
+    "word": "latte",
+    "surface": "latte",
+    "type": "noun",
+    "definition": "Milk; the white drink that goes into coffee at breakfast."
+   },
+   {
+    "word": "miele",
+    "surface": "miele",
+    "type": "noun",
+    "definition": "Honey; the sweet thick food that bees make in a hive."
+   },
+   {
+    "word": "marmellata",
+    "surface": "marmellata",
+    "type": "noun",
+    "definition": "Jam; sweet fruit cooked with sugar and spread on bread."
+   },
+   {
+    "word": "biscotto",
+    "surface": "biscotti",
+    "type": "noun",
+    "definition": "Biscuit; the small dry sweet Italians dip into their coffee."
+   },
+   {
+    "word": "bagno",
+    "surface": "bagno",
+    "type": "noun",
+    "definition": "Bathroom; the room with the shower and the toilet in it."
+   },
+   {
+    "word": "rubinetto",
+    "surface": "rubinetto",
+    "type": "noun",
+    "definition": "Tap; the metal part you turn to get water out."
+   },
+   {
+    "word": "specchio",
+    "surface": "specchio",
+    "type": "noun",
+    "definition": "Mirror; the glass where you see your own face."
+   },
+   {
+    "word": "sapone",
+    "surface": "sapone",
+    "type": "noun",
+    "definition": "Soap; what you wash your hands and your body with."
+   },
+   {
+    "word": "spazzolino",
+    "surface": "spazzolino",
+    "type": "noun",
+    "definition": "Toothbrush; the small brush you clean your teeth with."
+   },
+   {
+    "word": "doccia",
+    "surface": "doccia",
+    "type": "noun",
+    "definition": "Shower; washing yourself standing up under falling water."
+   },
+   {
+    "word": "torta",
+    "surface": "torta",
+    "type": "noun",
+    "definition": "Cake; the sweet you cut in slices for the whole table."
+   },
+   {
+    "word": "cassetto",
+    "surface": "cassetto",
+    "type": "noun",
+    "definition": "Drawer; the box that slides out of a table or a cupboard."
+   },
+   {
+    "word": "ospite",
+    "surface": "ospite",
+    "type": "noun",
+    "definition": "Guest; the person who sleeps or eats in somebody else's house."
+   },
+   {
+    "word": "ricevuta",
+    "surface": "ricevuta",
+    "type": "noun",
+    "definition": "Receipt; the paper that says you have paid for something."
+   },
+   {
+    "word": "regalare",
+    "surface": "regala",
+    "type": "verb",
+    "definition": "To give as a present, without asking for money back."
+   },
+   {
+    "word": "pigiama",
+    "surface": "pigiama",
+    "type": "noun",
+    "definition": "Pyjamas; the soft clothes you wear only in bed."
+   },
+   {
+    "word": "bagnato",
+    "surface": "bagnati",
+    "type": "adjective",
+    "definition": "Wet; with water on it, like hair after a shower."
+   },
+   {
+    "word": "settembre",
+    "surface": "settembre",
+    "type": "noun",
+    "definition": "September; the month when Italian holidays end and work restarts."
+   },
+   {
+    "word": "tempo",
+    "surface": "tempo",
+    "type": "noun",
+    "definition": "Time, and also the weather outside; Italian uses one word."
+   },
+   {
+    "word": "piatto",
+    "surface": "piatto",
+    "type": "noun",
+    "definition": "Plate; the flat dish you put food on at the table."
+   }
+  ]
+ },
+ {
+  "topic": "rooms-and-keys",
+  "slotIndex": 3,
+  "title": "La tapparella resta su",
+  "slug": "la-tapparella-resta-su",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "L'ultima notte a Siena la tapparella della camera si rompe a mezza altezza e non scende più, e dalla finestra aperta entra tutto il paese. Rosa non dorme, Teo dorme benissimo sul divano, e alle tre di notte i due si ritrovano in cortile senza avere niente da dirsi. Quello che Rosa gli dice lì fuori non cambia quella notte, ma cambia il giorno dopo e tutti quelli che vengono.",
+  "text": "L'ultima notte a Siena la tapparella si rompe a mezza altezza e non scende più. Rosa tira due volte, poi chiama Teo, ma il cacciavite è in macchina. Dalla finestra entrano il caldo, due mosche, una zanzara e altri insetti.\n\n“Domani la aggiusto io, mi serve solo un attrezzo e dieci minuti”, promette Teo. Qualcosa gira intorno alla lampada e poi si ferma sul soffitto. Rosa guarda le pareti e la tenda ferma, con la caviglia che fa male e nessun sogno.\n\nAlle tre Rosa scende in cortile con la torcia e trova Teo sul muro, con un gatto. “Non dormo dal ponte”, dice lui, “da quando ho letto quel messaggio del garage.” L'aria è secca, la temperatura scende e sopra il cortile non c'è una nuvola.\n\n“La macchina la consegno il quattordici e i soldi arrivano il venti”, spiega Rosa, senza bugie. “Fino ad allora mangiamo panini e dormiamo dove capita, non ho una soluzione.” Teo non è arrabbiato, ha solo paura della scadenza e del graffio.",
+  "vocab": [
+   {
+    "word": "tapparella",
+    "surface": "tapparella",
+    "type": "noun",
+    "definition": "Roller blind; the shutter you pull down over an Italian window."
+   },
+   {
+    "word": "rompere",
+    "surface": "rompe",
+    "type": "verb",
+    "definition": "To break; to leave a thing in pieces or no longer working."
+   },
+   {
+    "word": "cacciavite",
+    "surface": "cacciavite",
+    "type": "noun",
+    "definition": "Screwdriver; the tool you turn to open or close a screw."
+   },
+   {
+    "word": "mosca",
+    "surface": "mosche",
+    "type": "noun",
+    "definition": "Fly; the small black insect that lands on your food."
+   },
+   {
+    "word": "zanzara",
+    "surface": "zanzara",
+    "type": "noun",
+    "definition": "Mosquito; the small insect that bites you at night in summer."
+   },
+   {
+    "word": "insetto",
+    "surface": "insetti",
+    "type": "noun",
+    "definition": "Insect; any small animal with six legs, like a fly or a bee."
+   },
+   {
+    "word": "aggiustare",
+    "surface": "aggiusto",
+    "type": "verb",
+    "definition": "To fix; to make a broken thing work again."
+   },
+   {
+    "word": "lampada",
+    "surface": "lampada",
+    "type": "noun",
+    "definition": "Lamp; the light you switch on next to a bed or a chair."
+   },
+   {
+    "word": "soffitto",
+    "surface": "soffitto",
+    "type": "noun",
+    "definition": "Ceiling; the flat part above your head inside a room."
+   },
+   {
+    "word": "parete",
+    "surface": "pareti",
+    "type": "noun",
+    "definition": "Wall; the flat side of a room, where you hang pictures."
+   },
+   {
+    "word": "tenda",
+    "surface": "tenda",
+    "type": "noun",
+    "definition": "Curtain; the cloth you pull across a window at night."
+   },
+   {
+    "word": "sogno",
+    "surface": "sogno",
+    "type": "noun",
+    "definition": "Dream; the story your head tells you while you sleep."
+   },
+   {
+    "word": "gatto",
+    "surface": "gatto",
+    "type": "noun",
+    "definition": "Cat; the animal that sleeps all day and walks on walls."
+   },
+   {
+    "word": "secco",
+    "surface": "secca",
+    "type": "adjective",
+    "definition": "Dry; with no water in it, said of air or of clothes."
+   },
+   {
+    "word": "temperatura",
+    "surface": "temperatura",
+    "type": "noun",
+    "definition": "Temperature; how hot or how cold the air or a body is."
+   },
+   {
+    "word": "nuvola",
+    "surface": "nuvola",
+    "type": "noun",
+    "definition": "Cloud; the white or grey shape that carries rain in the sky."
+   },
+   {
+    "word": "bugia",
+    "surface": "bugie",
+    "type": "noun",
+    "definition": "Lie; something you say knowing it is not true."
+   },
+   {
+    "word": "soluzione",
+    "surface": "soluzione",
+    "type": "noun",
+    "definition": "Solution; the way out of a problem you have found."
+   },
+   {
+    "word": "arrabbiato",
+    "surface": "arrabbiato",
+    "type": "adjective",
+    "definition": "Angry; feeling bad with somebody for what they did."
+   },
+   {
+    "word": "paura",
+    "surface": "paura",
+    "type": "noun",
+    "definition": "Fear; the cold feeling that something bad will happen."
+   }
+  ]
+ }
+]

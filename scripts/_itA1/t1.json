@@ -1,0 +1,407 @@
+[
+ {
+  "topic": "roads-and-driving",
+  "slotIndex": 1,
+  "title": "Il bagagliaio non si chiude",
+  "slug": "il-bagagliaio-non-si-chiude",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Rosa porta a Palermo una macchina che non è sua, e la consegna ha una data che non si può spostare. Teo arriva con un'ora di ritardo e due borse che nel bagagliaio non entrano. Prima ancora di uscire da Torino i due hanno già due idee diverse dello stesso viaggio, e Rosa non dice ad alta voce quanto le resta in tasca.",
+  "text": "La macchina grigia non è di Rosa. Rosa, una ragazza di Torino, guida macchine di altri da un garage all'altro, e questa va a Palermo entro il quattordici. Teo lavora al bar di corso Regina e paga metà della benzina.\n\nNel bagagliaio Rosa mette la coperta, il cuscino, la torcia e la busta con documenti e libretto. Teo arriva in ritardo con il maglione, una camicia pulita e il caricabatterie. “Se partiamo adesso mangiamo a Genova, se aspettiamo troviamo traffico e non arriviamo in mattinata”, dice lei, nervosa.\n\nRosa guarda la targa, controlla la patente e chiude la portiera. “Guidi tu fino a Savona, così uno dorme e l'altro riposa”, propone Teo, e accende la radio con la cintura aperta. “Guido io tutto il giorno”, risponde Rosa, “e il caffè lo paghi tu.”\n\nSul foglio ci sono la consegna, la scadenza e una cifra che Rosa non dice. “Quanti giorni abbiamo, perché domenica c'è un matrimonio”, chiede Teo. “Ne abbiamo abbastanza”, promette, e tiene la velocità sotto il limite per trecento chilometri.",
+  "vocab": [
+   {
+    "word": "macchina",
+    "surface": "macchina",
+    "type": "noun",
+    "definition": "Car; the word Italians use far more often than automobile."
+   },
+   {
+    "word": "grigio",
+    "surface": "grigia",
+    "type": "adjective",
+    "definition": "Grey; the colour of a cloudy sky or of old metal."
+   },
+   {
+    "word": "guidare",
+    "surface": "guida",
+    "type": "verb",
+    "definition": "To drive; what you do behind the wheel of a car."
+   },
+   {
+    "word": "benzina",
+    "surface": "benzina",
+    "type": "noun",
+    "definition": "Petrol; the fuel you put in the car at the pump."
+   },
+   {
+    "word": "bagagliaio",
+    "surface": "bagagliaio",
+    "type": "noun",
+    "definition": "Boot of a car; the space at the back for bags."
+   },
+   {
+    "word": "libretto",
+    "surface": "libretto",
+    "type": "noun",
+    "definition": "Small booklet that travels with an Italian car and says who owns it."
+   },
+   {
+    "word": "traffico",
+    "surface": "traffico",
+    "type": "noun",
+    "definition": "Traffic; all the cars on the road slowing each other down."
+   },
+   {
+    "word": "traffico",
+    "surface": "traffico",
+    "type": "verb",
+    "definition": "Traffic; all the cars on the road slowing each other down."
+   },
+   {
+    "word": "nervoso",
+    "surface": "nervosa",
+    "type": "adjective",
+    "definition": "Nervous or on edge; not calm because something worries you."
+   },
+   {
+    "word": "targa",
+    "surface": "targa",
+    "type": "noun",
+    "definition": "Number plate; the metal plate with the letters of a car."
+   },
+   {
+    "word": "controllare",
+    "surface": "controlla",
+    "type": "verb",
+    "definition": "To check; to look at something to be sure it is right."
+   },
+   {
+    "word": "accendere",
+    "surface": "accende",
+    "type": "verb",
+    "definition": "To switch on; to start an engine, a light or a phone."
+   },
+   {
+    "word": "portiera",
+    "surface": "portiera",
+    "type": "noun",
+    "definition": "Car door; the door you open to get in or out."
+   },
+   {
+    "word": "dormire",
+    "surface": "dorme",
+    "type": "verb",
+    "definition": "To sleep; to rest with your eyes closed for a while."
+   },
+   {
+    "word": "cintura",
+    "surface": "cintura",
+    "type": "noun",
+    "definition": "Belt; here the seat belt you fasten before the car moves."
+   },
+   {
+    "word": "mattinata",
+    "surface": "mattinata",
+    "type": "noun",
+    "definition": "Morning; here the whole stretch of hours before lunch."
+   },
+   {
+    "word": "consegna",
+    "surface": "consegna",
+    "type": "noun",
+    "definition": "Delivery; handing something over to the person waiting for it."
+   },
+   {
+    "word": "promettere",
+    "surface": "promette",
+    "type": "verb",
+    "definition": "To promise; to tell someone you will certainly do something."
+   },
+   {
+    "word": "velocità",
+    "surface": "velocità",
+    "type": "noun",
+    "definition": "Speed; how fast a car or a person is going."
+   },
+   {
+    "word": "limite",
+    "surface": "limite",
+    "type": "noun",
+    "definition": "Limit; the highest speed the law allows on that road."
+   },
+   {
+    "word": "chilometro",
+    "surface": "chilometri",
+    "type": "noun",
+    "definition": "Kilometre; the unit Italians use to measure how far something is."
+   }
+  ]
+ },
+ {
+  "topic": "roads-and-driving",
+  "slotIndex": 2,
+  "title": "Cento chilometri senza casello",
+  "slug": "cento-chilometri-senza-casello",
+  "arcType": "late-reveal",
+  "synopsis": "Tre uscite prima di Genova, Rosa lascia l'autostrada e prende la statale, che è più lunga di quaranta minuti e piena di camion. Teo non capisce e tira fuori i dodici euro del pedaggio, convinto che il problema siano i soldi suoi. La risposta di Rosa è corta e non spiega niente, e il pranzo di quel giorno finisce in due panini comprati a un distributore.",
+  "text": "Alle undici Rosa esce dall'autostrada prima di Genova. Teo guarda il navigatore e legge quaranta minuti in più. Al primo incrocio la macchina prende la statale e a ogni curva la coperta e il cuscino si muovono dietro.\n\n“Il pedaggio da qui a Genova costa dodici euro e questa invece è gratis”, dice Rosa, con le mani sul volante. Teo conta i camion e i furgoni che vanno lenti davanti a loro. Nessuno accelera e dentro c'è solo rumore di motore.\n\n“Dodici euro li metto io, ho ancora credito sulla carta”, dice Teo, e cerca la giacca dietro. “Non è per i dodici euro del casello, è per quello che viene dopo”, risponde Rosa, e smette. Dentro la galleria tiene il piede sul freno, preoccupata, e non prova a sorpassare.\n\nA Genova si fermano al primo semaforo e trovano aperto solo un distributore. Teo compra due panini e un caffè, e mette la ricevuta con i documenti. “Domani il pedaggio lo pago io e tu dormi due ore”, dice, ma Rosa riparte senza riposare.",
+  "vocab": [
+   {
+    "word": "autostrada",
+    "surface": "autostrada",
+    "type": "noun",
+    "definition": "Motorway; the fast road with tolls that crosses the whole country."
+   },
+   {
+    "word": "navigatore",
+    "surface": "navigatore",
+    "type": "noun",
+    "definition": "Sat nav; the small screen or app that tells a driver where to turn."
+   },
+   {
+    "word": "incrocio",
+    "surface": "incrocio",
+    "type": "noun",
+    "definition": "Crossroads; the point where two streets cut across each other."
+   },
+   {
+    "word": "curva",
+    "surface": "curva",
+    "type": "noun",
+    "definition": "Bend; the point where the road turns left or right."
+   },
+   {
+    "word": "muovere",
+    "surface": "muovono",
+    "type": "verb",
+    "definition": "To move; to shift something from one place to another."
+   },
+   {
+    "word": "pedaggio",
+    "surface": "pedaggio",
+    "type": "noun",
+    "definition": "Toll; the money you pay to use an Italian motorway."
+   },
+   {
+    "word": "volante",
+    "surface": "volante",
+    "type": "noun",
+    "definition": "Steering wheel; the round thing the driver holds with both hands."
+   },
+   {
+    "word": "camion",
+    "surface": "camion",
+    "type": "noun",
+    "definition": "Lorry or truck; the big vehicle that carries goods on the road."
+   },
+   {
+    "word": "furgone",
+    "surface": "furgoni",
+    "type": "noun",
+    "definition": "Van; the small closed truck used for deliveries in town."
+   },
+   {
+    "word": "lento",
+    "surface": "lenti",
+    "type": "adjective",
+    "definition": "Slow; taking a long time to move or to finish."
+   },
+   {
+    "word": "accelerare",
+    "surface": "accelera",
+    "type": "verb",
+    "definition": "To speed up; to make a car go faster than before."
+   },
+   {
+    "word": "giacca",
+    "surface": "giacca",
+    "type": "noun",
+    "definition": "Jacket; the light coat you put on over a shirt."
+   },
+   {
+    "word": "casello",
+    "surface": "casello",
+    "type": "noun",
+    "definition": "Toll booth; the place on the motorway where drivers stop and pay."
+   },
+   {
+    "word": "smettere",
+    "surface": "smette",
+    "type": "verb",
+    "definition": "To stop doing something you were doing until that moment."
+   },
+   {
+    "word": "freno",
+    "surface": "freno",
+    "type": "noun",
+    "definition": "Brake; the pedal the driver presses to make the car stop."
+   },
+   {
+    "word": "galleria",
+    "surface": "galleria",
+    "type": "noun",
+    "definition": "Tunnel; the road that goes through a hill instead of over it."
+   },
+   {
+    "word": "sorpassare",
+    "surface": "sorpassare",
+    "type": "verb",
+    "definition": "To overtake; to pass a slower car and get in front of it."
+   },
+   {
+    "word": "semaforo",
+    "surface": "semaforo",
+    "type": "noun",
+    "definition": "Traffic light; the red, yellow and green light at a crossing."
+   },
+   {
+    "word": "distributore",
+    "surface": "distributore",
+    "type": "noun",
+    "definition": "Petrol station, and also the machine that sells drinks and snacks."
+   },
+   {
+    "word": "panino",
+    "surface": "panini",
+    "type": "noun",
+    "definition": "Bread roll with something inside; the classic quick Italian lunch."
+   },
+   {
+    "word": "riposare",
+    "surface": "riposare",
+    "type": "verb",
+    "definition": "To rest; to stop working for a while and do nothing."
+   }
+  ]
+ },
+ {
+  "topic": "roads-and-driving",
+  "slotIndex": 3,
+  "title": "Un graffio sulla portiera",
+  "slug": "un-graffio-sulla-portiera",
+  "arcType": "reframe-turn",
+  "synopsis": "In un'area di servizio vicino a La Spezia, Rosa gira intorno alla macchina come fa sempre, e trova un graffio lungo che a Torino non c'era. Teo dice che c'era già, ma lo dice troppo in fretta. La foto che potrebbe dare ragione a una dei due è dentro un telefono con la batteria a zero, e il graffio resta lì, senza padrone, per tutto il viaggio.",
+  "text": "Sulla corsia di destra, dopo La Spezia, Rosa rallenta e parcheggia vicino a un pino. L'aria è ferma e Teo suda già prima di scendere dalla macchina. Rosa gira intorno, controlla le gomme e l'olio e pulisce i fari.\n\nSulla portiera destra c'è un graffio lungo che a Torino non c'era. “Quello c'era già stamattina, l'ho visto quando ho messo il maglione dietro”, dice Teo, sicuro. Rosa passa il dito sulla riga, preoccupata, e sente la vernice ancora sporca.\n\n“Ho fatto una foto a tutta la macchina al garage, adesso te la faccio vedere”, dice Rosa. Lo schermo del cellulare resta nero da due ore e il caricabatterie è sotto la coperta. Teo cerca il suo nella giacca, sotto la camicia, e la stanchezza pesa.\n\nUn graffio così si ripara dal carrozziere e sulla consegna vale come un incidente. “Lo paghiamo a metà e non ne parliamo più”, propone Teo, con la batteria a zero. “Lo paghiamo quando sappiamo chi l'ha fatto”, risponde Rosa, e chiude a chiave la portiera.",
+  "vocab": [
+   {
+    "word": "parcheggiare",
+    "surface": "parcheggia",
+    "type": "verb",
+    "definition": "To park; to leave the car standing in a free space."
+   },
+   {
+    "word": "pino",
+    "surface": "pino",
+    "type": "noun",
+    "definition": "Pine tree; the tall tree with needles you see along Italian roads."
+   },
+   {
+    "word": "sudare",
+    "surface": "suda",
+    "type": "verb",
+    "definition": "To sweat; what your skin does when you are too hot."
+   },
+   {
+    "word": "gomma",
+    "surface": "gomme",
+    "type": "noun",
+    "definition": "Tyre; the round rubber part of the wheel that touches the road."
+   },
+   {
+    "word": "olio",
+    "surface": "olio",
+    "type": "noun",
+    "definition": "Oil; the liquid an engine needs, and the one you cook with."
+   },
+   {
+    "word": "faro",
+    "surface": "fari",
+    "type": "noun",
+    "definition": "Headlight; the lamp at the front of a car that lights the road."
+   },
+   {
+    "word": "graffio",
+    "surface": "graffio",
+    "type": "noun",
+    "definition": "Scratch; the thin line left on paint by something sharp."
+   },
+   {
+    "word": "vedere",
+    "surface": "visto",
+    "type": "verb",
+    "definition": "To see; to notice something with your eyes."
+   },
+   {
+    "word": "sicuro",
+    "surface": "sicuro",
+    "type": "adjective",
+    "definition": "Sure or safe; certain that something is true."
+   },
+   {
+    "word": "vernice",
+    "surface": "vernice",
+    "type": "noun",
+    "definition": "Paint; the coloured layer on the outside of a car or a wall."
+   },
+   {
+    "word": "sporco",
+    "surface": "sporca",
+    "type": "adjective",
+    "definition": "Dirty; covered with dust, mud or something you want to clean."
+   },
+   {
+    "word": "foto",
+    "surface": "foto",
+    "type": "noun",
+    "definition": "Photo; the picture you take with your phone in a second."
+   },
+   {
+    "word": "schermo",
+    "surface": "schermo",
+    "type": "noun",
+    "definition": "Screen; the flat glass part of a phone or a computer."
+   },
+   {
+    "word": "cellulare",
+    "surface": "cellulare",
+    "type": "noun",
+    "definition": "Mobile phone; the phone Italians carry in a pocket or bag."
+   },
+   {
+    "word": "nero",
+    "surface": "nero",
+    "type": "adjective",
+    "definition": "Black; the colour of a screen that is switched off."
+   },
+   {
+    "word": "stanchezza",
+    "surface": "stanchezza",
+    "type": "noun",
+    "definition": "Tiredness; the heavy feeling after too many hours awake."
+   },
+   {
+    "word": "riparare",
+    "surface": "ripara",
+    "type": "verb",
+    "definition": "To repair; to make something work or look right again."
+   },
+   {
+    "word": "incidente",
+    "surface": "incidente",
+    "type": "noun",
+    "definition": "Accident; a crash or a small damage nobody wanted."
+   },
+   {
+    "word": "batteria",
+    "surface": "batteria",
+    "type": "noun",
+    "definition": "Battery; the part that holds the power inside a phone."
+   },
+   {
+    "word": "chiave",
+    "surface": "chiave",
+    "type": "noun",
+    "definition": "Key; the small metal piece that opens a lock or a car."
+   }
+  ]
+ }
+]

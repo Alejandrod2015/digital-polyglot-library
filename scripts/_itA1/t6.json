@@ -1,0 +1,395 @@
+[
+ {
+  "topic": "pharmacy-emergencies",
+  "slotIndex": 1,
+  "title": "Alle undici la farmacia è chiusa",
+  "slug": "alle-undici-la-farmacia-e-chiusa",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Alle undici di domenica la farmacia di Scilla è chiusa e sulla porta c'è solo un foglio giallo con i turni. Teo ha la febbre da tre ore e Rosa cammina piano per una caviglia che dal bosco in poi è diventata il doppio. La farmacia di turno è a undici chilometri, il traghetto parte fra due ore e il quattordici è domani.",
+  "text": "Alle undici di domenica la farmacia di Scilla è chiusa e sulla porta c'è un foglio giallo. Teo ha la febbre da tre ore e una tosse che non lo lascia parlare. Rosa cammina piano perché la caviglia destra è gonfia dal bosco di ieri.\n\nIl foglio dice quale farmacia è di turno e dove si comprano le medicine oggi. A undici chilometri di macchina la porta è aperta e la luce accesa. Martina lavora nella farmacia di turno e, con gli occhiali sul naso, guarda prima Teo.\n\n“Non ho una malattia, ho solo un raffreddore e la gola chiusa dal freddo”, dice Teo. Rosa gli mette una mano sulla fronte e sente la pelle bollente. “Prima lui, e se la febbre non scende chiamiamo il dottore di guardia”, decide Martina.\n\nIl termometro segna trentanove e due e Martina smette di sorridere. Prepara uno sciroppo, due pastiglie, dei cerotti e una cura di tre giorni. “Così non si guida fino a domani”, dice, “e quel dolore al piede vuole riposo, non altre pastiglie.”",
+  "vocab": [
+   {
+    "word": "farmacia",
+    "surface": "farmacia",
+    "type": "noun",
+    "definition": "Chemist's shop; where you buy medicines and ask for advice."
+   },
+   {
+    "word": "febbre",
+    "surface": "febbre",
+    "type": "noun",
+    "definition": "Fever; when your body is hotter than it should be."
+   },
+   {
+    "word": "tosse",
+    "surface": "tosse",
+    "type": "noun",
+    "definition": "Cough; the hard noise your chest makes when you are ill."
+   },
+   {
+    "word": "gola",
+    "surface": "gola",
+    "type": "noun",
+    "definition": "Throat; the part inside your neck that hurts with a cold."
+   },
+   {
+    "word": "caviglia",
+    "surface": "caviglia",
+    "type": "noun",
+    "definition": "Ankle; the joint between your leg and your foot."
+   },
+   {
+    "word": "gonfio",
+    "surface": "gonfia",
+    "type": "adjective",
+    "definition": "Swollen; bigger than normal because it hurts inside."
+   },
+   {
+    "word": "medicina",
+    "surface": "medicine",
+    "type": "noun",
+    "definition": "Medicine; what you take to get better when you are ill."
+   },
+   {
+    "word": "malattia",
+    "surface": "malattia",
+    "type": "noun",
+    "definition": "Illness; the thing that keeps you in bed for some days."
+   },
+   {
+    "word": "raffreddore",
+    "surface": "raffreddore",
+    "type": "noun",
+    "definition": "Cold; the small illness with a blocked nose and a cough."
+   },
+   {
+    "word": "pelle",
+    "surface": "pelle",
+    "type": "noun",
+    "definition": "Skin; the thin outside layer that covers your whole body."
+   },
+   {
+    "word": "occhiali",
+    "surface": "occhiali",
+    "type": "noun",
+    "definition": "Glasses; what you wear on your nose to see better."
+   },
+   {
+    "word": "naso",
+    "surface": "naso",
+    "type": "noun",
+    "definition": "Nose; the part of the face you breathe and smell with."
+   },
+   {
+    "word": "termometro",
+    "surface": "termometro",
+    "type": "noun",
+    "definition": "Thermometer; the small tool that tells you how high a fever is."
+   },
+   {
+    "word": "sciroppo",
+    "surface": "sciroppo",
+    "type": "noun",
+    "definition": "Syrup; the thick sweet medicine you take with a spoon."
+   },
+   {
+    "word": "pastiglia",
+    "surface": "pastiglie",
+    "type": "noun",
+    "definition": "Tablet; the small round medicine you swallow with water."
+   },
+   {
+    "word": "cura",
+    "surface": "cura",
+    "type": "noun",
+    "definition": "Course of treatment; the medicines you take for some days."
+   },
+   {
+    "word": "dolore",
+    "surface": "dolore",
+    "type": "noun",
+    "definition": "Pain; the bad feeling in a part of the body that hurts."
+   },
+   {
+    "word": "riposo",
+    "surface": "riposo",
+    "type": "noun",
+    "definition": "Rest; time with no work and no walking, so the body mends."
+   },
+   {
+    "word": "dottore",
+    "surface": "dottore",
+    "type": "noun",
+    "definition": "Doctor; the person who says what is wrong with your body."
+   },
+   {
+    "word": "domenica",
+    "surface": "domenica",
+    "type": "noun",
+    "definition": "Sunday; the day when almost every Italian shop stays shut."
+   }
+  ]
+ },
+ {
+  "topic": "pharmacy-emergencies",
+  "slotIndex": 2,
+  "title": "La pomata resta sul banco",
+  "slug": "la-pomata-resta-sul-banco",
+  "arcType": "reframe-turn",
+  "synopsis": "Dietro il banco Martina tira fuori quello che serve e fa a Teo le domande che si fanno sempre, una parte del corpo dopo l'altra. Il totale è sessanta euro e Rosa, per la prima volta in tutto il viaggio, alza la voce davanti a un'estranea invece di stare zitta. Quello che Martina fa dopo non risolve niente, però lascia le cose in un ordine diverso.",
+  "text": "Dietro il banco Martina tira fuori dal cassetto una pomata e una benda per Teo. “Non è niente, fra due ore sto in piedi”, dice lui, con il viso bianco, la camicia bagnata, il collo sudato. Il banco è freddo e la caviglia di Rosa sotto il calzino è più gonfia.\n\n“Ti fa male il petto quando tossisci, oppure solo la gola, i denti e le orecchie?”, chiede Martina. Teo dice di sì a tutto e si passa la lingua sulle labbra. Poi si soffia il naso e nel fazzoletto c'è del sangue.\n\n“Senza ricetta il resto non ve lo do, ci vuole un dottore”, spiega Martina. “Per una febbre così non serve un'ambulanza, serve coricarsi e dormire.” Il totale è sessanta euro, quanto la benzina di due giorni, e il credito non basta.\n\n“Pago io, e non è una cosa da discutere”, dice Teo con la voce debole. “Non paghi tu”, risponde Rosa davanti a tutti, e Martina resta educata. La sorprende togliendo la pomata dal conto, e Rosa non è antipatica, è solo senza stipendio.",
+  "vocab": [
+   {
+    "word": "pomata",
+    "surface": "pomata",
+    "type": "noun",
+    "definition": "Cream; the soft medicine you rub on a sore part of the body."
+   },
+   {
+    "word": "benda",
+    "surface": "benda",
+    "type": "noun",
+    "definition": "Bandage; the long strip of cloth you wrap round a hurt leg."
+   },
+   {
+    "word": "viso",
+    "surface": "viso",
+    "type": "noun",
+    "definition": "Face; the front of the head, with eyes, nose and mouth."
+   },
+   {
+    "word": "camicia",
+    "surface": "camicia",
+    "type": "noun",
+    "definition": "Shirt; the top with buttons down the front and a collar."
+   },
+   {
+    "word": "petto",
+    "surface": "petto",
+    "type": "noun",
+    "definition": "Chest; the front part of the body above the stomach."
+   },
+   {
+    "word": "dente",
+    "surface": "denti",
+    "type": "noun",
+    "definition": "Tooth; one of the white pieces you bite and chew with."
+   },
+   {
+    "word": "lingua",
+    "surface": "lingua",
+    "type": "noun",
+    "definition": "Tongue, and also language; Italian uses the same word for both."
+   },
+   {
+    "word": "labbro",
+    "surface": "labbra",
+    "type": "noun",
+    "definition": "Lip; one of the two soft edges around your mouth."
+   },
+   {
+    "word": "ricetta",
+    "surface": "ricetta",
+    "type": "noun",
+    "definition": "Prescription, and also a cooking recipe; Italian uses one word."
+   },
+   {
+    "word": "credito",
+    "surface": "credito",
+    "type": "noun",
+    "definition": "Credit; the money still left on a card or a phone."
+   },
+   {
+    "word": "debole",
+    "surface": "debole",
+    "type": "adjective",
+    "definition": "Weak; without the strength to do the normal things."
+   },
+   {
+    "word": "cassetto",
+    "surface": "cassetto",
+    "type": "noun",
+    "definition": "Drawer; the box that slides out of a table or a counter."
+   },
+   {
+    "word": "collo",
+    "surface": "collo",
+    "type": "noun",
+    "definition": "Neck; the part of the body between the head and the shoulders."
+   },
+   {
+    "word": "sangue",
+    "surface": "sangue",
+    "type": "noun",
+    "definition": "Blood; the red liquid that runs inside the whole body."
+   },
+   {
+    "word": "educato",
+    "surface": "educata",
+    "type": "adjective",
+    "definition": "Polite; treating other people well even when they are difficult."
+   },
+   {
+    "word": "antipatico",
+    "surface": "antipatica",
+    "type": "adjective",
+    "definition": "Unpleasant; the kind of person nobody enjoys being with."
+   },
+   {
+    "word": "ambulanza",
+    "surface": "ambulanza",
+    "type": "noun",
+    "definition": "Ambulance; the van that takes you fast to the hospital."
+   },
+   {
+    "word": "coricarsi",
+    "surface": "coricarsi",
+    "type": "verb",
+    "definition": "To lie down; to get into bed and stay there."
+   },
+   {
+    "word": "sorprendere",
+    "surface": "sorprende",
+    "type": "verb",
+    "definition": "To surprise; to do something nobody was expecting from you."
+   },
+   {
+    "word": "orecchio",
+    "surface": "orecchie",
+    "type": "noun",
+    "definition": "Ear; the part of the head you hear sounds with."
+   }
+  ]
+ },
+ {
+  "topic": "pharmacy-emergencies",
+  "slotIndex": 3,
+  "title": "Martina passa dall'albergo",
+  "slug": "martina-passa-dallalbergo",
+  "arcType": "late-reveal",
+  "synopsis": "Martina suona il campanello dell'albergo alle otto di sera, con un sacchetto e un foglio piegato, e sale a vedere come sta il malato. La febbre è scesa, le magliette di Teo asciugano sul balcone e per una sera nessuno deve guidare da nessuna parte. Prima di andare via Martina racconta una cosa di ieri che Rosa non aveva capito, e poi se ne va.",
+  "text": "Martina suona il campanello dell'albergo alle otto di sera. Nella stanza ci sono una poltrona, un balcone sul mare e la coperta della macchina. Fuori asciugano le magliette e i pantaloni di Teo.\n\n“La febbre è scesa e fra un mese non si ricorda più niente di questi giorni”, dice Martina. Rosa lava anche la biancheria con il detersivo del bagno e la stende fuori. Nel sacchetto ci sono cerotti, una crema, pastiglie e un appuntamento con il medico.\n\nPrima di andare via Martina dice quello che è successo il giorno prima. “Il tuo amico è tornato da solo e ha pagato la pomata che avevi lasciato”, dice piano. Teo dorme sulla poltrona con il cuscino sotto la testa, e Rosa si sente stupida.\n\nRosa resta sul balcone con il cellulare in carica e conta le navi. Sul filo asciugano anche un costume e una spugna dimenticata. “Domani guido io fino a Messina”, promette lei, “e il prossimo caffè lo pago io.”",
+  "vocab": [
+   {
+    "word": "campanello",
+    "surface": "campanello",
+    "type": "noun",
+    "definition": "Doorbell; the button you press outside to call somebody."
+   },
+   {
+    "word": "albergo",
+    "surface": "albergo",
+    "type": "noun",
+    "definition": "Hotel; the house where you pay to sleep for a night."
+   },
+   {
+    "word": "poltrona",
+    "surface": "poltrona",
+    "type": "noun",
+    "definition": "Armchair; the soft wide seat for one person only."
+   },
+   {
+    "word": "balcone",
+    "surface": "balcone",
+    "type": "noun",
+    "definition": "Balcony; the small open floor outside an Italian window."
+   },
+   {
+    "word": "maglietta",
+    "surface": "magliette",
+    "type": "noun",
+    "definition": "T-shirt; the light cotton top with short sleeves."
+   },
+   {
+    "word": "pantalone",
+    "surface": "pantaloni",
+    "type": "noun",
+    "definition": "Trousers; the piece of clothing that covers both of your legs."
+   },
+   {
+    "word": "mese",
+    "surface": "mese",
+    "type": "noun",
+    "definition": "Month; one of the twelve parts a year is cut into."
+   },
+   {
+    "word": "lavare",
+    "surface": "lava",
+    "type": "verb",
+    "definition": "To wash; to clean something with water and soap."
+   },
+   {
+    "word": "biancheria",
+    "surface": "biancheria",
+    "type": "noun",
+    "definition": "Linen and underwear; the small washing you do by hand."
+   },
+   {
+    "word": "detersivo",
+    "surface": "detersivo",
+    "type": "noun",
+    "definition": "Washing powder; what you add to water to clean clothes."
+   },
+   {
+    "word": "cerotto",
+    "surface": "cerotti",
+    "type": "noun",
+    "definition": "Plaster; the small sticky strip you put over a cut."
+   },
+   {
+    "word": "appuntamento",
+    "surface": "appuntamento",
+    "type": "noun",
+    "definition": "Appointment; a time agreed to meet a doctor or a friend."
+   },
+   {
+    "word": "medico",
+    "surface": "medico",
+    "type": "verb",
+    "definition": "Doctor; the person who examines you and says what is wrong."
+   },
+   {
+    "word": "magro",
+    "surface": "magro",
+    "type": "adjective",
+    "definition": "Thin; with very little fat on the body."
+   },
+   {
+    "word": "stupido",
+    "surface": "stupida",
+    "type": "adjective",
+    "definition": "Stupid; feeling foolish about something you said or thought."
+   },
+   {
+    "word": "nave",
+    "surface": "navi",
+    "type": "noun",
+    "definition": "Ship; the big boat that carries people and lorries across water."
+   },
+   {
+    "word": "costume",
+    "surface": "costume",
+    "type": "noun",
+    "definition": "Swimming costume; what you wear to go into the sea."
+   },
+   {
+    "word": "spugna",
+    "surface": "spugna",
+    "type": "noun",
+    "definition": "Sponge; the soft thing you wash or clean a surface with."
+   },
+   {
+    "word": "svegliarsi",
+    "surface": "sveglia",
+    "type": "adjective",
+    "definition": "To wake up; to open your eyes and stop sleeping."
+   },
+   {
+    "word": "filo",
+    "surface": "filo",
+    "type": "noun",
+    "definition": "Wire or line; here the string clothes are hung out on."
+   }
+  ]
+ }
+]

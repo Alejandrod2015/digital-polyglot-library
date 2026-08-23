@@ -1,0 +1,395 @@
+[
+ {
+  "topic": "village-festivals",
+  "slotIndex": 1,
+  "title": "La strada riapre a mezzanotte",
+  "slug": "la-strada-riapre-a-mezzanotte",
+  "arcType": "recurring-character-callback",
+  "synopsis": "All'ingresso di un paese del sud la strada principale è chiusa e chi ferma la macchina è un uomo che suona nella banda. Riapre a mezzanotte, dopo la processione e dopo il ballo, e l'altra via sono quaranta chilometri di curve strette. Rosa conta le ore che le restano prima del quattordici, e per la prima volta è Teo a non dire niente.",
+  "text": "Chi ferma la macchina all'ingresso del paese è Dario, un uomo di Roma che suona nella banda. La corsia unica è chiusa e sopra le case ci sono bandiere di carta. Rosa abbassa il finestrino della macchina e sente odore di griglia e fumo.\n\n“La strada riapre a mezzanotte, sabato prima passa la processione della sagra e poi c'è il ballo”, spiega Dario. Rosa fa il conto: quaranta chilometri di curve oppure cinque ore ferme. Teo scende con la giacca e guarda due uomini che portano una statua del santo.\n\nSul palco un microfono fischia e il sindaco comincia un discorso lungo. “Cinque anni fa questa piazza era vuota, adesso guardate quanta gente c'è stasera”, dice lui. La banda aspetta con le trombe basse e un tamburo appoggiato sul muretto.\n\n“Rimanete qui, tanto stanotte non si passa e domani mattina si vola fino a Palermo”, dice Dario. Teo compra due salsicce, uno spuntino in piedi, e paga con il suo credito. Rosa fa una telefonata al garage e guarda la batteria del cellulare che scende.",
+  "vocab": [
+   {
+    "word": "banda",
+    "surface": "banda",
+    "type": "noun",
+    "definition": "Band; the group of people who play music in the street."
+   },
+   {
+    "word": "corsia",
+    "surface": "corsia",
+    "type": "noun",
+    "definition": "Lane; one of the strips a road is divided into."
+   },
+   {
+    "word": "bandiera",
+    "surface": "bandiere",
+    "type": "noun",
+    "definition": "Flag; the coloured cloth hung up for a party or a country."
+   },
+   {
+    "word": "griglia",
+    "surface": "griglia",
+    "type": "noun",
+    "definition": "Grill; the metal bars you cook meat on over the fire."
+   },
+   {
+    "word": "fumo",
+    "surface": "fumo",
+    "type": "noun",
+    "definition": "Smoke; the grey cloud that rises from a fire."
+   },
+   {
+    "word": "sagra",
+    "surface": "sagra",
+    "type": "noun",
+    "definition": "Village food festival; a few days of eating and music in the square."
+   },
+   {
+    "word": "processione",
+    "surface": "processione",
+    "type": "noun",
+    "definition": "Procession; people walking slowly together behind a holy statue."
+   },
+   {
+    "word": "ballo",
+    "surface": "ballo",
+    "type": "noun",
+    "definition": "Dance; the part of the evening when everybody dances."
+   },
+   {
+    "word": "statua",
+    "surface": "statua",
+    "type": "noun",
+    "definition": "Statue; the figure of a person made in stone or wood."
+   },
+   {
+    "word": "santo",
+    "surface": "santo",
+    "type": "noun",
+    "definition": "Saint; the holy person a village keeps a feast day for."
+   },
+   {
+    "word": "microfono",
+    "surface": "microfono",
+    "type": "noun",
+    "definition": "Microphone; what you speak into so everybody can hear you."
+   },
+   {
+    "word": "sindaco",
+    "surface": "sindaco",
+    "type": "noun",
+    "definition": "Mayor; the person who runs an Italian town or village."
+   },
+   {
+    "word": "discorso",
+    "surface": "discorso",
+    "type": "noun",
+    "definition": "Speech; the words somebody says in front of a crowd."
+   },
+   {
+    "word": "tromba",
+    "surface": "trombe",
+    "type": "noun",
+    "definition": "Trumpet; the loud metal instrument you blow into."
+   },
+   {
+    "word": "tamburo",
+    "surface": "tamburo",
+    "type": "noun",
+    "definition": "Drum; the round instrument you hit to keep the beat."
+   },
+   {
+    "word": "salsiccia",
+    "surface": "salsicce",
+    "type": "noun",
+    "definition": "Sausage; the fat meat roll Italians cook over the coals."
+   },
+   {
+    "word": "spuntino",
+    "surface": "spuntino",
+    "type": "noun",
+    "definition": "Snack; a small quick thing to eat between two meals."
+   },
+   {
+    "word": "musica",
+    "surface": "musica",
+    "type": "noun",
+    "definition": "Music; the sound made by people singing or playing."
+   },
+   {
+    "word": "telefonata",
+    "surface": "telefonata",
+    "type": "noun",
+    "definition": "Phone call; the moment you ring somebody and talk."
+   },
+   {
+    "word": "sabato",
+    "surface": "sabato",
+    "type": "noun",
+    "definition": "Saturday; the day before Sunday, when Italian villages hold their feasts."
+   }
+  ]
+ },
+ {
+  "topic": "village-festivals",
+  "slotIndex": 2,
+  "title": "Il fumo della griglia",
+  "slug": "il-fumo-della-griglia",
+  "arcType": "harmonic-close",
+  "synopsis": "Un fumo bianco esce dalla griglia della sagra e arriva fino alla strada, e sui tavoli lunghi c'è più roba di quanta ne possa mangiare il paese. Dario porta Rosa a una panca libera e le spiega come funziona il gettone. Per una sera Rosa non tiene il conto di niente, e questo le costa più fatica che guidare.",
+  "text": "Un fumo bianco esce dalla griglia della sagra e si sente da lontano. Dario porta Rosa e Teo ai tavoli, dove ci sono pasta, peperoni, insalata, mais e anguria. “Siediti su questa panca, il posto buono è qui davanti alla griglia”, dice a Rosa.\n\n“Qui si paga un gettone e si mangia finché c'è, non è un ristorante”, spiega Dario. Una donna versa il vino e un'altra taglia il melone e il cetriolo. Nel piatto di Teo finiscono pollo, maiale e due cucchiai di salsa, dopo tre giorni di panini.\n\nRosa cerca il credito nella tasca, insieme alla chiave della macchina, e Dario le ferma la mano. “Stasera paga la sagra e tu domani porti la macchina a Palermo, siamo pari”, dice lui. Sul tavolo arrivano ancora uva, pere, cioccolato, gamberi freddi e torta con la panna.\n\nAlle undici la piazza è piena e nessuno guarda l'ora. “Questa limonata è meglio del caffè che faccio io al bar”, dice Teo, e balla male con due signore. Rosa ride per la prima volta dell'estate e va a dormire senza sveglia.",
+  "vocab": [
+   {
+    "word": "pasta",
+    "surface": "pasta",
+    "type": "noun",
+    "definition": "Pasta; the first course Italians eat almost every single day."
+   },
+   {
+    "word": "peperone",
+    "surface": "peperoni",
+    "type": "noun",
+    "definition": "Pepper; the big red, yellow or green vegetable you roast."
+   },
+   {
+    "word": "insalata",
+    "surface": "insalata",
+    "type": "noun",
+    "definition": "Salad; raw green leaves with oil, salt and vinegar on top."
+   },
+   {
+    "word": "mais",
+    "surface": "mais",
+    "type": "noun",
+    "definition": "Sweetcorn; the small yellow seeds that grow on a cob."
+   },
+   {
+    "word": "anguria",
+    "surface": "anguria",
+    "type": "noun",
+    "definition": "Watermelon; the huge green fruit that is red and wet inside."
+   },
+   {
+    "word": "limonata",
+    "surface": "limonata",
+    "type": "noun",
+    "definition": "Lemonade; the cold drink made with lemons, water and sugar."
+   },
+   {
+    "word": "gettone",
+    "surface": "gettone",
+    "type": "noun",
+    "definition": "Token; the little metal piece you buy and give instead of money."
+   },
+   {
+    "word": "melone",
+    "surface": "melone",
+    "type": "noun",
+    "definition": "Melon; the sweet orange fruit Italians eat with ham."
+   },
+   {
+    "word": "cetriolo",
+    "surface": "cetriolo",
+    "type": "noun",
+    "definition": "Cucumber; the long green vegetable you slice into a salad."
+   },
+   {
+    "word": "pollo",
+    "surface": "pollo",
+    "type": "noun",
+    "definition": "Chicken; the meat of the bird that lives in a farmyard."
+   },
+   {
+    "word": "maiale",
+    "surface": "maiale",
+    "type": "noun",
+    "definition": "Pork; the meat of the pig, and the animal itself."
+   },
+   {
+    "word": "gambero",
+    "surface": "gamberi",
+    "type": "noun",
+    "definition": "Prawn; the small pink sea animal you eat with the fingers."
+   },
+   {
+    "word": "salsa",
+    "surface": "salsa",
+    "type": "noun",
+    "definition": "Sauce; the wet part you pour over meat or over pasta."
+   },
+   {
+    "word": "uva",
+    "surface": "uva",
+    "type": "noun",
+    "definition": "Grapes; the small sweet fruit that grows in bunches."
+   },
+   {
+    "word": "pera",
+    "surface": "pere",
+    "type": "noun",
+    "definition": "Pear; the soft green or brown fruit with a narrow top."
+   },
+   {
+    "word": "cioccolato",
+    "surface": "cioccolato",
+    "type": "noun",
+    "definition": "Chocolate; the sweet brown food made from cocoa beans."
+   },
+   {
+    "word": "panna",
+    "surface": "panna",
+    "type": "noun",
+    "definition": "Cream; the thick white part of milk, sweet on a cake."
+   },
+   {
+    "word": "signora",
+    "surface": "signore",
+    "type": "noun",
+    "definition": "Lady; the polite word for a grown woman you do not know."
+   },
+   {
+    "word": "estate",
+    "surface": "estate",
+    "type": "noun",
+    "definition": "Summer; the hot months when Italy goes to the sea."
+   },
+   {
+    "word": "pasto",
+    "surface": "pasto",
+    "type": "noun",
+    "definition": "Meal; all the food eaten together at one sitting."
+   }
+  ]
+ },
+ {
+  "topic": "village-festivals",
+  "slotIndex": 3,
+  "title": "Il palco si svuota all'una",
+  "slug": "il-palco-si-svuota-alluna",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Il palco si svuota all'una e le luci sopra la strada si spengono a metà, così Dario accompagna i due fino alla macchina passando dietro la cattedrale. Per strada racconta perché a Roma suonava in tre bande e qui ne basta una, e mostra un paese che di notte è quasi tutto chiuso. Rosa riparte piano, e per venti chilometri non sorpassa nessuno.",
+  "text": "Il palco si svuota all'una e le luci sopra la strada si spengono a metà. Dario accompagna Rosa e Teo verso la macchina, passando dietro la cattedrale. Il paese di notte ha una scuola, una banca, la posta, un supermercato e nessuna farmacia.\n\n“A Roma suonavo in tre bande e non conoscevo il nome di nessuno dei musicisti”, racconta Dario. Passano davanti a un palazzo, a un teatro, a un cinema chiuso e a un parco senza luce. Teo cammina piano e la conversazione va avanti.\n\n“Qui la macelleria apre tre giorni e la panetteria uno solo, però la gente resta lo stesso”, aggiunge lui. Ogni edificio del paese ha una storia che Dario racconta a metà. Davanti al castello Rosa apre il bagagliaio, sistema la coperta e prende la torcia.\n\nDario, che è più giovane di quello che sembra, resta in mezzo alla strada. “Il santo di questo paese protegge chi viaggia di notte e chi guida stanco”, dice, e ride. Rosa guida piano per venti chilometri, senza tristezza, con il graffio sulla portiera.",
+  "vocab": [
+   {
+    "word": "cattedrale",
+    "surface": "cattedrale",
+    "type": "noun",
+    "definition": "Cathedral; the big main church at the centre of a town."
+   },
+   {
+    "word": "scuola",
+    "surface": "scuola",
+    "type": "noun",
+    "definition": "School; the place where children go to learn every morning."
+   },
+   {
+    "word": "banca",
+    "surface": "banca",
+    "type": "noun",
+    "definition": "Bank; where you keep your money and take it out again."
+   },
+   {
+    "word": "posta",
+    "surface": "posta",
+    "type": "noun",
+    "definition": "Post office; where letters and parcels are sent and picked up."
+   },
+   {
+    "word": "supermercato",
+    "surface": "supermercato",
+    "type": "noun",
+    "definition": "Supermarket; the big shop with all the food on shelves."
+   },
+   {
+    "word": "ospedale",
+    "surface": "ospedale",
+    "type": "noun",
+    "definition": "Hospital; where doctors treat people who are really ill."
+   },
+   {
+    "word": "palazzo",
+    "surface": "palazzo",
+    "type": "noun",
+    "definition": "Large building; a block of flats or an old grand house."
+   },
+   {
+    "word": "teatro",
+    "surface": "teatro",
+    "type": "noun",
+    "definition": "Theatre; the hall where people watch a play on a stage."
+   },
+   {
+    "word": "cinema",
+    "surface": "cinema",
+    "type": "noun",
+    "definition": "Cinema; the dark hall where you watch a film on a screen."
+   },
+   {
+    "word": "parco",
+    "surface": "parco",
+    "type": "noun",
+    "definition": "Park; the green public space with trees and benches."
+   },
+   {
+    "word": "conversazione",
+    "surface": "conversazione",
+    "type": "noun",
+    "definition": "Conversation; two or more people talking to each other."
+   },
+   {
+    "word": "macelleria",
+    "surface": "macelleria",
+    "type": "noun",
+    "definition": "Butcher's shop; where Italians buy meat cut in front of them."
+   },
+   {
+    "word": "panetteria",
+    "surface": "panetteria",
+    "type": "noun",
+    "definition": "Bakery; the shop that sells bread fresh every morning."
+   },
+   {
+    "word": "edificio",
+    "surface": "edificio",
+    "type": "noun",
+    "definition": "Building; any construction with walls and a roof."
+   },
+   {
+    "word": "storia",
+    "surface": "storia",
+    "type": "noun",
+    "definition": "Story, and also history; Italian uses the same word for both."
+   },
+   {
+    "word": "castello",
+    "surface": "castello",
+    "type": "noun",
+    "definition": "Castle; the old stone fort above many Italian villages."
+   },
+   {
+    "word": "moto",
+    "surface": "moto",
+    "type": "noun",
+    "definition": "Motorbike; the two wheeled machine with an engine."
+   },
+   {
+    "word": "giovane",
+    "surface": "giovane",
+    "type": "adjective",
+    "definition": "Young; with few years behind you, still near the start of life."
+   },
+   {
+    "word": "viaggiare",
+    "surface": "viaggia",
+    "type": "verb",
+    "definition": "To travel; to go from one place to a far one."
+   },
+   {
+    "word": "tristezza",
+    "surface": "tristezza",
+    "type": "noun",
+    "definition": "Sadness; the low quiet feeling after something goes wrong."
+   }
+  ]
+ }
+]
