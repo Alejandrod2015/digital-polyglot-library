@@ -20,6 +20,23 @@ const NOMBRES = ["Hannah", "Elias", "Sophie", "Noah", "Emilia", "Leon", "Marie"]
 const norm = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim()
   .replace(/^(der|die|das|den|dem|des|ein|eine|einen|einem|einer)\s+/, "");
 const raiz = (s: string) => norm(s).replace(/(en|er|es|e|n|s|t)$/, "");
+// La cobertura se mide con la MISMA funcion que el gate de sets
+// (`_validateSets.covers`): prefijo compartido tolerante a la flexion. Con una
+// version propia mas estricta, la auditoria marcaba 62 plazas sin ejercicio que
+// el gate daba por cubiertas, y esa discrepancia es una falsa alarma.
+const ART_HEAD = /^(der|die|das|den|dem|des|ein|eine|le|la|les|l|el|los|las|il|lo|gli|un|une|o|a|os|as)$/;
+const primerTok = (s: string) => {
+  const p = norm(s).split(/\s+/).filter(Boolean);
+  if (!p.length) return "";
+  return p.length > 1 && ART_HEAD.test(p[0]) ? p[p.length - 1] : p[0];
+};
+const prefijo = (a: string, b: string) => { let i = 0; while (i < a.length && i < b.length && a[i] === b[i]) i++; return i; };
+const cubre = (objetivo: string, word: string, surface: string) => {
+  const a = norm(objetivo);
+  if (a === norm(word) || a === norm(surface)) return true;
+  const ta = primerTok(a), tb = primerTok(norm(word));
+  return prefijo(ta, tb) >= Math.max(3, Math.min(ta.length, tb.length) - 3);
+};
 
 type Ex = { type: string; word: string; sentence: string; featured: boolean; payload: any };
 
@@ -47,8 +64,8 @@ type Ex = { type: string; word: string; sentence: string; featured: boolean; pay
     totalEx += exs.length;
 
     // cobertura del vocab
-    const cubiertas = new Set(exs.flatMap((e) => String(e.word).split(",").map(norm)));
-    const sinCubrir = vocab.filter((v) => !cubiertas.has(norm(String(v.word))) && !cubiertas.has(norm(String(v.surface ?? v.word))));
+    const objetivos = exs.flatMap((e) => String(e.word).split(","));
+    const sinCubrir = vocab.filter((v) => !objetivos.some((t) => cubre(t, String(v.word), String(v.surface ?? v.word))));
     bump("plazas de vocab sin ningun ejercicio", sinCubrir.length);
     bump("plazas de vocab totales", vocab.length);
 
@@ -58,8 +75,7 @@ type Ex = { type: string; word: string; sentence: string; featured: boolean; pay
 
       // la palabra objetivo tiene que ser del vocab de SU historia
       for (const w of String(e.word).split(",")) {
-        const raices = new Set([...lemas, ...surfaces].map(raiz));
-        if (w && !lemas.has(norm(w)) && !surfaces.has(norm(w)) && !raices.has(raiz(w))) { bump("palabra objetivo fuera del vocab de su historia"); guarda("fuera-vocab", `${s.slug}: ${w}`); }
+        if (w && !vocab.some((v) => cubre(w, String(v.word), String(v.surface ?? v.word)))) { bump("palabra objetivo fuera del vocab de su historia"); guarda("fuera-vocab", `${s.slug}: ${w}`); }
       }
       if (/[—–]/.test(sent) || /[—–]/.test(JSON.stringify(e.payload))) { bump("guion largo"); guarda("emdash", `${s.slug}: ${sent.slice(0, 50)}`); }
 

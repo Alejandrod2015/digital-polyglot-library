@@ -168,79 +168,6 @@
   }
  },
  {
-  "type": "meaning_in_context",
-  "word": "der Tod",
-  "sentence": "Seit dem [[Tod]] ihrer Mutter steht sie allein im Laden.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "death",
-   "options": [
-    "death",
-    "birth",
-    "wedding",
-    "journey"
-   ],
-   "audioClip": {
-    "storySlug": "maries-lebkuchen-am-hauptmarkt",
-    "storySource": "user",
-    "sentence": "Seit dem Tod ihrer Mutter steht sie allein im Laden.",
-    "targetWord": "Tod",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "probier",
-  "sentence": "_____ den mit Mandeln, der ist der beste.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "probier",
-   "options": [
-    "probier",
-    "bindet",
-    "faltet",
-    "verkaufe"
-   ],
-   "translation": "_____ the one with almonds, it is the best.",
-   "optionTranslations": [
-    "try",
-    "ties",
-    "folds",
-    "sell"
-   ],
-   "audioClip": {
-    "storySlug": "maries-lebkuchen-am-hauptmarkt",
-    "storySource": "user",
-    "sentence": "probier den mit Mandeln, der ist der beste.",
-    "targetWord": "probier",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "schmecken",
-  "sentence": "Der Lebkuchen [[schmeckt]] sehr süß und würzig.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to taste a certain way",
-   "options": [
-    "to taste a certain way",
-    "to smell a certain way",
-    "to look a certain way",
-    "to cost a certain amount"
-   ],
-   "audioClip": {
-    "storySlug": "maries-lebkuchen-am-hauptmarkt",
-    "storySource": "user",
-    "sentence": "Der Lebkuchen schmeckt sehr süß und würzig.",
-    "targetWord": "schmeckt",
-    "language": "german"
-   }
-  }
- },
- {
   "type": "fill_blank",
   "word": "schaffe",
   "sentence": "Ich _____ die viele Arbeit nicht mehr allein.",
@@ -289,8 +216,7 @@
     "targetWord": "Mutter",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -312,8 +238,7 @@
     "targetWord": "Mandeln",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -335,8 +260,7 @@
     "targetWord": "Dosen",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -454,90 +378,138 @@
   "featured": false
  },
  {
-  "type": "fill_blank",
-  "word": "süß",
-  "sentence": "Der Lebkuchen mit Honig ist sehr _____.",
+  "type": "meaning_in_context",
+  "word": "leise",
+  "sentence": "Ich schaffe das nicht mehr allein, sagt sie [[leise]].",
   "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "süß",
+   "prompt": "Choose the meaning in context.",
+   "answer": "quietly",
    "options": [
-    "süß",
-    "würzig",
-    "salzig",
-    "sauer"
-   ],
-   "translation": "The gingerbread with honey is very _____.",
-   "optionTranslations": [
-    "sweet",
-    "spicy",
-    "salty",
-    "sour"
+    "quietly",
+    "loudly",
+    "quickly",
+    "angrily"
    ],
    "audioClip": {
     "storySlug": "maries-lebkuchen-am-hauptmarkt",
     "storySource": "user",
-    "sentence": "Der Lebkuchen mit Honig ist sehr süß.",
-    "targetWord": "süß",
+    "sentence": "Ich schaffe das nicht mehr allein, sagt sie leise.",
+    "targetWord": "leise",
     "language": "german"
    }
   },
   "featured": false
  },
  {
-  "type": "fill_blank",
-  "word": "würzig",
-  "sentence": "Der Kuchen ist voller Gewürze und schmeckt sehr _____.",
+  "type": "meaning_in_context",
+  "word": "fragen",
+  "sentence": "Du bist die Einzige, die [[fragt]].",
   "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "würzig",
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask",
    "options": [
-    "würzig",
-    "süß",
-    "salzig",
-    "sauer"
-   ],
-   "translation": "The cake is full of spices and tastes very _____.",
-   "optionTranslations": [
-    "spicy",
-    "sweet",
-    "salty",
-    "sour"
+    "to ask",
+    "to answer",
+    "to promise",
+    "to forget"
    ],
    "audioClip": {
     "storySlug": "maries-lebkuchen-am-hauptmarkt",
     "storySource": "user",
-    "sentence": "Der Kuchen ist voller Gewürze und schmeckt sehr würzig.",
-    "targetWord": "würzig",
+    "sentence": "Du bist die Einzige, die fragt.",
+    "targetWord": "fragt",
     "language": "german"
    }
   },
   "featured": false
  },
  {
-  "type": "fill_blank",
-  "word": "kleben",
-  "sentence": "Ihre Finger _____ von Zucker und Honig.",
+  "type": "meaning_in_context",
+  "word": "riechen",
+  "sentence": "Ihr Stand [[riecht]] nach Zimt.",
   "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "kleben",
+   "prompt": "Choose the meaning in context.",
+   "answer": "to smell of something",
    "options": [
-    "kleben",
-    "legen",
-    "heben",
-    "verkaufen"
-   ],
-   "translation": "Her fingers _____ with sugar and honey.",
-   "optionTranslations": [
-    "stick",
-    "put",
-    "raise",
-    "sell"
+    "to smell of something",
+    "to taste of something",
+    "to sound like something",
+    "to look like something"
    ],
    "audioClip": {
     "storySlug": "maries-lebkuchen-am-hauptmarkt",
     "storySource": "user",
-    "sentence": "Ihre Finger kleben von Zucker und Honig.",
-    "targetWord": "kleben",
+    "sentence": "Ihr Stand riecht nach Zimt.",
+    "targetWord": "riecht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ganz",
+  "sentence": "Ein Tag wird eine [[ganze]] Woche, und der Direktor aus Leipzig telefoniert dreimal umsonst.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "whole, entire",
+   "options": [
+    "whole, entire",
+    "half",
+    "empty",
+    "broken"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Ein Tag wird eine ganze Woche, und der Direktor aus Leipzig telefoniert dreimal umsonst.",
+    "targetWord": "ganze",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "allein",
+  "sentence": "Ich schaffe das nicht mehr [[allein]], sagt sie leise.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "alone",
+   "options": [
+    "alone",
+    "together",
+    "quickly",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Ich schaffe das nicht mehr allein, sagt sie leise.",
+    "targetWord": "allein",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "besser",
+  "sentence": "Der ist [[besser]] als früher.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "better",
+   "options": [
+    "better",
+    "worse",
+    "louder",
+    "later"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Der ist besser als früher.",
+    "targetWord": "besser",
     "language": "german"
    }
   },

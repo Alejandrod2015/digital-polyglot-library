@@ -227,50 +227,6 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "decken",
-  "sentence": "Sie [[deckt]] den Tisch für die Gäste.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to set the table",
-   "options": [
-    "to set the table",
-    "to clear the table",
-    "to wash the dishes",
-    "to cook the meal"
-   ],
-   "audioClip": {
-    "storySlug": "sophie-kocht-am-neckar",
-    "storySource": "user",
-    "sentence": "Sie deckt den Tisch für die Gäste.",
-    "targetWord": "deckt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Hunger",
-  "sentence": "Er hat großen [[Hunger]] und isst sehr schnell.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hunger",
-   "options": [
-    "hunger",
-    "thirst",
-    "tiredness",
-    "fear"
-   ],
-   "audioClip": {
-    "storySlug": "sophie-kocht-am-neckar",
-    "storySource": "user",
-    "sentence": "Er hat großen Hunger und isst sehr schnell.",
-    "targetWord": "Hunger",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
   "word": "die Stunde",
   "sentence": "Die Fahrt dauert viele [[Stunden]] und ist sehr ruhig.",
   "payload": {
@@ -289,8 +245,7 @@
     "targetWord": "Stunden",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -312,8 +267,7 @@
     "targetWord": "Fenster",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -340,29 +294,6 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "mögen",
-  "sentence": "[[Magst]] du Käse auf deinen Spätzle?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to like something",
-   "options": [
-    "to like something",
-    "to hate something",
-    "to cook something",
-    "to buy something"
-   ],
-   "audioClip": {
-    "storySlug": "sophie-kocht-am-neckar",
-    "storySource": "user",
-    "sentence": "Magst du Käse auf deinen Spätzle?",
-    "targetWord": "Magst",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
   "word": "der Käse",
   "sentence": "Er nimmt gern [[Käse]] auf seine warmen Spätzle.",
   "payload": {
@@ -379,29 +310,6 @@
     "storySource": "user",
     "sentence": "Er nimmt gern Käse auf seine warmen Spätzle.",
     "targetWord": "Käse",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "trinken",
-  "sentence": "Die Gruppe essen zusammen und [[trinken]] Apfelsaft.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to drink",
-   "options": [
-    "to drink",
-    "to eat",
-    "to cook",
-    "to buy"
-   ],
-   "audioClip": {
-    "storySlug": "sophie-kocht-am-neckar",
-    "storySource": "user",
-    "sentence": "Die Gruppe essen zusammen und trinken Apfelsaft.",
-    "targetWord": "trinken",
     "language": "german"
    }
   },
@@ -558,30 +466,92 @@
   "featured": false
  },
  {
-  "type": "fill_blank",
-  "word": "hell",
-  "sentence": "Das Zimmer hat große Fenster und ist sehr _____.",
+  "type": "meaning_in_context",
+  "word": "fragen",
+  "sentence": "Er, magst du Käse?, [[fragt]] sie.",
   "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "hell",
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask",
    "options": [
-    "hell",
-    "klein",
-    "spät",
-    "fertig"
-   ],
-   "translation": "The room has big windows and is very _____.",
-   "optionTranslations": [
-    "bright",
-    "small",
-    "late",
-    "ready"
+    "to ask",
+    "to answer",
+    "to promise",
+    "to forget"
    ],
    "audioClip": {
     "storySlug": "sophie-kocht-am-neckar",
     "storySource": "user",
-    "sentence": "Das Zimmer hat große Fenster und ist sehr hell.",
-    "targetWord": "hell",
+    "sentence": "Er, magst du Käse?, fragt sie.",
+    "targetWord": "fragt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "antworten",
+  "sentence": "Das ist wenigstens ehrlich, [[antwortet]] sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to answer",
+   "options": [
+    "to answer",
+    "to ask",
+    "to shout",
+    "to whisper"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Das ist wenigstens ehrlich, antwortet sie.",
+    "targetWord": "antwortet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schauen",
+  "sentence": "Er [[schaut]] auf seinen Teller.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to look at something",
+   "options": [
+    "to look at something",
+    "to run somewhere",
+    "to wait for someone",
+    "to point at something"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Er schaut auf seinen Teller.",
+    "targetWord": "schaut",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bringen",
+  "sentence": "Ein alter Bus [[bringt]] sie und er nach Heidelberg.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to bring something to someone",
+   "options": [
+    "to bring something to someone",
+    "to take something away",
+    "to sell something",
+    "to hide something"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Ein alter Bus bringt sie und er nach Heidelberg.",
+    "targetWord": "bringt",
     "language": "german"
    }
   },

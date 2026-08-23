@@ -1,7 +1,7 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Bahnhof,die Kirche,der Platz,der Fluss",
+  "word": "der Bahnhof,der Platz,der Fluss,das Jahr",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
@@ -11,19 +11,9 @@
      "answer": "a train station",
      "options": [
       "a train station",
-      "a church",
       "a public square",
-      "a river"
-     ]
-    },
-    {
-     "word": "die Kirche",
-     "answer": "a church",
-     "options": [
-      "a train station",
-      "a church",
-      "a public square",
-      "a river"
+      "a river",
+      "a year"
      ]
     },
     {
@@ -31,9 +21,9 @@
      "answer": "a public square",
      "options": [
       "a train station",
-      "a church",
       "a public square",
-      "a river"
+      "a river",
+      "a year"
      ]
     },
     {
@@ -41,9 +31,19 @@
      "answer": "a river",
      "options": [
       "a train station",
-      "a church",
       "a public square",
-      "a river"
+      "a river",
+      "a year"
+     ]
+    },
+    {
+     "word": "das Jahr",
+     "answer": "a year",
+     "options": [
+      "a train station",
+      "a public square",
+      "a river",
+      "a year"
      ]
     }
    ],
@@ -119,57 +119,6 @@
     "storySource": "user",
     "sentence": "Der Bus kommt spät, und sie warten seit einer Stunde.",
     "targetWord": "warten",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "winken",
-  "sentence": "Das Schiff fährt weg, und die Leute _____ vom Ufer.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "winken",
-   "options": [
-    "winken",
-    "schlafen",
-    "lesen",
-    "packen"
-   ],
-   "translation": "The ship leaves, and the people _____ from the bank.",
-   "optionTranslations": [
-    "wave",
-    "sleep",
-    "read",
-    "pack"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Das Schiff fährt weg, und die Leute winken vom Ufer.",
-    "targetWord": "winken",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Freund",
-  "sentence": "Er ist ihr ältester [[Freund]] aus der Schule.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a friend",
-   "options": [
-    "a friend",
-    "a brother",
-    "a neighbour",
-    "a teacher"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Er ist ihr ältester Freund aus der Schule.",
-    "targetWord": "Freund",
     "language": "german"
    }
   }
@@ -289,8 +238,7 @@
     "targetWord": "Lehrerin",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -312,54 +260,7 @@
     "targetWord": "Namen",
     "language": "german"
    }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Musik",
-  "sentence": "Ein Mann macht [[Musik]] auf dem Platz vor der Kirche.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "music",
-   "options": [
-    "music",
-    "noise",
-    "silence",
-    "a speech"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Ein Mann macht Musik auf dem Platz vor der Kirche.",
-    "targetWord": "Musik",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Sommer",
-  "sentence": "Er kommt jeden [[Sommer]] allein in diese Stadt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "summer",
-   "options": [
-    "summer",
-    "winter",
-    "autumn",
-    "spring"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Er kommt jeden Sommer allein in diese Stadt.",
-    "targetWord": "Sommer",
-    "language": "german"
-   }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -379,29 +280,6 @@
     "storySource": "user",
     "sentence": "Die Schiffe fahren langsam auf dem breiten Fluss.",
     "targetWord": "Schiffe",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Glocke",
-  "sentence": "Die [[Glocken]] der Kirche schlagen laut.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a bell",
-   "options": [
-    "a bell",
-    "a clock",
-    "a horn",
-    "a drum"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Die Glocken der Kirche schlagen laut.",
-    "targetWord": "Glocken",
     "language": "german"
    }
   },
@@ -469,66 +347,6 @@
  },
  {
   "type": "fill_blank",
-  "word": "breit",
-  "sentence": "Der Tisch ist sehr _____, und alle Teller passen darauf.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "breit",
-   "options": [
-    "breit",
-    "still",
-    "laut",
-    "kalt"
-   ],
-   "translation": "The table is very _____, and all the plates fit on it.",
-   "optionTranslations": [
-    "wide",
-    "quiet",
-    "loud",
-    "cold"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Der Tisch ist sehr breit, und alle Teller passen darauf.",
-    "targetWord": "breit",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "spielt",
-  "sentence": "Meine Schwester _____ Klavier, und ich höre gern zu.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "spielt",
-   "options": [
-    "spielt",
-    "schreibt",
-    "drückt",
-    "kauft"
-   ],
-   "translation": "My sister _____ the piano, and I like listening.",
-   "optionTranslations": [
-    "plays",
-    "writes",
-    "presses",
-    "buys"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Meine Schwester spielt Klavier, und ich höre gern zu.",
-    "targetWord": "spielt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
   "word": "besucht",
   "sentence": "Er _____ jeden Sommer seine Großmutter am Meer.",
   "payload": {
@@ -582,6 +400,144 @@
     "storySource": "user",
     "sentence": "Sie wohnt schon lange in derselben kleinen Wohnung.",
     "targetWord": "wohnt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "leise",
+  "sentence": "Ich komme jeden Sommer allein hierher, sagt er [[leise]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quietly",
+   "options": [
+    "quietly",
+    "loudly",
+    "quickly",
+    "angrily"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Ich komme jeden Sommer allein hierher, sagt er leise.",
+    "targetWord": "leise",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "antworten",
+  "sentence": "Wir fahren nächstes Jahr zusammen, [[antwortet]] sie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to answer",
+   "options": [
+    "to answer",
+    "to ask",
+    "to shout",
+    "to whisper"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Wir fahren nächstes Jahr zusammen, antwortet sie.",
+    "targetWord": "antwortet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kalt",
+  "sentence": "Der Bahnhof in Dresden ist groß, laut und [[kalt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cold",
+   "options": [
+    "cold",
+    "warm",
+    "wet",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Der Bahnhof in Dresden ist groß, laut und kalt.",
+    "targetWord": "kalt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jeden",
+  "sentence": "Ich komme [[jeden]] Sommer allein hierher, sagt er leise.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "every",
+   "options": [
+    "every",
+    "some",
+    "no",
+    "many"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Ich komme jeden Sommer allein hierher, sagt er leise.",
+    "targetWord": "jeden",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Treppe",
+  "sentence": "Jemand ruft dann ihren Namen, und er winkt von der [[Treppe]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stairs",
+   "options": [
+    "stairs",
+    "a bridge",
+    "a gate",
+    "a wall"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Jemand ruft dann ihren Namen, und er winkt von der Treppe.",
+    "targetWord": "Treppe",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zurück",
+  "sentence": "Ihr Zug [[zurück]] nach Leipzig fährt erst am Sonntag.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "back, the way you came",
+   "options": [
+    "back, the way you came",
+    "ahead, further on",
+    "upwards",
+    "nearby"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Ihr Zug zurück nach Leipzig fährt erst am Sonntag.",
+    "targetWord": "zurück",
     "language": "german"
    }
   },

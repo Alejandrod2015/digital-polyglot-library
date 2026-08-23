@@ -95,130 +95,6 @@
   }
  },
  {
-  "type": "meaning_in_context",
-  "word": "greifen",
-  "sentence": "Die Räder [[greifen]] laut in die dritte Schiene.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to grip something firmly",
-   "options": [
-    "to grip something firmly",
-    "to slip off something",
-    "to break something",
-    "to lift something"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Die Räder greifen laut in die dritte Schiene.",
-    "targetWord": "greifen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "reist",
-  "sentence": "Sie _____ jetzt schon ein ganzes Jahr durch das Land.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "reist",
-   "options": [
-    "reist",
-    "klettert",
-    "schneidet",
-    "faltet"
-   ],
-   "translation": "She has been _____ through the country for a whole year.",
-   "optionTranslations": [
-    "travelling",
-    "climbs",
-    "cuts",
-    "folding"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Sie reist jetzt schon ein ganzes Jahr durch das Land.",
-    "targetWord": "reist",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Land",
-  "sentence": "Sie reist seit einem Jahr durch das ganze [[Land]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a country",
-   "options": [
-    "a country",
-    "a village",
-    "a garden",
-    "a market"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Sie reist seit einem Jahr durch das ganze Land.",
-    "targetWord": "Land",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "holt",
-  "sentence": "Er _____ einen Brief aus der Tasche seiner Jacke.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "holt",
-   "options": [
-    "holt",
-    "mietet",
-    "stoppt",
-    "faltet"
-   ],
-   "translation": "He _____ a letter out of his jacket pocket.",
-   "optionTranslations": [
-    "fetches",
-    "rents",
-    "stops",
-    "folds"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Er holt einen Brief aus der Tasche seiner Jacke.",
-    "targetWord": "holt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Arzt",
-  "sentence": "Die [[Ärzte]] sind vorsichtig, aber sie sind zufrieden.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "doctors",
-   "options": [
-    "doctors",
-    "nurses",
-    "patients",
-    "teachers"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Die Ärzte sind vorsichtig, aber sie sind zufrieden.",
-    "targetWord": "Ärzte",
-    "language": "german"
-   }
-  }
- },
- {
   "type": "fill_blank",
   "word": "faltet",
   "sentence": "Sie liest den Brief zweimal und _____ ihn langsam.",
@@ -289,8 +165,7 @@
     "targetWord": "dünner",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -312,31 +187,7 @@
     "targetWord": "beide",
     "language": "german"
    }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "lesen",
-  "sentence": "Sie [[liest]] den Brief zweimal und sagt nichts.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to read",
-   "options": [
-    "to read",
-    "to write",
-    "to send",
-    "to tear"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Sie liest den Brief zweimal und sagt nichts.",
-    "targetWord": "liest",
-    "language": "german"
-   }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -358,8 +209,7 @@
     "targetWord": "zweimal",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -381,31 +231,7 @@
     "targetWord": "besser",
     "language": "german"
    }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "zufrieden",
-  "sentence": "Die Ärzte sind vorsichtig, aber sie sind [[zufrieden]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "content",
-   "options": [
-    "content",
-    "worried",
-    "angry",
-    "surprised"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Die Ärzte sind vorsichtig, aber sie sind zufrieden.",
-    "targetWord": "zufrieden",
-    "language": "german"
-   }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -427,8 +253,7 @@
     "targetWord": "Berg",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -478,22 +303,137 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "dritte",
-  "sentence": "Die Räder greifen laut in die [[dritte]] Schiene.",
+  "word": "fahren",
+  "sentence": "Die Bahn [[fährt]] durch einen Tunnel, und das Abteil wird kurz dunkel.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "third",
+   "answer": "to travel by vehicle",
    "options": [
-    "third",
-    "first",
-    "second",
-    "last"
+    "to travel by vehicle",
+    "to walk on foot",
+    "to wait for someone",
+    "to arrive too late"
    ],
    "audioClip": {
     "storySlug": "die-zahnradbahn-nach-grainau",
     "storySource": "user",
-    "sentence": "Die Räder greifen laut in die dritte Schiene.",
-    "targetWord": "dritte",
+    "sentence": "Die Bahn fährt durch einen Tunnel, und das Abteil wird kurz dunkel.",
+    "targetWord": "fährt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fragen",
+  "sentence": "Sie [[fragt]], wann du kommst.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask",
+   "options": [
+    "to ask",
+    "to answer",
+    "to promise",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Sie fragt, wann du kommst.",
+    "targetWord": "fragt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "laut",
+  "sentence": "Ihre Räder greifen [[laut]] in die dritte Schiene.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loud",
+   "options": [
+    "loud",
+    "quiet",
+    "slow",
+    "dark"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Ihre Räder greifen laut in die dritte Schiene.",
+    "targetWord": "laut",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Fenster",
+  "sentence": "Der Wald draußen wird hinter dem [[Fenster]] dichter.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a window",
+   "options": [
+    "a window",
+    "a door",
+    "a balcony",
+    "a roof"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Der Wald draußen wird hinter dem Fenster dichter.",
+    "targetWord": "Fenster",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Jacke",
+  "sentence": "Er holt einen Brief aus der [[Jacke]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a jacket",
+   "options": [
+    "a jacket",
+    "a hat",
+    "a scarf",
+    "a shoe"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Er holt einen Brief aus der Jacke.",
+    "targetWord": "Jacke",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "halten",
+  "sentence": "Sie [[hält]] dann in Grainau.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stop at a station",
+   "options": [
+    "to stop at a station",
+    "to leave a station",
+    "to pass a station",
+    "to miss a station"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Sie hält dann in Grainau.",
+    "targetWord": "hält",
     "language": "german"
    }
   },
