@@ -2,9 +2,10 @@
  * Retención por cohorte de alta.
  *
  * Las tarjetas de DAU/WAU dicen cuánta gente estuvo activa ayer; ninguna dice
- * si esa gente vuelve. Aquí se agrupa a los usuarios por la SEMANA en que se
- * dieron de alta y se mide, semana a semana contando desde su propia alta,
- * qué parte de la cohorte seguía dando señales de vida.
+ * si esa gente vuelve. Aquí se agrupa a los usuarios por el TRAMO en que se
+ * dieron de alta (una semana, o un día cuando se pide grano fino) y se mide,
+ * tramo a tramo contando desde su propia alta, qué parte de la cohorte seguía
+ * dando señales de vida.
  *
  * Tres decisiones que conviene tener a la vista al leer la tabla:
  *
@@ -51,6 +52,14 @@ function mondayIndex(dayIndex: number): number {
   return dayIndex - ((dayIndex + 3) % 7);
 }
 
+/**
+ * Primer día del tramo de alta al que pertenece ese día. En semanal es el
+ * lunes; en diario, el día mismo.
+ */
+function bucketStart(dayIndex: number, bucketDays: number): number {
+  return bucketDays === 7 ? mondayIndex(dayIndex) : dayIndex;
+}
+
 function isoDate(dayIndex: number): string {
   return new Date(dayIndex * DAY_MS).toISOString().slice(0, 10);
 }
@@ -63,11 +72,11 @@ export type RetentionCell = {
 };
 
 export type RetentionCohort = {
-  /** Lunes (UTC) de la semana de alta, en ISO corto. */
-  weekStart: string;
+  /** Primer día (UTC) del tramo de alta, en ISO corto. */
+  start: string;
   users: number;
-  /** Una celda por semana desde el alta; el índice 0 es la semana del alta. */
-  weeks: RetentionCell[];
+  /** Una celda por tramo desde el alta; el índice 0 es el tramo del alta. */
+  cells: RetentionCell[];
 };
 
 export type RetentionMilestone = {
@@ -80,9 +89,13 @@ export type RetentionMilestone = {
 };
 
 export type RetentionSummary = {
-  /** Cuántas columnas de semana trae cada cohorte. */
-  weeks: number;
+  /** Ancho de cada tramo en días: 7 en la vista semanal, 1 en la diaria. */
+  bucketDays: number;
+  /** Cuántas columnas de tramo trae cada cohorte. */
+  buckets: number;
   cohorts: RetentionCohort[];
+  /** Cohortes más antiguas que se dejaron fuera por el tope de filas. */
+  omittedCohorts: number;
   overall: {
     users: number;
     /** Elegibles para "volver": llevan al menos un día dados de alta. */
@@ -113,23 +126,33 @@ function pctOf(part: number, whole: number): number {
  * @param activity    filas de actividad de esa misma gente, ya filtradas de
  *                    los eventos que escribe el servidor.
  * @param now         momento de la medición; se inyecta para poder testear.
- * @param weeks       columnas de la tabla. Se recorta a lo que el rango
+ * @param buckets     columnas de la tabla. Se recorta a lo que el rango
  *                    seleccionado permite medir de verdad.
+ * @param bucketDays  7 agrupa por semana de alta; 1, por día.
+ * @param maxCohorts  tope de filas. Sobran las más viejas, no las de arriba:
+ *                    en diario, 180 días de rango darían 180 filas.
  */
 export function buildRetention({
   signups,
   activity,
   now,
-  weeks = 5,
+  buckets = 5,
+  bucketDays = 7,
+  maxCohorts = 60,
   milestoneDays = DEFAULT_MILESTONE_DAYS,
 }: {
   signups: RetentionSignup[];
   activity: RetentionActivity[];
   now: Date;
-  weeks?: number;
+  buckets?: number;
+  bucketDays?: 1 | 7;
+  maxCohorts?: number;
   milestoneDays?: number[];
 }): RetentionSummary {
-  const columns = Math.max(1, Math.min(12, Math.floor(weeks)));
+  const width = bucketDays === 1 ? 1 : 7;
+  // El techo de columnas va en días para que el diario no se dispare: doce
+  // semanas de ancho, o treinta días.
+  const columns = Math.max(1, Math.min(width === 1 ? 30 : 12, Math.floor(buckets)));
   const nowDay = utcDayIndex(now);
 
   const signupDayOf = new Map<string, number>();
@@ -154,22 +177,25 @@ export function buildRetention({
     offsetsOf.set(a.userId, set);
   }
 
-  const byWeek = new Map<number, string[]>();
+  const byBucket = new Map<number, string[]>();
   for (const [userId, signupDay] of signupDayOf.entries()) {
-    const key = mondayIndex(signupDay);
-    const list = byWeek.get(key) ?? [];
+    const key = bucketStart(signupDay, width);
+    const list = byBucket.get(key) ?? [];
     list.push(userId);
-    byWeek.set(key, list);
+    byBucket.set(key, list);
   }
 
-  const cohorts: RetentionCohort[] = Array.from(byWeek.entries())
-    .sort((a, b) => b[0] - a[0])
-    .map(([weekStartDay, userIds]) => ({
-      weekStart: isoDate(weekStartDay),
+  const ordered = Array.from(byBucket.entries()).sort((a, b) => b[0] - a[0]);
+  const omittedCohorts = Math.max(0, ordered.length - maxCohorts);
+
+  const cohorts: RetentionCohort[] = ordered
+    .slice(0, maxCohorts)
+    .map(([startDay, userIds]) => ({
+      start: isoDate(startDay),
       users: userIds.length,
-      weeks: Array.from({ length: columns }, (_, n) => {
-        const from = n * 7;
-        const to = from + 7;
+      cells: Array.from({ length: columns }, (_, n) => {
+        const from = n * width;
+        const to = from + width;
         let retained = 0;
         for (const userId of userIds) {
           const offsets = offsetsOf.get(userId);
@@ -181,9 +207,9 @@ export function buildRetention({
             }
           }
         }
-        // El último en darse de alta esa semana lo hizo, como muy tarde, el
-        // domingo (lunes + 6). Su semana n se cierra 7*(n+1) días después.
-        const closesOn = weekStartDay + 6 + 7 * (n + 1);
+        // El último en darse de alta en ese tramo lo hizo, como muy tarde, el
+        // último día del tramo. Su tramo n se cierra width*(n+1) días después.
+        const closesOn = startDay + (width - 1) + width * (n + 1);
         return { retained, pct: pctOf(retained, userIds.length), partial: nowDay < closesOn };
       }),
     }));
@@ -213,8 +239,10 @@ export function buildRetention({
   });
 
   return {
-    weeks: columns,
+    bucketDays: width,
+    buckets: columns,
     cohorts,
+    omittedCohorts,
     overall: {
       users,
       returnEligible,

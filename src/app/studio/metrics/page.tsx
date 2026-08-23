@@ -890,12 +890,15 @@ type RetentionCellPayload = {
 };
 
 type RetentionPayload = {
-  weeks: number;
+  /** 7 en la vista semanal, 1 en la diaria. */
+  bucketDays: number;
+  buckets: number;
   cohorts: Array<{
-    weekStart: string;
+    start: string;
     users: number;
-    weeks: RetentionCellPayload[];
+    cells: RetentionCellPayload[];
   }>;
+  omittedCohorts: number;
   overall: {
     users: number;
     returnEligible: number;
@@ -915,6 +918,8 @@ type AcquisitionPayload = {
   windowDays: number;
   /** Falta en respuestas cacheadas de antes de que existiera el panel. */
   retention?: RetentionPayload;
+  /** La misma retención agrupada por día de alta. */
+  retentionDaily?: RetentionPayload;
   signups: {
     totalAllTime: number;
     last7d: number;
@@ -1093,20 +1098,29 @@ function FunnelBar({
 /**
  * Tabla de retención por cohorte de alta.
  *
- * Cada fila es una semana de altas y cada columna una semana contada desde el
- * alta de esa gente, no desde el calendario. La primera columna incluye el día
- * del alta, así que mide activación; la retención se lee de la segunda en
- * adelante. Las celdas con punto todavía no han cerrado su tramo para todos
- * los miembros de la cohorte y solo pueden subir.
+ * Cada fila es un tramo de altas (una semana, o un día si se pide grano fino)
+ * y cada columna el mismo tramo contado desde el alta de esa gente, no desde
+ * el calendario. La primera columna incluye el día del alta, así que mide
+ * activación; la retención se lee de la segunda en adelante. Las celdas con
+ * punto todavía no han cerrado su tramo para todos los miembros de la cohorte
+ * y solo pueden subir.
+ *
+ * Las dos granularidades llegan calculadas en la misma respuesta, así que
+ * alternar entre ellas no vuelve a pedir nada al servidor.
  */
 function RetentionPanel({
   retention,
+  retentionDaily,
   days,
 }: {
   retention: RetentionPayload;
+  retentionDaily?: RetentionPayload;
   days: number;
 }) {
-  const { cohorts, weeks, overall } = retention;
+  const [grain, setGrain] = useState<"weekly" | "daily">("weekly");
+  const active = grain === "daily" && retentionDaily ? retentionDaily : retention;
+  const { cohorts, buckets, overall, omittedCohorts } = active;
+  const isDaily = active.bucketDays === 1;
   const milestoneLabel: Record<number, string> = {
     7: "Seguía a partir del día 7",
     30: "Seguía a partir del día 30",
@@ -1132,9 +1146,38 @@ function RetentionPanel({
       <div className="mx-panel__head">
         <div>
           <div className="mx-panel__eyebrow">Retención</div>
-          <h3 className="mx-panel__title">Vuelven, por semana de alta</h3>
+          <h3 className="mx-panel__title">
+            Vuelven, por {isDaily ? "día" : "semana"} de alta
+          </h3>
         </div>
-        <span className="mx-panel__hint">cohortes: altas en {days}d</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <div className="mx-segmented">
+            {([
+              { key: "weekly" as const, label: "Semanal" },
+              { key: "daily" as const, label: "Diario" },
+            ]).map((option) => (
+              <button
+                type="button"
+                key={option.key}
+                disabled={option.key === "daily" && !retentionDaily}
+                title={
+                  option.key === "daily" && !retentionDaily
+                    ? "Esta respuesta viene de antes de que existiera la vista diaria"
+                    : undefined
+                }
+                onClick={() => setGrain(option.key)}
+                className={
+                  grain === option.key
+                    ? "mx-segmented__btn mx-segmented__btn--active"
+                    : "mx-segmented__btn"
+                }
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+          <span className="mx-panel__hint">cohortes: altas en {days}d</span>
+        </div>
       </div>
 
       <div
@@ -1178,23 +1221,25 @@ function RetentionPanel({
           >
             <thead>
               <tr style={{ textAlign: "left", opacity: 0.6 }}>
-                <th style={{ padding: "4px 6px" }}>Semana de alta</th>
+                <th style={{ padding: "4px 6px" }}>
+                  {isDaily ? "Día de alta" : "Semana de alta"}
+                </th>
                 <th style={{ padding: "4px 6px", textAlign: "right" }}>Altas</th>
-                {Array.from({ length: weeks }, (_, n) => (
+                {Array.from({ length: buckets }, (_, n) => (
                   <th key={n} style={{ padding: "4px 6px", textAlign: "center" }}>
-                    {n === 0 ? "Sem 0" : `+${n}`}
+                    {n === 0 ? (isDaily ? "Día 0" : "Sem 0") : `+${n}`}
                   </th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {cohorts.map((c) => (
-                <tr key={c.weekStart}>
-                  <td style={{ padding: "5px 6px", whiteSpace: "nowrap" }}>{c.weekStart}</td>
+                <tr key={c.start}>
+                  <td style={{ padding: "5px 6px", whiteSpace: "nowrap" }}>{c.start}</td>
                   <td style={{ padding: "5px 6px", textAlign: "right", opacity: 0.75 }}>
                     {c.users}
                   </td>
-                  {c.weeks.map((cell, n) => (
+                  {c.cells.map((cell, n) => (
                     <td
                       key={n}
                       style={cellStyle(cell)}
@@ -1212,15 +1257,30 @@ function RetentionPanel({
       )}
 
       <p style={{ margin: "10px 0 0", fontSize: 11.5, color: "var(--mx-muted)", lineHeight: 1.5 }}>
-        La semana se cuenta desde el alta de cada persona, no desde el lunes:
-        la +1 de quien entró un jueves va de su jueves al miércoles siguiente.
-        La columna &laquo;Sem 0&raquo; incluye el día del alta, así que mide
-        activación; la retención empieza en la +1. Un punto marca el tramo que
+        {isDaily ? (
+          <>
+            Cada fila es un día de altas y cada columna un día contado desde
+            esa alta. La columna &laquo;Día 0&raquo; es el día del alta, así
+            que mide activación; la retención empieza en la +1.
+          </>
+        ) : (
+          <>
+            La semana se cuenta desde el alta de cada persona, no desde el
+            lunes: la +1 de quien entró un jueves va de su jueves al miércoles
+            siguiente. La columna &laquo;Sem 0&raquo; incluye el día del alta,
+            así que mide activación; la retención empieza en la +1.
+          </>
+        )}{" "}
+        Un punto marca el tramo que
         aún no ha cerrado para toda la cohorte, y por eso solo puede subir.
         Cuenta como actividad cualquier evento de esa persona salvo los que
         escribe el servidor (correos de ciclo de vida y envíos de aviso). Los
         hitos son sin techo: &laquo;a partir del día 7&raquo; incluye a quien
-        dio señal ese día o cualquiera posterior.
+        dio señal ese día o cualquiera posterior. Las tarjetas de arriba no
+        dependen del grano: salen de la misma gente en los dos casos.
+        {omittedCohorts > 0
+          ? ` Quedan ${omittedCohorts} tramos más antiguos fuera de la tabla.`
+          : ""}
       </p>
     </div>
   );
@@ -1320,7 +1380,13 @@ function AcquisitionView({
       </div>
 
       {/* Retención por cohorte de alta */}
-      {acq?.retention && <RetentionPanel retention={acq.retention} days={days} />}
+      {acq?.retention && (
+        <RetentionPanel
+          retention={acq.retention}
+          retentionDaily={acq.retentionDaily}
+          days={days}
+        />
+      )}
 
       {/* Recent signups */}
       {acq && acq.recent.length > 0 && (

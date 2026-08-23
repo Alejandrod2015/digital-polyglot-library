@@ -477,18 +477,34 @@ export async function GET(req: NextRequest): Promise<Response> {
     // ── Retencion por cohorte de alta ──
     // Las columnas se recortan a lo que el rango permite medir: pedir 30 dias
     // y pintar doce semanas seria ensenar diez columnas que solo pueden estar
-    // vacias. `weeks` va sobre la ventana, no sobre la vida del usuario.
+    // vacias. `buckets` va sobre la ventana, no sobre la vida del usuario.
+    //
+    // Se calculan las dos granularidades de una vez y viajan juntas: el
+    // panel alterna semanal/diario en el cliente, y volver a pedir esto por
+    // un clic significaria listar Clerk entero otra vez.
+    const retentionSignups = cohort.map((u) => ({
+      userId: u.id,
+      createdAt: new Date(u.createdAt),
+    }));
     const retention = buildRetention({
-      signups: cohort.map((u) => ({ userId: u.id, createdAt: new Date(u.createdAt) })),
+      signups: retentionSignups,
       activity: activityRows,
       now: new Date(now),
-      weeks: Math.ceil(days / 7),
+      buckets: Math.ceil(days / 7),
+    });
+    const retentionDaily = buildRetention({
+      signups: retentionSignups,
+      activity: activityRows,
+      now: new Date(now),
+      buckets: days,
+      bucketDays: 1,
     });
 
     const payload = {
       source: "clerk" as const,
       windowDays: days,
       retention,
+      retentionDaily,
       signups: {
         totalAllTime: totalExternal,
         last7d: signupsLast7d,
