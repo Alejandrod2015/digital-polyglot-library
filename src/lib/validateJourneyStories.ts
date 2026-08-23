@@ -70,6 +70,12 @@ function quotedPct(text: string): number {
  */
 const HABLA_POR_IDIOMA: Record<string, string> = {
   DE: "sagt|fragt|antwortet|ruft|nickt|lacht|schweigt|schreibt|erzählt|flüstert|zählt",
+  // Espanol: presente Y preterito, por el mismo motivo que el portugues. Un
+  // B1 narra en pasado a ratos, y solo con el presente el reparto salia vacio.
+  ES: "dice|dijo|pregunta|preguntó|contesta|contestó|responde|respondió|añade|añadió|" +
+      "grita|gritó|susurra|susurró|repite|repitió|explica|explicó|cuenta|contó|" +
+      "suelta|soltó|insiste|insistió|propone|propuso|avisa|avisó|llama|llamó|" +
+      "asiente|asintió|calla|calló|escribe|escribió|pide|pidió|corrige|corrigió",
   // Portugues: presente Y preterito, porque desde el 2026-08-19 la ultima
   // historia de cada tema se narra en pasado y con solo el presente el reparto
   // salia vacio (`protagonista ?`).
@@ -141,9 +147,36 @@ const FORMAS_PT: Array<[string, (n: string) => RegExp]> = [
   ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+(?:${VERBO_SER_PT})\\b`, "iu")],
 ];
 
+/**
+ * Las tres formas aprobadas en ESPANOL, fijadas el 2026-08-23 al abrir el
+ * primer B1 del catalogo. No se inventan: son las que ya usa el Traveler
+ * ES/spain A1, que es el journey que el B1 continua.
+ *
+ *   aposicion   Rocio, la vecina del piso de arriba, llama a la puerta...
+ *   quien       Quien atiende es Marta, la farmaceutica de la plaza.
+ *   nombre      Rosa lleva veinte anos detras del mostrador.
+ *
+ * La tercera pide un verbo que DIGA QUE ES la persona (oficio, papel o cuanto
+ * lleva ahi); "Rosa entra" no presenta a nadie y por eso no entra. El espanol
+ * omite el sujeto mas que el portugues, asi que la lista de verbos incluye el
+ * imperfecto: "Quique regentaba el bar" presenta igual de bien que el presente.
+ */
+const NUC_ES = "(?:[a-zá-úñü]+\\s+){0,3}[a-zá-úñü]+";
+const VERBO_SER_ES =
+  "(?:es|era|fue|trabaja|trabajaba|lleva|llevaba|vive|vivía|vivia|regenta|regentaba|" +
+  "atiende|atendía|atendia|cuida|cuidaba|vende|vendía|vendia|reparte|repartía|repartia|" +
+  "conduce|conducía|conducia|abre|abría|abria|sirve|servía|servia|nació|nacio|creció|crecio|" +
+  "manda|mandaba|arregla|arreglaba|cose|cosía|cosia|hereda|heredó|heredo|reparte|alquila|alquilaba)";
+const FORMAS_ES: Array<[string, (n: string) => RegExp]> = [
+  ["aposicion", (n) => new RegExp(`${n},\\s+(?:el|la|un|una)\\s+${NUC_ES}`, "iu")],
+  ["quien", (n) => new RegExp(`\\bQuien\\s+[a-zá-úñü]+(?:\\s+[a-zá-úñü]+)?\\s+es\\s+${n}\\b`, "iu")],
+  ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+(?:${VERBO_SER_ES})\\b`, "iu")],
+];
+
 const FORMAS_POR_IDIOMA: Record<string, Array<[string, (n: string) => RegExp]>> = {
   DE: FORMAS_DE,
   PT: FORMAS_PT,
+  ES: FORMAS_ES,
 };
 
 /** Forma de la apertura: que clase de sujeto abre la primera frase. */
@@ -156,6 +189,34 @@ function openingShapePT(text: string): string {
   if (/^(No|Na|Nos|Nas|Do|Da|Dos|Das|Ao|À|Em|Entre|Dentro|Atrás|Depois|Antes|Sobre|Debaixo)$/.test(w)) return "lugar o tiempo delante";
   if (/^(Às|Aos|Quinze|Dois|Duas|Três|Quatro|Cinco|Seis|Sete|Oito|Dez|Vinte|Trinta|Meia|Cada|Todo|Toda)$/.test(w)) return "hora o cantidad";
   if (/^Quem\b/.test(f)) return "quem + verbo";
+  if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
+  return "otra";
+}
+
+/**
+ * Forma de la apertura en ESPANOL. Las clases salen de leer las 21 del A1 de
+ * Espana, que es donde se ve el problema que esta regla existe para cazar: 14
+ * de sus 21 abren con un dia o una hora delante ("El sabado...", "A las
+ * ocho..."), y esa es UNA sola forma repetida catorce veces.
+ */
+function openingShapeES(text: string): string {
+  const f = sentences(text)[0] ?? "";
+  const w = (f.split(/\s+/)[0] ?? "").replace(/[.,:;]$/, "");
+  if (f.startsWith(QUOTE_OPEN)) return "replica directa";
+  if (/^Quien\b/i.test(f)) return "quien + verbo";
+  if (/^(El|La|Los|Las)$/.test(w)) return "articulo definido + sustantivo";
+  if (/^(Un|Una|Unos|Unas)$/.test(w)) return "articulo indefinido + sustantivo";
+  if (/^(En|Al|A|De|Del|Desde|Detrás|Dentro|Fuera|Bajo|Sobre|Entre|Tras|Hasta|Durante|Después|Antes|Junto|Frente|Encima|Debajo|Arriba|Abajo|Contra|Hacia)$/.test(w))
+    return "lugar o tiempo delante";
+  if (/^(Es|Son|Hace|Hay|Había|Habia|Llueve|Amanece|Anochece|Huele|Suena|Queda|Quedan|Falta|Faltan)$/.test(w))
+    return "verbo impersonal delante";
+  if (/^(Cada|Todo|Toda|Todos|Todas|Media|Medio|Dos|Tres|Cuatro|Cinco|Seis|Siete|Ocho|Nueve|Diez|Once|Doce|Quince|Veinte|Treinta|Muchos|Muchas|Pocos|Pocas|Nadie|Alguien|Ninguno|Ninguna|Otro|Otra)$/.test(w))
+    return "hora o cantidad";
+  if (/^(Su|Sus|Mi|Mis|Nuestro|Nuestra|Nuestros|Nuestras)$/.test(w)) return "posesivo + sustantivo";
+  if (/^(Este|Esta|Estos|Estas|Ese|Esa|Esos|Esas|Aquel|Aquella|Aquellos|Aquellas)$/.test(w))
+    return "demostrativo + sustantivo";
+  if (/^(Nunca|Siempre|Todavía|Todavia|Ya|Ahora|Luego|Entonces|Primero|Aún|Aun|Casi|Solo|Sólo|Apenas|Nadie)$/.test(w))
+    return "adverbio delante";
   if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
   return "otra";
 }
@@ -255,7 +316,9 @@ export function validateJourneyStories(
   {
     const porForma = new Map<string, string[]>();
     for (const s of stories) {
-      const f = lang === "PT" ? openingShapePT(s.text) : openingShape(s.text);
+      const f = lang === "PT" ? openingShapePT(s.text)
+        : lang === "ES" ? openingShapeES(s.text)
+        : openingShape(s.text);
       porForma.set(f, [...(porForma.get(f) ?? []), s.slug]);
     }
     const tope = Math.max(2, Math.ceil(stories.length / 3));
@@ -332,11 +395,28 @@ export function validateJourneyStories(
 
   // ── 8. Ni ancianos ni ninos ────────────────────────────────
   {
-    const EDAD = /\b(Kind|Kinder|Junge|Jungen|Mädchen|Baby|Enkel\w*|Oma|Opa|Großmutter|Großvater|Rentner\w*|Greis\w*|Teenager)\b/g;
-    const halladas = new Set<string>();
-    for (const s of stories) for (const m of s.text.matchAll(EDAD)) halladas.add(m[0]);
-    push("journey-no-elderly-no-children", "Ni ancianos ni ninos en contenido nuevo",
-      halladas.size === 0, [...halladas].join(", "));
+    // Por idioma, y sin lista NO se mide: la regla llevaba solo las palabras
+    // alemanas, asi que sobre un cuerpo espanol o portugues salia verde sin
+    // haber mirado nada, que es justo el agujero que este archivo existe para
+    // cerrar. Visto el 2026-08-23 al abrir el primer journey ES que pasa por
+    // aqui.
+    const EDAD_POR_IDIOMA: Record<string, RegExp> = {
+      DE: /\b(Kind|Kinder|Junge|Jungen|Mädchen|Baby|Enkel\w*|Oma|Opa|Großmutter|Großvater|Rentner\w*|Greis\w*|Teenager)\b/g,
+      ES: /\b(niñ[oa]s?|crí[oa]s?|bebés?|niet[oa]s?|abuel[oa]s?|yay[oa]s?|ancian[oa]s?|jubilad[oa]s?|adolescentes?|chaval(?:a|es|as)?|criatura)\b/gi,
+      PT: /\b(criança|crianças|menin[oa]s?|bebês?|net[oa]s?|avôs?|avós?|idos[oa]s?|aposentad[oa]s?|adolescentes?)\b/gi,
+      IT: /\b(bambin[oi]|bambin[ae]|ragazzin[oi]|neonat[oi]|nipot[ei]|nonn[oaie]|anzian[oi]|pensionat[oi]|adolescent[ei])\b/gi,
+      FR: /\b(enfants?|gamin(?:e|s|es)?|bébés?|petits?-enfants?|grand(?:-mère|-père|s-parents)|vieillards?|retraités?|adolescents?)\b/gi,
+    };
+    const EDAD = EDAD_POR_IDIOMA[lang];
+    if (!EDAD) {
+      noImpl("journey-no-elderly-no-children", "Ni ancianos ni ninos en contenido nuevo",
+        `Sin lista de palabras de edad para ${lang || "?"}. Un check que no sabe medir no puede pasar.`);
+    } else {
+      const halladas = new Set<string>();
+      for (const s of stories) for (const m of s.text.matchAll(EDAD)) halladas.add(m[0]);
+      push("journey-no-elderly-no-children", "Ni ancianos ni ninos en contenido nuevo",
+        halladas.size === 0, [...halladas].join(", "));
+    }
   }
 
   // ── 9. Sin comentarios sobre el acento ─────────────────────
@@ -394,7 +474,34 @@ export function validateJourneyStories(
   // el suelo se pone en 3,0, por debajo de los tres. En C1 el catalogo entero
   // vive entre 0,8 y 1,5, asi que ahi NO se mide: poner un numero seria
   // inventarselo, y bajarlo hasta que pase seria calibrar el gate hacia abajo.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 2.5 };
+  //
+  // B1 (2026-08-23, al abrir el primer B1 del catalogo). AQUI NO HAY PATRON
+  // ORO, y conviene decirlo antes que el numero: no existe ningun journey B1,
+  // asi que el liston NO puede salir de un B1 medido. Lo que hay medido, con
+  // esta misma formula y sobre live + draft (`scripts/_b1/_ladder.ts`):
+  //
+  //   A0   4,21 (Traveler ES latam) ... 1,50 (Expat FR france)
+  //   A1   1,88 (Traveler DE) · 1,63 (Traveler ES spain) · 1,43 (Traveler PT-BR)
+  //   C1   1,56 (Friends ES mexico) ... 0,82 (Friends ES latam)
+  //
+  // Dos consecuencias incomodas que el numero de arriba tapaba:
+  //
+  //   1. **NINGUN A1 del catalogo llega a su propio 2,5.** El mejor da 1,88.
+  //      El 2,5 de A1 tampoco salio de un A1 medido; es la mitad del ideal de
+  //      cuatro encuentros de [[project_vocab_recirculation_ladder]]. Que no
+  //      lo cumpla nadie no lo invalida: los tres A1 se escribieron antes de
+  //      que existiera el check.
+  //   2. Interpolar entre A1 y C1 daria ~1,7, y ese numero solo dice cuanto se
+  //      repite hoy, que es lo que la escalera existe para cambiar. Calibrar
+  //      contra la deriva es calibrar el gate hacia abajo.
+  //
+  // Por eso B1 hereda el 2,5 de A1 y no un numero mas blando. Un nivel mas
+  // alto con el liston mas bajo premiaria justo lo que se quiere corregir, y
+  // la recirculacion no la decide el nivel sino que los siete temas compartan
+  // espina (mismos personajes, mismo sitio): un B1 de un solo pueblo puede
+  // reencontrar tanto como un A0. Si un dia hay dos o tres B1 escritos CON el
+  // check delante, ese sera el momento de recalibrar con datos, no antes.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 2.5, B1: 2.5 };
   const suelo = MEDIA_MINIMA[level];
   if (suelo === undefined) {
     noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
