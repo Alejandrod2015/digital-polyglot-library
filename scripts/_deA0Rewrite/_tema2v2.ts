@@ -68,7 +68,7 @@ a0[5].vocab=[
  V("verb","wünschen","wünschst","To wish; to want something to happen."),
  V("verb","antworten","antwortet","To answer; to reply to what someone has asked."),
  V("adjective","glatt","glatt","Smooth; even to the touch, with no rough places."),
- V("adverb","bald","bald","Soon; in a short time from now."),
+ V("noun","das Fahrrad","Fahrrad","A bicycle; the two wheeled vehicle you pedal."),
 ];
 for (const i of [3,4,5]) { const s=a0[i];
   const f=s.vocab.filter((v:any)=>!s.text.includes(v.surface));

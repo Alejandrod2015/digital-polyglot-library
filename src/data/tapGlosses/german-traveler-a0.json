@@ -15,7 +15,7 @@
   "leons-kutter-im-hafen-von-sassnitz",
   "kreide-am-konigsstuhl",
   "der-leuchtturm-von-kap-arkona",
-  "maries-lebkuchen-am-hauptmarkt",
+  "katrins-lebkuchen-am-hauptmarkt",
   "zinnfiguren-in-der-werkstatt-kleeblatt",
   "bratwurst-am-kettensteg",
   "die-zahnradbahn-nach-grainau",
@@ -4826,6 +4826,146 @@
   "weitem": {
    "g": "from far away (von Weitem)",
    "t": "adverb"
+  },
+  "beim": {
+   "g": "at the (bei + dem)",
+   "t": "preposition"
+  },
+  "braun": {
+   "g": "brown",
+   "t": "adjective"
+  },
+  "brennt": {
+   "g": "burns; is on, shining (brennen)",
+   "t": "verb"
+  },
+  "butter": {
+   "g": "butter",
+   "t": "noun"
+  },
+  "darunter": {
+   "g": "underneath, below it",
+   "t": "adverb"
+  },
+  "dicht": {
+   "g": "dense, tight; closed",
+   "t": "adjective"
+  },
+  "diesem": {
+   "g": "this (dative)",
+   "t": "pronoun"
+  },
+  "dorthin": {
+   "g": "there, to that place",
+   "t": "adverb"
+  },
+  "dreißig": {
+   "g": "thirty",
+   "t": "number"
+  },
+  "fahrrad": {
+   "g": "a bicycle",
+   "t": "noun"
+  },
+  "gedreht": {
+   "g": "turned (drehen, past participle)",
+   "t": "verb"
+  },
+  "gläser": {
+   "g": "glasses (Glas)",
+   "t": "noun"
+  },
+  "graues": {
+   "g": "grey (grau)",
+   "t": "adjective"
+  },
+  "hemd": {
+   "g": "shirt",
+   "t": "noun"
+  },
+  "hund": {
+   "g": "dog",
+   "t": "noun"
+  },
+  "hut": {
+   "g": "a hat",
+   "t": "noun"
+  },
+  "kanne": {
+   "g": "a pot, jug",
+   "t": "noun"
+  },
+  "katrin": {
+   "g": "Katrin (name)",
+   "t": "other"
+  },
+  "köpfe": {
+   "g": "heads (der Kopf)",
+   "t": "noun"
+  },
+  "mauer": {
+   "g": "wall (of stone, around a building)",
+   "t": "noun"
+  },
+  "männer": {
+   "g": "men",
+   "t": "noun"
+  },
+  "niedrig": {
+   "g": "low, not high",
+   "t": "adjective"
+  },
+  "reicht": {
+   "g": "is enough (reichen)",
+   "t": "verb"
+  },
+  "ruhe": {
+   "g": "quiet, peace (die Ruhe)",
+   "t": "noun"
+  },
+  "sauer": {
+   "g": "sour, tart",
+   "t": "adjective"
+  },
+  "schuh": {
+   "g": "shoe",
+   "t": "noun"
+  },
+  "stecken": {
+   "g": "to be stuck (stecken)",
+   "t": "verb"
+  },
+  "stift": {
+   "g": "pen, pencil",
+   "t": "noun"
+  },
+  "ständen": {
+   "g": "stalls, market stands (der Stand, dative plural)",
+   "t": "noun"
+  },
+  "wanderer": {
+   "g": "hiker, walker",
+   "t": "noun"
+  },
+  "warme": {
+   "g": "warm",
+   "t": "adjective"
+  },
+  "wenige": {
+   "g": "few, a small number of",
+   "t": "adjective"
+  },
+  "zwiebeln": {
+   "g": "onions (die Zwiebel)",
+   "t": "noun"
+  },
+  "ärmeln": {
+   "g": "sleeves (der Ärmel, dative plural)",
+   "t": "noun"
+  },
+  "katrins": {
+   "g": "Katrin's (Katrin, name)",
+   "t": "other"
   }
  }
 }

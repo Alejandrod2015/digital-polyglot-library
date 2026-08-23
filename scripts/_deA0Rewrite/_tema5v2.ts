@@ -67,7 +67,7 @@ a0[14].vocab=[
  V("verb","schweigen","schweigt","To keep silent; to say nothing on purpose."),
  V("verb","schreiben","schreibe","To write; to put words on paper and send them."),
  V("verb","stecken","stecken","To be tucked; to sit deep inside something."),
- V("adverb","gestern","gestern","Yesterday; the day before today."),
+ V("noun","der Ärmel","Ärmeln","A sleeve; the part of a jacket that covers the arm."),
  V("adjective","klein","klein","Small; little in size."),
  V("adverb","oben","oben","Up there; in or towards a higher place."),
 ];

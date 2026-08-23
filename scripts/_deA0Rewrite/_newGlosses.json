@@ -1,0 +1,68 @@
+{
+  "german-traveler-a0": {
+    "gedreht": {
+      "g": "turned (drehen, past participle)",
+      "t": "verb"
+    },
+    "ärmeln": {
+      "g": "sleeves (der Ärmel, dative plural)",
+      "t": "noun"
+    },
+    "dorthin": {
+      "g": "there, to that place",
+      "t": "adverb"
+    },
+    "zwiebeln": {
+      "g": "onions (die Zwiebel)",
+      "t": "noun"
+    },
+    "hund": {
+      "g": "dog",
+      "t": "noun"
+    },
+    "hemd": {
+      "g": "shirt",
+      "t": "noun"
+    },
+    "mauer": {
+      "g": "wall (of stone, around a building)",
+      "t": "noun"
+    },
+    "wenige": {
+      "g": "few, a small number of",
+      "t": "adjective"
+    },
+    "dreißig": {
+      "g": "thirty",
+      "t": "number"
+    },
+    "ständen": {
+      "g": "stalls, market stands (der Stand, dative plural)",
+      "t": "noun"
+    },
+    "sauer": {
+      "g": "sour, tart",
+      "t": "adjective"
+    },
+    "wanderer": {
+      "g": "hiker, walker",
+      "t": "noun"
+    },
+    "niedrig": {
+      "g": "low, not high",
+      "t": "adjective"
+    },
+    "stift": {
+      "g": "pen, pencil",
+      "t": "noun"
+    },
+    "schuh": {
+      "g": "shoe",
+      "t": "noun"
+    },
+    "katrins": {
+      "g": "Katrin's (Katrin, name)",
+      "t": "other"
+    }
+  }
+}

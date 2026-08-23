@@ -23,7 +23,7 @@ a0[18].vocab=[
  V("verb","reisen","reist","To travel; to go from place to place."),
  V("verb","falten","faltet","To fold; to bend paper over on itself."),
  V("noun","das Öl","Öl","Oil; the smell of a working machine."),
- V("adjective","zufrieden","zufrieden","Satisfied; content with how something has gone."),
+ V("noun","die Bahn","Bahn","A railway; the train line up the mountain."),
 ];
 a0[19].text = fs.readFileSync(DIR + "/textos/h20.txt","utf8").trim();
 a0[19].vocab=[
@@ -35,7 +35,7 @@ a0[19].vocab=[
  V("noun","das Feld","Feld","A field; a wide flat stretch of ground."),
  V("noun","die Grenze","Grenze","A border; the line where one country ends."),
  V("noun","der Stiefel","Stiefel","A boot; the heavy shoe that covers the ankle."),
- V("noun","der Handschuh","Handschuhe","A glove; what you wear on a cold hand."),
+ V("noun","der Wanderer","Wanderer","A hiker; a person walking in the mountains."),
  V("noun","das Kreuz","Kreuz","A cross; the iron marker planted on a summit."),
  V("noun","die Nase","Nase","A nose; the part of the face you breathe through."),
  V("noun","der Herbst","Herbst","Autumn; the season between summer and winter."),
@@ -54,12 +54,12 @@ a0[20].vocab=[
  V("noun","das Bord","Bord","A shelf; the narrow board fixed to a wall."),
  V("noun","der Umschlag","Umschlag","An envelope; the paper cover a letter goes in."),
  V("noun","der Stift","Stift","A pen; what you write a letter with."),
- V("noun","die Decke","Decke","A blanket; the thick cloth you put over your shoulders."),
+ V("verb","zählen","zählt","To count; to say things one after another in order."),
  V("noun","der Tee","Tee","Tea; the hot drink made from leaves."),
  V("noun","die Lampe","Lampe","A lamp; the shade that holds a light."),
  V("noun","das Papier","Papier","Paper; the sheet a map or a letter is made of."),
  V("noun","der Brief","Briefe","A letter; a written message sent to someone."),
- V("noun","das Bett","Betten","A bed; where you sleep."),
+ V("noun","das Problem","Problem","A problem; the thing that will not go away."),
  V("noun","der Ort","Orte","A place; a town or spot on the map."),
  V("noun","das Jahr","Jahr","A year; the twelve months from one January to the next."),
  V("noun","die Schulter","Schultern","The shoulder; the part of the body where the arm joins."),

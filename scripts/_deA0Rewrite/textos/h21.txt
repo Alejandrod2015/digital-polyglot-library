@@ -1,6 +1,8 @@
-Ihre Hütte am Eibsee hat eine Kammer mit zwei Betten und ein Feuer.
+Ihre Hütte am Eibsee hat eine Kammer mit zwei Betten.
 
-Eine Lampe aus Papier hängt am Fenster. Eine Kerze steht auf dem Bord. Brot und Tee stehen daneben. Stiefel stehen nass an der Tür.
+Eine Lampe aus Papier hängt am Fenster. Eine Kerze steht auf dem Bord.
+
+Brot und Tee stehen daneben. Stiefel stehen nass an der Tür.
 
 Ihre Tasche steht neben dem Feuer. Hannah legt die Karte auf den Boden. Sieben Kreise stehen auf dem Papier.
 
@@ -28,6 +30,6 @@ Der letzte Umschlag geht an die Schule in Leipzig.
 
 Hannah legt den Stift dazu. Die Ruhe draußen ist groß.
 
-Elias legt ihr eine Decke über die Schultern. Er macht Tee in einer Kanne.
+Elias legt ihr eine warme Decke über die Schultern. Er macht Tee in einer Kanne.
 
 Die Kammer wird warm. Das Holz im Feuer brennt langsam.

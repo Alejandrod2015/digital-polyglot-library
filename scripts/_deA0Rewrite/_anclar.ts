@@ -1,7 +1,7 @@
 /** Marca como ancladas las plazas que solo existen en su escena, hasta el tope
  *  del 30%, y mide la escalera de las portables. Escribe el JSON final. */
 import * as fs from "fs";
-const B="/Users/alejandrodelcarpio/digital-polyglot-library/.claude/worktrees/practical-austin-02dea1/scripts/_deA0Rewrite";
+const B=__dirname;
 const a0=JSON.parse(fs.readFileSync(B+"/de-a0-v9.json","utf8"));
 const tok=(t:string)=>(t.toLowerCase().match(/\p{L}+/gu)??[]);
 const cuerpos=a0.map((s:any)=>new Set(tok(String(s.text))));

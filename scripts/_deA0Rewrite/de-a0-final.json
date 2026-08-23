@@ -690,7 +690,7 @@
     "title": "Der Affe an der Alten Brücke",
     "slug": "der-affe-an-der-alten-brucke",
     "synopsis": "Der Bronzeaffe an der Alten Brücke bringt Glück. Sophie will bis August eine Antwort, Hannah verspricht sie ihr, und Elias hört im Bus sehr genau zu.",
-    "text": "Ein Affe aus Bronze sitzt neben dem Tor der Alten Brücke. Zwei runde Türme stehen am Anfang.\n\nViele Besucher berühren den Kopf. Ihre Schuhe stehen dicht am Tor.\n\n“Der Affe bringt Glück”, sagt Sophie. “Berühr ihn und wünsch dir etwas.”\n\nHannah lacht und legt die Hand auf den Kopf. Die Bronze ist glatt und kühl.\n\n“Und? Was wünschst du dir?”\n\n“Das sagt man nicht laut.”\n\nElias macht ein Foto von den beiden Kusinen. Seine Hand zittert ein wenig. Ein Ruderboot gleitet leise über den Neckar.\n\nSophie umarmt Hannah sehr fest.\n\n“Komm bald wieder. Und sag mir im August dein Ja.”\n\n“Ich verspreche es”, antwortet Hannah.\n\nDer Bus nach Leipzig steht schon am Platz. Hannah und Elias nehmen ihre Taschen.\n\n“Du versprichst allen alles”, sagt Elias im Bus.\n\nSophie geht allein ins Krankenhaus. Ihre Schicht beginnt in zehn Minuten.",
+    "text": "Ein Affe aus Bronze sitzt neben dem Tor der Alten Brücke. Zwei runde Türme stehen am Anfang.\n\nViele Besucher berühren den Kopf. Ihre Schuhe stehen dicht am Tor.\n\n“Der Affe bringt Glück”, sagt Sophie. “Berühr ihn und wünsch dir etwas.”\n\nHannah lacht und legt die Hand auf den Kopf. Die Bronze ist glatt und kühl.\n\n“Und? Was wünschst du dir?”\n\n“Das sagt man nicht laut.”\n\nElias macht ein Foto von den beiden Kusinen. Seine Hand zittert ein wenig. Ein Ruderboot gleitet leise über den Neckar.\n\nSophie umarmt Hannah sehr fest.\n\n“Komm bald wieder. Und sag mir im August dein Ja.”\n\n“Ich verspreche es”, antwortet Hannah.\n\nDer Bus nach Leipzig steht schon am Platz. Hannah und Elias nehmen ihre Taschen.\n\n“Du versprichst allen alles”, sagt Elias im Bus.\n\nSophie nimmt ihr Fahrrad und fährt ins Krankenhaus. Ihre Schicht beginnt in zehn Minuten.",
     "vocab": [
       {
         "type": "noun",
@@ -819,10 +819,10 @@
         "anchor": true
       },
       {
-        "type": "adverb",
-        "word": "bald",
-        "surface": "bald",
-        "definition": "Soon; in a short time from now.",
+        "type": "noun",
+        "word": "das Fahrrad",
+        "surface": "Fahrrad",
+        "definition": "A bicycle; the two wheeled vehicle you pedal.",
         "anchor": true
       }
     ],
@@ -2070,10 +2070,10 @@
         "definition": "To be tucked; to sit deep inside something."
       },
       {
-        "type": "adverb",
-        "word": "gestern",
-        "surface": "gestern",
-        "definition": "Yesterday; the day before today."
+        "type": "noun",
+        "word": "der Ärmel",
+        "surface": "Ärmeln",
+        "definition": "A sleeve; the part of a jacket that covers the arm."
       },
       {
         "type": "adjective",
@@ -2416,15 +2416,15 @@
       },
       {
         "type": "noun",
-        "word": "das Auge",
-        "surface": "Augen",
-        "definition": "An eye; what you see with."
+        "word": "die Dose",
+        "surface": "Dosen",
+        "definition": "A tin; the metal box that keeps biscuits fresh."
       },
       {
-        "type": "noun",
-        "word": "das Bett",
-        "surface": "Bett",
-        "definition": "A bed; where you sleep when you stay with someone."
+        "type": "verb",
+        "word": "schlafen",
+        "surface": "schlafen",
+        "definition": "To sleep; to rest with your eyes closed."
       },
       {
         "type": "noun",
@@ -2606,10 +2606,10 @@
         "definition": "Oil; the smell of a working machine."
       },
       {
-        "type": "adjective",
-        "word": "zufrieden",
-        "surface": "zufrieden",
-        "definition": "Satisfied; content with how something has gone."
+        "type": "noun",
+        "word": "die Bahn",
+        "surface": "Bahn",
+        "definition": "A railway; the train line up the mountain."
       }
     ],
     "arcType": null
@@ -2620,7 +2620,7 @@
     "title": "Schnee im Juli auf der Zugspitze",
     "slug": "schnee-im-juli-auf-der-zugspitze",
     "synopsis": "Auf dem Gipfel liegt im Juli noch Schnee. Hannah sagt zum ersten Mal laut, dass sie kündigt, und hat auf die nächste Frage keine Antwort.",
-    "text": "Viel Schnee liegt auf der Zugspitze bis in den Juli. Die Seilbahn bringt Elias und Hannah auf den Gipfel.\n\nHannah trägt eine Sonnenbrille auf der Nase. Die Wolken liegen um sie herum wie ein weites Feld. Die Ruhe hier oben ist groß.\n\nDie Luft ist kalt und dünn. Der Schnee ist hart und trocken. Die Grenze zu Österreich geht mitten über den Berg.\n\n“Vier Grenzen”, sagt Elias und zeigt in vier Richtungen.\n\nHannah geht ein Stück durch den Schnee. Ihre Stiefel sinken tief.\n\n“Ich kündige im Herbst.”\n\nElias lacht nicht.\n\n“Das ist dein Ernst?”\n\n“Seit Meersburg.”\n\n“Und die Schule?”\n\n“Die Schule bekommt einen Brief.”\n\nElias hält die Handschuhe in der Hand.\n\n“Und dann? Wovon lebst du?”\n\nHannah hat keine Antwort. Ihre Hände stecken tief in den Taschen.\n\n“Ich suche etwas Neues. Mehr weiß ich nicht.”\n\n“Das ist entweder sehr gut oder sehr dumm.”\n\n“Ja.”\n\nEin paar Leute machen Fotos am Kreuz. Beide stehen daneben, und Elias nimmt ihre Hand.",
+    "text": "Viel Schnee liegt auf der Zugspitze bis in den Juli. Die Seilbahn bringt Elias und Hannah auf den Gipfel.\n\nHannah trägt eine Sonnenbrille auf der Nase. Die Wolken liegen um sie herum wie ein weites Feld. Die Ruhe hier oben ist groß.\n\nDie Luft ist kalt und dünn. Der Schnee ist hart und trocken. Die Grenze zu Österreich geht mitten über den Berg.\n\n“Vier Grenzen”, sagt Elias und zeigt in vier Richtungen.\n\nHannah geht ein Stück durch den Schnee. Ihre Stiefel sinken tief.\n\n“Ich kündige im Herbst.”\n\nElias lacht nicht.\n\n“Das ist dein Ernst?”\n\n“Seit Meersburg.”\n\n“Und die Schule?”\n\n“Die Schule bekommt einen Brief.”\n\nElias hält die Handschuhe in der Hand.\n\n“Und dann? Wovon lebst du?”\n\nHannah hat keine Antwort. Ihre Hände stecken tief in den Taschen.\n\n“Ich suche etwas Neues. Mehr weiß ich nicht.”\n\n“Das ist entweder sehr gut oder sehr dumm.”\n\n“Ja.”\n\nEin paar Wanderer stehen am Kreuz. Beide stehen daneben, und Elias nimmt ihre Hand.",
     "vocab": [
       {
         "type": "noun",
@@ -2672,9 +2672,9 @@
       },
       {
         "type": "noun",
-        "word": "der Handschuh",
-        "surface": "Handschuhe",
-        "definition": "A glove; what you wear on a cold hand."
+        "word": "der Wanderer",
+        "surface": "Wanderer",
+        "definition": "A hiker; a person walking in the mountains."
       },
       {
         "type": "noun",
@@ -2751,7 +2751,7 @@
     "title": "Die Hütte am Eibsee",
     "slug": "die-hutte-am-eibsee",
     "synopsis": "In einer Hütte am Eibsee schreibt Hannah sieben Briefe. Der letzte geht an die Schule in Leipzig, und Elias fragt sie nach dem Oktober.",
-    "text": "Ihre Hütte am Eibsee hat eine Kammer mit zwei Betten und ein Feuer.\n\nEine Lampe aus Papier hängt am Fenster. Eine Kerze steht auf dem Bord. Brot und Tee stehen daneben. Stiefel stehen nass an der Tür.\n\nIhre Tasche steht neben dem Feuer. Hannah legt die Karte auf den Boden. Sieben Kreise stehen auf dem Papier.\n\n“Dresden, Heidelberg, Triberg”, zählt Elias. “Meersburg, Rügen, Nürnberg.”\n\n“Und hier”, sagt Hannah und tippt auf den Eibsee.\n\n“Das sind sieben Orte und keine Wohnung.”\n\n“Ich weiß. Das ist genau das Problem.”\n\nSie schreibt sieben Briefe. Jeder Umschlag bekommt eine Briefmarke.\n\nDer letzte Umschlag geht an die Schule in Leipzig.\n\n“Ich kündige zum Winter”, schreibt sie. Ihre Hand zittert nicht.\n\n“Und der Oktober?”, fragt Elias.\n\n“Ich fahre zu Emilia. Danach weiß ich mehr.”\n\n“Und danach?”\n\n“Danach ist auch noch ein Jahr.”\n\nHannah legt den Stift dazu. Die Ruhe draußen ist groß.\n\nElias legt ihr eine Decke über die Schultern. Er macht Tee in einer Kanne.\n\nDie Kammer wird warm. Das Holz im Feuer brennt langsam.",
+    "text": "Ihre Hütte am Eibsee hat eine Kammer mit zwei Betten.\n\nEine Lampe aus Papier hängt am Fenster. Eine Kerze steht auf dem Bord.\n\nBrot und Tee stehen daneben. Stiefel stehen nass an der Tür.\n\nIhre Tasche steht neben dem Feuer. Hannah legt die Karte auf den Boden. Sieben Kreise stehen auf dem Papier.\n\n“Dresden, Heidelberg, Triberg”, zählt Elias. “Meersburg, Rügen, Nürnberg.”\n\n“Und hier”, sagt Hannah und tippt auf den Eibsee.\n\n“Das sind sieben Orte und keine Wohnung.”\n\n“Ich weiß. Das ist genau das Problem.”\n\nSie schreibt sieben Briefe. Jeder Umschlag bekommt eine Briefmarke.\n\nDer letzte Umschlag geht an die Schule in Leipzig.\n\n“Ich kündige zum Winter”, schreibt sie. Ihre Hand zittert nicht.\n\n“Und der Oktober?”, fragt Elias.\n\n“Ich fahre zu Emilia. Danach weiß ich mehr.”\n\n“Und danach?”\n\n“Danach ist auch noch ein Jahr.”\n\nHannah legt den Stift dazu. Die Ruhe draußen ist groß.\n\nElias legt ihr eine warme Decke über die Schultern. Er macht Tee in einer Kanne.\n\nDie Kammer wird warm. Das Holz im Feuer brennt langsam.",
     "vocab": [
       {
         "type": "noun",
@@ -2778,10 +2778,10 @@
         "definition": "A pen; what you write a letter with."
       },
       {
-        "type": "noun",
-        "word": "die Decke",
-        "surface": "Decke",
-        "definition": "A blanket; the thick cloth you put over your shoulders."
+        "type": "verb",
+        "word": "zählen",
+        "surface": "zählt",
+        "definition": "To count; to say things one after another in order."
       },
       {
         "type": "noun",
@@ -2809,9 +2809,9 @@
       },
       {
         "type": "noun",
-        "word": "das Bett",
-        "surface": "Betten",
-        "definition": "A bed; where you sleep."
+        "word": "das Problem",
+        "surface": "Problem",
+        "definition": "A problem; the thing that will not go away."
       },
       {
         "type": "noun",
