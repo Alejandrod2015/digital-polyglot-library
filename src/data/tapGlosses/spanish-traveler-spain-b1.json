@@ -32,11 +32,11 @@
       "t": "adverb"
     },
     "abre": {
-      "g": "opens, whets",
+      "g": "opens",
       "t": "verb"
     },
     "abrigo": {
-      "g": "warm clothing",
+      "g": "coat",
       "t": "noun"
     },
     "abril": {
@@ -48,7 +48,7 @@
       "t": "verb"
     },
     "acaba": {
-      "g": "has just",
+      "g": "finishes, ends",
       "t": "verb"
     },
     "acabamos": {
@@ -56,7 +56,7 @@
       "t": "verb"
     },
     "acabó": {
-      "g": "ended up",
+      "g": "finished, ended",
       "t": "verb"
     },
     "aceituna": {
@@ -96,7 +96,7 @@
       "t": "verb"
     },
     "agarra": {
-      "g": "grabs",
+      "g": "grips, holds",
       "t": "verb"
     },
     "agosto": {
@@ -180,7 +180,7 @@
       "t": "noun"
     },
     "alta": {
-      "g": "tall, high",
+      "g": "high; en voz alta, out loud",
       "t": "adjective"
     },
     "amanece": {
@@ -272,7 +272,7 @@
       "t": "verb"
     },
     "arregla": {
-      "g": "sorts itself out (arreglarse)",
+      "g": "fixes, sorts out",
       "t": "verb"
     },
     "arreglos": {
@@ -340,7 +340,7 @@
       "t": "adverb"
     },
     "baja": {
-      "g": "goes down, lowers",
+      "g": "goes down, lowers; en voz baja, in a low voice",
       "t": "verb"
     },
     "bajando": {
@@ -348,7 +348,7 @@
       "t": "verb"
     },
     "bajar": {
-      "g": "to admit defeat (bajar la cabeza)",
+      "g": "to lower, to bring down",
       "t": "verb"
     },
     "baje": {
@@ -436,7 +436,7 @@
       "t": "noun"
     },
     "bote": {
-      "g": "a boat",
+      "g": "tin, jar, small pot",
       "t": "noun"
     },
     "brocha": {
@@ -476,7 +476,7 @@
       "t": "noun"
     },
     "caja": {
-      "g": "a hand drum",
+      "g": "box, crate",
       "t": "noun"
     },
     "cajas": {
@@ -536,7 +536,7 @@
       "t": "noun"
     },
     "cara": {
-      "g": "face",
+      "g": "face; de cara, face up",
       "t": "noun"
     },
     "caras": {
@@ -572,7 +572,7 @@
       "t": "noun"
     },
     "caído": {
-      "g": "had struck",
+      "g": "fallen, sunken",
       "t": "verb"
     },
     "cemento": {
@@ -624,7 +624,7 @@
       "t": "noun"
     },
     "chorro": {
-      "g": "a lot, loads",
+      "g": "a jet, a gush of water",
       "t": "slang"
     },
     "chubasco": {
@@ -632,7 +632,7 @@
       "t": "noun"
     },
     "cielo": {
-      "g": "to protest loudly (pegar el grito al cielo)",
+      "g": "sky",
       "t": "noun"
     },
     "ciencia": {
@@ -824,11 +824,11 @@
       "t": "noun"
     },
     "corriente": {
-      "g": "tacky, low-class",
+      "g": "a draught of cold air; also ordinary, common",
       "t": "adjective"
     },
     "corta": {
-      "g": "he cuts (the engine)",
+      "g": "short, narrow",
       "t": "verb"
     },
     "cortinas": {
@@ -900,7 +900,7 @@
       "t": "verb"
     },
     "cuenta": {
-      "g": "account; bill",
+      "g": "tells, recounts; also account, bill",
       "t": "noun"
     },
     "cuentas": {
@@ -908,7 +908,7 @@
       "t": "noun"
     },
     "cuento": {
-      "g": "story, tale",
+      "g": "ni te cuento, you cannot imagine; also story, tale",
       "t": "noun"
     },
     "cuerda": {
@@ -916,7 +916,7 @@
       "t": "noun"
     },
     "cuesta": {
-      "g": "a slope",
+      "g": "costs; also a slope",
       "t": "noun"
     },
     "cuota": {
@@ -928,7 +928,7 @@
       "t": "adverb"
     },
     "da": {
-      "g": "he turns over",
+      "g": "gives",
       "t": "verb"
     },
     "dan": {
@@ -1000,7 +1000,7 @@
       "t": "verb"
     },
     "dejo": {
-      "g": "a faint hint of feeling",
+      "g": "I leave it, I will do it for you",
       "t": "noun"
     },
     "del": {
@@ -1048,7 +1048,7 @@
       "t": "adjective"
     },
     "despierta": {
-      "g": "awake",
+      "g": "wakes her up; also awake",
       "t": "adjective"
     },
     "desprecio": {
@@ -1312,7 +1312,7 @@
       "t": "verb"
     },
     "entras": {
-      "g": "you dig in, take a bite",
+      "g": "you go in, you walk in",
       "t": "verb"
     },
     "entre": {
@@ -1424,11 +1424,11 @@
       "t": "pronoun"
     },
     "este": {
-      "g": "this (one); um",
+      "g": "this (one)",
       "t": "pronoun"
     },
     "estemos": {
-      "g": "even if we are (aunque estemos)",
+      "g": "that we all be there (subjunctive of estar)",
       "t": "verb"
     },
     "estiramos": {
@@ -1496,7 +1496,7 @@
       "t": "verb"
     },
     "falta": {
-      "g": "without fail (sin falta)",
+      "g": "is needed, is lacking",
       "t": "noun"
     },
     "farmacia": {
@@ -1536,7 +1536,7 @@
       "t": "verb"
     },
     "fichas": {
-      "g": "the tiles, chips",
+      "g": "index cards, records",
       "t": "noun"
     },
     "fiel": {
@@ -1648,7 +1648,7 @@
       "t": "verb"
     },
     "gordo": {
-      "g": "fat",
+      "g": "lo gordo, the worst of it; also fat",
       "t": "adjective"
     },
     "gotas": {
@@ -1660,7 +1660,7 @@
       "t": "verb"
     },
     "gracia": {
-      "g": "grace",
+      "g": "wit, charm",
       "t": "noun"
     },
     "gracias": {
@@ -1808,11 +1808,11 @@
       "t": "noun"
     },
     "hilo": {
-      "g": "on tenterhooks (con el alma en un hilo)",
+      "g": "the thread of what is being said",
       "t": "noun"
     },
     "hinchada": {
-      "g": "the fans",
+      "g": "swollen",
       "t": "noun"
     },
     "hoja": {
@@ -1840,7 +1840,7 @@
       "t": "verb"
     },
     "horno": {
-      "g": "in deep trouble (al horno)",
+      "g": "oven",
       "t": "noun"
     },
     "hoy": {
@@ -1992,7 +1992,7 @@
       "t": "adjective"
     },
     "largo": {
-      "g": "long; get lost",
+      "g": "long",
       "t": "adjective"
     },
     "las": {
@@ -2064,7 +2064,7 @@
       "t": "noun"
     },
     "lista": {
-      "g": "ready, list",
+      "g": "list; also ready",
       "t": "adjective"
     },
     "llama": {
@@ -2172,7 +2172,7 @@
       "t": "noun"
     },
     "mano": {
-      "g": "hand; bro, dude",
+      "g": "hand",
       "t": "noun"
     },
     "manos": {
@@ -2216,7 +2216,7 @@
       "t": "noun"
     },
     "mañana": {
-      "g": "tomorrow; morning",
+      "g": "morning; also tomorrow",
       "t": "adverb"
     },
     "me": {
@@ -2224,7 +2224,7 @@
       "t": "pronoun"
     },
     "media": {
-      "g": "half; stocking",
+      "g": "half",
       "t": "adjective"
     },
     "medidos": {
@@ -2256,7 +2256,7 @@
       "t": "noun"
     },
     "mete": {
-      "g": "puts her in",
+      "g": "throws in, slips in",
       "t": "verb"
     },
     "mi": {
@@ -2288,7 +2288,7 @@
       "t": "verb"
     },
     "mira": {
-      "g": "look, hey",
+      "g": "looks at",
       "t": "verb"
     },
     "mirada": {
@@ -2460,7 +2460,7 @@
       "t": "verb"
     },
     "nombre": {
-      "g": "name; no way",
+      "g": "name",
       "t": "noun"
     },
     "nombres": {
@@ -2668,7 +2668,7 @@
       "t": "verb"
     },
     "pase": {
-      "g": "whatever happens (pase lo que pase)",
+      "g": "passes, goes by",
       "t": "verb"
     },
     "paseo": {
@@ -2732,7 +2732,7 @@
       "t": "adjective"
     },
     "perdona": {
-      "g": "forgives (perdonar); no perdona, it shows no mercy",
+      "g": "excuse me, sorry",
       "t": "verb"
     },
     "perdón": {
@@ -2756,7 +2756,7 @@
       "t": "noun"
     },
     "peso": {
-      "g": "a peso, a coin",
+      "g": "weight",
       "t": "noun"
     },
     "pide": {
@@ -2796,7 +2796,7 @@
       "t": "noun"
     },
     "pista": {
-      "g": "clue; dance floor",
+      "g": "clue",
       "t": "noun"
     },
     "pizarra": {
@@ -2832,7 +2832,7 @@
       "t": "adjective"
     },
     "poco": {
-      "g": "little by little (poco a poco)",
+      "g": "little, not much",
       "t": "adverb"
     },
     "polvo": {
@@ -2876,7 +2876,7 @@
       "t": "noun"
     },
     "precio": {
-      "g": "dirt cheap (a precio de risa)",
+      "g": "price",
       "t": "noun"
     },
     "precios": {
@@ -2928,7 +2928,7 @@
       "t": "adjective"
     },
     "primo": {
-      "g": "cousin; buddy",
+      "g": "cousin",
       "t": "noun"
     },
     "prisa": {
@@ -2996,7 +2996,7 @@
       "t": "expression"
     },
     "puesto": {
-      "g": "got his act together (puesto las pilas)",
+      "g": "put, placed",
       "t": "verb"
     },
     "pulir": {
@@ -3128,7 +3128,7 @@
       "t": "verb"
     },
     "reconoce": {
-      "g": "is recognized (se reconoce)",
+      "g": "recognizes",
       "t": "verb"
     },
     "redes": {
@@ -3172,7 +3172,7 @@
       "t": "verb"
     },
     "repetir": {
-      "g": "to do it again",
+      "g": "to repeat, to say again",
       "t": "verb"
     },
     "repite": {
@@ -3184,7 +3184,7 @@
       "t": "verb"
     },
     "reserva": {
-      "g": "the reservation",
+      "g": "reserve, restraint",
       "t": "noun"
     },
     "reservada": {
@@ -3260,7 +3260,7 @@
       "t": "verb"
     },
     "roto": {
-      "g": "the broken telephone game (teléfono roto)",
+      "g": "broken",
       "t": "adjective"
     },
     "rotonda": {
@@ -3308,7 +3308,7 @@
       "t": "noun"
     },
     "sacude": {
-      "g": "to shake",
+      "g": "shakes",
       "t": "verb"
     },
     "salado": {
@@ -3320,7 +3320,7 @@
       "t": "noun"
     },
     "sale": {
-      "g": "goes out; okay",
+      "g": "goes out, comes out; sale adelante, it goes through",
       "t": "verb"
     },
     "salido": {
@@ -3364,7 +3364,7 @@
       "t": "noun"
     },
     "seguimos": {
-      "g": "we follow",
+      "g": "we carry on, we keep on",
       "t": "verb"
     },
     "segundo": {
@@ -3452,7 +3452,7 @@
       "t": "verb"
     },
     "sierra": {
-      "g": "mountain range",
+      "g": "saw (the tool)",
       "t": "noun"
     },
     "sigue": {
@@ -3500,7 +3500,7 @@
       "t": "noun"
     },
     "sobra": {
-      "g": "plenty to spare (de sobra)",
+      "g": "is left over",
       "t": "noun"
     },
     "sobre": {
@@ -3576,7 +3576,7 @@
       "t": "noun"
     },
     "suelta": {
-      "g": "lets go, loose",
+      "g": "blurts out; also lets go",
       "t": "verb"
     },
     "suelto": {
@@ -3604,7 +3604,7 @@
       "t": "noun"
     },
     "suya": {
-      "g": "as if the street were his",
+      "g": "his, hers, theirs",
       "t": "adjective"
     },
     "suyo": {
@@ -3616,7 +3616,7 @@
       "t": "noun"
     },
     "sé": {
-      "g": "i know",
+      "g": "I know",
       "t": "verb"
     },
     "sí": {
@@ -3756,7 +3756,7 @@
       "t": "pronoun"
     },
     "toma": {
-      "g": "to drink",
+      "g": "have, take",
       "t": "verb"
     },
     "tonta": {
@@ -3816,11 +3816,11 @@
       "t": "noun"
     },
     "tras": {
-      "g": "one after another (uno tras otro)",
+      "g": "behind",
       "t": "preposition"
     },
     "trato": {
-      "g": "a deal (sellar el trato)",
+      "g": "a deal",
       "t": "noun"
     },
     "trecho": {
@@ -3864,7 +3864,7 @@
       "t": "article"
     },
     "unión": {
-      "g": "Unión (street name)",
+      "g": "bond, being together",
       "t": "noun"
     },
     "uno": {
@@ -3988,7 +3988,7 @@
       "t": "noun"
     },
     "vieja": {
-      "g": "old woman, girl (slang)",
+      "g": "old (feminine)",
       "t": "noun"
     },
     "viejo": {
@@ -4084,7 +4084,7 @@
       "t": "pronoun"
     },
     "dura": {
-      "g": "hard, tough; lasts",
+      "g": "lasts; also hard, tough",
       "t": "adjective"
     },
     "guardar": {

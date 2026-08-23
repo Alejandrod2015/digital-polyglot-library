@@ -26,6 +26,23 @@
  *    glosado en un bundle hermano del mismo idioma (`mientras`, `algo`,
  *    `tan`), y copiarlo es gratis y consistente. Solo lo que no existe en
  *    ninguna parte se busca en `scripts/_newGlosses.json`, escrito a mano.
+ * 3. UNA COPIA NO VALE SI TRAE LA FRASE DE OTRO JOURNEY. El copiador va por
+ *    PALABRA y no mira la oracion, asi que arrastra el sentido que la palabra
+ *    tenia ALLI. `cerrado` llego como "closed" desde el Friends de Colombia y
+ *    cayo en "huele a cerrado", que es el olor de un sitio sin abrir; `horno`
+ *    llego como "in deep trouble (al horno)" y cayo en "huele a horno
+ *    apagado". Por eso, antes de copiar, se comprueba que la EXPRESION que la
+ *    glosa cita en espanol exista en las historias de ESTE bundle. Si no
+ *    existe, la copia se RECHAZA y la palabra pasa a escribirse a mano.
+ *
+ *    Ese porton es mecanico y solo caza a las que citan su expresion. Las
+ *    otras (`caja` = "a hand drum" sobre la caja del hielo, `sierra` =
+ *    "mountain range" sobre la sierra de cortar) no llevan marca ninguna: hay
+ *    que LEER cada copia contra su oracion antes de dar el bundle por bueno.
+ *    La herramienta es `scripts/reviewCopiedGlosses.ts <bundle>`, que vuelca
+ *    cada glosa copiada junto a la frase donde cae. WHY: el 2026-08-23, en el
+ *    Traveler ES/spain B1, 68 de 617 copias estaban mal y el informe decia
+ *    "al dia", porque tener glosa y tener la glosa correcta no es lo mismo.
  *
  * Y como el original: si algo se queda sin glosa, NO ESCRIBE. Un bundle a
  * medias es peor que uno viejo, porque el usuario no sabe cuál falla.
@@ -107,6 +124,39 @@ function familyOf(bundle: string): string {
   return "";
 }
 
+/** Palabras que delatan que un fragmento de glosa esta en ingles y no cita
+ *  una expresion espanola. Con una basta: "(the tool)", "(subjunctive of
+ *  estar)", "(feminine)". */
+const INGLES = new Set([
+  "the","a","an","of","to","in","on","for","and","or","is","it","that","you","he","she",
+  "his","her","its","verb","noun","adjective","adverb","form","past","plural","singular",
+  "subjunctive","imperative","literally","also","as","if","were","from","with","meaning",
+  "feminine","masculine","name","city","street","informal","slang","polite",
+]);
+
+/** Trozos de una glosa que pretenden citar una expresion: lo que va entre
+ *  parentesis, y la clausula inicial de "en voz alta, out loud". */
+function fragmentosCitados(g: string): string[] {
+  const out: string[] = [];
+  for (const m of g.matchAll(/\(([^)]+)\)/g)) out.push(m[1]);
+  for (const trozo of g.split(";")) {
+    const coma = trozo.indexOf(",");
+    if (coma > 0) out.push(trozo.slice(0, coma));
+  }
+  return out.map((t) => t.trim().toLowerCase()).filter((t) => t.split(/\s+/).length >= 2);
+}
+
+/** true si la glosa cita una expresion ESPANOLA que no existe en este corpus,
+ *  o sea: viene de la frase de otro journey y aqui no significa eso. */
+export function citaAjena(gloss: string, corpus: string): boolean {
+  for (const frag of fragmentosCitados(gloss)) {
+    const palabras = frag.split(/[^\p{L}]+/u).filter(Boolean);
+    if (palabras.some((w) => INGLES.has(w))) continue; // es ingles, no cita nada
+    if (!corpus.includes(frag)) return true;
+  }
+  return false;
+}
+
 function loadBundle(name: string) {
   return JSON.parse(fs.readFileSync(path.join(DIR, `${name}.json`), "utf8")) as {
     slugs: string[];
@@ -177,6 +227,13 @@ async function main() {
       continue;
     }
 
+    // Porton de la regla 3: el corpus de ESTE bundle, para comprobar que la
+    // expresion que cita una glosa hermana existe aqui.
+    const corpus = stories
+      .map((s) => `${s.title ?? ""} ${extractStoryPlainText(s.text ?? "")}`)
+      .join(" ")
+      .toLowerCase();
+
     const fromSibling: string[] = [];
     const fromManual: string[] = [];
     const uncovered: string[] = [];
@@ -189,7 +246,7 @@ async function main() {
       if (man) {
         additions[key] = man;
         fromManual.push(key);
-      } else if (sib) {
+      } else if (sib && !citaAjena(sib.g, corpus)) {
         additions[key] = sib;
         fromSibling.push(key);
       } else {
