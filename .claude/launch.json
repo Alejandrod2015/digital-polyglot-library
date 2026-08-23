@@ -85,6 +85,20 @@
       ],
       "port": 3007,
       "autoPort": false
+    },
+    {
+      "_comment": "Este worktree ya ES el cwd: sin --prefix. Puerto propio porque 3000 y 3001 los ocupan otros chats.",
+      "name": "latam-a1-3009",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev:web",
+        "--",
+        "--port",
+        "3009"
+      ],
+      "port": 3009,
+      "autoPort": false
     }
   ]
 }
