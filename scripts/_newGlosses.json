@@ -7753,6 +7753,298 @@
     "nelson": {
       "g": "Nelson (man's name)",
       "t": "noun"
+    },
+    "precio": {
+      "g": "price",
+      "t": "noun"
+    },
+    "roto": {
+      "g": "broken, torn",
+      "t": "adjective"
+    },
+    "tras": {
+      "g": "behind, after",
+      "t": "preposition"
+    },
+    "hilo": {
+      "g": "thread; a thin trickle of water",
+      "t": "noun"
+    },
+    "difícil": {
+      "g": "difficult, hard",
+      "t": "adjective"
+    },
+    "falta": {
+      "g": "is missing, is lacking",
+      "t": "noun"
+    },
+    "filtro": {
+      "g": "filter",
+      "t": "noun"
+    },
+    "malas": {
+      "g": "bad (feminine plural)",
+      "t": "adjective"
+    },
+    "pecho": {
+      "g": "chest",
+      "t": "noun"
+    },
+    "quieta": {
+      "g": "still, motionless (feminine)",
+      "t": "adjective"
+    },
+    "subió": {
+      "g": "went up, raised (subir)",
+      "t": "verb"
+    },
+    "lugar": {
+      "g": "place, spot",
+      "t": "noun"
+    },
+    "corta": {
+      "g": "cuts; hangs up a call (cortar)",
+      "t": "verb"
+    },
+    "regales": {
+      "g": "give away for nothing (regalar)",
+      "t": "verb"
+    },
+    "trato": {
+      "g": "deal, agreement",
+      "t": "noun"
+    },
+    "poco": {
+      "g": "little, not much",
+      "t": "adverb"
+    },
+    "sobra": {
+      "g": "is left over, is more than enough",
+      "t": "noun"
+    },
+    "alcanza": {
+      "g": "is enough, reaches",
+      "t": "verb"
+    },
+    "arregla": {
+      "g": "fixes, mends",
+      "t": "verb"
+    },
+    "atiende": {
+      "g": "answers, attends to",
+      "t": "verb"
+    },
+    "aviso": {
+      "g": "notice, alert",
+      "t": "noun"
+    },
+    "abre": {
+      "g": "opens",
+      "t": "verb"
+    },
+    "banca": {
+      "g": "bench",
+      "t": "slang"
+    },
+    "barra": {
+      "g": "bar, rod",
+      "t": "noun"
+    },
+    "billetes": {
+      "g": "banknotes",
+      "t": "noun"
+    },
+    "bombilla": {
+      "g": "light bulb",
+      "t": "noun"
+    },
+    "bote": {
+      "g": "can, bin",
+      "t": "noun"
+    },
+    "cambio": {
+      "g": "change; exchange rate",
+      "t": "expression"
+    },
+    "canto": {
+      "g": "edge, rim",
+      "t": "verb"
+    },
+    "cara": {
+      "g": "face; expensive (feminine)",
+      "t": "noun"
+    },
+    "chico": {
+      "g": "small; boy",
+      "t": "noun"
+    },
+    "chile": {
+      "g": "Chile (the country)",
+      "t": "noun"
+    },
+    "común": {
+      "g": "common, ordinary",
+      "t": "adjective"
+    },
+    "cuenta": {
+      "g": "counts; account, bill",
+      "t": "noun"
+    },
+    "cuesta": {
+      "g": "costs; a slope",
+      "t": "noun"
+    },
+    "da": {
+      "g": "gives",
+      "t": "verb"
+    },
+    "devuelvo": {
+      "g": "I give back",
+      "t": "verb"
+    },
+    "este": {
+      "g": "this (one)",
+      "t": "pronoun"
+    },
+    "ficha": {
+      "g": "form, record card",
+      "t": "noun"
+    },
+    "floja": {
+      "g": "loose, slack",
+      "t": "adjective"
+    },
+    "fresa": {
+      "g": "strawberry",
+      "t": "adjective"
+    },
+    "hacés": {
+      "g": "you do, you make (vos)",
+      "t": "verb"
+    },
+    "lazo": {
+      "g": "cord, tie",
+      "t": "noun"
+    },
+    "libre": {
+      "g": "free, spare",
+      "t": "noun"
+    },
+    "lucas": {
+      "g": "Lucas (name)",
+      "t": "noun"
+    },
+    "línea": {
+      "g": "line; phone line",
+      "t": "noun"
+    },
+    "mano": {
+      "g": "hand",
+      "t": "noun"
+    },
+    "manteca": {
+      "g": "butter (River Plate); lard",
+      "t": "noun"
+    },
+    "marca": {
+      "g": "marks, dials; a mark",
+      "t": "noun"
+    },
+    "mete": {
+      "g": "puts in",
+      "t": "verb"
+    },
+    "mira": {
+      "g": "looks at",
+      "t": "verb"
+    },
+    "montón": {
+      "g": "a heap, a wad",
+      "t": "noun"
+    },
+    "mío": {
+      "g": "mine",
+      "t": "pronoun"
+    },
+    "once": {
+      "g": "eleven",
+      "t": "expression"
+    },
+    "oye": {
+      "g": "hears",
+      "t": "expression"
+    },
+    "pegado": {
+      "g": "stuck, glued",
+      "t": "adjective"
+    },
+    "red": {
+      "g": "network",
+      "t": "noun"
+    },
+    "ruta": {
+      "g": "route, road",
+      "t": "noun"
+    },
+    "seca": {
+      "g": "dry (feminine)",
+      "t": "adjective"
+    },
+    "seco": {
+      "g": "dry",
+      "t": "adjective"
+    },
+    "sencillo": {
+      "g": "small change; simple",
+      "t": "adjective"
+    },
+    "sostiene": {
+      "g": "holds, holds up",
+      "t": "verb"
+    },
+    "suena": {
+      "g": "sounds",
+      "t": "verb"
+    },
+    "suya": {
+      "g": "hers, his",
+      "t": "adjective"
+    },
+    "tapa": {
+      "g": "covers; a lid",
+      "t": "noun"
+    },
+    "toma": {
+      "g": "takes; drinks",
+      "t": "verb"
+    },
+    "torta": {
+      "g": "cake (River Plate); sandwich (Mexico)",
+      "t": "noun"
+    },
+    "trabaja": {
+      "g": "works",
+      "t": "verb"
+    },
+    "trae": {
+      "g": "brings",
+      "t": "verb"
+    },
+    "vieja": {
+      "g": "old (feminine)",
+      "t": "noun"
+    },
+    "vive": {
+      "g": "lives",
+      "t": "verb"
+    },
+    "vuelto": {
+      "g": "change, money handed back",
+      "t": "verb"
+    },
+    "único": {
+      "g": "the only one; unique",
+      "t": "adjective"
     }
   }
 }
