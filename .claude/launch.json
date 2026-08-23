@@ -85,6 +85,20 @@
       ],
       "port": 3007,
       "autoPort": false
+    },
+    {
+      "_comment": "Worktree vigorous-germain-7903b4 (Traveler IT A1). Corre desde el worktree. Quitar con el worktree.",
+      "name": "it-a1-3008",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev:web",
+        "--",
+        "--port",
+        "3008"
+      ],
+      "port": 3008,
+      "autoPort": false
     }
   ]
 }
