@@ -6491,6 +6491,18 @@
   "österreich": {
    "g": "Austria",
    "t": "noun"
+  },
+  "startet": {
+   "g": "starts an engine (starten)",
+   "t": "verb"
+  },
+  "grauer": {
+   "g": "grey (grau)",
+   "t": "adjective"
+  },
+  "hinauf": {
+   "g": "up, upwards",
+   "t": "adverb"
   }
  }
 }
