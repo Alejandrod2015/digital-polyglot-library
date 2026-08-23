@@ -1,6 +1,17 @@
 # -*- coding: utf-8 -*-
 """Cuantas plazas portables reaparecen en OTRA historia, con el mismo criterio
-de token que usa la escalera del gate."""
+de token que usa la escalera del gate.
+
+DONDE VIVE `reuse`, Y DONDE NO. El campo se escribe dentro de cada entrada de
+`JourneyStory.vocab`, que es una columna JSON de Postgres, y ahi se queda. NO
+llega al cliente: `toPublicStory` (src/lib/journeyStories.ts:31-41) no reenvia
+el vocab tal cual, reconstruye cada entrada con una lista blanca de cinco
+campos (word, definition, type, register, surface) y descarta el resto. Ese es
+el unico embudo hacia fuera, asi que ni el lector web ni el movil ven `reuse`.
+
+Consecuencia para quien codifique el gate de recirculacion: hay que leerlo de
+Prisma. Leido del payload del lector saldran 420 `undefined` y el gate dira que
+nadie etiqueto nada. (Verificado el 2026-08-23; aviso del chat del IT A1.)"""
 import json, re, sys
 D = json.load(open("scripts/_a1latamStories.json", encoding="utf-8"))
 ORDER = ["night-buses","rooms-and-keys","prices-and-change","calls-and-messages",
