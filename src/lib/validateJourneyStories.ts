@@ -93,7 +93,11 @@ function castOf(stories: JourneyStoryInput[], lang: string): string[] {
   return castLegacy(stories).filter((n) => hablan.has(n));
 }
 function castLegacy(stories: JourneyStoryInput[]): string[] {
-  const ART = /\b(der|die|das|den|dem|des|ein|eine|einen|einem|einer|zum|zur|im|am|beim|vom|le|la|les|un|une|du|el|los|las|il|lo|gli|o|a|os|as|um|uma|do|da|dos|das|no|na|nos|nas|ao|pelo|pela|de|em)\s+$/i;
+  const ART = /\b(der|die|das|den|dem|des|ein|eine|einen|einem|einer|zum|zur|im|am|beim|vom|le|la|les|un|une|du|el|los|las|il|lo|gli|o|a|os|as|um|uma)\s+$/i;
+  // OJO: aqui van ARTICULOS, no preposiciones. Meter "de", "da", "no"... echa
+  // del reparto a cualquiera que aparezca en "a mao de Rafaela" o "a filha da
+  // Neide", que es media historia: el 2026-08-23 el reparto salio VACIO y el
+  // check de cierres degeneró a "todas las historias terminan a solas".
   const MID = /[\p{Ll}],?\s+$/u;
   const conArticulo = new Set<string>();
   const cuenta = new Map<string, number>();
@@ -141,9 +145,26 @@ const FORMAS_PT: Array<[string, (n: string) => RegExp]> = [
   ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+(?:${VERBO_SER_PT})\\b`, "iu")],
 ];
 
+/**
+ * Las tres formas aprobadas en FRANCES, fijadas escribiendo el Expat FR A0 de
+ * Lyon (2026-08-23). Mismo contrato que el portugues: la forma tiene que decir
+ * QUE ES la persona, no que hace.
+ *
+ *   aposicion   Sylvie, une voisine du troisieme, monte avec un sac.
+ *   s'appeler   La professeure s'appelle Lea et parle lentement.
+ *   con etre    Manon est une jeune femme de Clermont-Ferrand.
+ */
+const NUC_FR = "(?:[a-zà-ÿ']+\\s+){0,3}[a-zà-ÿ']+";
+const FORMAS_FR: Array<[string, (n: string) => RegExp]> = [
+  ["aposicion", (n) => new RegExp(`${n},\\s+(?:un|une|le|la|l')\\s*${NUC_FR}`, "iu")],
+  ["s'appeler", (n) => new RegExp(`s'appelle\\s+${n}\\b`, "iu")],
+  ["con etre", (n) => new RegExp(`\\b${n}\\s+est\\s+(?:un|une)\\s+${NUC_FR}`, "iu")],
+];
+
 const FORMAS_POR_IDIOMA: Record<string, Array<[string, (n: string) => RegExp]>> = {
   DE: FORMAS_DE,
   PT: FORMAS_PT,
+  FR: FORMAS_FR,
 };
 
 /** Forma de la apertura: que clase de sujeto abre la primera frase. */
@@ -156,6 +177,20 @@ function openingShapePT(text: string): string {
   if (/^(No|Na|Nos|Nas|Do|Da|Dos|Das|Ao|À|Em|Entre|Dentro|Atrás|Depois|Antes|Sobre|Debaixo)$/.test(w)) return "lugar o tiempo delante";
   if (/^(Às|Aos|Quinze|Dois|Duas|Três|Quatro|Cinco|Seis|Sete|Oito|Dez|Vinte|Trinta|Meia|Cada|Todo|Toda)$/.test(w)) return "hora o cantidad";
   if (/^Quem\b/.test(f)) return "quem + verbo";
+  if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
+  return "otra";
+}
+
+function openingShapeFR(text: string): string {
+  const f = sentences(text)[0] ?? "";
+  const w = (f.split(/\s+/)[0] ?? "").replace(/[.,:;]$/, "");
+  if (f.startsWith(QUOTE_OPEN)) return "replica directa";
+  if (/^(Le|La|Les|L')/.test(w)) return "articulo definido + sustantivo";
+  if (/^(Un|Une|Des)$/.test(w)) return "articulo indefinido + sustantivo";
+  if (/^(Son|Sa|Ses|Leur|Leurs|Mon|Ma)$/.test(w)) return "posesivo + sustantivo";
+  if (/^(À|Au|Aux|Dans|Sur|Sous|Devant|Derrière|Chez|En|Entre|Après|Avant|Depuis|Vers|Pendant|Fin|Ici)$/.test(w)) return "lugar o tiempo delante";
+  if (/^(Il|Elle|Ils|Elles|On|Personne|Quelqu'un|Tout|Toute|Tous)$/.test(w)) return "pronombre";
+  if (/^(Deux|Trois|Quatre|Cinq|Six|Sept|Huit|Neuf|Dix|Vingt|Trente|Chaque|Une fois)$/.test(w)) return "hora o cantidad";
   if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
   return "otra";
 }
@@ -255,7 +290,9 @@ export function validateJourneyStories(
   {
     const porForma = new Map<string, string[]>();
     for (const s of stories) {
-      const f = lang === "PT" ? openingShapePT(s.text) : openingShape(s.text);
+      const f = lang === "PT" ? openingShapePT(s.text)
+        : lang === "FR" ? openingShapeFR(s.text)
+        : openingShape(s.text);
       porForma.set(f, [...(porForma.get(f) ?? []), s.slug]);
     }
     const tope = Math.max(2, Math.ceil(stories.length / 3));
@@ -307,7 +344,39 @@ export function validateJourneyStories(
 
   // ── 7. Suelo A0 ─────────────────────────────────────────────
   if (level === "A0") {
-    if (lang !== "DE") {
+    if (lang === "FR") {
+      // Suelo A0 frances (2026-08-23): la NARRACION va en presente. El passe
+      // compose y el imparfait se permiten DENTRO de comillas, que es habla
+      // real y el alumno la oye igual en la calle.
+      // Dos trampas del frances que un detector ingenuo se come:
+      //   - "sait", "fait", "plait" son PRESENTE y acaban en -ait como el
+      //     imperfecto, asi que van a la lista de excepciones;
+      //   - "est fermee", "est trempee" son adjetivo, no passe compose, asi
+      //     que el participio se pide de una lista blanca de verbos de accion.
+      // Adverbios y sustantivos que acaban como un imperfecto sin serlo.
+      const PRESENTE_EN_AIT = /^(?:sait|fait|plaît|plait|connaît|connait|paraît|parait|naît|nait|vaut|faut|jamais|mais|frais|vrais|désormais|français|palais|relais|balais)$/;
+      const PARTICIPIOS = "(?:allé|allée|venu|venue|arrivé|arrivée|resté|restée|sorti|sortie|monté|montée|descendu|descendue|parti|partie|entré|entrée|pris|prise|mis|mise|dit|dite|vu|vue|fait|faite|écrit|écrite|répondu|compris|comprise|proposé|proposée|réparé|réparée|acheté|achetée|donné|donnée|trouvé|trouvée|perdu|perdue|oublié|oubliée|appelé|appelée|changé|changée|décidé|décidée|signé|signée)";
+      const AUX = "(?:ai|as|a|avons|avez|ont|suis|es|est|sommes|êtes|sont)";
+      // `\b` de JavaScript es ASCII: en "Léa" ve un limite antes de la "a"
+      // final y "Léa écrit" pasaba por "a + ecrit", un passe compose que no
+      // existe. Los limites se hacen con lookarounds Unicode.
+      const L = "(?<![\\p{L}])";
+      const R = "(?![\\p{L}])";
+      const PC_FR = new RegExp(`${L}${AUX}\\s+${PARTICIPIOS}${R}`, "iu");
+      const IMP_FR = new RegExp(`${L}(\\p{Ll}{3,}(?:ais|ait|ions|iez|aient))${R}`, "u");
+      const malas: string[] = [];
+      for (const s of stories) {
+        const narr = s.text.replace(new RegExp(`${QUOTE_OPEN}[^${QUOTE_CLOSE}]*${QUOTE_CLOSE}`, "g"), " ");
+        for (const f of sentences(narr)) {
+          if (f.length < 4) continue;
+          const imp = f.match(IMP_FR);
+          const impReal = imp ? !PRESENTE_EN_AIT.test(imp[1].toLowerCase()) : false;
+          if (PC_FR.test(f) || impReal) malas.push(`${s.slug}: [no es presente] ${f.slice(0, 70)}`);
+        }
+      }
+      push("journey-a0-floor", "Suelo A0: la narracion va en presente",
+        malas.length === 0, malas.slice(0, 8).join(" | "));
+    } else if (lang !== "DE") {
       noImpl("journey-a0-floor", "Suelo A0: sujeto primero, sin separables partidos, solo presente",
         `El suelo A0 solo esta implementado para DE; este journey es ${lang || "?"}. Escribelo antes de guardar.`);
     } else {
@@ -394,7 +463,16 @@ export function validateJourneyStories(
   // el suelo se pone en 3,0, por debajo de los tres. En C1 el catalogo entero
   // vive entre 0,8 y 1,5, asi que ahi NO se mide: poner un numero seria
   // inventarselo, y bajarlo hasta que pase seria calibrar el gate hacia abajo.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 2.5 };
+  // A1 recalibrado el 2026-08-23 sobre A1 REALES, que es lo que faltaba: el
+  // 2,5 de la primera version no salio de ningun A1, se extrapolo del A0. Los
+  // tres A1 del catalogo dan 1,88 (Traveler DE, draft), 1,63 (Traveler ES, el
+  // unico PUBLICADO) y 1,43 (Traveler PT-BR). Ninguno llegaba a 2,5, asi que el
+  // gate pedia a un A1 algo que no ha hecho nunca un A1, ni siquiera el que
+  // esta vivo. Suelo 1,6: por debajo del publicado, con el mismo criterio con
+  // el que se puso el 3,0 de A0 (por debajo de los tres publicados: 4,21, 3,17
+  // y 3,09). Que sea menos de la mitad que en A0 no esta explicado; lo honesto
+  // es medirlo, no adivinar por que.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 1.6 };
   const suelo = MEDIA_MINIMA[level];
   if (suelo === undefined) {
     noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
