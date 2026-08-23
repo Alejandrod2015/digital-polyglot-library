@@ -4794,6 +4794,30 @@
   "überhaupt": {
    "g": "at all; actually, in general",
    "t": "adverb"
+  },
+  "darüber": {
+   "g": "about it, over it",
+   "t": "adverb"
+  },
+  "freundin": {
+   "g": "female friend",
+   "t": "noun"
+  },
+  "grauer": {
+   "g": "grey (grau)",
+   "t": "adjective"
+  },
+  "hinauf": {
+   "g": "up, upwards",
+   "t": "adverb"
+  },
+  "ihrem": {
+   "g": "her; your, formal (dative)",
+   "t": "pronoun"
+  },
+  "startet": {
+   "g": "starts an engine (starten)",
+   "t": "verb"
   }
  }
 }

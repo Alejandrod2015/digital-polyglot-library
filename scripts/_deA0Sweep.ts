@@ -15,7 +15,7 @@ const rows = JSON.parse(fs.readFileSync(process.argv[2], "utf8")) as { slug: str
 const NO_SUJETO = new RegExp(
   "^(In|Im|An|Am|Auf|Aus|Bei|Beim|Mit|Nach|Seit|Von|Vom|Vor|Zu|Zum|Zur|Über|Unter|Zwischen|Durch|Für|Gegen|Ohne|Um|Neben|Hinter|" +
   "Dann|Danach|Heute|Gestern|Später|Manchmal|Plötzlich|Oben|Unten|Draußen|Drinnen|Hier|Dort|Jetzt|Deshalb|Trotzdem|Endlich|" +
-  "Sofort|Zuerst|Abends|Morgens|Nachts|Jedes|Jeden|Einmal|Zweimal|Diesmal|Damals|Dafür|Dabei|Dazu|Wieder|Nur|Auch|Noch|Immer)\\b"
+  "Sofort|Zuerst|Abends|Morgens|Nachts|Jedes|Jeden|Einmal|Zweimal|Diesmal|Damals|Dafür|Dabei|Dazu|Wieder|Nur|Auch|Noch|Immer|Halb|Weiß|Grau|Kalt|Warm|Hoch|Tief|Lang|Kurz|Voll|Leise|Laut|Steil|Zwei|Drei|Vier|Fünf|Sechs|Sieben|Acht|Neun|Zehn)\\b"
 );
 const PARTICULAS = ["an","auf","aus","ein","mit","nach","vor","zu","ab","bei","hin","her","zurück","los","weiter","vorbei","herum","raus","rein","weg","fest","nieder","um"];
 const PART_FINAL = new RegExp(`\\s(${PARTICULAS.join("|")})\\s*[.!?]$`, "i");
@@ -31,7 +31,7 @@ for (const r of rows) {
     const f = raw.trim();
     if (!f || f.length < 4) continue;
     const flags: string[] = [];
-    if (NO_SUJETO.test(f)) flags.push("no empieza por el sujeto");
+    if (NO_SUJETO.test(f) && !/^(?:Halb|Weiß|Grau|Kalt|Warm|Hoch|Tief|Lang|Kurz|Voll|Leise|Laut|Steil|Zwei|Drei|Vier|Fünf|Sechs|Sieben|Acht|Neun|Zehn|Jedes|Jeden)\s+(?:[a-zäöüß]+\s+)?[A-ZÄÖÜ]/.test(f)) flags.push("no empieza por el sujeto");
     if (PART_FINAL.test(f)) flags.push("particula separable al final");
     if (PERIFRASIS.test(f)) flags.push("bleibt stehen / geht weiter");
     if (/\bes gibt\b/i.test(f)) flags.push("es gibt");
