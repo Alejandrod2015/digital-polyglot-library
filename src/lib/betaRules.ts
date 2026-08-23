@@ -70,7 +70,11 @@ export type BetaRulesConfig = {
 
 export const DEFAULT_BETA_RULES: BetaRulesConfig = {
   autoAcceptAt: 60,
-  autoDeclineBelow: 30,
+  // Bajado de 30 el 2026-08-23, el día que "How did you hear about us?" salió
+  // del formulario: aportaba entre 4 y 10 puntos a todo el mundo, 6 de mediana,
+  // y sin él el mismo solicitante puntúa 6 menos. Dejar el piso en 30 habría
+  // rechazado sin leerlo a quien ayer entraba a revisión.
+  autoDeclineBelow: 24,
   maxActiveTesters: 100,
   acceptedLanguagesMode: "auto",
   acceptedTargetLanguages: ["Spanish", "German", "Italian", "French", "Portuguese"],
@@ -141,7 +145,6 @@ export type BetaApplication = {
   currentLevel: string;
   weeklyHours?: string | null;
   motivation?: string | null;
-  referralSource?: string | null;
   applicationReason?: string | null;
 };
 
@@ -229,31 +232,17 @@ function scoreMotivation(motivation: string | null | undefined): number {
       return 11;
     case "family connection":
       return 10;
+    // Igual que trabajo y familia: quien lleva años con un idioma y no quiere
+    // perderlo abre la app un martes por la noche. Antes caía en "just for
+    // fun" y se llevaba 5, la peor nota del campo.
+    case "keep up my level":
+      return 10;
     case "travel":
       return 8;
     case "just for fun":
       return 5;
     default:
       return 5;
-  }
-}
-
-function scoreReferral(source: string | null | undefined): number {
-  // A referral you can trace back to a person or a long-form piece converts
-  // better than a cold tap on a video.
-  switch ((source ?? "").trim().toLowerCase()) {
-    case "friend":
-      return 10;
-    case "podcast":
-    case "blog or article":
-      return 8;
-    case "google search":
-      return 8;
-    case "instagram":
-    case "tiktok":
-      return 6;
-    default:
-      return 4;
   }
 }
 
@@ -341,9 +330,6 @@ export function evaluateApplication(
   const motivation = scoreMotivation(app.motivation);
   signals.push({ label: `Motivation: ${app.motivation ?? "unknown"}`, points: motivation });
 
-  const referral = scoreReferral(app.referralSource);
-  signals.push({ label: `Heard via: ${app.referralSource ?? "unknown"}`, points: referral });
-
   // Small trust signal: someone who took the trouble to give the right store
   // account is a person and not a form-filler.
   //
@@ -370,7 +356,7 @@ export function evaluateApplication(
 
   const score = Math.max(
     0,
-    Math.min(100, reason.points + hours + languagePoints + motivation + referral + extras),
+    Math.min(100, reason.points + hours + languagePoints + motivation + extras),
   );
 
   // ── Verdict ──

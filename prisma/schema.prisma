@@ -599,12 +599,21 @@ model BetaSignup {
   // will have these NULL; the form going forward requires them.
   motivation        String?
   applicationReason String?
+  // RETIRADO del formulario el 2026-08-23: en tres días recogió cinco
+  // respuestas y solo dos nombraban un dominio ("slang de Colombia, México y
+  // Paraguay"); el resto eran objetivos de nivel. La columna se queda por las
+  // filas que ya la tienen. Texto original de la pregunta, abajo.
   // Lo que quieren PODER DECIR, y a quién (2026-08-19). `motivation` es un
   // desplegable de seis opciones y `applicationReason` pregunta por la beta,
   // así que ninguno dice de qué habla la persona: los cinco solicitantes de
   // portugués contestaron sobre la app. Esta es la única columna con señal de
   // dominio, y es la que lee el portón de temas (`src/lib/topicEvidence.ts`).
   learningGoal      String?
+  // Los dominios que marcó en el formulario (slugs de `Topic` universales, más
+  // lo que escriba por "Other"). Es la única señal COMPARABLE entre
+  // solicitantes: `applicationReason` cuenta una vida, esto se suma y se
+  // ordena. Vacío en las filas anteriores al 2026-08-23.
+  topicInterests    String[]
   // Silent attribution captured from the browser at form mount:
   // utm_source/medium/campaign/content/term, document.referrer, and the
   // landing URL the visitor first arrived at. Lets us source traffic

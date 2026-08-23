@@ -4,7 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { trackGa4Event } from "@/lib/ga4";
 // La lista vive en un módulo compartido: el portón de temas necesita saber
 // cuáles de estas respuestas son un clic y no una frase escrita.
-import { BETA_MOTIVATIONS, countWords, MIN_EVIDENCE_WORDS } from "@/lib/betaMotivations";
+import { BETA_MOTIVATIONS } from "@/lib/betaMotivations";
+import {
+  BETA_TOPIC_INTERESTS,
+  MAX_TOPIC_INTERESTS,
+  topicInterestLabel,
+} from "@/lib/betaTopicInterests";
 
 const NATIVE_LANGUAGES = [
   "English",
@@ -27,7 +32,6 @@ const TARGET_LANGUAGES = ["Spanish", "German", "Italian", "Portuguese", "French"
 // Journeys are variant-scoped, so a Spanish learner aiming at a Mexican
 // grandmother and one moving to Madrid want different content. Only languages
 // with more than one flavour ask the question; the rest would just be noise.
-// "Not sure" is a real option: forcing a guess produces worse data than a blank.
 // The first block is ordered by what people have actually paid for (claim
 // tokens, 2026-08): Colombian titles lead by a wide margin, then general LATAM,
 // then Puerto Rico, Panama, Argentina and Ecuador. The second block is every
@@ -37,8 +41,10 @@ const TARGET_LANGUAGES = ["Spanish", "German", "Italian", "Portuguese", "French"
 // ones nobody wants. Someone picking Peru here is the only way we would learn.
 //
 // "Other" keeps a free-text escape so an unexpected answer is captured rather
-// than rounded to the nearest option, and "Not sure yet" stays a real choice:
-// a forced guess is worse data than a blank.
+// than rounded to the nearest option. No "Not sure yet": la lista lleva todos
+// los países del idioma más el texto libre, así que quien no elige no es que
+// no pueda, es que se lo salta, y un blanco deja al alumno viendo contenido de
+// cualquier variante (2026-08-23).
 const TARGET_VARIANTS: Record<string, Array<{ value: string; label: string }>> = {
   Spanish: [
     { value: "colombia", label: "Colombia" },
@@ -55,7 +61,6 @@ const TARGET_VARIANTS: Record<string, Array<{ value: string; label: string }>> =
     { value: "venezuela", label: "Venezuela" },
     { value: "cuba", label: "Cuba" },
     { value: "other", label: "Somewhere else..." },
-    { value: "unsure", label: "Not sure yet" },
   ],
   // Every other language we offer needs the question just as much as Spanish
   // does, and for a while none of them asked it: the map held a single key, so
@@ -67,7 +72,6 @@ const TARGET_VARIANTS: Record<string, Array<{ value: string; label: string }>> =
     { value: "brazil", label: "Brazil" },
     { value: "portugal", label: "Portugal" },
     { value: "other", label: "Somewhere else..." },
-    { value: "unsure", label: "Not sure yet" },
   ],
   French: [
     { value: "france", label: "France" },
@@ -76,20 +80,17 @@ const TARGET_VARIANTS: Record<string, Array<{ value: string; label: string }>> =
     { value: "switzerland", label: "Switzerland" },
     { value: "west-africa", label: "West Africa" },
     { value: "other", label: "Somewhere else..." },
-    { value: "unsure", label: "Not sure yet" },
   ],
   German: [
     { value: "germany", label: "Germany" },
     { value: "austria", label: "Austria" },
     { value: "switzerland", label: "Switzerland" },
     { value: "other", label: "Somewhere else..." },
-    { value: "unsure", label: "Not sure yet" },
   ],
   Italian: [
     { value: "italy", label: "Italy" },
     { value: "switzerland", label: "Switzerland" },
     { value: "other", label: "Somewhere else..." },
-    { value: "unsure", label: "Not sure yet" },
   ],
 };
 
@@ -105,17 +106,11 @@ const WEEKLY_HOURS = [
   { value: "8+", label: "8+ hrs" },
 ];
 
-const REFERRAL_SOURCES = [
-  "Instagram",
-  "TikTok",
-  "Google search",
-  "Friend",
-  "Podcast",
-  "Blog or article",
-  "Other",
-];
-
 const APPLICATION_REASON_MIN = 20;
+// El formulario lleva `noValidate`, así que el `type="email"` del navegador no
+// comprueba nada: sin esto, un correo mal escrito solo se detecta en el
+// servidor y vuelve como un 400, a media pantalla de distancia del campo.
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const APPLICATION_REASON_MAX = 1000;
 
 // v2: guarda también CUÁNDO se capturó, y vive en localStorage en vez de
@@ -236,9 +231,10 @@ type FormState = {
   currentLevel: string;
   weeklyHours: string;
   motivation: string;
-  learningGoal: string;
-  referralSource: string;
-  referralSourceOther: string;
+  motivationOther: string;
+  topicInterests: string[];
+  topicInterestsOther: string;
+  topicInterestsOtherOpen: boolean;
   applicationReason: string;
   consent: boolean;
   // Honeypot: campo oculto vía CSS. Si llega lleno = bot.
@@ -262,9 +258,10 @@ const initialState: FormState = {
   currentLevel: "",
   weeklyHours: "",
   motivation: "",
-  learningGoal: "",
-  referralSource: "",
-  referralSourceOther: "",
+  motivationOther: "",
+  topicInterests: [],
+  topicInterestsOther: "",
+  topicInterestsOtherOpen: false,
   applicationReason: "",
   consent: false,
   website: "",
@@ -294,6 +291,11 @@ export default function BetaSignupForm() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState<null | { duplicate?: boolean }>(null);
   const [error, setError] = useState<string | null>(null);
+  // Las variantes del idioma elegido, o undefined si ese idioma no tiene más
+  // de un sabor de contenido (o lo escribieron a mano). Una sola fuente para
+  // la validación y para el render: cuando estaban separadas, el submit
+  // comprobaba una lista y la pantalla mostraba otra.
+  const variantOptions = TARGET_VARIANTS[form.targetLanguage];
   // Captured once on mount so UTM + referrer survive any internal nav the
   // visitor does between landing and submit.
   const attributionRef = useRef<AttributionPayload>({});
@@ -332,10 +334,22 @@ export default function BetaSignupForm() {
     return form.targetLanguage === "Other" ? form.targetLanguageOther.trim() : form.targetLanguage;
   }
 
-  function resolvedReferralSource(): string {
-    return form.referralSource === "Other"
-      ? form.referralSourceOther.trim()
-      : form.referralSource;
+  // "Other" guarda LO ESCRITO, nunca la palabra "Other": el portón de temas
+  // distingue un clic del desplegable de una frase de alguien, y la palabra
+  // "Other" no dice nada de nadie.
+  function resolvedMotivation(): string {
+    return form.motivation === "Other" ? form.motivationOther.trim() : form.motivation;
+  }
+
+  function toggleTopic(slug: string) {
+    setForm((prev) => {
+      const has = prev.topicInterests.includes(slug);
+      if (has) {
+        return { ...prev, topicInterests: prev.topicInterests.filter((t) => t !== slug) };
+      }
+      if (prev.topicInterests.length >= MAX_TOPIC_INTERESTS) return prev;
+      return { ...prev, topicInterests: [...prev.topicInterests, slug] };
+    });
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -361,20 +375,24 @@ export default function BetaSignupForm() {
       setError("Please tell us your first name.");
       return;
     }
+    if (!EMAIL_RE.test(form.email.trim())) {
+      setError("Please check your contact email.");
+      return;
+    }
     if (!form.platform) {
       setError("Please tell us which phone you'll be testing on.");
       return;
     }
     const wantsIos = form.platform === "ios";
     const wantsAndroid = form.platform === "android";
-    if (wantsIos && !form.appleIdEmail.trim()) {
+    if (wantsIos && !EMAIL_RE.test(form.appleIdEmail.trim())) {
       setError("Please add the email your iPhone's App Store uses. Your invitation to install is sent there.");
       return;
     }
     // Not the same failure as a missing Apple ID, even though it reads alike.
     // On Android access comes from a Google Group, so without this address
     // there is no account to let in and the tester link would never work.
-    if (wantsAndroid && !form.googleEmail.trim()) {
+    if (wantsAndroid && !EMAIL_RE.test(form.googleEmail.trim())) {
       setError("Please add the Google account your phone's Play Store uses. That is the one we let into the testers group.");
       return;
     }
@@ -396,13 +414,19 @@ export default function BetaSignupForm() {
     // `noValidate`, so nothing in the browser enforces it and two Spanish
     // applicants submitted a blank variant after the field shipped. Every
     // other answer is checked here by hand; this one was simply missed.
-    // "Not sure yet" satisfies it, a silent blank does not.
-    if (TARGET_VARIANTS[form.targetLanguage] && !form.targetVariant) {
+    // Sin "Not sure yet" desde el 2026-08-23: hay que elegir un sitio.
+    if (variantOptions && !form.targetVariant) {
       setError("Please tell us which country's version you want to learn.");
       return;
     }
-    if (form.targetVariant === "other" && !form.targetVariantOther.trim()) {
-      setError("Please type which country you have in mind.");
+    if (variantOptions && form.targetVariant === "other" && !form.targetVariantOther.trim()) {
+      setError("Please type which variant you have in mind.");
+      return;
+    }
+    // Un idioma escrito a mano no tiene lista, y sigue haciendo falta saber
+    // qué variante quiere: nada en este formulario se queda a medias.
+    if (!variantOptions && !form.targetVariantOther.trim()) {
+      setError("Please type which variant you want to learn.");
       return;
     }
     if (!form.currentLevel) {
@@ -413,21 +437,27 @@ export default function BetaSignupForm() {
       setError("Please pick how many hours per week you'll dedicate.");
       return;
     }
-    const motivation = form.motivation;
-    if (!motivation) {
+    if (!form.motivation) {
       setError("Please tell us why you're learning.");
       return;
     }
-    const learningGoal = form.learningGoal.trim();
-    if (countWords(learningGoal) < MIN_EVIDENCE_WORDS) {
-      setError(
-        `Please write at least ${MIN_EVIDENCE_WORDS} words about what you want to be able to say.`,
-      );
+    const motivation = resolvedMotivation();
+    if (!motivation) {
+      setError("Please type why you're learning.");
       return;
     }
-    const referralSource = resolvedReferralSource();
-    if (!referralSource) {
-      setError("Please tell us how you heard about us.");
+    const topicInterests = [
+      ...form.topicInterests,
+      ...(form.topicInterestsOther.trim() ? [form.topicInterestsOther.trim()] : []),
+    ];
+    if (topicInterests.length === 0) {
+      setError("Please pick at least one topic you'd like to read about.");
+      return;
+    }
+    // Abrir "Something else..." y dejarlo en blanco es la única forma que
+    // quedaba de contestar a medias la pregunta de temas.
+    if (form.topicInterestsOtherOpen && !form.topicInterestsOther.trim()) {
+      setError("Please type which topic you have in mind.");
       return;
     }
     const applicationReason = form.applicationReason.trim();
@@ -451,10 +481,15 @@ export default function BetaSignupForm() {
           googleEmail: wantsAndroid ? form.googleEmail.trim() : undefined,
           nativeLanguage,
           targetLanguage,
+          // Un idioma de la lista responde por desplegable, y "Somewhere
+          // else..." abre el texto libre. Un idioma escrito a mano no tiene
+          // desplegable que abrir, así que su país llega siempre por el texto.
           targetVariant:
-            (form.targetVariant === "other"
-              ? form.targetVariantOther.trim()
-              : form.targetVariant) || undefined,
+            (variantOptions
+              ? form.targetVariant === "other"
+                ? form.targetVariantOther.trim()
+                : form.targetVariant
+              : form.targetVariantOther.trim()) || undefined,
           currentLevel: LEVELS.find((l) => l.value === form.currentLevel)?.label ?? form.currentLevel,
           // Kept for the rows and rules written before `platform` existed.
           // Derived now instead of asked: a separate iPhone question next to a
@@ -462,8 +497,7 @@ export default function BetaSignupForm() {
           hasIPhone: wantsIos,
           weeklyHours: form.weeklyHours,
           motivation,
-          learningGoal,
-          referralSource,
+          topicInterests,
           applicationReason,
           consent: form.consent,
           attribution: attributionRef.current,
@@ -753,51 +787,69 @@ export default function BetaSignupForm() {
               maxLength={100}
             />
           )}
-          {/* Only for languages that actually have more than one flavour of
-              content. Required, but with nothing pre-selected and "Not sure
-              yet" as a real option: forcing a deliberate choice stops people
-              skipping it by inertia, while still letting them say they do not
-              know instead of guessing. A guess would be worse data than a
-              blank, and a blank default is what everyone leaves untouched. */}
-          {TARGET_VARIANTS[form.targetLanguage] && (
-            <div className="mt-3">
-              <label
-                htmlFor="targetVariant"
-                className="mb-1 block text-xs font-bold text-white/55"
-              >
-                Where are the people you want to talk to?
-              </label>
-              <select
-                id="targetVariant"
-                required
-                value={form.targetVariant}
-                onChange={(e) => update("targetVariant", e.target.value)}
-                className={selectStyle}
-              >
-                <option value="" disabled>
-                  Pick one
-                </option>
-                {TARGET_VARIANTS[form.targetLanguage].map((v) => (
-                  <option key={v.label} value={v.value}>
-                    {v.label}
-                  </option>
-                ))}
-              </select>
-              {form.targetVariant === "other" && (
-                <input
-                  type="text"
-                  required
-                  value={form.targetVariantOther}
-                  onChange={(e) => update("targetVariantOther", e.target.value)}
-                  className={`${inputStyle} mt-2`}
-                  placeholder="Which country?"
-                  maxLength={60}
-                />
-              )}
-            </div>
-          )}
         </div>
       </div>
+
+      {/* A ancho completo y fuera de la rejilla de idiomas: colgada de la
+          columna derecha dejaba media fila vacía a su izquierda. Solo para los
+          idiomas con más de un sabor de contenido, obligatoria y sin nada
+          preseleccionado: un valor por defecto es lo que todo el mundo deja
+          sin tocar. */}
+      {variantOptions && (
+        <div>
+          <label htmlFor="targetVariant" className={labelStyle}>
+            Which variant?
+          </label>
+          <select
+            id="targetVariant"
+            required
+            value={form.targetVariant}
+            onChange={(e) => update("targetVariant", e.target.value)}
+            className={selectStyle}
+          >
+            <option value="" disabled>
+              Pick one
+            </option>
+            {variantOptions.map((v) => (
+              <option key={v.label} value={v.value}>
+                {v.label}
+              </option>
+            ))}
+          </select>
+          {form.targetVariant === "other" && (
+            <input
+              type="text"
+              required
+              value={form.targetVariantOther}
+              onChange={(e) => update("targetVariantOther", e.target.value)}
+              className={`${inputStyle} mt-2`}
+              placeholder="Country or region"
+              maxLength={60}
+            />
+          )}
+        </div>
+      )}
+      {/* Un idioma escrito a mano no tiene lista de variantes que ofrecer,
+          y es justo donde más falta hace saber cuál quiere: es contenido
+          que todavía no existe. Texto libre, y obligatorio como el resto:
+          media respuesta no sirve para decidir qué se escribe. */}
+      {form.targetLanguage === "Other" && (
+        <div>
+          <label htmlFor="targetVariantFree" className={labelStyle}>
+            Which variant?
+          </label>
+          <input
+            id="targetVariantFree"
+            type="text"
+            required
+            value={form.targetVariantOther}
+            onChange={(e) => update("targetVariantOther", e.target.value)}
+            className={inputStyle}
+            placeholder="Country or region"
+            maxLength={60}
+          />
+        </div>
+      )}
 
       <div>
         <span className={labelStyle}>Your current level</span>
@@ -857,55 +909,92 @@ export default function BetaSignupForm() {
             </option>
           ))}
         </select>
-      </div>
-
-      <div>
-        <label htmlFor="learningGoal" className={labelStyle}>
-          What do you want to be able to say, and to whom?
-        </label>
-        <input
-          id="learningGoal"
-          type="text"
-          required
-          value={form.learningGoal}
-          onChange={(e) => update("learningGoal", e.target.value)}
-          className={inputStyle}
-          placeholder="Order tapas at my local bar, chat with my neighbours"
-          maxLength={300}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="referralSource" className={labelStyle}>
-          How did you hear about us?
-        </label>
-        <select
-          id="referralSource"
-          required
-          value={form.referralSource}
-          onChange={(e) => update("referralSource", e.target.value)}
-          className={selectStyle}
-        >
-          <option value="" disabled>
-            Pick one
-          </option>
-          {REFERRAL_SOURCES.map((s) => (
-            <option key={s} value={s}>
-              {s}
-            </option>
-          ))}
-        </select>
-        {form.referralSource === "Other" && (
+        {/* "Other" sin caja donde escribir es una opción que se traga la
+            respuesta: la persona elige la etiqueta que menos le miente y no
+            queda ni rastro de su razón. */}
+        {form.motivation === "Other" && (
           <input
             type="text"
             required
-            value={form.referralSourceOther}
-            onChange={(e) => update("referralSourceOther", e.target.value)}
+            value={form.motivationOther}
+            onChange={(e) => update("motivationOther", e.target.value)}
             className={`${inputStyle} mt-2`}
-            placeholder="Where did you hear about us?"
+            placeholder="Tell us why"
             maxLength={200}
           />
         )}
+      </div>
+
+      {/* Un desplegable que AÑADE, no dieciséis chips: la lista completa a la
+          vista alargaba la página media pantalla y la pregunta importa menos
+          que las de arriba. Lo elegido se queda en pastillas que se quitan con
+          un toque. El tope de cinco es donde marcar deja de significar algo:
+          quien marca todo no ha elegido nada. */}
+      <div>
+        <label htmlFor="topicInterests" className={labelStyle}>
+          What topics are you most interested in?
+        </label>
+        {form.topicInterests.length > 0 && (
+          <div className="mb-2 flex flex-wrap gap-2">
+            {form.topicInterests.map((slug) => (
+              <button
+                key={slug}
+                type="button"
+                onClick={() => toggleTopic(slug)}
+                className="flex items-center gap-2 rounded-lg border border-[#fcd34d4d] bg-[#fcd34d1a] px-3 py-1.5 text-xs font-extrabold text-[#fcd34d]"
+                aria-label={`Remove ${topicInterestLabel(slug)}`}
+              >
+                {topicInterestLabel(slug)}
+                <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                  <path
+                    d="M1 1l8 8M9 1L1 9"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </button>
+            ))}
+          </div>
+        )}
+        {form.topicInterests.length < MAX_TOPIC_INTERESTS && (
+          <select
+            id="topicInterests"
+            value=""
+            onChange={(e) => {
+              if (e.target.value === "other") {
+                setForm((prev) => ({ ...prev, topicInterestsOtherOpen: true }));
+                return;
+              }
+              if (e.target.value) toggleTopic(e.target.value);
+            }}
+            className={selectStyle}
+          >
+            <option value="" disabled>
+              {form.topicInterests.length === 0 ? "Pick one" : "Add another"}
+            </option>
+            {BETA_TOPIC_INTERESTS.filter((t) => !form.topicInterests.includes(t.slug)).map((t) => (
+              <option key={t.slug} value={t.slug}>
+                {t.label}
+              </option>
+            ))}
+            <option value="other">Something else...</option>
+          </select>
+        )}
+        {form.topicInterestsOtherOpen && (
+          <input
+            type="text"
+            required
+            value={form.topicInterestsOther}
+            onChange={(e) => update("topicInterestsOther", e.target.value)}
+            className={`${inputStyle} mt-2`}
+            placeholder="Which topic?"
+            maxLength={120}
+          />
+        )}
+        <p className="mt-1.5 text-xs font-bold text-white/45">
+          Up to {MAX_TOPIC_INTERESTS}. This is what we write next.
+        </p>
       </div>
 
       <div>

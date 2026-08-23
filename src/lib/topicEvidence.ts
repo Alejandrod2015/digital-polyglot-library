@@ -76,6 +76,10 @@ export async function assertTopicsGrounded(opts: {
   for (const r of rows) {
     // Antes del 2026-08-19, elegir "Other" guardaba el texto AQUÍ; desde
     // entonces vive en `learningGoal` y este campo es siempre el clic.
+    // `learningGoal` dejó de preguntarse el 2026-08-23 (5 respuestas, dos con
+    // dominio), así que de aquí en adelante el corpus lo sostiene
+    // `applicationReason`, que es donde la gente cuenta su vida sin que se lo
+    // pidan.
     const m = String(r.motivation ?? "").trim();
     if (m) {
       if (isCannedMotivation(m)) cannedClicks++;
@@ -143,7 +147,7 @@ export async function assertTopicsGrounded(opts: {
   // solicitante detrás) solo se ven comparando; sin esto se eligen a ciegas.
   console.log(
     `\nTEMAS PROPUESTOS · ${corpus.length} frases escritas de ${opts.language} ` +
-    `(${writtenMotivations.length} escritas en learningGoal + ${reasons.length} applicationReason; ` +
+    `(${writtenMotivations.length} escritas a mano + ${reasons.length} applicationReason; ` +
     `${cannedClicks} clics del desplegable descartados)`,
   );
   for (const p of opts.proposals) {
@@ -160,7 +164,7 @@ export async function assertTopicsGrounded(opts: {
   if (bad.length) {
     throw new TopicEvidenceError(
       `TEMAS SIN RESPALDO:\n  - ${bad.join("\n  - ")}\n\n` +
-      `Hay ${writtenMotivations.length} frases de learningGoal y ${reasons.length} applicationReason ` +
+      `Hay ${writtenMotivations.length} frases escritas a mano y ${reasons.length} applicationReason ` +
       `de ${opts.language} (${cannedClicks} clics del desplegable no cuentan). ` +
       `Corre \`npx tsx scripts/userEvidence.ts ${opts.language}\` y elige desde ahí.`,
     );

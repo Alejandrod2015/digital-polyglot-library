@@ -8,6 +8,8 @@
 // program needs you.
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { topicInterestLabel } from "@/lib/betaTopicInterests";
+import { motivationJourneyType } from "@/lib/betaMotivations";
 import {
   betaSourceGroupLabel,
   classifyBetaSource,
@@ -63,6 +65,7 @@ type Applicant = {
   weeklyHours: string | null;
   motivation: string | null;
   learningGoal: string | null;
+  topicInterests: string[];
   referralSource: string | null;
   applicationReason: string | null;
   attribution: Attribution | null;
@@ -612,9 +615,23 @@ function DemandPanel({ applicants, servedLanguages }: { applicants: Applicant[];
           <DemandBars rows={tally(applicants, (a) => a.motivation)} total={total} empty="sin respuesta" />
         </DemandBlock>
 
+        {/* La misma respuesta, leída como lo que decide: qué journey escribir
+            después y en cuál entra el tester al aceptarlo. "Other" es texto
+            libre y no se adivina, así que cae en "sin tipo". */}
         <DemandBlock
-          title="Por dónde dicen que llegaron"
-          hint="Lo que eligieron en el formulario. El origen medido está en la pestaña Origin, y no tienen por qué coincidir."
+          title="Qué tipo de journey piden"
+          hint="Traducido de la motivación: Travel pide Traveler, Move abroad pide Expat, Family connection y Just for fun piden Relationships (los journeys que en la app se llaman Friends), Work pide Business."
+        >
+          <DemandBars
+            rows={tally(applicants, (a) => motivationJourneyType(a.motivation)?.label ?? null)}
+            total={total}
+            empty="sin tipo"
+          />
+        </DemandBlock>
+
+        <DemandBlock
+          title="Por dónde decían que llegaron (histórico)"
+          hint="La pregunta salió del formulario el 2026-08-23: de las 33 solicitudes con origen medible, solo 2 coincidían con lo que la persona contestó, y 14 dijeron Instagram viniendo del correo de lanzamiento. El origen real está en la pestaña Origin."
         >
           <DemandBars rows={tally(applicants, (a) => a.referralSource)} total={total} empty="sin respuesta" />
         </DemandBlock>
@@ -858,12 +875,20 @@ function ApplicationSummary({ a, showReason }: { a: Applicant; showReason: boole
     <>
       <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
         {a.targetLanguage} · {a.currentLevel} · {a.weeklyHours ?? "?"} hrs/wk ·{" "}
-        {a.motivation ?? "?"} · dice: {a.referralSource ?? "?"}
+        {a.motivation ?? "?"}
+        {motivationJourneyType(a.motivation)
+          ? ` · pide ${motivationJourneyType(a.motivation)!.label}`
+          : ""}
       </div>
       <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
         applied {onDate(a.createdAt)} ({ago(a.createdAt)})
         {a.invitedAt ? ` · invited ${onDate(a.invitedAt)} (${ago(a.invitedAt)})` : ""}
       </div>
+      {a.topicInterests?.length > 0 && (
+        <div style={{ fontSize: 12, color: "var(--foreground)", marginTop: 6 }}>
+          temas: {a.topicInterests.map((t) => topicInterestLabel(t)).join(" · ")}
+        </div>
+      )}
       {a.learningGoal && (
         <div style={{ fontSize: 12, color: "var(--foreground)", marginTop: 6, fontStyle: "italic" }}>
           quiere decir: {a.learningGoal}
@@ -1182,6 +1207,7 @@ export default function BetaProgramClient() {
       "weeklyHours",
       "motivation",
       "learningGoal",
+      "topicInterests",
       "referralSource",
       "applicationReason",
       "score",
@@ -1214,6 +1240,7 @@ export default function BetaProgramClient() {
           a.weeklyHours,
           a.motivation,
           a.learningGoal,
+          (a.topicInterests ?? []).map((t) => topicInterestLabel(t)).join(" | "),
           a.referralSource,
           a.applicationReason,
           a.score,

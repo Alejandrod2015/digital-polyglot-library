@@ -277,7 +277,6 @@ export async function processApplication(signupId: string): Promise<ApplicationO
       currentLevel: signup.currentLevel,
       weeklyHours: signup.weeklyHours,
       motivation: signup.motivation,
-      referralSource: signup.referralSource,
       applicationReason: signup.applicationReason,
     },
     rules,

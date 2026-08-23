@@ -12,12 +12,25 @@
  * Vive aquí, y no dentro del componente de cliente, para que el formulario y
  * el portón no se desincronicen cuando alguien añada o cambie una opción.
  */
+/**
+ * Orden por demanda real, no por lo que suena mejor: sobre las 44 primeras
+ * solicitudes salieron Travel 15, Family connection 9, Just for fun 9, Move
+ * abroad 4 y Work 2. La primera opción visible es la que más gente marca.
+ *
+ * "Keep up my level" se añadió el 2026-08-23: seis textos libres hablaban de
+ * conservar o refrescar lo que ya tienen ("maintain and practice my level of
+ * Spanish"), y una de las tres respuestas escritas a mano decía literalmente
+ * "To maintain my degree in Spanish". Hasta entonces esa gente caía en "Just
+ * for fun", la opción con menos puntos del score, siendo el perfil que más
+ * aguanta: ya invirtió años.
+ */
 export const BETA_MOTIVATIONS = [
   "Travel",
   "Family connection",
-  "Work",
-  "Move abroad",
   "Just for fun",
+  "Keep up my level",
+  "Move abroad",
+  "Work",
   "Other",
 ] as const;
 
@@ -61,4 +74,37 @@ export function countWords(text: string | null | undefined): number {
 export function tooShortForEvidence(text: string | null | undefined): boolean {
   const v = String(text ?? "").toLowerCase().replace(/\s+/g, " ").trim();
   return v.length < MIN_EVIDENCE_CHARS || countWords(v) < MIN_EVIDENCE_WORDS;
+}
+
+/**
+ * El tipo de journey que pide cada motivación.
+ *
+ * WHY (2026-08-23): la pregunta "why are you learning" solo movía puntos de un
+ * score que nadie aplica (el auto-invite lleva apagado desde el principio) y
+ * pintaba una barra. Los tipos de journey que existen son casi la misma
+ * pregunta, así que la respuesta pasa a significar en qué journey entra ese
+ * tester y cuál toca escribir después.
+ *
+ * Los slugs son los de `JourneyType`. `relationships` es el tipo cuyos
+ * journeys se llaman "Friends" en la app; aquí se usa la etiqueta de la tabla
+ * para que un informe del Studio y la tabla de tipos digan lo mismo.
+ *
+ * `null` es una respuesta legítima: "Other" es texto libre y no se adivina.
+ */
+const MOTIVATION_JOURNEY_TYPE: Record<string, { slug: string; label: string }> = {
+  travel: { slug: "traveler", label: "Traveler" },
+  "move abroad": { slug: "expat", label: "Expat" },
+  "family connection": { slug: "relationships", label: "Relationships" },
+  "just for fun": { slug: "relationships", label: "Relationships" },
+  // Quien conserva un nivel alto quiere leer conversación entre gente, no un
+  // trámite ni un aeropuerto. Lo que le falta no es tipo sino NIVEL: pide el
+  // C1 de Relationships, no el A0.
+  "keep up my level": { slug: "relationships", label: "Relationships" },
+  work: { slug: "business", label: "Business" },
+};
+
+export function motivationJourneyType(
+  motivation: string | null | undefined,
+): { slug: string; label: string } | null {
+  return MOTIVATION_JOURNEY_TYPE[normalizeMotivation(motivation)] ?? null;
 }

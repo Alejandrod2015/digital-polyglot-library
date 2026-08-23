@@ -9,6 +9,7 @@
 // `active` highlights one entry by href prefix; pass undefined on the home
 // page to skip highlighting altogether.
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { trackGa4Event } from "@/lib/ga4";
@@ -29,8 +30,18 @@ export default function MarketingNav() {
   return (
     <nav className={styles.nav}>
       <div className={`${styles.frame} ${styles.navInner}`}>
-        <Link href="/" className={styles.brand}>
-          Digital Polyglot
+        {/* El logo real, nunca el nombre escrito a mano: la marca es la marca
+            en todas partes (2026-08-23). El fichero blanco es el que va sobre
+            el azul de esta nav; `-light.png` es el de fondo claro. */}
+        <Link href="/" className={styles.brand} aria-label="Digital Polyglot">
+          <Image
+            src="/digital-polyglot-logo.png"
+            alt="Digital Polyglot"
+            width={904}
+            height={437}
+            priority
+            className={styles.brandLogo}
+          />
         </Link>
         <div className={styles.navLinks}>
           {LINKS.map((l) => {
