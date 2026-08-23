@@ -71,6 +71,13 @@ const CONFIG: Record<string, Cfg> = {
     journeyId: "cmss0fkc40007j8dub1zpa1kc", voiceId: "gfKKsLN1k0oYYN9n2dXX",
     voiceName: "Violetta (italiano)", label: "Traveler IT Italy A0", targetRate: 2.5,
   },
+  // 2.70 y no otro: Aurore sale de fábrica a 2.49 w/s y el usuario aprobó de
+  // oído la muestra del título y el primer párrafo de "Les premières heures"
+  // ya acelerada a 2.70 (2026-08-23), el mismo ritmo del A0 mexicano.
+  "fr-a0": {
+    journeyId: "cmt09ehi60000320qf9efrypu", voiceId: "ucMmKRQbfDEYyb2IIGax",
+    voiceName: "Aurore (francés)", label: "Expat FR France A0", targetRate: 2.7,
+  },
   "ptbr-a0": {
     journeyId: "cmsou2uk0000732mqa4oatcmn", voiceId: "7iqXtOF3wl3pomwXFY7G",
     voiceName: "Fernanda (brasileño)", label: "Traveler PT Brazil A0", targetRate: 2.85,
