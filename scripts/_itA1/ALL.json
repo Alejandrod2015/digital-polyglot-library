@@ -6,7 +6,7 @@
   "slug": "il-bagagliaio-non-si-chiude",
   "arcType": "mini-cliffhanger",
   "synopsis": "Rosa porta a Palermo una macchina che non è sua, e la consegna ha una data che non si può spostare. Teo arriva con un'ora di ritardo e due borse che nel bagagliaio non entrano. Prima ancora di uscire da Torino i due hanno già due idee diverse dello stesso viaggio, e Rosa non dice ad alta voce quanto le resta in tasca.",
-  "text": "La macchina grigia non è di Rosa e prima di domani deve partire. Rosa, una ragazza di Torino, guida macchine di altri da un garage all'altro, e questa va a Palermo entro il quattordici. Teo lavora al bar di corso Regina e paga metà della benzina.\n\nNel bagagliaio Rosa mette coperta, torcia e la busta con documenti e libretto. Teo arriva tardi, con il freddo addosso, il maglione e il caricabatterie. “Se partiamo adesso mangiamo a Genova, se aspettiamo troviamo traffico e non arriviamo in mattinata”, dice lei, nervosa.\n\nRosa guarda la targa, controlla la patente e chiude la portiera. “Guidi tu fino a Savona, così uno dorme e l'altro riposa”, propone Teo, e accende la radio con la cintura aperta. “Guido io tutto il giorno”, risponde Rosa, “e il caffè lo paghi tu.”\n\nSul foglio ci sono la consegna del quattordici, la scadenza e una cifra muta. “Quanti giorni abbiamo, perché domenica c'è un matrimonio”, chiede Teo. “Ne abbiamo abbastanza”, promette, e tiene la velocità sotto il limite per trecento chilometri.",
+  "text": "La macchina grigia non è di Rosa e prima di domani deve partire. Rosa, una ragazza di Torino, guida macchine di altri da un garage all'altro, e questa va a Palermo entro il quattordici. Teo lavora al bar di corso Regina e paga metà della benzina.\n\nNel bagagliaio Rosa mette coperta, torcia, documenti e libretto. Teo arriva tardi, con il freddo addosso, il maglione e il caricabatterie. “Se partiamo adesso mangiamo a Genova, se aspettiamo troviamo traffico e non arriviamo in mattinata”, dice lei, nervosa.\n\nRosa guarda la targa, controlla la patente e chiude la portiera. “Guidi tu fino a Savona, così uno dorme e l'altro riposa”, propone Teo, e accende la radio con la cintura aperta. “Guido io tutto il giorno”, risponde Rosa, “e il caffè lo paghi tu.”\n\nSul foglio ci sono la consegna del quattordici, la scadenza e una cifra muta. “Quanti giorni abbiamo, perché domenica c'è un matrimonio”, chiede Teo. “Ne abbiamo abbastanza”, promette, e tiene la velocità sotto il limite per trecento chilometri.",
   "vocab": [
    {
     "word": "macchina",
@@ -143,7 +143,7 @@
   "slug": "cento-chilometri-senza-casello",
   "arcType": "late-reveal",
   "synopsis": "Tre uscite prima di Genova, Rosa lascia l'autostrada e prende la statale, che è più lunga di quaranta minuti e piena di camion. Teo non capisce e tira fuori i dodici euro del pedaggio, convinto che il problema siano i soldi suoi. La risposta di Rosa è corta e non spiega niente, e il pranzo di quel giorno finisce in due panini comprati a un distributore.",
-  "text": "Alle undici Rosa esce dall'autostrada prima di Genova. Teo guarda il navigatore, sente la strada sotto le gomme e conta quaranta minuti. Al primo incrocio prende la statale e a ogni curva giacca e coperta si muovono.\n\n“Il pedaggio da qui a Genova costa dodici euro e questa invece è gratis”, dice Rosa, le mani sul volante. Teo conta i camion e i furgoni che vanno lenti davanti a loro. Nessuno accelera e dentro c'è solo rumore di pneumatici.\n\n“Dodici euro li metto io, ho credito sulla carta”, dice Teo, e cerca la giacca. “Non è per i dodici euro del casello, è per quello che viene dopo”, risponde Rosa, e non aggiunge altro. Dentro la galleria tiene il piede sul freno, preoccupata, e non prova a sorpassare.\n\nA Genova si fermano al primo semaforo e trovano aperto solo un distributore. Teo compra due panini e un caffè e mette la ricevuta con i documenti. “Domani il pedaggio lo pago io e tu dormi due ore”, dice, ma Rosa riparte senza riposare.",
+  "text": "Alle undici Rosa esce dall'autostrada prima di Genova. Teo guarda il navigatore, sente la strada sotto le gomme e conta quaranta minuti. Al primo incrocio prende la statale e a ogni curva giacca e coperta si muovono.\n\n“Il pedaggio da qui a Genova costa dodici euro e questa invece è gratis”, dice Rosa, le mani sul volante. Teo conta i camion e i furgoni che vanno lenti davanti a loro. Nessuno accelera e dentro c'è solo rumore di pneumatici.\n\n“Dodici euro li metto io, ho credito”, dice Teo, e cerca la giacca. “Non è per i dodici euro del casello, è per quello che viene dopo”, risponde Rosa, e non aggiunge altro. Dentro la galleria tiene il piede sul freno, preoccupata, e non prova a sorpassare.\n\nA Genova si fermano al primo semaforo e trovano aperto solo un distributore. Teo compra due panini e un caffè e mette la ricevuta con i documenti. “Domani il pedaggio lo pago io e tu dormi due ore”, dice, ma Rosa riparte senza riposare.",
   "vocab": [
    {
     "word": "muovere",
@@ -264,6 +264,12 @@
     "surface": "pneumatici",
     "type": "noun",
     "definition": "Tyre; the rubber ring on a wheel that touches the road."
+   },
+   {
+    "word": "invece",
+    "surface": "invece",
+    "type": "adverb",
+    "definition": "Instead; in the place of the other thing you expected."
    }
   ]
  },
@@ -411,7 +417,7 @@
   "slug": "il-campo-arriva-solo-sul-ponte",
   "arcType": "recurring-character-callback",
   "synopsis": "In fondo a una valle della Lunigiana c'è una trattoria con quattro tavoli, e la donna che ci cucina è Irene. Rosa arriva con il cellulare morto e una foto da cercare, e scopre che lì dentro il telefono non prende e che la sola presa libera sta dietro il frigorifero. Irene le dà corrente, una minestra e la frase che in quella valle vale per tutto.",
-  "text": "Irene cucina in una trattoria della Lunigiana, apre alle sette e fa il primo caffè. Nella sala ci sono quattro tavoli, la lavagna con il menù e una porta sul fiume. Rosa entra nel pomeriggio con il cellulare scarico e sente l'odore della pentola.\n\n“Il telefono non prende, siamo in fondo alla valle e il campo arriva solo sul ponte”, spiega Irene. La rete della trattoria ha una password vicino alla cucina, ma non basta. Rosa cerca una presa con corrente e non ne trova una libera.\n\nTeo torna dalla macchina con il filo e il caricabatterie, e Irene taglia due carote. Poi scalda la minestra e la porta in tavola. “Dieci minuti e mangiate qualcosa, un telefono non si aspetta a stomaco vuoto”, dice lei.\n\nAlla fine il cellulare si collega alla rete e arriva un messaggio del garage. Rosa mette il suono in silenzioso, finisce il piatto e paga due caffè. “Aspetta che finisce”, dice Irene, “qui arriva tutto quanto, solo un po' più tardi che altrove.”",
+  "text": "Irene cucina in una trattoria della Lunigiana, apre alle sette e fa il primo caffè. Nella sala ci sono quattro tavoli, la lavagna con il menù e una porta sul fiume. Rosa entra nel pomeriggio con il cellulare scarico e sente l'odore della pentola.\n\n“Il telefono non prende, siamo in fondo alla valle e il campo arriva solo sul ponte”, spiega Irene. La rete ha una password vicino alla cucina, ma non basta. Rosa cerca una presa con corrente e non ne trova una libera.\n\nTeo torna dalla macchina con il filo e il caricabatterie, e Irene taglia due carote. Poi scalda la minestra, la porta in tavola e lava due bicchieri. “Dieci minuti e mangiate qualcosa, un telefono non si aspetta a stomaco vuoto”, dice lei.\n\nAlla fine il cellulare si collega e Rosa manda un messaggio al garage. Rosa mette il suono in silenzioso, finisce il piatto e paga due caffè. “Aspetta che finisce”, dice Irene, “qui arriva tutto quanto, solo un po' più tardi che altrove.”",
   "vocab": [
    {
     "word": "odore",
@@ -532,6 +538,12 @@
     "surface": "lavagna",
     "type": "noun",
     "definition": "Blackboard; the dark board people write on with white chalk."
+   },
+   {
+    "word": "mandare",
+    "surface": "manda",
+    "type": "verb",
+    "definition": "To send; to make something go to another person or place."
    }
   ]
  },
@@ -542,7 +554,7 @@
   "slug": "quaranta-foto-e-nessuna-faccia",
   "arcType": "juxtaposition-discovery",
   "synopsis": "La rete della trattoria è troppo lenta per quaranta foto, così Irene manda i due alla biblioteca del paese, dove ci sono tre computer e una stampante. Rosa apre finalmente le immagini e trova portiere, targhe e cofani di macchine che non sono la loro. Quello che Teo dice guardando quella lista non parla del graffio, e Rosa non ha una risposta pronta.",
-  "text": "Il paese ha una biblioteca con computer, stampante e finestre alte. Irene spiega a Rosa e Teo che lì la rete va bene e sotto c'è il bar. Rosa si siede alla scrivania in silenzio, scrive la password e prende fiato.\n\n“Un'ora e siamo di nuovo in strada”, promette Rosa, e apre le quaranta foto insieme. “Questa è di martedì scorso, la macchina è bianca, quindi la nostra viene dopo”, aggiunge. Teo, con il maglione sulle spalle, guarda una libreria in un angolo scuro e non aiuta.\n\nLa foto del quattro agosto non c'è, perché quel giorno Rosa aveva dimenticato di farla. Adesso non ci crede e fa una fotocopia difficile del graffio sulla portiera. “Quaranta foto di macchine e nessuna di una persona, neanche tu”, dice Teo, piano.\n\nUna studentessa alza la testa e torna al suo esame di giugno all'università. Rosa mette il foglio nella busta dei documenti e spegne lo schermo con due tasti. “Il graffio lo paghiamo a metà”, dice lei alla fine, “però non oggi e non qui.”",
+  "text": "Il paese ha una biblioteca con computer, stampante e finestre alte. Irene spiega a Rosa e Teo che lì la rete va bene e sotto c'è il bar. Rosa si siede alla scrivania in silenzio, scrive la password e prende fiato.\n\n“Un'ora e siamo di nuovo in strada”, promette Rosa, e apre le quaranta foto insieme. “Questa è di martedì scorso, la macchina è bianca, quindi la nostra viene dopo”, aggiunge. Teo, con il maglione sulle spalle, guarda una libreria scura e non aiuta.\n\nLa foto del quattro agosto non c'è, perché quel giorno Rosa aveva dimenticato di farla. Adesso non ci crede, si sente stupida e fa una fotocopia difficile. “Quaranta foto di macchine e nessuna di una persona, neanche tu”, dice Teo, piano.\n\nUna studentessa alza la testa e torna al suo esame di giugno all'università. Rosa mette il foglio nella busta dei documenti e spegne lo schermo con due tasti. “Il graffio lo paghiamo a metà”, dice lei alla fine, “però non oggi e non qui.”",
   "vocab": [
    {
     "word": "libreria",
@@ -552,7 +564,7 @@
    },
    {
     "word": "scuro",
-    "surface": "scuro",
+    "surface": "scura",
     "type": "adjective",
     "definition": "Dark; with little light, or close to black in colour."
    },
@@ -663,6 +675,12 @@
     "surface": "scrive",
     "type": "verb",
     "definition": "To write; to put words on paper or into a phone."
+   },
+   {
+    "word": "stupido",
+    "surface": "stupida",
+    "type": "adjective",
+    "definition": "Stupid; feeling foolish about something you said or thought."
    }
   ]
  },
@@ -673,7 +691,7 @@
   "slug": "sul-ponte-prende-tutto",
   "arcType": "late-reveal",
   "synopsis": "Dopo cena i due salgono a piedi fino al ponte vecchio, che è l'unico posto della valle dove il telefono prende davvero. Teo chiede il cellulare di Rosa per chiamare sua madre, e sullo schermo compare prima un messaggio del garage con una data che spiega tutto il viaggio. Rosa se ne accorge tardi, e quello che Teo fa dopo le pesa più di una discussione.",
-  "text": "Dopo cena, con torcia e maglione, Rosa e Teo salgono piano al ponte. L'aria è umida, il bosco è scuro e la coperta resta in macchina. L'erba è bagnata, sopra i rami c'è la luna e sul parapetto il telefono prende.\n\n“Il mio è morto, mi presti il tuo che chiamo mia madre prima di notte”, chiede Teo. Rosa gli passa il cellulare e guarda verso il fiume. Sullo schermo, sopra la tastiera, compare un messaggio del garage.\n\nIl messaggio dice che il saldo arriva il venti, non il quattordici. Rosa non ha stipendio fisso e fino alla consegna resta povera, senza riposo e preoccupata. “Il casello di ieri”, dice Teo, “non era per i dodici euro, e tu hai mentito.”\n\nRosa prende il telefono, lo mette in tasca e ha lasciato fuori la verità. Teo chiama sua madre e sente che la zia lo invita al matrimonio. “Domani guido io la prima ora, e domenica sera ti riporto a casa”, dice, e paga lui.",
+  "text": "Dopo cena, con torcia e maglione, Rosa e Teo salgono piano al ponte. L'aria è umida, il bosco è scuro e la coperta resta in macchina. L'erba è bagnata, sopra i rami c'è la luna e sul parapetto il telefono prende.\n\n“Il mio è morto, mi presti il tuo che chiamo mia madre prima di notte”, chiede Teo. Rosa gli passa il cellulare e guarda verso il fiume. Sullo schermo, sopra la tastiera, compare un messaggio del garage.\n\nIl messaggio dice che il saldo arriva il venti, e la data lo sorprende. Rosa non ha stipendio fisso e fino alla consegna resta povera, senza riposo e preoccupata. “Il casello di ieri”, dice Teo, “non era per i dodici euro, e tu hai mentito.”\n\nRosa prende il telefono, lo mette in tasca e ha lasciato fuori la verità. Teo chiama sua madre e sente che la zia lo invita al matrimonio. “Domani guido io la prima ora, e domenica sera ti riporto a casa”, dice, e paga lui.",
   "vocab": [
    {
     "word": "umido",
@@ -810,7 +828,7 @@
   "slug": "una-chiave-sola-per-due",
   "arcType": "reframe-turn",
   "synopsis": "Alle nove di sera, davanti a un cancello di campagna vicino a Siena, la macchina si ferma e apre una donna che tiene due camere e prepara la colazione. La prenotazione parlava di due letti separati, ma la stanza in fondo è occupata da lunedì e non si libera. Marta porta una coperta in più, e la notte si decide in tre secondi senza che nessuno dei due la discuta davvero.",
-  "text": "Davanti al cancello di una casa di campagna la macchina si ferma di notte. Chi apre è Marta, una donna di Siena che tiene due camere e fa la colazione. Nel cortile una lampadina accende la portiera sporca e il graffio.\n\n“La prenotazione era per due letti separati, però la stanza in fondo è occupata da lunedì e non si libera”, dice Marta. Dentro l'aria è tiepida, ci sono un armadio, un comodino e nessuna presa. Rosa sale con la busta dei documenti e il cellulare senza batteria.\n\nMarta torna con cuscino, coperta pulita e panini, e spiega dov'è il bagno. “Il divano è comodo, ci dorme mio fratello quando viene d'estate”, dice lei. Poi spegne la luce del corridoio e sale di sopra.\n\nTeo prende il maglione e la giacca dal bagagliaio e va sul divano. “Domani ti sveglio io alle sei, tu dormi in un letto vero”, dice dal buio. Rosa mette la sveglia, si siede sul materasso duro con la caviglia che fa male, e guarda il tappeto.",
+  "text": "Davanti al cancello di una casa di campagna la macchina si ferma di notte. Chi apre è Marta, una donna di Siena che tiene due camere e fa la colazione. Nel cortile una lampadina accende la portiera sporca e il graffio.\n\n“La prenotazione era per due letti separati, però la stanza in fondo è occupata da lunedì e non si libera”, dice Marta. Dentro l'aria è tiepida, ci sono un armadio, un comodino e nessuna presa. Rosa sale con la busta dei documenti e il cellulare senza batteria.\n\nMarta torna con cuscino, coperta pulita e panini, e spiega dov'è tutto. “Il divano è comodo, ci dorme mio fratello quando viene d'estate”, dice lei. Poi spegne la luce del corridoio, tira il tappeto e sale.\n\nTeo prende maglione e giacca dal bagagliaio e va sul divano. “Domani ti sveglio io alle sei, tu dormi in un letto vero”, dice dal buio. Rosa si toglie le scarpe, mette la sveglia e si siede sul materasso duro, con la caviglia che fa male.",
   "vocab": [
    {
     "word": "camera",
@@ -937,6 +955,12 @@
     "surface": "tiene",
     "type": "verb",
     "definition": "To hold or to keep; to have a thing in your hands."
+   },
+   {
+    "word": "togliere",
+    "surface": "toglie",
+    "type": "verb",
+    "definition": "To take off or take away; to remove a thing."
    }
   ]
  },
@@ -947,7 +971,7 @@
   "slug": "la-colazione-lasciata-fuori",
   "arcType": "harmonic-close",
   "synopsis": "Marta esce alle cinque e lascia sulla terrazza il latte, il miele e sei biscotti, come fa con tutti gli ospiti. Rosa scende alle sei, ha la casa per sé e conta i soldi sul letto, e il conto non torna. Quando Marta rientra chiede meno di quello che dice la prenotazione, e Rosa deve decidere in un secondo se accettare un favore o mettersi a discutere.",
-  "text": "Marta esce alle cinque e sulla terrazza lascia la colazione. Ci sono latte, uova, miele, marmellata e sei biscotti sotto un piatto. Rosa scende alle sei con la caviglia gonfia, trova Teo sul divano e sente odore di pane.\n\nNel bagno il rubinetto perde e sopra lo specchio c'è il sapone. “Lasciami dormire venti minuti, poi la doccia la faccio io”, dice Teo. Rosa conta il credito sul letto, due volte, e il conto non torna.\n\nMarta rientra alle otto, apre lo spazzolino e prende un foglio dal cassetto. “Per la stanza mi dai quaranta euro e basta, perché un ospite in meno paga meno”, dice lei. Poi scrive la ricevuta a mano, la mette nella busta e regala i biscotti che restano.\n\nTeo scende in pigiama, con i capelli bagnati, e mangia in piedi. “Grazie della camera e della torta, io torno a settembre con più tempo, meno fretta e la mia macchina”, promette. Rosa mette la ricevuta con i documenti, preoccupata, e non dice quanto le resta.",
+  "text": "Marta esce alle cinque e sulla terrazza lascia la colazione. Ci sono latte, uova, miele, marmellata e sei biscotti sotto un piatto. Rosa scende alle sei con la caviglia gonfia, trova Teo sul divano e sente odore di pane.\n\nNel bagno il rubinetto perde e sopra lo specchio ci sono sapone e spazzolino. “Lasciami dormire venti minuti, poi la doccia la faccio io”, dice Teo. Rosa conta il credito sul letto, due volte, e il conto non torna.\n\nMarta rientra alle otto, educata, e prende un foglio dal cassetto. “Per la stanza mi dai quaranta euro e basta, perché un ospite in meno paga meno”, dice lei. Poi scrive la ricevuta a mano, la mette nella busta e regala i biscotti che restano.\n\nTeo scende in pigiama, con i capelli bagnati, e mangia in piedi. “Grazie della camera e della torta, io torno il prossimo settembre con più tempo e meno fretta”, promette. Rosa mette la ricevuta con i documenti, preoccupata, e non dice quanto le resta.",
   "vocab": [
    {
     "word": "biscotto",
@@ -1068,6 +1092,12 @@
     "surface": "sente",
     "type": "verb",
     "definition": "To feel, to hear or to smell; the one Italian word covers all three."
+   },
+   {
+    "word": "educato",
+    "surface": "educata",
+    "type": "adjective",
+    "definition": "Polite; treating other people well even when they are difficult."
    }
   ]
  },
@@ -1078,7 +1108,7 @@
   "slug": "la-tapparella-resta-su",
   "arcType": "mini-cliffhanger",
   "synopsis": "L'ultima notte a Siena la tapparella della camera si rompe a mezza altezza e non scende più, e dalla finestra aperta entra tutto il paese. Rosa non dorme, Teo dorme benissimo sul divano, e alle tre di notte i due si ritrovano in cortile senza avere niente da dirsi. Quello che Rosa gli dice lì fuori non cambia quella notte, ma cambia il giorno dopo e tutti quelli che vengono.",
-  "text": "L'ultima notte a Siena la tapparella si rompe a mezza altezza e non scende più. Rosa tira due volte, poi chiama Teo, ma il cacciavite è in macchina. Dalla finestra entrano il caldo, due mosche, una zanzara e altri insetti.\n\n“Domani la aggiusto io, mi serve solo un attrezzo e dieci minuti”, promette Teo. Qualcosa gira intorno alla lampada, prende quota e poi si ferma sul soffitto. Rosa guarda le pareti e la tenda, sente la caviglia che fa male e non ha sogni.\n\nAlle tre Rosa scende in cortile con la torcia e trova Teo sul muro, con un gatto. “Non dormo dal ponte”, dice lui, “da quando ho letto quel messaggio del garage.” L'aria è secca, la temperatura scende e sopra il cortile non c'è una nuvola.\n\n“La macchina la consegno il quattordici e i soldi arrivano il venti”, spiega Rosa, senza bugie. “Fino ad allora mangiamo panini e dormiamo dove capita, non ho una soluzione.” Teo non è arrabbiato, ha solo paura della scadenza e del graffio.",
+  "text": "L'ultima notte a Siena la tapparella si rompe a mezza altezza e non scende più. Rosa tira due volte, poi chiama Teo, ma il cacciavite è in macchina. Dalla finestra entrano il caldo, due mosche, una zanzara e altri insetti.\n\n“Domani la aggiusto io, mi serve solo un attrezzo e dieci minuti”, promette Teo. Qualcosa gira intorno alla lampada, non muore e si ferma sul soffitto. Rosa guarda le pareti e la tenda, sente la caviglia che fa male e non ha sogni.\n\nAlle tre Rosa prende la torcia, scende in cortile e trova Teo sul muro, con un gatto. “Non dormo dal ponte”, dice lui, “da quando ho letto quel messaggio del garage.” L'aria è secca, la temperatura scende e sopra il cortile non c'è una nuvola.\n\n“La macchina la consegno il quattordici e i soldi arrivano il venti”, spiega Rosa, senza bugie. “Fino ad allora mangiamo panini e dormiamo dove capita, non ho una soluzione.” Teo capisce, non è arrabbiato e ha solo paura della scadenza.",
   "vocab": [
    {
     "word": "tapparella",
@@ -1211,6 +1241,18 @@
     "surface": "prende",
     "type": "verb",
     "definition": "To take; to pick something up or to catch a train."
+   },
+   {
+    "word": "morire",
+    "surface": "muore",
+    "type": "verb",
+    "definition": "To die; to stop living, and in speech to exaggerate a pain."
+   },
+   {
+    "word": "capire",
+    "surface": "capisce",
+    "type": "verb",
+    "definition": "To understand; to see what a thing really means."
    }
   ]
  },
@@ -1352,7 +1394,7 @@
   "slug": "la-nebbia-sale-dal-fondo",
   "arcType": "reframe-turn",
   "synopsis": "La nebbia sale dal fondo della valle in venti minuti e copre il sentiero, i segni gialli sugli alberi e tutto il resto. Rosa vuole scendere in fretta perché la consegna è il quattordici, e in fretta sbaglia due volte la direzione senza dirlo. Chi ritrova la strada è quello che per tutto il viaggio ha voluto soltanto fermarsi, e per farlo chiude gli occhi.",
-  "text": "La nebbia sale dal fondo della valle e in venti minuti copre Rosa e Teo. Gli alberi diventano ombre e Rosa, senza mappa e senza guanti, perde i segni gialli. Maglione e camicia sono bagnati, i calzini pieni negli stivali, e lei si è persa.\n\n“Fermati un attimo e ascolta quello che arriva dal basso”, dice Teo. Dal fondo arrivano i campanacci delle mucche e la voce di un uccello. Teo scende di lì, coraggioso come non è mai stato in macchina.\n\nPoi compare una fattoria con due pecore, un cavallo e le galline. “Mio zio faceva il pastore vicino a Benevento, questi animali li conosco tutti da quando ero piccolo”, spiega lui. Rosa lo segue con la caviglia che fa male e per la prima volta non ha fretta.\n\nUna donna indica il rifugio e più sotto si vede un lago. La nebbia la spaventa e Rosa accende la torcia del cellulare. “Domani si guida e basta”, dice lei, “e non ci fermiamo prima di Salerno, per nessun motivo al mondo.”",
+  "text": "La nebbia sale dal fondo della valle e in venti minuti copre Rosa e Teo. Gli alberi diventano ombre e Rosa, senza mappa e senza guanti, perde i segni gialli. Maglione e camicia sono bagnati, i calzini negli stivali pieni, e lei si è persa.\n\n“Fermati un attimo e ascolta quello che arriva dal basso”, dice Teo. Dal fondo arrivano i campanacci delle mucche e la voce di un uccello. Teo scende di lì, coraggioso e intelligente come non è mai stato in macchina.\n\nPoi compare una fattoria con due pecore, un cavallo e le galline. “Mio zio faceva il pastore vicino a Benevento, questi animali li conosco tutti da quando ero piccolo”, spiega lui. Rosa lo segue con la caviglia debole e per la prima volta non ha fretta.\n\nUna donna indica il rifugio e sotto si vede un lago. La nebbia la spaventa e Rosa accende la torcia del cellulare. “Domani si guida e basta”, dice lei, “e non ci fermiamo prima di Salerno, per nessun motivo al mondo.”",
   "vocab": [
    {
     "word": "nebbia",
@@ -1473,6 +1515,12 @@
     "surface": "arriva",
     "type": "verb",
     "definition": "To arrive; to reach the place you were going to."
+   },
+   {
+    "word": "intelligente",
+    "surface": "intelligente",
+    "type": "adjective",
+    "definition": "Clever; quick to understand how things really are."
    }
   ]
  },
@@ -1483,7 +1531,7 @@
   "slug": "il-rifugio-chiude-a-ottobre",
   "arcType": "daily-encounter",
   "synopsis": "Dopo la tempesta Gaia riapre il rifugio e mette in tavola quello che ha, perché in agosto lassù non passa quasi nessuno e la roba va mangiata. Racconta che a ottobre chiude tutto e scende a Livorno, e che ogni marzo decide se tornare su. Teo esce a chiamare il suo capo per chiedere tre giorni in più, e rientra con una risposta corta.",
-  "text": "Dopo la tempesta Gaia riapre il rifugio, guarda fuori e mette in tavola quello che ha. C'è una zuppa di fagioli in una ciotola, mezzo salame e due panini. Fuori le nuvole passano basse, l'aria è fredda e sa già di autunno.\n\n“In agosto quassù salgono in venti al giorno, a ottobre chiudo e scendo a Livorno”, racconta Gaia. Rosa mangia due volte, fagioli e patate, con lo stesso cucchiaio, e beve un caffè. Teo taglia il prosciutto e riempie una caraffa d'acqua per tutti e tre.\n\n“Ogni anno a marzo decido se torno su, e ogni anno torno”, aggiunge Gaia. Rosa fa consegne da sei anni, senza vacanze, senza stipendio e senza riposo. Fra loro tre non c'è amicizia, solo una sera che passa piano.\n\nTeo esce con il cellulare e il caricabatterie e chiama il capo. Rientra dopo dieci minuti, si siede e beve il tè che Gaia gli prepara. “Tre giorni, e il turno lo copre un collega”, dice, “poi però devo essere alla riunione di lunedì.”",
+  "text": "Dopo la tempesta Gaia riapre il rifugio, guarda fuori e mette in tavola quello che ha. C'è una zuppa di fagioli in una ciotola, mezzo salame e due panini. Fuori le nuvole passano basse, l'aria è fredda e sa già di autunno.\n\n“In agosto quassù salgono in venti al giorno, a ottobre chiudo e scendo a Livorno”, racconta Gaia. Rosa mangia due volte, fagioli e patate, con lo stesso cucchiaio, e beve un caffè. Teo taglia il prosciutto magro e riempie una caraffa per tutti e tre.\n\n“Ogni anno a marzo decido se torno su, e ogni anno torno”, aggiunge Gaia. Rosa fa consegne da sei anni, senza vacanze e senza diventare ricca. Fra loro tre non c'è amicizia, solo una sera che passa piano.\n\nTeo esce con il cellulare e il caricabatterie e chiama il capo. Rientra dopo dieci minuti, si siede e beve il tè che Gaia gli prepara. “Tre giorni, e il turno lo copre un collega”, dice, “poi però devo essere alla riunione di lunedì.”",
   "vocab": [
    {
     "word": "salame",
@@ -1628,6 +1676,12 @@
     "surface": "caffè",
     "type": "noun",
     "definition": "Coffee; the small strong cup Italians drink standing at a bar."
+   },
+   {
+    "word": "ricco",
+    "surface": "ricca",
+    "type": "adjective",
+    "definition": "Rich; with a lot of money and no worry about it."
    }
   ]
  },
@@ -1799,7 +1853,7 @@
   "slug": "il-fumo-della-griglia",
   "arcType": "harmonic-close",
   "synopsis": "Un fumo bianco esce dalla griglia della sagra e arriva fino alla strada, e sui tavoli lunghi c'è più roba di quanta ne possa mangiare il paese. Dario porta Rosa a una panca libera e le spiega come funziona il gettone. Per una sera Rosa non tiene il conto di niente, e questo le costa più fatica che guidare.",
-  "text": "Un fumo esce dalla griglia della sagra e si sente sotto il palco. Dario porta Rosa e Teo ai tavoli, con pasta, peperoni, insalata, mais e anguria. “Siediti su questa panca, il posto buono è qui davanti alla griglia”, dice a Rosa.\n\n“Qui si paga un gettone e si mangia finché c'è, non è un ristorante”, spiega Dario. Una donna versa il vino e un'altra taglia il melone e il cetriolo. Nel piatto di Teo finiscono pollo, maiale e salsa, dopo tre giorni di panini.\n\nRosa cerca il credito nella tasca e Dario le ferma la mano. “Stasera paga la sagra e tu domani porti la macchina a Palermo, siamo pari”, dice lui. Sul tavolo arrivano ancora uva, pere, cioccolato, gamberi freddi e torta con la panna.\n\nAlle undici la piazza è piena e nessuno guarda l'ora. “Questa limonata è meglio del caffè che faccio io al bar”, dice Teo, e balla male con due signore. Rosa ride per la prima volta dell'estate e va a dormire senza sveglia.",
+  "text": "Un fumo esce dalla griglia della sagra e si sente sotto il palco. Dario porta Rosa e Teo ai tavoli, con pasta, peperoni, insalata, mais e anguria. “Siediti su questa panca, il posto buono è qui davanti alla griglia”, dice a Rosa.\n\n“Qui si paga un gettone e si mangia finché c'è, non è un ristorante”, spiega Dario. Una donna versa il vino, un'altra taglia melone e cetriolo, e nessuno è antipatico. Nel piatto di Teo finiscono pollo, maiale e salsa, dopo tre giorni di panini.\n\nRosa cerca il credito nella tasca e Dario le ferma la mano. “Stasera paga la sagra e tu domani porti la macchina a Palermo”, dice lui. Sul tavolo arrivano ancora uva, pere, cioccolato, gamberi freddi e torta con la panna.\n\nAlle undici la piazza è piena e alla lotteria vince sempre lo stesso. “Questa limonata è meglio del caffè che faccio io al bar”, dice Teo, e balla male con due signore. Rosa ride per la prima volta dell'estate e la sera è bella.",
   "vocab": [
    {
     "word": "peperone",
@@ -1960,7 +2014,7 @@
   "slug": "il-palco-si-svuota-alluna",
   "arcType": "juxtaposition-discovery",
   "synopsis": "Il palco si svuota all'una e le luci sopra la strada si spengono a metà, così Dario accompagna i due fino alla macchina passando dietro la cattedrale. Per strada racconta perché a Roma suonava in tre bande e qui ne basta una, e mostra un paese che di notte è quasi tutto chiuso. Rosa riparte piano, e per venti chilometri non sorpassa nessuno.",
-  "text": "Il palco si svuota all'una, Rosa guarda l'ora e le luci si spengono a metà. Dario li accompagna alla macchina dietro la cattedrale, con il maglione addosso. Il paese di notte ha una scuola, una banca, la posta e un supermercato chiuso.\n\n“A Roma suonavo in tre bande e non conoscevo il nome di nessuno dei musicisti”, racconta Dario. Passano davanti a un palazzo, a un teatro, a un cinema e a un parco. Teo cammina piano e la conversazione va avanti.\n\n“Qui la macelleria apre tre giorni e la panetteria uno solo, però la gente resta lo stesso”, aggiunge lui. Ogni edificio del paese ha una storia che Dario racconta a metà. Davanti al castello Rosa apre il bagagliaio, sistema la coperta e prende la torcia.\n\nDario, che è più giovane di quello che sembra, resta in mezzo alla strada. “Il santo di questo paese protegge chi viaggia di notte e chi guida stanco”, dice, e ride. Rosa guida piano per venti chilometri, senza tristezza, con il graffio sulla portiera.",
+  "text": "Il palco si svuota all'una, Rosa guarda l'ora e le luci si spengono a metà. Dario li accompagna alla macchina dietro la cattedrale, con il maglione addosso. Il paese di notte ha una scuola, una banca, la posta e un supermercato chiuso.\n\n“A Roma suonavo in tre bande e non conoscevo il nome di nessuno dei musicisti”, racconta Dario. Passano davanti a un palazzo, a un teatro, a un cinema e a un parco. Teo cammina piano e la conversazione va avanti.\n\n“Qui la macelleria apre tre giorni e la panetteria uno, però la gente resta”, aggiunge lui. Ogni edificio del paese ha una storia che Dario racconta a metà. Davanti al castello Rosa apre il bagagliaio, sistema la coperta e prende la torcia.\n\nDario, che è più giovane di quello che sembra, resta in mezzo alla strada. “Il santo di questo paese protegge chi viaggia di notte e chi guida stanco”, dice, e ride. Rosa guida piano per venti chilometri, senza tristezza, con il graffio sulla portiera.",
   "vocab": [
    {
     "word": "cattedrale",
@@ -2091,7 +2145,7 @@
   "slug": "alle-undici-la-farmacia-e-chiusa",
   "arcType": "mini-cliffhanger",
   "synopsis": "Alle undici di domenica la farmacia di Scilla è chiusa e sulla porta c'è solo un foglio giallo con i turni. Teo ha la febbre da tre ore e Rosa cammina piano per una caviglia che dal bosco in poi è diventata il doppio. La farmacia di turno è a undici chilometri, il traghetto parte fra due ore e il quattordici è domani.",
-  "text": "Alle undici di domenica la farmacia di Scilla è chiusa, con un foglio giallo sulla porta. Teo ha la febbre da tre ore e una tosse che non lo lascia parlare. Rosa cammina piano perché la caviglia destra è gonfia dal bosco di ieri.\n\nIl foglio spiega quale farmacia è di turno e dove si comprano le medicine. A undici chilometri di macchina la porta è aperta, e la coperta resta dietro. Martina lavora nella farmacia di turno e, con gli occhiali sul naso, guarda prima Teo e poi Rosa.\n\n“Non ho una malattia, ho solo un raffreddore e la gola chiusa dal freddo”, dice Teo. Rosa gli mette una mano sulla fronte e sente la pelle bollente. “Prima lui, e se la febbre non scende chiamiamo il dottore di guardia”, decide Martina.\n\nIl termometro segna trentanove e due e Martina smette di sorridere. Prepara sciroppo, due pastiglie, cerotti e una cura di tre giorni. “Così non si guida fino a domani”, dice, “e quel dolore al piede vuole riposo, non altre pastiglie.”",
+  "text": "Alle undici di domenica la farmacia di Scilla è chiusa, con un foglio giallo sulla porta. Teo ha la febbre da tre ore e una tosse che non lo lascia parlare. Rosa cammina piano perché la caviglia destra è gonfia dal bosco di ieri.\n\nIl foglio spiega quale farmacia è di turno e dove si comprano le medicine. A undici chilometri di macchina la porta è aperta, e la coperta resta dietro. Martina lavora nella farmacia di turno e, con gli occhiali sul naso, guarda Teo.\n\n“Non ho una malattia, ho solo un raffreddore e la gola chiusa dal freddo”, dice Teo. Rosa gli mette una mano sulla fronte e sente la pelle bollente. “Prima lui, e se la febbre non scende chiamiamo il dottore di guardia”, decide Martina.\n\nIl termometro segna trentanove e due e Martina smette di sorridere. Prepara sciroppo, due pastiglie, cerotti e una cura di tre giorni. “Così non si guida fino a domani”, dice, “e quel dolore al piede vuole riposo, non altre pastiglie.”",
   "vocab": [
    {
     "word": "farmacia",
@@ -2190,18 +2244,6 @@
     "definition": "Sunday; the day when almost every Italian shop stays shut."
    },
    {
-    "word": "destro",
-    "surface": "destra",
-    "type": "adjective",
-    "definition": "Right; the side of the body opposite your left one."
-   },
-   {
-    "word": "aperto",
-    "surface": "aperta",
-    "type": "adjective",
-    "definition": "Open; not shut, so people or air can get through."
-   },
-   {
     "word": "restare",
     "surface": "resta",
     "type": "verb",
@@ -2212,6 +2254,24 @@
     "surface": "caviglia",
     "type": "noun",
     "definition": "Ankle; the joint between your leg and your foot."
+   },
+   {
+    "word": "guidare",
+    "surface": "guida",
+    "type": "verb",
+    "definition": "To drive; what you do behind the wheel of a car."
+   },
+   {
+    "word": "destro",
+    "surface": "destra",
+    "type": "adjective",
+    "definition": "Right; the side of the body opposite your left one."
+   },
+   {
+    "word": "aperto",
+    "surface": "aperta",
+    "type": "adjective",
+    "definition": "Open; not shut, so people or air can get through."
    }
   ]
  },
@@ -2222,7 +2282,7 @@
   "slug": "la-pomata-resta-sul-banco",
   "arcType": "reframe-turn",
   "synopsis": "Dietro il banco Martina tira fuori quello che serve e fa a Teo le domande che si fanno sempre, una parte del corpo dopo l'altra. Il totale è sessanta euro e Rosa, per la prima volta in tutto il viaggio, alza la voce davanti a un'estranea invece di stare zitta. Quello che Martina fa dopo non risolve niente, però lascia le cose in un ordine diverso.",
-  "text": "Dietro il banco Martina prende dal cassetto una pomata e una benda per Teo. “Non è niente, non si muore per una tosse”, dice lui, con il viso bianco e il collo sudato. Il banco è freddo e la caviglia di Rosa sotto il calzino è più gonfia.\n\n“Ti fa male il petto quando tossisci, o la gola, i denti e le orecchie?”, chiede Martina. Teo dice di sì a tutto e si passa la lingua sulle labbra. Poi si soffia il naso e nel fazzoletto c'è del sangue.\n\n“Senza ricetta il resto non ve lo do, ci vuole un dottore”, spiega Martina, e scrive. “Per una febbre così non serve un'ambulanza, serve coricarsi e dormire.” Il totale è sessanta euro, quanto la benzina di due giorni, e il credito non basta.\n\n“Pago io, e non è una cosa da discutere”, dice Teo con la voce debole. “Non paghi tu”, risponde Rosa davanti a tutti, e Martina resta educata. La sorprende togliendo la pomata dal conto: Rosa non è antipatica, è senza stipendio.",
+  "text": "Dietro il banco Martina prende dal cassetto una pomata e una benda per Teo. “Non è niente, non si muore per una tosse”, dice lui, con il viso bianco e il collo sudato. Il banco è freddo e la caviglia di Rosa sotto il calzino è più gonfia.\n\n“Ti fa male il petto quando tossisci, o la gola, i denti e le orecchie?”, chiede Martina. Teo dice di sì a tutto e si passa la lingua sulle labbra. Poi si soffia il naso, torna a sedersi e nel fazzoletto c'è del sangue.\n\n“Senza ricetta il resto non ve lo do, ci vuole un dottore”, spiega Martina, e scrive. “Per una febbre così non serve un'ambulanza, serve coricarsi e dormire.” Il totale è sessanta euro e domani serve altro.\n\n“Pago io, e non è una cosa da discutere”, dice Teo con la voce debole. “Non paghi tu”, risponde Rosa davanti a tutti, e Martina resta educata. La sorprende togliendo la pomata dal conto: Rosa non è antipatica, è senza stipendio.",
   "vocab": [
    {
     "word": "pomata",
@@ -2267,12 +2327,6 @@
     "definition": "Prescription, and also a cooking recipe; Italian uses one word."
    },
    {
-    "word": "debole",
-    "surface": "debole",
-    "type": "adjective",
-    "definition": "Weak; without the strength to do the normal things."
-   },
-   {
     "word": "collo",
     "surface": "collo",
     "type": "noun",
@@ -2283,12 +2337,6 @@
     "surface": "sangue",
     "type": "noun",
     "definition": "Blood; the red liquid that runs inside the whole body."
-   },
-   {
-    "word": "educato",
-    "surface": "educata",
-    "type": "adjective",
-    "definition": "Polite; treating other people well even when they are difficult."
    },
    {
     "word": "antipatico",
@@ -2309,28 +2357,10 @@
     "definition": "To lie down; to get into bed and stay there."
    },
    {
-    "word": "sorprendere",
-    "surface": "sorprende",
-    "type": "verb",
-    "definition": "To surprise; to do something nobody was expecting from you."
-   },
-   {
     "word": "orecchio",
     "surface": "orecchie",
     "type": "noun",
     "definition": "Ear; the part of the head you hear sounds with."
-   },
-   {
-    "word": "togliere",
-    "surface": "togliendo",
-    "type": "verb",
-    "definition": "To take off or take away; to remove a thing."
-   },
-   {
-    "word": "morire",
-    "surface": "muore",
-    "type": "verb",
-    "definition": "To die; to stop living, and in speech to exaggerate a pain."
    },
    {
     "word": "scrivere",
@@ -2343,6 +2373,48 @@
     "surface": "gonfia",
     "type": "adjective",
     "definition": "Swollen; bigger than normal because something hurts inside."
+   },
+   {
+    "word": "dormire",
+    "surface": "dormire",
+    "type": "verb",
+    "definition": "To sleep; to rest with your eyes closed for a while."
+   },
+   {
+    "word": "pagare",
+    "surface": "paghi",
+    "type": "verb",
+    "definition": "To pay; to hand over money for something you take."
+   },
+   {
+    "word": "educato",
+    "surface": "educata",
+    "type": "adjective",
+    "definition": "Polite; treating other people well even when they are difficult."
+   },
+   {
+    "word": "servire",
+    "surface": "serve",
+    "type": "verb",
+    "definition": "To be needed, and also to serve food to a table."
+   },
+   {
+    "word": "morire",
+    "surface": "muore",
+    "type": "verb",
+    "definition": "To die; to stop living, and in speech to exaggerate a pain."
+   },
+   {
+    "word": "debole",
+    "surface": "debole",
+    "type": "adjective",
+    "definition": "Weak; without the strength to do the normal things."
+   },
+   {
+    "word": "sorprendere",
+    "surface": "sorprende",
+    "type": "verb",
+    "definition": "To surprise; to do something nobody was expecting from you."
    }
   ]
  },
@@ -2392,12 +2464,6 @@
     "definition": "Month; one of the twelve parts a year is cut into."
    },
    {
-    "word": "lavare",
-    "surface": "lava",
-    "type": "verb",
-    "definition": "To wash; to clean something with water and soap."
-   },
-   {
     "word": "biancheria",
     "surface": "biancheria",
     "type": "noun",
@@ -2420,18 +2486,6 @@
     "surface": "appuntamento",
     "type": "noun",
     "definition": "Appointment; a time agreed to meet a doctor or a friend."
-   },
-   {
-    "word": "magro",
-    "surface": "magro",
-    "type": "adjective",
-    "definition": "Thin; with very little fat on the body."
-   },
-   {
-    "word": "stupido",
-    "surface": "stupida",
-    "type": "adjective",
-    "definition": "Stupid; feeling foolish about something you said or thought."
    },
    {
     "word": "nave",
@@ -2480,6 +2534,18 @@
     "surface": "stanza",
     "type": "noun",
     "definition": "Room; any room inside a house, big or small."
+   },
+   {
+    "word": "lavare",
+    "surface": "lava",
+    "type": "verb",
+    "definition": "To wash; to clean something with water and soap."
+   },
+   {
+    "word": "magro",
+    "surface": "magro",
+    "type": "adjective",
+    "definition": "Thin; with very little fat on the body."
    }
   ]
  },
@@ -2529,12 +2595,6 @@
     "definition": "Passport; the small book you show to cross a border."
    },
    {
-    "word": "mandare",
-    "surface": "manda",
-    "type": "verb",
-    "definition": "To send; to make something go to another person or place."
-   },
-   {
     "word": "impiegata",
     "surface": "impiegata",
     "type": "noun",
@@ -2559,22 +2619,10 @@
     "definition": "To sign; to write your own name at the bottom of a paper."
    },
    {
-    "word": "consegnare",
-    "surface": "consegna",
-    "type": "verb",
-    "definition": "To hand over; to give a thing to the person waiting for it."
-   },
-   {
     "word": "vincere",
     "surface": "vinto",
     "type": "verb",
     "definition": "To win; to come first or to get what you were fighting for."
-   },
-   {
-    "word": "ricco",
-    "surface": "ricco",
-    "type": "adjective",
-    "definition": "Rich; with a lot of money and no worry about it."
    },
    {
     "word": "multa",
@@ -2607,6 +2655,24 @@
     "definition": "To hold or to keep; to have a thing in your hands."
    },
    {
+    "word": "chiedere",
+    "surface": "chiede",
+    "type": "verb",
+    "definition": "To ask; to put a question or to ask for something."
+   },
+   {
+    "word": "contare",
+    "surface": "conta",
+    "type": "verb",
+    "definition": "To count; to say the numbers to know how many there are."
+   },
+   {
+    "word": "consegnare",
+    "surface": "consegna",
+    "type": "verb",
+    "definition": "To hand over; to give a thing to the person waiting for it."
+   },
+   {
     "word": "prossimo",
     "surface": "prossimo",
     "type": "adjective",
@@ -2621,19 +2687,13 @@
   "slug": "al-terzo-modulo-rosa-firma",
   "arcType": "harmonic-close",
   "synopsis": "Al terzo modulo Rosa capisce che una consegna non finisce con un timbro, perché il garage vuole un verbale con dentro tutti i danni della macchina. Mentre lei scrive la riga più cara del viaggio, Teo si lava, si rade e si veste per un aereo delle sei. Poi Nico apre la busta arrivata da Torino, e quello che c'è scritto lì dentro cambia chi deve delle scuse a chi.",
-  "text": "Al terzo modulo Rosa capisce che la consegna non finisce con un timbro. L'impiegato apre il portatile e vuole un verbale con tutti i danni. Teo si lava, si spoglia e si rade nel bagno del garage.\n\n“Il graffio lo devi scrivere tu, con la data di oggi, la firma e il numero della targa”, spiega Nico. Rosa scrive del graffio sulla portiera e mette la firma. Teo si veste con una camicia nuova, si pettina e mette una cravatta corta.\n\nPoi Nico apre la busta arrivata da Torino e tira fuori i documenti marroni. Sotto la targa c'è già scritto graffio portiera destra, e Teo guarda l'ora dell'aereo. “L'assicurazione copre i danni vecchi”, aggiunge Nico, “e questo è di agosto, guarda la data.”\n\nLa cosa la sorprende, Rosa non si sente intelligente e la stanchezza torna. “Mi dispiace”, dice lei, “dovevo crederti già sul ponte, quella sera, e invece ho guardato solo il foglio.” Teo prende un taxi per l'aeroporto con l'abito piegato, e Nico la guarda come una cosa bella.",
+  "text": "Al terzo modulo Rosa capisce che la consegna non finisce con un timbro. L'impiegato apre il portatile e vuole un verbale con tutti i danni. Teo si lava, si spoglia e si rade nel bagno del garage.\n\n“Il graffio lo devi scrivere tu, con la data di oggi, la firma e la targa”, spiega Nico. Rosa scrive del graffio sulla portiera e mette la firma. Teo si veste con una camicia nuova, si pettina e sente la cravatta corta.\n\nPoi Nico apre la busta arrivata da Torino e tira fuori i documenti marroni. Sotto la targa c'è già scritto graffio portiera destra, e Teo guarda l'ora dell'aereo. “L'assicurazione copre i danni vecchi”, aggiunge Nico, “e questo è di agosto, guarda la data.”\n\nLa cosa la sorprende, Rosa non si sente intelligente e resta zitta. “Mi dispiace”, dice lei, “dovevo crederti già sul ponte, quella sera, e invece ho guardato solo il foglio.” Teo prende un taxi per l'aeroporto con l'abito piegato, e Nico la guarda come una cosa bella.",
   "vocab": [
    {
     "word": "verbale",
     "surface": "verbale",
     "type": "noun",
     "definition": "Written report; the page where damage is listed and signed."
-   },
-   {
-    "word": "lavarsi",
-    "surface": "lava",
-    "type": "verb",
-    "definition": "To wash yourself; to clean your own face, hands or body."
    },
    {
     "word": "radersi",
@@ -2684,12 +2744,6 @@
     "definition": "Insurance; what you pay so somebody else covers the damage."
    },
    {
-    "word": "intelligente",
-    "surface": "intelligente",
-    "type": "adjective",
-    "definition": "Clever; quick to understand how things really are."
-   },
-   {
     "word": "aeroporto",
     "surface": "aeroporto",
     "type": "noun",
@@ -2720,18 +2774,6 @@
     "definition": "Plane; the machine with wings that flies people between cities."
    },
    {
-    "word": "invece",
-    "surface": "invece",
-    "type": "adverb",
-    "definition": "Instead; in the place of the other thing you expected."
-   },
-   {
-    "word": "capire",
-    "surface": "capisce",
-    "type": "verb",
-    "definition": "To understand; to see what a thing really means."
-   },
-   {
     "word": "portiera",
     "surface": "portiera",
     "type": "noun",
@@ -2742,6 +2784,30 @@
     "surface": "arriva",
     "type": "verb",
     "definition": "To arrive; to reach the place you were going to."
+   },
+   {
+    "word": "volere",
+    "surface": "vuole",
+    "type": "verb",
+    "definition": "To want; to wish for something enough to go and get it."
+   },
+   {
+    "word": "lavarsi",
+    "surface": "lava",
+    "type": "verb",
+    "definition": "To wash yourself; to clean your own face, hands or body."
+   },
+   {
+    "word": "tirare",
+    "surface": "tira",
+    "type": "verb",
+    "definition": "To pull; to move a thing towards you with your hand."
+   },
+   {
+    "word": "invece",
+    "surface": "invece",
+    "type": "adverb",
+    "definition": "Instead; in the place of the other thing you expected."
    }
   ]
  },
@@ -2752,7 +2818,7 @@
   "slug": "nico-offre-dodici-consegne",
   "arcType": "recurring-character-callback",
   "synopsis": "Nico abita sopra il garage, in un appartamento con un quadro storto e uno scaffale di manuali, e Rosa sale a ritirare quello che le spetta. Sul tavolo c'è la proposta che aspettava da sei anni senza saperlo: una consegna al mese, da gennaio a dicembre, con una data fissa per il pagamento. Per la prima volta Rosa non risponde subito di sì.",
-  "text": "Nico abita sopra il garage, in un appartamento sul cortile. Nel soggiorno fa caldo: un quadro storto, uno scaffale, un aspirapolvere. Rosa sale a ritirare quello che le spetta, ricevuta in mano.\n\n“Torino-Palermo una volta al mese, da gennaio a dicembre, e ti paghiamo sempre il quindici”, propone Nico. Rosa pensa a sua sorella, che da anni le chiede un lavoro normale. Sul tavolo una vecchia foto con sua mamma, suo papà e uno zio.\n\n“Ci penso fino a venerdì”, risponde Rosa, e la relazione con Nico resta senza firma. “Pensaci pure, però il quindici parte comunque una macchina, con te oppure senza di te”, aggiunge Nico. Fuori un ragazzo lava un furgone con un secchio, accanto a una bici.\n\nSul treno Rosa apre la mappa, mangia un panino e prova un film che non finisce. Alle nove scrive a Teo: “Com'è andato il matrimonio, e la cravatta è sopravvissuta alla festa?”. La risposta arriva lunga, con tre foto e una cravatta che non ha più forma.",
+  "text": "Nico abita sopra il garage, in un appartamento sul cortile. Nel soggiorno fa caldo, sotto un quadro storto c'è uno scaffale e un aspirapolvere. Rosa sale a ritirare quello che le spetta, ricevuta in mano.\n\n“Torino-Palermo una volta al mese, da gennaio a dicembre, e ti paghiamo sempre il quindici”, propone Nico. Rosa pensa a sua sorella, che da anni le chiede un lavoro normale. Sul tavolo una vecchia foto con sua mamma, suo papà e uno zio.\n\n“Ci penso fino a venerdì”, risponde Rosa, e la relazione con Nico resta senza firma. “Pensaci pure, però il quindici parte comunque una macchina, con te oppure senza di te”, aggiunge Nico. Fuori un ragazzo lava un furgone con un secchio, accanto a una bici.\n\nSul treno Rosa apre la mappa, mangia un panino e guarda un film che non finisce. Alle nove scrive a Teo: “Com'è andato il matrimonio, e la cravatta è sopravvissuta alla festa?”. La risposta arriva lunga, con tre foto e una cravatta che non ha più forma.",
   "vocab": [
    {
     "word": "soggiorno",
@@ -2873,6 +2939,36 @@
     "surface": "fuori",
     "type": "adverb",
     "definition": "Outside; not inside the house, the car or the room."
+   },
+   {
+    "word": "rispondere",
+    "surface": "risponde",
+    "type": "verb",
+    "definition": "To answer; to say something back, or to pick up the phone."
+   },
+   {
+    "word": "mangiare",
+    "surface": "mangia",
+    "type": "verb",
+    "definition": "To eat; to put food in your mouth and swallow it."
+   },
+   {
+    "word": "finire",
+    "surface": "finisce",
+    "type": "verb",
+    "definition": "To finish; to come to the end of something."
+   },
+   {
+    "word": "salire",
+    "surface": "sale",
+    "type": "verb",
+    "definition": "To go up; to climb stairs or to get into a car."
+   },
+   {
+    "word": "caldo",
+    "surface": "caldo",
+    "type": "adjective",
+    "definition": "Hot or warm; with a high temperature you can feel on the skin."
    }
   ]
  }
