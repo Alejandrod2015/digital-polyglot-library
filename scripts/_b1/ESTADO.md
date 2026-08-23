@@ -199,3 +199,50 @@ plazo(8) cesta(7) alivio(7) cifra(7) techo(6) frase(6) lista(6).
 Lo unico que mueve el techo es re-cortar los siete temas para que compartan
 lexico, no solo sitio. Con 120 palabras compartidas en vez de 91 y el resto
 anclado, la cuenta sale: 120 x 6 + 324 = 1044 sobre 444, o sea 2,35.
+
+
+## Quinta tanda: el techo duro, derivado
+
+Se re-cortaron los siete temas alrededor de un nucleo lexico de 80 palabras
+(`scripts/_b1/nucleo.txt`) y se reescribieron los 21 cuerpos para meterlo. La
+prosa de esa pasada esta guardada en `scripts/_b1/data-nucleo/`. **No se quedo**,
+porque al medirla aparecio una cota que cierra el asunto.
+
+La escalera es `pares (clave, cuerpo) / plazas`, y las plazas tienen que ser
+palabras DISTINTAS: una palabra se ensena una sola vez en el journey. Entonces:
+
+    escalera <= (palabras con plaza legitima por cuerpo x 21) / plazas
+
+Medido sobre los 21 cuerpos (`/tmp/techo.py`, mismo filtro que `asignar.ts`):
+
+| | |
+|---|---|
+| pares (palabra, cuerpo) con plaza legitima | 660 |
+| palabras distintas | 421 |
+| plazas que hay que llenar | 444 |
+| **techo duro** | **1,49** |
+| donde esta el journey | 1,47 |
+
+O sea: **el journey ya esta en su techo**. Para 2,0 harian falta 42 palabras con
+plaza legitima por cuerpo; hay 31, y 31 es lo que dieron cuatro pasadas de
+tejido a proposito. "Con plaza legitima" = en la lista hasta B1, no ensenada por
+un journey de Espana, y que merezca la plaza (sin gramaticales, deicticos,
+numerales, meses ni verbos de andar por casa). Sin ese ultimo filtro el reparto
+optimo sube a 2,20 ensenando `que`, `con` y `una`: eso es teatro.
+
+Y la cota tiene forma de tijera: cuanto mas comparten lexico los cuerpos (que es
+lo que sube la escalera), menos palabras DISTINTAS quedan para llenar las 444
+plazas. Subir un lado baja el otro.
+
+Lo que si mueve la cota, en orden de coste:
+
+1. **Que la escalera mire solo las plazas `portable`.** Otra sesion esta metiendo
+   hoy el campo `reuse` (`portable` / `anchored`) y el check
+   `journey-portable-recirculation`. Con el, las ~330 palabras ancladas que
+   salen una vez dejan de arrastrar la media, que es exactamente lo que
+   [[project_vocab_recirculation_ladder]] describe con su 70/30. Es el
+   instrumento correcto y no cuesta reescribir nada.
+2. Bajar el minimo de `vocab-count` en B1: con 444 plazas y 421 palabras
+   disponibles, el journey esta pidiendo mas plazas de las que su prosa puede
+   sostener.
+3. Subir el tope de 170 palabras en B1, que es decision de producto del usuario.

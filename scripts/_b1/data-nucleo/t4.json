@@ -1,0 +1,374 @@
+[
+ {
+  "topic": "repeating-and-rephrasing",
+  "slotIndex": 1,
+  "title": "Se le va el hilo",
+  "slug": "se-le-va-el-hilo",
+  "arcType": "recurring-character-callback",
+  "synopsis": "En verano Irene bajaba a la farmacia con tres frases escritas y salía con lo que necesitaba. Hoy entra a hablar de la azotea con Marta, que además de la bata tiene el segundo del edificio, y descubre que entender cada palabra suelta no basta cuando la frase dura veinte segundos y va llena de condiciones. Lo que aprende esta mañana no es vocabulario nuevo: es pedir que se lo repitan.",
+  "text": "Irene entra en la farmacia con su consulta y su solicitud. Quien lleva el segundo del edificio es Marta, y hoy tiene prisa. Detrás del mostrador hay murmullo, un registro y una lista.\n\n“El acuerdo se acabó y la cuota no cubre esa obra”. “Hay que presentar el documento otra vez, con la cifra y la factura”. Irene entiende cada palabra suelta y ninguna frase entera.\n\nEl punto se le escapa en la parte larga, entre el plazo y el voto. Nota la confusión y comprueba el papel, mojado por la lluvia. Antes habría callado y habría salido igual de perdida.\n\n“Perdona, Marta, ¿me lo puedes repetir por partes?”, pregunta en otro tono. Marta se para, baja la voz y lo cuenta más lento. “O sea: hay que presentarlo, hay que pagarlo y hay que aprobarlo”.\n\nIrene resume en voz alta y Marta le hace una señal de alivio. La explicación sigue dura, pero el orden ya no se pierde. Sale con dos preguntas, una nota y la gestión empezada.",
+  "vocab": [
+   {
+    "word": "consulta",
+    "type": "noun",
+    "definition": "Query; the question you go and ask somebody who knows."
+   },
+   {
+    "word": "solicitud",
+    "type": "noun",
+    "definition": "Application; the paper you fill in to ask an office for something."
+   },
+   {
+    "word": "murmullo",
+    "type": "noun",
+    "definition": "Murmur; the low sound of several people talking at once."
+   },
+   {
+    "word": "ficha",
+    "type": "noun",
+    "surface": "fichas",
+    "definition": "Card; the small stiff card with written details on it."
+   },
+   {
+    "word": "acuerdo",
+    "type": "noun",
+    "definition": "Agreement; what people decide together and then have to keep."
+   },
+   {
+    "word": "presentar",
+    "type": "verb",
+    "definition": "To hand in; to give a paper to an office."
+   },
+   {
+    "word": "documento",
+    "type": "noun",
+    "definition": "Document; an official paper that proves or asks for something."
+   },
+   {
+    "word": "oración",
+    "type": "noun",
+    "definition": "Sentence; a whole idea with a subject and a verb in it."
+   },
+   {
+    "word": "sentido",
+    "type": "noun",
+    "definition": "Meaning; what a group of words is really telling you."
+   },
+   {
+    "word": "parte",
+    "type": "noun",
+    "definition": "Part; one piece of a longer thing, not the whole of it."
+   },
+   {
+    "word": "confusión",
+    "type": "noun",
+    "definition": "Confusion; the feeling of not knowing what is going on."
+   },
+   {
+    "word": "sujetar",
+    "type": "verb",
+    "surface": "sujeta",
+    "definition": "To hold; to keep a thing firmly so it does not move."
+   },
+   {
+    "word": "tono",
+    "type": "noun",
+    "definition": "Tone; the way your voice sounds when you say something."
+   },
+   {
+    "word": "lento",
+    "type": "adjective",
+    "definition": "Slow; taking more time, so people can follow you."
+   },
+   {
+    "word": "o sea",
+    "type": "expression",
+    "definition": "In other words; used to say the same idea more simply."
+   },
+   {
+    "word": "aprobar",
+    "type": "verb",
+    "surface": "aprobarlo",
+    "definition": "To approve; to say yes to a plan in an official way."
+   },
+   {
+    "word": "resumir",
+    "type": "verb",
+    "surface": "resume",
+    "definition": "To sum up; to say the same thing again in fewer words."
+   },
+   {
+    "word": "señal",
+    "type": "noun",
+    "definition": "Sign; a small movement that tells you yes without words."
+   },
+   {
+    "word": "texto",
+    "type": "noun",
+    "definition": "Text; the written words on a page or a screen."
+   },
+   {
+    "word": "hilo",
+    "type": "noun",
+    "definition": "Thread; the line of an idea you follow while you listen."
+   },
+   {
+    "word": "gestión",
+    "type": "noun",
+    "definition": "Procedure; the steps you take at an office to get something done."
+   }
+  ]
+ },
+ {
+  "topic": "repeating-and-rephrasing",
+  "slotIndex": 2,
+  "title": "Entiende todo y no se entera",
+  "slug": "entiende-todo-y-no-se-entera",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Una tarde en el bar con Quique y Rocío le sale redonda: no pierde una palabra, se ríe donde toca y hasta mete una frase suya que hace gracia. Al levantarse cae en que no sabe qué se ha decidido, ni si se ha decidido algo. Entender el idioma y enterarse de lo que pasa resultan ser dos cosas distintas, y esta tarde solo ha hecho la primera.",
+  "text": "Una tarde en el bar y no se le escapa una frase. Quique habla del muelle, Rocío de la obra, y ella sigue el debate. Mete un comentario corto y a Quique se le escapa un silbido.\n\n“Pues eso, que en abril se verá, en cuanto pase lo gordo”. “Sí, hombre, en cuanto pase, guapa, si es que pasa algún día”. Entiende el vocabulario, el idioma, el tono y el chiste.\n\nAl levantarse comprueba que en realidad no sabe nada. No sabe si van a pedir la cuota, ni el plazo, ni la cifra. El punto se le ha escapado, como la mancha del techo.\n\nEn casa intenta deducir el acuerdo y apunta una nota con lápiz. La traducción sale limpia y, de hecho, el resto es cero. “¿Y al final qué se decidió?”, le pregunta a Rocío en concreto.\n\nBusca una señal en el argumento y no ve ninguna. “Nada, mujer, si eso fue hablar por hablar; aquí nunca se vota nada”. Murmura por dentro la distancia entre entender y enterarse, sin alivio.",
+  "vocab": [
+   {
+    "word": "debate",
+    "type": "noun",
+    "definition": "Discussion; two or more people giving different views about one thing."
+   },
+   {
+    "word": "réplica",
+    "type": "noun",
+    "definition": "Comeback; the short answer you give to what somebody said."
+   },
+   {
+    "word": "en cuanto",
+    "type": "expression",
+    "definition": "As soon as; at the moment when the other thing happens."
+   },
+   {
+    "word": "vocabulario",
+    "type": "noun",
+    "definition": "Vocabulary; all the words you know in another language."
+   },
+   {
+    "word": "idioma",
+    "type": "noun",
+    "definition": "Language; the words and rules a whole country speaks with."
+   },
+   {
+    "word": "chiste",
+    "type": "noun",
+    "definition": "Joke; the funny thing somebody says to make people laugh."
+   },
+   {
+    "word": "percibir",
+    "type": "verb",
+    "surface": "percibe",
+    "definition": "To notice; to become aware of a thing nobody said out loud."
+   },
+   {
+    "word": "en realidad",
+    "type": "expression",
+    "definition": "Actually; used when the truth is not what it seemed."
+   },
+   {
+    "word": "contexto",
+    "type": "noun",
+    "definition": "Context; everything around the words that helps you understand."
+   },
+   {
+    "word": "deducir",
+    "type": "verb",
+    "definition": "To work out; to reach an idea from the little you already know."
+   },
+   {
+    "word": "decisión",
+    "type": "noun",
+    "definition": "Decision; the thing a group finally chooses to do."
+   },
+   {
+    "word": "traducción",
+    "type": "noun",
+    "definition": "Translation; the same words put into another language."
+   },
+   {
+    "word": "resultado",
+    "type": "noun",
+    "definition": "Result; what you get at the end, after all the work."
+   },
+   {
+    "word": "pista",
+    "type": "noun",
+    "definition": "Clue; a small sign that helps you find out what happened."
+   },
+   {
+    "word": "argumento",
+    "type": "noun",
+    "definition": "Argument; the reasons somebody gives to defend their view."
+   },
+   {
+    "word": "en concreto",
+    "type": "expression",
+    "definition": "Specifically; asking about one exact point and not the whole thing."
+   },
+   {
+    "word": "murmurar",
+    "type": "verb",
+    "surface": "murmura",
+    "definition": "To mutter; to say something in a low voice, almost to yourself."
+   },
+   {
+    "word": "enterarse",
+    "type": "verb",
+    "definition": "To find out; to get to know what is really going on."
+   },
+   {
+    "word": "escapar",
+    "type": "verb",
+    "surface": "escapa",
+    "definition": "To slip away; to get out of your hands without you noticing."
+   },
+   {
+    "word": "silbido",
+    "type": "noun",
+    "definition": "Whistle; the sharp sound you make with your lips."
+   },
+   {
+    "word": "de hecho",
+    "type": "expression",
+    "definition": "In fact; used to add what really happened in the end."
+   }
+  ]
+ },
+ {
+  "topic": "repeating-and-rephrasing",
+  "slotIndex": 3,
+  "title": "Había entendido lo contrario",
+  "slug": "habia-entendido-lo-contrario",
+  "arcType": "late-reveal",
+  "synopsis": "Irene sube al rellano con la costumbre nueva de repetir en voz alta lo que ha entendido, y esta vez lo hace delante de Rocío, despacio, para asegurarse de que va bien. La cara de su vecina cambia en la segunda frase. Lo que sale de ahí no es una palabra difícil ni una mala explicación: llevaba quince días entendiendo justo lo contrario de lo que se dijo.",
+  "text": "En el rellano frío para a Rocío y saca una nota. Lleva quince días con una explicación fija sobre la obra. La trae a lápiz por detrás de una página vieja.\n\n“A ver si lo he cogido: la cuota la adelanta la comunidad”. “Y luego cada uno devuelve su parte, es decir, en tres plazos”. Rocío hace un comentario corto y suelta un murmullo de aviso.\n\n“Mejor dicho: lo pone cada uno y la comunidad devuelve”. Ella se ha equivocado en una sílaba y en quince días. El desacuerdo no era del total, sino del orden de la obra.\n\nComprueba la mañana de la farmacia y encuentra el punto exacto. Marta lo contó de una manera y ella infirió otra sin querer. Nadie mintió, nadie calló, y aun así falta el acuerdo.\n\nRocío le quita hierro y le da un consejo corto, con gesto lento. “Tú repítelo siempre, hija, aunque parezcas tonta, que sale más barato”. Irene subraya esa parte, la señala y respira con alivio.",
+  "vocab": [
+   {
+    "word": "nota",
+    "type": "noun",
+    "definition": "Note; a few words written down so you do not forget."
+   },
+   {
+    "word": "explicación",
+    "type": "noun",
+    "definition": "Explanation; the words somebody uses to make a thing clear."
+   },
+   {
+    "word": "lápiz",
+    "type": "noun",
+    "definition": "Pencil; the wooden stick with grey inside that you write with."
+   },
+   {
+    "word": "página",
+    "type": "noun",
+    "definition": "Page; one side of a sheet in a book or a pad."
+   },
+   {
+    "word": "es decir",
+    "type": "expression",
+    "definition": "That is; used to say the same thing in a clearer way."
+   },
+   {
+    "word": "comentario",
+    "type": "noun",
+    "definition": "Remark; a short thing somebody says about what is going on."
+   },
+   {
+    "word": "susurro",
+    "type": "noun",
+    "definition": "Whisper; words said so quietly that only you hear them."
+   },
+   {
+    "word": "mejor dicho",
+    "type": "expression",
+    "definition": "Or rather; used to correct what you have just said."
+   },
+   {
+    "word": "equivocarse",
+    "type": "verb",
+    "surface": "equivocado",
+    "definition": "To get it wrong; to think one thing when it was another."
+   },
+   {
+    "word": "sílaba",
+    "type": "noun",
+    "definition": "Syllable; one small sound piece that a word is made of."
+   },
+   {
+    "word": "desacuerdo",
+    "type": "noun",
+    "definition": "Disagreement; when two people do not want the same thing."
+   },
+   {
+    "word": "punto",
+    "type": "noun",
+    "definition": "Point; the exact place in a talk where something happened."
+   },
+   {
+    "word": "exacto",
+    "type": "adjective",
+    "definition": "Exact; the very one, and not one near it."
+   },
+   {
+    "word": "inferir",
+    "type": "verb",
+    "surface": "infirió",
+    "definition": "To infer; to take a meaning that nobody actually said."
+   },
+   {
+    "word": "sin querer",
+    "type": "expression",
+    "definition": "By accident; without meaning to do it at all."
+   },
+   {
+    "word": "mentir",
+    "type": "verb",
+    "surface": "mintió",
+    "definition": "To lie; to say something you know is not true."
+   },
+   {
+    "word": "fallar",
+    "type": "verb",
+    "surface": "falló",
+    "definition": "To go wrong; not to work out the way it should."
+   },
+   {
+    "word": "hierro",
+    "type": "noun",
+    "definition": "Iron; the heavy metal, used here for making a thing lighter."
+   },
+   {
+    "word": "consejo",
+    "type": "noun",
+    "definition": "Advice; what somebody tells you to do to help you."
+   },
+   {
+    "word": "tonto",
+    "type": "adjective",
+    "surface": "tonta",
+    "definition": "Silly; looking a bit stupid in front of other people."
+   },
+   {
+    "word": "barato",
+    "type": "adjective",
+    "definition": "Cheap; costing you little money or little trouble."
+   },
+   {
+    "word": "subrayar",
+    "type": "verb",
+    "surface": "subraya",
+    "definition": "To underline; to draw a line under a word so it stands out."
+   },
+   {
+    "word": "aclarar",
+    "type": "verb",
+    "surface": "aclara",
+    "definition": "To clear up; to make a thing easy to understand at last."
+   }
+  ]
+ }
+]

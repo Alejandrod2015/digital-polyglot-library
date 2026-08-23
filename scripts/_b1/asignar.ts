@@ -21,16 +21,22 @@ const raiz = (w: string) => w.normalize("NFD").replace(/[̀-ͯ]/g, "").slice(0, 
 const tomadas = new Set<string>();
 const asign: string[][] = S.map(() => []);
 // Ronda a ronda: en cada vuelta cada historia coge su mejor candidata libre.
-for (let ronda = 0; ronda < 25; ronda++) {
+for (let ronda = 0; ronda < 40; ronda++) {
   const orden = [...S.keys()].sort((a, b) => asign[a].length - asign[b].length);
   for (const i of orden) {
-    if (asign[i].length >= 21) continue;
+    if (asign[i].length >= 20) continue;
     const raices = new Set(asign[i].map(raiz));
     const cand = [...cuerpos[i]]
       .filter((w) => pool.has(w) && !NO_PLAZA.has(w.normalize("NFD").replace(/[\u0300-\u036f]/g, "")) && !tomadas.has(w) && !raices.has(raiz(w)))
       .sort((a, b) => (cuenta.get(b)! - cuenta.get(a)!) || a.localeCompare(b));
-    if (!cand.length) continue;
-    asign[i].push(cand[0]); tomadas.add(cand[0]);
+    let elegido = cand[0];
+    if (!elegido) {
+      const laxo = [...cuerpos[i]].filter((w) => pool.has(w) && !NO_PLAZA.has(w.normalize("NFD").replace(/[\u0300-\u036f]/g, "")) && !tomadas.has(w))
+        .sort((a, b) => (cuenta.get(b)! - cuenta.get(a)!) || a.localeCompare(b));
+      elegido = laxo[0];
+    }
+    if (!elegido) continue;
+    asign[i].push(elegido); tomadas.add(elegido);
   }
 }
 let suma = 0, plazas = 0;

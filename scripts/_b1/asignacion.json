@@ -4,10 +4,14 @@
   "palabras": [
    {
     "w": "nota",
-    "n": 13
+    "n": 16
    },
    {
-    "w": "armario",
+    "w": "cesta",
+    "n": 6
+   },
+   {
+    "w": "roto",
     "n": 5
    },
    {
@@ -23,7 +27,7 @@
     "n": 2
    },
    {
-    "w": "pintura",
+    "w": "polvo",
     "n": 2
    },
    {
@@ -47,6 +51,10 @@
     "n": 1
    },
    {
+    "w": "letrero",
+    "n": 1
+   },
+   {
     "w": "tacto",
     "n": 1
    },
@@ -61,10 +69,14 @@
   "palabras": [
    {
     "w": "cuota",
-    "n": 12
+    "n": 15
    },
    {
-    "w": "cepillo",
+    "w": "armario",
+    "n": 5
+   },
+   {
+    "w": "anuncio",
     "n": 4
    },
    {
@@ -72,19 +84,7 @@
     "n": 3
    },
    {
-    "w": "dificultad",
-    "n": 2
-   },
-   {
-    "w": "duro",
-    "n": 2
-   },
-   {
-    "w": "plástico",
-    "n": 2
-   },
-   {
-    "w": "sello",
+    "w": "mayoría",
     "n": 2
    },
    {
@@ -96,15 +96,7 @@
     "n": 1
    },
    {
-    "w": "inútil",
-    "n": 1
-   },
-   {
-    "w": "mayoría",
-    "n": 1
-   },
-   {
-    "w": "propuesta",
+    "w": "dificultad",
     "n": 1
    }
   ]
@@ -113,15 +105,19 @@
   "id": "winter-and-empty-houses#3",
   "palabras": [
    {
-    "w": "gesto",
-    "n": 9
+    "w": "prisa",
+    "n": 15
    },
    {
-    "w": "cubeta",
-    "n": 5
+    "w": "esa",
+    "n": 6
    },
    {
-    "w": "viejo",
+    "w": "cepillo",
+    "n": 3
+   },
+   {
+    "w": "pasillo",
     "n": 3
    },
    {
@@ -129,11 +125,7 @@
     "n": 2
    },
    {
-    "w": "pasillo",
-    "n": 2
-   },
-   {
-    "w": "polvo",
+    "w": "pintura",
     "n": 2
    },
    {
@@ -146,10 +138,6 @@
    },
    {
     "w": "hoja",
-    "n": 1
-   },
-   {
-    "w": "mojado",
     "n": 1
    },
    {
@@ -170,12 +158,16 @@
   "id": "jobs-and-wages#1",
   "palabras": [
    {
-    "w": "obra",
-    "n": 10
+    "w": "lento",
+    "n": 13
    },
    {
-    "w": "parte",
+    "w": "año",
     "n": 5
+   },
+   {
+    "w": "herramienta",
+    "n": 4
    },
    {
     "w": "cantidad",
@@ -186,11 +178,7 @@
     "n": 2
    },
    {
-    "w": "otoño",
-    "n": 2
-   },
-   {
-    "w": "tarifa",
+    "w": "pedido",
     "n": 2
    },
    {
@@ -218,19 +206,7 @@
     "n": 1
    },
    {
-    "w": "descanso",
-    "n": 1
-   },
-   {
     "w": "empleo",
-    "n": 1
-   },
-   {
-    "w": "envidia",
-    "n": 1
-   },
-   {
-    "w": "esfuerzo",
     "n": 1
    },
    {
@@ -252,6 +228,14 @@
    {
     "w": "peso",
     "n": 1
+   },
+   {
+    "w": "plantilla",
+    "n": 1
+   },
+   {
+    "w": "suma",
+    "n": 1
    }
   ]
  },
@@ -259,8 +243,12 @@
   "id": "jobs-and-wages#2",
   "palabras": [
    {
-    "w": "esa",
-    "n": 8
+    "w": "plazo",
+    "n": 13
+   },
+   {
+    "w": "factura",
+    "n": 5
    },
    {
     "w": "comunidad",
@@ -271,11 +259,11 @@
     "n": 3
    },
    {
-    "w": "material",
+    "w": "condición",
     "n": 2
    },
    {
-    "w": "pedido",
+    "w": "tarifa",
     "n": 2
    },
    {
@@ -287,19 +275,11 @@
     "n": 1
    },
    {
-    "w": "descuento",
-    "n": 1
-   },
-   {
     "w": "estar",
     "n": 1
    },
    {
     "w": "negocio",
-    "n": 1
-   },
-   {
-    "w": "precio",
     "n": 1
    },
    {
@@ -320,15 +300,19 @@
   "id": "jobs-and-wages#3",
   "palabras": [
    {
-    "w": "tono",
-    "n": 8
+    "w": "gesto",
+    "n": 12
    },
    {
     "w": "rosa",
     "n": 5
    },
    {
-    "w": "gas",
+    "w": "saldo",
+    "n": 3
+   },
+   {
+    "w": "entero",
     "n": 2
    },
    {
@@ -340,19 +324,11 @@
     "n": 1
    },
    {
-    "w": "beneficio",
-    "n": 1
-   },
-   {
     "w": "bollo",
     "n": 1
    },
    {
     "w": "dato",
-    "n": 1
-   },
-   {
-    "w": "ese",
     "n": 1
    },
    {
@@ -365,10 +341,6 @@
    },
    {
     "w": "levadura",
-    "n": 1
-   },
-   {
-    "w": "margen",
     "n": 1
    },
    {
@@ -409,31 +381,23 @@
   "id": "storms-and-the-sea#1",
   "palabras": [
    {
-    "w": "mancha",
-    "n": 8
+    "w": "alivio",
+    "n": 13
    },
    {
-    "w": "roto",
+    "w": "cubeta",
     "n": 5
    },
    {
-    "w": "levante",
+    "w": "inútil",
+    "n": 3
+   },
+   {
+    "w": "tubería",
     "n": 3
    },
    {
     "w": "desagüe",
-    "n": 2
-   },
-   {
-    "w": "letrero",
-    "n": 2
-   },
-   {
-    "w": "tabique",
-    "n": 2
-   },
-   {
-    "w": "tubería",
     "n": 2
    },
    {
@@ -449,19 +413,15 @@
     "n": 1
    },
    {
-    "w": "chubasco",
-    "n": 1
-   },
-   {
     "w": "contraventana",
     "n": 1
    },
    {
-    "w": "despejado",
+    "w": "golpe",
     "n": 1
    },
    {
-    "w": "golpe",
+    "w": "grava",
     "n": 1
    },
    {
@@ -477,19 +437,19 @@
     "n": 1
    },
    {
-    "w": "muro",
-    "n": 1
-   },
-   {
-    "w": "paseo",
-    "n": 1
-   },
-   {
     "w": "ráfaga",
     "n": 1
    },
    {
     "w": "ruidoso",
+    "n": 1
+   },
+   {
+    "w": "trabajo",
+    "n": 1
+   },
+   {
+    "w": "vida",
     "n": 1
    }
   ]
@@ -498,12 +458,16 @@
   "id": "storms-and-the-sea#2",
   "palabras": [
    {
-    "w": "frase",
-    "n": 6
+    "w": "acuerdo",
+    "n": 12
+   },
+   {
+    "w": "material",
+    "n": 5
    },
    {
     "w": "cuerda",
-    "n": 3
+    "n": 4
    },
    {
     "w": "lodo",
@@ -512,14 +476,6 @@
    {
     "w": "tapia",
     "n": 2
-   },
-   {
-    "w": "valla",
-    "n": 2
-   },
-   {
-    "w": "apagada",
-    "n": 1
    },
    {
     "w": "embarcadero",
@@ -534,19 +490,11 @@
     "n": 1
    },
    {
-    "w": "fácil",
-    "n": 1
-   },
-   {
     "w": "faro",
     "n": 1
    },
    {
     "w": "hielo",
-    "n": 1
-   },
-   {
-    "w": "ladera",
     "n": 1
    },
    {
@@ -562,11 +510,11 @@
     "n": 1
    },
    {
-    "w": "reparar",
+    "w": "retraso",
     "n": 1
    },
    {
-    "w": "retraso",
+    "w": "rota",
     "n": 1
    },
    {
@@ -580,6 +528,14 @@
    {
     "w": "trecho",
     "n": 1
+   },
+   {
+    "w": "valla",
+    "n": 1
+   },
+   {
+    "w": "velero",
+    "n": 1
    }
   ]
  },
@@ -587,15 +543,23 @@
   "id": "storms-and-the-sea#3",
   "palabras": [
    {
-    "w": "alivio",
-    "n": 7
+    "w": "lista",
+    "n": 10
    },
    {
-    "w": "grava",
-    "n": 3
+    "w": "mojado",
+    "n": 5
    },
    {
-    "w": "basura",
+    "w": "café",
+    "n": 2
+   },
+   {
+    "w": "cruce",
+    "n": 2
+   },
+   {
+    "w": "levante",
     "n": 2
    },
    {
@@ -603,15 +567,7 @@
     "n": 2
    },
    {
-    "w": "vecino",
-    "n": 2
-   },
-   {
     "w": "apoyo",
-    "n": 1
-   },
-   {
-    "w": "balde",
     "n": 1
    },
    {
@@ -620,10 +576,6 @@
    },
    {
     "w": "ciencia",
-    "n": 1
-   },
-   {
-    "w": "colaboración",
     "n": 1
    },
    {
@@ -639,6 +591,10 @@
     "n": 1
    },
    {
+    "w": "firma",
+    "n": 1
+   },
+   {
     "w": "grifo",
     "n": 1
    },
@@ -647,7 +603,7 @@
     "n": 1
    },
    {
-    "w": "limpieza",
+    "w": "limpiar",
     "n": 1
    },
    {
@@ -663,10 +619,6 @@
     "n": 1
    },
    {
-    "w": "rotonda",
-    "n": 1
-   },
-   {
     "w": "toma",
     "n": 1
    }
@@ -676,24 +628,32 @@
   "id": "repeating-and-rephrasing#1",
   "palabras": [
    {
-    "w": "plazo",
-    "n": 8
+    "w": "obra",
+    "n": 11
    },
    {
-    "w": "factura",
-    "n": 4
+    "w": "señal",
+    "n": 5
    },
    {
-    "w": "acuerdo",
+    "w": "documento",
+    "n": 3
+   },
+   {
+    "w": "explicación",
     "n": 2
    },
    {
-    "w": "palabra",
+    "w": "murmullo",
     "n": 2
    },
    {
     "w": "quien",
     "n": 2
+   },
+   {
+    "w": "callado",
+    "n": 1
    },
    {
     "w": "confusión",
@@ -704,15 +664,7 @@
     "n": 1
    },
    {
-    "w": "documento",
-    "n": 1
-   },
-   {
     "w": "gestión",
-    "n": 1
-   },
-   {
-    "w": "hilo",
     "n": 1
    },
    {
@@ -720,27 +672,11 @@
     "n": 1
    },
    {
-    "w": "murmullo",
-    "n": 1
-   },
-   {
-    "w": "oración",
-    "n": 1
-   },
-   {
     "w": "presentar",
     "n": 1
    },
    {
-    "w": "sentido",
-    "n": 1
-   },
-   {
     "w": "solicitud",
-    "n": 1
-   },
-   {
-    "w": "texto",
     "n": 1
    }
   ]
@@ -749,11 +685,15 @@
   "id": "repeating-and-rephrasing#2",
   "palabras": [
    {
-    "w": "cifra",
-    "n": 7
+    "w": "tono",
+    "n": 11
    },
    {
-    "w": "gordo",
+    "w": "comentario",
+    "n": 6
+   },
+   {
+    "w": "lápiz",
     "n": 2
    },
    {
@@ -777,15 +717,7 @@
     "n": 1
    },
    {
-    "w": "contexto",
-    "n": 1
-   },
-   {
     "w": "debate",
-    "n": 1
-   },
-   {
-    "w": "decisión",
     "n": 1
    },
    {
@@ -801,23 +733,15 @@
     "n": 1
    },
    {
+    "w": "gordo",
+    "n": 1
+   },
+   {
     "w": "idioma",
     "n": 1
    },
    {
-    "w": "pista",
-    "n": 1
-   },
-   {
     "w": "realidad",
-    "n": 1
-   },
-   {
-    "w": "réplica",
-    "n": 1
-   },
-   {
-    "w": "resultado",
     "n": 1
    },
    {
@@ -838,11 +762,15 @@
   "id": "repeating-and-rephrasing#3",
   "palabras": [
    {
-    "w": "lento",
-    "n": 7
+    "w": "punto",
+    "n": 9
    },
    {
-    "w": "dinero",
+    "w": "exacto",
+    "n": 6
+   },
+   {
+    "w": "consejo",
     "n": 2
    },
    {
@@ -850,7 +778,7 @@
     "n": 2
    },
    {
-    "w": "lápiz",
+    "w": "manera",
     "n": 2
    },
    {
@@ -862,27 +790,11 @@
     "n": 1
    },
    {
-    "w": "comentario",
-    "n": 1
-   },
-   {
-    "w": "consejo",
-    "n": 1
-   },
-   {
     "w": "desacuerdo",
     "n": 1
    },
    {
     "w": "equivocado",
-    "n": 1
-   },
-   {
-    "w": "exacto",
-    "n": 1
-   },
-   {
-    "w": "explicación",
     "n": 1
    },
    {
@@ -896,10 +808,6 @@
    {
     "w": "sílaba",
     "n": 1
-   },
-   {
-    "w": "susurro",
-    "n": 1
    }
   ]
  },
@@ -907,19 +815,23 @@
   "id": "sayings-and-nicknames#1",
   "palabras": [
    {
-    "w": "prisa",
-    "n": 8
+    "w": "duro",
+    "n": 9
    },
    {
     "w": "voto",
     "n": 4
    },
    {
+    "w": "ser",
+    "n": 3
+   },
+   {
     "w": "copa",
     "n": 2
    },
    {
-    "w": "manera",
+    "w": "vecino",
     "n": 2
    },
    {
@@ -955,10 +867,6 @@
     "n": 1
    },
    {
-    "w": "imagen",
-    "n": 1
-   },
-   {
     "w": "junto",
     "n": 1
    },
@@ -975,19 +883,15 @@
     "n": 1
    },
    {
-    "w": "reclamación",
-    "n": 1
-   },
-   {
-    "w": "risueño",
-    "n": 1
-   },
-   {
     "w": "rotulador",
     "n": 1
    },
    {
     "w": "sátira",
+    "n": 1
+   },
+   {
+    "w": "simpático",
     "n": 1
    }
   ]
@@ -996,8 +900,16 @@
   "id": "sayings-and-nicknames#2",
   "palabras": [
    {
-    "w": "lista",
-    "n": 6
+    "w": "frase",
+    "n": 7
+   },
+   {
+    "w": "ese",
+    "n": 3
+   },
+   {
+    "w": "discreto",
+    "n": 2
    },
    {
     "w": "gracias",
@@ -1020,6 +932,14 @@
     "n": 1
    },
    {
+    "w": "dinero",
+    "n": 1
+   },
+   {
+    "w": "grosero",
+    "n": 1
+   },
+   {
     "w": "hijo",
     "n": 1
    },
@@ -1029,10 +949,6 @@
    },
    {
     "w": "lema",
-    "n": 1
-   },
-   {
-    "w": "llamada",
     "n": 1
    },
    {
@@ -1060,19 +976,7 @@
     "n": 1
    },
    {
-    "w": "reacción",
-    "n": 1
-   },
-   {
     "w": "tapete",
-    "n": 1
-   },
-   {
-    "w": "vivienda",
-    "n": 1
-   },
-   {
-    "w": "vulgar",
     "n": 1
    }
   ]
@@ -1081,12 +985,20 @@
   "id": "sayings-and-nicknames#3",
   "palabras": [
    {
-    "w": "año",
+    "w": "cifra",
+    "n": 9
+   },
+   {
+    "w": "total",
     "n": 5
    },
    {
-    "w": "anuncio",
+    "w": "confianza",
     "n": 3
+   },
+   {
+    "w": "gas",
+    "n": 2
    },
    {
     "w": "agradable",
@@ -1101,27 +1013,7 @@
     "n": 1
    },
    {
-    "w": "colección",
-    "n": 1
-   },
-   {
-    "w": "confianza",
-    "n": 1
-   },
-   {
     "w": "ensayo",
-    "n": 1
-   },
-   {
-    "w": "exacta",
-    "n": 1
-   },
-   {
-    "w": "fondo",
-    "n": 1
-   },
-   {
-    "w": "gracia",
     "n": 1
    },
    {
@@ -1133,19 +1025,15 @@
     "n": 1
    },
    {
+    "w": "ofrecer",
+    "n": 1
+   },
+   {
     "w": "panadero",
     "n": 1
    },
    {
-    "w": "pausa",
-    "n": 1
-   },
-   {
     "w": "premio",
-    "n": 1
-   },
-   {
-    "w": "prudente",
     "n": 1
    },
    {
@@ -1166,19 +1054,23 @@
   "id": "deals-and-estimates#1",
   "palabras": [
    {
-    "w": "cesta",
-    "n": 7
+    "w": "mancha",
+    "n": 8
    },
    {
-    "w": "herramienta",
-    "n": 4
-   },
-   {
-    "w": "condición",
-    "n": 2
+    "w": "plástico",
+    "n": 5
    },
    {
     "w": "tapar",
+    "n": 3
+   },
+   {
+    "w": "viejo",
+    "n": 3
+   },
+   {
+    "w": "precio",
     "n": 2
    },
    {
@@ -1240,14 +1132,6 @@
    {
     "w": "palma",
     "n": 1
-   },
-   {
-    "w": "profundidad",
-    "n": 1
-   },
-   {
-    "w": "pulir",
-    "n": 1
    }
   ]
  },
@@ -1256,18 +1140,26 @@
   "palabras": [
    {
     "w": "orden",
-    "n": 5
+    "n": 8
    },
    {
     "w": "mitad",
+    "n": 4
+   },
+   {
+    "w": "propuesta",
     "n": 3
    },
    {
-    "w": "apagado",
-    "n": 1
+    "w": "descuento",
+    "n": 2
    },
    {
-    "w": "aprobación",
+    "w": "registro",
+    "n": 2
+   },
+   {
+    "w": "apagado",
     "n": 1
    },
    {
@@ -1283,15 +1175,15 @@
     "n": 1
    },
    {
+    "w": "fin",
+    "n": 1
+   },
+   {
     "w": "impuesto",
     "n": 1
    },
    {
     "w": "miembro",
-    "n": 1
-   },
-   {
-    "w": "minoría",
     "n": 1
    },
    {
@@ -1311,19 +1203,7 @@
     "n": 1
    },
    {
-    "w": "rebaja",
-    "n": 1
-   },
-   {
-    "w": "registro",
-    "n": 1
-   },
-   {
     "w": "resta",
-    "n": 1
-   },
-   {
-    "w": "saldo",
     "n": 1
    },
    {
@@ -1331,11 +1211,11 @@
     "n": 1
    },
    {
-    "w": "total",
+    "w": "turno",
     "n": 1
    },
    {
-    "w": "turno",
+    "w": "unánime",
     "n": 1
    }
   ]
@@ -1345,7 +1225,15 @@
   "palabras": [
    {
     "w": "resto",
-    "n": 5
+    "n": 8
+   },
+   {
+    "w": "deuda",
+    "n": 4
+   },
+   {
+    "w": "pena",
+    "n": 3
    },
    {
     "w": "callada",
@@ -1376,10 +1264,6 @@
     "n": 1
    },
    {
-    "w": "entero",
-    "n": 1
-   },
-   {
     "w": "humilde",
     "n": 1
    },
@@ -1396,27 +1280,11 @@
     "n": 1
    },
    {
-    "w": "negativa",
-    "n": 1
-   },
-   {
-    "w": "obligación",
-    "n": 1
-   },
-   {
     "w": "poner",
     "n": 1
    },
    {
-    "w": "privilegio",
-    "n": 1
-   },
-   {
     "w": "quieto",
-    "n": 1
-   },
-   {
-    "w": "reserva",
     "n": 1
    },
    {
@@ -1433,15 +1301,19 @@
   "id": "trust-and-rumours#1",
   "palabras": [
    {
-    "w": "reunión",
-    "n": 5
+    "w": "reserva",
+    "n": 7
    },
    {
-    "w": "deuda",
+    "w": "reunión",
+    "n": 4
+   },
+   {
+    "w": "otoño",
     "n": 3
    },
    {
-    "w": "café",
+    "w": "palabra",
     "n": 2
    },
    {
@@ -1465,6 +1337,10 @@
     "n": 1
    },
    {
+    "w": "comprobar",
+    "n": 1
+   },
+   {
     "w": "confiar",
     "n": 1
    },
@@ -1477,23 +1353,7 @@
     "n": 1
    },
    {
-    "w": "desconfiar",
-    "n": 1
-   },
-   {
     "w": "esconder",
-    "n": 1
-   },
-   {
-    "w": "fecha",
-    "n": 1
-   },
-   {
-    "w": "fiel",
-    "n": 1
-   },
-   {
-    "w": "lealtad",
     "n": 1
    },
    {
@@ -1505,15 +1365,19 @@
     "n": 1
    },
    {
-    "w": "pena",
-    "n": 1
-   },
-   {
     "w": "privado",
     "n": 1
    },
    {
-    "w": "situación",
+    "w": "suspicaz",
+    "n": 1
+   },
+   {
+    "w": "testigo",
+    "n": 1
+   },
+   {
+    "w": "vaya",
     "n": 1
    }
   ]
@@ -1522,32 +1386,20 @@
   "id": "trust-and-rumours#2",
   "palabras": [
    {
+    "w": "parte",
+    "n": 8
+   },
+   {
     "w": "hecho",
     "n": 3
    },
    {
-    "w": "media",
-    "n": 3
-   },
-   {
-    "w": "cruce",
-    "n": 2
-   },
-   {
-    "w": "punto",
-    "n": 2
-   },
-   {
-    "w": "señal",
-    "n": 2
-   },
-   {
     "w": "callar",
-    "n": 1
+    "n": 2
    },
    {
-    "w": "criticar",
-    "n": 1
+    "w": "media",
+    "n": 2
    },
    {
     "w": "dar",
@@ -1555,14 +1407,6 @@
    },
    {
     "w": "defender",
-    "n": 1
-   },
-   {
-    "w": "difundir",
-    "n": 1
-   },
-   {
-    "w": "elegir",
     "n": 1
    },
    {
@@ -1598,11 +1442,15 @@
     "n": 1
    },
    {
-    "w": "relato",
+    "w": "rincón",
     "n": 1
    },
    {
-    "w": "rincón",
+    "w": "verdad",
+    "n": 1
+   },
+   {
+    "w": "versión",
     "n": 1
    }
   ]
@@ -1612,10 +1460,14 @@
   "palabras": [
    {
     "w": "techo",
-    "n": 6
+    "n": 8
    },
    {
-    "w": "ser",
+    "w": "sello",
+    "n": 4
+   },
+   {
+    "w": "tabique",
     "n": 3
    },
    {
@@ -1624,10 +1476,6 @@
    },
    {
     "w": "cajas",
-    "n": 1
-   },
-   {
-    "w": "callado",
     "n": 1
    },
    {
@@ -1651,14 +1499,6 @@
     "n": 1
    },
    {
-    "w": "instalación",
-    "n": 1
-   },
-   {
-    "w": "logro",
-    "n": 1
-   },
-   {
     "w": "mejora",
     "n": 1
    },
@@ -1676,14 +1516,6 @@
    },
    {
     "w": "sereno",
-    "n": 1
-   },
-   {
-    "w": "tranquilidad",
-    "n": 1
-   },
-   {
-    "w": "triunfo",
     "n": 1
    },
    {
