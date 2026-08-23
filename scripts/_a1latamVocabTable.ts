@@ -1,5 +1,5 @@
 /** Tabla de vocabulario del A1 latam: una fila por historia con palabras,
- *  habla citada, plazas, escalera (encuentros por plaza, criterio del gate) y
+ *  habla citada, plazas, escalera (HISTORIAS distintas por plaza, criterio del gate) y
  *  cuantas plazas salen una sola vez. Lee de la BASE. */
 import { config } from "dotenv";
 config({ path: ".env" }); config({ path: ".env.local" });

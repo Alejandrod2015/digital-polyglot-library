@@ -11,7 +11,12 @@ for (const s of stories) for (const v of s.vocab)
   enc.push({ k: clave(v), n: cuerpos.filter((c) => c.has(clave(v))).length, de: `${s.topic}#${s.slotIndex}` });
 const media = enc.reduce((a, b) => a + b.n, 0) / enc.length;
 const multi = enc.filter((e) => /\s/.test(e.k));
-console.log(`media ${media.toFixed(2)} (liston 2.5) · total ${enc.reduce((a,b)=>a+b.n,0)} encuentros / ${enc.length} plazas`);
+// "historias", no "encuentros": el check cuenta en cuantos CUERPOS distintos
+// sale la clave (un Set por historia), no cuantas veces sale. Una palabra
+// repetida tres veces dentro de la misma historia puntua 1. El mensaje del
+// gate dice "encuentros" y hace leer 2,5 como "dos veces y media al leer";
+// es "en dos historias y media de las 21".
+console.log(`media ${media.toFixed(2)} (liston 2.5) · total ${enc.reduce((a,b)=>a+b.n,0)} pares (palabra, historia) / ${enc.length} plazas`);
 console.log(`multipalabra ${multi.length} plazas (siempre 0) · una sola vez ${enc.filter((e)=>e.n<=1).length}`);
 if (process.argv.includes("--por-historia")) {
   const todas = enc.map((e) => e.k);
