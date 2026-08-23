@@ -464,9 +464,15 @@ export function validateJourneyStories(
   // ── 12. Escalera de recirculacion ──────────────────────────
   //
   // Una plaza que sale una sola vez en todo el journey se enseña y no se vuelve
-  // a ver. El escenario ideal son cuatro encuentros por palabra
-  // ([[project_vocab_recirculation_ladder]]), con 12 portables y 8 ancladas al
-  // sitio por historia.
+  // a ver.
+  //
+  // OJO CON LA UNIDAD, que este check la tuvo mal escrita hasta el 2026-08-23 y
+  // costo media conversacion: lo que cuenta son HISTORIAS POR PLAZA, no
+  // encuentros. Repetir la palabra tres veces dentro de su propia historia
+  // sigue valiendo 1, porque cada cuerpo entra como un Set. El ideal de cuatro
+  // ENCUENTROS de [[project_vocab_recirculation_ladder]] es otra unidad (cuenta
+  // apariciones, y su encuentro 2 es justamente dentro de la misma historia),
+  // asi que los dos numeros no se comparan aunque se parezcan.
   //
   // EL UMBRAL NO ESTA INVENTADO: es el listón que ya tienen los buenos, medido
   // sobre el catalogo el 2026-08-23. En A0 los journeys publicados dan 4,25
@@ -520,10 +526,10 @@ export function validateJourneyStories(
   const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 2.5, B1: 2.0 };
   const suelo = MEDIA_MINIMA[level];
   if (suelo === undefined) {
-    noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
+    noImpl("journey-vocab-recirculation", "Cada plaza de vocab vuelve en otra historia",
       `Sin umbral calibrado para ${level || "?"}: el catalogo en ese nivel va de 0,8 a 1,5 y no hay un buen precedente del que sacar el liston. Medir antes de gatear.`);
   } else if (!stories.some((s) => s.vocab && s.vocab.length)) {
-    noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
+    noImpl("journey-vocab-recirculation", "Cada plaza de vocab vuelve en otra historia",
       "No se paso el vocab de las historias; sin el no se puede contar un encuentro.");
   } else {
     const tok = (t: string) => (t.toLowerCase().match(/\p{L}+/gu) ?? []);
@@ -535,9 +541,9 @@ export function validateJourneyStories(
       enc.push(cuerpos.filter((c) => c.has(clave(v))).length);
     const media = enc.length ? enc.reduce((a, b) => a + b, 0) / enc.length : 0;
     const unaVez = enc.filter((n) => n <= 1).length;
-    push("journey-vocab-recirculation", `Cada plaza de vocab se reencuentra (media ${suelo} o mas en ${level})`,
+    push("journey-vocab-recirculation", `Cada plaza de vocab vuelve en otra historia (media ${suelo} historias por plaza en ${level})`,
       media >= suelo,
-      `media ${media.toFixed(2)} encuentros por plaza (ideal 4, liston de los buenos ${suelo}) · ${unaVez}/${enc.length} salen una sola vez`);
+      `media ${media.toFixed(2)} HISTORIAS por plaza (liston ${suelo}; repetir la palabra dentro de su propia historia no suma) · ${unaVez}/${enc.length} salen en un solo cuerpo`);
   }
 
   // ── 13. El RENDER, no el texto ─────────────────────────────

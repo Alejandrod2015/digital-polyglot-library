@@ -89,7 +89,7 @@
       "id": "journey-vocab-recirculation",
       "gate": "journey",
       "check": "journey-vocab-recirculation",
-      "rule": "Cada plaza de vocab se reencuentra: media de 3,0 en A0, 2,5 en A1 y 2,0 en B1 (el techo que deja el tope de 170 palabras); sin umbral calibrado, el check bloquea",
+      "rule": "Cada plaza de vocab vuelve en otra historia: media de HISTORIAS por plaza, 3,0 en A0, 2,5 en A1 y 2,0 en B1. No son los 4 ENCUENTROS del ideal de diseno: repetir la palabra dentro de su propia historia no suma. Sin umbral calibrado, el check bloquea",
       "memory": "project_vocab_recirculation_ladder"
     },
     {

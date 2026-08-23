@@ -9,7 +9,7 @@ for (const s of S) for (const v of s.vocab) {
   filas.push({ k, n: cuerpos.filter((c) => c.set.has(k)).length, de: `${s.topic}#${s.slotIndex}` });
 }
 const media = filas.reduce((a, b) => a + b.n, 0) / filas.length;
-console.log(`media ${media.toFixed(2)} sobre ${filas.length} plazas · ${filas.filter((f) => f.n <= 1).length} con una sola aparicion`);
+console.log(`media ${media.toFixed(2)} historias por plaza sobre ${filas.length} plazas · ${filas.filter((f) => f.n <= 1).length} con una sola aparicion`);
 const falta = Math.ceil(2.0 * filas.length) - filas.reduce((a, b) => a + b.n, 0);
 console.log(`faltan ${falta} apariciones para la media 2,5`);
 if (process.argv[3] === "--lista") {
