@@ -10,7 +10,7 @@ for (const s of S) for (const v of s.vocab) {
 }
 const media = filas.reduce((a, b) => a + b.n, 0) / filas.length;
 console.log(`media ${media.toFixed(2)} sobre ${filas.length} plazas · ${filas.filter((f) => f.n <= 1).length} con una sola aparicion`);
-const falta = Math.ceil(2.5 * filas.length) - filas.reduce((a, b) => a + b.n, 0);
+const falta = Math.ceil(2.0 * filas.length) - filas.reduce((a, b) => a + b.n, 0);
 console.log(`faltan ${falta} apariciones para la media 2,5`);
 if (process.argv[3] === "--lista") {
   for (const f of filas.filter((x) => x.n <= 1).sort((a, b) => a.de.localeCompare(b.de)))
