@@ -76,6 +76,14 @@ export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   GDzHdQOi6jjf8zaXhCYD: { note: "Raquel Expressive and Energetic (BR, f); reserva PT-BR; user-approved 2026-08-12" },
   qPfM2laM0pRL4rrZtBGl: { note: "Sandro Dutra Articulated and Clear (BR, m); reserva PT-BR; user-approved 2026-08-12" },
   czvzJwIVS2asEKnthV40: { note: "Daniel Brazilian Conversational Voice (BR, m); reserva PT-BR; user-approved 2026-08-12" },
+
+  // ── Primera voz rioplatense del proyecto. Aprobada por el usuario el
+  // 2026-08-23 tras la audicion del shared library (public/_voces-ar-narrador.html,
+  // candidata 11). Narra Friends ES A0 argentina, journey de narrador unico:
+  // lee los 21 cuerpos y tambien el habla citada de Julieta y Damian. Ya estaba
+  // cableada como voz argentina por defecto en src/lib/elevenlabs.ts, donde
+  // hasta hoy habria tirado por no estar en esta lista.
+  p7AwDmKvTdoHTBuueGvP: { note: "Malena Warm, Dynamic and Confident (AR, f); narradora de Friends ES A0 argentina; user-approved 2026-08-23" },
 };
 
 export function isVoiceApproved(voiceId: string | null | undefined): boolean {

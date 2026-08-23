@@ -71,6 +71,13 @@ const CONFIG: Record<string, Cfg> = {
     journeyId: "cmss0fkc40007j8dub1zpa1kc", voiceId: "gfKKsLN1k0oYYN9n2dXX",
     voiceName: "Violetta (italiano)", label: "Traveler IT Italy A0", targetRate: 2.5,
   },
+  // Narradora: Malena, elegida por el usuario el 2026-08-23 sobre las previews
+  // del shared library (public/_voces-ar-narrador.html). Narrador unico: lee
+  // los 21 cuerpos y tambien el habla citada de Julieta y Damian.
+  "ar-a0": {
+    journeyId: "cmt5vx8du000732fjgkwi59ks", voiceId: "p7AwDmKvTdoHTBuueGvP",
+    voiceName: "Malena (argentina)", label: "Friends ES Argentina A0", targetRate: 2.7,
+  },
   "ptbr-a0": {
     journeyId: "cmsou2uk0000732mqa4oatcmn", voiceId: "7iqXtOF3wl3pomwXFY7G",
     voiceName: "Fernanda (brasileño)", label: "Traveler PT Brazil A0", targetRate: 2.85,
