@@ -11,6 +11,12 @@ import { splitSentences } from "@/lib/exampleSentence";
 
 export type PracticeFavoriteItem = {
   word: string;
+  /** Forma FLEXIONADA tal como aparece en el cuerpo de la historia, cuando el
+   *  vocab la guarda ("arbeitet" para el lema "arbeiten"). `fill_blank` la
+   *  necesita porque su respuesta es la superficie, no el lema: sin ella los
+   *  distractores salen en infinitivo y la respuesta se acierta por la forma
+   *  sin leer la frase. Ver `getDistractorWords(..., answerForm)`. */
+  surface?: string | null;
   translation: string;
   wordType?: string | null;
   exampleSentence?: string | null;
@@ -329,7 +335,14 @@ function germanVerbForm(raw: string): "infinitive" | "finite" | null {
 function getDistractorWords(
   item: PracticeFavoriteItem,
   pool: PracticeFavoriteItem[],
-  max = 3
+  max = 3,
+  /** Forma que va a ser la RESPUESTA. `fill_blank` la pasa porque su respuesta
+   *  es la superficie flexionada del texto, no el lema: comparar la forma de
+   *  los candidatos contra el LEMA dejaba siempre infinitivo contra infinitivo
+   *  y regalaba la respuesta (33% de los fill_blank del Traveler DE A0 medidos
+   *  el 2026-08-19). Cuando llega, los candidatos se comparan y se emiten con
+   *  SU superficie, para que las cuatro opciones tengan la misma forma. */
+  answerForm?: string | null
 ): string[] {
   // Distractores grammar-aware: si el target es "mit Nachdruck"
   // (frase preposicional) y los distractores son `Trubel` (sustantivo)
@@ -401,6 +414,7 @@ function getDistractorWords(
   };
   const byLang = (source: PracticeFavoriteItem[]) => source.filter(langOk);
 
+  const answerIsMultiword = normalizeText(answerForm ?? "").includes(" ");
   const picked: string[] = [];
   const seen = new Set<string>();
   const drainFrom = (source: PracticeFavoriteItem[]) => {
@@ -408,8 +422,19 @@ function getDistractorWords(
       if (picked.length >= max) break;
       const key = normalizeKey(candidate.word);
       if (seen.has(key)) continue;
+      // La opcion tiene que tener la MISMA FORMA que la respuesta, o el
+      // ejercicio se resuelve mirando la forma. Si la respuesta arrastra el
+      // articulo ("das Schloss", porque el hueco se comio el determinante),
+      // el distractor va con el suyo ("der Krieg") y no desnudo; si la
+      // respuesta es una sola palabra flexionada ("arbeitet"), el distractor
+      // va en su superficie ("kocht") y no en infinitivo.
+      const emitted = normalizeText(
+        !answerForm || answerIsMultiword ? candidate.word : candidate.surface || candidate.word
+      );
+      if (!emitted || normalizeKey(emitted) === normalizeKey(answerForm ?? "")) continue;
+      if (answerForm && emitted.includes(" ") !== answerIsMultiword) continue;
       seen.add(key);
-      picked.push(candidate.word);
+      picked.push(emitted);
     }
   };
 
@@ -429,9 +454,14 @@ function getDistractorWords(
   // ANTES de los niveles laxos y, como ellos, solo como preferencia: si no
   // llena las cuatro opciones, sigue cayendo hacia abajo.
   const targetForm =
-    normalizeKey(item.language) === "german" ? germanVerbForm(item.word) : null;
+    normalizeKey(item.language) === "german"
+      ? germanVerbForm(answerForm || item.word)
+      : null;
   const formMatch = (candidate: PracticeFavoriteItem): boolean =>
-    !!targetForm && germanVerbForm(candidate.word) === targetForm;
+    !!targetForm &&
+    germanVerbForm(
+      !answerForm || answerIsMultiword ? candidate.word : candidate.surface || candidate.word
+    ) === targetForm;
 
   if (targetAgr) drainFrom(byLang(sameShapeAndType.filter(agreementMatch)));
   if (targetForm && picked.length < max) drainFrom(byLang(sameShapeAndType.filter(formMatch)));
@@ -512,8 +542,14 @@ function getSentenceWithBlank(
   const word = normalizeText(item.word);
   if (!sentence || !word) return null;
 
-  // Try literal match first.
-  let pattern = new RegExp(escapeRegExp(word), "i");
+  // Try literal match first. El literal NO puede quedarse a mitad de palabra:
+  // con el vocab "die Glocke" y la frase "...und die Glocken schlagen sechs",
+  // el patron sin frontera blanqueaba solo "die Glocke" y dejaba la "n" suelta
+  // ("_____n schlagen sechs"), asi que ninguna de las otras tres opciones
+  // encajaba y el hueco se resolvia mirando la terminacion. Si la palabra sale
+  // flexionada, el literal falla y cae al stem fallback de abajo, que ya se
+  // traga la terminacion entera.
+  let pattern = new RegExp(`${escapeRegExp(word)}(?![\\p{L}\\p{M}\\d])`, "iu");
   let isStemFallback = false;
   if (!pattern.test(sentence)) {
     // Stem fallback for inflected forms. The lemma stored in vocab is
@@ -562,7 +598,9 @@ export function markTargetWordInSentence(sentence: string, word: string): string
   if (!sentence || sentence.includes("[[")) return sentence;
   const w = normalizeText(word);
   if (!w) return sentence;
-  let pattern = new RegExp(escapeRegExp(w), "i");
+  // Misma frontera que en `getSentenceWithBlank`: el resaltado tiene que caer
+  // sobre la palabra entera, no sobre su prefijo.
+  let pattern = new RegExp(`${escapeRegExp(w)}(?![\\p{L}\\p{M}\\d])`, "iu");
   if (!pattern.test(sentence)) {
     const stemLen = Math.max(3, w.length - 2);
     const stem = w.slice(0, stemLen);
@@ -728,10 +766,27 @@ function createFillBlankExercise(
   // the gap-fill answer didn't match the grammatical context the
   // learner was reading, so the option set felt nonsensical.
   const answerForm = blanked.matchedForm;
-  const answerStartsLower = answerForm.charAt(0) === answerForm.charAt(0).toLocaleLowerCase();
-  const distractors = getDistractorWords(item, getLanguagePool(item.language, pool)).map((d) =>
-    matchFirstCharCase(d, answerStartsLower)
-  );
+  // `matchFirstCharCase` solo toca la PRIMERA letra. Con respuesta de dos
+  // palabras eso es el articulo ("Die Wellen" al principio de frase contra
+  // "der Stein"), que es justo lo que hay que igualar; el sustantivo aleman
+  // conserva su mayuscula porque los distractores llegan con su lema entero.
+  const answerStartsLower =
+    answerForm.charAt(0) === answerForm.charAt(0).toLocaleLowerCase();
+  // Se piden mas de tres a proposito: el filtro de abajo tira algunos y sin
+  // margen el ejercicio se quedaria en menos de cuatro opciones y se perderia.
+  const rawDistractors = getDistractorWords(
+    item,
+    getLanguagePool(item.language, pool),
+    6,
+    answerForm
+  ).map((d) => matchFirstCharCase(d, answerStartsLower));
+  // Un distractor que YA esta escrito en la propia frase se descarta solo, sin
+  // saber la palabra. Aparecio al sacar los distractores de las superficies de
+  // la misma historia: "Hannah _____ in der Mitte und schaut..." con "schaut"
+  // entre las opciones.
+  const distractors = rawDistractors
+    .filter((d) => !new RegExp(`\\b${escapeRegExp(d)}\\b`, "iu").test(blanked.sentence))
+    .slice(0, 3);
   const options = shuffle([answerForm, ...distractors]);
   if (options.length < 4) return null;
   return {
