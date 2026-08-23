@@ -28,12 +28,25 @@ export function splitSentences(raw: string): string[] {
 
   // A fragment starting lowercase is a continuation (e.g. the tail of a quote:
   // `"No manches", le soltó`), not a new sentence.
+  //
+  // Y una réplica de DOS oraciones tampoco se parte. El corte de arriba admite
+  // la comilla de cierre como opcional, así que dentro de `“Sieben Jahre,
+  // Elias. Und du kommst zu spät.”` el punto de la primera contaba como final
+  // de oración: al reagrupar de tres en tres, el bloque cortaba en mitad de la
+  // réplica y en pantalla salía `“Sieben Jahre, Elias.` y, un párrafo más
+  // abajo, `Und du kommst zu spät.”` (visto el 2026-08-23 en el Traveler DE A0,
+  // 32 bloques partidos en 21 historias). Mientras la comilla siga abierta, el
+  // fragmento pertenece a la oración anterior.
+  const abiertas = (s: string) =>
+    (s.match(/[“„«]/g) ?? []).length - (s.match(/[”»]/g) ?? []).length;
   const merged: string[] = [];
   for (const segment of clean) {
+    const previa = merged[merged.length - 1];
     const shouldAttachToPrev =
-      merged.length > 0 && /^[\s,"'“”„«»)\]]*[\p{Ll}]/u.test(segment);
+      merged.length > 0 &&
+      (/^[\s,"'“”„«»)\]]*[\p{Ll}]/u.test(segment) || abiertas(previa) > 0);
     if (shouldAttachToPrev) {
-      merged[merged.length - 1] = `${merged[merged.length - 1]} ${segment}`;
+      merged[merged.length - 1] = `${previa} ${segment}`;
       continue;
     }
     merged.push(segment);
