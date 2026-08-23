@@ -38,6 +38,7 @@ import * as fs from "fs";
 import { PrismaClient } from "../src/generated/prisma";
 import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
+import { validateJourneyStories, type JourneyStoryInput } from "@/lib/validateJourneyStories";
 
 /** Build the cross-story summary the canonical validator needs to run its
  *  repetition / rotation / opening-rhythm / motif checks against siblings. */
@@ -474,6 +475,60 @@ function slugify(s: string): string {
     process.exit(1);
   }
   console.log(`\n✓ All ${results.length} stories pass the canonical validator (${ctx.language} ${ctx.level} ${ctx.variant}).`);
+
+  // ── GATE DE JOURNEY: lo que solo se ve mirando las 21 juntas ────
+  //
+  // POR QUÉ (2026-08-23). El validador canónico juzga una historia suelta, y
+  // por eso pasaron en verde tres reglas que son de conjunto: los siete
+  // personajes del Traveler DE A0 entraban sin decir QUÉ SON (tres con su
+  // presentación después de su primera línea citada), 14 de 21 abrían con la
+  // misma forma, y `Die zwei` sustituyó a los nombres en 13. Ninguna historia
+  // era mala por sí sola.
+  //
+  // Un check que no sabe medir el idioma del journey devuelve `not-implemented`
+  // y BLOQUEA igual que un fallo: pasar en vacío es lo que ya costó dos veces
+  // (`narrator-intro-block-shared` busca `um/uma`, `body-cefr-a0-grammar` solo
+  // conoce el español).
+  if (journeyId) {
+    const p3 = new PrismaClient();
+    let todas: JourneyStoryInput[] = [];
+    try {
+      const enTanda = new Map<string, any>(stories.map((d: any) => [`${d.topic}#${d.slotIndex}`, d]));
+      // EN ORDEN DE LECTURA. Sin ordenar, "la primera historia en que sale un
+      // personaje" era la que devolviera antes la base, y el check de
+      // presentacion senalaba la 19 para los siete.
+      const j3 = await p3.journey.findUnique({ where: { id: journeyId }, select: { topics: true } });
+      const orden = j3?.topics ?? [];
+      const filas = (await p3.journeyStory.findMany({
+        where: { journeyId }, select: { slug: true, title: true, text: true, topic: true, slotIndex: true },
+      })).sort((a, b) => (orden.indexOf(a.topic) - orden.indexOf(b.topic)) || (a.slotIndex - b.slotIndex));
+      const vistos = new Set<string>();
+      for (const f of filas) {
+        const k = `${f.topic}#${f.slotIndex}`;
+        vistos.add(k);
+        const d = enTanda.get(k);
+        const text = d ? String(d.text) : String(f.text ?? "");
+        if (!text.trim()) continue;
+        todas.push({ slug: d?.slug ?? f.slug ?? k, title: d?.title ?? f.title ?? "", text,
+                     language: ctx.language, level: ctx.level });
+      }
+      for (const [k, d] of enTanda) if (!vistos.has(k))
+        todas.push({ slug: d.slug ?? k, title: d.title, text: String(d.text), language: ctx.language, level: ctx.level });
+    } finally { await p3.$disconnect(); }
+
+    if (todas.length < 7) {
+      console.log(`\n[gate de journey] SALTADO: solo ${todas.length} historias con texto (hacen falta 7 para medir un conjunto).`);
+    } else {
+      const jc = validateJourneyStories(todas, { language: ctx.language, level: ctx.level });
+      const malos = jc.filter((c) => c.status !== "pass");
+      console.log(`\n── gate de journey (${todas.length} historias) ──`);
+      for (const c of jc) console.log(`   ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : "SIN IMPLEMENTAR"} [${c.id}] ${c.detail ?? ""}`);
+      if (malos.length) {
+        console.error(`\n✗ GATE DE JOURNEY: ${malos.length} regla(s) de conjunto sin cumplir. NOTHING WRITTEN.`);
+        process.exit(1);
+      }
+    }
+  }
 
   if (dry) { console.log("--dry: no DB write."); return; }
 

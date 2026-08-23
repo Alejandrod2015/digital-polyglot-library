@@ -4818,6 +4818,14 @@
   "startet": {
    "g": "starts an engine (starten)",
    "t": "verb"
+  },
+  "leuchtet": {
+   "g": "shines, is lit (leuchten)",
+   "t": "verb"
+  },
+  "weitem": {
+   "g": "from far away (von Weitem)",
+   "t": "adverb"
   }
  }
 }
