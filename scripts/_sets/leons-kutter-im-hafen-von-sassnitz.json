@@ -1,7 +1,7 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Kutter,der Steg,das Seil,die Kiste",
+  "word": "der Kutter,der Steg,das Seil,der Morgen",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
@@ -13,7 +13,7 @@
       "a small fishing boat",
       "a wooden walkway",
       "a rope",
-      "boxes"
+      "the morning"
      ]
     },
     {
@@ -23,7 +23,7 @@
       "a small fishing boat",
       "a wooden walkway",
       "a rope",
-      "boxes"
+      "the morning"
      ]
     },
     {
@@ -33,17 +33,17 @@
       "a small fishing boat",
       "a wooden walkway",
       "a rope",
-      "boxes"
+      "the morning"
      ]
     },
     {
-     "word": "die Kiste",
-     "answer": "boxes",
+     "word": "der Morgen",
+     "answer": "the morning",
      "options": [
       "a small fishing boat",
       "a wooden walkway",
       "a rope",
-      "boxes"
+      "the morning"
      ]
     }
    ],
@@ -169,28 +169,6 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Fang",
-  "sentence": "Der [[Fang]] ist heute klein, nur ein paar magere Dorsche.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the catch of fish",
-   "options": [
-    "the catch of fish",
-    "the price of fish",
-    "the smell of fish",
-    "the box of fish"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Der Fang ist heute klein, nur ein paar magere Dorsche.",
-    "targetWord": "Fang",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
   "word": "der Dorsch",
   "sentence": "Nur ein paar magere [[Dorsche]] liegen heute im Eis.",
   "payload": {
@@ -282,8 +260,7 @@
     "targetWord": "schreibst",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -355,98 +332,6 @@
   "featured": false
  },
  {
-  "type": "meaning_in_context",
-  "word": "streiten",
-  "sentence": "Möwen [[streiten]] hinter ihnen um die Reste.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to fight over something",
-   "options": [
-    "to fight over something",
-    "to share something",
-    "to hide something",
-    "to carry something"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Möwen streiten hinter ihnen um die Reste.",
-    "targetWord": "streiten",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Rest",
-  "sentence": "Die Möwen streiten um die [[Reste]] vom Fang.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "leftovers",
-   "options": [
-    "leftovers",
-    "nets",
-    "boxes",
-    "ropes"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Die Möwen streiten um die Reste vom Fang.",
-    "targetWord": "Reste",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Boot",
-  "sentence": "Der Kutter kommt langsam zwischen die anderen [[Boote]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "boats",
-   "options": [
-    "boats",
-    "houses",
-    "cars",
-    "trains"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Der Kutter kommt langsam zwischen die anderen Boote.",
-    "targetWord": "Boote",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Eis",
-  "sentence": "Die beiden mageren Dorsche liegen im [[Eis]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "ice",
-   "options": [
-    "ice",
-    "salt",
-    "sand",
-    "oil"
-   ],
-   "audioClip": {
-    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
-    "storySource": "user",
-    "sentence": "Die beiden mageren Dorsche liegen im Eis.",
-    "targetWord": "Eis",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
   "type": "fill_blank",
   "word": "scharf",
   "sentence": "Der Hafen riecht sehr _____ nach Salz und Diesel.",
@@ -507,60 +392,138 @@
   "featured": false
  },
  {
-  "type": "fill_blank",
-  "word": "magere",
-  "sentence": "Nur ein paar _____ Fische liegen heute in der Kiste.",
+  "type": "meaning_in_context",
+  "word": "bleiben",
+  "sentence": "Er sieht sie, und seine Hand [[bleibt]] am Seil.",
   "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "magere",
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stay in a place",
    "options": [
-    "magere",
-    "große",
-    "scharfe",
-    "offene"
-   ],
-   "translation": "Only two _____ fish lie in the box today.",
-   "optionTranslations": [
-    "lean",
-    "big",
-    "sharp",
-    "open"
+    "to stay in a place",
+    "to leave a place",
+    "to reach a place",
+    "to look for a place"
    ],
    "audioClip": {
     "storySlug": "leons-kutter-im-hafen-von-sassnitz",
     "storySource": "user",
-    "sentence": "Nur ein paar magere Fische liegen heute in der Kiste.",
-    "targetWord": "magere",
+    "sentence": "Er sieht sie, und seine Hand bleibt am Seil.",
+    "targetWord": "bleibt",
     "language": "german"
    }
   },
   "featured": false
  },
  {
-  "type": "fill_blank",
-  "word": "offen",
-  "sentence": "Er sieht sie und sein Mund bleibt _____.",
+  "type": "meaning_in_context",
+  "word": "klein",
+  "sentence": "Der Fang ist [[klein]], und nur zwei magere Dorsche liegen im Eis.",
   "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "offen",
+   "prompt": "Choose the meaning in context.",
+   "answer": "small",
    "options": [
-    "offen",
-    "groß",
-    "scharf",
-    "schlecht"
-   ],
-   "translation": "He sees her and his mouth stays _____.",
-   "optionTranslations": [
-    "open",
+    "small",
     "big",
-    "sharp",
-    "bad"
+    "long",
+    "heavy"
    ],
    "audioClip": {
     "storySlug": "leons-kutter-im-hafen-von-sassnitz",
     "storySource": "user",
-    "sentence": "Er sieht sie und sein Mund bleibt offen.",
-    "targetWord": "offen",
+    "sentence": "Der Fang ist klein, und nur zwei magere Dorsche liegen im Eis.",
+    "targetWord": "klein",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Jacke",
+  "sentence": "Er gibt ihr eine alte [[Jacke]] aus Gummi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a jacket",
+   "options": [
+    "a jacket",
+    "a hat",
+    "a scarf",
+    "a shoe"
+   ],
+   "audioClip": {
+    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+    "storySource": "user",
+    "sentence": "Er gibt ihr eine alte Jacke aus Gummi.",
+    "targetWord": "Jacke",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "riechen",
+  "sentence": "Sie ist viel zu groß und [[riecht]] nach Fisch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to smell of something",
+   "options": [
+    "to smell of something",
+    "to taste of something",
+    "to sound like something",
+    "to look like something"
+   ],
+   "audioClip": {
+    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+    "storySource": "user",
+    "sentence": "Sie ist viel zu groß und riecht nach Fisch.",
+    "targetWord": "riecht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vier",
+  "sentence": "Um [[vier]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "four",
+   "options": [
+    "four",
+    "two",
+    "five",
+    "ten"
+   ],
+   "audioClip": {
+    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+    "storySource": "user",
+    "sentence": "Um vier.",
+    "targetWord": "vier",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wohnen",
+  "sentence": "Er [[wohnt]] sein ganzes Leben hier.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to live in a place",
+   "options": [
+    "to live in a place",
+    "to work in a place",
+    "to visit a place",
+    "to leave a place"
+   ],
+   "audioClip": {
+    "storySlug": "leons-kutter-im-hafen-von-sassnitz",
+    "storySource": "user",
+    "sentence": "Er wohnt sein ganzes Leben hier.",
+    "targetWord": "wohnt",
     "language": "german"
    }
   },

@@ -1,7 +1,7 @@
 [
  {
   "type": "match_meaning",
-  "word": "die Werkstatt,das Regal,das Messer,der Vogel",
+  "word": "die Werkstatt,das Regal,die Hand,der Tisch",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
@@ -12,8 +12,8 @@
      "options": [
       "a workshop",
       "a shelf",
-      "a knife",
-      "a bird"
+      "a hand",
+      "a table"
      ]
     },
     {
@@ -22,28 +22,28 @@
      "options": [
       "a workshop",
       "a shelf",
-      "a knife",
-      "a bird"
+      "a hand",
+      "a table"
      ]
     },
     {
-     "word": "das Messer",
-     "answer": "a knife",
+     "word": "die Hand",
+     "answer": "a hand",
      "options": [
       "a workshop",
       "a shelf",
-      "a knife",
-      "a bird"
+      "a hand",
+      "a table"
      ]
     },
     {
-     "word": "der Vogel",
-     "answer": "a bird",
+     "word": "der Tisch",
+     "answer": "a table",
      "options": [
       "a workshop",
       "a shelf",
-      "a knife",
-      "a bird"
+      "a hand",
+      "a table"
      ]
     }
    ],
@@ -294,29 +294,6 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Griff",
-  "sentence": "Er kennt trotzdem noch jeden [[Griff]] am alten Tisch.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a practised hand movement",
-   "options": [
-    "a practised hand movement",
-    "a written recipe",
-    "a spoken order",
-    "a drawn plan"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Er kennt trotzdem noch jeden Griff am alten Tisch.",
-    "targetWord": "Griff",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
   "word": "das Holzstück",
   "sentence": "Auf dem Boden liegen viele kleine [[Holzstücke]].",
   "payload": {
@@ -363,29 +340,6 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "fliegen",
-  "sentence": "Der Vogel ist nicht fertig, aber er [[fliegt]] trotzdem.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to fly",
-   "options": [
-    "to fly",
-    "to swim",
-    "to walk",
-    "to sleep"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Der Vogel ist nicht fertig, aber er fliegt trotzdem.",
-    "targetWord": "fliegt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
   "word": "stecken",
   "sentence": "Sie [[steckt]] den kleinen Vogel in ihre Tasche.",
   "payload": {
@@ -402,29 +356,6 @@
     "storySource": "user",
     "sentence": "Sie steckt den kleinen Vogel in ihre Tasche.",
     "targetWord": "steckt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "nächste",
-  "sentence": "Die Werkstatt schließt schon im [[nächsten]] Winter.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "next",
-   "options": [
-    "next",
-    "last",
-    "every",
-    "same"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Die Werkstatt schließt schon im nächsten Winter.",
-    "targetWord": "nächsten",
     "language": "german"
    }
   },
@@ -514,30 +445,92 @@
   "featured": false
  },
  {
-  "type": "fill_blank",
-  "word": "dünn",
-  "sentence": "Die Klinge ist lang und so _____ wie Papier.",
+  "type": "meaning_in_context",
+  "word": "jeden",
+  "sentence": "Du kennst [[jeden]] Griff.",
   "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "dünn",
+   "prompt": "Choose the meaning in context.",
+   "answer": "every",
    "options": [
-    "dünn",
-    "scharf",
-    "vorsichtig",
-    "schwer"
-   ],
-   "translation": "The blade is long and as _____ as paper.",
-   "optionTranslations": [
-    "thin",
-    "sharp",
-    "careful",
-    "heavy"
+    "every",
+    "some",
+    "no",
+    "many"
    ],
    "audioClip": {
     "storySlug": "die-kuckucksuhr-von-noahs-vater",
     "storySource": "user",
-    "sentence": "Die Klinge ist lang und so dünn wie Papier.",
-    "targetWord": "dünn",
+    "sentence": "Du kennst jeden Griff.",
+    "targetWord": "jeden",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "riechen",
+  "sentence": "Sie ist schwer und [[riecht]] nach Öl.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to smell of something",
+   "options": [
+    "to smell of something",
+    "to taste of something",
+    "to sound like something",
+    "to look like something"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Sie ist schwer und riecht nach Öl.",
+    "targetWord": "riecht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "unten",
+  "sentence": "Sein Vater ist heute [[unten]] im Ort.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "down there",
+   "options": [
+    "down there",
+    "up there",
+    "over there",
+    "out there"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Sein Vater ist heute unten im Ort.",
+    "targetWord": "unten",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Winter",
+  "sentence": "Die Werkstatt schließt nächsten [[Winter]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "winter",
+   "options": [
+    "winter",
+    "spring",
+    "summer",
+    "autumn"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Die Werkstatt schließt nächsten Winter.",
+    "targetWord": "Winter",
     "language": "german"
    }
   },

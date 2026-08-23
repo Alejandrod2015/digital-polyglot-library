@@ -117,64 +117,6 @@
   }
  },
  {
-  "type": "fill_blank",
-  "word": "hört",
-  "sentence": "Sie sagt nichts und _____ nur das Meer.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "hört",
-   "options": [
-    "hört",
-    "öffnet",
-    "trägt",
-    "fragt"
-   ],
-   "translation": "She says nothing and only _____ the sea.",
-   "optionTranslations": [
-    "hears",
-    "opens",
-    "carries",
-    "asks"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Sie sagt nichts und hört nur das Meer.",
-    "targetWord": "hört",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "friert",
-  "sentence": "Der Wind ist scharf, und sie _____ oben sehr.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "friert",
-   "options": [
-    "friert",
-    "repariert",
-    "mietet",
-    "fragt"
-   ],
-   "translation": "The wind is sharp, and she _____ badly up there.",
-   "optionTranslations": [
-    "is cold",
-    "repairs",
-    "rents",
-    "asks"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Der Wind ist scharf, und sie friert oben sehr.",
-    "targetWord": "friert",
-    "language": "german"
-   }
-  }
- },
- {
   "type": "meaning_in_context",
   "word": "die Gummijacke",
   "sentence": "Sie zieht die alte [[Gummijacke]] enger um sich.",
@@ -192,35 +134,6 @@
     "storySource": "user",
     "sentence": "Sie zieht die alte Gummijacke enger um sich.",
     "targetWord": "Gummijacke",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "schweigt",
-  "sentence": "Er sagt seit dem Strand nichts und _____ noch immer.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "schweigt",
-   "options": [
-    "schweigt",
-    "bläst",
-    "winkt",
-    "hört"
-   ],
-   "translation": "He has said nothing since the beach and still _____.",
-   "optionTranslations": [
-    "stays silent",
-    "blows",
-    "waves",
-    "hears"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Er sagt seit dem Strand nichts und schweigt noch immer.",
-    "targetWord": "schweigt",
     "language": "german"
    }
   }
@@ -271,29 +184,6 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "manchmal",
-  "sentence": "Von hier sieht er [[manchmal]] die Küste von Dänemark.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sometimes",
-   "options": [
-    "sometimes",
-    "always",
-    "never",
-    "daily"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Von hier sieht er manchmal die Küste von Dänemark.",
-    "targetWord": "manchmal",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
   "word": "fragen",
   "sentence": "Er [[fragt]] sie sehr leise nach dem Winter.",
   "payload": {
@@ -312,8 +202,7 @@
     "targetWord": "fragt",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -335,8 +224,7 @@
     "targetWord": "weiten",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -358,31 +246,7 @@
     "targetWord": "Januar",
     "language": "german"
    }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "anders",
-  "sentence": "Er sagt nichts mehr, aber sein Gesicht ist [[anders]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "different",
-   "options": [
-    "different",
-    "the same",
-    "broken",
-    "tired"
-   ],
-   "audioClip": {
-    "storySlug": "der-leuchtturm-von-kap-arkona",
-    "storySource": "user",
-    "sentence": "Er sagt nichts mehr, aber sein Gesicht ist anders.",
-    "targetWord": "anders",
-    "language": "german"
-   }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -494,6 +358,151 @@
     "storySource": "user",
     "sentence": "Sie antwortet nicht schnell und denkt lange nach.",
     "targetWord": "antwortet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "hört",
+  "sentence": "Sie sagt nichts und _____ nur das Meer.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hört",
+   "options": [
+    "hört",
+    "öffnet",
+    "trägt",
+    "fragt"
+   ],
+   "translation": "She says nothing and only _____ the sea.",
+   "optionTranslations": [
+    "hears",
+    "opens",
+    "carries",
+    "asks"
+   ],
+   "audioClip": {
+    "storySlug": "der-leuchtturm-von-kap-arkona",
+    "storySource": "user",
+    "sentence": "Sie sagt nichts und hört nur das Meer.",
+    "targetWord": "hört",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "leise",
+  "sentence": "Er fragt dann sehr [[leise]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quietly",
+   "options": [
+    "quietly",
+    "loudly",
+    "quickly",
+    "angrily"
+   ],
+   "audioClip": {
+    "storySlug": "der-leuchtturm-von-kap-arkona",
+    "storySource": "user",
+    "sentence": "Er fragt dann sehr leise.",
+    "targetWord": "leise",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "klein",
+  "sentence": "Das Dorf unten liegt [[klein]] und dunkel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small",
+   "options": [
+    "small",
+    "big",
+    "long",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "der-leuchtturm-von-kap-arkona",
+    "storySource": "user",
+    "sentence": "Das Dorf unten liegt klein und dunkel.",
+    "targetWord": "klein",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dunkel",
+  "sentence": "Das Dorf unten liegt klein und [[dunkel]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dark",
+   "options": [
+    "dark",
+    "bright",
+    "warm",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "der-leuchtturm-von-kap-arkona",
+    "storySource": "user",
+    "sentence": "Das Dorf unten liegt klein und dunkel.",
+    "targetWord": "dunkel",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Treppe",
+  "sentence": "Die [[Treppe]] im Turm ist schmal und dreht sich ohne Ende.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stairs",
+   "options": [
+    "stairs",
+    "a bridge",
+    "a gate",
+    "a wall"
+   ],
+   "audioClip": {
+    "storySlug": "der-leuchtturm-von-kap-arkona",
+    "storySource": "user",
+    "sentence": "Die Treppe im Turm ist schmal und dreht sich ohne Ende.",
+    "targetWord": "Treppe",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nicken",
+  "sentence": "Er [[nickt]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to nod",
+   "options": [
+    "to nod",
+    "to shrug",
+    "to wave",
+    "to point"
+   ],
+   "audioClip": {
+    "storySlug": "der-leuchtturm-von-kap-arkona",
+    "storySource": "user",
+    "sentence": "Er nickt.",
+    "targetWord": "nickt",
     "language": "german"
    }
   },

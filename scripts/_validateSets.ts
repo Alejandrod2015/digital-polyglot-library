@@ -33,7 +33,18 @@ const norm = (s: string) =>
 // quemaste↔quemar, "acabo de"↔"acabar de"). We compare the FIRST token by
 // shared prefix, which absorbs verb-ending and plural drift without matching
 // unrelated words (tapa↔tarde stays uncovered).
-const firstTok = (s: string) => norm(s).split(/\s+/)[0] ?? "";
+// La cabeza del sintagma, no su primera palabra. En aleman el `word` del vocab
+// lleva el articulo ("die Kirche"), asi que comparando el PRIMER token todo
+// sustantivo femenino cubria a cualquier otro: el 2026-08-23, `die Kirche` daba
+// por cubierta `die Lehrerin` y la comprobacion de cobertura pasaba en vacio en
+// los cuatro journeys alemanes. Si el sintagma empieza por articulo, la cabeza
+// es la ULTIMA palabra.
+const ART = /^(der|die|das|den|dem|des|ein|eine|le|la|les|l|el|los|las|il|lo|gli|un|une|o|a|os|as)$/;
+const firstTok = (s: string) => {
+  const p = norm(s).split(/\s+/).filter(Boolean);
+  if (!p.length) return "";
+  return p.length > 1 && ART.test(p[0]) ? p[p.length - 1] : p[0];
+};
 const commonPrefix = (a: string, b: string) => {
   let i = 0;
   while (i < a.length && i < b.length && a[i] === b[i]) i++;

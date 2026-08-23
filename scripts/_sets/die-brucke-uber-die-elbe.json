@@ -103,28 +103,6 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Mitte",
-  "sentence": "Sie bleibt in der [[Mitte]] der langen Brücke.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the middle",
-   "options": [
-    "the middle",
-    "the end",
-    "the beginning",
-    "the entrance"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Sie bleibt in der Mitte der langen Brücke.",
-    "targetWord": "Mitte",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
   "word": "schauen",
   "sentence": "Sie [[schaut]] auf die andere Seite vom Fluss.",
   "payload": {
@@ -141,50 +119,6 @@
     "storySource": "user",
     "sentence": "Sie schaut auf die andere Seite vom Fluss.",
     "targetWord": "schaut",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Seite",
-  "sentence": "Die Türme stehen auf der anderen [[Seite]] vom Fluss.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a side",
-   "options": [
-    "a side",
-    "a corner",
-    "a floor",
-    "a roof"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Die Türme stehen auf der anderen Seite vom Fluss.",
-    "targetWord": "Seite",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Bild",
-  "sentence": "Er macht ein [[Bild]] von ihr auf der Brücke.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a photo",
-   "options": [
-    "a photo",
-    "a letter",
-    "a ticket",
-    "a drawing"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Er macht ein Bild von ihr auf der Brücke.",
-    "targetWord": "Bild",
     "language": "german"
    }
   }
@@ -257,36 +191,6 @@
  },
  {
   "type": "fill_blank",
-  "word": "fließt",
-  "sentence": "Das Wasser _____ langsam unter der alten Brücke.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "fließt",
-   "options": [
-    "fließt",
-    "schläft",
-    "faltet",
-    "stellt"
-   ],
-   "translation": "The water _____ slowly under the old bridge.",
-   "optionTranslations": [
-    "flows",
-    "sleeps",
-    "folds",
-    "puts upright"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Das Wasser fließt langsam unter der alten Brücke.",
-    "targetWord": "fließt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
   "word": "bleibt",
   "sentence": "Es regnet stark, und sie _____ heute lieber zu Hause.",
   "payload": {
@@ -312,8 +216,7 @@
     "targetWord": "bleibt",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "fill_blank",
@@ -342,8 +245,7 @@
     "targetWord": "dunkel",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "fill_blank",
@@ -372,38 +274,7 @@
     "targetWord": "weich",
     "language": "german"
    }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "jung",
-  "sentence": "Der Tag ist noch _____, und die Sonne steht tief.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "jung",
-   "options": [
-    "jung",
-    "dunkel",
-    "weich",
-    "lang"
-   ],
-   "translation": "The day is still _____, and the sun is low.",
-   "optionTranslations": [
-    "young",
-    "dark",
-    "soft",
-    "long"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Der Tag ist noch jung, und die Sonne steht tief.",
-    "targetWord": "jung",
-    "language": "german"
-   }
-  },
-  "featured": false
+  }
  },
  {
   "type": "fill_blank",
@@ -513,22 +384,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Student",
-  "sentence": "Sein Zimmer als [[Student]] liegt dort drüben am Fluss.",
+  "word": "das Wasser",
+  "sentence": "Er zeigt über das [[Wasser]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a student",
+   "answer": "water",
    "options": [
-    "a student",
-    "a teacher",
-    "a doctor",
-    "a worker"
+    "water",
+    "land",
+    "sky",
+    "sand"
    ],
    "audioClip": {
     "storySlug": "die-brucke-uber-die-elbe",
     "storySource": "user",
-    "sentence": "Sein Zimmer als Student liegt dort drüben am Fluss.",
-    "targetWord": "Student",
+    "sentence": "Er zeigt über das Wasser.",
+    "targetWord": "Wasser",
     "language": "german"
    }
   },
@@ -536,22 +407,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Stock",
-  "sentence": "Sein Zimmer liegt im dritten [[Stock]] mit Blick auf den Fluss.",
+  "word": "fahren",
+  "sentence": "Ein Schiff [[fährt]] unter ihnen durch.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a floor of a building",
+   "answer": "to travel by vehicle",
    "options": [
-    "a floor of a building",
-    "a staircase",
-    "a roof",
-    "a cellar"
+    "to travel by vehicle",
+    "to walk on foot",
+    "to wait for someone",
+    "to arrive too late"
    ],
    "audioClip": {
     "storySlug": "die-brucke-uber-die-elbe",
     "storySource": "user",
-    "sentence": "Sein Zimmer liegt im dritten Stock mit Blick auf den Fluss.",
-    "targetWord": "Stock",
+    "sentence": "Ein Schiff fährt unter ihnen durch.",
+    "targetWord": "fährt",
     "language": "german"
    }
   },
@@ -559,22 +430,114 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Ecke",
-  "sentence": "Die [[Ecken]] der alten Karte sind ganz kaputt.",
+  "word": "antworten",
+  "sentence": "Du bist jung, [[antwortet]] er nur.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "corners",
+   "answer": "to answer",
    "options": [
-    "corners",
-    "edges",
-    "lines",
-    "holes"
+    "to answer",
+    "to ask",
+    "to shout",
+    "to whisper"
    ],
    "audioClip": {
     "storySlug": "die-brucke-uber-die-elbe",
     "storySource": "user",
-    "sentence": "Die Ecken der alten Karte sind ganz kaputt.",
-    "targetWord": "Ecken",
+    "sentence": "Du bist jung, antwortet er nur.",
+    "targetWord": "antwortet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Jahr",
+  "sentence": "Und die sieben [[Jahre]] danach?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "years",
+   "options": [
+    "years",
+    "months",
+    "weeks",
+    "hours"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Und die sieben Jahre danach?",
+    "targetWord": "Jahre",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Jacke",
+  "sentence": "Sie nimmt seine alte Karte aus der [[Jacke]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a jacket",
+   "options": [
+    "a jacket",
+    "a hat",
+    "a scarf",
+    "a shoe"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Sie nimmt seine alte Karte aus der Jacke.",
+    "targetWord": "Jacke",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vier",
+  "sentence": "Ich unterschreibe im Oktober für [[vier]] Jahre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "four",
+   "options": [
+    "four",
+    "two",
+    "five",
+    "ten"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Ich unterschreibe im Oktober für vier Jahre.",
+    "targetWord": "vier",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "voll",
+  "sentence": "Die Brücke ist jetzt [[voll]] von Menschen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "full",
+   "options": [
+    "full",
+    "empty",
+    "narrow",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Die Brücke ist jetzt voll von Menschen.",
+    "targetWord": "voll",
     "language": "german"
    }
   },

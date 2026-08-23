@@ -1,7 +1,7 @@
 [
  {
   "type": "match_meaning",
-  "word": "die Hütte,die Kammer,die Kerze,der Umschlag",
+  "word": "die Hütte,die Kammer,der Umschlag,das Fenster",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
@@ -12,8 +12,8 @@
      "options": [
       "a mountain hut",
       "a small plain room",
-      "a candle",
-      "an envelope"
+      "an envelope",
+      "a window"
      ]
     },
     {
@@ -22,18 +22,8 @@
      "options": [
       "a mountain hut",
       "a small plain room",
-      "a candle",
-      "an envelope"
-     ]
-    },
-    {
-     "word": "die Kerze",
-     "answer": "a candle",
-     "options": [
-      "a mountain hut",
-      "a small plain room",
-      "a candle",
-      "an envelope"
+      "an envelope",
+      "a window"
      ]
     },
     {
@@ -42,8 +32,18 @@
      "options": [
       "a mountain hut",
       "a small plain room",
-      "a candle",
-      "an envelope"
+      "an envelope",
+      "a window"
+     ]
+    },
+    {
+     "word": "das Fenster",
+     "answer": "a window",
+     "options": [
+      "a mountain hut",
+      "a small plain room",
+      "an envelope",
+      "a window"
      ]
     }
    ],
@@ -241,35 +241,6 @@
   }
  },
  {
-  "type": "fill_blank",
-  "word": "zittert",
-  "sentence": "Sie schreibt den letzten Satz, und ihre Hand _____ nicht.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "zittert",
-   "options": [
-    "zittert",
-    "füllt",
-    "klettert",
-    "zählt"
-   ],
-   "translation": "She writes the last sentence, and her hand does not _____.",
-   "optionTranslations": [
-    "tremble",
-    "fills",
-    "climbs",
-    "count"
-   ],
-   "audioClip": {
-    "storySlug": "die-hutte-am-eibsee",
-    "storySource": "user",
-    "sentence": "Sie schreibt den letzten Satz, und ihre Hand zittert nicht.",
-    "targetWord": "zittert",
-    "language": "german"
-   }
-  }
- },
- {
   "type": "meaning_in_context",
   "word": "sieben",
   "sentence": "[[Sieben]] Kreise stehen auf der Karte von Deutschland.",
@@ -289,54 +260,7 @@
     "targetWord": "Sieben",
     "language": "german"
    }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "letzte",
-  "sentence": "Der [[letzte]] Umschlag geht an die Schule in Leipzig.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "last",
-   "options": [
-    "last",
-    "first",
-    "next",
-    "only"
-   ],
-   "audioClip": {
-    "storySlug": "die-hutte-am-eibsee",
-    "storySource": "user",
-    "sentence": "Der letzte Umschlag geht an die Schule in Leipzig.",
-    "targetWord": "letzte",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Bett",
-  "sentence": "Die Kammer hat nur schmale [[Betten]] und ein Feuer.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "beds",
-   "options": [
-    "beds",
-    "chairs",
-    "tables",
-    "doors"
-   ],
-   "audioClip": {
-    "storySlug": "die-hutte-am-eibsee",
-    "storySource": "user",
-    "sentence": "Die Kammer hat nur schmale Betten und ein Feuer.",
-    "targetWord": "Betten",
-    "language": "german"
-   }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -356,75 +280,6 @@
     "storySource": "user",
     "sentence": "Der See draußen liegt in der Nacht ganz schwarz.",
     "targetWord": "schwarz",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "knacken",
-  "sentence": "Das Holz im Feuer [[knackt]] leise die ganze Nacht.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to crackle",
-   "options": [
-    "to crackle",
-    "to melt",
-    "to smoke",
-    "to shine"
-   ],
-   "audioClip": {
-    "storySlug": "die-hutte-am-eibsee",
-    "storySource": "user",
-    "sentence": "Das Holz im Feuer knackt leise die ganze Nacht.",
-    "targetWord": "knackt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Decke",
-  "sentence": "Er legt ihr eine warme [[Decke]] über die Schultern.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a blanket",
-   "options": [
-    "a blanket",
-    "a coat",
-    "a towel",
-    "a scarf"
-   ],
-   "audioClip": {
-    "storySlug": "die-hutte-am-eibsee",
-    "storySource": "user",
-    "sentence": "Er legt ihr eine warme Decke über die Schultern.",
-    "targetWord": "Decke",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Tee",
-  "sentence": "Er kocht am späten Abend noch heißen [[Tee]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "tea",
-   "options": [
-    "tea",
-    "soup",
-    "milk",
-    "juice"
-   ],
-   "audioClip": {
-    "storySlug": "die-hutte-am-eibsee",
-    "storySource": "user",
-    "sentence": "Er kocht am späten Abend noch heißen Tee.",
-    "targetWord": "Tee",
     "language": "german"
    }
   },
@@ -494,6 +349,121 @@
     "storySource": "user",
     "sentence": "Sie schreibt ruhig, und ihre Hand zittert nicht.",
     "targetWord": "Hand",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "leise",
+  "sentence": "Die Kammer wird warm, und das Holz im Feuer knackt [[leise]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quietly",
+   "options": [
+    "quietly",
+    "loudly",
+    "quickly",
+    "angrily"
+   ],
+   "audioClip": {
+    "storySlug": "die-hutte-am-eibsee",
+    "storySource": "user",
+    "sentence": "Die Kammer wird warm, und das Holz im Feuer knackt leise.",
+    "targetWord": "leise",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fragen",
+  "sentence": "Und im Oktober?, [[fragt]] er.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask",
+   "options": [
+    "to ask",
+    "to answer",
+    "to promise",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "die-hutte-am-eibsee",
+    "storySource": "user",
+    "sentence": "Und im Oktober?, fragt er.",
+    "targetWord": "fragt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "legen",
+  "sentence": "Sie [[legt]] die Karte von Deutschland auf den Boden.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lay something down",
+   "options": [
+    "to lay something down",
+    "to pick something up",
+    "to throw something",
+    "to buy something"
+   ],
+   "audioClip": {
+    "storySlug": "die-hutte-am-eibsee",
+    "storySource": "user",
+    "sentence": "Sie legt die Karte von Deutschland auf den Boden.",
+    "targetWord": "legt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der See",
+  "sentence": "Der [[See]] draußen ist schwarz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a lake",
+   "options": [
+    "a lake",
+    "a river",
+    "a canal",
+    "a well"
+   ],
+   "audioClip": {
+    "storySlug": "die-hutte-am-eibsee",
+    "storySource": "user",
+    "sentence": "Der See draußen ist schwarz.",
+    "targetWord": "See",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "draußen",
+  "sentence": "Der See [[draußen]] ist schwarz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "outside",
+   "options": [
+    "outside",
+    "inside",
+    "above",
+    "below"
+   ],
+   "audioClip": {
+    "storySlug": "die-hutte-am-eibsee",
+    "storySource": "user",
+    "sentence": "Der See draußen ist schwarz.",
+    "targetWord": "draußen",
     "language": "german"
    }
   },

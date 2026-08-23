@@ -73,35 +73,6 @@
   }
  },
  {
-  "type": "fill_blank",
-  "word": "sitzen",
-  "sentence": "Die Leute _____ am Ufer auf den warmen Steinen.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "sitzen",
-   "options": [
-    "sitzen",
-    "ziehen",
-    "fahren",
-    "legen"
-   ],
-   "translation": "The people _____ on the warm stones by the bank.",
-   "optionTranslations": [
-    "sit",
-    "pull",
-    "drive",
-    "put"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Die Leute sitzen am Ufer auf den warmen Steinen.",
-    "targetWord": "sitzen",
-    "language": "german"
-   }
-  }
- },
- {
   "type": "meaning_in_context",
   "word": "das Ufer",
   "sentence": "Das [[Ufer]] ist voll von jungen Leuten mit Gitarren.",
@@ -163,28 +134,6 @@
     "storySource": "user",
     "sentence": "So viele Jahre ohne ein Wiedersehen sind sehr lang.",
     "targetWord": "Jahre",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "erzählen",
-  "sentence": "Sie [[erzählt]] von ihren Schülern und von der Schule.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to tell about something",
-   "options": [
-    "to tell about something",
-    "to ask about something",
-    "to forget something",
-    "to read something"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Sie erzählt von ihren Schülern und von der Schule.",
-    "targetWord": "erzählt",
     "language": "german"
    }
   }
@@ -289,8 +238,7 @@
     "targetWord": "Stein",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -312,8 +260,7 @@
     "targetWord": "Arbeit",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
@@ -379,59 +326,6 @@
     "storySource": "user",
     "sentence": "Ihre Kusine wohnt dort und hat eine kleine Wohnung.",
     "targetWord": "dort",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Urlaub",
-  "sentence": "Er hat im Sommer einige Wochen [[Urlaub]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "holiday from work",
-   "options": [
-    "holiday from work",
-    "a working day",
-    "a school year",
-    "a long trip"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Er hat im Sommer einige Wochen Urlaub.",
-    "targetWord": "Urlaub",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "selten",
-  "sentence": "Wir sehen uns nur _____, vielleicht einmal im Jahr.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "selten",
-   "options": [
-    "selten",
-    "immer",
-    "schnell",
-    "spät"
-   ],
-   "translation": "We see each other only _____, maybe once a year.",
-   "optionTranslations": [
-    "rarely",
-    "always",
-    "quickly",
-    "late"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Wir sehen uns nur selten, vielleicht einmal im Jahr.",
-    "targetWord": "selten",
     "language": "german"
    }
   },
@@ -529,36 +423,6 @@
  },
  {
   "type": "fill_blank",
-  "word": "denkt",
-  "sentence": "Er _____ lange über die Frage und antwortet dann.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "denkt",
-   "options": [
-    "denkt",
-    "packt",
-    "fährt",
-    "malt"
-   ],
-   "translation": "He _____ about the question a long time and then answers.",
-   "optionTranslations": [
-    "thinks",
-    "packs",
-    "drives",
-    "paints"
-   ],
-   "audioClip": {
-    "storySlug": "die-treppe-an-der-elbe",
-    "storySource": "user",
-    "sentence": "Er denkt lange über die Frage und antwortet dann.",
-    "targetWord": "denkt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
   "word": "hinter",
   "sentence": "Die Stadt bleibt _____ dem Zug und wird immer kleiner.",
   "payload": {
@@ -582,6 +446,121 @@
     "storySource": "user",
     "sentence": "Die Stadt bleibt hinter dem Zug und wird immer kleiner.",
     "targetWord": "hinter",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Morgen",
+  "sentence": "Sie nimmt am [[Morgen]] den Zug zurück nach Leipzig.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the morning",
+   "options": [
+    "the morning",
+    "the evening",
+    "the night",
+    "the afternoon"
+   ],
+   "audioClip": {
+    "storySlug": "die-treppe-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Sie nimmt am Morgen den Zug zurück nach Leipzig.",
+    "targetWord": "Morgen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bleiben",
+  "sentence": "Der Zug wird laut, und die Stadt [[bleibt]] hinter ihr.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stay in a place",
+   "options": [
+    "to stay in a place",
+    "to leave a place",
+    "to reach a place",
+    "to look for a place"
+   ],
+   "audioClip": {
+    "storySlug": "die-treppe-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Der Zug wird laut, und die Stadt bleibt hinter ihr.",
+    "targetWord": "bleibt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Wasser",
+  "sentence": "Ein Boot fährt ohne Licht über das [[Wasser]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "water",
+   "options": [
+    "water",
+    "land",
+    "sky",
+    "sand"
+   ],
+   "audioClip": {
+    "storySlug": "die-treppe-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Ein Boot fährt ohne Licht über das Wasser.",
+    "targetWord": "Wasser",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fahren",
+  "sentence": "Ein Boot [[fährt]] ohne Licht über das Wasser.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to travel by vehicle",
+   "options": [
+    "to travel by vehicle",
+    "to walk on foot",
+    "to wait for someone",
+    "to arrive too late"
+   ],
+   "audioClip": {
+    "storySlug": "die-treppe-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Ein Boot fährt ohne Licht über das Wasser.",
+    "targetWord": "fährt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Zug",
+  "sentence": "Der [[Zug]] wird laut, und die Stadt bleibt hinter ihr.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a train",
+   "options": [
+    "a train",
+    "a bus",
+    "a boat",
+    "a bicycle"
+   ],
+   "audioClip": {
+    "storySlug": "die-treppe-an-der-elbe",
+    "storySource": "user",
+    "sentence": "Der Zug wird laut, und die Stadt bleibt hinter ihr.",
+    "targetWord": "Zug",
     "language": "german"
    }
   },
