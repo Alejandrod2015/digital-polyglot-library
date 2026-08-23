@@ -898,7 +898,7 @@ export function parseDialogueSegments(storyText: string): DialogueSegment[] {
 //            de la última palabra alineada + 30 ms de margen, content-
 //            aware en lugar de threshold-based. Si Modal align falla,
 //            cae al pipeline trim-v2 como fallback.
-function multivoiceSegmentCacheKey(
+export function multivoiceSegmentCacheKey(
   voiceId: string,
   softenedText: string,
   model: ElevenLabsModel = ELEVENLABS_MODEL_V2,

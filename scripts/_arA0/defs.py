@@ -757,3 +757,10 @@ DEFS.update({
 "silba": ("verb", "whistles when the water is hot"),
 })
 DEFS.update({"billetes": ("noun", "paper money, the notes she counts at the end of the day")})
+DEFS.update({
+"señal": ("noun", "phone signal, reception"),
+"rodete": ("noun", "hair tied up in a bun"),
+"balanza": ("noun", "the scales on the shop counter"),
+"local": ("noun", "the shop premises, the salon itself"),
+})
+DEFS.update({"armar": ("verb", "to put together, to tie up hair")})

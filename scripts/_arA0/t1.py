@@ -4,7 +4,7 @@ STORIES = [
  "topic": "understanding-and-repeating", "slotIndex": 1,
  "title": "El sobre del dueño",
  "synopsis": "Llega un sobre del dueño con una fecha y una palabra que Julieta no entiende. Damián le lee el renglón despacito, dos veces, y ella anota todo antes de abrir la peluquería.",
- "text": """Julieta, una peluquera de Villa Crespo, abre la peluquería a las nueve. Un sobre del dueño queda sin abrir arriba de la heladera, sin remitente. El que arregla todo acá es Damián, su hermano, y todavía duerme adentro.
+ "text": """Julieta, una peluquera de Villa Crespo, abre el local a las nueve. Un sobre del dueño queda sin abrir arriba de la heladera, sin remitente. El que arregla todo acá es Damián, su hermano, y todavía duerme adentro.
 
 Julieta lee el papel dos veces, sin apuro, y no entiende ni una firma. “Damián, vení y fijate, ¿vos entendés esto?”, pregunta. “Dice que el alquiler sube en diciembre”, contesta él con el mate en la mano.
 
@@ -20,11 +20,11 @@ La clienta de las diez toca el timbre y espera con su revista. Julieta apaga el 
  "synopsis": "Una clienta pide un color con palabras que Julieta escucha por primera vez. Pedir la frase tres veces le cuesta vergüenza y media hora de turno, pero le salva el trabajo.",
  "text": """La clienta de las diez habla muy rápido, con la revista en la falda. Julieta escucha desde la silla, tranquila, y entiende muy poco. La escoba queda abajo, quieta, al lado de los ruleros.
 
-“¿Me lo hacés igual que el de la foto, un poco más claro?”, pregunta la clienta. Julieta prueba el celular y no encuentra la tintura. “Perdoname, repetímelo más despacito”, pide, y se le pone la cara roja.
+“¿Me lo hacés igual que el de la foto, un poco más claro?”, pregunta la clienta. Julieta prueba el celular, sin señal, y no encuentra la tintura. “Perdoname, repetímelo más despacito”, pide, y se le pone la cara roja.
 
 La otra lo repite igual de rápido que antes. “Más despacito, por favor, que lo quiero en la libreta”, insiste Julieta. “Ru-bio ce-ni-za, así se llama”, contesta ella, y las dos se ríen.
 
-Julieta anota el nombre en la libreta y guarda el cepillo y el gel. “Recién ahora te entiendo, perdoname”, dice, y busca el champú. La clienta se queda tranquila y suelta el celular en la silla.
+Julieta anota el nombre en la libreta y guarda el cepillo y el gel. “Recién ahora te entiendo, perdoname”, dice, y busca el champú. La clienta se queda tranquila, con el rodete a medio armar, y suelta el celular.
 
 El turno termina media hora tarde y el timbre suena afuera. Julieta pierde esa media hora y no pierde la clienta. “La próxima escribime el color en un papel”, pide en la puerta."""
 },

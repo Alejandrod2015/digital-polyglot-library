@@ -3918,6 +3918,22 @@
   "zumba": {
    "g": "it buzzes, it hums (from zumbar)",
    "t": "verb"
+  },
+  "armar": {
+   "g": "to start, kick up",
+   "t": "verb"
+  },
+  "balanza": {
+   "g": "scales, for weighing on the shop counter (fem. noun)",
+   "t": "noun"
+  },
+  "rodete": {
+   "g": "hair tied up in a bun (masc. noun)",
+   "t": "noun"
+  },
+  "señal": {
+   "g": "a sign",
+   "t": "noun"
   }
  }
 }

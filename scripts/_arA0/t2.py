@@ -32,7 +32,7 @@ La lluvia golpea el techo de chapa del kiosco y moja el cordón. “La lata qued
  "topic": "borrowing-and-lending", "slotIndex": 3,
  "title": "Lo que se devuelve",
  "synopsis": "Julieta va a pagar el fiado y descubre que media cuadra le debe a Facundo. Devolver a tiempo le cuesta el corte de una clienta, pero le deja algo que no se compra.",
- "text": """Julieta llega al kiosco el viernes, tranquila, con la libreta. Facundo sube la persiana floja y acomoda el estante de arriba. La libreta gastada espera al lado de la birome, del sello y del cuaderno.
+ "text": """Julieta llega al kiosco el viernes, tranquila, con la libreta. Facundo sube la persiana floja y acomoda el estante y la balanza. La libreta gastada espera al lado de la birome, del sello y del cuaderno.
 
 “Vengo a pagar el fiado del lunes”, dice ella y saca los billetes. “Sos la que volvés el día que promete”, avisa Facundo. Julieta revisa la libreta, llena de la misma letra despareja.
 

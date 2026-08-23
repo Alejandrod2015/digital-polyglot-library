@@ -7673,6 +7673,14 @@
   "cable": {
    "g": "cable, electric wire (masc. noun)",
    "t": "noun"
+  },
+  "rodete": {
+   "g": "hair tied up in a bun (masc. noun)",
+   "t": "noun"
+  },
+  "balanza": {
+   "g": "scales, for weighing on the shop counter (fem. noun)",
+   "t": "noun"
   }
  }
 }
