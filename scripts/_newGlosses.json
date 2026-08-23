@@ -8045,6 +8045,22 @@
     "único": {
       "g": "the only one; unique",
       "t": "adjective"
+    },
+    "elkin": {
+      "g": "Elkin (man's name)",
+      "t": "noun"
+    },
+    "bordillo": {
+      "g": "kerb, curb",
+      "t": "noun"
+    },
+    "mande": {
+      "g": "send (mandar, usted command)",
+      "t": "verb"
+    },
+    "conteste": {
+      "g": "answer, reply (contestar, usted command)",
+      "t": "verb"
     }
   }
 }

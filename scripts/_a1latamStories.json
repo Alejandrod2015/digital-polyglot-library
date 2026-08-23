@@ -1364,8 +1364,8 @@
     "title": "Cuarenta avisos juntos",
     "slug": "cuarenta-avisos-juntos",
     "arcType": "mini-cliffhanger",
-    "synopsis": "Ana llega a Buenos Aires y el celular no encuentra señal en todo el aeropuerto. En un local del centro, Pablo le vende una línea nueva y le pide la contraseña vieja para pasar los contactos. Cuando la conexión vuelve, entran cuarenta avisos de golpe y uno de ellos lleva doce días esperando.",
-    "text": "En Buenos Aires, en Argentina, el celular de Ana no encuentra señal. Camina veinte cuadras con la pantalla prendida y el cargador colgando del morral. Detrás del mostrador está Pablo, un vendedor de celulares que llegó hace dos años.\n\n“¿Sos de acá?”, pregunta Pablo desde el fondo del local. “De México. Armo una ruta propia y llevo el precio en la libreta.” “Entonces te conviene una línea de acá, tan barata que nunca vas a extrañar la tuya.”\n\nPablo enchufa el celular en un teclado gastado y pide la contraseña. Ana duda dos segundos y suelta la hoja pesada en la banca. Saca la tarjeta de la billetera y espera.\n\n“¿Todos los contactos?” “Todos.” La aplicación los pasa uno por uno mientras el parlante sigue con la canción de siempre.\n\n“La red de acá se cae a esta hora; el tono queda igual de duro.” Vuelve la conexión y entran cuarenta avisos juntos. El auricular suena, él atiende una llamada y Ana guarda el celular sin abrir nada.",
+    "synopsis": "Ana llega a Medellín y el celular no encuentra señal en todo el aeropuerto. En un local del centro, Elkin le vende una línea nueva y le pide la contraseña vieja para pasar los contactos. Cuando la conexión vuelve, entran cuarenta avisos de golpe y uno de ellos lleva doce días esperando.",
+    "text": "En Medellín, en Colombia, el celular de Ana no encuentra señal. Camina veinte cuadras con la pantalla prendida y el cargador colgando del morral. Detrás del mostrador está Elkin, un vendedor de celulares que llegó hace dos años.\n\n“¿Usted de dónde viene?”, pregunta Elkin desde el fondo del local. “De México. Armo una ruta propia y llevo el precio en la libreta.” “Entonces le conviene una línea de aquí, tan barata que nunca va a extrañar la suya.”\n\nElkin enchufa el celular en un teclado gastado y pide la contraseña. Ana duda dos segundos y suelta la hoja pesada en la banca. Saca la tarjeta de la billetera y espera.\n\n“¿Todos los contactos?” “Todos.” La aplicación los pasa uno por uno mientras el parlante sigue con la canción de siempre.\n\n“La red de aquí se cae a esta hora; el tono queda igual de duro.” Vuelve la conexión y entran cuarenta avisos juntos. El auricular suena, él atiende una llamada y Ana guarda el celular sin abrir nada.",
     "vocab": [
       {
         "word": "señal",
@@ -1515,8 +1515,8 @@
     "title": "Once palabras",
     "slug": "once-palabras",
     "arcType": "reframe-turn",
-    "synopsis": "El aviso que llevaba doce días esperando es una nota de voz de su jefa con una fecha y una amenaza corta. Ana graba dos minutos de respuesta sentada en el cordón de la vereda y Pablo la oye desde la puerta del local. Lo que manda al final tiene once palabras, y ninguna de ellas pide nada.",
-    "text": "La nota de voz dura dos minutos y Ana la escucha con el altavoz contra la mejilla. Su jefa habla lento, sin una sola pausa. Al final repite la fecha de su agenda y corta.\n\nAna camina hasta la esquina y aprieta el botón con la palma firme. Habla dos minutos seguidos, con el micrófono cerca del labio. Después se sienta con el morral en las piernas, en el cordón donde Pablo barre la vereda.\n\n“No mandes eso”, le dice Pablo suavemente. “Que el escritorio no me espera y que el lunes es el último día.” “Entonces no le contestes con dos minutos de temor.”\n\n“Nunca sirve tanto como una hoja corta.” Ana busca un enchufe y aprieta el celular al pecho. Saca su propia hoja del morral y escribe una frase de once palabras.\n\nPone un signo al final y todavía le sobra sitio. El aviso sale con una marca pálida y ella suelta el aire. “Que el lunes no llego, y que el asiento es suyo; no hay ninguna mentira.”",
+    "synopsis": "El aviso que llevaba doce días esperando es una nota de voz de su jefa con una fecha y una amenaza corta. Ana graba dos minutos de respuesta sentada en el cordón de la vereda y Elkin la oye desde la puerta del local. Lo que manda al final tiene once palabras, y ninguna de ellas pide nada.",
+    "text": "La nota de voz dura dos minutos y Ana la escucha con el altavoz contra la mejilla. Su jefa habla lento, sin una sola pausa. Al final repite la fecha de su agenda y corta.\n\nAna camina hasta la esquina y aprieta el botón con la palma firme. Habla dos minutos seguidos, con el micrófono cerca del labio. Después se sienta con el morral en las piernas, en el bordillo donde Elkin barre la acera.\n\n“No mande eso”, le dice Elkin suavemente. “Que el escritorio no me espera y que el lunes es el último día.” “Entonces no le conteste con dos minutos de temor.”\n\n“Nunca sirve tanto como una hoja corta.” Ana busca un enchufe y aprieta el celular al pecho. Saca su propia hoja del morral y escribe una frase de once palabras.\n\nPone un signo al final y todavía le sobra sitio. El aviso sale con una marca pálida y ella suelta el aire. “Que el lunes no llego, y que el asiento es suyo; no hay ninguna mentira.”",
     "vocab": [
       {
         "word": "nota de voz",
@@ -1589,15 +1589,15 @@
         "reuse": "anchored"
       },
       {
-        "word": "cordón",
-        "surface": "cordón",
+        "word": "bordillo",
+        "surface": "bordillo",
         "type": "noun",
         "definition": "The raised stone edge between the street and the path",
         "reuse": "anchored"
       },
       {
-        "word": "vereda",
-        "surface": "vereda",
+        "word": "acera",
+        "surface": "acera",
         "type": "noun",
         "definition": "The part of a street where people walk, beside the cars",
         "reuse": "anchored"
@@ -1666,8 +1666,8 @@
     "title": "Preguntar es medio comprar",
     "slug": "preguntar-es-medio-comprar",
     "arcType": "recurring-character-callback",
-    "synopsis": "Sin trabajo en México, Ana abre una nota de Julio grabada en el patio de Arequipa: el vecino subió el precio de la camioneta y le dio dos semanas. Julio no pide nada, solo cuenta. Ana contesta con una pregunta corta que la compromete más a ella que a él, y Pablo le dice en la vereda lo que esa pregunta significa.",
-    "text": "Su celular suelta un zumbido a las once de la noche y Ana lo saca del morral. El mensaje es corto y de fondo se oye el patio seco de Arequipa. Julio habla sin prisa, como quien cuenta el clima.\n\n“El vecino subió el precio.” “Me dio dos semanas y después la camioneta se vende a otro.” Ana lo escucha tres veces, la tercera con la mejilla contra el vidrio sucio.\n\nPablo termina el turno y cierra el local amplio con una cadena de metal. Ella sostiene la libreta sobre las piernas. “¿Estás preocupada?”\n\n“Un amigo en Perú, aunque el problema es mío.” “Le dan dos semanas y a mí ya no me alcanza la plata.” Ana aprieta el micrófono con un temblor y le sostiene la mirada.\n\n“¿Cuánto falta exactamente?”, dice, y la marca demora. Pablo sirve un mate ligero y se sienta a su lado. “Preguntar cuánto falta es medio comprar”, contesta él, con los brazos duros sobre las rodillas.",
+    "synopsis": "Sin trabajo en México, Ana abre una nota de Julio grabada en el patio de Arequipa: el vecino subió el precio de la camioneta y le dio dos semanas. Julio no pide nada, solo cuenta. Ana contesta con una pregunta corta que la compromete más a ella que a él, y Elkin le dice en la vereda lo que esa pregunta significa.",
+    "text": "Su celular suelta un zumbido a las once de la noche y Ana lo saca del morral. El mensaje es corto y de fondo se oye el patio seco de Arequipa. Julio habla sin prisa, como quien cuenta el clima.\n\n“El vecino subió el precio.” “Me dio dos semanas y después la camioneta se vende a otro.” Ana lo escucha tres veces, la tercera con la mejilla contra el vidrio sucio.\n\nElkin termina el turno y cierra el local amplio con una cadena de metal. Ella sostiene la libreta sobre las piernas. “¿Está preocupada?”\n\n“Un amigo en Perú, aunque el problema es mío.” “Le dan dos semanas y a mí ya no me alcanza la plata.” Ana aprieta el micrófono con un temblor y le sostiene la mirada.\n\n“¿Cuánto falta exactamente?”, dice, y la marca demora. Elkin sirve un tinto ligero y se sienta a su lado. “Preguntar cuánto falta es medio comprar”, contesta él, con los brazos duros sobre las rodillas.",
     "vocab": [
       {
         "word": "zumbido",
@@ -1775,8 +1775,8 @@
         "reuse": "portable"
       },
       {
-        "word": "mate",
-        "surface": "mate",
+        "word": "tinto",
+        "surface": "tinto",
         "type": "noun",
         "definition": "The hot green drink that people share in Argentina",
         "reuse": "anchored"
