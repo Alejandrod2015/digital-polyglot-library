@@ -49,13 +49,30 @@ export function logoImg(assetBase: string = EMAIL_ASSET_BASE, height = 24): stri
   return `<img src="${assetBase}/digital-polyglot-logo.png" alt="Digital Polyglot" height="${height}" style="display:block;height:${height}px;width:auto;margin:0 auto;border:0;outline:none;text-decoration:none;" />`;
 }
 
-export function cta(label: string, href: string, block = false): string {
+/**
+ * Primary button. El fondo va en la `<a>`, no en la `<td>`.
+ *
+ * Estaba solo en la `<td>`, con `!important` y todo, y un cliente que
+ * reescribe la paleta lo tira igual: el 2026-08-23 un tester abrió la petición
+ * de opinión en un Gmail en claro, que le dio la vuelta al diseño oscuro, y el
+ * botón llegó como texto negro suelto en medio del cuerpo. Ese botón es la
+ * única acción del correo, así que perder el relleno es perder el correo.
+ *
+ * `ctaSecondary` ya lo hacía bien por otro motivo (Gmail se come el
+ * `border-radius` de una `<td>` con borde) y habría sobrevivido. Aquí se copia
+ * ese patrón y se deja además el fondo en la `<td>`: si el cliente respeta las
+ * dos, coinciden y no se nota; si tira una, queda la otra.
+ *
+ * El borde es del mismo color que el relleno, así que es invisible mientras el
+ * fondo se pinte y deja la silueta del botón si no se pinta ninguno.
+ */
+export function cta(label: string, href: string): string {
   // Table-based button, centered via align="center" + margin auto (text-align
   // on the parent does NOT center a block-level table).
   return `<table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin:0 auto;">
     <tr>
-      <td align="center" style="background:#fcd34d !important;background-color:#fcd34d !important;border-radius:16px;padding:18px 32px;text-align:center;">
-        <a href="${href}" style="color:#000 !important;font-family:${DPE.font};font-weight:900;font-size:18px;letter-spacing:-0.01em;text-decoration:none;display:block;white-space:nowrap;">${label}</a>
+      <td align="center" style="background:#fcd34d;background-color:#fcd34d;border-radius:16px;text-align:center;">
+        <a href="${href}" style="display:inline-block;background:#fcd34d !important;background-color:#fcd34d !important;border:1.5px solid #fcd34d;border-radius:16px;padding:18px 32px;color:#000 !important;font-family:${DPE.font};font-weight:900;font-size:18px;letter-spacing:-0.01em;text-decoration:none;white-space:nowrap;">${label}</a>
       </td>
     </tr>
   </table>`;
