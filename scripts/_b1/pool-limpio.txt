@@ -17,7 +17,6 @@ abertura
 abierta
 abogacía
 abogada
-abogado
 abrazadera
 abridor
 abril
@@ -31,7 +30,6 @@ accionista
 acción
 aceituna
 acelerar
-aceptar
 aclamar
 aclarar
 acompañar
@@ -61,14 +59,12 @@ aeropuerto
 afectivo
 afecto
 afeitarse
-afiche
 afilado
 afirmar
 afrontar
 afueras
 agacharse
 agarrar
-agenda
 agendar
 agente
 agitado
@@ -79,17 +75,12 @@ agresivo
 agricultor
 aguafiestas
 aguanieve
-aguja
 ahora bien
 ahora mismo
-ahorrar
-ahorro
 ajonjolí
 ajustar
-al fin
 al mediodía
 al menos
-alambre
 alameda
 alargador
 alarma
@@ -110,7 +101,6 @@ alfombra
 alfombrilla
 alga
 alguno
-alicate
 aliento
 alineación
 alineado
@@ -118,17 +108,13 @@ alivio
 aljibe
 allí
 almendra
-almohada
 almorzar
 almuerzo
 alojamiento
 alojarse
 alpargata
 alquilar
-alrededor
-altavoz
 alumna
-alumno
 alzar
 amabilidad
 ambicioso
@@ -139,13 +125,10 @@ americana
 amigas
 amistad
 amistoso
-amplio
 analgésico
 analizar
 ancestral
-ancho
 anciano
-andén
 angelical
 anglosajón
 angosto
@@ -154,7 +137,7 @@ animal
 aniversario
 anoche
 anorexia
-ansioso
+anotar
 antagonista
 ante
 anterior
@@ -163,7 +146,6 @@ antesala
 antibiótico
 antigüedad
 antipático
-anuncio
 análisis
 apagada
 apagado
@@ -177,14 +159,11 @@ apartamento
 apertura
 apetito
 apilar
-aplicación
-apoyar
 apoyo
 aprendiz
 aprendizaje
 apresurar
 aprobación
-aprobar
 apropiado
 aprovechar
 aproximado
@@ -225,6 +204,7 @@ ascensor
 aseo
 asesor
 asiente
+asiento
 asignatura
 asimismo
 asintió
@@ -244,9 +224,7 @@ así que
 atajo
 atalaya
 ataque
-atar
 atardecer
-atascarse
 atento
 aterrizar
 atlas
@@ -263,41 +241,32 @@ auditor
 audífono
 aula
 aumentar
-aunque
-auricular
 ausencia
 ausente
+auto
 autobiografía
 autopista
 autoridad
 autoritario
 auténtico
 avanzar
-avenida
 aventura
 averiguar
 avispa
-avión
-ayer
 ayudante
 ayudar
-azulejo
-azúcar
 azúcar en sangre
 bacalao
 bacteria
 balance
 balancear
 balcones
-baldosa
 ballena
 balsa
 balón
 banana
-banca
 bandera
 barandal
-barato
 barba
 barbería
 barniz
@@ -307,8 +276,6 @@ barrera
 barrida
 barriga
 barril
-barro
-bastante
 bastón
 basura
 batido
@@ -348,15 +315,12 @@ bocadillo
 boina
 bol
 boletería
-boleto
 boletín
 bollo
 bolsillos
 bolígrafo
 bomba
 bombero
-bombilla
-borde
 bordillo
 borracho
 bosque
@@ -364,12 +328,7 @@ bosquejar
 bostezar
 bota
 botas
-bote
-botella
 botiquín
-botón
-brasa
-brazo
 brecha
 breve
 brigada
@@ -379,7 +338,6 @@ brinco
 brindar
 brisa
 brocha
-broche
 broma
 bronce
 bruma
@@ -395,14 +353,11 @@ buenas tardes
 buque
 burbuja
 bus
-butaca
 básico
 búho
 caballo
 cabaña
 cabello
-cabina
-cable
 cabra
 cacahuete
 cacao
@@ -412,7 +367,6 @@ cada día
 cada jueves
 cada lunes
 cada semana
-cadena
 cadera
 caduco
 cafetera
@@ -420,18 +374,14 @@ cafetería
 café
 cajas
 cajera
-cajita
 calabacín
 calabaza
 calamar
 calcetín
-calculadora
 calefacción
-calendario
 calentamiento global
-calentar
 calidad
-callar
+callada
 callejuela
 calma
 calmado
@@ -443,17 +393,14 @@ calzado
 cama
 camarera
 camarón
-cambio
 cambio climático
 camilla
 caminata
 camionero
-camioneta
 camiseta
 camión
 campo
 canasto
-candado
 candelabro
 candidato
 candidatura
@@ -464,7 +411,6 @@ canoa
 cansancio
 cansar
 cansarse
-cantidad
 cantimplora
 capa
 capacidad
@@ -480,10 +426,7 @@ caracterizar
 caramelo
 caravana
 carbohidrato
-carbón
 cardiólogo
-carga
-cargador
 cargar
 cargo
 caricia
@@ -494,12 +437,10 @@ carnet
 carnicero
 carnicería
 carnitas
-caro
 carpa
 carpintero
 carrera
 carro
-cartelera
 cartero
 cartoncillo
 cartulina
@@ -509,8 +450,6 @@ casi lista
 casi listo
 casi termino
 casi vacía
-casi vacío
-casilla
 casillero
 caso
 castaña
@@ -520,7 +459,6 @@ casualidad
 catarro
 categoría
 catálogo
-caucho
 causa
 caída
 cañería
@@ -541,7 +479,6 @@ central
 centro
 centímetro
 cepillar
-cepillo
 cercano
 cerdo
 cereal
@@ -550,17 +487,13 @@ cereza
 cernidor
 cero
 cerrada
-cerradura
 cerrar sesión
-cerrojo
 certeza
 certificación
 certificado
 cerveza
 cesta
-cesto
 cesárea
-chaleco
 chalet
 champiñón
 champán
@@ -593,9 +526,7 @@ ciencia
 ciencias
 ciento
 cientos
-cierre
 ciertamente
-cifra
 cigarro
 cilantro
 cinco
@@ -603,9 +534,7 @@ cincuenta
 cine
 cineasta
 cines
-cinta adhesiva
 cintura
-cinturón
 circo
 circuito
 circunstancia
@@ -617,16 +546,12 @@ cisterna
 cita
 ciudadano
 ciudadanía
-clase
 clasificar
 claustro
 clavar
 clave
-clavo
 clavícula
 cliente
-clima
-clip
 closet
 clásico
 clímax
@@ -647,9 +572,7 @@ colaboración
 colaborar
 colador
 colcha
-colchón
 colección
-colectivo
 colega
 colegio
 colesterol
@@ -671,21 +594,17 @@ comercio
 cometa
 como
 como resultado
-comparar
 compartimento
 compartimiento
 compartir
 compasión
 compatible
 compañera
-compañero
 compañía
 competencia
 competición
 competir
 complejo
-completo
-complicado
 comprender
 comprobar
 comprometer
@@ -695,7 +614,6 @@ compás
 comunicación
 comunicar
 comunidad
-común
 con
 con el fin de
 con frecuencia
@@ -714,7 +632,6 @@ condimento
 conducir
 conectar
 conejo
-conexión
 conferencia
 confianza
 confiar
@@ -741,7 +658,6 @@ construir
 consulta
 consumidor
 contable
-contacto
 contado
 contador
 contadora
@@ -752,13 +668,12 @@ contemporáneo
 contenedor
 contener
 contenido
-contestar
 contexto
 continente
 continuar
 continuar derecho
 contorno
-contraseña
+contra
 contrastar
 contrato
 contraventana
@@ -778,25 +693,18 @@ copiar
 coraje
 coral
 corbata
-cordel
 cordero
-cordón
 corona
 corporación
 corral
-correa
-correcto
 corrector
 corredor
 corregir
-correo
 correspondencia
 corresponsal
 cortador
 corteza
-cortina
 cortés
-coser
 costa
 costar
 costilla
@@ -810,7 +718,6 @@ crecer
 credencial
 creencia
 creer
-cremallera
 cresta
 criminal
 crisis
@@ -821,28 +728,26 @@ croissant
 cruce
 crucero
 crucial
-crujido
 crujiente
 cráneo
 crédito
 crítica
 cuadrado
 cuadras
+cual
 cualquier
 cualquiera
 cuanto antes
 cuarenta años
 cuarta
 cuarteto
-cubeta
+cuatro
 cubierta
 cubo de basura
 cubrecama
-cuchara
 cuchilla
 cuenco
 cuento
-cuerda
 cuero
 cuervo
 cuestionable
@@ -850,6 +755,7 @@ cuestionar
 cuestión
 cuidadoso
 cuidarse
+culpa
 culto
 cultura
 cumbre
@@ -861,11 +767,11 @@ curar
 curiosa
 curso
 cursor
-curva
 cuyo
+cuál
+cuánto
 cálido
 cáscara
-cédula
 céntimo
 céntimos
 césped
@@ -873,13 +779,11 @@ código
 cómico
 cómo
 cómoda
-cómodo
 cúpula
 dado que
 danza
 dar
 darse
-darse cuenta
 darse vuelta
 dato
 datos
@@ -893,7 +797,6 @@ de modo que
 de un solo trago
 de vez en cuando
 debate
-deber
 deberse
 debido a
 decena
@@ -918,25 +821,23 @@ demanda
 democracia
 democrático
 demorado
-demorar
 demostrar
 dentista
 departamento
 depender
 deporte
 depresión
+derecho
 derramar
 derretir
 derroche
 derrotar
 desacuerdo
-desagüe
 desaparecer
 desarrollar
 desarrollo
 desatar
 desayuno
-descanso
 descarga
 descargar
 descender
@@ -947,7 +848,6 @@ describir
 descripción
 descubrimiento
 descubrir
-descuento
 descuidado
 desde luego
 desde niños
@@ -973,9 +873,7 @@ desordenado
 desordenar
 despachador
 despejado
-despertar
 despertarse
-despierto
 desplegar
 desprecio
 desprender
@@ -990,16 +888,11 @@ detallar
 detective
 detener
 detenerse
-detergente
 determinado
 determinar
-detrás
-deuda
-devolver
 diabetes
 diafragma
 diagnóstico
-diario
 dibujar
 diecinueve
 dieciocho
@@ -1008,7 +901,6 @@ dieciséis
 diente
 dieta
 diferenciarse
-diferente
 dificultad
 difundir
 dignidad
@@ -1025,7 +917,6 @@ disciplina
 disco
 discreto
 disculparse
-disculpe
 disculpen
 discurso
 discusión
@@ -1037,12 +928,12 @@ diseño
 disminuir
 disolver
 disponer
-disponible
 disputa
 disputar
 distancia
 distante
 distinguir
+distinto
 distraído
 distribución
 distribuir
@@ -1054,10 +945,10 @@ dividir
 divino
 divorcio
 diálogo
-docena
+doble
+doce
 doctor
 doctorado
-documento
 dolor
 domicilio
 don
@@ -1068,14 +959,11 @@ doña
 drama
 dramaturgo
 drástico
-ducha
 ducharse
 dulcería
 duración
 duradero
-durante
 durazno
-duro
 débil
 décima
 día anterior
@@ -1102,15 +990,12 @@ ejército
 el
 elaborar
 elección
-electricidad
-elegir
 elemento
 elevador
 elevar
 eliminar
 ellas
 ellos
-eléctrico
 email
 embajada
 embarazo
@@ -1124,10 +1009,8 @@ emocionar
 emoción
 empaque
 empatía
-empleado
 emplear
 empleo
-empresa
 empresaria
 empresario
 en
@@ -1165,10 +1048,9 @@ encendida
 encendido
 encerado
 encerrar
-enchufar
-enchufe
 encoger
 encontrado
+encuentro
 encuesta
 energía
 energía eólica
@@ -1186,14 +1068,11 @@ enfriar
 engañar
 enjuagar
 enlace
-enojado
 enrollar
-ensalada
 ensaladera
 ensayo
 enterarse
 entorno
-entre
 entrega
 entregar
 entrenador
@@ -1215,11 +1094,9 @@ epidemia
 epidermis
 equilibrado
 equilibrar
-equipaje
 equipo
 equivocado
 equivocar
-equivocarse
 es decir
 es por eso que
 esa
@@ -1237,7 +1114,6 @@ esconderse
 escrita
 escritas
 escritor
-escritorio
 escritorio escolar
 escritos
 escuadra
@@ -1248,11 +1124,11 @@ ese
 esencia
 esencial
 esforzarse
-esfuerzo
 esguince
 esmalte
 esos
 espacio
+espalda
 esparadrapo
 especia
 especialidad
@@ -1267,11 +1143,9 @@ espere
 espeso
 espinaca
 espiritual
-esponja
 espontáneo
 esposa
 esposo
-espuma
 esquema
 esta noche
 esta semana
@@ -1279,7 +1153,6 @@ esta tarde
 esta vez
 estable
 establecer
-estacionamiento
 estadio
 estado
 estadística
@@ -1298,7 +1171,6 @@ estricto
 estructural
 estruendo
 estrés
-estuche
 estudiante
 estudio
 estudioso
@@ -1315,7 +1187,6 @@ evidencia
 evidente
 evitar
 exacta
-exactamente
 exacto
 examen
 examinar
@@ -1344,7 +1215,6 @@ extinción
 extranjero
 extraordinario
 extraviar
-extremo
 extrovertido
 exótico
 fabricar
@@ -1356,14 +1226,11 @@ falda
 fallar
 fallecer
 falso
-faltar
 familia
 fantasma
 fantástico
 fanático
 farmacia
-faro
-farol
 farola
 farolito
 fastidiado
@@ -1372,13 +1239,10 @@ fauna
 favorable
 felicidad
 felicitar
-felpudo
-feo
 feria artesanal
 festejar
 festival
 festivo
-ficha
 ficticio
 fideo
 fideos
@@ -1388,14 +1252,13 @@ figura
 figurar
 fijar
 filosofía
-filtro
+fin
 fin de semana
 fina
 finalizar
 finanza
 finas
 finca
-fino
 finos
 fisioterapia
 flan
@@ -1406,8 +1269,6 @@ florecer
 florero
 florido
 fogata
-folleto
-fondo
 fontanero
 formar
 foro
@@ -1425,16 +1286,12 @@ franco
 francés
 frasco
 frascos
-frase
-frazada
 frecuencia
 frecuente
 frecuentemente
 fregadero
 fregado
 fregar
-frenar
-frente
 fresca
 frescas
 freír
@@ -1449,9 +1306,8 @@ frustración
 frustrado
 frutería
 frágil
-frías
+fríos
 fuego
-fuera
 fumar
 funcional
 funcionario
@@ -1464,7 +1320,6 @@ futurista
 futuro
 fábrica
 fábula
-fácil
 fémur
 fértil
 física
@@ -1473,22 +1328,18 @@ fósforo
 fútbol
 gabinete
 galería
-galleta
 galletitas
 gallina
 gallo
 gana
 ganador
 ganancia
-ganar
 ganso
 garaje
 garantizar
 gas
 gaseosa
 gasolina
-gastado
-gastar
 gatear
 general
 generalmente
@@ -1498,10 +1349,8 @@ genuino
 gerente
 gestionar
 gestión
-gesto
 gigante
 gimnasio
-girar
 giro
 glaciar
 global
@@ -1516,7 +1365,6 @@ gordo
 gorjeo
 gorrión
 gota
-gotear
 gozne
 grabar
 gracia
@@ -1527,18 +1375,14 @@ granada
 granja
 granjero
 grano
-grapa
 grapadora
-grasa
 gratuito
-grava
 grave
-grifo
 gripe
+grito
 grosero
 gráfico
 guajolote
-guante
 guapo
 guardarropa
 guerra
@@ -1546,6 +1390,7 @@ guiar
 guion
 guisante
 guitarra
+gusto
 gélido
 género
 haber
@@ -1561,6 +1406,7 @@ hambriento
 hamburguesa
 hasta cierto punto
 hasta que
+hecho
 hedor
 heladería
 helicóptero
@@ -1570,16 +1416,13 @@ herido
 herir
 heroico
 heroína
-herramienta
 hervida
 hervido
 hervir
 hielo
 hierba
-hierro
 higo
 hijo
-hilo
 hipertensión
 hipoteca
 hispano
@@ -1587,17 +1430,16 @@ historiador
 histórico
 hogar
 hoguera
-hoja
 homenajear
 honda
 honesto
 horizonte
 hormiga
 hornear
+horrible
 hortaliza
 hospedaje
 hospital
-hostal
 hotel
 huelga
 huella
@@ -1621,7 +1463,6 @@ icono
 idea
 ideal
 identificar
-idioma
 idéntico
 ignorante
 ignorar
@@ -1664,10 +1505,8 @@ incendio forestal
 incidente
 incierto
 incluir
-incluso
 incompleto
 incorporar
-incorrecto
 increíble
 incómodo
 independiente
@@ -1703,7 +1542,6 @@ injusticia
 innovador
 inocente
 inodoro
-inquilino
 inquilinos
 insano
 insatisfecho
@@ -1732,8 +1570,6 @@ intelectual
 inteligente
 intención
 intenso
-intentar
-intento
 intercambio
 interesante
 interesar
@@ -1744,7 +1580,6 @@ internet
 interno
 interpretar
 interrumpir
-interruptor
 intersección
 intervención
 intervenir
@@ -1770,19 +1605,15 @@ irritado
 irse
 isla
 italiano
-izquierda
 izquierdo
 jacuzzi
 jalea
 jamaica
-jamás
 jaqueca
 jardinera
 jardinero
-jarra
 jaula
 jean
-jefa
 jerarquía
 jersey
 jitomate
@@ -1791,15 +1622,14 @@ jornada
 joya
 jubilado
 judía
-juego
 juez
 jugador
 jugo
 juguete
 juicio
 junio
-juntar
 juntarse
+juntas
 junto
 jurado
 justicia
@@ -1813,7 +1643,6 @@ kiwi
 kétchup
 la
 la próxima semana
-labio
 laboral
 laboratorio
 laborioso
@@ -1829,17 +1658,13 @@ langosta
 langostino
 lanzar
 las
-lavabo
 lavado
 lavadora
 lavandería
-lavar
-lazo
 le
 leal
 lealtad
 lección
-leche
 lechuga
 lectura
 ledo
@@ -1849,11 +1674,8 @@ leggings
 legumbre
 lema
 lengua
-lentamente
-lento
 les
 lesión
-letrero
 levadura
 levante
 levita
@@ -1870,31 +1692,23 @@ licor
 licuado
 licuadora
 liderar
-ligero
 lijar
 lima
 limitar
 limite
-limonada
 limpiador
-limpieza
 limón
 linda
 lindo
 liquidación
 liso
-lista
 literatura
 liviana
-llamada
-llanta
 llanto
 llanura
-llegada
 llevamos así
 lluvioso
 lo
-local
 loco
 lodo
 logo
@@ -1920,7 +1734,6 @@ luz roja
 luz suave
 lámpara
 lámpara portátil
-lápiz
 líder
 límite
 lógico
@@ -1933,7 +1746,6 @@ magnífico
 majestuoso
 malecón
 maleducado
-maletín
 mallas
 malo
 mampara
@@ -1941,24 +1753,17 @@ mancha
 manchado
 manchar
 mandíbula
-manga
-manguera
+manera
 manifestación
 manifestar
 manjar
+manos
 mansión
-manta
-manteca
-mantel
 mantequilla
 manual
 manualidad
 manzana
 maravilloso
-marca
-marcador
-marcar
-marcha
 marco
 marea
 mareo
@@ -1969,7 +1774,6 @@ mariposa
 marisco
 mariscos
 marrón
-martillo
 materia
 material
 matrimonial
@@ -1982,14 +1786,12 @@ mayoría
 mazo
 me
 mecánica
-mecánico
 medalla
 mediano
 mediante
 medicamento
 medicina
 medio ambiente
-mejilla
 mejor dicho
 mejora
 mejorar
@@ -2002,33 +1804,27 @@ memorable
 memoria
 memorizar
 menor
+menos
 mensajero
 menstruación
 menta
 mental
 mentalidad
 mentir
-mentira
-menú
 merendar
 merengue
 merienda
-mermelada
 mes pasado
 mesera
-mesero
 meseta
 mesita
-metal
 metro
 metálico
 mexicano
 mi
 microondas
-micrófono
 miel
 miembro
-mientras
 mientras que
 mientras tanto
 migraña
@@ -2042,14 +1838,12 @@ ministro
 minorista
 minoría
 minucioso
-mirada
 mire
 mis
 miserable
 misionero
 misión
 misterioso
-mitad
 mitades
 mito
 mocasín
@@ -2059,15 +1853,13 @@ moderado
 modesto
 modificar
 modisto
-modo
 modular
-mojado
 mojarse
 molde
 molestar
+molesto
 molinillo
 momento
-monedero
 monje
 montaje
 monumental
@@ -2076,7 +1868,6 @@ morado
 moral
 morcilla
 morir
-morral
 mortal
 mortero
 mosaico
@@ -2104,12 +1895,12 @@ muletas
 multa
 multiplicar
 mundial
+mundo
 muralla
 murmullo
 murmurar
 muslo
 mutuo
-muñeca
 muñeco
 más bien
 máster
@@ -2135,33 +1926,29 @@ naturaleza
 navaja
 navegar
 nebuloso
-necesario
 necesidad
-negar
 negarse
 negativa
 negativo
 negociable
 negociar
-negocio
 negro
 nena
 nene
 neumático
 neutro
-nevera
 ni
 niebla
 nieta
 nieto
 ninguna
+ninguno
 ningún
 nivel
 niñez
 no
 no obstante
 no puede ser
-no te preocupes
 nocturno
 norma
 normal
@@ -2173,7 +1960,6 @@ nosotras
 nosotros
 nostalgia
 nostálgico
-nota
 notable
 notario
 notas
@@ -2187,14 +1973,13 @@ noventa
 novia
 noviembre
 nuclear
-nudo
 nuestra
 nuestras
 nuestro
 nuestros
 nuez
 numérico
-nunca
+número
 o
 o sea
 obedecer
@@ -2229,10 +2014,8 @@ oeste
 ofender
 ofendido
 ofensivo
-oferta
 oficial
 oficio
-ofrecer
 oftalmólogo
 ojeras
 ojos
@@ -2252,7 +2035,6 @@ optimista
 oración
 oral
 oratorio
-orden
 ordenada
 ordenador
 ordenar
@@ -2270,7 +2052,6 @@ oro
 orquesta
 orégano
 os
-oscuridad
 ostra
 otorgamiento
 otoño
@@ -2282,9 +2063,7 @@ padre
 paella
 paisaje
 pajarito
-palanca
 paliza
-palma
 palmera
 paloma
 pan caliente
@@ -2294,7 +2073,6 @@ panceta
 pandemia
 panel
 panfleto
-pantalla
 pantalón
 pantalón corto
 pantufla
@@ -2312,24 +2090,18 @@ para que
 parasol
 parecida
 parecidas
-parecido
 parecidos
 pared interior
 pariente
 parking
-parlante
-parte
 participar
 partido
 partir
 parámetro
 pasado
-pasaje
 pasajero
 pasantía
-pasaporte
 pase
-pasillo
 pasivo
 pasta
 pasta de dientes
@@ -2347,25 +2119,18 @@ patológico
 patria
 patriota
 patrocinar
-patrón
 patín
-pausa
 pavo
 paz
-paño
 peatón
 pecaminoso
 pecera
-pecho
 pechuga
 pedal
-pedido
-pegamento
 pegar
 peinado
 peinar
 peinarse
-peine
 peldaño
 pelea
 peligro
@@ -2379,10 +2144,8 @@ pensión
 penumbra
 pepino
 pera
-percha
 perchero
 percibir
-perder
 perdido
 perdonar
 perdurar
@@ -2401,7 +2164,6 @@ permiso
 permitir
 perseguir
 persistir
-persona
 personaje
 perspectiva
 persuadir
@@ -2409,32 +2171,24 @@ pertenecer
 peruano
 período
 pesadilla
-pesado
 pesca
 pescadería
 pescador
 pese a
 pesimista
-peso
 pestillo
 petróleo
 piano
 picaporte
 piel
-pierna
-pileta
 piloto
 pimienta
 pincel
 pinta
 pintarrajear
 pintor
-pintura
-pinza
-piso
 pista
 pito
-pizarra
 pizza
 placa
 placentero
@@ -2445,7 +2199,6 @@ planeta
 planicie
 planificar
 plano
-planta
 planta baja
 plantilla
 plastilina
@@ -2456,7 +2209,6 @@ plato llano
 playera
 plazo
 plazoleta
-plegar
 pliegue
 pliegues
 plomero
@@ -2475,12 +2227,10 @@ poeta
 policía
 polución
 polvareda
-polvo
 polémica
 política
 político
 pomada
-poner
 poquita
 poquito
 por
@@ -2489,7 +2239,6 @@ por cierto
 por consiguiente
 por culpa de
 por ejemplo
-por eso
 por la mañana
 por la noche
 por lo general
@@ -2508,7 +2257,6 @@ portafolios
 portarretrato
 portarretratos
 portavelas
-portero
 portátil
 posgrado
 posibilidad
@@ -2522,7 +2270,6 @@ potente
 practicante
 prado
 precavido
-precio
 precioso
 preciso
 precoz
@@ -2533,10 +2280,8 @@ preferencia
 preferible
 preferir
 premio
-prender
 prensa
 preocupación
-preocupado
 preocupar
 preparación
 preparativos
@@ -2549,7 +2294,6 @@ presente
 presidente
 presionar
 presión
-prestar
 prevalecer
 prevenir
 previo
@@ -2560,7 +2304,6 @@ primer día
 primera vez
 primo
 principal
-prisa
 prisión
 privacidad
 privado
@@ -2584,7 +2327,6 @@ profesión
 profesor
 profesora
 profundidad
-profundo
 programa
 programador
 programadora
@@ -2598,7 +2340,6 @@ prometer
 promover
 pronunciar
 propiedad
-propio
 proporcionar
 propuesta
 propósito
@@ -2629,16 +2370,15 @@ puerta principal
 puerta trasera
 puertecita
 puerto
+puesta
 puesto de trabajo
 puesto que
 pulcro
 pulir
 pulmón
-punta
 puntiagudo
 punto
 punto de vista
-puntual
 puntuar
 pupitre
 purificador
@@ -2646,22 +2386,18 @@ puro
 puré
 puñetazo
 página
-pálido
 párpado
 pásale
 póster
 público
 que le vaya bien
 quebrado
-quejarse
 quemadura
 querida
 querido
 quicio
 quienes
-quieto
 quince
-quinta
 quinto
 quiosco
 quitarse
@@ -2673,14 +2409,12 @@ ración
 radical
 radio
 rama
-ramo
 rana
 rancho
 rango
 ranura
 rascacielos
 rascarse
-rasgar
 rata
 ratito
 ratón
@@ -2717,10 +2451,8 @@ recompensa
 reconciliar
 reconocimiento
 recorrido
-recto
 recurso
 recíproco
-red
 redactor
 redondo
 reducción
@@ -2741,7 +2473,6 @@ registrar
 registrarse
 registro
 región
-regla
 regreso
 regulación
 regular
@@ -2762,15 +2493,12 @@ reloj despertador
 relojero
 relámpago
 remedio
-remendar
 remoto
 remover
 renombrado
 renunciar
 reparable
 reparado
-reparar
-repisa
 reponer
 reportaje
 reportero
@@ -2789,7 +2517,6 @@ residencial
 residir
 resignado
 resistencia
-resistente
 resistir
 resolver
 respaldar
@@ -2800,7 +2527,6 @@ respiración
 resplandor
 responsable
 resta
-restar
 restaurante
 restaurar
 resto
@@ -2821,7 +2547,6 @@ reutilizar
 revelación
 revelar
 reverenciado
-revisar
 revista
 rey
 reyerta
@@ -2841,26 +2566,20 @@ rodillo
 rol
 romance
 romero
-romo
-romper
 romperse
 romántico
-ropero
 rosado
 rosca
 rostro
 rota
-roto
 rotonda
 rotulador
 rubio
-rueda
 ruedas
 rugoso
 ruidoso
 ruinoso
 ruso
-ruta
 rutina
 ráfaga
 rápida
@@ -2870,7 +2589,6 @@ récord
 réplica
 rígido
 rústico
-sabana
 sabiduría
 sabio
 saborear
@@ -2887,7 +2605,6 @@ sala de espera
 salado
 salami
 salchicha
-saldo
 salmorejo
 salmón
 salto
@@ -2921,11 +2638,8 @@ sediento
 seductor
 seguidor
 segunda
-seguramente
 seguridad
-según
 seleccionar
-sello
 sellos
 selva
 sembradío
@@ -2934,7 +2648,6 @@ semilla
 seminario
 semáforo
 senador
-sencillo
 senda
 sendero
 sensación
@@ -2942,7 +2655,6 @@ sensato
 sensibilidad
 sensible
 sentadero
-sentado
 sentar
 sentido
 sentimental
@@ -2954,16 +2666,13 @@ septiembre
 sequía
 sereno
 serpiente
-servicio
 servicio público
-servir
 sesenta
 sesión
 setenta
 severo
 sexo
 sexta
-señal
 señalado
 señorita
 short
@@ -2974,7 +2683,6 @@ siga
 siglo
 significar
 significativo
-signo
 siguiente
 silbar
 silbato
@@ -2985,7 +2693,6 @@ sillón
 silueta
 similar
 simpatía
-simple
 simpático
 sin conocer
 sin duda
@@ -3005,7 +2712,6 @@ sitio web
 situación
 situado
 situar
-sobrar
 sobrellevar
 sobrepeso
 sobresalir
@@ -3036,34 +2742,26 @@ sorbo
 sorprendente
 soso
 sospechar
-sostener
 sostenible
 su
-suavemente
 suaves
-subida
 subirse
 subjetivo
 subliminal
 submarino
-subrayar
 subtítulo
 suceder
 suceso
-sucio
 sudadera
 sudor
 suegra
 suegro
 suerte
-suficiente
 sufrimiento
 sugerencia
 sugerir
 sujetador
-sujetar
 suma
-sumar
 sumidero
 sumo
 superarse
@@ -3087,9 +2785,7 @@ susurrar
 susurro
 sutil
 suya
-suyo
 suéter
-sábana
 sándwich
 sátira
 séptima
@@ -3100,13 +2796,10 @@ síntoma
 sólido
 sótano
 tabique
-tabla
-tablero
 tablet
 tableta
 tablilla
 tablón
-taburete
 tacaño
 tachuela
 tacto
@@ -3120,49 +2813,34 @@ tamales
 tamaño
 tambor
 tamiz
-tampoco
-tan
 tan pronto como
-tanque
-tanto
 tanto que
 tapar
 tapete
-tapia
-taquilla
 tardío
 tarea
 tarifa
 tarima
-tarjeta
 tarjetero
-tarro
 tarta
 tasa
 tatuaje
 taxi
 taxista
-tazón
 te
 teatro
-teclado
 tecnología
 tedioso
-tela
 tele
 telediario
 teléfono
-temblor
-temor
 tempera
 temperatura
 tenaz
-tenaza
 tendencia
 tender
 tendero
 tendinitis
-tenedor
 tenis
 tensivo
 teoría
@@ -3185,13 +2863,11 @@ tiburón
 ticket
 tiempo correcto
 tierno
-tierra
 tierra mojada
 tigre
 tijeras
 tilo
 tina
-tinta
 tirita
 tobillo
 tocino
@@ -3202,31 +2878,25 @@ tomada
 tomado
 tomate
 tomillo
-tono
 tonto
 tormentoso
 tornado
 torneo
 tornero
-tornillo
 torpe
-torta
 tortuga
 tos
 toser
 tostar
-total
 tour
 trabajador
 trabajadora
-trabajo
 tractor
 tradicional
 tradición
 traducción
 traductor
 tragedia
-traje
 traje de baño
 trama
 tranquilidad
@@ -3243,19 +2913,16 @@ trasladar
 tratamiento
 tratar
 trato
-trato hecho
 trayecto
 trayectoria
 trazar
 trece
 trecho
-treinta
 tremendo
 tres horas
 triangular
 tribu
 triciclo
-triple
 tristeza
 triunfar
 triunfo
@@ -3270,7 +2937,6 @@ trémulo
 trío
 tubería
 tubo
-tuerca
 tufo
 tumbarse
 turismo
@@ -3296,13 +2962,11 @@ universitario
 universo
 unión
 unos
-untar
 unánime
 urbano
 uretra
 urgencia
 urgente
-usado
 usar
 uso
 ustedes
@@ -3323,18 +2987,15 @@ valentía
 valeroso
 valido
 valiente
-valija
 valijas
 valioso
 valla
 valorar
 vano
-vapor
 vaquero
 variable
 variado
 variedad
-varilla
 vasto
 vaya
 vegetal
@@ -3361,10 +3022,8 @@ ventaja
 ventajoso
 ventanal
 ventanas
-ventanilla
 ventisca
 ventoso
-verdadero
 verdulería
 vergonzoso
 verificar
@@ -3380,13 +3039,11 @@ veterano
 veterinario
 viable
 viajar
-viajero
 vibración
 vibrante
 victoria
 videollamada
 vidriera
-vidrio
 vigilar
 villa
 villano
@@ -3405,7 +3062,6 @@ visita médica
 visitante
 vital
 vitamina
-vitrina
 vivienda
 vocabulario
 vocación
@@ -3420,6 +3076,7 @@ votación
 votar
 voto
 vuelo
+vuelta
 vuestra
 vuestras
 vuestro
@@ -3438,7 +3095,6 @@ wifi
 y
 ya es el momento
 ya está
-ya no
 ya que
 yacer
 yate
@@ -3453,7 +3109,6 @@ zapatilla
 zapatos
 zona
 zonal
-zumbido
 zurda
 zurdo
 ábaco
@@ -3475,5 +3130,4 @@ zurdo
 úlcera
 única
 únicamente
-único
 útil
