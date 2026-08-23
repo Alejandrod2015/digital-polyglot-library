@@ -184,6 +184,18 @@ for i, k in enumerate(keys):
         sacar(viejo, k); poner(nuevo, k); repes += 1
     if repes: print(f"   {k}: {repes} plazas reenseñadas")
 
+# Relleno final: si una historia quedo por debajo de N tras el emparejamiento y
+# la reenseñanza, se completa con palabras libres suyas que nadie use todavia.
+_usadas = {w for v in asign.values() for w in v}
+for k in keys:
+    if len(asign[k]) >= N: continue
+    for x in sorted(cand[k], key=lambda x: -x["n"]):
+        w = x["w"]
+        if len(asign[k]) >= N: break
+        if w in _usadas or w in asign[k] or x["e"] != "libre": continue
+        if not cabe(k, "libre", w): continue
+        poner(w, k); _usadas.add(w)
+
 asign = {k: [(w, por_palabra[w]["n"], por_palabra[w]["e"]) for w in v] for k, v in asign.items()}
 faltan = {k: N - len(asign[k]) for k in keys if len(asign[k]) < N}
 flojos = {k: porpara[k] for k in keys if min(porpara[k]) < 2 or max(porpara[k]) > 8}

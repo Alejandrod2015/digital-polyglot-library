@@ -3746,6 +3746,178 @@
   "tuerca": {
    "g": "a nut that screws onto a bolt",
    "t": "noun"
+  },
+  "migas": {
+   "g": "crumbs left on the table",
+   "t": "noun"
+  },
+  "revista": {
+   "g": "a magazine to pass the wait",
+   "t": "noun"
+  },
+  "cruje": {
+   "g": "creaks under the weight",
+   "t": "verb"
+  },
+  "pelos": {
+   "g": "cut hairs on the floor",
+   "t": "noun"
+  },
+  "les": {
+   "g": "to them, you all",
+   "t": "pronoun"
+  },
+  "piloto": {
+   "g": "pilot",
+   "t": "noun"
+  },
+  "dobla": {
+   "g": "turns",
+   "t": "verb"
+  },
+  "monedas": {
+   "g": "coins",
+   "t": "noun"
+  },
+  "suma": {
+   "g": "adds up, sum",
+   "t": "verb"
+  },
+  "unas": {
+   "g": "some (fem.)",
+   "t": "article"
+  },
+  "blanco": {
+   "g": "the target of teasing",
+   "t": "noun"
+  },
+  "candado": {
+   "g": "a padlock that closes a drawer",
+   "t": "noun"
+  },
+  "caramelos": {
+   "g": "sweets sold at the counter",
+   "t": "noun"
+  },
+  "cebado": {
+   "g": "freshly filled, ready to drink",
+   "t": "adjective"
+  },
+  "factura": {
+   "g": "a sweet pastry eaten with mate",
+   "t": "noun"
+  },
+  "hacer": {
+   "g": "to do, make",
+   "t": "verb"
+  },
+  "jabón": {
+   "g": "soap used for washing",
+   "t": "noun"
+  },
+  "medialunas": {
+   "g": "croissants, crescent pastries",
+   "t": "noun"
+  },
+  "tabla": {
+   "g": "a cutting board",
+   "t": "noun"
+  },
+  "ayudarte": {
+   "g": "to help you (ayudar plus te)",
+   "t": "verb"
+  },
+  "azucarera": {
+   "g": "sugar bowl (fem. noun)",
+   "t": "noun"
+  },
+  "cable": {
+   "g": "cable, electric wire (masc. noun)",
+   "t": "noun"
+  },
+  "clavos": {
+   "g": "nails, for wood or a wall (masc. plural noun)",
+   "t": "noun"
+  },
+  "codo": {
+   "g": "stingy, cheap",
+   "t": "adjective"
+  },
+  "despareja": {
+   "g": "uneven, not the same all through (fem. of desparejo)",
+   "t": "adjective"
+  },
+  "dibujados": {
+   "g": "drawn, sketched on paper (past participle of dibujar)",
+   "t": "adjective"
+  },
+  "esperar": {
+   "g": "to wait",
+   "t": "verb"
+  },
+  "gel": {
+   "g": "hair gel (masc. noun)",
+   "t": "noun"
+  },
+  "herramientas": {
+   "g": "tools",
+   "t": "noun"
+  },
+  "pava": {
+   "g": "kettle for heating the water for mate (fem. noun)",
+   "t": "noun"
+  },
+  "pegada": {
+   "g": "blasting music (champeta pegada)",
+   "t": "adjective"
+  },
+  "puede": {
+   "g": "can",
+   "t": "verb"
+  },
+  "remitente": {
+   "g": "sender, the name written on an envelope (noun)",
+   "t": "noun"
+  },
+  "ruleros": {
+   "g": "hair rollers (masc. plural noun)",
+   "t": "noun"
+  },
+  "silba": {
+   "g": "whistles",
+   "t": "verb"
+  },
+  "tacho": {
+   "g": "bin, container for rubbish (masc. noun)",
+   "t": "noun"
+  },
+  "tiemblan": {
+   "g": "they tremble",
+   "t": "verb"
+  },
+  "tornillos": {
+   "g": "screws (masc. plural noun)",
+   "t": "noun"
+  },
+  "vacías": {
+   "g": "empty (feminine plural)",
+   "t": "adjective"
+  },
+  "vasos": {
+   "g": "glasses (drinking)",
+   "t": "noun"
+  },
+  "ve": {
+   "g": "sees, goes",
+   "t": "verb"
+  },
+  "vuelvas": {
+   "g": "you come back (subjunctive of volver, vos/tú form)",
+   "t": "verb"
+  },
+  "zumba": {
+   "g": "it buzzes, it hums (from zumbar)",
+   "t": "verb"
   }
  }
 }

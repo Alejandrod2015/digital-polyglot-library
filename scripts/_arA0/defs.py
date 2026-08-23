@@ -699,3 +699,61 @@ DEFS.update({
 "única": ("adjective", "the only one who does it"),
 })
 DEFS.update({"zapatos": ("noun", "the good shoes kept for errands")})
+DEFS.update({"revista": ("noun", "a magazine to pass the wait")})
+DEFS.update({"ranura": ("noun", "the slot on the head of a screw")})
+DEFS.update({"pelos": ("noun", "cut hairs swept off the floor")})
+DEFS.update({"piloto": ("noun", "a raincoat worn over the clothes")})
+DEFS.update({
+"monedas": ("noun", "coins, the small change of the day"),
+"dobla": ("verb", "folds a paper in two"),
+"suma": ("verb", "adds up the money"),
+})
+DEFS.update({
+"jabón": ("noun", "soap used for washing"),
+"ladra": ("verb", "barks, the dog makes noise"),
+})
+DEFS.update({
+"candado": ("noun", "a padlock that closes a drawer"),
+"caramelos": ("noun", "sweets sold at the counter"),
+"tabla": ("noun", "a wooden board for cutting meat"),
+})
+DEFS.update({"blanco": ("adjective", "white, the colour of the soap")})
+DEFS.update({"cebado": ("adjective", "freshly filled, ready to drink")})
+DEFS.update({"devuelve": ("verb", "gives it back to the owner")})
+DEFS.update({
+"mostrador": ("noun", "the counter of the shop"),
+"pedirme": ("verb", "to ask me for something"),
+"puede": ("verb", "can wait, is able to"),
+"vuelvas": ("verb", "you come back, after a refusal"),
+"zumba": ("verb", "buzzes with a low sound"),
+"ayudarte": ("verb", "to give you a hand"),
+})
+DEFS.update({
+"gel": ("noun", "hair gel used in the salon"),
+"ruleros": ("noun", "hair rollers used for curls"),
+"clavos": ("noun", "nails sold at the hardware shop"),
+"tornillos": ("noun", "screws drawn in the notebook"),
+"chicles": ("noun", "chewing gum sold at the counter"),
+"vitrina": ("noun", "the glass case of the shop"),
+"diario": ("noun", "the daily newspaper"),
+"baldea": ("verb", "washes the pavement with water"),
+"cable": ("noun", "an electric wire"),
+"tacho": ("noun", "a bin for the rubbish"),
+"pava": ("noun", "the kettle that heats water for mate"),
+"azucarera": ("noun", "the small jar that holds the sugar"),
+"vasos": ("noun", "glasses for water or wine"),
+"muñeca": ("noun", "the wrist of the hand"),
+"codo": ("noun", "the elbow of the arm"),
+"tiemblan": ("verb", "they shake with tiredness"),
+})
+DEFS.update({"dibujados": ("adjective", "drawn in pen on the page")})
+DEFS.update({
+"factura": ("noun", "a sweet pastry eaten with mate"),
+"vacías": ("adjective", "empty, with nothing left inside"),
+})
+DEFS.update({
+"remitente": ("noun", "the sender's name on an envelope"),
+"despareja": ("adjective", "uneven, not written the same"),
+"silba": ("verb", "whistles when the water is hot"),
+})
+DEFS.update({"billetes": ("noun", "paper money, the notes she counts at the end of the day")})
