@@ -1,241 +1,182 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Pfad,die Tanne,das Reh,der Morgen",
+  "word": "die Nadel,das Reh,die Kurve,das Gras",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "der Pfad",
-     "answer": "a narrow path",
+     "word": "die Nadel",
+     "answer": "a pine needle",
      "options": [
-      "a narrow path",
-      "fir trees",
-      "a roe deer",
-      "the morning"
-     ]
-    },
-    {
-     "word": "die Tanne",
-     "answer": "fir trees",
-     "options": [
-      "a narrow path",
-      "fir trees",
-      "a roe deer",
-      "the morning"
+      "a pine needle",
+      "a deer",
+      "a bend in a path",
+      "grass"
      ]
     },
     {
      "word": "das Reh",
-     "answer": "a roe deer",
+     "answer": "a deer",
      "options": [
-      "a narrow path",
-      "fir trees",
-      "a roe deer",
-      "the morning"
+      "a pine needle",
+      "a deer",
+      "a bend in a path",
+      "grass"
      ]
     },
     {
-     "word": "der Morgen",
-     "answer": "the morning",
+     "word": "die Kurve",
+     "answer": "a bend in a path",
      "options": [
-      "a narrow path",
-      "fir trees",
-      "a roe deer",
-      "the morning"
+      "a pine needle",
+      "a deer",
+      "a bend in a path",
+      "grass"
+     ]
+    },
+    {
+     "word": "das Gras",
+     "answer": "grass",
+     "options": [
+      "a pine needle",
+      "a deer",
+      "a bend in a path",
+      "grass"
      ]
     }
-   ],
-   "audioClip": null
+   ]
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "der Boden",
-  "sentence": "Der [[Boden]] im Wald ist weich von alten Nadeln.",
+  "word": "der Knöchel",
+  "sentence": "Ihr Bein tut weh, und der [[Knöchel]] wird dick.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "the ground",
+   "answer": "an ankle",
    "options": [
-    "the ground",
-    "the sky",
-    "the wall",
-    "the roof"
+    "an ankle",
+    "a shoulder",
+    "an elbow",
+    "a finger"
    ],
    "audioClip": {
     "storySlug": "nebel-uber-dem-pfad",
     "storySource": "user",
-    "sentence": "Der Boden im Wald ist weich von alten Nadeln.",
-    "targetWord": "Boden",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Nadel",
-  "sentence": "Der Boden liegt voller brauner [[Nadeln]] von den Tannen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "needles from a fir tree",
-   "options": [
-    "needles from a fir tree",
-    "leaves from a beech",
-    "stones from a wall",
-    "seeds from a flower"
-   ],
-   "audioClip": {
-    "storySlug": "nebel-uber-dem-pfad",
-    "storySource": "user",
-    "sentence": "Der Boden liegt voller brauner Nadeln von den Tannen.",
-    "targetWord": "Nadeln",
+    "sentence": "Ihr Bein tut weh, und der Knöchel wird dick.",
+    "targetWord": "Knöchel",
     "language": "german"
    }
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "die Spur",
-  "sentence": "Er zeigt auf eine frische [[Spur]] im weichen Boden.",
+  "word": "die Stunde",
+  "sentence": "Die beiden brauchen drei [[Stunden]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a track left by an animal",
+   "answer": "an hour",
    "options": [
-    "a track left by an animal",
-    "a hole in the ground",
-    "a stone in the path",
-    "a branch on the ground"
+    "an hour",
+    "a minute",
+    "a day",
+    "a week"
    ],
    "audioClip": {
     "storySlug": "nebel-uber-dem-pfad",
     "storySource": "user",
-    "sentence": "Er zeigt auf eine frische Spur im weichen Boden.",
-    "targetWord": "Spur",
+    "sentence": "Die beiden brauchen drei Stunden.",
+    "targetWord": "Stunden",
     "language": "german"
    }
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "der Nebel",
-  "sentence": "Der [[Nebel]] kommt schnell zwischen die dunklen Bäume.",
+  "word": "der Arm",
+  "sentence": "Du nimmst meinen [[Arm]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "fog",
+   "answer": "an arm",
    "options": [
-    "fog",
-    "rain",
-    "snow",
-    "wind"
+    "an arm",
+    "a leg",
+    "a hand",
+    "a head"
    ],
    "audioClip": {
     "storySlug": "nebel-uber-dem-pfad",
     "storySource": "user",
-    "sentence": "Der Nebel kommt schnell zwischen die dunklen Bäume.",
-    "targetWord": "Nebel",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "hoch",
-  "sentence": "Die Tannen sind sehr _____ und nehmen alles Licht weg.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "hoch",
-   "options": [
-    "hoch",
-    "eng",
-    "grau",
-    "weich"
-   ],
-   "translation": "The fir trees are very _____ and take all the light.",
-   "optionTranslations": [
-    "tall",
-    "narrow",
-    "grey",
-    "soft"
-   ],
-   "audioClip": {
-    "storySlug": "nebel-uber-dem-pfad",
-    "storySource": "user",
-    "sentence": "Die Tannen sind sehr hoch und nehmen alles Licht weg.",
-    "targetWord": "hoch",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "voll",
-  "sentence": "Die Stadt ist ihm zu laut und zu _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "voll",
-   "options": [
-    "voll",
-    "hoch",
-    "eng",
-    "grau"
-   ],
-   "translation": "The city is too loud and too _____ for him.",
-   "optionTranslations": [
-    "full",
-    "tall",
-    "narrow",
-    "grey"
-   ],
-   "audioClip": {
-    "storySlug": "nebel-uber-dem-pfad",
-    "storySource": "user",
-    "sentence": "Die Stadt ist ihm zu laut und zu voll.",
-    "targetWord": "voll",
+    "sentence": "Du nimmst meinen Arm.",
+    "targetWord": "Arm",
     "language": "german"
    }
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "früh",
-  "sentence": "Die beiden gehen [[früh]] am Morgen auf den Pfad.",
+  "word": "der Kopf",
+  "sentence": "Ihre Beine sind schwer, aber ihr [[Kopf]] ist frei.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "early",
+   "answer": "a head",
    "options": [
-    "early",
-    "late",
-    "never",
-    "seldom"
+    "a head",
+    "a back",
+    "a foot",
+    "an eye"
    ],
    "audioClip": {
     "storySlug": "nebel-uber-dem-pfad",
     "storySource": "user",
-    "sentence": "Die beiden gehen früh am Morgen auf den Pfad.",
-    "targetWord": "früh",
+    "sentence": "Ihre Beine sind schwer, aber ihr Kopf ist frei.",
+    "targetWord": "Kopf",
     "language": "german"
    }
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "eng",
-  "sentence": "Die Tannen stehen hoch und sehr [[eng]] am Pfad.",
+  "word": "rutschen",
+  "sentence": "Sie [[rutscht]] auf einem nassen Stein.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "narrow, close together",
+   "answer": "to slip",
    "options": [
-    "narrow, close together",
-    "wide apart",
-    "far away",
-    "high above"
+    "to slip",
+    "to jump",
+    "to climb",
+    "to rest"
    ],
    "audioClip": {
     "storySlug": "nebel-uber-dem-pfad",
     "storySource": "user",
-    "sentence": "Die Tannen stehen hoch und sehr eng am Pfad.",
-    "targetWord": "eng",
+    "sentence": "Sie rutscht auf einem nassen Stein.",
+    "targetWord": "rutscht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verlieren",
+  "sentence": "Hannah [[verliert]] den Pfad.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lose",
+   "options": [
+    "to lose",
+    "to find",
+    "to cross",
+    "to build"
+   ],
+   "audioClip": {
+    "storySlug": "nebel-uber-dem-pfad",
+    "storySource": "user",
+    "sentence": "Hannah verliert den Pfad.",
+    "targetWord": "verliert",
     "language": "german"
    }
   }
@@ -243,43 +184,101 @@
  {
   "type": "meaning_in_context",
   "word": "weich",
-  "sentence": "Der Boden unter den Tannen ist [[weich]] von Nadeln.",
+  "sentence": "Der Boden ist [[weich]] von Nadeln.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "soft",
    "options": [
     "soft",
     "hard",
-    "wet",
-    "warm"
+    "hot",
+    "dry"
    ],
    "audioClip": {
     "storySlug": "nebel-uber-dem-pfad",
     "storySource": "user",
-    "sentence": "Der Boden unter den Tannen ist weich von Nadeln.",
+    "sentence": "Der Boden ist weich von Nadeln.",
     "targetWord": "weich",
     "language": "german"
    }
   }
  },
  {
-  "type": "meaning_in_context",
-  "word": "vorne",
-  "sentence": "Er geht [[vorne]] und zeigt auf eine Spur.",
+  "type": "fill_blank",
+  "word": "brauchen",
+  "sentence": "Für den Weg zurück _____ sie drei Stunden.",
   "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "in front",
+   "prompt": "Complete the sentence.",
+   "answer": "brauchen",
    "options": [
-    "in front",
-    "behind",
-    "beside",
-    "above"
+    "brauchen",
+    "kaufen",
+    "suchen",
+    "zählen"
+   ],
+   "translation": "For the way back they _____ three hours.",
+   "optionTranslations": [
+    "need",
+    "buy",
+    "look for",
+    "count"
    ],
    "audioClip": {
     "storySlug": "nebel-uber-dem-pfad",
     "storySource": "user",
-    "sentence": "Er geht vorne und zeigt auf eine Spur.",
-    "targetWord": "vorne",
+    "sentence": "Für den Weg zurück brauchen sie drei Stunden.",
+    "targetWord": "brauchen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sofort",
+  "sentence": "Er ist _____ da.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sofort",
+   "options": [
+    "sofort",
+    "später",
+    "morgen",
+    "nie"
+   ],
+   "translation": "He is there _____.",
+   "optionTranslations": [
+    "at once",
+    "later",
+    "tomorrow",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "nebel-uber-dem-pfad",
+    "storySource": "user",
+    "sentence": "Er ist sofort da.",
+    "targetWord": "sofort",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Reihe",
+  "sentence": "Zwei [[Reihen]] Tannen stehen hoch und sehr eng am Pfad.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a row",
+   "options": [
+    "a row",
+    "a group",
+    "a pile",
+    "a circle"
+   ],
+   "audioClip": {
+    "storySlug": "nebel-uber-dem-pfad",
+    "storySource": "user",
+    "sentence": "Zwei Reihen Tannen stehen hoch und sehr eng am Pfad.",
+    "targetWord": "Reihen",
     "language": "german"
    }
   },
@@ -287,91 +286,68 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "wahrscheinlich",
-  "sentence": "Das Reh war [[wahrscheinlich]] heute Nacht hier.",
+  "word": "die Erde",
+  "sentence": "Hannah sieht nur braune [[Erde]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "probably",
+   "answer": "soil",
    "options": [
-    "probably",
-    "certainly",
-    "never",
-    "already"
-   ],
-   "audioClip": {
-    "storySlug": "nebel-uber-dem-pfad",
-    "storySource": "user",
-    "sentence": "Das Reh war wahrscheinlich heute Nacht hier.",
-    "targetWord": "wahrscheinlich",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "glauben",
-  "sentence": "Sie sieht nichts und [[glaubt]] ihm trotzdem.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to believe someone",
-   "options": [
-    "to believe someone",
-    "to correct someone",
-    "to ignore someone",
-    "to follow someone"
-   ],
-   "audioClip": {
-    "storySlug": "nebel-uber-dem-pfad",
-    "storySource": "user",
-    "sentence": "Sie sieht nichts und glaubt ihm trotzdem.",
-    "targetWord": "glaubt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "grau",
-  "sentence": "Die Welt wird im Nebel plötzlich ganz [[grau]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "grey",
-   "options": [
-    "grey",
-    "green",
-    "blue",
-    "red"
-   ],
-   "audioClip": {
-    "storySlug": "nebel-uber-dem-pfad",
-    "storySource": "user",
-    "sentence": "Die Welt wird im Nebel plötzlich ganz grau.",
-    "targetWord": "grau",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Gras",
-  "sentence": "Sie setzt sich müde ins nasse [[Gras]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "grass",
-   "options": [
-    "grass",
-    "sand",
+    "soil",
+    "water",
     "snow",
-    "mud"
+    "sand"
    ],
    "audioClip": {
     "storySlug": "nebel-uber-dem-pfad",
     "storySource": "user",
-    "sentence": "Sie setzt sich müde ins nasse Gras.",
-    "targetWord": "Gras",
+    "sentence": "Hannah sieht nur braune Erde.",
+    "targetWord": "Erde",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wandern",
+  "sentence": "Diese Woche [[wanderst]] du nicht mehr.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hike",
+   "options": [
+    "to hike",
+    "to drive",
+    "to swim",
+    "to cook"
+   ],
+   "audioClip": {
+    "storySlug": "nebel-uber-dem-pfad",
+    "storySource": "user",
+    "sentence": "Diese Woche wanderst du nicht mehr.",
+    "targetWord": "wanderst",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "eng",
+  "sentence": "Zwei Reihen Tannen stehen hoch und sehr [[eng]] am Pfad.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "narrow",
+   "options": [
+    "narrow",
+    "wide",
+    "short",
+    "empty"
+   ],
+   "audioClip": {
+    "storySlug": "nebel-uber-dem-pfad",
+    "storySource": "user",
+    "sentence": "Zwei Reihen Tannen stehen hoch und sehr eng am Pfad.",
+    "targetWord": "eng",
     "language": "german"
    }
   },
@@ -379,167 +355,89 @@
  },
  {
   "type": "fill_blank",
-  "word": "frei",
-  "sentence": "Ihre Beine sind schwer, aber ihr Kopf ist _____.",
+  "word": "Woche",
+  "sentence": "Diese _____ wanderst du nicht mehr.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "frei",
+   "answer": "Woche",
    "options": [
-    "frei",
-    "hoch",
-    "eng",
-    "voll"
+    "Woche",
+    "Stunde",
+    "Minute",
+    "Nacht"
    ],
-   "translation": "Her legs are heavy, but her head is _____.",
+   "translation": "This _____ you will not hike any more.",
    "optionTranslations": [
-    "free",
-    "tall",
-    "narrow",
-    "full"
+    "week",
+    "hour",
+    "minute",
+    "night"
    ],
    "audioClip": {
     "storySlug": "nebel-uber-dem-pfad",
     "storySource": "user",
-    "sentence": "Ihre Beine sind schwer, aber ihr Kopf ist frei.",
-    "targetWord": "frei",
+    "sentence": "Diese Woche wanderst du nicht mehr.",
+    "targetWord": "Woche",
     "language": "german"
    }
   },
   "featured": false
  },
  {
-  "type": "meaning_in_context",
-  "word": "unten",
-  "sentence": "Alles [[unten]] liegt weiß.",
+  "type": "fill_blank",
+  "word": "nassen",
+  "sentence": "Sie rutscht auf einem _____ Stein.",
   "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "down there",
+   "prompt": "Complete the sentence.",
+   "answer": "nassen",
    "options": [
-    "down there",
-    "up there",
-    "over there",
-    "out there"
+    "nassen",
+    "warmen",
+    "alten",
+    "hohen"
+   ],
+   "translation": "She slips on a _____ stone.",
+   "optionTranslations": [
+    "wet",
+    "warm",
+    "old",
+    "tall"
    ],
    "audioClip": {
     "storySlug": "nebel-uber-dem-pfad",
     "storySource": "user",
-    "sentence": "Alles unten liegt weiß.",
-    "targetWord": "unten",
+    "sentence": "Sie rutscht auf einem nassen Stein.",
+    "targetWord": "nassen",
     "language": "german"
    }
   },
   "featured": false
  },
  {
-  "type": "meaning_in_context",
-  "word": "der Stein",
-  "sentence": "Sie verliert den Pfad und rutscht auf einem nassen [[Stein]].",
+  "type": "fill_blank",
+  "word": "braune",
+  "sentence": "Sie sieht nur _____ Erde unter den Bäumen.",
   "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "stone",
+   "prompt": "Complete the sentence.",
+   "answer": "braune",
    "options": [
-    "stone",
-    "wood",
-    "iron",
-    "glass"
+    "braune",
+    "blaue",
+    "weiße",
+    "grüne"
+   ],
+   "translation": "She sees only _____ soil under the trees.",
+   "optionTranslations": [
+    "brown",
+    "blue",
+    "white",
+    "green"
    ],
    "audioClip": {
     "storySlug": "nebel-uber-dem-pfad",
     "storySource": "user",
-    "sentence": "Sie verliert den Pfad und rutscht auf einem nassen Stein.",
-    "targetWord": "Stein",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "schnell",
-  "sentence": "Der Nebel kommt [[schnell]] zwischen die Bäume, und die Welt wird grau.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "fast",
-   "options": [
-    "fast",
-    "slow",
-    "quiet",
-    "late"
-   ],
-   "audioClip": {
-    "storySlug": "nebel-uber-dem-pfad",
-    "storySource": "user",
-    "sentence": "Der Nebel kommt schnell zwischen die Bäume, und die Welt wird grau.",
-    "targetWord": "schnell",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Stunde",
-  "sentence": "Sie brauchen drei [[Stunden]] und erreichen die Wiese über dem Nebel.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hours",
-   "options": [
-    "hours",
-    "minutes",
-    "days",
-    "weeks"
-   ],
-   "audioClip": {
-    "storySlug": "nebel-uber-dem-pfad",
-    "storySource": "user",
-    "sentence": "Sie brauchen drei Stunden und erreichen die Wiese über dem Nebel.",
-    "targetWord": "Stunden",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "trotzdem",
-  "sentence": "Sie sieht nur braune Erde und glaubt ihm [[trotzdem]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "even so",
-   "options": [
-    "even so",
-    "therefore",
-    "instead",
-    "meanwhile"
-   ],
-   "audioClip": {
-    "storySlug": "nebel-uber-dem-pfad",
-    "storySource": "user",
-    "sentence": "Sie sieht nur braune Erde und glaubt ihm trotzdem.",
-    "targetWord": "trotzdem",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sofort",
-  "sentence": "Er ist [[sofort]] da.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "immediately",
-   "options": [
-    "immediately",
-    "slowly",
-    "rarely",
-    "later"
-   ],
-   "audioClip": {
-    "storySlug": "nebel-uber-dem-pfad",
-    "storySource": "user",
-    "sentence": "Er ist sofort da.",
-    "targetWord": "sofort",
+    "sentence": "Sie sieht nur braune Erde unter den Bäumen.",
+    "targetWord": "braune",
     "language": "german"
    }
   },

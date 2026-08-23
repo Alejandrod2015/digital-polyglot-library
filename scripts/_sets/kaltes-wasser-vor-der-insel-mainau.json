@@ -1,7 +1,7 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Motor,die Insel,der Schuh,das Handtuch",
+  "word": "der Motor,der Versuch,das Handtuch,die Frau",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
@@ -11,29 +11,19 @@
      "answer": "an engine",
      "options": [
       "an engine",
-      "an island",
-      "shoes",
-      "a towel"
+      "an attempt",
+      "a towel",
+      "a woman"
      ]
     },
     {
-     "word": "die Insel",
-     "answer": "an island",
+     "word": "der Versuch",
+     "answer": "an attempt",
      "options": [
       "an engine",
-      "an island",
-      "shoes",
-      "a towel"
-     ]
-    },
-    {
-     "word": "der Schuh",
-     "answer": "shoes",
-     "options": [
-      "an engine",
-      "an island",
-      "shoes",
-      "a towel"
+      "an attempt",
+      "a towel",
+      "a woman"
      ]
     },
     {
@@ -41,223 +31,64 @@
      "answer": "a towel",
      "options": [
       "an engine",
-      "an island",
-      "shoes",
-      "a towel"
+      "an attempt",
+      "a towel",
+      "a woman"
+     ]
+    },
+    {
+     "word": "die Frau",
+     "answer": "a woman",
+     "options": [
+      "an engine",
+      "an attempt",
+      "a towel",
+      "a woman"
      ]
     }
-   ],
-   "audioClip": null
+   ]
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "mieten",
-  "sentence": "Sie [[mietet]] am Morgen ein kleines Boot für den Tag.",
+  "word": "die Insel",
+  "sentence": "Sie fährt in Richtung [[Insel]] Mainau.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "to rent something",
+   "answer": "an island",
    "options": [
-    "to rent something",
-    "to sell something",
-    "to repair something",
-    "to build something"
+    "an island",
+    "a harbour",
+    "a beach",
+    "a bridge"
    ],
    "audioClip": {
     "storySlug": "kaltes-wasser-vor-der-insel-mainau",
     "storySource": "user",
-    "sentence": "Sie mietet am Morgen ein kleines Boot für den Tag.",
-    "targetWord": "mietet",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Versuch",
-  "sentence": "Der alte Motor braucht immer mehrere [[Versuche]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "attempts",
-   "options": [
-    "attempts",
-    "minutes",
-    "litres",
-    "people"
-   ],
-   "audioClip": {
-    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
-    "storySource": "user",
-    "sentence": "Der alte Motor braucht immer mehrere Versuche.",
-    "targetWord": "Versuche",
+    "sentence": "Sie fährt in Richtung Insel Mainau.",
+    "targetWord": "Insel",
     "language": "german"
    }
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "die Richtung",
-  "sentence": "Sie fahren langsam in [[Richtung]] Insel.",
+  "word": "die Haut",
+  "sentence": "Ihre [[Haut]] wird sofort rot.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a direction",
+   "answer": "skin",
    "options": [
-    "a direction",
-    "a distance",
-    "a speed",
-    "a harbour"
+    "skin",
+    "hair",
+    "blood",
+    "bone"
    ],
    "audioClip": {
     "storySlug": "kaltes-wasser-vor-der-insel-mainau",
     "storySource": "user",
-    "sentence": "Sie fahren langsam in Richtung Insel.",
-    "targetWord": "Richtung",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "tief",
-  "sentence": "Das Wasser vor der Insel ist kalt und sehr _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "tief",
-   "options": [
-    "tief",
-    "eisig",
-    "bereit",
-    "rot"
-   ],
-   "translation": "The water off the island is cold and very _____.",
-   "optionTranslations": [
-    "deep",
-    "icy",
-    "ready",
-    "red"
-   ],
-   "audioClip": {
-    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
-    "storySource": "user",
-    "sentence": "Das Wasser vor der Insel ist kalt und sehr tief.",
-    "targetWord": "tief",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "stoppt",
-  "sentence": "Sie _____ den Motor mitten auf dem stillen See.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "stoppt",
-   "options": [
-    "stoppt",
-    "verkauft",
-    "schreibt",
-    "schwimmt"
-   ],
-   "translation": "She _____ the engine in the middle of the quiet lake.",
-   "optionTranslations": [
-    "stops",
-    "sells",
-    "writes",
-    "swims"
-   ],
-   "audioClip": {
-    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
-    "storySource": "user",
-    "sentence": "Sie stoppt den Motor mitten auf dem stillen See.",
-    "targetWord": "stoppt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Bord",
-  "sentence": "Er bleibt an [[Bord]] und hält das Handtuch bereit.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "on board a boat",
-   "options": [
-    "on board a boat",
-    "on the shore",
-    "in the water",
-    "under the deck"
-   ],
-   "audioClip": {
-    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
-    "storySource": "user",
-    "sentence": "Er bleibt an Bord und hält das Handtuch bereit.",
-    "targetWord": "Bord",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Finger",
-  "sentence": "Ihre [[Finger]] sind vom kalten Wasser schon ganz weiß.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "fingers",
-   "options": [
-    "fingers",
-    "shoulders",
-    "knees",
-    "elbows"
-   ],
-   "audioClip": {
-    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
-    "storySource": "user",
-    "sentence": "Ihre Finger sind vom kalten Wasser schon ganz weiß.",
-    "targetWord": "Finger",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "springen",
-  "sentence": "Ich [[springe]] jetzt, und ihr kommt am besten mit.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to jump",
-   "options": [
-    "to jump",
-    "to sink",
-    "to float",
-    "to row"
-   ],
-   "audioClip": {
-    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
-    "storySource": "user",
-    "sentence": "Ich springe jetzt, und ihr kommt am besten mit.",
-    "targetWord": "springe",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sofort",
-  "sentence": "Ihre Haut wird [[sofort]] rot vom kalten Wasser.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "immediately",
-   "options": [
-    "immediately",
-    "slowly",
-    "rarely",
-    "later"
-   ],
-   "audioClip": {
-    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
-    "storySource": "user",
-    "sentence": "Ihre Haut wird sofort rot vom kalten Wasser.",
-    "targetWord": "sofort",
+    "sentence": "Ihre Haut wird sofort rot.",
+    "targetWord": "Haut",
     "language": "german"
    }
   }
@@ -265,287 +96,287 @@
  {
   "type": "meaning_in_context",
   "word": "der Februar",
-  "sentence": "Seit [[Februar]] weiß sie schon von der Krankheit.",
+  "sentence": "Ich bin krank. Seit [[Februar]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "February",
    "options": [
     "February",
-    "July",
-    "September",
+    "August",
+    "May",
     "November"
    ],
    "audioClip": {
     "storySlug": "kaltes-wasser-vor-der-insel-mainau",
     "storySource": "user",
-    "sentence": "Seit Februar weiß sie schon von der Krankheit.",
+    "sentence": "Ich bin krank. Seit Februar.",
     "targetWord": "Februar",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
-  "word": "erste",
-  "sentence": "Keine von beiden will als [[Erste]] zurück zum Boot.",
+  "word": "das Boot",
+  "sentence": "Hannah lässt die Schuhe im [[Boot]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "first",
+   "answer": "a boat",
    "options": [
-    "first",
-    "last",
-    "second",
-    "only"
+    "a boat",
+    "a car",
+    "a house",
+    "a tent"
    ],
    "audioClip": {
     "storySlug": "kaltes-wasser-vor-der-insel-mainau",
     "storySource": "user",
-    "sentence": "Keine von beiden will als Erste zurück zum Boot.",
-    "targetWord": "Erste",
+    "sentence": "Hannah lässt die Schuhe im Boot.",
+    "targetWord": "Boot",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
-  "word": "weiß",
-  "sentence": "Ihre Finger sind vom kalten Wasser ganz [[weiß]].",
+  "word": "der Oktober",
+  "sentence": "Sie operieren mich im [[Oktober]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "white",
+   "answer": "October",
    "options": [
-    "white",
-    "black",
-    "yellow",
-    "grey"
+    "October",
+    "April",
+    "June",
+    "January"
    ],
    "audioClip": {
     "storySlug": "kaltes-wasser-vor-der-insel-mainau",
     "storySource": "user",
-    "sentence": "Ihre Finger sind vom kalten Wasser ganz weiß.",
-    "targetWord": "weiß",
+    "sentence": "Sie operieren mich im Oktober.",
+    "targetWord": "Oktober",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
-  "type": "fill_blank",
+  "type": "meaning_in_context",
   "word": "schwimmen",
-  "sentence": "Die beiden _____ ruhig neben dem kleinen Boot.",
+  "sentence": "Die zwei Frauen [[schwimmen]] neben dem Boot.",
   "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "schwimmen",
+   "prompt": "Choose the meaning in context.",
+   "answer": "to swim",
    "options": [
-    "schwimmen",
-    "heben",
-    "falten",
-    "stoppen"
-   ],
-   "translation": "The two of them _____ calmly beside the little boat.",
-   "optionTranslations": [
-    "swim",
-    "raise",
-    "fold",
-    "stop"
+    "to swim",
+    "to sink",
+    "to row",
+    "to walk"
    ],
    "audioClip": {
     "storySlug": "kaltes-wasser-vor-der-insel-mainau",
     "storySource": "user",
-    "sentence": "Die beiden schwimmen ruhig neben dem kleinen Boot.",
+    "sentence": "Die zwei Frauen schwimmen neben dem Boot.",
     "targetWord": "schwimmen",
     "language": "german"
    }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "springen",
+  "sentence": "Emilia [[springt]] ins kalte Wasser.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to jump",
+   "options": [
+    "to jump",
+    "to sit",
+    "to sleep",
+    "to shout"
+   ],
+   "audioClip": {
+    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
+    "storySource": "user",
+    "sentence": "Emilia springt ins kalte Wasser.",
+    "targetWord": "springt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "krank",
+  "sentence": "Ich bin [[krank]]. Seit Februar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ill",
+   "options": [
+    "ill",
+    "tired",
+    "busy",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
+    "storySource": "user",
+    "sentence": "Ich bin krank. Seit Februar.",
+    "targetWord": "krank",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "Monat",
+  "sentence": "Das ist derselbe _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Monat",
+   "options": [
+    "Monat",
+    "Ort",
+    "Grund",
+    "Preis"
+   ],
+   "translation": "That is the same _____.",
+   "optionTranslations": [
+    "month",
+    "place",
+    "reason",
+    "price"
+   ],
+   "audioClip": {
+    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
+    "storySource": "user",
+    "sentence": "Das ist derselbe Monat.",
+    "targetWord": "Monat",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Finger",
+  "sentence": "Ihre [[Finger]] sind schon ganz weiß.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a finger",
+   "options": [
+    "a finger",
+    "a knee",
+    "an ear",
+    "a tooth"
+   ],
+   "audioClip": {
+    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
+    "storySource": "user",
+    "sentence": "Ihre Finger sind schon ganz weiß.",
+    "targetWord": "Finger",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Rand",
+  "sentence": "Emilias Hand am [[Rand]] ist fest.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the rim",
+   "options": [
+    "the rim",
+    "the middle",
+    "the roof",
+    "the floor"
+   ],
+   "audioClip": {
+    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
+    "storySource": "user",
+    "sentence": "Emilias Hand am Rand ist fest.",
+    "targetWord": "Rand",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Schuh",
+  "sentence": "Hannah lässt die [[Schuhe]] im Boot.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a shoe",
+   "options": [
+    "a shoe",
+    "a coat",
+    "a hat",
+    "a glove"
+   ],
+   "audioClip": {
+    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
+    "storySource": "user",
+    "sentence": "Hannah lässt die Schuhe im Boot.",
+    "targetWord": "Schuhe",
+    "language": "german"
+   }
   },
   "featured": false
  },
  {
   "type": "fill_blank",
-  "word": "fest",
-  "sentence": "Ihre Hand hält den Rand vom Boot ganz _____.",
+  "word": "Tag",
+  "sentence": "Emilia mietet das Boot für einen halben _____.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "fest",
+   "answer": "Tag",
    "options": [
-    "fest",
-    "tief",
-    "eisig",
-    "bereit"
+    "Tag",
+    "Monat",
+    "Winter",
+    "Weg"
    ],
-   "translation": "Her hand holds the edge of the boat quite _____.",
+   "translation": "Emilia rents the boat for half a _____.",
    "optionTranslations": [
-    "firmly",
-    "deep",
-    "icy",
-    "ready"
+    "day",
+    "month",
+    "winter",
+    "way"
    ],
    "audioClip": {
     "storySlug": "kaltes-wasser-vor-der-insel-mainau",
     "storySource": "user",
-    "sentence": "Ihre Hand hält den Rand vom Boot ganz fest.",
-    "targetWord": "fest",
+    "sentence": "Emilia mietet das Boot für einen halben Tag.",
+    "targetWord": "Tag",
     "language": "german"
    }
   },
   "featured": false
  },
  {
-  "type": "meaning_in_context",
-  "word": "bleiben",
-  "sentence": "Er [[bleibt]] an Bord und hält das Handtuch bereit.",
+  "type": "fill_blank",
+  "word": "See",
+  "sentence": "Emilia stoppt den Motor mitten auf dem _____.",
   "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to stay in a place",
+   "prompt": "Complete the sentence.",
+   "answer": "See",
    "options": [
-    "to stay in a place",
-    "to leave a place",
-    "to reach a place",
-    "to look for a place"
+    "See",
+    "Berg",
+    "Markt",
+    "Hof"
+   ],
+   "translation": "Emilia stops the engine in the middle of the _____.",
+   "optionTranslations": [
+    "lake",
+    "mountain",
+    "market",
+    "yard"
    ],
    "audioClip": {
     "storySlug": "kaltes-wasser-vor-der-insel-mainau",
     "storySource": "user",
-    "sentence": "Er bleibt an Bord und hält das Handtuch bereit.",
-    "targetWord": "bleibt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Wasser",
-  "sentence": "Das [[Wasser]] vor der Insel ist tief und kalt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "water",
-   "options": [
-    "water",
-    "land",
-    "sky",
-    "sand"
-   ],
-   "audioClip": {
-    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
-    "storySource": "user",
-    "sentence": "Das Wasser vor der Insel ist tief und kalt.",
-    "targetWord": "Wasser",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "fahren",
-  "sentence": "Sie mietet es für einen halben Tag und [[fährt]] in Richtung Insel Mainau.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to travel by vehicle",
-   "options": [
-    "to travel by vehicle",
-    "to walk on foot",
-    "to wait for someone",
-    "to arrive too late"
-   ],
-   "audioClip": {
-    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
-    "storySource": "user",
-    "sentence": "Sie mietet es für einen halben Tag und fährt in Richtung Insel Mainau.",
-    "targetWord": "fährt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "kalt",
-  "sentence": "Das Wasser vor der Insel ist tief und [[kalt]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "cold",
-   "options": [
-    "cold",
-    "warm",
-    "wet",
-    "heavy"
-   ],
-   "audioClip": {
-    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
-    "storySource": "user",
-    "sentence": "Das Wasser vor der Insel ist tief und kalt.",
-    "targetWord": "kalt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Zimmer",
-  "sentence": "Ich bin die Erste im [[Zimmer]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a room",
-   "options": [
-    "a room",
-    "a house",
-    "a street",
-    "a garden"
-   ],
-   "audioClip": {
-    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
-    "storySource": "user",
-    "sentence": "Ich bin die Erste im Zimmer.",
-    "targetWord": "Zimmer",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "halten",
-  "sentence": "Er bleibt an Bord und [[hält]] das Handtuch bereit.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to stop at a station",
-   "options": [
-    "to stop at a station",
-    "to leave a station",
-    "to pass a station",
-    "to miss a station"
-   ],
-   "audioClip": {
-    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
-    "storySource": "user",
-    "sentence": "Er bleibt an Bord und hält das Handtuch bereit.",
-    "targetWord": "hält",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der See",
-  "sentence": "Sie stoppt den Motor mitten auf dem [[See]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a lake",
-   "options": [
-    "a lake",
-    "a river",
-    "a canal",
-    "a well"
-   ],
-   "audioClip": {
-    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
-    "storySource": "user",
-    "sentence": "Sie stoppt den Motor mitten auf dem See.",
+    "sentence": "Emilia stoppt den Motor mitten auf dem See.",
     "targetWord": "See",
     "language": "german"
    }
@@ -553,23 +384,60 @@
   "featured": false
  },
  {
-  "type": "meaning_in_context",
-  "word": "trotzdem",
-  "sentence": "Ich komme [[trotzdem]].",
+  "type": "fill_blank",
+  "word": "eisig",
+  "sentence": "Das Wasser im Winter ist _____ kalt.",
   "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "even so",
+   "prompt": "Complete the sentence.",
+   "answer": "eisig",
    "options": [
-    "even so",
-    "therefore",
-    "instead",
-    "meanwhile"
+    "eisig",
+    "warm",
+    "weich",
+    "süß"
+   ],
+   "translation": "The water in winter is _____ cold.",
+   "optionTranslations": [
+    "icy",
+    "warm",
+    "soft",
+    "sweet"
    ],
    "audioClip": {
     "storySlug": "kaltes-wasser-vor-der-insel-mainau",
     "storySource": "user",
-    "sentence": "Ich komme trotzdem.",
-    "targetWord": "trotzdem",
+    "sentence": "Das Wasser im Winter ist eisig kalt.",
+    "targetWord": "eisig",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "rot",
+  "sentence": "Ihre Haut wird sofort _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rot",
+   "options": [
+    "rot",
+    "grau",
+    "grün",
+    "blau"
+   ],
+   "translation": "Her skin turns _____ at once.",
+   "optionTranslations": [
+    "red",
+    "grey",
+    "green",
+    "blue"
+   ],
+   "audioClip": {
+    "storySlug": "kaltes-wasser-vor-der-insel-mainau",
+    "storySource": "user",
+    "sentence": "Ihre Haut wird sofort rot.",
+    "targetWord": "rot",
     "language": "german"
    }
   },

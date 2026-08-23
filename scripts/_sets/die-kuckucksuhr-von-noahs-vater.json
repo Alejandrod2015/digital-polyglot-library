@@ -1,103 +1,58 @@
 [
  {
   "type": "match_meaning",
-  "word": "die Werkstatt,das Regal,die Hand,der Tisch",
+  "word": "die Kuckucksuhr,die Werkstatt,der Hocker,das Werkzeug",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
+     "word": "die Kuckucksuhr",
+     "answer": "a cuckoo clock",
+     "options": [
+      "a cuckoo clock",
+      "a workshop",
+      "a stool",
+      "tools"
+     ]
+    },
+    {
      "word": "die Werkstatt",
      "answer": "a workshop",
      "options": [
+      "a cuckoo clock",
       "a workshop",
-      "a shelf",
-      "a hand",
-      "a table"
+      "a stool",
+      "tools"
      ]
     },
     {
-     "word": "das Regal",
-     "answer": "a shelf",
+     "word": "der Hocker",
+     "answer": "a stool",
      "options": [
+      "a cuckoo clock",
       "a workshop",
-      "a shelf",
-      "a hand",
-      "a table"
+      "a stool",
+      "tools"
      ]
     },
     {
-     "word": "die Hand",
-     "answer": "a hand",
+     "word": "das Werkzeug",
+     "answer": "tools",
      "options": [
+      "a cuckoo clock",
       "a workshop",
-      "a shelf",
-      "a hand",
-      "a table"
-     ]
-    },
-    {
-     "word": "der Tisch",
-     "answer": "a table",
-     "options": [
-      "a workshop",
-      "a shelf",
-      "a hand",
-      "a table"
+      "a stool",
+      "tools"
      ]
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Kuckucksuhr",
-  "sentence": "Viele [[Kuckucksuhren]] warten fertig auf dem Regal.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "cuckoo clocks",
-   "options": [
-    "cuckoo clocks",
-    "church bells",
-    "music boxes",
-    "oil lamps"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Viele Kuckucksuhren warten fertig auf dem Regal.",
-    "targetWord": "Kuckucksuhren",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Werkzeug",
-  "sentence": "Überall liegen Holzstücke und altes [[Werkzeug]] herum.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "tools",
-   "options": [
-    "tools",
-    "clothes",
-    "books",
-    "dishes"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Überall liegen Holzstücke und altes Werkzeug herum.",
-    "targetWord": "Werkzeug",
-    "language": "german"
-   }
+   ]
   }
  },
  {
   "type": "meaning_in_context",
   "word": "der Vater",
-  "sentence": "Die Werkstatt gehört seinem [[Vater]] und ist sehr eng.",
+  "sentence": "Die Werkstatt von Noahs [[Vater]] ist eng.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a father",
@@ -105,413 +60,16 @@
     "a father",
     "a brother",
     "an uncle",
-    "a neighbour"
+    "a son"
    ],
    "audioClip": {
     "storySlug": "die-kuckucksuhr-von-noahs-vater",
     "storySource": "user",
-    "sentence": "Die Werkstatt gehört seinem Vater und ist sehr eng.",
+    "sentence": "Die Werkstatt von Noahs Vater ist eng.",
     "targetWord": "Vater",
     "language": "german"
    }
   }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Woche",
-  "sentence": "Jede Uhr braucht viele [[Wochen]] Arbeit von Hand.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "weeks",
-   "options": [
-    "weeks",
-    "hours",
-    "months",
-    "years"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Jede Uhr braucht viele Wochen Arbeit von Hand.",
-    "targetWord": "Wochen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "braucht",
-  "sentence": "Eine gute Uhr _____ viel Zeit und ruhige Hände.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "braucht",
-   "options": [
-    "braucht",
-    "liest",
-    "zählt",
-    "fliegt"
-   ],
-   "translation": "A good clock _____ a lot of time and steady hands.",
-   "optionTranslations": [
-    "needs",
-    "reads",
-    "counts",
-    "flies"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Eine gute Uhr braucht viel Zeit und ruhige Hände.",
-    "targetWord": "braucht",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "schwer",
-  "sentence": "Die alte Uhr aus Holz ist sehr _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "schwer",
-   "options": [
-    "schwer",
-    "scharf",
-    "dünn",
-    "fertig"
-   ],
-   "translation": "The old wooden clock is very _____.",
-   "optionTranslations": [
-    "heavy",
-    "sharp",
-    "thin",
-    "careful"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Die alte Uhr aus Holz ist sehr schwer.",
-    "targetWord": "schwer",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Öl",
-  "sentence": "Die Uhr riecht stark nach [[Öl]] und nach Holz.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "oil",
-   "options": [
-    "oil",
-    "water",
-    "smoke",
-    "milk"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Die Uhr riecht stark nach Öl und nach Holz.",
-    "targetWord": "Öl",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "schnitzt",
-  "sentence": "Er nimmt das Messer und _____ einen kleinen Vogel.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "schnitzt",
-   "options": [
-    "schnitzt",
-    "öffnet",
-    "trägt",
-    "braucht"
-   ],
-   "translation": "He takes the knife and _____ a small bird.",
-   "optionTranslations": [
-    "carves",
-    "opens",
-    "carries",
-    "needs"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Er nimmt das Messer und schnitzt einen kleinen Vogel.",
-    "targetWord": "schnitzt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Span",
-  "sentence": "Die [[Späne]] fallen langsam auf den alten Tisch.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "wood shavings",
-   "options": [
-    "wood shavings",
-    "stone chips",
-    "metal nails",
-    "glass pieces"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Die Späne fallen langsam auf den alten Tisch.",
-    "targetWord": "Späne",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "führen",
-  "sentence": "Er [[führt]] sie in die Werkstatt hinter dem Haus.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to lead someone somewhere",
-   "options": [
-    "to lead someone somewhere",
-    "to follow someone",
-    "to meet someone",
-    "to leave someone"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Er führt sie in die Werkstatt hinter dem Haus.",
-    "targetWord": "führt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Holzstück",
-  "sentence": "Auf dem Boden liegen viele kleine [[Holzstücke]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "pieces of wood",
-   "options": [
-    "pieces of wood",
-    "pieces of bread",
-    "pieces of paper",
-    "pieces of cloth"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Auf dem Boden liegen viele kleine Holzstücke.",
-    "targetWord": "Holzstücke",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "fallen",
-  "sentence": "Die Späne [[fallen]] leise auf den Tisch.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to fall downwards",
-   "options": [
-    "to fall downwards",
-    "to rise upwards",
-    "to stay still",
-    "to turn around"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Die Späne fallen leise auf den Tisch.",
-    "targetWord": "fallen",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "stecken",
-  "sentence": "Sie [[steckt]] den kleinen Vogel in ihre Tasche.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to slip something into a space",
-   "options": [
-    "to slip something into a space",
-    "to take something out",
-    "to throw something away",
-    "to give something back"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Sie steckt den kleinen Vogel in ihre Tasche.",
-    "targetWord": "steckt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "trotzdem",
-  "sentence": "Sein Vater ist alt, aber er arbeitet [[trotzdem]] weiter.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "even so",
-   "options": [
-    "even so",
-    "therefore",
-    "instead",
-    "meanwhile"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Sein Vater ist alt, aber er arbeitet trotzdem weiter.",
-    "targetWord": "trotzdem",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "vorsichtig",
-  "sentence": "Sie nimmt die alte Uhr sehr _____ in die Hand.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "vorsichtig",
-   "options": [
-    "vorsichtig",
-    "langsam",
-    "schnell",
-    "fest"
-   ],
-   "translation": "She takes the old clock very _____ in her hand.",
-   "optionTranslations": [
-    "carefully",
-    "slowly",
-    "quickly",
-    "firmly"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Sie nimmt die alte Uhr sehr vorsichtig in die Hand.",
-    "targetWord": "vorsichtig",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "scharf",
-  "sentence": "Das Messer ist sehr _____ und schneidet das Holz leicht.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "scharf",
-   "options": [
-    "scharf",
-    "vorsichtig",
-    "dünn",
-    "schwer"
-   ],
-   "translation": "The knife is very _____ and cuts the wood easily.",
-   "optionTranslations": [
-    "sharp",
-    "careful",
-    "thin",
-    "heavy"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Das Messer ist sehr scharf und schneidet das Holz leicht.",
-    "targetWord": "scharf",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "jeden",
-  "sentence": "Du kennst [[jeden]] Griff.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "every",
-   "options": [
-    "every",
-    "some",
-    "no",
-    "many"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Du kennst jeden Griff.",
-    "targetWord": "jeden",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "riechen",
-  "sentence": "Sie ist schwer und [[riecht]] nach Öl.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to smell of something",
-   "options": [
-    "to smell of something",
-    "to taste of something",
-    "to sound like something",
-    "to look like something"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Sie ist schwer und riecht nach Öl.",
-    "targetWord": "riecht",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "unten",
-  "sentence": "Sein Vater ist heute [[unten]] im Ort.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "down there",
-   "options": [
-    "down there",
-    "up there",
-    "over there",
-    "out there"
-   ],
-   "audioClip": {
-    "storySlug": "die-kuckucksuhr-von-noahs-vater",
-    "storySource": "user",
-    "sentence": "Sein Vater ist heute unten im Ort.",
-    "targetWord": "unten",
-    "language": "german"
-   }
-  },
-  "featured": false
  },
  {
   "type": "meaning_in_context",
@@ -522,8 +80,8 @@
    "answer": "winter",
    "options": [
     "winter",
-    "spring",
     "summer",
+    "spring",
     "autumn"
    ],
    "audioClip": {
@@ -531,6 +89,355 @@
     "storySource": "user",
     "sentence": "Die Werkstatt schließt nächsten Winter.",
     "targetWord": "Winter",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Messer",
+  "sentence": "Sein [[Messer]] ist scharf und dünn.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a knife",
+   "options": [
+    "a knife",
+    "a hammer",
+    "a brush",
+    "a rope"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Sein Messer ist scharf und dünn.",
+    "targetWord": "Messer",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Holz",
+  "sentence": "Das [[Holz]] riecht nach Öl.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wood",
+   "options": [
+    "wood",
+    "metal",
+    "stone",
+    "water"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Das Holz riecht nach Öl.",
+    "targetWord": "Holz",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Förster",
+  "sentence": "Ich bin [[Förster]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a forester",
+   "options": [
+    "a forester",
+    "a baker",
+    "a driver",
+    "a doctor"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Ich bin Förster.",
+    "targetWord": "Förster",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schnitzen",
+  "sentence": "Noah [[schnitzt]] einen kleinen Vogel.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to carve",
+   "options": [
+    "to carve",
+    "to paint",
+    "to buy",
+    "to break"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Noah schnitzt einen kleinen Vogel.",
+    "targetWord": "schnitzt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "Wochen",
+  "sentence": "Jede Uhr braucht drei _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Wochen",
+   "options": [
+    "Wochen",
+    "Stunden",
+    "Minuten",
+    "Jahre"
+   ],
+   "translation": "Every clock needs three _____.",
+   "optionTranslations": [
+    "weeks",
+    "hours",
+    "minutes",
+    "years"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Jede Uhr braucht drei Wochen.",
+    "targetWord": "Wochen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "schließt",
+  "sentence": "Das kleine Geschäft _____ nächsten Winter.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schließt",
+   "options": [
+    "schließt",
+    "öffnet",
+    "wächst",
+    "kocht"
+   ],
+   "translation": "The small shop _____ next winter.",
+   "optionTranslations": [
+    "closes",
+    "opens",
+    "grows",
+    "cooks"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Das kleine Geschäft schließt nächsten Winter.",
+    "targetWord": "schließt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "scharf",
+  "sentence": "Das Messer ist dünn und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "scharf",
+   "options": [
+    "scharf",
+    "stumpf",
+    "weich",
+    "nass"
+   ],
+   "translation": "The knife is thin and _____.",
+   "optionTranslations": [
+    "sharp",
+    "blunt",
+    "soft",
+    "wet"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Das Messer ist dünn und scharf.",
+    "targetWord": "scharf",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Öl",
+  "sentence": "Das Holz riecht nach [[Öl]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "oil",
+   "options": [
+    "oil",
+    "smoke",
+    "soap",
+    "paint"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Das Holz riecht nach Öl.",
+    "targetWord": "Öl",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Griff",
+  "sentence": "Du kennst jeden [[Griff]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a practised grip",
+   "options": [
+    "a practised grip",
+    "a loud noise",
+    "a long walk",
+    "a short break"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Du kennst jeden Griff.",
+    "targetWord": "Griff",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Span",
+  "sentence": "Die [[Späne]] fallen auf den Tisch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a wood shaving",
+   "options": [
+    "a wood shaving",
+    "a drop",
+    "a crumb",
+    "a leaf"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Die Späne fallen auf den Tisch.",
+    "targetWord": "Späne",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Holzstück",
+  "sentence": "[[Holzstücke]] und Werkzeug liegen überall.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a piece of wood",
+   "options": [
+    "a piece of wood",
+    "a piece of glass",
+    "a piece of paper",
+    "a piece of cloth"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Holzstücke und Werkzeug liegen überall.",
+    "targetWord": "Holzstücke",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zittern",
+  "sentence": "Seine Hände [[zittern]] jetzt bei jedem Schnitt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tremble",
+   "options": [
+    "to tremble",
+    "to rest",
+    "to warm",
+    "to open"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Seine Hände zittern jetzt bei jedem Schnitt.",
+    "targetWord": "zittern",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "steckt",
+  "sentence": "Sie _____ den Vogel in die Tasche.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "steckt",
+   "options": [
+    "steckt",
+    "wirft",
+    "verkauft",
+    "malt"
+   ],
+   "translation": "She _____ the bird into her bag.",
+   "optionTranslations": [
+    "puts",
+    "throws",
+    "sells",
+    "paints"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Sie steckt den Vogel in die Tasche.",
+    "targetWord": "steckt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "braucht",
+  "sentence": "Jede Uhr _____ drei Wochen Arbeit.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "braucht",
+   "options": [
+    "braucht",
+    "kostet",
+    "dauert",
+    "kennt"
+   ],
+   "translation": "Every clock _____ three weeks of work.",
+   "optionTranslations": [
+    "needs",
+    "costs",
+    "lasts",
+    "knows"
+   ],
+   "audioClip": {
+    "storySlug": "die-kuckucksuhr-von-noahs-vater",
+    "storySource": "user",
+    "sentence": "Jede Uhr braucht drei Wochen Arbeit.",
+    "targetWord": "braucht",
     "language": "german"
    }
   },

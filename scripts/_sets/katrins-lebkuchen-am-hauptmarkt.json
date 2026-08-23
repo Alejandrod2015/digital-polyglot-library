@@ -1,0 +1,446 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Lebkuchen,die Backstube,der Tresen,das Blech",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Lebkuchen",
+     "answer": "gingerbread",
+     "options": [
+      "gingerbread",
+      "a bakehouse",
+      "a shop counter",
+      "tin plate"
+     ]
+    },
+    {
+     "word": "die Backstube",
+     "answer": "a bakehouse",
+     "options": [
+      "gingerbread",
+      "a bakehouse",
+      "a shop counter",
+      "tin plate"
+     ]
+    },
+    {
+     "word": "der Tresen",
+     "answer": "a shop counter",
+     "options": [
+      "gingerbread",
+      "a bakehouse",
+      "a shop counter",
+      "tin plate"
+     ]
+    },
+    {
+     "word": "das Blech",
+     "answer": "tin plate",
+     "options": [
+      "gingerbread",
+      "a bakehouse",
+      "a shop counter",
+      "tin plate"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Tante",
+  "sentence": "Hannahs [[Tante]] Katrin verkauft Lebkuchen am Hauptmarkt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an aunt",
+   "options": [
+    "an aunt",
+    "a cousin",
+    "a mother",
+    "a niece"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Hannahs Tante Katrin verkauft Lebkuchen am Hauptmarkt.",
+    "targetWord": "Tante",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Markt",
+  "sentence": "Der [[Markt]] ist am Freitag voller Stände und Leute.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a market",
+   "options": [
+    "a market",
+    "a station",
+    "a church",
+    "a school"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Der Markt ist am Freitag voller Stände und Leute.",
+    "targetWord": "Markt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Stand",
+  "sentence": "Ihr [[Stand]] riecht nach Zimt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a market stall",
+   "options": [
+    "a market stall",
+    "a kitchen",
+    "a garden",
+    "a window"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Ihr Stand riecht nach Zimt.",
+    "targetWord": "Stand",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Dose",
+  "sentence": "Bunte [[Dosen]] aus altem Blech liegen auf dem Tresen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a tin",
+   "options": [
+    "a tin",
+    "a plate",
+    "a glass",
+    "a spoon"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Bunte Dosen aus altem Blech liegen auf dem Tresen.",
+    "targetWord": "Dosen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Schwester",
+  "sentence": "Katrin ist die jüngste [[Schwester]] von Hannahs Vater.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sister",
+   "options": [
+    "a sister",
+    "a daughter",
+    "a wife",
+    "a friend"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Katrin ist die jüngste Schwester von Hannahs Vater.",
+    "targetWord": "Schwester",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Tod",
+  "sentence": "Sie steht seit dem [[Tod]] ihrer Mutter allein im Laden.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "death",
+   "options": [
+    "death",
+    "birth",
+    "travel",
+    "illness"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Sie steht seit dem Tod ihrer Mutter allein im Laden.",
+    "targetWord": "Tod",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "helfen",
+  "sentence": "Heute [[helfe]] ich dir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to help",
+   "options": [
+    "to help",
+    "to pay",
+    "to wait",
+    "to leave"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Heute helfe ich dir.",
+    "targetWord": "helfe",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "Geld",
+  "sentence": "Katrin zählt das _____ zweimal.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Geld",
+   "options": [
+    "Geld",
+    "Brot",
+    "Papier",
+    "Salz"
+   ],
+   "translation": "Katrin counts the _____ twice.",
+   "optionTranslations": [
+    "money",
+    "bread",
+    "paper",
+    "salt"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Katrin zählt das Geld zweimal.",
+    "targetWord": "Geld",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "Familie",
+  "sentence": "Die Backstube gehört ihrer _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Familie",
+   "options": [
+    "Familie",
+    "Schule",
+    "Stadt",
+    "Kirche"
+   ],
+   "translation": "The bakehouse belongs to her _____.",
+   "optionTranslations": [
+    "family",
+    "school",
+    "town",
+    "church"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Die Backstube gehört ihrer Familie.",
+    "targetWord": "Familie",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Zucker",
+  "sentence": "Ihre Finger kleben von [[Zucker]] und Honig.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sugar",
+   "options": [
+    "sugar",
+    "flour",
+    "salt",
+    "butter"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Ihre Finger kleben von Zucker und Honig.",
+    "targetWord": "Zucker",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Honig",
+  "sentence": "Ihre Finger kleben von Zucker und [[Honig]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "honey",
+   "options": [
+    "honey",
+    "milk",
+    "oil",
+    "water"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Ihre Finger kleben von Zucker und Honig.",
+    "targetWord": "Honig",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Mandel",
+  "sentence": "Probier den mit [[Mandeln]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an almond",
+   "options": [
+    "an almond",
+    "an apple",
+    "an onion",
+    "a lemon"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Probier den mit Mandeln.",
+    "targetWord": "Mandeln",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Freitag",
+  "sentence": "Der Markt ist am [[Freitag]] voller Stände und Leute.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Friday",
+   "options": [
+    "Friday",
+    "Sunday",
+    "Monday",
+    "Tuesday"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Der Markt ist am Freitag voller Stände und Leute.",
+    "targetWord": "Freitag",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "Mai",
+  "sentence": "Seit _____. Vielleicht länger.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Mai",
+   "options": [
+    "Mai",
+    "Juli",
+    "Winter",
+    "Montag"
+   ],
+   "translation": "Since _____. Maybe longer.",
+   "optionTranslations": [
+    "May",
+    "July",
+    "winter",
+    "Monday"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Seit Mai. Vielleicht länger.",
+    "targetWord": "Mai",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "Frau",
+  "sentence": "Eine _____ kauft zwei Dosen für ihre Familie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Frau",
+   "options": [
+    "Frau",
+    "Katze",
+    "Tür",
+    "Uhr"
+   ],
+   "translation": "A _____ buys two tins for her family.",
+   "optionTranslations": [
+    "woman",
+    "cat",
+    "door",
+    "clock"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Eine Frau kauft zwei Dosen für ihre Familie.",
+    "targetWord": "Frau",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "Bunte",
+  "sentence": "_____ Dosen aus altem Blech liegen auf dem Tresen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Bunte",
+   "options": [
+    "Bunte",
+    "Leere",
+    "Nasse",
+    "Schwere"
+   ],
+   "translation": "_____ tins of old tin plate lie on the counter.",
+   "optionTranslations": [
+    "Colourful",
+    "Empty",
+    "Wet",
+    "Heavy"
+   ],
+   "audioClip": {
+    "storySlug": "katrins-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Bunte Dosen aus altem Blech liegen auf dem Tresen.",
+    "targetWord": "Bunte",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

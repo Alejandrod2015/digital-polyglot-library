@@ -1,7 +1,7 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Affe,das Tor,das Ruderboot,die Hand",
+  "word": "der Affe,die Bronze,das Ruderboot,das Fahrrad",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
@@ -11,19 +11,19 @@
      "answer": "a monkey",
      "options": [
       "a monkey",
-      "a gate",
+      "bronze",
       "a rowing boat",
-      "a hand"
+      "a bicycle"
      ]
     },
     {
-     "word": "das Tor",
-     "answer": "a gate",
+     "word": "die Bronze",
+     "answer": "bronze",
      "options": [
       "a monkey",
-      "a gate",
+      "bronze",
       "a rowing boat",
-      "a hand"
+      "a bicycle"
      ]
     },
     {
@@ -31,108 +31,41 @@
      "answer": "a rowing boat",
      "options": [
       "a monkey",
-      "a gate",
+      "bronze",
       "a rowing boat",
-      "a hand"
+      "a bicycle"
      ]
     },
     {
-     "word": "die Hand",
-     "answer": "a hand",
+     "word": "das Fahrrad",
+     "answer": "a bicycle",
      "options": [
       "a monkey",
-      "a gate",
+      "bronze",
       "a rowing boat",
-      "a hand"
+      "a bicycle"
      ]
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Anfang",
-  "sentence": "Die runden Türme stehen am [[Anfang]] der Brücke.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the beginning",
-   "options": [
-    "the beginning",
-    "the end",
-    "the middle",
-    "the roof"
-   ],
-   "audioClip": {
-    "storySlug": "der-affe-an-der-alten-brucke",
-    "storySource": "user",
-    "sentence": "Die runden Türme stehen am Anfang der Brücke.",
-    "targetWord": "Anfang",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Bronze",
-  "sentence": "Der Affe aus [[Bronze]] sitzt neben dem Tor.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "bronze",
-   "options": [
-    "bronze",
-    "wood",
-    "paper",
-    "glass"
-   ],
-   "audioClip": {
-    "storySlug": "der-affe-an-der-alten-brucke",
-    "storySource": "user",
-    "sentence": "Der Affe aus Bronze sitzt neben dem Tor.",
-    "targetWord": "Bronze",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Glück",
-  "sentence": "Alle sagen, der Affe bringt den Besuchern [[Glück]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "luck",
-   "options": [
-    "luck",
-    "trouble",
-    "money",
-    "hunger"
-   ],
-   "audioClip": {
-    "storySlug": "der-affe-an-der-alten-brucke",
-    "storySource": "user",
-    "sentence": "Alle sagen, der Affe bringt den Besuchern Glück.",
-    "targetWord": "Glück",
-    "language": "german"
-   }
+   ]
   }
  },
  {
   "type": "meaning_in_context",
   "word": "der Besucher",
-  "sentence": "Viele [[Besucher]] berühren jeden Tag den kalten Kopf.",
+  "sentence": "Viele [[Besucher]] berühren den Kopf.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "visitors",
+   "answer": "a visitor",
    "options": [
-    "visitors",
-    "workers",
-    "children",
-    "neighbours"
+    "a visitor",
+    "a driver",
+    "a seller",
+    "a neighbour"
    ],
    "audioClip": {
     "storySlug": "der-affe-an-der-alten-brucke",
     "storySource": "user",
-    "sentence": "Viele Besucher berühren jeden Tag den kalten Kopf.",
+    "sentence": "Viele Besucher berühren den Kopf.",
     "targetWord": "Besucher",
     "language": "german"
    }
@@ -140,8 +73,30 @@
  },
  {
   "type": "meaning_in_context",
+  "word": "das Glück",
+  "sentence": "Der Affe bringt [[Glück]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "luck",
+   "options": [
+    "luck",
+    "rain",
+    "noise",
+    "work"
+   ],
+   "audioClip": {
+    "storySlug": "der-affe-an-der-alten-brucke",
+    "storySource": "user",
+    "sentence": "Der Affe bringt Glück.",
+    "targetWord": "Glück",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
   "word": "der Kopf",
-  "sentence": "Sie legt die Hand auf den kalten [[Kopf]] aus Bronze.",
+  "sentence": "Viele Besucher berühren den [[Kopf]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a head",
@@ -154,7 +109,7 @@
    "audioClip": {
     "storySlug": "der-affe-an-der-alten-brucke",
     "storySource": "user",
-    "sentence": "Sie legt die Hand auf den kalten Kopf aus Bronze.",
+    "sentence": "Viele Besucher berühren den Kopf.",
     "targetWord": "Kopf",
     "language": "german"
    }
@@ -162,225 +117,74 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "rund",
-  "sentence": "Der Turm am Anfang der Brücke ist [[rund]] und alt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "round",
-   "options": [
-    "round",
-    "square",
-    "narrow",
-    "broken"
-   ],
-   "audioClip": {
-    "storySlug": "der-affe-an-der-alten-brucke",
-    "storySource": "user",
-    "sentence": "Der Turm am Anfang der Brücke ist rund und alt.",
-    "targetWord": "runde",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "bringen",
-  "sentence": "Der alte Affe [[bringt]] jedem Besucher Glück.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to bring something to someone",
-   "options": [
-    "to bring something to someone",
-    "to take something away",
-    "to sell something",
-    "to hide something"
-   ],
-   "audioClip": {
-    "storySlug": "der-affe-an-der-alten-brucke",
-    "storySource": "user",
-    "sentence": "Der alte Affe bringt jedem Besucher Glück.",
-    "targetWord": "bringt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "lachen",
-  "sentence": "Sie [[lacht]] und legt die Hand auf den Kopf.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to laugh",
-   "options": [
-    "to laugh",
-    "to cry",
-    "to shout",
-    "to whisper"
-   ],
-   "audioClip": {
-    "storySlug": "der-affe-an-der-alten-brucke",
-    "storySource": "user",
-    "sentence": "Sie lacht und legt die Hand auf den Kopf.",
-    "targetWord": "lacht",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "niemand",
-  "sentence": "Das Boot fährt vorbei, und [[niemand]] ruft.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "nobody",
-   "options": [
-    "nobody",
-    "everybody",
-    "somebody",
-    "anybody"
-   ],
-   "audioClip": {
-    "storySlug": "der-affe-an-der-alten-brucke",
-    "storySource": "user",
-    "sentence": "Das Boot fährt vorbei, und niemand ruft.",
-    "targetWord": "niemand",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
   "word": "der August",
-  "sentence": "Sie kommt im [[August]] noch einmal in die Stadt.",
+  "sentence": "Sag mir im [[August]] dein Ja.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "August",
    "options": [
     "August",
-    "April",
-    "November",
-    "February"
+    "March",
+    "October",
+    "January"
    ],
    "audioClip": {
     "storySlug": "der-affe-an-der-alten-brucke",
     "storySource": "user",
-    "sentence": "Sie kommt im August noch einmal in die Stadt.",
+    "sentence": "Sag mir im August dein Ja.",
     "targetWord": "August",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
-  "word": "allein",
-  "sentence": "Sie geht [[allein]] zurück und beginnt ihre Schicht.",
+  "word": "umarmen",
+  "sentence": "Sophie [[umarmt]] Hannah sehr fest.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "alone",
+   "answer": "to hug",
    "options": [
-    "alone",
-    "together",
-    "quickly",
-    "slowly"
+    "to hug",
+    "to greet",
+    "to call",
+    "to follow"
    ],
    "audioClip": {
     "storySlug": "der-affe-an-der-alten-brucke",
     "storySource": "user",
-    "sentence": "Sie geht allein zurück und beginnt ihre Schicht.",
-    "targetWord": "allein",
+    "sentence": "Sophie umarmt Hannah sehr fest.",
+    "targetWord": "umarmt",
     "language": "german"
    }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "leise",
-  "sentence": "Das Boot fährt so _____, dass niemand es hört.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "leise",
-   "options": [
-    "leise",
-    "rund",
-    "grün",
-    "allein"
-   ],
-   "translation": "The boat moves so _____ that nobody hears it.",
-   "optionTranslations": [
-    "quietly",
-    "round",
-    "green",
-    "alone"
-   ],
-   "audioClip": {
-    "storySlug": "der-affe-an-der-alten-brucke",
-    "storySource": "user",
-    "sentence": "Das Boot fährt so leise, dass niemand es hört.",
-    "targetWord": "leise",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "wieder",
-  "sentence": "Sie kennt die Stadt schon und kommt jetzt _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "wieder",
-   "options": [
-    "wieder",
-    "bald",
-    "allein",
-    "leise"
-   ],
-   "translation": "She already knows the city and is now coming _____.",
-   "optionTranslations": [
-    "again",
-    "soon",
-    "alone",
-    "quietly"
-   ],
-   "audioClip": {
-    "storySlug": "der-affe-an-der-alten-brucke",
-    "storySource": "user",
-    "sentence": "Sie kennt die Stadt schon und kommt jetzt wieder.",
-    "targetWord": "wieder",
-    "language": "german"
-   }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
-  "word": "das Wasser",
-  "sentence": "Das [[Wasser]] unter der Brücke ist grün.",
+  "word": "berühren",
+  "sentence": "Viele Besucher [[berühren]] den Kopf.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "water",
+   "answer": "to touch",
    "options": [
-    "water",
-    "land",
-    "sky",
-    "sand"
+    "to touch",
+    "to count",
+    "to clean",
+    "to sell"
    ],
    "audioClip": {
     "storySlug": "der-affe-an-der-alten-brucke",
     "storySource": "user",
-    "sentence": "Das Wasser unter der Brücke ist grün.",
-    "targetWord": "Wasser",
+    "sentence": "Viele Besucher berühren den Kopf.",
+    "targetWord": "berühren",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
   "word": "antworten",
-  "sentence": "Ich verspreche es, [[antwortet]] sie.",
+  "sentence": "Ich verspreche es, [[antwortet]] Hannah.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "to answer",
@@ -393,123 +197,247 @@
    "audioClip": {
     "storySlug": "der-affe-an-der-alten-brucke",
     "storySource": "user",
-    "sentence": "Ich verspreche es, antwortet sie.",
+    "sentence": "Ich verspreche es, antwortet Hannah.",
     "targetWord": "antwortet",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
-  "type": "meaning_in_context",
-  "word": "laut",
-  "sentence": "Das sagt man nicht [[laut]].",
+  "type": "fill_blank",
+  "word": "Minuten",
+  "sentence": "Ihre Schicht beginnt in zehn _____.",
   "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "loud",
+   "prompt": "Complete the sentence.",
+   "answer": "Minuten",
    "options": [
-    "loud",
-    "quiet",
-    "slow",
-    "dark"
+    "Minuten",
+    "Wochen",
+    "Jahren",
+    "Monaten"
    ],
-   "audioClip": {
-    "storySlug": "der-affe-an-der-alten-brucke",
-    "storySource": "user",
-    "sentence": "Das sagt man nicht laut.",
-    "targetWord": "laut",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "legen",
-  "sentence": "Sie lacht und [[legt]] die Hand auf den Kopf.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to lay something down",
-   "options": [
-    "to lay something down",
-    "to pick something up",
-    "to throw something",
-    "to buy something"
-   ],
-   "audioClip": {
-    "storySlug": "der-affe-an-der-alten-brucke",
-    "storySource": "user",
-    "sentence": "Sie lacht und legt die Hand auf den Kopf.",
-    "targetWord": "legt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "kalt",
-  "sentence": "Die Bronze ist [[kalt]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "cold",
-   "options": [
-    "cold",
-    "warm",
-    "wet",
-    "heavy"
-   ],
-   "audioClip": {
-    "storySlug": "der-affe-an-der-alten-brucke",
-    "storySource": "user",
-    "sentence": "Die Bronze ist kalt.",
-    "targetWord": "kalt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Platz",
-  "sentence": "Der Bus nach Leipzig steht schon am [[Platz]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a public square",
-   "options": [
-    "a public square",
-    "a narrow lane",
-    "a train station",
-    "a garden"
-   ],
-   "audioClip": {
-    "storySlug": "der-affe-an-der-alten-brucke",
-    "storySource": "user",
-    "sentence": "Der Bus nach Leipzig steht schon am Platz.",
-    "targetWord": "Platz",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Minute",
-  "sentence": "Ihre Schicht beginnt in zehn [[Minuten]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "minutes",
-   "options": [
+   "translation": "Her shift begins in ten _____.",
+   "optionTranslations": [
     "minutes",
-    "hours",
-    "days",
-    "weeks"
+    "weeks",
+    "years",
+    "months"
    ],
    "audioClip": {
     "storySlug": "der-affe-an-der-alten-brucke",
     "storySource": "user",
     "sentence": "Ihre Schicht beginnt in zehn Minuten.",
     "targetWord": "Minuten",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "glatt",
+  "sentence": "Der Stein am Fluss ist nass und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "glatt",
+   "options": [
+    "glatt",
+    "hart",
+    "warm",
+    "alt"
+   ],
+   "translation": "The stone by the river is wet and _____.",
+   "optionTranslations": [
+    "smooth",
+    "hard",
+    "warm",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "der-affe-an-der-alten-brucke",
+    "storySource": "user",
+    "sentence": "Der Stein am Fluss ist nass und glatt.",
+    "targetWord": "glatt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Anfang",
+  "sentence": "Zwei runde Türme stehen am [[Anfang]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the beginning",
+   "options": [
+    "the beginning",
+    "the middle",
+    "the end",
+    "the side"
+   ],
+   "audioClip": {
+    "storySlug": "der-affe-an-der-alten-brucke",
+    "storySource": "user",
+    "sentence": "Zwei runde Türme stehen am Anfang.",
+    "targetWord": "Anfang",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Bus",
+  "sentence": "Der [[Bus]] nach Leipzig steht schon am Platz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a bus",
+   "options": [
+    "a bus",
+    "a train",
+    "a ship",
+    "a taxi"
+   ],
+   "audioClip": {
+    "storySlug": "der-affe-an-der-alten-brucke",
+    "storySource": "user",
+    "sentence": "Der Bus nach Leipzig steht schon am Platz.",
+    "targetWord": "Bus",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Krankenhaus",
+  "sentence": "Sophie fährt ins [[Krankenhaus]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a hospital",
+   "options": [
+    "a hospital",
+    "a school",
+    "a museum",
+    "a market"
+   ],
+   "audioClip": {
+    "storySlug": "der-affe-an-der-alten-brucke",
+    "storySource": "user",
+    "sentence": "Sophie fährt ins Krankenhaus.",
+    "targetWord": "Krankenhaus",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gleiten",
+  "sentence": "Ein Ruderboot [[gleitet]] leise über den Neckar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to glide",
+   "options": [
+    "to glide",
+    "to sink",
+    "to stop",
+    "to turn"
+   ],
+   "audioClip": {
+    "storySlug": "der-affe-an-der-alten-brucke",
+    "storySource": "user",
+    "sentence": "Ein Ruderboot gleitet leise über den Neckar.",
+    "targetWord": "gleitet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "Kusinen",
+  "sentence": "Elias macht ein Foto von den beiden _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Kusinen",
+   "options": [
+    "Kusinen",
+    "Brüdern",
+    "Lehrern",
+    "Ärzten"
+   ],
+   "translation": "Elias takes a photo of the two _____.",
+   "optionTranslations": [
+    "female cousins",
+    "brothers",
+    "teachers",
+    "doctors"
+   ],
+   "audioClip": {
+    "storySlug": "der-affe-an-der-alten-brucke",
+    "storySource": "user",
+    "sentence": "Elias macht ein Foto von den beiden Kusinen.",
+    "targetWord": "Kusinen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "beginnt",
+  "sentence": "Die Arbeit _____ jeden Tag um sechs.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "beginnt",
+   "options": [
+    "beginnt",
+    "endet",
+    "dauert",
+    "fehlt"
+   ],
+   "translation": "The work _____ every day at six.",
+   "optionTranslations": [
+    "begins",
+    "ends",
+    "lasts",
+    "is missing"
+   ],
+   "audioClip": {
+    "storySlug": "der-affe-an-der-alten-brucke",
+    "storySource": "user",
+    "sentence": "Die Arbeit beginnt jeden Tag um sechs.",
+    "targetWord": "beginnt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "wünschst",
+  "sentence": "Und? Was _____ du dir?",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "wünschst",
+   "options": [
+    "wünschst",
+    "kaufst",
+    "suchst",
+    "liest"
+   ],
+   "translation": "And? What do you _____ for?",
+   "optionTranslations": [
+    "wish",
+    "buy",
+    "look",
+    "read"
+   ],
+   "audioClip": {
+    "storySlug": "der-affe-an-der-alten-brucke",
+    "storySource": "user",
+    "sentence": "Und? Was wünschst du dir?",
+    "targetWord": "wünschst",
     "language": "german"
    }
   },

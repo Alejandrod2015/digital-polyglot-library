@@ -1,168 +1,189 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Bahnhof,der Platz,der Fluss,das Jahr",
+  "word": "die Lehrerin,der Bahnsteig,das Museum,die Kirche",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "der Bahnhof",
-     "answer": "a train station",
+     "word": "die Lehrerin",
+     "answer": "a female teacher",
      "options": [
-      "a train station",
-      "a public square",
-      "a river",
-      "a year"
+      "a female teacher",
+      "a railway platform",
+      "a museum",
+      "a church"
      ]
     },
     {
-     "word": "der Platz",
-     "answer": "a public square",
+     "word": "der Bahnsteig",
+     "answer": "a railway platform",
      "options": [
-      "a train station",
-      "a public square",
-      "a river",
-      "a year"
+      "a female teacher",
+      "a railway platform",
+      "a museum",
+      "a church"
      ]
     },
     {
-     "word": "der Fluss",
-     "answer": "a river",
+     "word": "das Museum",
+     "answer": "a museum",
      "options": [
-      "a train station",
-      "a public square",
-      "a river",
-      "a year"
+      "a female teacher",
+      "a railway platform",
+      "a museum",
+      "a church"
      ]
     },
     {
-     "word": "das Jahr",
-     "answer": "a year",
+     "word": "die Kirche",
+     "answer": "a church",
      "options": [
-      "a train station",
-      "a public square",
-      "a river",
-      "a year"
+      "a female teacher",
+      "a railway platform",
+      "a museum",
+      "a church"
      ]
     }
-   ],
-   "audioClip": null
+   ]
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "fahren",
-  "sentence": "Ihr Zug nach Hause [[fährt]] erst am Sonntag.",
+  "word": "die Tasche",
+  "sentence": "Ihre [[Tasche]] ist schwer.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "to travel by vehicle",
+   "answer": "a bag",
    "options": [
-    "to travel by vehicle",
-    "to walk on foot",
-    "to wait for someone",
-    "to arrive too late"
+    "a bag",
+    "a coat",
+    "a ticket",
+    "a suitcase"
    ],
    "audioClip": {
     "storySlug": "wieder-in-dresden",
     "storySource": "user",
-    "sentence": "Ihr Zug nach Hause fährt erst am Sonntag.",
-    "targetWord": "fährt",
+    "sentence": "Ihre Tasche ist schwer.",
+    "targetWord": "Tasche",
     "language": "german"
    }
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "der Zug",
-  "sentence": "Der [[Zug]] steht schon am Gleis und ist ganz voll.",
+  "word": "der Freund",
+  "sentence": "Elias, ein alter [[Freund]] aus der Schule, wohnt in Dresden.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a train",
+   "answer": "a friend",
    "options": [
-    "a train",
-    "a bus",
-    "a boat",
-    "a bicycle"
+    "a friend",
+    "a teacher",
+    "a neighbour",
+    "a cousin"
    ],
    "audioClip": {
     "storySlug": "wieder-in-dresden",
     "storySource": "user",
-    "sentence": "Der Zug steht schon am Gleis und ist ganz voll.",
-    "targetWord": "Zug",
+    "sentence": "Elias, ein alter Freund aus der Schule, wohnt in Dresden.",
+    "targetWord": "Freund",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Kaffee",
+  "sentence": "Ein Mann verkauft [[Kaffee]] neben der Treppe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "coffee",
+   "options": [
+    "coffee",
+    "bread",
+    "milk",
+    "juice"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Ein Mann verkauft Kaffee neben der Treppe.",
+    "targetWord": "Kaffee",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Arbeit",
+  "sentence": "Ich habe viel [[Arbeit]] im Museum.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "work",
+   "options": [
+    "work",
+    "time",
+    "luck",
+    "money"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Ich habe viel Arbeit im Museum.",
+    "targetWord": "Arbeit",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "winken",
+  "sentence": "Er [[winkt]] von oben.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wave",
+   "options": [
+    "to wave",
+    "to shout",
+    "to run",
+    "to point"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Er winkt von oben.",
+    "targetWord": "winkt",
     "language": "german"
    }
   }
  },
  {
   "type": "fill_blank",
-  "word": "warten",
-  "sentence": "Der Bus kommt spät, und sie _____ seit einer Stunde.",
+  "word": "Minuten",
+  "sentence": "Der Zug kommt in zehn _____.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "warten",
+   "answer": "Minuten",
    "options": [
-    "warten",
-    "schlafen",
-    "lesen",
-    "singen"
+    "Minuten",
+    "Wochen",
+    "Jahren",
+    "Monaten"
    ],
-   "translation": "The bus is late, and they _____ for an hour now.",
+   "translation": "The train comes in ten _____.",
    "optionTranslations": [
-    "wait",
-    "sleep",
-    "read",
-    "sing"
+    "minutes",
+    "weeks",
+    "years",
+    "months"
    ],
    "audioClip": {
     "storySlug": "wieder-in-dresden",
     "storySource": "user",
-    "sentence": "Der Bus kommt spät, und sie warten seit einer Stunde.",
-    "targetWord": "warten",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Schule",
-  "sentence": "Die beiden kennen sich seit der [[Schule]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a school",
-   "options": [
-    "a school",
-    "a hospital",
-    "a station",
-    "a factory"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Die beiden kennen sich seit der Schule.",
-    "targetWord": "Schule",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "kennen",
-  "sentence": "Sie [[kennt]] die Stadt nicht gut.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to know a place or person",
-   "options": [
-    "to know a place or person",
-    "to visit a place",
-    "to look for a place",
-    "to leave a place"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Sie kennt die Stadt nicht gut.",
-    "targetWord": "kennt",
+    "sentence": "Der Zug kommt in zehn Minuten.",
+    "targetWord": "Minuten",
     "language": "german"
    }
   }
@@ -176,9 +197,9 @@
    "answer": "the old town",
    "options": [
     "the old town",
-    "the new district",
-    "the main station",
-    "the river bank"
+    "the station",
+    "the harbour",
+    "the market"
    ],
    "audioClip": {
     "storySlug": "wieder-in-dresden",
@@ -190,331 +211,104 @@
   }
  },
  {
-  "type": "fill_blank",
-  "word": "endlich",
-  "sentence": "Wir warten sehr lange, und der Zug kommt _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "endlich",
-   "options": [
-    "endlich",
-    "manchmal",
-    "immer",
-    "morgen"
-   ],
-   "translation": "We wait a long time, and the train comes _____.",
-   "optionTranslations": [
-    "at last",
-    "sometimes",
-    "always",
-    "tomorrow"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Wir warten sehr lange, und der Zug kommt endlich.",
-    "targetWord": "endlich",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Lehrerin",
-  "sentence": "Sie ist [[Lehrerin]] und arbeitet an einer großen Schule.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a female teacher",
-   "options": [
-    "a female teacher",
-    "a female doctor",
-    "a female student",
-    "a female cook"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Sie ist Lehrerin und arbeitet an einer großen Schule.",
-    "targetWord": "Lehrerin",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Name",
-  "sentence": "Jemand ruft plötzlich ihren [[Namen]] über den Platz.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a name",
-   "options": [
-    "a name",
-    "a number",
-    "an address",
-    "a voice"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Jemand ruft plötzlich ihren Namen über den Platz.",
-    "targetWord": "Namen",
-    "language": "german"
-   }
-  }
- },
- {
   "type": "meaning_in_context",
   "word": "das Schiff",
-  "sentence": "Die [[Schiffe]] fahren langsam auf dem breiten Fluss.",
+  "sentence": "Elias zeigt auf ein [[Schiff]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a ship",
    "options": [
     "a ship",
-    "a train",
-    "a car",
-    "a plane"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Die Schiffe fahren langsam auf dem breiten Fluss.",
-    "targetWord": "Schiffe",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "laut",
-  "sentence": "Die Musik im Bus ist sehr _____ und stört alle.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "laut",
-   "options": [
-    "laut",
-    "still",
-    "breit",
-    "kalt"
-   ],
-   "translation": "The music on the bus is very _____ and disturbs everyone.",
-   "optionTranslations": [
-    "loud",
-    "quiet",
-    "wide",
-    "cold"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Die Musik im Bus ist sehr laut und stört alle.",
-    "targetWord": "laut",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "still",
-  "sentence": "Alle hören zu, und der ganze Saal wird plötzlich _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "still",
-   "options": [
-    "still",
-    "laut",
-    "breit",
-    "warm"
-   ],
-   "translation": "Everyone listens, and the whole hall suddenly goes _____.",
-   "optionTranslations": [
-    "quiet",
-    "loud",
-    "wide",
-    "warm"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Alle hören zu, und der ganze Saal wird plötzlich still.",
-    "targetWord": "still",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "besucht",
-  "sentence": "Er _____ jeden Sommer seine Großmutter am Meer.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "besucht",
-   "options": [
-    "besucht",
-    "winkt",
-    "kennt",
-    "trägt"
-   ],
-   "translation": "Every summer he _____ his grandmother by the sea.",
-   "optionTranslations": [
-    "visits",
-    "waves",
-    "knows",
-    "carries"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Er besucht jeden Sommer seine Großmutter am Meer.",
-    "targetWord": "besucht",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "wohnt",
-  "sentence": "Sie _____ schon lange in derselben kleinen Wohnung.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "wohnt",
-   "options": [
-    "wohnt",
-    "legt",
-    "hebt",
-    "spielt"
-   ],
-   "translation": "She has _____ in the same small flat for a long time.",
-   "optionTranslations": [
-    "lived",
-    "puts",
-    "raises",
-    "played"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Sie wohnt schon lange in derselben kleinen Wohnung.",
-    "targetWord": "wohnt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "leise",
-  "sentence": "Ich komme jeden Sommer allein hierher, sagt er [[leise]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "quietly",
-   "options": [
-    "quietly",
-    "loudly",
-    "quickly",
-    "angrily"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Ich komme jeden Sommer allein hierher, sagt er leise.",
-    "targetWord": "leise",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "antworten",
-  "sentence": "Wir fahren nächstes Jahr zusammen, [[antwortet]] sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to answer",
-   "options": [
-    "to answer",
-    "to ask",
-    "to shout",
-    "to whisper"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Wir fahren nächstes Jahr zusammen, antwortet sie.",
-    "targetWord": "antwortet",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "kalt",
-  "sentence": "Der Bahnhof in Dresden ist groß, laut und [[kalt]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "cold",
-   "options": [
-    "cold",
-    "warm",
-    "wet",
-    "heavy"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Der Bahnhof in Dresden ist groß, laut und kalt.",
-    "targetWord": "kalt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "jeden",
-  "sentence": "Ich komme [[jeden]] Sommer allein hierher, sagt er leise.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "every",
-   "options": [
-    "every",
-    "some",
-    "no",
-    "many"
-   ],
-   "audioClip": {
-    "storySlug": "wieder-in-dresden",
-    "storySource": "user",
-    "sentence": "Ich komme jeden Sommer allein hierher, sagt er leise.",
-    "targetWord": "jeden",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Treppe",
-  "sentence": "Jemand ruft dann ihren Namen, und er winkt von der [[Treppe]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "stairs",
-   "options": [
-    "stairs",
     "a bridge",
-    "a gate",
-    "a wall"
+    "a bird",
+    "a car"
    ],
    "audioClip": {
     "storySlug": "wieder-in-dresden",
     "storySource": "user",
-    "sentence": "Jemand ruft dann ihren Namen, und er winkt von der Treppe.",
-    "targetWord": "Treppe",
+    "sentence": "Elias zeigt auf ein Schiff.",
+    "targetWord": "Schiff",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "Schule",
+  "sentence": "Die Kinder gehen am Morgen in die _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Schule",
+   "options": [
+    "Schule",
+    "Küche",
+    "Kirche",
+    "Fabrik"
+   ],
+   "translation": "The children go to _____ in the morning.",
+   "optionTranslations": [
+    "school",
+    "kitchen",
+    "church",
+    "factory"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Die Kinder gehen am Morgen in die Schule.",
+    "targetWord": "Schule",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Mann",
+  "sentence": "Ein [[Mann]] spielt Musik vor der großen Kirche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a man",
+   "options": [
+    "a man",
+    "a woman",
+    "a child",
+    "a group"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Ein Mann spielt Musik vor der großen Kirche.",
+    "targetWord": "Mann",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "Musik",
+  "sentence": "Auf dem Platz hört man laute _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Musik",
+   "options": [
+    "Musik",
+    "Stimmen",
+    "Schritte",
+    "Glocken"
+   ],
+   "translation": "On the square you hear loud _____.",
+   "optionTranslations": [
+    "music",
+    "voices",
+    "steps",
+    "bells"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Auf dem Platz hört man laute Musik.",
+    "targetWord": "Musik",
     "language": "german"
    }
   },
@@ -522,22 +316,128 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "zurück",
-  "sentence": "Ihr Zug [[zurück]] nach Leipzig fährt erst am Sonntag.",
+  "word": "der Hut",
+  "sentence": "Sein [[Hut]] liegt auf dem Stein.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "back, the way you came",
+   "answer": "a hat",
    "options": [
-    "back, the way you came",
-    "ahead, further on",
-    "upwards",
-    "nearby"
+    "a hat",
+    "a coat",
+    "a bag",
+    "a shoe"
    ],
    "audioClip": {
     "storySlug": "wieder-in-dresden",
     "storySource": "user",
-    "sentence": "Ihr Zug zurück nach Leipzig fährt erst am Sonntag.",
-    "targetWord": "zurück",
+    "sentence": "Sein Hut liegt auf dem Stein.",
+    "targetWord": "Hut",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "liegen",
+  "sentence": "Die Bücher _____ auf dem Tisch.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "liegen",
+   "options": [
+    "liegen",
+    "stehen",
+    "hängen",
+    "fallen"
+   ],
+   "translation": "The books _____ on the table.",
+   "optionTranslations": [
+    "lie",
+    "stand",
+    "hang",
+    "fall"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Die Bücher liegen auf dem Tisch.",
+    "targetWord": "liegen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Sommer",
+  "sentence": "Ich komme jeden [[Sommer]] allein hierher.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "summer",
+   "options": [
+    "summer",
+    "winter",
+    "autumn",
+    "spring"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Ich komme jeden Sommer allein hierher.",
+    "targetWord": "Sommer",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "breit",
+  "sentence": "Das Wasser ist [[breit]] und braun.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wide",
+   "options": [
+    "wide",
+    "deep",
+    "cold",
+    "fast"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Das Wasser ist breit und braun.",
+    "targetWord": "breit",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "braun",
+  "sentence": "Die Erde im Garten ist dunkel und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "braun",
+   "options": [
+    "braun",
+    "blau",
+    "grün",
+    "weiß"
+   ],
+   "translation": "The soil in the garden is dark and _____.",
+   "optionTranslations": [
+    "brown",
+    "blue",
+    "green",
+    "white"
+   ],
+   "audioClip": {
+    "storySlug": "wieder-in-dresden",
+    "storySource": "user",
+    "sentence": "Die Erde im Garten ist dunkel und braun.",
+    "targetWord": "braun",
     "language": "german"
    }
   },

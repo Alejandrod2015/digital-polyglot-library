@@ -485,7 +485,20 @@ export function validateJourneyStories(
   // Se marcan con `anchor: true` en el item de vocab. Un journey que no marque
   // nada se mide como antes, con TODAS las plazas y el suelo de su nivel, para
   // no cambiarle la vara a lo que ya estaba medido.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 1.6 };
+  // RECALIBRADO 2026-08-23 (A0: 3,0 -> 2,5). El 3,0 se midio sobre journeys que
+  // reparten la MISMA palabra hasta doce veces: latam gasta 521 plazas en 292
+  // palabras, spain 514 en 296. Esa duplicacion es la que sostiene la media, y
+  // al alumno le sale doce veces la misma tarjeta. Con el tope de dos plazas
+  // por palabra, esos mismos tres publicados caen a 3,31 / 2,67 / 2,62 medidos
+  // con este mismo criterio. Suelo 2,5: por debajo de los tres, exactamente el
+  // criterio con el que se puso el 3,0, y a proposito NO el 2,62 del journey
+  // que lo destapo, que seria calibrar la vara sobre lo que tiene que aprobar.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 2.5, A1: 1.6 };
+  // La media sola se maquilla: una palabra en nueve historias tapa a nueve que
+  // salen una vez. Asi que la cola tambien se mide. Tope medido igual que el
+  // suelo: los publicados bajo tope de dos dejan entre el 26% y el 34% de sus
+  // portables con un solo encuentro, asi que 30% corta por el medio y aprieta.
+  const TOPE_COLA = 0.30;
   // A las portables se les pide el MISMO suelo medido del nivel, no el ideal de
   // 4: el 3,0 salió de journeys publicados que no marcan ancladas, así que
   // exigir 4 sería inventar un número. Lo que cambia es QUÉ entra en la media.
@@ -521,11 +534,14 @@ export function validateJourneyStories(
       const unaVez = port.filter((x) => x.n <= 1).length;
       const okMedia = media >= pide;
       const okCuota = cuota <= TOPE_ANCLADAS;
+      const cola = port.length ? unaVez / port.length : 0;
+      const okCola = cola <= TOPE_COLA;
       push("journey-vocab-recirculation",
         `Las portables se reencuentran (media ${pide} o mas en ${level}) y las ancladas no pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`,
-        okMedia && okCuota,
+        okMedia && okCuota && okCola,
         `portables: media ${media.toFixed(2)} sobre ${port.length} plazas · ${unaVez} salen una sola vez` +
         ` | ancladas: ${anc.length}/${todas.length} (${Math.round(cuota * 100)}%)` +
+        ` | cola: ${unaVez}/${port.length} portables con un solo encuentro (${Math.round(cola * 100)}%, tope ${Math.round(TOPE_COLA * 100)}%)` +
         `${okCuota ? "" : `; pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`}`);
     }
   }

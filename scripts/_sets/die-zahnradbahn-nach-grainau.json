@@ -1,7 +1,7 @@
 [
  {
   "type": "match_meaning",
-  "word": "die Zahnradbahn,die Schiene,der Tunnel,der Brief",
+  "word": "die Zahnradbahn,die Schiene,der Tunnel,die Felswand",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
@@ -13,7 +13,7 @@
       "a rack railway",
       "a rail",
       "a tunnel",
-      "a letter"
+      "a rock face"
      ]
     },
     {
@@ -23,7 +23,7 @@
       "a rack railway",
       "a rail",
       "a tunnel",
-      "a letter"
+      "a rock face"
      ]
     },
     {
@@ -33,41 +33,106 @@
       "a rack railway",
       "a rail",
       "a tunnel",
-      "a letter"
+      "a rock face"
      ]
     },
     {
-     "word": "der Brief",
-     "answer": "a letter",
+     "word": "die Felswand",
+     "answer": "a rock face",
      "options": [
       "a rack railway",
       "a rail",
       "a tunnel",
-      "a letter"
+      "a rock face"
      ]
     }
-   ],
-   "audioClip": null
+   ]
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "die Bahn",
-  "sentence": "Die alte [[Bahn]] klettert steil den Berg hinauf.",
+  "word": "der Brief",
+  "sentence": "Elias holt einen [[Brief]] aus seiner Tasche.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a railway",
+   "answer": "a letter",
    "options": [
-    "a railway",
-    "a road",
-    "a path",
-    "a bridge"
+    "a letter",
+    "a ticket",
+    "a book",
+    "a photo"
    ],
    "audioClip": {
     "storySlug": "die-zahnradbahn-nach-grainau",
     "storySource": "user",
-    "sentence": "Die alte Bahn klettert steil den Berg hinauf.",
-    "targetWord": "Bahn",
+    "sentence": "Elias holt einen Brief aus seiner Tasche.",
+    "targetWord": "Brief",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Land",
+  "sentence": "Hannah reist jetzt seit einem Jahr durch das [[Land]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a country",
+   "options": [
+    "a country",
+    "a city",
+    "a street",
+    "a house"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Hannah reist jetzt seit einem Jahr durch das Land.",
+    "targetWord": "Land",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Kalender",
+  "sentence": "Ich bin nicht dein [[Kalender]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a diary",
+   "options": [
+    "a diary",
+    "a teacher",
+    "a driver",
+    "a friend"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Ich bin nicht dein Kalender.",
+    "targetWord": "Kalender",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Wald",
+  "sentence": "Der [[Wald]] draußen wird hinter dem Fenster dichter.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a forest",
+   "options": [
+    "a forest",
+    "a lake",
+    "a town",
+    "a road"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Der Wald draußen wird hinter dem Fenster dichter.",
+    "targetWord": "Wald",
     "language": "german"
    }
   }
@@ -75,21 +140,101 @@
  {
   "type": "meaning_in_context",
   "word": "klettern",
-  "sentence": "Die alte Bahn [[klettert]] steil den Berg hinauf.",
+  "sentence": "Die alte Zahnradbahn [[klettert]] steil von Garmisch nach Grainau.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "to climb something steep",
+   "answer": "to climb",
    "options": [
-    "to climb something steep",
-    "to roll down a hill",
-    "to stand still",
-    "to turn around"
+    "to climb",
+    "to fall",
+    "to stop",
+    "to turn"
    ],
    "audioClip": {
     "storySlug": "die-zahnradbahn-nach-grainau",
     "storySource": "user",
-    "sentence": "Die alte Bahn klettert steil den Berg hinauf.",
+    "sentence": "Die alte Zahnradbahn klettert steil von Garmisch nach Grainau.",
     "targetWord": "klettert",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reisen",
+  "sentence": "Hannah [[reist]] jetzt seit einem Jahr durch das Land.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to travel",
+   "options": [
+    "to travel",
+    "to work",
+    "to study",
+    "to rest"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Hannah reist jetzt seit einem Jahr durch das Land.",
+    "targetWord": "reist",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "Monate",
+  "sentence": "Ein Jahr hat zwölf _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Monate",
+   "options": [
+    "Monate",
+    "Tage",
+    "Wochen",
+    "Stunden"
+   ],
+   "translation": "A year has twelve _____.",
+   "optionTranslations": [
+    "months",
+    "days",
+    "weeks",
+    "hours"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Ein Jahr hat zwölf Monate.",
+    "targetWord": "Monate",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "Leute",
+  "sentence": "Und du hast fünf _____ und eine Schule.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Leute",
+   "options": [
+    "Leute",
+    "Häuser",
+    "Koffer",
+    "Briefe"
+   ],
+   "translation": "And you have five _____ and a school.",
+   "optionTranslations": [
+    "people",
+    "houses",
+    "suitcases",
+    "letters"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Und du hast fünf Leute und eine Schule.",
+    "targetWord": "Leute",
     "language": "german"
    }
   }
@@ -97,27 +242,27 @@
  {
   "type": "fill_blank",
   "word": "faltet",
-  "sentence": "Sie liest den Brief zweimal und _____ ihn langsam.",
+  "sentence": "Hannah _____ den Brief und steckt ihn in ihre Tasche.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "faltet",
    "options": [
     "faltet",
-    "winkt",
-    "nickt",
-    "holt"
+    "liest",
+    "schreibt",
+    "verliert"
    ],
-   "translation": "She reads the letter twice and _____ it slowly.",
+   "translation": "Hannah _____ the letter and puts it in her bag.",
    "optionTranslations": [
     "folds",
-    "waves",
-    "nods",
-    "fetches"
+    "reads",
+    "writes",
+    "loses"
    ],
    "audioClip": {
     "storySlug": "die-zahnradbahn-nach-grainau",
     "storySource": "user",
-    "sentence": "Sie liest den Brief zweimal und faltet ihn langsam.",
+    "sentence": "Hannah faltet den Brief und steckt ihn in ihre Tasche.",
     "targetWord": "faltet",
     "language": "german"
    }
@@ -125,246 +270,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Felswand",
-  "sentence": "Nach dem Tunnel stehen die [[Felswände]] direkt am Gleis.",
+  "word": "das Rad",
+  "sentence": "Ihre [[Räder]] greifen laut in die dritte Schiene.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "rock faces",
+   "answer": "a wheel",
    "options": [
-    "rock faces",
-    "fir trees",
-    "wooden fences",
-    "stone houses"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Nach dem Tunnel stehen die Felswände direkt am Gleis.",
-    "targetWord": "Felswände",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "dünner",
-  "sentence": "Er sieht sie an und sagt, sie ist viel [[dünner]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "thinner",
-   "options": [
-    "thinner",
-    "taller",
-    "older",
-    "stronger"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Er sieht sie an und sagt, sie ist viel dünner.",
-    "targetWord": "dünner",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "beide",
-  "sentence": "Der Brief kommt von ihr und ist an sie [[beide]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "both of them",
-   "options": [
-    "both of them",
-    "one of them",
-    "none of them",
-    "many of them"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Der Brief kommt von ihr und ist an sie beide.",
-    "targetWord": "beide",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "zweimal",
-  "sentence": "Sie liest den Brief [[zweimal]] und dann noch einmal.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "twice",
-   "options": [
-    "twice",
-    "once",
-    "never",
-    "daily"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Sie liest den Brief zweimal und dann noch einmal.",
-    "targetWord": "zweimal",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "besser",
-  "sentence": "Im Brief steht, es geht ihr schon viel [[besser]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "better",
-   "options": [
-    "better",
-    "worse",
-    "louder",
-    "later"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Im Brief steht, es geht ihr schon viel besser.",
-    "targetWord": "besser",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Berg",
-  "sentence": "Der [[Berg]] steht riesig und still über dem Dorf.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a mountain",
-   "options": [
-    "a mountain",
-    "a tower",
-    "a forest",
-    "a cloud"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Der Berg steht riesig und still über dem Dorf.",
-    "targetWord": "Berg",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "draußen",
-  "sentence": "Der Wald [[draußen]] wird hinter dem Fenster dichter.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "outside",
-   "options": [
-    "outside",
-    "inside",
-    "above",
-    "below"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Der Wald draußen wird hinter dem Fenster dichter.",
-    "targetWord": "draußen",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "still",
-  "sentence": "Der Berg steht riesig und ganz [[still]] über dem Dorf.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "quiet and motionless",
-   "options": [
-    "quiet and motionless",
-    "loud and busy",
-    "small and near",
-    "warm and bright"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Der Berg steht riesig und ganz still über dem Dorf.",
-    "targetWord": "still",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "fahren",
-  "sentence": "Die Bahn [[fährt]] durch einen Tunnel, und das Abteil wird kurz dunkel.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to travel by vehicle",
-   "options": [
-    "to travel by vehicle",
-    "to walk on foot",
-    "to wait for someone",
-    "to arrive too late"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Die Bahn fährt durch einen Tunnel, und das Abteil wird kurz dunkel.",
-    "targetWord": "fährt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "fragen",
-  "sentence": "Sie [[fragt]], wann du kommst.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to ask",
-   "options": [
-    "to ask",
-    "to answer",
-    "to promise",
-    "to forget"
-   ],
-   "audioClip": {
-    "storySlug": "die-zahnradbahn-nach-grainau",
-    "storySource": "user",
-    "sentence": "Sie fragt, wann du kommst.",
-    "targetWord": "fragt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "laut",
-  "sentence": "Ihre Räder greifen [[laut]] in die dritte Schiene.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "loud",
-   "options": [
-    "loud",
-    "quiet",
-    "slow",
-    "dark"
+    "a wheel",
+    "a door",
+    "a seat",
+    "a window"
    ],
    "audioClip": {
     "storySlug": "die-zahnradbahn-nach-grainau",
     "storySource": "user",
     "sentence": "Ihre Räder greifen laut in die dritte Schiene.",
-    "targetWord": "laut",
+    "targetWord": "Räder",
     "language": "german"
    }
   },
@@ -372,22 +293,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "das Fenster",
-  "sentence": "Der Wald draußen wird hinter dem [[Fenster]] dichter.",
+  "word": "der Arzt",
+  "sentence": "Emilia geht es besser, und die [[Ärzte]] sind zufrieden.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a window",
+   "answer": "a doctor",
    "options": [
-    "a window",
-    "a door",
-    "a balcony",
-    "a roof"
+    "a doctor",
+    "a driver",
+    "a guard",
+    "a guest"
    ],
    "audioClip": {
     "storySlug": "die-zahnradbahn-nach-grainau",
     "storySource": "user",
-    "sentence": "Der Wald draußen wird hinter dem Fenster dichter.",
-    "targetWord": "Fenster",
+    "sentence": "Emilia geht es besser, und die Ärzte sind zufrieden.",
+    "targetWord": "Ärzte",
     "language": "german"
    }
   },
@@ -395,22 +316,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Jacke",
-  "sentence": "Er holt einen Brief aus der [[Jacke]].",
+  "word": "der Januar",
+  "sentence": "Und Leon im [[Januar]]?",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a jacket",
+   "answer": "January",
    "options": [
-    "a jacket",
-    "a hat",
-    "a scarf",
-    "a shoe"
+    "January",
+    "June",
+    "August",
+    "October"
    ],
    "audioClip": {
     "storySlug": "die-zahnradbahn-nach-grainau",
     "storySource": "user",
-    "sentence": "Er holt einen Brief aus der Jacke.",
-    "targetWord": "Jacke",
+    "sentence": "Und Leon im Januar?",
+    "targetWord": "Januar",
     "language": "german"
    }
   },
@@ -418,22 +339,105 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "halten",
-  "sentence": "Sie [[hält]] dann in Grainau.",
+  "word": "der Advent",
+  "sentence": "Und Katrin im [[Advent]]?",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "to stop at a station",
+   "answer": "Advent",
    "options": [
-    "to stop at a station",
-    "to leave a station",
-    "to pass a station",
-    "to miss a station"
+    "Advent",
+    "Easter",
+    "harvest",
+    "carnival"
    ],
    "audioClip": {
     "storySlug": "die-zahnradbahn-nach-grainau",
     "storySource": "user",
-    "sentence": "Sie hält dann in Grainau.",
-    "targetWord": "hält",
+    "sentence": "Und Katrin im Advent?",
+    "targetWord": "Advent",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der August",
+  "sentence": "Und Sophie im [[August]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "August",
+   "options": [
+    "August",
+    "April",
+    "February",
+    "November"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Und Sophie im August?",
+    "targetWord": "August",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "Öl",
+  "sentence": "Das Abteil riecht nach _____ und altem Holz.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Öl",
+   "options": [
+    "Öl",
+    "Brot",
+    "Salz",
+    "Rauch"
+   ],
+   "translation": "The compartment smells of _____ and old wood.",
+   "optionTranslations": [
+    "oil",
+    "bread",
+    "salt",
+    "smoke"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Das Abteil riecht nach Öl und altem Holz.",
+    "targetWord": "Öl",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "Bahn",
+  "sentence": "Die _____ fährt durch einen Tunnel.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Bahn",
+   "options": [
+    "Bahn",
+    "Straße",
+    "Brücke",
+    "Treppe"
+   ],
+   "translation": "The _____ goes through a tunnel.",
+   "optionTranslations": [
+    "railway",
+    "street",
+    "bridge",
+    "stairs"
+   ],
+   "audioClip": {
+    "storySlug": "die-zahnradbahn-nach-grainau",
+    "storySource": "user",
+    "sentence": "Die Bahn fährt durch einen Tunnel.",
+    "targetWord": "Bahn",
     "language": "german"
    }
   },

@@ -1,345 +1,58 @@
 [
  {
   "type": "match_meaning",
-  "word": "die Brücke,der Turm,das Zimmer,die Uhr",
+  "word": "die Mitte,der Turm,das Zimmer,das Semester",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "die Brücke",
-     "answer": "a bridge",
+     "word": "die Mitte",
+     "answer": "the middle",
      "options": [
-      "a bridge",
+      "the middle",
       "a tower",
       "a room",
-      "a clock"
+      "a term at university"
      ]
     },
     {
      "word": "der Turm",
      "answer": "a tower",
      "options": [
-      "a bridge",
+      "the middle",
       "a tower",
       "a room",
-      "a clock"
+      "a term at university"
      ]
     },
     {
      "word": "das Zimmer",
      "answer": "a room",
      "options": [
-      "a bridge",
+      "the middle",
       "a tower",
       "a room",
-      "a clock"
+      "a term at university"
      ]
     },
     {
-     "word": "die Uhr",
-     "answer": "a clock",
+     "word": "das Semester",
+     "answer": "a term at university",
      "options": [
-      "a bridge",
+      "the middle",
       "a tower",
       "a room",
-      "a clock"
+      "a term at university"
      ]
     }
-   ],
-   "audioClip": null
+   ]
   }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Morgen",
-  "sentence": "Der Fluss fließt am [[Morgen]] grau unter der Brücke.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the morning",
-   "options": [
-    "the morning",
-    "the evening",
-    "the night",
-    "the afternoon"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Der Fluss fließt am Morgen grau unter der Brücke.",
-    "targetWord": "Morgen",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "lang",
-  "sentence": "Der Weg zum Bahnhof ist sehr _____, fast eine Stunde.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "lang",
-   "options": [
-    "lang",
-    "dunkel",
-    "weich",
-    "jung"
-   ],
-   "translation": "The way to the station is very _____, almost an hour.",
-   "optionTranslations": [
-    "long",
-    "dark",
-    "soft",
-    "young"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Der Weg zum Bahnhof ist sehr lang, fast eine Stunde.",
-    "targetWord": "lang",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "schauen",
-  "sentence": "Sie [[schaut]] auf die andere Seite vom Fluss.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to look at something",
-   "options": [
-    "to look at something",
-    "to run somewhere",
-    "to wait for someone",
-    "to point at something"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Sie schaut auf die andere Seite vom Fluss.",
-    "targetWord": "schaut",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Arm",
-  "sentence": "Er legt den [[Arm]] um ihre Schulter.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "an arm",
-   "options": [
-    "an arm",
-    "a hand",
-    "a leg",
-    "a finger"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Er legt den Arm um ihre Schulter.",
-    "targetWord": "Arm",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Blick",
-  "sentence": "Das Zimmer hat einen schönen [[Blick]] auf den Fluss.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a view",
-   "options": [
-    "a view",
-    "a window",
-    "a door",
-    "a wall"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Das Zimmer hat einen schönen Blick auf den Fluss.",
-    "targetWord": "Blick",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Schiff",
-  "sentence": "Ein [[Schiff]] fährt langsam unter der Brücke durch.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a ship",
-   "options": [
-    "a ship",
-    "a train",
-    "a car",
-    "a bus"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Ein Schiff fährt langsam unter der Brücke durch.",
-    "targetWord": "Schiff",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "bleibt",
-  "sentence": "Es regnet stark, und sie _____ heute lieber zu Hause.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "bleibt",
-   "options": [
-    "bleibt",
-    "fährt",
-    "holt",
-    "spielt"
-   ],
-   "translation": "It rains hard, and she _____ at home today.",
-   "optionTranslations": [
-    "stays",
-    "drives",
-    "fetches",
-    "plays"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Es regnet stark, und sie bleibt heute lieber zu Hause.",
-    "targetWord": "bleibt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "dunkel",
-  "sentence": "Ohne Lampe ist die Kammer am Abend ganz _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "dunkel",
-   "options": [
-    "dunkel",
-    "weich",
-    "lang",
-    "jung"
-   ],
-   "translation": "Without a lamp the small room is quite _____ at night.",
-   "optionTranslations": [
-    "dark",
-    "soft",
-    "long",
-    "young"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Ohne Lampe ist die Kammer am Abend ganz dunkel.",
-    "targetWord": "dunkel",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "weich",
-  "sentence": "Das alte Papier ist ganz _____ und fast kaputt.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "weich",
-   "options": [
-    "weich",
-    "dunkel",
-    "lang",
-    "laut"
-   ],
-   "translation": "The old paper is quite _____ and almost torn.",
-   "optionTranslations": [
-    "soft",
-    "dark",
-    "long",
-    "loud"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Das alte Papier ist ganz weich und fast kaputt.",
-    "targetWord": "weich",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "legt",
-  "sentence": "Sie _____ die Karte vorsichtig auf den Tisch.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "legt",
-   "options": [
-    "legt",
-    "trinkt",
-    "sammelt",
-    "repariert"
-   ],
-   "translation": "She _____ the map carefully on the table.",
-   "optionTranslations": [
-    "puts",
-    "drinks",
-    "collects",
-    "repairs"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Sie legt die Karte vorsichtig auf den Tisch.",
-    "targetWord": "legt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "ganze",
-  "sentence": "Von hier sieht man die _____ Stadt und den Fluss.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "ganze",
-   "options": [
-    "ganze",
-    "dunkle",
-    "weiche",
-    "junge"
-   ],
-   "translation": "From here you see the _____ city and the river.",
-   "optionTranslations": [
-    "whole",
-    "dark",
-    "soft",
-    "young"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Von hier sieht man die ganze Stadt und den Fluss.",
-    "targetWord": "ganze",
-    "language": "german"
-   }
-  },
-  "featured": false
  },
  {
   "type": "meaning_in_context",
   "word": "die Schulter",
-  "sentence": "Ihre [[Schulter]] tut nach dem schweren Rucksack weh.",
+  "sentence": "Elias legt den Arm um ihre [[Schulter]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a shoulder",
@@ -352,169 +65,220 @@
    "audioClip": {
     "storySlug": "die-brucke-uber-die-elbe",
     "storySource": "user",
-    "sentence": "Ihre Schulter tut nach dem schweren Rucksack weh.",
+    "sentence": "Elias legt den Arm um ihre Schulter.",
     "targetWord": "Schulter",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
-  "word": "die Karte",
-  "sentence": "Das Papier der alten [[Karte]] ist weich und kaputt.",
+  "word": "das Papier",
+  "sentence": "Das [[Papier]] ist weich und kaputt.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a map",
+   "answer": "paper",
    "options": [
-    "a map",
-    "a book",
-    "a photo",
-    "a letter"
+    "paper",
+    "cloth",
+    "glass",
+    "metal"
    ],
    "audioClip": {
     "storySlug": "die-brucke-uber-die-elbe",
     "storySource": "user",
-    "sentence": "Das Papier der alten Karte ist weich und kaputt.",
-    "targetWord": "Karte",
+    "sentence": "Das Papier ist weich und kaputt.",
+    "targetWord": "Papier",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
-  "word": "das Wasser",
-  "sentence": "Er zeigt über das [[Wasser]].",
+  "word": "die Antwort",
+  "sentence": "Meine Schule will eine [[Antwort]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "water",
+   "answer": "an answer",
    "options": [
-    "water",
-    "land",
-    "sky",
-    "sand"
+    "an answer",
+    "a question",
+    "a letter",
+    "a promise"
    ],
    "audioClip": {
     "storySlug": "die-brucke-uber-die-elbe",
     "storySource": "user",
-    "sentence": "Er zeigt über das Wasser.",
-    "targetWord": "Wasser",
+    "sentence": "Meine Schule will eine Antwort.",
+    "targetWord": "Antwort",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
-  "word": "fahren",
-  "sentence": "Ein Schiff [[fährt]] unter ihnen durch.",
+  "word": "der Oktober",
+  "sentence": "Ich unterschreibe im [[Oktober]] für vier Jahre.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "to travel by vehicle",
+   "answer": "October",
    "options": [
-    "to travel by vehicle",
-    "to walk on foot",
-    "to wait for someone",
-    "to arrive too late"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Ein Schiff fährt unter ihnen durch.",
-    "targetWord": "fährt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "antworten",
-  "sentence": "Du bist jung, [[antwortet]] er nur.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to answer",
-   "options": [
-    "to answer",
-    "to ask",
-    "to shout",
-    "to whisper"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Du bist jung, antwortet er nur.",
-    "targetWord": "antwortet",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Jahr",
-  "sentence": "Und die sieben [[Jahre]] danach?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "years",
-   "options": [
-    "years",
-    "months",
-    "weeks",
-    "hours"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Und die sieben Jahre danach?",
-    "targetWord": "Jahre",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Jacke",
-  "sentence": "Sie nimmt seine alte Karte aus der [[Jacke]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a jacket",
-   "options": [
-    "a jacket",
-    "a hat",
-    "a scarf",
-    "a shoe"
-   ],
-   "audioClip": {
-    "storySlug": "die-brucke-uber-die-elbe",
-    "storySource": "user",
-    "sentence": "Sie nimmt seine alte Karte aus der Jacke.",
-    "targetWord": "Jacke",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "vier",
-  "sentence": "Ich unterschreibe im Oktober für [[vier]] Jahre.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "four",
-   "options": [
-    "four",
-    "two",
-    "five",
-    "ten"
+    "October",
+    "April",
+    "July",
+    "January"
    ],
    "audioClip": {
     "storySlug": "die-brucke-uber-die-elbe",
     "storySource": "user",
     "sentence": "Ich unterschreibe im Oktober für vier Jahre.",
-    "targetWord": "vier",
+    "targetWord": "Oktober",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Hand",
+  "sentence": "Elias hält einen Kaffee in der [[Hand]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a hand",
+   "options": [
+    "a hand",
+    "a foot",
+    "an ear",
+    "a knee"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Elias hält einen Kaffee in der Hand.",
+    "targetWord": "Hand",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Arm",
+  "sentence": "Elias legt den [[Arm]] um ihre Schulter.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an arm",
+   "options": [
+    "an arm",
+    "a leg",
+    "a back",
+    "a neck"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Elias legt den Arm um ihre Schulter.",
+    "targetWord": "Arm",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "falten",
+  "sentence": "Hannah [[faltet]] die Karte und steckt sie in seine Jacke.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to fold",
+   "options": [
+    "to fold",
+    "to tear",
+    "to buy",
+    "to lose"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Hannah faltet die Karte und steckt sie in seine Jacke.",
+    "targetWord": "faltet",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "Kaffee",
+  "sentence": "Am Morgen trinkt er einen starken _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Kaffee",
+   "options": [
+    "Kaffee",
+    "Saft",
+    "Tee",
+    "Wein"
+   ],
+   "translation": "In the morning he drinks a strong _____.",
+   "optionTranslations": [
+    "coffee",
+    "juice",
+    "tea",
+    "wine"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Am Morgen trinkt er einen starken Kaffee.",
+    "targetWord": "Kaffee",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "unterschreibe",
+  "sentence": "Ich lese den Vertrag und _____ ihn heute.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "unterschreibe",
+   "options": [
+    "unterschreibe",
+    "verkaufe",
+    "vergesse",
+    "suche"
+   ],
+   "translation": "I read the contract and _____ it today.",
+   "optionTranslations": [
+    "sign",
+    "sell",
+    "forget",
+    "look for"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Ich lese den Vertrag und unterschreibe ihn heute.",
+    "targetWord": "unterschreibe",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Student",
+  "sentence": "Mein Zimmer als [[Student]] ist dort drüben.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a student",
+   "options": [
+    "a student",
+    "a teacher",
+    "a doctor",
+    "a driver"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Mein Zimmer als Student ist dort drüben.",
+    "targetWord": "Student",
     "language": "german"
    }
   },
@@ -522,22 +286,158 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "voll",
-  "sentence": "Die Brücke ist jetzt [[voll]] von Menschen.",
+  "word": "der Morgen",
+  "sentence": "Grauer Nebel liegt am [[Morgen]] über der Elbe.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "full",
+   "answer": "the morning",
    "options": [
-    "full",
-    "empty",
-    "narrow",
+    "the morning",
+    "the evening",
+    "the night",
+    "the weekend"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Grauer Nebel liegt am Morgen über der Elbe.",
+    "targetWord": "Morgen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Schiff",
+  "sentence": "Ein [[Schiff]] fährt unter der Brücke.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a ship",
+   "options": [
+    "a ship",
+    "a bird",
+    "a cloud",
+    "a car"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Ein Schiff fährt unter der Brücke.",
+    "targetWord": "Schiff",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Stein",
+  "sentence": "Hannah legt die Hand auf den [[Stein]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stone",
+   "options": [
+    "stone",
+    "wood",
+    "glass",
+    "cloth"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Hannah legt die Hand auf den Stein.",
+    "targetWord": "Stein",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "Tasche",
+  "sentence": "Sie trägt ihre _____ über der Schulter.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Tasche",
+   "options": [
+    "Tasche",
+    "Jacke",
+    "Uhr",
+    "Brille"
+   ],
+   "translation": "She carries her _____ over her shoulder.",
+   "optionTranslations": [
+    "bag",
+    "jacket",
+    "watch",
+    "glasses"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Sie trägt ihre Tasche über der Schulter.",
+    "targetWord": "Tasche",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "weich",
+  "sentence": "Das alte Papier ist dünn und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "weich",
+   "options": [
+    "weich",
+    "hart",
+    "kalt",
+    "schwer"
+   ],
+   "translation": "The old paper is thin and _____.",
+   "optionTranslations": [
+    "soft",
+    "hard",
+    "cold",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "die-brucke-uber-die-elbe",
+    "storySource": "user",
+    "sentence": "Das alte Papier ist dünn und weich.",
+    "targetWord": "weich",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "kaputt",
+  "sentence": "Die Uhr geht nicht mehr; sie ist _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kaputt",
+   "options": [
+    "kaputt",
+    "neu",
+    "teuer",
+    "sauber"
+   ],
+   "translation": "The clock does not work any more; it is _____.",
+   "optionTranslations": [
+    "broken",
+    "new",
+    "expensive",
     "clean"
    ],
    "audioClip": {
     "storySlug": "die-brucke-uber-die-elbe",
     "storySource": "user",
-    "sentence": "Die Brücke ist jetzt voll von Menschen.",
-    "targetWord": "voll",
+    "sentence": "Die Uhr geht nicht mehr; sie ist kaputt.",
+    "targetWord": "kaputt",
     "language": "german"
    }
   },
