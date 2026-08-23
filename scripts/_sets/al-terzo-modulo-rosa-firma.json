@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "verbale,firma,cravatta,assicurazione",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "verbale",
+     "answer": "written report",
+     "options": [
+      "written report",
+      "signs",
+      "tie",
+      "insurance"
+     ]
+    },
+    {
+     "word": "firma",
+     "answer": "signs",
+     "options": [
+      "written report",
+      "signs",
+      "tie",
+      "insurance"
+     ]
+    },
+    {
+     "word": "cravatta",
+     "answer": "tie",
+     "options": [
+      "written report",
+      "signs",
+      "tie",
+      "insurance"
+     ]
+    },
+    {
+     "word": "assicurazione",
+     "answer": "insurance",
+     "options": [
+      "written report",
+      "signs",
+      "tie",
+      "insurance"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rade",
+  "sentence": "Teo si lava, si spoglia e si [[rade]] nel bagno del garage.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shaves",
+   "options": [
+    "shaves",
+    "signs",
+    "sleeps",
+    "tells"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Teo si lava, si spoglia e si rade nel bagno del garage.",
+    "targetWord": "rade",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "marroni",
+  "sentence": "Tira fuori i documenti _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "marroni",
+   "options": [
+    "marroni",
+    "grande",
+    "bianca",
+    "duro"
+   ],
+   "translation": "He pulls out the _____ papers.",
+   "optionTranslations": [
+    "brown",
+    "big, large",
+    "white",
+    "hard"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Tira fuori i documenti marroni.",
+    "targetWord": "marroni",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "veste",
+  "sentence": "Teo si [[veste]] con una camicia nuova, si pettina e mette una cravatta corta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gets dressed",
+   "options": [
+    "gets dressed",
+    "sweats",
+    "reopens",
+    "promises"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Teo si veste con una camicia nuova, si pettina e mette una cravatta corta.",
+    "targetWord": "veste",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pettina",
+  "sentence": "Si veste con una camicia nuova e si _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pettina",
+   "options": [
+    "pettina",
+    "muore",
+    "lavora",
+    "lasciato"
+   ],
+   "translation": "He puts on a new shirt and _____ his hair.",
+   "optionTranslations": [
+    "combs your hair",
+    "dies",
+    "works",
+    "leave"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Si veste con una camicia nuova e si pettina.",
+    "targetWord": "pettina",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "aeroporto",
+  "sentence": "Teo prende un taxi per l'_____ con l'abito piegato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aeroporto",
+   "options": [
+    "aeroporto",
+    "multa",
+    "raffreddore",
+    "collega"
+   ],
+   "translation": "Teo takes a taxi to the _____ with his suit folded over his arm.",
+   "optionTranslations": [
+    "airport",
+    "fine",
+    "cold",
+    "connects"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Teo prende un taxi per l'aeroporto con l'abito piegato.",
+    "targetWord": "aeroporto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bella",
+  "sentence": "Nico la guarda come una cosa [[bella]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "beautiful",
+   "options": [
+    "beautiful",
+    "warm; hot",
+    "damp",
+    "polite"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Nico la guarda come una cosa bella.",
+    "targetWord": "bella",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "portatile",
+  "sentence": "L'impiegato apre il [[portatile]] e vuole un verbale con tutti i danni.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "laptop",
+   "options": [
+    "laptop",
+    "key",
+    "bed",
+    "horse"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "L'impiegato apre il portatile e vuole un verbale con tutti i danni.",
+    "targetWord": "portatile",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aereo",
+  "sentence": "Sotto la targa c'è già scritto graffio portiera destra, e Teo guarda l'ora dell'[[aereo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "plane",
+   "options": [
+    "plane",
+    "petrol station, and also the machine that sells drinks and snacks",
+    "coffee",
+    "glasses"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Sotto la targa c'è già scritto graffio portiera destra, e Teo guarda l'ora dell'aereo.",
+    "targetWord": "aereo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "portiera",
+  "sentence": "Rosa scrive del graffio sulla [[portiera]] e mette la firma.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "car door",
+   "options": [
+    "car door",
+    "tap",
+    "traffic light",
+    "wedding"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Rosa scrive del graffio sulla portiera e mette la firma.",
+    "targetWord": "portiera",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arrivata",
+  "sentence": "Poi Nico apre la busta [[arrivata]] da Torino e tira fuori i documenti marroni.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "arrived",
+   "options": [
+    "arrived",
+    "goes down",
+    "puts",
+    "finishes"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Poi Nico apre la busta arrivata da Torino e tira fuori i documenti marroni.",
+    "targetWord": "arrivata",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "invece",
+  "sentence": "[[invece]] ho guardato solo il foglio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "instead",
+   "options": [
+    "instead",
+    "together",
+    "badly, and in fare male also to hurt or to be sore",
+    "outside"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Invece ho guardato solo il foglio.",
+    "targetWord": "invece",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lava",
+  "sentence": "Teo si [[lava]], si spoglia e si rade nel bagno del garage.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "washes yourself",
+   "options": [
+    "washes yourself",
+    "holds, keeps",
+    "stops",
+    "checks"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Teo si lava, si spoglia e si rade nel bagno del garage.",
+    "targetWord": "lava",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "corta",
+  "sentence": "Teo si veste con una camicia nuova, si pettina e mette una cravatta [[corta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "short",
+   "options": [
+    "short",
+    "right",
+    "young",
+    "polite"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Teo si veste con una camicia nuova, si pettina e mette una cravatta corta.",
+    "targetWord": "corta",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "abito",
+  "sentence": "Teo prende un taxi per l'aeroporto con l'[[abito]] piegato.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "suit or dress",
+   "options": [
+    "suit or dress",
+    "spring",
+    "holiday",
+    "message"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Teo prende un taxi per l'aeroporto con l'abito piegato.",
+    "targetWord": "abito",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vuole",
+  "sentence": "L'impiegato apre il portatile e [[vuole]] un verbale con tutti i danni.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wants",
+   "options": [
+    "wants",
+    "holds, keeps",
+    "cuts",
+    "dies"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "L'impiegato apre il portatile e vuole un verbale con tutti i danni.",
+    "targetWord": "vuole",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tira",
+  "sentence": "Poi Nico apre la busta arrivata da Torino e [[tira]] fuori i documenti marroni.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pulls; blows",
+   "options": [
+    "pulls; blows",
+    "travels",
+    "sends, gives off",
+    "turns, spins"
+   ],
+   "audioClip": {
+    "storySlug": "al-terzo-modulo-rosa-firma",
+    "storySource": "user",
+    "sentence": "Poi Nico apre la busta arrivata da Torino e tira fuori i documenti marroni.",
+    "targetWord": "tira",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

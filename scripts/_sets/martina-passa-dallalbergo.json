@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "albergo,poltrona,balcone,magliette",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "albergo",
+     "answer": "hotel",
+     "options": [
+      "hotel",
+      "armchair",
+      "balcony",
+      "t-shirt"
+     ]
+    },
+    {
+     "word": "poltrona",
+     "answer": "armchair",
+     "options": [
+      "hotel",
+      "armchair",
+      "balcony",
+      "t-shirt"
+     ]
+    },
+    {
+     "word": "balcone",
+     "answer": "balcony",
+     "options": [
+      "hotel",
+      "armchair",
+      "balcony",
+      "t-shirt"
+     ]
+    },
+    {
+     "word": "magliette",
+     "answer": "t-shirt",
+     "options": [
+      "hotel",
+      "armchair",
+      "balcony",
+      "t-shirt"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pantaloni",
+  "sentence": "Fuori asciugano le magliette e i [[pantaloni]] di Teo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "trousers",
+   "options": [
+    "trousers",
+    "eggs",
+    "blanket",
+    "socket"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Fuori asciugano le magliette e i pantaloni di Teo.",
+    "targetWord": "pantaloni",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mese",
+  "sentence": "Fra un _____ non si ricorda più niente di questi giorni.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mese",
+   "options": [
+    "mese",
+    "domenica",
+    "castello",
+    "zio"
+   ],
+   "translation": "In a _____ he will remember nothing of these days.",
+   "optionTranslations": [
+    "month",
+    "Sunday",
+    "castle",
+    "uncle"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Fra un mese non si ricorda più niente di questi giorni.",
+    "targetWord": "mese",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "biancheria",
+  "sentence": "Rosa lava anche la [[biancheria]] con il detersivo del bagno e la stende fuori.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "linen and underwear",
+   "options": [
+    "linen and underwear",
+    "mayor",
+    "coffee",
+    "gentleman, sir"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Rosa lava anche la biancheria con il detersivo del bagno e la stende fuori.",
+    "targetWord": "biancheria",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "detersivo",
+  "sentence": "Rosa lava anche la biancheria con il _____ del bagno.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "detersivo",
+   "options": [
+    "detersivo",
+    "tè",
+    "pelle",
+    "zio"
+   ],
+   "translation": "Rosa washes the underwear too with the bathroom _____.",
+   "optionTranslations": [
+    "washing powder",
+    "tea",
+    "skin",
+    "uncle"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Rosa lava anche la biancheria con il detersivo del bagno.",
+    "targetWord": "detersivo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cerotti",
+  "sentence": "Nel sacchetto ci sono [[cerotti]], una crema, pastiglie e un appuntamento con il medico.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "plaster",
+   "options": [
+    "plaster",
+    "guest",
+    "lake",
+    "cinema"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Nel sacchetto ci sono cerotti, una crema, pastiglie e un appuntamento con il medico.",
+    "targetWord": "cerotti",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "appuntamento",
+  "sentence": "Un _____ con il medico.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "appuntamento",
+   "options": [
+    "appuntamento",
+    "orecchie",
+    "dottore",
+    "caffè"
+   ],
+   "translation": "An _____ with the doctor.",
+   "optionTranslations": [
+    "appointment",
+    "ear",
+    "doctor",
+    "coffee"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Un appuntamento con il medico.",
+    "targetWord": "appuntamento",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "navi",
+  "sentence": "Rosa resta sul balcone con il cellulare in carica e conta le [[navi]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ship",
+   "options": [
+    "ship",
+    "pork",
+    "cold",
+    "cream"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Rosa resta sul balcone con il cellulare in carica e conta le navi.",
+    "targetWord": "navi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "costume",
+  "sentence": "Sul filo asciugano anche un [[costume]] e una spugna dimenticata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "swimming costume",
+   "options": [
+    "swimming costume",
+    "glasses",
+    "thermometer",
+    "fear"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Sul filo asciugano anche un costume e una spugna dimenticata.",
+    "targetWord": "costume",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sveglia",
+  "sentence": "Domani guido io fino a Messina, promette lei, e la [[sveglia]] la metto io.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wake up",
+   "options": [
+    "to wake up",
+    "brown",
+    "old",
+    "polite"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Domani guido io fino a Messina, promette lei, e la sveglia la metto io.",
+    "targetWord": "sveglia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piano",
+  "sentence": "Prima di andare via Martina spiega, [[piano]], quello che è successo il giorno prima.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slowly, softly",
+   "options": [
+    "slowly, softly",
+    "around",
+    "outside",
+    "tonight"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Prima di andare via Martina spiega, piano, quello che è successo il giorno prima.",
+    "targetWord": "piano",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tornato",
+  "sentence": "Il tuo amico è [[tornato]] da solo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "come back",
+   "options": [
+    "come back",
+    "asks",
+    "passes",
+    "forget"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Il tuo amico è tornato da solo.",
+    "targetWord": "tornato",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stanza",
+  "sentence": "Nella [[stanza]] ci sono una poltrona.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "room",
+   "options": [
+    "room",
+    "boss",
+    "guest",
+    "tablet"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Nella stanza ci sono una poltrona.",
+    "targetWord": "stanza",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "magro",
+  "sentence": "Teo dorme sulla poltrona, [[magro]] sotto la coperta, e Rosa si sente stupida.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thin",
+   "options": [
+    "thin",
+    "poor",
+    "swollen",
+    "angry"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Teo dorme sulla poltrona, magro sotto la coperta, e Rosa si sente stupida.",
+    "targetWord": "magro",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lava",
+  "sentence": "Rosa [[lava]] anche la biancheria con il detersivo del bagno e la stende fuori.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "washes yourself",
+   "options": [
+    "washes yourself",
+    "thinks",
+    "speaks",
+    "reopens"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Rosa lava anche la biancheria con il detersivo del bagno e la stende fuori.",
+    "targetWord": "lava",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spugna",
+  "sentence": "Sul filo asciugano anche un costume e una [[spugna]] dimenticata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sponge",
+   "options": [
+    "sponge",
+    "laptop",
+    "pork",
+    "lemonade"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Sul filo asciugano anche un costume e una spugna dimenticata.",
+    "targetWord": "spugna",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "filo",
+  "sentence": "Sul [[filo]] asciugano anche un costume e una spugna dimenticata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wire or line",
+   "options": [
+    "wire or line",
+    "tiredness",
+    "instant",
+    "photo"
+   ],
+   "audioClip": {
+    "storySlug": "martina-passa-dallalbergo",
+    "storySource": "user",
+    "sentence": "Sul filo asciugano anche un costume e una spugna dimenticata.",
+    "targetWord": "filo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

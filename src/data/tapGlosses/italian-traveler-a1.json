@@ -43,6 +43,10 @@
    "g": "lives; resides",
    "t": "verb"
   },
+  "abito": {
+   "g": "suit or dress",
+   "t": "noun"
+  },
   "accanto": {
    "g": "next to, beside",
    "t": "adverb"
@@ -71,6 +75,14 @@
    "g": "now",
    "t": "adverb"
   },
+  "aereo": {
+   "g": "plane",
+   "t": "noun"
+  },
+  "aeroporto": {
+   "g": "airport",
+   "t": "noun"
+  },
   "aggiunge": {
    "g": "adds",
    "t": "verb"
@@ -94,6 +106,10 @@
   "al": {
    "g": "to the; at the",
    "t": "preposition"
+  },
+  "albergo": {
+   "g": "hotel",
+   "t": "noun"
   },
   "alberi": {
    "g": "tree (albero)",
@@ -146,6 +162,10 @@
   "alza": {
    "g": "raises; lifts",
    "t": "verb"
+  },
+  "ambulanza": {
+   "g": "ambulance",
+   "t": "noun"
   },
   "amicizia": {
    "g": "friendship",
@@ -273,6 +293,10 @@
   },
   "aspirapolvere": {
    "g": "vacuum cleaner",
+   "t": "noun"
+  },
+  "assicurazione": {
+   "g": "insurance",
    "t": "noun"
   },
   "attimo": {
@@ -1175,6 +1199,10 @@
    "g": "was (essere)",
    "t": "verb"
   },
+  "erba": {
+   "g": "grass",
+   "t": "noun"
+  },
   "ero": {
    "g": "I was (essere)",
    "t": "verb"
@@ -1190,6 +1218,10 @@
   "essere": {
    "g": "to be",
    "t": "verb"
+  },
+  "estate": {
+   "g": "summer",
+   "t": "noun"
   },
   "euro": {
    "g": "euro",
@@ -1591,6 +1623,10 @@
    "g": "the",
    "t": "article"
   },
+  "impiegata": {
+   "g": "female clerk",
+   "t": "noun"
+  },
   "in": {
    "g": "in",
    "t": "preposition"
@@ -1630,6 +1666,10 @@
   "invece": {
    "g": "instead",
    "t": "adverb"
+  },
+  "inverno": {
+   "g": "winter",
+   "t": "noun"
   },
   "invita": {
    "g": "invites",
@@ -3787,6 +3827,10 @@
    "g": "bird",
    "t": "noun"
   },
+  "ultima": {
+   "g": "last",
+   "t": "adjective"
+  },
   "umida": {
    "g": "damp (umido)",
    "t": "adjective"
@@ -3806,6 +3850,10 @@
   "unica": {
    "g": "single, only one (unico)",
    "t": "adjective"
+  },
+  "università": {
+   "g": "university",
+   "t": "noun"
   },
   "uno": {
    "g": "one",

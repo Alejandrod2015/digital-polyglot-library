@@ -8881,6 +8881,58 @@
   "zuppa": {
    "g": "thick soup",
    "t": "noun"
+  },
+  "ambulanza": {
+   "g": "ambulance",
+   "t": "noun"
+  },
+  "abito": {
+   "g": "suit or dress",
+   "t": "noun"
+  },
+  "erba": {
+   "g": "grass",
+   "t": "noun"
+  },
+  "ultima": {
+   "g": "last",
+   "t": "adjective"
+  },
+  "impiegata": {
+   "g": "female clerk",
+   "t": "noun"
+  },
+  "università": {
+   "g": "university",
+   "t": "noun"
+  },
+  "ospite": {
+   "g": "guest",
+   "t": "noun"
+  },
+  "inverno": {
+   "g": "winter",
+   "t": "noun"
+  },
+  "aeroporto": {
+   "g": "airport",
+   "t": "noun"
+  },
+  "estate": {
+   "g": "summer",
+   "t": "noun"
+  },
+  "albergo": {
+   "g": "hotel",
+   "t": "noun"
+  },
+  "aereo": {
+   "g": "plane",
+   "t": "noun"
+  },
+  "assicurazione": {
+   "g": "insurance",
+   "t": "noun"
   }
  }
 }

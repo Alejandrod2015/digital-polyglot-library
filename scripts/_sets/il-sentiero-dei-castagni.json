@@ -1,0 +1,478 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "rifugio,alberi,sentiero,castagni",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "rifugio",
+     "answer": "mountain hut where walkers eat and sleep high up in the hills",
+     "options": [
+      "mountain hut where walkers eat and sleep high up in the hills",
+      "tree",
+      "path",
+      "chestnut"
+     ]
+    },
+    {
+     "word": "alberi",
+     "answer": "tree",
+     "options": [
+      "mountain hut where walkers eat and sleep high up in the hills",
+      "tree",
+      "path",
+      "chestnut"
+     ]
+    },
+    {
+     "word": "sentiero",
+     "answer": "path",
+     "options": [
+      "mountain hut where walkers eat and sleep high up in the hills",
+      "tree",
+      "path",
+      "chestnut"
+     ]
+    },
+    {
+     "word": "castagni",
+     "answer": "chestnut",
+     "options": [
+      "mountain hut where walkers eat and sleep high up in the hills",
+      "tree",
+      "path",
+      "chestnut"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seguire",
+  "sentence": "Il sentiero da [[seguire]] è a sinistra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "follows",
+   "options": [
+    "follows",
+    "reopens",
+    "eats",
+    "gets dressed"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Il sentiero da seguire è a sinistra.",
+    "targetWord": "seguire",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "funghi",
+  "sentence": "Qui i _____ crescono anche ad agosto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "funghi",
+   "options": [
+    "funghi",
+    "sciroppo",
+    "temperatura",
+    "pere"
+   ],
+   "translation": "Here the _____ grow even in August.",
+   "optionTranslations": [
+    "mushroom",
+    "syrup",
+    "temperature",
+    "pear"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Qui i funghi crescono anche ad agosto.",
+    "targetWord": "funghi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "topo",
+  "sentence": "Su una radice, vede una farfalla sulla mano e sente un _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "topo",
+   "options": [
+    "topo",
+    "naso",
+    "mattinata",
+    "giacca"
+   ],
+   "translation": "On a root, she sees a butterfly on her hand and hears a _____.",
+   "optionTranslations": [
+    "mouse",
+    "nose",
+    "morning",
+    "jacket"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Su una radice, vede una farfalla sulla mano e sente un topo.",
+    "targetWord": "topo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "inverno",
+  "sentence": "Il castagno più grande è caduto durante l'[[inverno]] e in primavera non è ripartito.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "winter",
+   "options": [
+    "winter",
+    "hands over",
+    "fog",
+    "bedside table"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Il castagno più grande è caduto durante l'inverno e in primavera non è ripartito.",
+    "targetWord": "inverno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "primavera",
+  "sentence": "In _____ non è ripartito.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "primavera",
+   "options": [
+    "primavera",
+    "dicembre",
+    "materasso",
+    "assicurazione"
+   ],
+   "translation": "In _____ it did not come back.",
+   "optionTranslations": [
+    "spring",
+    "December",
+    "mattress",
+    "insurance"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "In primavera non è ripartito.",
+    "targetWord": "primavera",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "clima",
+  "sentence": "Con questo [[clima]] non torna.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "climate",
+   "options": [
+    "climate",
+    "fine",
+    "temperature",
+    "cinema"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Con questo clima non torna.",
+    "targetWord": "clima",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lavora",
+  "sentence": "Chi apre il rifugio è Gaia, la donna di Livorno che d'estate ci [[lavora]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "works",
+   "options": [
+    "works",
+    "passes",
+    "believes",
+    "combs your hair"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Chi apre il rifugio è Gaia, la donna di Livorno che d'estate ci lavora.",
+    "targetWord": "lavora",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vuole",
+  "sentence": "Teo [[vuole]] andare perché suo padre parlava di quel bosco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wants",
+   "options": [
+    "wants",
+    "travels",
+    "takes",
+    "prepares"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Teo vuole andare perché suo padre parlava di quel bosco.",
+    "targetWord": "vuole",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "basse",
+  "sentence": "Intorno la montagna, alberi vecchi, piante [[basse]], api e silenzio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "low",
+   "options": [
+    "low",
+    "intelligent, smart",
+    "polite",
+    "poor"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Intorno la montagna, alberi vecchi, piante basse, api e silenzio.",
+    "targetWord": "basse",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pensa",
+  "sentence": "Rosa guarda le foglie e [[pensa]] alla consegna.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "thinks",
+   "options": [
+    "thinks",
+    "sits",
+    "salt",
+    "promises"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Rosa guarda le foglie e pensa alla consegna.",
+    "targetWord": "pensa",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "raccontava",
+  "sentence": "Non è come me lo [[raccontava]] lui.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tells",
+   "options": [
+    "tells",
+    "they go up",
+    "speeds up",
+    "reopens"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Non è come me lo raccontava lui.",
+    "targetWord": "raccontava",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piene",
+  "sentence": "Dopo venti minuti le scarpe sono [[piene]] di fango.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "full",
+   "options": [
+    "full",
+    "warm; hot",
+    "dark",
+    "brave"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Dopo venti minuti le scarpe sono piene di fango.",
+    "targetWord": "piene",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "parla",
+  "sentence": "Rosa non [[parla]] delle ore perse né della benzina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "speaks",
+   "options": [
+    "speaks",
+    "parks",
+    "returns",
+    "signs"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Rosa non parla delle ore perse né della benzina.",
+    "targetWord": "parla",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mette",
+  "sentence": "Lei [[mette]] il piede su una radice.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "puts",
+   "options": [
+    "puts",
+    "arrived",
+    "is enough",
+    "sweats"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Lei mette il piede su una radice.",
+    "targetWord": "mette",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "crescono",
+  "sentence": "Qui i funghi [[crescono]] anche ad agosto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "grow",
+   "options": [
+    "grow",
+    "looks for",
+    "plays, rings",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Qui i funghi crescono anche ad agosto.",
+    "targetWord": "crescono",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "grande",
+  "sentence": "Il castagno più [[grande]] è caduto durante l'inverno e in primavera non è ripartito.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "big, large",
+   "options": [
+    "big, large",
+    "dry",
+    "swollen",
+    "slow"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Il castagno più grande è caduto durante l'inverno e in primavera non è ripartito.",
+    "targetWord": "grande",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apre",
+  "sentence": "Chi [[apre]] il rifugio è Gaia, la donna di Livorno che d'estate ci lavora.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "opens",
+   "options": [
+    "opens",
+    "hands over",
+    "speeds up",
+    "travels"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Chi apre il rifugio è Gaia, la donna di Livorno che d'estate ci lavora.",
+    "targetWord": "apre",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vecchi",
+  "sentence": "Intorno la montagna, alberi [[vecchi]], piante basse, api e silenzio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "old",
+   "options": [
+    "old",
+    "short",
+    "open",
+    "right"
+   ],
+   "audioClip": {
+    "storySlug": "il-sentiero-dei-castagni",
+    "storySource": "user",
+    "sentence": "Intorno la montagna, alberi vecchi, piante basse, api e silenzio.",
+    "targetWord": "vecchi",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

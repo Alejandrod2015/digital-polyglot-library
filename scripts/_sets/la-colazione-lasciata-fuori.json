@@ -1,0 +1,455 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "biscotti,bagno,rubinetto,specchio",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "biscotti",
+     "answer": "biscuit",
+     "options": [
+      "biscuit",
+      "bathroom",
+      "tap",
+      "mirror"
+     ]
+    },
+    {
+     "word": "bagno",
+     "answer": "bathroom",
+     "options": [
+      "biscuit",
+      "bathroom",
+      "tap",
+      "mirror"
+     ]
+    },
+    {
+     "word": "rubinetto",
+     "answer": "tap",
+     "options": [
+      "biscuit",
+      "bathroom",
+      "tap",
+      "mirror"
+     ]
+    },
+    {
+     "word": "specchio",
+     "answer": "mirror",
+     "options": [
+      "biscuit",
+      "bathroom",
+      "tap",
+      "mirror"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sapone",
+  "sentence": "Nel bagno il rubinetto perde e sopra lo specchio ci sono [[sapone]] e spazzolino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "soap",
+   "options": [
+    "soap",
+    "fog",
+    "blackboard",
+    "bakery"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Nel bagno il rubinetto perde e sopra lo specchio ci sono sapone e spazzolino.",
+    "targetWord": "sapone",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "spazzolino",
+  "sentence": "Il rubinetto perde e sopra lo specchio ci sono sapone e _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "spazzolino",
+   "options": [
+    "spazzolino",
+    "tappeto",
+    "piatto",
+    "batteria"
+   ],
+   "translation": "The tap drips and above the mirror there are soap and a _____.",
+   "optionTranslations": [
+    "toothbrush",
+    "rug or carpet",
+    "dish, plate",
+    "battery"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Il rubinetto perde e sopra lo specchio ci sono sapone e spazzolino.",
+    "targetWord": "spazzolino",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "doccia",
+  "sentence": "Lasciami dormire venti minuti, poi la [[doccia]] la faccio io, dice Teo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shower",
+   "options": [
+    "shower",
+    "sponge",
+    "procession",
+    "wire or line"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Lasciami dormire venti minuti, poi la doccia la faccio io, dice Teo.",
+    "targetWord": "doccia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "torta",
+  "sentence": "Grazie della camera e della _____, io torno il prossimo settembre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "torta",
+   "options": [
+    "torta",
+    "impiegata",
+    "scaffale",
+    "notte"
+   ],
+   "translation": "Thanks for the room and the _____, I am coming back next September.",
+   "optionTranslations": [
+    "cake",
+    "female clerk",
+    "shelf unit",
+    "night"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Grazie della camera e della torta, io torno il prossimo settembre.",
+    "targetWord": "torta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cassetto",
+  "sentence": "Marta rientra alle otto, educata, e prende un foglio dal [[cassetto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "drawer",
+   "options": [
+    "drawer",
+    "mum",
+    "night",
+    "holiday"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Marta rientra alle otto, educata, e prende un foglio dal cassetto.",
+    "targetWord": "cassetto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "ospite",
+  "sentence": "Perché un _____ in meno paga.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ospite",
+   "options": [
+    "ospite",
+    "graffio",
+    "gamberi",
+    "schermo"
+   ],
+   "translation": "Because one _____ fewer pays less.",
+   "optionTranslations": [
+    "guest",
+    "scratch",
+    "prawn",
+    "screen"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Perché un ospite in meno paga.",
+    "targetWord": "ospite",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ricevuta",
+  "sentence": "Scrive la [[ricevuta]] a mano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "receipt",
+   "options": [
+    "receipt",
+    "scratch",
+    "jug",
+    "exam"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Scrive la ricevuta a mano.",
+    "targetWord": "ricevuta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "regala",
+  "sentence": "La ricevuta a mano, la mette nella busta e [[regala]] i biscotti che restano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gives as a present, without asking for money back",
+   "options": [
+    "gives as a present, without asking for money back",
+    "pulls; blows",
+    "closed",
+    "stops"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "La ricevuta a mano, la mette nella busta e regala i biscotti che restano.",
+    "targetWord": "regala",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pigiama",
+  "sentence": "Teo scende in [[pigiama]], con i capelli bagnati, e mangia in piedi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pyjamas",
+   "options": [
+    "pyjamas",
+    "toll booth",
+    "grapes",
+    "holiday"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Teo scende in pigiama, con i capelli bagnati, e mangia in piedi.",
+    "targetWord": "pigiama",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "settembre",
+  "sentence": "Io torno il prossimo [[settembre]] con più tempo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "September",
+   "options": [
+    "September",
+    "night",
+    "socket",
+    "large building"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Io torno il prossimo settembre con più tempo.",
+    "targetWord": "settembre",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "scende",
+  "sentence": "Rosa [[scende]] alle sei con la caviglia gonfia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "goes down",
+   "options": [
+    "goes down",
+    "closed",
+    "tells",
+    "goes out, exits"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Rosa scende alle sei con la caviglia gonfia.",
+    "targetWord": "scende",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trova",
+  "sentence": "[[trova]] Teo sul divano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "finds",
+   "options": [
+    "finds",
+    "cuts",
+    "looks for",
+    "counts; matters"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Trova Teo sul divano.",
+    "targetWord": "trova",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "uova",
+  "sentence": "Ci sono latte, [[uova]], miele, marmellata e sei biscotti sotto un piatto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "eggs",
+   "options": [
+    "eggs",
+    "key",
+    "holiday",
+    "blanket"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Ci sono latte, uova, miele, marmellata e sei biscotti sotto un piatto.",
+    "targetWord": "uova",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sente",
+  "sentence": "[[sente]] odore di pane.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hears, feels",
+   "options": [
+    "hears, feels",
+    "gets dressed",
+    "sweats",
+    "sits"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Sente odore di pane.",
+    "targetWord": "sente",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "educata",
+  "sentence": "Marta rientra alle otto, [[educata]], e prende un foglio dal cassetto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "polite",
+   "options": [
+    "polite",
+    "silent, quiet",
+    "warm; hot",
+    "right"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Marta rientra alle otto, educata, e prende un foglio dal cassetto.",
+    "targetWord": "educata",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tempo",
+  "sentence": "Io torno il prossimo settembre con più [[tempo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "time, weather",
+   "options": [
+    "time, weather",
+    "traffic light",
+    "chocolate",
+    "queue ticket"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Io torno il prossimo settembre con più tempo.",
+    "targetWord": "tempo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caviglia",
+  "sentence": "Rosa scende alle sei con la [[caviglia]] gonfia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ankle",
+   "options": [
+    "ankle",
+    "machine; car",
+    "blanket",
+    "watermelon"
+   ],
+   "audioClip": {
+    "storySlug": "la-colazione-lasciata-fuori",
+    "storySource": "user",
+    "sentence": "Rosa scende alle sei con la caviglia gonfia.",
+    "targetWord": "caviglia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

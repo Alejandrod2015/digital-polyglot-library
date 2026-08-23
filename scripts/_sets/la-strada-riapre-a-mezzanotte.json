@@ -1,0 +1,547 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "corsia,griglia,fumo,sagra",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "corsia",
+     "answer": "lane",
+     "options": [
+      "lane",
+      "grill",
+      "smoke",
+      "village food festival"
+     ]
+    },
+    {
+     "word": "griglia",
+     "answer": "grill",
+     "options": [
+      "lane",
+      "grill",
+      "smoke",
+      "village food festival"
+     ]
+    },
+    {
+     "word": "fumo",
+     "answer": "smoke",
+     "options": [
+      "lane",
+      "grill",
+      "smoke",
+      "village food festival"
+     ]
+    },
+    {
+     "word": "sagra",
+     "answer": "village food festival",
+     "options": [
+      "lane",
+      "grill",
+      "smoke",
+      "village food festival"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "processione",
+  "sentence": "Sabato passa la [[processione]] della sagra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "procession",
+   "options": [
+    "procession",
+    "pillow",
+    "time, weather",
+    "truth"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Sabato passa la processione della sagra.",
+    "targetWord": "processione",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "santo",
+  "sentence": "Con giacca e maglione e guarda due uomini che portano il _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "santo",
+   "options": [
+    "santo",
+    "torcia",
+    "soluzione",
+    "edificio"
+   ],
+   "translation": "With jacket and jumper, he watches two men carrying the _____.",
+   "optionTranslations": [
+    "saint",
+    "torch",
+    "solution",
+    "building"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Con giacca e maglione e guarda due uomini che portano il santo.",
+    "targetWord": "santo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sindaco",
+  "sentence": "Sul palco un microfono fischia e il [[sindaco]] comincia un discorso lungo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mayor",
+   "options": [
+    "mayor",
+    "eggs",
+    "chestnut",
+    "car door"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Sul palco un microfono fischia e il sindaco comincia un discorso lungo.",
+    "targetWord": "sindaco",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trombe",
+  "sentence": "La banda aspetta con le [[trombe]] basse e un tamburo appoggiato sul muretto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "trumpet",
+   "options": [
+    "trumpet",
+    "mobile phone",
+    "holiday",
+    "mountain hut where walkers eat and sleep high up in the hills"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "La banda aspetta con le trombe basse e un tamburo appoggiato sul muretto.",
+    "targetWord": "trombe",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "tamburo",
+  "sentence": "Un _____ appoggiato sul muretto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tamburo",
+   "options": [
+    "tamburo",
+    "raffreddore",
+    "supermercato",
+    "soluzione"
+   ],
+   "translation": "A _____ resting on the low wall.",
+   "optionTranslations": [
+    "drum",
+    "cold",
+    "supermarket",
+    "solution"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Un tamburo appoggiato sul muretto.",
+    "targetWord": "tamburo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salsicce",
+  "sentence": "Teo compra due [[salsicce]], uno spuntino in piedi, e paga con il credito.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sausage",
+   "options": [
+    "sausage",
+    "linen and underwear",
+    "spoon",
+    "afternoon"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Teo compra due salsicce, uno spuntino in piedi, e paga con il credito.",
+    "targetWord": "salsicce",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "telefonata",
+  "sentence": "Rosa fa una [[telefonata]] al garage e guarda la batteria del cellulare che scende.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "phone call",
+   "options": [
+    "phone call",
+    "airport",
+    "tea",
+    "roller blind"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Rosa fa una telefonata al garage e guarda la batteria del cellulare che scende.",
+    "targetWord": "telefonata",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chiusa",
+  "sentence": "La corsia unica è [[chiusa]] e sopra le case ci sono bandiere di carta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "closed",
+   "options": [
+    "closed",
+    "promises",
+    "puts",
+    "parks"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "La corsia unica è chiusa e sopra le case ci sono bandiere di carta.",
+    "targetWord": "chiusa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "suona",
+  "sentence": "Ferma la macchina all'ingresso è Dario, un uomo di Roma che [[suona]] nella banda.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "plays, rings",
+   "options": [
+    "plays, rings",
+    "post",
+    "promises",
+    "holds, keeps"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Ferma la macchina all'ingresso è Dario, un uomo di Roma che suona nella banda.",
+    "targetWord": "suona",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stasera",
+  "sentence": "Adesso guardate quanta gente c'è [[stasera]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tonight",
+   "options": [
+    "tonight",
+    "instead",
+    "where",
+    "together"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Adesso guardate quanta gente c'è stasera.",
+    "targetWord": "stasera",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "domani",
+  "sentence": "[[domani]] mattina si vola fino a Palermo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tomorrow",
+   "options": [
+    "tomorrow",
+    "slowly, softly",
+    "outside",
+    "instead"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Domani mattina si vola fino a Palermo.",
+    "targetWord": "domani",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "maglione",
+  "sentence": "Teo scende con giacca e [[maglione]] e guarda due uomini che portano il santo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "jumper",
+   "options": [
+    "jumper",
+    "plane",
+    "suit or dress",
+    "sauce"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Teo scende con giacca e maglione e guarda due uomini che portano il santo.",
+    "targetWord": "maglione",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ferma",
+  "sentence": "Chi [[ferma]] la macchina all'ingresso è Dario.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stops",
+   "options": [
+    "stops",
+    "pulls; blows",
+    "puts",
+    "washes yourself"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Chi ferma la macchina all'ingresso è Dario.",
+    "targetWord": "ferma",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sabato",
+  "sentence": "[[sabato]] passa la processione della sagra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Saturday",
+   "options": [
+    "Saturday",
+    "bank",
+    "pear",
+    "mountain hut where walkers eat and sleep high up in the hills"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Sabato passa la processione della sagra.",
+    "targetWord": "sabato",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "discorso",
+  "sentence": "Sul palco un microfono fischia e il sindaco comincia un _____ lungo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "discorso",
+   "options": [
+    "discorso",
+    "bagagliaio",
+    "pecore",
+    "notte"
+   ],
+   "translation": "On the stage a microphone screeches and the mayor starts a long _____.",
+   "optionTranslations": [
+    "speech",
+    "boot of a car",
+    "sheep",
+    "night"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Sul palco un microfono fischia e il sindaco comincia un discorso lungo.",
+    "targetWord": "discorso",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spuntino",
+  "sentence": "Teo compra due salsicce, uno [[spuntino]] in piedi, e paga con il credito.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "snack",
+   "options": [
+    "snack",
+    "prawn",
+    "booking",
+    "watermelon"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Teo compra due salsicce, uno spuntino in piedi, e paga con il credito.",
+    "targetWord": "spuntino",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "scende",
+  "sentence": "Rosa fa una telefonata al garage e guarda la batteria del cellulare che [[scende]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "goes down",
+   "options": [
+    "goes down",
+    "pay",
+    "surprises",
+    "dies"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Rosa fa una telefonata al garage e guarda la batteria del cellulare che scende.",
+    "targetWord": "scende",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "giacca",
+  "sentence": "Teo scende con [[giacca]] e maglione e guarda due uomini che portano il santo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "jacket",
+   "options": [
+    "jacket",
+    "lemonade",
+    "counter window",
+    "pain"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Teo scende con giacca e maglione e guarda due uomini che portano il santo.",
+    "targetWord": "giacca",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lungo",
+  "sentence": "Sul palco un microfono fischia e il sindaco comincia un discorso [[lungo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "long; along",
+   "options": [
+    "long; along",
+    "to wake up",
+    "dry",
+    "right"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Sul palco un microfono fischia e il sindaco comincia un discorso lungo.",
+    "targetWord": "lungo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "compra",
+  "sentence": "Teo [[compra]] due salsicce, uno spuntino in piedi, e paga con il credito.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "buys",
+   "options": [
+    "buys",
+    "guide",
+    "takes",
+    "goes down"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Teo compra due salsicce, uno spuntino in piedi, e paga con il credito.",
+    "targetWord": "compra",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "credito",
+  "sentence": "Teo compra due salsicce, uno spuntino in piedi, e paga con il [[credito]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "credit",
+   "options": [
+    "credit",
+    "grass",
+    "cloud",
+    "plaster"
+   ],
+   "audioClip": {
+    "storySlug": "la-strada-riapre-a-mezzanotte",
+    "storySource": "user",
+    "sentence": "Teo compra due salsicce, uno spuntino in piedi, e paga con il credito.",
+    "targetWord": "credito",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

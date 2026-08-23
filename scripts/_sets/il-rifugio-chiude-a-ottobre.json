@@ -1,0 +1,547 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "salame,autunno,ottobre,patate",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "salame",
+     "answer": "salami",
+     "options": [
+      "salami",
+      "autumn",
+      "October",
+      "potato"
+     ]
+    },
+    {
+     "word": "autunno",
+     "answer": "autumn",
+     "options": [
+      "salami",
+      "autumn",
+      "October",
+      "potato"
+     ]
+    },
+    {
+     "word": "ottobre",
+     "answer": "October",
+     "options": [
+      "salami",
+      "autumn",
+      "October",
+      "potato"
+     ]
+    },
+    {
+     "word": "patate",
+     "answer": "potato",
+     "options": [
+      "salami",
+      "autumn",
+      "October",
+      "potato"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cucchiaio",
+  "sentence": "Con lo stesso [[cucchiaio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "spoon",
+   "options": [
+    "spoon",
+    "bakery",
+    "bathroom",
+    "car door"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Con lo stesso cucchiaio.",
+    "targetWord": "cucchiaio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "prosciutto",
+  "sentence": "Teo taglia il _____ magro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "prosciutto",
+   "options": [
+    "prosciutto",
+    "collo",
+    "magliette",
+    "letti"
+   ],
+   "translation": "Teo slices the lean _____.",
+   "optionTranslations": [
+    "ham",
+    "neck",
+    "t-shirt",
+    "bed"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Teo taglia il prosciutto magro.",
+    "targetWord": "prosciutto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caraffa",
+  "sentence": "Teo taglia il prosciutto magro e riempie una [[caraffa]] per tutti e tre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "jug",
+   "options": [
+    "jug",
+    "temperature",
+    "chocolate",
+    "post office"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Teo taglia il prosciutto magro e riempie una caraffa per tutti e tre.",
+    "targetWord": "caraffa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "anno",
+  "sentence": "Ogni _____ a marzo decido se torno.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "anno",
+   "options": [
+    "anno",
+    "macchina",
+    "benda",
+    "funghi"
+   ],
+   "translation": "Every _____ in March I decide whether I come back.",
+   "optionTranslations": [
+    "year",
+    "machine; car",
+    "bandage",
+    "mushroom"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Ogni anno a marzo decido se torno.",
+    "targetWord": "anno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "marzo",
+  "sentence": "Ogni anno a [[marzo]] decido se torno su, e ogni anno torno, aggiunge Gaia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "March",
+   "options": [
+    "March",
+    "pillow",
+    "pepper",
+    "rug or carpet"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Ogni anno a marzo decido se torno su, e ogni anno torno, aggiunge Gaia.",
+    "targetWord": "marzo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "vacanze",
+  "sentence": "Rosa fa consegne da sei anni, senza _____ e senza diventare ricca.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vacanze",
+   "options": [
+    "vacanze",
+    "password",
+    "maglione",
+    "spazzolino"
+   ],
+   "translation": "Rosa has been doing deliveries for six years, with no _____ and without getting rich.",
+   "optionTranslations": [
+    "holiday",
+    "password",
+    "jumper",
+    "toothbrush"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Rosa fa consegne da sei anni, senza vacanze e senza diventare ricca.",
+    "targetWord": "vacanze",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "amicizia",
+  "sentence": "Fra loro tre non c'è [[amicizia]], solo una sera che passa piano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "friendship",
+   "options": [
+    "friendship",
+    "winter",
+    "cat",
+    "photocopy"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Fra loro tre non c'è amicizia, solo una sera che passa piano.",
+    "targetWord": "amicizia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "capo",
+  "sentence": "Teo esce con il cellulare e il caricabatterie e chiama il [[capo]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "boss",
+   "options": [
+    "boss",
+    "battery",
+    "grill",
+    "socket"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Teo esce con il cellulare e il caricabatterie e chiama il capo.",
+    "targetWord": "capo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tè",
+  "sentence": "Rientra dopo dieci minuti, si siede e beve il [[tè]] che Gaia gli prepara.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tea",
+   "options": [
+    "tea",
+    "soap",
+    "fear",
+    "temperature"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Rientra dopo dieci minuti, si siede e beve il tè che Gaia gli prepara.",
+    "targetWord": "tè",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "collega",
+  "sentence": "Il turno lo copre un [[collega]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "connects",
+   "options": [
+    "connects",
+    "path",
+    "chemist's shop",
+    "chestnut"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Il turno lo copre un collega.",
+    "targetWord": "collega",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "riunione",
+  "sentence": "Devo essere alla [[riunione]] di lunedì.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "meeting",
+   "options": [
+    "meeting",
+    "light bulb",
+    "syrup",
+    "mum"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Devo essere alla riunione di lunedì.",
+    "targetWord": "riunione",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fuori",
+  "sentence": "La tempesta Gaia riapre il rifugio, guarda [[fuori]] e mette in tavola quello.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "outside",
+   "options": [
+    "outside",
+    "badly, and in fare male also to hurt or to be sore",
+    "tonight",
+    "under, below"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "La tempesta Gaia riapre il rifugio, guarda fuori e mette in tavola quello.",
+    "targetWord": "fuori",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "riapre",
+  "sentence": "Dopo la tempesta Gaia [[riapre]] il rifugio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "reopens",
+   "options": [
+    "reopens",
+    "promises",
+    "turns, spins",
+    "gets lost"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Dopo la tempesta Gaia riapre il rifugio.",
+    "targetWord": "riapre",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "panini",
+  "sentence": "C'è una zuppa di fagioli in una ciotola, mezzo salame e due [[panini]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bread roll with something inside",
+   "options": [
+    "bread roll with something inside",
+    "blackboard",
+    "cream",
+    "torch"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "C'è una zuppa di fagioli in una ciotola, mezzo salame e due panini.",
+    "targetWord": "panini",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caffè",
+  "sentence": "Mangia due volte, fagioli e patate, con lo stesso cucchiaio, e beve un [[caffè]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "coffee",
+   "options": [
+    "coffee",
+    "armchair",
+    "castle",
+    "speech"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Mangia due volte, fagioli e patate, con lo stesso cucchiaio, e beve un caffè.",
+    "targetWord": "caffè",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stesso",
+  "sentence": "Con lo [[stesso]] cucchiaio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "same",
+   "options": [
+    "same",
+    "silent, quiet",
+    "low",
+    "young"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Con lo stesso cucchiaio.",
+    "targetWord": "stesso",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ricca",
+  "sentence": "Rosa fa consegne da sei anni, senza vacanze e senza diventare [[ricca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rich",
+   "options": [
+    "rich",
+    "damp",
+    "dirty",
+    "swollen"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Rosa fa consegne da sei anni, senza vacanze e senza diventare ricca.",
+    "targetWord": "ricca",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piano",
+  "sentence": "Fra loro tre non c'è amicizia, solo una sera che passa [[piano]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slowly, softly",
+   "options": [
+    "slowly, softly",
+    "under, below",
+    "around",
+    "tomorrow"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Fra loro tre non c'è amicizia, solo una sera che passa piano.",
+    "targetWord": "piano",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cellulare",
+  "sentence": "Teo esce con il [[cellulare]] e il caricabatterie e chiama il capo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mobile phone",
+   "options": [
+    "mobile phone",
+    "ear",
+    "blood",
+    "cat"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Teo esce con il cellulare e il caricabatterie e chiama il capo.",
+    "targetWord": "cellulare",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prepara",
+  "sentence": "Rientra dopo dieci minuti, si siede e beve il tè che Gaia gli [[prepara]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "prepares",
+   "options": [
+    "prepares",
+    "to lie down",
+    "puts",
+    "grow"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Rientra dopo dieci minuti, si siede e beve il tè che Gaia gli prepara.",
+    "targetWord": "prepara",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "passa",
+  "sentence": "Fra loro tre non c'è amicizia, solo una sera che [[passa]] piano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "passes",
+   "options": [
+    "passes",
+    "works",
+    "puts",
+    "move"
+   ],
+   "audioClip": {
+    "storySlug": "il-rifugio-chiude-a-ottobre",
+    "storySource": "user",
+    "sentence": "Fra loro tre non c'è amicizia, solo una sera che passa piano.",
+    "targetWord": "passa",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

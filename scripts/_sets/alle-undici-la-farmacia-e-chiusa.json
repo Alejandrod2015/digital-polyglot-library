@@ -1,0 +1,478 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "farmacia,febbre,gola,malattia",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "farmacia",
+     "answer": "chemist's shop",
+     "options": [
+      "chemist's shop",
+      "fever",
+      "throat",
+      "illness"
+     ]
+    },
+    {
+     "word": "febbre",
+     "answer": "fever",
+     "options": [
+      "chemist's shop",
+      "fever",
+      "throat",
+      "illness"
+     ]
+    },
+    {
+     "word": "gola",
+     "answer": "throat",
+     "options": [
+      "chemist's shop",
+      "fever",
+      "throat",
+      "illness"
+     ]
+    },
+    {
+     "word": "malattia",
+     "answer": "illness",
+     "options": [
+      "chemist's shop",
+      "fever",
+      "throat",
+      "illness"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gonfia",
+  "sentence": "Rosa cammina piano perché la caviglia destra è [[gonfia]] dal bosco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "swollen",
+   "options": [
+    "swollen",
+    "white",
+    "intelligent, smart",
+    "tall; high"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Rosa cammina piano perché la caviglia destra è gonfia dal bosco.",
+    "targetWord": "gonfia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "raffreddore",
+  "sentence": "Ho solo un _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "raffreddore",
+   "options": [
+    "raffreddore",
+    "parco",
+    "trombe",
+    "cinema"
+   ],
+   "translation": "I have only got a _____.",
+   "optionTranslations": [
+    "cold",
+    "park",
+    "trumpet",
+    "cinema"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Ho solo un raffreddore.",
+    "targetWord": "raffreddore",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pelle",
+  "sentence": "Rosa gli mette una mano sulla fronte e sente la [[pelle]] bollente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "skin",
+   "options": [
+    "skin",
+    "tree",
+    "light bulb",
+    "jacket"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Rosa gli mette una mano sulla fronte e sente la pelle bollente.",
+    "targetWord": "pelle",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "occhiali",
+  "sentence": "Con gli _____ sul naso.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "occhiali",
+   "options": [
+    "occhiali",
+    "nebbia",
+    "estate",
+    "nuvola"
+   ],
+   "translation": "With her _____ on her nose.",
+   "optionTranslations": [
+    "glasses",
+    "fog",
+    "summer",
+    "cloud"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Con gli occhiali sul naso.",
+    "targetWord": "occhiali",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "termometro",
+  "sentence": "Il _____ segna trentanove e due e Martina smette di sorridere.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "termometro",
+   "options": [
+    "termometro",
+    "tè",
+    "forma",
+    "firma"
+   ],
+   "translation": "The _____ reads thirty-nine point two and Martina stops smiling.",
+   "optionTranslations": [
+    "thermometer",
+    "tea",
+    "shape",
+    "signs"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Il termometro segna trentanove e due e Martina smette di sorridere.",
+    "targetWord": "termometro",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sciroppo",
+  "sentence": "Prepara [[sciroppo]], due pastiglie, cerotti e una cura di tre giorni.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "syrup",
+   "options": [
+    "syrup",
+    "appointment",
+    "salami",
+    "sheep"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Prepara sciroppo, due pastiglie, cerotti e una cura di tre giorni.",
+    "targetWord": "sciroppo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pastiglie",
+  "sentence": "Fino a domani, dice, e quel dolore al piede vuole riposo, non altre [[pastiglie]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tablet",
+   "options": [
+    "tablet",
+    "machine; car",
+    "year",
+    "September"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Fino a domani, dice, e quel dolore al piede vuole riposo, non altre pastiglie.",
+    "targetWord": "pastiglie",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dolore",
+  "sentence": "Quel [[dolore]] al piede vuole riposo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pain",
+   "options": [
+    "pain",
+    "tie",
+    "boss",
+    "tea"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Quel dolore al piede vuole riposo.",
+    "targetWord": "dolore",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dottore",
+  "sentence": "Se la febbre non scende chiamiamo il [[dottore]] di guardia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "doctor",
+   "options": [
+    "doctor",
+    "winter",
+    "shepherd",
+    "butcher's shop"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Se la febbre non scende chiamiamo il dottore di guardia.",
+    "targetWord": "dottore",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "domenica",
+  "sentence": "Alle undici di [[domenica]] la farmacia di Scilla è chiusa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Sunday",
+   "options": [
+    "Sunday",
+    "uncle",
+    "corridor",
+    "blood"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Alle undici di domenica la farmacia di Scilla è chiusa.",
+    "targetWord": "domenica",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "resta",
+  "sentence": "A undici chilometri di macchina la porta è aperta, e la coperta [[resta]] dietro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stays",
+   "options": [
+    "stays",
+    "explains",
+    "prepares",
+    "goes down"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "A undici chilometri di macchina la porta è aperta, e la coperta resta dietro.",
+    "targetWord": "resta",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guida",
+  "sentence": "Così non si [[guida]] fino a domani.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "guide",
+   "options": [
+    "guide",
+    "hands over",
+    "promises",
+    "pulls; blows"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Così non si guida fino a domani.",
+    "targetWord": "guida",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caviglia",
+  "sentence": "Rosa cammina piano perché la [[caviglia]] destra è gonfia dal bosco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ankle",
+   "options": [
+    "ankle",
+    "counter window",
+    "bird",
+    "path"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Rosa cammina piano perché la caviglia destra è gonfia dal bosco.",
+    "targetWord": "caviglia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "naso",
+  "sentence": "Con gli occhiali sul [[naso]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nose",
+   "options": [
+    "nose",
+    "net, network",
+    "ambulance",
+    "castle"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Con gli occhiali sul naso.",
+    "targetWord": "naso",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cura",
+  "sentence": "Prepara sciroppo, due pastiglie, cerotti e una [[cura]] di tre giorni.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "course of treatment",
+   "options": [
+    "course of treatment",
+    "blanket",
+    "bread roll with something inside",
+    "machine; car"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Prepara sciroppo, due pastiglie, cerotti e una cura di tre giorni.",
+    "targetWord": "cura",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aperta",
+  "sentence": "A undici chilometri di macchina la porta è [[aperta]], e la coperta resta dietro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "open",
+   "options": [
+    "open",
+    "young",
+    "tall; high",
+    "worried"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "A undici chilometri di macchina la porta è aperta, e la coperta resta dietro.",
+    "targetWord": "aperta",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "destra",
+  "sentence": "Rosa cammina piano perché la caviglia [[destra]] è gonfia dal bosco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right",
+   "options": [
+    "right",
+    "stupid",
+    "poor",
+    "to wake up"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "Rosa cammina piano perché la caviglia destra è gonfia dal bosco.",
+    "targetWord": "destra",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chilometri",
+  "sentence": "A undici [[chilometri]] di macchina la porta è aperta, e la coperta resta dietro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kilometre",
+   "options": [
+    "kilometre",
+    "farm",
+    "pepper",
+    "bike"
+   ],
+   "audioClip": {
+    "storySlug": "alle-undici-la-farmacia-e-chiusa",
+    "storySource": "user",
+    "sentence": "A undici chilometri di macchina la porta è aperta, e la coperta resta dietro.",
+    "targetWord": "chilometri",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

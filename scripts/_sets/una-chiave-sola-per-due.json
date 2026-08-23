@@ -1,0 +1,501 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "camere,colazione,cortile,lampadina",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "camere",
+     "answer": "room",
+     "options": [
+      "room",
+      "breakfast",
+      "yard",
+      "light bulb"
+     ]
+    },
+    {
+     "word": "colazione",
+     "answer": "breakfast",
+     "options": [
+      "room",
+      "breakfast",
+      "yard",
+      "light bulb"
+     ]
+    },
+    {
+     "word": "cortile",
+     "answer": "yard",
+     "options": [
+      "room",
+      "breakfast",
+      "yard",
+      "light bulb"
+     ]
+    },
+    {
+     "word": "lampadina",
+     "answer": "light bulb",
+     "options": [
+      "room",
+      "breakfast",
+      "yard",
+      "light bulb"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prenotazione",
+  "sentence": "La [[prenotazione]] era per due letti separati.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "booking",
+   "options": [
+    "booking",
+    "year",
+    "summer",
+    "torch"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "La prenotazione era per due letti separati.",
+    "targetWord": "prenotazione",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stanza",
+  "sentence": "La [[stanza]] in fondo è occupata da lunedì.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "room",
+   "options": [
+    "room",
+    "painting",
+    "screen",
+    "horse"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "La stanza in fondo è occupata da lunedì.",
+    "targetWord": "stanza",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "armadio",
+  "sentence": "Dentro l'aria è tiepida, ci sono un [[armadio]], un comodino e nessuna presa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wardrobe",
+   "options": [
+    "wardrobe",
+    "key",
+    "wedding",
+    "battery"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "Dentro l'aria è tiepida, ci sono un armadio, un comodino e nessuna presa.",
+    "targetWord": "armadio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "comodino",
+  "sentence": "L'aria è tiepida, ci sono un armadio, un _____ e nessuna presa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "comodino",
+   "options": [
+    "comodino",
+    "tristezza",
+    "nuvola",
+    "sindaco"
+   ],
+   "translation": "The air is warm, there is a wardrobe, a _____ and no socket.",
+   "optionTranslations": [
+    "bedside table",
+    "sadness",
+    "cloud",
+    "mayor"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "L'aria è tiepida, ci sono un armadio, un comodino e nessuna presa.",
+    "targetWord": "comodino",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cuscino",
+  "sentence": "Marta torna con [[cuscino]], coperta pulita e panini, e spiega dov'è tutto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pillow",
+   "options": [
+    "pillow",
+    "film",
+    "mirror",
+    "night"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "Marta torna con cuscino, coperta pulita e panini, e spiega dov'è tutto.",
+    "targetWord": "cuscino",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fratello",
+  "sentence": "Il divano è comodo, ci dorme mio [[fratello]] quando viene d'estate, dice lei.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brother",
+   "options": [
+    "brother",
+    "night",
+    "melon",
+    "swimming costume"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "Il divano è comodo, ci dorme mio fratello quando viene d'estate, dice lei.",
+    "targetWord": "fratello",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "corridoio",
+  "sentence": "Poi spegne la luce del [[corridoio]], tira il tappeto e sale.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "corridor",
+   "options": [
+    "corridor",
+    "large building",
+    "jacket",
+    "ear"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "Poi spegne la luce del corridoio, tira il tappeto e sale.",
+    "targetWord": "corridoio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "divano",
+  "sentence": "Teo prende maglione e giacca dal bagagliaio e va sul [[divano]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sofa",
+   "options": [
+    "sofa",
+    "speech",
+    "shirt",
+    "time, weather"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "Teo prende maglione e giacca dal bagagliaio e va sul divano.",
+    "targetWord": "divano",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sveglia",
+  "sentence": "Rosa si toglie le scarpe, mette la [[sveglia]] e si siede sul materasso duro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wake up",
+   "options": [
+    "to wake up",
+    "bike",
+    "queue ticket",
+    "shape"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "Rosa si toglie le scarpe, mette la sveglia e si siede sul materasso duro.",
+    "targetWord": "sveglia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "materasso",
+  "sentence": "Si siede sul [[materasso]] duro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mattress",
+   "options": [
+    "mattress",
+    "conversation",
+    "coffee",
+    "building"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "Si siede sul materasso duro.",
+    "targetWord": "materasso",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "male",
+  "sentence": "La sveglia e si siede sul materasso duro, con la caviglia che fa [[male]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "badly, and in fare male also to hurt or to be sore",
+   "options": [
+    "badly, and in fare male also to hurt or to be sore",
+    "instead",
+    "under, below",
+    "tomorrow"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "La sveglia e si siede sul materasso duro, con la caviglia che fa male.",
+    "targetWord": "male",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tiene",
+  "sentence": "È Marta, una donna di Siena che [[tiene]] due camere e fa la colazione.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "holds, keeps",
+   "options": [
+    "holds, keeps",
+    "lie",
+    "stops",
+    "serves; is needed"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "È Marta, una donna di Siena che tiene due camere e fa la colazione.",
+    "targetWord": "tiene",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "toglie",
+  "sentence": "Rosa si [[toglie]] le scarpe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "removes",
+   "options": [
+    "removes",
+    "pay",
+    "puts",
+    "covers, includes"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "Rosa si toglie le scarpe.",
+    "targetWord": "toglie",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "graffio",
+  "sentence": "Nel cortile una lampadina accende la portiera sporca e il [[graffio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "scratch",
+   "options": [
+    "scratch",
+    "credit",
+    "August",
+    "smoke"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "Nel cortile una lampadina accende la portiera sporca e il graffio.",
+    "targetWord": "graffio",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "letti",
+  "sentence": "La prenotazione era per due _____ separati.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "letti",
+   "options": [
+    "letti",
+    "caviglia",
+    "libretto",
+    "timbro"
+   ],
+   "translation": "The booking was for two separate _____.",
+   "optionTranslations": [
+    "bed",
+    "ankle",
+    "small booklet that travels with an Italian car and says who owns it",
+    "stamp"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "La prenotazione era per due letti separati.",
+    "targetWord": "letti",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "lunedì",
+  "sentence": "La stanza in fondo è occupata da _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lunedì",
+   "options": [
+    "lunedì",
+    "rifugio",
+    "denti",
+    "modulo"
+   ],
+   "translation": "The room at the back has been taken since _____.",
+   "optionTranslations": [
+    "Monday",
+    "mountain hut where walkers eat and sleep high up in the hills",
+    "tooth",
+    "form"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "La stanza in fondo è occupata da lunedì.",
+    "targetWord": "lunedì",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pulita",
+  "sentence": "Marta torna con cuscino, coperta [[pulita]] e panini, e spiega dov'è tutto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clean",
+   "options": [
+    "clean",
+    "warm; hot",
+    "short",
+    "long; along"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "Marta torna con cuscino, coperta pulita e panini, e spiega dov'è tutto.",
+    "targetWord": "pulita",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tappeto",
+  "sentence": "Poi spegne la luce del corridoio, tira il [[tappeto]] e sale.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rug or carpet",
+   "options": [
+    "rug or carpet",
+    "salary",
+    "December",
+    "trumpet"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "Poi spegne la luce del corridoio, tira il tappeto e sale.",
+    "targetWord": "tappeto",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "duro",
+  "sentence": "Si siede sul materasso [[duro]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hard",
+   "options": [
+    "hard",
+    "poor",
+    "warm; hot",
+    "before, first"
+   ],
+   "audioClip": {
+    "storySlug": "una-chiave-sola-per-due",
+    "storySource": "user",
+    "sentence": "Si siede sul materasso duro.",
+    "targetWord": "duro",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

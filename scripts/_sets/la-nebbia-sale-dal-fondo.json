@@ -1,0 +1,455 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "nebbia,stivali,attimo,mucche",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "nebbia",
+     "answer": "fog",
+     "options": [
+      "fog",
+      "boot",
+      "instant",
+      "cow"
+     ]
+    },
+    {
+     "word": "stivali",
+     "answer": "boot",
+     "options": [
+      "fog",
+      "boot",
+      "instant",
+      "cow"
+     ]
+    },
+    {
+     "word": "attimo",
+     "answer": "instant",
+     "options": [
+      "fog",
+      "boot",
+      "instant",
+      "cow"
+     ]
+    },
+    {
+     "word": "mucche",
+     "answer": "cow",
+     "options": [
+      "fog",
+      "boot",
+      "instant",
+      "cow"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "persa",
+  "sentence": "Lei si è [[persa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gets lost",
+   "options": [
+    "gets lost",
+    "thinks",
+    "stops",
+    "help"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "Lei si è persa.",
+    "targetWord": "persa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "uccello",
+  "sentence": "La voce di un _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "uccello",
+   "options": [
+    "uccello",
+    "giacca",
+    "coperta",
+    "cellulare"
+   ],
+   "translation": "The call of a _____.",
+   "optionTranslations": [
+    "bird",
+    "jacket",
+    "blanket",
+    "mobile phone"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "La voce di un uccello.",
+    "targetWord": "uccello",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "coraggioso",
+  "sentence": "Teo scende di lì, [[coraggioso]], più intelligente della mappa che non hanno.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "brave",
+   "options": [
+    "brave",
+    "full",
+    "hard",
+    "grey"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "Teo scende di lì, coraggioso, più intelligente della mappa che non hanno.",
+    "targetWord": "coraggioso",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "fattoria",
+  "sentence": "Poi compare una _____ con due pecore, un cavallo e le galline.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fattoria",
+   "options": [
+    "fattoria",
+    "pastiglie",
+    "sentiero",
+    "lavagna"
+   ],
+   "translation": "Then a _____ appears with two sheep, a horse and the hens.",
+   "optionTranslations": [
+    "farm",
+    "tablet",
+    "path",
+    "blackboard"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "Poi compare una fattoria con due pecore, un cavallo e le galline.",
+    "targetWord": "fattoria",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pastore",
+  "sentence": "Mio zio faceva il [[pastore]] vicino a Benevento.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shepherd",
+   "options": [
+    "shepherd",
+    "jug",
+    "tap",
+    "car door"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "Mio zio faceva il pastore vicino a Benevento.",
+    "targetWord": "pastore",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "animali",
+  "sentence": "Questi [[animali]] li conosco tutti da quando ero piccolo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "animal",
+   "options": [
+    "animal",
+    "shirt",
+    "photocopy",
+    "chest"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "Questi animali li conosco tutti da quando ero piccolo.",
+    "targetWord": "animali",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lago",
+  "sentence": "Una donna indica il rifugio e sotto si vede un [[lago]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lake",
+   "options": [
+    "lake",
+    "jacket",
+    "night",
+    "boot of a car"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "Una donna indica il rifugio e sotto si vede un lago.",
+    "targetWord": "lago",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spaventa",
+  "sentence": "La nebbia la [[spaventa]] e Rosa accende la torcia del cellulare.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "frightens",
+   "options": [
+    "frightens",
+    "connects",
+    "stops",
+    "believes"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "La nebbia la spaventa e Rosa accende la torcia del cellulare.",
+    "targetWord": "spaventa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "motivo",
+  "sentence": "Per nessun [[motivo]] al mondo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "reason",
+   "options": [
+    "reason",
+    "booking",
+    "procession",
+    "guest"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "Per nessun motivo al mondo.",
+    "targetWord": "motivo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "copre",
+  "sentence": "In venti minuti [[copre]] Rosa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "covers, includes",
+   "options": [
+    "covers, includes",
+    "combs your hair",
+    "serves; is needed",
+    "plays, rings"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "In venti minuti copre Rosa.",
+    "targetWord": "copre",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arriva",
+  "sentence": "Fermati un attimo e ascolta quello che [[arriva]] dal basso, dice Teo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "arrives",
+   "options": [
+    "arrives",
+    "gives as a present, without asking for money back",
+    "works",
+    "repairs"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "Fermati un attimo e ascolta quello che arriva dal basso, dice Teo.",
+    "targetWord": "arriva",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "intelligente",
+  "sentence": "Teo scende di lì, coraggioso, più [[intelligente]] della mappa che non hanno.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "intelligent, smart",
+   "options": [
+    "intelligent, smart",
+    "slow",
+    "warm; hot",
+    "unpleasant"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "Teo scende di lì, coraggioso, più intelligente della mappa che non hanno.",
+    "targetWord": "intelligente",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pecore",
+  "sentence": "Poi compare una fattoria con due [[pecore]], un cavallo e le galline.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sheep",
+   "options": [
+    "sheep",
+    "cloud",
+    "grill",
+    "shower"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "Poi compare una fattoria con due pecore, un cavallo e le galline.",
+    "targetWord": "pecore",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "indica",
+  "sentence": "Una donna [[indica]] il rifugio e sotto si vede un lago.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "points to, indicates",
+   "options": [
+    "points to, indicates",
+    "wants",
+    "lie",
+    "opens"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "Una donna indica il rifugio e sotto si vede un lago.",
+    "targetWord": "indica",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "torcia",
+  "sentence": "La nebbia la spaventa e Rosa accende la [[torcia]] del cellulare.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "torch",
+   "options": [
+    "torch",
+    "recipe",
+    "chocolate",
+    "trousers"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "La nebbia la spaventa e Rosa accende la torcia del cellulare.",
+    "targetWord": "torcia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "cavallo",
+  "sentence": "Poi compare una fattoria con due pecore, un _____ e le galline.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cavallo",
+   "options": [
+    "cavallo",
+    "esame",
+    "ricevuta",
+    "temperatura"
+   ],
+   "translation": "Then a farm appears with two sheep, a _____ and the hens.",
+   "optionTranslations": [
+    "horse",
+    "exam",
+    "receipt",
+    "temperature"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "Poi compare una fattoria con due pecore, un cavallo e le galline.",
+    "targetWord": "cavallo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "galline",
+  "sentence": "Poi compare una fattoria con due pecore, un cavallo e le [[galline]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hen",
+   "options": [
+    "hen",
+    "tablet",
+    "female clerk",
+    "conversation"
+   ],
+   "audioClip": {
+    "storySlug": "la-nebbia-sale-dal-fondo",
+    "storySource": "user",
+    "sentence": "Poi compare una fattoria con due pecore, un cavallo e le galline.",
+    "targetWord": "galline",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

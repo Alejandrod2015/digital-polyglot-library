@@ -1,0 +1,455 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "pedaggio,giacca,casello,galleria",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "pedaggio",
+     "answer": "toll",
+     "options": [
+      "toll",
+      "jacket",
+      "toll booth",
+      "tunnel"
+     ]
+    },
+    {
+     "word": "giacca",
+     "answer": "jacket",
+     "options": [
+      "toll",
+      "jacket",
+      "toll booth",
+      "tunnel"
+     ]
+    },
+    {
+     "word": "casello",
+     "answer": "toll booth",
+     "options": [
+      "toll",
+      "jacket",
+      "toll booth",
+      "tunnel"
+     ]
+    },
+    {
+     "word": "galleria",
+     "answer": "tunnel",
+     "options": [
+      "toll",
+      "jacket",
+      "toll booth",
+      "tunnel"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "muovono",
+  "sentence": "Primo incrocio prende la statale e a ogni curva giacca e coperta si [[muovono]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "move",
+   "options": [
+    "move",
+    "travels",
+    "covers, includes",
+    "finds"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Primo incrocio prende la statale e a ogni curva giacca e coperta si muovono.",
+    "targetWord": "muovono",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "lenti",
+  "sentence": "Vanno _____ davanti a loro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lenti",
+   "options": [
+    "lenti",
+    "stesso",
+    "povera",
+    "silenzioso"
+   ],
+   "translation": "They are going _____ in front of them.",
+   "optionTranslations": [
+    "slow",
+    "same",
+    "poor",
+    "silent, quiet"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Vanno lenti davanti a loro.",
+    "targetWord": "lenti",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "accelera",
+  "sentence": "Nessuno [[accelera]] e dentro c'è solo rumore di pneumatici.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "speeds up",
+   "options": [
+    "speeds up",
+    "covers, includes",
+    "wants",
+    "promises"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Nessuno accelera e dentro c'è solo rumore di pneumatici.",
+    "targetWord": "accelera",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "semaforo",
+  "sentence": "A Genova si fermano al primo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "semaforo",
+   "options": [
+    "semaforo",
+    "ospite",
+    "cucchiaio",
+    "camicia"
+   ],
+   "translation": "In Genoa they stop at the first _____.",
+   "optionTranslations": [
+    "traffic light",
+    "guest",
+    "spoon",
+    "shirt"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "A Genova si fermano al primo semaforo.",
+    "targetWord": "semaforo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "distributore",
+  "sentence": "A Genova si fermano al primo semaforo e trovano aperto solo un [[distributore]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "petrol station, and also the machine that sells drinks and snacks",
+   "options": [
+    "petrol station, and also the machine that sells drinks and snacks",
+    "chest",
+    "breakfast",
+    "bookshop, bookshelf"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "A Genova si fermano al primo semaforo e trovano aperto solo un distributore.",
+    "targetWord": "distributore",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "panini",
+  "sentence": "Teo compra due _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "panini",
+   "options": [
+    "panini",
+    "filo",
+    "gamberi",
+    "cioccolato"
+   ],
+   "translation": "Teo buys two _____.",
+   "optionTranslations": [
+    "bread roll with something inside",
+    "wire or line",
+    "prawn",
+    "chocolate"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Teo compra due panini.",
+    "targetWord": "panini",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "riposare",
+  "sentence": "Rosa riparte senza [[riposare]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rests",
+   "options": [
+    "rests",
+    "wants",
+    "forget",
+    "understands"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Rosa riparte senza riposare.",
+    "targetWord": "riposare",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "domani",
+  "sentence": "[[domani]] il pedaggio lo pago io.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tomorrow",
+   "options": [
+    "tomorrow",
+    "where",
+    "tonight",
+    "under, below"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Domani il pedaggio lo pago io.",
+    "targetWord": "domani",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prende",
+  "sentence": "Al primo incrocio [[prende]] la statale.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "takes",
+   "options": [
+    "takes",
+    "is enough",
+    "returns",
+    "reopens"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Al primo incrocio prende la statale.",
+    "targetWord": "prende",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "risponde",
+  "sentence": "Del casello, è per quello che viene dopo, [[risponde]] Rosa, e non aggiunge altro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "answers, replies",
+   "options": [
+    "answers, replies",
+    "guide",
+    "writes",
+    "sleeps"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Del casello, è per quello che viene dopo, risponde Rosa, e non aggiunge altro.",
+    "targetWord": "risponde",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cerca",
+  "sentence": "Dodici euro li metto io, ho credito, dice Teo, e [[cerca]] la giacca.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "looks for",
+   "options": [
+    "looks for",
+    "writes",
+    "pulls; blows",
+    "removes"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Dodici euro li metto io, ho credito, dice Teo, e cerca la giacca.",
+    "targetWord": "cerca",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "conta",
+  "sentence": "Teo guarda il navigatore, sente la strada sotto le gomme e [[conta]] quaranta minuti.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "counts; matters",
+   "options": [
+    "counts; matters",
+    "thinks",
+    "help",
+    "lie"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Teo guarda il navigatore, sente la strada sotto le gomme e conta quaranta minuti.",
+    "targetWord": "conta",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "esce",
+  "sentence": "Alle undici Rosa [[esce]] dall'autostrada prima di Genova.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "goes out, exits",
+   "options": [
+    "goes out, exits",
+    "win",
+    "sits",
+    "covers, includes"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Alle undici Rosa esce dall'autostrada prima di Genova.",
+    "targetWord": "esce",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "invece",
+  "sentence": "Questa [[invece]] è gratis.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "instead",
+   "options": [
+    "instead",
+    "under, below",
+    "where",
+    "outside"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Questa invece è gratis.",
+    "targetWord": "invece",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pneumatici",
+  "sentence": "Nessuno accelera e dentro c'è solo rumore di [[pneumatici]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tyre",
+   "options": [
+    "tyre",
+    "cake",
+    "Monday",
+    "ham"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Nessuno accelera e dentro c'è solo rumore di pneumatici.",
+    "targetWord": "pneumatici",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pago",
+  "sentence": "Domani il pedaggio lo [[pago]] io.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pay",
+   "options": [
+    "pay",
+    "works",
+    "counts; matters",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Domani il pedaggio lo pago io.",
+    "targetWord": "pago",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "credito",
+  "sentence": "Dodici euro li metto io, ho [[credito]], dice Teo, e cerca la giacca.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "credit",
+   "options": [
+    "credit",
+    "October",
+    "aunt",
+    "washing powder"
+   ],
+   "audioClip": {
+    "storySlug": "cento-chilometri-senza-casello",
+    "storySource": "user",
+    "sentence": "Dodici euro li metto io, ho credito, dice Teo, e cerca la giacca.",
+    "targetWord": "credito",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

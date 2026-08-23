@@ -1,0 +1,547 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "tapparella,cacciavite,sogni,gatto",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "tapparella",
+     "answer": "roller blind",
+     "options": [
+      "roller blind",
+      "screwdriver",
+      "dream",
+      "cat"
+     ]
+    },
+    {
+     "word": "cacciavite",
+     "answer": "screwdriver",
+     "options": [
+      "roller blind",
+      "screwdriver",
+      "dream",
+      "cat"
+     ]
+    },
+    {
+     "word": "sogni",
+     "answer": "dream",
+     "options": [
+      "roller blind",
+      "screwdriver",
+      "dream",
+      "cat"
+     ]
+    },
+    {
+     "word": "gatto",
+     "answer": "cat",
+     "options": [
+      "roller blind",
+      "screwdriver",
+      "dream",
+      "cat"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rompe",
+  "sentence": "L'ultima notte a Siena la tapparella si [[rompe]] a mezza altezza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "breaks",
+   "options": [
+    "breaks",
+    "checks",
+    "gives as a present, without asking for money back",
+    "signs"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "L'ultima notte a Siena la tapparella si rompe a mezza altezza.",
+    "targetWord": "rompe",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "aggiusto",
+  "sentence": "Domani la _____ io.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aggiusto",
+   "options": [
+    "aggiusto",
+    "sente",
+    "ferma",
+    "arrivata"
+   ],
+   "translation": "Tomorrow I will _____ it.",
+   "optionTranslations": [
+    "fix",
+    "hears, feels",
+    "stops",
+    "arrived"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Domani la aggiusto io.",
+    "targetWord": "aggiusto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "secca",
+  "sentence": "L'aria è [[secca]], la temperatura scende e sopra il cortile non c'è una nuvola.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dry",
+   "options": [
+    "dry",
+    "beautiful",
+    "full",
+    "unpleasant"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "L'aria è secca, la temperatura scende e sopra il cortile non c'è una nuvola.",
+    "targetWord": "secca",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "temperatura",
+  "sentence": "L'aria è secca, la _____ scende e sopra il cortile non c'è.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "temperatura",
+   "options": [
+    "temperatura",
+    "salsa",
+    "cerotti",
+    "conversazione"
+   ],
+   "translation": "The air is dry and the _____ is dropping over the yard.",
+   "optionTranslations": [
+    "temperature",
+    "sauce",
+    "plaster",
+    "conversation"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "L'aria è secca, la temperatura scende e sopra il cortile non c'è.",
+    "targetWord": "temperatura",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "bugie",
+  "sentence": "Il quattordici e i soldi arrivano il venti, spiega Rosa, senza _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bugie",
+   "options": [
+    "bugie",
+    "lavagna",
+    "castagni",
+    "film"
+   ],
+   "translation": "The fourteenth, and the money comes on the twentieth, Rosa explains, with no _____.",
+   "optionTranslations": [
+    "lie",
+    "blackboard",
+    "chestnut",
+    "film"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Il quattordici e i soldi arrivano il venti, spiega Rosa, senza bugie.",
+    "targetWord": "bugie",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "soluzione",
+  "sentence": "Fino ad allora mangiamo panini e dormiamo dove capita, non ho una [[soluzione]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "solution",
+   "options": [
+    "solution",
+    "car door",
+    "rug or carpet",
+    "female student"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Fino ad allora mangiamo panini e dormiamo dove capita, non ho una soluzione.",
+    "targetWord": "soluzione",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arrabbiato",
+  "sentence": "Teo capisce, non è [[arrabbiato]] e ha solo paura della scadenza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "angry",
+   "options": [
+    "angry",
+    "clean",
+    "rich",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Teo capisce, non è arrabbiato e ha solo paura della scadenza.",
+    "targetWord": "arrabbiato",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tira",
+  "sentence": "Rosa [[tira]] due volte, poi chiama Teo, ma il cacciavite è in macchina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pulls; blows",
+   "options": [
+    "pulls; blows",
+    "arrives",
+    "asks",
+    "goes down"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Rosa tira due volte, poi chiama Teo, ma il cacciavite è in macchina.",
+    "targetWord": "tira",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gira",
+  "sentence": "Qualcosa [[gira]] intorno alla lampada, non muore e si ferma sul soffitto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "turns, spins",
+   "options": [
+    "turns, spins",
+    "sends, gives off",
+    "counts; matters",
+    "finishes"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Qualcosa gira intorno alla lampada, non muore e si ferma sul soffitto.",
+    "targetWord": "gira",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caldo",
+  "sentence": "Dalla finestra entrano il [[caldo]], due mosche, una zanzara e altri insetti.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm; hot",
+   "options": [
+    "warm; hot",
+    "unpleasant",
+    "next",
+    "same"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Dalla finestra entrano il caldo, due mosche, una zanzara e altri insetti.",
+    "targetWord": "caldo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "serve",
+  "sentence": "Domani la aggiusto io, mi [[serve]] solo un attrezzo e dieci minuti, promette Teo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "serves; is needed",
+   "options": [
+    "serves; is needed",
+    "plays, rings",
+    "you pay",
+    "explains"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Domani la aggiusto io, mi serve solo un attrezzo e dieci minuti, promette Teo.",
+    "targetWord": "serve",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spiega",
+  "sentence": "La consegno il quattordici e i soldi arrivano il venti, [[spiega]] Rosa, senza bugie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "explains",
+   "options": [
+    "explains",
+    "writes",
+    "laughs",
+    "pulls; blows"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "La consegno il quattordici e i soldi arrivano il venti, spiega Rosa, senza bugie.",
+    "targetWord": "spiega",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prende",
+  "sentence": "Alle tre Rosa [[prende]] la torcia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "takes",
+   "options": [
+    "takes",
+    "is enough",
+    "switches on",
+    "leave"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Alle tre Rosa prende la torcia.",
+    "targetWord": "prende",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ultima",
+  "sentence": "L'[[ultima]] notte a Siena la tapparella si rompe a mezza altezza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "last",
+   "options": [
+    "last",
+    "next",
+    "intelligent, smart",
+    "polite"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "L'ultima notte a Siena la tapparella si rompe a mezza altezza.",
+    "targetWord": "ultima",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nuvola",
+  "sentence": "L'aria è secca, la temperatura scende e sopra il cortile non c'è una [[nuvola]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cloud",
+   "options": [
+    "cloud",
+    "bakery",
+    "tree",
+    "ambulance"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "L'aria è secca, la temperatura scende e sopra il cortile non c'è una nuvola.",
+    "targetWord": "nuvola",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dove",
+  "sentence": "Fino ad allora mangiamo panini e dormiamo [[dove]] capita, non ho una soluzione.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "where",
+   "options": [
+    "where",
+    "outside",
+    "instead",
+    "badly, and in fare male also to hurt or to be sore"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Fino ad allora mangiamo panini e dormiamo dove capita, non ho una soluzione.",
+    "targetWord": "dove",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "paura",
+  "sentence": "Teo capisce, non è arrabbiato e ha solo [[paura]] della scadenza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fear",
+   "options": [
+    "fear",
+    "climate",
+    "bakery",
+    "document"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Teo capisce, non è arrabbiato e ha solo paura della scadenza.",
+    "targetWord": "paura",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "muore",
+  "sentence": "Qualcosa gira intorno alla lampada, non [[muore]] e si ferma sul soffitto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dies",
+   "options": [
+    "dies",
+    "checks",
+    "waits",
+    "move"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Qualcosa gira intorno alla lampada, non muore e si ferma sul soffitto.",
+    "targetWord": "muore",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "promette",
+  "sentence": "Domani la aggiusto io, mi serve solo un attrezzo e dieci minuti, [[promette]] Teo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "promises",
+   "options": [
+    "promises",
+    "guide",
+    "connects",
+    "wants"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Domani la aggiusto io, mi serve solo un attrezzo e dieci minuti, promette Teo.",
+    "targetWord": "promette",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "capisce",
+  "sentence": "Teo [[capisce]], non è arrabbiato e ha solo paura della scadenza.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "understands",
+   "options": [
+    "understands",
+    "parks",
+    "stays",
+    "see"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Teo capisce, non è arrabbiato e ha solo paura della scadenza.",
+    "targetWord": "capisce",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "intorno",
+  "sentence": "Qualcosa gira [[intorno]] alla lampada, non muore e si ferma sul soffitto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "around",
+   "options": [
+    "around",
+    "instead",
+    "tomorrow",
+    "today"
+   ],
+   "audioClip": {
+    "storySlug": "la-tapparella-resta-su",
+    "storySource": "user",
+    "sentence": "Qualcosa gira intorno alla lampada, non muore e si ferma sul soffitto.",
+    "targetWord": "intorno",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,478 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "pomata,benda,petto,denti",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "pomata",
+     "answer": "cream",
+     "options": [
+      "cream",
+      "bandage",
+      "chest",
+      "tooth"
+     ]
+    },
+    {
+     "word": "benda",
+     "answer": "bandage",
+     "options": [
+      "cream",
+      "bandage",
+      "chest",
+      "tooth"
+     ]
+    },
+    {
+     "word": "petto",
+     "answer": "chest",
+     "options": [
+      "cream",
+      "bandage",
+      "chest",
+      "tooth"
+     ]
+    },
+    {
+     "word": "denti",
+     "answer": "tooth",
+     "options": [
+      "cream",
+      "bandage",
+      "chest",
+      "tooth"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lingua",
+  "sentence": "Teo dice di sì a tutto e si passa la [[lingua]] sulle labbra.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tongue, and also language",
+   "options": [
+    "tongue, and also language",
+    "bread roll with something inside",
+    "mum",
+    "horse"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Teo dice di sì a tutto e si passa la lingua sulle labbra.",
+    "targetWord": "lingua",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "labbra",
+  "sentence": "Si passa la lingua sulle _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "labbra",
+   "options": [
+    "labbra",
+    "rifugio",
+    "inverno",
+    "biscotti"
+   ],
+   "translation": "He runs his tongue over his _____.",
+   "optionTranslations": [
+    "lip",
+    "mountain hut where walkers eat and sleep high up in the hills",
+    "winter",
+    "biscuit"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Si passa la lingua sulle labbra.",
+    "targetWord": "labbra",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ricetta",
+  "sentence": "Senza [[ricetta]] il resto non ve lo do.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "recipe",
+   "options": [
+    "recipe",
+    "rug or carpet",
+    "contract",
+    "boot"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Senza ricetta il resto non ve lo do.",
+    "targetWord": "ricetta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "collo",
+  "sentence": "Con il _____ sudato.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "collo",
+   "options": [
+    "collo",
+    "trombe",
+    "chilometri",
+    "patate"
+   ],
+   "translation": "With his _____ sweaty.",
+   "optionTranslations": [
+    "neck",
+    "trumpet",
+    "kilometre",
+    "potato"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Con il collo sudato.",
+    "targetWord": "collo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sangue",
+  "sentence": "Poi si soffia il naso, torna a sedersi e nel fazzoletto c'è del [[sangue]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blood",
+   "options": [
+    "blood",
+    "tablet",
+    "fine",
+    "large building"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Poi si soffia il naso, torna a sedersi e nel fazzoletto c'è del sangue.",
+    "targetWord": "sangue",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "antipatica",
+  "sentence": "Rosa non è _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "antipatica",
+   "options": [
+    "antipatica",
+    "caldo",
+    "scura",
+    "ultima"
+   ],
+   "translation": "Rosa is not _____.",
+   "optionTranslations": [
+    "unpleasant",
+    "warm; hot",
+    "dark",
+    "last"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Rosa non è antipatica.",
+    "targetWord": "antipatica",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ambulanza",
+  "sentence": "Per una febbre così non serve un'[[ambulanza]], serve coricarsi e dormire.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ambulance",
+   "options": [
+    "ambulance",
+    "course of treatment",
+    "fine",
+    "mobile phone"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Per una febbre così non serve un'ambulanza, serve coricarsi e dormire.",
+    "targetWord": "ambulanza",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "orecchie",
+  "sentence": "Il petto quando tossisci, o la gola, i denti e le [[orecchie]]?, chiede Martina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ear",
+   "options": [
+    "ear",
+    "receipt",
+    "female clerk",
+    "hen"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Il petto quando tossisci, o la gola, i denti e le orecchie?, chiede Martina.",
+    "targetWord": "orecchie",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "scrive",
+  "sentence": "Il resto non ve lo do, ci vuole un dottore, spiega Martina, e [[scrive]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "writes",
+   "options": [
+    "writes",
+    "tells",
+    "goes down",
+    "sweats"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Il resto non ve lo do, ci vuole un dottore, spiega Martina, e scrive.",
+    "targetWord": "scrive",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gonfia",
+  "sentence": "Il banco è freddo e la caviglia di Rosa sotto il calzino è [[gonfia]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "swollen",
+   "options": [
+    "swollen",
+    "silent, quiet",
+    "big, large",
+    "beautiful"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Il banco è freddo e la caviglia di Rosa sotto il calzino è gonfia.",
+    "targetWord": "gonfia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "paghi",
+  "sentence": "Non [[paghi]] tu, risponde Rosa davanti a tutti, e Martina resta educata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "you pay",
+   "options": [
+    "you pay",
+    "passes",
+    "opens",
+    "arrives"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Non paghi tu, risponde Rosa davanti a tutti, e Martina resta educata.",
+    "targetWord": "paghi",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "muore",
+  "sentence": "Non si [[muore]] per una tosse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dies",
+   "options": [
+    "dies",
+    "works",
+    "move",
+    "checks"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Non si muore per una tosse.",
+    "targetWord": "muore",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "debole",
+  "sentence": "Dice Teo con la voce [[debole]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "weak",
+   "options": [
+    "weak",
+    "dirty",
+    "tall; high",
+    "next"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Dice Teo con la voce debole.",
+    "targetWord": "debole",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sorprende",
+  "sentence": "La [[sorprende]] togliendo la pomata dal conto: Rosa non è antipatica, è senza stipendio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "surprises",
+   "options": [
+    "surprises",
+    "passes",
+    "holds, keeps",
+    "checks"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "La sorprende togliendo la pomata dal conto: Rosa non è antipatica, è senza stipendio.",
+    "targetWord": "sorprende",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "coricarsi",
+  "sentence": "Per una febbre così non serve un'ambulanza, serve [[coricarsi]] e dormire.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lie down",
+   "options": [
+    "to lie down",
+    "frightens",
+    "goes out, exits",
+    "they go up"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Per una febbre così non serve un'ambulanza, serve coricarsi e dormire.",
+    "targetWord": "coricarsi",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "educata",
+  "sentence": "Non paghi tu, risponde Rosa davanti a tutti, e Martina resta [[educata]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "polite",
+   "options": [
+    "polite",
+    "warm; hot",
+    "silent, quiet",
+    "dark"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Non paghi tu, risponde Rosa davanti a tutti, e Martina resta educata.",
+    "targetWord": "educata",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dormire",
+  "sentence": "Per una febbre così non serve un'ambulanza, serve coricarsi e [[dormire]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sleeps",
+   "options": [
+    "sleeps",
+    "waits",
+    "finishes",
+    "sits"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Per una febbre così non serve un'ambulanza, serve coricarsi e dormire.",
+    "targetWord": "dormire",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "serve",
+  "sentence": "Per una febbre così non [[serve]] un'ambulanza, serve coricarsi e dormire.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "serves; is needed",
+   "options": [
+    "serves; is needed",
+    "repairs",
+    "sweats",
+    "lie"
+   ],
+   "audioClip": {
+    "storySlug": "la-pomata-resta-sul-banco",
+    "storySource": "user",
+    "sentence": "Per una febbre così non serve un'ambulanza, serve coricarsi e dormire.",
+    "targetWord": "serve",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

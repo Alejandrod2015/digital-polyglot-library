@@ -1,0 +1,547 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "peperoni,insalata,mais,anguria",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "peperoni",
+     "answer": "pepper",
+     "options": [
+      "pepper",
+      "salad",
+      "sweetcorn",
+      "watermelon"
+     ]
+    },
+    {
+     "word": "insalata",
+     "answer": "salad",
+     "options": [
+      "pepper",
+      "salad",
+      "sweetcorn",
+      "watermelon"
+     ]
+    },
+    {
+     "word": "mais",
+     "answer": "sweetcorn",
+     "options": [
+      "pepper",
+      "salad",
+      "sweetcorn",
+      "watermelon"
+     ]
+    },
+    {
+     "word": "anguria",
+     "answer": "watermelon",
+     "options": [
+      "pepper",
+      "salad",
+      "sweetcorn",
+      "watermelon"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "limonata",
+  "sentence": "Questa [[limonata]] è meglio del caffè.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lemonade",
+   "options": [
+    "lemonade",
+    "park",
+    "cloud",
+    "shelf unit"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Questa limonata è meglio del caffè.",
+    "targetWord": "limonata",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "gettone",
+  "sentence": "Qui si paga un _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "gettone",
+   "options": [
+    "gettone",
+    "banca",
+    "caricabatterie",
+    "giugno"
+   ],
+   "translation": "Here you pay with a _____.",
+   "optionTranslations": [
+    "token",
+    "bank",
+    "charger",
+    "June"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Qui si paga un gettone.",
+    "targetWord": "gettone",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "melone",
+  "sentence": "Una donna versa il vino e un'altra taglia [[melone]] e cetriolo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "melon",
+   "options": [
+    "melon",
+    "bakery",
+    "farm",
+    "university"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Una donna versa il vino e un'altra taglia melone e cetriolo.",
+    "targetWord": "melone",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pollo",
+  "sentence": "Nel piatto di Teo finiscono [[pollo]], maiale e salsa, dopo giorni di panini.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "chicken",
+   "options": [
+    "chicken",
+    "t-shirt",
+    "cold",
+    "tiredness"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Nel piatto di Teo finiscono pollo, maiale e salsa, dopo giorni di panini.",
+    "targetWord": "pollo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "maiale",
+  "sentence": "Nel piatto di Teo finiscono pollo, _____ e salsa, dopo giorni.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "maiale",
+   "options": [
+    "maiale",
+    "cassetto",
+    "biscotti",
+    "busta"
+   ],
+   "translation": "Chicken, _____ and sauce end up on Teo's plate, after days of sandwiches.",
+   "optionTranslations": [
+    "pork",
+    "drawer",
+    "biscuit",
+    "envelope"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Nel piatto di Teo finiscono pollo, maiale e salsa, dopo giorni.",
+    "targetWord": "maiale",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gamberi",
+  "sentence": "Sul tavolo arrivano uva, pere, cioccolato, [[gamberi]] freddi e torta con la panna.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "prawn",
+   "options": [
+    "prawn",
+    "light bulb",
+    "biscuit",
+    "paint"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Sul tavolo arrivano uva, pere, cioccolato, gamberi freddi e torta con la panna.",
+    "targetWord": "gamberi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "signore",
+  "sentence": "Balla male con due [[signore]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "gentleman, sir",
+   "options": [
+    "gentleman, sir",
+    "tie",
+    "rest",
+    "bed"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Balla male con due signore.",
+    "targetWord": "signore",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "estate",
+  "sentence": "Rosa ride per la prima volta dell'[[estate]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "summer",
+   "options": [
+    "summer",
+    "receipt",
+    "ear",
+    "fine"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Rosa ride per la prima volta dell'estate.",
+    "targetWord": "estate",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sotto",
+  "sentence": "Un fumo esce dalla griglia della sagra e si sente [[sotto]] il palco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "under, below",
+   "options": [
+    "under, below",
+    "tomorrow",
+    "around",
+    "today"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Un fumo esce dalla griglia della sagra e si sente sotto il palco.",
+    "targetWord": "sotto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cerca",
+  "sentence": "Rosa [[cerca]] il credito nella tasca e Dario le ferma la mano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "looks for",
+   "options": [
+    "looks for",
+    "walks",
+    "asks",
+    "switches on"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Rosa cerca il credito nella tasca e Dario le ferma la mano.",
+    "targetWord": "cerca",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mangia",
+  "sentence": "Si [[mangia]] finché c'è.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "eats",
+   "options": [
+    "eats",
+    "explains",
+    "guide",
+    "closed"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Si mangia finché c'è.",
+    "targetWord": "mangia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "cetriolo",
+  "sentence": "Una donna versa il vino e un'altra taglia melone e _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cetriolo",
+   "options": [
+    "cetriolo",
+    "albergo",
+    "tappeto",
+    "batteria"
+   ],
+   "translation": "One woman pours the wine and another cuts melon and _____.",
+   "optionTranslations": [
+    "cucumber",
+    "hotel",
+    "rug or carpet",
+    "battery"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Una donna versa il vino e un'altra taglia melone e cetriolo.",
+    "targetWord": "cetriolo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salsa",
+  "sentence": "Nel piatto di Teo finiscono pollo, maiale e [[salsa]], dopo giorni di panini.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sauce",
+   "options": [
+    "sauce",
+    "mobile phone",
+    "photocopy",
+    "sadness"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Nel piatto di Teo finiscono pollo, maiale e salsa, dopo giorni di panini.",
+    "targetWord": "salsa",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "uva",
+  "sentence": "Sul tavolo arrivano [[uva]], pere, cioccolato, gamberi freddi e torta con la panna.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "grapes",
+   "options": [
+    "grapes",
+    "tablet",
+    "cloud",
+    "jacket"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Sul tavolo arrivano uva, pere, cioccolato, gamberi freddi e torta con la panna.",
+    "targetWord": "uva",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "male",
+  "sentence": "Balla [[male]] con due signore.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "badly, and in fare male also to hurt or to be sore",
+   "options": [
+    "badly, and in fare male also to hurt or to be sore",
+    "slowly, softly",
+    "instead",
+    "today"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Balla male con due signore.",
+    "targetWord": "male",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ride",
+  "sentence": "Rosa [[ride]] per la prima volta dell'estate.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "laughs",
+   "options": [
+    "laughs",
+    "frightens",
+    "rests",
+    "holds, keeps"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Rosa ride per la prima volta dell'estate.",
+    "targetWord": "ride",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "esce",
+  "sentence": "Un fumo [[esce]] dalla griglia della sagra e si sente sotto il palco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "goes out, exits",
+   "options": [
+    "goes out, exits",
+    "signs",
+    "sleeps",
+    "opens"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Un fumo esce dalla griglia della sagra e si sente sotto il palco.",
+    "targetWord": "esce",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pere",
+  "sentence": "Sul tavolo arrivano uva, [[pere]], cioccolato, gamberi freddi e torta con la panna.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pear",
+   "options": [
+    "pear",
+    "Wednesday",
+    "salami",
+    "hotel"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Sul tavolo arrivano uva, pere, cioccolato, gamberi freddi e torta con la panna.",
+    "targetWord": "pere",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prima",
+  "sentence": "Rosa ride per la [[prima]] volta dell'estate.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "before, first",
+   "options": [
+    "before, first",
+    "short",
+    "polite",
+    "to wake up"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Rosa ride per la prima volta dell'estate.",
+    "targetWord": "prima",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cioccolato",
+  "sentence": "Sul tavolo arrivano uva, pere, [[cioccolato]], gamberi freddi e torta con la panna.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "chocolate",
+   "options": [
+    "chocolate",
+    "coffee",
+    "jacket",
+    "tunnel"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Sul tavolo arrivano uva, pere, cioccolato, gamberi freddi e torta con la panna.",
+    "targetWord": "cioccolato",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "panna",
+  "sentence": "Sul tavolo arrivano uva, pere, cioccolato, gamberi freddi e torta con la [[panna]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cream",
+   "options": [
+    "cream",
+    "soap",
+    "jumper",
+    "car door"
+   ],
+   "audioClip": {
+    "storySlug": "il-fumo-della-griglia",
+    "storySource": "user",
+    "sentence": "Sul tavolo arrivano uva, pere, cioccolato, gamberi freddi e torta con la panna.",
+    "targetWord": "panna",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,455 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "odore,rete,password,presa",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "odore",
+     "answer": "smell",
+     "options": [
+      "smell",
+      "net, network",
+      "password",
+      "socket"
+     ]
+    },
+    {
+     "word": "rete",
+     "answer": "net, network",
+     "options": [
+      "smell",
+      "net, network",
+      "password",
+      "socket"
+     ]
+    },
+    {
+     "word": "password",
+     "answer": "password",
+     "options": [
+      "smell",
+      "net, network",
+      "password",
+      "socket"
+     ]
+    },
+    {
+     "word": "presa",
+     "answer": "socket",
+     "options": [
+      "smell",
+      "net, network",
+      "password",
+      "socket"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "corrente",
+  "sentence": "Rosa cerca una presa con [[corrente]] e non ne trova una libera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "electric power",
+   "options": [
+    "electric power",
+    "jumper",
+    "car door",
+    "October"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Rosa cerca una presa con corrente e non ne trova una libera.",
+    "targetWord": "corrente",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "caricabatterie",
+  "sentence": "Macchina con il filo e il _____, e Irene taglia due carote.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "caricabatterie",
+   "options": [
+    "caricabatterie",
+    "film",
+    "credito",
+    "gettone"
+   ],
+   "translation": "Teo comes back with the cable and the _____, and Irene cuts two carrots.",
+   "optionTranslations": [
+    "charger",
+    "film",
+    "credit",
+    "token"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Macchina con il filo e il caricabatterie, e Irene taglia due carote.",
+    "targetWord": "caricabatterie",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "taglia",
+  "sentence": "Irene [[taglia]] due carote.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cuts",
+   "options": [
+    "cuts",
+    "plays, rings",
+    "see",
+    "arrives"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Irene taglia due carote.",
+    "targetWord": "taglia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "scalda",
+  "sentence": "Poi _____ la minestra, la porta in tavola e lava due bicchieri.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "scalda",
+   "options": [
+    "scalda",
+    "coricarsi",
+    "persa",
+    "guarda"
+   ],
+   "translation": "Then she _____ the soup, brings it to the table and washes two glasses.",
+   "optionTranslations": [
+    "heats",
+    "to lie down",
+    "gets lost",
+    "looks, watches"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Poi scalda la minestra, la porta in tavola e lava due bicchieri.",
+    "targetWord": "scalda",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "collega",
+  "sentence": "Alla fine il cellulare si [[collega]] e Rosa manda un messaggio al garage.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "connects",
+   "options": [
+    "connects",
+    "shaves",
+    "dies",
+    "turns, spins"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Alla fine il cellulare si collega e Rosa manda un messaggio al garage.",
+    "targetWord": "collega",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "silenzioso",
+  "sentence": "Mette il suono in _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "silenzioso",
+   "options": [
+    "silenzioso",
+    "debole",
+    "aperta",
+    "alte"
+   ],
+   "translation": "She puts the sound on _____.",
+   "optionTranslations": [
+    "silent, quiet",
+    "weak",
+    "open",
+    "tall; high"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Mette il suono in silenzioso.",
+    "targetWord": "silenzioso",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "piatto",
+  "sentence": "Poi mette il suono in silenzioso, finisce il [[piatto]] e paga due caffè.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dish, plate",
+   "options": [
+    "dish, plate",
+    "envelope",
+    "screwdriver",
+    "mobile phone"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Poi mette il suono in silenzioso, finisce il piatto e paga due caffè.",
+    "targetWord": "piatto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caffè",
+  "sentence": "Fa il primo [[caffè]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "coffee",
+   "options": [
+    "coffee",
+    "Monday",
+    "traffic light",
+    "bandage"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Fa il primo caffè.",
+    "targetWord": "caffè",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spiega",
+  "sentence": "Siamo in fondo alla valle e il campo arriva solo sul ponte, [[spiega]] Irene.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "explains",
+   "options": [
+    "explains",
+    "sleeps",
+    "frightens",
+    "checks"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Siamo in fondo alla valle e il campo arriva solo sul ponte, spiega Irene.",
+    "targetWord": "spiega",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "torna",
+  "sentence": "Teo [[torna]] dalla macchina con il filo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "returns",
+   "options": [
+    "returns",
+    "fix",
+    "come back",
+    "promises"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Teo torna dalla macchina con il filo.",
+    "targetWord": "torna",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "porta",
+  "sentence": "Una [[porta]] sul fiume.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "door",
+   "options": [
+    "door",
+    "hears, feels",
+    "hands over",
+    "sweats"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Una porta sul fiume.",
+    "targetWord": "porta",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "finisce",
+  "sentence": "Aspetta che [[finisce]], dice Irene, qui arriva tutto quanto, solo un po' più tardi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "finishes",
+   "options": [
+    "finishes",
+    "covers, includes",
+    "gets lost",
+    "asks"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Aspetta che finisce, dice Irene, qui arriva tutto quanto, solo un po' più tardi.",
+    "targetWord": "finisce",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aspetta",
+  "sentence": "Un telefono non si [[aspetta]] a stomaco vuoto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "waits",
+   "options": [
+    "waits",
+    "buys",
+    "counts; matters",
+    "post"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Un telefono non si aspetta a stomaco vuoto.",
+    "targetWord": "aspetta",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pomeriggio",
+  "sentence": "Rosa entra nel [[pomeriggio]] con il cellulare scarico e sente l'odore della pentola.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "afternoon",
+   "options": [
+    "afternoon",
+    "shirt",
+    "uncle",
+    "wood"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Rosa entra nel pomeriggio con il cellulare scarico e sente l'odore della pentola.",
+    "targetWord": "pomeriggio",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "basta",
+  "sentence": "La rete ha una password vicino alla cucina, ma non [[basta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "is enough",
+   "options": [
+    "is enough",
+    "help",
+    "rests",
+    "looks for"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "La rete ha una password vicino alla cucina, ma non basta.",
+    "targetWord": "basta",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lavagna",
+  "sentence": "La [[lavagna]] con il menù.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blackboard",
+   "options": [
+    "blackboard",
+    "salami",
+    "story, and also history",
+    "kilometre"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "La lavagna con il menù.",
+    "targetWord": "lavagna",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "manda",
+  "sentence": "Alla fine il cellulare si collega e Rosa [[manda]] un messaggio al garage.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sends, gives off",
+   "options": [
+    "sends, gives off",
+    "works",
+    "guide",
+    "pay"
+   ],
+   "audioClip": {
+    "storySlug": "il-campo-arriva-solo-sul-ponte",
+    "storySource": "user",
+    "sentence": "Alla fine il cellulare si collega e Rosa manda un messaggio al garage.",
+    "targetWord": "manda",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

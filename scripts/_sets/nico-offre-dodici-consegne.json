@@ -1,0 +1,547 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "soggiorno,quadro,scaffale,gennaio",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "soggiorno",
+     "answer": "living room",
+     "options": [
+      "living room",
+      "painting",
+      "shelf unit",
+      "January"
+     ]
+    },
+    {
+     "word": "quadro",
+     "answer": "painting",
+     "options": [
+      "living room",
+      "painting",
+      "shelf unit",
+      "January"
+     ]
+    },
+    {
+     "word": "scaffale",
+     "answer": "shelf unit",
+     "options": [
+      "living room",
+      "painting",
+      "shelf unit",
+      "January"
+     ]
+    },
+    {
+     "word": "gennaio",
+     "answer": "January",
+     "options": [
+      "living room",
+      "painting",
+      "shelf unit",
+      "January"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ritirare",
+  "sentence": "Rosa sale a [[ritirare]] quello che le spetta, ricevuta in mano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "collects",
+   "options": [
+    "collects",
+    "leave",
+    "sits",
+    "passes"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Rosa sale a ritirare quello che le spetta, ricevuta in mano.",
+    "targetWord": "ritirare",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dicembre",
+  "sentence": "Da gennaio a _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dicembre",
+   "options": [
+    "dicembre",
+    "domenica",
+    "galline",
+    "password"
+   ],
+   "translation": "From January to _____.",
+   "optionTranslations": [
+    "December",
+    "Sunday",
+    "hen",
+    "password"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Da gennaio a dicembre.",
+    "targetWord": "dicembre",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sorella",
+  "sentence": "Rosa pensa a sua [[sorella]] e alla relazione che hanno da anni.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sister",
+   "options": [
+    "sister",
+    "machine; car",
+    "friendship",
+    "Saturday"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Rosa pensa a sua sorella e alla relazione che hanno da anni.",
+    "targetWord": "sorella",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mamma",
+  "sentence": "Sul tavolo una vecchia foto con sua [[mamma]], suo papà e uno zio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mum",
+   "options": [
+    "mum",
+    "mirror",
+    "wedding",
+    "summer"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Sul tavolo una vecchia foto con sua mamma, suo papà e uno zio.",
+    "targetWord": "mamma",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "papà",
+  "sentence": "Sul tavolo una foto con sua mamma e suo _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "papà",
+   "options": [
+    "papà",
+    "griglia",
+    "parco",
+    "tempo"
+   ],
+   "translation": "On the table a photo with her mum and her _____.",
+   "optionTranslations": [
+    "dad",
+    "grill",
+    "park",
+    "time, weather"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Sul tavolo una foto con sua mamma e suo papà.",
+    "targetWord": "papà",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "venerdì",
+  "sentence": "Ci penso fino a [[venerdì]], risponde Rosa, e non firma niente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Friday",
+   "options": [
+    "Friday",
+    "wood",
+    "speech",
+    "bathroom"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Ci penso fino a venerdì, risponde Rosa, e non firma niente.",
+    "targetWord": "venerdì",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "secchio",
+  "sentence": "Fuori un ragazzo lava un furgone con un [[secchio]], accanto a una bici.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bucket",
+   "options": [
+    "bucket",
+    "mouse",
+    "guest",
+    "mirror"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Fuori un ragazzo lava un furgone con un secchio, accanto a una bici.",
+    "targetWord": "secchio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mappa",
+  "sentence": "Sul treno Rosa apre la [[mappa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "map",
+   "options": [
+    "map",
+    "form",
+    "autumn",
+    "hen"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Sul treno Rosa apre la mappa.",
+    "targetWord": "mappa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aspirapolvere",
+  "sentence": "Nel soggiorno fa caldo, sotto un quadro storto c'è uno scaffale e un [[aspirapolvere]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "vacuum cleaner",
+   "options": [
+    "vacuum cleaner",
+    "spoon",
+    "cow",
+    "bakery"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Nel soggiorno fa caldo, sotto un quadro storto c'è uno scaffale e un aspirapolvere.",
+    "targetWord": "aspirapolvere",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "film",
+  "sentence": "Rosa apre la mappa, mangia un panino e guarda un [[film]] che non finisce.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "film",
+   "options": [
+    "film",
+    "linen and underwear",
+    "aunt",
+    "tiredness"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Rosa apre la mappa, mangia un panino e guarda un film che non finisce.",
+    "targetWord": "film",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "forma",
+  "sentence": "Non ha più [[forma]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shape",
+   "options": [
+    "shape",
+    "machine; car",
+    "female student",
+    "syrup"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Non ha più forma.",
+    "targetWord": "forma",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mangia",
+  "sentence": "Sul treno Rosa apre la mappa, [[mangia]] un panino e guarda un film.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "eats",
+   "options": [
+    "eats",
+    "buys",
+    "grow",
+    "finishes"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Sul treno Rosa apre la mappa, mangia un panino e guarda un film.",
+    "targetWord": "mangia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sale",
+  "sentence": "Rosa [[sale]] a ritirare quello che le spetta, ricevuta in mano.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "salt",
+   "options": [
+    "salt",
+    "plays, rings",
+    "holds, keeps",
+    "laughs"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Rosa sale a ritirare quello che le spetta, ricevuta in mano.",
+    "targetWord": "sale",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "relazione",
+  "sentence": "Rosa pensa a sua sorella e alla _____ che hanno da anni.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "relazione",
+   "options": [
+    "relazione",
+    "notte",
+    "zia",
+    "cura"
+   ],
+   "translation": "Rosa thinks about her sister and the _____ they have had for years.",
+   "optionTranslations": [
+    "relationship",
+    "night",
+    "aunt",
+    "course of treatment"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Rosa pensa a sua sorella e alla relazione che hanno da anni.",
+    "targetWord": "relazione",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zio",
+  "sentence": "Sul tavolo una vecchia foto con sua mamma, suo papà e uno [[zio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "uncle",
+   "options": [
+    "uncle",
+    "sofa",
+    "afternoon",
+    "drawer"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Sul tavolo una vecchia foto con sua mamma, suo papà e uno zio.",
+    "targetWord": "zio",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "risponde",
+  "sentence": "Ci penso fino a venerdì, [[risponde]] Rosa, e non firma niente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "answers, replies",
+   "options": [
+    "answers, replies",
+    "turns, spins",
+    "removes",
+    "finishes"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Ci penso fino a venerdì, risponde Rosa, e non firma niente.",
+    "targetWord": "risponde",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bici",
+  "sentence": "Fuori un ragazzo lava un furgone con un secchio, accanto a una [[bici]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bike",
+   "options": [
+    "bike",
+    "sadness",
+    "wardrobe",
+    "torch"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Fuori un ragazzo lava un furgone con un secchio, accanto a una bici.",
+    "targetWord": "bici",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "treno",
+  "sentence": "Sul [[treno]] Rosa apre la mappa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "train",
+   "options": [
+    "train",
+    "traffic light",
+    "tiredness",
+    "holiday"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Sul treno Rosa apre la mappa.",
+    "targetWord": "treno",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "caldo",
+  "sentence": "Nel soggiorno fa [[caldo]], sotto un quadro storto c'è uno scaffale e un aspirapolvere.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm; hot",
+   "options": [
+    "warm; hot",
+    "right",
+    "grey",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Nel soggiorno fa caldo, sotto un quadro storto c'è uno scaffale e un aspirapolvere.",
+    "targetWord": "caldo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "finisce",
+  "sentence": "Rosa apre la mappa, mangia un panino e guarda un film che non [[finisce]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "finishes",
+   "options": [
+    "finishes",
+    "dies",
+    "explains",
+    "gives as a present, without asking for money back"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Rosa apre la mappa, mangia un panino e guarda un film che non finisce.",
+    "targetWord": "finisce",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fuori",
+  "sentence": "[[fuori]] un ragazzo lava un furgone con un secchio, accanto a una bici.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "outside",
+   "options": [
+    "outside",
+    "tomorrow",
+    "slowly, softly",
+    "around"
+   ],
+   "audioClip": {
+    "storySlug": "nico-offre-dodici-consegne",
+    "storySource": "user",
+    "sentence": "Fuori un ragazzo lava un furgone con un secchio, accanto a una bici.",
+    "targetWord": "fuori",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

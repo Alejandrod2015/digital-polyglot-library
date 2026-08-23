@@ -1,0 +1,478 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "bosco,notte,messaggio,stipendio",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "bosco",
+     "answer": "wood",
+     "options": [
+      "wood",
+      "night",
+      "message",
+      "salary"
+     ]
+    },
+    {
+     "word": "notte",
+     "answer": "night",
+     "options": [
+      "wood",
+      "night",
+      "message",
+      "salary"
+     ]
+    },
+    {
+     "word": "messaggio",
+     "answer": "message",
+     "options": [
+      "wood",
+      "night",
+      "message",
+      "salary"
+     ]
+    },
+    {
+     "word": "stipendio",
+     "answer": "salary",
+     "options": [
+      "wood",
+      "night",
+      "message",
+      "salary"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "umida",
+  "sentence": "L'aria è [[umida]], il bosco è scuro e la coperta resta in macchina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "damp",
+   "options": [
+    "damp",
+    "long; along",
+    "slow",
+    "beautiful"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "L'aria è umida, il bosco è scuro e la coperta resta in macchina.",
+    "targetWord": "umida",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "riposo",
+  "sentence": "Paga lui, e Rosa non ha _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "riposo",
+   "options": [
+    "riposo",
+    "libretto",
+    "filo",
+    "costume"
+   ],
+   "translation": "He pays, and Rosa gets no _____.",
+   "optionTranslations": [
+    "rest",
+    "small booklet that travels with an Italian car and says who owns it",
+    "wire or line",
+    "swimming costume"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Paga lui, e Rosa non ha riposo.",
+    "targetWord": "riposo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "povera",
+  "sentence": "Rosa non ha stipendio fisso e resta [[povera]] e preoccupata.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "poor",
+   "options": [
+    "poor",
+    "slow",
+    "big, large",
+    "dark"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Rosa non ha stipendio fisso e resta povera e preoccupata.",
+    "targetWord": "povera",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mentito",
+  "sentence": "Per i dodici euro: non hai _____, me lo hai lasciato credere.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mentito",
+   "options": [
+    "mentito",
+    "crescono",
+    "guarda",
+    "apre"
+   ],
+   "translation": "About the twelve euros: you did not _____, you let me believe it.",
+   "optionTranslations": [
+    "lie",
+    "grow",
+    "looks, watches",
+    "opens"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Per i dodici euro: non hai mentito, me lo hai lasciato credere.",
+    "targetWord": "mentito",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "verità",
+  "sentence": "Rosa prende il telefono, se lo mette in tasca e la [[verità]] resta lì.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "truth",
+   "options": [
+    "truth",
+    "Monday",
+    "reason",
+    "neck"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Rosa prende il telefono, se lo mette in tasca e la verità resta lì.",
+    "targetWord": "verità",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "zia",
+  "sentence": "La _____ lo invita al matrimonio.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "zia",
+   "options": [
+    "zia",
+    "labbra",
+    "aereo",
+    "topo"
+   ],
+   "translation": "His _____ invites him to the wedding.",
+   "optionTranslations": [
+    "aunt",
+    "lip",
+    "plane",
+    "mouse"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "La zia lo invita al matrimonio.",
+    "targetWord": "zia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "matrimonio",
+  "sentence": "Teo chiama sua madre e sente che la zia lo invita al [[matrimonio]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wedding",
+   "options": [
+    "wedding",
+    "linen and underwear",
+    "phone call",
+    "village food festival"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Teo chiama sua madre e sente che la zia lo invita al matrimonio.",
+    "targetWord": "matrimonio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "erba",
+  "sentence": "L'[[erba]] è bagnata, sopra i rami c'è la luna e sul parapetto il telefono.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "grass",
+   "options": [
+    "grass",
+    "socket",
+    "lemonade",
+    "trumpet"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "L'erba è bagnata, sopra i rami c'è la luna e sul parapetto il telefono.",
+    "targetWord": "erba",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "madre",
+  "sentence": "Chiamo mia [[madre]] prima di notte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mother",
+   "options": [
+    "mother",
+    "exam",
+    "dream",
+    "ankle"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Chiamo mia madre prima di notte.",
+    "targetWord": "madre",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chiede",
+  "sentence": "Morto, mi presti il tuo che chiamo mia madre prima di notte, [[chiede]] Teo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "asks",
+   "options": [
+    "asks",
+    "wants",
+    "finishes",
+    "grow"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Morto, mi presti il tuo che chiamo mia madre prima di notte, chiede Teo.",
+    "targetWord": "chiede",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salgono",
+  "sentence": "Dopo cena, con torcia e maglione, Rosa e Teo [[salgono]] al ponte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "they go up",
+   "options": [
+    "they go up",
+    "wants",
+    "speaks",
+    "walks"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Dopo cena, con torcia e maglione, Rosa e Teo salgono al ponte.",
+    "targetWord": "salgono",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lasciato",
+  "sentence": "Me lo hai [[lasciato]] credere.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "leave",
+   "options": [
+    "leave",
+    "takes",
+    "see",
+    "wants"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Me lo hai lasciato credere.",
+    "targetWord": "lasciato",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guarda",
+  "sentence": "Rosa gli passa il cellulare e [[guarda]] verso il fiume.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "looks, watches",
+   "options": [
+    "looks, watches",
+    "guide",
+    "you pay",
+    "eats"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Rosa gli passa il cellulare e guarda verso il fiume.",
+    "targetWord": "guarda",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "domenica",
+  "sentence": "[[domenica]] ti riporto a casa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Sunday",
+   "options": [
+    "Sunday",
+    "bedside table",
+    "bakery",
+    "blanket"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Domenica ti riporto a casa.",
+    "targetWord": "domenica",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "macchina",
+  "sentence": "L'aria è umida, il bosco è scuro e la coperta resta in [[macchina]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "machine; car",
+   "options": [
+    "machine; car",
+    "theater",
+    "morning",
+    "booking"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "L'aria è umida, il bosco è scuro e la coperta resta in macchina.",
+    "targetWord": "macchina",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "preoccupata",
+  "sentence": "Rosa non ha stipendio fisso e resta povera e [[preoccupata]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "worried",
+   "options": [
+    "worried",
+    "before, first",
+    "polite",
+    "grey"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Rosa non ha stipendio fisso e resta povera e preoccupata.",
+    "targetWord": "preoccupata",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chiama",
+  "sentence": "Teo [[chiama]] sua madre e sente che la zia lo invita al matrimonio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calls",
+   "options": [
+    "calls",
+    "frightens",
+    "gets dressed",
+    "wants"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Teo chiama sua madre e sente che la zia lo invita al matrimonio.",
+    "targetWord": "chiama",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "torcia",
+  "sentence": "Dopo cena, con [[torcia]] e maglione, Rosa e Teo salgono al ponte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "torch",
+   "options": [
+    "torch",
+    "ambulance",
+    "horse",
+    "document"
+   ],
+   "audioClip": {
+    "storySlug": "sul-ponte-prende-tutto",
+    "storySource": "user",
+    "sentence": "Dopo cena, con torcia e maglione, Rosa e Teo salgono al ponte.",
+    "targetWord": "torcia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

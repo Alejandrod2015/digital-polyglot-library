@@ -1,0 +1,432 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "sportello,numerino,contratto,mercoledì",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "sportello",
+     "answer": "counter window",
+     "options": [
+      "counter window",
+      "queue ticket",
+      "contract",
+      "Wednesday"
+     ]
+    },
+    {
+     "word": "numerino",
+     "answer": "queue ticket",
+     "options": [
+      "counter window",
+      "queue ticket",
+      "contract",
+      "Wednesday"
+     ]
+    },
+    {
+     "word": "contratto",
+     "answer": "contract",
+     "options": [
+      "counter window",
+      "queue ticket",
+      "contract",
+      "Wednesday"
+     ]
+    },
+    {
+     "word": "mercoledì",
+     "answer": "Wednesday",
+     "options": [
+      "counter window",
+      "queue ticket",
+      "contract",
+      "Wednesday"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "patente",
+  "sentence": "Rosa tira fuori dalla busta la [[patente]], il passaporto e il libretto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "driving licence",
+   "options": [
+    "driving licence",
+    "summer",
+    "lake",
+    "pork"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "Rosa tira fuori dalla busta la patente, il passaporto e il libretto.",
+    "targetWord": "patente",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "impiegata",
+  "sentence": "L'[[impiegata]] guarda i fogli, mette un timbro e ne chiede un altro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "female clerk",
+   "options": [
+    "female clerk",
+    "bed",
+    "train",
+    "animal"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "L'impiegata guarda i fogli, mette un timbro e ne chiede un altro.",
+    "targetWord": "impiegata",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "timbro",
+  "sentence": "Rosa firma sopra il _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "timbro",
+   "options": [
+    "timbro",
+    "casello",
+    "assicurazione",
+    "camere"
+   ],
+   "translation": "Rosa signs above the _____.",
+   "optionTranslations": [
+    "stamp",
+    "toll booth",
+    "insurance",
+    "room"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "Rosa firma sopra il timbro.",
+    "targetWord": "timbro",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "modulo",
+  "sentence": "Questo [[modulo]] lo deve firmare chi consegna e non chi riceve, dice lei.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "form",
+   "options": [
+    "form",
+    "document",
+    "climate",
+    "film"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "Questo modulo lo deve firmare chi consegna e non chi riceve, dice lei.",
+    "targetWord": "modulo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vinto",
+  "sentence": "Fuori Nico ride come uno che ha [[vinto]] e non è mai stato ricco.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "win",
+   "options": [
+    "win",
+    "puts",
+    "stops",
+    "dies"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "Fuori Nico ride come uno che ha vinto e non è mai stato ricco.",
+    "targetWord": "vinto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "multa",
+  "sentence": "La [[multa]] arriva spedita.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fine",
+   "options": [
+    "fine",
+    "machine; car",
+    "socket",
+    "boot of a car"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "La multa arriva spedita.",
+    "targetWord": "multa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "documenti",
+  "sentence": "Rosa stringe la busta dei [[documenti]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "document",
+   "options": [
+    "document",
+    "bread roll with something inside",
+    "October",
+    "meeting"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "Rosa stringe la busta dei documenti.",
+    "targetWord": "documenti",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tiene",
+  "sentence": "Accanto a Nico, che lavora al garage di via Lincoln e [[tiene]] il contratto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "holds, keeps",
+   "options": [
+    "holds, keeps",
+    "parks",
+    "takes",
+    "prepares"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "Accanto a Nico, che lavora al garage di via Lincoln e tiene il contratto.",
+    "targetWord": "tiene",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "conta",
+  "sentence": "Teo [[conta]] i numeri che mancano e manda un messaggio al capo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "counts; matters",
+   "options": [
+    "counts; matters",
+    "writes",
+    "guide",
+    "pulls; blows"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "Teo conta i numeri che mancano e manda un messaggio al capo.",
+    "targetWord": "conta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prossimo",
+  "sentence": "Se non timbrano oggi tutto passa al [[prossimo]] mercoledì.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "next",
+   "options": [
+    "next",
+    "dirty",
+    "warm; hot",
+    "brown"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "Se non timbrano oggi tutto passa al prossimo mercoledì.",
+    "targetWord": "prossimo",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "passaporto",
+  "sentence": "Rosa tira fuori dalla busta la patente, il _____ e il libretto.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "passaporto",
+   "options": [
+    "passaporto",
+    "processione",
+    "semaforo",
+    "forma"
+   ],
+   "translation": "Rosa pulls the licence, the _____ and the logbook out of the envelope.",
+   "optionTranslations": [
+    "passport",
+    "procession",
+    "traffic light",
+    "shape"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "Rosa tira fuori dalla busta la patente, il passaporto e il libretto.",
+    "targetWord": "passaporto",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chiede",
+  "sentence": "L'impiegata guarda i fogli, mette un timbro e ne [[chiede]] un altro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "asks",
+   "options": [
+    "asks",
+    "combs your hair",
+    "pulls; blows",
+    "takes"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "L'impiegata guarda i fogli, mette un timbro e ne chiede un altro.",
+    "targetWord": "chiede",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "firma",
+  "sentence": "Rosa _____ sopra il timbro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "firma",
+   "options": [
+    "firma",
+    "lasciato",
+    "resta",
+    "serve"
+   ],
+   "translation": "Rosa _____ above the stamp.",
+   "optionTranslations": [
+    "signs",
+    "leave",
+    "stays",
+    "serves; is needed"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "Rosa firma sopra il timbro.",
+    "targetWord": "firma",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "consegna",
+  "sentence": "Questo modulo lo deve firmare chi [[consegna]] e non chi riceve, dice lei.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hands over",
+   "options": [
+    "hands over",
+    "collects",
+    "dies",
+    "believes"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "Questo modulo lo deve firmare chi consegna e non chi riceve, dice lei.",
+    "targetWord": "consegna",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "spedita",
+  "sentence": "La multa arriva [[spedita]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "post",
+   "options": [
+    "post",
+    "goes down",
+    "arrived",
+    "turns, spins"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "La multa arriva spedita.",
+    "targetWord": "spedita",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "busta",
+  "sentence": "Rosa stringe la [[busta]] dei documenti.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "envelope",
+   "options": [
+    "envelope",
+    "mother",
+    "autumn",
+    "procession"
+   ],
+   "audioClip": {
+    "storySlug": "lo-sportello-chiude-alle-dodici",
+    "storySource": "user",
+    "sentence": "Rosa stringe la busta dei documenti.",
+    "targetWord": "busta",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

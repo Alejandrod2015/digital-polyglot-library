@@ -1,0 +1,478 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "macchina,benzina,bagagliaio,libretto",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "macchina",
+     "answer": "machine; car",
+     "options": [
+      "machine; car",
+      "petrol",
+      "boot of a car",
+      "small booklet that travels with an Italian car and says who owns it"
+     ]
+    },
+    {
+     "word": "benzina",
+     "answer": "petrol",
+     "options": [
+      "machine; car",
+      "petrol",
+      "boot of a car",
+      "small booklet that travels with an Italian car and says who owns it"
+     ]
+    },
+    {
+     "word": "bagagliaio",
+     "answer": "boot of a car",
+     "options": [
+      "machine; car",
+      "petrol",
+      "boot of a car",
+      "small booklet that travels with an Italian car and says who owns it"
+     ]
+    },
+    {
+     "word": "libretto",
+     "answer": "small booklet that travels with an Italian car and says who owns it",
+     "options": [
+      "machine; car",
+      "petrol",
+      "boot of a car",
+      "small booklet that travels with an Italian car and says who owns it"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "grigia",
+  "sentence": "La macchina [[grigia]] non è di Rosa e prima di domani deve partire.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "grey",
+   "options": [
+    "grey",
+    "rich",
+    "hard",
+    "brave"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "La macchina grigia non è di Rosa e prima di domani deve partire.",
+    "targetWord": "grigia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "guida",
+  "sentence": "_____ macchine di altri da un garage all'altro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guida",
+   "options": [
+    "guida",
+    "finisce",
+    "suona",
+    "lavora"
+   ],
+   "translation": "_____ other people's cars from one garage to the next.",
+   "optionTranslations": [
+    "guide",
+    "finishes",
+    "plays, rings",
+    "works"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "guida macchine di altri da un garage all'altro.",
+    "targetWord": "guida",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "targa",
+  "sentence": "Rosa guarda la [[targa]], controlla la patente e chiude la portiera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "number plate",
+   "options": [
+    "number plate",
+    "contract",
+    "insurance",
+    "net, network"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Rosa guarda la targa, controlla la patente e chiude la portiera.",
+    "targetWord": "targa",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "accende",
+  "sentence": "[[accende]] la radio con la cintura aperta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "switches on",
+   "options": [
+    "switches on",
+    "salt",
+    "counts; matters",
+    "goes down"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Accende la radio con la cintura aperta.",
+    "targetWord": "accende",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dorme",
+  "sentence": "Guidi tu fino a Savona, così uno [[dorme]] e l'altro riposa, propone Teo,.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sleeps",
+   "options": [
+    "sleeps",
+    "arrived",
+    "dies",
+    "travels"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Guidi tu fino a Savona, così uno dorme e l'altro riposa, propone Teo,.",
+    "targetWord": "dorme",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mattinata",
+  "sentence": "Non arriviamo in [[mattinata]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "morning",
+   "options": [
+    "morning",
+    "shirt",
+    "gentleman, sir",
+    "coffee"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Non arriviamo in mattinata.",
+    "targetWord": "mattinata",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "consegna",
+  "sentence": "Sul foglio ci sono la [[consegna]] del quattordici, la scadenza e una cifra muta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hands over",
+   "options": [
+    "hands over",
+    "bed",
+    "document",
+    "smell"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Sul foglio ci sono la consegna del quattordici, la scadenza e una cifra muta.",
+    "targetWord": "consegna",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "promette",
+  "sentence": "Ne abbiamo abbastanza, [[promette]], e tiene la velocità sotto il limite per trecento chilometri.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "promises",
+   "options": [
+    "promises",
+    "serves; is needed",
+    "stops",
+    "rests"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Ne abbiamo abbastanza, promette, e tiene la velocità sotto il limite per trecento chilometri.",
+    "targetWord": "promette",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "coperta",
+  "sentence": "Nel bagagliaio Rosa mette [[coperta]], torcia, documenti e libretto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blanket",
+   "options": [
+    "blanket",
+    "cinema",
+    "fog",
+    "September"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Nel bagagliaio Rosa mette coperta, torcia, documenti e libretto.",
+    "targetWord": "coperta",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "maglione",
+  "sentence": "Teo arriva tardi, con il freddo addosso, il [[maglione]] e il caricabatterie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "jumper",
+   "options": [
+    "jumper",
+    "pepper",
+    "bed",
+    "March"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Teo arriva tardi, con il freddo addosso, il maglione e il caricabatterie.",
+    "targetWord": "maglione",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lavora",
+  "sentence": "Teo [[lavora]] al bar di corso Regina e paga metà della benzina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "works",
+   "options": [
+    "works",
+    "gets lost",
+    "hears, feels",
+    "sits"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Teo lavora al bar di corso Regina e paga metà della benzina.",
+    "targetWord": "lavora",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "matrimonio",
+  "sentence": "Quanti giorni abbiamo, perché domenica c'è un [[matrimonio]], chiede Teo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "wedding",
+   "options": [
+    "wedding",
+    "swimming costume",
+    "prawn",
+    "path"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Quanti giorni abbiamo, perché domenica c'è un matrimonio, chiede Teo.",
+    "targetWord": "matrimonio",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "controlla",
+  "sentence": "Rosa guarda la targa, _____ la patente e chiude la portiera.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "controlla",
+   "options": [
+    "controlla",
+    "sale",
+    "torna",
+    "collega"
+   ],
+   "translation": "Rosa looks at the number plate, _____ the licence and shuts the car door.",
+   "optionTranslations": [
+    "checks",
+    "salt",
+    "returns",
+    "connects"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Rosa guarda la targa, controlla la patente e chiude la portiera.",
+    "targetWord": "controlla",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chilometri",
+  "sentence": "Ne abbiamo abbastanza, promette, e tiene la velocità sotto il limite per trecento [[chilometri]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kilometre",
+   "options": [
+    "kilometre",
+    "skin",
+    "course of treatment",
+    "contract"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Ne abbiamo abbastanza, promette, e tiene la velocità sotto il limite per trecento chilometri.",
+    "targetWord": "chilometri",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "documenti",
+  "sentence": "Nel bagagliaio Rosa mette coperta, torcia, [[documenti]] e libretto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "document",
+   "options": [
+    "document",
+    "blood",
+    "roller blind",
+    "passport"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Nel bagagliaio Rosa mette coperta, torcia, documenti e libretto.",
+    "targetWord": "documenti",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "portiera",
+  "sentence": "Rosa guarda la targa, controlla la patente e chiude la _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "portiera",
+   "options": [
+    "portiera",
+    "pneumatici",
+    "password",
+    "panetteria"
+   ],
+   "translation": "Rosa looks at the number plate, checks the licence and shuts the _____.",
+   "optionTranslations": [
+    "car door",
+    "tyre",
+    "password",
+    "bakery"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Rosa guarda la targa, controlla la patente e chiude la portiera.",
+    "targetWord": "portiera",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sotto",
+  "sentence": "Ne abbiamo abbastanza, promette, e tiene la velocità [[sotto]] il limite per trecento chilometri.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "under, below",
+   "options": [
+    "under, below",
+    "tomorrow",
+    "where",
+    "today"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Ne abbiamo abbastanza, promette, e tiene la velocità sotto il limite per trecento chilometri.",
+    "targetWord": "sotto",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "guarda",
+  "sentence": "Rosa [[guarda]] la targa, controlla la patente e chiude la portiera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "looks, watches",
+   "options": [
+    "looks, watches",
+    "come back",
+    "signs",
+    "walks"
+   ],
+   "audioClip": {
+    "storySlug": "il-bagagliaio-non-si-chiude",
+    "storySource": "user",
+    "sentence": "Rosa guarda la targa, controlla la patente e chiude la portiera.",
+    "targetWord": "guarda",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

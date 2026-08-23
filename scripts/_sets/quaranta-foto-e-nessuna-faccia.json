@@ -1,0 +1,455 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "libreria,agosto,fotocopia,studentessa",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "libreria",
+     "answer": "bookshop, bookshelf",
+     "options": [
+      "bookshop, bookshelf",
+      "August",
+      "photocopy",
+      "female student"
+     ]
+    },
+    {
+     "word": "agosto",
+     "answer": "August",
+     "options": [
+      "bookshop, bookshelf",
+      "August",
+      "photocopy",
+      "female student"
+     ]
+    },
+    {
+     "word": "fotocopia",
+     "answer": "photocopy",
+     "options": [
+      "bookshop, bookshelf",
+      "August",
+      "photocopy",
+      "female student"
+     ]
+    },
+    {
+     "word": "studentessa",
+     "answer": "female student",
+     "options": [
+      "bookshop, bookshelf",
+      "August",
+      "photocopy",
+      "female student"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "scura",
+  "sentence": "Teo, con il maglione sulle spalle, guarda una libreria [[scura]] e non aiuta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "dark",
+   "options": [
+    "dark",
+    "brave",
+    "dirty",
+    "warm; hot"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Teo, con il maglione sulle spalle, guarda una libreria scura e non aiuta.",
+    "targetWord": "scura",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dimenticato",
+  "sentence": "Perché quel giorno Rosa aveva _____ di farla.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dimenticato",
+   "options": [
+    "dimenticato",
+    "mentito",
+    "suda",
+    "consegna"
+   ],
+   "translation": "Because that day Rosa had _____ to take it.",
+   "optionTranslations": [
+    "forget",
+    "lie",
+    "sweats",
+    "hands over"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Perché quel giorno Rosa aveva dimenticato di farla.",
+    "targetWord": "dimenticato",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "crede",
+  "sentence": "Adesso non ci [[crede]], si sente stupida e fa una fotocopia difficile.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "believes",
+   "options": [
+    "believes",
+    "asks",
+    "takes",
+    "wants"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Adesso non ci crede, si sente stupida e fa una fotocopia difficile.",
+    "targetWord": "crede",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "esame",
+  "sentence": "Torna al suo _____ di giugno all'università.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "esame",
+   "options": [
+    "esame",
+    "aspirapolvere",
+    "gola",
+    "melone"
+   ],
+   "translation": "She goes back to her June _____ at the university.",
+   "optionTranslations": [
+    "exam",
+    "vacuum cleaner",
+    "throat",
+    "melon"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Torna al suo esame di giugno all'università.",
+    "targetWord": "esame",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "giugno",
+  "sentence": "Una studentessa alza la testa e torna al suo esame di [[giugno]] all'università.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "June",
+   "options": [
+    "June",
+    "message",
+    "toothbrush",
+    "ambulance"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Una studentessa alza la testa e torna al suo esame di giugno all'università.",
+    "targetWord": "giugno",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "tasti",
+  "sentence": "Spegne lo schermo con due _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tasti",
+   "options": [
+    "tasti",
+    "domenica",
+    "cellulare",
+    "vernice"
+   ],
+   "translation": "She switches the screen off with two _____.",
+   "optionTranslations": [
+    "key or button",
+    "Sunday",
+    "mobile phone",
+    "paint"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Spegne lo schermo con due tasti.",
+    "targetWord": "tasti",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "alte",
+  "sentence": "Il paese ha una biblioteca con computer, stampante e finestre [[alte]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tall; high",
+   "options": [
+    "tall; high",
+    "polite",
+    "young",
+    "rich"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Il paese ha una biblioteca con computer, stampante e finestre alte.",
+    "targetWord": "alte",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apre",
+  "sentence": "[[apre]] le quaranta foto insieme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "opens",
+   "options": [
+    "opens",
+    "follows",
+    "goes out, exits",
+    "closed"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Apre le quaranta foto insieme.",
+    "targetWord": "apre",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "oggi",
+  "sentence": "Lo paghiamo a metà, dice lei alla fine, però non [[oggi]] e non qui.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "today",
+   "options": [
+    "today",
+    "slowly, softly",
+    "outside",
+    "badly, and in fare male also to hurt or to be sore"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Lo paghiamo a metà, dice lei alla fine, però non oggi e non qui.",
+    "targetWord": "oggi",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "siede",
+  "sentence": "Rosa si [[siede]] alla scrivania in silenzio, scrive la password e prende fiato.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sits",
+   "options": [
+    "sits",
+    "finishes",
+    "arrives",
+    "goes down"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Rosa si siede alla scrivania in silenzio, scrive la password e prende fiato.",
+    "targetWord": "siede",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bianca",
+  "sentence": "La macchina è [[bianca]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "white",
+   "options": [
+    "white",
+    "brave",
+    "next",
+    "beautiful"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "La macchina è bianca.",
+    "targetWord": "bianca",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aiuta",
+  "sentence": "Teo, con il maglione sulle spalle, guarda una libreria scura e non [[aiuta]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "help",
+   "options": [
+    "help",
+    "travels",
+    "guide",
+    "move"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Teo, con il maglione sulle spalle, guarda una libreria scura e non aiuta.",
+    "targetWord": "aiuta",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "difficile",
+  "sentence": "Adesso non ci crede, si sente stupida e fa una fotocopia [[difficile]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "difficult",
+   "options": [
+    "difficult",
+    "silent, quiet",
+    "warm; hot",
+    "hard"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Adesso non ci crede, si sente stupida e fa una fotocopia difficile.",
+    "targetWord": "difficile",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "università",
+  "sentence": "Una studentessa alza la testa e torna al suo esame di giugno all'[[università]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "university",
+   "options": [
+    "university",
+    "room",
+    "drum",
+    "queue ticket"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Una studentessa alza la testa e torna al suo esame di giugno all'università.",
+    "targetWord": "università",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "insieme",
+  "sentence": "Apre le quaranta foto [[insieme]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "together",
+   "options": [
+    "together",
+    "instead",
+    "badly, and in fare male also to hurt or to be sore",
+    "slowly, softly"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Apre le quaranta foto insieme.",
+    "targetWord": "insieme",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "scrive",
+  "sentence": "Rosa si siede alla scrivania in silenzio, [[scrive]] la password e prende fiato.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "writes",
+   "options": [
+    "writes",
+    "wants",
+    "post",
+    "thinks"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Rosa si siede alla scrivania in silenzio, scrive la password e prende fiato.",
+    "targetWord": "scrive",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stupida",
+  "sentence": "Adesso non ci crede, si sente [[stupida]] e fa una fotocopia difficile.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stupid",
+   "options": [
+    "stupid",
+    "slow",
+    "open",
+    "silent, quiet"
+   ],
+   "audioClip": {
+    "storySlug": "quaranta-foto-e-nessuna-faccia",
+    "storySource": "user",
+    "sentence": "Adesso non ci crede, si sente stupida e fa una fotocopia difficile.",
+    "targetWord": "stupida",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

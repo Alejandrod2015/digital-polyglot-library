@@ -1,0 +1,478 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "graffio,vernice,foto,schermo",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "graffio",
+     "answer": "scratch",
+     "options": [
+      "scratch",
+      "paint",
+      "photo",
+      "screen"
+     ]
+    },
+    {
+     "word": "vernice",
+     "answer": "paint",
+     "options": [
+      "scratch",
+      "paint",
+      "photo",
+      "screen"
+     ]
+    },
+    {
+     "word": "foto",
+     "answer": "photo",
+     "options": [
+      "scratch",
+      "paint",
+      "photo",
+      "screen"
+     ]
+    },
+    {
+     "word": "schermo",
+     "answer": "screen",
+     "options": [
+      "scratch",
+      "paint",
+      "photo",
+      "screen"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "parcheggia",
+  "sentence": "Dopo La Spezia Rosa mette la freccia e [[parcheggia]] vicino a un pino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "parks",
+   "options": [
+    "parks",
+    "looks for",
+    "finishes",
+    "writes"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Dopo La Spezia Rosa mette la freccia e parcheggia vicino a un pino.",
+    "targetWord": "parcheggia",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "suda",
+  "sentence": "Gira intorno, controlla le gomme e l'olio, pulisce i fari e _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "suda",
+   "options": [
+    "suda",
+    "copre",
+    "arriva",
+    "veste"
+   ],
+   "translation": "She walks round, checks the tyres and the oil, cleans the headlights and _____.",
+   "optionTranslations": [
+    "sweats",
+    "covers, includes",
+    "arrives",
+    "gets dressed"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Gira intorno, controlla le gomme e l'olio, pulisce i fari e suda.",
+    "targetWord": "suda",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "visto",
+  "sentence": "L'ho [[visto]] quando ho messo il maglione dietro.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "see",
+   "options": [
+    "see",
+    "travels",
+    "eats",
+    "help"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "L'ho visto quando ho messo il maglione dietro.",
+    "targetWord": "visto",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sporca",
+  "sentence": "Sente la vernice ancora _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sporca",
+   "options": [
+    "sporca",
+    "povera",
+    "piene",
+    "ultima"
+   ],
+   "translation": "She feels the paint still _____.",
+   "optionTranslations": [
+    "dirty",
+    "poor",
+    "full",
+    "last"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Sente la vernice ancora sporca.",
+    "targetWord": "sporca",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cellulare",
+  "sentence": "Lo schermo del [[cellulare]] resta nero e il caricabatterie è sotto la coperta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mobile phone",
+   "options": [
+    "mobile phone",
+    "neck",
+    "grill",
+    "January"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Lo schermo del cellulare resta nero e il caricabatterie è sotto la coperta.",
+    "targetWord": "cellulare",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "stanchezza",
+  "sentence": "Cerca il suo nella giacca, sotto la camicia, e la _____ pesa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "stanchezza",
+   "options": [
+    "stanchezza",
+    "labbra",
+    "caffè",
+    "aeroporto"
+   ],
+   "translation": "He looks for his in the jacket, under the shirt, and the _____ weighs on them.",
+   "optionTranslations": [
+    "tiredness",
+    "lip",
+    "coffee",
+    "airport"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Cerca il suo nella giacca, sotto la camicia, e la stanchezza pesa.",
+    "targetWord": "stanchezza",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ripara",
+  "sentence": "Un graffio così si [[ripara]] dal carrozziere e sulla consegna vale come un incidente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "repairs",
+   "options": [
+    "repairs",
+    "hears, feels",
+    "covers, includes",
+    "counts; matters"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Un graffio così si ripara dal carrozziere e sulla consegna vale come un incidente.",
+    "targetWord": "ripara",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "batteria",
+  "sentence": "Con la [[batteria]] a zero.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "battery",
+   "options": [
+    "battery",
+    "jug",
+    "temperature",
+    "pain"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Con la batteria a zero.",
+    "targetWord": "batteria",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chiave",
+  "sentence": "Chiude a [[chiave]] la portiera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "key",
+   "options": [
+    "key",
+    "document",
+    "Wednesday",
+    "mother"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Chiude a chiave la portiera.",
+    "targetWord": "chiave",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "prima",
+  "sentence": "L'aria è ferma e Teo guarda l'ora [[prima]] di scendere dalla macchina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "before, first",
+   "options": [
+    "before, first",
+    "worried",
+    "dry",
+    "slow"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "L'aria è ferma e Teo guarda l'ora prima di scendere dalla macchina.",
+    "targetWord": "prima",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sente",
+  "sentence": "Rosa passa il dito sulla riga, preoccupata, e [[sente]] la vernice ancora sporca.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hears, feels",
+   "options": [
+    "hears, feels",
+    "goes out, exits",
+    "goes down",
+    "washes yourself"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Rosa passa il dito sulla riga, preoccupata, e sente la vernice ancora sporca.",
+    "targetWord": "sente",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "camicia",
+  "sentence": "Teo cerca il suo nella giacca, sotto la [[camicia]], e la stanchezza pesa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "shirt",
+   "options": [
+    "shirt",
+    "story, and also history",
+    "August",
+    "linen and underwear"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Teo cerca il suo nella giacca, sotto la camicia, e la stanchezza pesa.",
+    "targetWord": "camicia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "intorno",
+  "sentence": "Rosa gira [[intorno]], controlla le gomme e l'olio, pulisce i fari e suda.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "around",
+   "options": [
+    "around",
+    "tomorrow",
+    "slowly, softly",
+    "badly, and in fare male also to hurt or to be sore"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Rosa gira intorno, controlla le gomme e l'olio, pulisce i fari e suda.",
+    "targetWord": "intorno",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mette",
+  "sentence": "Dopo La Spezia Rosa [[mette]] la freccia e parcheggia vicino a un pino.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "puts",
+   "options": [
+    "puts",
+    "looks, watches",
+    "calls",
+    "goes out, exits"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Dopo La Spezia Rosa mette la freccia e parcheggia vicino a un pino.",
+    "targetWord": "mette",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "resta",
+  "sentence": "Lo schermo del cellulare [[resta]] nero e il caricabatterie è sotto la coperta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stays",
+   "options": [
+    "stays",
+    "forget",
+    "puts",
+    "lie"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Lo schermo del cellulare resta nero e il caricabatterie è sotto la coperta.",
+    "targetWord": "resta",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "consegna",
+  "sentence": "Un graffio così si ripara dal carrozziere e sulla [[consegna]] vale come un incidente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hands over",
+   "options": [
+    "hands over",
+    "sits",
+    "prepares",
+    "dies"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Un graffio così si ripara dal carrozziere e sulla consegna vale come un incidente.",
+    "targetWord": "consegna",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ferma",
+  "sentence": "L'aria è [[ferma]] e Teo guarda l'ora prima di scendere dalla macchina.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stops",
+   "options": [
+    "stops",
+    "combs your hair",
+    "gets dressed",
+    "believes"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "L'aria è ferma e Teo guarda l'ora prima di scendere dalla macchina.",
+    "targetWord": "ferma",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "passa",
+  "sentence": "Rosa [[passa]] il dito sulla riga, preoccupata, e sente la vernice ancora sporca.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "passes",
+   "options": [
+    "passes",
+    "returns",
+    "arrives",
+    "buys"
+   ],
+   "audioClip": {
+    "storySlug": "un-graffio-sulla-portiera",
+    "storySource": "user",
+    "sentence": "Rosa passa il dito sulla riga, preoccupata, e sente la vernice ancora sporca.",
+    "targetWord": "passa",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]

@@ -4,2972 +4,3026 @@
   "slotIndex": 1,
   "title": "Il bagagliaio non si chiude",
   "slug": "il-bagagliaio-non-si-chiude",
-  "arcType": "mini-cliffhanger",
   "synopsis": "Rosa porta a Palermo una macchina che non è sua, e la consegna ha una data che non si può spostare. Teo arriva con un'ora di ritardo e due borse che nel bagagliaio non entrano. Prima ancora di uscire da Torino i due hanno già due idee diverse dello stesso viaggio, e Rosa non dice ad alta voce quanto le resta in tasca.",
   "text": "La macchina grigia non è di Rosa e prima di domani deve partire. Rosa, una ragazza di Torino, guida macchine di altri da un garage all'altro, e questa va a Palermo entro il quattordici. Teo lavora al bar di corso Regina e paga metà della benzina.\n\nNel bagagliaio Rosa mette coperta, torcia, documenti e libretto. Teo arriva tardi, con il freddo addosso, il maglione e il caricabatterie. “Se partiamo adesso mangiamo a Genova, se aspettiamo troviamo traffico e non arriviamo in mattinata”, dice lei, nervosa.\n\nRosa guarda la targa, controlla la patente e chiude la portiera. “Guidi tu fino a Savona, così uno dorme e l'altro riposa”, propone Teo, e accende la radio con la cintura aperta. “Guido io tutto il giorno”, risponde Rosa, “e il caffè lo paghi tu.”\n\nSul foglio ci sono la consegna del quattordici, la scadenza e una cifra muta. “Quanti giorni abbiamo, perché domenica c'è un matrimonio”, chiede Teo. “Ne abbiamo abbastanza”, promette, e tiene la velocità sotto il limite per trecento chilometri.",
   "vocab": [
    {
+    "type": "noun",
     "word": "macchina",
     "surface": "macchina",
-    "type": "noun",
     "definition": "Car; the word Italians use far more often than automobile."
    },
    {
+    "type": "adjective",
     "word": "grigio",
     "surface": "grigia",
-    "type": "adjective",
     "definition": "Grey; the colour of a cloudy sky or of old metal."
    },
    {
+    "type": "verb",
     "word": "guidare",
     "surface": "guida",
-    "type": "verb",
     "definition": "To drive; what you do behind the wheel of a car."
    },
    {
+    "type": "noun",
     "word": "benzina",
     "surface": "benzina",
-    "type": "noun",
     "definition": "Petrol; the fuel you put in the car at the pump."
    },
    {
+    "type": "noun",
     "word": "bagagliaio",
     "surface": "bagagliaio",
-    "type": "noun",
     "definition": "Boot of a car; the space at the back for bags."
    },
    {
+    "type": "noun",
     "word": "libretto",
     "surface": "libretto",
-    "type": "noun",
     "definition": "Small booklet that travels with an Italian car and says who owns it."
    },
    {
+    "type": "noun",
     "word": "targa",
     "surface": "targa",
-    "type": "noun",
     "definition": "Number plate; the metal plate with the letters of a car."
    },
    {
+    "type": "verb",
     "word": "controllare",
     "surface": "controlla",
-    "type": "verb",
     "definition": "To check; to look at something to be sure it is right."
    },
    {
+    "type": "verb",
     "word": "accendere",
     "surface": "accende",
-    "type": "verb",
     "definition": "To switch on; to start an engine, a light or a phone."
    },
    {
+    "type": "noun",
     "word": "portiera",
     "surface": "portiera",
-    "type": "noun",
     "definition": "Car door; the door you open to get in or out."
    },
    {
+    "type": "verb",
     "word": "dormire",
     "surface": "dorme",
-    "type": "verb",
     "definition": "To sleep; to rest with your eyes closed for a while."
    },
    {
+    "type": "noun",
     "word": "mattinata",
     "surface": "mattinata",
-    "type": "noun",
     "definition": "Morning; here the whole stretch of hours before lunch."
    },
    {
+    "type": "noun",
     "word": "consegna",
     "surface": "consegna",
-    "type": "noun",
     "definition": "Delivery; handing something over to the person waiting for it."
    },
    {
+    "type": "verb",
     "word": "promettere",
     "surface": "promette",
-    "type": "verb",
     "definition": "To promise; to tell someone you will certainly do something."
    },
    {
+    "type": "noun",
     "word": "chilometro",
     "surface": "chilometri",
-    "type": "noun",
     "definition": "Kilometre; the unit Italians use to measure how far something is."
    },
    {
+    "type": "verb",
     "word": "guardare",
     "surface": "guarda",
-    "type": "verb",
     "definition": "To look at; to turn your eyes towards something on purpose."
    },
    {
+    "type": "adverb",
     "word": "sotto",
     "surface": "sotto",
-    "type": "adverb",
     "definition": "Under or below; in the space lower than something else."
    },
    {
+    "type": "noun",
     "word": "coperta",
     "surface": "coperta",
-    "type": "noun",
     "definition": "Blanket; the warm cover you pull over you in bed."
    },
    {
+    "type": "noun",
     "word": "documento",
     "surface": "documenti",
-    "type": "noun",
     "definition": "Document; an official paper with your name on it."
    },
    {
+    "type": "noun",
     "word": "maglione",
     "surface": "maglione",
-    "type": "noun",
     "definition": "Jumper; the thick wool top you wear over a shirt."
    },
    {
+    "type": "verb",
     "word": "lavorare",
     "surface": "lavora",
-    "type": "verb",
     "definition": "To work; to do the job that gives you your money."
+   },
+   {
+    "type": "noun",
+    "word": "matrimonio",
+    "surface": "matrimonio",
+    "definition": "Wedding; the day two people marry and everybody eats a lot."
    }
-  ]
+  ],
+  "arcType": "mini-cliffhanger"
  },
  {
   "topic": "roads-and-driving",
   "slotIndex": 2,
   "title": "Cento chilometri senza casello",
   "slug": "cento-chilometri-senza-casello",
-  "arcType": "late-reveal",
   "synopsis": "Tre uscite prima di Genova, Rosa lascia l'autostrada e prende la statale, che è più lunga di quaranta minuti e piena di camion. Teo non capisce e tira fuori i dodici euro del pedaggio, convinto che il problema siano i soldi suoi. La risposta di Rosa è corta e non spiega niente, e il pranzo di quel giorno finisce in due panini comprati a un distributore.",
   "text": "Alle undici Rosa esce dall'autostrada prima di Genova. Teo guarda il navigatore, sente la strada sotto le gomme e conta quaranta minuti. Al primo incrocio prende la statale e a ogni curva giacca e coperta si muovono.\n\n“Il pedaggio da qui a Genova costa dodici euro e questa invece è gratis”, dice Rosa, le mani sul volante. Teo conta i camion e i furgoni che vanno lenti davanti a loro. Nessuno accelera e dentro c'è solo rumore di pneumatici.\n\n“Dodici euro li metto io, ho credito”, dice Teo, e cerca la giacca. “Non è per i dodici euro del casello, è per quello che viene dopo”, risponde Rosa, e non aggiunge altro. Dentro la galleria tiene il piede sul freno, preoccupata, e non prova a sorpassare.\n\nA Genova si fermano al primo semaforo e trovano aperto solo un distributore. Teo compra due panini e un caffè e mette la ricevuta con i documenti. “Domani il pedaggio lo pago io e tu dormi due ore”, dice, ma Rosa riparte senza riposare.",
   "vocab": [
    {
+    "type": "verb",
     "word": "muovere",
     "surface": "muovono",
-    "type": "verb",
     "definition": "To move; to shift something from one place to another."
    },
    {
+    "type": "noun",
     "word": "pedaggio",
     "surface": "pedaggio",
-    "type": "noun",
     "definition": "Toll; the money you pay to use an Italian motorway."
    },
    {
+    "type": "adjective",
     "word": "lento",
     "surface": "lenti",
-    "type": "adjective",
     "definition": "Slow; taking a long time to move or to finish."
    },
    {
+    "type": "verb",
     "word": "accelerare",
     "surface": "accelera",
-    "type": "verb",
     "definition": "To speed up; to make a car go faster than before."
    },
    {
+    "type": "noun",
     "word": "giacca",
     "surface": "giacca",
-    "type": "noun",
     "definition": "Jacket; the light coat you put on over a shirt."
    },
    {
+    "type": "noun",
     "word": "casello",
     "surface": "casello",
-    "type": "noun",
     "definition": "Toll booth; the place on the motorway where drivers stop and pay."
    },
    {
+    "type": "noun",
     "word": "galleria",
     "surface": "galleria",
-    "type": "noun",
     "definition": "Tunnel; the road that goes through a hill instead of over it."
    },
    {
+    "type": "noun",
     "word": "semaforo",
     "surface": "semaforo",
-    "type": "noun",
     "definition": "Traffic light; the red, yellow and green light at a crossing."
    },
    {
+    "type": "noun",
     "word": "distributore",
     "surface": "distributore",
-    "type": "noun",
     "definition": "Petrol station, and also the machine that sells drinks and snacks."
    },
    {
+    "type": "noun",
     "word": "panino",
     "surface": "panini",
-    "type": "noun",
     "definition": "Bread roll with something inside; the classic quick Italian lunch."
    },
    {
+    "type": "verb",
     "word": "riposare",
     "surface": "riposare",
-    "type": "verb",
     "definition": "To rest; to stop working for a while and do nothing."
    },
    {
+    "type": "adverb",
     "word": "domani",
     "surface": "domani",
-    "type": "adverb",
     "definition": "Tomorrow; the day that comes right after this one."
    },
    {
+    "type": "verb",
     "word": "prendere",
     "surface": "prende",
-    "type": "verb",
     "definition": "To take; to pick something up or to catch a train."
    },
    {
+    "type": "verb",
     "word": "rispondere",
     "surface": "risponde",
-    "type": "verb",
     "definition": "To answer; to say something back, or to pick up the phone."
    },
    {
+    "type": "verb",
     "word": "cercare",
     "surface": "cerca",
-    "type": "verb",
     "definition": "To look for; to try to find a thing you cannot see."
    },
    {
+    "type": "verb",
     "word": "contare",
     "surface": "conta",
-    "type": "verb",
     "definition": "To count; to say the numbers to know how many there are."
    },
    {
+    "type": "verb",
     "word": "uscire",
     "surface": "esce",
-    "type": "verb",
     "definition": "To go out; to leave a house, a room or a road."
    },
    {
+    "type": "verb",
     "word": "pagare",
     "surface": "pago",
-    "type": "verb",
     "definition": "To pay; to hand over money for something you take."
    },
    {
+    "type": "noun",
     "word": "credito",
     "surface": "credito",
-    "type": "noun",
     "definition": "Credit; the money still left on a card or a phone."
    },
    {
+    "type": "noun",
     "word": "pneumatico",
     "surface": "pneumatici",
-    "type": "noun",
     "definition": "Tyre; the rubber ring on a wheel that touches the road."
    },
    {
+    "type": "adverb",
     "word": "invece",
     "surface": "invece",
-    "type": "adverb",
     "definition": "Instead; in the place of the other thing you expected."
    }
-  ]
+  ],
+  "arcType": "late-reveal"
  },
  {
   "topic": "roads-and-driving",
   "slotIndex": 3,
   "title": "Un graffio sulla portiera",
   "slug": "un-graffio-sulla-portiera",
-  "arcType": "reframe-turn",
   "synopsis": "In un'area di servizio vicino a La Spezia, Rosa gira intorno alla macchina come fa sempre, e trova un graffio lungo che a Torino non c'era. Teo dice che c'era già, ma lo dice troppo in fretta. La foto che potrebbe dare ragione a una dei due è dentro un telefono con la batteria a zero, e il graffio resta lì, senza padrone, per tutto il viaggio.",
   "text": "Dopo La Spezia Rosa mette la freccia e parcheggia vicino a un pino. L'aria è ferma e Teo guarda l'ora prima di scendere dalla macchina. Rosa gira intorno, controlla le gomme e l'olio, pulisce i fari e suda.\n\nSulla portiera destra c'è un graffio lungo che a Torino non c'era. “Quello c'era già stamattina, l'ho visto quando ho messo il maglione dietro”, dice Teo, sicuro. Rosa passa il dito sulla riga, preoccupata, e sente la vernice ancora sporca.\n\n“Ho fatto una foto a tutta la macchina al garage, adesso te la faccio vedere”, dice Rosa. Lo schermo del cellulare resta nero e il caricabatterie è sotto la coperta. Teo cerca il suo nella giacca, sotto la camicia, e la stanchezza pesa.\n\nUn graffio così si ripara dal carrozziere e sulla consegna vale come un incidente. “Lo paghiamo a metà e non ne parliamo più”, propone Teo, con la batteria a zero. “Lo paghiamo quando sappiamo chi l'ha fatto”, risponde Rosa, e chiude a chiave la portiera.",
   "vocab": [
    {
+    "type": "verb",
     "word": "parcheggiare",
     "surface": "parcheggia",
-    "type": "verb",
     "definition": "To park; to leave the car standing in a free space."
    },
    {
+    "type": "verb",
     "word": "sudare",
     "surface": "suda",
-    "type": "verb",
     "definition": "To sweat; what your skin does when you are too hot."
    },
    {
+    "type": "noun",
     "word": "graffio",
     "surface": "graffio",
-    "type": "noun",
     "definition": "Scratch; the thin line left on paint by something sharp."
    },
    {
+    "type": "verb",
     "word": "vedere",
     "surface": "visto",
-    "type": "verb",
     "definition": "To see; to notice something with your eyes."
    },
    {
+    "type": "noun",
     "word": "vernice",
     "surface": "vernice",
-    "type": "noun",
     "definition": "Paint; the coloured layer on the outside of a car or a wall."
    },
    {
+    "type": "adjective",
     "word": "sporco",
     "surface": "sporca",
-    "type": "adjective",
     "definition": "Dirty; covered with dust, mud or something you want to clean."
    },
    {
+    "type": "noun",
     "word": "foto",
     "surface": "foto",
-    "type": "noun",
     "definition": "Photo; the picture you take with your phone in a second."
    },
    {
+    "type": "noun",
     "word": "schermo",
     "surface": "schermo",
-    "type": "noun",
     "definition": "Screen; the flat glass part of a phone or a computer."
    },
    {
+    "type": "noun",
     "word": "cellulare",
     "surface": "cellulare",
-    "type": "noun",
     "definition": "Mobile phone; the phone Italians carry in a pocket or bag."
    },
    {
+    "type": "noun",
     "word": "stanchezza",
     "surface": "stanchezza",
-    "type": "noun",
     "definition": "Tiredness; the heavy feeling after too many hours awake."
    },
    {
+    "type": "verb",
     "word": "riparare",
     "surface": "ripara",
-    "type": "verb",
     "definition": "To repair; to make something work or look right again."
    },
    {
+    "type": "noun",
     "word": "batteria",
     "surface": "batteria",
-    "type": "noun",
     "definition": "Battery; the part that holds the power inside a phone."
    },
    {
+    "type": "noun",
     "word": "chiave",
     "surface": "chiave",
-    "type": "noun",
     "definition": "Key; the small metal piece that opens a lock or a car."
    },
    {
+    "type": "adjective",
     "word": "primo",
     "surface": "prima",
-    "type": "adjective",
     "definition": "First; the one that comes before all the others."
    },
    {
+    "type": "verb",
     "word": "sentire",
     "surface": "sente",
-    "type": "verb",
     "definition": "To feel, to hear or to smell; the one Italian word covers all three."
    },
    {
+    "type": "verb",
     "word": "restare",
     "surface": "resta",
-    "type": "verb",
     "definition": "To stay or to be left; not to move and not to go away."
    },
    {
+    "type": "verb",
     "word": "passare",
     "surface": "passa",
-    "type": "verb",
     "definition": "To pass; to go by a place, or to hand a thing over."
    },
    {
+    "type": "verb",
     "word": "fermare",
     "surface": "ferma",
-    "type": "verb",
     "definition": "To stop; to make something halt, or to halt yourself."
    },
    {
+    "type": "noun",
     "word": "camicia",
     "surface": "camicia",
-    "type": "noun",
     "definition": "Shirt; the top with buttons down the front and a collar."
    },
    {
+    "type": "verb",
     "word": "mettere",
     "surface": "mette",
-    "type": "verb",
     "definition": "To put; to place a thing where you want it to stay."
    },
    {
+    "type": "adverb",
     "word": "intorno",
     "surface": "intorno",
-    "type": "adverb",
     "definition": "Around; on every side of the thing you are looking at."
+   },
+   {
+    "type": "verb",
+    "word": "consegnare",
+    "surface": "consegna",
+    "definition": "To hand over; to give a thing to the person waiting for it."
    }
-  ]
+  ],
+  "arcType": "reframe-turn"
  },
  {
   "topic": "phones-and-signal",
   "slotIndex": 1,
   "title": "Il campo arriva solo sul ponte",
   "slug": "il-campo-arriva-solo-sul-ponte",
-  "arcType": "recurring-character-callback",
   "synopsis": "In fondo a una valle della Lunigiana c'è una trattoria con quattro tavoli, e la donna che ci cucina è Irene. Rosa arriva con il cellulare morto e una foto da cercare, e scopre che lì dentro il telefono non prende e che la sola presa libera sta dietro il frigorifero. Irene le dà corrente, una minestra e la frase che in quella valle vale per tutto.",
   "text": "Irene cucina in una trattoria della Lunigiana, apre alle sette e fa il primo caffè. Nella sala ci sono quattro tavoli, la lavagna con il menù e una porta sul fiume. Rosa entra nel pomeriggio con il cellulare scarico e sente l'odore della pentola.\n\n“Il telefono non prende, siamo in fondo alla valle e il campo arriva solo sul ponte”, spiega Irene. La rete ha una password vicino alla cucina, ma non basta. Rosa cerca una presa con corrente e non ne trova una libera.\n\nTeo torna dalla macchina con il filo e il caricabatterie, e Irene taglia due carote. Poi scalda la minestra, la porta in tavola e lava due bicchieri. “Dieci minuti e mangiate qualcosa, un telefono non si aspetta a stomaco vuoto”, dice lei.\n\nAlla fine il cellulare si collega e Rosa manda un messaggio al garage. Poi mette il suono in silenzioso, finisce il piatto e paga due caffè. “Aspetta che finisce”, dice Irene, “qui arriva tutto quanto, solo un po' più tardi che altrove.”",
   "vocab": [
    {
+    "type": "noun",
     "word": "odore",
     "surface": "odore",
-    "type": "noun",
     "definition": "Smell; what reaches your nose from food or from a place."
    },
    {
+    "type": "noun",
     "word": "rete",
     "surface": "rete",
-    "type": "noun",
     "definition": "Network; the wifi or phone line that lets you go online."
    },
    {
+    "type": "noun",
     "word": "password",
     "surface": "password",
-    "type": "noun",
     "definition": "Password; the secret word you type to get onto a network."
    },
    {
+    "type": "noun",
     "word": "presa",
     "surface": "presa",
-    "type": "noun",
     "definition": "Socket; the hole in the wall where you plug something in."
    },
    {
+    "type": "noun",
     "word": "corrente",
     "surface": "corrente",
-    "type": "noun",
     "definition": "Electric power; what comes out of the wall and feeds a phone."
    },
    {
+    "type": "noun",
     "word": "caricabatterie",
     "surface": "caricabatterie",
-    "type": "noun",
     "definition": "Charger; the cable and plug that fill a phone with power again."
    },
    {
+    "type": "verb",
     "word": "tagliare",
     "surface": "taglia",
-    "type": "verb",
     "definition": "To cut; to divide something with a knife or scissors."
    },
    {
+    "type": "verb",
     "word": "scaldare",
     "surface": "scalda",
-    "type": "verb",
     "definition": "To heat; to make food or a room warmer than before."
    },
    {
+    "type": "verb",
     "word": "collegare",
     "surface": "collega",
-    "type": "verb",
     "definition": "To connect; to join a phone to a network or to a cable."
    },
    {
+    "type": "adjective",
     "word": "silenzioso",
     "surface": "silenzioso",
-    "type": "adjective",
     "definition": "Silent; making no sound at all, like a phone with no ring."
    },
    {
+    "type": "noun",
     "word": "piatto",
     "surface": "piatto",
-    "type": "noun",
     "definition": "Plate, and also the dish of food that is served on it."
    },
    {
+    "type": "noun",
     "word": "caffè",
     "surface": "caffè",
-    "type": "noun",
     "definition": "Coffee; the small strong cup Italians drink standing at a bar."
    },
    {
+    "type": "verb",
     "word": "spiegare",
     "surface": "spiega",
-    "type": "verb",
     "definition": "To explain; to make somebody understand how or why something works."
    },
    {
+    "type": "verb",
     "word": "tornare",
     "surface": "torna",
-    "type": "verb",
     "definition": "To come back; to go again to the place you were before."
    },
    {
+    "type": "verb",
     "word": "portare",
     "surface": "porta",
-    "type": "verb",
     "definition": "To carry or to bring; to move a thing with you."
    },
    {
+    "type": "verb",
     "word": "finire",
     "surface": "finisce",
-    "type": "verb",
     "definition": "To finish; to come to the end of something."
    },
    {
+    "type": "verb",
     "word": "aspettare",
     "surface": "aspetta",
-    "type": "verb",
     "definition": "To wait; to stay where you are until something happens."
    },
    {
+    "type": "noun",
     "word": "pomeriggio",
     "surface": "pomeriggio",
-    "type": "noun",
     "definition": "Afternoon; the hours between lunch and the end of the day."
    },
    {
+    "type": "verb",
     "word": "bastare",
     "surface": "basta",
-    "type": "verb",
     "definition": "To be enough; to be as much as somebody needs."
    },
    {
+    "type": "noun",
     "word": "lavagna",
     "surface": "lavagna",
-    "type": "noun",
     "definition": "Blackboard; the dark board people write on with white chalk."
    },
    {
+    "type": "verb",
     "word": "mandare",
     "surface": "manda",
-    "type": "verb",
     "definition": "To send; to make something go to another person or place."
    }
-  ]
+  ],
+  "arcType": "recurring-character-callback"
  },
  {
   "topic": "phones-and-signal",
   "slotIndex": 2,
   "title": "Quaranta foto e nessuna faccia",
   "slug": "quaranta-foto-e-nessuna-faccia",
-  "arcType": "juxtaposition-discovery",
   "synopsis": "La rete della trattoria è troppo lenta per quaranta foto, così Irene manda i due alla biblioteca del paese, dove ci sono tre computer e una stampante. Rosa apre finalmente le immagini e trova portiere, targhe e cofani di macchine che non sono la loro. Quello che Teo dice guardando quella lista non parla del graffio, e Rosa non ha una risposta pronta.",
   "text": "Il paese ha una biblioteca con computer, stampante e finestre alte. Irene spiega a Rosa e Teo che lì la rete va bene e sotto c'è il bar. Rosa si siede alla scrivania in silenzio, scrive la password e prende fiato.\n\n“Un'ora e siamo di nuovo in strada”, promette Rosa, e apre le quaranta foto insieme. “Questa è di martedì scorso, la macchina è bianca, quindi la nostra viene dopo”, aggiunge. Teo, con il maglione sulle spalle, guarda una libreria scura e non aiuta.\n\nLa foto del quattro agosto non c'è, perché quel giorno Rosa aveva dimenticato di farla. Adesso non ci crede, si sente stupida e fa una fotocopia difficile. “Quaranta foto di macchine e nessuna di una persona, neanche tu”, dice Teo, piano.\n\nUna studentessa alza la testa e torna al suo esame di giugno all'università. Rosa mette il foglio nella busta dei documenti e spegne lo schermo con due tasti. “Il graffio lo paghiamo a metà”, dice lei alla fine, “però non oggi e non qui.”",
   "vocab": [
    {
+    "type": "noun",
     "word": "libreria",
     "surface": "libreria",
-    "type": "noun",
     "definition": "Bookcase, and also the shop where you go to buy books."
    },
    {
+    "type": "adjective",
     "word": "scuro",
     "surface": "scura",
-    "type": "adjective",
     "definition": "Dark; with little light, or close to black in colour."
    },
    {
+    "type": "noun",
     "word": "agosto",
     "surface": "agosto",
-    "type": "noun",
     "definition": "August; the hot month when half of Italy closes and leaves."
    },
    {
+    "type": "verb",
     "word": "dimenticare",
     "surface": "dimenticato",
-    "type": "verb",
     "definition": "To forget; not to remember a thing you meant to do."
    },
    {
+    "type": "verb",
     "word": "credere",
     "surface": "crede",
-    "type": "verb",
     "definition": "To believe; to think that something is true."
    },
    {
+    "type": "noun",
     "word": "fotocopia",
     "surface": "fotocopia",
-    "type": "noun",
     "definition": "Photocopy; the paper copy a machine makes of another paper."
    },
    {
+    "type": "noun",
     "word": "studentessa",
     "surface": "studentessa",
-    "type": "noun",
     "definition": "Female student; a young woman who studies at school or university."
    },
    {
+    "type": "noun",
     "word": "esame",
     "surface": "esame",
-    "type": "noun",
     "definition": "Exam; the test you have to pass at the end of a course."
    },
    {
+    "type": "noun",
     "word": "giugno",
     "surface": "giugno",
-    "type": "noun",
     "definition": "June; the month when the Italian school year finishes."
    },
    {
+    "type": "noun",
     "word": "tasto",
     "surface": "tasti",
-    "type": "noun",
     "definition": "Key or button; the small part you press on a keyboard."
    },
    {
+    "type": "verb",
     "word": "aiutare",
     "surface": "aiuta",
-    "type": "verb",
     "definition": "To help; to do something that makes things easier for somebody."
    },
    {
+    "type": "adjective",
     "word": "difficile",
     "surface": "difficile",
-    "type": "adjective",
     "definition": "Difficult; needing effort because it is not easy to do."
    },
    {
+    "type": "adjective",
     "word": "alto",
     "surface": "alte",
-    "type": "adjective",
     "definition": "High or tall; going far up from the ground."
    },
    {
+    "type": "noun",
     "word": "università",
     "surface": "università",
-    "type": "noun",
     "definition": "University; where students go to study after finishing school."
    },
    {
+    "type": "verb",
     "word": "aprire",
     "surface": "apre",
-    "type": "verb",
     "definition": "To open; to make a door, a box or a shop ready to use."
    },
    {
+    "type": "adverb",
     "word": "oggi",
     "surface": "oggi",
-    "type": "adverb",
     "definition": "Today; the day you are living through right now."
    },
    {
+    "type": "verb",
     "word": "sedersi",
     "surface": "siede",
-    "type": "verb",
     "definition": "To sit down; to put your body on a chair or a wall."
    },
    {
+    "type": "adverb",
     "word": "insieme",
     "surface": "insieme",
-    "type": "adverb",
     "definition": "Together; with each other and not one at a time."
    },
    {
+    "type": "adjective",
     "word": "bianco",
     "surface": "bianca",
-    "type": "adjective",
     "definition": "White; the colour of milk, snow or a clean sheet."
    },
    {
+    "type": "verb",
     "word": "scrivere",
     "surface": "scrive",
-    "type": "verb",
     "definition": "To write; to put words on paper or into a phone."
    },
    {
+    "type": "adjective",
     "word": "stupido",
     "surface": "stupida",
-    "type": "adjective",
     "definition": "Stupid; feeling foolish about something you said or thought."
    }
-  ]
+  ],
+  "arcType": "juxtaposition-discovery"
  },
  {
   "topic": "phones-and-signal",
   "slotIndex": 3,
   "title": "Sul ponte prende tutto",
   "slug": "sul-ponte-prende-tutto",
-  "arcType": "late-reveal",
   "synopsis": "Dopo cena i due salgono a piedi fino al ponte vecchio, che è l'unico posto della valle dove il telefono prende davvero. Teo chiede il cellulare di Rosa per chiamare sua madre, e sullo schermo compare prima un messaggio del garage con una data che spiega tutto il viaggio. Rosa se ne accorge tardi, e quello che Teo fa dopo le pesa più di una discussione.",
   "text": "Dopo cena, con torcia e maglione, Rosa e Teo salgono al ponte. L'aria è umida, il bosco è scuro e la coperta resta in macchina. L'erba è bagnata, sopra i rami c'è la luna e sul parapetto il telefono prende.\n\n“Il mio è morto, mi presti il tuo che chiamo mia madre prima di notte”, chiede Teo. Rosa gli passa il cellulare e guarda verso il fiume. Sullo schermo, sopra la tastiera, compare un messaggio del garage.\n\nIl messaggio dice che il saldo arriva il venti, e la data sorprende Teo. Rosa non ha stipendio fisso e resta povera e preoccupata. “Il casello di ieri”, dice Teo, “non era per i dodici euro: non hai mentito, me lo hai lasciato credere.”\n\nRosa prende il telefono, se lo mette in tasca e la verità resta lì. Teo chiama sua madre e sente che la zia lo invita al matrimonio. “Domani guido io la prima ora, tu dormi”, dice, “e domenica ti riporto a casa.” Paga lui, e Rosa non ha riposo.",
   "vocab": [
    {
+    "type": "adjective",
     "word": "umido",
     "surface": "umida",
-    "type": "adjective",
     "definition": "Damp; with water in the air or on a surface."
    },
    {
+    "type": "noun",
     "word": "bosco",
     "surface": "bosco",
-    "type": "noun",
     "definition": "Wood; a lot of trees growing together on a hillside."
    },
    {
+    "type": "noun",
     "word": "notte",
     "surface": "notte",
-    "type": "noun",
     "definition": "Night; the dark hours between the evening and the morning."
    },
    {
+    "type": "noun",
     "word": "messaggio",
     "surface": "messaggio",
-    "type": "noun",
     "definition": "Message; the short text you send or get on a phone."
    },
    {
+    "type": "noun",
     "word": "stipendio",
     "surface": "stipendio",
-    "type": "noun",
     "definition": "Salary; the money that arrives every month from a job."
    },
    {
+    "type": "noun",
     "word": "riposo",
     "surface": "riposo",
-    "type": "noun",
     "definition": "Rest; time with no driving and no work, so the body mends."
    },
    {
+    "type": "adjective",
     "word": "povero",
     "surface": "povera",
-    "type": "adjective",
     "definition": "Poor; with very little money for the things you need."
    },
    {
+    "type": "verb",
     "word": "mentire",
     "surface": "mentito",
-    "type": "verb",
     "definition": "To lie; to say something you know is not true."
    },
    {
+    "type": "noun",
     "word": "verità",
     "surface": "verità",
-    "type": "noun",
     "definition": "Truth; what really happened, said without changing it."
    },
    {
+    "type": "noun",
     "word": "zia",
     "surface": "zia",
-    "type": "noun",
     "definition": "Aunt; the sister of your mother or of your father."
    },
    {
+    "type": "noun",
     "word": "matrimonio",
     "surface": "matrimonio",
-    "type": "noun",
     "definition": "Wedding; the day two people marry and everybody eats a lot."
    },
    {
+    "type": "noun",
     "word": "erba",
     "surface": "erba",
-    "type": "noun",
     "definition": "Grass; the low green plants that cover a field or a path."
    },
    {
+    "type": "adjective",
     "word": "preoccupato",
     "surface": "preoccupata",
-    "type": "adjective",
     "definition": "Worried; with a problem in your head that will not leave."
    },
    {
+    "type": "noun",
     "word": "madre",
     "surface": "madre",
-    "type": "noun",
     "definition": "Mother; the woman whose son or daughter you are."
    },
    {
+    "type": "verb",
     "word": "chiedere",
     "surface": "chiede",
-    "type": "verb",
     "definition": "To ask; to put a question or to ask for something."
    },
    {
+    "type": "verb",
     "word": "chiamare",
     "surface": "chiama",
-    "type": "verb",
     "definition": "To call; to phone somebody or to say their name aloud."
    },
    {
+    "type": "verb",
     "word": "salire",
     "surface": "salgono",
-    "type": "verb",
     "definition": "To go up; to climb stairs or to get into a car."
    },
    {
+    "type": "verb",
     "word": "lasciare",
     "surface": "lasciato",
-    "type": "verb",
     "definition": "To leave; to put a thing down and walk away from it."
    },
    {
+    "type": "noun",
     "word": "macchina",
     "surface": "macchina",
-    "type": "noun",
     "definition": "Car; the word Italians use far more often than automobile."
    },
    {
+    "type": "verb",
     "word": "guardare",
     "surface": "guarda",
-    "type": "verb",
     "definition": "To look at; to turn your eyes towards something on purpose."
    },
    {
+    "type": "noun",
     "word": "torcia",
     "surface": "torcia",
-    "type": "noun",
     "definition": "Torch; the small lamp you carry to see in the dark."
+   },
+   {
+    "type": "noun",
+    "word": "domenica",
+    "surface": "domenica",
+    "definition": "Sunday; the day when almost every Italian shop stays shut."
    }
-  ]
+  ],
+  "arcType": "late-reveal"
  },
  {
   "topic": "rooms-and-keys",
   "slotIndex": 1,
   "title": "Una chiave sola per due",
   "slug": "una-chiave-sola-per-due",
-  "arcType": "reframe-turn",
   "synopsis": "Alle nove di sera, davanti a un cancello di campagna vicino a Siena, la macchina si ferma e apre una donna che tiene due camere e prepara la colazione. La prenotazione parlava di due letti separati, ma la stanza in fondo è occupata da lunedì e non si libera. Marta porta una coperta in più, e la notte si decide in tre secondi senza che nessuno dei due la discuta davvero.",
   "text": "Davanti al cancello di una casa di campagna la macchina si ferma di notte. Chi apre è Marta, una donna di Siena che tiene due camere e fa la colazione. Nel cortile una lampadina accende la portiera sporca e il graffio.\n\n“La prenotazione era per due letti separati, però la stanza in fondo è occupata da lunedì e non si libera”, dice Marta. Dentro l'aria è tiepida, ci sono un armadio, un comodino e nessuna presa. Rosa sale con la busta dei documenti e il cellulare senza batteria.\n\nMarta torna con cuscino, coperta pulita e panini, e spiega dov'è tutto. “Il divano è comodo, ci dorme mio fratello quando viene d'estate”, dice lei. Poi spegne la luce del corridoio, tira il tappeto e sale.\n\nTeo prende maglione e giacca dal bagagliaio e va sul divano. “Domani ti sveglio io alle sei, tu dormi in un letto vero”, dice dal buio. Rosa si toglie le scarpe, mette la sveglia e si siede sul materasso duro, con la caviglia che fa male.",
   "vocab": [
    {
+    "type": "noun",
     "word": "camera",
     "surface": "camere",
-    "type": "noun",
     "definition": "Room; the room you sleep in at home or in a hotel."
    },
    {
+    "type": "noun",
     "word": "colazione",
     "surface": "colazione",
-    "type": "noun",
     "definition": "Breakfast; the first food of the day, often coffee and biscuits."
    },
    {
+    "type": "noun",
     "word": "cortile",
     "surface": "cortile",
-    "type": "noun",
     "definition": "Yard; the open space between the walls of a house."
    },
    {
+    "type": "noun",
     "word": "lampadina",
     "surface": "lampadina",
-    "type": "noun",
     "definition": "Light bulb; the small glass ball that gives light in a lamp."
    },
    {
+    "type": "noun",
     "word": "prenotazione",
     "surface": "prenotazione",
-    "type": "noun",
     "definition": "Booking; the room or table you asked for before arriving."
    },
    {
+    "type": "noun",
     "word": "letto",
     "surface": "letti",
-    "type": "noun",
     "definition": "Bed; the piece of furniture you lie down on to sleep."
    },
    {
+    "type": "noun",
     "word": "stanza",
     "surface": "stanza",
-    "type": "noun",
     "definition": "Room; any room inside a house, big or small."
    },
    {
+    "type": "noun",
     "word": "lunedì",
     "surface": "lunedì",
-    "type": "noun",
     "definition": "Monday; the first day of the Italian working week."
    },
    {
+    "type": "noun",
     "word": "armadio",
     "surface": "armadio",
-    "type": "noun",
     "definition": "Wardrobe; the tall cupboard where you hang your clothes."
    },
    {
+    "type": "noun",
     "word": "comodino",
     "surface": "comodino",
-    "type": "noun",
     "definition": "Bedside table; the small table next to the head of a bed."
    },
    {
+    "type": "noun",
     "word": "cuscino",
     "surface": "cuscino",
-    "type": "noun",
     "definition": "Pillow; the soft thing you put your head on at night."
    },
    {
+    "type": "adjective",
     "word": "pulito",
     "surface": "pulita",
-    "type": "adjective",
     "definition": "Clean; with no dirt and no dust on it at all."
    },
    {
+    "type": "noun",
     "word": "fratello",
     "surface": "fratello",
-    "type": "noun",
     "definition": "Brother; the son of your own mother and father."
    },
    {
+    "type": "noun",
     "word": "corridoio",
     "surface": "corridoio",
-    "type": "noun",
     "definition": "Corridor; the long narrow space that joins the rooms."
    },
    {
+    "type": "noun",
     "word": "divano",
     "surface": "divano",
-    "type": "noun",
     "definition": "Sofa; the long soft seat in a living room."
    },
    {
+    "type": "noun",
     "word": "sveglia",
     "surface": "sveglia",
-    "type": "noun",
     "definition": "Alarm clock; what wakes you up at the hour you chose."
    },
    {
+    "type": "noun",
     "word": "materasso",
     "surface": "materasso",
-    "type": "noun",
     "definition": "Mattress; the thick soft part of a bed you lie on."
    },
    {
+    "type": "adjective",
     "word": "duro",
     "surface": "duro",
-    "type": "adjective",
     "definition": "Hard; not soft when you press it with your hand."
    },
    {
+    "type": "noun",
     "word": "tappeto",
     "surface": "tappeto",
-    "type": "noun",
     "definition": "Rug or carpet; the cloth on the floor you walk on."
    },
    {
+    "type": "adverb",
     "word": "male",
     "surface": "male",
-    "type": "adverb",
     "definition": "Badly, and in fare male also to hurt or to be sore."
    },
    {
+    "type": "verb",
     "word": "tenere",
     "surface": "tiene",
-    "type": "verb",
     "definition": "To hold or to keep; to have a thing in your hands."
    },
    {
+    "type": "verb",
     "word": "togliere",
     "surface": "toglie",
-    "type": "verb",
     "definition": "To take off or take away; to remove a thing."
+   },
+   {
+    "type": "noun",
+    "word": "graffio",
+    "surface": "graffio",
+    "definition": "Scratch; the thin line left on paint by something sharp."
    }
-  ]
+  ],
+  "arcType": "reframe-turn"
  },
  {
   "topic": "rooms-and-keys",
   "slotIndex": 2,
   "title": "La colazione lasciata fuori",
   "slug": "la-colazione-lasciata-fuori",
-  "arcType": "harmonic-close",
   "synopsis": "Marta esce alle cinque e lascia sulla terrazza il latte, il miele e sei biscotti, come fa con tutti gli ospiti. Rosa scende alle sei, ha la casa per sé e conta i soldi sul letto, e il conto non torna. Quando Marta rientra chiede meno di quello che dice la prenotazione, e Rosa deve decidere in un secondo se accettare un favore o mettersi a discutere.",
   "text": "Marta esce alle cinque e sulla terrazza lascia la colazione. Ci sono latte, uova, miele, marmellata e sei biscotti sotto un piatto. Rosa scende alle sei con la caviglia gonfia, trova Teo sul divano e sente odore di pane.\n\nNel bagno il rubinetto perde e sopra lo specchio ci sono sapone e spazzolino. “Lasciami dormire venti minuti, poi la doccia la faccio io”, dice Teo. Rosa conta il credito sul letto, due volte, e il conto non torna.\n\nMarta rientra alle otto, educata, e prende un foglio dal cassetto. “Per la stanza mi dai quaranta euro e basta, perché un ospite in meno paga meno”, dice lei. Poi scrive la ricevuta a mano, la mette nella busta e regala i biscotti che restano.\n\nTeo scende in pigiama, con i capelli bagnati, e mangia in piedi. “Grazie della camera e della torta, io torno il prossimo settembre con più tempo e meno fretta”, promette. Rosa mette la ricevuta con i documenti, preoccupata, e non dice quanto le resta.",
   "vocab": [
    {
+    "type": "noun",
     "word": "biscotto",
     "surface": "biscotti",
-    "type": "noun",
     "definition": "Biscuit; the small dry sweet Italians dip into their coffee."
    },
    {
+    "type": "noun",
     "word": "bagno",
     "surface": "bagno",
-    "type": "noun",
     "definition": "Bathroom; the room with the shower and the toilet in it."
    },
    {
+    "type": "noun",
     "word": "rubinetto",
     "surface": "rubinetto",
-    "type": "noun",
     "definition": "Tap; the metal part you turn to get water out."
    },
    {
+    "type": "noun",
     "word": "specchio",
     "surface": "specchio",
-    "type": "noun",
     "definition": "Mirror; the glass where you see your own face."
    },
    {
+    "type": "noun",
     "word": "sapone",
     "surface": "sapone",
-    "type": "noun",
     "definition": "Soap; what you wash your hands and your body with."
    },
    {
+    "type": "noun",
     "word": "spazzolino",
     "surface": "spazzolino",
-    "type": "noun",
     "definition": "Toothbrush; the small brush you clean your teeth with."
    },
    {
+    "type": "noun",
     "word": "doccia",
     "surface": "doccia",
-    "type": "noun",
     "definition": "Shower; washing yourself standing up under falling water."
    },
    {
+    "type": "noun",
     "word": "torta",
     "surface": "torta",
-    "type": "noun",
     "definition": "Cake; the sweet you cut in slices for the whole table."
    },
    {
+    "type": "noun",
     "word": "cassetto",
     "surface": "cassetto",
-    "type": "noun",
     "definition": "Drawer; the box that slides out of a table or a cupboard."
    },
    {
+    "type": "noun",
     "word": "ospite",
     "surface": "ospite",
-    "type": "noun",
     "definition": "Guest; the person who sleeps or eats in somebody else's house."
    },
    {
+    "type": "noun",
     "word": "ricevuta",
     "surface": "ricevuta",
-    "type": "noun",
     "definition": "Receipt; the paper that says you have paid for something."
    },
    {
+    "type": "verb",
     "word": "regalare",
     "surface": "regala",
-    "type": "verb",
     "definition": "To give as a present, without asking for money back."
    },
    {
+    "type": "noun",
     "word": "pigiama",
     "surface": "pigiama",
-    "type": "noun",
     "definition": "Pyjamas; the soft clothes you wear only in bed."
    },
    {
+    "type": "noun",
     "word": "settembre",
     "surface": "settembre",
-    "type": "noun",
     "definition": "September; the month when Italian holidays end and work restarts."
    },
    {
+    "type": "noun",
     "word": "tempo",
     "surface": "tempo",
-    "type": "noun",
     "definition": "Time, and also the weather outside; Italian uses one word."
    },
    {
+    "type": "verb",
     "word": "scendere",
     "surface": "scende",
-    "type": "verb",
     "definition": "To go down; to get out of a car or walk down a hill."
    },
    {
+    "type": "verb",
     "word": "trovare",
     "surface": "trova",
-    "type": "verb",
     "definition": "To find; to see the thing you were looking for."
    },
    {
+    "type": "noun",
     "word": "caviglia",
     "surface": "caviglia",
-    "type": "noun",
     "definition": "Ankle; the joint between your leg and your foot."
    },
    {
+    "type": "noun",
     "word": "uova",
     "surface": "uova",
-    "type": "noun",
     "definition": "Eggs; what hens give you and Italians put in fresh pasta."
    },
    {
+    "type": "verb",
     "word": "sentire",
     "surface": "sente",
-    "type": "verb",
     "definition": "To feel, to hear or to smell; the one Italian word covers all three."
    },
    {
+    "type": "adjective",
     "word": "educato",
     "surface": "educata",
-    "type": "adjective",
     "definition": "Polite; treating other people well even when they are difficult."
    }
-  ]
+  ],
+  "arcType": "harmonic-close"
  },
  {
   "topic": "rooms-and-keys",
   "slotIndex": 3,
   "title": "La tapparella resta su",
   "slug": "la-tapparella-resta-su",
-  "arcType": "mini-cliffhanger",
   "synopsis": "L'ultima notte a Siena la tapparella della camera si rompe a mezza altezza e non scende più, e dalla finestra aperta entra tutto il paese. Rosa non dorme, Teo dorme benissimo sul divano, e alle tre di notte i due si ritrovano in cortile senza avere niente da dirsi. Quello che Rosa gli dice lì fuori non cambia quella notte, ma cambia il giorno dopo e tutti quelli che vengono.",
   "text": "L'ultima notte a Siena la tapparella si rompe a mezza altezza e non scende più. Rosa tira due volte, poi chiama Teo, ma il cacciavite è in macchina. Dalla finestra entrano il caldo, due mosche, una zanzara e altri insetti.\n\n“Domani la aggiusto io, mi serve solo un attrezzo e dieci minuti”, promette Teo. Qualcosa gira intorno alla lampada, non muore e si ferma sul soffitto. Rosa guarda le pareti e la tenda, sente la caviglia che fa male e non ha sogni.\n\nAlle tre Rosa prende la torcia, scende in cortile e trova Teo sul muro, con un gatto. “Non dormo dal ponte”, dice lui, “da quando ho letto quel messaggio del garage.” L'aria è secca, la temperatura scende e sopra il cortile non c'è una nuvola.\n\n“La macchina la consegno il quattordici e i soldi arrivano il venti”, spiega Rosa, senza bugie. “Fino ad allora mangiamo panini e dormiamo dove capita, non ho una soluzione.” Teo capisce, non è arrabbiato e ha solo paura della scadenza.",
   "vocab": [
    {
+    "type": "noun",
     "word": "tapparella",
     "surface": "tapparella",
-    "type": "noun",
     "definition": "Roller blind; the shutter you pull down over an Italian window."
    },
    {
+    "type": "verb",
     "word": "rompere",
     "surface": "rompe",
-    "type": "verb",
     "definition": "To break; to leave a thing in pieces or no longer working."
    },
    {
+    "type": "noun",
     "word": "cacciavite",
     "surface": "cacciavite",
-    "type": "noun",
     "definition": "Screwdriver; the tool you turn to open or close a screw."
    },
    {
+    "type": "verb",
     "word": "aggiustare",
     "surface": "aggiusto",
-    "type": "verb",
     "definition": "To fix; to make a broken thing work again."
    },
    {
+    "type": "noun",
     "word": "sogno",
     "surface": "sogni",
-    "type": "noun",
     "definition": "Dream; the story your head tells you while you sleep."
    },
    {
+    "type": "noun",
     "word": "gatto",
     "surface": "gatto",
-    "type": "noun",
     "definition": "Cat; the animal that sleeps all day and walks on walls."
    },
    {
+    "type": "adjective",
     "word": "secco",
     "surface": "secca",
-    "type": "adjective",
     "definition": "Dry; with no water in it, said of air or of clothes."
    },
    {
+    "type": "noun",
     "word": "temperatura",
     "surface": "temperatura",
-    "type": "noun",
     "definition": "Temperature; how hot or how cold the air or a body is."
    },
    {
+    "type": "noun",
     "word": "nuvola",
     "surface": "nuvola",
-    "type": "noun",
     "definition": "Cloud; the white or grey shape that carries rain in the sky."
    },
    {
+    "type": "noun",
     "word": "bugia",
     "surface": "bugie",
-    "type": "noun",
     "definition": "Lie; something you say knowing it is not true."
    },
    {
+    "type": "noun",
     "word": "soluzione",
     "surface": "soluzione",
-    "type": "noun",
     "definition": "Solution; the way out of a problem you have found."
    },
    {
+    "type": "adjective",
     "word": "arrabbiato",
     "surface": "arrabbiato",
-    "type": "adjective",
     "definition": "Angry; feeling bad with somebody for what they did."
    },
    {
+    "type": "noun",
     "word": "paura",
     "surface": "paura",
-    "type": "noun",
     "definition": "Fear; the cold feeling that something bad will happen."
    },
    {
+    "type": "verb",
     "word": "tirare",
     "surface": "tira",
-    "type": "verb",
     "definition": "To pull; to move a thing towards you with your hand."
    },
    {
+    "type": "adverb",
     "word": "dove",
     "surface": "dove",
-    "type": "adverb",
     "definition": "Where; the word you use to ask about a place."
    },
    {
+    "type": "verb",
     "word": "girare",
     "surface": "gira",
-    "type": "verb",
     "definition": "To turn; to change direction, or to go round something."
    },
    {
+    "type": "adjective",
     "word": "caldo",
     "surface": "caldo",
-    "type": "adjective",
     "definition": "Hot or warm; with a high temperature you can feel on the skin."
    },
    {
+    "type": "verb",
     "word": "servire",
     "surface": "serve",
-    "type": "verb",
     "definition": "To be needed, and also to serve food to a table."
    },
    {
+    "type": "adjective",
     "word": "ultimo",
     "surface": "ultima",
-    "type": "adjective",
     "definition": "Last; the one that comes after all the others."
    },
    {
-    "word": "mettere",
-    "surface": "mette",
     "type": "verb",
-    "definition": "To put; to place a thing where you want it to stay."
+    "word": "promettere",
+    "surface": "promette",
+    "definition": "To promise; to tell someone you will certainly do something."
    },
    {
+    "type": "verb",
     "word": "spiegare",
     "surface": "spiega",
-    "type": "verb",
     "definition": "To explain; to make somebody understand how or why something works."
    },
    {
+    "type": "verb",
     "word": "prendere",
     "surface": "prende",
-    "type": "verb",
     "definition": "To take; to pick something up or to catch a train."
    },
    {
+    "type": "verb",
     "word": "morire",
     "surface": "muore",
-    "type": "verb",
     "definition": "To die; to stop living, and in speech to exaggerate a pain."
    },
    {
+    "type": "verb",
     "word": "capire",
     "surface": "capisce",
-    "type": "verb",
     "definition": "To understand; to see what a thing really means."
+   },
+   {
+    "type": "adverb",
+    "word": "intorno",
+    "surface": "intorno",
+    "definition": "Around; on every side of the thing you are looking at."
    }
-  ]
+  ],
+  "arcType": "mini-cliffhanger"
  },
  {
   "topic": "forest-and-hiking",
   "slotIndex": 1,
   "title": "Il sentiero dei castagni",
   "slug": "il-sentiero-dei-castagni",
-  "arcType": "juxtaposition-discovery",
   "synopsis": "Alle sei di mattina la macchina si ferma in un piazzale di terra sotto un rifugio dell'Appennino, e la donna che lo apre spiega dove comincia il sentiero. Teo vuole salire fino a un bosco di castagni di cui suo padre parlava da sempre, e Rosa gli concede due ore che non ha. Quello che i due trovano lassù non è quello che Teo aveva in testa da vent'anni.",
   "text": "Alle sei la macchina si ferma su un piazzale e Teo scende con la giacca. Chi apre il rifugio è Gaia, la donna di Livorno che d'estate ci lavora. Intorno la montagna, alberi vecchi, piante basse, api e silenzio.\n\n“Il sentiero da seguire è a sinistra, due ore e mezza fra i castagni”, spiega Gaia. Teo vuole andare perché suo padre parlava di quel bosco. Rosa guarda le foglie e pensa alla consegna.\n\nDopo venti minuti le scarpe sono piene di fango e la caviglia di Rosa fa male. “Qui i funghi crescono anche ad agosto, me lo diceva sempre lui”, dice a Rosa. Lei mette il piede su una radice, vede una farfalla sulla mano e sente un topo.\n\nIl castagno più grande è caduto durante l'inverno e in primavera non è ripartito. “Non è come me lo raccontava lui”, dice Teo, “però almeno l'ho visto una volta, e adesso basta.” Con questo clima non torna, e Rosa non parla delle ore perse né della benzina.",
   "vocab": [
    {
+    "type": "noun",
     "word": "rifugio",
     "surface": "rifugio",
-    "type": "noun",
     "definition": "Mountain hut where walkers eat and sleep high up in the hills."
    },
    {
+    "type": "noun",
     "word": "albero",
     "surface": "alberi",
-    "type": "noun",
     "definition": "Tree; the tall plant with a trunk, branches and green leaves."
    },
    {
+    "type": "noun",
     "word": "sentiero",
     "surface": "sentiero",
-    "type": "noun",
     "definition": "Path; the narrow way through a wood or up a hill."
    },
    {
+    "type": "verb",
     "word": "seguire",
     "surface": "seguire",
-    "type": "verb",
     "definition": "To follow; to go behind somebody or along a line."
    },
    {
+    "type": "noun",
     "word": "castagna",
     "surface": "castagni",
-    "type": "noun",
     "definition": "Chestnut; the brown nut Italians roast in autumn, and its tree."
    },
    {
+    "type": "noun",
     "word": "fungo",
     "surface": "funghi",
-    "type": "noun",
     "definition": "Mushroom; the small round plant that grows in a wet wood."
    },
    {
+    "type": "verb",
     "word": "crescere",
     "surface": "crescono",
-    "type": "verb",
     "definition": "To grow; to get bigger, said of plants, animals or people."
    },
    {
+    "type": "noun",
     "word": "topo",
     "surface": "topo",
-    "type": "noun",
     "definition": "Mouse; the small grey animal that runs into a hole."
    },
    {
+    "type": "noun",
     "word": "inverno",
     "surface": "inverno",
-    "type": "noun",
     "definition": "Winter; the cold months between December and March."
    },
    {
+    "type": "noun",
     "word": "primavera",
     "surface": "primavera",
-    "type": "noun",
     "definition": "Spring; the months when the trees get their leaves back."
    },
    {
+    "type": "noun",
     "word": "clima",
     "surface": "clima",
-    "type": "noun",
     "definition": "Climate; the kind of weather a place usually has."
    },
    {
+    "type": "verb",
     "word": "lavorare",
     "surface": "lavora",
-    "type": "verb",
     "definition": "To work; to do the job that gives you your money."
    },
    {
+    "type": "verb",
     "word": "volere",
     "surface": "vuole",
-    "type": "verb",
     "definition": "To want; to wish for something enough to go and get it."
    },
    {
+    "type": "adjective",
     "word": "basso",
     "surface": "basse",
-    "type": "adjective",
     "definition": "Low or short; not far up from the ground."
    },
    {
+    "type": "verb",
     "word": "pensare",
     "surface": "pensa",
-    "type": "verb",
     "definition": "To think; to turn something over in your head."
    },
    {
+    "type": "adjective",
     "word": "grande",
     "surface": "grande",
-    "type": "adjective",
     "definition": "Big; larger than the other things around it."
    },
    {
+    "type": "adjective",
     "word": "vecchio",
     "surface": "vecchi",
-    "type": "adjective",
     "definition": "Old; made or born many years ago, not new."
    },
    {
+    "type": "verb",
     "word": "raccontare",
     "surface": "raccontava",
-    "type": "verb",
     "definition": "To tell; to say a story to somebody from start to end."
    },
    {
+    "type": "adjective",
     "word": "pieno",
     "surface": "piene",
-    "type": "adjective",
     "definition": "Full; with no room left inside for anything more."
    },
    {
+    "type": "verb",
     "word": "parlare",
     "surface": "parla",
-    "type": "verb",
     "definition": "To speak; to say words to another person."
+   },
+   {
+    "type": "verb",
+    "word": "mettere",
+    "surface": "mette",
+    "definition": "To put; to place a thing where you want it to stay."
+   },
+   {
+    "type": "verb",
+    "word": "aprire",
+    "surface": "apre",
+    "definition": "To open; to make a door, a box or a shop ready to use."
    }
-  ]
+  ],
+  "arcType": "juxtaposition-discovery"
  },
  {
   "topic": "forest-and-hiking",
   "slotIndex": 2,
   "title": "La nebbia sale dal fondo",
   "slug": "la-nebbia-sale-dal-fondo",
-  "arcType": "reframe-turn",
   "synopsis": "La nebbia sale dal fondo della valle in venti minuti e copre il sentiero, i segni gialli sugli alberi e tutto il resto. Rosa vuole scendere in fretta perché la consegna è il quattordici, e in fretta sbaglia due volte la direzione senza dirlo. Chi ritrova la strada è quello che per tutto il viaggio ha voluto soltanto fermarsi, e per farlo chiude gli occhi.",
   "text": "La nebbia sale dal fondo della valle e in venti minuti copre Rosa e Teo. Gli alberi diventano ombre e Rosa, senza mappa e senza guanti, perde i segni gialli. Maglione e camicia sono bagnati, i calzini pieni dentro gli stivali, e lei si è persa.\n\n“Fermati un attimo e ascolta quello che arriva dal basso”, dice Teo. Dal fondo arrivano i campanacci delle mucche e la voce di un uccello. Teo scende di lì, coraggioso, più intelligente della mappa che non hanno.\n\nPoi compare una fattoria con due pecore, un cavallo e le galline. “Mio zio faceva il pastore vicino a Benevento, questi animali li conosco tutti da quando ero piccolo”, spiega lui. Rosa lo segue con la caviglia debole e per la prima volta non ha fretta.\n\nUna donna indica il rifugio e sotto si vede un lago. La nebbia la spaventa e Rosa accende la torcia del cellulare. “Domani si guida e basta”, dice lei, “e non ci fermiamo prima di Salerno, per nessun motivo al mondo.”",
   "vocab": [
    {
+    "type": "noun",
     "word": "nebbia",
     "surface": "nebbia",
-    "type": "noun",
     "definition": "Fog; thick white air that stops you seeing far ahead."
    },
    {
+    "type": "noun",
     "word": "stivale",
     "surface": "stivali",
-    "type": "noun",
     "definition": "Boot; the tall shoe that covers part of your leg."
    },
    {
+    "type": "verb",
     "word": "perdersi",
     "surface": "persa",
-    "type": "verb",
     "definition": "To get lost; to stop knowing where you are or which way to go."
    },
    {
+    "type": "noun",
     "word": "attimo",
     "surface": "attimo",
-    "type": "noun",
     "definition": "Instant; a very short moment, much shorter than a minute."
    },
    {
+    "type": "noun",
     "word": "mucca",
     "surface": "mucche",
-    "type": "noun",
     "definition": "Cow; the big farm animal that gives milk every day."
    },
    {
+    "type": "noun",
     "word": "uccello",
     "surface": "uccello",
-    "type": "noun",
     "definition": "Bird; the animal with feathers that sings and flies."
    },
    {
+    "type": "adjective",
     "word": "coraggioso",
     "surface": "coraggioso",
-    "type": "adjective",
     "definition": "Brave; able to act when other people are afraid."
    },
    {
+    "type": "noun",
     "word": "fattoria",
     "surface": "fattoria",
-    "type": "noun",
     "definition": "Farm; the house and land where animals are kept."
    },
    {
+    "type": "noun",
     "word": "pecora",
     "surface": "pecore",
-    "type": "noun",
     "definition": "Sheep; the white farm animal with thick soft wool."
    },
    {
+    "type": "noun",
     "word": "cavallo",
     "surface": "cavallo",
-    "type": "noun",
     "definition": "Horse; the big animal people ride or use to pull a cart."
    },
    {
+    "type": "noun",
     "word": "gallina",
     "surface": "galline",
-    "type": "noun",
     "definition": "Hen; the farm bird that gives you eggs every morning."
    },
    {
+    "type": "noun",
     "word": "pastore",
     "surface": "pastore",
-    "type": "noun",
     "definition": "Shepherd; the person who walks all day behind a flock of sheep."
    },
    {
+    "type": "noun",
     "word": "animale",
     "surface": "animali",
-    "type": "noun",
     "definition": "Animal; any living thing that is not a plant or a person."
    },
    {
+    "type": "noun",
     "word": "lago",
     "surface": "lago",
-    "type": "noun",
     "definition": "Lake; a large area of still water with land all around."
    },
    {
+    "type": "verb",
     "word": "spaventare",
     "surface": "spaventa",
-    "type": "verb",
     "definition": "To frighten; to make somebody feel afraid of something."
    },
    {
+    "type": "noun",
     "word": "torcia",
     "surface": "torcia",
-    "type": "noun",
     "definition": "Torch; the small lamp you carry to see in the dark."
    },
    {
+    "type": "noun",
     "word": "motivo",
     "surface": "motivo",
-    "type": "noun",
     "definition": "Reason; the why behind a thing somebody does or says."
    },
    {
+    "type": "verb",
     "word": "coprire",
     "surface": "copre",
-    "type": "verb",
     "definition": "To cover; to put something over a thing so it is hidden."
    },
    {
+    "type": "verb",
     "word": "indicare",
     "surface": "indica",
-    "type": "verb",
     "definition": "To point at; to show where a thing is with a finger."
    },
    {
+    "type": "verb",
     "word": "arrivare",
     "surface": "arriva",
-    "type": "verb",
     "definition": "To arrive; to reach the place you were going to."
    },
    {
+    "type": "adjective",
     "word": "intelligente",
     "surface": "intelligente",
-    "type": "adjective",
     "definition": "Clever; quick to understand how things really are."
    }
-  ]
+  ],
+  "arcType": "reframe-turn"
  },
  {
   "topic": "forest-and-hiking",
   "slotIndex": 3,
   "title": "Il rifugio chiude a ottobre",
   "slug": "il-rifugio-chiude-a-ottobre",
-  "arcType": "daily-encounter",
   "synopsis": "Dopo la tempesta Gaia riapre il rifugio e mette in tavola quello che ha, perché in agosto lassù non passa quasi nessuno e la roba va mangiata. Racconta che a ottobre chiude tutto e scende a Livorno, e che ogni marzo decide se tornare su. Teo esce a chiamare il suo capo per chiedere tre giorni in più, e rientra con una risposta corta.",
   "text": "Dopo la tempesta Gaia riapre il rifugio, guarda fuori e mette in tavola quello che ha. C'è una zuppa di fagioli in una ciotola, mezzo salame e due panini. Fuori le nuvole passano basse, l'aria è fredda e sa già di autunno.\n\n“In agosto quassù salgono in venti al giorno, a ottobre chiudo e scendo a Livorno”, racconta Gaia. Rosa mangia due volte, fagioli e patate, con lo stesso cucchiaio, e beve un caffè. Teo taglia il prosciutto magro e riempie una caraffa per tutti e tre.\n\n“Ogni anno a marzo decido se torno su, e ogni anno torno”, aggiunge Gaia. Rosa fa consegne da sei anni, senza vacanze e senza diventare ricca. Fra loro tre non c'è amicizia, solo una sera che passa piano.\n\nTeo esce con il cellulare e il caricabatterie e chiama il capo. Rientra dopo dieci minuti, si siede e beve il tè che Gaia gli prepara. “Tre giorni, e il turno lo copre un collega”, dice, “poi però devo essere alla riunione di lunedì.”",
   "vocab": [
    {
+    "type": "noun",
     "word": "salame",
     "surface": "salame",
-    "type": "noun",
     "definition": "Salami; the dry sausage Italians cut in thin round slices."
    },
    {
+    "type": "noun",
     "word": "autunno",
     "surface": "autunno",
-    "type": "noun",
     "definition": "Autumn; the months when the leaves fall and the air cools."
    },
    {
+    "type": "noun",
     "word": "ottobre",
     "surface": "ottobre",
-    "type": "noun",
     "definition": "October; the month when the weather turns cold in the hills."
    },
    {
+    "type": "noun",
     "word": "patata",
     "surface": "patate",
-    "type": "noun",
     "definition": "Potato; the round vegetable that grows under the ground."
    },
    {
+    "type": "noun",
     "word": "cucchiaio",
     "surface": "cucchiaio",
-    "type": "noun",
     "definition": "Spoon; what you eat soup with at the table."
    },
    {
+    "type": "noun",
     "word": "prosciutto",
     "surface": "prosciutto",
-    "type": "noun",
     "definition": "Ham; the salted meat Italians cut in very thin slices."
    },
    {
+    "type": "noun",
     "word": "caraffa",
     "surface": "caraffa",
-    "type": "noun",
     "definition": "Jug; the open container you bring water to the table in."
    },
    {
+    "type": "noun",
     "word": "anno",
     "surface": "anno",
-    "type": "noun",
     "definition": "Year; the twelve months from January to December."
    },
    {
+    "type": "noun",
     "word": "marzo",
     "surface": "marzo",
-    "type": "noun",
     "definition": "March; the first month of spring in Italy."
    },
    {
+    "type": "noun",
     "word": "vacanza",
     "surface": "vacanze",
-    "type": "noun",
     "definition": "Holiday; the days you stop working and go somewhere else."
    },
    {
+    "type": "noun",
     "word": "amicizia",
     "surface": "amicizia",
-    "type": "noun",
     "definition": "Friendship; the bond between two people who like each other."
    },
    {
+    "type": "noun",
     "word": "capo",
     "surface": "capo",
-    "type": "noun",
     "definition": "Boss; the person who tells you what to do at work."
    },
    {
+    "type": "noun",
     "word": "tè",
     "surface": "tè",
-    "type": "noun",
     "definition": "Tea; the hot drink you make with leaves and hot water."
    },
    {
+    "type": "noun",
     "word": "collega",
     "surface": "collega",
-    "type": "noun",
     "definition": "Colleague; a person who works in the same place as you."
    },
    {
+    "type": "noun",
     "word": "riunione",
     "surface": "riunione",
-    "type": "noun",
     "definition": "Meeting; when people at work sit together to decide things."
    },
    {
+    "type": "verb",
     "word": "preparare",
     "surface": "prepara",
-    "type": "verb",
     "definition": "To prepare; to get something ready before it is needed."
    },
    {
+    "type": "adverb",
     "word": "fuori",
     "surface": "fuori",
-    "type": "adverb",
     "definition": "Outside; not inside the house, the car or the room."
    },
    {
+    "type": "adverb",
     "word": "piano",
     "surface": "piano",
-    "type": "adverb",
     "definition": "Slowly or softly; without hurry and without making noise."
    },
    {
+    "type": "adjective",
     "word": "stesso",
     "surface": "stesso",
-    "type": "adjective",
     "definition": "Same; not a different one but exactly this one."
    },
    {
+    "type": "noun",
     "word": "cellulare",
     "surface": "cellulare",
-    "type": "noun",
     "definition": "Mobile phone; the phone Italians carry in a pocket or bag."
    },
    {
-    "word": "aprire",
-    "surface": "apre",
     "type": "verb",
-    "definition": "To open; to make a door, a box or a shop ready to use."
+    "word": "riaprire",
+    "surface": "riapre",
+    "definition": "To reopen; to open again what had been closed."
    },
    {
+    "type": "verb",
     "word": "passare",
     "surface": "passa",
-    "type": "verb",
     "definition": "To pass; to go by a place, or to hand a thing over."
    },
    {
+    "type": "noun",
     "word": "panino",
     "surface": "panini",
-    "type": "noun",
     "definition": "Bread roll with something inside; the classic quick Italian lunch."
    },
    {
+    "type": "noun",
     "word": "caffè",
     "surface": "caffè",
-    "type": "noun",
     "definition": "Coffee; the small strong cup Italians drink standing at a bar."
    },
    {
+    "type": "adjective",
     "word": "ricco",
     "surface": "ricca",
-    "type": "adjective",
     "definition": "Rich; with a lot of money and no worry about it."
    }
-  ]
+  ],
+  "arcType": "daily-encounter"
  },
  {
   "topic": "village-festivals",
   "slotIndex": 1,
   "title": "La strada riapre a mezzanotte",
   "slug": "la-strada-riapre-a-mezzanotte",
-  "arcType": "recurring-character-callback",
   "synopsis": "All'ingresso di un paese del sud la strada principale è chiusa e chi ferma la macchina è un uomo che suona nella banda. Riapre a mezzanotte, dopo la processione e dopo il ballo, e l'altra via sono quaranta chilometri di curve strette. Rosa conta le ore che le restano prima del quattordici, e per la prima volta è Teo a non dire niente.",
   "text": "Chi ferma la macchina all'ingresso è Dario, un uomo di Roma che suona nella banda. La corsia unica è chiusa e sopra le case ci sono bandiere di carta. Rosa abbassa il finestrino della macchina e sente odore di griglia e fumo.\n\n“La strada riapre a mezzanotte, sabato passa la processione della sagra e poi c'è il ballo”, spiega Dario. Rosa mette il conto sul telefono: quaranta chilometri oppure cinque ore ferme. Teo scende con giacca e maglione e guarda due uomini che portano il santo.\n\nSul palco un microfono fischia e il sindaco comincia un discorso lungo. “Cinque anni fa questa piazza era vuota, adesso guardate quanta gente c'è stasera”, dice lui. La banda aspetta con le trombe basse e un tamburo appoggiato sul muretto.\n\n“Rimanete qui, tanto stanotte non si passa e domani mattina si vola fino a Palermo”, dice Dario. Teo compra due salsicce, uno spuntino in piedi, e paga con il credito. Rosa fa una telefonata al garage e guarda la batteria del cellulare che scende.",
   "vocab": [
    {
+    "type": "noun",
     "word": "corsia",
     "surface": "corsia",
-    "type": "noun",
     "definition": "Lane; one of the strips a road is divided into."
    },
    {
+    "type": "noun",
     "word": "griglia",
     "surface": "griglia",
-    "type": "noun",
     "definition": "Grill; the metal bars you cook meat on over the fire."
    },
    {
+    "type": "noun",
     "word": "fumo",
     "surface": "fumo",
-    "type": "noun",
     "definition": "Smoke; the grey cloud that rises from a fire."
    },
    {
+    "type": "noun",
     "word": "sagra",
     "surface": "sagra",
-    "type": "noun",
     "definition": "Village food festival; a few days of eating and music in the square."
    },
    {
+    "type": "noun",
     "word": "processione",
     "surface": "processione",
-    "type": "noun",
     "definition": "Procession; people walking slowly together behind a holy statue."
    },
    {
+    "type": "noun",
     "word": "santo",
     "surface": "santo",
-    "type": "noun",
     "definition": "Saint; the holy person a village keeps a feast day for."
    },
    {
+    "type": "noun",
     "word": "sindaco",
     "surface": "sindaco",
-    "type": "noun",
     "definition": "Mayor; the person who runs an Italian town or village."
    },
    {
+    "type": "noun",
     "word": "discorso",
     "surface": "discorso",
-    "type": "noun",
     "definition": "Speech; the words somebody says in front of a crowd."
    },
    {
+    "type": "noun",
     "word": "tromba",
     "surface": "trombe",
-    "type": "noun",
     "definition": "Trumpet; the loud metal instrument you blow into."
    },
    {
+    "type": "noun",
     "word": "tamburo",
     "surface": "tamburo",
-    "type": "noun",
     "definition": "Drum; the round instrument you hit to keep the beat."
    },
    {
+    "type": "noun",
     "word": "salsiccia",
     "surface": "salsicce",
-    "type": "noun",
     "definition": "Sausage; the fat meat roll Italians cook over the coals."
    },
    {
+    "type": "noun",
     "word": "spuntino",
     "surface": "spuntino",
-    "type": "noun",
     "definition": "Snack; a small quick thing to eat between two meals."
    },
    {
+    "type": "noun",
     "word": "telefonata",
     "surface": "telefonata",
-    "type": "noun",
     "definition": "Phone call; the moment you ring somebody and talk."
    },
    {
+    "type": "noun",
     "word": "sabato",
     "surface": "sabato",
-    "type": "noun",
     "definition": "Saturday; the day before Sunday, when Italian villages hold their feasts."
    },
    {
+    "type": "verb",
     "word": "chiudere",
     "surface": "chiusa",
-    "type": "verb",
     "definition": "To close; to shut a door, a shop or a bag."
    },
    {
+    "type": "verb",
     "word": "suonare",
     "surface": "suona",
-    "type": "verb",
     "definition": "To play music, and also to ring a bell at a door."
    },
    {
+    "type": "adjective",
     "word": "lungo",
     "surface": "lungo",
-    "type": "adjective",
     "definition": "Long; going far from one end to the other."
    },
    {
+    "type": "adverb",
     "word": "stasera",
     "surface": "stasera",
-    "type": "adverb",
     "definition": "This evening; the hours of today after the light goes."
    },
    {
+    "type": "verb",
     "word": "comprare",
     "surface": "compra",
-    "type": "verb",
     "definition": "To buy; to give money and take the thing home."
    },
    {
+    "type": "adverb",
     "word": "domani",
     "surface": "domani",
-    "type": "adverb",
     "definition": "Tomorrow; the day that comes right after this one."
    },
    {
+    "type": "noun",
     "word": "maglione",
     "surface": "maglione",
-    "type": "noun",
     "definition": "Jumper; the thick wool top you wear over a shirt."
    },
    {
+    "type": "verb",
     "word": "fermare",
     "surface": "ferma",
-    "type": "verb",
     "definition": "To stop; to make something halt, or to halt yourself."
    },
    {
+    "type": "verb",
     "word": "scendere",
     "surface": "scende",
-    "type": "verb",
     "definition": "To go down; to get out of a car or walk down a hill."
    },
    {
+    "type": "noun",
     "word": "giacca",
     "surface": "giacca",
-    "type": "noun",
     "definition": "Jacket; the light coat you put on over a shirt."
    },
    {
+    "type": "noun",
     "word": "credito",
     "surface": "credito",
-    "type": "noun",
     "definition": "Credit; the money still left on a card or a phone."
    }
-  ]
+  ],
+  "arcType": "recurring-character-callback"
  },
  {
   "topic": "village-festivals",
   "slotIndex": 2,
   "title": "Il fumo della griglia",
   "slug": "il-fumo-della-griglia",
-  "arcType": "harmonic-close",
   "synopsis": "Un fumo bianco esce dalla griglia della sagra e arriva fino alla strada, e sui tavoli lunghi c'è più roba di quanta ne possa mangiare il paese. Dario porta Rosa a una panca libera e le spiega come funziona il gettone. Per una sera Rosa non tiene il conto di niente, e questo le costa più fatica che guidare.",
   "text": "Un fumo esce dalla griglia della sagra e si sente sotto il palco. Dario porta Rosa e Teo ai tavoli: pasta, peperoni, insalata, mais e anguria. “Siediti su questa panca, il posto buono è qui davanti alla griglia”, dice a Rosa.\n\n“Qui si paga un gettone e si mangia finché c'è, e nessuno è antipatico con chi passa”, spiega Dario. Una donna versa il vino e un'altra taglia melone e cetriolo. Nel piatto di Teo finiscono pollo, maiale e salsa, dopo giorni di panini.\n\nRosa cerca il credito nella tasca e Dario le ferma la mano. “Stasera paga la sagra e tu domani porti la macchina a Palermo”, dice lui. Sul tavolo arrivano uva, pere, cioccolato, gamberi freddi e torta con la panna.\n\nAlle undici la piazza è piena e alla lotteria vince sempre lo stesso. “Questa limonata è meglio del caffè che faccio io al bar”, dice Teo, e balla male con due signore. Rosa ride per la prima volta dell'estate e la piazza è più bella di Palermo.",
   "vocab": [
    {
+    "type": "noun",
     "word": "peperone",
     "surface": "peperoni",
-    "type": "noun",
     "definition": "Pepper; the big red, yellow or green vegetable you roast."
    },
    {
+    "type": "noun",
     "word": "insalata",
     "surface": "insalata",
-    "type": "noun",
     "definition": "Salad; raw green leaves with oil, salt and vinegar on top."
    },
    {
+    "type": "noun",
     "word": "mais",
     "surface": "mais",
-    "type": "noun",
     "definition": "Sweetcorn; the small yellow seeds that grow on a cob."
    },
    {
+    "type": "noun",
     "word": "anguria",
     "surface": "anguria",
-    "type": "noun",
     "definition": "Watermelon; the huge green fruit that is red and wet inside."
    },
    {
+    "type": "noun",
     "word": "limonata",
     "surface": "limonata",
-    "type": "noun",
     "definition": "Lemonade; the cold drink made with lemons, water and sugar."
    },
    {
+    "type": "noun",
     "word": "gettone",
     "surface": "gettone",
-    "type": "noun",
     "definition": "Token; the little metal piece you buy and give instead of money."
    },
    {
+    "type": "noun",
     "word": "melone",
     "surface": "melone",
-    "type": "noun",
     "definition": "Melon; the sweet orange fruit Italians eat with ham."
    },
    {
+    "type": "noun",
     "word": "cetriolo",
     "surface": "cetriolo",
-    "type": "noun",
     "definition": "Cucumber; the long green vegetable you slice into a salad."
    },
    {
+    "type": "noun",
     "word": "pollo",
     "surface": "pollo",
-    "type": "noun",
     "definition": "Chicken; the meat of the bird that lives in a farmyard."
    },
    {
+    "type": "noun",
     "word": "maiale",
     "surface": "maiale",
-    "type": "noun",
     "definition": "Pork; the meat of the pig, and the animal itself."
    },
    {
+    "type": "noun",
     "word": "gambero",
     "surface": "gamberi",
-    "type": "noun",
     "definition": "Prawn; the small pink sea animal you eat with the fingers."
    },
    {
+    "type": "noun",
     "word": "salsa",
     "surface": "salsa",
-    "type": "noun",
     "definition": "Sauce; the wet part you pour over meat or over pasta."
    },
    {
+    "type": "noun",
     "word": "uva",
     "surface": "uva",
-    "type": "noun",
     "definition": "Grapes; the small sweet fruit that grows in bunches."
    },
    {
+    "type": "noun",
     "word": "pera",
     "surface": "pere",
-    "type": "noun",
     "definition": "Pear; the soft green or brown fruit with a narrow top."
    },
    {
+    "type": "noun",
     "word": "cioccolato",
     "surface": "cioccolato",
-    "type": "noun",
     "definition": "Chocolate; the sweet brown food made from cocoa beans."
    },
    {
+    "type": "noun",
     "word": "panna",
     "surface": "panna",
-    "type": "noun",
     "definition": "Cream; the thick white part of milk, sweet on a cake."
    },
    {
+    "type": "noun",
     "word": "signora",
     "surface": "signore",
-    "type": "noun",
     "definition": "Lady; the polite word for a grown woman you do not know."
    },
    {
+    "type": "noun",
     "word": "estate",
     "surface": "estate",
-    "type": "noun",
     "definition": "Summer; the hot months when Italy goes to the sea."
    },
    {
+    "type": "verb",
     "word": "ridere",
     "surface": "ride",
-    "type": "verb",
     "definition": "To laugh; to make the sound you make when something is funny."
    },
    {
+    "type": "adverb",
     "word": "sotto",
     "surface": "sotto",
-    "type": "adverb",
     "definition": "Under or below; in the space lower than something else."
    },
    {
+    "type": "adjective",
     "word": "primo",
     "surface": "prima",
-    "type": "adjective",
     "definition": "First; the one that comes before all the others."
    },
    {
+    "type": "adverb",
     "word": "male",
     "surface": "male",
-    "type": "adverb",
     "definition": "Badly, and in fare male also to hurt or to be sore."
    },
    {
+    "type": "verb",
     "word": "cercare",
     "surface": "cerca",
-    "type": "verb",
     "definition": "To look for; to try to find a thing you cannot see."
    },
    {
+    "type": "verb",
     "word": "uscire",
     "surface": "esce",
-    "type": "verb",
     "definition": "To go out; to leave a house, a room or a road."
    },
    {
+    "type": "verb",
     "word": "mangiare",
     "surface": "mangia",
-    "type": "verb",
     "definition": "To eat; to put food in your mouth and swallow it."
    }
-  ]
+  ],
+  "arcType": "harmonic-close"
  },
  {
   "topic": "village-festivals",
   "slotIndex": 3,
   "title": "Il palco si svuota all'una",
   "slug": "il-palco-si-svuota-alluna",
-  "arcType": "juxtaposition-discovery",
   "synopsis": "Il palco si svuota all'una e le luci sopra la strada si spengono a metà, così Dario accompagna i due fino alla macchina passando dietro la cattedrale. Per strada racconta perché a Roma suonava in tre bande e qui ne basta una, e mostra un paese che di notte è quasi tutto chiuso. Rosa riparte piano, e per venti chilometri non sorpassa nessuno.",
   "text": "Il palco si svuota all'una, Rosa guarda l'ora e le luci si spengono a metà. Dario li accompagna alla macchina dietro la cattedrale, con il maglione addosso. Il paese di notte ha una scuola, una banca, la posta e un supermercato chiuso.\n\n“A Roma suonavo in tre bande e non conoscevo il nome di nessuno dei musicisti”, racconta Dario. Passano davanti a un palazzo, a un teatro, a un cinema e a un parco. Teo cammina piano e la conversazione va avanti.\n\n“Qui la macelleria apre tre giorni e la panetteria uno, però la gente resta”, aggiunge lui. Ogni edificio del paese ha una storia che Dario racconta a metà. Davanti al castello Rosa apre il bagagliaio, sistema la coperta e prende la torcia.\n\nDario, che è più giovane di quello che sembra, resta in mezzo alla strada. “Il santo di questo paese protegge chi viaggia di notte e chi guida stanco”, dice, e ride. Rosa guida piano per venti chilometri, senza tristezza, con il graffio sulla portiera.",
   "vocab": [
    {
+    "type": "noun",
     "word": "cattedrale",
     "surface": "cattedrale",
-    "type": "noun",
     "definition": "Cathedral; the big main church at the centre of a town."
    },
    {
+    "type": "noun",
     "word": "scuola",
     "surface": "scuola",
-    "type": "noun",
     "definition": "School; the place where children go to learn every morning."
    },
    {
+    "type": "noun",
     "word": "banca",
     "surface": "banca",
-    "type": "noun",
     "definition": "Bank; where you keep your money and take it out again."
    },
    {
+    "type": "noun",
     "word": "posta",
     "surface": "posta",
-    "type": "noun",
     "definition": "Post office; where letters and parcels are sent and picked up."
    },
    {
+    "type": "noun",
     "word": "supermercato",
     "surface": "supermercato",
-    "type": "noun",
     "definition": "Supermarket; the big shop with all the food on shelves."
    },
    {
+    "type": "noun",
     "word": "palazzo",
     "surface": "palazzo",
-    "type": "noun",
     "definition": "Large building; a block of flats or an old grand house."
    },
    {
+    "type": "noun",
     "word": "teatro",
     "surface": "teatro",
-    "type": "noun",
     "definition": "Theatre; the hall where people watch a play on a stage."
    },
    {
+    "type": "noun",
     "word": "cinema",
     "surface": "cinema",
-    "type": "noun",
     "definition": "Cinema; the dark hall where you watch a film on a screen."
    },
    {
+    "type": "noun",
     "word": "parco",
     "surface": "parco",
-    "type": "noun",
     "definition": "Park; the green public space with trees and benches."
    },
    {
+    "type": "noun",
     "word": "conversazione",
     "surface": "conversazione",
-    "type": "noun",
     "definition": "Conversation; two or more people talking to each other."
    },
    {
+    "type": "noun",
     "word": "macelleria",
     "surface": "macelleria",
-    "type": "noun",
     "definition": "Butcher's shop; where Italians buy meat cut in front of them."
    },
    {
+    "type": "noun",
     "word": "panetteria",
     "surface": "panetteria",
-    "type": "noun",
     "definition": "Bakery; the shop that sells bread fresh every morning."
    },
    {
+    "type": "noun",
     "word": "edificio",
     "surface": "edificio",
-    "type": "noun",
     "definition": "Building; any construction with walls and a roof."
    },
    {
+    "type": "noun",
     "word": "storia",
     "surface": "storia",
-    "type": "noun",
     "definition": "Story, and also history; Italian uses the same word for both."
    },
    {
+    "type": "noun",
     "word": "castello",
     "surface": "castello",
-    "type": "noun",
     "definition": "Castle; the old stone fort above many Italian villages."
    },
    {
+    "type": "adjective",
     "word": "giovane",
     "surface": "giovane",
-    "type": "adjective",
     "definition": "Young; with few years behind you, still near the start of life."
    },
    {
+    "type": "verb",
     "word": "viaggiare",
     "surface": "viaggia",
-    "type": "verb",
     "definition": "To travel; to go from one place to a far one."
    },
    {
+    "type": "noun",
     "word": "tristezza",
     "surface": "tristezza",
-    "type": "noun",
     "definition": "Sadness; the low quiet feeling after something goes wrong."
    },
    {
+    "type": "verb",
     "word": "camminare",
     "surface": "cammina",
-    "type": "verb",
     "definition": "To walk; to go on foot, one step after the other."
    },
    {
+    "type": "noun",
     "word": "coperta",
     "surface": "coperta",
-    "type": "noun",
     "definition": "Blanket; the warm cover you pull over you in bed."
+   },
+   {
+    "type": "noun",
+    "word": "notte",
+    "surface": "notte",
+    "definition": "Night; the dark hours between the evening and the morning."
    }
-  ]
+  ],
+  "arcType": "juxtaposition-discovery"
  },
  {
   "topic": "pharmacy-emergencies",
   "slotIndex": 1,
   "title": "Alle undici la farmacia è chiusa",
   "slug": "alle-undici-la-farmacia-e-chiusa",
-  "arcType": "mini-cliffhanger",
   "synopsis": "Alle undici di domenica la farmacia di Scilla è chiusa e sulla porta c'è solo un foglio giallo con i turni. Teo ha la febbre da tre ore e Rosa cammina piano per una caviglia che dal bosco in poi è diventata il doppio. La farmacia di turno è a undici chilometri, il traghetto parte fra due ore e il quattordici è domani.",
   "text": "Alle undici di domenica la farmacia di Scilla è chiusa, con un foglio sulla porta. Teo ha la febbre da tre ore e una tosse che non lo lascia parlare. Rosa cammina piano perché la caviglia destra è gonfia dal bosco.\n\nIl foglio spiega quale farmacia è di turno e dove comprare le medicine. A undici chilometri di macchina la porta è aperta, e la coperta resta dietro. Martina lavora nella farmacia di turno e, con gli occhiali sul naso, guarda prima Teo e poi Rosa.\n\n“Non ho una malattia, ho solo un raffreddore e la gola chiusa dal freddo”, dice Teo. Rosa gli mette una mano sulla fronte e sente la pelle bollente. “Prima lui, e se la febbre non scende chiamiamo il dottore di guardia”, decide Martina.\n\nIl termometro segna trentanove e due e Martina smette di sorridere. Prepara sciroppo, due pastiglie, cerotti e una cura di tre giorni. “Così non si guida fino a domani”, dice, “e quel dolore al piede vuole riposo, non altre pastiglie.”",
   "vocab": [
    {
+    "type": "noun",
     "word": "farmacia",
     "surface": "farmacia",
-    "type": "noun",
     "definition": "Chemist's shop; where you buy medicines and ask for advice."
    },
    {
+    "type": "noun",
     "word": "febbre",
     "surface": "febbre",
-    "type": "noun",
     "definition": "Fever; when your body is hotter than it should be."
    },
    {
+    "type": "noun",
     "word": "gola",
     "surface": "gola",
-    "type": "noun",
     "definition": "Throat; the part inside your neck that hurts with a cold."
    },
    {
+    "type": "adjective",
     "word": "gonfio",
     "surface": "gonfia",
-    "type": "adjective",
     "definition": "Swollen; bigger than normal because it hurts inside."
    },
    {
+    "type": "noun",
     "word": "malattia",
     "surface": "malattia",
-    "type": "noun",
     "definition": "Illness; the thing that keeps you in bed for some days."
    },
    {
+    "type": "noun",
     "word": "raffreddore",
     "surface": "raffreddore",
-    "type": "noun",
     "definition": "Cold; the small illness with a blocked nose and a cough."
    },
    {
+    "type": "noun",
     "word": "pelle",
     "surface": "pelle",
-    "type": "noun",
     "definition": "Skin; the thin outside layer that covers your whole body."
    },
    {
+    "type": "noun",
     "word": "occhiali",
     "surface": "occhiali",
-    "type": "noun",
     "definition": "Glasses; what you wear on your nose to see better."
    },
    {
+    "type": "noun",
     "word": "naso",
     "surface": "naso",
-    "type": "noun",
     "definition": "Nose; the part of the face you breathe and smell with."
    },
    {
+    "type": "noun",
     "word": "termometro",
     "surface": "termometro",
-    "type": "noun",
     "definition": "Thermometer; the small tool that tells you how high a fever is."
    },
    {
+    "type": "noun",
     "word": "sciroppo",
     "surface": "sciroppo",
-    "type": "noun",
     "definition": "Syrup; the thick sweet medicine you take with a spoon."
    },
    {
+    "type": "noun",
     "word": "pastiglia",
     "surface": "pastiglie",
-    "type": "noun",
     "definition": "Tablet; the small round medicine you swallow with water."
    },
    {
+    "type": "noun",
     "word": "cura",
     "surface": "cura",
-    "type": "noun",
     "definition": "Course of treatment; the medicines you take for some days."
    },
    {
+    "type": "noun",
     "word": "dolore",
     "surface": "dolore",
-    "type": "noun",
     "definition": "Pain; the bad feeling in a part of the body that hurts."
    },
    {
+    "type": "noun",
     "word": "dottore",
     "surface": "dottore",
-    "type": "noun",
     "definition": "Doctor; the person who says what is wrong with your body."
    },
    {
+    "type": "noun",
     "word": "domenica",
     "surface": "domenica",
-    "type": "noun",
     "definition": "Sunday; the day when almost every Italian shop stays shut."
    },
    {
+    "type": "verb",
     "word": "restare",
     "surface": "resta",
-    "type": "verb",
     "definition": "To stay or to be left; not to move and not to go away."
    },
    {
+    "type": "noun",
     "word": "caviglia",
     "surface": "caviglia",
-    "type": "noun",
     "definition": "Ankle; the joint between your leg and your foot."
    },
    {
+    "type": "verb",
     "word": "guidare",
     "surface": "guida",
-    "type": "verb",
     "definition": "To drive; what you do behind the wheel of a car."
    },
    {
+    "type": "adjective",
     "word": "destro",
     "surface": "destra",
-    "type": "adjective",
     "definition": "Right; the side of the body opposite your left one."
    },
    {
+    "type": "adjective",
     "word": "aperto",
     "surface": "aperta",
-    "type": "adjective",
     "definition": "Open; not shut, so people or air can get through."
+   },
+   {
+    "type": "noun",
+    "word": "chilometro",
+    "surface": "chilometri",
+    "definition": "Kilometre; the unit Italians use to measure how far something is."
    }
-  ]
+  ],
+  "arcType": "mini-cliffhanger"
  },
  {
   "topic": "pharmacy-emergencies",
   "slotIndex": 2,
   "title": "La pomata resta sul banco",
   "slug": "la-pomata-resta-sul-banco",
-  "arcType": "reframe-turn",
   "synopsis": "Dietro il banco Martina tira fuori quello che serve e fa a Teo le domande che si fanno sempre, una parte del corpo dopo l'altra. Il totale è sessanta euro e Rosa, per la prima volta in tutto il viaggio, alza la voce davanti a un'estranea invece di stare zitta. Quello che Martina fa dopo non risolve niente, però lascia le cose in un ordine diverso.",
   "text": "Dietro il banco Martina prende dal cassetto una pomata e una benda per Teo. “Non è niente, non si muore per una tosse”, dice lui, bianco in viso e con il collo sudato. Il banco è freddo e la caviglia di Rosa sotto il calzino è gonfia.\n\n“Ti fa male il petto quando tossisci, o la gola, i denti e le orecchie?”, chiede Martina. Teo dice di sì a tutto e si passa la lingua sulle labbra. Poi si soffia il naso, torna a sedersi e nel fazzoletto c'è del sangue.\n\n“Senza ricetta il resto non ve lo do, ci vuole un dottore”, spiega Martina, e scrive. “Per una febbre così non serve un'ambulanza, serve coricarsi e dormire.” Il totale è sessanta euro, quanto la benzina di due giorni.\n\n“Pago io, e non è una cosa da discutere”, dice Teo con la voce debole. “Non paghi tu”, risponde Rosa davanti a tutti, e Martina resta educata. La sorprende togliendo la pomata dal conto: Rosa non è antipatica, è senza stipendio.",
   "vocab": [
    {
+    "type": "noun",
     "word": "pomata",
     "surface": "pomata",
-    "type": "noun",
     "definition": "Cream; the soft medicine you rub on a sore part of the body."
    },
    {
+    "type": "noun",
     "word": "benda",
     "surface": "benda",
-    "type": "noun",
     "definition": "Bandage; the long strip of cloth you wrap round a hurt leg."
    },
    {
+    "type": "noun",
     "word": "petto",
     "surface": "petto",
-    "type": "noun",
     "definition": "Chest; the front part of the body above the stomach."
    },
    {
+    "type": "noun",
     "word": "dente",
     "surface": "denti",
-    "type": "noun",
     "definition": "Tooth; one of the white pieces you bite and chew with."
    },
    {
+    "type": "noun",
     "word": "lingua",
     "surface": "lingua",
-    "type": "noun",
     "definition": "Tongue, and also language; Italian uses the same word for both."
    },
    {
+    "type": "noun",
     "word": "labbro",
     "surface": "labbra",
-    "type": "noun",
     "definition": "Lip; one of the two soft edges around your mouth."
    },
    {
+    "type": "noun",
     "word": "ricetta",
     "surface": "ricetta",
-    "type": "noun",
     "definition": "Prescription, and also a cooking recipe; Italian uses one word."
    },
    {
+    "type": "noun",
     "word": "collo",
     "surface": "collo",
-    "type": "noun",
     "definition": "Neck; the part of the body between the head and the shoulders."
    },
    {
+    "type": "noun",
     "word": "sangue",
     "surface": "sangue",
-    "type": "noun",
     "definition": "Blood; the red liquid that runs inside the whole body."
    },
    {
+    "type": "adjective",
     "word": "antipatico",
     "surface": "antipatica",
-    "type": "adjective",
     "definition": "Unpleasant; the kind of person nobody enjoys being with."
    },
    {
+    "type": "noun",
     "word": "ambulanza",
     "surface": "ambulanza",
-    "type": "noun",
     "definition": "Ambulance; the van that takes you fast to the hospital."
    },
    {
+    "type": "verb",
     "word": "coricarsi",
     "surface": "coricarsi",
-    "type": "verb",
     "definition": "To lie down; to get into bed and stay there."
    },
    {
+    "type": "noun",
     "word": "orecchio",
     "surface": "orecchie",
-    "type": "noun",
     "definition": "Ear; the part of the head you hear sounds with."
    },
    {
+    "type": "verb",
     "word": "scrivere",
     "surface": "scrive",
-    "type": "verb",
     "definition": "To write; to put words on paper or into a phone."
    },
    {
+    "type": "adjective",
     "word": "gonfio",
     "surface": "gonfia",
-    "type": "adjective",
     "definition": "Swollen; bigger than normal because something hurts inside."
    },
    {
+    "type": "verb",
     "word": "dormire",
     "surface": "dormire",
-    "type": "verb",
     "definition": "To sleep; to rest with your eyes closed for a while."
    },
    {
+    "type": "verb",
     "word": "pagare",
     "surface": "paghi",
-    "type": "verb",
     "definition": "To pay; to hand over money for something you take."
    },
    {
+    "type": "adjective",
     "word": "educato",
     "surface": "educata",
-    "type": "adjective",
     "definition": "Polite; treating other people well even when they are difficult."
    },
    {
+    "type": "verb",
     "word": "servire",
     "surface": "serve",
-    "type": "verb",
     "definition": "To be needed, and also to serve food to a table."
    },
    {
+    "type": "verb",
     "word": "morire",
     "surface": "muore",
-    "type": "verb",
     "definition": "To die; to stop living, and in speech to exaggerate a pain."
    },
    {
+    "type": "adjective",
     "word": "debole",
     "surface": "debole",
-    "type": "adjective",
     "definition": "Weak; without the strength to do the normal things."
    },
    {
+    "type": "verb",
     "word": "sorprendere",
     "surface": "sorprende",
-    "type": "verb",
     "definition": "To surprise; to do something nobody was expecting from you."
    }
-  ]
+  ],
+  "arcType": "reframe-turn"
  },
  {
   "topic": "pharmacy-emergencies",
   "slotIndex": 3,
   "title": "Martina passa dall'albergo",
   "slug": "martina-passa-dallalbergo",
-  "arcType": "late-reveal",
   "synopsis": "Martina suona il campanello dell'albergo alle otto di sera, con un sacchetto e un foglio piegato, e sale a vedere come sta il malato. La febbre è scesa, le magliette di Teo asciugano sul balcone e per una sera nessuno deve guidare da nessuna parte. Prima di andare via Martina racconta una cosa di ieri che Rosa non aveva capito, e poi se ne va.",
   "text": "Martina suona il campanello dell'albergo alle otto di sera. Nella stanza ci sono una poltrona, un balcone sul mare e la coperta della macchina. Fuori asciugano le magliette e i pantaloni di Teo.\n\n“La febbre è scesa e fra un mese non si ricorda più niente di questi giorni”, dice Martina. Rosa lava anche la biancheria con il detersivo del bagno e la stende fuori. Nel sacchetto ci sono cerotti, una crema, pastiglie e un appuntamento con il medico.\n\nPrima di andare via Martina spiega, piano, quello che è successo il giorno prima. “Il tuo amico è tornato da solo e ha pagato la pomata che avevi lasciato”, dice piano. Teo dorme sulla poltrona, magro sotto la coperta, e Rosa si sente stupida.\n\nRosa resta sul balcone con il cellulare in carica e conta le navi. Sul filo asciugano anche un costume e una spugna dimenticata. “Domani guido io fino a Messina”, promette lei, “e la sveglia la metto io.”",
   "vocab": [
    {
+    "type": "noun",
     "word": "albergo",
     "surface": "albergo",
-    "type": "noun",
     "definition": "Hotel; the house where you pay to sleep for a night."
    },
    {
+    "type": "noun",
     "word": "poltrona",
     "surface": "poltrona",
-    "type": "noun",
     "definition": "Armchair; the soft wide seat for one person only."
    },
    {
+    "type": "noun",
     "word": "balcone",
     "surface": "balcone",
-    "type": "noun",
     "definition": "Balcony; the small open floor outside an Italian window."
    },
    {
+    "type": "noun",
     "word": "maglietta",
     "surface": "magliette",
-    "type": "noun",
     "definition": "T-shirt; the light cotton top with short sleeves."
    },
    {
+    "type": "noun",
     "word": "pantalone",
     "surface": "pantaloni",
-    "type": "noun",
     "definition": "Trousers; the piece of clothing that covers both of your legs."
    },
    {
+    "type": "noun",
     "word": "mese",
     "surface": "mese",
-    "type": "noun",
     "definition": "Month; one of the twelve parts a year is cut into."
    },
    {
+    "type": "noun",
     "word": "biancheria",
     "surface": "biancheria",
-    "type": "noun",
     "definition": "Linen and underwear; the small washing you do by hand."
    },
    {
+    "type": "noun",
     "word": "detersivo",
     "surface": "detersivo",
-    "type": "noun",
     "definition": "Washing powder; what you add to water to clean clothes."
    },
    {
+    "type": "noun",
     "word": "cerotto",
     "surface": "cerotti",
-    "type": "noun",
     "definition": "Plaster; the small sticky strip you put over a cut."
    },
    {
+    "type": "noun",
     "word": "appuntamento",
     "surface": "appuntamento",
-    "type": "noun",
     "definition": "Appointment; a time agreed to meet a doctor or a friend."
    },
    {
+    "type": "noun",
     "word": "nave",
     "surface": "navi",
-    "type": "noun",
     "definition": "Ship; the big boat that carries people and lorries across water."
    },
    {
+    "type": "noun",
     "word": "costume",
     "surface": "costume",
-    "type": "noun",
     "definition": "Swimming costume; what you wear to go into the sea."
    },
    {
+    "type": "noun",
     "word": "spugna",
     "surface": "spugna",
-    "type": "noun",
     "definition": "Sponge; the soft thing you wash or clean a surface with."
    },
    {
+    "type": "adjective",
     "word": "svegliarsi",
     "surface": "sveglia",
-    "type": "adjective",
     "definition": "To wake up; to open your eyes and stop sleeping."
    },
    {
+    "type": "noun",
     "word": "filo",
     "surface": "filo",
-    "type": "noun",
     "definition": "Wire or line; here the string clothes are hung out on."
    },
    {
+    "type": "adverb",
     "word": "piano",
     "surface": "piano",
-    "type": "adverb",
     "definition": "Slowly or softly; without hurry and without making noise."
    },
    {
-    "word": "tornare",
-    "surface": "torna",
     "type": "verb",
+    "word": "tornare",
+    "surface": "tornato",
     "definition": "To come back; to go again to the place you were before."
    },
    {
+    "type": "noun",
     "word": "stanza",
     "surface": "stanza",
-    "type": "noun",
     "definition": "Room; any room inside a house, big or small."
    },
    {
+    "type": "verb",
     "word": "lavare",
     "surface": "lava",
-    "type": "verb",
     "definition": "To wash; to clean something with water and soap."
    },
    {
+    "type": "adjective",
     "word": "magro",
     "surface": "magro",
-    "type": "adjective",
     "definition": "Thin; with very little fat on the body."
    }
-  ]
+  ],
+  "arcType": "late-reveal"
  },
  {
   "topic": "bureaucracy-and-paperwork",
   "slotIndex": 1,
   "title": "Lo sportello chiude alle dodici",
   "slug": "lo-sportello-chiude-alle-dodici",
-  "arcType": "juxtaposition-discovery",
   "synopsis": "Alle undici e quaranta del quattordici il numerino di Rosa è il quarantuno e sul tabellone lampeggia il trentotto, e lo sportello chiude alle dodici in punto. Chi aspetta con il contratto in mano è l'uomo del garage di via Lincoln, che con questa consegna non c'entra niente e ci ha comunque messo la mattina. Restano venti minuti e un modulo che nessuno dei due sapeva di dover firmare.",
   "text": "Lo sportello chiude alle dodici e il numerino di Rosa è il quarantuno. Nel silenzio Teo prende una sedia accanto a Nico, che lavora al garage di via Lincoln e tiene il contratto. “Il tabellone va piano, però alle dodici chiudono”, dice Nico, e Rosa stringe la busta dei documenti.\n\n“Se non timbrano oggi tutto passa al prossimo mercoledì e la scadenza salta”, spiega Nico. Rosa tira fuori dalla busta la patente, il passaporto e il libretto. Teo conta i numeri che mancano e manda un messaggio al capo.\n\nAlle dodici meno cinque succede quello che nessuno aspettava. L'impiegata guarda i fogli, mette un timbro e ne chiede un altro. “Questo modulo lo deve firmare chi consegna e non chi riceve”, dice lei.\n\nRosa firma sopra il timbro e la donna scrive le dodici e uno. “È passato un minuto e non lo scrivo, però la prossima volta arrivate prima”, dice. Fuori Nico ride come uno che ha vinto e non è mai stato ricco, e la multa arriva spedita.",
   "vocab": [
    {
+    "type": "noun",
     "word": "sportello",
     "surface": "sportello",
-    "type": "noun",
     "definition": "Counter window; the small opening where an office serves you."
    },
    {
+    "type": "noun",
     "word": "numerino",
     "surface": "numerino",
-    "type": "noun",
     "definition": "Queue ticket; the little paper with your number on it."
    },
    {
+    "type": "noun",
     "word": "contratto",
     "surface": "contratto",
-    "type": "noun",
     "definition": "Contract; the paper two sides sign to agree on a job."
    },
    {
+    "type": "noun",
     "word": "mercoledì",
     "surface": "mercoledì",
-    "type": "noun",
     "definition": "Wednesday; the day in the middle of the working week."
    },
    {
+    "type": "noun",
     "word": "patente",
     "surface": "patente",
-    "type": "noun",
     "definition": "Driving licence; the card that says you are allowed to drive."
    },
    {
+    "type": "noun",
     "word": "passaporto",
     "surface": "passaporto",
-    "type": "noun",
     "definition": "Passport; the small book you show to cross a border."
    },
    {
+    "type": "noun",
     "word": "impiegata",
     "surface": "impiegata",
-    "type": "noun",
     "definition": "Female clerk; the woman who works behind an office counter."
    },
    {
+    "type": "noun",
     "word": "timbro",
     "surface": "timbro",
-    "type": "noun",
     "definition": "Stamp; the ink mark an office puts on a paper to make it valid."
    },
    {
+    "type": "noun",
     "word": "modulo",
     "surface": "modulo",
-    "type": "noun",
     "definition": "Form; the sheet with empty lines you have to fill in."
    },
    {
+    "type": "verb",
     "word": "firmare",
     "surface": "firma",
-    "type": "verb",
     "definition": "To sign; to write your own name at the bottom of a paper."
    },
    {
+    "type": "verb",
     "word": "vincere",
     "surface": "vinto",
-    "type": "verb",
     "definition": "To win; to come first or to get what you were fighting for."
    },
    {
+    "type": "noun",
     "word": "multa",
     "surface": "multa",
-    "type": "noun",
     "definition": "Fine; the money you pay when you break a traffic rule."
    },
    {
+    "type": "verb",
     "word": "spedire",
     "surface": "spedita",
-    "type": "verb",
     "definition": "To post; to send a letter or a parcel through the post office."
    },
    {
+    "type": "noun",
     "word": "documento",
     "surface": "documenti",
-    "type": "noun",
     "definition": "Document; an official paper with your name on it."
    },
    {
+    "type": "noun",
     "word": "busta",
     "surface": "busta",
-    "type": "noun",
     "definition": "Envelope; the paper cover you keep letters or papers inside."
    },
    {
+    "type": "verb",
     "word": "tenere",
     "surface": "tiene",
-    "type": "verb",
     "definition": "To hold or to keep; to have a thing in your hands."
    },
    {
+    "type": "verb",
     "word": "chiedere",
     "surface": "chiede",
-    "type": "verb",
     "definition": "To ask; to put a question or to ask for something."
    },
    {
+    "type": "verb",
     "word": "contare",
     "surface": "conta",
-    "type": "verb",
     "definition": "To count; to say the numbers to know how many there are."
    },
    {
+    "type": "verb",
     "word": "consegnare",
     "surface": "consegna",
-    "type": "verb",
     "definition": "To hand over; to give a thing to the person waiting for it."
    },
    {
+    "type": "adjective",
     "word": "prossimo",
     "surface": "prossimo",
-    "type": "adjective",
     "definition": "Next; the one that comes straight after this one."
    }
-  ]
+  ],
+  "arcType": "juxtaposition-discovery"
  },
  {
   "topic": "bureaucracy-and-paperwork",
   "slotIndex": 2,
   "title": "Al terzo modulo Rosa firma",
   "slug": "al-terzo-modulo-rosa-firma",
-  "arcType": "harmonic-close",
   "synopsis": "Al terzo modulo Rosa capisce che una consegna non finisce con un timbro, perché il garage vuole un verbale con dentro tutti i danni della macchina. Mentre lei scrive la riga più cara del viaggio, Teo si lava, si rade e si veste per un aereo delle sei. Poi Nico apre la busta arrivata da Torino, e quello che c'è scritto lì dentro cambia chi deve delle scuse a chi.",
   "text": "Al terzo modulo Rosa capisce che la consegna non finisce con un timbro. L'impiegato apre il portatile e vuole un verbale con tutti i danni. Teo si lava, si spoglia e si rade nel bagno del garage.\n\n“Il graffio lo devi scrivere tu, con la data di oggi, la firma e la targa”, spiega Nico. Rosa scrive del graffio sulla portiera e mette la firma. Teo si veste con una camicia nuova, si pettina e mette una cravatta corta.\n\nPoi Nico apre la busta arrivata da Torino e tira fuori i documenti marroni. Sotto la targa c'è già scritto graffio portiera destra, e Teo guarda l'ora dell'aereo. “L'assicurazione copre i danni vecchi”, aggiunge Nico, “e questo è di agosto, guarda la data.”\n\nLa cosa la sorprende, Rosa non si sente intelligente e resta zitta. “Mi dispiace”, dice lei, “dovevo crederti già sul ponte, quella sera, e invece ho guardato solo il foglio.” Teo prende un taxi per l'aeroporto con l'abito piegato, e Nico la guarda come una cosa bella.",
   "vocab": [
    {
+    "type": "noun",
     "word": "verbale",
     "surface": "verbale",
-    "type": "noun",
     "definition": "Written report; the page where damage is listed and signed."
    },
    {
+    "type": "verb",
     "word": "radersi",
     "surface": "rade",
-    "type": "verb",
     "definition": "To shave; to cut the hair off your face with a blade."
    },
    {
+    "type": "adjective",
     "word": "marrone",
     "surface": "marroni",
-    "type": "adjective",
     "definition": "Brown; the colour of wood, coffee or dry leaves."
    },
    {
+    "type": "noun",
     "word": "firma",
     "surface": "firma",
-    "type": "noun",
     "definition": "Signature; your own name written by hand at the bottom."
    },
    {
+    "type": "verb",
     "word": "vestirsi",
     "surface": "veste",
-    "type": "verb",
     "definition": "To get dressed; to put your clothes on before going out."
    },
    {
+    "type": "verb",
     "word": "pettinarsi",
     "surface": "pettina",
-    "type": "verb",
     "definition": "To comb your hair; to put it in order with a comb."
    },
    {
+    "type": "noun",
     "word": "cravatta",
     "surface": "cravatta",
-    "type": "noun",
     "definition": "Tie; the long strip of cloth men knot around the collar."
    },
    {
+    "type": "adjective",
     "word": "corto",
     "surface": "corta",
-    "type": "adjective",
     "definition": "Short; not long enough for what it has to cover."
    },
    {
+    "type": "noun",
     "word": "assicurazione",
     "surface": "assicurazione",
-    "type": "noun",
     "definition": "Insurance; what you pay so somebody else covers the damage."
    },
    {
+    "type": "noun",
     "word": "aeroporto",
     "surface": "aeroporto",
-    "type": "noun",
     "definition": "Airport; the place where planes land and take off."
    },
    {
+    "type": "noun",
     "word": "abito",
     "surface": "abito",
-    "type": "noun",
     "definition": "Suit or dress; the smart clothes you keep for special days."
    },
    {
+    "type": "adjective",
     "word": "bello",
     "surface": "bella",
-    "type": "adjective",
     "definition": "Beautiful; nice to look at or good to have."
    },
    {
+    "type": "noun",
     "word": "portatile",
     "surface": "portatile",
-    "type": "noun",
     "definition": "Laptop; the computer you can close and carry with you."
    },
    {
+    "type": "noun",
     "word": "aereo",
     "surface": "aereo",
-    "type": "noun",
     "definition": "Plane; the machine with wings that flies people between cities."
    },
    {
+    "type": "noun",
     "word": "portiera",
     "surface": "portiera",
-    "type": "noun",
     "definition": "Car door; the door you open to get in or out."
    },
    {
-    "word": "arrivare",
-    "surface": "arriva",
     "type": "verb",
+    "word": "arrivare",
+    "surface": "arrivata",
     "definition": "To arrive; to reach the place you were going to."
    },
    {
+    "type": "verb",
     "word": "volere",
     "surface": "vuole",
-    "type": "verb",
     "definition": "To want; to wish for something enough to go and get it."
    },
    {
+    "type": "verb",
     "word": "lavarsi",
     "surface": "lava",
-    "type": "verb",
     "definition": "To wash yourself; to clean your own face, hands or body."
    },
    {
+    "type": "verb",
     "word": "tirare",
     "surface": "tira",
-    "type": "verb",
     "definition": "To pull; to move a thing towards you with your hand."
    },
    {
+    "type": "adverb",
     "word": "invece",
     "surface": "invece",
-    "type": "adverb",
     "definition": "Instead; in the place of the other thing you expected."
    }
-  ]
+  ],
+  "arcType": "harmonic-close"
  },
  {
   "topic": "bureaucracy-and-paperwork",
   "slotIndex": 3,
   "title": "Nico offre dodici consegne",
   "slug": "nico-offre-dodici-consegne",
-  "arcType": "recurring-character-callback",
   "synopsis": "Nico abita sopra il garage, in un appartamento con un quadro storto e uno scaffale di manuali, e Rosa sale a ritirare quello che le spetta. Sul tavolo c'è la proposta che aspettava da sei anni senza saperlo: una consegna al mese, da gennaio a dicembre, con una data fissa per il pagamento. Per la prima volta Rosa non risponde subito di sì.",
   "text": "Nico abita sopra il garage, in un appartamento sul cortile. Nel soggiorno fa caldo, sotto un quadro storto c'è uno scaffale e un aspirapolvere. Rosa sale a ritirare quello che le spetta, ricevuta in mano.\n\n“Torino-Palermo una volta al mese, da gennaio a dicembre, e ti paghiamo sempre il quindici”, propone Nico. Rosa pensa a sua sorella e alla relazione che hanno da anni. Sul tavolo una vecchia foto con sua mamma, suo papà e uno zio.\n\n“Ci penso fino a venerdì”, risponde Rosa, e non firma niente. “Pensaci pure, però il quindici parte comunque una macchina, con te oppure senza di te”, aggiunge Nico. Fuori un ragazzo lava un furgone con un secchio, accanto a una bici.\n\nSul treno Rosa apre la mappa, mangia un panino e guarda un film che non finisce. Alle nove scrive a Teo: “Com'è andato il matrimonio, e la cravatta è sopravvissuta alla festa?”. La risposta arriva lunga, con tre foto e una cravatta che non ha più forma.",
   "vocab": [
    {
+    "type": "noun",
     "word": "soggiorno",
     "surface": "soggiorno",
-    "type": "noun",
     "definition": "Living room; the room with the sofa where people sit together."
    },
    {
+    "type": "noun",
     "word": "quadro",
     "surface": "quadro",
-    "type": "noun",
     "definition": "Picture; a painting or a photo hanging on a wall."
    },
    {
+    "type": "noun",
     "word": "scaffale",
     "surface": "scaffale",
-    "type": "noun",
     "definition": "Shelf unit; the boards on a wall where books are kept."
    },
    {
+    "type": "verb",
     "word": "ritirare",
     "surface": "ritirare",
-    "type": "verb",
     "definition": "To collect; to go and pick up something that is yours."
    },
    {
+    "type": "noun",
     "word": "gennaio",
     "surface": "gennaio",
-    "type": "noun",
     "definition": "January; the first month of the year in Italy."
    },
    {
+    "type": "noun",
     "word": "dicembre",
     "surface": "dicembre",
-    "type": "noun",
     "definition": "December; the last month of the year, with Christmas in it."
    },
    {
+    "type": "noun",
     "word": "sorella",
     "surface": "sorella",
-    "type": "noun",
     "definition": "Sister; the daughter of your own mother and father."
    },
    {
+    "type": "noun",
     "word": "relazione",
     "surface": "relazione",
-    "type": "noun",
     "definition": "Relationship; the way two people get on over the years."
    },
    {
+    "type": "noun",
     "word": "mamma",
     "surface": "mamma",
-    "type": "noun",
     "definition": "Mum; the warm everyday word Italians use for their mother."
    },
    {
+    "type": "noun",
     "word": "papà",
     "surface": "papà",
-    "type": "noun",
     "definition": "Dad; the warm everyday word Italians use for their father."
    },
    {
+    "type": "noun",
     "word": "venerdì",
     "surface": "venerdì",
-    "type": "noun",
     "definition": "Friday; the last day of the Italian working week."
    },
    {
+    "type": "noun",
     "word": "secchio",
     "surface": "secchio",
-    "type": "noun",
     "definition": "Bucket; the round container you carry water in."
    },
    {
+    "type": "noun",
     "word": "mappa",
     "surface": "mappa",
-    "type": "noun",
     "definition": "Map; the drawing that shows roads and towns on paper."
    },
    {
+    "type": "noun",
     "word": "aspirapolvere",
     "surface": "aspirapolvere",
-    "type": "noun",
     "definition": "Vacuum cleaner; the machine that sucks the dust off a floor."
    },
    {
+    "type": "noun",
     "word": "film",
     "surface": "film",
-    "type": "noun",
     "definition": "Film; the story you watch on a screen for two hours."
    },
    {
+    "type": "noun",
     "word": "treno",
     "surface": "treno",
-    "type": "noun",
     "definition": "Train; the long line of carriages that runs on rails."
    },
    {
+    "type": "noun",
     "word": "zio",
     "surface": "zio",
-    "type": "noun",
     "definition": "Uncle; the brother of your mother or of your father."
    },
    {
+    "type": "noun",
     "word": "forma",
     "surface": "forma",
-    "type": "noun",
     "definition": "Shape; the outside line of a thing, or the way it works."
    },
    {
+    "type": "noun",
     "word": "bici",
     "surface": "bici",
-    "type": "noun",
     "definition": "Bike; the short everyday word Italians use for a bicycle."
    },
    {
+    "type": "adverb",
     "word": "fuori",
     "surface": "fuori",
-    "type": "adverb",
     "definition": "Outside; not inside the house, the car or the room."
    },
    {
+    "type": "verb",
     "word": "rispondere",
     "surface": "risponde",
-    "type": "verb",
     "definition": "To answer; to say something back, or to pick up the phone."
    },
    {
+    "type": "verb",
     "word": "mangiare",
     "surface": "mangia",
-    "type": "verb",
     "definition": "To eat; to put food in your mouth and swallow it."
    },
    {
+    "type": "verb",
     "word": "finire",
     "surface": "finisce",
-    "type": "verb",
     "definition": "To finish; to come to the end of something."
    },
    {
+    "type": "verb",
     "word": "salire",
     "surface": "sale",
-    "type": "verb",
     "definition": "To go up; to climb stairs or to get into a car."
    },
    {
+    "type": "adjective",
     "word": "caldo",
     "surface": "caldo",
-    "type": "adjective",
     "definition": "Hot or warm; with a high temperature you can feel on the skin."
    }
-  ]
+  ],
+  "arcType": "recurring-character-callback"
  }
 ]

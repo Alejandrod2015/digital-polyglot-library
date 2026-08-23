@@ -1,0 +1,455 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "cattedrale,scuola,banca,posta",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "cattedrale",
+     "answer": "cathedral",
+     "options": [
+      "cathedral",
+      "school",
+      "bank",
+      "post office"
+     ]
+    },
+    {
+     "word": "scuola",
+     "answer": "school",
+     "options": [
+      "cathedral",
+      "school",
+      "bank",
+      "post office"
+     ]
+    },
+    {
+     "word": "banca",
+     "answer": "bank",
+     "options": [
+      "cathedral",
+      "school",
+      "bank",
+      "post office"
+     ]
+    },
+    {
+     "word": "posta",
+     "answer": "post office",
+     "options": [
+      "cathedral",
+      "school",
+      "bank",
+      "post office"
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "supermercato",
+  "sentence": "Paese di notte ha una scuola, una banca, la posta e un [[supermercato]] chiuso.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "supermarket",
+   "options": [
+    "supermarket",
+    "ship",
+    "illness",
+    "yard"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Paese di notte ha una scuola, una banca, la posta e un supermercato chiuso.",
+    "targetWord": "supermercato",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "palazzo",
+  "sentence": "Passano davanti a un _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "palazzo",
+   "options": [
+    "palazzo",
+    "credito",
+    "università",
+    "termometro"
+   ],
+   "translation": "They walk past a _____.",
+   "optionTranslations": [
+    "large building",
+    "credit",
+    "university",
+    "thermometer"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Passano davanti a un palazzo.",
+    "targetWord": "palazzo",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "teatro",
+  "sentence": "Passano davanti a un palazzo, a un [[teatro]], a un cinema.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "theater",
+   "options": [
+    "theater",
+    "airport",
+    "cat",
+    "password"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Passano davanti a un palazzo, a un teatro, a un cinema.",
+    "targetWord": "teatro",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cinema",
+  "sentence": "Un palazzo, a un teatro, a un _____ e a un parco.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cinema",
+   "options": [
+    "cinema",
+    "multa",
+    "ottobre",
+    "giugno"
+   ],
+   "translation": "A block of flats, a theatre, a _____ and a park.",
+   "optionTranslations": [
+    "cinema",
+    "fine",
+    "October",
+    "June"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Un palazzo, a un teatro, a un cinema e a un parco.",
+    "targetWord": "cinema",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "parco",
+  "sentence": "Davanti a un palazzo, a un teatro, a un cinema e a un [[parco]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "park",
+   "options": [
+    "park",
+    "Saturday",
+    "ham",
+    "fever"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Davanti a un palazzo, a un teatro, a un cinema e a un parco.",
+    "targetWord": "parco",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "conversazione",
+  "sentence": "Teo cammina piano e la _____ va avanti.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "conversazione",
+   "options": [
+    "conversazione",
+    "sveglia",
+    "inverno",
+    "mucche"
+   ],
+   "translation": "Teo walks slowly and the _____ carries on.",
+   "optionTranslations": [
+    "conversation",
+    "to wake up",
+    "winter",
+    "cow"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Teo cammina piano e la conversazione va avanti.",
+    "targetWord": "conversazione",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "macelleria",
+  "sentence": "Qui la [[macelleria]] apre tre giorni.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "butcher's shop",
+   "options": [
+    "butcher's shop",
+    "night",
+    "machine; car",
+    "recipe"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Qui la macelleria apre tre giorni.",
+    "targetWord": "macelleria",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "panetteria",
+  "sentence": "La macelleria apre tre giorni e la [[panetteria]] uno, però la gente resta, aggiunge.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "bakery",
+   "options": [
+    "bakery",
+    "throat",
+    "bread roll with something inside",
+    "biscuit"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "La macelleria apre tre giorni e la panetteria uno, però la gente resta, aggiunge.",
+    "targetWord": "panetteria",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "edificio",
+  "sentence": "Ogni [[edificio]] del paese ha una storia che Dario racconta a metà.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "building",
+   "options": [
+    "building",
+    "boot of a car",
+    "screwdriver",
+    "August"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Ogni edificio del paese ha una storia che Dario racconta a metà.",
+    "targetWord": "edificio",
+    "language": "italian"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "castello",
+  "sentence": "Davanti al [[castello]] Rosa apre il bagagliaio, sistema la coperta e prende la torcia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "castle",
+   "options": [
+    "castle",
+    "painting",
+    "June",
+    "tablet"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Davanti al castello Rosa apre il bagagliaio, sistema la coperta e prende la torcia.",
+    "targetWord": "castello",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "giovane",
+  "sentence": "Dario, che è più [[giovane]] di quello che sembra, resta in mezzo alla strada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "young",
+   "options": [
+    "young",
+    "polite",
+    "old",
+    "weak"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Dario, che è più giovane di quello che sembra, resta in mezzo alla strada.",
+    "targetWord": "giovane",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "viaggia",
+  "sentence": "Il santo di questo paese protegge chi [[viaggia]] di notte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "travels",
+   "options": [
+    "travels",
+    "tells",
+    "forget",
+    "asks"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Il santo di questo paese protegge chi viaggia di notte.",
+    "targetWord": "viaggia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tristezza",
+  "sentence": "Rosa guida piano per venti chilometri, senza [[tristezza]], con il graffio sulla portiera.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sadness",
+   "options": [
+    "sadness",
+    "recipe",
+    "fine",
+    "photo"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Rosa guida piano per venti chilometri, senza tristezza, con il graffio sulla portiera.",
+    "targetWord": "tristezza",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "notte",
+  "sentence": "Il paese di [[notte]] ha una scuola.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "night",
+   "options": [
+    "night",
+    "sheep",
+    "salad",
+    "swimming costume"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Il paese di notte ha una scuola.",
+    "targetWord": "notte",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cammina",
+  "sentence": "Teo [[cammina]] piano e la conversazione va avanti.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "walks",
+   "options": [
+    "walks",
+    "collects",
+    "counts; matters",
+    "pulls; blows"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Teo cammina piano e la conversazione va avanti.",
+    "targetWord": "cammina",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "storia",
+  "sentence": "Ogni edificio del paese ha una [[storia]] che Dario racconta a metà.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "story, and also history",
+   "options": [
+    "story, and also history",
+    "jumper",
+    "ambulance",
+    "machine; car"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Ogni edificio del paese ha una storia che Dario racconta a metà.",
+    "targetWord": "storia",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "coperta",
+  "sentence": "Davanti al castello Rosa apre il bagagliaio, sistema la [[coperta]] e prende la torcia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blanket",
+   "options": [
+    "blanket",
+    "sausage",
+    "cold",
+    "course of treatment"
+   ],
+   "audioClip": {
+    "storySlug": "il-palco-si-svuota-alluna",
+    "storySource": "user",
+    "sentence": "Davanti al castello Rosa apre il bagagliaio, sistema la coperta e prende la torcia.",
+    "targetWord": "coperta",
+    "language": "italian"
+   }
+  },
+  "featured": false
+ }
+]
