@@ -3370,6 +3370,38 @@
   "œufs": {
    "g": "eggs (l'œuf)",
    "t": "noun"
+  },
+  "quelqu'un": {
+   "g": "somebody, someone (quelqu'un)",
+   "t": "pronoun"
+  },
+  "jusqu'à": {
+   "g": "until, as far as (jusqu'à)",
+   "t": "preposition"
+  },
+  "jusqu'au": {
+   "g": "until the, as far as the (jusqu'à + le)",
+   "t": "preposition"
+  },
+  "jusqu'en": {
+   "g": "until, right up to (jusqu'en)",
+   "t": "preposition"
+  },
+  "jusqu'où": {
+   "g": "how far (jusqu'où)",
+   "t": "adverb"
+  },
+  "aujourd'hui": {
+   "g": "today (aujourd'hui)",
+   "t": "adverb"
+  },
+  "d'abord": {
+   "g": "first, to begin with (d'abord)",
+   "t": "adverb"
+  },
+  "d'accord": {
+   "g": "all right, agreed (d'accord)",
+   "t": "interjection"
   }
  }
 }
