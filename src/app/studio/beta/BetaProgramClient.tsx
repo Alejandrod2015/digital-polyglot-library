@@ -239,6 +239,7 @@ type Rules = {
   feedbackAskAfterDays: number;
   midSurveyAfterDays: number;
   finalSurveyBeforeEndDays: number;
+  finalSurveyMinTenureDays: number;
   reviewAskMinRating: number;
 };
 
@@ -2203,6 +2204,7 @@ function RulesPanel({
           {num("feedbackAskAfterDays", "Feedback ask", "Days after a tester starts.")}
           {num("midSurveyAfterDays", "Halfway survey", "Days after a tester starts.")}
           {num("finalSurveyBeforeEndDays", "Final survey", "Days before the beta ends.")}
+          {num("finalSurveyMinTenureDays", "Final survey floor", "Days a tester must have been in. Under it, and with no story finished, the survey waits.")}
           {dateField("betaEndsAt", "Beta ends", "Empty means the final survey never fires.")}
           {dateField("launchedAt", "Launched on", "Empty means the review ask never fires.")}
           {num("reviewAskMinRating", "Review ask at", "Final rating at or above this gets the review ask.")}

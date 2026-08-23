@@ -61,6 +61,16 @@ export type BetaRulesConfig = {
   /** Days before betaEndsAt that the final survey goes out. */
   finalSurveyBeforeEndDays: number;
   /**
+   * Days a tester must have been in before the final survey can reach them.
+   * The survey asks what finally made it click and what nearly made them
+   * delete it, and thanks them for the last few weeks; none of that is a
+   * question you can put to someone who got in yesterday. Below this floor
+   * the send waits rather than being spent, and the closing window runs 14
+   * days past `betaEndsAt`, so a late tester still gets asked once they have
+   * something to answer with.
+   */
+  finalSurveyMinTenureDays: number;
+  /**
    * Final-survey score at or above which a tester is asked for a review.
    * Below it they get the recovery email instead, which asks what was missing
    * and never mentions the App Store.
@@ -82,6 +92,7 @@ export const DEFAULT_BETA_RULES: BetaRulesConfig = {
   feedbackAskAfterDays: 7,
   midSurveyAfterDays: 21,
   finalSurveyBeforeEndDays: 5,
+  finalSurveyMinTenureDays: 7,
   reviewAskMinRating: 8,
 };
 

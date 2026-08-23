@@ -79,6 +79,10 @@ const TRANSACTIONAL_KINDS = new Set<BetaEmailKind>([
   "accepted",
   "accepted_android",
   "waitlist",
+  // Cierra la espera que abrió el correo de lista de espera, así que es la
+  // segunda mitad de algo que la persona empezó, no correo nuevo. Darse de
+  // baja no debería condenar a nadie a no saber nunca cómo acabó su solicitud.
+  "waitlist_closed",
   "declined",
   "install_nudge",
 ]);
@@ -174,13 +178,23 @@ export async function sendBetaEmail(args: {
     return "duplicate";
   }
 
-  // Bulk senders must offer a working one-click opt-out (RFC 8058; Gmail and
-  // Yahoo enforce it). The transactional kinds are answers to something the
-  // applicant did and carry no footer, but everything else is lifecycle mail
-  // and needs both the header and a token the footer link can act on.
+  // Dos cosas distintas que se habían quedado atadas en una.
+  //
+  // La CABECERA `List-Unsubscribe` es de correo masivo (RFC 8058; Gmail y
+  // Yahoo la exigen) y sigue siendo sólo para lo que no es transaccional: la
+  // baja de un correo que responde a algo que la persona acaba de hacer no
+  // significa nada, y ponerla invita a marcar como spam una aceptación.
+  //
+  // El TOKEN del pie es otra cosa, y lo llevan todos. Sin él, el pie caía a un
+  // enlace que no identifica a nadie, y la página de preferencias responde
+  // "abre esto desde un enlace de uno de tus correos" a quien acaba de hacer
+  // exactamente eso. Peor: quien está en lista de espera o ha sido rechazado
+  // NO tiene cuenta con la que entrar, así que ese pie era la única salida que
+  // se le ofrecía y no llevaba a ninguna parte. Son las cinco clases más
+  // enviadas del programa (90 de 113 correos hasta el 2026-08-23).
   const isLifecycle = !TRANSACTIONAL_KINDS.has(kind);
-  const unsubscribeToken = isLifecycle ? createEmailToken(signup.email) : undefined;
-  const unsubscribeUrl = unsubscribeToken
+  const unsubscribeToken = createEmailToken(signup.email);
+  const unsubscribeUrl = isLifecycle
     ? `${betaBaseUrl()}/api/email/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}`
     : null;
 

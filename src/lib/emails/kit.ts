@@ -373,9 +373,14 @@ function footer(
   // Token-bearing links work without a logged-in session (clicked from inbox).
   const tokenQs = unsubscribeToken ? `?token=${encodeURIComponent(unsubscribeToken)}` : "";
   const manageUrl = `${baseUrl}/account/emails${tokenQs}`;
+  // Sin `?unsubscribe=1`: ese parámetro no lo leía nadie (ni la página ni la
+  // ruta), así que el enlace prometía una baja y sólo abría la pantalla de
+  // preferencias, que además pide sesión. El respaldo sin token es hoy código
+  // muerto en los envíos reales, porque todos los remitentes pasan uno; queda
+  // por si algún constructor nuevo se olvida, y al menos ya no miente.
   const unsubUrl = unsubscribeToken
     ? `${baseUrl}/api/email/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}`
-    : `${baseUrl}/account/emails?unsubscribe=1`;
+    : `${baseUrl}/account/emails`;
   const noteText = note || "You're receiving this as part of your Digital Polyglot account.";
   return `<tr><td style="padding:28px 44px 34px;text-align:${justify};">
     <div style="height:1px;background:${DPE.hair};margin-bottom:22px;"></div>

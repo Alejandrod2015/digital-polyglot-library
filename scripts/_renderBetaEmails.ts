@@ -24,6 +24,10 @@ const common: BetaEmailData = {
   reviewUrl: "https://apps.apple.com/app/id6760942737?action=write-review",
   playOptInUrl: "https://play.google.com/apps/testing/com.digitalpolyglot.app",
   playGroupJoinUrl: "https://groups.google.com/g/dpl-android-beta",
+  // Con la forma real (base64url del correo, punto, firma). La vista previa se
+  // usa para juzgar el pie, y sin token pintaba el respaldo, que no es lo que
+  // recibe nadie desde que TODAS las clases llevan uno.
+  unsubscribeToken: "bWFydGFAZXhhbXBsZS5jb20.ZGVtby1zaWduYXR1cmU",
 };
 
 const release: BetaEmailData = {
@@ -45,10 +49,18 @@ const release: BetaEmailData = {
   ],
 };
 
-const ORDER: Array<{ kind: BetaEmailKind; label: string; data: BetaEmailData }> = [
+// `file` estaba en uso desde siempre y sin declarar: `scripts/` no entra en el
+// `include` del tsconfig, así que nadie se quejaba.
+const ORDER: Array<{
+  kind: BetaEmailKind;
+  label: string;
+  data: BetaEmailData;
+  file?: string;
+}> = [
   { kind: "accepted", label: "1 · Accepted, you're in", data: common },
   { kind: "accepted_android", label: "1b · Accepted, Android", data: { ...common, platform: "android" } },
   { kind: "waitlist", label: "2 · Waitlist", data: common },
+  { kind: "waitlist_closed", label: "2b · Waitlist closed, never got in", data: common },
   { kind: "declined", label: "3 · Declined", data: common },
   { kind: "install_nudge", label: "4 · Never installed (day 3)", data: common },
   {
@@ -58,7 +70,9 @@ const ORDER: Array<{ kind: BetaEmailKind; label: string; data: BetaEmailData }> 
     file: "install_nudge_android",
   },
   { kind: "feedback_ask", label: "5 · One-question ask (day 7)", data: common },
-  { kind: "mid_survey", label: "6 · Halfway survey (day 21)", data: common },
+  // Sin día en la etiqueta: el umbral es `midSurveyAfterDays`, se cambia desde
+  // el Studio, y decía 21 con la config viva en 14.
+  { kind: "mid_survey", label: "6 · Mid-beta survey", data: common },
   { kind: "release_note", label: "7 · Build note", data: release },
   {
     kind: "release_note",
@@ -66,9 +80,35 @@ const ORDER: Array<{ kind: BetaEmailKind; label: string; data: BetaEmailData }> 
     data: { ...release, platform: "android" },
     file: "release_note_android",
   },
+  // Los tres nombran la TIENDA PÚBLICA, y hasta el 2026-08-24 dos de ellos la
+  // fijaban a mano en "the App Store". No se veía aquí porque la vista previa
+  // sólo tenía variante Android de los dos correos de instalación, que son los
+  // únicos donde ya se sabía que la plataforma importaba.
   { kind: "final_survey", label: "8 · Final survey", data: common },
+  {
+    kind: "final_survey",
+    label: "8b · Final survey, Android",
+    data: { ...common, platform: "android" },
+    file: "final_survey_android",
+  },
   { kind: "review_ask", label: "9 · Review ask (happy)", data: common },
+  {
+    kind: "review_ask",
+    label: "9b · Review ask, Android",
+    data: {
+      ...common,
+      platform: "android",
+      reviewUrl: "https://play.google.com/store/apps/details?id=com.digitalpolyglot.app",
+    },
+    file: "review_ask_android",
+  },
   { kind: "review_recover", label: "10 · Recovery (unhappy)", data: common },
+  {
+    kind: "review_recover",
+    label: "10b · Recovery, Android",
+    data: { ...common, platform: "android" },
+    file: "review_recover_android",
+  },
 ];
 
 const cards: string[] = [];

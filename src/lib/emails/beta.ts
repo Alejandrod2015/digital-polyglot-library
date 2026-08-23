@@ -34,6 +34,10 @@ export type BetaEmailKind =
   // that hedged on every line.
   | "accepted_android"
   | "waitlist"
+  // El que cierra una espera. `declined` es un no en el momento de solicitar;
+  // este es un no que llega después de semanas de silencio, y no puede sonar
+  // igual: a esta persona se le dijo que esperase y esperó.
+  | "waitlist_closed"
   | "declined"
   | "install_nudge"
   | "feedback_ask"
@@ -111,6 +115,35 @@ function firstNameOr(data: BetaEmailData | undefined, fallback: string): string 
   return n && n.length > 0 ? n : fallback;
 }
 
+/**
+ * La tienda PÚBLICA de este destinatario, con su artículo puesto: encaja tal
+ * cual en "Digital Polyglot is on ___" y en "the app goes to ___ shortly".
+ *
+ * Existe como función porque la cadena "the App Store" se escribió a pelo en
+ * cuatro sitios y sólo dos de ellos miraban la plataforma. El comentario de
+ * `review_ask` ya lo llamaba "third time this bites"; la cuarta y la quinta
+ * estaban una función más arriba y otra más abajo, en la encuesta final y en
+ * el correo de recuperación, que son justo los dos que se envían a TODO el
+ * mundo. Diez de los cuarenta y cuatro solicitantes son de Android.
+ *
+ * No cubre de dónde se instala la BETA (TestFlight o el enlace de tester), que
+ * es otro eje y cada correo lo resuelve con su propio texto: son dos flujos
+ * que no comparten ni un paso.
+ */
+function publicStore(data?: BetaEmailData): string {
+  return data?.platform === "android" ? "Google Play" : "the App Store";
+}
+
+/**
+ * El índice de historias en la web.
+ *
+ * Era `/stories`, que es un 404: bajo esa ruta sólo vive `[slug]`, así que
+ * `/stories/algo` abre una historia y `/stories` a secas no abre nada. El
+ * catálogo está en `/explore/stories`. Lo llevaba mal el correo de rechazo
+ * desde siempre, que es justo aquel al que se le ofrece como consuelo.
+ */
+const WEB_STORIES = "/explore/stories";
+
 /** Bulleted list in the product's voice: no emoji, a gold rule per row. */
 function bullets(items: string[], tone: "gold" | "sky" | "green" = "gold"): string {
   const color = tone === "gold" ? DPE.gold : tone === "sky" ? DPE.sky : DPE.green;
@@ -161,9 +194,19 @@ function signature(): string {
  * `shell` with the sign-off appended. Wrapped rather than added to the shell
  * itself: `kit.ts` is shared with the lifecycle emails, which are not written
  * in anyone's voice and must not grow a personal signature by side effect.
+ *
+ * Y con su propia nota de pie. La de `kit.ts` dice "as part of your Digital
+ * Polyglot account", que es verdad para la cadena general y falso aquí: quien
+ * está en lista de espera o ha sido rechazado no tiene cuenta ninguna. Lo que
+ * los tiene en esta lista es haberse apuntado a la beta, así que eso es lo que
+ * dice.
  */
 function betaShell(opts: Parameters<typeof shell>[0]): string {
-  return shell({ ...opts, blocks: [...opts.blocks, block(signature(), "26px 44px 0", false)] });
+  return shell({
+    ...opts,
+    footerNote: opts.footerNote ?? "You're getting this because you applied to the Digital Polyglot beta.",
+    blocks: [...opts.blocks, block(signature(), "26px 44px 0", false)],
+  });
 }
 
 /* ══════════════════════════════════════════════ 1 · ACCEPTED */
@@ -484,39 +527,70 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
 /* ══════════════════════════════════════════════ 2 · WAITLIST */
 // Honest about the reason. A waitlist email that pretends to be an acceptance
 // burns the applicant twice.
+//
+// Reescrito el 2026-08-24 porque decía tres cosas que no eran verdad, y es el
+// correo más enviado del programa (40 de 113):
+//
+//   "invites go out in waves"      No hay tandas. `autoInviteEnabled` está en
+//                                  false y cada solicitud se mira a mano, una
+//                                  a una, según llega.
+//   "invites go out oldest first"  Tampoco. Se elige por encaje, no por fecha.
+//   "You will hear from me either  No existe ningún correo que cierre una
+//    way. No silent rejections."   espera. El rechazo sólo sale en el momento
+//                                  del triaje; quien se queda esperando no
+//                                  recibe nada más. Hay una persona con 69
+//                                  días de silencio a la que esto se le
+//                                  prometió por escrito.
+//
+// Y la promesa que sí se puede sostener, medida sobre los 32 que entraron:
+// mediana de 28 h, 20 de 32 dentro de 48 h, pero el percentil 75 está en 6
+// días y el peor caso en 15. De ahí "un par de días" junto con "algunos
+// esperan bastante más", que es la forma honesta de decir las dos cosas.
 export function buildBetaWaitlistEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
 
   const blocks = [
     block(
-      `${eyebrow("Application received")}${head(`You're on the<br/>${gold("shortlist")}.`, 40)}${lead(
-        `Thanks for applying, ${esc(name)}. I run the beta in small groups so every report gets read properly, which means invites go out in waves.`,
+      `${eyebrow("Application received")}${head(`Not a no.<br/>A ${gold("wait")}.`, 40)}${lead(
+        `Thanks for applying, ${esc(name)}. I read every application myself, and there are only so many testers I can look after at once, so yours is waiting on a place rather than being turned down.`,
       )}`,
       "40px 44px 0",
     ),
     block(
       card(
-        `${cardTitle("What happens next")}
+        `${cardTitle("What that means in practice")}
         ${bullets([
-          "You keep your place. There is nothing to reapply for.",
-          "When the next wave opens, invites go out oldest first.",
-          "You will hear from me either way. No silent rejections.",
+          "Most people who get in hear back within a couple of days. Some wait a good deal longer.",
+          "A long wait is not a decision. It usually just means the group is full.",
+          "There is nothing to send me, and nothing to reapply for.",
         ])}`,
       ),
       "28px 44px 0",
       false,
     ),
     block(
-      note("Nothing to do in the meantime. If your situation changes, or you have a question, just reply to this email."),
-      "20px 44px 0",
+      card(
+        `${cardTitle("While you wait", DPE.gold)}
+        <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
+          The stories are on the web too, free, with the audio and the tap-any-word translations. It is the same writing the app is built on.
+        </p>`,
+        "rgba(252,211,77,0.3)",
+      ),
+      "16px 44px 0",
+      false,
+    ),
+    block(ctaSecondary("Read on the web", `${b}${WEB_STORIES}`), "24px 44px 0"),
+    block(
+      note("Nothing to do in the meantime. If something changes on your side, or you have a question, just reply to this email."),
+      "16px 44px 0",
     ),
   ];
 
   return {
-    subject: "You're on the shortlist for the beta",
+    subject: "Your beta application is waiting on a place",
     html: betaShell({
-      preheader: "Invites go out in waves. You keep your place.",
+      preheader: "Not a no. There are only so many places open at a time.",
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
@@ -525,9 +599,101 @@ export function buildBetaWaitlistEmail(data?: BetaEmailData): BuiltEmail {
     text: [
       `Thanks for applying, ${name}.`,
       "",
-      `I run the beta in small groups so every report gets read properly, which means invites go out in waves.`,
+      "I read every application myself, and there are only so many testers I can look after at once, so yours is waiting on a place rather than being turned down.",
       "",
-      "You keep your place, there is nothing to reapply for, and invites go out oldest first when the next wave opens. You will hear from me either way.",
+      "What that means in practice:",
+      "  1. Most people who get in hear back within a couple of days. Some wait a good deal longer.",
+      "  2. A long wait is not a decision. It usually just means the group is full.",
+      "  3. There is nothing to send me, and nothing to reapply for.",
+      "",
+      "While you wait, the stories are on the web too, free, with the audio and the tap-any-word translations:",
+      `${b}${WEB_STORIES}`,
+      "",
+      "If something changes on your side, or you have a question, just reply to this email.",
+      "",
+      SIGN_OFF,
+    ].join("\n"),
+  };
+}
+
+/* ══════════════════════════════════════════════ 2b · WAITLIST CLOSED */
+// El correo que faltaba. Hasta el 2026-08-24 una espera no terminaba nunca:
+// `declined` sólo sale durante el triaje, así que a quien quedaba en la lista
+// no le llegaba nada más, jamás. Nueve personas estaban así, la más antigua con
+// 69 días de silencio, y el propio correo de espera les había prometido por
+// escrito que sabrían de mí "either way".
+//
+// La diferencia con `declined` es la deuda. A un rechazado se le dijo que no el
+// primer día y siguió con su vida; a esta persona se le pidió que esperase y
+// esperó semanas. Así que este correo no explica una decisión, reconoce una
+// espera: el fallo es mío por no haberle encontrado sitio, no suyo por no
+// encajar. De ahí que el titular sea en primera persona y no en pasiva.
+export function buildBetaWaitlistClosedEmail(data?: BetaEmailData): BuiltEmail {
+  const b = base(data);
+  const name = firstNameOr(data, "there");
+
+  const blocks = [
+    block(
+      `${eyebrow("The beta is closing")}${head(`I never found<br/>you a ${gold("place")}.`, 38)}${lead(
+        `You applied, ${esc(name)}, and then you waited, and a place never came free. The beta is closing now, so I would rather tell you that than leave the thread open for another month.`,
+      )}`,
+      "40px 44px 0",
+    ),
+    block(
+      card(
+        `<p style="margin:0 0 12px;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
+          The group ran full from start to finish. That is a limit on my side and a thing I got wrong about how many people to let in, not a verdict on your application.
+        </p>
+        <p style="margin:0;font-family:${DPE.font};font-weight:700;font-size:15.5px;line-height:1.6;color:${DPE.fg};">
+          Sorry it took me this long to say so.
+        </p>`,
+      ),
+      "28px 44px 0",
+      false,
+    ),
+    block(
+      card(
+        // Sin repetir la coletilla del correo de espera ("free, with the audio
+        // and the tap-any-word translations"). Es la MISMA persona la que
+        // recibe los dos, con semanas de por medio, y leídos seguidos la
+        // segunda vez suena a plantilla. Aquí lo que aporta es reconocer que
+        // el enlace no es nuevo.
+        `${cardTitle("What is open to you today", DPE.gold)}
+        <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
+          The only thing I can really offer you is the same link I sent when you applied. It is the same writing the testers have been reading the whole time, and it stays free.
+        </p>`,
+        "rgba(252,211,77,0.3)",
+      ),
+      "16px 44px 0",
+      false,
+    ),
+    block(ctaSecondary("Read on the web", `${b}${WEB_STORIES}`), "24px 44px 0"),
+    block(
+      note("I still have your application. If I open another round you are already on the list, and there is nothing to send me in the meantime."),
+      "16px 44px 0",
+    ),
+  ];
+
+  return {
+    subject: "I never found you a place in the beta",
+    html: betaShell({
+      preheader: "The beta is closing and a place never came free. Sorry for the long silence.",
+      blocks,
+      baseUrl: b,
+      assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
+    }),
+    text: [
+      `You applied, ${name}, and then you waited, and a place never came free.`,
+      "",
+      "The beta is closing now, so I would rather tell you that than leave the thread open for another month.",
+      "",
+      "The group ran full from start to finish. That is a limit on my side and a thing I got wrong about how many people to let in, not a verdict on your application. Sorry it took me this long to say so.",
+      "",
+      "The only thing I can really offer you is the same link I sent when you applied. It is the same writing the testers have been reading the whole time, and it stays free.",
+      `${b}${WEB_STORIES}`,
+      "",
+      "I still have your application. If I open another round you are already on the list, and there is nothing to send me in the meantime.",
       "",
       SIGN_OFF,
     ].join("\n"),
@@ -556,7 +722,7 @@ export function buildBetaDeclinedEmail(data?: BetaEmailData): BuiltEmail {
       "28px 44px 0",
       false,
     ),
-    block(ctaSecondary("Read on the web", `${b}/stories`), "24px 44px 0"),
+    block(ctaSecondary("Read on the web", `${b}${WEB_STORIES}`), "24px 44px 0"),
   ];
 
   return {
@@ -573,7 +739,7 @@ export function buildBetaDeclinedEmail(data?: BetaEmailData): BuiltEmail {
       "",
       "The current beta is a small group, and your application is not a fit for this round.",
       "",
-      `You can read on the web today at no cost: ${b}/stories`,
+      `You can read on the web today at no cost: ${b}${WEB_STORIES}`,
       "",
       SIGN_OFF,
     ].join("\n"),
@@ -716,6 +882,13 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
 }
 
 /* ══════════════════════════════════════════════ 6 · MID SURVEY */
+// Sin decir cuánto tiempo lleva la persona ni cuánto queda. Decía "Three weeks
+// in" y "Three weeks down, three to go" con el umbral puesto en 14 días, y "tres
+// por delante" además daba por hecha una beta de seis semanas que no sale de
+// ningún sitio: el final lo marca `betaEndsAt`, que se cambia desde el Studio.
+// Una plantilla no puede afirmar un calendario que otro sitio configura, así
+// que ahora dice lo único que es verdad sea cual sea el umbral: todavía estás
+// a tiempo de cambiar algo.
 export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
@@ -723,8 +896,8 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
 
   const blocks = [
     block(
-      `${eyebrow("Three weeks in")}${head(`Three questions,<br/>${gold("ninety")} seconds.`, 40)}${lead(
-        `Three weeks down, three to go. What you say now decides what gets built in the second half, ${esc(name)}, so this is the moment your answers are worth the most.`,
+      `${eyebrow("Three questions")}${head(`Three questions,<br/>${gold("ninety")} seconds.`, 40)}${lead(
+        `You have been using it a while now, ${esc(name)}. Anything you say while the beta is still running can still change the app, which is not true of anything you tell me after it closes.`,
       )}`,
       "40px 44px 0",
     ),
@@ -746,14 +919,14 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
   return {
     subject: "Three questions, ninety seconds",
     html: betaShell({
-      preheader: "Halfway through the beta. Your answers set the second half.",
+      preheader: "There is still time to act on what you say. Three questions.",
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `Three weeks down, three to go, ${name}. This is the halfway point of the beta.`,
+      `You have been using it a while now, ${name}. Anything you say while the beta is still running can still change the app, which is not true of anything you tell me after it closes.`,
       "",
       "Three questions, ninety seconds:",
       "  1. How likely are you to recommend it, nought to ten?",
@@ -875,12 +1048,13 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
 export function buildBetaFinalSurveyEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
+  const store = publicStore(data);
   const url = data?.feedbackUrl ?? `${b}/beta/final`;
 
   const blocks = [
     block(
       `${eyebrow("The beta is closing")}${head(`Last ask, and the<br/>${gold("biggest")} one.`, 38)}${lead(
-        `The app goes to the App Store shortly. What you say here, ${esc(name)}, is the last thing that can still change it before everyone else arrives.`,
+        `The app goes to ${esc(store)} shortly. What you say here, ${esc(name)}, is the last thing that can still change it before everyone else arrives.`,
       )}`,
       "40px 44px 0",
     ),
@@ -914,7 +1088,7 @@ export function buildBetaFinalSurveyEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `The beta is closing, ${name}, and the app goes to the App Store shortly.`,
+      `The beta is closing, ${name}, and the app goes to ${store} shortly.`,
       "",
       "Four questions:",
       "  1. Nought to ten, how likely are you to recommend it?",
@@ -938,10 +1112,15 @@ export function buildBetaFinalSurveyEmail(data?: BetaEmailData): BuiltEmail {
 export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
-  const reviewUrl = data?.reviewUrl ?? `${b}`;
+  // Sin respaldo, a propósito. Tapaba el hueco con la home de la web, así que
+  // un campo vacío en el Studio no se notaba: salía un botón "Leave a review"
+  // que llevaba a la portada, y el correo es de un solo disparo por tester.
+  // Quien manda ya retiene el envío cuando no hay url; si aun así llega aquí
+  // sin ella, el correo sale sin botón, que es feo pero no engaña a nadie.
+  const reviewUrl = data?.reviewUrl?.trim() || null;
   // Third time this bites: an Android tester sent to the App Store cannot act
   // on the ask at all. Same fix as the install nudge and the build note.
-  const store = data?.platform === "android" ? "Google Play" : "the App Store";
+  const store = publicStore(data);
 
   const blocks = [
     block(
@@ -962,7 +1141,7 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
       "28px 44px 0",
       false,
     ),
-    block(cta("Leave a review", reviewUrl), "24px 44px 0"),
+    ...(reviewUrl ? [block(cta("Leave a review", reviewUrl), "24px 44px 0")] : []),
     block(note("And if you would rather not, that is genuinely fine. You already gave me the part that mattered most."), "16px 44px 0"),
   ];
 
@@ -984,8 +1163,7 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
       "",
       "Two sentences about what it actually did for you beats five stars and no words.",
       "",
-      `Leave a review: ${reviewUrl}`,
-      "",
+      ...(reviewUrl ? [`Leave a review: ${reviewUrl}`, ""] : []),
       "And if you would rather not, that is genuinely fine.",
       "",
       SIGN_OFF,
@@ -999,12 +1177,13 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
 export function buildBetaReviewRecoverEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
+  const store = publicStore(data);
   const url = data?.feedbackUrl ?? `${b}/beta/feedback`;
 
   const blocks = [
     block(
       `${eyebrow("It's live")}${head(`It shipped, but not<br/>${gold("for")} you yet.`, 38)}${lead(
-        `Digital Polyglot is on the App Store. You did not rate it highly, ${esc(name)}, and that is the more useful answer of the two.`,
+        `Digital Polyglot is on ${esc(store)}. You did not rate it highly, ${esc(name)}, and that is the more useful answer of the two.`,
       )}`,
       "40px 44px 0",
     ),
@@ -1031,7 +1210,7 @@ export function buildBetaReviewRecoverEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `Digital Polyglot is on the App Store, ${name}.`,
+      `Digital Polyglot is on ${store}, ${name}.`,
       "",
       "You did not rate it highly, and that is the more useful answer of the two.",
       "",
@@ -1050,6 +1229,7 @@ export const BETA_EMAIL_BUILDERS: Record<BetaEmailKind, (data?: BetaEmailData) =
   accepted: buildBetaAcceptedEmail,
   accepted_android: buildBetaAcceptedAndroidEmail,
   waitlist: buildBetaWaitlistEmail,
+  waitlist_closed: buildBetaWaitlistClosedEmail,
   declined: buildBetaDeclinedEmail,
   install_nudge: buildBetaInstallNudgeEmail,
   feedback_ask: buildBetaFeedbackAskEmail,

@@ -8,7 +8,7 @@
 
 import { createClerkClient } from "@clerk/backend";
 import { prisma } from "@/lib/prisma";
-import { sendBetaEmail } from "@/lib/betaProgram";
+import { sendBetaEmail, backfillBetaTesterLinks } from "@/lib/betaProgram";
 import { isApnsConfigured, sendApnsPush } from "@/lib/apnsPush";
 import type { BetaRelease } from "@/generated/prisma";
 
@@ -16,8 +16,8 @@ const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY!
 
 type StoredToken = { provider?: string; token?: string };
 
-/** Statuses that should hear about a new build. */
-const NOTIFIABLE_STATUSES = ["invited", "accepted"];
+// El filtro de destinatarios vive ahora en la propia consulta, porque no es
+// una lista de estados: `invited` cuenta o no según haya entrado la persona.
 
 function asStringArray(v: unknown): string[] {
   if (!Array.isArray(v)) return [];
@@ -72,8 +72,31 @@ export async function publishRelease(
   });
   if (!release) return { ok: false, releaseId, emailed: 0, emailFailed: 0, pushed: 0, error: "Release not found" };
 
+  // Reparar los enlaces con Clerk ANTES de elegir a quién se escribe, igual
+  // que hace el cron y por el mismo motivo: aquí abajo se filtra por
+  // `clerkUserId`, así que un enlace sin reparar no se queda en un número mal
+  // contado, deja a un tester real fuera de la nota de versión.
+  await backfillBetaTesterLinks({ force: true }).catch((err) => {
+    console.error("backfillBetaTesterLinks failed before publishing a release:", err);
+  });
+
   const testers = await prisma.betaSignup.findMany({
-    where: { status: { in: NOTIFIABLE_STATUSES }, planRevokedAt: null },
+    // Quien nunca entró NO recibe la nota de versión. El correo dice "abre
+    // TestFlight y pulsa Actualizar", que a alguien que jamás instaló la app
+    // no le pide algo inútil: le pide algo imposible, y encima le da a
+    // entender que el programa no sabe quién es. Ese mismo día ya le toca el
+    // aviso de instalación, que es lo que de verdad tiene que hacer.
+    //
+    // La condición es la misma con la que el cron decide ese aviso
+    // (`invited` sin `clerkUserId`), para que las dos mitades no puedan
+    // discrepar sobre quién ha entrado.
+    where: {
+      planRevokedAt: null,
+      OR: [
+        { status: "accepted" },
+        { status: "invited", clerkUserId: { not: null } },
+      ],
+    },
     // `platform` decides whether the build note says TestFlight or Google Play.
     select: {
       id: true,

@@ -28,6 +28,21 @@ import type { BetaEmailKind } from "@/lib/emails/beta";
 const DAY = 24 * 60 * 60 * 1000;
 const MAX_TESTERS_PER_RUN = 2000;
 
+/**
+ * Eventos que cuentan como "ha tocado el contenido", y por tanto como "puede
+ * opinar". Abrir una historia ya cuenta: quien la abrió y la cerró tiene una
+ * razón para haberla cerrado, que es exactamente lo que preguntan estos
+ * correos.
+ */
+const ENGAGEMENT_EVENTS = [
+  "story_opened",
+  "vocab_clicked",
+  "audio_play",
+  "audio_complete",
+  "practice_session_started",
+  "practice_session_completed",
+];
+
 function daysSince(from: Date | null | undefined, now: Date): number | null {
   if (!from) return null;
   return Math.floor((now.getTime() - from.getTime()) / DAY);
@@ -71,14 +86,42 @@ export function decideBetaEmail(args: {
   /** Their final-survey rating, if they have answered it. */
   finalRating: number | null;
   /**
-   * Stories this tester has actually finished. Gates the two emails that ask
-   * for an opinion: see the note where they are decided.
+   * Cuántas veces esta persona ha TOCADO el contenido: historias abiertas,
+   * palabras pulsadas, audio, práctica. Gates the three emails that ask for an
+   * opinion: see the note where they are decided.
+   *
+   * Contaba historias TERMINADAS hasta el 2026-08-24, y esa cuenta se quedaba
+   * corta justo donde importa. El único texto que ha escrito un tester en todo
+   * el programa vino de alguien con cero historias terminadas y once palabras
+   * pulsadas: tenía opinión, y de las útiles.
    */
-  storiesFinished: number;
+  engagementEvents: number;
   alreadySent: Set<string>;
 }): BetaLifecycleDecision {
-  const { tester, now, rules, finalRating, storiesFinished, alreadySent } = args;
+  const { tester, now, rules, finalRating, engagementEvents, alreadySent } = args;
   const not = (k: BetaEmailKind) => !alreadySent.has(k);
+
+  // ── Cerrar una espera. Va la PRIMERA porque es la única rama que mira a
+  // alguien que no llegó a entrar, y ninguna de las de abajo la alcanzaría:
+  // la de reseña devuelve null sin nota de encuesta y el resto exige
+  // `invited` o `accepted`. ──
+  //
+  // Sólo a quien recibió el correo de espera: eso es lo que prueba que se le
+  // pidió esperar, y es a lo que se le debe una respuesta. Sin esa condición,
+  // una solicitud nueva que cayera con la beta ya cerrada recibiría un "nunca
+  // te encontré sitio" por algo que no llegó a esperar.
+  if (tester.status === "waitlist") {
+    const untilEndForWaiter = daysUntil(rules.betaEndsAt, now);
+    if (
+      untilEndForWaiter !== null &&
+      untilEndForWaiter < 0 &&
+      alreadySent.has("waitlist") &&
+      not("waitlist_closed")
+    ) {
+      return { kind: "waitlist_closed" };
+    }
+    return null;
+  }
 
   // ── Post-launch: the review branch. Runs first because once the app is
   // live, nothing else in the schedule is still relevant. ──
@@ -105,33 +148,49 @@ export function decideBetaEmail(args: {
   // Everything below is for testers who are actually in.
   if (tester.status !== "accepted") return null;
 
-  // ── Closing week: the final survey outranks the routine schedule. ──
-  const untilEnd = daysUntil(rules.betaEndsAt, now);
-  if (
-    untilEnd !== null &&
-    untilEnd <= rules.finalSurveyBeforeEndDays &&
-    untilEnd >= -14 &&
-    not("final_survey")
-  ) {
-    return { kind: "final_survey" };
-  }
-
   const tenure = daysSince(tester.planGrantedAt ?? tester.invitedAt, now);
   if (tenure === null) return null;
 
-  // Estos dos piden una OPINIÓN, y sólo puede opinar quien ha usado esto. El
-  // resto del calendario va por antigüedad porque son avisos; estos no.
+  // Las tres peticiones de OPINIÓN comparten suelo: sólo puede opinar quien ha
+  // usado esto. El resto del calendario va por antigüedad porque son avisos;
+  // estas no.
   //
-  // Antes bastaba con la antigüedad, y eso los mandaba a quien había abierto la
+  // Antes bastaba con la antigüedad, y eso las mandaba a quien había abierto la
   // app una vez y nada más. El daño no es que moleste: es que la petición es de
   // un solo disparo (`not()` la marca como enviada y no vuelve a salir jamás),
   // así que gastarla en alguien sin nada que decir le quita el turno para
   // siempre. Cuando dos semanas después ya tenga opinión, ya no se le preguntará.
   //
   // No enviar aquí no pierde nada: la petición sigue disponible y sale el día
-  // que terminen su primera historia, que es cuando por fin tienen algo que
+  // que abran su primera historia, que es cuando por fin tienen algo que
   // contar.
-  const canOpine = storiesFinished > 0;
+  const canOpine = engagementEvents > 0;
+
+  // ── Closing week: the final survey outranks the routine schedule. ──
+  //
+  // Con el mismo suelo de uso que las otras dos, y además uno de antigüedad
+  // propio. La encuesta pregunta qué hizo por fin clic y qué estuvo a punto de
+  // hacerte borrarla, y da las gracias por "estas últimas semanas": a quien
+  // entró ayer no se le puede preguntar ninguna de las tres cosas.
+  //
+  // El 2026-08-23 salió a 18 personas sin ningún filtro: 9 no habían terminado
+  // una sola historia, 4 llevaban menos de un día dentro, y dos de ellas habían
+  // recibido el aviso de instalación ("parece que la app no llegó a abrirse")
+  // la víspera. La ventana de cierre llega hasta 14 días DESPUÉS del final, así
+  // que esperar aquí no gasta la petición: sale el día que la persona cruza el
+  // suelo, si lo cruza.
+  const untilEnd = daysUntil(rules.betaEndsAt, now);
+  if (
+    untilEnd !== null &&
+    untilEnd <= rules.finalSurveyBeforeEndDays &&
+    untilEnd >= -14 &&
+    canOpine &&
+    tenure >= rules.finalSurveyMinTenureDays &&
+    not("final_survey")
+  ) {
+    return { kind: "final_survey" };
+  }
+
   if (canOpine && tenure >= rules.midSurveyAfterDays && not("mid_survey")) {
     return { kind: "mid_survey" };
   }
@@ -163,7 +222,11 @@ export async function runBetaLifecycle(now: Date = new Date()): Promise<BetaLife
   });
 
   const testers = await prisma.betaSignup.findMany({
-    where: { status: { in: ["invited", "accepted"] }, planRevokedAt: null },
+    // `waitlist` entra aquí desde el 2026-08-24. Antes el cron no los miraba
+    // siquiera, que es la razón de fondo por la que una espera no terminaba
+    // nunca: no había plantilla, pero es que tampoco había pasada que los
+    // leyera. La única rama que les aplica es la que cierra la espera.
+    where: { status: { in: ["invited", "accepted", "waitlist"] }, planRevokedAt: null },
     select: {
       id: true,
       email: true,
@@ -182,22 +245,26 @@ export async function runBetaLifecycle(now: Date = new Date()): Promise<BetaLife
     take: MAX_TESTERS_PER_RUN,
   });
 
-  // Historias terminadas por tester, en una sola consulta agrupada. Es lo que
-  // separa "lleva cinco días" de "tiene algo que contar", y sin ella los dos
-  // correos que piden opinión salían por calendario a gente que no había usado
-  // la app. Sólo cuenta a quien tiene enlace con Clerk; sin él no hay eventos
-  // que mirar, y esa persona todavía no ha entrado.
+  // Contacto real con el contenido por tester, en una sola consulta agrupada.
+  // Es lo que separa "lleva cinco días" de "tiene algo que contar", y sin ella
+  // los correos que piden opinión salían por calendario a gente que no había
+  // usado la app. Sólo cuenta a quien tiene enlace con Clerk; sin él no hay
+  // eventos que mirar, y esa persona todavía no ha entrado.
+  //
+  // La lista es explícita, y deja fuera a propósito los eventos de onboarding
+  // y de alta: terminar el cuestionario de nivel no es haber leído nada, y era
+  // lo único que tenían siete de los testers a los que se preguntó.
   const testerUserIds = testers
     .map((t) => t.clerkUserId)
     .filter((id): id is string => Boolean(id));
-  const finishedByUser = new Map<string, number>();
+  const engagementByUser = new Map<string, number>();
   if (testerUserIds.length > 0) {
     const grouped = await prisma.userMetric.groupBy({
       by: ["userId"],
-      where: { userId: { in: testerUserIds }, eventType: "audio_complete" },
+      where: { userId: { in: testerUserIds }, eventType: { in: ENGAGEMENT_EVENTS } },
       _count: { _all: true },
     });
-    for (const g of grouped) finishedByUser.set(g.userId, g._count._all);
+    for (const g of grouped) engagementByUser.set(g.userId, g._count._all);
   }
 
   // Final-survey ratings for everyone in one query. The review branch needs
@@ -234,7 +301,7 @@ export async function runBetaLifecycle(now: Date = new Date()): Promise<BetaLife
       now,
       rules,
       finalRating: finalBySignup.get(tester.id) ?? null,
-      storiesFinished: tester.clerkUserId ? (finishedByUser.get(tester.clerkUserId) ?? 0) : 0,
+      engagementEvents: tester.clerkUserId ? (engagementByUser.get(tester.clerkUserId) ?? 0) : 0,
       alreadySent: sentBySignup.get(tester.id) ?? new Set(),
     });
 
@@ -250,6 +317,38 @@ export async function runBetaLifecycle(now: Date = new Date()): Promise<BetaLife
       continue;
     }
 
+    // La tienda se elige por tester, aquí, que es donde la fila está a mano.
+    // Las reglas guardan UNA url de reseña y apunta a Apple; dársela a alguien
+    // de Android es un botón que no puede pulsar.
+    //
+    // Y la de Play ya no depende de que esté puesta la de Apple. Estaban
+    // encadenadas (`decision.reviewUrl == null ? null : ...`), así que el
+    // campo vacío de una tienda dejaba muda a la otra.
+    const reviewUrl =
+      invitePlatform(tester.platform) === "android"
+        ? (playStoreUrl() ?? null)
+        : (decision.reviewUrl ?? null);
+
+    // El correo de reseña ES su botón: quitado el botón no queda nada que
+    // pedir. Sin url no se manda, y no se manda tampoco quiere decir que no se
+    // gasta: `review_ask` es de un solo disparo por tester (clave única
+    // `(signupId, kind, releaseId)` en el libro mayor), así que enviarlo con un
+    // enlace de relleno lo quema para siempre. Al no dejar fila, sale entero el
+    // día que se rellene la url en el Studio.
+    //
+    // Hasta el 2026-08-24 el constructor tapaba el hueco con `?? baseUrl`, que
+    // es la home de la web: un botón "Leave a review" que lleva a la portada.
+    // `appStoreReviewUrl` sigue vacío en la config viva, así que esto habría
+    // salido así el día del lanzamiento, a todo el que puntuara alto.
+    if (decision.kind === "review_ask" && !reviewUrl) {
+      console.warn(
+        `⏸️ review_ask retenido para ${tester.email}: no hay url de reseña para ${invitePlatform(tester.platform)}. ` +
+          "Rellena appStoreReviewUrl en el Studio (o publica en Play) y saldrá en la siguiente pasada.",
+      );
+      skipped++;
+      continue;
+    }
+
     // The form has to work for someone who is not logged in on the web, so
     // the link carries the same HMAC-signed email token the unsubscribe links
     // use. A raw row id in a query string would let anyone who saw the URL
@@ -260,16 +359,7 @@ export async function runBetaLifecycle(now: Date = new Date()): Promise<BetaLife
       signup: tester,
       data: {
         feedbackUrl: `${base}/beta/feedback?token=${encodeURIComponent(createEmailToken(tester.email))}&kind=${kindParam}`,
-        // The rules hold ONE review URL and it points at Apple. Sending that
-        // to an Android tester gives them a button they cannot act on, so the
-        // store is picked per tester here, where the row is in scope. Falls
-        // back to the configured one when Play is not set up.
-        reviewUrl:
-          decision.reviewUrl == null
-            ? null
-            : invitePlatform(tester.platform) === "android"
-              ? (playStoreUrl() ?? decision.reviewUrl)
-              : decision.reviewUrl,
+        reviewUrl,
       },
     });
     sent.push({ email: tester.email, kind: decision.kind, result });

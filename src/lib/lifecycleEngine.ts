@@ -111,8 +111,47 @@ export type LifecycleRunResult = {
   skipped: number;
 };
 
+/**
+ * Testers que ahora mismo lleva el cron de beta.
+ *
+ * Un tester es también un usuario normal, así que hasta el 2026-08-24 recibía
+ * las DOS cadenas a la vez, y los dos crons corren el mismo día con dos horas
+ * de diferencia (09:00 y 11:00 UTC). El 23-ago una persona recibió "Has
+ * terminado tu primera historia" a las 09:00 y "La beta se cierra, gracias por
+ * estas últimas semanas" a las 11:01, en su primer día dentro. Otros cinco
+ * encadenaron el aviso de "te faltan 2 minutos" con la encuesta final del día
+ * siguiente.
+ *
+ * El predicado es el mismo que usa `runBetaLifecycle`, a propósito: a quien
+ * escribe el cron de beta no le escribe nadie más. Al revocarle el plan cae de
+ * los dos filtros y la cadena general lo recoge otra vez, sin nada que tocar.
+ */
+async function getActiveBetaTesterIds(): Promise<string[]> {
+  const rows = await prisma.betaSignup.findMany({
+    where: {
+      status: { in: ["invited", "accepted"] },
+      planRevokedAt: null,
+      clerkUserId: { not: null },
+    },
+    select: { clerkUserId: true },
+  });
+  return rows.map((r) => r.clerkUserId).filter((id): id is string => Boolean(id));
+}
+
 export async function runLifecycleEmails(now: Date): Promise<LifecycleRunResult> {
   const internal = new Set(await getInternalUserIds().catch(() => []));
+
+  // Fail-closed, al revés que `internal`: si esta consulta falla no sabemos
+  // quién es tester, y la forma barata de equivocarse es callar hoy. La cara es
+  // apilar esta cadena encima de la de beta, que es justo el fallo que esto
+  // arregla.
+  const betaTesters = await getActiveBetaTesterIds().catch((err) => {
+    console.error("No se pudo leer la lista de testers; hoy no sale nada:", err);
+    return null;
+  });
+  if (betaTesters === null) return { scanned: 0, sent: [], skipped: 0 };
+  const inBeta = new Set(betaTesters);
+
   const since = new Date(now.getTime() - LOOKBACK_DAYS * DAY);
 
   const signups = await prisma.userMetric.findMany({
@@ -126,6 +165,7 @@ export async function runLifecycleEmails(now: Date): Promise<LifecycleRunResult>
   const byUser = new Map<string, { metadata: unknown; createdAt: Date }>();
   for (const s of signups) {
     if (internal.has(s.userId)) continue;
+    if (inBeta.has(s.userId)) continue;
     const prev = byUser.get(s.userId);
     if (!prev || s.createdAt < prev.createdAt) {
       byUser.set(s.userId, { metadata: s.metadata, createdAt: s.createdAt });

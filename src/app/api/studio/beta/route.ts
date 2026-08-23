@@ -213,6 +213,7 @@ const NUMERIC_FIELDS: Array<keyof BetaRulesConfig> = [
   "feedbackAskAfterDays",
   "midSurveyAfterDays",
   "finalSurveyBeforeEndDays",
+  "finalSurveyMinTenureDays",
   "reviewAskMinRating",
 ];
 
