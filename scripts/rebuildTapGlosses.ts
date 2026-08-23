@@ -78,25 +78,31 @@ const CHARACTER_NAMES =
   /^(iv[áa]n|lupe|javier|rafa|marta|elena|kanek|to[ñn]o|sof[íi]a|luc[íi]a|chela|timo|nadia|pablo|carmen|rosa|mateo|nico|ana|marina|nerea|greve|ole|nora|merle|bia|tiago|caio|lia|nara|vitor|dani|teo|irene|dario|gaia|livia|martina)$/i;
 
 /**
- * COPIA EXACTA de lo que hace el lector, en dos pasos. Inventarme el corte
- * daba palabras fantasma (`s`, de partir `schmeckt's`) y me escondía otras.
+ * El troceo y la clave NO se reescriben aquí: se importan de `src/lib/tapGlossKey`,
+ * que es lo que corre el lector. Inventarme el corte daba palabras fantasma
+ * (`s`, de partir `schmeckt's`) y me escondía otras.
  *
- *  1. `TAPPABLE`: la unidad que el usuario puede tocar. Conserva apóstrofos y
- *     guiones (ver `ReaderScreen.tsx`, la regex de troceo de palabras).
- *  2. `glossKey`: la clave con la que se busca en el bundle. El lector la saca
- *     con `\p{L}+(?:-\p{L}+)*` sobre el token en minúsculas, o sea que el
- *     guion une pero el apóstrofo CORTA: `schmeckt's` busca `schmeckt`.
- *
- * Consecuencia conocida y NO arreglada aquí: en italiano `l'acqua` se toca
- * entera pero busca la clave `l`, así que toda la elisión depende de una
- * glosa para `l`. Eso es un fallo del lector, no del bundle, y tocarlo desde
- * aquí sería arreglar a ciegas la mitad de un problema.
+ * Lo que estaba mal hasta el 2026-08-23: la clave cortaba en el apóstrofo, así
+ * que para `d'acqua` este script pedía glosa para `d`, la encontraba y cantaba
+ * "al día" mientras `acqua` no existía en el bundle y era intocable en el
+ * lector. El informe de cobertura medía el fallo en vez de verlo. Ahora la
+ * cobertura se da por buena si EXISTE alguna de las candidatas, y lo que se
+ * pide cuando falta es la palabra de contenido, no el artículo.
  */
-const TAPPABLE = /[\p{L}\p{N}][\p{L}\p{N}'\-]*/gu;
+import { TAPPABLE, glossKeyCandidates } from "../src/lib/tapGlossKey";
 
+/** Clave que se PIDE cuando no hay ninguna: la de contenido, no el artículo. */
 function glossKey(token: string): string {
-  const m = token.toLowerCase().match(/\p{L}+(?:-\p{L}+)*/u);
-  return m ? m[0] : "";
+  const c = glossKeyCandidates(token);
+  if (c.length <= 1) return c[0] ?? "";
+  // c = [entero, cola, cabeza]; la cola es la palabra de contenido salvo que
+  // sea una letra suelta (`don't`), donde la cabeza es la palabra real.
+  return c[1] && c[1].length >= 2 ? c[1] : c[2] ?? c[0];
+}
+
+/** ¿Está cubierto? Basta con que el lector encuentre CUALQUIERA. */
+function hasGloss(token: string, bundle: Record<string, unknown>): boolean {
+  return glossKeyCandidates(token).some((k) => k in bundle);
 }
 
 function familyOf(bundle: string): string {

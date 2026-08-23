@@ -3438,6 +3438,62 @@
   "è": {
    "g": "is",
    "t": "verb"
+  },
+  "acqua": {
+   "g": "water",
+   "t": "noun"
+  },
+  "altra": {
+   "g": "other; another",
+   "t": "adjective"
+  },
+  "angolo": {
+   "g": "corner",
+   "t": "noun"
+  },
+  "aria": {
+   "g": "air",
+   "t": "noun"
+  },
+  "asciugamano": {
+   "g": "towel",
+   "t": "noun"
+  },
+  "autista": {
+   "g": "driver",
+   "t": "noun"
+  },
+  "autobus": {
+   "g": "bus",
+   "t": "noun"
+  },
+  "entrata": {
+   "g": "entrance, entry",
+   "t": "noun"
+  },
+  "ingresso": {
+   "g": "entrance, way in",
+   "t": "noun"
+  },
+  "isola": {
+   "g": "island",
+   "t": "noun"
+  },
+  "ombra": {
+   "g": "shade, shadow",
+   "t": "noun"
+  },
+  "orologio": {
+   "g": "clock, watch",
+   "t": "noun"
+  },
+  "oste": {
+   "g": "innkeeper, the man who runs the tavern",
+   "t": "noun"
+  },
+  "uscita": {
+   "g": "exit, way out",
+   "t": "noun"
   }
  }
 }

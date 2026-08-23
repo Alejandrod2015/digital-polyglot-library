@@ -59,6 +59,7 @@ import {
   createHighlightStepper,
   findActiveWordIndex,
 } from "../../../../src/lib/karaokeWordWindows";
+import { glossKeyCandidates, resolveGloss, WORD_SPLIT as TITLE_WORD_SPLIT } from "../../../../src/lib/tapGlossKey";
 
 // Piloto tap-any-word: cada palabra FUERA del vocab curado puede tener un
 // "quick lookup" gloss ({ g: traducción EN, t?: tipo, r?: register }), servido
@@ -67,39 +68,23 @@ import {
 // igual que `tokenFromText` en TapGlossLayer (web), para que matcheen.
 type TapGloss = { g: string; t?: string; r?: string };
 function glossTokenFromText(text: string): string {
-  const m = text.toLowerCase().match(/\p{L}+(?:-\p{L}+)*/u);
-  return m ? m[0] : "";
+  return glossKeyCandidates(text)[0] ?? "";
 }
 
 /**
- * Busca la glosa de un token, resolviendo las ELISIONES.
- *
- * `glossTokenFromText` corta en el apóstrofo, así que en italiano `l'acqua`
- * buscaba la clave `l` y devolvía "the": tocabas la palabra y te salía el
- * artículo, con `acqua` ("water") inalcanzable aunque esté en el bundle. Los
- * bundles guardan las dos mitades por separado y NINGUNA clave lleva apóstrofo
- * (comprobado: 0 de 1.100 en italiano), así que la elisión dependía entera de
- * la glosa de una letra suelta.
- *
- * Ahora gana la palabra de CONTENIDO, la de después del apóstrofo, y solo si
- * no tiene glosa se cae a la de antes. `l'acqua` da "water"; `un'idea`, "idea".
+ * Busca la glosa de un token resolviendo la ELISIÓN. La cascada ya no vive
+ * aquí: es `resolveGloss` de `src/lib/tapGlossKey`, compartida con el web, que
+ * tenía este mismo fallo sin arreglar y encima en la superficie con audio.
+ * Frente a la versión que había aquí gana una candidata: el token ENTERO, para
+ * la palabra que lleva apóstrofo dentro sin ser elisión (`aujourd'hui`).
  */
 function lookupGloss(
   glosses: Record<string, TapGloss>,
   text: string
 ): { token: string; gloss: TapGloss } | null {
-  const raw = text.toLowerCase();
-  const apostrophe = raw.search(/['’]/);
-  if (apostrophe > -1) {
-    const tail = glossTokenFromText(raw.slice(apostrophe + 1));
-    if (tail && glosses[tail]) return { token: tail, gloss: glosses[tail] };
-  }
-  const head = glossTokenFromText(text);
-  if (head && glosses[head]) return { token: head, gloss: glosses[head] };
-  return null;
+  return resolveGloss(glosses, text);
 }
 
-const TITLE_WORD_SPLIT = /(\p{L}+(?:-\p{L}+)*)/u;
 
 // El título también entra en el diccionario. Se renderizaba como un nodo de
 // texto suelto, así que ninguna de sus palabras era tapeable aunque su gloss

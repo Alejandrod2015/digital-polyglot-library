@@ -4050,6 +4050,30 @@
   "è": {
    "g": "is",
    "t": "verb"
+  },
+  "altra": {
+   "g": "other; another",
+   "t": "adjective"
+  },
+  "aria": {
+   "g": "air",
+   "t": "noun"
+  },
+  "autostrada": {
+   "g": "motorway, highway",
+   "t": "noun"
+  },
+  "impiegato": {
+   "g": "clerk, office worker",
+   "t": "noun"
+  },
+  "ingresso": {
+   "g": "entrance, way in",
+   "t": "noun"
+  },
+  "olio": {
+   "g": "oil",
+   "t": "noun"
   }
  }
 }

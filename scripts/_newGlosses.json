@@ -5337,6 +5337,46 @@
   "ora": {
    "g": "hour; now",
    "t": "noun"
+  },
+  "orologio": {
+   "g": "clock, watch",
+   "t": "noun"
+  },
+  "oste": {
+   "g": "innkeeper, the man who runs the tavern",
+   "t": "noun"
+  },
+  "asciugamano": {
+   "g": "towel",
+   "t": "noun"
+  },
+  "ombra": {
+   "g": "shade, shadow",
+   "t": "noun"
+  },
+  "autobus": {
+   "g": "bus",
+   "t": "noun"
+  },
+  "autista": {
+   "g": "driver",
+   "t": "noun"
+  },
+  "ingresso": {
+   "g": "entrance, way in",
+   "t": "noun"
+  },
+  "uscita": {
+   "g": "exit, way out",
+   "t": "noun"
+  },
+  "entrata": {
+   "g": "entrance, entry",
+   "t": "noun"
+  },
+  "isola": {
+   "g": "island",
+   "t": "noun"
   }
  },
  "german-traveler-a0": {
@@ -8932,6 +8972,22 @@
   },
   "assicurazione": {
    "g": "insurance",
+   "t": "noun"
+  },
+  "autostrada": {
+   "g": "motorway, highway",
+   "t": "noun"
+  },
+  "olio": {
+   "g": "oil",
+   "t": "noun"
+  },
+  "ingresso": {
+   "g": "entrance, way in",
+   "t": "noun"
+  },
+  "impiegato": {
+   "g": "clerk, office worker",
    "t": "noun"
   }
  }

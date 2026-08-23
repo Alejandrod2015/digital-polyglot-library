@@ -4,6 +4,7 @@ import React from "react";
 import { Heart, Search, X } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import type { TapGloss } from "@/lib/tapGlosses";
+import { resolveGloss } from "@/lib/tapGlossKey";
 import {
   getVocabTypeLabel,
   getVocabRegisterLabel,
@@ -66,12 +67,10 @@ function contextSentence(node: HTMLElement | null, word: string): string | undef
   return best.length > 160 ? `${best.slice(0, 159).trimEnd()}…` : best;
 }
 
-// Token de lookup desde el texto visible del span: minúsculas y sin
-// puntuación pegada ("Neukölln." -> "neukölln").
-function tokenFromText(text: string): string {
-  const m = text.toLowerCase().match(/\p{L}+(?:-\p{L}+)*/u);
-  return m ? m[0] : "";
-}
+// La clave de lookup vive en `@/lib/tapGlossKey`, compartida con el lector sin
+// audio, con el móvil y con el script que comprueba la cobertura. Aquí se
+// buscaba con `\p{L}+(?:-\p{L}+)*`, que corta en el apóstrofo: en el italiano
+// publicado, tocar `d'acqua` devolvía la glosa de `d` ("of, from").
 
 export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
   const [selected, setSelected] = React.useState<GlossState | null>(null);
@@ -153,13 +152,16 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
         setSelected(null);
         return;
       }
-      const token = el.dataset.token ?? tokenFromText(el.textContent ?? "");
-      const entry = token ? glosses[token] : undefined;
+      const fromData = el.dataset.token ? glosses[el.dataset.token] : undefined;
+      const hit = fromData
+        ? { token: el.dataset.token as string, gloss: fromData }
+        : resolveGloss(glosses, el.textContent ?? "");
+      const entry = hit?.gloss;
       if (!entry) {
         setSelected(null);
         return;
       }
-      const word = (el.textContent ?? token).replace(/^[^\p{L}]+|[^\p{L}]+$/gu, "");
+      const word = (el.textContent ?? hit.token).replace(/^[^\p{L}]+|[^\p{L}]+$/gu, "");
       setSelected({
         word,
         gloss: entry.g,
