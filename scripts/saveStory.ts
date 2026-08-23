@@ -570,9 +570,11 @@ function slugify(s: string): string {
       console.log(`\n[gate de journey] SALTADO: solo ${todas.length} historias con texto (hacen falta 7 para medir un conjunto).`);
     } else {
       const jc = validateJourneyStories(todas, { language: ctx.language, level: ctx.level, realPeople });
-      const malos = jc.filter((c) => c.status !== "pass");
+      // `report` es medible pero sin liston calibrado: se imprime y NO bloquea.
+      // `not-implemented` sigue bloqueando, que es "no se sabe medir".
+      const malos = jc.filter((c) => c.status !== "pass" && c.status !== "report");
       console.log(`\n── gate de journey (${todas.length} historias) ──`);
-      for (const c of jc) console.log(`   ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : "SIN IMPLEMENTAR"} [${c.id}] ${c.detail ?? ""}`);
+      for (const c of jc) console.log(`   ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : c.status === "report" ? "INFORMA" : "SIN IMPLEMENTAR"} [${c.id}] ${c.detail ?? ""}`);
       if (malos.length) {
         console.error(`\n✗ GATE DE JOURNEY: ${malos.length} regla(s) de conjunto sin cumplir. NOTHING WRITTEN.`);
         process.exit(1);

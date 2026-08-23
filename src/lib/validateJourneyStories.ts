@@ -37,7 +37,13 @@ export type JourneyStoryInput = {
 export type JourneyCheck = {
   id: string;
   label: string;
-  status: "pass" | "fail" | "not-implemented";
+  /**
+   * `report` es medible pero SIN liston calibrado: se imprime el numero y no
+   * bloquea. No es lo mismo que `not-implemented`, que es "no se sabe medir" y
+   * si bloquea. Confundirlos dejaba a un nivel sin precedente (B1) sin poder
+   * guardar nunca, aunque la medicion existiera y fuera buena.
+   */
+  status: "pass" | "fail" | "not-implemented" | "report";
   detail?: string;
 };
 
@@ -307,6 +313,8 @@ export function validateJourneyStories(
     out.push({ id, label, status: ok ? "pass" : "fail", detail: ok ? undefined : detail });
   const noImpl = (id: string, label: string, why: string) =>
     out.push({ id, label, status: "not-implemented", detail: why });
+  const report = (id: string, label: string, detail: string) =>
+    out.push({ id, label, status: "report", detail });
 
   // ── 1. Banda de habla citada ────────────────────────────────
   {
@@ -583,10 +591,28 @@ export function validateJourneyStories(
   // exigir 4 sería inventar un número. Lo que cambia es QUÉ entra en la media.
   const TOPE_ANCLADAS = 0.30;
   const suelo = MEDIA_MINIMA[level];
-  if (suelo === undefined) {
+  const hayVocab = stories.some((s) => s.vocab && s.vocab.length);
+  // SIN LISTON NO ES SIN MEDIDA (2026-08-23). "No hay precedente del que sacar
+  // el numero" devolvia `not-implemented`, que BLOQUEA, y eso dejaba a un nivel
+  // sin journeys previos (B1 entonces, A2 ahora) sin poder guardar nunca aunque
+  // la medicion fuera perfecta. Se separan: `report` imprime la medida y deja
+  // pasar; `not-implemented` sigue bloqueando, que es "no se sabe medir".
+  if (suelo === undefined && hayVocab) {
+    const tk = (t: string) => (t.toLowerCase().match(/\p{L}+/gu) ?? []);
+    const cuerpos = stories.map((s) => new Set(tk(s.text)));
+    const cl = (v: { word: string; surface?: string | null }) =>
+      String(v.surface ?? v.word).toLowerCase().replace(/^(der|die|das|le|la|el|il|o|a)\s+/, "");
+    const enc: number[] = [];
+    for (const s of stories) for (const v of s.vocab ?? [])
+      enc.push(cuerpos.filter((c) => c.has(cl(v))).length);
+    const media = enc.reduce((a, b) => a + b, 0) / (enc.length || 1);
+    report("journey-vocab-recirculation", "Cada plaza de vocab vuelve en otra historia",
+      `media ${media.toFixed(2)} HISTORIAS por plaza · ${enc.filter((n) => n <= 1).length}/${enc.length} salen en un solo cuerpo · ` +
+      `SIN LISTON para ${level || "?"}: no hay ningun journey de ese nivel del que sacarlo. Se mide y se informa, no se gatea.`);
+  } else if (suelo === undefined) {
     noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
-      `El catalogo no da un liston medido para ${level || "?"}; poner uno seria inventarlo.`);
-  } else if (!stories.some((s) => s.vocab && s.vocab.length)) {
+      "Las historias llegaron sin vocab; sin el no se puede contar nada.");
+  } else if (!hayVocab) {
     noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
       "Las historias llegaron sin vocab.");
   } else {
