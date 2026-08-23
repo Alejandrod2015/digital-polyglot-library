@@ -3254,6 +3254,122 @@
   "êtes": {
    "g": "you are (être)",
    "t": "verb"
+  },
+  "accord": {
+   "g": "all right (d'accord)",
+   "t": "interjection"
+  },
+  "affaire": {
+   "g": "deal on a price (l'affaire)",
+   "t": "noun"
+  },
+  "ai": {
+   "g": "I have (avoir)",
+   "t": "verb"
+  },
+  "ail": {
+   "g": "garlic (l'ail)",
+   "t": "noun"
+  },
+  "air": {
+   "g": "air (l'air)",
+   "t": "noun"
+  },
+  "année": {
+   "g": "year (l'année)",
+   "t": "noun"
+  },
+  "appel": {
+   "g": "phone call (l'appel)",
+   "t": "noun"
+  },
+  "apporte": {
+   "g": "I bring (apporter)",
+   "t": "verb"
+  },
+  "apéro": {
+   "g": "drinks and snacks before dinner (l'apéro)",
+   "t": "noun"
+  },
+  "armoire": {
+   "g": "tall closed furniture for clothes (l'armoire)",
+   "t": "noun"
+  },
+  "arrêt": {
+   "g": "stop for a tram or bus (l'arrêt)",
+   "t": "noun"
+  },
+  "arrête": {
+   "g": "stops (s'arrêter)",
+   "t": "verb"
+  },
+  "ascenseur": {
+   "g": "lift, elevator (l'ascenseur)",
+   "t": "noun"
+  },
+  "assoit": {
+   "g": "sits down (s'asseoir)",
+   "t": "verb"
+  },
+  "autre": {
+   "g": "other, another (autre)",
+   "t": "adjective"
+  },
+  "eau": {
+   "g": "water; the river bank walk (l'eau)",
+   "t": "noun"
+  },
+  "embêter": {
+   "g": "to tease somebody (embêter)",
+   "t": "verb"
+  },
+  "endort": {
+   "g": "falls asleep (s'endormir)",
+   "t": "verb"
+  },
+  "entrée": {
+   "g": "entrance hall (l'entrée)",
+   "t": "noun"
+  },
+  "envoyer": {
+   "g": "to send (envoyer)",
+   "t": "verb"
+  },
+  "immeuble": {
+   "g": "block of flats (l'immeuble)",
+   "t": "noun"
+  },
+  "imprimante": {
+   "g": "printer (l'imprimante)",
+   "t": "noun"
+  },
+  "inscrit": {
+   "g": "signs up (s'inscrire)",
+   "t": "verb"
+  },
+  "ordonnance": {
+   "g": "paper a doctor writes for medicine (l'ordonnance)",
+   "t": "noun"
+  },
+  "oublie": {
+   "g": "I forget (oublier)",
+   "t": "verb"
+  },
+  "épaule": {
+   "g": "shoulder (l'épaule)",
+   "t": "noun"
+  },
+  "équipe": {
+   "g": "team at work (l'équipe)",
+   "t": "noun"
+  },
+  "été": {
+   "g": "summer (l'été); been (être)",
+   "t": "noun"
+  },
+  "œufs": {
+   "g": "eggs (l'œuf)",
+   "t": "noun"
   }
  }
 }
