@@ -9941,6 +9941,30 @@
   "verdadera": {
    "g": "true, real",
    "t": "adjective"
+  },
+  "doblado": {
+   "g": "folded",
+   "t": "adjective"
+  },
+  "equivocarse": {
+   "g": "to get it wrong, to make a mistake",
+   "t": "verb"
+  },
+  "pierna": {
+   "g": "leg",
+   "t": "noun"
+  },
+  "rodilla": {
+   "g": "knee",
+   "t": "noun"
+  },
+  "contarlo": {
+   "g": "to count it (contar + lo)",
+   "t": "verb"
+  },
+  "vuelto": {
+   "g": "turned into",
+   "t": "verb"
   }
  }
 }
