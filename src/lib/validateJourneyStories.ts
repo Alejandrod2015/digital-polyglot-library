@@ -37,7 +37,13 @@ export type JourneyStoryInput = {
 export type JourneyCheck = {
   id: string;
   label: string;
-  status: "pass" | "fail" | "not-implemented";
+  /**
+   * `report` es medible pero SIN liston calibrado: se imprime el numero y no
+   * bloquea. No es lo mismo que `not-implemented`, que es "no se sabe medir" y
+   * si bloquea. Confundirlos dejaba a un nivel sin precedente (B1) sin poder
+   * guardar nunca, aunque la medicion existiera y fuera buena.
+   */
+  status: "pass" | "fail" | "not-implemented" | "report";
   detail?: string;
 };
 
@@ -269,6 +275,8 @@ export function validateJourneyStories(
     out.push({ id, label, status: ok ? "pass" : "fail", detail: ok ? undefined : detail });
   const noImpl = (id: string, label: string, why: string) =>
     out.push({ id, label, status: "not-implemented", detail: why });
+  const report = (id: string, label: string, detail: string) =>
+    out.push({ id, label, status: "report", detail });
 
   // ── 1. Banda de habla citada ────────────────────────────────
   {
@@ -523,11 +531,36 @@ export function validateJourneyStories(
   // 2,0 es ese techo, y sigue siendo el liston mas alto del catalogo fuera de
   // A0: ningun A1 pasa de 1,88 ni ningun C1 de 1,56. No es un numero elegido
   // para que pase nada; cuando se fijo, el journey que lo motivo iba por 1,37.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 2.5, B1: 2.0 };
+  //
+  // B1 SALE DE LA TABLA el 2026-08-23, y no por el numero: por el criterio que
+  // este mismo archivo ya aplicaba a C1 dos parrafos mas arriba ("no hay un
+  // buen precedente del que sacar el liston; poner un numero seria
+  // inventarselo"). B1 esta igual: no existe ningun B1 en el catalogo, y los
+  // niveles vecinos viven entre 0,82 y 1,88. El 2,0 que estuvo aqui unas horas
+  // lo saque de una extrapolacion mia que estaba mal.
+  //
+  // Lo que faltaba no era el numero, era el estado: "sin liston" devolvia
+  // `not-implemented`, que BLOQUEA, asi que un nivel sin precedente no podia
+  // guardar nunca aunque la medicion fuera perfecta. Ahora devuelve `report`:
+  // imprime la media y deja pasar. Cuando haya dos o tres B1 escritos CON el
+  // check delante, ese sera el momento de poner un liston con datos.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 2.5 };
   const suelo = MEDIA_MINIMA[level];
-  if (suelo === undefined) {
+  if (suelo === undefined && stories.some((s) => s.vocab && s.vocab.length)) {
+    const tok = (t: string) => (t.toLowerCase().match(/\p{L}+/gu) ?? []);
+    const cuerpos = stories.map((s) => new Set(tok(s.text)));
+    const clave = (v: { word: string; surface?: string | null }) =>
+      String(v.surface ?? v.word).toLowerCase().replace(/^(der|die|das|le|la|el|il|o|a)\s+/, "");
+    const enc: number[] = [];
+    for (const s of stories) for (const v of s.vocab ?? [])
+      enc.push(cuerpos.filter((c) => c.has(clave(v))).length);
+    const media = enc.reduce((a, b) => a + b, 0) / enc.length;
+    report("journey-vocab-recirculation", "Cada plaza de vocab vuelve en otra historia",
+      `media ${media.toFixed(2)} HISTORIAS por plaza · ${enc.filter((n) => n <= 1).length}/${enc.length} salen en un solo cuerpo · ` +
+      `SIN LISTON para ${level || "?"}: no hay ningun journey de ese nivel del que sacarlo, y los vecinos van de 0,82 a 1,88. Se mide y se informa, no se gatea.`);
+  } else if (suelo === undefined) {
     noImpl("journey-vocab-recirculation", "Cada plaza de vocab vuelve en otra historia",
-      `Sin umbral calibrado para ${level || "?"}: el catalogo en ese nivel va de 0,8 a 1,5 y no hay un buen precedente del que sacar el liston. Medir antes de gatear.`);
+      "No se paso el vocab de las historias; sin el no se puede contar nada.");
   } else if (!stories.some((s) => s.vocab && s.vocab.length)) {
     noImpl("journey-vocab-recirculation", "Cada plaza de vocab vuelve en otra historia",
       "No se paso el vocab de las historias; sin el no se puede contar un encuentro.");
