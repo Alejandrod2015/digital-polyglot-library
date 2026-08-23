@@ -1,9 +1,10 @@
 # Traveler ES/spain B1, estado al 2026-08-23
 
 Journey creado: `cmt5x67ze000l320cpgunu5vi` (spanish / spain / b1 / traveler,
-**draft**, 7 temas x 3 = 21 huecos vacios). Las 21 historias estan escritas en
-`scripts/_b1/data/t1..t7.json` (y unidas en `all.json`) pero **NO estan
-guardadas en la base**: el gate de journey las bloquea (ver abajo).
+**draft**, 7 temas x 3 = 21 huecos). Las 21 historias estan escritas en
+`scripts/_b1/data/t1..t7.json` (y unidas en `all.json`) y **YA ESTAN GUARDADAS
+en la base** con texto, slug y vocab. Lo que sigue es el diario de como se
+llego ahi; el estado final esta al pie, en "Sexta tanda".
 
 ## Lo que ya pasa
 
@@ -246,3 +247,38 @@ Lo que si mueve la cota, en orden de coste:
    disponibles, el journey esta pidiendo mas plazas de las que su prosa puede
    sostener.
 3. Subir el tope de 170 palabras en B1, que es decision de producto del usuario.
+
+
+## Sexta tanda: guardado, y lo que queda
+
+Las 21 estan en la base. Lo que desbloqueo el guardado no fue tocar el piso,
+sino separar dos cosas que el gate confundia: `not-implemented` ("no se sabe
+medir", y bloquea) de un estado nuevo, **`report`** ("se mide, pero no hay
+liston calibrado": imprime el numero y no bloquea). B1 no tiene liston porque
+`MEDIA_MINIMA` solo se calibro para A0 y A1, asi que la recirculacion **informa
+1,45** y no manda. El piso de B1 se quito; inventar uno que dejara pasar lo
+escrito era justo lo prohibido.
+
+Tambien se renombro la salida del check a **HISTORIAS por plaza**, que es lo que
+cuenta de verdad (un Set de cuerpos por plaza), no "encuentros": el nombre viejo
+hacia leer 3,0 como "tres apariciones en la historia", que es otro numero y otra
+regla.
+
+| | |
+|---|---|
+| validador canonico | 21/21 en verde |
+| reglas de conjunto | 12 de 13 pasan; la 13 informa |
+| glosas | `spanish-traveler-spain-b1.json`, 21 slugs, 1015 entradas |
+| practica | 21 sets sembrados, sin audio (no gasta creditos) |
+| cadena | a0 Friends -> a1 Traveler -> b1 Traveler, escrita |
+| audio | 1 de 21: `ya-no-queda-nadie`, voz Maia, 2,46 pal/s |
+| portadas | ninguna; gastan creditos y esperan al verbo del usuario |
+
+De paso salio un fallo de catalogo, no de este journey: los distractores de
+`fill_blank` regalaban la respuesta por la concordancia, porque se elegian por
+el LEMA y no por la forma que sale en la lista. Arreglado en
+`src/lib/practiceExercises.ts`, 66 de 175 huecos a 2.
+
+**Decision abierta para el usuario:** cuatro sesiones han tocado
+`validateJourneyStories.ts` a la vez y hay un choque de nombres entre el campo
+`reuse` y el `anchor` que mete otra rama.
