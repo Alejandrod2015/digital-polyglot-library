@@ -4082,6 +4082,30 @@
   "él": {
    "g": "he, him",
    "t": "pronoun"
+  },
+  "dura": {
+   "g": "hard, tough; lasts",
+   "t": "adjective"
+  },
+  "guardar": {
+   "g": "to keep, save",
+   "t": "verb"
+  },
+  "oscuras": {
+   "g": "dark",
+   "t": "adjective"
+  },
+  "piso": {
+   "g": "floor",
+   "t": "noun"
+  },
+  "traía": {
+   "g": "was carrying, had",
+   "t": "verb"
+  },
+  "verse": {
+   "g": "to see each other, look",
+   "t": "verb"
   }
  }
 }
