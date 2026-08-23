@@ -555,7 +555,7 @@ function slugify(s: string): string {
       // `report` NO cuenta como malo: es una medicion sin liston calibrado.
       const malos = jc.filter((c) => c.status !== "pass" && c.status !== "report");
       console.log(`\n── gate de journey (${todas.length} historias) ──`);
-      for (const c of jc) console.log(`   ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : c.status === "report" ? "MIDE" : "SIN IMPLEMENTAR"} [${c.id}] ${c.detail ?? ""}`);
+      for (const c of jc) console.log(`   ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : c.status === "report" ? "INFORMA" : "SIN IMPLEMENTAR"} [${c.id}] ${c.detail ?? ""}`);
       if (malos.length) {
         console.error(`\n✗ GATE DE JOURNEY: ${malos.length} regla(s) de conjunto sin cumplir. NOTHING WRITTEN.`);
         process.exit(1);
