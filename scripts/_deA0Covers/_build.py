@@ -15,129 +15,71 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(BASE, "scenes")
 
 REGISTER = (
-    "VISUAL REGISTER (match the approved reference covers exactly): flat "
-    "saturated colour fields, thick clean confident linework, strong clear "
-    "northern daylight, cool clean whites, figures seen at mid distance as "
-    "part of the place and never as a portrait, generous empty air around "
-    "them, absolutely no texture, no grain, no brush marks."
+    "Flat saturated colour, thick clean linework, strong clear daylight, "
+    "figures at mid distance as part of the place, generous air around them."
 )
 
-SKIN_FRAMING = """SKIN (absolutely critical, higher priority than anything else in the scene):
-every face has pale, cool, completely flat matte skin in ONE single uniform
-tone; the cheeks are the exact same pale colour as the forehead, the nose and
-the chin, or even paler; there is ZERO colour difference on the cheeks. NO
-blush, NO rosy cheeks, NO pink cheeks, NO orange cheeks, NO warm cheek tint, NO
-circular patch of colour on the cheeks, NO flushed skin, NO freckles, NO spots
-of any kind, NO makeup. The cheeks look plain and uncoloured.
-
-FRAMING AND EXPRESSION (critical): the people are seen at mid distance as part
-of the place, with air around them; they are shown in a three quarter view so
-both eyes and the iris are clearly visible; they are NEVER in full side
-profile, they NEVER look at the camera or the viewer, and they are NEVER lined
-up posing frontally for a portrait. Their faces are calm, quiet and neutral;
-they are NOT smiling, NOT grinning and NOT beaming."""
-
-NOTEXT = (
-    "NO WRITING ANYWHERE (critical): there are no signs, no boards, no "
-    "posters, no menus, no price tags, no labels, no newspapers, no books, "
-    "no screens, no house numbers, no painted hull numbers and no lettering "
-    "of any kind anywhere in the picture, not even blurred or in the far "
-    "background."
+SKIN_FRAMING = (
+    "Faces in three quarter view so both eyes read clearly, calm and absorbed "
+    "in the moment, turned towards the scene and not towards the viewer."
 )
+
+NOTEXT = ""
 
 FICHA = {
-"hannah": ("Hannah, a woman of 32, straight dark brown hair cut just below the "
- "shoulders with a centre parting and no fringe, smooth even skin in one "
- "uniform tone, almond eyes with a dark brown iris and clear eyebrows; she "
- "always wears the same clothes: a mustard yellow jacket over a white "
- "t-shirt, dark blue jeans, and a small dark green canvas backpack"),
-"elias": ("Elias, a man of 33, short black hair, clean shaven with no beard and "
- "no moustache, slim and tall, almond eyes with a dark brown iris; he always "
- "wears the same clothes: a dark teal zip jacket over a grey t-shirt and "
- "black jeans"),
-"sophie": ("Sophie, a woman of 30, long chestnut brown hair tied in a low "
- "ponytail with no fringe, smooth even skin, almond eyes with a hazel iris; "
- "she always wears the same clothes: a coral red cardigan over a white blouse "
- "and dark grey trousers"),
-"noah": ("Noah, a man of 34, short light brown hair, clean shaven with no beard, "
- "broad and calm, almond eyes with a green iris; he always wears the same "
- "clothes: a forest green fleece work vest over a beige shirt and brown work "
- "trousers"),
-"emilia": ("Emilia, a woman of 34, YOUNG and clearly in her mid thirties, with a "
- "very short modern cropped haircut that is deliberately dyed a cool steel "
- "silver; her face is smooth and completely unlined, no wrinkles, no eye "
- "bags, no sagging skin, she is NOT an elderly woman and must not be drawn as "
- "one; almond eyes with a grey blue iris; she always wears the same clothes: "
- "a grey linen shirt with rolled sleeves and blue jeans"),
-"leon": ("Leon, a man of 35, short dark blond hair, clean shaven with no beard, "
- "broad shoulders and large working hands, almond eyes with a blue iris; he "
- "always wears the same clothes: a navy blue knitted sweater and dark work "
- "trousers"),
-"marie": ("Katrin, a woman of 48, middle aged and NOT elderly, dark brown hair "
- "with no grey pinned up in a loose bun, smooth skin with only soft laugh "
- "lines, almond eyes with a dark brown iris; she always wears the same "
- "clothes: a plum purple apron over a cream blouse and a long dark skirt"),
+"hannah":
+ ("Hannah, 32, straight dark brown hair to the shoulders, mustard yellow jacket, white t-shirt, blue jeans, small dark green backpack"),
+"elias":
+ ("Elias, 33, short black hair, clean shaven, dark teal zip jacket, grey t-shirt, black jeans"),
+"sophie":
+ ("Sophie, 30, long chestnut hair in a low ponytail, coral red cardigan, white blouse, dark trousers"),
+"noah":
+ ("Noah, 34, short light brown hair, clean shaven, forest green fleece work vest, beige shirt, brown work trousers"),
+"emilia":
+ ("Emilia, 34, very short modern crop dyed cool silver, smooth unlined young face, grey linen shirt with rolled sleeves, blue jeans"),
+"leon":
+ ("Leon, 35, short dark blond hair, clean shaven, broad shoulders, navy blue knitted sweater, dark work trousers"),
+"marie":
+ ("Katrin, 48, dark brown hair with no grey pinned in a loose bun, plum purple apron, cream blouse, long dark skirt"),
 }
 
 def cast_block(keys, extras=None):
     people = [FICHA[k] for k in keys] + list(extras or [])
-    n = len(people)
-    head = ("CAST (exactly %d people in the picture and nobody else at all; "
-            "every one of them is described here and every one of them is an "
-            "adult between 25 and 55; no children, no teenagers, no elderly "
-            "people, no extra figures, no crowd, no silhouettes in the "
-            "background). Every single person on this list MUST actually be "
-            "drawn in the picture, with exactly the gender, age, hair and "
-            "clothes stated here: " % n)
-    return head + "; ".join(people) + "."
+    return "IN FRAME (%d people, all adults): " % len(people) + "; ".join(people) + "."
 
 SCENES = []
 def scene(slug, action, keys, extras=None):
-    SCENES.append((slug, "\n\n".join([action.strip(), cast_block(keys, extras), SKIN_FRAMING, REGISTER, NOTEXT])))
+    SCENES.append((slug, "\n\n".join(x for x in [action.strip(), cast_block(keys, extras), SKIN_FRAMING, REGISTER, NOTEXT] if x)))
 
 # --- Topic 1: Dresden ---------------------------------------------------
 scene("wieder-in-dresden",
- "Late afternoon on the wide stone square in front of the great domed "
- "Frauenkirche in the old town of Dresden, pale baroque sandstone facades all "
- "around. Seen from across the square: Hannah and Elias walk slowly side by "
- "side without speaking, a friendly arm's length apart, both facing ahead in "
- "three quarter view, mouths closed, the silence after an argument. Off to "
- "one side of the square, clearly visible in the picture, a street musician "
- "stands playing a violin with his instrument case shut on the ground beside "
- "him. Warm low sunlight on the pale sandstone.",
+ "Late afternoon on the wide stone square in front of the domed Frauenkirche in "
+ "Dresden. A street musician stands playing a violin, his hat lying on the "
+ "pale stone beside him, while Hannah and Elias walk slowly past him without "
+ "speaking, an arm's length apart, both looking straight ahead. Warm low sun "
+ "on the sandstone.",
  ["hannah", "elias"],
- ["the street musician, a man of 30 with short curly black hair, clean "
-  "shaven, wearing a rust orange shirt and dark trousers, standing and "
-  "playing a violin with his eyes on the strings"])
+ ["the street musician, a man of 30, short curly black hair, clean shaven, rust "
+  "orange shirt, playing a violin with his eyes on the strings"])
 
 scene("die-brucke-uber-die-elbe",
- "Early morning on the long old stone bridge over the river Elbe in Dresden, "
- "grey mist lying low on the water. On the far bank stands the dark "
- "silhouette of the Dresden old town: the big round dome of the Frauenkirche, "
- "the slim openwork tower of the Hofkirche and the square blocky palace "
- "tower; there is NO gothic cathedral and NO twin pointed spires anywhere in "
- "the picture. Hannah has stopped in the middle of the bridge with both hands "
- "on the parapet, her head turned in three quarter view so both her eyes are "
- "clearly visible, her face calm and closed; Elias stands beside her, also in "
- "three quarter view, one arm stretched out pointing across the water. A "
- "single walker in a red coat passes behind them along the bridge. A long low "
- "riverboat slides underneath. Cool silver morning light.",
- ["hannah", "elias"],
- ["the walker, a woman of 30 with short black hair in a red coat, walking "
-  "away from the viewer along the bridge"])
+ "Early morning on the long old stone bridge over the Elbe in Dresden, grey "
+ "mist low on the water. Hannah stands at the middle of the bridge with one "
+ "hand flat on the parapet and her backpack on the stone beside her; Elias "
+ "stands close, a paper cup of coffee in one hand, the other arm stretched out "
+ "towards the misted towers on the far bank. A long low riverboat passes "
+ "beneath them. Cool silver light.",
+ ["hannah", "elias"])
 
 scene("die-treppe-an-der-elbe",
- "Warm summer evening on the broad old stone steps that run down to the river "
- "Elbe in Dresden. Hannah and Elias sit together on the steps a friendly "
- "distance apart, both in three quarter view with calm neutral faces, looking "
- "out at the dark water where a small boat glides past with no lights on. "
- "Further along the same steps a young man sits alone playing an acoustic "
- "guitar; this third figure is a man, not a woman. The last orange light of the "
- "day on the water.",
+ "Warm summer evening on the broad old stone steps down to the Elbe in "
+ "Dresden. A young man sits on the steps playing an acoustic guitar, and a "
+ "little below him Hannah and Elias sit side by side a friendly distance "
+ "apart, both looking out at the dark water where a small unlit boat glides "
+ "past. Last orange light on the river.",
  ["hannah", "elias"],
- ["the guitar player, a young man of 27, with short brown hair, clean "
-  "shaven, wearing a blue t-shirt and jeans, sitting on the steps playing an "
-  "acoustic guitar"])
+ ["the guitar player, a man of 27, short brown hair, clean shaven, blue "
+  "t-shirt and jeans, sitting on the steps with an acoustic guitar"])
 
 # --- Topic 2: Heidelberg ------------------------------------------------
 scene("sophie-kocht-am-neckar",
