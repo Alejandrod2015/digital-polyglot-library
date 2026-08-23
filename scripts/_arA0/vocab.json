@@ -1,0 +1,2564 @@
+{
+ "understanding-and-repeating#1": [
+  {
+   "word": "peluquera",
+   "surface": "peluquera",
+   "type": "noun",
+   "definition": "a woman who cuts hair for a living"
+  },
+  {
+   "word": "sin",
+   "surface": "sin",
+   "type": "preposition",
+   "definition": "without, when something is lacking"
+  },
+  {
+   "word": "arregla",
+   "surface": "arregla",
+   "type": "verb",
+   "definition": "fixes something that is broken"
+  },
+  {
+   "word": "hermano",
+   "surface": "hermano",
+   "type": "noun",
+   "definition": "a brother, a son of the same parents"
+  },
+  {
+   "word": "adentro",
+   "surface": "adentro",
+   "type": "adverb",
+   "definition": "inside, in the interior of a place"
+  },
+  {
+   "word": "papel",
+   "surface": "papel",
+   "type": "noun",
+   "definition": "a sheet of paper, here the letter"
+  },
+  {
+   "word": "vení",
+   "surface": "vení",
+   "type": "verb",
+   "definition": "come here, the Argentine vos command"
+  },
+  {
+   "word": "fijate",
+   "surface": "fijate",
+   "type": "verb",
+   "definition": "have a look, vos command"
+  },
+  {
+   "word": "entendés",
+   "surface": "entendés",
+   "type": "verb",
+   "definition": "you understand, the Argentine vos form"
+  },
+  {
+   "word": "diciembre",
+   "surface": "diciembre",
+   "type": "noun",
+   "definition": "December, the last month of the year"
+  },
+  {
+   "word": "repetime",
+   "surface": "repetime",
+   "type": "verb",
+   "definition": "say it again to me, vos command"
+  },
+  {
+   "word": "favor",
+   "surface": "favor",
+   "type": "noun",
+   "definition": "a favour, please when you ask"
+  },
+  {
+   "word": "treinta",
+   "surface": "treinta",
+   "type": "number",
+   "definition": "thirty, three times ten"
+  },
+  {
+   "word": "anota",
+   "surface": "anota",
+   "type": "verb",
+   "definition": "writes something down to remember it"
+  },
+  {
+   "word": "cuaderno",
+   "surface": "cuaderno",
+   "type": "noun",
+   "definition": "a notebook with pages for writing"
+  },
+  {
+   "word": "abajo",
+   "surface": "abajo",
+   "type": "adverb",
+   "definition": "below or downstairs, under something else"
+  },
+  {
+   "word": "vamos",
+   "surface": "vamos",
+   "type": "verb",
+   "definition": "we go there together"
+  },
+  {
+   "word": "apaga",
+   "surface": "apaga",
+   "type": "verb",
+   "definition": "turns off a light or a machine"
+  },
+  {
+   "word": "secador",
+   "surface": "secador",
+   "type": "noun",
+   "definition": "a hairdryer for drying hair"
+  },
+  {
+   "word": "esperame",
+   "surface": "esperame",
+   "type": "verb",
+   "definition": "wait for me, vos command"
+  }
+ ],
+ "understanding-and-repeating#2": [
+  {
+   "word": "entiende",
+   "surface": "entiende",
+   "type": "verb",
+   "definition": "understands what is being said"
+  },
+  {
+   "word": "poco",
+   "surface": "poco",
+   "type": "adverb",
+   "definition": "little, not very much at all"
+  },
+  {
+   "word": "usar",
+   "surface": "usar",
+   "type": "verb",
+   "definition": "to use something for its job"
+  },
+  {
+   "word": "hacés",
+   "surface": "hacés",
+   "type": "verb",
+   "definition": "you do it, the Argentine vos form"
+  },
+  {
+   "word": "encuentra",
+   "surface": "encuentra",
+   "type": "verb",
+   "definition": "finds something, comes across it"
+  },
+  {
+   "word": "tintura",
+   "surface": "tintura",
+   "type": "noun",
+   "definition": "hair dye used in the salon"
+  },
+  {
+   "word": "perdoname",
+   "surface": "perdoname",
+   "type": "verb",
+   "definition": "sorry, forgive me for this"
+  },
+  {
+   "word": "repetís",
+   "surface": "repetís",
+   "type": "verb",
+   "definition": "you repeat, the Argentine vos form"
+  },
+  {
+   "word": "colorada",
+   "surface": "colorada",
+   "type": "adjective",
+   "definition": "red in the face, blushing"
+  },
+  {
+   "word": "repite",
+   "surface": "repite",
+   "type": "verb",
+   "definition": "says the same thing again"
+  },
+  {
+   "word": "quiero",
+   "surface": "quiero",
+   "type": "verb",
+   "definition": "I want it, I would like it"
+  },
+  {
+   "word": "insiste",
+   "surface": "insiste",
+   "type": "verb",
+   "definition": "keeps saying the same thing"
+  },
+  {
+   "word": "llama",
+   "surface": "llama",
+   "type": "verb",
+   "definition": "calls someone by phone or by voice"
+  },
+  {
+   "word": "cepillo",
+   "surface": "cepillo",
+   "type": "noun",
+   "definition": "a hairbrush for the salon"
+  },
+  {
+   "word": "busca",
+   "surface": "busca",
+   "type": "verb",
+   "definition": "looks for something that is missing"
+  },
+  {
+   "word": "falda",
+   "surface": "falda",
+   "type": "noun",
+   "definition": "the lap, where things rest when seated"
+  },
+  {
+   "word": "afuera",
+   "surface": "afuera",
+   "type": "adverb",
+   "definition": "outside, out of the building"
+  },
+  {
+   "word": "pierde",
+   "surface": "pierde",
+   "type": "verb",
+   "definition": "loses something or somebody"
+  },
+  {
+   "word": "próxima",
+   "surface": "próxima",
+   "type": "adjective",
+   "definition": "next, the one coming after this"
+  },
+  {
+   "word": "anotámelo",
+   "surface": "anotámelo",
+   "type": "verb",
+   "definition": "write it down for me, vos command"
+  }
+ ],
+ "understanding-and-repeating#3": [
+  {
+   "word": "bolsillo",
+   "surface": "bolsillo",
+   "type": "noun",
+   "definition": "a pocket in clothing"
+  },
+  {
+   "word": "palabra",
+   "surface": "palabra",
+   "type": "noun",
+   "definition": "a word, one piece of language"
+  },
+  {
+   "word": "sobre",
+   "surface": "sobre",
+   "type": "noun",
+   "definition": "an envelope holding a letter"
+  },
+  {
+   "word": "roja",
+   "surface": "roja",
+   "type": "adjective",
+   "definition": "red, the colour of the ink"
+  },
+  {
+   "word": "tranquila",
+   "surface": "tranquila",
+   "type": "adjective",
+   "definition": "calm, easy, not worried"
+  },
+  {
+   "word": "entra",
+   "surface": "entra",
+   "type": "verb",
+   "definition": "goes in, comes inside"
+  },
+  {
+   "word": "ferretería",
+   "surface": "ferretería",
+   "type": "noun",
+   "definition": "a shop selling tools and screws"
+  },
+  {
+   "word": "qué",
+   "surface": "qué",
+   "type": "pronoun",
+   "definition": "what, asking about a thing"
+  },
+  {
+   "word": "firma",
+   "surface": "firma",
+   "type": "noun",
+   "definition": "a signature written on a paper"
+  },
+  {
+   "word": "vendedor",
+   "surface": "vendedor",
+   "type": "noun",
+   "definition": "the man who serves in the shop"
+  },
+  {
+   "word": "decímelo",
+   "surface": "decímelo",
+   "type": "verb",
+   "definition": "tell it to me, vos command"
+  },
+  {
+   "word": "letra",
+   "surface": "letra",
+   "type": "noun",
+   "definition": "handwriting, the shape of the letters"
+  },
+  {
+   "word": "serio",
+   "surface": "serio",
+   "type": "adjective",
+   "definition": "serious, with no smile"
+  },
+  {
+   "word": "dormís",
+   "surface": "dormís",
+   "type": "verb",
+   "definition": "you sleep, the Argentine vos form"
+  },
+  {
+   "word": "hasta",
+   "surface": "hasta",
+   "type": "preposition",
+   "definition": "until, up to a time or place"
+  },
+  {
+   "word": "sabe",
+   "surface": "sabe",
+   "type": "verb",
+   "definition": "knows something, has the answer"
+  },
+  {
+   "word": "papeles",
+   "surface": "papeles",
+   "type": "noun",
+   "definition": "papers, the documents of a contract"
+  },
+  {
+   "word": "mate",
+   "surface": "mate",
+   "type": "noun",
+   "definition": "the shared herb drink of Argentina"
+  },
+  {
+   "word": "entiendo",
+   "surface": "entiendo",
+   "type": "verb",
+   "definition": "I understand what you say"
+  },
+  {
+   "word": "acerca",
+   "surface": "acerca",
+   "type": "verb",
+   "definition": "moves something closer to another person"
+  }
+ ],
+ "borrowing-and-lending#1": [
+  {
+   "word": "moto",
+   "surface": "moto",
+   "type": "noun",
+   "definition": "a motorbike used for deliveries"
+  },
+  {
+   "word": "fiambrería",
+   "surface": "fiambrería",
+   "type": "noun",
+   "definition": "a shop selling cold cuts and cheese"
+  },
+  {
+   "word": "vuelto",
+   "surface": "vuelto",
+   "type": "noun",
+   "definition": "the change given back after paying"
+  },
+  {
+   "word": "faltan",
+   "surface": "faltan",
+   "type": "verb",
+   "definition": "are missing, are still needed"
+  },
+  {
+   "word": "mil",
+   "surface": "mil",
+   "type": "number",
+   "definition": "a thousand, ten hundreds"
+  },
+  {
+   "word": "pesos",
+   "surface": "pesos",
+   "type": "noun",
+   "definition": "pesos, the money of Argentina"
+  },
+  {
+   "word": "está",
+   "surface": "está",
+   "type": "verb",
+   "definition": "is, in a place or a state"
+  },
+  {
+   "word": "boleta",
+   "surface": "boleta",
+   "type": "noun",
+   "definition": "a bill that has to be paid"
+  },
+  {
+   "word": "mirarlo",
+   "surface": "mirarlo",
+   "type": "verb",
+   "definition": "to look at it"
+  },
+  {
+   "word": "dale",
+   "surface": "dale",
+   "type": "interjection",
+   "definition": "go on, all right, the Argentine yes"
+  },
+  {
+   "word": "quinta",
+   "surface": "quinta",
+   "type": "adjective",
+   "definition": "fifth in the order"
+  },
+  {
+   "word": "saca",
+   "surface": "saca",
+   "type": "verb",
+   "definition": "takes something out of a place"
+  },
+  {
+   "word": "interés",
+   "surface": "interés",
+   "type": "noun",
+   "definition": "extra money charged on a debt"
+  },
+  {
+   "word": "escribime",
+   "surface": "escribime",
+   "type": "verb",
+   "definition": "write it for me, vos command"
+  },
+  {
+   "word": "nombre",
+   "surface": "nombre",
+   "type": "noun",
+   "definition": "a name written on a list"
+  },
+  {
+   "word": "admite",
+   "surface": "admite",
+   "type": "verb",
+   "definition": "admits something true that is hard to say"
+  },
+  {
+   "word": "vuelve",
+   "surface": "vuelve",
+   "type": "verb",
+   "definition": "comes back, returns to the place"
+  },
+  {
+   "word": "diez",
+   "surface": "diez",
+   "type": "number",
+   "definition": "ten, the number after nine"
+  },
+  {
+   "word": "pido",
+   "surface": "pido",
+   "type": "verb",
+   "definition": "I ask for something"
+  },
+  {
+   "word": "fiado",
+   "surface": "fiado",
+   "type": "noun",
+   "definition": "goods taken now and paid later"
+  }
+ ],
+ "borrowing-and-lending#2": [
+  {
+   "word": "quedan",
+   "surface": "quedan",
+   "type": "verb",
+   "definition": "they stay, they are left there"
+  },
+  {
+   "word": "lata",
+   "surface": "lata",
+   "type": "noun",
+   "definition": "a tin can used to keep things"
+  },
+  {
+   "word": "lisa",
+   "surface": "lisa",
+   "type": "adjective",
+   "definition": "smooth, with no grip left"
+  },
+  {
+   "word": "lunes",
+   "surface": "lunes",
+   "type": "noun",
+   "definition": "Monday, the first day of the week"
+  },
+  {
+   "word": "prestame",
+   "surface": "prestame",
+   "type": "verb",
+   "definition": "lend it to me, Argentine vos command"
+  },
+  {
+   "word": "traigo",
+   "surface": "traigo",
+   "type": "verb",
+   "definition": "I bring it back"
+  },
+  {
+   "word": "entera",
+   "surface": "entera",
+   "type": "adjective",
+   "definition": "whole, complete, nothing missing"
+  },
+  {
+   "word": "pide",
+   "surface": "pide",
+   "type": "verb",
+   "definition": "asks for something from another person"
+  },
+  {
+   "word": "tomá",
+   "surface": "tomá",
+   "type": "verb",
+   "definition": "here, take it, the Argentine command"
+  },
+  {
+   "word": "pidas",
+   "surface": "pidas",
+   "type": "verb",
+   "definition": "you ask for, after a refusal"
+  },
+  {
+   "word": "peluquería",
+   "surface": "peluquería",
+   "type": "noun",
+   "definition": "a hairdressing salon in the front room"
+  },
+  {
+   "word": "goma",
+   "surface": "goma",
+   "type": "noun",
+   "definition": "a tyre on a wheel"
+  },
+  {
+   "word": "casco",
+   "surface": "casco",
+   "type": "noun",
+   "definition": "a helmet worn on a motorbike"
+  },
+  {
+   "word": "resbala",
+   "surface": "resbala",
+   "type": "verb",
+   "definition": "slips off the surface"
+  },
+  {
+   "word": "duras",
+   "surface": "duras",
+   "type": "adjective",
+   "definition": "hard, gone stale and cold"
+  },
+  {
+   "word": "celular",
+   "surface": "celular",
+   "type": "noun",
+   "definition": "a mobile phone you carry"
+  },
+  {
+   "word": "viajes",
+   "surface": "viajes",
+   "type": "noun",
+   "definition": "delivery runs on the motorbike"
+  },
+  {
+   "word": "agrega",
+   "surface": "agrega",
+   "type": "verb",
+   "definition": "adds one more thing to what was said"
+  },
+  {
+   "word": "promete",
+   "surface": "promete",
+   "type": "verb",
+   "definition": "promises to do something"
+  },
+  {
+   "word": "golpea",
+   "surface": "golpea",
+   "type": "verb",
+   "definition": "knocks or bangs on something"
+  }
+ ],
+ "borrowing-and-lending#3": [
+  {
+   "word": "llega",
+   "surface": "llega",
+   "type": "verb",
+   "definition": "arrives, gets to the place"
+  },
+  {
+   "word": "kiosco",
+   "surface": "kiosco",
+   "type": "noun",
+   "definition": "a small corner shop for daily things"
+  },
+  {
+   "word": "viernes",
+   "surface": "viernes",
+   "type": "noun",
+   "definition": "Friday, the day after Thursday"
+  },
+  {
+   "word": "guarda",
+   "surface": "guarda",
+   "type": "verb",
+   "definition": "puts something away, keeps it safe"
+  },
+  {
+   "word": "gastada",
+   "surface": "gastada",
+   "type": "adjective",
+   "definition": "worn out from too much use"
+  },
+  {
+   "word": "vengo",
+   "surface": "vengo",
+   "type": "verb",
+   "definition": "I come, I am here for something"
+  },
+  {
+   "word": "billetes",
+   "surface": "billetes",
+   "type": "noun",
+   "definition": "banknotes, the paper money"
+  },
+  {
+   "word": "única",
+   "surface": "única",
+   "type": "adjective",
+   "definition": "the only one who does it"
+  },
+  {
+   "word": "volvés",
+   "surface": "volvés",
+   "type": "verb",
+   "definition": "you come back, the Argentine vos form"
+  },
+  {
+   "word": "revisa",
+   "surface": "revisa",
+   "type": "verb",
+   "definition": "checks something carefully with the eyes"
+  },
+  {
+   "word": "llena",
+   "surface": "llena",
+   "type": "adjective",
+   "definition": "full, with no space left"
+  },
+  {
+   "word": "pregunta",
+   "surface": "pregunta",
+   "type": "verb",
+   "definition": "asks a question to somebody"
+  },
+  {
+   "word": "desde",
+   "surface": "desde",
+   "type": "preposition",
+   "definition": "since, from a time or a place"
+  },
+  {
+   "word": "renglón",
+   "surface": "renglón",
+   "type": "noun",
+   "definition": "a line of writing on a page"
+  },
+  {
+   "word": "nueve",
+   "surface": "nueve",
+   "type": "number",
+   "definition": "nine, the number after eight"
+  },
+  {
+   "word": "clienta",
+   "surface": "clienta",
+   "type": "noun",
+   "definition": "a woman who comes as a customer"
+  },
+  {
+   "word": "baldosa",
+   "surface": "baldosa",
+   "type": "noun",
+   "definition": "a floor tile of the yard"
+  },
+  {
+   "word": "corte",
+   "surface": "corte",
+   "type": "noun",
+   "definition": "a haircut, one job in the salon"
+  },
+  {
+   "word": "vuelvo",
+   "surface": "vuelvo",
+   "type": "verb",
+   "definition": "I come back another day"
+  },
+  {
+   "word": "cajón",
+   "surface": "cajón",
+   "type": "noun",
+   "definition": "a drawer in a table or counter"
+  }
+ ],
+ "fixing-and-repairs#1": [
+  {
+   "word": "mechón",
+   "surface": "mechón",
+   "type": "noun",
+   "definition": "a lock of hair"
+  },
+  {
+   "word": "levantado",
+   "surface": "levantado",
+   "type": "adjective",
+   "definition": "lifted up, held away from the head"
+  },
+  {
+   "word": "vive",
+   "surface": "vive",
+   "type": "verb",
+   "definition": "lives in a place"
+  },
+  {
+   "word": "siempre",
+   "surface": "siempre",
+   "type": "adverb",
+   "definition": "always, every single time"
+  },
+  {
+   "word": "abajo",
+   "surface": "abajo",
+   "type": "adverb",
+   "definition": "below or downstairs, under something else"
+  },
+  {
+   "word": "apurada",
+   "surface": "apurada",
+   "type": "adjective",
+   "definition": "in a hurry, with no time"
+  },
+  {
+   "word": "adentro",
+   "surface": "adentro",
+   "type": "adverb",
+   "definition": "inside, in the interior of a place"
+  },
+  {
+   "word": "sin",
+   "surface": "sin",
+   "type": "preposition",
+   "definition": "without, when something is lacking"
+  },
+  {
+   "word": "minutos",
+   "surface": "minutos",
+   "type": "noun",
+   "definition": "minutes, several of them"
+  },
+  {
+   "word": "salgo",
+   "surface": "salgo",
+   "type": "verb",
+   "definition": "I come out, I finish my shift"
+  },
+  {
+   "word": "siente",
+   "surface": "siente",
+   "type": "verb",
+   "definition": "feels something on the body"
+  },
+  {
+   "word": "olor",
+   "surface": "olor",
+   "type": "noun",
+   "definition": "a smell in the air"
+  },
+  {
+   "word": "fusible",
+   "surface": "fusible",
+   "type": "noun",
+   "definition": "a fuse that cuts the power"
+  },
+  {
+   "word": "comenta",
+   "surface": "comenta",
+   "type": "verb",
+   "definition": "makes a remark about something"
+  },
+  {
+   "word": "veinte",
+   "surface": "veinte",
+   "type": "number",
+   "definition": "twenty, two times ten"
+  },
+  {
+   "word": "secador",
+   "surface": "secador",
+   "type": "noun",
+   "definition": "a hairdryer for drying hair"
+  },
+  {
+   "word": "peiname",
+   "surface": "peiname",
+   "type": "verb",
+   "definition": "do my hair, vos command"
+  },
+  {
+   "word": "tres",
+   "surface": "tres",
+   "type": "number",
+   "definition": "three, the number after two"
+  },
+  {
+   "word": "anoto",
+   "surface": "anoto",
+   "type": "verb",
+   "definition": "I write it down"
+  },
+  {
+   "word": "paga",
+   "surface": "paga",
+   "type": "verb",
+   "definition": "pays money for something"
+  }
+ ],
+ "fixing-and-repairs#2": [
+  {
+   "word": "falta",
+   "surface": "falta",
+   "type": "verb",
+   "definition": "is missing, is not there"
+  },
+  {
+   "word": "silla",
+   "surface": "silla",
+   "type": "noun",
+   "definition": "a chair to sit on"
+  },
+  {
+   "word": "avisa",
+   "surface": "avisa",
+   "type": "verb",
+   "definition": "lets someone know, gives them warning"
+  },
+  {
+   "word": "sabés",
+   "surface": "sabés",
+   "type": "verb",
+   "definition": "you know, the Argentine vos form"
+  },
+  {
+   "word": "aprieta",
+   "surface": "aprieta",
+   "type": "verb",
+   "definition": "tightens or presses something hard"
+  },
+  {
+   "word": "sin",
+   "surface": "sin",
+   "type": "preposition",
+   "definition": "without, when something is lacking"
+  },
+  {
+   "word": "agujero",
+   "surface": "agujero",
+   "type": "noun",
+   "definition": "a hole in a surface, letting things through"
+  },
+  {
+   "word": "queda",
+   "surface": "queda",
+   "type": "verb",
+   "definition": "stays, is left in a place"
+  },
+  {
+   "word": "peor",
+   "surface": "peor",
+   "type": "adjective",
+   "definition": "worse, in a poorer state than before"
+  },
+  {
+   "word": "protesta",
+   "surface": "protesta",
+   "type": "verb",
+   "definition": "complains out loud about something"
+  },
+  {
+   "word": "repito",
+   "surface": "repito",
+   "type": "verb",
+   "definition": "I say it again"
+  },
+  {
+   "word": "dice",
+   "surface": "dice",
+   "type": "verb",
+   "definition": "says, speaks the words"
+  },
+  {
+   "word": "ella",
+   "surface": "ella",
+   "type": "pronoun",
+   "definition": "she, that woman over there"
+  },
+  {
+   "word": "jueves",
+   "surface": "jueves",
+   "type": "noun",
+   "definition": "Thursday, the day after Wednesday"
+  },
+  {
+   "word": "otro",
+   "surface": "otro",
+   "type": "determiner",
+   "definition": "another, a different one"
+  },
+  {
+   "word": "levanta",
+   "surface": "levanta",
+   "type": "verb",
+   "definition": "lifts something up from the floor"
+  },
+  {
+   "word": "pierde",
+   "surface": "pierde",
+   "type": "verb",
+   "definition": "loses something or somebody"
+  },
+  {
+   "word": "piso",
+   "surface": "piso",
+   "type": "noun",
+   "definition": "the floor of a room"
+  },
+  {
+   "word": "despacito",
+   "surface": "despacito",
+   "type": "adverb",
+   "definition": "nice and slowly, the Argentine softener"
+  },
+  {
+   "word": "adentro",
+   "surface": "adentro",
+   "type": "adverb",
+   "definition": "inside, in the interior of a place"
+  }
+ ],
+ "fixing-and-repairs#3": [
+  {
+   "word": "media",
+   "surface": "media",
+   "type": "adjective",
+   "definition": "half, thirty minutes past the hour"
+  },
+  {
+   "word": "sin",
+   "surface": "sin",
+   "type": "preposition",
+   "definition": "without, when something is lacking"
+  },
+  {
+   "word": "chapa",
+   "surface": "chapa",
+   "type": "noun",
+   "definition": "a metal sheet used for roofs"
+  },
+  {
+   "word": "sigue",
+   "surface": "sigue",
+   "type": "verb",
+   "definition": "carries on, keeps going"
+  },
+  {
+   "word": "adentro",
+   "surface": "adentro",
+   "type": "adverb",
+   "definition": "inside, in the interior of a place"
+  },
+  {
+   "word": "entra",
+   "surface": "entra",
+   "type": "verb",
+   "definition": "goes in, comes inside"
+  },
+  {
+   "word": "techo",
+   "surface": "techo",
+   "type": "noun",
+   "definition": "a roof over a building"
+  },
+  {
+   "word": "junta",
+   "surface": "junta",
+   "type": "verb",
+   "definition": "gathers or saves things together"
+  },
+  {
+   "word": "veo",
+   "surface": "veo",
+   "type": "verb",
+   "definition": "I see it from here"
+  },
+  {
+   "word": "acá",
+   "surface": "acá",
+   "type": "adverb",
+   "definition": "here, in this place, the Argentine word"
+  },
+  {
+   "word": "subí",
+   "surface": "subí",
+   "type": "verb",
+   "definition": "go up, Argentine vos command"
+  },
+  {
+   "word": "suben",
+   "surface": "suben",
+   "type": "verb",
+   "definition": "they go up to a higher place"
+  },
+  {
+   "word": "aguanta",
+   "surface": "aguanta",
+   "type": "verb",
+   "definition": "holds up, puts up with something hard"
+  },
+  {
+   "word": "abajo",
+   "surface": "abajo",
+   "type": "adverb",
+   "definition": "below or downstairs, under something else"
+  },
+  {
+   "word": "lee",
+   "surface": "lee",
+   "type": "verb",
+   "definition": "reads words on paper"
+  },
+  {
+   "word": "apuro",
+   "surface": "apuro",
+   "type": "noun",
+   "definition": "a rush, being short of time"
+  },
+  {
+   "word": "zapatillas",
+   "surface": "zapatillas",
+   "type": "noun",
+   "definition": "trainers, the soft shoes for walking"
+  },
+  {
+   "word": "tranquila",
+   "surface": "tranquila",
+   "type": "adjective",
+   "definition": "calm, easy, not worried"
+  },
+  {
+   "word": "ocho",
+   "surface": "ocho",
+   "type": "number",
+   "definition": "eight, the number after seven"
+  },
+  {
+   "word": "timbre",
+   "surface": "timbre",
+   "type": "noun",
+   "definition": "a doorbell at the gate"
+  }
+ ],
+ "time-and-waiting#1": [
+  {
+   "word": "remis",
+   "surface": "remis",
+   "type": "noun",
+   "definition": "a booked car with a driver, cheaper than a taxi"
+  },
+  {
+   "word": "espera",
+   "surface": "espera",
+   "type": "verb",
+   "definition": "waits for someone or something"
+  },
+  {
+   "word": "tranquila",
+   "surface": "tranquila",
+   "type": "adjective",
+   "definition": "calm, easy, not worried"
+  },
+  {
+   "word": "recién",
+   "surface": "recién",
+   "type": "adverb",
+   "definition": "only just now, not before"
+  },
+  {
+   "word": "cuarenta",
+   "surface": "cuarenta",
+   "type": "number",
+   "definition": "forty, four times ten"
+  },
+  {
+   "word": "toma",
+   "surface": "toma",
+   "type": "verb",
+   "definition": "drinks, or takes hold of something"
+  },
+  {
+   "word": "perdoname",
+   "surface": "perdoname",
+   "type": "verb",
+   "definition": "sorry, forgive me for this"
+  },
+  {
+   "word": "llego",
+   "surface": "llego",
+   "type": "verb",
+   "definition": "I get there, I make it in time"
+  },
+  {
+   "word": "podés",
+   "surface": "podés",
+   "type": "verb",
+   "definition": "you can, the Argentine vos form"
+  },
+  {
+   "word": "adentro",
+   "surface": "adentro",
+   "type": "adverb",
+   "definition": "inside, in the interior of a place"
+  },
+  {
+   "word": "probamos",
+   "surface": "probamos",
+   "type": "verb",
+   "definition": "we give it a try"
+  },
+  {
+   "word": "frena",
+   "surface": "frena",
+   "type": "verb",
+   "definition": "brakes, slows down to stop"
+  },
+  {
+   "word": "diez",
+   "surface": "diez",
+   "type": "number",
+   "definition": "ten, the number after nine"
+  },
+  {
+   "word": "está",
+   "surface": "está",
+   "type": "verb",
+   "definition": "is, in a place or a state"
+  },
+  {
+   "word": "calcula",
+   "surface": "calcula",
+   "type": "verb",
+   "definition": "works out a number in the head"
+  },
+  {
+   "word": "dale",
+   "surface": "dale",
+   "type": "interjection",
+   "definition": "go on, all right, the Argentine yes"
+  },
+  {
+   "word": "ayer",
+   "surface": "ayer",
+   "type": "adverb",
+   "definition": "yesterday, the day before today"
+  },
+  {
+   "word": "seis",
+   "surface": "seis",
+   "type": "number",
+   "definition": "six, the number after five"
+  },
+  {
+   "word": "deja",
+   "surface": "deja",
+   "type": "verb",
+   "definition": "leaves something somewhere, drops it off"
+  },
+  {
+   "word": "nada",
+   "surface": "nada",
+   "type": "pronoun",
+   "definition": "nothing, not a thing"
+  }
+ ],
+ "time-and-waiting#2": [
+  {
+   "word": "clientas",
+   "surface": "clientas",
+   "type": "noun",
+   "definition": "women who come as customers"
+  },
+  {
+   "word": "misma",
+   "surface": "misma",
+   "type": "adjective",
+   "definition": "the same one, not another"
+  },
+  {
+   "word": "hora",
+   "surface": "hora",
+   "type": "noun",
+   "definition": "an hour, or the time of day"
+  },
+  {
+   "word": "secador",
+   "surface": "secador",
+   "type": "noun",
+   "definition": "a hairdryer for drying hair"
+  },
+  {
+   "word": "despertador",
+   "surface": "despertador",
+   "type": "noun",
+   "definition": "an alarm clock that wakes you"
+  },
+  {
+   "word": "anota",
+   "surface": "anota",
+   "type": "verb",
+   "definition": "writes something down to remember it"
+  },
+  {
+   "word": "sentate",
+   "surface": "sentate",
+   "type": "verb",
+   "definition": "sit down, vos command"
+  },
+  {
+   "word": "crema",
+   "surface": "crema",
+   "type": "noun",
+   "definition": "a cream put on hair or skin"
+  },
+  {
+   "word": "algo",
+   "surface": "algo",
+   "type": "pronoun",
+   "definition": "something, a thing without a name"
+  },
+  {
+   "word": "hebilla",
+   "surface": "hebilla",
+   "type": "noun",
+   "definition": "a clip that holds the hair"
+  },
+  {
+   "word": "perdoname",
+   "surface": "perdoname",
+   "type": "verb",
+   "definition": "sorry, forgive me for this"
+  },
+  {
+   "word": "estoy",
+   "surface": "estoy",
+   "type": "verb",
+   "definition": "I am, how I feel right now"
+  },
+  {
+   "word": "disculpa",
+   "surface": "disculpa",
+   "type": "verb",
+   "definition": "says sorry for something"
+  },
+  {
+   "word": "entiendo",
+   "surface": "entiendo",
+   "type": "verb",
+   "definition": "I understand what you say"
+  },
+  {
+   "word": "agrega",
+   "surface": "agrega",
+   "type": "verb",
+   "definition": "adds one more thing to what was said"
+  },
+  {
+   "word": "queja",
+   "surface": "queja",
+   "type": "noun",
+   "definition": "a complaint said out loud"
+  },
+  {
+   "word": "está",
+   "surface": "está",
+   "type": "verb",
+   "definition": "is, in a place or a state"
+  },
+  {
+   "word": "pasa",
+   "surface": "pasa",
+   "type": "verb",
+   "definition": "happens, or goes past"
+  },
+  {
+   "word": "viene",
+   "surface": "viene",
+   "type": "verb",
+   "definition": "comes, arrives from somewhere"
+  },
+  {
+   "word": "hace",
+   "surface": "hace",
+   "type": "verb",
+   "definition": "does or makes something"
+  }
+ ],
+ "time-and-waiting#3": [
+  {
+   "word": "vuelta",
+   "surface": "vuelta",
+   "type": "noun",
+   "definition": "a turn or a way back"
+  },
+  {
+   "word": "cuadra",
+   "surface": "cuadra",
+   "type": "noun",
+   "definition": "a city block between two corners"
+  },
+  {
+   "word": "llega",
+   "surface": "llega",
+   "type": "verb",
+   "definition": "arrives, gets to the place"
+  },
+  {
+   "word": "carpeta",
+   "surface": "carpeta",
+   "type": "noun",
+   "definition": "a folder that holds papers"
+  },
+  {
+   "word": "suelto",
+   "surface": "suelto",
+   "type": "adjective",
+   "definition": "loose, undone and hanging"
+  },
+  {
+   "word": "peluquería",
+   "surface": "peluquería",
+   "type": "noun",
+   "definition": "a hairdressing salon in the front room"
+  },
+  {
+   "word": "señor",
+   "surface": "señor",
+   "type": "noun",
+   "definition": "a man, the polite word for him"
+  },
+  {
+   "word": "come",
+   "surface": "come",
+   "type": "verb",
+   "definition": "eats, takes food from the plate"
+  },
+  {
+   "word": "saca",
+   "surface": "saca",
+   "type": "verb",
+   "definition": "takes something out of a place"
+  },
+  {
+   "word": "llame",
+   "surface": "llame",
+   "type": "verb",
+   "definition": "calls, if somebody rings up"
+  },
+  {
+   "word": "quedate",
+   "surface": "quedate",
+   "type": "verb",
+   "definition": "stay here, do not go"
+  },
+  {
+   "word": "once",
+   "surface": "once",
+   "type": "number",
+   "definition": "eleven, the number after ten"
+  },
+  {
+   "word": "recibo",
+   "surface": "recibo",
+   "type": "noun",
+   "definition": "a receipt proving a payment"
+  },
+  {
+   "word": "está",
+   "surface": "está",
+   "type": "verb",
+   "definition": "is, in a place or a state"
+  },
+  {
+   "word": "tacha",
+   "surface": "tacha",
+   "type": "verb",
+   "definition": "crosses a line out with a pen"
+  },
+  {
+   "word": "letra",
+   "surface": "letra",
+   "type": "noun",
+   "definition": "handwriting, the shape of the letters"
+  },
+  {
+   "word": "anotás",
+   "surface": "anotás",
+   "type": "verb",
+   "definition": "you write it down, Argentine vos form"
+  },
+  {
+   "word": "olvido",
+   "surface": "olvido",
+   "type": "verb",
+   "definition": "I forget it, it slips away"
+  },
+  {
+   "word": "entera",
+   "surface": "entera",
+   "type": "adjective",
+   "definition": "whole, complete, nothing missing"
+  },
+  {
+   "word": "escribo",
+   "surface": "escribo",
+   "type": "verb",
+   "definition": "I write it down"
+  }
+ ],
+ "secrets-and-promises#1": [
+  {
+   "word": "champú",
+   "surface": "champú",
+   "type": "noun",
+   "definition": "shampoo for washing hair"
+  },
+  {
+   "word": "tiene",
+   "surface": "tiene",
+   "type": "verb",
+   "definition": "has, holds or owns something"
+  },
+  {
+   "word": "sienta",
+   "surface": "sienta",
+   "type": "verb",
+   "definition": "sits down in a chair"
+  },
+  {
+   "word": "pelo",
+   "surface": "pelo",
+   "type": "noun",
+   "definition": "hair on a person's head"
+  },
+  {
+   "word": "canilla",
+   "surface": "canilla",
+   "type": "noun",
+   "definition": "a water tap, the Argentine word"
+  },
+  {
+   "word": "busca",
+   "surface": "busca",
+   "type": "verb",
+   "definition": "looks for something that is missing"
+  },
+  {
+   "word": "adelante",
+   "surface": "adelante",
+   "type": "adverb",
+   "definition": "in front, at the front part"
+  },
+  {
+   "word": "portero",
+   "surface": "portero",
+   "type": "noun",
+   "definition": "the caretaker of a building"
+  },
+  {
+   "word": "cae",
+   "surface": "cae",
+   "type": "verb",
+   "definition": "falls, drops to the ground"
+  },
+  {
+   "word": "ahora",
+   "surface": "ahora",
+   "type": "adverb",
+   "definition": "now, at this very moment"
+  },
+  {
+   "word": "toda",
+   "surface": "toda",
+   "type": "determiner",
+   "definition": "all of it, the whole thing"
+  },
+  {
+   "word": "comenta",
+   "surface": "comenta",
+   "type": "verb",
+   "definition": "makes a remark about something"
+  },
+  {
+   "word": "corte",
+   "surface": "corte",
+   "type": "noun",
+   "definition": "a haircut, one job in the salon"
+  },
+  {
+   "word": "paga",
+   "surface": "paga",
+   "type": "verb",
+   "definition": "pays money for something"
+  },
+  {
+   "word": "entra",
+   "surface": "entra",
+   "type": "verb",
+   "definition": "goes in, comes inside"
+  },
+  {
+   "word": "otra",
+   "surface": "otra",
+   "type": "determiner",
+   "definition": "another one, one more"
+  },
+  {
+   "word": "promesa",
+   "surface": "promesa",
+   "type": "noun",
+   "definition": "a promise given to somebody"
+  },
+  {
+   "word": "yerba",
+   "surface": "yerba",
+   "type": "noun",
+   "definition": "the dried leaves used to brew mate"
+  },
+  {
+   "word": "limonero",
+   "surface": "limonero",
+   "type": "noun",
+   "definition": "a lemon tree in the yard"
+  },
+  {
+   "word": "termo",
+   "surface": "termo",
+   "type": "noun",
+   "definition": "the flask of hot water for mate"
+  }
+ ],
+ "secrets-and-promises#2": [
+  {
+   "word": "entera",
+   "surface": "entera",
+   "type": "adjective",
+   "definition": "whole, complete, nothing missing"
+  },
+  {
+   "word": "peluquería",
+   "surface": "peluquería",
+   "type": "noun",
+   "definition": "a hairdressing salon in the front room"
+  },
+  {
+   "word": "escucha",
+   "surface": "escucha",
+   "type": "verb",
+   "definition": "listens to what is said"
+  },
+  {
+   "word": "golpea",
+   "surface": "golpea",
+   "type": "verb",
+   "definition": "knocks or bangs on something"
+  },
+  {
+   "word": "veces",
+   "surface": "veces",
+   "type": "noun",
+   "definition": "times, repeated occasions of the same"
+  },
+  {
+   "word": "contesta",
+   "surface": "contesta",
+   "type": "verb",
+   "definition": "answers, replies to what was said"
+  },
+  {
+   "word": "revistas",
+   "surface": "revistas",
+   "type": "noun",
+   "definition": "magazines left for the customers"
+  },
+  {
+   "word": "preguntás",
+   "surface": "preguntás",
+   "type": "verb",
+   "definition": "you ask, the Argentine vos form"
+  },
+  {
+   "word": "soga",
+   "surface": "soga",
+   "type": "noun",
+   "definition": "the washing line in the yard"
+  },
+  {
+   "word": "broches",
+   "surface": "broches",
+   "type": "noun",
+   "definition": "pegs that hold clothes on the line"
+  },
+  {
+   "word": "pocillo",
+   "surface": "pocillo",
+   "type": "noun",
+   "definition": "a small cup for coffee"
+  },
+  {
+   "word": "mesada",
+   "surface": "mesada",
+   "type": "noun",
+   "definition": "the kitchen counter, the Argentine word"
+  },
+  {
+   "word": "falta",
+   "surface": "falta",
+   "type": "verb",
+   "definition": "is missing, is not there"
+  },
+  {
+   "word": "sabés",
+   "surface": "sabés",
+   "type": "verb",
+   "definition": "you know, the Argentine vos form"
+  },
+  {
+   "word": "tira",
+   "surface": "tira",
+   "type": "verb",
+   "definition": "throws something into the bin"
+  },
+  {
+   "word": "serio",
+   "surface": "serio",
+   "type": "adjective",
+   "definition": "serious, with no smile"
+  },
+  {
+   "word": "abre",
+   "surface": "abre",
+   "type": "verb",
+   "definition": "opens something, like a door or a shop"
+  },
+  {
+   "word": "boca",
+   "surface": "boca",
+   "type": "noun",
+   "definition": "the mouth, the opening of the face"
+  },
+  {
+   "word": "lavandina",
+   "surface": "lavandina",
+   "type": "noun",
+   "definition": "bleach used for cleaning floors"
+  },
+  {
+   "word": "lado",
+   "surface": "lado",
+   "type": "noun",
+   "definition": "a side, one part of two"
+  }
+ ],
+ "secrets-and-promises#3": [
+  {
+   "word": "entran",
+   "surface": "entran",
+   "type": "verb",
+   "definition": "they come in, they arrive"
+  },
+  {
+   "word": "prende",
+   "surface": "prende",
+   "type": "verb",
+   "definition": "switches on a light or a screen"
+  },
+  {
+   "word": "sobre",
+   "surface": "sobre",
+   "type": "noun",
+   "definition": "an envelope holding a letter"
+  },
+  {
+   "word": "lee",
+   "surface": "lee",
+   "type": "verb",
+   "definition": "reads words on paper"
+  },
+  {
+   "word": "kiosco",
+   "surface": "kiosco",
+   "type": "noun",
+   "definition": "a small corner shop for daily things"
+  },
+  {
+   "word": "medialuna",
+   "surface": "medialuna",
+   "type": "noun",
+   "definition": "a small sweet croissant eaten at breakfast"
+  },
+  {
+   "word": "tenés",
+   "surface": "tenés",
+   "type": "verb",
+   "definition": "you have, the Argentine vos form"
+  },
+  {
+   "word": "dura",
+   "surface": "dura",
+   "type": "adjective",
+   "definition": "hard, stiff, or firm in voice"
+  },
+  {
+   "word": "tengo",
+   "surface": "tengo",
+   "type": "verb",
+   "definition": "I have, I hold something"
+  },
+  {
+   "word": "apoya",
+   "surface": "apoya",
+   "type": "verb",
+   "definition": "rests something on a surface"
+  },
+  {
+   "word": "suelta",
+   "surface": "suelta",
+   "type": "verb",
+   "definition": "lets go of something"
+  },
+  {
+   "word": "vos",
+   "surface": "vos",
+   "type": "pronoun",
+   "definition": "you, the Argentine form instead of tú"
+  },
+  {
+   "word": "puedo",
+   "surface": "puedo",
+   "type": "verb",
+   "definition": "I can, I am able to"
+  },
+  {
+   "word": "entera",
+   "surface": "entera",
+   "type": "adjective",
+   "definition": "whole, complete, nothing missing"
+  },
+  {
+   "word": "paga",
+   "surface": "paga",
+   "type": "verb",
+   "definition": "pays money for something"
+  },
+  {
+   "word": "explica",
+   "surface": "explica",
+   "type": "verb",
+   "definition": "makes something clear to another person"
+  },
+  {
+   "word": "vas",
+   "surface": "vas",
+   "type": "verb",
+   "definition": "you go, you are leaving"
+  },
+  {
+   "word": "riega",
+   "surface": "riega",
+   "type": "verb",
+   "definition": "waters the plants of the yard"
+  },
+  {
+   "word": "nadie",
+   "surface": "nadie",
+   "type": "pronoun",
+   "definition": "nobody, not one person"
+  },
+  {
+   "word": "otro",
+   "surface": "otro",
+   "type": "determiner",
+   "definition": "another, a different one"
+  }
+ ],
+ "couples-and-introductions#1": [
+  {
+   "word": "reja",
+   "surface": "reja",
+   "type": "noun",
+   "definition": "the iron gate at the street door"
+  },
+  {
+   "word": "nueve",
+   "surface": "nueve",
+   "type": "number",
+   "definition": "nine, the number after eight"
+  },
+  {
+   "word": "camisa",
+   "surface": "camisa",
+   "type": "noun",
+   "definition": "a shirt with buttons"
+  },
+  {
+   "word": "avisa",
+   "surface": "avisa",
+   "type": "verb",
+   "definition": "lets someone know, gives them warning"
+  },
+  {
+   "word": "apuro",
+   "surface": "apuro",
+   "type": "noun",
+   "definition": "a rush, being short of time"
+  },
+  {
+   "word": "rotisería",
+   "surface": "rotisería",
+   "type": "noun",
+   "definition": "a shop selling hot cooked food to take away"
+  },
+  {
+   "word": "ramo",
+   "surface": "ramo",
+   "type": "noun",
+   "definition": "a bunch of flowers"
+  },
+  {
+   "word": "día",
+   "surface": "día",
+   "type": "noun",
+   "definition": "a day, from morning to night"
+  },
+  {
+   "word": "saluda",
+   "surface": "saluda",
+   "type": "verb",
+   "definition": "greets or says goodbye"
+  },
+  {
+   "word": "deja",
+   "surface": "deja",
+   "type": "verb",
+   "definition": "leaves something somewhere, drops it off"
+  },
+  {
+   "word": "traje",
+   "surface": "traje",
+   "type": "verb",
+   "definition": "I brought something with me"
+  },
+  {
+   "word": "milanesas",
+   "surface": "milanesas",
+   "type": "noun",
+   "definition": "breaded meat cutlets, everyday Argentine food"
+  },
+  {
+   "word": "probalas",
+   "surface": "probalas",
+   "type": "verb",
+   "definition": "try them, vos command"
+  },
+  {
+   "word": "habla",
+   "surface": "habla",
+   "type": "verb",
+   "definition": "speaks, talks to someone"
+  },
+  {
+   "word": "sirve",
+   "surface": "sirve",
+   "type": "verb",
+   "definition": "pours a drink, or is of use"
+  },
+  {
+   "word": "termina",
+   "surface": "termina",
+   "type": "verb",
+   "definition": "finishes, comes to an end"
+  },
+  {
+   "word": "quedo",
+   "surface": "quedo",
+   "type": "verb",
+   "definition": "I stay, I am left with"
+  },
+  {
+   "word": "despacito",
+   "surface": "despacito",
+   "type": "adverb",
+   "definition": "nice and slowly, the Argentine softener"
+  },
+  {
+   "word": "mojada",
+   "surface": "mojada",
+   "type": "adjective",
+   "definition": "wet, soaked by the rain"
+  },
+  {
+   "word": "dale",
+   "surface": "dale",
+   "type": "interjection",
+   "definition": "go on, all right, the Argentine yes"
+  }
+ ],
+ "couples-and-introductions#2": [
+  {
+   "word": "billetes",
+   "surface": "billetes",
+   "type": "noun",
+   "definition": "banknotes, the paper money"
+  },
+  {
+   "word": "sube",
+   "surface": "sube",
+   "type": "verb",
+   "definition": "goes up, or raises something"
+  },
+  {
+   "word": "lee",
+   "surface": "lee",
+   "type": "verb",
+   "definition": "reads words on paper"
+  },
+  {
+   "word": "saca",
+   "surface": "saca",
+   "type": "verb",
+   "definition": "takes something out of a place"
+  },
+  {
+   "word": "falta",
+   "surface": "falta",
+   "type": "verb",
+   "definition": "is missing, is not there"
+  },
+  {
+   "word": "propone",
+   "surface": "propone",
+   "type": "verb",
+   "definition": "suggests a plan or a deal"
+  },
+  {
+   "word": "pago",
+   "surface": "pago",
+   "type": "verb",
+   "definition": "I pay for it"
+  },
+  {
+   "word": "quedan",
+   "surface": "quedan",
+   "type": "verb",
+   "definition": "they stay, they are left there"
+  },
+  {
+   "word": "medio",
+   "surface": "medio",
+   "type": "noun",
+   "definition": "the middle, the centre of something"
+  },
+  {
+   "word": "somos",
+   "surface": "somos",
+   "type": "verb",
+   "definition": "we are, the two of us"
+  },
+  {
+   "word": "heladera",
+   "surface": "heladera",
+   "type": "noun",
+   "definition": "a fridge, the Argentine word"
+  },
+  {
+   "word": "gotera",
+   "surface": "gotera",
+   "type": "noun",
+   "definition": "a leak dripping water from above"
+  },
+  {
+   "word": "ruidito",
+   "surface": "ruidito",
+   "type": "noun",
+   "definition": "a small noise, the Argentine softener"
+  },
+  {
+   "word": "maceta",
+   "surface": "maceta",
+   "type": "noun",
+   "definition": "a flowerpot in the yard"
+  },
+  {
+   "word": "sobrecito",
+   "surface": "sobrecito",
+   "type": "noun",
+   "definition": "a small envelope for the money"
+  },
+  {
+   "word": "suena",
+   "surface": "suena",
+   "type": "verb",
+   "definition": "rings or makes a sound"
+  },
+  {
+   "word": "agrega",
+   "surface": "agrega",
+   "type": "verb",
+   "definition": "adds one more thing to what was said"
+  },
+  {
+   "word": "cruza",
+   "surface": "cruza",
+   "type": "verb",
+   "definition": "crosses the street to the other side"
+  },
+  {
+   "word": "vereda",
+   "surface": "vereda",
+   "type": "noun",
+   "definition": "the pavement, the Argentine word"
+  },
+  {
+   "word": "aumento",
+   "surface": "aumento",
+   "type": "noun",
+   "definition": "a rise, more money charged than before"
+  }
+ ],
+ "couples-and-introductions#3": [
+  {
+   "word": "esperan",
+   "surface": "esperan",
+   "type": "verb",
+   "definition": "they wait, sitting there"
+  },
+  {
+   "word": "mediodía",
+   "surface": "mediodía",
+   "type": "noun",
+   "definition": "midday, twelve in the afternoon"
+  },
+  {
+   "word": "humo",
+   "surface": "humo",
+   "type": "noun",
+   "definition": "smoke rising from a fire"
+  },
+  {
+   "word": "chapa",
+   "surface": "chapa",
+   "type": "noun",
+   "definition": "a metal sheet used for roofs"
+  },
+  {
+   "word": "barre",
+   "surface": "barre",
+   "type": "verb",
+   "definition": "sweeps the floor with a broom"
+  },
+  {
+   "word": "floja",
+   "surface": "floja",
+   "type": "adjective",
+   "definition": "loose, not tight or firm"
+  },
+  {
+   "word": "cinta",
+   "surface": "cinta",
+   "type": "noun",
+   "definition": "tape for sticking or fixing things"
+  },
+  {
+   "word": "gastada",
+   "surface": "gastada",
+   "type": "adjective",
+   "definition": "worn out from too much use"
+  },
+  {
+   "word": "sostenela",
+   "surface": "sostenela",
+   "type": "verb",
+   "definition": "hold it, Argentine vos command"
+  },
+  {
+   "word": "aprieto",
+   "surface": "aprieto",
+   "type": "verb",
+   "definition": "I tighten it, I press it"
+  },
+  {
+   "word": "listo",
+   "surface": "listo",
+   "type": "adjective",
+   "definition": "ready, done, sorted out"
+  },
+  {
+   "word": "ocho",
+   "surface": "ocho",
+   "type": "number",
+   "definition": "eight, the number after seven"
+  },
+  {
+   "word": "comenta",
+   "surface": "comenta",
+   "type": "verb",
+   "definition": "makes a remark about something"
+  },
+  {
+   "word": "serio",
+   "surface": "serio",
+   "type": "adjective",
+   "definition": "serious, with no smile"
+  },
+  {
+   "word": "enero",
+   "surface": "enero",
+   "type": "noun",
+   "definition": "January, the first month of the year"
+  },
+  {
+   "word": "dos",
+   "surface": "dos",
+   "type": "number",
+   "definition": "two, the number after one"
+  },
+  {
+   "word": "sigue",
+   "surface": "sigue",
+   "type": "verb",
+   "definition": "carries on, keeps going"
+  },
+  {
+   "word": "carne",
+   "surface": "carne",
+   "type": "noun",
+   "definition": "meat, the beef for the grill"
+  },
+  {
+   "word": "quema",
+   "surface": "quema",
+   "type": "verb",
+   "definition": "burns, is spoiled by the fire"
+  },
+  {
+   "word": "tiras",
+   "surface": "tiras",
+   "type": "noun",
+   "definition": "strips of grilled beef ribs from the parrilla"
+  }
+ ],
+ "work-and-tiredness#1": [
+  {
+   "word": "cierra",
+   "surface": "cierra",
+   "type": "verb",
+   "definition": "closes something, shuts it"
+  },
+  {
+   "word": "ocho",
+   "surface": "ocho",
+   "type": "number",
+   "definition": "eight, the number after seven"
+  },
+  {
+   "word": "trabaja",
+   "surface": "trabaja",
+   "type": "verb",
+   "definition": "works at a job"
+  },
+  {
+   "word": "hace",
+   "surface": "hace",
+   "type": "verb",
+   "definition": "does or makes something"
+  },
+  {
+   "word": "puntual",
+   "surface": "puntual",
+   "type": "adjective",
+   "definition": "on time, not a minute late"
+  },
+  {
+   "word": "termino",
+   "surface": "termino",
+   "type": "verb",
+   "definition": "I finish my shift"
+  },
+  {
+   "word": "siete",
+   "surface": "siete",
+   "type": "number",
+   "definition": "seven, the number after six"
+  },
+  {
+   "word": "más",
+   "surface": "más",
+   "type": "adverb",
+   "definition": "more, a greater amount"
+  },
+  {
+   "word": "libreta",
+   "surface": "libreta",
+   "type": "noun",
+   "definition": "a small book for notes and bookings"
+  },
+  {
+   "word": "llego",
+   "surface": "llego",
+   "type": "verb",
+   "definition": "I get there, I make it in time"
+  },
+  {
+   "word": "pone",
+   "surface": "pone",
+   "type": "verb",
+   "definition": "puts something in a place"
+  },
+  {
+   "word": "final",
+   "surface": "final",
+   "type": "noun",
+   "definition": "the end of something, the last part"
+  },
+  {
+   "word": "propina",
+   "surface": "propina",
+   "type": "noun",
+   "definition": "a tip left for the service"
+  },
+  {
+   "word": "tocame",
+   "surface": "tocame",
+   "type": "verb",
+   "definition": "touch it, feel it, vos command"
+  },
+  {
+   "word": "pelo",
+   "surface": "pelo",
+   "type": "noun",
+   "definition": "hair on a person's head"
+  },
+  {
+   "word": "ríen",
+   "surface": "ríen",
+   "type": "verb",
+   "definition": "they laugh together at something"
+  },
+  {
+   "word": "alfajor",
+   "surface": "alfajor",
+   "type": "noun",
+   "definition": "a filled biscuit, the Argentine snack"
+  },
+  {
+   "word": "duerme",
+   "surface": "duerme",
+   "type": "verb",
+   "definition": "sleeps, falls asleep in the chair"
+  },
+  {
+   "word": "perdoname",
+   "surface": "perdoname",
+   "type": "verb",
+   "definition": "sorry, forgive me for this"
+  },
+  {
+   "word": "secador",
+   "surface": "secador",
+   "type": "noun",
+   "definition": "a hairdryer for drying hair"
+  }
+ ],
+ "work-and-tiredness#2": [
+  {
+   "word": "tiembla",
+   "surface": "tiembla",
+   "type": "verb",
+   "definition": "shakes, trembles with tiredness"
+  },
+  {
+   "word": "viernes",
+   "surface": "viernes",
+   "type": "noun",
+   "definition": "Friday, the day after Thursday"
+  },
+  {
+   "word": "catorce",
+   "surface": "catorce",
+   "type": "number",
+   "definition": "fourteen, the number after thirteen"
+  },
+  {
+   "word": "minuto",
+   "surface": "minuto",
+   "type": "noun",
+   "definition": "a minute, sixty seconds"
+  },
+  {
+   "word": "tijera",
+   "surface": "tijera",
+   "type": "noun",
+   "definition": "scissors for cutting hair"
+  },
+  {
+   "word": "hombro",
+   "surface": "hombro",
+   "type": "noun",
+   "definition": "the shoulder of the body"
+  },
+  {
+   "word": "zapatilla",
+   "surface": "zapatilla",
+   "type": "noun",
+   "definition": "a trainer, a soft shoe"
+  },
+  {
+   "word": "favor",
+   "surface": "favor",
+   "type": "noun",
+   "definition": "a favour, please when you ask"
+  },
+  {
+   "word": "grita",
+   "surface": "grita",
+   "type": "verb",
+   "definition": "shouts in a loud voice"
+  },
+  {
+   "word": "saco",
+   "surface": "saco",
+   "type": "verb",
+   "definition": "I take it out, I get it off"
+  },
+  {
+   "word": "comenta",
+   "surface": "comenta",
+   "type": "verb",
+   "definition": "makes a remark about something"
+  },
+  {
+   "word": "escuchás",
+   "surface": "escuchás",
+   "type": "verb",
+   "definition": "you listen, the Argentine vos form"
+  },
+  {
+   "word": "mal",
+   "surface": "mal",
+   "type": "adverb",
+   "definition": "badly, in the wrong way"
+  },
+  {
+   "word": "perdoname",
+   "surface": "perdoname",
+   "type": "verb",
+   "definition": "sorry, forgive me for this"
+  },
+  {
+   "word": "limonero",
+   "surface": "limonero",
+   "type": "noun",
+   "definition": "a lemon tree in the yard"
+  },
+  {
+   "word": "peine",
+   "surface": "peine",
+   "type": "noun",
+   "definition": "a comb for tidying hair"
+  },
+  {
+   "word": "quedan",
+   "surface": "quedan",
+   "type": "verb",
+   "definition": "they stay, they are left there"
+  },
+  {
+   "word": "seca",
+   "surface": "seca",
+   "type": "adjective",
+   "definition": "dry, with no water left"
+  },
+  {
+   "word": "plata",
+   "surface": "plata",
+   "type": "noun",
+   "definition": "money, the everyday Argentine word"
+  },
+  {
+   "word": "monto",
+   "surface": "monto",
+   "type": "noun",
+   "definition": "the amount of money to be paid"
+  }
+ ],
+ "work-and-tiredness#3": [
+  {
+   "word": "mesada",
+   "surface": "mesada",
+   "type": "noun",
+   "definition": "the kitchen counter, the Argentine word"
+  },
+  {
+   "word": "limpia",
+   "surface": "limpia",
+   "type": "adjective",
+   "definition": "clean, with no dirt or debt"
+  },
+  {
+   "word": "zapatos",
+   "surface": "zapatos",
+   "type": "noun",
+   "definition": "the good shoes kept for errands"
+  },
+  {
+   "word": "depósito",
+   "surface": "depósito",
+   "type": "noun",
+   "definition": "money paid ahead as a guarantee"
+  },
+  {
+   "word": "birome",
+   "surface": "birome",
+   "type": "noun",
+   "definition": "a ballpoint pen, the Argentine word"
+  },
+  {
+   "word": "dueño",
+   "surface": "dueño",
+   "type": "noun",
+   "definition": "the owner of the building"
+  },
+  {
+   "word": "nueve",
+   "surface": "nueve",
+   "type": "number",
+   "definition": "nine, the number after eight"
+  },
+  {
+   "word": "recién",
+   "surface": "recién",
+   "type": "adverb",
+   "definition": "only just now, not before"
+  },
+  {
+   "word": "escribano",
+   "surface": "escribano",
+   "type": "noun",
+   "definition": "a notary who stamps official papers"
+  },
+  {
+   "word": "sellito",
+   "surface": "sellito",
+   "type": "noun",
+   "definition": "a small official stamp"
+  },
+  {
+   "word": "felpudo",
+   "surface": "felpudo",
+   "type": "noun",
+   "definition": "a doormat at the door"
+  },
+  {
+   "word": "todavía",
+   "surface": "todavía",
+   "type": "adverb",
+   "definition": "still, up to now"
+  },
+  {
+   "word": "serio",
+   "surface": "serio",
+   "type": "adjective",
+   "definition": "serious, with no smile"
+  },
+  {
+   "word": "limonero",
+   "surface": "limonero",
+   "type": "noun",
+   "definition": "a lemon tree in the yard"
+  },
+  {
+   "word": "voy",
+   "surface": "voy",
+   "type": "verb",
+   "definition": "I go, I am on my way"
+  },
+  {
+   "word": "mirarla",
+   "surface": "mirarla",
+   "type": "verb",
+   "definition": "to look at her"
+  },
+  {
+   "word": "turnos",
+   "surface": "turnos",
+   "type": "noun",
+   "definition": "appointments booked through the day"
+  },
+  {
+   "word": "copia",
+   "surface": "copia",
+   "type": "noun",
+   "definition": "a copy of a signed paper"
+  },
+  {
+   "word": "sigue",
+   "surface": "sigue",
+   "type": "verb",
+   "definition": "carries on, keeps going"
+  },
+  {
+   "word": "ahí",
+   "surface": "ahí",
+   "type": "adverb",
+   "definition": "there, in that spot near you"
+  }
+ ]
+}

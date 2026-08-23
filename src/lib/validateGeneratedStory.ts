@@ -1462,6 +1462,14 @@ export async function validateGeneratedStory(
         });
       }
 
+    }
+
+    // EL VOSEO NO ES COSA DE A1 (2026-08-23). Estos dos checks vivian dentro
+    // del gate `recognizabilityLevel === "a1"`, asi que sobre las 21 del
+    // Friends ES/argentina A0 no median NADA: el journey entero se escribio en
+    // voseo y ningun check lo miro, ni para exigirlo ni para prohibirlo. Un
+    // nivel no cambia de que dialecto habla un personaje.
+    if (titleLangCode === "ES") {
       // Voseo detection. User rule (2026-06-16): español neutro con tú
       // forms por defecto, PERO las historias ambientadas en el Río de
       // la Plata (Argentina / Uruguay) DEBEN ir en voseo auténtico -
@@ -1476,7 +1484,14 @@ export async function validateGeneratedStory(
       // "Irene abre la boca" activaba el setting rioplatense y la historia,
       // ambientada en un pueblo de Málaga, fallaba por no usar voseo. Lo mismo
       // haría "la comida argentina". La mayúscula es la señal.
+      // La VARIANTE del journey manda sobre los toponimos del cuerpo: un A0
+      // argentino ambientado en Villa Crespo no nombra ninguna de estas
+      // ciudades y salia como "no rioplatense", asi que su voseo autentico
+      // habria contado como error. Los marcadores del texto siguen valiendo
+      // para las historias sueltas sin variante declarada.
+      const VARIANTE = (context.variant ?? "").trim().toLowerCase();
       const RIOPLATENSE_SETTING =
+        VARIANTE === "argentina" || VARIANTE === "uruguay" ||
         /\b(Argentina|Uruguay|Buenos Aires|Montevideo|Rosario|La Plata|Córdoba|Palermo|San Telmo|Recoleta|La Boca|Belgrano)\b/.test(
           parsed.text,
         );

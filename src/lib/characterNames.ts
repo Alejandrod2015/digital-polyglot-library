@@ -49,6 +49,19 @@ export const CHARACTER_NAMES: Record<string, NameBank> = {
     young: ["Valentina", "Camila", "Sofía", "Mariana", "Antonella", "Matías", "Santiago", "Benjamín", "Nicolás", "Emiliano"],
     older: ["Rosario", "Hernán", "Graciela", "Ramón"],
   },
+  // Argentina. El banco faltaba y el primer journey argentino de nivel A
+  // (Friends A0) se habria escrito sin contraste. Los `young` son nombres
+  // frecuentes entre los nacidos en los ochenta y noventa, que es la franja de
+  // los personajes (25-55); los `older` suenan a la generacion anterior.
+  "spanish/argentina": {
+    young: [
+      "Julieta", "Micaela", "Agustina", "Rocío", "Florencia", "Malena", "Brenda",
+      "Ayelén", "Carla", "Belén", "Daiana", "Yamila",
+      "Damián", "Facundo", "Leandro", "Gonzalo", "Ezequiel", "Maximiliano",
+      "Franco", "Emanuel", "Federico", "Iván",
+    ],
+    older: ["Norma", "Susana", "Beatriz", "Osvaldo", "Rubén", "Néstor"],
+  },
   "german/germany": {
     young: ["Lena", "Marie", "Sophie", "Emilia", "Hannah", "Jonas", "Leon", "Finn", "Elias", "Noah"],
     older: ["Ingrid", "Helmut", "Ursula", "Dieter"],

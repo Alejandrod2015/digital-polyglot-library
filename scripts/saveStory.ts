@@ -399,7 +399,9 @@ function slugify(s: string): string {
       // sintagma que dice qué es), ese bloque no puede llevar habla citada.
       // Abrir directamente con diálogo es legítimo y no dispara nada.
       const primerBloque = blocks[0] ?? "";
-      const presenta = /\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+,\s+(um|uma)\s+\w+|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+\s+é\s+(um|uma)\s+\w+/.test(primerBloque);
+      // El detector era solo portugues (`um/uma`, `e`), asi que sobre un cuerpo
+      // espanol salia en verde sin medir nada, que es el agujero de siempre.
+      const presenta = /\b[A-ZÁÉÍÓÚÂÊÔÃÕÇÑ][a-záéíóúâêôãõçñ]+,\s+(um|uma|un|una)\s+\w+|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇÑ][a-záéíóúâêôãõçñ]+\s+(?:é|es)\s+(um|uma|un|una)\s+\w+|\b(?:Quien|La que|El que)\s+(?:[a-zá-úñ]+\s+){1,4}es\s+[A-ZÁÉÍÓÚÑ][a-zá-úñ]+/.test(primerBloque);
       if (presenta && /[“”]/.test(primerBloque)) {
         hardFails.push({
           id: "narrator-intro-block-shared", label: "", status: "fail",

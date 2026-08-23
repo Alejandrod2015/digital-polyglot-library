@@ -57,6 +57,7 @@ const FAMILIES: Record<string, string[]> = {
   spanish: [
     "spanish-friends",
     "spanish-friends-argentina",
+    "spanish-friends-argentina-a0",
     "spanish-friends-colombia",
     "spanish-friends-mexico",
     "spanish-friends-spain-a0",
@@ -75,7 +76,7 @@ const FAMILIES: Record<string, string[]> = {
  * Kahlo) sí se glosan, y viven en el fichero manual como cualquier otra.
  */
 const CHARACTER_NAMES =
-  /^(iv[áa]n|lupe|javier|rafa|marta|elena|kanek|to[ñn]o|sof[íi]a|luc[íi]a|chela|timo|nadia|pablo|carmen|rosa|mateo|nico|ana|marina|nerea|greve|ole|nora|merle|bia|tiago|caio|lia|nara|vitor|dani|teo|irene|dario|gaia|livia)$/i;
+  /^(iv[áa]n|lupe|javier|rafa|marta|elena|kanek|to[ñn]o|sof[íi]a|luc[íi]a|chela|timo|nadia|pablo|carmen|rosa|mateo|nico|ana|marina|nerea|greve|ole|nora|merle|bia|tiago|caio|lia|nara|vitor|dani|teo|irene|dario|gaia|livia|julieta|dami[áa]n|facundo|facu|brenda|leandro|lea|agustina|emanuel|yamila)$/i;
 
 /**
  * COPIA EXACTA de lo que hace el lector, en dos pasos. Inventarme el corte
@@ -202,7 +203,7 @@ async function main() {
         `${fromManual.length} escritas a mano, ${uncovered.length} SIN CUBRIR`
     );
     if (uncovered.length > 0) {
-      console.log(`   sin cubrir: ${uncovered.slice(0, 20).join(", ")}`);
+      console.log(`   sin cubrir: ${uncovered.slice(0, 400).join(", ")}`);
       blocked.push(name);
       continue;
     }

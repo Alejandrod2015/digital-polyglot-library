@@ -70,6 +70,10 @@ function quotedPct(text: string): number {
  */
 const HABLA_POR_IDIOMA: Record<string, string> = {
   DE: "sagt|fragt|antwortet|ruft|nickt|lacht|schweigt|schreibt|erzählt|flüstert|zählt",
+  // Espanol: solo presente, porque el suelo A0 no deja narrar en pasado. Se
+  // incluyen los verbos con pronombre delante (`le dice`, `se rie`) porque el
+  // detector mira la palabra pegada al nombre y en espanol el clitico va antes.
+  ES: "dice|pregunta|responde|contesta|repite|cuenta|explica|avisa|grita|llama|pide|insiste|aclara|agrega|suma|admite|promete|acepta|corrige|saluda|contesta|murmura|se rie|rie|asiente|niega",
   // Portugues: presente Y preterito, porque desde el 2026-08-19 la ultima
   // historia de cada tema se narra en pasado y con solo el presente el reparto
   // salia vacio (`protagonista ?`).
@@ -141,9 +145,30 @@ const FORMAS_PT: Array<[string, (n: string) => RegExp]> = [
   ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+(?:${VERBO_SER_PT})\\b`, "iu")],
 ];
 
+/**
+ * Las tres formas aprobadas en ESPANOL ([[feedback_introduce_characters]]).
+ *
+ *   perifrasis  La que atiende es Vera, una peluquera del barrio.
+ *   aposicion   Vera, una peluquera del barrio, abre la persiana a las nueve.
+ *   con ser     Vera es peluquera. Trabaja en la pieza de adelante.
+ *
+ * La segunda forma aprobada en portugues pone el LUGAR delante ("No portao de
+ * desembarque esta Rafaela..."), y en un A0 espanol eso choca de frente con el
+ * suelo de sujeto primero. La perifrasis de relativo hace el mismo trabajo
+ * (retrasa el nombre hasta despues de decir que hace la persona) sin sacar al
+ * sujeto de la primera posicion.
+ */
+const NUC_ES = "(?:[a-zá-úñ]+\\s+){0,3}[a-zá-úñ]+";
+const FORMAS_ES: Array<[string, (n: string) => RegExp]> = [
+  ["perifrasis", (n) => new RegExp(`\\b(?:Quien|La que|El que|Los que|Las que)\\s+(?:[a-zá-úñ]+\\s+){1,4}(?:es|son)\\s+${n}\\b`, "u")],
+  ["aposicion", (n) => new RegExp(`${n},\\s+(?:un|una)\\s+${NUC_ES}`, "u")],
+  ["con ser", (n) => new RegExp(`\\b${n}\\s+es\\s+(?:(?:un|una|el|la)\\s+)?${NUC_ES}`, "u")],
+];
+
 const FORMAS_POR_IDIOMA: Record<string, Array<[string, (n: string) => RegExp]>> = {
   DE: FORMAS_DE,
   PT: FORMAS_PT,
+  ES: FORMAS_ES,
 };
 
 /** Forma de la apertura: que clase de sujeto abre la primera frase. */
@@ -156,6 +181,25 @@ function openingShapePT(text: string): string {
   if (/^(No|Na|Nos|Nas|Do|Da|Dos|Das|Ao|À|Em|Entre|Dentro|Atrás|Depois|Antes|Sobre|Debaixo)$/.test(w)) return "lugar o tiempo delante";
   if (/^(Às|Aos|Quinze|Dois|Duas|Três|Quatro|Cinco|Seis|Sete|Oito|Dez|Vinte|Trinta|Meia|Cada|Todo|Toda)$/.test(w)) return "hora o cantidad";
   if (/^Quem\b/.test(f)) return "quem + verbo";
+  if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
+  return "otra";
+}
+
+/**
+ * Forma de la apertura en espanol. El suelo A0 obliga a sujeto primero, asi
+ * que la variedad NO puede venir de mover el complemento delante: viene de que
+ * clase de sujeto abre. Definido, indefinido, posesivo, cantidad y nombre
+ * desnudo son cinco formas, todas con el sujeto en su sitio.
+ */
+function openingShapeES(text: string): string {
+  const f = sentences(text)[0] ?? "";
+  const w = (f.split(/\s+/)[0] ?? "").replace(/[.,:;]$/, "");
+  if (f.startsWith(QUOTE_OPEN)) return "replica directa";
+  if (/^(El|La|Los|Las)$/.test(w)) return "articulo definido + sustantivo";
+  if (/^(Un|Una|Unos|Unas)$/.test(w)) return "articulo indefinido + sustantivo";
+  if (/^(Su|Sus|Mi|Mis|Tu|Tus|Nuestro|Nuestra)$/.test(w)) return "posesivo + sustantivo";
+  if (/^(Dos|Tres|Cuatro|Cinco|Seis|Siete|Ocho|Nueve|Diez|Media|Medio|Todos|Todas|Cada|Nadie|Alguien|Nada|Algo|Muchos|Muchas|Pocos|Pocas|Otro|Otra)$/.test(w)) return "cantidad o pronombre";
+  if (/^(En|Sobre|Bajo|Entre|Desde|Hasta|Durante|Por|Para|Con|Sin|Al|Del|De|A|Hoy|Ayer|Ahora|Luego|Despues|Después|Antes|Siempre|Nunca|Recien|Recién|Todavia|Todavía|Entonces|Tambien|También|Tampoco|Aca|Acá|Alla|Allá|Adentro|Afuera|Arriba|Abajo|Cerca|Lejos|Enfrente|Atras|Atrás|Primero|Es|Son|Hay|Hace)$/.test(w)) return "complemento o verbo delante";
   if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
   return "otra";
 }
@@ -181,6 +225,43 @@ const A0_DE_NO_SUJETO = new RegExp(
 const A0_DE_SUJETO_OK = /^(?:Halb|Weiß|Grau|Kalt|Warm|Hoch|Tief|Lang|Kurz|Voll|Leise|Laut|Steil|Zwei|Drei|Vier|Sieben)\s+(?:[a-zäöüß]+\s+)?[A-ZÄÖÜ]/;
 const A0_DE_PARTICULAS = ["an","auf","aus","ein","mit","nach","vor","zu","ab","bei","hin","her","zurück","los","weiter","vorbei","herum","raus","rein","weg","nieder"];
 const A0_DE_PASADO = /\b(war|waren|hatte|hatten|ging|kam|sagte|machte|stand|sah|nahm|gab|fuhr|wurde|wurden)\b/;
+
+/**
+ * Suelo A0 en ESPANOL. De las cuatro piezas del suelo
+ * (`docs/story-quality-spec.md`), dos son gramatica alemana y no existen aca
+ * (separables y `es gibt`); las dos que si aplican son SUJETO PRIMERO y SOLO
+ * PRESENTE, y ningun check las miraba: `body-cefr-a0-grammar` busca subjuntivo
+ * y comparativas de B1, o sea el techo, no el suelo.
+ *
+ * Sujeto primero se mide sobre la frase de narrador entera: si abre por
+ * complemento (`En la cocina...`), por adverbio (`Despues...`) o por verbo
+ * impersonal (`Hay dos clientas...`), el sujeto no esta en primera posicion.
+ * `Pero` e `Y` quedan fuera del campo inicial, como `aber` y `und` en aleman.
+ */
+const A0_ES_NO_SUJETO = new RegExp(
+  "^(?:Pero\\s+|Y\\s+)?(En|Sobre|Bajo|Entre|Desde|Hasta|Durante|Por|Para|Con|Sin|Contra|Segun|Según|Al|Del|De|A|Ante|Tras|" +
+  "Hoy|Ayer|Ahora|Luego|Despues|Después|Antes|Siempre|Nunca|Recien|Recién|Todavia|Todavía|Entonces|Tambien|También|Tampoco|" +
+  "Aca|Acá|Alla|Allá|Aqui|Aquí|Alli|Allí|Adentro|Afuera|Arriba|Abajo|Cerca|Lejos|Enfrente|Atras|Atrás|Adelante|Encima|Debajo|" +
+  "Primero|Igual|Casi|Quizas|Quizás|Capaz|Seguro|Menos|Mas|Más|Solo|Sólo|Asi|Así|Mientras|Cuando|Si|Aunque|Como|" +
+  "Es|Son|Hay|Hace|Esta|Está|Estan|Están|Falta|Faltan|Sobra|Sobran|Queda|Quedan|Llega|Llegan|Suena|Suenan|Entra|Entran|Sale|Salen)(?![a-zá-úñ])"
+);
+/** Excepcion: `Cada` y los cuantificadores abren SUJETO, no complemento. */
+const A0_ES_SUJETO_OK = /^(?:Pero\s+|Y\s+)?(?:Cada|Todos|Todas|Media|Medio|Dos|Tres|Cuatro|Cinco|Seis|Siete|Ocho|Nueve|Diez)\s+[a-zá-úñ]/u;
+/**
+ * Pasado. El heuristico del imperfecto (`-ia`) es una trampa en espanol: `dia`,
+ * `todavia`, `peluqueria` y `verduleria` lo disparan, y las cuatro son palabras
+ * de este journey. Asi que el preterito se caza por su terminacion, que si es
+ * inequivoca, y el resto por lista cerrada.
+ */
+const A0_ES_PASADO = new RegExp(
+  "(?<![a-zá-úñ])(?:[a-zá-úñ]{2,}(?:ó|ió|aron|ieron|eron))(?![a-zá-úñ])|" +
+  "(?<![a-zá-úñ])(fue|fueron|era|eran|estaba|estaban|estuvo|estuvieron|tuvo|tuvieron|tenia|tenía|tenian|tenían|" +
+  "habia|había|habian|habían|hubo|hizo|hicieron|dijo|dijeron|vino|vinieron|vio|vieron|dio|dieron|" +
+  "puso|pusieron|quiso|quisieron|pudo|pudieron|supo|supieron|iba|iban|fui|fuiste|trajo|trajeron|" +
+  "andaba|andaban|sabia|sabía|sabian|sabían|queria|quería|querian|querían|podia|podía|podian|podían|" +
+  "hacia|hacía|hacian|hacían|decia|decía|decian|decían|veia|veía|veian|veían|iban|estuve|tuve)(?![a-zá-úñ])",
+  "i"
+);
 
 export function validateJourneyStories(
   stories: JourneyStoryInput[],
@@ -255,7 +336,9 @@ export function validateJourneyStories(
   {
     const porForma = new Map<string, string[]>();
     for (const s of stories) {
-      const f = lang === "PT" ? openingShapePT(s.text) : openingShape(s.text);
+      const f = lang === "PT" ? openingShapePT(s.text)
+        : lang === "ES" ? openingShapeES(s.text)
+        : openingShape(s.text);
       porForma.set(f, [...(porForma.get(f) ?? []), s.slug]);
     }
     const tope = Math.max(2, Math.ceil(stories.length / 3));
@@ -306,10 +389,28 @@ export function validateJourneyStories(
   }
 
   // ── 7. Suelo A0 ─────────────────────────────────────────────
-  if (level === "A0") {
+  if (level === "A0" && lang === "ES") {
+    const malas: string[] = [];
+    for (const s of stories) {
+      const narr = s.text.replace(new RegExp(`${QUOTE_OPEN}[^${QUOTE_CLOSE}]*${QUOTE_CLOSE}`, "g"), " ");
+      for (const f of sentences(narr)) {
+        // Los restos del inciso de habla (`, dice Vera.`) empiezan por coma y
+        // no son frases de narrador: la inversion ahi es obligatoria.
+        const limpio = f.replace(/^[\s,;:.]+/, "").trim();
+        if (limpio.length < 4 || !/^\p{Lu}/u.test(limpio)) continue;
+        const flags: string[] = [];
+        if (A0_ES_NO_SUJETO.test(limpio) && !A0_ES_SUJETO_OK.test(limpio)) flags.push("no empieza por el sujeto");
+        const pas = limpio.match(A0_ES_PASADO);
+        if (pas) flags.push(`no es presente (${pas[0]})`);
+        if (flags.length) malas.push(`${s.slug}: [${flags.join(" · ")}] ${limpio.slice(0, 60)}`);
+      }
+    }
+    push("journey-a0-floor", "Suelo A0: sujeto primero, solo presente",
+      malas.length === 0, `${malas.length} frase(s): ${malas.slice(0, 8).join(" | ")}`);
+  } else if (level === "A0") {
     if (lang !== "DE") {
       noImpl("journey-a0-floor", "Suelo A0: sujeto primero, sin separables partidos, solo presente",
-        `El suelo A0 solo esta implementado para DE; este journey es ${lang || "?"}. Escribelo antes de guardar.`);
+        `El suelo A0 solo esta implementado para DE y ES; este journey es ${lang || "?"}. Escribelo antes de guardar.`);
     } else {
       const partFinal = new RegExp(`\\s(${A0_DE_PARTICULAS.join("|")})\\s*[.!?]$`);
       const malas: string[] = [];
@@ -332,9 +433,16 @@ export function validateJourneyStories(
 
   // ── 8. Ni ancianos ni ninos ────────────────────────────────
   {
-    const EDAD = /\b(Kind|Kinder|Junge|Jungen|Mädchen|Baby|Enkel\w*|Oma|Opa|Großmutter|Großvater|Rentner\w*|Greis\w*|Teenager)\b/g;
+    // Los terminos de edad son por idioma: la lista alemana no ve una `abuela`
+    // ni un `nieto`, asi que sobre un cuerpo espanol salia verde sin medir nada.
+    // Dos listas, y la alemana sigue siendo sensible a mayusculas: en aleman
+    // el sustantivo va con mayuscula y el adjetivo no, asi que un `gi` global
+    // marcaba `die jungen Leute` como si fuera un nino.
+    const EDAD_DE = /\b(Kind|Kinder|Junge|Jungen|Mädchen|Baby|Enkel\w*|Oma|Opa|Großmutter|Großvater|Rentner\w*|Greis\w*|Teenager)\b/g;
+    const EDAD_ROM = /(?<![a-zá-úñãõçA-Z])(niñ[oa]s?|nen[ea]s?|bebés?|abuel[oa]s?|niet[oa]s?|ancian[oa]s?|jubilad[oa]s?|adolescentes?|criaturas?|crianças?|avós?|net[oa]s?|idos[oa]s?|aposentad[oa]s?)(?![a-zá-úñãõç])/gi;
     const halladas = new Set<string>();
-    for (const s of stories) for (const m of s.text.matchAll(EDAD)) halladas.add(m[0]);
+    for (const s of stories) for (const re of [EDAD_DE, EDAD_ROM])
+      for (const m of s.text.matchAll(re)) halladas.add(m[0]);
     push("journey-no-elderly-no-children", "Ni ancianos ni ninos en contenido nuevo",
       halladas.size === 0, [...halladas].join(", "));
   }

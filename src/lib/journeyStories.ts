@@ -109,6 +109,7 @@ function readerStatusWhere() {
       "cmroo4w4v0000324ow1o9qlcp", // Friends DE C1 germany (in progress)
       "cmrpm0tra000032vgxcs33wrb", // Friends ES C1 colombia (in progress)
       "cmrqn1s5s000032tj3kq0gykb", // Friends ES C1 argentina (in progress)
+      "cmt5vx8du000732fjgkwi59ks", // Friends ES A0 argentina (en obra, 2026-08)
       "cmrr5hnbl000032k1esry5n8g", // Friends ES A0 spain (in progress)
       "cmrrqjd2n000032nvnp2tryzg", // Traveler ES A0 mexico (in progress)
       "cmrrrpru1000032nnzsmraa7h", // Friends ES C1 mexico (in progress)
