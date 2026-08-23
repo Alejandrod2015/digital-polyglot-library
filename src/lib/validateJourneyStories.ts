@@ -497,12 +497,35 @@ export function validateJourneyStories(
   // mide, imprime y deja pasar, y el numero queda a la vista de quien lo
   // calibre con datos.
   //
-  // AVISO sobre A0: el 3,0 tiene la misma enfermedad y se deja como estaba a
-  // proposito, porque cambiarlo no era lo que se decidio. Reprueba al Traveler
-  // italian/italy A0, que esta PUBLICADO, a 1,67; y al aleman (2,16) y al
-  // brasileño (2,15). Solo lo pasan los A0 españoles y el italiano de
-  // Relationships. Sale de mirar un idioma.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0 };
+  // A0 TAMPOCO TIENE LISTON, y por el mismo motivo. El 3,0 salia de mirar los
+  // A0 españoles, que son los que puntuan alto. Medidos los nueve A0 del
+  // catalogo el 2026-08-23:
+  //
+  //     4,21  Traveler spanish/latam            PUBLICADO
+  //     4,16  Relationships spanish/argentina   draft
+  //     3,24  Relationships italian/italy       draft
+  //     3,17  Relationships spanish/spain       PUBLICADO
+  //     3,09  Traveler spanish/mexico           PUBLICADO
+  //     2,50  Expat french/france               draft
+  //     2,16  Traveler german/germany           draft
+  //     2,15  Traveler portuguese/brazil        PUBLICADO
+  //     1,67  Traveler italian/italy            PUBLICADO
+  //
+  // Reprueba a DOS journeys que la gente lee hoy y aprueba a cinco, cuatro de
+  // ellos españoles. Un suelo que suspende lo que ya se vende no esta midiendo
+  // calidad, esta midiendo idioma: el español llega a 3 casi solo porque el A0
+  // enseña palabras de alta frecuencia que reaparecen en todos los cuerpos.
+  //
+  // La tabla queda VACIA a proposito. Ningun nivel gatea por recirculacion; el
+  // check mide, imprime y deja pasar en todos. Se pierde una red, si, pero esa
+  // red solo atrapaba a quien escribe en un idioma que puntua bajo.
+  //
+  // QUE HARIA FALTA PARA VOLVER A PONER UN NUMERO: que alguien LEA las 21 de un
+  // journey de los que puntuan bajo (el Traveler italian/italy A0, a 1,67) y
+  // confirme que ahi la falta de recirculacion se nota al leer. Si el numero
+  // predice mala lectura, el liston sirve y sale de ese patron oro. Nadie lo ha
+  // comprobado nunca. Hasta entonces, medir sin gatear.
+  const MEDIA_MINIMA: Record<string, number> = {};
   const suelo = MEDIA_MINIMA[level];
   if (suelo === undefined && stories.some((s) => s.vocab && s.vocab.length)) {
     const tok = (t: string) => (t.toLowerCase().match(/\p{L}+/gu) ?? []);
