@@ -62,6 +62,7 @@ const FAMILIES: Record<string, string[]> = {
     "spanish-friends-spain-a0",
     "spanish-traveler-latam",
     "spanish-traveler-mexico-a0",
+    "spanish-traveler-spain-b1",
   ],
   german: ["german-expat", "german-friends", "german-hamburg", "german-traveler-a0"],
   french: ["french-traveler"],
@@ -75,7 +76,7 @@ const FAMILIES: Record<string, string[]> = {
  * Kahlo) sí se glosan, y viven en el fichero manual como cualquier otra.
  */
 const CHARACTER_NAMES =
-  /^(iv[áa]n|lupe|javier|rafa|marta|elena|kanek|to[ñn]o|sof[íi]a|luc[íi]a|chela|timo|nadia|pablo|carmen|rosa|mateo|nico|ana|marina|nerea|greve|ole|nora|merle|bia|tiago|caio|lia|nara|vitor|dani|teo|irene|dario|gaia|livia)$/i;
+  /^(iv[áa]n|lupe|javier|rafa|marta|elena|kanek|to[ñn]o|sof[íi]a|luc[íi]a|chela|timo|nadia|pablo|carmen|rosa|mateo|nico|ana|marina|nerea|greve|ole|nora|merle|bia|tiago|caio|lia|nara|vitor|dani|teo|irene|dario|gaia|livia|quique|paco|juli[áa]n)$/i;
 
 /**
  * COPIA EXACTA de lo que hace el lector, en dos pasos. Inventarme el corte
@@ -203,6 +204,7 @@ async function main() {
     );
     if (uncovered.length > 0) {
       console.log(`   sin cubrir: ${uncovered.slice(0, 20).join(", ")}`);
+      if (process.argv.includes("--dump")) fs.writeFileSync(`/tmp/sincubrir-${name}.txt`, uncovered.join("\n"));
       blocked.push(name);
       continue;
     }
