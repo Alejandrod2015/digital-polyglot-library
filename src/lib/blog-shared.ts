@@ -2,6 +2,13 @@
 // series clustering. Everything in this file MUST stay free of Node-only
 // imports (no fs, path, etc.) so the client toolbar can import it.
 
+export type HeroCredit = {
+  author: string;
+  licence: string;
+  /** Ficha del archivo en Commons, que es donde vive la licencia completa. */
+  source: string;
+};
+
 export type BlogPostMeta = {
   slug: string;
   title: string;
@@ -22,6 +29,11 @@ export type BlogPostMeta = {
   tags?: string[];
   categories?: string[];
   hero?: string;
+  // Credito de la foto del hero. Obligatorio cuando la imagen viene de
+  // Wikimedia Commons con licencia CC BY o CC BY-SA: la atribucion es la
+  // condicion de la licencia, no un adorno. Las fotos heredadas de WordPress
+  // (Pexels, Unsplash) no lo llevan porque su licencia no lo exige.
+  heroCredit?: HeroCredit;
   readingMinutes?: number;
   dialect?: DialectKey;
   type?: PostTypeKey;

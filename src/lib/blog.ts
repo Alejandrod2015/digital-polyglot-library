@@ -16,6 +16,7 @@ import rehypeStringify from "rehype-stringify";
 
 import {
   type BlogPostMeta,
+  type HeroCredit,
   classifyDialect,
   classifyType,
   computeReadingMinutes,
@@ -23,6 +24,7 @@ import {
 
 export type {
   BlogPostMeta,
+  HeroCredit,
   DialectKey,
   PostTypeKey,
   BlogSeries,
@@ -53,6 +55,21 @@ function readAllFiles(): string[] {
     .filter((name) => name.endsWith(".mdx") || name.endsWith(".md"));
 }
 
+/**
+ * Un credito solo cuenta si trae las tres cosas. Media atribucion (autor sin
+ * licencia, licencia sin ficha) no cumple la licencia y ademas se veria como
+ * una linea rota debajo de la foto, asi que se descarta entera.
+ */
+function parseHeroCredit(raw: unknown): HeroCredit | undefined {
+  if (!raw || typeof raw !== "object") return undefined;
+  const r = raw as Record<string, unknown>;
+  const author = typeof r.author === "string" ? r.author.trim() : "";
+  const licence = typeof r.licence === "string" ? r.licence.trim() : "";
+  const source = typeof r.source === "string" ? r.source.trim() : "";
+  if (!author || !licence || !source) return undefined;
+  return { author, licence, source };
+}
+
 function parseFile(filename: string): BlogPost {
   const filePath = path.join(CONTENT_DIR, filename);
   const raw = fs.readFileSync(filePath, "utf8");
@@ -70,6 +87,7 @@ function parseFile(filename: string): BlogPost {
     tags: Array.isArray(data.tags) ? (data.tags as string[]) : undefined,
     categories: Array.isArray(data.categories) ? (data.categories as string[]) : undefined,
     hero: data.hero as string | undefined,
+    heroCredit: parseHeroCredit(data.heroCredit),
     content,
   };
   post.readingMinutes = computeReadingMinutes(content);

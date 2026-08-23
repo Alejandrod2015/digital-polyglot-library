@@ -881,13 +881,37 @@
   color: rgba(255, 255, 255, 0.45);
   margin-bottom: 32px;
 }
+.postFigure {
+  margin: 0 0 36px;
+}
+
 .postHero {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 18px;
-  margin: 0 0 36px;
+  margin: 0;
   border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* Atribucion de la foto. Va debajo de la imagen y en pequeno porque es una
+   obligacion de la licencia, no parte del articulo: tiene que ser legible y
+   comprobable, no llamar la atencion. */
+.postHeroCredit {
+  margin: 10px 2px 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.postHeroCredit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.postHeroCredit a:hover {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .prose {

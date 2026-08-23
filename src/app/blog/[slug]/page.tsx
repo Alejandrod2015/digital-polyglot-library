@@ -161,8 +161,23 @@ export default async function BlogPostPage(
             <p className={blog.postSub}>{excerptText(post.excerpt)}</p>
           )}
           {post.hero && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img className={blog.postHero} src={post.hero} alt="" />
+            <figure className={blog.postFigure}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className={blog.postHero} src={post.hero} alt="" />
+              {post.heroCredit && (
+                <figcaption className={blog.postHeroCredit}>
+                  Photo:{" "}
+                  <a
+                    href={post.heroCredit.source}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                  >
+                    {post.heroCredit.author}
+                  </a>{" "}
+                  ({post.heroCredit.licence})
+                </figcaption>
+              )}
+            </figure>
           )}
           <div
             className={blog.prose}

@@ -1863,7 +1863,23 @@ export async function validateGeneratedStory(
 
       // Quién habla: nombre propio pegado a un verbo de habla, en cualquiera
       // de los dos órdenes ("dice Toñi" / "Toñi pregunta").
-      const SAY = "dice|dijo|pregunta|preguntó|contesta|contestó|responde|respondió|añade|añadió|grita|gritó|susurra|repite|repitió|explica|explicó";
+      const SAY = "dice|dijo|pregunta|preguntó|contesta|contestó|responde|respondió|añade|añadió|grita|gritó|susurra|repite|repitió|explica|explicó" +
+        // Portugués: los verbos de habla en presente Y en pretérito. Sin ellos
+        // el check solo acertaba por coincidencia con el español ("responde",
+        // "pergunta" no).
+        "|diz|disse|perguntou|respondeu|avisa|avisou|repetiu|conta|contou|gritou|chama|chamou|pede|pediu|ensina|ensinou|escreve|escreveu";
+      // Un PRONOMBRE no es un personaje. "Ele responde" hacía que el check
+      // pidiera presentar a "Ele" como si fuera alguien nuevo: el 2026-08-23
+      // tumbaba `a-cabeca-do-vitalino` del A1 brasileño, que está bien escrita.
+      const PRONOMBRES = new Set([
+        "ele", "ela", "eles", "elas", "você", "vocês", "nós", "gente",
+        "él", "ella", "ellos", "ellas", "usted", "ustedes", "nosotros",
+        "lui", "lei", "loro", "elle", "ils", "elles", "er", "sie", "wir",
+        // Indefinidos: "Ninguém pede carimbo aqui" no presenta a nadie.
+        "ninguém", "ninguem", "alguém", "alguem", "todos", "todo", "tudo",
+        "nadie", "alguien", "nessuno", "qualcuno", "personne", "quelqu",
+        "niemand", "jemand",
+      ]);
       const speakers = new Set<string>();
       for (const re of [
         new RegExp(`(?:${SAY})\\s+([\\p{Lu}][\\p{Ll}]+)`, "gu"),
@@ -1880,7 +1896,9 @@ export async function validateGeneratedStory(
       ]) {
         for (const m of parsed.text.matchAll(re)) speakers.add(m[1]);
       }
-      const late = [...speakers].filter((n) => !opening.includes(n));
+      const late = [...speakers]
+        .filter((n) => !PRONOMBRES.has(n.toLowerCase()))
+        .filter((n) => !opening.includes(n));
 
       // Personajes que ya salieron en historias hermanas del mismo journey.
       // A un recurrente NO se le vuelve a explicar quién es: eso crearía la
