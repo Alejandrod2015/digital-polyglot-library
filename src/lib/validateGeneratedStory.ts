@@ -587,6 +587,10 @@ export async function validateGeneratedStory(
     ],
     "health-wellbeing": [
       /hospital|clÃ­nic|clínic|farmaci|mÃ©dic|médic|doctor|consultori|urgenci|emergenci|enfermerÃ­a|enfermería|paramedic|salud|chequeo|consulta|jugo|infusiÃ³n|infusión|mate|tÃ©|té|hierba|spa|masaje|yoga|ejercicio|gimnasio|descanso|siesta|respiraciÃ³n|respiración|quinua|ceviche|caldo|sopa/i,
+      // Francés (2026-08-22). La lista solo tenía español, así que un título
+      // francés perfectamente sano ("Le médecin de la rue voisine") no casaba
+      // con su propio tema. Mismo hueco de idioma que el ancla sensorial.
+      /pharmaci|médecin|medecin|docteur|hôpital|hopital|cliniqu|urgence|santé|sante|cabinet|ordonnance|malade|sirop|infirmi|repos|sommeil|cheville|fièvre|fievre/i,
     ],
   };
   const topicForTitleCheck = (context.topic ?? "").toLowerCase();
