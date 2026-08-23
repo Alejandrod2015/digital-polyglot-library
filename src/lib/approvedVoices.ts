@@ -76,6 +76,13 @@ export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   GDzHdQOi6jjf8zaXhCYD: { note: "Raquel Expressive and Energetic (BR, f); reserva PT-BR; user-approved 2026-08-12" },
   qPfM2laM0pRL4rrZtBGl: { note: "Sandro Dutra Articulated and Clear (BR, m); reserva PT-BR; user-approved 2026-08-12" },
   czvzJwIVS2asEKnthV40: { note: "Daniel Brazilian Conversational Voice (BR, m); reserva PT-BR; user-approved 2026-08-12" },
+
+  // ── Primera voz francesa de la lista. Ya narraba las 3 historias del
+  // Traveler FR A0 (archivado), donde el usuario la aprobó de oído sobre un
+  // render REAL el 2026-07-07 (finales -0,9 a -4,5 st, pregunta +9,2 st); no
+  // entró en su día porque la lista se sembró solo con journeys publicados.
+  // Confirmada por el usuario el 2026-08-23 para narrar y practicar Expat FR A0.
+  ucMmKRQbfDEYyb2IIGax: { note: "Aurore FR (parisina, f); narradora + práctica de Expat FR A0 y Traveler FR A0; user-approved 2026-07-07, reconfirmada 2026-08-23" },
 };
 
 export function isVoiceApproved(voiceId: string | null | undefined): boolean {
