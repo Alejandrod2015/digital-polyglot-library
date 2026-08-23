@@ -179,6 +179,88 @@ async function publishedStoriesForLanguage(language?: string): Promise<StoryRow[
   })) as StoryRow[];
 }
 
+/**
+ * Una historia concreta por su slug.
+ *
+ * `resolveStories` devuelve SEIS filas, que son una lista de recomendacion, y
+ * la historia que alguien esta leyendo casi nunca cae en esas seis. Buscarla
+ * ahi dentro fallaba casi siempre: de las cinco personas que recibieron un
+ * aviso teniendo de verdad una historia a medias, las cinco se perdian aqui, y
+ * el correo acababa nombrando otra historia con el porcentaje de la suya.
+ */
+async function resolveStoryBySlug(slug: string): Promise<StoryRow | null> {
+  try {
+    const row = await prisma.journeyStory.findFirst({
+      where: { slug, status: "published", title: { not: null }, coverUrl: { not: null } },
+      select: {
+        slug: true,
+        title: true,
+        level: true,
+        coverUrl: true,
+        synopsis: true,
+        vocab: true,
+        wordCount: true,
+        journey: { select: { language: true } },
+      },
+    });
+    if (row) return row as StoryRow;
+    return await bookStoryBySlug(slug);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Indice slug -> historia del catalogo de LIBROS, construido una vez y en
+ * memoria.
+ *
+ * Los libros no viven en la base, viven en `src/data/books/*.ts`, asi que una
+ * consulta a Prisma nunca los encuentra. Quien esta leyendo un libro tenia
+ * exactamente el mismo problema que todos los demas: su historia no se
+ * resolvia, el correo nombraba otra, y le pegaba encima el porcentaje de la
+ * suya. Cuatro de los catorce avisos enviados eran de este caso.
+ *
+ * La importacion es dinamica y perezosa a proposito: el volcado de libros pesa,
+ * y el cron solo lo carga el dia que alguien esta a medias de uno.
+ */
+let bookIndex: Map<string, StoryRow> | null = null;
+
+async function getBookIndex(): Promise<Map<string, StoryRow>> {
+  if (bookIndex) return bookIndex;
+  const index = new Map<string, StoryRow>();
+  try {
+    const { books } = await import("@/data/books");
+    for (const book of Object.values(books)) {
+      if (!book?.published) continue;
+      for (const story of book.stories ?? []) {
+        if (!story?.slug || !story.title || !story.coverUrl) continue;
+        index.set(story.slug, {
+          slug: story.slug,
+          title: story.title.trim(),
+          level: story.cefrLevel ?? story.level ?? book.cefrLevel ?? null,
+          coverUrl: story.coverUrl,
+          synopsis: null,
+          vocab: story.vocab ?? null,
+          // El texto es HTML; sin quitar las etiquetas el conteo sale inflado y
+          // `storyToRef` lo convierte en minutos de lectura.
+          wordCount: story.text
+            ? story.text.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length
+            : null,
+          journey: { language: book.language ?? "" },
+        });
+      }
+    }
+  } catch (err) {
+    console.error("No se pudo cargar el catalogo de libros para los correos:", err);
+  }
+  bookIndex = index;
+  return index;
+}
+
+async function bookStoryBySlug(slug: string): Promise<StoryRow | null> {
+  return (await getBookIndex()).get(slug) ?? null;
+}
+
 /** Published stories for the first candidate language that actually has content. */
 async function resolveStories(candidates: string[]): Promise<StoryRow[]> {
   try {
@@ -272,18 +354,33 @@ export async function buildLifecycleData(userId: string): Promise<LifecycleData>
   );
 
   // The story the user is currently in (half-finished or just finished).
-  const currentRow = current ? stories.find((s) => s.slug === current.slug) : undefined;
+  // Primero en la lista que ya tenemos, y si no esta, a buscarla por su slug:
+  // esa lista son seis recomendaciones, no un indice.
+  const currentRow = current
+    ? ((stories.find((s) => s.slug === current.slug) ??
+        (await resolveStoryBySlug(current.slug))) ?? undefined)
+    : undefined;
   // For welcome/next, the "first story" is the first one NOT yet finished.
   const firstUnfinished = stories.find((s) => s.slug && !completedSlugs.has(s.slug));
   const firstStoryBase = currentRow ?? firstUnfinished ?? stories[0];
+
+  // Si esto es una recomendacion o una historia de verdad empezada. El campo
+  // significaba las dos cosas, y `hasRealDataFor` solo podia comprobar que
+  // existiera, asi que no frenaba ningun correo. Ahora viaja la diferencia.
+  const inProgress = Boolean(currentRow) && firstStoryBase === currentRow;
+
   const firstStory = firstStoryBase
     ? {
         ...storyToRef(firstStoryBase),
         // prefer the user's own saved words for the glossary if we have them
         vocab:
           vocab.all.length >= 3 ? vocab.all.slice(0, 3) : storyToRef(firstStoryBase).vocab,
-        percentRead: current?.pct,
-        minutesLeft: current?.minutesLeft,
+        // Los numeros SOLO cuando describen a esta historia. `current` habla de
+        // una sola, y se colaban igual cuando `currentRow` no resolvia y
+        // caiamos a otra: el porcentaje de la historia A pegado al titulo de la
+        // B, que es peor que no tener porcentaje.
+        ...(inProgress ? { percentRead: current?.pct, minutesLeft: current?.minutesLeft } : {}),
+        inProgress,
       }
     : undefined;
 

@@ -58,6 +58,15 @@ export type LifecycleData = {
     vocab?: VocabItem[];
     percentRead?: number;
     minutesLeft?: number;
+    /**
+     * True solo si esta historia es la que la persona tiene EMPEZADA de verdad.
+     * False cuando el campo trae una recomendacion, que es a lo que cae cuando
+     * no hay ninguna en curso.
+     *
+     * Existe porque `firstStory` significaba las dos cosas a la vez y el
+     * porton de abajo no podia distinguirlas. Ver la nota en REQUIRED_DATA.
+     */
+    inProgress?: boolean;
   };
   stats?: {
     wordsSeen?: number;
@@ -252,7 +261,7 @@ export function buildNudgeEmail(data?: LifecycleData): BuiltEmail {
   ];
 
   return {
-    subject: `Just ${s.minutesLeft ?? 2} minutes from the ending`,
+    subject: `Just ${minutesPhrase(s.minutesLeft ?? 2)} from the ending`,
     html: shell({
       preheader: `${pct}% read, one last push.`,
       blocks,
@@ -263,7 +272,7 @@ export function buildNudgeEmail(data?: LifecycleData): BuiltEmail {
     text: [
       "Your story is waiting.",
       "",
-      `${pct}% read. About ${s.minutesLeft ?? 2} minutes left.`,
+      `${pct}% read. About ${minutesPhrase(s.minutesLeft ?? 2)} left.`,
       "",
       `Pick it up now: ${href}`,
       "Digital Polyglot",
@@ -624,7 +633,7 @@ export function buildWinReminderEmail(data?: LifecycleData): BuiltEmail {
     text: [
       "You stopped halfway.",
       "",
-      `It's been a while, but nothing is lost. "${s.title}" is ${pct}% read, with ${s.minutesLeft ?? 2} minutes left.`,
+      `It's been a while, but nothing is lost. "${s.title}" is ${pct}% read, with ${minutesPhrase(s.minutesLeft ?? 2)} left.`,
       hasSaved
         ? `The ${savedWords} words you learned are still saved.`
         : "The words you learned are still saved.",
@@ -759,19 +768,51 @@ export function buildWinSunsetEmail(data?: LifecycleData): BuiltEmail {
  * `welcome` and `next` are absent on purpose. Neither claims anything about
  * past activity; they recommend something to read.
  */
-const REQUIRED_DATA: Record<string, "firstStory" | "stats"> = {
-  nudge: "firstStory", // claims a story in progress, and a % read
-  celebration: "firstStory", // claims the story they just finished
-  winReminder: "firstStory", // claims a half-read story and where they stopped
-  winValue: "firstStory", // quotes a sentence "they already read"
+/**
+ * Los cuatro primeros piden `storyInProgress`, no `firstStory`, y esa es toda
+ * la diferencia.
+ *
+ * `firstStory` no significaba "historia empezada": cuando no hay ninguna en
+ * curso, `buildLifecycleData` cae a la primera sin terminar, o sea a una
+ * RECOMENDACION. Como el campo nunca faltaba, este porton nunca frenaba nada,
+ * y los cuatro correos que hablan de actividad pasada salian igual.
+ *
+ * Lo que costo: de los 14 `nudge` enviados hasta el 2026-08-24, NUEVE fueron a
+ * gente sin una sola historia empezada, con el respaldo de la plantilla puesto,
+ * o sea "38% read. About 2 minutes left." sobre algo que no habian abierto. Uno
+ * de ellos le llego a alguien dos dias despues de escribir para retirarse del
+ * programa; se fue a las preferencias de correo dos horas mas tarde y acabo
+ * dandose de baja de todo.
+ *
+ * Los respaldos de las plantillas se quedan: son lo que hace que la vista
+ * previa se pueda mirar sin un usuario detras. La regla del archivo sigue
+ * siendo la misma, y ahora si se cumple: la ficcion vive en la previa, y este
+ * porton es lo que la mantiene fuera de los buzones.
+ */
+const REQUIRED_DATA: Record<string, "storyInProgress" | "firstStory" | "stats"> = {
+  nudge: "storyInProgress", // claims a story in progress, and a % read
+  celebration: "storyInProgress", // claims the story they just finished
+  winReminder: "storyInProgress", // claims a half-read story and where they stopped
+  winValue: "storyInProgress", // quotes a sentence "they already read"
   recap: "stats", // a week of numbers, or nothing
 };
+
+/**
+ * "1 minutes left" no lo escribe nadie. No se veia porque el respaldo era
+ * siempre 2; en cuanto empezaron a llegar los minutos de verdad, salio a la
+ * primera historia que quedaba a un minuto del final.
+ */
+function minutesPhrase(minutes: number): string {
+  return minutes === 1 ? "1 minute" : `${minutes} minutes`;
+}
 
 /** False when this email would have to invent its own subject matter. */
 export function hasRealDataFor(kind: string, data: LifecycleData): boolean {
   const need = REQUIRED_DATA[kind];
   if (!need) return true;
-  return need === "firstStory" ? !!data.firstStory : !!data.stats;
+  if (need === "stats") return !!data.stats;
+  if (need === "firstStory") return !!data.firstStory;
+  return !!data.firstStory?.inProgress;
 }
 
 export type LifecycleKind =
