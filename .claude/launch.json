@@ -85,6 +85,28 @@
       ],
       "port": 3007,
       "autoPort": false
+    },
+    {
+      "name": "ads-preview",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8899",
+        "--directory",
+        "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library/668e8d32-e374-4ec3-878f-1f26604a68aa/scratchpad/ads"
+      ],
+      "port": 8899
+    },
+    {
+      "name": "web-alt",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev:web"
+      ],
+      "port": 3000,
+      "autoPort": true
     }
   ]
 }
