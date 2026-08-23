@@ -9921,6 +9921,26 @@
   "última": {
    "g": "last, final",
    "t": "adjective"
+  },
+  "ancho": {
+   "g": "wide",
+   "t": "adjective"
+  },
+  "enfrían": {
+   "g": "they get cold (enfriar)",
+   "t": "verb"
+  },
+  "fritura": {
+   "g": "the frying, fried food",
+   "t": "noun"
+  },
+  "moja": {
+   "g": "dips",
+   "t": "verb"
+  },
+  "verdadera": {
+   "g": "true, real",
+   "t": "adjective"
   }
  }
 }
