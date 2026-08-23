@@ -10017,6 +10017,14 @@
   "tinto": {
    "g": "red wine; black coffee (Col.)",
    "t": "noun"
+  },
+  "fina": {
+   "g": "fine, thin (feminine)",
+   "t": "adjective"
+  },
+  "soles": {
+   "g": "soles, the Peruvian currency",
+   "t": "noun"
   }
  }
 }

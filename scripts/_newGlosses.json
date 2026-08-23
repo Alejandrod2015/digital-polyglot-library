@@ -8061,6 +8061,14 @@
     "conteste": {
       "g": "answer, reply (contestar, usted command)",
       "t": "verb"
+    },
+    "soles": {
+      "g": "soles, the Peruvian currency",
+      "t": "noun"
+    },
+    "fina": {
+      "g": "fine, thin (feminine)",
+      "t": "adjective"
     }
   }
 }
