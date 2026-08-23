@@ -58,8 +58,8 @@
    "answer": "grey",
    "options": [
     "grey",
-    "rich",
-    "hard",
+    "same",
+    "clean",
     "brave"
    ],
    "audioClip": {
@@ -80,21 +80,21 @@
    "answer": "guida",
    "options": [
     "guida",
-    "finisce",
+    "mangia",
     "suona",
-    "lavora"
+    "pensa"
    ],
    "translation": "_____ other people's cars from one garage to the next.",
    "optionTranslations": [
     "guide",
-    "finishes",
+    "eats",
     "plays, rings",
-    "works"
+    "thinks"
    ],
    "audioClip": {
     "storySlug": "il-bagagliaio-non-si-chiude",
     "storySource": "user",
-    "sentence": "guida macchine di altri da un garage all'altro.",
+    "sentence": "Guida macchine di altri da un garage all'altro.",
     "targetWord": "guida",
     "language": "italian"
    }
@@ -154,7 +154,7 @@
    "options": [
     "sleeps",
     "arrived",
-    "dies",
+    "surprises",
     "travels"
    ],
    "audioClip": {
@@ -219,9 +219,9 @@
    "answer": "promises",
    "options": [
     "promises",
-    "serves; is needed",
+    "dies",
     "stops",
-    "rests"
+    "takes"
    ],
    "audioClip": {
     "storySlug": "il-bagagliaio-non-si-chiude",
@@ -286,8 +286,8 @@
    "answer": "works",
    "options": [
     "works",
-    "gets lost",
-    "hears, feels",
+    "frightens",
+    "breaks",
     "sits"
    ],
    "audioClip": {
@@ -332,16 +332,16 @@
    "answer": "controlla",
    "options": [
     "controlla",
-    "sale",
+    "mangia",
     "torna",
-    "collega"
+    "spiega"
    ],
    "translation": "Rosa looks at the number plate, _____ the licence and shuts the car door.",
    "optionTranslations": [
     "checks",
-    "salt",
+    "eats",
     "returns",
-    "connects"
+    "explains"
    ],
    "audioClip": {
     "storySlug": "il-bagagliaio-non-si-chiude",
@@ -408,16 +408,16 @@
    "answer": "portiera",
    "options": [
     "portiera",
-    "pneumatici",
-    "password",
-    "panetteria"
+    "vernice",
+    "rete",
+    "storia"
    ],
    "translation": "Rosa looks at the number plate, checks the licence and shuts the _____.",
    "optionTranslations": [
     "car door",
-    "tyre",
-    "password",
-    "bakery"
+    "paint",
+    "net, network",
+    "story, and also history"
    ],
    "audioClip": {
     "storySlug": "il-bagagliaio-non-si-chiude",

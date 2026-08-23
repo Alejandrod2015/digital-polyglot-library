@@ -58,9 +58,9 @@
    "answer": "soap",
    "options": [
     "soap",
-    "fog",
-    "blackboard",
-    "bakery"
+    "bookshop, bookshelf",
+    "grill",
+    "fog"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -80,16 +80,16 @@
    "answer": "spazzolino",
    "options": [
     "spazzolino",
-    "tappeto",
-    "piatto",
-    "batteria"
+    "agosto",
+    "edificio",
+    "cacciavite"
    ],
    "translation": "The tap drips and above the mirror there are soap and a _____.",
    "optionTranslations": [
     "toothbrush",
-    "rug or carpet",
-    "dish, plate",
-    "battery"
+    "August",
+    "building",
+    "screwdriver"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -109,9 +109,9 @@
    "answer": "shower",
    "options": [
     "shower",
-    "sponge",
-    "procession",
-    "wire or line"
+    "dish, plate",
+    "battery",
+    "sponge"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -131,16 +131,16 @@
    "answer": "torta",
    "options": [
     "torta",
-    "impiegata",
-    "scaffale",
-    "notte"
+    "telefonata",
+    "spugna",
+    "impiegata"
    ],
    "translation": "Thanks for the room and the _____, I am coming back next September.",
    "optionTranslations": [
     "cake",
-    "female clerk",
-    "shelf unit",
-    "night"
+    "phone call",
+    "sponge",
+    "female clerk"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -160,9 +160,9 @@
    "answer": "drawer",
    "options": [
     "drawer",
-    "mum",
-    "night",
-    "holiday"
+    "shelf unit",
+    "message",
+    "mum"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -182,16 +182,16 @@
    "answer": "ospite",
    "options": [
     "ospite",
-    "graffio",
-    "gamberi",
-    "schermo"
+    "riposo",
+    "capo",
+    "cacciavite"
    ],
    "translation": "Because one _____ fewer pays less.",
    "optionTranslations": [
     "guest",
-    "scratch",
-    "prawn",
-    "screen"
+    "rest",
+    "boss",
+    "screwdriver"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -211,9 +211,9 @@
    "answer": "receipt",
    "options": [
     "receipt",
-    "scratch",
-    "jug",
-    "exam"
+    "prawn",
+    "screen",
+    "scratch"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -234,8 +234,8 @@
    "options": [
     "gives as a present, without asking for money back",
     "pulls; blows",
-    "closed",
-    "stops"
+    "repairs",
+    "plays, rings"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -255,9 +255,9 @@
    "answer": "pyjamas",
    "options": [
     "pyjamas",
+    "sadness",
     "toll booth",
-    "grapes",
-    "holiday"
+    "grapes"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -277,9 +277,9 @@
    "answer": "September",
    "options": [
     "September",
+    "holiday",
     "night",
-    "socket",
-    "large building"
+    "socket"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -300,9 +300,9 @@
    "answer": "goes down",
    "options": [
     "goes down",
+    "post",
     "closed",
-    "tells",
-    "goes out, exits"
+    "tells"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -323,9 +323,9 @@
    "answer": "finds",
    "options": [
     "finds",
-    "cuts",
-    "looks for",
-    "counts; matters"
+    "pay",
+    "heats",
+    "looks for"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -346,9 +346,9 @@
    "answer": "eggs",
    "options": [
     "eggs",
-    "key",
-    "holiday",
-    "blanket"
+    "watermelon",
+    "battery",
+    "holiday"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -369,9 +369,9 @@
    "answer": "hears, feels",
    "options": [
     "hears, feels",
+    "promises",
     "gets dressed",
-    "sweats",
-    "sits"
+    "see"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -392,9 +392,9 @@
    "answer": "polite",
    "options": [
     "polite",
+    "hard",
     "silent, quiet",
-    "warm; hot",
-    "right"
+    "warm; hot"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -415,9 +415,9 @@
    "answer": "time, weather",
    "options": [
     "time, weather",
+    "supermarket",
     "traffic light",
-    "chocolate",
-    "queue ticket"
+    "pear"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",
@@ -438,9 +438,9 @@
    "answer": "ankle",
    "options": [
     "ankle",
+    "battery",
     "machine; car",
-    "blanket",
-    "watermelon"
+    "blanket"
    ],
    "audioClip": {
     "storySlug": "la-colazione-lasciata-fuori",

@@ -58,9 +58,9 @@
    "answer": "supermarket",
    "options": [
     "supermarket",
-    "ship",
-    "illness",
-    "yard"
+    "year",
+    "tooth",
+    "illness"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -80,16 +80,16 @@
    "answer": "palazzo",
    "options": [
     "palazzo",
-    "credito",
-    "università",
-    "termometro"
+    "numerino",
+    "naso",
+    "cuscino"
    ],
    "translation": "They walk past a _____.",
    "optionTranslations": [
     "large building",
-    "credit",
-    "university",
-    "thermometer"
+    "queue ticket",
+    "nose",
+    "pillow"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -109,9 +109,9 @@
    "answer": "theater",
    "options": [
     "theater",
-    "airport",
-    "cat",
-    "password"
+    "credit",
+    "university",
+    "thermometer"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -131,16 +131,16 @@
    "answer": "cinema",
    "options": [
     "cinema",
-    "multa",
-    "ottobre",
-    "giugno"
+    "aereo",
+    "gatto",
+    "piatto"
    ],
    "translation": "A block of flats, a theatre, a _____ and a park.",
    "optionTranslations": [
     "cinema",
-    "fine",
-    "October",
-    "June"
+    "plane",
+    "cat",
+    "dish, plate"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -160,9 +160,9 @@
    "answer": "park",
    "options": [
     "park",
-    "Saturday",
-    "ham",
-    "fever"
+    "fine",
+    "October",
+    "June"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -182,16 +182,16 @@
    "answer": "conversazione",
    "options": [
     "conversazione",
-    "sveglia",
-    "inverno",
-    "mucche"
+    "giacca",
+    "fattoria",
+    "febbre"
    ],
    "translation": "Teo walks slowly and the _____ carries on.",
    "optionTranslations": [
     "conversation",
-    "to wake up",
-    "winter",
-    "cow"
+    "jacket",
+    "farm",
+    "fever"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -211,9 +211,9 @@
    "answer": "butcher's shop",
    "options": [
     "butcher's shop",
-    "night",
-    "machine; car",
-    "recipe"
+    "to wake up",
+    "winter",
+    "cow"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -233,9 +233,9 @@
    "answer": "bakery",
    "options": [
     "bakery",
-    "throat",
-    "bread roll with something inside",
-    "biscuit"
+    "night",
+    "machine; car",
+    "recipe"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -255,9 +255,9 @@
    "answer": "building",
    "options": [
     "building",
-    "boot of a car",
-    "screwdriver",
-    "August"
+    "throat",
+    "bread roll with something inside",
+    "biscuit"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -277,9 +277,9 @@
    "answer": "castle",
    "options": [
     "castle",
-    "painting",
-    "June",
-    "tablet"
+    "toll",
+    "ear",
+    "Sunday"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -300,9 +300,9 @@
    "answer": "young",
    "options": [
     "young",
-    "polite",
-    "old",
-    "weak"
+    "short",
+    "tall; high",
+    "swollen"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -323,9 +323,9 @@
    "answer": "travels",
    "options": [
     "travels",
-    "tells",
-    "forget",
-    "asks"
+    "asks",
+    "explains",
+    "to wake up"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -346,9 +346,9 @@
    "answer": "sadness",
    "options": [
     "sadness",
-    "recipe",
-    "fine",
-    "photo"
+    "mayor",
+    "tap",
+    "roller blind"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -369,9 +369,9 @@
    "answer": "night",
    "options": [
     "night",
-    "sheep",
-    "salad",
-    "swimming costume"
+    "drum",
+    "illness",
+    "tablet"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -392,9 +392,9 @@
    "answer": "walks",
    "options": [
     "walks",
-    "collects",
+    "writes",
     "counts; matters",
-    "pulls; blows"
+    "rests"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -415,9 +415,9 @@
    "answer": "story, and also history",
    "options": [
     "story, and also history",
-    "jumper",
-    "ambulance",
-    "machine; car"
+    "boot of a car",
+    "screwdriver",
+    "August"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",
@@ -438,9 +438,9 @@
    "answer": "blanket",
    "options": [
     "blanket",
-    "sausage",
-    "cold",
-    "course of treatment"
+    "dad",
+    "shirt",
+    "relationship"
    ],
    "audioClip": {
     "storySlug": "il-palco-si-svuota-alluna",

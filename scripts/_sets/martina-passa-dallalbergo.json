@@ -58,9 +58,9 @@
    "answer": "trousers",
    "options": [
     "trousers",
-    "eggs",
-    "blanket",
-    "socket"
+    "night",
+    "Wednesday",
+    "boot of a car"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -80,16 +80,16 @@
    "answer": "mese",
    "options": [
     "mese",
-    "domenica",
-    "castello",
-    "zio"
+    "tempo",
+    "matrimonio",
+    "caffè"
    ],
    "translation": "In a _____ he will remember nothing of these days.",
    "optionTranslations": [
     "month",
-    "Sunday",
-    "castle",
-    "uncle"
+    "time, weather",
+    "wedding",
+    "coffee"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -109,9 +109,9 @@
    "answer": "linen and underwear",
    "options": [
     "linen and underwear",
-    "mayor",
-    "coffee",
-    "gentleman, sir"
+    "torch",
+    "castle",
+    "uncle"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -131,16 +131,16 @@
    "answer": "detersivo",
    "options": [
     "detersivo",
-    "tè",
-    "pelle",
-    "zio"
+    "santo",
+    "pomeriggio",
+    "cioccolato"
    ],
    "translation": "Rosa washes the underwear too with the bathroom _____.",
    "optionTranslations": [
     "washing powder",
-    "tea",
-    "skin",
-    "uncle"
+    "saint",
+    "afternoon",
+    "chocolate"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -160,9 +160,9 @@
    "answer": "plaster",
    "options": [
     "plaster",
-    "guest",
-    "lake",
-    "cinema"
+    "boss",
+    "cold",
+    "uncle"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -182,16 +182,16 @@
    "answer": "appuntamento",
    "options": [
     "appuntamento",
-    "orecchie",
-    "dottore",
-    "caffè"
+    "cassetto",
+    "autunno",
+    "cinema"
    ],
    "translation": "An _____ with the doctor.",
    "optionTranslations": [
     "appointment",
-    "ear",
-    "doctor",
-    "coffee"
+    "drawer",
+    "autumn",
+    "cinema"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -211,9 +211,9 @@
    "answer": "ship",
    "options": [
     "ship",
-    "pork",
-    "cold",
-    "cream"
+    "ear",
+    "doctor",
+    "coffee"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -233,9 +233,9 @@
    "answer": "swimming costume",
    "options": [
     "swimming costume",
-    "glasses",
-    "thermometer",
-    "fear"
+    "chicken",
+    "illness",
+    "cream"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -255,9 +255,9 @@
    "answer": "to wake up",
    "options": [
     "to wake up",
-    "brown",
-    "old",
-    "polite"
+    "arrived",
+    "prepares",
+    "covers, includes"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -277,9 +277,9 @@
    "answer": "slowly, softly",
    "options": [
     "slowly, softly",
-    "around",
-    "outside",
-    "tonight"
+    "tomorrow",
+    "where",
+    "instead"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -300,9 +300,9 @@
    "answer": "come back",
    "options": [
     "come back",
-    "asks",
-    "passes",
-    "forget"
+    "understands",
+    "answers, replies",
+    "stops"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -323,9 +323,9 @@
    "answer": "room",
    "options": [
     "room",
-    "boss",
-    "guest",
-    "tablet"
+    "stamp",
+    "gentleman, sir",
+    "bathroom"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -346,9 +346,9 @@
    "answer": "thin",
    "options": [
     "thin",
-    "poor",
-    "swollen",
-    "angry"
+    "intelligent, smart",
+    "same",
+    "before, first"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -369,9 +369,9 @@
    "answer": "washes yourself",
    "options": [
     "washes yourself",
-    "thinks",
-    "speaks",
-    "reopens"
+    "dies",
+    "opens",
+    "to lie down"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -392,9 +392,9 @@
    "answer": "sponge",
    "options": [
     "sponge",
-    "laptop",
-    "pork",
-    "lemonade"
+    "glasses",
+    "thermometer",
+    "fear"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",
@@ -415,9 +415,9 @@
    "answer": "wire or line",
    "options": [
     "wire or line",
-    "tiredness",
-    "instant",
-    "photo"
+    "plane",
+    "connects",
+    "ear"
    ],
    "audioClip": {
     "storySlug": "martina-passa-dallalbergo",

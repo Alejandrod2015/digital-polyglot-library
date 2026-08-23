@@ -58,9 +58,9 @@
    "answer": "breaks",
    "options": [
     "breaks",
+    "writes",
     "checks",
-    "gives as a present, without asking for money back",
-    "signs"
+    "gives as a present, without asking for money back"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -80,16 +80,16 @@
    "answer": "aggiusto",
    "options": [
     "aggiusto",
-    "sente",
-    "ferma",
-    "arrivata"
+    "firma",
+    "ripara",
+    "consegna"
    ],
    "translation": "Tomorrow I will _____ it.",
    "optionTranslations": [
     "fix",
-    "hears, feels",
-    "stops",
-    "arrived"
+    "signs",
+    "repairs",
+    "hands over"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -109,9 +109,9 @@
    "answer": "dry",
    "options": [
     "dry",
+    "short",
     "beautiful",
-    "full",
-    "unpleasant"
+    "old"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -131,16 +131,16 @@
    "answer": "temperatura",
    "options": [
     "temperatura",
-    "salsa",
-    "cerotti",
-    "conversazione"
+    "domenica",
+    "cattedrale",
+    "poltrona"
    ],
    "translation": "The air is dry and the _____ is dropping over the yard.",
    "optionTranslations": [
     "temperature",
-    "sauce",
-    "plaster",
-    "conversation"
+    "Sunday",
+    "cathedral",
+    "armchair"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -160,16 +160,16 @@
    "answer": "bugie",
    "options": [
     "bugie",
-    "lavagna",
-    "castagni",
-    "film"
+    "signore",
+    "pneumatici",
+    "animali"
    ],
    "translation": "The fourteenth, and the money comes on the twentieth, Rosa explains, with no _____.",
    "optionTranslations": [
     "lie",
-    "blackboard",
-    "chestnut",
-    "film"
+    "gentleman, sir",
+    "tyre",
+    "animal"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -189,9 +189,9 @@
    "answer": "solution",
    "options": [
     "solution",
-    "car door",
-    "rug or carpet",
-    "female student"
+    "film",
+    "plane",
+    "rug or carpet"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -211,9 +211,9 @@
    "answer": "angry",
    "options": [
     "angry",
+    "difficult",
     "clean",
-    "rich",
-    "open"
+    "rich"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -233,9 +233,9 @@
    "answer": "pulls; blows",
    "options": [
     "pulls; blows",
+    "hands over",
     "arrives",
-    "asks",
-    "goes down"
+    "holds, keeps"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -255,9 +255,9 @@
    "answer": "turns, spins",
    "options": [
     "turns, spins",
+    "they go up",
     "sends, gives off",
-    "counts; matters",
-    "finishes"
+    "counts; matters"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -277,9 +277,9 @@
    "answer": "warm; hot",
    "options": [
     "warm; hot",
-    "unpleasant",
-    "next",
-    "same"
+    "damp",
+    "open",
+    "next"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -300,9 +300,9 @@
    "answer": "serves; is needed",
    "options": [
     "serves; is needed",
-    "plays, rings",
-    "you pay",
-    "explains"
+    "points to, indicates",
+    "buys",
+    "dies"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -323,9 +323,9 @@
    "answer": "explains",
    "options": [
     "explains",
+    "wants",
     "writes",
-    "laughs",
-    "pulls; blows"
+    "looks for"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -346,9 +346,9 @@
    "answer": "takes",
    "options": [
     "takes",
+    "washes yourself",
     "is enough",
-    "switches on",
-    "leave"
+    "switches on"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -369,9 +369,9 @@
    "answer": "last",
    "options": [
     "last",
+    "damp",
     "next",
-    "intelligent, smart",
-    "polite"
+    "intelligent, smart"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -392,9 +392,9 @@
    "answer": "cloud",
    "options": [
     "cloud",
+    "conversation",
     "bakery",
-    "tree",
-    "ambulance"
+    "tree"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -415,9 +415,9 @@
    "answer": "where",
    "options": [
     "where",
+    "tomorrow",
     "outside",
-    "instead",
-    "badly, and in fare male also to hurt or to be sore"
+    "instead"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -438,9 +438,9 @@
    "answer": "fear",
    "options": [
     "fear",
-    "climate",
-    "bakery",
-    "document"
+    "night",
+    "spring",
+    "butcher's shop"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -461,9 +461,9 @@
    "answer": "dies",
    "options": [
     "dies",
+    "calls",
     "checks",
-    "waits",
-    "move"
+    "waits"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -484,9 +484,9 @@
    "answer": "promises",
    "options": [
     "promises",
+    "leave",
     "guide",
-    "connects",
-    "wants"
+    "connects"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -507,9 +507,9 @@
    "answer": "understands",
    "options": [
     "understands",
-    "parks",
-    "stays",
-    "see"
+    "works",
+    "sweats",
+    "guide"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",
@@ -531,8 +531,8 @@
    "options": [
     "around",
     "instead",
-    "tomorrow",
-    "today"
+    "today",
+    "tomorrow"
    ],
    "audioClip": {
     "storySlug": "la-tapparella-resta-su",

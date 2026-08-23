@@ -58,9 +58,9 @@
    "answer": "booking",
    "options": [
     "booking",
+    "chemist's shop",
     "year",
-    "summer",
-    "torch"
+    "summer"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -80,9 +80,9 @@
    "answer": "room",
    "options": [
     "room",
-    "painting",
-    "screen",
-    "horse"
+    "stamp",
+    "shelf unit",
+    "screen"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -102,9 +102,9 @@
    "answer": "wardrobe",
    "options": [
     "wardrobe",
+    "form",
     "key",
-    "wedding",
-    "battery"
+    "aunt"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -124,16 +124,16 @@
    "answer": "comodino",
    "options": [
     "comodino",
-    "tristezza",
-    "nuvola",
-    "sindaco"
+    "cellulare",
+    "raffreddore",
+    "topo"
    ],
    "translation": "The air is warm, there is a wardrobe, a _____ and no socket.",
    "optionTranslations": [
     "bedside table",
-    "sadness",
-    "cloud",
-    "mayor"
+    "mobile phone",
+    "cold",
+    "mouse"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -153,9 +153,9 @@
    "answer": "pillow",
    "options": [
     "pillow",
+    "mayor",
     "film",
-    "mirror",
-    "night"
+    "mirror"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -175,9 +175,9 @@
    "answer": "brother",
    "options": [
     "brother",
+    "cinema",
     "night",
-    "melon",
-    "swimming costume"
+    "melon"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -197,9 +197,9 @@
    "answer": "corridor",
    "options": [
     "corridor",
-    "large building",
-    "jacket",
-    "ear"
+    "ship",
+    "supermarket",
+    "jumper"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -219,9 +219,9 @@
    "answer": "sofa",
    "options": [
     "sofa",
-    "speech",
-    "shirt",
-    "time, weather"
+    "hotel",
+    "mayor",
+    "shirt"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -241,9 +241,9 @@
    "answer": "to wake up",
    "options": [
     "to wake up",
+    "pyjamas",
     "bike",
-    "queue ticket",
-    "shape"
+    "contract"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -263,9 +263,9 @@
    "answer": "mattress",
    "options": [
     "mattress",
+    "bike",
     "conversation",
-    "coffee",
-    "building"
+    "coffee"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -286,9 +286,9 @@
    "answer": "badly, and in fare male also to hurt or to be sore",
    "options": [
     "badly, and in fare male also to hurt or to be sore",
+    "outside",
     "instead",
-    "under, below",
-    "tomorrow"
+    "under, below"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -309,9 +309,9 @@
    "answer": "holds, keeps",
    "options": [
     "holds, keeps",
-    "lie",
-    "stops",
-    "serves; is needed"
+    "promises",
+    "works",
+    "calls"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -332,9 +332,9 @@
    "answer": "removes",
    "options": [
     "removes",
-    "pay",
-    "puts",
-    "covers, includes"
+    "goes down",
+    "surprises",
+    "goes out, exits"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -355,9 +355,9 @@
    "answer": "scratch",
    "options": [
     "scratch",
-    "credit",
-    "August",
-    "smoke"
+    "cucumber",
+    "chocolate",
+    "jacket"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -378,16 +378,16 @@
    "answer": "letti",
    "options": [
     "letti",
-    "caviglia",
-    "libretto",
-    "timbro"
+    "sogni",
+    "pecore",
+    "chilometri"
    ],
    "translation": "The booking was for two separate _____.",
    "optionTranslations": [
     "bed",
-    "ankle",
-    "small booklet that travels with an Italian car and says who owns it",
-    "stamp"
+    "dream",
+    "sheep",
+    "kilometre"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -408,16 +408,16 @@
    "answer": "lunedì",
    "options": [
     "lunedì",
-    "rifugio",
-    "denti",
-    "modulo"
+    "settembre",
+    "sapone",
+    "mercoledì"
    ],
    "translation": "The room at the back has been taken since _____.",
    "optionTranslations": [
     "Monday",
-    "mountain hut where walkers eat and sleep high up in the hills",
-    "tooth",
-    "form"
+    "September",
+    "soap",
+    "Wednesday"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -438,9 +438,9 @@
    "answer": "clean",
    "options": [
     "clean",
+    "young",
     "warm; hot",
-    "short",
-    "long; along"
+    "short"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -461,9 +461,9 @@
    "answer": "rug or carpet",
    "options": [
     "rug or carpet",
+    "post office",
     "salary",
-    "December",
-    "trumpet"
+    "December"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",
@@ -484,9 +484,9 @@
    "answer": "hard",
    "options": [
     "hard",
+    "before, first",
     "poor",
-    "warm; hot",
-    "before, first"
+    "warm; hot"
    ],
    "audioClip": {
     "storySlug": "una-chiave-sola-per-due",

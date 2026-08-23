@@ -58,9 +58,9 @@
    "answer": "collects",
    "options": [
     "collects",
-    "leave",
-    "sits",
-    "passes"
+    "waits",
+    "sleeps",
+    "pulls; blows"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -80,16 +80,16 @@
    "answer": "dicembre",
    "options": [
     "dicembre",
-    "domenica",
-    "galline",
-    "password"
+    "lunedì",
+    "madre",
+    "maiale"
    ],
    "translation": "From January to _____.",
    "optionTranslations": [
     "December",
-    "Sunday",
-    "hen",
-    "password"
+    "Monday",
+    "mother",
+    "pork"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -109,9 +109,9 @@
    "answer": "sister",
    "options": [
     "sister",
-    "machine; car",
-    "friendship",
-    "Saturday"
+    "Sunday",
+    "hen",
+    "password"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -131,9 +131,9 @@
    "answer": "mum",
    "options": [
     "mum",
-    "mirror",
+    "night",
     "wedding",
-    "summer"
+    "course of treatment"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -147,27 +147,27 @@
  {
   "type": "fill_blank",
   "word": "papà",
-  "sentence": "Sul tavolo una foto con sua mamma e suo _____.",
+  "sentence": "Tavolo una vecchia foto con sua mamma, suo _____ e uno zio.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "papà",
    "options": [
     "papà",
-    "griglia",
-    "parco",
-    "tempo"
+    "madre",
+    "chiave",
+    "maiale"
    ],
-   "translation": "On the table a photo with her mum and her _____.",
+   "translation": "On the table an old photo with her mum, her _____ and an uncle.",
    "optionTranslations": [
     "dad",
-    "grill",
-    "park",
-    "time, weather"
+    "mother",
+    "key",
+    "pork"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
     "storySource": "user",
-    "sentence": "Sul tavolo una foto con sua mamma e suo papà.",
+    "sentence": "Tavolo una vecchia foto con sua mamma, suo papà e uno zio.",
     "targetWord": "papà",
     "language": "italian"
    }
@@ -182,9 +182,9 @@
    "answer": "Friday",
    "options": [
     "Friday",
-    "wood",
-    "speech",
-    "bathroom"
+    "lane",
+    "cinema",
+    "September"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -204,9 +204,9 @@
    "answer": "bucket",
    "options": [
     "bucket",
-    "mouse",
-    "guest",
-    "mirror"
+    "wood",
+    "speech",
+    "bathroom"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -226,9 +226,9 @@
    "answer": "map",
    "options": [
     "map",
-    "form",
-    "autumn",
-    "hen"
+    "mouse",
+    "guest",
+    "mirror"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -248,9 +248,9 @@
    "answer": "vacuum cleaner",
    "options": [
     "vacuum cleaner",
-    "spoon",
-    "cow",
-    "bakery"
+    "form",
+    "autumn",
+    "hen"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -270,9 +270,9 @@
    "answer": "film",
    "options": [
     "film",
-    "linen and underwear",
-    "aunt",
-    "tiredness"
+    "spoon",
+    "cow",
+    "bakery"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -293,9 +293,9 @@
    "answer": "shape",
    "options": [
     "shape",
-    "machine; car",
-    "female student",
-    "syrup"
+    "corridor",
+    "coffee",
+    "drawer"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -316,8 +316,8 @@
    "answer": "eats",
    "options": [
     "eats",
-    "buys",
-    "grow",
+    "serves; is needed",
+    "gives as a present, without asking for money back",
     "finishes"
    ],
    "audioClip": {
@@ -339,9 +339,9 @@
    "answer": "salt",
    "options": [
     "salt",
-    "plays, rings",
-    "holds, keeps",
-    "laughs"
+    "serves; is needed",
+    "returns",
+    "removes"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -362,16 +362,16 @@
    "answer": "relazione",
    "options": [
     "relazione",
-    "notte",
-    "zia",
-    "cura"
+    "verità",
+    "corsia",
+    "limonata"
    ],
    "translation": "Rosa thinks about her sister and the _____ they have had for years.",
    "optionTranslations": [
     "relationship",
-    "night",
-    "aunt",
-    "course of treatment"
+    "truth",
+    "lane",
+    "lemonade"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -392,9 +392,9 @@
    "answer": "uncle",
    "options": [
     "uncle",
-    "sofa",
-    "afternoon",
-    "drawer"
+    "traffic light",
+    "battery",
+    "friendship"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -415,9 +415,9 @@
    "answer": "answers, replies",
    "options": [
     "answers, replies",
-    "turns, spins",
-    "removes",
-    "finishes"
+    "counts; matters",
+    "follows",
+    "promises"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -438,9 +438,9 @@
    "answer": "bike",
    "options": [
     "bike",
-    "sadness",
-    "wardrobe",
-    "torch"
+    "machine; car",
+    "female student",
+    "syrup"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -461,9 +461,9 @@
    "answer": "train",
    "options": [
     "train",
-    "traffic light",
-    "tiredness",
-    "holiday"
+    "linen and underwear",
+    "aunt",
+    "tiredness"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -484,9 +484,9 @@
    "answer": "warm; hot",
    "options": [
     "warm; hot",
-    "right",
-    "grey",
-    "open"
+    "young",
+    "angry",
+    "right"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -507,9 +507,9 @@
    "answer": "finishes",
    "options": [
     "finishes",
-    "dies",
-    "explains",
-    "gives as a present, without asking for money back"
+    "stops",
+    "works",
+    "waits"
    ],
    "audioClip": {
     "storySlug": "nico-offre-dodici-consegne",
@@ -531,7 +531,7 @@
    "options": [
     "outside",
     "tomorrow",
-    "slowly, softly",
+    "today",
     "around"
    ],
    "audioClip": {

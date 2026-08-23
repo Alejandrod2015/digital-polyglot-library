@@ -58,9 +58,9 @@
    "answer": "lemonade",
    "options": [
     "lemonade",
-    "park",
-    "cloud",
-    "shelf unit"
+    "temperature",
+    "plaster",
+    "park"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -80,16 +80,16 @@
    "answer": "gettone",
    "options": [
     "gettone",
-    "banca",
-    "caricabatterie",
-    "giugno"
+    "sentiero",
+    "scaffale",
+    "credito"
    ],
    "translation": "Here you pay with a _____.",
    "optionTranslations": [
     "token",
-    "bank",
-    "charger",
-    "June"
+    "path",
+    "shelf unit",
+    "credit"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -109,9 +109,9 @@
    "answer": "melon",
    "options": [
     "melon",
-    "bakery",
-    "farm",
-    "university"
+    "charger",
+    "June",
+    "building"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -131,9 +131,9 @@
    "answer": "chicken",
    "options": [
     "chicken",
-    "t-shirt",
-    "cold",
-    "tiredness"
+    "biscuit",
+    "key",
+    "t-shirt"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -153,16 +153,16 @@
    "answer": "maiale",
    "options": [
     "maiale",
-    "cassetto",
-    "biscotti",
-    "busta"
+    "dolore",
+    "odore",
+    "madre"
    ],
    "translation": "Chicken, _____ and sauce end up on Teo's plate, after days of sandwiches.",
    "optionTranslations": [
     "pork",
-    "drawer",
-    "biscuit",
-    "envelope"
+    "pain",
+    "smell",
+    "mother"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -182,9 +182,9 @@
    "answer": "prawn",
    "options": [
     "prawn",
-    "light bulb",
-    "biscuit",
-    "paint"
+    "scratch",
+    "envelope",
+    "light bulb"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -204,9 +204,9 @@
    "answer": "gentleman, sir",
    "options": [
     "gentleman, sir",
-    "tie",
-    "rest",
-    "bed"
+    "jumper",
+    "car door",
+    "signs"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -226,9 +226,9 @@
    "answer": "summer",
    "options": [
     "summer",
-    "receipt",
-    "ear",
-    "fine"
+    "rest",
+    "bed",
+    "pyjamas"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -248,9 +248,9 @@
    "answer": "under, below",
    "options": [
     "under, below",
-    "tomorrow",
-    "around",
-    "today"
+    "instead",
+    "where",
+    "tomorrow"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -270,9 +270,9 @@
    "answer": "looks for",
    "options": [
     "looks for",
-    "walks",
-    "asks",
-    "switches on"
+    "post",
+    "gets dressed",
+    "repairs"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -293,9 +293,9 @@
    "answer": "eats",
    "options": [
     "eats",
-    "explains",
-    "guide",
-    "closed"
+    "sleeps",
+    "come back",
+    "puts"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -316,16 +316,16 @@
    "answer": "cetriolo",
    "options": [
     "cetriolo",
-    "albergo",
-    "tappeto",
-    "batteria"
+    "motivo",
+    "stipendio",
+    "appuntamento"
    ],
    "translation": "One woman pours the wine and another cuts melon and _____.",
    "optionTranslations": [
     "cucumber",
-    "hotel",
-    "rug or carpet",
-    "battery"
+    "reason",
+    "salary",
+    "appointment"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -346,9 +346,9 @@
    "answer": "sauce",
    "options": [
     "sauce",
-    "mobile phone",
-    "photocopy",
-    "sadness"
+    "bathroom",
+    "photo",
+    "tiredness"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -369,9 +369,9 @@
    "answer": "grapes",
    "options": [
     "grapes",
-    "tablet",
-    "cloud",
-    "jacket"
+    "bookshop, bookshelf",
+    "castle",
+    "course of treatment"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -392,9 +392,9 @@
    "answer": "badly, and in fare male also to hurt or to be sore",
    "options": [
     "badly, and in fare male also to hurt or to be sore",
-    "slowly, softly",
-    "instead",
-    "today"
+    "outside",
+    "tomorrow",
+    "slowly, softly"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -415,9 +415,9 @@
    "answer": "laughs",
    "options": [
     "laughs",
-    "frightens",
-    "rests",
-    "holds, keeps"
+    "serves; is needed",
+    "counts; matters",
+    "gets lost"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -438,9 +438,9 @@
    "answer": "goes out, exits",
    "options": [
     "goes out, exits",
-    "signs",
-    "sleeps",
-    "opens"
+    "sends, gives off",
+    "stays",
+    "calls"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -461,9 +461,9 @@
    "answer": "pear",
    "options": [
     "pear",
-    "Wednesday",
-    "salami",
-    "hotel"
+    "cloud",
+    "jacket",
+    "Wednesday"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -484,9 +484,9 @@
    "answer": "before, first",
    "options": [
     "before, first",
-    "short",
-    "polite",
-    "to wake up"
+    "full",
+    "stupid",
+    "damp"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -507,9 +507,9 @@
    "answer": "chocolate",
    "options": [
     "chocolate",
-    "coffee",
-    "jacket",
-    "tunnel"
+    "autumn",
+    "armchair",
+    "coffee"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",
@@ -530,9 +530,9 @@
    "answer": "cream",
    "options": [
     "cream",
-    "soap",
-    "jumper",
-    "car door"
+    "jacket",
+    "tunnel",
+    "toothbrush"
    ],
    "audioClip": {
     "storySlug": "il-fumo-della-griglia",

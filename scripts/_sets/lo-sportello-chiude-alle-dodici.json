@@ -58,9 +58,9 @@
    "answer": "driving licence",
    "options": [
     "driving licence",
-    "summer",
-    "lake",
-    "pork"
+    "wardrobe",
+    "tooth",
+    "solution"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -80,9 +80,9 @@
    "answer": "female clerk",
    "options": [
     "female clerk",
-    "bed",
-    "train",
-    "animal"
+    "procession",
+    "tunnel",
+    "shape"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -102,16 +102,16 @@
    "answer": "timbro",
    "options": [
     "timbro",
-    "casello",
-    "assicurazione",
-    "camere"
+    "fratello",
+    "treno",
+    "motivo"
    ],
    "translation": "Rosa signs above the _____.",
    "optionTranslations": [
     "stamp",
-    "toll booth",
-    "insurance",
-    "room"
+    "brother",
+    "train",
+    "reason"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -131,9 +131,9 @@
    "answer": "form",
    "options": [
     "form",
-    "document",
-    "climate",
-    "film"
+    "tunnel",
+    "insurance",
+    "breakfast"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -153,9 +153,9 @@
    "answer": "win",
    "options": [
     "win",
-    "puts",
-    "stops",
-    "dies"
+    "leave",
+    "guide",
+    "serves; is needed"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -175,9 +175,9 @@
    "answer": "fine",
    "options": [
     "fine",
-    "machine; car",
-    "socket",
-    "boot of a car"
+    "mother",
+    "wedding",
+    "trousers"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -197,9 +197,9 @@
    "answer": "document",
    "options": [
     "document",
-    "bread roll with something inside",
-    "October",
-    "meeting"
+    "fever",
+    "laptop",
+    "March"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -219,9 +219,9 @@
    "answer": "holds, keeps",
    "options": [
     "holds, keeps",
-    "parks",
-    "takes",
-    "prepares"
+    "hands over",
+    "pulls; blows",
+    "grow"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -241,9 +241,9 @@
    "answer": "counts; matters",
    "options": [
     "counts; matters",
-    "writes",
-    "guide",
-    "pulls; blows"
+    "combs your hair",
+    "washes yourself",
+    "takes"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -263,9 +263,9 @@
    "answer": "next",
    "options": [
     "next",
-    "dirty",
-    "warm; hot",
-    "brown"
+    "beautiful",
+    "old",
+    "clean"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -286,16 +286,16 @@
    "answer": "passaporto",
    "options": [
     "passaporto",
-    "processione",
-    "semaforo",
-    "forma"
+    "cioccolato",
+    "motivo",
+    "gettone"
    ],
    "translation": "Rosa pulls the licence, the _____ and the logbook out of the envelope.",
    "optionTranslations": [
     "passport",
-    "procession",
-    "traffic light",
-    "shape"
+    "chocolate",
+    "reason",
+    "token"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -316,9 +316,9 @@
    "answer": "asks",
    "options": [
     "asks",
-    "combs your hair",
-    "pulls; blows",
-    "takes"
+    "parks",
+    "takes",
+    "reopens"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -339,16 +339,16 @@
    "answer": "firma",
    "options": [
     "firma",
-    "lasciato",
-    "resta",
-    "serve"
+    "controlla",
+    "guarda",
+    "mangia"
    ],
    "translation": "Rosa _____ above the stamp.",
    "optionTranslations": [
     "signs",
-    "leave",
-    "stays",
-    "serves; is needed"
+    "checks",
+    "looks, watches",
+    "eats"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -369,9 +369,9 @@
    "answer": "hands over",
    "options": [
     "hands over",
-    "collects",
-    "dies",
-    "believes"
+    "sits",
+    "guide",
+    "pulls; blows"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -392,9 +392,9 @@
    "answer": "post",
    "options": [
     "post",
-    "goes down",
-    "arrived",
-    "turns, spins"
+    "hands over",
+    "goes out, exits",
+    "checks"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",
@@ -415,9 +415,9 @@
    "answer": "envelope",
    "options": [
     "envelope",
-    "mother",
-    "autumn",
-    "procession"
+    "bread roll with something inside",
+    "October",
+    "meeting"
    ],
    "audioClip": {
     "storySlug": "lo-sportello-chiude-alle-dodici",

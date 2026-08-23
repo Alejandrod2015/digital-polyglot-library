@@ -76,6 +76,104 @@ const pal = (s:string)=>s.trim().split(/\s+/).filter(Boolean).length;
  *  soplo: se lee como marca, no como ayuda. En la glosa del lookup si vale. */
 const opcion = (g:string)=> g.replace(/\s*\([^)]*\)\s*$/,"").trim();
 
+/**
+ * Clase de desinencia italiana, para que los distractores CONCUERDEN con la
+ * respuesta en genero y numero.
+ *
+ * Sin esto, un hueco que pide un adjetivo masculino singular se resolvia sin
+ * saber italiano: `silenzioso` contra `aperta` y `alte` se elige mirando la
+ * terminacion, porque las otras dos no encajan con el sustantivo. Medido sobre
+ * los 63 huecos: en 23 la respuesta era la UNICA opcion con su terminacion.
+ * Es el mismo fallo que el constructor automatico, solo que por otra puerta:
+ * alli el distractor sale del lema, aqui salia del tipo sin mirar la forma.
+ *
+ * La `-e` no separa masculino de femenino ni singular de plural femenino, y eso
+ * esta BIEN: son justo los casos en que un italiano tampoco decide por la
+ * desinencia, asi que el ejercicio sigue midiendo lo que dice medir.
+ */
+const desin = (w: string) => {
+  const c = w.normalize("NFC").toLowerCase().slice(-1);
+  if (/[àèéìòù]/.test(c)) return "acento";
+  return "oaei".includes(c) ? c : "otro";
+};
+
+/**
+ * Singular o plural, comparando la forma con su lema.
+ *
+ * Hace falta porque la desinencia sola no basta en la clase `-e`, que junta el
+ * masculino singular (`gettone`), el femenino singular (`cattedrale`) y el
+ * femenino PLURAL (`mucche`). Con solo la desinencia, un hueco que venia
+ * detras de `un` se resolvia igual de facil: `un mucche` no existe. Y ese no
+ * es un fallo de desinencia sino de numero, que el lema si delata.
+ */
+const numero = (lema: string, forma: string) => {
+  const l = lema.normalize("NFC").toLowerCase();
+  const f = forma.normalize("NFC").toLowerCase();
+  if (l === f) return "sg";
+  if (/a$/.test(l) && /e$/.test(f)) return "pl";
+  if (/[oe]$/.test(l) && /i$/.test(f)) return "pl";
+  return "sg";
+};
+
+/**
+ * Genero, sacado del CORPUS y no de la desinencia.
+ *
+ * La desinencia decide en `-o` y `-a`, pero no en `-e`, que es donde estaba el
+ * ultimo agujero: `cattedrale` (f) entre las opciones de un hueco que venia
+ * detras de `il` se descarta sin saber la palabra. El genero de esas no esta en
+ * la forma, pero si en los cuerpos: cada sustantivo aparece ahi con su articulo
+ * al menos una vez. Se lee de ahi y solo se cae a la desinencia cuando el
+ * corpus no lo dice.
+ */
+// Determinantes, separados por genero Y por numero: el mismo barrido da las dos
+// cosas y el numero lo necesita `occhiali`, un plural cuyo lema YA es plural, o
+// sea invisible para la comparacion lema/forma.
+const DET: Array<[RegExp, string, string]> = [
+  [/\b(il|lo|un|uno|nel|nello|dal|dallo|al|allo|sul|sullo|del|dello)\s+$/i, "m", "sg"],
+  [/\b(la|una|nella|dalla|alla|sulla|della)\s+$/i, "f", "sg"],
+  [/\b(i|gli|dei|degli|nei|negli|dai|dagli|ai|agli|sui|sugli)\s+$/i, "m", "pl"],
+  [/\b(le|delle|nelle|dalle|alle|sulle)\s+$/i, "f", "pl"],
+];
+function rasgosDelCorpus(cuerpos: string[]) {
+  const cache = new Map<string, string>();
+  return (lema: string, forma: string) => {
+    const f = forma.normalize("NFC").toLowerCase();
+    if (cache.has(f)) return cache.get(f)!;
+    const votos = new Map<string, number>();
+    const re = new RegExp(`(?<![\\p{L}])${f.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![\\p{L}])`, "giu");
+    for (const c of cuerpos) for (const hit of c.matchAll(re)) {
+      const antes = c.slice(Math.max(0, hit.index! - 12), hit.index!);
+      for (const [rx, g, n] of DET) if (rx.test(antes)) votos.set(`${g}:${n}`, (votos.get(`${g}:${n}`) ?? 0) + 1);
+    }
+    let mejor = "", max = 0;
+    for (const [k, v] of votos) if (v > max) { mejor = k; max = v; }
+    // Sin articulo delante en ningun cuerpo: se cae a la forma. La desinencia
+    // acierta en `-o` y `-a`; en `-e` no decide, y ahi vale mas no filtrar que
+    // filtrar mal, asi que sale `?` y solo casa con otros `?`.
+    const gen = /o$/.test(f) ? "m" : /a$/.test(f) ? "f" : "?";
+    const out = mejor || `${gen}:${numero(lema, f)}`;
+    cache.set(f, out);
+    return out;
+  };
+}
+
+/**
+ * Clave de concordancia: genero + numero, que es lo que de verdad tiene que
+ * cuadrar con el articulo y el sustantivo del hueco. La desinencia era un
+ * apaño que funcionaba en `-o` y `-a` y fallaba justo donde importa.
+ */
+const hazConc = (rasgos: (l: string, f: string) => string) => (lema: string, forma: string) =>
+  rasgos(lema, forma);
+
+/**
+ * Las traducciones de los huecos se escriben a mano (`_itA1/traducciones.json`,
+ * clave = la oracion ya con `_____`) porque generarlas daba cosas como
+ * "_____ sweats", que es la glosa de la respuesta pegada a un guion bajo y no
+ * una traduccion. Se inyectan AQUI y no en un paso aparte para que regenerar
+ * los sets no las pierda.
+ */
+const TRAD = JSON.parse(fs.readFileSync("scripts/_itA1/traducciones.json", "utf8")) as Record<string, string>;
+
 function run(){
   const st = (JSON.parse(fs.readFileSync("scripts/_itA1/ALL.json","utf8")) as any[])
     .sort((a,b)=>(TOPICS.indexOf(a.topic)-TOPICS.indexOf(b.topic))||(a.slotIndex-b.slotIndex));
@@ -87,17 +185,31 @@ function run(){
     const t=String(v.type);
     bolsa.set(t,[...(bolsa.get(t)??[]),{w:String(v.word),s:sup,g,slug:s.slug}]);
   }
+  const conc = hazConc(rasgosDelCorpus(st.map((x:any)=>String(x.text).normalize("NFC").toLowerCase())));
   let semilla = 7;
+  let sinConcordar = 0;
   const rnd = ()=> (semilla = (semilla*1103515245+12345) % 2147483648) / 2147483648;
-  const distractores = (tipo:string, slug:string, evitar:Set<string>, n:number) => {
-    const pool=(bolsa.get(tipo)??[]).filter(x=>x.slug!==slug && !evitar.has(x.g) && !evitar.has(x.s));
-    const out:{s:string,g:string}[]=[];
+  const distractores = (tipo:string, slug:string, evitar:Set<string>, n:number, key?:string) => {
+    const todos=(bolsa.get(tipo)??[]).filter(x=>x.slug!==slug && !evitar.has(x.g) && !evitar.has(x.s));
+    // Con `conc` solo entran los que comparten desinencia; si no llegan a `n`
+    // se completa con el resto, y el hueco se APUNTA en el informe: una
+    // opcion que no concuerda es exactamente lo que veniamos a quitar.
+    const pool = key ? todos.filter(x=>conc(x.w, x.s)===key) : todos;
+    const out:{s:string,g:string,w:string}[]=[];
     const usados=new Set<string>();
     while(out.length<n && pool.length){
       const x=pool[Math.floor(rnd()*pool.length)];
       if(usados.has(x.g)||usados.has(x.s)){ pool.splice(pool.indexOf(x),1); continue; }
-      usados.add(x.g); usados.add(x.s); out.push({s:x.s,g:x.g});
+      usados.add(x.g); usados.add(x.s); out.push({s:x.s,g:x.g,w:x.w});
       pool.splice(pool.indexOf(x),1);
+    }
+    if (key && out.length < n) {
+      const resto = todos.filter(x=>!usados.has(x.g) && !usados.has(x.s));
+      while (out.length < n && resto.length) {
+        const x = resto.splice(Math.floor(rnd()*resto.length), 1)[0];
+        usados.add(x.g); usados.add(x.s); out.push({s:x.s,g:x.g,w:x.w});
+      }
+      sinConcordar += n - out.filter(x=>conc(x.w, x.s)===key).length;
     }
     return out;
   };
@@ -140,14 +252,14 @@ function run(){
       if (!frase) { informe.push(`${s.slug}: no se puede recortar para ${sup}`); continue; }
       usadas.set(idx,(usadas.get(idx)??0)+1); objetivos.add(k); i++; if(hueco) huecos++;
       const evitar=new Set<string>([g.g, k, ...frase.toLowerCase().split(/\W+/)]);
-      const d=distractores(String(v.type), s.slug, evitar, 3);
+      const d=distractores(String(v.type), s.slug, evitar, 3, hueco ? conc(String(v.word), sup) : undefined);
       if(d.length<3){ informe.push(`${s.slug}: pocos distractores para ${sup}`); continue; }
       const audio={ storySlug:s.slug, storySource:"user", sentence:frase, targetWord:sup, language:"italian" };
       if (hueco) {
         ejercicios.push({ type:"fill_blank", word:sup,
           sentence: frase.replace(lim(sup), "_____"),
           payload:{ prompt:"Complete the sentence.", answer:sup, options:[sup,...d.map(x=>x.s)],
-            translation:"@@TRADUCIR@@", optionTranslations:[opcion(g.g),...d.map(x=>opcion(x.g))], audioClip:audio } });
+            translation: TRAD[frase.replace(lim(sup), "_____")] ?? "@@TRADUCIR@@", optionTranslations:[opcion(g.g),...d.map(x=>opcion(x.g))], audioClip:audio } });
       } else {
         ejercicios.push({ type:"meaning_in_context", word:sup,
           sentence: frase.replace(lim(sup), `[[${sup}]]`),
@@ -170,6 +282,8 @@ function run(){
     fs.writeFileSync(`scripts/_sets/${s.slug}.json`, JSON.stringify(ejerciciosOrdenados,null,1));
     console.log(`${s.slug.padEnd(34)} ${ejerciciosOrdenados.length} ejercicios · ${objetivos.size}/${s.vocab.length} plazas cubiertas`);
   }
+  if (sinConcordar) console.log(`
+AVISO: ${sinConcordar} opcion(es) sin concordar con la respuesta (el pool del tipo no daba tres).`);
   if(informe.length) console.log(`\nHUECOS (${informe.length}):\n  `+informe.slice(0,30).join("\n  "));
 }
 run(); prisma.$disconnect();

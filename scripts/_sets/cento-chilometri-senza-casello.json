@@ -58,9 +58,9 @@
    "answer": "move",
    "options": [
     "move",
-    "travels",
+    "walks",
     "covers, includes",
-    "finds"
+    "hears, feels"
    ],
    "audioClip": {
     "storySlug": "cento-chilometri-senza-casello",
@@ -80,15 +80,15 @@
    "answer": "lenti",
    "options": [
     "lenti",
-    "stesso",
-    "povera",
+    "marroni",
+    "vecchi",
     "silenzioso"
    ],
    "translation": "They are going _____ in front of them.",
    "optionTranslations": [
     "slow",
-    "same",
-    "poor",
+    "brown",
+    "old",
     "silent, quiet"
    ],
    "audioClip": {
@@ -109,8 +109,8 @@
    "answer": "speeds up",
    "options": [
     "speeds up",
-    "covers, includes",
-    "wants",
+    "points to, indicates",
+    "thinks",
     "promises"
    ],
    "audioClip": {
@@ -132,15 +132,15 @@
    "options": [
     "semaforo",
     "ospite",
-    "cucchiaio",
-    "camicia"
+    "marzo",
+    "piatto"
    ],
    "translation": "In Genoa they stop at the first _____.",
    "optionTranslations": [
     "traffic light",
     "guest",
-    "spoon",
-    "shirt"
+    "March",
+    "dish, plate"
    ],
    "audioClip": {
     "storySlug": "cento-chilometri-senza-casello",
@@ -182,16 +182,16 @@
    "answer": "panini",
    "options": [
     "panini",
-    "filo",
-    "gamberi",
-    "cioccolato"
+    "pastiglie",
+    "salsicce",
+    "vacanze"
    ],
    "translation": "Teo buys two _____.",
    "optionTranslations": [
     "bread roll with something inside",
-    "wire or line",
-    "prawn",
-    "chocolate"
+    "tablet",
+    "sausage",
+    "holiday"
    ],
    "audioClip": {
     "storySlug": "cento-chilometri-senza-casello",
@@ -212,7 +212,7 @@
    "options": [
     "rests",
     "wants",
-    "forget",
+    "believes",
     "understands"
    ],
    "audioClip": {
@@ -255,9 +255,9 @@
    "answer": "takes",
    "options": [
     "takes",
-    "is enough",
+    "sends, gives off",
     "returns",
-    "reopens"
+    "passes"
    ],
    "audioClip": {
     "storySlug": "cento-chilometri-senza-casello",
@@ -279,7 +279,7 @@
     "answers, replies",
     "guide",
     "writes",
-    "sleeps"
+    "you pay"
    ],
    "audioClip": {
     "storySlug": "cento-chilometri-senza-casello",
@@ -300,8 +300,8 @@
    "answer": "looks for",
    "options": [
     "looks for",
-    "writes",
-    "pulls; blows",
+    "sleeps",
+    "turns, spins",
     "removes"
    ],
    "audioClip": {
@@ -325,7 +325,7 @@
     "counts; matters",
     "thinks",
     "help",
-    "lie"
+    "asks"
    ],
    "audioClip": {
     "storySlug": "cento-chilometri-senza-casello",
@@ -348,7 +348,7 @@
     "goes out, exits",
     "win",
     "sits",
-    "covers, includes"
+    "points to, indicates"
    ],
    "audioClip": {
     "storySlug": "cento-chilometri-senza-casello",
@@ -416,7 +416,7 @@
    "options": [
     "pay",
     "works",
-    "counts; matters",
+    "asks",
     "laughs"
    ],
    "audioClip": {

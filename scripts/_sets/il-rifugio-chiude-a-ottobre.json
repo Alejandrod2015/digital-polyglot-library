@@ -58,9 +58,9 @@
    "answer": "spoon",
    "options": [
     "spoon",
-    "bakery",
-    "bathroom",
-    "car door"
+    "doctor",
+    "butcher's shop",
+    "biscuit"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -80,16 +80,16 @@
    "answer": "prosciutto",
    "options": [
     "prosciutto",
-    "collo",
-    "magliette",
-    "letti"
+    "quadro",
+    "mese",
+    "costume"
    ],
    "translation": "Teo slices the lean _____.",
    "optionTranslations": [
     "ham",
-    "neck",
-    "t-shirt",
-    "bed"
+    "painting",
+    "month",
+    "swimming costume"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -109,9 +109,9 @@
    "answer": "jug",
    "options": [
     "jug",
-    "temperature",
-    "chocolate",
-    "post office"
+    "bed",
+    "cloud",
+    "chocolate"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -131,16 +131,16 @@
    "answer": "anno",
    "options": [
     "anno",
-    "macchina",
-    "benda",
-    "funghi"
+    "teatro",
+    "bagagliaio",
+    "balcone"
    ],
    "translation": "Every _____ in March I decide whether I come back.",
    "optionTranslations": [
     "year",
-    "machine; car",
-    "bandage",
-    "mushroom"
+    "theater",
+    "boot of a car",
+    "balcony"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -160,9 +160,9 @@
    "answer": "March",
    "options": [
     "March",
+    "mushroom",
     "pillow",
-    "pepper",
-    "rug or carpet"
+    "salad"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -182,16 +182,16 @@
    "answer": "vacanze",
    "options": [
     "vacanze",
-    "password",
-    "maglione",
-    "spazzolino"
+    "letti",
+    "pneumatici",
+    "chilometri"
    ],
    "translation": "Rosa has been doing deliveries for six years, with no _____ and without getting rich.",
    "optionTranslations": [
     "holiday",
-    "password",
-    "jumper",
-    "toothbrush"
+    "bed",
+    "tyre",
+    "kilometre"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -211,9 +211,9 @@
    "answer": "friendship",
    "options": [
     "friendship",
-    "winter",
-    "cat",
-    "photocopy"
+    "soap",
+    "spring",
+    "temperature"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -233,9 +233,9 @@
    "answer": "boss",
    "options": [
     "boss",
+    "exam",
     "battery",
-    "grill",
-    "socket"
+    "grill"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -255,9 +255,9 @@
    "answer": "tea",
    "options": [
     "tea",
+    "password",
     "soap",
-    "fear",
-    "temperature"
+    "fear"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -277,9 +277,9 @@
    "answer": "connects",
    "options": [
     "connects",
-    "path",
-    "chemist's shop",
-    "chestnut"
+    "temperature",
+    "chestnut",
+    "chemist's shop"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -300,9 +300,9 @@
    "answer": "meeting",
    "options": [
     "meeting",
-    "light bulb",
-    "syrup",
-    "mum"
+    "chestnut",
+    "yard",
+    "syrup"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -323,9 +323,9 @@
    "answer": "outside",
    "options": [
     "outside",
-    "badly, and in fare male also to hurt or to be sore",
-    "tonight",
-    "under, below"
+    "around",
+    "together",
+    "slowly, softly"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -346,9 +346,9 @@
    "answer": "reopens",
    "options": [
     "reopens",
-    "promises",
-    "turns, spins",
-    "gets lost"
+    "you pay",
+    "calls",
+    "explains"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -369,9 +369,9 @@
    "answer": "bread roll with something inside",
    "options": [
     "bread roll with something inside",
-    "blackboard",
-    "cream",
-    "torch"
+    "salary",
+    "jacket",
+    "bookshop, bookshelf"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -392,9 +392,9 @@
    "answer": "coffee",
    "options": [
     "coffee",
-    "armchair",
-    "castle",
-    "speech"
+    "cream",
+    "torch",
+    "balcony"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -415,9 +415,9 @@
    "answer": "same",
    "options": [
     "same",
-    "silent, quiet",
-    "low",
-    "young"
+    "tall; high",
+    "dirty",
+    "dark"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -438,9 +438,9 @@
    "answer": "rich",
    "options": [
     "rich",
-    "damp",
-    "dirty",
-    "swollen"
+    "young",
+    "big, large",
+    "stupid"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -461,9 +461,9 @@
    "answer": "slowly, softly",
    "options": [
     "slowly, softly",
-    "under, below",
-    "around",
-    "tomorrow"
+    "tonight",
+    "badly, and in fare male also to hurt or to be sore",
+    "under, below"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -484,9 +484,9 @@
    "answer": "mobile phone",
    "options": [
     "mobile phone",
-    "ear",
-    "blood",
-    "cat"
+    "hen",
+    "theater",
+    "ear"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -507,9 +507,9 @@
    "answer": "prepares",
    "options": [
     "prepares",
+    "collects",
     "to lie down",
-    "puts",
-    "grow"
+    "puts"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",
@@ -530,9 +530,9 @@
    "answer": "passes",
    "options": [
     "passes",
-    "works",
-    "puts",
-    "move"
+    "promises",
+    "frightens",
+    "works"
    ],
    "audioClip": {
     "storySlug": "il-rifugio-chiude-a-ottobre",

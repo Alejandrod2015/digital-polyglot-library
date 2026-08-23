@@ -58,9 +58,9 @@
    "answer": "procession",
    "options": [
     "procession",
-    "pillow",
-    "time, weather",
-    "truth"
+    "toll",
+    "tooth",
+    "pillow"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -80,16 +80,16 @@
    "answer": "santo",
    "options": [
     "santo",
-    "torcia",
-    "soluzione",
-    "edificio"
+    "ospite",
+    "matrimonio",
+    "autunno"
    ],
    "translation": "With jacket and jumper, he watches two men carrying the _____.",
    "optionTranslations": [
     "saint",
-    "torch",
-    "solution",
-    "building"
+    "guest",
+    "wedding",
+    "autumn"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -109,9 +109,9 @@
    "answer": "mayor",
    "options": [
     "mayor",
-    "eggs",
-    "chestnut",
-    "car door"
+    "lie",
+    "bakery",
+    "ankle"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -131,9 +131,9 @@
    "answer": "trumpet",
    "options": [
     "trumpet",
-    "mobile phone",
-    "holiday",
-    "mountain hut where walkers eat and sleep high up in the hills"
+    "farm",
+    "wood",
+    "bread roll with something inside"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -153,16 +153,16 @@
    "answer": "tamburo",
    "options": [
     "tamburo",
-    "raffreddore",
-    "supermercato",
-    "soluzione"
+    "marzo",
+    "sentiero",
+    "sciroppo"
    ],
    "translation": "A _____ resting on the low wall.",
    "optionTranslations": [
     "drum",
-    "cold",
-    "supermarket",
-    "solution"
+    "March",
+    "path",
+    "syrup"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -182,9 +182,9 @@
    "answer": "sausage",
    "options": [
     "sausage",
-    "linen and underwear",
-    "spoon",
-    "afternoon"
+    "large building",
+    "fear",
+    "linen and underwear"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -204,9 +204,9 @@
    "answer": "phone call",
    "options": [
     "phone call",
-    "airport",
-    "tea",
-    "roller blind"
+    "bed",
+    "token",
+    "airport"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -226,9 +226,9 @@
    "answer": "closed",
    "options": [
     "closed",
-    "promises",
     "puts",
-    "parks"
+    "looks, watches",
+    "explains"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -248,9 +248,9 @@
    "answer": "plays, rings",
    "options": [
     "plays, rings",
-    "post",
-    "promises",
-    "holds, keeps"
+    "opens",
+    "parks",
+    "post"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -270,9 +270,9 @@
    "answer": "tonight",
    "options": [
     "tonight",
-    "instead",
-    "where",
-    "together"
+    "badly, and in fare male also to hurt or to be sore",
+    "under, below",
+    "instead"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -293,9 +293,9 @@
    "answer": "tomorrow",
    "options": [
     "tomorrow",
-    "slowly, softly",
-    "outside",
-    "instead"
+    "instead",
+    "around",
+    "slowly, softly"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -316,9 +316,9 @@
    "answer": "jumper",
    "options": [
     "jumper",
-    "plane",
-    "suit or dress",
-    "sauce"
+    "large building",
+    "signs",
+    "plane"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -339,9 +339,9 @@
    "answer": "stops",
    "options": [
     "stops",
-    "pulls; blows",
-    "puts",
-    "washes yourself"
+    "combs your hair",
+    "speaks",
+    "collects"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -362,9 +362,9 @@
    "answer": "Saturday",
    "options": [
     "Saturday",
-    "bank",
-    "pear",
-    "mountain hut where walkers eat and sleep high up in the hills"
+    "tea",
+    "roller blind",
+    "post office"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -385,16 +385,16 @@
    "answer": "discorso",
    "options": [
     "discorso",
-    "bagagliaio",
-    "pecore",
-    "notte"
+    "sentiero",
+    "maglione",
+    "libretto"
    ],
    "translation": "On the stage a microphone screeches and the mayor starts a long _____.",
    "optionTranslations": [
     "speech",
-    "boot of a car",
-    "sheep",
-    "night"
+    "path",
+    "jumper",
+    "small booklet that travels with an Italian car and says who owns it"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -415,9 +415,9 @@
    "answer": "snack",
    "options": [
     "snack",
-    "prawn",
-    "booking",
-    "watermelon"
+    "ham",
+    "afternoon",
+    "sauce"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -438,9 +438,9 @@
    "answer": "goes down",
    "options": [
     "goes down",
-    "pay",
-    "surprises",
-    "dies"
+    "puts",
+    "pulls; blows",
+    "pay"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -461,9 +461,9 @@
    "answer": "jacket",
    "options": [
     "jacket",
-    "lemonade",
-    "counter window",
-    "pain"
+    "trousers",
+    "t-shirt",
+    "watermelon"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -484,9 +484,9 @@
    "answer": "long; along",
    "options": [
     "long; along",
-    "to wake up",
-    "dry",
-    "right"
+    "slow",
+    "thin",
+    "weak"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -507,9 +507,9 @@
    "answer": "buys",
    "options": [
     "buys",
-    "guide",
-    "takes",
-    "goes down"
+    "pulls; blows",
+    "asks",
+    "guide"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",
@@ -530,9 +530,9 @@
    "answer": "credit",
    "options": [
     "credit",
-    "grass",
-    "cloud",
-    "plaster"
+    "counter window",
+    "pain",
+    "wedding"
    ],
    "audioClip": {
     "storySlug": "la-strada-riapre-a-mezzanotte",

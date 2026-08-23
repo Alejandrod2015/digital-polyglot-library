@@ -58,9 +58,9 @@
    "answer": "tongue, and also language",
    "options": [
     "tongue, and also language",
-    "bread roll with something inside",
-    "mum",
-    "horse"
+    "sheep",
+    "watermelon",
+    "bike"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -80,16 +80,16 @@
    "answer": "labbra",
    "options": [
     "labbra",
-    "rifugio",
-    "inverno",
-    "biscotti"
+    "mucche",
+    "navi",
+    "trombe"
    ],
    "translation": "He runs his tongue over his _____.",
    "optionTranslations": [
     "lip",
-    "mountain hut where walkers eat and sleep high up in the hills",
-    "winter",
-    "biscuit"
+    "cow",
+    "ship",
+    "trumpet"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -109,9 +109,9 @@
    "answer": "recipe",
    "options": [
     "recipe",
-    "rug or carpet",
-    "contract",
-    "boot"
+    "mountain hut where walkers eat and sleep high up in the hills",
+    "winter",
+    "biscuit"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -131,16 +131,16 @@
    "answer": "collo",
    "options": [
     "collo",
-    "trombe",
-    "chilometri",
-    "patate"
+    "bagno",
+    "timbro",
+    "cavallo"
    ],
    "translation": "With his _____ sweaty.",
    "optionTranslations": [
     "neck",
-    "trumpet",
-    "kilometre",
-    "potato"
+    "bathroom",
+    "stamp",
+    "horse"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -160,9 +160,9 @@
    "answer": "blood",
    "options": [
     "blood",
-    "tablet",
-    "fine",
-    "large building"
+    "speech",
+    "kilometre",
+    "potato"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -182,15 +182,15 @@
    "answer": "antipatica",
    "options": [
     "antipatica",
-    "caldo",
-    "scura",
+    "gonfia",
+    "aperta",
     "ultima"
    ],
    "translation": "Rosa is not _____.",
    "optionTranslations": [
     "unpleasant",
-    "warm; hot",
-    "dark",
+    "swollen",
+    "open",
     "last"
    ],
    "audioClip": {
@@ -211,9 +211,9 @@
    "answer": "ambulance",
    "options": [
     "ambulance",
-    "course of treatment",
-    "fine",
-    "mobile phone"
+    "sheep",
+    "dish, plate",
+    "animal"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -233,9 +233,9 @@
    "answer": "ear",
    "options": [
     "ear",
-    "receipt",
-    "female clerk",
-    "hen"
+    "prawn",
+    "electric power",
+    "path"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -255,9 +255,9 @@
    "answer": "writes",
    "options": [
     "writes",
-    "tells",
-    "goes down",
-    "sweats"
+    "help",
+    "asks",
+    "finds"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -277,9 +277,9 @@
    "answer": "swollen",
    "options": [
     "swollen",
-    "silent, quiet",
-    "big, large",
-    "beautiful"
+    "full",
+    "before, first",
+    "dark"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -300,9 +300,9 @@
    "answer": "you pay",
    "options": [
     "you pay",
-    "passes",
-    "opens",
-    "arrives"
+    "is enough",
+    "waits",
+    "writes"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -323,9 +323,9 @@
    "answer": "dies",
    "options": [
     "dies",
-    "works",
-    "move",
-    "checks"
+    "repairs",
+    "sweats",
+    "lie"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -346,9 +346,9 @@
    "answer": "weak",
    "options": [
     "weak",
+    "full",
     "dirty",
-    "tall; high",
-    "next"
+    "grey"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -369,9 +369,9 @@
    "answer": "surprises",
    "options": [
     "surprises",
-    "passes",
-    "holds, keeps",
-    "checks"
+    "move",
+    "see",
+    "counts; matters"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -392,9 +392,9 @@
    "answer": "to lie down",
    "options": [
     "to lie down",
-    "frightens",
-    "goes out, exits",
-    "they go up"
+    "travels",
+    "hands over",
+    "answers, replies"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -415,9 +415,9 @@
    "answer": "polite",
    "options": [
     "polite",
-    "warm; hot",
-    "silent, quiet",
-    "dark"
+    "long; along",
+    "intelligent, smart",
+    "rich"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -438,9 +438,9 @@
    "answer": "sleeps",
    "options": [
     "sleeps",
-    "waits",
-    "finishes",
-    "sits"
+    "counts; matters",
+    "understands",
+    "collects"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",
@@ -461,9 +461,9 @@
    "answer": "serves; is needed",
    "options": [
     "serves; is needed",
-    "repairs",
-    "sweats",
-    "lie"
+    "goes down",
+    "goes out, exits",
+    "pay"
    ],
    "audioClip": {
     "storySlug": "la-pomata-resta-sul-banco",

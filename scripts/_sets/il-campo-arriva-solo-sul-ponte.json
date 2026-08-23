@@ -80,16 +80,16 @@
    "answer": "caricabatterie",
    "options": [
     "caricabatterie",
-    "film",
+    "treno",
     "credito",
-    "gettone"
+    "maglione"
    ],
    "translation": "Teo comes back with the cable and the _____, and Irene cuts two carrots.",
    "optionTranslations": [
     "charger",
-    "film",
+    "train",
     "credit",
-    "token"
+    "jumper"
    ],
    "audioClip": {
     "storySlug": "il-campo-arriva-solo-sul-ponte",
@@ -109,9 +109,9 @@
    "answer": "cuts",
    "options": [
     "cuts",
-    "plays, rings",
+    "buys",
     "see",
-    "arrives"
+    "prepares"
    ],
    "audioClip": {
     "storySlug": "il-campo-arriva-solo-sul-ponte",
@@ -131,15 +131,15 @@
    "answer": "scalda",
    "options": [
     "scalda",
-    "coricarsi",
-    "persa",
+    "guida",
+    "indica",
     "guarda"
    ],
    "translation": "Then she _____ the soup, brings it to the table and washes two glasses.",
    "optionTranslations": [
     "heats",
-    "to lie down",
-    "gets lost",
+    "guide",
+    "points to, indicates",
     "looks, watches"
    ],
    "audioClip": {
@@ -161,8 +161,8 @@
    "options": [
     "connects",
     "shaves",
-    "dies",
-    "turns, spins"
+    "understands",
+    "serves; is needed"
    ],
    "audioClip": {
     "storySlug": "il-campo-arriva-solo-sul-ponte",
@@ -182,16 +182,16 @@
    "answer": "silenzioso",
    "options": [
     "silenzioso",
-    "debole",
-    "aperta",
-    "alte"
+    "prossimo",
+    "magro",
+    "arrabbiato"
    ],
    "translation": "She puts the sound on _____.",
    "optionTranslations": [
     "silent, quiet",
-    "weak",
-    "open",
-    "tall; high"
+    "next",
+    "thin",
+    "angry"
    ],
    "audioClip": {
     "storySlug": "il-campo-arriva-solo-sul-ponte",
@@ -255,7 +255,7 @@
    "answer": "explains",
    "options": [
     "explains",
-    "sleeps",
+    "you pay",
     "frightens",
     "checks"
    ],
@@ -279,7 +279,7 @@
     "returns",
     "fix",
     "come back",
-    "promises"
+    "explains"
    ],
    "audioClip": {
     "storySlug": "il-campo-arriva-solo-sul-ponte",
@@ -323,7 +323,7 @@
    "answer": "finishes",
    "options": [
     "finishes",
-    "covers, includes",
+    "points to, indicates",
     "gets lost",
     "asks"
    ],
@@ -346,7 +346,7 @@
    "answer": "waits",
    "options": [
     "waits",
-    "buys",
+    "stops",
     "counts; matters",
     "post"
    ],
@@ -392,9 +392,9 @@
    "answer": "is enough",
    "options": [
     "is enough",
-    "help",
-    "rests",
-    "looks for"
+    "opens",
+    "takes",
+    "goes out, exits"
    ],
    "audioClip": {
     "storySlug": "il-campo-arriva-solo-sul-ponte",

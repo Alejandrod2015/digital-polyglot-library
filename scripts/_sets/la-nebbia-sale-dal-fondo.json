@@ -58,9 +58,9 @@
    "answer": "gets lost",
    "options": [
     "gets lost",
+    "eats",
     "thinks",
-    "stops",
-    "help"
+    "stops"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -80,16 +80,16 @@
    "answer": "uccello",
    "options": [
     "uccello",
-    "giacca",
-    "coperta",
-    "cellulare"
+    "cassetto",
+    "spuntino",
+    "matrimonio"
    ],
    "translation": "The call of a _____.",
    "optionTranslations": [
     "bird",
-    "jacket",
-    "blanket",
-    "mobile phone"
+    "drawer",
+    "snack",
+    "wedding"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -109,9 +109,9 @@
    "answer": "brave",
    "options": [
     "brave",
+    "low",
     "full",
-    "hard",
-    "grey"
+    "hard"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -131,16 +131,16 @@
    "answer": "fattoria",
    "options": [
     "fattoria",
-    "pastiglie",
-    "sentiero",
-    "lavagna"
+    "macchina",
+    "malattia",
+    "nuvola"
    ],
    "translation": "Then a _____ appears with two sheep, a horse and the hens.",
    "optionTranslations": [
     "farm",
-    "tablet",
-    "path",
-    "blackboard"
+    "machine; car",
+    "illness",
+    "cloud"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -160,9 +160,9 @@
    "answer": "shepherd",
    "options": [
     "shepherd",
-    "jug",
-    "tap",
-    "car door"
+    "butcher's shop",
+    "ham",
+    "tap"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -182,9 +182,9 @@
    "answer": "animal",
    "options": [
     "animal",
+    "living room",
     "shirt",
-    "photocopy",
-    "chest"
+    "photocopy"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -204,9 +204,9 @@
    "answer": "lake",
    "options": [
     "lake",
+    "chest",
     "jacket",
-    "night",
-    "boot of a car"
+    "blanket"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -226,9 +226,9 @@
    "answer": "frightens",
    "options": [
     "frightens",
-    "connects",
-    "stops",
-    "believes"
+    "guide",
+    "explains",
+    "goes down"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -248,9 +248,9 @@
    "answer": "reason",
    "options": [
     "reason",
-    "booking",
-    "procession",
-    "guest"
+    "t-shirt",
+    "light bulb",
+    "procession"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -270,9 +270,9 @@
    "answer": "covers, includes",
    "options": [
     "covers, includes",
+    "opens",
     "combs your hair",
-    "serves; is needed",
-    "plays, rings"
+    "dies"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -293,9 +293,9 @@
    "answer": "arrives",
    "options": [
     "arrives",
+    "prepares",
     "gives as a present, without asking for money back",
-    "works",
-    "repairs"
+    "works"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -316,9 +316,9 @@
    "answer": "intelligent, smart",
    "options": [
     "intelligent, smart",
+    "difficult",
     "slow",
-    "warm; hot",
-    "unpleasant"
+    "warm; hot"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -339,9 +339,9 @@
    "answer": "sheep",
    "options": [
     "sheep",
-    "cloud",
-    "grill",
-    "shower"
+    "blackboard",
+    "lie",
+    "smoke"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -362,9 +362,9 @@
    "answer": "points to, indicates",
    "options": [
     "points to, indicates",
+    "stops",
     "wants",
-    "lie",
-    "opens"
+    "lie"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -385,9 +385,9 @@
    "answer": "torch",
    "options": [
     "torch",
+    "mirror",
     "recipe",
-    "chocolate",
-    "trousers"
+    "cream"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -408,16 +408,16 @@
    "answer": "cavallo",
    "options": [
     "cavallo",
-    "esame",
-    "ricevuta",
-    "temperatura"
+    "spazzolino",
+    "bosco",
+    "ospite"
    ],
    "translation": "Then a farm appears with two sheep, a _____ and the hens.",
    "optionTranslations": [
     "horse",
-    "exam",
-    "receipt",
-    "temperature"
+    "toothbrush",
+    "wood",
+    "guest"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",
@@ -438,9 +438,9 @@
    "answer": "hen",
    "options": [
     "hen",
+    "dream",
     "tablet",
-    "female clerk",
-    "conversation"
+    "female clerk"
    ],
    "audioClip": {
     "storySlug": "la-nebbia-sale-dal-fondo",

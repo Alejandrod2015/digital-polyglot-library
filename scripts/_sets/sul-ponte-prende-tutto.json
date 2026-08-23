@@ -58,7 +58,7 @@
    "answer": "damp",
    "options": [
     "damp",
-    "long; along",
+    "rich",
     "slow",
     "beautiful"
    ],
@@ -81,15 +81,15 @@
    "options": [
     "riposo",
     "libretto",
-    "filo",
-    "costume"
+    "passaporto",
+    "numerino"
    ],
    "translation": "He pays, and Rosa gets no _____.",
    "optionTranslations": [
     "rest",
     "small booklet that travels with an Italian car and says who owns it",
-    "wire or line",
-    "swimming costume"
+    "passport",
+    "queue ticket"
    ],
    "audioClip": {
     "storySlug": "sul-ponte-prende-tutto",
@@ -132,15 +132,15 @@
    "options": [
     "mentito",
     "crescono",
-    "guarda",
-    "apre"
+    "dorme",
+    "collega"
    ],
    "translation": "About the twelve euros: you did not _____, you let me believe it.",
    "optionTranslations": [
     "lie",
     "grow",
-    "looks, watches",
-    "opens"
+    "sleeps",
+    "connects"
    ],
    "audioClip": {
     "storySlug": "sul-ponte-prende-tutto",
@@ -182,16 +182,16 @@
    "answer": "zia",
    "options": [
     "zia",
-    "labbra",
-    "aereo",
-    "topo"
+    "pomata",
+    "cravatta",
+    "nuvola"
    ],
    "translation": "His _____ invites him to the wedding.",
    "optionTranslations": [
     "aunt",
-    "lip",
-    "plane",
-    "mouse"
+    "cream",
+    "tie",
+    "cloud"
    ],
    "audioClip": {
     "storySlug": "sul-ponte-prende-tutto",
@@ -279,7 +279,7 @@
     "asks",
     "wants",
     "finishes",
-    "grow"
+    "works"
    ],
    "audioClip": {
     "storySlug": "sul-ponte-prende-tutto",
@@ -302,7 +302,7 @@
     "they go up",
     "wants",
     "speaks",
-    "walks"
+    "stays"
    ],
    "audioClip": {
     "storySlug": "sul-ponte-prende-tutto",
@@ -325,7 +325,7 @@
     "leave",
     "takes",
     "see",
-    "wants"
+    "dies"
    ],
    "audioClip": {
     "storySlug": "sul-ponte-prende-tutto",
@@ -346,9 +346,9 @@
    "answer": "looks, watches",
    "options": [
     "looks, watches",
-    "guide",
-    "you pay",
-    "eats"
+    "stops",
+    "to lie down",
+    "serves; is needed"
    ],
    "audioClip": {
     "storySlug": "sul-ponte-prende-tutto",
@@ -369,9 +369,9 @@
    "answer": "Sunday",
    "options": [
     "Sunday",
+    "document",
     "bedside table",
-    "bakery",
-    "blanket"
+    "bakery"
    ],
    "audioClip": {
     "storySlug": "sul-ponte-prende-tutto",
@@ -392,9 +392,9 @@
    "answer": "machine; car",
    "options": [
     "machine; car",
-    "theater",
-    "morning",
-    "booking"
+    "car door",
+    "large building",
+    "morning"
    ],
    "audioClip": {
     "storySlug": "sul-ponte-prende-tutto",
@@ -416,7 +416,7 @@
    "options": [
     "worried",
     "before, first",
-    "polite",
+    "hard",
     "grey"
    ],
    "audioClip": {
@@ -461,9 +461,9 @@
    "answer": "torch",
    "options": [
     "torch",
+    "syrup",
     "ambulance",
-    "horse",
-    "document"
+    "horse"
    ],
    "audioClip": {
     "storySlug": "sul-ponte-prende-tutto",

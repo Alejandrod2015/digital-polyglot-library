@@ -80,16 +80,16 @@
    "answer": "suda",
    "options": [
     "suda",
-    "copre",
     "arriva",
-    "veste"
+    "chiusa",
+    "pettina"
    ],
    "translation": "She walks round, checks the tyres and the oil, cleans the headlights and _____.",
    "optionTranslations": [
     "sweats",
-    "covers, includes",
     "arrives",
-    "gets dressed"
+    "closed",
+    "combs your hair"
    ],
    "audioClip": {
     "storySlug": "un-graffio-sulla-portiera",
@@ -109,7 +109,7 @@
    "answer": "see",
    "options": [
     "see",
-    "travels",
+    "walks",
     "eats",
     "help"
    ],
@@ -131,16 +131,16 @@
    "answer": "sporca",
    "options": [
     "sporca",
-    "povera",
-    "piene",
-    "ultima"
+    "umida",
+    "ultima",
+    "educata"
    ],
    "translation": "She feels the paint still _____.",
    "optionTranslations": [
     "dirty",
-    "poor",
-    "full",
-    "last"
+    "damp",
+    "last",
+    "polite"
    ],
    "audioClip": {
     "storySlug": "un-graffio-sulla-portiera",
@@ -182,16 +182,16 @@
    "answer": "stanchezza",
    "options": [
     "stanchezza",
-    "labbra",
-    "caffè",
-    "aeroporto"
+    "pomata",
+    "sagra",
+    "cravatta"
    ],
    "translation": "He looks for his in the jacket, under the shirt, and the _____ weighs on them.",
    "optionTranslations": [
     "tiredness",
-    "lip",
-    "coffee",
-    "airport"
+    "cream",
+    "village food festival",
+    "tie"
    ],
    "audioClip": {
     "storySlug": "un-graffio-sulla-portiera",
@@ -300,9 +300,9 @@
    "answer": "hears, feels",
    "options": [
     "hears, feels",
-    "goes out, exits",
+    "pay",
     "goes down",
-    "washes yourself"
+    "come back"
    ],
    "audioClip": {
     "storySlug": "un-graffio-sulla-portiera",
@@ -371,7 +371,7 @@
     "puts",
     "looks, watches",
     "calls",
-    "goes out, exits"
+    "eats"
    ],
    "audioClip": {
     "storySlug": "un-graffio-sulla-portiera",
@@ -393,7 +393,7 @@
    "options": [
     "stays",
     "forget",
-    "puts",
+    "opens",
     "lie"
    ],
    "audioClip": {
@@ -417,7 +417,7 @@
     "hands over",
     "sits",
     "prepares",
-    "dies"
+    "understands"
    ],
    "audioClip": {
     "storySlug": "un-graffio-sulla-portiera",
@@ -462,8 +462,8 @@
    "options": [
     "passes",
     "returns",
-    "arrives",
-    "buys"
+    "prepares",
+    "stops"
    ],
    "audioClip": {
     "storySlug": "un-graffio-sulla-portiera",

@@ -80,16 +80,16 @@
    "answer": "dimenticato",
    "options": [
     "dimenticato",
-    "mentito",
-    "suda",
-    "consegna"
+    "collega",
+    "pago",
+    "visto"
    ],
    "translation": "Because that day Rosa had _____ to take it.",
    "optionTranslations": [
     "forget",
-    "lie",
-    "sweats",
-    "hands over"
+    "connects",
+    "pay",
+    "see"
    ],
    "audioClip": {
     "storySlug": "quaranta-foto-e-nessuna-faccia",
@@ -109,9 +109,9 @@
    "answer": "believes",
    "options": [
     "believes",
-    "asks",
-    "takes",
-    "wants"
+    "calls",
+    "dies",
+    "thinks"
    ],
    "audioClip": {
     "storySlug": "quaranta-foto-e-nessuna-faccia",
@@ -131,15 +131,15 @@
    "answer": "esame",
    "options": [
     "esame",
-    "aspirapolvere",
-    "gola",
+    "venerdì",
+    "notte",
     "melone"
    ],
    "translation": "She goes back to her June _____ at the university.",
    "optionTranslations": [
     "exam",
-    "vacuum cleaner",
-    "throat",
+    "Friday",
+    "night",
     "melon"
    ],
    "audioClip": {
@@ -182,16 +182,16 @@
    "answer": "tasti",
    "options": [
     "tasti",
-    "domenica",
-    "cellulare",
-    "vernice"
+    "pere",
+    "patate",
+    "panini"
    ],
    "translation": "She switches the screen off with two _____.",
    "optionTranslations": [
     "key or button",
-    "Sunday",
-    "mobile phone",
-    "paint"
+    "pear",
+    "potato",
+    "bread roll with something inside"
    ],
    "audioClip": {
     "storySlug": "quaranta-foto-e-nessuna-faccia",
@@ -213,7 +213,7 @@
     "tall; high",
     "polite",
     "young",
-    "rich"
+    "same"
    ],
    "audioClip": {
     "storySlug": "quaranta-foto-e-nessuna-faccia",
@@ -234,8 +234,8 @@
    "options": [
     "opens",
     "follows",
-    "goes out, exits",
-    "closed"
+    "pay",
+    "plays, rings"
    ],
    "audioClip": {
     "storySlug": "quaranta-foto-e-nessuna-faccia",
@@ -278,8 +278,8 @@
    "options": [
     "sits",
     "finishes",
-    "arrives",
-    "goes down"
+    "prepares",
+    "laughs"
    ],
    "audioClip": {
     "storySlug": "quaranta-foto-e-nessuna-faccia",
@@ -323,7 +323,7 @@
    "answer": "help",
    "options": [
     "help",
-    "travels",
+    "walks",
     "guide",
     "move"
    ],
@@ -417,7 +417,7 @@
     "writes",
     "wants",
     "post",
-    "thinks"
+    "tells"
    ],
    "audioClip": {
     "storySlug": "quaranta-foto-e-nessuna-faccia",
@@ -439,7 +439,7 @@
    "options": [
     "stupid",
     "slow",
-    "open",
+    "right",
     "silent, quiet"
    ],
    "audioClip": {

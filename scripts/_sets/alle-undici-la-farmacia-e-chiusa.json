@@ -58,9 +58,9 @@
    "answer": "swollen",
    "options": [
     "swollen",
-    "white",
+    "warm; hot",
     "intelligent, smart",
-    "tall; high"
+    "weak"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -80,16 +80,16 @@
    "answer": "raffreddore",
    "options": [
     "raffreddore",
-    "parco",
-    "trombe",
-    "cinema"
+    "matrimonio",
+    "maglione",
+    "stipendio"
    ],
    "translation": "I have only got a _____.",
    "optionTranslations": [
     "cold",
-    "park",
-    "trumpet",
-    "cinema"
+    "wedding",
+    "jumper",
+    "salary"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -109,9 +109,9 @@
    "answer": "skin",
    "options": [
     "skin",
-    "tree",
-    "light bulb",
-    "jacket"
+    "park",
+    "trumpet",
+    "cinema"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -131,16 +131,16 @@
    "answer": "occhiali",
    "options": [
     "occhiali",
-    "nebbia",
-    "estate",
-    "nuvola"
+    "castagni",
+    "alberi",
+    "documenti"
    ],
    "translation": "With her _____ on her nose.",
    "optionTranslations": [
     "glasses",
-    "fog",
-    "summer",
-    "cloud"
+    "chestnut",
+    "tree",
+    "document"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -160,16 +160,16 @@
    "answer": "termometro",
    "options": [
     "termometro",
-    "tè",
-    "forma",
-    "firma"
+    "piatto",
+    "detersivo",
+    "petto"
    ],
    "translation": "The _____ reads thirty-nine point two and Martina stops smiling.",
    "optionTranslations": [
     "thermometer",
-    "tea",
-    "shape",
-    "signs"
+    "dish, plate",
+    "washing powder",
+    "chest"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -189,9 +189,9 @@
    "answer": "syrup",
    "options": [
     "syrup",
-    "appointment",
-    "salami",
-    "sheep"
+    "tea",
+    "shape",
+    "tie"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -211,9 +211,9 @@
    "answer": "tablet",
    "options": [
     "tablet",
-    "machine; car",
-    "year",
-    "September"
+    "appointment",
+    "autumn",
+    "horse"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -233,9 +233,9 @@
    "answer": "pain",
    "options": [
     "pain",
-    "tie",
-    "boss",
-    "tea"
+    "night",
+    "coffee",
+    "torch"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -255,9 +255,9 @@
    "answer": "doctor",
    "options": [
     "doctor",
-    "winter",
-    "shepherd",
-    "butcher's shop"
+    "tie",
+    "boss",
+    "friendship"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -277,9 +277,9 @@
    "answer": "Sunday",
    "options": [
     "Sunday",
-    "uncle",
-    "corridor",
-    "blood"
+    "spring",
+    "animal",
+    "butcher's shop"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -300,9 +300,9 @@
    "answer": "stays",
    "options": [
     "stays",
-    "explains",
-    "prepares",
-    "goes down"
+    "salt",
+    "sends, gives off",
+    "sleeps"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -323,9 +323,9 @@
    "answer": "guide",
    "options": [
     "guide",
-    "hands over",
-    "promises",
-    "pulls; blows"
+    "win",
+    "hears, feels",
+    "removes"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -346,9 +346,9 @@
    "answer": "ankle",
    "options": [
     "ankle",
-    "counter window",
-    "bird",
-    "path"
+    "yard",
+    "cucumber",
+    "theater"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -369,9 +369,9 @@
    "answer": "nose",
    "options": [
     "nose",
-    "net, network",
-    "ambulance",
-    "castle"
+    "fog",
+    "summer",
+    "cloud"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -392,9 +392,9 @@
    "answer": "course of treatment",
    "options": [
     "course of treatment",
-    "blanket",
-    "bread roll with something inside",
-    "machine; car"
+    "mother",
+    "jug",
+    "pyjamas"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -415,9 +415,9 @@
    "answer": "open",
    "options": [
     "open",
-    "young",
-    "tall; high",
-    "worried"
+    "stupid",
+    "poor",
+    "weak"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -438,9 +438,9 @@
    "answer": "right",
    "options": [
     "right",
-    "stupid",
-    "poor",
-    "to wake up"
+    "white",
+    "last",
+    "beautiful"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",
@@ -461,9 +461,9 @@
    "answer": "kilometre",
    "options": [
     "kilometre",
-    "farm",
-    "pepper",
-    "bike"
+    "building",
+    "key or button",
+    "bathroom"
    ],
    "audioClip": {
     "storySlug": "alle-undici-la-farmacia-e-chiusa",

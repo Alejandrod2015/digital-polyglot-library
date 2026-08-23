@@ -58,9 +58,9 @@
    "answer": "follows",
    "options": [
     "follows",
-    "reopens",
-    "eats",
-    "gets dressed"
+    "see",
+    "passes",
+    "eats"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -80,16 +80,16 @@
    "answer": "funghi",
    "options": [
     "funghi",
-    "sciroppo",
-    "temperatura",
-    "pere"
+    "documenti",
+    "denti",
+    "biscotti"
    ],
    "translation": "Here the _____ grow even in August.",
    "optionTranslations": [
     "mushroom",
-    "syrup",
-    "temperature",
-    "pear"
+    "document",
+    "tooth",
+    "biscuit"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -109,16 +109,16 @@
    "answer": "topo",
    "options": [
     "topo",
-    "naso",
-    "mattinata",
-    "giacca"
+    "castello",
+    "dottore",
+    "maglione"
    ],
    "translation": "On a root, she sees a butterfly on her hand and hears a _____.",
    "optionTranslations": [
     "mouse",
-    "nose",
-    "morning",
-    "jacket"
+    "castle",
+    "doctor",
+    "jumper"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -138,9 +138,9 @@
    "answer": "winter",
    "options": [
     "winter",
+    "toll",
     "hands over",
-    "fog",
-    "bedside table"
+    "boot"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -160,16 +160,16 @@
    "answer": "primavera",
    "options": [
     "primavera",
-    "dicembre",
-    "materasso",
-    "assicurazione"
+    "domenica",
+    "sorella",
+    "prenotazione"
    ],
    "translation": "In _____ it did not come back.",
    "optionTranslations": [
     "spring",
-    "December",
-    "mattress",
-    "insurance"
+    "Sunday",
+    "sister",
+    "booking"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -189,9 +189,9 @@
    "answer": "climate",
    "options": [
     "climate",
-    "fine",
-    "temperature",
-    "cinema"
+    "airport",
+    "form",
+    "cat"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -211,9 +211,9 @@
    "answer": "works",
    "options": [
     "works",
+    "goes down",
     "passes",
-    "believes",
-    "combs your hair"
+    "believes"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -233,9 +233,9 @@
    "answer": "wants",
    "options": [
     "wants",
+    "gets dressed",
     "travels",
-    "takes",
-    "prepares"
+    "takes"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -255,9 +255,9 @@
    "answer": "low",
    "options": [
     "low",
-    "intelligent, smart",
-    "polite",
-    "poor"
+    "long; along",
+    "brave",
+    "hard"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -277,9 +277,9 @@
    "answer": "thinks",
    "options": [
     "thinks",
-    "sits",
-    "salt",
-    "promises"
+    "waits",
+    "writes",
+    "salt"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -300,9 +300,9 @@
    "answer": "tells",
    "options": [
     "tells",
+    "stays",
     "they go up",
-    "speeds up",
-    "reopens"
+    "speeds up"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -323,9 +323,9 @@
    "answer": "full",
    "options": [
     "full",
-    "warm; hot",
-    "dark",
-    "brave"
+    "long; along",
+    "angry",
+    "silent, quiet"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -346,9 +346,9 @@
    "answer": "speaks",
    "options": [
     "speaks",
+    "fix",
     "parks",
-    "returns",
-    "signs"
+    "returns"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -369,9 +369,9 @@
    "answer": "puts",
    "options": [
     "puts",
+    "signs",
     "arrived",
-    "is enough",
-    "sweats"
+    "is enough"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -392,9 +392,9 @@
    "answer": "grow",
    "options": [
     "grow",
-    "looks for",
-    "plays, rings",
-    "laughs"
+    "reopens",
+    "goes out, exits",
+    "buys"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -415,9 +415,9 @@
    "answer": "big, large",
    "options": [
     "big, large",
+    "slow",
     "dry",
-    "swollen",
-    "slow"
+    "swollen"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -438,9 +438,9 @@
    "answer": "opens",
    "options": [
     "opens",
-    "hands over",
-    "speeds up",
-    "travels"
+    "repairs",
+    "cuts",
+    "speeds up"
    ],
    "audioClip": {
     "storySlug": "il-sentiero-dei-castagni",
@@ -461,8 +461,8 @@
    "answer": "old",
    "options": [
     "old",
+    "slow",
     "short",
-    "open",
     "right"
    ],
    "audioClip": {
