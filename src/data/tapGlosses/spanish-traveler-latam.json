@@ -9973,6 +9973,22 @@
   "mete": {
    "g": "puts her in",
    "t": "verb"
+  },
+  "arica": {
+   "g": "Arica (city on Chile's northern border)",
+   "t": "noun"
+  },
+  "nelson": {
+   "g": "Nelson (man's name)",
+   "t": "noun"
+  },
+  "tacna": {
+   "g": "Tacna (Peruvian city across the border)",
+   "t": "noun"
+  },
+  "terminal": {
+   "g": "the bus terminal",
+   "t": "noun"
   }
  }
 }

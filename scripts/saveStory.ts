@@ -39,6 +39,7 @@ import { PrismaClient } from "../src/generated/prisma";
 import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
 import { validateJourneyStories, type JourneyStoryInput } from "@/lib/validateJourneyStories";
+import { variantPool } from "@/lib/languageVariant";
 
 /** Build the cross-story summary the canonical validator needs to run its
  *  repetition / rotation / opening-rhythm / motif checks against siblings. */
@@ -307,20 +308,40 @@ function slugify(s: string): string {
     if (!journeyId) return { taughtElsewhere: [] as string[], taughtSameType: [] as string[] };
     const p2 = new PrismaClient();
     try {
-      const mio = await p2.journey.findUnique({ where: { id: journeyId }, select: { language: true, typeSlug: true } });
+      const mio = await p2.journey.findUnique({ where: { id: journeyId }, select: { language: true, typeSlug: true, variant: true } });
       if (!mio) return { taughtElsewhere: [] as string[], taughtSameType: [] as string[] };
       const otras = await p2.journeyStory.findMany({
         where: {
           journey: { language: mio.language, status: { not: "archived" } },
           journeyId: { not: journeyId },
         },
-        select: { vocab: true, journey: { select: { typeSlug: true } } },
+        select: { vocab: true, journey: { select: { typeSlug: true, variant: true } } },
       });
       const out = new Set<string>();
       const duro = new Set<string>();
       for (const r of otras) {
-        // El mismo TIPO de journey (Traveler A0 -> Traveler A1) va al cubo
-        // duro; los de otro tipo, al blando de hasta dos por historia.
+        // El cubo duro es para los journeys que el MISMO alumno va a ver: mismo
+        // tipo (Traveler A0 -> Traveler A1) y misma pool de variantes. Los de
+        // otro tipo o de otra pool van al blando, de hasta dos por historia.
+        //
+        // Lo de la pool se añadió el 2026-08-23. Antes el cubo duro cogía todo
+        // el idioma, y eso mezclaba estanterías que no se tocan: la pestaña de
+        // journeys filtra por pool desde el 2026-08-20 (España va sola;
+        // latam, mexico, colombia y argentina son una sola), así que un alumno
+        // de España nunca ve un journey latam y su repaso espaciado no puede
+        // servirle una tarjeta repetida. Con la regla vieja, el Traveler
+        // ES/spain B1 y el ES/latam A1 se bloqueaban entre ellos por 111 lemas
+        // que ningún lector iba a encontrarse juntos, y el segundo en guardar
+        // perdía. Dentro de la pool la tolerancia sigue siendo CERO, que es
+        // donde la regla protege de verdad: el alumno latam hace el A0 y luego
+        // el A1 y no puede volver a "aprender" lo que ya tiene en repaso.
+        // Fuera de la pool no cuenta NADA, ni duro ni blando: ese journey no
+        // llega a la estanteria de este alumno, asi que su repaso espaciado no
+        // puede servirle una tarjeta repetida. Si la pool de alguno de los dos
+        // no se sabe modelar (`null`), se cuenta, que es el lado prudente.
+        const miPool = variantPool(mio.variant);
+        const suPool = variantPool(r.journey?.variant);
+        if (miPool !== null && suPool !== null && miPool !== suPool) continue;
         const destino = mio.typeSlug && r.journey?.typeSlug === mio.typeSlug ? duro : out;
         for (const v of ((r.vocab as Array<{ word?: unknown }> | null) ?? []))
           if (v?.word) destino.add(String(v.word));

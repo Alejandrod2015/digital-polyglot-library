@@ -7741,6 +7741,18 @@
     "contarlo": {
       "g": "to count it (contar + lo)",
       "t": "verb"
+    },
+    "arica": {
+      "g": "Arica (city on Chile's northern border)",
+      "t": "noun"
+    },
+    "tacna": {
+      "g": "Tacna (Peruvian city across the border)",
+      "t": "noun"
+    },
+    "nelson": {
+      "g": "Nelson (man's name)",
+      "t": "noun"
     }
   }
 }
