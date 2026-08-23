@@ -6,6 +6,7 @@ import {
   type OnboardingPracticePrefs,
 } from "@/lib/onboarding";
 import { normalizeVocabType } from "@/lib/vocabTypes";
+import { isSpanishA1A2 } from "@/lib/cefr/spanishA1A2";
 import { getSegmentIdFromSourcePath, getStorySource, isStandaloneSourcePath } from "@/lib/storySource";
 import { splitSentences } from "@/lib/exampleSentence";
 
@@ -463,9 +464,39 @@ function getDistractorWords(
       !answerForm || answerIsMultiword ? candidate.word : candidate.surface || candidate.word
     ) === targetForm;
 
-  if (targetAgr) drainFrom(byLang(sameShapeAndType.filter(agreementMatch)));
-  if (targetForm && picked.length < max) drainFrom(byLang(sameShapeAndType.filter(formMatch)));
-  if (targetForm && picked.length < max) drainFrom(byLang(sameShape.filter(formMatch)));
+  // BANDA CEFR, en espanol (2026-08-23). El pool no es solo la historia: en
+  // `buildPracticeSession` se le pega `catalogPool`, que es el vocabulario de
+  // TODOS los libros de `src/data/books`. Sin filtro de nivel, un fill_blank de
+  // A1 acababa ofreciendo `ayahuasca` (libro colombiano), `egresados`
+  // (argentino) o `bibliotecaria`: medido sobre el Traveler ES/latam A1 recien
+  // escrito, 309 de 444 distractores (70%) estaban fuera de A1/A2, y 416 (94%)
+  // venian de fuera del journey. Una opcion que el alumno no puede ni leer se
+  // descarta sin entender la frase, que es justo lo que estos ejercicios
+  // existen para impedir, y ademas rompe la regla i+2 en la pantalla de
+  // practica ([[feedback_cefr_two_level_rule]]).
+  //
+  // Es una PREFERENCIA, con la misma forma que la concordancia y el idioma: si
+  // los candidatos en banda no llenan las cuatro opciones, sigue cayendo hacia
+  // los niveles laxos de abajo y el ejercicio nunca se queda corto. Solo hay
+  // lista para espanol; los demas idiomas se comportan igual que antes.
+  const targetIsSpanish = normalizeKey(item.language) === "spanish";
+  const inBand = (candidate: PracticeFavoriteItem): boolean => {
+    if (!targetIsSpanish) return true;
+    const emitted = !answerForm || answerIsMultiword ? candidate.word : candidate.surface || candidate.word;
+    // Una locucion se juzga por su cabeza; la lista es de lemas sueltos.
+    const head = normalizeText(emitted).split(/\s+/).pop() ?? "";
+    return isSpanishA1A2(head);
+  };
+  const inLevel = (source: PracticeFavoriteItem[]) => source.filter(inBand);
+
+  if (targetAgr) drainFrom(byLang(inLevel(sameShapeAndType.filter(agreementMatch))));
+  if (targetForm && picked.length < max) drainFrom(byLang(inLevel(sameShapeAndType.filter(formMatch))));
+  if (targetForm && picked.length < max) drainFrom(byLang(inLevel(sameShape.filter(formMatch))));
+  if (picked.length < max) drainFrom(byLang(inLevel(sameShapeAndType)));
+  if (picked.length < max) drainFrom(byLang(inLevel(sameShape)));
+  if (picked.length < max) drainFrom(byLang(inLevel(eligible)));
+  // Fuera de banda: solo si lo de arriba no llego a cuatro opciones.
+  if (targetAgr && picked.length < max) drainFrom(byLang(sameShapeAndType.filter(agreementMatch)));
   if (picked.length < max) drainFrom(byLang(sameShapeAndType));
   if (picked.length < max) drainFrom(byLang(sameShape));
   if (picked.length < max) drainFrom(byLang(eligible));
