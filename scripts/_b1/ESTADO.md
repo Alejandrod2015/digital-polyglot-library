@@ -121,3 +121,42 @@ home in Spain") sostiene el tema 1 de este journey.
 Con ese cambio vuelven los 105 lemas prohibidos y, con ellos, los mejores
 recirculadores. La escalera seguiria sin llegar a 2,5 por el hallazgo 1, pero el
 journey dejaria de estar bloqueado por un solape que no existe para su lector.
+
+
+## Tercera tanda: el cambio de variante, hecho, y donde queda todo
+
+`vocab-taught-same-type` y `vocab-taught-elsewhere` ya comparan dentro del POOL
+DE VARIANTE (`variantPool`, packages/domain/src/languageVariant.ts), no dentro
+del idioma entero. La regla de cero solape es del 2026-08-18 y su premisa es
+"el lector ya la tiene en su repaso"; el filtro de variante entro el 2026-08-20
+y desde entonces esa premisa es falsa para otra variante, porque a un alumno de
+España no se le sirve el Traveler LATAM ni el de Mexico. La regla es anterior al
+hecho que la desmiente.
+
+| | antes | ahora |
+|---|---|---|
+| cubo de tolerancia cero | 1265 lemas | 447 |
+| cubo de tope 2 por historia | 2934 | 296 |
+| pool usable hasta B1 | 3133 | 3956 |
+
+## Estado del journey
+
+- **Las 21 pasan el validador canonico**: `✓ All 21 stories pass the canonical
+  validator (ES b1 spain)`.
+- **12 de las 13 reglas de conjunto pasan**, incluidas las cuatro que el gate no
+  sabia medir en espanol antes de esta tanda (reparto, las tres formas de
+  presentacion, forma de apertura, ni ancianos ni ninos).
+- **Bloquea una**: `journey-vocab-recirculation`, media **1,38** frente al piso
+  2,5. Subio de 1,16 con el tejido de claves; las claves por cuerpo pasaron de
+  24,3 a 29.
+
+El techo esta medido desde tres angulos y sale el mismo: la media 2,5 pide 52,5
+claves por cuerpo, y con el tope de 170 palabras eso son 0,31 claves por
+palabra. La mejor densidad que da la prosa legible en este journey es la de
+`ya-no-queda-nadie`: 43 claves en 168 palabras, 0,256. El journey control llega
+a 0,360 porque es A0 y ensena el tejido conectivo del idioma, que en un B1 ya
+esta enseñado.
+
+**Decision pendiente del usuario**, y es la unica que queda: o el piso de B1 se
+calibra contra ese techo, o el tope de 170 palabras cede en B1, o el journey se
+queda sin guardar. El piso NO se ha tocado.

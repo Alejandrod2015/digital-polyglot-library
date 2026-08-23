@@ -39,6 +39,7 @@ import { PrismaClient } from "../src/generated/prisma";
 import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
 import { validateJourneyStories, type JourneyStoryInput } from "@/lib/validateJourneyStories";
+import { variantPool } from "@domain/languageVariant";
 
 /** Build the cross-story summary the canonical validator needs to run its
  *  repetition / rotation / opening-rhythm / motif checks against siblings. */
@@ -307,20 +308,49 @@ function slugify(s: string): string {
     if (!journeyId) return { taughtElsewhere: [] as string[], taughtSameType: [] as string[] };
     const p2 = new PrismaClient();
     try {
-      const mio = await p2.journey.findUnique({ where: { id: journeyId }, select: { language: true, typeSlug: true } });
+      const mio = await p2.journey.findUnique({ where: { id: journeyId }, select: { language: true, typeSlug: true, variant: true } });
       if (!mio) return { taughtElsewhere: [] as string[], taughtSameType: [] as string[] };
       const otras = await p2.journeyStory.findMany({
         where: {
           journey: { language: mio.language, status: { not: "archived" } },
           journeyId: { not: journeyId },
         },
-        select: { vocab: true, journey: { select: { typeSlug: true } } },
+        select: { vocab: true, journey: { select: { typeSlug: true, variant: true } } },
       });
       const out = new Set<string>();
       const duro = new Set<string>();
+      // LOS DOS CUBOS SE COMPARAN DENTRO DEL POOL DE VARIANTE (2026-08-23).
+      //
+      // La regla de cero solape se escribió el 2026-08-18 y su premisa es
+      // literal: "si otro journey del mismo idioma ya la enseñó, el lector ya
+      // la tiene en su repaso y el slot está tirado". DOS DÍAS DESPUÉS, el
+      // 2026-08-20, `/api/mobile/journey` pasó a servir solo la variante del
+      // alumno, y en el emparejamiento por pool ESPAÑA VA SOLA
+      // (`variantMatchesPreference`, packages/domain/src/languageVariant.ts).
+      // Desde entonces la premisa es falsa para otra variante: a un alumno de
+      // España no se le sirve el Traveler LATAM ni el de México, así que esas
+      // palabras NO están en su repaso y el slot no está tirado. La regla es
+      // anterior al hecho que la desmiente.
+      //
+      // Lo que costaba: al abrir el primer B1 de España, el cubo de tolerancia
+      // cero eran 1265 lemas de cuatro Traveler distintos, y 818 de ellos
+      // venían de variantes que ese lector no puede abrir. Se le quitaba justo
+      // el tejido conectivo (mitad, parte, orden, nota, frase, tono, gesto),
+      // que es el que puede reaparecer, y con él la escalera de recirculación.
+      //
+      // Así que ahora: mismo tipo Y mismo pool -> cero; mismo pool y otro tipo
+      // -> el tope de dos por historia de siempre; otro pool -> no cuenta.
+      // El fallback es el lado ESTRICTO, al revés que en la app: si de una
+      // variante no se sabe el pool, cuenta como el mismo. Un gate que no sabe
+      // no puede abrir la mano.
+      const miPool = variantPool(mio.variant);
+      const mismoPool = (v?: string | null) => {
+        const suyo = variantPool(v);
+        if (!miPool || !suyo) return true;
+        return miPool === suyo;
+      };
       for (const r of otras) {
-        // El mismo TIPO de journey (Traveler A0 -> Traveler A1) va al cubo
-        // duro; los de otro tipo, al blando de hasta dos por historia.
+        if (!mismoPool(r.journey?.variant)) continue;
         const destino = mio.typeSlug && r.journey?.typeSlug === mio.typeSlug ? duro : out;
         for (const v of ((r.vocab as Array<{ word?: unknown }> | null) ?? []))
           if (v?.word) destino.add(String(v.word));

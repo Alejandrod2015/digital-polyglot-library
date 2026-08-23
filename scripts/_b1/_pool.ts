@@ -9,6 +9,7 @@ import * as fs from "fs";
 import { PrismaClient } from "../../src/generated/prisma";
 import { SPANISH_A1_A2_LEMMAS } from "../../src/lib/cefr/spanishA1A2";
 import { SPANISH_B1_LEMMAS } from "../../src/lib/cefr/spanishB1";
+import { variantPool } from "@domain/languageVariant";
 
 const MIO = "cmt5x67ze000l320cpgunu5vi";
 // Identica a la de saveStory: minusculas, sin tildes. `stripPrefix` solo actua
@@ -17,14 +18,23 @@ const lema = (w: string) => w.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,
 
 const p = new PrismaClient();
 (async () => {
-  const mio = await p.journey.findUnique({ where: { id: MIO }, select: { language: true, typeSlug: true } });
+  const mio = await p.journey.findUnique({ where: { id: MIO }, select: { language: true, typeSlug: true, variant: true } });
   if (!mio) throw new Error("journey no encontrado");
   const otras = await p.journeyStory.findMany({
     where: { journey: { language: mio.language, status: { not: "archived" } }, journeyId: { not: MIO } },
-    select: { vocab: true, journey: { select: { typeSlug: true } } },
+    select: { vocab: true, journey: { select: { typeSlug: true, variant: true } } },
   });
   const duro = new Set<string>(); const blando = new Set<string>();
+  // Mismo criterio que saveStory: el cubo duro es mismo tipo Y mismo pool de
+  // variante, con el fallback del lado estricto.
+  const miPool = variantPool(mio.variant);
+  const mismaVariante = (v?: string | null) => {
+    const suyo = variantPool(v);
+    if (!miPool || !suyo) return true;
+    return miPool === suyo;
+  };
   for (const r of otras) {
+    if (!mismaVariante(r.journey?.variant)) continue;
     const destino = mio.typeSlug && r.journey?.typeSlug === mio.typeSlug ? duro : blando;
     for (const v of ((r.vocab as Array<{ word?: unknown }> | null) ?? [])) if (v?.word) destino.add(lema(String(v.word)));
   }
