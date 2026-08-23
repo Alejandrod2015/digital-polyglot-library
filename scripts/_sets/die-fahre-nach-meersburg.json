@@ -1,0 +1,569 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "die Fähre,der Hafen,die Burg,das Deck",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Fähre",
+     "answer": "a ferry",
+     "options": [
+      "a ferry",
+      "a harbour",
+      "a fortress",
+      "the deck of a boat"
+     ]
+    },
+    {
+     "word": "der Hafen",
+     "answer": "a harbour",
+     "options": [
+      "a ferry",
+      "a harbour",
+      "a fortress",
+      "the deck of a boat"
+     ]
+    },
+    {
+     "word": "die Burg",
+     "answer": "a fortress",
+     "options": [
+      "a ferry",
+      "a harbour",
+      "a fortress",
+      "the deck of a boat"
+     ]
+    },
+    {
+     "word": "das Deck",
+     "answer": "the deck of a boat",
+     "options": [
+      "a ferry",
+      "a harbour",
+      "a fortress",
+      "the deck of a boat"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Anlegestelle",
+  "sentence": "Die beiden stehen an der [[Anlegestelle]] und warten.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a landing place for boats",
+   "options": [
+    "a landing place for boats",
+    "a bus stop",
+    "a train platform",
+    "a car park"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Die beiden stehen an der Anlegestelle und warten.",
+    "targetWord": "Anlegestelle",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Möwe",
+  "sentence": "[[Möwen]] kreisen laut über dem Deck der Fähre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "seagulls",
+   "options": [
+    "seagulls",
+    "sparrows",
+    "pigeons",
+    "swallows"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Möwen kreisen laut über dem Deck der Fähre.",
+    "targetWord": "Möwen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der See",
+  "sentence": "Der [[See]] ist heute sehr ruhig und ganz glatt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a lake",
+   "options": [
+    "a lake",
+    "a river",
+    "a canal",
+    "a well"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Der See ist heute sehr ruhig und ganz glatt.",
+    "targetWord": "See",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pünktlich",
+  "sentence": "Der Zug fährt immer zur Minute und ist immer _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pünktlich",
+   "options": [
+    "pünktlich",
+    "ruhig",
+    "fröhlich",
+    "glatt"
+   ],
+   "translation": "The train leaves at six and is always _____.",
+   "optionTranslations": [
+    "on time",
+    "calm",
+    "cheerful",
+    "smooth"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Der Zug fährt immer zur Minute und ist immer pünktlich.",
+    "targetWord": "pünktlich",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Gasse",
+  "sentence": "Sie führt die beiden durch die engen [[Gassen]] der Stadt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "narrow lanes",
+   "options": [
+    "narrow lanes",
+    "wide avenues",
+    "open squares",
+    "long bridges"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Sie führt die beiden durch die engen Gassen der Stadt.",
+    "targetWord": "Gassen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Fensterladen",
+  "sentence": "Die alten Häuser haben bunte [[Fensterläden]] aus Holz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "window shutters",
+   "options": [
+    "window shutters",
+    "roof tiles",
+    "front steps",
+    "garden gates"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Die alten Häuser haben bunte Fensterläden aus Holz.",
+    "targetWord": "Fensterläden",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Stimme",
+  "sentence": "Ihre [[Stimme]] klingt heute viel zu fröhlich.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a voice",
+   "options": [
+    "a voice",
+    "a face",
+    "a hand",
+    "a step"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Ihre Stimme klingt heute viel zu fröhlich.",
+    "targetWord": "Stimme",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "versteht",
+  "sentence": "Er zuckt mit den Schultern und _____ auch nichts.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "versteht",
+   "options": [
+    "versteht",
+    "schreibt",
+    "drückt",
+    "dreht"
+   ],
+   "translation": "He shrugs his shoulders and _____ nothing either.",
+   "optionTranslations": [
+    "understands",
+    "writes",
+    "presses",
+    "turns"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Er zuckt mit den Schultern und versteht auch nichts.",
+    "targetWord": "versteht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "drüben",
+  "sentence": "Sie wartet schon _____ am anderen Ufer.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "drüben",
+   "options": [
+    "drüben",
+    "sofort",
+    "hinterher",
+    "wieder"
+   ],
+   "translation": "She is already waiting over _____ on the other bank.",
+   "optionTranslations": [
+    "there",
+    "immediately",
+    "afterwards",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Sie wartet schon drüben am anderen Ufer.",
+    "targetWord": "drüben",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ruhig",
+  "sentence": "Der See ist heute [[ruhig]] und ohne Wellen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "calm",
+   "options": [
+    "calm",
+    "stormy",
+    "cold",
+    "deep"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Der See ist heute ruhig und ohne Wellen.",
+    "targetWord": "ruhig",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bunt",
+  "sentence": "Die Häuser haben [[bunte]] Fensterläden aus Holz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "colourful",
+   "options": [
+    "colourful",
+    "grey",
+    "plain",
+    "dark"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Die Häuser haben bunte Fensterläden aus Holz.",
+    "targetWord": "bunte",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "müssen",
+  "sentence": "Ich [[muss]] euch etwas sagen, aber nicht jetzt.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to have to do something",
+   "options": [
+    "to have to do something",
+    "to want to do something",
+    "to be allowed to do something",
+    "to forget to do something"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Ich muss euch etwas sagen, aber nicht jetzt.",
+    "targetWord": "muss",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "zucken",
+  "sentence": "Er [[zuckt]] nur mit den Schultern und sagt nichts.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to shrug",
+   "options": [
+    "to shrug",
+    "to nod",
+    "to point",
+    "to clap"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Er zuckt nur mit den Schultern und sagt nichts.",
+    "targetWord": "zuckt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Wetter",
+  "sentence": "Sie redet die ganze Zeit nur über das [[Wetter]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the weather",
+   "options": [
+    "the weather",
+    "the traffic",
+    "the news",
+    "the price"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Sie redet die ganze Zeit nur über das Wetter.",
+    "targetWord": "Wetter",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "klingen",
+  "sentence": "Ihre Stimme [[klingt]] heute zu fröhlich.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sound a certain way",
+   "options": [
+    "to sound a certain way",
+    "to fall silent",
+    "to grow louder",
+    "to break off"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Ihre Stimme klingt heute zu fröhlich.",
+    "targetWord": "klingt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Haar",
+  "sentence": "Ihre [[Haare]] sind jetzt kurz und schon ganz grau.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hair",
+   "options": [
+    "hair",
+    "eyes",
+    "hands",
+    "teeth"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Ihre Haare sind jetzt kurz und schon ganz grau.",
+    "targetWord": "Haare",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "kennen",
+  "sentence": "Sie [[kennt]] die andere Frau noch aus der Schule.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to know a person",
+   "options": [
+    "to know a person",
+    "to meet a person",
+    "to help a person",
+    "to miss a person"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Sie kennt die andere Frau noch aus der Schule.",
+    "targetWord": "kennt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Schule",
+  "sentence": "Die beiden kennen sich noch aus der [[Schule]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a school",
+   "options": [
+    "a school",
+    "a hospital",
+    "an office",
+    "a factory"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Die beiden kennen sich noch aus der Schule.",
+    "targetWord": "Schule",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "fröhlich",
+  "sentence": "Ihre Stimme ist zu laut und zu _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fröhlich",
+   "options": [
+    "fröhlich",
+    "ruhig",
+    "pünktlich",
+    "glatt"
+   ],
+   "translation": "Her voice is too loud and too _____.",
+   "optionTranslations": [
+    "cheerful",
+    "calm",
+    "punctual",
+    "smooth"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Ihre Stimme ist zu laut und zu fröhlich.",
+    "targetWord": "fröhlich",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "glatt",
+  "sentence": "Kein Wind geht, und der See ist ganz _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "glatt",
+   "options": [
+    "glatt",
+    "ruhig",
+    "fröhlich",
+    "pünktlich"
+   ],
+   "translation": "No wind blows, and the lake is completely _____.",
+   "optionTranslations": [
+    "smooth",
+    "calm",
+    "cheerful",
+    "punctual"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Kein Wind geht, und der See ist ganz glatt.",
+    "targetWord": "glatt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "dreht",
+  "sentence": "Sie hört das und _____ sich langsam zu ihm.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dreht",
+   "options": [
+    "dreht",
+    "bindet",
+    "faltet",
+    "versteht"
+   ],
+   "translation": "She hears that and _____ slowly towards him.",
+   "optionTranslations": [
+    "turns",
+    "ties",
+    "folds",
+    "understands"
+   ],
+   "audioClip": {
+    "storySlug": "die-fahre-nach-meersburg",
+    "storySource": "user",
+    "sentence": "Sie hört das und dreht sich langsam zu ihm.",
+    "targetWord": "dreht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

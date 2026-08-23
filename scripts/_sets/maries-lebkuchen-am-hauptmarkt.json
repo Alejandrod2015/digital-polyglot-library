@@ -1,0 +1,546 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Lebkuchen,der Laden,der Tresen,die Backstube",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Lebkuchen",
+     "answer": "gingerbread",
+     "options": [
+      "gingerbread",
+      "a shop",
+      "a counter",
+      "a bakery room"
+     ]
+    },
+    {
+     "word": "der Laden",
+     "answer": "a shop",
+     "options": [
+      "gingerbread",
+      "a shop",
+      "a counter",
+      "a bakery room"
+     ]
+    },
+    {
+     "word": "der Tresen",
+     "answer": "a counter",
+     "options": [
+      "gingerbread",
+      "a shop",
+      "a counter",
+      "a bakery room"
+     ]
+    },
+    {
+     "word": "die Backstube",
+     "answer": "a bakery room",
+     "options": [
+      "gingerbread",
+      "a shop",
+      "a counter",
+      "a bakery room"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Freitag",
+  "sentence": "Am [[Freitag]] ist der Markt voller Stände und Menschen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Friday",
+   "options": [
+    "Friday",
+    "Monday",
+    "Tuesday",
+    "Sunday"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Am Freitag ist der Markt voller Stände und Menschen.",
+    "targetWord": "Freitag",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Stand",
+  "sentence": "Der Markt ist am Morgen voller [[Stände]] und Menschen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "market stalls",
+   "options": [
+    "market stalls",
+    "street lamps",
+    "park benches",
+    "shop windows"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Der Markt ist am Morgen voller Stände und Menschen.",
+    "targetWord": "Stände",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "verkauft",
+  "sentence": "Sie steht am Markt und _____ dort ihren Lebkuchen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "verkauft",
+   "options": [
+    "verkauft",
+    "mietet",
+    "stoppt",
+    "klebt"
+   ],
+   "translation": "She stands at the market and _____ her gingerbread there.",
+   "optionTranslations": [
+    "sells",
+    "rents",
+    "stops",
+    "sticks"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Sie steht am Markt und verkauft dort ihren Lebkuchen.",
+    "targetWord": "verkauft",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Familie",
+  "sentence": "Der Lebkuchen kommt aus der Backstube ihrer [[Familie]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a family",
+   "options": [
+    "a family",
+    "a village",
+    "a company",
+    "a school"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Der Lebkuchen kommt aus der Backstube ihrer Familie.",
+    "targetWord": "Familie",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Schwester",
+  "sentence": "Sie ist die jüngste [[Schwester]] von ihrem Vater.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sister",
+   "options": [
+    "a sister",
+    "a daughter",
+    "a cousin",
+    "a niece"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Sie ist die jüngste Schwester von ihrem Vater.",
+    "targetWord": "Schwester",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Tod",
+  "sentence": "Seit dem [[Tod]] ihrer Mutter steht sie allein im Laden.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "death",
+   "options": [
+    "death",
+    "birth",
+    "wedding",
+    "journey"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Seit dem Tod ihrer Mutter steht sie allein im Laden.",
+    "targetWord": "Tod",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "probier",
+  "sentence": "_____ den mit Mandeln, der ist der beste.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "probier",
+   "options": [
+    "probier",
+    "bindet",
+    "faltet",
+    "verkaufe"
+   ],
+   "translation": "_____ the one with almonds, it is the best.",
+   "optionTranslations": [
+    "try",
+    "ties",
+    "folds",
+    "sell"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "probier den mit Mandeln, der ist der beste.",
+    "targetWord": "probier",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "schmecken",
+  "sentence": "Der Lebkuchen [[schmeckt]] sehr süß und würzig.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to taste a certain way",
+   "options": [
+    "to taste a certain way",
+    "to smell a certain way",
+    "to look a certain way",
+    "to cost a certain amount"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Der Lebkuchen schmeckt sehr süß und würzig.",
+    "targetWord": "schmeckt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "schaffe",
+  "sentence": "Ich _____ die viele Arbeit nicht mehr allein.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "schaffe",
+   "options": [
+    "schaffe",
+    "zählt",
+    "tippt",
+    "verkaufe"
+   ],
+   "translation": "I cannot _____ all this work alone any more.",
+   "optionTranslations": [
+    "manage",
+    "counts",
+    "taps",
+    "sell"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Ich schaffe die viele Arbeit nicht mehr allein.",
+    "targetWord": "schaffe",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Mutter",
+  "sentence": "Ihre [[Mutter]] arbeitet nicht mehr in der Backstube.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a mother",
+   "options": [
+    "a mother",
+    "a sister",
+    "an aunt",
+    "a daughter"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Ihre Mutter arbeitet nicht mehr in der Backstube.",
+    "targetWord": "Mutter",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Mandel",
+  "sentence": "Der beste Lebkuchen hat viele [[Mandeln]] darin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "almonds",
+   "options": [
+    "almonds",
+    "raisins",
+    "cherries",
+    "walnuts"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Der beste Lebkuchen hat viele Mandeln darin.",
+    "targetWord": "Mandeln",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Dose",
+  "sentence": "Bunte [[Dosen]] aus altem Blech stehen auf dem Tresen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tins",
+   "options": [
+    "tins",
+    "bottles",
+    "baskets",
+    "plates"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Bunte Dosen aus altem Blech stehen auf dem Tresen.",
+    "targetWord": "Dosen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Blech",
+  "sentence": "Die alten Dosen sind aus dünnem [[Blech]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tin plate",
+   "options": [
+    "tin plate",
+    "thick glass",
+    "soft wood",
+    "hard stone"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Die alten Dosen sind aus dünnem Blech.",
+    "targetWord": "Blech",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Tante",
+  "sentence": "Sie stellt sich neben ihre [[Tante]] hinter den Tresen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an aunt",
+   "options": [
+    "an aunt",
+    "a mother",
+    "a sister",
+    "a cousin"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Sie stellt sich neben ihre Tante hinter den Tresen.",
+    "targetWord": "Tante",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Zucker",
+  "sentence": "Ihre Finger kleben von [[Zucker]] und Honig.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sugar",
+   "options": [
+    "sugar",
+    "salt",
+    "flour",
+    "butter"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Ihre Finger kleben von Zucker und Honig.",
+    "targetWord": "Zucker",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Honig",
+  "sentence": "Der Lebkuchen ist süß von [[Honig]] und Mandeln.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "honey",
+   "options": [
+    "honey",
+    "cream",
+    "oil",
+    "milk"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Der Lebkuchen ist süß von Honig und Mandeln.",
+    "targetWord": "Honig",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jüngste",
+  "sentence": "Sie ist die [[jüngste]] Schwester von ihrem Vater.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "youngest",
+   "options": [
+    "youngest",
+    "oldest",
+    "tallest",
+    "strongest"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Sie ist die jüngste Schwester von ihrem Vater.",
+    "targetWord": "jüngste",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "süß",
+  "sentence": "Der Lebkuchen mit Honig ist sehr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "süß",
+   "options": [
+    "süß",
+    "würzig",
+    "salzig",
+    "sauer"
+   ],
+   "translation": "The gingerbread with honey is very _____.",
+   "optionTranslations": [
+    "sweet",
+    "spicy",
+    "salty",
+    "sour"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Der Lebkuchen mit Honig ist sehr süß.",
+    "targetWord": "süß",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "würzig",
+  "sentence": "Der Kuchen ist voller Gewürze und schmeckt sehr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "würzig",
+   "options": [
+    "würzig",
+    "süß",
+    "salzig",
+    "sauer"
+   ],
+   "translation": "The cake is full of spices and tastes very _____.",
+   "optionTranslations": [
+    "spicy",
+    "sweet",
+    "salty",
+    "sour"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Der Kuchen ist voller Gewürze und schmeckt sehr würzig.",
+    "targetWord": "würzig",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "kleben",
+  "sentence": "Ihre Finger _____ von Zucker und Honig.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kleben",
+   "options": [
+    "kleben",
+    "legen",
+    "heben",
+    "verkaufen"
+   ],
+   "translation": "Her fingers _____ with sugar and honey.",
+   "optionTranslations": [
+    "stick",
+    "put",
+    "raise",
+    "sell"
+   ],
+   "audioClip": {
+    "storySlug": "maries-lebkuchen-am-hauptmarkt",
+    "storySource": "user",
+    "sentence": "Ihre Finger kleben von Zucker und Honig.",
+    "targetWord": "kleben",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

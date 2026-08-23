@@ -55,8 +55,17 @@ function genId(p: string, i: number): string {
     // That is exactly why Friends and Hanseat ended up exposed. Practice sets
     // are inert until the story is readable, so seeding a draft is harmless;
     // forcing a publish to seed was the actual hazard.
-    const story = await prisma.journeyStory.findFirst({ where: { slug }, select: { id: true, status: true } });
+    const story = await prisma.journeyStory.findFirst({
+      where: { slug },
+      select: { id: true, status: true, journey: { select: { language: true } } },
+    });
     if (!story) { console.log(`✗ ${slug}: story not found`); continue; }
+    // El idioma sale del journey, no de una constante. Estaba escrito
+    // `'spanish'` a fuego en el INSERT, asi que un set curado de cualquier otro
+    // idioma entraba etiquetado como espanol y la pestana Practice, que filtra
+    // por idioma, no lo encontraba nunca. Se vio al sembrar el Traveler DE A0
+    // (2026-08-23); el constructor automatico ya usaba `journey.language`.
+    const language = story.journey?.language ?? "spanish";
     if (story.status !== "published") console.log(`  (${slug} is ${story.status}; seeding anyway, no publish needed)`);
     if (!apply) { console.log(`[dry] ${slug}: ${exs.length} ex`); ok++; continue; }
     const setIds = await prisma.$queryRawUnsafe<{ id: string }[]>(`SELECT id FROM dp_story_practice_sets_v1 WHERE "storyId" = $1`, story.id);
@@ -68,8 +77,8 @@ function genId(p: string, i: number): string {
       const e = exs[i];
       const featured = e.featured !== false; // default featured unless explicitly false
       await prisma.$executeRawUnsafe(
-        `INSERT INTO dp_story_practice_exercises_v1 (id,"setId","orderIndex",type,word,sentence,payload,"audioUrl",featured,language,"createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7::jsonb,NULL,$8,'spanish',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)`,
-        genId("spe_", i), setId, i, e.type, e.word, e.sentence, JSON.stringify(e.payload), featured);
+        `INSERT INTO dp_story_practice_exercises_v1 (id,"setId","orderIndex",type,word,sentence,payload,"audioUrl",featured,language,"createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7::jsonb,NULL,$8,$9,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)`,
+        genId("spe_", i), setId, i, e.type, e.word, e.sentence, JSON.stringify(e.payload), featured, language);
     }
     const featCount = exs.filter((e: any) => e.featured !== false).length;
     console.log(`✓ ${slug}: ${exs.length} ex (${featCount} featured) (set ${setId})`);

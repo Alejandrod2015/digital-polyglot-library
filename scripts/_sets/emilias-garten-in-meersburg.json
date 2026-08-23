@@ -1,0 +1,525 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Korb,der Zaun,der Apfelbaum,die Sonne",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Korb",
+     "answer": "a basket",
+     "options": [
+      "a basket",
+      "a fence",
+      "an apple tree",
+      "the sun"
+     ]
+    },
+    {
+     "word": "der Zaun",
+     "answer": "a fence",
+     "options": [
+      "a basket",
+      "a fence",
+      "an apple tree",
+      "the sun"
+     ]
+    },
+    {
+     "word": "der Apfelbaum",
+     "answer": "an apple tree",
+     "options": [
+      "a basket",
+      "a fence",
+      "an apple tree",
+      "the sun"
+     ]
+    },
+    {
+     "word": "die Sonne",
+     "answer": "the sun",
+     "options": [
+      "a basket",
+      "a fence",
+      "an apple tree",
+      "the sun"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Hang",
+  "sentence": "Der Garten liegt hoch am [[Hang]] über dem See.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a slope",
+   "options": [
+    "a slope",
+    "a valley",
+    "a beach",
+    "a bridge"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Der Garten liegt hoch am Hang über dem See.",
+    "targetWord": "Hang",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Rebe",
+  "sentence": "[[Reben]] wachsen dort in langen, geraden Reihen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "vines",
+   "options": [
+    "vines",
+    "roses",
+    "potatoes",
+    "olive trees"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Reben wachsen dort in langen, geraden Reihen.",
+    "targetWord": "Reben",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Reihe",
+  "sentence": "Die Reben stehen in langen, geraden [[Reihen]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rows",
+   "options": [
+    "rows",
+    "circles",
+    "piles",
+    "corners"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Die Reben stehen in langen, geraden Reihen.",
+    "targetWord": "Reihen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Zweig",
+  "sentence": "Sie schneidet die alten [[Zweige]] von den Reben.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "branches",
+   "options": [
+    "branches",
+    "roots",
+    "leaves",
+    "fruits"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Sie schneidet die alten Zweige von den Reben.",
+    "targetWord": "Zweige",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "sammelt",
+  "sentence": "Sie nimmt einen Korb und _____ die alten Zweige.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sammelt",
+   "options": [
+    "sammelt",
+    "zieht",
+    "legt",
+    "repariert"
+   ],
+   "translation": "She takes a basket and _____ the old branches.",
+   "optionTranslations": [
+    "collects",
+    "pulls",
+    "puts",
+    "repairs"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Sie nimmt einen Korb und sammelt die alten Zweige.",
+    "targetWord": "sammelt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "repariert",
+  "sentence": "Er nimmt Holz und _____ den alten Zaun am Weg.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "repariert",
+   "options": [
+    "repariert",
+    "deckt",
+    "bindet",
+    "sammelt"
+   ],
+   "translation": "He takes wood and _____ the old fence by the path.",
+   "optionTranslations": [
+    "repairs",
+    "sets the table",
+    "ties",
+    "collects"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Er nimmt Holz und repariert den alten Zaun am Weg.",
+    "targetWord": "repariert",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Mittag",
+  "sentence": "Am [[Mittag]] decken die Gruppe den Tisch im Garten.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "midday",
+   "options": [
+    "midday",
+    "midnight",
+    "sunrise",
+    "sunset"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Am Mittag decken die Gruppe den Tisch im Garten.",
+    "targetWord": "Mittag",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Fisch",
+  "sentence": "Auf dem Tisch stehen Brot und frischer [[Fisch]] aus dem See.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fish",
+   "options": [
+    "fish",
+    "cheese",
+    "chicken",
+    "rice"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Auf dem Tisch stehen Brot und frischer Fisch aus dem See.",
+    "targetWord": "Fisch",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "golden",
+  "sentence": "Die Sonne steht tief, und alles glänzt _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "golden",
+   "options": [
+    "golden",
+    "gerade",
+    "flach",
+    "wahr"
+   ],
+   "translation": "The sun is low, and everything shines _____.",
+   "optionTranslations": [
+    "golden",
+    "straight",
+    "flat",
+    "true"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Die Sonne steht tief, und alles glänzt golden.",
+    "targetWord": "golden",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wachsen",
+  "sentence": "Die Reben [[wachsen]] hier seit vielen Jahren gut.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to grow",
+   "options": [
+    "to grow",
+    "to fall",
+    "to dry",
+    "to burn"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Die Reben wachsen hier seit vielen Jahren gut.",
+    "targetWord": "wachsen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sprechen",
+  "sentence": "Niemand [[spricht]] an diesem Tag über den Februar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to speak about something",
+   "options": [
+    "to speak about something",
+    "to write about something",
+    "to think about something",
+    "to read about something"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Niemand spricht an diesem Tag über den Februar.",
+    "targetWord": "spricht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Most",
+  "sentence": "Auf dem Tisch stehen Brot, Fisch und kalter [[Most]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "must, pressed apple drink",
+   "options": [
+    "must, pressed apple drink",
+    "hot coffee",
+    "fresh milk",
+    "dark beer"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Auf dem Tisch stehen Brot, Fisch und kalter Most.",
+    "targetWord": "Most",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "flach",
+  "sentence": "Die Sonne liegt [[flach]] über dem stillen Wasser.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "low and flat",
+   "options": [
+    "low and flat",
+    "high and steep",
+    "far and dark",
+    "near and bright"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Die Sonne liegt flach über dem stillen Wasser.",
+    "targetWord": "flach",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "glänzen",
+  "sentence": "Das Wasser [[glänzt]] am Abend ganz golden.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to shine",
+   "options": [
+    "to shine",
+    "to freeze",
+    "to move",
+    "to fall"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Das Wasser glänzt am Abend ganz golden.",
+    "targetWord": "glänzt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Monat",
+  "sentence": "Sie verspricht, jeden [[Monat]] mit der Fähre zu kommen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a month",
+   "options": [
+    "a month",
+    "a week",
+    "a year",
+    "a day"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Sie verspricht, jeden Monat mit der Fähre zu kommen.",
+    "targetWord": "Monat",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "stimmen",
+  "sentence": "Diesmal [[stimmt]] es wirklich, und sie kommt auch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be true",
+   "options": [
+    "to be true",
+    "to be wrong",
+    "to be late",
+    "to be easy"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Diesmal stimmt es wirklich, und sie kommt auch.",
+    "targetWord": "stimmt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "diesmal",
+  "sentence": "[[Diesmal]] hält sie ihr Versprechen auch wirklich.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "this time",
+   "options": [
+    "this time",
+    "last time",
+    "every time",
+    "some time"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Diesmal hält sie ihr Versprechen auch wirklich.",
+    "targetWord": "Diesmal",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jeden",
+  "sentence": "Sie kommt [[jeden]] Monat mit der Fähre über den See.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "every",
+   "options": [
+    "every",
+    "some",
+    "no",
+    "many"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Sie kommt jeden Monat mit der Fähre über den See.",
+    "targetWord": "jeden",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Luft",
+  "sentence": "Die [[Luft]] hier oben am Hang ist warm und gut.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "air",
+   "options": [
+    "air",
+    "water",
+    "earth",
+    "light"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Die Luft hier oben am Hang ist warm und gut.",
+    "targetWord": "Luft",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gerade",
+  "sentence": "Die Reben stehen in langen, [[geraden]] Reihen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "straight",
+   "options": [
+    "straight",
+    "crooked",
+    "broken",
+    "short"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Die Reben stehen in langen, geraden Reihen.",
+    "targetWord": "geraden",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]
