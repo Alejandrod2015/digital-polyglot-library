@@ -4,27 +4,27 @@ P = {}
 P["platzchen-neben-den-gro-en-lichtern"] = dict(
 arcType="reframe-turn",
 synopsis="Anja verkauft auf dem Nürnberger Weihnachtsmarkt Plätzchen, die sie morgens selbst gebacken hat. Neben der großen goldenen Holzhütte kommt sie sich unsichtbar vor und will fast einpacken. Ihr Freund Kai sagt nichts Tröstliches, sondern wartet ab, bis die erste Kundin von allein stehen bleibt. Was die Leute suchen, stellt sich heraus, ist nicht das hellste Licht auf dem Platz.",
-text="""Es riecht nach Zimt und Glühwein auf dem Nürnberger Weihnachtsmarkt. Anja steht hinter ihrem Stand mit selbst gebackenen Plätzchen. Nebenan glänzt eine Holzhütte voller Gold.
+text="""Der Nürnberger Weihnachtsmarkt riecht nach Zimt und Glühwein. Anja steht hinter ihrem Stand mit selbst gebackenen Plätzchen. Nebenan glänzt eine Holzhütte voller Gold.
 
 Anja: Hast du die Hütte da drüben gesehen? So viel Gold.
 Kai: Schön. Aber bei dir riecht es nach echtem Zimt.
-Anja: Trotzdem bleiben alle dort. Zu mir kommt keiner.
-Kai: Warte ab. Der Winterabend hat erst angefangen.
+Anja: Trotzdem bleiben alle dort. Ich stehe hier, und die Beine tun weh.
+Kai: Warte ab. Der Winterabend fängt gerade erst an.
 
-Eine ältere Frau schaut auf die Zimtsterne und die Plätzchen mit Marmelade. Dann kauft sie eine Papiertüte.
+Eine ältere Frau schaut auf die Zimtsterne mit Marmelade. Dann kauft sie eine Papiertüte.
 
 Kundin: Endlich Plätzchen wie früher, nicht aus der Fabrik.
-Anja: Danke. Ich habe sie heute selbst gebacken, mit Butter und Mehl.
+Anja: Danke. Ich habe sie selbst gebacken, mit Butter und Mehl.
 
-Die Kundin nickt und geht.
+Die Kundin zieht die Handschuhe an und geht.
 
 Kai: Deshalb kommt sie zu dir und nicht zur goldenen Hütte.
 Anja: Vielleicht hast du recht. Mein Stand ist klein, aber einfach.
 
-Mehr Leute stehen an Anjas Tisch. Sie zeigen auf die Plätzchen und reden über Rezepte.
+Mehr Leute stehen an Anjas Tisch, die Kunden zeigen auf die Plätzchen und reden über Rezepte.
 
-Anja: Jetzt kommen sie alle zu mir.
-Kai: Doch. Neben so viel Gold sucht man am Ende das Rezept von früher.""",
+Anja: Jetzt kommen sie plötzlich alle zu mir. Warum?
+Kai: Neben so viel Gold sucht man am Ende das Rezept von früher.""",
 vocab=[
  ("noun","Weihnachtsmarkt",None,"A Christmas market, the winter street market with stalls and lights."),
  ("noun","Zimt",None,"Cinnamon; the brown spice that gives Christmas baking its smell."),
@@ -51,24 +51,24 @@ vocab=[
 P["plotzlich-wird-es-dunkel"] = dict(
 arcType="mini-cliffhanger",
 synopsis="Am Abend läuft es an Anjas Stand endlich, und Kai kommt mit dem Einpacken kaum nach. Mitten im größten Andrang gehen über dem ganzen Weihnachtsmarkt die Lichter aus. Die Musik bricht ab, die Handys der Leute reichen nur ein paar Schritte weit, und Anjas Akku ist fast leer. Niemand kann sagen, wann der Strom zurückkommt.",
-text="""Gegen sieben Uhr drängen sich die Menschen über den Weihnachtsmarkt. Am Nachbarstand packt Kai Plätzchen in Papiertüten. Über den Hütten leuchten tausend kleine Lichter.
+text="""Viele Menschen drängen sich über den Weihnachtsmarkt. Am Nachbarstand ist viel los, und Kai packt Plätzchen in Papiertüten. Über den Hütten leuchten Lichter unter dem Nachthimmel.
 
 Kai: So viele Leute wie nie. Mir tun die Beine weh.
 Anja: Ich komme kaum nach. Pack du die nächste Papiertüte.
-Kai: Mache ich. Setz dir die Mütze auf, es wird kalt.
+Kai: Mache ich. Setz die Mütze auf, es wird kalt.
 
 In diesem Moment gehen plötzlich alle Lichter aus. Die Musik bricht ab, und der Markt liegt im Dunkeln.
 
 Anja: Was war das? Ich sehe gar nichts mehr.
-Kai: Der Strom ist weg, ein Stromausfall auf dem ganzen Markt.
-Anja: Auch die goldene Holzhütte drüben ist dunkel.
-Kai: Bleib ruhig. So etwas dauert oft nur Minuten.
+Kai: Der Strom ist weg, ein Stromausfall.
+Anja: Auch die goldene Holzhütte drüben ist dunkel, kein Schein mehr.
+Kai: Bleib ruhig. Das ist komisch, dauert aber nur Minuten.
 
-Die Leute holen ihre Handys heraus. Kleine Taschenlampen wackeln in der Kälte, und irgendwo hinten singt jemand ein Lied.
+Die Leute holen die Handys heraus. Taschenlampen wackeln in der Kälte, und irgendwo singt jemand ein Lied.
 
-Anja: Mein Akku ist fast leer, und das Kabel liegt zu Hause.
-Kai: Zieh die Handschuhe an. Die Kunden warten alle noch.
-Anja: Ohne Licht verkaufe ich nichts. Moment, unter dem Tisch steht die Schachtel.""",
+Anja: Mein Akku ist leer, und das Kabel liegt zu Hause.
+Kai: Zieh die Handschuhe an. Die Kunden warten noch.
+Anja: Ohne Licht verkaufe ich nichts. Unter dem Tisch steht die Schachtel mit Kerzen.""",
 vocab=[
  ("verb","drängen",None,"To push forward in a crowd, because many people want the same space."),
  ("noun","Nachbarstand",None,"The market stall right next to yours, run by another seller."),
@@ -95,21 +95,21 @@ vocab=[
 P["kerzen-statt-strom"] = dict(
 arcType="harmonic-close",
 synopsis="In der alten Schachtel unter dem Tisch liegen Kerzen für den Notfall. Anja zündet sie an, und ihr kleiner Stand wird zur einzigen hellen Stelle auf einem dunklen Markt. Während die goldene Holzhütte im Schwarzen verschwindet, rücken die Leute um die Kerzen zusammen, trinken Glühwein und reden miteinander. Als der Strom zurückkommt, will keiner mehr weg.",
-text="""Im Dunkeln zieht Anja die Schachtel hervor. Darin liegen Kerzen und Streichhölzer für den Notfall. Über dem Markt steht ein Nachthimmel voller Sterne.
+text="""Die Schachtel liegt unter dem Tisch. Darin liegen Kerzen und Streichhölzer für den Notfall. Über dem Markt steht ein Nachthimmel voller Sterne.
 
 Anja: Gut, dass ich die Kerzen nie ausräume.
 Kai: Schau, wie hell. Dein Stand ist plötzlich der schönste hier.
-Anja: Stell zwei Kerzen nach vorne, damit die Leute die Plätzchen sehen.
-Kai: Und die goldene Hütte? Die liegt jetzt völlig im Dunkeln.
+Anja: Stell zwei Kerzen nach vorne, damit man die Plätzchen sieht.
+Kai: Und die goldene Holzhütte? Die liegt jetzt im Dunkeln.
 
-Der Schein der Kerzen fällt auf die Wangen in der ersten Reihe. Kais Atem steht weiß in der Winterluft.
+Der Schein der Kerzen fällt auf die Wangen der ersten Reihe. Kais Atem steht weiß in der Winterluft.
 
-Kundin: Hier ist es gemütlich. Bei den Kerzen bleibt man gern stehen.
+Kundin: Hier ist es gemütlich. Bei den Kerzen vergisst man die Kälte.
 Anja: Setzen Sie sich. Plätzchen habe ich genug, der Glühwein ist warm.
-Kai: Komisch. Ohne Strom ist auf einmal mehr los als vorher.
-Anja: Vielleicht braucht ein schöner Abend kein elektrisches Licht.
+Kai: Komisch. Ohne Strom drängen sich plötzlich mehr Kunden.
+Anja: Vielleicht braucht ein Winterabend kein elektrisches Licht.
 
-Jemand stimmt ein Weihnachtslied an. Kai legt Anja die Hand auf die Schulter, und über den Hütten steht der Mond.
+Jemand stimmt ein Weihnachtslied an. Kai legt Anja die Hand auf die Schulter, über den Hütten steht der Mond.
 
 Kai: Da sind die Lichter wieder, aber keiner achtet mehr darauf.
 Anja: Ein kleines Wunder. Die Wärme kommt heute von den Kerzen.""",

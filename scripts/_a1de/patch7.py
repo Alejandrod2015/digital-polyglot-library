@@ -4,23 +4,23 @@ P = {}
 P["der-biss-im-ring"] = dict(
 arcType="juxtaposition-discovery",
 synopsis="Vor dem Heidelberger Schlosstor erzählt Lukas die Legende von der Hexe, die in den eisernen Ring gebissen haben soll. Hanna hält nichts davon und sucht die nüchterne Erklärung im Wetter und im alten Eisen. Dann legt sie selbst die Hand auf den Ring, und unter ihren Fingern trifft die kühle Physik auf etwas, das dort eigentlich nicht sein dürfte.",
-text="""Die Abendsonne steht tief hinter dem Heidelberger Schloss. Hanna und Lukas stehen vor dem Schlosstor an der Steinmauer. Lukas mag alte Sagen, Hanna glaubt lieber an das, was sie sieht.
+text="""Die Abendsonne steht hinter dem Heidelberger Schloss. Hanna, eine Lehrerin aus der Stadt, steht mit Lukas vor dem Schlosstor an der Steinmauer. Ihr Freund Lukas mag alte Sagen, Hanna glaubt an das, was sie sieht.
 
-Lukas: Kennst du die Legende von diesem Tor? Eine Hexe hat in den eisernen Ring gebissen.
-Hanna: Eine Hexe, die in Eisen beißt? Das ist nur eine Geschichte.
+Lukas: Kennst du die Legende? Eine Hexe hat in den eisernen Ring gebissen.
+Hanna: Eine Hexe, die in Eisen beißt? Nur eine Geschichte.
 
-Lukas zeigt auf den schweren Ring. Im letzten Licht sieht er fast schwarz aus.
+Gemeinsam schauen sie im Licht der Taschenlampe auf den schwarzen Ring.
 
 Lukas: Wer sich durchbeißt, sagt die Sage, dem gehört das Schloss.
 Hanna: Niemand hat es geschafft. An Wunder glaube ich nicht.
-Lukas: Sieh ihn dir genau an. Man sieht die Spur noch heute.
+Lukas: Sieh ihn dir genau an. Die Spur ist noch da.
 Hanna: Das ist altes Eisen. Das kommt vom Wetter, nicht von Zähnen.
 
-Hanna legt die Hand auf den kalten Ring und fühlt darüber. Plötzlich runzelt sie die Stirn.
+Hanna legt die Hand auf den Ring und fühlt darüber. Plötzlich runzelt sie die Stirn.
 
-Hanna: Hier ist wirklich eine Kerbe. Klein, aber tief, wie von einem Zahn.
+Hanna: Meine Augen sehen eine Kerbe. Klein, aber tief, wie von einem Tier.
 Lukas: Siehst du? Ich sage nicht, dass es eine Hexe war.
-Hanna: Ich auch nicht. Aber woher kommt sie dann, mitten in der Nacht?""",
+Hanna: Ich auch nicht. Aber woher kommt sie, mitten in der Nacht?""",
 vocab=[
  ("noun","Abendsonne",None,"The evening sun; the low warm sun just before it goes down."),
  ("noun","Schlosstor",None,"The castle gate; the big main door in the wall of a castle."),
@@ -47,14 +47,14 @@ vocab=[
 P["ein-klopfen-im-keller"] = dict(
 arcType="mini-cliffhanger",
 synopsis="Hanna und Lukas steigen die schmale Steintreppe in den Keller des Schlosses hinunter, wo das riesige Weinfass steht. Es ist kalt, es ist still, und außer Spinnen an der Wand ist hier unten nichts. Dann hören sie ein leises, gleichmäßiges Klopfen aus der hintersten Ecke, immer im selben Ton, und es hört einfach nicht wieder auf.",
-text="""Eine schmale Steintreppe führt Hanna und Lukas hinunter in den Keller des Schlosses. Hinter der schweren Kellertür ist es kalt und dunkel. In der Mitte steht ein riesiges Weinfass, größer als ein Zimmer.
+text="""Eine schmale Steintreppe führt Hanna und Lukas hinunter in den Keller. Hinter der schweren Kellertür ist es kalt und dunkel. In der Mitte steht ein riesiges Weinfass.
 
 Hanna: So ein Fass habe ich nie gesehen.
 Lukas: Hier haben sie früher den Wein für das Schloss gelagert.
-Hanna: Und heute? Nur Spinnen an der Wand.
-Lukas: Und Mäuse. Vielleicht auch eine Ratte, wer weiß.
+Hanna: Und heute? Nur Spinnen an der Steinwand.
+Lukas: Und Mäuse, eine Ratte, vielleicht ein Tier mit Angst.
 
-Ihre Stimmen klingen laut in dem leeren Raum. Lukas schaltet die Taschenlampe seines Handys an.
+Ihre Stimmen klingen laut, und die Nacht steht vor dem Kellerfenster. Lukas schaltet die Taschenlampe seines Handys an.
 
 Hanna: Psst. Hast du das gehört? Da ist ein Geräusch.
 Lukas: Ein Klopfen? Das waren nur unsere Schritte.
@@ -63,8 +63,8 @@ Lukas: Du hast recht. Ein leiser Klang, immer im gleichen Ton.
 
 Die beiden stehen ganz still. Das Klopfen kommt aus dem hintersten Teil des Kellers.
 
-Hanna: Und jetzt? Hier unten ist außer uns niemand.
-Lukas: Eben war ich der mit den Sagen. Dieser Klang gefällt mir nicht.
+Hanna: Und jetzt? Hier unten sind keine Leute, kein Gespenst.
+Lukas: Eben war ich der mit der Sage. Dieser Klang gefällt mir nicht.
 Hanna: Gehen wir der Sache nach, oder nach oben?""",
 vocab=[
  ("adjective","schmal",None,"Narrow; not wide, with very little space from side to side."),
@@ -92,27 +92,27 @@ vocab=[
 P["nur-eine-eule"] = dict(
 arcType="late-reveal",
 synopsis="Mit dem Licht des Handys folgen Hanna und Lukas dem Klopfen bis in die hinterste Ecke hinter dem Fass. Was dort gegen die Steinwand schlägt, ist kein Gespenst, sondern ein kleines Tier, das durch ein offenes Kellerfenster hereingekommen ist und nicht mehr hinausfindet. Sie machen das Fenster weit auf, und von der Hexe bleibt am Ende nur eine gute Geschichte.",
-text="""Hanna macht das Licht an. Gemeinsam gehen die beiden dem Klopfen nach, in die hinterste Ecke. Das Geräusch wird lauter.
+text="""Hanna macht das Licht ihres Handys an. Gemeinsam gehen sie dem Klopfen nach, in die hinterste Ecke. Das Geräusch wird lauter, ein Ton wie Schritte.
 
 Lukas: Es kommt von dem alten Kellerfenster. Leuchte mal dorthin.
 Hanna: Da sitzt etwas auf dem Fenstersims. Es bewegt sich.
 
-Vorsichtig gehen die beiden näher an die Steinwand.
+Vorsichtig gehen sie mit der Taschenlampe an die Steinwand.
 
 Lukas: Das ist ja eine Eule! Ein kleines Tier, ganz allein.
-Hanna: Sie ist durch das offene Fenster geflogen und findet nicht mehr hinaus.
+Hanna: Sie ist durch das offene Fenster geflogen und findet nicht hinaus.
 
-Die Eule schlägt mit dem Flügel gegen die Wand. Dieses Geräusch hielten die beiden für ein Gespenst.
+Die Eule schlägt mit dem Flügel gegen die Wand. Das hielten die beiden für ein Gespenst.
 
 Lukas: Das war also unser Gespenst. Ein Nachtvogel mit Angst vor uns.
 Hanna: Die Arme. Komm, wir machen das Fenster ganz weit auf.
-Lukas: Langsam, sonst bekommt sie noch mehr Angst.
+Lukas: Langsam, sonst bekommt sie mehr Angst.
 Hanna: Ihre Augen sind riesig. Na los, kleine Eule.
 
-Die Eule fliegt in die kalte Nachtluft. Draußen steht der Mond unter einem Sternenhimmel.
+Die Eule fliegt in die Nachtluft. Draußen steht der Mond unter einem Sternenhimmel.
 
 Lukas: Keine Hexe, kein Gespenst. Wir haben nur eine Eule gerettet.
-Hanna: Und trotzdem erzählst du morgen allen vom Klopfen im Schloss.""",
+Hanna: Und trotzdem wird daraus morgen eine Sage vom Schloss.""",
 vocab=[
  ("adverb","gemeinsam","Gemeinsam","Together; both people doing the same thing at the same time."),
  ("noun","Geräusch",None,"A noise; a sound whose cause you cannot see straight away."),

@@ -4,26 +4,26 @@ P = {}
 P["kartons-im-kinderzimmer"] = dict(
 arcType="juxtaposition-discovery",
 synopsis="Tobias ist neunzehn und räumt sein Kinderzimmer leer, weil er endlich allein wohnen will. Seine Mutter packt mit, sagt wenig dazu und findet in der untersten Schublade eine Kiste, die in keinem der sechs Kartons eingeplant war. Je leerer der Schrank vor ihr wird, desto schwerer wird die Kiste in ihrer Hand.",
-text="""Es ist Samstagvormittag in Berlin. Im Kinderzimmer stehen sechs leere Kartons auf dem Teppich. Tobias will bald in seine eigene Wohnung umziehen, und seine Mutter Petra hilft ihrem Sohn.
+text="""Sieben leere Kartons stehen am Samstag im Berliner Kinderzimmer auf dem Teppich. Tobias will bald in seine eigene Wohnung umziehen, und seine Mutter Petra hilft dem Sohn.
 
-Tobias: Mama, können die alten Hefte hierbleiben? Die neue Wohnung ist klein.
-Petra: Natürlich. Aber die Kleidung nehmen wir mit.
-Tobias: Gut. Möbel habe ich sowieso keine, nur ein Bett.
+Tobias: Mama, können die alten Hefte hierbleiben? Die Wohnung ist klein.
+Petra: Klar. Aber die Kleidung nehmen wir mit, es gibt keinen Aufzug.
+Tobias: Gut. Möbel habe ich keine, nur ein Bett und ein Sofa.
 
 Petra räumt die Kommode aus. In der untersten Schublade liegt eine alte Kiste voller Bilder.
 
-Petra: Sieh mal her. Du bist drei, im Garten mit dem roten Eimer.
+Petra: Sieh her. Du bist drei, im Garten mit dem roten Eimer.
 Tobias: Das Bild kenne ich gar nicht. So klein war ich also.
-Petra: Und hier, dein erster Schultag. Wie schnell die Zeit vergeht.
-Tobias: Der Schrank ist leer, das Zimmer auch. Aber die Bilder bleiben.
+Petra: Und hier, dein erster Schultag. Wie die Zeit vergeht.
+Tobias: Der Schrank ist leer, das Zimmer auch. Die Bilder bleiben.
 
-Petra hält die Kiste fest und schaut in den leeren Schrank.
+Petra hält die Kiste und schaut in den leeren Schrank.
 
-Petra: Der Schrank hier ist ganz leer. Und diese kleine Kiste ist ganz voll.
-Tobias: Voll mit meiner Kindheit. Die nehme ich auf jeden Fall mit.
-Petra: Dann hast du in der neuen Wohnung wenigstens Erinnerungen.""",
+Petra: Der Schrank ist ganz leer. Und diese Kiste ist ganz voll.
+Tobias: Voll mit meiner Kindheit. Die stelle ich im dritten Stock ins Regal.
+Petra: Dann hast du in der neuen Wohnung wenigstens Erinnerungen an der Wand.""",
 vocab=[
- ("noun","Samstag","Samstag","Saturday; the day between Friday and Sunday, when many people are free."),
+ ("noun","Samstag",None,"Saturday; the day between Friday and Sunday, when many people are free."),
  ("noun","Kinderzimmer",None,"The room in a family home where the child sleeps and plays."),
  ("noun","Karton","Kartons","A large box made of thick paper, used when people move house."),
  ("noun","Teppich",None,"A carpet; the soft cloth that covers the floor of a room."),
@@ -48,26 +48,26 @@ vocab=[
 P["der-schlussel-passt-nicht"] = dict(
 arcType="late-reveal",
 synopsis="Vater und Sohn schleppen den ganzen Umzug ohne Aufzug nach oben. Oben dreht sich der neue Schlüssel keinen Millimeter, und Stefan verdächtigt schon die Hausverwaltung. Erst als eine Nachbarin ihre Tür öffnet und auf die Zahl neben der Klingel zeigt, wird klar, warum kein Schlüssel dieser Welt hier gepasst hätte.",
-text="""Vor dem Haus steht ein Lastwagen. Es ist Umzugstag, und Tobias und sein Vater Stefan tragen die Kisten die Treppe hinauf in den dritten Stock. Einen Aufzug gibt es nicht.
+text="""Der Lastwagen steht schon vor dem Haus. Es ist Umzugstag, und Tobias und sein Vater tragen die Kisten die Treppe hinauf in den dritten Stock. Einen Aufzug gibt es nicht.
 
-Stefan: Diese Bücherkiste ist wirklich schwer. Was ist da drin?
+Stefan: Diese Bücherkiste ist schwer. Was ist da drin?
 Tobias: Die Bücher, tut mir leid. Die Kleidung ist leichter.
-Stefan: Machen wir kurz Pause. Ich habe schon Schweiß im Gesicht.
-Tobias: Nimm einen Schluck. Die Wasserflasche steht im Hausflur.
+Stefan: Kurz Pause. Ich habe schon Schweiß im Gesicht.
+Tobias: Nimm einen Schluck, die Wasserflasche steht im Hausflur.
 
-Oben stellt Tobias die Kisten ab und nimmt den Schlüssel.
+Oben stellt Tobias die Kartons ab und nimmt den Schlüssel.
 
-Tobias: Jetzt machen wir auf.
-Stefan: Probier ihn mal. Ich halte die Kiste.
-Tobias: Er geht nicht ins Türschloss. Der Schlüssel passt einfach nicht.
-Stefan: Das ist doch nicht möglich. Wir haben ihn heute bekommen.
+Tobias: Schließen wir auf, mein Bett steht im Lastwagen.
+Stefan: Probier ihn. Ich halte die Kiste.
+Tobias: Er geht nicht ins Türschloss. Der Schlüssel passt nicht.
+Stefan: Nicht möglich. Wir haben ihn die ganze Zeit gehabt.
 
-Eine Nachbarin öffnet ihre Tür und schaut auf die Kisten.
+Eine Nachbarin öffnet ihre Tür und schaut auf Kisten und Teppich.
 
 Nachbarin: Zu wem wollen Sie? Hier oben wohnt Familie Berger.
-Stefan: Zu Nummer sieben. So steht es im Papier.
-Nachbarin: Dann sind Sie falsch. Schauen Sie genau auf die Zahl neben der Klingel.
-Stefan: Da steht neun. Tobias, wir stehen eine Etage zu hoch.""",
+Stefan: Zu Nummer sieben. So steht es auf dem Papier.
+Nachbarin: Dann sind Sie falsch. Schauen Sie genau auf die Zahl an der Klingel.
+Stefan: Da steht neun. Wir stehen eine Etage zu hoch.""",
 vocab=[
  ("noun","Lastwagen",None,"A lorry; a big vehicle that carries furniture or heavy goods."),
  ("noun","Umzugstag",None,"Moving day; the day when a person carries everything to a new home."),
@@ -97,22 +97,22 @@ synopsis="Eine Etage tiefer geht die Tür beim ersten Versuch auf. Drinnen ist a
 text="""Eine Etage tiefer dreht sich der Schlüssel leicht. Tobias und sein Vater Stefan stehen zum ersten Mal in der richtigen Wohnung. Im Bad hängt schon ein Spiegel.
 
 Tobias: Diesmal stimmt die Zahl an der Tür.
-Stefan: Dritter Stock, wie es sein soll.
+Stefan: Dritter Stock, wie im Vertrag.
 Tobias: Meine erste eigene Wohnung. Klein, aber meine.
 
-Die Kisten stehen im Wohnzimmer. Die Wände sind weiß und nackt, von der Decke hängt eine Lampe, und alles riecht nach Farbe.
+Die Kartons stehen im Wohnzimmer. Die Wände sind nackt, von der Decke hängt eine Lampe, und alles riecht nach Farbe.
 
 Stefan: Das Sofa passt an die Wand. Der Sessel ans Fenster.
-Tobias: Und die Kissen kommen aufs Sofa.
-Stefan: Auf dem Balkon steht ein Stuhl. Ein schöner Raum.
-Tobias: Danke, Papa. Ohne dich wäre der Tag schwerer gewesen.
+Tobias: Und die Kissen kommen aufs Sofa, das Bett an die Wand.
+Stefan: Auf dem Balkon steht ein Stuhl. Schöner Raum.
+Tobias: Danke, Papa. Ohne dich wäre es schwerer.
 
 Stefan nimmt ein Bild und eine Kaffeetasse aus seiner Tasche.
 
-Stefan: Eine Sache noch. Ein Geschenk von Mama und mir.
+Stefan: Eine Sache noch. Ein Geschenk von Mama, aus der alten Kommode.
 Tobias: Das Foto aus dem Garten, mit dem roten Eimer.
-Stefan: Eine nackte Wand wird nie ein Traum. Das Bild hilft.
-Tobias: Es kommt neben die Tür, dann sehe ich es täglich.
+Stefan: An eine nackte Wand gehört ein Bild, kein Traum.
+Tobias: Es kommt neben die Tür, ich sehe es jeden Samstag.
 Stefan: Gut. Dann fahre ich zufrieden nach Hause.""",
 vocab=[
  ("verb","stimmen","stimmt","To be correct; the information matches what is really true."),

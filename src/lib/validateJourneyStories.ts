@@ -82,6 +82,15 @@ function castOf(stories: JourneyStoryInput[], lang: string): string[] {
     for (const re of [
       new RegExp(`(?:${HABLA})\\s+([\\p{Lu}][\\p{Ll}]+)`, "gu"),
       new RegExp(`([\\p{Lu}][\\p{Ll}]+)\\s+(?:${HABLA})`, "gu"),
+      // Formato DIALOGO (`Nombre: linea`). Los verbos de habla solo existen en
+      // la prosa narrada; en un journey escrito a dos voces no hay un solo
+      // `sagt`, asi que el reparto salia VACIO y `journey-closing-alone`
+      // degeneraba a "las 21 terminan a solas" sin haber medido nada. Es el
+      // mismo fallo que ya documenta `castLegacy` mas abajo, con otra causa:
+      // un detector escrito para un formato devolviendo nada, en silencio,
+      // para el otro. Quien encabeza una linea de dialogo HABLA, y eso es lo
+      // unico que este contador pregunta.
+      /^([\p{Lu}][\p{Ll}]+):\s/gmu,
     ]) {
       for (const m of s.text.matchAll(re)) {
         if (!cuentaHabla.has(m[1])) cuentaHabla.set(m[1], new Set());

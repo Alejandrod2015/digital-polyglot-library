@@ -4,25 +4,25 @@ P = {}
 P["kabeljau-vom-fischmarkt"] = dict(
 arcType="reframe-turn",
 synopsis="Zwei Mitbewohner stehen im Morgengrauen zwischen den Kisten am Hamburger Fischmarkt. Jonas greift nach dem teuersten Fisch, weil teuer für ihn immer gut heißt. Lena hält ihm den billigen Kabeljau hin und lässt ihn selbst entscheiden. Was Jonas am Ende überzeugt, ist kein Preis, sondern eine Nase voll Meer.",
-text="""Es riecht nach Salz und Meer auf dem Fischmarkt von Hamburg. Um fünf Uhr morgens steht Lena schon zwischen den Kisten. Ihr Mitbewohner Jonas hält müde einen Becher.
+text="""Der Fischmarkt von Hamburg riecht nach Salz und Meer. Um fünf Uhr morgens steht Lena zwischen den Kisten, und viele Leute drängen sich. Ihr Mitbewohner Jonas hält müde einen Becher.
 
-Jonas: So früh, Lena. Ich habe noch nicht einmal Hunger.
+Jonas: So früh. Vielleicht habe ich später Hunger.
 Lena: Sonntag ist Markttag. Später ist der frische Fisch weg.
-Jonas: Na gut. Dann nehmen wir den großen Lachs. Der ist teuer, aber bestimmt gut.
-Lena: Der kostet viel. Brauchen wir das heute wirklich?
+Jonas: Na gut. Dann den großen Lachs. Der ist teuer, aber bestimmt gut.
+Lena: Der kostet viel. Brauchen wir das heute?
 
 Vor einem Verkäufer liegt Kabeljau auf dem Eis.
 
 Verkäufer: Kabeljau aus der Nordsee! Drei Stück, ein guter Preis!
-Jonas: Kabeljau? Den kenne ich gar nicht.
+Jonas: Kabeljau? Den hatte ich noch nie in der Küche.
 Lena: Er ist viel billiger als der Lachs. Schau dir die Augen an, ganz klar.
 
-Jonas hält ein Stück Kabeljau unter die Nase.
+Jonas legt ein Stück Kabeljau auf einen Teller und riecht daran.
 
 Jonas: Du hast recht. Der riecht nach Meer, nicht nach Fisch.
 Lena: Siehst du? Frisch ist besser als teuer.
 Jonas: Einverstanden. Zum Mittagessen gibt es Kabeljau mit Zitrone.
-Lena: Und morgen eine Suppe aus dem Rest. Abgemacht?
+Lena: Und morgen eine Suppe, den Rest in die Pfanne. Abgemacht?
 Jonas: Abgemacht. Aber den Tee danach zahlst du.""",
 vocab=[
  ("adverb","morgens",None,"In the morning, in the first early hours of the day."),
@@ -50,12 +50,12 @@ vocab=[
 P["sonntags-ist-alles-zu"] = dict(
 arcType="mini-cliffhanger",
 synopsis="Der Fisch liegt schon in der Pfanne, als den beiden Mitbewohnern das Wichtigste fehlt. In Deutschland ist am Sonntag jeder Laden zu, und die nächste Tankstelle liegt zwanzig Minuten weg. Jonas will aufgeben und ohne essen. Lena zieht sich die Schuhe an, ohne zu sagen, wohin sie läuft.",
-text="""Am späten Vormittag schneidet Lena in der Küche eine Zwiebel. Der Kabeljau liegt in der Pfanne, und die Wohnung riecht warm nach Essen.
+text="""Zwei Teller stehen schon auf dem Tisch. Am Vormittag schneidet Lena in der Küche eine Zwiebel, und der Kabeljau liegt warm in der Pfanne.
 
-Lena: Jonas, wo ist die Zitrone? Salz und Pfeffer habe ich.
-Jonas: Die Zitrone? Ich denke, die hast du gekauft.
+Lena: Jonas, wo ist die Zitrone? Salz, Pfeffer und Kräuter habe ich.
+Jonas: Die Zitrone? Die hast du doch gekauft.
 Lena: Nein, das warst du. Wir haben beide keine gekauft.
-Jonas: Kein Problem, ich hole schnell eine im Geschäft.
+Jonas: Kein Problem, ich hole eine im Geschäft gegenüber.
 
 Lena dreht das Feuer kleiner.
 
@@ -65,7 +65,7 @@ Lena: Ohne Zitrone schmeckt der Kabeljau nur halb so gut.
 Jonas: Die Tankstelle hat immer offen, auch sonntags.
 Lena: Die ist zwanzig Minuten weg. Der Fisch braucht fünf.
 
-Jonas deckt den Tisch und legt zwei Teller hin.
+Jonas deckt den Tisch mit Serviette und Löffel.
 
 Jonas: Dann essen wir ihn eben ohne. So schlimm ist das nicht.
 Lena: Warte mal, ich habe eine Idee. Kannst du kurz auf den Fisch aufpassen?
@@ -98,25 +98,25 @@ vocab=[
 P["eine-zitrone-von-nebenan"] = dict(
 arcType="harmonic-close",
 synopsis="Lenas Idee wohnt im Haus gegenüber und heißt Pia. Aus einer geliehenen Zitrone werden ein paar Zweige Minze, aus den Kräutern wird eine Einladung, und aus zwei Mitbewohnern werden drei Leute an einem viel zu kleinen Tisch. Am Ende steht kein Rezept auf dem Papier, sondern eine Verabredung für den nächsten Sonntag, diesmal mit vertauschten Rollen.",
-text="""Im Haus gegenüber drückt Lena die Klingel. Eine junge Frau öffnet, in der Hand eine Tasse. Es ist Pia, die Lena erst zweimal gesehen hat.
+text="""Eine junge Frau öffnet, als Lena im Haus gegenüber die Klingel drückt. In der Hand hält sie eine Tasse. Es ist Pia, die Lena erst zweimal gesehen hat.
 
 Lena: Hallo, Pia. Entschuldige die Störung am Sonntag. Hast du vielleicht eine Zitrone?
 Pia: Warte kurz, ich schaue nach. Sonntags fehlt mir auch immer etwas.
-Lena: Wir kochen Fisch, und alle Läden haben zu.
-Pia: Das kenne ich gut. Mir geht das oft genauso.
+Lena: In der Küche liegt Kabeljau, und alle Läden haben zu.
+Pia: Das kenne ich. Mir geht das oft genauso.
 
 Pia kommt mit einer Zitrone und etwas Minze zurück.
 
 Pia: Hier. Nimm die Kräuter dazu, die passen gut zu Fisch.
-Lena: Das ist nett. Komm mit, die Mahlzeit reicht für drei.
+Lena: Nett. Komm mit, die Mahlzeit reicht für drei.
 Pia: Gern. Ich freue mich und bringe eine Flasche Limonade mit.
 
-Kurz darauf sitzen drei Leute am Tisch. Jonas legt einen dritten Teller, einen Löffel und eine Serviette dazu.
+Kurz darauf sitzen drei Leute am Tisch. Jonas legt einen dritten Teller, Löffel und Serviette dazu.
 
-Jonas: Mit Zitrone schmeckt der Fisch fantastisch. Lena hatte recht.
+Jonas: Mit Zitrone schmeckt der Kabeljau warm am besten.
 Pia: Und zu dritt essen ist schöner als jeder für sich.
 Lena: Nächsten Sonntag kochst du, und wir bringen den Fisch mit.
-Pia: Gut. Aber kommt bitte früher vom Markt zurück.""",
+Pia: Gut. Aber kommt morgens früher vom Markt zurück.""",
 vocab=[
  ("adverb","gegenüber",None,"On the other side of the street, right across from where you are."),
  ("noun","Klingel",None,"The bell at a front door that you press to call the people inside."),

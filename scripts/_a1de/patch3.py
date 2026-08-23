@@ -4,26 +4,26 @@ P = {}
 P["ein-freier-platz-am-tisch"] = dict(
 arcType="daily-encounter",
 synopsis="Sofie wohnt seit zwei Wochen in München und kennt dort keinen einzigen Menschen. Im vollen Biergarten fragt sie am Nachbartisch nach einem freien Stuhl und bekommt sehr viel mehr als nur einen Sitzplatz. Max und seine Freunde rücken einfach zusammen, als wäre das die normalste Sache der Welt, und genau das ist für Sofie neu.",
-text="""Es ist ein warmer Sommerabend in München. Über den Tischen im Biergarten stehen alte Kastanien und werfen Schatten. Sofie ist neu in der Stadt und sucht einen Sitzplatz.
+text="""Alle Tische im Biergarten sind an diesem warmen Sommerabend voll. Über ihnen stehen alte Kastanien und werfen Schatten. Sofie ist neu in der Stadt und sucht einen Sitzplatz.
 
-Sofie: Entschuldigung, ist der Stuhl hier noch frei?
-Max: Klar, setz dich zu uns. Drinnen ist heute sowieso kein Platz.
-Sofie: Danke. Am Nachbartisch war schon alles voll.
-Max: Auf der Sitzbank ist immer Platz. Hier sitzt man zusammen.
+Sofie: Ist der Stuhl hier noch frei?
+Max: Klar, setz dich zu uns. Drinnen ist kein Platz.
+Sofie: Danke. Am Nachbartisch war alles voll.
+Max: Auf der Sitzbank sitzt man zusammen. Das ist hier Gewohnheit.
 
-Der Kellner stellt zwei Bier hin. Die Gruppe lacht und redet weiter.
+Der Kellner stellt zwei Bier und eine Wurst hin. Die Gruppe lacht und redet.
 
-Max: Ich heiße Max. Das sind Ben und Clara, alte Freunde.
-Sofie: Ich bin Sofie, seit zwei Wochen in München.
-Max: Zwei Wochen? Und schon allein im Biergarten? Mutig.
+Max: Ich heiße Max. Das ist Ben, und Clara ist eine alte Freundin.
+Sofie: Ich bin Sofie, seit zwei Wochen in der Firma hier.
+Max: Zwei Wochen? Und schon allein hier? Mutig.
 Sofie: Allein oder einsam. Zu Hause sitzen ist nicht besser.
 
 Max legt ihr eine Brezel hin und lacht freundlich.
 
 Max: Dann iss eine Brezel. Hier braucht man kein großes Wort.
 Sofie: Das ist nett. In der neuen Stadt ist alles noch so fremd.
-Max: Kenne ich. Ich war auch mal neu hier.
-Sofie: Ich hoffe. Heute fühlt sich München schon wärmer an.""",
+Max: Kenne ich. Am Donnerstagabend sitzen wir im Wirtshaus.
+Sofie: Ich hoffe. München fühlt sich schon wärmer an.""",
 vocab=[
  ("noun","Sommerabend",None,"A summer evening, warm enough to sit outside until late."),
  ("noun","Biergarten",None,"A garden with long tables where people drink beer under trees."),
@@ -50,25 +50,25 @@ vocab=[
 P["der-stammtisch-am-donnerstag"] = dict(
 arcType="reframe-turn",
 synopsis="Max holt Sofie zum Stammtisch, doch an der Tür bleibt sie stehen: eine feste Gruppe, ein festes Wort auf dem Schild, und sie mittendrin als Zaungast. Clara erzählt ihr, wie sie selbst vor zwei Jahren an derselben Tür stand. Der Tisch, versteht Sofie am Ende, ist nicht trotz der Neuen da, sondern genau für sie.",
-text="""Auf dem Holztisch im Wirtshaus steht ein kleines Schild mit dem Wort Stammtisch. Es ist Donnerstagabend, und die Gruppe sitzt schon zusammen. Sofie bleibt an der Tür stehen und zögert.
+text="""Das Schild auf dem Holztisch im Wirtshaus trägt nur das Wort Stammtisch. Es ist Donnerstagabend, und die Gruppe sitzt schon zusammen. Sofie bleibt eine Weile an der Tür stehen und zögert.
 
-Max: Sofie, komm her! Wir haben einen Stuhl frei gehalten.
+Max: Sofie, komm her! Auf der Sitzbank ist ein Platz frei.
 Sofie: Ich will wirklich nicht stören. Ihr kennt euch lange.
 Max: Genau deshalb bist du eingeladen.
 
-Auf dem Tisch stehen Kartoffelsuppe, Wurst und Salat. Daneben liegt ein altes Kartenspiel. Sofie setzt sich langsam.
+Auf dem Tisch stehen Kartoffelsuppe, Wurst, Salat und Bier. Daneben liegt ein altes Kartenspiel. Sofie setzt sich langsam.
 
-Sofie: In der Firma kenne ich Kollegen, sonst niemanden in der Umgebung.
+Sofie: In der Firma kenne ich Kollegen, die Umgebung ist fremd.
 Clara: Du denkst sicher, wir sind nur höflich. Das dachte ich auch.
 Sofie: Ein bisschen. Ihr seid eine feste Gruppe, ich bin neu.
 Clara: Vor zwei Jahren stand ich genauso an dieser Tür.
 
 Clara schiebt ihr den Teller mit dem Salat hin.
 
-Clara: Der Donnerstag ist eine alte Gewohnheit. Jede Gewohnheit fing einmal an.
-Max: Ben kam aus Hamburg, Clara aus Leipzig, ohne Beruf und ohne Leute.
+Clara: Der Donnerstag ist eine alte Gewohnheit. Jede fing einmal an.
+Max: Ben kam aus Hamburg, Clara aus Leipzig, ohne Leute und ohne Beruf.
 Sofie: Dann ist dieses Gespräch kein Zufall.
-Max: Nein. So fängt eine Freundschaft eben an.""",
+Max: Im Biergarten hat es angefangen, jetzt ist es Freundschaft.""",
 vocab=[
  ("noun","Holztisch",None,"A wooden table, the heavy kind you find in an old inn."),
  ("noun","Wirtshaus",None,"A traditional German pub where people eat, drink and meet."),
@@ -95,26 +95,26 @@ vocab=[
 P["eine-welle-im-eisbach"] = dict(
 arcType="mini-cliffhanger",
 synopsis="Auf der Wiese im Englischen Garten wartet Sofie eine halbe Stunde umsonst, bis ein Anruf sie zum Stadtfluss schickt. Dort steht eine Menschenmenge auf der Ufermauer, und mitten in München surft jemand auf einer echten Welle. Dann dreht Ben ein Stück Pappe zu ihr um, und darauf steht mit Kreide ein einziges Wort.",
-text="""Sofie wartet im Englischen Garten auf der Wiese. Es ist Samstagnachmittag, und nach zwanzig Minuten ist keiner da. Dann kommt ein Anruf auf ihr Handy.
+text="""Sofie wartet im Englischen Garten auf der Wiese. Der Samstagnachmittag vergeht, und nach zwanzig Minuten ist keiner da. Dann kommt ein Anruf auf ihr Handy.
 
 Sofie: Max, wo seid ihr? Ich stehe schon eine Weile.
-Max: Tut mir leid! Komm zum Eisbach, du verpasst etwas.
+Max: Tut mir leid! Die Gruppe ist am Eisbach, du verpasst etwas.
 Sofie: Was macht ihr denn unten am Stadtfluss?
-Max: Das musst du selbst sehen. Lauf los, du findest uns sofort.
+Max: Sieh selbst. Lauf los, du findest uns.
 
 Sofie läuft in ihren Sportschuhen den Fußweg entlang. Bald hört sie eine Menschenmenge rufen.
 
 Clara: Sofie, hier oben auf der Ufermauer!
-Sofie: So viele Leute. Was ist hier los?
+Sofie: So viele Leute. Was ist hier wirklich los?
 Clara: Schau ins Wasser. Mitten in der Stadt ist eine echte Welle.
 Sofie: Mitten in der Stadt surft jemand? Der ist ja ganz nass.
 Ben: Jeden Tag fährt hier wer. Die Welle ist für dich.
 
-Ben legt sein Handtuch weg und dreht ein Stück Pappe um.
+Ben legt sein Handtuch auf die Mauer und dreht ein Stück Pappe um.
 
 Sofie: Da stehen Buchstaben mit Kreide drauf. Ich lese sie.
 Ben: Lies ruhig laut. Es ist nur ein Wort.
-Sofie: Da steht mein Name. Warum steht mein Name hier?""",
+Sofie: Da steht mein Name. Warum denn hier?""",
 vocab=[
  ("noun","Wiese",None,"A meadow; a big open field of grass in a park or the country."),
  ("noun","Nachmittag","Samstagnachmittag","The afternoon, the hours between lunch and the early evening."),
