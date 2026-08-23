@@ -33,6 +33,7 @@ export const SERVER_WRITTEN_METRIC_EVENTS = [
   "lifecycle_email_sent",
   "resume_story_push_sent",
   "journey_bridge_push_sent",
+  "next_story_push_sent",
 ];
 
 const DAY_MS = 86400000;

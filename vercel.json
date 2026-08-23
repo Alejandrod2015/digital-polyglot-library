@@ -41,6 +41,10 @@
     {
       "path": "/api/cron/resume-story-push",
       "schedule": "0 18 * * *"
+    },
+    {
+      "path": "/api/cron/next-story-push",
+      "schedule": "0 19 * * *"
     }
   ]
 }

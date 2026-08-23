@@ -5,8 +5,8 @@
 // `UserMetric`, `Favorite`, `ContinueListeningEntry`, `JourneyStory`,
 // `Journey` y `StoryRating`.
 //
-// El único disparador construido es el puente al siguiente journey
-// (`journeyBridgePush.ts`), y su forma es la plantilla del resto: ventana de
+// La forma la fijó el puente al siguiente journey (`journeyBridgePush.ts`) y la
+// repiten los demás disparadores construidos: ventana de
 // horas en vez de "al día siguiente" exacto, descartes con motivo, una sola
 // vez por par marcada con una fila en `UserMetric`, y opt-in por
 // `notificationPrefs`.
@@ -110,16 +110,18 @@ export const SMART_NOTIFICATIONS: SmartNotification[] = [
     priority: 3,
     group: "continuidad",
     label: "Teaser de la siguiente historia",
-    signal: "Historia N completada y la N+1 del mismo tema sin abrir 3 días después",
-    window: "Una vez por historia",
+    signal: "Historia completada y la siguiente del recorrido sin abrir, entre 20 y 120 horas después",
+    window: "Una vez por historia destino; como mucho uno de este tipo cada 72 horas",
     copy: {
-      title: "About those keys",
-      body: "Marta still has not explained them. The next story does.",
+      title: "Humo en la cocina is next",
+      body: "The Food & Everyday Life thread has two stories left.",
     },
     destination: "La historia siguiente",
     optIn: "new_content",
-    status: "ready",
-    note: "El gancho sale de JourneyStory.synopsis, que ya se escribe para cada historia.",
+    status: "live",
+    builtIn:
+      "src/lib/nextStoryPush.ts + cron a las 19:00, en seco hasta NEXT_STORY_PUSH_ENABLED=1",
+    note: "Dos cambios sobre lo planeado. La siguiente es la del RECORRIDO, no la del mismo tema: con la lectura estrecha, quien termina la tercera historia de un tema (una de cada tres veces) no recibía nada. Y el gancho es el título, no la sinopsis: la sinopsis está en el idioma que se aprende y cuenta el final.",
   },
   {
     id: "almost_done",
