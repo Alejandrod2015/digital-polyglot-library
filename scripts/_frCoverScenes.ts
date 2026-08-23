@@ -48,6 +48,16 @@ const C = {
  *  escenas berlinesas de `cover-style.json`), mas la paleta propia de Lyon.
  *  Va en TODAS las escenas, no solo en el bloque de estilo: en el A1 los planos
  *  generales arrastraban al modelo hacia ilustracion apagada con textura. */
+/** Refuerzos aprendidos en la tirada 1 de este journey (2026-08-23): el gate
+ *  de rubor falló con 21 manchas, salió una silueta en la ventana de enfrente
+ *  pese al "nobody else", y Manon estaba de perfil estricto. El bloque de
+ *  estilo del candado dice "sin rubor" en una linea; el A1 necesitó decirlo
+ *  como aqui para que Flux lo respetara. */
+const PIEL =
+  "SKIN (absolutely critical, top priority): every face has light, cool, completely FLAT MATTE skin in ONE single uniform tone; the cheeks are the exact same colour as the forehead, nose and chin, or even paler; there is ZERO colour difference on the cheeks. ABSOLUTELY NO blush, NO rosy cheeks, NO pink cheeks, NO red cheeks, NO peach cheeks, NO warm cheek tint, NO circular colour patch on the cheeks, NO flushed skin, NO cheek highlight, NO makeup, NO freckles, NO speckles or dots on the skin. Cheeks must look plain and uncoloured. " +
+  "EYES AND GAZE (critical): every visible character has clearly drawn open eyes with a white sclera, a coloured iris, a pupil and eyebrows; show the faces in a natural THREE QUARTER view so both eyes are visible; NEVER a full flat side profile, NEVER a straight to camera stare; the characters look at what they are doing or at each other, never at the viewer. " +
+  "NOBODY ELSE (critical): the people listed in the scene are the ONLY human figures in the whole image; there is NO figure, NO silhouette and NO shape of a person in any window, balcony, doorway, mirror, reflection, poster or distant background; every window of every other building is empty, with nothing and nobody behind the glass. ";
+
 const REGISTRO =
   "RENDERING (critical): flat saturated cel colour with bold clean outlines, the same bright picture-book register in every image; NO muted or dusty palette, NO visible wall texture or paper grain, NO thin sketchy linework, NO desaturated editorial illustration look. " +
   "PLACE AND LIGHT (critical): a French city of ochre, cream and dusty pink stone facades with terracotta roofs, tall shuttered windows, steep stone stair streets and two wide grey blue rivers; clear even daylight, or at night warm lamp light against a deep blue sky. " +
@@ -56,7 +66,7 @@ const REGISTRO =
 
 const SCENES: Array<[string, string[], string]> = [
   ["les-premieres-heures", [C.manon, C.sylvie],
-   "A stairwell landing in an old French city building on a Thursday morning. THERE ARE EXACTLY TWO PEOPLE IN THE IMAGE AND NOBODY ELSE: (1) MANON, two suitcases beside her, pulling a stiff wooden door towards herself with both hands; (2) SYLVIE, a few steps higher on the dark wooden staircase, her coat folded over one arm, explaining the door with a small gesture. Cream ochre walls, a tall window with morning light, a bare bulb. Calm welcoming mood."],
+   "A stairwell landing in an old French city building on a Thursday morning. THERE ARE EXACTLY TWO PEOPLE IN THE IMAGE AND NOBODY ELSE: (1) MANON, with TWO suitcases standing side by side on the landing beside her, clearly two cases and not one, pulling a stiff wooden door towards herself with both hands; (2) SYLVIE, a few steps higher on the dark wooden staircase, her coat folded over one arm, explaining the door with a small gesture. Cream ochre walls, a tall window with morning light, a bare bulb. Calm welcoming mood."],
   ["six-cartons-pleins", [C.manon],
    "A small kitchen on a rainy Sunday at midday. THERE IS EXACTLY ONE PERSON IN THE IMAGE AND NOBODY ELSE: MANON standing in front of six sealed cardboard boxes stacked against the wall, holding a phone to her ear, the screen turned away and not visible, her free hand on the back of a chair. A dry loaf and two apples on the counter, a coffee pot, closed curtains, grey rain on the window, an old radiator. Tired half smiling mood."],
   ["trop-grande-pour-le-lit", [C.manon],
@@ -102,7 +112,7 @@ const SCENES: Array<[string, string[], string]> = [
 const PRINT = process.argv.indexOf("--print");
 mkdirSync(DIR, { recursive: true });
 for (const [slug, fichas, escena] of SCENES) {
-  const texto = [...fichas, REGISTRO, escena].join("\n\n");
+  const texto = [...fichas, PIEL, REGISTRO, escena].join("\n\n");
   writeFileSync(`${DIR}/${slug}.txt`, texto + "\n");
   if (PRINT > 0 && process.argv[PRINT + 1] === slug) console.log(texto);
 }
