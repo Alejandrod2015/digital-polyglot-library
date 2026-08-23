@@ -19,13 +19,18 @@ import { generateAndUploadMultiVoiceAudio } from "../src/lib/elevenlabs";
 import { generateWordTimingsForStory } from "../src/lib/audioWordTimings";
 import { multiVoiceGuardError } from "../src/lib/multiVoiceGuard";
 
+// Journey por defecto: el Traveler ES/latam, para el que se escribio el script.
+// Cualquier otro se pasa con `--journey <id>`; el slug sigue mandando.
 const JOURNEY_ID = "cmovi4cvi000032q37a4823h3";
 
 async function run() {
-  const slug = process.argv[2];
-  if (!slug) { console.error("uso: generateJourneyStoryAudio.ts <slug>"); process.exit(1); }
+  const args = process.argv.slice(2);
+  const jIdx = args.indexOf("--journey");
+  const journeyId = jIdx >= 0 ? args[jIdx + 1] : JOURNEY_ID;
+  const slug = args.filter((a, i) => a !== "--journey" && i !== jIdx + 1)[0];
+  if (!slug || !journeyId) { console.error("uso: generateJourneyStoryAudio.ts <slug> [--journey <id>]"); process.exit(1); }
   const prisma = new PrismaClient();
-  const story = await prisma.journeyStory.findFirst({ where: { slug, journeyId: JOURNEY_ID }, include: { journey: true } });
+  const story = await prisma.journeyStory.findFirst({ where: { slug, journeyId }, include: { journey: true } });
   if (!story || !story.text || !story.title) { console.error("Story not found or missing text/title"); process.exit(1); }
   if (story.audioUrl) { console.error(`[${slug}] YA tiene audioUrl. Aborto para no pisar. (${story.audioUrl})`); process.exit(1); }
 
