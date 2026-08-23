@@ -56,6 +56,7 @@ const C = {
 const PIEL =
   "SKIN (critical): faces have even matte skin; NO doll like round pink or red blush patches on the cheeks, NO heavy flushed cheeks, NO makeup look, NO freckles or speckles. A soft warm shading on the cheekbone is fine, a coloured circle is not. " +
   "EYES AND GAZE (critical): every visible character has clearly drawn open eyes with a white sclera, a coloured iris, a pupil and eyebrows, NEVER plain dots; show the faces in a natural THREE QUARTER view so both eyes are visible; NEVER a full flat side profile, NEVER a straight to camera stare; the characters look at what they are doing or at each other, never at the viewer. " +
+  "BODY LANGUAGE (critical): the people are neighbours, friends or colleagues, never a couple; friendly platonic body language at a natural friendly distance, absorbed in what they are doing; NO romantic embrace, NO hugging, NO gazing into each other's eyes. " +
   "NOBODY ELSE (critical): the people listed in the scene are the ONLY human figures in the whole image; there is NO figure, NO silhouette and NO shape of a person in any window, balcony, doorway, mirror, reflection, poster or distant background; every window of every other building is empty, with nothing and nobody behind the glass. ";
 
 const REGISTRO =
@@ -71,11 +72,11 @@ const REGISTRO =
  *  resolvia nombrando el color en la propia frase de la accion ("ROCIO, in her
  *  WARM CORAL blouse"), que es donde el modelo mira cuando compone. */
 const ROPA: Record<string, string> = {
-  MANON: "in her MUSTARD YELLOW jumper",
-  SYLVIE: "the woman of about forty-five in her DEEP GREEN cardigan",
-  CAMILLE: "in her WINE RED blouse",
-  PAULINE: "in her PURPLE anorak",
-  JULIETTE: "in her WHITE apron over a SKY BLUE shirt",
+  MANON: "the woman of about twenty-nine with wavy DARK BROWN hair to her shoulders, in her MUSTARD YELLOW jumper and dark blue jeans",
+  SYLVIE: "clearly a WOMAN of about forty-five, visibly older than Manon, with straight LIGHT BROWN hair in a short bob, in her DEEP GREEN cardigan over a white shirt and grey trousers",
+  CAMILLE: "the woman of about thirty-two with BLACK hair in a low ponytail, in her WINE RED blouse",
+  PAULINE: "the woman of about twenty-six with dark blonde hair in a high bun, in her PURPLE anorak",
+  JULIETTE: "the woman of about fifty with chestnut hair pinned up, in her WHITE apron over a SKY BLUE shirt",
   BAPTISTE: "the man of about forty-five in his NAVY BLUE shirt",
   NICOLAS: "the man of about thirty-five in his RUST ORANGE jumper",
   ANTOINE: "the man of about twenty-six in his TEAL BLUE jacket",
@@ -95,7 +96,7 @@ function conRopa(escena: string): string {
 
 const SCENES: Array<[string, string[], string]> = [
   ["les-premieres-heures", [C.manon, C.sylvie],
-   "A staircase inside an old French city building on a Thursday morning, seen from the half landing. THERE IS NO DOOR ANYWHERE IN THE IMAGE: no doorway, no door frame, no opening into another room; only the staircase, the banister and the wall. THERE ARE EXACTLY TWO PEOPLE IN THE IMAGE AND BOTH ARE FULLY VISIBLE, NOBODY ELSE: (1) MANON standing on the half landing beside two suitcases, one hand resting on the wooden banister, turned to look up at her neighbour; (2) SYLVIE, coming down the last steps towards her with her coat folded over one arm, mid sentence, giving a small friendly piece of advice with one hand. They look at each other and talk. Cream ochre walls, dark wooden treads and a polished banister, a tall stairwell window with clear morning light behind them, a bare bulb hanging from the ceiling. Calm welcoming mood."],
+   "A staircase inside an old French city building on a Thursday morning, seen from the half landing. THERE IS NO DOOR ANYWHERE IN THE IMAGE: no doorway, no door frame, no opening into another room; only the staircase, the banister and the wall. THERE ARE EXACTLY TWO PEOPLE IN THE IMAGE AND BOTH ARE FULLY VISIBLE, NOBODY ELSE: (1) MANON standing on the half landing beside two suitcases, one hand resting on the wooden banister, turned to look up at her neighbour; (2) SYLVIE, coming UP the last steps towards her with her coat folded over one arm, mid sentence, giving a small friendly piece of advice with one hand. They look at each other and talk. Cream ochre walls, dark wooden treads and a polished banister, a tall stairwell window with clear morning light behind them, a bare bulb hanging from the ceiling. Calm welcoming mood."],
   ["six-cartons-pleins", [C.manon],
    "A small kitchen on a rainy Sunday at midday. THERE IS EXACTLY ONE PERSON IN THE IMAGE AND NOBODY ELSE: MANON standing in front of six sealed cardboard boxes stacked against the wall, holding a phone to her ear, the screen turned away and not visible, her free hand on the back of a chair. A dry loaf and two apples on the counter, a coffee pot, closed curtains, grey rain on the window, an old radiator. Tired half smiling mood."],
   ["trop-grande-pour-le-lit", [C.manon],
