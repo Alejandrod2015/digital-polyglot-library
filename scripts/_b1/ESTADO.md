@@ -160,3 +160,42 @@ esta enseñado.
 **Decision pendiente del usuario**, y es la unica que queda: o el piso de B1 se
 calibra contra ese techo, o el tope de 170 palabras cede en B1, o el journey se
 queda sin guardar. El piso NO se ha tocado.
+
+
+## Cuarta tanda: el piso en 2,0 y una correccion
+
+El piso de B1 esta puesto en **2,0** en `validateJourneyStories.ts`, con su
+derivacion escrita. **El numero del que salio es MIO y estaba mal**, y hay que
+decirlo antes que nada: lo saque de la densidad de claves por palabra del cuerpo
+mas denso (43 claves en 168 palabras) y extrapole 2,06. Ese calculo mide cuantas
+palabras del journey hay en un cuerpo, y la escalera mide otra cosa: en cuantos
+cuerpos aparece CADA PLAZA. No son lo mismo.
+
+Medido de verdad, sobre los 21 cuerpos ya tejidos
+(`scripts/_b1/asignar.ts`, `techo2.ts`):
+
+| | |
+|---|---|
+| palabras con plaza legitima presentes en los cuerpos | 421 |
+| de ellas, en 2 o mas cuerpos | 91 (suman 330 encuentros) |
+| en un solo cuerpo | 330 |
+| plazas que hay que llenar | 444 |
+| **techo real de la escalera con esta prosa** | **1,60** |
+| donde esta hoy | 1,47 |
+
+"Plaza legitima" quiere decir sin contar gramaticales, deicticos, numerales,
+meses y verbos de andar por casa. Sin ese filtro el reparto optimo da 2,20, pero
+eligiendo `que`, `con` y `una` como vocabulario de B1: es teatro, no escalera.
+
+La causa esta escrita desde el principio en
+[[project_vocab_recirculation_ladder]]: "los 7 temas del journey tienen que
+compartir espina... con siete escenas ajenas entre si el reencuentro es
+imposible por construccion". Estos siete comparten pueblo, reparto y espina
+argumental, pero NO comparten lexico: 330 de las 421 palabras salen en un solo
+cuerpo. La obra del terrado, que es la espina, solo aporta el nucleo que si
+recircula: nota(13) cuota(12) obra(10) gesto(9) prisa(8) mancha(8) tono(8)
+plazo(8) cesta(7) alivio(7) cifra(7) techo(6) frase(6) lista(6).
+
+Lo unico que mueve el techo es re-cortar los siete temas para que compartan
+lexico, no solo sitio. Con 120 palabras compartidas en vez de 91 y el resto
+anclado, la cuenta sale: 120 x 6 + 324 = 1044 sobre 444, o sea 2,35.

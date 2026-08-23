@@ -495,13 +495,29 @@ export function validateJourneyStories(
   //      repite hoy, que es lo que la escalera existe para cambiar. Calibrar
   //      contra la deriva es calibrar el gate hacia abajo.
   //
-  // Por eso B1 hereda el 2,5 de A1 y no un numero mas blando. Un nivel mas
-  // alto con el liston mas bajo premiaria justo lo que se quiere corregir, y
-  // la recirculacion no la decide el nivel sino que los siete temas compartan
-  // espina (mismos personajes, mismo sitio): un B1 de un solo pueblo puede
-  // reencontrar tanto como un A0. Si un dia hay dos o tres B1 escritos CON el
-  // check delante, ese sera el momento de recalibrar con datos, no antes.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 2.5, B1: 2.5 };
+  // El primer numero que se puso aqui fue 2,5, heredado del de A1. Bajo a 2,0
+  // el 2026-08-23, y NO porque un texto no llegara: porque midiendo el techo
+  // apareció un limite aritmetico que no estaba a la vista.
+  //
+  // La media se calcula por PLAZA sobre 21 cuerpos, asi que 2,5 significa 52,5
+  // claves del journey presentes en cada cuerpo. Con el tope de 170 palabras de
+  // `body-word-count`, eso son 0,31 claves por palabra. Medido
+  // (`scripts/_b1/_densidad.ts`):
+  //
+  //   Friends ES/argentina A0, que cumple la escalera:  0,360 claves/palabra
+  //   Traveler ES/spain B1, cuerpo mas denso que sale:  0,256
+  //
+  // El A0 llega a 0,360 porque el 70% de sus plazas es vocabulario A1-A2: ese
+  // journey ENSEÑA el tejido conectivo del idioma, asi que casi cada palabra
+  // de cada cuerpo es una clave. Un B1 no puede hacer eso, porque ese tejido ya
+  // lo enseno un journey anterior. Con claves de la cola rara del idioma hacen
+  // falta articulos, preposiciones y verbos entre ellas, y la densidad se queda
+  // en 0,256. Ese techo da 0,256 x 170 x 21 / 444 = 2,06.
+  //
+  // 2,0 es ese techo, y sigue siendo el liston mas alto del catalogo fuera de
+  // A0: ningun A1 pasa de 1,88 ni ningun C1 de 1,56. No es un numero elegido
+  // para que pase nada; cuando se fijo, el journey que lo motivo iba por 1,37.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 2.5, B1: 2.0 };
   const suelo = MEDIA_MINIMA[level];
   if (suelo === undefined) {
     noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
