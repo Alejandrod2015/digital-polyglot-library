@@ -11,6 +11,7 @@ import { clerkAppearance } from "@/lib/clerkAppearance";
 import { isConsentOptInCountry } from "@/lib/geo";
 import AppShell from "@/components/AppShell";
 import VisitLogger from "@/components/VisitLogger";
+import OutboundClickLogger from "@/components/OutboundClickLogger";
 import PlatformStamp from "@/components/PlatformStamp";
 
 // Nunito as the primary UI font. `variable` exposes it as a CSS custom
@@ -123,6 +124,10 @@ export default async function RootLayout({
           <Suspense fallback={null}>
             <VisitLogger />
           </Suspense>
+          {/* El clic que sale hacia la tienda, que ni la analitica del sitio
+              ni la de Shopify pueden ver por si solas. Sin Suspense: no lee
+              searchParams, solo escucha el documento. */}
+          <OutboundClickLogger />
           {/* Stamps the platform on the first page that renders with a
               session, not just on the home page. See PlatformStamp. */}
           <PlatformStamp />

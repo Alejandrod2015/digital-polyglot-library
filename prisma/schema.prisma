@@ -829,6 +829,49 @@ model PageVisit {
   @@map("dp_page_visits_v1")
 }
 
+// Clic que SALE del sitio hacia la tienda. La tienda vive en otro dominio
+// (shop.digitalpolyglot.com, Shopify), asi que ninguna de las dos analiticas
+// ve este salto: dp_page_visits_v1 acaba en el post y el pedido de Shopify
+// empieza en la ficha de producto. Sin esta tabla no se puede distinguir
+// "nadie hace clic" de "hacen clic y no compran", que son dos problemas
+// distintos con arreglos distintos.
+//
+// Se une con dp_page_visits_v1 por `fromPath` (lecturas del post) y con el
+// pedido de Shopify por `utmCampaign`, que ya viaja en el enlace y llega al
+// landing_site del pedido.
+model OutboundClick {
+  id       String @id @default(cuid())
+  /** Pagina desde la que se hizo clic, p. ej. /blog/25-colombian-slang-phrases-to-sound-local. */
+  fromPath String
+  /** Destino completo, con sus UTM. */
+  href     String
+  destHost String
+  /** Handle del producto de Shopify cuando el destino es una ficha. */
+  product     String?
+  utmCampaign String?
+  /**
+   * Cual de los enlaces a la tienda de esa pagina se pulso, contando desde
+   * arriba. Los posts llevan el mismo enlace a mitad del articulo y otra vez
+   * al final; sin esto no se sabe cual de las dos posiciones funciona.
+   */
+  linkIndex Int?
+  /** Texto del enlace, para comparar redacciones del reclamo. */
+  label          String?
+  country        String?
+  deviceCategory String?
+  userAgent      String?
+  ipHashed       String?
+  /** Mismo cookie de sesion que dp_page_visits_v1, para cruzar lectura y clic. */
+  sessionId String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([fromPath])
+  @@index([product])
+  @@index([sessionId])
+  @@map("dp_outbound_clicks_v1")
+}
+
 model ClaimToken {
   id             String    @id @default(cuid())
   token          String    @unique
