@@ -1,0 +1,442 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "chambre,lampe,thé,armoire",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "chambre",
+     "answer": "a bedroom",
+     "options": [
+      "a bedroom",
+      "a lamp",
+      "tea",
+      "a wardrobe"
+     ]
+    },
+    {
+     "word": "lampe",
+     "answer": "a lamp",
+     "options": [
+      "a bedroom",
+      "a lamp",
+      "tea",
+      "a wardrobe"
+     ]
+    },
+    {
+     "word": "thé",
+     "answer": "tea",
+     "options": [
+      "a bedroom",
+      "a lamp",
+      "tea",
+      "a wardrobe"
+     ]
+    },
+    {
+     "word": "armoire",
+     "answer": "a wardrobe",
+     "options": [
+      "a bedroom",
+      "a lamp",
+      "tea",
+      "a wardrobe"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la semaine",
+  "sentence": "Le carton reste fermé deux [[semaines]] dans un coin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "weeks",
+   "options": [
+    "weeks",
+    "hours",
+    "months",
+    "years"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "Le carton reste fermé deux semaines dans un coin.",
+    "targetWord": "semaines",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "passer",
+  "sentence": "Elle [[passe]] devant le carton tous les matins.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to walk by",
+   "options": [
+    "to walk by",
+    "to stop",
+    "to enter",
+    "to climb"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "Elle passe devant le carton tous les matins.",
+    "targetWord": "passe",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dedans",
+  "sentence": "[[Dedans]], il y a la couverture de sa grand-mère.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "inside",
+   "options": [
+    "inside",
+    "outside",
+    "above",
+    "behind"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "Dedans, il y a la couverture de sa grand-mère.",
+    "targetWord": "Dedans",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rentrer",
+  "sentence": "La voisine [[rentre]] de son travail de nuit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come home",
+   "options": [
+    "to come home",
+    "to leave",
+    "to sleep",
+    "to work"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "La voisine rentre de son travail de nuit.",
+    "targetWord": "rentre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "allumer",
+  "sentence": "Elle pose la lampe par terre et l'[[allume]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to switch on",
+   "options": [
+    "to switch on",
+    "to switch off",
+    "to move",
+    "to break"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "Elle pose la lampe par terre et l'allume.",
+    "targetWord": "allume",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la fois",
+  "sentence": "Elle s'endort avant minuit, pour la première [[fois]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a time",
+   "options": [
+    "a time",
+    "a night",
+    "a week",
+    "a moment"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "Elle s'endort avant minuit, pour la première fois.",
+    "targetWord": "fois",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le travail",
+  "sentence": "La voisine rentre de son [[travail]] de nuit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "work",
+   "options": [
+    "work",
+    "holiday",
+    "school",
+    "dinner"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "La voisine rentre de son travail de nuit.",
+    "targetWord": "travail",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ranger",
+  "sentence": "“Je [[range]] un carton”, répond la jeune femme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tidy up",
+   "options": [
+    "to tidy up",
+    "to open",
+    "to carry",
+    "to buy"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "“Je range un carton”, répond la jeune femme.",
+    "targetWord": "range",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rire",
+  "sentence": "“Demain, avec le thé”, promet-elle, et les deux [[rient]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to laugh",
+   "options": [
+    "to laugh",
+    "to cry",
+    "to shout",
+    "to sing"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "“Demain, avec le thé”, promet-elle, et les deux rient.",
+    "targetWord": "rient",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fermé",
+  "sentence": "Un carton reste [[fermé]] deux semaines dans un coin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "closed",
+   "options": [
+    "closed",
+    "open",
+    "empty",
+    "broken"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "Un carton reste fermé deux semaines dans un coin.",
+    "targetWord": "fermé",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le coin",
+  "sentence": "Le carton reste dans un [[coin]] de la chambre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a corner",
+   "options": [
+    "a corner",
+    "a shelf",
+    "a door",
+    "a floor"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "Le carton reste dans un coin de la chambre.",
+    "targetWord": "coin",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le ruban",
+  "sentence": "Un soir, elle coupe le [[ruban]] avec sa clé.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a tape strip",
+   "options": [
+    "a tape strip",
+    "a rope",
+    "a bag",
+    "a paper"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "Un soir, elle coupe le ruban avec sa clé.",
+    "targetWord": "ruban",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la couverture",
+  "sentence": "Dedans, il y a la [[couverture]] de sa grand-mère.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a blanket",
+   "options": [
+    "a blanket",
+    "a coat",
+    "a towel",
+    "a sheet of paper"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "Dedans, il y a la couverture de sa grand-mère.",
+    "targetWord": "couverture",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la grand-mère",
+  "sentence": "Dedans, il y a la couverture de sa [[grand-mère]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a grandmother",
+   "options": [
+    "a grandmother",
+    "a mother",
+    "an aunt",
+    "a sister"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "Dedans, il y a la couverture de sa grand-mère.",
+    "targetWord": "grand-mère",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "demander",
+  "sentence": "“Vous êtes réveillée aussi ?”, [[demande]]-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask",
+   "options": [
+    "to ask",
+    "to answer",
+    "to add",
+    "to repeat"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "“Vous êtes réveillée aussi ?”, demande-t-elle.",
+    "targetWord": "demande",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jaune",
+  "sentence": "La chambre devient [[jaune]] et la laine tient chaud.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "yellow",
+   "options": [
+    "yellow",
+    "green",
+    "black",
+    "white"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "La chambre devient jaune et la laine tient chaud.",
+    "targetWord": "jaune",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "coupe",
+  "sentence": "Un soir, elle _____ le ruban avec sa clé.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "coupe",
+   "options": [
+    "coupe",
+    "ferme",
+    "range",
+    "porte"
+   ],
+   "translation": "One evening she _____ the tape with her key.",
+   "optionTranslations": [
+    "cuts",
+    "closes",
+    "tidies",
+    "carries"
+   ],
+   "audioClip": {
+    "storySlug": "trop-grande-pour-le-lit",
+    "storySource": "user",
+    "sentence": "Un soir, elle coupe le ruban avec sa clé.",
+    "targetWord": "coupe",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

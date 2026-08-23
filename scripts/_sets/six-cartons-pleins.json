@@ -1,0 +1,495 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "dimanche,cuisine,pain,pomme",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "dimanche",
+     "answer": "Sunday",
+     "options": [
+      "Sunday",
+      "a kitchen",
+      "bread",
+      "an apple"
+     ]
+    },
+    {
+     "word": "cuisine",
+     "answer": "a kitchen",
+     "options": [
+      "Sunday",
+      "a kitchen",
+      "bread",
+      "an apple"
+     ]
+    },
+    {
+     "word": "pain",
+     "answer": "bread",
+     "options": [
+      "Sunday",
+      "a kitchen",
+      "bread",
+      "an apple"
+     ]
+    },
+    {
+     "word": "pomme",
+     "answer": "an apple",
+     "options": [
+      "Sunday",
+      "a kitchen",
+      "bread",
+      "an apple"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "appeler",
+  "sentence": "À midi pile, sa mère [[appelle]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to phone",
+   "options": [
+    "to phone",
+    "to write",
+    "to visit",
+    "to wait"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "À midi pile, sa mère appelle.",
+    "targetWord": "appelle",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "presque",
+  "sentence": "“[[Presque]] tout est prêt”, répond la jeune femme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "almost",
+   "options": [
+    "almost",
+    "never",
+    "already",
+    "too much"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "“Presque tout est prêt”, répond la jeune femme.",
+    "targetWord": "Presque",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "devant",
+  "sentence": "Elle répond [[devant]] six cartons pleins.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in front of",
+   "options": [
+    "in front of",
+    "behind",
+    "under",
+    "between"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "Elle répond devant six cartons pleins.",
+    "targetWord": "devant",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vrai",
+  "sentence": "Ce n'est pas [[vrai]] et sa mère le sait.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "true",
+   "options": [
+    "true",
+    "false",
+    "strange",
+    "funny"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "Ce n'est pas vrai et sa mère le sait.",
+    "targetWord": "vrai",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "savoir",
+  "sentence": "Ce n'est pas vrai et sa mère le [[sait]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to know",
+   "options": [
+    "to know",
+    "to hide",
+    "to forget",
+    "to doubt"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "Ce n'est pas vrai et sa mère le sait.",
+    "targetWord": "sait",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "manger",
+  "sentence": "“Tu [[manges]] assez ?”, demande sa mère.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to eat",
+   "options": [
+    "to eat",
+    "to sleep",
+    "to work",
+    "to walk"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "“Tu manges assez ?”, demande sa mère.",
+    "targetWord": "manges",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se lever",
+  "sentence": "Après, elle se [[lève]] et ouvre un carton.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get up",
+   "options": [
+    "to get up",
+    "to sit down",
+    "to lie down",
+    "to go out"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "Après, elle se lève et ouvre un carton.",
+    "targetWord": "lève",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'odeur",
+  "sentence": "Dans la cuisine, ça [[sent]] le café.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a smell",
+   "options": [
+    "a smell",
+    "a noise",
+    "a light",
+    "a taste"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "Dans la cuisine, ça sent le café.",
+    "targetWord": "sent",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plein",
+  "sentence": "Elle répond devant six cartons [[pleins]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "full",
+   "options": [
+    "full",
+    "empty",
+    "open",
+    "broken"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "Elle répond devant six cartons pleins.",
+    "targetWord": "pleins",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "personne",
+  "sentence": "L'appel dure et [[personne]] ne veut raccrocher.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nobody",
+   "options": [
+    "nobody",
+    "everybody",
+    "somebody",
+    "anybody"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "L'appel dure et personne ne veut raccrocher.",
+    "targetWord": "personne",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rien",
+  "sentence": "Le radiateur est vieux et ne chauffe [[rien]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nothing",
+   "options": [
+    "nothing",
+    "everything",
+    "something",
+    "a little"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "Le radiateur est vieux et ne chauffe rien.",
+    "targetWord": "rien",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le voisin",
+  "sentence": "“Ton père a réparé le toit du [[voisin]].”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a neighbour",
+   "options": [
+    "a neighbour",
+    "a workmate",
+    "a cousin",
+    "a client"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "“Ton père a réparé le toit du voisin.”",
+    "targetWord": "voisin",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le carton",
+  "sentence": "Trois [[cartons]] rangés avant midi, le dimanche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "boxes",
+   "options": [
+    "boxes",
+    "shelves",
+    "chairs",
+    "bags"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "Trois cartons rangés avant midi, le dimanche.",
+    "targetWord": "cartons",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "assez",
+  "sentence": "“Tu manges [[assez]] ?”, demande sa mère.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "enough",
+   "options": [
+    "enough",
+    "too much",
+    "too little",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "“Tu manges assez ?”, demande sa mère.",
+    "targetWord": "assez",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la mairie",
+  "sentence": "“La [[mairie]] cherche quelqu'un”, ajoute sa mère.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the town hall",
+   "options": [
+    "the town hall",
+    "the market",
+    "the school",
+    "the station"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "“La mairie cherche quelqu'un”, ajoute sa mère.",
+    "targetWord": "mairie",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ajouter",
+  "sentence": "“Et il a vendu la voiture”, [[ajoute]]-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to add",
+   "options": [
+    "to add",
+    "to answer",
+    "to repeat",
+    "to shout"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "“Et il a vendu la voiture”, ajoute-t-elle.",
+    "targetWord": "ajoute",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "deux",
+  "sentence": "Le travail dure [[deux]] ans, dit sa mère.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "two",
+   "options": [
+    "two",
+    "one",
+    "three",
+    "ten"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "Le travail dure deux ans, dit sa mère.",
+    "targetWord": "deux",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "pleut",
+  "sentence": "Depuis mardi, il _____ tous les jours.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pleut",
+   "options": [
+    "pleut",
+    "neige",
+    "chauffe",
+    "sonne"
+   ],
+   "translation": "Since Tuesday, it _____ every day.",
+   "optionTranslations": [
+    "rains",
+    "snows",
+    "heats",
+    "rings"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "Depuis mardi, il pleut tous les jours.",
+    "targetWord": "pleut",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "dure",
+  "sentence": "Le nouveau travail _____ deux ans.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dure",
+   "options": [
+    "dure",
+    "coûte",
+    "monte",
+    "ferme"
+   ],
+   "translation": "The new job _____ two years.",
+   "optionTranslations": [
+    "lasts",
+    "costs",
+    "goes up",
+    "closes"
+   ],
+   "audioClip": {
+    "storySlug": "six-cartons-pleins",
+    "storySource": "user",
+    "sentence": "Le nouveau travail dure deux ans.",
+    "targetWord": "dure",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

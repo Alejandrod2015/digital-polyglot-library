@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la cour,le poulet,la tarte,le saladier",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la cour",
+     "answer": "the open space inside a building",
+     "options": [
+      "the open space inside a building",
+      "chicken",
+      "an open tart",
+      "a salad bowl"
+     ]
+    },
+    {
+     "word": "le poulet",
+     "answer": "chicken",
+     "options": [
+      "the open space inside a building",
+      "chicken",
+      "an open tart",
+      "a salad bowl"
+     ]
+    },
+    {
+     "word": "la tarte",
+     "answer": "an open tart",
+     "options": [
+      "the open space inside a building",
+      "chicken",
+      "an open tart",
+      "a salad bowl"
+     ]
+    },
+    {
+     "word": "le saladier",
+     "answer": "a salad bowl",
+     "options": [
+      "the open space inside a building",
+      "chicken",
+      "an open tart",
+      "a salad bowl"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'immeuble",
+  "sentence": "Les prénoms de tout l'[[immeuble]] sont dessus.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a block of flats",
+   "options": [
+    "a block of flats",
+    "a small house",
+    "a shop",
+    "a school"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "Les prénoms de tout l'immeuble sont dessus.",
+    "targetWord": "immeuble",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aussi",
+  "sentence": "Sa voisine travaille, et son amie [[aussi]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "as well",
+   "options": [
+    "as well",
+    "instead",
+    "never",
+    "later"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "Sa voisine travaille, et son amie aussi.",
+    "targetWord": "aussi",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la citronnelle",
+  "sentence": "La cour sent la [[citronnelle]] et le poulet froid.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the plant burnt against insects",
+   "options": [
+    "the plant burnt against insects",
+    "a summer flower",
+    "a strong cheese",
+    "a cold drink"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "La cour sent la citronnelle et le poulet froid.",
+    "targetWord": "citronnelle",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la dame",
+  "sentence": "“Vous êtes celle du quatrième”, dit une [[dame]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a polite word for a woman",
+   "options": [
+    "a polite word for a woman",
+    "a young girl",
+    "a polite word for a man",
+    "a shop owner"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "“Vous êtes celle du quatrième”, dit une dame.",
+    "targetWord": "dame",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "Noël",
+  "sentence": "“Celle qui range ses cartons depuis [[Noël]]”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the winter holiday in December",
+   "options": [
+    "the winter holiday in December",
+    "the summer holiday",
+    "the new school year",
+    "a birthday"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "“Celle qui range ses cartons depuis Noël”, dit-elle.",
+    "targetWord": "Noël",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sien",
+  "sentence": "Elle lit le [[sien]], tout en bas de la liste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the one that belongs to that person",
+   "options": [
+    "the one that belongs to that person",
+    "everybody's",
+    "nobody's",
+    "the first one"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "Elle lit le sien, tout en bas de la liste.",
+    "targetWord": "sien",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la chaise",
+  "sentence": "La [[chaise]] jaune reste vide deux heures.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a seat with four legs",
+   "options": [
+    "a seat with four legs",
+    "a table",
+    "a bowl",
+    "a door"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "La chaise jaune reste vide deux heures.",
+    "targetWord": "chaise",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "alors",
+  "sentence": "“[[Alors]] pas de tarte”, dit sa voisine.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "in that case",
+   "options": [
+    "in that case",
+    "before that",
+    "again",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "“Alors pas de tarte”, dit sa voisine.",
+    "targetWord": "Alors",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "septembre",
+  "sentence": "“Depuis [[septembre]]”, corrige-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the month when school starts again",
+   "options": [
+    "the month when school starts again",
+    "the coldest month",
+    "the first month",
+    "the last month"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "“Depuis septembre”, corrige-t-elle.",
+    "targetWord": "septembre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'entrée",
+  "sentence": "Une affiche apparaît dans l'[[entrée]] de l'immeuble.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the way into a building",
+   "options": [
+    "the way into a building",
+    "the top floor",
+    "the back garden",
+    "the cellar"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "Une affiche apparaît dans l'entrée de l'immeuble.",
+    "targetWord": "entrée",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "onze",
+  "sentence": "À [[onze]] heures, son amie arrive enfin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "eleven",
+   "options": [
+    "eleven",
+    "nine",
+    "ten",
+    "twelve"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "À onze heures, son amie arrive enfin.",
+    "targetWord": "onze",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "déjà",
+  "sentence": "“Il y en a [[déjà]] quatre”, dit sa voisine.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "before now",
+   "options": [
+    "before now",
+    "not yet",
+    "only later",
+    "almost"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "“Il y en a déjà quatre”, dit sa voisine.",
+    "targetWord": "déjà",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quatrième",
+  "sentence": "“Vous êtes celle du [[quatrième]]”, dit une dame.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the one after the third",
+   "options": [
+    "the one after the third",
+    "the first",
+    "the second",
+    "the last"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "“Vous êtes celle du quatrième”, dit une dame.",
+    "targetWord": "quatrième",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "fête",
+  "sentence": "Vendredi, il y a une _____ dans la cour.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fête",
+   "options": [
+    "fête",
+    "réunion",
+    "file",
+    "tarte"
+   ],
+   "translation": "On Friday there is a _____ in the courtyard.",
+   "optionTranslations": [
+    "party",
+    "meeting",
+    "queue",
+    "tart"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "Vendredi, il y a une fête dans la cour.",
+    "targetWord": "fête",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "salé",
+  "sentence": "Le poulet froid est _____ et se mange avec les doigts.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "salé",
+   "options": [
+    "salé",
+    "froid",
+    "cher",
+    "vide"
+   ],
+   "translation": "The cold chicken is _____ and you eat it with your fingers.",
+   "optionTranslations": [
+    "salty",
+    "cold",
+    "expensive",
+    "empty"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "Le poulet froid est salé et se mange avec les doigts.",
+    "targetWord": "salé",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "lire",
+  "sentence": "Elle cherche son prénom pour le _____ sur la liste.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lire",
+   "options": [
+    "lire",
+    "vendre",
+    "laver",
+    "porter"
+   ],
+   "translation": "She looks for her first name to _____ it on the list.",
+   "optionTranslations": [
+    "read",
+    "sell",
+    "wash",
+    "carry"
+   ],
+   "audioClip": {
+    "storySlug": "sa-chaise-reste-vide-deux-heures",
+    "storySource": "user",
+    "sentence": "Elle cherche son prénom pour le lire sur la liste.",
+    "targetWord": "lire",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

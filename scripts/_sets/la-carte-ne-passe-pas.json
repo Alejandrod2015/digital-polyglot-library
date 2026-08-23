@@ -1,0 +1,456 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le lait,le riz,le savon,le magasin",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "le lait",
+     "answer": "milk",
+     "options": [
+      "milk",
+      "rice",
+      "soap",
+      "a shop"
+     ]
+    },
+    {
+     "word": "le riz",
+     "answer": "rice",
+     "options": [
+      "milk",
+      "rice",
+      "soap",
+      "a shop"
+     ]
+    },
+    {
+     "word": "le savon",
+     "answer": "soap",
+     "options": [
+      "milk",
+      "rice",
+      "soap",
+      "a shop"
+     ]
+    },
+    {
+     "word": "le magasin",
+     "answer": "a shop",
+     "options": [
+      "milk",
+      "rice",
+      "soap",
+      "a shop"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le rayon",
+  "sentence": "Elle cherche le savon dans un [[rayon]] vide.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a shop aisle shelf",
+   "options": [
+    "a shop aisle shelf",
+    "a basket",
+    "a till",
+    "a back door"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "Elle cherche le savon dans un rayon vide.",
+    "targetWord": "rayon",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la liste",
+  "sentence": "Elle marche avec une [[liste]] sur son téléphone.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a shopping list",
+   "options": [
+    "a shopping list",
+    "a photo",
+    "a map",
+    "a message"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "Elle marche avec une liste sur son téléphone.",
+    "targetWord": "liste",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la caisse",
+  "sentence": "À la [[caisse]], la carte ne passe pas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the checkout",
+   "options": [
+    "the checkout",
+    "the entrance",
+    "the shelf",
+    "the street"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "À la caisse, la carte ne passe pas.",
+    "targetWord": "caisse",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "essayer",
+  "sentence": "Elle [[essaie]] de payer avec sa carte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to try",
+   "options": [
+    "to try",
+    "to refuse",
+    "to wait",
+    "to leave"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "Elle essaie de payer avec sa carte.",
+    "targetWord": "essaie",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'écran",
+  "sentence": "Le petit [[écran]] répond non.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a screen",
+   "options": [
+    "a screen",
+    "a button",
+    "a card",
+    "a bell"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "Le petit écran répond non.",
+    "targetWord": "écran",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la cliente",
+  "sentence": "Une [[cliente]] attend derrière elle avec son panier.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a woman shopping",
+   "options": [
+    "a woman shopping",
+    "a shop worker",
+    "a friend",
+    "a neighbour"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "Une cliente attend derrière elle avec son panier.",
+    "targetWord": "cliente",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la boîte",
+  "sentence": "Elle pose la [[boîte]] d'œufs sur le tapis.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a box",
+   "options": [
+    "a box",
+    "a bottle",
+    "a bag",
+    "a plate"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "Elle pose la boîte d'œufs sur le tapis.",
+    "targetWord": "boîte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "il faut",
+  "sentence": "Pour la semaine, [[il faut]] du lait et du riz.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "you have to",
+   "options": [
+    "you have to",
+    "you may",
+    "you want",
+    "you forget"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "Pour la semaine, il faut du lait et du riz.",
+    "targetWord": "il faut",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la peur",
+  "sentence": "La [[peur]] du petit écran est déjà loin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "fear",
+   "options": [
+    "fear",
+    "anger",
+    "joy",
+    "hunger"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "La peur du petit écran est déjà loin.",
+    "targetWord": "peur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "deuxième",
+  "sentence": "La [[deuxième]] carte marche mieux que la première.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "second",
+   "options": [
+    "second",
+    "first",
+    "last",
+    "next"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "La deuxième carte marche mieux que la première.",
+    "targetWord": "deuxième",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "poser",
+  "sentence": "Elle [[pose]] la liste près de la caisse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put down",
+   "options": [
+    "to put down",
+    "to pick up",
+    "to throw",
+    "to fold"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "Elle pose la liste près de la caisse.",
+    "targetWord": "pose",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arriver",
+  "sentence": "“Ça [[arrive]] tous les mardis”, dit la cliente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to happen",
+   "options": [
+    "to happen",
+    "to finish",
+    "to start",
+    "to change"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "“Ça arrive tous les mardis”, dit la cliente.",
+    "targetWord": "arrive",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "beaucoup",
+  "sentence": "“Merci [[beaucoup]]”, dit-elle en sortant.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a lot",
+   "options": [
+    "a lot",
+    "a little",
+    "again",
+    "already"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "“Merci beaucoup”, dit-elle en sortant.",
+    "targetWord": "beaucoup",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dernier",
+  "sentence": "“La semaine [[dernière]], j'ai tout laissé ici.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the one just before",
+   "options": [
+    "the one just before",
+    "the next one",
+    "the first one",
+    "this one"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "“La semaine dernière, j'ai tout laissé ici.”",
+    "targetWord": "dernière",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "queue",
+  "sentence": "Tout le monde attend dans la _____ à la caisse.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "queue",
+   "options": [
+    "queue",
+    "boîte",
+    "liste",
+    "rue"
+   ],
+   "translation": "Everybody waits in the _____ at the checkout.",
+   "optionTranslations": [
+    "queue",
+    "box",
+    "list",
+    "street"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "Tout le monde attend dans la queue à la caisse.",
+    "targetWord": "queue",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "code",
+  "sentence": "Elle tape son _____ secret sur le petit écran.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "code",
+   "options": [
+    "code",
+    "nom",
+    "prix",
+    "sac"
+   ],
+   "translation": "She types her secret _____ on the small screen.",
+   "optionTranslations": [
+    "code",
+    "name",
+    "price",
+    "bag"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "Elle tape son code secret sur le petit écran.",
+    "targetWord": "code",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sent",
+  "sentence": "Elle _____ le froid entrer par la fenêtre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sent",
+   "options": [
+    "sent",
+    "ferme",
+    "ouvre",
+    "lave"
+   ],
+   "translation": "She _____ the cold coming in through the window.",
+   "optionTranslations": [
+    "feels",
+    "closes",
+    "opens",
+    "washes"
+   ],
+   "audioClip": {
+    "storySlug": "la-carte-ne-passe-pas",
+    "storySource": "user",
+    "sentence": "Elle sent le froid entrer par la fenêtre.",
+    "targetWord": "sent",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

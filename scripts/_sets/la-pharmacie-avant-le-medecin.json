@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la pharmacie,le sirop,la pastille,la croix",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la pharmacie",
+     "answer": "the shop that sells medicine",
+     "options": [
+      "the shop that sells medicine",
+      "thick liquid medicine",
+      "a medicine sweet you suck",
+      "the shape of two crossing lines"
+     ]
+    },
+    {
+     "word": "le sirop",
+     "answer": "thick liquid medicine",
+     "options": [
+      "the shop that sells medicine",
+      "thick liquid medicine",
+      "a medicine sweet you suck",
+      "the shape of two crossing lines"
+     ]
+    },
+    {
+     "word": "la pastille",
+     "answer": "a medicine sweet you suck",
+     "options": [
+      "the shop that sells medicine",
+      "thick liquid medicine",
+      "a medicine sweet you suck",
+      "the shape of two crossing lines"
+     ]
+    },
+    {
+     "word": "la croix",
+     "answer": "the shape of two crossing lines",
+     "options": [
+      "the shop that sells medicine",
+      "thick liquid medicine",
+      "a medicine sweet you suck",
+      "the shape of two crossing lines"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la gorge",
+  "sentence": "Sa [[gorge]] fait mal depuis mardi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the inside of your neck",
+   "options": [
+    "the inside of your neck",
+    "your stomach",
+    "your head",
+    "your back"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "Sa gorge fait mal depuis mardi.",
+    "targetWord": "gorge",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le médecin",
+  "sentence": "Elle cherche un [[médecin]] sur son téléphone.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a doctor",
+   "options": [
+    "a doctor",
+    "a nurse",
+    "a dentist",
+    "a chemist"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "Elle cherche un médecin sur son téléphone.",
+    "targetWord": "médecin",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "briller",
+  "sentence": "La croix verte [[brille]] sous la pluie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to shine",
+   "options": [
+    "to shine",
+    "to go out",
+    "to fall",
+    "to open"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "La croix verte brille sous la pluie.",
+    "targetWord": "brille",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la fièvre",
+  "sentence": "“J'ai de la [[fièvre]] le soir”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a body too hot from illness",
+   "options": [
+    "a body too hot from illness",
+    "a bad cough",
+    "a cold nose",
+    "a sore foot"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "“J'ai de la fièvre le soir”, dit-elle.",
+    "targetWord": "fièvre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le ticket",
+  "sentence": "Elle garde le [[ticket]] dans sa poche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the paper that shows you paid",
+   "options": [
+    "the paper that shows you paid",
+    "the medicine box",
+    "the doctor's paper",
+    "the shopping list"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "Elle garde le ticket dans sa poche.",
+    "targetWord": "ticket",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le rendez-vous",
+  "sentence": "Elle repart sans [[rendez-vous]] et avec un sirop.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a time agreed to meet",
+   "options": [
+    "a time agreed to meet",
+    "a queue number",
+    "a price",
+    "a phone call"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "Elle repart sans rendez-vous et avec un sirop.",
+    "targetWord": "rendez-vous",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "possible",
+  "sentence": "“Parlez moins, si c'est [[possible]]”, ajoute-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "that can really happen",
+   "options": [
+    "that can really happen",
+    "that is forbidden",
+    "that is easy",
+    "that is useful"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "“Parlez moins, si c'est possible”, ajoute-t-elle.",
+    "targetWord": "possible",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la blouse",
+  "sentence": "Elle porte une [[blouse]] blanche derrière le comptoir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a white work coat",
+   "options": [
+    "a white work coat",
+    "a warm coat",
+    "an apron",
+    "a shirt"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "Elle porte une blouse blanche derrière le comptoir.",
+    "targetWord": "blouse",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fumer",
+  "sentence": "“Vous [[fumez]] ?”, demande-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to smoke",
+   "options": [
+    "to smoke",
+    "to shout",
+    "to run",
+    "to drink"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "“Vous fumez ?”, demande-t-elle.",
+    "targetWord": "fumez",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la journée",
+  "sentence": "“Je parle toute la [[journée]] au travail.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the whole day",
+   "options": [
+    "the whole day",
+    "the whole night",
+    "one single hour",
+    "the weekend"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "“Je parle toute la journée au travail.”",
+    "targetWord": "journée",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'excuse",
+  "sentence": "Maintenant elle a une bonne [[excuse]] pour ne pas appeler.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a reason not to do something",
+   "options": [
+    "a reason not to do something",
+    "a promise",
+    "a question",
+    "a gift"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "Maintenant elle a une bonne excuse pour ne pas appeler.",
+    "targetWord": "excuse",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la femme",
+  "sentence": "Une [[femme]] écoute sans se presser derrière le comptoir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a grown woman",
+   "options": [
+    "a grown woman",
+    "a young girl",
+    "a grown man",
+    "a small group"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "Une femme écoute sans se presser derrière le comptoir.",
+    "targetWord": "femme",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mardi",
+  "sentence": "“Depuis [[mardi]]”, répond-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the second day of the week",
+   "options": [
+    "the second day of the week",
+    "the first day",
+    "the last day",
+    "the weekend"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "“Depuis mardi”, répond-elle.",
+    "targetWord": "mardi",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mal",
+  "sentence": "Sa gorge fait _____ quand elle parle.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mal",
+   "options": [
+    "mal",
+    "froid",
+    "peur",
+    "bruit"
+   ],
+   "translation": "Her throat _____ when she speaks.",
+   "optionTranslations": [
+    "hurts",
+    "is cold",
+    "frightens",
+    "makes noise"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "Sa gorge fait mal quand elle parle.",
+    "targetWord": "mal",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sucré",
+  "sentence": "Le sirop est trop _____ pour elle.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sucré",
+   "options": [
+    "sucré",
+    "cher",
+    "froid",
+    "lourd"
+   ],
+   "translation": "The syrup is too _____ for her.",
+   "optionTranslations": [
+    "sweet",
+    "expensive",
+    "cold",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "Le sirop est trop sucré pour elle.",
+    "targetWord": "sucré",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "trouve",
+  "sentence": "Elle cherche un médecin mais ne _____ personne.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "trouve",
+   "options": [
+    "trouve",
+    "connaît",
+    "appelle",
+    "paie"
+   ],
+   "translation": "She looks for a doctor but does not _____ anybody.",
+   "optionTranslations": [
+    "find",
+    "know",
+    "call",
+    "pay"
+   ],
+   "audioClip": {
+    "storySlug": "la-pharmacie-avant-le-medecin",
+    "storySource": "user",
+    "sentence": "Elle cherche un médecin mais ne trouve personne.",
+    "targetWord": "trouve",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

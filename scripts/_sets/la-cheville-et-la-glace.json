@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la cheville,le genou,la glace,le mur",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la cheville",
+     "answer": "an ankle",
+     "options": [
+      "an ankle",
+      "a knee",
+      "ice",
+      "a wall"
+     ]
+    },
+    {
+     "word": "le genou",
+     "answer": "a knee",
+     "options": [
+      "an ankle",
+      "a knee",
+      "ice",
+      "a wall"
+     ]
+    },
+    {
+     "word": "la glace",
+     "answer": "ice",
+     "options": [
+      "an ankle",
+      "a knee",
+      "ice",
+      "a wall"
+     ]
+    },
+    {
+     "word": "le mur",
+     "answer": "a wall",
+     "options": [
+      "an ankle",
+      "a knee",
+      "ice",
+      "a wall"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "glisser",
+  "sentence": "Sa chaussure [[glisse]] sur une marche mouillée.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to slide and lose your balance",
+   "options": [
+    "to slide and lose your balance",
+    "to stop",
+    "to break",
+    "to stick"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "Sa chaussure glisse sur une marche mouillée.",
+    "targetWord": "glisse",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "respirer",
+  "sentence": "Elle s'assoit et [[respire]] doucement.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take air in and out",
+   "options": [
+    "to take air in and out",
+    "to shout",
+    "to sleep",
+    "to stand up"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "Elle s'assoit et respire doucement.",
+    "targetWord": "respire",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "croire",
+  "sentence": "“Je [[crois]]”, répond-elle. “Ça tourne un peu.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to think it is true",
+   "options": [
+    "to think it is true",
+    "to know for sure",
+    "to doubt",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "“Je crois”, répond-elle. “Ça tourne un peu.”",
+    "targetWord": "crois",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bleu",
+  "sentence": "Sa cheville devient [[bleue]] pendant la nuit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "blue",
+   "options": [
+    "blue",
+    "red",
+    "white",
+    "brown"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "Sa cheville devient bleue pendant la nuit.",
+    "targetWord": "bleue",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gros",
+  "sentence": "Sa cheville est [[grosse]] et elle ne marche pas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "big and round",
+   "options": [
+    "big and round",
+    "thin",
+    "warm",
+    "dry"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "Sa cheville est grosse et elle ne marche pas.",
+    "targetWord": "grosse",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "s'appuyer",
+  "sentence": "“[[Appuyez]] votre bras sur moi”, dit l'homme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put your weight on",
+   "options": [
+    "to put your weight on",
+    "to lift up",
+    "to let go",
+    "to hide"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "“Appuyez votre bras sur moi”, dit l'homme.",
+    "targetWord": "Appuyez",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "s'asseoir",
+  "sentence": "Elle [[s'assoit]] sur une marche froide.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sit down",
+   "options": [
+    "to sit down",
+    "to stand up",
+    "to lie down",
+    "to walk away"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "Elle s'assoit sur une marche froide.",
+    "targetWord": "s'assoit",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "repartir",
+  "sentence": "Elle laisse le pain et [[repart]] travailler.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go away again",
+   "options": [
+    "to go away again",
+    "to come back",
+    "to stay",
+    "to sit down"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "Elle laisse le pain et repart travailler.",
+    "targetWord": "repart",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "travailler",
+  "sentence": "Sa voisine [[travaille]] trois nuits par semaine.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to do your job",
+   "options": [
+    "to do your job",
+    "to rest",
+    "to study",
+    "to travel"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "Sa voisine travaille trois nuits par semaine.",
+    "targetWord": "travaille",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "descendre",
+  "sentence": "Elle [[descend]] les marches avec la main sur le mur.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go down",
+   "options": [
+    "to go down",
+    "to go up",
+    "to stop",
+    "to count"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "Elle descend les marches avec la main sur le mur.",
+    "targetWord": "descend",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aucun",
+  "sentence": "Pendant quatre jours, elle ne compte [[aucune]] marche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not a single one",
+   "options": [
+    "not a single one",
+    "every one",
+    "a few",
+    "half of them"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "Pendant quatre jours, elle ne compte aucune marche.",
+    "targetWord": "aucune",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trop",
+  "sentence": "Elle descend l'escalier [[trop]] vite.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "more than what is good",
+   "options": [
+    "more than what is good",
+    "not enough",
+    "almost",
+    "exactly right"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "Elle descend l'escalier trop vite.",
+    "targetWord": "trop",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "un peu",
+  "sentence": "“Ça tourne [[un peu]]”, répond-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a small amount",
+   "options": [
+    "a small amount",
+    "a great deal",
+    "not at all",
+    "twice"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "“Ça tourne un peu”, répond-elle.",
+    "targetWord": "un peu",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "douleur",
+  "sentence": "Sa cheville tourne et la _____ monte d'un coup.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "douleur",
+   "options": [
+    "douleur",
+    "glace",
+    "pluie",
+    "fièvre"
+   ],
+   "translation": "Her ankle twists and the _____ comes up all at once.",
+   "optionTranslations": [
+    "pain",
+    "ice",
+    "rain",
+    "fever"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "Sa cheville tourne et la douleur monte d'un coup.",
+    "targetWord": "douleur",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "pied",
+  "sentence": "Sa chaussure est trop petite et lui fait mal au _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pied",
+   "options": [
+    "pied",
+    "bras",
+    "dos",
+    "nez"
+   ],
+   "translation": "Her shoe is too small and hurts her _____.",
+   "optionTranslations": [
+    "foot",
+    "arm",
+    "back",
+    "nose"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "Sa chaussure est trop petite et lui fait mal au pied.",
+    "targetWord": "pied",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bouger",
+  "sentence": "Le médecin lui dit de ne pas _____ pendant trois jours.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bouger",
+   "options": [
+    "bouger",
+    "manger",
+    "payer",
+    "chanter"
+   ],
+   "translation": "The doctor tells her not to _____ for three days.",
+   "optionTranslations": [
+    "move",
+    "eat",
+    "pay",
+    "sing"
+   ],
+   "audioClip": {
+    "storySlug": "la-cheville-et-la-glace",
+    "storySource": "user",
+    "sentence": "Le médecin lui dit de ne pas bouger pendant trois jours.",
+    "targetWord": "bouger",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

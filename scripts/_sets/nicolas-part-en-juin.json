@@ -1,0 +1,502 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le cours,le carnet,le tableau,le restaurant",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "le cours",
+     "answer": "an evening class",
+     "options": [
+      "an evening class",
+      "a small notebook",
+      "a teacher's board",
+      "a restaurant"
+     ]
+    },
+    {
+     "word": "le carnet",
+     "answer": "a small notebook",
+     "options": [
+      "an evening class",
+      "a small notebook",
+      "a teacher's board",
+      "a restaurant"
+     ]
+    },
+    {
+     "word": "le tableau",
+     "answer": "a teacher's board",
+     "options": [
+      "an evening class",
+      "a small notebook",
+      "a teacher's board",
+      "a restaurant"
+     ]
+    },
+    {
+     "word": "le restaurant",
+     "answer": "a restaurant",
+     "options": [
+      "an evening class",
+      "a small notebook",
+      "a teacher's board",
+      "a restaurant"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "s'inscrire",
+  "sentence": "Elle [[s'inscrit]] au cours du soir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sign up",
+   "options": [
+    "to sign up",
+    "to drop out",
+    "to arrive late",
+    "to pay"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Elle s'inscrit au cours du soir.",
+    "targetWord": "s'inscrit",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le radiateur",
+  "sentence": "La salle sent le [[radiateur]] chaud et le papier.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a room heater",
+   "options": [
+    "a room heater",
+    "an open window",
+    "a coffee machine",
+    "a lamp"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "La salle sent le radiateur chaud et le papier.",
+    "targetWord": "radiateur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la professeure",
+  "sentence": "La [[professeure]] parle lentement, jamais comme à des enfants.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a woman teacher",
+   "options": [
+    "a woman teacher",
+    "a student",
+    "a boss",
+    "a neighbour"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "La professeure parle lentement, jamais comme à des enfants.",
+    "targetWord": "professeure",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la moitié",
+  "sentence": "“Tout le monde ici comprend la [[moitié]]”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "half",
+   "options": [
+    "half",
+    "everything",
+    "nothing",
+    "a little more"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "“Tout le monde ici comprend la moitié”, dit-elle.",
+    "targetWord": "moitié",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "noter",
+  "sentence": "Il [[note]] chaque mot dans un carnet.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to write down",
+   "options": [
+    "to write down",
+    "to read out",
+    "to learn by heart",
+    "to cross out"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Il note chaque mot dans un carnet.",
+    "targetWord": "note",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le mot",
+  "sentence": "Il note chaque [[mot]] du tableau, lentement.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a word",
+   "options": [
+    "a word",
+    "a sentence",
+    "a page",
+    "a letter of the alphabet"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Il note chaque mot du tableau, lentement.",
+    "targetWord": "mot",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lever",
+  "sentence": "Elle [[lève]] la main et se trompe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put up",
+   "options": [
+    "to put up",
+    "to put down",
+    "to shake",
+    "to wash"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Elle lève la main et se trompe.",
+    "targetWord": "lève",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dehors",
+  "sentence": "[[Dehors]] il fait froid et la nuit tombe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "outside",
+   "options": [
+    "outside",
+    "inside",
+    "upstairs",
+    "nearby"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Dehors il fait froid et la nuit tombe.",
+    "targetWord": "Dehors",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gêné",
+  "sentence": "“Personne n'est [[gênée]] ici”, dit la professeure.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "feeling awkward",
+   "options": [
+    "feeling awkward",
+    "feeling tired",
+    "feeling cold",
+    "feeling sure"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "“Personne n'est gênée ici”, dit la professeure.",
+    "targetWord": "gênée",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "douze",
+  "sentence": "Ils sont [[douze]] autour d'une grande table.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "twelve",
+   "options": [
+    "twelve",
+    "ten",
+    "twenty",
+    "two"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Ils sont douze autour d'une grande table.",
+    "targetWord": "douze",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la pause",
+  "sentence": "Pendant la [[pause]], ils boivent un café.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a break",
+   "options": [
+    "a break",
+    "a lesson",
+    "a meal",
+    "a queue"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Pendant la pause, ils boivent un café.",
+    "targetWord": "pause",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "là-bas",
+  "sentence": "“Le travail est meilleur [[là-bas]]”, dit-il.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "over there",
+   "options": [
+    "over there",
+    "here",
+    "upstairs",
+    "next door"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "“Le travail est meilleur là-bas”, dit-il.",
+    "targetWord": "là-bas",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ouvrir",
+  "sentence": "Sa sœur [[ouvre]] un restaurant en juin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to start a new place",
+   "options": [
+    "to start a new place",
+    "to close",
+    "to sell",
+    "to clean"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Sa sœur ouvre un restaurant en juin.",
+    "targetWord": "ouvre",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "recevoir",
+  "sentence": "Elle [[reçoit]] une lettre du cours du soir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get",
+   "options": [
+    "to get",
+    "to send",
+    "to write",
+    "to lose"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Elle reçoit une lettre du cours du soir.",
+    "targetWord": "reçoit",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la sœur",
+  "sentence": "Sa [[sœur]] travaille dans une cuisine.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sister",
+   "options": [
+    "a sister",
+    "a brother",
+    "a mother",
+    "a friend"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Sa sœur travaille dans une cuisine.",
+    "targetWord": "sœur",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seule",
+  "sentence": "Elle se trompe et corrige toute [[seule]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on her own",
+   "options": [
+    "on her own",
+    "with help",
+    "out loud",
+    "twice"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Elle se trompe et corrige toute seule.",
+    "targetWord": "seule",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "papier",
+  "sentence": "Elle écrit son prénom sur un _____ blanc.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "papier",
+   "options": [
+    "papier",
+    "carnet",
+    "tableau",
+    "mur"
+   ],
+   "translation": "She writes her first name on a white _____.",
+   "optionTranslations": [
+    "paper",
+    "notebook",
+    "board",
+    "wall"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Elle écrit son prénom sur un papier blanc.",
+    "targetWord": "papier",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "difficile",
+  "sentence": "Cette phrase est trop _____ pour la première semaine.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "difficile",
+   "options": [
+    "difficile",
+    "chère",
+    "froide",
+    "courte"
+   ],
+   "translation": "This sentence is too _____ for the first week.",
+   "optionTranslations": [
+    "hard",
+    "expensive",
+    "cold",
+    "short"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Cette phrase est trop difficile pour la première semaine.",
+    "targetWord": "difficile",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "main",
+  "sentence": "Elle lève la _____ pour répondre en classe.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "main",
+   "options": [
+    "main",
+    "tête",
+    "porte",
+    "chaise"
+   ],
+   "translation": "She raises her _____ to answer in class.",
+   "optionTranslations": [
+    "hand",
+    "head",
+    "door",
+    "chair"
+   ],
+   "audioClip": {
+    "storySlug": "nicolas-part-en-juin",
+    "storySource": "user",
+    "sentence": "Elle lève la main pour répondre en classe.",
+    "targetWord": "main",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

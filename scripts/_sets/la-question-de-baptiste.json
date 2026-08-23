@@ -1,0 +1,502 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le chef,le dossier,l'ordinateur,la réunion",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "le chef",
+     "answer": "the boss of a team",
+     "options": [
+      "the boss of a team",
+      "a folder of work papers",
+      "a computer",
+      "a work meeting"
+     ]
+    },
+    {
+     "word": "le dossier",
+     "answer": "a folder of work papers",
+     "options": [
+      "the boss of a team",
+      "a folder of work papers",
+      "a computer",
+      "a work meeting"
+     ]
+    },
+    {
+     "word": "l'ordinateur",
+     "answer": "a computer",
+     "options": [
+      "the boss of a team",
+      "a folder of work papers",
+      "a computer",
+      "a work meeting"
+     ]
+    },
+    {
+     "word": "la réunion",
+     "answer": "a work meeting",
+     "options": [
+      "the boss of a team",
+      "a folder of work papers",
+      "a computer",
+      "a work meeting"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "diriger",
+  "sentence": "Il [[dirige]] l'équipe depuis six ans.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be in charge",
+   "options": [
+    "to be in charge",
+    "to join",
+    "to leave",
+    "to help"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "Il dirige l'équipe depuis six ans.",
+    "targetWord": "dirige",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "réfléchir",
+  "sentence": "“Je peux [[réfléchir]] ?”, demande-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to think it over",
+   "options": [
+    "to think it over",
+    "to answer",
+    "to refuse",
+    "to repeat"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "“Je peux réfléchir ?”, demande-t-elle.",
+    "targetWord": "réfléchir",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le fichier",
+  "sentence": "Elle demande le [[fichier]] devant toute la salle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a computer document",
+   "options": [
+    "a computer document",
+    "a paper folder",
+    "a printer",
+    "a screen"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "Elle demande le fichier devant toute la salle.",
+    "targetWord": "fichier",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "silencieux",
+  "sentence": "La salle devient [[silencieuse]] une seconde.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with no sound",
+   "options": [
+    "with no sound",
+    "full",
+    "dark",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "La salle devient silencieuse une seconde.",
+    "targetWord": "silencieuse",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "continuer",
+  "sentence": "La réunion [[continue]] comme si de rien n'était.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to keep going",
+   "options": [
+    "to keep going",
+    "to stop",
+    "to start again",
+    "to end early"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "La réunion continue comme si de rien n'était.",
+    "targetWord": "continue",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "expliquer",
+  "sentence": "Sa collègue lui [[explique]] le problème le soir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make something clear",
+   "options": [
+    "to make something clear",
+    "to hide",
+    "to ask",
+    "to repeat"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "Sa collègue lui explique le problème le soir.",
+    "targetWord": "explique",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la phrase",
+  "sentence": "Elle explique tout en deux [[phrases]], gentiment.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a sentence",
+   "options": [
+    "a sentence",
+    "a word",
+    "a page",
+    "a question"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "Elle explique tout en deux phrases, gentiment.",
+    "targetWord": "phrases",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "proposer",
+  "sentence": "“Un jour, il te [[propose]] le tu”, dit sa collègue.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to offer",
+   "options": [
+    "to offer",
+    "to forbid",
+    "to demand",
+    "to explain"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "“Un jour, il te propose le tu”, dit sa collègue.",
+    "targetWord": "propose",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tutoyer",
+  "sentence": "“On peut se [[tutoyer]], si vous voulez”, dit-il.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to use the familiar you",
+   "options": [
+    "to use the familiar you",
+    "to speak formally",
+    "to speak louder",
+    "to change language"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "“On peut se tutoyer, si vous voulez”, dit-il.",
+    "targetWord": "tutoyer",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "suivant",
+  "sentence": "La semaine [[suivante]], il s'arrête devant son ordinateur.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the one after this",
+   "options": [
+    "the one after this",
+    "the one before",
+    "the first one",
+    "every one"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "La semaine suivante, il s'arrête devant son ordinateur.",
+    "targetWord": "suivante",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le problème",
+  "sentence": "Elle comprend enfin le [[problème]] de la salle silencieuse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a difficulty",
+   "options": [
+    "a difficulty",
+    "a game",
+    "a plan",
+    "a story"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "Elle comprend enfin le problème de la salle silencieuse.",
+    "targetWord": "problème",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le début",
+  "sentence": "“Ici on se dit vous au [[début]]”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the first part",
+   "options": [
+    "the first part",
+    "the end",
+    "the middle",
+    "the whole time"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "“Ici on se dit vous au début”, dit-elle.",
+    "targetWord": "début",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le juin",
+  "sentence": "Il propose deux ans de plus, à partir de [[juin]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the sixth month",
+   "options": [
+    "the sixth month",
+    "the first month",
+    "the last month",
+    "the middle of winter"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "Il propose deux ans de plus, à partir de juin.",
+    "targetWord": "juin",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la question",
+  "sentence": "La [[question]] reste ouverte jusqu'en juin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "something you ask",
+   "options": [
+    "something you ask",
+    "an answer",
+    "a promise",
+    "an order"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "La question reste ouverte jusqu'en juin.",
+    "targetWord": "question",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arrêter",
+  "sentence": "Il s'[[arrête]] devant son ordinateur.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stop",
+   "options": [
+    "to stop",
+    "to sit down",
+    "to turn around",
+    "to knock"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "Il s'arrête devant son ordinateur.",
+    "targetWord": "arrête",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "corriger",
+  "sentence": "Personne ne la [[corrige]] devant les autres.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to put right a mistake",
+   "options": [
+    "to put right a mistake",
+    "to laugh at",
+    "to answer",
+    "to help"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "Personne ne la corrige devant les autres.",
+    "targetWord": "corrige",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "envoie",
+  "sentence": "Elle _____ le fichier à toute l'équipe.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "envoie",
+   "options": [
+    "envoie",
+    "ouvre",
+    "cherche",
+    "imprime"
+   ],
+   "translation": "She _____ the file to the whole team.",
+   "optionTranslations": [
+    "sends",
+    "opens",
+    "looks for",
+    "prints"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "Elle envoie le fichier à toute l'équipe.",
+    "targetWord": "envoie",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bras",
+  "sentence": "Il porte le dossier sous le _____, comme toujours.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bras",
+   "options": [
+    "bras",
+    "pied",
+    "dos",
+    "nez"
+   ],
+   "translation": "He carries the folder under his _____, as always.",
+   "optionTranslations": [
+    "arm",
+    "foot",
+    "back",
+    "nose"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "Il porte le dossier sous le bras, comme toujours.",
+    "targetWord": "bras",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "doucement",
+  "sentence": "Il ne crie jamais: il parle toujours _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "doucement",
+   "options": [
+    "doucement",
+    "vite",
+    "tard",
+    "fort"
+   ],
+   "translation": "He never shouts: he always speaks _____.",
+   "optionTranslations": [
+    "quietly",
+    "fast",
+    "late",
+    "loudly"
+   ],
+   "audioClip": {
+    "storySlug": "la-question-de-baptiste",
+    "storySource": "user",
+    "sentence": "Il ne crie jamais: il parle toujours doucement.",
+    "targetWord": "doucement",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

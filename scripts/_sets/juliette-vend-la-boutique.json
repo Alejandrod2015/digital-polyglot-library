@@ -1,0 +1,479 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la boulangerie,le comptoir,l'affiche,la maison",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la boulangerie",
+     "answer": "a bakery",
+     "options": [
+      "a bakery",
+      "a shop counter",
+      "a notice put on a door",
+      "a house"
+     ]
+    },
+    {
+     "word": "le comptoir",
+     "answer": "a shop counter",
+     "options": [
+      "a bakery",
+      "a shop counter",
+      "a notice put on a door",
+      "a house"
+     ]
+    },
+    {
+     "word": "l'affiche",
+     "answer": "a notice put on a door",
+     "options": [
+      "a bakery",
+      "a shop counter",
+      "a notice put on a door",
+      "a house"
+     ]
+    },
+    {
+     "word": "la maison",
+     "answer": "a house",
+     "options": [
+      "a bakery",
+      "a shop counter",
+      "a notice put on a door",
+      "a house"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le sourire",
+  "sentence": "Elle le dit avec un [[sourire]], sans se fâcher.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a smile",
+   "options": [
+    "a smile",
+    "a laugh",
+    "a shout",
+    "a long look"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "Elle le dit avec un sourire, sans se fâcher.",
+    "targetWord": "sourire",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tard",
+  "sentence": "Elle arrive [[tard]], juste avant la fermeture.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "late",
+   "options": [
+    "late",
+    "early",
+    "quickly",
+    "alone"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "Elle arrive tard, juste avant la fermeture.",
+    "targetWord": "tard",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le lendemain",
+  "sentence": "Le [[lendemain]], une baguette l'attend dans un papier.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the next day",
+   "options": [
+    "the next day",
+    "the day before",
+    "the same evening",
+    "every Sunday"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "Le lendemain, une baguette l'attend dans un papier.",
+    "targetWord": "lendemain",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dessus",
+  "sentence": "Son prénom est écrit [[dessus]], au crayon.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on top of it",
+   "options": [
+    "on top of it",
+    "under it",
+    "next to it",
+    "inside it"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "Son prénom est écrit dessus, au crayon.",
+    "targetWord": "dessus",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'heure",
+  "sentence": "Elle sort du bureau à la même [[heure]] tous les jours.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an hour of the day",
+   "options": [
+    "an hour of the day",
+    "a whole day",
+    "a single minute",
+    "a week"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "Elle sort du bureau à la même heure tous les jours.",
+    "targetWord": "heure",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la demie",
+  "sentence": "Elle sort du bureau à six heures et [[demie]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "half an hour",
+   "options": [
+    "half an hour",
+    "a quarter of an hour",
+    "a whole hour",
+    "two hours"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "Elle sort du bureau à six heures et demie.",
+    "targetWord": "demie",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "rester",
+  "sentence": "Il [[reste]] deux baguettes sur l'étagère.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be still there",
+   "options": [
+    "to be still there",
+    "to be sold out",
+    "to arrive",
+    "to fall"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "Il reste deux baguettes sur l'étagère.",
+    "targetWord": "reste",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "toujours",
+  "sentence": "“Vous venez [[toujours]] tard”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "every time",
+   "options": [
+    "every time",
+    "never",
+    "sometimes",
+    "once"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "“Vous venez toujours tard”, dit-elle.",
+    "targetWord": "toujours",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "venir",
+  "sentence": "“Et si je [[viens]] à huit heures ?”, demande-t-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come",
+   "options": [
+    "to come",
+    "to leave",
+    "to call",
+    "to wait"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "“Et si je viens à huit heures ?”, demande-t-elle.",
+    "targetWord": "viens",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "même",
+  "sentence": "Elle vend le [[même]] pain depuis vingt-deux ans.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not different",
+   "options": [
+    "not different",
+    "brand new",
+    "another one",
+    "the best one"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "Elle vend le même pain depuis vingt-deux ans.",
+    "targetWord": "même",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "garder",
+  "sentence": "“Alors je vous en [[garde]] une”, dit la boulangère.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to keep for somebody",
+   "options": [
+    "to keep for somebody",
+    "to sell",
+    "to eat",
+    "to throw away"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "“Alors je vous en garde une”, dit la boulangère.",
+    "targetWord": "garde",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le prénom",
+  "sentence": "Son [[prénom]] est écrit sur le papier.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a first name",
+   "options": [
+    "a first name",
+    "a family name",
+    "a price",
+    "an address"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "Son prénom est écrit sur le papier.",
+    "targetWord": "prénom",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vendre",
+  "sentence": "Une affiche dit que la boutique est à [[vendre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sell",
+   "options": [
+    "to sell",
+    "to rent",
+    "to close",
+    "to paint"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "Une affiche dit que la boutique est à vendre.",
+    "targetWord": "vendre",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "suffire",
+  "sentence": "“Vingt-deux ans, ça [[suffit]]”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to be enough",
+   "options": [
+    "to be enough",
+    "to be too little",
+    "to be hard",
+    "to be over"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "“Vingt-deux ans, ça suffit”, dit-elle.",
+    "targetWord": "suffit",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apparaître",
+  "sentence": "Une affiche [[apparaît]] sur la porte en avril.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to appear",
+   "options": [
+    "to appear",
+    "to fall",
+    "to disappear",
+    "to change"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "Une affiche apparaît sur la porte en avril.",
+    "targetWord": "apparaît",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "coûte",
+  "sentence": "Une baguette _____ un peu plus d'un euro.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "coûte",
+   "options": [
+    "coûte",
+    "pèse",
+    "dure",
+    "monte"
+   ],
+   "translation": "A baguette _____ a little more than one euro.",
+   "optionTranslations": [
+    "costs",
+    "weighs",
+    "lasts",
+    "goes up"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "Une baguette coûte un peu plus d'un euro.",
+    "targetWord": "coûte",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sec",
+  "sentence": "Le pain d'hier est trop _____ pour le manger.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sec",
+   "options": [
+    "sec",
+    "chaud",
+    "cher",
+    "lourd"
+   ],
+   "translation": "Yesterday's bread is too _____ to eat.",
+   "optionTranslations": [
+    "dry",
+    "hot",
+    "expensive",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "Le pain d'hier est trop sec pour le manger.",
+    "targetWord": "sec",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "chaude",
+  "sentence": "La baguette sort du four et elle est encore _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "chaude",
+   "options": [
+    "chaude",
+    "sèche",
+    "vieille",
+    "lourde"
+   ],
+   "translation": "The baguette comes out of the oven and is still _____.",
+   "optionTranslations": [
+    "warm",
+    "dry",
+    "old",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "juliette-vend-la-boutique",
+    "storySource": "user",
+    "sentence": "La baguette sort du four et elle est encore chaude.",
+    "targetWord": "chaude",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,502 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le pont,le bureau,le trottoir,le bar",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "le pont",
+     "answer": "a bridge",
+     "options": [
+      "a bridge",
+      "an office",
+      "a pavement",
+      "a bar"
+     ]
+    },
+    {
+     "word": "le bureau",
+     "answer": "an office",
+     "options": [
+      "a bridge",
+      "an office",
+      "a pavement",
+      "a bar"
+     ]
+    },
+    {
+     "word": "le trottoir",
+     "answer": "a pavement",
+     "options": [
+      "a bridge",
+      "an office",
+      "a pavement",
+      "a bar"
+     ]
+    },
+    {
+     "word": "le bar",
+     "answer": "a bar",
+     "options": [
+      "a bridge",
+      "an office",
+      "a pavement",
+      "a bar"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sortir",
+  "sentence": "À six heures, elle [[sort]] du bureau.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go out",
+   "options": [
+    "to go out",
+    "to come in",
+    "to stay",
+    "to sleep"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "À six heures, elle sort du bureau.",
+    "targetWord": "sort",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tourner",
+  "sentence": "Elle [[tourne]] au bout de la rue, sans réfléchir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to turn",
+   "options": [
+    "to turn",
+    "to run",
+    "to stop",
+    "to cross"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Elle tourne au bout de la rue, sans réfléchir.",
+    "targetWord": "tourne",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "laisser",
+  "sentence": "Le tram passe et elle le [[laisse]] partir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to let go",
+   "options": [
+    "to let go",
+    "to stop",
+    "to take",
+    "to push"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Le tram passe et elle le laisse partir.",
+    "targetWord": "laisse",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "marcher",
+  "sentence": "Elle [[marche]] sur le pont, les chaussures trempées.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to walk",
+   "options": [
+    "to walk",
+    "to swim",
+    "to drive",
+    "to sit"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Elle marche sur le pont, les chaussures trempées.",
+    "targetWord": "marche",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le milieu",
+  "sentence": "Elle s'arrête au [[milieu]] du pont.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the middle",
+   "options": [
+    "the middle",
+    "the end",
+    "the start",
+    "the side"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Elle s'arrête au milieu du pont.",
+    "targetWord": "milieu",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'erreur",
+  "sentence": "Chaque [[erreur]] lui apprend un nom de rue.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a mistake",
+   "options": [
+    "a mistake",
+    "a lesson",
+    "a habit",
+    "a question"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Chaque erreur lui apprend un nom de rue.",
+    "targetWord": "erreur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apprendre",
+  "sentence": "Elle [[apprend]] les noms des rues en marchant.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to learn",
+   "options": [
+    "to learn",
+    "to teach",
+    "to forget",
+    "to write"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Elle apprend les noms des rues en marchant.",
+    "targetWord": "apprend",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quelque chose",
+  "sentence": "“Vous cherchez [[quelque chose]] ?”, demande-t-il.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "something",
+   "options": [
+    "something",
+    "someone",
+    "somewhere",
+    "sometimes"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "“Vous cherchez quelque chose ?”, demande-t-il.",
+    "targetWord": "quelque chose",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trois",
+  "sentence": "“[[Trois]] semaines”, répond-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "three",
+   "options": [
+    "three",
+    "two",
+    "four",
+    "ten"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "“Trois semaines”, répond-elle.",
+    "targetWord": "Trois",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dur",
+  "sentence": "La rue qui monte est plus [[dure]], mais plus belle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hard to do",
+   "options": [
+    "hard to do",
+    "long",
+    "quiet",
+    "dark"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "La rue qui monte est plus dure, mais plus belle.",
+    "targetWord": "dure",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la chose",
+  "sentence": "Il range ses [[choses]] avant de fermer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a thing",
+   "options": [
+    "a thing",
+    "a word",
+    "an idea",
+    "a place"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Il range ses choses avant de fermer.",
+    "targetWord": "choses",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la nuit",
+  "sentence": "Elle mange du pain sec debout dans la [[nuit]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the night",
+   "options": [
+    "the night",
+    "the morning",
+    "the evening",
+    "the afternoon"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Elle mange du pain sec debout dans la nuit.",
+    "targetWord": "nuit",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "à gauche",
+  "sentence": "Le bar est [[à gauche]], juste après le pont.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "on the left",
+   "options": [
+    "on the left",
+    "on the right",
+    "straight on",
+    "behind"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Le bar est à gauche, juste après le pont.",
+    "targetWord": "à gauche",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plus tard",
+  "sentence": "Elle ouvre le carton [[plus tard]], après le dîner.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "later",
+   "options": [
+    "later",
+    "earlier",
+    "at once",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Elle ouvre le carton plus tard, après le dîner.",
+    "targetWord": "plus tard",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "longtemps",
+  "sentence": "Elle attend [[longtemps]] devant les volets fermés.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "for a long time",
+   "options": [
+    "for a long time",
+    "for a moment",
+    "too late",
+    "every day"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Elle attend longtemps devant les volets fermés.",
+    "targetWord": "longtemps",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le jeune homme",
+  "sentence": "Un [[jeune homme]] passe devant la boulangerie fermée.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a young man",
+   "options": [
+    "a young man",
+    "a young woman",
+    "a shopkeeper",
+    "a neighbour"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Un jeune homme passe devant la boulangerie fermée.",
+    "targetWord": "jeune homme",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "lave",
+  "sentence": "Ses mains sont sales et elle les _____ à l'eau froide.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lave",
+   "options": [
+    "lave",
+    "ferme",
+    "porte",
+    "monte"
+   ],
+   "translation": "Her hands are dirty and she _____ them in cold water.",
+   "optionTranslations": [
+    "washes",
+    "closes",
+    "carries",
+    "climbs"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Ses mains sont sales et elle les lave à l'eau froide.",
+    "targetWord": "lave",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "vent",
+  "sentence": "Sur le pont, le _____ est froid ce matin.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vent",
+   "options": [
+    "vent",
+    "pain",
+    "lait",
+    "sac"
+   ],
+   "translation": "On the bridge, the _____ is cold this morning.",
+   "optionTranslations": [
+    "wind",
+    "bread",
+    "milk",
+    "bag"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Sur le pont, le vent est froid ce matin.",
+    "targetWord": "vent",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "exprès",
+  "sentence": "Elle a pris ce chemin _____, pas par erreur.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "exprès",
+   "options": [
+    "exprès",
+    "vite",
+    "tard",
+    "seule"
+   ],
+   "translation": "She took this road _____, not by mistake.",
+   "optionTranslations": [
+    "on purpose",
+    "quickly",
+    "late",
+    "alone"
+   ],
+   "audioClip": {
+    "storySlug": "la-boulangerie-etait-fermee",
+    "storySource": "user",
+    "sentence": "Elle a pris ce chemin exprès, pas par erreur.",
+    "targetWord": "exprès",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

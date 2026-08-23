@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la brocante,l'assiette,le livre,la table",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la brocante",
+     "answer": "a street market for old things",
+     "options": [
+      "a street market for old things",
+      "a plate",
+      "a book",
+      "a table"
+     ]
+    },
+    {
+     "word": "l'assiette",
+     "answer": "a plate",
+     "options": [
+      "a street market for old things",
+      "a plate",
+      "a book",
+      "a table"
+     ]
+    },
+    {
+     "word": "le livre",
+     "answer": "a book",
+     "options": [
+      "a street market for old things",
+      "a plate",
+      "a book",
+      "a table"
+     ]
+    },
+    {
+     "word": "la table",
+     "answer": "a table",
+     "options": [
+      "a street market for old things",
+      "a plate",
+      "a book",
+      "a table"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entre",
+  "sentence": "La lampe verte est [[entre]] deux assiettes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "between",
+   "options": [
+    "between",
+    "under",
+    "behind",
+    "next to"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "La lampe verte est entre deux assiettes.",
+    "targetWord": "entre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vert",
+  "sentence": "Elle regarde longtemps la lampe [[verte]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "green",
+   "options": [
+    "green",
+    "red",
+    "black",
+    "yellow"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "Elle regarde longtemps la lampe verte.",
+    "targetWord": "verte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le monsieur",
+  "sentence": "“C'est mon prix”, dit le [[monsieur]] du stand.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the gentleman",
+   "options": [
+    "the gentleman",
+    "the lady",
+    "the boy",
+    "the friend"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "“C'est mon prix”, dit le monsieur du stand.",
+    "targetWord": "monsieur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "discuter",
+  "sentence": "Ils [[discutent]] le prix devant le stand.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to talk over a price",
+   "options": [
+    "to talk over a price",
+    "to shout",
+    "to agree at once",
+    "to walk away"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "Ils discutent le prix devant le stand.",
+    "targetWord": "discutent",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gentiment",
+  "sentence": "Elle explique la règle [[gentiment]], sans rire.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kindly",
+   "options": [
+    "kindly",
+    "loudly",
+    "quickly",
+    "coldly"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "Elle explique la règle gentiment, sans rire.",
+    "targetWord": "gentiment",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le joueur",
+  "sentence": "Ils parlent comme deux [[joueurs]] qui connaissent les règles.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a player",
+   "options": [
+    "a player",
+    "a seller",
+    "a neighbour",
+    "a teacher"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "Ils parlent comme deux joueurs qui connaissent les règles.",
+    "targetWord": "joueurs",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la règle",
+  "sentence": "Les deux connaissent la [[règle]] du marché.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a rule",
+   "options": [
+    "a rule",
+    "a price",
+    "a habit",
+    "a joke"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "Les deux connaissent la règle du marché.",
+    "targetWord": "règle",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "premier",
+  "sentence": "Le [[premier]] prix n'est jamais le vrai prix.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "coming before all others",
+   "options": [
+    "coming before all others",
+    "the last one",
+    "the best one",
+    "the lowest one"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "Le premier prix n'est jamais le vrai prix.",
+    "targetWord": "premier",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'affaire",
+  "sentence": "L'[[affaire]] se fait au milieu, à vingt euros.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a deal",
+   "options": [
+    "a deal",
+    "a mistake",
+    "a gift",
+    "a queue"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "L'affaire se fait au milieu, à vingt euros.",
+    "targetWord": "affaire",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "connaître",
+  "sentence": "Ils [[connaissent]] les règles du jeu.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to know well",
+   "options": [
+    "to know well",
+    "to learn",
+    "to break",
+    "to write"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "Ils connaissent les règles du jeu.",
+    "targetWord": "connaissent",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "discret",
+  "sentence": "Elle parle de son travail de nuit, [[discrète]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not asking for attention",
+   "options": [
+    "not asking for attention",
+    "proud",
+    "angry",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "Elle parle de son travail de nuit, discrète.",
+    "targetWord": "discrète",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chaud",
+  "sentence": "Deux cafés [[chauds]] à la main, elle frappe à la porte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "warm",
+   "options": [
+    "warm",
+    "cold",
+    "sweet",
+    "strong"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "Deux cafés chauds à la main, elle frappe à la porte.",
+    "targetWord": "chauds",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "porter",
+  "sentence": "Elle [[porte]] la lampe et le café froid.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to carry",
+   "options": [
+    "to carry",
+    "to buy",
+    "to break",
+    "to drop"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "Elle porte la lampe et le café froid.",
+    "targetWord": "porte",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "payer",
+  "sentence": "Elle n'a pas de carte et doit _____ en pièces.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "payer",
+   "options": [
+    "payer",
+    "compter",
+    "chercher",
+    "goûter"
+   ],
+   "translation": "She has no card and has to _____ in coins.",
+   "optionTranslations": [
+    "pay",
+    "count",
+    "look for",
+    "taste"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "Elle n'a pas de carte et doit payer en pièces.",
+    "targetWord": "payer",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "vieux",
+  "sentence": "Ce livre est très _____ et les pages sont jaunes.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "vieux",
+   "options": [
+    "vieux",
+    "cher",
+    "lourd",
+    "court"
+   ],
+   "translation": "This book is very _____ and the pages are yellow.",
+   "optionTranslations": [
+    "old",
+    "expensive",
+    "heavy",
+    "short"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "Ce livre est très vieux et les pages sont jaunes.",
+    "targetWord": "vieux",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "inutile",
+  "sentence": "Elle achète une lampe _____ qu'elle ne va jamais allumer.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "inutile",
+   "options": [
+    "inutile",
+    "chère",
+    "verte",
+    "lourde"
+   ],
+   "translation": "She buys a _____ lamp that she will never switch on.",
+   "optionTranslations": [
+    "useless",
+    "expensive",
+    "green",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "sylvie-negocie-manon-paie",
+    "storySource": "user",
+    "sentence": "Elle achète une lampe inutile qu'elle ne va jamais allumer.",
+    "targetWord": "inutile",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

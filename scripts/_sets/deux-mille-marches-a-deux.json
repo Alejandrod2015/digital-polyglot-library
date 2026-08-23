@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "l'ampli,l'accordéon,la musique,le groupe",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "l'ampli",
+     "answer": "the box that makes music louder",
+     "options": [
+      "the box that makes music louder",
+      "an accordion",
+      "music",
+      "a band"
+     ]
+    },
+    {
+     "word": "l'accordéon",
+     "answer": "an accordion",
+     "options": [
+      "the box that makes music louder",
+      "an accordion",
+      "music",
+      "a band"
+     ]
+    },
+    {
+     "word": "la musique",
+     "answer": "music",
+     "options": [
+      "the box that makes music louder",
+      "an accordion",
+      "music",
+      "a band"
+     ]
+    },
+    {
+     "word": "le groupe",
+     "answer": "a band",
+     "options": [
+      "the box that makes music louder",
+      "an accordion",
+      "music",
+      "a band"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ouvert",
+  "sentence": "Les fenêtres restent [[ouvertes]] jusqu'au matin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "open",
+   "options": [
+    "open",
+    "closed",
+    "broken",
+    "dark"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "Les fenêtres restent ouvertes jusqu'au matin.",
+    "targetWord": "ouvertes",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le lycéen",
+  "sentence": "Un groupe de [[lycéens]] joue trop fort.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a student of about sixteen",
+   "options": [
+    "a student of about sixteen",
+    "a teacher",
+    "a shop owner",
+    "a bus driver"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "Un groupe de lycéens joue trop fort.",
+    "targetWord": "lycéens",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'épaule",
+  "sentence": "Elles dansent avec leurs sacs sur l'[[épaule]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the top of your arm",
+   "options": [
+    "the top of your arm",
+    "the knee",
+    "the back",
+    "the hand"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "Elles dansent avec leurs sacs sur l'épaule.",
+    "targetWord": "épaule",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "complètement",
+  "sentence": "“Ils sont mauvais.” “[[Complètement]]”, répond son amie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "totally",
+   "options": [
+    "totally",
+    "a little",
+    "almost",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "“Ils sont mauvais.” “Complètement”, répond son amie.",
+    "targetWord": "Complètement",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "baisser",
+  "sentence": "Vers deux heures, la musique [[baisse]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get quieter",
+   "options": [
+    "to get quieter",
+    "to get louder",
+    "to stop dead",
+    "to start again"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "Vers deux heures, la musique baisse.",
+    "targetWord": "baisse",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chanter",
+  "sentence": "Des gens rentrent en [[chantant]], pas très juste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sing",
+   "options": [
+    "to sing",
+    "to shout",
+    "to whisper",
+    "to laugh"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "Des gens rentrent en chantant, pas très juste.",
+    "targetWord": "chantant",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fatigué",
+  "sentence": "“Jusqu'à ce qu'on soit [[fatiguées]]”, dit son amie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tired",
+   "options": [
+    "tired",
+    "hungry",
+    "cold",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "“Jusqu'à ce qu'on soit fatiguées”, dit son amie.",
+    "targetWord": "fatiguées",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "embêter",
+  "sentence": "Elle compte à voix haute pour l'[[embêter]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tease somebody",
+   "options": [
+    "to tease somebody",
+    "to help",
+    "to wake",
+    "to thank"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "Elle compte à voix haute pour l'embêter.",
+    "targetWord": "embêter",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la fin",
+  "sentence": "Personne ne rate la [[fin]] de la nuit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the last part",
+   "options": [
+    "the last part",
+    "the start",
+    "the middle",
+    "the best part"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "Personne ne rate la fin de la nuit.",
+    "targetWord": "fin",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chaque",
+  "sentence": "À [[chaque]] coin de rue il y a un groupe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "every single one",
+   "options": [
+    "every single one",
+    "one single",
+    "the last",
+    "another"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "À chaque coin de rue il y a un groupe.",
+    "targetWord": "chaque",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "autre",
+  "sentence": "La musique baisse d'un étage à l'[[autre]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the next different one",
+   "options": [
+    "the next different one",
+    "the same one",
+    "the first one",
+    "all of them"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "La musique baisse d'un étage à l'autre.",
+    "targetWord": "autre",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "à voix haute",
+  "sentence": "Son amie compte [[à voix haute]] jusqu'à trente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loudly enough to be heard",
+   "options": [
+    "loudly enough to be heard",
+    "in her head",
+    "very quietly",
+    "in a song"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "Son amie compte à voix haute jusqu'à trente.",
+    "targetWord": "à voix haute",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vers",
+  "sentence": "[[Vers]] deux heures, la musique baisse d'un étage.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at about that time",
+   "options": [
+    "at about that time",
+    "exactly at that time",
+    "long before",
+    "right after"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "Vers deux heures, la musique baisse d'un étage.",
+    "targetWord": "Vers",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "jouer",
+  "sentence": "Le groupe va _____ devant la mairie ce soir.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "jouer",
+   "options": [
+    "jouer",
+    "manger",
+    "payer",
+    "dormir"
+   ],
+   "translation": "The band is going to _____ in front of the town hall tonight.",
+   "optionTranslations": [
+    "play",
+    "eat",
+    "pay",
+    "sleep"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "Le groupe va jouer devant la mairie ce soir.",
+    "targetWord": "jouer",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "danser",
+  "sentence": "Avec cette musique, tout le monde veut _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "danser",
+   "options": [
+    "danser",
+    "dormir",
+    "payer",
+    "lire"
+   ],
+   "translation": "With this music, everybody wants to _____.",
+   "optionTranslations": [
+    "dance",
+    "sleep",
+    "pay",
+    "read"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "Avec cette musique, tout le monde veut danser.",
+    "targetWord": "danser",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "rater",
+  "sentence": "Elle part tôt pour ne pas _____ le dernier tram.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rater",
+   "options": [
+    "rater",
+    "payer",
+    "monter",
+    "chercher"
+   ],
+   "translation": "She leaves early so as not to _____ the last tram.",
+   "optionTranslations": [
+    "miss",
+    "pay",
+    "get on",
+    "look for"
+   ],
+   "audioClip": {
+    "storySlug": "deux-mille-marches-a-deux",
+    "storySource": "user",
+    "sentence": "Elle part tôt pour ne pas rater le dernier tram.",
+    "targetWord": "rater",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

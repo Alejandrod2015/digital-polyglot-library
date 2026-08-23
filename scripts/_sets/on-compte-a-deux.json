@@ -1,0 +1,456 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "l'escalier,la pluie,la colline,la chaussure",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "l'escalier",
+     "answer": "a staircase",
+     "options": [
+      "a staircase",
+      "rain",
+      "a small hill",
+      "a shoe"
+     ]
+    },
+    {
+     "word": "la pluie",
+     "answer": "rain",
+     "options": [
+      "a staircase",
+      "rain",
+      "a small hill",
+      "a shoe"
+     ]
+    },
+    {
+     "word": "la colline",
+     "answer": "a small hill",
+     "options": [
+      "a staircase",
+      "rain",
+      "a small hill",
+      "a shoe"
+     ]
+    },
+    {
+     "word": "la chaussure",
+     "answer": "a shoe",
+     "options": [
+      "a staircase",
+      "rain",
+      "a small hill",
+      "a shoe"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "demain",
+  "sentence": "“[[Demain]] je viens avec toi”, écrit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the day after today",
+   "options": [
+    "the day after today",
+    "the day before today",
+    "today",
+    "every day"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "“Demain je viens avec toi”, écrit-elle.",
+    "targetWord": "Demain",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "regarder",
+  "sentence": "Elle [[regarde]] la ville mouillée sous la pluie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to look at",
+   "options": [
+    "to look at",
+    "to listen to",
+    "to look for",
+    "to show"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "Elle regarde la ville mouillée sous la pluie.",
+    "targetWord": "regarde",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "écrire",
+  "sentence": "Elle [[écrit]] le nombre de marches à son amie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to write",
+   "options": [
+    "to write",
+    "to read",
+    "to call",
+    "to count"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "Elle écrit le nombre de marches à son amie.",
+    "targetWord": "écrit",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lentement",
+  "sentence": "Elle monte les marches [[lentement]], sans courir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "slowly",
+   "options": [
+    "slowly",
+    "quickly",
+    "loudly",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "Elle monte les marches lentement, sans courir.",
+    "targetWord": "lentement",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "compter",
+  "sentence": "Elle [[compte]] les marches, une par une.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to count",
+   "options": [
+    "to count",
+    "to climb",
+    "to clean",
+    "to build"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "Elle compte les marches, une par une.",
+    "targetWord": "compte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "partir",
+  "sentence": "Elle voit [[partir]] le dernier tram sans elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to leave",
+   "options": [
+    "to leave",
+    "to arrive",
+    "to stop",
+    "to wait"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "Elle voit partir le dernier tram sans elle.",
+    "targetWord": "partir",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "minuit",
+  "sentence": "À [[minuit]] dix, l'écran s'allume dans sa poche.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "twelve at night",
+   "options": [
+    "twelve at night",
+    "midday",
+    "early morning",
+    "early evening"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "À minuit dix, l'écran s'allume dans sa poche.",
+    "targetWord": "minuit",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "voir",
+  "sentence": "Elle [[voit]] les toits noirs de la ville.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to see",
+   "options": [
+    "to see",
+    "to hear",
+    "to touch",
+    "to hide"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "Elle voit les toits noirs de la ville.",
+    "targetWord": "voit",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la marche",
+  "sentence": "Elle s'assoit sur une [[marche]] mouillée.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a step",
+   "options": [
+    "a step",
+    "a bench",
+    "a roof",
+    "a door"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "Elle s'assoit sur une marche mouillée.",
+    "targetWord": "marche",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en bas",
+  "sentence": "“Je regarde [[en bas]]”, écrit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "down below",
+   "options": [
+    "down below",
+    "up above",
+    "far away",
+    "inside"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "“Je regarde en bas”, écrit-elle.",
+    "targetWord": "en bas",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "noir",
+  "sentence": "Les fleuves sont [[noirs]] et les ponts oranges.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "black",
+   "options": [
+    "black",
+    "white",
+    "grey",
+    "blue"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "Les fleuves sont noirs et les ponts oranges.",
+    "targetWord": "noirs",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trempé",
+  "sentence": "Elle enlève ses chaussures [[trempées]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "soaked",
+   "options": [
+    "soaked",
+    "dirty",
+    "new",
+    "warm"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "Elle enlève ses chaussures trempées.",
+    "targetWord": "trempées",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "orange",
+  "sentence": "Les ponts sont [[oranges]] dans la nuit.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "orange",
+   "options": [
+    "orange",
+    "green",
+    "purple",
+    "brown"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "Les ponts sont oranges dans la nuit.",
+    "targetWord": "oranges",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "exactement",
+  "sentence": "“Tu es où [[exactement]] ?”, demande son amie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "precisely",
+   "options": [
+    "precisely",
+    "nearly",
+    "again",
+    "already"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "“Tu es où exactement ?”, demande son amie.",
+    "targetWord": "exactement",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "froid",
+  "sentence": "Elle met un manteau: elle a très _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "froid",
+   "options": [
+    "froid",
+    "faim",
+    "peur",
+    "chaud"
+   ],
+   "translation": "She puts on a coat: she is very _____.",
+   "optionTranslations": [
+    "cold",
+    "hungry",
+    "afraid",
+    "hot"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "Elle met un manteau: elle a très froid.",
+    "targetWord": "froid",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "poche",
+  "sentence": "Son téléphone sonne dans la _____ de son manteau.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "poche",
+   "options": [
+    "poche",
+    "rue",
+    "pluie",
+    "colline"
+   ],
+   "translation": "Her phone rings in the _____ of her coat.",
+   "optionTranslations": [
+    "pocket",
+    "street",
+    "rain",
+    "hill"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "Son téléphone sonne dans la poche de son manteau.",
+    "targetWord": "poche",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mouillé",
+  "sentence": "Après la pluie, le trottoir est encore _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mouillé",
+   "options": [
+    "mouillé",
+    "fermé",
+    "vide",
+    "cher"
+   ],
+   "translation": "After the rain, the pavement is still _____.",
+   "optionTranslations": [
+    "wet",
+    "closed",
+    "empty",
+    "expensive"
+   ],
+   "audioClip": {
+    "storySlug": "on-compte-a-deux",
+    "storySource": "user",
+    "sentence": "Après la pluie, le trottoir est encore mouillé.",
+    "targetWord": "mouillé",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

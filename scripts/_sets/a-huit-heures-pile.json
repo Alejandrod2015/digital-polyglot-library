@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la bouteille,l'olive,le saucisson,le verre",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la bouteille",
+     "answer": "a bottle",
+     "options": [
+      "a bottle",
+      "an olive",
+      "dry sausage in thin slices",
+      "a drinking glass"
+     ]
+    },
+    {
+     "word": "l'olive",
+     "answer": "an olive",
+     "options": [
+      "a bottle",
+      "an olive",
+      "dry sausage in thin slices",
+      "a drinking glass"
+     ]
+    },
+    {
+     "word": "le saucisson",
+     "answer": "dry sausage in thin slices",
+     "options": [
+      "a bottle",
+      "an olive",
+      "dry sausage in thin slices",
+      "a drinking glass"
+     ]
+    },
+    {
+     "word": "le verre",
+     "answer": "a drinking glass",
+     "options": [
+      "a bottle",
+      "an olive",
+      "dry sausage in thin slices",
+      "a drinking glass"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "inviter",
+  "sentence": "Elle l'[[invite]] à dîner un vendredi soir.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask somebody over",
+   "options": [
+    "to ask somebody over",
+    "to visit",
+    "to refuse",
+    "to meet outside"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "Elle l'invite à dîner un vendredi soir.",
+    "targetWord": "invite",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dîner",
+  "sentence": "Ils vont [[dîner]] vers dix heures.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to have the evening meal",
+   "options": [
+    "to have the evening meal",
+    "to have lunch",
+    "to have breakfast",
+    "to cook"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "Ils vont dîner vers dix heures.",
+    "targetWord": "dîner",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pile",
+  "sentence": "Elle arrive à huit heures [[pile]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "exactly at that time",
+   "options": [
+    "exactly at that time",
+    "a little early",
+    "a little late",
+    "at about that time"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "Elle arrive à huit heures pile.",
+    "targetWord": "pile",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'apéro",
+  "sentence": "“Entre, on prend l'[[apéro]]”, dit son amie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "drinks before dinner",
+   "options": [
+    "drinks before dinner",
+    "the main dish",
+    "a coffee after lunch",
+    "a late breakfast"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "“Entre, on prend l'apéro”, dit son amie.",
+    "targetWord": "apéro",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le plat",
+  "sentence": "Le [[plat]] simple arrive à dix heures.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the main dish",
+   "options": [
+    "the main dish",
+    "the small food before dinner",
+    "the empty plate",
+    "the bill"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "Le plat simple arrive à dix heures.",
+    "targetWord": "plat",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se presser",
+  "sentence": "Personne ne [[se presse]] à table.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hurry",
+   "options": [
+    "to hurry",
+    "to sit down",
+    "to talk",
+    "to serve"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "Personne ne se presse à table.",
+    "targetWord": "se presse",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chacun",
+  "sentence": "Il y a un verre pour [[chacun]] sur la table basse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "every single person",
+   "options": [
+    "every single person",
+    "everybody together",
+    "somebody",
+    "nobody"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "Il y a un verre pour chacun sur la table basse.",
+    "targetWord": "chacun",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bas",
+  "sentence": "Sur la table [[basse]] il y a des olives.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "low",
+   "options": [
+    "low",
+    "long",
+    "round",
+    "empty"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "Sur la table basse il y a des olives.",
+    "targetWord": "basse",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'invité",
+  "sentence": "Les autres [[invités]] arrivent après neuf heures.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a guest",
+   "options": [
+    "a guest",
+    "a host",
+    "a cook",
+    "a waiter"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "Les autres invités arrivent après neuf heures.",
+    "targetWord": "invités",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le repas",
+  "sentence": "“Ici, l'apéro fait partie du [[repas]]”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a meal",
+   "options": [
+    "a meal",
+    "a break",
+    "a party",
+    "a drink"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "“Ici, l'apéro fait partie du repas”, dit-elle.",
+    "targetWord": "repas",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tout bas",
+  "sentence": "“On mange à quelle heure ?”, demande-t-elle [[tout bas]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "very quietly",
+   "options": [
+    "very quietly",
+    "very loudly",
+    "very slowly",
+    "very often"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "“On mange à quelle heure ?”, demande-t-elle tout bas.",
+    "targetWord": "tout bas",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reprendre",
+  "sentence": "Ils [[reprennent]] du plat une deuxième fois.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take some more",
+   "options": [
+    "to take some more",
+    "to finish",
+    "to refuse",
+    "to share"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "Ils reprennent du plat une deuxième fois.",
+    "targetWord": "reprennent",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "février",
+  "sentence": "“Je réfléchis depuis [[février]]”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the second month",
+   "options": [
+    "the second month",
+    "the last month",
+    "the sixth month",
+    "the first month"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "“Je réfléchis depuis février”, dit-elle.",
+    "targetWord": "février",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "faim",
+  "sentence": "Elle n'a rien mangé depuis midi et a très _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "faim",
+   "options": [
+    "faim",
+    "froid",
+    "peur",
+    "chaud"
+   ],
+   "translation": "She has eaten nothing since midday and is very _____.",
+   "optionTranslations": [
+    "hungry",
+    "cold",
+    "afraid",
+    "hot"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "Elle n'a rien mangé depuis midi et a très faim.",
+    "targetWord": "faim",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "simple",
+  "sentence": "Le plat est _____: deux légumes et du riz.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "simple",
+   "options": [
+    "simple",
+    "cher",
+    "froid",
+    "lourd"
+   ],
+   "translation": "The dish is _____: two vegetables and some rice.",
+   "optionTranslations": [
+    "simple",
+    "expensive",
+    "cold",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "Le plat est simple: deux légumes et du riz.",
+    "targetWord": "simple",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mettre",
+  "sentence": "Avant de manger, il faut _____ la table.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mettre",
+   "options": [
+    "mettre",
+    "vendre",
+    "fermer",
+    "monter"
+   ],
+   "translation": "Before eating, you have to _____ the table.",
+   "optionTranslations": [
+    "set",
+    "sell",
+    "close",
+    "carry up"
+   ],
+   "audioClip": {
+    "storySlug": "a-huit-heures-pile",
+    "storySource": "user",
+    "sentence": "Avant de manger, il faut mettre la table.",
+    "targetWord": "mettre",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

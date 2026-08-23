@@ -1,0 +1,502 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le marché,le fromage,la tomate,le panier",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "le marché",
+     "answer": "a street market",
+     "options": [
+      "a street market",
+      "cheese",
+      "a tomato",
+      "a basket"
+     ]
+    },
+    {
+     "word": "le fromage",
+     "answer": "cheese",
+     "options": [
+      "a street market",
+      "cheese",
+      "a tomato",
+      "a basket"
+     ]
+    },
+    {
+     "word": "la tomate",
+     "answer": "a tomato",
+     "options": [
+      "a street market",
+      "cheese",
+      "a tomato",
+      "a basket"
+     ]
+    },
+    {
+     "word": "le panier",
+     "answer": "a basket",
+     "options": [
+      "a street market",
+      "cheese",
+      "a tomato",
+      "a basket"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le stand",
+  "sentence": "Le [[stand]] du fromage est au bout de la rue.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a market stall",
+   "options": [
+    "a market stall",
+    "a shop window",
+    "a counter",
+    "a kitchen table"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Le stand du fromage est au bout de la rue.",
+    "targetWord": "stand",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le vendeur",
+  "sentence": "Le [[vendeur]] pèse un morceau de fromage.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a seller",
+   "options": [
+    "a seller",
+    "a buyer",
+    "a cook",
+    "a farmer"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Le vendeur pèse un morceau de fromage.",
+    "targetWord": "vendeur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "les gens",
+  "sentence": "Les [[gens]] attendent devant le stand, sans parler.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "people",
+   "options": [
+    "people",
+    "friends",
+    "neighbours",
+    "workers"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Les gens attendent devant le stand, sans parler.",
+    "targetWord": "gens",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le billet",
+  "sentence": "Elle sort un [[billet]] de son manteau.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a banknote",
+   "options": [
+    "a banknote",
+    "a coin",
+    "a card",
+    "a receipt"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Elle sort un billet de son manteau.",
+    "targetWord": "billet",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la monnaie",
+  "sentence": "Il rend la [[monnaie]] exacte sans regarder.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "change",
+   "options": [
+    "change",
+    "a wallet",
+    "a bill",
+    "a purse"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Il rend la monnaie exacte sans regarder.",
+    "targetWord": "monnaie",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vingt",
+  "sentence": "Elle paie avec un billet de [[vingt]] euros.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "twenty",
+   "options": [
+    "twenty",
+    "ten",
+    "twelve",
+    "thirty"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Elle paie avec un billet de vingt euros.",
+    "targetWord": "vingt",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "goûter",
+  "sentence": "“Vous pouvez [[goûter]]”, dit le vendeur.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to taste",
+   "options": [
+    "to taste",
+    "to smell",
+    "to weigh",
+    "to choose"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "“Vous pouvez goûter”, dit le vendeur.",
+    "targetWord": "goûter",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "choisir",
+  "sentence": "Elle [[choisit]] deux tomates et paie.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to choose",
+   "options": [
+    "to choose",
+    "to pay",
+    "to carry",
+    "to cut"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Elle choisit deux tomates et paie.",
+    "targetWord": "choisit",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le morceau",
+  "sentence": "Il coupe un [[morceau]] de fromage pour elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a piece",
+   "options": [
+    "a piece",
+    "a plate",
+    "a bag",
+    "a bottle"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Il coupe un morceau de fromage pour elle.",
+    "targetWord": "morceau",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le quartier",
+  "sentence": "Le marché du [[quartier]] ouvre le samedi.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a neighbourhood",
+   "options": [
+    "a neighbourhood",
+    "a village",
+    "a whole city",
+    "a single street"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Le marché du quartier ouvre le samedi.",
+    "targetWord": "quartier",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le tour",
+  "sentence": "Enfin, c'est son [[tour]] devant le stand.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "one's turn",
+   "options": [
+    "one's turn",
+    "one's seat",
+    "one's ticket",
+    "one's name"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Enfin, c'est son tour devant le stand.",
+    "targetWord": "tour",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'euro",
+  "sentence": "Le fromage coûte huit [[euros]] le kilo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the money used in France",
+   "options": [
+    "the money used in France",
+    "the weight of a thing",
+    "the day a shop opens",
+    "the paper you get after paying"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Le fromage coûte huit euros le kilo.",
+    "targetWord": "euros",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "doux",
+  "sentence": "Ce fromage est [[doux]], pas fort du tout.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "mild",
+   "options": [
+    "mild",
+    "strong",
+    "salty",
+    "fresh"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Ce fromage est doux, pas fort du tout.",
+    "targetWord": "doux",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le village",
+  "sentence": "Les prix sont plus chers que dans son [[village]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a small country town",
+   "options": [
+    "a small country town",
+    "a big city",
+    "a market",
+    "a neighbourhood"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Les prix sont plus chers que dans son village.",
+    "targetWord": "village",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le jour",
+  "sentence": "Il y a du fromage pour huit [[jours]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a day",
+   "options": [
+    "a day",
+    "a week",
+    "a month",
+    "a meal"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Il y a du fromage pour huit jours.",
+    "targetWord": "jours",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "nécessaire",
+  "sentence": "Elle achète plus que le [[nécessaire]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what you really need",
+   "options": [
+    "what you really need",
+    "what is cheap",
+    "what is fresh",
+    "what is left"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Elle achète plus que le nécessaire.",
+    "targetWord": "nécessaire",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "prix",
+  "sentence": "Ce fromage coûte huit euros: c'est un bon _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "prix",
+   "options": [
+    "prix",
+    "jour",
+    "tour",
+    "nom"
+   ],
+   "translation": "This cheese costs eight euros: that is a good _____.",
+   "optionTranslations": [
+    "price",
+    "day",
+    "turn",
+    "name"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Ce fromage coûte huit euros: c'est un bon prix.",
+    "targetWord": "prix",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "rend",
+  "sentence": "Elle paie avec vingt euros et il lui _____ la monnaie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rend",
+   "options": [
+    "rend",
+    "compte",
+    "cherche",
+    "demande"
+   ],
+   "translation": "She pays with twenty euros and he _____ her the change.",
+   "optionTranslations": [
+    "gives back",
+    "counts",
+    "looks for",
+    "asks for"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Elle paie avec vingt euros et il lui rend la monnaie.",
+    "targetWord": "rend",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "fort",
+  "sentence": "Il parle si _____ que tout le marché l'entend.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fort",
+   "options": [
+    "fort",
+    "bas",
+    "tard",
+    "vite"
+   ],
+   "translation": "He talks so _____ that the whole market hears him.",
+   "optionTranslations": [
+    "loudly",
+    "quietly",
+    "late",
+    "fast"
+   ],
+   "audioClip": {
+    "storySlug": "elle-n-a-pas-su-dire-non",
+    "storySource": "user",
+    "sentence": "Il parle si fort que tout le marché l'entend.",
+    "targetWord": "fort",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

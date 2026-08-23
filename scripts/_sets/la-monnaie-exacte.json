@@ -1,0 +1,456 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la machine,l'imprimante,l'ascenseur,la cantine",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la machine",
+     "answer": "a machine",
+     "options": [
+      "a machine",
+      "a printer",
+      "a lift",
+      "the canteen at work"
+     ]
+    },
+    {
+     "word": "l'imprimante",
+     "answer": "a printer",
+     "options": [
+      "a machine",
+      "a printer",
+      "a lift",
+      "the canteen at work"
+     ]
+    },
+    {
+     "word": "l'ascenseur",
+     "answer": "a lift",
+     "options": [
+      "a machine",
+      "a printer",
+      "a lift",
+      "the canteen at work"
+     ]
+    },
+    {
+     "word": "la cantine",
+     "answer": "the canteen at work",
+     "options": [
+      "a machine",
+      "a printer",
+      "a lift",
+      "the canteen at work"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le collègue",
+  "sentence": "Une [[collègue]] du même étage tape sur la machine.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a workmate",
+   "options": [
+    "a workmate",
+    "a client",
+    "a boss",
+    "a neighbour"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "Une collègue du même étage tape sur la machine.",
+    "targetWord": "collègue",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'équipe",
+  "sentence": "La machine à café est le vrai bureau de l'[[équipe]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a work team",
+   "options": [
+    "a work team",
+    "a family",
+    "a class",
+    "a queue"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "La machine à café est le vrai bureau de l'équipe.",
+    "targetWord": "équipe",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le gobelet",
+  "sentence": "Le [[gobelet]] tombe et le café est tiède.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a throwaway cup",
+   "options": [
+    "a throwaway cup",
+    "a glass bottle",
+    "a saucer",
+    "a coin"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "Le gobelet tombe et le café est tiède.",
+    "targetWord": "gobelet",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tôt",
+  "sentence": "Elle arrive [[tôt]] et attend devant la machine.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "early",
+   "options": [
+    "early",
+    "late",
+    "alone",
+    "slowly"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "Elle arrive tôt et attend devant la machine.",
+    "targetWord": "tôt",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le lundi",
+  "sentence": "“Je cherche l'imprimante depuis [[lundi]]”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Monday",
+   "options": [
+    "Monday",
+    "Sunday",
+    "the weekend",
+    "the whole month"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "“Je cherche l'imprimante depuis lundi”, dit-elle.",
+    "targetWord": "lundi",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'étage",
+  "sentence": "Une collègue du même [[étage]] lui explique tout.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a floor of a building",
+   "options": [
+    "a floor of a building",
+    "a desk",
+    "a corridor",
+    "a whole building"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "Une collègue du même étage lui explique tout.",
+    "targetWord": "étage",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le midi",
+  "sentence": "À [[midi]], elles descendent à la cantine.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the middle of the day",
+   "options": [
+    "the middle of the day",
+    "the middle of the night",
+    "the early morning",
+    "the end of the day"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "À midi, elles descendent à la cantine.",
+    "targetWord": "midi",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le visage",
+  "sentence": "Deux [[visages]] du même étage mangent avec elles.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a face",
+   "options": [
+    "a face",
+    "a name",
+    "a voice",
+    "a hand"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "Deux visages du même étage mangent avec elles.",
+    "targetWord": "visages",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le silence",
+  "sentence": "Le [[silence]] du premier matin ne revient pas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "no sound at all",
+   "options": [
+    "no sound at all",
+    "a loud noise",
+    "a short break",
+    "an empty room"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "Le silence du premier matin ne revient pas.",
+    "targetWord": "silence",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "exact",
+  "sentence": "“Il faut la monnaie [[exacte]]”, dit sa collègue.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right, with nothing missing",
+   "options": [
+    "right, with nothing missing",
+    "nearly right",
+    "far too much",
+    "paid in notes"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "“Il faut la monnaie exacte”, dit sa collègue.",
+    "targetWord": "exacte",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "boire",
+  "sentence": "Elle [[boit]] son café tiède près de la fenêtre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to drink",
+   "options": [
+    "to drink",
+    "to pour",
+    "to heat",
+    "to carry"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "Elle boit son café tiède près de la fenêtre.",
+    "targetWord": "boit",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le côté",
+  "sentence": "Elle tape deux fois sur le [[côté]] de la machine.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the side",
+   "options": [
+    "the side",
+    "the top",
+    "the door",
+    "the screen"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "Elle tape deux fois sur le côté de la machine.",
+    "targetWord": "côté",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apporter",
+  "sentence": "“J'[[apporte]] les pièces demain”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to bring",
+   "options": [
+    "to bring",
+    "to take away",
+    "to buy",
+    "to count"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "“J'apporte les pièces demain”, dit-elle.",
+    "targetWord": "apporte",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la nuit chaude",
+  "sentence": "Elles sortent dans la [[nuit chaude]] de septembre.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a warm night",
+   "options": [
+    "a warm night",
+    "a cold night",
+    "a rainy day",
+    "an early morning"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "Elles sortent dans la nuit chaude de septembre.",
+    "targetWord": "nuit chaude",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "pièce",
+  "sentence": "Il met une _____ dans la machine à café.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pièce",
+   "options": [
+    "pièce",
+    "carte",
+    "tasse",
+    "clé"
+   ],
+   "translation": "He puts a _____ into the coffee machine.",
+   "optionTranslations": [
+    "coin",
+    "card",
+    "cup",
+    "key"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "Il met une pièce dans la machine à café.",
+    "targetWord": "pièce",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "cherche",
+  "sentence": "Elle ne trouve pas la salle et _____ partout.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cherche",
+   "options": [
+    "cherche",
+    "attend",
+    "monte",
+    "tape"
+   ],
+   "translation": "She cannot find the room and _____ everywhere.",
+   "optionTranslations": [
+    "looks",
+    "waits",
+    "goes up",
+    "types"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "Elle ne trouve pas la salle et cherche partout.",
+    "targetWord": "cherche",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "mauvais",
+  "sentence": "Ce café est froid et _____, mais il est gratuit.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mauvais",
+   "options": [
+    "mauvais",
+    "cher",
+    "chaud",
+    "doux"
+   ],
+   "translation": "This coffee is cold and _____, but it is free.",
+   "optionTranslations": [
+    "bad",
+    "expensive",
+    "hot",
+    "mild"
+   ],
+   "audioClip": {
+    "storySlug": "la-monnaie-exacte",
+    "storySource": "user",
+    "sentence": "Ce café est froid et mauvais, mais il est gratuit.",
+    "targetWord": "mauvais",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,548 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "porte,clé,bois,valise",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "porte",
+     "answer": "a door",
+     "options": [
+      "a door",
+      "a key",
+      "wood",
+      "a suitcase"
+     ]
+    },
+    {
+     "word": "clé",
+     "answer": "a key",
+     "options": [
+      "a door",
+      "a key",
+      "wood",
+      "a suitcase"
+     ]
+    },
+    {
+     "word": "bois",
+     "answer": "wood",
+     "options": [
+      "a door",
+      "a key",
+      "wood",
+      "a suitcase"
+     ]
+    },
+    {
+     "word": "valise",
+     "answer": "a suitcase",
+     "options": [
+      "a door",
+      "a key",
+      "wood",
+      "a suitcase"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le bruit",
+  "sentence": "Ses pas font du [[bruit]] sur le bois.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a noise",
+   "options": [
+    "a noise",
+    "a smell",
+    "a light",
+    "a taste"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "Ses pas font du bruit sur le bois.",
+    "targetWord": "bruit",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le téléphone",
+  "sentence": "Son [[téléphone]] sonne encore une fois.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a phone",
+   "options": [
+    "a phone",
+    "a clock",
+    "a radio",
+    "a lamp"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "Son téléphone sonne encore une fois.",
+    "targetWord": "téléphone",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sonner",
+  "sentence": "Le téléphone [[sonne]] et elle répond vite.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ring",
+   "options": [
+    "to ring",
+    "to break",
+    "to fall",
+    "to close"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "Le téléphone sonne et elle répond vite.",
+    "targetWord": "sonne",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "répondre",
+  "sentence": "“Oui, tout va bien”, [[répond]] la jeune femme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to answer",
+   "options": [
+    "to answer",
+    "to ask",
+    "to shout",
+    "to leave"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "“Oui, tout va bien”, répond la jeune femme.",
+    "targetWord": "répond",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la mère",
+  "sentence": "“Tu es bien arrivée ?”, demande sa [[mère]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a mother",
+   "options": [
+    "a mother",
+    "a sister",
+    "a daughter",
+    "a neighbour"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "“Tu es bien arrivée ?”, demande sa mère.",
+    "targetWord": "mère",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vide",
+  "sentence": "Elle arrive avec la clé d'un appartement [[vide]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "empty",
+   "options": [
+    "empty",
+    "full",
+    "dirty",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "Elle arrive avec la clé d'un appartement vide.",
+    "targetWord": "vide",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le matin",
+  "sentence": "Elle arrive un jeudi [[matin]] avec deux valises.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a morning",
+   "options": [
+    "a morning",
+    "an evening",
+    "a night",
+    "a week"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "Elle arrive un jeudi matin avec deux valises.",
+    "targetWord": "matin",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la peinture",
+  "sentence": "L'air sent encore la [[peinture]] des murs.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "paint",
+   "options": [
+    "paint",
+    "bread",
+    "coffee",
+    "soap"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "L'air sent encore la peinture des murs.",
+    "targetWord": "peinture",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le palier",
+  "sentence": "Sur le [[palier]], une voisine rentre du travail.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a landing upstairs",
+   "options": [
+    "a landing upstairs",
+    "a garden",
+    "a kitchen",
+    "a market"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "Sur le palier, une voisine rentre du travail.",
+    "targetWord": "palier",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "coince",
+  "sentence": "Si la porte _____, il faut tirer.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "coince",
+   "options": [
+    "coince",
+    "ferme",
+    "monte",
+    "tombe"
+   ],
+   "translation": "If the door _____, you have to pull.",
+   "optionTranslations": [
+    "gets stuck",
+    "closes",
+    "goes up",
+    "falls"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "Si la porte coince, il faut tirer.",
+    "targetWord": "coince",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tirer",
+  "sentence": "La porte est dure: il faut _____ fort.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tirer",
+   "options": [
+    "tirer",
+    "payer",
+    "laver",
+    "compter"
+   ],
+   "translation": "The door is hard: you have to _____ hard.",
+   "optionTranslations": [
+    "pull",
+    "pay",
+    "wash",
+    "count"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "La porte est dure: il faut tirer fort.",
+    "targetWord": "tirer",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pousser",
+  "sentence": "“Il faut tirer, pas [[pousser]]”, dit la voisine.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to push",
+   "options": [
+    "to push",
+    "to pull",
+    "to knock",
+    "to wait"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "“Il faut tirer, pas pousser”, dit la voisine.",
+    "targetWord": "pousser",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le facteur",
+  "sentence": "Le [[facteur]] passe très tôt le matin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a postman",
+   "options": [
+    "a postman",
+    "a doctor",
+    "a baker",
+    "a driver"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "Le facteur passe très tôt le matin.",
+    "targetWord": "facteur",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la famille",
+  "sentence": "La photo de sa [[famille]] reste dans le premier carton.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a family",
+   "options": [
+    "a family",
+    "a friend",
+    "a workmate",
+    "a neighbour"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "La photo de sa famille reste dans le premier carton.",
+    "targetWord": "famille",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la voix",
+  "sentence": "“C'est petit”, dit-elle à [[voix]] haute.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a voice",
+   "options": [
+    "a voice",
+    "a hand",
+    "a face",
+    "an ear"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "“C'est petit”, dit-elle à voix haute.",
+    "targetWord": "voix",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le soir",
+  "sentence": "Le [[soir]], elle mange du pain sec.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an evening",
+   "options": [
+    "an evening",
+    "a morning",
+    "a midday",
+    "a week"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "Le soir, elle mange du pain sec.",
+    "targetWord": "soir",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "voisin",
+  "sentence": "Une [[voisine]] du troisième rentre du travail.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a neighbour",
+   "options": [
+    "a neighbour",
+    "a workmate",
+    "a teacher",
+    "a client"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "Une voisine du troisième rentre du travail.",
+    "targetWord": "voisine",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sinon",
+  "sentence": "“Je note tout, [[sinon]] j'oublie les choses.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "if not",
+   "options": [
+    "if not",
+    "also",
+    "already",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "“Je note tout, sinon j'oublie les choses.”",
+    "targetWord": "sinon",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le troisième",
+  "sentence": "Une voisine du [[troisième]] rentre du travail.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the third floor",
+   "options": [
+    "the third floor",
+    "the ground floor",
+    "the street",
+    "the roof"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "Une voisine du troisième rentre du travail.",
+    "targetWord": "troisième",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le rideau",
+  "sentence": "“Et les [[rideaux]] ?”, demande sa mère.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "curtains",
+   "options": [
+    "curtains",
+    "keys",
+    "boxes",
+    "plates"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "“Et les rideaux ?”, demande sa mère.",
+    "targetWord": "rideaux",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "fenêtre",
+  "sentence": "Elle ouvre la _____ et regarde la rue.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fenêtre",
+   "options": [
+    "fenêtre",
+    "valise",
+    "clé",
+    "porte"
+   ],
+   "translation": "She opens the _____ and looks at the street.",
+   "optionTranslations": [
+    "window",
+    "suitcase",
+    "key",
+    "door"
+   ],
+   "audioClip": {
+    "storySlug": "les-premieres-heures",
+    "storySource": "user",
+    "sentence": "Elle ouvre la fenêtre et regarde la rue.",
+    "targetWord": "fenêtre",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

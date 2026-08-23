@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le tram,la rue,la lumière,le fleuve",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "le tram",
+     "answer": "a city train on rails",
+     "options": [
+      "a city train on rails",
+      "a street",
+      "light",
+      "a big river"
+     ]
+    },
+    {
+     "word": "la rue",
+     "answer": "a street",
+     "options": [
+      "a city train on rails",
+      "a street",
+      "light",
+      "a big river"
+     ]
+    },
+    {
+     "word": "la lumière",
+     "answer": "light",
+     "options": [
+      "a city train on rails",
+      "a street",
+      "light",
+      "a big river"
+     ]
+    },
+    {
+     "word": "le fleuve",
+     "answer": "a big river",
+     "options": [
+      "a city train on rails",
+      "a street",
+      "light",
+      "a big river"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "monter",
+  "sentence": "Elle [[monte]] dans le tram sans regarder.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get on",
+   "options": [
+    "to get on",
+    "to get off",
+    "to wait",
+    "to run"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "Elle monte dans le tram sans regarder.",
+    "targetWord": "monte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le numéro",
+  "sentence": "Elle monte sans regarder le [[numéro]] du tram.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a number",
+   "options": [
+    "a number",
+    "a name",
+    "a price",
+    "a map"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "Elle monte sans regarder le numéro du tram.",
+    "targetWord": "numéro",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "derrière",
+  "sentence": "Les portes se ferment [[derrière]] elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "behind",
+   "options": [
+    "behind",
+    "in front of",
+    "under",
+    "next to"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "Les portes se ferment derrière elle.",
+    "targetWord": "derrière",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "répéter",
+  "sentence": "“Deux fleuves”, [[répète]]-t-elle à voix basse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to say again",
+   "options": [
+    "to say again",
+    "to ask again",
+    "to answer",
+    "to read aloud"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "“Deux fleuves”, répète-t-elle à voix basse.",
+    "targetWord": "répète",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vite",
+  "sentence": "Elle descend [[vite]] après quatre arrêts.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "quickly",
+   "options": [
+    "quickly",
+    "slowly",
+    "late",
+    "alone"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "Elle descend vite après quatre arrêts.",
+    "targetWord": "vite",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ensemble",
+  "sentence": "“On monte [[ensemble]] ?”, demande l'étudiante.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "together",
+   "options": [
+    "together",
+    "alone",
+    "later",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "“On monte ensemble ?”, demande l'étudiante.",
+    "targetWord": "ensemble",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "enfin",
+  "sentence": "Elles prennent [[enfin]] le bon tram.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at last",
+   "options": [
+    "at last",
+    "almost",
+    "again",
+    "never"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "Elles prennent enfin le bon tram.",
+    "targetWord": "enfin",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'étudiante",
+  "sentence": "Sous la lumière de l'arrêt, une [[étudiante]] attend.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a student",
+   "options": [
+    "a student",
+    "a teacher",
+    "a driver",
+    "a nurse"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "Sous la lumière de l'arrêt, une étudiante attend.",
+    "targetWord": "étudiante",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la rive",
+  "sentence": "“Tu es sur l'autre [[rive]]”, dit la jeune femme.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a riverbank",
+   "options": [
+    "a riverbank",
+    "a bridge",
+    "a street",
+    "a hill"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "“Tu es sur l'autre rive”, dit la jeune femme.",
+    "targetWord": "rive",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la place",
+  "sentence": "Il reste une [[place]] libre près de la porte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a seat",
+   "options": [
+    "a seat",
+    "a ticket",
+    "a stop",
+    "a door"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "Il reste une place libre près de la porte.",
+    "targetWord": "place",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "basse",
+  "sentence": "Elle parle d'une voix [[basse]] dans le tram.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "low and quiet",
+   "options": [
+    "low and quiet",
+    "loud",
+    "fast",
+    "slow"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "Elle parle d'une voix basse dans le tram.",
+    "targetWord": "basse",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seul",
+  "sentence": "Le soir, elle rentre [[seule]] à pied.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "alone",
+   "options": [
+    "alone",
+    "tired",
+    "late",
+    "lost"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "Le soir, elle rentre seule à pied.",
+    "targetWord": "seule",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "quand même",
+  "sentence": "Elle est fatiguée, mais elle sourit [[quand même]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "even so",
+   "options": [
+    "even so",
+    "as well",
+    "at last",
+    "of course"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "Elle est fatiguée, mais elle sourit quand même.",
+    "targetWord": "quand même",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "attendent",
+  "sentence": "Le bus arrive tard et elles _____ sous la pluie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "attendent",
+   "options": [
+    "attendent",
+    "courent",
+    "dorment",
+    "chantent"
+   ],
+   "translation": "The bus comes late and they _____ in the rain.",
+   "optionTranslations": [
+    "wait",
+    "run",
+    "sleep",
+    "sing"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "Le bus arrive tard et elles attendent sous la pluie.",
+    "targetWord": "attendent",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "donne",
+  "sentence": "Il n'a pas de stylo et je lui _____ le mien.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "donne",
+   "options": [
+    "donne",
+    "prends",
+    "lave",
+    "ferme"
+   ],
+   "translation": "He has no pen and I _____ him mine.",
+   "optionTranslations": [
+    "give",
+    "take",
+    "wash",
+    "close"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "Il n'a pas de stylo et je lui donne le mien.",
+    "targetWord": "donne",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "retard",
+  "sentence": "Le train part à huit heures, mais il a du _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "retard",
+   "options": [
+    "retard",
+    "bruit",
+    "vent",
+    "pain"
+   ],
+   "translation": "The train leaves at eight, but it has a _____.",
+   "optionTranslations": [
+    "delay",
+    "noise",
+    "wind",
+    "bread"
+   ],
+   "audioClip": {
+    "storySlug": "camille-attend-depuis-vingt-minutes",
+    "storySource": "user",
+    "sentence": "Le train part à huit heures, mais il a du retard.",
+    "targetWord": "retard",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

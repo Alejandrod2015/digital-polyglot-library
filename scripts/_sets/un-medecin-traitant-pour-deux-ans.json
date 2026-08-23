@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "le cabinet,l'ordonnance,la sécurité sociale,la maison médicale",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "le cabinet",
+     "answer": "the office where a doctor sees people",
+     "options": [
+      "the office where a doctor sees people",
+      "the paper a doctor writes for medicine",
+      "the state office that pays part of your care",
+      "a health centre with no date needed"
+     ]
+    },
+    {
+     "word": "l'ordonnance",
+     "answer": "the paper a doctor writes for medicine",
+     "options": [
+      "the office where a doctor sees people",
+      "the paper a doctor writes for medicine",
+      "the state office that pays part of your care",
+      "a health centre with no date needed"
+     ]
+    },
+    {
+     "word": "la sécurité sociale",
+     "answer": "the state office that pays part of your care",
+     "options": [
+      "the office where a doctor sees people",
+      "the paper a doctor writes for medicine",
+      "the state office that pays part of your care",
+      "a health centre with no date needed"
+     ]
+    },
+    {
+     "word": "la maison médicale",
+     "answer": "a health centre with no date needed",
+     "options": [
+      "the office where a doctor sees people",
+      "the paper a doctor writes for medicine",
+      "the state office that pays part of your care",
+      "a health centre with no date needed"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "poli",
+  "sentence": "Trois fois la même phrase [[polie]] au téléphone.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "kind and correct",
+   "options": [
+    "kind and correct",
+    "rude",
+    "loud",
+    "quick"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "Trois fois la même phrase polie au téléphone.",
+    "targetWord": "polie",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le médecin traitant",
+  "sentence": "“Il faut choisir un [[médecin traitant]]”, dit sa voisine.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the doctor who follows you for years",
+   "options": [
+    "the doctor who follows you for years",
+    "a doctor you see once",
+    "the nearest chemist",
+    "a nurse at home"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "“Il faut choisir un médecin traitant”, dit sa voisine.",
+    "targetWord": "médecin traitant",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le docteur",
+  "sentence": "Sa voisine lui donne le nom d'un [[docteur]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the person who treats you",
+   "options": [
+    "the person who treats you",
+    "the secretary",
+    "the chemist",
+    "the neighbour"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "Sa voisine lui donne le nom d'un docteur.",
+    "targetWord": "docteur",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "retenir",
+  "sentence": "Le docteur [[retient]] le nom de son village.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to keep in your head",
+   "options": [
+    "to keep in your head",
+    "to forget",
+    "to write down",
+    "to repeat"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "Le docteur retient le nom de son village.",
+    "targetWord": "retient",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vivre",
+  "sentence": "“Ma sœur y a [[vécu]] six ans”, dit-il.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to have your home somewhere",
+   "options": [
+    "to have your home somewhere",
+    "to work",
+    "to travel",
+    "to study"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "“Ma sœur y a vécu six ans”, dit-il.",
+    "targetWord": "vécu",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'adresse",
+  "sentence": "Elle donne son [[adresse]] au secrétariat.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "where you live",
+   "options": [
+    "where you live",
+    "your age",
+    "your job",
+    "your name"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "Elle donne son adresse au secrétariat.",
+    "targetWord": "adresse",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hésiter",
+  "sentence": "Elle écrit tout sans [[hésiter]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to wait because you are not sure",
+   "options": [
+    "to wait because you are not sure",
+    "to hurry",
+    "to refuse",
+    "to ask"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "Elle écrit tout sans hésiter.",
+    "targetWord": "hésiter",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la secrétaire",
+  "sentence": "La [[secrétaire]] est pressée et parle vite.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the person who answers in an office",
+   "options": [
+    "the person who answers in an office",
+    "the doctor",
+    "the patient",
+    "the nurse"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "La secrétaire est pressée et parle vite.",
+    "targetWord": "secrétaire",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "chez",
+  "sentence": "“Elle est restée là-bas, [[chez]] vous”, dit-il.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at the home of somebody",
+   "options": [
+    "at the home of somebody",
+    "far from",
+    "next to",
+    "without"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "“Elle est restée là-bas, chez vous”, dit-il.",
+    "targetWord": "chez",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le nom",
+  "sentence": "Le docteur retient le [[nom]] de son village.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the word that says who somebody is",
+   "options": [
+    "the word that says who somebody is",
+    "the price",
+    "the date",
+    "the address"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "Le docteur retient le nom de son village.",
+    "targetWord": "nom",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tout de suite",
+  "sentence": "Sa voisine ne répond pas [[tout de suite]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "right now, without waiting",
+   "options": [
+    "right now, without waiting",
+    "a week later",
+    "never",
+    "twice"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "Sa voisine ne répond pas tout de suite.",
+    "targetWord": "tout de suite",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "écouter",
+  "sentence": "Ce docteur [[écoute]] et ne presse personne.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to listen",
+   "options": [
+    "to listen",
+    "to hurry",
+    "to explain",
+    "to write"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "Ce docteur écoute et ne presse personne.",
+    "targetWord": "écoute",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "après",
+  "sentence": "“Une seule fois, et [[après]] il te connaît.”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "later than that",
+   "options": [
+    "later than that",
+    "before that",
+    "at the same time",
+    "instead"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "“Une seule fois, et après il te connaît.”",
+    "targetWord": "après",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "libre",
+  "sentence": "Il n'y a pas de place _____ avant deux semaines.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "libre",
+   "options": [
+    "libre",
+    "chère",
+    "proche",
+    "facile"
+   ],
+   "translation": "There is no _____ slot before two weeks.",
+   "optionTranslations": [
+    "free",
+    "expensive",
+    "near",
+    "easy"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "Il n'y a pas de place libre avant deux semaines.",
+    "targetWord": "libre",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "malade",
+  "sentence": "Elle reste au lit parce qu'elle est _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "malade",
+   "options": [
+    "malade",
+    "contente",
+    "polie",
+    "pressée"
+   ],
+   "translation": "She stays in bed because she is _____.",
+   "optionTranslations": [
+    "ill",
+    "happy",
+    "polite",
+    "in a hurry"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "Elle reste au lit parce qu'elle est malade.",
+    "targetWord": "malade",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "remplir",
+  "sentence": "Avant le rendez-vous, il faut _____ un papier.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "remplir",
+   "options": [
+    "remplir",
+    "vendre",
+    "laver",
+    "fermer"
+   ],
+   "translation": "Before the appointment, you have to _____ a form.",
+   "optionTranslations": [
+    "fill in",
+    "sell",
+    "wash",
+    "close"
+   ],
+   "audioClip": {
+    "storySlug": "un-medecin-traitant-pour-deux-ans",
+    "storySource": "user",
+    "sentence": "Avant le rendez-vous, il faut remplir un papier.",
+    "targetWord": "remplir",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

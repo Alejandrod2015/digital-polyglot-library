@@ -1,0 +1,502 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "la truffade,le beurre,l'ail,la poêle",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "la truffade",
+     "answer": "a hot potato and cheese dish",
+     "options": [
+      "a hot potato and cheese dish",
+      "butter",
+      "garlic",
+      "a frying pan"
+     ]
+    },
+    {
+     "word": "le beurre",
+     "answer": "butter",
+     "options": [
+      "a hot potato and cheese dish",
+      "butter",
+      "garlic",
+      "a frying pan"
+     ]
+    },
+    {
+     "word": "l'ail",
+     "answer": "garlic",
+     "options": [
+      "a hot potato and cheese dish",
+      "butter",
+      "garlic",
+      "a frying pan"
+     ]
+    },
+    {
+     "word": "la poêle",
+     "answer": "a frying pan",
+     "options": [
+      "a hot potato and cheese dish",
+      "butter",
+      "garlic",
+      "a frying pan"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "préparer",
+  "sentence": "Elle [[prépare]] la truffade de sa région.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get food ready",
+   "options": [
+    "to get food ready",
+    "to eat",
+    "to order",
+    "to serve"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Elle prépare la truffade de sa région.",
+    "targetWord": "prépare",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la région",
+  "sentence": "Elle cuisine un plat de sa [[région]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "one part of a country",
+   "options": [
+    "one part of a country",
+    "one street of a town",
+    "one small shop",
+    "one whole country"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Elle cuisine un plat de sa région.",
+    "targetWord": "région",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "coller",
+  "sentence": "Le plat [[colle]] un peu au fond.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to stick",
+   "options": [
+    "to stick",
+    "to burn",
+    "to boil",
+    "to melt"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Le plat colle un peu au fond.",
+    "targetWord": "colle",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la honte",
+  "sentence": "Elle a [[honte]] une seconde, puis ça passe.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the bad feeling of doing wrong",
+   "options": [
+    "the bad feeling of doing wrong",
+    "hunger",
+    "anger",
+    "fear"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Elle a honte une seconde, puis ça passe.",
+    "targetWord": "honte",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'œil",
+  "sentence": "Elle goûte et ferme les [[yeux]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an eye",
+   "options": [
+    "an eye",
+    "a hand",
+    "an ear",
+    "a mouth"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Elle goûte et ferme les yeux.",
+    "targetWord": "yeux",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tenir",
+  "sentence": "“Ça [[tient]] chaud jusqu'à demain”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to keep in one state",
+   "options": [
+    "to keep in one state",
+    "to cool down",
+    "to taste good",
+    "to weigh a lot"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "“Ça tient chaud jusqu'à demain”, dit-elle.",
+    "targetWord": "tient",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "directement",
+  "sentence": "Elles mangent [[directement]] dans la poêle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "with nothing in between",
+   "options": [
+    "with nothing in between",
+    "one after another",
+    "very slowly",
+    "at the same time"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Elles mangent directement dans la poêle.",
+    "targetWord": "directement",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la recette",
+  "sentence": "Personne ne demande la [[recette]] à la fin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the steps for cooking a dish",
+   "options": [
+    "the steps for cooking a dish",
+    "the price of a dish",
+    "the name of a dish",
+    "the bill"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Personne ne demande la recette à la fin.",
+    "targetWord": "recette",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la cuillère",
+  "sentence": "Elle pose la [[cuillère]] sur le bord de la poêle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "what you eat soup with",
+   "options": [
+    "what you eat soup with",
+    "what you cut meat with",
+    "what you drink from",
+    "what you eat from"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Elle pose la cuillère sur le bord de la poêle.",
+    "targetWord": "cuillère",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bon",
+  "sentence": "Le fromage frais est [[bon]] et pas cher.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "nice to eat",
+   "options": [
+    "nice to eat",
+    "too hot",
+    "too salty",
+    "not ready"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Le fromage frais est bon et pas cher.",
+    "targetWord": "bon",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la patate",
+  "sentence": "Il faut des [[patates]] et beaucoup de fromage.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a potato",
+   "options": [
+    "a potato",
+    "a tomato",
+    "an onion",
+    "a carrot"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Il faut des patates et beaucoup de fromage.",
+    "targetWord": "patates",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "parler",
+  "sentence": "Elles [[parlent]] de leurs cuisines pendant le repas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to say words",
+   "options": [
+    "to say words",
+    "to listen",
+    "to laugh",
+    "to eat"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Elles parlent de leurs cuisines pendant le repas.",
+    "targetWord": "parlent",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "racler",
+  "sentence": "Elle [[racle]] le fond de la poêle avec le pain.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to scrape off the last bit",
+   "options": [
+    "to scrape off the last bit",
+    "to fill up",
+    "to wash",
+    "to cover"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Elle racle le fond de la poêle avec le pain.",
+    "targetWord": "racle",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plusieurs",
+  "sentence": "“On mange ça quand on est [[plusieurs]]”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "more than two people",
+   "options": [
+    "more than two people",
+    "on your own",
+    "in winter",
+    "at midday"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "“On mange ça quand on est plusieurs”, dit-elle.",
+    "targetWord": "plusieurs",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "lourd",
+  "sentence": "Le plat est [[lourd]]: personne ne reprend du pain.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "heavy in your stomach",
+   "options": [
+    "heavy in your stomach",
+    "light",
+    "cold",
+    "sweet"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Le plat est lourd: personne ne reprend du pain.",
+    "targetWord": "lourd",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "en même temps",
+  "sentence": "Le téléphone sonne [[en même temps]] que le repas.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "at the same moment",
+   "options": [
+    "at the same moment",
+    "a moment later",
+    "every evening",
+    "once again"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Le téléphone sonne en même temps que le repas.",
+    "targetWord": "en même temps",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "frais",
+  "sentence": "Le fromage du matin est encore _____ et doux.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "frais",
+   "options": [
+    "frais",
+    "cher",
+    "sec",
+    "lourd"
+   ],
+   "translation": "The morning cheese is still _____ and mild.",
+   "optionTranslations": [
+    "fresh",
+    "expensive",
+    "dry",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Le fromage du matin est encore frais et doux.",
+    "targetWord": "frais",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "temps",
+  "sentence": "Ce plat demande beaucoup de _____ et de patience.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "temps",
+   "options": [
+    "temps",
+    "beurre",
+    "pain",
+    "bruit"
+   ],
+   "translation": "This dish takes a lot of _____ and patience.",
+   "optionTranslations": [
+    "time",
+    "butter",
+    "bread",
+    "noise"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Ce plat demande beaucoup de temps et de patience.",
+    "targetWord": "temps",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tiède",
+  "sentence": "Le café n'est plus chaud: il est _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tiède",
+   "options": [
+    "tiède",
+    "sucré",
+    "cher",
+    "lourd"
+   ],
+   "translation": "The coffee is not hot any more: it is _____.",
+   "optionTranslations": [
+    "lukewarm",
+    "sweet",
+    "expensive",
+    "heavy"
+   ],
+   "audioClip": {
+    "storySlug": "la-truffade-et-le-telephone",
+    "storySource": "user",
+    "sentence": "Le café n'est plus chaud: il est tiède.",
+    "targetWord": "tiède",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]

@@ -292,6 +292,33 @@ async function sttText(buf: Buffer, apiKey: string): Promise<string> {
 // not contain content words absent from the sentence (an extra = hallucinated
 // word; the "gracias" appended to the mole clip passed the old miss-only
 // check). Scribe is accurate on short clean sentences, so slack is minimal.
+/** Numerales escritos con letra, por si el STT los devuelve en cifra ("vingt"
+ *  -> "20"). Scribe normaliza SIEMPRE hacia la cifra, así que sin esto una
+ *  oración con dos números se rechaza aunque el audio sea perfecto, y se
+ *  queman los cuatro intentos (y sus créditos) en un falso negativo. */
+const NUM_WORDS: Record<string, number> = {
+  un: 1, une: 1, uno: 1, eins: 1, ein: 1, uma: 1, due: 2, deux: 2, dos: 2, zwei: 2, dois: 2, duas: 2,
+  trois: 3, tres: 3, tre: 3, drei: 3, tres_pt: 3, quatre: 4, cuatro: 4, quattro: 4, vier: 4, quatro: 4,
+  cinq: 5, cinco: 5, cinque: 5, fuenf: 5, funf: 5, six: 6, seis: 6, sei: 6, sechs: 6,
+  sept: 7, siete: 7, sette: 7, sieben: 7, sete: 7, huit: 8, ocho: 8, otto: 8, acht: 8, oito: 8,
+  neuf: 9, nueve: 9, nove: 9, neun: 9, dix: 10, diez: 10, dieci: 10, zehn: 10, dez: 10,
+  onze: 11, once: 11, undici: 11, elf: 11, douze: 12, doce: 12, dodici: 12, zwoelf: 12, zwolf: 12, doze: 12,
+  treize: 13, trece: 13, tredici: 13, dreizehn: 13, treze: 13, quatorze: 14, catorce: 14, quattordici: 14,
+  quinze: 15, quince: 15, quindici: 15, funfzehn: 15, seize: 16, dieciseis: 16, sedici: 16,
+  vingt: 20, veinte: 20, venti: 20, zwanzig: 20, vinte: 20, trente: 30, treinta: 30, trenta: 30, dreissig: 30,
+  quarante: 40, cuarenta: 40, quaranta: 40, cinquante: 50, cincuenta: 50, cinquanta: 50,
+  cent: 100, cien: 100, cento: 100, hundert: 100, mille: 1000, mil: 1000,
+};
+
+/** Valor de una palabra-número, incluidos los compuestos con guion
+ *  ("vingt-deux" = 22, "veintidós" no hace falta: va suelto). */
+function numValue(w: string): number | null {
+  if (NUM_WORDS[w] !== undefined) return NUM_WORDS[w];
+  const partes = w.split("-").map((x) => NUM_WORDS[x]);
+  if (partes.length > 1 && partes.every((n) => n !== undefined)) return partes.reduce((a, b) => a + b, 0);
+  return null;
+}
+
 function transcriptOk(sentence: string, tx: string): boolean {
   const wantList = strip(sentence).split(" ").filter((w) => w.length >= 3);
   const heardList = strip(tx).split(" ");
@@ -318,8 +345,11 @@ function transcriptOk(sentence: string, tx: string): boolean {
     }
     return true; // difieren solo en el último char extra
   };
+  // Cifras oídas, para casar "vingt" con "20" antes de contarlo como fallo.
+  const heardNums = new Set(heardList.filter((h) => /^\d+$/.test(h)).map(Number));
   const miss = wantList.filter(
     (w) => !heard.has(w) && !heardJoined.includes(w) && !heardList.some((h) => w.length >= 4 && ed1(w, h))
+      && !((n) => n !== null && heardNums.has(n))(numValue(w))
   );
   const extra = heardList.filter(
     (w) => w.length >= 4 && !want.has(w) && !wantJoined.includes(w) && !wantList.some((t) => t.length >= 4 && ed1(w, t))

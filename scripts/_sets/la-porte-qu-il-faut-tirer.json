@@ -1,0 +1,433 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "Rennes,le café,l'année,le samedi",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "Rennes",
+     "answer": "a city in the west of France",
+     "options": [
+      "a city in the west of France",
+      "coffee",
+      "a year of twelve months",
+      "Saturday"
+     ]
+    },
+    {
+     "word": "le café",
+     "answer": "coffee",
+     "options": [
+      "a city in the west of France",
+      "coffee",
+      "a year of twelve months",
+      "Saturday"
+     ]
+    },
+    {
+     "word": "l'année",
+     "answer": "a year of twelve months",
+     "options": [
+      "a city in the west of France",
+      "coffee",
+      "a year of twelve months",
+      "Saturday"
+     ]
+    },
+    {
+     "word": "le samedi",
+     "answer": "Saturday",
+     "options": [
+      "a city in the west of France",
+      "coffee",
+      "a year of twelve months",
+      "Saturday"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le coup",
+  "sentence": "La porte s'ouvre du premier [[coup]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "one quick try",
+   "options": [
+    "one quick try",
+    "a long wait",
+    "a loud noise",
+    "a hard push"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "La porte s'ouvre du premier coup.",
+    "targetWord": "coup",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "s'ouvrir",
+  "sentence": "La porte [[s'ouvre]] sans coincer.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to open by itself",
+   "options": [
+    "to open by itself",
+    "to close",
+    "to stick",
+    "to break"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "La porte s'ouvre sans coincer.",
+    "targetWord": "s'ouvre",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "remonter",
+  "sentence": "En [[remontant]], ils parlent des deux fleuves.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go up again",
+   "options": [
+    "to go up again",
+    "to go down",
+    "to stop",
+    "to sit"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "En remontant, ils parlent des deux fleuves.",
+    "targetWord": "remontant",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "venir de",
+  "sentence": "Il [[vient de]] la campagne pour un premier travail.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come from a place",
+   "options": [
+    "to come from a place",
+    "to go to a place",
+    "to live alone",
+    "to travel often"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "Il vient de la campagne pour un premier travail.",
+    "targetWord": "vient de",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "le premier travail",
+  "sentence": "Il arrive pour son [[premier travail]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the first job of your life",
+   "options": [
+    "the first job of your life",
+    "a summer holiday",
+    "a school year",
+    "a new flat"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "Il arrive pour son premier travail.",
+    "targetWord": "premier travail",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "plus bas",
+  "sentence": "“Il y a un marché deux rues [[plus bas]]”, dit-elle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "further down the street",
+   "options": [
+    "further down the street",
+    "further up",
+    "right here",
+    "very far away"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "“Il y a un marché deux rues plus bas”, dit-elle.",
+    "targetWord": "plus bas",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "la bonne clé",
+  "sentence": "Il cherche la [[bonne clé]] devant la porte.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the key that opens that door",
+   "options": [
+    "the key that opens that door",
+    "a spare key",
+    "a broken key",
+    "the door handle"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "Il cherche la bonne clé devant la porte.",
+    "targetWord": "bonne clé",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "s'appeler",
+  "sentence": "Le nouveau voisin [[s'appelle]] comme son frère.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to have that name",
+   "options": [
+    "to have that name",
+    "to look like",
+    "to live with",
+    "to work with"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "Le nouveau voisin s'appelle comme son frère.",
+    "targetWord": "s'appelle",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "petit",
+  "sentence": "“C'est grand”, dit-il. “Ça devient plus [[petit]].”",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "small",
+   "options": [
+    "small",
+    "big",
+    "empty",
+    "dark"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "“C'est grand”, dit-il. “Ça devient plus petit.”",
+    "targetWord": "petit",
+    "language": "french"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'an",
+  "sentence": "L'appartement sent la peinture, comme il y a un [[an]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "twelve months",
+   "options": [
+    "twelve months",
+    "one month",
+    "one week",
+    "ten years"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "L'appartement sent la peinture, comme il y a un an.",
+    "targetWord": "an",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "devenir",
+  "sentence": "L'appartement [[devient]] plus petit avec le temps.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to turn into something else",
+   "options": [
+    "to turn into something else",
+    "to stay the same",
+    "to disappear",
+    "to open"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "L'appartement devient plus petit avec le temps.",
+    "targetWord": "devient",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "l'appartement",
+  "sentence": "Son [[appartement]] sent la peinture.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a flat",
+   "options": [
+    "a flat",
+    "a house",
+    "a shop",
+    "a garden"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "Son appartement sent la peinture.",
+    "targetWord": "appartement",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "se tromper",
+  "sentence": "Ils [[se trompent]] dans les marches en même temps.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to make a mistake",
+   "options": [
+    "to make a mistake",
+    "to hurry",
+    "to laugh",
+    "to stop"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "Ils se trompent dans les marches en même temps.",
+    "targetWord": "se trompent",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "jeune",
+  "sentence": "Le voisin qui arrive a vingt ans et semble très _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "jeune",
+   "options": [
+    "jeune",
+    "vieux",
+    "grand",
+    "fatigué"
+   ],
+   "translation": "The neighbour who is moving in is twenty and seems very _____.",
+   "optionTranslations": [
+    "young",
+    "old",
+    "tall",
+    "tired"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "Le voisin qui arrive a vingt ans et semble très jeune.",
+    "targetWord": "jeune",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "signer",
+  "sentence": "Pour rester deux ans, elle doit _____ en bas du papier.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "signer",
+   "options": [
+    "signer",
+    "laver",
+    "vendre",
+    "fermer"
+   ],
+   "translation": "To stay two years, she has to _____ at the bottom of the form.",
+   "optionTranslations": [
+    "sign",
+    "wash",
+    "sell",
+    "close"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "Pour rester deux ans, elle doit signer en bas du papier.",
+    "targetWord": "signer",
+    "language": "french"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "entendre",
+  "sentence": "La nuit, on peut _____ les valises dans l'escalier.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "entendre",
+   "options": [
+    "entendre",
+    "porter",
+    "compter",
+    "ouvrir"
+   ],
+   "translation": "At night you can _____ the suitcases on the stairs.",
+   "optionTranslations": [
+    "hear",
+    "carry",
+    "count",
+    "open"
+   ],
+   "audioClip": {
+    "storySlug": "la-porte-qu-il-faut-tirer",
+    "storySource": "user",
+    "sentence": "La nuit, on peut entendre les valises dans l'escalier.",
+    "targetWord": "entendre",
+    "language": "french"
+   }
+  },
+  "featured": false
+ }
+]
