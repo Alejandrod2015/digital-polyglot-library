@@ -68,8 +68,15 @@ function quotedPct(text: string): number {
  * verbo de habla, en cualquiera de los dos ordenes. Y se pide en dos historias
  * o mas para no meter a un figurante de una escena.
  */
-const HABLA = "sagt|fragt|antwortet|ruft|nickt|lacht|schweigt|schreibt|erzählt|flüstert|zählt";
-function castOf(stories: JourneyStoryInput[]): string[] {
+const HABLA_POR_IDIOMA: Record<string, string> = {
+  DE: "sagt|fragt|antwortet|ruft|nickt|lacht|schweigt|schreibt|erzählt|flüstert|zählt",
+  // Portugues: presente Y preterito, porque desde el 2026-08-19 la ultima
+  // historia de cada tema se narra en pasado y con solo el presente el reparto
+  // salia vacio (`protagonista ?`).
+  PT: "diz|disse|pergunta|perguntou|responde|respondeu|avisa|avisou|repete|repetiu|conta|contou|explica|explicou|grita|gritou|chama|chamou|pede|pediu|ri|riu|ensina|ensinou|escreve|escreveu",
+};
+function castOf(stories: JourneyStoryInput[], lang: string): string[] {
+  const HABLA = HABLA_POR_IDIOMA[lang] ?? HABLA_POR_IDIOMA.DE;
   const cuentaHabla = new Map<string, Set<string>>();
   for (const s of stories) {
     for (const re of [
@@ -86,7 +93,7 @@ function castOf(stories: JourneyStoryInput[]): string[] {
   return castLegacy(stories).filter((n) => hablan.has(n));
 }
 function castLegacy(stories: JourneyStoryInput[]): string[] {
-  const ART = /\b(der|die|das|den|dem|des|ein|eine|einen|einem|einer|zum|zur|im|am|beim|vom|le|la|les|un|une|du|el|los|las|il|lo|gli)\s+$/i;
+  const ART = /\b(der|die|das|den|dem|des|ein|eine|einen|einem|einer|zum|zur|im|am|beim|vom|le|la|les|un|une|du|el|los|las|il|lo|gli|o|a|os|as|um|uma|do|da|dos|das|no|na|nos|nas|ao|pelo|pela|de|em)\s+$/i;
   const MID = /[\p{Ll}],?\s+$/u;
   const conArticulo = new Set<string>();
   const cuenta = new Map<string, number>();
@@ -115,7 +122,44 @@ const FORMAS_DE: Array<[string, (n: string) => RegExp]> = [
   ["con sein", (n) => new RegExp(`\\b${n}\\s+ist\\s+(?:${DET_DE}\\s+)?${NUC_DE}`, "u")],
 ];
 
+/**
+ * Las tres formas aprobadas en PORTUGUES, fijadas con el usuario el 2026-08-18
+ * mientras se escribia el Traveler PT-BR A1 ([[feedback_introduce_characters]]):
+ *
+ *   aposicion   Rafaela, uma moca de Sao Paulo, chega em Manaus...
+ *   quem        Quem serve e Dora, uma senhora de Belem que abre a banca...
+ *   nombre      Neide vende na mesma calcada desde que a filha dela nasceu.
+ *
+ * La tercera pide un verbo que DIGA QUE ES la persona (oficio, papel o cuanto
+ * lleva ahi); "Rafaela chega" no presenta a nadie y por eso no entra.
+ */
+const NUC_PT = "(?:[a-zà-ú]+\\s+){0,3}[a-zà-ú]+";
+const VERBO_SER_PT = "(?:é|foi|era|trabalha|trabalhou|vende|vendia|leva|levava|cuida|cuidava|pinta|pintava|desceu|mora|morava|abre|abria|serve|servia|senta|sentava|nasceu|estuda|estudava|pesca|pescava|sobe|subia)";
+const FORMAS_PT: Array<[string, (n: string) => RegExp]> = [
+  ["aposicion", (n) => new RegExp(`${n},\\s+(?:um|uma)\\s+${NUC_PT}`, "iu")],
+  ["quem", (n) => new RegExp(`\\bQuem\\s+[a-zà-ú]+(?:\\s+[a-zà-ú]+)?\\s+é\\s+${n}\\b`, "iu")],
+  ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+(?:${VERBO_SER_PT})\\b`, "iu")],
+];
+
+const FORMAS_POR_IDIOMA: Record<string, Array<[string, (n: string) => RegExp]>> = {
+  DE: FORMAS_DE,
+  PT: FORMAS_PT,
+};
+
 /** Forma de la apertura: que clase de sujeto abre la primera frase. */
+function openingShapePT(text: string): string {
+  const f = sentences(text)[0] ?? "";
+  const w = (f.split(/\s+/)[0] ?? "").replace(/[.,:;]$/, "");
+  if (f.startsWith(QUOTE_OPEN)) return "replica directa";
+  if (/^(O|A|Os|As)$/.test(w)) return "articulo definido + sustantivo";
+  if (/^(Um|Uma|Uns|Umas)$/.test(w)) return "articulo indefinido + sustantivo";
+  if (/^(No|Na|Nos|Nas|Do|Da|Dos|Das|Ao|À|Em|Entre|Dentro|Atrás|Depois|Antes|Sobre|Debaixo)$/.test(w)) return "lugar o tiempo delante";
+  if (/^(Às|Aos|Quinze|Dois|Duas|Três|Quatro|Cinco|Seis|Sete|Oito|Dez|Vinte|Trinta|Meia|Cada|Todo|Toda)$/.test(w)) return "hora o cantidad";
+  if (/^Quem\b/.test(f)) return "quem + verbo";
+  if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
+  return "otra";
+}
+
 function openingShape(text: string): string {
   const f = sentences(text)[0] ?? "";
   const w = f.split(/\s+/)[0] ?? "";
@@ -149,7 +193,14 @@ export function validateJourneyStories(
   }
 ): JourneyCheck[] {
   const out: JourneyCheck[] = [];
-  const lang = (ctx.language || "").toUpperCase();
+  // La app llama al idioma por su nombre ("portuguese") y el CLI por su codigo
+  // ("PT"). El checker medía solo lo segundo, asi que un journey cargado desde
+  // la base caia en "sin gate" por el formato, no por el idioma.
+  const NOMBRE_A_CODIGO: Record<string, string> = {
+    GERMAN: "DE", SPANISH: "ES", PORTUGUESE: "PT", ITALIAN: "IT", FRENCH: "FR", ENGLISH: "EN",
+  };
+  const langRaw = (ctx.language || "").toUpperCase();
+  const lang = NOMBRE_A_CODIGO[langRaw] ?? langRaw;
   const level = (ctx.level || "").toUpperCase();
   const narradas = stories.filter((s) => s.text.includes(QUOTE_OPEN));
 
@@ -167,12 +218,13 @@ export function validateJourneyStories(
       `${fuera.length}/${narradas.length} fuera: ${fuera.map((x) => `${x.slug} ${x.pct.toFixed(0)}%`).join(", ")}`);
   }
 
-  const cast = castOf(stories);
+  const cast = castOf(stories, lang);
 
   // ── 2 y 3. Presentacion de personajes y variedad de forma ───
-  if (lang !== "DE") {
-    const why = `El detector de presentacion solo esta escrito para DE; este journey es ${lang || "?"}. ` +
-      `Un check que no sabe medir NO puede pasar: implementa las tres formas para ${lang} en FORMAS_DE.`;
+  const FORMAS = FORMAS_POR_IDIOMA[lang];
+  if (!FORMAS) {
+    const why = `El detector de presentacion no esta escrito para ${lang || "?"}. ` +
+      `Un check que no sabe medir NO puede pasar: implementa las tres formas para ${lang} en FORMAS_POR_IDIOMA.`;
     noImpl("journey-character-introduction", "Cada personaje presentado antes de su primera cita", why);
     noImpl("journey-introduction-form-variety", "Las tres formas de presentacion se alternan", why);
   } else {
@@ -182,7 +234,7 @@ export function validateJourneyStories(
       const primera = stories.find((s) => new RegExp(`\\b${n}\\b`, "u").test(s.text));
       if (!primera) continue;
       const t = primera.text;
-      const forma = FORMAS_DE.find(([, re]) => re(n).test(t));
+      const forma = FORMAS.find(([, re]) => re(n).test(t));
       const posCita = t.indexOf(QUOTE_OPEN);
       const posPres = forma ? t.search(forma[1](n)) : -1;
       if (!forma) { malos.push(`${n} (${primera.slug}): sin sintagma que diga que es`); continue; }
@@ -203,7 +255,7 @@ export function validateJourneyStories(
   {
     const porForma = new Map<string, string[]>();
     for (const s of stories) {
-      const f = openingShape(s.text);
+      const f = lang === "PT" ? openingShapePT(s.text) : openingShape(s.text);
       porForma.set(f, [...(porForma.get(f) ?? []), s.slug]);
     }
     const tope = Math.max(2, Math.ceil(stories.length / 3));
