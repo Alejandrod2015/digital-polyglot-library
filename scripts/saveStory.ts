@@ -492,6 +492,7 @@ function slugify(s: string): string {
   if (journeyId) {
     const p3 = new PrismaClient();
     let todas: JourneyStoryInput[] = [];
+    let realPeople: string[] | undefined;
     try {
       const enTanda = new Map<string, any>(stories.map((d: any) => [`${d.topic}#${d.slotIndex}`, d]));
       // EN ORDEN DE LECTURA. Sin ordenar, "la primera historia en que sale un
@@ -500,7 +501,7 @@ function slugify(s: string): string {
       const j3 = await p3.journey.findUnique({ where: { id: journeyId }, select: { topics: true } });
       const orden = j3?.topics ?? [];
       const filas = (await p3.journeyStory.findMany({
-        where: { journeyId }, select: { slug: true, title: true, text: true, topic: true, slotIndex: true },
+        where: { journeyId }, select: { slug: true, title: true, text: true, vocab: true, topic: true, slotIndex: true },
       })).sort((a, b) => (orden.indexOf(a.topic) - orden.indexOf(b.topic)) || (a.slotIndex - b.slotIndex));
       const vistos = new Set<string>();
       for (const f of filas) {
@@ -510,16 +511,26 @@ function slugify(s: string): string {
         const text = d ? String(d.text) : String(f.text ?? "");
         if (!text.trim()) continue;
         todas.push({ slug: d?.slug ?? f.slug ?? k, title: d?.title ?? f.title ?? "", text,
-                     language: ctx.language, level: ctx.level });
+                     vocab: (d?.vocab ?? f.vocab) as never, language: ctx.language, level: ctx.level });
       }
       for (const [k, d] of enTanda) if (!vistos.has(k))
-        todas.push({ slug: d.slug ?? k, title: d.title, text: String(d.text), language: ctx.language, level: ctx.level });
+        todas.push({ slug: d.slug ?? k, title: d.title, text: String(d.text), vocab: d.vocab,
+                     language: ctx.language, level: ctx.level });
+      // Personas REALES: el check de personajes no puede medir sin ellas, y sin
+      // la lista devuelve `not-implemented`, que bloquea igual que un fallo.
+      // `BetaSignup` no guarda el nombre, solo el correo, asi que el nombre se
+      // saca de la parte local (`hannah.mueller@…` -> Hannah, Mueller). Es una
+      // aproximacion, pero es la unica senal de identidad que hay en la tabla.
+      realPeople = (await p3.betaSignup.findMany({ select: { email: true } }))
+        .flatMap((b) => String(b.email ?? "").split("@")[0].split(/[._\-+0-9]+/))
+        .filter((w) => w.length >= 3)
+        .map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase());
     } finally { await p3.$disconnect(); }
 
     if (todas.length < 7) {
       console.log(`\n[gate de journey] SALTADO: solo ${todas.length} historias con texto (hacen falta 7 para medir un conjunto).`);
     } else {
-      const jc = validateJourneyStories(todas, { language: ctx.language, level: ctx.level });
+      const jc = validateJourneyStories(todas, { language: ctx.language, level: ctx.level, realPeople });
       const malos = jc.filter((c) => c.status !== "pass");
       console.log(`\n── gate de journey (${todas.length} historias) ──`);
       for (const c of jc) console.log(`   ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : "SIN IMPLEMENTAR"} [${c.id}] ${c.detail ?? ""}`);
