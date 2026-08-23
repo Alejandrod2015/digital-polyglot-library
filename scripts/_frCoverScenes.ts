@@ -64,9 +64,38 @@ const REGISTRO =
   "FRAMING (critical): the people are seen at a comfortable MIDDLE DISTANCE, head to knee or full body, never a close up of a face filling the frame and never tiny specks in a landscape. " +
   "TEXT (critical): the image contains NO written words anywhere: no shop names, no signs, no labels, no numbers, no price tags, no posters, no logos, no watermark; every board, paper, screen and shop front in the scene is completely blank.";
 
+
+/** El color de ropa se REPITE dentro de la escena, no solo en la ficha.
+ *  WHY (2026-08-23, tirada 3 de la primera portada): la ficha de Sylvie estaba
+ *  en el prompt y aun asi salio un chico joven de camiseta beige. El A1 lo
+ *  resolvia nombrando el color en la propia frase de la accion ("ROCIO, in her
+ *  WARM CORAL blouse"), que es donde el modelo mira cuando compone. */
+const ROPA: Record<string, string> = {
+  MANON: "in her MUSTARD YELLOW jumper",
+  SYLVIE: "the woman of about forty-five in her DEEP GREEN cardigan",
+  CAMILLE: "in her WINE RED blouse",
+  PAULINE: "in her PURPLE anorak",
+  JULIETTE: "in her WHITE apron over a SKY BLUE shirt",
+  BAPTISTE: "the man of about forty-five in his NAVY BLUE shirt",
+  NICOLAS: "the man of about thirty-five in his RUST ORANGE jumper",
+  ANTOINE: "the man of about twenty-six in his TEAL BLUE jacket",
+  LEA: "the teacher in her CHARCOAL GREY blazer",
+};
+
+/** Mete el color en la PRIMERA mencion de cada personaje dentro de la escena. */
+function conRopa(escena: string): string {
+  let out = escena;
+  for (const [nombre, ropa] of Object.entries(ROPA)) {
+    const i = out.indexOf(nombre);
+    if (i < 0) continue;
+    out = out.slice(0, i + nombre.length) + `, ${ropa},` + out.slice(i + nombre.length).replace(/^,/, "");
+  }
+  return out;
+}
+
 const SCENES: Array<[string, string[], string]> = [
   ["les-premieres-heures", [C.manon, C.sylvie],
-   "A stairwell landing in an old French city building on a Thursday morning. THERE ARE EXACTLY TWO PEOPLE IN THE IMAGE AND BOTH ARE FULLY VISIBLE, NOBODY ELSE: (1) MANON standing in the doorway on the landing, one hand on the handle of the door she has just pulled open, two suitcases on the floor beside her; (2) SYLVIE, who MUST be in the image, standing a few steps higher on the dark wooden staircase on the right, her coat folded over one arm, turned towards Manon and explaining the door with a small gesture; the two women are looking at each other and talking. The landing has ONE single wooden door and no other door: it is clearly OPEN, swung towards the viewer, and through the opening a small empty room is visible. Cream ochre walls, a tall window with morning light, a bare bulb. Calm welcoming mood."],
+   "A staircase inside an old French city building on a Thursday morning, seen from the half landing. THERE IS NO DOOR ANYWHERE IN THE IMAGE: no doorway, no door frame, no opening into another room; only the staircase, the banister and the wall. THERE ARE EXACTLY TWO PEOPLE IN THE IMAGE AND BOTH ARE FULLY VISIBLE, NOBODY ELSE: (1) MANON standing on the half landing beside two suitcases, one hand resting on the wooden banister, turned to look up at her neighbour; (2) SYLVIE, coming down the last steps towards her with her coat folded over one arm, mid sentence, giving a small friendly piece of advice with one hand. They look at each other and talk. Cream ochre walls, dark wooden treads and a polished banister, a tall stairwell window with clear morning light behind them, a bare bulb hanging from the ceiling. Calm welcoming mood."],
   ["six-cartons-pleins", [C.manon],
    "A small kitchen on a rainy Sunday at midday. THERE IS EXACTLY ONE PERSON IN THE IMAGE AND NOBODY ELSE: MANON standing in front of six sealed cardboard boxes stacked against the wall, holding a phone to her ear, the screen turned away and not visible, her free hand on the back of a chair. A dry loaf and two apples on the counter, a coffee pot, closed curtains, grey rain on the window, an old radiator. Tired half smiling mood."],
   ["trop-grande-pour-le-lit", [C.manon],
@@ -106,13 +135,13 @@ const SCENES: Array<[string, string[], string]> = [
   ["deux-mille-marches-a-deux", [C.manon, C.pauline],
    "A stone stair street on a warm summer night, climbing between old buildings with every window open and lit. THERE ARE EXACTLY THREE PEOPLE IN THE IMAGE AND NOBODY ELSE: (1) MANON and (2) PAULINE walking up the steps together, mid conversation, Pauline counting on her fingers; (3) at the bottom corner under a street lamp, one musician, an adult man of about forty in a blue shirt, playing an accordion. Warm yellow windows, deep blue sky, no crowd, festive easy mood."],
   ["la-porte-qu-il-faut-tirer", [C.manon, C.antoine],
-   "The same stairwell landing as the first image, on a bright morning. THERE ARE EXACTLY TWO PEOPLE IN THE IMAGE AND NOBODY ELSE: (1) ANTOINE, two suitcases beside him, a key in the lock of a stiff wooden door; (2) MANON one step away, miming a pull towards herself with one hand, smiling. Cream ochre walls, dark wooden staircase, a tall window with clear morning light, easy friendly mood."],
+   "The same stairwell landing as the first image, on a bright morning. THERE ARE EXACTLY TWO PEOPLE IN THE IMAGE AND NOBODY ELSE: (1) ANTOINE, two suitcases beside him, his hand turning a key in the lock of ONE single CLOSED wooden door, the only door in the image, with no second door and no other doorway anywhere; (2) MANON one step away, miming a pull towards herself with one hand, smiling. Cream ochre walls, dark wooden staircase, a tall window with clear morning light, easy friendly mood."],
 ];
 
 const PRINT = process.argv.indexOf("--print");
 mkdirSync(DIR, { recursive: true });
 for (const [slug, fichas, escena] of SCENES) {
-  const texto = [...fichas, PIEL, REGISTRO, escena].join("\n\n");
+  const texto = [...fichas, PIEL, REGISTRO, conRopa(escena)].join("\n\n");
   writeFileSync(`${DIR}/${slug}.txt`, texto + "\n");
   if (PRINT > 0 && process.argv[PRINT + 1] === slug) console.log(texto);
 }
