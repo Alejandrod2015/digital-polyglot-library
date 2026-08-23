@@ -1,0 +1,2587 @@
+[
+  {
+    "topic": "food-everyday-life",
+    "slotIndex": 1,
+    "title": "Kabeljau vom Fischmarkt",
+    "slug": "kabeljau-vom-fischmarkt",
+    "synopsis": "Früh am Sonntagmorgen stehen zwei Mitbewohner auf dem lauten Fischmarkt am Hafen von Hamburg. Jonas will den großen, teuren Lachs kaufen, weil er denkt, teuer sei immer besser. Lena zeigt ihm den frischen, billigen Kabeljau direkt vom Boot. Am Ende riecht Jonas den Fisch und versteht: frisch ist besser als teuer.",
+    "text": "Es riecht nach Salz und Meer auf dem Fischmarkt am Hafen von Hamburg. Um fünf Uhr morgens ist der Markt schon laut und voll. Lena liebt diesen Markt. Ihr Mitbewohner Jonas steht müde neben ihr und hält einen Becher Tee. Überall stehen Kisten voll frischem Fisch.\n\nJonas: So früh, Lena. Warum kaufen wir den Fisch nicht einfach im Geschäft?\nLena: Weil der Fisch hier ganz frisch ist. Er kommt direkt vom Boot.\nJonas: Na gut. Dann nehmen wir den großen Lachs da. Der ist teuer, aber bestimmt gut.\nLena: Der Lachs kostet wirklich viel. Brauchen wir das heute?\n\nEin Verkäufer ruft laut seine Preise über den ganzen Markt. Vor ihm liegt frischer Kabeljau auf dem Eis.\n\nVerkäufer: Frischer Kabeljau, heute Morgen aus der Nordsee! Drei Stück, ein guter Preis!\nJonas: Kabeljau? Den kenne ich gar nicht.\n\nLena dreht sich zu ihm um und zeigt mit der Hand auf den Fisch.\n\nLena: Der ist super und viel billiger als der Lachs. Probier ihn einmal, dann schmeckst du den Unterschied.\nJonas: Wirklich? Ich denke immer, teuer ist besser.\nLena: Nicht beim Fisch. Frisch ist besser als teuer.\n\nJonas nimmt ein Stück Kabeljau in die Hand und riecht daran. Zum ersten Mal an diesem Morgen lächelt er.\n\nJonas: Du hast recht. Der riecht gut, nach Meer und nicht nach Fisch.\nLena: Siehst du? Dann kochen wir heute Kabeljau, ganz einfach mit Zitrone.\nJonas: Einverstanden. Aber den Tee danach bezahlst du.",
+    "vocab": [
+      {
+        "type": "adverb",
+        "word": "morgens",
+        "definition": "In the morning; during the first early hours of the day."
+      },
+      {
+        "type": "noun",
+        "word": "Hafen",
+        "definition": "Harbor; the place at the water where boats arrive and leave."
+      },
+      {
+        "type": "adjective",
+        "word": "frisch",
+        "definition": "Fresh; recently caught or made, and not old at all."
+      },
+      {
+        "type": "noun",
+        "word": "Mitbewohner",
+        "definition": "Flatmate; a person who shares the same apartment with you."
+      },
+      {
+        "type": "adjective",
+        "word": "müde",
+        "definition": "Tired; feeling that you need to rest or to sleep."
+      },
+      {
+        "type": "noun",
+        "word": "Becher",
+        "definition": "Mug; a cup you drink hot tea or coffee from."
+      },
+      {
+        "type": "noun",
+        "word": "Lachs",
+        "definition": "Salmon; a pink fish that is usually quite expensive to buy."
+      },
+      {
+        "type": "adjective",
+        "word": "teuer",
+        "definition": "Expensive; costing a lot of money, more than you want."
+      },
+      {
+        "type": "noun",
+        "word": "Verkäufer",
+        "definition": "Seller; the person who sells things at a market or shop."
+      },
+      {
+        "type": "noun",
+        "word": "Preis",
+        "surface": "Preise",
+        "definition": "Price; the amount of money that something costs to buy."
+      },
+      {
+        "type": "noun",
+        "word": "Kabeljau",
+        "definition": "Cod; a mild white fish that is easy to cook."
+      },
+      {
+        "type": "noun",
+        "word": "Eis",
+        "definition": "Ice; frozen water used here to keep the fish cold and fresh."
+      },
+      {
+        "type": "verb",
+        "word": "kennen",
+        "surface": "kenne",
+        "definition": "To know; to be familiar with a person or a thing."
+      },
+      {
+        "type": "adjective",
+        "word": "billig",
+        "surface": "billiger",
+        "definition": "Cheap; costing only a little money, not expensive at all."
+      },
+      {
+        "type": "verb",
+        "word": "probieren",
+        "surface": "Probier",
+        "definition": "To try or taste; to test how a food tastes."
+      },
+      {
+        "type": "verb",
+        "word": "riechen",
+        "surface": "riecht",
+        "definition": "To smell; to notice a thing through your own nose."
+      },
+      {
+        "type": "verb",
+        "word": "lächeln",
+        "surface": "lächelt",
+        "definition": "To smile; to make a happy face with your mouth."
+      },
+      {
+        "type": "verb",
+        "word": "kochen",
+        "definition": "To cook; to prepare a meal using heat on the stove."
+      },
+      {
+        "type": "noun",
+        "word": "Zitrone",
+        "definition": "Lemon; a sour yellow fruit used to give food more taste."
+      },
+      {
+        "type": "verb",
+        "word": "bezahlen",
+        "surface": "bezahlst",
+        "definition": "To pay; to give money in return for something you get."
+      },
+      {
+        "type": "adjective",
+        "word": "einverstanden",
+        "definition": "In agreement; happy to say yes to a plan or idea."
+      },
+      {
+        "type": "verb",
+        "word": "zeigen",
+        "surface": "zeigt",
+        "definition": "To show or point; to use your hand to indicate something."
+      }
+    ],
+    "arcType": "reframe-turn"
+  },
+  {
+    "topic": "food-everyday-life",
+    "slotIndex": 2,
+    "title": "Sonntags ist alles zu",
+    "slug": "sonntags-ist-alles-zu",
+    "synopsis": "In ihrer kleinen Küche braten die zwei Mitbewohner den frischen Fisch vom Markt. Dann merken sie: Die Zitrone fehlt, und heute ist Sonntag. In Deutschland sind sonntags fast alle Geschäfte geschlossen. Der Fisch ist gleich fertig, die Tankstelle ist weit weg, und plötzlich hat Lena eine Idee und läuft aus der Wohnung.",
+    "text": "Am späten Vormittag steht Lena in der kleinen Küche und schneidet eine Zwiebel. Jonas deckt den Tisch für zwei. Der Kabeljau liegt schon in der Pfanne, und die ganze Wohnung riecht warm nach Mittagessen.\n\nLena: Jonas, wo ist die Zitrone? Der Fisch braucht unbedingt Zitrone.\nJonas: Die Zitrone? Ich denke, die hast du gekauft.\nLena: Nein, das warst du. Wir haben beide keine gekauft.\nJonas: Kein Problem. Ich gehe schnell zum Geschäft und hole eine.\n\nLena dreht das Feuer kleiner und schaut ihn an.\n\nLena: Jonas, heute ist Sonntag. In Deutschland ist sonntags alles geschlossen.\nJonas: Stimmt. Der Supermarkt, der Bäcker, der Laden an der Ecke. Alles zu.\nLena: Und ohne Zitrone schmeckt der Kabeljau nur halb so gut.\nJonas: Moment, die Tankstelle hat immer offen, auch sonntags.\nLena: Die ist zwanzig Minuten weg. Der Fisch ist in fünf Minuten fertig.\n\nJonas stellt die zwei Teller auf den Tisch und denkt nach.\n\nJonas: Dann essen wir den Fisch eben ohne Zitrone. So schlimm ist das doch nicht.\nLena: Warte mal. Ich glaube, ich habe eine Idee.\nJonas: Eine Idee? Was für eine Idee denn, Lena?\nLena: Du passt zwei Minuten auf den Fisch auf. Ich bin gleich wieder da.\n\nAber Lena hört ihn schon nicht mehr. Sie steht an der Wohnungstür und zieht schnell ihre Schuhe an.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Vormittag",
+        "definition": "Late morning; the hours of the day before noon arrives."
+      },
+      {
+        "type": "verb",
+        "word": "schneiden",
+        "surface": "schneidet",
+        "definition": "To cut; to divide food into smaller pieces with a knife."
+      },
+      {
+        "type": "noun",
+        "word": "Zwiebel",
+        "definition": "Onion; a round vegetable with a strong smell and sharp taste."
+      },
+      {
+        "type": "verb",
+        "word": "decken",
+        "surface": "deckt",
+        "definition": "To set the table; to put out plates and forks for eating."
+      },
+      {
+        "type": "noun",
+        "word": "Pfanne",
+        "definition": "Pan; the flat dish used on the stove to fry food."
+      },
+      {
+        "type": "noun",
+        "word": "Wohnung",
+        "definition": "Apartment; the home where one or two people live together."
+      },
+      {
+        "type": "adjective",
+        "word": "warm",
+        "definition": "Warm; having gentle heat, neither cold nor really hot."
+      },
+      {
+        "type": "adverb",
+        "word": "unbedingt",
+        "definition": "Absolutely; with no exception, no matter what else happens."
+      },
+      {
+        "type": "noun",
+        "word": "Geschäft",
+        "definition": "Shop or store; a place where you go to buy things."
+      },
+      {
+        "type": "adjective",
+        "word": "geschlossen",
+        "definition": "Closed; not open, so you cannot go inside right now."
+      },
+      {
+        "type": "noun",
+        "word": "Bäcker",
+        "definition": "Baker; the shop or person that makes and sells fresh bread."
+      },
+      {
+        "type": "noun",
+        "word": "Ecke",
+        "definition": "Corner; the place where two streets meet each other."
+      },
+      {
+        "type": "verb",
+        "word": "schmecken",
+        "surface": "schmeckt",
+        "definition": "To taste; to have a certain flavor when you eat it."
+      },
+      {
+        "type": "noun",
+        "word": "Tankstelle",
+        "definition": "Petrol station; a place for fuel, often open even on Sundays."
+      },
+      {
+        "type": "adjective",
+        "word": "offen",
+        "definition": "Open; able to be entered or used by people now."
+      },
+      {
+        "type": "adjective",
+        "word": "fertig",
+        "definition": "Ready or finished; done and waiting to be used now."
+      },
+      {
+        "type": "noun",
+        "word": "Feuer",
+        "definition": "Fire or flame; here the cooking heat under the frying pan."
+      },
+      {
+        "type": "noun",
+        "word": "Teller",
+        "definition": "Plate; the round dish that you eat your food from."
+      },
+      {
+        "type": "verb",
+        "word": "stellen",
+        "surface": "stellt",
+        "definition": "To put or place; to set something down in a spot."
+      },
+      {
+        "type": "noun",
+        "word": "Idee",
+        "definition": "Idea; a plan or thought about how to solve a problem."
+      },
+      {
+        "type": "verb",
+        "word": "warten",
+        "surface": "Warte",
+        "definition": "To wait; to stay and do nothing until later."
+      },
+      {
+        "type": "noun",
+        "word": "Schuhe",
+        "definition": "Shoes; the things you wear on your feet to go outside."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "topic": "food-everyday-life",
+    "slotIndex": 3,
+    "title": "Eine Zitrone von nebenan",
+    "slug": "eine-zitrone-von-nebenan",
+    "synopsis": "Lenas Idee ist die Nachbarin von gegenüber. Sie klingelt am Sonntag, fragt vorsichtig nach einer Zitrone und kommt mit mehr zurück, als sie gedacht hat: auch ein paar Kräuter. Zu dritt essen die beiden Mitbewohner und die junge Nachbarin Pia den frischen Fisch, reden über das Leben in der Straße und machen einen Plan für den nächsten Sonntag.",
+    "text": "Lena klingelt im Haus gegenüber. Eine junge Frau macht die Tür auf, in der Hand eine Tasse Kaffee. Es ist Pia, die Nachbarin, die Lena erst zweimal gesehen hat.\n\nLena: Hallo, Pia. Entschuldige die Störung am Sonntag. Hast du vielleicht eine Zitrone?\nPia: Eine Zitrone? Warte kurz, ich schaue in der Küche nach.\nLena: Wir kochen Fisch, und alle Geschäfte sind ja zu.\nPia: Das kenne ich gut. Sonntags fehlt mir auch oft etwas.\n\nPia geht in die Küche und sucht. Dann steht sie wieder an der Tür, mit einer Zitrone und einem kleinen Beutel.\n\nPia: Hier, die Zitrone. Und nimm die Kräuter dazu, die passen gut zu Fisch.\nLena: Das ist wirklich lieb von dir. Komm doch mit, der Fisch reicht für drei.\nPia: Wirklich? Dann sage ich nicht nein.\n\nIn der kleinen Wohnung sitzen jetzt drei Leute am Tisch. Jonas legt einen dritten Teller dazu und freut sich sichtbar.\n\nJonas: Der Kabeljau mit Zitrone schmeckt fantastisch. Lena hatte recht: frisch ist besser als teuer.\nPia: Und zusammen essen ist besser als allein. Danke für die Einladung.\nLena: Und danke für die Zitrone. Nächsten Sonntag kochst du, und wir bringen den Fisch mit.\nPia: Abgemacht. Aber dann kommt ihr bitte früher vom Markt zurück.\nJonas: Versprochen. Beim nächsten Mal stehen wir um vier Uhr auf.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "klingeln",
+        "surface": "klingelt",
+        "definition": "To ring the doorbell; to press the button at someone's door."
+      },
+      {
+        "type": "noun",
+        "word": "Tür",
+        "definition": "Door; the part of a wall you open to go through."
+      },
+      {
+        "type": "noun",
+        "word": "Tasse",
+        "definition": "Cup; a small dish with a handle for hot drinks."
+      },
+      {
+        "type": "noun",
+        "word": "Nachbarin",
+        "definition": "Neighbor; a woman who lives near you in the same street."
+      },
+      {
+        "type": "expression",
+        "word": "Entschuldige",
+        "definition": "Sorry; a polite word you say when you disturb someone else."
+      },
+      {
+        "type": "noun",
+        "word": "Störung",
+        "definition": "Disturbance; the act of bothering someone at a bad moment."
+      },
+      {
+        "type": "adverb",
+        "word": "vielleicht",
+        "definition": "Maybe; possibly, but you are not really sure yet."
+      },
+      {
+        "type": "verb",
+        "word": "schauen",
+        "surface": "schaue",
+        "definition": "To look; to turn your eyes toward something to find it."
+      },
+      {
+        "type": "verb",
+        "word": "fehlen",
+        "surface": "fehlt",
+        "definition": "To be missing; to not be there when you need it."
+      },
+      {
+        "type": "verb",
+        "word": "suchen",
+        "surface": "sucht",
+        "definition": "To search; to look for something you cannot find yet."
+      },
+      {
+        "type": "noun",
+        "word": "Beutel",
+        "definition": "Small bag; a soft bag you carry little things in."
+      },
+      {
+        "type": "noun",
+        "word": "Kräuter",
+        "definition": "Herbs; green plants used to give food a better taste."
+      },
+      {
+        "type": "verb",
+        "word": "passen",
+        "surface": "passen",
+        "definition": "To fit or suit; to go nicely together with something else."
+      },
+      {
+        "type": "adjective",
+        "word": "lieb",
+        "definition": "Kind; warm and friendly in the way you treat others."
+      },
+      {
+        "type": "verb",
+        "word": "reichen",
+        "surface": "reicht",
+        "definition": "To be enough; to be sufficient for all the people there."
+      },
+      {
+        "type": "noun",
+        "word": "Teller",
+        "definition": "Plate; the round dish that you eat your food from."
+      },
+      {
+        "type": "verb",
+        "word": "sitzen",
+        "definition": "To sit; to rest on a chair with your body upright."
+      },
+      {
+        "type": "adjective",
+        "word": "allein",
+        "definition": "Alone; without any other people there with you."
+      },
+      {
+        "type": "noun",
+        "word": "Einladung",
+        "definition": "Invitation; the act of asking someone to come and join you."
+      },
+      {
+        "type": "expression",
+        "word": "abgemacht",
+        "definition": "It's a deal; a word you say to agree on a plan."
+      },
+      {
+        "type": "verb",
+        "word": "versprechen",
+        "surface": "Versprochen",
+        "definition": "To promise; to firmly say you will surely do something."
+      }
+    ],
+    "arcType": "harmonic-close"
+  },
+  {
+    "topic": "home-family",
+    "slotIndex": 1,
+    "title": "Kartons im Kinderzimmer",
+    "slug": "kartons-im-kinderzimmer",
+    "synopsis": "Tobias ist neunzehn und freut sich auf seine erste eigene Wohnung. Für seine Mutter Petra ist der Auszug schwerer, als sie zeigt. Beim Ausräumen des Regals findet sie eine alte Kiste voller Fotos. Je leerer das Zimmer wird, desto voller wird die Kiste in ihrer Hand. Was bleibt, wenn ein Kind auszieht?",
+    "text": "Es ist Samstagvormittag in Berlin. Im kleinen Kinderzimmer stehen viele leere Kartons. Tobias, neunzehn Jahre alt, zieht bald in seine erste eigene Wohnung. Seine Mutter Petra hilft ihm beim Packen.\n\nTobias: Mama, kann ich die alten Bücher hierlassen? In der neuen Wohnung ist wenig Platz.\nPetra: Natürlich. Aber die Schulsachen nehmen wir mit, die brauchst du vielleicht noch.\nTobias: Gut. Dann packe ich nur die Kleidung und ein paar Bücher ein.\n\nPetra nimmt eine alte Kiste vom Regal. Darin liegen viele Fotos aus der Kindheit von Tobias.\n\nPetra: Sieh mal hier. Du bist drei Jahre alt, im Garten mit dem roten Eimer.\nTobias: Das Foto kenne ich gar nicht. So klein war ich also.\nPetra: Und hier, dein erster Schultag. Wie schnell die Zeit vergeht.\nTobias: Jetzt wird das Zimmer ganz leer, Mama. Aber die Fotos bleiben.\n\nPetra schaut auf das leere Regal und dann auf die volle Kiste in ihrer Hand.\n\nPetra: Das Regal ist fast leer. Aber diese Kiste hier ist ganz voll.\nTobias: Voll mit allem, was hier passiert ist. Die nehmen wir auf jeden Fall mit.\nPetra: Auf jeden Fall. In der neuen Wohnung brauchst du auch ein paar Erinnerungen.\nTobias: Dann stell ich sie zuerst ins neue Regal. Vor die Bücher.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Samstag",
+        "surface": "Samstagvormittag",
+        "definition": "Saturday; the sixth day of the week, before Sunday."
+      },
+      {
+        "type": "noun",
+        "word": "Kinderzimmer",
+        "definition": "Child's room; the bedroom where a child sleeps and plays."
+      },
+      {
+        "type": "adjective",
+        "word": "leer",
+        "definition": "Empty; having nothing or nobody inside it at all."
+      },
+      {
+        "type": "noun",
+        "word": "Karton",
+        "surface": "Kartons",
+        "definition": "Cardboard box; a box used to pack and carry things."
+      },
+      {
+        "type": "verb",
+        "word": "ziehen",
+        "surface": "zieht",
+        "definition": "To move house; to go and live in a new home."
+      },
+      {
+        "type": "adjective",
+        "word": "eigene",
+        "definition": "Own; belonging only to you and to nobody else."
+      },
+      {
+        "type": "verb",
+        "word": "packen",
+        "surface": "packe",
+        "definition": "To pack; to put your things into boxes or bags."
+      },
+      {
+        "type": "noun",
+        "word": "Platz",
+        "definition": "Space or room; the free area where things can stand."
+      },
+      {
+        "type": "noun",
+        "word": "Kleidung",
+        "definition": "Clothing; the shirts, trousers and coats that you wear."
+      },
+      {
+        "type": "noun",
+        "word": "Regal",
+        "definition": "Shelf; the board on a wall where you put books."
+      },
+      {
+        "type": "noun",
+        "word": "Kiste",
+        "definition": "Box or crate; a strong box for storing or moving things."
+      },
+      {
+        "type": "adjective",
+        "word": "alt",
+        "definition": "Old; having existed for a long time, not new."
+      },
+      {
+        "type": "noun",
+        "word": "Garten",
+        "definition": "Garden; the green area outside a house with plants."
+      },
+      {
+        "type": "noun",
+        "word": "Eimer",
+        "definition": "Bucket; a round pail with a handle for water or sand."
+      },
+      {
+        "type": "noun",
+        "word": "Kindheit",
+        "definition": "Childhood; the years when a person is still a child."
+      },
+      {
+        "type": "noun",
+        "word": "Zeit",
+        "definition": "Time; the minutes, days and years that keep passing."
+      },
+      {
+        "type": "adjective",
+        "word": "schnell",
+        "definition": "Fast; happening or moving in very little time."
+      },
+      {
+        "type": "verb",
+        "word": "bleiben",
+        "surface": "bleiben",
+        "definition": "To stay; to remain in a place and not leave."
+      },
+      {
+        "type": "adjective",
+        "word": "voll",
+        "definition": "Full; having no more free space left inside."
+      },
+      {
+        "type": "noun",
+        "word": "Erinnerung",
+        "surface": "Erinnerungen",
+        "definition": "Memory; a thing you remember from earlier in life."
+      },
+      {
+        "type": "verb",
+        "word": "stellen",
+        "surface": "stell",
+        "definition": "To put or place; to set something upright in a spot."
+      }
+    ],
+    "arcType": "juxtaposition-discovery"
+  },
+  {
+    "topic": "home-family",
+    "slotIndex": 2,
+    "title": "Der Schlüssel passt nicht",
+    "slug": "der-schlussel-passt-nicht",
+    "synopsis": "Vater und Sohn schleppen am Umzugstag die schweren Kisten in den dritten Stock, ganz ohne Aufzug. Doch oben vor der Tür beginnt das eigentliche Problem: Der neue Schlüssel dreht sich nicht im Schloss. Mit allen Kartons im Treppenhaus fragt sich Stefan, ob die Hausverwaltung ihm den falschen Schlüssel gegeben hat.",
+    "text": "Vor dem Haus steht ein kleiner Wagen voller Kisten. Es ist Umzugstag, und Tobias und sein Vater Stefan tragen die Kartons die Treppe hinauf, in den dritten Stock. Einen Aufzug gibt es hier nicht.\n\nStefan: Diese Kiste ist wirklich schwer. Was hast du da bloß hineingetan?\nTobias: Die Bücher, tut mir leid. Die Kleidung ist viel leichter, versprochen.\nStefan: Schon gut. Nur noch eine Etage, dann sind wir oben.\nTobias: Warte, ich nehme dir die schwere Kiste ab. Du hast genug getragen.\n\nOben vor der Tür stellt Tobias die Kartons ab und nimmt den Schlüssel.\n\nTobias: Endlich. Jetzt machen wir auf und stellen alles hinein.\nStefan: Probier den Schlüssel. Ich halte solange die schwere Kiste.\nTobias: Er passt nicht. Der Schlüssel geht nicht ins Schloss.\nStefan: Dreh ihn mal anders herum. Vielleicht klemmt er nur ein bisschen.\n\nTobias versucht es noch einmal, langsam und vorsichtig. Aber der Schlüssel passt einfach nicht.\n\nTobias: Nichts. Papa, der Schlüssel passt wirklich nicht in diese Tür.\nStefan: Das ist doch nicht möglich. Die Hausverwaltung hat ihn uns heute gegeben.\nTobias: Und jetzt? Alle Kisten stehen schon hier oben vor der Tür.\nStefan: Ganz ruhig. Lass mich noch einmal genau auf die Nummer an der Tür schauen.\nTobias: Auf die Nummer? Papa, was meinst du damit?",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Umzugstag",
+        "definition": "Moving day; the day you carry your things to a new home."
+      },
+      {
+        "type": "noun",
+        "word": "Wagen",
+        "definition": "Car or van; the vehicle used here to bring the boxes."
+      },
+      {
+        "type": "verb",
+        "word": "tragen",
+        "definition": "To carry; to hold something and move it from place to place."
+      },
+      {
+        "type": "noun",
+        "word": "Treppe",
+        "definition": "Stairs; the steps you climb to reach a higher floor."
+      },
+      {
+        "type": "adverb",
+        "word": "hinauf",
+        "definition": "Upward; from a lower place to a higher one."
+      },
+      {
+        "type": "noun",
+        "word": "Stock",
+        "surface": "Stock",
+        "definition": "Floor or storey; one level of a building above the ground."
+      },
+      {
+        "type": "noun",
+        "word": "Aufzug",
+        "definition": "Lift or elevator; the small room that carries you up floors."
+      },
+      {
+        "type": "adjective",
+        "word": "schwer",
+        "definition": "Heavy; hard to lift because it weighs a lot."
+      },
+      {
+        "type": "adjective",
+        "word": "leicht",
+        "definition": "Light; easy to lift because it weighs very little."
+      },
+      {
+        "type": "noun",
+        "word": "Etage",
+        "definition": "Floor of a building; one level with rooms above another."
+      },
+      {
+        "type": "verb",
+        "word": "klemmen",
+        "surface": "klemmt",
+        "definition": "To jam or be stuck; to not move freely as it should."
+      },
+      {
+        "type": "noun",
+        "word": "Schlüssel",
+        "definition": "Key; the small metal thing that opens a lock."
+      },
+      {
+        "type": "noun",
+        "word": "Tür",
+        "definition": "Door; the part of a wall you open to go through."
+      },
+      {
+        "type": "noun",
+        "word": "Schloss",
+        "surface": "Schloss",
+        "definition": "Lock; the part of a door that a key opens."
+      },
+      {
+        "type": "verb",
+        "word": "passen",
+        "surface": "passt",
+        "definition": "To fit; to be the right size or shape for something."
+      },
+      {
+        "type": "verb",
+        "word": "halten",
+        "surface": "halte",
+        "definition": "To hold; to keep something in your hands for a while."
+      },
+      {
+        "type": "verb",
+        "word": "drehen",
+        "surface": "Dreh",
+        "definition": "To turn; to move something around in a circle."
+      },
+      {
+        "type": "adverb",
+        "word": "vorsichtig",
+        "definition": "Carefully; doing something slowly so nothing goes wrong."
+      },
+      {
+        "type": "adjective",
+        "word": "möglich",
+        "definition": "Possible; able to happen or to be true."
+      },
+      {
+        "type": "adjective",
+        "word": "ruhig",
+        "definition": "Calm; quiet and relaxed, without worry or stress."
+      },
+      {
+        "type": "noun",
+        "word": "Nummer",
+        "definition": "Number; the sign that tells which flat or door this is."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "topic": "home-family",
+    "slotIndex": 3,
+    "title": "Ein Bild für die Wand",
+    "slug": "ein-bild-fur-die-wand",
+    "synopsis": "Das Rätsel mit dem Schlüssel hat eine einfache Lösung: Vater und Sohn waren eine Etage zu hoch. Unten geht die Tür sofort auf. In der ganz leeren Wohnung fehlt nur eine Sache, damit aus vier Wänden ein Zuhause wird. Stefan hat sie heimlich in seiner Jacke dabei.",
+    "text": "Eine Etage tiefer stehen Tobias und sein Vater Stefan vor einer anderen Tür. Die Nummer stimmt jetzt. Der Schlüssel dreht sich leicht, und die Tür geht auf.\n\nTobias: Sie geht auf! Wir waren einfach ein Stockwerk zu hoch.\nStefan: Natürlich. Dritter Stock, nicht vierter. Jetzt tragen wir alles herein.\nTobias: Endlich. Meine erste eigene Wohnung. Sie ist klein, aber sie gehört mir.\n\nSie stellen die Kisten in das leere Wohnzimmer. Die Wände sind weiß und nackt, und alles riecht nach frischer Farbe.\n\nStefan: So, die schweren Kisten sind oben. Den Rest schaffst du allein.\nTobias: Danke, Papa. Ohne dich wäre der Tag heute viel schwerer gewesen.\nStefan: Warte, eine Sache habe ich noch. Ich habe sie extra mitgebracht.\n\nStefan nimmt ein kleines Bild aus seiner Jacke. Es ist das Foto aus dem Garten, mit dem roten Eimer.\n\nTobias: Das Foto von gestern. Mama hat es eingepackt?\nStefan: Wir beide. Eine leere Wand ist kein Zuhause. Ein Bild reicht für den Anfang.\nTobias: Es ist perfekt. Hier neben das Fenster, da sehe ich es jeden Morgen.\nStefan: Gut. Dann ist aus den vier Wänden jetzt deine Wohnung geworden.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Etage",
+        "definition": "Floor or storey; one level of a building with flats on it."
+      },
+      {
+        "type": "adjective",
+        "word": "tief",
+        "surface": "tiefer",
+        "definition": "Low or deep; here meaning one floor further down."
+      },
+      {
+        "type": "verb",
+        "word": "stimmen",
+        "surface": "stimmt",
+        "definition": "To be correct; to be right and match the truth."
+      },
+      {
+        "type": "verb",
+        "word": "drehen",
+        "surface": "dreht",
+        "definition": "To turn; to move around in a circle, like a key."
+      },
+      {
+        "type": "adverb",
+        "word": "herein",
+        "surface": "herein",
+        "definition": "Inside; into the room from outside, toward the speaker."
+      },
+      {
+        "type": "verb",
+        "word": "gehören",
+        "surface": "gehört",
+        "definition": "To belong to; to be owned by a certain person."
+      },
+      {
+        "type": "noun",
+        "word": "Wohnzimmer",
+        "definition": "Living room; the main room where a family sits together."
+      },
+      {
+        "type": "noun",
+        "word": "Wand",
+        "surface": "Wände",
+        "definition": "Wall; the flat upright side of a room."
+      },
+      {
+        "type": "adjective",
+        "word": "weiß",
+        "surface": "weiß",
+        "definition": "White; the color of fresh snow or clean paper."
+      },
+      {
+        "type": "adjective",
+        "word": "nackt",
+        "definition": "Bare; with nothing at all hung or placed on it."
+      },
+      {
+        "type": "noun",
+        "word": "Farbe",
+        "definition": "Paint or color; the liquid put on walls to color them."
+      },
+      {
+        "type": "verb",
+        "word": "schaffen",
+        "surface": "schaffst",
+        "definition": "To manage; to be able to finish a hard task."
+      },
+      {
+        "type": "adjective",
+        "word": "allein",
+        "definition": "Alone; without other people there to help you."
+      },
+      {
+        "type": "noun",
+        "word": "Sache",
+        "definition": "Thing or matter; an object or a single point you mean."
+      },
+      {
+        "type": "verb",
+        "word": "mitbringen",
+        "surface": "mitgebracht",
+        "definition": "To bring along; to carry something with you to a place."
+      },
+      {
+        "type": "noun",
+        "word": "Bild",
+        "definition": "Picture; a photo or painting that you hang on a wall."
+      },
+      {
+        "type": "noun",
+        "word": "Jacke",
+        "definition": "Jacket; a short coat you wear over your other clothes."
+      },
+      {
+        "type": "verb",
+        "word": "einpacken",
+        "surface": "eingepackt",
+        "definition": "To pack up; to wrap or put something into a bag."
+      },
+      {
+        "type": "noun",
+        "word": "Zuhause",
+        "definition": "Home; the place where you live and feel safe."
+      },
+      {
+        "type": "noun",
+        "word": "Fenster",
+        "definition": "Window; the glass opening in a wall you look through."
+      }
+    ],
+    "arcType": "harmonic-close"
+  },
+  {
+    "topic": "meeting-new-people",
+    "slotIndex": 1,
+    "title": "Ein freier Platz am Tisch",
+    "slug": "ein-freier-platz-am-tisch",
+    "synopsis": "Sofie ist neu in München und kennt noch niemanden. An einem warmen Abend sucht sie im vollen Biergarten einen Platz. Am langen Tisch sitzen Max und seine Freunde, und sie machen ihr ganz selbstverständlich Platz. Aus einer einfachen Frage nach einem Stuhl wird ein erstes, leichtes Gespräch unter Fremden.",
+    "text": "Es ist ein warmer Abend in München. Im Biergarten sind fast alle Tische voll. Sofie ist neu in der Stadt und sucht einen Platz. Sie kennt hier noch niemanden.\n\nSofie: Entschuldigung, ist der Platz hier noch frei?\nMax: Klar, setz dich ruhig zu uns. Hier sind noch zwei Stühle frei.\nSofie: Danke. Drinnen war kein einziger Tisch mehr frei.\nMax: Am langen Tisch ist immer Platz. So ist das hier, man sitzt zusammen.\n\nSofie stellt ihr Glas ab und setzt sich. Die anderen am Tisch lachen und reden weiter.\n\nMax: Ich bin Max. Und das sind Ben und Clara, alte Freunde von mir.\nSofie: Ich heiße Sofie. Ich wohne erst seit zwei Wochen in München.\nMax: Zwei Wochen erst? Und schon allein im Biergarten? Mutig.\nSofie: Mutig oder einsam. Zu Hause sitzen ist auch nicht besser.\n\nMax schiebt ihr die Brezel über den Tisch und lacht freundlich.\n\nMax: Dann nimm dir eine Brezel. Niemand sitzt hier lange allein.\nSofie: Das ist nett. In der neuen Stadt ist alles noch so fremd.\nMax: Das kenne ich gut. Ich war auch mal neu hier. Das gibt sich schnell.\nSofie: Ich hoffe. Heute Abend fühlt sich München schon ein bisschen wärmer an.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Abend",
+        "definition": "Evening; the part of the day after work, before night."
+      },
+      {
+        "type": "noun",
+        "word": "Tisch",
+        "definition": "Table; the flat piece of furniture you sit and eat at."
+      },
+      {
+        "type": "adjective",
+        "word": "frei",
+        "definition": "Free; not taken, so somebody else may use it."
+      },
+      {
+        "type": "noun",
+        "word": "Stadt",
+        "definition": "City or town; a big place where many people live."
+      },
+      {
+        "type": "noun",
+        "word": "Platz",
+        "definition": "Seat or spot; a free place where one person can sit."
+      },
+      {
+        "type": "noun",
+        "word": "Stuhl",
+        "surface": "Stühle",
+        "definition": "Chair; the seat with a back that one person sits on."
+      },
+      {
+        "type": "adverb",
+        "word": "drinnen",
+        "definition": "Inside; in the indoor part of a building, not outside."
+      },
+      {
+        "type": "adverb",
+        "word": "zusammen",
+        "definition": "Together; with other people in the same place."
+      },
+      {
+        "type": "verb",
+        "word": "nehmen",
+        "surface": "nimm",
+        "definition": "To take; to pick something up with your hand."
+      },
+      {
+        "type": "verb",
+        "word": "setzen",
+        "surface": "setzt",
+        "definition": "To sit down; to lower your body onto a seat."
+      },
+      {
+        "type": "verb",
+        "word": "lachen",
+        "surface": "lachen",
+        "definition": "To laugh; to make a happy sound when something is funny."
+      },
+      {
+        "type": "verb",
+        "word": "reden",
+        "definition": "To talk; to speak with other people about things."
+      },
+      {
+        "type": "verb",
+        "word": "heißen",
+        "surface": "heiße",
+        "definition": "To be called; to have a certain name."
+      },
+      {
+        "type": "verb",
+        "word": "wohnen",
+        "surface": "wohne",
+        "definition": "To live; to have your home in a certain place."
+      },
+      {
+        "type": "adjective",
+        "word": "mutig",
+        "definition": "Brave; willing to do something even when it feels scary."
+      },
+      {
+        "type": "adjective",
+        "word": "einsam",
+        "definition": "Lonely; sad because you are alone and miss company."
+      },
+      {
+        "type": "verb",
+        "word": "schieben",
+        "surface": "schiebt",
+        "definition": "To push or slide; to move a thing along a surface."
+      },
+      {
+        "type": "noun",
+        "word": "Brezel",
+        "definition": "Pretzel; a knotted baked snack with salt on top."
+      },
+      {
+        "type": "adjective",
+        "word": "freundlich",
+        "definition": "Friendly; kind and warm in the way you treat people."
+      },
+      {
+        "type": "adjective",
+        "word": "fremd",
+        "definition": "Strange or unfamiliar; new and not yet known to you."
+      },
+      {
+        "type": "verb",
+        "word": "hoffen",
+        "surface": "hoffe",
+        "definition": "To hope; to wish that something good will happen."
+      }
+    ],
+    "arcType": "daily-encounter"
+  },
+  {
+    "topic": "meeting-new-people",
+    "slotIndex": 2,
+    "title": "Der Stammtisch am Donnerstag",
+    "slug": "der-stammtisch-am-donnerstag",
+    "synopsis": "Max lädt Sofie zum Stammtisch der Gruppe ein. An der Tür zögert sie: Sie glaubt, die anderen sind nur höflich und sie ist bloß ein Gast. Erst als Clara erzählt, dass früher jeder am Tisch einmal neu in München war, versteht Sofie: Dieser Tisch ist genau für Leute wie sie da.",
+    "text": "Auf dem runden Tisch im Wirtshaus steht ein kleines Schild mit einem Wort: Stammtisch. Es ist Donnerstagabend, und Max' Gruppe sitzt schon zusammen. Sofie bleibt an der Tür stehen und zögert.\n\nMax: Sofie, da bist du ja! Komm her, wir haben einen Stuhl für dich frei gehalten.\nSofie: Ich will auch wirklich nicht stören. Ihr kennt euch doch alle schon lange.\nMax: Genau deshalb bist du eingeladen. Setz dich, der Donnerstag gehört allen.\n\nSofie setzt sich vorsichtig auf den freien Stuhl. Clara dreht sich zu ihr und lächelt.\n\nClara: Du denkst sicher, wir sind nur höflich. Das war ich früher auch.\nSofie: Ein bisschen, ja. Ihr seid eine feste Gruppe, und ich bin ganz neu.\nClara: Weißt du, vor zwei Jahren saß ich genauso an dieser Tür wie du.\nSofie: Wirklich? Du wirkst, als ob du immer dazugehört hast.\n\nMax hebt sein Glas und schaut in die Runde am Tisch.\n\nMax: Hier war jeder einmal neu. Ben kam aus Hamburg, Clara aus Leipzig.\nClara: Der Stammtisch ist genau für Leute wie dich. Sonst gibt es ihn doch gar nicht.\nSofie: Dann bin ich also kein Gast heute.\nMax: Nein. Ab heute gehörst du einfach dazu. So einfach ist das.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Donnerstag",
+        "surface": "Donnerstagabend",
+        "definition": "Thursday; the fifth day of the week, before Friday."
+      },
+      {
+        "type": "noun",
+        "word": "Wirtshaus",
+        "definition": "Pub; a traditional place where people eat and drink together."
+      },
+      {
+        "type": "adjective",
+        "word": "rund",
+        "surface": "runden",
+        "definition": "Round; shaped like a circle, with no corners."
+      },
+      {
+        "type": "noun",
+        "word": "Schild",
+        "definition": "Sign; a small board with a word or picture on it."
+      },
+      {
+        "type": "noun",
+        "word": "Wort",
+        "definition": "Word; a single piece of language with its own meaning."
+      },
+      {
+        "type": "verb",
+        "word": "zögern",
+        "surface": "zögert",
+        "definition": "To hesitate; to wait because you are unsure what to do."
+      },
+      {
+        "type": "verb",
+        "word": "stören",
+        "definition": "To disturb; to bother people who are busy together."
+      },
+      {
+        "type": "verb",
+        "word": "einladen",
+        "surface": "eingeladen",
+        "definition": "To invite; to ask someone to come and join you."
+      },
+      {
+        "type": "adverb",
+        "word": "deshalb",
+        "definition": "Therefore; for that reason and not another one."
+      },
+      {
+        "type": "adverb",
+        "word": "vorsichtig",
+        "definition": "Carefully; doing something slowly so nothing goes wrong."
+      },
+      {
+        "type": "adjective",
+        "word": "höflich",
+        "definition": "Polite; behaving in a kind and correct way to others."
+      },
+      {
+        "type": "adjective",
+        "word": "fest",
+        "surface": "feste",
+        "definition": "Firm or close; here a group that already knows each other well."
+      },
+      {
+        "type": "verb",
+        "word": "denken",
+        "surface": "denkst",
+        "definition": "To think; to have an idea or opinion in your head."
+      },
+      {
+        "type": "verb",
+        "word": "heben",
+        "surface": "hebt",
+        "definition": "To lift or raise; to move something upward in the air."
+      },
+      {
+        "type": "noun",
+        "word": "Runde",
+        "definition": "Group sitting together; everyone here around the table."
+      },
+      {
+        "type": "verb",
+        "word": "dazugehören",
+        "surface": "dazugehört",
+        "definition": "To belong; to be a real part of a group."
+      },
+      {
+        "type": "noun",
+        "word": "Gast",
+        "definition": "Guest; a visitor who is not yet part of the group."
+      },
+      {
+        "type": "adjective",
+        "word": "einfach",
+        "definition": "Simple; easy and without any difficulty at all."
+      },
+      {
+        "type": "adverb",
+        "word": "wirklich",
+        "definition": "Really; in truth, used to make a statement stronger."
+      },
+      {
+        "type": "adverb",
+        "word": "sicher",
+        "definition": "Surely; almost certainly true, with very little doubt left."
+      },
+      {
+        "type": "adjective",
+        "word": "neu",
+        "definition": "New; here only a short time, not known for long."
+      }
+    ],
+    "arcType": "reframe-turn"
+  },
+  {
+    "topic": "meeting-new-people",
+    "slotIndex": 3,
+    "title": "Eine Welle im Eisbach",
+    "slug": "eine-welle-im-eisbach",
+    "synopsis": "Eigentlich ist Sofie zum Treffen verabredet, doch auf der Wiese steht sie allein. Ein Anruf schickt sie an die Brücke am Eisbach, wo eine ganze Menge auf das Wasser starrt. Mitten in der Stadt reitet ein Surfer auf einer echten Welle. Dann dreht Ben ein Schild um, und darauf steht ein einziges Wort.",
+    "text": "Sofie wartet im Englischen Garten auf der großen Wiese. Es ist Samstagnachmittag, und nach zwanzig Minuten ist immer noch niemand da. Dann klingelt ihr Handy.\n\nSofie: Max, wo seid ihr? Ich warte schon eine ganze Weile hier auf der Wiese.\nMax: Tut mir leid! Wir sind schon weiter. Komm zur Brücke am Eisbach, du verpasst sonst etwas.\nSofie: Zum Eisbach? Was macht ihr denn da unten am Wasser?\nMax: Das musst du selbst sehen. Lauf einfach los, du findest uns sofort.\n\nSofie steckt das Handy ein und läuft den Weg entlang. Schon bald hört sie eine große Menge rufen und klatschen.\n\nClara: Sofie, hier sind wir! Komm her, wir haben einen Platz für dich.\nSofie: So viele Menschen hier. Was ist denn los?\nClara: Schau einmal ins Wasser. Mitten in der Stadt gibt es eine echte Welle.\nSofie: Eine Welle im Fluss? Und da fährt wirklich jemand darauf?\nBen: Jeden Tag fährt hier wer. Aber diese Welle heute ist nur für dich.\n\nSofie versteht erst nicht. Dann dreht Ben ein großes Schild zu ihr um.\nSofie: Auf dem Schild steht etwas. Das sind ja große Buchstaben.\nBen: Lies es einfach laut. Es ist nur ein einziges Wort.\nSofie: Da steht mein Name. Sofie. Aber warum steht hier mein Name?",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Nachmittag",
+        "surface": "Samstagnachmittag",
+        "definition": "Afternoon; the part of the day between noon and evening."
+      },
+      {
+        "type": "noun",
+        "word": "Wiese",
+        "definition": "Meadow; a flat field of green grass in the open."
+      },
+      {
+        "type": "verb",
+        "word": "warten",
+        "surface": "warte",
+        "definition": "To wait; to stay until a person or thing arrives."
+      },
+      {
+        "type": "noun",
+        "word": "Weile",
+        "definition": "While; a period of time that is not very short."
+      },
+      {
+        "type": "noun",
+        "word": "Handy",
+        "definition": "Mobile phone; the small phone you carry and call with."
+      },
+      {
+        "type": "noun",
+        "word": "Brücke",
+        "definition": "Bridge; the path built over a river so you can cross."
+      },
+      {
+        "type": "noun",
+        "word": "Wasser",
+        "definition": "Water; the clear liquid in rivers, lakes and taps."
+      },
+      {
+        "type": "adverb",
+        "word": "weiter",
+        "definition": "Further on; onward to a place beyond this one."
+      },
+      {
+        "type": "verb",
+        "word": "laufen",
+        "surface": "Lauf",
+        "definition": "To run or walk fast; to move quickly on foot."
+      },
+      {
+        "type": "noun",
+        "word": "Weg",
+        "definition": "Path or way; the route you follow to a place."
+      },
+      {
+        "type": "adverb",
+        "word": "entlang",
+        "definition": "Along; following the side of a path or river."
+      },
+      {
+        "type": "verb",
+        "word": "rufen",
+        "definition": "To call out; to say something loudly so others hear."
+      },
+      {
+        "type": "verb",
+        "word": "klatschen",
+        "definition": "To clap; to hit your hands together to show you like it."
+      },
+      {
+        "type": "noun",
+        "word": "Menge",
+        "definition": "Crowd; a large group of people in one place."
+      },
+      {
+        "type": "noun",
+        "word": "Menschen",
+        "surface": "Menschen",
+        "definition": "People; the persons who are gathered here in the crowd."
+      },
+      {
+        "type": "adjective",
+        "word": "echt",
+        "surface": "echte",
+        "definition": "Real; truly what it seems, not fake or pretend."
+      },
+      {
+        "type": "noun",
+        "word": "Welle",
+        "definition": "Wave; the moving wall of water that a surfer rides."
+      },
+      {
+        "type": "noun",
+        "word": "Fluss",
+        "definition": "River; the long stream of water that flows through a city."
+      },
+      {
+        "type": "noun",
+        "word": "Buchstabe",
+        "surface": "Buchstaben",
+        "definition": "Letter; one of the signs that together make a word."
+      },
+      {
+        "type": "verb",
+        "word": "lesen",
+        "surface": "Lies",
+        "definition": "To read; to look at written words and understand them."
+      },
+      {
+        "type": "adjective",
+        "word": "einzig",
+        "surface": "einziges",
+        "definition": "Single; only one and no more than that one."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "topic": "places-getting-around",
+    "slotIndex": 1,
+    "title": "Verspätung am Gleis vier",
+    "slug": "verspatung-am-gleis-vier",
+    "synopsis": "Greta und ihr Bruder Bernd wollen mit dem Zug zur Familienfeier ihrer Nichte. Am Kölner Hauptbahnhof stehen sie pünktlich am Gleis, doch die Tafel zeigt eine immer größere Verspätung. Ihren Anschluss erreichen sie so nicht mehr. Während die Uhr läuft, müssen die beiden Geschwister schnell eine ganz andere Idee finden.",
+    "text": "Auf der großen Tafel am Kölner Hauptbahnhof springen die Zahlen. Greta und ihr Bruder Bernd warten am Gleis vier. Heute feiert ihre Nichte, und beide haben sich fein angezogen.\n\nGreta: Bernd, sieh mal hin. Aus zehn Minuten sind jetzt dreißig geworden.\nBernd: Das gibt es doch nicht. Unser Anschluss wartet bestimmt nicht auf uns.\nGreta: Die Bahn ist heute gegen uns. So kommen wir nie zur Feier.\n\nEine Stimme aus dem Lautsprecher sagt etwas, aber niemand versteht es richtig. Die Leute am Gleis schauen unruhig auf ihre Uhren.\n\nBernd: Hast du das gehört? Ich habe nur das Wort Verspätung verstanden.\nGreta: Ich auch nicht. Aber alle nehmen ihre Koffer wieder hoch.\nBernd: Dann fährt dieser Zug so schnell nicht. Wir stehen hier fest.\n\nGreta holt ihre Fahrkarte heraus und schaut zur großen Uhr über dem Gleis. Es ist schon halb zwei.\n\nGreta: Halb zwei, Bernd. Die Feier fängt um drei an.\nBernd: Mit diesem Zug schaffen wir das wirklich nicht mehr.\nGreta: Also brauchen wir einen anderen Weg. Und zwar sofort.\n\nBernd schaut kurz auf die Tafel, dann zur Treppe, die nach draußen führt.\n\nBernd: Komm mit, ich habe eine Idee. Aber dafür müssen wir den Bahnhof verlassen.\nGreta: Den Bahnhof verlassen? Bernd, was hast du jetzt vor?",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Tafel",
+        "definition": "Board; the big panel that shows the train times."
+      },
+      {
+        "type": "noun",
+        "word": "Bahnhof",
+        "surface": "Hauptbahnhof",
+        "definition": "Station; the place where trains stop to let people on."
+      },
+      {
+        "type": "noun",
+        "word": "Gleis",
+        "definition": "Track or platform; the spot where one train comes in."
+      },
+      {
+        "type": "adjective",
+        "word": "fein",
+        "definition": "Smart; dressed up nicely for a special occasion."
+      },
+      {
+        "type": "verb",
+        "word": "feiern",
+        "surface": "feiert",
+        "definition": "To celebrate; to have a happy event with other people."
+      },
+      {
+        "type": "noun",
+        "word": "Nichte",
+        "definition": "Niece; the daughter of your brother or your sister."
+      },
+      {
+        "type": "noun",
+        "word": "Anschluss",
+        "definition": "Connection; the next train you change onto to travel further."
+      },
+      {
+        "type": "adjective",
+        "word": "hoch",
+        "definition": "Up; here lifting the suitcases up off the ground."
+      },
+      {
+        "type": "noun",
+        "word": "Bahn",
+        "definition": "Railway; the train company and its trains in general."
+      },
+      {
+        "type": "noun",
+        "word": "Stimme",
+        "definition": "Voice; the sound a person makes when they speak."
+      },
+      {
+        "type": "noun",
+        "word": "Lautsprecher",
+        "definition": "Loudspeaker; the box on the wall that says messages aloud."
+      },
+      {
+        "type": "adverb",
+        "word": "richtig",
+        "definition": "Correctly; in the right way, without any mistake."
+      },
+      {
+        "type": "adjective",
+        "word": "unruhig",
+        "definition": "Restless; nervous and unable to stay calm or still."
+      },
+      {
+        "type": "noun",
+        "word": "Verspätung",
+        "definition": "Delay; the extra time a train comes later than planned."
+      },
+      {
+        "type": "noun",
+        "word": "Koffer",
+        "definition": "Suitcase; the big bag you pack clothes in for a trip."
+      },
+      {
+        "type": "adjective",
+        "word": "fest",
+        "definition": "Stuck; not able to move on from where you are."
+      },
+      {
+        "type": "noun",
+        "word": "Fahrkarte",
+        "definition": "Ticket; the paper that lets you ride the train."
+      },
+      {
+        "type": "noun",
+        "word": "Uhr",
+        "definition": "Clock; the thing on the wall that shows the time."
+      },
+      {
+        "type": "adjective",
+        "word": "halb",
+        "surface": "Halb",
+        "definition": "Half; here half past one, so thirty minutes after one."
+      },
+      {
+        "type": "noun",
+        "word": "Treppe",
+        "definition": "Stairs; the steps you climb to reach another level."
+      },
+      {
+        "type": "verb",
+        "word": "verlassen",
+        "definition": "To leave; to go out of a place and away from it."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "topic": "places-getting-around",
+    "slotIndex": 2,
+    "title": "Mit der Straßenbahn durch Köln",
+    "slug": "mit-der-stra-enbahn-durch-koln",
+    "synopsis": "Statt auf den verspäteten Zug zu warten, nehmen Greta und Bernd die Straßenbahn quer durch Köln. Bernd ist nervös und schaut ständig auf die Uhr. Greta sieht aus dem Fenster den Dom und den Rhein und merkt: Vielleicht ist der langsamere Weg gar nicht der schlechtere. Die Eile war wichtiger als das Ankommen.",
+    "text": "An der Haltestelle vor dem Bahnhof steigen Greta und Bernd in die Straßenbahn. Sie ist voll, aber zwei Plätze am Fenster sind noch frei. Die Bahn fährt los, mitten durch die Stadt.\n\nBernd: Wir hätten den Zug nehmen sollen. Mit der Straßenbahn dauert das ewig.\nGreta: Der Zug stand doch still, Bernd. Diese Bahn fährt wenigstens.\nBernd: Schon. Aber schau auf die Uhr. Wir sind bestimmt zu spät bei der Nichte.\nGreta: Hör auf, ständig auf die Uhr zu sehen. Guck lieber mal nach draußen.\n\nDie Straßenbahn fährt über eine Brücke. Unten glänzt der Rhein in der Sonne, und über den Häusern steht der große Dom.\n\nBernd: Der Dom. Den habe ich schon lange nicht mehr so von hier gesehen.\nGreta: Siehst du? Im schnellen Zug säßen wir jetzt im dunklen Tunnel.\nBernd: Da hast du recht. Hier sehe ich die halbe Stadt an einem Tag.\nGreta: Eben. Wir kommen vielleicht zehn Minuten später, na und?\n\nBernd lehnt sich zurück und atmet zum ersten Mal ruhig. Die Bahn rollt langsam weiter am Wasser entlang.\n\nBernd: Komisch. Vorhin war die Verspätung das Ende der Welt.\nGreta: Und jetzt ist sie eine kleine Stadtrundfahrt. Die Feier läuft auch ohne uns nicht weg.\nBernd: Stimmt. Lass uns die Fahrt einfach genießen. Auf die zehn Minuten kommt es jetzt nicht mehr an.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Haltestelle",
+        "definition": "Stop; the place where a tram or bus halts for people."
+      },
+      {
+        "type": "noun",
+        "word": "Straßenbahn",
+        "definition": "Tram; the train that runs on rails through city streets."
+      },
+      {
+        "type": "noun",
+        "word": "Fenster",
+        "definition": "Window; the glass opening you look out of."
+      },
+      {
+        "type": "verb",
+        "word": "dauern",
+        "surface": "dauert",
+        "definition": "To take time; to last for a certain length of time."
+      },
+      {
+        "type": "adjective",
+        "word": "ewig",
+        "definition": "Forever; lasting a very long time, much too long."
+      },
+      {
+        "type": "adjective",
+        "word": "still",
+        "definition": "Still; not moving at all and completely quiet."
+      },
+      {
+        "type": "adverb",
+        "word": "wenigstens",
+        "definition": "At least; if nothing else is good, this much is."
+      },
+      {
+        "type": "adverb",
+        "word": "ständig",
+        "definition": "Constantly; happening again and again without ever stopping."
+      },
+      {
+        "type": "adverb",
+        "word": "draußen",
+        "definition": "Outside; in the open air, not inside a room."
+      },
+      {
+        "type": "noun",
+        "word": "Brücke",
+        "definition": "Bridge; the path built over a river so you cross it."
+      },
+      {
+        "type": "verb",
+        "word": "glänzen",
+        "surface": "glänzt",
+        "definition": "To shine; to give off bright light, like water in sun."
+      },
+      {
+        "type": "noun",
+        "word": "Dom",
+        "definition": "Cathedral; the very large old church of a city."
+      },
+      {
+        "type": "adjective",
+        "word": "dunkel",
+        "surface": "dunklen",
+        "definition": "Dark; with little or no light to see by."
+      },
+      {
+        "type": "adjective",
+        "word": "halb",
+        "surface": "halbe",
+        "definition": "Half; one of two equal parts of a whole."
+      },
+      {
+        "type": "verb",
+        "word": "lehnen",
+        "surface": "lehnt",
+        "definition": "To lean; to rest your back against something behind you."
+      },
+      {
+        "type": "verb",
+        "word": "atmen",
+        "surface": "atmet",
+        "definition": "To breathe; to take air into your body and let it out."
+      },
+      {
+        "type": "verb",
+        "word": "rollen",
+        "surface": "rollt",
+        "definition": "To roll; to move along smoothly on wheels."
+      },
+      {
+        "type": "adjective",
+        "word": "komisch",
+        "definition": "Strange or funny; odd in a way that makes you wonder."
+      },
+      {
+        "type": "adverb",
+        "word": "vorhin",
+        "definition": "Earlier; a short time ago, just before now."
+      },
+      {
+        "type": "noun",
+        "word": "Fahrt",
+        "definition": "Ride or trip; the journey you make in a vehicle."
+      },
+      {
+        "type": "verb",
+        "word": "genießen",
+        "surface": "genießen",
+        "definition": "To enjoy; to take pleasure in something good."
+      }
+    ],
+    "arcType": "reframe-turn"
+  },
+  {
+    "topic": "places-getting-around",
+    "slotIndex": 3,
+    "title": "Pünktlich ist anders",
+    "slug": "punktlich-ist-anders",
+    "synopsis": "Greta und Bernd kommen außer Atem bei der Feier an und entschuldigen sich für die Verspätung. Doch im Haus ihrer Nichte ist es ganz ruhig. Erst spät am Tisch verrät die Nichte den Grund: Auch die anderen Gäste stecken noch in derselben verspäteten Bahn. Die beiden Geschwister sind sogar die Ersten.",
+    "text": "Vor dem Haus der Nichte bleiben Greta und Bernd kurz stehen und atmen durch. Es ist schon Viertel nach drei. Dann klingeln sie, immer noch außer Atem von dem langen Weg.\n\nGreta: Es tut uns so leid, wir sind viel zu spät. Die Bahn hatte Verspätung.\nNichte: Zu spät? Kommt erst einmal herein. Ihr seid ja ganz außer Atem.\nBernd: Wir haben uns wirklich beeilt. Erst der Zug, dann die Straßenbahn quer durch Köln.\nNichte: Setzt euch, trinkt etwas. Es ist doch alles halb so wild.\n\nIm Wohnzimmer steht der Kuchen auf dem Tisch, aber die Stühle sind fast alle leer. Greta schaut sich erstaunt um.\n\nGreta: Aber wo sind denn die anderen Gäste? Wir dachten, wir sind die Letzten.\nNichte: Ach, das ist eine lustige Geschichte. Ruf mal Onkel Theo an und frag ihn.\nBernd: Onkel Theo? Ist er denn noch nicht da?\nNichte: Nein. Er sitzt noch im Zug. Im selben Zug, auf den ihr nicht gewartet habt.\n\nGreta und Bernd schauen sich an und müssen beide lächeln. Die ganze Eile am Bahnhof war umsonst.\n\nBernd: Das heißt, wir sind heute die Ersten? Wir, mit unserer großen Verspätung?\nNichte: Genau. Manchmal kommt man früher an, wenn man nicht auf den Zug wartet.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "atmen",
+        "surface": "atmen",
+        "definition": "To breathe; to take air in and out of your body."
+      },
+      {
+        "type": "verb",
+        "word": "klingeln",
+        "surface": "klingeln",
+        "definition": "To ring the doorbell; to press the button at a door."
+      },
+      {
+        "type": "noun",
+        "word": "Atem",
+        "definition": "Breath; the air you take into and out of your body."
+      },
+      {
+        "type": "adverb",
+        "word": "herein",
+        "definition": "Inside; into the room from outside, toward the speaker."
+      },
+      {
+        "type": "verb",
+        "word": "beeilen",
+        "surface": "beeilt",
+        "definition": "To hurry; to do something as fast as you can."
+      },
+      {
+        "type": "verb",
+        "word": "trinken",
+        "surface": "trinkt",
+        "definition": "To drink; to take water or another liquid into your mouth."
+      },
+      {
+        "type": "adjective",
+        "word": "wild",
+        "definition": "Wild; here used in a phrase meaning not a big problem."
+      },
+      {
+        "type": "noun",
+        "word": "Wohnzimmer",
+        "definition": "Living room; the main room where a family sits together."
+      },
+      {
+        "type": "noun",
+        "word": "Kuchen",
+        "definition": "Cake; a sweet baked food eaten at a celebration."
+      },
+      {
+        "type": "adjective",
+        "word": "leer",
+        "definition": "Empty; with nobody sitting there at the moment."
+      },
+      {
+        "type": "adjective",
+        "word": "erstaunt",
+        "definition": "Surprised; feeling wonder because you did not expect it."
+      },
+      {
+        "type": "noun",
+        "word": "Gast",
+        "surface": "Gäste",
+        "definition": "Guest; a person who is invited to a party."
+      },
+      {
+        "type": "adjective",
+        "word": "lustig",
+        "definition": "Funny; making you laugh or smile, full of fun."
+      },
+      {
+        "type": "noun",
+        "word": "Geschichte",
+        "definition": "Story; a telling of something funny that really happened."
+      },
+      {
+        "type": "noun",
+        "word": "Onkel",
+        "definition": "Uncle; the brother of your mother or your father."
+      },
+      {
+        "type": "adjective",
+        "word": "selbe",
+        "surface": "selben",
+        "definition": "Same; exactly the one already mentioned, not another."
+      },
+      {
+        "type": "noun",
+        "word": "Eile",
+        "definition": "Hurry; the rush of trying to be quick and on time."
+      },
+      {
+        "type": "adverb",
+        "word": "umsonst",
+        "definition": "In vain; for nothing, with no useful result at all."
+      },
+      {
+        "type": "adjective",
+        "word": "erste",
+        "surface": "Ersten",
+        "definition": "First; coming before all the others in order."
+      },
+      {
+        "type": "adverb",
+        "word": "manchmal",
+        "definition": "Sometimes; on some occasions but not very often."
+      },
+      {
+        "type": "adverb",
+        "word": "früher",
+        "definition": "Earlier; at a point in time before another one."
+      }
+    ],
+    "arcType": "late-reveal"
+  },
+  {
+    "topic": "community-celebrations",
+    "slotIndex": 1,
+    "title": "Plätzchen neben den großen Lichtern",
+    "slug": "platzchen-neben-den-gro-en-lichtern",
+    "synopsis": "Auf dem Nürnberger Weihnachtsmarkt hat Anja einen kleinen Stand mit selbst gebackenen Plätzchen. Neben den großen, hell leuchtenden Buden fühlt sie sich unsichtbar und will fast aufgeben. Ihr Freund Kai zeigt ihr, warum die Leute trotzdem zu ihr kommen: Sie suchen genau das Einfache, Echte und nicht das hellste Licht.",
+    "text": "Es riecht nach Zimt und heißem Glühwein auf dem Nürnberger Weihnachtsmarkt. Anja steht hinter ihrem kleinen Stand mit selbst gebackenen Plätzchen. Ihr Freund Kai bringt ihr einen Becher Tee. Überall um sie herum funkeln große, helle Buden.\n\nAnja: Kai, hast du die Bude da drüben gesehen? So viele Lichter, so viel Gold.\nKai: Ja, schön. Aber bei dir riecht es nach echtem Zimt, nicht nach Plastik.\nAnja: Trotzdem bleiben alle dort stehen. Bei mir geht fast niemand vorbei.\nKai: Warte einfach ab. Der Abend hat ja gerade erst angefangen.\n\nEine ältere Frau bleibt am Stand stehen und schaut auf die Plätzchen. Dann lächelt sie und kauft gleich eine ganze Tüte.\n\nKundin: Endlich mal Plätzchen wie früher, nicht aus der Fabrik. Die nehme ich.\nAnja: Vielen Dank. Ich habe sie heute Morgen selbst gebacken.\nKai: Siehst du? Genau deshalb kommt sie zu dir und nicht zur goldenen Bude.\nAnja: Vielleicht hast du recht. Mein Stand ist klein, aber er ist ehrlich.\n\nLangsam bildet sich eine kleine Schlange vor Anjas Tisch. Die Leute zeigen auf die Plätzchen und reden über alte Rezepte.\n\nAnja: Auf einmal stehen die Leute bei mir Schlange. Das gibt es doch nicht.\nKai: Doch. Im hellsten Licht sucht man am Ende oft das Einfache.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Zimt",
+        "definition": "Cinnamon; a warm brown spice often used in Christmas baking."
+      },
+      {
+        "type": "noun",
+        "word": "Glühwein",
+        "definition": "Mulled wine; hot spiced wine people drink at winter markets."
+      },
+      {
+        "type": "adverb",
+        "word": "selbst",
+        "definition": "Yourself; done by your own hands and not by others."
+      },
+      {
+        "type": "verb",
+        "word": "backen",
+        "surface": "gebackenen",
+        "definition": "To bake; to cook bread or cookies in a hot oven."
+      },
+      {
+        "type": "noun",
+        "word": "Plätzchen",
+        "definition": "Cookies; small sweet biscuits baked at Christmas time."
+      },
+      {
+        "type": "adverb",
+        "word": "drüben",
+        "definition": "Over there; at the other place a short way off."
+      },
+      {
+        "type": "verb",
+        "word": "funkeln",
+        "surface": "funkeln",
+        "definition": "To sparkle; to shine with many small points of light."
+      },
+      {
+        "type": "adverb",
+        "word": "deshalb",
+        "definition": "Therefore; for that reason and not for another one."
+      },
+      {
+        "type": "noun",
+        "word": "Bude",
+        "definition": "Booth; a small wooden hut that sells food at a market."
+      },
+      {
+        "type": "noun",
+        "word": "Gold",
+        "definition": "Gold; the shiny yellow color and metal of rich things."
+      },
+      {
+        "type": "adjective",
+        "word": "echt",
+        "surface": "echtem",
+        "definition": "Real; truly what it seems, not fake or pretend."
+      },
+      {
+        "type": "verb",
+        "word": "vorbeigehen",
+        "surface": "vorbei",
+        "definition": "To pass by; to walk past without stopping at a place."
+      },
+      {
+        "type": "noun",
+        "word": "Kundin",
+        "definition": "Customer; a woman who comes to buy something at a shop."
+      },
+      {
+        "type": "noun",
+        "word": "Tüte",
+        "definition": "Paper bag; the bag a seller fills with what you buy."
+      },
+      {
+        "type": "noun",
+        "word": "Fabrik",
+        "definition": "Factory; the big building where machines make things fast."
+      },
+      {
+        "type": "adjective",
+        "word": "ehrlich",
+        "definition": "Honest; true and real, with nothing hidden or faked."
+      },
+      {
+        "type": "noun",
+        "word": "Schlange",
+        "definition": "Queue; a line of people waiting one behind the other."
+      },
+      {
+        "type": "noun",
+        "word": "Rezept",
+        "surface": "Rezepte",
+        "definition": "Recipe; the steps that tell you how to cook a dish."
+      },
+      {
+        "type": "verb",
+        "word": "zeigen",
+        "surface": "zeigen",
+        "definition": "To point; to use your hand to show where something is."
+      },
+      {
+        "type": "adjective",
+        "word": "einfach",
+        "surface": "Einfache",
+        "definition": "Simple; plain and modest, without anything fancy or grand."
+      }
+    ],
+    "arcType": "reframe-turn"
+  },
+  {
+    "topic": "community-celebrations",
+    "slotIndex": 2,
+    "title": "Plötzlich wird es dunkel",
+    "slug": "plotzlich-wird-es-dunkel",
+    "synopsis": "Am Abend ist der Weihnachtsmarkt voll, und an Anjas Stand bildet sich eine lange Schlange. Mitten im größten Andrang gehen plötzlich alle Lichter aus. Der ganze Markt liegt im Dunkeln, die Musik bricht ab, und vor Anjas Tisch warten die Leute im Schwarzen. Niemand weiß, wie lange der Strom wegbleibt.",
+    "text": "Gegen sieben Uhr drängen sich die Menschen dicht über den Weihnachtsmarkt. An Anjas Stand ist die Schlange jetzt lang, und Kai hilft ihr beim Einpacken der Plätzchen. Über allen Buden leuchten Tausende kleine Lichter.\n\nKai: Anja, schau dir die Schlange an. So viele Leute wie noch nie heute.\nAnja: Ich komme kaum nach. Pack du schon mal die nächste Tüte ein.\nKai: Mache ich. Der ganze Markt ist heute Abend auf den Beinen.\n\nIn diesem Moment gehen über dem Markt alle Lichter auf einmal aus. Die Musik bricht ab, und es wird ganz dunkel und still.\n\nAnja: Was war das denn? Auf einmal sehe ich gar nichts mehr.\nKai: Alle Lichter sind weg. Der Strom ist wohl auf dem ganzen Markt ausgefallen.\nAnja: Auch die große goldene Bude da drüben ist dunkel. Wirklich alles.\nKai: Bleib ruhig. So ein Stromausfall dauert manchmal nur ein paar Minuten.\n\nDie Leute in der Schlange murmeln und holen ihre Handys heraus. Kleine Lichter wackeln im Dunkeln, aber sie reichen nicht weit.\n\nAnja: Die Kunden warten noch alle. Aber im Dunkeln kann ich nichts verkaufen.\nKai: Und keiner weiß, wann der Strom wieder kommt. Was machen wir jetzt bloß?\nAnja: Moment. Unter dem Tisch steht doch noch die alte Schachtel.",
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "drängen",
+        "surface": "drängen",
+        "definition": "To crowd; to push close together in a tight space."
+      },
+      {
+        "type": "noun",
+        "word": "Schlange",
+        "definition": "Queue; a line of people waiting one behind the other."
+      },
+      {
+        "type": "verb",
+        "word": "einpacken",
+        "surface": "Einpacken",
+        "definition": "To pack up; to put what you bought into a bag."
+      },
+      {
+        "type": "noun",
+        "word": "Bude",
+        "surface": "Buden",
+        "definition": "Booth; a small wooden hut that sells food at a market."
+      },
+      {
+        "type": "verb",
+        "word": "leuchten",
+        "surface": "leuchten",
+        "definition": "To shine; to give off light into the dark around it."
+      },
+      {
+        "type": "noun",
+        "word": "Tüte",
+        "definition": "Paper bag; the bag a seller fills with what you buy."
+      },
+      {
+        "type": "noun",
+        "word": "Bein",
+        "surface": "Beinen",
+        "definition": "Leg; here a phrase meaning the whole town is out and about."
+      },
+      {
+        "type": "adverb",
+        "word": "weg",
+        "definition": "Gone; no longer there, away from where it was."
+      },
+      {
+        "type": "noun",
+        "word": "Moment",
+        "definition": "Moment; a very short point in time, just one instant."
+      },
+      {
+        "type": "adjective",
+        "word": "dunkel",
+        "definition": "Dark; with little or no light to see by."
+      },
+      {
+        "type": "verb",
+        "word": "ausfallen",
+        "surface": "ausgefallen",
+        "definition": "To fail; here the electric power stopping across the market."
+      },
+      {
+        "type": "adjective",
+        "word": "golden",
+        "surface": "goldene",
+        "definition": "Golden; shining bright yellow like the metal called gold."
+      },
+      {
+        "type": "adjective",
+        "word": "ruhig",
+        "definition": "Calm; quiet and relaxed, without fear or stress."
+      },
+      {
+        "type": "noun",
+        "word": "Stromausfall",
+        "definition": "Power cut; the time when the electricity stops working."
+      },
+      {
+        "type": "verb",
+        "word": "murmeln",
+        "surface": "murmeln",
+        "definition": "To murmur; to speak in a low, unclear voice."
+      },
+      {
+        "type": "verb",
+        "word": "wackeln",
+        "surface": "wackeln",
+        "definition": "To wobble; to move a little this way and that way."
+      },
+      {
+        "type": "verb",
+        "word": "verkaufen",
+        "definition": "To sell; to give something in return for money."
+      },
+      {
+        "type": "noun",
+        "word": "Kunde",
+        "surface": "Kunden",
+        "definition": "Customers; the people who come to buy at the stand."
+      },
+      {
+        "type": "noun",
+        "word": "Schachtel",
+        "definition": "Box; a small light box, here for storing little things."
+      },
+      {
+        "type": "noun",
+        "word": "Licht",
+        "surface": "Lichter",
+        "definition": "Lights; the lamps that make the dark market bright."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "topic": "community-celebrations",
+    "slotIndex": 3,
+    "title": "Kerzen statt Strom",
+    "slug": "kerzen-statt-strom",
+    "synopsis": "In Anjas alter Schachtel liegen Kerzen für den Notfall. Sie zündet sie an, und ihr kleiner Stand wird zur einzigen warmen, hellen Insel auf dem dunklen Markt. Während die große goldene Bude im Schwarzen verschwindet, sammeln sich die Leute um Anjas Kerzen, trinken Glühwein und reden. Der Stromausfall wird zum schönsten Abend.",
+    "text": "Im Dunkeln zieht Anja die alte Schachtel unter dem Tisch hervor. Darin liegen ein paar dicke Kerzen und Streichhölzer für den Notfall. Kai hält die erste Kerze, und Anja zündet sie vorsichtig an.\n\nAnja: Gut, dass ich die Kerzen nie ausräume. Halt mal still, ich zünde sie an.\nKai: Schau, wie schön. Dein kleiner Stand ist plötzlich der hellste hier.\nAnja: Stell zwei Kerzen nach vorne, damit die Leute die Plätzchen sehen.\nKai: Und die große goldene Bude? Die liegt jetzt völlig im Dunkeln.\n\nDer warme Schein der Kerzen fällt auf die Gesichter in der Schlange. Immer mehr Leute kommen näher und bleiben an dem kleinen Tisch stehen.\n\nKundin: Hier ist es ja richtig gemütlich. Bei den Kerzen bleibt man gern stehen.\nAnja: Setzen Sie sich ruhig. Plätzchen habe ich genug, und der Glühwein ist noch warm.\nKai: Komisch. Ohne Strom ist auf einmal mehr los als vorher.\nAnja: Vielleicht braucht ein schöner Abend gar kein elektrisches Licht.\n\nAm Ende stehen die Menschen in einem dichten Kreis um die Kerzen, reden und lachen. Der Strom kommt zurück, aber niemand achtet mehr darauf.\n\nKai: Da sind die Lichter wieder. Aber jetzt will keiner mehr zur goldenen Bude.\nAnja: Lass sie ruhig wieder angehen. Den letzten Glühwein trinken wir trotzdem bei den Kerzen.",
+    "vocab": [
+      {
+        "type": "adverb",
+        "word": "vorne",
+        "definition": "At the front; in the part nearest to the people."
+      },
+      {
+        "type": "adjective",
+        "word": "dick",
+        "surface": "dicke",
+        "definition": "Thick; wide and fat, not thin or small."
+      },
+      {
+        "type": "noun",
+        "word": "Kerze",
+        "surface": "Kerzen",
+        "definition": "Candle; a wax stick with a flame that gives light."
+      },
+      {
+        "type": "noun",
+        "word": "Streichholz",
+        "surface": "Streichhölzer",
+        "definition": "Match; the little wooden stick you use to make fire."
+      },
+      {
+        "type": "noun",
+        "word": "Notfall",
+        "definition": "Emergency; a sudden bad moment when you need help fast."
+      },
+      {
+        "type": "noun",
+        "word": "Tisch",
+        "definition": "Table; the small stand where Anja lays out her cookies."
+      },
+      {
+        "type": "noun",
+        "word": "Schein",
+        "definition": "Glow; the soft light that a candle gives off."
+      },
+      {
+        "type": "noun",
+        "word": "Gesicht",
+        "surface": "Gesichter",
+        "definition": "Face; the front of your head with eyes and mouth."
+      },
+      {
+        "type": "adjective",
+        "word": "näher",
+        "definition": "Closer; a shorter distance away than they were before."
+      },
+      {
+        "type": "adjective",
+        "word": "gemütlich",
+        "definition": "Cozy; warm and pleasant, a nice place to stay."
+      },
+      {
+        "type": "adverb",
+        "word": "genug",
+        "definition": "Enough; as much as you need and not less."
+      },
+      {
+        "type": "adjective",
+        "word": "komisch",
+        "definition": "Strange; odd in a way that makes you wonder."
+      },
+      {
+        "type": "adverb",
+        "word": "zurück",
+        "definition": "Back; returning to where it was before, here the power."
+      },
+      {
+        "type": "adjective",
+        "word": "dicht",
+        "surface": "dichten",
+        "definition": "Dense; standing very close together with little space."
+      },
+      {
+        "type": "noun",
+        "word": "Kreis",
+        "definition": "Circle; people standing in a ring around something."
+      },
+      {
+        "type": "verb",
+        "word": "lachen",
+        "definition": "To laugh; to make a happy sound when you are glad."
+      },
+      {
+        "type": "verb",
+        "word": "achten",
+        "surface": "achtet",
+        "definition": "To pay attention; to take notice of something around you."
+      },
+      {
+        "type": "adjective",
+        "word": "hell",
+        "surface": "hellste",
+        "definition": "Bright; giving off a lot of light, easy to see by."
+      },
+      {
+        "type": "adjective",
+        "word": "schön",
+        "surface": "schöner",
+        "definition": "Lovely; pleasant and good, nice to see or feel."
+      },
+      {
+        "type": "adjective",
+        "word": "warm",
+        "definition": "Warm; gently hot in a pleasant way, not cold."
+      },
+      {
+        "type": "noun",
+        "word": "Glühwein",
+        "definition": "Mulled wine; the hot spiced wine drunk at winter markets."
+      }
+    ],
+    "arcType": "harmonic-close"
+  },
+  {
+    "topic": "nature-adventure",
+    "slotIndex": 1,
+    "title": "Der Pfad in den Wald",
+    "slug": "der-pfad-in-den-wald",
+    "synopsis": "An einem frischen Morgen brechen Mia und ihr Freund Finn zu einer Wanderung im Schwarzwald auf. Sie packen den Rucksack, ziehen feste Schuhe an und folgen dem schmalen Pfad zwischen den hohen Tannen. Kein großes Abenteuer, nur zwei Freunde, die Luft, die Vögel und ein ruhiger Weg bergauf.",
+    "text": "Vor der kleinen Hütte am Waldrand schnürt Mia ihre festen Schuhe. Es ist ein frischer Morgen im Schwarzwald. Ihr Freund Finn füllt zwei Flaschen Wasser und packt sie in den Rucksack.\n\nMia: Hast du die Karte und genug Wasser dabei? Der Weg nach oben ist lang.\nFinn: Alles drin. Karte, Wasser, zwei Äpfel. Wir können los.\nMia: Dann hör mal kurz. Hörst du, wie still es hier ist?\nFinn: Nur die Vögel und der Wind in den Bäumen. Herrlich.\n\nDie beiden folgen dem schmalen Pfad. Links und rechts stehen hohe, dunkle Tannen, und der Boden riecht nach Erde und Holz.\n\nFinn: Schau, hier wachsen Pilze direkt am Weg. Die großen lassen wir besser stehen.\nMia: Auf jeden Fall. Wir wollen wandern, nicht im Bett liegen.\nFinn: Klug. Komm, der Pfad geht hier ziemlich steil bergauf.\nMia: Langsam. Wir haben den ganzen Tag, das ist kein Wettrennen.\n\nNach einer Weile machen sie an einem Baum eine kurze Pause. Mia trinkt Wasser und schaut zwischen den Bäumen hindurch.\n\nMia: Von hier oben sieht man schon das ganze Tal. Wie weit wir schon sind.\nFinn: Und kein einziger Mensch außer uns. Genau dafür sind wir hier.\nMia: Genau dafür. Nur der Wald, der Weg und wir beide.",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Hütte",
+        "definition": "Hut; a small simple house made of wood in nature."
+      },
+      {
+        "type": "verb",
+        "word": "schnüren",
+        "surface": "schnürt",
+        "definition": "To lace up; to tie the strings of your shoes tight."
+      },
+      {
+        "type": "adjective",
+        "word": "fest",
+        "surface": "festen",
+        "definition": "Firm; strong and solid, good for walking on rough ground."
+      },
+      {
+        "type": "adjective",
+        "word": "frisch",
+        "definition": "Fresh; cool and clean, like the air early in the morning."
+      },
+      {
+        "type": "noun",
+        "word": "Flasche",
+        "surface": "Flaschen",
+        "definition": "Bottle; the tall thing you carry water or a drink in."
+      },
+      {
+        "type": "noun",
+        "word": "Baum",
+        "definition": "Tree; the tall plant with a trunk, branches and leaves."
+      },
+      {
+        "type": "noun",
+        "word": "Rucksack",
+        "definition": "Backpack; the bag you carry on your back when walking."
+      },
+      {
+        "type": "noun",
+        "word": "Karte",
+        "definition": "Map; the sheet that shows the paths and where they go."
+      },
+      {
+        "type": "adjective",
+        "word": "still",
+        "definition": "Quiet; with very little or no sound at all."
+      },
+      {
+        "type": "noun",
+        "word": "Vogel",
+        "surface": "Vögel",
+        "definition": "Bird; a small animal with feathers that sings and flies."
+      },
+      {
+        "type": "noun",
+        "word": "Wind",
+        "definition": "Wind; the moving air you feel on your face outside."
+      },
+      {
+        "type": "adjective",
+        "word": "schmal",
+        "surface": "schmalen",
+        "definition": "Narrow; not wide, only big enough for one person."
+      },
+      {
+        "type": "noun",
+        "word": "Pfad",
+        "definition": "Path; the narrow way you walk on through the forest."
+      },
+      {
+        "type": "noun",
+        "word": "Tanne",
+        "surface": "Tannen",
+        "definition": "Fir tree; the tall green tree of the Black Forest."
+      },
+      {
+        "type": "noun",
+        "word": "Boden",
+        "definition": "Ground; the earth under your feet that you walk on."
+      },
+      {
+        "type": "verb",
+        "word": "wachsen",
+        "surface": "wachsen",
+        "definition": "To grow; to get bigger over time, like a plant."
+      },
+      {
+        "type": "noun",
+        "word": "Pilz",
+        "surface": "Pilze",
+        "definition": "Mushroom; the small plant that grows on the forest floor."
+      },
+      {
+        "type": "adjective",
+        "word": "steil",
+        "definition": "Steep; going up sharply, hard to climb quickly."
+      },
+      {
+        "type": "adverb",
+        "word": "bergauf",
+        "definition": "Uphill; in the direction up the side of a mountain."
+      },
+      {
+        "type": "noun",
+        "word": "Tal",
+        "definition": "Valley; the low land between two hills or mountains."
+      }
+    ],
+    "arcType": "daily-encounter"
+  },
+  {
+    "topic": "nature-adventure",
+    "slotIndex": 2,
+    "title": "Nebel über dem Berg",
+    "slug": "nebel-uber-dem-berg",
+    "synopsis": "Oben auf dem Berg ändert sich das Wetter schnell. Ein dichter Nebel zieht zwischen die Tannen, und Mia und Finn sehen plötzlich kaum noch den Weg. Der Pfad teilt sich, und die beiden sind sich nicht einig, welche Richtung die richtige ist. Allein im weißen Nebel müssen sie eine Entscheidung treffen.",
+    "text": "Oben auf dem Berg wird die Luft auf einmal kühl. Mia und Finn merken, wie ein dichter Nebel zwischen die Tannen zieht. Innerhalb weniger Minuten ist alles um sie herum weiß und still.\n\nMia: Finn, wo bist du? Ich sehe dich kaum noch hier vorne.\nFinn: Direkt hinter dir. Bleib einfach stehen, ich komme zu dir.\nMia: Dieser Nebel kam so schnell. Eben war der Himmel noch ganz klar.\nFinn: Im Gebirge geht das schnell. Wir bleiben jetzt besser dicht zusammen.\n\nDie beiden gehen langsam weiter und suchen den Pfad. An einer Stelle teilt sich der Weg in zwei Richtungen.\n\nFinn: Hier geht es links und rechts weiter. Welcher Weg war unserer?\nMia: Ich dachte, wir kamen von links. Aber ich bin mir nicht mehr sicher.\nFinn: Ich hätte gesagt, von rechts. Im Nebel sieht alles gleich aus.\nMia: Wir dürfen jetzt keinen Fehler machen. Sonst laufen wir noch im Kreis.\n\nMia holt die Karte aus dem Rucksack, aber im Nebel sind die Linien schwer zu lesen. Finn lauscht in die graue Stille.\n\nFinn: Warte mal. Hörst du das? Da unten rauscht doch Wasser.\nMia: Ein Bach? Auf der Karte ist nur auf einer Seite ein Bach.\nFinn: Dann sagt uns das Wasser, wo wir sind. Aber auf welcher Seite?",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "kühl",
+        "definition": "Cool; a little cold, in a fresh and pleasant way."
+      },
+      {
+        "type": "verb",
+        "word": "merken",
+        "definition": "To notice; to feel or see that something is happening."
+      },
+      {
+        "type": "adjective",
+        "word": "dicht",
+        "surface": "dichter",
+        "definition": "Thick; so full that you can hardly see through it."
+      },
+      {
+        "type": "noun",
+        "word": "Nebel",
+        "definition": "Fog; the thick grey cloud that sits low on the ground."
+      },
+      {
+        "type": "adverb",
+        "word": "innerhalb",
+        "definition": "Within; inside a short period of time, very soon."
+      },
+      {
+        "type": "adjective",
+        "word": "weiß",
+        "definition": "White; the color of snow, here the color of the fog."
+      },
+      {
+        "type": "adverb",
+        "word": "kaum",
+        "definition": "Hardly; almost not at all, only just a little."
+      },
+      {
+        "type": "noun",
+        "word": "Himmel",
+        "definition": "Sky; the wide open space above you in the day."
+      },
+      {
+        "type": "adjective",
+        "word": "klar",
+        "definition": "Clear; easy to see through, with no fog or cloud."
+      },
+      {
+        "type": "noun",
+        "word": "Gebirge",
+        "definition": "Mountains; a large group of high mountains together."
+      },
+      {
+        "type": "noun",
+        "word": "Stelle",
+        "definition": "Spot; one certain place along the path or road."
+      },
+      {
+        "type": "verb",
+        "word": "teilen",
+        "surface": "teilt",
+        "definition": "To split; to divide into two ways going apart."
+      },
+      {
+        "type": "noun",
+        "word": "Richtung",
+        "surface": "Richtungen",
+        "definition": "Direction; the way toward which you move or look."
+      },
+      {
+        "type": "adjective",
+        "word": "sicher",
+        "definition": "Sure; certain about something, with no real doubt."
+      },
+      {
+        "type": "noun",
+        "word": "Fehler",
+        "definition": "Mistake; a wrong choice or a thing done badly."
+      },
+      {
+        "type": "noun",
+        "word": "Kreis",
+        "definition": "Circle; here walking round and ending where you began."
+      },
+      {
+        "type": "noun",
+        "word": "Linie",
+        "surface": "Linien",
+        "definition": "Line; a thin drawn mark, here the paths on the map."
+      },
+      {
+        "type": "noun",
+        "word": "Stille",
+        "definition": "Silence; the state when there is almost no sound at all."
+      },
+      {
+        "type": "verb",
+        "word": "rauschen",
+        "surface": "rauscht",
+        "definition": "To rush or roar softly; the sound moving water makes."
+      },
+      {
+        "type": "noun",
+        "word": "Bach",
+        "definition": "Stream; a small narrow river of running water."
+      },
+      {
+        "type": "noun",
+        "word": "Seite",
+        "definition": "Side; one of the two halves, here left or right."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "topic": "nature-adventure",
+    "slotIndex": 3,
+    "title": "Ein Schild im Nebel",
+    "slug": "ein-schild-im-nebel",
+    "synopsis": "Dem Rauschen des Baches folgen Mia und Finn vorsichtig bergab. Aus dem weißen Nebel taucht ein altes Holzschild auf, das ihnen den Weg zurück zur Hütte zeigt. Langsam wird der Nebel dünner, die Sonne kommt durch, und die beiden erreichen müde, aber froh wieder den Waldrand.",
+    "text": "Vorsichtig folgen Mia und Finn dem Rauschen des Baches. Mit jedem Schritt bergab wird der Boden feuchter, und das Wasser wird lauter. Sie halten sich dicht an der linken Seite des Weges.\n\nFinn: Hör, der Bach wird lauter. Wir gehen also in die richtige Richtung.\nMia: Ich glaube auch. Warte, da vorne steht doch etwas im Nebel.\nFinn: Wo? Ich sehe nur Grau zwischen den Bäumen.\nMia: Da, ein Pfahl. Komm näher, ich glaube, das ist ein altes Schild.\n\nVor ihnen steht ein altes Holzschild am Wegrand. Darauf steht ein Wort und ein Pfeil: zur Hütte.\n\nFinn: Ein Schild! Und es zeigt genau dorthin, wo wir hinwollen.\nMia: Zur Hütte, nur noch zwanzig Minuten. Wir haben es gleich geschafft.\nFinn: Und schau, der Nebel wird dünner. Die Sonne kommt langsam durch.\nMia: Endlich. Eben war alles noch grau, jetzt sehe ich wieder die Tannen.\n\nLangsam reißt der Nebel auf. Die beiden gehen den letzten Weg bergab und sehen schon den Waldrand und die kleine Hütte.\n\nMia: Da ist die Hütte. Müde Beine, aber wir sind heil zurück.\nFinn: Und morgen erzählen wir allen, wie wir den Nebel besiegt haben.\nMia: Den Nebel und einen Bach, der klüger war als unsere Karte.",
+    "vocab": [
+      {
+        "type": "adverb",
+        "word": "vorsichtig",
+        "definition": "Carefully; doing something slowly so nothing goes wrong."
+      },
+      {
+        "type": "noun",
+        "word": "Schritt",
+        "definition": "Step; one movement of your foot as you walk."
+      },
+      {
+        "type": "adverb",
+        "word": "bergab",
+        "definition": "Downhill; in the direction down the side of a mountain."
+      },
+      {
+        "type": "adjective",
+        "word": "feucht",
+        "surface": "feuchter",
+        "definition": "Damp; a little wet, like ground after the rain."
+      },
+      {
+        "type": "adjective",
+        "word": "laut",
+        "surface": "lauter",
+        "definition": "Loud; making a strong sound that is easy to hear."
+      },
+      {
+        "type": "noun",
+        "word": "Seite",
+        "definition": "Side; one of the two halves, here the left one."
+      },
+      {
+        "type": "adjective",
+        "word": "grau",
+        "surface": "Grau",
+        "definition": "Grey; the dull color between black and white."
+      },
+      {
+        "type": "noun",
+        "word": "Pfahl",
+        "definition": "Post; a thick wooden pole standing up in the ground."
+      },
+      {
+        "type": "adjective",
+        "word": "näher",
+        "surface": "näher",
+        "definition": "Closer; a shorter distance away from you than before."
+      },
+      {
+        "type": "noun",
+        "word": "Holzschild",
+        "definition": "Wooden sign; a flat board on a post that shows the way."
+      },
+      {
+        "type": "noun",
+        "word": "Wegrand",
+        "definition": "Roadside; the edge right next to the path."
+      },
+      {
+        "type": "noun",
+        "word": "Pfeil",
+        "definition": "Arrow; the sign shaped like a point that shows direction."
+      },
+      {
+        "type": "adverb",
+        "word": "dorthin",
+        "definition": "To there; toward that place over in the distance."
+      },
+      {
+        "type": "adjective",
+        "word": "dünn",
+        "surface": "dünner",
+        "definition": "Thin; not thick, here the fog slowly going away."
+      },
+      {
+        "type": "noun",
+        "word": "Sonne",
+        "definition": "Sun; the bright light in the sky during the day."
+      },
+      {
+        "type": "verb",
+        "word": "erzählen",
+        "surface": "erzählen",
+        "definition": "To tell; to say a story out loud to other people."
+      },
+      {
+        "type": "adjective",
+        "word": "müde",
+        "definition": "Tired; feeling that you need to rest or sleep."
+      },
+      {
+        "type": "noun",
+        "word": "Bein",
+        "surface": "Beine",
+        "definition": "Leg; the body part you stand and walk on."
+      },
+      {
+        "type": "adjective",
+        "word": "heil",
+        "definition": "Safe and sound; back without any harm or injury."
+      },
+      {
+        "type": "adjective",
+        "word": "letzt",
+        "surface": "letzten",
+        "definition": "Last; the final one, here the final part of the path."
+      },
+      {
+        "type": "adjective",
+        "word": "klug",
+        "surface": "klüger",
+        "definition": "Clever; good at finding the right answer or way."
+      }
+    ],
+    "arcType": "harmonic-close"
+  },
+  {
+    "topic": "legends-folklore",
+    "slotIndex": 1,
+    "title": "Der Biss im Ring",
+    "slug": "der-biss-im-ring",
+    "synopsis": "Am Abend stehen Hanna und Lukas vor dem alten Heidelberger Schloss. Lukas erzählt die Sage von einer Hexe, die in den eisernen Ring am Tor gebissen haben soll. Hanna glaubt kein Wort davon und sucht nach einer normalen Erklärung. Doch dann legt sie selbst die Hand auf den Ring und findet darin eine seltsame Spur.",
+    "text": "Die Sonne geht hinter dem alten Heidelberger Schloss unter. Hanna und ihr Freund Lukas stehen vor dem großen Tor. Lukas mag alte Sagen, Hanna glaubt lieber an das, was sie sehen kann.\n\nLukas: Kennst du die Sage von diesem Tor? Eine Hexe hat in den eisernen Ring gebissen.\nHanna: Eine Hexe, die in Eisen beißt? Lukas, das ist doch nur eine alte Geschichte.\nLukas: Wer durch den Ring beißt, sagt die Sage, dem gehört das ganze Schloss.\nHanna: Und natürlich hat es niemand geschafft. So enden solche Geschichten immer.\n\nLukas zeigt auf den schweren Ring am Tor. Im letzten Licht des Abends sieht er fast schwarz aus.\n\nLukas: Sieh ihn dir genau an. Die Leute sagen, man sieht die Spur noch heute.\nHanna: Das ist nur altes Eisen. Eine Spur kommt vom Wetter, nicht von Zähnen.\nLukas: Vielleicht. Aber leg mal selbst die Hand darauf und fühl nach.\nHanna: Na gut, nur damit du Ruhe gibst. Ich beweise dir, da ist nichts.\n\nHanna legt die Hand auf den kalten Ring und fährt langsam darüber. Plötzlich hält sie inne und runzelt die Stirn.\n\nHanna: Moment. Hier ist wirklich eine Kerbe. Klein, aber tief, wie von einem Zahn.\nLukas: Siehst du? Ich sage ja nicht, dass es eine Hexe war.\nHanna: Ich auch nicht. Aber woher kommt diese Kerbe dann wirklich?",
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "Licht",
+        "definition": "Light; the brightness that lets you see things around you."
+      },
+      {
+        "type": "noun",
+        "word": "Schloss",
+        "definition": "Castle; the large old building where lords once lived."
+      },
+      {
+        "type": "noun",
+        "word": "Tor",
+        "definition": "Gate; the big door in a wall you go through."
+      },
+      {
+        "type": "noun",
+        "word": "Sage",
+        "definition": "Legend; an old story people tell about long ago."
+      },
+      {
+        "type": "verb",
+        "word": "glauben",
+        "surface": "glaubt",
+        "definition": "To believe; to think that something is really true."
+      },
+      {
+        "type": "noun",
+        "word": "Hexe",
+        "definition": "Witch; a woman in old stories with magic powers."
+      },
+      {
+        "type": "adjective",
+        "word": "eisern",
+        "surface": "eisernen",
+        "definition": "Made of iron; built from the hard grey metal."
+      },
+      {
+        "type": "verb",
+        "word": "beißen",
+        "surface": "gebissen",
+        "definition": "To bite; to close your teeth hard on something."
+      },
+      {
+        "type": "adjective",
+        "word": "schwer",
+        "surface": "schweren",
+        "definition": "Heavy; weighing a lot and hard to lift or move."
+      },
+      {
+        "type": "adjective",
+        "word": "schwarz",
+        "definition": "Black; the very darkest color, like the night sky."
+      },
+      {
+        "type": "verb",
+        "word": "zeigen",
+        "surface": "zeigt",
+        "definition": "To point; to use your hand to show where a thing is."
+      },
+      {
+        "type": "noun",
+        "word": "Wetter",
+        "definition": "Weather; the rain, sun and wind outside on a day."
+      },
+      {
+        "type": "noun",
+        "word": "Spur",
+        "definition": "Mark or trace; a small sign left behind by something."
+      },
+      {
+        "type": "noun",
+        "word": "Zahn",
+        "surface": "Zähnen",
+        "definition": "Tooth; one of the hard white parts in your mouth."
+      },
+      {
+        "type": "verb",
+        "word": "fühlen",
+        "surface": "fühl",
+        "definition": "To feel; to touch something to learn how it is."
+      },
+      {
+        "type": "verb",
+        "word": "beweisen",
+        "surface": "beweise",
+        "definition": "To prove; to show clearly that something is true."
+      },
+      {
+        "type": "noun",
+        "word": "Stirn",
+        "definition": "Forehead; the flat part of your face above the eyes."
+      },
+      {
+        "type": "verb",
+        "word": "runzeln",
+        "surface": "runzelt",
+        "definition": "To frown; to make lines on your forehead when puzzled."
+      },
+      {
+        "type": "noun",
+        "word": "Kerbe",
+        "definition": "Notch; a small cut or dent in a hard surface."
+      },
+      {
+        "type": "adjective",
+        "word": "tief",
+        "definition": "Deep; going far down or far into something."
+      },
+      {
+        "type": "adverb",
+        "word": "woher",
+        "definition": "From where; asking what place something comes from."
+      }
+    ],
+    "arcType": "juxtaposition-discovery"
+  },
+  {
+    "topic": "legends-folklore",
+    "slotIndex": 2,
+    "title": "Ein Klopfen im Keller",
+    "slug": "ein-klopfen-im-keller",
+    "synopsis": "Hanna und Lukas steigen die alten Steinstufen in den dunklen Keller des Schlosses hinab, wo das riesige Weinfass steht. Es ist kalt und still. Dann hören sie ein leises, gleichmäßiges Klopfen aus einer dunklen Ecke. Niemand sonst ist hier unten, und das Geräusch hört einfach nicht auf.",
+    "text": "Eine schmale Steintreppe führt von Hanna und Lukas tief in den Keller des Schlosses hinab. Unten ist es kalt und dunkel. In der Mitte steht das riesige alte Weinfass, größer als ein ganzes Zimmer.\n\nHanna: So ein großes Fass habe ich noch nie gesehen. Da passt ein halbes Dorf hinein.\nLukas: Früher haben sie hier den Wein für das ganze Schloss gelagert.\n\nIhre Stimmen klingen laut in dem leeren Raum unter der Erde.\n\nHanna: Hier unten ist es richtig kalt. Und so still, dass man die Ohren spitzt.\nLukas: Komm, wir gehen einmal um das Fass herum. Pass gut auf die Stufen auf.\n\nSie gehen langsam um das Fass. Auf einmal bleibt Hanna stehen und legt einen Finger an die Lippen.\n\nHanna: Psst. Hast du das gehört? Da klopft doch etwas.\nLukas: Ein Klopfen? Vielleicht waren das nur unsere eigenen Schritte.\nHanna: Nein, hör genau hin. Es klopft weiter, ganz langsam und gleichmäßig.\nLukas: Du hast recht. Da klopft wirklich etwas in der dunklen Ecke.\n\nDie beiden stehen ganz still und lauschen. Das Klopfen kommt wieder, leise und regelmäßig, aus dem hintersten Teil des Kellers.\n\nHanna: Und jetzt? Hier unten ist außer uns doch niemand.\nLukas: Eben war ich der mit den Sagen. Aber das hier gefällt mir gar nicht.\nHanna: Mir auch nicht. Gehen wir der Sache nach, oder gehen wir nach oben?",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "schmal",
+        "surface": "schmale",
+        "definition": "Narrow; not wide, only big enough for one person."
+      },
+      {
+        "type": "noun",
+        "word": "Steintreppe",
+        "definition": "Stone stairs; steps cut from hard rock in an old building."
+      },
+      {
+        "type": "adjective",
+        "word": "tief",
+        "definition": "Deep; going far down below the surface of something."
+      },
+      {
+        "type": "adjective",
+        "word": "dunkel",
+        "definition": "Dark; with little or no light to see by."
+      },
+      {
+        "type": "adjective",
+        "word": "riesig",
+        "surface": "riesige",
+        "definition": "Huge; very big, much larger than what is normal."
+      },
+      {
+        "type": "noun",
+        "word": "Fass",
+        "definition": "Barrel; the big round wooden thing that holds wine."
+      },
+      {
+        "type": "adjective",
+        "word": "still",
+        "definition": "Still; very quiet, with almost no sound or movement."
+      },
+      {
+        "type": "adjective",
+        "word": "laut",
+        "definition": "Loud; making a strong sound that is easy to hear."
+      },
+      {
+        "type": "noun",
+        "word": "Wein",
+        "definition": "Wine; the drink made from grapes, kept here in the barrel."
+      },
+      {
+        "type": "verb",
+        "word": "passen",
+        "surface": "passt",
+        "definition": "To fit; to have enough room inside for something."
+      },
+      {
+        "type": "noun",
+        "word": "Dorf",
+        "definition": "Village; a small place in the country with few houses."
+      },
+      {
+        "type": "verb",
+        "word": "lagern",
+        "surface": "gelagert",
+        "definition": "To store; to keep something in a place for later."
+      },
+      {
+        "type": "adjective",
+        "word": "kalt",
+        "definition": "Cold; having a low temperature, cool and not warm."
+      },
+      {
+        "type": "noun",
+        "word": "Ohr",
+        "surface": "Ohren",
+        "definition": "Ear; the body part on your head you hear with."
+      },
+      {
+        "type": "adverb",
+        "word": "herum",
+        "definition": "Around; on every side of a thing, going right round it."
+      },
+      {
+        "type": "verb",
+        "word": "klopfen",
+        "surface": "klopft",
+        "definition": "To knock or tap; to hit lightly and make a sound."
+      },
+      {
+        "type": "noun",
+        "word": "Schritt",
+        "surface": "Schritte",
+        "definition": "Step; one movement of your foot as you walk along."
+      },
+      {
+        "type": "noun",
+        "word": "Ecke",
+        "definition": "Corner; the place where two walls meet in a room."
+      },
+      {
+        "type": "adjective",
+        "word": "leise",
+        "definition": "Quiet; making only a very soft, low sound."
+      },
+      {
+        "type": "adjective",
+        "word": "hinterste",
+        "surface": "hintersten",
+        "definition": "Furthest back; the part deepest and last in a room."
+      },
+      {
+        "type": "verb",
+        "word": "gefallen",
+        "surface": "gefällt",
+        "definition": "To please; here the noise makes him feel uneasy."
+      }
+    ],
+    "arcType": "mini-cliffhanger"
+  },
+  {
+    "topic": "legends-folklore",
+    "slotIndex": 3,
+    "title": "Nur eine Eule",
+    "slug": "nur-eine-eule",
+    "synopsis": "Mutig folgen Hanna und Lukas dem Klopfen in die dunkelste Ecke des Kellers. Hinter dem großen Fass entdecken sie kein Gespenst, sondern eine kleine Eule, die durch ein offenes Fenster hereingeflogen ist und nicht mehr hinausfindet. Sie öffnen das Fenster weit, und am Ende bleibt von der Hexe nur eine gute Geschichte.",
+    "text": "Hanna nimmt ihr Handy und macht das Licht an. Gemeinsam gehen sie langsam dem Klopfen nach, in die dunkelste Ecke hinter dem großen Fass. Das Geräusch wird mit jedem Schritt lauter.\n\nLukas: Es kommt von da hinten, von dem alten Fenster. Leuchte mal dorthin.\nHanna: Da sitzt etwas auf dem Fenstersims. Es bewegt sich und schlägt gegen das Glas.\n\nVorsichtig gehen die beiden näher an die dunkle Wand heran.\n\nLukas: Das ist ja eine Eule! Eine kleine Eule, ganz allein hier unten.\nHanna: Sie ist durch das offene Fenster geflogen und findet nicht mehr hinaus.\n\nDie Eule schlägt wieder mit dem Flügel gegen die Wand. Genau dieses Geräusch haben die beiden für ein gespenstisches Klopfen gehalten.\n\nLukas: Das war also unser Gespenst. Eine Eule, die nach Hause will.\nHanna: Die arme. Komm, wir machen das Fenster ganz weit auf.\nLukas: Vorsichtig, nicht dass sie noch mehr Angst bekommt.\nHanna: Ich gehe ganz langsam. Na los, kleine Eule, da ist dein Weg nach draußen.\n\nMit einem leisen Rauschen fliegt die Eule durch das Fenster in die Nacht. Hanna und Lukas steigen wieder hinauf, und beide müssen lächeln.\n\nLukas: Keine Hexe, kein Gespenst, nur eine verlorene Eule.\nHanna: Und trotzdem erzählst du morgen allen, im Schloss habe es geklopft.\nLukas: Natürlich. Eine gute Sage braucht kein Gespenst, nur eine dunkle Nacht.",
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "weit",
+        "definition": "Wide; opened fully, as far as it can go."
+      },
+      {
+        "type": "adverb",
+        "word": "gemeinsam",
+        "definition": "Together; doing something with another person, side by side."
+      },
+      {
+        "type": "noun",
+        "word": "Geräusch",
+        "definition": "Noise; a sound, often one you cannot name at first."
+      },
+      {
+        "type": "verb",
+        "word": "leuchten",
+        "surface": "Leuchte",
+        "definition": "To shine a light; to point a lamp so it lights a spot."
+      },
+      {
+        "type": "noun",
+        "word": "Fenstersims",
+        "definition": "Windowsill; the flat ledge at the bottom of a window."
+      },
+      {
+        "type": "verb",
+        "word": "bewegen",
+        "surface": "bewegt",
+        "definition": "To move; to change place or position a little."
+      },
+      {
+        "type": "verb",
+        "word": "schlagen",
+        "surface": "schlägt",
+        "definition": "To beat or flap; to hit against something again and again."
+      },
+      {
+        "type": "adverb",
+        "word": "hinaus",
+        "definition": "Out; to the outside from within a closed place."
+      },
+      {
+        "type": "noun",
+        "word": "Eule",
+        "definition": "Owl; a night bird with big round eyes that hunts quietly."
+      },
+      {
+        "type": "adjective",
+        "word": "offen",
+        "surface": "offene",
+        "definition": "Open; not shut, so air or birds can pass through."
+      },
+      {
+        "type": "verb",
+        "word": "fliegen",
+        "surface": "geflogen",
+        "definition": "To fly; to move through the air with wings."
+      },
+      {
+        "type": "noun",
+        "word": "Flügel",
+        "definition": "Wing; the body part a bird uses to fly."
+      },
+      {
+        "type": "noun",
+        "word": "Wand",
+        "definition": "Wall; the flat upright side of a room or cellar."
+      },
+      {
+        "type": "noun",
+        "word": "Gespenst",
+        "definition": "Ghost; a scary spirit that people fear in old stories."
+      },
+      {
+        "type": "adjective",
+        "word": "dunkel",
+        "surface": "dunkelste",
+        "definition": "Dark; with little or no light, hard to see in."
+      },
+      {
+        "type": "noun",
+        "word": "Angst",
+        "definition": "Fear; the bad feeling you have when you are scared."
+      },
+      {
+        "type": "adjective",
+        "word": "leise",
+        "surface": "leisen",
+        "definition": "Soft; making only a very quiet, low sound."
+      },
+      {
+        "type": "noun",
+        "word": "Nacht",
+        "definition": "Night; the dark hours after the day, when it is black."
+      },
+      {
+        "type": "verb",
+        "word": "steigen",
+        "surface": "steigen",
+        "definition": "To climb; to go up the stairs step by step."
+      },
+      {
+        "type": "adjective",
+        "word": "verloren",
+        "definition": "Lost; not able to find the way back out."
+      },
+      {
+        "type": "noun",
+        "word": "Sage",
+        "definition": "Legend; an old story people keep telling about long ago."
+      }
+    ],
+    "arcType": "late-reveal"
+  }
+]
