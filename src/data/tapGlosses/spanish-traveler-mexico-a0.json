@@ -96,7 +96,7 @@
       "t": "adjective"
     },
     "sonríe": {
-      "g": "to smile",
+      "g": "smiles",
       "t": "verb"
     },
     "y": {
@@ -256,7 +256,7 @@
       "t": "pronoun"
     },
     "siente": {
-      "g": "to feel",
+      "g": "feels",
       "t": "verb"
     },
     "feliz": {
@@ -328,7 +328,7 @@
       "t": "noun"
     },
     "trabaja": {
-      "g": "to work",
+      "g": "works",
       "t": "verb"
     },
     "casa": {
@@ -732,7 +732,7 @@
       "t": "conjunction"
     },
     "toma": {
-      "g": "to drink",
+      "g": "drinks, takes",
       "t": "verb"
     },
     "rápido": {
@@ -1824,7 +1824,7 @@
       "t": "conjunction"
     },
     "suena": {
-      "g": "to sound",
+      "g": "sounds, plays",
       "t": "verb"
     },
     "otros": {
@@ -3676,7 +3676,7 @@
       "t": "conjunction"
     },
     "sientan": {
-      "g": "to seat",
+      "g": "they seat; se sientan, they sit down",
       "t": "verb"
     },
     "sigue": {

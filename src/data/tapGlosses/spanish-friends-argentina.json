@@ -5808,7 +5808,7 @@
       "t": "noun"
     },
     "sacan": {
-      "g": "to take",
+      "g": "they take out",
       "t": "verb"
     },
     "sacude": {
@@ -5816,7 +5816,7 @@
       "t": "verb"
     },
     "salido": {
-      "g": "to go out",
+      "g": "gone out (salir, participle)",
       "t": "verb"
     },
     "salteña": {
@@ -5832,7 +5832,7 @@
       "t": "verb"
     },
     "saludaba": {
-      "g": "to greet",
+      "g": "was greeting",
       "t": "verb"
     },
     "san": {
@@ -5844,7 +5844,7 @@
       "t": "expression"
     },
     "seas": {
-      "g": "to be",
+      "g": "no seas, do not be",
       "t": "verb"
     },
     "seba": {
@@ -5868,7 +5868,7 @@
       "t": "verb"
     },
     "servía": {
-      "g": "to pour",
+      "g": "was pouring, was serving",
       "t": "verb"
     },
     "señal": {
@@ -5876,19 +5876,19 @@
       "t": "noun"
     },
     "señalando": {
-      "g": "to point",
+      "g": "pointing",
       "t": "verb"
     },
     "señaló": {
-      "g": "to point",
+      "g": "pointed",
       "t": "verb"
     },
     "sientan": {
-      "g": "to seat",
+      "g": "they seat; se sientan, they sit down",
       "t": "verb"
     },
     "siente": {
-      "g": "to feel",
+      "g": "feels",
       "t": "verb"
     },
     "sierras": {
@@ -5920,7 +5920,7 @@
       "t": "noun"
     },
     "sonríe": {
-      "g": "to smile",
+      "g": "smiles",
       "t": "verb"
     },
     "sopesaba": {
@@ -5932,7 +5932,7 @@
       "t": "verb"
     },
     "sostiene": {
-      "g": "to sustain",
+      "g": "holds up",
       "t": "verb"
     },
     "soñando": {
@@ -5964,7 +5964,7 @@
       "t": "adjective"
     },
     "suena": {
-      "g": "to sound",
+      "g": "sounds, plays",
       "t": "verb"
     },
     "sueño": {
@@ -6084,7 +6084,7 @@
       "t": "slang"
     },
     "tira": {
-      "g": "to toss",
+      "g": "throws, pulls",
       "t": "verb"
     },
     "tocá": {
@@ -6092,7 +6092,7 @@
       "t": "verb"
     },
     "toma": {
-      "g": "to drink",
+      "g": "drinks, takes",
       "t": "verb"
     },
     "tomamos": {
@@ -6128,11 +6128,11 @@
       "t": "adjective"
     },
     "trabaja": {
-      "g": "to work",
+      "g": "works",
       "t": "verb"
     },
     "trae": {
-      "g": "to bring",
+      "g": "brings",
       "t": "verb"
     },
     "traiciona": {
@@ -6156,11 +6156,11 @@
       "t": "noun"
     },
     "trata": {
-      "g": "to try",
+      "g": "tries; se trata de, it is about",
       "t": "verb"
     },
     "tratan": {
-      "g": "to treat",
+      "g": "they treat",
       "t": "verb"
     },
     "trece": {
@@ -6208,7 +6208,7 @@
       "t": "noun"
     },
     "van": {
-      "g": "to go",
+      "g": "they go",
       "t": "verb"
     },
     "venden": {
@@ -6260,7 +6260,7 @@
       "t": "verb"
     },
     "vibra": {
-      "g": "to vibrate",
+      "g": "vibrates, buzzes",
       "t": "verb"
     },
     "vidala": {
@@ -6296,7 +6296,7 @@
       "t": "slang"
     },
     "vive": {
-      "g": "to live",
+      "g": "lives",
       "t": "verb"
     },
     "viñatero": {

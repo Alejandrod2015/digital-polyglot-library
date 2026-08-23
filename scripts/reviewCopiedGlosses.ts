@@ -74,9 +74,21 @@ async function run() {
     .join(" ")
     .toLowerCase();
 
+  /** Infinitivos de las cuatro lenguas romanicas y del aleman. Si la CLAVE no
+   *  es un infinitivo y la glosa empieza por "to ", la copia esta glosando el
+   *  lema y no la forma que el alumno esta tocando. */
+  const ES_INFINITIVO =
+    /((ar|er|ir)(me|te|le|lo|la|se|nos|les|los|las)?|are|ere|ire|(ar|er|ir)si|en|ern|eln)$/;
+  /** "to the", "to him": la glosa empieza por "to" pero es una preposicion, no
+   *  un infinitivo. Sin esto se marcan `al`, `le`, `zum`, `alla`. */
+  const TO_PREPOSICION = /^to\s+(the|him|her|it|them|you|us|me)\b/i;
+
   /** Senales mecanicas de copia ajena. */
-  function banderas(g: string): string[] {
+  function banderas(g: string, w: string): string[] {
     const b: string[] = [];
+    if (/^to\s/i.test(g) && !TO_PREPOSICION.test(g) && !ES_INFINITIVO.test(w)) b.push("INFINITIVO");
+    if (/\b(mexican|argentin\w*|colombian|chilean|peruvian|spain|spanish only|bavarian|austrian)\b/i.test(g))
+      b.push("REGISTRO");
     if (citaAjena(g, corpus)) b.push("CITA-AJENA");
     // "here: X" dice "en ESTA oracion significa X", y la oracion es otra.
     if (/\bhere:/i.test(g)) b.push("HERE");
@@ -92,7 +104,7 @@ async function run() {
     const hit = frases.find(([, o]) => re.test(o));
     if (!hit) sinFrase += 1;
     const frase = hit ? hit[1] : "(NO APARECE)";
-    const b = banderas(mine.glosses[w].g);
+    const b = banderas(mine.glosses[w].g, w);
     if (b.length) marcadas += 1;
     if (soloFlags && !b.length) continue;
     const marca = b.length ? `[${b.join(",")}] ` : "";

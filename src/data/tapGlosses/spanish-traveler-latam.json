@@ -6531,7 +6531,7 @@
       "t": "verb"
     },
     "seas": {
-      "g": "to be",
+      "g": "no seas, do not be",
       "t": "verb"
     },
     "secas": {
@@ -6647,11 +6647,11 @@
       "t": "verb"
     },
     "sientan": {
-      "g": "to seat",
+      "g": "they seat; se sientan, they sit down",
       "t": "verb"
     },
     "siente": {
-      "g": "to feel",
+      "g": "feels",
       "t": "verb"
     },
     "sienten": {
@@ -6827,7 +6827,7 @@
       "t": "noun"
     },
     "sonríe": {
-      "g": "to smile",
+      "g": "smiles",
       "t": "verb"
     },
     "sopla": {
@@ -6859,7 +6859,7 @@
       "t": "noun"
     },
     "sostiene": {
-      "g": "to sustain",
+      "g": "holds up",
       "t": "verb"
     },
     "soy": {
@@ -6923,7 +6923,7 @@
       "t": "verb"
     },
     "suena": {
-      "g": "to sound",
+      "g": "sounds, plays",
       "t": "verb"
     },
     "suenan": {
@@ -7204,7 +7204,7 @@
       "t": "noun"
     },
     "tira": {
-      "g": "to toss",
+      "g": "throws, pulls",
       "t": "verb"
     },
     "tlacuache": {
@@ -7261,7 +7261,7 @@
       "t": "pronoun"
     },
     "toma": {
-      "g": "to drink",
+      "g": "drinks, takes",
       "t": "verb"
     },
     "toman": {
@@ -7289,7 +7289,7 @@
       "t": "adverb"
     },
     "trabaja": {
-      "g": "to work",
+      "g": "works",
       "t": "verb"
     },
     "trabajamos": {
@@ -7314,7 +7314,7 @@
       "t": "adjective"
     },
     "trae": {
-      "g": "to bring",
+      "g": "brings",
       "t": "verb"
     },
     "traen": {
@@ -7354,11 +7354,11 @@
       "t": "adjective"
     },
     "trata": {
-      "g": "to try",
+      "g": "tries; se trata de, it is about",
       "t": "verb"
     },
     "tratan": {
-      "g": "to treat",
+      "g": "they treat",
       "t": "verb"
     },
     "trato": {
@@ -7539,7 +7539,7 @@
       "t": "verb"
     },
     "van": {
-      "g": "to go",
+      "g": "they go",
       "t": "verb"
     },
     "varados": {
@@ -7730,7 +7730,7 @@
       "t": "noun"
     },
     "vibra": {
-      "g": "to vibrate",
+      "g": "vibrates, buzzes",
       "t": "verb"
     },
     "vida": {
@@ -7822,7 +7822,7 @@
       "t": "expression"
     },
     "vive": {
-      "g": "to live",
+      "g": "lives",
       "t": "verb"
     },
     "viven": {
