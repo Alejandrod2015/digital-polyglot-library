@@ -166,7 +166,7 @@
       "id": "vocab-taught-same-type",
       "gate": "story",
       "check": "vocab-taught-same-type",
-      "rule": "Cero vocabulario repetido con otro journey del mismo tipo",
+      "rule": "Cero vocabulario repetido con otro journey del mismo tipo Y del mismo pool de variante; los de otra variante caen al tope de dos por historia, porque el Journey tab no se los sirve al alumno",
       "memory": "feedback_vocab_zero_overlap_across_journeys"
     },
     {

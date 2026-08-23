@@ -11,6 +11,8 @@ a propósito
 a su vez
 a tiempo
 a través de
+a veces
+abajo
 abandonar
 abeja
 abertura
@@ -19,8 +21,12 @@ abogacía
 abogada
 abogado
 abrazadera
+abrazo
 abridor
 abril
+abrir
+abuela
+abuelo
 aburrido
 aburrir
 acabar
@@ -32,8 +38,10 @@ acción
 aceituna
 acelerar
 aceptar
+acercar
 aclamar
 aclarar
+acomodar
 acompañar
 aconsejar
 acostarse
@@ -49,11 +57,13 @@ acuerdo
 acumulador
 adecuado
 además
+aderezo
 adhesivo
 administrar
 admiración
 admitir
 adolescente
+adornar
 adulto
 advertir
 adónde
@@ -64,6 +74,7 @@ afeitarse
 afiche
 afilado
 afirmar
+aflojar
 afrontar
 afueras
 agacharse
@@ -77,13 +88,20 @@ agradable
 agradecido
 agresivo
 agricultor
+aguacero
+aguado
 aguafiestas
 aguanieve
+aguardar
+aguardiente
 aguja
+ahora
 ahora bien
 ahora mismo
 ahorrar
 ahorro
+ahí
+ajeno
 ajonjolí
 ajustar
 al fin
@@ -98,6 +116,7 @@ albañil
 alberca
 alcalde
 alcaldesa
+alcanzar
 alcohol
 aldea
 alegrar
@@ -109,6 +128,8 @@ alfiler
 alfombra
 alfombrilla
 alga
+algo
+alguien
 alguno
 alicate
 aliento
@@ -125,20 +146,28 @@ alojamiento
 alojarse
 alpargata
 alquilar
+alquiler
 alrededor
 altavoz
 alumna
 alumno
 alzar
 amabilidad
+amable
+amanecer
+amargo
+amarrar
+amasar
 ambicioso
 ambiente
 ambiguo
 ambulancia
 americana
 amigas
+amigos
 amistad
 amistoso
+amor
 amplio
 analgésico
 analizar
@@ -154,6 +183,7 @@ animal
 aniversario
 anoche
 anorexia
+anotar
 ansioso
 antagonista
 ante
@@ -170,34 +200,43 @@ apagado
 aparador
 aparato
 aparcar
+aparecer
 aparente
 aparentemente
 apariencia
 apartamento
+apenas
 apertura
 apetito
 apilar
 aplicación
 apoyar
 apoyo
+aprender
 aprendiz
 aprendizaje
 apresurar
+apretar
 aprobación
 aprobar
 apropiado
 aprovechar
 aproximado
+apurar
+apurarse
 aquel
 aquella
 aquellas
 aquellos
+aquí
 arandela
 arboleda
 archivador
 archivo
 arcilla
+arco
 ardiente
+arepa
 argumentar
 argumento
 armario
@@ -205,6 +244,7 @@ aroma
 arquitecta
 arquitecto
 arquitectura
+arrastrar
 arrastrarse
 arreglado
 arreglos
@@ -214,17 +254,20 @@ arroyo
 arrugado
 arruinado
 arte
+artesano
 articulación
 artificial
 artista
 artículo
 asada
+asado
 asamblea
 asar
 ascensor
 aseo
 asesor
 asiente
+asiento
 asignatura
 asimismo
 asintió
@@ -267,7 +310,9 @@ aunque
 auricular
 ausencia
 ausente
+auto
 autobiografía
+autobús
 autopista
 autoridad
 autoritario
@@ -275,27 +320,35 @@ auténtico
 avanzar
 avenida
 aventura
+avergonzado
 averiguar
+aviso
 avispa
 avión
 ayer
+ayuda
 ayudante
 ayudar
 azulejo
 azúcar
 azúcar en sangre
+año
 bacalao
 bacteria
 balance
 balancear
 balcones
+balcón
+balde
 baldosa
 ballena
 balsa
 balón
 banana
 banca
+bandeja
 bandera
+banqueta
 barandal
 barato
 barba
@@ -303,6 +356,7 @@ barbería
 barniz
 barnizar
 barranco
+barrer
 barrera
 barrida
 barriga
@@ -311,6 +365,7 @@ barro
 bastante
 bastón
 basura
+batería
 batido
 bañador
 bañarse
@@ -326,31 +381,39 @@ belleza
 beneficio
 benévolo
 bermuda
+besar
 beso
 biblioteca
 bibliotecario
 bici
 bicicleta
+bien
 bienestar
 bigote
 bikini
+billetera
 billón
 bingo
 biografía
 biología
+bisagra
 bistec
 biólogo
 blanco y negro
 blando
 bloc
 blusa
+boca
 bocadillo
+bocado
+bocina
 boina
 bol
 boletería
 boleto
 boletín
 bollo
+bolsillo
 bolsillos
 bolígrafo
 bomba
@@ -375,6 +438,7 @@ breve
 brigada
 brillante
 brillo
+brincar
 brinco
 brindar
 brisa
@@ -407,6 +471,7 @@ cabra
 cacahuete
 cacao
 cacareo
+cada
 cada domingo
 cada día
 cada jueves
@@ -415,24 +480,31 @@ cada semana
 cadena
 cadera
 caduco
+caer
 cafetera
 cafetería
 café
 cajas
 cajera
+cajero
 cajita
+cajón
 calabacín
 calabaza
 calamar
 calcetín
 calculadora
+caldo
 calefacción
 calendario
 calentamiento global
 calentar
 calidad
+callada
+callado
 callar
 callejuela
+callejón
 calma
 calmado
 calmarse
@@ -443,16 +515,23 @@ calzado
 cama
 camarera
 camarón
+cambiar
 cambio
 cambio climático
 camilla
 caminata
+camino
 camionero
 camioneta
+camisa
 camiseta
 camión
+campera
 campo
+canal
+canasta
 canasto
+cancha
 candado
 candelabro
 candidato
@@ -461,9 +540,11 @@ candil
 cangrejo
 canguro
 canoa
+cansada
 cansancio
 cansar
 cansarse
+cantar
 cantidad
 cantimplora
 capa
@@ -474,6 +555,7 @@ capote
 captar
 capucha
 capítulo
+cara
 caracol
 caracola
 caracterizar
@@ -488,14 +570,17 @@ cargar
 cargo
 caricia
 caridad
+cariño
 cariñoso
 carnaval
+carne
 carnet
 carnicero
 carnicería
 carnitas
 caro
 carpa
+carpeta
 carpintero
 carrera
 carro
@@ -505,6 +590,8 @@ cartoncillo
 cartulina
 cartón
 casera
+casero
+casi
 casi lista
 casi listo
 casi termino
@@ -518,10 +605,13 @@ castillo
 casual
 casualidad
 catarro
+catedral
 categoría
+catorce
 catálogo
 caucho
 causa
+cazuela
 caída
 cañería
 caño
@@ -532,6 +622,7 @@ ceder
 celebración
 celos
 celoso
+celular
 cementerio
 cemento
 cenar
@@ -542,6 +633,7 @@ centro
 centímetro
 cepillar
 cepillo
+cerca
 cercano
 cerdo
 cereal
@@ -552,6 +644,7 @@ cero
 cerrada
 cerradura
 cerrar sesión
+cerro
 cerrojo
 certeza
 certificación
@@ -560,17 +653,22 @@ cerveza
 cesta
 cesto
 cesárea
+ceviche
 chaleco
 chalet
 champiñón
 champán
+champú
 chancla
+chanclas
 chaqueta
 chat
 chef
 cheque
 chequera
 chicle
+chico
+chile
 chimenea
 chipa
 chiquita
@@ -582,6 +680,7 @@ chispa
 chiste
 choclo
 chocolate
+chofer
 chorizo
 chorro
 choza
@@ -598,11 +697,13 @@ ciertamente
 cifra
 cigarro
 cilantro
+cima
 cinco
 cincuenta
 cine
 cineasta
 cines
+cinta
 cinta adhesiva
 cintura
 cinturón
@@ -637,12 +738,14 @@ cobertor
 cocer
 cocinar
 cocinera
+cocinero
 coco
 codorniz
 coger
 coincidencia
 cojín
 col
+cola
 colaboración
 colaborar
 colador
@@ -654,13 +757,16 @@ colega
 colegio
 colesterol
 colgador
+colgar
 colina
 collage
+collar
 colocación
 colocar
 colorear
 colorido
 combate
+combi
 combinar
 combustible
 comedero
@@ -669,6 +775,8 @@ comentario
 comenzar
 comercio
 cometa
+comida
+comino
 como
 como resultado
 comparar
@@ -758,6 +866,7 @@ continente
 continuar
 continuar derecho
 contorno
+contra
 contraseña
 contrastar
 contrato
@@ -774,6 +883,7 @@ convivir
 cooperar
 coordinación
 copa
+copia
 copiar
 coraje
 coral
@@ -790,12 +900,15 @@ corrector
 corredor
 corregir
 correo
+correr
 correspondencia
 corresponsal
+corriente
 cortador
 corteza
 cortina
 cortés
+cosas
 coser
 costa
 costar
@@ -810,6 +923,7 @@ crecer
 credencial
 creencia
 creer
+crema
 cremallera
 cresta
 criminal
@@ -821,48 +935,68 @@ croissant
 cruce
 crucero
 crucial
+crudo
 crujido
 crujiente
 cráneo
 crédito
 crítica
+cuaderno
+cuadra
 cuadrado
 cuadras
+cuadro
+cual
 cualquier
 cualquiera
+cuando
 cuanto antes
+cuarenta
 cuarenta años
 cuarta
 cuarteto
+cuarto
+cuatro
 cubeta
 cubierta
 cubo de basura
 cubrecama
+cubrir
 cuchara
 cuchilla
+cuchillo
 cuenco
 cuento
 cuerda
 cuero
+cuerpo
 cuervo
 cuestionable
 cuestionar
 cuestión
 cuidadoso
+cuidar
 cuidarse
+culpa
 culto
 cultura
 cumbre
+cumpleaños
 cumplir
 cuneta
 cuota
 cura
 curar
 curiosa
+curiosidad
+curioso
 curso
 cursor
 curva
 cuyo
+cuál
+cuándo
+cuánto
 cálido
 cáscara
 cédula
@@ -876,8 +1010,10 @@ cómoda
 cómodo
 cúpula
 dado que
+dale
 danza
 dar
+dar vuelta
 darse
 darse cuenta
 darse vuelta
@@ -890,6 +1026,7 @@ de hecho
 de manera
 de modo
 de modo que
+de todos modos
 de un solo trago
 de vez en cuando
 debate
@@ -900,6 +1037,7 @@ decena
 decente
 decepcionado
 decepción
+decir
 decisión
 declaración
 declarar
@@ -914,6 +1052,7 @@ deficiencia
 deforestación
 delfín
 delgado
+delicado
 demanda
 democracia
 democrático
@@ -925,6 +1064,9 @@ departamento
 depender
 deporte
 depresión
+depósito
+derecha
+derecho
 derramar
 derretir
 derroche
@@ -936,6 +1078,7 @@ desarrollar
 desarrollo
 desatar
 desayuno
+descansar
 descanso
 descarga
 descargar
@@ -943,12 +1086,14 @@ descender
 descolgar
 desconectar
 desconfiar
+desconocido
 describir
 descripción
 descubrimiento
 descubrir
 descuento
 descuidado
+desde
 desde luego
 desde niños
 desde siempre
@@ -961,6 +1106,7 @@ desenrollar
 desenvolver
 deseo
 desesperado
+desfile
 desgarrar
 desgracia
 desierto
@@ -972,21 +1118,29 @@ desorden
 desordenado
 desordenar
 despachador
+despedida
+despedirse
+despegar
 despejado
+despertador
 despertar
 despertarse
 despierto
 desplegar
 desprecio
 desprender
+después
+destapar
 destello
 destino
+destornillador
 destruir
 desventaja
 desvestirse
 desvío
 detallado
 detallar
+detalle
 detective
 detener
 detenerse
@@ -1001,17 +1155,21 @@ diafragma
 diagnóstico
 diario
 dibujar
+dibujo
+diciembre
 diecinueve
 dieciocho
 diecisiete
 dieciséis
 diente
 dieta
+diez
 diferenciarse
 diferente
 dificultad
 difundir
 dignidad
+dinero
 dinámico
 diploma
 diputado
@@ -1034,6 +1192,7 @@ diseñador
 diseñadora
 diseñar
 diseño
+disimular
 disminuir
 disolver
 disponer
@@ -1043,6 +1202,7 @@ disputar
 distancia
 distante
 distinguir
+distinto
 distraído
 distribución
 distribuir
@@ -1054,22 +1214,28 @@ dividir
 divino
 divorcio
 diálogo
+doble
+doce
 docena
 doctor
 doctorado
 documento
 dolor
 domicilio
+domingo
 don
+donde
 dormido
 dormirse
 dormitorio
+dos
 doña
 drama
 dramaturgo
 drástico
 ducha
 ducharse
+dueña
 dulcería
 duración
 duradero
@@ -1078,10 +1244,13 @@ durazno
 duro
 débil
 décima
+día
 día anterior
 dólar
+dónde
 e
 echar
+eco
 ecología
 economía
 edad
@@ -1103,11 +1272,14 @@ el
 elaborar
 elección
 electricidad
+electricista
+elegante
 elegir
 elemento
 elevador
 elevar
 eliminar
+ella
 ellas
 ellos
 eléctrico
@@ -1151,6 +1323,7 @@ en primer lugar
 en realidad
 en resumen
 en seguida
+en serio
 en suma
 en todo caso
 en tres partes
@@ -1161,6 +1334,7 @@ encantador
 encantar
 encargado
 encargar
+encender
 encendida
 encendido
 encerado
@@ -1169,17 +1343,21 @@ enchufar
 enchufe
 encoger
 encontrado
+encuentro
 encuesta
 energía
 energía eólica
 energía renovable
 energía solar
+enero
 enfadado
 enfadar
 enfadarse
 enfermedad
+enfermera
 enfermero
 enfermo
+enfocar
 enfoque
 enfrentar
 enfriar
@@ -1192,6 +1370,8 @@ ensalada
 ensaladera
 ensayo
 enterarse
+entero
+entonces
 entorno
 entre
 entrega
@@ -1231,6 +1411,7 @@ escaparate
 escaso
 escenario
 esclavo
+escoba
 escoger
 esconder
 esconderse
@@ -1253,6 +1434,7 @@ esguince
 esmalte
 esos
 espacio
+espalda
 esparadrapo
 especia
 especialidad
@@ -1273,6 +1455,8 @@ esposa
 esposo
 espuma
 esquema
+esquivar
+esta
 esta noche
 esta semana
 esta tarde
@@ -1283,8 +1467,13 @@ estacionamiento
 estadio
 estado
 estadística
+estallar
 estanque
+estante
 estantería
+estar
+estas
+este
 estera
 estilista
 estilo
@@ -1293,6 +1482,7 @@ estofado
 estornudar
 estos
 estrategia
+estrella
 estreno
 estricto
 estructural
@@ -1300,6 +1490,7 @@ estruendo
 estrés
 estuche
 estudiante
+estudiar
 estudio
 estudioso
 estufa
@@ -1344,6 +1535,7 @@ extinción
 extranjero
 extraordinario
 extraviar
+extraño
 extremo
 extrovertido
 exótico
@@ -1369,11 +1561,15 @@ farolito
 fastidiado
 fatiga
 fauna
+favor
 favorable
+febrero
+fecha
 felicidad
 felicitar
 felpudo
 feo
+feria
 feria artesanal
 festejar
 festival
@@ -1387,17 +1583,24 @@ fiesta
 figura
 figurar
 fijar
+filete
 filosofía
 filtro
+fin
 fin de semana
 fina
+final
 finalizar
 finanza
 finas
 finca
 fino
 finos
+firma
+firmar
+firme
 fisioterapia
+flaco
 flan
 flauta
 flexible
@@ -1407,10 +1610,12 @@ florero
 florido
 fogata
 folleto
+fonda
 fondo
 fontanero
 formar
 foro
+forro
 fortaleza
 forzar
 foto
@@ -1450,8 +1655,10 @@ frustrado
 frutería
 frágil
 frías
+fríos
 fuego
 fuera
+fuerza
 fumar
 funcional
 funcionario
@@ -1472,6 +1679,7 @@ físico
 fósforo
 fútbol
 gabinete
+gafas
 galería
 galleta
 galletitas
@@ -1481,6 +1689,7 @@ gana
 ganador
 ganancia
 ganar
+gancho
 ganso
 garaje
 garantizar
@@ -1490,6 +1699,7 @@ gasolina
 gastado
 gastar
 gatear
+gato
 general
 generalmente
 generar
@@ -1511,15 +1721,18 @@ gobierno
 golpe
 golpear
 golpes
+goma
 gomita
 gordo
 gorjeo
+gorra
 gorrión
 gota
 gotear
 gozne
 grabar
 gracia
+gracias
 gracias a
 grado
 gramo
@@ -1535,7 +1748,11 @@ grava
 grave
 grifo
 gripe
+grito
 grosero
+gruesa
+grueso
+grupo
 gráfico
 guajolote
 guante
@@ -1546,6 +1763,8 @@ guiar
 guion
 guisante
 guitarra
+gusto
+guía
 gélido
 género
 haber
@@ -1556,18 +1775,24 @@ habitualmente
 hace años
 hace falta
 hacer
+hacia
 hall
 hambriento
 hamburguesa
+harto
+hasta
 hasta cierto punto
 hasta que
+hecho
 hedor
 heladería
 helicóptero
+heredar
 herencia
 herida
 herido
 herir
+hermano
 heroico
 heroína
 herramienta
@@ -1583,22 +1808,28 @@ hilo
 hipertensión
 hipoteca
 hispano
+historia
 historiador
 histórico
 hogar
 hoguera
 hoja
+hombro
 homenajear
 honda
+hondo
 honesto
+horchata
 horizonte
 hormiga
 hornear
+horrible
 hortaliza
 hospedaje
 hospital
 hostal
 hotel
+hoy
 huelga
 huella
 huerta
@@ -1610,6 +1841,7 @@ huir
 humilde
 humita
 humitas
+humo
 huracán
 huérfano
 huésped
@@ -1617,6 +1849,7 @@ hábil
 hábito
 héroe
 hígado
+húmedo
 icono
 idea
 ideal
@@ -1643,6 +1876,7 @@ impactante
 impacto
 imparable
 imparcial
+impecable
 impensable
 imperdonable
 imperfecto
@@ -1748,6 +1982,7 @@ interruptor
 intersección
 intervención
 intervenir
+interés
 intolerancia
 intoxicación
 introvertido
@@ -1763,6 +1998,7 @@ invisible
 invitación
 inyección
 inútil
+ir
 irrazonable
 irrelevante
 irresponsable
@@ -1773,33 +2009,41 @@ italiano
 izquierda
 izquierdo
 jacuzzi
+jalar
 jalea
 jamaica
 jamás
 jaqueca
 jardinera
 jardinero
+jardín
 jarra
 jaula
 jean
 jefa
+jefe
 jerarquía
 jersey
 jitomate
 jocoso
 jornada
+joven
 joya
 jubilado
 judía
 juego
+jueves
 juez
 jugador
 jugo
+jugoso
 juguete
 juicio
 junio
+junta
 juntar
 juntarse
+juntas
 junto
 jurado
 justicia
@@ -1809,6 +2053,7 @@ juventud
 kayak
 ketchup
 kilómetro
+kiosco
 kiwi
 kétchup
 la
@@ -1818,6 +2063,7 @@ laboral
 laboratorio
 laborioso
 ladera
+lado
 ladrido
 ladrillo
 ladrón
@@ -1829,6 +2075,7 @@ langosta
 langostino
 lanzar
 las
+lata
 lavabo
 lavado
 lavadora
@@ -1847,24 +2094,30 @@ legal
 legalidad
 leggings
 legumbre
+lejos
 lema
 lengua
 lentamente
 lento
 les
 lesión
+letra
 letrero
 levadura
 levante
 levita
 ley
+leyenda
+leña
 liberación
 liberal
 liberar
 libertad
 librero
 librería
+libreta
 libreta de notas
+libro
 licencia
 licor
 licuado
@@ -1876,22 +2129,29 @@ lima
 limitar
 limite
 limonada
+limonero
 limpiador
+limpiar
 limpieza
 limón
 linda
 lindo
+linterna
 liquidación
 liso
 lista
+listo
 literatura
 liviana
+liviano
 llamada
 llanta
 llanto
 llanura
+llave
 llegada
 llevamos así
+llorar
 lluvioso
 lo
 local
@@ -1907,6 +2167,7 @@ loro
 los
 losa
 lubina
+luces
 lucha
 luchar
 lujo
@@ -1914,6 +2175,8 @@ lujoso
 luminaria
 luminosa
 luminoso
+luna
+lunes
 luxurioso
 luz recargable
 luz roja
@@ -1923,29 +2186,38 @@ lámpara portátil
 lápiz
 líder
 límite
+línea
 lógico
 lúcuma
 macabro
 maestra
+maestro
 maestría
 magia
 magnífico
 majestuoso
+mal
 malecón
 maleducado
 maletín
 mallas
 malo
 mampara
+mamá
 mancha
 manchado
 manchar
 mandíbula
+manejar
+manera
 manga
+mango
 manguera
 manifestación
 manifestar
 manjar
+mano
+manos
 mansión
 manta
 manteca
@@ -1954,6 +2226,7 @@ mantequilla
 manual
 manualidad
 manzana
+mapa
 maravilloso
 marca
 marcador
@@ -1970,6 +2243,9 @@ marisco
 mariscos
 marrón
 martillo
+masa
+masticar
+mate
 materia
 material
 matrimonial
@@ -1980,15 +2256,22 @@ mayonesa
 mayor
 mayoría
 mazo
+maíz
 me
+mecer
 mecánica
 mecánico
 medalla
+media
+medialuna
+medialunas
 mediano
 mediante
 medicamento
 medicina
+medio
 medio ambiente
+mediodía
 mejilla
 mejor dicho
 mejora
@@ -2002,6 +2285,7 @@ memorable
 memoria
 memorizar
 menor
+menos
 mensajero
 menstruación
 menta
@@ -2014,16 +2298,20 @@ merendar
 merengue
 merienda
 mermelada
+mes
 mes pasado
 mesera
 mesero
 meseta
 mesita
 metal
+meterse
 metro
 metálico
 mexicano
+mezclar
 mi
+micro
 microondas
 micrófono
 miel
@@ -2032,7 +2320,9 @@ mientras
 mientras que
 mientras tanto
 migraña
+mija
 mijo
+mil
 milagro
 militar
 millón
@@ -2042,6 +2332,7 @@ ministro
 minorista
 minoría
 minucioso
+minuto
 mirada
 mire
 mis
@@ -2052,7 +2343,9 @@ misterioso
 mitad
 mitades
 mito
+miércoles
 mocasín
+mochila
 moda
 modelo
 moderado
@@ -2064,7 +2357,9 @@ modular
 mojado
 mojarse
 molde
+mole
 molestar
+molesto
 molinillo
 momento
 monedero
@@ -2075,6 +2370,7 @@ monumento
 morado
 moral
 morcilla
+mordida
 morir
 morral
 mortal
@@ -2083,19 +2379,25 @@ mosaico
 mosca
 mosquito
 mostaza
+mostrar
 mostrarse
 motivado
 motivo
+moto
 motocicleta
 movimiento
 movimiento bancario
 muchacha
 muchacho
+mucho
 muchos años
 muchísimo
 mudanza
 mudar
+mudarse
+mudo
 mueble
+mueca
 muelle
 muerte
 muestra
@@ -2104,27 +2406,35 @@ muletas
 multa
 multiplicar
 mundial
+mundo
 muralla
 murmullo
 murmurar
+muro
 muslo
 mutuo
+muy
 muñeca
 muñeco
+más
 más bien
 máster
 máximo
 médica
 médico
 médula
+mía
 mínimo
 mítico
 múltiple
 músculos
 música
+músico
 nabo
 nacer
 nación
+nada
+nadie
 nariz
 narrador
 narrativa
@@ -2137,6 +2447,7 @@ navegar
 nebuloso
 necesario
 necesidad
+necesitar
 negar
 negarse
 negativa
@@ -2155,8 +2466,10 @@ niebla
 nieta
 nieto
 ninguna
+ninguno
 ningún
 nivel
+niña
 niñez
 no
 no obstante
@@ -2186,15 +2499,19 @@ novena
 noventa
 novia
 noviembre
+novio
+nublado
 nuclear
 nudo
 nuestra
 nuestras
 nuestro
 nuestros
+nueve
 nuez
 numérico
 nunca
+número
 o
 o sea
 obedecer
@@ -2206,12 +2523,14 @@ obligación
 obligar
 obligatorio
 obra
+observar
 observatorio
 obstáculo
 obvio
 ocasión
 occidental
 ochenta
+ocho
 ocio
 octava
 octubre
@@ -2231,6 +2550,7 @@ ofendido
 ofensivo
 oferta
 oficial
+oficina
 oficio
 ofrecer
 oftalmólogo
@@ -2239,6 +2559,7 @@ ojos
 olla
 olvidar
 omelet
+once
 opción
 operación
 operador
@@ -2260,6 +2581,8 @@ ordinario
 oreja
 organización
 organizar
+orgullo
+orgulloso
 orgánico
 orientar
 orientarse
@@ -2274,6 +2597,7 @@ oscuridad
 ostra
 otorgamiento
 otoño
+otro
 oveja
 paciente
 pacífico
@@ -2282,6 +2606,8 @@ padre
 paella
 paisaje
 pajarito
+pala
+palabra
 palanca
 paliza
 palma
@@ -2308,7 +2634,9 @@ papelera
 papelería
 papá
 par
+para
 para que
+parar
 parasol
 parecida
 parecidas
@@ -2318,6 +2646,7 @@ pared interior
 pariente
 parking
 parlante
+parrilla
 parte
 participar
 partido
@@ -2329,8 +2658,10 @@ pasajero
 pasantía
 pasaporte
 pase
+paseo
 pasillo
 pasivo
+paso
 pasta
 pasta de dientes
 pastel
@@ -2353,12 +2684,14 @@ pausa
 pavo
 paz
 paño
+pañuelo
 peatón
 pecaminoso
 pecera
 pecho
 pechuga
 pedal
+pedazo
 pedido
 pegamento
 pegar
@@ -2366,17 +2699,23 @@ peinado
 peinar
 peinarse
 peine
+pelar
 peldaño
 pelea
+pelear
 peligro
 peligroso
+pelo
 pelota
 peluche
 peluquero
+peluquería
 película
 pena
+penal
 pensión
 penumbra
+peor
 pepino
 pera
 percha
@@ -2399,6 +2738,7 @@ perla
 permanecer
 permiso
 permitir
+pero
 perseguir
 persistir
 persona
@@ -2419,26 +2759,34 @@ peso
 pestillo
 petróleo
 piano
+picante
 picaporte
+picar
 piel
 pierna
+pieza
+pila
 pileta
 piloto
 pimienta
 pincel
 pinta
+pintar
 pintarrajear
 pintor
 pintura
 pinza
+piscina
 piso
 pista
 pito
 pizarra
 pizza
+piña
 placa
 placentero
 placer
+plancha
 planchar
 planear
 planeta
@@ -2464,6 +2812,7 @@ plumón
 plástico
 plátano
 pobre
+poco
 podadora
 poder
 poderoso
@@ -2489,6 +2838,7 @@ por cierto
 por consiguiente
 por culpa de
 por ejemplo
+por encima de
 por eso
 por la mañana
 por la noche
@@ -2510,6 +2860,7 @@ portarretratos
 portavelas
 portero
 portátil
+portón
 posgrado
 posibilidad
 posible
@@ -2534,11 +2885,13 @@ preferible
 preferir
 premio
 prender
+prendido
 prensa
 preocupación
 preocupado
 preocupar
 preparación
+preparar
 preparativos
 prescripción
 presencia
@@ -2558,6 +2911,7 @@ primavera
 primer
 primer día
 primera vez
+primero
 primo
 principal
 prisa
@@ -2566,6 +2920,7 @@ privacidad
 privado
 privilegiado
 privilegio
+pro
 probable
 probablemente
 problema
@@ -2593,6 +2948,7 @@ progresar
 progreso
 prohibir
 prolongado
+promesa
 prometedor
 prometer
 promover
@@ -2610,6 +2966,7 @@ proveedor
 provincia
 proyecto
 prudente
+prueba
 práctica
 prácticas
 práctico
@@ -2619,6 +2976,7 @@ próspero
 prótesis
 próxima semana
 próxima vez
+próximo
 psicología
 psicólogo
 publicar
@@ -2629,11 +2987,13 @@ puerta principal
 puerta trasera
 puertecita
 puerto
+puesta
 puesto de trabajo
 puesto que
 pulcro
 pulir
 pulmón
+pulpo
 punta
 puntiagudo
 punto
@@ -2651,6 +3011,7 @@ párpado
 pásale
 póster
 público
+que
 que le vaya bien
 quebrado
 quejarse
@@ -2658,13 +3019,18 @@ quemadura
 querida
 querido
 quicio
+quien
 quienes
 quieto
 quince
+quincena
 quinta
 quinto
 quiosco
 quitarse
+quizás
+quién
+qué
 química
 químico
 racimo
@@ -2681,6 +3047,7 @@ ranura
 rascacielos
 rascarse
 rasgar
+raspar
 rata
 ratito
 ratón
@@ -2705,17 +3072,21 @@ recepción
 rechazar
 recibidor
 recibir
+recibo
 reciclaje
 reciclar
 reciente
 recipiente
 recién hecho
 reclamación
+reclamar
 recomendación
 recomendar
 recompensa
 reconciliar
+reconocer
 reconocimiento
+recordar
 recorrido
 recto
 recurso
@@ -2736,18 +3107,22 @@ reforma
 refrigerador
 refugiado
 regadera
+regalar
+regar
 regional
 registrar
 registrarse
 registro
 región
 regla
+regresar
 regreso
 regulación
 regular
 rehabilitación
 rehacer
 reino
+reja
 relacionar
 relación
 relajado
@@ -2770,6 +3145,7 @@ renunciar
 reparable
 reparado
 reparar
+repartir
 repisa
 reponer
 reportaje
@@ -2788,6 +3164,7 @@ residencia
 residencial
 residir
 resignado
+resignarse
 resistencia
 resistente
 resistir
@@ -2823,6 +3200,7 @@ revelar
 reverenciado
 revisar
 revista
+revolver
 rey
 reyerta
 riesgo
@@ -2834,6 +3212,7 @@ ritual
 riñón
 robo
 robusto
+roca
 rodaja
 rodajas
 rodear
@@ -2845,7 +3224,9 @@ romo
 romper
 romperse
 romántico
+ropa
 ropero
+rosa
 rosado
 rosca
 rostro
@@ -2869,27 +3250,34 @@ rápidas
 récord
 réplica
 rígido
+río
 rústico
 sabana
+saber
 sabiduría
 sabio
 saborear
+sabroso
 sacacorchos
 sacapuntas
 sacerdote
 saciado
 saciar
+saco
 sacrificio
 sacudida
 sacudir
 sal
+sala
 sala de espera
 salado
 salami
 salchicha
 saldo
+salida
 salmorejo
 salmón
+salsa
 salto
 salud
 saludable
@@ -2902,14 +3290,17 @@ sangrado
 sangre
 sanidad
 santo
+sapo
 sardina
 sartén
 sastre
 satisfacer
 satisfactorio
+sazón
 scooter
 se
 se trata de
+seco
 secretaria
 secretario
 secreto
@@ -2923,7 +3314,9 @@ seguidor
 segunda
 seguramente
 seguridad
+seguro
 según
+seis
 seleccionar
 sello
 sellos
@@ -2947,12 +3340,15 @@ sentar
 sentido
 sentimental
 sentimiento
+sentir
 separador
 separar
 septentrional
 septiembre
 sequía
+ser
 sereno
+serio
 serpiente
 servicio
 servicio público
@@ -2963,23 +3359,30 @@ setenta
 severo
 sexo
 sexta
+seña
 señal
 señalado
+señor
 señorita
 short
 si
+siempre
 sierra
 siesta
+siete
 siga
 siglo
 significar
 significativo
 signo
+sigue
 siguiente
 silbar
 silbato
 silbido
+silencioso
 silicona
+silla
 silla de ruedas
 sillón
 silueta
@@ -2987,6 +3390,7 @@ similar
 simpatía
 simple
 simpático
+sin
 sin conocer
 sin duda
 sin embargo
@@ -3006,7 +3410,9 @@ situación
 situado
 situar
 sobrar
+sobre
 sobrellevar
+sobremesa
 sobrepeso
 sobresalir
 sobrina
@@ -3022,6 +3428,7 @@ soledad
 solicitud
 solidario
 solitario
+solo
 soltero
 solución
 sombrero
@@ -3055,7 +3462,10 @@ sudadera
 sudor
 suegra
 suegro
+sueldo
+suelo
 suerte
+sueño
 suficiente
 sufrimiento
 sugerencia
@@ -3068,6 +3478,7 @@ sumidero
 sumo
 superarse
 superficial
+superficie
 superior
 supermercado
 supervisar
@@ -3089,6 +3500,7 @@ sutil
 suya
 suyo
 suéter
+sábado
 sábana
 sándwich
 sátira
@@ -3098,6 +3510,7 @@ sílaba
 símbolo
 síntoma
 sólido
+sólo
 sótano
 tabique
 tabla
@@ -3111,13 +3524,16 @@ tacaño
 tachuela
 tacto
 tacón
+tal vez
 talento
 talentoso
+talla
 tallarín
 talón
 tamal
 tamales
 tamaño
+también
 tambor
 tamiz
 tampoco
@@ -3130,6 +3546,7 @@ tapar
 tapete
 tapia
 taquilla
+tararear
 tardío
 tarea
 tarifa
@@ -3145,6 +3562,7 @@ taxista
 tazón
 te
 teatro
+techo
 teclado
 tecnología
 tedioso
@@ -3152,10 +3570,12 @@ tela
 tele
 telediario
 teléfono
+temblar
 temblor
 temor
 tempera
 temperatura
+templo
 tenaz
 tenaza
 tendencia
@@ -3163,13 +3583,17 @@ tender
 tendero
 tendinitis
 tenedor
+tener
 tenis
 tensivo
+tenso
 teoría
 terapeuta
 terapia
 tercera
+terco
 terminal
+termo
 ternera
 ternero
 ternura
@@ -3181,6 +3605,7 @@ tetera
 texto
 textura
 teórico
+tibio
 tiburón
 ticket
 tiempo correcto
@@ -3188,22 +3613,32 @@ tierno
 tierra
 tierra mojada
 tigre
+tijera
 tijeras
 tilo
 tina
 tinta
+tinto
+tipo
+tirar
 tirita
 tobillo
 tocino
+todavía
+todo
+todos
 tolerable
 tolerante
 tolerar
+toma
 tomada
 tomado
 tomate
 tomillo
 tono
 tonto
+torcido
+tormenta
 tormentoso
 tornado
 torneo
@@ -3226,8 +3661,10 @@ tradición
 traducción
 traductor
 tragedia
+trago
 traje
 traje de baño
+trajinera
 trama
 tranquilidad
 transmitir
@@ -3236,6 +3673,7 @@ transportador
 transporte
 tranvía
 trapear
+trapo
 tras
 trascendente
 trasero
@@ -3251,6 +3689,8 @@ trece
 trecho
 treinta
 tremendo
+trepar
+tres
 tres horas
 triangular
 tribu
@@ -3261,6 +3701,7 @@ triunfar
 triunfo
 trivial
 trofeo
+trompo
 tronco
 tropa
 tropical
@@ -3268,20 +3709,27 @@ trucha
 tráfico
 trémulo
 trío
+tu
 tubería
 tubo
 tuerca
 tufo
 tumbarse
+turbio
 turismo
+turno
 turístico
 tus
 tuya
 té
 técnico
 témpera
+tímido
+tío
+típico
 título
 tóxico
+tú
 túnel
 u
 ubicación
@@ -3292,9 +3740,12 @@ una
 unas
 uniforme
 unilateral
+unir
+universidad
 universitario
 universo
 unión
+uno
 unos
 untar
 unánime
@@ -3318,8 +3769,11 @@ vacaciones
 vacante
 vaciar
 vacuna
+vacío
+vago
 vaho
 valentía
+valer
 valeroso
 valido
 valiente
@@ -3327,6 +3781,8 @@ valija
 valijas
 valioso
 valla
+valle
+valor
 valorar
 vano
 vapor
@@ -3337,11 +3793,15 @@ variedad
 varilla
 vasto
 vaya
+veces
+vecino
+vecinos
 vegetal
 vegetariano
 vehículo
 veinte
 vejiga
+vela
 velador
 velar
 velero
@@ -3364,9 +3824,14 @@ ventanas
 ventanilla
 ventisca
 ventoso
+verano
+verdad
 verdadero
+verde
 verdulería
+vereda
 vergonzoso
+vergüenza
 verificar
 verja
 versión
@@ -3378,15 +3843,20 @@ vestíbulo
 vesícula
 veterano
 veterinario
+vez
 viable
 viajar
 viajero
 vibración
 vibrante
+vibrar
 victoria
+vida
 videollamada
 vidriera
 vidrio
+viejo
+viernes
 vigilar
 villa
 villano
@@ -3407,9 +3877,11 @@ vital
 vitamina
 vitrina
 vivienda
+vivo
 vocabulario
 vocación
 vocal
+volar
 volcánico
 voltear
 volumen
@@ -3420,6 +3892,7 @@ votación
 votar
 voto
 vuelo
+vuelta
 vuestra
 vuestras
 vuestro
@@ -3436,6 +3909,7 @@ vívido
 wasabi
 wifi
 y
+ya
 ya es el momento
 ya está
 ya no
@@ -3444,12 +3918,14 @@ yacer
 yate
 yermo
 yeso
+yo
 yogur
 zanahoria
 zanco
 zapatero
 zapatería
 zapatilla
+zapato
 zapatos
 zona
 zonal
@@ -3473,6 +3949,7 @@ zurdo
 ñoquis
 órgano
 úlcera
+último
 única
 únicamente
 único

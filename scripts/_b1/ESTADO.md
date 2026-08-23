@@ -63,3 +63,100 @@ junto con los temas. Arreglarla despues es escribir el journey dos veces
 `Journey.nextJourneyId` sigue vacio en los 10 journeys de espanol. La cadena
 a0 Friends -> a1 Traveler -> b1 Traveler no se ha escrito porque el b1 todavia
 no tiene contenido.
+
+
+## Segunda tanda (2026-08-23, despues del "dale"): dos hallazgos
+
+### 1. La densidad que pide la escalera no cabe en 170 palabras
+
+Reescribi el tema 1 metiendo claves del journey a proposito: de 24 claves por
+cuerpo a 43, y la escalera del tema subio de 1,11 a 1,49. Ese es el techo de la
+prosa legible: **0,256 claves por palabra**. Medido:
+
+| | cuerpos | palabras | claves por cuerpo | claves por palabra |
+|---|---|---|---|---|
+| Control Friends ES/argentina A0 (3,01) | 21 | 3511 | 60,1 | 0,360 |
+| Traveler ES/spain B1 antes | 21 | 3520 | 24,3 | 0,145 |
+| Traveler ES/spain B1, tema 1 reescrito | 3 | 506 | 36,0 | 0,213 |
+| **lo que pide la media 2,5** | | | **52,5** | **0,31** |
+
+El control llega a 0,360 porque es A0: el 70% de sus plazas son vocabulario
+A1-A2, o sea que enseña el tejido conectivo (`sube`, `menos`, `nadie`,
+`lleva`), y entonces casi cada palabra del cuerpo es clave. Un B1 no puede:
+esas palabras ya las enseñaron los diez journeys de espanol anteriores. Con
+claves de la cola rara del idioma hacen falta articulos, preposiciones y verbos
+entre ellas, y la densidad se queda en 0,21-0,26.
+
+Extrapolando el tema 1 a los 21: la escalera acabaria entre **1,9 y 2,0**. Seria
+la mejor recirculacion del catalogo fuera de A0 (mejor A1 1,88, mejor C1 1,56)
+y aun asi no llega a 2,5.
+
+### 2. Otro chat escribio el Traveler ES/latam A1 mientras yo escribia este
+
+Cuando construi el pool ese journey tenia 0 plazas; ahora tiene 21 historias y
+420 lemas, y es del MISMO TIPO, asi que entra en el cubo de tolerancia CERO.
+**105 de mis 442 claves quedaron prohibidas de golpe**, y son justo las que mas
+recirculan: mitad, parte, orden, nota, frase, lista, tono, gesto, prisa, señal,
+hoja, total, peso, cantidad.
+
+| cubo de tolerancia cero | lemas |
+|---|---|
+| hoy: todo Traveler de espanol | 1265 |
+| Traveler/spain a1 | 447 |
+| Traveler/latam a1 | 420 |
+| Traveler/latam a0 | 291 |
+| Traveler/mexico a0 | 255 |
+| si se comparase dentro del pool de VARIANTE | 447 |
+
+**Recomendacion:** que `vocab-taught-same-type` compare dentro del pool de
+variante (`variantMatchesPreference`, `packages/domain/src/languageVariant.ts`),
+no dentro del idioma entero. Desde el 2026-08-20 el Journey tab sirve SOLO la
+variante del alumno y **España va sola**
+([[project_journey_variant_filtering]]): un alumno de España no puede abrir el
+Traveler LATAM ni el de Mexico. Hoy se le esta quitando a su B1 **818 lemas**
+para protegerlo de un solape que nunca va a ver. El caso que motivo el filtro de
+variante fue Vincent Pearson, que es el mismo solicitante cuya frase ("Holiday
+home in Spain") sostiene el tema 1 de este journey.
+
+Con ese cambio vuelven los 105 lemas prohibidos y, con ellos, los mejores
+recirculadores. La escalera seguiria sin llegar a 2,5 por el hallazgo 1, pero el
+journey dejaria de estar bloqueado por un solape que no existe para su lector.
+
+
+## Tercera tanda: el cambio de variante, hecho, y donde queda todo
+
+`vocab-taught-same-type` y `vocab-taught-elsewhere` ya comparan dentro del POOL
+DE VARIANTE (`variantPool`, packages/domain/src/languageVariant.ts), no dentro
+del idioma entero. La regla de cero solape es del 2026-08-18 y su premisa es
+"el lector ya la tiene en su repaso"; el filtro de variante entro el 2026-08-20
+y desde entonces esa premisa es falsa para otra variante, porque a un alumno de
+España no se le sirve el Traveler LATAM ni el de Mexico. La regla es anterior al
+hecho que la desmiente.
+
+| | antes | ahora |
+|---|---|---|
+| cubo de tolerancia cero | 1265 lemas | 447 |
+| cubo de tope 2 por historia | 2934 | 296 |
+| pool usable hasta B1 | 3133 | 3956 |
+
+## Estado del journey
+
+- **Las 21 pasan el validador canonico**: `✓ All 21 stories pass the canonical
+  validator (ES b1 spain)`.
+- **12 de las 13 reglas de conjunto pasan**, incluidas las cuatro que el gate no
+  sabia medir en espanol antes de esta tanda (reparto, las tres formas de
+  presentacion, forma de apertura, ni ancianos ni ninos).
+- **Bloquea una**: `journey-vocab-recirculation`, media **1,38** frente al piso
+  2,5. Subio de 1,16 con el tejido de claves; las claves por cuerpo pasaron de
+  24,3 a 29.
+
+El techo esta medido desde tres angulos y sale el mismo: la media 2,5 pide 52,5
+claves por cuerpo, y con el tope de 170 palabras eso son 0,31 claves por
+palabra. La mejor densidad que da la prosa legible en este journey es la de
+`ya-no-queda-nadie`: 43 claves en 168 palabras, 0,256. El journey control llega
+a 0,360 porque es A0 y ensena el tejido conectivo del idioma, que en un B1 ya
+esta enseñado.
+
+**Decision pendiente del usuario**, y es la unica que queda: o el piso de B1 se
+calibra contra ese techo, o el tope de 170 palabras cede en B1, o el journey se
+queda sin guardar. El piso NO se ha tocado.
