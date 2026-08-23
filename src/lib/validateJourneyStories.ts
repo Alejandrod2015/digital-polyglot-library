@@ -23,6 +23,7 @@
  *    tiene implementacion. Enumerar deja de depender de que alguien se acuerde.
  */
 import rulesDoc from "../../docs/story-rules.json";
+import { renderedParagraphs } from "@/lib/readerParagraphs";
 
 export type JourneyStoryInput = {
   slug: string;
@@ -362,6 +363,29 @@ export function validateJourneyStories(
     push("journey-vocab-recirculation", `Cada plaza de vocab se reencuentra (media ${suelo} o mas en ${level})`,
       media >= suelo,
       `media ${media.toFixed(2)} encuentros por plaza (ideal 4, liston de los buenos ${suelo}) · ${unaVez}/${enc.length} salen una sola vez`);
+  }
+
+  // ── 13. El RENDER, no el texto ─────────────────────────────
+  //
+  // Todos los demas checks miden el texto guardado. Este mide lo que el lector
+  // pinta: `renderedParagraphs` reagrupa la prosa narrada de tres oraciones en
+  // tres, y un bloque no puede quedarse con media replica. El 2026-08-23 el
+  // Traveler DE A0 tenia 32 bloques asi y no lo veia nadie, porque en el texto
+  // la replica esta entera; solo se parte al pintarla.
+  {
+    const PARES: Array<[string, string]> = [["\u201C", "\u201D"], ["\u00AB", "\u00BB"]];
+    const rotos: string[] = [];
+    for (const s of stories) {
+      for (const [i, b] of renderedParagraphs(s.text).entries()) {
+        for (const [abre, cierra] of PARES) {
+          if (!s.text.includes(abre)) continue;
+          const na = (b.split(abre).length - 1), nc = (b.split(cierra).length - 1);
+          if (na !== nc) rotos.push(`${s.slug} bloque ${i + 1}: ${b.slice(0, 60)}`);
+        }
+      }
+    }
+    push("journey-render-quotes", "Ningun bloque del lector parte una linea citada",
+      rotos.length === 0, `${rotos.length} bloque(s): ${rotos.slice(0, 4).join(" | ")}`);
   }
 
   // ── El inventario manda: una regla declarada sin check es un fallo ──
