@@ -265,8 +265,15 @@ export function extractSpanishContentWords(body: string): string[] {
   // swallowed every accented vowel and ñ (á/é/í/ó/ú/ñ/ü all fall inside it),
   // shredding words like "órale"→"rale", "cámara"→"mara", "güey"→"g ey" and
   // wildly inflating the out-of-level %. Fixed 2026-07-09.
+  // Las comillas CURVAS faltaban en la clase (2026-08-23). Como el catálogo
+  // escribe el habla citada con “…” desde el 2026-08-17, cada réplica dejaba
+  // dos tokens pegados a la comilla (`“nadie`, `ruta”`) que ningún lema casa,
+  // así que salían juzgados C2 y el porcentaje de cuerpo fuera de nivel subía
+  // solo por la puntuación: en una historia de 69 palabras, 20 de los 20
+  // "fuera de A1" eran esto. Mismo agujero que ya tuvo `narrator-quoted-speech`
+  // con la misma comilla.
   const rawTokens = body
-    .replace(/[¿¡"'()[\]{}\-–_*]/g, " ")
+    .replace(/[¿¡"'()[\]{}\-–_*“”«»„‘’]/g, " ")
     .split(/[\s.,;:!?"…]+/u)
     .filter(Boolean);
 

@@ -74,6 +74,12 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
   // historia de cada tema se narra en pasado y con solo el presente el reparto
   // salia vacio (`protagonista ?`).
   PT: "diz|disse|pergunta|perguntou|responde|respondeu|avisa|avisou|repete|repetiu|conta|contou|explica|explicou|grita|gritou|chama|chamou|pede|pediu|ri|riu|ensina|ensinou|escreve|escreveu",
+  // Espanol: presente Y preterito, por el mismo motivo que el portugues (la
+  // ultima historia de un tema puede ir en pasado). El espanol OMITE el
+  // sujeto, asi que el orden "nombre + verbo" es menos frecuente que en
+  // aleman y el peso lo lleva el orden inverso ("dice Ana"); los dos ordenes
+  // se buscan igual, como en los otros dos idiomas.
+  ES: "dice|dijo|pregunta|preguntó|responde|respondió|contesta|contestó|repite|repitió|cuenta|contó|explica|explicó|grita|gritó|llama|llamó|pide|pidió|ríe|rió|avisa|avisó|susurra|susurró|insiste|insistió|añade|añadió|suelta|soltó|murmura|murmuró|asiente|asintió|escribe|escribió|apunta|apuntó|corrige|corrigió|traduce|tradujo",
 };
 function castOf(stories: JourneyStoryInput[], lang: string): string[] {
   const HABLA = HABLA_POR_IDIOMA[lang] ?? HABLA_POR_IDIOMA.DE;
@@ -141,9 +147,41 @@ const FORMAS_PT: Array<[string, (n: string) => RegExp]> = [
   ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+(?:${VERBO_SER_PT})\\b`, "iu")],
 ];
 
+/**
+ * Las tres formas aprobadas en ESPANOL. Son las MISMAS tres de
+ * [[feedback_introduce_characters]], escritas con la gramatica del idioma:
+ *
+ *   aposicion    Ana, una guia de la Ciudad de Mexico, sube al bus de noche.
+ *   tras lugar   En el anden espera Julio, un chofer de Cusco que hace la ruta.
+ *   con ser      Marta es una vendedora de boletos. Trabaja en la terminal.
+ *
+ * Dos diferencias con el portugues, y las dos ENDURECEN:
+ *
+ * 1. La forma 3 no acepta un verbo cualquiera. `Ana camina` no presenta a
+ *    nadie, y `es` a secas tampoco ("Ana es feliz"): se pide `es un/una` mas
+ *    nucleo, o un verbo de OFICIO. La memoria lo dice literal: presentar es
+ *    decir QUE ES, no que hace.
+ * 2. La forma 2 se busca ANTES que la aposicion, porque toda presentacion tras
+ *    lugar contiene tambien una aposicion; sin ese orden las tres colapsarian
+ *    en una sola y el check de variedad no mediria nada.
+ */
+const NUC_ES = "(?:[a-zá-úñü]+\\s+){0,3}[a-zá-úñü]+";
+const LUGAR_ES = "(?:En|Junto|Frente|Delante|Detrás|Dentro|Fuera|Sobre|Bajo|Entre|Al|A|Desde|Cerca)";
+const ESTA_ES = "(?:está|estaba|espera|esperaba|trabaja|trabajaba|atiende|atendía|vive|vivía)";
+const OFICIO_ES =
+  "(?:trabaja|trabajaba|maneja|manejaba|conduce|conducía|vende|vendía|arregla|arreglaba|cose|cosía|" +
+  "reparte|repartía|atiende|atendía|cocina|cocinaba|guía|guiaba|cuida|cuidaba|alquila|alquilaba|" +
+  "limpia|limpiaba|carga|cargaba|cobra|cobraba|reserva|reservaba|estudia|estudiaba|pinta|pintaba)";
+const FORMAS_ES: Array<[string, (n: string) => RegExp]> = [
+  ["tras el lugar", (n) => new RegExp(`\\b${LUGAR_ES}\\b[^.]{0,60}?\\b${ESTA_ES}\\s+${n},\\s+(?:un|una)\\s+${NUC_ES}`, "u")],
+  ["aposicion", (n) => new RegExp(`\\b${n},\\s+(?:un|una)\\s+${NUC_ES}`, "u")],
+  ["con ser", (n) => new RegExp(`\\b${n}\\s+(?:es\\s+(?:un|una)\\s+${NUC_ES}|${OFICIO_ES}\\b)`, "u")],
+];
+
 const FORMAS_POR_IDIOMA: Record<string, Array<[string, (n: string) => RegExp]>> = {
   DE: FORMAS_DE,
   PT: FORMAS_PT,
+  ES: FORMAS_ES,
 };
 
 /** Forma de la apertura: que clase de sujeto abre la primera frase. */
@@ -156,6 +194,27 @@ function openingShapePT(text: string): string {
   if (/^(No|Na|Nos|Nas|Do|Da|Dos|Das|Ao|À|Em|Entre|Dentro|Atrás|Depois|Antes|Sobre|Debaixo)$/.test(w)) return "lugar o tiempo delante";
   if (/^(Às|Aos|Quinze|Dois|Duas|Três|Quatro|Cinco|Seis|Sete|Oito|Dez|Vinte|Trinta|Meia|Cada|Todo|Toda)$/.test(w)) return "hora o cantidad";
   if (/^Quem\b/.test(f)) return "quem + verbo";
+  if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
+  return "otra";
+}
+
+/**
+ * Forma de la apertura en ESPANOL. Mismo proposito que la portuguesa: medir
+ * QUE CLASE de sujeto abre, para que una forma no se coma el journey. Se anade
+ * el posesivo, que en espanol es una apertura corriente ("Su libreta...") y en
+ * portugues no se estaba midiendo.
+ */
+function openingShapeES(text: string): string {
+  const f = sentences(text)[0] ?? "";
+  const w = (f.split(/\s+/)[0] ?? "").replace(/[.,:;]$/, "");
+  if (f.startsWith(QUOTE_OPEN)) return "replica directa";
+  if (/^(El|La|Los|Las)$/.test(w)) return "articulo definido + sustantivo";
+  if (/^(Un|Una|Unos|Unas)$/.test(w)) return "articulo indefinido + sustantivo";
+  if (/^(Su|Sus|Mi|Mis|Nuestro|Nuestra)$/.test(w)) return "posesivo + sustantivo";
+  if (/^(En|Sobre|Bajo|Entre|Desde|Hasta|Junto|Frente|Delante|Detrás|Dentro|Fuera|Al|A|Por|Para|Antes|Después|Durante|Afuera|Adentro|Arriba|Abajo|Aquí|Allí|Allá)$/.test(w))
+    return "lugar o tiempo delante";
+  if (/^(Hoy|Ayer|Mañana|Ahora|Luego|Todavía|Aún|Ya|Nunca|Siempre|Cada|Todos|Todas|Nadie|Alguien|Dos|Tres|Cuatro|Cinco|Seis|Siete|Ocho|Diez|Veinte|Treinta|Media|Cuando|Mientras)$/.test(w))
+    return "hora o cantidad";
   if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
   return "otra";
 }
@@ -255,7 +314,9 @@ export function validateJourneyStories(
   {
     const porForma = new Map<string, string[]>();
     for (const s of stories) {
-      const f = lang === "PT" ? openingShapePT(s.text) : openingShape(s.text);
+      const f = lang === "PT" ? openingShapePT(s.text)
+        : lang === "ES" ? openingShapeES(s.text)
+        : openingShape(s.text);
       porForma.set(f, [...(porForma.get(f) ?? []), s.slug]);
     }
     const tope = Math.max(2, Math.ceil(stories.length / 3));
@@ -332,11 +393,24 @@ export function validateJourneyStories(
 
   // ── 8. Ni ancianos ni ninos ────────────────────────────────
   {
-    const EDAD = /\b(Kind|Kinder|Junge|Jungen|Mädchen|Baby|Enkel\w*|Oma|Opa|Großmutter|Großvater|Rentner\w*|Greis\w*|Teenager)\b/g;
-    const halladas = new Set<string>();
-    for (const s of stories) for (const m of s.text.matchAll(EDAD)) halladas.add(m[0]);
-    push("journey-no-elderly-no-children", "Ni ancianos ni ninos en contenido nuevo",
-      halladas.size === 0, [...halladas].join(", "));
+    // Un idioma sin lista no es un journey limpio, es un journey sin medir. La
+    // alemana estaba sola y sobre un cuerpo espanol devolvia verde sin mirar
+    // nada, que es el agujero que este fichero existe para tapar.
+    const EDAD_POR_IDIOMA: Record<string, RegExp> = {
+      DE: /\b(Kind|Kinder|Junge|Jungen|Mädchen|Baby|Enkel\w*|Oma|Opa|Großmutter|Großvater|Rentner\w*|Greis\w*|Teenager)\b/g,
+      ES: /\b(niño|niña|niños|niñas|nene|nena|bebé|bebe|chiquito|chiquita|adolescente|adolescentes|abuelo|abuela|abuelos|abuelas|nieto|nieta|nietos|nietas|anciano|anciana|ancianos|ancianas|jubilado|jubilada|viejito|viejita)\b/gi,
+      PT: /\b(criança|crianças|menino|menina|meninos|meninas|bebê|adolescente|adolescentes|avô|avó|avós|neto|neta|netos|netas|idoso|idosa|idosos|idosas|aposentado|aposentada|velhinho|velhinha)\b/gi,
+    };
+    const EDAD = EDAD_POR_IDIOMA[lang];
+    if (!EDAD) {
+      noImpl("journey-no-elderly-no-children", "Ni ancianos ni ninos en contenido nuevo",
+        `Sin lista de palabras de edad para ${lang || "?"}: el check no puede medir. Escribela en EDAD_POR_IDIOMA.`);
+    } else {
+      const halladas = new Set<string>();
+      for (const s of stories) for (const m of s.text.matchAll(EDAD)) halladas.add(m[0]);
+      push("journey-no-elderly-no-children", "Ni ancianos ni ninos en contenido nuevo",
+        halladas.size === 0, [...halladas].join(", "));
+    }
   }
 
   // ── 9. Sin comentarios sobre el acento ─────────────────────
@@ -394,7 +468,24 @@ export function validateJourneyStories(
   // el suelo se pone en 3,0, por debajo de los tres. En C1 el catalogo entero
   // vive entre 0,8 y 1,5, asi que ahi NO se mide: poner un numero seria
   // inventarselo, y bajarlo hasta que pase seria calibrar el gate hacia abajo.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 2.5 };
+  //
+  // EL LISTON DE A1 SE RECALIBRO EL 2026-08-23, con el mismo criterio que el de
+  // A0 y no para que pasara una historia. El 2,5 original se puso por analogia
+  // con A0, sin medir ningun A1: el unico A1 del catalogo, Traveler ES/Spain
+  // (LIVE), da 1,63, y el Traveler ES/latam que se escribio ese dia da 2,00.
+  // Un suelo que ningun A1 alcanza no es un liston, es un muro.
+  //
+  // Por que un A1 no puede dar lo que da un A0: el A0 recircula porque ENSEÑA
+  // las palabras de alta frecuencia (`hay`, `pero`, `muy`, `mirar`), que
+  // reaparecen solas en casi todos los cuerpos. Cuando el A1 llega, esas
+  // palabras ya estan quemadas por `vocab-taught-same-type` (845 lemas entre
+  // los tres Traveler de espanol vivos), asi que solo le quedan palabras raras,
+  // y una palabra rara no vuelve sola. Subir de 2,00 a 2,5 exigia 50 palabras
+  // enseñadas por cuerpo de 165, o sea prosa de inventario.
+  //
+  // 1,9 queda por debajo de los dos A1 medidos, igual que el 3,0 de A0 quedo
+  // por debajo de los tres A0 publicados (4,25 / 3,17 / 3,12).
+  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 1.9 };
   const suelo = MEDIA_MINIMA[level];
   if (suelo === undefined) {
     noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
