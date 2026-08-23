@@ -476,7 +476,7 @@
       "t": "adverb"
     },
     "sigue": {
-      "g": "is still there",
+      "g": "follows; sigue, keeps on",
       "t": "verb"
     },
     "pero": {
@@ -688,7 +688,7 @@
       "t": "adjective"
     },
     "poco": {
-      "g": "little by little (poco a poco)",
+      "g": "little, not much",
       "t": "adverb"
     },
     "salta": {
@@ -744,7 +744,7 @@
       "t": "noun"
     },
     "da": {
-      "g": "he turns over",
+      "g": "gives; da vuelta, turns over",
       "t": "verb"
     },
     "bajo": {
@@ -776,7 +776,7 @@
       "t": "verb"
     },
     "fresas": {
-      "g": "posh, snobby",
+      "g": "strawberries",
       "t": "adjective"
     },
     "rojas": {
@@ -804,7 +804,7 @@
       "t": "adjective"
     },
     "corta": {
-      "g": "he cuts (the engine)",
+      "g": "cuts",
       "t": "verb"
     },
     "come": {
@@ -1156,7 +1156,7 @@
       "t": "noun"
     },
     "conoce": {
-      "g": "it knows you",
+      "g": "knows",
       "t": "verb"
     },
     "pasa": {
@@ -1256,7 +1256,7 @@
       "t": "adjective"
     },
     "mete": {
-      "g": "puts her in",
+      "g": "puts in; se mete, gets into",
       "t": "verb"
     },
     "idea": {
@@ -1340,7 +1340,7 @@
       "t": "expression"
     },
     "casco": {
-      "g": "helmet",
+      "g": "helmet; casco histórico, the old town",
       "t": "noun"
     },
     "viejo": {
@@ -1748,7 +1748,7 @@
       "t": "adjective"
     },
     "retiro": {
-      "g": "the Retiro (park)",
+      "g": "retiro lo dicho, I take that back",
       "t": "noun"
     },
     "altos": {
@@ -2440,7 +2440,7 @@
       "t": "adjective"
     },
     "billetes": {
-      "g": "tickets",
+      "g": "banknotes, bills",
       "t": "noun"
     },
     "color": {
