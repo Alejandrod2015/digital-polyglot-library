@@ -4,12 +4,12 @@ P = {}
 P["der-biss-im-ring"] = dict(
 arcType="juxtaposition-discovery",
 synopsis="Vor dem Heidelberger Schlosstor erzählt Lukas die Legende von der Hexe, die in den eisernen Ring gebissen haben soll. Hanna hält nichts davon und sucht die nüchterne Erklärung im Wetter und im alten Eisen. Dann legt sie selbst die Hand auf den Ring, und unter ihren Fingern trifft die kühle Physik auf etwas, das dort eigentlich nicht sein dürfte.",
-text="""Die Abendsonne steht hinter dem Heidelberger Schloss. Hanna, eine Lehrerin aus der Stadt, steht mit Lukas vor dem Schlosstor an der Steinmauer. Ihr Freund Lukas mag alte Sagen, Hanna glaubt an das, was sie sieht.
+text="""Hanna, eine Lehrerin aus der Stadt, steht am Abend mit Lukas vor dem Schlosstor des Heidelberger Schlosses. Ihr Freund Lukas mag alte Sagen, Hanna glaubt an das, was sie sieht.
 
 Lukas: Kennst du die Legende? Eine Hexe hat in den eisernen Ring gebissen.
 Hanna: Eine Hexe, die in Eisen beißt? Nur eine Geschichte.
 
-Gemeinsam schauen sie im Licht der Taschenlampe auf den schwarzen Ring.
+Lukas zeigt auf den schweren Ring am Tor. Im letzten Licht sieht er fast schwarz aus.
 
 Lukas: Wer sich durchbeißt, sagt die Sage, dem gehört das Schloss.
 Hanna: Niemand hat es geschafft. An Wunder glaube ich nicht.
@@ -18,13 +18,13 @@ Hanna: Das ist altes Eisen. Das kommt vom Wetter, nicht von Zähnen.
 
 Hanna legt die Hand auf den Ring und fühlt darüber. Plötzlich runzelt sie die Stirn.
 
-Hanna: Meine Augen sehen eine Kerbe. Klein, aber tief, wie von einem Tier.
+Hanna: Hier ist wirklich eine Kerbe. Klein, aber tief.
 Lukas: Siehst du? Ich sage nicht, dass es eine Hexe war.
 Hanna: Ich auch nicht. Aber woher kommt sie, mitten in der Nacht?""",
 vocab=[
- ("noun","Abendsonne",None,"The evening sun; the low warm sun just before it goes down."),
+ ("adverb","genau",None,"Exactly; looking at it closely and with your full attention."),
  ("noun","Schlosstor",None,"The castle gate; the big main door in the wall of a castle."),
- ("noun","Steinmauer",None,"A stone wall; a thick old wall built of heavy stones."),
+ ("noun","Stadt",None,"A city; the town below the castle where Hanna teaches."),
  ("noun","Legende",None,"A legend; an old story that people tell but cannot prove."),
  ("noun","Sage",None,"A folk tale handed down for centuries about a place or person."),
  ("noun","Hexe",None,"A witch; a woman with magic powers in old stories and tales."),
@@ -49,22 +49,22 @@ arcType="mini-cliffhanger",
 synopsis="Hanna und Lukas steigen die schmale Steintreppe in den Keller des Schlosses hinunter, wo das riesige Weinfass steht. Es ist kalt, es ist still, und außer Spinnen an der Wand ist hier unten nichts. Dann hören sie ein leises, gleichmäßiges Klopfen aus der hintersten Ecke, immer im selben Ton, und es hört einfach nicht wieder auf.",
 text="""Eine schmale Steintreppe führt Hanna und Lukas hinunter in den Keller. Hinter der schweren Kellertür ist es kalt und dunkel. In der Mitte steht ein riesiges Weinfass.
 
-Hanna: So ein Fass habe ich nie gesehen.
+Hanna: So ein Fass habe ich noch nie gesehen.
 Lukas: Hier haben sie früher den Wein für das Schloss gelagert.
-Hanna: Und heute? Nur Spinnen an der Steinwand.
-Lukas: Und Mäuse, eine Ratte, vielleicht ein Tier mit Angst.
+Hanna: Und heute? Nur Spinnen und Mäuse.
+Lukas: Und vielleicht eine Ratte. Die Sage erzählt davon nichts.
 
-Ihre Stimmen klingen laut, und die Nacht steht vor dem Kellerfenster. Lukas schaltet die Taschenlampe seines Handys an.
+Lukas schaltet die Taschenlampe seines Handys an. Ihre Stimmen klingen laut in dem leeren Raum.
 
 Hanna: Psst. Hast du das gehört? Da ist ein Geräusch.
 Lukas: Ein Klopfen? Das waren nur unsere Schritte.
 Hanna: Nein, halt das Ohr an die Wand. Es kommt wieder.
-Lukas: Du hast recht. Ein leiser Klang, immer im gleichen Ton.
+Lukas: Du hast recht. Ein leiser Klang, immer gleich.
 
-Die beiden stehen ganz still. Das Klopfen kommt aus dem hintersten Teil des Kellers.
+Die beiden stehen ganz still an der kalten Wand. Das Klopfen kommt aus dem hintersten Teil des Kellers.
 
-Hanna: Und jetzt? Hier unten sind keine Leute, kein Gespenst.
-Lukas: Eben war ich der mit der Sage. Dieser Klang gefällt mir nicht.
+Hanna: Und jetzt? Hier unten ist außer uns niemand.
+Lukas: Eben war ich der mit den Geschichten. In dieser Nacht gefällt mir das nicht.
 Hanna: Gehen wir der Sache nach, oder nach oben?""",
 vocab=[
  ("adjective","schmal",None,"Narrow; not wide, with very little space from side to side."),
@@ -82,25 +82,25 @@ vocab=[
  ("noun","Handy","Handys","A mobile phone; the small phone that people carry with them."),
  ("noun","Geräusch",None,"A noise; a sound you hear without knowing where it comes from."),
  ("noun","Schritt","Schritte","A step; one movement of your foot when you walk."),
- ("noun","Ohr",None,"The ear; the part of your head that you hear sounds with."),
- ("noun","Wand",None,"A wall; the flat side that closes a room in."),
- ("noun","Klang",None,"A sound; the way something rings in your ear when it is heard."),
- ("noun","Ton",None,"A tone; one single note, always the same height of sound."),
- ("adjective","hinterste","hintersten","Furthest back; the part that lies deepest away from the door."),
+ ("noun","Wand",None,"A wall; the cold stone side you press your ear against."),
+ ("adverb","vielleicht",None,"Maybe; you are not sure at all what is down there."),
+ ("noun","Sage",None,"A folk tale about the castle, told again and again."),
+ ("noun","Nacht",None,"The night; the dark hours when the cellar feels worst."),
+ ("noun","Geschichte","Geschichten","A story; the kind Lukas likes and Hanna does not believe."),
 ])
 
 P["nur-eine-eule"] = dict(
 arcType="late-reveal",
 synopsis="Mit dem Licht des Handys folgen Hanna und Lukas dem Klopfen bis in die hinterste Ecke hinter dem Fass. Was dort gegen die Steinwand schlägt, ist kein Gespenst, sondern ein kleines Tier, das durch ein offenes Kellerfenster hereingekommen ist und nicht mehr hinausfindet. Sie machen das Fenster weit auf, und von der Hexe bleibt am Ende nur eine gute Geschichte.",
-text="""Hanna macht das Licht ihres Handys an. Gemeinsam gehen sie dem Klopfen nach, in die hinterste Ecke. Das Geräusch wird lauter, ein Ton wie Schritte.
+text="""Hanna macht das Licht ihres Handys an. Gemeinsam gehen sie dem Klopfen nach, in die hinterste Ecke hinter dem Fass. Das Geräusch wird mit jedem Schritt lauter.
 
 Lukas: Es kommt von dem alten Kellerfenster. Leuchte mal dorthin.
 Hanna: Da sitzt etwas auf dem Fenstersims. Es bewegt sich.
 
-Vorsichtig gehen sie mit der Taschenlampe an die Steinwand.
+Vorsichtig gehen die beiden näher an die kalte Wand heran.
 
-Lukas: Das ist ja eine Eule! Ein kleines Tier, ganz allein.
-Hanna: Sie ist durch das offene Fenster geflogen und findet nicht hinaus.
+Lukas: Das ist ja eine Eule! Ein kleines Tier, ganz allein hier unten.
+Hanna: Sie ist durch das offene Fenster geflogen und findet nicht mehr hinaus.
 
 Die Eule schlägt mit dem Flügel gegen die Wand. Das hielten die beiden für ein Gespenst.
 
@@ -109,17 +109,17 @@ Hanna: Die Arme. Komm, wir machen das Fenster ganz weit auf.
 Lukas: Langsam, sonst bekommt sie mehr Angst.
 Hanna: Ihre Augen sind riesig. Na los, kleine Eule.
 
-Die Eule fliegt in die Nachtluft. Draußen steht der Mond unter einem Sternenhimmel.
+Die Eule fliegt in die Nachtluft.
 
-Lukas: Keine Hexe, kein Gespenst. Wir haben nur eine Eule gerettet.
-Hanna: Und trotzdem wird daraus morgen eine Sage vom Schloss.""",
+Lukas: Keine Hexe, kein Gespenst, nur eine Eule.
+Hanna: Und trotzdem wird morgen eine Sage daraus.""",
 vocab=[
  ("adverb","gemeinsam","Gemeinsam","Together; both people doing the same thing at the same time."),
  ("noun","Geräusch",None,"A noise; a sound whose cause you cannot see straight away."),
  ("noun","Kellerfenster",None,"A cellar window; the small window low down in an old wall."),
- ("noun","Fenstersims",None,"A window ledge; the narrow shelf of stone under a window."),
+ ("noun","Wand",None,"A wall; the stone side the owl keeps hitting with its wing."),
  ("verb","bewegen","bewegt","To move; to change place or position, even a very little."),
- ("noun","Steinwand",None,"A stone wall; the cold hard wall of an old cellar."),
+ ("noun","Handy","Handys","A mobile phone; the only light they have down there."),
  ("noun","Eule",None,"An owl; the round night bird with big eyes that hunts in the dark."),
  ("noun","Tier",None,"An animal; any living creature that is not a plant or a person."),
  ("adjective","offen","offene","Open; not closed, so that air and animals can come through."),
@@ -132,6 +132,6 @@ vocab=[
  ("noun","Auge","Augen","The eye; the part of the head that a creature sees with."),
  ("verb","fliegen","fliegt","To fly; to move through the air on wings."),
  ("noun","Nachtluft",None,"Night air; the cold fresh air outside after the sun goes down."),
- ("noun","Mond",None,"The moon; the big pale light that stands in the night sky."),
- ("noun","Sternenhimmel",None,"A starry sky; the night sky when it is full of stars."),
+ ("noun","Hexe",None,"A witch; the one from the legend that never turns up."),
+ ("noun","Sage",None,"A folk tale; what this night will turn into by tomorrow."),
 ])

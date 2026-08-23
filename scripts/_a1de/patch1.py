@@ -4,9 +4,9 @@ P = {}
 P["kabeljau-vom-fischmarkt"] = dict(
 arcType="reframe-turn",
 synopsis="Zwei Mitbewohner stehen im Morgengrauen zwischen den Kisten am Hamburger Fischmarkt. Jonas greift nach dem teuersten Fisch, weil teuer für ihn immer gut heißt. Lena hält ihm den billigen Kabeljau hin und lässt ihn selbst entscheiden. Was Jonas am Ende überzeugt, ist kein Preis, sondern eine Nase voll Meer.",
-text="""Der Fischmarkt von Hamburg riecht nach Salz und Meer. Um fünf Uhr morgens steht Lena zwischen den Kisten, und viele Leute drängen sich. Ihr Mitbewohner Jonas hält müde einen Becher.
+text="""Der Fischmarkt von Hamburg riecht nach Salz und Meer. Um fünf Uhr morgens steht Lena schon zwischen den Kisten. Ihr Mitbewohner Jonas hält müde einen Becher.
 
-Jonas: So früh. Vielleicht habe ich später Hunger.
+Jonas: So früh, Lena. Warum nicht einfach im Geschäft?
 Lena: Sonntag ist Markttag. Später ist der frische Fisch weg.
 Jonas: Na gut. Dann den großen Lachs. Der ist teuer, aber bestimmt gut.
 Lena: Der kostet viel. Brauchen wir das heute?
@@ -14,23 +14,23 @@ Lena: Der kostet viel. Brauchen wir das heute?
 Vor einem Verkäufer liegt Kabeljau auf dem Eis.
 
 Verkäufer: Kabeljau aus der Nordsee! Drei Stück, ein guter Preis!
-Jonas: Kabeljau? Den hatte ich noch nie in der Küche.
-Lena: Er ist viel billiger als der Lachs. Schau dir die Augen an, ganz klar.
+Jonas: Kabeljau? Den kenne ich gar nicht.
+Lena: Er ist viel billiger als der Lachs. Schau dir die Augen an.
 
-Jonas legt ein Stück Kabeljau auf einen Teller und riecht daran.
+Jonas nimmt ein Stück Kabeljau in die Hand und riecht daran.
 
 Jonas: Du hast recht. Der riecht nach Meer, nicht nach Fisch.
 Lena: Siehst du? Frisch ist besser als teuer.
 Jonas: Einverstanden. Zum Mittagessen gibt es Kabeljau mit Zitrone.
-Lena: Und morgen eine Suppe, den Rest in die Pfanne. Abgemacht?
+Lena: Und morgen eine Suppe aus dem Rest. Abgemacht?
 Jonas: Abgemacht. Aber den Tee danach zahlst du.""",
 vocab=[
  ("adverb","morgens",None,"In the morning, in the first early hours of the day."),
  ("noun","Kiste","Kisten","A big wooden or plastic box used to carry or store things."),
  ("noun","Mitbewohner",None,"A person who shares the same flat with you and pays rent too."),
  ("adjective","müde",None,"Tired; you need sleep or rest and cannot think well."),
- ("noun","Becher",None,"A cup without a handle, for tea, coffee or a hot drink."),
- ("noun","Markttag","Markttag","The day of the week when the open street market is working."),
+ ("noun","Sonntag",None,"Sunday; the one morning the fish market is at its busiest."),
+ ("noun","Geschäft",None,"A shop; the ordinary place Jonas would rather buy the fish."),
  ("adjective","frisch","frische","Fresh; made or caught a very short time ago, not old."),
  ("adjective","teuer",None,"Expensive; it costs a lot of money, more than you want to pay."),
  ("verb","kosten","kostet","To cost; to have a price that the buyer has to pay."),
@@ -52,45 +52,48 @@ arcType="mini-cliffhanger",
 synopsis="Der Fisch liegt schon in der Pfanne, als den beiden Mitbewohnern das Wichtigste fehlt. In Deutschland ist am Sonntag jeder Laden zu, und die nächste Tankstelle liegt zwanzig Minuten weg. Jonas will aufgeben und ohne essen. Lena zieht sich die Schuhe an, ohne zu sagen, wohin sie läuft.",
 text="""Zwei Teller stehen schon auf dem Tisch. Am Vormittag schneidet Lena in der Küche eine Zwiebel, und der Kabeljau liegt warm in der Pfanne.
 
-Lena: Jonas, wo ist die Zitrone? Salz, Pfeffer und Kräuter habe ich.
+Lena: Jonas, wo ist die Zitrone? Salz und Pfeffer habe ich.
 Jonas: Die Zitrone? Die hast du doch gekauft.
 Lena: Nein, das warst du. Wir haben beide keine gekauft.
-Jonas: Kein Problem, ich hole eine im Geschäft gegenüber.
+Jonas: Kein Problem, ich hole schnell eine im Geschäft.
 
-Lena dreht das Feuer kleiner.
+Lena stellt die Pfanne vom Feuer.
 
 Lena: Jonas, heute ist Sonntag. In Deutschland hat sonntags alles zu.
 Jonas: Stimmt. Der Supermarkt, der Bäcker, der Laden an der Ecke.
+
+Jonas zählt die geschlossenen Läden an den Fingern nach, während die Pfanne kalt wird.
+
 Lena: Ohne Zitrone schmeckt der Kabeljau nur halb so gut.
 Jonas: Die Tankstelle hat immer offen, auch sonntags.
 Lena: Die ist zwanzig Minuten weg. Der Fisch braucht fünf.
 
-Jonas deckt den Tisch mit Serviette und Löffel.
+Jonas, ihr Mitbewohner, deckt den Tisch und denkt nach.
 
 Jonas: Dann essen wir ihn eben ohne. So schlimm ist das nicht.
-Lena: Warte mal, ich habe eine Idee. Kannst du kurz auf den Fisch aufpassen?
-Jonas: Was für eine Idee denn?
+Lena: Warte mal, ich habe eine Idee.
 
-Aber Lena steht schon an der Wohnungstür und zieht ihre Schuhe an.""",
+Lena steht schon an der Wohnungstür und zieht ihre Schuhe an.""",
 vocab=[
- ("noun","Vormittag",None,"The late morning, the hours between breakfast and lunch time."),
+ ("adjective","halb",None,"Half; here half as good, only part of what it should be."),
  ("noun","Küche",None,"The room in a home where people cook and prepare their meals."),
  ("noun","Zwiebel",None,"Onion; a round white vegetable with a strong smell and taste."),
  ("noun","Pfanne",None,"A flat metal pan that you use to fry meat, fish or eggs."),
  ("adjective","warm",None,"Warm; a little hot, in a way that feels good and friendly."),
  ("noun","Pfeffer",None,"Pepper; the dark spice that people put on food with salt."),
  ("noun","Geschäft",None,"A shop; a place in town where you go to buy things."),
- ("noun","Feuer",None,"Fire; here the flame of the cooker under the frying pan."),
+ ("verb","stimmen","stimmt","To be right; what one person says matches what is true."),
  ("noun","Sonntag","Sonntag","Sunday; in Germany the day when almost every shop stays closed."),
  ("noun","Supermarkt",None,"A big self service shop that sells food and things for the home."),
  ("noun","Bäcker",None,"A baker, or the small shop where you buy fresh bread and rolls."),
  ("verb","schmecken","schmeckt","To taste; to have a certain taste in the mouth of the eater."),
  ("noun","Tankstelle",None,"A petrol station, which in Germany also sells food late and on Sunday."),
  ("adjective","offen",None,"Open; a shop is open when customers may go inside and buy."),
- ("verb","decken","deckt","To set the table, putting plates and forks in place before a meal."),
  ("noun","Teller",None,"A plate; the flat round dish from which one person eats."),
+ ("noun","Kabeljau",None,"Cod; the white sea fish they bought that same morning."),
+ ("noun","Zitrone",None,"Lemon; the sour yellow fruit whose juice belongs on the fish."),
+ ("noun","Mitbewohner",None,"A flatmate; the person who shares the same flat with you."),
  ("noun","Idee",None,"An idea; a new thought about how to solve a small problem."),
- ("verb","aufpassen",None,"To watch over something for a short time so nothing goes wrong."),
  ("noun","Wohnungstür",None,"The front door of a flat, between the flat and the stairs."),
  ("noun","Schuhe",None,"Shoes; what you put on your feet before you go outside."),
 ])
@@ -101,28 +104,28 @@ synopsis="Lenas Idee wohnt im Haus gegenüber und heißt Pia. Aus einer geliehen
 text="""Eine junge Frau öffnet, als Lena im Haus gegenüber die Klingel drückt. In der Hand hält sie eine Tasse. Es ist Pia, die Lena erst zweimal gesehen hat.
 
 Lena: Hallo, Pia. Entschuldige die Störung am Sonntag. Hast du vielleicht eine Zitrone?
-Pia: Warte kurz, ich schaue nach. Sonntags fehlt mir auch immer etwas.
-Lena: In der Küche liegt Kabeljau, und alle Läden haben zu.
-Pia: Das kenne ich. Mir geht das oft genauso.
+Pia: Warte kurz, ich schaue in der Küche nach.
+Lena: Wir haben Kabeljau in der Pfanne, und alle Läden sind zu.
+Pia: Das kenne ich. Mir fehlt sonntags auch immer etwas.
 
 Pia kommt mit einer Zitrone und etwas Minze zurück.
 
 Pia: Hier. Nimm die Kräuter dazu, die passen gut zu Fisch.
-Lena: Nett. Komm mit, die Mahlzeit reicht für drei.
-Pia: Gern. Ich freue mich und bringe eine Flasche Limonade mit.
+Lena: Das ist nett. Komm mit, die Mahlzeit reicht für drei.
+Pia: Gern. Ich bringe eine Flasche Limonade mit.
 
-Kurz darauf sitzen drei Leute am Tisch. Jonas legt einen dritten Teller, Löffel und Serviette dazu.
+Kurz darauf sitzen drei Leute am Tisch, und Jonas legt einen dritten Teller dazu.
 
-Jonas: Mit Zitrone schmeckt der Kabeljau warm am besten.
+Jonas: Mit Zitrone schmeckt der Fisch fantastisch.
 Pia: Und zu dritt essen ist schöner als jeder für sich.
 Lena: Nächsten Sonntag kochst du, und wir bringen den Fisch mit.
-Pia: Gut. Aber kommt morgens früher vom Markt zurück.""",
+Pia: Gut. Aber kommt früher vom Markt zurück.""",
 vocab=[
  ("adverb","gegenüber",None,"On the other side of the street, right across from where you are."),
  ("noun","Klingel",None,"The bell at a front door that you press to call the people inside."),
  ("noun","Frau",None,"A woman; an adult female person, here a young neighbour."),
  ("noun","Tasse",None,"A cup with a handle, used for coffee or for hot tea."),
- ("noun","Störung",None,"A disturbance; when you take somebody's quiet time away for a moment."),
+ ("noun","Sonntag",None,"Sunday; in Germany the day when the shops all stay shut."),
  ("adverb","vielleicht",None,"Maybe; you are not sure whether something is true or possible."),
  ("verb","fehlen","fehlt","To be missing; the thing you need is not there right now."),
  ("noun","Minze",None,"Mint; a green plant with a fresh smell that people cook with."),
@@ -130,12 +133,12 @@ vocab=[
  ("verb","passen",None,"To go well together; two things fit each other nicely."),
  ("adjective","nett",None,"Nice and friendly, in a way that makes other people feel good."),
  ("noun","Mahlzeit",None,"A meal; the food that people sit down and eat together."),
- ("noun","Flasche",None,"A bottle; the tall glass or plastic thing you pour a drink from."),
+ ("noun","Pfanne",None,"A frying pan; the fish is already waiting in it at home."),
  ("noun","Limonade",None,"A sweet cold drink with bubbles, often made from lemon or orange."),
  ("noun","Leute",None,"People; a small group of persons, here the three at the table."),
  ("adjective","dritte","dritten","Third; the one that comes after the first and the second."),
- ("noun","Löffel",None,"A spoon; you eat soup with it and stir sugar into coffee."),
- ("noun","Serviette",None,"A napkin; the small cloth or paper you clean your mouth with."),
- ("verb","freuen","freue","To be glad about something; to feel happy that it is happening."),
  ("adjective","nächste","Nächsten","Next; the one that comes directly after this day or week."),
+ ("noun","Zitrone",None,"Lemon; the one thing the two flatmates are missing today."),
+ ("noun","Küche",None,"The kitchen; the room where the neighbour goes to look."),
+ ("noun","Teller",None,"A plate; here the third one, laid for the guest."),
 ])

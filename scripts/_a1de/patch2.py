@@ -4,24 +4,23 @@ P = {}
 P["kartons-im-kinderzimmer"] = dict(
 arcType="juxtaposition-discovery",
 synopsis="Tobias ist neunzehn und räumt sein Kinderzimmer leer, weil er endlich allein wohnen will. Seine Mutter packt mit, sagt wenig dazu und findet in der untersten Schublade eine Kiste, die in keinem der sechs Kartons eingeplant war. Je leerer der Schrank vor ihr wird, desto schwerer wird die Kiste in ihrer Hand.",
-text="""Sieben leere Kartons stehen am Samstag im Berliner Kinderzimmer auf dem Teppich. Tobias will bald in seine eigene Wohnung umziehen, und seine Mutter Petra hilft dem Sohn.
+text="""Sieben leere Kartons stehen am Samstag im Kinderzimmer auf dem Teppich. Tobias will bald in seine eigene Wohnung umziehen, und seine Mutter Petra hilft ihrem Sohn.
 
-Tobias: Mama, können die alten Hefte hierbleiben? Die Wohnung ist klein.
-Petra: Klar. Aber die Kleidung nehmen wir mit, es gibt keinen Aufzug.
-Tobias: Gut. Möbel habe ich keine, nur ein Bett und ein Sofa.
+Tobias: Mama, können die alten Hefte hierbleiben? Die neue Wohnung ist klein.
+Petra: Natürlich. Aber die Kleidung nehmen wir mit.
+Tobias: Gut. Möbel habe ich sowieso keine, nur ein Bett.
 
 Petra räumt die Kommode aus. In der untersten Schublade liegt eine alte Kiste voller Bilder.
 
-Petra: Sieh her. Du bist drei, im Garten mit dem roten Eimer.
+Petra: Sieh mal her. Du bist drei, im Garten mit dem roten Eimer.
 Tobias: Das Bild kenne ich gar nicht. So klein war ich also.
-Petra: Und hier, dein erster Schultag. Wie die Zeit vergeht.
-Tobias: Der Schrank ist leer, das Zimmer auch. Die Bilder bleiben.
+Petra: Und hier, dein erster Schultag. Wie schnell die Zeit vergeht.
 
-Petra hält die Kiste und schaut in den leeren Schrank.
+Petra hält die Kiste fest und schaut in den leeren Schrank.
 
-Petra: Der Schrank ist ganz leer. Und diese Kiste ist ganz voll.
-Tobias: Voll mit meiner Kindheit. Die stelle ich im dritten Stock ins Regal.
-Petra: Dann hast du in der neuen Wohnung wenigstens Erinnerungen an der Wand.""",
+Petra: Der Schrank ist ganz leer. Und diese kleine Kiste ist ganz voll.
+Tobias: Voll mit meiner Kindheit. Die nehme ich auf jeden Fall mit.
+Petra: Dann hast du in der neuen Wohnung wenigstens Erinnerungen.""",
 vocab=[
  ("noun","Samstag",None,"Saturday; the day between Friday and Sunday, when many people are free."),
  ("noun","Kinderzimmer",None,"The room in a family home where the child sleeps and plays."),
@@ -31,13 +30,13 @@ vocab=[
  ("noun","Sohn",None,"A son; the male child of a mother and a father."),
  ("noun","Heft","Hefte","A thin school notebook with a soft cover for writing in."),
  ("noun","Kleidung",None,"Clothing; all the shirts, trousers and coats that a person wears."),
- ("noun","Möbel",None,"Furniture; the tables, chairs and beds that stand in a home."),
+ ("noun","Bild","Bilder","A picture or photo; the ones that fill the old box."),
  ("noun","Bett",None,"A bed; the piece of furniture where a person sleeps at night."),
  ("noun","Kommode",None,"A low chest with drawers, usually for clothes in a bedroom."),
  ("noun","Schublade",None,"A drawer; the box you pull out of a piece of furniture."),
  ("adjective","alt","alten","Old; it has been there for many years and is not new."),
  ("noun","Eimer",None,"A bucket; the round plastic pot with a handle for water or sand."),
- ("noun","Schultag",None,"A school day, here the very first one a child ever has."),
+ ("adverb","wenigstens",None,"At least; the one thing that is left when the rest is gone."),
  ("noun","Zeit",None,"Time; the minutes, days and years that pass and never come back."),
  ("noun","Schrank",None,"A wardrobe; the tall cupboard where you hang and keep clothes."),
  ("adjective","leer",None,"Empty; there is nothing at all inside it any more."),
@@ -48,26 +47,25 @@ vocab=[
 P["der-schlussel-passt-nicht"] = dict(
 arcType="late-reveal",
 synopsis="Vater und Sohn schleppen den ganzen Umzug ohne Aufzug nach oben. Oben dreht sich der neue Schlüssel keinen Millimeter, und Stefan verdächtigt schon die Hausverwaltung. Erst als eine Nachbarin ihre Tür öffnet und auf die Zahl neben der Klingel zeigt, wird klar, warum kein Schlüssel dieser Welt hier gepasst hätte.",
-text="""Der Lastwagen steht schon vor dem Haus. Es ist Umzugstag, und Tobias und sein Vater tragen die Kisten die Treppe hinauf in den dritten Stock. Einen Aufzug gibt es nicht.
+text="""Der Lastwagen steht vor dem Haus. Es ist Umzugstag, und Tobias und sein Vater Stefan tragen die Kartons hinauf in den dritten Stock. Einen Aufzug gibt es hier nicht.
 
-Stefan: Diese Bücherkiste ist schwer. Was ist da drin?
+Stefan: Diese Bücherkiste ist wirklich schwer. Was ist da drin?
 Tobias: Die Bücher, tut mir leid. Die Kleidung ist leichter.
-Stefan: Kurz Pause. Ich habe schon Schweiß im Gesicht.
-Tobias: Nimm einen Schluck, die Wasserflasche steht im Hausflur.
+Stefan: Machen wir Pause. Ich habe Schweiß im Gesicht.
+Tobias: Nimm einen Schluck. Die Wasserflasche steht im Hausflur.
 
 Oben stellt Tobias die Kartons ab und nimmt den Schlüssel.
 
-Tobias: Schließen wir auf, mein Bett steht im Lastwagen.
 Stefan: Probier ihn. Ich halte die Kiste.
 Tobias: Er geht nicht ins Türschloss. Der Schlüssel passt nicht.
-Stefan: Nicht möglich. Wir haben ihn die ganze Zeit gehabt.
+Stefan: Das ist nicht möglich. Wir haben ihn heute bekommen.
 
-Eine Nachbarin öffnet ihre Tür und schaut auf Kisten und Teppich.
+Eine Nachbarin öffnet ihre Tür und schaut auf die Kartons.
 
-Nachbarin: Zu wem wollen Sie? Hier oben wohnt Familie Berger.
-Stefan: Zu Nummer sieben. So steht es auf dem Papier.
-Nachbarin: Dann sind Sie falsch. Schauen Sie genau auf die Zahl an der Klingel.
-Stefan: Da steht neun. Wir stehen eine Etage zu hoch.""",
+Nachbarin: Hier oben wohnt Familie Berger. Zu wem wollen Sie?
+Stefan: Zu Nummer sieben. So steht es auf dem Vertrag.
+Nachbarin: Dann sind Sie falsch. Schauen Sie genau auf die Zahl an der Tür.
+Stefan: Da steht neun. Wir sind eine Etage zu hoch.""",
 vocab=[
  ("noun","Lastwagen",None,"A lorry; a big vehicle that carries furniture or heavy goods."),
  ("noun","Umzugstag",None,"Moving day; the day when a person carries everything to a new home."),
@@ -78,8 +76,8 @@ vocab=[
  ("noun","Pause",None,"A short break, when you stop working and rest for a while."),
  ("adjective","leicht","leichter","Light; it does not weigh much and is easy to carry."),
  ("noun","Schweiß",None,"Sweat; the water on your skin after hard work or heat."),
- ("noun","Schluck",None,"A mouthful of drink; the amount you swallow at one time."),
- ("noun","Wasserflasche",None,"A water bottle; the tall plastic bottle you drink water from."),
+ ("noun","Karton","Kartons","A cardboard box; the ones they carry up the stairs."),
+ ("noun","Kleidung",None,"Clothing; the lighter half of what they are carrying."),
  ("noun","Hausflur",None,"The hallway of a building, shared by all the flats inside."),
  ("noun","Schlüssel",None,"A key; the small metal thing that opens and closes a door."),
  ("noun","Türschloss",None,"The lock in a door, the part where the key goes in."),
@@ -94,25 +92,24 @@ vocab=[
 P["ein-bild-fur-die-wand"] = dict(
 arcType="harmonic-close",
 synopsis="Eine Etage tiefer geht die Tür beim ersten Versuch auf. Drinnen ist alles weiß, leer und riecht nach Farbe, und Tobias merkt, dass ihm zwischen Sofa und Sessel etwas fehlt, das er nicht kaufen kann. Stefan hat es die ganze Zeit in seiner Tasche getragen und wartet auf den richtigen Moment.",
-text="""Eine Etage tiefer dreht sich der Schlüssel leicht. Tobias und sein Vater Stefan stehen zum ersten Mal in der richtigen Wohnung. Im Bad hängt schon ein Spiegel.
+text="""Eine Etage tiefer dreht sich der Schlüssel leicht. Tobias und sein Vater stehen zum ersten Mal in der richtigen Wohnung. Im Bad hängt schon ein Spiegel.
 
 Tobias: Diesmal stimmt die Zahl an der Tür.
-Stefan: Dritter Stock, wie im Vertrag.
+Stefan: Dritter Stock, wie es sein soll.
 Tobias: Meine erste eigene Wohnung. Klein, aber meine.
 
-Die Kartons stehen im Wohnzimmer. Die Wände sind nackt, von der Decke hängt eine Lampe, und alles riecht nach Farbe.
+Die Kartons stehen im Wohnzimmer. Die Wände sind nackt, von der Decke hängt eine Lampe, alles riecht nach Farbe.
 
-Stefan: Das Sofa passt an die Wand. Der Sessel ans Fenster.
-Tobias: Und die Kissen kommen aufs Sofa, das Bett an die Wand.
-Stefan: Auf dem Balkon steht ein Stuhl. Schöner Raum.
-Tobias: Danke, Papa. Ohne dich wäre es schwerer.
+Stefan: Das Sofa passt an diese Wand. Der Sessel ans Fenster.
+Tobias: Und die Kissen aufs Sofa. Das Bett kommt morgen.
+Stefan: Auf dem Balkon steht ein Stuhl. Ein schöner Raum.
 
 Stefan nimmt ein Bild und eine Kaffeetasse aus seiner Tasche.
 
-Stefan: Eine Sache noch. Ein Geschenk von Mama, aus der alten Kommode.
+Stefan: Eine Sache noch. Ein Geschenk aus der alten Kommode.
 Tobias: Das Foto aus dem Garten, mit dem roten Eimer.
-Stefan: An eine nackte Wand gehört ein Bild, kein Traum.
-Tobias: Es kommt neben die Tür, ich sehe es jeden Samstag.
+Stefan: Eine nackte Wand macht noch keine Wohnung.
+Tobias: Es kommt neben die Tür. Der Traum ist klein, aber meiner.
 Stefan: Gut. Dann fahre ich zufrieden nach Hause.""",
 vocab=[
  ("verb","stimmen","stimmt","To be correct; the information matches what is really true."),
@@ -124,11 +121,11 @@ vocab=[
  ("noun","Sofa",None,"A sofa; the long soft seat where two or three people sit."),
  ("noun","Sessel",None,"An armchair; a big soft chair for one single person."),
  ("noun","Kissen",None,"A cushion or pillow; the soft square you lean or sleep on."),
- ("noun","Bad",None,"The bathroom; the room with the shower, the sink and the toilet."),
+ ("adjective","alt","alten","Old; the chest of drawers the present came out of."),
  ("noun","Spiegel",None,"A mirror; the glass on the wall in which you see yourself."),
  ("noun","Balkon",None,"A balcony; the small open floor outside the window of a flat."),
  ("noun","Raum",None,"A room, or the free space inside it that you can use."),
- ("noun","Kaffeetasse",None,"A coffee cup; the cup people drink their morning coffee from."),
+ ("noun","Karton","Kartons","A cardboard box; the ones now standing in the new flat."),
  ("noun","Sache",None,"A thing or a matter; here one last item that is still missing."),
  ("noun","Geschenk",None,"A present; something you give a person to make them glad."),
  ("noun","Bild",None,"A picture or photo, something you hang on a wall to look at."),

@@ -4,29 +4,28 @@ P = {}
 P["verspatung-am-gleis-vier"] = dict(
 arcType="late-reveal",
 synopsis="Greta und ihr Bruder Bernd stehen pünktlich am Kölner Gleis vier, um zur Feier ihrer Nichte zu fahren. Auf der Tafel wächst die Verspätung Minute um Minute, der Anschluss ist längst verloren, und ein Taxi quer durch die Stadt kann sich keiner von beiden leisten. Bernd sagt lange nichts, geht zur Rolltreppe und nennt erst im letzten Moment den Weg, an den Greta nicht gedacht hat.",
-text="""Die Zahlen auf der Tafel am Kölner Hauptbahnhof springen. Greta, eine Ärztin aus Köln, wartet am Gleis vier. Ihr Bruder Bernd hält das Gepäck. Heute feiert ihre Nichte Geburtstag.
+text="""Die Zahlen auf der Tafel am Kölner Hauptbahnhof springen. Greta, eine Ärztin aus Köln, wartet am Gleis vier. Ihr Bruder Bernd hält das Gepäck.
 
-Greta: Aus zehn Minuten sind dreißig, das dauert ewig.
-Bernd: Der Anschluss wartet nicht.
-Greta: Der Fahrplan stimmt nicht. Die Reise fängt gut an.
+Greta: Aus zehn Minuten sind dreißig geworden.
+Bernd: Unser Anschluss wartet nicht auf uns.
+Greta: Der Fahrplan stimmt nicht. So fängt die Reise gut an.
 
 Eine Stimme aus dem Lautsprecher sagt etwas, niemand versteht sie richtig.
 
-Bernd: Ich habe nur das Wort Verspätung gehört.
-Greta: Ich auch nicht. Alle Leute nehmen das Gepäck hoch.
-Bernd: Dann fährt der Zug so schnell nicht.
+Bernd: Ich habe nur das Wort Verspätung verstanden.
+Greta: Ich habe nichts verstanden. Alle nehmen ihr Gepäck hoch.
 
 Greta hält die Fahrkarte und schaut unruhig auf die Uhr.
 
-Greta: Halb zwei, die Feier fängt um drei an.
-Bernd: Mit dem Zug schaffen wir es nicht, die Torte wartet.
+Greta: Halb zwei. Die Feier der Nichte fängt um drei an.
+Bernd: Mit dem Zug schaffen wir das nicht.
 Greta: Ein Taxi quer durch Köln? Viel zu teuer.
-Bernd: Keine Geduld mehr, das ist umsonst.
+Bernd: Und meine Geduld ist zu Ende.
 
 Bernd geht nervös zur Rolltreppe.
 
 Bernd: Komm mit. Das Ziel bleibt, der Weg ändert sich.
-Greta: Was heißt das? Wir haben keine Sekunde.
+Greta: Was heißt das? Keine Sekunde übrig.
 Bernd: Die Straßenbahn fährt in vier Minuten, ganz ohne Gleis.""",
 vocab=[
  ("noun","Tafel",None,"A big board at a station that shows the times of the trains."),
@@ -36,39 +35,39 @@ vocab=[
  ("noun","Fahrkarte",None,"A ticket; the paper that lets you travel on a train or bus."),
  ("noun","Gepäck",None,"Luggage; all the bags and cases you take with you on a journey."),
  ("noun","Nichte",None,"A niece; the daughter of your brother or of your sister."),
- ("verb","feiern","feiert","To celebrate; to have a party for a special day or event."),
+ ("noun","Feier",None,"A party; the gathering the two of them are travelling to."),
  ("noun","Lautsprecher",None,"A loudspeaker; the box that says announcements out loud at a station."),
  ("noun","Stimme",None,"A voice; the sound a person makes when they speak or sing."),
  ("adverb","richtig",None,"Properly or correctly, in the way that a thing should be."),
  ("adverb","unruhig",None,"Restlessly; in a nervous way, unable to stand or wait calmly."),
  ("adverb","nervös",None,"Nervously; in a worried way because something may go wrong."),
  ("noun","Geduld",None,"Patience; the calm you need when you have to wait a long time."),
- ("noun","Sekunde",None,"A second; the very short unit of time, sixty of them make a minute."),
+ ("noun","Wort",None,"A word; the only one they could catch from the loudspeaker."),
  ("noun","Ziel",None,"A goal, or the place you want to reach at the end."),
  ("noun","Reise",None,"A journey; going from one place to another, often far away."),
  ("noun","Taxi",None,"A car with a driver that takes you somewhere for money."),
- ("noun","Rolltreppe",None,"An escalator; the moving stairs that carry people up or down."),
+ ("noun","Straßenbahn",None,"A tram; the city train that needs no railway platform."),
  ("adjective","halb","Halb","Half; here half past one, thirty minutes after the full hour."),
 ])
 
 P["mit-der-stra-enbahn-durch-koln"] = dict(
 arcType="juxtaposition-discovery",
 synopsis="Statt auf den verspäteten Zug zu warten, fahren Greta und Bernd mit der Straßenbahn quer durch Köln. Bernd zählt die Ampeln und ärgert sich über jede Kreuzung, an der sie wieder hält. Draußen schiebt sich derweil die halbe Stadt am Fenster vorbei, und die beiden Dinge, die nichts miteinander zu tun haben, stoßen zusammen: die verlorene Zeit und der Blick, den man aus keinem Zug hat.",
-text="""Ihre Straßenbahn wartet an der Haltestelle, und Greta und Bernd steigen ein. Zwei Plätze am Fenster sind frei. Die Bahn rollt los, mitten durch die Stadt.
+text="""Ihre Straßenbahn wartet an der Haltestelle, und Greta und Bernd steigen mit dem Gepäck ein. Zwei Plätze am Fenster sind frei. Die Bahn rollt los, mitten durch die Stadt.
 
 Bernd: Mit der Straßenbahn dauert die Reise ewig.
 Greta: Der Zug stand still, Bernd. Diese Bahn fährt wenigstens.
-Bernd: An jeder Kreuzung hält sie an der Ampel.
+Bernd: Und an jeder Kreuzung hält sie an der Ampel.
 Greta: Dann schau aus dem Fenster, statt auf die Uhr.
 
 Vor einem Zebrastreifen wartet die Bahn. Über den Dächern der Häuser steht der Dom, und das Wasser glänzt in der Sonne.
 
 Bernd: Der Dom. So habe ich ihn lange nicht gesehen.
-Greta: Im Zug säßen wir jetzt unruhig im dunklen Tunnel.
+Greta: Im Zug säßen wir jetzt im dunklen Tunnel.
 Bernd: Da ist die Kirche, dahinter das Rathaus.
-Greta: Eben. Zehn Minuten später mit Blumen zum Geburtstag.
+Greta: Eben. Wir kommen zehn Minuten später, na und?
 
-Bernd lehnt sich zurück und schaut auf sein Ticket. An der nächsten Station müssen sie umsteigen.
+Bernd lehnt sich zurück. An der nächsten Station müssen sie umsteigen.
 
 Bernd: Komisch. Vorhin war die Verspätung das Ende der Welt.
 Greta: Und jetzt ist sie eine kleine Rundfahrt durch Köln.
@@ -80,8 +79,8 @@ vocab=[
  ("noun","Station",None,"A stop or station on the line of a tram, bus or train."),
  ("noun","Kreuzung",None,"A crossing; the place where two streets meet and cross."),
  ("noun","Ampel",None,"A traffic light with red, yellow and green for cars and trams."),
- ("noun","Zebrastreifen",None,"A crossing of white stripes where people may walk over the street."),
- ("noun","Dach","Dächern","A roof; the top of a house that keeps the rain outside."),
+ ("verb","stimmen","Stimmt","To be right; you say it when you agree with the other person."),
+ ("noun","Stadt",None,"A city; here Cologne, seen from a slow tram window."),
  ("noun","Häuser",None,"Houses; more than one building where people live."),
  ("noun","Kirche",None,"A church; the building where Christians meet to pray and sing."),
  ("noun","Rathaus",None,"The town hall, the old building where a city is governed."),
@@ -91,41 +90,41 @@ vocab=[
  ("verb","rollen","rollt","To roll; to move forward smoothly on wheels."),
  ("adverb","ewig",None,"Forever; used to say that something takes far too long."),
  ("adverb","wenigstens",None,"At least; used to name the one good side of a bad thing."),
- ("adverb","vorhin","Vorhin","A short time ago; earlier today, only a few minutes back."),
- ("noun","Ticket",None,"A ticket; the small card or paper that pays for your ride."),
- ("noun","Sonne",None,"The sun; the bright light in the sky that warms the day."),
+ ("noun","Verspätung",None,"A delay; the same one that made them miss their train."),
+ ("noun","Gepäck",None,"Luggage; the bags they are still carrying with them."),
+ ("noun","Reise",None,"A journey; the trip across the city they did not plan."),
 ])
 
 P["punktlich-ist-anders"] = dict(
 arcType="harmonic-close",
 synopsis="Außer Atem und mit dem Gepäck in der Hand entschuldigen sich Greta und Bernd bei ihrer Nichte für die Verspätung. Im Haus ist es aber ganz ruhig, die Torte steht unangeschnitten da, und fast alle Stühle sind leer. Die Nichte erzählt, wo die anderen Gäste gerade sitzen, und die beiden Geschwister merken, dass sich ihre ganze Eile in etwas ziemlich Komisches verwandelt hat.",
-text="""Eine Viertelstunde zu spät bleiben Greta und Bernd vor dem Haus der Nichte stehen und atmen durch. Dann klingeln sie.
+text="""Eine Viertelstunde zu spät stehen Greta und Bernd vor dem Haus der Nichte und atmen durch. Dann klingeln sie.
 
 Greta: Es tut uns leid, wir sind zu spät.
-Nichte: Zu spät? Steckt die Fahrkarte weg und kommt herein.
+Nichte: Zu spät? Kommt erst einmal herein.
 Bernd: Wir haben uns beeilt. Erst der Zug, dann die Straßenbahn.
 Nichte: Setzt euch und trinkt etwas. Alles halb so wild.
 
-Auf dem Tisch stehen eine Torte mit Sahne, eine Kaffeekanne und ein paar Blumen. Greta schaut erstaunt und unruhig auf die vielen leeren Stühle.
+Auf dem Tisch stehen eine Torte mit Sahne, eine Kaffeekanne und ein paar Blumen. Greta schaut erstaunt auf die leeren Stühle.
 
 Greta: Wo sind die anderen? Wir dachten, wir sind die Letzten.
-Nichte: Eine lustige Geschichte. Ruf mal Onkel Theo an.
-Bernd: Onkel Theo? Ist er nicht da?
+Nichte: Das ist eine lustige Geschichte. Ruf mal Onkel Theo an.
+Bernd: Onkel Theo? Ist er noch nicht da?
 Nichte: Er sitzt im selben Zug, den ihr nicht genommen habt.
 
-Greta und Bernd schauen sich an und müssen beide lächeln. Die ganze Eile war umsonst.
+Greta und Bernd schauen sich an und lächeln. Die Eile war umsonst.
 
 Bernd: Dann sind wir heute die Ersten, mit unserer Verspätung.
 Nichte: Manchmal kommt man früher an, wenn man nicht wartet.
-Greta: Zum Geburtstag schneide ich dir den ersten Kuchen an.""",
+Greta: Zum Geburtstag schneide ich jetzt den Kuchen an.""",
 vocab=[
  ("verb","atmen",None,"To breathe; to take air into your body and let it out."),
  ("verb","beeilen","beeilt","To hurry; to do something faster because time is short."),
  ("verb","trinken","trinkt","To drink; to take water, coffee or juice into your mouth."),
  ("adjective","wild",None,"Wild; here in the phrase that says a problem is not serious."),
  ("noun","Torte",None,"A cake; the round sweet cake with cream that Germans serve to guests."),
- ("noun","Sahne",None,"Cream; the thick white topping that people put on cake and coffee."),
- ("noun","Kaffeekanne",None,"A coffee pot; the tall jug you pour coffee from at the table."),
+ ("adjective","halb",None,"Half; here half as bad as it sounds, not serious at all."),
+ ("noun","Straßenbahn",None,"A tram; the slow way that got them there first."),
  ("noun","Blume","Blumen","A flower; the coloured plant people bring to a party as a gift."),
  ("adjective","leer","leeren","Empty; with nobody sitting there and nothing standing on it."),
  ("adjective","erstaunt",None,"Astonished; very surprised because you did not expect this at all."),
@@ -137,6 +136,6 @@ vocab=[
  ("noun","Eile",None,"Hurry; the rushed feeling you have when there is too little time."),
  ("adverb","umsonst",None,"For nothing; you did the work but it brought no result."),
  ("adverb","manchmal",None,"Sometimes; on some days but not on all of them."),
- ("adverb","früher",None,"Earlier; before the time you had planned or expected."),
+ ("noun","Nichte",None,"A niece; the daughter of your brother or of your sister."),
  ("noun","Geburtstag",None,"A birthday; the yearly day when a person was born."),
 ])

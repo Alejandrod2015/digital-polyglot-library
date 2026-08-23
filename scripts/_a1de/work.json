@@ -5,7 +5,7 @@
   "title": "Kabeljau vom Fischmarkt",
   "slug": "kabeljau-vom-fischmarkt",
   "synopsis": "Zwei Mitbewohner stehen im Morgengrauen zwischen den Kisten am Hamburger Fischmarkt. Jonas greift nach dem teuersten Fisch, weil teuer für ihn immer gut heißt. Lena hält ihm den billigen Kabeljau hin und lässt ihn selbst entscheiden. Was Jonas am Ende überzeugt, ist kein Preis, sondern eine Nase voll Meer.",
-  "text": "Der Fischmarkt von Hamburg riecht nach Salz und Meer. Um fünf Uhr morgens steht Lena zwischen den Kisten, und viele Leute drängen sich. Ihr Mitbewohner Jonas hält müde einen Becher.\n\nJonas: So früh. Vielleicht habe ich später Hunger.\nLena: Sonntag ist Markttag. Später ist der frische Fisch weg.\nJonas: Na gut. Dann den großen Lachs. Der ist teuer, aber bestimmt gut.\nLena: Der kostet viel. Brauchen wir das heute?\n\nVor einem Verkäufer liegt Kabeljau auf dem Eis.\n\nVerkäufer: Kabeljau aus der Nordsee! Drei Stück, ein guter Preis!\nJonas: Kabeljau? Den hatte ich noch nie in der Küche.\nLena: Er ist viel billiger als der Lachs. Schau dir die Augen an, ganz klar.\n\nJonas legt ein Stück Kabeljau auf einen Teller und riecht daran.\n\nJonas: Du hast recht. Der riecht nach Meer, nicht nach Fisch.\nLena: Siehst du? Frisch ist besser als teuer.\nJonas: Einverstanden. Zum Mittagessen gibt es Kabeljau mit Zitrone.\nLena: Und morgen eine Suppe, den Rest in die Pfanne. Abgemacht?\nJonas: Abgemacht. Aber den Tee danach zahlst du.",
+  "text": "Der Fischmarkt von Hamburg riecht nach Salz und Meer. Um fünf Uhr morgens steht Lena schon zwischen den Kisten. Ihr Mitbewohner Jonas hält müde einen Becher.\n\nJonas: So früh, Lena. Warum nicht einfach im Geschäft?\nLena: Sonntag ist Markttag. Später ist der frische Fisch weg.\nJonas: Na gut. Dann den großen Lachs. Der ist teuer, aber bestimmt gut.\nLena: Der kostet viel. Brauchen wir das heute?\n\nVor einem Verkäufer liegt Kabeljau auf dem Eis.\n\nVerkäufer: Kabeljau aus der Nordsee! Drei Stück, ein guter Preis!\nJonas: Kabeljau? Den kenne ich gar nicht.\nLena: Er ist viel billiger als der Lachs. Schau dir die Augen an.\n\nJonas nimmt ein Stück Kabeljau in die Hand und riecht daran.\n\nJonas: Du hast recht. Der riecht nach Meer, nicht nach Fisch.\nLena: Siehst du? Frisch ist besser als teuer.\nJonas: Einverstanden. Zum Mittagessen gibt es Kabeljau mit Zitrone.\nLena: Und morgen eine Suppe aus dem Rest. Abgemacht?\nJonas: Abgemacht. Aber den Tee danach zahlst du.",
   "vocab": [
    {
     "type": "adverb",
@@ -33,15 +33,15 @@
    },
    {
     "type": "noun",
-    "word": "Becher",
+    "word": "Sonntag",
     "surface": null,
-    "definition": "A cup without a handle, for tea, coffee or a hot drink."
+    "definition": "Sunday; the one morning the fish market is at its busiest."
    },
    {
     "type": "noun",
-    "word": "Markttag",
-    "surface": "Markttag",
-    "definition": "The day of the week when the open street market is working."
+    "word": "Geschäft",
+    "surface": null,
+    "definition": "A shop; the ordinary place Jonas would rather buy the fish."
    },
    {
     "type": "adjective",
@@ -136,13 +136,13 @@
   "title": "Sonntags ist alles zu",
   "slug": "sonntags-ist-alles-zu",
   "synopsis": "Der Fisch liegt schon in der Pfanne, als den beiden Mitbewohnern das Wichtigste fehlt. In Deutschland ist am Sonntag jeder Laden zu, und die nächste Tankstelle liegt zwanzig Minuten weg. Jonas will aufgeben und ohne essen. Lena zieht sich die Schuhe an, ohne zu sagen, wohin sie läuft.",
-  "text": "Zwei Teller stehen schon auf dem Tisch. Am Vormittag schneidet Lena in der Küche eine Zwiebel, und der Kabeljau liegt warm in der Pfanne.\n\nLena: Jonas, wo ist die Zitrone? Salz, Pfeffer und Kräuter habe ich.\nJonas: Die Zitrone? Die hast du doch gekauft.\nLena: Nein, das warst du. Wir haben beide keine gekauft.\nJonas: Kein Problem, ich hole eine im Geschäft gegenüber.\n\nLena dreht das Feuer kleiner.\n\nLena: Jonas, heute ist Sonntag. In Deutschland hat sonntags alles zu.\nJonas: Stimmt. Der Supermarkt, der Bäcker, der Laden an der Ecke.\nLena: Ohne Zitrone schmeckt der Kabeljau nur halb so gut.\nJonas: Die Tankstelle hat immer offen, auch sonntags.\nLena: Die ist zwanzig Minuten weg. Der Fisch braucht fünf.\n\nJonas deckt den Tisch mit Serviette und Löffel.\n\nJonas: Dann essen wir ihn eben ohne. So schlimm ist das nicht.\nLena: Warte mal, ich habe eine Idee. Kannst du kurz auf den Fisch aufpassen?\nJonas: Was für eine Idee denn?\n\nAber Lena steht schon an der Wohnungstür und zieht ihre Schuhe an.",
+  "text": "Zwei Teller stehen schon auf dem Tisch. Am Vormittag schneidet Lena in der Küche eine Zwiebel, und der Kabeljau liegt warm in der Pfanne.\n\nLena: Jonas, wo ist die Zitrone? Salz und Pfeffer habe ich.\nJonas: Die Zitrone? Die hast du doch gekauft.\nLena: Nein, das warst du. Wir haben beide keine gekauft.\nJonas: Kein Problem, ich hole schnell eine im Geschäft.\n\nLena stellt die Pfanne vom Feuer.\n\nLena: Jonas, heute ist Sonntag. In Deutschland hat sonntags alles zu.\nJonas: Stimmt. Der Supermarkt, der Bäcker, der Laden an der Ecke.\n\nJonas zählt die geschlossenen Läden an den Fingern nach, während die Pfanne kalt wird.\n\nLena: Ohne Zitrone schmeckt der Kabeljau nur halb so gut.\nJonas: Die Tankstelle hat immer offen, auch sonntags.\nLena: Die ist zwanzig Minuten weg. Der Fisch braucht fünf.\n\nJonas, ihr Mitbewohner, deckt den Tisch und denkt nach.\n\nJonas: Dann essen wir ihn eben ohne. So schlimm ist das nicht.\nLena: Warte mal, ich habe eine Idee.\n\nLena steht schon an der Wohnungstür und zieht ihre Schuhe an.",
   "vocab": [
    {
-    "type": "noun",
-    "word": "Vormittag",
+    "type": "adjective",
+    "word": "halb",
     "surface": null,
-    "definition": "The late morning, the hours between breakfast and lunch time."
+    "definition": "Half; here half as good, only part of what it should be."
    },
    {
     "type": "noun",
@@ -181,10 +181,10 @@
     "definition": "A shop; a place in town where you go to buy things."
    },
    {
-    "type": "noun",
-    "word": "Feuer",
-    "surface": null,
-    "definition": "Fire; here the flame of the cooker under the frying pan."
+    "type": "verb",
+    "word": "stimmen",
+    "surface": "stimmt",
+    "definition": "To be right; what one person says matches what is true."
    },
    {
     "type": "noun",
@@ -223,12 +223,6 @@
     "definition": "Open; a shop is open when customers may go inside and buy."
    },
    {
-    "type": "verb",
-    "word": "decken",
-    "surface": "deckt",
-    "definition": "To set the table, putting plates and forks in place before a meal."
-   },
-   {
     "type": "noun",
     "word": "Teller",
     "surface": null,
@@ -236,15 +230,27 @@
    },
    {
     "type": "noun",
+    "word": "Kabeljau",
+    "surface": null,
+    "definition": "Cod; the white sea fish they bought that same morning."
+   },
+   {
+    "type": "noun",
+    "word": "Zitrone",
+    "surface": null,
+    "definition": "Lemon; the sour yellow fruit whose juice belongs on the fish."
+   },
+   {
+    "type": "noun",
+    "word": "Mitbewohner",
+    "surface": null,
+    "definition": "A flatmate; the person who shares the same flat with you."
+   },
+   {
+    "type": "noun",
     "word": "Idee",
     "surface": null,
     "definition": "An idea; a new thought about how to solve a small problem."
-   },
-   {
-    "type": "verb",
-    "word": "aufpassen",
-    "surface": null,
-    "definition": "To watch over something for a short time so nothing goes wrong."
    },
    {
     "type": "noun",
@@ -267,7 +273,7 @@
   "title": "Eine Zitrone von nebenan",
   "slug": "eine-zitrone-von-nebenan",
   "synopsis": "Lenas Idee wohnt im Haus gegenüber und heißt Pia. Aus einer geliehenen Zitrone werden ein paar Zweige Minze, aus den Kräutern wird eine Einladung, und aus zwei Mitbewohnern werden drei Leute an einem viel zu kleinen Tisch. Am Ende steht kein Rezept auf dem Papier, sondern eine Verabredung für den nächsten Sonntag, diesmal mit vertauschten Rollen.",
-  "text": "Eine junge Frau öffnet, als Lena im Haus gegenüber die Klingel drückt. In der Hand hält sie eine Tasse. Es ist Pia, die Lena erst zweimal gesehen hat.\n\nLena: Hallo, Pia. Entschuldige die Störung am Sonntag. Hast du vielleicht eine Zitrone?\nPia: Warte kurz, ich schaue nach. Sonntags fehlt mir auch immer etwas.\nLena: In der Küche liegt Kabeljau, und alle Läden haben zu.\nPia: Das kenne ich. Mir geht das oft genauso.\n\nPia kommt mit einer Zitrone und etwas Minze zurück.\n\nPia: Hier. Nimm die Kräuter dazu, die passen gut zu Fisch.\nLena: Nett. Komm mit, die Mahlzeit reicht für drei.\nPia: Gern. Ich freue mich und bringe eine Flasche Limonade mit.\n\nKurz darauf sitzen drei Leute am Tisch. Jonas legt einen dritten Teller, Löffel und Serviette dazu.\n\nJonas: Mit Zitrone schmeckt der Kabeljau warm am besten.\nPia: Und zu dritt essen ist schöner als jeder für sich.\nLena: Nächsten Sonntag kochst du, und wir bringen den Fisch mit.\nPia: Gut. Aber kommt morgens früher vom Markt zurück.",
+  "text": "Eine junge Frau öffnet, als Lena im Haus gegenüber die Klingel drückt. In der Hand hält sie eine Tasse. Es ist Pia, die Lena erst zweimal gesehen hat.\n\nLena: Hallo, Pia. Entschuldige die Störung am Sonntag. Hast du vielleicht eine Zitrone?\nPia: Warte kurz, ich schaue in der Küche nach.\nLena: Wir haben Kabeljau in der Pfanne, und alle Läden sind zu.\nPia: Das kenne ich. Mir fehlt sonntags auch immer etwas.\n\nPia kommt mit einer Zitrone und etwas Minze zurück.\n\nPia: Hier. Nimm die Kräuter dazu, die passen gut zu Fisch.\nLena: Das ist nett. Komm mit, die Mahlzeit reicht für drei.\nPia: Gern. Ich bringe eine Flasche Limonade mit.\n\nKurz darauf sitzen drei Leute am Tisch, und Jonas legt einen dritten Teller dazu.\n\nJonas: Mit Zitrone schmeckt der Fisch fantastisch.\nPia: Und zu dritt essen ist schöner als jeder für sich.\nLena: Nächsten Sonntag kochst du, und wir bringen den Fisch mit.\nPia: Gut. Aber kommt früher vom Markt zurück.",
   "vocab": [
    {
     "type": "adverb",
@@ -295,9 +301,9 @@
    },
    {
     "type": "noun",
-    "word": "Störung",
+    "word": "Sonntag",
     "surface": null,
-    "definition": "A disturbance; when you take somebody's quiet time away for a moment."
+    "definition": "Sunday; in Germany the day when the shops all stay shut."
    },
    {
     "type": "adverb",
@@ -343,9 +349,9 @@
    },
    {
     "type": "noun",
-    "word": "Flasche",
+    "word": "Pfanne",
     "surface": null,
-    "definition": "A bottle; the tall glass or plastic thing you pour a drink from."
+    "definition": "A frying pan; the fish is already waiting in it at home."
    },
    {
     "type": "noun",
@@ -366,28 +372,28 @@
     "definition": "Third; the one that comes after the first and the second."
    },
    {
-    "type": "noun",
-    "word": "Löffel",
-    "surface": null,
-    "definition": "A spoon; you eat soup with it and stir sugar into coffee."
-   },
-   {
-    "type": "noun",
-    "word": "Serviette",
-    "surface": null,
-    "definition": "A napkin; the small cloth or paper you clean your mouth with."
-   },
-   {
-    "type": "verb",
-    "word": "freuen",
-    "surface": "freue",
-    "definition": "To be glad about something; to feel happy that it is happening."
-   },
-   {
     "type": "adjective",
     "word": "nächste",
     "surface": "Nächsten",
     "definition": "Next; the one that comes directly after this day or week."
+   },
+   {
+    "type": "noun",
+    "word": "Zitrone",
+    "surface": null,
+    "definition": "Lemon; the one thing the two flatmates are missing today."
+   },
+   {
+    "type": "noun",
+    "word": "Küche",
+    "surface": null,
+    "definition": "The kitchen; the room where the neighbour goes to look."
+   },
+   {
+    "type": "noun",
+    "word": "Teller",
+    "surface": null,
+    "definition": "A plate; here the third one, laid for the guest."
    }
   ],
   "arcType": "harmonic-close"
@@ -398,7 +404,7 @@
   "title": "Kartons im Kinderzimmer",
   "slug": "kartons-im-kinderzimmer",
   "synopsis": "Tobias ist neunzehn und räumt sein Kinderzimmer leer, weil er endlich allein wohnen will. Seine Mutter packt mit, sagt wenig dazu und findet in der untersten Schublade eine Kiste, die in keinem der sechs Kartons eingeplant war. Je leerer der Schrank vor ihr wird, desto schwerer wird die Kiste in ihrer Hand.",
-  "text": "Sieben leere Kartons stehen am Samstag im Berliner Kinderzimmer auf dem Teppich. Tobias will bald in seine eigene Wohnung umziehen, und seine Mutter Petra hilft dem Sohn.\n\nTobias: Mama, können die alten Hefte hierbleiben? Die Wohnung ist klein.\nPetra: Klar. Aber die Kleidung nehmen wir mit, es gibt keinen Aufzug.\nTobias: Gut. Möbel habe ich keine, nur ein Bett und ein Sofa.\n\nPetra räumt die Kommode aus. In der untersten Schublade liegt eine alte Kiste voller Bilder.\n\nPetra: Sieh her. Du bist drei, im Garten mit dem roten Eimer.\nTobias: Das Bild kenne ich gar nicht. So klein war ich also.\nPetra: Und hier, dein erster Schultag. Wie die Zeit vergeht.\nTobias: Der Schrank ist leer, das Zimmer auch. Die Bilder bleiben.\n\nPetra hält die Kiste und schaut in den leeren Schrank.\n\nPetra: Der Schrank ist ganz leer. Und diese Kiste ist ganz voll.\nTobias: Voll mit meiner Kindheit. Die stelle ich im dritten Stock ins Regal.\nPetra: Dann hast du in der neuen Wohnung wenigstens Erinnerungen an der Wand.",
+  "text": "Sieben leere Kartons stehen am Samstag im Kinderzimmer auf dem Teppich. Tobias will bald in seine eigene Wohnung umziehen, und seine Mutter Petra hilft ihrem Sohn.\n\nTobias: Mama, können die alten Hefte hierbleiben? Die neue Wohnung ist klein.\nPetra: Natürlich. Aber die Kleidung nehmen wir mit.\nTobias: Gut. Möbel habe ich sowieso keine, nur ein Bett.\n\nPetra räumt die Kommode aus. In der untersten Schublade liegt eine alte Kiste voller Bilder.\n\nPetra: Sieh mal her. Du bist drei, im Garten mit dem roten Eimer.\nTobias: Das Bild kenne ich gar nicht. So klein war ich also.\nPetra: Und hier, dein erster Schultag. Wie schnell die Zeit vergeht.\n\nPetra hält die Kiste fest und schaut in den leeren Schrank.\n\nPetra: Der Schrank ist ganz leer. Und diese kleine Kiste ist ganz voll.\nTobias: Voll mit meiner Kindheit. Die nehme ich auf jeden Fall mit.\nPetra: Dann hast du in der neuen Wohnung wenigstens Erinnerungen.",
   "vocab": [
    {
     "type": "noun",
@@ -450,9 +456,9 @@
    },
    {
     "type": "noun",
-    "word": "Möbel",
-    "surface": null,
-    "definition": "Furniture; the tables, chairs and beds that stand in a home."
+    "word": "Bild",
+    "surface": "Bilder",
+    "definition": "A picture or photo; the ones that fill the old box."
    },
    {
     "type": "noun",
@@ -485,10 +491,10 @@
     "definition": "A bucket; the round plastic pot with a handle for water or sand."
    },
    {
-    "type": "noun",
-    "word": "Schultag",
+    "type": "adverb",
+    "word": "wenigstens",
     "surface": null,
-    "definition": "A school day, here the very first one a child ever has."
+    "definition": "At least; the one thing that is left when the rest is gone."
    },
    {
     "type": "noun",
@@ -529,7 +535,7 @@
   "title": "Der Schlüssel passt nicht",
   "slug": "der-schlussel-passt-nicht",
   "synopsis": "Vater und Sohn schleppen den ganzen Umzug ohne Aufzug nach oben. Oben dreht sich der neue Schlüssel keinen Millimeter, und Stefan verdächtigt schon die Hausverwaltung. Erst als eine Nachbarin ihre Tür öffnet und auf die Zahl neben der Klingel zeigt, wird klar, warum kein Schlüssel dieser Welt hier gepasst hätte.",
-  "text": "Der Lastwagen steht schon vor dem Haus. Es ist Umzugstag, und Tobias und sein Vater tragen die Kisten die Treppe hinauf in den dritten Stock. Einen Aufzug gibt es nicht.\n\nStefan: Diese Bücherkiste ist schwer. Was ist da drin?\nTobias: Die Bücher, tut mir leid. Die Kleidung ist leichter.\nStefan: Kurz Pause. Ich habe schon Schweiß im Gesicht.\nTobias: Nimm einen Schluck, die Wasserflasche steht im Hausflur.\n\nOben stellt Tobias die Kartons ab und nimmt den Schlüssel.\n\nTobias: Schließen wir auf, mein Bett steht im Lastwagen.\nStefan: Probier ihn. Ich halte die Kiste.\nTobias: Er geht nicht ins Türschloss. Der Schlüssel passt nicht.\nStefan: Nicht möglich. Wir haben ihn die ganze Zeit gehabt.\n\nEine Nachbarin öffnet ihre Tür und schaut auf Kisten und Teppich.\n\nNachbarin: Zu wem wollen Sie? Hier oben wohnt Familie Berger.\nStefan: Zu Nummer sieben. So steht es auf dem Papier.\nNachbarin: Dann sind Sie falsch. Schauen Sie genau auf die Zahl an der Klingel.\nStefan: Da steht neun. Wir stehen eine Etage zu hoch.",
+  "text": "Der Lastwagen steht vor dem Haus. Es ist Umzugstag, und Tobias und sein Vater Stefan tragen die Kartons hinauf in den dritten Stock. Einen Aufzug gibt es hier nicht.\n\nStefan: Diese Bücherkiste ist wirklich schwer. Was ist da drin?\nTobias: Die Bücher, tut mir leid. Die Kleidung ist leichter.\nStefan: Machen wir Pause. Ich habe Schweiß im Gesicht.\nTobias: Nimm einen Schluck. Die Wasserflasche steht im Hausflur.\n\nOben stellt Tobias die Kartons ab und nimmt den Schlüssel.\n\nStefan: Probier ihn. Ich halte die Kiste.\nTobias: Er geht nicht ins Türschloss. Der Schlüssel passt nicht.\nStefan: Das ist nicht möglich. Wir haben ihn heute bekommen.\n\nEine Nachbarin öffnet ihre Tür und schaut auf die Kartons.\n\nNachbarin: Hier oben wohnt Familie Berger. Zu wem wollen Sie?\nStefan: Zu Nummer sieben. So steht es auf dem Vertrag.\nNachbarin: Dann sind Sie falsch. Schauen Sie genau auf die Zahl an der Tür.\nStefan: Da steht neun. Wir sind eine Etage zu hoch.",
   "vocab": [
    {
     "type": "noun",
@@ -587,15 +593,15 @@
    },
    {
     "type": "noun",
-    "word": "Schluck",
-    "surface": null,
-    "definition": "A mouthful of drink; the amount you swallow at one time."
+    "word": "Karton",
+    "surface": "Kartons",
+    "definition": "A cardboard box; the ones they carry up the stairs."
    },
    {
     "type": "noun",
-    "word": "Wasserflasche",
+    "word": "Kleidung",
     "surface": null,
-    "definition": "A water bottle; the tall plastic bottle you drink water from."
+    "definition": "Clothing; the lighter half of what they are carrying."
    },
    {
     "type": "noun",
@@ -660,7 +666,7 @@
   "title": "Ein Bild für die Wand",
   "slug": "ein-bild-fur-die-wand",
   "synopsis": "Eine Etage tiefer geht die Tür beim ersten Versuch auf. Drinnen ist alles weiß, leer und riecht nach Farbe, und Tobias merkt, dass ihm zwischen Sofa und Sessel etwas fehlt, das er nicht kaufen kann. Stefan hat es die ganze Zeit in seiner Tasche getragen und wartet auf den richtigen Moment.",
-  "text": "Eine Etage tiefer dreht sich der Schlüssel leicht. Tobias und sein Vater Stefan stehen zum ersten Mal in der richtigen Wohnung. Im Bad hängt schon ein Spiegel.\n\nTobias: Diesmal stimmt die Zahl an der Tür.\nStefan: Dritter Stock, wie im Vertrag.\nTobias: Meine erste eigene Wohnung. Klein, aber meine.\n\nDie Kartons stehen im Wohnzimmer. Die Wände sind nackt, von der Decke hängt eine Lampe, und alles riecht nach Farbe.\n\nStefan: Das Sofa passt an die Wand. Der Sessel ans Fenster.\nTobias: Und die Kissen kommen aufs Sofa, das Bett an die Wand.\nStefan: Auf dem Balkon steht ein Stuhl. Schöner Raum.\nTobias: Danke, Papa. Ohne dich wäre es schwerer.\n\nStefan nimmt ein Bild und eine Kaffeetasse aus seiner Tasche.\n\nStefan: Eine Sache noch. Ein Geschenk von Mama, aus der alten Kommode.\nTobias: Das Foto aus dem Garten, mit dem roten Eimer.\nStefan: An eine nackte Wand gehört ein Bild, kein Traum.\nTobias: Es kommt neben die Tür, ich sehe es jeden Samstag.\nStefan: Gut. Dann fahre ich zufrieden nach Hause.",
+  "text": "Eine Etage tiefer dreht sich der Schlüssel leicht. Tobias und sein Vater stehen zum ersten Mal in der richtigen Wohnung. Im Bad hängt schon ein Spiegel.\n\nTobias: Diesmal stimmt die Zahl an der Tür.\nStefan: Dritter Stock, wie es sein soll.\nTobias: Meine erste eigene Wohnung. Klein, aber meine.\n\nDie Kartons stehen im Wohnzimmer. Die Wände sind nackt, von der Decke hängt eine Lampe, alles riecht nach Farbe.\n\nStefan: Das Sofa passt an diese Wand. Der Sessel ans Fenster.\nTobias: Und die Kissen aufs Sofa. Das Bett kommt morgen.\nStefan: Auf dem Balkon steht ein Stuhl. Ein schöner Raum.\n\nStefan nimmt ein Bild und eine Kaffeetasse aus seiner Tasche.\n\nStefan: Eine Sache noch. Ein Geschenk aus der alten Kommode.\nTobias: Das Foto aus dem Garten, mit dem roten Eimer.\nStefan: Eine nackte Wand macht noch keine Wohnung.\nTobias: Es kommt neben die Tür. Der Traum ist klein, aber meiner.\nStefan: Gut. Dann fahre ich zufrieden nach Hause.",
   "vocab": [
    {
     "type": "verb",
@@ -717,10 +723,10 @@
     "definition": "A cushion or pillow; the soft square you lean or sleep on."
    },
    {
-    "type": "noun",
-    "word": "Bad",
-    "surface": null,
-    "definition": "The bathroom; the room with the shower, the sink and the toilet."
+    "type": "adjective",
+    "word": "alt",
+    "surface": "alten",
+    "definition": "Old; the chest of drawers the present came out of."
    },
    {
     "type": "noun",
@@ -742,9 +748,9 @@
    },
    {
     "type": "noun",
-    "word": "Kaffeetasse",
-    "surface": null,
-    "definition": "A coffee cup; the cup people drink their morning coffee from."
+    "word": "Karton",
+    "surface": "Kartons",
+    "definition": "A cardboard box; the ones now standing in the new flat."
    },
    {
     "type": "noun",
@@ -791,7 +797,7 @@
   "title": "Ein freier Platz am Tisch",
   "slug": "ein-freier-platz-am-tisch",
   "synopsis": "Sofie wohnt seit zwei Wochen in München und kennt dort keinen einzigen Menschen. Im vollen Biergarten fragt sie am Nachbartisch nach einem freien Stuhl und bekommt sehr viel mehr als nur einen Sitzplatz. Max und seine Freunde rücken einfach zusammen, als wäre das die normalste Sache der Welt, und genau das ist für Sofie neu.",
-  "text": "Alle Tische im Biergarten sind an diesem warmen Sommerabend voll. Über ihnen stehen alte Kastanien und werfen Schatten. Sofie ist neu in der Stadt und sucht einen Sitzplatz.\n\nSofie: Ist der Stuhl hier noch frei?\nMax: Klar, setz dich zu uns. Drinnen ist kein Platz.\nSofie: Danke. Am Nachbartisch war alles voll.\nMax: Auf der Sitzbank sitzt man zusammen. Das ist hier Gewohnheit.\n\nDer Kellner stellt zwei Bier und eine Wurst hin. Die Gruppe lacht und redet.\n\nMax: Ich heiße Max. Das ist Ben, und Clara ist eine alte Freundin.\nSofie: Ich bin Sofie, seit zwei Wochen in der Firma hier.\nMax: Zwei Wochen? Und schon allein hier? Mutig.\nSofie: Allein oder einsam. Zu Hause sitzen ist nicht besser.\n\nMax legt ihr eine Brezel hin und lacht freundlich.\n\nMax: Dann iss eine Brezel. Hier braucht man kein großes Wort.\nSofie: Das ist nett. In der neuen Stadt ist alles noch so fremd.\nMax: Kenne ich. Am Donnerstagabend sitzen wir im Wirtshaus.\nSofie: Ich hoffe. München fühlt sich schon wärmer an.",
+  "text": "Alle Tische im Biergarten sind an diesem warmen Sommerabend voll. Über ihnen stehen alte Kastanien und werfen Schatten. Sofie ist neu in der Stadt und sucht einen Sitzplatz.\n\nSofie: Entschuldigung, ist der Stuhl hier noch frei?\nMax: Klar, setz dich zu uns. Drinnen ist heute kein Platz.\nSofie: Danke. Am Nachbartisch war schon alles voll.\nMax: Auf der Sitzbank sitzt man sowieso zusammen.\n\nDer Kellner stellt zwei Bier auf den Tisch. Die Gruppe lacht und redet weiter.\n\nMax: Ich heiße Max. Das ist Ben, und Clara ist eine alte Freundin.\nSofie: Ich bin Sofie, seit zwei Wochen hier.\nMax: Zwei Wochen? Und schon allein im Biergarten? Mutig.\nSofie: Allein oder einsam. Zu Hause sitzen ist nicht besser.\n\nMax legt ihr eine Brezel hin und lacht freundlich.\n\nMax: Dann iss eine Brezel. Hier braucht man kein großes Wort.\nSofie: Das ist nett. In der neuen Stadt ist alles noch so fremd.\nMax: Kenne ich. Ich war auch mal neu hier.\nSofie: Ich hoffe. Heute fühlt sich München schon wärmer an.",
   "vocab": [
    {
     "type": "noun",
@@ -812,10 +818,10 @@
     "definition": "A chestnut tree, the big shady tree above Bavarian beer gardens."
    },
    {
-    "type": "noun",
-    "word": "Schatten",
+    "type": "adjective",
+    "word": "nett",
     "surface": null,
-    "definition": "Shade; the cooler dark place under a tree or a roof."
+    "definition": "Nice and friendly, the way strangers can be at a long table."
    },
    {
     "type": "noun",
@@ -848,10 +854,10 @@
     "definition": "A bench; a long wooden seat that several people share."
    },
    {
-    "type": "noun",
-    "word": "Sitzplatz",
+    "type": "adjective",
+    "word": "neu",
     "surface": null,
-    "definition": "A seat; a free place where one person can sit down."
+    "definition": "New; only two weeks in town and nobody known yet."
    },
    {
     "type": "noun",
@@ -922,7 +928,7 @@
   "title": "Der Stammtisch am Donnerstag",
   "slug": "der-stammtisch-am-donnerstag",
   "synopsis": "Max holt Sofie zum Stammtisch, doch an der Tür bleibt sie stehen: eine feste Gruppe, ein festes Wort auf dem Schild, und sie mittendrin als Zaungast. Clara erzählt ihr, wie sie selbst vor zwei Jahren an derselben Tür stand. Der Tisch, versteht Sofie am Ende, ist nicht trotz der Neuen da, sondern genau für sie.",
-  "text": "Das Schild auf dem Holztisch im Wirtshaus trägt nur das Wort Stammtisch. Es ist Donnerstagabend, und die Gruppe sitzt schon zusammen. Sofie bleibt eine Weile an der Tür stehen und zögert.\n\nMax: Sofie, komm her! Auf der Sitzbank ist ein Platz frei.\nSofie: Ich will wirklich nicht stören. Ihr kennt euch lange.\nMax: Genau deshalb bist du eingeladen.\n\nAuf dem Tisch stehen Kartoffelsuppe, Wurst, Salat und Bier. Daneben liegt ein altes Kartenspiel. Sofie setzt sich langsam.\n\nSofie: In der Firma kenne ich Kollegen, die Umgebung ist fremd.\nClara: Du denkst sicher, wir sind nur höflich. Das dachte ich auch.\nSofie: Ein bisschen. Ihr seid eine feste Gruppe, ich bin neu.\nClara: Vor zwei Jahren stand ich genauso an dieser Tür.\n\nClara schiebt ihr den Teller mit dem Salat hin.\n\nClara: Der Donnerstag ist eine alte Gewohnheit. Jede fing einmal an.\nMax: Ben kam aus Hamburg, Clara aus Leipzig, ohne Leute und ohne Beruf.\nSofie: Dann ist dieses Gespräch kein Zufall.\nMax: Im Biergarten hat es angefangen, jetzt ist es Freundschaft.",
+  "text": "Das Schild auf dem Holztisch im Wirtshaus trägt nur das Wort Stammtisch. Es ist Donnerstagabend, und die Gruppe sitzt schon zusammen. Sofie bleibt an der Tür stehen und zögert.\n\nMax: Sofie, komm her! Am Holztisch ist noch Platz.\nSofie: Ich will nicht stören. Ihr kennt euch schon lange.\nMax: Genau deshalb bist du eingeladen.\n\nAuf dem Tisch stehen Kartoffelsuppe, Wurst und Salat. Daneben liegt ein altes Kartenspiel.\n\nSofie: In der Firma kenne ich Kollegen, sonst niemanden in der Umgebung.\nClara: Du denkst sicher, wir sind nur höflich. Das dachte ich auch.\nSofie: Ein bisschen. Ihr seid eine feste Gruppe, ich bin neu.\nClara: Vor zwei Jahren stand ich genauso an dieser Tür.\n\nClara schiebt ihr den Teller mit dem Salat hin.\n\nClara: Der Donnerstag ist eine alte Gewohnheit. Jede fing einmal an.\nMax: Ben kam aus Hamburg, Clara aus Leipzig, jeder mit neuem Beruf und ohne Freunde.\nSofie: Dann ist dieses Gespräch kein Zufall.\nMax: Nein. So fängt eine Freundschaft an, in einer fremden Stadt.",
   "vocab": [
    {
     "type": "noun",
@@ -973,10 +979,10 @@
     "definition": "Salad; cold raw vegetables eaten as a side dish or a meal."
    },
    {
-    "type": "noun",
-    "word": "Kartenspiel",
+    "type": "adverb",
+    "word": "genau",
     "surface": null,
-    "definition": "A card game, or the pack of cards that people play with."
+    "definition": "Exactly; for that very reason and no other."
    },
    {
     "type": "noun",
@@ -1003,12 +1009,6 @@
     "definition": "New; only here for a short time and still without friends."
    },
    {
-    "type": "adverb",
-    "word": "wirklich",
-    "surface": null,
-    "definition": "Really; used to say that you truly mean what you say."
-   },
-   {
     "type": "noun",
     "word": "Gewohnheit",
     "surface": null,
@@ -1016,15 +1016,21 @@
    },
    {
     "type": "noun",
-    "word": "Beruf",
+    "word": "Wort",
     "surface": null,
-    "definition": "A job or profession, the work a person is trained to do."
+    "definition": "A word; the single one written on the sign."
    },
    {
     "type": "noun",
-    "word": "Leute",
+    "word": "Stadt",
     "surface": null,
-    "definition": "People; here the persons you know in a town."
+    "definition": "A city; the place Sofie moved to two weeks ago."
+   },
+   {
+    "type": "adjective",
+    "word": "fremd",
+    "surface": null,
+    "definition": "Strange and unknown, the way a new city feels at first."
    },
    {
     "type": "noun",
@@ -1053,7 +1059,7 @@
   "title": "Eine Welle im Eisbach",
   "slug": "eine-welle-im-eisbach",
   "synopsis": "Auf der Wiese im Englischen Garten wartet Sofie eine halbe Stunde umsonst, bis ein Anruf sie zum Stadtfluss schickt. Dort steht eine Menschenmenge auf der Ufermauer, und mitten in München surft jemand auf einer echten Welle. Dann dreht Ben ein Stück Pappe zu ihr um, und darauf steht mit Kreide ein einziges Wort.",
-  "text": "Sofie wartet im Englischen Garten auf der Wiese. Der Samstagnachmittag vergeht, und nach zwanzig Minuten ist keiner da. Dann kommt ein Anruf auf ihr Handy.\n\nSofie: Max, wo seid ihr? Ich stehe schon eine Weile.\nMax: Tut mir leid! Die Gruppe ist am Eisbach, du verpasst etwas.\nSofie: Was macht ihr denn unten am Stadtfluss?\nMax: Sieh selbst. Lauf los, du findest uns.\n\nSofie läuft in ihren Sportschuhen den Fußweg entlang. Bald hört sie eine Menschenmenge rufen.\n\nClara: Sofie, hier oben auf der Ufermauer!\nSofie: So viele Leute. Was ist hier wirklich los?\nClara: Schau ins Wasser. Mitten in der Stadt ist eine echte Welle.\nSofie: Mitten in der Stadt surft jemand? Der ist ja ganz nass.\nBen: Jeden Tag fährt hier wer. Die Welle ist für dich.\n\nBen legt sein Handtuch auf die Mauer und dreht ein Stück Pappe um.\n\nSofie: Da stehen Buchstaben mit Kreide drauf. Ich lese sie.\nBen: Lies ruhig laut. Es ist nur ein Wort.\nSofie: Da steht mein Name. Warum denn hier?",
+  "text": "Sofie wartet im Englischen Garten auf der Wiese. Der Samstagnachmittag vergeht, und nach zwanzig Minuten ist keiner da. Dann kommt ein Anruf auf ihr Handy.\n\nSofie: Max, wo seid ihr? Ich stehe schon eine Weile hier.\nMax: Tut mir leid! Komm zum Eisbach, du verpasst etwas.\nSofie: Was macht die Gruppe denn unten am Stadtfluss?\nMax: Das musst du selbst sehen. Lauf los, du findest uns.\n\nSofie läuft in ihren Sportschuhen los. Bald hört sie eine Menschenmenge rufen.\n\nClara: Sofie, hier oben auf der Ufermauer!\nSofie: So viele Leute. Was ist hier los?\nClara: Schau ins Wasser. Mitten in der Stadt ist eine echte Welle.\nSofie: Da surft wirklich jemand? Der ist ja ganz nass.\nBen: Jeden Tag fährt hier wer. Die Welle heute ist für dich.\n\nBen legt sein Handtuch weg und dreht ein Stück Pappe um.\n\nSofie: Da stehen Buchstaben mit Kreide drauf. Ich lese sie.\nBen: Lies ruhig laut. Es ist nur ein Wort.\nSofie: Da steht mein Name. Warum denn hier?",
   "vocab": [
    {
     "type": "noun",
@@ -1087,21 +1093,15 @@
    },
    {
     "type": "noun",
-    "word": "Stadtfluss",
+    "word": "Ufermauer",
     "surface": null,
-    "definition": "A river that runs right through the middle of a city."
+    "definition": "The stone wall along a river, where people stand and watch."
    },
    {
     "type": "verb",
     "word": "laufen",
     "surface": "läuft",
     "definition": "To run or to walk fast, moving quickly on your own feet."
-   },
-   {
-    "type": "noun",
-    "word": "Fußweg",
-    "surface": null,
-    "definition": "A footpath; the narrow way through a park made for walking."
    },
    {
     "type": "noun",
@@ -1122,10 +1122,10 @@
     "definition": "To call out loudly so that other people can hear you."
    },
    {
-    "type": "noun",
-    "word": "Ufermauer",
+    "type": "adverb",
+    "word": "selbst",
     "surface": null,
-    "definition": "The stone wall along a river, where people stand and watch."
+    "definition": "Yourself; something you have to go and see with your own eyes."
    },
    {
     "type": "adjective",
@@ -1153,9 +1153,9 @@
    },
    {
     "type": "noun",
-    "word": "Kreide",
+    "word": "Stadt",
     "surface": null,
-    "definition": "Chalk; the soft white stick you write on a board or wall with."
+    "definition": "A city; the one with a real wave running through it."
    },
    {
     "type": "verb",
@@ -1165,9 +1165,15 @@
    },
    {
     "type": "noun",
+    "word": "Gruppe",
+    "surface": null,
+    "definition": "A group; the same friends Sofie met in the beer garden."
+   },
+   {
+    "type": "noun",
     "word": "Leute",
     "surface": null,
-    "definition": "People; a lot of persons together in the same place."
+    "definition": "People; the crowd standing along the river wall."
    },
    {
     "type": "noun",
@@ -1184,7 +1190,7 @@
   "title": "Verspätung am Gleis vier",
   "slug": "verspatung-am-gleis-vier",
   "synopsis": "Greta und ihr Bruder Bernd stehen pünktlich am Kölner Gleis vier, um zur Feier ihrer Nichte zu fahren. Auf der Tafel wächst die Verspätung Minute um Minute, der Anschluss ist längst verloren, und ein Taxi quer durch die Stadt kann sich keiner von beiden leisten. Bernd sagt lange nichts, geht zur Rolltreppe und nennt erst im letzten Moment den Weg, an den Greta nicht gedacht hat.",
-  "text": "Die Zahlen auf der Tafel am Kölner Hauptbahnhof springen. Greta, eine Ärztin aus Köln, wartet am Gleis vier. Ihr Bruder Bernd hält das Gepäck. Heute feiert ihre Nichte Geburtstag.\n\nGreta: Aus zehn Minuten sind dreißig, das dauert ewig.\nBernd: Der Anschluss wartet nicht.\nGreta: Der Fahrplan stimmt nicht. Die Reise fängt gut an.\n\nEine Stimme aus dem Lautsprecher sagt etwas, niemand versteht sie richtig.\n\nBernd: Ich habe nur das Wort Verspätung gehört.\nGreta: Ich auch nicht. Alle Leute nehmen das Gepäck hoch.\nBernd: Dann fährt der Zug so schnell nicht.\n\nGreta hält die Fahrkarte und schaut unruhig auf die Uhr.\n\nGreta: Halb zwei, die Feier fängt um drei an.\nBernd: Mit dem Zug schaffen wir es nicht, die Torte wartet.\nGreta: Ein Taxi quer durch Köln? Viel zu teuer.\nBernd: Keine Geduld mehr, das ist umsonst.\n\nBernd geht nervös zur Rolltreppe.\n\nBernd: Komm mit. Das Ziel bleibt, der Weg ändert sich.\nGreta: Was heißt das? Wir haben keine Sekunde.\nBernd: Die Straßenbahn fährt in vier Minuten, ganz ohne Gleis.",
+  "text": "Die Zahlen auf der Tafel am Kölner Hauptbahnhof springen. Greta, eine Ärztin aus Köln, wartet am Gleis vier. Ihr Bruder Bernd hält das Gepäck.\n\nGreta: Aus zehn Minuten sind dreißig geworden.\nBernd: Unser Anschluss wartet nicht auf uns.\nGreta: Der Fahrplan stimmt nicht. So fängt die Reise gut an.\n\nEine Stimme aus dem Lautsprecher sagt etwas, niemand versteht sie richtig.\n\nBernd: Ich habe nur das Wort Verspätung verstanden.\nGreta: Ich habe nichts verstanden. Alle nehmen ihr Gepäck hoch.\n\nGreta hält die Fahrkarte und schaut unruhig auf die Uhr.\n\nGreta: Halb zwei. Die Feier der Nichte fängt um drei an.\nBernd: Mit dem Zug schaffen wir das nicht.\nGreta: Ein Taxi quer durch Köln? Viel zu teuer.\nBernd: Und meine Geduld ist zu Ende.\n\nBernd geht nervös zur Rolltreppe.\n\nBernd: Komm mit. Das Ziel bleibt, der Weg ändert sich.\nGreta: Was heißt das? Keine Sekunde übrig.\nBernd: Die Straßenbahn fährt in vier Minuten, ganz ohne Gleis.",
   "vocab": [
    {
     "type": "noun",
@@ -1229,10 +1235,10 @@
     "definition": "A niece; the daughter of your brother or of your sister."
    },
    {
-    "type": "verb",
-    "word": "feiern",
-    "surface": "feiert",
-    "definition": "To celebrate; to have a party for a special day or event."
+    "type": "noun",
+    "word": "Feier",
+    "surface": null,
+    "definition": "A party; the gathering the two of them are travelling to."
    },
    {
     "type": "noun",
@@ -1272,9 +1278,9 @@
    },
    {
     "type": "noun",
-    "word": "Sekunde",
+    "word": "Wort",
     "surface": null,
-    "definition": "A second; the very short unit of time, sixty of them make a minute."
+    "definition": "A word; the only one they could catch from the loudspeaker."
    },
    {
     "type": "noun",
@@ -1296,9 +1302,9 @@
    },
    {
     "type": "noun",
-    "word": "Rolltreppe",
+    "word": "Straßenbahn",
     "surface": null,
-    "definition": "An escalator; the moving stairs that carry people up or down."
+    "definition": "A tram; the city train that needs no railway platform."
    },
    {
     "type": "adjective",
@@ -1315,7 +1321,7 @@
   "title": "Mit der Straßenbahn durch Köln",
   "slug": "mit-der-stra-enbahn-durch-koln",
   "synopsis": "Statt auf den verspäteten Zug zu warten, fahren Greta und Bernd mit der Straßenbahn quer durch Köln. Bernd zählt die Ampeln und ärgert sich über jede Kreuzung, an der sie wieder hält. Draußen schiebt sich derweil die halbe Stadt am Fenster vorbei, und die beiden Dinge, die nichts miteinander zu tun haben, stoßen zusammen: die verlorene Zeit und der Blick, den man aus keinem Zug hat.",
-  "text": "Ihre Straßenbahn wartet an der Haltestelle, und Greta und Bernd steigen ein. Zwei Plätze am Fenster sind frei. Die Bahn rollt los, mitten durch die Stadt.\n\nBernd: Mit der Straßenbahn dauert die Reise ewig.\nGreta: Der Zug stand still, Bernd. Diese Bahn fährt wenigstens.\nBernd: An jeder Kreuzung hält sie an der Ampel.\nGreta: Dann schau aus dem Fenster, statt auf die Uhr.\n\nVor einem Zebrastreifen wartet die Bahn. Über den Dächern der Häuser steht der Dom, und das Wasser glänzt in der Sonne.\n\nBernd: Der Dom. So habe ich ihn lange nicht gesehen.\nGreta: Im Zug säßen wir jetzt unruhig im dunklen Tunnel.\nBernd: Da ist die Kirche, dahinter das Rathaus.\nGreta: Eben. Zehn Minuten später mit Blumen zum Geburtstag.\n\nBernd lehnt sich zurück und schaut auf sein Ticket. An der nächsten Station müssen sie umsteigen.\n\nBernd: Komisch. Vorhin war die Verspätung das Ende der Welt.\nGreta: Und jetzt ist sie eine kleine Rundfahrt durch Köln.\nBernd: Stimmt. Auf die zehn Minuten kommt es nicht mehr an.",
+  "text": "Ihre Straßenbahn wartet an der Haltestelle, und Greta und Bernd steigen mit dem Gepäck ein. Zwei Plätze am Fenster sind frei. Die Bahn rollt los, mitten durch die Stadt.\n\nBernd: Mit der Straßenbahn dauert die Reise ewig.\nGreta: Der Zug stand still, Bernd. Diese Bahn fährt wenigstens.\nBernd: Und an jeder Kreuzung hält sie an der Ampel.\nGreta: Dann schau aus dem Fenster, statt auf die Uhr.\n\nVor einem Zebrastreifen wartet die Bahn. Über den Dächern der Häuser steht der Dom, und das Wasser glänzt in der Sonne.\n\nBernd: Der Dom. So habe ich ihn lange nicht gesehen.\nGreta: Im Zug säßen wir jetzt im dunklen Tunnel.\nBernd: Da ist die Kirche, dahinter das Rathaus.\nGreta: Eben. Wir kommen zehn Minuten später, na und?\n\nBernd lehnt sich zurück. An der nächsten Station müssen sie umsteigen.\n\nBernd: Komisch. Vorhin war die Verspätung das Ende der Welt.\nGreta: Und jetzt ist sie eine kleine Rundfahrt durch Köln.\nBernd: Stimmt. Auf die zehn Minuten kommt es nicht mehr an.",
   "vocab": [
    {
     "type": "noun",
@@ -1354,16 +1360,16 @@
     "definition": "A traffic light with red, yellow and green for cars and trams."
    },
    {
-    "type": "noun",
-    "word": "Zebrastreifen",
-    "surface": null,
-    "definition": "A crossing of white stripes where people may walk over the street."
+    "type": "verb",
+    "word": "stimmen",
+    "surface": "Stimmt",
+    "definition": "To be right; you say it when you agree with the other person."
    },
    {
     "type": "noun",
-    "word": "Dach",
-    "surface": "Dächern",
-    "definition": "A roof; the top of a house that keeps the rain outside."
+    "word": "Stadt",
+    "surface": null,
+    "definition": "A city; here Cologne, seen from a slow tram window."
    },
    {
     "type": "noun",
@@ -1420,22 +1426,22 @@
     "definition": "At least; used to name the one good side of a bad thing."
    },
    {
-    "type": "adverb",
-    "word": "vorhin",
-    "surface": "Vorhin",
-    "definition": "A short time ago; earlier today, only a few minutes back."
+    "type": "noun",
+    "word": "Verspätung",
+    "surface": null,
+    "definition": "A delay; the same one that made them miss their train."
    },
    {
     "type": "noun",
-    "word": "Ticket",
+    "word": "Gepäck",
     "surface": null,
-    "definition": "A ticket; the small card or paper that pays for your ride."
+    "definition": "Luggage; the bags they are still carrying with them."
    },
    {
     "type": "noun",
-    "word": "Sonne",
+    "word": "Reise",
     "surface": null,
-    "definition": "The sun; the bright light in the sky that warms the day."
+    "definition": "A journey; the trip across the city they did not plan."
    }
   ],
   "arcType": "juxtaposition-discovery"
@@ -1446,7 +1452,7 @@
   "title": "Pünktlich ist anders",
   "slug": "punktlich-ist-anders",
   "synopsis": "Außer Atem und mit dem Gepäck in der Hand entschuldigen sich Greta und Bernd bei ihrer Nichte für die Verspätung. Im Haus ist es aber ganz ruhig, die Torte steht unangeschnitten da, und fast alle Stühle sind leer. Die Nichte erzählt, wo die anderen Gäste gerade sitzen, und die beiden Geschwister merken, dass sich ihre ganze Eile in etwas ziemlich Komisches verwandelt hat.",
-  "text": "Eine Viertelstunde zu spät bleiben Greta und Bernd vor dem Haus der Nichte stehen und atmen durch. Dann klingeln sie.\n\nGreta: Es tut uns leid, wir sind zu spät.\nNichte: Zu spät? Steckt die Fahrkarte weg und kommt herein.\nBernd: Wir haben uns beeilt. Erst der Zug, dann die Straßenbahn.\nNichte: Setzt euch und trinkt etwas. Alles halb so wild.\n\nAuf dem Tisch stehen eine Torte mit Sahne, eine Kaffeekanne und ein paar Blumen. Greta schaut erstaunt und unruhig auf die vielen leeren Stühle.\n\nGreta: Wo sind die anderen? Wir dachten, wir sind die Letzten.\nNichte: Eine lustige Geschichte. Ruf mal Onkel Theo an.\nBernd: Onkel Theo? Ist er nicht da?\nNichte: Er sitzt im selben Zug, den ihr nicht genommen habt.\n\nGreta und Bernd schauen sich an und müssen beide lächeln. Die ganze Eile war umsonst.\n\nBernd: Dann sind wir heute die Ersten, mit unserer Verspätung.\nNichte: Manchmal kommt man früher an, wenn man nicht wartet.\nGreta: Zum Geburtstag schneide ich dir den ersten Kuchen an.",
+  "text": "Eine Viertelstunde zu spät stehen Greta und Bernd vor dem Haus der Nichte und atmen durch. Dann klingeln sie.\n\nGreta: Es tut uns leid, wir sind zu spät.\nNichte: Zu spät? Kommt erst einmal herein.\nBernd: Wir haben uns beeilt. Erst der Zug, dann die Straßenbahn.\nNichte: Setzt euch und trinkt etwas. Alles halb so wild.\n\nAuf dem Tisch stehen eine Torte mit Sahne, eine Kaffeekanne und ein paar Blumen. Greta schaut erstaunt auf die leeren Stühle.\n\nGreta: Wo sind die anderen? Wir dachten, wir sind die Letzten.\nNichte: Das ist eine lustige Geschichte. Ruf mal Onkel Theo an.\nBernd: Onkel Theo? Ist er noch nicht da?\nNichte: Er sitzt im selben Zug, den ihr nicht genommen habt.\n\nGreta und Bernd schauen sich an und lächeln. Die Eile war umsonst.\n\nBernd: Dann sind wir heute die Ersten, mit unserer Verspätung.\nNichte: Manchmal kommt man früher an, wenn man nicht wartet.\nGreta: Zum Geburtstag schneide ich jetzt den Kuchen an.",
   "vocab": [
    {
     "type": "verb",
@@ -1479,16 +1485,16 @@
     "definition": "A cake; the round sweet cake with cream that Germans serve to guests."
    },
    {
-    "type": "noun",
-    "word": "Sahne",
+    "type": "adjective",
+    "word": "halb",
     "surface": null,
-    "definition": "Cream; the thick white topping that people put on cake and coffee."
+    "definition": "Half; here half as bad as it sounds, not serious at all."
    },
    {
     "type": "noun",
-    "word": "Kaffeekanne",
+    "word": "Straßenbahn",
     "surface": null,
-    "definition": "A coffee pot; the tall jug you pour coffee from at the table."
+    "definition": "A tram; the slow way that got them there first."
    },
    {
     "type": "noun",
@@ -1557,10 +1563,10 @@
     "definition": "Sometimes; on some days but not on all of them."
    },
    {
-    "type": "adverb",
-    "word": "früher",
+    "type": "noun",
+    "word": "Nichte",
     "surface": null,
-    "definition": "Earlier; before the time you had planned or expected."
+    "definition": "A niece; the daughter of your brother or of your sister."
    },
    {
     "type": "noun",
@@ -1577,7 +1583,7 @@
   "title": "Plätzchen neben den großen Lichtern",
   "slug": "platzchen-neben-den-gro-en-lichtern",
   "synopsis": "Anja verkauft auf dem Nürnberger Weihnachtsmarkt Plätzchen, die sie morgens selbst gebacken hat. Neben der großen goldenen Holzhütte kommt sie sich unsichtbar vor und will fast einpacken. Ihr Freund Kai sagt nichts Tröstliches, sondern wartet ab, bis die erste Kundin von allein stehen bleibt. Was die Leute suchen, stellt sich heraus, ist nicht das hellste Licht auf dem Platz.",
-  "text": "Der Nürnberger Weihnachtsmarkt riecht nach Zimt und Glühwein. Anja steht hinter ihrem Stand mit selbst gebackenen Plätzchen. Nebenan glänzt eine Holzhütte voller Gold.\n\nAnja: Hast du die Hütte da drüben gesehen? So viel Gold.\nKai: Schön. Aber bei dir riecht es nach echtem Zimt.\nAnja: Trotzdem bleiben alle dort. Ich stehe hier, und die Beine tun weh.\nKai: Warte ab. Der Winterabend fängt gerade erst an.\n\nEine ältere Frau schaut auf die Zimtsterne mit Marmelade. Dann kauft sie eine Papiertüte.\n\nKundin: Endlich Plätzchen wie früher, nicht aus der Fabrik.\nAnja: Danke. Ich habe sie selbst gebacken, mit Butter und Mehl.\n\nDie Kundin zieht die Handschuhe an und geht.\n\nKai: Deshalb kommt sie zu dir und nicht zur goldenen Hütte.\nAnja: Vielleicht hast du recht. Mein Stand ist klein, aber einfach.\n\nMehr Leute stehen an Anjas Tisch, die Kunden zeigen auf die Plätzchen und reden über Rezepte.\n\nAnja: Jetzt kommen sie plötzlich alle zu mir. Warum?\nKai: Neben so viel Gold sucht man am Ende das Rezept von früher.",
+  "text": "Der Nürnberger Weihnachtsmarkt riecht nach Zimt und Glühwein. Anja steht hinter ihrem Stand mit selbst gebackenen Plätzchen. Ihr Freund Kai bringt ihr einen Becher Tee. Nebenan glänzt eine Holzhütte voller Gold.\n\nAnja: Siehst du die Hütte da drüben? So viel Gold.\nKai: Schön. Aber bei dir riecht es nach echtem Zimt.\nAnja: Trotzdem bleiben alle dort. Zu mir kommt keiner.\nKai: Warte ab. Der Winterabend hat erst angefangen.\n\nEine ältere Frau bleibt stehen und schaut auf die Zimtsterne mit Marmelade.\n\nKundin: Endlich Plätzchen wie früher, nicht aus der Fabrik.\nAnja: Danke. Ich habe sie selbst gebacken, mit Butter und Mehl.\n\nDie Kundin nimmt eine ganze Papiertüte voll und geht weiter.\n\nKai: Deshalb kommt sie zu dir und nicht zur goldenen Hütte.\nAnja: Vielleicht hast du recht. Mein Stand ist klein, aber einfach.\n\nMehr Leute stehen an Anjas Tisch und zeigen auf die Plätzchen.\n\nAnja: Jetzt kommen sie alle zu mir. Warum?\nKai: Neben so viel Gold sucht man am Ende das Rezept von früher.",
   "vocab": [
    {
     "type": "noun",
@@ -1659,9 +1665,9 @@
    },
    {
     "type": "noun",
-    "word": "Butter",
+    "word": "Leute",
     "surface": null,
-    "definition": "Butter; the soft yellow fat made from milk, used in baking."
+    "definition": "People; the ones who slowly gather at the little table."
    },
    {
     "type": "noun",
@@ -1670,10 +1676,10 @@
     "definition": "Flour; the fine white powder from grain that bread is made of."
    },
    {
-    "type": "noun",
-    "word": "Marmelade",
+    "type": "adverb",
+    "word": "vielleicht",
     "surface": null,
-    "definition": "Jam; sweet fruit spread that also goes into some biscuits."
+    "definition": "Maybe; you are not sure, but you think it could be true."
    },
    {
     "type": "adverb",
@@ -1684,7 +1690,7 @@
    {
     "type": "noun",
     "word": "Rezept",
-    "surface": "Rezepte",
+    "surface": null,
     "definition": "A recipe; the written way to cook or bake a certain dish."
    },
    {
@@ -1708,7 +1714,7 @@
   "title": "Plötzlich wird es dunkel",
   "slug": "plotzlich-wird-es-dunkel",
   "synopsis": "Am Abend läuft es an Anjas Stand endlich, und Kai kommt mit dem Einpacken kaum nach. Mitten im größten Andrang gehen über dem ganzen Weihnachtsmarkt die Lichter aus. Die Musik bricht ab, die Handys der Leute reichen nur ein paar Schritte weit, und Anjas Akku ist fast leer. Niemand kann sagen, wann der Strom zurückkommt.",
-  "text": "Viele Menschen drängen sich über den Weihnachtsmarkt. Am Nachbarstand ist viel los, und Kai packt Plätzchen in Papiertüten. Über den Hütten leuchten Lichter unter dem Nachthimmel.\n\nKai: So viele Leute wie nie. Mir tun die Beine weh.\nAnja: Ich komme kaum nach. Pack du die nächste Papiertüte.\nKai: Mache ich. Setz die Mütze auf, es wird kalt.\n\nIn diesem Moment gehen plötzlich alle Lichter aus. Die Musik bricht ab, und der Markt liegt im Dunkeln.\n\nAnja: Was war das? Ich sehe gar nichts mehr.\nKai: Der Strom ist weg, ein Stromausfall.\nAnja: Auch die goldene Holzhütte drüben ist dunkel, kein Schein mehr.\nKai: Bleib ruhig. Das ist komisch, dauert aber nur Minuten.\n\nDie Leute holen die Handys heraus. Taschenlampen wackeln in der Kälte, und irgendwo singt jemand ein Lied.\n\nAnja: Mein Akku ist leer, und das Kabel liegt zu Hause.\nKai: Zieh die Handschuhe an. Die Kunden warten noch.\nAnja: Ohne Licht verkaufe ich nichts. Unter dem Tisch steht die Schachtel mit Kerzen.",
+  "text": "Viele Menschen drängen sich gegen sieben Uhr über den Weihnachtsmarkt. Am Nachbarstand ist auch viel los, und Kai packt Plätzchen in Papiertüten.\n\nKai: So viele Leute wie noch nie. Mir tun die Beine weh.\nAnja: Ich komme kaum nach. Pack du die nächste Papiertüte.\nKai: Mache ich. Setz die Mütze auf, es wird kalt.\n\nIn diesem Moment gehen plötzlich alle Lichter aus. Die Musik bricht ab, und der Markt liegt im Dunkeln.\n\nAnja: Was war das? Ich sehe gar nichts mehr.\nKai: Der Strom ist weg, ein Stromausfall auf dem ganzen Markt.\nAnja: Auch die goldene Holzhütte drüben ist dunkel.\nKai: Bleib ruhig. So etwas dauert oft nur ein paar Minuten.\n\nDie Leute holen die Handys heraus. Kleine Taschenlampen wackeln in der Kälte, und irgendwo singt jemand ein Lied.\n\nAnja: Mein Akku ist leer, und das Kabel liegt zu Hause.\nKai: Zieh die Handschuhe an. Die Kunden warten alle noch.\nAnja: Ohne Licht verkaufe ich nichts. Moment, unter dem Tisch steht die Schachtel.",
   "vocab": [
    {
     "type": "verb",
@@ -1718,9 +1724,9 @@
    },
    {
     "type": "noun",
-    "word": "Nachbarstand",
+    "word": "Leute",
     "surface": null,
-    "definition": "The market stall right next to yours, run by another seller."
+    "definition": "People; the crowd left standing in the sudden dark."
    },
    {
     "type": "noun",
@@ -1802,9 +1808,9 @@
    },
    {
     "type": "noun",
-    "word": "Lied",
+    "word": "Weihnachtsmarkt",
     "surface": null,
-    "definition": "A song; words with music that people sing together."
+    "definition": "A Christmas market; the winter stalls that just lost their light."
    },
    {
     "type": "noun",
@@ -1829,6 +1835,12 @@
     "word": "Schachtel",
     "surface": null,
     "definition": "A small box of card, used to keep little things inside."
+   },
+   {
+    "type": "noun",
+    "word": "Plätzchen",
+    "surface": null,
+    "definition": "The small Christmas biscuits Anja bakes and sells."
    }
   ],
   "arcType": "mini-cliffhanger"
@@ -1839,7 +1851,7 @@
   "title": "Kerzen statt Strom",
   "slug": "kerzen-statt-strom",
   "synopsis": "In der alten Schachtel unter dem Tisch liegen Kerzen für den Notfall. Anja zündet sie an, und ihr kleiner Stand wird zur einzigen hellen Stelle auf einem dunklen Markt. Während die goldene Holzhütte im Schwarzen verschwindet, rücken die Leute um die Kerzen zusammen, trinken Glühwein und reden miteinander. Als der Strom zurückkommt, will keiner mehr weg.",
-  "text": "Die Schachtel liegt unter dem Tisch. Darin liegen Kerzen und Streichhölzer für den Notfall. Über dem Markt steht ein Nachthimmel voller Sterne.\n\nAnja: Gut, dass ich die Kerzen nie ausräume.\nKai: Schau, wie hell. Dein Stand ist plötzlich der schönste hier.\nAnja: Stell zwei Kerzen nach vorne, damit man die Plätzchen sieht.\nKai: Und die goldene Holzhütte? Die liegt jetzt im Dunkeln.\n\nDer Schein der Kerzen fällt auf die Wangen der ersten Reihe. Kais Atem steht weiß in der Winterluft.\n\nKundin: Hier ist es gemütlich. Bei den Kerzen vergisst man die Kälte.\nAnja: Setzen Sie sich. Plätzchen habe ich genug, der Glühwein ist warm.\nKai: Komisch. Ohne Strom drängen sich plötzlich mehr Kunden.\nAnja: Vielleicht braucht ein Winterabend kein elektrisches Licht.\n\nJemand stimmt ein Weihnachtslied an. Kai legt Anja die Hand auf die Schulter, über den Hütten steht der Mond.\n\nKai: Da sind die Lichter wieder, aber keiner achtet mehr darauf.\nAnja: Ein kleines Wunder. Die Wärme kommt heute von den Kerzen.",
+  "text": "Die Schachtel liegt unter dem Tisch. Darin liegen Kerzen und Streichhölzer für den Notfall. Über dem Markt steht ein klarer Nachthimmel voller Sterne.\n\nAnja: Gut, dass ich die Kerzen nie ausräume.\nKai: Schau, wie hell. Dein Stand ist plötzlich der schönste hier.\nAnja: Stell zwei Kerzen nach vorne, damit man die Plätzchen sieht.\nKai: Und die goldene Hütte? Die liegt jetzt im Dunkeln.\n\nDer Schein der Kerzen fällt auf die Wangen in der ersten Reihe. Kais Atem steht weiß in der Winterluft.\n\nKundin: Hier ist es gemütlich. Bei den Kerzen bleibt man gern stehen.\nAnja: Setzen Sie sich. Plätzchen habe ich genug, und der Glühwein ist warm.\nKai: Komisch. Ohne Strom ist auf einmal mehr los als vorher.\nAnja: Vielleicht braucht ein schöner Abend kein elektrisches Licht.\n\nJemand stimmt ein Weihnachtslied an, und Kai legt Anja die Hand auf die Schulter. Über den Hütten steht der Mond.\n\nKai: Da sind die Lichter wieder, aber keiner achtet mehr darauf.\nAnja: Und keiner geht. Die Kunden bleiben bei den Kerzen.",
   "vocab": [
    {
     "type": "noun",
@@ -1890,10 +1902,10 @@
     "definition": "A glow; the soft light that a candle or a lamp gives off."
    },
    {
-    "type": "noun",
-    "word": "Wange",
-    "surface": "Wangen",
-    "definition": "A cheek; the soft side of your face under the eye."
+    "type": "adverb",
+    "word": "vielleicht",
+    "surface": null,
+    "definition": "Maybe; you are not sure, but it might well be so."
    },
    {
     "type": "noun",
@@ -1902,10 +1914,10 @@
     "definition": "Breath; the air that comes out of your mouth, white when cold."
    },
    {
-    "type": "noun",
-    "word": "Winterluft",
-    "surface": null,
-    "definition": "Winter air; the cold clear air outside on a winter night."
+    "type": "verb",
+    "word": "stimmen",
+    "surface": "stimmt",
+    "definition": "To be right; you say it when the other person has a point."
    },
    {
     "type": "adjective",
@@ -1951,15 +1963,15 @@
    },
    {
     "type": "noun",
-    "word": "Wunder",
+    "word": "Plätzchen",
     "surface": null,
-    "definition": "A wonder; something so good that it feels almost impossible."
+    "definition": "The home baked Christmas biscuits on Anja's little table."
    },
    {
     "type": "noun",
-    "word": "Wärme",
-    "surface": null,
-    "definition": "Warmth; the good warm feeling that comes from fire or people."
+    "word": "Kunde",
+    "surface": "Kunden",
+    "definition": "A customer; the people who buy at the market stall."
    }
   ],
   "arcType": "harmonic-close"
@@ -1970,7 +1982,7 @@
   "title": "Der Pfad in den Wald",
   "slug": "der-pfad-in-den-wald",
   "synopsis": "An einem frischen Morgen im Schwarzwald schnüren Mia und Finn ihre Schuhe und gehen los. Kein Abenteuer, kein Ziel außer dem Tal von oben: nur ein schmaler Weg, eine Wurzel quer im Gras, ein Schmetterling auf einem Blatt und eine Ziege am Zaun. Die Wanderung selbst ist die ganze Geschichte, und beiden reicht das vollkommen.",
-  "text": "Ihre Schuhe schnürt Mia vor der Waldhütte im Schwarzwald. Mia ist eine Studentin aus Freiburg, und Finn, ein Freund aus dem Kurs, füllt zwei Flaschen für den Rucksack.\n\nMia: Hast du genug Wasser? Der Wanderweg ist lang.\nFinn: Alles drin. Wasser, Brot, Äpfel und die Landkarte.\nMia: Hörst du diese Stille hier?\nFinn: Nur die Vögel und der Wind. Kein Regen, keine Wolke.\n\nDie beiden folgen dem Pfad. Über eine Wurzel wächst Gras, und die Stiefel sinken in die Erde.\n\nFinn: Pass auf, hier liegt ein Ast quer über dem Weg.\nMia: Danke. Schau mal, ein Schmetterling auf dem Blatt da.\nFinn: Und da vorne steht eine Ziege am Zaun.\nMia: Ein Hund bellt auch irgendwo. Wir sind also nicht allein.\n\nNach einer Weile machen sie am Baum Pause. Eine Biene summt über dem Gras.\n\nMia: Von hier oben sieht man in der Sonne das ganze Tal.\nFinn: Keine Leute außer uns. Genau dafür sind wir hier.\nMia: Der Rest geht bergauf, und die Beine halten durch.",
+  "text": "Ihre Schuhe schnürt Mia vor der Waldhütte im Schwarzwald. Mia ist eine Studentin aus Freiburg, und Finn, ein Freund aus dem Kurs, füllt die Flaschen für den Rucksack.\n\nMia: Hast du genug Wasser? Der Wanderweg ist lang.\nFinn: Wasser, Brot und zwei Äpfel.\nMia: Hörst du, wie ruhig es hier ist?\nFinn: Nur die Vögel und der Wind in den Bäumen.\n\nDie beiden folgen dem Pfad. Über eine Wurzel wächst Gras, und die Erde riecht nach Holz.\n\nFinn: Pass auf, hier liegt ein Ast über dem Weg.\nMia: Danke. Schau, ein Schmetterling auf dem Blatt.\nFinn: Und da vorne steht eine Ziege am Zaun.\nMia: Ein Hund bellt irgendwo. Wir sind also nicht allein.\n\nNach einer Weile machen sie an einem Baum Pause. Eine Biene summt über dem Gras.\n\nMia: Von hier sieht man schon das ganze Tal.\nFinn: Kein Mensch außer uns. Genau dafür sind wir hier.\nMia: Der Rest geht bergauf. Wir haben den ganzen Tag.",
   "vocab": [
    {
     "type": "verb",
@@ -2057,10 +2069,10 @@
     "definition": "A butterfly; the insect with big coloured wings in summer."
    },
    {
-    "type": "noun",
-    "word": "Ziege",
+    "type": "adverb",
+    "word": "genau",
     "surface": null,
-    "definition": "A goat; the small farm animal with horns that eats almost anything."
+    "definition": "Exactly; for precisely this reason and nothing else."
    },
    {
     "type": "noun",
@@ -2076,9 +2088,9 @@
    },
    {
     "type": "noun",
-    "word": "Biene",
+    "word": "Weile",
     "surface": null,
-    "definition": "A bee; the small flying insect that makes honey and can sting."
+    "definition": "A while; a stretch of time that passes on a long walk."
    },
    {
     "type": "noun",
@@ -2101,7 +2113,7 @@
   "title": "Nebel über dem Berg",
   "slug": "nebel-uber-dem-berg",
   "synopsis": "Oben auf dem Berg schlägt das Wetter in Minuten um, und eine dichte Nebelwand schiebt sich zwischen die Tannen. An einer Gabelung wissen Mia und Finn nicht mehr, aus welcher Richtung sie gekommen sind, und im Weiß sieht jeder Weg gleich aus. Dann hören sie Wasser rauschen, und die Karte in Mias Hand sagt plötzlich alles.",
-  "text": "Oben wird die Luft kühl. Mia und Finn merken, wie eine dichte Nebelwand zwischen die Tannen zieht. Innerhalb weniger Minuten ist alles um sie herum weiß.\n\nMia: Finn, wo bist du? Ich sehe dich kaum noch.\nFinn: Direkt hinter dir. Ich komme langsam zu dir herüber.\nMia: Der Nebel kam schnell. Eben war es klar.\nFinn: Im Gebirge geht das schnell. Kommt jetzt noch Regen?\n\nAn einer Stelle am Wegrand teilt sich der Weg. Finn stellt seinen Wanderstock in den Boden.\n\nFinn: Hier geht es links und rechts weiter. Welcher Weg war unserer?\nMia: Ich bin nicht mehr sicher. Im Nebel sieht alles gleich aus.\nFinn: Warte, hörst du das? Da unten rauscht Wasser.\nMia: Ein Bach. Auf der Landkarte ist nur auf einer Seite ein Bach.\n\nMia zieht die Karte aus dem Rucksack. Ihre Stiefel stehen im nassen Gras, und in der Stille hört man nur das Wasser.\n\nMia: Die blaue Linie läuft rechts vom Weg. Der Bach ist rechts.\nFinn: Dann sind wir richtig und gehen müde bergab.",
+  "text": "Oben auf dem Berg wird die Luft kühl. Mia und Finn merken, wie eine dichte Nebelwand zwischen die Tannen zieht. Innerhalb weniger Minuten ist alles um sie herum weiß.\n\nMia: Finn, wo bist du? Ich sehe dich kaum noch.\nFinn: Direkt hinter dir. Ich komme langsam zu dir herüber.\nMia: Der Nebel kam so schnell. Eben war der Himmel klar.\nFinn: Im Gebirge geht das schnell. Bleiben wir auf dem Wanderweg.\n\nAn einer Stelle teilt sich der Weg. Finn stellt seinen Wanderstock in den Boden.\n\nFinn: Hier geht es links und rechts weiter. Welcher Weg war unserer?\nMia: Ich bin mir nicht mehr sicher. Im Nebel sieht alles gleich aus.\nFinn: Warte, hörst du das? Da unten rauscht Wasser.\nMia: Ein Bach. Auf der Landkarte ist nur auf einer Seite ein Bach.\n\nMia zieht die Landkarte aus dem Rucksack.\n\nMia: Die blaue Linie läuft rechts vom Weg. Der Bach ist also rechts.\nFinn: Dann sind wir richtig. Von dort geht es hinunter ins Tal.",
   "vocab": [
    {
     "type": "verb",
@@ -2123,9 +2135,9 @@
    },
    {
     "type": "adverb",
-    "word": "innerhalb",
+    "word": "hinunter",
     "surface": null,
-    "definition": "Within; used to say how short a time something needed."
+    "definition": "Downwards; from up here down towards the valley."
    },
    {
     "type": "adverb",
@@ -2147,12 +2159,6 @@
    },
    {
     "type": "noun",
-    "word": "Regen",
-    "surface": null,
-    "definition": "Rain; the water that falls from the clouds down to the ground."
-   },
-   {
-    "type": "noun",
     "word": "Stelle",
     "surface": null,
     "definition": "A spot; one certain place on a path or on a map."
@@ -2170,10 +2176,10 @@
     "definition": "On the right; the side opposite to your left hand."
    },
    {
-    "type": "noun",
-    "word": "Wanderstock",
+    "type": "adverb",
+    "word": "richtig",
     "surface": null,
-    "definition": "A walking stick that hikers push into the ground for balance."
+    "definition": "Right; going the correct way and not the wrong one."
    },
    {
     "type": "adjective",
@@ -2207,21 +2213,27 @@
    },
    {
     "type": "noun",
-    "word": "Stiefel",
-    "surface": null,
-    "definition": "Boots; the strong high shoes people wear for walking outside."
-   },
-   {
-    "type": "noun",
-    "word": "Stille",
-    "surface": null,
-    "definition": "Silence; the state when there is no sound at all around you."
-   },
-   {
-    "type": "noun",
     "word": "Linie",
     "surface": null,
     "definition": "A line; the thin mark on a map that shows a river."
+   },
+   {
+    "type": "noun",
+    "word": "Himmel",
+    "surface": null,
+    "definition": "The sky; clear one moment and white with fog the next."
+   },
+   {
+    "type": "noun",
+    "word": "Rucksack",
+    "surface": null,
+    "definition": "A backpack; the bag with the water and the map inside."
+   },
+   {
+    "type": "noun",
+    "word": "Tal",
+    "surface": null,
+    "definition": "A valley; the low land they can see from up here."
    }
   ],
   "arcType": "late-reveal"
@@ -2232,7 +2244,7 @@
   "title": "Ein Schild im Nebel",
   "slug": "ein-schild-im-nebel",
   "synopsis": "Dem Rauschen des Baches folgen Mia und Finn vorsichtig bergab, mit müden Knien und nassen Stiefeln. Aus dem Grau taucht ein alter Pfahl auf, und darauf sitzt ein Holzschild mit einem Pfeil. Was für Mia die ganze Zeit eine verlorene Wanderung war, sieht sie im Abendlicht am Waldrand auf einmal ganz anders.",
-  "text": "Ein schmaler Pfad führt Mia und Finn neben dem Bach bergab. Mit jedem Schritt wird der Boden feuchter, und das Wasser wird lauter. Ihre Knie zittern, und die Stiefel sind nass.\n\nFinn: Der Bach rauscht lauter. Wir gehen also richtig.\nMia: Warte, da vorne steht doch etwas im Nebel.\nFinn: Wo? Ich sehe nur Grau zwischen den Bäumen.\nMia: Da, ein Pfahl. Komm näher, ich glaube, das ist ein Schild.\n\nAm Wegrand steht ein altes Holzschild mit einem Pfeil.\n\nFinn: Es zeigt genau dorthin, wo wir hinwollen.\nMia: Zur Waldhütte, nur noch zwanzig Minuten.\nFinn: Und schau, der Nebel wird dünner. Da kommt die Sonne.\nMia: Endlich. Eben war alles grau, jetzt sehe ich Gras und Tannen.\n\nIm Abendlicht gehen die beiden den letzten Waldweg hinunter. Vor ihnen liegen der Waldrand und das Tal.\n\nMia: Müde Beine, aber nach der Pause sind wir heil zurück.\nFinn: Und morgen erzählen wir allen von unserem Rückweg im Nebel.\nMia: Ein Bach war klüger als die Landkarte.",
+  "text": "Ein schmaler Pfad führt Mia und Finn neben dem Bach bergab. Mit jedem Schritt wird der Boden feuchter, und das Wasser wird lauter. Ihre Knie zittern vom langen Abstieg.\n\nFinn: Der Bach wird lauter. Wir gehen also richtig.\nMia: Warte, da vorne steht doch etwas im Nebel.\nFinn: Wo? Ich sehe nur Grau zwischen den Bäumen.\nMia: Da, ein Pfahl. Komm näher, ich glaube, das ist ein Schild.\n\nAm Wegrand steht ein altes Holzschild mit einem Pfeil.\n\nFinn: Es zeigt genau dorthin, wo wir hinwollen.\nMia: Zur Waldhütte, nur noch zwanzig Minuten.\nFinn: Und schau, der Nebel wird dünner. Da kommt die Sonne.\nMia: Endlich. Eben war alles grau, jetzt sehe ich wieder die Tannen.\n\nIm Abendlicht gehen die beiden den letzten Waldweg hinunter. Vor ihnen liegen der Waldrand und die Waldhütte.\n\nMia: Müde Beine, aber wir sind heil zurück.\nFinn: Und morgen erzählen wir allen von unserem Rückweg im Nebel.\nMia: Ein Bach war klüger als die Landkarte.",
   "vocab": [
    {
     "type": "adverb",
@@ -2295,10 +2307,10 @@
     "definition": "The sun; the bright light in the sky that warms the day."
    },
    {
-    "type": "noun",
-    "word": "Abendlicht",
+    "type": "adverb",
+    "word": "richtig",
     "surface": null,
-    "definition": "Evening light; the soft warm light of the last hour of day."
+    "definition": "Right; the direction that turns out to be the correct one."
    },
    {
     "type": "noun",
@@ -2313,22 +2325,10 @@
     "definition": "The edge of the forest, where the trees stop and open land begins."
    },
    {
-    "type": "noun",
-    "word": "Tal",
-    "surface": null,
-    "definition": "A valley; the low land between the hills, seen from above."
-   },
-   {
     "type": "adjective",
     "word": "müde",
     "surface": "Müde",
     "definition": "Tired; you have used your strength and now need to rest."
-   },
-   {
-    "type": "noun",
-    "word": "Bein",
-    "surface": "Beine",
-    "definition": "A leg; the part of your body you walk and stand on."
    },
    {
     "type": "adjective",
@@ -2337,22 +2337,34 @@
     "definition": "Safe and sound; back home without any harm or injury."
    },
    {
-    "type": "noun",
-    "word": "Rückweg",
+    "type": "adverb",
+    "word": "genau",
     "surface": null,
-    "definition": "The way back; the path that takes you home again."
-   },
-   {
-    "type": "adjective",
-    "word": "letzt",
-    "surface": "letzten",
-    "definition": "Last; the final one, with nothing coming after it."
+    "definition": "Exactly; pointing at precisely the place they want to reach."
    },
    {
     "type": "adjective",
     "word": "klug",
     "surface": "klüger",
     "definition": "Clever; good at finding the right answer or the right way."
+   },
+   {
+    "type": "noun",
+    "word": "Bach",
+    "surface": null,
+    "definition": "A stream; the small river they followed down the hill."
+   },
+   {
+    "type": "noun",
+    "word": "Waldhütte",
+    "surface": null,
+    "definition": "The wooden cabin at the forest edge where they started."
+   },
+   {
+    "type": "noun",
+    "word": "Landkarte",
+    "surface": null,
+    "definition": "A map; the paper that showed the stream on one side only."
    }
   ],
   "arcType": "reframe-turn"
@@ -2363,13 +2375,13 @@
   "title": "Der Biss im Ring",
   "slug": "der-biss-im-ring",
   "synopsis": "Vor dem Heidelberger Schlosstor erzählt Lukas die Legende von der Hexe, die in den eisernen Ring gebissen haben soll. Hanna hält nichts davon und sucht die nüchterne Erklärung im Wetter und im alten Eisen. Dann legt sie selbst die Hand auf den Ring, und unter ihren Fingern trifft die kühle Physik auf etwas, das dort eigentlich nicht sein dürfte.",
-  "text": "Die Abendsonne steht hinter dem Heidelberger Schloss. Hanna, eine Lehrerin aus der Stadt, steht mit Lukas vor dem Schlosstor an der Steinmauer. Ihr Freund Lukas mag alte Sagen, Hanna glaubt an das, was sie sieht.\n\nLukas: Kennst du die Legende? Eine Hexe hat in den eisernen Ring gebissen.\nHanna: Eine Hexe, die in Eisen beißt? Nur eine Geschichte.\n\nGemeinsam schauen sie im Licht der Taschenlampe auf den schwarzen Ring.\n\nLukas: Wer sich durchbeißt, sagt die Sage, dem gehört das Schloss.\nHanna: Niemand hat es geschafft. An Wunder glaube ich nicht.\nLukas: Sieh ihn dir genau an. Die Spur ist noch da.\nHanna: Das ist altes Eisen. Das kommt vom Wetter, nicht von Zähnen.\n\nHanna legt die Hand auf den Ring und fühlt darüber. Plötzlich runzelt sie die Stirn.\n\nHanna: Meine Augen sehen eine Kerbe. Klein, aber tief, wie von einem Tier.\nLukas: Siehst du? Ich sage nicht, dass es eine Hexe war.\nHanna: Ich auch nicht. Aber woher kommt sie, mitten in der Nacht?",
+  "text": "Hanna, eine Lehrerin aus der Stadt, steht am Abend mit Lukas vor dem Schlosstor des Heidelberger Schlosses. Ihr Freund Lukas mag alte Sagen, Hanna glaubt an das, was sie sieht.\n\nLukas: Kennst du die Legende? Eine Hexe hat in den eisernen Ring gebissen.\nHanna: Eine Hexe, die in Eisen beißt? Nur eine Geschichte.\n\nLukas zeigt auf den schweren Ring am Tor. Im letzten Licht sieht er fast schwarz aus.\n\nLukas: Wer sich durchbeißt, sagt die Sage, dem gehört das Schloss.\nHanna: Niemand hat es geschafft. An Wunder glaube ich nicht.\nLukas: Sieh ihn dir genau an. Die Spur ist noch da.\nHanna: Das ist altes Eisen. Das kommt vom Wetter, nicht von Zähnen.\n\nHanna legt die Hand auf den Ring und fühlt darüber. Plötzlich runzelt sie die Stirn.\n\nHanna: Hier ist wirklich eine Kerbe. Klein, aber tief.\nLukas: Siehst du? Ich sage nicht, dass es eine Hexe war.\nHanna: Ich auch nicht. Aber woher kommt sie, mitten in der Nacht?",
   "vocab": [
    {
-    "type": "noun",
-    "word": "Abendsonne",
+    "type": "adverb",
+    "word": "genau",
     "surface": null,
-    "definition": "The evening sun; the low warm sun just before it goes down."
+    "definition": "Exactly; looking at it closely and with your full attention."
    },
    {
     "type": "noun",
@@ -2379,9 +2391,9 @@
    },
    {
     "type": "noun",
-    "word": "Steinmauer",
+    "word": "Stadt",
     "surface": null,
-    "definition": "A stone wall; a thick old wall built of heavy stones."
+    "definition": "A city; the town below the castle where Hanna teaches."
    },
    {
     "type": "noun",
@@ -2494,7 +2506,7 @@
   "title": "Ein Klopfen im Keller",
   "slug": "ein-klopfen-im-keller",
   "synopsis": "Hanna und Lukas steigen die schmale Steintreppe in den Keller des Schlosses hinunter, wo das riesige Weinfass steht. Es ist kalt, es ist still, und außer Spinnen an der Wand ist hier unten nichts. Dann hören sie ein leises, gleichmäßiges Klopfen aus der hintersten Ecke, immer im selben Ton, und es hört einfach nicht wieder auf.",
-  "text": "Eine schmale Steintreppe führt Hanna und Lukas hinunter in den Keller. Hinter der schweren Kellertür ist es kalt und dunkel. In der Mitte steht ein riesiges Weinfass.\n\nHanna: So ein Fass habe ich nie gesehen.\nLukas: Hier haben sie früher den Wein für das Schloss gelagert.\nHanna: Und heute? Nur Spinnen an der Steinwand.\nLukas: Und Mäuse, eine Ratte, vielleicht ein Tier mit Angst.\n\nIhre Stimmen klingen laut, und die Nacht steht vor dem Kellerfenster. Lukas schaltet die Taschenlampe seines Handys an.\n\nHanna: Psst. Hast du das gehört? Da ist ein Geräusch.\nLukas: Ein Klopfen? Das waren nur unsere Schritte.\nHanna: Nein, halt das Ohr an die Wand. Es kommt wieder.\nLukas: Du hast recht. Ein leiser Klang, immer im gleichen Ton.\n\nDie beiden stehen ganz still. Das Klopfen kommt aus dem hintersten Teil des Kellers.\n\nHanna: Und jetzt? Hier unten sind keine Leute, kein Gespenst.\nLukas: Eben war ich der mit der Sage. Dieser Klang gefällt mir nicht.\nHanna: Gehen wir der Sache nach, oder nach oben?",
+  "text": "Eine schmale Steintreppe führt Hanna und Lukas hinunter in den Keller. Hinter der schweren Kellertür ist es kalt und dunkel. In der Mitte steht ein riesiges Weinfass.\n\nHanna: So ein Fass habe ich noch nie gesehen.\nLukas: Hier haben sie früher den Wein für das Schloss gelagert.\nHanna: Und heute? Nur Spinnen und Mäuse.\nLukas: Und vielleicht eine Ratte. Die Sage erzählt davon nichts.\n\nLukas schaltet die Taschenlampe seines Handys an. Ihre Stimmen klingen laut in dem leeren Raum.\n\nHanna: Psst. Hast du das gehört? Da ist ein Geräusch.\nLukas: Ein Klopfen? Das waren nur unsere Schritte.\nHanna: Nein, halt das Ohr an die Wand. Es kommt wieder.\nLukas: Du hast recht. Ein leiser Klang, immer gleich.\n\nDie beiden stehen ganz still an der kalten Wand. Das Klopfen kommt aus dem hintersten Teil des Kellers.\n\nHanna: Und jetzt? Hier unten ist außer uns niemand.\nLukas: Eben war ich der mit den Geschichten. In dieser Nacht gefällt mir das nicht.\nHanna: Gehen wir der Sache nach, oder nach oben?",
   "vocab": [
    {
     "type": "adjective",
@@ -2588,33 +2600,33 @@
    },
    {
     "type": "noun",
-    "word": "Ohr",
-    "surface": null,
-    "definition": "The ear; the part of your head that you hear sounds with."
-   },
-   {
-    "type": "noun",
     "word": "Wand",
     "surface": null,
-    "definition": "A wall; the flat side that closes a room in."
+    "definition": "A wall; the cold stone side you press your ear against."
+   },
+   {
+    "type": "adverb",
+    "word": "vielleicht",
+    "surface": null,
+    "definition": "Maybe; you are not sure at all what is down there."
    },
    {
     "type": "noun",
-    "word": "Klang",
+    "word": "Sage",
     "surface": null,
-    "definition": "A sound; the way something rings in your ear when it is heard."
+    "definition": "A folk tale about the castle, told again and again."
    },
    {
     "type": "noun",
-    "word": "Ton",
+    "word": "Nacht",
     "surface": null,
-    "definition": "A tone; one single note, always the same height of sound."
+    "definition": "The night; the dark hours when the cellar feels worst."
    },
    {
-    "type": "adjective",
-    "word": "hinterste",
-    "surface": "hintersten",
-    "definition": "Furthest back; the part that lies deepest away from the door."
+    "type": "noun",
+    "word": "Geschichte",
+    "surface": "Geschichten",
+    "definition": "A story; the kind Lukas likes and Hanna does not believe."
    }
   ],
   "arcType": "mini-cliffhanger"
@@ -2625,7 +2637,7 @@
   "title": "Nur eine Eule",
   "slug": "nur-eine-eule",
   "synopsis": "Mit dem Licht des Handys folgen Hanna und Lukas dem Klopfen bis in die hinterste Ecke hinter dem Fass. Was dort gegen die Steinwand schlägt, ist kein Gespenst, sondern ein kleines Tier, das durch ein offenes Kellerfenster hereingekommen ist und nicht mehr hinausfindet. Sie machen das Fenster weit auf, und von der Hexe bleibt am Ende nur eine gute Geschichte.",
-  "text": "Hanna macht das Licht ihres Handys an. Gemeinsam gehen sie dem Klopfen nach, in die hinterste Ecke. Das Geräusch wird lauter, ein Ton wie Schritte.\n\nLukas: Es kommt von dem alten Kellerfenster. Leuchte mal dorthin.\nHanna: Da sitzt etwas auf dem Fenstersims. Es bewegt sich.\n\nVorsichtig gehen sie mit der Taschenlampe an die Steinwand.\n\nLukas: Das ist ja eine Eule! Ein kleines Tier, ganz allein.\nHanna: Sie ist durch das offene Fenster geflogen und findet nicht hinaus.\n\nDie Eule schlägt mit dem Flügel gegen die Wand. Das hielten die beiden für ein Gespenst.\n\nLukas: Das war also unser Gespenst. Ein Nachtvogel mit Angst vor uns.\nHanna: Die Arme. Komm, wir machen das Fenster ganz weit auf.\nLukas: Langsam, sonst bekommt sie mehr Angst.\nHanna: Ihre Augen sind riesig. Na los, kleine Eule.\n\nDie Eule fliegt in die Nachtluft. Draußen steht der Mond unter einem Sternenhimmel.\n\nLukas: Keine Hexe, kein Gespenst. Wir haben nur eine Eule gerettet.\nHanna: Und trotzdem wird daraus morgen eine Sage vom Schloss.",
+  "text": "Hanna macht das Licht ihres Handys an. Gemeinsam gehen sie dem Klopfen nach, in die hinterste Ecke hinter dem Fass. Das Geräusch wird mit jedem Schritt lauter.\n\nLukas: Es kommt von dem alten Kellerfenster. Leuchte mal dorthin.\nHanna: Da sitzt etwas auf dem Fenstersims. Es bewegt sich.\n\nVorsichtig gehen die beiden näher an die kalte Wand heran.\n\nLukas: Das ist ja eine Eule! Ein kleines Tier, ganz allein hier unten.\nHanna: Sie ist durch das offene Fenster geflogen und findet nicht mehr hinaus.\n\nDie Eule schlägt mit dem Flügel gegen die Wand. Das hielten die beiden für ein Gespenst.\n\nLukas: Das war also unser Gespenst. Ein Nachtvogel mit Angst vor uns.\nHanna: Die Arme. Komm, wir machen das Fenster ganz weit auf.\nLukas: Langsam, sonst bekommt sie mehr Angst.\nHanna: Ihre Augen sind riesig. Na los, kleine Eule.\n\nDie Eule fliegt in die Nachtluft.\n\nLukas: Keine Hexe, kein Gespenst, nur eine Eule.\nHanna: Und trotzdem wird morgen eine Sage daraus.",
   "vocab": [
    {
     "type": "adverb",
@@ -2647,9 +2659,9 @@
    },
    {
     "type": "noun",
-    "word": "Fenstersims",
+    "word": "Wand",
     "surface": null,
-    "definition": "A window ledge; the narrow shelf of stone under a window."
+    "definition": "A wall; the stone side the owl keeps hitting with its wing."
    },
    {
     "type": "verb",
@@ -2659,9 +2671,9 @@
    },
    {
     "type": "noun",
-    "word": "Steinwand",
-    "surface": null,
-    "definition": "A stone wall; the cold hard wall of an old cellar."
+    "word": "Handy",
+    "surface": "Handys",
+    "definition": "A mobile phone; the only light they have down there."
    },
    {
     "type": "noun",
@@ -2737,15 +2749,15 @@
    },
    {
     "type": "noun",
-    "word": "Mond",
+    "word": "Hexe",
     "surface": null,
-    "definition": "The moon; the big pale light that stands in the night sky."
+    "definition": "A witch; the one from the legend that never turns up."
    },
    {
     "type": "noun",
-    "word": "Sternenhimmel",
+    "word": "Sage",
     "surface": null,
-    "definition": "A starry sky; the night sky when it is full of stars."
+    "definition": "A folk tale; what this night will turn into by tomorrow."
    }
   ],
   "arcType": "late-reveal"
