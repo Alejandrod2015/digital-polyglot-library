@@ -265,8 +265,16 @@ export function extractSpanishContentWords(body: string): string[] {
   // swallowed every accented vowel and ñ (á/é/í/ó/ú/ñ/ü all fall inside it),
   // shredding words like "órale"→"rale", "cámara"→"mara", "güey"→"g ey" and
   // wildly inflating the out-of-level %. Fixed 2026-07-09.
+  // Las comillas CURVAS y las angulares no estaban en la clase, solo las
+  // rectas. El catalogo escribe el habla citada con curvas desde el
+  // 2026-08-17, asi que desde entonces cada replica dejaba tokens como
+  // `“tu`, `muebles”` o `enterarme”`, que no estan en ninguna lista y el juez
+  // devuelve C2 por defecto: 8 de las 17 "palabras fuera de nivel" de la
+  // primera historia del B1 de Espana eran una comilla pegada a una palabra
+  // corriente. No es un umbral mas blando, es que eso no son palabras.
+  // Mismo agujero que el de `narrator-quoted-speech` el 2026-08-18.
   const rawTokens = body
-    .replace(/[¿¡"'()[\]{}\-–_*]/g, " ")
+    .replace(/[¿¡"'()[\]{}\-–_*\u201C\u201D\u2018\u2019\u00AB\u00BB\u201E]/g, " ")
     .split(/[\s.,;:!?"…]+/u)
     .filter(Boolean);
 

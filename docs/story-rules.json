@@ -89,7 +89,7 @@
       "id": "journey-vocab-recirculation",
       "gate": "journey",
       "check": "journey-vocab-recirculation",
-      "rule": "Cada plaza de vocab se reencuentra: media de 2 apariciones o mas a lo largo del journey",
+      "rule": "Cada plaza de vocab se reencuentra: media de 3,0 historias en A0 y de 2,5 en A1 y B1; sin umbral calibrado, el check bloquea",
       "memory": "project_vocab_recirculation_ladder"
     },
     {
@@ -117,7 +117,7 @@
       "id": "body-word-count",
       "gate": "story",
       "check": "body-word-count",
-      "rule": "A0 y A1: cuerpo de 115 a 170 palabras",
+      "rule": "A0, A1 y B1: cuerpo de 115 a 170 palabras; el nivel sube la gramatica, no la duracion",
       "memory": "project_a0_gate_profile"
     },
     {

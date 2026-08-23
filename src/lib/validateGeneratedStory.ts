@@ -905,7 +905,15 @@ export async function validateGeneratedStory(
   // gramática dentro (perfecto, subordinadas, pronombres de objeto). La
   // ventana se le da ESTRECHA, la misma del A0, para no abrir un agujero por
   // el que luego entre un A1 de 100 palabras sin que salte nada.
-  const isOneMinuteTier = isA0 || (context.level ?? "").toUpperCase() === "A1";
+  //
+  // B1 entra el 2026-08-23, por la misma razon de producto y con la misma
+  // ventana estrecha: el B1 no es un A1 mas largo, es el mismo minuto con mas
+  // gramatica dentro (indefinido contra imperfecto, subjuntivo, condicional,
+  // subordinadas de relativo, estilo indirecto). La duracion de una historia
+  // es una decision de producto del usuario y no cambia al subir de nivel; lo
+  // que cambia es la densidad. La referencia es el A1 de Espana, que corre de
+  // 132 a 168 palabras con media 157, holgadamente dentro de 115-170.
+  const isOneMinuteTier = isA0 || ["A1", "B1"].includes((context.level ?? "").toUpperCase());
   const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = isOneMinuteTier
     ? [100, 190, 115, 170]
     : [180, 320, 220, 280];

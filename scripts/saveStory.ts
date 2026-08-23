@@ -399,7 +399,16 @@ function slugify(s: string): string {
       // sintagma que dice qué es), ese bloque no puede llevar habla citada.
       // Abrir directamente con diálogo es legítimo y no dispara nada.
       const primerBloque = blocks[0] ?? "";
-      const presenta = /\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+,\s+(um|uma)\s+\w+|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+\s+é\s+(um|uma)\s+\w+/.test(primerBloque);
+      //
+      // El patron llevaba solo el portugues (`um/uma`, `é`), asi que sobre un
+      // cuerpo espanol no media nada y pasaba en vacio: el mismo agujero de
+      // idioma que documenta validateJourneyStories. En espanol la aposicion
+      // va casi siempre con articulo DEFINIDO ("Rocio, la vecina de arriba"),
+      // que es la forma que el A1 de Espana usa en las 21. Anadido el
+      // 2026-08-23 al abrir el primer journey ES que pasa por este perfil.
+      const presenta =
+        /\b[A-ZÁÉÍÓÚÂÊÔÃÕÇÑ][a-záéíóúâêôãõçñ]+,\s+(um|uma)\s+\w+|\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][a-záéíóúâêôãõç]+\s+é\s+(um|uma)\s+\w+/.test(primerBloque) ||
+        /\b[A-ZÁÉÍÓÚÑ][a-záéíóúñü]+,\s+(el|la|un|una)\s+\w+|\b[A-ZÁÉÍÓÚÑ][a-záéíóúñü]+\s+es\s+(el|la|un|una)\s+\w+/.test(primerBloque);
       if (presenta && /[“”]/.test(primerBloque)) {
         hardFails.push({
           id: "narrator-intro-block-shared", label: "", status: "fail",

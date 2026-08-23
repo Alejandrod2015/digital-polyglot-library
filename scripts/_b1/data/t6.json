@@ -1,0 +1,354 @@
+[
+ {
+  "topic": "deals-and-estimates",
+  "slotIndex": 1,
+  "title": "El albañil da un número",
+  "slug": "el-albanil-da-un-numero",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Sube al terrado un albañil de Frigiliana con un metro y una varilla, y en veinte minutos deshace lo que Irene llevaba tres meses creyendo. La mancha del techo no es una mancha: es una capa entera que hay que levantar, con losas, ladrillo y cemento nuevo. El número que suelta al final no lleva rango ni descuento, y va con una condición que ella no esperaba.",
+  "text": "Julián, un albañil de Frigiliana, sube al terrado con Irene detrás. Trae un metro de tela, una varilla y un martillo pequeño. Golpea tres losas y escucha el sonido de cada una.\n\n“Esto no es una mancha, guapa, esto es la capa entera”, dice. “Debajo de la baldosa hay cemento viejo y ya no agarra”. Irene mide con él y apunta los centímetros de profundidad.\n\nJulián le enseña el orden de la obra con las manos. Primero levantar el azulejo, luego lijar, luego cemento y ladrillo. Después hay que pulir, esperar dos días y tapar la tapia.\n\n“El fontanero entra un rato y el carpintero ni te cuento”. “Con la sierra hago yo lo que haga falta”. Ella esperaba un rango de precios y él da un número redondo.\n\nEl nivel del suelo está caído desde antes de la guerra. “Y una condición, que si no, no subo: que estemos los cinco”. Irene baja con el número escrito en la palma de la mano.",
+  "vocab": [
+   {
+    "word": "albañil",
+    "type": "noun",
+    "definition": "Builder; the worker who lays bricks and mends walls and roofs."
+   },
+   {
+    "word": "tela",
+    "type": "noun",
+    "definition": "Cloth; woven material, here the soft band of the tape measure."
+   },
+   {
+    "word": "varilla",
+    "type": "noun",
+    "definition": "Rod; the thin straight metal stick a builder pokes things with."
+   },
+   {
+    "word": "martillo",
+    "type": "noun",
+    "definition": "Hammer; the tool with a heavy head for hitting nails."
+   },
+   {
+    "word": "losa",
+    "type": "noun",
+    "surface": "losas",
+    "definition": "Slab; the wide flat stone piece that covers a floor or roof."
+   },
+   {
+    "word": "capa",
+    "type": "noun",
+    "definition": "Layer; one flat level of material lying on top of another."
+   },
+   {
+    "word": "baldosa",
+    "type": "noun",
+    "definition": "Floor tile; the square piece that covers a floor or a terrace."
+   },
+   {
+    "word": "cemento",
+    "type": "noun",
+    "definition": "Cement; the grey powder that goes hard and holds stones together."
+   },
+   {
+    "word": "centímetro",
+    "type": "noun",
+    "surface": "centímetros",
+    "definition": "Centimetre; a small unit of length, a hundred of them in a metre."
+   },
+   {
+    "word": "profundidad",
+    "type": "noun",
+    "definition": "Depth; how deep a hole or a layer goes down."
+   },
+   {
+    "word": "azulejo",
+    "type": "noun",
+    "definition": "Wall tile; the shiny square piece that covers a wall."
+   },
+   {
+    "word": "lijar",
+    "type": "verb",
+    "definition": "To sand; to rub a surface with rough paper to make it smooth."
+   },
+   {
+    "word": "ladrillo",
+    "type": "noun",
+    "definition": "Brick; the small hard block of baked clay walls are built with."
+   },
+   {
+    "word": "pulir",
+    "type": "verb",
+    "definition": "To polish; to rub a hard surface until it is smooth and shiny."
+   },
+   {
+    "word": "tapia",
+    "type": "noun",
+    "definition": "Low wall; the wall around a roof terrace or a garden."
+   },
+   {
+    "word": "fontanero",
+    "type": "noun",
+    "definition": "Plumber; the worker who mends pipes and taps."
+   },
+   {
+    "word": "carpintero",
+    "type": "noun",
+    "definition": "Carpenter; the worker who makes and mends things out of wood."
+   },
+   {
+    "word": "sierra",
+    "type": "noun",
+    "definition": "Saw; the tool with sharp teeth for cutting wood or metal."
+   },
+   {
+    "word": "nivel",
+    "type": "noun",
+    "definition": "Level; how flat a surface is, or how high it stands."
+   },
+   {
+    "word": "rango",
+    "type": "noun",
+    "definition": "Range; the space between a lowest price and a highest one."
+   },
+   {
+    "word": "palma",
+    "type": "noun",
+    "definition": "Palm; the inside of your hand, where you can write a number."
+   }
+  ]
+ },
+ {
+  "topic": "deals-and-estimates",
+  "slotIndex": 2,
+  "title": "Cada uno dice lo suyo",
+  "slug": "cada-uno-dice-lo-suyo",
+  "arcType": "recurring-character-callback",
+  "synopsis": "La lista de cinco nombres que apareció por debajo de una puerta deja de ser una lista la noche en que las cinco sillas se llenan por primera vez desde el verano. Cada propietario dice en voz alta lo que puede poner y en cuántas veces, y lo que se oye no son cifras sino cinco situaciones distintas. Uno calla y mira su saldo, y ese silencio es el que Irene se lleva a casa.",
+  "text": "En el bajo de Rosa huele a horno apagado y caben cinco sillas. Marta hace de presidenta y trae el total escrito arriba del todo. Rosa apunta como secretaria en el registro de la comunidad.\n\n“El proveedor nos hace una buena rebaja si pagamos la mitad ahora”. “Y el resto en tres veces, pero sin cheque y sin crédito”. Cada miembro dice por turno lo que puede poner.\n\n“Yo pido un préstamo pequeño y ya está, sin ningún drama”, dice Marta. Rosa dice que ella no llega, que su porcentaje tendrá que esperar. Nico habla por su madre y calcula la suma en voz baja.\n\nEl del bajo aparece por fin, con el impuesto del año sin pagar. Quique no dice ni una cifra y mira el saldo del móvil. “¿Lo votamos ya, o seguimos negociando y no acabamos?”, pregunta Marta.\n\nLa aprobación sale adelante con una minoría muy corta. La votación no es unánime, pero es votación. Irene levanta la mano y se ve dentro de la lista.",
+  "vocab": [
+   {
+    "word": "total",
+    "type": "noun",
+    "definition": "Total; the whole amount once everything is added up."
+   },
+   {
+    "word": "secretaria",
+    "type": "noun",
+    "definition": "Secretary; the person who writes down what a meeting decides."
+   },
+   {
+    "word": "proveedor",
+    "type": "noun",
+    "definition": "Supplier; the company that sells you the materials you need."
+   },
+   {
+    "word": "rebaja",
+    "type": "noun",
+    "definition": "Reduction; money taken off a price to make you buy."
+   },
+   {
+    "word": "cheque",
+    "type": "noun",
+    "definition": "Cheque; the signed paper you can use instead of cash."
+   },
+   {
+    "word": "crédito",
+    "type": "noun",
+    "definition": "Credit; money a bank lends you that you pay back slowly."
+   },
+   {
+    "word": "miembro",
+    "type": "noun",
+    "definition": "Member; one of the people who belong to a group."
+   },
+   {
+    "word": "préstamo",
+    "type": "noun",
+    "definition": "Loan; money you borrow now and give back later."
+   },
+   {
+    "word": "porcentaje",
+    "type": "noun",
+    "definition": "Percentage; the share of the total that falls to one person."
+   },
+   {
+    "word": "suma",
+    "type": "noun",
+    "definition": "Sum; the number you get when you add all the parts."
+   },
+   {
+    "word": "impuesto",
+    "type": "noun",
+    "definition": "Tax; the money everybody has to pay to the state."
+   },
+   {
+    "word": "saldo",
+    "type": "noun",
+    "definition": "Balance; the money that is left in an account right now."
+   },
+   {
+    "word": "aprobación",
+    "type": "noun",
+    "definition": "Approval; the moment a group says yes to a plan."
+   },
+   {
+    "word": "minoría",
+    "type": "noun",
+    "definition": "Minority; the smaller group when a vote is counted."
+   },
+   {
+    "word": "negociar",
+    "type": "verb",
+    "surface": "negociando",
+    "definition": "To negotiate; to talk about a price until both sides agree."
+   },
+   {
+    "word": "votación",
+    "type": "noun",
+    "definition": "Vote; the act of counting who is for and who is against."
+   },
+   {
+    "word": "unánime",
+    "type": "adjective",
+    "definition": "Unanimous; with every single person agreeing on the same thing."
+   },
+   {
+    "word": "presidente",
+    "type": "noun",
+    "surface": "presidenta",
+    "definition": "Chair; the person who runs a meeting and gives out the turns."
+   },
+   {
+    "word": "registro",
+    "type": "noun",
+    "definition": "Record book; the book where a group writes down what it decides."
+   },
+   {
+    "word": "drama",
+    "type": "noun",
+    "definition": "Fuss; making a big thing out of something small."
+   }
+  ]
+ },
+ {
+  "topic": "deals-and-estimates",
+  "slotIndex": 3,
+  "title": "La suma no le sale",
+  "slug": "la-suma-no-le-sale",
+  "arcType": "daily-encounter",
+  "synopsis": "Irene tiene el dinero entero parado en una cuenta y una solución evidente en la cabeza, así que la dice en voz alta creyendo que resuelve algo. Lo que se le viene encima no es el agradecimiento que esperaba ni tampoco el desprecio que temía, sino un silencio que ninguno de los cinco rompe. Rocío se lo traduce después, y la palabra que usa no es ayuda.",
+  "text": "Irene hace números en la barra fría, con una obligación pendiente y Rocío al lado. Con lo que ha puesto cada uno, la obra no empieza. Tiene el resto en una cuenta humilde y no le debe nada a nadie.\n\n“Lo pongo yo entero y en mayo me lo devolvéis, sin prisa”, dice. “Y no es caridad ni ningún sacrificio: es que lo tengo quieto”, insiste. Quique deja el vaso y no rechaza la oferta.\n\nSe hace un incómodo que ella no sabe dónde poner. Rosa mira a Marta con una reserva rara y Marta mira fuera. El desprecio que esperaba no llega, y la negativa tampoco.\n\n“Guapa, eso no es solidaridad, eso se parece a la compasión”. “Y lo solidario se admite; lo otro, no”, le dice Rocío. Lo que hay en la barra es una dignidad callada.\n\nSu oferta rompe una igualdad que nadie había nombrado. Sensata o imprudente, tiene una consecuencia que no calculó. Irene guarda el papel, evita insistir y se queda con el privilegio.",
+  "vocab": [
+   {
+    "word": "obligación",
+    "type": "noun",
+    "definition": "Duty; something you feel you have to do for others."
+   },
+   {
+    "word": "humilde",
+    "type": "adjective",
+    "definition": "Modest; small and plain, without anything showy about it."
+   },
+   {
+    "word": "deber",
+    "type": "verb",
+    "surface": "debe",
+    "definition": "To owe; to have to give money or a favour back."
+   },
+   {
+    "word": "caridad",
+    "type": "noun",
+    "definition": "Charity; money given to people you think cannot manage."
+   },
+   {
+    "word": "sacrificio",
+    "type": "noun",
+    "definition": "Sacrifice; giving up something of yours so others are better off."
+   },
+   {
+    "word": "quieto",
+    "type": "adjective",
+    "definition": "Still; not being used and not moving at all."
+   },
+   {
+    "word": "rechazar",
+    "type": "verb",
+    "surface": "rechaza",
+    "definition": "To turn down; to say no to what somebody offers you."
+   },
+   {
+    "word": "incómodo",
+    "type": "noun",
+    "definition": "Awkwardness; the uneasy silence after somebody says the wrong thing."
+   },
+   {
+    "word": "reserva",
+    "type": "noun",
+    "definition": "Reserve; holding back instead of saying what you feel."
+   },
+   {
+    "word": "desprecio",
+    "type": "noun",
+    "definition": "Contempt; the cold way of looking down on somebody."
+   },
+   {
+    "word": "negativa",
+    "type": "noun",
+    "definition": "Refusal; a clear no to what has been offered."
+   },
+   {
+    "word": "compasión",
+    "type": "noun",
+    "definition": "Pity; feeling sorry for somebody who has less than you."
+   },
+   {
+    "word": "solidario",
+    "type": "adjective",
+    "definition": "In solidarity; standing with others as an equal, not above them."
+   },
+   {
+    "word": "admitir",
+    "type": "verb",
+    "surface": "admite",
+    "definition": "To accept; to take what is offered without feeling small."
+   },
+   {
+    "word": "dignidad",
+    "type": "noun",
+    "definition": "Dignity; the quiet pride that stops you taking a hand-out."
+   },
+   {
+    "word": "igualdad",
+    "type": "noun",
+    "definition": "Equality; everybody standing on the same level in a group."
+   },
+   {
+    "word": "sensato",
+    "type": "adjective",
+    "surface": "Sensata",
+    "definition": "Sensible; showing good sense about what will really work."
+   },
+   {
+    "word": "imprudente",
+    "type": "adjective",
+    "definition": "Reckless; done without thinking how it will land on others."
+   },
+   {
+    "word": "consecuencia",
+    "type": "noun",
+    "definition": "Consequence; what happens later because of what you did."
+   },
+   {
+    "word": "evitar",
+    "type": "verb",
+    "surface": "evita",
+    "definition": "To avoid; to keep away from doing a thing on purpose."
+   },
+   {
+    "word": "privilegio",
+    "type": "noun",
+    "definition": "Privilege; an advantage you have and the others do not."
+   }
+  ]
+ }
+]
