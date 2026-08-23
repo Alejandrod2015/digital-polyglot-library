@@ -1,241 +1,94 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Korb,der Zaun,der Apfelbaum,die Hand",
+  "word": "die Rebe,der Hang,der Apfelbaum,das Glas",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "der Korb",
-     "answer": "a basket",
+     "word": "die Rebe",
+     "answer": "a vine",
      "options": [
-      "a basket",
-      "a fence",
+      "a vine",
+      "a slope",
       "an apple tree",
-      "a hand"
+      "a drinking glass"
      ]
     },
     {
-     "word": "der Zaun",
-     "answer": "a fence",
+     "word": "der Hang",
+     "answer": "a slope",
      "options": [
-      "a basket",
-      "a fence",
+      "a vine",
+      "a slope",
       "an apple tree",
-      "a hand"
+      "a drinking glass"
      ]
     },
     {
      "word": "der Apfelbaum",
      "answer": "an apple tree",
      "options": [
-      "a basket",
-      "a fence",
+      "a vine",
+      "a slope",
       "an apple tree",
-      "a hand"
+      "a drinking glass"
      ]
     },
     {
-     "word": "die Hand",
-     "answer": "a hand",
+     "word": "das Glas",
+     "answer": "a drinking glass",
      "options": [
-      "a basket",
-      "a fence",
+      "a vine",
+      "a slope",
       "an apple tree",
-      "a hand"
+      "a drinking glass"
      ]
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Hang",
-  "sentence": "Der Garten liegt hoch am [[Hang]] über dem See.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a slope",
-   "options": [
-    "a slope",
-    "a valley",
-    "a beach",
-    "a bridge"
-   ],
-   "audioClip": {
-    "storySlug": "emilias-garten-in-meersburg",
-    "storySource": "user",
-    "sentence": "Der Garten liegt hoch am Hang über dem See.",
-    "targetWord": "Hang",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Rebe",
-  "sentence": "[[Reben]] wachsen dort in langen, geraden Reihen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "vines",
-   "options": [
-    "vines",
-    "roses",
-    "potatoes",
-    "olive trees"
-   ],
-   "audioClip": {
-    "storySlug": "emilias-garten-in-meersburg",
-    "storySource": "user",
-    "sentence": "Reben wachsen dort in langen, geraden Reihen.",
-    "targetWord": "Reben",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Reihe",
-  "sentence": "Die Reben stehen in langen, geraden [[Reihen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "rows",
-   "options": [
-    "rows",
-    "circles",
-    "piles",
-    "corners"
-   ],
-   "audioClip": {
-    "storySlug": "emilias-garten-in-meersburg",
-    "storySource": "user",
-    "sentence": "Die Reben stehen in langen, geraden Reihen.",
-    "targetWord": "Reihen",
-    "language": "german"
-   }
+   ]
   }
  },
  {
   "type": "meaning_in_context",
   "word": "der Zweig",
-  "sentence": "Sie schneidet die alten [[Zweige]] von den Reben.",
+  "sentence": "Emilia schneidet heute die alten [[Zweige]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "branches",
+   "answer": "a branch",
    "options": [
-    "branches",
-    "roots",
-    "leaves",
-    "fruits"
+    "a branch",
+    "a root",
+    "a stone",
+    "a rope"
    ],
    "audioClip": {
     "storySlug": "emilias-garten-in-meersburg",
     "storySource": "user",
-    "sentence": "Sie schneidet die alten Zweige von den Reben.",
+    "sentence": "Emilia schneidet heute die alten Zweige.",
     "targetWord": "Zweige",
     "language": "german"
    }
   }
  },
  {
-  "type": "fill_blank",
-  "word": "sammelt",
-  "sentence": "Sie nimmt einen Korb und _____ die alten Zweige.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "sammelt",
-   "options": [
-    "sammelt",
-    "zieht",
-    "legt",
-    "repariert"
-   ],
-   "translation": "She takes a basket and _____ the old branches.",
-   "optionTranslations": [
-    "collects",
-    "pulls",
-    "puts",
-    "repairs"
-   ],
-   "audioClip": {
-    "storySlug": "emilias-garten-in-meersburg",
-    "storySource": "user",
-    "sentence": "Sie nimmt einen Korb und sammelt die alten Zweige.",
-    "targetWord": "sammelt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "repariert",
-  "sentence": "Er nimmt Holz und _____ den alten Zaun am Weg.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "repariert",
-   "options": [
-    "repariert",
-    "deckt",
-    "bindet",
-    "sammelt"
-   ],
-   "translation": "He takes wood and _____ the old fence by the path.",
-   "optionTranslations": [
-    "repairs",
-    "sets the table",
-    "ties",
-    "collects"
-   ],
-   "audioClip": {
-    "storySlug": "emilias-garten-in-meersburg",
-    "storySource": "user",
-    "sentence": "Er nimmt Holz und repariert den alten Zaun am Weg.",
-    "targetWord": "repariert",
-    "language": "german"
-   }
-  }
- },
- {
   "type": "meaning_in_context",
-  "word": "der Fisch",
-  "sentence": "Auf dem Tisch stehen Brot und frischer [[Fisch]] aus dem See.",
+  "word": "der Korb",
+  "sentence": "Hannah sammelt sie in einem [[Korb]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "fish",
+   "answer": "a basket",
    "options": [
-    "fish",
-    "cheese",
-    "chicken",
-    "rice"
+    "a basket",
+    "a bucket",
+    "a box",
+    "a bag"
    ],
    "audioClip": {
     "storySlug": "emilias-garten-in-meersburg",
     "storySource": "user",
-    "sentence": "Auf dem Tisch stehen Brot und frischer Fisch aus dem See.",
-    "targetWord": "Fisch",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "wachsen",
-  "sentence": "Die Reben [[wachsen]] hier seit vielen Jahren gut.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to grow",
-   "options": [
-    "to grow",
-    "to fall",
-    "to dry",
-    "to burn"
-   ],
-   "audioClip": {
-    "storySlug": "emilias-garten-in-meersburg",
-    "storySource": "user",
-    "sentence": "Die Reben wachsen hier seit vielen Jahren gut.",
-    "targetWord": "wachsen",
+    "sentence": "Hannah sammelt sie in einem Korb.",
+    "targetWord": "Korb",
     "language": "german"
    }
   }
@@ -243,20 +96,20 @@
  {
   "type": "meaning_in_context",
   "word": "der Most",
-  "sentence": "Auf dem Tisch stehen Brot, Fisch und kalter [[Most]].",
+  "sentence": "Der [[Most]] schmeckt süß und sauer.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "must, pressed apple drink",
+   "answer": "cider",
    "options": [
-    "must, pressed apple drink",
-    "hot coffee",
-    "fresh milk",
-    "dark beer"
+    "cider",
+    "beer",
+    "milk",
+    "coffee"
    ],
    "audioClip": {
     "storySlug": "emilias-garten-in-meersburg",
     "storySource": "user",
-    "sentence": "Auf dem Tisch stehen Brot, Fisch und kalter Most.",
+    "sentence": "Der Most schmeckt süß und sauer.",
     "targetWord": "Most",
     "language": "german"
    }
@@ -264,160 +117,168 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Monat",
-  "sentence": "Sie verspricht, jeden [[Monat]] mit der Fähre zu kommen.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a month",
-   "options": [
-    "a month",
-    "a week",
-    "a year",
-    "a day"
-   ],
-   "audioClip": {
-    "storySlug": "emilias-garten-in-meersburg",
-    "storySource": "user",
-    "sentence": "Sie verspricht, jeden Monat mit der Fähre zu kommen.",
-    "targetWord": "Monat",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "jeden",
-  "sentence": "Sie kommt [[jeden]] Monat mit der Fähre über den See.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "every",
-   "options": [
-    "every",
-    "some",
-    "no",
-    "many"
-   ],
-   "audioClip": {
-    "storySlug": "emilias-garten-in-meersburg",
-    "storySource": "user",
-    "sentence": "Sie kommt jeden Monat mit der Fähre über den See.",
-    "targetWord": "jeden",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
   "word": "die Luft",
-  "sentence": "Die [[Luft]] hier oben am Hang ist warm und gut.",
+  "sentence": "Die [[Luft]] hier ist gut.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "air",
    "options": [
     "air",
     "water",
-    "earth",
+    "bread",
     "light"
    ],
    "audioClip": {
     "storySlug": "emilias-garten-in-meersburg",
     "storySource": "user",
-    "sentence": "Die Luft hier oben am Hang ist warm und gut.",
+    "sentence": "Die Luft hier ist gut.",
     "targetWord": "Luft",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
-  "word": "bleiben",
-  "sentence": "[[Bleibt]] doch eine Woche.",
+  "word": "das Brot",
+  "sentence": "[[Brot]], frischer Fisch aus dem See und kalter Most.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "to stay in a place",
+   "answer": "bread",
    "options": [
-    "to stay in a place",
-    "to leave a place",
-    "to reach a place",
-    "to look for a place"
+    "bread",
+    "cheese",
+    "meat",
+    "rice"
    ],
    "audioClip": {
     "storySlug": "emilias-garten-in-meersburg",
     "storySource": "user",
-    "sentence": "Bleibt doch eine Woche.",
-    "targetWord": "bleibt",
+    "sentence": "Brot, frischer Fisch aus dem See und kalter Most.",
+    "targetWord": "Brot",
     "language": "german"
    }
-  },
-  "featured": false
+  }
  },
  {
   "type": "meaning_in_context",
-  "word": "das Wasser",
-  "sentence": "Die Sonne liegt flach über dem [[Wasser]], und alles glänzt golden.",
+  "word": "die Fähre",
+  "sentence": "Ich komme jeden Monat mit der [[Fähre]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "water",
+   "answer": "a ferry",
    "options": [
-    "water",
-    "land",
-    "sky",
-    "sand"
-   ],
-   "audioClip": {
-    "storySlug": "emilias-garten-in-meersburg",
-    "storySource": "user",
-    "sentence": "Die Sonne liegt flach über dem Wasser, und alles glänzt golden.",
-    "targetWord": "Wasser",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "antworten",
-  "sentence": "Ich komme jeden Monat, [[antwortet]] sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to answer",
-   "options": [
-    "to answer",
-    "to ask",
-    "to shout",
-    "to whisper"
-   ],
-   "audioClip": {
-    "storySlug": "emilias-garten-in-meersburg",
-    "storySource": "user",
-    "sentence": "Ich komme jeden Monat, antwortet sie.",
-    "targetWord": "antwortet",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Zug",
-  "sentence": "Jeden Monat, sagt er im [[Zug]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a train",
-   "options": [
-    "a train",
+    "a ferry",
     "a bus",
-    "a boat",
-    "a bicycle"
+    "a bike",
+    "a plane"
    ],
    "audioClip": {
     "storySlug": "emilias-garten-in-meersburg",
     "storySource": "user",
-    "sentence": "Jeden Monat, sagt er im Zug.",
-    "targetWord": "Zug",
+    "sentence": "Ich komme jeden Monat mit der Fähre.",
+    "targetWord": "Fähre",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sammeln",
+  "sentence": "Hannah [[sammelt]] sie in einem Korb.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to gather",
+   "options": [
+    "to gather",
+    "to throw",
+    "to plant",
+    "to count"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Hannah sammelt sie in einem Korb.",
+    "targetWord": "sammelt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "Monat",
+  "sentence": "Ich komme jeden _____ mit der Fähre.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Monat",
+   "options": [
+    "Monat",
+    "Tag",
+    "Winter",
+    "Abend"
+   ],
+   "translation": "I come every _____ by ferry.",
+   "optionTranslations": [
+    "month",
+    "day",
+    "winter",
+    "evening"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Ich komme jeden Monat mit der Fähre.",
+    "targetWord": "Monat",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "füllt",
+  "sentence": "Emilia _____ drei Gläser mit Most.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "füllt",
+   "options": [
+    "füllt",
+    "trinkt",
+    "kauft",
+    "bringt"
+   ],
+   "translation": "Emilia _____ three glasses with cider.",
+   "optionTranslations": [
+    "fills",
+    "drinks",
+    "buys",
+    "brings"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Emilia füllt drei Gläser mit Most.",
+    "targetWord": "füllt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Zaun",
+  "sentence": "Elias repariert den [[Zaun]] am Rand.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a fence",
+   "options": [
+    "a fence",
+    "a wall",
+    "a gate",
+    "a path"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Elias repariert den Zaun am Rand.",
+    "targetWord": "Zaun",
     "language": "german"
    }
   },
@@ -425,22 +286,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "legen",
-  "sentence": "Sie [[legt]] ihr einen Schlüssel in die Hand.",
+  "word": "die Reihe",
+  "sentence": "Sie stehen in langen, geraden [[Reihen]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "to lay something down",
+   "answer": "a row",
    "options": [
-    "to lay something down",
-    "to pick something up",
-    "to throw something",
-    "to buy something"
+    "a row",
+    "a circle",
+    "a pile",
+    "a corner"
    ],
    "audioClip": {
     "storySlug": "emilias-garten-in-meersburg",
     "storySource": "user",
-    "sentence": "Sie legt ihr einen Schlüssel in die Hand.",
-    "targetWord": "legt",
+    "sentence": "Sie stehen in langen, geraden Reihen.",
+    "targetWord": "Reihen",
     "language": "german"
    }
   },
@@ -448,22 +309,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Tisch",
-  "sentence": "Alle drei decken am Mittag den [[Tisch]] unter dem Apfelbaum: Brot.",
+  "word": "der Fisch",
+  "sentence": "Brot, frischer [[Fisch]] aus dem See und kalter Most.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a table",
+   "answer": "a fish",
    "options": [
-    "a table",
-    "a chair",
-    "a shelf",
-    "a bed"
+    "a fish",
+    "a bird",
+    "a lamb",
+    "an egg"
    ],
    "audioClip": {
     "storySlug": "emilias-garten-in-meersburg",
     "storySource": "user",
-    "sentence": "Alle drei decken am Mittag den Tisch unter dem Apfelbaum: Brot.",
-    "targetWord": "Tisch",
+    "sentence": "Brot, frischer Fisch aus dem See und kalter Most.",
+    "targetWord": "Fisch",
     "language": "german"
    }
   },
@@ -471,45 +332,112 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der See",
-  "sentence": "Reben wachsen am Hang über dem [[See]].",
+  "word": "reparieren",
+  "sentence": "Elias [[repariert]] den Zaun am Rand.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a lake",
+   "answer": "to mend",
    "options": [
-    "a lake",
-    "a river",
-    "a canal",
-    "a well"
+    "to mend",
+    "to build",
+    "to paint",
+    "to sell"
    ],
    "audioClip": {
     "storySlug": "emilias-garten-in-meersburg",
     "storySource": "user",
-    "sentence": "Reben wachsen am Hang über dem See.",
-    "targetWord": "See",
+    "sentence": "Elias repariert den Zaun am Rand.",
+    "targetWord": "repariert",
     "language": "german"
    }
   },
   "featured": false
  },
  {
-  "type": "meaning_in_context",
-  "word": "die Stunde",
-  "sentence": "Sechs [[Stunden]].",
+  "type": "fill_blank",
+  "word": "schließt",
+  "sentence": "Hannah _____ die Hand um den Schlüssel.",
   "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hours",
+   "prompt": "Complete the sentence.",
+   "answer": "schließt",
    "options": [
-    "hours",
-    "minutes",
-    "days",
-    "weeks"
+    "schließt",
+    "öffnet",
+    "hebt",
+    "wäscht"
+   ],
+   "translation": "Hannah _____ her hand around the key.",
+   "optionTranslations": [
+    "closes",
+    "opens",
+    "lifts",
+    "washes"
    ],
    "audioClip": {
     "storySlug": "emilias-garten-in-meersburg",
     "storySource": "user",
-    "sentence": "Sechs Stunden.",
-    "targetWord": "Stunden",
+    "sentence": "Hannah schließt die Hand um den Schlüssel.",
+    "targetWord": "schließt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "süß",
+  "sentence": "Der Most schmeckt _____ und sauer.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "süß",
+   "options": [
+    "süß",
+    "salzig",
+    "scharf",
+    "bitter"
+   ],
+   "translation": "The cider tastes _____ and sour.",
+   "optionTranslations": [
+    "sweet",
+    "salty",
+    "hot",
+    "bitter"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Der Most schmeckt süß und sauer.",
+    "targetWord": "süß",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sauer",
+  "sentence": "Der Most schmeckt süß und _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sauer",
+   "options": [
+    "sauer",
+    "warm",
+    "weich",
+    "frisch"
+   ],
+   "translation": "The cider tastes sweet and _____.",
+   "optionTranslations": [
+    "sour",
+    "warm",
+    "soft",
+    "fresh"
+   ],
+   "audioClip": {
+    "storySlug": "emilias-garten-in-meersburg",
+    "storySource": "user",
+    "sentence": "Der Most schmeckt süß und sauer.",
+    "targetWord": "sauer",
     "language": "german"
    }
   },

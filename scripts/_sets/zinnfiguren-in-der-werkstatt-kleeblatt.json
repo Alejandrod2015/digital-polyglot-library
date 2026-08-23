@@ -1,72 +1,71 @@
 [
  {
   "type": "match_meaning",
-  "word": "die Zinnfigur,das Kleeblatt,der Ritter,der Tisch",
+  "word": "das Kleeblatt,die Zinnfigur,die Ritterfigur,die Sachen",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "die Zinnfigur",
-     "answer": "pewter figures",
-     "options": [
-      "pewter figures",
-      "a clover leaf",
-      "a knight",
-      "a table"
-     ]
-    },
-    {
      "word": "das Kleeblatt",
      "answer": "a clover leaf",
      "options": [
-      "pewter figures",
       "a clover leaf",
-      "a knight",
-      "a table"
+      "a pewter figure",
+      "a knight figure",
+      "things, skills"
      ]
     },
     {
-     "word": "der Ritter",
-     "answer": "a knight",
+     "word": "die Zinnfigur",
+     "answer": "a pewter figure",
      "options": [
-      "pewter figures",
       "a clover leaf",
-      "a knight",
-      "a table"
+      "a pewter figure",
+      "a knight figure",
+      "things, skills"
      ]
     },
     {
-     "word": "der Tisch",
-     "answer": "a table",
+     "word": "die Ritterfigur",
+     "answer": "a knight figure",
      "options": [
-      "pewter figures",
       "a clover leaf",
-      "a knight",
-      "a table"
+      "a pewter figure",
+      "a knight figure",
+      "things, skills"
+     ]
+    },
+    {
+     "word": "die Sachen",
+     "answer": "things, skills",
+     "options": [
+      "a clover leaf",
+      "a pewter figure",
+      "a knight figure",
+      "things, skills"
      ]
     }
-   ],
-   "audioClip": null
+   ]
   }
  },
  {
   "type": "meaning_in_context",
   "word": "der Handwerker",
-  "sentence": "Ein alter [[Handwerker]] gießt drinnen kleine Figuren.",
+  "sentence": "Ein [[Handwerker]] gießt drinnen kleine Zinnfiguren.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a craftsman",
    "options": [
     "a craftsman",
-    "a shopkeeper",
     "a customer",
-    "a teacher"
+    "a driver",
+    "a waiter"
    ],
    "audioClip": {
     "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
     "storySource": "user",
-    "sentence": "Ein alter Handwerker gießt drinnen kleine Figuren.",
+    "sentence": "Ein Handwerker gießt drinnen kleine Zinnfiguren.",
     "targetWord": "Handwerker",
     "language": "german"
    }
@@ -82,8 +81,8 @@
    "options": [
     "metal",
     "water",
-    "wax",
-    "oil"
+    "oil",
+    "wax"
    ],
    "audioClip": {
     "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
@@ -95,29 +94,110 @@
   }
  },
  {
-  "type": "fill_blank",
-  "word": "gießt",
-  "sentence": "Er nimmt die Pfanne und _____ das heiße Metall.",
+  "type": "meaning_in_context",
+  "word": "die Form",
+  "sentence": "Er füllt es vorsichtig in eine [[Form]] aus Stein.",
   "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "gießt",
+   "prompt": "Choose the meaning in context.",
+   "answer": "a mould",
    "options": [
-    "gießt",
-    "nickt",
-    "zieht",
-    "hängt"
-   ],
-   "translation": "He takes the pan and _____ the hot metal.",
-   "optionTranslations": [
-    "pours",
-    "nods",
-    "pulls",
-    "hangs"
+    "a mould",
+    "a box",
+    "a bag",
+    "a cup"
    ],
    "audioClip": {
     "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
     "storySource": "user",
-    "sentence": "Er nimmt die Pfanne und gießt das heiße Metall.",
+    "sentence": "Er füllt es vorsichtig in eine Form aus Stein.",
+    "targetWord": "Form",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Frühling",
+  "sentence": "Dann nimm den Laden. Im [[Frühling]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "spring",
+   "options": [
+    "spring",
+    "autumn",
+    "winter",
+    "summer"
+   ],
+   "audioClip": {
+    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
+    "storySource": "user",
+    "sentence": "Dann nimm den Laden. Im Frühling.",
+    "targetWord": "Frühling",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "feilen",
+  "sentence": "Er [[feilt]] die Kanten und malt sie später.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to file smooth",
+   "options": [
+    "to file smooth",
+    "to break",
+    "to weigh",
+    "to wrap"
+   ],
+   "audioClip": {
+    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
+    "storySource": "user",
+    "sentence": "Er feilt die Kanten und malt sie später.",
+    "targetWord": "feilt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vergessen",
+  "sentence": "Schon gut. [[Vergiss]] es.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to forget",
+   "options": [
+    "to forget",
+    "to repeat",
+    "to promise",
+    "to explain"
+   ],
+   "audioClip": {
+    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
+    "storySource": "user",
+    "sentence": "Schon gut. Vergiss es.",
+    "targetWord": "Vergiss",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "gießen",
+  "sentence": "Ein Handwerker [[gießt]] drinnen kleine Zinnfiguren.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to cast metal",
+   "options": [
+    "to cast metal",
+    "to carve wood",
+    "to bake bread",
+    "to sew cloth"
+   ],
+   "audioClip": {
+    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
+    "storySource": "user",
+    "sentence": "Ein Handwerker gießt drinnen kleine Zinnfiguren.",
     "targetWord": "gießt",
     "language": "german"
    }
@@ -125,28 +205,57 @@
  },
  {
   "type": "fill_blank",
+  "word": "füllt",
+  "sentence": "Er _____ das Metall vorsichtig in die Form.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "füllt",
+   "options": [
+    "füllt",
+    "wäscht",
+    "trägt",
+    "zeigt"
+   ],
+   "translation": "He _____ the metal carefully into the mould.",
+   "optionTranslations": [
+    "fills",
+    "washes",
+    "carries",
+    "shows"
+   ],
+   "audioClip": {
+    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
+    "storySource": "user",
+    "sentence": "Er füllt das Metall vorsichtig in die Form.",
+    "targetWord": "füllt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
   "word": "flüssig",
-  "sentence": "Das Metall wird im Feuer sehr heiß und _____.",
+  "sentence": "Das heiße Metall in der Pfanne ist _____.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "flüssig",
    "options": [
     "flüssig",
-    "winzig",
-    "älter",
-    "leise"
+    "hart",
+    "kalt",
+    "trocken"
    ],
-   "translation": "In the fire the metal becomes very hot and _____.",
+   "translation": "The hot metal in the pan is _____.",
    "optionTranslations": [
     "liquid",
-    "tiny",
-    "older",
-    "quiet"
+    "hard",
+    "cold",
+    "dry"
    ],
    "audioClip": {
     "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
     "storySource": "user",
-    "sentence": "Das Metall wird im Feuer sehr heiß und flüssig.",
+    "sentence": "Das heiße Metall in der Pfanne ist flüssig.",
     "targetWord": "flüssig",
     "language": "german"
    }
@@ -154,316 +263,181 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Minute",
-  "sentence": "Er öffnet die Form nach wenigen [[Minuten]].",
+  "word": "die Kante",
+  "sentence": "Er feilt die [[Kanten]] und malt sie später.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "minutes",
+   "answer": "an edge",
    "options": [
-    "minutes",
-    "hours",
-    "days",
-    "weeks"
+    "an edge",
+    "a handle",
+    "a corner",
+    "a hole"
    ],
    "audioClip": {
     "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
     "storySource": "user",
-    "sentence": "Er öffnet die Form nach wenigen Minuten.",
-    "targetWord": "Minuten",
+    "sentence": "Er feilt die Kanten und malt sie später.",
+    "targetWord": "Kanten",
     "language": "german"
    }
-  }
+  },
+  "featured": false
  },
  {
   "type": "meaning_in_context",
-  "word": "stellen",
-  "sentence": "Sie [[stellt]] die kleine Figur am Abend auf den Tresen.",
+  "word": "der Markt",
+  "sentence": "Katrin und Hannah gehen zurück über den [[Markt]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "to put something upright",
+   "answer": "a market",
    "options": [
-    "to put something upright",
-    "to lay something flat",
-    "to throw something away",
-    "to hide something"
+    "a market",
+    "a bridge",
+    "a park",
+    "a yard"
    ],
    "audioClip": {
     "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
     "storySource": "user",
-    "sentence": "Sie stellt die kleine Figur am Abend auf den Tresen.",
-    "targetWord": "stellt",
+    "sentence": "Katrin und Hannah gehen zurück über den Markt.",
+    "targetWord": "Markt",
     "language": "german"
    }
-  }
+  },
+  "featured": false
  },
  {
   "type": "meaning_in_context",
+  "word": "malen",
+  "sentence": "Er feilt die Kanten und [[malt]] sie später.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to paint",
+   "options": [
+    "to paint",
+    "to sell",
+    "to count",
+    "to clean"
+   ],
+   "audioClip": {
+    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
+    "storySource": "user",
+    "sentence": "Er feilt die Kanten und malt sie später.",
+    "targetWord": "malt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "winzig",
+  "sentence": "Eine [[winzige]] Ritterfigur liegt darin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "tiny",
+   "options": [
+    "tiny",
+    "heavy",
+    "bright",
+    "round"
+   ],
+   "audioClip": {
+    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
+    "storySource": "user",
+    "sentence": "Eine winzige Ritterfigur liegt darin.",
+    "targetWord": "winzige",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "öffnet",
+  "sentence": "Er _____ die Form nach zwei Minuten.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "öffnet",
+   "options": [
+    "öffnet",
+    "schließt",
+    "kauft",
+    "malt"
+   ],
+   "translation": "He _____ the mould after two minutes.",
+   "optionTranslations": [
+    "opens",
+    "closes",
+    "buys",
+    "paints"
+   ],
+   "audioClip": {
+    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
+    "storySource": "user",
+    "sentence": "Er öffnet die Form nach zwei Minuten.",
+    "targetWord": "öffnet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "grünen",
+  "sentence": "Ein Schild mit einem _____ Kleeblatt hängt über der Tür.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "grünen",
+   "options": [
+    "grünen",
+    "roten",
+    "blauen",
+    "weißen"
+   ],
+   "translation": "A sign with a _____ clover leaf hangs over the door.",
+   "optionTranslations": [
+    "green",
+    "red",
+    "blue",
+    "white"
+   ],
+   "audioClip": {
+    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
+    "storySource": "user",
+    "sentence": "Ein Schild mit einem grünen Kleeblatt hängt über der Tür.",
+    "targetWord": "grünen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
   "word": "heiß",
-  "sentence": "Das Metall in der Pfanne ist flüssig und [[heiß]].",
+  "sentence": "Das Metall in der Pfanne ist flüssig und _____.",
   "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hot",
+   "prompt": "Complete the sentence.",
+   "answer": "heiß",
    "options": [
+    "heiß",
+    "kalt",
+    "weich",
+    "leer"
+   ],
+   "translation": "The metal in the pan is liquid and _____.",
+   "optionTranslations": [
     "hot",
     "cold",
-    "damp",
-    "hard"
+    "soft",
+    "empty"
    ],
    "audioClip": {
     "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
     "storySource": "user",
     "sentence": "Das Metall in der Pfanne ist flüssig und heiß.",
     "targetWord": "heiß",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "älter",
-  "sentence": "Die Form aus Stein ist [[älter]] als der Handwerker.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "older",
-   "options": [
-    "older",
-    "younger",
-    "heavier",
-    "smaller"
-   ],
-   "audioClip": {
-    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
-    "storySource": "user",
-    "sentence": "Die Form aus Stein ist älter als der Handwerker.",
-    "targetWord": "älter",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "später",
-  "sentence": "Er feilt die Kanten und malt sie erst [[später]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "later",
-   "options": [
-    "later",
-    "earlier",
-    "never",
-    "always"
-   ],
-   "audioClip": {
-    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
-    "storySource": "user",
-    "sentence": "Er feilt die Kanten und malt sie erst später.",
-    "targetWord": "später",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sonst",
-  "sentence": "Diese Arbeit macht [[sonst]] niemand mehr in der Stadt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "otherwise, apart from this",
-   "options": [
-    "otherwise, apart from this",
-    "always",
-    "clearly",
-    "hardly"
-   ],
-   "audioClip": {
-    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
-    "storySource": "user",
-    "sentence": "Diese Arbeit macht sonst niemand mehr in der Stadt.",
-    "targetWord": "sonst",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "hängen",
-  "sentence": "Ein Schild mit grünem Kleeblatt [[hängt]] über der Tür.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to hang",
-   "options": [
-    "to hang",
-    "to stand",
-    "to lie",
-    "to fall"
-   ],
-   "audioClip": {
-    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
-    "storySource": "user",
-    "sentence": "Ein Schild mit grünem Kleeblatt hängt über der Tür.",
-    "targetWord": "hängt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "leise",
-  "sentence": "Sie sagt es sehr [[leise]] und schaut zur Seite.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "quietly",
-   "options": [
-    "quietly",
-    "loudly",
-    "quickly",
-    "angrily"
-   ],
-   "audioClip": {
-    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
-    "storySource": "user",
-    "sentence": "Sie sagt es sehr leise und schaut zur Seite.",
-    "targetWord": "leise",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "bleiben",
-  "sentence": "Sie geht schnell, und sie [[bleibt]] drei Schritte hinter ihr.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to stay in a place",
-   "options": [
-    "to stay in a place",
-    "to leave a place",
-    "to reach a place",
-    "to look for a place"
-   ],
-   "audioClip": {
-    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
-    "storySource": "user",
-    "sentence": "Sie geht schnell, und sie bleibt drei Schritte hinter ihr.",
-    "targetWord": "bleibt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "zurück",
-  "sentence": "die beiden gehen [[zurück]] über den Markt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "back, the way you came",
-   "options": [
-    "back, the way you came",
-    "ahead, further on",
-    "upwards",
-    "nearby"
-   ],
-   "audioClip": {
-    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
-    "storySource": "user",
-    "sentence": "die beiden gehen zurück über den Markt.",
-    "targetWord": "zurück",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "schnell",
-  "sentence": "Sie geht [[schnell]], und sie bleibt drei Schritte hinter ihr.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "fast",
-   "options": [
-    "fast",
-    "slow",
-    "quiet",
-    "late"
-   ],
-   "audioClip": {
-    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
-    "storySource": "user",
-    "sentence": "Sie geht schnell, und sie bleibt drei Schritte hinter ihr.",
-    "targetWord": "schnell",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "niemand",
-  "sentence": "Manche Sachen macht sonst [[niemand]] mehr, sagt sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "nobody",
-   "options": [
-    "nobody",
-    "everybody",
-    "somebody",
-    "anybody"
-   ],
-   "audioClip": {
-    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
-    "storySource": "user",
-    "sentence": "Manche Sachen macht sonst niemand mehr, sagt sie.",
-    "targetWord": "niemand",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Luft",
-  "sentence": "Die [[Luft]] drinnen ist warm.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "air",
-   "options": [
-    "air",
-    "water",
-    "earth",
-    "light"
-   ],
-   "audioClip": {
-    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
-    "storySource": "user",
-    "sentence": "Die Luft drinnen ist warm.",
-    "targetWord": "Luft",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Laden",
-  "sentence": "Dann nimm den [[Laden]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a shop",
-   "options": [
-    "a shop",
-    "a kitchen",
-    "a workshop",
-    "a market stall"
-   ],
-   "audioClip": {
-    "storySlug": "zinnfiguren-in-der-werkstatt-kleeblatt",
-    "storySource": "user",
-    "sentence": "Dann nimm den Laden.",
-    "targetWord": "Laden",
     "language": "german"
    }
   },

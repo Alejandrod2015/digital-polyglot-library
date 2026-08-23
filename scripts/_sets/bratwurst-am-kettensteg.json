@@ -1,18 +1,28 @@
 [
  {
   "type": "match_meaning",
-  "word": "die Bratwurst,das Brötchen,der Senf,der Rost",
+  "word": "der Kettensteg,die Bratwurst,das Brötchen,der Rost",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "die Bratwurst",
-     "answer": "fried sausages",
+     "word": "der Kettensteg",
+     "answer": "a chain footbridge",
      "options": [
-      "fried sausages",
+      "a chain footbridge",
+      "a grilled sausage",
       "a bread roll",
-      "mustard",
+      "a grill"
+     ]
+    },
+    {
+     "word": "die Bratwurst",
+     "answer": "a grilled sausage",
+     "options": [
+      "a chain footbridge",
+      "a grilled sausage",
+      "a bread roll",
       "a grill"
      ]
     },
@@ -20,19 +30,9 @@
      "word": "das Brötchen",
      "answer": "a bread roll",
      "options": [
-      "fried sausages",
+      "a chain footbridge",
+      "a grilled sausage",
       "a bread roll",
-      "mustard",
-      "a grill"
-     ]
-    },
-    {
-     "word": "der Senf",
-     "answer": "mustard",
-     "options": [
-      "fried sausages",
-      "a bread roll",
-      "mustard",
       "a grill"
      ]
     },
@@ -40,58 +40,13 @@
      "word": "der Rost",
      "answer": "a grill",
      "options": [
-      "fried sausages",
+      "a chain footbridge",
+      "a grilled sausage",
       "a bread roll",
-      "mustard",
       "a grill"
      ]
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Kettensteg",
-  "sentence": "Der alte [[Kettensteg]] aus Eisen hängt über dem Fluss.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "an old iron footbridge",
-   "options": [
-    "an old iron footbridge",
-    "a stone tower",
-    "a wooden pier",
-    "a narrow lane"
-   ],
-   "audioClip": {
-    "storySlug": "bratwurst-am-kettensteg",
-    "storySource": "user",
-    "sentence": "Der alte Kettensteg aus Eisen hängt über dem Fluss.",
-    "targetWord": "Kettensteg",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "das Eisen",
-  "sentence": "Der alte Steg über dem Fluss ist aus [[Eisen]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "iron",
-   "options": [
-    "iron",
-    "wood",
-    "stone",
-    "glass"
-   ],
-   "audioClip": {
-    "storySlug": "bratwurst-am-kettensteg",
-    "storySource": "user",
-    "sentence": "Der alte Steg über dem Fluss ist aus Eisen.",
-    "targetWord": "Eisen",
-    "language": "german"
-   }
+   ]
   }
  },
  {
@@ -103,9 +58,9 @@
    "answer": "smoke",
    "options": [
     "smoke",
-    "fog",
+    "dust",
     "steam",
-    "dust"
+    "snow"
    ],
    "audioClip": {
     "storySlug": "bratwurst-am-kettensteg",
@@ -118,21 +73,43 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Advent",
-  "sentence": "Sie kommt im [[Advent]] und hilft einige Wochen lang.",
+  "word": "das Fett",
+  "sentence": "Das [[Fett]] tropft auf das Papier.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "the weeks before Christmas",
+   "answer": "fat",
    "options": [
-    "the weeks before Christmas",
-    "the week after Easter",
-    "the summer holidays",
-    "the start of the new year"
+    "fat",
+    "juice",
+    "ink",
+    "glue"
    ],
    "audioClip": {
     "storySlug": "bratwurst-am-kettensteg",
     "storySource": "user",
-    "sentence": "Sie kommt im Advent und hilft einige Wochen lang.",
+    "sentence": "Das Fett tropft auf das Papier.",
+    "targetWord": "Fett",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Advent",
+  "sentence": "Aber im [[Advent]] komme ich.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "Advent",
+   "options": [
+    "Advent",
+    "Easter",
+    "summer",
+    "harvest"
+   ],
+   "audioClip": {
+    "storySlug": "bratwurst-am-kettensteg",
+    "storySource": "user",
+    "sentence": "Aber im Advent komme ich.",
     "targetWord": "Advent",
     "language": "german"
    }
@@ -141,20 +118,20 @@
  {
   "type": "meaning_in_context",
   "word": "Weihnachten",
-  "sentence": "Die Wochen vor [[Weihnachten]] sind die schwersten.",
+  "sentence": "Die vier Wochen vor [[Weihnachten]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "Christmas",
    "options": [
     "Christmas",
-    "Easter",
     "New Year",
-    "Carnival"
+    "Easter",
+    "a birthday"
    ],
    "audioClip": {
     "storySlug": "bratwurst-am-kettensteg",
     "storySource": "user",
-    "sentence": "Die Wochen vor Weihnachten sind die schwersten.",
+    "sentence": "Die vier Wochen vor Weihnachten.",
     "targetWord": "Weihnachten",
     "language": "german"
    }
@@ -162,66 +139,95 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "vier",
-  "sentence": "Sie verspricht [[vier]] Wochen Hilfe in jedem Jahr.",
+  "word": "die Träne",
+  "sentence": "Hannah sieht die [[Tränen]] in ihren Augen.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "four",
+   "answer": "a tear",
    "options": [
-    "four",
-    "two",
-    "five",
-    "ten"
+    "a tear",
+    "a smile",
+    "a shadow",
+    "a light"
    ],
    "audioClip": {
     "storySlug": "bratwurst-am-kettensteg",
     "storySource": "user",
-    "sentence": "Sie verspricht vier Wochen Hilfe in jedem Jahr.",
-    "targetWord": "vier",
+    "sentence": "Hannah sieht die Tränen in ihren Augen.",
+    "targetWord": "Tränen",
     "language": "german"
    }
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "die Pegnitz",
-  "sentence": "Der alte Steg hängt hoch über der [[Pegnitz]].",
+  "word": "die Hilfe",
+  "sentence": "Und ich bekomme vier Wochen [[Hilfe]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "the Pegnitz river",
+   "answer": "help",
    "options": [
-    "the Pegnitz river",
-    "the Rhine river",
-    "the Elbe river",
-    "the Neckar river"
+    "help",
+    "money",
+    "rest",
+    "room"
    ],
    "audioClip": {
     "storySlug": "bratwurst-am-kettensteg",
     "storySource": "user",
-    "sentence": "Der alte Steg hängt hoch über der Pegnitz.",
-    "targetWord": "Pegnitz",
+    "sentence": "Und ich bekomme vier Wochen Hilfe.",
+    "targetWord": "Hilfe",
     "language": "german"
    }
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "überall",
-  "sentence": "Der Rauch vom Rost zieht [[überall]] durch die Gasse.",
+  "word": "kauen",
+  "sentence": "Sie [[kaut]] langsam und fragt nichts.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "everywhere",
+   "answer": "to chew",
    "options": [
-    "everywhere",
-    "nowhere",
-    "somewhere",
-    "upwards"
+    "to chew",
+    "to swallow",
+    "to speak",
+    "to smell"
    ],
    "audioClip": {
     "storySlug": "bratwurst-am-kettensteg",
     "storySource": "user",
-    "sentence": "Der Rauch vom Rost zieht überall durch die Gasse.",
-    "targetWord": "überall",
+    "sentence": "Sie kaut langsam und fragt nichts.",
+    "targetWord": "kaut",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "Dosen",
+  "sentence": "Katrin gibt ihr am Bahnhof zwei _____ Lebkuchen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Dosen",
+   "options": [
+    "Dosen",
+    "Gläser",
+    "Körbe",
+    "Teller"
+   ],
+   "translation": "Katrin gives her two _____ of gingerbread at the station.",
+   "optionTranslations": [
+    "tins",
+    "glasses",
+    "baskets",
+    "plates"
+   ],
+   "audioClip": {
+    "storySlug": "bratwurst-am-kettensteg",
+    "storySource": "user",
+    "sentence": "Katrin gibt ihr am Bahnhof zwei Dosen Lebkuchen.",
+    "targetWord": "Dosen",
     "language": "german"
    }
   }
@@ -229,80 +235,50 @@
  {
   "type": "fill_blank",
   "word": "schlafen",
-  "sentence": "Die Enten _____ schon leise unter dem Steg.",
+  "sentence": "Die Enten _____ leise unter dem Steg.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "schlafen",
    "options": [
     "schlafen",
-    "ziehen",
-    "legen",
-    "packen"
+    "singen",
+    "fliegen",
+    "essen"
    ],
-   "translation": "The ducks are already _____ quietly under the walkway.",
+   "translation": "The ducks _____ quietly under the footbridge.",
    "optionTranslations": [
-    "sleeping",
-    "pull",
-    "put",
-    "packing"
+    "sleep",
+    "sing",
+    "fly",
+    "eat"
    ],
    "audioClip": {
     "storySlug": "bratwurst-am-kettensteg",
     "storySource": "user",
-    "sentence": "Die Enten schlafen schon leise unter dem Steg.",
+    "sentence": "Die Enten schlafen leise unter dem Steg.",
     "targetWord": "schlafen",
     "language": "german"
    }
   }
  },
  {
-  "type": "fill_blank",
-  "word": "salzig",
-  "sentence": "Der Senf ist sehr scharf und ein wenig _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "salzig",
-   "options": [
-    "salzig",
-    "süß",
-    "würzig",
-    "sauer"
-   ],
-   "translation": "The mustard is very sharp and a little _____.",
-   "optionTranslations": [
-    "salty",
-    "sweet",
-    "spicy",
-    "sour"
-   ],
-   "audioClip": {
-    "storySlug": "bratwurst-am-kettensteg",
-    "storySource": "user",
-    "sentence": "Der Senf ist sehr scharf und ein wenig salzig.",
-    "targetWord": "salzig",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
   "type": "meaning_in_context",
-  "word": "leise",
-  "sentence": "Enten schlafen [[leise]] unter dem Steg.",
+  "word": "die Ente",
+  "sentence": "[[Enten]] schlafen leise unter dem Steg.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "quietly",
+   "answer": "a duck",
    "options": [
-    "quietly",
-    "loudly",
-    "quickly",
-    "angrily"
+    "a duck",
+    "a cat",
+    "a fish",
+    "a mouse"
    ],
    "audioClip": {
     "storySlug": "bratwurst-am-kettensteg",
     "storySource": "user",
     "sentence": "Enten schlafen leise unter dem Steg.",
-    "targetWord": "leise",
+    "targetWord": "Enten",
     "language": "german"
    }
   },
@@ -310,22 +286,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "der Morgen",
-  "sentence": "Sie packt am [[Morgen]] ihre Tasche.",
+  "word": "das Papier",
+  "sentence": "Das Fett tropft auf das [[Papier]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "the morning",
+   "answer": "paper",
    "options": [
-    "the morning",
-    "the evening",
-    "the night",
-    "the afternoon"
+    "paper",
+    "cloth",
+    "wood",
+    "stone"
    ],
    "audioClip": {
     "storySlug": "bratwurst-am-kettensteg",
     "storySource": "user",
-    "sentence": "Sie packt am Morgen ihre Tasche.",
-    "targetWord": "Morgen",
+    "sentence": "Das Fett tropft auf das Papier.",
+    "targetWord": "Papier",
     "language": "german"
    }
   },
@@ -333,22 +309,22 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "bleiben",
-  "sentence": "Die Ritterfigur [[bleibt]] auf dem Tresen.",
+  "word": "das Eisen",
+  "sentence": "Der alte Kettensteg aus [[Eisen]] hängt über der Pegnitz.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "to stay in a place",
+   "answer": "iron",
    "options": [
-    "to stay in a place",
-    "to leave a place",
-    "to reach a place",
-    "to look for a place"
+    "iron",
+    "rope",
+    "brick",
+    "glass"
    ],
    "audioClip": {
     "storySlug": "bratwurst-am-kettensteg",
     "storySource": "user",
-    "sentence": "Die Ritterfigur bleibt auf dem Tresen.",
-    "targetWord": "bleibt",
+    "sentence": "Der alte Kettensteg aus Eisen hängt über der Pegnitz.",
+    "targetWord": "Eisen",
     "language": "german"
    }
   },
@@ -356,68 +332,112 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "fragen",
-  "sentence": "Sie kaut langsam und [[fragt]] nichts.",
+  "word": "die Gasse",
+  "sentence": "Der Rauch vom Rost zieht überall durch die [[Gasse]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "to ask",
+   "answer": "an alley",
    "options": [
-    "to ask",
-    "to answer",
-    "to promise",
-    "to forget"
-   ],
-   "audioClip": {
-    "storySlug": "bratwurst-am-kettensteg",
-    "storySource": "user",
-    "sentence": "Sie kaut langsam und fragt nichts.",
-    "targetWord": "fragt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "ziehen",
-  "sentence": "Der Rauch vom Rost [[zieht]] überall durch die Gasse.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to pull something",
-   "options": [
-    "to pull something",
-    "to push something",
-    "to lift something",
-    "to drop something"
+    "an alley",
+    "a hall",
+    "a field",
+    "a shop"
    ],
    "audioClip": {
     "storySlug": "bratwurst-am-kettensteg",
     "storySource": "user",
     "sentence": "Der Rauch vom Rost zieht überall durch die Gasse.",
-    "targetWord": "zieht",
+    "targetWord": "Gasse",
     "language": "german"
    }
   },
   "featured": false
  },
  {
-  "type": "meaning_in_context",
-  "word": "der Laden",
-  "sentence": "Ich kann den [[Laden]] nicht nehmen, sagt sie.",
+  "type": "fill_blank",
+  "word": "Steg",
+  "sentence": "Enten schlafen leise unter dem _____.",
   "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a shop",
+   "prompt": "Complete the sentence.",
+   "answer": "Steg",
    "options": [
-    "a shop",
-    "a kitchen",
-    "a workshop",
-    "a market stall"
+    "Steg",
+    "Baum",
+    "Dach",
+    "Zaun"
+   ],
+   "translation": "Ducks sleep quietly under the _____.",
+   "optionTranslations": [
+    "footbridge",
+    "tree",
+    "roof",
+    "fence"
    ],
    "audioClip": {
     "storySlug": "bratwurst-am-kettensteg",
     "storySource": "user",
-    "sentence": "Ich kann den Laden nicht nehmen, sagt sie.",
-    "targetWord": "Laden",
+    "sentence": "Enten schlafen leise unter dem Steg.",
+    "targetWord": "Steg",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "tropft",
+  "sentence": "Das Fett _____ langsam auf das Papier.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "tropft",
+   "options": [
+    "tropft",
+    "brennt",
+    "kocht",
+    "fehlt"
+   ],
+   "translation": "The fat _____ slowly onto the paper.",
+   "optionTranslations": [
+    "drips",
+    "burns",
+    "boils",
+    "is missing"
+   ],
+   "audioClip": {
+    "storySlug": "bratwurst-am-kettensteg",
+    "storySource": "user",
+    "sentence": "Das Fett tropft langsam auf das Papier.",
+    "targetWord": "tropft",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "faltet",
+  "sentence": "Ihre Tante _____ das Papier.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "faltet",
+   "options": [
+    "faltet",
+    "kauft",
+    "wäscht",
+    "verliert"
+   ],
+   "translation": "Her aunt _____ the paper.",
+   "optionTranslations": [
+    "folds",
+    "buys",
+    "washes",
+    "loses"
+   ],
+   "audioClip": {
+    "storySlug": "bratwurst-am-kettensteg",
+    "storySource": "user",
+    "sentence": "Ihre Tante faltet das Papier.",
+    "targetWord": "faltet",
     "language": "german"
    }
   },

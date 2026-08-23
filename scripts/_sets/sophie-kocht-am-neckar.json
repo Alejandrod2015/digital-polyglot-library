@@ -1,7 +1,7 @@
 [
  {
   "type": "match_meaning",
-  "word": "der Bus,das Krankenhaus,die Wohnung,der Tisch",
+  "word": "der Bus,das Krankenhaus,das Haus,die Familie",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
@@ -12,8 +12,8 @@
      "options": [
       "a bus",
       "a hospital",
-      "a flat",
-      "a table"
+      "a house",
+      "a family"
      ]
     },
     {
@@ -22,103 +22,51 @@
      "options": [
       "a bus",
       "a hospital",
-      "a flat",
-      "a table"
+      "a house",
+      "a family"
      ]
     },
     {
-     "word": "die Wohnung",
-     "answer": "a flat",
+     "word": "das Haus",
+     "answer": "a house",
      "options": [
       "a bus",
       "a hospital",
-      "a flat",
-      "a table"
+      "a house",
+      "a family"
      ]
     },
     {
-     "word": "der Tisch",
-     "answer": "a table",
+     "word": "die Familie",
+     "answer": "a family",
      "options": [
       "a bus",
       "a hospital",
-      "a flat",
-      "a table"
+      "a house",
+      "a family"
      ]
     }
-   ],
-   "audioClip": null
+   ]
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "die Fahrt",
-  "sentence": "Die [[Fahrt]] mit dem Bus dauert fast viele Stunden.",
+  "word": "die Stunde",
+  "sentence": "Die Fahrt dauert zwei [[Stunden]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a ride or journey",
+   "answer": "an hour",
    "options": [
-    "a ride or journey",
-    "a walk",
-    "a stop",
-    "a ticket"
+    "an hour",
+    "a minute",
+    "a week",
+    "a month"
    ],
    "audioClip": {
     "storySlug": "sophie-kocht-am-neckar",
     "storySource": "user",
-    "sentence": "Die Fahrt mit dem Bus dauert fast viele Stunden.",
-    "targetWord": "Fahrt",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "dauert",
-  "sentence": "Die Fahrt mit dem Bus _____ fast viele Stunden.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "dauert",
-   "options": [
-    "dauert",
-    "schreibt",
-    "drückt",
-    "fährt"
-   ],
-   "translation": "The bus ride _____ almost two hours.",
-   "optionTranslations": [
-    "lasts",
-    "writes",
-    "presses",
-    "drives"
-   ],
-   "audioClip": {
-    "storySlug": "sophie-kocht-am-neckar",
-    "storySource": "user",
-    "sentence": "Die Fahrt mit dem Bus dauert fast viele Stunden.",
-    "targetWord": "dauert",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "die Hand",
-  "sentence": "Sie steht vor dem Haus und hebt die [[Hand]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a hand",
-   "options": [
-    "a hand",
-    "an arm",
-    "a foot",
-    "a head"
-   ],
-   "audioClip": {
-    "storySlug": "sophie-kocht-am-neckar",
-    "storySource": "user",
-    "sentence": "Sie steht vor dem Haus und hebt die Hand.",
-    "targetWord": "Hand",
+    "sentence": "Die Fahrt dauert zwei Stunden.",
+    "targetWord": "Stunden",
     "language": "german"
    }
   }
@@ -126,20 +74,20 @@
  {
   "type": "meaning_in_context",
   "word": "die Ärztin",
-  "sentence": "Sie ist [[Ärztin]] und arbeitet im großen Krankenhaus.",
+  "sentence": "Sie arbeitet als [[Ärztin]] im Krankenhaus.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a female doctor",
    "options": [
     "a female doctor",
-    "a female teacher",
-    "a female nurse",
-    "a female cook"
+    "a nurse",
+    "a teacher",
+    "a cook"
    ],
    "audioClip": {
     "storySlug": "sophie-kocht-am-neckar",
     "storySource": "user",
-    "sentence": "Sie ist Ärztin und arbeitet im großen Krankenhaus.",
+    "sentence": "Sie arbeitet als Ärztin im Krankenhaus.",
     "targetWord": "Ärztin",
     "language": "german"
    }
@@ -148,123 +96,167 @@
  {
   "type": "meaning_in_context",
   "word": "das Essen",
-  "sentence": "Das [[Essen]] steht schon auf dem Tisch.",
+  "sentence": "Das [[Essen]] ist fertig.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "the meal, the food",
+   "answer": "the food",
    "options": [
-    "the meal, the food",
-    "the drink",
-    "the plate",
-    "the kitchen"
+    "the food",
+    "the table",
+    "the kitchen",
+    "the guest"
    ],
    "audioClip": {
     "storySlug": "sophie-kocht-am-neckar",
     "storySource": "user",
-    "sentence": "Das Essen steht schon auf dem Tisch.",
+    "sentence": "Das Essen ist fertig.",
     "targetWord": "Essen",
     "language": "german"
    }
   }
  },
  {
-  "type": "fill_blank",
-  "word": "fertig",
-  "sentence": "Das Essen steht auf dem Tisch und ist _____.",
+  "type": "meaning_in_context",
+  "word": "der Hunger",
+  "sentence": "Ich habe [[Hunger]].",
   "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "fertig",
+   "prompt": "Choose the meaning in context.",
+   "answer": "hunger",
    "options": [
-    "fertig",
-    "klein",
-    "hell",
-    "spät"
-   ],
-   "translation": "The food is on the table and is _____.",
-   "optionTranslations": [
-    "ready",
-    "small",
-    "bright",
-    "late"
+    "hunger",
+    "thirst",
+    "fear",
+    "cold"
    ],
    "audioClip": {
     "storySlug": "sophie-kocht-am-neckar",
     "storySource": "user",
-    "sentence": "Das Essen steht auf dem Tisch und ist fertig.",
-    "targetWord": "fertig",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "kocht",
-  "sentence": "Sie _____ Spätzle mit einer warmen Soße.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "kocht",
-   "options": [
-    "kocht",
-    "zählt",
-    "fährt",
-    "hebt"
-   ],
-   "translation": "She _____ Spaetzle with a warm sauce.",
-   "optionTranslations": [
-    "cooks",
-    "counts",
-    "drives",
-    "lifts"
-   ],
-   "audioClip": {
-    "storySlug": "sophie-kocht-am-neckar",
-    "storySource": "user",
-    "sentence": "Sie kocht Spätzle mit einer warmen Soße.",
-    "targetWord": "kocht",
+    "sentence": "Ich habe Hunger.",
+    "targetWord": "Hunger",
     "language": "german"
    }
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "die Stunde",
-  "sentence": "Die Fahrt dauert viele [[Stunden]] und ist sehr ruhig.",
+  "word": "die Kusine",
+  "sentence": "Sophie ist Hannahs [[Kusine]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "hours",
+   "answer": "a female cousin",
    "options": [
-    "hours",
-    "minutes",
-    "days",
-    "weeks"
+    "a female cousin",
+    "an aunt",
+    "a sister",
+    "a friend"
    ],
    "audioClip": {
     "storySlug": "sophie-kocht-am-neckar",
     "storySource": "user",
-    "sentence": "Die Fahrt dauert viele Stunden und ist sehr ruhig.",
-    "targetWord": "Stunden",
+    "sentence": "Sophie ist Hannahs Kusine.",
+    "targetWord": "Kusine",
     "language": "german"
    }
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "das Fenster",
-  "sentence": "Man sieht den Fluss vom [[Fenster]] der Wohnung.",
+  "word": "die Hand",
+  "sentence": "Sophie steht vor dem Haus und hebt die [[Hand]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a window",
+   "answer": "a hand",
    "options": [
-    "a window",
-    "a door",
-    "a balcony",
-    "a roof"
+    "a hand",
+    "a foot",
+    "an eye",
+    "a knee"
    ],
    "audioClip": {
     "storySlug": "sophie-kocht-am-neckar",
     "storySource": "user",
-    "sentence": "Man sieht den Fluss vom Fenster der Wohnung.",
-    "targetWord": "Fenster",
+    "sentence": "Sophie steht vor dem Haus und hebt die Hand.",
+    "targetWord": "Hand",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "arbeiten",
+  "sentence": "Sie lebt seit drei Jahren hier und [[arbeitet]] als Ärztin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to work",
+   "options": [
+    "to work",
+    "to study",
+    "to rest",
+    "to travel"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Sie lebt seit drei Jahren hier und arbeitet als Ärztin.",
+    "targetWord": "arbeitet",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "Antwort",
+  "sentence": "Auf diese Frage gibt er keine _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Antwort",
+   "options": [
+    "Antwort",
+    "Frage",
+    "Karte",
+    "Stimme"
+   ],
+   "translation": "He gives no _____ to this question.",
+   "optionTranslations": [
+    "answer",
+    "question",
+    "map",
+    "voice"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Auf diese Frage gibt er keine Antwort.",
+    "targetWord": "Antwort",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "endlich",
+  "sentence": "Wir warten lange, und der Bus kommt _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "endlich",
+   "options": [
+    "endlich",
+    "nie",
+    "morgen",
+    "selten"
+   ],
+   "translation": "We wait a long time, and the bus comes _____.",
+   "optionTranslations": [
+    "at last",
+    "never",
+    "tomorrow",
+    "rarely"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Wir warten lange, und der Bus kommt endlich.",
+    "targetWord": "endlich",
     "language": "german"
    }
   }
@@ -272,20 +264,20 @@
  {
   "type": "meaning_in_context",
   "word": "die Soße",
-  "sentence": "Sie kocht Spätzle mit einer warmen [[Soße]].",
+  "sentence": "Sophie kocht Spätzle mit [[Soße]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "sauce",
    "options": [
     "sauce",
-    "soup",
     "bread",
-    "salad"
+    "salt",
+    "cheese"
    ],
    "audioClip": {
     "storySlug": "sophie-kocht-am-neckar",
     "storySource": "user",
-    "sentence": "Sie kocht Spätzle mit einer warmen Soße.",
+    "sentence": "Sophie kocht Spätzle mit Soße.",
     "targetWord": "Soße",
     "language": "german"
    }
@@ -294,21 +286,67 @@
  },
  {
   "type": "meaning_in_context",
+  "word": "die Butter",
+  "sentence": "Das Essen riecht nach [[Butter]] und Zwiebeln.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "butter",
+   "options": [
+    "butter",
+    "sugar",
+    "pepper",
+    "oil"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Das Essen riecht nach Butter und Zwiebeln.",
+    "targetWord": "Butter",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Apfelsaft",
+  "sentence": "Die drei essen und trinken [[Apfelsaft]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "apple juice",
+   "options": [
+    "apple juice",
+    "red wine",
+    "hot tea",
+    "cold milk"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Die drei essen und trinken Apfelsaft.",
+    "targetWord": "Apfelsaft",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
   "word": "der Käse",
-  "sentence": "Er nimmt gern [[Käse]] auf seine warmen Spätzle.",
+  "sentence": "Elias, magst du [[Käse]]?",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "cheese",
    "options": [
     "cheese",
-    "butter",
-    "bread",
-    "meat"
+    "fish",
+    "cake",
+    "soup"
    ],
    "audioClip": {
     "storySlug": "sophie-kocht-am-neckar",
     "storySource": "user",
-    "sentence": "Er nimmt gern Käse auf seine warmen Spätzle.",
+    "sentence": "Elias, magst du Käse?",
     "targetWord": "Käse",
     "language": "german"
    }
@@ -317,89 +355,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "lebt",
-  "sentence": "Sie _____ seit vielen Jahren in einer kleinen Stadt.",
+  "word": "Jahren",
+  "sentence": "Sie wohnt seit drei _____ in dieser Stadt.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "lebt",
+   "answer": "Jahren",
    "options": [
-    "lebt",
-    "hängt",
-    "fährt",
-    "holt"
+    "Jahren",
+    "Tagen",
+    "Stunden",
+    "Wochen"
    ],
-   "translation": "She has _____ in a small town for three years.",
+   "translation": "She has lived in this city for three _____.",
    "optionTranslations": [
-    "lived",
-    "hangs",
-    "driven",
-    "fetches"
+    "years",
+    "days",
+    "hours",
+    "weeks"
    ],
    "audioClip": {
     "storySlug": "sophie-kocht-am-neckar",
     "storySource": "user",
-    "sentence": "Sie lebt seit vielen Jahren in einer kleinen Stadt.",
-    "targetWord": "lebt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "hebt",
-  "sentence": "Sie sieht ihn und _____ zum Gruß die Hand.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "hebt",
-   "options": [
-    "hebt",
-    "zählt",
-    "tippt",
-    "trinkt"
-   ],
-   "translation": "She sees him and _____ her hand in greeting.",
-   "optionTranslations": [
-    "raises",
-    "counts",
-    "taps",
-    "drinks"
-   ],
-   "audioClip": {
-    "storySlug": "sophie-kocht-am-neckar",
-    "storySource": "user",
-    "sentence": "Sie sieht ihn und hebt zum Gruß die Hand.",
-    "targetWord": "hebt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "arbeitet",
-  "sentence": "Meine Schwester _____ als Ärztin im großen Krankenhaus.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "arbeitet",
-   "options": [
-    "arbeitet",
-    "malt",
-    "feilt",
-    "fährt"
-   ],
-   "translation": "My sister _____ as a doctor in the big hospital.",
-   "optionTranslations": [
-    "works",
-    "paints",
-    "files",
-    "drives"
-   ],
-   "audioClip": {
-    "storySlug": "sophie-kocht-am-neckar",
-    "storySource": "user",
-    "sentence": "Meine Schwester arbeitet als Ärztin im großen Krankenhaus.",
-    "targetWord": "arbeitet",
+    "sentence": "Sie wohnt seit drei Jahren in dieser Stadt.",
+    "targetWord": "Jahren",
     "language": "german"
    }
   },
@@ -408,27 +386,27 @@
  {
   "type": "fill_blank",
   "word": "spät",
-  "sentence": "Wir kommen zu _____, und das Essen ist schon kalt.",
+  "sentence": "Der Zug kommt heute sehr _____.",
   "payload": {
    "prompt": "Complete the sentence.",
    "answer": "spät",
    "options": [
     "spät",
-    "klein",
-    "hell",
-    "fertig"
+    "früh",
+    "leise",
+    "schnell"
    ],
-   "translation": "We arrive too _____, and the food is already cold.",
+   "translation": "The train comes very _____ today.",
    "optionTranslations": [
     "late",
-    "small",
-    "bright",
-    "ready"
+    "early",
+    "quietly",
+    "fast"
    ],
    "audioClip": {
     "storySlug": "sophie-kocht-am-neckar",
     "storySource": "user",
-    "sentence": "Wir kommen zu spät, und das Essen ist schon kalt.",
+    "sentence": "Der Zug kommt heute sehr spät.",
     "targetWord": "spät",
     "language": "german"
    }
@@ -437,121 +415,29 @@
  },
  {
   "type": "fill_blank",
-  "word": "klein",
-  "sentence": "Die Wohnung hat nur ein Zimmer und ist sehr _____.",
+  "word": "sieht",
+  "sentence": "Er _____ das Schiff auf dem Wasser.",
   "payload": {
    "prompt": "Complete the sentence.",
-   "answer": "klein",
+   "answer": "sieht",
    "options": [
-    "klein",
-    "hell",
-    "spät",
-    "fertig"
+    "sieht",
+    "hört",
+    "sucht",
+    "kauft"
    ],
-   "translation": "The flat has only one room and is very _____.",
+   "translation": "He _____ the ship on the water.",
    "optionTranslations": [
-    "small",
-    "bright",
-    "late",
-    "ready"
+    "sees",
+    "hears",
+    "looks for",
+    "buys"
    ],
    "audioClip": {
     "storySlug": "sophie-kocht-am-neckar",
     "storySource": "user",
-    "sentence": "Die Wohnung hat nur ein Zimmer und ist sehr klein.",
-    "targetWord": "klein",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "fragen",
-  "sentence": "Er, magst du Käse?, [[fragt]] sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to ask",
-   "options": [
-    "to ask",
-    "to answer",
-    "to promise",
-    "to forget"
-   ],
-   "audioClip": {
-    "storySlug": "sophie-kocht-am-neckar",
-    "storySource": "user",
-    "sentence": "Er, magst du Käse?, fragt sie.",
-    "targetWord": "fragt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "antworten",
-  "sentence": "Das ist wenigstens ehrlich, [[antwortet]] sie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to answer",
-   "options": [
-    "to answer",
-    "to ask",
-    "to shout",
-    "to whisper"
-   ],
-   "audioClip": {
-    "storySlug": "sophie-kocht-am-neckar",
-    "storySource": "user",
-    "sentence": "Das ist wenigstens ehrlich, antwortet sie.",
-    "targetWord": "antwortet",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "schauen",
-  "sentence": "Er [[schaut]] auf seinen Teller.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to look at something",
-   "options": [
-    "to look at something",
-    "to run somewhere",
-    "to wait for someone",
-    "to point at something"
-   ],
-   "audioClip": {
-    "storySlug": "sophie-kocht-am-neckar",
-    "storySource": "user",
-    "sentence": "Er schaut auf seinen Teller.",
-    "targetWord": "schaut",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "bringen",
-  "sentence": "Ein alter Bus [[bringt]] sie und er nach Heidelberg.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to bring something to someone",
-   "options": [
-    "to bring something to someone",
-    "to take something away",
-    "to sell something",
-    "to hide something"
-   ],
-   "audioClip": {
-    "storySlug": "sophie-kocht-am-neckar",
-    "storySource": "user",
-    "sentence": "Ein alter Bus bringt sie und er nach Heidelberg.",
-    "targetWord": "bringt",
+    "sentence": "Er sieht das Schiff auf dem Wasser.",
+    "targetWord": "sieht",
     "language": "german"
    }
   },

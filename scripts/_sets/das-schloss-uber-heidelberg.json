@@ -1,123 +1,71 @@
 [
  {
   "type": "match_meaning",
-  "word": "das Schloss,der Keller,der Garten,die Terrasse",
+  "word": "der Meter,der Keller,die Terrasse,das Modell",
   "sentence": "",
   "payload": {
    "prompt": "Match the words to their meanings.",
    "pairs": [
     {
-     "word": "das Schloss",
-     "answer": "a castle",
+     "word": "der Meter",
+     "answer": "a metre",
      "options": [
-      "a castle",
+      "a metre",
       "a cellar",
-      "a garden",
-      "a terrace"
+      "a terrace",
+      "a small model"
      ]
     },
     {
      "word": "der Keller",
      "answer": "a cellar",
      "options": [
-      "a castle",
+      "a metre",
       "a cellar",
-      "a garden",
-      "a terrace"
-     ]
-    },
-    {
-     "word": "der Garten",
-     "answer": "a garden",
-     "options": [
-      "a castle",
-      "a cellar",
-      "a garden",
-      "a terrace"
+      "a terrace",
+      "a small model"
      ]
     },
     {
      "word": "die Terrasse",
      "answer": "a terrace",
      "options": [
-      "a castle",
+      "a metre",
       "a cellar",
-      "a garden",
-      "a terrace"
+      "a terrace",
+      "a small model"
+     ]
+    },
+    {
+     "word": "das Modell",
+     "answer": "a small model",
+     "options": [
+      "a metre",
+      "a cellar",
+      "a terrace",
+      "a small model"
      ]
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "der Weg",
-  "sentence": "Der [[Weg]] nach oben ist steil und sehr lang.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a way or path",
-   "options": [
-    "a way or path",
-    "a bridge",
-    "a tower",
-    "a gate"
-   ],
-   "audioClip": {
-    "storySlug": "das-schloss-uber-heidelberg",
-    "storySource": "user",
-    "sentence": "Der Weg nach oben ist steil und sehr lang.",
-    "targetWord": "Weg",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "steil",
-  "sentence": "Der Berg ist so _____, dass niemand hinauf laufen kann.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "steil",
-   "options": [
-    "steil",
-    "kühl",
-    "feucht",
-    "dick"
-   ],
-   "translation": "The hill is so _____ that nobody can run up.",
-   "optionTranslations": [
-    "steep",
-    "cool",
-    "damp",
-    "thick"
-   ],
-   "audioClip": {
-    "storySlug": "das-schloss-uber-heidelberg",
-    "storySource": "user",
-    "sentence": "Der Berg ist so steil, dass niemand hinauf laufen kann.",
-    "targetWord": "steil",
-    "language": "german"
-   }
+   ]
   }
  },
  {
   "type": "meaning_in_context",
   "word": "die Mauer",
-  "sentence": "Die alten [[Mauern]] sind dick und aus grauem Stein.",
+  "sentence": "Die [[Mauern]] daneben sind sehr dick.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "walls",
+   "answer": "a stone wall",
    "options": [
-    "walls",
-    "doors",
-    "windows",
-    "roofs"
+    "a stone wall",
+    "a window",
+    "a roof",
+    "a door"
    ],
    "audioClip": {
     "storySlug": "das-schloss-uber-heidelberg",
     "storySource": "user",
-    "sentence": "Die alten Mauern sind dick und aus grauem Stein.",
+    "sentence": "Die Mauern daneben sind sehr dick.",
     "targetWord": "Mauern",
     "language": "german"
    }
@@ -126,7 +74,7 @@
  {
   "type": "meaning_in_context",
   "word": "der Krieg",
-  "sentence": "Der [[Krieg]] ist lange her, aber die Steine bleiben.",
+  "sentence": "Der [[Krieg]] ist lange her.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "war",
@@ -134,12 +82,12 @@
     "war",
     "peace",
     "winter",
-    "harvest"
+    "market"
    ],
    "audioClip": {
     "storySlug": "das-schloss-uber-heidelberg",
     "storySource": "user",
-    "sentence": "Der Krieg ist lange her, aber die Steine bleiben.",
+    "sentence": "Der Krieg ist lange her.",
     "targetWord": "Krieg",
     "language": "german"
    }
@@ -147,43 +95,21 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "das Fass",
-  "sentence": "Ein riesiges [[Fass]] aus Holz steht unten im Keller.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a barrel",
-   "options": [
-    "a barrel",
-    "a table",
-    "a bed",
-    "a box"
-   ],
-   "audioClip": {
-    "storySlug": "das-schloss-uber-heidelberg",
-    "storySource": "user",
-    "sentence": "Ein riesiges Fass aus Holz steht unten im Keller.",
-    "targetWord": "Fass",
-    "language": "german"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
   "word": "das Holz",
-  "sentence": "Das Fass im Keller ist ganz aus altem [[Holz]].",
+  "sentence": "Ein riesiges Fass aus [[Holz]] steht dort.",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "wood",
    "options": [
     "wood",
     "stone",
-    "iron",
-    "glass"
+    "glass",
+    "iron"
    ],
    "audioClip": {
     "storySlug": "das-schloss-uber-heidelberg",
     "storySource": "user",
-    "sentence": "Das Fass im Keller ist ganz aus altem Holz.",
+    "sentence": "Ein riesiges Fass aus Holz steht dort.",
     "targetWord": "Holz",
     "language": "german"
    }
@@ -191,43 +117,145 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "die Jacke",
-  "sentence": "Der Wind ist kalt, und sie zieht die [[Jacke]] enger.",
+  "word": "der Direktor",
+  "sentence": "Der [[Direktor]] kennt deinen Namen schon.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "a jacket",
+   "answer": "a headmaster",
    "options": [
-    "a jacket",
-    "a hat",
-    "a scarf",
-    "a shoe"
+    "a headmaster",
+    "a pupil",
+    "a driver",
+    "a doctor"
    ],
    "audioClip": {
     "storySlug": "das-schloss-uber-heidelberg",
     "storySource": "user",
-    "sentence": "Der Wind ist kalt, und sie zieht die Jacke enger.",
-    "targetWord": "Jacke",
+    "sentence": "Der Direktor kennt deinen Namen schon.",
+    "targetWord": "Direktor",
     "language": "german"
    }
   }
  },
  {
   "type": "meaning_in_context",
-  "word": "kaputt",
-  "sentence": "Das Schloss über der Stadt ist halb [[kaputt]].",
+  "word": "die Schule",
+  "sentence": "Die [[Schule]] hier sucht eine Lehrerin.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "broken",
+   "answer": "a school",
    "options": [
+    "a school",
+    "a shop",
+    "a hospital",
+    "a hotel"
+   ],
+   "audioClip": {
+    "storySlug": "das-schloss-uber-heidelberg",
+    "storySource": "user",
+    "sentence": "Die Schule hier sucht eine Lehrerin.",
+    "targetWord": "Schule",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Lehrerin",
+  "sentence": "Die Schule hier sucht eine [[Lehrerin]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a female teacher",
+   "options": [
+    "a female teacher",
+    "a female doctor",
+    "a cook",
+    "a driver"
+   ],
+   "audioClip": {
+    "storySlug": "das-schloss-uber-heidelberg",
+    "storySource": "user",
+    "sentence": "Die Schule hier sucht eine Lehrerin.",
+    "targetWord": "Lehrerin",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der August",
+  "sentence": "Ab [[August]] ist die Stelle frei.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "August",
+   "options": [
+    "August",
+    "April",
+    "November",
+    "February"
+   ],
+   "audioClip": {
+    "storySlug": "das-schloss-uber-heidelberg",
+    "storySource": "user",
+    "sentence": "Ab August ist die Stelle frei.",
+    "targetWord": "August",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "Namen",
+  "sentence": "Der Direktor kennt deinen _____ schon.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "Namen",
+   "options": [
+    "Namen",
+    "Brief",
+    "Platz",
+    "Weg"
+   ],
+   "translation": "The headmaster already knows your _____.",
+   "optionTranslations": [
+    "name",
+    "letter",
+    "seat",
+    "way"
+   ],
+   "audioClip": {
+    "storySlug": "das-schloss-uber-heidelberg",
+    "storySource": "user",
+    "sentence": "Der Direktor kennt deinen Namen schon.",
+    "targetWord": "Namen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "kaputt",
+  "sentence": "Die alte Uhr geht nicht mehr; sie ist _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kaputt",
+   "options": [
+    "kaputt",
+    "neu",
+    "teuer",
+    "sauber"
+   ],
+   "translation": "The old clock does not work any more; it is _____.",
+   "optionTranslations": [
     "broken",
-    "closed",
-    "open",
+    "new",
+    "expensive",
     "clean"
    ],
    "audioClip": {
     "storySlug": "das-schloss-uber-heidelberg",
     "storySource": "user",
-    "sentence": "Das Schloss über der Stadt ist halb kaputt.",
+    "sentence": "Die alte Uhr geht nicht mehr; sie ist kaputt.",
     "targetWord": "kaputt",
     "language": "german"
    }
@@ -235,134 +263,68 @@
  },
  {
   "type": "meaning_in_context",
+  "word": "der Turm",
+  "sentence": "Ein [[Turm]] liegt zerbrochen im Garten.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a tower",
+   "options": [
+    "a tower",
+    "a bridge",
+    "a boat",
+    "a bench"
+   ],
+   "audioClip": {
+    "storySlug": "das-schloss-uber-heidelberg",
+    "storySource": "user",
+    "sentence": "Ein Turm liegt zerbrochen im Garten.",
+    "targetWord": "Turm",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
   "word": "das Zimmer",
-  "sentence": "Das Fass ist so groß wie ein ganzes [[Zimmer]].",
+  "sentence": "So groß wie ein ganzes [[Zimmer]].",
   "payload": {
    "prompt": "Choose the meaning in context.",
    "answer": "a room",
    "options": [
     "a room",
-    "a house",
     "a street",
-    "a garden"
+    "a garden",
+    "a field"
    ],
    "audioClip": {
     "storySlug": "das-schloss-uber-heidelberg",
     "storySource": "user",
-    "sentence": "Das Fass ist so groß wie ein ganzes Zimmer.",
+    "sentence": "So groß wie ein ganzes Zimmer.",
     "targetWord": "Zimmer",
     "language": "german"
    }
-  }
+  },
+  "featured": false
  },
  {
   "type": "meaning_in_context",
-  "word": "der Wind",
-  "sentence": "Oben auf der Terrasse ist der [[Wind]] sehr kalt.",
+  "word": "pfeifen",
+  "sentence": "Elias [[pfeift]] leise.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "wind",
+   "answer": "to whistle",
    "options": [
-    "wind",
-    "rain",
-    "snow",
-    "sun"
+    "to whistle",
+    "to shout",
+    "to sing",
+    "to laugh"
    ],
    "audioClip": {
     "storySlug": "das-schloss-uber-heidelberg",
     "storySource": "user",
-    "sentence": "Oben auf der Terrasse ist der Wind sehr kalt.",
-    "targetWord": "Wind",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "dick",
-  "sentence": "Die Mauer ist so _____, dass kein Ton durchkommt.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "dick",
-   "options": [
-    "dick",
-    "steil",
-    "kühl",
-    "feucht"
-   ],
-   "translation": "The wall is so _____ that no sound gets through.",
-   "optionTranslations": [
-    "thick",
-    "steep",
-    "cool",
-    "damp"
-   ],
-   "audioClip": {
-    "storySlug": "das-schloss-uber-heidelberg",
-    "storySource": "user",
-    "sentence": "Die Mauer ist so dick, dass kein Ton durchkommt.",
-    "targetWord": "dick",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "kalt",
-  "sentence": "Der Wind oben am Berg ist sehr _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "kalt",
-   "options": [
-    "kalt",
-    "steil",
-    "feucht",
-    "dick"
-   ],
-   "translation": "The wind up on the mountain is very _____.",
-   "optionTranslations": [
-    "cold",
-    "steep",
-    "damp",
-    "thick"
-   ],
-   "audioClip": {
-    "storySlug": "das-schloss-uber-heidelberg",
-    "storySource": "user",
-    "sentence": "Der Wind oben am Berg ist sehr kalt.",
-    "targetWord": "kalt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "fill_blank",
-  "word": "zieht",
-  "sentence": "Sie friert und _____ die Jacke enger um sich.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "zieht",
-   "options": [
-    "zieht",
-    "nickt",
-    "legt",
-    "lacht"
-   ],
-   "translation": "She is cold and _____ her jacket tighter.",
-   "optionTranslations": [
-    "pulls",
-    "nods",
-    "puts",
-    "laughs"
-   ],
-   "audioClip": {
-    "storySlug": "das-schloss-uber-heidelberg",
-    "storySource": "user",
-    "sentence": "Sie friert und zieht die Jacke enger um sich.",
-    "targetWord": "zieht",
+    "sentence": "Elias pfeift leise.",
+    "targetWord": "pfeift",
     "language": "german"
    }
   },
@@ -370,160 +332,112 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "leise",
-  "sentence": "Er pfeift [[leise]].",
+  "word": "groß",
+  "sentence": "Ein Fass so [[groß]] wie ein ganzes Zimmer.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "quietly",
+   "answer": "big",
    "options": [
-    "quietly",
-    "loudly",
-    "quickly",
-    "angrily"
-   ],
-   "audioClip": {
-    "storySlug": "das-schloss-uber-heidelberg",
-    "storySource": "user",
-    "sentence": "Er pfeift leise.",
-    "targetWord": "leise",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "jeden",
-  "sentence": "Sie kennt [[jeden]] Meter und geht vorneweg.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "every",
-   "options": [
-    "every",
-    "some",
-    "no",
-    "many"
-   ],
-   "audioClip": {
-    "storySlug": "das-schloss-uber-heidelberg",
-    "storySource": "user",
-    "sentence": "Sie kennt jeden Meter und geht vorneweg.",
-    "targetWord": "jeden",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "warten",
-  "sentence": "Er [[wartet]] bis zum Weg nach unten.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to wait for someone",
-   "options": [
-    "to wait for someone",
-    "to call someone",
-    "to follow someone",
-    "to greet someone"
-   ],
-   "audioClip": {
-    "storySlug": "das-schloss-uber-heidelberg",
-    "storySource": "user",
-    "sentence": "Er wartet bis zum Weg nach unten.",
-    "targetWord": "wartet",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "kennen",
-  "sentence": "Der Direktor [[kennt]] deinen Namen schon.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to know a person",
-   "options": [
-    "to know a person",
-    "to meet a person",
-    "to help a person",
-    "to miss a person"
-   ],
-   "audioClip": {
-    "storySlug": "das-schloss-uber-heidelberg",
-    "storySource": "user",
-    "sentence": "Der Direktor kennt deinen Namen schon.",
-    "targetWord": "kennt",
-    "language": "german"
-   }
-  },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "klein",
-  "sentence": "Die Stadt unten ist [[klein]] wie ein Modell, und der Wind ist kalt.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "small",
-   "options": [
-    "small",
     "big",
-    "long",
-    "heavy"
+    "small",
+    "new",
+    "empty"
    ],
    "audioClip": {
     "storySlug": "das-schloss-uber-heidelberg",
     "storySource": "user",
-    "sentence": "Die Stadt unten ist klein wie ein Modell, und der Wind ist kalt.",
-    "targetWord": "klein",
+    "sentence": "Ein Fass so groß wie ein ganzes Zimmer.",
+    "targetWord": "groß",
     "language": "german"
    }
   },
   "featured": false
  },
  {
-  "type": "meaning_in_context",
-  "word": "oben",
-  "sentence": "Das Schloss ist halb kaputt, und der Weg nach [[oben]] ist steil.",
+  "type": "fill_blank",
+  "word": "liegt",
+  "sentence": "Der Hut _____ auf dem Stein.",
   "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "up there",
+   "prompt": "Complete the sentence.",
+   "answer": "liegt",
    "options": [
-    "up there",
-    "down there",
-    "over there",
-    "in here"
+    "liegt",
+    "steht",
+    "hängt",
+    "fällt"
+   ],
+   "translation": "The hat _____ on the stone.",
+   "optionTranslations": [
+    "lies",
+    "stands",
+    "hangs",
+    "falls"
    ],
    "audioClip": {
     "storySlug": "das-schloss-uber-heidelberg",
     "storySource": "user",
-    "sentence": "Das Schloss ist halb kaputt, und der Weg nach oben ist steil.",
-    "targetWord": "oben",
+    "sentence": "Der Hut liegt auf dem Stein.",
+    "targetWord": "liegt",
     "language": "german"
    }
   },
   "featured": false
  },
  {
-  "type": "meaning_in_context",
-  "word": "unten",
-  "sentence": "Die Stadt [[unten]] ist klein wie ein Modell, und der Wind ist kalt.",
+  "type": "fill_blank",
+  "word": "zerbrochen",
+  "sentence": "Das Glas fiel auf den Boden und ist _____.",
   "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "down there",
+   "prompt": "Complete the sentence.",
+   "answer": "zerbrochen",
    "options": [
-    "down there",
-    "up there",
-    "over there",
-    "out there"
+    "zerbrochen",
+    "voll",
+    "warm",
+    "leer"
+   ],
+   "translation": "The glass fell on the floor and is _____.",
+   "optionTranslations": [
+    "broken in pieces",
+    "full",
+    "warm",
+    "empty"
    ],
    "audioClip": {
     "storySlug": "das-schloss-uber-heidelberg",
     "storySource": "user",
-    "sentence": "Die Stadt unten ist klein wie ein Modell, und der Wind ist kalt.",
-    "targetWord": "unten",
+    "sentence": "Das Glas fiel auf den Boden und ist zerbrochen.",
+    "targetWord": "zerbrochen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "nichts",
+  "sentence": "Er sagt kein Wort und macht _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nichts",
+   "options": [
+    "nichts",
+    "alles",
+    "etwas",
+    "viel"
+   ],
+   "translation": "He says no word and does _____.",
+   "optionTranslations": [
+    "nothing",
+    "everything",
+    "something",
+    "a lot"
+   ],
+   "audioClip": {
+    "storySlug": "das-schloss-uber-heidelberg",
+    "storySource": "user",
+    "sentence": "Er sagt kein Wort und macht nichts.",
+    "targetWord": "nichts",
     "language": "german"
    }
   },
