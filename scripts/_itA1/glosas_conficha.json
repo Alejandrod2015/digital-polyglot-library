@@ -1,0 +1,1166 @@
+{
+ "accelera": {
+  "def": "To speed up; to make a car go faster than before.",
+  "t": "verb"
+ },
+ "accende": {
+  "def": "To switch on; to start an engine, a light or a phone.",
+  "t": "verb"
+ },
+ "aggiusto": {
+  "def": "To fix; to make a broken thing work again.",
+  "t": "verb"
+ },
+ "agosto": {
+  "def": "August; the hot month when half of Italy closes and leaves.",
+  "t": "noun"
+ },
+ "aiuta": {
+  "def": "To help; to do something that makes things easier for somebody.",
+  "t": "verb"
+ },
+ "alberi": {
+  "def": "Tree; the tall plant with a trunk, branches and green leaves.",
+  "t": "noun"
+ },
+ "amicizia": {
+  "def": "Friendship; the bond between two people who like each other.",
+  "t": "noun"
+ },
+ "anguria": {
+  "def": "Watermelon; the huge green fruit that is red and wet inside.",
+  "t": "noun"
+ },
+ "animali": {
+  "def": "Animal; any living thing that is not a plant or a person.",
+  "t": "noun"
+ },
+ "anno": {
+  "def": "Year; the twelve months from January to December.",
+  "t": "noun"
+ },
+ "antipatica": {
+  "def": "Unpleasant; the kind of person nobody enjoys being with.",
+  "t": "adjective"
+ },
+ "appuntamento": {
+  "def": "Appointment; a time agreed to meet a doctor or a friend.",
+  "t": "noun"
+ },
+ "armadio": {
+  "def": "Wardrobe; the tall cupboard where you hang your clothes.",
+  "t": "noun"
+ },
+ "arrabbiato": {
+  "def": "Angry; feeling bad with somebody for what they did.",
+  "t": "adjective"
+ },
+ "aspirapolvere": {
+  "def": "Vacuum cleaner; the machine that sucks the dust off a floor.",
+  "t": "noun"
+ },
+ "attimo": {
+  "def": "Instant; a very short moment, much shorter than a minute.",
+  "t": "noun"
+ },
+ "autunno": {
+  "def": "Autumn; the months when the leaves fall and the air cools.",
+  "t": "noun"
+ },
+ "bagagliaio": {
+  "def": "Boot of a car; the space at the back for bags.",
+  "t": "noun"
+ },
+ "bagno": {
+  "def": "Bathroom; the room with the shower and the toilet in it.",
+  "t": "noun"
+ },
+ "balcone": {
+  "def": "Balcony; the small open floor outside an Italian window.",
+  "t": "noun"
+ },
+ "banca": {
+  "def": "Bank; where you keep your money and take it out again.",
+  "t": "noun"
+ },
+ "batteria": {
+  "def": "Battery; the part that holds the power inside a phone.",
+  "t": "noun"
+ },
+ "benda": {
+  "def": "Bandage; the long strip of cloth you wrap round a hurt leg.",
+  "t": "noun"
+ },
+ "benzina": {
+  "def": "Petrol; the fuel you put in the car at the pump.",
+  "t": "noun"
+ },
+ "biancheria": {
+  "def": "Linen and underwear; the small washing you do by hand.",
+  "t": "noun"
+ },
+ "bici": {
+  "def": "Bike; the short everyday word Italians use for a bicycle.",
+  "t": "noun"
+ },
+ "biscotti": {
+  "def": "Biscuit; the small dry sweet Italians dip into their coffee.",
+  "t": "noun"
+ },
+ "bosco": {
+  "def": "Wood; a lot of trees growing together on a hillside.",
+  "t": "noun"
+ },
+ "bugie": {
+  "def": "Lie; something you say knowing it is not true.",
+  "t": "noun"
+ },
+ "busta": {
+  "def": "Envelope; the paper cover you keep letters or papers inside.",
+  "t": "noun"
+ },
+ "cacciavite": {
+  "def": "Screwdriver; the tool you turn to open or close a screw.",
+  "t": "noun"
+ },
+ "camere": {
+  "def": "Room; the room you sleep in at home or in a hotel.",
+  "t": "noun"
+ },
+ "camicia": {
+  "def": "Shirt; the top with buttons down the front and a collar.",
+  "t": "noun"
+ },
+ "capo": {
+  "def": "Boss; the person who tells you what to do at work.",
+  "t": "noun"
+ },
+ "caraffa": {
+  "def": "Jug; the open container you bring water to the table in.",
+  "t": "noun"
+ },
+ "caricabatterie": {
+  "def": "Charger; the cable and plug that fill a phone with power again.",
+  "t": "noun"
+ },
+ "casello": {
+  "def": "Toll booth; the place on the motorway where drivers stop and pay.",
+  "t": "noun"
+ },
+ "cassetto": {
+  "def": "Drawer; the box that slides out of a table or a cupboard.",
+  "t": "noun"
+ },
+ "castagni": {
+  "def": "Chestnut; the brown nut Italians roast in autumn, and its tree.",
+  "t": "noun"
+ },
+ "castello": {
+  "def": "Castle; the old stone fort above many Italian villages.",
+  "t": "noun"
+ },
+ "cattedrale": {
+  "def": "Cathedral; the big main church at the centre of a town.",
+  "t": "noun"
+ },
+ "cavallo": {
+  "def": "Horse; the big animal people ride or use to pull a cart.",
+  "t": "noun"
+ },
+ "caviglia": {
+  "def": "Ankle; the joint between your leg and your foot.",
+  "t": "noun"
+ },
+ "cellulare": {
+  "def": "Mobile phone; the phone Italians carry in a pocket or bag.",
+  "t": "noun"
+ },
+ "cerotti": {
+  "def": "Plaster; the small sticky strip you put over a cut.",
+  "t": "noun"
+ },
+ "cetriolo": {
+  "def": "Cucumber; the long green vegetable you slice into a salad.",
+  "t": "noun"
+ },
+ "chiave": {
+  "def": "Key; the small metal piece that opens a lock or a car.",
+  "t": "noun"
+ },
+ "chilometri": {
+  "def": "Kilometre; the unit Italians use to measure how far something is.",
+  "t": "noun"
+ },
+ "cinema": {
+  "def": "Cinema; the dark hall where you watch a film on a screen.",
+  "t": "noun"
+ },
+ "clima": {
+  "def": "Climate; the kind of weather a place usually has.",
+  "t": "noun"
+ },
+ "colazione": {
+  "def": "Breakfast; the first food of the day, often coffee and biscuits.",
+  "t": "noun"
+ },
+ "collega": {
+  "def": "To connect; to join a phone to a network or to a cable.",
+  "t": "verb"
+ },
+ "collo": {
+  "def": "Neck; the part of the body between the head and the shoulders.",
+  "t": "noun"
+ },
+ "comodino": {
+  "def": "Bedside table; the small table next to the head of a bed.",
+  "t": "noun"
+ },
+ "consegna": {
+  "def": "To hand over; to give a thing to the person waiting for it.",
+  "t": "verb"
+ },
+ "contratto": {
+  "def": "Contract; the paper two sides sign to agree on a job.",
+  "t": "noun"
+ },
+ "controlla": {
+  "def": "To check; to look at something to be sure it is right.",
+  "t": "verb"
+ },
+ "conversazione": {
+  "def": "Conversation; two or more people talking to each other.",
+  "t": "noun"
+ },
+ "coperta": {
+  "def": "Blanket; the warm cover you pull over you in bed.",
+  "t": "noun"
+ },
+ "coraggioso": {
+  "def": "Brave; able to act when other people are afraid.",
+  "t": "adjective"
+ },
+ "coricarsi": {
+  "def": "To lie down; to get into bed and stay there.",
+  "t": "verb"
+ },
+ "corrente": {
+  "def": "Electric power; what comes out of the wall and feeds a phone.",
+  "t": "noun"
+ },
+ "corridoio": {
+  "def": "Corridor; the long narrow space that joins the rooms.",
+  "t": "noun"
+ },
+ "corsia": {
+  "def": "Lane; one of the strips a road is divided into.",
+  "t": "noun"
+ },
+ "cortile": {
+  "def": "Yard; the open space between the walls of a house.",
+  "t": "noun"
+ },
+ "costume": {
+  "def": "Swimming costume; what you wear to go into the sea.",
+  "t": "noun"
+ },
+ "cravatta": {
+  "def": "Tie; the long strip of cloth men knot around the collar.",
+  "t": "noun"
+ },
+ "crede": {
+  "def": "To believe; to think that something is true.",
+  "t": "verb"
+ },
+ "credito": {
+  "def": "Credit; the money still left on a card or a phone.",
+  "t": "noun"
+ },
+ "crescono": {
+  "def": "To grow; to get bigger, said of plants, animals or people.",
+  "t": "verb"
+ },
+ "cucchiaio": {
+  "def": "Spoon; what you eat soup with at the table.",
+  "t": "noun"
+ },
+ "cura": {
+  "def": "Course of treatment; the medicines you take for some days.",
+  "t": "noun"
+ },
+ "cuscino": {
+  "def": "Pillow; the soft thing you put your head on at night.",
+  "t": "noun"
+ },
+ "debole": {
+  "def": "Weak; without the strength to do the normal things.",
+  "t": "adjective"
+ },
+ "denti": {
+  "def": "Tooth; one of the white pieces you bite and chew with.",
+  "t": "noun"
+ },
+ "detersivo": {
+  "def": "Washing powder; what you add to water to clean clothes.",
+  "t": "noun"
+ },
+ "dicembre": {
+  "def": "December; the last month of the year, with Christmas in it.",
+  "t": "noun"
+ },
+ "difficile": {
+  "def": "Difficult; needing effort because it is not easy to do.",
+  "t": "adjective"
+ },
+ "dimenticato": {
+  "def": "To forget; not to remember a thing you meant to do.",
+  "t": "verb"
+ },
+ "discorso": {
+  "def": "Speech; the words somebody says in front of a crowd.",
+  "t": "noun"
+ },
+ "distributore": {
+  "def": "Petrol station, and also the machine that sells drinks and snacks.",
+  "t": "noun"
+ },
+ "divano": {
+  "def": "Sofa; the long soft seat in a living room.",
+  "t": "noun"
+ },
+ "doccia": {
+  "def": "Shower; washing yourself standing up under falling water.",
+  "t": "noun"
+ },
+ "documenti": {
+  "def": "Document; an official paper with your name on it.",
+  "t": "noun"
+ },
+ "dolore": {
+  "def": "Pain; the bad feeling in a part of the body that hurts.",
+  "t": "noun"
+ },
+ "domenica": {
+  "def": "Sunday; the day when almost every Italian shop stays shut.",
+  "t": "noun"
+ },
+ "dorme": {
+  "def": "To sleep; to rest with your eyes closed for a while.",
+  "t": "verb"
+ },
+ "dormire": {
+  "def": "To sleep; to rest with your eyes closed for a while.",
+  "t": "verb"
+ },
+ "dottore": {
+  "def": "Doctor; the person who says what is wrong with your body.",
+  "t": "noun"
+ },
+ "duro": {
+  "def": "Hard; not soft when you press it with your hand.",
+  "t": "adjective"
+ },
+ "edificio": {
+  "def": "Building; any construction with walls and a roof.",
+  "t": "noun"
+ },
+ "educata": {
+  "def": "Polite; treating other people well even when they are difficult.",
+  "t": "adjective"
+ },
+ "esame": {
+  "def": "Exam; the test you have to pass at the end of a course.",
+  "t": "noun"
+ },
+ "farmacia": {
+  "def": "Chemist's shop; where you buy medicines and ask for advice.",
+  "t": "noun"
+ },
+ "fattoria": {
+  "def": "Farm; the house and land where animals are kept.",
+  "t": "noun"
+ },
+ "febbre": {
+  "def": "Fever; when your body is hotter than it should be.",
+  "t": "noun"
+ },
+ "film": {
+  "def": "Film; the story you watch on a screen for two hours.",
+  "t": "noun"
+ },
+ "filo": {
+  "def": "Wire or line; here the string clothes are hung out on.",
+  "t": "noun"
+ },
+ "firma": {
+  "def": "To sign; to write your own name at the bottom of a paper.",
+  "t": "verb"
+ },
+ "forma": {
+  "def": "Shape; the outside line of a thing, or the way it works.",
+  "t": "noun"
+ },
+ "fotocopia": {
+  "def": "Photocopy; the paper copy a machine makes of another paper.",
+  "t": "noun"
+ },
+ "fumo": {
+  "def": "Smoke; the grey cloud that rises from a fire.",
+  "t": "noun"
+ },
+ "funghi": {
+  "def": "Mushroom; the small round plant that grows in a wet wood.",
+  "t": "noun"
+ },
+ "galleria": {
+  "def": "Tunnel; the road that goes through a hill instead of over it.",
+  "t": "noun"
+ },
+ "galline": {
+  "def": "Hen; the farm bird that gives you eggs every morning.",
+  "t": "noun"
+ },
+ "gamberi": {
+  "def": "Prawn; the small pink sea animal you eat with the fingers.",
+  "t": "noun"
+ },
+ "gennaio": {
+  "def": "January; the first month of the year in Italy.",
+  "t": "noun"
+ },
+ "gettone": {
+  "def": "Token; the little metal piece you buy and give instead of money.",
+  "t": "noun"
+ },
+ "giacca": {
+  "def": "Jacket; the light coat you put on over a shirt.",
+  "t": "noun"
+ },
+ "giovane": {
+  "def": "Young; with few years behind you, still near the start of life.",
+  "t": "adjective"
+ },
+ "giugno": {
+  "def": "June; the month when the Italian school year finishes.",
+  "t": "noun"
+ },
+ "gola": {
+  "def": "Throat; the part inside your neck that hurts with a cold.",
+  "t": "noun"
+ },
+ "gonfia": {
+  "def": "Swollen; bigger than normal because it hurts inside.",
+  "t": "adjective"
+ },
+ "graffio": {
+  "def": "Scratch; the thin line left on paint by something sharp.",
+  "t": "noun"
+ },
+ "grigia": {
+  "def": "Grey; the colour of a cloudy sky or of old metal.",
+  "t": "adjective"
+ },
+ "insalata": {
+  "def": "Salad; raw green leaves with oil, salt and vinegar on top.",
+  "t": "noun"
+ },
+ "labbra": {
+  "def": "Lip; one of the two soft edges around your mouth.",
+  "t": "noun"
+ },
+ "lago": {
+  "def": "Lake; a large area of still water with land all around.",
+  "t": "noun"
+ },
+ "lampadina": {
+  "def": "Light bulb; the small glass ball that gives light in a lamp.",
+  "t": "noun"
+ },
+ "lasciato": {
+  "def": "To leave; to put a thing down and walk away from it.",
+  "t": "verb"
+ },
+ "lava": {
+  "def": "To wash yourself; to clean your own face, hands or body.",
+  "t": "verb"
+ },
+ "lavagna": {
+  "def": "Blackboard; the dark board people write on with white chalk.",
+  "t": "noun"
+ },
+ "lenti": {
+  "def": "Slow; taking a long time to move or to finish.",
+  "t": "adjective"
+ },
+ "letti": {
+  "def": "Bed; the piece of furniture you lie down on to sleep.",
+  "t": "noun"
+ },
+ "libretto": {
+  "def": "Small booklet that travels with an Italian car and says who owns it.",
+  "t": "noun"
+ },
+ "limonata": {
+  "def": "Lemonade; the cold drink made with lemons, water and sugar.",
+  "t": "noun"
+ },
+ "lingua": {
+  "def": "Tongue, and also language; Italian uses the same word for both.",
+  "t": "noun"
+ },
+ "lunedì": {
+  "def": "Monday; the first day of the Italian working week.",
+  "t": "noun"
+ },
+ "macelleria": {
+  "def": "Butcher's shop; where Italians buy meat cut in front of them.",
+  "t": "noun"
+ },
+ "madre": {
+  "def": "Mother; the woman whose son or daughter you are.",
+  "t": "noun"
+ },
+ "magliette": {
+  "def": "T-shirt; the light cotton top with short sleeves.",
+  "t": "noun"
+ },
+ "maglione": {
+  "def": "Jumper; the thick wool top you wear over a shirt.",
+  "t": "noun"
+ },
+ "magro": {
+  "def": "Thin; with very little fat on the body.",
+  "t": "adjective"
+ },
+ "maiale": {
+  "def": "Pork; the meat of the pig, and the animal itself.",
+  "t": "noun"
+ },
+ "mais": {
+  "def": "Sweetcorn; the small yellow seeds that grow on a cob.",
+  "t": "noun"
+ },
+ "malattia": {
+  "def": "Illness; the thing that keeps you in bed for some days.",
+  "t": "noun"
+ },
+ "male": {
+  "def": "Badly, and in fare male also to hurt or to be sore.",
+  "t": "adverb"
+ },
+ "mamma": {
+  "def": "Mum; the warm everyday word Italians use for their mother.",
+  "t": "noun"
+ },
+ "mappa": {
+  "def": "Map; the drawing that shows roads and towns on paper.",
+  "t": "noun"
+ },
+ "marroni": {
+  "def": "Brown; the colour of wood, coffee or dry leaves.",
+  "t": "adjective"
+ },
+ "marzo": {
+  "def": "March; the first month of spring in Italy.",
+  "t": "noun"
+ },
+ "materasso": {
+  "def": "Mattress; the thick soft part of a bed you lie on.",
+  "t": "noun"
+ },
+ "matrimonio": {
+  "def": "Wedding; the day two people marry and everybody eats a lot.",
+  "t": "noun"
+ },
+ "mattinata": {
+  "def": "Morning; here the whole stretch of hours before lunch.",
+  "t": "noun"
+ },
+ "melone": {
+  "def": "Melon; the sweet orange fruit Italians eat with ham.",
+  "t": "noun"
+ },
+ "mentito": {
+  "def": "To lie; to say something you know is not true.",
+  "t": "verb"
+ },
+ "mercoledì": {
+  "def": "Wednesday; the day in the middle of the working week.",
+  "t": "noun"
+ },
+ "mese": {
+  "def": "Month; one of the twelve parts a year is cut into.",
+  "t": "noun"
+ },
+ "messaggio": {
+  "def": "Message; the short text you send or get on a phone.",
+  "t": "noun"
+ },
+ "modulo": {
+  "def": "Form; the sheet with empty lines you have to fill in.",
+  "t": "noun"
+ },
+ "mucche": {
+  "def": "Cow; the big farm animal that gives milk every day.",
+  "t": "noun"
+ },
+ "multa": {
+  "def": "Fine; the money you pay when you break a traffic rule.",
+  "t": "noun"
+ },
+ "muore": {
+  "def": "To die; to stop living, and in speech to exaggerate a pain.",
+  "t": "verb"
+ },
+ "muovono": {
+  "def": "To move; to shift something from one place to another.",
+  "t": "verb"
+ },
+ "naso": {
+  "def": "Nose; the part of the face you breathe and smell with.",
+  "t": "noun"
+ },
+ "navi": {
+  "def": "Ship; the big boat that carries people and lorries across water.",
+  "t": "noun"
+ },
+ "nebbia": {
+  "def": "Fog; thick white air that stops you seeing far ahead.",
+  "t": "noun"
+ },
+ "notte": {
+  "def": "Night; the dark hours between the evening and the morning.",
+  "t": "noun"
+ },
+ "numerino": {
+  "def": "Queue ticket; the little paper with your number on it.",
+  "t": "noun"
+ },
+ "nuvola": {
+  "def": "Cloud; the white or grey shape that carries rain in the sky.",
+  "t": "noun"
+ },
+ "occhiali": {
+  "def": "Glasses; what you wear on your nose to see better.",
+  "t": "noun"
+ },
+ "orecchie": {
+  "def": "Ear; the part of the head you hear sounds with.",
+  "t": "noun"
+ },
+ "ottobre": {
+  "def": "October; the month when the weather turns cold in the hills.",
+  "t": "noun"
+ },
+ "pago": {
+  "def": "To pay; to hand over money for something you take.",
+  "t": "verb"
+ },
+ "palazzo": {
+  "def": "Large building; a block of flats or an old grand house.",
+  "t": "noun"
+ },
+ "panetteria": {
+  "def": "Bakery; the shop that sells bread fresh every morning.",
+  "t": "noun"
+ },
+ "panini": {
+  "def": "Bread roll with something inside; the classic quick Italian lunch.",
+  "t": "noun"
+ },
+ "panna": {
+  "def": "Cream; the thick white part of milk, sweet on a cake.",
+  "t": "noun"
+ },
+ "pantaloni": {
+  "def": "Trousers; the piece of clothing that covers both of your legs.",
+  "t": "noun"
+ },
+ "papà": {
+  "def": "Dad; the warm everyday word Italians use for their father.",
+  "t": "noun"
+ },
+ "parcheggia": {
+  "def": "To park; to leave the car standing in a free space.",
+  "t": "verb"
+ },
+ "parco": {
+  "def": "Park; the green public space with trees and benches.",
+  "t": "noun"
+ },
+ "passaporto": {
+  "def": "Passport; the small book you show to cross a border.",
+  "t": "noun"
+ },
+ "password": {
+  "def": "Password; the secret word you type to get onto a network.",
+  "t": "noun"
+ },
+ "pastiglie": {
+  "def": "Tablet; the small round medicine you swallow with water.",
+  "t": "noun"
+ },
+ "pastore": {
+  "def": "Shepherd; the person who walks all day behind a flock of sheep.",
+  "t": "noun"
+ },
+ "patate": {
+  "def": "Potato; the round vegetable that grows under the ground.",
+  "t": "noun"
+ },
+ "patente": {
+  "def": "Driving licence; the card that says you are allowed to drive.",
+  "t": "noun"
+ },
+ "paura": {
+  "def": "Fear; the cold feeling that something bad will happen.",
+  "t": "noun"
+ },
+ "pecore": {
+  "def": "Sheep; the white farm animal with thick soft wool.",
+  "t": "noun"
+ },
+ "pedaggio": {
+  "def": "Toll; the money you pay to use an Italian motorway.",
+  "t": "noun"
+ },
+ "pelle": {
+  "def": "Skin; the thin outside layer that covers your whole body.",
+  "t": "noun"
+ },
+ "peperoni": {
+  "def": "Pepper; the big red, yellow or green vegetable you roast.",
+  "t": "noun"
+ },
+ "pere": {
+  "def": "Pear; the soft green or brown fruit with a narrow top.",
+  "t": "noun"
+ },
+ "persa": {
+  "def": "To get lost; to stop knowing where you are or which way to go.",
+  "t": "verb"
+ },
+ "pettina": {
+  "def": "To comb your hair; to put it in order with a comb.",
+  "t": "verb"
+ },
+ "petto": {
+  "def": "Chest; the front part of the body above the stomach.",
+  "t": "noun"
+ },
+ "pigiama": {
+  "def": "Pyjamas; the soft clothes you wear only in bed.",
+  "t": "noun"
+ },
+ "pneumatici": {
+  "def": "Tyre; the rubber ring on a wheel that touches the road.",
+  "t": "noun"
+ },
+ "pollo": {
+  "def": "Chicken; the meat of the bird that lives in a farmyard.",
+  "t": "noun"
+ },
+ "poltrona": {
+  "def": "Armchair; the soft wide seat for one person only.",
+  "t": "noun"
+ },
+ "pomata": {
+  "def": "Cream; the soft medicine you rub on a sore part of the body.",
+  "t": "noun"
+ },
+ "pomeriggio": {
+  "def": "Afternoon; the hours between lunch and the end of the day.",
+  "t": "noun"
+ },
+ "portatile": {
+  "def": "Laptop; the computer you can close and carry with you.",
+  "t": "noun"
+ },
+ "portiera": {
+  "def": "Car door; the door you open to get in or out.",
+  "t": "noun"
+ },
+ "posta": {
+  "def": "Post office; where letters and parcels are sent and picked up.",
+  "t": "noun"
+ },
+ "povera": {
+  "def": "Poor; with very little money for the things you need.",
+  "t": "adjective"
+ },
+ "prenotazione": {
+  "def": "Booking; the room or table you asked for before arriving.",
+  "t": "noun"
+ },
+ "preoccupata": {
+  "def": "Worried; with a problem in your head that will not leave.",
+  "t": "adjective"
+ },
+ "presa": {
+  "def": "Socket; the hole in the wall where you plug something in.",
+  "t": "noun"
+ },
+ "primavera": {
+  "def": "Spring; the months when the trees get their leaves back.",
+  "t": "noun"
+ },
+ "processione": {
+  "def": "Procession; people walking slowly together behind a holy statue.",
+  "t": "noun"
+ },
+ "prosciutto": {
+  "def": "Ham; the salted meat Italians cut in very thin slices.",
+  "t": "noun"
+ },
+ "pulita": {
+  "def": "Clean; with no dirt and no dust on it at all.",
+  "t": "adjective"
+ },
+ "raccontava": {
+  "def": "To tell; to say a story to somebody from start to end.",
+  "t": "verb"
+ },
+ "rade": {
+  "def": "To shave; to cut the hair off your face with a blade.",
+  "t": "verb"
+ },
+ "raffreddore": {
+  "def": "Cold; the small illness with a blocked nose and a cough.",
+  "t": "noun"
+ },
+ "regala": {
+  "def": "To give as a present, without asking for money back.",
+  "t": "verb"
+ },
+ "relazione": {
+  "def": "Relationship; the way two people get on over the years.",
+  "t": "noun"
+ },
+ "ricca": {
+  "def": "Rich; with a lot of money and no worry about it.",
+  "t": "adjective"
+ },
+ "ricevuta": {
+  "def": "Receipt; the paper that says you have paid for something.",
+  "t": "noun"
+ },
+ "rifugio": {
+  "def": "Mountain hut where walkers eat and sleep high up in the hills.",
+  "t": "noun"
+ },
+ "ripara": {
+  "def": "To repair; to make something work or look right again.",
+  "t": "verb"
+ },
+ "riposare": {
+  "def": "To rest; to stop working for a while and do nothing.",
+  "t": "verb"
+ },
+ "riposo": {
+  "def": "Rest; time with no driving and no work, so the body mends.",
+  "t": "noun"
+ },
+ "ritirare": {
+  "def": "To collect; to go and pick up something that is yours.",
+  "t": "verb"
+ },
+ "riunione": {
+  "def": "Meeting; when people at work sit together to decide things.",
+  "t": "noun"
+ },
+ "rompe": {
+  "def": "To break; to leave a thing in pieces or no longer working.",
+  "t": "verb"
+ },
+ "rubinetto": {
+  "def": "Tap; the metal part you turn to get water out.",
+  "t": "noun"
+ },
+ "sabato": {
+  "def": "Saturday; the day before Sunday, when Italian villages hold their feasts.",
+  "t": "noun"
+ },
+ "sagra": {
+  "def": "Village food festival; a few days of eating and music in the square.",
+  "t": "noun"
+ },
+ "salame": {
+  "def": "Salami; the dry sausage Italians cut in thin round slices.",
+  "t": "noun"
+ },
+ "salsa": {
+  "def": "Sauce; the wet part you pour over meat or over pasta.",
+  "t": "noun"
+ },
+ "salsicce": {
+  "def": "Sausage; the fat meat roll Italians cook over the coals.",
+  "t": "noun"
+ },
+ "sangue": {
+  "def": "Blood; the red liquid that runs inside the whole body.",
+  "t": "noun"
+ },
+ "santo": {
+  "def": "Saint; the holy person a village keeps a feast day for.",
+  "t": "noun"
+ },
+ "sapone": {
+  "def": "Soap; what you wash your hands and your body with.",
+  "t": "noun"
+ },
+ "scaffale": {
+  "def": "Shelf unit; the boards on a wall where books are kept.",
+  "t": "noun"
+ },
+ "scalda": {
+  "def": "To heat; to make food or a room warmer than before.",
+  "t": "verb"
+ },
+ "schermo": {
+  "def": "Screen; the flat glass part of a phone or a computer.",
+  "t": "noun"
+ },
+ "sciroppo": {
+  "def": "Syrup; the thick sweet medicine you take with a spoon.",
+  "t": "noun"
+ },
+ "scuola": {
+  "def": "School; the place where children go to learn every morning.",
+  "t": "noun"
+ },
+ "scura": {
+  "def": "Dark; with little light, or close to black in colour.",
+  "t": "adjective"
+ },
+ "secca": {
+  "def": "Dry; with no water in it, said of air or of clothes.",
+  "t": "adjective"
+ },
+ "secchio": {
+  "def": "Bucket; the round container you carry water in.",
+  "t": "noun"
+ },
+ "seguire": {
+  "def": "To follow; to go behind somebody or along a line.",
+  "t": "verb"
+ },
+ "semaforo": {
+  "def": "Traffic light; the red, yellow and green light at a crossing.",
+  "t": "noun"
+ },
+ "sentiero": {
+  "def": "Path; the narrow way through a wood or up a hill.",
+  "t": "noun"
+ },
+ "settembre": {
+  "def": "September; the month when Italian holidays end and work restarts.",
+  "t": "noun"
+ },
+ "sindaco": {
+  "def": "Mayor; the person who runs an Italian town or village.",
+  "t": "noun"
+ },
+ "soggiorno": {
+  "def": "Living room; the room with the sofa where people sit together.",
+  "t": "noun"
+ },
+ "sogni": {
+  "def": "Dream; the story your head tells you while you sleep.",
+  "t": "noun"
+ },
+ "soluzione": {
+  "def": "Solution; the way out of a problem you have found.",
+  "t": "noun"
+ },
+ "sorella": {
+  "def": "Sister; the daughter of your own mother and father.",
+  "t": "noun"
+ },
+ "sorprende": {
+  "def": "To surprise; to do something nobody was expecting from you.",
+  "t": "verb"
+ },
+ "spaventa": {
+  "def": "To frighten; to make somebody feel afraid of something.",
+  "t": "verb"
+ },
+ "spazzolino": {
+  "def": "Toothbrush; the small brush you clean your teeth with.",
+  "t": "noun"
+ },
+ "specchio": {
+  "def": "Mirror; the glass where you see your own face.",
+  "t": "noun"
+ },
+ "spedita": {
+  "def": "To post; to send a letter or a parcel through the post office.",
+  "t": "verb"
+ },
+ "sporca": {
+  "def": "Dirty; covered with dust, mud or something you want to clean.",
+  "t": "adjective"
+ },
+ "sportello": {
+  "def": "Counter window; the small opening where an office serves you.",
+  "t": "noun"
+ },
+ "spugna": {
+  "def": "Sponge; the soft thing you wash or clean a surface with.",
+  "t": "noun"
+ },
+ "spuntino": {
+  "def": "Snack; a small quick thing to eat between two meals.",
+  "t": "noun"
+ },
+ "stanchezza": {
+  "def": "Tiredness; the heavy feeling after too many hours awake.",
+  "t": "noun"
+ },
+ "stipendio": {
+  "def": "Salary; the money that arrives every month from a job.",
+  "t": "noun"
+ },
+ "stivali": {
+  "def": "Boot; the tall shoe that covers part of your leg.",
+  "t": "noun"
+ },
+ "storia": {
+  "def": "Story, and also history; Italian uses the same word for both.",
+  "t": "noun"
+ },
+ "studentessa": {
+  "def": "Female student; a young woman who studies at school or university.",
+  "t": "noun"
+ },
+ "stupida": {
+  "def": "Stupid; feeling foolish about something you said or thought.",
+  "t": "adjective"
+ },
+ "suda": {
+  "def": "To sweat; what your skin does when you are too hot.",
+  "t": "verb"
+ },
+ "supermercato": {
+  "def": "Supermarket; the big shop with all the food on shelves.",
+  "t": "noun"
+ },
+ "sveglia": {
+  "def": "To wake up; to open your eyes and stop sleeping.",
+  "t": "adjective"
+ },
+ "tamburo": {
+  "def": "Drum; the round instrument you hit to keep the beat.",
+  "t": "noun"
+ },
+ "tapparella": {
+  "def": "Roller blind; the shutter you pull down over an Italian window.",
+  "t": "noun"
+ },
+ "tappeto": {
+  "def": "Rug or carpet; the cloth on the floor you walk on.",
+  "t": "noun"
+ },
+ "targa": {
+  "def": "Number plate; the metal plate with the letters of a car.",
+  "t": "noun"
+ },
+ "tasti": {
+  "def": "Key or button; the small part you press on a keyboard.",
+  "t": "noun"
+ },
+ "telefonata": {
+  "def": "Phone call; the moment you ring somebody and talk.",
+  "t": "noun"
+ },
+ "temperatura": {
+  "def": "Temperature; how hot or how cold the air or a body is.",
+  "t": "noun"
+ },
+ "termometro": {
+  "def": "Thermometer; the small tool that tells you how high a fever is.",
+  "t": "noun"
+ },
+ "timbro": {
+  "def": "Stamp; the ink mark an office puts on a paper to make it valid.",
+  "t": "noun"
+ },
+ "topo": {
+  "def": "Mouse; the small grey animal that runs into a hole.",
+  "t": "noun"
+ },
+ "torcia": {
+  "def": "Torch; the small lamp you carry to see in the dark.",
+  "t": "noun"
+ },
+ "torta": {
+  "def": "Cake; the sweet you cut in slices for the whole table.",
+  "t": "noun"
+ },
+ "tristezza": {
+  "def": "Sadness; the low quiet feeling after something goes wrong.",
+  "t": "noun"
+ },
+ "trombe": {
+  "def": "Trumpet; the loud metal instrument you blow into.",
+  "t": "noun"
+ },
+ "tè": {
+  "def": "Tea; the hot drink you make with leaves and hot water.",
+  "t": "noun"
+ },
+ "uccello": {
+  "def": "Bird; the animal with feathers that sings and flies.",
+  "t": "noun"
+ },
+ "umida": {
+  "def": "Damp; with water in the air or on a surface.",
+  "t": "adjective"
+ },
+ "uva": {
+  "def": "Grapes; the small sweet fruit that grows in bunches.",
+  "t": "noun"
+ },
+ "vacanze": {
+  "def": "Holiday; the days you stop working and go somewhere else.",
+  "t": "noun"
+ },
+ "venerdì": {
+  "def": "Friday; the last day of the Italian working week.",
+  "t": "noun"
+ },
+ "verbale": {
+  "def": "Written report; the page where damage is listed and signed.",
+  "t": "noun"
+ },
+ "verità": {
+  "def": "Truth; what really happened, said without changing it.",
+  "t": "noun"
+ },
+ "vernice": {
+  "def": "Paint; the coloured layer on the outside of a car or a wall.",
+  "t": "noun"
+ },
+ "veste": {
+  "def": "To get dressed; to put your clothes on before going out.",
+  "t": "verb"
+ },
+ "viaggia": {
+  "def": "To travel; to go from one place to a far one.",
+  "t": "verb"
+ },
+ "vinto": {
+  "def": "To win; to come first or to get what you were fighting for.",
+  "t": "verb"
+ },
+ "visto": {
+  "def": "To see; to notice something with your eyes.",
+  "t": "verb"
+ },
+ "zia": {
+  "def": "Aunt; the sister of your mother or of your father.",
+  "t": "noun"
+ },
+ "zio": {
+  "def": "Uncle; the brother of your mother or of your father.",
+  "t": "noun"
+ }
+}
