@@ -32,9 +32,15 @@ async function run() {
     where: { journey: { language: "italian", status: { not: "archived" } } },
     select: { journeyId: true, vocab: true },
   });
+  // Espeja la regla de `saveStory.ts`: del journey del MISMO tipo solo cuenta
+  // como bloqueada la capa anclada; la portable (verbo, adjetivo, adverbio) es
+  // justo la que la escalera quiere reencontrar en el nivel siguiente.
+  const PORTABLE = new Set(["verb", "adjective", "adverb", "expression"]);
   const A0T = new Set<string>(), A0F = new Set<string>();
-  for (const r of rows) for (const v of ((r.vocab as any[]) ?? []))
+  for (const r of rows) for (const v of ((r.vocab as any[]) ?? [])) {
+    if (PORTABLE.has(String(v.type ?? "").toLowerCase())) continue;
     (r.journeyId === trav ? A0T : A0F).add(String(v.word));
+  }
   const L = ITALIAN_A1_A2_LEMMAS as Set<string>;
 
   // Superficies ensenadas en OTRAS historias que este cuerpo contiene: es lo
@@ -71,8 +77,8 @@ async function run() {
     if (soft.length > 2) flags.push(`OTRO:${soft.join(",")}`);
     if (off.length > 2) flags.push(`FUERA:${off.join(",")}`);
     if (dupr.length) flags.push(`RAIZ:${dupr.map((a) => a.join("+")).join(" ")}`);
-    if (/[«»„""]/.test(s.text)) flags.push("COMILLAS");
-    if (/[--]/.test(s.text)) flags.push("GUION LARGO");
+    if (/[\u00AB\u00BB\u201E"]/.test(s.text)) flags.push("COMILLAS");
+    if (/[\u2014\u2013]/.test(s.text)) flags.push("GUION LARGO");
     for (const v of voc) {
       if (!s.text.toLowerCase().includes(String(v.surface ?? v.word).toLowerCase())) flags.push(`NO EN CUERPO: ${v.surface ?? v.word}`);
       const dw = w(String(v.definition ?? ""));

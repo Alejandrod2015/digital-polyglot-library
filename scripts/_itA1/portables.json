@@ -1,0 +1,790 @@
+{
+ "guardare": {
+  "type": "verb",
+  "forms": [
+   "guarda",
+   "guardano",
+   "guardare"
+  ],
+  "def": "To look at; to turn your eyes towards something on purpose."
+ },
+ "mettere": {
+  "type": "verb",
+  "forms": [
+   "mette",
+   "mettono",
+   "mettere",
+   "messo"
+  ],
+  "def": "To put; to place a thing where you want it to stay."
+ },
+ "spiegare": {
+  "type": "verb",
+  "forms": [
+   "spiega",
+   "spiegato",
+   "spiegare"
+  ],
+  "def": "To explain; to make somebody understand how or why something works."
+ },
+ "sentire": {
+  "type": "verb",
+  "forms": [
+   "sente",
+   "sentire",
+   "sentito"
+  ],
+  "def": "To feel, to hear or to smell; the one Italian word covers all three."
+ },
+ "domani": {
+  "type": "adverb",
+  "forms": [
+   "domani"
+  ],
+  "def": "Tomorrow; the day that comes right after this one."
+ },
+ "sotto": {
+  "type": "adverb",
+  "forms": [
+   "sotto"
+  ],
+  "def": "Under or below; in the space lower than something else."
+ },
+ "prendere": {
+  "type": "verb",
+  "forms": [
+   "prende",
+   "prendono",
+   "prendere",
+   "preso"
+  ],
+  "def": "To take; to pick something up or to catch a train."
+ },
+ "restare": {
+  "type": "verb",
+  "forms": [
+   "resta",
+   "restano",
+   "restare"
+  ],
+  "def": "To stay or to be left; not to move and not to go away."
+ },
+ "arrivare": {
+  "type": "verb",
+  "forms": [
+   "arriva",
+   "arrivano",
+   "arrivare"
+  ],
+  "def": "To arrive; to reach the place you were going to."
+ },
+ "pagare": {
+  "type": "verb",
+  "forms": [
+   "paga",
+   "paghi",
+   "paghiamo",
+   "pago",
+   "pagare"
+  ],
+  "def": "To pay; to hand over money for something you take."
+ },
+ "passare": {
+  "type": "verb",
+  "forms": [
+   "passa",
+   "passano",
+   "passare"
+  ],
+  "def": "To pass; to go by a place, or to hand a thing over."
+ },
+ "fermare": {
+  "type": "verb",
+  "forms": [
+   "ferma",
+   "fermano",
+   "fermarsi",
+   "fermati"
+  ],
+  "def": "To stop; to make something halt, or to halt yourself."
+ },
+ "tornare": {
+  "type": "verb",
+  "forms": [
+   "torna",
+   "tornano",
+   "tornare",
+   "torno"
+  ],
+  "def": "To come back; to go again to the place you were before."
+ },
+ "aprire": {
+  "type": "verb",
+  "forms": [
+   "apre",
+   "aprono",
+   "aprire",
+   "aperto"
+  ],
+  "def": "To open; to make a door, a box or a shop ready to use."
+ },
+ "male": {
+  "type": "adverb",
+  "forms": [
+   "male"
+  ],
+  "def": "Badly, and in fare male also to hurt or to be sore."
+ },
+ "scendere": {
+  "type": "verb",
+  "forms": [
+   "scende",
+   "scendono",
+   "scendere"
+  ],
+  "def": "To go down; to get out of a car or walk down a hill."
+ },
+ "fuori": {
+  "type": "adverb",
+  "forms": [
+   "fuori"
+  ],
+  "def": "Outside; not inside the house, the car or the room."
+ },
+ "rispondere": {
+  "type": "verb",
+  "forms": [
+   "risponde",
+   "rispondono",
+   "rispondere"
+  ],
+  "def": "To answer; to say something back, or to pick up the phone."
+ },
+ "chiedere": {
+  "type": "verb",
+  "forms": [
+   "chiede",
+   "chiedono",
+   "chiedere"
+  ],
+  "def": "To ask; to put a question or to ask for something."
+ },
+ "scrivere": {
+  "type": "verb",
+  "forms": [
+   "scrive",
+   "scrivono",
+   "scrivere",
+   "scritto",
+   "scritti"
+  ],
+  "def": "To write; to put words on paper or into a phone."
+ },
+ "piano": {
+  "type": "adverb",
+  "forms": [
+   "piano"
+  ],
+  "def": "Slowly or softly; without hurry and without making noise."
+ },
+ "tenere": {
+  "type": "verb",
+  "forms": [
+   "tiene",
+   "tengono",
+   "tenere"
+  ],
+  "def": "To hold or to keep; to have a thing in your hands."
+ },
+ "lavorare": {
+  "type": "verb",
+  "forms": [
+   "lavora",
+   "lavorano",
+   "lavorare"
+  ],
+  "def": "To work; to do the job that gives you your money."
+ },
+ "cercare": {
+  "type": "verb",
+  "forms": [
+   "cerca",
+   "cercano",
+   "cercare"
+  ],
+  "def": "To look for; to try to find a thing you cannot see."
+ },
+ "contare": {
+  "type": "verb",
+  "forms": [
+   "conta",
+   "contano",
+   "contare"
+  ],
+  "def": "To count; to say the numbers to know how many there are."
+ },
+ "uscire": {
+  "type": "verb",
+  "forms": [
+   "esce",
+   "escono",
+   "uscire"
+  ],
+  "def": "To go out; to leave a house, a room or a road."
+ },
+ "oggi": {
+  "type": "adverb",
+  "forms": [
+   "oggi"
+  ],
+  "def": "Today; the day you are living through right now."
+ },
+ "sedersi": {
+  "type": "verb",
+  "forms": [
+   "siede",
+   "siedono",
+   "sedersi",
+   "siediti"
+  ],
+  "def": "To sit down; to put your body on a chair or a wall."
+ },
+ "mangiare": {
+  "type": "verb",
+  "forms": [
+   "mangia",
+   "mangiano",
+   "mangiare",
+   "mangiamo",
+   "mangiate"
+  ],
+  "def": "To eat; to put food in your mouth and swallow it."
+ },
+ "tirare": {
+  "type": "verb",
+  "forms": [
+   "tira",
+   "tirano",
+   "tirare"
+  ],
+  "def": "To pull; to move a thing towards you with your hand."
+ },
+ "volere": {
+  "type": "verb",
+  "forms": [
+   "vuole",
+   "vogliono",
+   "voglia"
+  ],
+  "def": "To want; to wish for something enough to go and get it."
+ },
+ "chiudere": {
+  "type": "verb",
+  "forms": [
+   "chiude",
+   "chiudono",
+   "chiudere",
+   "chiusa",
+   "chiuso"
+  ],
+  "def": "To close; to shut a door, a shop or a bag."
+ },
+ "proporre": {
+  "type": "verb",
+  "forms": [
+   "propone",
+   "propongono",
+   "proporre"
+  ],
+  "def": "To suggest; to put an idea in front of somebody else."
+ },
+ "intorno": {
+  "type": "adverb",
+  "forms": [
+   "intorno"
+  ],
+  "def": "Around; on every side of the thing you are looking at."
+ },
+ "vicino": {
+  "type": "adverb",
+  "forms": [
+   "vicino"
+  ],
+  "def": "Near; only a short way from where you are now."
+ },
+ "portare": {
+  "type": "verb",
+  "forms": [
+   "porta",
+   "portano",
+   "portare"
+  ],
+  "def": "To carry or to bring; to move a thing with you."
+ },
+ "chiamare": {
+  "type": "verb",
+  "forms": [
+   "chiama",
+   "chiamano",
+   "chiamare",
+   "chiamo"
+  ],
+  "def": "To call; to phone somebody or to say their name aloud."
+ },
+ "salire": {
+  "type": "verb",
+  "forms": [
+   "sale",
+   "salgono",
+   "salire"
+  ],
+  "def": "To go up; to climb stairs or to get into a car."
+ },
+ "ridere": {
+  "type": "verb",
+  "forms": [
+   "ride",
+   "ridono",
+   "ridere",
+   "ridendo"
+  ],
+  "def": "To laugh; to make the sound you make when something is funny."
+ },
+ "coprire": {
+  "type": "verb",
+  "forms": [
+   "copre",
+   "coprono",
+   "coprire"
+  ],
+  "def": "To cover; to put something over a thing so it is hidden."
+ },
+ "dormire": {
+  "type": "verb",
+  "forms": [
+   "dorme",
+   "dormono",
+   "dormire",
+   "dormi"
+  ],
+  "def": "To sleep; to rest at night with your eyes closed."
+ },
+ "provare": {
+  "type": "verb",
+  "forms": [
+   "prova",
+   "provano",
+   "provare"
+  ],
+  "def": "To try; to do something once to see how it goes."
+ },
+ "girare": {
+  "type": "verb",
+  "forms": [
+   "gira",
+   "girano",
+   "girare"
+  ],
+  "def": "To turn; to change direction, or to go round something."
+ },
+ "aspettare": {
+  "type": "verb",
+  "forms": [
+   "aspetta",
+   "aspettano",
+   "aspettare",
+   "aspettiamo"
+  ],
+  "def": "To wait; to stay where you are until something happens."
+ },
+ "perdere": {
+  "type": "verb",
+  "forms": [
+   "perde",
+   "perdono",
+   "perdere",
+   "perso"
+  ],
+  "def": "To lose; to stop having a thing, or to miss a train."
+ },
+ "lasciare": {
+  "type": "verb",
+  "forms": [
+   "lascia",
+   "lasciano",
+   "lasciare",
+   "lasciato",
+   "lasciami"
+  ],
+  "def": "To leave; to put a thing down and walk away from it."
+ },
+ "trovare": {
+  "type": "verb",
+  "forms": [
+   "trova",
+   "trovano",
+   "trovare"
+  ],
+  "def": "To find; to see the thing you were looking for."
+ },
+ "pensare": {
+  "type": "verb",
+  "forms": [
+   "pensa",
+   "pensano",
+   "pensare",
+   "pensarci"
+  ],
+  "def": "To think; to turn something over in your head."
+ },
+ "raccontare": {
+  "type": "verb",
+  "forms": [
+   "racconta",
+   "raccontano",
+   "raccontare",
+   "raccontava"
+  ],
+  "def": "To tell; to say a story to somebody from start to end."
+ },
+ "suonare": {
+  "type": "verb",
+  "forms": [
+   "suona",
+   "suonano",
+   "suonare",
+   "suonavo"
+  ],
+  "def": "To play music, and also to ring a bell at a door."
+ },
+ "camminare": {
+  "type": "verb",
+  "forms": [
+   "cammina",
+   "camminano",
+   "camminare"
+  ],
+  "def": "To walk; to go on foot, one step after the other."
+ },
+ "freddo": {
+  "type": "adjective",
+  "forms": [
+   "freddo",
+   "fredda",
+   "freddi"
+  ],
+  "def": "Cold; with a low temperature that makes you want a coat."
+ },
+ "caldo": {
+  "type": "adjective",
+  "forms": [
+   "caldo",
+   "calda",
+   "caldi"
+  ],
+  "def": "Hot or warm; with a high temperature you can feel on the skin."
+ },
+ "grande": {
+  "type": "adjective",
+  "forms": [
+   "grande",
+   "grandi"
+  ],
+  "def": "Big; larger than the other things around it."
+ },
+ "lungo": {
+  "type": "adjective",
+  "forms": [
+   "lungo",
+   "lunga",
+   "lunghi",
+   "lunghe"
+  ],
+  "def": "Long; going far from one end to the other."
+ },
+ "bianco": {
+  "type": "adjective",
+  "forms": [
+   "bianco",
+   "bianca",
+   "bianchi"
+  ],
+  "def": "White; the colour of milk, snow or a clean sheet."
+ },
+ "stasera": {
+  "type": "adverb",
+  "forms": [
+   "stasera"
+  ],
+  "def": "This evening; the hours of today after the light goes."
+ },
+ "insieme": {
+  "type": "adverb",
+  "forms": [
+   "insieme"
+  ],
+  "def": "Together; with each other and not one at a time."
+ },
+ "invece": {
+  "type": "adverb",
+  "forms": [
+   "invece"
+  ],
+  "def": "Instead; in the place of the other thing you expected."
+ },
+ "servire": {
+  "type": "verb",
+  "forms": [
+   "serve",
+   "servono",
+   "servire"
+  ],
+  "def": "To be needed, and also to serve food to a table."
+ },
+ "vedere": {
+  "type": "verb",
+  "forms": [
+   "vede",
+   "vedono"
+  ],
+  "def": "To see; to notice something with your own eyes."
+ },
+ "bastare": {
+  "type": "verb",
+  "forms": [
+   "basta",
+   "bastano",
+   "bastare"
+  ],
+  "def": "To be enough; to be as much as somebody needs."
+ },
+ "stesso": {
+  "type": "adjective",
+  "forms": [
+   "stesso",
+   "stessa",
+   "stessi"
+  ],
+  "def": "Same; not a different one but exactly this one."
+ },
+ "basso": {
+  "type": "adjective",
+  "forms": [
+   "basso",
+   "bassa",
+   "basse",
+   "bassi"
+  ],
+  "def": "Low or short; not far up from the ground."
+ },
+ "vecchio": {
+  "type": "adjective",
+  "forms": [
+   "vecchio",
+   "vecchia",
+   "vecchi",
+   "vecchie"
+  ],
+  "def": "Old; made or born many years ago, not new."
+ },
+ "pieno": {
+  "type": "adjective",
+  "forms": [
+   "pieno",
+   "piena",
+   "pieni",
+   "piene"
+  ],
+  "def": "Full; with no room left inside for anything more."
+ },
+ "vuoto": {
+  "type": "adjective",
+  "forms": [
+   "vuoto",
+   "vuota",
+   "vuoti"
+  ],
+  "def": "Empty; with nobody and nothing inside at all."
+ },
+ "destro": {
+  "type": "adjective",
+  "forms": [
+   "destra",
+   "destro"
+  ],
+  "def": "Right; the side opposite the left one."
+ },
+ "aperto": {
+  "type": "adjective",
+  "forms": [
+   "aperta",
+   "aperto",
+   "aperti"
+  ],
+  "def": "Open; not shut, so people or air can get through."
+ },
+ "ultimo": {
+  "type": "adjective",
+  "forms": [
+   "ultimo",
+   "ultima",
+   "ultime"
+  ],
+  "def": "Last; the one that comes after all the others."
+ },
+ "primo": {
+  "type": "adjective",
+  "forms": [
+   "primo",
+   "prima",
+   "primi"
+  ],
+  "def": "First; the one that comes before all the others."
+ },
+ "giusto": {
+  "type": "adjective",
+  "forms": [
+   "giusto",
+   "giusta"
+  ],
+  "def": "Right or correct; the one that fits what you need."
+ },
+ "pronto": {
+  "type": "adjective",
+  "forms": [
+   "pronto",
+   "pronta"
+  ],
+  "def": "Ready; with everything done and nothing left to prepare."
+ },
+ "quanto": {
+  "type": "adverb",
+  "forms": [
+   "quanto",
+   "quanti",
+   "quante"
+  ],
+  "def": "How much or how many; the word you ask amounts with."
+ },
+ "dove": {
+  "type": "adverb",
+  "forms": [
+   "dove"
+  ],
+  "def": "Where; the word you use to ask about a place."
+ },
+ "verso": {
+  "type": "adverb",
+  "forms": [
+   "verso"
+  ],
+  "def": "Towards, and also around a time of day."
+ },
+ "fondo": {
+  "type": "adverb",
+  "forms": [
+   "fondo"
+  ],
+  "def": "Bottom or far end; in fondo means at the very end."
+ },
+ "davvero": {
+  "type": "adverb",
+  "forms": [
+   "davvero"
+  ],
+  "def": "Really; used when you mean a thing is true."
+ },
+ "finire": {
+  "type": "verb",
+  "forms": [
+   "finisce",
+   "finiscono",
+   "finire",
+   "finito"
+  ],
+  "def": "To finish; to come to the end of something."
+ },
+ "capire": {
+  "type": "verb",
+  "forms": [
+   "capisce",
+   "capiscono",
+   "capire"
+  ],
+  "def": "To understand; to see what a thing really means."
+ },
+ "ricordare": {
+  "type": "verb",
+  "forms": [
+   "ricorda",
+   "ricordano",
+   "ricorda"
+  ],
+  "def": "To remember; to keep something in your head from before."
+ },
+ "parlare": {
+  "type": "verb",
+  "forms": [
+   "parla",
+   "parlano",
+   "parlare",
+   "parliamo"
+  ],
+  "def": "To speak; to say words to another person."
+ },
+ "sapere": {
+  "type": "verb",
+  "forms": [
+   "sappiamo",
+   "sapere",
+   "sa"
+  ],
+  "def": "To know; to have a fact already in your head."
+ },
+ "offrire": {
+  "type": "verb",
+  "forms": [
+   "offre",
+   "offro",
+   "offrire"
+  ],
+  "def": "To offer; to hold something out for somebody to take."
+ },
+ "indicare": {
+  "type": "verb",
+  "forms": [
+   "indica",
+   "indicano",
+   "indicare"
+  ],
+  "def": "To point at; to show where a thing is with a finger."
+ },
+ "toccare": {
+  "type": "verb",
+  "forms": [
+   "tocca",
+   "toccano",
+   "toccare"
+  ],
+  "def": "To touch; to put your hand on something."
+ },
+ "togliere": {
+  "type": "verb",
+  "forms": [
+   "toglie",
+   "tolgono",
+   "togliere",
+   "togliendo"
+  ],
+  "def": "To take off or take away; to remove a thing."
+ },
+ "comprare": {
+  "type": "verb",
+  "forms": [
+   "compra",
+   "comprano",
+   "comprare"
+  ],
+  "def": "To buy; to give money and take the thing home."
+ }
+}

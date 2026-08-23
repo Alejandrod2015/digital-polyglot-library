@@ -2924,12 +2924,18 @@ export async function validateGeneratedStory(
     // `lasca` y `avental` antes que "plaza". Entre tipos distintos el
     // reencuentro de una palabra en otra escena es justo lo que la fija, así
     // que ahí se toleran dos; dentro del mismo tipo, ninguna.
+    //
+    // AFINADO (2026-08-23): la lista que llega aquí ya viene filtrada por
+    // `saveStory.ts`, que deja fuera la capa PORTABLE (verbo, adjetivo,
+    // adverbio) de los OTROS journeys del mismo tipo. El cero sigue entero
+    // para este journey y para los sustantivos anclados; lo que se abre es
+    // justo lo que la escalera quiere reencontrar en el nivel siguiente.
     const mismoTipo = new Set((context.taughtSameType ?? []).map(lema));
     if (mismoTipo.size > 0 && parsed.vocab.length > 0) {
       const repes = parsed.vocab.map((v) => v.word).filter((w) => mismoTipo.has(lema(w)));
       checks.push({
         id: "vocab-taught-same-type",
-        label: "Vocab not already taught by this journey or another of the same type (zero)",
+        label: "Vocab not already taught by this journey, nor an anchored word of the same type (zero)",
         status: repes.length > 0 ? "fail" : "pass",
         detail: repes.length
           ? `${repes.length}/${parsed.vocab.length} ya enseñadas: ${repes.slice(0, 8).join(", ")}${repes.length > 8 ? ` …+${repes.length - 8}` : ""}`

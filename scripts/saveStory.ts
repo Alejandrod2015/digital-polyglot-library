@@ -318,12 +318,40 @@ function slugify(s: string): string {
       });
       const out = new Set<string>();
       const duro = new Set<string>();
+      // LA CAPA PORTABLE NO SE BLOQUEA ENTRE NIVELES (2026-08-23).
+      //
+      // El cero contra el journey del mismo tipo existe para que un A1 no
+      // reenseñe lo que su A0 ya enseñó. Vale para la palabra ANCLADA a una
+      // escena: `tapparella` o `casello` se enseñan una vez y ya. No vale para
+      // la capa PORTABLE (verbo, adjetivo, adverbio), que es justo la que la
+      // escalera quiere reencontrar: cuatro encuentros por palabra, el último
+      // a distancia larga, y el nivel siguiente es la distancia larga.
+      //
+      // POR QUÉ ahora: montando el Traveler IT A1 el cero contra el A0 dejaba
+      // 115 palabras portables libres en todo el idioma, de las que ya usaba
+      // 78. El journey se quedaba en un 20% de portables (la forma pide 60%) y
+      // en 1,58 encuentros por plaza (el suelo es 2,5), porque lo único que se
+      // podía enseñar eran sustantivos pegados a una escena, que por
+      // construcción no vuelven. El A0 italiano agravó el caso: enseña 506
+      // palabras distintas en 525 plazas, casi sin repetir ninguna, y se llevó
+      // 217 portables él solo.
+      //
+      // El cero se mantiene entero para ESTE journey (cualquier tipo de
+      // palabra) y para los sustantivos del mismo tipo.
+      const PORTABLE = new Set(["verb", "adjective", "adverb", "expression"]);
+      //
+      // La exencion vale para los DOS cubos, no solo para el duro. Abrirla solo
+      // contra el mismo tipo no cambiaba nada: el Friends A0 italiano enseña
+      // otros 152 portables, y el cubo blando (tope 2 por historia) tumbaba
+      // igual diez de las veintiuna. El argumento es el mismo en los dos sitios
+      // y la frontera tambien: anclada, cero; portable, libre.
       for (const r of otras) {
-        // El mismo TIPO de journey (Traveler A0 -> Traveler A1) va al cubo
-        // duro; los de otro tipo, al blando de hasta dos por historia.
-        const destino = mio.typeSlug && r.journey?.typeSlug === mio.typeSlug ? duro : out;
-        for (const v of ((r.vocab as Array<{ word?: unknown }> | null) ?? []))
-          if (v?.word) destino.add(String(v.word));
+        const mismoTipo = mio.typeSlug && r.journey?.typeSlug === mio.typeSlug;
+        for (const v of ((r.vocab as Array<{ word?: unknown; type?: unknown }> | null) ?? [])) {
+          if (!v?.word) continue;
+          if (PORTABLE.has(String(v.type ?? "").toLowerCase())) continue;
+          (mismoTipo ? duro : out).add(String(v.word));
+        }
       }
       // ...y el vocabulario de las historias YA GUARDADAS de ESTE journey que
       // no vienen en este fichero. `vocab-repetition` solo compara contra lo

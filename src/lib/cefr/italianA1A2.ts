@@ -185,6 +185,17 @@ export const ITALIAN_A1_A2_LEMMAS: ReadonlySet<string> = new Set([
   // Verbos y estados de uso diario que faltaban
   "riuscire","smettere","rimanere","promettere","svuotare","riempire","aspettare",
   "spiegare","ripetere","decidere","provare","succedere","servire","costare","pagare",
+
+  // ── La capa PORTABLE que la lista no tenia (2026-08-23) ────────────────────
+  //
+  // Todas estas las enseña el Traveler A0 italiano, que ya esta publicado: son
+  // A1 sin discusion y estaban fuera de la lista solo porque la lista se hizo
+  // mirando la cocina y la escuela. Se anaden al abrir la capa portable entre
+  // niveles del mismo tipo (ver `scripts/saveStory.ts`): sin ellas, enseñar
+  // `guardare` o `restare` en un A1 contaba como fuera de nivel.
+  "guardare","restare","passare","fermare","contare","coprire","indicare","bastare",
+  "suonare","girare","proporre","ridere","destro","gonfio","mattinata","motivo",
+  "stasera","quanto","fondo","intorno","dove","insieme","invece",
 ]);
 
 export function isItalianA1A2(word: string): boolean {
