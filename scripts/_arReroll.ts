@@ -48,6 +48,27 @@ async function f0(mp3: string): Promise<string> {
   } catch (e) { return `gate F0 no disponible (${(e as Error).message.slice(0, 60)})`; }
 }
 
+/**
+ * Rango de tono del parrafo (percentil 90 menos percentil 10). El gate F0 solo
+ * mira el FINAL, asi que no ve la sobreactuacion de en medio: el 2026-08-23 el
+ * parrafo con "¿vos entendes esto?" salio con 151 Hz de rango y picos de 331,
+ * cuando los A0 ya publicados se mueven entre 69 y 105. Se mide para poder
+ * elegir la toma menos exagerada, no solo la que cierra bien.
+ */
+const RANGO_PUBLICADO = 105;
+async function rango(mp3: string): Promise<{ hz: number; texto: string }> {
+  const code = `
+import sys, parselmouth, numpy as np
+v = parselmouth.Sound(sys.argv[1]).to_pitch().selected_array['frequency']; v = v[v > 0]
+print(f"{np.percentile(v,90)-np.percentile(v,10):.0f} {np.median(v):.0f} {np.percentile(v,90):.0f}")
+`;
+  try {
+    const { stdout } = await execFileAsync(F0_PY, ["-c", code, mp3]);
+    const [r, med, alto] = stdout.trim().split(/\s+/).map(Number);
+    return { hz: r, texto: `rango ${r} Hz (mediana ${med}, techo ${alto})${r > RANGO_PUBLICADO ? "  EXAGERADA" : ""}` };
+  } catch { return { hz: 0, texto: "sin praat" }; }
+}
+
 async function scribe(mp3: string, key: string): Promise<string> {
   const fd = new FormData();
   fd.append("model_id", "scribe_v1"); fd.append("language_code", "spa");
@@ -87,6 +108,6 @@ async function scribe(mp3: string, key: string): Promise<string> {
     if (!res.ok) throw new Error(`ElevenLabs ${res.status}: ${(await res.text()).slice(0, 160)}`);
     const f = path.join(OUT, `take${n}.mp3`);
     writeFileSync(f, Buffer.from(await res.arrayBuffer()));
-    console.log(`toma ${n}: ${await f0(f)}\n   Scribe oye: ${await scribe(f, apiKey)}\n   /_muestra-ar/take${n}.mp3`);
+    console.log(`toma ${n}: ${await f0(f)}\n   ${(await rango(f)).texto}\n   Scribe oye: ${await scribe(f, apiKey)}\n   /_muestra-ar/take${n}.mp3`);
   }
 })().catch((e) => { console.error(e); process.exit(1); });

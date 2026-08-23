@@ -6,7 +6,7 @@ STORIES = [
  "synopsis": "Llega un sobre del dueño con una fecha y una palabra que Julieta no entiende. Damián le lee el renglón despacito, dos veces, y ella anota todo antes de abrir la peluquería.",
  "text": """Julieta, una peluquera de Villa Crespo, abre el local a las nueve. Un sobre del dueño queda sin abrir arriba de la heladera, sin remitente. El que arregla todo acá es Damián, su hermano, y todavía duerme adentro.
 
-Julieta lee el papel dos veces, sin apuro, y no entiende ni una firma. “Damián, vení y fijate, ¿vos entendés esto?”, pregunta. “Dice que el alquiler sube en diciembre”, contesta él con el mate en la mano.
+Julieta lee el papel dos veces, sin apuro, y no entiende ni una firma. “Damián, vení y fijate, ¿vos entendés esto?”, pregunta. “Dice que en diciembre sube el alquiler”, contesta él con el mate en la mano.
 
 Damián lee el renglón otra vez, más despacito, y lo guarda adentro. “Repetímelo por favor, la parte de la fecha”, pide ella. “Treinta y uno de diciembre”, dice él, y ella lo anota en el cuaderno.
 
