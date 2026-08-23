@@ -17,6 +17,43 @@
 const TRAILING_QUOTES_AFTER_PUNCT = /([.!?])['"]+\s*$/;
 const TRAILING_LONE_QUOTE = /['"]$/;
 
+// Pares de comillas del catalogo. Una comilla curva CON pareja es un cierre de
+// dialogo legitimo y se respeta; una SIN pareja es el mismo residuo que las
+// rectas, solo que el ejercicio se llevo media replica: `“Mein Zimmer ist dort
+// drueben.` (abre y no cierra) o `_____!”, ruft er.` (cierra y no abre). En la
+// tarjeta se ve, y el TTS la vocaliza igual que la recta.
+const QUOTE_PAIRS: Array<[string, string]> = [
+  ["\u201C", "\u201D"],
+  ["\u00AB", "\u00BB"],
+];
+
+function dropUnpairedQuotes(sentence: string): string {
+  let s = sentence;
+  for (const [open, close] of QUOTE_PAIRS) {
+    if (!s.includes(open) && !s.includes(close)) continue;
+    // Cierres sin apertura previa.
+    let depth = 0;
+    let out = "";
+    for (const ch of s) {
+      if (ch === open) { depth += 1; out += ch; continue; }
+      if (ch === close) {
+        if (depth === 0) continue;
+        depth -= 1;
+        out += ch;
+        continue;
+      }
+      out += ch;
+    }
+    // Aperturas que se quedaron sin cierre: se quitan desde la ultima.
+    while (depth > 0) {
+      out = out.slice(0, out.lastIndexOf(open)) + out.slice(out.lastIndexOf(open) + 1);
+      depth -= 1;
+    }
+    s = out;
+  }
+  return s;
+}
+
 export function sanitizePracticeSentence(sentence: string): string {
   let s = sentence;
   // 1) Comillas rectas que siguen inmediatamente a la puntuación
@@ -31,7 +68,13 @@ export function sanitizePracticeSentence(sentence: string): string {
     const opens = (earlier.match(new RegExp(`\\${last}`, "g")) ?? []).length;
     if (opens % 2 === 0) s = earlier;
   }
-  return s.trim();
+  // 3) Comillas curvas o angulares sin pareja dentro de la frase.
+  const sinComillas = dropUnpairedQuotes(s);
+  // Al quitar la comilla de cierre, la coma del inciso se queda pegada al
+  // signo de la replica (`_____!”, ruft er.` -> `_____!, ruft er.`). Esa coma
+  // solo existia para separar la cita del inciso, asi que se va con ella.
+  s = sinComillas === s ? s : sinComillas.replace(/([.!?]),/g, "$1");
+  return s.replace(/\s{2,}/g, " ").trim();
 }
 
 // Devuelve la frase con `_____` reemplazado por la palabra real y
@@ -50,5 +93,6 @@ export function isDirtyPracticeSentence(sentence: string): boolean {
     const opens = (earlier.match(new RegExp(`\\${last}`, "g")) ?? []).length;
     if (opens % 2 === 0) return true;
   }
+  if (dropUnpairedQuotes(sentence) !== sentence) return true;
   return false;
 }

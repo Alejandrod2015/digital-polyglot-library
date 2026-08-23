@@ -232,6 +232,7 @@ export function buildPracticeItemsFromStory(params: {
 
     items.push({
       word,
+      surface: surfaceCandidate || null,
       translation,
       wordType:
         normalizeVocabType("type" in item ? item.type ?? undefined : undefined, {
