@@ -30,6 +30,7 @@ export type JourneyStoryInput = {
   text: string;
   language: string;
   level: string;
+  vocab?: Array<{ word: string; surface?: string | null }> | null;
 };
 
 export type JourneyCheck = {
@@ -138,7 +139,13 @@ const A0_DE_PASADO = /\b(war|waren|hatte|hatten|ging|kam|sagte|machte|stand|sah|
 
 export function validateJourneyStories(
   stories: JourneyStoryInput[],
-  ctx: { language: string; level: string }
+  ctx: {
+    language: string;
+    level: string;
+    /** Nombres de personas REALES (solicitantes de la beta). Los pasa
+     *  saveStory.ts desde la base; sin ellos el check no puede medir. */
+    realPeople?: string[];
+  }
 ): JourneyCheck[] {
   const out: JourneyCheck[] = [];
   const lang = (ctx.language || "").toUpperCase();
@@ -268,6 +275,93 @@ export function validateJourneyStories(
       push("journey-a0-floor", "Suelo A0: sujeto primero, sin separables partidos, solo presente",
         malas.length === 0, malas.slice(0, 8).join(" | "));
     }
+  }
+
+  // ── 8. Ni ancianos ni ninos ────────────────────────────────
+  {
+    const EDAD = /\b(Kind|Kinder|Junge|Jungen|Mädchen|Baby|Enkel\w*|Oma|Opa|Großmutter|Großvater|Rentner\w*|Greis\w*|Teenager)\b/g;
+    const halladas = new Set<string>();
+    for (const s of stories) for (const m of s.text.matchAll(EDAD)) halladas.add(m[0]);
+    push("journey-no-elderly-no-children", "Ni ancianos ni ninos en contenido nuevo",
+      halladas.size === 0, [...halladas].join(", "));
+  }
+
+  // ── 9. Sin comentarios sobre el acento ─────────────────────
+  {
+    const AC = /\b(Akzent|Dialekt|Mundart|acento|sotaque|accent)\b/gi;
+    const halladas = new Set<string>();
+    for (const s of stories) for (const m of s.text.matchAll(AC)) halladas.add(m[0]);
+    push("journey-no-accent-mentions", "Las historias no comentan el acento de nadie",
+      halladas.size === 0, [...halladas].join(", "));
+  }
+
+  // ── 10. Ninguna persona real como personaje ────────────────
+  if (!ctx.realPeople) {
+    noImpl("journey-no-real-users", "Ningun personaje coincide con una persona real",
+      "No se paso la lista de solicitantes; sin ella el check no puede medir. Lo llena saveStory.ts desde la base.");
+  } else {
+    const choque = cast.filter((n) =>
+      ctx.realPeople!.some((r) => r.split(/\s+/).some((parte) => parte === n)));
+    push("journey-no-real-users", "Ningun personaje coincide con una persona real",
+      choque.length === 0, `Coinciden con un solicitante: ${choque.join(", ")}`);
+  }
+
+  // ── 11. Nombres en la ortografia del idioma ────────────────
+  {
+    // Cada idioma tiene sus diacriticos; un nombre con los de OTRO idioma es
+    // el error que caza esta regla (una `ñ` en aleman, una `ö` en espanol).
+    const AJENOS: Record<string, RegExp> = {
+      DE: /[áéíóúñçàèìòùâêîôûãõ]/i,
+      ES: /[äöüßçàèìòùâêîôûãõ]/i,
+      IT: /[äöüßñç]/i,
+      FR: /[äöüßñãõ]/i,
+      PT: /[äöüßñ]/i,
+    };
+    const re = AJENOS[lang];
+    if (!re) {
+      noImpl("journey-names-target-language", "Nombres en la ortografia del idioma",
+        `Sin lista de diacriticos ajenos para ${lang || "?"}.`);
+    } else {
+      const raros = cast.filter((n) => re.test(n));
+      push("journey-names-target-language", "Nombres en la ortografia del idioma",
+        raros.length === 0, raros.join(", "));
+    }
+  }
+
+  // ── 12. Escalera de recirculacion ──────────────────────────
+  //
+  // Una plaza que sale una sola vez en todo el journey se enseña y no se vuelve
+  // a ver. El escenario ideal son cuatro encuentros por palabra
+  // ([[project_vocab_recirculation_ladder]]), con 12 portables y 8 ancladas al
+  // sitio por historia.
+  //
+  // EL UMBRAL NO ESTA INVENTADO: es el listón que ya tienen los buenos, medido
+  // sobre el catalogo el 2026-08-23. En A0 los journeys publicados dan 4,25
+  // (Traveler ES LATAM), 3,17 (Friends ES Spain) y 3,12 (Traveler ES Mexico);
+  // el suelo se pone en 3,0, por debajo de los tres. En C1 el catalogo entero
+  // vive entre 0,8 y 1,5, asi que ahi NO se mide: poner un numero seria
+  // inventarselo, y bajarlo hasta que pase seria calibrar el gate hacia abajo.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 3.0, A1: 2.5 };
+  const suelo = MEDIA_MINIMA[level];
+  if (suelo === undefined) {
+    noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
+      `Sin umbral calibrado para ${level || "?"}: el catalogo en ese nivel va de 0,8 a 1,5 y no hay un buen precedente del que sacar el liston. Medir antes de gatear.`);
+  } else if (!stories.some((s) => s.vocab && s.vocab.length)) {
+    noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
+      "No se paso el vocab de las historias; sin el no se puede contar un encuentro.");
+  } else {
+    const tok = (t: string) => (t.toLowerCase().match(/\p{L}+/gu) ?? []);
+    const cuerpos = stories.map((s) => new Set(tok(s.text)));
+    const clave = (v: { word: string; surface?: string | null }) =>
+      String(v.surface ?? v.word).toLowerCase().replace(/^(der|die|das|le|la|el|il|o|a)\s+/, "");
+    const enc: number[] = [];
+    for (const s of stories) for (const v of s.vocab ?? [])
+      enc.push(cuerpos.filter((c) => c.has(clave(v))).length);
+    const media = enc.length ? enc.reduce((a, b) => a + b, 0) / enc.length : 0;
+    const unaVez = enc.filter((n) => n <= 1).length;
+    push("journey-vocab-recirculation", `Cada plaza de vocab se reencuentra (media ${suelo} o mas en ${level})`,
+      media >= suelo,
+      `media ${media.toFixed(2)} encuentros por plaza (ideal 4, liston de los buenos ${suelo}) · ${unaVez}/${enc.length} salen una sola vez`);
   }
 
   // ── El inventario manda: una regla declarada sin check es un fallo ──
