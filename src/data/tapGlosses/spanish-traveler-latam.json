@@ -10025,6 +10025,10 @@
   "soles": {
    "g": "soles, the Peruvian currency",
    "t": "noun"
+  },
+  "escala": {
+   "g": "stopover, layover",
+   "t": "noun"
   }
  }
 }
