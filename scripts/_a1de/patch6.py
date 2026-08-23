@@ -11,35 +11,35 @@ Finn: Alles drin. Wasser, Brot und zwei Äpfel.
 Mia: Hörst du, wie ruhig es hier ist?
 Finn: Nur die Vögel und der Wind in den Bäumen.
 
-Die beiden folgen dem Pfad. Über eine Wurzel wächst Gras, und die Erde riecht nach Holz.
+Die beiden folgen dem Pfad. Die Erde riecht nach Holz.
 
-Finn: Pass auf, hier liegt ein Ast über dem Weg.
+Finn: Pass auf, hier liegt ein Ast über dem Weg. Richtig herum?
 Mia: Danke. Schau, ein Schmetterling auf dem Blatt.
-Finn: Und da vorne steht eine Ziege am Zaun.
+Finn: Vielleicht steht da vorne wieder die Ziege am Zaun.
 Mia: Ein Hund bellt irgendwo. Wir sind also nicht allein.
 
-Nach einer Weile machen sie an einem Baum Pause. Eine Biene summt über dem Gras.
+Nach einer Weile machen sie am Baum Pause, bevor es hinunter ins Tal geht. Eine Biene summt über dem Gras.
 
 Mia: Von hier sieht man schon das ganze Tal.
 Finn: Kein Mensch außer uns. Genau dafür sind wir hier.
-Mia: Der Rest geht bergauf. Wir haben den ganzen Tag.""",
+Mia: Stimmt, der Rest geht bergauf. Wir haben den ganzen Tag.""",
 vocab=[
  ("verb","schnüren","schnürt","To lace up; to tie the strings of a shoe or a boot."),
  ("noun","Waldhütte",None,"A wooden cabin at the edge of a forest, used by walkers."),
  ("noun","Flasche","Flaschen","A bottle; the plastic or glass one you carry water in."),
  ("noun","Rucksack",None,"A backpack; the bag you carry on your back when walking."),
  ("noun","Wanderweg",None,"A marked walking path through woods or hills, made for hikers."),
- ("noun","Brot",None,"Bread; the basic food made from flour that Germans eat daily."),
+ ("noun","Schuhe",None,"Shoes; what you lace up before a long walk in the woods."),
  ("noun","Vogel","Vögel","A bird; the small animal with wings that sings in the trees."),
  ("noun","Baum",None,"A tree; the tall plant with a wooden trunk and green leaves."),
- ("noun","Wurzel",None,"A root; the part of a tree that grows under the ground."),
- ("noun","Gras",None,"Grass; the low green plant that covers meadows and paths."),
- ("noun","Erde",None,"The earth or soil, the brown ground under your feet."),
+ ("adjective","genug",None,"Enough; as much as you need and not less than that."),
+ ("adverb","vielleicht",None,"Maybe; you are not sure, but you think it could be so."),
+ ("verb","stimmen","Stimmt","To be right; you say it when the other person has a point."),
  ("noun","Ast",None,"A branch; the arm of a tree that grows out of the trunk."),
  ("noun","Blatt",None,"A leaf; the flat green part that grows on a branch."),
  ("noun","Schmetterling",None,"A butterfly; the insect with big coloured wings in summer."),
- ("adverb","genau",None,"Exactly; for precisely this reason and nothing else."),
- ("noun","Hund",None,"A dog; the animal that many families keep at home as a pet."),
+ ("adverb","richtig",None,"Right; the correct way round and not the other one."),
+ ("adverb","hinunter",None,"Downwards; from up here down towards the valley."),
  ("noun","Pause",None,"A break; a short rest in the middle of a walk or of work."),
  ("noun","Weile",None,"A while; a stretch of time that passes on a long walk."),
  ("noun","Tal",None,"A valley; the low land that lies between two hills or mountains."),
@@ -128,7 +128,7 @@ vocab=[
  ("noun","Waldrand",None,"The edge of the forest, where the trees stop and open land begins."),
  ("adjective","müde","Müde","Tired; you have used your strength and now need to rest."),
  ("adjective","heil",None,"Safe and sound; back home without any harm or injury."),
- ("adverb","genau",None,"Exactly; pointing at precisely the place they want to reach."),
+ ("adverb","hinunter",None,"Downwards; from the ridge down to the forest edge."),
  ("adjective","klug","klüger","Clever; good at finding the right answer or the right way."),
  ("noun","Bach",None,"A stream; the small river they followed down the hill."),
  ("noun","Waldhütte",None,"The wooden cabin at the forest edge where they started."),

@@ -85,7 +85,7 @@ vocab=[
  ("noun","Nachbarin",None,"A female neighbour; the woman who lives close to your own home."),
  ("noun","Nummer",None,"A number, here the one that says which flat is yours."),
  ("adjective","falsch",None,"Wrong; not the right one, so the result cannot work."),
- ("adverb","genau",None,"Exactly; carefully and with attention to the small details."),
+ ("adjective","dritte","dritten","Third; the floor above the second one in a building."),
  ("noun","Zahl",None,"A figure or digit, the written sign for a number."),
 ])
 
@@ -118,7 +118,7 @@ vocab=[
  ("noun","Decke",None,"The ceiling; the flat surface above your head inside a room."),
  ("adjective","nackt","nackt","Bare; with nothing on it at all, here a wall without pictures."),
  ("noun","Farbe",None,"Paint, or the colour of something; here the smell of fresh paint."),
- ("noun","Sofa",None,"A sofa; the long soft seat where two or three people sit."),
+ ("noun","Schlüssel",None,"A key; the one that finally turns in the right door."),
  ("noun","Sessel",None,"An armchair; a big soft chair for one single person."),
  ("noun","Kissen",None,"A cushion or pillow; the soft square you lean or sleep on."),
  ("adjective","alt","alten","Old; the chest of drawers the present came out of."),
@@ -131,5 +131,5 @@ vocab=[
  ("noun","Bild",None,"A picture or photo, something you hang on a wall to look at."),
  ("noun","Traum",None,"A dream; something you wish for and hope will one day be real."),
  ("adjective","zufrieden",None,"Content; calm and glad because everything is now in good order."),
- ("noun","Tasche",None,"A bag; the soft thing you carry small items around in."),
+ ("noun","Kommode",None,"A chest of drawers; the old one the present came out of."),
 ])

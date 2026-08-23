@@ -289,9 +289,9 @@
    },
    {
     "type": "noun",
-    "word": "Frau",
+    "word": "Kabeljau",
     "surface": null,
-    "definition": "A woman; an adult female person, here a young neighbour."
+    "definition": "Cod; the fish already waiting in the pan next door."
    },
    {
     "type": "noun",
@@ -360,10 +360,10 @@
     "definition": "A sweet cold drink with bubbles, often made from lemon or orange."
    },
    {
-    "type": "noun",
-    "word": "Leute",
-    "surface": null,
-    "definition": "People; a small group of persons, here the three at the table."
+    "type": "verb",
+    "word": "schmecken",
+    "surface": "schmeckt",
+    "definition": "To taste; to have a certain taste in the mouth of the eater."
    },
    {
     "type": "adjective",
@@ -646,10 +646,10 @@
     "definition": "Wrong; not the right one, so the result cannot work."
    },
    {
-    "type": "adverb",
-    "word": "genau",
-    "surface": null,
-    "definition": "Exactly; carefully and with attention to the small details."
+    "type": "adjective",
+    "word": "dritte",
+    "surface": "dritten",
+    "definition": "Third; the floor above the second one in a building."
    },
    {
     "type": "noun",
@@ -706,9 +706,9 @@
    },
    {
     "type": "noun",
-    "word": "Sofa",
+    "word": "Schlüssel",
     "surface": null,
-    "definition": "A sofa; the long soft seat where two or three people sit."
+    "definition": "A key; the one that finally turns in the right door."
    },
    {
     "type": "noun",
@@ -784,9 +784,9 @@
    },
    {
     "type": "noun",
-    "word": "Tasche",
+    "word": "Kommode",
     "surface": null,
-    "definition": "A bag; the soft thing you carry small items around in."
+    "definition": "A chest of drawers; the old one the present came out of."
    }
   ],
   "arcType": "harmonic-close"
@@ -928,7 +928,7 @@
   "title": "Der Stammtisch am Donnerstag",
   "slug": "der-stammtisch-am-donnerstag",
   "synopsis": "Max holt Sofie zum Stammtisch, doch an der Tür bleibt sie stehen: eine feste Gruppe, ein festes Wort auf dem Schild, und sie mittendrin als Zaungast. Clara erzählt ihr, wie sie selbst vor zwei Jahren an derselben Tür stand. Der Tisch, versteht Sofie am Ende, ist nicht trotz der Neuen da, sondern genau für sie.",
-  "text": "Das Schild auf dem Holztisch im Wirtshaus trägt nur das Wort Stammtisch. Es ist Donnerstagabend, und die Gruppe sitzt schon zusammen. Sofie bleibt an der Tür stehen und zögert.\n\nMax: Sofie, komm her! Am Holztisch ist noch Platz.\nSofie: Ich will nicht stören. Ihr kennt euch schon lange.\nMax: Genau deshalb bist du eingeladen.\n\nAuf dem Tisch stehen Kartoffelsuppe, Wurst und Salat. Daneben liegt ein altes Kartenspiel.\n\nSofie: In der Firma kenne ich Kollegen, sonst niemanden in der Umgebung.\nClara: Du denkst sicher, wir sind nur höflich. Das dachte ich auch.\nSofie: Ein bisschen. Ihr seid eine feste Gruppe, ich bin neu.\nClara: Vor zwei Jahren stand ich genauso an dieser Tür.\n\nClara schiebt ihr den Teller mit dem Salat hin.\n\nClara: Der Donnerstag ist eine alte Gewohnheit. Jede fing einmal an.\nMax: Ben kam aus Hamburg, Clara aus Leipzig, jeder mit neuem Beruf und ohne Freunde.\nSofie: Dann ist dieses Gespräch kein Zufall.\nMax: Nein. So fängt eine Freundschaft an, in einer fremden Stadt.",
+  "text": "Das Schild auf dem Holztisch im Wirtshaus trägt nur das Wort Stammtisch. Es ist Donnerstagabend, und die Gruppe sitzt schon am Tisch. Sofie bleibt an der Tür stehen und zögert.\n\nMax: Sofie, komm her! Am Holztisch ist noch Platz.\nSofie: Ich will nicht stören. Ihr kennt euch schon lange.\nMax: Genau deshalb bist du eingeladen. Hier sitzt man zusammen.\n\nAuf dem Tisch stehen Kartoffelsuppe, Wurst und Salat. Daneben liegt ein altes Kartenspiel.\n\nSofie: In der Firma kenne ich Kollegen, sonst niemanden in der Umgebung.\nClara: Du denkst sicher, wir sind nur höflich. Das dachte ich auch.\nSofie: Ein bisschen. Ihr seid eine feste Gruppe, ich bin neu.\nClara: Vor zwei Jahren stand ich genauso an dieser Tür.\n\nClara schiebt ihr den Teller mit dem Salat hin.\n\nClara: Der Donnerstag ist eine alte Gewohnheit. Jede fing einmal an.\nMax: Ben kam aus Hamburg, Clara aus Leipzig, jeder mit neuem Beruf und ohne Freunde.\nSofie: Dann ist dieses Gespräch kein Zufall.\nMax: Nein. So fängt eine Freundschaft an, in einer fremden Stadt.",
   "vocab": [
    {
     "type": "noun",
@@ -968,9 +968,9 @@
    },
    {
     "type": "noun",
-    "word": "Wurst",
+    "word": "Teller",
     "surface": null,
-    "definition": "Sausage; a common German food made of meat in a thin skin."
+    "definition": "A plate; the one Clara pushes across the table."
    },
    {
     "type": "noun",
@@ -980,9 +980,9 @@
    },
    {
     "type": "adverb",
-    "word": "genau",
+    "word": "zusammen",
     "surface": null,
-    "definition": "Exactly; for that very reason and no other."
+    "definition": "Together; sitting at one table instead of each on their own."
    },
    {
     "type": "noun",
@@ -1059,7 +1059,7 @@
   "title": "Eine Welle im Eisbach",
   "slug": "eine-welle-im-eisbach",
   "synopsis": "Auf der Wiese im Englischen Garten wartet Sofie eine halbe Stunde umsonst, bis ein Anruf sie zum Stadtfluss schickt. Dort steht eine Menschenmenge auf der Ufermauer, und mitten in München surft jemand auf einer echten Welle. Dann dreht Ben ein Stück Pappe zu ihr um, und darauf steht mit Kreide ein einziges Wort.",
-  "text": "Sofie wartet im Englischen Garten auf der Wiese. Der Samstagnachmittag vergeht, und nach zwanzig Minuten ist keiner da. Dann kommt ein Anruf auf ihr Handy.\n\nSofie: Max, wo seid ihr? Ich stehe schon eine Weile hier.\nMax: Tut mir leid! Komm zum Eisbach, du verpasst etwas.\nSofie: Was macht die Gruppe denn unten am Stadtfluss?\nMax: Das musst du selbst sehen. Lauf los, du findest uns.\n\nSofie läuft in ihren Sportschuhen los. Bald hört sie eine Menschenmenge rufen.\n\nClara: Sofie, hier oben auf der Ufermauer!\nSofie: So viele Leute. Was ist hier los?\nClara: Schau ins Wasser. Mitten in der Stadt ist eine echte Welle.\nSofie: Da surft wirklich jemand? Der ist ja ganz nass.\nBen: Jeden Tag fährt hier wer. Die Welle heute ist für dich.\n\nBen legt sein Handtuch weg und dreht ein Stück Pappe um.\n\nSofie: Da stehen Buchstaben mit Kreide drauf. Ich lese sie.\nBen: Lies ruhig laut. Es ist nur ein Wort.\nSofie: Da steht mein Name. Warum denn hier?",
+  "text": "Sofie wartet im Englischen Garten auf der Wiese. Der Samstagnachmittag vergeht, und nach zwanzig Minuten ist keiner da. Dann kommt ein Anruf auf ihr Handy.\n\nSofie: Max, wo seid ihr? Ich stehe schon eine Weile hier.\nMax: Tut mir leid! Komm zum Eisbach, du verpasst etwas.\nSofie: Stimmt, was macht die Gruppe denn unten am Fluss?\nMax: Das musst du selbst sehen. Lauf los, du findest uns.\n\nSofie läuft in ihren Sportschuhen los. Bald hört sie eine Menschenmenge rufen.\n\nClara: Sofie, hier oben auf der Ufermauer!\nSofie: So viele Leute. Was ist hier los?\nClara: Schau ins Wasser. Mitten in der Stadt ist eine echte Welle.\nSofie: Vielleicht surft da wirklich jemand?\nBen: Jeden Tag fährt hier wer. Die Welle heute ist für dich.\n\nBald dreht Ben ein Stück Pappe um.\n\nSofie: Da stehen Buchstaben mit Kreide drauf. Ich lese sie.\nBen: Lies ruhig laut. Du liest richtig, es ist nur ein Wort.\nSofie: Da steht mein Name. Warum denn hier?",
   "vocab": [
    {
     "type": "noun",
@@ -1080,10 +1080,10 @@
     "definition": "A while; a period of time that feels quite long while you wait."
    },
    {
-    "type": "noun",
-    "word": "Anruf",
-    "surface": null,
-    "definition": "A phone call; when somebody rings you on the telephone."
+    "type": "verb",
+    "word": "stimmen",
+    "surface": "Stimmt",
+    "definition": "To be right; you say it when you agree with the other person."
    },
    {
     "type": "noun",
@@ -1134,16 +1134,16 @@
     "definition": "Real; not a copy and not a trick, but the true thing."
    },
    {
-    "type": "adjective",
-    "word": "nass",
+    "type": "adverb",
+    "word": "vielleicht",
     "surface": null,
-    "definition": "Wet; covered with water, the way you are after a swim."
+    "definition": "Maybe; you are not sure, but you think it could be so."
    },
    {
-    "type": "noun",
-    "word": "Handtuch",
+    "type": "adverb",
+    "word": "richtig",
     "surface": null,
-    "definition": "A towel; the cloth you use to dry your body after water."
+    "definition": "Right; correctly, in the way a thing should be done."
    },
    {
     "type": "noun",
@@ -1170,10 +1170,10 @@
     "definition": "A group; the same friends Sofie met in the beer garden."
    },
    {
-    "type": "noun",
-    "word": "Leute",
+    "type": "adverb",
+    "word": "bald",
     "surface": null,
-    "definition": "People; the crowd standing along the river wall."
+    "definition": "Soon; in a short time from now, not far in the future."
    },
    {
     "type": "noun",
@@ -1665,9 +1665,9 @@
    },
    {
     "type": "noun",
-    "word": "Leute",
+    "word": "Mütze",
     "surface": null,
-    "definition": "People; the ones who slowly gather at the little table."
+    "definition": "A woolly hat; you wear it on your head when it is cold."
    },
    {
     "type": "noun",
@@ -1723,10 +1723,10 @@
     "definition": "To push forward in a crowd, because many people want the same space."
    },
    {
-    "type": "noun",
-    "word": "Leute",
+    "type": "adjective",
+    "word": "leer",
     "surface": null,
-    "definition": "People; the crowd left standing in the sudden dark."
+    "definition": "Empty; with nothing left inside, like a battery at the end."
    },
    {
     "type": "noun",
@@ -1742,9 +1742,9 @@
    },
    {
     "type": "adverb",
-    "word": "plötzlich",
+    "word": "kaum",
     "surface": null,
-    "definition": "Suddenly; very fast and with no warning at all."
+    "definition": "Hardly; almost not at all, only a very little bit."
    },
    {
     "type": "noun",
@@ -1944,10 +1944,10 @@
     "definition": "A Christmas carol; a song people sing together in December."
    },
    {
-    "type": "noun",
-    "word": "Schulter",
+    "type": "adjective",
+    "word": "warm",
     "surface": null,
-    "definition": "The shoulder; the part of your body between neck and arm."
+    "definition": "Warm; a little hot, in a way that feels good on a cold night."
    },
    {
     "type": "noun",
@@ -1982,7 +1982,7 @@
   "title": "Der Pfad in den Wald",
   "slug": "der-pfad-in-den-wald",
   "synopsis": "An einem frischen Morgen im Schwarzwald schnüren Mia und Finn ihre Schuhe und gehen los. Kein Abenteuer, kein Ziel außer dem Tal von oben: nur ein schmaler Weg, eine Wurzel quer im Gras, ein Schmetterling auf einem Blatt und eine Ziege am Zaun. Die Wanderung selbst ist die ganze Geschichte, und beiden reicht das vollkommen.",
-  "text": "Ihre Schuhe schnürt Mia vor der Waldhütte im Schwarzwald. Mia ist eine Studentin aus Freiburg, und Finn, ein Freund aus dem Kurs, füllt die Flaschen für den Rucksack.\n\nMia: Hast du genug Wasser? Der Wanderweg ist lang.\nFinn: Alles drin. Wasser, Brot und zwei Äpfel.\nMia: Hörst du, wie ruhig es hier ist?\nFinn: Nur die Vögel und der Wind in den Bäumen.\n\nDie beiden folgen dem Pfad. Über eine Wurzel wächst Gras, und die Erde riecht nach Holz.\n\nFinn: Pass auf, hier liegt ein Ast über dem Weg.\nMia: Danke. Schau, ein Schmetterling auf dem Blatt.\nFinn: Und da vorne steht eine Ziege am Zaun.\nMia: Ein Hund bellt irgendwo. Wir sind also nicht allein.\n\nNach einer Weile machen sie an einem Baum Pause. Eine Biene summt über dem Gras.\n\nMia: Von hier sieht man schon das ganze Tal.\nFinn: Kein Mensch außer uns. Genau dafür sind wir hier.\nMia: Der Rest geht bergauf. Wir haben den ganzen Tag.",
+  "text": "Ihre Schuhe schnürt Mia vor der Waldhütte im Schwarzwald. Mia ist eine Studentin aus Freiburg, und Finn, ein Freund aus dem Kurs, füllt die Flaschen für den Rucksack.\n\nMia: Hast du genug Wasser? Der Wanderweg ist lang.\nFinn: Alles drin. Wasser, Brot und zwei Äpfel.\nMia: Hörst du, wie ruhig es hier ist?\nFinn: Nur die Vögel und der Wind in den Bäumen.\n\nDie beiden folgen dem Pfad. Die Erde riecht nach Holz.\n\nFinn: Pass auf, hier liegt ein Ast über dem Weg. Richtig herum?\nMia: Danke. Schau, ein Schmetterling auf dem Blatt.\nFinn: Vielleicht steht da vorne wieder die Ziege am Zaun.\nMia: Ein Hund bellt irgendwo. Wir sind also nicht allein.\n\nNach einer Weile machen sie am Baum Pause, bevor es hinunter ins Tal geht. Eine Biene summt über dem Gras.\n\nMia: Von hier sieht man schon das ganze Tal.\nFinn: Kein Mensch außer uns. Genau dafür sind wir hier.\nMia: Stimmt, der Rest geht bergauf. Wir haben den ganzen Tag.",
   "vocab": [
    {
     "type": "verb",
@@ -2016,9 +2016,9 @@
    },
    {
     "type": "noun",
-    "word": "Brot",
+    "word": "Schuhe",
     "surface": null,
-    "definition": "Bread; the basic food made from flour that Germans eat daily."
+    "definition": "Shoes; what you lace up before a long walk in the woods."
    },
    {
     "type": "noun",
@@ -2033,22 +2033,22 @@
     "definition": "A tree; the tall plant with a wooden trunk and green leaves."
    },
    {
-    "type": "noun",
-    "word": "Wurzel",
+    "type": "adjective",
+    "word": "genug",
     "surface": null,
-    "definition": "A root; the part of a tree that grows under the ground."
+    "definition": "Enough; as much as you need and not less than that."
    },
    {
-    "type": "noun",
-    "word": "Gras",
+    "type": "adverb",
+    "word": "vielleicht",
     "surface": null,
-    "definition": "Grass; the low green plant that covers meadows and paths."
+    "definition": "Maybe; you are not sure, but you think it could be so."
    },
    {
-    "type": "noun",
-    "word": "Erde",
-    "surface": null,
-    "definition": "The earth or soil, the brown ground under your feet."
+    "type": "verb",
+    "word": "stimmen",
+    "surface": "Stimmt",
+    "definition": "To be right; you say it when the other person has a point."
    },
    {
     "type": "noun",
@@ -2070,15 +2070,15 @@
    },
    {
     "type": "adverb",
-    "word": "genau",
+    "word": "richtig",
     "surface": null,
-    "definition": "Exactly; for precisely this reason and nothing else."
+    "definition": "Right; the correct way round and not the other one."
    },
    {
-    "type": "noun",
-    "word": "Hund",
+    "type": "adverb",
+    "word": "hinunter",
     "surface": null,
-    "definition": "A dog; the animal that many families keep at home as a pet."
+    "definition": "Downwards; from up here down towards the valley."
    },
    {
     "type": "noun",
@@ -2338,9 +2338,9 @@
    },
    {
     "type": "adverb",
-    "word": "genau",
+    "word": "hinunter",
     "surface": null,
-    "definition": "Exactly; pointing at precisely the place they want to reach."
+    "definition": "Downwards; from the ridge down to the forest edge."
    },
    {
     "type": "adjective",
@@ -2375,13 +2375,13 @@
   "title": "Der Biss im Ring",
   "slug": "der-biss-im-ring",
   "synopsis": "Vor dem Heidelberger Schlosstor erzählt Lukas die Legende von der Hexe, die in den eisernen Ring gebissen haben soll. Hanna hält nichts davon und sucht die nüchterne Erklärung im Wetter und im alten Eisen. Dann legt sie selbst die Hand auf den Ring, und unter ihren Fingern trifft die kühle Physik auf etwas, das dort eigentlich nicht sein dürfte.",
-  "text": "Hanna, eine Lehrerin aus der Stadt, steht am Abend mit Lukas vor dem Schlosstor in Heidelberg. Ihr Freund Lukas mag alte Sagen, Hanna glaubt an das, was sie sieht.\n\nLukas: Kennst du die Legende? Eine Hexe hat in den eisernen Ring gebissen.\nHanna: Eine Hexe, die in Eisen beißt? Nur eine Geschichte.\n\nLukas zeigt auf den schweren Ring am Tor. Im letzten Licht sieht er fast schwarz aus.\n\nLukas: Wer sich durchbeißt, sagt die Sage, dem gehört das Schloss.\nHanna: Niemand hat es geschafft. An Wunder glaube ich nicht.\nLukas: Sieh ihn dir genau an. Die Spur ist noch da.\nHanna: Das ist altes Eisen. Das kommt vom Wetter, nicht von Zähnen.\n\nHanna legt die Hand auf den Ring und fühlt darüber. Plötzlich runzelt sie die Stirn.\n\nHanna: Hier ist wirklich eine Kerbe. Klein, aber tief.\nLukas: Siehst du? Ich sage nicht, dass es eine Hexe war.\nHanna: Ich auch nicht. Aber woher kommt sie, mitten in der Nacht?",
+  "text": "Hanna, eine Lehrerin aus der Stadt, steht am Abend mit Lukas vor dem Schlosstor in Heidelberg. Ihr Freund Lukas mag alte Sagen, Hanna glaubt an das, was sie sieht.\n\nLukas: Kennst du die Legende? Eine Hexe hat in den eisernen Ring gebissen.\nHanna: Eine Hexe, die in Eisen beißt? Nur eine Geschichte.\n\nLukas zeigt auf den schweren Ring am Tor. Im letzten Licht sieht er fast schwarz aus.\n\nLukas: Wer sich durchbeißt, sagt die Sage, dem gehört das Schloss.\nHanna: Niemand hat es geschafft. An Wunder glaube ich nicht.\nLukas: Sieh ihn dir genau an. Die Spur ist noch da.\nHanna: Das ist altes Eisen. Das kommt vom Wetter, nicht von Zähnen.\n\nHanna legt die Hand auf den Ring und fühlt darüber. Bald runzelt sie die Stirn.\n\nHanna: Hier ist wirklich eine Kerbe. Klein, aber tief.\nLukas: Siehst du? Ich sage nicht, dass es eine Hexe war.\nHanna: Ich auch nicht. Aber woher kommt sie, mitten in der Nacht?",
   "vocab": [
    {
     "type": "adverb",
-    "word": "genau",
+    "word": "bald",
     "surface": null,
-    "definition": "Exactly; looking at it closely and with your full attention."
+    "definition": "Soon; in a short time, before the light is gone."
    },
    {
     "type": "noun",

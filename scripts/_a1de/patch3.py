@@ -50,11 +50,11 @@ vocab=[
 P["der-stammtisch-am-donnerstag"] = dict(
 arcType="reframe-turn",
 synopsis="Max holt Sofie zum Stammtisch, doch an der Tür bleibt sie stehen: eine feste Gruppe, ein festes Wort auf dem Schild, und sie mittendrin als Zaungast. Clara erzählt ihr, wie sie selbst vor zwei Jahren an derselben Tür stand. Der Tisch, versteht Sofie am Ende, ist nicht trotz der Neuen da, sondern genau für sie.",
-text="""Das Schild auf dem Holztisch im Wirtshaus trägt nur das Wort Stammtisch. Es ist Donnerstagabend, und die Gruppe sitzt schon zusammen. Sofie bleibt an der Tür stehen und zögert.
+text="""Das Schild auf dem Holztisch im Wirtshaus trägt nur das Wort Stammtisch. Es ist Donnerstagabend, und die Gruppe sitzt schon am Tisch. Sofie bleibt an der Tür stehen und zögert.
 
 Max: Sofie, komm her! Am Holztisch ist noch Platz.
 Sofie: Ich will nicht stören. Ihr kennt euch schon lange.
-Max: Genau deshalb bist du eingeladen.
+Max: Genau deshalb bist du eingeladen. Hier sitzt man zusammen.
 
 Auf dem Tisch stehen Kartoffelsuppe, Wurst und Salat. Daneben liegt ein altes Kartenspiel.
 
@@ -76,9 +76,9 @@ vocab=[
  ("noun","Donnerstag","Donnerstagabend","Thursday; here the fixed evening when the same group always meets."),
  ("verb","zögern","zögert","To hesitate; to wait a moment because you are not sure."),
  ("noun","Kartoffelsuppe",None,"Potato soup, a simple warm dish served in German pubs."),
- ("noun","Wurst",None,"Sausage; a common German food made of meat in a thin skin."),
+ ("noun","Teller",None,"A plate; the one Clara pushes across the table."),
  ("noun","Salat",None,"Salad; cold raw vegetables eaten as a side dish or a meal."),
- ("adverb","genau",None,"Exactly; for that very reason and no other."),
+ ("adverb","zusammen",None,"Together; sitting at one table instead of each on their own."),
  ("noun","Firma",None,"A company; the business where a person goes to work."),
  ("noun","Kollege","Kollegen","A colleague; a person who works in the same company as you."),
  ("noun","Umgebung",None,"The area around a place, the streets and houses close to you."),
@@ -99,7 +99,7 @@ text="""Sofie wartet im Englischen Garten auf der Wiese. Der Samstagnachmittag v
 
 Sofie: Max, wo seid ihr? Ich stehe schon eine Weile hier.
 Max: Tut mir leid! Komm zum Eisbach, du verpasst etwas.
-Sofie: Was macht die Gruppe denn unten am Stadtfluss?
+Sofie: Stimmt, was macht die Gruppe denn unten am Fluss?
 Max: Das musst du selbst sehen. Lauf los, du findest uns.
 
 Sofie läuft in ihren Sportschuhen los. Bald hört sie eine Menschenmenge rufen.
@@ -107,19 +107,19 @@ Sofie läuft in ihren Sportschuhen los. Bald hört sie eine Menschenmenge rufen.
 Clara: Sofie, hier oben auf der Ufermauer!
 Sofie: So viele Leute. Was ist hier los?
 Clara: Schau ins Wasser. Mitten in der Stadt ist eine echte Welle.
-Sofie: Da surft wirklich jemand? Der ist ja ganz nass.
+Sofie: Vielleicht surft da wirklich jemand?
 Ben: Jeden Tag fährt hier wer. Die Welle heute ist für dich.
 
-Ben legt sein Handtuch weg und dreht ein Stück Pappe um.
+Bald dreht Ben ein Stück Pappe um.
 
 Sofie: Da stehen Buchstaben mit Kreide drauf. Ich lese sie.
-Ben: Lies ruhig laut. Es ist nur ein Wort.
+Ben: Lies ruhig laut. Du liest richtig, es ist nur ein Wort.
 Sofie: Da steht mein Name. Warum denn hier?""",
 vocab=[
  ("noun","Wiese",None,"A meadow; a big open field of grass in a park or the country."),
  ("noun","Nachmittag","Samstagnachmittag","The afternoon, the hours between lunch and the early evening."),
  ("noun","Weile",None,"A while; a period of time that feels quite long while you wait."),
- ("noun","Anruf",None,"A phone call; when somebody rings you on the telephone."),
+ ("verb","stimmen","Stimmt","To be right; you say it when you agree with the other person."),
  ("noun","Handy",None,"A mobile phone; the small phone that people carry with them."),
  ("noun","Ufermauer",None,"The stone wall along a river, where people stand and watch."),
  ("verb","laufen","läuft","To run or to walk fast, moving quickly on your own feet."),
@@ -128,12 +128,12 @@ vocab=[
  ("verb","rufen",None,"To call out loudly so that other people can hear you."),
  ("adverb","selbst",None,"Yourself; something you have to go and see with your own eyes."),
  ("adjective","echt","echte","Real; not a copy and not a trick, but the true thing."),
- ("adjective","nass",None,"Wet; covered with water, the way you are after a swim."),
- ("noun","Handtuch",None,"A towel; the cloth you use to dry your body after water."),
+ ("adverb","vielleicht",None,"Maybe; you are not sure, but you think it could be so."),
+ ("adverb","richtig",None,"Right; correctly, in the way a thing should be done."),
  ("noun","Buchstabe","Buchstaben","A letter of the alphabet, one of the signs that build a word."),
  ("noun","Stadt",None,"A city; the one with a real wave running through it."),
  ("verb","lesen","lese","To read; to look at written words and understand them."),
  ("noun","Gruppe",None,"A group; the same friends Sofie met in the beer garden."),
- ("noun","Leute",None,"People; the crowd standing along the river wall."),
+ ("adverb","bald",None,"Soon; in a short time from now, not far in the future."),
  ("noun","Wort",None,"A word; here a single written word that explains everything."),
 ])

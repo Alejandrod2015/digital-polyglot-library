@@ -16,13 +16,13 @@ Hanna: Niemand hat es geschafft. An Wunder glaube ich nicht.
 Lukas: Sieh ihn dir genau an. Die Spur ist noch da.
 Hanna: Das ist altes Eisen. Das kommt vom Wetter, nicht von Zähnen.
 
-Hanna legt die Hand auf den Ring und fühlt darüber. Plötzlich runzelt sie die Stirn.
+Hanna legt die Hand auf den Ring und fühlt darüber. Bald runzelt sie die Stirn.
 
 Hanna: Hier ist wirklich eine Kerbe. Klein, aber tief.
 Lukas: Siehst du? Ich sage nicht, dass es eine Hexe war.
 Hanna: Ich auch nicht. Aber woher kommt sie, mitten in der Nacht?""",
 vocab=[
- ("adverb","genau",None,"Exactly; looking at it closely and with your full attention."),
+ ("adverb","bald",None,"Soon; in a short time, before the light is gone."),
  ("noun","Schlosstor",None,"The castle gate; the big main door in the wall of a castle."),
  ("noun","Stadt",None,"A city; the town below the castle where Hanna teaches."),
  ("noun","Legende",None,"A legend; an old story that people tell but cannot prove."),
