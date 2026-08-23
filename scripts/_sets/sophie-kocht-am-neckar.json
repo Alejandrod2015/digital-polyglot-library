@@ -1,0 +1,590 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Bus,das Krankenhaus,die Wohnung,der Tisch",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Bus",
+     "answer": "a bus",
+     "options": [
+      "a bus",
+      "a hospital",
+      "a flat",
+      "a table"
+     ]
+    },
+    {
+     "word": "das Krankenhaus",
+     "answer": "a hospital",
+     "options": [
+      "a bus",
+      "a hospital",
+      "a flat",
+      "a table"
+     ]
+    },
+    {
+     "word": "die Wohnung",
+     "answer": "a flat",
+     "options": [
+      "a bus",
+      "a hospital",
+      "a flat",
+      "a table"
+     ]
+    },
+    {
+     "word": "der Tisch",
+     "answer": "a table",
+     "options": [
+      "a bus",
+      "a hospital",
+      "a flat",
+      "a table"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Fahrt",
+  "sentence": "Die [[Fahrt]] mit dem Bus dauert fast viele Stunden.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a ride or journey",
+   "options": [
+    "a ride or journey",
+    "a walk",
+    "a stop",
+    "a ticket"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Die Fahrt mit dem Bus dauert fast viele Stunden.",
+    "targetWord": "Fahrt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dauert",
+  "sentence": "Die Fahrt mit dem Bus _____ fast viele Stunden.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dauert",
+   "options": [
+    "dauert",
+    "schreibt",
+    "drückt",
+    "fährt"
+   ],
+   "translation": "The bus ride _____ almost two hours.",
+   "optionTranslations": [
+    "lasts",
+    "writes",
+    "presses",
+    "drives"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Die Fahrt mit dem Bus dauert fast viele Stunden.",
+    "targetWord": "dauert",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Hand",
+  "sentence": "Sie steht vor dem Haus und hebt die [[Hand]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a hand",
+   "options": [
+    "a hand",
+    "an arm",
+    "a foot",
+    "a head"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Sie steht vor dem Haus und hebt die Hand.",
+    "targetWord": "Hand",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Ärztin",
+  "sentence": "Sie ist [[Ärztin]] und arbeitet im großen Krankenhaus.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a female doctor",
+   "options": [
+    "a female doctor",
+    "a female teacher",
+    "a female nurse",
+    "a female cook"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Sie ist Ärztin und arbeitet im großen Krankenhaus.",
+    "targetWord": "Ärztin",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Essen",
+  "sentence": "Das [[Essen]] steht schon auf dem Tisch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the meal, the food",
+   "options": [
+    "the meal, the food",
+    "the drink",
+    "the plate",
+    "the kitchen"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Das Essen steht schon auf dem Tisch.",
+    "targetWord": "Essen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "fertig",
+  "sentence": "Das Essen steht auf dem Tisch und ist _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "fertig",
+   "options": [
+    "fertig",
+    "klein",
+    "hell",
+    "spät"
+   ],
+   "translation": "The food is on the table and is _____.",
+   "optionTranslations": [
+    "ready",
+    "small",
+    "bright",
+    "late"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Das Essen steht auf dem Tisch und ist fertig.",
+    "targetWord": "fertig",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "kocht",
+  "sentence": "Sie _____ Spätzle mit einer warmen Soße.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kocht",
+   "options": [
+    "kocht",
+    "zählt",
+    "fährt",
+    "hebt"
+   ],
+   "translation": "She _____ Spaetzle with a warm sauce.",
+   "optionTranslations": [
+    "cooks",
+    "counts",
+    "drives",
+    "lifts"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Sie kocht Spätzle mit einer warmen Soße.",
+    "targetWord": "kocht",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "decken",
+  "sentence": "Sie [[deckt]] den Tisch für die Gäste.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to set the table",
+   "options": [
+    "to set the table",
+    "to clear the table",
+    "to wash the dishes",
+    "to cook the meal"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Sie deckt den Tisch für die Gäste.",
+    "targetWord": "deckt",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Hunger",
+  "sentence": "Er hat großen [[Hunger]] und isst sehr schnell.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hunger",
+   "options": [
+    "hunger",
+    "thirst",
+    "tiredness",
+    "fear"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Er hat großen Hunger und isst sehr schnell.",
+    "targetWord": "Hunger",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Stunde",
+  "sentence": "Die Fahrt dauert viele [[Stunden]] und ist sehr ruhig.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hours",
+   "options": [
+    "hours",
+    "minutes",
+    "days",
+    "weeks"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Die Fahrt dauert viele Stunden und ist sehr ruhig.",
+    "targetWord": "Stunden",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Fenster",
+  "sentence": "Man sieht den Fluss vom [[Fenster]] der Wohnung.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a window",
+   "options": [
+    "a window",
+    "a door",
+    "a balcony",
+    "a roof"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Man sieht den Fluss vom Fenster der Wohnung.",
+    "targetWord": "Fenster",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Soße",
+  "sentence": "Sie kocht Spätzle mit einer warmen [[Soße]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "sauce",
+   "options": [
+    "sauce",
+    "soup",
+    "bread",
+    "salad"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Sie kocht Spätzle mit einer warmen Soße.",
+    "targetWord": "Soße",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mögen",
+  "sentence": "[[Magst]] du Käse auf deinen Spätzle?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to like something",
+   "options": [
+    "to like something",
+    "to hate something",
+    "to cook something",
+    "to buy something"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Magst du Käse auf deinen Spätzle?",
+    "targetWord": "Magst",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Käse",
+  "sentence": "Er nimmt gern [[Käse]] auf seine warmen Spätzle.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cheese",
+   "options": [
+    "cheese",
+    "butter",
+    "bread",
+    "meat"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Er nimmt gern Käse auf seine warmen Spätzle.",
+    "targetWord": "Käse",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "trinken",
+  "sentence": "Die Gruppe essen zusammen und [[trinken]] Apfelsaft.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to drink",
+   "options": [
+    "to drink",
+    "to eat",
+    "to cook",
+    "to buy"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Die Gruppe essen zusammen und trinken Apfelsaft.",
+    "targetWord": "trinken",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "lebt",
+  "sentence": "Sie _____ seit vielen Jahren in einer kleinen Stadt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "lebt",
+   "options": [
+    "lebt",
+    "hängt",
+    "fährt",
+    "holt"
+   ],
+   "translation": "She has _____ in a small town for three years.",
+   "optionTranslations": [
+    "lived",
+    "hangs",
+    "driven",
+    "fetches"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Sie lebt seit vielen Jahren in einer kleinen Stadt.",
+    "targetWord": "lebt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "hebt",
+  "sentence": "Sie sieht ihn und _____ zum Gruß die Hand.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hebt",
+   "options": [
+    "hebt",
+    "zählt",
+    "tippt",
+    "trinkt"
+   ],
+   "translation": "She sees him and _____ her hand in greeting.",
+   "optionTranslations": [
+    "raises",
+    "counts",
+    "taps",
+    "drinks"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Sie sieht ihn und hebt zum Gruß die Hand.",
+    "targetWord": "hebt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "arbeitet",
+  "sentence": "Meine Schwester _____ als Ärztin im großen Krankenhaus.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "arbeitet",
+   "options": [
+    "arbeitet",
+    "malt",
+    "feilt",
+    "fährt"
+   ],
+   "translation": "My sister _____ as a doctor in the big hospital.",
+   "optionTranslations": [
+    "works",
+    "paints",
+    "files",
+    "drives"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Meine Schwester arbeitet als Ärztin im großen Krankenhaus.",
+    "targetWord": "arbeitet",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "spät",
+  "sentence": "Wir kommen zu _____, und das Essen ist schon kalt.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "spät",
+   "options": [
+    "spät",
+    "klein",
+    "hell",
+    "fertig"
+   ],
+   "translation": "We arrive too _____, and the food is already cold.",
+   "optionTranslations": [
+    "late",
+    "small",
+    "bright",
+    "ready"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Wir kommen zu spät, und das Essen ist schon kalt.",
+    "targetWord": "spät",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "klein",
+  "sentence": "Die Wohnung hat nur ein Zimmer und ist sehr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "klein",
+   "options": [
+    "klein",
+    "hell",
+    "spät",
+    "fertig"
+   ],
+   "translation": "The flat has only one room and is very _____.",
+   "optionTranslations": [
+    "small",
+    "bright",
+    "late",
+    "ready"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Die Wohnung hat nur ein Zimmer und ist sehr klein.",
+    "targetWord": "klein",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "hell",
+  "sentence": "Das Zimmer hat große Fenster und ist sehr _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "hell",
+   "options": [
+    "hell",
+    "klein",
+    "spät",
+    "fertig"
+   ],
+   "translation": "The room has big windows and is very _____.",
+   "optionTranslations": [
+    "bright",
+    "small",
+    "late",
+    "ready"
+   ],
+   "audioClip": {
+    "storySlug": "sophie-kocht-am-neckar",
+    "storySource": "user",
+    "sentence": "Das Zimmer hat große Fenster und ist sehr hell.",
+    "targetWord": "hell",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

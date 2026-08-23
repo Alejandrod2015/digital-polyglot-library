@@ -1,0 +1,583 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "der Kreidefelsen,der Strand,die Buche,der Korb",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "der Kreidefelsen",
+     "answer": "chalk cliffs",
+     "options": [
+      "chalk cliffs",
+      "a beach",
+      "beech trees",
+      "a basket"
+     ]
+    },
+    {
+     "word": "der Strand",
+     "answer": "a beach",
+     "options": [
+      "chalk cliffs",
+      "a beach",
+      "beech trees",
+      "a basket"
+     ]
+    },
+    {
+     "word": "die Buche",
+     "answer": "beech trees",
+     "options": [
+      "chalk cliffs",
+      "a beach",
+      "beech trees",
+      "a basket"
+     ]
+    },
+    {
+     "word": "der Korb",
+     "answer": "a basket",
+     "options": [
+      "chalk cliffs",
+      "a beach",
+      "beech trees",
+      "a basket"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Meer",
+  "sentence": "Die weißen Felsen fallen steil ins [[Meer]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the sea",
+   "options": [
+    "the sea",
+    "a lake",
+    "a river",
+    "a canal"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Die weißen Felsen fallen steil ins Meer.",
+    "targetWord": "Meer",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Fels",
+  "sentence": "Der [[Fels]] ist weiß wie Kalk und sehr hart.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "rock",
+   "options": [
+    "rock",
+    "sand",
+    "clay",
+    "earth"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Der Fels ist weiß wie Kalk und sehr hart.",
+    "targetWord": "Fels",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Kalk",
+  "sentence": "Der Felsen ist so weiß wie frischer [[Kalk]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "lime, chalk",
+   "options": [
+    "lime, chalk",
+    "fresh snow",
+    "white paint",
+    "dry salt"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Der Felsen ist so weiß wie frischer Kalk.",
+    "targetWord": "Kalk",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Kante",
+  "sentence": "Die Buchen wachsen bis an die [[Kante]] vom Felsen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the edge",
+   "options": [
+    "the edge",
+    "the foot",
+    "the middle",
+    "the top"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Die Buchen wachsen bis an die Kante vom Felsen.",
+    "targetWord": "Kante",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Wurzel",
+  "sentence": "Ihre [[Wurzeln]] hängen frei in der kalten Luft.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "roots",
+   "options": [
+    "roots",
+    "branches",
+    "leaves",
+    "nuts"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Ihre Wurzeln hängen frei in der kalten Luft.",
+    "targetWord": "Wurzeln",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "steigen",
+  "sentence": "Die beiden _____ langsam die vielen Stufen zum Strand.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "steigen",
+   "options": [
+    "steigen",
+    "nicken",
+    "ziehen",
+    "rollen"
+   ],
+   "translation": "The two of them _____ slowly down the many steps to the beach.",
+   "optionTranslations": [
+    "climb",
+    "nod",
+    "pull",
+    "roll"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Die beiden steigen langsam die vielen Stufen zum Strand.",
+    "targetWord": "steigen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Stufe",
+  "sentence": "Sie gehen langsam die vielen [[Stufen]] hinunter.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "steps",
+   "options": [
+    "steps",
+    "paths",
+    "bridges",
+    "gates"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Sie gehen langsam die vielen Stufen hinunter.",
+    "targetWord": "Stufen",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Feuerstein",
+  "sentence": "Sie sucht am Strand [[Feuersteine]] mit einem Loch.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "flints",
+   "options": [
+    "flints",
+    "shells",
+    "corals",
+    "pearls"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Sie sucht am Strand Feuersteine mit einem Loch.",
+    "targetWord": "Feuersteine",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Hühnergott",
+  "sentence": "Er nennt diese Steine [[Hühnergötter]] und sagt, sie bringen Glück.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hen gods, holed beach stones",
+   "options": [
+    "hen gods, holed beach stones",
+    "sea urchins",
+    "fishing weights",
+    "old coins"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Er nennt diese Steine Hühnergötter und sagt, sie bringen Glück.",
+    "targetWord": "Hühnergötter",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "wandern",
+  "sentence": "Die beiden [[wandern]] am Nachmittag zum weißen Felsen.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hike",
+   "options": [
+    "to hike",
+    "to drive",
+    "to sail",
+    "to fly"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Die beiden wandern am Nachmittag zum weißen Felsen.",
+    "targetWord": "wandern",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Loch",
+  "sentence": "Sie sucht Steine mit einem kleinen [[Loch]] darin.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a hole",
+   "options": [
+    "a hole",
+    "a crack",
+    "a stain",
+    "a line"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Sie sucht Steine mit einem kleinen Loch darin.",
+    "targetWord": "Loch",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Ehefrau",
+  "sentence": "Er spricht zum ersten Mal von seiner [[Ehefrau]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a wife",
+   "options": [
+    "a wife",
+    "a mother",
+    "a daughter",
+    "a cousin"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Er spricht zum ersten Mal von seiner Ehefrau.",
+    "targetWord": "Ehefrau",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Hosentasche",
+  "sentence": "Er steckt den Stein tief in die [[Hosentasche]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a trouser pocket",
+   "options": [
+    "a trouser pocket",
+    "a shopping bag",
+    "a wooden box",
+    "a leather case"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Er steckt den Stein tief in die Hosentasche.",
+    "targetWord": "Hosentasche",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Schatten",
+  "sentence": "Der weiße Felsen wirft einen harten [[Schatten]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a shadow",
+   "options": [
+    "a shadow",
+    "a light",
+    "a sound",
+    "a smell"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Der weiße Felsen wirft einen harten Schatten.",
+    "targetWord": "Schatten",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "bricht",
+  "sentence": "Jedes Jahr _____ ein Stück vom weißen Felsen.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "bricht",
+   "options": [
+    "bricht",
+    "feilt",
+    "füllt",
+    "wandert"
+   ],
+   "translation": "Every year a piece of the white rock _____.",
+   "optionTranslations": [
+    "breaks",
+    "files",
+    "fills",
+    "hikes"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Jedes Jahr bricht ein Stück vom weißen Felsen.",
+    "targetWord": "bricht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "sucht",
+  "sentence": "Sie geht langsam am Strand und _____ kleine Steine.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "sucht",
+   "options": [
+    "sucht",
+    "schneidet",
+    "öffnet",
+    "rollt"
+   ],
+   "translation": "She walks slowly on the beach and _____ small stones.",
+   "optionTranslations": [
+    "looks for",
+    "cuts",
+    "opens",
+    "rolls"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Sie geht langsam am Strand und sucht kleine Steine.",
+    "targetWord": "sucht",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "nennt",
+  "sentence": "Er zeigt auf die Steine und _____ sie Hühnergötter.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "nennt",
+   "options": [
+    "nennt",
+    "sammelt",
+    "repariert",
+    "sucht"
+   ],
+   "translation": "He points at the stones and _____ them hen gods.",
+   "optionTranslations": [
+    "calls",
+    "collects",
+    "repairs",
+    "seeks"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Er zeigt auf die Steine und nennt sie Hühnergötter.",
+    "targetWord": "nennt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "weiß",
+  "sentence": "Sie hört das zum ersten Mal und _____ nichts davon.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "weiß",
+   "options": [
+    "weiß",
+    "stoppt",
+    "verkauft",
+    "sucht"
+   ],
+   "translation": "She hears it for the first time and _____ nothing about it.",
+   "optionTranslations": [
+    "knows",
+    "stops",
+    "sells",
+    "seeks"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Sie hört das zum ersten Mal und weiß nichts davon.",
+    "targetWord": "weiß",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "ohne",
+  "sentence": "Sie steigen den ganzen Weg _____ ein Wort nach oben.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "ohne",
+   "options": [
+    "ohne",
+    "plötzlich",
+    "schon",
+    "wieder"
+   ],
+   "translation": "They climb the whole way up _____ a word.",
+   "optionTranslations": [
+    "without",
+    "suddenly",
+    "already",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Sie steigen den ganzen Weg ohne ein Wort nach oben.",
+    "targetWord": "ohne",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "plötzlich",
+  "sentence": "Sie hört den Namen und bleibt _____ still.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "plötzlich",
+   "options": [
+    "plötzlich",
+    "ohne",
+    "schon",
+    "wieder"
+   ],
+   "translation": "She hears the name and _____ goes quiet.",
+   "optionTranslations": [
+    "suddenly",
+    "without",
+    "already",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Sie hört den Namen und bleibt plötzlich still.",
+    "targetWord": "plötzlich",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "rollen",
+  "sentence": "Die Wellen _____ die nassen Steine über den Strand.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rollen",
+   "options": [
+    "rollen",
+    "zählen",
+    "tippen",
+    "suchen"
+   ],
+   "translation": "The waves _____ the wet stones across the beach.",
+   "optionTranslations": [
+    "roll",
+    "count",
+    "tap",
+    "seek"
+   ],
+   "audioClip": {
+    "storySlug": "kreide-am-konigsstuhl",
+    "storySource": "user",
+    "sentence": "Die Wellen rollen die nassen Steine über den Strand.",
+    "targetWord": "rollen",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]

@@ -5338,5 +5338,1159 @@
    "g": "hour; now",
    "t": "noun"
   }
+ },
+ "german-traveler-a0": {
+  "abteil": {
+   "g": "train compartment (das Abteil)",
+   "t": "noun"
+  },
+  "advent": {
+   "g": "Advent, the four weeks before Christmas",
+   "t": "noun"
+  },
+  "affe": {
+   "g": "monkey (der Affe)",
+   "t": "noun"
+  },
+  "altem": {
+   "g": "old (alt)",
+   "t": "adjective"
+  },
+  "anlegestelle": {
+   "g": "ferry landing (die Anlegestelle)",
+   "t": "noun"
+  },
+  "apfelbaum": {
+   "g": "apple tree (der Apfelbaum)",
+   "t": "noun"
+  },
+  "apfelsaft": {
+   "g": "apple juice (der Apfelsaft)",
+   "t": "noun"
+  },
+  "arbeite": {
+   "g": "work (arbeiten)",
+   "t": "verb"
+  },
+  "arkona": {
+   "g": "Kap Arkona, the northern cape of Ruegen",
+   "t": "noun"
+  },
+  "august": {
+   "g": "August",
+   "t": "noun"
+  },
+  "bahn": {
+   "g": "train, rail line (die Bahn)",
+   "t": "noun"
+  },
+  "bein": {
+   "g": "leg (das Bein)",
+   "t": "noun"
+  },
+  "berühr": {
+   "g": "touch it (berühren)",
+   "t": "verb"
+  },
+  "berühren": {
+   "g": "to touch",
+   "t": "verb"
+  },
+  "besucher": {
+   "g": "visitors (der Besucher)",
+   "t": "noun"
+  },
+  "betten": {
+   "g": "beds (das Bett)",
+   "t": "noun"
+  },
+  "bild": {
+   "g": "picture, photo (das Bild)",
+   "t": "noun"
+  },
+  "bindet": {
+   "g": "ties (binden)",
+   "t": "verb"
+  },
+  "bläst": {
+   "g": "blows (blasen)",
+   "t": "verb"
+  },
+  "bratwürste": {
+   "g": "grilled sausages (die Bratwurst)",
+   "t": "noun"
+  },
+  "braune": {
+   "g": "brown (braun)",
+   "t": "adjective"
+  },
+  "briefmarke": {
+   "g": "stamp (die Briefmarke)",
+   "t": "noun"
+  },
+  "bronze": {
+   "g": "bronze (die Bronze)",
+   "t": "noun"
+  },
+  "buchen": {
+   "g": "beech trees (die Buche)",
+   "t": "noun"
+  },
+  "burg": {
+   "g": "castle, fortress (die Burg)",
+   "t": "noun"
+  },
+  "bus": {
+   "g": "bus (der Bus)",
+   "t": "noun"
+  },
+  "darin": {
+   "g": "inside it",
+   "t": "adverb"
+  },
+  "deck": {
+   "g": "deck of a boat (das Deck)",
+   "t": "noun"
+  },
+  "decke": {
+   "g": "blanket (die Decke)",
+   "t": "noun"
+  },
+  "deckt": {
+   "g": "sets the table (decken)",
+   "t": "verb"
+  },
+  "dichter": {
+   "g": "thicker (dicht)",
+   "t": "adjective"
+  },
+  "dick": {
+   "g": "thick, swollen",
+   "t": "adjective"
+  },
+  "dicken": {
+   "g": "thick, swollen (dick)",
+   "t": "adjective"
+  },
+  "diesel": {
+   "g": "diesel (der Diesel)",
+   "t": "noun"
+  },
+  "direktor": {
+   "g": "headmaster, director (der Direktor)",
+   "t": "noun"
+  },
+  "dorf": {
+   "g": "village (das Dorf)",
+   "t": "noun"
+  },
+  "dorsche": {
+   "g": "cod (der Dorsch)",
+   "t": "noun"
+  },
+  "drüben": {
+   "g": "over there",
+   "t": "adverb"
+  },
+  "dumm": {
+   "g": "stupid",
+   "t": "adjective"
+  },
+  "dänemark": {
+   "g": "Denmark",
+   "t": "noun"
+  },
+  "dünner": {
+   "g": "thinner (dünn)",
+   "t": "adjective"
+  },
+  "ecken": {
+   "g": "corners (die Ecke)",
+   "t": "noun"
+  },
+  "ehefrau": {
+   "g": "wife (die Ehefrau)",
+   "t": "noun"
+  },
+  "eibsee": {
+   "g": "Eibsee, a lake below the Zugspitze",
+   "t": "noun"
+  },
+  "einige": {
+   "g": "some, a few",
+   "t": "pronoun"
+  },
+  "eis": {
+   "g": "ice (das Eis)",
+   "t": "noun"
+  },
+  "eisen": {
+   "g": "iron (das Eisen)",
+   "t": "noun"
+  },
+  "eisig": {
+   "g": "icy",
+   "t": "adjective"
+  },
+  "elias": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "emilia": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "emilias": {
+   "g": "Emilia's",
+   "t": "noun"
+  },
+  "enten": {
+   "g": "ducks (die Ente)",
+   "t": "noun"
+  },
+  "erreichen": {
+   "g": "to reach",
+   "t": "verb"
+  },
+  "fahr": {
+   "g": "go, ride (fahren)",
+   "t": "verb"
+  },
+  "fahre": {
+   "g": "go, travel (fahren)",
+   "t": "verb"
+  },
+  "faltet": {
+   "g": "folds (falten)",
+   "t": "verb"
+  },
+  "fang": {
+   "g": "catch of fish (der Fang)",
+   "t": "noun"
+  },
+  "fass": {
+   "g": "barrel (das Fass)",
+   "t": "noun"
+  },
+  "februar": {
+   "g": "February",
+   "t": "noun"
+  },
+  "feilt": {
+   "g": "files smooth (feilen)",
+   "t": "verb"
+  },
+  "feld": {
+   "g": "field (das Feld)",
+   "t": "noun"
+  },
+  "fels": {
+   "g": "rock, cliff (der Fels)",
+   "t": "noun"
+  },
+  "felswände": {
+   "g": "rock faces (die Felswand)",
+   "t": "noun"
+  },
+  "fensterläden": {
+   "g": "window shutters (der Fensterladen)",
+   "t": "noun"
+  },
+  "feucht": {
+   "g": "damp",
+   "t": "adjective"
+  },
+  "feuer": {
+   "g": "fire (das Feuer)",
+   "t": "noun"
+  },
+  "feuersteine": {
+   "g": "flints (der Feuerstein)",
+   "t": "noun"
+  },
+  "fischer": {
+   "g": "fisherman (der Fischer)",
+   "t": "noun"
+  },
+  "fließt": {
+   "g": "flows (fließen)",
+   "t": "verb"
+  },
+  "flüssig": {
+   "g": "liquid, molten",
+   "t": "adjective"
+  },
+  "frauen": {
+   "g": "women (die Frau)",
+   "t": "noun"
+  },
+  "freiburg": {
+   "g": "Freiburg, city at the edge of the Black Forest",
+   "t": "noun"
+  },
+  "friert": {
+   "g": "is cold, freezes (frieren)",
+   "t": "verb"
+  },
+  "frühling": {
+   "g": "spring (der Frühling)",
+   "t": "noun"
+  },
+  "förster": {
+   "g": "forest ranger (der Förster)",
+   "t": "noun"
+  },
+  "ganzes": {
+   "g": "whole (ganz)",
+   "t": "adjective"
+  },
+  "garmisch": {
+   "g": "Garmisch, town below the Zugspitze",
+   "t": "noun"
+  },
+  "gasse": {
+   "g": "narrow lane (die Gasse)",
+   "t": "noun"
+  },
+  "gassen": {
+   "g": "narrow lanes (die Gasse)",
+   "t": "noun"
+  },
+  "geraden": {
+   "g": "straight (gerade)",
+   "t": "adjective"
+  },
+  "gitter": {
+   "g": "grating, railing bars (das Gitter)",
+   "t": "noun"
+  },
+  "gleis": {
+   "g": "platform track (das Gleis)",
+   "t": "noun"
+  },
+  "glocken": {
+   "g": "bells (die Glocke)",
+   "t": "noun"
+  },
+  "grainau": {
+   "g": "Grainau, village below the Zugspitze",
+   "t": "noun"
+  },
+  "grat": {
+   "g": "mountain ridge (der Grat)",
+   "t": "noun"
+  },
+  "grenze": {
+   "g": "border (die Grenze)",
+   "t": "noun"
+  },
+  "grenzen": {
+   "g": "borders (die Grenze)",
+   "t": "noun"
+  },
+  "grünen": {
+   "g": "green (grün)",
+   "t": "adjective"
+  },
+  "gummi": {
+   "g": "rubber (das Gummi)",
+   "t": "noun"
+  },
+  "gummijacke": {
+   "g": "rubber jacket (die Gummijacke)",
+   "t": "noun"
+  },
+  "haare": {
+   "g": "hair (das Haar)",
+   "t": "noun"
+  },
+  "handschuhe": {
+   "g": "gloves (der Handschuh)",
+   "t": "noun"
+  },
+  "handtuch": {
+   "g": "towel (das Handtuch)",
+   "t": "noun"
+  },
+  "handwerker": {
+   "g": "craftsman (der Handwerker)",
+   "t": "noun"
+  },
+  "hang": {
+   "g": "hillside (der Hang)",
+   "t": "noun"
+  },
+  "hannah": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "hannahs": {
+   "g": "Hannah's",
+   "t": "noun"
+  },
+  "harten": {
+   "g": "hard (hart)",
+   "t": "adjective"
+  },
+  "harz": {
+   "g": "resin (das Harz)",
+   "t": "noun"
+  },
+  "hauptmarkt": {
+   "g": "Hauptmarkt, the main square of Nuremberg",
+   "t": "noun"
+  },
+  "heidelberg": {
+   "g": "Heidelberg, city on the Neckar",
+   "t": "noun"
+  },
+  "heiß": {
+   "g": "hot",
+   "t": "adjective"
+  },
+  "hinterher": {
+   "g": "after her, behind",
+   "t": "adverb"
+  },
+  "hocker": {
+   "g": "stool (der Hocker)",
+   "t": "noun"
+  },
+  "holzstücke": {
+   "g": "pieces of wood (das Holzstück)",
+   "t": "noun"
+  },
+  "honig": {
+   "g": "honey (der Honig)",
+   "t": "noun"
+  },
+  "hosentasche": {
+   "g": "trouser pocket (die Hosentasche)",
+   "t": "noun"
+  },
+  "hühnergott": {
+   "g": "a flint with a hole, said to bring luck",
+   "t": "noun"
+  },
+  "hühnergötter": {
+   "g": "flints with a hole, said to bring luck",
+   "t": "noun"
+  },
+  "hütte": {
+   "g": "mountain hut (die Hütte)",
+   "t": "noun"
+  },
+  "insel": {
+   "g": "island (die Insel)",
+   "t": "noun"
+  },
+  "januar": {
+   "g": "January",
+   "t": "noun"
+  },
+  "juli": {
+   "g": "July",
+   "t": "noun"
+  },
+  "jungen": {
+   "g": "young (jung)",
+   "t": "adjective"
+  },
+  "jüngste": {
+   "g": "youngest (jung)",
+   "t": "adjective"
+  },
+  "kalk": {
+   "g": "chalk, lime (der Kalk)",
+   "t": "noun"
+  },
+  "kalte": {
+   "g": "cold (kalt)",
+   "t": "adjective"
+  },
+  "kalten": {
+   "g": "cold (kalt)",
+   "t": "adjective"
+  },
+  "kalter": {
+   "g": "cold (kalt)",
+   "t": "adjective"
+  },
+  "kaltes": {
+   "g": "cold (kalt)",
+   "t": "adjective"
+  },
+  "kammer": {
+   "g": "small room (die Kammer)",
+   "t": "noun"
+  },
+  "kante": {
+   "g": "edge (die Kante)",
+   "t": "noun"
+  },
+  "kanten": {
+   "g": "edges (die Kante)",
+   "t": "noun"
+  },
+  "kap": {
+   "g": "cape, headland (das Kap)",
+   "t": "noun"
+  },
+  "kaputt": {
+   "g": "broken",
+   "t": "adjective"
+  },
+  "kerze": {
+   "g": "candle (die Kerze)",
+   "t": "noun"
+  },
+  "kettensteg": {
+   "g": "Kettensteg, an old chain bridge in Nuremberg",
+   "t": "noun"
+  },
+  "kisten": {
+   "g": "crates (die Kiste)",
+   "t": "noun"
+  },
+  "kleben": {
+   "g": "to be sticky, to stick",
+   "t": "verb"
+  },
+  "kleeblatt": {
+   "g": "cloverleaf (das Kleeblatt)",
+   "t": "noun"
+  },
+  "klettert": {
+   "g": "climbs (klettern)",
+   "t": "verb"
+  },
+  "knackt": {
+   "g": "crackles (knacken)",
+   "t": "verb"
+  },
+  "knöchel": {
+   "g": "ankle (der Knöchel)",
+   "t": "noun"
+  },
+  "konstanz": {
+   "g": "Konstanz, city on Lake Constance",
+   "t": "noun"
+  },
+  "krankenhaus": {
+   "g": "hospital (das Krankenhaus)",
+   "t": "noun"
+  },
+  "kreide": {
+   "g": "chalk (die Kreide)",
+   "t": "noun"
+  },
+  "kreidefelsen": {
+   "g": "chalk cliffs (der Kreidefelsen)",
+   "t": "noun"
+  },
+  "kreise": {
+   "g": "circles (der Kreis)",
+   "t": "noun"
+  },
+  "kreisen": {
+   "g": "circle, wheel around (kreisen)",
+   "t": "verb"
+  },
+  "krieg": {
+   "g": "war (der Krieg)",
+   "t": "noun"
+  },
+  "kuckucksuhr": {
+   "g": "cuckoo clock (die Kuckucksuhr)",
+   "t": "noun"
+  },
+  "kuckucksuhren": {
+   "g": "cuckoo clocks (die Kuckucksuhr)",
+   "t": "noun"
+  },
+  "kurven": {
+   "g": "bends in the path (die Kurve)",
+   "t": "noun"
+  },
+  "kusine": {
+   "g": "female cousin (die Kusine)",
+   "t": "noun"
+  },
+  "kusinen": {
+   "g": "female cousins (die Kusine)",
+   "t": "noun"
+  },
+  "kutter": {
+   "g": "small fishing boat (der Kutter)",
+   "t": "noun"
+  },
+  "königsstuhl": {
+   "g": "Koenigsstuhl, the highest chalk cliff on Ruegen",
+   "t": "noun"
+  },
+  "kündige": {
+   "g": "quit, resign (kündigen)",
+   "t": "verb"
+  },
+  "lebkuchen": {
+   "g": "gingerbread, a Nuremberg speciality",
+   "t": "noun"
+  },
+  "lebst": {
+   "g": "live on, live off (leben)",
+   "t": "verb"
+  },
+  "lehrerin": {
+   "g": "female teacher (die Lehrerin)",
+   "t": "noun"
+  },
+  "leons": {
+   "g": "Leon's",
+   "t": "noun"
+  },
+  "leuchtturm": {
+   "g": "lighthouse (der Leuchtturm)",
+   "t": "noun"
+  },
+  "magere": {
+   "g": "thin, meagre (mager)",
+   "t": "adjective"
+  },
+  "mai": {
+   "g": "May",
+   "t": "noun"
+  },
+  "mainau": {
+   "g": "Mainau, the garden island in Lake Constance",
+   "t": "noun"
+  },
+  "manchmal": {
+   "g": "sometimes",
+   "t": "adverb"
+  },
+  "mandeln": {
+   "g": "almonds (die Mandel)",
+   "t": "noun"
+  },
+  "maries": {
+   "g": "Marie's",
+   "t": "noun"
+  },
+  "mauern": {
+   "g": "walls (die Mauer)",
+   "t": "noun"
+  },
+  "meer": {
+   "g": "sea (das Meer)",
+   "t": "noun"
+  },
+  "meersburg": {
+   "g": "Meersburg, town on Lake Constance",
+   "t": "noun"
+  },
+  "messer": {
+   "g": "knife (das Messer)",
+   "t": "noun"
+  },
+  "meter": {
+   "g": "metre (der Meter)",
+   "t": "noun"
+  },
+  "mietet": {
+   "g": "rents (mieten)",
+   "t": "verb"
+  },
+  "minute": {
+   "g": "minute (die Minute)",
+   "t": "noun"
+  },
+  "mitte": {
+   "g": "middle (die Mitte)",
+   "t": "noun"
+  },
+  "mitternacht": {
+   "g": "midnight (die Mitternacht)",
+   "t": "noun"
+  },
+  "modell": {
+   "g": "model (das Modell)",
+   "t": "noun"
+  },
+  "monate": {
+   "g": "months (der Monat)",
+   "t": "noun"
+  },
+  "mutter": {
+   "g": "mother (die Mutter)",
+   "t": "noun"
+  },
+  "nadeln": {
+   "g": "pine needles (die Nadel)",
+   "t": "noun"
+  },
+  "nassen": {
+   "g": "wet (nass)",
+   "t": "adjective"
+  },
+  "nebel": {
+   "g": "fog (der Nebel)",
+   "t": "noun"
+  },
+  "neckar": {
+   "g": "Neckar, the river through Heidelberg",
+   "t": "noun"
+  },
+  "neues": {
+   "g": "something new (neu)",
+   "t": "adjective"
+  },
+  "noah": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "noahs": {
+   "g": "Noah's",
+   "t": "noun"
+  },
+  "nürnberg": {
+   "g": "Nuremberg, city in Bavaria",
+   "t": "noun"
+  },
+  "operieren": {
+   "g": "to operate on someone",
+   "t": "verb"
+  },
+  "ort": {
+   "g": "village, place (der Ort)",
+   "t": "noun"
+  },
+  "pegnitz": {
+   "g": "Pegnitz, the river through Nuremberg",
+   "t": "noun"
+  },
+  "pfad": {
+   "g": "path (der Pfad)",
+   "t": "noun"
+  },
+  "pfanne": {
+   "g": "pan (die Pfanne)",
+   "t": "noun"
+  },
+  "pilzen": {
+   "g": "mushrooms (der Pilz)",
+   "t": "noun"
+  },
+  "reben": {
+   "g": "vines (die Rebe)",
+   "t": "noun"
+  },
+  "reihen": {
+   "g": "rows (die Reihe)",
+   "t": "noun"
+  },
+  "reist": {
+   "g": "travels (reisen)",
+   "t": "verb"
+  },
+  "repariert": {
+   "g": "repairs (reparieren)",
+   "t": "verb"
+  },
+  "reste": {
+   "g": "leftovers (der Rest)",
+   "t": "noun"
+  },
+  "rezepte": {
+   "g": "recipes (das Rezept)",
+   "t": "noun"
+  },
+  "richtungen": {
+   "g": "directions (die Richtung)",
+   "t": "noun"
+  },
+  "riesig": {
+   "g": "huge",
+   "t": "adjective"
+  },
+  "riesiges": {
+   "g": "huge (riesig)",
+   "t": "adjective"
+  },
+  "ritterfigur": {
+   "g": "knight figurine (die Ritterfigur)",
+   "t": "noun"
+  },
+  "rollen": {
+   "g": "to roll",
+   "t": "verb"
+  },
+  "ruderboot": {
+   "g": "rowing boat (das Ruderboot)",
+   "t": "noun"
+  },
+  "rutscht": {
+   "g": "slips (rutschen)",
+   "t": "verb"
+  },
+  "räder": {
+   "g": "wheels (das Rad)",
+   "t": "noun"
+  },
+  "rügen": {
+   "g": "Ruegen, Germany's largest island",
+   "t": "noun"
+  },
+  "sachen": {
+   "g": "things (die Sache)",
+   "t": "noun"
+  },
+  "sammelt": {
+   "g": "collects (sammeln)",
+   "t": "verb"
+  },
+  "sassnitz": {
+   "g": "Sassnitz, a fishing port on Ruegen",
+   "t": "noun"
+  },
+  "schaffe": {
+   "g": "manage, cope (schaffen)",
+   "t": "verb"
+  },
+  "scharf": {
+   "g": "sharp, strong",
+   "t": "adjective"
+  },
+  "schatten": {
+   "g": "shadow (der Schatten)",
+   "t": "noun"
+  },
+  "schiene": {
+   "g": "rail (die Schiene)",
+   "t": "noun"
+  },
+  "schiff": {
+   "g": "ship (das Schiff)",
+   "t": "noun"
+  },
+  "schiffe": {
+   "g": "ships (das Schiff)",
+   "t": "noun"
+  },
+  "schlafen": {
+   "g": "to sleep",
+   "t": "verb"
+  },
+  "schlagen": {
+   "g": "strike, chime (schlagen)",
+   "t": "verb"
+  },
+  "schmal": {
+   "g": "narrow",
+   "t": "adjective"
+  },
+  "schnee": {
+   "g": "snow (der Schnee)",
+   "t": "noun"
+  },
+  "schnitzt": {
+   "g": "carves (schnitzen)",
+   "t": "verb"
+  },
+  "schokolade": {
+   "g": "chocolate (die Schokolade)",
+   "t": "noun"
+  },
+  "schreibe": {
+   "g": "write (schreiben)",
+   "t": "verb"
+  },
+  "schule": {
+   "g": "school (die Schule)",
+   "t": "noun"
+  },
+  "schuppen": {
+   "g": "fish scales (die Schuppe)",
+   "t": "noun"
+  },
+  "schwarz": {
+   "g": "black",
+   "t": "adjective"
+  },
+  "schwimmt": {
+   "g": "swims (schwimmen)",
+   "t": "verb"
+  },
+  "schülern": {
+   "g": "pupils (der Schüler)",
+   "t": "noun"
+  },
+  "seil": {
+   "g": "rope (das Seil)",
+   "t": "noun"
+  },
+  "seilbahn": {
+   "g": "cable car (die Seilbahn)",
+   "t": "noun"
+  },
+  "semester": {
+   "g": "university term (das Semester)",
+   "t": "noun"
+  },
+  "sinken": {
+   "g": "to sink",
+   "t": "verb"
+  },
+  "sommer": {
+   "g": "summer (der Sommer)",
+   "t": "noun"
+  },
+  "sonnenbrille": {
+   "g": "sunglasses (die Sonnenbrille)",
+   "t": "noun"
+  },
+  "sophie": {
+   "g": "(name)",
+   "t": "noun"
+  },
+  "soße": {
+   "g": "sauce (die Soße)",
+   "t": "noun"
+  },
+  "spitze": {
+   "g": "summit, top (die Spitze)",
+   "t": "noun"
+  },
+  "springe": {
+   "g": "jump (springen)",
+   "t": "verb"
+  },
+  "spur": {
+   "g": "track, trail (die Spur)",
+   "t": "noun"
+  },
+  "späne": {
+   "g": "wood shavings (der Span)",
+   "t": "noun"
+  },
+  "steigen": {
+   "g": "to climb",
+   "t": "verb"
+  },
+  "steine": {
+   "g": "stones (der Stein)",
+   "t": "noun"
+  },
+  "stiefel": {
+   "g": "boots (der Stiefel)",
+   "t": "noun"
+  },
+  "stoppt": {
+   "g": "stops (stoppen)",
+   "t": "verb"
+  },
+  "strand": {
+   "g": "beach (der Strand)",
+   "t": "noun"
+  },
+  "stände": {
+   "g": "market stalls (der Stand)",
+   "t": "noun"
+  },
+  "suchst": {
+   "g": "look for (suchen)",
+   "t": "verb"
+  },
+  "tannen": {
+   "g": "fir trees (die Tanne)",
+   "t": "noun"
+  },
+  "tante": {
+   "g": "aunt (die Tante)",
+   "t": "noun"
+  },
+  "taschen": {
+   "g": "bags (die Tasche)",
+   "t": "noun"
+  },
+  "terrasse": {
+   "g": "terrace (die Terrasse)",
+   "t": "noun"
+  },
+  "tod": {
+   "g": "death (der Tod)",
+   "t": "noun"
+  },
+  "triberg": {
+   "g": "Triberg, town in the Black Forest",
+   "t": "noun"
+  },
+  "tropft": {
+   "g": "drips (tropfen)",
+   "t": "verb"
+  },
+  "tränen": {
+   "g": "tears (die Träne)",
+   "t": "noun"
+  },
+  "tunnel": {
+   "g": "tunnel (der Tunnel)",
+   "t": "noun"
+  },
+  "turm": {
+   "g": "tower (der Turm)",
+   "t": "noun"
+  },
+  "türme": {
+   "g": "towers (der Turm)",
+   "t": "noun"
+  },
+  "umarmt": {
+   "g": "hugs (umarmen)",
+   "t": "verb"
+  },
+  "umsonst": {
+   "g": "in vain, for nothing",
+   "t": "adverb"
+  },
+  "universität": {
+   "g": "university (die Universität)",
+   "t": "noun"
+  },
+  "unterschreibe": {
+   "g": "sign (unterschreiben)",
+   "t": "verb"
+  },
+  "unterschreibst": {
+   "g": "sign (unterschreiben)",
+   "t": "verb"
+  },
+  "verspreche": {
+   "g": "promise (versprechen)",
+   "t": "verb"
+  },
+  "versprichst": {
+   "g": "promise (versprechen)",
+   "t": "verb"
+  },
+  "versuche": {
+   "g": "attempts (der Versuch)",
+   "t": "noun"
+  },
+  "vorneweg": {
+   "g": "out in front",
+   "t": "adverb"
+  },
+  "vorsichtig": {
+   "g": "carefully",
+   "t": "adverb"
+  },
+  "wachsen": {
+   "g": "to grow",
+   "t": "verb"
+  },
+  "wahrscheinlich": {
+   "g": "probably",
+   "t": "adverb"
+  },
+  "wanderst": {
+   "g": "hike (wandern)",
+   "t": "verb"
+  },
+  "weihnachten": {
+   "g": "Christmas",
+   "t": "noun"
+  },
+  "weiten": {
+   "g": "wide, open (weit)",
+   "t": "adjective"
+  },
+  "weites": {
+   "g": "wide, open (weit)",
+   "t": "adjective"
+  },
+  "werkstatt": {
+   "g": "workshop (die Werkstatt)",
+   "t": "noun"
+  },
+  "weste": {
+   "g": "waistcoat, vest (die Weste)",
+   "t": "noun"
+  },
+  "wiese": {
+   "g": "meadow (die Wiese)",
+   "t": "noun"
+  },
+  "winter": {
+   "g": "winter (der Winter)",
+   "t": "noun"
+  },
+  "wohne": {
+   "g": "live (wohnen)",
+   "t": "verb"
+  },
+  "wovon": {
+   "g": "on what, from what",
+   "t": "adverb"
+  },
+  "wurzeln": {
+   "g": "roots (die Wurzel)",
+   "t": "noun"
+  },
+  "wünsch": {
+   "g": "make a wish (wünschen)",
+   "t": "verb"
+  },
+  "wünschst": {
+   "g": "wish (wünschen)",
+   "t": "verb"
+  },
+  "zahnradbahn": {
+   "g": "rack railway (die Zahnradbahn)",
+   "t": "noun"
+  },
+  "zerbrochen": {
+   "g": "broken to pieces",
+   "t": "adjective"
+  },
+  "zinnfiguren": {
+   "g": "pewter figurines (die Zinnfigur)",
+   "t": "noun"
+  },
+  "zittern": {
+   "g": "to tremble",
+   "t": "verb"
+  },
+  "zugspitze": {
+   "g": "Zugspitze, Germany's highest mountain",
+   "t": "noun"
+  },
+  "zweige": {
+   "g": "branches (der Zweig)",
+   "t": "noun"
+  },
+  "zähle": {
+   "g": "count (zählen)",
+   "t": "verb"
+  },
+  "älter": {
+   "g": "older (alt)",
+   "t": "adjective"
+  },
+  "ärzte": {
+   "g": "doctors (der Arzt)",
+   "t": "noun"
+  },
+  "ärztin": {
+   "g": "female doctor (die Ärztin)",
+   "t": "noun"
+  },
+  "öl": {
+   "g": "oil (das Öl)",
+   "t": "noun"
+  },
+  "österreich": {
+   "g": "Austria",
+   "t": "noun"
+  }
  }
 }

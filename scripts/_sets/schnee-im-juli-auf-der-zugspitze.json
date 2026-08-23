@@ -1,0 +1,495 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "die Seilbahn,der Gipfel,die Sonnenbrille,der Handschuh",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "die Seilbahn",
+     "answer": "a cable car",
+     "options": [
+      "a cable car",
+      "the summit",
+      "sunglasses",
+      "gloves"
+     ]
+    },
+    {
+     "word": "der Gipfel",
+     "answer": "the summit",
+     "options": [
+      "a cable car",
+      "the summit",
+      "sunglasses",
+      "gloves"
+     ]
+    },
+    {
+     "word": "die Sonnenbrille",
+     "answer": "sunglasses",
+     "options": [
+      "a cable car",
+      "the summit",
+      "sunglasses",
+      "gloves"
+     ]
+    },
+    {
+     "word": "der Handschuh",
+     "answer": "gloves",
+     "options": [
+      "a cable car",
+      "the summit",
+      "sunglasses",
+      "gloves"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Schnee",
+  "sentence": "Der [[Schnee]] auf dem Berg bleibt bis in den Juli.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "snow",
+   "options": [
+    "snow",
+    "rain",
+    "fog",
+    "ice"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Der Schnee auf dem Berg bleibt bis in den Juli.",
+    "targetWord": "Schnee",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Zugspitze",
+  "sentence": "Die [[Zugspitze]] ist der höchste Berg in Deutschland.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the Zugspitze mountain",
+   "options": [
+    "the Zugspitze mountain",
+    "the Baltic coast",
+    "the Black Forest",
+    "the Rhine valley"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Die Zugspitze ist der höchste Berg in Deutschland.",
+    "targetWord": "Zugspitze",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Juli",
+  "sentence": "Oben liegt sogar im [[Juli]] noch alter Schnee.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "July",
+   "options": [
+    "July",
+    "January",
+    "March",
+    "November"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Oben liegt sogar im Juli noch alter Schnee.",
+    "targetWord": "Juli",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Wolke",
+  "sentence": "Die [[Wolken]] liegen unter ihnen wie ein weites Feld.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "clouds",
+   "options": [
+    "clouds",
+    "waves",
+    "fields",
+    "forests"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Die Wolken liegen unter ihnen wie ein weites Feld.",
+    "targetWord": "Wolken",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Kälte",
+  "sentence": "Die [[Kälte]] drückt hart gegen ihr Gesicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the cold",
+   "options": [
+    "the cold",
+    "the wind",
+    "the light",
+    "the noise"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Die Kälte drückt hart gegen ihr Gesicht.",
+    "targetWord": "Kälte",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "kündige",
+  "sentence": "Ich _____ im Herbst und suche danach etwas Neues.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "kündige",
+   "options": [
+    "kündige",
+    "nickt",
+    "zieht",
+    "drücke"
+   ],
+   "translation": "I will _____ in autumn and look for something new.",
+   "optionTranslations": [
+    "quit",
+    "nods",
+    "pulls",
+    "press"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Ich kündige im Herbst und suche danach etwas Neues.",
+    "targetWord": "kündige",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Herbst",
+  "sentence": "Sie kündigt im [[Herbst]] und sucht dann etwas Neues.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "autumn",
+   "options": [
+    "autumn",
+    "spring",
+    "summer",
+    "winter"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Sie kündigt im Herbst und sucht dann etwas Neues.",
+    "targetWord": "Herbst",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Grat",
+  "sentence": "Der kalte Wind bläst hart über den schmalen [[Grat]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a mountain ridge",
+   "options": [
+    "a mountain ridge",
+    "a deep valley",
+    "a wide lake",
+    "a green field"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Der kalte Wind bläst hart über den schmalen Grat.",
+    "targetWord": "Grat",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Grenze",
+  "sentence": "Von hier oben sieht man die [[Grenze]] zu Österreich.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a border",
+   "options": [
+    "a border",
+    "a coast",
+    "a road",
+    "a river"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Von hier oben sieht man die Grenze zu Österreich.",
+    "targetWord": "Grenze",
+    "language": "german"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Nase",
+  "sentence": "Sie trägt eine dunkle Sonnenbrille auf der [[Nase]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a nose",
+   "options": [
+    "a nose",
+    "an ear",
+    "a chin",
+    "a cheek"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Sie trägt eine dunkle Sonnenbrille auf der Nase.",
+    "targetWord": "Nase",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Feld",
+  "sentence": "Die Wolken liegen unten wie ein weites [[Feld]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a field",
+   "options": [
+    "a field",
+    "a wall",
+    "a roof",
+    "a bridge"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Die Wolken liegen unten wie ein weites Feld.",
+    "targetWord": "Feld",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "herum",
+  "sentence": "Um sie [[herum]] liegen nur Wolken und weißer Schnee.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "around",
+   "options": [
+    "around",
+    "ahead",
+    "behind",
+    "below"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Um sie herum liegen nur Wolken und weißer Schnee.",
+    "targetWord": "herum",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "der Stiefel",
+  "sentence": "Ihre [[Stiefel]] sinken bei jedem Schritt tief ein.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "boots",
+   "options": [
+    "boots",
+    "gloves",
+    "hats",
+    "coats"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Ihre Stiefel sinken bei jedem Schritt tief ein.",
+    "targetWord": "Stiefel",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "neu",
+  "sentence": "Sie sucht im Herbst etwas [[Neues]] und kennt es noch nicht.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "new",
+   "options": [
+    "new",
+    "old",
+    "cheap",
+    "easy"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Sie sucht im Herbst etwas Neues und kennt es noch nicht.",
+    "targetWord": "Neues",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "blasen",
+  "sentence": "Der kalte Wind [[bläst]] hart über den Grat.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to blow",
+   "options": [
+    "to blow",
+    "to fall",
+    "to shine",
+    "to melt"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Der kalte Wind bläst hart über den Grat.",
+    "targetWord": "bläst",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Kreuz",
+  "sentence": "Die beiden stehen oben am [[Kreuz]] und sagen nichts.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a cross on a summit",
+   "options": [
+    "a cross on a summit",
+    "a bench in a park",
+    "a sign at a station",
+    "a bell in a tower"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Die beiden stehen oben am Kreuz und sagen nichts.",
+    "targetWord": "Kreuz",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "das Stück",
+  "sentence": "Sie geht ein [[Stück]] durch den tiefen Schnee.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a short part of a way",
+   "options": [
+    "a short part of a way",
+    "a whole day",
+    "a long night",
+    "a big group"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Sie geht ein Stück durch den tiefen Schnee.",
+    "targetWord": "Stück",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "die Spitze",
+  "sentence": "Das Licht auf der [[Spitze]] ist scharf und hart.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the peak, the very top",
+   "options": [
+    "the peak, the very top",
+    "the foot",
+    "the middle",
+    "the side"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Das Licht auf der Spitze ist scharf und hart.",
+    "targetWord": "Spitze",
+    "language": "german"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "fill_blank",
+  "word": "drückt",
+  "sentence": "Die Kälte _____ hart gegen ihr kaltes Gesicht.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "drückt",
+   "options": [
+    "drückt",
+    "holt",
+    "liest",
+    "kündigt"
+   ],
+   "translation": "The cold _____ hard against her cold face.",
+   "optionTranslations": [
+    "presses",
+    "fetches",
+    "reads",
+    "quits"
+   ],
+   "audioClip": {
+    "storySlug": "schnee-im-juli-auf-der-zugspitze",
+    "storySource": "user",
+    "sentence": "Die Kälte drückt hart gegen ihr kaltes Gesicht.",
+    "targetWord": "drückt",
+    "language": "german"
+   }
+  },
+  "featured": false
+ }
+]
