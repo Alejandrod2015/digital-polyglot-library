@@ -4,7 +4,7 @@ P = {}
 P["kartons-im-kinderzimmer"] = dict(
 arcType="juxtaposition-discovery",
 synopsis="Tobias ist neunzehn und räumt sein Kinderzimmer leer, weil er endlich allein wohnen will. Seine Mutter packt mit, sagt wenig dazu und findet in der untersten Schublade eine Kiste, die in keinem der sechs Kartons eingeplant war. Je leerer der Schrank vor ihr wird, desto schwerer wird die Kiste in ihrer Hand.",
-text="""Sieben leere Kartons stehen am Samstag im Kinderzimmer auf dem Teppich. Tobias will bald in seine eigene Wohnung umziehen, und seine Mutter Petra hilft ihrem Sohn.
+text="""Sieben leere Kartons stehen am Samstag im Kinderzimmer auf dem Teppich. Tobias ist ein junger Mann von neunzehn Jahren und will bald umziehen. Seine Mutter Petra hilft ihrem Sohn.
 
 Tobias: Mama, können die alten Hefte hierbleiben? Die neue Wohnung ist klein.
 Petra: Natürlich. Aber die Kleidung nehmen wir mit.
@@ -47,7 +47,7 @@ vocab=[
 P["der-schlussel-passt-nicht"] = dict(
 arcType="late-reveal",
 synopsis="Vater und Sohn schleppen den ganzen Umzug ohne Aufzug nach oben. Oben dreht sich der neue Schlüssel keinen Millimeter, und Stefan verdächtigt schon die Hausverwaltung. Erst als eine Nachbarin ihre Tür öffnet und auf die Zahl neben der Klingel zeigt, wird klar, warum kein Schlüssel dieser Welt hier gepasst hätte.",
-text="""Der Lastwagen steht vor dem Haus. Es ist Umzugstag, und Tobias und sein Vater Stefan tragen die Kartons hinauf in den dritten Stock. Einen Aufzug gibt es hier nicht.
+text="""Der Lastwagen steht vor dem Haus. Es ist Umzugstag, und Tobias trägt die Kartons hinauf in den dritten Stock. Sein Vater Stefan hilft ihm. Einen Aufzug gibt es hier nicht.
 
 Stefan: Diese Bücherkiste ist wirklich schwer. Was ist da drin?
 Tobias: Die Bücher, tut mir leid. Die Kleidung ist leichter.
@@ -60,7 +60,7 @@ Stefan: Probier ihn. Ich halte die Kiste.
 Tobias: Er geht nicht ins Türschloss. Der Schlüssel passt nicht.
 Stefan: Das ist nicht möglich. Wir haben ihn heute bekommen.
 
-Eine Nachbarin öffnet ihre Tür und schaut auf die Kartons.
+Eine Nachbarin, die Mieterin von nebenan, öffnet ihre Tür und schaut auf die Kartons.
 
 Nachbarin: Hier oben wohnt Familie Berger. Zu wem wollen Sie?
 Stefan: Zu Nummer sieben. So steht es auf dem Vertrag.

@@ -4,22 +4,22 @@ P = {}
 P["platzchen-neben-den-gro-en-lichtern"] = dict(
 arcType="reframe-turn",
 synopsis="Anja verkauft auf dem Nürnberger Weihnachtsmarkt Plätzchen, die sie morgens selbst gebacken hat. Neben der großen goldenen Holzhütte kommt sie sich unsichtbar vor und will fast einpacken. Ihr Freund Kai sagt nichts Tröstliches, sondern wartet ab, bis die erste Kundin von allein stehen bleibt. Was die Leute suchen, stellt sich heraus, ist nicht das hellste Licht auf dem Platz.",
-text="""Der Nürnberger Weihnachtsmarkt riecht nach Zimt und Glühwein. Anja steht hinter ihrem Stand mit selbst gebackenen Plätzchen. Ihr Freund Kai bringt ihr einen Becher Tee. Nebenan glänzt eine Holzhütte voller Gold.
+text="""Der Weihnachtsmarkt in Nürnberg riecht nach Zimt. Anja ist eine Bäckerin aus Fürth und steht hinter ihrem Stand mit selbst gebackenen Plätzchen. Ihr Freund Kai bringt ihr Tee. Nebenan glänzt eine Holzhütte voller Gold.
 
 Anja: Siehst du die Hütte da drüben? So viel Gold.
 Kai: Schön. Aber bei dir riecht es nach echtem Zimt.
-Anja: Trotzdem bleiben alle dort. Zu mir kommt keiner.
-Kai: Warte ab. Der Winterabend hat erst angefangen.
+Anja: Trotzdem bleiben alle dort. Zu mir kommt niemand.
+Kai: Warte ab. Der Winterabend hat gerade erst angefangen.
 
-Eine ältere Frau bleibt stehen und schaut auf die Zimtsterne mit Marmelade.
+Eine Kundin, eine Frau mit Mütze, schaut auf die Zimtsterne mit Marmelade.
 
 Kundin: Endlich Plätzchen wie früher, nicht aus der Fabrik.
 Anja: Danke. Ich habe sie selbst gebacken, mit Butter und Mehl.
 
-Die Kundin nimmt eine ganze Papiertüte voll und geht weiter.
+Die Kundin nimmt eine Papiertüte und geht.
 
 Kai: Deshalb kommt sie zu dir und nicht zur goldenen Hütte.
-Anja: Vielleicht hast du recht. Mein Stand ist klein, aber einfach.
+Anja: Vielleicht hast du recht. Der Glühwein nebenan ist teurer, mein Stand ist klein, aber einfach.
 
 Mehr Leute stehen an Anjas Tisch und zeigen auf die Plätzchen.
 

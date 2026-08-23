@@ -4,7 +4,7 @@ P = {}
 P["verspatung-am-gleis-vier"] = dict(
 arcType="late-reveal",
 synopsis="Greta und ihr Bruder Bernd stehen pünktlich am Kölner Gleis vier, um zur Feier ihrer Nichte zu fahren. Auf der Tafel wächst die Verspätung Minute um Minute, der Anschluss ist längst verloren, und ein Taxi quer durch die Stadt kann sich keiner von beiden leisten. Bernd sagt lange nichts, geht zur Rolltreppe und nennt erst im letzten Moment den Weg, an den Greta nicht gedacht hat.",
-text="""Die Zahlen auf der Tafel am Kölner Hauptbahnhof springen. Greta, eine Ärztin aus Köln, wartet am Gleis vier. Ihr Bruder Bernd hält das Gepäck.
+text="""Die Zahlen auf der Tafel am Kölner Hauptbahnhof springen. Greta, eine Ärztin aus Köln, wartet am Gleis vier. Ihr Bruder Bernd hält das Gepäck. Die Nichte, eine Kollegin von Greta, feiert heute Geburtstag.
 
 Greta: Aus zehn Minuten sind dreißig geworden.
 Bernd: Unser Anschluss wartet nicht auf uns.

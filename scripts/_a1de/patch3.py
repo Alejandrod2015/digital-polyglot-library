@@ -4,25 +4,25 @@ P = {}
 P["ein-freier-platz-am-tisch"] = dict(
 arcType="daily-encounter",
 synopsis="Sofie wohnt seit zwei Wochen in München und kennt dort keinen einzigen Menschen. Im vollen Biergarten fragt sie am Nachbartisch nach einem freien Stuhl und bekommt sehr viel mehr als nur einen Sitzplatz. Max und seine Freunde rücken einfach zusammen, als wäre das die normalste Sache der Welt, und genau das ist für Sofie neu.",
-text="""Alle Tische im Biergarten sind an diesem warmen Sommerabend voll. Über ihnen stehen alte Kastanien und werfen Schatten. Sofie ist neu in der Stadt und sucht einen Sitzplatz.
+text="""Alle Tische im Biergarten sind an diesem Sommerabend voll. Über ihnen stehen alte Kastanien und werfen Schatten. Sofie ist eine Neue in dieser Stadt und sucht einen Sitzplatz.
 
 Sofie: Entschuldigung, ist der Stuhl hier noch frei?
-Max: Klar, setz dich zu uns. Drinnen ist heute kein Platz.
-Sofie: Danke. Am Nachbartisch war schon alles voll.
+Max: Klar, setz dich zu uns. Drinnen ist kein Platz.
+Sofie: Danke. Am Nachbartisch war alles voll.
 Max: Auf der Sitzbank sitzt man sowieso zusammen.
 
-Der Kellner stellt zwei Bier auf den Tisch. Die Gruppe lacht und redet weiter.
+Der Kellner stellt zwei Bier hin. Die Gruppe lacht und redet weiter.
 
-Max: Ich heiße Max. Das ist Ben, und Clara ist eine alte Freundin.
-Sofie: Ich bin Sofie, seit zwei Wochen hier.
-Max: Zwei Wochen? Und schon allein im Biergarten? Mutig.
+Max: Ich heiße Max. Das ist Ben, Clara ist eine alte Freundin.
+Sofie: Ich bin Sofie, seit zwei Wochen in München.
+Max: Zwei Wochen? Und schon allein hier? Mutig.
 Sofie: Allein oder einsam. Zu Hause sitzen ist nicht besser.
 
-Max legt ihr eine Brezel hin und lacht freundlich.
+Max ist der Lauteste am Tisch. Er legt ihr eine Brezel hin und lacht freundlich.
 
 Max: Dann iss eine Brezel. Hier braucht man kein großes Wort.
 Sofie: Das ist nett. In der neuen Stadt ist alles noch so fremd.
-Max: Kenne ich. Ich war auch mal neu hier.
+Max: Kenne ich. Ich war auch mal neu.
 Sofie: Ich hoffe. Heute fühlt sich München schon wärmer an.""",
 vocab=[
  ("noun","Sommerabend",None,"A summer evening, warm enough to sit outside until late."),

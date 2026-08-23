@@ -7,7 +7,7 @@ synopsis="An einem frischen Morgen im Schwarzwald schnüren Mia und Finn ihre Sc
 text="""Ihre Schuhe schnürt Mia vor der Waldhütte im Schwarzwald. Mia ist eine Studentin aus Freiburg, und Finn, ein Freund aus dem Kurs, füllt die Flaschen für den Rucksack.
 
 Mia: Hast du genug Wasser? Der Wanderweg ist lang.
-Finn: Wasser, Brot und zwei Äpfel.
+Finn: Alles drin. Wasser, Brot und zwei Äpfel.
 Mia: Hörst du, wie ruhig es hier ist?
 Finn: Nur die Vögel und der Wind in den Bäumen.
 

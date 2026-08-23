@@ -4,20 +4,20 @@ P = {}
 P["kabeljau-vom-fischmarkt"] = dict(
 arcType="reframe-turn",
 synopsis="Zwei Mitbewohner stehen im Morgengrauen zwischen den Kisten am Hamburger Fischmarkt. Jonas greift nach dem teuersten Fisch, weil teuer für ihn immer gut heißt. Lena hält ihm den billigen Kabeljau hin und lässt ihn selbst entscheiden. Was Jonas am Ende überzeugt, ist kein Preis, sondern eine Nase voll Meer.",
-text="""Der Fischmarkt von Hamburg riecht nach Salz und Meer. Um fünf Uhr morgens steht Lena schon zwischen den Kisten. Ihr Mitbewohner Jonas hält müde einen Becher.
+text="""Der Fischmarkt von Hamburg riecht nach Salz und Meer. Um fünf Uhr morgens steht Lena, eine Köchin aus Altona, schon zwischen den Kisten. Ihr Mitbewohner Jonas hält müde einen Becher.
 
 Jonas: So früh, Lena. Warum nicht einfach im Geschäft?
 Lena: Sonntag ist Markttag. Später ist der frische Fisch weg.
-Jonas: Na gut. Dann den großen Lachs. Der ist teuer, aber bestimmt gut.
+Jonas: Na gut. Dann den großen Lachs. Der ist teuer, aber gut.
 Lena: Der kostet viel. Brauchen wir das heute?
 
-Vor einem Verkäufer liegt Kabeljau auf dem Eis.
+Vor einem Stand liegt Kabeljau auf dem Eis. Der Verkäufer ist ein Mann mit blauer Schürze.
 
-Verkäufer: Kabeljau aus der Nordsee! Drei Stück, ein guter Preis!
+Verkäufer: Kabeljau aus der Nordsee! Ein guter Preis!
 Jonas: Kabeljau? Den kenne ich gar nicht.
-Lena: Er ist viel billiger als der Lachs. Schau dir die Augen an.
+Lena: Er ist billiger als der Lachs. Schau dir die Augen an.
 
-Jonas nimmt ein Stück Kabeljau in die Hand und riecht daran.
+Jonas nimmt ein Stück Kabeljau und riecht daran.
 
 Jonas: Du hast recht. Der riecht nach Meer, nicht nach Fisch.
 Lena: Siehst du? Frisch ist besser als teuer.
@@ -55,7 +55,7 @@ text="""Zwei Teller stehen schon auf dem Tisch. Am Vormittag schneidet Lena in d
 Lena: Jonas, wo ist die Zitrone? Salz und Pfeffer habe ich.
 Jonas: Die Zitrone? Die hast du doch gekauft.
 Lena: Nein, das warst du. Wir haben beide keine gekauft.
-Jonas: Kein Problem, ich hole schnell eine im Geschäft.
+Jonas: Kein Problem, ich hole eine im Geschäft.
 
 Lena stellt die Pfanne vom Feuer.
 

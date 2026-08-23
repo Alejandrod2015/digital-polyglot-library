@@ -4,7 +4,7 @@ P = {}
 P["der-biss-im-ring"] = dict(
 arcType="juxtaposition-discovery",
 synopsis="Vor dem Heidelberger Schlosstor erzählt Lukas die Legende von der Hexe, die in den eisernen Ring gebissen haben soll. Hanna hält nichts davon und sucht die nüchterne Erklärung im Wetter und im alten Eisen. Dann legt sie selbst die Hand auf den Ring, und unter ihren Fingern trifft die kühle Physik auf etwas, das dort eigentlich nicht sein dürfte.",
-text="""Hanna, eine Lehrerin aus der Stadt, steht am Abend mit Lukas vor dem Schlosstor des Heidelberger Schlosses. Ihr Freund Lukas mag alte Sagen, Hanna glaubt an das, was sie sieht.
+text="""Hanna, eine Lehrerin aus der Stadt, steht am Abend mit Lukas vor dem Schlosstor in Heidelberg. Ihr Freund Lukas mag alte Sagen, Hanna glaubt an das, was sie sieht.
 
 Lukas: Kennst du die Legende? Eine Hexe hat in den eisernen Ring gebissen.
 Hanna: Eine Hexe, die in Eisen beißt? Nur eine Geschichte.
