@@ -735,7 +735,7 @@ function AudienceView({ data }: { data: DashboardData }) {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
+            gridTemplateColumns: "repeat(3, 1fr)",
             gap: 10,
           }}
         >
@@ -882,9 +882,39 @@ function AudienceView({ data }: { data: DashboardData }) {
 }
 
 // ── Acquisition view: just the checkout funnel KPIs ──
+type RetentionCellPayload = {
+  retained: number;
+  pct: number;
+  /** El tramo no ha terminado para todos: solo puede subir. */
+  partial: boolean;
+};
+
+type RetentionPayload = {
+  weeks: number;
+  cohorts: Array<{
+    weekStart: string;
+    users: number;
+    weeks: RetentionCellPayload[];
+  }>;
+  overall: {
+    users: number;
+    returnEligible: number;
+    returned: number;
+    returnedPct: number | null;
+    milestones: Array<{
+      day: number;
+      eligible: number;
+      retained: number;
+      pct: number | null;
+    }>;
+  };
+};
+
 type AcquisitionPayload = {
   source: string;
   windowDays: number;
+  /** Falta en respuestas cacheadas de antes de que existiera el panel. */
+  retention?: RetentionPayload;
   signups: {
     totalAllTime: number;
     last7d: number;
@@ -1060,6 +1090,142 @@ function FunnelBar({
   );
 }
 
+/**
+ * Tabla de retención por cohorte de alta.
+ *
+ * Cada fila es una semana de altas y cada columna una semana contada desde el
+ * alta de esa gente, no desde el calendario. La primera columna incluye el día
+ * del alta, así que mide activación; la retención se lee de la segunda en
+ * adelante. Las celdas con punto todavía no han cerrado su tramo para todos
+ * los miembros de la cohorte y solo pueden subir.
+ */
+function RetentionPanel({
+  retention,
+  days,
+}: {
+  retention: RetentionPayload;
+  days: number;
+}) {
+  const { cohorts, weeks, overall } = retention;
+  const milestoneLabel: Record<number, string> = {
+    7: "Seguía a partir del día 7",
+    30: "Seguía a partir del día 30",
+  };
+
+  const cellStyle = (cell: RetentionCellPayload): React.CSSProperties => {
+    // Verde proporcional al porcentaje. El 0% se queda en el fondo del panel
+    // para que la vista de conjunto sea "dónde hay color" y no un damero.
+    const alpha = cell.pct <= 0 ? 0 : 0.1 + (Math.min(cell.pct, 100) / 100) * 0.55;
+    return {
+      padding: "5px 6px",
+      textAlign: "center",
+      background: alpha === 0 ? "transparent" : `rgba(90, 209, 154, ${alpha})`,
+      color: cell.pct >= 55 ? "#0b1a13" : "inherit",
+      opacity: cell.partial ? 0.55 : 1,
+      borderRadius: 4,
+      whiteSpace: "nowrap",
+    };
+  };
+
+  return (
+    <div className="mx-panel" style={{ marginBottom: 12 }}>
+      <div className="mx-panel__head">
+        <div>
+          <div className="mx-panel__eyebrow">Retención</div>
+          <h3 className="mx-panel__title">Vuelven, por semana de alta</h3>
+        </div>
+        <span className="mx-panel__hint">cohortes: altas en {days}d</span>
+      </div>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: 10,
+          marginBottom: 14,
+        }}
+      >
+        <KpiCard
+          label="Volvió algún otro día"
+          value={
+            overall.returnedPct === null ? "s/d" : `${overall.returnedPct}%`
+          }
+          hint={`${overall.returned} de ${overall.returnEligible}`}
+        />
+        {overall.milestones.map((m) => (
+          <KpiCard
+            key={m.day}
+            label={milestoneLabel[m.day] ?? `Día ${m.day}`}
+            value={m.pct === null ? "s/d" : `${m.pct}%`}
+            hint={
+              m.eligible === 0
+                ? "nadie lleva tanto tiempo"
+                : `${m.retained} de ${m.eligible}`
+            }
+            accent={m.day >= 30 ? "gold" : "xp"}
+          />
+        ))}
+      </div>
+
+      {cohorts.length === 0 ? (
+        <p style={{ opacity: 0.6, fontSize: 13, margin: 0 }}>
+          Sin altas en el rango seleccionado.
+        </p>
+      ) : (
+        <div style={{ overflowX: "auto" }}>
+          <table
+            style={{ width: "100%", borderCollapse: "separate", borderSpacing: 3, fontSize: 12 }}
+          >
+            <thead>
+              <tr style={{ textAlign: "left", opacity: 0.6 }}>
+                <th style={{ padding: "4px 6px" }}>Semana de alta</th>
+                <th style={{ padding: "4px 6px", textAlign: "right" }}>Altas</th>
+                {Array.from({ length: weeks }, (_, n) => (
+                  <th key={n} style={{ padding: "4px 6px", textAlign: "center" }}>
+                    {n === 0 ? "Sem 0" : `+${n}`}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {cohorts.map((c) => (
+                <tr key={c.weekStart}>
+                  <td style={{ padding: "5px 6px", whiteSpace: "nowrap" }}>{c.weekStart}</td>
+                  <td style={{ padding: "5px 6px", textAlign: "right", opacity: 0.75 }}>
+                    {c.users}
+                  </td>
+                  {c.weeks.map((cell, n) => (
+                    <td
+                      key={n}
+                      style={cellStyle(cell)}
+                      title={`${cell.retained} de ${c.users}${cell.partial ? " (tramo abierto)" : ""}`}
+                    >
+                      {cell.pct}%
+                      {cell.partial ? "\u00b7" : ""}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      <p style={{ margin: "10px 0 0", fontSize: 11.5, color: "var(--mx-muted)", lineHeight: 1.5 }}>
+        La semana se cuenta desde el alta de cada persona, no desde el lunes:
+        la +1 de quien entró un jueves va de su jueves al miércoles siguiente.
+        La columna &laquo;Sem 0&raquo; incluye el día del alta, así que mide
+        activación; la retención empieza en la +1. Un punto marca el tramo que
+        aún no ha cerrado para toda la cohorte, y por eso solo puede subir.
+        Cuenta como actividad cualquier evento de esa persona salvo los que
+        escribe el servidor (correos de ciclo de vida y envíos de aviso). Los
+        hitos son sin techo: &laquo;a partir del día 7&raquo; incluye a quien
+        dio señal ese día o cualquiera posterior.
+      </p>
+    </div>
+  );
+}
+
 function AcquisitionView({
   data,
   cohort,
@@ -1152,6 +1318,9 @@ function AcquisitionView({
           </p>
         )}
       </div>
+
+      {/* Retención por cohorte de alta */}
+      {acq?.retention && <RetentionPanel retention={acq.retention} days={days} />}
 
       {/* Recent signups */}
       {acq && acq.recent.length > 0 && (

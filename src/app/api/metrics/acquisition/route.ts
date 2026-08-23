@@ -6,6 +6,7 @@ import { prisma } from "@/lib/prisma";
 import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess";
 import { getBetaUserIds, parseMetricsCohort } from "@/lib/metricsCohort";
 import { resolveStoryLanguages } from "@/lib/storyLanguages";
+import { buildRetention, SERVER_WRITTEN_METRIC_EVENTS } from "@/lib/metricsRetention";
 
 const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
 
@@ -145,7 +146,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     const ids = cohort.map((u) => u.id);
 
     // ── DB cross-reference (single round of grouped queries) ──
-    const [audioEvents, plansEvents, continueRows, entitlements, claimRows] = await Promise.all([
+    const [audioEvents, plansEvents, continueRows, entitlements, claimRows, activityRows] = await Promise.all([
       ids.length
         ? prisma.userMetric.findMany({
             where: { userId: { in: ids }, eventType: { in: ["story_opened", "audio_play", "audio_complete", "audio_pause", "continue_listening"] } },
@@ -177,6 +178,20 @@ export async function GET(req: NextRequest): Promise<Response> {
         ? prisma.claimToken.findMany({
             where: { redeemedBy: { in: ids } },
             select: { redeemedBy: true },
+          })
+        : Promise.resolve([]),
+      // Toda la actividad de esta gente, para la retencion por cohorte. No
+      // lleva filtro de fecha a proposito: la cohorte ya esta acotada por su
+      // alta, y lo que interesa es justo lo que hicieron DESPUES, incluso si
+      // cae fuera de la ventana que se esta mirando.
+      ids.length
+        ? prisma.userMetric.findMany({
+            where: {
+              userId: { in: ids },
+              eventType: { notIn: SERVER_WRITTEN_METRIC_EVENTS },
+            },
+            select: { userId: true, createdAt: true },
+            take: 200000,
           })
         : Promise.resolve([]),
     ]);
@@ -459,9 +474,21 @@ export async function GET(req: NextRequest): Promise<Response> {
       paid: recent.filter((r) => r.paid).length,
     };
 
+    // ── Retencion por cohorte de alta ──
+    // Las columnas se recortan a lo que el rango permite medir: pedir 30 dias
+    // y pintar doce semanas seria ensenar diez columnas que solo pueden estar
+    // vacias. `weeks` va sobre la ventana, no sobre la vida del usuario.
+    const retention = buildRetention({
+      signups: cohort.map((u) => ({ userId: u.id, createdAt: new Date(u.createdAt) })),
+      activity: activityRows,
+      now: new Date(now),
+      weeks: Math.ceil(days / 7),
+    });
+
     const payload = {
       source: "clerk" as const,
       windowDays: days,
+      retention,
       signups: {
         totalAllTime: totalExternal,
         last7d: signupsLast7d,
