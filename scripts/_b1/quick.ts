@@ -76,5 +76,5 @@ const enc: Array<[string, number]> = [];
 for (const s of stories) for (const v of s.vocab)
   enc.push([String(v.surface ?? v.word), cuerpos.filter((c: Set<string>) => c.has(String(v.surface ?? v.word).toLowerCase())).length]);
 const media = enc.reduce((a, b) => a + b[1], 0) / enc.length;
-console.log(`\nescalera: media ${media.toFixed(2)} (piso B1 2,0) · ${enc.filter(([, n]) => n <= 1).length}/${enc.length} salen una sola vez`);
+console.log(`\nhistorias por plaza: media ${media.toFixed(2)} (piso B1 2,0) · ${enc.filter(([, n]) => n <= 1).length}/${enc.length} salen una sola vez`);
 console.log(`${malas}/${stories.length} historias con algo que arreglar.`);
