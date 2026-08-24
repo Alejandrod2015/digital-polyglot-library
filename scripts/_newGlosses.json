@@ -8227,7 +8227,7 @@
    "t": "noun"
   },
   "letto": {
-   "g": "bed",
+   "g": "bed; read (leggere)",
    "t": "noun"
   },
   "limite": {
@@ -8989,6 +8989,14 @@
   "impiegato": {
    "g": "clerk, office worker",
    "t": "noun"
+  },
+  "sale": {
+   "g": "goes up, climbs (salire)",
+   "t": "verb"
+  },
+  "sono": {
+   "g": "am, are; there are (esserci)",
+   "t": "verb"
   }
  }
 }

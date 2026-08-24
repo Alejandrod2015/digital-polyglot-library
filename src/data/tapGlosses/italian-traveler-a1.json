@@ -1752,7 +1752,7 @@
    "t": "noun"
   },
   "letto": {
-   "g": "bed",
+   "g": "bed; read (leggere)",
    "t": "noun"
   },
   "li": {
@@ -3020,8 +3020,8 @@
    "t": "noun"
   },
   "sale": {
-   "g": "salt",
-   "t": "noun"
+   "g": "goes up, climbs (salire)",
+   "t": "verb"
   },
   "salerno": {
    "g": "Salerno (city south of Naples)",
@@ -3320,7 +3320,7 @@
    "t": "noun"
   },
   "sono": {
-   "g": "am, are",
+   "g": "am, are; there are (esserci)",
    "t": "verb"
   },
   "sopra": {
