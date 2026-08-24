@@ -1,0 +1,2862 @@
+[
+ {
+  "slug": "a-rede-do-conves",
+  "topic": "manaus",
+  "slotIndex": 0,
+  "title": "A rede do convés",
+  "synopsis": "Rafaela chega a Manaus para passar um mês com o irmão e a primeira noite é num barco de linha, sem cabine e sem cama. Matheus amarra a rede dele em dois minutos e ela demora quinze, com a rede baixa demais. Um vizinho avisa que assim ela acorda com um pé no rosto. Levanta um lado, amarra de novo e o convés inteiro balança junto até o amanhecer.",
+  "arcType": "reframe-turn",
+  "text": "Rafaela, uma moça de São Paulo, chega em Manaus para passar um mês com o irmão. Matheus mora ali há oito anos e leva turistas rio acima. O barco de linha sai do porto às seis.\n\n“Tem cabine no barco?”, pergunta ela. “Tem rede”, responde Matheus. “Amarra ali, entre aqueles dois.” O convés está cheio de redes em fila, e ele amarra a dele em dois minutos.\n\nRafaela demora quinze. A rede fica baixa demais para o vizinho de trás, que avisa da rede dele. “Mais alta. Senão você acorda com um pé no rosto.” “E como é que se dorme assim?”, pergunta ela. “Dá. Levanta um lado e experimenta”, diz o vizinho.\n\n“Assim?” “Assim. Agora aproveita.” Ela amarra de outro jeito e dorme. Às dez alguém apaga tudo. O convés inteiro balança junto, em silêncio.\n\nDe madrugada o motor muda de som e ninguém acorda, só ela. No porto, alguém aponta a rede dela. “Esse lugar está livre?” “Está ocupada”, responde Rafaela, sem pensar.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "rede",
+    "surface": "rede",
+    "definition": "Hammock; how people sleep on a river boat."
+   },
+   {
+    "type": "noun",
+    "word": "convés",
+    "surface": "convés",
+    "definition": "Deck; the open floor of the boat where hammocks hang."
+   },
+   {
+    "type": "noun",
+    "word": "cabine",
+    "anchor": true,
+    "surface": "cabine",
+    "definition": "Cabin; a private room on a boat, which she does not get."
+   },
+   {
+    "type": "verb",
+    "word": "amarrar",
+    "anchor": true,
+    "surface": "amarra",
+    "definition": "To tie; to fasten a rope so it holds."
+   },
+   {
+    "type": "noun",
+    "word": "porto",
+    "anchor": true,
+    "surface": "porto",
+    "definition": "Port; where the boat leaves from and arrives."
+   },
+   {
+    "type": "verb",
+    "word": "balançar",
+    "anchor": true,
+    "surface": "balança",
+    "definition": "To sway; the hammocks move together with the boat."
+   },
+   {
+    "type": "noun",
+    "word": "motor",
+    "surface": "motor",
+    "definition": "Engine; its sound changes in the middle of the night."
+   },
+   {
+    "type": "noun",
+    "word": "madrugada",
+    "surface": "madrugada",
+    "definition": "The small hours, between midnight and the first light of day."
+   },
+   {
+    "type": "verb",
+    "word": "demorar",
+    "surface": "demora",
+    "definition": "To take time; fifteen minutes for a two minute job."
+   },
+   {
+    "type": "adjective",
+    "word": "livre",
+    "surface": "livre",
+    "definition": "Free; not taken by anybody else, said of a seat or a place."
+   },
+   {
+    "type": "adjective",
+    "word": "ocupado",
+    "surface": "ocupada",
+    "definition": "Taken; the opposite of free, said of a place."
+   },
+   {
+    "type": "verb",
+    "word": "avisar",
+    "surface": "avisa",
+    "definition": "To warn; to tell someone before it goes wrong."
+   },
+   {
+    "type": "noun",
+    "word": "vizinho",
+    "surface": "vizinho",
+    "definition": "Neighbour; here the person in the next hammock."
+   },
+   {
+    "type": "noun",
+    "word": "rosto",
+    "surface": "rosto",
+    "definition": "Face; where a stranger's foot lands if the hammock hangs low."
+   },
+   {
+    "type": "adjective",
+    "word": "alto",
+    "surface": "alta",
+    "definition": "High; the hammock has to hang higher than she tied it."
+   },
+   {
+    "type": "noun",
+    "word": "irmão",
+    "surface": "irmão",
+    "definition": "Brother; hers has lived in Manaus for eight years."
+   },
+   {
+    "type": "noun",
+    "word": "mês",
+    "surface": "mês",
+    "definition": "Month; how long she is staying with her brother in Manaus."
+   },
+   {
+    "type": "verb",
+    "word": "aproveitar",
+    "surface": "aproveita",
+    "definition": "To make the most of it; to enjoy what you have."
+   },
+   {
+    "type": "noun",
+    "word": "silêncio",
+    "surface": "silêncio",
+    "definition": "Silence; the deck goes quiet once the lights are off."
+   },
+   {
+    "type": "verb",
+    "word": "pensar",
+    "surface": "pensar",
+    "definition": "To think; she answers the question before doing any of it."
+   }
+  ]
+ },
+ {
+  "slug": "repelente-na-farmacia",
+  "topic": "manaus",
+  "slotIndex": 1,
+  "title": "Repelente na farmácia",
+  "synopsis": "Rafaela entra na farmácia da esquina com as picadas abaixo do joelho e pede o repelente mais forte que houver. O balconista pergunta se é para a rua ou para o mato, põe dois frascos no balcão e recomenda o barato. Ela desconfia do conselho, discute um pouco e acaba levando os dois. À tarde, no igarapé, o caro não protege nada e o amarelo aguenta a tarde inteira.",
+  "arcType": "juxtaposition-discovery",
+  "text": "Quem atende na farmácia da esquina já conhece o assunto. Rafaela entra com as picadas abaixo do joelho e mostra os braços. O moço olha, não pede receita e põe dois vidros de creme na mesa.\n\n“Quero o repelente mais forte que tiver”, pede Rafaela. “Forte para onde? Rua de Manaus ou mato?”, pergunta ele. “Isso muda alguma coisa?” “Muda tudo. O mosquito daqui é teimoso”, dá a resposta com paciência.\n\nUm dos vidros cheira a álcool. O outro é barato e amarelo. “E o seu conselho é o barato?”, insiste ela. “O amarelo protege seis horas”, diz o moço. Rafaela discute, fica na dúvida e acaba levando os dois para fazer a prova.\n\nÀ tarde, no igarapé, ela passa o caro e coça sem parar. Passa o amarelo e para de coçar. Volta na farmácia no dia seguinte, sem avisar que o truque era o barato.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "farmácia",
+    "surface": "farmácia",
+    "definition": "Pharmacy; the corner shop that sells medicine and creams."
+   },
+   {
+    "type": "noun",
+    "word": "repelente",
+    "surface": "repelente",
+    "definition": "Insect repellent; what keeps mosquitoes off your skin."
+   },
+   {
+    "type": "noun",
+    "word": "picada",
+    "surface": "picadas",
+    "definition": "Bite; the small red mark an insect leaves on skin."
+   },
+   {
+    "type": "verb",
+    "word": "coçar",
+    "surface": "coça",
+    "definition": "To itch, to scratch; what a fresh bite makes you do."
+   },
+   {
+    "type": "noun",
+    "word": "mosquito",
+    "anchor": true,
+    "surface": "mosquito",
+    "definition": "Mosquito; the insect that bites on the river at dusk."
+   },
+   {
+    "type": "noun",
+    "word": "creme",
+    "anchor": true,
+    "surface": "creme",
+    "definition": "Cream; the thick liquid sold in these two bottles."
+   },
+   {
+    "type": "noun",
+    "word": "álcool",
+    "anchor": true,
+    "surface": "álcool",
+    "definition": "Alcohol; the sharp smell of the expensive bottle."
+   },
+   {
+    "type": "noun",
+    "word": "igarapé",
+    "anchor": true,
+    "surface": "igarapé",
+    "definition": "Igarapé; a narrow Amazon creek between the trees."
+   },
+   {
+    "type": "adjective",
+    "word": "teimoso",
+    "surface": "teimoso",
+    "definition": "Stubborn; it keeps coming back however much you swat."
+   },
+   {
+    "type": "adjective",
+    "word": "barato",
+    "surface": "barato",
+    "definition": "Cheap; costing little money, the opposite of expensive."
+   },
+   {
+    "type": "noun",
+    "word": "conselho",
+    "surface": "conselho",
+    "definition": "Advice; what someone tells you they would do."
+   },
+   {
+    "type": "verb",
+    "word": "proteger",
+    "surface": "protege",
+    "definition": "To protect; to keep something safe from harm for hours."
+   },
+   {
+    "type": "verb",
+    "word": "discutir",
+    "surface": "discute",
+    "definition": "To argue; to push back on what someone tells you."
+   },
+   {
+    "type": "noun",
+    "word": "paciência",
+    "surface": "paciência",
+    "definition": "Patience; what the assistant needs with this customer."
+   },
+   {
+    "type": "noun",
+    "word": "dúvida",
+    "surface": "dúvida",
+    "definition": "Doubt; not being sure which of the two to believe."
+   },
+   {
+    "type": "noun",
+    "word": "receita",
+    "surface": "receita",
+    "definition": "Prescription; the paper you do not need for this cream."
+   },
+   {
+    "type": "noun",
+    "word": "vidro",
+    "surface": "vidro",
+    "definition": "Glass bottle; the expensive cream comes in one."
+   },
+   {
+    "type": "noun",
+    "word": "assunto",
+    "surface": "assunto",
+    "definition": "Subject; the thing being talked about, here repellent."
+   },
+   {
+    "type": "noun",
+    "word": "truque",
+    "surface": "truque",
+    "definition": "Trick; the small thing that makes it actually work."
+   },
+   {
+    "type": "verb",
+    "word": "insistir",
+    "surface": "insiste",
+    "definition": "To insist; to keep asking after being told no."
+   }
+  ]
+ },
+ {
+  "slug": "a-pousada-sem-luz",
+  "topic": "manaus",
+  "slotIndex": 2,
+  "title": "A pousada sem luz",
+  "synopsis": "O apagão chega às onze da noite e o ventilador do quarto para devagar. Rafaela desce até a recepção e não encontra ninguém, então passa a madrugada na calçada com os outros hóspedes, uma vela e um leque de papel. A energia volta às três, os ventiladores começam juntos em cada andar e ninguém sobe. De manhã o quarto está fresco e a vela virou um toco na mesa.",
+  "arcType": "harmonic-close",
+  "text": "Às onze da noite chega o apagão e a pousada inteira fica sem luz. O ventilador do quarto para devagar, com um barulho ruim. Rafaela desce até a recepção e não encontra ninguém.\n\nNa varanda estão quase todos os hóspedes, com uma vela e um leque de papel. “Cai sempre assim?”, pergunta Rafaela. “Nesta época, quase toda semana”, responde uma hóspede. “A tomada do meu quarto nem funciona.”\n\n“E lá dentro, dá para dormir?” “Abafado”, diz a mesma hóspede. “Daqui a senhora sente o mofo da parede.” O vizinho de quarto avisa que subir agora é pior, e a conversa na varanda demora até a madrugada.\n\nNinguém reclama. A energia volta às três e os ventiladores começam juntos no prédio inteiro. “Agora sim”, diz alguém. “Agora sim, mas eu fico aqui fora”, responde a hóspede do leque. De manhã o quarto está morno, o lençol seco, e a vela virou um toco.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "apagão",
+    "surface": "apagão",
+    "definition": "Blackout; the power cut that leaves the whole street dark."
+   },
+   {
+    "type": "noun",
+    "word": "pousada",
+    "surface": "pousada",
+    "definition": "Guesthouse; a small family-run place where travellers sleep."
+   },
+   {
+    "type": "noun",
+    "word": "ventilador",
+    "surface": "ventilador",
+    "definition": "Fan; the ceiling one that stops when the power goes."
+   },
+   {
+    "type": "noun",
+    "word": "recepção",
+    "surface": "recepção",
+    "definition": "Reception; the desk at the entrance of the guesthouse."
+   },
+   {
+    "type": "noun",
+    "word": "hóspede",
+    "anchor": true,
+    "surface": "hóspedes",
+    "definition": "Guest; the people staying in the other rooms."
+   },
+   {
+    "type": "noun",
+    "word": "leque",
+    "anchor": true,
+    "surface": "leque",
+    "definition": "Hand fan; a folded paper fan you move to feel cooler."
+   },
+   {
+    "type": "noun",
+    "word": "tomada",
+    "anchor": true,
+    "surface": "tomada",
+    "definition": "Socket; the plug on the wall that does not work."
+   },
+   {
+    "type": "noun",
+    "word": "mofo",
+    "anchor": true,
+    "surface": "mofo",
+    "definition": "Mould, damp smell; what a wet wall smells like."
+   },
+   {
+    "type": "noun",
+    "word": "energia",
+    "surface": "energia",
+    "definition": "Electricity; it comes back at three in the morning."
+   },
+   {
+    "type": "noun",
+    "word": "época",
+    "surface": "época",
+    "definition": "Season, time of year; when this happens every week."
+   },
+   {
+    "type": "verb",
+    "word": "funcionar",
+    "surface": "funciona",
+    "definition": "To work; to do what a thing is supposed to do."
+   },
+   {
+    "type": "adjective",
+    "word": "abafado",
+    "surface": "abafado",
+    "definition": "Stuffy; hot air with no movement inside a room."
+   },
+   {
+    "type": "noun",
+    "word": "conversa",
+    "surface": "conversa",
+    "definition": "Conversation; the talk that fills the whole night."
+   },
+   {
+    "type": "verb",
+    "word": "reclamar",
+    "surface": "reclama",
+    "definition": "To complain; to say out loud that something is wrong."
+   },
+   {
+    "type": "noun",
+    "word": "quarto",
+    "surface": "quarto",
+    "definition": "Room; the bedroom she leaves because it is too stuffy."
+   },
+   {
+    "type": "noun",
+    "word": "varanda",
+    "surface": "varanda",
+    "definition": "Porch; the covered space in front of the guesthouse."
+   },
+   {
+    "type": "adjective",
+    "word": "morno",
+    "surface": "morno",
+    "definition": "Lukewarm; neither hot nor cool, the room in the morning."
+   },
+   {
+    "type": "noun",
+    "word": "toco",
+    "surface": "toco",
+    "definition": "Stub; the small piece left of a burnt candle."
+   },
+   {
+    "type": "adjective",
+    "word": "pior",
+    "surface": "pior",
+    "definition": "Worse; going up now is worse than staying out."
+   },
+   {
+    "type": "noun",
+    "word": "lençol",
+    "surface": "lençol",
+    "definition": "Sheet; the bed linen that sticks to you in the heat."
+   }
+  ]
+ },
+ {
+  "slug": "a-prancha-alugada",
+  "topic": "florianopolis",
+  "slotIndex": 0,
+  "title": "A prancha alugada",
+  "synopsis": "Bruna aluga pranchas na Joaquina desde criança e sabe qual serve para quem nunca subiu numa. Rafaela quer a maior, paga duas horas e escuta três regras na areia. Cai na terceira remada, cai de novo no joelho errado e demora até a oitava tentativa para ficar de pé por dois segundos. Devolve a prancha com os braços tremendo e paga a aula do dia seguinte.",
+  "arcType": "mini-cliffhanger",
+  "text": "Bruna é professora de surfe na Joaquina desde criança e aluga prancha de cor. Rafaela chega às oito, sem nunca ter subido numa. Paga duas horas e escuta as três regras da casa. Remar forte, olhar para a frente e nunca soltar a prancha perto de alguém.\n\n“Primeira vez?”, pergunta Bruna. “Primeira. Quero a maior”, responde Rafaela. “A maior é mais fácil de remar e mais difícil de virar”, diz a professora. “E se eu cair no meio?” “Você cai. Umas trinta vezes, no mínimo.”\n\nCai na terceira remada e engole água. Cai de novo, com o joelho no lugar errado, e as regras viram costume. “O segredo não é força”, avisa Bruna da areia, com paciência.\n\nNa oitava tentativa Rafaela fica de pé por dois segundos e some dentro da onda. “Viu? O difícil não é subir”, insiste Bruna. “É continuar em cima.” Rafaela entrega a prancha com os braços moles.\n\nSem dúvida nenhuma, acaba de decidir pagar a Bruna a aula de amanhã.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "prancha",
+    "surface": "prancha",
+    "definition": "Surfboard; the board you stand on to ride a wave."
+   },
+   {
+    "type": "noun",
+    "word": "aluguel",
+    "surface": "aluga",
+    "definition": "Rental; paying to use something for a few hours."
+   },
+   {
+    "type": "verb",
+    "word": "remar",
+    "anchor": true,
+    "surface": "remar",
+    "definition": "To paddle; to push water with your arms to move."
+   },
+   {
+    "type": "noun",
+    "word": "remada",
+    "anchor": true,
+    "surface": "remada",
+    "definition": "Paddle stroke; one pull of the arms through the water."
+   },
+   {
+    "type": "noun",
+    "word": "joelho",
+    "surface": "joelho",
+    "definition": "Knee; hers ends up in the wrong place on the board."
+   },
+   {
+    "type": "noun",
+    "word": "professora",
+    "anchor": true,
+    "surface": "professora",
+    "definition": "Teacher; Bruna teaches surfing on this beach every morning."
+   },
+   {
+    "type": "noun",
+    "word": "surfe",
+    "anchor": true,
+    "surface": "surfe",
+    "definition": "Surfing; the sport of riding waves standing up."
+   },
+   {
+    "type": "noun",
+    "word": "aula",
+    "surface": "aula",
+    "definition": "Lesson; the class she books for the next morning."
+   },
+   {
+    "type": "adjective",
+    "word": "fácil",
+    "surface": "fácil",
+    "definition": "Easy; needing little effort or skill to do."
+   },
+   {
+    "type": "adjective",
+    "word": "difícil",
+    "surface": "difícil",
+    "definition": "Hard; needing effort and practice to get right."
+   },
+   {
+    "type": "noun",
+    "word": "tentativa",
+    "surface": "tentativa",
+    "definition": "Attempt; the eighth one is the one that works."
+   },
+   {
+    "type": "verb",
+    "word": "engolir",
+    "surface": "engole",
+    "definition": "To swallow; she takes in seawater when she falls."
+   },
+   {
+    "type": "noun",
+    "word": "regra",
+    "surface": "regras",
+    "definition": "Rule; one of the three things she must not forget."
+   },
+   {
+    "type": "noun",
+    "word": "força",
+    "surface": "força",
+    "definition": "Strength; the thing she thinks matters and does not."
+   },
+   {
+    "type": "verb",
+    "word": "continuar",
+    "surface": "continuar",
+    "definition": "To keep going; standing up is not the hard part."
+   },
+   {
+    "type": "noun",
+    "word": "braço",
+    "surface": "braços",
+    "definition": "Arm; hers are shaking by the end of the two hours."
+   },
+   {
+    "type": "noun",
+    "word": "criança",
+    "surface": "criança",
+    "definition": "Child; Bruna has worked here since she was one."
+   },
+   {
+    "type": "noun",
+    "word": "costume",
+    "surface": "costume",
+    "definition": "Habit; the three rules become one after enough falls."
+   },
+   {
+    "type": "verb",
+    "word": "decidir",
+    "surface": "decidir",
+    "definition": "To decide; to make up your mind about what to do."
+   },
+   {
+    "type": "noun",
+    "word": "dúvida",
+    "surface": "dúvida",
+    "definition": "Doubt; she has none left about coming back tomorrow."
+   }
+  ]
+ },
+ {
+  "slug": "cera-nas-dunas",
+  "topic": "florianopolis",
+  "slotIndex": 1,
+  "title": "Cera nas dunas",
+  "synopsis": "A subida das dunas leva quinze minutos e a descida devia levar quatro segundos, mas a tábua de Rafaela para no meio da areia todas as vezes. Dois meninos passam voando ao lado dela sem explicar nada. Na quinta descida um deles vira a tábua, olha por baixo e pergunta onde está a cera. Ninguém tinha avisado, e a loja também não.",
+  "arcType": "late-reveal",
+  "text": "Quinze minutos de subida e a tábua pesa mais a cada passo. Rafaela chega no topo, senta na areia e olha a descida. Dois meninos esperam a vez deles ao lado.\n\n“Por que eu desço tão devagar que dá vergonha?”, pergunta ela. “Prática”, responde um dos meninos. “Vem depois da gente.” Um sai voando duna abaixo e some lá embaixo.\n\nEla desce de novo. A tábua gruda no meio da duna e para sozinha. “Aquilo é teimoso”, pensa em silêncio na quarta tentativa, que acaba igual. “Prática”, repete, sem acreditar.\n\nNa quinta descida um dos meninos vira a tábua dela e olha por baixo. “Cadê a cera?”, pergunta o menino. “Que cera?” “Sem cera a tábua gruda. É barato, e ninguém te avisou na loja?”\n\n“Ninguém”, diz Rafaela. “Então leva um susto agora”, ri o menino, e empresta a cera dele. Ele ensina a passar de ponta a ponta, e a descida seguinte demora quatro segundos.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "duna",
+    "surface": "duna",
+    "definition": "Dune; a hill of sand shaped by the wind."
+   },
+   {
+    "type": "noun",
+    "word": "tábua",
+    "surface": "tábua",
+    "definition": "Board; the flat plank you slide down the sand on."
+   },
+   {
+    "type": "noun",
+    "word": "cera",
+    "anchor": true,
+    "surface": "cera",
+    "definition": "Wax; what you rub on a board so it slides."
+   },
+   {
+    "type": "noun",
+    "word": "topo",
+    "surface": "topo",
+    "definition": "Top; the highest point of the dune, reached on foot."
+   },
+   {
+    "type": "noun",
+    "word": "descida",
+    "anchor": true,
+    "surface": "descida",
+    "definition": "Descent; the ride down the face of the dune."
+   },
+   {
+    "type": "verb",
+    "word": "grudar",
+    "anchor": true,
+    "surface": "gruda",
+    "definition": "To stick; to hold onto the sand instead of sliding."
+   },
+   {
+    "type": "adjective",
+    "word": "barato",
+    "surface": "barato",
+    "definition": "Cheap; a bar of wax costs almost nothing at the shop."
+   },
+   {
+    "type": "verb",
+    "word": "voar",
+    "anchor": true,
+    "surface": "voando",
+    "definition": "To fly; how fast the boys go down the sand."
+   },
+   {
+    "type": "noun",
+    "word": "menino",
+    "surface": "meninos",
+    "definition": "Boy; the two local lads waiting their turn."
+   },
+   {
+    "type": "verb",
+    "word": "emprestar",
+    "surface": "empresta",
+    "definition": "To lend; to let someone use your thing for a while."
+   },
+   {
+    "type": "verb",
+    "word": "ensinar",
+    "surface": "ensina",
+    "definition": "To teach; to show somebody how a thing is done."
+   },
+   {
+    "type": "verb",
+    "word": "acreditar",
+    "surface": "acreditar",
+    "definition": "To believe; to think that what you hear is true."
+   },
+   {
+    "type": "noun",
+    "word": "silêncio",
+    "surface": "silêncio",
+    "definition": "Silence; the boy goes down without saying a word."
+   },
+   {
+    "type": "adverb",
+    "word": "abaixo",
+    "surface": "abaixo",
+    "definition": "Down; straight down the face of the dune."
+   },
+   {
+    "type": "adjective",
+    "word": "teimoso",
+    "surface": "teimoso",
+    "definition": "Stubborn; the board refuses to slide however she tries."
+   },
+   {
+    "type": "noun",
+    "word": "susto",
+    "surface": "susto",
+    "definition": "Fright; the small scare of a board that suddenly flies."
+   },
+   {
+    "type": "adjective",
+    "word": "sozinho",
+    "surface": "sozinha",
+    "definition": "Alone, by itself; the board stops with nobody touching it."
+   },
+   {
+    "type": "expression",
+    "word": "cadê",
+    "surface": "Cadê",
+    "definition": "Where is it? A very common Brazilian question word."
+   },
+   {
+    "type": "noun",
+    "word": "segundo",
+    "surface": "segundos",
+    "definition": "Second; four of them is the whole ride down."
+   },
+   {
+    "type": "noun",
+    "word": "loja",
+    "surface": "loja",
+    "definition": "Shop; where she rented the board and learnt nothing."
+   }
+  ]
+ },
+ {
+  "slug": "roupa-que-nao-seca",
+  "topic": "florianopolis",
+  "slotIndex": 2,
+  "title": "Roupa que não seca",
+  "synopsis": "Depois de três dias de praia Rafaela lava tudo na pia e pendura no varal do quintal às oito da manhã. Às seis da tarde a camiseta continua pesando na mão. A dona da pousada explica, com paciência, que ali não é o sol que seca roupa e aponta um canto atrás do muro. No dia seguinte a blusa está seca ao meio-dia, dura de sal.",
+  "arcType": "daily-encounter",
+  "text": "Depois de três dias de praia, Rafaela fica sem nada para vestir. Lava tudo na pia. Pendura no varal às oito. \n\nO quintal fica com o ar morno parado. Às seis da tarde a camiseta ainda pesa na mão dela. “Isso não seca nunca?”, pergunta à dona da pousada. “No sol, não”, responde ela. “Aqui a umidade é teimosa o ano inteiro.”\n\n“Mas está fazendo sol o dia inteiro.” “Sol não seca roupa em Florianópolis. Vento seca”, ensina a dona. Ela mostra o canto atrás do muro. Ali a roupa dos outros bate no ar com barulho de bandeira.\n\n“E ninguém pendura aí?”, pergunta Rafaela. “Ninguém. Fica longe, e dá preguiça.” No dia seguinte ela leva tudo para lá às sete. Ao meio-dia a blusa está seca e dura de sal.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "quintal",
+    "surface": "quintal",
+    "definition": "Back yard; the open space behind the guesthouse."
+   },
+   {
+    "type": "noun",
+    "word": "varal",
+    "surface": "varal",
+    "definition": "Washing line; where clothes hang outdoors to dry."
+   },
+   {
+    "type": "noun",
+    "word": "pia",
+    "surface": "pia",
+    "definition": "Sink; the basin where she washes things by hand."
+   },
+   {
+    "type": "noun",
+    "word": "camiseta",
+    "surface": "camiseta",
+    "definition": "T-shirt; the cotton top that will not dry."
+   },
+   {
+    "type": "noun",
+    "word": "blusa",
+    "anchor": true,
+    "surface": "blusa",
+    "definition": "Top; the other shirt, stiff with salt by midday."
+   },
+   {
+    "type": "noun",
+    "word": "umidade",
+    "anchor": true,
+    "surface": "umidade",
+    "definition": "Humidity; water in the air that stops things drying."
+   },
+   {
+    "type": "noun",
+    "word": "muro",
+    "anchor": true,
+    "surface": "muro",
+    "definition": "Wall; the low one that closes off the back yard."
+   },
+   {
+    "type": "noun",
+    "word": "bandeira",
+    "anchor": true,
+    "surface": "bandeira",
+    "definition": "Flag; used here for how wet cloth sounds in the wind."
+   },
+   {
+    "type": "verb",
+    "word": "pendurar",
+    "surface": "pendura",
+    "definition": "To hang; to put a thing up on a line or a hook."
+   },
+   {
+    "type": "verb",
+    "word": "lavar",
+    "surface": "Lava",
+    "definition": "To wash; to clean a thing with water and soap."
+   },
+   {
+    "type": "noun",
+    "word": "canto",
+    "surface": "canto",
+    "definition": "Corner; the only spot in the yard that gets wind."
+   },
+   {
+    "type": "noun",
+    "word": "dona",
+    "surface": "dona",
+    "definition": "Owner; the woman who runs this guesthouse herself."
+   },
+   {
+    "type": "noun",
+    "word": "sal",
+    "surface": "sal",
+    "definition": "Salt; what the sea leaves stiff inside the cloth."
+   },
+   {
+    "type": "adjective",
+    "word": "duro",
+    "surface": "dura",
+    "definition": "Stiff; how salt leaves the cloth once it dries."
+   },
+   {
+    "type": "noun",
+    "word": "preguiça",
+    "surface": "preguiça",
+    "definition": "Laziness; why nobody walks to the far corner."
+   },
+   {
+    "type": "verb",
+    "word": "ensinar",
+    "surface": "ensina",
+    "definition": "To teach; to show someone how a thing is done here."
+   },
+   {
+    "type": "verb",
+    "word": "vestir",
+    "surface": "vestir",
+    "definition": "To wear, to put on; she has nothing left for it."
+   },
+   {
+    "type": "verb",
+    "word": "pesar",
+    "surface": "pesa",
+    "definition": "To weigh; the wet shirt is heavy in her hand."
+   },
+   {
+    "type": "verb",
+    "word": "levar",
+    "surface": "leva",
+    "definition": "To take, to carry; to move the washing to the corner."
+   },
+   {
+    "type": "adjective",
+    "word": "morno",
+    "surface": "morno",
+    "definition": "Lukewarm; the yard air, neither hot nor cool."
+   }
+  ]
+ },
+ {
+  "slug": "a-capa-de-dez-reais",
+  "topic": "foz-do-iguacu",
+  "slotIndex": 0,
+  "title": "A capa de dez reais",
+  "synopsis": "Larissa vende capa de chuva na entrada das cataratas e avisa que a última passarela molha todo mundo. Rafaela olha o céu limpo, acha dez reais caro demais e segue sem comprar. Os primeiros mirantes dão razão a ela: grade seca, névoa longe. Na última passarela a água chega de todos os lados, o celular desliga e a capa passa a custar o mesmo dinheiro que antes parecia muito.",
+  "arcType": "reframe-turn",
+  "text": "Na entrada das cataratas, Larissa vende capa desde os quinze anos e conhece a névoa de cor. Rafaela chega com o celular na mão e nenhuma capa.\n\n“Dez reais”, oferece Larissa. “A última passarela vai molhar todo mundo.” “Molha quanto?”, pergunta ela. “Molha tudo. Até o celular na mão.” “Está fazendo sol, é sorte minha”, insiste Rafaela, e segue sem comprar.\n\nOs primeiros mirantes são fáceis. A grade está seca e a névoa fica longe. Na última passarela a queda cai de lado. Tudo vira uma poça só.\n\n“Meu celular desligou”, ela diz depois, com a roupa colada no corpo. “Dez reais”, repete Larissa, séria. “Eu sei. Agora dez reais é barato: me dá duas.” “A segunda salva o celular”, avisa Larissa, e cobra vinte.\n\nDa segunda vez Rafaela para no meio da passarela, de capa e sem dúvida. Olha a queda com paciência. Atrás dela, Larissa passa vendendo mais capas.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "capa",
+    "surface": "capa",
+    "definition": "Rain cape; a thin plastic cover you wear over clothes."
+   },
+   {
+    "type": "noun",
+    "word": "passarela",
+    "surface": "passarela",
+    "definition": "Walkway; the metal path built out over the falls."
+   },
+   {
+    "type": "noun",
+    "word": "mirante",
+    "surface": "mirantes",
+    "definition": "Viewpoint; a platform built to look at the falls."
+   },
+   {
+    "type": "noun",
+    "word": "grade",
+    "surface": "grade",
+    "definition": "Railing; the metal bars that keep you on the walkway."
+   },
+   {
+    "type": "noun",
+    "word": "névoa",
+    "anchor": true,
+    "surface": "névoa",
+    "definition": "Mist; the cloud of water that hangs over the falls."
+   },
+   {
+    "type": "noun",
+    "word": "queda",
+    "anchor": true,
+    "surface": "queda",
+    "definition": "Waterfall; the wall of falling water itself, seen up close."
+   },
+   {
+    "type": "noun",
+    "word": "poça",
+    "anchor": true,
+    "surface": "poça",
+    "definition": "Puddle; the floor turns into one single sheet of water."
+   },
+   {
+    "type": "noun",
+    "word": "catarata",
+    "anchor": true,
+    "surface": "cataratas",
+    "definition": "Falls; the huge waterfalls that give the town its name."
+   },
+   {
+    "type": "noun",
+    "word": "entrada",
+    "surface": "entrada",
+    "definition": "Entrance; the gate where you go into the park."
+   },
+   {
+    "type": "adjective",
+    "word": "colado",
+    "surface": "colada",
+    "definition": "Stuck to; pressed flat against her by the water."
+   },
+   {
+    "type": "adjective",
+    "word": "sério",
+    "surface": "séria",
+    "definition": "Serious; not smiling, and not moving on the price."
+   },
+   {
+    "type": "verb",
+    "word": "salvar",
+    "surface": "salva",
+    "definition": "To save; to keep a thing from being ruined."
+   },
+   {
+    "type": "verb",
+    "word": "cobrar",
+    "surface": "cobra",
+    "definition": "To charge; to ask for money for something."
+   },
+   {
+    "type": "verb",
+    "word": "insistir",
+    "surface": "insiste",
+    "definition": "To insist; to keep saying it after being told."
+   },
+   {
+    "type": "noun",
+    "word": "celular",
+    "surface": "celular",
+    "definition": "Mobile phone; hers dies on the last walkway."
+   },
+   {
+    "type": "noun",
+    "word": "paciência",
+    "surface": "paciência",
+    "definition": "Patience; the second time she takes it slowly."
+   },
+   {
+    "type": "noun",
+    "word": "sorte",
+    "surface": "sorte",
+    "definition": "Luck; what she thinks will keep her dry, and does not."
+   },
+   {
+    "type": "noun",
+    "word": "dúvida",
+    "surface": "dúvida",
+    "definition": "Doubt; there is none left once the water hits."
+   },
+   {
+    "type": "adjective",
+    "word": "fácil",
+    "surface": "fáceis",
+    "definition": "Easy; the first viewpoints ask nothing of you."
+   },
+   {
+    "type": "adjective",
+    "word": "barato",
+    "surface": "barato",
+    "definition": "Cheap; ten reais looks it only after the soaking."
+   }
+  ]
+ },
+ {
+  "slug": "o-carimbo-que-ninguem-pede",
+  "topic": "foz-do-iguacu",
+  "slotIndex": 1,
+  "title": "O carimbo que ninguém pede",
+  "synopsis": "O ônibus de linha atravessa a ponte da fronteira sem parar em nenhum guichê, porque ninguém pede documento nesse trecho. Rafaela quer o carimbo do mesmo jeito que quis a foto da primeira semana, sem saber explicar para quê. Desce sozinha no meio da ponte, faz uma fila de quatro pessoas e consegue o carimbo. Depois espera uma hora no sol, e acha que valeu.",
+  "arcType": "juxtaposition-discovery",
+  "text": "Cada meia hora sai um ônibus de linha da rodoviária para a fronteira. Rafaela senta na poltrona da frente, com o passaporte na mão. “O senhor para na aduana?”, pergunta ao motorista.\n\n“Ninguém para. Atravessar direto virou costume”, responde ele. “Mas eu preciso do carimbo.” “Precisa por quê? Ninguém pede carimbo aqui.” “Todo mundo quer um”, ela diz, sem convencer ninguém.\n\nEla não tem uma resposta boa. Quer o carimbo do mesmo jeito que quis a foto da primeira semana: para provar que esteve ali. Na ponte, o ônibus atravessa devagar entre carros dos dois países.\n\n“Desço aqui”, avisa ela. “Depois desse não tem outro por uma hora”, responde o motorista. “Tudo bem. O truque é descer aqui e esperar.” Ela desce e faz uma fila de quatro pessoas.\n\nO guarda olha o passaporte e procura uma página vazia. Bate o carimbo em silêncio, e do outro lado Rafaela manda a foto para Matheus.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "carimbo",
+    "surface": "carimbo",
+    "definition": "Stamp; the ink mark an officer puts in a passport."
+   },
+   {
+    "type": "noun",
+    "word": "passaporte",
+    "surface": "passaporte",
+    "definition": "Passport; the booklet you show at a border."
+   },
+   {
+    "type": "noun",
+    "word": "fronteira",
+    "surface": "fronteira",
+    "definition": "Border; the line on the bridge that separates two countries."
+   },
+   {
+    "type": "noun",
+    "word": "aduana",
+    "anchor": true,
+    "surface": "aduana",
+    "definition": "Customs post; the booth where papers are checked."
+   },
+   {
+    "type": "noun",
+    "word": "ponte",
+    "surface": "ponte",
+    "definition": "Bridge; the one that crosses the river between countries."
+   },
+   {
+    "type": "noun",
+    "word": "rodoviária",
+    "anchor": true,
+    "surface": "rodoviária",
+    "definition": "Bus station; where the line buses leave from."
+   },
+   {
+    "type": "noun",
+    "word": "poltrona",
+    "anchor": true,
+    "surface": "poltrona",
+    "definition": "Seat; the front one on the bus, with a view."
+   },
+   {
+    "type": "noun",
+    "word": "guarda",
+    "anchor": true,
+    "surface": "guarda",
+    "definition": "Officer; the man in the booth with the stamp."
+   },
+   {
+    "type": "noun",
+    "word": "página",
+    "surface": "página",
+    "definition": "Page; he looks for an empty one in the passport."
+   },
+   {
+    "type": "verb",
+    "word": "atravessar",
+    "surface": "atravessa",
+    "definition": "To cross; to go from one side to the other."
+   },
+   {
+    "type": "verb",
+    "word": "provar",
+    "surface": "provar",
+    "definition": "To prove; to show later that you were really there."
+   },
+   {
+    "type": "verb",
+    "word": "convencer",
+    "surface": "convencer",
+    "definition": "To convince; to make someone believe what you say."
+   },
+   {
+    "type": "adverb",
+    "word": "direto",
+    "surface": "direto",
+    "definition": "Straight through; without stopping anywhere on the way."
+   },
+   {
+    "type": "verb",
+    "word": "precisar",
+    "surface": "preciso",
+    "definition": "To need; she says she needs a stamp nobody asks for."
+   },
+   {
+    "type": "noun",
+    "word": "resposta",
+    "surface": "resposta",
+    "definition": "Answer; she does not have a good one ready."
+   },
+   {
+    "type": "noun",
+    "word": "país",
+    "surface": "países",
+    "definition": "Country; cars from both of them cross the bridge."
+   },
+   {
+    "type": "noun",
+    "word": "costume",
+    "surface": "costume",
+    "definition": "Habit; crossing without stopping is what everyone does."
+   },
+   {
+    "type": "noun",
+    "word": "silêncio",
+    "surface": "silêncio",
+    "definition": "Silence; the officer stamps the page without saying anything."
+   },
+   {
+    "type": "noun",
+    "word": "truque",
+    "surface": "truque",
+    "definition": "Trick; getting the stamp needs one, since nobody stops."
+   },
+   {
+    "type": "noun",
+    "word": "quatro",
+    "surface": "quatro",
+    "definition": "Four; the number of people ahead of her in line."
+   }
+  ]
+ },
+ {
+  "slug": "cambio-na-calculadora",
+  "topic": "foz-do-iguacu",
+  "slotIndex": 2,
+  "title": "Câmbio na calculadora",
+  "synopsis": "Rafaela troca cem reais na casa de câmbio da ponte e conta o maço duas vezes sem chegar ao mesmo número. Larissa está do lado de fora esperando o ônibus com a caixa de capas vazia e pede para ver o recibo. Digita a cotação do dia na calculadora, conta os guaranis em maços de cinco e descobre que faltam vinte mil. As duas voltam ao guichê, sem discutir.",
+  "arcType": "recurring-character-callback",
+  "text": "Na casa de câmbio da ponte o vidro está morno de sol. Larissa espera lá fora, com a bandeja rasa de capas. O moço passa um maço de notas e Rafaela conta duas vezes: o total muda nas duas.\n\n“Confere aí”, diz o moço. “A senhora quer o recibo?” “Quero.” Larissa larga a bandeja rasa no chão. “Trocou no câmbio ali?”, pergunta. “Troquei.”\n\n“Me mostra o papel”, pede Larissa. “Cem reais na cotação de hoje dá isso”, diz, digitando na calculadora. Conta os guaranis em maços de cinco. Faz tudo de bom humor e não deixa gorjeta.\n\n“Faltam vinte mil”, diz Larissa. “Vinte mil é muito?”, pergunta Rafaela. “É um desconto que ninguém pediu.” As duas voltam ao guichê e Larissa não discute: põe a calculadora no vidro e espera.\n\n“Foi engano”, diz o moço, e conta vinte mil sem olhar para elas. Na parada, Larissa combina o preço do ônibus com ela e sobe primeiro.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "câmbio",
+    "surface": "câmbio",
+    "definition": "Exchange office; where you change one currency for another."
+   },
+   {
+    "type": "noun",
+    "word": "maço",
+    "surface": "maço",
+    "definition": "Bundle; a small stack of banknotes held together."
+   },
+   {
+    "type": "noun",
+    "word": "guarani",
+    "surface": "guaranis",
+    "definition": "Guarani; the currency used on the other side of the bridge."
+   },
+   {
+    "type": "noun",
+    "word": "guichê",
+    "surface": "guichê",
+    "definition": "Window; the counter opening where you are served."
+   },
+   {
+    "type": "noun",
+    "word": "calculadora",
+    "anchor": true,
+    "surface": "calculadora",
+    "definition": "Calculator; the machine Larissa types the rate into."
+   },
+   {
+    "type": "noun",
+    "word": "cotação",
+    "anchor": true,
+    "surface": "cotação",
+    "definition": "Exchange rate; how much one currency is worth today."
+   },
+   {
+    "type": "noun",
+    "word": "recibo",
+    "anchor": true,
+    "surface": "recibo",
+    "definition": "Receipt; the paper proving what you paid and got."
+   },
+   {
+    "type": "noun",
+    "word": "vidro",
+    "anchor": true,
+    "surface": "vidro",
+    "definition": "Glass; the pane between the customer and the clerk."
+   },
+   {
+    "type": "noun",
+    "word": "engano",
+    "surface": "engano",
+    "definition": "Mistake; what the clerk calls it once he is caught."
+   },
+   {
+    "type": "noun",
+    "word": "total",
+    "surface": "total",
+    "definition": "Total; the whole amount, which should not change."
+   },
+   {
+    "type": "verb",
+    "word": "conferir",
+    "surface": "Confere",
+    "definition": "To check; to count something again to be sure."
+   },
+   {
+    "type": "verb",
+    "word": "digitar",
+    "surface": "digitando",
+    "definition": "To type; to press numbers into a calculator."
+   },
+   {
+    "type": "verb",
+    "word": "faltar",
+    "surface": "Faltam",
+    "definition": "To be missing; twenty thousand are not there."
+   },
+   {
+    "type": "noun",
+    "word": "humor",
+    "surface": "humor",
+    "definition": "Mood; she counts in a good one, without hurrying."
+   },
+   {
+    "type": "verb",
+    "word": "discutir",
+    "surface": "discute",
+    "definition": "To argue; Larissa gets the money back without it."
+   },
+   {
+    "type": "noun",
+    "word": "desconto",
+    "surface": "desconto",
+    "definition": "Discount; what the missing note looks like to him."
+   },
+   {
+    "type": "noun",
+    "word": "gorjeta",
+    "surface": "gorjeta",
+    "definition": "Tip; the clerk pretends the difference was one."
+   },
+   {
+    "type": "adjective",
+    "word": "raso",
+    "surface": "rasa",
+    "definition": "Shallow; her cape tray, nearly empty at the end of the day."
+   },
+   {
+    "type": "verb",
+    "word": "combinar",
+    "surface": "combina",
+    "definition": "To agree; the two of them settle it without a fight."
+   },
+   {
+    "type": "noun",
+    "word": "papel",
+    "surface": "papel",
+    "definition": "Paper; the receipt she asks him to hand over."
+   }
+  ]
+ },
+ {
+  "slug": "a-ladeira-do-amparo",
+  "topic": "olinda",
+  "slotIndex": 0,
+  "title": "A ladeira do Amparo",
+  "synopsis": "A pousada fica a cinco minutos do centro e os cinco sao de subida por pedra irregular. Vera sobe bagagem de turista num carrinho de feira e cobra dez reais, que Rafaela acha caro antes de tentar. Na metade da ladeira uma roda da mala parte e o preco ja subiu para quinze. La em cima a porta nao tem campainha, e ela aprende a bater palmas.",
+  "arcType": "daily-encounter",
+  "text": "Uma ladeira de pedra irregular separa a pousada do centro. Rafaela chega de táxi e olha a rocha antiga do chão. Na esquina espera Vera, que sobe bagagem de turista num carrinho de feira.\n\n“Dez reais até lá em cima”, oferece Vera. “Quanto custa subir com a mala?”, pergunta Rafaela. “Custa o mesmo. Ali em cima é que dói.” “Eu puxo a minha.” “Puxa. O conselho é grátis: não é força, é jeito.”\n\nRafaela arrasta a mala até a metade da subida, com a mão no corrimão de ferro. As rodas param em cada pedra da ladeira e o suor escorre na nuca dela. \n\nUma roda solta um barulho curto. “Espera!”, chama Vera. “Agora são quinze.” “Quinze por quê?” “Porque a mala pesada não aguenta a pedra, e o plástico já quebrou.” Vera põe a mala no carrinho e vence o resto em quatro minutos.\n\nLá em cima, na entrada da pousada, a porta velha não tem campainha. “Bate palmas”, diz Vera, e Rafaela bate.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "campainha",
+    "surface": "campainha",
+    "definition": "Doorbell; the thing this guesthouse door does not have."
+   },
+   {
+    "type": "noun",
+    "word": "suor",
+    "surface": "suor",
+    "definition": "Sweat; what the climb leaves on the back of her neck."
+   },
+   {
+    "type": "noun",
+    "word": "nuca",
+    "anchor": true,
+    "surface": "nuca",
+    "definition": "Nape; the back of the neck, where the sun hits hardest."
+   },
+   {
+    "type": "verb",
+    "word": "arrastar",
+    "anchor": true,
+    "surface": "arrasta",
+    "definition": "To drag; to pull something heavy along the ground."
+   },
+   {
+    "type": "noun",
+    "word": "turista",
+    "anchor": true,
+    "surface": "turista",
+    "definition": "Tourist; a visitor whose luggage goes uphill for money."
+   },
+   {
+    "type": "noun",
+    "word": "bagagem",
+    "anchor": true,
+    "surface": "bagagem",
+    "definition": "Luggage; the bags visitors bring, taken up by cart."
+   },
+   {
+    "type": "noun",
+    "word": "corrimão",
+    "anchor": true,
+    "surface": "corrimão",
+    "definition": "Handrail; the iron bar along the side of the climb."
+   },
+   {
+    "type": "noun",
+    "word": "rocha",
+    "anchor": true,
+    "surface": "rocha",
+    "definition": "Rock; the old stone the whole street is paved with."
+   },
+   {
+    "type": "noun",
+    "word": "mala",
+    "surface": "mala",
+    "definition": "Suitcase; the wheeled bag she tries to drag herself."
+   },
+   {
+    "type": "noun",
+    "word": "roda",
+    "surface": "rodas",
+    "definition": "Wheel; the small ones under a suitcase, easy to break."
+   },
+   {
+    "type": "verb",
+    "word": "vencer",
+    "surface": "vence",
+    "definition": "To beat; to get past the rest of the hill at last."
+   },
+   {
+    "type": "adjective",
+    "word": "irregular",
+    "surface": "irregular",
+    "definition": "Uneven; the stones are not flat or the same size."
+   },
+   {
+    "type": "adjective",
+    "word": "curto",
+    "surface": "curto",
+    "definition": "Short; a brief dry sound, over before you look."
+   },
+   {
+    "type": "verb",
+    "word": "escorrer",
+    "surface": "escorre",
+    "definition": "To run down; sweat does it along her neck."
+   },
+   {
+    "type": "verb",
+    "word": "custar",
+    "surface": "custa",
+    "definition": "To cost; how much money a thing is worth."
+   },
+   {
+    "type": "verb",
+    "word": "doer",
+    "surface": "dói",
+    "definition": "To hurt; here it is the climb that hurts, not the walk."
+   },
+   {
+    "type": "noun",
+    "word": "plástico",
+    "surface": "plástico",
+    "definition": "Plastic; what the cheap suitcase wheel is made of."
+   },
+   {
+    "type": "adjective",
+    "word": "pesado",
+    "surface": "pesada",
+    "definition": "Heavy; hard to lift, and worse with every step."
+   },
+   {
+    "type": "verb",
+    "word": "aguentar",
+    "surface": "aguenta",
+    "definition": "To bear; to hold a weight without letting it fall."
+   },
+   {
+    "type": "verb",
+    "word": "puxar",
+    "surface": "puxo",
+    "definition": "To pull; to bring something toward you by force."
+   }
+  ]
+ },
+ {
+  "slug": "a-cabeca-do-vitalino",
+  "topic": "olinda",
+  "slotIndex": 1,
+  "title": "A cabeça do Vitalino",
+  "synopsis": "Rafaela entra num ateliê da ladeira achando que e loja de lembranca e pergunta o preco de um boneco de bigode. Iara explica que aquele tem nome, tem dono e tem dia certo de sair na rua. As duas descem a cabeça com uma corda e levam o boneco ate a praça para o ensaio da noite. No caminho, quem cumprimenta da janela nao cumprimenta as duas.",
+  "arcType": "late-reveal",
+  "text": "O ateliê da ladeira tem a porta aberta e trinta cabeças de boneco no teto, onde Iara as pendura. Quem cuida delas é Iara, dona do lugar desde criança, quando o pai largou o pincel. Rafaela entra achando que é loja de lembrança.\n\n“Quanto custa aquele de bigode?”, pergunta Rafaela. “Esse não vendo. Tem nome, tem dono e tem dia de sair”, responde Iara. “Esse é o Vitalino, sai na terça.” Iara recusa o dinheiro e prefere continuar.\n\n“E hoje ele faz o quê?” “Hoje tem ensaio.” Iara desce a cabeça gigante com uma corda. Pesa mais que a mala dela e tem uma cruz de madeira por dentro.\n\nDe perto, o olho pintado é maior que a mão dela, e cheira a cola. Cada boneco tem história, e a história vale mais que o preço. As duas levam o Vitalino até a praça.\n\n“Boa tarde, Vitalino!”, grita um homem da janela. “Ele responde?”, pergunta Rafaela. “Na terça responde”, garante Iara.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "ateliê",
+    "surface": "ateliê",
+    "definition": "Workshop; the room where the carnival puppets are made."
+   },
+   {
+    "type": "noun",
+    "word": "boneco",
+    "anchor": true,
+    "surface": "boneco",
+    "definition": "Puppet; the giant carnival figure a person walks inside."
+   },
+   {
+    "type": "noun",
+    "word": "cabeça",
+    "anchor": true,
+    "surface": "cabeças",
+    "definition": "Head; here the huge painted head of a carnival puppet."
+   },
+   {
+    "type": "adjective",
+    "word": "gigante",
+    "anchor": true,
+    "surface": "gigante",
+    "definition": "Giant; far bigger than a person, as these figures are."
+   },
+   {
+    "type": "noun",
+    "word": "bigode",
+    "anchor": true,
+    "surface": "bigode",
+    "definition": "Moustache; the hair painted above the puppet's mouth."
+   },
+   {
+    "type": "noun",
+    "word": "teto",
+    "anchor": true,
+    "surface": "teto",
+    "definition": "Ceiling; where the thirty heads hang, out of the way."
+   },
+   {
+    "type": "noun",
+    "word": "pincel",
+    "anchor": true,
+    "surface": "pincel",
+    "definition": "Paintbrush; what her father put down when he stopped."
+   },
+   {
+    "type": "noun",
+    "word": "ensaio",
+    "surface": "ensaio",
+    "definition": "Rehearsal; the practice before the real carnival day."
+   },
+   {
+    "type": "noun",
+    "word": "cola",
+    "surface": "cola",
+    "definition": "Glue; what holds the paper of the head together."
+   },
+   {
+    "type": "noun",
+    "word": "madeira",
+    "surface": "madeira",
+    "definition": "Wood; the cross inside that holds the head up."
+   },
+   {
+    "type": "noun",
+    "word": "dono",
+    "surface": "dono",
+    "definition": "Owner; each puppet belongs to one family in town."
+   },
+   {
+    "type": "noun",
+    "word": "terça",
+    "surface": "terça",
+    "definition": "Tuesday; the one day of the year this puppet goes out."
+   },
+   {
+    "type": "noun",
+    "word": "olho",
+    "surface": "olho",
+    "definition": "Eye; painted so large the whole street can see it."
+   },
+   {
+    "type": "noun",
+    "word": "cruz",
+    "surface": "cruz",
+    "definition": "Cross; the wooden frame inside the puppet's head."
+   },
+   {
+    "type": "verb",
+    "word": "garantir",
+    "surface": "garante",
+    "definition": "To promise; she says it as a fact, not a joke."
+   },
+   {
+    "type": "noun",
+    "word": "lembrança",
+    "surface": "lembrança",
+    "definition": "Souvenir; what she thinks the workshop is selling."
+   },
+   {
+    "type": "verb",
+    "word": "pesar",
+    "surface": "Pesa",
+    "definition": "To weigh; to be heavy, more than her suitcase here."
+   },
+   {
+    "type": "verb",
+    "word": "recusar",
+    "surface": "recusa",
+    "definition": "To refuse; to say no to something offered to you."
+   },
+   {
+    "type": "noun",
+    "word": "história",
+    "surface": "história",
+    "definition": "Story; what each puppet carries besides its price."
+   },
+   {
+    "type": "verb",
+    "word": "valer",
+    "surface": "vale",
+    "definition": "To be worth; to have value, here more than money."
+   }
+  ]
+ },
+ {
+  "slug": "sombrinha-torta",
+  "topic": "olinda",
+  "slotIndex": 2,
+  "title": "Sombrinha torta",
+  "synopsis": "No fim da tarde a praça enche e um homem aluga sombrinhas de frevo por cinco reais. A que sobra para Rafaela esta torta e com a cor gasta pelo sol. A banda comeca, o círculo se abre e ela entra de camiseta, sem fantasia, e escorrega na pedra lisa. Ninguem olha, e o dono do tambor pergunta se ela se arrepende da torta.",
+  "arcType": "harmonic-close",
+  "text": "No fim da tarde a praça enche devagar e alguém bate um tambor sozinho. Rafaela chega cansada do ateliê e senta num caixote. O homem da banca aluga sombrinha de frevo, mas não empresta de graça.\n\n“Essa está torta”, reclama Rafaela. “Está. As tortas dançam melhor”, responde ele. “Tem outra?” “Tenho. A outra é reta e já está alugada.” Ele abre a sombrinha: as varetas são desiguais e a cor está gasta pelo sol.\n\n“Carnaval não é em fevereiro?”, pergunta ela. “É. Mas o ensaio da banda não espera tanto.” A música começa lenta e o círculo se abre entre os meninos da banda.\n\nRafaela larga o telefone no bolso e entra de camiseta, sem fantasia. A pedra é lisa e a sandália dela escorrega. “Levanta e continua!”, grita alguém do círculo. Ninguém mais olha: é estranho, e é bom.\n\n“Não se arrepende?”, pergunta o homem do tambor. “De quê?” “De ter alugado a torta.” Rafaela dança até o fim da música com a sombrinha torta aberta.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "sombrinha",
+    "surface": "sombrinha",
+    "definition": "Small umbrella; the bright prop a frevo dancer spins while dancing."
+   },
+   {
+    "type": "noun",
+    "word": "vareta",
+    "surface": "varetas",
+    "definition": "Rib; the thin sticks that open an umbrella."
+   },
+   {
+    "type": "noun",
+    "word": "tambor",
+    "anchor": true,
+    "surface": "tambor",
+    "definition": "Drum; the one beating alone before the band starts."
+   },
+   {
+    "type": "noun",
+    "word": "banda",
+    "anchor": true,
+    "surface": "banda",
+    "definition": "Band; the group of players in the square."
+   },
+   {
+    "type": "noun",
+    "word": "círculo",
+    "anchor": true,
+    "surface": "círculo",
+    "definition": "Circle; the ring that opens for whoever dances."
+   },
+   {
+    "type": "verb",
+    "word": "dançar",
+    "anchor": true,
+    "surface": "dançam",
+    "definition": "To dance; here the fast frevo step of Olinda."
+   },
+   {
+    "type": "adjective",
+    "word": "torto",
+    "anchor": true,
+    "surface": "torta",
+    "definition": "Bent; not straight any more, like this cheap rented umbrella."
+   },
+   {
+    "type": "noun",
+    "word": "carnaval",
+    "anchor": true,
+    "surface": "Carnaval",
+    "definition": "Carnival; the February festival that this town rehearses all year."
+   },
+   {
+    "type": "noun",
+    "word": "fantasia",
+    "surface": "fantasia",
+    "definition": "Costume; the outfit worn for carnival, not needed here."
+   },
+   {
+    "type": "noun",
+    "word": "cor",
+    "surface": "cor",
+    "definition": "Colour; hers has faded from too much sun."
+   },
+   {
+    "type": "adjective",
+    "word": "lento",
+    "surface": "lenta",
+    "definition": "Slow; the music starts that way before it speeds up."
+   },
+   {
+    "type": "noun",
+    "word": "sandália",
+    "surface": "sandália",
+    "definition": "Sandal; the open shoe she is wearing on smooth wet stone."
+   },
+   {
+    "type": "noun",
+    "word": "telefone",
+    "surface": "telefone",
+    "definition": "Phone; what she puts away before joining in."
+   },
+   {
+    "type": "adjective",
+    "word": "cansado",
+    "surface": "cansada",
+    "definition": "Tired; worn out after a long afternoon of walking uphill."
+   },
+   {
+    "type": "verb",
+    "word": "alugar",
+    "surface": "aluga",
+    "definition": "To rent; to pay to use something for a while."
+   },
+   {
+    "type": "verb",
+    "word": "arrepender",
+    "surface": "arrepende",
+    "definition": "To regret; to wish you had chosen otherwise."
+   },
+   {
+    "type": "verb",
+    "word": "largar",
+    "surface": "larga",
+    "definition": "To drop; to leave a thing and stop holding it."
+   },
+   {
+    "type": "verb",
+    "word": "escorregar",
+    "surface": "escorrega",
+    "definition": "To slip; to lose your footing on smooth ground."
+   },
+   {
+    "type": "adjective",
+    "word": "estranho",
+    "surface": "estranho",
+    "definition": "Strange; unfamiliar and a little odd, but not bad at all."
+   },
+   {
+    "type": "noun",
+    "word": "tarde",
+    "surface": "tarde",
+    "definition": "Afternoon; the end of it, when the square fills."
+   }
+  ]
+ },
+ {
+  "slug": "acai-com-peixe-frito",
+  "topic": "belem",
+  "slotIndex": 0,
+  "title": "Açaí com peixe frito",
+  "synopsis": "Rafaela pede açaí no Ver-o-Peso esperando o sorvete roxo que conhece de São Paulo, com banana e acucar de sobra. Dora serve o dela como serve para todo mundo em Belém: grosso, amargo, com peixe frito ao lado e um pote de farinha branca. Rafaela come devagar e desconfiada, e so no meio da tigela para de estranhar. A sobremesa, descobre no fim, tambem e açaí.",
+  "arcType": "reframe-turn",
+  "text": "No Ver-o-Peso o açaí cai roxo e grosso dentro da tigela. Quem serve é Dora, uma senhora de Belém que abre a banca debaixo do mesmo toldo. Rafaela para às onze com a nota de dez, porque é barato.\n\nDora é gentil e recomenda sempre a mesma coisa. “Vai querer com quê?”, pergunta. “Com banana e açúcar. Em São Paulo vem assim”, responde Rafaela. “Banana? Aqui é com peixe frito e farinha.”\n\n“Açaí é refeição”, insiste Dora. “Sorvete é outra coisa.” A tigela chega amarga e ao lado vem um pote de farinha branca e o peixe frito.\n\n“Isso tudo junto?”, pergunta Rafaela. “Tudo junto. É a receita daqui.” Ela come devagar, séria, achando estranho, e engole a primeira colher. No meio da tigela come igual aos outros clientes.\n\n“E de sobremesa?” “De sobremesa tem açaí. Esse eu faço como a senhora prefere.” Dora serve a segunda tigela antes de ela acabar a primeira.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "açaí",
+    "surface": "açaí",
+    "definition": "Açaí; the purple palm fruit eaten as a meal here."
+   },
+   {
+    "type": "noun",
+    "word": "tigela",
+    "surface": "tigela",
+    "definition": "Bowl; the wide dish the pulp is served in."
+   },
+   {
+    "type": "noun",
+    "word": "toldo",
+    "anchor": true,
+    "surface": "toldo",
+    "definition": "Awning; the cloth roof over a market stall."
+   },
+   {
+    "type": "noun",
+    "word": "farinha",
+    "anchor": true,
+    "surface": "farinha",
+    "definition": "Cassava flour; the white grain sprinkled over it."
+   },
+   {
+    "type": "noun",
+    "word": "pote",
+    "anchor": true,
+    "surface": "pote",
+    "definition": "Pot; the small container the flour comes in."
+   },
+   {
+    "type": "noun",
+    "word": "colher",
+    "anchor": true,
+    "surface": "colher",
+    "definition": "Spoon; what she lifts and holds in the air."
+   },
+   {
+    "type": "adjective",
+    "word": "frito",
+    "anchor": true,
+    "surface": "frito",
+    "definition": "Fried; cooked in hot oil, as this fish is."
+   },
+   {
+    "type": "adjective",
+    "word": "roxo",
+    "anchor": true,
+    "surface": "roxo",
+    "definition": "Purple; the deep colour of the fruit pulp."
+   },
+   {
+    "type": "adjective",
+    "word": "grosso",
+    "surface": "grosso",
+    "definition": "Thick; heavy and slow, not liquid at all."
+   },
+   {
+    "type": "noun",
+    "word": "açúcar",
+    "surface": "açúcar",
+    "definition": "Sugar; what she asks for and does not get."
+   },
+   {
+    "type": "noun",
+    "word": "refeição",
+    "surface": "refeição",
+    "definition": "Meal; food you sit down to, not a sweet snack."
+   },
+   {
+    "type": "noun",
+    "word": "sorvete",
+    "surface": "sorvete",
+    "definition": "Ice cream; what the same fruit becomes far south."
+   },
+   {
+    "type": "adjective",
+    "word": "amargo",
+    "surface": "amarga",
+    "definition": "Bitter; sharp and not sweet, the way it comes."
+   },
+   {
+    "type": "verb",
+    "word": "recomendar",
+    "surface": "recomenda",
+    "definition": "To recommend; to tell someone what they should have."
+   },
+   {
+    "type": "noun",
+    "word": "cliente",
+    "surface": "clientes",
+    "definition": "Customer; the other people eating under the awning."
+   },
+   {
+    "type": "noun",
+    "word": "sobremesa",
+    "surface": "sobremesa",
+    "definition": "Dessert; the sweet course at the end of a meal."
+   },
+   {
+    "type": "adjective",
+    "word": "gentil",
+    "surface": "gentil",
+    "definition": "Kind; patient with someone who does not know how to order."
+   },
+   {
+    "type": "verb",
+    "word": "preferir",
+    "surface": "prefere",
+    "definition": "To prefer; to want one thing rather than another one."
+   },
+   {
+    "type": "verb",
+    "word": "engolir",
+    "surface": "engole",
+    "definition": "To swallow; to make food go down without enjoying it."
+   },
+   {
+    "type": "adjective",
+    "word": "barato",
+    "surface": "barato",
+    "definition": "Cheap; costing little, which is why she stops."
+   }
+  ]
+ },
+ {
+  "slug": "a-cuia-das-cinco",
+  "topic": "belem",
+  "slotIndex": 1,
+  "title": "A cuia das cinco",
+  "synopsis": "As cinco da tarde a fila do tacacá dobra a esquina e ninguem senta para tomar. Neide serve o caldo quente numa cuia amarela, com goma, camarao seco e folha de jambu no fundo. No terceiro gole o labio de Rafaela para de sentir e ela leva um susto, porque acha que e a pimenta. E o jambu, passa em dez minutos, e ela pede a segunda cuia.",
+  "arcType": "daily-encounter",
+  "text": "Às cinco da tarde a fila dobra a esquina e ninguém senta para tomar. Neide, uma vendedora da calçada, trabalha de pé entre duas panelas. O cheiro de camarão seco chega antes.\n\n“Uma cuia?”, pergunta Neide. “Uma. Com pimenta.” “A senhora nunca tomou tacacá, né?” A sopa sai quente, com goma e jambu. “Bebe devagar; não sobra mais”, avisa Neide.\n\nRafaela toma de pé e o vapor esquenta o rosto dela. No terceiro gole o lábio para de sentir e a boca começa a formigar. Ela olha para baixo com susto, e ninguém na fila reclama nem estranha.\n\n“Isso acontece sempre?”, pergunta ela. “É o jambu. Passa em dez minutos”, responde Neide. “Verdade?” “Verdade. A pimenta é tempero; o jambu não.”\n\nO caldo é forte e salgado, e continua gostoso mesmo assim. “É a melhor da rua”, diz a mulher do lado. Quando ela acaba, Neide já está enchendo a segunda cuia.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "tacacá",
+    "surface": "tacacá",
+    "definition": "Tacacá; the hot yellow broth sold on the street at five."
+   },
+   {
+    "type": "noun",
+    "word": "cuia",
+    "surface": "cuia",
+    "definition": "Gourd bowl; the yellow cup the broth is drunk from."
+   },
+   {
+    "type": "noun",
+    "word": "jambu",
+    "anchor": true,
+    "surface": "jambu",
+    "definition": "Jambu; the leaf that makes your mouth go numb."
+   },
+   {
+    "type": "noun",
+    "word": "goma",
+    "anchor": true,
+    "surface": "goma",
+    "definition": "Tapioca starch; the thick clear layer at the bottom."
+   },
+   {
+    "type": "noun",
+    "word": "verdade",
+    "anchor": false,
+    "surface": "Verdade",
+    "definition": "Truth; used alone, it asks whether that is really so."
+   },
+   {
+    "type": "noun",
+    "word": "sopa",
+    "anchor": true,
+    "surface": "sopa",
+    "definition": "Soup; a hot liquid meal, drunk here standing up."
+   },
+   {
+    "type": "noun",
+    "word": "tempero",
+    "anchor": true,
+    "surface": "tempero",
+    "definition": "Seasoning; what you add for taste, not for heat."
+   },
+   {
+    "type": "noun",
+    "word": "gole",
+    "anchor": true,
+    "surface": "gole",
+    "definition": "Sip; one mouthful of a drink at a time."
+   },
+   {
+    "type": "verb",
+    "word": "acontecer",
+    "surface": "acontece",
+    "definition": "To happen; to take place, as this always does here."
+   },
+   {
+    "type": "noun",
+    "word": "lábio",
+    "surface": "lábio",
+    "definition": "Lip; the edge of the mouth, first to go numb."
+   },
+   {
+    "type": "verb",
+    "word": "formigar",
+    "surface": "formigar",
+    "definition": "To tingle; to prickle as if ants were walking there."
+   },
+   {
+    "type": "verb",
+    "word": "esquentar",
+    "surface": "esquenta",
+    "definition": "To warm; to make something hotter, here her face."
+   },
+   {
+    "type": "verb",
+    "word": "dobrar",
+    "surface": "dobra",
+    "definition": "To turn; the queue bends around the corner and back."
+   },
+   {
+    "type": "noun",
+    "word": "susto",
+    "surface": "susto",
+    "definition": "Fright; a sudden scare that passes quickly enough."
+   },
+   {
+    "type": "verb",
+    "word": "avisar",
+    "surface": "avisa",
+    "definition": "To warn; to tell someone before the thing happens."
+   },
+   {
+    "type": "adjective",
+    "word": "gostoso",
+    "surface": "gostoso",
+    "definition": "Tasty; good to eat, hard to explain why exactly."
+   },
+   {
+    "type": "verb",
+    "word": "estranhar",
+    "surface": "estranha",
+    "definition": "To find odd; to think a thing is strange or wrong."
+   },
+   {
+    "type": "adjective",
+    "word": "melhor",
+    "surface": "melhor",
+    "definition": "Best; better than all the others on this street."
+   },
+   {
+    "type": "verb",
+    "word": "sobrar",
+    "surface": "sobra",
+    "definition": "To be left over; to remain when the rest is gone."
+   },
+   {
+    "type": "noun",
+    "word": "panela",
+    "anchor": true,
+    "surface": "panelas",
+    "definition": "Pan; the big pots the broth is kept hot in."
+   }
+  ]
+ },
+ {
+  "slug": "isopor-para-manaus",
+  "topic": "belem",
+  "slotIndex": 2,
+  "title": "Isopor para Manaus",
+  "synopsis": "Rafaela quer levar dois litros de polpa de açaí congelada para o irmao e o voo so sai de noite. O moco da doca olha o relogio e diz que aquilo derrete muito antes do avião. Ela compra um isopor com gelo, fecha a tampa com fita e carrega a caixa o dia inteiro. No aeroporto, Matheus escreve que Manaus tem açaí, e ela responde que aquele e da Dora.",
+  "arcType": "mini-cliffhanger",
+  "text": "Rafaela quis levar dois litros congelados para Matheus, em Manaus. Na doca a polpa de açaí custa vinte reais o litro. O moço da banca é educado e não tira o olho do relógio.\n\n“Dois litros?”, perguntou ele. “Dois. O meu voo é de noite.” “Derrete tudo antes de pousar. Vendo isopor com gelo dentro”, ofereceu. “Sai mais caro que o açaí.”\n\n“Cabe dois litros?” “Cabe quatro. Ninguém cobra a fita.” Ela pagou com gorjeta e fechou a tampa. Embrulhou a caixa com fita, e tudo cheira a peixe: o papelão e as mãos dela.\n\nRafaela carregou a caixa o dia inteiro e o gelo pingou o caminho. No aeroporto trocou a água por um saco novo, e a caixa seguiu no porão do avião.\n\nAntes de subir, ela mandou a foto do isopor. “Manaus tem açaí, Rafaela”, escreveu Matheus. “Esse aqui é da Dora.” “Então tá.” Ela sentou em cima da caixa com um cansaço bom.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "polpa",
+    "surface": "polpa",
+    "definition": "Pulp; the frozen fruit paste sold by the litre."
+   },
+   {
+    "type": "noun",
+    "word": "isopor",
+    "surface": "isopor",
+    "definition": "Cool box; the white foam box that holds ice."
+   },
+   {
+    "type": "noun",
+    "word": "gelo",
+    "anchor": true,
+    "surface": "gelo",
+    "definition": "Ice; what keeps the pulp frozen until the plane."
+   },
+   {
+    "type": "noun",
+    "word": "doca",
+    "anchor": true,
+    "surface": "doca",
+    "definition": "Dock; the river landing where the boats unload."
+   },
+   {
+    "type": "noun",
+    "word": "tampa",
+    "anchor": true,
+    "surface": "tampa",
+    "definition": "Lid; the top of the box, taped shut."
+   },
+   {
+    "type": "noun",
+    "word": "fita",
+    "anchor": true,
+    "surface": "fita",
+    "definition": "Tape; the sticky strip that holds the lid down."
+   },
+   {
+    "type": "noun",
+    "word": "porão",
+    "anchor": true,
+    "surface": "porão",
+    "definition": "Hold; the space under the plane for luggage."
+   },
+   {
+    "type": "noun",
+    "word": "papelão",
+    "anchor": true,
+    "surface": "papelão",
+    "definition": "Cardboard; the brown box that the fish smell soaks into."
+   },
+   {
+    "type": "noun",
+    "word": "litro",
+    "surface": "litro",
+    "definition": "Litre; how the pulp is measured and priced."
+   },
+   {
+    "type": "noun",
+    "word": "voo",
+    "surface": "voo",
+    "definition": "Flight; the plane she is taking that night."
+   },
+   {
+    "type": "noun",
+    "word": "avião",
+    "surface": "avião",
+    "definition": "Plane; the aircraft that carries her and the box north."
+   },
+   {
+    "type": "noun",
+    "word": "aeroporto",
+    "surface": "aeroporto",
+    "definition": "Airport; the place where she swaps the melted ice again."
+   },
+   {
+    "type": "verb",
+    "word": "derreter",
+    "surface": "derrete",
+    "definition": "To melt; to turn from solid into water."
+   },
+   {
+    "type": "adjective",
+    "word": "congelado",
+    "surface": "congelados",
+    "definition": "Frozen; kept hard and cold, not yet melted."
+   },
+   {
+    "type": "verb",
+    "word": "carregar",
+    "surface": "carregou",
+    "definition": "To carry; to hold something heavy while walking."
+   },
+   {
+    "type": "verb",
+    "word": "pingar",
+    "surface": "pingou",
+    "definition": "To drip; to fall in slow drops all the way."
+   },
+   {
+    "type": "verb",
+    "word": "embrulhar",
+    "surface": "embrulhou",
+    "definition": "To wrap; to cover a box all around with tape."
+   },
+   {
+    "type": "noun",
+    "word": "relógio",
+    "surface": "relógio",
+    "definition": "Watch; what the seller looks at before answering."
+   },
+   {
+    "type": "noun",
+    "word": "cansaço",
+    "surface": "cansaço",
+    "definition": "Tiredness; the good kind, after a long day."
+   },
+   {
+    "type": "adjective",
+    "word": "educado",
+    "surface": "educado",
+    "definition": "Polite; well mannered with a customer in a hurry."
+   }
+  ]
+ },
+ {
+  "slug": "o-jacare-nao-se-move",
+  "topic": "pantanal",
+  "slotIndex": 0,
+  "title": "O jacaré não se move",
+  "synopsis": "A lancha sai da fazenda as seis e Selma avisa que os jacarés ja ficaram para tras, todos parados no barranco como pedacos de pau. Rafaela nao tinha visto nenhum, e a partir dai nao ve outra coisa. Matheus tinha dito por telefone que de perto o bicho parece de mentira, e por tres horas ele parece mesmo. Na volta um deles entra na agua ao lado da lancha.",
+  "arcType": "juxtaposition-discovery",
+  "text": "A lancha sai da fazenda às seis, no amanhecer, com o rio ainda tranquilo. Quem leva o barco é Selma, uma guia que trabalha no rio desde menina. Rafaela senta na popa com o colete, que protege pouco do sol quente.\n\n“Os jacarés ficaram para trás”, diz Selma. “Que jacarés?”, pergunta Rafaela. “Uns oito, na margem. Parados.” Ela olha para trás com atenção e não vê nada.\n\nDez minutos depois vê o primeiro e não vê outra coisa. “Aquilo é um pedaço de pau ou um bicho?” “É bicho. E aquele também”, responde a guia. O animal fica parado no barro. Parece de mentira.\n\nUma capivara come e uma garça espera na margem. “Eles são espertos?”, pergunta ela. “São. E estão vivos, que é o que importa”, diz Selma. “Tem onça aqui?” “Tem. Ver é outra coisa.”\n\nNa volta um jacaré entra na água ao lado da lancha e o coração dela para. Ela só vê o rabo, e uma arara passa gritando.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "lancha",
+    "surface": "lancha",
+    "definition": "Motorboat; the open boat that leaves at dawn."
+   },
+   {
+    "type": "noun",
+    "word": "jacaré",
+    "surface": "jacarés",
+    "definition": "Caiman; the river reptile lying still on the bank."
+   },
+   {
+    "type": "noun",
+    "word": "capivara",
+    "anchor": true,
+    "surface": "capivara",
+    "definition": "Capybara; the big calm rodent grazing by the water."
+   },
+   {
+    "type": "noun",
+    "word": "garça",
+    "anchor": true,
+    "surface": "garça",
+    "definition": "Heron; the tall white bird waiting beside it."
+   },
+   {
+    "type": "noun",
+    "word": "margem",
+    "anchor": true,
+    "surface": "margem",
+    "definition": "Bank; the edge of the river where they lie."
+   },
+   {
+    "type": "noun",
+    "word": "colete",
+    "anchor": true,
+    "surface": "colete",
+    "definition": "Life jacket; what she holds instead of wearing."
+   },
+   {
+    "type": "noun",
+    "word": "arara",
+    "anchor": true,
+    "surface": "arara",
+    "definition": "Macaw; the loud coloured parrot that flies over the boat."
+   },
+   {
+    "type": "noun",
+    "word": "rabo",
+    "anchor": true,
+    "surface": "rabo",
+    "definition": "Tail; the last part of the animal she sees."
+   },
+   {
+    "type": "noun",
+    "word": "guia",
+    "surface": "guia",
+    "definition": "Guide; the person who takes visitors on the river."
+   },
+   {
+    "type": "noun",
+    "word": "popa",
+    "surface": "popa",
+    "definition": "Stern; the back of a boat, where she sits."
+   },
+   {
+    "type": "adjective",
+    "word": "vivo",
+    "surface": "vivos",
+    "definition": "Alive; not dead at all, whatever they may look like."
+   },
+   {
+    "type": "noun",
+    "word": "mentira",
+    "surface": "mentira",
+    "definition": "Lie; something false, here a thing that looks fake."
+   },
+   {
+    "type": "noun",
+    "word": "onça",
+    "surface": "onça",
+    "definition": "Jaguar; the big cat you almost never see."
+   },
+   {
+    "type": "noun",
+    "word": "coração",
+    "surface": "coração",
+    "definition": "Heart; hers stops for a second at the end."
+   },
+   {
+    "type": "noun",
+    "word": "atenção",
+    "surface": "atenção",
+    "definition": "Attention; looking closely at something so you do not miss it."
+   },
+   {
+    "type": "noun",
+    "word": "animal",
+    "surface": "animal",
+    "definition": "Animal; a living creature, here one that never moves."
+   },
+   {
+    "type": "noun",
+    "word": "amanhecer",
+    "surface": "amanhecer",
+    "definition": "Dawn; first light, when the boat goes out."
+   },
+   {
+    "type": "adjective",
+    "word": "tranquilo",
+    "surface": "tranquilo",
+    "definition": "Calm; still and quiet, with no waves at all."
+   },
+   {
+    "type": "adjective",
+    "word": "esperto",
+    "surface": "espertos",
+    "definition": "Clever; smart enough to wait without moving a single muscle."
+   },
+   {
+    "type": "verb",
+    "word": "parecer",
+    "surface": "parece",
+    "definition": "To look like; to seem one thing while being another."
+   }
+  ]
+ },
+ {
+  "slug": "a-vara-e-a-isca",
+  "topic": "pantanal",
+  "slotIndex": 1,
+  "title": "A vara e a isca",
+  "synopsis": "Rafaela passa a tarde no barranco com a vara na mao e a isca certa no anzol, e nao tira nenhuma piranha da agua. Do outro lado, Tainá tira cinco em vinte minutos com a mesma isca e a mesma vara. A diferenca nao esta no anzol: esta no barulho que a menina faz batendo a ponta da vara na agua antes de soltar a linha.",
+  "arcType": "late-reveal",
+  "text": "No barro do barranco a vara de Rafaela está na água desde as duas. Do outro lado senta Tainá, uma menina de dez anos que falta à escola quando chove. Já tirou cinco piranhas, e o balde de Rafaela continua vazio.\n\n“A isca é a mesma?”, pergunta Rafaela. “É. Carne, igual à sua”, responde a menina. “E o anzol?” “Também.” Rafaela olha o anzol com atenção e não encontra diferença.\n\nEla acaba de decidir: espera em silêncio, sem molhar a mão. Tainá bate a ponta da vara na água três vezes antes de soltar, e a cesta dela enche sozinha.\n\n“Você bate na água de propósito?”, pergunta Rafaela. “Bato. Elas vêm ver.” “Isso é truque de pescaria?” “É o jeito. A aula foi com meu avô.”\n\nRafaela bate na água, conta até três e sente a primeira mordida. O peixe sai com brilho e ela ri alto, com uma alegria de criança. “Essa é ruim de comer”, avisa Tainá. “Serve de enfeite?” “Serve de nada. Não foi sorte: você conseguiu.”",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "vara",
+    "surface": "vara",
+    "definition": "Rod; the long stick used to fish with a line."
+   },
+   {
+    "type": "noun",
+    "word": "anzol",
+    "anchor": true,
+    "surface": "anzol",
+    "definition": "Hook; the small metal piece the bait goes on."
+   },
+   {
+    "type": "noun",
+    "word": "isca",
+    "anchor": true,
+    "surface": "isca",
+    "definition": "Bait; the meat that is meant to bring the fish."
+   },
+   {
+    "type": "noun",
+    "word": "piranha",
+    "anchor": true,
+    "surface": "piranhas",
+    "definition": "Piranha; the biting river fish they are after."
+   },
+   {
+    "type": "noun",
+    "word": "barro",
+    "surface": "barro",
+    "definition": "Mud; the wet ground of the river bank."
+   },
+   {
+    "type": "noun",
+    "word": "cesta",
+    "anchor": true,
+    "surface": "cesta",
+    "definition": "Basket; the woven container where the caught fish are kept."
+   },
+   {
+    "type": "noun",
+    "word": "barranco",
+    "anchor": true,
+    "surface": "barranco",
+    "definition": "Bank; the steep earth edge above the water."
+   },
+   {
+    "type": "noun",
+    "word": "pescaria",
+    "anchor": true,
+    "surface": "pescaria",
+    "definition": "Fishing; the whole business of sitting there and catching fish."
+   },
+   {
+    "type": "noun",
+    "word": "menina",
+    "surface": "menina",
+    "definition": "Girl; a child, here ten years old and better at this."
+   },
+   {
+    "type": "noun",
+    "word": "escola",
+    "surface": "escola",
+    "definition": "School; where she goes except when it rains."
+   },
+   {
+    "type": "adjective",
+    "word": "ruim",
+    "surface": "ruim",
+    "definition": "Bad; not good to eat, whatever it looks like."
+   },
+   {
+    "type": "noun",
+    "word": "diferença",
+    "surface": "diferença",
+    "definition": "Difference; the thing that makes one of them unlike the other."
+   },
+   {
+    "type": "noun",
+    "word": "enfeite",
+    "surface": "enfeite",
+    "definition": "Ornament; something you keep only to look at, never to use."
+   },
+   {
+    "type": "noun",
+    "word": "mordida",
+    "surface": "mordida",
+    "definition": "Bite; the pull on the line when a fish takes it."
+   },
+   {
+    "type": "verb",
+    "word": "molhar",
+    "surface": "molhar",
+    "definition": "To wet; to put something into the water."
+   },
+   {
+    "type": "verb",
+    "word": "conseguir",
+    "surface": "conseguiu",
+    "definition": "To manage; to finally do what you were trying to."
+   },
+   {
+    "type": "noun",
+    "word": "alegria",
+    "surface": "alegria",
+    "definition": "Joy; the loud happy kind, like a child's."
+   },
+   {
+    "type": "noun",
+    "word": "silêncio",
+    "surface": "silêncio",
+    "definition": "Silence; no noise at all, which is her mistake."
+   },
+   {
+    "type": "noun",
+    "word": "truque",
+    "surface": "truque",
+    "definition": "Trick; a clever way of doing something better."
+   },
+   {
+    "type": "noun",
+    "word": "carne",
+    "surface": "Carne",
+    "definition": "Meat; the bait on the hook, the same for both of them."
+   }
+  ]
+ },
+ {
+  "slug": "boiada-na-estrada",
+  "topic": "pantanal",
+  "slotIndex": 2,
+  "title": "Boiada na estrada",
+  "synopsis": "A caminhonete sai da fazenda com tempo de sobra e para a tres quilometros da porteira, atras de uma boiada que ocupa a estrada inteira. Selma desliga o motor e espera; o peao a cavalo nao tem pressa nenhuma. Rafaela liga para Matheus para avisar que vai perder o onibus, e acaba a chamada filmando o gado passar na poeira.",
+  "arcType": "harmonic-close",
+  "text": "A caminhonete sai da fazenda com uma hora de sobra. Selma, a mesma guia do rio, dirige e conhece a terra toda de cor. Faltam três quilômetros para a porteira. O carro para: uma boiada ocupa a estrada.\n\n“Quanto tempo isso leva?”, pergunta Rafaela. “Depende do gado”, responde Selma, e desliga o motor, sem pressa. A poeira entra no carro e cobre o espelho. Cheira a gado.\n\nUm peão a cavalo passa com o chapéu baixo. “Ele não pode abrir a cerca?”, pergunta ela. “Pode. Mas aí o gado some no mato”, responde Selma.\n\nAs vacas passam devagar, e um boi bate o chifre na porta. Rafaela liga para Matheus e avisa que vai perder o ônibus. “Que atraso é esse?”, pergunta ele. “Umas trezentas vacas, e um peão só.” “Trezentas? Filma, então.”\n\nEla filma o gado na poeira até a bateria acabar.\n\n“Perdeu mesmo?” “Perdi. E não desisto de nada hoje.” Selma ri e liga o motor quando a estrada fica livre de gado.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "caminhonete",
+    "surface": "caminhonete",
+    "definition": "Pickup truck; the farm vehicle taking her to the bus."
+   },
+   {
+    "type": "noun",
+    "word": "porteira",
+    "surface": "porteira",
+    "definition": "Farm gate; the wide gate at the edge of the land."
+   },
+   {
+    "type": "noun",
+    "word": "poeira",
+    "anchor": true,
+    "surface": "poeira",
+    "definition": "Dust; the red cloud the cattle lift from the road."
+   },
+   {
+    "type": "noun",
+    "word": "gado",
+    "anchor": true,
+    "surface": "gado",
+    "definition": "Cattle; the herd of animals filling the road."
+   },
+   {
+    "type": "noun",
+    "word": "boiada",
+    "anchor": true,
+    "surface": "boiada",
+    "definition": "Cattle drive; a herd being moved along a road."
+   },
+   {
+    "type": "noun",
+    "word": "peão",
+    "anchor": true,
+    "surface": "peão",
+    "definition": "Ranch hand; the man who moves the cattle on horseback."
+   },
+   {
+    "type": "noun",
+    "word": "cavalo",
+    "anchor": true,
+    "surface": "cavalo",
+    "definition": "Horse; the animal the ranch hand rides beside his herd."
+   },
+   {
+    "type": "noun",
+    "word": "chapéu",
+    "anchor": true,
+    "surface": "chapéu",
+    "definition": "Hat; the wide brim that hides his face."
+   },
+   {
+    "type": "noun",
+    "word": "terra",
+    "surface": "terra",
+    "definition": "Land; the ground and country she knows by heart."
+   },
+   {
+    "type": "noun",
+    "word": "fazenda",
+    "surface": "fazenda",
+    "definition": "Ranch; the big farm they are driving out of."
+   },
+   {
+    "type": "noun",
+    "word": "cerca",
+    "surface": "cerca",
+    "definition": "Fence; the wire that keeps the cattle off the field."
+   },
+   {
+    "type": "noun",
+    "word": "vaca",
+    "surface": "vacas",
+    "definition": "Cow; three hundred of them, in no hurry at all."
+   },
+   {
+    "type": "noun",
+    "word": "boi",
+    "surface": "boi",
+    "definition": "Ox; a big male one, knocking the car door."
+   },
+   {
+    "type": "noun",
+    "word": "chifre",
+    "surface": "chifre",
+    "definition": "Horn; the hard point on the animal's head."
+   },
+   {
+    "type": "noun",
+    "word": "espelho",
+    "surface": "espelho",
+    "definition": "Mirror; the wing mirror outside, now covered in red dust."
+   },
+   {
+    "type": "noun",
+    "word": "atraso",
+    "surface": "atraso",
+    "definition": "Delay; being later than you meant to be."
+   },
+   {
+    "type": "noun",
+    "word": "quilômetro",
+    "surface": "quilômetros",
+    "definition": "Kilometre; the distance still left to the gate."
+   },
+   {
+    "type": "verb",
+    "word": "desistir",
+    "surface": "desisto",
+    "definition": "To give up; to stop trying, which she will not do."
+   },
+   {
+    "type": "verb",
+    "word": "filmar",
+    "surface": "filma",
+    "definition": "To film; to record what is happening with a phone."
+   },
+   {
+    "type": "noun",
+    "word": "bateria",
+    "surface": "bateria",
+    "definition": "Battery; the one in her phone, which runs out first."
+   }
+  ]
+ },
+ {
+  "slug": "a-mina-nao-tem-ouro",
+  "topic": "ouro-preto",
+  "slotIndex": 0,
+  "title": "A mina não tem ouro",
+  "synopsis": "Rafaela paga o ingresso da mina esperando ver ouro na parede e recebe um capacete, uma lanterna e um aviso sobre a altura do túnel. La dentro o ar e úmido, o teto obriga a andar curvado e o trilho do carrinho ainda esta no chao. Dorival trabalhou ali dentro por vinte anos e conta que o ouro acabou muito antes dele nascer. O que ela pagou para ver e o buraco.",
+  "arcType": "reframe-turn",
+  "text": "O ingresso da mina custa trinta reais e dá capacete e lanterna. Quem entra com ela é Dorival, um mineiro que trabalhou vinte anos ali dentro. A fila entra devagar, de lanterna acesa.\n\n“A senhora vem ver ouro?”, pergunta Dorival. “Não tem?” “Tem o buraco. O ouro acabou antes do meu avô nascer.” O túnel é estreito e obriga a andar curvado desde o segundo passo.\n\n“Cuidado com a cabeça”, avisa ele. O ar é úmido e cheira a terra molhada. A lanterna acha um trilho de ferro no chão. “Isso levava o quê?” “Carrinho de pedra. Puxado por corrente e por gente.”\n\nUm morcego passa perto do capacete e some na escuridão. “E o brilho na parede?”, pergunta Rafaela. “Água. Ouro não brilha assim”, responde Dorival, e mostra onde cavavam.\n\nNinguém tirava mais que alguns gramas por dia, e muita gente se machucava. “O senhor cavou aqui?” “Cavei. Meu pai também.” Rafaela sai com o capacete na mão e olha o morro.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "mina",
+    "surface": "mina",
+    "definition": "Mine; the tunnel dug into the hill for gold."
+   },
+   {
+    "type": "noun",
+    "word": "capacete",
+    "surface": "capacete",
+    "definition": "Helmet; the hard hat handed out at the entrance."
+   },
+   {
+    "type": "noun",
+    "word": "lanterna",
+    "anchor": true,
+    "surface": "lanterna",
+    "definition": "Torch; the lamp that shows the tunnel floor."
+   },
+   {
+    "type": "noun",
+    "word": "túnel",
+    "anchor": true,
+    "surface": "túnel",
+    "definition": "Tunnel; the long narrow hole cut into rock."
+   },
+   {
+    "type": "noun",
+    "word": "trilho",
+    "anchor": true,
+    "surface": "trilho",
+    "definition": "Rail; the iron track the stone carts ran on."
+   },
+   {
+    "type": "noun",
+    "word": "morcego",
+    "anchor": true,
+    "surface": "morcego",
+    "definition": "Bat; the animal that passes close to her helmet."
+   },
+   {
+    "type": "noun",
+    "word": "mineiro",
+    "anchor": true,
+    "surface": "mineiro",
+    "definition": "Miner; a man who worked underground for years."
+   },
+   {
+    "type": "noun",
+    "word": "ouro",
+    "anchor": true,
+    "surface": "ouro",
+    "definition": "Gold; the metal that ran out long ago."
+   },
+   {
+    "type": "noun",
+    "word": "ingresso",
+    "surface": "ingresso",
+    "definition": "Ticket; what you pay to be let in."
+   },
+   {
+    "type": "adjective",
+    "word": "curvado",
+    "surface": "curvado",
+    "definition": "Bent; walking with your back low under the roof."
+   },
+   {
+    "type": "adjective",
+    "word": "estreito",
+    "surface": "estreito",
+    "definition": "Narrow; with little space between the two walls."
+   },
+   {
+    "type": "adjective",
+    "word": "úmido",
+    "surface": "úmido",
+    "definition": "Damp; wet in the air, not quite raining."
+   },
+   {
+    "type": "noun",
+    "word": "ferro",
+    "surface": "ferro",
+    "definition": "Iron; the hard grey metal the rail is made of."
+   },
+   {
+    "type": "noun",
+    "word": "corrente",
+    "surface": "corrente",
+    "definition": "Chain; iron links used to pull the carts."
+   },
+   {
+    "type": "noun",
+    "word": "avô",
+    "surface": "avô",
+    "definition": "Grandfather; his, born after the gold was gone."
+   },
+   {
+    "type": "noun",
+    "word": "brilho",
+    "surface": "brilho",
+    "definition": "Shine; the light on the wall that fools her."
+   },
+   {
+    "type": "verb",
+    "word": "cavar",
+    "surface": "cavavam",
+    "definition": "To dig; to open the rock with your hands and tools."
+   },
+   {
+    "type": "verb",
+    "word": "machucar",
+    "surface": "machucava",
+    "definition": "To hurt; to injure yourself at work down there."
+   },
+   {
+    "type": "noun",
+    "word": "escuridão",
+    "surface": "escuridão",
+    "definition": "Darkness; where the torch light does not reach."
+   },
+   {
+    "type": "noun",
+    "word": "grama",
+    "surface": "gramas",
+    "definition": "Gram; the tiny weight of gold a whole day gave."
+   }
+  ]
+ },
+ {
+  "slug": "pedra-que-a-unha-risca",
+  "topic": "ouro-preto",
+  "slotIndex": 1,
+  "title": "Pedra que a unha risca",
+  "synopsis": "Na escada da igreja, Rafaela regateia uma peca de pedra-sabão achando que e pedra dura de verdade. Solange vende ali desde os dezoito anos e corta a beirada da peca na frente dela com um canivete, como quem corta sabonete. A prova final e a unha da propria Rafaela, que deixa um risco branco na base. Ela leva duas: a que Solange cortou e a que ela mesma riscou.",
+  "arcType": "daily-encounter",
+  "text": "Na escada da igreja a pedra-sabão é famosa e custa quinze reais. Solange, uma senhora do lugar, abre a banca desde os dezoito anos, de avental cinza, e o pó branco cobre o degrau. A pedra é fria na mão.\n\n“Essa pedra-sabão é de verdade?”, pergunta Rafaela. “É. Mas não é dura”, responde Solange. “Toda pedra é dura!” Solange pega um canivete. Corta a base da peça sem responder mais.\n\nA lasca escorrega no avental. “Cortou igual sabonete.” “Igual, como se fosse sabão. Por isso a gente faz panela com ela”, diz Solange. A pedra é macia, quase mole, e deixa pó nos dedos.\n\n“Quanto sai a panela?”, pergunta ela. “Quarenta, sem desconto. A vela sai dez.” “Faz a prova da unha”, insiste Solange, com paciência. Rafaela passa a unha na base e deixa um risco branco.\n\n“Viu?” “Vi. E não acredito ainda.” Solange acerta a beirada com uma lixa fina. Embrulha a peça no jornal do dia e o total dá cinquenta.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "canivete",
+    "surface": "canivete",
+    "definition": "Pocket knife; the small blade she cuts the stone with."
+   },
+   {
+    "type": "noun",
+    "word": "lasca",
+    "surface": "lasca",
+    "definition": "Chip; the thin piece that falls off when cut."
+   },
+   {
+    "type": "noun",
+    "word": "unha",
+    "anchor": true,
+    "surface": "unha",
+    "definition": "Fingernail; the hard edge of her finger that settles the argument."
+   },
+   {
+    "type": "noun",
+    "word": "risco",
+    "anchor": true,
+    "surface": "risco",
+    "definition": "Scratch; the white mark a nail leaves behind."
+   },
+   {
+    "type": "noun",
+    "word": "lixa",
+    "anchor": true,
+    "surface": "lixa",
+    "definition": "Sandpaper; the rough paper used to smooth a cut edge."
+   },
+   {
+    "type": "noun",
+    "word": "avental",
+    "anchor": true,
+    "surface": "avental",
+    "definition": "Apron; the grey cloth she wears over her clothes to work."
+   },
+   {
+    "type": "noun",
+    "word": "peça",
+    "anchor": true,
+    "surface": "peça",
+    "definition": "Piece; one carved item among the many on her stall."
+   },
+   {
+    "type": "noun",
+    "word": "sabonete",
+    "anchor": true,
+    "surface": "sabonete",
+    "definition": "Bar of soap; what the stone cuts like."
+   },
+   {
+    "type": "adjective",
+    "word": "cinza",
+    "surface": "cinza",
+    "definition": "Grey; the colour of the apron and the stone."
+   },
+   {
+    "type": "noun",
+    "word": "sabão",
+    "surface": "sabão",
+    "definition": "Soap; soft enough to cut with any knife."
+   },
+   {
+    "type": "noun",
+    "word": "dezoito",
+    "surface": "dezoito",
+    "definition": "Eighteen; her age when she started selling here."
+   },
+   {
+    "type": "adjective",
+    "word": "macio",
+    "surface": "macia",
+    "definition": "Soft; giving way under the blade, not hard."
+   },
+   {
+    "type": "adjective",
+    "word": "mole",
+    "surface": "mole",
+    "definition": "Soft; almost too soft to be called stone."
+   },
+   {
+    "type": "noun",
+    "word": "pó",
+    "surface": "pó",
+    "definition": "Powder; the white dust it leaves on your fingers."
+   },
+   {
+    "type": "noun",
+    "word": "base",
+    "surface": "base",
+    "definition": "Base; the flat bottom of the piece, where she cuts."
+   },
+   {
+    "type": "verb",
+    "word": "cortar",
+    "surface": "corta",
+    "definition": "To cut; to open something with a blade."
+   },
+   {
+    "type": "noun",
+    "word": "jornal",
+    "surface": "jornal",
+    "definition": "Newspaper; the day's paper, used here to wrap a purchase."
+   },
+   {
+    "type": "noun",
+    "word": "vela",
+    "surface": "vela",
+    "definition": "Candle; the other thing carved from this same stone."
+   },
+   {
+    "type": "noun",
+    "word": "prova",
+    "surface": "prova",
+    "definition": "Test; the quick proof that settles a doubt."
+   },
+   {
+    "type": "adjective",
+    "word": "famoso",
+    "surface": "famosa",
+    "definition": "Famous; known by everybody who comes up to this town."
+   }
+  ]
+ },
+ {
+  "slug": "o-sino-das-seis",
+  "topic": "ouro-preto",
+  "slotIndex": 2,
+  "title": "O sino das seis",
+  "synopsis": "Rafaela passa tres dias xingando o sino da igreja que toca as seis atras da pousada. No quarto ja sabe que o primeiro toque e o da missa, o segundo e meia hora depois, quando o padre abre a capela, e o terceiro e a hora de descer para o cafe. Conta isso a Matheus por telefone e ele ri, porque em Manaus quem acorda a rua e o barco das cinco.",
+  "arcType": "recurring-character-callback",
+  "text": "O sino da capela toca às seis e o quarto de Rafaela fica no morro. Nos primeiros dias ela põe o travesseiro na cabeça e xinga com raiva. No quarto dia a ordem dos toques funciona como relógio.\n\nO primeiro chama a missa. A badalada volta em eco pela sacada. Meia hora depois o padre abre a capela. O sino toca de novo.\n\nO terceiro é a hora do café, com bule e manteiga na mesa.\n\nEla conta tudo a Matheus pelo telefone, debaixo do lençol e do cobertor. “Você acorda com esse sino todo dia?”, pergunta ele. “Acordo. Mas agora sei que horas são.”\n\n“Em Manaus quem acorda a rua é o barco das cinco”, diz Matheus. “Cinco é pior. Aqui ninguém reza, mas todo mundo acorda por costume”, responde ela. Rafaela ri e abre a janela para a neblina fria.\n\nLá embaixo uma senhora atravessa para rezar ao santo. “Amanhã eu levanto no primeiro toque.” “Amanhã você xinga de novo”, responde Matheus, e o sino toca.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "sino",
+    "surface": "sino",
+    "definition": "Bell; the church bell that rings at six."
+   },
+   {
+    "type": "noun",
+    "word": "badalada",
+    "anchor": true,
+    "surface": "badalada",
+    "definition": "Bell stroke; one single ring of the bell."
+   },
+   {
+    "type": "noun",
+    "word": "eco",
+    "anchor": true,
+    "surface": "eco",
+    "definition": "Echo; the sound coming back off the wall opposite."
+   },
+   {
+    "type": "noun",
+    "word": "capela",
+    "anchor": true,
+    "surface": "capela",
+    "definition": "Chapel; the small church standing right behind the guesthouse wall."
+   },
+   {
+    "type": "noun",
+    "word": "missa",
+    "anchor": true,
+    "surface": "missa",
+    "definition": "Mass; the church service the first bell calls."
+   },
+   {
+    "type": "noun",
+    "word": "padre",
+    "anchor": true,
+    "surface": "padre",
+    "definition": "Priest; the man who opens the chapel at half past."
+   },
+   {
+    "type": "noun",
+    "word": "morro",
+    "surface": "morro",
+    "definition": "Hill; the steep slope her room stands on."
+   },
+   {
+    "type": "noun",
+    "word": "neblina",
+    "anchor": true,
+    "surface": "neblina",
+    "definition": "Mist; the low cloud that comes up with the bell."
+   },
+   {
+    "type": "noun",
+    "word": "travesseiro",
+    "surface": "travesseiro",
+    "definition": "Pillow; what she puts over her head to sleep."
+   },
+   {
+    "type": "noun",
+    "word": "cobertor",
+    "surface": "cobertor",
+    "definition": "Blanket; what she is still under when she calls."
+   },
+   {
+    "type": "noun",
+    "word": "raiva",
+    "surface": "raiva",
+    "definition": "Anger; the useless kind, at six in the morning."
+   },
+   {
+    "type": "noun",
+    "word": "santo",
+    "surface": "santo",
+    "definition": "Saint; whichever one she blames for the noise at six."
+   },
+   {
+    "type": "verb",
+    "word": "rezar",
+    "surface": "rezar",
+    "definition": "To pray; what the woman crosses the square to do."
+   },
+   {
+    "type": "noun",
+    "word": "toque",
+    "surface": "toque",
+    "definition": "Ring; each of the three times the bell sounds."
+   },
+   {
+    "type": "noun",
+    "word": "bule",
+    "surface": "bule",
+    "definition": "Pot; the coffee pot waiting on the table downstairs."
+   },
+   {
+    "type": "noun",
+    "word": "manteiga",
+    "surface": "manteiga",
+    "definition": "Butter; what goes on the bread at breakfast."
+   },
+   {
+    "type": "noun",
+    "word": "sacada",
+    "surface": "sacada",
+    "definition": "Balcony; where the echo comes back to her."
+   },
+   {
+    "type": "noun",
+    "word": "costume",
+    "surface": "costume",
+    "definition": "Custom; something a whole town simply does without discussing it."
+   },
+   {
+    "type": "adjective",
+    "word": "pior",
+    "surface": "pior",
+    "definition": "Worse; five in the morning is worse than six."
+   },
+   {
+    "type": "verb",
+    "word": "atravessar",
+    "surface": "atravessa",
+    "definition": "To cross; to go from one side to the other."
+   }
+  ]
+ }
+]
