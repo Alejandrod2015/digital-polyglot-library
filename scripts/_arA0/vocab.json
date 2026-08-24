@@ -424,7 +424,7 @@
    "word": "mil",
    "surface": "mil",
    "type": "number",
-   "definition": "a thousand, ten hundreds"
+   "definition": "a thousand, ten times a hundred"
   },
   {
    "word": "escribime",
@@ -1040,7 +1040,7 @@
    "word": "llegan",
    "surface": "llegan",
    "type": "verb",
-   "definition": "they arrive, or they add up"
+   "definition": "they arrive, they get up there"
   },
   {
    "word": "llena",
@@ -1230,7 +1230,7 @@
    "word": "media",
    "surface": "media",
    "type": "adjective",
-   "definition": "half, thirty minutes past the hour"
+   "definition": "half of an hour (media hora)"
   },
   {
    "word": "hora",
@@ -1302,7 +1302,7 @@
    "word": "roja",
    "surface": "roja",
    "type": "adjective",
-   "definition": "red, the colour of the ink"
+   "definition": "red, the colour of her face"
   },
   {
    "word": "peluquería",
@@ -1346,7 +1346,7 @@
    "word": "vuelta",
    "surface": "vuelta",
    "type": "noun",
-   "definition": "a turn or a way back"
+   "definition": "a turn round the block (dar la vuelta)"
   },
   {
    "word": "cuadra",
@@ -1748,7 +1748,7 @@
    "word": "dura",
    "surface": "dura",
    "type": "adjective",
-   "definition": "hard, stiff, or firm in voice"
+   "definition": "firm, hard in the voice"
   },
   {
    "word": "bolsillo",
@@ -1814,7 +1814,7 @@
    "word": "levanta",
    "surface": "levanta",
    "type": "verb",
-   "definition": "lifts something up from the floor"
+   "definition": "stands up from the chair (levantarse)"
   },
   {
    "word": "canilla",
@@ -1834,7 +1834,7 @@
    "word": "pone",
    "surface": "pone",
    "type": "verb",
-   "definition": "puts something in a place"
+   "definition": "puts on a piece of clothing"
   },
   {
    "word": "camisa",
@@ -2090,7 +2090,7 @@
    "word": "mediodía",
    "surface": "mediodía",
    "type": "noun",
-   "definition": "midday, twelve in the afternoon"
+   "definition": "midday, twelve o'clock in the day"
   },
   {
    "word": "humo",
@@ -2272,7 +2272,7 @@
    "word": "tocame",
    "surface": "tocame",
    "type": "verb",
-   "definition": "touch it, feel it, vos command"
+   "definition": "do something with my hair, vos command"
   },
   {
    "word": "pelo",
@@ -2456,7 +2456,7 @@
    "word": "limpia",
    "surface": "limpia",
    "type": "adjective",
-   "definition": "clean, with no dirt or debt"
+   "definition": "clean, freshly washed and ironed"
   },
   {
    "word": "zapatos",

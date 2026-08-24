@@ -764,3 +764,26 @@ DEFS.update({
 "local": ("noun", "the shop premises, the salon itself"),
 })
 DEFS.update({"armar": ("verb", "to put together, to tie up hair")})
+# Repaso en contexto de las definiciones curadas (2026-08-24): once plazas
+# describian el sentido de diccionario y no el de SU frase.
+DEFS.update({
+"pone":      ("verb", "puts on (clothes)"),
+"mil":       ("number", "a thousand"),
+"mediodía":  ("noun", "midday, twelve o'clock"),
+"llegan":    ("verb", "they arrive, they get up there"),
+"roja":      ("adjective", "red, the colour of her face"),
+"dura":      ("adjective", "firm, hard in the voice"),
+"levanta":   ("verb", "stands up (levantarse)"),
+"media":     ("adjective", "half (media hora)"),
+"vuelta":    ("noun", "a turn round the block (dar la vuelta)"),
+"tocame":    ("verb", "do something with my hair, vos command"),
+"limpia":    ("adjective", "clean, freshly washed"),
+})
+DEFS.update({
+"pone":     ("verb", "puts on a piece of clothing"),
+"mil":      ("number", "a thousand, ten times a hundred"),
+"mediodía": ("noun", "midday, twelve o'clock in the day"),
+"media":    ("adjective", "half of an hour (media hora)"),
+"levanta":  ("verb", "stands up from the chair (levantarse)"),
+"limpia":   ("adjective", "clean, freshly washed and ironed"),
+})
