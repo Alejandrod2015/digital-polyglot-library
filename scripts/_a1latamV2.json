@@ -923,7 +923,7 @@
     "title": "Sin señal junto a la muralla",
     "arcType": "recurring-character-callback",
     "synopsis": "Lucia marca el numero de su madre tres dias seguidos y no obtiene respuesta, porque la senal se cae y porque su madre tampoco quiere contestar. Cuando por fin entra la llamada, la conversacion no va de la boda ni del viaje: va de una pelea de hace años que en esa casa se sigue contando con medias verdades.",
-    "text": "Tres días seguidos Lucía marca el número y nadie contesta. La señal se cae a media tarde y el patio queda pálido de sol. Alguien le grita desde el patio que camine hasta la muralla.\n\nAl cuarto día usa el auricular y aprieta el botón sin prisa. El tono suena cuatro veces y entra la llamada. “¿Vas a ir a esa boda o me vas a hacer ir sola?”\n\n“No sé todavía.” “Eso ya no es una respuesta, mamá; llevas un año diciendo eso.” Su madre demora en contestar y Lucía le habla suavemente.\n\nLucía le explica que Jorge no viene por ella sino por el primo. La red se cae otra vez, la conexión va lenta y hay que marcar de nuevo. En el contacto del teléfono el nombre sigue guardado entero.\n\nLucía acerca la boca al micrófono para que se oiga bien. “Ni una mentira más en esta casa, ni por él ni por ti.” Del otro lado hay temor, y eso también se oye.",
+    "text": "Tres días seguidos Lucía marca el número y nadie contesta. La señal se cae a media tarde y el patio queda pálido de sol. Desde el patio le gritan que camine hasta la muralla, donde siempre entra algo.\n\nAl cuarto día usa el auricular y aprieta el botón sin prisa. El tono suena cuatro veces y entra la llamada. “¿Vas a ir a esa boda o me vas a hacer ir sola delante de todo el mundo?”\n\n“No sé todavía.” “Eso ya no es una respuesta, mamá; llevas un año diciendo eso.” Su madre demora en contestar y Lucía le habla suavemente.\n\nLucía le explica que Jorge no viene por ella sino por el primo. La red se cae otra vez, la conexión va lenta y hay que marcar de nuevo. En el contacto del teléfono el nombre sigue guardado entero.\n\nLucía acerca la boca al micrófono para que se oiga bien. “Ni una mentira más en esta casa, ni por él ni por ti.” Del otro lado hay temor, y eso también se oye.",
     "vocab": [
       {
         "word": "seguido",
@@ -2356,6 +2356,399 @@
         "surface": "frazada",
         "definition": "a thick cloth put over a bed for warmth",
         "type": "noun"
+      }
+    ]
+  },
+  {
+    "topic": "plans-and-invitations",
+    "slotIndex": 1,
+    "slug": "dos-entradas-para-palermo",
+    "title": "Dos entradas para Palermo",
+    "arcType": "reframe-turn",
+    "synopsis": "Sofia consigue dos entradas para el ensayo abierto de una banda en Palermo y avisa con dos dias de antelacion, que en ese grupo es mucho. Pablo dice que si sin mirar la fecha y descubre que aceptar una invitacion aca no se hace por mensaje: se queda uno en la vereda hasta que el plan tiene hora, lugar y quien lleva que.",
+    "text": "En Palermo, Sofía baja del colectivo con dos entradas en la mano. Pablo la espera en una banca, con el morral entre las piernas. Suena un ruido de ensayo en toda la calle.\n\n“Te consigo entrada para el ensayo del jueves, pero avisá hoy.” “Voy.” Sofía no se conforma y le pide que conteste bien, si viene solo o con alguien.\n\nAl fondo del local, la fila ya da la vuelta a la cuadra. Sofía anota en el teléfono quién lleva qué. Pablo entiende que aquí un plan no se cierra con un sí.\n\n“Yo llevo la letra y vos traé algo.” “¿Y a qué hora quedamos?” “A las ocho en la acera, no adentro.”\n\nPablo se queda sentado en el bordillo, mirando el escenario vacío, y hace una pausa. “Estás ansioso”, le dice Sofía. “Un poco; es la primera vez que me invitan y no sé si voy a entender la mitad.”",
+    "vocab": [
+      {
+        "word": "entrada",
+        "surface": "entradas",
+        "definition": "the ticket that lets you into a show",
+        "type": "noun"
+      },
+      {
+        "word": "banca",
+        "surface": "banca",
+        "definition": "a long seat for several people in a street",
+        "type": "noun"
+      },
+      {
+        "word": "morral",
+        "surface": "morral",
+        "definition": "a soft bag carried over one shoulder only",
+        "type": "noun"
+      },
+      {
+        "word": "ruido",
+        "surface": "ruido",
+        "definition": "a loud sound that is not music or speech",
+        "type": "noun"
+      },
+      {
+        "word": "ensayo",
+        "surface": "ensayo",
+        "definition": "a practice session held before the real show",
+        "type": "noun"
+      },
+      {
+        "word": "fondo",
+        "surface": "fondo",
+        "definition": "the far end of a room, away from the door",
+        "type": "noun"
+      },
+      {
+        "word": "local",
+        "surface": "local",
+        "definition": "a small shop or bar in a city street",
+        "type": "noun"
+      },
+      {
+        "word": "avisar",
+        "surface": "avisá",
+        "definition": "to tell somebody in time so they can plan",
+        "type": "verb"
+      },
+      {
+        "word": "quedar",
+        "surface": "quedamos",
+        "definition": "to agree on a time and place to meet",
+        "type": "verb"
+      },
+      {
+        "word": "plan",
+        "surface": "plan",
+        "definition": "what people have agreed they will do together",
+        "type": "noun"
+      },
+      {
+        "word": "fila",
+        "surface": "fila",
+        "definition": "a line of people waiting to get in",
+        "type": "noun"
+      },
+      {
+        "word": "escenario",
+        "surface": "escenario",
+        "definition": "the raised floor where a band plays music",
+        "type": "noun"
+      },
+      {
+        "word": "cuadra",
+        "surface": "cuadra",
+        "definition": "the length of a street between two corners",
+        "type": "noun"
+      },
+      {
+        "word": "letra",
+        "surface": "letra",
+        "definition": "the words that a singer sings in a song",
+        "type": "noun"
+      },
+      {
+        "word": "acera",
+        "surface": "acera",
+        "definition": "the raised path beside a road for walking",
+        "type": "noun"
+      },
+      {
+        "word": "bordillo",
+        "surface": "bordillo",
+        "definition": "the stone edge between the path and the road",
+        "type": "noun"
+      },
+      {
+        "word": "sentado",
+        "surface": "sentado",
+        "definition": "resting on a seat rather than standing up",
+        "type": "adjective"
+      },
+      {
+        "word": "ansioso",
+        "surface": "ansioso",
+        "definition": "worried about something that is about to happen",
+        "type": "adjective"
+      },
+      {
+        "word": "invitar",
+        "surface": "invitan",
+        "definition": "to ask somebody to come to something with you",
+        "type": "verb"
+      },
+      {
+        "word": "pausa",
+        "surface": "pausa",
+        "definition": "a short stop in the middle of doing something",
+        "type": "noun"
+      }
+    ]
+  },
+  {
+    "topic": "plans-and-invitations",
+    "slotIndex": 2,
+    "slug": "otro-sello-para-corrientes",
+    "title": "Otro sello para Corrientes",
+    "arcType": "late-reveal",
+    "synopsis": "Para tocar en un local de la calle Corrientes hace falta un papel que nadie sabe explicar, y Lucas manda a Pablo a la oficina con una carpeta y la cedula. La empleada le aprueba media planilla, le pide otro sello y le dice sin enojarse que vuelva mañana, que es como funciona el servicio y no una desgracia personal.",
+    "text": "Un lunes temprano, en Buenos Aires, Lucas manda a Pablo a una oficina de Corrientes. Lleva la carpeta bajo el brazo y la cédula en el bolsillo. Huele a papel viejo desde la puerta.\n\n“¿Trae la planilla completa?” “Creo que sí; la llené anoche.” “Le falta la casilla y el sello de la empresa.”\n\nLa empleada le aprueba el pedido y le marca dónde firmar. Sobre la mesa hay papeles en orden. Pablo pregunta si es el único trámite.\n\n“Es la regla: primero el sello y después el servicio.” Pablo pregunta cuánto tarda y la empleada mueve la cabeza.\n\nDesde el escritorio, la empleada lo mira y Pablo no se pone enojado. “Entonces vuelvo mañana: ida y vuelta otra vez, y un veinte por ciento de suerte.” La empleada le sonríe y le dice que tanto papel se aprende rápido.",
+    "vocab": [
+      {
+        "word": "oficina",
+        "surface": "oficina",
+        "definition": "a room where people work sitting at desks",
+        "type": "noun"
+      },
+      {
+        "word": "carpeta",
+        "surface": "carpeta",
+        "definition": "a stiff folder for keeping loose papers together",
+        "type": "noun"
+      },
+      {
+        "word": "cédula",
+        "surface": "cédula",
+        "definition": "the card that proves who a person is",
+        "type": "noun"
+      },
+      {
+        "word": "planilla",
+        "surface": "planilla",
+        "definition": "a printed sheet with boxes you must fill in",
+        "type": "noun"
+      },
+      {
+        "word": "completo",
+        "surface": "completa",
+        "definition": "with nothing left out or missing at all",
+        "type": "adjective"
+      },
+      {
+        "word": "casilla",
+        "surface": "casilla",
+        "definition": "a small box on a form where you write",
+        "type": "noun"
+      },
+      {
+        "word": "sello",
+        "surface": "sello",
+        "definition": "the ink mark that makes a paper official",
+        "type": "noun"
+      },
+      {
+        "word": "empresa",
+        "surface": "empresa",
+        "definition": "a company that employs people and sells something",
+        "type": "noun"
+      },
+      {
+        "word": "empleado",
+        "surface": "empleada",
+        "definition": "a person who works for a company or office",
+        "type": "noun"
+      },
+      {
+        "word": "aprobar",
+        "surface": "aprueba",
+        "definition": "to say yes to something in an official way",
+        "type": "verb"
+      },
+      {
+        "word": "pedido",
+        "surface": "pedido",
+        "definition": "a request made to somebody who is in charge",
+        "type": "noun"
+      },
+      {
+        "word": "escritorio",
+        "surface": "escritorio",
+        "definition": "the table where somebody works sitting down all day",
+        "type": "noun"
+      },
+      {
+        "word": "orden",
+        "surface": "orden",
+        "definition": "the way things are arranged one after another",
+        "type": "noun"
+      },
+      {
+        "word": "único",
+        "surface": "único",
+        "definition": "the only one of its kind in that place",
+        "type": "adjective"
+      },
+      {
+        "word": "regla",
+        "surface": "regla",
+        "definition": "something that must be done in a fixed way",
+        "type": "noun"
+      },
+      {
+        "word": "servicio",
+        "surface": "servicio",
+        "definition": "the work an office does for the public",
+        "type": "noun"
+      },
+      {
+        "word": "por ciento",
+        "surface": "por ciento",
+        "definition": "out of every hundred, as a share of something",
+        "type": "expression"
+      },
+      {
+        "word": "enojado",
+        "surface": "enojado",
+        "definition": "angry about something that has just gone wrong",
+        "type": "adjective"
+      },
+      {
+        "word": "ida y vuelta",
+        "surface": "ida y vuelta",
+        "definition": "going somewhere and coming back the same day",
+        "type": "expression"
+      },
+      {
+        "word": "tanto",
+        "surface": "tanto",
+        "definition": "such a large amount of something as that",
+        "type": "adverb"
+      }
+    ]
+  },
+  {
+    "topic": "plans-and-invitations",
+    "slotIndex": 3,
+    "slug": "empanadas-y-un-submarino",
+    "title": "Empanadas y un submarino",
+    "arcType": "recurring-character-callback",
+    "synopsis": "El asado en la terraza de Lucas junta a los mismos de siempre y a Pablo, que esta vez no llega de invitado sino con la picada y las empanadas bajo el brazo. Sofia trae la noticia mala de la noche, y lo que decide el final no es lo que dicen sino que nadie se va a su casa hasta que se enfria el ultimo submarino.",
+    "text": "Doce escalones más arriba, la terraza de Lucas queda amplia y sin techo. En Buenos Aires nadie sube con las manos vacías. Pablo llega con la picada en una mano y las empanadas en la otra.\n\nLucas ata un globo a la cadena de metal y sostiene la bandeja con el brazo estirado. “Traje de más, por si acaso.” “Siempre falta algo, así que está bien.”\n\nSofía llega con malas noticias. “Se cae el ensayo del jueves; el local no nos dio permiso.” Nadie habla durante un rato y después el clima se pone ligero otra vez. Marta le pasa un submarino caliente.\n\n“¿Y ahora qué hacemos el jueves?” “Lo mismo, pero acá.” “Entonces yo traigo el asado y vos ponés tanto disco como quieras.”\n\nPablo mira alrededor y se le queda la mirada quieta un momento. Tiene la mejilla caliente, el labio partido de reír y un peso menos en el pecho. Con las piernas cansadas, nadie baja los escalones hasta las tres.",
+    "vocab": [
+      {
+        "word": "escalón",
+        "surface": "escalones",
+        "definition": "one of the steps you climb in a stair",
+        "type": "noun"
+      },
+      {
+        "word": "amplio",
+        "surface": "amplia",
+        "definition": "with a lot of open space inside it",
+        "type": "adjective"
+      },
+      {
+        "word": "picada",
+        "surface": "picada",
+        "definition": "small plates of food shared before a meal",
+        "type": "noun"
+      },
+      {
+        "word": "empanada",
+        "surface": "empanadas",
+        "definition": "a folded pastry filled with meat or cheese",
+        "type": "noun"
+      },
+      {
+        "word": "globo",
+        "surface": "globo",
+        "definition": "a coloured rubber bag that is filled with air",
+        "type": "noun"
+      },
+      {
+        "word": "cadena",
+        "surface": "cadena",
+        "definition": "metal rings joined together in a long line",
+        "type": "noun"
+      },
+      {
+        "word": "sostener",
+        "surface": "sostiene",
+        "definition": "to hold something up so it does not fall",
+        "type": "verb"
+      },
+      {
+        "word": "brazo",
+        "surface": "brazo",
+        "definition": "the part of the body from shoulder to hand",
+        "type": "noun"
+      },
+      {
+        "word": "malas noticias",
+        "surface": "malas noticias",
+        "definition": "news that somebody will not be glad to hear",
+        "type": "expression"
+      },
+      {
+        "word": "clima",
+        "surface": "clima",
+        "definition": "the general mood among the people who are present",
+        "type": "noun"
+      },
+      {
+        "word": "ligero",
+        "surface": "ligero",
+        "definition": "light and easy, not heavy or serious at all",
+        "type": "adjective"
+      },
+      {
+        "word": "submarino",
+        "surface": "submarino",
+        "definition": "hot milk with a chocolate bar melted inside",
+        "type": "noun"
+      },
+      {
+        "word": "asado",
+        "surface": "asado",
+        "definition": "meat cooked slowly over a fire out of doors",
+        "type": "noun"
+      },
+      {
+        "word": "mirada",
+        "surface": "mirada",
+        "definition": "the way a person looks at something or someone",
+        "type": "noun"
+      },
+      {
+        "word": "mejilla",
+        "surface": "mejilla",
+        "definition": "the soft side of your face below the eye",
+        "type": "noun"
+      },
+      {
+        "word": "labio",
+        "surface": "labio",
+        "definition": "one of the two soft edges of your mouth",
+        "type": "noun"
+      },
+      {
+        "word": "pecho",
+        "surface": "pecho",
+        "definition": "the front part of your body below the neck",
+        "type": "noun"
+      },
+      {
+        "word": "pierna",
+        "surface": "piernas",
+        "definition": "one of the two parts you walk with",
+        "type": "noun"
+      },
+      {
+        "word": "metal",
+        "surface": "metal",
+        "definition": "hard shiny material such as iron or steel",
+        "type": "noun"
+      },
+      {
+        "word": "tanto",
+        "surface": "tanto",
+        "definition": "such a large amount of something as that",
+        "type": "adverb"
       }
     ]
   }

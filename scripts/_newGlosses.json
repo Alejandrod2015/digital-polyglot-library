@@ -8073,6 +8073,598 @@
     "escala": {
       "g": "stopover, layover",
       "t": "noun"
+    },
+    "abanica": {
+      "g": "fans herself to feel cooler (abanicarse)",
+      "t": "verb"
+    },
+    "abiertas": {
+      "g": "open, not closed (feminine plural)",
+      "t": "adjective"
+    },
+    "afila": {
+      "g": "sharpens something to a point (afilar)",
+      "t": "verb"
+    },
+    "ahorra": {
+      "g": "saves money instead of spending it (ahorrar)",
+      "t": "verb"
+    },
+    "ala": {
+      "g": "the wing of a bird or a carved animal",
+      "t": "noun"
+    },
+    "alveiro": {
+      "g": "Alveiro (man's name)",
+      "t": "noun"
+    },
+    "amplia": {
+      "g": "wide and open, with plenty of room (feminine)",
+      "t": "adjective"
+    },
+    "ansioso": {
+      "g": "worried about something about to happen",
+      "t": "adjective"
+    },
+    "anótalo": {
+      "g": "write it down (anotar, informal command)",
+      "t": "verb"
+    },
+    "anótate": {
+      "g": "write this down for yourself (anotarse)",
+      "t": "verb"
+    },
+    "apagaran": {
+      "g": "they turned off (apagar, past subjunctive)",
+      "t": "verb"
+    },
+    "apague": {
+      "g": "runs out of power (apagarse, subjunctive)",
+      "t": "verb"
+    },
+    "apellido": {
+      "g": "the family name that follows your first name",
+      "t": "noun"
+    },
+    "apunta": {
+      "g": "writes a short note down (apuntar)",
+      "t": "verb"
+    },
+    "apurado": {
+      "g": "in a hurry to get somewhere",
+      "t": "adjective"
+    },
+    "avisá": {
+      "g": "let me know (avisar, River Plate command)",
+      "t": "verb"
+    },
+    "barniz": {
+      "g": "clear liquid brushed on wood to protect it",
+      "t": "noun"
+    },
+    "bañarse": {
+      "g": "to wash your whole body in the shower",
+      "t": "verb"
+    },
+    "bolsas": {
+      "g": "bags for carrying shopping home",
+      "t": "noun"
+    },
+    "bolsita": {
+      "g": "a small thin bag for a few things",
+      "t": "noun"
+    },
+    "borre": {
+      "g": "delete (borrar, subjunctive after a request)",
+      "t": "verb"
+    },
+    "brillo": {
+      "g": "the shine a smooth surface gives back",
+      "t": "noun"
+    },
+    "buscarla": {
+      "g": "to go and look for it (buscar + la)",
+      "t": "verb"
+    },
+    "butaca": {
+      "g": "a low chair with arms",
+      "t": "noun"
+    },
+    "caigan": {
+      "g": "they fall (caer, subjunctive)",
+      "t": "verb"
+    },
+    "camine": {
+      "g": "walk (caminar, subjunctive after a request)",
+      "t": "verb"
+    },
+    "cansadas": {
+      "g": "tired, with no strength left (feminine plural)",
+      "t": "adjective"
+    },
+    "capa": {
+      "g": "a thin layer of paint spread over something",
+      "t": "noun"
+    },
+    "carnicería": {
+      "g": "the stall or shop where meat is sold",
+      "t": "noun"
+    },
+    "chirría": {
+      "g": "makes a high scratchy noise (chirriar)",
+      "t": "verb"
+    },
+    "coincide": {
+      "g": "matches exactly what the other says (coincidir)",
+      "t": "verb"
+    },
+    "columna": {
+      "g": "a tall narrow list of words one under another",
+      "t": "noun"
+    },
+    "compran": {
+      "g": "they buy something (comprar)",
+      "t": "verb"
+    },
+    "conecta": {
+      "g": "plugs one thing into another (conectar)",
+      "t": "verb"
+    },
+    "conforma": {
+      "g": "settles for what she was given (conformarse)",
+      "t": "verb"
+    },
+    "consigo": {
+      "g": "I get hold of something for you (conseguir)",
+      "t": "verb"
+    },
+    "contacto": {
+      "g": "a name and number saved in a phone",
+      "t": "noun"
+    },
+    "contéstame": {
+      "g": "answer me (contestar + me, command)",
+      "t": "verb"
+    },
+    "corrida": {
+      "g": "pulled across, as a curtain is (feminine)",
+      "t": "adjective"
+    },
+    "corrientes": {
+      "g": "Corrientes (a long street in Buenos Aires)",
+      "t": "noun"
+    },
+    "cortado": {
+      "g": "a small coffee with a little milk",
+      "t": "noun"
+    },
+    "cómpralo": {
+      "g": "buy it (comprar + lo, command)",
+      "t": "verb"
+    },
+    "das": {
+      "g": "you hand it over to somebody (dar)",
+      "t": "verb"
+    },
+    "dicta": {
+      "g": "says it slowly so you can write it (dictar)",
+      "t": "verb"
+    },
+    "dile": {
+      "g": "tell him or her (decir + le, command)",
+      "t": "verb"
+    },
+    "disponible": {
+      "g": "free to be taken by somebody",
+      "t": "adjective"
+    },
+    "diste": {
+      "g": "you gave (dar, past)",
+      "t": "verb"
+    },
+    "doblada": {
+      "g": "folded over on itself (feminine)",
+      "t": "adjective"
+    },
+    "dobladas": {
+      "g": "folded over on themselves (feminine plural)",
+      "t": "adjective"
+    },
+    "durmiendo": {
+      "g": "sleeping right now (dormir)",
+      "t": "verb"
+    },
+    "empleada": {
+      "g": "a woman who works in an office or shop",
+      "t": "noun"
+    },
+    "encendido": {
+      "g": "switched on and working",
+      "t": "adjective"
+    },
+    "enlace": {
+      "g": "a web address you tap to open something",
+      "t": "noun"
+    },
+    "enojado": {
+      "g": "angry about what has just happened",
+      "t": "adjective"
+    },
+    "ensayo": {
+      "g": "a practice session before the real show",
+      "t": "noun"
+    },
+    "enseñes": {
+      "g": "show it (enseñar, subjunctive after no)",
+      "t": "verb"
+    },
+    "entornada": {
+      "g": "left slightly open, not shut (feminine)",
+      "t": "adjective"
+    },
+    "erraste": {
+      "g": "you got it wrong (errar, past)",
+      "t": "verb"
+    },
+    "error": {
+      "g": "a mistake in a count or a sum",
+      "t": "noun"
+    },
+    "escalones": {
+      "g": "the steps you climb in a staircase",
+      "t": "noun"
+    },
+    "escrita": {
+      "g": "written down somewhere (feminine)",
+      "t": "adjective"
+    },
+    "escrito": {
+      "g": "written down somewhere, not just said",
+      "t": "adjective"
+    },
+    "estirado": {
+      "g": "held out straight, fully extended",
+      "t": "adjective"
+    },
+    "factura": {
+      "g": "a sweet pastry, or the bill you must pay",
+      "t": "noun"
+    },
+    "firma": {
+      "g": "sign your name (firmar, command)",
+      "t": "verb"
+    },
+    "firmar": {
+      "g": "to write your name to agree to something",
+      "t": "verb"
+    },
+    "galleta": {
+      "g": "a small hard sweet biscuit",
+      "t": "noun"
+    },
+    "gano": {
+      "g": "I gain or earn something (ganar)",
+      "t": "verb"
+    },
+    "globo": {
+      "g": "a coloured rubber bag filled with air",
+      "t": "noun"
+    },
+    "gritan": {
+      "g": "they shout so you can hear (gritar)",
+      "t": "verb"
+    },
+    "guardarlas": {
+      "g": "to put them away safely (guardar + las)",
+      "t": "verb"
+    },
+    "iguales": {
+      "g": "the same as each other, with no difference",
+      "t": "adjective"
+    },
+    "incorrecto": {
+      "g": "wrong, not the way it should be",
+      "t": "adjective"
+    },
+    "intenta": {
+      "g": "tries to do something difficult (intentar)",
+      "t": "verb"
+    },
+    "jitomate": {
+      "g": "the red round fruit Mexicans cook with",
+      "t": "noun"
+    },
+    "jitomates": {
+      "g": "the red round fruit Mexicans cook with (plural)",
+      "t": "noun"
+    },
+    "juliaca": {
+      "g": "Juliaca (a town in southern Peru)",
+      "t": "noun"
+    },
+    "juntar": {
+      "g": "to put two separate pieces back together",
+      "t": "verb"
+    },
+    "letra": {
+      "g": "the words a singer sings in a song",
+      "t": "noun"
+    },
+    "lisa": {
+      "g": "smooth to the touch, with nothing sticking out",
+      "t": "adjective"
+    },
+    "llenes": {
+      "g": "fill it (llenar, subjunctive after no)",
+      "t": "verb"
+    },
+    "llené": {
+      "g": "I filled it in (llenar, past)",
+      "t": "verb"
+    },
+    "llevas": {
+      "g": "you take something with you (llevar)",
+      "t": "verb"
+    },
+    "lomito": {
+      "g": "a thin beef steak in a bread roll",
+      "t": "noun"
+    },
+    "mancha": {
+      "g": "a dirty mark that spoils the look",
+      "t": "noun"
+    },
+    "mando": {
+      "g": "I send it to somebody (mandar)",
+      "t": "verb"
+    },
+    "maneras": {
+      "g": "different ways of saying or doing something",
+      "t": "noun"
+    },
+    "mojadas": {
+      "g": "wet, not dry at all (feminine plural)",
+      "t": "adjective"
+    },
+    "mueble": {
+      "g": "a large wooden thing such as a table",
+      "t": "noun"
+    },
+    "muebles": {
+      "g": "large wooden things such as tables and cupboards",
+      "t": "noun"
+    },
+    "nadia": {
+      "g": "Nadia (woman's name)",
+      "t": "noun"
+    },
+    "nariz": {
+      "g": "the part of your face you breathe through",
+      "t": "noun"
+    },
+    "pediste": {
+      "g": "you asked for it (pedir, past)",
+      "t": "verb"
+    },
+    "pican": {
+      "g": "they sting or burn a little (picar)",
+      "t": "verb"
+    },
+    "pincel": {
+      "g": "the small brush used for putting paint on",
+      "t": "noun"
+    },
+    "plástico": {
+      "g": "the light cheap material chairs are made of",
+      "t": "noun"
+    },
+    "ponlo": {
+      "g": "put it there (poner + lo, command)",
+      "t": "verb"
+    },
+    "ponés": {
+      "g": "you put something on (poner, River Plate)",
+      "t": "verb"
+    },
+    "pregunte": {
+      "g": "ask (preguntar, subjunctive after no)",
+      "t": "verb"
+    },
+    "preguntes": {
+      "g": "ask (preguntar, subjunctive after no)",
+      "t": "verb"
+    },
+    "presto": {
+      "g": "I lend it for a while (prestar)",
+      "t": "verb"
+    },
+    "puedas": {
+      "g": "you can (poder, subjunctive after donde)",
+      "t": "verb"
+    },
+    "puertas": {
+      "g": "the doors you open to go into a room",
+      "t": "noun"
+    },
+    "puse": {
+      "g": "I put it there (poner, past)",
+      "t": "verb"
+    },
+    "pídele": {
+      "g": "ask him or her for it (pedir + le, command)",
+      "t": "verb"
+    },
+    "quitándote": {
+      "g": "taking it away from you (quitar)",
+      "t": "verb"
+    },
+    "rebanada": {
+      "g": "a flat piece cut from something larger",
+      "t": "noun"
+    },
+    "recta": {
+      "g": "straight, with no bend at all (feminine)",
+      "t": "adjective"
+    },
+    "redondo": {
+      "g": "ending in zero, with no small coins",
+      "t": "adjective"
+    },
+    "retraso": {
+      "g": "the extra time you wait when something comes late",
+      "t": "noun"
+    },
+    "retrato": {
+      "g": "a picture showing one person's face",
+      "t": "noun"
+    },
+    "romo": {
+      "g": "not sharp any more, worn down",
+      "t": "adjective"
+    },
+    "rompió": {
+      "g": "it broke into pieces (romperse, past)",
+      "t": "verb"
+    },
+    "rueda": {
+      "g": "rolls along the ground (rodar)",
+      "t": "verb"
+    },
+    "salado": {
+      "g": "tasting strongly of salt, not sweet",
+      "t": "adjective"
+    },
+    "sentado": {
+      "g": "resting on a seat rather than standing",
+      "t": "adjective"
+    },
+    "seque": {
+      "g": "dries out (secar, subjunctive after para que)",
+      "t": "verb"
+    },
+    "servilletas": {
+      "g": "small paper squares for wiping your mouth",
+      "t": "noun"
+    },
+    "sesenta": {
+      "g": "sixty",
+      "t": "noun"
+    },
+    "sobrina": {
+      "g": "the daughter of your brother or sister",
+      "t": "noun"
+    },
+    "submarino": {
+      "g": "hot milk with a chocolate bar melted inside",
+      "t": "noun"
+    },
+    "sujeta": {
+      "g": "holds it in place so it cannot move (sujetar)",
+      "t": "verb"
+    },
+    "sábana": {
+      "g": "the wide thin cloth you sleep between",
+      "t": "noun"
+    },
+    "tapar": {
+      "g": "to cover something so it cannot be seen",
+      "t": "verb"
+    },
+    "telaraña": {
+      "g": "the thin web a spider leaves in a corner",
+      "t": "noun"
+    },
+    "terminas": {
+      "g": "you finish it off (terminar)",
+      "t": "verb"
+    },
+    "termos": {
+      "g": "tall flasks that keep a drink hot",
+      "t": "noun"
+    },
+    "terrestre": {
+      "g": "by land, as opposed to by air",
+      "t": "adjective"
+    },
+    "tires": {
+      "g": "throw it away (tirar, subjunctive after no)",
+      "t": "verb"
+    },
+    "tocarlo": {
+      "g": "to touch it with your hand (tocar + lo)",
+      "t": "verb"
+    },
+    "tornillo": {
+      "g": "a metal pin with a thread that turns in",
+      "t": "noun"
+    },
+    "trayecto": {
+      "g": "the whole distance covered between two places",
+      "t": "noun"
+    },
+    "traza": {
+      "g": "draws a line across something (trazar)",
+      "t": "verb"
+    },
+    "traé": {
+      "g": "bring it (traer, River Plate command)",
+      "t": "verb"
+    },
+    "tubería": {
+      "g": "the pipe that carries water through a building",
+      "t": "noun"
+    },
+    "untas": {
+      "g": "you spread something soft over bread (untar)",
+      "t": "verb"
+    },
+    "usa": {
+      "g": "uses a thing for its purpose (usar)",
+      "t": "verb"
+    },
+    "viajero": {
+      "g": "a person who is making a journey",
+      "t": "noun"
+    },
+    "visitante": {
+      "g": "somebody who is here for a short time only",
+      "t": "noun"
+    },
+    "vivir": {
+      "g": "to have your home in a place",
+      "t": "verb"
+    },
+    "zapatillas": {
+      "g": "the soft shoes worn for walking and sport",
+      "t": "noun"
+    },
+    "bajar": {
+      "g": "to take something down from a high place",
+      "t": "verb"
+    },
+    "bandeja": {
+      "g": "the flat tray used for carrying food and drinks",
+      "t": "noun"
+    },
+    "clavo": {
+      "g": "a thin metal pin hammered into wood",
+      "t": "noun"
+    },
+    "horario": {
+      "g": "the list of times at which buses leave",
+      "t": "noun"
+    },
+    "marcar": {
+      "g": "to press the numbers that call a telephone",
+      "t": "verb"
+    },
+    "partido": {
+      "g": "split open, broken in two",
+      "t": "adjective"
+    },
+    "vacías": {
+      "g": "empty, with nothing inside (feminine plural)",
+      "t": "adjective"
     }
   }
 }
