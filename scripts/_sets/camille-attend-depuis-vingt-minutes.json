@@ -273,7 +273,7 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "basse",
+  "word": "bas",
   "sentence": "Elle parle d'une voix [[basse]] dans le tram.",
   "payload": {
    "prompt": "Choose the meaning in context.",

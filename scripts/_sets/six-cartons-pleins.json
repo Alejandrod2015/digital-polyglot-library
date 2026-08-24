@@ -323,12 +323,12 @@
   "sentence": "Trois [[cartons]] rangés avant midi, le dimanche.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "boxes",
+   "answer": "a cardboard box",
    "options": [
-    "boxes",
-    "shelves",
-    "chairs",
-    "bags"
+    "a cardboard box",
+    "a shelf",
+    "a chair",
+    "a bag"
    ],
    "audioClip": {
     "storySlug": "six-cartons-pleins",

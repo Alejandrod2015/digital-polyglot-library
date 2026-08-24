@@ -56,12 +56,12 @@
   "sentence": "Le carton reste fermé deux [[semaines]] dans un coin.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "weeks",
+   "answer": "a week",
    "options": [
-    "weeks",
-    "hours",
-    "months",
-    "years"
+    "a week",
+    "an hour",
+    "a month",
+    "a year"
    ],
    "audioClip": {
     "storySlug": "trop-grande-pour-le-lit",

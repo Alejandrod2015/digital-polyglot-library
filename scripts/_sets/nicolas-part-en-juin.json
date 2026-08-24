@@ -388,7 +388,7 @@
  },
  {
   "type": "meaning_in_context",
-  "word": "seule",
+  "word": "seul",
   "sentence": "Elle se trompe et corrige toute [[seule]].",
   "payload": {
    "prompt": "Choose the meaning in context.",

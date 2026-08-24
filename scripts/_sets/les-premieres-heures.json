@@ -498,12 +498,12 @@
   "sentence": "“Et les [[rideaux]] ?”, demande sa mère.",
   "payload": {
    "prompt": "Choose the meaning in context.",
-   "answer": "curtains",
+   "answer": "a curtain",
    "options": [
-    "curtains",
-    "keys",
-    "boxes",
-    "plates"
+    "a curtain",
+    "a key",
+    "a box",
+    "a plate"
    ],
    "audioClip": {
     "storySlug": "les-premieres-heures",
