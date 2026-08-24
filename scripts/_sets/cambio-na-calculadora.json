@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "câmbio,guichê,calculadora,recibo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "câmbio",
+          "answer": "an exchange office",
+          "options": [
+            "an exchange office",
+            "a counter window",
+            "a calculator",
+            "a receipt"
+          ]
+        },
+        {
+          "word": "guichê",
+          "answer": "a counter window",
+          "options": [
+            "an exchange office",
+            "a counter window",
+            "a calculator",
+            "a receipt"
+          ]
+        },
+        {
+          "word": "calculadora",
+          "answer": "a calculator",
+          "options": [
+            "an exchange office",
+            "a counter window",
+            "a calculator",
+            "a receipt"
+          ]
+        },
+        {
+          "word": "recibo",
+          "answer": "a receipt",
+          "options": [
+            "an exchange office",
+            "a counter window",
+            "a calculator",
+            "a receipt"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "maço",
+    "sentence": "O moço passa um [[maço]] de notas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bundle",
+      "options": [
+        "a bundle",
+        "a coin",
+        "a card",
+        "a folder"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "O moço passa um maço de notas.",
+        "targetWord": "maço",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guarani",
+    "sentence": "Conta os [[guaranis]] em maços de cinco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "guaraníes, the currency",
+      "options": [
+        "guaraníes, the currency",
+        "stamps",
+        "tickets",
+        "receipts"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "Conta os guaranis em maços de cinco.",
+        "targetWord": "guaranis",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cotação",
+    "sentence": "“Cem reais na [[cotação]] de hoje dá isso”, diz Larissa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the exchange rate",
+      "options": [
+        "the exchange rate",
+        "the queue",
+        "the deposit",
+        "the discount"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "“Cem reais na cotação de hoje dá isso”, diz Larissa.",
+        "targetWord": "cotação",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vidro",
+    "sentence": "Na casa de câmbio da ponte o [[vidro]] está morno de sol.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the glass pane",
+      "options": [
+        "the glass pane",
+        "the door",
+        "the roof",
+        "the floor"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "Na casa de câmbio da ponte o vidro está morno de sol.",
+        "targetWord": "vidro",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "engano",
+    "sentence": "“Foi [[engano]], não mentira”, diz o moço.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a mistake",
+      "options": [
+        "a mistake",
+        "a favour",
+        "a rule",
+        "a joke"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "“Foi engano, não mentira”, diz o moço.",
+        "targetWord": "engano",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "total",
+    "sentence": "Rafaela conta duas vezes: o [[total]] muda nas duas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the total",
+      "options": [
+        "the total",
+        "the change",
+        "the queue",
+        "the receipt"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "Rafaela conta duas vezes: o total muda nas duas.",
+        "targetWord": "total",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "digitar",
+    "sentence": "“Cem reais na cotação de hoje dá isso”, diz, [[digitando]] na calculadora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to type",
+      "options": [
+        "to type",
+        "to shout",
+        "to erase",
+        "to fold"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "“Cem reais na cotação de hoje dá isso”, diz, digitando na calculadora.",
+        "targetWord": "digitando",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "humor",
+    "sentence": "Larissa faz tudo de bom [[humor]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mood",
+      "options": [
+        "mood",
+        "luck",
+        "weight",
+        "speed"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "Larissa faz tudo de bom humor.",
+        "targetWord": "humor",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "discutir",
+    "sentence": "As duas voltam ao guichê e Larissa não [[discute]] o assunto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to argue",
+      "options": [
+        "to argue",
+        "to pay",
+        "to leave",
+        "to write"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "As duas voltam ao guichê e Larissa não discute o assunto.",
+        "targetWord": "discute",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "desconto",
+    "sentence": "“É um [[desconto]] que ninguém pediu.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a discount",
+      "options": [
+        "a discount",
+        "a receipt",
+        "a queue",
+        "a delay"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "“É um desconto que ninguém pediu.”",
+        "targetWord": "desconto",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gorjeta",
+    "sentence": "Larissa faz tudo de bom humor e não deixa [[gorjeta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tip",
+      "options": [
+        "a tip",
+        "a mess",
+        "a note",
+        "a card"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "Larissa faz tudo de bom humor e não deixa gorjeta.",
+        "targetWord": "gorjeta",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raso",
+    "sentence": "Larissa espera lá fora com a bandeja [[rasa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shallow",
+      "options": [
+        "shallow",
+        "heavy",
+        "broken",
+        "round"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "Larissa espera lá fora com a bandeja rasa.",
+        "targetWord": "rasa",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "conferir",
+    "sentence": "Ele passa as notas e pede para ela _____ o dinheiro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "conferir",
+      "options": [
+        "conferir",
+        "guardar",
+        "gastar",
+        "dobrar"
+      ],
+      "translation": "He hands over the notes and asks her to _____ the money.",
+      "optionTranslations": [
+        "check",
+        "keep",
+        "spend",
+        "fold"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "Ele passa as notas e pede para ela conferir o dinheiro.",
+        "targetWord": "conferir",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/516da3683e164ddb.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "faltam",
+    "sentence": "Ela conta de novo e vê que _____ vinte mil.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "faltam",
+      "options": [
+        "faltam",
+        "sobram",
+        "chegam",
+        "custam"
+      ],
+      "translation": "She counts again and sees that twenty thousand _____.",
+      "optionTranslations": [
+        "are missing",
+        "are left over",
+        "arrive",
+        "cost"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "Ela conta de novo e vê que faltam vinte mil.",
+        "targetWord": "faltam",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef79f7554d2bd39c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "combinar",
+    "sentence": "Antes de subir, as duas voltam a _____ o preço do ônibus.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "combinar",
+      "options": [
+        "combinar",
+        "perder",
+        "pagar",
+        "escrever"
+      ],
+      "translation": "Before getting on, the two of them go back to _____ the bus price.",
+      "optionTranslations": [
+        "agree on",
+        "lose",
+        "pay",
+        "write"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "Antes de subir, as duas voltam a combinar o preço do ônibus.",
+        "targetWord": "combinar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64561f893e3add5c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "papel",
+    "sentence": "Larissa pede o _____ que prova quanto ele trocou.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "papel",
+      "options": [
+        "papel",
+        "troco",
+        "banco",
+        "vidro"
+      ],
+      "translation": "Larissa asks for the _____ that proves how much he exchanged.",
+      "optionTranslations": [
+        "paper",
+        "change",
+        "bank",
+        "glass"
+      ],
+      "audioClip": {
+        "storySlug": "cambio-na-calculadora",
+        "storySource": "user",
+        "sentence": "Larissa pede o papel que prova quanto ele trocou.",
+        "targetWord": "papel",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d095c4ad89647cd0.mp3"
+      }
+    },
+    "featured": false
+  }
+]

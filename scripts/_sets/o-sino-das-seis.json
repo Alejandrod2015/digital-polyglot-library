@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "sino,capela,travesseiro,cobertor",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "sino",
+          "answer": "a bell",
+          "options": [
+            "a bell",
+            "a chapel",
+            "a pillow",
+            "a blanket"
+          ]
+        },
+        {
+          "word": "capela",
+          "answer": "a chapel",
+          "options": [
+            "a bell",
+            "a chapel",
+            "a pillow",
+            "a blanket"
+          ]
+        },
+        {
+          "word": "travesseiro",
+          "answer": "a pillow",
+          "options": [
+            "a bell",
+            "a chapel",
+            "a pillow",
+            "a blanket"
+          ]
+        },
+        {
+          "word": "cobertor",
+          "answer": "a blanket",
+          "options": [
+            "a bell",
+            "a chapel",
+            "a pillow",
+            "a blanket"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "badalada",
+    "sentence": "A [[badalada]] das seis é um toque curto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bell stroke",
+      "options": [
+        "a bell stroke",
+        "a whistle",
+        "a knock",
+        "a song"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "A badalada das seis é um toque curto.",
+        "targetWord": "badalada",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "eco",
+    "sentence": "O [[eco]] do sino volta pela sacada do quarto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the echo",
+      "options": [
+        "the echo",
+        "the light",
+        "the wind",
+        "the smell"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "O eco do sino volta pela sacada do quarto.",
+        "targetWord": "eco",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "missa",
+    "sentence": "“O primeiro chama a [[missa]]”, explica a dona.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mass",
+      "options": [
+        "mass",
+        "the market",
+        "breakfast",
+        "the bus"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "“O primeiro chama a missa”, explica a dona.",
+        "targetWord": "missa",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "padre",
+    "sentence": "Meia hora depois o [[padre]] abre a capela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the priest",
+      "options": [
+        "the priest",
+        "the cook",
+        "the guard",
+        "the neighbour"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "Meia hora depois o padre abre a capela.",
+        "targetWord": "padre",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "morro",
+    "sentence": "O quarto de Rafaela fica no [[morro]], atrás da capela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the hill",
+      "options": [
+        "the hill",
+        "the square",
+        "the river",
+        "the road"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "O quarto de Rafaela fica no morro, atrás da capela.",
+        "targetWord": "morro",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "neblina",
+    "sentence": "Rafaela abre a janela para a [[neblina]] fria.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the mist",
+      "options": [
+        "the mist",
+        "the sun",
+        "the rain",
+        "the snow"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "Rafaela abre a janela para a neblina fria.",
+        "targetWord": "neblina",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raiva",
+    "sentence": "Nos primeiros dias ela xinga com [[raiva]] às seis.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "anger",
+      "options": [
+        "anger",
+        "sleep",
+        "joy",
+        "fear"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "Nos primeiros dias ela xinga com raiva às seis.",
+        "targetWord": "raiva",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "santo",
+    "sentence": "Uma senhora atravessa a praça para rezar ao [[santo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the saint",
+      "options": [
+        "the saint",
+        "the priest",
+        "the mayor",
+        "the doctor"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "Uma senhora atravessa a praça para rezar ao santo.",
+        "targetWord": "santo",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "toque",
+    "sentence": "No quarto dia a ordem dos [[toques]] funciona como relógio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the rings",
+      "options": [
+        "the rings",
+        "the buses",
+        "the meals",
+        "the lights"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "No quarto dia a ordem dos toques funciona como relógio.",
+        "targetWord": "toques",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bule",
+    "sentence": "O terceiro toque é o café, com [[bule]] na mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a coffee pot",
+      "options": [
+        "a coffee pot",
+        "a spoon",
+        "a glass",
+        "a plate"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "O terceiro toque é o café, com bule na mesa.",
+        "targetWord": "bule",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "manteiga",
+    "sentence": "O café tem bule e [[manteiga]] na mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "butter",
+      "options": [
+        "butter",
+        "honey",
+        "cheese",
+        "salt"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "O café tem bule e manteiga na mesa.",
+        "targetWord": "manteiga",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pior",
+    "sentence": "“Cinco é [[pior]]”, responde Matheus, rindo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "worse",
+      "options": [
+        "worse",
+        "earlier",
+        "enough",
+        "the same"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "“Cinco é pior”, responde Matheus, rindo.",
+        "targetWord": "pior",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rezar",
+    "sentence": "A senhora atravessa a praça só para _____ um minuto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rezar",
+      "options": [
+        "rezar",
+        "comprar",
+        "correr",
+        "cantar"
+      ],
+      "translation": "The woman crosses the square just to _____ for a minute.",
+      "optionTranslations": [
+        "pray",
+        "buy",
+        "run",
+        "sing"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "A senhora atravessa a praça só para rezar um minuto.",
+        "targetWord": "rezar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d5b0074b1fbbd64.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "atravessar",
+    "sentence": "Lá embaixo uma senhora começa a _____ a praça.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "atravessar",
+      "options": [
+        "atravessar",
+        "limpar",
+        "fechar",
+        "pintar"
+      ],
+      "translation": "Down below a woman starts to _____ the square.",
+      "optionTranslations": [
+        "cross",
+        "clean",
+        "close",
+        "paint"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "Lá embaixo uma senhora começa a atravessar a praça.",
+        "targetWord": "atravessar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2db9be27f6c06de.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "costume",
+    "sentence": "“Aqui todo mundo acorda por _____”, responde a dona.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "costume",
+      "options": [
+        "costume",
+        "engano",
+        "medo",
+        "sorte"
+      ],
+      "translation": "“Here everybody wakes up out of _____,” answers the owner.",
+      "optionTranslations": [
+        "habit",
+        "mistake",
+        "fear",
+        "luck"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "“Aqui todo mundo acorda por costume”, responde a dona.",
+        "targetWord": "costume",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a374395cc5804554.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sacada",
+    "sentence": "O eco do sino volta pela _____ do quarto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sacada",
+      "options": [
+        "sacada",
+        "cozinha",
+        "escada",
+        "rua"
+      ],
+      "translation": "The echo of the bell comes back through the room's _____.",
+      "optionTranslations": [
+        "balcony",
+        "kitchen",
+        "stairs",
+        "street"
+      ],
+      "audioClip": {
+        "storySlug": "o-sino-das-seis",
+        "storySource": "user",
+        "sentence": "O eco do sino volta pela sacada do quarto.",
+        "targetWord": "sacada",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dc75ff3227572f4f.mp3"
+      }
+    },
+    "featured": false
+  }
+]

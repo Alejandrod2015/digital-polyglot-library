@@ -1,0 +1,445 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "ateliê,boneco,pincel,cruz",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "ateliê",
+          "answer": "a workshop",
+          "options": [
+            "a workshop",
+            "a giant puppet",
+            "a paintbrush",
+            "a cross"
+          ]
+        },
+        {
+          "word": "boneco",
+          "answer": "a giant puppet",
+          "options": [
+            "a workshop",
+            "a giant puppet",
+            "a paintbrush",
+            "a cross"
+          ]
+        },
+        {
+          "word": "pincel",
+          "answer": "a paintbrush",
+          "options": [
+            "a workshop",
+            "a giant puppet",
+            "a paintbrush",
+            "a cross"
+          ]
+        },
+        {
+          "word": "cruz",
+          "answer": "a cross",
+          "options": [
+            "a workshop",
+            "a giant puppet",
+            "a paintbrush",
+            "a cross"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cabeça",
+    "sentence": "O ateliê tem trinta [[cabeças]] de boneco no teto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a head",
+      "options": [
+        "a head",
+        "a mask",
+        "a hand",
+        "a hat"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "O ateliê tem trinta cabeças de boneco no teto.",
+        "targetWord": "cabeças",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gigante",
+    "sentence": "Iara desce a cabeça [[gigante]] com uma corda velha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "giant",
+      "options": [
+        "giant",
+        "broken",
+        "light",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "Iara desce a cabeça gigante com uma corda velha.",
+        "targetWord": "gigante",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bigode",
+    "sentence": "“Quanto custa aquele de [[bigode]]?”, pergunta Rafaela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a moustache",
+      "options": [
+        "a moustache",
+        "a beard",
+        "a crown",
+        "a scar"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "“Quanto custa aquele de bigode?”, pergunta Rafaela.",
+        "targetWord": "bigode",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "teto",
+    "sentence": "O ateliê tem trinta cabeças de boneco no [[teto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the ceiling",
+      "options": [
+        "the ceiling",
+        "the street",
+        "the shelf",
+        "the door"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "O ateliê tem trinta cabeças de boneco no teto.",
+        "targetWord": "teto",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ensaio",
+    "sentence": "“Hoje tem [[ensaio]] na praça, com banda.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rehearsal",
+      "options": [
+        "a rehearsal",
+        "a market",
+        "a wedding",
+        "a class"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "“Hoje tem ensaio na praça, com banda.”",
+        "targetWord": "ensaio",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cola",
+    "sentence": "O olho pintado cheira a [[cola]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "glue",
+      "options": [
+        "glue",
+        "salt",
+        "smoke",
+        "coffee"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "O olho pintado cheira a cola.",
+        "targetWord": "cola",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "madeira",
+    "sentence": "A cabeça tem uma cruz de [[madeira]] por dentro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "wood",
+      "options": [
+        "wood",
+        "iron",
+        "glass",
+        "stone"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "A cabeça tem uma cruz de madeira por dentro.",
+        "targetWord": "madeira",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dono",
+    "sentence": "“Tem nome, tem [[dono]] e tem dia de sair”, responde Iara.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an owner",
+      "options": [
+        "an owner",
+        "a price",
+        "a number",
+        "a copy"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "“Tem nome, tem dono e tem dia de sair”, responde Iara.",
+        "targetWord": "dono",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "terça",
+    "sentence": "“Esse é o Vitalino, sai na [[terça]].”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "Tuesday",
+      "options": [
+        "Tuesday",
+        "Sunday",
+        "summer",
+        "midnight"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "“Esse é o Vitalino, sai na terça.”",
+        "targetWord": "terça",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "olho",
+    "sentence": "De perto, o [[olho]] pintado é maior que a mão dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an eye",
+      "options": [
+        "an eye",
+        "an ear",
+        "a nose",
+        "a tooth"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "De perto, o olho pintado é maior que a mão dela.",
+        "targetWord": "olho",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lembrança",
+    "sentence": "Rafaela entra achando que é loja de [[lembrança]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a souvenir",
+      "options": [
+        "a souvenir",
+        "a bakery",
+        "a repair",
+        "a costume"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "Rafaela entra achando que é loja de lembrança.",
+        "targetWord": "lembrança",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "história",
+    "sentence": "Cada boneco tem [[história]], e vale mais que o preço.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a story",
+      "options": [
+        "a story",
+        "a number",
+        "a smell",
+        "a shelf"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "Cada boneco tem história, e vale mais que o preço.",
+        "targetWord": "história",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "garantir",
+    "sentence": "Iara olha nos olhos dela para _____ que o boneco responde.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "garantir",
+      "options": [
+        "garantir",
+        "duvidar",
+        "esquecer",
+        "pagar"
+      ],
+      "translation": "Iara looks her in the eye to _____ that the puppet answers.",
+      "optionTranslations": [
+        "promise",
+        "doubt",
+        "forget",
+        "pay"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "Iara olha nos olhos dela para garantir que o boneco responde.",
+        "targetWord": "garantir",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2371b41a00c1cb83.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pesar",
+    "sentence": "Ninguém imagina quanto uma cabeça de papel pode _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pesar",
+      "options": [
+        "pesar",
+        "custar",
+        "secar",
+        "voar"
+      ],
+      "translation": "Nobody imagines how much a paper head can _____.",
+      "optionTranslations": [
+        "weigh",
+        "cost",
+        "dry",
+        "fly"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "Ninguém imagina quanto uma cabeça de papel pode pesar.",
+        "targetWord": "pesar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c728788a589aa890.mp3"
+      }
+    },
+    "featured": false,
+    "prompt": "The head is paper, but it _____ quite a lot."
+  },
+  {
+    "type": "fill_blank",
+    "word": "recusar",
+    "sentence": "Iara prefere _____ o dinheiro a vender o boneco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "recusar",
+      "options": [
+        "recusar",
+        "contar",
+        "guardar",
+        "pedir"
+      ],
+      "translation": "Iara would rather _____ the money than sell the puppet.",
+      "optionTranslations": [
+        "refuse",
+        "count",
+        "keep",
+        "ask for"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "Iara prefere recusar o dinheiro a vender o boneco.",
+        "targetWord": "recusar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fad45272dc1726d9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "valer",
+    "sentence": "Uma peça com nome e dono costuma _____ mais.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "valer",
+      "options": [
+        "valer",
+        "pesar",
+        "cair",
+        "secar"
+      ],
+      "translation": "A piece with a name and an owner usually _____ more.",
+      "optionTranslations": [
+        "is worth",
+        "weighs",
+        "falls",
+        "dries"
+      ],
+      "audioClip": {
+        "storySlug": "a-cabeca-do-vitalino",
+        "storySource": "user",
+        "sentence": "Uma peça com nome e dono costuma valer mais.",
+        "targetWord": "valer",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac54db00b7ae65ad.mp3"
+      }
+    },
+    "featured": false
+  }
+]

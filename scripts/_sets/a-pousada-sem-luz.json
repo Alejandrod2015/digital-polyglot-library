@@ -1,0 +1,456 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "apagão,pousada,ventilador,recepção",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "apagão",
+          "answer": "a blackout",
+          "options": [
+            "a blackout",
+            "a guesthouse",
+            "a fan",
+            "the reception desk"
+          ]
+        },
+        {
+          "word": "pousada",
+          "answer": "a guesthouse",
+          "options": [
+            "a blackout",
+            "a guesthouse",
+            "a fan",
+            "the reception desk"
+          ]
+        },
+        {
+          "word": "ventilador",
+          "answer": "a fan",
+          "options": [
+            "a blackout",
+            "a guesthouse",
+            "a fan",
+            "the reception desk"
+          ]
+        },
+        {
+          "word": "recepção",
+          "answer": "the reception desk",
+          "options": [
+            "a blackout",
+            "a guesthouse",
+            "a fan",
+            "the reception desk"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hóspede",
+    "sentence": "Na varanda estão quase todos os [[hóspedes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a guest",
+      "options": [
+        "a guest",
+        "a waiter",
+        "a driver",
+        "a cook"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "Na varanda estão quase todos os hóspedes.",
+        "targetWord": "hóspedes",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/431ad4cef92f2119.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "leque",
+    "sentence": "Têm uma vela e um [[leque]] de papel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a hand fan",
+      "options": [
+        "a hand fan",
+        "a napkin",
+        "a lamp",
+        "a map"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "Têm uma vela e um leque de papel.",
+        "targetWord": "leque",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/77f740c548be6ca8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tomada",
+    "sentence": "“A [[tomada]] do meu quarto nem funciona.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a socket",
+      "options": [
+        "a socket",
+        "a window",
+        "a key",
+        "a shower"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "“A tomada do meu quarto nem funciona.”",
+        "targetWord": "tomada",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/692e8c2eb77ebd5c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mofo",
+    "sentence": "“Daqui a senhora sente o [[mofo]] da parede.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the smell of damp",
+      "options": [
+        "the smell of damp",
+        "fresh paint",
+        "burnt sugar",
+        "wet grass"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "“Daqui a senhora sente o mofo da parede.”",
+        "targetWord": "mofo",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/58529464e78d4371.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "época",
+    "sentence": "“Nesta [[época]], quase toda semana”, responde uma hóspede.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "time of year",
+      "options": [
+        "time of year",
+        "street",
+        "building",
+        "price"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "“Nesta época, quase toda semana”, responde uma hóspede.",
+        "targetWord": "época",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/11bf316dd1e2bd16.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "varanda",
+    "sentence": "Na [[varanda]] estão quase todos os hóspedes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the porch",
+      "options": [
+        "the porch",
+        "the kitchen",
+        "the roof",
+        "the garage"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "Na varanda estão quase todos os hóspedes.",
+        "targetWord": "varanda",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/431ad4cef92f2119.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quarto",
+    "sentence": "O ventilador do [[quarto]] para devagar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bedroom",
+      "options": [
+        "a bedroom",
+        "a hallway",
+        "a shop",
+        "a garden"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "O ventilador do quarto para devagar.",
+        "targetWord": "quarto",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b633487759b3b461.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "toco",
+    "sentence": "A vela virou um [[toco]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a stub",
+      "options": [
+        "a stub",
+        "a flame",
+        "a lamp",
+        "a jar"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "A vela virou um toco.",
+        "targetWord": "toco",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2636161d3a2f2364.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lençol",
+    "sentence": "De manhã o quarto está morno e o [[lençol]] seco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bed sheet",
+      "options": [
+        "a bed sheet",
+        "a towel",
+        "a curtain",
+        "a pillow"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "De manhã o quarto está morno e o lençol seco.",
+        "targetWord": "lençol",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fc9c45b286531897.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conversa",
+    "sentence": "A [[conversa]] na varanda demora até a madrugada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the conversation",
+      "options": [
+        "the conversation",
+        "the storm",
+        "the music",
+        "the queue"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "A conversa na varanda demora até a madrugada.",
+        "targetWord": "conversa",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b68adc382d8612c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "energia",
+    "sentence": "A [[energia]] volta às três da madrugada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "electricity",
+      "options": [
+        "electricity",
+        "the water",
+        "the noise",
+        "the heat"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "A energia volta às três da madrugada.",
+        "targetWord": "energia",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6f817e72d7def2f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pior",
+    "sentence": "O vizinho avisa que subir agora é [[pior]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "worse",
+      "options": [
+        "worse",
+        "cheaper",
+        "quicker",
+        "safer"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "O vizinho avisa que subir agora é pior.",
+        "targetWord": "pior",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/59e5baaf9c83ecfc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "funcionar",
+    "sentence": "O ventilador parou e a tomada também deixou de _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "funcionar",
+      "options": [
+        "funcionar",
+        "quebrar",
+        "cair",
+        "secar"
+      ],
+      "translation": "The fan stopped and the socket also stopped _____.",
+      "optionTranslations": [
+        "work",
+        "break",
+        "fall",
+        "dry"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "O ventilador parou e a tomada também deixou de funcionar.",
+        "targetWord": "funcionar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c5bb36c5689ba5dc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "abafado",
+    "sentence": "Com a janela fechada o quarto fica _____ e ninguém dorme.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "abafado",
+      "options": [
+        "abafado",
+        "frio",
+        "limpo",
+        "claro"
+      ],
+      "translation": "With the window shut the room gets _____ and nobody sleeps.",
+      "optionTranslations": [
+        "stuffy",
+        "cold",
+        "clean",
+        "bright"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "Com a janela fechada o quarto fica abafado e ninguém dorme.",
+        "targetWord": "abafado",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed5223ff4c83785f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "morno",
+    "sentence": "O café esfriou um pouco: agora está _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "morno",
+      "options": [
+        "morno",
+        "quente",
+        "gelado",
+        "doce"
+      ],
+      "translation": "The coffee cooled a little: now it is _____.",
+      "optionTranslations": [
+        "lukewarm",
+        "hot",
+        "freezing",
+        "sweet"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "O café esfriou um pouco: agora está morno.",
+        "targetWord": "morno",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/04d416a9a6486f03.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "reclamar",
+    "sentence": "Ninguém liga para a recepção nem volta a _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reclamar",
+      "options": [
+        "reclamar",
+        "cantar",
+        "pagar",
+        "subir"
+      ],
+      "translation": "Nobody calls reception or goes back to _____.",
+      "optionTranslations": [
+        "complain",
+        "sing",
+        "pay",
+        "go up"
+      ],
+      "audioClip": {
+        "storySlug": "a-pousada-sem-luz",
+        "storySource": "user",
+        "sentence": "Ninguém liga para a recepção nem volta a reclamar.",
+        "targetWord": "reclamar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a80131aed900d202.mp3"
+      }
+    },
+    "featured": false
+  }
+]

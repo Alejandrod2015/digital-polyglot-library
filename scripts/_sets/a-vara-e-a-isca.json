@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "vara,anzol,isca,cesta",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "vara",
+          "answer": "a fishing rod",
+          "options": [
+            "a fishing rod",
+            "a hook",
+            "bait",
+            "a basket"
+          ]
+        },
+        {
+          "word": "anzol",
+          "answer": "a hook",
+          "options": [
+            "a fishing rod",
+            "a hook",
+            "bait",
+            "a basket"
+          ]
+        },
+        {
+          "word": "isca",
+          "answer": "bait",
+          "options": [
+            "a fishing rod",
+            "a hook",
+            "bait",
+            "a basket"
+          ]
+        },
+        {
+          "word": "cesta",
+          "answer": "a basket",
+          "options": [
+            "a fishing rod",
+            "a hook",
+            "bait",
+            "a basket"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "piranha",
+    "sentence": "Tainá já tirou cinco [[piranhas]] e o balde dela continua vazio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a piranha",
+      "options": [
+        "a piranha",
+        "a frog",
+        "a crab",
+        "a duck"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "Tainá já tirou cinco piranhas e o balde dela continua vazio.",
+        "targetWord": "piranhas",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barro",
+    "sentence": "No [[barro]] do barranco a vara está na água desde as duas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mud",
+      "options": [
+        "mud",
+        "grass",
+        "sand",
+        "ice"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "No barro do barranco a vara está na água desde as duas.",
+        "targetWord": "barro",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barranco",
+    "sentence": "No barro do [[barranco]] a vara está na água.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the steep bank",
+      "options": [
+        "the steep bank",
+        "the bridge",
+        "the boat",
+        "the beach"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "No barro do barranco a vara está na água.",
+        "targetWord": "barranco",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pescaria",
+    "sentence": "“Isso é truque de [[pescaria]]?”, pergunta Rafaela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fishing",
+      "options": [
+        "fishing",
+        "cooking",
+        "farming",
+        "hunting"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "“Isso é truque de pescaria?”, pergunta Rafaela.",
+        "targetWord": "pescaria",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "menina",
+    "sentence": "Do outro lado senta Tainá, uma [[menina]] de dez anos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a girl",
+      "options": [
+        "a girl",
+        "a woman",
+        "a teacher",
+        "a cousin"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "Do outro lado senta Tainá, uma menina de dez anos.",
+        "targetWord": "menina",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escola",
+    "sentence": "Tainá só falta na [[escola]] quando chove.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "school",
+      "options": [
+        "school",
+        "the market",
+        "the river",
+        "work"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "Tainá só falta na escola quando chove.",
+        "targetWord": "escola",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ruim",
+    "sentence": "“Essa é [[ruim]] de comer”, avisa Tainá.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bad",
+      "options": [
+        "bad",
+        "small",
+        "fresh",
+        "expensive"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "“Essa é ruim de comer”, avisa Tainá.",
+        "targetWord": "ruim",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "diferença",
+    "sentence": "Rafaela olha o anzol e não encontra [[diferença]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a difference",
+      "options": [
+        "a difference",
+        "a knot",
+        "a price",
+        "a name"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "Rafaela olha o anzol e não encontra diferença.",
+        "targetWord": "diferença",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enfeite",
+    "sentence": "“Serve de [[enfeite]]?”, pergunta ela sobre o peixe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an ornament",
+      "options": [
+        "an ornament",
+        "a meal",
+        "a gift",
+        "a trap"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "“Serve de enfeite?”, pergunta ela sobre o peixe.",
+        "targetWord": "enfeite",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mordida",
+    "sentence": "Ela conta até três e sente a primeira [[mordida]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bite",
+      "options": [
+        "a bite",
+        "a wave",
+        "a drop",
+        "a shout"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "Ela conta até três e sente a primeira mordida.",
+        "targetWord": "mordida",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alegria",
+    "sentence": "O peixe sai brilhando e ela ri com [[alegria]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "joy",
+      "options": [
+        "joy",
+        "fear",
+        "shame",
+        "calm"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "O peixe sai brilhando e ela ri com alegria.",
+        "targetWord": "alegria",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "truque",
+    "sentence": "“Isso é [[truque]] de pescaria?”, pergunta Rafaela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a trick",
+      "options": [
+        "a trick",
+        "a rule",
+        "a game",
+        "a story"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "“Isso é truque de pescaria?”, pergunta Rafaela.",
+        "targetWord": "truque",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "molhar",
+    "sentence": "Ela decide esperar em silêncio, sem _____ a mão.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "molhar",
+      "options": [
+        "molhar",
+        "levantar",
+        "abrir",
+        "pintar"
+      ],
+      "translation": "She decides to wait in silence, without _____ her hand.",
+      "optionTranslations": [
+        "wetting",
+        "lifting",
+        "opening",
+        "painting"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "Ela decide esperar em silêncio, sem molhar a mão.",
+        "targetWord": "molhar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e6a737244c59e705.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "conseguir",
+    "sentence": "“Não foi sorte: você acabou de _____”, diz Tainá.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "conseguir",
+      "options": [
+        "conseguir",
+        "perder",
+        "chegar",
+        "cair"
+      ],
+      "translation": "“It wasn't luck: you have just _____ it,” says Tainá.",
+      "optionTranslations": [
+        "managed",
+        "lost",
+        "arrived",
+        "fallen"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "“Não foi sorte: você acabou de conseguir”, diz Tainá.",
+        "targetWord": "conseguir",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2741acbea7084f36.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "silêncio",
+    "sentence": "Ninguém fala no barranco: a pescaria pede _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "silêncio",
+      "options": [
+        "silêncio",
+        "pressa",
+        "festa",
+        "cores"
+      ],
+      "translation": "Nobody talks on the bank: fishing calls for _____.",
+      "optionTranslations": [
+        "silence",
+        "hurry",
+        "a party",
+        "colours"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "Ninguém fala no barranco: a pescaria pede silêncio.",
+        "targetWord": "silêncio",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/19caac59c7f8a80a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "carne",
+    "sentence": "A isca das duas é a mesma: _____ crua no anzol.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "carne",
+      "options": [
+        "carne",
+        "papel",
+        "pedra",
+        "folha"
+      ],
+      "translation": "The bait for both is the same: raw _____ on the hook.",
+      "optionTranslations": [
+        "meat",
+        "paper",
+        "stone",
+        "leaf"
+      ],
+      "audioClip": {
+        "storySlug": "a-vara-e-a-isca",
+        "storySource": "user",
+        "sentence": "A isca das duas é a mesma: carne crua no anzol.",
+        "targetWord": "carne",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a55dad1effd60208.mp3"
+      }
+    },
+    "featured": false
+  }
+]

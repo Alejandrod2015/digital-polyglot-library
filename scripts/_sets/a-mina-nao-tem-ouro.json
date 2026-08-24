@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "mina,capacete,lanterna,túnel",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "mina",
+          "answer": "a mine",
+          "options": [
+            "a mine",
+            "a helmet",
+            "a torch",
+            "a tunnel"
+          ]
+        },
+        {
+          "word": "capacete",
+          "answer": "a helmet",
+          "options": [
+            "a mine",
+            "a helmet",
+            "a torch",
+            "a tunnel"
+          ]
+        },
+        {
+          "word": "lanterna",
+          "answer": "a torch",
+          "options": [
+            "a mine",
+            "a helmet",
+            "a torch",
+            "a tunnel"
+          ]
+        },
+        {
+          "word": "túnel",
+          "answer": "a tunnel",
+          "options": [
+            "a mine",
+            "a helmet",
+            "a torch",
+            "a tunnel"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trilho",
+    "sentence": "A lanterna acha um [[trilho]] de ferro no chão.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rail",
+      "options": [
+        "a rail",
+        "a coin",
+        "a rope",
+        "a bone"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "A lanterna acha um trilho de ferro no chão.",
+        "targetWord": "trilho",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "morcego",
+    "sentence": "Um [[morcego]] passa perto do capacete e some.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bat",
+      "options": [
+        "a bat",
+        "a bird",
+        "a rat",
+        "a cat"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "Um morcego passa perto do capacete e some.",
+        "targetWord": "morcego",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mineiro",
+    "sentence": "Quem entra com ela é Dorival, um [[mineiro]] de vinte anos de mina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a miner",
+      "options": [
+        "a miner",
+        "a guard",
+        "a priest",
+        "a driver"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "Quem entra com ela é Dorival, um mineiro de vinte anos de mina.",
+        "targetWord": "mineiro",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ouro",
+    "sentence": "“A senhora vem ver [[ouro]]?”, pergunta Dorival.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "gold",
+      "options": [
+        "gold",
+        "water",
+        "coal",
+        "salt"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "“A senhora vem ver ouro?”, pergunta Dorival.",
+        "targetWord": "ouro",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ingresso",
+    "sentence": "O [[ingresso]] da mina custa trinta reais.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the ticket",
+      "options": [
+        "the ticket",
+        "the guide",
+        "the helmet",
+        "the map"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "O ingresso da mina custa trinta reais.",
+        "targetWord": "ingresso",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "curvado",
+    "sentence": "O túnel é estreito e obriga a andar [[curvado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bent over",
+      "options": [
+        "bent over",
+        "barefoot",
+        "alone",
+        "fast"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "O túnel é estreito e obriga a andar curvado.",
+        "targetWord": "curvado",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estreito",
+    "sentence": "O túnel é [[estreito]] e obriga a andar curvado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "narrow",
+      "options": [
+        "narrow",
+        "dark",
+        "steep",
+        "long"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "O túnel é estreito e obriga a andar curvado.",
+        "targetWord": "estreito",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "úmido",
+    "sentence": "O ar é [[úmido]] e cheira a terra molhada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "damp",
+      "options": [
+        "damp",
+        "cold",
+        "clean",
+        "thin"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "O ar é úmido e cheira a terra molhada.",
+        "targetWord": "úmido",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ferro",
+    "sentence": "A lanterna acha um trilho de [[ferro]] no chão.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "iron",
+      "options": [
+        "iron",
+        "wood",
+        "glass",
+        "gold"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "A lanterna acha um trilho de ferro no chão.",
+        "targetWord": "ferro",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corrente",
+    "sentence": "“Puxado por [[corrente]] e por gente”, explica Dorival.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a chain",
+      "options": [
+        "a chain",
+        "a horse",
+        "a motor",
+        "a rope"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "“Puxado por corrente e por gente”, explica Dorival.",
+        "targetWord": "corrente",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brilho",
+    "sentence": "“E o [[brilho]] na parede?”, pergunta Rafaela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the shine",
+      "options": [
+        "the shine",
+        "the crack",
+        "the noise",
+        "the smell"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "“E o brilho na parede?”, pergunta Rafaela.",
+        "targetWord": "brilho",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escuridão",
+    "sentence": "Um morcego passa e some na [[escuridão]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the darkness",
+      "options": [
+        "the darkness",
+        "the water",
+        "the crowd",
+        "the dust"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "Um morcego passa e some na escuridão.",
+        "targetWord": "escuridão",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cavar",
+    "sentence": "Dorival mostra o ponto exato onde costumavam _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cavar",
+      "options": [
+        "cavar",
+        "dormir",
+        "comer",
+        "rezar"
+      ],
+      "translation": "Dorival shows the exact spot where they used to _____.",
+      "optionTranslations": [
+        "dig",
+        "sleep",
+        "eat",
+        "pray"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "Dorival mostra o ponto exato onde costumavam cavar.",
+        "targetWord": "cavar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab53433383b63233.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "machucar",
+    "sentence": "O teto era baixo e muita gente chegava a se _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "machucar",
+      "options": [
+        "machucar",
+        "perder",
+        "cansar",
+        "molhar"
+      ],
+      "translation": "The roof was low and many people ended up _____ themselves.",
+      "optionTranslations": [
+        "hurting",
+        "losing",
+        "tiring",
+        "wetting"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "O teto era baixo e muita gente chegava a se machucar.",
+        "targetWord": "machucar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/be75e575aa3db4d8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gramas",
+    "sentence": "Um dia inteiro dava só alguns _____ de metal.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "gramas",
+      "options": [
+        "gramas",
+        "metros",
+        "reais",
+        "litros"
+      ],
+      "translation": "A whole day gave only a few _____ of metal.",
+      "optionTranslations": [
+        "grams",
+        "metres",
+        "reais",
+        "litres"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "Um dia inteiro dava só alguns gramas de metal.",
+        "targetWord": "gramas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b894cd540c0fb0fa.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "avô",
+    "sentence": "“O ouro acabou antes do meu _____ nascer.”",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "avô",
+      "options": [
+        "avô",
+        "filho",
+        "vizinho",
+        "chefe"
+      ],
+      "translation": "“The gold ran out before my _____ was born.”",
+      "optionTranslations": [
+        "grandfather",
+        "son",
+        "neighbour",
+        "boss"
+      ],
+      "audioClip": {
+        "storySlug": "a-mina-nao-tem-ouro",
+        "storySource": "user",
+        "sentence": "“O ouro acabou antes do meu avô nascer.”",
+        "targetWord": "avô",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8b0fc97c900a07bb.mp3"
+      }
+    },
+    "featured": false
+  }
+]

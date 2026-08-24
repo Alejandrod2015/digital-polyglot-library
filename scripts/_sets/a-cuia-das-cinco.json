@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "cuia,panela,sopa,gole",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cuia",
+          "answer": "a gourd bowl",
+          "options": [
+            "a gourd bowl",
+            "a pan",
+            "soup",
+            "a sip"
+          ]
+        },
+        {
+          "word": "panela",
+          "answer": "a pan",
+          "options": [
+            "a gourd bowl",
+            "a pan",
+            "soup",
+            "a sip"
+          ]
+        },
+        {
+          "word": "sopa",
+          "answer": "soup",
+          "options": [
+            "a gourd bowl",
+            "a pan",
+            "soup",
+            "a sip"
+          ]
+        },
+        {
+          "word": "gole",
+          "answer": "a sip",
+          "options": [
+            "a gourd bowl",
+            "a pan",
+            "soup",
+            "a sip"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tacacá",
+    "sentence": "“A senhora nunca tomou [[tacacá]], né?”, pergunta Neide.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tacacá broth",
+      "options": [
+        "tacacá broth",
+        "fried fish",
+        "sweet coffee",
+        "cold beer"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "“A senhora nunca tomou tacacá, né?”, pergunta Neide.",
+        "targetWord": "tacacá",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jambu",
+    "sentence": "A sopa sai quente e amarga, com goma e [[jambu]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the jambu leaf",
+      "options": [
+        "the jambu leaf",
+        "a hot pepper",
+        "a green lemon",
+        "a white onion"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "A sopa sai quente e amarga, com goma e jambu.",
+        "targetWord": "jambu",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "goma",
+    "sentence": "A sopa sai quente e amarga, com [[goma]] e jambu.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tapioca starch",
+      "options": [
+        "tapioca starch",
+        "oil",
+        "cream",
+        "flour"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "A sopa sai quente e amarga, com goma e jambu.",
+        "targetWord": "goma",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "verdade",
+    "sentence": "“[[Verdade]]?”, pergunta Rafaela sem acreditar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "really?",
+      "options": [
+        "really?",
+        "already?",
+        "again?",
+        "how much?"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "“Verdade?”, pergunta Rafaela sem acreditar.",
+        "targetWord": "Verdade",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tempero",
+    "sentence": "“A pimenta é [[tempero]]; o jambu não.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "seasoning",
+      "options": [
+        "seasoning",
+        "a mistake",
+        "a dessert",
+        "a drink"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "“A pimenta é tempero; o jambu não.”",
+        "targetWord": "tempero",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lábio",
+    "sentence": "No terceiro gole o [[lábio]] para de sentir.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the lip",
+      "options": [
+        "the lip",
+        "the hand",
+        "the throat",
+        "the ear"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "No terceiro gole o lábio para de sentir.",
+        "targetWord": "lábio",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "susto",
+    "sentence": "Ela olha para baixo com [[susto]], e ninguém reclama.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fright",
+      "options": [
+        "a fright",
+        "a smile",
+        "hunger",
+        "a doubt"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "Ela olha para baixo com susto, e ninguém reclama.",
+        "targetWord": "susto",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gostoso",
+    "sentence": "O caldo é forte e continua [[gostoso]] mesmo assim.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tasty",
+      "options": [
+        "tasty",
+        "cold",
+        "cheap",
+        "light"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "O caldo é forte e continua gostoso mesmo assim.",
+        "targetWord": "gostoso",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "melhor",
+    "sentence": "“É a [[melhor]] da rua, com história e tudo.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the best",
+      "options": [
+        "the best",
+        "the last",
+        "the closest",
+        "the oldest"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "“É a melhor da rua, com história e tudo.”",
+        "targetWord": "melhor",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "formigar",
+    "sentence": "No terceiro gole a boca começa a [[formigar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tingle",
+      "options": [
+        "to tingle",
+        "to burn",
+        "to dry",
+        "to close"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "No terceiro gole a boca começa a formigar.",
+        "targetWord": "formigar",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esquentar",
+    "sentence": "Rafaela toma em pé e o vapor [[esquenta]] o rosto dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to warm",
+      "options": [
+        "to warm",
+        "to hide",
+        "to clean",
+        "to cool"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "Rafaela toma em pé e o vapor esquenta o rosto dela.",
+        "targetWord": "esquenta",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dobrar",
+    "sentence": "Às cinco a fila [[dobra]] na esquina e ninguém senta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to turn a corner",
+      "options": [
+        "to turn a corner",
+        "to open",
+        "to end",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "Às cinco a fila dobra na esquina e ninguém senta.",
+        "targetWord": "dobra",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "acontecer",
+    "sentence": "Ela quer saber se isso pode _____ toda tarde.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acontecer",
+      "options": [
+        "acontecer",
+        "custar",
+        "durar",
+        "servir"
+      ],
+      "translation": "She wants to know if that can _____ every afternoon.",
+      "optionTranslations": [
+        "happen",
+        "cost",
+        "last",
+        "serve"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "Ela quer saber se isso pode acontecer toda tarde.",
+        "targetWord": "acontecer",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/63e7740ee3e48112.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "avisar",
+    "sentence": "Neide fecha a panela sem _____ que era a última.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "avisar",
+      "options": [
+        "avisar",
+        "pagar",
+        "provar",
+        "abrir"
+      ],
+      "translation": "Neide closes the pan without _____ that it was the last one.",
+      "optionTranslations": [
+        "warning",
+        "paying",
+        "tasting",
+        "opening"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "Neide fecha a panela sem avisar que era a última.",
+        "targetWord": "avisar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c6eceac74f76132b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "estranhar",
+    "sentence": "Ninguém na fila reclama nem parece _____ a cena.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "estranhar",
+      "options": [
+        "estranhar",
+        "filmar",
+        "pedir",
+        "pagar"
+      ],
+      "translation": "Nobody in the queue complains or seems to _____ the scene.",
+      "optionTranslations": [
+        "find odd",
+        "film",
+        "ask for",
+        "pay for"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "Ninguém na fila reclama nem parece estranhar a cena.",
+        "targetWord": "estranhar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/35e59e84aff79bd9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sobrar",
+    "sentence": "Neide fecha cedo porque nunca chega a _____ tacacá.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sobrar",
+      "options": [
+        "sobrar",
+        "esfriar",
+        "ferver",
+        "cair"
+      ],
+      "translation": "Neide closes early because there is never any tacacá _____.",
+      "optionTranslations": [
+        "left over",
+        "cooling down",
+        "boiling",
+        "falling"
+      ],
+      "audioClip": {
+        "storySlug": "a-cuia-das-cinco",
+        "storySource": "user",
+        "sentence": "Neide fecha cedo porque nunca chega a sobrar tacacá.",
+        "targetWord": "sobrar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cd67b20bf63bef52.mp3"
+      }
+    },
+    "featured": false
+  }
+]

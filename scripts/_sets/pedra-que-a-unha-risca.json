@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "canivete,lixa,avental,vela",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "canivete",
+          "answer": "a pocket knife",
+          "options": [
+            "a pocket knife",
+            "sandpaper",
+            "an apron",
+            "a candle"
+          ]
+        },
+        {
+          "word": "lixa",
+          "answer": "sandpaper",
+          "options": [
+            "a pocket knife",
+            "sandpaper",
+            "an apron",
+            "a candle"
+          ]
+        },
+        {
+          "word": "avental",
+          "answer": "an apron",
+          "options": [
+            "a pocket knife",
+            "sandpaper",
+            "an apron",
+            "a candle"
+          ]
+        },
+        {
+          "word": "vela",
+          "answer": "a candle",
+          "options": [
+            "a pocket knife",
+            "sandpaper",
+            "an apron",
+            "a candle"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lasca",
+    "sentence": "A [[lasca]] escorrega no avental de Solange.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a chip",
+      "options": [
+        "a chip",
+        "a coin",
+        "a drop",
+        "a seed"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "A lasca escorrega no avental de Solange.",
+        "targetWord": "lasca",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "unha",
+    "sentence": "“Faz a prova da [[unha]]”, insiste Solange.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the fingernail",
+      "options": [
+        "the fingernail",
+        "the knife",
+        "the water",
+        "the fire"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "“Faz a prova da unha”, insiste Solange.",
+        "targetWord": "unha",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "risco",
+    "sentence": "Rafaela passa a unha e deixa um [[risco]] branco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a scratch",
+      "options": [
+        "a scratch",
+        "a stain",
+        "a hole",
+        "a knot"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "Rafaela passa a unha e deixa um risco branco.",
+        "targetWord": "risco",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "peça",
+    "sentence": "Solange corta a base da [[peça]] sem responder mais.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the piece",
+      "options": [
+        "the piece",
+        "the queue",
+        "the box",
+        "the door"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "Solange corta a base da peça sem responder mais.",
+        "targetWord": "peça",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sabonete",
+    "sentence": "“Cortou igual [[sabonete]]”, diz Rafaela, surpresa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a bar of soap",
+      "options": [
+        "a bar of soap",
+        "a stone",
+        "a bone",
+        "a brick"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "“Cortou igual sabonete”, diz Rafaela, surpresa.",
+        "targetWord": "sabonete",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cinza",
+    "sentence": "Solange trabalha de avental [[cinza]] na escada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "grey",
+      "options": [
+        "grey",
+        "clean",
+        "short",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "Solange trabalha de avental cinza na escada.",
+        "targetWord": "cinza",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sabão",
+    "sentence": "Na escada da igreja a pedra-[[sabão]] custa quinze reais.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soap",
+      "options": [
+        "soap",
+        "milk",
+        "sugar",
+        "iron"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "Na escada da igreja a pedra-sabão custa quinze reais.",
+        "targetWord": "sabão",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dezoito",
+    "sentence": "Solange abre a banca desde os [[dezoito]] anos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "eighteen",
+      "options": [
+        "eighteen",
+        "eighty",
+        "eleven",
+        "eight"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "Solange abre a banca desde os dezoito anos.",
+        "targetWord": "dezoito",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "macio",
+    "sentence": "A pedra parece dura, mas é [[macia]] e deixa pó.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soft",
+      "options": [
+        "soft",
+        "heavy",
+        "cold",
+        "sharp"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "A pedra parece dura, mas é macia e deixa pó.",
+        "targetWord": "macia",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pó",
+    "sentence": "O [[pó]] branco da pedra cobre o degrau inteiro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "powder",
+      "options": [
+        "powder",
+        "paint",
+        "water",
+        "ash"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "O pó branco da pedra cobre o degrau inteiro.",
+        "targetWord": "pó",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "base",
+    "sentence": "Solange corta a [[base]] da peça sem responder mais.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the base",
+      "options": [
+        "the base",
+        "the lid",
+        "the price",
+        "the name"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "Solange corta a base da peça sem responder mais.",
+        "targetWord": "base",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "famoso",
+    "sentence": "Na escada da igreja a pedra-sabão é [[famosa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "famous",
+      "options": [
+        "famous",
+        "cheap",
+        "rare",
+        "forbidden"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "Na escada da igreja a pedra-sabão é famosa.",
+        "targetWord": "famosa",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cortar",
+    "sentence": "O canivete entra na pedra e chega a _____ fácil.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cortar",
+      "options": [
+        "cortar",
+        "pesar",
+        "secar",
+        "subir"
+      ],
+      "translation": "The knife goes into the stone and gets to _____ it easily.",
+      "optionTranslations": [
+        "cut",
+        "weigh",
+        "dry",
+        "climb"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "O canivete entra na pedra e chega a cortar fácil.",
+        "targetWord": "cortar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ecda164864926c5f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "jornal",
+    "sentence": "Solange embrulha a peça no _____ do dia.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "jornal",
+      "options": [
+        "jornal",
+        "avental",
+        "balde",
+        "canivete"
+      ],
+      "translation": "Solange wraps the piece in the day's _____.",
+      "optionTranslations": [
+        "newspaper",
+        "apron",
+        "bucket",
+        "knife"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "Solange embrulha a peça no jornal do dia.",
+        "targetWord": "jornal",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0846ab245800ddab.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "prova",
+    "sentence": "Antes de comprar, Rafaela faz a _____ da unha.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prova",
+      "options": [
+        "prova",
+        "conta",
+        "fila",
+        "volta"
+      ],
+      "translation": "Before buying, Rafaela does the fingernail _____.",
+      "optionTranslations": [
+        "test",
+        "bill",
+        "queue",
+        "return"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "Antes de comprar, Rafaela faz a prova da unha.",
+        "targetWord": "prova",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/65cae01e438cbd7c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mole",
+    "sentence": "A pedra é tão _____ que qualquer lâmina entra.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mole",
+      "options": [
+        "mole",
+        "dura",
+        "cara",
+        "larga"
+      ],
+      "translation": "The stone is so _____ that any blade goes in.",
+      "optionTranslations": [
+        "soft",
+        "hard",
+        "expensive",
+        "wide"
+      ],
+      "audioClip": {
+        "storySlug": "pedra-que-a-unha-risca",
+        "storySource": "user",
+        "sentence": "A pedra é tão mole que qualquer lâmina entra.",
+        "targetWord": "mole",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f60e11fbfaef4921.mp3"
+      }
+    },
+    "featured": false
+  }
+]

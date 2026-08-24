@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "duna,tábua,cera,loja",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "duna",
+          "answer": "a sand dune",
+          "options": [
+            "a sand dune",
+            "a board",
+            "wax",
+            "a shop"
+          ]
+        },
+        {
+          "word": "tábua",
+          "answer": "a board",
+          "options": [
+            "a sand dune",
+            "a board",
+            "wax",
+            "a shop"
+          ]
+        },
+        {
+          "word": "cera",
+          "answer": "wax",
+          "options": [
+            "a sand dune",
+            "a board",
+            "wax",
+            "a shop"
+          ]
+        },
+        {
+          "word": "loja",
+          "answer": "a shop",
+          "options": [
+            "a sand dune",
+            "a board",
+            "wax",
+            "a shop"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "topo",
+    "sentence": "Rafaela chega no [[topo]], senta na areia e olha a descida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the top",
+      "options": [
+        "the top",
+        "the middle",
+        "the edge",
+        "the shade"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "Rafaela chega no topo, senta na areia e olha a descida.",
+        "targetWord": "topo",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "descida",
+    "sentence": "Rafaela chega no topo e olha a [[descida]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the way down",
+      "options": [
+        "the way down",
+        "the queue",
+        "the price",
+        "the wind"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "Rafaela chega no topo e olha a descida.",
+        "targetWord": "descida",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grudar",
+    "sentence": "A tábua [[gruda]] no meio da duna e para sozinha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stick",
+      "options": [
+        "to stick",
+        "to float",
+        "to spin",
+        "to break"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "A tábua gruda no meio da duna e para sozinha.",
+        "targetWord": "gruda",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "voar",
+    "sentence": "Um sai [[voando]] duna abaixo e some lá embaixo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fly",
+      "options": [
+        "to fly",
+        "to crawl",
+        "to wait",
+        "to climb"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "Um sai voando duna abaixo e some lá embaixo.",
+        "targetWord": "voando",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "menino",
+    "sentence": "Dois [[meninos]] esperam a vez deles ao lado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a boy",
+      "options": [
+        "a boy",
+        "a guard",
+        "a seller",
+        "a tourist"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "Dois meninos esperam a vez deles ao lado.",
+        "targetWord": "meninos",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "emprestar",
+    "sentence": "O menino ri e [[empresta]] a cera dele.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lend",
+      "options": [
+        "to lend",
+        "to sell",
+        "to hide",
+        "to lose"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "O menino ri e empresta a cera dele.",
+        "targetWord": "empresta",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ensinar",
+    "sentence": "Ele [[ensina]] a passar a cera de ponta a ponta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to teach",
+      "options": [
+        "to teach",
+        "to promise",
+        "to repeat",
+        "to allow"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "Ele ensina a passar a cera de ponta a ponta.",
+        "targetWord": "ensina",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "silêncio",
+    "sentence": "“Aquilo é teimoso”, pensa em [[silêncio]] na quarta tentativa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "silence",
+      "options": [
+        "silence",
+        "a hurry",
+        "a laugh",
+        "a doubt"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "“Aquilo é teimoso”, pensa em silêncio na quarta tentativa.",
+        "targetWord": "silêncio",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abaixo",
+    "sentence": "Um sai voando duna [[abaixo]] e some lá embaixo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "downwards",
+      "options": [
+        "downwards",
+        "backwards",
+        "nearby",
+        "inside"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "Um sai voando duna abaixo e some lá embaixo.",
+        "targetWord": "abaixo",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "teimoso",
+    "sentence": "“Aquilo é [[teimoso]]”, pensa na quarta tentativa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stubborn",
+      "options": [
+        "stubborn",
+        "broken",
+        "expensive",
+        "light"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "“Aquilo é teimoso”, pensa na quarta tentativa.",
+        "targetWord": "teimoso",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "susto",
+    "sentence": "“Então leva um [[susto]] agora”, ri o menino.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a fright",
+      "options": [
+        "a fright",
+        "a prize",
+        "a rest",
+        "a turn"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "“Então leva um susto agora”, ri o menino.",
+        "targetWord": "susto",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "segundo",
+    "sentence": "A descida seguinte demora quatro [[segundos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a second",
+      "options": [
+        "a second",
+        "a metre",
+        "a try",
+        "an hour"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "A descida seguinte demora quatro segundos.",
+        "targetWord": "segundos",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "barato",
+    "sentence": "Uma barra de cera custa quase nada: é muito _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "barato",
+      "options": [
+        "barato",
+        "pesado",
+        "antigo",
+        "molhado"
+      ],
+      "translation": "A bar of wax costs almost nothing: it is very _____.",
+      "optionTranslations": [
+        "cheap",
+        "heavy",
+        "old",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "Uma barra de cera custa quase nada: é muito barato.",
+        "targetWord": "barato",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85f86061fc1cfeb5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "acreditar",
+    "sentence": "Ela ouve a explicação duas vezes e não consegue _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acreditar",
+      "options": [
+        "acreditar",
+        "descer",
+        "subir",
+        "pagar"
+      ],
+      "translation": "She hears the explanation twice and cannot _____ it.",
+      "optionTranslations": [
+        "believe",
+        "go down",
+        "go up",
+        "pay"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "Ela ouve a explicação duas vezes e não consegue acreditar.",
+        "targetWord": "acreditar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6cd34c7ebe7852e7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sozinha",
+    "sentence": "Ninguém empurra a tábua: ela para _____ na areia.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "sozinha",
+      "options": [
+        "sozinha",
+        "molhada",
+        "aberta",
+        "cheia"
+      ],
+      "translation": "Nobody pushes the board: it stops _____ in the sand.",
+      "optionTranslations": [
+        "by itself",
+        "wet",
+        "open",
+        "full"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "Ninguém empurra a tábua: ela para sozinha na areia.",
+        "targetWord": "sozinha",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c9713a2327334b3c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Cadê",
+    "sentence": "O menino olha por baixo e pergunta: “_____ a cera?”",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "Cadê",
+      "options": [
+        "Cadê",
+        "Quanto",
+        "Quando",
+        "Quem"
+      ],
+      "translation": "The boy looks underneath and asks: “_____ the wax?”",
+      "optionTranslations": [
+        "Where is",
+        "How much",
+        "When",
+        "Who"
+      ],
+      "audioClip": {
+        "storySlug": "cera-nas-dunas",
+        "storySource": "user",
+        "sentence": "O menino olha por baixo e pergunta: “Cadê a cera?”",
+        "targetWord": "Cadê",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8efaa70bd620ed2a.mp3"
+      }
+    },
+    "featured": false
+  }
+]

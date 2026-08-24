@@ -2,6 +2,19 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "_comment": "El dev server que ve el usuario. Vive en el worktree principal, no en el de la sesion.",
+      "name": "main-worktree-3000",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/alejandrodelcarpio/digital-polyglot-library",
+        "run",
+        "dev:web"
+      ],
+      "port": 3000,
+      "autoPort": false
+    },
+    {
       "name": "next-dev",
       "runtimeExecutable": "npm",
       "runtimeArgs": [

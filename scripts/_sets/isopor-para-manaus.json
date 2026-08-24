@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "isopor,gelo,tampa,fita",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "isopor",
+          "answer": "a cool box",
+          "options": [
+            "a cool box",
+            "ice",
+            "a lid",
+            "tape"
+          ]
+        },
+        {
+          "word": "gelo",
+          "answer": "ice",
+          "options": [
+            "a cool box",
+            "ice",
+            "a lid",
+            "tape"
+          ]
+        },
+        {
+          "word": "tampa",
+          "answer": "a lid",
+          "options": [
+            "a cool box",
+            "ice",
+            "a lid",
+            "tape"
+          ]
+        },
+        {
+          "word": "fita",
+          "answer": "tape",
+          "options": [
+            "a cool box",
+            "ice",
+            "a lid",
+            "tape"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "polpa",
+    "sentence": "Rafaela quer levar dois litros congelados de [[polpa]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fruit pulp",
+      "options": [
+        "fruit pulp",
+        "fresh milk",
+        "clean water",
+        "white rice"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "Rafaela quer levar dois litros congelados de polpa.",
+        "targetWord": "polpa",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doca",
+    "sentence": "Na [[doca]] o litro custa vinte reais.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the dock",
+      "options": [
+        "the dock",
+        "the airport",
+        "the market",
+        "the bus stop"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "Na doca o litro custa vinte reais.",
+        "targetWord": "doca",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "porão",
+    "sentence": "A caixa pesada segue no [[porão]] do avião.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the hold",
+      "options": [
+        "the hold",
+        "the seat",
+        "the roof",
+        "the queue"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "A caixa pesada segue no porão do avião.",
+        "targetWord": "porão",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "papelão",
+    "sentence": "Tudo cheira a peixe: o [[papelão]] e as mãos dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cardboard",
+      "options": [
+        "cardboard",
+        "glass",
+        "plastic",
+        "cloth"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "Tudo cheira a peixe: o papelão e as mãos dela.",
+        "targetWord": "papelão",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "litro",
+    "sentence": "Na doca o [[litro]] custa vinte reais.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a litre",
+      "options": [
+        "a litre",
+        "a kilo",
+        "a box",
+        "an hour"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "Na doca o litro custa vinte reais.",
+        "targetWord": "litro",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "voo",
+    "sentence": "“Meu [[voo]] é de noite”, explica Rafaela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the flight",
+      "options": [
+        "the flight",
+        "the hotel",
+        "the bus",
+        "the boat"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "“Meu voo é de noite”, explica Rafaela.",
+        "targetWord": "voo",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avião",
+    "sentence": "A caixa pesada segue no porão do [[avião]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the plane",
+      "options": [
+        "the plane",
+        "the boat",
+        "the lorry",
+        "the train"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "A caixa pesada segue no porão do avião.",
+        "targetWord": "avião",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aeroporto",
+    "sentence": "No [[aeroporto]] um saco novo salva a carga.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the airport",
+      "options": [
+        "the airport",
+        "the flat",
+        "the office",
+        "the shop"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "No aeroporto um saco novo salva a carga.",
+        "targetWord": "aeroporto",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "congelado",
+    "sentence": "Rafaela quer levar dois litros [[congelados]] de polpa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "frozen",
+      "options": [
+        "frozen",
+        "open",
+        "warm",
+        "cooked"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "Rafaela quer levar dois litros congelados de polpa.",
+        "targetWord": "congelados",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "relógio",
+    "sentence": "O moço da banca não tira o olho do [[relógio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the watch",
+      "options": [
+        "the watch",
+        "the money",
+        "the door",
+        "the box"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "O moço da banca não tira o olho do relógio.",
+        "targetWord": "relógio",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cansaço",
+    "sentence": "Ela senta em cima da caixa com um [[cansaço]] bom.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tiredness",
+      "options": [
+        "tiredness",
+        "hunger",
+        "fear",
+        "hurry"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "Ela senta em cima da caixa com um cansaço bom.",
+        "targetWord": "cansaço",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "educado",
+    "sentence": "O moço da banca é [[educado]] com quem tem pressa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "polite",
+      "options": [
+        "polite",
+        "late",
+        "slow",
+        "funny"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "O moço da banca é educado com quem tem pressa.",
+        "targetWord": "educado",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "derreter",
+    "sentence": "Com o sol da tarde, o gelo começa a _____ na caixa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "derreter",
+      "options": [
+        "derreter",
+        "cair",
+        "secar",
+        "subir"
+      ],
+      "translation": "With the afternoon sun, the ice starts to _____ in the box.",
+      "optionTranslations": [
+        "melt",
+        "fall",
+        "dry",
+        "rise"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "Com o sol da tarde, o gelo começa a derreter na caixa.",
+        "targetWord": "derreter",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9a2871d6ca75cf3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "carregar",
+    "sentence": "Ela prefere _____ a caixa sozinha até o táxi.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "carregar",
+      "options": [
+        "carregar",
+        "abrir",
+        "vender",
+        "lavar"
+      ],
+      "translation": "She prefers to _____ the box herself as far as the taxi.",
+      "optionTranslations": [
+        "carry",
+        "open",
+        "sell",
+        "wash"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "Ela prefere carregar a caixa sozinha até o táxi.",
+        "targetWord": "carregar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/971886b262f46aef.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pingar",
+    "sentence": "A água do gelo não para de _____ pelo caminho.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "pingar",
+      "options": [
+        "pingar",
+        "ferver",
+        "dormir",
+        "voar"
+      ],
+      "translation": "The water from the ice does not stop _____ along the way.",
+      "optionTranslations": [
+        "dripping",
+        "boiling",
+        "sleeping",
+        "flying"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "A água do gelo não para de pingar pelo caminho.",
+        "targetWord": "pingar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5147f7a320d91d50.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "embrulhar",
+    "sentence": "O moço pega a fita para _____ a caixa inteira.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "embrulhar",
+      "options": [
+        "embrulhar",
+        "pesar",
+        "pintar",
+        "abrir"
+      ],
+      "translation": "The lad takes the tape to _____ the whole box.",
+      "optionTranslations": [
+        "wrap",
+        "weigh",
+        "paint",
+        "open"
+      ],
+      "audioClip": {
+        "storySlug": "isopor-para-manaus",
+        "storySource": "user",
+        "sentence": "O moço pega a fita para embrulhar a caixa inteira.",
+        "targetWord": "embrulhar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/920c0d049a43e90e.mp3"
+      }
+    },
+    "featured": false
+  }
+]

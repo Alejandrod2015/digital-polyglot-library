@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "prancha,professora,surfe,joelho",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "prancha",
+          "answer": "a surfboard",
+          "options": [
+            "a surfboard",
+            "a teacher",
+            "surfing",
+            "a knee"
+          ]
+        },
+        {
+          "word": "professora",
+          "answer": "a teacher",
+          "options": [
+            "a surfboard",
+            "a teacher",
+            "surfing",
+            "a knee"
+          ]
+        },
+        {
+          "word": "surfe",
+          "answer": "surfing",
+          "options": [
+            "a surfboard",
+            "a teacher",
+            "surfing",
+            "a knee"
+          ]
+        },
+        {
+          "word": "joelho",
+          "answer": "a knee",
+          "options": [
+            "a surfboard",
+            "a teacher",
+            "surfing",
+            "a knee"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "remar",
+    "sentence": "“A maior é mais fácil de [[remar]]”, diz a professora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to paddle",
+      "options": [
+        "to paddle",
+        "to float",
+        "to swim",
+        "to jump"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "“A maior é mais fácil de remar”, diz a professora.",
+        "targetWord": "remar",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "remada",
+    "sentence": "Cai na terceira [[remada]] e engole água.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a paddle stroke",
+      "options": [
+        "a paddle stroke",
+        "a wave",
+        "a lap",
+        "a breath"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "Cai na terceira remada e engole água.",
+        "targetWord": "remada",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aula",
+    "sentence": "Ela decide pagar a [[aula]] de amanhã.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lesson",
+      "options": [
+        "a lesson",
+        "a ticket",
+        "a towel",
+        "a meal"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "Ela decide pagar a aula de amanhã.",
+        "targetWord": "aula",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fácil",
+    "sentence": "“A maior é mais [[fácil]] de remar”, diz a professora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "easy",
+      "options": [
+        "easy",
+        "heavy",
+        "narrow",
+        "slow"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "“A maior é mais fácil de remar”, diz a professora.",
+        "targetWord": "fácil",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "difícil",
+    "sentence": "“A maior é mais [[difícil]] de virar”, diz a professora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hard",
+      "options": [
+        "hard",
+        "cheap",
+        "short",
+        "quiet"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "“A maior é mais difícil de virar”, diz a professora.",
+        "targetWord": "difícil",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tentativa",
+    "sentence": "Na oitava [[tentativa]] Rafaela fica de pé por dois segundos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an attempt",
+      "options": [
+        "an attempt",
+        "a lesson",
+        "a minute",
+        "a wave"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "Na oitava tentativa Rafaela fica de pé por dois segundos.",
+        "targetWord": "tentativa",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "regra",
+    "sentence": "Escuta as três [[regras]] da casa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rule",
+      "options": [
+        "a rule",
+        "a price",
+        "a story",
+        "a name"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "Escuta as três regras da casa.",
+        "targetWord": "regras",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "força",
+    "sentence": "“O segredo não é [[força]]”, avisa Bruna da areia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strength",
+      "options": [
+        "strength",
+        "luck",
+        "money",
+        "hurry"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "“O segredo não é força”, avisa Bruna da areia.",
+        "targetWord": "força",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "braço",
+    "sentence": "Rafaela entrega a prancha com os [[braços]] moles.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an arm",
+      "options": [
+        "an arm",
+        "a leg",
+        "a hand",
+        "a shoulder"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "Rafaela entrega a prancha com os braços moles.",
+        "targetWord": "braços",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "criança",
+    "sentence": "Bruna é professora de surfe na Joaquina desde [[criança]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a child",
+      "options": [
+        "a child",
+        "a student",
+        "a swimmer",
+        "a neighbour"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "Bruna é professora de surfe na Joaquina desde criança.",
+        "targetWord": "criança",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "costume",
+    "sentence": "As regras viram [[costume]] depois de tantas quedas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a habit",
+      "options": [
+        "a habit",
+        "a joke",
+        "a problem",
+        "a favour"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "As regras viram costume depois de tantas quedas.",
+        "targetWord": "costume",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dúvida",
+    "sentence": "Antes de sair, sem nenhuma [[dúvida]], paga a aula de amanhã.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "doubt",
+      "options": [
+        "doubt",
+        "hurry",
+        "noise",
+        "fear"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "Antes de sair, sem nenhuma dúvida, paga a aula de amanhã.",
+        "targetWord": "dúvida",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aluguel",
+    "sentence": "Duas horas de _____ da prancha custam pouco.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aluguel",
+      "options": [
+        "aluguel",
+        "banho",
+        "vento",
+        "peso"
+      ],
+      "translation": "Two hours of board _____ cost little.",
+      "optionTranslations": [
+        "rental",
+        "bath",
+        "wind",
+        "weight"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "Duas horas de aluguel da prancha custam pouco.",
+        "targetWord": "aluguel",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cc155c036ae3d260.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "engolir",
+    "sentence": "Caiu de boca aberta e acabou por _____ água do mar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "engolir",
+      "options": [
+        "engolir",
+        "secar",
+        "contar",
+        "abrir"
+      ],
+      "translation": "She fell with her mouth open and ended up _____ sea water.",
+      "optionTranslations": [
+        "swallowing",
+        "drying",
+        "counting",
+        "opening"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "Caiu de boca aberta e acabou por engolir água do mar.",
+        "targetWord": "engolir",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7e467aa7bf6824f4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "continuar",
+    "sentence": "Subir na prancha é o fácil; o difícil é _____ em cima.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "continuar",
+      "options": [
+        "continuar",
+        "descer",
+        "pagar",
+        "olhar"
+      ],
+      "translation": "Getting on the board is the easy part; the hard part is to _____ on top.",
+      "optionTranslations": [
+        "keep going",
+        "get down",
+        "pay",
+        "look"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "Subir na prancha é o fácil; o difícil é continuar em cima.",
+        "targetWord": "continuar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7fcda7b031317071.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "decidir",
+    "sentence": "Ela gosta tanto da aula que precisa _____ hoje mesmo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "decidir",
+      "options": [
+        "decidir",
+        "esquecer",
+        "perder",
+        "vender"
+      ],
+      "translation": "She likes the lesson so much that she needs to _____ today.",
+      "optionTranslations": [
+        "decide",
+        "forget",
+        "lose",
+        "sell"
+      ],
+      "audioClip": {
+        "storySlug": "a-prancha-alugada",
+        "storySource": "user",
+        "sentence": "Ela gosta tanto da aula que precisa decidir hoje mesmo.",
+        "targetWord": "decidir",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/89f63fcdd460a1ca.mp3"
+      }
+    },
+    "featured": false
+  }
+]

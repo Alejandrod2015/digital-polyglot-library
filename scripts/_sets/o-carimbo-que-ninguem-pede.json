@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "carimbo,passaporte,fronteira,ponte",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "carimbo",
+          "answer": "a stamp",
+          "options": [
+            "a stamp",
+            "a passport",
+            "the border",
+            "a bridge"
+          ]
+        },
+        {
+          "word": "passaporte",
+          "answer": "a passport",
+          "options": [
+            "a stamp",
+            "a passport",
+            "the border",
+            "a bridge"
+          ]
+        },
+        {
+          "word": "fronteira",
+          "answer": "the border",
+          "options": [
+            "a stamp",
+            "a passport",
+            "the border",
+            "a bridge"
+          ]
+        },
+        {
+          "word": "ponte",
+          "answer": "a bridge",
+          "options": [
+            "a stamp",
+            "a passport",
+            "the border",
+            "a bridge"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aduana",
+    "sentence": "“O senhor para na [[aduana]]?”, pergunta ao motorista.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the customs post",
+      "options": [
+        "the customs post",
+        "the petrol station",
+        "the hotel",
+        "the market"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "“O senhor para na aduana?”, pergunta ao motorista.",
+        "targetWord": "aduana",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rodoviária",
+    "sentence": "Cada meia hora sai um ônibus de linha da [[rodoviária]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the bus station",
+      "options": [
+        "the bus station",
+        "the airport",
+        "the harbour",
+        "the school"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "Cada meia hora sai um ônibus de linha da rodoviária.",
+        "targetWord": "rodoviária",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poltrona",
+    "sentence": "Rafaela senta na [[poltrona]] da frente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a seat",
+      "options": [
+        "a seat",
+        "a step",
+        "a bench",
+        "a window"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "Rafaela senta na poltrona da frente.",
+        "targetWord": "poltrona",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guarda",
+    "sentence": "O [[guarda]] abre o passaporte e procura uma página vazia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the officer",
+      "options": [
+        "the officer",
+        "the driver",
+        "the guide",
+        "the seller"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "O guarda abre o passaporte e procura uma página vazia.",
+        "targetWord": "guarda",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "página",
+    "sentence": "O guarda procura uma [[página]] vazia.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a page",
+      "options": [
+        "a page",
+        "a stamp",
+        "a queue",
+        "a folder"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "O guarda procura uma página vazia.",
+        "targetWord": "página",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "atravessar",
+    "sentence": "Na ponte, o ônibus [[atravessa]] devagar entre carros.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cross",
+      "options": [
+        "to cross",
+        "to park",
+        "to turn",
+        "to stop"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "Na ponte, o ônibus atravessa devagar entre carros.",
+        "targetWord": "atravessa",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "convencer",
+    "sentence": "“Todo mundo quer um”, ela diz, sem [[convencer]] ninguém.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to convince",
+      "options": [
+        "to convince",
+        "to greet",
+        "to pay",
+        "to follow"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "“Todo mundo quer um”, ela diz, sem convencer ninguém.",
+        "targetWord": "convencer",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "direto",
+    "sentence": "“Atravessar [[direto]] virou costume”, responde ele.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "straight through",
+      "options": [
+        "straight through",
+        "by night",
+        "on foot",
+        "for free"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "“Atravessar direto virou costume”, responde ele.",
+        "targetWord": "direto",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "resposta",
+    "sentence": "Ela não tem uma [[resposta]] boa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an answer",
+      "options": [
+        "an answer",
+        "a ticket",
+        "a plan",
+        "a coin"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "Ela não tem uma resposta boa.",
+        "targetWord": "resposta",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "país",
+    "sentence": "O ônibus atravessa entre carros dos dois [[países]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a country",
+      "options": [
+        "a country",
+        "a city",
+        "a river",
+        "a market"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "O ônibus atravessa entre carros dos dois países.",
+        "targetWord": "países",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "costume",
+    "sentence": "“Atravessar direto virou [[costume]]”, responde ele.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a habit",
+      "options": [
+        "a habit",
+        "a rule",
+        "a fine",
+        "a favour"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "“Atravessar direto virou costume”, responde ele.",
+        "targetWord": "costume",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "silêncio",
+    "sentence": "Bate o carimbo em [[silêncio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "silence",
+      "options": [
+        "silence",
+        "a hurry",
+        "a smile",
+        "a queue"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "Bate o carimbo em silêncio.",
+        "targetWord": "silêncio",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "provar",
+    "sentence": "Ela quer o carimbo para _____ depois que esteve ali.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "provar",
+      "options": [
+        "provar",
+        "esquecer",
+        "pagar",
+        "vender"
+      ],
+      "translation": "She wants the stamp to _____ later that she was there.",
+      "optionTranslations": [
+        "prove",
+        "forget",
+        "pay",
+        "sell"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "Ela quer o carimbo para provar depois que esteve ali.",
+        "targetWord": "provar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2ea94c9ee9732788.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "precisar",
+    "sentence": "Ninguém pede carimbo, mas ela diz que vai _____ dele.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "precisar",
+      "options": [
+        "precisar",
+        "gostar",
+        "falar",
+        "sair"
+      ],
+      "translation": "Nobody asks for a stamp, but she says she is going to _____ it.",
+      "optionTranslations": [
+        "need",
+        "like",
+        "speak",
+        "leave"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "Ninguém pede carimbo, mas ela diz que vai precisar dele.",
+        "targetWord": "precisar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c9cf438b53c7197.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "truque",
+    "sentence": "Descer aqui e esperar o próximo ônibus é o _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "truque",
+      "options": [
+        "truque",
+        "preço",
+        "carro",
+        "mapa"
+      ],
+      "translation": "Getting off here and waiting for the next bus is the _____.",
+      "optionTranslations": [
+        "trick",
+        "price",
+        "car",
+        "map"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "Descer aqui e esperar o próximo ônibus é o truque.",
+        "targetWord": "truque",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4663108ae924635.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "quatro",
+    "sentence": "Ela desce e faz uma fila de _____ pessoas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quatro",
+      "options": [
+        "quatro",
+        "zero",
+        "cem",
+        "mil"
+      ],
+      "translation": "She gets off and forms a queue of _____ people.",
+      "optionTranslations": [
+        "four",
+        "zero",
+        "a hundred",
+        "a thousand"
+      ],
+      "audioClip": {
+        "storySlug": "o-carimbo-que-ninguem-pede",
+        "storySource": "user",
+        "sentence": "Ela desce e faz uma fila de quatro pessoas.",
+        "targetWord": "quatro",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0f43e4beb090428c.mp3"
+      }
+    },
+    "featured": false
+  }
+]

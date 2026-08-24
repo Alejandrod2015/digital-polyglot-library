@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "quintal,varal,pia,muro",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "quintal",
+          "answer": "a back yard",
+          "options": [
+            "a back yard",
+            "a washing line",
+            "a sink",
+            "a wall"
+          ]
+        },
+        {
+          "word": "varal",
+          "answer": "a washing line",
+          "options": [
+            "a back yard",
+            "a washing line",
+            "a sink",
+            "a wall"
+          ]
+        },
+        {
+          "word": "pia",
+          "answer": "a sink",
+          "options": [
+            "a back yard",
+            "a washing line",
+            "a sink",
+            "a wall"
+          ]
+        },
+        {
+          "word": "muro",
+          "answer": "a wall",
+          "options": [
+            "a back yard",
+            "a washing line",
+            "a sink",
+            "a wall"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camiseta",
+    "sentence": "Às seis da tarde a [[camiseta]] ainda pesa na mão dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a t-shirt",
+      "options": [
+        "a t-shirt",
+        "a towel",
+        "a sheet",
+        "a jacket"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "Às seis da tarde a camiseta ainda pesa na mão dela.",
+        "targetWord": "camiseta",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "blusa",
+    "sentence": "Ao meio-dia a [[blusa]] está seca e dura de sal.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a top",
+      "options": [
+        "a top",
+        "a shoe",
+        "a bag",
+        "a hat"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "Ao meio-dia a blusa está seca e dura de sal.",
+        "targetWord": "blusa",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "umidade",
+    "sentence": "“Aqui a [[umidade]] não vai embora o ano inteiro.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the damp in the air",
+      "options": [
+        "the damp in the air",
+        "the noise",
+        "the dust",
+        "the heat"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "“Aqui a umidade não vai embora o ano inteiro.”",
+        "targetWord": "umidade",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bandeira",
+    "sentence": "A roupa dos outros bate no ar com barulho de [[bandeira]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a flag",
+      "options": [
+        "a flag",
+        "a drum",
+        "a door",
+        "a bell"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "A roupa dos outros bate no ar com barulho de bandeira.",
+        "targetWord": "bandeira",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pendurar",
+    "sentence": "“E ninguém [[pendura]] aí?”, pergunta Rafaela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hang up",
+      "options": [
+        "to hang up",
+        "to fold",
+        "to wash",
+        "to sell"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "“E ninguém pendura aí?”, pergunta Rafaela.",
+        "targetWord": "pendura",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "canto",
+    "sentence": "Ela mostra o [[canto]] atrás do muro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a corner",
+      "options": [
+        "a corner",
+        "a roof",
+        "a door",
+        "a path"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "Ela mostra o canto atrás do muro.",
+        "targetWord": "canto",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dona",
+    "sentence": "“Isso não seca nunca?”, pergunta à [[dona]] da pousada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the owner",
+      "options": [
+        "the owner",
+        "the cook",
+        "the guest",
+        "the driver"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "“Isso não seca nunca?”, pergunta à dona da pousada.",
+        "targetWord": "dona",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sal",
+    "sentence": "Ao meio-dia a blusa está seca e dura de [[sal]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "salt",
+      "options": [
+        "salt",
+        "sugar",
+        "soap",
+        "sand"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "Ao meio-dia a blusa está seca e dura de sal.",
+        "targetWord": "sal",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "preguiça",
+    "sentence": "“Fica longe, e dá [[preguiça]].”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "laziness",
+      "options": [
+        "laziness",
+        "fear",
+        "hunger",
+        "hurry"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "“Fica longe, e dá preguiça.”",
+        "targetWord": "preguiça",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ensinar",
+    "sentence": "“O vento seca”, [[ensina]] a dona.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to teach",
+      "options": [
+        "to teach",
+        "to deny",
+        "to ask",
+        "to shout"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "“O vento seca”, ensina a dona.",
+        "targetWord": "ensina",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pesar",
+    "sentence": "Às seis da tarde a camiseta ainda [[pesa]] na mão dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to weigh",
+      "options": [
+        "to weigh",
+        "to shine",
+        "to smell",
+        "to tear"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "Às seis da tarde a camiseta ainda pesa na mão dela.",
+        "targetWord": "pesa",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "morno",
+    "sentence": "O quintal fica com o ar [[morno]] parado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "lukewarm",
+      "options": [
+        "lukewarm",
+        "freezing",
+        "wet",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "O quintal fica com o ar morno parado.",
+        "targetWord": "morno",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "lavar",
+    "sentence": "Ela não tem nada limpo e vai _____ tudo na pia.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lavar",
+      "options": [
+        "lavar",
+        "vender",
+        "dobrar",
+        "secar"
+      ],
+      "translation": "She has nothing clean and is going to _____ everything in the sink.",
+      "optionTranslations": [
+        "wash",
+        "sell",
+        "fold",
+        "dry"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "Ela não tem nada limpo e vai lavar tudo na pia.",
+        "targetWord": "lavar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9bb928049d09312e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "duro",
+    "sentence": "O sal deixa o pano seco e _____ como papel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "duro",
+      "options": [
+        "duro",
+        "macio",
+        "molhado",
+        "novo"
+      ],
+      "translation": "Salt leaves the cloth dry and _____ like paper.",
+      "optionTranslations": [
+        "stiff",
+        "soft",
+        "wet",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "O sal deixa o pano seco e duro como papel.",
+        "targetWord": "duro",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb532dde613021c8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "vestir",
+    "sentence": "Depois de três dias de praia não tem nada para _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vestir",
+      "options": [
+        "vestir",
+        "comer",
+        "beber",
+        "ler"
+      ],
+      "translation": "After three days at the beach she has nothing to _____.",
+      "optionTranslations": [
+        "wear",
+        "eat",
+        "drink",
+        "read"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "Depois de três dias de praia não tem nada para vestir.",
+        "targetWord": "vestir",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1f1472398db5c977.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "levar",
+    "sentence": "No dia seguinte ela tem que _____ tudo para o canto.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "levar",
+      "options": [
+        "levar",
+        "deixar",
+        "perder",
+        "lavar"
+      ],
+      "translation": "The next day she has to _____ everything to the corner.",
+      "optionTranslations": [
+        "take",
+        "leave",
+        "lose",
+        "wash"
+      ],
+      "audioClip": {
+        "storySlug": "roupa-que-nao-seca",
+        "storySource": "user",
+        "sentence": "No dia seguinte ela tem que levar tudo para o canto.",
+        "targetWord": "levar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0dd3e787575f735.mp3"
+      }
+    },
+    "featured": false
+  }
+]

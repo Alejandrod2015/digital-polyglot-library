@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "capa,passarela,catarata,celular",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "capa",
+          "answer": "a rain cape",
+          "options": [
+            "a rain cape",
+            "a walkway",
+            "the falls",
+            "a mobile phone"
+          ]
+        },
+        {
+          "word": "passarela",
+          "answer": "a walkway",
+          "options": [
+            "a rain cape",
+            "a walkway",
+            "the falls",
+            "a mobile phone"
+          ]
+        },
+        {
+          "word": "catarata",
+          "answer": "the falls",
+          "options": [
+            "a rain cape",
+            "a walkway",
+            "the falls",
+            "a mobile phone"
+          ]
+        },
+        {
+          "word": "celular",
+          "answer": "a mobile phone",
+          "options": [
+            "a rain cape",
+            "a walkway",
+            "the falls",
+            "a mobile phone"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirante",
+    "sentence": "Ela não se arrepende nos primeiros [[mirantes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a viewpoint",
+      "options": [
+        "a viewpoint",
+        "a ticket",
+        "a bench",
+        "a stairway"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "Ela não se arrepende nos primeiros mirantes.",
+        "targetWord": "mirantes",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grade",
+    "sentence": "São fáceis: a [[grade]] seca e a névoa longe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a railing",
+      "options": [
+        "a railing",
+        "a rooftop",
+        "a fountain",
+        "a queue"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "São fáceis: a grade seca e a névoa longe.",
+        "targetWord": "grade",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "névoa",
+    "sentence": "Larissa conhece a [[névoa]] de cor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "mist",
+      "options": [
+        "mist",
+        "thunder",
+        "sunlight",
+        "wind"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "Larissa conhece a névoa de cor.",
+        "targetWord": "névoa",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "queda",
+    "sentence": "A [[queda]] bate de lado na última passarela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the falling water",
+      "options": [
+        "the falling water",
+        "the wind",
+        "the crowd",
+        "the noise"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "A queda bate de lado na última passarela.",
+        "targetWord": "queda",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poça",
+    "sentence": "Tudo vira uma [[poça]] só.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a puddle",
+      "options": [
+        "a puddle",
+        "a shadow",
+        "a line",
+        "a stain"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "Tudo vira uma poça só.",
+        "targetWord": "poça",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entrada",
+    "sentence": "Na [[entrada]] das cataratas, Larissa vende capa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the entrance",
+      "options": [
+        "the entrance",
+        "the exit",
+        "the market",
+        "the river"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "Na entrada das cataratas, Larissa vende capa.",
+        "targetWord": "entrada",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colado",
+    "sentence": "Ela diz isso depois, com a roupa [[colada]] no corpo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stuck to",
+      "options": [
+        "stuck to",
+        "folded",
+        "torn",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "Ela diz isso depois, com a roupa colada no corpo.",
+        "targetWord": "colada",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sério",
+    "sentence": "“Dez reais”, repete Larissa, [[séria]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "serious",
+      "options": [
+        "serious",
+        "cheerful",
+        "tired",
+        "shy"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "“Dez reais”, repete Larissa, séria.",
+        "targetWord": "séria",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "insistir",
+    "sentence": "“Está fazendo sol, é sorte minha”, [[insiste]] Rafaela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to insist",
+      "options": [
+        "to insist",
+        "to whisper",
+        "to agree",
+        "to leave"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "“Está fazendo sol, é sorte minha”, insiste Rafaela.",
+        "targetWord": "insiste",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paciência",
+    "sentence": "Olha a queda com [[paciência]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "patience",
+      "options": [
+        "patience",
+        "anger",
+        "doubt",
+        "hunger"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "Olha a queda com paciência.",
+        "targetWord": "paciência",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorte",
+    "sentence": "“Está fazendo sol, é [[sorte]] minha”, insiste Rafaela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "luck",
+      "options": [
+        "luck",
+        "fault",
+        "turn",
+        "habit"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "“Está fazendo sol, é sorte minha”, insiste Rafaela.",
+        "targetWord": "sorte",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fácil",
+    "sentence": "São [[fáceis]]: a grade seca e a névoa longe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "easy",
+      "options": [
+        "easy",
+        "far",
+        "narrow",
+        "crowded"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "São fáceis: a grade seca e a névoa longe.",
+        "targetWord": "fáceis",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "salvar",
+    "sentence": "A capa é fina, mas serve para _____ o celular da chuva.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "salvar",
+      "options": [
+        "salvar",
+        "molhar",
+        "vender",
+        "perder"
+      ],
+      "translation": "The cape is thin, but it works to _____ the phone from the rain.",
+      "optionTranslations": [
+        "save",
+        "wet",
+        "sell",
+        "lose"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "A capa é fina, mas serve para salvar o celular da chuva.",
+        "targetWord": "salvar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b65cac49219705a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cobrar",
+    "sentence": "Ela pede duas capas e Larissa volta a _____ dez.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cobrar",
+      "options": [
+        "cobrar",
+        "pagar",
+        "pedir",
+        "dar"
+      ],
+      "translation": "She asks for two capes and Larissa goes back to _____ ten.",
+      "optionTranslations": [
+        "charge",
+        "pay",
+        "ask",
+        "give"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "Ela pede duas capas e Larissa volta a cobrar dez.",
+        "targetWord": "cobrar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d32a3d80cf688dd6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dúvida",
+    "sentence": "Na segunda vez ela compra a capa sem nenhuma _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "dúvida",
+      "options": [
+        "dúvida",
+        "pressa",
+        "fila",
+        "chuva"
+      ],
+      "translation": "The second time she buys the cape without any _____.",
+      "optionTranslations": [
+        "doubt",
+        "hurry",
+        "queue",
+        "rain"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "Na segunda vez ela compra a capa sem nenhuma dúvida.",
+        "targetWord": "dúvida",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fdff5fa2a75fbc4c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "barato",
+    "sentence": "A capa custa pouco: é um preço _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "barato",
+      "options": [
+        "barato",
+        "longe",
+        "antigo",
+        "molhado"
+      ],
+      "translation": "The cape costs little: it is a _____ price.",
+      "optionTranslations": [
+        "cheap",
+        "far",
+        "old",
+        "wet"
+      ],
+      "audioClip": {
+        "storySlug": "a-capa-de-dez-reais",
+        "storySource": "user",
+        "sentence": "A capa custa pouco: é um preço barato.",
+        "targetWord": "barato",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/262d8c992ba78287.mp3"
+      }
+    },
+    "featured": false
+  }
+]

@@ -501,7 +501,7 @@ async function renderSentence(sentence: string, apiKey: string, outPath: string)
     <div class="opt ${d.ok ? "" : "bad"}"><div class="num">${d.n}</div>
       <div class="body"><div class="lbl">${d.word}; take ${d.take} <span>${d.ok ? `${d.tries}t · ${d.dur.toFixed(2)}s` : "FAILED"}</span></div>
       <div class="sen">${d.sentence}</div>
-      ${d.ok ? `<audio controls preload="none" src="/_practice-clips/${d.file}"></audio>` : ""}</div></div>`).join("");
+      ${d.ok ? `<audio controls preload="none" src="${d.file.startsWith("http") ? d.file : `/_practice-clips/${d.file}`}"></audio>` : ""}</div></div>`).join("");
     const takesHtml = `<!doctype html><html lang="es"><head><meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/><title>Takes; ${slug}</title>
 <style>:root{color-scheme:dark}body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0a1424;color:#e9eef7;padding:24px}
@@ -521,6 +521,19 @@ ${takeOpts}</body></html>`;
 
   const done: Array<{ n: number; word: string; ok: boolean; tries: number; dur: number; file: string; sentence: string }> = [];
   let n = 1;
+
+  // --relist: rehace la pagina de audicion con TODOS los clips que ya tiene el
+  // set, leyendo el JSON, sin sintetizar nada. Existe porque un reintento de un
+  // solo clip sobrescribia la pagina completa con una sola fila, y para oir el
+  // set entero habia que re-renderizarlo (creditos tirados). Usa el clipUrl de
+  // R2, no el mp3 local, asi que sirve aunque se haya limpiado public/.
+  if (process.argv.includes("--relist")) {
+    for (const e of exs as Array<{ type: string; word: string; payload?: { audioClip?: { sentence?: string; clipUrl?: string } } }>) {
+      const url = e.payload?.audioClip?.clipUrl;
+      if (!url) continue;
+      done.push({ n: n++, word: e.word, ok: true, tries: 0, dur: 0, file: url, sentence: e.payload!.audioClip!.sentence ?? "" });
+    }
+  } else
   for (const { e } of targets) {
     const sentence: string = e.payload.audioClip.sentence;
     const file = `${slug}__${strip(e.word).replace(/\s+/g, "-")}.mp3`;
@@ -538,15 +551,19 @@ ${takeOpts}</body></html>`;
     n++;
   }
 
-  writeFileSync(path, JSON.stringify(exs, null, 2) + "\n");
-  console.log(`\n${done.filter((d) => d.ok).length}/${done.length} clips ok. JSON updated: ${path}`);
+  if (!process.argv.includes("--relist")) {
+    writeFileSync(path, JSON.stringify(exs, null, 2) + "\n");
+    console.log(`\n${done.filter((d) => d.ok).length}/${done.length} clips ok. JSON updated: ${path}`);
+  } else {
+    console.log(`\n${done.length} clips ya rendidos, pagina rehecha sin sintetizar.`);
+  }
 
   // Audition page for the user to listen locally.
   const opts = done.map((d) => `
     <div class="opt ${d.ok ? "" : "bad"}"><div class="num">${d.n}</div>
       <div class="body"><div class="lbl">${d.word} <span>${d.ok ? `${d.tries}t · ${d.dur.toFixed(2)}s` : "FAILED"}</span></div>
       <div class="sen">${d.sentence}</div>
-      ${d.ok ? `<audio controls preload="none" src="/_practice-clips/${d.file}"></audio>` : ""}</div></div>`).join("");
+      ${d.ok ? `<audio controls preload="none" src="${d.file.startsWith("http") ? d.file : `/_practice-clips/${d.file}`}"></audio>` : ""}</div></div>`).join("");
   const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/><title>Clips; ${slug}</title>
 <style>:root{color-scheme:dark}body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#0a1424;color:#e9eef7;padding:24px}

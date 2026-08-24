@@ -1,6 +1,7 @@
 /**
- * Publica el journey Traveler PT Brazil A0: pasa las 21 historias a
- * `published` y el journey a `active`.
+ * Publica un journey Traveler PT Brazil: pasa las 21 historias a
+ * `published` y el journey a `active`. Por defecto el A0; con
+ * `--journey=<id>` cualquier otro (el A1 es cmsyrge55000732u9oiu8wue3).
  *
  * POR QUÉ UN SCRIPT Y NO EL ENDPOINT: /api/studio/journeys/publish exige
  * sesión de Clerk con membresía de studio, que no existe en la terminal. Para
@@ -8,8 +9,8 @@
  * (route.ts, líneas 39-105) contra la misma base:
  *   1. continuidad: una historia `mini-cliffhanger` no puede ser el último
  *      slot de su tema.
- *   2. audio de práctica: `meaning_in_context` necesita clipUrl + wordClipUrl,
- *      y `fill_blank` necesita clipUrl. Sin esto suena mudo en el móvil.
+ *   2. audio de práctica: `meaning_in_context` necesita wordClipUrl y
+ *      `fill_blank` necesita clipUrl. Sin esto suena mudo en el móvil.
  * Si algo falla, NO escribe nada: o entran las 21 o no entra ninguna.
  *
  *   npx tsx scripts/_publishPtBr.ts --dry     (solo comprueba)
@@ -20,7 +21,8 @@ config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
 
-const JOURNEY_ID = "cmsou2uk0000732mqa4oatcmn";
+const jArg = process.argv.find((a) => a.startsWith("--journey="));
+const JOURNEY_ID = jArg ? jArg.slice("--journey=".length) : "cmsou2uk0000732mqa4oatcmn";
 const apply = process.argv.includes("--apply");
 
 (async () => {
@@ -54,8 +56,10 @@ const apply = process.argv.includes("--apply");
     const missing: string[] = [];
     for (const e of set.exercises) {
       const clip = (e.payload as any)?.audioClip;
+      // El clip de FRASE de un meaning_in_context no se pide: esa tarjeta es
+      // modo "meaning" y toca wordClipUrl, nunca la oración (ver el gate de
+      // /api/studio/journeys/publish, que explica por qué).
       if (e.type === "meaning_in_context") {
-        if (!clip?.clipUrl) missing.push(`${e.word} (frase)`);
         if (!clip?.wordClipUrl) missing.push(`${e.word} (palabra)`);
       } else if (e.type === "fill_blank") {
         if (!clip?.clipUrl) missing.push(`${e.word} (frase)`);

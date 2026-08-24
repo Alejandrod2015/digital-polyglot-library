@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "lancha,jacaré,garça,colete",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "lancha",
+          "answer": "a motorboat",
+          "options": [
+            "a motorboat",
+            "a caiman",
+            "a heron",
+            "a life jacket"
+          ]
+        },
+        {
+          "word": "jacaré",
+          "answer": "a caiman",
+          "options": [
+            "a motorboat",
+            "a caiman",
+            "a heron",
+            "a life jacket"
+          ]
+        },
+        {
+          "word": "garça",
+          "answer": "a heron",
+          "options": [
+            "a motorboat",
+            "a caiman",
+            "a heron",
+            "a life jacket"
+          ]
+        },
+        {
+          "word": "colete",
+          "answer": "a life jacket",
+          "options": [
+            "a motorboat",
+            "a caiman",
+            "a heron",
+            "a life jacket"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "capivara",
+    "sentence": "Uma [[capivara]] come e uma garça espera na margem.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a capybara",
+      "options": [
+        "a capybara",
+        "a monkey",
+        "a turtle",
+        "a snake"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "Uma capivara come e uma garça espera na margem.",
+        "targetWord": "capivara",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "margem",
+    "sentence": "“Uns oito, na [[margem]]”, responde Selma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the river bank",
+      "options": [
+        "the river bank",
+        "the boat",
+        "the sky",
+        "the road"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "“Uns oito, na margem”, responde Selma.",
+        "targetWord": "margem",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arara",
+    "sentence": "Ela só vê o rabo, e uma [[arara]] passa gritando.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a macaw",
+      "options": [
+        "a macaw",
+        "a fish",
+        "a horse",
+        "a bee"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "Ela só vê o rabo, e uma arara passa gritando.",
+        "targetWord": "arara",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rabo",
+    "sentence": "Ela só vê o [[rabo]], e uma arara passa gritando.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the tail",
+      "options": [
+        "the tail",
+        "the head",
+        "the wing",
+        "the foot"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "Ela só vê o rabo, e uma arara passa gritando.",
+        "targetWord": "rabo",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "guia",
+    "sentence": "Quem leva o barco é Selma, uma [[guia]] do rio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a guide",
+      "options": [
+        "a guide",
+        "a cook",
+        "a driver",
+        "a nurse"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "Quem leva o barco é Selma, uma guia do rio.",
+        "targetWord": "guia",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "popa",
+    "sentence": "Rafaela senta na [[popa]] com o sol nas costas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the stern",
+      "options": [
+        "the stern",
+        "the bank",
+        "the bridge",
+        "the sand"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "Rafaela senta na popa com o sol nas costas.",
+        "targetWord": "popa",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vivo",
+    "sentence": "“E estão [[vivos]], que é o que importa”, diz Selma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alive",
+      "options": [
+        "alive",
+        "asleep",
+        "hungry",
+        "tame"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "“E estão vivos, que é o que importa”, diz Selma.",
+        "targetWord": "vivos",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mentira",
+    "sentence": "O animal fica tão parado que parece de [[mentira]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lie",
+      "options": [
+        "a lie",
+        "a dream",
+        "a photo",
+        "a joke"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "O animal fica tão parado que parece de mentira.",
+        "targetWord": "mentira",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "onça",
+    "sentence": "“Tem [[onça]] aqui?”, pergunta Rafaela baixinho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a jaguar",
+      "options": [
+        "a jaguar",
+        "a crocodile",
+        "a wolf",
+        "an eagle"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "“Tem onça aqui?”, pergunta Rafaela baixinho.",
+        "targetWord": "onça",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coração",
+    "sentence": "Um jacaré entra na água e o [[coração]] dela para.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the heart",
+      "options": [
+        "the heart",
+        "the boat",
+        "the watch",
+        "the engine"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "Um jacaré entra na água e o coração dela para.",
+        "targetWord": "coração",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tranquilo",
+    "sentence": "A lancha sai no amanhecer, com o rio [[tranquilo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calm",
+      "options": [
+        "calm",
+        "dirty",
+        "narrow",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "A lancha sai no amanhecer, com o rio tranquilo.",
+        "targetWord": "tranquilo",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esperto",
+    "sentence": "“São [[espertos]]?”, pergunta ela sobre os jacarés.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clever",
+      "options": [
+        "clever",
+        "dangerous",
+        "fast",
+        "noisy"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "“São espertos?”, pergunta ela sobre os jacarés.",
+        "targetWord": "espertos",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "parecer",
+    "sentence": "Parado no barro, o jacaré chega a _____ de plástico.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "parecer",
+      "options": [
+        "parecer",
+        "cheirar",
+        "pesar",
+        "custar"
+      ],
+      "translation": "Still in the mud, the caiman comes to _____ made of plastic.",
+      "optionTranslations": [
+        "look",
+        "smell",
+        "weigh",
+        "cost"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "Parado no barro, o jacaré chega a parecer de plástico.",
+        "targetWord": "parecer",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9dacdd9171f0b530.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "amanhecer",
+    "sentence": "A lancha sai da fazenda logo depois do _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "amanhecer",
+      "options": [
+        "amanhecer",
+        "almoço",
+        "inverno",
+        "mercado"
+      ],
+      "translation": "The boat leaves the ranch right after _____.",
+      "optionTranslations": [
+        "dawn",
+        "lunch",
+        "winter",
+        "the market"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "A lancha sai da fazenda logo depois do amanhecer.",
+        "targetWord": "amanhecer",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc902f7ade4fe455.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "atenção",
+    "sentence": "Ela olha para trás com _____ e não vê nada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "atenção",
+      "options": [
+        "atenção",
+        "pressa",
+        "fome",
+        "sono"
+      ],
+      "translation": "She looks back _____ and sees nothing.",
+      "optionTranslations": [
+        "carefully",
+        "in a hurry",
+        "hungry",
+        "sleepy"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "Ela olha para trás com atenção e não vê nada.",
+        "targetWord": "atenção",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d0669b1b7f1a70e1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "animal",
+    "sentence": "O _____ fica parado no barro por vinte minutos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "animal",
+      "options": [
+        "animal",
+        "barco",
+        "chapéu",
+        "balde"
+      ],
+      "translation": "The _____ stays still in the mud for twenty minutes.",
+      "optionTranslations": [
+        "animal",
+        "boat",
+        "hat",
+        "bucket"
+      ],
+      "audioClip": {
+        "storySlug": "o-jacare-nao-se-move",
+        "storySource": "user",
+        "sentence": "O animal fica parado no barro por vinte minutos.",
+        "targetWord": "animal",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c8fdc45a6cc7935b.mp3"
+      }
+    },
+    "featured": false
+  }
+]

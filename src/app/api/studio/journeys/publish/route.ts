@@ -59,12 +59,19 @@ export async function POST(request: Request) {
   }
 
   // Practice-audio completeness gate (2026-07-27): a story must NEVER be
-  // published with its practice set missing audio. Two silent-on-device bugs
-  // traced to this: meaning_in_context exercises whose word audio was never
-  // pre-baked fall back to runtime word-tts (silent on Android), and any
-  // sentence-clip exercise without a clipUrl plays nothing. If a practice set
-  // exists, require: every meaning_in_context has payload.audioClip.wordClipUrl,
-  // and every meaning_in_context + fill_blank has payload.audioClip.clipUrl.
+  // published with its practice set missing audio that the app actually plays.
+  // A silent-on-device bug traced to this: meaning_in_context exercises whose
+  // word audio was never pre-baked fall back to runtime word-tts (silent on
+  // Android). If a practice set exists, require: every meaning_in_context has
+  // payload.audioClip.wordClipUrl, and every fill_blank has
+  // payload.audioClip.clipUrl.
+  //
+  // NOT required (2026-08-24): the SENTENCE clip of a meaning_in_context.
+  // That card is mode "meaning" (MobileLibraryShell mapSharedExerciseToMobile),
+  // and its autoplay calls playPracticeMeaningAudio, which plays wordClipUrl
+  // and NEVER the sentence clip; the code there says so in as many words.
+  // Demanding it billed one ElevenLabs render per vocab word that nobody can
+  // hear: 12 of the 16 clips per story on the PT-BR A1 journey.
   // Generate with scripts/_genWordClips.ts (words) + scripts/_genPracticeClips.ts
   // (sentences) before publishing. No env-var bypass.
   {
@@ -81,7 +88,6 @@ export async function POST(request: Request) {
           | null;
         if (ex.type === "meaning_in_context") {
           if (!clip?.wordClipUrl) missingWord.push(ex.word);
-          if (!clip?.clipUrl) missingClip.push(ex.word);
         } else if (ex.type === "fill_blank") {
           if (!clip?.clipUrl) missingClip.push(ex.word);
         }

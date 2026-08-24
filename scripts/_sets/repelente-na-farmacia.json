@@ -1,0 +1,456 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "farmácia,repelente,mosquito,creme",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "farmácia",
+          "answer": "a pharmacy",
+          "options": [
+            "a pharmacy",
+            "insect repellent",
+            "a mosquito",
+            "a cream"
+          ]
+        },
+        {
+          "word": "repelente",
+          "answer": "insect repellent",
+          "options": [
+            "a pharmacy",
+            "insect repellent",
+            "a mosquito",
+            "a cream"
+          ]
+        },
+        {
+          "word": "mosquito",
+          "answer": "a mosquito",
+          "options": [
+            "a pharmacy",
+            "insect repellent",
+            "a mosquito",
+            "a cream"
+          ]
+        },
+        {
+          "word": "creme",
+          "answer": "a cream",
+          "options": [
+            "a pharmacy",
+            "insect repellent",
+            "a mosquito",
+            "a cream"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "picada",
+    "sentence": "Rafaela entra com as [[picadas]] abaixo do joelho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an insect bite",
+      "options": [
+        "an insect bite",
+        "a scar",
+        "a bruise",
+        "a rash"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "Rafaela entra com as picadas abaixo do joelho.",
+        "targetWord": "picadas",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ca0fac52f490744c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "coçar",
+    "sentence": "No igarapé ela passa o caro e [[coça]] sem parar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to itch, to scratch",
+      "options": [
+        "to itch, to scratch",
+        "to sweat",
+        "to shiver",
+        "to sneeze"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "No igarapé ela passa o caro e coça sem parar.",
+        "targetWord": "coça",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a787d499f8306de9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "álcool",
+    "sentence": "Um dos vidros tem cheiro de [[álcool]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alcohol",
+      "options": [
+        "alcohol",
+        "sugar",
+        "smoke",
+        "soap"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "Um dos vidros tem cheiro de álcool.",
+        "targetWord": "álcool",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/15e633875432145d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "igarapé",
+    "sentence": "À tarde, no [[igarapé]], ela passa o repelente caro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an Amazon creek",
+      "options": [
+        "an Amazon creek",
+        "a market",
+        "a bridge",
+        "a beach"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "À tarde, no igarapé, ela passa o repelente caro.",
+        "targetWord": "igarapé",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5772a6d4f72b515b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "teimoso",
+    "sentence": "“O mosquito daqui é [[teimoso]]”, responde com paciência.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "stubborn",
+      "options": [
+        "stubborn",
+        "harmless",
+        "tiny",
+        "slow"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "“O mosquito daqui é teimoso”, responde com paciência.",
+        "targetWord": "teimoso",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/27469720addce4f6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vidro",
+    "sentence": "O moço põe dois [[vidros]] de creme na mesa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a glass bottle",
+      "options": [
+        "a glass bottle",
+        "a box",
+        "a bag",
+        "a spoon"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "O moço põe dois vidros de creme na mesa.",
+        "targetWord": "vidros",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/51078b02f19c6817.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "receita",
+    "sentence": "O moço olha e não pede [[receita]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a prescription",
+      "options": [
+        "a prescription",
+        "a receipt",
+        "a deposit",
+        "an address"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "O moço olha e não pede receita.",
+        "targetWord": "receita",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/21b15f4b19e5b1e1.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conselho",
+    "sentence": "“E o seu [[conselho]] é o barato?”, insiste ela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "advice",
+      "options": [
+        "advice",
+        "a discount",
+        "a warning",
+        "a promise"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "“E o seu conselho é o barato?”, insiste ela.",
+        "targetWord": "conselho",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/44ebc974b9783e25.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paciência",
+    "sentence": "“O mosquito daqui é teimoso”, dá a resposta com [[paciência]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "patience",
+      "options": [
+        "patience",
+        "anger",
+        "hurry",
+        "fear"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "“O mosquito daqui é teimoso”, dá a resposta com paciência.",
+        "targetWord": "paciência",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aae462e53f7622ff.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dúvida",
+    "sentence": "Rafaela discute e fica na [[dúvida]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "doubt",
+      "options": [
+        "doubt",
+        "a hurry",
+        "a debt",
+        "a habit"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "Rafaela discute e fica na dúvida.",
+        "targetWord": "dúvida",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbaec7d6da6c39d2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "assunto",
+    "sentence": "Quem atende na farmácia já conhece o [[assunto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the subject",
+      "options": [
+        "the subject",
+        "the owner",
+        "the price",
+        "the street"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "Quem atende na farmácia já conhece o assunto.",
+        "targetWord": "assunto",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28fbb981345a4541.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "truque",
+    "sentence": "O [[truque]] era o barato, e ela não avisa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the trick",
+      "options": [
+        "the trick",
+        "the receipt",
+        "the rule",
+        "the reason"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "O truque era o barato, e ela não avisa.",
+        "targetWord": "truque",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/da149a0d6c579028.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "barato",
+    "sentence": "O creme amarelo custa pouco: é o mais _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "barato",
+      "options": [
+        "barato",
+        "caro",
+        "forte",
+        "novo"
+      ],
+      "translation": "The yellow cream costs little: it is the _____ one.",
+      "optionTranslations": [
+        "cheap",
+        "expensive",
+        "strong",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "O creme amarelo custa pouco: é o mais barato.",
+        "targetWord": "barato",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0e9fc8b399b7fbb8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "proteger",
+    "sentence": "Um bom repelente serve para _____ a pele por horas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "proteger",
+      "options": [
+        "proteger",
+        "molhar",
+        "cortar",
+        "lavar"
+      ],
+      "translation": "A good repellent works to _____ the skin for hours.",
+      "optionTranslations": [
+        "protect",
+        "wet",
+        "cut",
+        "wash"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "Um bom repelente serve para proteger a pele por horas.",
+        "targetWord": "proteger",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/085167cf2f89dc64.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "discutir",
+    "sentence": "Sem gostar da resposta, ela ainda tenta _____ com o moço.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "discutir",
+      "options": [
+        "discutir",
+        "dormir",
+        "pagar",
+        "sair"
+      ],
+      "translation": "Not liking the answer, she still tries to _____ with the lad.",
+      "optionTranslations": [
+        "argue",
+        "sleep",
+        "pay",
+        "leave"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "Sem gostar da resposta, ela ainda tenta discutir com o moço.",
+        "targetWord": "discutir",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/23cd3b2b81638f00.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "insistir",
+    "sentence": "Ele já disse não, mas ela volta a _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "insistir",
+      "options": [
+        "insistir",
+        "esquecer",
+        "agradecer",
+        "escutar"
+      ],
+      "translation": "He already said no, but she goes back to _____.",
+      "optionTranslations": [
+        "insist",
+        "forget",
+        "thank",
+        "listen"
+      ],
+      "audioClip": {
+        "storySlug": "repelente-na-farmacia",
+        "storySource": "user",
+        "sentence": "Ele já disse não, mas ela volta a insistir.",
+        "targetWord": "insistir",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/43e21b47209c73f5.mp3"
+      }
+    },
+    "featured": false
+  }
+]

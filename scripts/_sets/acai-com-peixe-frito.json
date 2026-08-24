@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "tigela,colher,toldo,pote",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "tigela",
+          "answer": "a bowl",
+          "options": [
+            "a bowl",
+            "a spoon",
+            "an awning",
+            "a small pot"
+          ]
+        },
+        {
+          "word": "colher",
+          "answer": "a spoon",
+          "options": [
+            "a bowl",
+            "a spoon",
+            "an awning",
+            "a small pot"
+          ]
+        },
+        {
+          "word": "toldo",
+          "answer": "an awning",
+          "options": [
+            "a bowl",
+            "a spoon",
+            "an awning",
+            "a small pot"
+          ]
+        },
+        {
+          "word": "pote",
+          "answer": "a small pot",
+          "options": [
+            "a bowl",
+            "a spoon",
+            "an awning",
+            "a small pot"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "açaí",
+    "sentence": "No Ver-o-Peso o [[açaí]] cai roxo e grosso dentro da tigela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "açaí pulp",
+      "options": [
+        "açaí pulp",
+        "fish stock",
+        "palm oil",
+        "sugar cane"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "No Ver-o-Peso o açaí cai roxo e grosso dentro da tigela.",
+        "targetWord": "açaí",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "farinha",
+    "sentence": "Ao lado vem um pote de [[farinha]] branca e o peixe frito.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "cassava flour",
+      "options": [
+        "cassava flour",
+        "salt",
+        "sauce",
+        "cheese"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "Ao lado vem um pote de farinha branca e o peixe frito.",
+        "targetWord": "farinha",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frito",
+    "sentence": "“Aqui é com peixe [[frito]] e farinha.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fried",
+      "options": [
+        "fried",
+        "raw",
+        "dried",
+        "boiled"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "“Aqui é com peixe frito e farinha.”",
+        "targetWord": "frito",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "roxo",
+    "sentence": "O açaí cai [[roxo]] e grosso dentro da tigela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "purple",
+      "options": [
+        "purple",
+        "green",
+        "clear",
+        "golden"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "O açaí cai roxo e grosso dentro da tigela.",
+        "targetWord": "roxo",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grosso",
+    "sentence": "O açaí cai roxo e [[grosso]] dentro da tigela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "thick",
+      "options": [
+        "thick",
+        "warm",
+        "sour",
+        "light"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "O açaí cai roxo e grosso dentro da tigela.",
+        "targetWord": "grosso",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "açúcar",
+    "sentence": "“Com banana e [[açúcar]]”, pede Rafaela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sugar",
+      "options": [
+        "sugar",
+        "pepper",
+        "butter",
+        "honey"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "“Com banana e açúcar”, pede Rafaela.",
+        "targetWord": "açúcar",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "refeição",
+    "sentence": "“Açaí é [[refeição]]”, insiste Dora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a meal",
+      "options": [
+        "a meal",
+        "a drink",
+        "a snack",
+        "a treat"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "“Açaí é refeição”, insiste Dora.",
+        "targetWord": "refeição",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sorvete",
+    "sentence": "No sul o mesmo fruto vira [[sorvete]] de copo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ice cream",
+      "options": [
+        "ice cream",
+        "juice",
+        "jam",
+        "cake"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "No sul o mesmo fruto vira sorvete de copo.",
+        "targetWord": "sorvete",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amargo",
+    "sentence": "A tigela chega [[amarga]] e sem nada doce.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bitter",
+      "options": [
+        "bitter",
+        "cold",
+        "salty",
+        "sweet"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "A tigela chega amarga e sem nada doce.",
+        "targetWord": "amarga",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cliente",
+    "sentence": "No meio da tigela come igual aos outros [[clientes]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a customer",
+      "options": [
+        "a customer",
+        "a cook",
+        "a neighbour",
+        "a child"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "No meio da tigela come igual aos outros clientes.",
+        "targetWord": "clientes",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sobremesa",
+    "sentence": "“E de [[sobremesa]]?”, pergunta Rafaela no fim.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dessert",
+      "options": [
+        "dessert",
+        "breakfast",
+        "a starter",
+        "a bill"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "“E de sobremesa?”, pergunta Rafaela no fim.",
+        "targetWord": "sobremesa",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gentil",
+    "sentence": "Dora é [[gentil]] e recomenda sempre a mesma coisa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "kind",
+      "options": [
+        "kind",
+        "quick",
+        "quiet",
+        "strict"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "Dora é gentil e recomenda sempre a mesma coisa.",
+        "targetWord": "gentil",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "recomendar",
+    "sentence": "Quando alguém chega perdida, Dora costuma _____ o prato do dia.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "recomendar",
+      "options": [
+        "recomendar",
+        "cobrar",
+        "lavar",
+        "guardar"
+      ],
+      "translation": "When someone arrives lost, Dora usually _____ the dish of the day.",
+      "optionTranslations": [
+        "recommends",
+        "charges for",
+        "washes",
+        "keeps"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "Quando alguém chega perdida, Dora costuma recomendar o prato do dia.",
+        "targetWord": "recomendar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d820a64a57bb606e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "prefere",
+    "sentence": "“Esse eu faço como a senhora _____”, diz Dora.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prefere",
+      "options": [
+        "prefere",
+        "paga",
+        "lava",
+        "conta"
+      ],
+      "translation": "“This one I make the way you _____,” says Dora.",
+      "optionTranslations": [
+        "prefer",
+        "pay",
+        "wash",
+        "count"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "“Esse eu faço como a senhora prefere”, diz Dora.",
+        "targetWord": "prefere",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b6bf9285450bf3f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "engolir",
+    "sentence": "Ela acha estranho e custa a _____ a primeira colher.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "engolir",
+      "options": [
+        "engolir",
+        "pedir",
+        "abrir",
+        "levar"
+      ],
+      "translation": "She finds it strange and struggles to _____ the first spoonful.",
+      "optionTranslations": [
+        "swallow",
+        "ask for",
+        "open",
+        "take"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "Ela acha estranho e custa a engolir a primeira colher.",
+        "targetWord": "engolir",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ded0c46a659dad48.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "barato",
+    "sentence": "Ela para às onze com a nota de dez porque é _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "barato",
+      "options": [
+        "barato",
+        "quente",
+        "doce",
+        "longe"
+      ],
+      "translation": "She stops at eleven with her ten-real note because it is _____.",
+      "optionTranslations": [
+        "cheap",
+        "hot",
+        "sweet",
+        "far"
+      ],
+      "audioClip": {
+        "storySlug": "acai-com-peixe-frito",
+        "storySource": "user",
+        "sentence": "Ela para às onze com a nota de dez porque é barato.",
+        "targetWord": "barato",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/feed419a4197c8f6.mp3"
+      }
+    },
+    "featured": false
+  }
+]

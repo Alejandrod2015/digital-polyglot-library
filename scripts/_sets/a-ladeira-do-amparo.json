@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "mala,roda,corrimão,campainha",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "mala",
+          "answer": "a suitcase",
+          "options": [
+            "a suitcase",
+            "a wheel",
+            "a handrail",
+            "a doorbell"
+          ]
+        },
+        {
+          "word": "roda",
+          "answer": "a wheel",
+          "options": [
+            "a suitcase",
+            "a wheel",
+            "a handrail",
+            "a doorbell"
+          ]
+        },
+        {
+          "word": "corrimão",
+          "answer": "a handrail",
+          "options": [
+            "a suitcase",
+            "a wheel",
+            "a handrail",
+            "a doorbell"
+          ]
+        },
+        {
+          "word": "campainha",
+          "answer": "a doorbell",
+          "options": [
+            "a suitcase",
+            "a wheel",
+            "a handrail",
+            "a doorbell"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suor",
+    "sentence": "O [[suor]] escorre na nuca dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sweat",
+      "options": [
+        "sweat",
+        "dust",
+        "rain",
+        "sand"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "O suor escorre na nuca dela.",
+        "targetWord": "suor",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nuca",
+    "sentence": "O suor escorre na [[nuca]] dela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the nape of the neck",
+      "options": [
+        "the nape of the neck",
+        "the wrist",
+        "the ankle",
+        "the elbow"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "O suor escorre na nuca dela.",
+        "targetWord": "nuca",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arrastar",
+    "sentence": "Rafaela [[arrasta]] a mala até a metade da subida.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to drag",
+      "options": [
+        "to drag",
+        "to lift",
+        "to push",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "Rafaela arrasta a mala até a metade da subida.",
+        "targetWord": "arrasta",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "turista",
+    "sentence": "Vera sobe bagagem de [[turista]] num carrinho de feira.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a tourist",
+      "options": [
+        "a tourist",
+        "a neighbour",
+        "a driver",
+        "a seller"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "Vera sobe bagagem de turista num carrinho de feira.",
+        "targetWord": "turista",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bagagem",
+    "sentence": "Vera sobe [[bagagem]] de turista num carrinho de feira.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "luggage",
+      "options": [
+        "luggage",
+        "furniture",
+        "rubbish",
+        "fruit"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "Vera sobe bagagem de turista num carrinho de feira.",
+        "targetWord": "bagagem",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rocha",
+    "sentence": "Rafaela chega de táxi e olha a [[rocha]] antiga do chão.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "rock",
+      "options": [
+        "rock",
+        "glass",
+        "metal",
+        "clay"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "Rafaela chega de táxi e olha a rocha antiga do chão.",
+        "targetWord": "rocha",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vencer",
+    "sentence": "Vera carrega a mala no carrinho e [[vence]] o resto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get past",
+      "options": [
+        "to get past",
+        "to pay for",
+        "to measure",
+        "to open"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "Vera carrega a mala no carrinho e vence o resto.",
+        "targetWord": "vence",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "irregular",
+    "sentence": "Uma ladeira [[irregular]] dobra a esquina.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "uneven",
+      "options": [
+        "uneven",
+        "straight",
+        "narrow",
+        "quiet"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "Uma ladeira irregular dobra a esquina.",
+        "targetWord": "irregular",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "curto",
+    "sentence": "Uma roda solta um barulho [[curto]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "short",
+      "options": [
+        "short",
+        "deep",
+        "sweet",
+        "distant"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "Uma roda solta um barulho curto.",
+        "targetWord": "curto",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "custar",
+    "sentence": "“Quanto [[custa]] subir com a mala?”, pergunta Rafaela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cost",
+      "options": [
+        "to cost",
+        "to weigh",
+        "to last",
+        "to help"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "“Quanto custa subir com a mala?”, pergunta Rafaela.",
+        "targetWord": "custa",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pesado",
+    "sentence": "“A mala [[pesada]] não aguenta a pedra.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "heavy",
+      "options": [
+        "heavy",
+        "empty",
+        "cheap",
+        "open"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "“A mala pesada não aguenta a pedra.”",
+        "targetWord": "pesada",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plástico",
+    "sentence": "“O [[plástico]] já quebrou”, diz Vera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "plastic",
+      "options": [
+        "plastic",
+        "leather",
+        "paper",
+        "cloth"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "“O plástico já quebrou”, diz Vera.",
+        "targetWord": "plástico",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "escorrer",
+    "sentence": "Com o calor, o suor não para de _____ pelo pescoço.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escorrer",
+      "options": [
+        "escorrer",
+        "secar",
+        "parar",
+        "subir"
+      ],
+      "translation": "With the heat, sweat does not stop _____ down the neck.",
+      "optionTranslations": [
+        "run down",
+        "dry",
+        "stop",
+        "go up"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "Com o calor, o suor não para de escorrer pelo pescoço.",
+        "targetWord": "escorrer",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/961af1c1b8d22fb9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "doer",
+    "sentence": "Depois de subir a ladeira inteira, o joelho começa a _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "doer",
+      "options": [
+        "doer",
+        "crescer",
+        "cantar",
+        "abrir"
+      ],
+      "translation": "After climbing the whole hill, her knee starts to _____.",
+      "optionTranslations": [
+        "hurt",
+        "grow",
+        "sing",
+        "open"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "Depois de subir a ladeira inteira, o joelho começa a doer.",
+        "targetWord": "doer",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/751a41c04bc0b1ab.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aguentar",
+    "sentence": "A alça é fina demais para _____ o peso da mala.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aguentar",
+      "options": [
+        "aguentar",
+        "comprar",
+        "lavar",
+        "contar"
+      ],
+      "translation": "The strap is too thin to _____ the weight of the suitcase.",
+      "optionTranslations": [
+        "bear",
+        "buy",
+        "wash",
+        "count"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "A alça é fina demais para aguentar o peso da mala.",
+        "targetWord": "aguentar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a7844b5fa11c4cd5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "puxar",
+    "sentence": "Ela prefere _____ a mala sozinha até a metade.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "puxar",
+      "options": [
+        "puxar",
+        "vender",
+        "dobrar",
+        "abrir"
+      ],
+      "translation": "She prefers to _____ the suitcase herself halfway up.",
+      "optionTranslations": [
+        "pull",
+        "sell",
+        "fold",
+        "open"
+      ],
+      "audioClip": {
+        "storySlug": "a-ladeira-do-amparo",
+        "storySource": "user",
+        "sentence": "Ela prefere puxar a mala sozinha até a metade.",
+        "targetWord": "puxar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0e739369b69702b0.mp3"
+      }
+    },
+    "featured": false
+  }
+]

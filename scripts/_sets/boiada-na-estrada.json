@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "caminhonete,porteira,gado,cerca",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "caminhonete",
+          "answer": "a pickup truck",
+          "options": [
+            "a pickup truck",
+            "a farm gate",
+            "cattle",
+            "a fence"
+          ]
+        },
+        {
+          "word": "porteira",
+          "answer": "a farm gate",
+          "options": [
+            "a pickup truck",
+            "a farm gate",
+            "cattle",
+            "a fence"
+          ]
+        },
+        {
+          "word": "gado",
+          "answer": "cattle",
+          "options": [
+            "a pickup truck",
+            "a farm gate",
+            "cattle",
+            "a fence"
+          ]
+        },
+        {
+          "word": "cerca",
+          "answer": "a fence",
+          "options": [
+            "a pickup truck",
+            "a farm gate",
+            "cattle",
+            "a fence"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poeira",
+    "sentence": "A [[poeira]] entra no carro e cobre o espelho.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dust",
+      "options": [
+        "dust",
+        "rain",
+        "smoke",
+        "sand"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "A poeira entra no carro e cobre o espelho.",
+        "targetWord": "poeira",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "boiada",
+    "sentence": "O carro para: a estrada está ocupada pela [[boiada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cattle drive",
+      "options": [
+        "a cattle drive",
+        "a market",
+        "a river",
+        "a race"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "O carro para: a estrada está ocupada pela boiada.",
+        "targetWord": "boiada",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "peão",
+    "sentence": "Um [[peão]] a cavalo passa com o chapéu baixo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a ranch hand",
+      "options": [
+        "a ranch hand",
+        "a tourist",
+        "a policeman",
+        "a driver"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "Um peão a cavalo passa com o chapéu baixo.",
+        "targetWord": "peão",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cavalo",
+    "sentence": "Um peão a [[cavalo]] passa com o chapéu baixo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a horse",
+      "options": [
+        "a horse",
+        "a bicycle",
+        "a boat",
+        "a truck"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "Um peão a cavalo passa com o chapéu baixo.",
+        "targetWord": "cavalo",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chapéu",
+    "sentence": "Um peão a cavalo passa com o [[chapéu]] baixo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a hat",
+      "options": [
+        "a hat",
+        "a rope",
+        "a lamp",
+        "a bag"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "Um peão a cavalo passa com o chapéu baixo.",
+        "targetWord": "chapéu",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "terra",
+    "sentence": "Selma dirige e conhece a [[terra]] toda de cor.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the land",
+      "options": [
+        "the land",
+        "the town",
+        "the road",
+        "the herd"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "Selma dirige e conhece a terra toda de cor.",
+        "targetWord": "terra",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fazenda",
+    "sentence": "A caminhonete sai da [[fazenda]] com uma hora de sobra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the ranch",
+      "options": [
+        "the ranch",
+        "the airport",
+        "the hotel",
+        "the school"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "A caminhonete sai da fazenda com uma hora de sobra.",
+        "targetWord": "fazenda",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vaca",
+    "sentence": "As [[vacas]] passam devagar, trezentas, sem pressa nenhuma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cow",
+      "options": [
+        "a cow",
+        "a goat",
+        "a sheep",
+        "a pig"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "As vacas passam devagar, trezentas, sem pressa nenhuma.",
+        "targetWord": "vacas",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "boi",
+    "sentence": "Um [[boi]], o animal maior, bate o chifre na porta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "an ox",
+      "options": [
+        "an ox",
+        "a dog",
+        "a bird",
+        "a fish"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "Um boi, o animal maior, bate o chifre na porta.",
+        "targetWord": "boi",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "chifre",
+    "sentence": "Um boi bate o [[chifre]] na porta do carro.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a horn",
+      "options": [
+        "a horn",
+        "a hoof",
+        "a tail",
+        "a tooth"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "Um boi bate o chifre na porta do carro.",
+        "targetWord": "chifre",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "espelho",
+    "sentence": "A poeira entra no carro e cobre o [[espelho]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the mirror",
+      "options": [
+        "the mirror",
+        "the seat",
+        "the wheel",
+        "the door"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "A poeira entra no carro e cobre o espelho.",
+        "targetWord": "espelho",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "atraso",
+    "sentence": "“Que [[atraso]] é esse?”, pergunta o motorista do ônibus.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a delay",
+      "options": [
+        "a delay",
+        "a price",
+        "a noise",
+        "a smell"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "“Que atraso é esse?”, pergunta o motorista do ônibus.",
+        "targetWord": "atraso",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "desistir",
+    "sentence": "Ela perde o ônibus e mesmo assim não vai _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "desistir",
+      "options": [
+        "desistir",
+        "dormir",
+        "pagar",
+        "voltar"
+      ],
+      "translation": "She misses the bus and even so is not going to _____.",
+      "optionTranslations": [
+        "give up",
+        "sleep",
+        "pay",
+        "go back"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "Ela perde o ônibus e mesmo assim não vai desistir.",
+        "targetWord": "desistir",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b4dbf3823e6e95e0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "filmar",
+    "sentence": "Com o carro parado, ela aproveita para _____ o gado.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "filmar",
+      "options": [
+        "filmar",
+        "contar",
+        "vender",
+        "lavar"
+      ],
+      "translation": "With the car stopped, she takes the chance to _____ the cattle.",
+      "optionTranslations": [
+        "film",
+        "count",
+        "sell",
+        "wash"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "Com o carro parado, ela aproveita para filmar o gado.",
+        "targetWord": "filmar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e2bb3bd1cedb1d2b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bateria",
+    "sentence": "Ela filma o gado na poeira até a _____ acabar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "bateria",
+      "options": [
+        "bateria",
+        "chuva",
+        "festa",
+        "estrada"
+      ],
+      "translation": "She films the cattle in the dust until the _____ runs out.",
+      "optionTranslations": [
+        "battery",
+        "rain",
+        "party",
+        "road"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "Ela filma o gado na poeira até a bateria acabar.",
+        "targetWord": "bateria",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3667aeef8abd734e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "quilômetros",
+    "sentence": "Da fazenda até a porteira são três _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quilômetros",
+      "options": [
+        "quilômetros",
+        "horas",
+        "reais",
+        "dias"
+      ],
+      "translation": "From the ranch to the gate it is three _____.",
+      "optionTranslations": [
+        "kilometres",
+        "hours",
+        "reais",
+        "days"
+      ],
+      "audioClip": {
+        "storySlug": "boiada-na-estrada",
+        "storySource": "user",
+        "sentence": "Da fazenda até a porteira são três quilômetros.",
+        "targetWord": "quilômetros",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/045594b58b5d5d38.mp3"
+      }
+    },
+    "featured": false
+  }
+]

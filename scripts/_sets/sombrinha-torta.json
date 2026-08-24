@@ -1,0 +1,444 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "sombrinha,tambor,banda,círculo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "sombrinha",
+          "answer": "a small umbrella",
+          "options": [
+            "a small umbrella",
+            "a drum",
+            "a band",
+            "a circle"
+          ]
+        },
+        {
+          "word": "tambor",
+          "answer": "a drum",
+          "options": [
+            "a small umbrella",
+            "a drum",
+            "a band",
+            "a circle"
+          ]
+        },
+        {
+          "word": "banda",
+          "answer": "a band",
+          "options": [
+            "a small umbrella",
+            "a drum",
+            "a band",
+            "a circle"
+          ]
+        },
+        {
+          "word": "círculo",
+          "answer": "a circle",
+          "options": [
+            "a small umbrella",
+            "a drum",
+            "a band",
+            "a circle"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vareta",
+    "sentence": "As [[varetas]] são desiguais e a cor está gasta pelo sol.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a rib of an umbrella",
+      "options": [
+        "a rib of an umbrella",
+        "a rope",
+        "a nail",
+        "a wire"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "As varetas são desiguais e a cor está gasta pelo sol.",
+        "targetWord": "varetas",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dançar",
+    "sentence": "“As tortas [[dançam]] melhor”, responde ele.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dance",
+      "options": [
+        "to dance",
+        "to fold",
+        "to float",
+        "to shine"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "“As tortas dançam melhor”, responde ele.",
+        "targetWord": "dançam",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "torto",
+    "sentence": "“Essa está [[torta]]”, reclama Rafaela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bent",
+      "options": [
+        "bent",
+        "closed",
+        "dirty",
+        "tiny"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "“Essa está torta”, reclama Rafaela.",
+        "targetWord": "torta",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "carnaval",
+    "sentence": "“[[Carnaval]] não é em fevereiro?”, pergunta ela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "carnival",
+      "options": [
+        "carnival",
+        "harvest",
+        "market day",
+        "new year"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "“Carnaval não é em fevereiro?”, pergunta ela.",
+        "targetWord": "Carnaval",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fantasia",
+    "sentence": "Entra sem vestir [[fantasia]], de camiseta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a costume",
+      "options": [
+        "a costume",
+        "a jacket",
+        "a uniform",
+        "a swimsuit"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "Entra sem vestir fantasia, de camiseta.",
+        "targetWord": "fantasia",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cor",
+    "sentence": "As varetas são desiguais e a [[cor]] está gasta pelo sol.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "colour",
+      "options": [
+        "colour",
+        "shape",
+        "price",
+        "smell"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "As varetas são desiguais e a cor está gasta pelo sol.",
+        "targetWord": "cor",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lento",
+    "sentence": "A música começa [[lenta]] e o círculo se abre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slow",
+      "options": [
+        "slow",
+        "loud",
+        "sad",
+        "short"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "A música começa lenta e o círculo se abre.",
+        "targetWord": "lenta",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sandália",
+    "sentence": "A pedra é lisa e a [[sandália]] dela escorrega.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sandal",
+      "options": [
+        "a sandal",
+        "a sock",
+        "a glove",
+        "a belt"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "A pedra é lisa e a sandália dela escorrega.",
+        "targetWord": "sandália",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "telefone",
+    "sentence": "Rafaela larga o [[telefone]] no bolso.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a phone",
+      "options": [
+        "a phone",
+        "a wallet",
+        "a key",
+        "a ticket"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "Rafaela larga o telefone no bolso.",
+        "targetWord": "telefone",
+        "language": "portuguese"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cansado",
+    "sentence": "Rafaela chega [[cansada]] do ateliê e senta num caixote.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tired",
+      "options": [
+        "tired",
+        "hungry",
+        "early",
+        "alone"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "Rafaela chega cansada do ateliê e senta num caixote.",
+        "targetWord": "cansada",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estranho",
+    "sentence": "Ninguém mais olha: é [[estranho]], e dá alegria.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "strange",
+      "options": [
+        "strange",
+        "boring",
+        "loud",
+        "easy"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "Ninguém mais olha: é estranho, e dá alegria.",
+        "targetWord": "estranho",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tarde",
+    "sentence": "No fim da [[tarde]] a praça enche devagar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the afternoon",
+      "options": [
+        "the afternoon",
+        "the winter",
+        "the weekend",
+        "the parade"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "No fim da tarde a praça enche devagar.",
+        "targetWord": "tarde",
+        "language": "portuguese"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "alugar",
+    "sentence": "Ele não empresta a sombrinha, mas deixa _____ por cinco reais.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "alugar",
+      "options": [
+        "alugar",
+        "quebrar",
+        "guardar",
+        "pintar"
+      ],
+      "translation": "He does not lend the umbrella, but lets you _____ it for five reais.",
+      "optionTranslations": [
+        "rent",
+        "break",
+        "keep",
+        "paint"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "Ele não empresta a sombrinha, mas deixa alugar por cinco reais.",
+        "targetWord": "alugar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8d14cecf4255f025.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "arrepender",
+    "sentence": "Ela dança até o fim e não chega a se _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arrepender",
+      "options": [
+        "arrepender",
+        "cansar",
+        "molhar",
+        "perder"
+      ],
+      "translation": "She dances to the end and does not come to _____ it.",
+      "optionTranslations": [
+        "regret",
+        "get tired",
+        "get wet",
+        "lose"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "Ela dança até o fim e não chega a se arrepender.",
+        "targetWord": "arrepender",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a58296329c072da4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "largar",
+    "sentence": "Antes de entrar no círculo ela decide _____ o telefone.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "largar",
+      "options": [
+        "largar",
+        "comprar",
+        "abrir",
+        "limpar"
+      ],
+      "translation": "Before joining the circle she decides to _____ the phone.",
+      "optionTranslations": [
+        "drop",
+        "buy",
+        "open",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "Antes de entrar no círculo ela decide largar o telefone.",
+        "targetWord": "largar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/541a6d3db68fb3cd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "escorregar",
+    "sentence": "A pedra molhada faz qualquer sandália _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "escorregar",
+      "options": [
+        "escorregar",
+        "secar",
+        "brilhar",
+        "durar"
+      ],
+      "translation": "The wet stone makes any sandal _____.",
+      "optionTranslations": [
+        "slip",
+        "dry",
+        "shine",
+        "last"
+      ],
+      "audioClip": {
+        "storySlug": "sombrinha-torta",
+        "storySource": "user",
+        "sentence": "A pedra molhada faz qualquer sandália escorregar.",
+        "targetWord": "escorregar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/09916559dd16ec30.mp3"
+      }
+    },
+    "featured": false
+  }
+]
