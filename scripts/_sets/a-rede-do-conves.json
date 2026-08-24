@@ -1,0 +1,456 @@
+[
+  {
+    "type": "match_meaning",
+    "word": "rede,convés,porto,motor",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "rede",
+          "answer": "a hammock",
+          "options": [
+            "a hammock",
+            "the deck of a boat",
+            "a port",
+            "an engine"
+          ]
+        },
+        {
+          "word": "convés",
+          "answer": "the deck of a boat",
+          "options": [
+            "a hammock",
+            "the deck of a boat",
+            "a port",
+            "an engine"
+          ]
+        },
+        {
+          "word": "porto",
+          "answer": "a port",
+          "options": [
+            "a hammock",
+            "the deck of a boat",
+            "a port",
+            "an engine"
+          ]
+        },
+        {
+          "word": "motor",
+          "answer": "an engine",
+          "options": [
+            "a hammock",
+            "the deck of a boat",
+            "a port",
+            "an engine"
+          ]
+        }
+      ],
+      "audioClip": null
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cabine",
+    "sentence": "“Tem [[cabine]] no barco?”, pergunta ela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a cabin",
+      "options": [
+        "a cabin",
+        "a ticket",
+        "a kitchen",
+        "a bathroom"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "“Tem cabine no barco?”, pergunta ela.",
+        "targetWord": "cabine",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/be62629a7ffa4149.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amarrar",
+    "sentence": "Ele [[amarra]] a rede dele em dois minutos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tie",
+      "options": [
+        "to tie",
+        "to fold",
+        "to buy",
+        "to carry"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "Ele amarra a rede dele em dois minutos.",
+        "targetWord": "amarra",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/75f98290497ec0d3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "balançar",
+    "sentence": "O convés inteiro [[balança]] junto, em silêncio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sway",
+      "options": [
+        "to sway",
+        "to shine",
+        "to sink",
+        "to creak"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "O convés inteiro balança junto, em silêncio.",
+        "targetWord": "balança",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/956047d1ef71489c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "madrugada",
+    "sentence": "De [[madrugada]] o motor muda de som.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the small hours",
+      "options": [
+        "the small hours",
+        "the afternoon",
+        "the sunset",
+        "the weekend"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "De madrugada o motor muda de som.",
+        "targetWord": "madrugada",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4af589f078d6a8a0.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vizinho",
+    "sentence": "A rede fica baixa demais para o [[vizinho]] de trás.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a neighbour",
+      "options": [
+        "a neighbour",
+        "a captain",
+        "a cook",
+        "a guest"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "A rede fica baixa demais para o vizinho de trás.",
+        "targetWord": "vizinho",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa0588a50e7120a4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rosto",
+    "sentence": "“Senão você acorda com um pé no [[rosto]].”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a face",
+      "options": [
+        "a face",
+        "a hand",
+        "a knee",
+        "a shoulder"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "“Senão você acorda com um pé no rosto.”",
+        "targetWord": "rosto",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3f7a62c96e84c1bc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "silêncio",
+    "sentence": "O convés inteiro balança junto, em [[silêncio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "silence",
+      "options": [
+        "silence",
+        "a hurry",
+        "a storm",
+        "a crowd"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "O convés inteiro balança junto, em silêncio.",
+        "targetWord": "silêncio",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/956047d1ef71489c.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "demora",
+    "sentence": "Ele amarra a rede em dois minutos e ela _____ quinze.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "demora",
+      "options": [
+        "demora",
+        "chega",
+        "paga",
+        "dorme"
+      ],
+      "translation": "He ties his hammock in two minutes and she _____ fifteen.",
+      "optionTranslations": [
+        "takes",
+        "arrives",
+        "pays",
+        "sleeps"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "Ele amarra a rede em dois minutos e ela demora quinze.",
+        "targetWord": "demora",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4bb02bf7e60aad71.mp3"
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "aproveita",
+    "sentence": "A viagem é curta, então _____ cada hora no rio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "aproveita",
+      "options": [
+        "aproveita",
+        "esquece",
+        "perde",
+        "paga"
+      ],
+      "translation": "The trip is short, so she _____ every hour on the river.",
+      "optionTranslations": [
+        "makes the most of",
+        "forgets",
+        "misses",
+        "pays for"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "A viagem é curta, então aproveita cada hora no rio.",
+        "targetWord": "aproveita",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2fbcc51dc13cf8ec.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "livre",
+    "sentence": "“Esse lugar está [[livre]]?”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "free, not taken",
+      "options": [
+        "free, not taken",
+        "broken",
+        "narrow",
+        "dirty"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "“Esse lugar está livre?”",
+        "targetWord": "livre",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1654922a68c7836d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ocupado",
+    "sentence": "“Está [[ocupada]]”, responde Rafaela, sem pensar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "taken",
+      "options": [
+        "taken",
+        "empty",
+        "cheap",
+        "open"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "“Está ocupada”, responde Rafaela, sem pensar.",
+        "targetWord": "ocupada",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3903f62df6cafed6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alto",
+    "sentence": "“Mais [[alta]]. Senão você acorda com um pé no rosto.”",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "high",
+      "options": [
+        "high",
+        "short",
+        "heavy",
+        "loose"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "“Mais alta. Senão você acorda com um pé no rosto.”",
+        "targetWord": "alta",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b3054332f19b437d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "irmão",
+    "sentence": "Rafaela chega em Manaus e passa um mês com o [[irmão]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a brother",
+      "options": [
+        "a brother",
+        "a cousin",
+        "an uncle",
+        "a friend"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "Rafaela chega em Manaus e passa um mês com o irmão.",
+        "targetWord": "irmão",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b786b3c29aab07a2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pensar",
+    "sentence": "“Está ocupada”, responde Rafaela, sem [[pensar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to think",
+      "options": [
+        "to think",
+        "to look",
+        "to answer",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "“Está ocupada”, responde Rafaela, sem pensar.",
+        "targetWord": "pensar",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3903f62df6cafed6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "mês",
+    "sentence": "Trinta dias no rio são um _____ inteiro.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mês",
+      "options": [
+        "mês",
+        "ano",
+        "dia",
+        "hora"
+      ],
+      "translation": "Thirty days on the river are a whole _____.",
+      "optionTranslations": [
+        "month",
+        "year",
+        "day",
+        "hour"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "Trinta dias no rio são um mês inteiro.",
+        "targetWord": "mês",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/133a3a6f364548c4.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "avisa",
+    "sentence": "O vizinho _____ que a rede está baixa demais.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "avisa",
+      "options": [
+        "avisa",
+        "esquece",
+        "pergunta",
+        "dorme"
+      ],
+      "translation": "The neighbour _____ that the hammock hangs too low.",
+      "optionTranslations": [
+        "warns",
+        "forgets",
+        "asks",
+        "sleeps"
+      ],
+      "audioClip": {
+        "storySlug": "a-rede-do-conves",
+        "storySource": "user",
+        "sentence": "O vizinho avisa que a rede está baixa demais.",
+        "targetWord": "avisa",
+        "language": "portuguese",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16710c840503ecbd.mp3"
+      }
+    },
+    "featured": false
+  }
+]
