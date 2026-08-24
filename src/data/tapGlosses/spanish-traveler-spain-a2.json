@@ -419,6 +419,10 @@
    "g": "the chin",
    "t": "noun"
   },
+  "barra": {
+   "g": "the bar counter",
+   "t": "noun"
+  },
   "barranco": {
    "g": "deep narrow cut in a hillside",
    "t": "noun"
@@ -2167,6 +2171,10 @@
    "g": "the market",
    "t": "noun"
   },
+  "mes": {
+   "g": "month",
+   "t": "noun"
+  },
   "meses": {
    "g": "months",
    "t": "noun"
@@ -2327,6 +2335,10 @@
    "g": "none, not any (fem.)",
    "t": "adjective"
   },
+  "ninguno": {
+   "g": "none, no one",
+   "t": "pronoun"
+  },
   "no": {
    "g": "no, not",
    "t": "adverb"
@@ -2338,10 +2350,6 @@
   "nombres": {
    "g": "names",
    "t": "noun"
-  },
-  "nombró": {
-   "g": "named, mentioned",
-   "t": "verb"
   },
   "noticia": {
    "g": "news",
@@ -3311,9 +3319,17 @@
    "g": "goes up, climbs",
    "t": "verb"
   },
+  "suben": {
+   "g": "they go up, they climb",
+   "t": "verb"
+  },
   "subida": {
    "g": "standing up on something; also: the climb",
    "t": "adjective"
+  },
+  "subieron": {
+   "g": "they went up (past of subir)",
+   "t": "verb"
   },
   "subirlo": {
    "g": "to take it up, to bring it upstairs",

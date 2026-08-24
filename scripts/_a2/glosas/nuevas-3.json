@@ -458,5 +458,13 @@
  "debajo": {
   "g": "underneath, below something else",
   "t": "adverb"
+ },
+ "suben": {
+  "g": "they go up, they climb",
+  "t": "verb"
+ },
+ "subieron": {
+  "g": "they went up (past of subir)",
+  "t": "verb"
  }
 }
