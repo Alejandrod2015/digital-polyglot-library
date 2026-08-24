@@ -1274,6 +1274,13 @@ model StoryRating {
   liked   Boolean
   comment String?
 
+  /// El voto viene de casa (alguien dado de alta en StudioMember) y no cuenta
+  /// como senal de tester. Se sella al escribir, no al informar: separarlo en
+  /// el informe dejaba a cualquier otra lectura sumando los dos, que es como
+  /// el 2026-08-21 seis pulgares del equipo se contaron como de testers.
+  /// Se guardan igual porque son la unica prueba de que el circuito funciona.
+  internal Boolean @default(false)
+
   platform    String?
   appVersion  String?
   buildNumber String?
@@ -1284,6 +1291,7 @@ model StoryRating {
   @@unique([userId, storySlug, surface])
   @@index([storySlug])
   @@index([surface])
+  @@index([internal])
   @@index([createdAt])
   @@map("dp_story_ratings_v1")
 }

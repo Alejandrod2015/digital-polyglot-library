@@ -11,6 +11,7 @@ export const runtime = "nodejs";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getActiveMobileSession } from "@/lib/mobileSession";
+import { isInternalEmail } from "@/lib/internalAccounts";
 
 const COMMENT_MAX = 2000;
 
@@ -88,6 +89,16 @@ export async function POST(req: NextRequest) {
 
   const comment = str(body.comment, COMMENT_MAX);
   const platform = str(body.platform, 20)?.toLowerCase();
+  const email = session.email?.trim().toLowerCase() ?? null;
+
+  // Quien vota desde una cuenta del Studio queda sellado AQUÍ, en la fila, no
+  // en el informe. Su pulgar se guarda igual (es la única prueba de que el
+  // circuito entero funciona), pero ninguna lectura futura vuelve a sumarlo a
+  // la señal de los testers. Si la lista no se puede leer, el voto se escribe
+  // igual: quedarse sin el sello es malo, dejar de registrar el voto lo es
+  // más.
+  const internal = await isInternalEmail(email).catch(() => false);
+
   const shared = {
     storyId,
     bookSlug: str(body.bookSlug, 200),
@@ -95,7 +106,8 @@ export async function POST(req: NextRequest) {
     platform: platform === "android" ? "android" : platform === "ios" ? "ios" : null,
     appVersion: str(body.appVersion, 40),
     buildNumber: str(body.buildNumber, 40),
-    email: session.email?.trim().toLowerCase() ?? null,
+    email,
+    internal,
   };
 
   // Se mira antes de escribir para saber QUÉ ha pasado de verdad: nace el voto,
@@ -147,6 +159,7 @@ export async function POST(req: NextRequest) {
           value: event.value,
           metadata: {
             surface,
+            internal,
             liked: body.liked,
             hasComment: Boolean(comment ?? previous?.comment),
             changedMind: Boolean(previous && previous.liked !== body.liked),

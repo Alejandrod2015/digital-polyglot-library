@@ -29,7 +29,13 @@ async function main() {
   const prisma = new PrismaClient();
 
   const rows = await prisma.storyRating.findMany({ orderBy: { createdAt: "desc" } });
-  const { external, internal } = await splitInternal(rows, (r) => r.email);
+
+  // El sello lo pone el endpoint al escribir (columna `internal`). El reparto
+  // por correo se queda como red: una fila anterior a la columna, o de alguien
+  // dado de alta en el Studio despues de votar, sigue cayendo del lado bueno.
+  const sinSello = rows.filter((r) => !r.internal);
+  const { external, internal: internalPorCorreo } = await splitInternal(sinSello, (r) => r.email);
+  const internal = [...rows.filter((r) => r.internal), ...internalPorCorreo];
 
   console.log(`pulgares totales : ${rows.length}`);
   console.log(`  de testers     : ${external.length}`);
