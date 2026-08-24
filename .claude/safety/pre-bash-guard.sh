@@ -701,8 +701,12 @@ if not autorizado:
 # saco una no puede volver a tirarla. Lo que se bloquea es RE-TIRAR la
 # misma portada por iniciativa propia, que es lo que paso.
 cmd = os.environ.get("DPL_IMG_CMD", "")
-cmd = re.sub(r"\s+", " ", cmd).strip()
-huella = hashlib.sha1((last.strip() + "\n" + cmd).encode("utf-8")).hexdigest()[:16]
+# La huella lleva SOLO lo que identifica a la imagen (el id de la historia y el
+# fichero de escena), no la linea entera: si llevara la linea entera, cambiar el
+# grep del final daria otra huella y la misma portada se podria re-tirar sin
+# querer. Ya paso el 2026-08-24 con un fallo transitorio de la API.
+partes = re.findall(r"c[a-z0-9]{20,}|[\w./-]+\.txt", cmd)
+huella = hashlib.sha1((last.strip() + "\n" + " ".join(sorted(set(partes)))).encode("utf-8")).hexdigest()[:16]
 libro = os.path.join(os.path.dirname(tp), "..", "..", ".image-spend")
 libro = os.environ.get("DPL_IMAGE_SPEND_FILE") or ".claude/safety/.image-spend"
 try:
