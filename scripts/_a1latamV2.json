@@ -1965,5 +1965,398 @@
         "type": "noun"
       }
     ]
+  },
+  {
+    "topic": "doors-and-neighbours",
+    "slotIndex": 1,
+    "slug": "el-del-segundo-no-saluda",
+    "title": "El del segundo no saluda",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Pasado el Carnaval, Barranquilla vuelve a ser una calle normal y en el edificio hay un candado nuevo que nadie sabe de donde salio. En el segundo piso vive desde el lunes Alveiro, que paga por noche, no saluda y tiene un ventilador que no funciona. Camilo pregunta y nadie en la casa sabe darle una respuesta.",
+    "text": "Después del Carnaval, Barranquilla vuelve a ser una calle normal. En el portón del edificio hay una reja nueva y un candado que nadie conoce. Camilo cruza el patio con dos bolsas.\n\nEn el segundo piso vive Alveiro, un inquilino que llegó el lunes. Paga el cuarto por noche y no saluda a nadie. El alquiler se cobra los viernes.\n\n“¿Usted sabe quién es?” “Ni idea; el patrón no dijo nada.” La mamá de Camilo se abanica en la terraza, al lado de una planta seca.\n\nLa cerradura del portón es nueva y el cerrojo no gira bien. Camilo empuja con el hombro y el sol calienta la tapia. Nadie tiene todavía la llave que hace falta.\n\nAlveiro baja, mira el candado y vuelve a subir sin decir nada. El cuarto es barato porque el ventilador no funciona. Camilo se queda con la duda y el vecino con la suya.",
+    "vocab": [
+      {
+        "word": "portón",
+        "surface": "portón",
+        "definition": "the big door that closes the entrance of a building",
+        "type": "noun"
+      },
+      {
+        "word": "reja",
+        "surface": "reja",
+        "definition": "a set of metal bars fixed across an opening",
+        "type": "noun"
+      },
+      {
+        "word": "candado",
+        "surface": "candado",
+        "definition": "the small lock you hang on a gate or chain",
+        "type": "noun"
+      },
+      {
+        "word": "patio",
+        "surface": "patio",
+        "definition": "the open space inside or behind a house",
+        "type": "noun"
+      },
+      {
+        "word": "inquilino",
+        "surface": "inquilino",
+        "definition": "the person who pays to live in somebody's room",
+        "type": "noun"
+      },
+      {
+        "word": "cuarto",
+        "surface": "cuarto",
+        "definition": "one of the rooms where a person sleeps",
+        "type": "noun"
+      },
+      {
+        "word": "por noche",
+        "surface": "por noche",
+        "definition": "for each night that a person stays there",
+        "type": "expression"
+      },
+      {
+        "word": "alquiler",
+        "surface": "alquiler",
+        "definition": "the money paid every month for a room",
+        "type": "noun"
+      },
+      {
+        "word": "patrón",
+        "surface": "patrón",
+        "definition": "the man who owns the building or the business",
+        "type": "noun"
+      },
+      {
+        "word": "abanico",
+        "surface": "abanica",
+        "definition": "to move air onto yourself to feel cooler",
+        "type": "verb"
+      },
+      {
+        "word": "terraza",
+        "surface": "terraza",
+        "definition": "the flat open roof where people sit outside",
+        "type": "noun"
+      },
+      {
+        "word": "planta",
+        "surface": "planta",
+        "definition": "a green living thing grown in soil or a pot",
+        "type": "noun"
+      },
+      {
+        "word": "cerradura",
+        "surface": "cerradura",
+        "definition": "the part of a door where the key goes in",
+        "type": "noun"
+      },
+      {
+        "word": "cerrojo",
+        "surface": "cerrojo",
+        "definition": "the metal bar you slide across to close a door",
+        "type": "noun"
+      },
+      {
+        "word": "girar",
+        "surface": "gira",
+        "definition": "to turn around a fixed point, as a key does",
+        "type": "verb"
+      },
+      {
+        "word": "calentar",
+        "surface": "calienta",
+        "definition": "to make something warmer than it was before",
+        "type": "verb"
+      },
+      {
+        "word": "tapia",
+        "surface": "tapia",
+        "definition": "a long wall of earth or brick around a yard",
+        "type": "noun"
+      },
+      {
+        "word": "barato",
+        "surface": "barato",
+        "definition": "costing little money compared with the other rooms",
+        "type": "adjective"
+      },
+      {
+        "word": "ventilador",
+        "surface": "ventilador",
+        "definition": "the machine with blades that pushes air around",
+        "type": "noun"
+      },
+      {
+        "word": "vecino",
+        "surface": "vecino",
+        "definition": "a person who lives in the house next to yours",
+        "type": "noun"
+      }
+    ]
+  },
+  {
+    "topic": "doors-and-neighbours",
+    "slotIndex": 2,
+    "slug": "hazme-el-favor-de-subir",
+    "title": "Hazme el favor de subir",
+    "arcType": "recurring-character-callback",
+    "synopsis": "Se va la electricidad en el bloque entero y Camilo sube donde Alveiro con una linterna a pedir un enchufe prestado. Lo que empieza como un favor de cinco minutos termina con una firma en la lista del edificio y una escoba prestada, porque en ese barrio nadie devuelve un favor sin ofrecer otro encima.",
+    "text": "El martes se va la electricidad en todo el bloque. La bombilla del pasillo queda muerta y el interruptor no responde. Camilo baja con una linterna y golpea la puerta de Alveiro.\n\n“Disculpe, ¿le sobra un enchufe?” “Me sobra, sí; suba.” Alveiro contesta desde arriba y deja la puerta entornada.\n\nCamilo sube con un taburete y se sienta en el borde. En la lista del edificio faltan dos nombres y uno es el suyo. Alveiro no se queja de nada.\n\n“Hazme el favor y firma abajo.” “Le debo una, entonces.” Incluso le ofrece la escoba para bajar la telaraña del techo.\n\nLa luz vuelve a las nueve y el pasillo se pone duro de blanco. Camilo saca la billetera y no le cobra nada. Bajan juntos y el portón queda abierto.",
+    "vocab": [
+      {
+        "word": "electricidad",
+        "surface": "electricidad",
+        "definition": "the power that makes lamps and machines work",
+        "type": "noun"
+      },
+      {
+        "word": "bombilla",
+        "surface": "bombilla",
+        "definition": "the glass ball that gives light in a lamp",
+        "type": "noun"
+      },
+      {
+        "word": "interruptor",
+        "surface": "interruptor",
+        "definition": "the small switch that turns a light on",
+        "type": "noun"
+      },
+      {
+        "word": "linterna",
+        "surface": "linterna",
+        "definition": "a small lamp you carry in your hand",
+        "type": "noun"
+      },
+      {
+        "word": "disculpe",
+        "surface": "Disculpe",
+        "definition": "the polite word you say before asking a stranger",
+        "type": "expression"
+      },
+      {
+        "word": "sobrar",
+        "surface": "sobra",
+        "definition": "to be left over after everything needed is used",
+        "type": "verb"
+      },
+      {
+        "word": "enchufe",
+        "surface": "enchufe",
+        "definition": "the hole in the wall where a cable goes",
+        "type": "noun"
+      },
+      {
+        "word": "contestar",
+        "surface": "contesta",
+        "definition": "to give an answer to what somebody asked",
+        "type": "verb"
+      },
+      {
+        "word": "taburete",
+        "surface": "taburete",
+        "definition": "a small seat with no back to lean on",
+        "type": "noun"
+      },
+      {
+        "word": "borde",
+        "surface": "borde",
+        "definition": "the outer edge of a surface or an object",
+        "type": "noun"
+      },
+      {
+        "word": "lista",
+        "surface": "lista",
+        "definition": "names written one under another on a sheet",
+        "type": "noun"
+      },
+      {
+        "word": "faltar",
+        "surface": "faltan",
+        "definition": "to be missing from the place they should be",
+        "type": "verb"
+      },
+      {
+        "word": "quejarse",
+        "surface": "se queja",
+        "definition": "to say out loud that something is wrong",
+        "type": "verb"
+      },
+      {
+        "word": "hazme el favor",
+        "surface": "Hazme el favor",
+        "definition": "words used when asking somebody for a small favour",
+        "type": "expression"
+      },
+      {
+        "word": "deber",
+        "surface": "debo",
+        "definition": "to owe somebody money or a favour in return",
+        "type": "verb"
+      },
+      {
+        "word": "incluso",
+        "surface": "Incluso",
+        "definition": "even that as well, going further than anyone expected",
+        "type": "adverb"
+      },
+      {
+        "word": "ofrecer",
+        "surface": "ofrece",
+        "definition": "to say you will give something to somebody",
+        "type": "verb"
+      },
+      {
+        "word": "escoba",
+        "surface": "escoba",
+        "definition": "the long brush used for sweeping the floor",
+        "type": "noun"
+      },
+      {
+        "word": "duro",
+        "surface": "duro",
+        "definition": "strong and sharp, not soft or gentle at all",
+        "type": "adjective"
+      },
+      {
+        "word": "billetera",
+        "surface": "billetera",
+        "definition": "the flat folding case for notes and cards",
+        "type": "noun"
+      }
+    ]
+  },
+  {
+    "topic": "doors-and-neighbours",
+    "slotIndex": 3,
+    "slug": "el-agua-vuelve-a-las-siete",
+    "title": "El agua vuelve a las siete",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "El sabado el agua no sube al segundo piso y Alveiro se queda sin ducha. La mama de Camilo manda a decir que suba a bañarse arriba, y lo que empieza siendo una cubeta prestada termina con las dos puertas sin cerrar durante todo el fin de semana, que es exactamente lo que en esa calle significa conocer a alguien.",
+    "text": "El sábado el grifo del segundo suelta un hilo y se para. El agua no sube por la tubería y la ducha queda seca. El azulejo del baño sigue mojado de la noche anterior.\n\n“Suba a bañarse arriba.” “¿Y la cubeta?” “La cubeta se la presto yo.”\n\nCamilo le pasa un paño limpio y le explica dónde está todo. El desagüe de arriba gotea desde hace meses. Aun así el vapor sale caliente y eso es lo que importa.\n\nEn el cuarto de Camilo hay una cortina corrida y un bote en el rincón. La almohada y la sábana están dobladas sobre el colchón. El ropero no cierra desde el año pasado.\n\nLa espuma del lavabo huele a limpieza barata y el agua vuelve a las siete. Alveiro baja la jarra vacía y la frazada doblada. Las dos puertas se quedan abiertas todo el fin de semana.",
+    "vocab": [
+      {
+        "word": "grifo",
+        "surface": "grifo",
+        "definition": "the part you turn to let water out",
+        "type": "noun"
+      },
+      {
+        "word": "ducha",
+        "surface": "ducha",
+        "definition": "the place where water falls on you to wash",
+        "type": "noun"
+      },
+      {
+        "word": "azulejo",
+        "surface": "azulejo",
+        "definition": "a flat square tile fixed on a bathroom wall",
+        "type": "noun"
+      },
+      {
+        "word": "mojado",
+        "surface": "mojado",
+        "definition": "covered with water and not yet dry at all",
+        "type": "adjective"
+      },
+      {
+        "word": "cubeta",
+        "surface": "cubeta",
+        "definition": "a round open container for carrying water by hand",
+        "type": "noun"
+      },
+      {
+        "word": "paño",
+        "surface": "paño",
+        "definition": "a small piece of cloth used for drying things",
+        "type": "noun"
+      },
+      {
+        "word": "desagüe",
+        "surface": "desagüe",
+        "definition": "the hole where the used water runs away",
+        "type": "noun"
+      },
+      {
+        "word": "gotear",
+        "surface": "gotea",
+        "definition": "to let water fall slowly, drop by drop",
+        "type": "verb"
+      },
+      {
+        "word": "vapor",
+        "surface": "vapor",
+        "definition": "the warm white cloud that rises from hot water",
+        "type": "noun"
+      },
+      {
+        "word": "cortina",
+        "surface": "cortina",
+        "definition": "the cloth hung over a window or a doorway",
+        "type": "noun"
+      },
+      {
+        "word": "bote",
+        "surface": "bote",
+        "definition": "an open can used for rubbish or for water",
+        "type": "noun"
+      },
+      {
+        "word": "almohada",
+        "surface": "almohada",
+        "definition": "the soft bag you rest your head on",
+        "type": "noun"
+      },
+      {
+        "word": "sábana",
+        "surface": "sábana",
+        "definition": "the wide thin cloth that you sleep between",
+        "type": "noun"
+      },
+      {
+        "word": "colchón",
+        "surface": "colchón",
+        "definition": "the thick soft part of a bed you lie on",
+        "type": "noun"
+      },
+      {
+        "word": "ropero",
+        "surface": "ropero",
+        "definition": "the tall cupboard where clothes are hung up",
+        "type": "noun"
+      },
+      {
+        "word": "espuma",
+        "surface": "espuma",
+        "definition": "the white bubbles that soap makes in water",
+        "type": "noun"
+      },
+      {
+        "word": "lavabo",
+        "surface": "lavabo",
+        "definition": "the small basin where you wash your hands",
+        "type": "noun"
+      },
+      {
+        "word": "limpieza",
+        "surface": "limpieza",
+        "definition": "the work of making a place clean again",
+        "type": "noun"
+      },
+      {
+        "word": "jarra",
+        "surface": "jarra",
+        "definition": "a tall container with a handle for pouring water",
+        "type": "noun"
+      },
+      {
+        "word": "frazada",
+        "surface": "frazada",
+        "definition": "a thick cloth put over a bed for warmth",
+        "type": "noun"
+      }
+    ]
   }
 ]
