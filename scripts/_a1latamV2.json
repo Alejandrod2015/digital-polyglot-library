@@ -1177,5 +1177,398 @@
         "type": "adjective"
       }
     ]
+  },
+  {
+    "topic": "help-and-repairs",
+    "slotIndex": 1,
+    "slug": "el-alebrije-pierde-una-pata",
+    "title": "El alebrije pierde una pata",
+    "arcType": "late-reveal",
+    "synopsis": "La figura de madera que segun la tia Rosa cuida la casa lleva doce años en la misma repisa, y a Mateo se le cae al bajarla para limpiarla. Pierde una pata y gana una raya en la pintura del ala. Nadie grita ni lo regaña, pero esa noche el alebrije no se mueve de sitio y en la casa nadie dice en voz alta que se rompio.",
+    "text": "El alebrije lleva doce años en la misma repisa, con polvo en el lomo. Mateo baja la figura para limpiarla y se le resbala de la mano. Cae de lado y una pata rueda debajo del mueble.\n\nLa pintura del ala tiene ahora una raya larga. El brillo se fue de golpe y queda una mancha oscura. Mateo la mira y no dice nada.\n\nLa tía Rosa, una mujer que talla figuras desde joven, entra secándose las manos, calla un momento y no hace ningún gesto. “Se rompió.” “Se rompió, sí; no te pongas así.”\n\nLa pata rota es fina y tiene la punta partida en dos. Debajo queda un hueco de madera clara. “Es común que se caigan”, dice la tía Rosa, y se agacha a buscarla.\n\nMateo guarda la pata en el bolsillo, la aprieta con la palma y no la enseña. Pone la tapa de vidrio encima para que no se vea el canto partido. Esa noche la figura sigue en su repisa.",
+    "vocab": [
+      {
+        "word": "repisa",
+        "surface": "repisa",
+        "definition": "a narrow board fixed to a wall for objects",
+        "type": "noun"
+      },
+      {
+        "word": "polvo",
+        "surface": "polvo",
+        "definition": "the grey dirt that settles on things over time",
+        "type": "noun"
+      },
+      {
+        "word": "figura",
+        "surface": "figura",
+        "definition": "a small carved shape of an animal or person",
+        "type": "noun"
+      },
+      {
+        "word": "canto",
+        "surface": "canto",
+        "definition": "the narrow edge of something flat or thin",
+        "type": "noun"
+      },
+      {
+        "word": "pata",
+        "surface": "pata",
+        "definition": "one of the legs of an animal or a table",
+        "type": "noun"
+      },
+      {
+        "word": "pintura",
+        "surface": "pintura",
+        "definition": "the coloured coat spread over wood or a wall",
+        "type": "noun"
+      },
+      {
+        "word": "raya",
+        "surface": "raya",
+        "definition": "a long thin line drawn or scratched on something",
+        "type": "noun"
+      },
+      {
+        "word": "brillo",
+        "surface": "brillo",
+        "definition": "the shine a smooth surface gives back to light",
+        "type": "noun"
+      },
+      {
+        "word": "mueble",
+        "surface": "mueble",
+        "definition": "a large wooden thing such as a table or shelf",
+        "type": "noun"
+      },
+      {
+        "word": "mancha",
+        "surface": "mancha",
+        "definition": "a dirty mark that spoils the look of something",
+        "type": "noun"
+      },
+      {
+        "word": "romperse",
+        "surface": "Se rompió",
+        "definition": "to break into pieces without anyone meaning it",
+        "type": "verb"
+      },
+      {
+        "word": "callar",
+        "surface": "calla",
+        "definition": "to stop talking and stay without saying anything",
+        "type": "verb"
+      },
+      {
+        "word": "gesto",
+        "surface": "gesto",
+        "definition": "a quick movement of the face or the hands",
+        "type": "noun"
+      },
+      {
+        "word": "roto",
+        "surface": "rota",
+        "definition": "broken, with a piece missing or out of place",
+        "type": "adjective"
+      },
+      {
+        "word": "fino",
+        "surface": "fina",
+        "definition": "very thin, easy to break between your fingers",
+        "type": "adjective"
+      },
+      {
+        "word": "punta",
+        "surface": "punta",
+        "definition": "the sharp or narrow end of a long thing",
+        "type": "noun"
+      },
+      {
+        "word": "hueco",
+        "surface": "hueco",
+        "definition": "an empty space where something used to be",
+        "type": "noun"
+      },
+      {
+        "word": "común",
+        "surface": "común",
+        "definition": "happening often, not strange or surprising at all",
+        "type": "adjective"
+      },
+      {
+        "word": "tapa",
+        "surface": "tapa",
+        "definition": "the flat piece that covers the top of something",
+        "type": "noun"
+      },
+      {
+        "word": "palma",
+        "surface": "palma",
+        "definition": "the inner flat side of your open hand",
+        "type": "noun"
+      }
+    ]
+  },
+  {
+    "topic": "help-and-repairs",
+    "slotIndex": 2,
+    "slug": "la-goma-no-aguanta",
+    "title": "La goma no aguanta",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Mateo intenta arreglar la pata solo y de noche, con la goma que encuentra en el cajon de la cocina. La pega torcida, la sujeta con cinta y la deja secar boca abajo. Por la mañana la pata aguanta el peso durante medio minuto y se suelta otra vez, y ahora ademas hay un trozo de madera pegado donde no debia.",
+    "text": "Esa noche Mateo intenta juntar la pata con la goma de la cocina. Pone pegamento en las dos partes y cuenta hasta sesenta. El cuarto huele fuerte y le pican los ojos.\n\n“¿Y si queda torcida?” “Se despega y ya está; no te preocupes.” Rosa lo dice desde la puerta, sin entrar.\n\nMateo sujeta la pata con cinta adhesiva y un trozo de cordel. Deja la figura boca abajo para que seque toda la noche. No se atreve a tocarla otra vez.\n\nPor la mañana la pata aguanta medio minuto y se suelta. La goma dejó una raya lisa donde antes había madera, y no quedó recta. Doblar el alambre tampoco sirvió de nada.\n\n“Esto es más complicado de lo que parece.” “Todo lo es, la primera vez.” Mateo mira el extremo suelto y nada queda firme.",
+    "vocab": [
+      {
+        "word": "juntar",
+        "surface": "juntar",
+        "definition": "to put two separate pieces back together again",
+        "type": "verb"
+      },
+      {
+        "word": "goma",
+        "surface": "goma",
+        "definition": "the sticky liquid used to hold two things together",
+        "type": "noun"
+      },
+      {
+        "word": "pegamento",
+        "surface": "pegamento",
+        "definition": "the sticky paste used for joining broken pieces",
+        "type": "noun"
+      },
+      {
+        "word": "parte",
+        "surface": "partes",
+        "definition": "one of the pieces that a whole thing has",
+        "type": "noun"
+      },
+      {
+        "word": "torcido",
+        "surface": "torcida",
+        "definition": "bent to one side instead of being straight",
+        "type": "adjective"
+      },
+      {
+        "word": "no te preocupes",
+        "surface": "no te preocupes",
+        "definition": "words said to calm somebody who is worried",
+        "type": "expression"
+      },
+      {
+        "word": "intentar",
+        "surface": "intenta",
+        "definition": "to try to do something that may not work",
+        "type": "verb"
+      },
+      {
+        "word": "sujetar",
+        "surface": "sujeta",
+        "definition": "to hold something in place so it cannot move",
+        "type": "verb"
+      },
+      {
+        "word": "cinta adhesiva",
+        "surface": "cinta adhesiva",
+        "definition": "a long sticky strip used to hold things together",
+        "type": "expression"
+      },
+      {
+        "word": "trozo",
+        "surface": "trozo",
+        "definition": "a small piece cut or broken off something bigger",
+        "type": "noun"
+      },
+      {
+        "word": "cordel",
+        "surface": "cordel",
+        "definition": "thin string used for tying small things together",
+        "type": "noun"
+      },
+      {
+        "word": "secar",
+        "surface": "seque",
+        "definition": "to become dry after being wet or sticky",
+        "type": "verb"
+      },
+      {
+        "word": "extremo",
+        "surface": "extremo",
+        "definition": "the far end of something long and narrow",
+        "type": "noun"
+      },
+      {
+        "word": "recto",
+        "surface": "recta",
+        "definition": "straight, without any bend along its whole length",
+        "type": "adjective"
+      },
+      {
+        "word": "firme",
+        "surface": "firme",
+        "definition": "steady and solid, not moving when you push",
+        "type": "adjective"
+      },
+      {
+        "word": "liso",
+        "surface": "lisa",
+        "definition": "smooth to the touch, with nothing sticking out",
+        "type": "adjective"
+      },
+      {
+        "word": "doblar",
+        "surface": "Doblar",
+        "definition": "to bend something so it is no longer straight",
+        "type": "verb"
+      },
+      {
+        "word": "alambre",
+        "surface": "alambre",
+        "definition": "a thin metal thread you can bend by hand",
+        "type": "noun"
+      },
+      {
+        "word": "servir",
+        "surface": "sirvió",
+        "definition": "to be useful for the job you needed done",
+        "type": "verb"
+      },
+      {
+        "word": "complicado",
+        "surface": "complicado",
+        "definition": "hard to do because it has many small steps",
+        "type": "adjective"
+      }
+    ]
+  },
+  {
+    "topic": "help-and-repairs",
+    "slotIndex": 3,
+    "slug": "rosa-abre-el-cajon",
+    "title": "Rosa abre el cajón",
+    "arcType": "recurring-character-callback",
+    "synopsis": "La tia Rosa saca las herramientas y le enseña a Mateo que una figura no se arregla con clavos sino con una varilla fina metida a mano en un hueco profundo. Le pasa el pincel para que termine el la pintura, y esa misma noche Mateo mueve el alebrije dos dedos a la izquierda sin que nadie en la casa lo vea, que es exactamente lo que ella hacia.",
+    "text": "El sábado la tía Rosa abre el cajón donde guarda las herramientas. Saca una pinza, un destornillador y una tabla pequeña. El cuarto huele a madera recién cortada.\n\n“Primero se limpia y después se pega, paso a paso.” “¿Y el clavo?” “El clavo no: eso es para muebles.”\n\nRosa afila una varilla con un cuchillo romo y abre un hueco profundo. Mete la varilla en la pata y la otra punta en el cuerpo. Todo a mano, sin martillo y sin tornillo.\n\nLe pasa el pincel y un poco de barniz usado. “Ahora lo terminas tú.” Mateo repara el ala con una capa fina y arregla también la raya.\n\nEs más fácil de lo que parecía y con eso es suficiente. Esa noche Mateo mueve el alebrije dos dedos a la izquierda. Nadie en la casa lo ve, y ese es el punto.",
+    "vocab": [
+      {
+        "word": "cajón",
+        "surface": "cajón",
+        "definition": "the sliding box inside a table where things are kept",
+        "type": "noun"
+      },
+      {
+        "word": "herramienta",
+        "surface": "herramientas",
+        "definition": "a thing you hold to build or mend something",
+        "type": "noun"
+      },
+      {
+        "word": "pinza",
+        "surface": "pinza",
+        "definition": "a hand tool that grips small things tightly",
+        "type": "noun"
+      },
+      {
+        "word": "destornillador",
+        "surface": "destornillador",
+        "definition": "the tool used to turn screws into wood",
+        "type": "noun"
+      },
+      {
+        "word": "tabla",
+        "surface": "tabla",
+        "definition": "a flat wide piece of wood cut for working",
+        "type": "noun"
+      },
+      {
+        "word": "clavo",
+        "surface": "clavo",
+        "definition": "a thin metal pin hammered in to hold wood",
+        "type": "noun"
+      },
+      {
+        "word": "paso a paso",
+        "surface": "paso a paso",
+        "definition": "doing one small part first and the next after",
+        "type": "expression"
+      },
+      {
+        "word": "varilla",
+        "surface": "varilla",
+        "definition": "a thin straight stick of wood or metal",
+        "type": "noun"
+      },
+      {
+        "word": "romo",
+        "surface": "romo",
+        "definition": "not sharp any more, worn down at the edge",
+        "type": "adjective"
+      },
+      {
+        "word": "profundo",
+        "surface": "profundo",
+        "definition": "going a long way down from the surface",
+        "type": "adjective"
+      },
+      {
+        "word": "a mano",
+        "surface": "a mano",
+        "definition": "using only the hands, with no machine involved",
+        "type": "expression"
+      },
+      {
+        "word": "martillo",
+        "surface": "martillo",
+        "definition": "the heavy tool used for hitting nails in",
+        "type": "noun"
+      },
+      {
+        "word": "tornillo",
+        "surface": "tornillo",
+        "definition": "a metal pin with a thread that turns into wood",
+        "type": "noun"
+      },
+      {
+        "word": "pincel",
+        "surface": "pincel",
+        "definition": "the small brush used for putting paint on",
+        "type": "noun"
+      },
+      {
+        "word": "barniz",
+        "surface": "barniz",
+        "definition": "the clear liquid brushed on wood to protect it",
+        "type": "noun"
+      },
+      {
+        "word": "usado",
+        "surface": "usado",
+        "definition": "that somebody has already used some time before",
+        "type": "adjective"
+      },
+      {
+        "word": "reparar",
+        "surface": "repara",
+        "definition": "to mend something that was broken or damaged",
+        "type": "verb"
+      },
+      {
+        "word": "arreglar",
+        "surface": "arregla",
+        "definition": "to put something right so it works again",
+        "type": "verb"
+      },
+      {
+        "word": "fácil",
+        "surface": "fácil",
+        "definition": "needing little effort or skill to get done",
+        "type": "adjective"
+      },
+      {
+        "word": "suficiente",
+        "surface": "suficiente",
+        "definition": "as much as is needed, with nothing more required",
+        "type": "adjective"
+      }
+    ]
   }
 ]
