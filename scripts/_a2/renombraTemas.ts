@@ -34,28 +34,28 @@ const prisma = new PrismaClient();
 
 /** viejo slug -> { slug, label, evidence } */
 const CAMBIOS: Record<string, { slug: string; label: string; evidence: string[] }> = {
-  "fetching-and-handing-over": {
-    slug: "baskets-and-errands", label: "Baskets & Errands",
+  "baskets-and-errands": {
+    slug: "errands-and-parcels", label: "Errands & Parcels",
     evidence: ["every time she need something, that I can’t seem to understand, reached for or fixed"],
   },
-  "company-and-long-afternoons": {
-    slug: "rest-and-siesta", label: "Rest & Siesta",
+  "rest-and-siesta": {
+    slug: "rest-and-free-time", label: "Rest & Free Time",
     evidence: ["He lives with his grandmother who only speaks Spanish"],
   },
-  "orchards-and-baskets": {
-    slug: "vegetables-and-footpaths", label: "Vegetables & Footpaths",
+  "vegetables-and-footpaths": {
+    slug: "countryside-and-gardens", label: "Countryside & Gardens",
     evidence: ["To be able to speak  Spanish when travelling to Spain"],
   },
-  "pots-and-home-cooking": {
-    slug: "pots-and-pans", label: "Pots & Pans",
+  "pots-and-pans": {
+    slug: "cooking-and-kitchen", label: "Cooking & Kitchen",
     evidence: ["He lives with his grandmother who only speaks Spanish"],
   },
-  "nerves-and-courage": {
-    slug: "feelings-and-phone-calls", label: "Feelings & Phone Calls",
+  "feelings-and-phone-calls": {
+    slug: "feelings-and-confidence", label: "Feelings & Confidence",
     evidence: ["I don’t want to call my boyfriend over every time she need something"],
   },
-  "keys-and-signatures": {
-    slug: "papers-keys-and-money", label: "Papers, Keys & Money",
+  "papers-keys-and-money": {
+    slug: "paperwork-and-keys", label: "Paperwork & Keys",
     evidence: ["Holiday home in Spain and I wish to talk to neighbours"],
   },
 };
