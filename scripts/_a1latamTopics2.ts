@@ -12,7 +12,7 @@ const T = [
   { slug: "help-and-repairs",   label: "Help & Repairs",     evidence: ["that I can’t seem to understand, reached for or fixed"] },
   { slug: "names-for-things",   label: "Names for Things",   evidence: ["understand and use slang from Colombia"] },
   { slug: "doors-and-neighbours", label: "Doors & Neighbours", evidence: ["I wish to talk to neighbours"] },
-  { slug: "trails-and-weather", label: "Trails & Weather",   evidence: ["a different way to learn Spanish"] },
+  { slug: "plans-and-invitations", label: "Plans & Invitations", evidence: ["Liquido en español con mis amigo Alexandros"] },
 ];
 (async () => {
   await assertTopicsGrounded({ language: "spanish", proposals: T });
