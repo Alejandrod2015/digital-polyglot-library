@@ -1,0 +1,884 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "ancha",
+    "sentence": "La empuja contra la pared, delante de Pablo, y traza una línea _____ por el medio.",
+    "payload": {
+      "answer": "ancha",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ancha",
+        "reconocido",
+        "ligero",
+        "envuelto"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/09a9e36f200cd5ae.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La empuja contra la pared, delante de Pablo, y traza una línea ancha por el medio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "ancho",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ancho",
+    "sentence": "La empuja contra la pared, delante de Pablo, y traza una línea ancha por el medio.",
+    "payload": {
+      "answer": "wide, measuring a lot from side to side",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "properly",
+        "wide, measuring a lot from side to side",
+        "defenders",
+        "luck"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/09a9e36f200cd5ae.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La empuja contra la pared, delante de Pablo, y traza una línea ancha por el medio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "ancho",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "birome",
+    "sentence": "birome",
+    "payload": {
+      "answer": "birome",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "pared",
+        "cuidado",
+        "birome",
+        "pasaportes"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "clase",
+    "sentence": "Es media _____, y Pablo cierra la libreta con dos palabras escritas.",
+    "payload": {
+      "answer": "clase",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "librero",
+        "veredas",
+        "resplandor",
+        "clase"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/843292fb73f41ad1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Es media clase, y Pablo cierra la libreta con dos palabras escritas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "clase",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerrar",
+    "sentence": "Es media clase, y Pablo cierra la libreta con dos palabras escritas.",
+    "payload": {
+      "answer": "to shut something so it cannot be opened",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "everyday life",
+        "to shut something so it cannot be opened",
+        "an exception",
+        "one of the nine nights of Christmas processions and parties"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/843292fb73f41ad1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Es media clase, y Pablo cierra la libreta con dos palabras escritas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "cerrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "columna",
+    "sentence": "columna",
+    "payload": {
+      "answer": "columna",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "columna",
+        "cartita",
+        "mueca",
+        "sombra"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "ancho,hoja,quieto,cerrar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "ancho",
+          "answer": "wide, measuring a lot from side to side",
+          "options": [
+            "a single flat sheet of paper for writing",
+            "wide, measuring a lot from side to side",
+            "to shut something so it cannot be opened",
+            "staying still, without moving even a little bit"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "hoja",
+          "answer": "a single flat sheet of paper for writing",
+          "options": [
+            "a single flat sheet of paper for writing",
+            "wide, measuring a lot from side to side",
+            "to shut something so it cannot be opened",
+            "staying still, without moving even a little bit"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "quieto",
+          "answer": "staying still, without moving even a little bit",
+          "options": [
+            "a single flat sheet of paper for writing",
+            "wide, measuring a lot from side to side",
+            "to shut something so it cannot be opened",
+            "staying still, without moving even a little bit"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cerrar",
+          "answer": "to shut something so it cannot be opened",
+          "options": [
+            "a single flat sheet of paper for writing",
+            "wide, measuring a lot from side to side",
+            "to shut something so it cannot be opened",
+            "staying still, without moving even a little bit"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "está todo mal",
+    "sentence": "_____, dice Pablo, y Marta contesta que no, que ahora está escrito.",
+    "payload": {
+      "answer": "está todo mal",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "procesión de los pasos",
+        "está todo mal",
+        "en marcha",
+        "de cuidado"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b649440cf105d45.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Está todo mal”, dice Pablo, y Marta contesta que no, que ahora está escrito.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "está todo mal",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "negar",
+    "sentence": "Marta le dicta despacio, él no niega ninguna y la lista sigue creciendo.",
+    "payload": {
+      "answer": "to say that something is not true at all",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "bewilderment",
+        "to say that something is not true at all",
+        "wandering",
+        "corn flatbreads fried with an egg inside"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad7ea6563ef73a1a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Marta le dicta despacio, él no niega ninguna y la lista sigue creciendo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "negar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "nota",
+    "sentence": "Marta guarda la pizarra con la _____ encima: así no se olvida.",
+    "payload": {
+      "answer": "nota",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "caminata",
+        "garganta",
+        "rana",
+        "nota"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b6051876d0dd880b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Marta guarda la pizarra con la nota encima: así no se olvida.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "nota",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "ancha",
+    "sentence": "La empuja contra la pared, delante de Pablo, y traza una línea _____ por el medio.",
+    "payload": {
+      "answer": "ancha",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cálido",
+        "flaco",
+        "profundo",
+        "ancha"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/09a9e36f200cd5ae.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La empuja contra la pared, delante de Pablo, y traza una línea ancha por el medio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "ancho",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ancho",
+    "sentence": "La empuja contra la pared, delante de Pablo, y traza una línea ancha por el medio.",
+    "payload": {
+      "answer": "wide, measuring a lot from side to side",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "soda water",
+        "fire in the mouth",
+        "wide, measuring a lot from side to side",
+        "popularity"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/09a9e36f200cd5ae.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La empuja contra la pared, delante de Pablo, y traza una línea ancha por el medio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "ancho",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "birome",
+    "sentence": "birome",
+    "payload": {
+      "answer": "birome",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "sonrisa",
+        "canasto",
+        "birome",
+        "garaje"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "negar,plegar,verdadero,jamás",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "negar",
+          "answer": "to say that something is not true at all",
+          "options": [
+            "at no moment, not ever in your whole life",
+            "to fold something over on itself several times",
+            "true, matching what really is the case here",
+            "to say that something is not true at all"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "plegar",
+          "answer": "to fold something over on itself several times",
+          "options": [
+            "at no moment, not ever in your whole life",
+            "to fold something over on itself several times",
+            "true, matching what really is the case here",
+            "to say that something is not true at all"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "verdadero",
+          "answer": "true, matching what really is the case here",
+          "options": [
+            "at no moment, not ever in your whole life",
+            "to fold something over on itself several times",
+            "true, matching what really is the case here",
+            "to say that something is not true at all"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "jamás",
+          "answer": "at no moment, not ever in your whole life",
+          "options": [
+            "at no moment, not ever in your whole life",
+            "to fold something over on itself several times",
+            "true, matching what really is the case here",
+            "to say that something is not true at all"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "clase",
+    "sentence": "Es media _____, y Pablo cierra la libreta con dos palabras escritas.",
+    "payload": {
+      "answer": "clase",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "clase",
+        "susurros",
+        "cuidado",
+        "muñecas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/843292fb73f41ad1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Es media clase, y Pablo cierra la libreta con dos palabras escritas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "clase",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerrar",
+    "sentence": "Es media clase, y Pablo cierra la libreta con dos palabras escritas.",
+    "payload": {
+      "answer": "to shut something so it cannot be opened",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "fuss, commotion",
+        "to shut something so it cannot be opened",
+        "firewood",
+        "filled, stuffed"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/843292fb73f41ad1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Es media clase, y Pablo cierra la libreta con dos palabras escritas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "cerrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "columna",
+    "sentence": "columna",
+    "payload": {
+      "answer": "columna",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "columna",
+        "despedida",
+        "aroma",
+        "carretera"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "birome,necesario,hoja,seguir",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "birome",
+          "answer": "the everyday pen that people in Argentina write with",
+          "options": [
+            "a single flat sheet of paper for writing",
+            "that you really need if you want it to work",
+            "to keep on doing what you were already doing",
+            "the everyday pen that people in Argentina write with"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "necesario",
+          "answer": "that you really need if you want it to work",
+          "options": [
+            "a single flat sheet of paper for writing",
+            "that you really need if you want it to work",
+            "to keep on doing what you were already doing",
+            "the everyday pen that people in Argentina write with"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "hoja",
+          "answer": "a single flat sheet of paper for writing",
+          "options": [
+            "a single flat sheet of paper for writing",
+            "that you really need if you want it to work",
+            "to keep on doing what you were already doing",
+            "the everyday pen that people in Argentina write with"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "seguir",
+          "answer": "to keep on doing what you were already doing",
+          "options": [
+            "a single flat sheet of paper for writing",
+            "that you really need if you want it to work",
+            "to keep on doing what you were already doing",
+            "the everyday pen that people in Argentina write with"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "está todo mal",
+    "sentence": "_____, dice Pablo, y Marta contesta que no, que ahora está escrito.",
+    "payload": {
+      "answer": "está todo mal",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "algodón de azúcar",
+        "sin parar",
+        "está todo mal",
+        "darle con todo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0b649440cf105d45.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Está todo mal”, dice Pablo, y Marta contesta que no, que ahora está escrito.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "está todo mal",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "negar",
+    "sentence": "Marta le dicta despacio, él no niega ninguna y la lista sigue creciendo.",
+    "payload": {
+      "answer": "to say that something is not true at all",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to say that something is not true at all",
+        "Spanish",
+        "is being held",
+        "mate, pal (literally skinny)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ad7ea6563ef73a1a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Marta le dicta despacio, él no niega ninguna y la lista sigue creciendo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "negar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nota",
+    "sentence": "Marta guarda la pizarra con la nota encima: así no se olvida.",
+    "payload": {
+      "answer": "a few words written down so you remember them",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a few words written down so you remember them",
+        "the heat",
+        "we'll put on",
+        "flowered, floral-print"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b6051876d0dd880b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Marta guarda la pizarra con la nota encima: así no se olvida.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "nota",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "trato hecho",
+    "sentence": "“Trato hecho”, y eso sí es verdadero.",
+    "payload": {
+      "answer": "words that close an agreement between two people",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "threaten to",
+        "words that close an agreement between two people",
+        "snorted",
+        "waking up"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cb800d30a93915f0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Trato hecho”, y eso sí es verdadero.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-columnas-y-una-birome",
+        "targetWord": "trato hecho",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "durar",
+    "sentence": "durar",
+    "payload": {
+      "answer": "durar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "durar",
+        "traga",
+        "mentir",
+        "vender"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "hoja",
+    "sentence": "hoja",
+    "payload": {
+      "answer": "hoja",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "tapa",
+        "hoja",
+        "caminata",
+        "alegría"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "izquierda",
+    "sentence": "izquierda",
+    "payload": {
+      "answer": "izquierda",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "mija",
+        "falda",
+        "izquierda",
+        "cima"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "jamás",
+    "sentence": "jamás",
+    "payload": {
+      "answer": "jamás",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "Apenas",
+        "lejos",
+        "jamás",
+        "suavecito"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cerrar,izquierda,quieto,trato hecho",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cerrar",
+          "answer": "to shut something so it cannot be opened",
+          "options": [
+            "words that close an agreement between two people",
+            "the side of your body where your heart is",
+            "staying still, without moving even a little bit",
+            "to shut something so it cannot be opened"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "izquierda",
+          "answer": "the side of your body where your heart is",
+          "options": [
+            "words that close an agreement between two people",
+            "the side of your body where your heart is",
+            "staying still, without moving even a little bit",
+            "to shut something so it cannot be opened"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "quieto",
+          "answer": "staying still, without moving even a little bit",
+          "options": [
+            "words that close an agreement between two people",
+            "the side of your body where your heart is",
+            "staying still, without moving even a little bit",
+            "to shut something so it cannot be opened"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "trato hecho",
+          "answer": "words that close an agreement between two people",
+          "options": [
+            "words that close an agreement between two people",
+            "the side of your body where your heart is",
+            "staying still, without moving even a little bit",
+            "to shut something so it cannot be opened"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

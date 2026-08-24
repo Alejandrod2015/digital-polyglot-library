@@ -1,0 +1,868 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "ahorra",
+    "sentence": "Durante la semana esto _____ bastante, dice Ana, aunque hoy no lo parezca.",
+    "payload": {
+      "answer": "ahorra",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "gira",
+        "levantar",
+        "pita",
+        "ahorra"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d144034e059f3d13.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Durante la semana esto ahorra bastante”, dice Ana, aunque hoy no lo parezca.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "ahorrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ahorrar",
+    "sentence": "“Durante la semana esto ahorra bastante”, dice Ana, aunque hoy no lo parezca.",
+    "payload": {
+      "answer": "to keep money instead of spending it now",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to keep money instead of spending it now",
+        "striking",
+        "the gesture",
+        "era, time back then"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d144034e059f3d13.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Durante la semana esto ahorra bastante”, dice Ana, aunque hoy no lo parezca.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "ahorrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "azúcar",
+    "sentence": "azúcar",
+    "payload": {
+      "answer": "azúcar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cortinas",
+        "gorro",
+        "olor",
+        "azúcar"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "blando",
+    "sentence": "Compran fresas, pan _____ y leche para el desayuno.",
+    "payload": {
+      "answer": "blando",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "corto",
+        "sencillo",
+        "precioso",
+        "blando"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/99bf5e1f188f230f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Compran fresas, pan blando y leche para el desayuno.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "blando",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caliente",
+    "sentence": "El sol ya está caliente y el sábado sale pesado; los otros seis días, no.",
+    "payload": {
+      "answer": "hot to the touch, not cold at all",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a piece of waste",
+        "well done, congratulations",
+        "doubts",
+        "hot to the touch, not cold at all"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/03b47206da32129c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El sol ya está caliente y el sábado sale pesado; los otros seis días, no.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "caliente",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cargar",
+    "sentence": "cargar",
+    "payload": {
+      "answer": "cargar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "asustar",
+        "susurra",
+        "cargar",
+        "volver"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "caliente,leche,fresa,untar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "caliente",
+          "answer": "hot to the touch, not cold at all",
+          "options": [
+            "the small red sweet fruit that grows near the ground",
+            "to spread something soft over bread with a knife",
+            "the white drink that comes from cows and goats",
+            "hot to the touch, not cold at all"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "leche",
+          "answer": "the white drink that comes from cows and goats",
+          "options": [
+            "the small red sweet fruit that grows near the ground",
+            "to spread something soft over bread with a knife",
+            "the white drink that comes from cows and goats",
+            "hot to the touch, not cold at all"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "fresa",
+          "answer": "the small red sweet fruit that grows near the ground",
+          "options": [
+            "the small red sweet fruit that grows near the ground",
+            "to spread something soft over bread with a knife",
+            "the white drink that comes from cows and goats",
+            "hot to the touch, not cold at all"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "untar",
+          "answer": "to spread something soft over bread with a knife",
+          "options": [
+            "the small red sweet fruit that grows near the ground",
+            "to spread something soft over bread with a knife",
+            "the white drink that comes from cows and goats",
+            "hot to the touch, not cold at all"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "carga",
+    "sentence": "Carla _____ la bolsa y ya pesa demasiado para una cuadra.",
+    "payload": {
+      "answer": "carga",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "carga",
+        "soñar",
+        "asiente",
+        "repasar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a39c6ec027337f53.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Carla carga la bolsa y ya pesa demasiado para una cuadra.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "cargar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caro",
+    "sentence": "“Todo se ve caro”, dice Carla y aprieta la bolsa.",
+    "payload": {
+      "answer": "costing a lot more money than you expected",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to pull off",
+        "costing a lot more money than you expected",
+        "poured",
+        "let me (Argentine voseo imperative)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/250c81b956fe5815.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Todo se ve caro”, dice Carla y aprieta la bolsa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "caro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "gasto",
+    "sentence": "Ana le explica que para dos personas el _____ se elige antes de entrar.",
+    "payload": {
+      "answer": "gasto",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "gasto",
+        "horno",
+        "escenario",
+        "entusiasmo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/76b06ebf5c94b5bd.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ana le explica que para dos personas el gasto se elige antes de entrar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "gasto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "ahorra",
+    "sentence": "Durante la semana esto _____ bastante, dice Ana, aunque hoy no lo parezca.",
+    "payload": {
+      "answer": "ahorra",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ahorra",
+        "detener",
+        "plancha",
+        "mezclar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d144034e059f3d13.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Durante la semana esto ahorra bastante”, dice Ana, aunque hoy no lo parezca.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "ahorrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ahorrar",
+    "sentence": "“Durante la semana esto ahorra bastante”, dice Ana, aunque hoy no lo parezca.",
+    "payload": {
+      "answer": "to keep money instead of spending it now",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "one age group passing things to the next",
+        "to keep money instead of spending it now",
+        "left with nothing, waiting in vain (Argentine idiom)",
+        "a parrot"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d144034e059f3d13.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Durante la semana esto ahorra bastante”, dice Ana, aunque hoy no lo parezca.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "ahorrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "azúcar",
+    "sentence": "azúcar",
+    "payload": {
+      "answer": "azúcar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "turno",
+        "papel",
+        "azúcar",
+        "vasos"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "pesado,ahorrar,descuento,manteca",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "pesado",
+          "answer": "heavy and hard to carry for very long",
+          "options": [
+            "heavy and hard to carry for very long",
+            "money taken off the normal price of something",
+            "to keep money instead of spending it now",
+            "the soft white fat used for cooking and spreading"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ahorrar",
+          "answer": "to keep money instead of spending it now",
+          "options": [
+            "heavy and hard to carry for very long",
+            "money taken off the normal price of something",
+            "to keep money instead of spending it now",
+            "the soft white fat used for cooking and spreading"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "descuento",
+          "answer": "money taken off the normal price of something",
+          "options": [
+            "heavy and hard to carry for very long",
+            "money taken off the normal price of something",
+            "to keep money instead of spending it now",
+            "the soft white fat used for cooking and spreading"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "manteca",
+          "answer": "the soft white fat used for cooking and spreading",
+          "options": [
+            "heavy and hard to carry for very long",
+            "money taken off the normal price of something",
+            "to keep money instead of spending it now",
+            "the soft white fat used for cooking and spreading"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "blando",
+    "sentence": "Compran fresas, pan _____ y leche para el desayuno.",
+    "payload": {
+      "answer": "blando",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "blando",
+        "cansado",
+        "probado",
+        "acelerado"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/99bf5e1f188f230f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Compran fresas, pan blando y leche para el desayuno.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "blando",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caliente",
+    "sentence": "El sol ya está caliente y el sábado sale pesado; los otros seis días, no.",
+    "payload": {
+      "answer": "hot to the touch, not cold at all",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "served him",
+        "warm",
+        "hot to the touch, not cold at all",
+        "to put up with (Argentine slang)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/03b47206da32129c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El sol ya está caliente y el sábado sale pesado; los otros seis días, no.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "caliente",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cargar",
+    "sentence": "cargar",
+    "payload": {
+      "answer": "cargar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "vender",
+        "mezclado",
+        "traga",
+        "cargar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "torta,caro,feria,comerse",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "torta",
+          "answer": "a filled bread roll eaten as a quick meal",
+          "options": [
+            "to eat something up in a particular way",
+            "the small coins Mexicans get back after paying",
+            "a filled bread roll eaten as a quick meal",
+            "costing a lot more money than you expected"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "caro",
+          "answer": "costing a lot more money than you expected",
+          "options": [
+            "to eat something up in a particular way",
+            "the small coins Mexicans get back after paying",
+            "a filled bread roll eaten as a quick meal",
+            "costing a lot more money than you expected"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "feria",
+          "answer": "the small coins Mexicans get back after paying",
+          "options": [
+            "to eat something up in a particular way",
+            "the small coins Mexicans get back after paying",
+            "a filled bread roll eaten as a quick meal",
+            "costing a lot more money than you expected"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "comerse",
+          "answer": "to eat something up in a particular way",
+          "options": [
+            "to eat something up in a particular way",
+            "the small coins Mexicans get back after paying",
+            "a filled bread roll eaten as a quick meal",
+            "costing a lot more money than you expected"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "carga",
+    "sentence": "Carla _____ la bolsa y ya pesa demasiado para una cuadra.",
+    "payload": {
+      "answer": "carga",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "desea",
+        "reparar",
+        "carga",
+        "anuncia"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a39c6ec027337f53.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Carla carga la bolsa y ya pesa demasiado para una cuadra.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "cargar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caro",
+    "sentence": "“Todo se ve caro”, dice Carla y aprieta la bolsa.",
+    "payload": {
+      "answer": "costing a lot more money than you expected",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "feathered serpent, the god Kukulkán",
+        "serves, attends to",
+        "costing a lot more money than you expected",
+        "to get moving"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/250c81b956fe5815.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Todo se ve caro”, dice Carla y aprieta la bolsa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "caro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "elegir",
+    "sentence": "Ana le explica que para dos personas el gasto se elige antes de entrar.",
+    "payload": {
+      "answer": "to pick one thing instead of the others available",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to pick one thing instead of the others available",
+        "the tip",
+        "to return, to take back",
+        "Colombian sport of throwing metal discs at a target"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/76b06ebf5c94b5bd.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ana le explica que para dos personas el gasto se elige antes de entrar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "elegir",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "gasto",
+    "sentence": "Ana le explica que para dos personas el _____ se elige antes de entrar.",
+    "payload": {
+      "answer": "gasto",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "gasto",
+        "pelado",
+        "cerdo",
+        "tesoro"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/76b06ebf5c94b5bd.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ana le explica que para dos personas el gasto se elige antes de entrar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "carla-paga-sin-probar-la-horchata",
+        "targetWord": "gasto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "comerse",
+    "sentence": "comerse",
+    "payload": {
+      "answer": "comerse",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "crecer",
+        "comerse",
+        "secar",
+        "asustar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "descuento",
+    "sentence": "descuento",
+    "payload": {
+      "answer": "descuento",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "descuento",
+        "tío",
+        "tesoro",
+        "vacío"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "durante",
+    "sentence": "durante",
+    "payload": {
+      "answer": "durante",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "durante",
+        "silbido",
+        "oscuro",
+        "pesada"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cargar,elegir,caliente,azúcar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cargar",
+          "answer": "to carry something heavy from one place to another",
+          "options": [
+            "the sweet white powder added to food and drinks",
+            "to carry something heavy from one place to another",
+            "hot to the touch, not cold at all",
+            "to pick one thing instead of the others available"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "elegir",
+          "answer": "to pick one thing instead of the others available",
+          "options": [
+            "the sweet white powder added to food and drinks",
+            "to carry something heavy from one place to another",
+            "hot to the touch, not cold at all",
+            "to pick one thing instead of the others available"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "caliente",
+          "answer": "hot to the touch, not cold at all",
+          "options": [
+            "the sweet white powder added to food and drinks",
+            "to carry something heavy from one place to another",
+            "hot to the touch, not cold at all",
+            "to pick one thing instead of the others available"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "azúcar",
+          "answer": "the sweet white powder added to food and drinks",
+          "options": [
+            "the sweet white powder added to food and drinks",
+            "to carry something heavy from one place to another",
+            "hot to the touch, not cold at all",
+            "to pick one thing instead of the others available"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

@@ -1,0 +1,852 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "deja",
+    "sentence": "El mesero llena el vaso y _____ el menú abierto sobre la mesa.",
+    "payload": {
+      "answer": "deja",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "aguantar",
+        "deja",
+        "revisar",
+        "iluminar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/297316c7ed10b6cb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El mesero llena el vaso y deja el menú abierto sobre la mesa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "dejar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "darse cuenta",
+    "sentence": "“Erraste al contestar, nada más”, se da cuenta él.",
+    "payload": {
+      "answer": "to suddenly understand something you had not seen",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "bubbles away",
+        "to pull off",
+        "made up of",
+        "to suddenly understand something you had not seen"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5bad4f7e10ebee64.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Erraste al contestar, nada más”, se da cuenta él.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "darse cuenta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "correcto",
+    "sentence": "correcto",
+    "payload": {
+      "answer": "correcto",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "probado",
+        "profundo",
+        "Querido",
+        "correcto"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "factura",
+    "sentence": "Pide una medialuna y esta vez le traen la _____.",
+    "payload": {
+      "answer": "factura",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "factura",
+        "memoria",
+        "tapa",
+        "brisa"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e02aa81657ef5234.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pide una medialuna y esta vez le traen la factura.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "factura",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dejar",
+    "sentence": "El mesero llena el vaso y deja el menú abierto sobre la mesa.",
+    "payload": {
+      "answer": "to leave something where it is and not take it",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the line of people moving through the streets",
+        "comes over",
+        "to get ahead, to make it",
+        "to leave something where it is and not take it"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/297316c7ed10b6cb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El mesero llena el vaso y deja el menú abierto sobre la mesa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "dejar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cortado",
+    "sentence": "cortado",
+    "payload": {
+      "answer": "cortado",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "hueco",
+        "cortado",
+        "campo",
+        "grupo"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "dejar,cuchillo,idioma,diferente",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "dejar",
+          "answer": "to leave something where it is and not take it",
+          "options": [
+            "to leave something where it is and not take it",
+            "the sharp tool used for cutting food at table",
+            "not the same as the other thing named",
+            "the language that a whole country speaks every day"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cuchillo",
+          "answer": "the sharp tool used for cutting food at table",
+          "options": [
+            "to leave something where it is and not take it",
+            "the sharp tool used for cutting food at table",
+            "not the same as the other thing named",
+            "the language that a whole country speaks every day"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "idioma",
+          "answer": "the language that a whole country speaks every day",
+          "options": [
+            "to leave something where it is and not take it",
+            "the sharp tool used for cutting food at table",
+            "not the same as the other thing named",
+            "the language that a whole country speaks every day"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "diferente",
+          "answer": "not the same as the other thing named",
+          "options": [
+            "to leave something where it is and not take it",
+            "the sharp tool used for cutting food at table",
+            "not the same as the other thing named",
+            "the language that a whole country speaks every day"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "incorrecto",
+    "sentence": "Lo _____ no fue la palabra sino el sí.",
+    "payload": {
+      "answer": "incorrecto",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "encantado",
+        "incorrecto",
+        "oscuro",
+        "quieto"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/394e99559b916c0c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lo incorrecto no fue la palabra sino el sí.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "incorrecto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "equivocarse",
+    "sentence": "Pablo tarda en salir y se equivoca dos veces más antes del postre.",
+    "payload": {
+      "answer": "to say or do the wrong thing by mistake",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to say or do the wrong thing by mistake",
+        "a preserved colonial town in Boyacá",
+        "the spines",
+        "to afford, to pay for"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9682012b4bf769f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo tarda en salir y se equivoca dos veces más antes del postre.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "equivocarse",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "salir",
+    "sentence": "Pablo tarda en _____ y se equivoca dos veces más antes del postre.",
+    "payload": {
+      "answer": "salir",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "preparar",
+        "salir",
+        "sacar",
+        "picar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9682012b4bf769f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo tarda en salir y se equivoca dos veces más antes del postre.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "salir",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "deja",
+    "sentence": "El mesero llena el vaso y _____ el menú abierto sobre la mesa.",
+    "payload": {
+      "answer": "deja",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "probar",
+        "logrado",
+        "aguantar",
+        "deja"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/297316c7ed10b6cb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El mesero llena el vaso y deja el menú abierto sobre la mesa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "dejar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "darse cuenta",
+    "sentence": "“Erraste al contestar, nada más”, se da cuenta él.",
+    "payload": {
+      "answer": "to suddenly understand something you had not seen",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to remind us",
+        "to suddenly understand something you had not seen",
+        "food delivery",
+        "obsidian, volcanic glass"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5bad4f7e10ebee64.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Erraste al contestar, nada más”, se da cuenta él.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "darse cuenta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "correcto",
+    "sentence": "correcto",
+    "payload": {
+      "answer": "correcto",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "correcto",
+        "doblado",
+        "nervioso",
+        "frito"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "mirá vos,mesero,menú,modo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "mirá vos",
+          "answer": "words Argentines say when something mildly surprises them",
+          "options": [
+            "words Argentines say when something mildly surprises them",
+            "the particular way in which something is done",
+            "the list of dishes a place can serve you",
+            "the man who brings food to the tables"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "mesero",
+          "answer": "the man who brings food to the tables",
+          "options": [
+            "words Argentines say when something mildly surprises them",
+            "the particular way in which something is done",
+            "the list of dishes a place can serve you",
+            "the man who brings food to the tables"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "menú",
+          "answer": "the list of dishes a place can serve you",
+          "options": [
+            "words Argentines say when something mildly surprises them",
+            "the particular way in which something is done",
+            "the list of dishes a place can serve you",
+            "the man who brings food to the tables"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "modo",
+          "answer": "the particular way in which something is done",
+          "options": [
+            "words Argentines say when something mildly surprises them",
+            "the particular way in which something is done",
+            "the list of dishes a place can serve you",
+            "the man who brings food to the tables"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "factura",
+    "sentence": "Pide una medialuna y esta vez le traen la _____.",
+    "payload": {
+      "answer": "factura",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "piedra",
+        "factura",
+        "fogata",
+        "uña"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e02aa81657ef5234.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pide una medialuna y esta vez le traen la factura.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "factura",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dejar",
+    "sentence": "El mesero llena el vaso y deja el menú abierto sobre la mesa.",
+    "payload": {
+      "answer": "to leave something where it is and not take it",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "I got it wrong",
+        "to leave something where it is and not take it",
+        "workshop, repair shop",
+        "that it comes off, that it materialises"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/297316c7ed10b6cb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El mesero llena el vaso y deja el menú abierto sobre la mesa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "dejar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cortado",
+    "sentence": "cortado",
+    "payload": {
+      "answer": "cortado",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "pecho",
+        "cuello",
+        "cuentito",
+        "cortado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "correcto,incorrecto,idioma,frase",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "correcto",
+          "answer": "right, exactly as it should be said or done",
+          "options": [
+            "a group of words said together as one unit",
+            "right, exactly as it should be said or done",
+            "wrong, not the way it should be said",
+            "the language that a whole country speaks every day"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "incorrecto",
+          "answer": "wrong, not the way it should be said",
+          "options": [
+            "a group of words said together as one unit",
+            "right, exactly as it should be said or done",
+            "wrong, not the way it should be said",
+            "the language that a whole country speaks every day"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "idioma",
+          "answer": "the language that a whole country speaks every day",
+          "options": [
+            "a group of words said together as one unit",
+            "right, exactly as it should be said or done",
+            "wrong, not the way it should be said",
+            "the language that a whole country speaks every day"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "frase",
+          "answer": "a group of words said together as one unit",
+          "options": [
+            "a group of words said together as one unit",
+            "right, exactly as it should be said or done",
+            "wrong, not the way it should be said",
+            "the language that a whole country speaks every day"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "incorrecto",
+    "sentence": "Lo _____ no fue la palabra sino el sí.",
+    "payload": {
+      "answer": "incorrecto",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "desordenado",
+        "incorrecto",
+        "duro",
+        "colorido"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/394e99559b916c0c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lo incorrecto no fue la palabra sino el sí.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "incorrecto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "equivocarse",
+    "sentence": "Pablo tarda en salir y se equivoca dos veces más antes del postre.",
+    "payload": {
+      "answer": "to say or do the wrong thing by mistake",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to say or do the wrong thing by mistake",
+        "travel blog they are writing",
+        "family members",
+        "applause"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9682012b4bf769f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo tarda en salir y se equivoca dos veces más antes del postre.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "equivocarse",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "salir",
+    "sentence": "Pablo tarda en _____ y se equivoca dos veces más antes del postre.",
+    "payload": {
+      "answer": "salir",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "salir",
+        "refleja",
+        "secar",
+        "regresar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9682012b4bf769f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo tarda en salir y se equivoca dos veces más antes del postre.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-lomito-completo-en-san-telmo",
+        "targetWord": "salir",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cuchillo",
+    "sentence": "cuchillo",
+    "payload": {
+      "answer": "cuchillo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "negocio",
+        "mercado",
+        "cuchillo",
+        "picado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "diferente",
+    "sentence": "diferente",
+    "payload": {
+      "answer": "diferente",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "distinta",
+        "Confundido",
+        "diferente",
+        "Aprobado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "frase",
+    "sentence": "frase",
+    "payload": {
+      "answer": "frase",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "salsa",
+        "corrientes",
+        "murmullos",
+        "frase"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "idioma",
+    "sentence": "idioma",
+    "payload": {
+      "answer": "idioma",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "idioma",
+        "señorita",
+        "camiseta",
+        "parada"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "tardar,factura,salir,diferente",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "tardar",
+          "answer": "to take a long time to do something",
+          "options": [
+            "a sweet pastry, or the paper that says what you owe",
+            "to take a long time to do something",
+            "to go out of a place towards the street",
+            "not the same as the other thing named"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "factura",
+          "answer": "a sweet pastry, or the paper that says what you owe",
+          "options": [
+            "a sweet pastry, or the paper that says what you owe",
+            "to take a long time to do something",
+            "to go out of a place towards the street",
+            "not the same as the other thing named"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "salir",
+          "answer": "to go out of a place towards the street",
+          "options": [
+            "a sweet pastry, or the paper that says what you owe",
+            "to take a long time to do something",
+            "to go out of a place towards the street",
+            "not the same as the other thing named"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "diferente",
+          "answer": "not the same as the other thing named",
+          "options": [
+            "a sweet pastry, or the paper that says what you owe",
+            "to take a long time to do something",
+            "to go out of a place towards the street",
+            "not the same as the other thing named"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

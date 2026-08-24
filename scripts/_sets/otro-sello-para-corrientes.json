@@ -1,0 +1,788 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "carpeta",
+    "sentence": "Empuja la puerta con la _____ bajo el brazo y la cédula en el bolsillo.",
+    "payload": {
+      "answer": "carpeta",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "señorita",
+        "carpeta",
+        "copa",
+        "mirada"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0456dab97c1a544.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Empuja la puerta con la carpeta bajo el brazo y la cédula en el bolsillo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "otro-sello-para-corrientes",
+        "targetWord": "carpeta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enojado",
+    "sentence": "Desde el escritorio, la empleada lo mira y Pablo no se pone enojado.",
+    "payload": {
+      "answer": "angry about something that has just gone wrong",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a fan of",
+        "etched",
+        "an old man",
+        "angry about something that has just gone wrong"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a056e980e8f1ff5f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Desde el escritorio, la empleada lo mira y Pablo no se pone enojado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "otro-sello-para-corrientes",
+        "targetWord": "enojado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "aprobar",
+    "sentence": "aprobar",
+    "payload": {
+      "answer": "aprobar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "coger",
+        "aprobar",
+        "arreglar",
+        "dejado"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "oficina",
+    "sentence": "Un lunes temprano, en Buenos Aires, Lucas manda a Pablo a una _____ de Corrientes.",
+    "payload": {
+      "answer": "oficina",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "garganta",
+        "oficina",
+        "cabaña",
+        "silla"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3605be478ca4123f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Un lunes temprano, en Buenos Aires, Lucas manda a Pablo a una oficina de Corrientes.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "otro-sello-para-corrientes",
+        "targetWord": "oficina",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "orden",
+    "sentence": "Apoya los papeles en orden y le presta un lápiz.",
+    "payload": {
+      "answer": "the way things are arranged one after another",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the darkest, most complex mole",
+        "the way things are arranged one after another",
+        "the job in hand",
+        "shook out"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5973bb91eda5c198.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Apoya los papeles en orden y le presta un lápiz.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "otro-sello-para-corrientes",
+        "targetWord": "orden",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "casilla",
+    "sentence": "casilla",
+    "payload": {
+      "answer": "casilla",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "semilla",
+        "prisa",
+        "bebida",
+        "casilla"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "regla,único,por ciento,sello",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "regla",
+          "answer": "something that must be done in a fixed way",
+          "options": [
+            "out of every hundred, as a share of something",
+            "something that must be done in a fixed way",
+            "the ink mark that makes a paper official",
+            "the only one of its kind in that place"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "único",
+          "answer": "the only one of its kind in that place",
+          "options": [
+            "out of every hundred, as a share of something",
+            "something that must be done in a fixed way",
+            "the ink mark that makes a paper official",
+            "the only one of its kind in that place"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "por ciento",
+          "answer": "out of every hundred, as a share of something",
+          "options": [
+            "out of every hundred, as a share of something",
+            "something that must be done in a fixed way",
+            "the ink mark that makes a paper official",
+            "the only one of its kind in that place"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sello",
+          "answer": "the ink mark that makes a paper official",
+          "options": [
+            "out of every hundred, as a share of something",
+            "something that must be done in a fixed way",
+            "the ink mark that makes a paper official",
+            "the only one of its kind in that place"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "único",
+    "sentence": "Pablo pregunta si es el _____ trámite.",
+    "payload": {
+      "answer": "único",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "finito",
+        "sabroso",
+        "ligero",
+        "único"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7936acc40bd8fc55.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo pregunta si es el único trámite.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "otro-sello-para-corrientes",
+        "targetWord": "único",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cédula",
+    "sentence": "cédula",
+    "payload": {
+      "answer": "cédula",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cédula",
+        "oferta",
+        "estrella",
+        "tierra"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "completo",
+    "sentence": "completo",
+    "payload": {
+      "answer": "completo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "sabio",
+        "auténtico",
+        "completo",
+        "nublado"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "carpeta",
+    "sentence": "Empuja la puerta con la _____ bajo el brazo y la cédula en el bolsillo.",
+    "payload": {
+      "answer": "carpeta",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "mañana",
+        "risa",
+        "caja",
+        "carpeta"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0456dab97c1a544.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Empuja la puerta con la carpeta bajo el brazo y la cédula en el bolsillo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "otro-sello-para-corrientes",
+        "targetWord": "carpeta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enojado",
+    "sentence": "Desde el escritorio, la empleada lo mira y Pablo no se pone enojado.",
+    "payload": {
+      "answer": "angry about something that has just gone wrong",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "prototype",
+        "angry about something that has just gone wrong",
+        "you're (right) (Argentine voseo)",
+        "her round, her route"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a056e980e8f1ff5f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Desde el escritorio, la empleada lo mira y Pablo no se pone enojado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "otro-sello-para-corrientes",
+        "targetWord": "enojado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "aprobar",
+    "sentence": "aprobar",
+    "payload": {
+      "answer": "aprobar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "anuncia",
+        "vibrar",
+        "mezclar",
+        "aprobar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "aprobar,casilla,único,planilla",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "aprobar",
+          "answer": "to say yes to something in an official way",
+          "options": [
+            "a small box on a form where you write",
+            "to say yes to something in an official way",
+            "a printed sheet with boxes you must fill in",
+            "the only one of its kind in that place"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "casilla",
+          "answer": "a small box on a form where you write",
+          "options": [
+            "a small box on a form where you write",
+            "to say yes to something in an official way",
+            "a printed sheet with boxes you must fill in",
+            "the only one of its kind in that place"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "único",
+          "answer": "the only one of its kind in that place",
+          "options": [
+            "a small box on a form where you write",
+            "to say yes to something in an official way",
+            "a printed sheet with boxes you must fill in",
+            "the only one of its kind in that place"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "planilla",
+          "answer": "a printed sheet with boxes you must fill in",
+          "options": [
+            "a small box on a form where you write",
+            "to say yes to something in an official way",
+            "a printed sheet with boxes you must fill in",
+            "the only one of its kind in that place"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "oficina",
+    "sentence": "Un lunes temprano, en Buenos Aires, Lucas manda a Pablo a una _____ de Corrientes.",
+    "payload": {
+      "answer": "oficina",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "pizarra",
+        "camiseta",
+        "piña",
+        "oficina"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3605be478ca4123f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Un lunes temprano, en Buenos Aires, Lucas manda a Pablo a una oficina de Corrientes.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "otro-sello-para-corrientes",
+        "targetWord": "oficina",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "orden",
+    "sentence": "Apoya los papeles en orden y le presta un lápiz.",
+    "payload": {
+      "answer": "the way things are arranged one after another",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a burst of laughter",
+        "the way things are arranged one after another",
+        "pigeons",
+        "fields"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5973bb91eda5c198.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Apoya los papeles en orden y le presta un lápiz.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "otro-sello-para-corrientes",
+        "targetWord": "orden",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "casilla",
+    "sentence": "casilla",
+    "payload": {
+      "answer": "casilla",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "casilla",
+        "ceja",
+        "escena",
+        "vecina"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "ida y vuelta,servicio,empleado,completo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "ida y vuelta",
+          "answer": "going somewhere and coming back the same day",
+          "options": [
+            "the work an office does for the public",
+            "going somewhere and coming back the same day",
+            "with nothing left out or missing at all",
+            "a person who works for a company or office"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "servicio",
+          "answer": "the work an office does for the public",
+          "options": [
+            "the work an office does for the public",
+            "going somewhere and coming back the same day",
+            "with nothing left out or missing at all",
+            "a person who works for a company or office"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "empleado",
+          "answer": "a person who works for a company or office",
+          "options": [
+            "the work an office does for the public",
+            "going somewhere and coming back the same day",
+            "with nothing left out or missing at all",
+            "a person who works for a company or office"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "completo",
+          "answer": "with nothing left out or missing at all",
+          "options": [
+            "the work an office does for the public",
+            "going somewhere and coming back the same day",
+            "with nothing left out or missing at all",
+            "a person who works for a company or office"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "único",
+    "sentence": "Pablo pregunta si es el _____ trámite.",
+    "payload": {
+      "answer": "único",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "tibio",
+        "churro",
+        "quieto",
+        "único"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7936acc40bd8fc55.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo pregunta si es el único trámite.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "otro-sello-para-corrientes",
+        "targetWord": "único",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cédula",
+    "sentence": "cédula",
+    "payload": {
+      "answer": "cédula",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "tela",
+        "piscina",
+        "abuelita",
+        "cédula"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "completo",
+    "sentence": "completo",
+    "payload": {
+      "answer": "completo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "completo",
+        "barato",
+        "acelerado",
+        "Querido"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "empleado",
+    "sentence": "empleado",
+    "payload": {
+      "answer": "empleado",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "muchacho",
+        "empleado",
+        "fondo",
+        "sueño"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "empresa",
+    "sentence": "empresa",
+    "payload": {
+      "answer": "empresa",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "empresa",
+        "iglesia",
+        "fotografía",
+        "leña"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "escritorio",
+    "sentence": "escritorio",
+    "payload": {
+      "answer": "escritorio",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "escritorio",
+        "favorcito",
+        "librero",
+        "pedido"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "ida y vuelta",
+    "sentence": "ida y vuelta",
+    "payload": {
+      "answer": "ida y vuelta",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "ida y vuelta",
+        "hijo mayor",
+        "obra maestra",
+        "ala ancha"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "sello,escritorio,carpeta,empresa",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "sello",
+          "answer": "the ink mark that makes a paper official",
+          "options": [
+            "a stiff folder for keeping loose papers together",
+            "a company that employs people and sells something",
+            "the ink mark that makes a paper official",
+            "the table where somebody works sitting down all day"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "escritorio",
+          "answer": "the table where somebody works sitting down all day",
+          "options": [
+            "a stiff folder for keeping loose papers together",
+            "a company that employs people and sells something",
+            "the ink mark that makes a paper official",
+            "the table where somebody works sitting down all day"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "carpeta",
+          "answer": "a stiff folder for keeping loose papers together",
+          "options": [
+            "a stiff folder for keeping loose papers together",
+            "a company that employs people and sells something",
+            "the ink mark that makes a paper official",
+            "the table where somebody works sitting down all day"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "empresa",
+          "answer": "a company that employs people and sells something",
+          "options": [
+            "a stiff folder for keeping loose papers together",
+            "a company that employs people and sells something",
+            "the ink mark that makes a paper official",
+            "the table where somebody works sitting down all day"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

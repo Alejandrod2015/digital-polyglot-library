@@ -1,0 +1,900 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "ansioso",
+    "sentence": "Estás _____, le dice Sofía.",
+    "payload": {
+      "answer": "ansioso",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ansioso",
+        "nublado",
+        "pesado",
+        "sentado"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f7b2baa710db44b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Estás ansioso”, le dice Sofía.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "ansioso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "banca",
+    "sentence": "Pablo la espera en una banca, con el morral entre las piernas.",
+    "payload": {
+      "answer": "a long seat for several people in a street",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "fish (as food or catch)",
+        "mocking, teasing",
+        "a long seat for several people in a street",
+        "the scoreboard"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c8448c156dbc0f2f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo la espera en una banca, con el morral entre las piernas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "banca",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "acera",
+    "sentence": "acera",
+    "payload": {
+      "answer": "acera",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "llegada",
+        "abuela",
+        "calma",
+        "acera"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cuadra",
+    "sentence": "Al fondo del local, la fila ya da la vuelta a la _____.",
+    "payload": {
+      "answer": "cuadra",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "pareja",
+        "energía",
+        "cuadra",
+        "sonrisa"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1892184f79f79551.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Al fondo del local, la fila ya da la vuelta a la cuadra.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "cuadra",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ensayo",
+    "sentence": "Suena un ruido de ensayo en toda la calle.",
+    "payload": {
+      "answer": "a practice session held before the real show",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the wise ones, the elders",
+        "the tongue",
+        "pressure",
+        "a practice session held before the real show"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b66aff078fe80b0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Suena un ruido de ensayo en toda la calle.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "ensayo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "avisar",
+    "sentence": "avisar",
+    "payload": {
+      "answer": "avisar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "refresca",
+        "avisar",
+        "compartir",
+        "lograr"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "bordillo,cuadra,ansioso,ensayo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "bordillo",
+          "answer": "the stone edge between the path and the road",
+          "options": [
+            "the stone edge between the path and the road",
+            "the length of a street between two corners",
+            "a practice session held before the real show",
+            "worried about something that is about to happen"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cuadra",
+          "answer": "the length of a street between two corners",
+          "options": [
+            "the stone edge between the path and the road",
+            "the length of a street between two corners",
+            "a practice session held before the real show",
+            "worried about something that is about to happen"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ansioso",
+          "answer": "worried about something that is about to happen",
+          "options": [
+            "the stone edge between the path and the road",
+            "the length of a street between two corners",
+            "a practice session held before the real show",
+            "worried about something that is about to happen"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ensayo",
+          "answer": "a practice session held before the real show",
+          "options": [
+            "the stone edge between the path and the road",
+            "the length of a street between two corners",
+            "a practice session held before the real show",
+            "worried about something that is about to happen"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "entradas",
+    "sentence": "En Palermo, Sofía baja del colectivo con dos _____ en la mano.",
+    "payload": {
+      "answer": "entradas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "calma",
+        "entradas",
+        "sierra",
+        "loma"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b24110c7ee5aeaf4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En Palermo, Sofía baja del colectivo con dos entradas en la mano.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "entrada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entrada",
+    "sentence": "En Palermo, Sofía baja del colectivo con dos entradas en la mano.",
+    "payload": {
+      "answer": "the ticket that lets you into a show",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "waterway between the plots",
+        "short for para: for, in order to",
+        "the ticket that lets you into a show",
+        "to pay respect to"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b24110c7ee5aeaf4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En Palermo, Sofía baja del colectivo con dos entradas en la mano.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "entrada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "invitan",
+    "sentence": "Un poco; es la primera vez que me _____ y no sé si voy a entender la mitad.",
+    "payload": {
+      "answer": "invitan",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "refleja",
+        "bailar",
+        "refresca",
+        "invitan"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c38348ede133816b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Un poco; es la primera vez que me invitan y no sé si voy a entender la mitad.”",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "invitar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "ansioso",
+    "sentence": "Estás _____, le dice Sofía.",
+    "payload": {
+      "answer": "ansioso",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ansioso",
+        "estrecho",
+        "curioso",
+        "olvidado"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f7b2baa710db44b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Estás ansioso”, le dice Sofía.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "ansioso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "banca",
+    "sentence": "Pablo la espera en una banca, con el morral entre las piernas.",
+    "payload": {
+      "answer": "a long seat for several people in a street",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "hiking",
+        "coins",
+        "a long seat for several people in a street",
+        "the frying pan"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c8448c156dbc0f2f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo la espera en una banca, con el morral entre las piernas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "banca",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "acera",
+    "sentence": "acera",
+    "payload": {
+      "answer": "acera",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "juntada",
+        "acera",
+        "aguja",
+        "carretera"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cuadra,pausa,morral,avisar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cuadra",
+          "answer": "the length of a street between two corners",
+          "options": [
+            "a short stop in the middle of doing something",
+            "a soft bag carried over one shoulder only",
+            "the length of a street between two corners",
+            "to tell somebody in time so they can plan"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pausa",
+          "answer": "a short stop in the middle of doing something",
+          "options": [
+            "a short stop in the middle of doing something",
+            "a soft bag carried over one shoulder only",
+            "the length of a street between two corners",
+            "to tell somebody in time so they can plan"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "morral",
+          "answer": "a soft bag carried over one shoulder only",
+          "options": [
+            "a short stop in the middle of doing something",
+            "a soft bag carried over one shoulder only",
+            "the length of a street between two corners",
+            "to tell somebody in time so they can plan"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "avisar",
+          "answer": "to tell somebody in time so they can plan",
+          "options": [
+            "a short stop in the middle of doing something",
+            "a soft bag carried over one shoulder only",
+            "the length of a street between two corners",
+            "to tell somebody in time so they can plan"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cuadra",
+    "sentence": "Al fondo del local, la fila ya da la vuelta a la _____.",
+    "payload": {
+      "answer": "cuadra",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cuadra",
+        "cabaña",
+        "pulpa",
+        "arena"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1892184f79f79551.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Al fondo del local, la fila ya da la vuelta a la cuadra.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "cuadra",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ensayo",
+    "sentence": "Suena un ruido de ensayo en toda la calle.",
+    "payload": {
+      "answer": "a practice session held before the real show",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a practice session held before the real show",
+        "no way, you're kidding (Mexican slang)",
+        "they let out",
+        "walks through"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b66aff078fe80b0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Suena un ruido de ensayo en toda la calle.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "ensayo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "avisar",
+    "sentence": "avisar",
+    "payload": {
+      "answer": "avisar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "susurrar",
+        "revelar",
+        "esconder",
+        "avisar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "fondo,quedar,plan,entrada",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "fondo",
+          "answer": "the far end of a room, away from the door",
+          "options": [
+            "to agree on a time and place to meet",
+            "the far end of a room, away from the door",
+            "the ticket that lets you into a show",
+            "what people have agreed they will do together"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "quedar",
+          "answer": "to agree on a time and place to meet",
+          "options": [
+            "to agree on a time and place to meet",
+            "the far end of a room, away from the door",
+            "the ticket that lets you into a show",
+            "what people have agreed they will do together"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "plan",
+          "answer": "what people have agreed they will do together",
+          "options": [
+            "to agree on a time and place to meet",
+            "the far end of a room, away from the door",
+            "the ticket that lets you into a show",
+            "what people have agreed they will do together"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "entrada",
+          "answer": "the ticket that lets you into a show",
+          "options": [
+            "to agree on a time and place to meet",
+            "the far end of a room, away from the door",
+            "the ticket that lets you into a show",
+            "what people have agreed they will do together"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "entradas",
+    "sentence": "En Palermo, Sofía baja del colectivo con dos _____ en la mano.",
+    "payload": {
+      "answer": "entradas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "abuelita",
+        "vereda",
+        "espinaca",
+        "entradas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b24110c7ee5aeaf4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En Palermo, Sofía baja del colectivo con dos entradas en la mano.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "entrada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entrada",
+    "sentence": "En Palermo, Sofía baja del colectivo con dos entradas en la mano.",
+    "payload": {
+      "answer": "the ticket that lets you into a show",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the local streets and the people in them",
+        "the melody",
+        "they practise",
+        "the ticket that lets you into a show"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b24110c7ee5aeaf4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En Palermo, Sofía baja del colectivo con dos entradas en la mano.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "entrada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "invitar",
+    "sentence": "“Un poco; es la primera vez que me invitan y no sé si voy a entender la mitad.”",
+    "payload": {
+      "answer": "to ask somebody to come to something with you",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "smells of",
+        "the main one",
+        "a twist, a touch of its own",
+        "to ask somebody to come to something with you"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c38348ede133816b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Un poco; es la primera vez que me invitan y no sé si voy a entender la mitad.”",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "invitar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "plan",
+    "sentence": "Pablo entiende que aquí un plan no se cierra con un sí.",
+    "payload": {
+      "answer": "what people have agreed they will do together",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "thoughtful, lost in thought",
+        "cows",
+        "the downtown business district of Buenos Aires",
+        "what people have agreed they will do together"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f0a2eef44a98d9b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo entiende que aquí un plan no se cierra con un sí.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "plan",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "invitan",
+    "sentence": "Un poco; es la primera vez que me _____ y no sé si voy a entender la mitad.",
+    "payload": {
+      "answer": "invitan",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "invitan",
+        "presentarse",
+        "ganarse",
+        "pita"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c38348ede133816b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Un poco; es la primera vez que me invitan y no sé si voy a entender la mitad.”",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-entradas-para-palermo",
+        "targetWord": "invitar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "bordillo",
+    "sentence": "bordillo",
+    "payload": {
+      "answer": "bordillo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "esposo",
+        "pegamento",
+        "negocio",
+        "bordillo"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "escenario",
+    "sentence": "escenario",
+    "payload": {
+      "answer": "escenario",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "murmullo",
+        "escenario",
+        "susto",
+        "quiosco"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "fila",
+    "sentence": "fila",
+    "payload": {
+      "answer": "fila",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "pulpa",
+        "fila",
+        "pelota",
+        "práctica"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "bordillo,fila,escenario,ensayo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "bordillo",
+          "answer": "the stone edge between the path and the road",
+          "options": [
+            "the raised floor where a band plays music",
+            "a line of people waiting to get in",
+            "a practice session held before the real show",
+            "the stone edge between the path and the road"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "fila",
+          "answer": "a line of people waiting to get in",
+          "options": [
+            "the raised floor where a band plays music",
+            "a line of people waiting to get in",
+            "a practice session held before the real show",
+            "the stone edge between the path and the road"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "escenario",
+          "answer": "the raised floor where a band plays music",
+          "options": [
+            "the raised floor where a band plays music",
+            "a line of people waiting to get in",
+            "a practice session held before the real show",
+            "the stone edge between the path and the road"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ensayo",
+          "answer": "a practice session held before the real show",
+          "options": [
+            "the raised floor where a band plays music",
+            "a line of people waiting to get in",
+            "a practice session held before the real show",
+            "the stone edge between the path and the road"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

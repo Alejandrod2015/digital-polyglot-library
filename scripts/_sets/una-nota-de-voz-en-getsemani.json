@@ -1,0 +1,836 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "altavoz",
+    "sentence": "Lucía pone la nota de voz en el _____ del teléfono.",
+    "payload": {
+      "answer": "altavoz",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "altavoz",
+        "símbolos",
+        "fogatas",
+        "ritmos"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c8f805804fd82d3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lucía pone la nota de voz en el altavoz del teléfono.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "altavoz",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apagado",
+    "sentence": "Lucía anota la fecha y deja el teléfono apagado.",
+    "payload": {
+      "answer": "switched off and not working at this moment",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "affected",
+        "seriously tough (Colombian slang)",
+        "switched off and not working at this moment",
+        "you climb (Argentine voseo)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6442f41624d9c448.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lucía anota la fecha y deja el teléfono apagado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "apagado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "alto",
+    "sentence": "alto",
+    "payload": {
+      "answer": "alto",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "complicado",
+        "delicioso",
+        "alto",
+        "flaco"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "apellido",
+    "sentence": "En la pantalla hay un mensaje con un _____ que aquí no se dice.",
+    "payload": {
+      "answer": "apellido",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "partido",
+        "quesito",
+        "apellido",
+        "favorcito"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8fe48f539f07bace.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la pantalla hay un mensaje con un apellido que aquí no se dice.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "apellido",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "celular",
+    "sentence": "A las seis suena un zumbido en el celular de Lucía, una mujer que trabaja lejos.",
+    "payload": {
+      "answer": "the small phone that a person carries everywhere",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "musician",
+        "origins",
+        "the garter thrown at the party",
+        "the small phone that a person carries everywhere"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/66d2f3abd00ad20c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "A las seis suena un zumbido en el celular de Lucía, una mujer que trabaja lejos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "celular",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "andar",
+    "sentence": "andar",
+    "payload": {
+      "answer": "andar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "susurrar",
+        "soñar",
+        "andar",
+        "marca"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "noticia,hermana,en silencio,apagado",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "noticia",
+          "answer": "a piece of information about something that just happened",
+          "options": [
+            "a woman who has the same parents as you",
+            "a piece of information about something that just happened",
+            "switched off and not working at this moment",
+            "without saying a single word to anybody there"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "hermana",
+          "answer": "a woman who has the same parents as you",
+          "options": [
+            "a woman who has the same parents as you",
+            "a piece of information about something that just happened",
+            "switched off and not working at this moment",
+            "without saying a single word to anybody there"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "en silencio",
+          "answer": "without saying a single word to anybody there",
+          "options": [
+            "a woman who has the same parents as you",
+            "a piece of information about something that just happened",
+            "switched off and not working at this moment",
+            "without saying a single word to anybody there"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "apagado",
+          "answer": "switched off and not working at this moment",
+          "options": [
+            "a woman who has the same parents as you",
+            "a piece of information about something that just happened",
+            "switched off and not working at this moment",
+            "without saying a single word to anybody there"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "en silencio",
+    "sentence": "Su madre entra, ve la foto de la pantalla y se queda _____.",
+    "payload": {
+      "answer": "en silencio",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "telón de fondo",
+        "detenido en el tiempo",
+        "calaron hondo",
+        "en silencio"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/19c284563c1197ec.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Su madre entra, ve la foto de la pantalla y se queda en silencio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "en silencio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "noticia",
+    "sentence": "La noticia corre antes del mediodía.",
+    "payload": {
+      "answer": "a piece of information about something that just happened",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "influences",
+        "hands",
+        "a piece of information about something that just happened",
+        "like a dream, divinely"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61629398811940ea.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La noticia corre antes del mediodía.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "noticia",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "saludo",
+    "sentence": "Se oye un _____ corto.",
+    "payload": {
+      "answer": "saludo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "extremo",
+        "saludo",
+        "cuidado",
+        "tono"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c58fc56f75e14362.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Se oye un saludo corto.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "saludo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "altavoz",
+    "sentence": "Es una nota de voz de once segundos y Lucía la pone en _____.",
+    "payload": {
+      "answer": "altavoz",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "bandejas",
+        "trabajadores",
+        "altavoz",
+        "carne"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5fc1cb58b0fb8e18.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Es una nota de voz de once segundos y Lucía la pone en altavoz.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "altavoz",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apagado",
+    "sentence": "Lucía anota la fecha y deja el teléfono apagado.",
+    "payload": {
+      "answer": "switched off and not working at this moment",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the skirt",
+        "pocket",
+        "switched off and not working at this moment",
+        "worn out"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6442f41624d9c448.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lucía anota la fecha y deja el teléfono apagado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "apagado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "alto",
+    "sentence": "alto",
+    "payload": {
+      "answer": "alto",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "alto",
+        "lejano",
+        "montado",
+        "helado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "celular,saludo,hermana,altavoz",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "celular",
+          "answer": "the small phone that a person carries everywhere",
+          "options": [
+            "the small phone that a person carries everywhere",
+            "the short friendly words you say when you arrive",
+            "a woman who has the same parents as you",
+            "the part of a phone that plays sound out loud"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "saludo",
+          "answer": "the short friendly words you say when you arrive",
+          "options": [
+            "the small phone that a person carries everywhere",
+            "the short friendly words you say when you arrive",
+            "a woman who has the same parents as you",
+            "the part of a phone that plays sound out loud"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "hermana",
+          "answer": "a woman who has the same parents as you",
+          "options": [
+            "the small phone that a person carries everywhere",
+            "the short friendly words you say when you arrive",
+            "a woman who has the same parents as you",
+            "the part of a phone that plays sound out loud"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "altavoz",
+          "answer": "the part of a phone that plays sound out loud",
+          "options": [
+            "the small phone that a person carries everywhere",
+            "the short friendly words you say when you arrive",
+            "a woman who has the same parents as you",
+            "the part of a phone that plays sound out loud"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "apellido",
+    "sentence": "En la pantalla hay un mensaje con un _____ que aquí no se dice.",
+    "payload": {
+      "answer": "apellido",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "apellido",
+        "carrito",
+        "vecino",
+        "plato"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8fe48f539f07bace.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la pantalla hay un mensaje con un apellido que aquí no se dice.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "apellido",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "celular",
+    "sentence": "A las seis suena un zumbido en el celular de Lucía, una mujer que trabaja lejos.",
+    "payload": {
+      "answer": "the small phone that a person carries everywhere",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the small phone that a person carries everywhere",
+        "a light bulb",
+        "reflects",
+        "prickly pear cactus, another lotería card"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/66d2f3abd00ad20c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "A las seis suena un zumbido en el celular de Lucía, una mujer que trabaja lejos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "celular",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "andar",
+    "sentence": "andar",
+    "payload": {
+      "answer": "andar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "secar",
+        "andar",
+        "cuesta",
+        "asustar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "madre,primo,zumbido,andar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "madre",
+          "answer": "the woman who gave birth to you and raised you",
+          "options": [
+            "the woman who gave birth to you and raised you",
+            "to walk or move from one place to another",
+            "the son of your uncle or of your aunt",
+            "the low buzzing sound a phone makes when it vibrates"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "primo",
+          "answer": "the son of your uncle or of your aunt",
+          "options": [
+            "the woman who gave birth to you and raised you",
+            "to walk or move from one place to another",
+            "the son of your uncle or of your aunt",
+            "the low buzzing sound a phone makes when it vibrates"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "zumbido",
+          "answer": "the low buzzing sound a phone makes when it vibrates",
+          "options": [
+            "the woman who gave birth to you and raised you",
+            "to walk or move from one place to another",
+            "the son of your uncle or of your aunt",
+            "the low buzzing sound a phone makes when it vibrates"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "andar",
+          "answer": "to walk or move from one place to another",
+          "options": [
+            "the woman who gave birth to you and raised you",
+            "to walk or move from one place to another",
+            "the son of your uncle or of your aunt",
+            "the low buzzing sound a phone makes when it vibrates"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "en silencio",
+    "sentence": "Su madre entra, ve la foto de la pantalla y se queda _____.",
+    "payload": {
+      "answer": "en silencio",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "seres queridos",
+        "arepa de huevo",
+        "alzar la voz",
+        "en silencio"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/19c284563c1197ec.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Su madre entra, ve la foto de la pantalla y se queda en silencio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "en silencio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "noticia",
+    "sentence": "La noticia corre antes del mediodía.",
+    "payload": {
+      "answer": "a piece of information about something that just happened",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "crammed full",
+        "damn it (mild swear, common in football)",
+        "the Declaration",
+        "a piece of information about something that just happened"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61629398811940ea.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La noticia corre antes del mediodía.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "noticia",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saludo",
+    "sentence": "Se oye un saludo corto.",
+    "payload": {
+      "answer": "the short friendly words you say when you arrive",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "comforting",
+        "wet",
+        "researcher",
+        "the short friendly words you say when you arrive"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c58fc56f75e14362.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Se oye un saludo corto.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-nota-de-voz-en-getsemani",
+        "targetWord": "saludo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "boda",
+    "sentence": "boda",
+    "payload": {
+      "answer": "boda",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "esquina",
+        "campanita",
+        "boda",
+        "taza"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "encendido",
+    "sentence": "encendido",
+    "payload": {
+      "answer": "encendido",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "encendido",
+        "detenido",
+        "oscuro",
+        "nervioso"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "fecha",
+    "sentence": "fecha",
+    "payload": {
+      "answer": "fecha",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "fecha",
+        "vecina",
+        "esquina",
+        "jugada"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "nota de voz,pantalla,apagado,apellido",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "nota de voz",
+          "answer": "a short recording sent instead of a written message",
+          "options": [
+            "the flat lit surface where a phone shows things",
+            "switched off and not working at this moment",
+            "the family name that comes after your first name",
+            "a short recording sent instead of a written message"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pantalla",
+          "answer": "the flat lit surface where a phone shows things",
+          "options": [
+            "the flat lit surface where a phone shows things",
+            "switched off and not working at this moment",
+            "the family name that comes after your first name",
+            "a short recording sent instead of a written message"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "apagado",
+          "answer": "switched off and not working at this moment",
+          "options": [
+            "the flat lit surface where a phone shows things",
+            "switched off and not working at this moment",
+            "the family name that comes after your first name",
+            "a short recording sent instead of a written message"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "apellido",
+          "answer": "the family name that comes after your first name",
+          "options": [
+            "the flat lit surface where a phone shows things",
+            "switched off and not working at this moment",
+            "the family name that comes after your first name",
+            "a short recording sent instead of a written message"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

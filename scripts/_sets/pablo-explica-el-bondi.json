@@ -1,0 +1,900 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "alrededor",
+    "sentence": "_____ la gente sube y baja sin mirar a nadie.",
+    "payload": {
+      "answer": "alrededor",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "lejos",
+        "alrededor",
+        "enseguida",
+        "despacio"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f2ef1e1a7b29afa.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Alrededor la gente sube y baja sin mirar a nadie.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "alrededor",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avenida",
+    "sentence": "En la avenida, frente a la cartelera del cine, hay gente esperando.",
+    "payload": {
+      "answer": "a wide street with many lanes of traffic",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "fascinated",
+        "the gift, the calling",
+        "the rechargeable transport card of Buenos Aires",
+        "a wide street with many lanes of traffic"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/41ec49f783c434ef.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la avenida, frente a la cartelera del cine, hay gente esperando.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "avenida",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "bondi",
+    "sentence": "bondi",
+    "payload": {
+      "answer": "bondi",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "bondi",
+        "limpieza",
+        "fuego",
+        "falda"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "campera",
+    "sentence": "Pablo se acerca con la _____ abierta y las zapatillas mojadas.",
+    "payload": {
+      "answer": "campera",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "campera",
+        "cintura",
+        "mapa",
+        "calabaza"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ffe805a1122a10d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo se acerca con la campera abierta y las zapatillas mojadas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "campera",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "churro",
+    "sentence": "Fuera de la parada, Lucas no tarda en llegar con dos churros.",
+    "payload": {
+      "answer": "a long fried stick of dough eaten sweet",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a long fried stick of dough eaten sweet",
+        "gets sorted out",
+        "forgotten",
+        "algorithm"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cbe5dbc6709b90b6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Fuera de la parada, Lucas no tarda en llegar con dos churros.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "churro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "colectivo",
+    "sentence": "colectivo",
+    "payload": {
+      "answer": "colectivo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "suelo",
+        "reflejo",
+        "estómago",
+        "colectivo"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "frente,pileta,bondi,alrededor",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "frente",
+          "answer": "directly in front of the thing that is named",
+          "options": [
+            "on every side of the place you are in",
+            "directly in front of the thing that is named",
+            "the pool where people swim, in River Plate speech",
+            "the city bus, as people in Buenos Aires call it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pileta",
+          "answer": "the pool where people swim, in River Plate speech",
+          "options": [
+            "on every side of the place you are in",
+            "directly in front of the thing that is named",
+            "the pool where people swim, in River Plate speech",
+            "the city bus, as people in Buenos Aires call it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "bondi",
+          "answer": "the city bus, as people in Buenos Aires call it",
+          "options": [
+            "on every side of the place you are in",
+            "directly in front of the thing that is named",
+            "the pool where people swim, in River Plate speech",
+            "the city bus, as people in Buenos Aires call it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "alrededor",
+          "answer": "on every side of the place you are in",
+          "options": [
+            "on every side of the place you are in",
+            "directly in front of the thing that is named",
+            "the pool where people swim, in River Plate speech",
+            "the city bus, as people in Buenos Aires call it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "churros",
+    "sentence": "Fuera de la parada, Lucas no tarda en llegar con dos _____.",
+    "payload": {
+      "answer": "churros",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "churros",
+        "cuello",
+        "almuerzo",
+        "techo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cbe5dbc6709b90b6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Fuera de la parada, Lucas no tarda en llegar con dos churros.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "churro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doler",
+    "sentence": "Nadia suelta el pasaporte y se sienta en una silla; le duelen los pies de esperar.",
+    "payload": {
+      "answer": "to hurt, as a part of your body does",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a copy",
+        "to hurt, as a part of your body does",
+        "death",
+        "mate, dude (Colombian, from English)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8dfabc96cb8f8083.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Nadia suelta el pasaporte y se sienta en una silla; le duelen los pies de esperar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "doler",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "nevera",
+    "sentence": "La _____ del bar está vacía y hace calor.",
+    "payload": {
+      "answer": "nevera",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "arena",
+        "fiesta",
+        "nevera",
+        "cáscara"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/defdf8cf686ff826.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La nevera del bar está vacía y hace calor.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "nevera",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "alrededor",
+    "sentence": "_____ la gente sube y baja sin mirar a nadie.",
+    "payload": {
+      "answer": "alrededor",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "enseguida",
+        "fuera",
+        "bajito",
+        "alrededor"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6f2ef1e1a7b29afa.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Alrededor la gente sube y baja sin mirar a nadie.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "alrededor",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avenida",
+    "sentence": "En la avenida, frente a la cartelera del cine, hay gente esperando.",
+    "payload": {
+      "answer": "a wide street with many lanes of traffic",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "school leavers, and the trip they take together",
+        "a wide street with many lanes of traffic",
+        "a little favour",
+        "a joke, a wind-up (Argentine slang)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/41ec49f783c434ef.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la avenida, frente a la cartelera del cine, hay gente esperando.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "avenida",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "bondi",
+    "sentence": "bondi",
+    "payload": {
+      "answer": "bondi",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "bondi",
+        "barrio",
+        "corriente",
+        "departamento"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "meter,campera,pasaporte,colectivo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "meter",
+          "answer": "to put something inside a bag or a hole",
+          "options": [
+            "the small book that proves who you are abroad",
+            "the city bus, as most Latin Americans call it",
+            "to put something inside a bag or a hole",
+            "a short jacket worn over the other clothes"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "campera",
+          "answer": "a short jacket worn over the other clothes",
+          "options": [
+            "the small book that proves who you are abroad",
+            "the city bus, as most Latin Americans call it",
+            "to put something inside a bag or a hole",
+            "a short jacket worn over the other clothes"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pasaporte",
+          "answer": "the small book that proves who you are abroad",
+          "options": [
+            "the small book that proves who you are abroad",
+            "the city bus, as most Latin Americans call it",
+            "to put something inside a bag or a hole",
+            "a short jacket worn over the other clothes"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "colectivo",
+          "answer": "the city bus, as most Latin Americans call it",
+          "options": [
+            "the small book that proves who you are abroad",
+            "the city bus, as most Latin Americans call it",
+            "to put something inside a bag or a hole",
+            "a short jacket worn over the other clothes"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "campera",
+    "sentence": "Pablo se acerca con la _____ abierta y las zapatillas mojadas.",
+    "payload": {
+      "answer": "campera",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "empresa",
+        "cancha",
+        "campera",
+        "terraza"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ffe805a1122a10d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo se acerca con la campera abierta y las zapatillas mojadas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "campera",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "churro",
+    "sentence": "Fuera de la parada, Lucas no tarda en llegar con dos churros.",
+    "payload": {
+      "answer": "a long fried stick of dough eaten sweet",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a joke",
+        "a perfume",
+        "a long fried stick of dough eaten sweet",
+        "the truth, honestly (Mexican slang)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cbe5dbc6709b90b6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Fuera de la parada, Lucas no tarda en llegar con dos churros.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "churro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "colectivo",
+    "sentence": "colectivo",
+    "payload": {
+      "answer": "colectivo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "estómago",
+        "edificio",
+        "colectivo",
+        "lodo"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "manga,nevera,zapatillas,sucio",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "manga",
+          "answer": "the part of a shirt that covers your arm",
+          "options": [
+            "the part of a shirt that covers your arm",
+            "covered in dirt and needing to be cleaned",
+            "the cold cupboard that keeps food and drinks fresh",
+            "the soft shoes worn for walking and sport"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "nevera",
+          "answer": "the cold cupboard that keeps food and drinks fresh",
+          "options": [
+            "the part of a shirt that covers your arm",
+            "covered in dirt and needing to be cleaned",
+            "the cold cupboard that keeps food and drinks fresh",
+            "the soft shoes worn for walking and sport"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "zapatillas",
+          "answer": "the soft shoes worn for walking and sport",
+          "options": [
+            "the part of a shirt that covers your arm",
+            "covered in dirt and needing to be cleaned",
+            "the cold cupboard that keeps food and drinks fresh",
+            "the soft shoes worn for walking and sport"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sucio",
+          "answer": "covered in dirt and needing to be cleaned",
+          "options": [
+            "the part of a shirt that covers your arm",
+            "covered in dirt and needing to be cleaned",
+            "the cold cupboard that keeps food and drinks fresh",
+            "the soft shoes worn for walking and sport"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "churros",
+    "sentence": "Fuera de la parada, Lucas no tarda en llegar con dos _____.",
+    "payload": {
+      "answer": "churros",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "churros",
+        "gesto",
+        "pegamento",
+        "jugo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cbe5dbc6709b90b6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Fuera de la parada, Lucas no tarda en llegar con dos churros.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "churro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doler",
+    "sentence": "Nadia suelta el pasaporte y se sienta en una silla; le duelen los pies de esperar.",
+    "payload": {
+      "answer": "to hurt, as a part of your body does",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to hurt, as a part of your body does",
+        "handmade, artisanal",
+        "hidden",
+        "rolled tortillas in chilli sauce"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8dfabc96cb8f8083.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Nadia suelta el pasaporte y se sienta en una silla; le duelen los pies de esperar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "doler",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nevera",
+    "sentence": "La nevera del bar está vacía y hace calor.",
+    "payload": {
+      "answer": "the cold cupboard that keeps food and drinks fresh",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "who they were",
+        "called out, denounced",
+        "the cold cupboard that keeps food and drinks fresh",
+        "is it worth it"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/defdf8cf686ff826.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La nevera del bar está vacía y hace calor.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "nevera",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sucio",
+    "sentence": "El vidrio sucio no deja ver el interior.",
+    "payload": {
+      "answer": "covered in dirt and needing to be cleaned",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "covered in dirt and needing to be cleaned",
+        "to get the plan together",
+        "was trembling",
+        "a lift, a haulage job"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c94f083e33cb8dab.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El vidrio sucio no deja ver el interior.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "sucio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pasaporte",
+    "sentence": "Nadia suelta el _____ y se sienta en una silla; le duelen los pies de esperar.",
+    "payload": {
+      "answer": "pasaporte",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "arte",
+        "raíz",
+        "descanso",
+        "pasaporte"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8dfabc96cb8f8083.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Nadia suelta el pasaporte y se sienta en una silla; le duelen los pies de esperar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "pablo-explica-el-bondi",
+        "targetWord": "pasaporte",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "frente",
+    "sentence": "frente",
+    "payload": {
+      "answer": "frente",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "Apenas",
+        "frente",
+        "bajito",
+        "enseguida"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "fuera",
+    "sentence": "fuera",
+    "payload": {
+      "answer": "fuera",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "despacio",
+        "fuera",
+        "frente",
+        "enseguida"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "lápiz",
+    "sentence": "lápiz",
+    "payload": {
+      "answer": "lápiz",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "meriendas",
+        "lápiz",
+        "ajos",
+        "ancianos"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "lápiz,alrededor,pileta,vaciar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "lápiz",
+          "answer": "the wooden stick with grey inside for writing",
+          "options": [
+            "the wooden stick with grey inside for writing",
+            "the pool where people swim, in River Plate speech",
+            "to empty something so nothing is left inside",
+            "on every side of the place you are in"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "alrededor",
+          "answer": "on every side of the place you are in",
+          "options": [
+            "the wooden stick with grey inside for writing",
+            "the pool where people swim, in River Plate speech",
+            "to empty something so nothing is left inside",
+            "on every side of the place you are in"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pileta",
+          "answer": "the pool where people swim, in River Plate speech",
+          "options": [
+            "the wooden stick with grey inside for writing",
+            "the pool where people swim, in River Plate speech",
+            "to empty something so nothing is left inside",
+            "on every side of the place you are in"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "vaciar",
+          "answer": "to empty something so nothing is left inside",
+          "options": [
+            "the wooden stick with grey inside for writing",
+            "the pool where people swim, in River Plate speech",
+            "to empty something so nothing is left inside",
+            "on every side of the place you are in"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

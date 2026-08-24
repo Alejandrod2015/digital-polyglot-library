@@ -1,0 +1,820 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "abrigo",
+    "sentence": "Con el _____ en el brazo, Elena cruza el andén en la oscuridad.",
+    "payload": {
+      "answer": "abrigo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "kiosco",
+        "jugo",
+        "saco",
+        "abrigo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/017991ec6c26bdcc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Con el abrigo en el brazo, Elena cruza el andén en la oscuridad.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-manta-del-bus-cama",
+        "targetWord": "abrigo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "farol",
+    "sentence": "Un farol viejo alumbra medio andén y nada más.",
+    "payload": {
+      "answer": "a tall lamp that lights a street or a yard",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "dim",
+        "scorching",
+        "buzzes, is bustling",
+        "a tall lamp that lights a street or a yard"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/87ecf128dae6ce66.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Un farol viejo alumbra medio andén y nada más.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-manta-del-bus-cama",
+        "targetWord": "farol",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "a tiempo",
+    "sentence": "a tiempo",
+    "payload": {
+      "answer": "a tiempo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "han partido",
+        "calaron hondo",
+        "la gorra",
+        "a tiempo"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "frena",
+    "sentence": "Elena muerde una galleta mientras el chofer _____ y arranca otra vez.",
+    "payload": {
+      "answer": "frena",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "frena",
+        "asiente",
+        "devolver",
+        "probar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a316362f88f8a4f5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Elena muerde una galleta mientras el chofer frena y arranca otra vez.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-manta-del-bus-cama",
+        "targetWord": "frenar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frenar",
+    "sentence": "Elena muerde una galleta mientras el chofer frena y arranca otra vez.",
+    "payload": {
+      "answer": "to make a vehicle slow down or come to a stop",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to make a vehicle slow down or come to a stop",
+        "they prepare",
+        "food delivery",
+        "a voice, a say"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a316362f88f8a4f5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Elena muerde una galleta mientras el chofer frena y arranca otra vez.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-manta-del-bus-cama",
+        "targetWord": "frenar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "andén",
+    "sentence": "andén",
+    "payload": {
+      "answer": "andén",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "chiles",
+        "andén",
+        "alivio",
+        "lluvia"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "frenar,abrigo,manta,despertar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "frenar",
+          "answer": "to make a vehicle slow down or come to a stop",
+          "options": [
+            "a thick cloth you put over yourself to keep warm",
+            "to make a vehicle slow down or come to a stop",
+            "to stop sleeping and open your eyes again",
+            "a warm coat you wear over the other clothes"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "abrigo",
+          "answer": "a warm coat you wear over the other clothes",
+          "options": [
+            "a thick cloth you put over yourself to keep warm",
+            "to make a vehicle slow down or come to a stop",
+            "to stop sleeping and open your eyes again",
+            "a warm coat you wear over the other clothes"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "manta",
+          "answer": "a thick cloth you put over yourself to keep warm",
+          "options": [
+            "a thick cloth you put over yourself to keep warm",
+            "to make a vehicle slow down or come to a stop",
+            "to stop sleeping and open your eyes again",
+            "a warm coat you wear over the other clothes"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "despertar",
+          "answer": "to stop sleeping and open your eyes again",
+          "options": [
+            "a thick cloth you put over yourself to keep warm",
+            "to make a vehicle slow down or come to a stop",
+            "to stop sleeping and open your eyes again",
+            "a warm coat you wear over the other clothes"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "pasillo",
+    "sentence": "Sube al bus cama por el _____ estrecho.",
+    "payload": {
+      "answer": "pasillo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "pasillo",
+        "sorbo",
+        "fuego",
+        "sombrero"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aed098555d7aea00.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Sube al bus cama por el pasillo estrecho.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-manta-del-bus-cama",
+        "targetWord": "pasillo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ventanilla",
+    "sentence": "El bus arranca y Elena apoya la cabeza en la ventanilla.",
+    "payload": {
+      "answer": "the small window beside a seat on a bus",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the progress",
+        "mist",
+        "the small window beside a seat on a bus",
+        "a pencil case"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/670584e277f2609f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El bus arranca y Elena apoya la cabeza en la ventanilla.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-manta-del-bus-cama",
+        "targetWord": "ventanilla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cinturón",
+    "sentence": "cinturón",
+    "payload": {
+      "answer": "cinturón",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "saco",
+        "silla",
+        "cinturón",
+        "azúcar"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "abrigo",
+    "sentence": "Con el _____ en el brazo, Elena cruza el andén en la oscuridad.",
+    "payload": {
+      "answer": "abrigo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "jugo",
+        "cielo",
+        "abrigo",
+        "escudo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/017991ec6c26bdcc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Con el abrigo en el brazo, Elena cruza el andén en la oscuridad.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-manta-del-bus-cama",
+        "targetWord": "abrigo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "farol",
+    "sentence": "Un farol viejo alumbra medio andén y nada más.",
+    "payload": {
+      "answer": "a tall lamp that lights a street or a yard",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a tall lamp that lights a street or a yard",
+        "drums",
+        "dares",
+        "the catalogues"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/87ecf128dae6ce66.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Un farol viejo alumbra medio andén y nada más.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-manta-del-bus-cama",
+        "targetWord": "farol",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "a tiempo",
+    "sentence": "a tiempo",
+    "payload": {
+      "answer": "a tiempo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "rumbo a",
+        "mal de amores",
+        "Bosques nublados",
+        "a tiempo"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "andén,parada,cinturón,pasillo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "andén",
+          "answer": "the raised strip where passengers wait beside the buses",
+          "options": [
+            "the narrow walking space between two rows of seats",
+            "the strap that holds a passenger against the seat",
+            "the raised strip where passengers wait beside the buses",
+            "a place where a bus stops to let people on"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "parada",
+          "answer": "a place where a bus stops to let people on",
+          "options": [
+            "the narrow walking space between two rows of seats",
+            "the strap that holds a passenger against the seat",
+            "the raised strip where passengers wait beside the buses",
+            "a place where a bus stops to let people on"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cinturón",
+          "answer": "the strap that holds a passenger against the seat",
+          "options": [
+            "the narrow walking space between two rows of seats",
+            "the strap that holds a passenger against the seat",
+            "the raised strip where passengers wait beside the buses",
+            "a place where a bus stops to let people on"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pasillo",
+          "answer": "the narrow walking space between two rows of seats",
+          "options": [
+            "the narrow walking space between two rows of seats",
+            "the strap that holds a passenger against the seat",
+            "the raised strip where passengers wait beside the buses",
+            "a place where a bus stops to let people on"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "frena",
+    "sentence": "Elena muerde una galleta mientras el chofer _____ y arranca otra vez.",
+    "payload": {
+      "answer": "frena",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "orientarse",
+        "frena",
+        "bailar",
+        "compartir"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a316362f88f8a4f5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Elena muerde una galleta mientras el chofer frena y arranca otra vez.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-manta-del-bus-cama",
+        "targetWord": "frenar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frenar",
+    "sentence": "Elena muerde una galleta mientras el chofer frena y arranca otra vez.",
+    "payload": {
+      "answer": "to make a vehicle slow down or come to a stop",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "ecological",
+        "crooks",
+        "you see",
+        "to make a vehicle slow down or come to a stop"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a316362f88f8a4f5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Elena muerde una galleta mientras el chofer frena y arranca otra vez.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-manta-del-bus-cama",
+        "targetWord": "frenar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "andén",
+    "sentence": "andén",
+    "payload": {
+      "answer": "andén",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "música",
+        "andén",
+        "deuda",
+        "abuelos"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "oscuridad,frenar,manta,cómodo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "oscuridad",
+          "answer": "the state of a place when there is no light",
+          "options": [
+            "pleasant to sit in, without making your body hurt",
+            "to make a vehicle slow down or come to a stop",
+            "a thick cloth you put over yourself to keep warm",
+            "the state of a place when there is no light"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "frenar",
+          "answer": "to make a vehicle slow down or come to a stop",
+          "options": [
+            "pleasant to sit in, without making your body hurt",
+            "to make a vehicle slow down or come to a stop",
+            "a thick cloth you put over yourself to keep warm",
+            "the state of a place when there is no light"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "manta",
+          "answer": "a thick cloth you put over yourself to keep warm",
+          "options": [
+            "pleasant to sit in, without making your body hurt",
+            "to make a vehicle slow down or come to a stop",
+            "a thick cloth you put over yourself to keep warm",
+            "the state of a place when there is no light"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cómodo",
+          "answer": "pleasant to sit in, without making your body hurt",
+          "options": [
+            "pleasant to sit in, without making your body hurt",
+            "to make a vehicle slow down or come to a stop",
+            "a thick cloth you put over yourself to keep warm",
+            "the state of a place when there is no light"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "pasillo",
+    "sentence": "Sube al bus cama por el _____ estrecho.",
+    "payload": {
+      "answer": "pasillo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cuentito",
+        "código",
+        "nudo",
+        "pasillo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aed098555d7aea00.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Sube al bus cama por el pasillo estrecho.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-manta-del-bus-cama",
+        "targetWord": "pasillo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ventanilla",
+    "sentence": "El bus arranca y Elena apoya la cabeza en la ventanilla.",
+    "payload": {
+      "answer": "the small window beside a seat on a bus",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "would get tattooed",
+        "to breathe into, to instil",
+        "the Lady in White, a Buenos Aires ghost story",
+        "the small window beside a seat on a bus"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/670584e277f2609f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El bus arranca y Elena apoya la cabeza en la ventanilla.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-manta-del-bus-cama",
+        "targetWord": "ventanilla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cinturón",
+    "sentence": "cinturón",
+    "payload": {
+      "answer": "cinturón",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "huellas",
+        "bicis",
+        "mostrador",
+        "cinturón"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cómodo",
+    "sentence": "cómodo",
+    "payload": {
+      "answer": "cómodo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "estrecho",
+        "cómodo",
+        "delicado",
+        "escondido"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "curva",
+    "sentence": "curva",
+    "payload": {
+      "answer": "curva",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "curva",
+        "plaza",
+        "persiana",
+        "campanita"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "despertar",
+    "sentence": "despertar",
+    "payload": {
+      "answer": "despertar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "despertar",
+        "crecer",
+        "soñar",
+        "picar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "dormirse",
+    "sentence": "dormirse",
+    "payload": {
+      "answer": "dormirse",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "dormirse",
+        "prender",
+        "logrado",
+        "llorar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "farol,lentamente,despertar,dormirse",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "farol",
+          "answer": "a tall lamp that lights a street or a yard",
+          "options": [
+            "doing something slowly, taking more time than usual",
+            "a tall lamp that lights a street or a yard",
+            "to stop sleeping and open your eyes again",
+            "to fall asleep without meaning to do it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "lentamente",
+          "answer": "doing something slowly, taking more time than usual",
+          "options": [
+            "doing something slowly, taking more time than usual",
+            "a tall lamp that lights a street or a yard",
+            "to stop sleeping and open your eyes again",
+            "to fall asleep without meaning to do it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "despertar",
+          "answer": "to stop sleeping and open your eyes again",
+          "options": [
+            "doing something slowly, taking more time than usual",
+            "a tall lamp that lights a street or a yard",
+            "to stop sleeping and open your eyes again",
+            "to fall asleep without meaning to do it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "dormirse",
+          "answer": "to fall asleep without meaning to do it",
+          "options": [
+            "doing something slowly, taking more time than usual",
+            "a tall lamp that lights a street or a yard",
+            "to stop sleeping and open your eyes again",
+            "to fall asleep without meaning to do it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

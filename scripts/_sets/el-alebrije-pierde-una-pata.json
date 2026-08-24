@@ -1,0 +1,900 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "Apaga",
+    "sentence": "_____ la luz para mirarla mejor.",
+    "payload": {
+      "answer": "Apaga",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "Levantar",
+        "Bailar",
+        "Apaga",
+        "Detener"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/af8faf308eb9e4aa.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Apaga la luz para mirarla mejor.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "apagar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apagar",
+    "sentence": "Apaga la luz para mirarla mejor.",
+    "payload": {
+      "answer": "to switch off a light or a machine",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "that stands for a whole cuisine",
+        "to switch off a light or a machine",
+        "margin, room",
+        "a filled pastry turnover"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/af8faf308eb9e4aa.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Apaga la luz para mirarla mejor.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "apagar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "callar",
+    "sentence": "callar",
+    "payload": {
+      "answer": "callar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "estirar",
+        "reparar",
+        "callar",
+        "comprar"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "canto",
+    "sentence": "Pone la tapa de vidrio encima para tapar el _____ y la mancha.",
+    "payload": {
+      "answer": "canto",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "crujido",
+        "queso",
+        "canto",
+        "estómago"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa3c5c24afebf28e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pone la tapa de vidrio encima para tapar el canto y la mancha.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "canto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "común",
+    "sentence": "“Es común que se caigan; esta lleva doce años ahí arriba”, dice la tía Rosa, y se agacha a buscarla.",
+    "payload": {
+      "answer": "happening often, not strange or surprising at all",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "fishing",
+        "the Fossil Museum",
+        "gifted",
+        "happening often, not strange or surprising at all"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/57dd7f66387e43ef.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Es común que se caigan; esta lleva doce años ahí arriba”, dice la tía Rosa, y se agacha a buscarla.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "común",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "figura",
+    "sentence": "figura",
+    "payload": {
+      "answer": "figura",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "figura",
+        "carta",
+        "estantería",
+        "deuda"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "polvo,repisa,fino,tapa",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "polvo",
+          "answer": "the grey dirt that settles on things over time",
+          "options": [
+            "the grey dirt that settles on things over time",
+            "a narrow board fixed to a wall for objects",
+            "very thin, easy to break between your fingers",
+            "the flat piece that covers the top of something"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "repisa",
+          "answer": "a narrow board fixed to a wall for objects",
+          "options": [
+            "the grey dirt that settles on things over time",
+            "a narrow board fixed to a wall for objects",
+            "very thin, easy to break between your fingers",
+            "the flat piece that covers the top of something"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "fino",
+          "answer": "very thin, easy to break between your fingers",
+          "options": [
+            "the grey dirt that settles on things over time",
+            "a narrow board fixed to a wall for objects",
+            "very thin, easy to break between your fingers",
+            "the flat piece that covers the top of something"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tapa",
+          "answer": "the flat piece that covers the top of something",
+          "options": [
+            "the grey dirt that settles on things over time",
+            "a narrow board fixed to a wall for objects",
+            "very thin, easy to break between your fingers",
+            "the flat piece that covers the top of something"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "hueco",
+    "sentence": "Debajo queda un _____ claro.",
+    "payload": {
+      "answer": "hueco",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "turno",
+        "alumno",
+        "cuentito",
+        "hueco"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05f631944e544a32.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Debajo queda un hueco claro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "hueco",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mojar",
+    "sentence": "Mateo moja un paño y ve la raya larga sobre la pintura del ala.",
+    "payload": {
+      "answer": "to make something wet by putting water on it",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to make something wet by putting water on it",
+        "the hands of a clock",
+        "light, easy going",
+        "to make the most of"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8812028e098792da.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Mateo moja un paño y ve la raya larga sobre la pintura del ala.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "mojar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "moja",
+    "sentence": "Mateo _____ un paño y ve la raya larga sobre la pintura del ala.",
+    "payload": {
+      "answer": "moja",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "bailar",
+        "orientarse",
+        "pita",
+        "moja"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8812028e098792da.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Mateo moja un paño y ve la raya larga sobre la pintura del ala.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "mojar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "Apaga",
+    "sentence": "_____ la luz para mirarla mejor.",
+    "payload": {
+      "answer": "Apaga",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "Clasificar",
+        "Apaga",
+        "Crecer",
+        "Ganarse"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/af8faf308eb9e4aa.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Apaga la luz para mirarla mejor.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "apagar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apagar",
+    "sentence": "Apaga la luz para mirarla mejor.",
+    "payload": {
+      "answer": "to switch off a light or a machine",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to switch off a light or a machine",
+        "to focus on",
+        "going all out",
+        "frustration"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/af8faf308eb9e4aa.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Apaga la luz para mirarla mejor.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "apagar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "callar",
+    "sentence": "callar",
+    "payload": {
+      "answer": "callar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "preparar",
+        "callar",
+        "repartir",
+        "alegrar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "gesto,canto,pintura,polvo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "gesto",
+          "answer": "a quick movement of the face or the hands",
+          "options": [
+            "the grey dirt that settles on things over time",
+            "a quick movement of the face or the hands",
+            "the narrow edge of something flat or thin",
+            "the coloured coat spread over wood or a wall"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "canto",
+          "answer": "the narrow edge of something flat or thin",
+          "options": [
+            "the grey dirt that settles on things over time",
+            "a quick movement of the face or the hands",
+            "the narrow edge of something flat or thin",
+            "the coloured coat spread over wood or a wall"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pintura",
+          "answer": "the coloured coat spread over wood or a wall",
+          "options": [
+            "the grey dirt that settles on things over time",
+            "a quick movement of the face or the hands",
+            "the narrow edge of something flat or thin",
+            "the coloured coat spread over wood or a wall"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "polvo",
+          "answer": "the grey dirt that settles on things over time",
+          "options": [
+            "the grey dirt that settles on things over time",
+            "a quick movement of the face or the hands",
+            "the narrow edge of something flat or thin",
+            "the coloured coat spread over wood or a wall"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "canto",
+    "sentence": "Pone la tapa de vidrio encima para tapar el _____ y la mancha.",
+    "payload": {
+      "answer": "canto",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "símbolo",
+        "barrio",
+        "canto",
+        "platillo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa3c5c24afebf28e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pone la tapa de vidrio encima para tapar el canto y la mancha.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "canto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "común",
+    "sentence": "“Es común que se caigan; esta lleva doce años ahí arriba”, dice la tía Rosa, y se agacha a buscarla.",
+    "payload": {
+      "answer": "happening often, not strange or surprising at all",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the alphabet",
+        "the cut-off corner of a city block",
+        "happening often, not strange or surprising at all",
+        "a piece of official paperwork"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/57dd7f66387e43ef.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Es común que se caigan; esta lleva doce años ahí arriba”, dice la tía Rosa, y se agacha a buscarla.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "común",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "figura",
+    "sentence": "figura",
+    "payload": {
+      "answer": "figura",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "empanada",
+        "figura",
+        "boca",
+        "leña"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "romperse,figura,pata,apagar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "romperse",
+          "answer": "to break into pieces without anyone meaning it",
+          "options": [
+            "to break into pieces without anyone meaning it",
+            "a small carved shape of an animal or person",
+            "to switch off a light or a machine",
+            "one of the legs of an animal or a table"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "figura",
+          "answer": "a small carved shape of an animal or person",
+          "options": [
+            "to break into pieces without anyone meaning it",
+            "a small carved shape of an animal or person",
+            "to switch off a light or a machine",
+            "one of the legs of an animal or a table"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pata",
+          "answer": "one of the legs of an animal or a table",
+          "options": [
+            "to break into pieces without anyone meaning it",
+            "a small carved shape of an animal or person",
+            "to switch off a light or a machine",
+            "one of the legs of an animal or a table"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "apagar",
+          "answer": "to switch off a light or a machine",
+          "options": [
+            "to break into pieces without anyone meaning it",
+            "a small carved shape of an animal or person",
+            "to switch off a light or a machine",
+            "one of the legs of an animal or a table"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "hueco",
+    "sentence": "Debajo queda un _____ claro.",
+    "payload": {
+      "answer": "hueco",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "hueco",
+        "partido",
+        "crujido",
+        "boleto"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05f631944e544a32.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Debajo queda un hueco claro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "hueco",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mojar",
+    "sentence": "Mateo moja un paño y ve la raya larga sobre la pintura del ala.",
+    "payload": {
+      "answer": "to make something wet by putting water on it",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "was shrinking",
+        "they prepare",
+        "to make something wet by putting water on it",
+        "a grimace"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8812028e098792da.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Mateo moja un paño y ve la raya larga sobre la pintura del ala.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "mojar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pata",
+    "sentence": "Cae de lado, Mateo no llega a frenarla y una pata rueda debajo.",
+    "payload": {
+      "answer": "one of the legs of an animal or a table",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "crackled",
+        "parched",
+        "one of the legs of an animal or a table",
+        "astronauts"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/83c6dad59b651721.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Cae de lado, Mateo no llega a frenarla y una pata rueda debajo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "pata",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "polvo",
+    "sentence": "El alebrije lleva doce años en la misma repisa, con polvo.",
+    "payload": {
+      "answer": "the grey dirt that settles on things over time",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the grey dirt that settles on things over time",
+        "a discount",
+        "residents",
+        "you're flying, you look stunning"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6a4301c8767c23cb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El alebrije lleva doce años en la misma repisa, con polvo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "polvo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "moja",
+    "sentence": "Mateo _____ un paño y ve la raya larga sobre la pintura del ala.",
+    "payload": {
+      "answer": "moja",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "moja",
+        "cargar",
+        "lograr",
+        "vigilar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8812028e098792da.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Mateo moja un paño y ve la raya larga sobre la pintura del ala.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-alebrije-pierde-una-pata",
+        "targetWord": "mojar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "fino",
+    "sentence": "fino",
+    "payload": {
+      "answer": "fino",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "frito",
+        "encendido",
+        "sorprendido",
+        "fino"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "gesto",
+    "sentence": "gesto",
+    "payload": {
+      "answer": "gesto",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "plato",
+        "aguacero",
+        "brillo",
+        "gesto"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "mancha",
+    "sentence": "mancha",
+    "payload": {
+      "answer": "mancha",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "tela",
+        "mancha",
+        "guitarra",
+        "finca"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "palma,mojar,tapa,mancha",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "palma",
+          "answer": "the inner flat side of your open hand",
+          "options": [
+            "to make something wet by putting water on it",
+            "the inner flat side of your open hand",
+            "the flat piece that covers the top of something",
+            "a dirty mark that spoils the look of something"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "mojar",
+          "answer": "to make something wet by putting water on it",
+          "options": [
+            "to make something wet by putting water on it",
+            "the inner flat side of your open hand",
+            "the flat piece that covers the top of something",
+            "a dirty mark that spoils the look of something"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tapa",
+          "answer": "the flat piece that covers the top of something",
+          "options": [
+            "to make something wet by putting water on it",
+            "the inner flat side of your open hand",
+            "the flat piece that covers the top of something",
+            "a dirty mark that spoils the look of something"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "mancha",
+          "answer": "a dirty mark that spoils the look of something",
+          "options": [
+            "to make something wet by putting water on it",
+            "the inner flat side of your open hand",
+            "the flat piece that covers the top of something",
+            "a dirty mark that spoils the look of something"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

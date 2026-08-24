@@ -1,0 +1,900 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "cinta adhesiva",
+    "sentence": "Mateo sujeta la pata con un trozo de _____ y la estira bien.",
+    "payload": {
+      "answer": "cinta adhesiva",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cinta adhesiva",
+        "mala pasada",
+        "punto débil",
+        "se dividen las tareas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d06f9da08dece165.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Mateo sujeta la pata con un trozo de cinta adhesiva y la estira bien.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "cinta adhesiva",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doblar",
+    "sentence": "Doblar la cinta no sirvió de nada; si la rompe otra vez, se acabó.",
+    "payload": {
+      "answer": "to bend something so it is no longer straight",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "hides, holds within",
+        "clay roof tile",
+        "we plan",
+        "to bend something so it is no longer straight"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ca94bc732c361b0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Doblar la cinta no sirvió de nada; si la rompe otra vez, se acabó.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "doblar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "complicado",
+    "sentence": "complicado",
+    "payload": {
+      "answer": "complicado",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "colorido",
+        "despejado",
+        "complicado",
+        "estrecho"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "goma",
+    "sentence": "Esa noche Mateo intenta juntar la pata de copal con la _____ de la cocina.",
+    "payload": {
+      "answer": "goma",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "boca",
+        "mapa",
+        "goma",
+        "rana"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60326126c14cb1e4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Esa noche Mateo intenta juntar la pata de copal con la goma de la cocina.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "goma",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parte",
+    "sentence": "Pone pegamento en las dos partes y cuenta hasta sesenta.",
+    "payload": {
+      "answer": "one of the pieces that a whole thing has",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "uneasy",
+        "to try to do something that may not work",
+        "one of the pieces that a whole thing has",
+        "is up for it"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c803c1f2fa6be21e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pone pegamento en las dos partes y cuenta hasta sesenta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "parte",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "estirar",
+    "sentence": "estirar",
+    "payload": {
+      "answer": "estirar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "devolver",
+        "juntar",
+        "estirar",
+        "coger"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "intentar,complicado,firme,goma",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "intentar",
+          "answer": "to try to do something that may not work",
+          "options": [
+            "steady and solid, not moving when you push",
+            "the sticky liquid used to hold two things together",
+            "to try to do something that may not work",
+            "hard to do because it has many small steps"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "complicado",
+          "answer": "hard to do because it has many small steps",
+          "options": [
+            "steady and solid, not moving when you push",
+            "the sticky liquid used to hold two things together",
+            "to try to do something that may not work",
+            "hard to do because it has many small steps"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "firme",
+          "answer": "steady and solid, not moving when you push",
+          "options": [
+            "steady and solid, not moving when you push",
+            "the sticky liquid used to hold two things together",
+            "to try to do something that may not work",
+            "hard to do because it has many small steps"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "goma",
+          "answer": "the sticky liquid used to hold two things together",
+          "options": [
+            "steady and solid, not moving when you push",
+            "the sticky liquid used to hold two things together",
+            "to try to do something that may not work",
+            "hard to do because it has many small steps"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "partes",
+    "sentence": "Pone pegamento en las dos _____ y cuenta hasta sesenta.",
+    "payload": {
+      "answer": "partes",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "boca",
+        "partes",
+        "delantal",
+        "nieve"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c803c1f2fa6be21e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pone pegamento en las dos partes y cuenta hasta sesenta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "parte",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poder",
+    "sentence": "Por la mañana la pata aguanta medio minuto y ya no puede más.",
+    "payload": {
+      "answer": "to be able to do the thing you want",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to be able to do the thing you want",
+        "covered",
+        "pyjamas",
+        "rock formations"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae743fe8becfbf6b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Por la mañana la pata aguanta medio minuto y ya no puede más.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "poder",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "recta",
+    "sentence": "La goma dejó una raya y no quedó _____, dice él desde el patio.",
+    "payload": {
+      "answer": "recta",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "recta",
+        "amargo",
+        "sabroso",
+        "verdadero"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d5d9952f1aaf7526.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“La goma dejó una raya y no quedó recta”, dice él desde el patio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "recto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cinta adhesiva",
+    "sentence": "Mateo sujeta la pata con un trozo de _____ y la estira bien.",
+    "payload": {
+      "answer": "cinta adhesiva",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cinta adhesiva",
+        "mantengan el secreto",
+        "fuego en la boca",
+        "el Dorado"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d06f9da08dece165.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Mateo sujeta la pata con un trozo de cinta adhesiva y la estira bien.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "cinta adhesiva",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doblar",
+    "sentence": "Doblar la cinta no sirvió de nada; si la rompe otra vez, se acabó.",
+    "payload": {
+      "answer": "to bend something so it is no longer straight",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to bend something so it is no longer straight",
+        "don't overdo it",
+        "drums",
+        "thin"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5ca94bc732c361b0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Doblar la cinta no sirvió de nada; si la rompe otra vez, se acabó.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "doblar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "complicado",
+    "sentence": "complicado",
+    "payload": {
+      "answer": "complicado",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "profundo",
+        "mojado",
+        "complicado",
+        "curioso"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "sujetar,juntar,servir,torcido",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "sujetar",
+          "answer": "to hold something in place so it cannot move",
+          "options": [
+            "to be useful for the job you needed done",
+            "to hold something in place so it cannot move",
+            "to put two separate pieces back together again",
+            "bent to one side instead of being straight"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "juntar",
+          "answer": "to put two separate pieces back together again",
+          "options": [
+            "to be useful for the job you needed done",
+            "to hold something in place so it cannot move",
+            "to put two separate pieces back together again",
+            "bent to one side instead of being straight"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "servir",
+          "answer": "to be useful for the job you needed done",
+          "options": [
+            "to be useful for the job you needed done",
+            "to hold something in place so it cannot move",
+            "to put two separate pieces back together again",
+            "bent to one side instead of being straight"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "torcido",
+          "answer": "bent to one side instead of being straight",
+          "options": [
+            "to be useful for the job you needed done",
+            "to hold something in place so it cannot move",
+            "to put two separate pieces back together again",
+            "bent to one side instead of being straight"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "goma",
+    "sentence": "Esa noche Mateo intenta juntar la pata de copal con la _____ de la cocina.",
+    "payload": {
+      "answer": "goma",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "escalera",
+        "goma",
+        "sierra",
+        "penumbra"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60326126c14cb1e4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Esa noche Mateo intenta juntar la pata de copal con la goma de la cocina.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "goma",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parte",
+    "sentence": "Pone pegamento en las dos partes y cuenta hasta sesenta.",
+    "payload": {
+      "answer": "one of the pieces that a whole thing has",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "rubbish, nonsense (Mexican slang)",
+        "thoughtful, lost in thought",
+        "one of the pieces that a whole thing has",
+        "the bet"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c803c1f2fa6be21e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pone pegamento en las dos partes y cuenta hasta sesenta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "parte",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "estirar",
+    "sentence": "estirar",
+    "payload": {
+      "answer": "estirar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "estirar",
+        "decorar",
+        "dejado",
+        "pita"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "estirar,secar,poder,cinta adhesiva",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "estirar",
+          "answer": "to make something longer by pulling at it",
+          "options": [
+            "to be able to do the thing you want",
+            "a long sticky strip used to hold things together",
+            "to make something longer by pulling at it",
+            "to become dry after being wet or sticky"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "secar",
+          "answer": "to become dry after being wet or sticky",
+          "options": [
+            "to be able to do the thing you want",
+            "a long sticky strip used to hold things together",
+            "to make something longer by pulling at it",
+            "to become dry after being wet or sticky"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "poder",
+          "answer": "to be able to do the thing you want",
+          "options": [
+            "to be able to do the thing you want",
+            "a long sticky strip used to hold things together",
+            "to make something longer by pulling at it",
+            "to become dry after being wet or sticky"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cinta adhesiva",
+          "answer": "a long sticky strip used to hold things together",
+          "options": [
+            "to be able to do the thing you want",
+            "a long sticky strip used to hold things together",
+            "to make something longer by pulling at it",
+            "to become dry after being wet or sticky"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "partes",
+    "sentence": "Pone pegamento en las dos _____ y cuenta hasta sesenta.",
+    "payload": {
+      "answer": "partes",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "partes",
+        "corazón",
+        "papás",
+        "copa"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c803c1f2fa6be21e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pone pegamento en las dos partes y cuenta hasta sesenta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "parte",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "poder",
+    "sentence": "Por la mañana la pata aguanta medio minuto y ya no puede más.",
+    "payload": {
+      "answer": "to be able to do the thing you want",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to be able to do the thing you want",
+        "sung verses, often improvised",
+        "let it tremble",
+        "a champion"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae743fe8becfbf6b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Por la mañana la pata aguanta medio minuto y ya no puede más.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "poder",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recto",
+    "sentence": "“La goma dejó una raya y no quedó recta”, dice él desde el patio.",
+    "payload": {
+      "answer": "straight, without any bend along its whole length",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to be reckoned with",
+        "wire",
+        "straight, without any bend along its whole length",
+        "discovering"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d5d9952f1aaf7526.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“La goma dejó una raya y no quedó recta”, dice él desde el patio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "recto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "recta",
+    "sentence": "La goma dejó una raya y no quedó _____, dice él desde el patio.",
+    "payload": {
+      "answer": "recta",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "curioso",
+        "aguado",
+        "oscuro",
+        "recta"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d5d9952f1aaf7526.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“La goma dejó una raya y no quedó recta”, dice él desde el patio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-copal-no-se-pega-solo",
+        "targetWord": "recto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "extremo",
+    "sentence": "extremo",
+    "payload": {
+      "answer": "extremo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "proyecto",
+        "ropero",
+        "extremo",
+        "negocio"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "firme",
+    "sentence": "firme",
+    "payload": {
+      "answer": "firme",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "amistosa",
+        "firme",
+        "preocupados",
+        "estrechos"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "intentar",
+    "sentence": "intentar",
+    "payload": {
+      "answer": "intentar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "alcanzar",
+        "ayudar",
+        "logrado",
+        "intentar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "juntar",
+    "sentence": "juntar",
+    "payload": {
+      "answer": "juntar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "arreglar",
+        "mezclado",
+        "cruzar",
+        "juntar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "no te preocupes",
+    "sentence": "no te preocupes",
+    "payload": {
+      "answer": "no te preocupes",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "no te preocupes",
+        "guita verde",
+        "Festival de la Arepa",
+        "Procesión de los pasos"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "intentar,goma,romper,trozo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "intentar",
+          "answer": "to try to do something that may not work",
+          "options": [
+            "to try to do something that may not work",
+            "the sticky liquid used to hold two things together",
+            "a small piece cut or broken off something bigger",
+            "to break something so it comes apart in pieces"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "goma",
+          "answer": "the sticky liquid used to hold two things together",
+          "options": [
+            "to try to do something that may not work",
+            "the sticky liquid used to hold two things together",
+            "a small piece cut or broken off something bigger",
+            "to break something so it comes apart in pieces"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "romper",
+          "answer": "to break something so it comes apart in pieces",
+          "options": [
+            "to try to do something that may not work",
+            "the sticky liquid used to hold two things together",
+            "a small piece cut or broken off something bigger",
+            "to break something so it comes apart in pieces"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "trozo",
+          "answer": "a small piece cut or broken off something bigger",
+          "options": [
+            "to try to do something that may not work",
+            "the sticky liquid used to hold two things together",
+            "a small piece cut or broken off something bigger",
+            "to break something so it comes apart in pieces"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

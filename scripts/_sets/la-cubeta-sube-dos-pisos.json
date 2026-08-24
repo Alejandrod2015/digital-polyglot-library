@@ -1,0 +1,804 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "almohada",
+    "sentence": "La _____ y la sábana están dobladas sobre el colchón.",
+    "payload": {
+      "answer": "almohada",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "abuela",
+        "almohada",
+        "fecha",
+        "parada"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8cf57dd89dbe5e1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La almohada y la sábana están dobladas sobre el colchón.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-cubeta-sube-dos-pisos",
+        "targetWord": "almohada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bote",
+    "sentence": "En el cuarto de Camilo hay una manta doblada, una cortina corrida y un bote.",
+    "payload": {
+      "answer": "an open can used for rubbish or for water",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "an open can used for rubbish or for water",
+        "opposing",
+        "out of the corner of his eye",
+        "whatever it takes"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7b468468e21d120.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En el cuarto de Camilo hay una manta doblada, una cortina corrida y un bote.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-cubeta-sube-dos-pisos",
+        "targetWord": "bote",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "azulejo",
+    "sentence": "azulejo",
+    "payload": {
+      "answer": "azulejo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "reflejo",
+        "tesoro",
+        "almuerzo",
+        "azulejo"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "espuma",
+    "sentence": "Camilo moja el paño en la _____ del lavabo, apaga la luz y el agua vuelve con la limpieza a medias.",
+    "payload": {
+      "answer": "espuma",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cura",
+        "espuma",
+        "belleza",
+        "comida"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9ec48446dec3537.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Camilo moja el paño en la espuma del lavabo, apaga la luz y el agua vuelve con la limpieza a medias.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-cubeta-sube-dos-pisos",
+        "targetWord": "espuma",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frazada",
+    "sentence": "Alveiro suelta la jarra vacía y baja la frazada doblada.",
+    "payload": {
+      "answer": "a thick cloth put over a bed for warmth",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a thick cloth put over a bed for warmth",
+        "an illusion",
+        "to brighten up",
+        "the work of making a place clean again"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab6e03fa60b3af29.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Alveiro suelta la jarra vacía y baja la frazada doblada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-cubeta-sube-dos-pisos",
+        "targetWord": "frazada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "colchón",
+    "sentence": "colchón",
+    "payload": {
+      "answer": "colchón",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "sal",
+        "colchón",
+        "cortado",
+        "plazas"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "desagüe,cortina,colchón,sábana",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "desagüe",
+          "answer": "the hole where the used water runs away",
+          "options": [
+            "the wide thin cloth that you sleep between",
+            "the hole where the used water runs away",
+            "the cloth hung over a window or a doorway",
+            "the thick soft part of a bed you lie on"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cortina",
+          "answer": "the cloth hung over a window or a doorway",
+          "options": [
+            "the wide thin cloth that you sleep between",
+            "the hole where the used water runs away",
+            "the cloth hung over a window or a doorway",
+            "the thick soft part of a bed you lie on"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "colchón",
+          "answer": "the thick soft part of a bed you lie on",
+          "options": [
+            "the wide thin cloth that you sleep between",
+            "the hole where the used water runs away",
+            "the cloth hung over a window or a doorway",
+            "the thick soft part of a bed you lie on"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sábana",
+          "answer": "the wide thin cloth that you sleep between",
+          "options": [
+            "the wide thin cloth that you sleep between",
+            "the hole where the used water runs away",
+            "the cloth hung over a window or a doorway",
+            "the thick soft part of a bed you lie on"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "grifo",
+    "sentence": "Un sábado el _____ del segundo suelta un hilo y se para.",
+    "payload": {
+      "answer": "grifo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "departamento",
+        "reconocimiento",
+        "sorbo",
+        "grifo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/db611c106bdd003c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Un sábado el grifo del segundo suelta un hilo y se para.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-cubeta-sube-dos-pisos",
+        "targetWord": "grifo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ropero",
+    "sentence": "El ropero no cierra desde el año pasado.",
+    "payload": {
+      "answer": "the tall cupboard where clothes are hung up",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a blessing",
+        "the tall cupboard where clothes are hung up",
+        "flute",
+        "wooden parquet flooring"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b2b326ff0fc14c0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El ropero no cierra desde el año pasado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-cubeta-sube-dos-pisos",
+        "targetWord": "ropero",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cortina",
+    "sentence": "cortina",
+    "payload": {
+      "answer": "cortina",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "piedra",
+        "harina",
+        "silueta",
+        "cortina"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "almohada",
+    "sentence": "La _____ y la sábana están dobladas sobre el colchón.",
+    "payload": {
+      "answer": "almohada",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "colina",
+        "mueca",
+        "almohada",
+        "tarima"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8cf57dd89dbe5e1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La almohada y la sábana están dobladas sobre el colchón.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-cubeta-sube-dos-pisos",
+        "targetWord": "almohada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bote",
+    "sentence": "En el cuarto de Camilo hay una manta doblada, una cortina corrida y un bote.",
+    "payload": {
+      "answer": "an open can used for rubbish or for water",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "an open can used for rubbish or for water",
+        "a look, a gaze",
+        "girl, girlfriend (Mexican)",
+        "chin up, go for it"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c7b468468e21d120.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En el cuarto de Camilo hay una manta doblada, una cortina corrida y un bote.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-cubeta-sube-dos-pisos",
+        "targetWord": "bote",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "azulejo",
+    "sentence": "azulejo",
+    "payload": {
+      "answer": "azulejo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "costado",
+        "alumno",
+        "nieto",
+        "azulejo"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "jarra,colchón,lavabo,limpieza",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "jarra",
+          "answer": "a tall container with a handle for pouring water",
+          "options": [
+            "the thick soft part of a bed you lie on",
+            "a tall container with a handle for pouring water",
+            "the small basin where you wash your hands",
+            "the work of making a place clean again"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "colchón",
+          "answer": "the thick soft part of a bed you lie on",
+          "options": [
+            "the thick soft part of a bed you lie on",
+            "a tall container with a handle for pouring water",
+            "the small basin where you wash your hands",
+            "the work of making a place clean again"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "lavabo",
+          "answer": "the small basin where you wash your hands",
+          "options": [
+            "the thick soft part of a bed you lie on",
+            "a tall container with a handle for pouring water",
+            "the small basin where you wash your hands",
+            "the work of making a place clean again"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "limpieza",
+          "answer": "the work of making a place clean again",
+          "options": [
+            "the thick soft part of a bed you lie on",
+            "a tall container with a handle for pouring water",
+            "the small basin where you wash your hands",
+            "the work of making a place clean again"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "espuma",
+    "sentence": "Camilo moja el paño en la _____ del lavabo, apaga la luz y el agua vuelve con la limpieza a medias.",
+    "payload": {
+      "answer": "espuma",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cadena",
+        "iglesia",
+        "espuma",
+        "cima"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b9ec48446dec3537.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Camilo moja el paño en la espuma del lavabo, apaga la luz y el agua vuelve con la limpieza a medias.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-cubeta-sube-dos-pisos",
+        "targetWord": "espuma",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frazada",
+    "sentence": "Alveiro suelta la jarra vacía y baja la frazada doblada.",
+    "payload": {
+      "answer": "a thick cloth put over a bed for warmth",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "satnav on his phone",
+        "roars",
+        "neighbourhood (the standard word in Mexico)",
+        "a thick cloth put over a bed for warmth"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab6e03fa60b3af29.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Alveiro suelta la jarra vacía y baja la frazada doblada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-cubeta-sube-dos-pisos",
+        "targetWord": "frazada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "colchón",
+    "sentence": "colchón",
+    "payload": {
+      "answer": "colchón",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "medicinas",
+        "curiosidad",
+        "colchón",
+        "Vieja"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "desagüe,ducha,sábana,frazada",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "desagüe",
+          "answer": "the hole where the used water runs away",
+          "options": [
+            "the hole where the used water runs away",
+            "the place where water falls on you to wash",
+            "a thick cloth put over a bed for warmth",
+            "the wide thin cloth that you sleep between"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ducha",
+          "answer": "the place where water falls on you to wash",
+          "options": [
+            "the hole where the used water runs away",
+            "the place where water falls on you to wash",
+            "a thick cloth put over a bed for warmth",
+            "the wide thin cloth that you sleep between"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sábana",
+          "answer": "the wide thin cloth that you sleep between",
+          "options": [
+            "the hole where the used water runs away",
+            "the place where water falls on you to wash",
+            "a thick cloth put over a bed for warmth",
+            "the wide thin cloth that you sleep between"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "frazada",
+          "answer": "a thick cloth put over a bed for warmth",
+          "options": [
+            "the hole where the used water runs away",
+            "the place where water falls on you to wash",
+            "a thick cloth put over a bed for warmth",
+            "the wide thin cloth that you sleep between"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "grifo",
+    "sentence": "Un sábado el _____ del segundo suelta un hilo y se para.",
+    "payload": {
+      "answer": "grifo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "librero",
+        "nieto",
+        "encuentro",
+        "grifo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/db611c106bdd003c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Un sábado el grifo del segundo suelta un hilo y se para.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-cubeta-sube-dos-pisos",
+        "targetWord": "grifo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ropero",
+    "sentence": "El ropero no cierra desde el año pasado.",
+    "payload": {
+      "answer": "the tall cupboard where clothes are hung up",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the tall cupboard where clothes are hung up",
+        "it goes down, it hides",
+        "soaked in sweat",
+        "witnesses"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2b2b326ff0fc14c0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El ropero no cierra desde el año pasado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-cubeta-sube-dos-pisos",
+        "targetWord": "ropero",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cortina",
+    "sentence": "cortina",
+    "payload": {
+      "answer": "cortina",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "tierrita",
+        "biblioteca",
+        "fila",
+        "cortina"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cubeta",
+    "sentence": "cubeta",
+    "payload": {
+      "answer": "cubeta",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "ensalada",
+        "vela",
+        "cubeta",
+        "silla"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "desagüe",
+    "sentence": "desagüe",
+    "payload": {
+      "answer": "desagüe",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "desagüe",
+        "lámparas",
+        "alegría",
+        "leña"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "ducha",
+    "sentence": "ducha",
+    "payload": {
+      "answer": "ducha",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "columna",
+        "ducha",
+        "frazada",
+        "lengua"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cubeta,paño,azulejo,gotear",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cubeta",
+          "answer": "a round open container for carrying water by hand",
+          "options": [
+            "a small piece of cloth used for drying things",
+            "a round open container for carrying water by hand",
+            "a flat square tile fixed on a bathroom wall",
+            "to let water fall slowly, drop by drop"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "paño",
+          "answer": "a small piece of cloth used for drying things",
+          "options": [
+            "a small piece of cloth used for drying things",
+            "a round open container for carrying water by hand",
+            "a flat square tile fixed on a bathroom wall",
+            "to let water fall slowly, drop by drop"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "azulejo",
+          "answer": "a flat square tile fixed on a bathroom wall",
+          "options": [
+            "a small piece of cloth used for drying things",
+            "a round open container for carrying water by hand",
+            "a flat square tile fixed on a bathroom wall",
+            "to let water fall slowly, drop by drop"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "gotear",
+          "answer": "to let water fall slowly, drop by drop",
+          "options": [
+            "a small piece of cloth used for drying things",
+            "a round open container for carrying water by hand",
+            "a flat square tile fixed on a bathroom wall",
+            "to let water fall slowly, drop by drop"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

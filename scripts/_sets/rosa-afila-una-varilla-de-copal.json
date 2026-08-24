@@ -1,0 +1,804 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "a mano",
+    "sentence": "Todo _____: la pieza pesa poco y cabe en la palma.",
+    "payload": {
+      "answer": "a mano",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "a mano",
+        "tómatelo con calma",
+        "corazón roto",
+        "mover los pies"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d834a734be784fca.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Todo a mano: la pieza pesa poco y cabe en la palma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rosa-afila-una-varilla-de-copal",
+        "targetWord": "a mano",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arreglar",
+    "sentence": "Moja la punta, repara el ala y arregla lo que queda; más fácil de lo que parecía.",
+    "payload": {
+      "answer": "to put something right so it works again",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "overgrown",
+        "I reckon, I like the idea (Mexican slang)",
+        "pay, wages",
+        "to put something right so it works again"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac03441d65be2959.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Moja la punta, repara el ala y arregla lo que queda; más fácil de lo que parecía.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rosa-afila-una-varilla-de-copal",
+        "targetWord": "arreglar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "barniz",
+    "sentence": "barniz",
+    "payload": {
+      "answer": "barniz",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "faro",
+        "barniz",
+        "bolsillo",
+        "mordida"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "arregla",
+    "sentence": "Moja la punta, repara el ala y _____ lo que queda; más fácil de lo que parecía.",
+    "payload": {
+      "answer": "arregla",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "arregla",
+        "repasar",
+        "detener",
+        "equivocarse"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac03441d65be2959.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Moja la punta, repara el ala y arregla lo que queda; más fácil de lo que parecía.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rosa-afila-una-varilla-de-copal",
+        "targetWord": "arreglar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cajón",
+    "sentence": "Rosa deja el cajón de las herramientas abierto el sábado.",
+    "payload": {
+      "answer": "the sliding box inside a table where things are kept",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "participation",
+        "the sliding box inside a table where things are kept",
+        "to age",
+        "we throw in"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f97adc05fe9ee8d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rosa deja el cajón de las herramientas abierto el sábado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rosa-afila-una-varilla-de-copal",
+        "targetWord": "cajón",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "caber",
+    "sentence": "caber",
+    "payload": {
+      "answer": "caber",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "preparar",
+        "caber",
+        "logrado",
+        "cargar"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "cajón,arreglar,pincel,romo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cajón",
+          "answer": "the sliding box inside a table where things are kept",
+          "options": [
+            "the small brush used for putting paint on",
+            "to put something right so it works again",
+            "not sharp any more, worn down at the edge",
+            "the sliding box inside a table where things are kept"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "arreglar",
+          "answer": "to put something right so it works again",
+          "options": [
+            "the small brush used for putting paint on",
+            "to put something right so it works again",
+            "not sharp any more, worn down at the edge",
+            "the sliding box inside a table where things are kept"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pincel",
+          "answer": "the small brush used for putting paint on",
+          "options": [
+            "the small brush used for putting paint on",
+            "to put something right so it works again",
+            "not sharp any more, worn down at the edge",
+            "the sliding box inside a table where things are kept"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "romo",
+          "answer": "not sharp any more, worn down at the edge",
+          "options": [
+            "the small brush used for putting paint on",
+            "to put something right so it works again",
+            "not sharp any more, worn down at the edge",
+            "the sliding box inside a table where things are kept"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "destornillador",
+    "sentence": "Suelta la tapa, saca el _____ y empuja la caja al centro.",
+    "payload": {
+      "answer": "destornillador",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "queso",
+        "cometas",
+        "instrucciones",
+        "destornillador"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2ce6895bcf0cc67.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Suelta la tapa, saca el destornillador y empuja la caja al centro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rosa-afila-una-varilla-de-copal",
+        "targetWord": "destornillador",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suficiente",
+    "sentence": "Con eso es suficiente, y esa noche mueve el alebrije dos dedos.",
+    "payload": {
+      "answer": "as much as is needed, with nothing more required",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "as much as is needed, with nothing more required",
+        "the arrival",
+        "healing",
+        "pointed"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e441870d1c55b6c0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Con eso es suficiente, y esa noche mueve el alebrije dos dedos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rosa-afila-una-varilla-de-copal",
+        "targetWord": "suficiente",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "clavo",
+    "sentence": "clavo",
+    "payload": {
+      "answer": "clavo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "polvo",
+        "picado",
+        "clavo",
+        "banco"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "a mano",
+    "sentence": "Todo _____: la pieza pesa poco y cabe en la palma.",
+    "payload": {
+      "answer": "a mano",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "a mano",
+        "ceremonia del lazo",
+        "hermano mayor",
+        "obra maestra"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d834a734be784fca.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Todo a mano: la pieza pesa poco y cabe en la palma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rosa-afila-una-varilla-de-copal",
+        "targetWord": "a mano",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arreglar",
+    "sentence": "Moja la punta, repara el ala y arregla lo que queda; más fácil de lo que parecía.",
+    "payload": {
+      "answer": "to put something right so it works again",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "called out, denounced",
+        "hid",
+        "to put something right so it works again",
+        "to put up with it"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac03441d65be2959.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Moja la punta, repara el ala y arregla lo que queda; más fácil de lo que parecía.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rosa-afila-una-varilla-de-copal",
+        "targetWord": "arreglar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "barniz",
+    "sentence": "barniz",
+    "payload": {
+      "answer": "barniz",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "barniz",
+        "pies",
+        "harina",
+        "bosque"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "a mano,soltar,destornillador,caber",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "a mano",
+          "answer": "using only the hands, with no machine involved",
+          "options": [
+            "to fit inside a space without being forced",
+            "using only the hands, with no machine involved",
+            "to let go of something you were holding",
+            "the tool used to turn screws into wood"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "soltar",
+          "answer": "to let go of something you were holding",
+          "options": [
+            "to fit inside a space without being forced",
+            "using only the hands, with no machine involved",
+            "to let go of something you were holding",
+            "the tool used to turn screws into wood"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "destornillador",
+          "answer": "the tool used to turn screws into wood",
+          "options": [
+            "to fit inside a space without being forced",
+            "using only the hands, with no machine involved",
+            "to let go of something you were holding",
+            "the tool used to turn screws into wood"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "caber",
+          "answer": "to fit inside a space without being forced",
+          "options": [
+            "to fit inside a space without being forced",
+            "using only the hands, with no machine involved",
+            "to let go of something you were holding",
+            "the tool used to turn screws into wood"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "arregla",
+    "sentence": "Moja la punta, repara el ala y _____ lo que queda; más fácil de lo que parecía.",
+    "payload": {
+      "answer": "arregla",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "vigilar",
+        "apoyado",
+        "arregla",
+        "iluminar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac03441d65be2959.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Moja la punta, repara el ala y arregla lo que queda; más fácil de lo que parecía.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rosa-afila-una-varilla-de-copal",
+        "targetWord": "arreglar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cajón",
+    "sentence": "Rosa deja el cajón de las herramientas abierto el sábado.",
+    "payload": {
+      "answer": "the sliding box inside a table where things are kept",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the sliding box inside a table where things are kept",
+        "they screw up, they ruin (vulgar)",
+        "the brothers",
+        "fiercely"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f97adc05fe9ee8d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rosa deja el cajón de las herramientas abierto el sábado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rosa-afila-una-varilla-de-copal",
+        "targetWord": "cajón",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "caber",
+    "sentence": "caber",
+    "payload": {
+      "answer": "caber",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "crecer",
+        "logrado",
+        "caber",
+        "brilla"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "pincel,varilla,profundo,pesar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "pincel",
+          "answer": "the small brush used for putting paint on",
+          "options": [
+            "going a long way down from the surface",
+            "to have a certain weight when you lift it",
+            "a thin straight stick of wood or metal",
+            "the small brush used for putting paint on"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "varilla",
+          "answer": "a thin straight stick of wood or metal",
+          "options": [
+            "going a long way down from the surface",
+            "to have a certain weight when you lift it",
+            "a thin straight stick of wood or metal",
+            "the small brush used for putting paint on"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "profundo",
+          "answer": "going a long way down from the surface",
+          "options": [
+            "going a long way down from the surface",
+            "to have a certain weight when you lift it",
+            "a thin straight stick of wood or metal",
+            "the small brush used for putting paint on"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pesar",
+          "answer": "to have a certain weight when you lift it",
+          "options": [
+            "going a long way down from the surface",
+            "to have a certain weight when you lift it",
+            "a thin straight stick of wood or metal",
+            "the small brush used for putting paint on"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "destornillador",
+    "sentence": "Suelta la tapa, saca el _____ y empuja la caja al centro.",
+    "payload": {
+      "answer": "destornillador",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "destornillador",
+        "poste",
+        "colectivos",
+        "tienda"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2ce6895bcf0cc67.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Suelta la tapa, saca el destornillador y empuja la caja al centro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rosa-afila-una-varilla-de-copal",
+        "targetWord": "destornillador",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suficiente",
+    "sentence": "Con eso es suficiente, y esa noche mueve el alebrije dos dedos.",
+    "payload": {
+      "answer": "as much as is needed, with nothing more required",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "I found out",
+        "the margins",
+        "as much as is needed, with nothing more required",
+        "little buddy (affectionate Colombian slang)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e441870d1c55b6c0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Con eso es suficiente, y esa noche mueve el alebrije dos dedos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rosa-afila-una-varilla-de-copal",
+        "targetWord": "suficiente",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "clavo",
+    "sentence": "clavo",
+    "payload": {
+      "answer": "clavo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "clavo",
+        "crujido",
+        "alumno",
+        "vecino"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "empujar",
+    "sentence": "empujar",
+    "payload": {
+      "answer": "empujar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "detener",
+        "empujar",
+        "logrado",
+        "soltar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "fácil",
+    "sentence": "fácil",
+    "payload": {
+      "answer": "fácil",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "distinta",
+        "complicada",
+        "probado",
+        "fácil"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "herramienta",
+    "sentence": "herramienta",
+    "payload": {
+      "answer": "herramienta",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "ráfaga",
+        "herramienta",
+        "bebida",
+        "campera"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "fácil,empujar,romo,barniz",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "fácil",
+          "answer": "needing little effort or skill to get done",
+          "options": [
+            "not sharp any more, worn down at the edge",
+            "the clear liquid brushed on wood to protect it",
+            "to push something so that it moves away",
+            "needing little effort or skill to get done"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "empujar",
+          "answer": "to push something so that it moves away",
+          "options": [
+            "not sharp any more, worn down at the edge",
+            "the clear liquid brushed on wood to protect it",
+            "to push something so that it moves away",
+            "needing little effort or skill to get done"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "romo",
+          "answer": "not sharp any more, worn down at the edge",
+          "options": [
+            "not sharp any more, worn down at the edge",
+            "the clear liquid brushed on wood to protect it",
+            "to push something so that it moves away",
+            "needing little effort or skill to get done"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "barniz",
+          "answer": "the clear liquid brushed on wood to protect it",
+          "options": [
+            "not sharp any more, worn down at the edge",
+            "the clear liquid brushed on wood to protect it",
+            "to push something so that it moves away",
+            "needing little effort or skill to get done"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

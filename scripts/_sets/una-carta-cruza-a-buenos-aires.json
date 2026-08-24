@@ -1,0 +1,980 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "aplicación",
+    "sentence": "En la _____ aparece un aviso: quedan dos asientos disponibles para esa semana.",
+    "payload": {
+      "answer": "aplicación",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "plátanos",
+        "cordón",
+        "aplicación",
+        "rana"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c030dd9c9db446a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la aplicación aparece un aviso: quedan dos asientos disponibles para esa semana.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "aplicación",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "atar",
+    "sentence": "Jorge mete la guitarra en una funda delgada, la ata al bolso y la trae desde Buenos Aires.",
+    "payload": {
+      "answer": "to tie something with a string or a rope",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "city bus (standard word in Argentina)",
+        "rolled tortillas in chilli sauce",
+        "to tie something with a string or a rope",
+        "smoke"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a4e9d32cdfd80615.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Jorge mete la guitarra en una funda delgada, la ata al bolso y la trae desde Buenos Aires.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "atar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "aviso",
+    "sentence": "aviso",
+    "payload": {
+      "answer": "aviso",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "vaso",
+        "grito",
+        "barrio",
+        "aviso"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "ata",
+    "sentence": "Jorge mete la guitarra en una funda delgada, la _____ al bolso y la trae desde Buenos Aires.",
+    "payload": {
+      "answer": "ata",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "brilla",
+        "funcionar",
+        "perderse",
+        "ata"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a4e9d32cdfd80615.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Jorge mete la guitarra en una funda delgada, la ata al bolso y la trae desde Buenos Aires.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "atar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "carta",
+    "sentence": "Su madre pone también una carta corta en un sobre.",
+    "payload": {
+      "answer": "a written message on paper sent to somebody",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "how well it has gone",
+        "garlic cloves",
+        "girlfriend",
+        "a written message on paper sent to somebody"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a3818621cc7225e0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Su madre pone también una carta corta en un sobre.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "carta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "borrar",
+    "sentence": "borrar",
+    "payload": {
+      "answer": "borrar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "aguantar",
+        "borrar",
+        "vibrar",
+        "vender"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "en rojo,cargador,sobre,aviso",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "en rojo",
+          "answer": "with almost no battery power left at all",
+          "options": [
+            "the cable that puts power back into a phone",
+            "a short message telling you that something has happened",
+            "with almost no battery power left at all",
+            "the paper cover a letter is put inside"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cargador",
+          "answer": "the cable that puts power back into a phone",
+          "options": [
+            "the cable that puts power back into a phone",
+            "a short message telling you that something has happened",
+            "with almost no battery power left at all",
+            "the paper cover a letter is put inside"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sobre",
+          "answer": "the paper cover a letter is put inside",
+          "options": [
+            "the cable that puts power back into a phone",
+            "a short message telling you that something has happened",
+            "with almost no battery power left at all",
+            "the paper cover a letter is put inside"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "aviso",
+          "answer": "a short message telling you that something has happened",
+          "options": [
+            "the cable that puts power back into a phone",
+            "a short message telling you that something has happened",
+            "with almost no battery power left at all",
+            "the paper cover a letter is put inside"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "contraseña",
+    "sentence": "Abre el correo y escribe la _____ dos veces.",
+    "payload": {
+      "answer": "contraseña",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "contraseña",
+        "tarima",
+        "aguja",
+        "columna"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f6403964b5a56820.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Abre el correo y escribe la contraseña dos veces.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "contraseña",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jefa",
+    "sentence": "Lucía anda hasta la oficina, pide permiso a su jefa y se queda hasta tarde.",
+    "payload": {
+      "answer": "the woman who is in charge of your work",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the woman who is in charge of your work",
+        "to remember them",
+        "a piece of gossip",
+        "covered"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ee85b0c71089559.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lucía anda hasta la oficina, pide permiso a su jefa y se queda hasta tarde.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "jefa",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "nunca",
+    "sentence": "Esto se lo das tú en la mano; _____ se lo mando yo por correo.",
+    "payload": {
+      "answer": "nunca",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "enseguida",
+        "despacio",
+        "apenas",
+        "nunca"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e7a68196014df16.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Esto se lo das tú en la mano; nunca se lo mando yo por correo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "nunca",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "aplicación",
+    "sentence": "En la _____ aparece un aviso: quedan dos asientos disponibles para esa semana.",
+    "payload": {
+      "answer": "aplicación",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "aplicación",
+        "ofertas",
+        "muchacho",
+        "novia"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c030dd9c9db446a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la aplicación aparece un aviso: quedan dos asientos disponibles para esa semana.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "aplicación",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "atar",
+    "sentence": "Jorge mete la guitarra en una funda delgada, la ata al bolso y la trae desde Buenos Aires.",
+    "payload": {
+      "answer": "to tie something with a string or a rope",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "classroom, lecture hall",
+        "humility",
+        "unbreakable",
+        "to tie something with a string or a rope"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a4e9d32cdfd80615.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Jorge mete la guitarra en una funda delgada, la ata al bolso y la trae desde Buenos Aires.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "atar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "aviso",
+    "sentence": "aviso",
+    "payload": {
+      "answer": "aviso",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "negocio",
+        "aviso",
+        "recorrido",
+        "hierro"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "exactamente,propio,sobrina,en rojo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "exactamente",
+          "answer": "in a way that is right down to the detail",
+          "options": [
+            "belonging to that person and to nobody else",
+            "with almost no battery power left at all",
+            "in a way that is right down to the detail",
+            "the daughter of your brother or of your sister"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "propio",
+          "answer": "belonging to that person and to nobody else",
+          "options": [
+            "belonging to that person and to nobody else",
+            "with almost no battery power left at all",
+            "in a way that is right down to the detail",
+            "the daughter of your brother or of your sister"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sobrina",
+          "answer": "the daughter of your brother or of your sister",
+          "options": [
+            "belonging to that person and to nobody else",
+            "with almost no battery power left at all",
+            "in a way that is right down to the detail",
+            "the daughter of your brother or of your sister"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "en rojo",
+          "answer": "with almost no battery power left at all",
+          "options": [
+            "belonging to that person and to nobody else",
+            "with almost no battery power left at all",
+            "in a way that is right down to the detail",
+            "the daughter of your brother or of your sister"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "ata",
+    "sentence": "Jorge mete la guitarra en una funda delgada, la _____ al bolso y la trae desde Buenos Aires.",
+    "payload": {
+      "answer": "ata",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ata",
+        "clasificar",
+        "refleja",
+        "prender"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a4e9d32cdfd80615.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Jorge mete la guitarra en una funda delgada, la ata al bolso y la trae desde Buenos Aires.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "atar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "carta",
+    "sentence": "Su madre pone también una carta corta en un sobre.",
+    "payload": {
+      "answer": "a written message on paper sent to somebody",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "confidant, the person you tell things to",
+        "a written message on paper sent to somebody",
+        "cobbled streets",
+        "embroidered"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a3818621cc7225e0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Su madre pone también una carta corta en un sobre.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "carta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "borrar",
+    "sentence": "borrar",
+    "payload": {
+      "answer": "borrar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "tirar",
+        "borrar",
+        "coger",
+        "bailar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "suyo,teclado,carta,perdón",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "suyo",
+          "answer": "belonging to him or to her, not to you",
+          "options": [
+            "a written message on paper sent to somebody",
+            "the words you say when you want to be forgiven",
+            "belonging to him or to her, not to you",
+            "the set of keys you press to write letters"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "teclado",
+          "answer": "the set of keys you press to write letters",
+          "options": [
+            "a written message on paper sent to somebody",
+            "the words you say when you want to be forgiven",
+            "belonging to him or to her, not to you",
+            "the set of keys you press to write letters"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "carta",
+          "answer": "a written message on paper sent to somebody",
+          "options": [
+            "a written message on paper sent to somebody",
+            "the words you say when you want to be forgiven",
+            "belonging to him or to her, not to you",
+            "the set of keys you press to write letters"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "perdón",
+          "answer": "the words you say when you want to be forgiven",
+          "options": [
+            "a written message on paper sent to somebody",
+            "the words you say when you want to be forgiven",
+            "belonging to him or to her, not to you",
+            "the set of keys you press to write letters"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "contraseña",
+    "sentence": "Abre el correo y escribe la _____ dos veces.",
+    "payload": {
+      "answer": "contraseña",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "persiana",
+        "contraseña",
+        "columna",
+        "guitarra"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f6403964b5a56820.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Abre el correo y escribe la contraseña dos veces.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "contraseña",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jefa",
+    "sentence": "Lucía anda hasta la oficina, pide permiso a su jefa y se queda hasta tarde.",
+    "payload": {
+      "answer": "the woman who is in charge of your work",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to expand",
+        "the woman who is in charge of your work",
+        "warned you",
+        "bubbles away"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ee85b0c71089559.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lucía anda hasta la oficina, pide permiso a su jefa y se queda hasta tarde.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "jefa",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nunca",
+    "sentence": "Esto se lo das tú en la mano; nunca se lo mando yo por correo.",
+    "payload": {
+      "answer": "at no time at all, not even once",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "at no time at all, not even once",
+        "crumbles",
+        "served him",
+        "the living room"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5e7a68196014df16.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Esto se lo das tú en la mano; nunca se lo mando yo por correo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "nunca",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "propio",
+    "sentence": "Su sobrina lo espera con un cartel propio, hecho con sus manos.",
+    "payload": {
+      "answer": "belonging to that person and to nobody else",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to find out",
+        "delicate",
+        "resilient",
+        "belonging to that person and to nobody else"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d8381bfda3cb061.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Su sobrina lo espera con un cartel propio, hecho con sus manos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "propio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suyo",
+    "sentence": "La calma que faltaba es suya, y llega con quince años de retraso.",
+    "payload": {
+      "answer": "belonging to him or to her, not to you",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "belonging to him or to her, not to you",
+        "a pencil case",
+        "the herb that gives ajiaco its flavour",
+        "challenges"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a8e15f01f5acb84.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La calma que faltaba es suya, y llega con quince años de retraso.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "suyo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "teclado",
+    "sentence": "El teclado suena fuerte en el cuarto vacío.",
+    "payload": {
+      "answer": "the set of keys you press to write letters",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "do you remember (Argentine voseo)",
+        "the set of keys you press to write letters",
+        "orange",
+        "oil"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c904a11610f63a95.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El teclado suena fuerte en el cuarto vacío.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "teclado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "suya",
+    "sentence": "La calma que faltaba es _____, y llega con quince años de retraso.",
+    "payload": {
+      "answer": "suya",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "suya",
+        "detenido",
+        "lejano",
+        "cálido"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a8e15f01f5acb84.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La calma que faltaba es suya, y llega con quince años de retraso.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "una-carta-cruza-a-buenos-aires",
+        "targetWord": "suyo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cargador",
+    "sentence": "cargador",
+    "payload": {
+      "answer": "cargador",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "estantes",
+        "grupo",
+        "cargador",
+        "silencio"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "correo",
+    "sentence": "correo",
+    "payload": {
+      "answer": "correo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cuadro",
+        "correo",
+        "esposo",
+        "tío"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "delgado",
+    "sentence": "delgado",
+    "payload": {
+      "answer": "delgado",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "auténtico",
+        "delgado",
+        "montado",
+        "complicado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "en rojo",
+    "sentence": "en rojo",
+    "payload": {
+      "answer": "en rojo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "de una",
+        "Oí decir",
+        "Hasta las manos",
+        "en rojo"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "contraseña,borrar,delgado,sobre",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "contraseña",
+          "answer": "the secret word that lets you open an account",
+          "options": [
+            "the paper cover a letter is put inside",
+            "thin, measuring very little from side to side",
+            "the secret word that lets you open an account",
+            "to remove writing so that it cannot be read"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "borrar",
+          "answer": "to remove writing so that it cannot be read",
+          "options": [
+            "the paper cover a letter is put inside",
+            "thin, measuring very little from side to side",
+            "the secret word that lets you open an account",
+            "to remove writing so that it cannot be read"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "delgado",
+          "answer": "thin, measuring very little from side to side",
+          "options": [
+            "the paper cover a letter is put inside",
+            "thin, measuring very little from side to side",
+            "the secret word that lets you open an account",
+            "to remove writing so that it cannot be read"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sobre",
+          "answer": "the paper cover a letter is put inside",
+          "options": [
+            "the paper cover a letter is put inside",
+            "thin, measuring very little from side to side",
+            "the secret word that lets you open an account",
+            "to remove writing so that it cannot be read"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

@@ -1,0 +1,916 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "amplia",
+    "sentence": "Doce escalones más arriba, la terraza de Lucas queda _____ y sin techo.",
+    "payload": {
+      "answer": "amplia",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "churro",
+        "pesado",
+        "amplia",
+        "barato"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c008f4ebfc443c05.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Doce escalones más arriba, la terraza de Lucas queda amplia y sin techo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "amplio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amplio",
+    "sentence": "Doce escalones más arriba, la terraza de Lucas queda amplia y sin techo.",
+    "payload": {
+      "answer": "with a lot of open space inside it",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "laughter",
+        "with a lot of open space inside it",
+        "well, well",
+        "the wedding"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c008f4ebfc443c05.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Doce escalones más arriba, la terraza de Lucas queda amplia y sin techo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "amplio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "asado",
+    "sentence": "asado",
+    "payload": {
+      "answer": "asado",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "pasillo",
+        "grupo",
+        "humo",
+        "asado"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "brazo",
+    "sentence": "Lucas ata un globo a la cadena de metal, llena la bandeja y la sostiene con el _____ estirado.",
+    "payload": {
+      "answer": "brazo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "brazo",
+        "gesto",
+        "aguacero",
+        "verano"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f244aa0e018e861.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lucas ata un globo a la cadena de metal, llena la bandeja y la sostiene con el brazo estirado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "brazo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "empanada",
+    "sentence": "Pablo llega con la picada en una mano y las empanadas en la otra.",
+    "payload": {
+      "answer": "a folded pastry filled with meat or cheese",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "broke, cleaned out (Colombian slang)",
+        "a folded pastry filled with meat or cheese",
+        "was giving up",
+        "the Afro-Caribbean dance music of Cartagena"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4401951b2b43495e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo llega con la picada en una mano y las empanadas en la otra.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "empanada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cadena",
+    "sentence": "cadena",
+    "payload": {
+      "answer": "cadena",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "reja",
+        "historia",
+        "cadena",
+        "harina"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "escalón,metal,sostener,clima",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "escalón",
+          "answer": "one of the steps you climb in a stair",
+          "options": [
+            "hard shiny material such as iron or steel",
+            "to hold something up so it does not fall",
+            "one of the steps you climb in a stair",
+            "the general mood among the people who are present"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "metal",
+          "answer": "hard shiny material such as iron or steel",
+          "options": [
+            "hard shiny material such as iron or steel",
+            "to hold something up so it does not fall",
+            "one of the steps you climb in a stair",
+            "the general mood among the people who are present"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sostener",
+          "answer": "to hold something up so it does not fall",
+          "options": [
+            "hard shiny material such as iron or steel",
+            "to hold something up so it does not fall",
+            "one of the steps you climb in a stair",
+            "the general mood among the people who are present"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "clima",
+          "answer": "the general mood among the people who are present",
+          "options": [
+            "hard shiny material such as iron or steel",
+            "to hold something up so it does not fall",
+            "one of the steps you climb in a stair",
+            "the general mood among the people who are present"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "empanadas",
+    "sentence": "Pablo llega con la picada en una mano y las _____ en la otra.",
+    "payload": {
+      "answer": "empanadas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "empanadas",
+        "balsa",
+        "loma",
+        "trajinera"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4401951b2b43495e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo llega con la picada en una mano y las empanadas en la otra.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "empanada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "labio",
+    "sentence": "Tiene la mejilla caliente, el labio partido de reír y un peso menos en el pecho.",
+    "payload": {
+      "answer": "one of the two soft edges of your mouth",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the dandy, one of the lotería cards",
+        "sturdy",
+        "lent us",
+        "one of the two soft edges of your mouth"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/80f32fc3a91254dd.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tiene la mejilla caliente, el labio partido de reír y un peso menos en el pecho.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "labio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "piernas",
+    "sentence": "Con las _____ cansadas, nadie baja los escalones hasta las tres.",
+    "payload": {
+      "answer": "piernas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "marea",
+        "piernas",
+        "gracia",
+        "sala"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/79d193b5e46eddc0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Con las piernas cansadas, nadie baja los escalones hasta las tres.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "pierna",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "amplia",
+    "sentence": "Doce escalones más arriba, la terraza de Lucas queda _____ y sin techo.",
+    "payload": {
+      "answer": "amplia",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "escondido",
+        "amplia",
+        "cálido",
+        "cansado"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c008f4ebfc443c05.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Doce escalones más arriba, la terraza de Lucas queda amplia y sin techo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "amplio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amplio",
+    "sentence": "Doce escalones más arriba, la terraza de Lucas queda amplia y sin techo.",
+    "payload": {
+      "answer": "with a lot of open space inside it",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "take it easy",
+        "with a lot of open space inside it",
+        "don't even dream of it",
+        "to nibble, to snack"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c008f4ebfc443c05.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Doce escalones más arriba, la terraza de Lucas queda amplia y sin techo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "amplio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "asado",
+    "sentence": "asado",
+    "payload": {
+      "answer": "asado",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "proyecto",
+        "campo",
+        "limonero",
+        "asado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "asado,metal,clima,tanto",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "asado",
+          "answer": "meat cooked slowly over a fire out of doors",
+          "options": [
+            "hard shiny material such as iron or steel",
+            "the general mood among the people who are present",
+            "meat cooked slowly over a fire out of doors",
+            "such a large amount of something as that"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "metal",
+          "answer": "hard shiny material such as iron or steel",
+          "options": [
+            "hard shiny material such as iron or steel",
+            "the general mood among the people who are present",
+            "meat cooked slowly over a fire out of doors",
+            "such a large amount of something as that"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "clima",
+          "answer": "the general mood among the people who are present",
+          "options": [
+            "hard shiny material such as iron or steel",
+            "the general mood among the people who are present",
+            "meat cooked slowly over a fire out of doors",
+            "such a large amount of something as that"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tanto",
+          "answer": "such a large amount of something as that",
+          "options": [
+            "hard shiny material such as iron or steel",
+            "the general mood among the people who are present",
+            "meat cooked slowly over a fire out of doors",
+            "such a large amount of something as that"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "brazo",
+    "sentence": "Lucas ata un globo a la cadena de metal, llena la bandeja y la sostiene con el _____ estirado.",
+    "payload": {
+      "answer": "brazo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "tronco",
+        "fondo",
+        "brazo",
+        "templo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f244aa0e018e861.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lucas ata un globo a la cadena de metal, llena la bandeja y la sostiene con el brazo estirado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "brazo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "empanada",
+    "sentence": "Pablo llega con la picada en una mano y las empanadas en la otra.",
+    "payload": {
+      "answer": "a folded pastry filled with meat or cheese",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a folded pastry filled with meat or cheese",
+        "to fish",
+        "a kickabout, an informal match",
+        "wet"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4401951b2b43495e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo llega con la picada en una mano y las empanadas en la otra.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "empanada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cadena",
+    "sentence": "cadena",
+    "payload": {
+      "answer": "cadena",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "corbata",
+        "vela",
+        "loma",
+        "cadena"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "amplio,ligero,globo,sostener",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "amplio",
+          "answer": "with a lot of open space inside it",
+          "options": [
+            "with a lot of open space inside it",
+            "light and easy, not heavy or serious at all",
+            "a coloured rubber bag that is filled with air",
+            "to hold something up so it does not fall"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ligero",
+          "answer": "light and easy, not heavy or serious at all",
+          "options": [
+            "with a lot of open space inside it",
+            "light and easy, not heavy or serious at all",
+            "a coloured rubber bag that is filled with air",
+            "to hold something up so it does not fall"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "globo",
+          "answer": "a coloured rubber bag that is filled with air",
+          "options": [
+            "with a lot of open space inside it",
+            "light and easy, not heavy or serious at all",
+            "a coloured rubber bag that is filled with air",
+            "to hold something up so it does not fall"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sostener",
+          "answer": "to hold something up so it does not fall",
+          "options": [
+            "with a lot of open space inside it",
+            "light and easy, not heavy or serious at all",
+            "a coloured rubber bag that is filled with air",
+            "to hold something up so it does not fall"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "empanadas",
+    "sentence": "Pablo llega con la picada en una mano y las _____ en la otra.",
+    "payload": {
+      "answer": "empanadas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "rana",
+        "mirada",
+        "balsa",
+        "empanadas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4401951b2b43495e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pablo llega con la picada en una mano y las empanadas en la otra.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "empanada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "labio",
+    "sentence": "Tiene la mejilla caliente, el labio partido de reír y un peso menos en el pecho.",
+    "payload": {
+      "answer": "one of the two soft edges of your mouth",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "sacred",
+        "one of the two soft edges of your mouth",
+        "workshop, repair shop",
+        "who's up for it (Argentine slang)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/80f32fc3a91254dd.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tiene la mejilla caliente, el labio partido de reír y un peso menos en el pecho.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "labio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pierna",
+    "sentence": "Con las piernas cansadas, nadie baja los escalones hasta las tres.",
+    "payload": {
+      "answer": "one of the two parts you walk with",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "one of the two parts you walk with",
+        "to set off on",
+        "impatient",
+        "checks"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/79d193b5e46eddc0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Con las piernas cansadas, nadie baja los escalones hasta las tres.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "pierna",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "submarino",
+    "sentence": "Marta le pasa un submarino caliente.",
+    "payload": {
+      "answer": "hot milk with a chocolate bar melted inside",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "horse",
+        "repairs",
+        "come here (Colombian voseo)",
+        "hot milk with a chocolate bar melted inside"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/23190660a6efad86.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Marta le pasa un submarino caliente.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "submarino",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "piernas",
+    "sentence": "Con las _____ cansadas, nadie baja los escalones hasta las tres.",
+    "payload": {
+      "answer": "piernas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "primavera",
+        "piernas",
+        "energía",
+        "copa"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/79d193b5e46eddc0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Con las piernas cansadas, nadie baja los escalones hasta las tres.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "empanadas-y-un-submarino",
+        "targetWord": "pierna",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "clima",
+    "sentence": "clima",
+    "payload": {
+      "answer": "clima",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "mija",
+        "clima",
+        "guitarra",
+        "cafetería"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "escalón",
+    "sentence": "escalón",
+    "payload": {
+      "answer": "escalón",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "escalón",
+        "techos",
+        "choclo",
+        "orilla"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "globo",
+    "sentence": "globo",
+    "payload": {
+      "answer": "globo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "globo",
+        "viento",
+        "tesoro",
+        "grupo"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "ligero",
+    "sentence": "ligero",
+    "payload": {
+      "answer": "ligero",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "reconocido",
+        "ligero",
+        "húmedo",
+        "nublado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "picada,malas noticias,escalón,labio",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "picada",
+          "answer": "small plates of food shared before a meal",
+          "options": [
+            "one of the two soft edges of your mouth",
+            "small plates of food shared before a meal",
+            "news that somebody will not be glad to hear",
+            "one of the steps you climb in a stair"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "malas noticias",
+          "answer": "news that somebody will not be glad to hear",
+          "options": [
+            "one of the two soft edges of your mouth",
+            "small plates of food shared before a meal",
+            "news that somebody will not be glad to hear",
+            "one of the steps you climb in a stair"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "escalón",
+          "answer": "one of the steps you climb in a stair",
+          "options": [
+            "one of the two soft edges of your mouth",
+            "small plates of food shared before a meal",
+            "news that somebody will not be glad to hear",
+            "one of the steps you climb in a stair"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "labio",
+          "answer": "one of the two soft edges of your mouth",
+          "options": [
+            "one of the two soft edges of your mouth",
+            "small plates of food shared before a meal",
+            "news that somebody will not be glad to hear",
+            "one of the steps you climb in a stair"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

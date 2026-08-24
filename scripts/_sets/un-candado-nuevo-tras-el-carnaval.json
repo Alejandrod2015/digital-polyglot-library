@@ -1,0 +1,868 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "barato",
+    "sentence": "Ese piso es _____ porque el ventilador no funciona, dice ella.",
+    "payload": {
+      "answer": "barato",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "barato",
+        "nublado",
+        "nervioso",
+        "mojado"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c130a109a2501137.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Ese piso es barato porque el ventilador no funciona”, dice ella.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "barato",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calentar",
+    "sentence": "Camilo empuja con el hombro y el sol calienta la tapia.",
+    "payload": {
+      "answer": "to make something warmer than it was before",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to make something warmer than it was before",
+        "worn out",
+        "laughter",
+        "you get all sorts"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ed5392076aac903.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Camilo empuja con el hombro y el sol calienta la tapia.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "calentar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "abanico",
+    "sentence": "abanico",
+    "payload": {
+      "answer": "abanico",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "logrado",
+        "abanico",
+        "dejado",
+        "apoyado"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "candado",
+    "sentence": "En el portón del edificio hay una reja nueva y un _____ que nadie conoce.",
+    "payload": {
+      "answer": "candado",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "candado",
+        "quiosco",
+        "pelo",
+        "horno"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/06a94dd9094ed750.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En el portón del edificio hay una reja nueva y un candado que nadie conoce.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "candado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerradura",
+    "sentence": "La cerradura del portón es nueva y el cerrojo no gira.",
+    "payload": {
+      "answer": "the part of a door where the key goes in",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "satnav on his phone",
+        "the crowd watching",
+        "count me in",
+        "the part of a door where the key goes in"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4dc7aae6b177e0e5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La cerradura del portón es nueva y el cerrojo no gira.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "cerradura",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "alquiler",
+    "sentence": "alquiler",
+    "payload": {
+      "answer": "alquiler",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "alquiler",
+        "murmullo",
+        "mosaicos",
+        "Guía"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "planta,cerradura,barato,terraza",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "planta",
+          "answer": "a green living thing grown in soil or a pot",
+          "options": [
+            "the flat open roof where people sit outside",
+            "costing little money compared with the other rooms",
+            "a green living thing grown in soil or a pot",
+            "the part of a door where the key goes in"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cerradura",
+          "answer": "the part of a door where the key goes in",
+          "options": [
+            "the flat open roof where people sit outside",
+            "costing little money compared with the other rooms",
+            "a green living thing grown in soil or a pot",
+            "the part of a door where the key goes in"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "barato",
+          "answer": "costing little money compared with the other rooms",
+          "options": [
+            "the flat open roof where people sit outside",
+            "costing little money compared with the other rooms",
+            "a green living thing grown in soil or a pot",
+            "the part of a door where the key goes in"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "terraza",
+          "answer": "the flat open roof where people sit outside",
+          "options": [
+            "the flat open roof where people sit outside",
+            "costing little money compared with the other rooms",
+            "a green living thing grown in soil or a pot",
+            "the part of a door where the key goes in"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "inquilino",
+    "sentence": "En el segundo piso vive Alveiro, un _____ que llegó el lunes.",
+    "payload": {
+      "answer": "inquilino",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "trompo",
+        "desconocido",
+        "inquilino",
+        "cuello"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0d9b84248e5ed55.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En el segundo piso vive Alveiro, un inquilino que llegó el lunes.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "inquilino",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "patio",
+    "sentence": "Camilo cruza el patio con dos bolsas.",
+    "payload": {
+      "answer": "the open space inside or behind a house",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "madness",
+        "the open space inside or behind a house",
+        "fermentation",
+        "I work hard at it"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea3d16b00827ebd3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Camilo cruza el patio con dos bolsas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "patio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "tapia",
+    "sentence": "Camilo empuja con el hombro y el sol calienta la _____.",
+    "payload": {
+      "answer": "tapia",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "tapia",
+        "tapa",
+        "rana",
+        "tinta"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ed5392076aac903.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Camilo empuja con el hombro y el sol calienta la tapia.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "tapia",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "barato",
+    "sentence": "Ese piso es _____ porque el ventilador no funciona, dice ella.",
+    "payload": {
+      "answer": "barato",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "sorprendido",
+        "justo",
+        "cargado",
+        "barato"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c130a109a2501137.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Ese piso es barato porque el ventilador no funciona”, dice ella.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "barato",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calentar",
+    "sentence": "Camilo empuja con el hombro y el sol calienta la tapia.",
+    "payload": {
+      "answer": "to make something warmer than it was before",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "astronomers",
+        "extra",
+        "to make something warmer than it was before",
+        "gathering"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ed5392076aac903.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Camilo empuja con el hombro y el sol calienta la tapia.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "calentar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "abanico",
+    "sentence": "abanico",
+    "payload": {
+      "answer": "abanico",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "dejado",
+        "abanico",
+        "apoyado",
+        "mezclado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cerrojo,cuarto,terraza,patio",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cerrojo",
+          "answer": "the metal bar you slide across to close a door",
+          "options": [
+            "one of the rooms where a person sleeps",
+            "the flat open roof where people sit outside",
+            "the metal bar you slide across to close a door",
+            "the open space inside or behind a house"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cuarto",
+          "answer": "one of the rooms where a person sleeps",
+          "options": [
+            "one of the rooms where a person sleeps",
+            "the flat open roof where people sit outside",
+            "the metal bar you slide across to close a door",
+            "the open space inside or behind a house"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "terraza",
+          "answer": "the flat open roof where people sit outside",
+          "options": [
+            "one of the rooms where a person sleeps",
+            "the flat open roof where people sit outside",
+            "the metal bar you slide across to close a door",
+            "the open space inside or behind a house"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "patio",
+          "answer": "the open space inside or behind a house",
+          "options": [
+            "one of the rooms where a person sleeps",
+            "the flat open roof where people sit outside",
+            "the metal bar you slide across to close a door",
+            "the open space inside or behind a house"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "candado",
+    "sentence": "En el portón del edificio hay una reja nueva y un _____ que nadie conoce.",
+    "payload": {
+      "answer": "candado",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "boleto",
+        "negocio",
+        "candado",
+        "diario"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/06a94dd9094ed750.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En el portón del edificio hay una reja nueva y un candado que nadie conoce.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "candado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerradura",
+    "sentence": "La cerradura del portón es nueva y el cerrojo no gira.",
+    "payload": {
+      "answer": "the part of a door where the key goes in",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "dude, mate (the most Mexican of fillers)",
+        "a palindromic number, kept for luck in Argentina",
+        "the part of a door where the key goes in",
+        "a little bell"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4dc7aae6b177e0e5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La cerradura del portón es nueva y el cerrojo no gira.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "cerradura",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "alquiler",
+    "sentence": "alquiler",
+    "payload": {
+      "answer": "alquiler",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "alquiler",
+        "túneles",
+        "trabajo",
+        "brisa"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "inquilino,portón,vecino,patrón",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "inquilino",
+          "answer": "the person who pays to live in somebody's room",
+          "options": [
+            "the man who owns the building or the business",
+            "a person who lives in the house next to yours",
+            "the person who pays to live in somebody's room",
+            "the big door that closes the entrance of a building"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "portón",
+          "answer": "the big door that closes the entrance of a building",
+          "options": [
+            "the man who owns the building or the business",
+            "a person who lives in the house next to yours",
+            "the person who pays to live in somebody's room",
+            "the big door that closes the entrance of a building"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "vecino",
+          "answer": "a person who lives in the house next to yours",
+          "options": [
+            "the man who owns the building or the business",
+            "a person who lives in the house next to yours",
+            "the person who pays to live in somebody's room",
+            "the big door that closes the entrance of a building"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "patrón",
+          "answer": "the man who owns the building or the business",
+          "options": [
+            "the man who owns the building or the business",
+            "a person who lives in the house next to yours",
+            "the person who pays to live in somebody's room",
+            "the big door that closes the entrance of a building"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "inquilino",
+    "sentence": "En el segundo piso vive Alveiro, un _____ que llegó el lunes.",
+    "payload": {
+      "answer": "inquilino",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "inquilino",
+        "compañero",
+        "tono",
+        "ropero"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a0d9b84248e5ed55.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En el segundo piso vive Alveiro, un inquilino que llegó el lunes.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "inquilino",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "patio",
+    "sentence": "Camilo cruza el patio con dos bolsas.",
+    "payload": {
+      "answer": "the open space inside or behind a house",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the local festival celebrating the arepa",
+        "up for it",
+        "documentary",
+        "the open space inside or behind a house"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea3d16b00827ebd3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Camilo cruza el patio con dos bolsas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "patio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vecino",
+    "sentence": "Camilo sigue con la duda; el vecino, con la suya.",
+    "payload": {
+      "answer": "a person who lives in the house next to yours",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "hundreds",
+        "ties, bonds",
+        "a person who lives in the house next to yours",
+        "doubts"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b2d74388533da4ba.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Camilo sigue con la duda; el vecino, con la suya.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "vecino",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "tapia",
+    "sentence": "Camilo empuja con el hombro y el sol calienta la _____.",
+    "payload": {
+      "answer": "tapia",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "tapia",
+        "masa",
+        "boina",
+        "mirada"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ed5392076aac903.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Camilo empuja con el hombro y el sol calienta la tapia.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-candado-nuevo-tras-el-carnaval",
+        "targetWord": "tapia",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cerrojo",
+    "sentence": "cerrojo",
+    "payload": {
+      "answer": "cerrojo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cerrojo",
+        "llanto",
+        "termo",
+        "pelado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cuarto",
+    "sentence": "cuarto",
+    "payload": {
+      "answer": "cuarto",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "sueño",
+        "cuarto",
+        "susto",
+        "bocado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "girar",
+    "sentence": "girar",
+    "payload": {
+      "answer": "girar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "reparar",
+        "asustar",
+        "clasificar",
+        "girar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "abanico,barato,ventilador,planta",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "abanico",
+          "answer": "to move air onto yourself to feel cooler",
+          "options": [
+            "to move air onto yourself to feel cooler",
+            "costing little money compared with the other rooms",
+            "the machine with blades that pushes air around",
+            "a green living thing grown in soil or a pot"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "barato",
+          "answer": "costing little money compared with the other rooms",
+          "options": [
+            "to move air onto yourself to feel cooler",
+            "costing little money compared with the other rooms",
+            "the machine with blades that pushes air around",
+            "a green living thing grown in soil or a pot"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ventilador",
+          "answer": "the machine with blades that pushes air around",
+          "options": [
+            "to move air onto yourself to feel cooler",
+            "costing little money compared with the other rooms",
+            "the machine with blades that pushes air around",
+            "a green living thing grown in soil or a pot"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "planta",
+          "answer": "a green living thing grown in soil or a pot",
+          "options": [
+            "to move air onto yourself to feel cooler",
+            "costing little money compared with the other rooms",
+            "the machine with blades that pushes air around",
+            "a green living thing grown in soil or a pot"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

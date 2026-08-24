@@ -1,0 +1,836 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "boleto",
+    "sentence": "Detrás del vidrio venden el _____ y le dan un pasaje de papel.",
+    "payload": {
+      "answer": "boleto",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "boleto",
+        "edificio",
+        "sorbo",
+        "esfuerzo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/72386097e0e71c52.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Detrás del vidrio venden el boleto y le dan un pasaje de papel.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-terminal-terrestre-a-las-ocho",
+        "targetWord": "boleto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bolso",
+    "sentence": "Elena llega con la valija y un bolso, y busca el letrero de su ruta.",
+    "payload": {
+      "answer": "a soft bag carried by hand or over the shoulder",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "hidden",
+        "the wrist",
+        "community gatherings of music and dance",
+        "a soft bag carried by hand or over the shoulder"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4813aa743f05d969.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Elena llega con la valija y un bolso, y busca el letrero de su ruta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-terminal-terrestre-a-las-ocho",
+        "targetWord": "bolso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "asiento",
+    "sentence": "asiento",
+    "payload": {
+      "answer": "asiento",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "asombro",
+        "asiento",
+        "grito",
+        "bocado"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "libreta",
+    "sentence": "Elena apunta el precio en la _____ y guarda el pasaje en el bolso.",
+    "payload": {
+      "answer": "libreta",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "tormenta",
+        "libreta",
+        "ensalada",
+        "cafetería"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/68fff19d78164a9c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Elena apunta el precio en la libreta y guarda el pasaje en el bolso.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-terminal-terrestre-a-las-ocho",
+        "targetWord": "libreta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "taquilla",
+    "sentence": "Junto a la taquilla espera Julio, un chofer de taxi que ya la llevó al mirador.",
+    "payload": {
+      "answer": "the small window where tickets are sold to travellers",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a hunch, a foreboding",
+        "an empty lot",
+        "snatches",
+        "the small window where tickets are sold to travellers"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ebe04bc4f425094.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Junto a la taquilla espera Julio, un chofer de taxi que ya la llevó al mirador.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-terminal-terrestre-a-las-ocho",
+        "targetWord": "taquilla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "avión",
+    "sentence": "avión",
+    "payload": {
+      "answer": "avión",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "maestra",
+        "kiosco",
+        "avión",
+        "vecinos"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "valija,boleto,equipaje,terminal",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "valija",
+          "answer": "a large stiff bag with a handle for clothes",
+          "options": [
+            "the ticket you buy to travel on a bus",
+            "all the bags a person carries when travelling somewhere",
+            "a large stiff bag with a handle for clothes",
+            "the building where long-distance buses arrive and leave"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "boleto",
+          "answer": "the ticket you buy to travel on a bus",
+          "options": [
+            "the ticket you buy to travel on a bus",
+            "all the bags a person carries when travelling somewhere",
+            "a large stiff bag with a handle for clothes",
+            "the building where long-distance buses arrive and leave"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "equipaje",
+          "answer": "all the bags a person carries when travelling somewhere",
+          "options": [
+            "the ticket you buy to travel on a bus",
+            "all the bags a person carries when travelling somewhere",
+            "a large stiff bag with a handle for clothes",
+            "the building where long-distance buses arrive and leave"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "terminal",
+          "answer": "the building where long-distance buses arrive and leave",
+          "options": [
+            "the ticket you buy to travel on a bus",
+            "all the bags a person carries when travelling somewhere",
+            "a large stiff bag with a handle for clothes",
+            "the building where long-distance buses arrive and leave"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "terminal",
+    "sentence": "El _____ Terrestre de Cusco, en Perú, huele a gasolina y a pan.",
+    "payload": {
+      "answer": "terminal",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "terminal",
+        "barrio",
+        "sangre",
+        "canal"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2262bdd19b76887.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El Terminal Terrestre de Cusco, en Perú, huele a gasolina y a pan.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-terminal-terrestre-a-las-ocho",
+        "targetWord": "terminal",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viajero",
+    "sentence": "Otro viajero pregunta por ese asiento y se queda sin él.",
+    "payload": {
+      "answer": "a person who is making a journey somewhere else",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a project",
+        "macaws",
+        "a person who is making a journey somewhere else",
+        "deserted"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9546869486a38385.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Otro viajero pregunta por ese asiento y se queda sin él.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-terminal-terrestre-a-las-ocho",
+        "targetWord": "viajero",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "disponible",
+    "sentence": "disponible",
+    "payload": {
+      "answer": "disponible",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "disponible",
+        "famosa",
+        "cargado",
+        "enorme"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "boleto",
+    "sentence": "Detrás del vidrio venden el _____ y le dan un pasaje de papel.",
+    "payload": {
+      "answer": "boleto",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "dueño",
+        "boleto",
+        "estadio",
+        "cielo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/72386097e0e71c52.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Detrás del vidrio venden el boleto y le dan un pasaje de papel.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-terminal-terrestre-a-las-ocho",
+        "targetWord": "boleto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bolso",
+    "sentence": "Elena llega con la valija y un bolso, y busca el letrero de su ruta.",
+    "payload": {
+      "answer": "a soft bag carried by hand or over the shoulder",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a soft bag carried by hand or over the shoulder",
+        "sway",
+        "artists",
+        "a find, a discovery"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4813aa743f05d969.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Elena llega con la valija y un bolso, y busca el letrero de su ruta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-terminal-terrestre-a-las-ocho",
+        "targetWord": "bolso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "asiento",
+    "sentence": "asiento",
+    "payload": {
+      "answer": "asiento",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cuadro",
+        "diario",
+        "asiento",
+        "pasto"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "taquilla,falta gente,viajero,disponible",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "taquilla",
+          "answer": "the small window where tickets are sold to travellers",
+          "options": [
+            "there are not enough people for something to work",
+            "the small window where tickets are sold to travellers",
+            "a person who is making a journey somewhere else",
+            "free to be used or taken by someone else"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "falta gente",
+          "answer": "there are not enough people for something to work",
+          "options": [
+            "there are not enough people for something to work",
+            "the small window where tickets are sold to travellers",
+            "a person who is making a journey somewhere else",
+            "free to be used or taken by someone else"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "viajero",
+          "answer": "a person who is making a journey somewhere else",
+          "options": [
+            "there are not enough people for something to work",
+            "the small window where tickets are sold to travellers",
+            "a person who is making a journey somewhere else",
+            "free to be used or taken by someone else"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "disponible",
+          "answer": "free to be used or taken by someone else",
+          "options": [
+            "there are not enough people for something to work",
+            "the small window where tickets are sold to travellers",
+            "a person who is making a journey somewhere else",
+            "free to be used or taken by someone else"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "libreta",
+    "sentence": "Elena apunta el precio en la _____ y guarda el pasaje en el bolso.",
+    "payload": {
+      "answer": "libreta",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "campanita",
+        "libreta",
+        "pintura",
+        "abuelita"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/68fff19d78164a9c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Elena apunta el precio en la libreta y guarda el pasaje en el bolso.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-terminal-terrestre-a-las-ocho",
+        "targetWord": "libreta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "taquilla",
+    "sentence": "Junto a la taquilla espera Julio, un chofer de taxi que ya la llevó al mirador.",
+    "payload": {
+      "answer": "the small window where tickets are sold to travellers",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "lakes",
+        "wife",
+        "the small window where tickets are sold to travellers",
+        "worldview, how a people understand the universe"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ebe04bc4f425094.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Junto a la taquilla espera Julio, un chofer de taxi que ya la llevó al mirador.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-terminal-terrestre-a-las-ocho",
+        "targetWord": "taquilla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "avión",
+    "sentence": "avión",
+    "payload": {
+      "answer": "avión",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "avión",
+        "cima",
+        "hierbas",
+        "dudas"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "pasaje,asiento,boleto,ruta",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "pasaje",
+          "answer": "the printed slip that proves you paid for a seat",
+          "options": [
+            "the road a bus follows between two towns or cities",
+            "the ticket you buy to travel on a bus",
+            "the place where one person sits inside a bus",
+            "the printed slip that proves you paid for a seat"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "asiento",
+          "answer": "the place where one person sits inside a bus",
+          "options": [
+            "the road a bus follows between two towns or cities",
+            "the ticket you buy to travel on a bus",
+            "the place where one person sits inside a bus",
+            "the printed slip that proves you paid for a seat"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "boleto",
+          "answer": "the ticket you buy to travel on a bus",
+          "options": [
+            "the road a bus follows between two towns or cities",
+            "the ticket you buy to travel on a bus",
+            "the place where one person sits inside a bus",
+            "the printed slip that proves you paid for a seat"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ruta",
+          "answer": "the road a bus follows between two towns or cities",
+          "options": [
+            "the road a bus follows between two towns or cities",
+            "the ticket you buy to travel on a bus",
+            "the place where one person sits inside a bus",
+            "the printed slip that proves you paid for a seat"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "terminal",
+    "sentence": "El _____ Terrestre de Cusco, en Perú, huele a gasolina y a pan.",
+    "payload": {
+      "answer": "terminal",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "postre",
+        "terminal",
+        "golpe",
+        "aceite"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d2262bdd19b76887.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El Terminal Terrestre de Cusco, en Perú, huele a gasolina y a pan.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-terminal-terrestre-a-las-ocho",
+        "targetWord": "terminal",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viajero",
+    "sentence": "Otro viajero pregunta por ese asiento y se queda sin él.",
+    "payload": {
+      "answer": "a person who is making a journey somewhere else",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the back of the hand",
+        "damn it (harsh Colombian slang, used among close friends)",
+        "they lied to us",
+        "a person who is making a journey somewhere else"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9546869486a38385.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Otro viajero pregunta por ese asiento y se queda sin él.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-terminal-terrestre-a-las-ocho",
+        "targetWord": "viajero",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "disponible",
+    "sentence": "disponible",
+    "payload": {
+      "answer": "disponible",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "casero",
+        "incómoda",
+        "movida",
+        "disponible"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "en punto",
+    "sentence": "en punto",
+    "payload": {
+      "answer": "en punto",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "La Sabana",
+        "cobrar vida",
+        "valía la pena",
+        "en punto"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "equipaje",
+    "sentence": "equipaje",
+    "payload": {
+      "answer": "equipaje",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "trago",
+        "equipaje",
+        "premios",
+        "cortado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "falta gente",
+    "sentence": "falta gente",
+    "payload": {
+      "answer": "falta gente",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "mover los pies",
+        "punto débil",
+        "falta gente",
+        "olla de barro"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "horario",
+    "sentence": "horario",
+    "payload": {
+      "answer": "horario",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cuadro",
+        "boleto",
+        "horario",
+        "edificio"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "la gente con plata",
+    "sentence": "la gente con plata",
+    "payload": {
+      "answer": "la gente con plata",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "la gente con plata",
+        "oro negro",
+        "punto de encuentro",
+        "La calle está dura"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "avión,en punto,bolso,precio",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "avión",
+          "answer": "the machine that carries people through the air",
+          "options": [
+            "the amount of money something costs to buy",
+            "the machine that carries people through the air",
+            "exactly at that hour, not a minute later",
+            "a soft bag carried by hand or over the shoulder"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "en punto",
+          "answer": "exactly at that hour, not a minute later",
+          "options": [
+            "the amount of money something costs to buy",
+            "the machine that carries people through the air",
+            "exactly at that hour, not a minute later",
+            "a soft bag carried by hand or over the shoulder"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "bolso",
+          "answer": "a soft bag carried by hand or over the shoulder",
+          "options": [
+            "the amount of money something costs to buy",
+            "the machine that carries people through the air",
+            "exactly at that hour, not a minute later",
+            "a soft bag carried by hand or over the shoulder"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "precio",
+          "answer": "the amount of money something costs to buy",
+          "options": [
+            "the amount of money something costs to buy",
+            "the machine that carries people through the air",
+            "exactly at that hour, not a minute later",
+            "a soft bag carried by hand or over the shoulder"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

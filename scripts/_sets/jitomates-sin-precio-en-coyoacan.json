@@ -1,0 +1,772 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "abierta",
+    "sentence": "Ana, una visitante que ya conoce el puesto, cruza la puerta _____ y camina hasta la verdura.",
+    "payload": {
+      "answer": "abierta",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "abierta",
+        "apurado",
+        "confundido",
+        "único"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f24c8b076457655.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ana, una visitante que ya conoce el puesto, cruza la puerta abierta y camina hasta la verdura.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "jitomates-sin-precio-en-coyoacan",
+        "targetWord": "abierto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abierto",
+    "sentence": "Ana, una visitante que ya conoce el puesto, cruza la puerta abierta y camina hasta la verdura.",
+    "payload": {
+      "answer": "not closed, with nothing blocking the way through",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "not closed, with nothing blocking the way through",
+        "to reach",
+        "a voice, a say",
+        "pyjamas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f24c8b076457655.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ana, una visitante que ya conoce el puesto, cruza la puerta abierta y camina hasta la verdura.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "jitomates-sin-precio-en-coyoacan",
+        "targetWord": "abierto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "apurado",
+    "sentence": "apurado",
+    "payload": {
+      "answer": "apurado",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "apurado",
+        "estrecho",
+        "Aprobado",
+        "ligero"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "bolsita",
+    "sentence": "La señora lo envuelve todo en una _____.",
+    "payload": {
+      "answer": "bolsita",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "pijama",
+        "joya",
+        "piscina",
+        "bolsita"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74c99a718329f323.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La señora lo envuelve todo en una bolsita.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "jitomates-sin-precio-en-coyoacan",
+        "targetWord": "bolsita",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cifra",
+    "sentence": "Ana busca una cifra escrita y no encuentra ninguna en toda la fila.",
+    "payload": {
+      "answer": "a number written or said as an amount of money",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "threats",
+        "a number written or said as an amount of money",
+        "migration",
+        "the street slang of Buenos Aires"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c9026fc15e281a7.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ana busca una cifra escrita y no encuentra ninguna en toda la fila.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "jitomates-sin-precio-en-coyoacan",
+        "targetWord": "cifra",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cola",
+    "sentence": "cola",
+    "payload": {
+      "answer": "cola",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "fila",
+        "tela",
+        "boina",
+        "cola"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "salado,pedir,mostrador,cifra",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "salado",
+          "answer": "tasting strongly of salt and not sweet at all",
+          "options": [
+            "tasting strongly of salt and not sweet at all",
+            "to ask a seller to give you something you want",
+            "a number written or said as an amount of money",
+            "the long table where a seller shows the goods"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pedir",
+          "answer": "to ask a seller to give you something you want",
+          "options": [
+            "tasting strongly of salt and not sweet at all",
+            "to ask a seller to give you something you want",
+            "a number written or said as an amount of money",
+            "the long table where a seller shows the goods"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "mostrador",
+          "answer": "the long table where a seller shows the goods",
+          "options": [
+            "tasting strongly of salt and not sweet at all",
+            "to ask a seller to give you something you want",
+            "a number written or said as an amount of money",
+            "the long table where a seller shows the goods"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cifra",
+          "answer": "a number written or said as an amount of money",
+          "options": [
+            "tasting strongly of salt and not sweet at all",
+            "to ask a seller to give you something you want",
+            "a number written or said as an amount of money",
+            "the long table where a seller shows the goods"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "medio",
+    "sentence": "Pide _____ de jitomate y unos limones.",
+    "payload": {
+      "answer": "medio",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "doblado",
+        "medio",
+        "angosto",
+        "detenido"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/58724c6fb0f1d1a5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pide medio de jitomate y unos limones.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "jitomates-sin-precio-en-coyoacan",
+        "targetWord": "medio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "costar",
+    "sentence": "costar",
+    "payload": {
+      "answer": "costar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "arreglar",
+        "aguantar",
+        "vibrar",
+        "costar"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "docena",
+    "sentence": "docena",
+    "payload": {
+      "answer": "docena",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cola",
+        "estantería",
+        "vecina",
+        "docena"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "abierta",
+    "sentence": "Ana, una visitante que ya conoce el puesto, cruza la puerta _____ y camina hasta la verdura.",
+    "payload": {
+      "answer": "abierta",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "pesado",
+        "querido",
+        "amargo",
+        "abierta"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f24c8b076457655.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ana, una visitante que ya conoce el puesto, cruza la puerta abierta y camina hasta la verdura.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "jitomates-sin-precio-en-coyoacan",
+        "targetWord": "abierto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abierto",
+    "sentence": "Ana, una visitante que ya conoce el puesto, cruza la puerta abierta y camina hasta la verdura.",
+    "payload": {
+      "answer": "not closed, with nothing blocking the way through",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "play money, fake notes",
+        "to highlight",
+        "not closed, with nothing blocking the way through",
+        "to survive"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f24c8b076457655.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ana, una visitante que ya conoce el puesto, cruza la puerta abierta y camina hasta la verdura.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "jitomates-sin-precio-en-coyoacan",
+        "targetWord": "abierto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "apurado",
+    "sentence": "apurado",
+    "payload": {
+      "answer": "apurado",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "sorprendido",
+        "sencillo",
+        "apurado",
+        "verdadero"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "verdura,listo,mostrador,docena",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "verdura",
+          "answer": "plants such as onions or lettuce grown to eat",
+          "options": [
+            "the long table where a seller shows the goods",
+            "a group of twelve things sold or counted together",
+            "finished and ready for someone to take away",
+            "plants such as onions or lettuce grown to eat"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "listo",
+          "answer": "finished and ready for someone to take away",
+          "options": [
+            "the long table where a seller shows the goods",
+            "a group of twelve things sold or counted together",
+            "finished and ready for someone to take away",
+            "plants such as onions or lettuce grown to eat"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "mostrador",
+          "answer": "the long table where a seller shows the goods",
+          "options": [
+            "the long table where a seller shows the goods",
+            "a group of twelve things sold or counted together",
+            "finished and ready for someone to take away",
+            "plants such as onions or lettuce grown to eat"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "docena",
+          "answer": "a group of twelve things sold or counted together",
+          "options": [
+            "the long table where a seller shows the goods",
+            "a group of twelve things sold or counted together",
+            "finished and ready for someone to take away",
+            "plants such as onions or lettuce grown to eat"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "bolsita",
+    "sentence": "La señora lo envuelve todo en una _____.",
+    "payload": {
+      "answer": "bolsita",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "limpieza",
+        "pulpa",
+        "bolsita",
+        "tierrita"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74c99a718329f323.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La señora lo envuelve todo en una bolsita.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "jitomates-sin-precio-en-coyoacan",
+        "targetWord": "bolsita",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cifra",
+    "sentence": "Ana busca una cifra escrita y no encuentra ninguna en toda la fila.",
+    "payload": {
+      "answer": "a number written or said as an amount of money",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "giving up, resignation",
+        "unsettled him",
+        "a number written or said as an amount of money",
+        "the life and soul of the party"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c9026fc15e281a7.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ana busca una cifra escrita y no encuentra ninguna en toda la fila.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "jitomates-sin-precio-en-coyoacan",
+        "targetWord": "cifra",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cola",
+    "sentence": "cola",
+    "payload": {
+      "answer": "cola",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "mordida",
+        "cola",
+        "esquina",
+        "tierrita"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "limpio,envolver,salado,apurado",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "limpio",
+          "answer": "clean, with no dirt or mark left on it",
+          "options": [
+            "tasting strongly of salt and not sweet at all",
+            "clean, with no dirt or mark left on it",
+            "in a hurry, wanting to finish something quickly",
+            "to wrap something in paper or plastic to carry it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "envolver",
+          "answer": "to wrap something in paper or plastic to carry it",
+          "options": [
+            "tasting strongly of salt and not sweet at all",
+            "clean, with no dirt or mark left on it",
+            "in a hurry, wanting to finish something quickly",
+            "to wrap something in paper or plastic to carry it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "salado",
+          "answer": "tasting strongly of salt and not sweet at all",
+          "options": [
+            "tasting strongly of salt and not sweet at all",
+            "clean, with no dirt or mark left on it",
+            "in a hurry, wanting to finish something quickly",
+            "to wrap something in paper or plastic to carry it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "apurado",
+          "answer": "in a hurry, wanting to finish something quickly",
+          "options": [
+            "tasting strongly of salt and not sweet at all",
+            "clean, with no dirt or mark left on it",
+            "in a hurry, wanting to finish something quickly",
+            "to wrap something in paper or plastic to carry it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "medio",
+    "sentence": "Pide _____ de jitomate y unos limones.",
+    "payload": {
+      "answer": "medio",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "probado",
+        "medio",
+        "acelerado",
+        "oscuro"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/58724c6fb0f1d1a5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pide medio de jitomate y unos limones.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "jitomates-sin-precio-en-coyoacan",
+        "targetWord": "medio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "costar",
+    "sentence": "costar",
+    "payload": {
+      "answer": "costar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "aguantar",
+        "apagar",
+        "costar",
+        "apoyado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "docena",
+    "sentence": "docena",
+    "payload": {
+      "answer": "docena",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "docena",
+        "melodía",
+        "maestra",
+        "cena"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "envolver",
+    "sentence": "envolver",
+    "payload": {
+      "answer": "envolver",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "envolver",
+        "mezclado",
+        "brillar",
+        "repartir"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "jitomate",
+    "sentence": "jitomate",
+    "payload": {
+      "answer": "jitomate",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "jitomate",
+        "prácticas",
+        "columna",
+        "colectivo"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "limpio",
+    "sentence": "limpio",
+    "payload": {
+      "answer": "limpio",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cansado",
+        "caro",
+        "limpio",
+        "barato"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "costar,bolsita,medio,cifra",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "costar",
+          "answer": "to have a certain price when you buy it",
+          "options": [
+            "a number written or said as an amount of money",
+            "a small thin bag for carrying a few things",
+            "half of the usual amount that is sold",
+            "to have a certain price when you buy it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "bolsita",
+          "answer": "a small thin bag for carrying a few things",
+          "options": [
+            "a number written or said as an amount of money",
+            "a small thin bag for carrying a few things",
+            "half of the usual amount that is sold",
+            "to have a certain price when you buy it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "medio",
+          "answer": "half of the usual amount that is sold",
+          "options": [
+            "a number written or said as an amount of money",
+            "a small thin bag for carrying a few things",
+            "half of the usual amount that is sold",
+            "to have a certain price when you buy it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cifra",
+          "answer": "a number written or said as an amount of money",
+          "options": [
+            "a number written or said as an amount of money",
+            "a small thin bag for carrying a few things",
+            "half of the usual amount that is sold",
+            "to have a certain price when you buy it"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

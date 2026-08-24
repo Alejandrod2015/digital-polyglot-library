@@ -1,0 +1,884 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "alcanza",
+    "sentence": "Suma en la cabeza lo que va a gastar y le _____ para poco.",
+    "payload": {
+      "answer": "alcanza",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "asiente",
+        "alcanza",
+        "equivocarse",
+        "mezclar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c118e3bd02b7f93.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Suma en la cabeza lo que va a gastar y le alcanza para poco.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "alcanzar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alcanzar",
+    "sentence": "Suma en la cabeza lo que va a gastar y le alcanza para poco.",
+    "payload": {
+      "answer": "to be enough for what you need to buy",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the outskirts",
+        "requires",
+        "to keep alive",
+        "to be enough for what you need to buy"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c118e3bd02b7f93.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Suma en la cabeza lo que va a gastar y le alcanza para poco.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "alcanzar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cambio",
+    "sentence": "cambio",
+    "payload": {
+      "answer": "cambio",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "invierno",
+        "cariño",
+        "cambio",
+        "saldo"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cantidad",
+    "sentence": "La _____ no coincide con lo que marca el papel.",
+    "payload": {
+      "answer": "cantidad",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "compañero",
+        "grupo",
+        "mariposas",
+        "cantidad"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea98c6819f72d304.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La cantidad no coincide con lo que marca el papel.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "cantidad",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casi vacío",
+    "sentence": "La luz del mediodía cae de lado en Coyoacán y Ana vuelve el martes con el monedero casi vacío.",
+    "payload": {
+      "answer": "with almost nothing left inside it any more",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "with almost nothing left inside it any more",
+        "the home shrines built for the dead",
+        "instinct",
+        "it grabs you"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d078e14d671ec2bc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La luz del mediodía cae de lado en Coyoacán y Ana vuelve el martes con el monedero casi vacío.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "casi vacío",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "comparar",
+    "sentence": "comparar",
+    "payload": {
+      "answer": "comparar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "estirar",
+        "organizar",
+        "ganarse",
+        "comparar"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "revisar,perder,nervioso,sumar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "revisar",
+          "answer": "to look at something carefully to check it is right",
+          "options": [
+            "worried and unable to keep still or quiet",
+            "to look at something carefully to check it is right",
+            "to add numbers together to get a total",
+            "to end up with less money than you had before"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "perder",
+          "answer": "to end up with less money than you had before",
+          "options": [
+            "worried and unable to keep still or quiet",
+            "to look at something carefully to check it is right",
+            "to add numbers together to get a total",
+            "to end up with less money than you had before"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "nervioso",
+          "answer": "worried and unable to keep still or quiet",
+          "options": [
+            "worried and unable to keep still or quiet",
+            "to look at something carefully to check it is right",
+            "to add numbers together to get a total",
+            "to end up with less money than you had before"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sumar",
+          "answer": "to add numbers together to get a total",
+          "options": [
+            "worried and unable to keep still or quiet",
+            "to look at something carefully to check it is right",
+            "to add numbers together to get a total",
+            "to end up with less money than you had before"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "de más",
+    "sentence": "En el cambio no hay monedas _____, hay monedas de menos.",
+    "payload": {
+      "answer": "de más",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "brisa salada",
+        "de más",
+        "hijo mayor",
+        "de una vez"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85f2c0c2f922a3fe.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En el cambio no hay monedas de más, hay monedas de menos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "de más",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por eso",
+    "sentence": "La señora resta el error y por eso Ana vuelve a ese puesto.",
+    "payload": {
+      "answer": "for that reason, because of what just happened",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "set on it",
+        "for that reason, because of what just happened",
+        "fierce",
+        "tears"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7926c7a45619e23a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La señora resta el error y por eso Ana vuelve a ese puesto.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "por eso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "revisa",
+    "sentence": "Ana apoya la mano en el mostrador y _____ las monedas antes de guardarlas.",
+    "payload": {
+      "answer": "revisa",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "refresca",
+        "unirse",
+        "revisa",
+        "resta"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a0e3026579f3ef2.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ana apoya la mano en el mostrador y revisa las monedas antes de guardarlas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "revisar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "alcanza",
+    "sentence": "Suma en la cabeza lo que va a gastar y le _____ para poco.",
+    "payload": {
+      "answer": "alcanza",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "repartir",
+        "alcanza",
+        "ganarse",
+        "levantar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c118e3bd02b7f93.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Suma en la cabeza lo que va a gastar y le alcanza para poco.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "alcanzar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alcanzar",
+    "sentence": "Suma en la cabeza lo que va a gastar y le alcanza para poco.",
+    "payload": {
+      "answer": "to be enough for what you need to buy",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "friendly",
+        "to be enough for what you need to buy",
+        "sets, marks",
+        "they took off me"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c118e3bd02b7f93.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Suma en la cabeza lo que va a gastar y le alcanza para poco.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "alcanzar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "cambio",
+    "sentence": "cambio",
+    "payload": {
+      "answer": "cambio",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "micro",
+        "edificio",
+        "saco",
+        "cambio"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "casi vacío,marcar,por eso,perder",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "casi vacío",
+          "answer": "with almost nothing left inside it any more",
+          "options": [
+            "for that reason, because of what just happened",
+            "to show a number, as a screen or a paper does",
+            "to end up with less money than you had before",
+            "with almost nothing left inside it any more"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "marcar",
+          "answer": "to show a number, as a screen or a paper does",
+          "options": [
+            "for that reason, because of what just happened",
+            "to show a number, as a screen or a paper does",
+            "to end up with less money than you had before",
+            "with almost nothing left inside it any more"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "por eso",
+          "answer": "for that reason, because of what just happened",
+          "options": [
+            "for that reason, because of what just happened",
+            "to show a number, as a screen or a paper does",
+            "to end up with less money than you had before",
+            "with almost nothing left inside it any more"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "perder",
+          "answer": "to end up with less money than you had before",
+          "options": [
+            "for that reason, because of what just happened",
+            "to show a number, as a screen or a paper does",
+            "to end up with less money than you had before",
+            "with almost nothing left inside it any more"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cantidad",
+    "sentence": "La _____ no coincide con lo que marca el papel.",
+    "payload": {
+      "answer": "cantidad",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cantidad",
+        "balón",
+        "esfuerzo",
+        "plazas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ea98c6819f72d304.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La cantidad no coincide con lo que marca el papel.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "cantidad",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casi vacío",
+    "sentence": "La luz del mediodía cae de lado en Coyoacán y Ana vuelve el martes con el monedero casi vacío.",
+    "payload": {
+      "answer": "with almost nothing left inside it any more",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "energy",
+        "flashes of lightning",
+        "with almost nothing left inside it any more",
+        "a batch"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d078e14d671ec2bc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La luz del mediodía cae de lado en Coyoacán y Ana vuelve el martes con el monedero casi vacío.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "casi vacío",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "comparar",
+    "sentence": "comparar",
+    "payload": {
+      "answer": "comparar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "equivocarse",
+        "logrado",
+        "mezclar",
+        "comparar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "monedero,total,ganar,revisar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "monedero",
+          "answer": "a small purse for carrying coins in your pocket",
+          "options": [
+            "the whole amount you have to pay in the end",
+            "a small purse for carrying coins in your pocket",
+            "to end up with more money than you had before",
+            "to look at something carefully to check it is right"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "total",
+          "answer": "the whole amount you have to pay in the end",
+          "options": [
+            "the whole amount you have to pay in the end",
+            "a small purse for carrying coins in your pocket",
+            "to end up with more money than you had before",
+            "to look at something carefully to check it is right"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ganar",
+          "answer": "to end up with more money than you had before",
+          "options": [
+            "the whole amount you have to pay in the end",
+            "a small purse for carrying coins in your pocket",
+            "to end up with more money than you had before",
+            "to look at something carefully to check it is right"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "revisar",
+          "answer": "to look at something carefully to check it is right",
+          "options": [
+            "the whole amount you have to pay in the end",
+            "a small purse for carrying coins in your pocket",
+            "to end up with more money than you had before",
+            "to look at something carefully to check it is right"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "de más",
+    "sentence": "En el cambio no hay monedas _____, hay monedas de menos.",
+    "payload": {
+      "answer": "de más",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "recargar energías",
+        "hacía reír",
+        "de más",
+        "dando vueltas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/85f2c0c2f922a3fe.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En el cambio no hay monedas de más, hay monedas de menos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "de más",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por eso",
+    "sentence": "La señora resta el error y por eso Ana vuelve a ese puesto.",
+    "payload": {
+      "answer": "for that reason, because of what just happened",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "guarded",
+        "honestly",
+        "for that reason, because of what just happened",
+        "withstood"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7926c7a45619e23a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La señora resta el error y por eso Ana vuelve a ese puesto.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "por eso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "revisar",
+    "sentence": "Ana apoya la mano en el mostrador y revisa las monedas antes de guardarlas.",
+    "payload": {
+      "answer": "to look at something carefully to check it is right",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to look at something carefully to check it is right",
+        "a campfire",
+        "little sugar skulls",
+        "they discuss"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a0e3026579f3ef2.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ana apoya la mano en el mostrador y revisa las monedas antes de guardarlas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "revisar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "revisa",
+    "sentence": "Ana apoya la mano en el mostrador y _____ las monedas antes de guardarlas.",
+    "payload": {
+      "answer": "revisa",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "picar",
+        "regresar",
+        "suma",
+        "revisa"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a0e3026579f3ef2.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ana apoya la mano en el mostrador y revisa las monedas antes de guardarlas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "veinte-pesos-menos-en-coyoacan",
+        "targetWord": "revisar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "corto",
+    "sentence": "corto",
+    "payload": {
+      "answer": "corto",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "corto",
+        "famoso",
+        "encendido",
+        "sencillo"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "exacto",
+    "sentence": "exacto",
+    "payload": {
+      "answer": "exacto",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "estrecho",
+        "exacto",
+        "acelerado",
+        "desordenado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "ganar",
+    "sentence": "ganar",
+    "payload": {
+      "answer": "ganar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "preparar",
+        "ganar",
+        "brindar",
+        "comprar"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "justo",
+    "sentence": "justo",
+    "payload": {
+      "answer": "justo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "despejado",
+        "montado",
+        "justo",
+        "complicado"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "exacto,corto,alcanzar,sumar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "exacto",
+          "answer": "right down to the last coin, with nothing missing",
+          "options": [
+            "right down to the last coin, with nothing missing",
+            "to add numbers together to get a total",
+            "to be enough for what you need to buy",
+            "short, not long in size or in time"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "corto",
+          "answer": "short, not long in size or in time",
+          "options": [
+            "right down to the last coin, with nothing missing",
+            "to add numbers together to get a total",
+            "to be enough for what you need to buy",
+            "short, not long in size or in time"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "alcanzar",
+          "answer": "to be enough for what you need to buy",
+          "options": [
+            "right down to the last coin, with nothing missing",
+            "to add numbers together to get a total",
+            "to be enough for what you need to buy",
+            "short, not long in size or in time"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sumar",
+          "answer": "to add numbers together to get a total",
+          "options": [
+            "right down to the last coin, with nothing missing",
+            "to add numbers together to get a total",
+            "to be enough for what you need to buy",
+            "short, not long in size or in time"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

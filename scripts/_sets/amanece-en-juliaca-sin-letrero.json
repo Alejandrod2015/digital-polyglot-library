@@ -1,0 +1,900 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "al fin",
+    "sentence": "_____ aparece una raya de señal y llama a Julio, aunque seguramente está durmiendo.",
+    "payload": {
+      "answer": "al fin",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "saques la piedra",
+        "al fin",
+        "ni idea",
+        "pondremos las pilas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81cee71f5496bb32.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Al fin aparece una raya de señal y llama a Julio, aunque seguramente está durmiendo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "al fin",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apoyar",
+    "sentence": "Tampoco hay un letrero, y apoya la valija contra la pared.",
+    "payload": {
+      "answer": "to rest something against a surface so it stays there",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "performances",
+        "resilient",
+        "naranjilla, a tart green fruit",
+        "to rest something against a surface so it stays there"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/538c63bd65e293f3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tampoco hay un letrero, y apoya la valija contra la pared.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "apoyar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "aunque",
+    "sentence": "aunque",
+    "payload": {
+      "answer": "aunque",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "alrededor",
+        "aunque",
+        "lejos",
+        "tampoco"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "apoya",
+    "sentence": "Tampoco hay un letrero, y _____ la valija contra la pared.",
+    "payload": {
+      "answer": "apoya",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ingresa",
+        "asiente",
+        "apoya",
+        "brillar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/538c63bd65e293f3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tampoco hay un letrero, y apoya la valija contra la pared.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "apoyar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de repuesto",
+    "sentence": "“Ponlo en la libreta, por si acaso”, y Elena guarda una pila de repuesto en el bolso.",
+    "payload": {
+      "answer": "kept aside in case the first one fails",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "open courtyard of a house",
+        "kept aside in case the first one fails",
+        "peaceful",
+        "dangers"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c226d7a14490b46.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Ponlo en la libreta, por si acaso”, y Elena guarda una pila de repuesto en el bolso.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "de repuesto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "bajada",
+    "sentence": "bajada",
+    "payload": {
+      "answer": "bajada",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "iglesia",
+        "niebla",
+        "bajada",
+        "belleza"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "al fin,retraso,trayecto,tan",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "al fin",
+          "answer": "after a long wait, the thing finally happens",
+          "options": [
+            "the whole distance a bus covers between two places",
+            "after a long wait, the thing finally happens",
+            "the extra time you wait when something comes late",
+            "so much, to that degree or that extent"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "retraso",
+          "answer": "the extra time you wait when something comes late",
+          "options": [
+            "the whole distance a bus covers between two places",
+            "after a long wait, the thing finally happens",
+            "the extra time you wait when something comes late",
+            "so much, to that degree or that extent"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "trayecto",
+          "answer": "the whole distance a bus covers between two places",
+          "options": [
+            "the whole distance a bus covers between two places",
+            "after a long wait, the thing finally happens",
+            "the extra time you wait when something comes late",
+            "so much, to that degree or that extent"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tan",
+          "answer": "so much, to that degree or that extent",
+          "options": [
+            "the whole distance a bus covers between two places",
+            "after a long wait, the thing finally happens",
+            "the extra time you wait when something comes late",
+            "so much, to that degree or that extent"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "detrás",
+    "sentence": "_____ de la puerta, un hombre vende termos y pan.",
+    "payload": {
+      "answer": "detrás",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "detrás",
+        "aunque",
+        "bajito",
+        "suavemente"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/722128290c5cdb8f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Detrás de la puerta, un hombre vende termos y pan.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "detrás",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estacionamiento",
+    "sentence": "Elena baja al estacionamiento y no se oye un motor.",
+    "payload": {
+      "answer": "the open ground where vehicles are left standing",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "lost",
+        "don't push yourself so hard",
+        "the wind",
+        "the open ground where vehicles are left standing"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/070077540e0cd7e9.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Elena baja al estacionamiento y no se oye un motor.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "estacionamiento",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "prende",
+    "sentence": "Elena _____ el teléfono y no encuentra señal.",
+    "payload": {
+      "answer": "prende",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "crecer",
+        "celebrar",
+        "perderse",
+        "prende"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f4282e65217265a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Elena prende el teléfono y no encuentra señal.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "prender",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "al fin",
+    "sentence": "_____ aparece una raya de señal y llama a Julio, aunque seguramente está durmiendo.",
+    "payload": {
+      "answer": "al fin",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "lucha libre",
+        "obra maestra",
+        "fuego en la boca",
+        "al fin"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/81cee71f5496bb32.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Al fin aparece una raya de señal y llama a Julio, aunque seguramente está durmiendo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "al fin",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apoyar",
+    "sentence": "Tampoco hay un letrero, y apoya la valija contra la pared.",
+    "payload": {
+      "answer": "to rest something against a surface so it stays there",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to rest something against a surface so it stays there",
+        "walks through",
+        "you (replaces tú throughout Argentina)",
+        "tough, brutal (Colombian slang)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/538c63bd65e293f3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tampoco hay un letrero, y apoya la valija contra la pared.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "apoyar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "aunque",
+    "sentence": "aunque",
+    "payload": {
+      "answer": "aunque",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "bajito",
+        "suavecito",
+        "aunque",
+        "bastante"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "estacionamiento,poner,pueblo,seguramente",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "estacionamiento",
+          "answer": "the open ground where vehicles are left standing",
+          "options": [
+            "most likely, though nobody has checked it yet",
+            "the open ground where vehicles are left standing",
+            "to place something somewhere or write it down",
+            "a small town with few streets and few people"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "poner",
+          "answer": "to place something somewhere or write it down",
+          "options": [
+            "most likely, though nobody has checked it yet",
+            "the open ground where vehicles are left standing",
+            "to place something somewhere or write it down",
+            "a small town with few streets and few people"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pueblo",
+          "answer": "a small town with few streets and few people",
+          "options": [
+            "most likely, though nobody has checked it yet",
+            "the open ground where vehicles are left standing",
+            "to place something somewhere or write it down",
+            "a small town with few streets and few people"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "seguramente",
+          "answer": "most likely, though nobody has checked it yet",
+          "options": [
+            "most likely, though nobody has checked it yet",
+            "the open ground where vehicles are left standing",
+            "to place something somewhere or write it down",
+            "a small town with few streets and few people"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "apoya",
+    "sentence": "Tampoco hay un letrero, y _____ la valija contra la pared.",
+    "payload": {
+      "answer": "apoya",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "bailar",
+        "apoya",
+        "dejado",
+        "arreglar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/538c63bd65e293f3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tampoco hay un letrero, y apoya la valija contra la pared.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "apoyar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de repuesto",
+    "sentence": "“Ponlo en la libreta, por si acaso”, y Elena guarda una pila de repuesto en el bolso.",
+    "payload": {
+      "answer": "kept aside in case the first one fails",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "kept aside in case the first one fails",
+        "to get going, to liven up",
+        "to copy off them",
+        "infinite"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c226d7a14490b46.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Ponlo en la libreta, por si acaso”, y Elena guarda una pila de repuesto en el bolso.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "de repuesto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "bajada",
+    "sentence": "bajada",
+    "payload": {
+      "answer": "bajada",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "aguja",
+        "abuela",
+        "bajada",
+        "leña"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "prestar,tan,al fin,retraso",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "prestar",
+          "answer": "to give something for a while, expecting it back",
+          "options": [
+            "so much, to that degree or that extent",
+            "to give something for a while, expecting it back",
+            "the extra time you wait when something comes late",
+            "after a long wait, the thing finally happens"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tan",
+          "answer": "so much, to that degree or that extent",
+          "options": [
+            "so much, to that degree or that extent",
+            "to give something for a while, expecting it back",
+            "the extra time you wait when something comes late",
+            "after a long wait, the thing finally happens"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "al fin",
+          "answer": "after a long wait, the thing finally happens",
+          "options": [
+            "so much, to that degree or that extent",
+            "to give something for a while, expecting it back",
+            "the extra time you wait when something comes late",
+            "after a long wait, the thing finally happens"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "retraso",
+          "answer": "the extra time you wait when something comes late",
+          "options": [
+            "so much, to that degree or that extent",
+            "to give something for a while, expecting it back",
+            "the extra time you wait when something comes late",
+            "after a long wait, the thing finally happens"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "detrás",
+    "sentence": "_____ de la puerta, un hombre vende termos y pan.",
+    "payload": {
+      "answer": "detrás",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "tampoco",
+        "apenas",
+        "detrás",
+        "enseguida"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/722128290c5cdb8f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Detrás de la puerta, un hombre vende termos y pan.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "detrás",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estacionamiento",
+    "sentence": "Elena baja al estacionamiento y no se oye un motor.",
+    "payload": {
+      "answer": "the open ground where vehicles are left standing",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "varieties",
+        "madness",
+        "gestures",
+        "the open ground where vehicles are left standing"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/070077540e0cd7e9.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Elena baja al estacionamiento y no se oye un motor.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "estacionamiento",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "prender",
+    "sentence": "Elena prende el teléfono y no encuentra señal.",
+    "payload": {
+      "answer": "to switch on a light, a screen or a machine",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "winding",
+        "my weak spot",
+        "left with nothing, waiting in vain (Argentine idiom)",
+        "to switch on a light, a screen or a machine"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f4282e65217265a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Elena prende el teléfono y no encuentra señal.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "prender",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tan",
+    "sentence": "El trayecto fue tan largo que le duelen las rodillas.",
+    "payload": {
+      "answer": "so much, to that degree or that extent",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "just, go ahead (very common in Argentina)",
+        "everyday life",
+        "a department at the heart of Colombia's coffee country",
+        "so much, to that degree or that extent"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20b18b2448b8ece6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El trayecto fue tan largo que le duelen las rodillas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "tan",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "prende",
+    "sentence": "Elena _____ el teléfono y no encuentra señal.",
+    "payload": {
+      "answer": "prende",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "volver",
+        "vigilar",
+        "prende",
+        "tostar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4f4282e65217265a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Elena prende el teléfono y no encuentra señal.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "amanece-en-juliaca-sin-letrero",
+        "targetWord": "prender",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "bastante",
+    "sentence": "bastante",
+    "payload": {
+      "answer": "bastante",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "detrás",
+        "seguramente",
+        "alrededor",
+        "bastante"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "llegada",
+    "sentence": "llegada",
+    "payload": {
+      "answer": "llegada",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "llegada",
+        "gracia",
+        "barra",
+        "feria"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "poner",
+    "sentence": "poner",
+    "payload": {
+      "answer": "poner",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "desea",
+        "apoyar",
+        "prensa",
+        "poner"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "subida,subrayar,apoyar,detrás",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "subida",
+          "answer": "a stretch of road that climbs towards higher ground",
+          "options": [
+            "to draw a line under a word you wrote",
+            "at the back of something, on its far side",
+            "to rest something against a surface so it stays there",
+            "a stretch of road that climbs towards higher ground"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "subrayar",
+          "answer": "to draw a line under a word you wrote",
+          "options": [
+            "to draw a line under a word you wrote",
+            "at the back of something, on its far side",
+            "to rest something against a surface so it stays there",
+            "a stretch of road that climbs towards higher ground"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "apoyar",
+          "answer": "to rest something against a surface so it stays there",
+          "options": [
+            "to draw a line under a word you wrote",
+            "at the back of something, on its far side",
+            "to rest something against a surface so it stays there",
+            "a stretch of road that climbs towards higher ground"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "detrás",
+          "answer": "at the back of something, on its far side",
+          "options": [
+            "to draw a line under a word you wrote",
+            "at the back of something, on its far side",
+            "to rest something against a surface so it stays there",
+            "a stretch of road that climbs towards higher ground"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

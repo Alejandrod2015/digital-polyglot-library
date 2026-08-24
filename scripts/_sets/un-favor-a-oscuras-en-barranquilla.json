@@ -1,0 +1,756 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "billetera",
+    "sentence": "Camilo saca la _____ y no le cobra nada.",
+    "payload": {
+      "answer": "billetera",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cáscara",
+        "llama",
+        "huella",
+        "billetera"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae5585ce774bce67.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Camilo saca la billetera y no le cobra nada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-favor-a-oscuras-en-barranquilla",
+        "targetWord": "billetera",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bombilla",
+    "sentence": "La bombilla del pasillo queda muerta y el interruptor no responde.",
+    "payload": {
+      "answer": "the glass ball that gives light in a lamp",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "skiing",
+        "the glass ball that gives light in a lamp",
+        "a shoeshine man",
+        "to break the news"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cfac509cc55be0ce.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La bombilla del pasillo queda muerta y el interruptor no responde.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-favor-a-oscuras-en-barranquilla",
+        "targetWord": "bombilla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "borde",
+    "sentence": "borde",
+    "payload": {
+      "answer": "borde",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "sartén",
+        "borde",
+        "copas",
+        "pedazo"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "duro",
+    "sentence": "Ya volvió la luz, y el pasillo se pone _____ de blanco a las nueve.",
+    "payload": {
+      "answer": "duro",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "incómodo",
+        "finito",
+        "duro",
+        "probado"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c92e9bf2238b752d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Ya volvió la luz”, y el pasillo se pone duro de blanco a las nueve.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-favor-a-oscuras-en-barranquilla",
+        "targetWord": "duro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "electricidad",
+    "sentence": "Se va la electricidad en todo el barrio de Barranquilla un martes por la tarde.",
+    "payload": {
+      "answer": "the power that makes lamps and machines work",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "sense of humour",
+        "the power that makes lamps and machines work",
+        "locked in",
+        "all-enveloping"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f3217360a6330cb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Se va la electricidad en todo el barrio de Barranquilla un martes por la tarde.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-favor-a-oscuras-en-barranquilla",
+        "targetWord": "electricidad",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "contestar",
+    "sentence": "contestar",
+    "payload": {
+      "answer": "contestar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "deber",
+        "contestar",
+        "funcionar",
+        "mentir"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "contestar,sobrar,faltar,linterna",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "contestar",
+          "answer": "to give an answer to what somebody asked",
+          "options": [
+            "to be missing from the place they should be",
+            "to give an answer to what somebody asked",
+            "to be left over after everything needed is used",
+            "a small lamp you carry in your hand"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sobrar",
+          "answer": "to be left over after everything needed is used",
+          "options": [
+            "to be missing from the place they should be",
+            "to give an answer to what somebody asked",
+            "to be left over after everything needed is used",
+            "a small lamp you carry in your hand"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "faltar",
+          "answer": "to be missing from the place they should be",
+          "options": [
+            "to be missing from the place they should be",
+            "to give an answer to what somebody asked",
+            "to be left over after everything needed is used",
+            "a small lamp you carry in your hand"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "linterna",
+          "answer": "a small lamp you carry in your hand",
+          "options": [
+            "to be missing from the place they should be",
+            "to give an answer to what somebody asked",
+            "to be left over after everything needed is used",
+            "a small lamp you carry in your hand"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "linterna",
+    "sentence": "Camilo baja con una _____ y golpea la puerta de Alveiro.",
+    "payload": {
+      "answer": "linterna",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "estrella",
+        "cabaña",
+        "linterna",
+        "cafetería"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0f2012d203c984e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Camilo baja con una linterna y golpea la puerta de Alveiro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-favor-a-oscuras-en-barranquilla",
+        "targetWord": "linterna",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "deber",
+    "sentence": "deber",
+    "payload": {
+      "answer": "deber",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "traga",
+        "deber",
+        "regresar",
+        "compartir"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "disculpe",
+    "sentence": "disculpe",
+    "payload": {
+      "answer": "disculpe",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "Vaya",
+        "disculpe",
+        "Felicidades",
+        "tranquilo"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "billetera",
+    "sentence": "Camilo saca la _____ y no le cobra nada.",
+    "payload": {
+      "answer": "billetera",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "mordida",
+        "mayonesa",
+        "billetera",
+        "abuela"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae5585ce774bce67.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Camilo saca la billetera y no le cobra nada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-favor-a-oscuras-en-barranquilla",
+        "targetWord": "billetera",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bombilla",
+    "sentence": "La bombilla del pasillo queda muerta y el interruptor no responde.",
+    "payload": {
+      "answer": "the glass ball that gives light in a lamp",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the Aztecs, as they called themselves",
+        "chin up, go for it",
+        "crisp fried pork belly",
+        "the glass ball that gives light in a lamp"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cfac509cc55be0ce.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La bombilla del pasillo queda muerta y el interruptor no responde.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-favor-a-oscuras-en-barranquilla",
+        "targetWord": "bombilla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "borde",
+    "sentence": "borde",
+    "payload": {
+      "answer": "borde",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cuentos",
+        "aceite",
+        "Montes",
+        "borde"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "faltar,taburete,billetera,ofrecer",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "faltar",
+          "answer": "to be missing from the place they should be",
+          "options": [
+            "the flat folding case for notes and cards",
+            "to be missing from the place they should be",
+            "a small seat with no back to lean on",
+            "to say you will give something to somebody"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "taburete",
+          "answer": "a small seat with no back to lean on",
+          "options": [
+            "the flat folding case for notes and cards",
+            "to be missing from the place they should be",
+            "a small seat with no back to lean on",
+            "to say you will give something to somebody"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "billetera",
+          "answer": "the flat folding case for notes and cards",
+          "options": [
+            "the flat folding case for notes and cards",
+            "to be missing from the place they should be",
+            "a small seat with no back to lean on",
+            "to say you will give something to somebody"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ofrecer",
+          "answer": "to say you will give something to somebody",
+          "options": [
+            "the flat folding case for notes and cards",
+            "to be missing from the place they should be",
+            "a small seat with no back to lean on",
+            "to say you will give something to somebody"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "duro",
+    "sentence": "Ya volvió la luz, y el pasillo se pone _____ de blanco a las nueve.",
+    "payload": {
+      "answer": "duro",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "espeso",
+        "sencillo",
+        "escondido",
+        "duro"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c92e9bf2238b752d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Ya volvió la luz”, y el pasillo se pone duro de blanco a las nueve.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-favor-a-oscuras-en-barranquilla",
+        "targetWord": "duro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "electricidad",
+    "sentence": "Se va la electricidad en todo el barrio de Barranquilla un martes por la tarde.",
+    "payload": {
+      "answer": "the power that makes lamps and machines work",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the power that makes lamps and machines work",
+        "to admit",
+        "a soap opera",
+        "damn it (mild swear, common in football)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f3217360a6330cb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Se va la electricidad en todo el barrio de Barranquilla un martes por la tarde.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-favor-a-oscuras-en-barranquilla",
+        "targetWord": "electricidad",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "contestar",
+    "sentence": "contestar",
+    "payload": {
+      "answer": "contestar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "vigilar",
+        "contestar",
+        "brillar",
+        "desea"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "sobrar,enchufe,borde,electricidad",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "sobrar",
+          "answer": "to be left over after everything needed is used",
+          "options": [
+            "the power that makes lamps and machines work",
+            "the outer edge of a surface or an object",
+            "the hole in the wall where a cable goes",
+            "to be left over after everything needed is used"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "enchufe",
+          "answer": "the hole in the wall where a cable goes",
+          "options": [
+            "the power that makes lamps and machines work",
+            "the outer edge of a surface or an object",
+            "the hole in the wall where a cable goes",
+            "to be left over after everything needed is used"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "borde",
+          "answer": "the outer edge of a surface or an object",
+          "options": [
+            "the power that makes lamps and machines work",
+            "the outer edge of a surface or an object",
+            "the hole in the wall where a cable goes",
+            "to be left over after everything needed is used"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "electricidad",
+          "answer": "the power that makes lamps and machines work",
+          "options": [
+            "the power that makes lamps and machines work",
+            "the outer edge of a surface or an object",
+            "the hole in the wall where a cable goes",
+            "to be left over after everything needed is used"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "linterna",
+    "sentence": "Camilo baja con una _____ y golpea la puerta de Alveiro.",
+    "payload": {
+      "answer": "linterna",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "selva",
+        "aroma",
+        "señorita",
+        "linterna"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0f2012d203c984e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Camilo baja con una linterna y golpea la puerta de Alveiro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "un-favor-a-oscuras-en-barranquilla",
+        "targetWord": "linterna",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "deber",
+    "sentence": "deber",
+    "payload": {
+      "answer": "deber",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "decorar",
+        "manejar",
+        "estirar",
+        "deber"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "disculpe",
+    "sentence": "disculpe",
+    "payload": {
+      "answer": "disculpe",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "salud",
+        "Ánimo",
+        "tranquilo",
+        "disculpe"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "enchufe",
+    "sentence": "enchufe",
+    "payload": {
+      "answer": "enchufe",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "arena",
+        "ritmo",
+        "enchufe",
+        "silla"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "escoba",
+    "sentence": "escoba",
+    "payload": {
+      "answer": "escoba",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "melodía",
+        "escoba",
+        "avenida",
+        "barra"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "linterna,escoba,hazme el favor,bombilla",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "linterna",
+          "answer": "a small lamp you carry in your hand",
+          "options": [
+            "a small lamp you carry in your hand",
+            "the long brush used for sweeping the floor",
+            "the glass ball that gives light in a lamp",
+            "words used when asking somebody for a small favour"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "escoba",
+          "answer": "the long brush used for sweeping the floor",
+          "options": [
+            "a small lamp you carry in your hand",
+            "the long brush used for sweeping the floor",
+            "the glass ball that gives light in a lamp",
+            "words used when asking somebody for a small favour"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "hazme el favor",
+          "answer": "words used when asking somebody for a small favour",
+          "options": [
+            "a small lamp you carry in your hand",
+            "the long brush used for sweeping the floor",
+            "the glass ball that gives light in a lamp",
+            "words used when asking somebody for a small favour"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "bombilla",
+          "answer": "the glass ball that gives light in a lamp",
+          "options": [
+            "a small lamp you carry in your hand",
+            "the long brush used for sweeping the floor",
+            "the glass ball that gives light in a lamp",
+            "words used when asking somebody for a small favour"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]

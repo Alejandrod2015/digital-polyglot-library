@@ -340,8 +340,14 @@ last = re.sub(r"<system-reminder>.*?</system-reminder>", "", last, flags=re.DOTA
 last = re.sub(r"<task-notification>.*?</task-notification>", "", last, flags=re.DOTALL|re.IGNORECASE)
 # Verbs that authorize ElevenLabs synthesis. Must be followed by
 # "audio" / "audios" / "el audio" within the same phrase to count.
+# El verbo tiene que NOMBRAR lo que se sintetiza. Ademas de "audio", vale
+# "clips" / "clips de practica", que es como el usuario llama al audio de los
+# ejercicios y es igual de inequivoco. Lo que sigue sin autorizar, a proposito:
+# "dale", "sigue", "ok", "perfecto".
 verb_pat = re.compile(
-    r"\b(genera|regenera|render|renderea|lanza|manda|haz)\s+(el\s+|los\s+)?audio[s]?\b",
+    r"\b(genera|regenera|render|renderea|lanza|manda|haz)\s+"
+    r"(?:(?:el|la|los|las|un|una)\s+)?"
+    r"(?:audio[s]?|clips?(?:\s+de\s+pr[aá]ctica)?)\b",
     re.IGNORECASE
 )
 for m in verb_pat.finditer(last):

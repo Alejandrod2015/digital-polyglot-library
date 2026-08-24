@@ -1,0 +1,868 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "botón",
+    "sentence": "Al cuarto día aprieta el _____ sin prisa y espera.",
+    "payload": {
+      "answer": "botón",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "botón",
+        "meriendas",
+        "figuras",
+        "café"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c1a68d48cc28ce1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Al cuarto día aprieta el botón sin prisa y espera.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "botón",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerrado",
+    "sentence": "La señal se cae a media tarde y la puerta queda cerrada.",
+    "payload": {
+      "answer": "shut, with no way to get in or out",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "you ought to",
+        "the workers",
+        "shut, with no way to get in or out",
+        "a seller"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/832ed36f320edaac.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La señal se cae a media tarde y la puerta queda cerrada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "cerrado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "bajo",
+    "sentence": "bajo",
+    "payload": {
+      "answer": "bajo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "bajo",
+        "ligero",
+        "tibio",
+        "duro"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cerrada",
+    "sentence": "La señal se cae a media tarde y la puerta queda _____.",
+    "payload": {
+      "answer": "cerrada",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "corto",
+        "cerrada",
+        "delicioso",
+        "profundo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/832ed36f320edaac.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La señal se cae a media tarde y la puerta queda cerrada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "cerrado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conexión",
+    "sentence": "La red se cae otra vez, la conexión va lenta y hay que marcar de nuevo.",
+    "payload": {
+      "answer": "the working link between a phone and the network",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "outlandish",
+        "spoils, wrecks",
+        "ancient, ancestral",
+        "the working link between a phone and the network"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40e7dc7610729e3a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La red se cae otra vez, la conexión va lenta y hay que marcar de nuevo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "conexión",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "contacto",
+    "sentence": "contacto",
+    "payload": {
+      "answer": "contacto",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "contacto",
+        "estadio",
+        "tío",
+        "secreto"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "micrófono,tono,señal,número",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "micrófono",
+          "answer": "the part of a phone that picks up your voice",
+          "options": [
+            "the repeated sound a phone makes before somebody answers",
+            "the invisible link that lets a phone reach the network",
+            "the digits you press to reach somebody by phone",
+            "the part of a phone that picks up your voice"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tono",
+          "answer": "the repeated sound a phone makes before somebody answers",
+          "options": [
+            "the repeated sound a phone makes before somebody answers",
+            "the invisible link that lets a phone reach the network",
+            "the digits you press to reach somebody by phone",
+            "the part of a phone that picks up your voice"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "señal",
+          "answer": "the invisible link that lets a phone reach the network",
+          "options": [
+            "the repeated sound a phone makes before somebody answers",
+            "the invisible link that lets a phone reach the network",
+            "the digits you press to reach somebody by phone",
+            "the part of a phone that picks up your voice"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "número",
+          "answer": "the digits you press to reach somebody by phone",
+          "options": [
+            "the repeated sound a phone makes before somebody answers",
+            "the invisible link that lets a phone reach the network",
+            "the digits you press to reach somebody by phone",
+            "the part of a phone that picks up your voice"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "llamada",
+    "sentence": "El tono suena cuatro veces y entra la _____.",
+    "payload": {
+      "answer": "llamada",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "tiza",
+        "sonrisa",
+        "alegría",
+        "llamada"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ca7131e6ce0d484.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El tono suena cuatro veces y entra la llamada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "llamada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marcar",
+    "sentence": "Tres días seguidos Lucía marca el número y nadie contesta.",
+    "payload": {
+      "answer": "to press the numbers that call another telephone",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "we're still missing",
+        "filters in, seeps through",
+        "to press the numbers that call another telephone",
+        "the crowd"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c2be6fe2ce8091e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tres días seguidos Lucía marca el número y nadie contesta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "marcar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "marca",
+    "sentence": "Tres días seguidos Lucía _____ el número y nadie contesta.",
+    "payload": {
+      "answer": "marca",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ingresa",
+        "revisar",
+        "marca",
+        "orientarse"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c2be6fe2ce8091e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tres días seguidos Lucía marca el número y nadie contesta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "marcar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "botón",
+    "sentence": "Al cuarto día aprieta el _____ sin prisa y espera.",
+    "payload": {
+      "answer": "botón",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "contacto",
+        "sed",
+        "cariño",
+        "botón"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c1a68d48cc28ce1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Al cuarto día aprieta el botón sin prisa y espera.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "botón",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerrado",
+    "sentence": "La señal se cae a media tarde y la puerta queda cerrada.",
+    "payload": {
+      "answer": "shut, with no way to get in or out",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "shut, with no way to get in or out",
+        "movements",
+        "the echo",
+        "workshop, repair shop"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/832ed36f320edaac.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La señal se cae a media tarde y la puerta queda cerrada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "cerrado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "bajo",
+    "sentence": "bajo",
+    "payload": {
+      "answer": "bajo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "marcado",
+        "finito",
+        "bajo",
+        "sorprendido"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "cerrado,llamada,tono,micrófono",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cerrado",
+          "answer": "shut, with no way to get in or out",
+          "options": [
+            "shut, with no way to get in or out",
+            "the part of a phone that picks up your voice",
+            "one occasion of speaking to somebody by telephone",
+            "the repeated sound a phone makes before somebody answers"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "llamada",
+          "answer": "one occasion of speaking to somebody by telephone",
+          "options": [
+            "shut, with no way to get in or out",
+            "the part of a phone that picks up your voice",
+            "one occasion of speaking to somebody by telephone",
+            "the repeated sound a phone makes before somebody answers"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tono",
+          "answer": "the repeated sound a phone makes before somebody answers",
+          "options": [
+            "shut, with no way to get in or out",
+            "the part of a phone that picks up your voice",
+            "one occasion of speaking to somebody by telephone",
+            "the repeated sound a phone makes before somebody answers"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "micrófono",
+          "answer": "the part of a phone that picks up your voice",
+          "options": [
+            "shut, with no way to get in or out",
+            "the part of a phone that picks up your voice",
+            "one occasion of speaking to somebody by telephone",
+            "the repeated sound a phone makes before somebody answers"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "cerrada",
+    "sentence": "La señal se cae a media tarde y la puerta queda _____.",
+    "payload": {
+      "answer": "cerrada",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "detenido",
+        "cerrada",
+        "encendido",
+        "churro"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/832ed36f320edaac.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La señal se cae a media tarde y la puerta queda cerrada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "cerrado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "conexión",
+    "sentence": "La red se cae otra vez, la conexión va lenta y hay que marcar de nuevo.",
+    "payload": {
+      "answer": "the working link between a phone and the network",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to put up with",
+        "the working link between a phone and the network",
+        "customs",
+        "expectations"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/40e7dc7610729e3a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La red se cae otra vez, la conexión va lenta y hay que marcar de nuevo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "conexión",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "contacto",
+    "sentence": "contacto",
+    "payload": {
+      "answer": "contacto",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cerdo",
+        "contacto",
+        "escenario",
+        "termo"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "temor,demorar,suavemente,lento",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "temor",
+          "answer": "a quiet fear about something that might happen",
+          "options": [
+            "taking a long time, moving with little speed",
+            "a quiet fear about something that might happen",
+            "in a soft gentle way, without raising the voice",
+            "to take longer than expected before doing something"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "demorar",
+          "answer": "to take longer than expected before doing something",
+          "options": [
+            "taking a long time, moving with little speed",
+            "a quiet fear about something that might happen",
+            "in a soft gentle way, without raising the voice",
+            "to take longer than expected before doing something"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "suavemente",
+          "answer": "in a soft gentle way, without raising the voice",
+          "options": [
+            "taking a long time, moving with little speed",
+            "a quiet fear about something that might happen",
+            "in a soft gentle way, without raising the voice",
+            "to take longer than expected before doing something"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "lento",
+          "answer": "taking a long time, moving with little speed",
+          "options": [
+            "taking a long time, moving with little speed",
+            "a quiet fear about something that might happen",
+            "in a soft gentle way, without raising the voice",
+            "to take longer than expected before doing something"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "llamada",
+    "sentence": "El tono suena cuatro veces y entra la _____.",
+    "payload": {
+      "answer": "llamada",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "campana",
+        "llamada",
+        "terraza",
+        "callejuela"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ca7131e6ce0d484.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El tono suena cuatro veces y entra la llamada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "llamada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marcar",
+    "sentence": "Tres días seguidos Lucía marca el número y nadie contesta.",
+    "payload": {
+      "answer": "to press the numbers that call another telephone",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "deeper, profound",
+        "a customer",
+        "to press the numbers that call another telephone",
+        "make cuts"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c2be6fe2ce8091e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tres días seguidos Lucía marca el número y nadie contesta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "marcar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "micrófono",
+    "sentence": "Lucía acerca la boca al micrófono para que se oiga bien.",
+    "payload": {
+      "answer": "the part of a phone that picks up your voice",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the part of a phone that picks up your voice",
+        "to buy",
+        "whispers",
+        "to get informed"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6fb4ec0a45edd129.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lucía acerca la boca al micrófono para que se oiga bien.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "micrófono",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "fill_blank",
+    "word": "marca",
+    "sentence": "Tres días seguidos Lucía _____ el número y nadie contesta.",
+    "payload": {
+      "answer": "marca",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "marca",
+        "celebrar",
+        "decorar",
+        "susurra"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3c2be6fe2ce8091e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tres días seguidos Lucía marca el número y nadie contesta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "sin-senal-junto-a-la-muralla",
+        "targetWord": "marcar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "demorar",
+    "sentence": "demorar",
+    "payload": {
+      "answer": "demorar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "probar",
+        "asiente",
+        "demorar",
+        "brilla"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "lento",
+    "sentence": "lento",
+    "payload": {
+      "answer": "lento",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "lento",
+        "justo",
+        "profundo",
+        "bajo"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "listen_choose",
+    "word": "mentira",
+    "sentence": "mentira",
+    "payload": {
+      "answer": "mentira",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "olla",
+        "cámara",
+        "Sierra",
+        "mentira"
+      ],
+      "language": "spanish"
+    }
+  },
+  {
+    "type": "match_meaning",
+    "word": "contacto,botón,marcar,seguido",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "contacto",
+          "answer": "a name and number saved inside a phone",
+          "options": [
+            "a name and number saved inside a phone",
+            "to press the numbers that call another telephone",
+            "the small part you press to make something happen",
+            "one after another, without a break between them"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "botón",
+          "answer": "the small part you press to make something happen",
+          "options": [
+            "a name and number saved inside a phone",
+            "to press the numbers that call another telephone",
+            "the small part you press to make something happen",
+            "one after another, without a break between them"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "marcar",
+          "answer": "to press the numbers that call another telephone",
+          "options": [
+            "a name and number saved inside a phone",
+            "to press the numbers that call another telephone",
+            "the small part you press to make something happen",
+            "one after another, without a break between them"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "seguido",
+          "answer": "one after another, without a break between them",
+          "options": [
+            "a name and number saved inside a phone",
+            "to press the numbers that call another telephone",
+            "the small part you press to make something happen",
+            "one after another, without a break between them"
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    }
+  }
+]
