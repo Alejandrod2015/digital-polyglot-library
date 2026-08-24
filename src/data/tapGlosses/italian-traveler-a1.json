@@ -356,7 +356,7 @@
    "t": "noun"
   },
   "banco": {
-   "g": "stall; counter",
+   "g": "counter",
    "t": "noun"
   },
   "banda": {
@@ -1760,11 +1760,11 @@
    "t": "pronoun"
   },
   "libera": {
-   "g": "free, open to all",
+   "g": "free, available; si libera, frees up",
    "t": "adjective"
   },
   "libreria": {
-   "g": "bookshop, bookshelf",
+   "g": "bookshelf",
    "t": "noun"
   },
   "libretto": {
@@ -1900,7 +1900,7 @@
    "t": "verb"
   },
   "manda": {
-   "g": "sends, gives off",
+   "g": "sends",
    "t": "verb"
   },
   "mangia": {
@@ -2268,7 +2268,7 @@
    "t": "conjunction"
   },
   "ora": {
-   "g": "hour; now",
+   "g": "hour",
    "t": "noun"
   },
   "ore": {
@@ -2408,7 +2408,7 @@
    "t": "verb"
   },
   "passa": {
-   "g": "passes",
+   "g": "passes, goes by; hands over (passare)",
    "t": "verb"
   },
   "passano": {
@@ -2652,7 +2652,7 @@
    "t": "adjective"
   },
   "prende": {
-   "g": "takes",
+   "g": "takes; il telefono prende, the phone gets signal",
    "t": "verb"
   },
   "prenotazione": {
@@ -2876,7 +2876,7 @@
    "t": "noun"
   },
   "rete": {
-   "g": "net, network",
+   "g": "network, wifi",
    "t": "noun"
   },
   "riapre": {
@@ -2892,7 +2892,7 @@
    "t": "adjective"
   },
   "ricetta": {
-   "g": "recipe",
+   "g": "prescription",
    "t": "noun"
   },
   "riceve": {
@@ -2904,7 +2904,7 @@
    "t": "noun"
   },
   "ricorda": {
-   "g": "reminds",
+   "g": "remembers",
    "t": "verb"
   },
   "ride": {
@@ -2924,7 +2924,7 @@
    "t": "noun"
   },
   "riga": {
-   "g": "line of writing",
+   "g": "line, mark",
    "t": "noun"
   },
   "rimanete": {
@@ -3040,7 +3040,7 @@
    "t": "noun"
   },
   "salta": {
-   "g": "jumps",
+   "g": "is missed, falls through",
    "t": "verb"
   },
   "sangue": {
@@ -3260,7 +3260,7 @@
    "t": "other"
   },
   "signore": {
-   "g": "gentleman, sir",
+   "g": "ladies (signora)",
    "t": "noun"
   },
   "silenzio": {
@@ -3304,7 +3304,7 @@
    "t": "noun"
   },
   "sola": {
-   "g": "alone",
+   "g": "only one, single",
    "t": "adjective"
   },
   "soldi": {
@@ -3480,7 +3480,7 @@
    "t": "noun"
   },
   "stringe": {
-   "g": "shakes, grips",
+   "g": "grips, clutches",
    "t": "verb"
   },
   "studentessa": {
@@ -3568,7 +3568,7 @@
    "t": "adverb"
   },
   "tabellone": {
-   "g": "departures board",
+   "g": "number board",
    "t": "noun"
   },
   "taglia": {
@@ -3580,7 +3580,7 @@
    "t": "noun"
   },
   "tanto": {
-   "g": "so much; often",
+   "g": "anyway, besides",
    "t": "adverb"
   },
   "tapparella": {
@@ -3724,7 +3724,7 @@
    "t": "other"
   },
   "torna": {
-   "g": "returns",
+   "g": "returns; il conto non torna, does not add up",
    "t": "verb"
   },
   "tornato": {
@@ -4074,6 +4074,26 @@
   "olio": {
    "g": "oil",
    "t": "noun"
+  },
+  "c'è": {
+   "g": "there is",
+   "t": "expression"
+  },
+  "c'era": {
+   "g": "there was",
+   "t": "expression"
+  },
+  "dov'è": {
+   "g": "where is",
+   "t": "expression"
+  },
+  "com'è": {
+   "g": "what is it like",
+   "t": "expression"
+  },
+  "all'una": {
+   "g": "at one o'clock",
+   "t": "expression"
   }
  }
 }

@@ -9049,6 +9049,98 @@
   "abita": {
    "g": "lives, has their home",
    "t": "verb"
+  },
+  "sola": {
+   "g": "only one, single",
+   "t": "adjective"
+  },
+  "banco": {
+   "g": "counter",
+   "t": "noun"
+  },
+  "passa": {
+   "g": "passes, goes by; hands over (passare)",
+   "t": "verb"
+  },
+  "prende": {
+   "g": "takes; il telefono prende, the phone gets signal",
+   "t": "verb"
+  },
+  "ricetta": {
+   "g": "prescription",
+   "t": "noun"
+  },
+  "signore": {
+   "g": "ladies (signora)",
+   "t": "noun"
+  },
+  "ricorda": {
+   "g": "remembers",
+   "t": "verb"
+  },
+  "riga": {
+   "g": "line, mark",
+   "t": "noun"
+  },
+  "salta": {
+   "g": "is missed, falls through",
+   "t": "verb"
+  },
+  "tanto": {
+   "g": "anyway, besides",
+   "t": "adverb"
+  },
+  "tabellone": {
+   "g": "number board",
+   "t": "noun"
+  },
+  "rete": {
+   "g": "network, wifi",
+   "t": "noun"
+  },
+  "libera": {
+   "g": "free, available; si libera, frees up",
+   "t": "adjective"
+  },
+  "torna": {
+   "g": "returns; il conto non torna, does not add up",
+   "t": "verb"
+  },
+  "manda": {
+   "g": "sends",
+   "t": "verb"
+  },
+  "libreria": {
+   "g": "bookshelf",
+   "t": "noun"
+  },
+  "ora": {
+   "g": "hour",
+   "t": "noun"
+  },
+  "stringe": {
+   "g": "grips, clutches",
+   "t": "verb"
+  },
+  "c'è": {
+   "g": "there is",
+   "t": "expression"
+  },
+  "c'era": {
+   "g": "there was",
+   "t": "expression"
+  },
+  "dov'è": {
+   "g": "where is",
+   "t": "expression"
+  },
+  "com'è": {
+   "g": "what is it like",
+   "t": "expression"
+  },
+  "all'una": {
+   "g": "at one o'clock",
+   "t": "expression"
   }
  }
 }
