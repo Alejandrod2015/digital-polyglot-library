@@ -26,7 +26,8 @@
  *    glosado en un bundle hermano del mismo idioma (`mientras`, `algo`,
  *    `tan`), y copiarlo es gratis y consistente. Solo lo que no existe en
  *    ninguna parte se busca en `scripts/_newGlosses.json`, escrito a mano.
- * 3. UNA COPIA NO VALE SI TRAE LA FRASE DE OTRO JOURNEY. El copiador va por
+ * 3. GLOSA EN CONTEXTO. Una glosa no define la PALABRA, define lo que esa
+ *    palabra significa EN LA FRASE donde el alumno la toca. El copiador va por
  *    PALABRA y no mira la oracion, asi que arrastra el sentido que la palabra
  *    tenia ALLI. `cerrado` llego como "closed" desde el Friends de Colombia y
  *    cayo en "huele a cerrado", que es el olor de un sitio sin abrir; `horno`

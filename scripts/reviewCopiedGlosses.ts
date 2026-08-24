@@ -2,8 +2,9 @@
  * Vuelca cada glosa COPIADA de un bundle hermano junto a la frase de ESTE
  * journey donde cae, para leerlas una a una.
  *
- * Existe porque `rebuildTapGlosses.ts` copia por PALABRA y no mira la oracion
- * (regla 3 de su cabecera). Su porton mecanico caza solo las copias que CITAN
+ * Existe por la regla GLOSA EN CONTEXTO: la definicion sale de la frase de la
+ * historia, no del diccionario. `rebuildTapGlosses.ts` copia por PALABRA y no
+ * mira la oracion (regla 3 de su cabecera). Su porton mecanico caza solo las copias que CITAN
  * su expresion; las que traen otro sentido sin marca ninguna (`caja` como "a
  * hand drum" cayendo sobre la caja del hielo) solo se ven leyendo. Y el
  * informe de rebuild dice "al dia" igual, porque comprueba que HAYA glosa, no
