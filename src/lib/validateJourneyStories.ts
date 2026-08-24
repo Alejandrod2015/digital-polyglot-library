@@ -495,10 +495,20 @@ export function validateJourneyStories(
   // que lo destapo, que seria calibrar la vara sobre lo que tiene que aprobar.
   const MEDIA_MINIMA: Record<string, number> = { A0: 2.5, A1: 1.6 };
   // La media sola se maquilla: una palabra en nueve historias tapa a nueve que
-  // salen una vez. Asi que la cola tambien se mide. Tope medido igual que el
-  // suelo: los publicados bajo tope de dos dejan entre el 26% y el 34% de sus
-  // portables con un solo encuentro, asi que 30% corta por el medio y aprieta.
-  const TOPE_COLA = 0.30;
+  // salen una vez. Asi que la cola tambien se mide.
+  //
+  // POR NIVEL, como el suelo (2026-08-24). El 0,30 salio de los A0 y valia solo
+  // para A0: medido con la formula de este check sobre los 20 journeys del
+  // catalogo, los A0 de referencia dan 27-31% (Traveler ES latam 30, Friends ES
+  // spain 31, Traveler DE 29, Friends IT 27) y ningun journey de A1 en adelante
+  // se acerca: el UNICO A1 publicado (Traveler ES spain) deja el 69%, y los
+  // drafts van de 52 a 83. Aplicar el 30% a un A1 era pedirle lo que no ha
+  // hecho ningun A1, el mismo error que el suelo de 2,5 extrapolado del A0
+  // ([[project_journey_ptbr_a1]]). Tope A1 = 0,70, por encima del publicado,
+  // que es el mismo criterio con el que el suelo se puso por debajo de el; y a
+  // proposito NO el 62% del journey que lo destapo, que seria calibrar la vara
+  // sobre lo que tiene que aprobar. Donde no hay publicado no se mide.
+  const TOPE_COLA_POR_NIVEL: Record<string, number> = { A0: 0.30, A1: 0.70 };
   // A las portables se les pide el MISMO suelo medido del nivel, no el ideal de
   // 4: el 3,0 salió de journeys publicados que no marcan ancladas, así que
   // exigir 4 sería inventar un número. Lo que cambia es QUÉ entra en la media.
@@ -535,13 +545,15 @@ export function validateJourneyStories(
       const okMedia = media >= pide;
       const okCuota = cuota <= TOPE_ANCLADAS;
       const cola = port.length ? unaVez / port.length : 0;
-      const okCola = cola <= TOPE_COLA;
+      const topeCola = TOPE_COLA_POR_NIVEL[level];
+      const okCola = topeCola === undefined || cola <= topeCola;
       push("journey-vocab-recirculation",
-        `Las portables se reencuentran (media ${pide} o mas en ${level}) y las ancladas no pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`,
+        `Las portables se reencuentran (media ${pide} o mas en ${level}), las ancladas no pasan del ${Math.round(TOPE_ANCLADAS * 100)}% y la cola no pasa del ${topeCola === undefined ? "?" : Math.round(topeCola * 100)}%`,
         okMedia && okCuota && okCola,
         `portables: media ${media.toFixed(2)} sobre ${port.length} plazas · ${unaVez} salen una sola vez` +
         ` | ancladas: ${anc.length}/${todas.length} (${Math.round(cuota * 100)}%)` +
-        ` | cola: ${unaVez}/${port.length} portables con un solo encuentro (${Math.round(cola * 100)}%, tope ${Math.round(TOPE_COLA * 100)}%)` +
+        ` | cola: ${unaVez}/${port.length} portables con un solo encuentro (${Math.round(cola * 100)}%` +
+        `${topeCola === undefined ? ", sin liston medido para este nivel" : `, tope ${Math.round(topeCola * 100)}%`})` +
         `${okCuota ? "" : `; pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`}`);
     }
   }

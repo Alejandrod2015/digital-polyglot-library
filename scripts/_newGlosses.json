@@ -2449,6 +2449,30 @@
   "caixa": {
    "g": "box; also till",
    "t": "noun"
+  },
+  "fazer": {
+   "g": "to do, to make; fazer sol, to be sunny",
+   "t": "verb"
+  },
+  "motorista": {
+   "g": "driver of the coach",
+   "t": "noun"
+  },
+  "perguntou": {
+   "g": "asked (perguntar)",
+   "t": "verb"
+  },
+  "ofereceu": {
+   "g": "offered (oferecer)",
+   "t": "verb"
+  },
+  "hóspede": {
+   "g": "guest staying at the guesthouse",
+   "t": "noun"
+  },
+  "dormir": {
+   "g": "to sleep",
+   "t": "verb"
   }
  }
 }

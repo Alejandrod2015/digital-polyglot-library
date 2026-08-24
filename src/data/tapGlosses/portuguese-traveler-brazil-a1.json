@@ -3878,6 +3878,42 @@
   "úmido": {
    "g": "damp",
    "t": "adjective"
+  },
+  "aponta": {
+   "g": "points (apontar)",
+   "t": "verb"
+  },
+  "dormir": {
+   "g": "to sleep",
+   "t": "verb"
+  },
+  "fazer": {
+   "g": "to do, to make; fazer sol, to be sunny",
+   "t": "verb"
+  },
+  "hóspede": {
+   "g": "guest staying at the guesthouse",
+   "t": "noun"
+  },
+  "motorista": {
+   "g": "driver of the coach",
+   "t": "noun"
+  },
+  "oferece": {
+   "g": "offers (oferecer)",
+   "t": "verb"
+  },
+  "ofereceu": {
+   "g": "offered (oferecer)",
+   "t": "verb"
+  },
+  "perguntou": {
+   "g": "asked (perguntar)",
+   "t": "verb"
+  },
+  "tira": {
+   "g": "takes out, takes off (tirar)",
+   "t": "verb"
   }
  }
 }
