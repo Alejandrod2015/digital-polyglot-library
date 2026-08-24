@@ -88,7 +88,7 @@
    "t": "verb"
   },
   "aggiusto": {
-   "g": "fix (aggiustare)",
+   "g": "I fix",
    "t": "verb"
   },
   "agosto": {
@@ -100,7 +100,7 @@
    "t": "preposition"
   },
   "aiuta": {
-   "g": "help (aiutare)",
+   "g": "helps",
    "t": "verb"
   },
   "al": {
@@ -1052,7 +1052,7 @@
    "t": "verb"
   },
   "dimenticato": {
-   "g": "forget (dimenticare)",
+   "g": "forgotten (dimenticare)",
    "t": "verb"
   },
   "discorso": {
@@ -1136,7 +1136,7 @@
    "t": "verb"
   },
   "dormire": {
-   "g": "sleeps",
+   "g": "to sleep",
    "t": "verb"
   },
   "dormo": {
@@ -1716,7 +1716,7 @@
    "t": "verb"
   },
   "lasciato": {
-   "g": "leave (lasciare)",
+   "g": "let, allowed (lasciare)",
    "t": "verb"
   },
   "latte": {
@@ -1724,7 +1724,7 @@
    "t": "noun"
   },
   "lava": {
-   "g": "washes yourself",
+   "g": "washes",
    "t": "verb"
   },
   "lavagna": {
@@ -1988,7 +1988,7 @@
    "t": "adverb"
   },
   "mentito": {
-   "g": "lie (mentire)",
+   "g": "lied (mentire)",
    "t": "verb"
   },
   "menù": {
@@ -2316,7 +2316,7 @@
    "t": "verb"
   },
   "pago": {
-   "g": "pay (pagare)",
+   "g": "I pay",
    "t": "verb"
   },
   "palazzo": {
@@ -2500,7 +2500,7 @@
    "t": "noun"
   },
   "persa": {
-   "g": "gets lost",
+   "g": "got lost (perdersi)",
    "t": "verb"
   },
   "perse": {
@@ -2520,7 +2520,7 @@
    "t": "verb"
   },
   "pettina": {
-   "g": "combs your hair",
+   "g": "combs his hair (pettinarsi)",
    "t": "verb"
   },
   "petto": {
@@ -2820,7 +2820,7 @@
    "t": "verb"
   },
   "raccontava": {
-   "g": "tells",
+   "g": "used to tell",
    "t": "verb"
   },
   "rade": {
@@ -2952,7 +2952,7 @@
    "t": "verb"
   },
   "riposare": {
-   "g": "rests",
+   "g": "to rest",
    "t": "verb"
   },
   "riposo": {
@@ -3180,7 +3180,7 @@
    "t": "verb"
   },
   "seguire": {
-   "g": "follows",
+   "g": "to follow",
    "t": "verb"
   },
   "sei": {
@@ -3368,8 +3368,8 @@
    "t": "noun"
   },
   "spedita": {
-   "g": "post (spedire)",
-   "t": "verb"
+   "g": "quickly, without delay (spedito)",
+   "t": "adjective"
   },
   "spegne": {
    "g": "switches off",
@@ -3468,7 +3468,7 @@
    "t": "noun"
   },
   "storia": {
-   "g": "story, and also history",
+   "g": "story",
    "t": "noun"
   },
   "storto": {
@@ -3980,7 +3980,7 @@
    "t": "noun"
   },
   "vinto": {
-   "g": "win (vincere)",
+   "g": "won (vincere)",
    "t": "verb"
   },
   "viso": {
@@ -3988,7 +3988,7 @@
    "t": "noun"
   },
   "visto": {
-   "g": "see (vedere)",
+   "g": "seen (vedere)",
    "t": "verb"
   },
   "voce": {

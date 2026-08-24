@@ -6559,7 +6559,7 @@
    "t": "verb"
   },
   "aggiusto": {
-   "g": "fix (aggiustare)",
+   "g": "I fix",
    "t": "verb"
   },
   "agosto": {
@@ -6567,7 +6567,7 @@
    "t": "noun"
   },
   "aiuta": {
-   "g": "help (aiutare)",
+   "g": "helps",
    "t": "verb"
   },
   "alberi": {
@@ -6863,7 +6863,7 @@
    "t": "adjective"
   },
   "dimenticato": {
-   "g": "forget (dimenticare)",
+   "g": "forgotten (dimenticare)",
    "t": "verb"
   },
   "discorso": {
@@ -6899,7 +6899,7 @@
    "t": "verb"
   },
   "dormire": {
-   "g": "sleeps",
+   "g": "to sleep",
    "t": "verb"
   },
   "dottore": {
@@ -7027,11 +7027,11 @@
    "t": "noun"
   },
   "lasciato": {
-   "g": "leave (lasciare)",
+   "g": "let, allowed (lasciare)",
    "t": "verb"
   },
   "lava": {
-   "g": "washes yourself",
+   "g": "washes",
    "t": "verb"
   },
   "lavagna": {
@@ -7131,7 +7131,7 @@
    "t": "noun"
   },
   "mentito": {
-   "g": "lie (mentire)",
+   "g": "lied (mentire)",
    "t": "verb"
   },
   "mercoledì": {
@@ -7203,7 +7203,7 @@
    "t": "noun"
   },
   "pago": {
-   "g": "pay (pagare)",
+   "g": "I pay",
    "t": "verb"
   },
   "palazzo": {
@@ -7287,11 +7287,11 @@
    "t": "noun"
   },
   "persa": {
-   "g": "gets lost",
+   "g": "got lost (perdersi)",
    "t": "verb"
   },
   "pettina": {
-   "g": "combs your hair",
+   "g": "combs his hair (pettinarsi)",
    "t": "verb"
   },
   "petto": {
@@ -7367,7 +7367,7 @@
    "t": "adjective"
   },
   "raccontava": {
-   "g": "tells",
+   "g": "used to tell",
    "t": "verb"
   },
   "rade": {
@@ -7403,7 +7403,7 @@
    "t": "verb"
   },
   "riposare": {
-   "g": "rests",
+   "g": "to rest",
    "t": "verb"
   },
   "riposo": {
@@ -7491,7 +7491,7 @@
    "t": "noun"
   },
   "seguire": {
-   "g": "follows",
+   "g": "to follow",
    "t": "verb"
   },
   "semaforo": {
@@ -7543,8 +7543,8 @@
    "t": "noun"
   },
   "spedita": {
-   "g": "post (spedire)",
-   "t": "verb"
+   "g": "quickly, without delay (spedito)",
+   "t": "adjective"
   },
   "sporca": {
    "g": "dirty (sporco)",
@@ -7575,7 +7575,7 @@
    "t": "noun"
   },
   "storia": {
-   "g": "story, and also history",
+   "g": "story",
    "t": "noun"
   },
   "studentessa": {
@@ -7699,11 +7699,11 @@
    "t": "verb"
   },
   "vinto": {
-   "g": "win (vincere)",
+   "g": "won (vincere)",
    "t": "verb"
   },
   "visto": {
-   "g": "see (vedere)",
+   "g": "seen (vedere)",
    "t": "verb"
   },
   "zia": {
