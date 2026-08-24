@@ -94,7 +94,7 @@ const FAMILIES: Record<string, string[]> = {
  * Kahlo) sí se glosan, y viven en el fichero manual como cualquier otra.
  */
 const CHARACTER_NAMES =
-  /^(iv[áa]n|lupe|javier|rafa|marta|elena|kanek|to[ñn]o|sof[íi]a|luc[íi]a|chela|timo|nadia|pablo|carmen|rosa|mateo|nico|ana|marina|nerea|greve|ole|nora|merle|bia|tiago|caio|lia|nara|vitor|dani|teo|irene|dario|gaia|livia|quique|paco|juli[áa]n)$/i;
+  /^(iv[áa]n|lupe|javier|rafa|marta|elena|kanek|to[ñn]o|sof[íi]a|luc[íi]a|chela|timo|nadia|pablo|carmen|rosa|mateo|nico|ana|marina|nerea|greve|ole|nora|merle|bia|tiago|caio|lia|nara|vitor|dani|teo|irene|dario|gaia|livia|quique|paco|juli[áa]n|[áa]lvaro)$/i;
 
 /**
  * COPIA EXACTA de lo que hace el lector, en dos pasos. Inventarme el corte

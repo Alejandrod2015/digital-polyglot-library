@@ -8121,6 +8121,34 @@
   "prudente": {
    "g": "careful, not going too far",
    "t": "adjective"
+  },
+  "huerto": {
+   "g": "a vegetable plot, a smallholding",
+   "t": "noun"
+  },
+  "semillas": {
+   "g": "seeds",
+   "t": "noun"
+  },
+  "llaves": {
+   "g": "keys",
+   "t": "noun"
+  },
+  "diciembre": {
+   "g": "December",
+   "t": "noun"
+  },
+  "nombrar": {
+   "g": "to bring up, to mention",
+   "t": "verb"
+  },
+  "rompió": {
+   "g": "tore up (romper)",
+   "t": "verb"
+  },
+  "octubre": {
+   "g": "October",
+   "t": "noun"
   }
  }
 }

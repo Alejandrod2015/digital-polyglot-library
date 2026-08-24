@@ -1,0 +1,376 @@
+[
+ {
+  "topic": "storms-and-the-sea",
+  "slotIndex": 3,
+  "title": "Media calle con manguera",
+  "slug": "media-calle-con-manguera",
+  "arcType": "harmonic-close",
+  "synopsis": "Después del temporal el pueblo no espera a que venga nadie de fuera: sale a la calle con lo que tiene en casa y se reparte el trabajo sin que nadie lo mande. Irene baja sin saber dónde ponerse y alguien le pasa una manguera como si llevara años haciéndolo. Al final de la mañana, con el lodo ya en la papelera, entiende por qué el mismo pueblo aguanta cada febrero.",
+  "text": "Después del levante, la limpieza empieza antes de las nueve. Rocío reparte guantes y grita quién friega y quién recoge. El lodo y el barro llegan hasta la puerta de la panadería.\n\n“Tú a la manguera, guapa, que eso no tiene ciencia”, le suelta. “Y del cruce para abajo lo hacemos luego”. Irene abre el grifo y frota lo que puede hacia el desagüe.\n\nUn vecino trae detergente y esponja para las farolas. Otro sacude las cortinas y baja la cesta. La papelera se llena de algas, grava y basura enseguida.\n\n“Esto es cada año, y cada año se junta la misma gente en la rotonda”. Nota el apoyo raro de trabajar sin saber para quién. A media mañana sabe de qué casa es cada cubeta.\n\n“Deja el trapeado, anda, y toma un café que aún quema”. El contenedor está lleno y la calle vuelve a verse. Irene sube con las manos moradas, pone en agua las dos semillas de Álvaro y esa colaboración le dura la tarde.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "fregar",
+    "surface": "friega",
+    "definition": "To scrub; to clean a floor hard with water and a brush."
+   },
+   {
+    "type": "noun",
+    "word": "manguera",
+    "definition": "Hose; the long rubber tube that carries water to wash things."
+   },
+   {
+    "type": "noun",
+    "word": "grifo",
+    "definition": "Tap; the handle you turn to make water come out."
+   },
+   {
+    "type": "noun",
+    "word": "detergente",
+    "definition": "Detergent; the soap you use to wash floors and clothes."
+   },
+   {
+    "type": "noun",
+    "word": "esponja",
+    "definition": "Sponge; the soft thing full of holes you clean with."
+   },
+   {
+    "type": "verb",
+    "word": "sacudir",
+    "surface": "sacude",
+    "definition": "To shake out; to move a cloth hard so the dust falls."
+   },
+   {
+    "type": "noun",
+    "word": "cortina",
+    "surface": "cortinas",
+    "definition": "Curtain; the cloth you pull across a window to cover it."
+   },
+   {
+    "type": "noun",
+    "word": "papelera",
+    "definition": "Bin; the open box in a street where people put rubbish."
+   },
+   {
+    "type": "noun",
+    "word": "contenedor",
+    "definition": "Skip; the big metal box in a street for heavy rubbish."
+   },
+   {
+    "type": "noun",
+    "word": "apoyo",
+    "definition": "Support; the help other people give you when you need it."
+   },
+   {
+    "type": "noun",
+    "word": "colaboración",
+    "definition": "Team work; a job that many people do together at once."
+   },
+   {
+    "type": "noun",
+    "word": "limpieza",
+    "definition": "Clean-up; the work of making a dirty place clean again."
+   },
+   {
+    "type": "noun",
+    "word": "cruce",
+    "definition": "Crossroads; the place where two streets cross each other."
+   },
+   {
+    "type": "noun",
+    "word": "rotonda",
+    "definition": "Roundabout; the circle of road where cars turn at a junction."
+   },
+   {
+    "type": "verb",
+    "word": "frotar",
+    "surface": "frota",
+    "definition": "To rub; to move a thing hard over a surface to clean it."
+   },
+   {
+    "type": "adjective",
+    "word": "morado",
+    "surface": "moradas",
+    "definition": "Purple; the dark red colour hands go with cold water."
+   },
+   {
+    "type": "noun",
+    "word": "alga",
+    "surface": "algas",
+    "definition": "Seaweed; the green sea plant the waves leave on the sand."
+   },
+   {
+    "type": "noun",
+    "word": "barro",
+    "definition": "Mud; wet earth that sticks to your shoes after the rain."
+   },
+   {
+    "type": "verb",
+    "word": "trapear",
+    "surface": "trapeado",
+    "definition": "To mop; to clean a floor with a wet cloth on a stick."
+   },
+   {
+    "type": "verb",
+    "word": "juntarse",
+    "surface": "junta",
+    "definition": "To gather; to come together in the same place as others."
+   },
+   {
+    "type": "expression",
+    "word": "no tiene ciencia",
+    "definition": "It is not difficult; anybody can do it without being taught."
+   }
+  ]
+ },
+ {
+  "topic": "jobs-and-wages",
+  "slotIndex": 1,
+  "title": "El año tiene dos mitades",
+  "slug": "el-ano-tiene-dos-mitades",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Hasta hoy Irene creía que el invierno aquí era el mismo año con menos ruido. Nico vuelve de Málaga sin nada que hacer hasta Semana Santa y le pone palabras a lo que ella no había mirado: aquí unos meses se trabaja el doble y los otros se estira lo guardado. La cuenta que hace en voz baja le sale parecida a lo que él gana en toda una campaña, y eso la deja rara.",
+  "text": "El camión deja a Nico y Rocío baja con la manta. Nico trabajaba en una empresa de Málaga y acabó su contrato. Irene nota el peso frío de la cesta.\n\n“Aquí en enero no hay empleo ni para los de siempre”. “La plantilla se queda en casa hasta Semana Santa, sin jornada ni descanso”. Ella cobra igual todo el año, con sus clientes, tarifa y factura.\n\nLe cuenta la carga de las seis y el oficio. Álvaro baja del huerto y dice que él vive de la cebolla, no de agosto. “En otoño el campo pide manos para la aceituna, y luego nada”.\n\n“Nosotros no ahorramos, guapa, nosotros estiramos”, suelta Rocío. Suma lo que gasta y apunta la cifra en una lista. La cantidad se parece a lo que gana Nico.\n\n“¿Y tú en qué trabajas?”, pregunta Nico con un gesto lento. Irene explica su tarea, su plazo y su esfuerzo, con otro tono. El año se parte en dos mitades y le queda una envidia rara.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "empresa",
+    "definition": "Company; a business with workers, an office and people who pay it."
+   },
+   {
+    "type": "noun",
+    "word": "contrato",
+    "definition": "Contract; the paper that says how long you work and for what."
+   },
+   {
+    "type": "noun",
+    "word": "camión",
+    "definition": "Lorry; the big vehicle that carries goods along the road."
+   },
+   {
+    "type": "noun",
+    "word": "peso",
+    "definition": "Weight; how heavy a thing is when you lift it."
+   },
+   {
+    "type": "noun",
+    "word": "empleo",
+    "definition": "Job; paid work that somebody gives you and you go to."
+   },
+   {
+    "type": "noun",
+    "word": "plantilla",
+    "definition": "Staff; all the people who work for one place together."
+   },
+   {
+    "type": "noun",
+    "word": "cliente",
+    "surface": "clientes",
+    "definition": "Customer; the person or company that pays you for your work."
+   },
+   {
+    "type": "noun",
+    "word": "jornada",
+    "definition": "Working day; the hours you work from morning until you stop."
+   },
+   {
+    "type": "noun",
+    "word": "carga",
+    "definition": "Loading; putting boxes or goods into a lorry or a boat."
+   },
+   {
+    "type": "noun",
+    "word": "descanso",
+    "definition": "Break; the time when you stop working and sit down."
+   },
+   {
+    "type": "noun",
+    "word": "otoño",
+    "definition": "Autumn; the season after summer, when the leaves fall down."
+   },
+   {
+    "type": "noun",
+    "word": "campo",
+    "definition": "Countryside; the open land outside town where food is grown."
+   },
+   {
+    "type": "noun",
+    "word": "oficio",
+    "definition": "Trade; the practical job you learn by doing it with your hands."
+   },
+   {
+    "type": "verb",
+    "word": "ahorrar",
+    "surface": "ahorramos",
+    "definition": "To save; to keep money instead of spending it now."
+   },
+   {
+    "type": "verb",
+    "word": "sumar",
+    "surface": "suma",
+    "definition": "To add up; to put numbers together to see the total."
+   },
+   {
+    "type": "verb",
+    "word": "gastar",
+    "surface": "gasta",
+    "definition": "To spend; to use money and not have it any more."
+   },
+   {
+    "type": "noun",
+    "word": "cantidad",
+    "definition": "Amount; how much money or how much of something there is."
+   },
+   {
+    "type": "verb",
+    "word": "ganar",
+    "surface": "gana",
+    "definition": "To earn; to get money because you have done some work."
+   },
+   {
+    "type": "noun",
+    "word": "aceituna",
+    "definition": "Olive; the small green or black fruit picked in autumn."
+   },
+   {
+    "type": "noun",
+    "word": "tarea",
+    "definition": "Task; one piece of work you have to finish."
+   },
+   {
+    "type": "noun",
+    "word": "envidia",
+    "definition": "Envy; the bad feeling when somebody else has what you want."
+   },
+   {
+    "type": "noun",
+    "word": "esfuerzo",
+    "definition": "Effort; the hard work you put in to get something done."
+   }
+  ]
+ },
+ {
+  "topic": "winter-and-empty-houses",
+  "slotIndex": 1,
+  "title": "Ya no queda nadie",
+  "slug": "ya-no-queda-nadie",
+  "arcType": "reframe-turn",
+  "synopsis": "Irene se queda en Nerja su primer invierno y descubre que el pueblo de agosto y el de enero no son el mismo sitio. Rocío sube a decirle que el frío no entra por donde ella cree. Esa noche, debajo de la lámpara, aparece en el techo una mancha blanda que en verano no estaba, y al día siguiente aprende que ni siquiera es suya del todo.",
+  "text": "Irene vive encima de la panadería de Nerja y la mitad de las contraventanas siguen cerradas. Rocío, la vecina de arriba, se limpia los guantes en el felpudo del umbral. El armario del pasillo huele a pintura vieja y a cerrado.\n\n“Enciende la estufa, hija, que el frío se mete en los muebles y en la manta”. “Y comprueba el interruptor, que está roto desde el otoño”. Cuelga las tres llaves de diciembre detrás de la puerta, se sienta en el sillón, bajo la lámpara, y nota una corriente.\n\nEn el techo hay una mancha del tamaño de un plato, blanda al tacto. Pone una cubeta debajo. “Lleva creciendo desde noviembre y yo sin verlo”, dice con prisa.\n\nSube al terrado y encuentra una cadena, un letrero y un anuncio de la comunidad. Rocío la vigila desde el rellano, sin nombrar el papel que rompió en octubre, y le advierte con un gesto lento. “Eso es obra de los cinco, guapa, con su cuota, su reunión y su voto”.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "mitad",
+    "definition": "Half; one of the two equal parts of something bigger."
+   },
+   {
+    "type": "noun",
+    "word": "contraventana",
+    "surface": "contraventanas",
+    "definition": "Shutter; the wooden panel you close over a window from outside."
+   },
+   {
+    "type": "noun",
+    "word": "umbral",
+    "definition": "Doorway; the step and frame you cross to enter a home."
+   },
+   {
+    "type": "noun",
+    "word": "felpudo",
+    "definition": "Doormat; the mat at a door where you clean your shoes."
+   },
+   {
+    "type": "noun",
+    "word": "estufa",
+    "definition": "Heater; the small machine that makes a room warm in winter."
+   },
+   {
+    "type": "noun",
+    "word": "mueble",
+    "surface": "muebles",
+    "definition": "Piece of furniture; a table, a chair or a cupboard in a house."
+   },
+   {
+    "type": "noun",
+    "word": "manta",
+    "definition": "Blanket; the warm cloth you put over you when you are cold."
+   },
+   {
+    "type": "verb",
+    "word": "comprobar",
+    "surface": "Comprueba",
+    "definition": "To check; to look at something to be sure it is right."
+   },
+   {
+    "type": "noun",
+    "word": "pasillo",
+    "definition": "Corridor; the long narrow space that joins the rooms of a house."
+   },
+   {
+    "type": "noun",
+    "word": "interruptor",
+    "definition": "Switch; the small button on a wall that turns a light on."
+   },
+   {
+    "type": "noun",
+    "word": "guante",
+    "surface": "guantes",
+    "definition": "Glove; the piece of clothing that keeps one hand warm."
+   },
+   {
+    "type": "noun",
+    "word": "lámpara",
+    "definition": "Lamp; the light you put next to a chair or a bed."
+   },
+   {
+    "type": "noun",
+    "word": "sillón",
+    "definition": "Armchair; the big soft chair with sides for your arms."
+   },
+   {
+    "type": "noun",
+    "word": "mancha",
+    "definition": "Stain; a dark mark on a wall, a cloth or the floor."
+   },
+   {
+    "type": "adjective",
+    "word": "blando",
+    "surface": "blanda",
+    "definition": "Soft; easy to press with a finger, not hard at all."
+   },
+   {
+    "type": "noun",
+    "word": "tamaño",
+    "definition": "Size; how big or how small a thing is."
+   },
+   {
+    "type": "verb",
+    "word": "crecer",
+    "surface": "creciendo",
+    "definition": "To grow; to become bigger little by little over time."
+   },
+   {
+    "type": "noun",
+    "word": "cadena",
+    "definition": "Chain; the line of metal rings that keeps a door shut."
+   },
+   {
+    "type": "noun",
+    "word": "letrero",
+    "definition": "Sign; a board with words on it that tells you something."
+   },
+   {
+    "type": "verb",
+    "word": "vigilar",
+    "surface": "vigila",
+    "definition": "To watch; to keep your eyes on somebody or something."
+   },
+   {
+    "type": "verb",
+    "word": "advertir",
+    "surface": "advierte",
+    "definition": "To warn; to tell somebody about a problem before it happens."
+   }
+  ]
+ }
+]
