@@ -1,0 +1,370 @@
+[
+ {
+  "topic": "orchards-and-baskets",
+  "slotIndex": 1,
+  "title": "Cada octubre baja la fruta",
+  "slug": "cada-octubre-baja-la-fruta",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Irene lleva tres meses creyendo que aquí se vive de la playa. Un canasto de tierra fresca en la puerta del bar le abre un pueblo entero que está a diez minutos y que no ha mirado a un turista en su vida: su agua, su calendario y su cebolla. Las dos maneras de vivir se cruzan cada octubre en la misma puerta, se saludan y no se preguntan nada.",
+  "text": "Cada octubre baja alguien por el sendero con las manos llenas de tierra. Álvaro, el del huerto de arriba, arrastra un canasto hasta la puerta y lo deja en el suelo. Irene mira las verduras que asoman por el borde y aguarda al lado.\n\n“Si quieres verlo, sube conmigo, que hoy toca regar y el aljibe está hasta arriba”, dice Álvaro. “Abajo se vive del agosto; aquí arriba se vive de la cebolla y ya está”, añade. El camino sube entre hierba alta y deja el mar abajo en diez minutos.\n\nArriba hay una parcela larga, con perejil, un limonero torcido y una calabaza. Álvaro le entrega una raíz seca y un grano diminuto en la palma abierta. “Toca la rama del limonero, guapa, que pincha bastante menos de lo que parece”, dice.\n\nIrene baja con la falda sucia y el canasto lleno de zanahorias y pepinos. Desde la loma se ve la playa vacía y las sombrillas guardadas. Los dos pueblos llevan cien años a diez minutos.",
+  "vocab": [
+   {
+    "word": "sendero",
+    "type": "noun",
+    "definition": "Narrow path up a hill, made by people walking."
+   },
+   {
+    "word": "mar",
+    "type": "noun",
+    "definition": "The salt water that covers most of the world."
+   },
+   {
+    "word": "tierra",
+    "type": "noun",
+    "definition": "The brown earth that plants put their roots into."
+   },
+   {
+    "word": "huerto",
+    "type": "noun",
+    "definition": "Small piece of land where a family grows vegetables."
+   },
+   {
+    "word": "verdura",
+    "surface": "verduras",
+    "type": "noun",
+    "definition": "Any green plant that people grow in order to eat."
+   },
+   {
+    "word": "regar",
+    "type": "verb",
+    "definition": "To pour water over plants so that they keep growing."
+   },
+   {
+    "word": "aljibe",
+    "type": "noun",
+    "definition": "Stone tank where a house keeps rain water."
+   },
+   {
+    "word": "hasta arriba",
+    "type": "expression",
+    "definition": "Full right to the top, with no room left."
+   },
+   {
+    "word": "cebolla",
+    "type": "noun",
+    "definition": "Round white vegetable with layers that makes you cry."
+   },
+   {
+    "word": "hierba",
+    "type": "noun",
+    "definition": "The green plants that cover the ground in a field."
+   },
+   {
+    "word": "perejil",
+    "type": "noun",
+    "definition": "Small green herb with flat leaves, cut over food."
+   },
+   {
+    "word": "limonero",
+    "type": "noun",
+    "definition": "Tree that gives lemons, common in gardens down south."
+   },
+   {
+    "word": "calabaza",
+    "type": "noun",
+    "definition": "Big heavy orange vegetable with a very hard skin."
+   },
+   {
+    "word": "raíz",
+    "type": "noun",
+    "definition": "The part of a plant that stays under the ground."
+   },
+   {
+    "word": "grano",
+    "type": "noun",
+    "definition": "One small hard piece of rice, salt or seed."
+   },
+   {
+    "word": "rama",
+    "type": "noun",
+    "definition": "One of the arms of a tree, with leaves on it."
+   },
+   {
+    "word": "falda",
+    "type": "noun",
+    "definition": "Piece of clothing that hangs from the waist down."
+   },
+   {
+    "word": "sucio",
+    "surface": "sucia",
+    "type": "adjective",
+    "definition": "Dirty, with earth or dust all over it."
+   },
+   {
+    "word": "zanahoria",
+    "surface": "zanahorias",
+    "type": "noun",
+    "definition": "Long orange vegetable that grows under the ground."
+   },
+   {
+    "word": "pepino",
+    "surface": "pepinos",
+    "type": "noun",
+    "definition": "Long green vegetable that people eat raw in salads."
+   },
+   {
+    "word": "loma",
+    "type": "noun",
+    "definition": "Low round hill, softer and lower than a mountain."
+   },
+   {
+    "word": "al lado",
+    "type": "expression",
+    "surface": "al lado",
+    "definition": "Right next to it, with nothing in between."
+   }
+  ]
+ },
+ {
+  "topic": "orchards-and-baskets",
+  "slotIndex": 2,
+  "title": "El atajo no era un atajo",
+  "slug": "el-atajo-no-era-un-atajo",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Irene sube sola al huerto por el camino corto que le nombraron de pasada y descubre que aquí un atajo se aprende andándolo, no oyéndolo. Entre barrancos y cabras pierde una hora y llega arriba con las botas rotas y la boca seca. Lo que la para en el cerro no es el paisaje: es lo que ve abajo, en la puerta de su propio portal, mientras nadie sabe que está mirando.",
+  "text": "El atajo que Álvaro le nombró ayer no aparece por ninguna parte. Irene sube sola entre hierba alta y deja el sendero bueno a la izquierda. Una cabra la mira desde una roca y no se mueve del camino.\n\n“¡Por ahí no, guapa, que eso baja al barranco!”, le grita Álvaro desde el prado. “¡Busca la arboleda de arriba y no te salgas de ahí!”. El desvío la deja en un arroyo seco, con la boca seca también.\n\nSigue la huella de una rueda por la cuneta y se agarra a un tronco áspero. “Has tardado una hora en lo que se hace en veinte minutos”, dice Álvaro, y se ríe. “Un atajo aquí no se cuenta de pasada, hija; se anda una vez contigo y ya está”.\n\nÁlvaro baja con las ovejas y ella se queda en el cerro, mirando el horizonte. Abajo, delante de su casa, hay un coche parado y dos personas de pie. Una mira su ventana y la otra anota algo en una carpeta.",
+  "vocab": [
+   {
+    "word": "atajo",
+    "type": "noun",
+    "definition": "Short way that gets you there faster than the road."
+   },
+   {
+    "word": "de pasada",
+    "type": "expression",
+    "definition": "Said quickly inside something else, without stopping to explain."
+   },
+   {
+    "word": "a la izquierda",
+    "type": "expression",
+    "definition": "On the left hand side, and not on the right."
+   },
+   {
+    "word": "cabra",
+    "type": "noun",
+    "definition": "Farm animal with horns that climbs rocks and eats grass."
+   },
+   {
+    "word": "roca",
+    "type": "noun",
+    "definition": "Big hard stone that sits in the ground."
+   },
+   {
+    "word": "camino",
+    "type": "noun",
+    "definition": "The way you take on foot from one place to another."
+   },
+   {
+    "word": "barranco",
+    "type": "noun",
+    "definition": "Deep narrow cut in a hill where rain water runs down."
+   },
+   {
+    "word": "prado",
+    "type": "noun",
+    "definition": "Flat green field where farm animals eat grass."
+   },
+   {
+    "word": "huella",
+    "type": "noun",
+    "definition": "The mark a foot or a wheel leaves on soft ground."
+   },
+   {
+    "word": "rueda",
+    "type": "noun",
+    "definition": "The round part of a car that turns on the road."
+   },
+   {
+    "word": "cuneta",
+    "type": "noun",
+    "definition": "The low ditch at the side of a country road."
+   },
+   {
+    "word": "arboleda",
+    "type": "noun",
+    "definition": "Small group of trees that grow close together."
+   },
+   {
+    "word": "desvío",
+    "type": "noun",
+    "definition": "A turn that takes you off the road you wanted."
+   },
+   {
+    "word": "arroyo",
+    "type": "noun",
+    "definition": "Very small river that runs down the side of a hill."
+   },
+   {
+    "word": "tronco",
+    "type": "noun",
+    "definition": "The thick main body of a tree, from root to branches."
+   },
+   {
+    "word": "oveja",
+    "surface": "ovejas",
+    "type": "noun",
+    "definition": "Farm animal with thick white wool, kept for its milk."
+   },
+   {
+    "word": "cerro",
+    "type": "noun",
+    "definition": "High round hill that stands alone above a town."
+   },
+   {
+    "word": "horizonte",
+    "type": "noun",
+    "definition": "The far line where the sea seems to meet the sky."
+   },
+   {
+    "word": "carpeta",
+    "type": "noun",
+    "definition": "Stiff folder that holds papers together inside it."
+   },
+   {
+    "word": "parar",
+    "surface": "parado",
+    "type": "verb",
+    "definition": "To stop moving and stay in one place for a while."
+   },
+   {
+    "word": "ninguna parte",
+    "surface": "ninguna parte",
+    "type": "expression",
+    "definition": "Nowhere at all; not in any place you look."
+   }
+  ]
+ },
+ {
+  "topic": "orchards-and-baskets",
+  "slotIndex": 3,
+  "title": "Baja con el canasto lleno",
+  "slug": "baja-con-el-canasto-lleno",
+  "arcType": "harmonic-close",
+  "synopsis": "Irene sube al huerto por el camino largo y esta vez llega con las manos por delante: corta, junta, y no pregunta dónde se pone cada cosa. Álvaro le llena el canasto de uvas, peras y lechuga sin contar nada ni pesar nada. La frase que le suelta al despedirse no habla del huerto, y es la primera vez que alguien del pueblo la cuenta para el año que viene.",
+  "text": "Irene sube al huerto por el camino largo y ya no pregunta dónde va cada cosa. Álvaro está de rodillas entre dos filas, con una tijera vieja y un ramo de perejil. Ella se agacha entre las plantas y empieza a cortar por lo bajo.\n\n“Esa lechuga no, guapa, la de al lado, que esta se pasa de amarga”, dice Álvaro. “Y las uvas se cogen por arriba, que si no se rompe la cáscara”, añade. Irene junta las peras y las coloca con calma en el canasto.\n\nEl sol de octubre calienta poco y la brisa huele a tierra húmeda. Álvaro le llena el cesto de espinacas y no cuenta nada ni pesa nada. Le pone encima una pala pequeña y dos semillas envueltas.\n\n“Guarda esas dos para febrero, hija, que las quiero ver puestas en la tierra”, dice. Irene baja despacio con el canasto lleno y la frase dando vueltas. Febrero está a cuatro meses y aquí alguien empieza a contar con ella.",
+  "vocab": [
+   {
+    "word": "por lo bajo",
+    "type": "expression",
+    "definition": "Down at the bottom, close to the ground.",
+    "surface": "por lo bajo"
+   },
+   {
+    "word": "de rodillas",
+    "type": "expression",
+    "definition": "Down on your knees, with your legs bent under you."
+   },
+   {
+    "word": "fila",
+    "surface": "filas",
+    "type": "noun",
+    "definition": "A line of plants set one behind the other."
+   },
+   {
+    "word": "tijera",
+    "type": "noun",
+    "definition": "Tool with two blades that you use to cut things."
+   },
+   {
+    "word": "ramo",
+    "type": "noun",
+    "definition": "A bunch of flowers or herbs held in one hand."
+   },
+   {
+    "word": "lechuga",
+    "type": "noun",
+    "definition": "Big green salad plant with wide soft leaves."
+   },
+   {
+    "word": "amargo",
+    "surface": "amarga",
+    "type": "adjective",
+    "definition": "Bitter, with a sharp taste that is not sweet."
+   },
+   {
+    "word": "uva",
+    "surface": "uvas",
+    "type": "noun",
+    "definition": "Small round green or dark fruit that grows in bunches."
+   },
+   {
+    "word": "cáscara",
+    "type": "noun",
+    "definition": "The thin outer skin of a fruit or of an egg."
+   },
+   {
+    "word": "pera",
+    "surface": "peras",
+    "type": "noun",
+    "definition": "Sweet fruit, wide at the bottom and narrow on top."
+   },
+   {
+    "word": "calentar",
+    "surface": "calienta",
+    "type": "verb",
+    "definition": "To make something warmer than it was before."
+   },
+   {
+    "word": "brisa",
+    "surface": "brisa",
+    "type": "noun",
+    "definition": "Light wind that moves the air without any force."
+   },
+   {
+    "word": "húmedo",
+    "surface": "húmeda",
+    "type": "adjective",
+    "definition": "A little wet, with water still held inside it."
+   },
+   {
+    "word": "espinaca",
+    "surface": "espinacas",
+    "type": "noun",
+    "definition": "Dark green leaf that is cooked or eaten in salad."
+   },
+   {
+    "word": "pala",
+    "type": "noun",
+    "definition": "Tool with a flat blade for moving earth about."
+   },
+   {
+    "word": "febrero",
+    "type": "noun",
+    "definition": "The second month of the year, in the cold part."
+   },
+   {
+    "word": "mes",
+    "surface": "meses",
+    "type": "noun",
+    "definition": "One of the twelve parts that a year is cut into."
+   },
+   {
+    "word": "dar vueltas",
+    "surface": "dando vueltas",
+    "type": "expression",
+    "definition": "To go round and round in your head without stopping."
+   },
+   {
+    "word": "contar con",
+    "type": "expression",
+    "definition": "To count on somebody being there when the time comes."
+   },
+   {
+    "word": "planta",
+    "surface": "plantas",
+    "type": "noun",
+    "definition": "Any green living thing that grows out of the earth."
+   }
+  ]
+ }
+]
