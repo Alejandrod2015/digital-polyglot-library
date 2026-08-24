@@ -366,5 +366,33 @@
  "pasaba": {
   "g": "happened to her; used to happen",
   "t": "verb"
+ },
+ "precios": {
+  "g": "prices, what things cost",
+  "t": "noun"
+ },
+ "pasado": {
+  "g": "last (el año pasado: last year); also: past",
+  "t": "adjective"
+ },
+ "ante": {
+  "g": "in front of, facing",
+  "t": "preposition"
+ },
+ "mancha": {
+  "g": "a dirty mark left on something",
+  "t": "noun"
+ },
+ "calla": {
+  "g": "goes quiet, says nothing",
+  "t": "verb"
+ },
+ "labio": {
+  "g": "lip",
+  "t": "noun"
+ },
+ "listas": {
+  "g": "ready (fem. plural); prepared and waiting",
+  "t": "adjective"
  }
 }

@@ -215,6 +215,10 @@
    "g": "writes something short down",
    "t": "verb"
   },
+  "ante": {
+   "g": "in front of, facing",
+   "t": "preposition"
+  },
   "antes": {
    "g": "before",
    "t": "adverb"
@@ -238,10 +242,6 @@
   "apoya": {
    "g": "rests, leans, supports",
    "t": "verb"
-  },
-  "apoyada": {
-   "g": "leaning, propped",
-   "t": "adjective"
   },
   "aprendido": {
    "g": "learnt",
@@ -419,10 +419,6 @@
    "g": "the chin",
    "t": "noun"
   },
-  "barra": {
-   "g": "the bar counter",
-   "t": "noun"
-  },
   "barranco": {
    "g": "deep narrow cut in a hillside",
    "t": "noun"
@@ -591,6 +587,10 @@
    "g": "hot",
    "t": "adjective"
   },
+  "calla": {
+   "g": "goes quiet, says nothing",
+   "t": "verb"
+  },
   "callada": {
    "g": "quiet, silent",
    "t": "adjective"
@@ -613,10 +613,6 @@
   },
   "calma": {
    "g": "calm",
-   "t": "noun"
-  },
-  "calor": {
-   "g": "heat",
    "t": "noun"
   },
   "cambia": {
@@ -1347,10 +1343,6 @@
    "g": "the stairs",
    "t": "noun"
   },
-  "escena": {
-   "g": "a scene",
-   "t": "noun"
-  },
   "escoba": {
    "g": "broom",
    "t": "noun"
@@ -1759,10 +1751,6 @@
    "g": "hour, time",
    "t": "noun"
   },
-  "horas": {
-   "g": "hours",
-   "t": "noun"
-  },
   "horizonte": {
    "g": "the horizon",
    "t": "noun"
@@ -1883,6 +1871,10 @@
    "g": "the; her, it",
    "t": "article"
   },
+  "labio": {
+   "g": "lip",
+   "t": "noun"
+  },
   "lado": {
    "g": "side",
    "t": "noun"
@@ -1954,6 +1946,10 @@
   "lista": {
    "g": "list; also: ready (fem.)",
    "t": "noun"
+  },
+  "listas": {
+   "g": "ready (fem. plural); prepared and waiting",
+   "t": "adjective"
   },
   "llama": {
    "g": "calls, names",
@@ -2063,6 +2059,10 @@
    "g": "bad",
    "t": "adjective"
   },
+  "mancha": {
+   "g": "a dirty mark left on something",
+   "t": "noun"
+  },
   "maneras": {
    "g": "ways of doing something",
    "t": "noun"
@@ -2077,10 +2077,6 @@
   },
   "mantel": {
    "g": "tablecloth",
-   "t": "noun"
-  },
-  "mapa": {
-   "g": "a map",
    "t": "noun"
   },
   "mar": {
@@ -2194,10 +2190,6 @@
   "mirarla": {
    "g": "to look at her",
    "t": "verb"
-  },
-  "misma": {
-   "g": "same (fem.)",
-   "t": "adjective"
   },
   "mismo": {
    "g": "same",
@@ -2519,6 +2511,10 @@
    "g": "(de pasada) in passing, without stopping to explain",
    "t": "expression"
   },
+  "pasado": {
+   "g": "last (el año pasado: last year); also: past",
+   "t": "adjective"
+  },
   "pasan": {
    "g": "they pass, happen",
    "t": "verb"
@@ -2719,6 +2715,10 @@
    "g": "flat green field where animals graze",
    "t": "noun"
   },
+  "precios": {
+   "g": "prices, what things cost",
+   "t": "noun"
+  },
   "pregunta": {
    "g": "question; asks",
    "t": "noun"
@@ -2741,10 +2741,6 @@
   },
   "preocupada": {
    "g": "worried",
-   "t": "adjective"
-  },
-  "preparada": {
-   "g": "prepared, ready",
    "t": "adjective"
   },
   "primera": {
@@ -3193,10 +3189,6 @@
   },
   "silla": {
    "g": "chair",
-   "t": "noun"
-  },
-  "sillas": {
-   "g": "chairs",
    "t": "noun"
   },
   "siluetas": {
