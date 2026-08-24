@@ -4,7 +4,7 @@ import { PrismaClient } from "../src/generated/prisma";
 import { variantPool } from "@/lib/languageVariant";
 import { isSpanishA1A2 } from "@/lib/cefr/spanishA1A2";
 const CAND: Record<string, string[]> = {
-  "para la 10": ["ala","lomo","mueble","bolsillo","vidrio","resbalar","rodar","limpiar","bajar","capa"],
+  "portables libres": ["soltar","mover","guardar","empujar","levantar","bajar","acercar","alejar","tardar","durar","caber","sonar","oler","doler","pesar","medir","contar","olvidar","recordar","seguir","volver","salir","entrar","subir","llenar","vaciar","abrir","cerrar","romper","limpiar","cambiar","probar","buscar","encontrar","perder","dejar","poner","sacar","meter","tocar"],
 };
 const p = new PrismaClient();
 (async () => {

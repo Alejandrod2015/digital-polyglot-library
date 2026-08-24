@@ -8681,6 +8681,18 @@
     "viniendo": {
       "g": "coming here regularly (venir)",
       "t": "verb"
+    },
+    "tono": {
+      "g": "the repeated sound a phone makes before somebody answers",
+      "t": "noun"
+    },
+    "chirriando": {
+      "g": "making a high scratchy noise (chirriar)",
+      "t": "verb"
+    },
+    "olvide": {
+      "g": "forget (olvidar, subjunctive after para que)",
+      "t": "verb"
     }
   }
 }

@@ -1447,7 +1447,7 @@
     "title": "Rosa afila una varilla de copal",
     "arcType": "recurring-character-callback",
     "synopsis": "La tia Rosa saca las herramientas y le enseña a Mateo que una figura no se arregla con clavos sino con una varilla fina metida a mano en un hueco profundo. Le pasa el pincel para que termine el la pintura, y esa misma noche Mateo mueve el alebrije dos dedos a la izquierda sin que nadie en la casa lo vea, que es exactamente lo que ella hacia.",
-    "text": "Rosa abre el sábado el cajón donde guarda las herramientas. Saca una pinza, un destornillador y una tabla pequeña. El cuarto está frío y la tabla raspa al tocarla.\n\n“Primero se limpia y después se pega, paso a paso.” “¿Y el clavo?” “El clavo no: eso es para muebles, y esto no es un mueble.”\n\nRosa afila la varilla de copal con un cuchillo romo y abre un hueco profundo. Mete la varilla en la pata y la otra punta en el cuerpo. Todo a mano, sin martillo y sin tornillo.\n\nLe pasa el pincel y un poco de barniz usado. “Ahora lo terminas tú: una capa fina, y también la raya del ala que se llevó el golpe.” Mateo repara el ala despacio y arregla lo que queda.\n\nEs más fácil de lo que parecía y con eso es suficiente. Esa noche Mateo mueve el alebrije dos dedos a la izquierda. Nadie en la casa lo ve, y ese es el punto.",
+    "text": "Rosa abre el sábado el cajón donde guarda las herramientas. Suelta la tapa del cajón, saca el destornillador y empuja la caja al centro. El cuarto está frío y la tabla raspa al tocarla.\n\n“Primero se limpia y después se pega, paso a paso.” “¿Y el clavo?” “El clavo no: eso es para muebles, y esto no es un mueble.”\n\nRosa afila la varilla de copal con un cuchillo romo y abre un hueco profundo. Mete la varilla en la pata y la otra punta en el cuerpo. Todo a mano: la pieza pesa poco y cabe en la palma.\n\nLe pasa el pincel y un poco de barniz usado. “Ahora lo terminas tú: una capa fina, y también la raya del ala que se llevó el golpe.” Mateo repara el ala despacio y arregla lo que queda.\n\nEs más fácil de lo que parecía y con eso es suficiente. Esa noche Mateo mueve el alebrije dos dedos a la izquierda. Nadie en la casa lo ve, y ese es el punto.",
     "vocab": [
       {
         "word": "cajón",
@@ -1462,10 +1462,10 @@
         "type": "noun"
       },
       {
-        "word": "pinza",
-        "surface": "pinza",
-        "definition": "a hand tool that grips small things tightly",
-        "type": "noun"
+        "word": "soltar",
+        "surface": "Suelta",
+        "definition": "to let go of something you were holding",
+        "type": "verb"
       },
       {
         "word": "destornillador",
@@ -1474,10 +1474,10 @@
         "type": "noun"
       },
       {
-        "word": "tabla",
-        "surface": "tabla",
-        "definition": "a flat wide piece of wood cut for working",
-        "type": "noun"
+        "word": "empujar",
+        "surface": "empuja",
+        "definition": "to push something so that it moves away",
+        "type": "verb"
       },
       {
         "word": "clavo",
@@ -1516,16 +1516,16 @@
         "type": "expression"
       },
       {
-        "word": "martillo",
-        "surface": "martillo",
-        "definition": "the heavy tool used for hitting nails in",
-        "type": "noun"
+        "word": "pesar",
+        "surface": "pesa",
+        "definition": "to have a certain weight when you lift it",
+        "type": "verb"
       },
       {
-        "word": "tornillo",
-        "surface": "tornillo",
-        "definition": "a metal pin with a thread that turns into wood",
-        "type": "noun"
+        "word": "caber",
+        "surface": "cabe",
+        "definition": "to fit inside a space without being forced",
+        "type": "verb"
       },
       {
         "word": "pincel",
@@ -1578,7 +1578,7 @@
     "title": "Un lomito completo en San Telmo",
     "arcType": "juxtaposition-discovery",
     "synopsis": "Pablo lleva un año en la ciudad y ya tiene con quien sentarse, pero sigue pidiendo mal. Dice que si a una pregunta que no entiende y le llega un plato distinto del que esperaba. Marta se rie y le señala lo unico que no habia visto: lo que falla no son las palabras sueltas sino la frase entera con que se pide.",
-    "text": "En San Telmo, Pablo, un vecino que llegó hace un año, entra al bar de siempre. El mesero pone el mantel y deja el menú abierto. Huele a pan tostado desde la cocina.\n\n“Un lomito y un cortado, por favor.” “¿El lomito completo o simple?” Pablo no sabe qué quiere decir completo y contesta que sí.\n\n“Esto no es lo que pedí; llegó un plato diferente y con tres cosas encima.” El mesero le deja cuchillo, tenedor y cuchara y se va. “Erraste al contestar, nada más”, se da cuenta él.\n\n“Mirá vos, pediste el completo.” “Yo quería el simple, pero dije que sí.” Marta le explica que el modo de pedir tiene su frase correcta y en este idioma todo suena parecido.\n\nLo incorrecto no fue la palabra sino el sí. Pablo se equivoca dos veces más antes del postre. Pide una medialuna y esta vez le traen la factura.",
+    "text": "En San Telmo, Pablo, un vecino que llegó hace un año, entra al bar de siempre. El mesero llena el vaso y deja el menú abierto sobre la mesa. Huele a pan tostado desde la cocina.\n\n“Un lomito y un cortado, por favor.” “¿El lomito completo o simple?” Pablo no sabe qué quiere decir completo y contesta que sí.\n\n“Esto no es lo que pedí; llegó un plato diferente y con tres cosas encima.” El mesero le deja cuchillo, tenedor y cuchara y se va. “Erraste al contestar, nada más”, se da cuenta él.\n\n“Mirá vos, pediste el completo.” “Yo quería el simple, pero dije que sí.” Marta le explica que el modo de pedir tiene su frase correcta y en este idioma todo suena parecido.\n\nLo incorrecto no fue la palabra sino el sí. Pablo tarda en salir y se equivoca dos veces más antes del postre. Pide una medialuna y esta vez le traen la factura.",
     "vocab": [
       {
         "word": "mesero",
@@ -1587,10 +1587,10 @@
         "type": "noun"
       },
       {
-        "word": "mantel",
-        "surface": "mantel",
-        "definition": "the cloth spread over a table before eating",
-        "type": "noun"
+        "word": "llenar",
+        "surface": "llena",
+        "definition": "to fill something until there is no space left",
+        "type": "verb"
       },
       {
         "word": "menú",
@@ -1623,16 +1623,16 @@
         "type": "noun"
       },
       {
-        "word": "tenedor",
-        "surface": "tenedor",
-        "definition": "the tool with points used for lifting food",
-        "type": "noun"
+        "word": "salir",
+        "surface": "salir",
+        "definition": "to go out of a place towards the street",
+        "type": "verb"
       },
       {
-        "word": "cuchara",
-        "surface": "cuchara",
-        "definition": "the round tool used for eating soup and rice",
-        "type": "noun"
+        "word": "tardar",
+        "surface": "tarda",
+        "definition": "to take a long time to do something",
+        "type": "verb"
       },
       {
         "word": "darse cuenta",
@@ -1689,10 +1689,10 @@
         "type": "verb"
       },
       {
-        "word": "medialuna",
-        "surface": "medialuna",
-        "definition": "a small sweet curved roll eaten with coffee",
-        "type": "noun"
+        "word": "dejar",
+        "surface": "deja",
+        "definition": "to leave something where it is and not take it",
+        "type": "verb"
       },
       {
         "word": "factura",
@@ -1709,7 +1709,7 @@
     "title": "Dos columnas y una birome",
     "arcType": "reframe-turn",
     "synopsis": "Marta aparece con una pizarra y parte la pared en dos: a la izquierda lo que Pablo dice, a la derecha lo que se dice aca. No es una clase de vocabulario sino un mapa de las veces que va a quedar mal, y Pablo lo copia entero en una hoja que despues pliega en cuatro y guarda como si fuera un documento.",
-    "text": "El jueves la lluvia suena fuerte sobre Buenos Aires y Marta llega con una pizarra y un marcador grueso. La apoya contra la pared, delante de Pablo, y traza una línea ancha por el medio. La tinta chirría sobre el vidrio.\n\n“A la izquierda tu columna, a la derecha la de acá.” “¿Y si las dos palabras son iguales?” “Entonces no va en la pizarra, no la llenes de más.”\n\nPablo copia todo en una hoja con una birome prestada. Marta le dicta despacio y él no niega ninguna. Es media clase y un juego a la vez.\n\n“Esto es necesario si querés vivir acá.” “Jamás lo tires.” Pablo pliega la hoja en cuatro y la guarda quieto.\n\nSobre la mesa quedan un folleto viejo y una nota con dos palabras. “Está todo mal”, dice Pablo, y Marta contesta que no, que ahora está escrito. “Trato hecho”, y eso sí es verdadero.",
+    "text": "El jueves la lluvia suena fuerte sobre Buenos Aires y Marta llega con una pizarra y un marcador grueso. La empuja contra la pared, delante de Pablo, y traza una línea ancha por el medio. El marcador sigue chirriando sobre el vidrio.\n\n“A la izquierda tu columna, a la derecha la de acá.” “¿Y si las dos palabras son iguales?” “Entonces no va en la pizarra, no la llenes de más.”\n\nPablo copia todo en una hoja con una birome prestada. Marta le dicta despacio y él no niega ninguna. Es media clase, y Pablo cierra la nota con dos palabras.\n\n“Esto es necesario si querés vivir acá.” “Jamás lo tires; eso dura.” Pablo pliega la hoja en cuatro y la guarda quieto.\n\nMarta guarda la pizarra para que nadie la olvide. “Está todo mal”, dice Pablo, y Marta contesta que no, que ahora está escrito. “Trato hecho”, y eso sí es verdadero.",
     "vocab": [
       {
         "word": "pizarra",
@@ -1718,10 +1718,10 @@
         "type": "noun"
       },
       {
-        "word": "marcador",
-        "surface": "marcador",
-        "definition": "a thick pen that writes wide coloured lines",
-        "type": "noun"
+        "word": "olvidar",
+        "surface": "olvide",
+        "definition": "to stop remembering something that you once knew",
+        "type": "verb"
       },
       {
         "word": "ancho",
@@ -1730,10 +1730,10 @@
         "type": "adjective"
       },
       {
-        "word": "tinta",
-        "surface": "tinta",
-        "definition": "the coloured liquid that runs inside a pen",
-        "type": "noun"
+        "word": "durar",
+        "surface": "dura",
+        "definition": "to keep working or lasting for a long time",
+        "type": "verb"
       },
       {
         "word": "izquierda",
@@ -1773,10 +1773,10 @@
         "type": "noun"
       },
       {
-        "word": "juego",
-        "surface": "juego",
-        "definition": "something done for fun, with a few simple rules",
-        "type": "noun"
+        "word": "seguir",
+        "surface": "sigue",
+        "definition": "to keep on doing what you were already doing",
+        "type": "verb"
       },
       {
         "word": "necesario",
@@ -1803,10 +1803,10 @@
         "type": "adjective"
       },
       {
-        "word": "folleto",
-        "surface": "folleto",
-        "definition": "a thin printed paper that announces something to people",
-        "type": "noun"
+        "word": "cerrar",
+        "surface": "cierra",
+        "definition": "to shut something so it cannot be opened",
+        "type": "verb"
       },
       {
         "word": "nota",
@@ -1841,7 +1841,7 @@
     "title": "Pablo explica el bondi",
     "arcType": "late-reveal",
     "synopsis": "En la parada de la avenida hay una recien llegada que pregunta por el colectivo y no entiende la respuesta. Pablo se oye a si mismo explicando lo que hace un año no sabia, y se da cuenta de que ya no traduce las palabras sueltas: ahora traduce el modo, que es lo que le habian escrito a el en una columna hace unos meses.",
-    "text": "En la avenida, frente a la cartelera del cine, hay gente esperando. Nadia, una recién llegada que todavía no entiende nada, mira la vitrina del bar. El vidrio sucio no deja ver el interior.\n\n“¿Este colectivo va al centro?” “Ese bondi va, sí, pero el otro no.” Nadia intenta decir bondi y no le sale.\n\nPablo se acerca con la campera abierta y las zapatillas mojadas. Alrededor la gente sube y baja sin mirar a nadie. “Colectivo y bondi son la misma cosa; acá se dice de las dos maneras.”\n\n“¿Y la pileta del club es piscina?” “Piscina se entiende, pero acá nadie la llama así.” “Anótalo donde puedas”, y Nadia saca un lápiz y escribe en la manga.\n\nFuera de la parada, Lucas los espera con dos churros y una limonada. La nevera del bar está vacía y hace calor. Nadia guarda el pasaporte y se sienta en una butaca de plástico.",
+    "text": "En la avenida, frente a la cartelera del cine, hay gente esperando. Nadia, una recién llegada que todavía no entiende nada, mira la vitrina del bar. Le duelen los pies y el vidrio sucio no deja ver el interior.\n\n“¿Este colectivo va al centro?” “Ese bondi va, sí, pero el otro no.” Nadia intenta decir bondi y no le sale.\n\nPablo se acerca con la campera abierta y las zapatillas mojadas. Alrededor la gente sube y baja sin mirar a nadie. “Colectivo y bondi son la misma cosa; acá se dice de las dos maneras.”\n\n“¿Y la pileta del club es piscina?” “Piscina se entiende, pero acá nadie la llama así.” “Anótalo donde puedas”, y Nadia saca un lápiz, lo mete en la manga y vacía el bolsillo.\n\nFuera de la parada, Lucas los espera con dos churros y no tarda en llenar el banco. La nevera del bar está vacía y hace calor. Nadia suelta el pasaporte, que pesa en el bolsillo, y se sienta en una silla.",
     "vocab": [
       {
         "word": "avenida",
@@ -1856,10 +1856,10 @@
         "type": "adverb"
       },
       {
-        "word": "cartelera",
-        "surface": "cartelera",
-        "definition": "the board that shows what films are playing",
-        "type": "noun"
+        "word": "doler",
+        "surface": "duelen",
+        "definition": "to hurt, as a part of your body does",
+        "type": "verb"
       },
       {
         "word": "vidrio",
@@ -1874,10 +1874,10 @@
         "type": "adjective"
       },
       {
-        "word": "vitrina",
-        "surface": "vitrina",
-        "definition": "the glass front where a shop shows its goods",
-        "type": "noun"
+        "word": "sacar",
+        "surface": "saca",
+        "definition": "to take something out of a bag or pocket",
+        "type": "verb"
       },
       {
         "word": "alrededor",
@@ -1941,10 +1941,10 @@
         "type": "noun"
       },
       {
-        "word": "limonada",
-        "surface": "limonada",
-        "definition": "a cold drink made with lemons and water",
-        "type": "noun"
+        "word": "vaciar",
+        "surface": "vacía",
+        "definition": "to empty something so nothing is left inside",
+        "type": "verb"
       },
       {
         "word": "nevera",
@@ -1959,10 +1959,10 @@
         "type": "noun"
       },
       {
-        "word": "butaca",
-        "surface": "butaca",
-        "definition": "a low chair with arms for sitting back",
-        "type": "noun"
+        "word": "meter",
+        "surface": "mete",
+        "definition": "to put something inside a bag or a hole",
+        "type": "verb"
       }
     ]
   },
@@ -1973,7 +1973,7 @@
     "title": "Un candado nuevo tras el Carnaval",
     "arcType": "mini-cliffhanger",
     "synopsis": "Pasado el Carnaval, Barranquilla vuelve a ser una calle normal y en el edificio hay un candado nuevo que nadie sabe de donde salio. En el segundo piso vive desde el lunes Alveiro, que paga por noche, no saluda y tiene un ventilador que no funciona. Camilo pregunta y nadie en la casa sabe darle una respuesta.",
-    "text": "Después del Carnaval, Barranquilla vuelve a ser una calle normal. En el portón del edificio hay una reja nueva y un candado que nadie conoce. Camilo cruza el patio con dos bolsas.\n\nEn el segundo piso vive Alveiro, un inquilino que llegó el lunes. “Paga el cuarto por noche y no saluda a nadie.” “El alquiler se cobra los viernes, como a todos.”\n\n“¿Usted sabe quién es?” “Ni idea; el patrón no dijo nada.” La mamá de Camilo se abanica en la terraza, al lado de una planta seca.\n\nLa cerradura del portón es nueva y el cerrojo no gira bien. Camilo empuja con el hombro y el sol calienta la tapia. Nadie tiene todavía la llave que hace falta.\n\nAlveiro baja, mira el candado y vuelve a subir sin decir nada. “Ese cuarto es barato porque el ventilador no funciona”, dice ella. Camilo se queda con la duda y el vecino con la suya.",
+    "text": "Después del Carnaval, Barranquilla vuelve a ser una calle normal. En el portón del edificio hay una reja nueva y un candado que nadie conoce. Camilo cruza el patio con dos bolsas.\n\nEn el segundo piso vive Alveiro, un inquilino que llegó el lunes. “Paga el cuarto por noche y no saluda a nadie.” “El alquiler se cobra los viernes, como a todos.”\n\n“¿Usted sabe quién es?” “Ni idea; el patrón no dijo nada.” La mamá de Camilo se abanica en la terraza, al lado de una planta seca.\n\nLa cerradura del portón es nueva y el cerrojo no gira bien. Camilo empuja con el hombro y el sol calienta la tapia. Nadie tiene todavía la llave que hace falta.\n\nAlveiro baja, mira la reja y vuelve a subir sin decir nada. “Ese piso es barato porque el ventilador no funciona”, dice ella. Camilo sigue con la duda; el vecino, con la suya.",
     "vocab": [
       {
         "word": "portón",
@@ -2104,7 +2104,7 @@
     "title": "Un favor a oscuras en Barranquilla",
     "arcType": "recurring-character-callback",
     "synopsis": "Se va la electricidad en el bloque entero y Camilo sube donde Alveiro con una linterna a pedir un enchufe prestado. Lo que empieza como un favor de cinco minutos termina con una firma en la lista del edificio y una escoba prestada, porque en ese barrio nadie devuelve un favor sin ofrecer otro encima.",
-    "text": "Se va la electricidad en todo el barrio de Barranquilla un martes por la tarde. La bombilla del pasillo queda muerta y el interruptor no responde. Camilo baja con una linterna y golpea la puerta de Alveiro.\n\n“Disculpe, ¿le sobra un enchufe?” “Me sobra, sí; suba.” Alveiro contesta desde arriba y deja la puerta entornada.\n\nCamilo sube con un taburete y se sienta en el borde. “A la lista del edificio le faltan dos nombres y uno es el suyo.” Alveiro no se queja de nada.\n\n“Hazme el favor y firma abajo.” “Le debo una, entonces.” Incluso le ofrece la escoba para bajar la telaraña del techo.\n\n“Ya volvió la luz”, y el pasillo se pone duro de blanco a las nueve. Camilo saca la billetera y no le cobra nada. Bajan juntos y el portón queda abierto.",
+    "text": "Se va la electricidad en todo el barrio de Barranquilla un martes por la tarde. La bombilla del pasillo queda muerta y el interruptor no responde. Camilo baja con una linterna y golpea la puerta de Alveiro.\n\n“Disculpe, ¿le sobra un enchufe?” “Me sobra, sí; suba.” Alveiro contesta desde arriba y deja la puerta entornada.\n\nCamilo sube con un taburete y se sienta en el borde. “A la lista del edificio le faltan dos nombres y uno es el suyo.” Alveiro no se queja de nada.\n\n“Hazme el favor y firma abajo.” “Le debo una, entonces.” Incluso le ofrece la escoba para bajar la telaraña del techo.\n\n“Ya volvió la luz”, y el pasillo se pone duro de blanco a las nueve. A Camilo le duelen los brazos; saca la billetera y no le cobra nada. Bajan juntos y el portón queda abierto.",
     "vocab": [
       {
         "word": "electricidad",
@@ -2235,7 +2235,7 @@
     "title": "La cubeta sube dos pisos",
     "arcType": "juxtaposition-discovery",
     "synopsis": "El sabado el agua no sube al segundo piso y Alveiro se queda sin ducha. La mama de Camilo manda a decir que suba a bañarse arriba, y lo que empieza siendo una cubeta prestada termina con las dos puertas sin cerrar durante todo el fin de semana, que es exactamente lo que en esa calle significa conocer a alguien.",
-    "text": "Un sábado el grifo del segundo suelta un hilo y se para. “El agua no sube por la tubería y la ducha quedó seca desde ayer.” El azulejo del baño sigue mojado de la noche anterior.\n\n“Suba a bañarse arriba.” “¿Y la cubeta?” “La cubeta se la presto yo.”\n\n“Ahí tienes un paño limpio; el resto lo encuentras solo.” “El desagüe gotea desde hace meses, ya lo sé.” Gotea, pero el vapor sale caliente.\n\nEn el cuarto de Camilo hay una cortina corrida y un bote en el rincón. La almohada y la sábana están dobladas sobre el colchón. El ropero no cierra desde el año pasado.\n\nLa espuma del lavabo sale tibia y el agua vuelve a las siete, con la limpieza a medias. Alveiro baja la jarra vacía y la frazada doblada. Las dos puertas se quedan abiertas todo el fin de semana.",
+    "text": "Un sábado el grifo del segundo suelta un hilo y se para. “El agua no sube por la tubería y la ducha quedó seca desde ayer.” El azulejo del baño sigue mojado de la noche anterior.\n\n“Suba a bañarse arriba.” “¿Y la cubeta?” “La cubeta se la presto yo.”\n\n“Ahí tienes un paño limpio; el resto lo encuentras solo.” “El desagüe gotea desde hace meses, ya lo sé.” Gotea, pero el vapor sale caliente.\n\nEn el cuarto de Camilo hay una cortina corrida y un bote en el rincón. La almohada y la sábana están dobladas sobre el colchón. El ropero no cierra desde el año pasado.\n\nLa espuma del lavabo sale tibia y el agua vuelve a las siete, con la limpieza a medias. Alveiro suelta la jarra vacía, que ya no cabe en la repisa, y baja la frazada. Las dos puertas se quedan abiertas todo el fin de semana.",
     "vocab": [
       {
         "word": "grifo",
@@ -2366,7 +2366,7 @@
     "title": "Dos entradas para Palermo",
     "arcType": "reframe-turn",
     "synopsis": "Sofia consigue dos entradas para el ensayo abierto de una banda en Palermo y avisa con dos dias de antelacion, que en ese grupo es mucho. Pablo dice que si sin mirar la fecha y descubre que aceptar una invitacion aca no se hace por mensaje: se queda uno en la vereda hasta que el plan tiene hora, lugar y quien lleva que.",
-    "text": "En Palermo, Sofía baja del colectivo con dos entradas en la mano. Pablo la espera en una banca, con el morral entre las piernas. Suena un ruido de ensayo en toda la calle.\n\n“Te consigo entrada para el ensayo del jueves, pero avisá hoy.” “Voy.” Sofía no se conforma y le pide que conteste bien, si viene solo o con alguien.\n\nAl fondo del local, la fila ya da la vuelta a la cuadra. Sofía anota en el teléfono quién lleva qué. Pablo entiende que aquí un plan no se cierra con un sí.\n\n“Yo llevo la letra y vos traé algo.” “¿Y a qué hora quedamos?” “A las ocho en la acera, no adentro.”\n\nPablo se queda sentado en el bordillo, mirando el escenario vacío, y hace una pausa. “Estás ansioso”, le dice Sofía. “Un poco; es la primera vez que me invitan y no sé si voy a entender la mitad.”",
+    "text": "En Palermo, Sofía baja del colectivo con dos entradas en la mano. Pablo la espera en una banca, con el morral entre las piernas. Suena un ruido de ensayo en toda la calle.\n\n“Te consigo entrada para el ensayo del jueves, pero avisá hoy.” “Voy.” Sofía no se conforma y le pide que conteste bien, si viene solo o con alguien.\n\nAl fondo del local, la fila ya da la vuelta a la cuadra. Sofía deja el teléfono y anota quién lleva qué, sin tardar. Pablo entiende que aquí un plan no se cierra con un sí.\n\n“Yo llevo la letra y vos traé algo.” “¿Y a qué hora quedamos?” “A las ocho en la acera, no adentro.”\n\nPablo se queda sentado en el bordillo, mirando el escenario vacío, y hace una pausa. “Estás ansioso”, le dice Sofía. “Un poco; es la primera vez que me invitan y no sé si voy a entender la mitad.”",
     "vocab": [
       {
         "word": "entrada",
@@ -2497,7 +2497,7 @@
     "title": "Otro sello para Corrientes",
     "arcType": "late-reveal",
     "synopsis": "Para tocar en un local de la calle Corrientes hace falta un papel que nadie sabe explicar, y Lucas manda a Pablo a la oficina con una carpeta y la cedula. La empleada le aprueba media planilla, le pide otro sello y le dice sin enojarse que vuelva mañana, que es como funciona el servicio y no una desgracia personal.",
-    "text": "Un lunes temprano, en Buenos Aires, Lucas manda a Pablo a una oficina de Corrientes. Lleva la carpeta bajo el brazo y la cédula en el bolsillo. Huele a papel viejo desde la puerta.\n\n“¿Trae la planilla completa?” “Creo que sí; la llené anoche.” “Le falta la casilla y el sello de la empresa.”\n\nLa empleada le aprueba el pedido y le marca dónde firmar. Sobre la mesa hay papeles en orden. Pablo pregunta si es el único trámite.\n\n“Es la regla: primero el sello y después el servicio.” “¿Y cuánto tarda?” La empleada mueve la cabeza y no promete nada.\n\nDesde el escritorio, la empleada lo mira y Pablo no se pone enojado. “Entonces vuelvo mañana: ida y vuelta otra vez, y un veinte por ciento de suerte.” La empleada le sonríe y le dice que tanto papel se aprende rápido.",
+    "text": "Un lunes temprano, en Buenos Aires, Lucas manda a Pablo a una oficina de Corrientes. Empuja la puerta con la carpeta bajo el brazo y la cédula en el bolsillo. Huele a papel viejo desde la puerta.\n\n“¿Trae la planilla completa?” “Creo que sí; la llené anoche.” “Le falta la casilla y el sello de la empresa.”\n\nLa empleada le aprueba el pedido y le marca dónde firmar. Sobre la mesa hay papeles en orden. Pablo pregunta si es el único trámite.\n\n“Es la regla: primero el sello y después el servicio.” “¿Y cuánto tarda?” La empleada mueve la cabeza y no promete nada.\n\nDesde el escritorio, la empleada lo mira y Pablo no se pone enojado. “Entonces vuelvo mañana: ida y vuelta otra vez, y un veinte por ciento de suerte.” La empleada le dice que tanto papel se aprende rápido.",
     "vocab": [
       {
         "word": "oficina",
@@ -2628,7 +2628,7 @@
     "title": "Empanadas y un submarino",
     "arcType": "recurring-character-callback",
     "synopsis": "El asado en la terraza de Lucas junta a los mismos de siempre y a Pablo, que esta vez no llega de invitado sino con la picada y las empanadas bajo el brazo. Sofia trae la noticia mala de la noche, y lo que decide el final no es lo que dicen sino que nadie se va a su casa hasta que se enfria el ultimo submarino.",
-    "text": "Doce escalones más arriba, la terraza de Lucas queda amplia y sin techo. En Buenos Aires nadie sube con las manos vacías. Pablo llega con la picada en una mano y las empanadas en la otra.\n\nLucas ata un globo a la cadena de metal y sostiene la bandeja con el brazo estirado. “Traje de más, por si acaso.” “Siempre falta algo, así que está bien.”\n\nSofía llega con malas noticias. “Se cae el ensayo del jueves; el local no nos dio permiso.” Nadie habla durante un rato y después el clima se pone ligero otra vez. Marta le pasa un submarino caliente.\n\n“¿Y ahora qué hacemos el jueves?” “Lo mismo, pero acá.” “Entonces yo traigo el asado y vos ponés tanto disco como quieras.”\n\nPablo mira alrededor y se le queda la mirada quieta un momento. Tiene la mejilla caliente, el labio partido de reír y un peso menos en el pecho. Con las piernas cansadas, nadie baja los escalones hasta las tres.",
+    "text": "Doce escalones más arriba, la terraza de Lucas queda amplia y sin techo. En Buenos Aires nadie sube con las manos vacías. Pablo mete la picada en una mano y saca las empanadas con la otra.\n\nLucas ata un globo a la cadena de metal, llena la bandeja y la sostiene con el brazo estirado. “Traje de más, por si acaso.” “Siempre falta algo, así que está bien.”\n\nSofía llega con malas noticias. “Se cae el ensayo del jueves; el local no nos dio permiso.” Nadie habla durante un rato y después el clima se pone ligero otra vez. Marta le pasa un submarino caliente.\n\n“¿Y ahora qué hacemos el jueves?” “Lo mismo, pero acá.” “Entonces yo traigo el asado y vos ponés tanto disco como quieras.”\n\nPablo mira alrededor y se le queda la mirada quieta un momento. Tiene la mejilla caliente, el labio partido de reír y un peso menos en el pecho. Con las piernas cansadas, nadie baja los escalones hasta las tres.",
     "vocab": [
       {
         "word": "escalón",
