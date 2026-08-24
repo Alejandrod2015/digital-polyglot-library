@@ -3946,6 +3946,14 @@
   "peso": {
    "g": "weight",
    "t": "noun"
+  },
+  "pranchas": {
+   "g": "surfboards (prancha)",
+   "t": "noun"
+  },
+  "subiu": {
+   "g": "got on, went up (subir)",
+   "t": "verb"
   }
  }
 }

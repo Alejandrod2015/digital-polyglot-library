@@ -2497,6 +2497,14 @@
   "aguentar": {
    "g": "to bear, to hold the weight",
    "t": "verb"
+  },
+  "pranchas": {
+   "g": "surfboards (prancha)",
+   "t": "noun"
+  },
+  "subiu": {
+   "g": "got on, went up (subir)",
+   "t": "verb"
   }
  }
 }
