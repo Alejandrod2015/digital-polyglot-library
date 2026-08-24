@@ -114,9 +114,25 @@ ya las cuatro cosas. Si falta una, se paga en tiradas:
    Un periódico abierto o un cartel SIEMPRE salen con letras inventadas; el
    periódico va doblado y cerrado, y los carteles no existen.
 
-**TOPE: 2 tiradas por portada.** Si un tema pasa de ahí, PARA y arregla el
-prompt o la escena; no sigas tirando. Cuando una escena falla dos veces por lo
-mismo, el problema es la escena, no la suerte.
+**TOPE: 1 tirada. Un disparador del usuario = UNA imagen** (2026-08-24,
+sustituye al tope de 2). Si la tirada sale mal, se ENSEÑA a tamaño completo, se
+dice qué está mal y se ESPERA; no se re-tira por iniciativa propia con el
+argumento de que queda presupuesto. El usuario decide si se vuelve a tirar y
+tiene que escribirlo otra vez.
+
+Enforced por el portón **6g** de `.claude/safety/pre-bash-guard.sh`, que cubre
+`generateCover.ts`, los `_gen*Covers*.ts`, la API de Flux y los endpoints de
+imagen de OpenAI y Gemini. Dos candados: el último mensaje del usuario tiene que
+NOMBRAR la imagen con un verbo ("genera la portada", "regenera la imagen"), y
+ese mensaje se apunta en `.claude/safety/.image-spend` para que la segunda
+tirada del mismo disparador quede bloqueada aunque el verbo siga ahí. Un "dale",
+un "sigue" o un "ok" no autorizan, a propósito. `--dry` compone el prompt sin
+gastar y pasa sin gate. `CLAUDE_AUTHORIZED=1` no lo salta.
+
+WHY: el 2026-08-24, con un solo "genera la portada", tiré dos veces la primera
+del A1 latam. Había leído el tope de 2 como un presupuesto propio; era un techo.
+El usuario: "Cambia para que nunca vuelvas a generar algo sin que yo te lo diga.
+Nada de 2 tiradas, solo 1.
 
 **Revisión: a tamaño completo, una por una.** La hoja de contactos sirve para
 juzgar coherencia entre portadas, y para nada más: a ese tamaño se esconden los
