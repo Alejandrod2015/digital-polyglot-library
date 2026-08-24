@@ -11145,6 +11145,10 @@
   "viajera": {
    "g": "a traveler",
    "t": "noun"
+  },
+  "saludar": {
+   "g": "to greet",
+   "t": "verb"
   }
  }
 }
