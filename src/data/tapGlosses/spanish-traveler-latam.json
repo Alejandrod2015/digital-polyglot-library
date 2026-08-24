@@ -11089,6 +11089,18 @@
   "mirarla": {
    "g": "to look at her",
    "t": "verb"
+  },
+  "parezca": {
+   "g": "it seems (parecer, subjunctive after aunque)",
+   "t": "verb"
+  },
+  "prestan": {
+   "g": "they lend it for a while (prestar)",
+   "t": "verb"
+  },
+  "sacar": {
+   "g": "to take out, pull out",
+   "t": "verb"
   }
  }
 }

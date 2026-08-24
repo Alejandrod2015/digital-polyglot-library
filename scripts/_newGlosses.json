@@ -8705,6 +8705,14 @@
     "funda": {
       "g": "the soft cover that protects an instrument",
       "t": "noun"
+    },
+    "prestan": {
+      "g": "they lend it for a while (prestar)",
+      "t": "verb"
+    },
+    "parezca": {
+      "g": "it seems (parecer, subjunctive after aunque)",
+      "t": "verb"
     }
   }
 }
