@@ -76,6 +76,15 @@ export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   GDzHdQOi6jjf8zaXhCYD: { note: "Raquel Expressive and Energetic (BR, f); reserva PT-BR; user-approved 2026-08-12" },
   qPfM2laM0pRL4rrZtBGl: { note: "Sandro Dutra Articulated and Clear (BR, m); reserva PT-BR; user-approved 2026-08-12" },
   czvzJwIVS2asEKnthV40: { note: "Daniel Brazilian Conversational Voice (BR, m); reserva PT-BR; user-approved 2026-08-12" },
+
+  // ── Aprobada por el usuario 2026-08-24 tras oir la muestra de Terry narrando
+  // el titulo y el primer parrafo de "El Terminal Terrestre a las ocho"
+  // (audicion en scratchpad, toma desechable). Sustituye a Giancarlos
+  // (kIVGrdJmAh9zNqLfBLUo) como narrador de las historias peruanas: Giancarlos
+  // sigue publicado en el A0 latam pero al usuario no le convence.
+  // OJO al ritmo: Terry lee a 3,33 palabras por segundo y el A1 se normaliza a
+  // 2,45, asi que su atempo es ~0,735 y no el ~0,95 del resto de narradores.
+  ulJB4yAMefhHYn0FWgGy: { note: "Terry narracion suave (PE, m); narrador de Peru en Traveler ES latam A1; user-approved 2026-08-24" },
 };
 
 export function isVoiceApproved(voiceId: string | null | undefined): boolean {
