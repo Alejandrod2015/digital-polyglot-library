@@ -1,0 +1,982 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "ácido",
+    "sentence": "Ella prueba con el cuchillo, echa un poquito más de sal y le encuentra el punto _____.",
+    "payload": {
+      "answer": "ácido",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ácido",
+        "unido",
+        "delicioso",
+        "bravo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c6ac353f31658022.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ella prueba con el cuchillo, echa un poquito más de sal y le encuentra el punto ácido.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "ácido",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cambiar",
+    "sentence": "“Aquí no se pesa nada; se prueba, y al final se cambia lo que haga falta”, dice Quique.",
+    "payload": {
+      "answer": "To make something different from how it was.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the avenue",
+        "cracked",
+        "beautiful",
+        "To make something different from how it was."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7196722e9e4c426.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Aquí no se pesa nada; se prueba, y al final se cambia lo que haga falta”, dice Quique.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "cambiar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cocer",
+    "sentence": "cocer",
+    "payload": {
+      "answer": "cocer",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "chusmeando",
+        "gritan",
+        "revivir",
+        "cocer"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cambia",
+    "sentence": "Aquí no se pesa nada; se prueba, y al final se _____ lo que haga falta, dice Quique.",
+    "payload": {
+      "answer": "cambia",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "transporta",
+        "burbujea",
+        "cerraba",
+        "cambia"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7196722e9e4c426.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Aquí no se pesa nada; se prueba, y al final se cambia lo que haga falta”, dice Quique.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "cambiar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de verdad",
+    "sentence": "“Está muy correcto, de verdad que sí”, dice Rocío, y deja el tenedor de lado.",
+    "payload": {
+      "answer": "Really; said to show that you are not joking.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Really; said to show that you are not joking.",
+        "essential",
+        "to widen, to broaden",
+        "to break the news"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/00b0ec198449b609.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Está muy correcto, de verdad que sí”, dice Rocío, y deja el tenedor de lado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "de verdad",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cuchillo",
+    "sentence": "cuchillo",
+    "payload": {
+      "answer": "cuchillo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "anciano",
+        "cuchillo",
+        "gaucho",
+        "encuentro"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "salsa,cuchillo,tenedor,soso",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "salsa",
+          "answer": "Thick liquid poured over food to give it taste.",
+          "options": [
+            "With too little salt, so the taste falls flat.",
+            "Sharp tool with one blade, used to cut food.",
+            "Eating tool with points, used for meat and salad.",
+            "Thick liquid poured over food to give it taste."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cuchillo",
+          "answer": "Sharp tool with one blade, used to cut food.",
+          "options": [
+            "With too little salt, so the taste falls flat.",
+            "Sharp tool with one blade, used to cut food.",
+            "Eating tool with points, used for meat and salad.",
+            "Thick liquid poured over food to give it taste."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tenedor",
+          "answer": "Eating tool with points, used for meat and salad.",
+          "options": [
+            "With too little salt, so the taste falls flat.",
+            "Sharp tool with one blade, used to cut food.",
+            "Eating tool with points, used for meat and salad.",
+            "Thick liquid poured over food to give it taste."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "soso",
+          "answer": "With too little salt, so the taste falls flat.",
+          "options": [
+            "With too little salt, so the taste falls flat.",
+            "Sharp tool with one blade, used to cut food.",
+            "Eating tool with points, used for meat and salad.",
+            "Thick liquid poured over food to give it taste."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "equivocado",
+    "sentence": "Irene levanta el tazón y no entiende qué ha hecho _____.",
+    "payload": {
+      "answer": "equivocado",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "costeño",
+        "espeso",
+        "equivocado",
+        "oscuro"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8af41ca419f0679.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene levanta el tazón y no entiende qué ha hecho equivocado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "equivocado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "echar de menos",
+    "sentence": "Irene guarda la lista en un cajón y esa noche no la echa de menos.",
+    "payload": {
+      "answer": "To miss something you no longer have with you.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "To miss something you no longer have with you.",
+        "the magic",
+        "an adventure",
+        "a whirlwind"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/91aedb77d9479129.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene guarda la lista en un cajón y esa noche no la echa de menos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "echar de menos",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "escrita",
+    "sentence": "Lleva la lista _____ al lado del fregadero, con su número.",
+    "payload": {
+      "answer": "escrita",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "atrapada",
+        "empotrada",
+        "movida",
+        "escrita"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/be032b09a079fb1e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lleva la lista escrita al lado del fregadero, con su número.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "escrita",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "ácido",
+    "sentence": "Ella prueba con el cuchillo, echa un poquito más de sal y le encuentra el punto _____.",
+    "payload": {
+      "answer": "ácido",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cálido",
+        "casero",
+        "aguado",
+        "ácido"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c6ac353f31658022.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ella prueba con el cuchillo, echa un poquito más de sal y le encuentra el punto ácido.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "ácido",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cambiar",
+    "sentence": "“Aquí no se pesa nada; se prueba, y al final se cambia lo que haga falta”, dice Quique.",
+    "payload": {
+      "answer": "To make something different from how it was.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "To make something different from how it was.",
+        "it grabs you",
+        "fishing nets",
+        "brightly painted wooden creature from Oaxaca"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7196722e9e4c426.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Aquí no se pesa nada; se prueba, y al final se cambia lo que haga falta”, dice Quique.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "cambiar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cocer",
+    "sentence": "cocer",
+    "payload": {
+      "answer": "cocer",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "agradecer",
+        "hospedaba",
+        "cocer",
+        "inundaron"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "equivocado,poquito,freír,ácido",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "equivocado",
+          "answer": "Wrong; not the way the thing should have been.",
+          "options": [
+            "Wrong; not the way the thing should have been.",
+            "To cook food in hot oil in a flat pan.",
+            "A very small amount, less than a little.",
+            "Sharp and sour, like lemon juice on your tongue."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "poquito",
+          "answer": "A very small amount, less than a little.",
+          "options": [
+            "Wrong; not the way the thing should have been.",
+            "To cook food in hot oil in a flat pan.",
+            "A very small amount, less than a little.",
+            "Sharp and sour, like lemon juice on your tongue."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "freír",
+          "answer": "To cook food in hot oil in a flat pan.",
+          "options": [
+            "Wrong; not the way the thing should have been.",
+            "To cook food in hot oil in a flat pan.",
+            "A very small amount, less than a little.",
+            "Sharp and sour, like lemon juice on your tongue."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ácido",
+          "answer": "Sharp and sour, like lemon juice on your tongue.",
+          "options": [
+            "Wrong; not the way the thing should have been.",
+            "To cook food in hot oil in a flat pan.",
+            "A very small amount, less than a little.",
+            "Sharp and sour, like lemon juice on your tongue."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cambia",
+    "sentence": "Aquí no se pesa nada; se prueba, y al final se _____ lo que haga falta, dice Quique.",
+    "payload": {
+      "answer": "cambia",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "coreaba",
+        "cambia",
+        "chisporroteaba",
+        "denunciaba"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7196722e9e4c426.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Aquí no se pesa nada; se prueba, y al final se cambia lo que haga falta”, dice Quique.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "cambiar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de verdad",
+    "sentence": "“Está muy correcto, de verdad que sí”, dice Rocío, y deja el tenedor de lado.",
+    "payload": {
+      "answer": "Really; said to show that you are not joking.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Really; said to show that you are not joking.",
+        "the fifteenth-birthday party",
+        "to grow fast, like foam rising",
+        "ceremonies"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/00b0ec198449b609.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Está muy correcto, de verdad que sí”, dice Rocío, y deja el tenedor de lado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "de verdad",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cuchillo",
+    "sentence": "cuchillo",
+    "payload": {
+      "answer": "cuchillo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "mareo",
+        "hogao",
+        "loquito",
+        "cuchillo"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "cuchillo,escrita,cambiar,echar de menos",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cuchillo",
+          "answer": "Sharp tool with one blade, used to cut food.",
+          "options": [
+            "Written down on paper instead of kept in your head.",
+            "Sharp tool with one blade, used to cut food.",
+            "To miss something you no longer have with you.",
+            "To make something different from how it was."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "escrita",
+          "answer": "Written down on paper instead of kept in your head.",
+          "options": [
+            "Written down on paper instead of kept in your head.",
+            "Sharp tool with one blade, used to cut food.",
+            "To miss something you no longer have with you.",
+            "To make something different from how it was."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cambiar",
+          "answer": "To make something different from how it was.",
+          "options": [
+            "Written down on paper instead of kept in your head.",
+            "Sharp tool with one blade, used to cut food.",
+            "To miss something you no longer have with you.",
+            "To make something different from how it was."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "echar de menos",
+          "answer": "To miss something you no longer have with you.",
+          "options": [
+            "Written down on paper instead of kept in your head.",
+            "Sharp tool with one blade, used to cut food.",
+            "To miss something you no longer have with you.",
+            "To make something different from how it was."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "equivocado",
+    "sentence": "Irene levanta el tazón y no entiende qué ha hecho _____.",
+    "payload": {
+      "answer": "equivocado",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "arriesgado",
+        "rodeado",
+        "equivocado",
+        "denso"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8af41ca419f0679.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene levanta el tazón y no entiende qué ha hecho equivocado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "equivocado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "echar de menos",
+    "sentence": "Irene guarda la lista en un cajón y esa noche no la echa de menos.",
+    "payload": {
+      "answer": "To miss something you no longer have with you.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "rise up",
+        "what are you up to (Argentine voseo)",
+        "To miss something you no longer have with you.",
+        "how well it has gone"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/91aedb77d9479129.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene guarda la lista en un cajón y esa noche no la echa de menos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "echar de menos",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escrita",
+    "sentence": "Lleva la lista escrita al lado del fregadero, con su número.",
+    "payload": {
+      "answer": "Written down on paper instead of kept in your head.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to hand out",
+        "the performance",
+        "the soul, as in giving everything",
+        "Written down on paper instead of kept in your head."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/be032b09a079fb1e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lleva la lista escrita al lado del fregadero, con su número.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "escrita",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "intento",
+    "sentence": "Al tercer intento el caldo sale sabroso y algo picante.",
+    "payload": {
+      "answer": "One try at doing something you have not managed yet.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "One try at doing something you have not managed yet.",
+        "values",
+        "mixed",
+        "the big-eared, long-nosed masks of Barranquilla"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4d938b995692af3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Al tercer intento el caldo sale sabroso y algo picante.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "intento",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rebanar",
+    "sentence": "“Correcto y soso, que no es lo mismo y tú lo sabes”, añade Quique mientras rebana el pan.",
+    "payload": {
+      "answer": "To cut bread into flat pieces, one after another.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "see you around (Mexican play on ahí nos vemos)",
+        "I found out",
+        "To cut bread into flat pieces, one after another.",
+        "they wander through"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/71b7314508036a8f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Correcto y soso, que no es lo mismo y tú lo sabes”, añade Quique mientras rebana el pan.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "rebanar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "salsa",
+    "sentence": "Rocío repite y a Quique se le queda salsa en la barbilla.",
+    "payload": {
+      "answer": "Thick liquid poured over food to give it taste.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Thick liquid poured over food to give it taste.",
+        "a draught, a breeze",
+        "watery, weak",
+        "a bore, a dead loss (Argentine slang)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e0103516b1760382.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío repite y a Quique se le queda salsa en la barbilla.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "salsa",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "Mezcla",
+    "sentence": "_____, cuece y fríe siguiendo el orden, sin mojar la cuchara.",
+    "payload": {
+      "answer": "Mezcla",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "Sostenía",
+        "Adorna",
+        "Mezcla",
+        "Saborea"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8740db7919600e52.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Mezcla, cuece y fríe siguiendo el orden, sin mojar la cuchara.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "mezclar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "rebana",
+    "sentence": "Correcto y soso, que no es lo mismo y tú lo sabes, añade Quique mientras _____ el pan.",
+    "payload": {
+      "answer": "rebana",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ingresa",
+        "rebana",
+        "cambia",
+        "suspira"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/71b7314508036a8f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Correcto y soso, que no es lo mismo y tú lo sabes”, añade Quique mientras rebana el pan.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "le-sale-soso",
+        "targetWord": "rebanar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "freír",
+    "sentence": "freír",
+    "payload": {
+      "answer": "freír",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "mantener",
+        "freír",
+        "ocurra",
+        "manejando"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "de verdad,cocer,tenedor,número",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "de verdad",
+          "answer": "Really; said to show that you are not joking.",
+          "options": [
+            "Eating tool with points, used for meat and salad.",
+            "To cook food slowly in water over a low flame.",
+            "A figure that says how much or how many.",
+            "Really; said to show that you are not joking."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cocer",
+          "answer": "To cook food slowly in water over a low flame.",
+          "options": [
+            "Eating tool with points, used for meat and salad.",
+            "To cook food slowly in water over a low flame.",
+            "A figure that says how much or how many.",
+            "Really; said to show that you are not joking."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tenedor",
+          "answer": "Eating tool with points, used for meat and salad.",
+          "options": [
+            "Eating tool with points, used for meat and salad.",
+            "To cook food slowly in water over a low flame.",
+            "A figure that says how much or how many.",
+            "Really; said to show that you are not joking."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "número",
+          "answer": "A figure that says how much or how many.",
+          "options": [
+            "Eating tool with points, used for meat and salad.",
+            "To cook food slowly in water over a low flame.",
+            "A figure that says how much or how many.",
+            "Really; said to show that you are not joking."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

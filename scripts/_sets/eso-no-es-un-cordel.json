@@ -1,0 +1,1016 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "adornar",
+    "sentence": "El cordel es áspero y sirve para atar; esto solo sirve para _____.",
+    "payload": {
+      "answer": "adornar",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "adornar",
+        "olvidan",
+        "titilaba",
+        "señaló"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3d5de3d7a897df1a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“El cordel es áspero y sirve para atar; esto solo sirve para adornar”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "adornar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agacharse",
+    "sentence": "Se agacha junto al muro y agarra el cesto por el borde.",
+    "payload": {
+      "answer": "To bend down low, usually to reach something near the ground.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "nails",
+        "a bad loser",
+        "To bend down low, usually to reach something near the ground.",
+        "the small hours"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae2597ff5597de26.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Se agacha junto al muro y agarra el cesto por el borde.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "agacharse",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "agarrar",
+    "sentence": "agarrar",
+    "payload": {
+      "answer": "agarrar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "preservado",
+        "descubren",
+        "volver",
+        "agarrar"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "agarra",
+    "sentence": "Se agacha junto al muro y _____ el cesto por el borde.",
+    "payload": {
+      "answer": "agarra",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "conectaba",
+        "agarra",
+        "revela",
+        "revisa"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae2597ff5597de26.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Se agacha junto al muro y agarra el cesto por el borde.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "agarrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alcanzar",
+    "sentence": "De un gancho cuelga una cinta y la alcanza.",
+    "payload": {
+      "answer": "To reach something high or far away and get it down.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "midterm exam",
+        "To reach something high or far away and get it down.",
+        "weathered hands",
+        "car horns"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05c77e3297ee52e5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "De un gancho cuelga una cinta y la alcanza.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "alcanzar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "anotar",
+    "sentence": "anotar",
+    "payload": {
+      "answer": "anotar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "arreglar",
+        "anotar",
+        "valorar",
+        "promocionar"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "apretar,atar,gancho,anotar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "apretar",
+          "answer": "To press something hard against you so it cannot fall.",
+          "options": [
+            "To press something hard against you so it cannot fall.",
+            "To tie something with string so that it holds together.",
+            "Curved piece of metal on a wall for hanging things on.",
+            "To write something short down so you do not forget."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "atar",
+          "answer": "To tie something with string so that it holds together.",
+          "options": [
+            "To press something hard against you so it cannot fall.",
+            "To tie something with string so that it holds together.",
+            "Curved piece of metal on a wall for hanging things on.",
+            "To write something short down so you do not forget."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "gancho",
+          "answer": "Curved piece of metal on a wall for hanging things on.",
+          "options": [
+            "To press something hard against you so it cannot fall.",
+            "To tie something with string so that it holds together.",
+            "Curved piece of metal on a wall for hanging things on.",
+            "To write something short down so you do not forget."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "anotar",
+          "answer": "To write something short down so you do not forget.",
+          "options": [
+            "To press something hard against you so it cannot fall.",
+            "To tie something with string so that it holds together.",
+            "Curved piece of metal on a wall for hanging things on.",
+            "To write something short down so you do not forget."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "alcanza",
+    "sentence": "De un gancho cuelga una cinta y la _____.",
+    "payload": {
+      "answer": "alcanza",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "alcanza",
+        "valora",
+        "titilaba",
+        "cosecharla"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05c77e3297ee52e5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "De un gancho cuelga una cinta y la alcanza.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "alcanzar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apretar",
+    "sentence": "Sube tres pisos con las cosas apretadas contra el pecho y esta vez calla.",
+    "payload": {
+      "answer": "To press something hard against you so it cannot fall.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "chillies",
+        "To press something hard against you so it cannot fall.",
+        "wire",
+        "belly"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee7d0220b7daaf76.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Sube tres pisos con las cosas apretadas contra el pecho y esta vez calla.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "apretar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "anota",
+    "sentence": "Rocío, la vecina de arriba, sube con un cuaderno y le _____ seis cosas con letra fina.",
+    "payload": {
+      "answer": "anota",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "contaminaba",
+        "anota",
+        "aumenta",
+        "fluía"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff59fd9da54c954f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío, la vecina de arriba, sube con un cuaderno y le anota seis cosas con letra fina.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "anotar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "adornar",
+    "sentence": "El cordel es áspero y sirve para atar; esto solo sirve para _____.",
+    "payload": {
+      "answer": "adornar",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "dañó",
+        "proteger",
+        "adornar",
+        "pestañear"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3d5de3d7a897df1a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“El cordel es áspero y sirve para atar; esto solo sirve para adornar”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "adornar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "agacharse",
+    "sentence": "Se agacha junto al muro y agarra el cesto por el borde.",
+    "payload": {
+      "answer": "To bend down low, usually to reach something near the ground.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the brass band of the town",
+        "To bend down low, usually to reach something near the ground.",
+        "darts, arrows",
+        "childhood"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae2597ff5597de26.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Se agacha junto al muro y agarra el cesto por el borde.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "agacharse",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "agarrar",
+    "sentence": "agarrar",
+    "payload": {
+      "answer": "agarrar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "agarrar",
+        "decidirme",
+        "amenazan",
+        "enfocarte"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "vaciar,enrollar,letra,adornar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "vaciar",
+          "answer": "To become empty, when the people or things inside leave.",
+          "options": [
+            "To become empty, when the people or things inside leave.",
+            "To wind something long around itself into a tidy roll.",
+            "The shape of the words somebody writes by hand.",
+            "To add something pretty to a thing, for decoration only."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "enrollar",
+          "answer": "To wind something long around itself into a tidy roll.",
+          "options": [
+            "To become empty, when the people or things inside leave.",
+            "To wind something long around itself into a tidy roll.",
+            "The shape of the words somebody writes by hand.",
+            "To add something pretty to a thing, for decoration only."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "letra",
+          "answer": "The shape of the words somebody writes by hand.",
+          "options": [
+            "To become empty, when the people or things inside leave.",
+            "To wind something long around itself into a tidy roll.",
+            "The shape of the words somebody writes by hand.",
+            "To add something pretty to a thing, for decoration only."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "adornar",
+          "answer": "To add something pretty to a thing, for decoration only.",
+          "options": [
+            "To become empty, when the people or things inside leave.",
+            "To wind something long around itself into a tidy roll.",
+            "The shape of the words somebody writes by hand.",
+            "To add something pretty to a thing, for decoration only."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "agarra",
+    "sentence": "Se agacha junto al muro y _____ el cesto por el borde.",
+    "payload": {
+      "answer": "agarra",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "resulta",
+        "agarra",
+        "señala",
+        "llevaba"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae2597ff5597de26.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Se agacha junto al muro y agarra el cesto por el borde.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "agarrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alcanzar",
+    "sentence": "De un gancho cuelga una cinta y la alcanza.",
+    "payload": {
+      "answer": "To reach something high or far away and get it down.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "classroom, lecture hall",
+        "exactly like it",
+        "To reach something high or far away and get it down.",
+        "the finishing touches"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05c77e3297ee52e5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "De un gancho cuelga una cinta y la alcanza.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "alcanzar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "anotar",
+    "sentence": "anotar",
+    "payload": {
+      "answer": "anotar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "intercambiar",
+        "anotar",
+        "recorre",
+        "cuelga"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "alcanzar,gancho,pecho,muro",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "alcanzar",
+          "answer": "To reach something high or far away and get it down.",
+          "options": [
+            "Curved piece of metal on a wall for hanging things on.",
+            "To reach something high or far away and get it down.",
+            "The front of your body between the neck and the stomach.",
+            "Thick outside wall of stone that closes off a yard."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "gancho",
+          "answer": "Curved piece of metal on a wall for hanging things on.",
+          "options": [
+            "Curved piece of metal on a wall for hanging things on.",
+            "To reach something high or far away and get it down.",
+            "The front of your body between the neck and the stomach.",
+            "Thick outside wall of stone that closes off a yard."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pecho",
+          "answer": "The front of your body between the neck and the stomach.",
+          "options": [
+            "Curved piece of metal on a wall for hanging things on.",
+            "To reach something high or far away and get it down.",
+            "The front of your body between the neck and the stomach.",
+            "Thick outside wall of stone that closes off a yard."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "muro",
+          "answer": "Thick outside wall of stone that closes off a yard.",
+          "options": [
+            "Curved piece of metal on a wall for hanging things on.",
+            "To reach something high or far away and get it down.",
+            "The front of your body between the neck and the stomach.",
+            "Thick outside wall of stone that closes off a yard."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "alcanza",
+    "sentence": "De un gancho cuelga una cinta y la _____.",
+    "payload": {
+      "answer": "alcanza",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "alcanza",
+        "arreglarla",
+        "ajusta",
+        "habita"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/05c77e3297ee52e5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "De un gancho cuelga una cinta y la alcanza.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "alcanzar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apretar",
+    "sentence": "Sube tres pisos con las cosas apretadas contra el pecho y esta vez calla.",
+    "payload": {
+      "answer": "To press something hard against you so it cannot fall.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a story to tell",
+        "To press something hard against you so it cannot fall.",
+        "taste it",
+        "drawing in"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee7d0220b7daaf76.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Sube tres pisos con las cosas apretadas contra el pecho y esta vez calla.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "apretar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calma",
+    "sentence": "Vuelve con el cordel enrollado; lo que se le queda es la calma de Rocío.",
+    "payload": {
+      "answer": "The quiet, unhurried way somebody waits or does something.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "The quiet, unhurried way somebody waits or does something.",
+        "public holidays",
+        "feathers",
+        "a drag, a pain (Colombian slang)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/976be699f360df2a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Vuelve con el cordel enrollado; lo que se le queda es la calma de Rocío.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "calma",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "canasto",
+    "sentence": "“Bájame el canasto del patio y el cordel que dejé detrás de la puerta”, dice Rocío.",
+    "payload": {
+      "answer": "Big open basket with two handles, used for carrying things.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the engine",
+        "Big open basket with two handles, used for carrying things.",
+        "they scatter",
+        "to clean"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a2481357fe675ed4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Bájame el canasto del patio y el cordel que dejé detrás de la puerta”, dice Rocío.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "canasto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de nuevo",
+    "sentence": "Lo apunta debajo de las seis y baja de nuevo al patio.",
+    "payload": {
+      "answer": "Again; one more time, after having already done it once.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Again; one more time, after having already done it once.",
+        "right away",
+        "teenager",
+        "laughter"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f2159e3cd2bfc3a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lo apunta debajo de las seis y baja de nuevo al patio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "de nuevo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "vaciar",
+    "sentence": "Vive encima de la panadería y lleva dos semanas oyendo cómo se vacía.",
+    "payload": {
+      "answer": "To become empty, when the people or things inside leave.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "disoriented",
+        "a killjoy, a snitch (Argentine slang)",
+        "soda water",
+        "To become empty, when the people or things inside leave."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/074e6d040ca50a5e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Vive encima de la panadería y lleva dos semanas oyendo cómo se vacía.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "vaciar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "anota",
+    "sentence": "Rocío, la vecina de arriba, sube con un cuaderno y le _____ seis cosas con letra fina.",
+    "payload": {
+      "answer": "anota",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "anota",
+        "revisaba",
+        "registra",
+        "ondea"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ff59fd9da54c954f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío, la vecina de arriba, sube con un cuaderno y le anota seis cosas con letra fina.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "anotar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "apretadas",
+    "sentence": "Sube tres pisos con las cosas _____ contra el pecho y esta vez calla.",
+    "payload": {
+      "answer": "apretadas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "vuelas",
+        "vigilarlas",
+        "quisieras",
+        "apretadas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee7d0220b7daaf76.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Sube tres pisos con las cosas apretadas contra el pecho y esta vez calla.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "eso-no-es-un-cordel",
+        "targetWord": "apretar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "áspero",
+    "sentence": "áspero",
+    "payload": {
+      "answer": "áspero",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "flaco",
+        "finito",
+        "tallado",
+        "áspero"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "atar",
+    "sentence": "atar",
+    "payload": {
+      "answer": "atar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "quemando",
+        "afectarían",
+        "atar",
+        "revelo"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "borde",
+    "sentence": "borde",
+    "payload": {
+      "answer": "borde",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "alebrijes",
+        "cosecha",
+        "borde",
+        "españoles"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "de nuevo,colgar,cordel,atar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "de nuevo",
+          "answer": "Again; one more time, after having already done it once.",
+          "options": [
+            "Thin rough string that you use for tying things together.",
+            "To tie something with string so that it holds together.",
+            "Again; one more time, after having already done it once.",
+            "To hang something up so that it stays off the floor."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "colgar",
+          "answer": "To hang something up so that it stays off the floor.",
+          "options": [
+            "Thin rough string that you use for tying things together.",
+            "To tie something with string so that it holds together.",
+            "Again; one more time, after having already done it once.",
+            "To hang something up so that it stays off the floor."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cordel",
+          "answer": "Thin rough string that you use for tying things together.",
+          "options": [
+            "Thin rough string that you use for tying things together.",
+            "To tie something with string so that it holds together.",
+            "Again; one more time, after having already done it once.",
+            "To hang something up so that it stays off the floor."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "atar",
+          "answer": "To tie something with string so that it holds together.",
+          "options": [
+            "Thin rough string that you use for tying things together.",
+            "To tie something with string so that it holds together.",
+            "Again; one more time, after having already done it once.",
+            "To hang something up so that it stays off the floor."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

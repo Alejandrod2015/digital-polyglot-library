@@ -1,0 +1,1032 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "ancho",
+    "sentence": "Ese no, el otro, que ese es demasiado _____ para un dedo, dice Marta sin bajarse.",
+    "payload": {
+      "answer": "ancho",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ancho",
+        "cansado",
+        "próspero",
+        "elaborado"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa4ea4725ef03b37.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Ese no, el otro, que ese es demasiado ancho para un dedo”, dice Marta sin bajarse.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "ancho",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "botiquín",
+    "sentence": "En la farmacia hay cuatro cajones abiertos y un botiquín sin tapa en el suelo.",
+    "payload": {
+      "answer": "Small box where a house keeps medicines and bandages.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the room",
+        "Small box where a house keeps medicines and bandages.",
+        "to swap",
+        "covered"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96d94a97fb0645ef.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la farmacia hay cuatro cajones abiertos y un botiquín sin tapa en el suelo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "botiquín",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cajón",
+    "sentence": "cajón",
+    "payload": {
+      "answer": "cajón",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "pilas",
+        "sinfonía",
+        "río",
+        "cajón"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "como todas",
+    "sentence": "Yo creía que te ibas en octubre, _____ las de verano, dice desde arriba.",
+    "payload": {
+      "answer": "como todas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "salón de actos",
+        "una mala pasada",
+        "como todas",
+        "en pleno apogeo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c8d2be5f4cfad1d6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Yo creía que te ibas en octubre, como todas las de verano”, dice desde arriba.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "como todas",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esparadrapo",
+    "sentence": "Irene alcanza una caja del suelo, la acomoda y saca un tubo de esparadrapo.",
+    "payload": {
+      "answer": "Sticky tape used to hold a bandage on the skin.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "divine",
+        "Sticky tape used to hold a bandage on the skin.",
+        "a fragment",
+        "girl, girlfriend (Mexican)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e2f8afb6035e4576.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene alcanza una caja del suelo, la acomoda y saca un tubo de esparadrapo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "esparadrapo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "creer",
+    "sentence": "creer",
+    "payload": {
+      "answer": "creer",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "creer",
+        "decepcionando",
+        "descender",
+        "creían"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "creer,desde arriba,ancho,sobrina",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "creer",
+          "answer": "To think that something is true when it is not.",
+          "options": [
+            "Wide; with a lot of space from side to side.",
+            "From a higher place, looking down at somebody.",
+            "The daughter of your brother or of your sister.",
+            "To think that something is true when it is not."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "desde arriba",
+          "answer": "From a higher place, looking down at somebody.",
+          "options": [
+            "Wide; with a lot of space from side to side.",
+            "From a higher place, looking down at somebody.",
+            "The daughter of your brother or of your sister.",
+            "To think that something is true when it is not."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ancho",
+          "answer": "Wide; with a lot of space from side to side.",
+          "options": [
+            "Wide; with a lot of space from side to side.",
+            "From a higher place, looking down at somebody.",
+            "The daughter of your brother or of your sister.",
+            "To think that something is true when it is not."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sobrina",
+          "answer": "The daughter of your brother or of your sister.",
+          "options": [
+            "Wide; with a lot of space from side to side.",
+            "From a higher place, looking down at somebody.",
+            "The daughter of your brother or of your sister.",
+            "To think that something is true when it is not."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "estantería",
+    "sentence": "Apunta hacia la repisa alta de la _____ y aguarda con calma.",
+    "payload": {
+      "answer": "estantería",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "estantería",
+        "ginebra",
+        "espinaca",
+        "ceremonia"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b3c57e67b0ffae19.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Apunta hacia la repisa alta de la estantería y aguarda con calma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "estante",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estante",
+    "sentence": "Apunta hacia la repisa alta de la estantería y aguarda con calma.",
+    "payload": {
+      "answer": "Flat board in a cupboard where things are kept.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "announcements",
+        "hell yes (Mexican slang, informal)",
+        "the neighbour",
+        "Flat board in a cupboard where things are kept."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b3c57e67b0ffae19.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Apunta hacia la repisa alta de la estantería y aguarda con calma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "estante",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "ordena",
+    "sentence": "Y _____ las pastillas en el estante de abajo, que ahí se ven mejor.",
+    "payload": {
+      "answer": "ordena",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "resoplaba",
+        "resulta",
+        "muera",
+        "ordena"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/019c385c623cff93.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y ordena las pastillas en el estante de abajo, que ahí se ven mejor”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "ordenar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "ancho",
+    "sentence": "Ese no, el otro, que ese es demasiado _____ para un dedo, dice Marta sin bajarse.",
+    "payload": {
+      "answer": "ancho",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "lejano",
+        "ancho",
+        "finito",
+        "espeso"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa4ea4725ef03b37.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Ese no, el otro, que ese es demasiado ancho para un dedo”, dice Marta sin bajarse.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "ancho",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "botiquín",
+    "sentence": "En la farmacia hay cuatro cajones abiertos y un botiquín sin tapa en el suelo.",
+    "payload": {
+      "answer": "Small box where a house keeps medicines and bandages.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Small box where a house keeps medicines and bandages.",
+        "kept you company, walked alongside",
+        "a kickabout, an informal match",
+        "has blended"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96d94a97fb0645ef.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la farmacia hay cuatro cajones abiertos y un botiquín sin tapa en el suelo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "botiquín",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cajón",
+    "sentence": "cajón",
+    "payload": {
+      "answer": "cajón",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "interior",
+        "discursos",
+        "cajón",
+        "tiza"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "venda,pie,sostener,repisa",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "venda",
+          "answer": "Long strip of cloth wrapped around a cut or a wound.",
+          "options": [
+            "Long strip of cloth wrapped around a cut or a wound.",
+            "The part of the body you stand and walk on.",
+            "Narrow shelf fixed to a wall, for small things.",
+            "To hold something up so that it does not fall."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pie",
+          "answer": "The part of the body you stand and walk on.",
+          "options": [
+            "Long strip of cloth wrapped around a cut or a wound.",
+            "The part of the body you stand and walk on.",
+            "Narrow shelf fixed to a wall, for small things.",
+            "To hold something up so that it does not fall."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sostener",
+          "answer": "To hold something up so that it does not fall.",
+          "options": [
+            "Long strip of cloth wrapped around a cut or a wound.",
+            "The part of the body you stand and walk on.",
+            "Narrow shelf fixed to a wall, for small things.",
+            "To hold something up so that it does not fall."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "repisa",
+          "answer": "Narrow shelf fixed to a wall, for small things.",
+          "options": [
+            "Long strip of cloth wrapped around a cut or a wound.",
+            "The part of the body you stand and walk on.",
+            "Narrow shelf fixed to a wall, for small things.",
+            "To hold something up so that it does not fall."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "como todas",
+    "sentence": "Yo creía que te ibas en octubre, _____ las de verano, dice desde arriba.",
+    "payload": {
+      "answer": "como todas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "qué raye",
+        "la gorra",
+        "chupando un clavo",
+        "como todas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c8d2be5f4cfad1d6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Yo creía que te ibas en octubre, como todas las de verano”, dice desde arriba.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "como todas",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esparadrapo",
+    "sentence": "Irene alcanza una caja del suelo, la acomoda y saca un tubo de esparadrapo.",
+    "payload": {
+      "answer": "Sticky tape used to hold a bandage on the skin.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "mobile phones",
+        "closely, attentively",
+        "draws in",
+        "Sticky tape used to hold a bandage on the skin."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e2f8afb6035e4576.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene alcanza una caja del suelo, la acomoda y saca un tubo de esparadrapo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "esparadrapo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "creer",
+    "sentence": "creer",
+    "payload": {
+      "answer": "creer",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "malinterpretó",
+        "envuelven",
+        "chocaron",
+        "creer"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "verano,tapa,creer,estante",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "verano",
+          "answer": "The hottest season of the year, when the tourists come.",
+          "options": [
+            "The hottest season of the year, when the tourists come.",
+            "To think that something is true when it is not.",
+            "The lid that closes a box, a jar or a pot.",
+            "Flat board in a cupboard where things are kept."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tapa",
+          "answer": "The lid that closes a box, a jar or a pot.",
+          "options": [
+            "The hottest season of the year, when the tourists come.",
+            "To think that something is true when it is not.",
+            "The lid that closes a box, a jar or a pot.",
+            "Flat board in a cupboard where things are kept."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "creer",
+          "answer": "To think that something is true when it is not.",
+          "options": [
+            "The hottest season of the year, when the tourists come.",
+            "To think that something is true when it is not.",
+            "The lid that closes a box, a jar or a pot.",
+            "Flat board in a cupboard where things are kept."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "estante",
+          "answer": "Flat board in a cupboard where things are kept.",
+          "options": [
+            "The hottest season of the year, when the tourists come.",
+            "To think that something is true when it is not.",
+            "The lid that closes a box, a jar or a pot.",
+            "Flat board in a cupboard where things are kept."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "estantería",
+    "sentence": "Apunta hacia la repisa alta de la _____ y aguarda con calma.",
+    "payload": {
+      "answer": "estantería",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "niñera",
+        "estantería",
+        "mija",
+        "mitología"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b3c57e67b0ffae19.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Apunta hacia la repisa alta de la estantería y aguarda con calma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "estante",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estante",
+    "sentence": "Apunta hacia la repisa alta de la estantería y aguarda con calma.",
+    "payload": {
+      "answer": "Flat board in a cupboard where things are kept.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "sprout",
+        "Flat board in a cupboard where things are kept.",
+        "to extract",
+        "crunchy"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b3c57e67b0ffae19.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Apunta hacia la repisa alta de la estantería y aguarda con calma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "estante",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ordenar",
+    "sentence": "“Y ordena las pastillas en el estante de abajo, que ahí se ven mejor”.",
+    "payload": {
+      "answer": "To put things in their right place, one by one.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "To put things in their right place, one by one.",
+        "a nice little juice",
+        "the beauty",
+        "miss, polite address for a woman"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/019c385c623cff93.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y ordena las pastillas en el estante de abajo, que ahí se ven mejor”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "ordenar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pie",
+    "sentence": "Irene cierra el último cajón con el pie y se queda con la mano en el borde.",
+    "payload": {
+      "answer": "The part of the body you stand and walk on.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the rollercoaster",
+        "The part of the body you stand and walk on.",
+        "a perfume",
+        "blesses"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0fd4788e44c23ef6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene cierra el último cajón con el pie y se queda con la mano en el borde.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "pie",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seco",
+    "sentence": "“Yo me quedo”, dice, y le sale más seco de lo que pensaba.",
+    "payload": {
+      "answer": "Said in very few words, with no warmth around them.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "crickets",
+        "threaten to",
+        "Said in very few words, with no warmth around them.",
+        "the platform"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/12e0d960c39a2bc4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Yo me quedo”, dice, y le sale más seco de lo que pensaba.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "seco",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sobrina",
+    "sentence": "“Ya te sabes los nombres mejor que mi sobrina”, contesta Marta, con una mueca.",
+    "payload": {
+      "answer": "The daughter of your brother or of your sister.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "narrow",
+        "council enforcement officer",
+        "to make the most of",
+        "The daughter of your brother or of your sister."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/331859762c884e3d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Ya te sabes los nombres mejor que mi sobrina”, contesta Marta, con una mueca.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "sobrina",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sostener",
+    "sentence": "Irene le pone dos tiritas en la mano y le sostiene el estante.",
+    "payload": {
+      "answer": "To hold something up so that it does not fall.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to afford, to pay for",
+        "lit",
+        "To hold something up so that it does not fall.",
+        "travel blog they are writing"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a8a54e83c5f37d8a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene le pone dos tiritas en la mano y le sostiene el estante.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "sostener",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "ordena",
+    "sentence": "Y _____ las pastillas en el estante de abajo, que ahí se ven mejor.",
+    "payload": {
+      "answer": "ordena",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "creía",
+        "vuela",
+        "ordena",
+        "desmorona"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/019c385c623cff93.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y ordena las pastillas en el estante de abajo, que ahí se ven mejor”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "ordenar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "tiritas",
+    "sentence": "Irene le pone dos _____ en la mano y le sostiene el estante.",
+    "payload": {
+      "answer": "tiritas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "uñas",
+        "vestimentas",
+        "tiritas",
+        "aventuras"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a8a54e83c5f37d8a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene le pone dos tiritas en la mano y le sostiene el estante.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ahora-pide-ella",
+        "targetWord": "tirita",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "desde arriba",
+    "sentence": "desde arriba",
+    "payload": {
+      "answer": "desde arriba",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "La rompimos",
+        "ala ancha",
+        "desde arriba",
+        "Día de Muertos"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "pastilla",
+    "sentence": "pastilla",
+    "payload": {
+      "answer": "pastilla",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "riqueza",
+        "Boquita",
+        "pastilla",
+        "milanesa"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "seco,esparadrapo,ancho,tubo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "seco",
+          "answer": "Said in very few words, with no warmth around them.",
+          "options": [
+            "Wide; with a lot of space from side to side.",
+            "Sticky tape used to hold a bandage on the skin.",
+            "Long round thing you squeeze to get cream out.",
+            "Said in very few words, with no warmth around them."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "esparadrapo",
+          "answer": "Sticky tape used to hold a bandage on the skin.",
+          "options": [
+            "Wide; with a lot of space from side to side.",
+            "Sticky tape used to hold a bandage on the skin.",
+            "Long round thing you squeeze to get cream out.",
+            "Said in very few words, with no warmth around them."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ancho",
+          "answer": "Wide; with a lot of space from side to side.",
+          "options": [
+            "Wide; with a lot of space from side to side.",
+            "Sticky tape used to hold a bandage on the skin.",
+            "Long round thing you squeeze to get cream out.",
+            "Said in very few words, with no warmth around them."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tubo",
+          "answer": "Long round thing you squeeze to get cream out.",
+          "options": [
+            "Wide; with a lot of space from side to side.",
+            "Sticky tape used to hold a bandage on the skin.",
+            "Long round thing you squeeze to get cream out.",
+            "Said in very few words, with no warmth around them."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

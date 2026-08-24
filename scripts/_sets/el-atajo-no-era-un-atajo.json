@@ -1,0 +1,850 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "a la izquierda",
+    "sentence": "Irene sube sola entre hierba alta y deja el sendero bueno _____.",
+    "payload": {
+      "answer": "a la izquierda",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "a la mitad",
+        "en negro",
+        "con garra",
+        "a la izquierda"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6b3dc3684fd63ccc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene sube sola entre hierba alta y deja el sendero bueno a la izquierda.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "a la izquierda",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arboleda",
+    "sentence": "“¡Busca la arboleda de arriba y no te salgas de ahí!”.",
+    "payload": {
+      "answer": "Small group of trees that grow close together.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Small group of trees that grow close together.",
+        "wings",
+        "resources",
+        "ran slow"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/11e9e7759b5e4500.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“¡Busca la arboleda de arriba y no te salgas de ahí!”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "arboleda",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "arroyo",
+    "sentence": "arroyo",
+    "payload": {
+      "answer": "arroyo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "extremo",
+        "arroyo",
+        "arquero",
+        "tiro"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "atajo",
+    "sentence": "El _____ que subieron ayer con Álvaro no aparece por ninguna parte.",
+    "payload": {
+      "answer": "atajo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "atajo",
+        "limonero",
+        "lienzo",
+        "giro"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b43636cad12873a9.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El atajo que subieron ayer con Álvaro no aparece por ninguna parte.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "atajo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barranco",
+    "sentence": "“¡Por ahí no, guapa, que eso baja al barranco!”, le grita Álvaro desde el prado.",
+    "payload": {
+      "answer": "Deep narrow cut in a hill where rain water runs down.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Deep narrow cut in a hill where rain water runs down.",
+        "checks, squares",
+        "loves",
+        "smoothly"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b0d82f40c7809e99.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“¡Por ahí no, guapa, que eso baja al barranco!”, le grita Álvaro desde el prado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "barranco",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cabra",
+    "sentence": "cabra",
+    "payload": {
+      "answer": "cabra",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "taza",
+        "dueña",
+        "silleta",
+        "cabra"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "rueda,a la izquierda,oveja,camino",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "rueda",
+          "answer": "The round part of a car that turns on the road.",
+          "options": [
+            "Farm animal with thick white wool, kept for its milk.",
+            "On the left hand side, and not on the right.",
+            "The round part of a car that turns on the road.",
+            "The way you take on foot from one place to another."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "a la izquierda",
+          "answer": "On the left hand side, and not on the right.",
+          "options": [
+            "Farm animal with thick white wool, kept for its milk.",
+            "On the left hand side, and not on the right.",
+            "The round part of a car that turns on the road.",
+            "The way you take on foot from one place to another."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "oveja",
+          "answer": "Farm animal with thick white wool, kept for its milk.",
+          "options": [
+            "Farm animal with thick white wool, kept for its milk.",
+            "On the left hand side, and not on the right.",
+            "The round part of a car that turns on the road.",
+            "The way you take on foot from one place to another."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "camino",
+          "answer": "The way you take on foot from one place to another.",
+          "options": [
+            "Farm animal with thick white wool, kept for its milk.",
+            "On the left hand side, and not on the right.",
+            "The round part of a car that turns on the road.",
+            "The way you take on foot from one place to another."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "carpeta",
+    "sentence": "Una mira su ventana y la otra anota algo en una _____.",
+    "payload": {
+      "answer": "carpeta",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "madera",
+        "carpeta",
+        "novia",
+        "rama"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3cdf185f1918ea1e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Una mira su ventana y la otra anota algo en una carpeta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "carpeta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerro",
+    "sentence": "Álvaro baja con las ovejas y ella se queda en el cerro, mirando el horizonte.",
+    "payload": {
+      "answer": "High round hill that stands alone above a town.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "maudlin",
+        "High round hill that stands alone above a town.",
+        "the Kogi, an indigenous people of the Sierra Nevada",
+        "get together"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/008afb8b6d5d3f05.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Álvaro baja con las ovejas y ella se queda en el cerro, mirando el horizonte.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "cerro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cuneta",
+    "sentence": "Sigue la huella de una rueda por la _____ y se agarra a un tronco áspero.",
+    "payload": {
+      "answer": "cuneta",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cuneta",
+        "ecosistema",
+        "tema",
+        "balsa"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/170d5b4ed7a391e8.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Sigue la huella de una rueda por la cuneta y se agarra a un tronco áspero.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "cuneta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "a la izquierda",
+    "sentence": "Irene sube sola entre hierba alta y deja el sendero bueno _____.",
+    "payload": {
+      "answer": "a la izquierda",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "a la izquierda",
+        "le metemos",
+        "cochinita pibil",
+        "no se preocupe"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6b3dc3684fd63ccc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene sube sola entre hierba alta y deja el sendero bueno a la izquierda.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "a la izquierda",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arboleda",
+    "sentence": "“¡Busca la arboleda de arriba y no te salgas de ahí!”.",
+    "payload": {
+      "answer": "Small group of trees that grow close together.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the card reader",
+        "Small group of trees that grow close together.",
+        "Pass",
+        "tilting it"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/11e9e7759b5e4500.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“¡Busca la arboleda de arriba y no te salgas de ahí!”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "arboleda",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "arroyo",
+    "sentence": "arroyo",
+    "payload": {
+      "answer": "arroyo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "paisano",
+        "arroyo",
+        "templo",
+        "anciano"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "atajo,huella,rueda,cuneta",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "atajo",
+          "answer": "Short way that gets you there faster than the road.",
+          "options": [
+            "The round part of a car that turns on the road.",
+            "Short way that gets you there faster than the road.",
+            "The low ditch at the side of a country road.",
+            "The mark a foot or a wheel leaves on soft ground."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "huella",
+          "answer": "The mark a foot or a wheel leaves on soft ground.",
+          "options": [
+            "The round part of a car that turns on the road.",
+            "Short way that gets you there faster than the road.",
+            "The low ditch at the side of a country road.",
+            "The mark a foot or a wheel leaves on soft ground."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "rueda",
+          "answer": "The round part of a car that turns on the road.",
+          "options": [
+            "The round part of a car that turns on the road.",
+            "Short way that gets you there faster than the road.",
+            "The low ditch at the side of a country road.",
+            "The mark a foot or a wheel leaves on soft ground."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cuneta",
+          "answer": "The low ditch at the side of a country road.",
+          "options": [
+            "The round part of a car that turns on the road.",
+            "Short way that gets you there faster than the road.",
+            "The low ditch at the side of a country road.",
+            "The mark a foot or a wheel leaves on soft ground."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "atajo",
+    "sentence": "El _____ que subieron ayer con Álvaro no aparece por ninguna parte.",
+    "payload": {
+      "answer": "atajo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "territorio",
+        "vistazo",
+        "suelo",
+        "atajo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b43636cad12873a9.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El atajo que subieron ayer con Álvaro no aparece por ninguna parte.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "atajo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "barranco",
+    "sentence": "“¡Por ahí no, guapa, que eso baja al barranco!”, le grita Álvaro desde el prado.",
+    "payload": {
+      "answer": "Deep narrow cut in a hill where rain water runs down.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "buzzed",
+        "a source of pride",
+        "I land, I get hold of",
+        "Deep narrow cut in a hill where rain water runs down."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b0d82f40c7809e99.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“¡Por ahí no, guapa, que eso baja al barranco!”, le grita Álvaro desde el prado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "barranco",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cabra",
+    "sentence": "cabra",
+    "payload": {
+      "answer": "cabra",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "fauna",
+        "mariposa",
+        "cabra",
+        "resaca"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "prado,ninguna parte,arroyo,arboleda",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "prado",
+          "answer": "Flat green field where farm animals eat grass.",
+          "options": [
+            "Nowhere at all; not in any place you look.",
+            "Very small river that runs down the side of a hill.",
+            "Flat green field where farm animals eat grass.",
+            "Small group of trees that grow close together."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ninguna parte",
+          "answer": "Nowhere at all; not in any place you look.",
+          "options": [
+            "Nowhere at all; not in any place you look.",
+            "Very small river that runs down the side of a hill.",
+            "Flat green field where farm animals eat grass.",
+            "Small group of trees that grow close together."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "arroyo",
+          "answer": "Very small river that runs down the side of a hill.",
+          "options": [
+            "Nowhere at all; not in any place you look.",
+            "Very small river that runs down the side of a hill.",
+            "Flat green field where farm animals eat grass.",
+            "Small group of trees that grow close together."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "arboleda",
+          "answer": "Small group of trees that grow close together.",
+          "options": [
+            "Nowhere at all; not in any place you look.",
+            "Very small river that runs down the side of a hill.",
+            "Flat green field where farm animals eat grass.",
+            "Small group of trees that grow close together."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "carpeta",
+    "sentence": "Una mira su ventana y la otra anota algo en una _____.",
+    "payload": {
+      "answer": "carpeta",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "temporada",
+        "carpeta",
+        "trampa",
+        "neblina"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3cdf185f1918ea1e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Una mira su ventana y la otra anota algo en una carpeta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "carpeta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cerro",
+    "sentence": "Álvaro baja con las ovejas y ella se queda en el cerro, mirando el horizonte.",
+    "payload": {
+      "answer": "High round hill that stands alone above a town.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "High round hill that stands alone above a town.",
+        "infectious",
+        "storm",
+        "guiding me"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/008afb8b6d5d3f05.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Álvaro baja con las ovejas y ella se queda en el cerro, mirando el horizonte.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "cerro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuneta",
+    "sentence": "Sigue la huella de una rueda por la cuneta y se agarra a un tronco áspero.",
+    "payload": {
+      "answer": "The low ditch at the side of a country road.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "with the hairs standing on end",
+        "have gone",
+        "produce, goods",
+        "The low ditch at the side of a country road."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/170d5b4ed7a391e8.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Sigue la huella de una rueda por la cuneta y se agarra a un tronco áspero.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "cuneta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de pasada",
+    "sentence": "“Un atajo aquí no se cuenta de pasada; se anda una vez contigo y ya está”.",
+    "payload": {
+      "answer": "Said quickly inside something else, without stopping to explain.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the eldest son",
+        "the valley",
+        "survival",
+        "Said quickly inside something else, without stopping to explain."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7ca7f5a0041f89c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Un atajo aquí no se cuenta de pasada; se anda una vez contigo y ya está”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-atajo-no-era-un-atajo",
+        "targetWord": "de pasada",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "camino",
+    "sentence": "camino",
+    "payload": {
+      "answer": "camino",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "trago",
+        "talento",
+        "camino",
+        "lamento"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "camino,cerro,desvío,a la izquierda",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "camino",
+          "answer": "The way you take on foot from one place to another.",
+          "options": [
+            "The way you take on foot from one place to another.",
+            "A turn that takes you off the road you wanted.",
+            "On the left hand side, and not on the right.",
+            "High round hill that stands alone above a town."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cerro",
+          "answer": "High round hill that stands alone above a town.",
+          "options": [
+            "The way you take on foot from one place to another.",
+            "A turn that takes you off the road you wanted.",
+            "On the left hand side, and not on the right.",
+            "High round hill that stands alone above a town."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "desvío",
+          "answer": "A turn that takes you off the road you wanted.",
+          "options": [
+            "The way you take on foot from one place to another.",
+            "A turn that takes you off the road you wanted.",
+            "On the left hand side, and not on the right.",
+            "High round hill that stands alone above a town."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "a la izquierda",
+          "answer": "On the left hand side, and not on the right.",
+          "options": [
+            "The way you take on foot from one place to another.",
+            "A turn that takes you off the road you wanted.",
+            "On the left hand side, and not on the right.",
+            "High round hill that stands alone above a town."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

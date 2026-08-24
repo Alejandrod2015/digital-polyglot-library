@@ -1,0 +1,916 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "a la vez",
+    "sentence": "No es alguien de Málaga ni una oficina de fuera, y lo entiende _____.",
+    "payload": {
+      "answer": "a la vez",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "a la vez",
+        "vivan los novios",
+        "manos a la obra",
+        "redes sociales"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a75f1f6e72a7bf71.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "No es alguien de Málaga ni una oficina de fuera, y lo entiende a la vez.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "a la vez",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "archivador",
+    "sentence": "La empleada saca del archivador un papel con dos grapas.",
+    "payload": {
+      "answer": "Tall cupboard where an office keeps all its papers.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a garden",
+        "Tall cupboard where an office keeps all its papers.",
+        "round",
+        "crooks"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9812bd0748cf186c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La empleada saca del archivador un papel con dos grapas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "archivador",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "bolígrafo",
+    "sentence": "bolígrafo",
+    "payload": {
+      "answer": "bolígrafo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "concreto",
+        "bolígrafo",
+        "colado",
+        "encanto"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "código",
+    "sentence": "Y verifique el _____ de la cuenta, que si baila un número se cae todo.",
+    "payload": {
+      "answer": "código",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "rumbo",
+        "hombro",
+        "torneo",
+        "código"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/75abed2f8d05b2c8.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y verifique el código de la cuenta, que si baila un número se cae todo”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "código",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "credencial",
+    "sentence": "Deja su credencial en el escritorio frío y aguarda con las manos abajo.",
+    "payload": {
+      "answer": "Card that proves who you are when they ask.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the roast",
+        "moaned",
+        "we produce",
+        "Card that proves who you are when they ask."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/83f7b3efea519fcc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Deja su credencial en el escritorio frío y aguarda con las manos abajo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "credencial",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "de fuera",
+    "sentence": "de fuera",
+    "payload": {
+      "answer": "de fuera",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "café aguado",
+        "dan forma",
+        "de fuera",
+        "hago la segunda"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "dirección,tinta,archivador,bolígrafo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "dirección",
+          "answer": "The street and the number where somebody lives.",
+          "options": [
+            "Tall cupboard where an office keeps all its papers.",
+            "Pen with ink inside that you write forms with.",
+            "The street and the number where somebody lives.",
+            "The coloured liquid that a pen leaves on paper."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tinta",
+          "answer": "The coloured liquid that a pen leaves on paper.",
+          "options": [
+            "Tall cupboard where an office keeps all its papers.",
+            "Pen with ink inside that you write forms with.",
+            "The street and the number where somebody lives.",
+            "The coloured liquid that a pen leaves on paper."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "archivador",
+          "answer": "Tall cupboard where an office keeps all its papers.",
+          "options": [
+            "Tall cupboard where an office keeps all its papers.",
+            "Pen with ink inside that you write forms with.",
+            "The street and the number where somebody lives.",
+            "The coloured liquid that a pen leaves on paper."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "bolígrafo",
+          "answer": "Pen with ink inside that you write forms with.",
+          "options": [
+            "Tall cupboard where an office keeps all its papers.",
+            "Pen with ink inside that you write forms with.",
+            "The street and the number where somebody lives.",
+            "The coloured liquid that a pen leaves on paper."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "depósito",
+    "sentence": "Es un informe corto, con un folleto y un _____ ya pagado desde septiembre.",
+    "payload": {
+      "answer": "depósito",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "alboroto",
+        "oído",
+        "sorbo",
+        "depósito"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1973f8e78eeaa109.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Es un informe corto, con un folleto y un depósito ya pagado desde septiembre.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "depósito",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dirección",
+    "sentence": "“Aquí falta la fecha, y aquí la dirección completa, con el número y la letra”, dice la empleada.",
+    "payload": {
+      "answer": "The street and the number where somebody lives.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a grouch, someone quick to anger",
+        "will you be up for it",
+        "a nightclub (Argentine word)",
+        "The street and the number where somebody lives."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20c04f63173d611e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Aquí falta la fecha, y aquí la dirección completa, con el número y la letra”, dice la empleada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "dirección",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "empleada",
+    "sentence": "La carpeta del piso que Irene quiere comprar la abre una _____ joven.",
+    "payload": {
+      "answer": "empleada",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "alma",
+        "empleada",
+        "selva",
+        "furia"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6aa80bcc6f299ab1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La carpeta del piso que Irene quiere comprar la abre una empleada joven.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "empleado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "a la vez",
+    "sentence": "No es alguien de Málaga ni una oficina de fuera, y lo entiende _____.",
+    "payload": {
+      "answer": "a la vez",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "villa de Leyva",
+        "ideas locas",
+        "a la vez",
+        "ciclo migratorio"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a75f1f6e72a7bf71.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "No es alguien de Málaga ni una oficina de fuera, y lo entiende a la vez.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "a la vez",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "archivador",
+    "sentence": "La empleada saca del archivador un papel con dos grapas.",
+    "payload": {
+      "answer": "Tall cupboard where an office keeps all its papers.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Tall cupboard where an office keeps all its papers.",
+        "runs in our veins",
+        "the meeting",
+        "a mess, chaos (very common in Argentina)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9812bd0748cf186c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La empleada saca del archivador un papel con dos grapas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "archivador",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "bolígrafo",
+    "sentence": "bolígrafo",
+    "payload": {
+      "answer": "bolígrafo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "encuentro",
+        "dorso",
+        "triunfo",
+        "bolígrafo"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "archivador,ingreso,código,folleto",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "archivador",
+          "answer": "Tall cupboard where an office keeps all its papers.",
+          "options": [
+            "Thin printed paper that explains or advertises something.",
+            "A set of numbers that stands for one account.",
+            "Money that comes in and is paid into an account.",
+            "Tall cupboard where an office keeps all its papers."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ingreso",
+          "answer": "Money that comes in and is paid into an account.",
+          "options": [
+            "Thin printed paper that explains or advertises something.",
+            "A set of numbers that stands for one account.",
+            "Money that comes in and is paid into an account.",
+            "Tall cupboard where an office keeps all its papers."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "código",
+          "answer": "A set of numbers that stands for one account.",
+          "options": [
+            "Thin printed paper that explains or advertises something.",
+            "A set of numbers that stands for one account.",
+            "Money that comes in and is paid into an account.",
+            "Tall cupboard where an office keeps all its papers."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "folleto",
+          "answer": "Thin printed paper that explains or advertises something.",
+          "options": [
+            "Thin printed paper that explains or advertises something.",
+            "A set of numbers that stands for one account.",
+            "Money that comes in and is paid into an account.",
+            "Tall cupboard where an office keeps all its papers."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "código",
+    "sentence": "Y verifique el _____ de la cuenta, que si baila un número se cae todo.",
+    "payload": {
+      "answer": "código",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "descanso",
+        "código",
+        "legajo",
+        "relincho"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/75abed2f8d05b2c8.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y verifique el código de la cuenta, que si baila un número se cae todo”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "código",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "credencial",
+    "sentence": "Deja su credencial en el escritorio frío y aguarda con las manos abajo.",
+    "payload": {
+      "answer": "Card that proves who you are when they ask.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "chaos",
+        "Card that proves who you are when they ask.",
+        "made his head spin",
+        "party, festive"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/83f7b3efea519fcc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Deja su credencial en el escritorio frío y aguarda con las manos abajo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "credencial",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "de fuera",
+    "sentence": "de fuera",
+    "payload": {
+      "answer": "de fuera",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "mole coloradito",
+        "ni idea",
+        "punto débil",
+        "de fuera"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "verificar,a la vez,depósito,grapa",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "verificar",
+          "answer": "To check that something is right before you accept it.",
+          "options": [
+            "Money paid up front to hold something for you.",
+            "To check that something is right before you accept it.",
+            "Small metal clip that holds sheets of paper together.",
+            "At the same time, with both things happening together."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "a la vez",
+          "answer": "At the same time, with both things happening together.",
+          "options": [
+            "Money paid up front to hold something for you.",
+            "To check that something is right before you accept it.",
+            "Small metal clip that holds sheets of paper together.",
+            "At the same time, with both things happening together."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "depósito",
+          "answer": "Money paid up front to hold something for you.",
+          "options": [
+            "Money paid up front to hold something for you.",
+            "To check that something is right before you accept it.",
+            "Small metal clip that holds sheets of paper together.",
+            "At the same time, with both things happening together."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "grapa",
+          "answer": "Small metal clip that holds sheets of paper together.",
+          "options": [
+            "Money paid up front to hold something for you.",
+            "To check that something is right before you accept it.",
+            "Small metal clip that holds sheets of paper together.",
+            "At the same time, with both things happening together."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "depósito",
+    "sentence": "Es un informe corto, con un folleto y un _____ ya pagado desde septiembre.",
+    "payload": {
+      "answer": "depósito",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "depósito",
+        "propósito",
+        "coro",
+        "golazo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1973f8e78eeaa109.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Es un informe corto, con un folleto y un depósito ya pagado desde septiembre.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "depósito",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dirección",
+    "sentence": "“Aquí falta la fecha, y aquí la dirección completa, con el número y la letra”, dice la empleada.",
+    "payload": {
+      "answer": "The street and the number where somebody lives.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "rubbish",
+        "The street and the number where somebody lives.",
+        "an emblem",
+        "put on it (Mexican imperative)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20c04f63173d611e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Aquí falta la fecha, y aquí la dirección completa, con el número y la letra”, dice la empleada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "dirección",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "empleado",
+    "sentence": "La carpeta del piso que Irene quiere comprar la abre una empleada joven.",
+    "payload": {
+      "answer": "Person who works in an office and is paid a wage.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "buyers",
+        "generations",
+        "Person who works in an office and is paid a wage.",
+        "a groan"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6aa80bcc6f299ab1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La carpeta del piso que Irene quiere comprar la abre una empleada joven.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "empleado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ingreso",
+    "sentence": "“Hay otra persona desde septiembre, con un ingreso más bajo que el suyo”, añade.",
+    "payload": {
+      "answer": "Money that comes in and is paid into an account.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "we hold, we celebrate",
+        "to check",
+        "Money that comes in and is paid into an account.",
+        "worn out"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d6017f14d69fcfc5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Hay otra persona desde septiembre, con un ingreso más bajo que el suyo”, añade.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "ingreso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recibo",
+    "sentence": "Irene saca el recibo del banco y lo deja encima de todo.",
+    "payload": {
+      "answer": "Paper that proves you paid an amount of money.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "my cousin",
+        "presents",
+        "nature",
+        "Paper that proves you paid an amount of money."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/84a3000a89b23206.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene saca el recibo del banco y lo deja encima de todo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "recibo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "empleada",
+    "sentence": "La carpeta del piso que Irene quiere comprar la abre una _____ joven.",
+    "payload": {
+      "answer": "empleada",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "despedida",
+        "faena",
+        "nota",
+        "empleada"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6aa80bcc6f299ab1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La carpeta del piso que Irene quiere comprar la abre una empleada joven.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-papeles-y-una-firma",
+        "targetWord": "empleado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "escritorio",
+    "sentence": "escritorio",
+    "payload": {
+      "answer": "escritorio",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cariño",
+        "escritorio",
+        "cafecito",
+        "desánimo"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "de fuera,bolígrafo,firmar,joven",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "de fuera",
+          "answer": "From outside the town, and not from here.",
+          "options": [
+            "From outside the town, and not from here.",
+            "To write your own name at the end of a paper.",
+            "Pen with ink inside that you write forms with.",
+            "Young; still near the beginning of a working life."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "bolígrafo",
+          "answer": "Pen with ink inside that you write forms with.",
+          "options": [
+            "From outside the town, and not from here.",
+            "To write your own name at the end of a paper.",
+            "Pen with ink inside that you write forms with.",
+            "Young; still near the beginning of a working life."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "firmar",
+          "answer": "To write your own name at the end of a paper.",
+          "options": [
+            "From outside the town, and not from here.",
+            "To write your own name at the end of a paper.",
+            "Pen with ink inside that you write forms with.",
+            "Young; still near the beginning of a working life."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "joven",
+          "answer": "Young; still near the beginning of a working life.",
+          "options": [
+            "From outside the town, and not from here.",
+            "To write your own name at the end of a paper.",
+            "Pen with ink inside that you write forms with.",
+            "Young; still near the beginning of a working life."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

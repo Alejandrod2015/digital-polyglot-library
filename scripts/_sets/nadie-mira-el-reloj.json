@@ -1,0 +1,999 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "a veces",
+    "sentence": "Esto que ves, y _____ ni eso, contesta Rocío con una mueca, y tararea algo muy bajo.",
+    "payload": {
+      "answer": "a veces",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "el don",
+        "mole negro",
+        "piedra caliza",
+        "a veces"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae1b732fc5720b55.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Esto que ves, y a veces ni eso”, contesta Rocío con una mueca, y tararea algo muy bajo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "a veces",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aburrido",
+    "sentence": "Pasan veinte minutos sin que nadie hable e Irene se siente aburrida.",
+    "payload": {
+      "answer": "Bored, with nothing to do and the time going slowly.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "static",
+        "Bored, with nothing to do and the time going slowly.",
+        "the bus station",
+        "lake"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab5ba468b13fad46.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pasan veinte minutos sin que nadie hable e Irene se siente aburrida.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "aburrido",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "al fin",
+    "sentence": "al fin",
+    "payload": {
+      "answer": "al fin",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "al fin",
+        "buenas manos",
+        "granito de arena",
+        "se va a pudrir"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "aburrida",
+    "sentence": "Pasan veinte minutos sin que nadie hable e Irene se siente _____.",
+    "payload": {
+      "answer": "aburrida",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "aburrida",
+        "grabada",
+        "amistosa",
+        "preciosa"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab5ba468b13fad46.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pasan veinte minutos sin que nadie hable e Irene se siente aburrida.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "aburrido",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bolsillo",
+    "sentence": "Irene se mete la libreta en el bolsillo y prueba a no hacer nada.",
+    "payload": {
+      "answer": "The small cloth bag sewn inside your trousers or coat.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "fish (as food or catch)",
+        "his little wooden box",
+        "The small cloth bag sewn inside your trousers or coat.",
+        "landscapes"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec22fe3ae633f266.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene se mete la libreta en el bolsillo y prueba a no hacer nada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "bolsillo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "bostezar",
+    "sentence": "bostezar",
+    "payload": {
+      "answer": "bostezar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "ilumine",
+        "lavarlos",
+        "bostezar",
+        "impulsa"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "mueca,butaca,novela,por ahora",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "mueca",
+          "answer": "A quick face somebody pulls instead of saying a word.",
+          "options": [
+            "A quick face somebody pulls instead of saying a word.",
+            "For now; from this moment until something else changes.",
+            "Big soft chair with arms, made for sitting long.",
+            "Long story in a book, made up by a writer."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "butaca",
+          "answer": "Big soft chair with arms, made for sitting long.",
+          "options": [
+            "A quick face somebody pulls instead of saying a word.",
+            "For now; from this moment until something else changes.",
+            "Big soft chair with arms, made for sitting long.",
+            "Long story in a book, made up by a writer."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "novela",
+          "answer": "Long story in a book, made up by a writer.",
+          "options": [
+            "A quick face somebody pulls instead of saying a word.",
+            "For now; from this moment until something else changes.",
+            "Big soft chair with arms, made for sitting long.",
+            "Long story in a book, made up by a writer."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "por ahora",
+          "answer": "For now; from this moment until something else changes.",
+          "options": [
+            "A quick face somebody pulls instead of saying a word.",
+            "For now; from this moment until something else changes.",
+            "Big soft chair with arms, made for sitting long.",
+            "Long story in a book, made up by a writer."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "bosteza",
+    "sentence": "Rocío _____ callada sobre el cojín y mece la butaca con el talón.",
+    "payload": {
+      "answer": "bosteza",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "bosteza",
+        "baila",
+        "ajusta",
+        "tiembla"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4e37f3134bd3619.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío bosteza callada sobre el cojín y mece la butaca con el talón.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "bostezar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "butaca",
+    "sentence": "Quique saca dos butacas a la puerta y Rocío se sienta en una.",
+    "payload": {
+      "answer": "Big soft chair with arms, made for sitting long.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "win or lose",
+        "the train (Argentine usage)",
+        "to be reckoned with",
+        "Big soft chair with arms, made for sitting long."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee2a8f8ffd773c5e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Quique saca dos butacas a la puerta y Rocío se sienta en una.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "butaca",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "butacas",
+    "sentence": "Quique saca dos _____ a la puerta y Rocío se sienta en una.",
+    "payload": {
+      "answer": "butacas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "carpas",
+        "propuestas",
+        "mochilas",
+        "butacas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee2a8f8ffd773c5e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Quique saca dos butacas a la puerta y Rocío se sienta en una.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "butaca",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "a veces",
+    "sentence": "Esto que ves, y _____ ni eso, contesta Rocío con una mueca, y tararea algo muy bajo.",
+    "payload": {
+      "answer": "a veces",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "reina del Carnaval",
+        "a veces",
+        "un toque",
+        "ideas locas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae1b732fc5720b55.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Esto que ves, y a veces ni eso”, contesta Rocío con una mueca, y tararea algo muy bajo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "a veces",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aburrido",
+    "sentence": "Pasan veinte minutos sin que nadie hable e Irene se siente aburrida.",
+    "payload": {
+      "answer": "Bored, with nothing to do and the time going slowly.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a lot, as in it bothers me a lot",
+        "handicrafts",
+        "Bored, with nothing to do and the time going slowly.",
+        "they share"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab5ba468b13fad46.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pasan veinte minutos sin que nadie hable e Irene se siente aburrida.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "aburrido",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "al fin",
+    "sentence": "al fin",
+    "payload": {
+      "answer": "al fin",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "al fin",
+        "levantamos con el gallo",
+        "queso de cabra",
+        "piedra caliza"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "pesar,tararear,al fin,mueca",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "pesar",
+          "answer": "To feel heavy and hard to carry, even without weight.",
+          "options": [
+            "To sing a tune quietly with your mouth almost closed.",
+            "At last, after waiting longer than you wanted to.",
+            "A quick face somebody pulls instead of saying a word.",
+            "To feel heavy and hard to carry, even without weight."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tararear",
+          "answer": "To sing a tune quietly with your mouth almost closed.",
+          "options": [
+            "To sing a tune quietly with your mouth almost closed.",
+            "At last, after waiting longer than you wanted to.",
+            "A quick face somebody pulls instead of saying a word.",
+            "To feel heavy and hard to carry, even without weight."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "al fin",
+          "answer": "At last, after waiting longer than you wanted to.",
+          "options": [
+            "To sing a tune quietly with your mouth almost closed.",
+            "At last, after waiting longer than you wanted to.",
+            "A quick face somebody pulls instead of saying a word.",
+            "To feel heavy and hard to carry, even without weight."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "mueca",
+          "answer": "A quick face somebody pulls instead of saying a word.",
+          "options": [
+            "To sing a tune quietly with your mouth almost closed.",
+            "At last, after waiting longer than you wanted to.",
+            "A quick face somebody pulls instead of saying a word.",
+            "To feel heavy and hard to carry, even without weight."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "aburrida",
+    "sentence": "Pasan veinte minutos sin que nadie hable e Irene se siente _____.",
+    "payload": {
+      "answer": "aburrida",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "monarca",
+        "aburrida",
+        "nerviosa",
+        "relajada"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab5ba468b13fad46.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Pasan veinte minutos sin que nadie hable e Irene se siente aburrida.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "aburrido",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bolsillo",
+    "sentence": "Irene se mete la libreta en el bolsillo y prueba a no hacer nada.",
+    "payload": {
+      "answer": "The small cloth bag sewn inside your trousers or coat.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "tequila rested two months to a year",
+        "to value",
+        "The small cloth bag sewn inside your trousers or coat.",
+        "a bench"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ec22fe3ae633f266.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene se mete la libreta en el bolsillo y prueba a no hacer nada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "bolsillo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "bostezar",
+    "sentence": "bostezar",
+    "payload": {
+      "answer": "bostezar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "suspiró",
+        "resonando",
+        "bostezar",
+        "manejando"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "vacío,gusto,bostezar,cojín",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "vacío",
+          "answer": "Empty, with nobody and nothing left inside it.",
+          "options": [
+            "Empty, with nobody and nothing left inside it.",
+            "Soft bag of cloth you put under you when sitting.",
+            "A good feeling something leaves in you afterwards.",
+            "To open your mouth wide because you are sleepy or bored."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "gusto",
+          "answer": "A good feeling something leaves in you afterwards.",
+          "options": [
+            "Empty, with nobody and nothing left inside it.",
+            "Soft bag of cloth you put under you when sitting.",
+            "A good feeling something leaves in you afterwards.",
+            "To open your mouth wide because you are sleepy or bored."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "bostezar",
+          "answer": "To open your mouth wide because you are sleepy or bored.",
+          "options": [
+            "Empty, with nobody and nothing left inside it.",
+            "Soft bag of cloth you put under you when sitting.",
+            "A good feeling something leaves in you afterwards.",
+            "To open your mouth wide because you are sleepy or bored."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cojín",
+          "answer": "Soft bag of cloth you put under you when sitting.",
+          "options": [
+            "Empty, with nobody and nothing left inside it.",
+            "Soft bag of cloth you put under you when sitting.",
+            "A good feeling something leaves in you afterwards.",
+            "To open your mouth wide because you are sleepy or bored."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bosteza",
+    "sentence": "Rocío _____ callada sobre el cojín y mece la butaca con el talón.",
+    "payload": {
+      "answer": "bosteza",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "regateaba",
+        "solía",
+        "bosteza",
+        "señala"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4e37f3134bd3619.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío bosteza callada sobre el cojín y mece la butaca con el talón.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "bostezar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "butaca",
+    "sentence": "Quique saca dos butacas a la puerta y Rocío se sienta en una.",
+    "payload": {
+      "answer": "Big soft chair with arms, made for sitting long.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "passageways",
+        "Big soft chair with arms, made for sitting long.",
+        "the elder brother",
+        "critic (female)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee2a8f8ffd773c5e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Quique saca dos butacas a la puerta y Rocío se sienta en una.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "butaca",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "calle",
+    "sentence": "Irene llega por la calle con una libreta y una novela sin abrir.",
+    "payload": {
+      "answer": "The road between two rows of houses in a town.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "shop windows",
+        "The road between two rows of houses in a town.",
+        "kites (Mexican word)",
+        "a style"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/acb94104bd5df11c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene llega por la calle con una libreta y una novela sin abrir.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "calle",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "gusto",
+    "sentence": "A las ocho se pone de pie con un gusto raro en el cuerpo.",
+    "payload": {
+      "answer": "A good feeling something leaves in you afterwards.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "something to think about",
+        "A good feeling something leaves in you afterwards.",
+        "face",
+        "respectful"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/16c972a4947a8978.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "A las ocho se pone de pie con un gusto raro en el cuerpo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "gusto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pesar",
+    "sentence": "Al principio le pesa; luego da un sorbo al café tibio y deja de contar las horas.",
+    "payload": {
+      "answer": "To feel heavy and hard to carry, even without weight.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the beauty",
+        "coffee",
+        "To feel heavy and hard to carry, even without weight.",
+        "diver"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fbc8984dc35ae5b4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Al principio le pesa; luego da un sorbo al café tibio y deja de contar las horas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "pesar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por ahora",
+    "sentence": "“La tarde no se llena nunca; por ahora se aguanta sentada y se acaba sola”, dice Quique.",
+    "payload": {
+      "answer": "For now; from this moment until something else changes.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the candidate",
+        "a pencil case",
+        "For now; from this moment until something else changes.",
+        "covered"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bddc5efa4a98f6e8.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“La tarde no se llena nunca; por ahora se aguanta sentada y se acaba sola”, dice Quique.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "por ahora",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "butacas",
+    "sentence": "Quique saca dos _____ a la puerta y Rocío se sienta en una.",
+    "payload": {
+      "answer": "butacas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "huellas",
+        "frutas",
+        "butacas",
+        "montañas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee2a8f8ffd773c5e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Quique saca dos butacas a la puerta y Rocío se sienta en una.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "butaca",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pesa",
+    "sentence": "Al principio le _____; luego da un sorbo al café tibio y deja de contar las horas.",
+    "payload": {
+      "answer": "pesa",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "llevaba",
+        "pesa",
+        "revela",
+        "fluía"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fbc8984dc35ae5b4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Al principio le pesa; luego da un sorbo al café tibio y deja de contar las horas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "nadie-mira-el-reloj",
+        "targetWord": "pesar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "callado",
+    "sentence": "callado",
+    "payload": {
+      "answer": "callado",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "desconcertado",
+        "callado",
+        "duro",
+        "agitado"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cojín",
+    "sentence": "cojín",
+    "payload": {
+      "answer": "cojín",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "territorio",
+        "cojín",
+        "capo",
+        "arquero"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "aburrido,callado,mecer,sorbo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "aburrido",
+          "answer": "Bored, with nothing to do and the time going slowly.",
+          "options": [
+            "Bored, with nothing to do and the time going slowly.",
+            "The small amount of drink you take in one go.",
+            "Saying nothing, staying quiet without being angry about it.",
+            "To move something slowly back and forward, again and again."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "callado",
+          "answer": "Saying nothing, staying quiet without being angry about it.",
+          "options": [
+            "Bored, with nothing to do and the time going slowly.",
+            "The small amount of drink you take in one go.",
+            "Saying nothing, staying quiet without being angry about it.",
+            "To move something slowly back and forward, again and again."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "mecer",
+          "answer": "To move something slowly back and forward, again and again.",
+          "options": [
+            "Bored, with nothing to do and the time going slowly.",
+            "The small amount of drink you take in one go.",
+            "Saying nothing, staying quiet without being angry about it.",
+            "To move something slowly back and forward, again and again."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sorbo",
+          "answer": "The small amount of drink you take in one go.",
+          "options": [
+            "Bored, with nothing to do and the time going slowly.",
+            "The small amount of drink you take in one go.",
+            "Saying nothing, staying quiet without being angry about it.",
+            "To move something slowly back and forward, again and again."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

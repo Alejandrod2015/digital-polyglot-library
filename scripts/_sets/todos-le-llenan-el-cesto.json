@@ -1,0 +1,933 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "a oscuras",
+    "sentence": "Le llena la bandeja con frascos y una lata, ya _____.",
+    "payload": {
+      "answer": "a oscuras",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "a medias",
+        "darle con todo",
+        "redes sociales",
+        "a oscuras"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/69315340b738a994.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Le llena la bandeja con frascos y una lata, ya a oscuras.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "a oscuras",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acercar",
+    "sentence": "“Llévatelo, guapa, que a mí me queda de sobra”, dice, y le acerca el cesto.",
+    "payload": {
+      "answer": "To move something nearer to the person you are with.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "great-grandmother",
+        "to chase, to pursue",
+        "To move something nearer to the person you are with.",
+        "a hill, a peak"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d57f1826a76eb2a4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Llévatelo, guapa, que a mí me queda de sobra”, dice, y le acerca el cesto.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "acercar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "bandeja",
+    "sentence": "bandeja",
+    "payload": {
+      "answer": "bandeja",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "periodista",
+        "cabaña",
+        "bandeja",
+        "boca"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "acerca",
+    "sentence": "Llévatelo, guapa, que a mí me queda de sobra, dice, y le _____ el cesto.",
+    "payload": {
+      "answer": "acerca",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "mezcla",
+        "pica",
+        "presta",
+        "acerca"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d57f1826a76eb2a4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Llévatelo, guapa, que a mí me queda de sobra”, dice, y le acerca el cesto.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "acercar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "banqueta",
+    "sentence": "Irene deja el cesto y el cordón en el suelo y se sienta en la banqueta.",
+    "payload": {
+      "answer": "Low seat with no back, used only for a moment.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Low seat with no back, used only for a moment.",
+        "rediscovered",
+        "anticipation",
+        "it gets dark"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ae098b5926a2c3b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene deja el cesto y el cordón en el suelo y se sienta en la banqueta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "banqueta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "contestar",
+    "sentence": "contestar",
+    "payload": {
+      "answer": "contestar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "matándome",
+        "preservar",
+        "contestar",
+        "acampar"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "cordón,bandeja,tarro,hombro",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cordón",
+          "answer": "Thin round cord, like the one in a shoe.",
+          "options": [
+            "Thin round cord, like the one in a shoe.",
+            "Flat tray you carry plates or glasses on.",
+            "Small glass jar with a lid, for honey or jam.",
+            "The part of the body where the arm joins the neck."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "bandeja",
+          "answer": "Flat tray you carry plates or glasses on.",
+          "options": [
+            "Thin round cord, like the one in a shoe.",
+            "Flat tray you carry plates or glasses on.",
+            "Small glass jar with a lid, for honey or jam.",
+            "The part of the body where the arm joins the neck."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tarro",
+          "answer": "Small glass jar with a lid, for honey or jam.",
+          "options": [
+            "Thin round cord, like the one in a shoe.",
+            "Flat tray you carry plates or glasses on.",
+            "Small glass jar with a lid, for honey or jam.",
+            "The part of the body where the arm joins the neck."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "hombro",
+          "answer": "The part of the body where the arm joins the neck.",
+          "options": [
+            "Thin round cord, like the one in a shoe.",
+            "Flat tray you carry plates or glasses on.",
+            "Small glass jar with a lid, for honey or jam.",
+            "The part of the body where the arm joins the neck."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "grueso",
+    "sentence": "Dentro hay un tarro de miel, dos limones y queso envuelto en papel _____.",
+    "payload": {
+      "answer": "grueso",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "barato",
+        "frustrado",
+        "grueso",
+        "ajado"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8619a9c36ce6c61.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Dentro hay un tarro de miel, dos limones y queso envuelto en papel grueso.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "grueso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despedirse",
+    "sentence": "No le cobra nada y se despiden dando las gracias.",
+    "payload": {
+      "answer": "To say goodbye to somebody before they leave.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "joking",
+        "a project",
+        "battered, beaten-up",
+        "To say goodbye to somebody before they leave."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/215dec108c5afcbe.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "No le cobra nada y se despiden dando las gracias.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "despedirse",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "hombro",
+    "sentence": "Que te vaya muy bien, y no te olvides de esta calle nunca, dice Rosa, y le aprieta el _____.",
+    "payload": {
+      "answer": "hombro",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "prototipo",
+        "sendero",
+        "hombro",
+        "hogao"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a2283a1261209dc6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Que te vaya muy bien, y no te olvides de esta calle nunca”, dice Rosa, y le aprieta el hombro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "hombro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "a oscuras",
+    "sentence": "Le llena la bandeja con frascos y una lata, ya _____.",
+    "payload": {
+      "answer": "a oscuras",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "arepa de huevo",
+        "serpiente emplumada",
+        "a oscuras",
+        "cañón del Chicamocha"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/69315340b738a994.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Le llena la bandeja con frascos y una lata, ya a oscuras.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "a oscuras",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acercar",
+    "sentence": "“Llévatelo, guapa, que a mí me queda de sobra”, dice, y le acerca el cesto.",
+    "payload": {
+      "answer": "To move something nearer to the person you are with.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "they chatted me up (Argentine slang)",
+        "a lump, a knot",
+        "benefit from",
+        "To move something nearer to the person you are with."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d57f1826a76eb2a4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Llévatelo, guapa, que a mí me queda de sobra”, dice, y le acerca el cesto.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "acercar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "bandeja",
+    "sentence": "bandeja",
+    "payload": {
+      "answer": "bandeja",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "abertura",
+        "bandeja",
+        "barrica",
+        "anécdota"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "saco,miel,suelo,cordón",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "saco",
+          "answer": "Big cloth bag for carrying heavy things on your back.",
+          "options": [
+            "Thin round cord, like the one in a shoe.",
+            "Big cloth bag for carrying heavy things on your back.",
+            "The floor; the flat surface you walk on.",
+            "Sweet thick food that bees make, eaten on bread."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "miel",
+          "answer": "Sweet thick food that bees make, eaten on bread.",
+          "options": [
+            "Thin round cord, like the one in a shoe.",
+            "Big cloth bag for carrying heavy things on your back.",
+            "The floor; the flat surface you walk on.",
+            "Sweet thick food that bees make, eaten on bread."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "suelo",
+          "answer": "The floor; the flat surface you walk on.",
+          "options": [
+            "Thin round cord, like the one in a shoe.",
+            "Big cloth bag for carrying heavy things on your back.",
+            "The floor; the flat surface you walk on.",
+            "Sweet thick food that bees make, eaten on bread."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cordón",
+          "answer": "Thin round cord, like the one in a shoe.",
+          "options": [
+            "Thin round cord, like the one in a shoe.",
+            "Big cloth bag for carrying heavy things on your back.",
+            "The floor; the flat surface you walk on.",
+            "Sweet thick food that bees make, eaten on bread."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "acerca",
+    "sentence": "Llévatelo, guapa, que a mí me queda de sobra, dice, y le _____ el cesto.",
+    "payload": {
+      "answer": "acerca",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "refresca",
+        "acerca",
+        "coloca",
+        "inunda"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d57f1826a76eb2a4.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Llévatelo, guapa, que a mí me queda de sobra”, dice, y le acerca el cesto.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "acercar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "banqueta",
+    "sentence": "Irene deja el cesto y el cordón en el suelo y se sienta en la banqueta.",
+    "payload": {
+      "answer": "Low seat with no back, used only for a moment.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "protests",
+        "fills, takes over",
+        "stuck to",
+        "Low seat with no back, used only for a moment."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6ae098b5926a2c3b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene deja el cesto y el cordón en el suelo y se sienta en la banqueta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "banqueta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "contestar",
+    "sentence": "contestar",
+    "payload": {
+      "answer": "contestar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "solucioné",
+        "contestar",
+        "mezclar",
+        "sumergen"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "bandeja,grueso,lata,tenso",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "bandeja",
+          "answer": "Flat tray you carry plates or glasses on.",
+          "options": [
+            "Metal tin that keeps food good for a long time.",
+            "Flat tray you carry plates or glasses on.",
+            "Thick, with a lot of space between its two sides.",
+            "Tight and stiff, ready to hurt if it moves wrong."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "grueso",
+          "answer": "Thick, with a lot of space between its two sides.",
+          "options": [
+            "Metal tin that keeps food good for a long time.",
+            "Flat tray you carry plates or glasses on.",
+            "Thick, with a lot of space between its two sides.",
+            "Tight and stiff, ready to hurt if it moves wrong."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "lata",
+          "answer": "Metal tin that keeps food good for a long time.",
+          "options": [
+            "Metal tin that keeps food good for a long time.",
+            "Flat tray you carry plates or glasses on.",
+            "Thick, with a lot of space between its two sides.",
+            "Tight and stiff, ready to hurt if it moves wrong."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tenso",
+          "answer": "Tight and stiff, ready to hurt if it moves wrong.",
+          "options": [
+            "Metal tin that keeps food good for a long time.",
+            "Flat tray you carry plates or glasses on.",
+            "Thick, with a lot of space between its two sides.",
+            "Tight and stiff, ready to hurt if it moves wrong."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "grueso",
+    "sentence": "Dentro hay un tarro de miel, dos limones y queso envuelto en papel _____.",
+    "payload": {
+      "answer": "grueso",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "embobado",
+        "grueso",
+        "colorido",
+        "bacano"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8619a9c36ce6c61.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Dentro hay un tarro de miel, dos limones y queso envuelto en papel grueso.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "grueso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despedirse",
+    "sentence": "No le cobra nada y se despiden dando las gracias.",
+    "payload": {
+      "answer": "To say goodbye to somebody before they leave.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "greenery",
+        "turn",
+        "someone who sneaks in",
+        "To say goodbye to somebody before they leave."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/215dec108c5afcbe.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "No le cobra nada y se despiden dando las gracias.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "despedirse",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "envolver",
+    "sentence": "Dentro hay un tarro de miel, dos limones y queso envuelto en papel grueso.",
+    "payload": {
+      "answer": "To cover something completely in paper or cloth.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the characters",
+        "astronauts",
+        "To cover something completely in paper or cloth.",
+        "passengers"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e8619a9c36ce6c61.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Dentro hay un tarro de miel, dos limones y queso envuelto en papel grueso.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "envolver",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hombro",
+    "sentence": "“Que te vaya muy bien, y no te olvides de esta calle nunca”, dice Rosa, y le aprieta el hombro.",
+    "payload": {
+      "answer": "The part of the body where the arm joins the neck.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the lover",
+        "The part of the body where the arm joins the neck.",
+        "moved forward",
+        "defiance"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a2283a1261209dc6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Que te vaya muy bien, y no te olvides de esta calle nunca”, dice Rosa, y le aprieta el hombro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "hombro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "muñeca",
+    "sentence": "Irene sube la cuesta, que huele a pan, con el saco pesado y la muñeca tensa.",
+    "payload": {
+      "answer": "The joint between your hand and your arm.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the shop",
+        "they mugged me",
+        "The joint between your hand and your arm.",
+        "took it upon himself"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e152dc5a72b4d202.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene sube la cuesta, que huele a pan, con el saco pesado y la muñeca tensa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "muñeca",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sin falta",
+    "sentence": "“Y pásate por la panadería sin falta, que Rosa te guarda algo”.",
+    "payload": {
+      "answer": "Without fail; make sure you really do it.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to find their bearings",
+        "Without fail; make sure you really do it.",
+        "far off",
+        "to listen to it"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b752f33b73f3ce2f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y pásate por la panadería sin falta, que Rosa te guarda algo”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "todos-le-llenan-el-cesto",
+        "targetWord": "sin falta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cordón",
+    "sentence": "cordón",
+    "payload": {
+      "answer": "cordón",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cordón",
+        "cartas",
+        "apuntes",
+        "pared"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "frasco",
+    "sentence": "frasco",
+    "payload": {
+      "answer": "frasco",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cuentito",
+        "frasco",
+        "lanzamiento",
+        "vistazo"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "contestar,despedirse,envolver,frasco",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "contestar",
+          "answer": "To answer somebody who has asked you something.",
+          "options": [
+            "To say goodbye to somebody before they leave.",
+            "To answer somebody who has asked you something.",
+            "To cover something completely in paper or cloth.",
+            "Small bottle with a wide neck, for creams or jam."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "despedirse",
+          "answer": "To say goodbye to somebody before they leave.",
+          "options": [
+            "To say goodbye to somebody before they leave.",
+            "To answer somebody who has asked you something.",
+            "To cover something completely in paper or cloth.",
+            "Small bottle with a wide neck, for creams or jam."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "envolver",
+          "answer": "To cover something completely in paper or cloth.",
+          "options": [
+            "To say goodbye to somebody before they leave.",
+            "To answer somebody who has asked you something.",
+            "To cover something completely in paper or cloth.",
+            "Small bottle with a wide neck, for creams or jam."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "frasco",
+          "answer": "Small bottle with a wide neck, for creams or jam.",
+          "options": [
+            "To say goodbye to somebody before they leave.",
+            "To answer somebody who has asked you something.",
+            "To cover something completely in paper or cloth.",
+            "Small bottle with a wide neck, for creams or jam."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

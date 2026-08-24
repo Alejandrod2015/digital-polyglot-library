@@ -1,0 +1,1016 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "ajena",
+    "sentence": "Porque hay otra que lo quiere, y no es _____ a esta escalera, dice, sin dar el detalle.",
+    "payload": {
+      "answer": "ajena",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "culinaria",
+        "infinita",
+        "escéptica",
+        "ajena"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64f34a78aa8485a2.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Porque hay otra que lo quiere, y no es ajena a esta escalera”, dice, sin dar el detalle.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "ajeno",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ajeno",
+    "sentence": "“Porque hay otra que lo quiere, y no es ajena a esta escalera”, dice, sin dar el detalle.",
+    "payload": {
+      "answer": "Belonging to other people, from outside your own group.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a big fan",
+        "called for, summoned",
+        "Belonging to other people, from outside your own group.",
+        "a rematch"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64f34a78aa8485a2.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Porque hay otra que lo quiere, y no es ajena a esta escalera”, dice, sin dar el detalle.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "ajeno",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "alquilar",
+    "sentence": "alquilar",
+    "payload": {
+      "answer": "alquilar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "alquilar",
+        "traicionar",
+        "pillan",
+        "suspirando"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "apoya",
+    "sentence": "Quien _____ la mano en el brazo de Irene es siempre Rocío, a mitad de frase.",
+    "payload": {
+      "answer": "apoya",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "identifica",
+        "apoya",
+        "presta",
+        "ilumina"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61b042060e6d3678.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Quien apoya la mano en el brazo de Irene es siempre Rocío, a mitad de frase.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "apoyar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apoyar",
+    "sentence": "Quien apoya la mano en el brazo de Irene es siempre Rocío, a mitad de frase.",
+    "payload": {
+      "answer": "To rest one thing lightly on top of another.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the rite that loops a cord around the couple",
+        "to scare",
+        "kid, young guy (Colombian slang)",
+        "To rest one thing lightly on top of another."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61b042060e6d3678.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Quien apoya la mano en el brazo de Irene es siempre Rocío, a mitad de frase.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "apoyar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "aviso",
+    "sentence": "aviso",
+    "payload": {
+      "answer": "aviso",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "aviso",
+        "logro",
+        "potrero",
+        "principio"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "de momento,vecino,cola,apoyar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "de momento",
+          "answer": "For the time being, until something makes you change.",
+          "options": [
+            "To rest one thing lightly on top of another.",
+            "The person who lives in the flat next to yours.",
+            "A line of people waiting one behind the other.",
+            "For the time being, until something makes you change."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "vecino",
+          "answer": "The person who lives in the flat next to yours.",
+          "options": [
+            "To rest one thing lightly on top of another.",
+            "The person who lives in the flat next to yours.",
+            "A line of people waiting one behind the other.",
+            "For the time being, until something makes you change."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cola",
+          "answer": "A line of people waiting one behind the other.",
+          "options": [
+            "To rest one thing lightly on top of another.",
+            "The person who lives in the flat next to yours.",
+            "A line of people waiting one behind the other.",
+            "For the time being, until something makes you change."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "apoyar",
+          "answer": "To rest one thing lightly on top of another.",
+          "options": [
+            "To rest one thing lightly on top of another.",
+            "The person who lives in the flat next to yours.",
+            "A line of people waiting one behind the other.",
+            "For the time being, until something makes you change."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cola",
+    "sentence": "Hoy, en la _____ del mercado, siente otra vez ese tacto tibio.",
+    "payload": {
+      "answer": "cola",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "pesca",
+        "banca",
+        "cola",
+        "energía"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26b8b6e2e2fe4afc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Hoy, en la cola del mercado, siente otra vez ese tacto tibio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "cola",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dibujar",
+    "sentence": "En casa dibuja el esquema en una carpeta, con dos siluetas y una línea.",
+    "payload": {
+      "answer": "To make a picture of something with lines.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "all around",
+        "powerful",
+        "park ranger",
+        "To make a picture of something with lines."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/56ea19a8952efab5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En casa dibuja el esquema en una carpeta, con dos siluetas y una línea.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "dibujar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "dibuja",
+    "sentence": "En casa _____ el esquema en una carpeta, con dos siluetas y una línea.",
+    "payload": {
+      "answer": "dibuja",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "respetarla",
+        "dibuja",
+        "probarla",
+        "colecciona"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/56ea19a8952efab5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En casa dibuja el esquema en una carpeta, con dos siluetas y una línea.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "dibujar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "ajena",
+    "sentence": "Porque hay otra que lo quiere, y no es _____ a esta escalera, dice, sin dar el detalle.",
+    "payload": {
+      "answer": "ajena",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "épica",
+        "perfecta",
+        "ajena",
+        "decorada"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64f34a78aa8485a2.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Porque hay otra que lo quiere, y no es ajena a esta escalera”, dice, sin dar el detalle.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "ajeno",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ajeno",
+    "sentence": "“Porque hay otra que lo quiere, y no es ajena a esta escalera”, dice, sin dar el detalle.",
+    "payload": {
+      "answer": "Belonging to other people, from outside your own group.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Belonging to other people, from outside your own group.",
+        "marquees",
+        "elder and spiritual guide (Andean and Amazonian usage)",
+        "loves"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/64f34a78aa8485a2.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Porque hay otra que lo quiere, y no es ajena a esta escalera”, dice, sin dar el detalle.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "ajeno",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "alquilar",
+    "sentence": "alquilar",
+    "payload": {
+      "answer": "alquilar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "enfocarte",
+        "alquilar",
+        "estalló",
+        "resopla"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "ajeno,sacudida,aviso,uña",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "ajeno",
+          "answer": "Belonging to other people, from outside your own group.",
+          "options": [
+            "Belonging to other people, from outside your own group.",
+            "One short strong shake, given or felt in a moment.",
+            "Something said or done to warn you before it happens.",
+            "The hard flat part on the end of each finger."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sacudida",
+          "answer": "One short strong shake, given or felt in a moment.",
+          "options": [
+            "Belonging to other people, from outside your own group.",
+            "One short strong shake, given or felt in a moment.",
+            "Something said or done to warn you before it happens.",
+            "The hard flat part on the end of each finger."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "aviso",
+          "answer": "Something said or done to warn you before it happens.",
+          "options": [
+            "Belonging to other people, from outside your own group.",
+            "One short strong shake, given or felt in a moment.",
+            "Something said or done to warn you before it happens.",
+            "The hard flat part on the end of each finger."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "uña",
+          "answer": "The hard flat part on the end of each finger.",
+          "options": [
+            "Belonging to other people, from outside your own group.",
+            "One short strong shake, given or felt in a moment.",
+            "Something said or done to warn you before it happens.",
+            "The hard flat part on the end of each finger."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "apoya",
+    "sentence": "Quien _____ la mano en el brazo de Irene es siempre Rocío, a mitad de frase.",
+    "payload": {
+      "answer": "apoya",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "apoya",
+        "apoyaba",
+        "impregnaba",
+        "gira"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61b042060e6d3678.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Quien apoya la mano en el brazo de Irene es siempre Rocío, a mitad de frase.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "apoyar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apoyar",
+    "sentence": "Quien apoya la mano en el brazo de Irene es siempre Rocío, a mitad de frase.",
+    "payload": {
+      "answer": "To rest one thing lightly on top of another.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the people who live there",
+        "To rest one thing lightly on top of another.",
+        "current, present-day",
+        "noisy and buzzing"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61b042060e6d3678.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Quien apoya la mano en el brazo de Irene es siempre Rocío, a mitad de frase.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "apoyar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "aviso",
+    "sentence": "aviso",
+    "payload": {
+      "answer": "aviso",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "aviso",
+        "vuelo",
+        "encargo",
+        "río"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "alquilar,detalle,dibujar,símbolo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "alquilar",
+          "answer": "To pay every month to live in somebody else's flat.",
+          "options": [
+            "To make a picture of something with lines.",
+            "A sign that stands for an idea, not for a thing.",
+            "One small part of a story, often the one that matters.",
+            "To pay every month to live in somebody else's flat."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "detalle",
+          "answer": "One small part of a story, often the one that matters.",
+          "options": [
+            "To make a picture of something with lines.",
+            "A sign that stands for an idea, not for a thing.",
+            "One small part of a story, often the one that matters.",
+            "To pay every month to live in somebody else's flat."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "dibujar",
+          "answer": "To make a picture of something with lines.",
+          "options": [
+            "To make a picture of something with lines.",
+            "A sign that stands for an idea, not for a thing.",
+            "One small part of a story, often the one that matters.",
+            "To pay every month to live in somebody else's flat."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "símbolo",
+          "answer": "A sign that stands for an idea, not for a thing.",
+          "options": [
+            "To make a picture of something with lines.",
+            "A sign that stands for an idea, not for a thing.",
+            "One small part of a story, often the one that matters.",
+            "To pay every month to live in somebody else's flat."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cola",
+    "sentence": "Hoy, en la _____ del mercado, siente otra vez ese tacto tibio.",
+    "payload": {
+      "answer": "cola",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cola",
+        "carta",
+        "resaca",
+        "pelota"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26b8b6e2e2fe4afc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Hoy, en la cola del mercado, siente otra vez ese tacto tibio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "cola",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dibujar",
+    "sentence": "En casa dibuja el esquema en una carpeta, con dos siluetas y una línea.",
+    "payload": {
+      "answer": "To make a picture of something with lines.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "hunched",
+        "To make a picture of something with lines.",
+        "dodging",
+        "a perspective"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/56ea19a8952efab5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En casa dibuja el esquema en una carpeta, con dos siluetas y una línea.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "dibujar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en serio",
+    "sentence": "“Rocío, en serio, ¿por qué me tocas el brazo cuando hablo del piso?”, pregunta al bajar.",
+    "payload": {
+      "answer": "Really; asked without joking and wanting a true answer.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "boxes",
+        "thin",
+        "Really; asked without joking and wanting a true answer.",
+        "mouth"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/192e3a5463b3e152.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Rocío, en serio, ¿por qué me tocas el brazo cuando hablo del piso?”, pregunta al bajar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "en serio",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "redondo",
+    "sentence": "La vecina se queda con la boca redonda y tarda en contestar.",
+    "payload": {
+      "answer": "Round, with the shape of a circle or a ball.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "logs",
+        "her wail",
+        "Round, with the shape of a circle or a ball.",
+        "getting used to"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20663cd4d8d1057f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La vecina se queda con la boca redonda y tarda en contestar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "redondo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sacudida",
+    "sentence": "Irene sigue hablando y el tacto vuelve, esta vez con una sacudida corta.",
+    "payload": {
+      "answer": "One short strong shake, given or felt in a moment.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the couple",
+        "don't you worry",
+        "One short strong shake, given or felt in a moment.",
+        "got through, overcome"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c6b0f5d5924b1e1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene sigue hablando y el tacto vuelve, esta vez con una sacudida corta.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "sacudida",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "símbolo",
+    "sentence": "No es lo que ella creía; es un símbolo, y lleva semanas trazando lo mismo.",
+    "payload": {
+      "answer": "A sign that stands for an idea, not for a thing.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the peak and shrine overlooking Bogotá",
+        "taught us",
+        "A sign that stands for an idea, not for a thing.",
+        "a shut-in smell"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6239887ff38382c3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "No es lo que ella creía; es un símbolo, y lleva semanas trazando lo mismo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "símbolo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "dibuja",
+    "sentence": "En casa _____ el esquema en una carpeta, con dos siluetas y una línea.",
+    "payload": {
+      "answer": "dibuja",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "dibuja",
+        "apoya",
+        "pianta",
+        "impregnaba"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/56ea19a8952efab5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En casa dibuja el esquema en una carpeta, con dos siluetas y una línea.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "dibujar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "redonda",
+    "sentence": "La vecina se queda con la boca _____ y tarda en contestar.",
+    "payload": {
+      "answer": "redonda",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "lejana",
+        "redonda",
+        "entusiasmada",
+        "temida"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20663cd4d8d1057f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La vecina se queda con la boca redonda y tarda en contestar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "quien-toca-el-brazo-avisa",
+        "targetWord": "redondo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cariño",
+    "sentence": "cariño",
+    "payload": {
+      "answer": "cariño",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cariño",
+        "músico",
+        "impacto",
+        "sombrero"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "de momento",
+    "sentence": "de momento",
+    "payload": {
+      "answer": "de momento",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "de momento",
+        "está por verse",
+        "echándole pa'lante",
+        "montaña rusa"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "detalle",
+    "sentence": "detalle",
+    "payload": {
+      "answer": "detalle",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "detalle",
+        "resplandor",
+        "fotografías",
+        "retratos"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "cariño,tacto,redondo,silueta",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cariño",
+          "answer": "The warm feeling you have for people close to you.",
+          "options": [
+            "The warm feeling you have for people close to you.",
+            "Round, with the shape of a circle or a ball.",
+            "The dark shape of a person seen against the light.",
+            "The feeling of one thing touching your skin."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tacto",
+          "answer": "The feeling of one thing touching your skin.",
+          "options": [
+            "The warm feeling you have for people close to you.",
+            "Round, with the shape of a circle or a ball.",
+            "The dark shape of a person seen against the light.",
+            "The feeling of one thing touching your skin."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "redondo",
+          "answer": "Round, with the shape of a circle or a ball.",
+          "options": [
+            "The warm feeling you have for people close to you.",
+            "Round, with the shape of a circle or a ball.",
+            "The dark shape of a person seen against the light.",
+            "The feeling of one thing touching your skin."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "silueta",
+          "answer": "The dark shape of a person seen against the light.",
+          "options": [
+            "The warm feeling you have for people close to you.",
+            "Round, with the shape of a circle or a ball.",
+            "The dark shape of a person seen against the light.",
+            "The feeling of one thing touching your skin."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

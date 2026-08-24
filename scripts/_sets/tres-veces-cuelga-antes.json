@@ -1,0 +1,916 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "a solas",
+    "sentence": "_____, sin Rocío detrás terminándosela, le entra un temor nuevo.",
+    "payload": {
+      "answer": "a solas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "como los dioses",
+        "cuente una historia",
+        "restos humanos",
+        "a solas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2598fae910c2a110.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "A solas, sin Rocío detrás terminándosela, le entra un temor nuevo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "a solas",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aliento",
+    "sentence": "Irene toma aliento, se ajusta la camisa y disimula el susto ante el cristal.",
+    "payload": {
+      "answer": "The air you take in before doing something hard.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "an expert",
+        "to contribute",
+        "The air you take in before doing something hard.",
+        "dark"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95555c7d17b613c0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene toma aliento, se ajusta la camisa y disimula el susto ante el cristal.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "aliento",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "ánimo",
+    "sentence": "ánimo",
+    "payload": {
+      "answer": "ánimo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "ánimo",
+        "diario",
+        "canto",
+        "silencio"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "auricular",
+    "sentence": "Tres veces marca Irene el número de Málaga con el _____ en la mano.",
+    "payload": {
+      "answer": "auricular",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "matrimonio",
+        "auricular",
+        "chicles",
+        "tlatoani"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5d556fa15937a71f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tres veces marca Irene el número de Málaga con el auricular en la mano.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "auricular",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "atascarse",
+    "sentence": "“Y si te atascas, te atascas, que aquí no se ha muerto nadie por eso”, añade.",
+    "payload": {
+      "answer": "To get stuck in the middle of what you were saying.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "streets",
+        "To get stuck in the middle of what you were saying.",
+        "their paths cross",
+        "live"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9732abe0c4e1c493.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y si te atascas, te atascas, que aquí no se ha muerto nadie por eso”, añade.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "atascarse",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cobarde",
+    "sentence": "cobarde",
+    "payload": {
+      "answer": "cobarde",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "mágico",
+        "inconfundible",
+        "cobarde",
+        "petroleras"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "sangre,marcar,ánimo,temor",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "sangre",
+          "answer": "The red liquid that runs inside your body.",
+          "options": [
+            "The push you give somebody so that they dare to act.",
+            "A quiet fear of something that has not happened yet.",
+            "To press the numbers of a telephone one by one.",
+            "The red liquid that runs inside your body."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "marcar",
+          "answer": "To press the numbers of a telephone one by one.",
+          "options": [
+            "The push you give somebody so that they dare to act.",
+            "A quiet fear of something that has not happened yet.",
+            "To press the numbers of a telephone one by one.",
+            "The red liquid that runs inside your body."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ánimo",
+          "answer": "The push you give somebody so that they dare to act.",
+          "options": [
+            "The push you give somebody so that they dare to act.",
+            "A quiet fear of something that has not happened yet.",
+            "To press the numbers of a telephone one by one.",
+            "The red liquid that runs inside your body."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "temor",
+          "answer": "A quiet fear of something that has not happened yet.",
+          "options": [
+            "The push you give somebody so that they dare to act.",
+            "A quiet fear of something that has not happened yet.",
+            "To press the numbers of a telephone one by one.",
+            "The red liquid that runs inside your body."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "coraje",
+    "sentence": "No es vergüenza, es _____ lo que me falta, y lo sé desde el lunes, se dice sola.",
+    "payload": {
+      "answer": "coraje",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "referencia",
+        "coraje",
+        "caza",
+        "marcador"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5a554812ee26a2e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“No es vergüenza, es coraje lo que me falta, y lo sé desde el lunes”, se dice sola.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "coraje",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corazón",
+    "sentence": "La sangre le sube a la cara y el corazón le golpea muy fuerte.",
+    "payload": {
+      "answer": "The part inside your chest that beats all day.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the valley",
+        "a notebook",
+        "The part inside your chest that beats all day.",
+        "they focus"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8b489e4bfe7914d3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La sangre le sube a la cara y el corazón le golpea muy fuerte.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "corazón",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "en voz baja",
+    "sentence": "Escribe la frase, la dice _____ y le sale tensa.",
+    "payload": {
+      "answer": "en voz baja",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "en voz baja",
+        "re caliente",
+        "laguna de la Cocha",
+        "apretón de manos"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c3b4521e6690f93.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Escribe la frase, la dice en voz baja y le sale tensa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "en voz baja",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "a solas",
+    "sentence": "_____, sin Rocío detrás terminándosela, le entra un temor nuevo.",
+    "payload": {
+      "answer": "a solas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ni idea",
+        "reyes magos",
+        "sigue siendo",
+        "a solas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2598fae910c2a110.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "A solas, sin Rocío detrás terminándosela, le entra un temor nuevo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "a solas",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aliento",
+    "sentence": "Irene toma aliento, se ajusta la camisa y disimula el susto ante el cristal.",
+    "payload": {
+      "answer": "The air you take in before doing something hard.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "I climb",
+        "walks through",
+        "entrepreneurs",
+        "The air you take in before doing something hard."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95555c7d17b613c0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene toma aliento, se ajusta la camisa y disimula el susto ante el cristal.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "aliento",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "ánimo",
+    "sentence": "ánimo",
+    "payload": {
+      "answer": "ánimo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "tapado",
+        "gorro",
+        "ánimo",
+        "sueño"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "temor,reconocer,aliento,atascarse",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "temor",
+          "answer": "A quiet fear of something that has not happened yet.",
+          "options": [
+            "The air you take in before doing something hard.",
+            "To get stuck in the middle of what you were saying.",
+            "A quiet fear of something that has not happened yet.",
+            "To know something again when you meet it a second time."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "reconocer",
+          "answer": "To know something again when you meet it a second time.",
+          "options": [
+            "The air you take in before doing something hard.",
+            "To get stuck in the middle of what you were saying.",
+            "A quiet fear of something that has not happened yet.",
+            "To know something again when you meet it a second time."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "aliento",
+          "answer": "The air you take in before doing something hard.",
+          "options": [
+            "The air you take in before doing something hard.",
+            "To get stuck in the middle of what you were saying.",
+            "A quiet fear of something that has not happened yet.",
+            "To know something again when you meet it a second time."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "atascarse",
+          "answer": "To get stuck in the middle of what you were saying.",
+          "options": [
+            "The air you take in before doing something hard.",
+            "To get stuck in the middle of what you were saying.",
+            "A quiet fear of something that has not happened yet.",
+            "To know something again when you meet it a second time."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "auricular",
+    "sentence": "Tres veces marca Irene el número de Málaga con el _____ en la mano.",
+    "payload": {
+      "answer": "auricular",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "auricular",
+        "fogón",
+        "alma",
+        "injusticias"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5d556fa15937a71f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tres veces marca Irene el número de Málaga con el auricular en la mano.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "auricular",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "atascarse",
+    "sentence": "“Y si te atascas, te atascas, que aquí no se ha muerto nadie por eso”, añade.",
+    "payload": {
+      "answer": "To get stuck in the middle of what you were saying.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a splash",
+        "To get stuck in the middle of what you were saying.",
+        "to save itself",
+        "shop windows"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9732abe0c4e1c493.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y si te atascas, te atascas, que aquí no se ha muerto nadie por eso”, añade.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "atascarse",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cobarde",
+    "sentence": "cobarde",
+    "payload": {
+      "answer": "cobarde",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cobarde",
+        "aficionado",
+        "principal",
+        "santandereana"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "tímido,sangre,intención,vergüenza",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "tímido",
+          "answer": "Shy; afraid to speak in front of other people.",
+          "options": [
+            "The hot feeling of being watched while you fail.",
+            "The red liquid that runs inside your body.",
+            "Shy; afraid to speak in front of other people.",
+            "What you really mean to do when you start."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sangre",
+          "answer": "The red liquid that runs inside your body.",
+          "options": [
+            "The hot feeling of being watched while you fail.",
+            "The red liquid that runs inside your body.",
+            "Shy; afraid to speak in front of other people.",
+            "What you really mean to do when you start."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "intención",
+          "answer": "What you really mean to do when you start.",
+          "options": [
+            "The hot feeling of being watched while you fail.",
+            "The red liquid that runs inside your body.",
+            "Shy; afraid to speak in front of other people.",
+            "What you really mean to do when you start."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "vergüenza",
+          "answer": "The hot feeling of being watched while you fail.",
+          "options": [
+            "The hot feeling of being watched while you fail.",
+            "The red liquid that runs inside your body.",
+            "Shy; afraid to speak in front of other people.",
+            "What you really mean to do when you start."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "coraje",
+    "sentence": "No es vergüenza, es _____ lo que me falta, y lo sé desde el lunes, se dice sola.",
+    "payload": {
+      "answer": "coraje",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "guía",
+        "quesito",
+        "tombos",
+        "coraje"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e5a554812ee26a2e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“No es vergüenza, es coraje lo que me falta, y lo sé desde el lunes”, se dice sola.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "coraje",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "corazón",
+    "sentence": "La sangre le sube a la cara y el corazón le golpea muy fuerte.",
+    "payload": {
+      "answer": "The part inside your chest that beats all day.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "rests",
+        "The part inside your chest that beats all day.",
+        "we were dying",
+        "raise, lift up"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8b489e4bfe7914d3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La sangre le sube a la cara y el corazón le golpea muy fuerte.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "corazón",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "descolgar",
+    "sentence": "Alguien descuelga al otro lado y saluda; Irene conoce esa voz.",
+    "payload": {
+      "answer": "To pick up a telephone that is ringing.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "delicate",
+        "a bond, a tie",
+        "filters in, seeps through",
+        "To pick up a telephone that is ringing."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c588e6fac79886f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Alguien descuelga al otro lado y saluda; Irene conoce esa voz.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "descolgar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en voz baja",
+    "sentence": "Escribe la frase, la dice en voz baja y le sale tensa.",
+    "payload": {
+      "answer": "Very quietly, so that nobody else can hear you.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "summer",
+        "the avenue",
+        "joking",
+        "Very quietly, so that nobody else can hear you."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c3b4521e6690f93.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Escribe la frase, la dice en voz baja y le sale tensa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "en voz baja",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "lado",
+    "sentence": "Alguien descuelga al otro _____ y saluda; Irene conoce esa voz.",
+    "payload": {
+      "answer": "lado",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "lado",
+        "diablo",
+        "tiro",
+        "evento"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9c588e6fac79886f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Alguien descuelga al otro lado y saluda; Irene conoce esa voz.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "lado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "reconoce",
+    "sentence": "Le sale una voz tímida que no _____ y se le queda la boca seca.",
+    "payload": {
+      "answer": "reconoce",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "reconoce",
+        "aportando",
+        "brinda",
+        "guiándome"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f645fb893bfbe32.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Le sale una voz tímida que no reconoce y se le queda la boca seca.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-veces-cuelga-antes",
+        "targetWord": "reconocer",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cristal",
+    "sentence": "cristal",
+    "payload": {
+      "answer": "cristal",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cuerda",
+        "muestras",
+        "camaradería",
+        "cristal"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "disimular,descolgar,en voz baja,cristal",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "disimular",
+          "answer": "To hide what you feel so that nobody sees it.",
+          "options": [
+            "Very quietly, so that nobody else can hear you.",
+            "To hide what you feel so that nobody sees it.",
+            "The glass of a window, cold and clear to the touch.",
+            "To pick up a telephone that is ringing."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "descolgar",
+          "answer": "To pick up a telephone that is ringing.",
+          "options": [
+            "Very quietly, so that nobody else can hear you.",
+            "To hide what you feel so that nobody sees it.",
+            "The glass of a window, cold and clear to the touch.",
+            "To pick up a telephone that is ringing."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "en voz baja",
+          "answer": "Very quietly, so that nobody else can hear you.",
+          "options": [
+            "Very quietly, so that nobody else can hear you.",
+            "To hide what you feel so that nobody sees it.",
+            "The glass of a window, cold and clear to the touch.",
+            "To pick up a telephone that is ringing."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cristal",
+          "answer": "The glass of a window, cold and clear to the touch.",
+          "options": [
+            "Very quietly, so that nobody else can hear you.",
+            "To hide what you feel so that nobody sees it.",
+            "The glass of a window, cold and clear to the touch.",
+            "To pick up a telephone that is ringing."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

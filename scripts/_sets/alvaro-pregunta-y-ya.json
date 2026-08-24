@@ -1,0 +1,1032 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "año",
+    "sentence": "Quique, ¿cuánto te ha dejado el verano este _____, en dinero? pregunta Álvaro a la cara.",
+    "payload": {
+      "answer": "año",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "año",
+        "gato",
+        "apuro",
+        "desconcierto"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96a54b3bad82260f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Quique, ¿cuánto te ha dejado el verano este año, en dinero?”, pregunta Álvaro a la cara.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "año",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "auténtico",
+    "sentence": "Ella lo intenta, le sale corta y auténtica, con más entusiasmo del que esperaba.",
+    "payload": {
+      "answer": "Real and honest, with nothing put on top.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "it's hard at first",
+        "love, dear (affectionate contraction of mi hija)",
+        "Real and honest, with nothing put on top.",
+        "mysticism"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/779add4f34046547.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ella lo intenta, le sale corta y auténtica, con más entusiasmo del que esperaba.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "auténtico",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cansar",
+    "sentence": "cansar",
+    "payload": {
+      "answer": "cansar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "aseguran",
+        "molestar",
+        "solucioné",
+        "cansar"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "auténtica",
+    "sentence": "Ella lo intenta, le sale corta y _____, con más entusiasmo del que esperaba.",
+    "payload": {
+      "answer": "auténtica",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "auténtica",
+        "empotrada",
+        "unida",
+        "antigua"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/779add4f34046547.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ella lo intenta, le sale corta y auténtica, con más entusiasmo del que esperaba.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "auténtico",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cara",
+    "sentence": "“Quique, ¿cuánto te ha dejado el verano este año, en dinero?”, pregunta Álvaro a la cara.",
+    "payload": {
+      "answer": "The front of your head, where your eyes are.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "The front of your head, where your eyes are.",
+        "sharp",
+        "the shade",
+        "winked"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96a54b3bad82260f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Quique, ¿cuánto te ha dejado el verano este año, en dinero?”, pregunta Álvaro a la cara.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "cara",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "curiosidad",
+    "sentence": "curiosidad",
+    "payload": {
+      "answer": "curiosidad",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cautela",
+        "curiosidad",
+        "iglesia",
+        "modernidad"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "entusiasmo,engañar,tarde,medio",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "entusiasmo",
+          "answer": "The bright energy you feel when something goes well.",
+          "options": [
+            "The part of the day between lunch and the evening.",
+            "Half of something; one of its two equal parts.",
+            "The bright energy you feel when something goes well.",
+            "To make somebody believe a thing that is not true."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "engañar",
+          "answer": "To make somebody believe a thing that is not true.",
+          "options": [
+            "The part of the day between lunch and the evening.",
+            "Half of something; one of its two equal parts.",
+            "The bright energy you feel when something goes well.",
+            "To make somebody believe a thing that is not true."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tarde",
+          "answer": "The part of the day between lunch and the evening.",
+          "options": [
+            "The part of the day between lunch and the evening.",
+            "Half of something; one of its two equal parts.",
+            "The bright energy you feel when something goes well.",
+            "To make somebody believe a thing that is not true."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "medio",
+          "answer": "Half of something; one of its two equal parts.",
+          "options": [
+            "The part of the day between lunch and the evening.",
+            "Half of something; one of its two equal parts.",
+            "The bright energy you feel when something goes well.",
+            "To make somebody believe a thing that is not true."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cansa",
+    "sentence": "Pregunta y ya, hombre, que la vuelta larga _____ bastante más, le dice.",
+    "payload": {
+      "answer": "cansa",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "jugándonosla",
+        "cansa",
+        "resuena",
+        "revisa"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b0edbba0d0aab9a5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Pregunta y ya, hombre, que la vuelta larga cansa bastante más”, le dice.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "cansar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de lado",
+    "sentence": "Ella lleva cinco meses preguntando de lado, con medias palabras y muchas excusas.",
+    "payload": {
+      "answer": "Sideways; not straight at the thing you really mean.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "will honour",
+        "guava, a tropical fruit",
+        "pottery",
+        "Sideways; not straight at the thing you really mean."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d89920f14a45634f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ella lleva cinco meses preguntando de lado, con medias palabras y muchas excusas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "de lado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "enfada",
+    "sentence": "Poco, y bastante menos que el año pasado, contesta él, y no se _____ nada.",
+    "payload": {
+      "answer": "enfada",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "enfada",
+        "mezcla",
+        "flotaba",
+        "marca"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cb9bb07ff43c9915.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Poco, y bastante menos que el año pasado”, contesta él, y no se enfada nada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "enfadar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "año",
+    "sentence": "Quique, ¿cuánto te ha dejado el verano este _____, en dinero? pregunta Álvaro a la cara.",
+    "payload": {
+      "answer": "año",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "equipo",
+        "año",
+        "cielo",
+        "baldío"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96a54b3bad82260f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Quique, ¿cuánto te ha dejado el verano este año, en dinero?”, pregunta Álvaro a la cara.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "año",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "auténtico",
+    "sentence": "Ella lo intenta, le sale corta y auténtica, con más entusiasmo del que esperaba.",
+    "payload": {
+      "answer": "Real and honest, with nothing put on top.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "smell",
+        "thriving",
+        "gets married",
+        "Real and honest, with nothing put on top."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/779add4f34046547.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ella lo intenta, le sale corta y auténtica, con más entusiasmo del que esperaba.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "auténtico",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cansar",
+    "sentence": "cansar",
+    "payload": {
+      "answer": "cansar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "funcionar",
+        "denunciaba",
+        "cansar",
+        "arrebata"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "vuelta,intentar,año,tarde",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "vuelta",
+          "answer": "The long way round instead of the short one.",
+          "options": [
+            "The twelve months from one January to the next.",
+            "To try to do something that you might not manage.",
+            "The long way round instead of the short one.",
+            "The part of the day between lunch and the evening."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "intentar",
+          "answer": "To try to do something that you might not manage.",
+          "options": [
+            "The twelve months from one January to the next.",
+            "To try to do something that you might not manage.",
+            "The long way round instead of the short one.",
+            "The part of the day between lunch and the evening."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "año",
+          "answer": "The twelve months from one January to the next.",
+          "options": [
+            "The twelve months from one January to the next.",
+            "To try to do something that you might not manage.",
+            "The long way round instead of the short one.",
+            "The part of the day between lunch and the evening."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tarde",
+          "answer": "The part of the day between lunch and the evening.",
+          "options": [
+            "The twelve months from one January to the next.",
+            "To try to do something that you might not manage.",
+            "The long way round instead of the short one.",
+            "The part of the day between lunch and the evening."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "auténtica",
+    "sentence": "Ella lo intenta, le sale corta y _____, con más entusiasmo del que esperaba.",
+    "payload": {
+      "answer": "auténtica",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "enriquecedora",
+        "auténtica",
+        "soltera",
+        "sorprendida"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/779add4f34046547.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ella lo intenta, le sale corta y auténtica, con más entusiasmo del que esperaba.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "auténtico",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cara",
+    "sentence": "“Quique, ¿cuánto te ha dejado el verano este año, en dinero?”, pregunta Álvaro a la cara.",
+    "payload": {
+      "answer": "The front of your head, where your eyes are.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "dense",
+        "a lemon tree",
+        "be respected",
+        "The front of your head, where your eyes are."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/96a54b3bad82260f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Quique, ¿cuánto te ha dejado el verano este año, en dinero?”, pregunta Álvaro a la cara.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "cara",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "curiosidad",
+    "sentence": "curiosidad",
+    "payload": {
+      "answer": "curiosidad",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "armonía",
+        "pertenencia",
+        "curiosidad",
+        "honor"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "enfadar,molestar,junto,engañar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "enfadar",
+          "answer": "To make somebody angry about what you just said.",
+          "options": [
+            "Right next to something, with nothing in between.",
+            "To bother somebody who did not ask to be bothered.",
+            "To make somebody angry about what you just said.",
+            "To make somebody believe a thing that is not true."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "molestar",
+          "answer": "To bother somebody who did not ask to be bothered.",
+          "options": [
+            "Right next to something, with nothing in between.",
+            "To bother somebody who did not ask to be bothered.",
+            "To make somebody angry about what you just said.",
+            "To make somebody believe a thing that is not true."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "junto",
+          "answer": "Right next to something, with nothing in between.",
+          "options": [
+            "Right next to something, with nothing in between.",
+            "To bother somebody who did not ask to be bothered.",
+            "To make somebody angry about what you just said.",
+            "To make somebody believe a thing that is not true."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "engañar",
+          "answer": "To make somebody believe a thing that is not true.",
+          "options": [
+            "Right next to something, with nothing in between.",
+            "To bother somebody who did not ask to be bothered.",
+            "To make somebody angry about what you just said.",
+            "To make somebody believe a thing that is not true."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cansa",
+    "sentence": "Pregunta y ya, hombre, que la vuelta larga _____ bastante más, le dice.",
+    "payload": {
+      "answer": "cansa",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cansa",
+        "diera",
+        "raspa",
+        "probarla"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b0edbba0d0aab9a5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Pregunta y ya, hombre, que la vuelta larga cansa bastante más”, le dice.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "cansar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de lado",
+    "sentence": "Ella lleva cinco meses preguntando de lado, con medias palabras y muchas excusas.",
+    "payload": {
+      "answer": "Sideways; not straight at the thing you really mean.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to cross over",
+        "sit down",
+        "Sideways; not straight at the thing you really mean.",
+        "battered, worn"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d89920f14a45634f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ella lleva cinco meses preguntando de lado, con medias palabras y muchas excusas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "de lado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "enfadar",
+    "sentence": "“Poco, y bastante menos que el año pasado”, contesta él, y no se enfada nada.",
+    "payload": {
+      "answer": "To make somebody angry about what you just said.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "let's go all out",
+        "noisy and buzzing",
+        "maturity, ripeness",
+        "To make somebody angry about what you just said."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cb9bb07ff43c9915.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Poco, y bastante menos que el año pasado”, contesta él, y no se enfada nada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "enfadar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "engañar",
+    "sentence": "Nadie engaña a nadie, nadie se molesta; la conversación sigue con calma.",
+    "payload": {
+      "answer": "To make somebody believe a thing that is not true.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "restaurants",
+        "To make somebody believe a thing that is not true.",
+        "baffled",
+        "finalising"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c1853836a6a190e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Nadie engaña a nadie, nadie se molesta; la conversación sigue con calma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "engañar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "junto",
+    "sentence": "Álvaro entra con el canasto vacío y tierra en las manos, y se sienta junto a Quique, en la barra.",
+    "payload": {
+      "answer": "Right next to something, with nothing in between.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to dream",
+        "camaraderie",
+        "Right next to something, with nothing in between.",
+        "wire"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3b067f0b2f1b67d8.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Álvaro entra con el canasto vacío y tierra en las manos, y se sienta junto a Quique, en la barra.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "junto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "manera",
+    "sentence": "Hay dos maneras de preguntar y esta tarde Irene las ve juntas.",
+    "payload": {
+      "answer": "One of the ways in which a thing can be done.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "One of the ways in which a thing can be done.",
+        "the treetops",
+        "untouched",
+        "to pick"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b13ca49c015bf3d1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Hay dos maneras de preguntar y esta tarde Irene las ve juntas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "manera",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "enfada",
+    "sentence": "Poco, y bastante menos que el año pasado, contesta él, y no se _____ nada.",
+    "payload": {
+      "answer": "enfada",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "enfada",
+        "deslumbra",
+        "cuelga",
+        "crepitaba"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cb9bb07ff43c9915.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Poco, y bastante menos que el año pasado”, contesta él, y no se enfada nada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "enfadar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "engaña",
+    "sentence": "Nadie _____ a nadie, nadie se molesta; la conversación sigue con calma.",
+    "payload": {
+      "answer": "engaña",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "registra",
+        "aprecia",
+        "engaña",
+        "refresca"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1c1853836a6a190e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Nadie engaña a nadie, nadie se molesta; la conversación sigue con calma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "engañar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "maneras",
+    "sentence": "Hay dos _____ de preguntar y esta tarde Irene las ve juntas.",
+    "payload": {
+      "answer": "maneras",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "maravillas",
+        "librerías",
+        "creencias",
+        "maneras"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b13ca49c015bf3d1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Hay dos maneras de preguntar y esta tarde Irene las ve juntas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "alvaro-pregunta-y-ya",
+        "targetWord": "manera",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "entusiasmo",
+    "sentence": "entusiasmo",
+    "payload": {
+      "answer": "entusiasmo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "baldío",
+        "codazo",
+        "desánimo",
+        "entusiasmo"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "excusas",
+    "sentence": "excusas",
+    "payload": {
+      "answer": "excusas",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "guitarras",
+        "vacas",
+        "laderas",
+        "excusas"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "excusas,de lado,auténtico,cansar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "excusas",
+          "answer": "Reasons you give first so that nobody gets cross.",
+          "options": [
+            "To make somebody tired of what you are doing.",
+            "Sideways; not straight at the thing you really mean.",
+            "Reasons you give first so that nobody gets cross.",
+            "Real and honest, with nothing put on top."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "de lado",
+          "answer": "Sideways; not straight at the thing you really mean.",
+          "options": [
+            "To make somebody tired of what you are doing.",
+            "Sideways; not straight at the thing you really mean.",
+            "Reasons you give first so that nobody gets cross.",
+            "Real and honest, with nothing put on top."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "auténtico",
+          "answer": "Real and honest, with nothing put on top.",
+          "options": [
+            "To make somebody tired of what you are doing.",
+            "Sideways; not straight at the thing you really mean.",
+            "Reasons you give first so that nobody gets cross.",
+            "Real and honest, with nothing put on top."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cansar",
+          "answer": "To make somebody tired of what you are doing.",
+          "options": [
+            "To make somebody tired of what you are doing.",
+            "Sideways; not straight at the thing you really mean.",
+            "Reasons you give first so that nobody gets cross.",
+            "Real and honest, with nothing put on top."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

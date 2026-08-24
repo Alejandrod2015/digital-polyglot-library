@@ -1,0 +1,1032 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "al día siguiente",
+    "sentence": "_____ vuelve a la pescadería y no abre la boca.",
+    "payload": {
+      "answer": "al día siguiente",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ceremonia del fuego",
+        "montaña rusa",
+        "al día siguiente",
+        "no inventes"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/144a7ab1c89afc54.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Al día siguiente vuelve a la pescadería y no abre la boca.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "al día siguiente",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alzar",
+    "sentence": "Dos dedos alzados en la pescadería significan otra cosa, y Irene todavía no lo sabe.",
+    "payload": {
+      "answer": "To lift something up with a slow, clear movement.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "To lift something up with a slow, clear movement.",
+        "salty sea breeze",
+        "great, a good guy (Colombian slang)",
+        "mud brick"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32f8b0c7084b3efe.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Dos dedos alzados en la pescadería significan otra cosa, y Irene todavía no lo sabe.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "alzar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "agitar",
+    "sentence": "agitar",
+    "payload": {
+      "answer": "agitar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "reflejaba",
+        "celebrar",
+        "agitar",
+        "chisporroteaban"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "alzados",
+    "sentence": "Dos dedos _____ en la pescadería significan otra cosa, y Irene todavía no lo sabe.",
+    "payload": {
+      "answer": "alzados",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "arrojándolos",
+        "alzados",
+        "esforzamos",
+        "pertenecemos"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32f8b0c7084b3efe.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Dos dedos alzados en la pescadería significan otra cosa, y Irene todavía no lo sabe.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "alzar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brazo",
+    "sentence": "En el bar, Quique se ríe, levanta el brazo y pone la palma hacia dentro.",
+    "payload": {
+      "answer": "The part of your body from shoulder to hand.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "slices",
+        "The part of your body from shoulder to hand.",
+        "we climbed",
+        "structure"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ddc5c8d1dcfee75f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En el bar, Quique se ríe, levanta el brazo y pone la palma hacia dentro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "brazo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "calamar",
+    "sentence": "calamar",
+    "payload": {
+      "answer": "calamar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "linaje",
+        "cajoncito",
+        "drama",
+        "calamar"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "al día siguiente,alzar,recto,signo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "al día siguiente",
+          "answer": "On the next day, twenty four hours later.",
+          "options": [
+            "On the next day, twenty four hours later.",
+            "To lift something up with a slow, clear movement.",
+            "Straight, with no bend or curve in it at all.",
+            "A movement or mark that stands for a whole word."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "alzar",
+          "answer": "To lift something up with a slow, clear movement.",
+          "options": [
+            "On the next day, twenty four hours later.",
+            "To lift something up with a slow, clear movement.",
+            "Straight, with no bend or curve in it at all.",
+            "A movement or mark that stands for a whole word."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "recto",
+          "answer": "Straight, with no bend or curve in it at all.",
+          "options": [
+            "On the next day, twenty four hours later.",
+            "To lift something up with a slow, clear movement.",
+            "Straight, with no bend or curve in it at all.",
+            "A movement or mark that stands for a whole word."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "signo",
+          "answer": "A movement or mark that stands for a whole word.",
+          "options": [
+            "On the next day, twenty four hours later.",
+            "To lift something up with a slow, clear movement.",
+            "Straight, with no bend or curve in it at all.",
+            "A movement or mark that stands for a whole word."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "calamares",
+    "sentence": "La mujer del mercado le envuelve cuatro _____ en una bandeja.",
+    "payload": {
+      "answer": "calamares",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "calamares",
+        "fábrica",
+        "caballo",
+        "burro"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9a8f7c296d8261dc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La mujer del mercado le envuelve cuatro calamares en una bandeja.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "calamar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cazuela",
+    "sentence": "“Y lo hondo de una cazuela no se dice con palabras: se abre así y ya está”, añade.",
+    "payload": {
+      "answer": "Wide round clay pot used for cooking slow food.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "I might just go for it",
+        "Wide round clay pot used for cooking slow food.",
+        "colonial, from the Spanish era",
+        "artists"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/42b0c12feedf1f27.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y lo hondo de una cazuela no se dice con palabras: se abre así y ya está”, añade.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "cazuela",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "curva",
+    "sentence": "Alza la mano firme, sin _____, y la mujer le pone dos calamares.",
+    "payload": {
+      "answer": "curva",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "semilla",
+        "arquitectura",
+        "aluna",
+        "curva"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/349f3480b85d6b73.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Alza la mano firme, sin curva, y la mujer le pone dos calamares.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "curva",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "al día siguiente",
+    "sentence": "_____ vuelve a la pescadería y no abre la boca.",
+    "payload": {
+      "answer": "al día siguiente",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "guita verde",
+        "ideas locas",
+        "águila harpía",
+        "al día siguiente"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/144a7ab1c89afc54.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Al día siguiente vuelve a la pescadería y no abre la boca.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "al día siguiente",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alzar",
+    "sentence": "Dos dedos alzados en la pescadería significan otra cosa, y Irene todavía no lo sabe.",
+    "payload": {
+      "answer": "To lift something up with a slow, clear movement.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "kites (Mexican word)",
+        "To lift something up with a slow, clear movement.",
+        "Christmas",
+        "caked in mud"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32f8b0c7084b3efe.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Dos dedos alzados en la pescadería significan otra cosa, y Irene todavía no lo sabe.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "alzar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "agitar",
+    "sentence": "agitar",
+    "payload": {
+      "answer": "agitar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "moler",
+        "iluminar",
+        "agitar",
+        "recorten"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "firme,pescadería,torcido,brazo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "firme",
+          "answer": "Steady and sure, not shaking or moving about.",
+          "options": [
+            "Shop where fresh fish is sold over a wet counter.",
+            "The part of your body from shoulder to hand.",
+            "Bent the wrong way, not straight as it should be.",
+            "Steady and sure, not shaking or moving about."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pescadería",
+          "answer": "Shop where fresh fish is sold over a wet counter.",
+          "options": [
+            "Shop where fresh fish is sold over a wet counter.",
+            "The part of your body from shoulder to hand.",
+            "Bent the wrong way, not straight as it should be.",
+            "Steady and sure, not shaking or moving about."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "torcido",
+          "answer": "Bent the wrong way, not straight as it should be.",
+          "options": [
+            "Shop where fresh fish is sold over a wet counter.",
+            "The part of your body from shoulder to hand.",
+            "Bent the wrong way, not straight as it should be.",
+            "Steady and sure, not shaking or moving about."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "brazo",
+          "answer": "The part of your body from shoulder to hand.",
+          "options": [
+            "Shop where fresh fish is sold over a wet counter.",
+            "The part of your body from shoulder to hand.",
+            "Bent the wrong way, not straight as it should be.",
+            "Steady and sure, not shaking or moving about."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "alzados",
+    "sentence": "Dos dedos _____ en la pescadería significan otra cosa, y Irene todavía no lo sabe.",
+    "payload": {
+      "answer": "alzados",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "disfrutábamos",
+        "alzados",
+        "deleitándonos",
+        "trepamos"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32f8b0c7084b3efe.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Dos dedos alzados en la pescadería significan otra cosa, y Irene todavía no lo sabe.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "alzar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brazo",
+    "sentence": "En el bar, Quique se ríe, levanta el brazo y pone la palma hacia dentro.",
+    "payload": {
+      "answer": "The part of your body from shoulder to hand.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to fight, to counter",
+        "the driver",
+        "The part of your body from shoulder to hand.",
+        "what do you reckon (Argentine voseo)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ddc5c8d1dcfee75f.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En el bar, Quique se ríe, levanta el brazo y pone la palma hacia dentro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "brazo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "calamar",
+    "sentence": "calamar",
+    "payload": {
+      "answer": "calamar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "rostro",
+        "choripán",
+        "pájaros",
+        "calamar"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "mercado,calamar,alzar,curva",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "mercado",
+          "answer": "Place with many small stalls where food is sold.",
+          "options": [
+            "To lift something up with a slow, clear movement.",
+            "Soft white sea animal with many arms, fried in rings.",
+            "Place with many small stalls where food is sold.",
+            "A soft bend in a line instead of a straight run."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "calamar",
+          "answer": "Soft white sea animal with many arms, fried in rings.",
+          "options": [
+            "To lift something up with a slow, clear movement.",
+            "Soft white sea animal with many arms, fried in rings.",
+            "Place with many small stalls where food is sold.",
+            "A soft bend in a line instead of a straight run."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "alzar",
+          "answer": "To lift something up with a slow, clear movement.",
+          "options": [
+            "To lift something up with a slow, clear movement.",
+            "Soft white sea animal with many arms, fried in rings.",
+            "Place with many small stalls where food is sold.",
+            "A soft bend in a line instead of a straight run."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "curva",
+          "answer": "A soft bend in a line instead of a straight run.",
+          "options": [
+            "To lift something up with a slow, clear movement.",
+            "Soft white sea animal with many arms, fried in rings.",
+            "Place with many small stalls where food is sold.",
+            "A soft bend in a line instead of a straight run."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "calamares",
+    "sentence": "La mujer del mercado le envuelve cuatro _____ en una bandeja.",
+    "payload": {
+      "answer": "calamares",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "capa",
+        "cartita",
+        "hogar",
+        "calamares"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9a8f7c296d8261dc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La mujer del mercado le envuelve cuatro calamares en una bandeja.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "calamar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cazuela",
+    "sentence": "“Y lo hondo de una cazuela no se dice con palabras: se abre así y ya está”, añade.",
+    "payload": {
+      "answer": "Wide round clay pot used for cooking slow food.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Wide round clay pot used for cooking slow food.",
+        "skiing",
+        "legitimate",
+        "flyer, one of the dancers"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/42b0c12feedf1f27.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y lo hondo de una cazuela no se dice con palabras: se abre así y ya está”, añade.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "cazuela",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "curva",
+    "sentence": "Alza la mano firme, sin curva, y la mujer le pone dos calamares.",
+    "payload": {
+      "answer": "A soft bend in a line instead of a straight run.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the measures",
+        "an offering",
+        "A soft bend in a line instead of a straight run.",
+        "sugar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/349f3480b85d6b73.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Alza la mano firme, sin curva, y la mujer le pone dos calamares.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "curva",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "girar",
+    "sentence": "Irene copia el signo y le sale torcido, con la muñeca girada.",
+    "payload": {
+      "answer": "To turn something around on its own centre.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "odd",
+        "peach palm fruit, eaten with salt or honey",
+        "a feast",
+        "To turn something around on its own centre."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/149378339ea98f7d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene copia el signo y le sale torcido, con la muñeca girada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "girar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "liso",
+    "sentence": "Lo intenta de nuevo hasta que le sale liso.",
+    "payload": {
+      "answer": "Smooth and flat, with nothing rough on its surface.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Smooth and flat, with nothing rough on its surface.",
+        "I reveal",
+        "yeah, sure (Mexican slang for sí)",
+        "the minibus"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6c4c06894f1802b3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lo intenta de nuevo hasta que le sale liso.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "liso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marcar",
+    "sentence": "“Aquí se empieza a contar por este dedo, guapa, no por el de al lado”, dice, y le marca el orden.",
+    "payload": {
+      "answer": "To show the exact order or place of something.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the slits, the gaps",
+        "To show the exact order or place of something.",
+        "fighting against",
+        "To shake something quickly from side to side."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6237586f816f355c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Aquí se empieza a contar por este dedo, guapa, no por el de al lado”, dice, y le marca el orden.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "marcar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "temblor",
+    "sentence": "Irene sale con un temblor tonto en el pecho.",
+    "payload": {
+      "answer": "A small quick shaking that you cannot fully control.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "what he knows",
+        "A small quick shaking that you cannot fully control.",
+        "the street carnival",
+        "glide, move along"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d60ef971487e58ea.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene sale con un temblor tonto en el pecho.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "temblor",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "girada",
+    "sentence": "Irene copia el signo y le sale torcido, con la muñeca _____.",
+    "payload": {
+      "answer": "girada",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ingresa",
+        "girada",
+        "envuelva",
+        "marcaba"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/149378339ea98f7d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene copia el signo y le sale torcido, con la muñeca girada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "girar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "marca",
+    "sentence": "Aquí se empieza a contar por este dedo, guapa, no por el de al lado, dice, y le _____ el orden.",
+    "payload": {
+      "answer": "marca",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cuelga",
+        "anochezca",
+        "tatuaba",
+        "marca"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6237586f816f355c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Aquí se empieza a contar por este dedo, guapa, no por el de al lado”, dice, y le marca el orden.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "dos-dedos-no-son-dos",
+        "targetWord": "marcar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "dedo",
+    "sentence": "dedo",
+    "payload": {
+      "answer": "dedo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "paraíso",
+        "tango",
+        "chapoteo",
+        "dedo"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "firme",
+    "sentence": "firme",
+    "payload": {
+      "answer": "firme",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "precioso",
+        "firme",
+        "unido",
+        "quieto"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "mano,agitar,hondo,recto",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "mano",
+          "answer": "The part of your body at the end of the arm.",
+          "options": [
+            "The part of your body at the end of the arm.",
+            "To shake something quickly from side to side.",
+            "Deep, with a long way down from the top.",
+            "Straight, with no bend or curve in it at all."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "agitar",
+          "answer": "To shake something quickly from side to side.",
+          "options": [
+            "The part of your body at the end of the arm.",
+            "To shake something quickly from side to side.",
+            "Deep, with a long way down from the top.",
+            "Straight, with no bend or curve in it at all."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "hondo",
+          "answer": "Deep, with a long way down from the top.",
+          "options": [
+            "The part of your body at the end of the arm.",
+            "To shake something quickly from side to side.",
+            "Deep, with a long way down from the top.",
+            "Straight, with no bend or curve in it at all."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "recto",
+          "answer": "Straight, with no bend or curve in it at all.",
+          "options": [
+            "The part of your body at the end of the arm.",
+            "To shake something quickly from side to side.",
+            "Deep, with a long way down from the top.",
+            "Straight, with no bend or curve in it at all."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

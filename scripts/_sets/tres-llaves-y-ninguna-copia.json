@@ -1,0 +1,949 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "a la primera",
+    "sentence": "Irene mete la llave, la gira y el pestillo entra _____.",
+    "payload": {
+      "answer": "a la primera",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "saques la piedra",
+        "mala pasada",
+        "a la primera",
+        "día de Muertos"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c490de285d702cdf.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene mete la llave, la gira y el pestillo entra a la primera.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "a la primera",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alfombrilla",
+    "sentence": "Irene cierra por dentro; la alfombrilla del vestíbulo se queda sucia y torcida.",
+    "payload": {
+      "answer": "Small mat you put down in front of a door.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Small mat you put down in front of a door.",
+        "cups of corn kernels with chilli, lime and cheese",
+        "campaigns",
+        "regular"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4100ca695494037c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene cierra por dentro; la alfombrilla del vestíbulo se queda sucia y torcida.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "alfombrilla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "barandal",
+    "sentence": "barandal",
+    "payload": {
+      "answer": "barandal",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "piezas",
+        "deuda",
+        "barandal",
+        "movimiento"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "bisagra",
+    "sentence": "Empuja con la cadera y luego gira, que la _____ está torcida desde siempre.",
+    "payload": {
+      "answer": "bisagra",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "vieja",
+        "abuela",
+        "bisagra",
+        "apuesta"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/45b032cfa4b4b064.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Empuja con la cadera y luego gira, que la bisagra está torcida desde siempre”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "bisagra",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brindar",
+    "sentence": "“Nadie brinda por esto, hija, que una llave no se celebra”, dice Rosa.",
+    "payload": {
+      "answer": "To raise a glass and drink for something good.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "still",
+        "To raise a glass and drink for something good.",
+        "mayor",
+        "the replay"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d22c100950d2c821.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Nadie brinda por esto, hija, que una llave no se celebra”, dice Rosa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "brindar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cadera",
+    "sentence": "cadera",
+    "payload": {
+      "answer": "cadera",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "penumbra",
+        "tela",
+        "cadera",
+        "puerta"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "sótano,desde siempre,cadera,alfombrilla",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "sótano",
+          "answer": "Room under a building where things are stored.",
+          "options": [
+            "For as long as anybody there can remember.",
+            "The wide bone at the side of your body, below the waist.",
+            "Small mat you put down in front of a door.",
+            "Room under a building where things are stored."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "desde siempre",
+          "answer": "For as long as anybody there can remember.",
+          "options": [
+            "For as long as anybody there can remember.",
+            "The wide bone at the side of your body, below the waist.",
+            "Small mat you put down in front of a door.",
+            "Room under a building where things are stored."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cadera",
+          "answer": "The wide bone at the side of your body, below the waist.",
+          "options": [
+            "For as long as anybody there can remember.",
+            "The wide bone at the side of your body, below the waist.",
+            "Small mat you put down in front of a door.",
+            "Room under a building where things are stored."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "alfombrilla",
+          "answer": "Small mat you put down in front of a door.",
+          "options": [
+            "For as long as anybody there can remember.",
+            "The wide bone at the side of your body, below the waist.",
+            "Small mat you put down in front of a door.",
+            "Room under a building where things are stored."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "brinda",
+    "sentence": "Nadie _____ por esto, hija, que una llave no se celebra, dice Rosa.",
+    "payload": {
+      "answer": "brinda",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "brinda",
+        "cuesta",
+        "fluía",
+        "realizaba"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d22c100950d2c821.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Nadie brinda por esto, hija, que una llave no se celebra”, dice Rosa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "brindar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "candado",
+    "sentence": "Marta sube con un candado nuevo para la reja del sótano.",
+    "payload": {
+      "answer": "Lock with a curved bar that hangs on a door.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the dance and music of the Río de la Plata",
+        "battlefield",
+        "Lock with a curved bar that hangs on a door.",
+        "hidden"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/903c02765ebbb43d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Marta sube con un candado nuevo para la reja del sótano.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "candado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "diciembre",
+    "sentence": "Rocío se las entrega en el rellano de _____, con Rosa detrás y un pan tibio.",
+    "payload": {
+      "answer": "diciembre",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "medidas",
+        "ropero",
+        "teja",
+        "diciembre"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a50ec673734c9ded.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío se las entrega en el rellano de diciembre, con Rosa detrás y un pan tibio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "diciembre",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "a la primera",
+    "sentence": "Irene mete la llave, la gira y el pestillo entra _____.",
+    "payload": {
+      "answer": "a la primera",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "en marcha",
+        "laguna de la Cocha",
+        "noche de las Velitas",
+        "a la primera"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c490de285d702cdf.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene mete la llave, la gira y el pestillo entra a la primera.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "a la primera",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alfombrilla",
+    "sentence": "Irene cierra por dentro; la alfombrilla del vestíbulo se queda sucia y torcida.",
+    "payload": {
+      "answer": "Small mat you put down in front of a door.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "wet",
+        "Small mat you put down in front of a door.",
+        "pollute",
+        "a killjoy, a snitch (Argentine slang)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4100ca695494037c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene cierra por dentro; la alfombrilla del vestíbulo se queda sucia y torcida.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "alfombrilla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "barandal",
+    "sentence": "barandal",
+    "payload": {
+      "answer": "barandal",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "profe",
+        "tostadora",
+        "barandal",
+        "pastel"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "barandal,portón,picaporte,verja",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "barandal",
+          "answer": "The rail you hold on to going up the stairs.",
+          "options": [
+            "The handle you take hold of to open a door.",
+            "Iron gate with bars, at the entrance of a yard.",
+            "The rail you hold on to going up the stairs.",
+            "Big heavy street door at the entrance of a building."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "portón",
+          "answer": "Big heavy street door at the entrance of a building.",
+          "options": [
+            "The handle you take hold of to open a door.",
+            "Iron gate with bars, at the entrance of a yard.",
+            "The rail you hold on to going up the stairs.",
+            "Big heavy street door at the entrance of a building."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "picaporte",
+          "answer": "The handle you take hold of to open a door.",
+          "options": [
+            "The handle you take hold of to open a door.",
+            "Iron gate with bars, at the entrance of a yard.",
+            "The rail you hold on to going up the stairs.",
+            "Big heavy street door at the entrance of a building."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "verja",
+          "answer": "Iron gate with bars, at the entrance of a yard.",
+          "options": [
+            "The handle you take hold of to open a door.",
+            "Iron gate with bars, at the entrance of a yard.",
+            "The rail you hold on to going up the stairs.",
+            "Big heavy street door at the entrance of a building."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bisagra",
+    "sentence": "Empuja con la cadera y luego gira, que la _____ está torcida desde siempre.",
+    "payload": {
+      "answer": "bisagra",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "parrilla",
+        "ñera",
+        "bisagra",
+        "supervivencia"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/45b032cfa4b4b064.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Empuja con la cadera y luego gira, que la bisagra está torcida desde siempre”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "bisagra",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "brindar",
+    "sentence": "“Nadie brinda por esto, hija, que una llave no se celebra”, dice Rosa.",
+    "payload": {
+      "answer": "To raise a glass and drink for something good.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the bottom",
+        "To raise a glass and drink for something good.",
+        "wooden xylophone, the sound of Chiapas",
+        "tapir"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d22c100950d2c821.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Nadie brinda por esto, hija, que una llave no se celebra”, dice Rosa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "brindar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cadera",
+    "sentence": "cadera",
+    "payload": {
+      "answer": "cadera",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "fuerza",
+        "rebeldía",
+        "mejora",
+        "cadera"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "llave,frío,alfombrilla,sobre",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "llave",
+          "answer": "Small metal piece that opens and closes a lock.",
+          "options": [
+            "Small metal piece that opens and closes a lock.",
+            "Small mat you put down in front of a door.",
+            "Paper cover that a letter is sent inside.",
+            "Cold to the touch, like metal in December."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "frío",
+          "answer": "Cold to the touch, like metal in December.",
+          "options": [
+            "Small metal piece that opens and closes a lock.",
+            "Small mat you put down in front of a door.",
+            "Paper cover that a letter is sent inside.",
+            "Cold to the touch, like metal in December."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "alfombrilla",
+          "answer": "Small mat you put down in front of a door.",
+          "options": [
+            "Small metal piece that opens and closes a lock.",
+            "Small mat you put down in front of a door.",
+            "Paper cover that a letter is sent inside.",
+            "Cold to the touch, like metal in December."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sobre",
+          "answer": "Paper cover that a letter is sent inside.",
+          "options": [
+            "Small metal piece that opens and closes a lock.",
+            "Small mat you put down in front of a door.",
+            "Paper cover that a letter is sent inside.",
+            "Cold to the touch, like metal in December."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "brinda",
+    "sentence": "Nadie _____ por esto, hija, que una llave no se celebra, dice Rosa.",
+    "payload": {
+      "answer": "brinda",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "tiembla",
+        "anuncia",
+        "regateaba",
+        "brinda"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d22c100950d2c821.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Nadie brinda por esto, hija, que una llave no se celebra”, dice Rosa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "brindar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "candado",
+    "sentence": "Marta sube con un candado nuevo para la reja del sótano.",
+    "payload": {
+      "answer": "Lock with a curved bar that hangs on a door.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "late, deceased",
+        "Lock with a curved bar that hangs on a door.",
+        "we process",
+        "an oak"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/903c02765ebbb43d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Marta sube con un candado nuevo para la reja del sótano.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "candado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "diciembre",
+    "sentence": "Rocío se las entrega en el rellano de diciembre, con Rosa detrás y un pan tibio.",
+    "payload": {
+      "answer": "The last month of the year, before January.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "The last month of the year, before January.",
+        "turns, rotates",
+        "frustrating",
+        "lit"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a50ec673734c9ded.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío se las entrega en el rellano de diciembre, con Rosa detrás y un pan tibio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "diciembre",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "frío",
+    "sentence": "El picaporte está frío y la verja suena abajo, en el patio.",
+    "payload": {
+      "answer": "Cold to the touch, like metal in December.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Cold to the touch, like metal in December.",
+        "primary school",
+        "to mix",
+        "car stereo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0efc97703b281f3b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El picaporte está frío y la verja suena abajo, en el patio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "frío",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llave",
+    "sentence": "Tres llaves llegan en un sobre pequeño, sin carpeta y sin copia.",
+    "payload": {
+      "answer": "Small metal piece that opens and closes a lock.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Small metal piece that opens and closes a lock.",
+        "where did you get",
+        "go past in procession",
+        "dry"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef98e128e10af8b1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tres llaves llegan en un sobre pequeño, sin carpeta y sin copia.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "llave",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "portón",
+    "sentence": "“La de arriba es la del portón, y esa cuesta un poco al principio”, dice Rocío.",
+    "payload": {
+      "answer": "Big heavy street door at the entrance of a building.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "up for it",
+        "Big heavy street door at the entrance of a building.",
+        "detail",
+        "something she had known before"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ca368f81b593346c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“La de arriba es la del portón, y esa cuesta un poco al principio”, dice Rocío.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "portón",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "llaves",
+    "sentence": "Tres _____ llegan en un sobre pequeño, sin carpeta y sin copia.",
+    "payload": {
+      "answer": "llaves",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "tango",
+        "promo",
+        "llaves",
+        "caos"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ef98e128e10af8b1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Tres llaves llegan en un sobre pequeño, sin carpeta y sin copia.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "tres-llaves-y-ninguna-copia",
+        "targetWord": "llave",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "desde siempre",
+    "sentence": "desde siempre",
+    "payload": {
+      "answer": "desde siempre",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "obra maestra",
+        "desde siempre",
+        "de una vez",
+        "campo de batalla"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "diciembre,reja,vestíbulo,pestillo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "diciembre",
+          "answer": "The last month of the year, before January.",
+          "options": [
+            "Grid of iron bars over a window or a door.",
+            "The hall of a building, between the door and the stairs.",
+            "The last month of the year, before January.",
+            "Small bolt you slide across to close a door."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "reja",
+          "answer": "Grid of iron bars over a window or a door.",
+          "options": [
+            "Grid of iron bars over a window or a door.",
+            "The hall of a building, between the door and the stairs.",
+            "The last month of the year, before January.",
+            "Small bolt you slide across to close a door."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "vestíbulo",
+          "answer": "The hall of a building, between the door and the stairs.",
+          "options": [
+            "Grid of iron bars over a window or a door.",
+            "The hall of a building, between the door and the stairs.",
+            "The last month of the year, before January.",
+            "Small bolt you slide across to close a door."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pestillo",
+          "answer": "Small bolt you slide across to close a door.",
+          "options": [
+            "Grid of iron bars over a window or a door.",
+            "The hall of a building, between the door and the stairs.",
+            "The last month of the year, before January.",
+            "Small bolt you slide across to close a door."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

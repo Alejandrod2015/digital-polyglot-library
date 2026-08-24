@@ -1,0 +1,983 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "acomoda",
+    "sentence": "Lo _____ en el estante, ajusta el borde contra la pared y espera.",
+    "payload": {
+      "answer": "acomoda",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "transporta",
+        "acomoda",
+        "pita",
+        "plancha"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c314982fdff7fbe.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lo acomoda en el estante, ajusta el borde contra la pared y espera.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "acomodar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acomodar",
+    "sentence": "Lo acomoda en el estante, ajusta el borde contra la pared y espera.",
+    "payload": {
+      "answer": "To place something so that it sits well and stays.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "To place something so that it sits well and stays.",
+        "packed, crammed",
+        "hidden",
+        "standing by doing nothing"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c314982fdff7fbe.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lo acomoda en el estante, ajusta el borde contra la pared y espera.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "acomodar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "ajustar",
+    "sentence": "ajustar",
+    "payload": {
+      "answer": "ajustar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "despeguen",
+        "Abrí",
+        "aplaudiendo",
+        "ajustar"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "bordillo",
+    "sentence": "Marta cruza la farmacia cargando un cajón cuadrado y no ve el _____.",
+    "payload": {
+      "answer": "bordillo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "vestido",
+        "entorno",
+        "periodismo",
+        "bordillo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5267002a1f49d27a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Marta cruza la farmacia cargando un cajón cuadrado y no ve el bordillo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "bordillo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delicado",
+    "sentence": "Ella junta dos dedos, se los apoya en el hombro y aparta la mano; el toque es delicado.",
+    "payload": {
+      "answer": "Soft and careful, done without any force at all.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Soft and careful, done without any force at all.",
+        "unlicensed, illegal",
+        "for bringing me",
+        "non-stop"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a632eface3f935d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ella junta dos dedos, se los apoya en el hombro y aparta la mano; el toque es delicado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "delicado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "barriga",
+    "sentence": "barriga",
+    "payload": {
+      "answer": "barriga",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "inversionista",
+        "garganta",
+        "barriga",
+        "distancia"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "cargar,juntar,desde ayer,puntiagudo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cargar",
+          "answer": "To carry something heavy in your arms or on your back.",
+          "options": [
+            "To put two things together so they touch.",
+            "Ending in a sharp point that can hurt you.",
+            "Since yesterday, and still going on right now.",
+            "To carry something heavy in your arms or on your back."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "juntar",
+          "answer": "To put two things together so they touch.",
+          "options": [
+            "To put two things together so they touch.",
+            "Ending in a sharp point that can hurt you.",
+            "Since yesterday, and still going on right now.",
+            "To carry something heavy in your arms or on your back."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "desde ayer",
+          "answer": "Since yesterday, and still going on right now.",
+          "options": [
+            "To put two things together so they touch.",
+            "Ending in a sharp point that can hurt you.",
+            "Since yesterday, and still going on right now.",
+            "To carry something heavy in your arms or on your back."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "puntiagudo",
+          "answer": "Ending in a sharp point that can hurt you.",
+          "options": [
+            "To put two things together so they touch.",
+            "Ending in a sharp point that can hurt you.",
+            "Since yesterday, and still going on right now.",
+            "To carry something heavy in your arms or on your back."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "desde ayer",
+    "sentence": "Gracias, mujer, que lo llevo encima _____ y ya ando torcida, dice.",
+    "payload": {
+      "answer": "desde ayer",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "patio trasero",
+        "desde ayer",
+        "hermano mayor",
+        "echan la culpa"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26c26bc239a93faf.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Gracias, mujer, que lo llevo encima desde ayer y ya ando torcida”, dice.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "desde ayer",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en seco",
+    "sentence": "Marta se para en seco, voltea la cabeza y le entrega el cajón sin preguntar.",
+    "payload": {
+      "answer": "Suddenly and completely, in the middle of a movement.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "fades away",
+        "neglected",
+        "enigmatic",
+        "Suddenly and completely, in the middle of a movement."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4eb90a3b83e48d95.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Marta se para en seco, voltea la cabeza y le entrega el cajón sin preguntar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "en seco",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "estantería",
+    "sentence": "Ponlo en el tablón de arriba de la _____, hombre, que ahí no estorba a nadie.",
+    "payload": {
+      "answer": "estantería",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "carcajada",
+        "silleta",
+        "cerámica",
+        "estantería"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e1f9e6c00618f802.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Ponlo en el tablón de arriba de la estantería, hombre, que ahí no estorba a nadie”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "estantería",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "acomoda",
+    "sentence": "Lo _____ en el estante, ajusta el borde contra la pared y espera.",
+    "payload": {
+      "answer": "acomoda",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "regateaba",
+        "asomaba",
+        "titilaba",
+        "acomoda"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c314982fdff7fbe.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lo acomoda en el estante, ajusta el borde contra la pared y espera.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "acomodar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acomodar",
+    "sentence": "Lo acomoda en el estante, ajusta el borde contra la pared y espera.",
+    "payload": {
+      "answer": "To place something so that it sits well and stays.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the Carnival Queen, who leads the festivities",
+        "heavier, more intense",
+        "To place something so that it sits well and stays.",
+        "hugging"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c314982fdff7fbe.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Lo acomoda en el estante, ajusta el borde contra la pared y espera.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "acomodar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "ajustar",
+    "sentence": "ajustar",
+    "payload": {
+      "answer": "ajustar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "ajustar",
+        "vencer",
+        "vigilan",
+        "mezclado"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "ajustar,entregar,desde ayer,juntar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "ajustar",
+          "answer": "To move something a little so that it fits right.",
+          "options": [
+            "Since yesterday, and still going on right now.",
+            "To put two things together so they touch.",
+            "To put something directly into somebody else's hands.",
+            "To move something a little so that it fits right."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "entregar",
+          "answer": "To put something directly into somebody else's hands.",
+          "options": [
+            "Since yesterday, and still going on right now.",
+            "To put two things together so they touch.",
+            "To put something directly into somebody else's hands.",
+            "To move something a little so that it fits right."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "desde ayer",
+          "answer": "Since yesterday, and still going on right now.",
+          "options": [
+            "Since yesterday, and still going on right now.",
+            "To put two things together so they touch.",
+            "To put something directly into somebody else's hands.",
+            "To move something a little so that it fits right."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "juntar",
+          "answer": "To put two things together so they touch.",
+          "options": [
+            "Since yesterday, and still going on right now.",
+            "To put two things together so they touch.",
+            "To put something directly into somebody else's hands.",
+            "To move something a little so that it fits right."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "bordillo",
+    "sentence": "Marta cruza la farmacia cargando un cajón cuadrado y no ve el _____.",
+    "payload": {
+      "answer": "bordillo",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "bordillo",
+        "fastidio",
+        "prototipo",
+        "principio"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5267002a1f49d27a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Marta cruza la farmacia cargando un cajón cuadrado y no ve el bordillo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "bordillo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delicado",
+    "sentence": "Ella junta dos dedos, se los apoya en el hombro y aparta la mano; el toque es delicado.",
+    "payload": {
+      "answer": "Soft and careful, done without any force at all.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "fills, takes over",
+        "the festivities",
+        "Soft and careful, done without any force at all.",
+        "unbreakable"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0a632eface3f935d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ella junta dos dedos, se los apoya en el hombro y aparta la mano; el toque es delicado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "delicado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "barriga",
+    "sentence": "barriga",
+    "payload": {
+      "answer": "barriga",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "herencia",
+        "birra",
+        "cáscara",
+        "barriga"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "en seco,tablón,punta,bordillo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "en seco",
+          "answer": "Suddenly and completely, in the middle of a movement.",
+          "options": [
+            "The raised stone edge between the street and the path.",
+            "Thick wide board of wood used as a shelf.",
+            "The sharp or narrow end of a long thing.",
+            "Suddenly and completely, in the middle of a movement."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tablón",
+          "answer": "Thick wide board of wood used as a shelf.",
+          "options": [
+            "The raised stone edge between the street and the path.",
+            "Thick wide board of wood used as a shelf.",
+            "The sharp or narrow end of a long thing.",
+            "Suddenly and completely, in the middle of a movement."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "punta",
+          "answer": "The sharp or narrow end of a long thing.",
+          "options": [
+            "The raised stone edge between the street and the path.",
+            "Thick wide board of wood used as a shelf.",
+            "The sharp or narrow end of a long thing.",
+            "Suddenly and completely, in the middle of a movement."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "bordillo",
+          "answer": "The raised stone edge between the street and the path.",
+          "options": [
+            "The raised stone edge between the street and the path.",
+            "Thick wide board of wood used as a shelf.",
+            "The sharp or narrow end of a long thing.",
+            "Suddenly and completely, in the middle of a movement."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "desde ayer",
+    "sentence": "Gracias, mujer, que lo llevo encima _____ y ya ando torcida, dice.",
+    "payload": {
+      "answer": "desde ayer",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "festival de la Arepa",
+        "plaza central",
+        "desde ayer",
+        "llena el aire"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26c26bc239a93faf.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Gracias, mujer, que lo llevo encima desde ayer y ya ando torcida”, dice.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "desde ayer",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en seco",
+    "sentence": "Marta se para en seco, voltea la cabeza y le entrega el cajón sin preguntar.",
+    "payload": {
+      "answer": "Suddenly and completely, in the middle of a movement.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "commitment",
+        "park ranger",
+        "Suddenly and completely, in the middle of a movement.",
+        "to let off steam"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4eb90a3b83e48d95.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Marta se para en seco, voltea la cabeza y le entrega el cajón sin preguntar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "en seco",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estantería",
+    "sentence": "“Ponlo en el tablón de arriba de la estantería, hombre, que ahí no estorba a nadie”.",
+    "payload": {
+      "answer": "Tall piece of furniture made of several shelves.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the pupils",
+        "the costumed troupes that parade together",
+        "polluted",
+        "Tall piece of furniture made of several shelves."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e1f9e6c00618f802.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Ponlo en el tablón de arriba de la estantería, hombre, que ahí no estorba a nadie”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "estantería",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fijar",
+    "sentence": "Se queda a lo suyo, fija una etiqueta en el cristal frío y no levanta la vista.",
+    "payload": {
+      "answer": "To stick or fasten something so it cannot move.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "To stick or fasten something so it cannot move.",
+        "what are you up to (Argentine voseo)",
+        "an old man",
+        "to sync up"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/702ee688e8832b1c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Se queda a lo suyo, fija una etiqueta en el cristal frío y no levanta la vista.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "fijar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "golpear",
+    "sentence": "Nadie la felicita, y ese silencio le golpea: acertar ya no es noticia.",
+    "payload": {
+      "answer": "To hit something, or to hit somebody with a fact.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "To hit something, or to hit somebody with a fact.",
+        "business partners",
+        "to recover",
+        "fishermen"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32417eaacd3374b0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Nadie la felicita, y ese silencio le golpea: acertar ya no es noticia.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "golpear",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "fija",
+    "sentence": "Se queda a lo suyo, _____ una etiqueta en el cristal frío y no levanta la vista.",
+    "payload": {
+      "answer": "fija",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "fija",
+        "anuncia",
+        "junta",
+        "golpea"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/702ee688e8832b1c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Se queda a lo suyo, fija una etiqueta en el cristal frío y no levanta la vista.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "fijar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "golpea",
+    "sentence": "Nadie la felicita, y ese silencio le _____: acertar ya no es noticia.",
+    "payload": {
+      "answer": "golpea",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "apoya",
+        "crepitaba",
+        "golpea",
+        "revisaba"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/32417eaacd3374b0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Nadie la felicita, y ese silencio le golpea: acertar ya no es noticia.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "su-mano-llega-antes",
+        "targetWord": "golpear",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cargar",
+    "sentence": "cargar",
+    "payload": {
+      "answer": "cargar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "charlar",
+        "cargar",
+        "mezclamos",
+        "esconder"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cuadrado",
+    "sentence": "cuadrado",
+    "payload": {
+      "answer": "cuadrado",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "bacano",
+        "desconcertado",
+        "auténtico",
+        "cuadrado"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "entregar",
+    "sentence": "entregar",
+    "payload": {
+      "answer": "entregar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "fijar",
+        "entregar",
+        "acostumbrando",
+        "iluminar"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "noticia,cargar,delicado,acomodar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "noticia",
+          "answer": "A piece of news that people find worth telling.",
+          "options": [
+            "Soft and careful, done without any force at all.",
+            "A piece of news that people find worth telling.",
+            "To carry something heavy in your arms or on your back.",
+            "To place something so that it sits well and stays."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cargar",
+          "answer": "To carry something heavy in your arms or on your back.",
+          "options": [
+            "Soft and careful, done without any force at all.",
+            "A piece of news that people find worth telling.",
+            "To carry something heavy in your arms or on your back.",
+            "To place something so that it sits well and stays."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "delicado",
+          "answer": "Soft and careful, done without any force at all.",
+          "options": [
+            "Soft and careful, done without any force at all.",
+            "A piece of news that people find worth telling.",
+            "To carry something heavy in your arms or on your back.",
+            "To place something so that it sits well and stays."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "acomodar",
+          "answer": "To place something so that it sits well and stays.",
+          "options": [
+            "Soft and careful, done without any force at all.",
+            "A piece of news that people find worth telling.",
+            "To carry something heavy in your arms or on your back.",
+            "To place something so that it sits well and stays."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

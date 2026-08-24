@@ -1,0 +1,1015 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "amarga",
+    "sentence": "Esa lechuga no, la de al lado, que esta se pasa de _____ y no vale, dice Álvaro.",
+    "payload": {
+      "answer": "amarga",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "traicionera",
+        "conectada",
+        "distinta",
+        "amarga"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb04dcd608895a57.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Esa lechuga no, la de al lado, que esta se pasa de amarga y no vale”, dice Álvaro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "amargo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amargo",
+    "sentence": "“Esa lechuga no, la de al lado, que esta se pasa de amarga y no vale”, dice Álvaro.",
+    "payload": {
+      "answer": "Bitter, with a sharp taste that is not sweet.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the melody",
+        "the right to something",
+        "Bitter, with a sharp taste that is not sweet.",
+        "says goodbye"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb04dcd608895a57.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Esa lechuga no, la de al lado, que esta se pasa de amarga y no vale”, dice Álvaro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "amargo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "brisa",
+    "sentence": "brisa",
+    "payload": {
+      "answer": "brisa",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "barriga",
+        "balsa",
+        "perdedora",
+        "brisa"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cáscara",
+    "sentence": "Y las uvas se cogen por arriba, que si no se rompe la _____, añade.",
+    "payload": {
+      "answer": "cáscara",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "paila",
+        "cáscara",
+        "ventana",
+        "biblioteca"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/407df665f7b70afb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y las uvas se cogen por arriba, que si no se rompe la cáscara”, añade.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "cáscara",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contar con",
+    "sentence": "Febrero está a cuatro meses y aquí alguien empieza a contar con ella.",
+    "payload": {
+      "answer": "To count on somebody being there when the time comes.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "cold",
+        "spluttered",
+        "the majesty",
+        "To count on somebody being there when the time comes."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2308b139748235b9.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Febrero está a cuatro meses y aquí alguien empieza a contar con ella.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "contar con",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "calentar",
+    "sentence": "calentar",
+    "payload": {
+      "answer": "calentar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "calentar",
+        "planifican",
+        "honrará",
+        "hartando"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "cáscara,mes,espinaca,de rodillas",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cáscara",
+          "answer": "The thin outer skin of a fruit or of an egg.",
+          "options": [
+            "One of the twelve parts that a year is cut into.",
+            "Down on your knees, with your legs bent under you.",
+            "Dark green leaf that is cooked or eaten in salad.",
+            "The thin outer skin of a fruit or of an egg."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "mes",
+          "answer": "One of the twelve parts that a year is cut into.",
+          "options": [
+            "One of the twelve parts that a year is cut into.",
+            "Down on your knees, with your legs bent under you.",
+            "Dark green leaf that is cooked or eaten in salad.",
+            "The thin outer skin of a fruit or of an egg."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "espinaca",
+          "answer": "Dark green leaf that is cooked or eaten in salad.",
+          "options": [
+            "One of the twelve parts that a year is cut into.",
+            "Down on your knees, with your legs bent under you.",
+            "Dark green leaf that is cooked or eaten in salad.",
+            "The thin outer skin of a fruit or of an egg."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "de rodillas",
+          "answer": "Down on your knees, with your legs bent under you.",
+          "options": [
+            "One of the twelve parts that a year is cut into.",
+            "Down on your knees, with your legs bent under you.",
+            "Dark green leaf that is cooked or eaten in salad.",
+            "The thin outer skin of a fruit or of an egg."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "de rodillas",
+    "sentence": "Álvaro está _____ entre dos filas, con una tijera vieja y un ramo de perejil.",
+    "payload": {
+      "answer": "de rodillas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "punto débil",
+        "cuente una historia",
+        "por lo bajo",
+        "de rodillas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/51954d2be7b49034.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Álvaro está de rodillas entre dos filas, con una tijera vieja y un ramo de perejil.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "de rodillas",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar vueltas",
+    "sentence": "Irene baja despacio con el canasto lleno y la frase dando vueltas.",
+    "payload": {
+      "answer": "To go round and round in your head without stopping.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "limit",
+        "finalising",
+        "Amazonian",
+        "To go round and round in your head without stopping."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3b151860b4e8787c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene baja despacio con el canasto lleno y la frase dando vueltas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "dar vueltas",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "espinacas",
+    "sentence": "Álvaro le llena el cesto de _____ y no cuenta nada ni pesa nada.",
+    "payload": {
+      "answer": "espinacas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "peras",
+        "espinacas",
+        "bicicletas",
+        "perspectivas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/149b5105dd60ce08.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Álvaro le llena el cesto de espinacas y no cuenta nada ni pesa nada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "espinaca",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "amarga",
+    "sentence": "Esa lechuga no, la de al lado, que esta se pasa de _____ y no vale, dice Álvaro.",
+    "payload": {
+      "answer": "amarga",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "pacífica",
+        "amarga",
+        "unida",
+        "atrapada"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb04dcd608895a57.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Esa lechuga no, la de al lado, que esta se pasa de amarga y no vale”, dice Álvaro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "amargo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amargo",
+    "sentence": "“Esa lechuga no, la de al lado, que esta se pasa de amarga y no vale”, dice Álvaro.",
+    "payload": {
+      "answer": "Bitter, with a sharp taste that is not sweet.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "treasures",
+        "a bad loser",
+        "Bitter, with a sharp taste that is not sweet.",
+        "roars"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb04dcd608895a57.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Esa lechuga no, la de al lado, que esta se pasa de amarga y no vale”, dice Álvaro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "amargo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "brisa",
+    "sentence": "brisa",
+    "payload": {
+      "answer": "brisa",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "brisa",
+        "lunfa",
+        "diferencia",
+        "perdedora"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "uva,lechuga,mes,ramo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "uva",
+          "answer": "Small round green or dark fruit that grows in bunches.",
+          "options": [
+            "One of the twelve parts that a year is cut into.",
+            "Big green salad plant with wide soft leaves.",
+            "A bunch of flowers or herbs held in one hand.",
+            "Small round green or dark fruit that grows in bunches."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "lechuga",
+          "answer": "Big green salad plant with wide soft leaves.",
+          "options": [
+            "One of the twelve parts that a year is cut into.",
+            "Big green salad plant with wide soft leaves.",
+            "A bunch of flowers or herbs held in one hand.",
+            "Small round green or dark fruit that grows in bunches."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "mes",
+          "answer": "One of the twelve parts that a year is cut into.",
+          "options": [
+            "One of the twelve parts that a year is cut into.",
+            "Big green salad plant with wide soft leaves.",
+            "A bunch of flowers or herbs held in one hand.",
+            "Small round green or dark fruit that grows in bunches."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ramo",
+          "answer": "A bunch of flowers or herbs held in one hand.",
+          "options": [
+            "One of the twelve parts that a year is cut into.",
+            "Big green salad plant with wide soft leaves.",
+            "A bunch of flowers or herbs held in one hand.",
+            "Small round green or dark fruit that grows in bunches."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cáscara",
+    "sentence": "Y las uvas se cogen por arriba, que si no se rompe la _____, añade.",
+    "payload": {
+      "answer": "cáscara",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "maleza",
+        "prisa",
+        "cena",
+        "cáscara"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/407df665f7b70afb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y las uvas se cogen por arriba, que si no se rompe la cáscara”, añade.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "cáscara",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contar con",
+    "sentence": "Febrero está a cuatro meses y aquí alguien empieza a contar con ella.",
+    "payload": {
+      "answer": "To count on somebody being there when the time comes.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to light",
+        "batches",
+        "the current",
+        "To count on somebody being there when the time comes."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2308b139748235b9.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Febrero está a cuatro meses y aquí alguien empieza a contar con ella.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "contar con",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "calentar",
+    "sentence": "calentar",
+    "payload": {
+      "answer": "calentar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "calentar",
+        "esperan",
+        "torcían",
+        "tenés"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "pera,amargo,febrero,de rodillas",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "pera",
+          "answer": "Sweet fruit, wide at the bottom and narrow on top.",
+          "options": [
+            "The second month of the year, in the cold part.",
+            "Sweet fruit, wide at the bottom and narrow on top.",
+            "Down on your knees, with your legs bent under you.",
+            "Bitter, with a sharp taste that is not sweet."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "amargo",
+          "answer": "Bitter, with a sharp taste that is not sweet.",
+          "options": [
+            "The second month of the year, in the cold part.",
+            "Sweet fruit, wide at the bottom and narrow on top.",
+            "Down on your knees, with your legs bent under you.",
+            "Bitter, with a sharp taste that is not sweet."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "febrero",
+          "answer": "The second month of the year, in the cold part.",
+          "options": [
+            "The second month of the year, in the cold part.",
+            "Sweet fruit, wide at the bottom and narrow on top.",
+            "Down on your knees, with your legs bent under you.",
+            "Bitter, with a sharp taste that is not sweet."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "de rodillas",
+          "answer": "Down on your knees, with your legs bent under you.",
+          "options": [
+            "The second month of the year, in the cold part.",
+            "Sweet fruit, wide at the bottom and narrow on top.",
+            "Down on your knees, with your legs bent under you.",
+            "Bitter, with a sharp taste that is not sweet."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "de rodillas",
+    "sentence": "Álvaro está _____ entre dos filas, con una tijera vieja y un ramo de perejil.",
+    "payload": {
+      "answer": "de rodillas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cuente una historia",
+        "echan la culpa",
+        "de rodillas",
+        "telón de fondo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/51954d2be7b49034.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Álvaro está de rodillas entre dos filas, con una tijera vieja y un ramo de perejil.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "de rodillas",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dar vueltas",
+    "sentence": "Irene baja despacio con el canasto lleno y la frase dando vueltas.",
+    "payload": {
+      "answer": "To go round and round in your head without stopping.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "To go round and round in your head without stopping.",
+        "wet",
+        "yellowed",
+        "achieved"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3b151860b4e8787c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene baja despacio con el canasto lleno y la frase dando vueltas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "dar vueltas",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "espinaca",
+    "sentence": "Álvaro le llena el cesto de espinacas y no cuenta nada ni pesa nada.",
+    "payload": {
+      "answer": "Dark green leaf that is cooked or eaten in salad.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a salad",
+        "the mask",
+        "the building",
+        "Dark green leaf that is cooked or eaten in salad."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/149b5105dd60ce08.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Álvaro le llena el cesto de espinacas y no cuenta nada ni pesa nada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "espinaca",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "febrero",
+    "sentence": "“Guarda esas dos para febrero, que las quiero ver puestas en la tierra”, dice.",
+    "payload": {
+      "answer": "The second month of the year, in the cold part.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a light bulb",
+        "The second month of the year, in the cold part.",
+        "the strings",
+        "I land, I get hold of"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/577aa3dd54c9e3ab.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Guarda esas dos para febrero, que las quiero ver puestas en la tierra”, dice.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "febrero",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pala",
+    "sentence": "Le pone encima una pala pequeña y dos semillas envueltas.",
+    "payload": {
+      "answer": "Tool with a flat blade for moving earth about.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Tool with a flat blade for moving earth about.",
+        "Down on your knees, with your legs bent under you.",
+        "light fittings, lamps",
+        "to betray"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2af676cfe71a496a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Le pone encima una pala pequeña y dos semillas envueltas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "pala",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pera",
+    "sentence": "Irene junta las peras y las coloca con calma en el canasto.",
+    "payload": {
+      "answer": "Sweet fruit, wide at the bottom and narrow on top.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "deep",
+        "robbing us of (Argentine slang)",
+        "the mud, as in slogging away",
+        "Sweet fruit, wide at the bottom and narrow on top."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61123d1e9fe03052.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene junta las peras y las coloca con calma en el canasto.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "pera",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "espinacas",
+    "sentence": "Álvaro le llena el cesto de _____ y no cuenta nada ni pesa nada.",
+    "payload": {
+      "answer": "espinacas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "espinacas",
+        "campesinas",
+        "palomas",
+        "culturas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/149b5105dd60ce08.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Álvaro le llena el cesto de espinacas y no cuenta nada ni pesa nada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "espinaca",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "peras",
+    "sentence": "Irene junta las _____ y las coloca con calma en el canasto.",
+    "payload": {
+      "answer": "peras",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "vestimentas",
+        "peras",
+        "energías",
+        "estrellas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61123d1e9fe03052.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene junta las peras y las coloca con calma en el canasto.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "pera",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "plantas",
+    "sentence": "Ella se agacha entre las _____ y corta por lo bajo, con calma.",
+    "payload": {
+      "answer": "plantas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "cosechas",
+        "plantas",
+        "plumas",
+        "piezas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/027de8ec9bbd9ed5.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ella se agacha entre las plantas y corta por lo bajo, con calma.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "baja-con-el-canasto-lleno",
+        "targetWord": "planta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "fila",
+    "sentence": "fila",
+    "payload": {
+      "answer": "fila",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "jardinería",
+        "fila",
+        "aula",
+        "patovica"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "cáscara,espinaca,brisa,por lo bajo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cáscara",
+          "answer": "The thin outer skin of a fruit or of an egg.",
+          "options": [
+            "Dark green leaf that is cooked or eaten in salad.",
+            "The thin outer skin of a fruit or of an egg.",
+            "Down at the bottom, close to the ground.",
+            "Light wind that moves the air without any force."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "espinaca",
+          "answer": "Dark green leaf that is cooked or eaten in salad.",
+          "options": [
+            "Dark green leaf that is cooked or eaten in salad.",
+            "The thin outer skin of a fruit or of an egg.",
+            "Down at the bottom, close to the ground.",
+            "Light wind that moves the air without any force."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "brisa",
+          "answer": "Light wind that moves the air without any force.",
+          "options": [
+            "Dark green leaf that is cooked or eaten in salad.",
+            "The thin outer skin of a fruit or of an egg.",
+            "Down at the bottom, close to the ground.",
+            "Light wind that moves the air without any force."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "por lo bajo",
+          "answer": "Down at the bottom, close to the ground.",
+          "options": [
+            "Dark green leaf that is cooked or eaten in salad.",
+            "The thin outer skin of a fruit or of an egg.",
+            "Down at the bottom, close to the ground.",
+            "Light wind that moves the air without any force."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

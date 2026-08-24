@@ -1,0 +1,949 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "arcilla",
+    "sentence": "Y esa ensaladera no ha salido nunca de esta cocina, hija, que la mía es de _____ vieja.",
+    "payload": {
+      "answer": "arcilla",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "arcilla",
+        "calma",
+        "cima",
+        "marinada"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5647df281b78403.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y esa ensaladera no ha salido nunca de esta cocina, hija, que la mía es de arcilla vieja”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "arcilla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camisa",
+    "sentence": "Rocío abre con masa en las manos y ceniza en la camisa.",
+    "payload": {
+      "answer": "Shirt with buttons down the front and a collar.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to do with cooking",
+        "lukewarm",
+        "Shirt with buttons down the front and a collar.",
+        "rise up"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/55c3aafbe6deceb1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío abre con masa en las manos y ceniza en la camisa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "camisa",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "ceniza",
+    "sentence": "ceniza",
+    "payload": {
+      "answer": "ceniza",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "ceniza",
+        "piscina",
+        "zapatería",
+        "distancia"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "de comer",
+    "sentence": "La que le da _____ cada jueves es la que quiere su piso para otra.",
+    "payload": {
+      "answer": "de comer",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "dan forma",
+        "de comer",
+        "ahí nos vidrios",
+        "guita verde"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/555ed323a55e7a77.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La que le da de comer cada jueves es la que quiere su piso para otra.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "de comer",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de par en par",
+    "sentence": "Deja los cacharros en la silla, junto a una pila de platos y la nevera de par en par.",
+    "payload": {
+      "answer": "Wide open, with nothing holding the door back.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "freedom",
+        "we innovate",
+        "Wide open, with nothing holding the door back.",
+        "a hill"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1652648c517fc2b8.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Deja los cacharros en la silla, junto a una pila de platos y la nevera de par en par.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "de par en par",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "ensaladera",
+    "sentence": "ensaladera",
+    "payload": {
+      "answer": "ensaladera",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cosecha",
+        "tostadora",
+        "ensaladera",
+        "paila"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "gracias,hueso,ceniza,de par en par",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "gracias",
+          "answer": "The words you say when somebody has done something for you.",
+          "options": [
+            "Wide open, with nothing holding the door back.",
+            "The words you say when somebody has done something for you.",
+            "Hard white part inside meat, left after eating.",
+            "Grey powder that is left after something has burned."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "hueso",
+          "answer": "Hard white part inside meat, left after eating.",
+          "options": [
+            "Wide open, with nothing holding the door back.",
+            "The words you say when somebody has done something for you.",
+            "Hard white part inside meat, left after eating.",
+            "Grey powder that is left after something has burned."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ceniza",
+          "answer": "Grey powder that is left after something has burned.",
+          "options": [
+            "Wide open, with nothing holding the door back.",
+            "The words you say when somebody has done something for you.",
+            "Hard white part inside meat, left after eating.",
+            "Grey powder that is left after something has burned."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "de par en par",
+          "answer": "Wide open, with nothing holding the door back.",
+          "options": [
+            "Wide open, with nothing holding the door back.",
+            "The words you say when somebody has done something for you.",
+            "Hard white part inside meat, left after eating.",
+            "Grey powder that is left after something has burned."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "gracias",
+    "sentence": "Rosa le sigue el juego cuando Irene le da las _____ por la sopa.",
+    "payload": {
+      "answer": "gracias",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "gracias",
+        "botas",
+        "chupamedias",
+        "ganancias"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4cda6e903a0fc72.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rosa le sigue el juego cuando Irene le da las gracias por la sopa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "gracias",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacer falta",
+    "sentence": "“No hacía falta subirlo; de verdad que no hacía falta, mujer”, dice sin mirarla.",
+    "payload": {
+      "answer": "To be needed; something you had no need to do.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "To be needed; something you had no need to do.",
+        "to believe it",
+        "a night of partying (Colombian)",
+        "picks it up"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c67f0f348f9a975a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“No hacía falta subirlo; de verdad que no hacía falta, mujer”, dice sin mirarla.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "hacer falta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "hueso",
+    "sentence": "Detrás hay una olla al fuego y _____ de ternera en la tabla.",
+    "payload": {
+      "answer": "hueso",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "alimento",
+        "porteñito",
+        "radio",
+        "hueso"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa3a41576c6779b2.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Detrás hay una olla al fuego y hueso de ternera en la tabla.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "hueso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "arcilla",
+    "sentence": "Y esa ensaladera no ha salido nunca de esta cocina, hija, que la mía es de _____ vieja.",
+    "payload": {
+      "answer": "arcilla",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "piñata",
+        "puertita",
+        "anécdota",
+        "arcilla"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a5647df281b78403.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y esa ensaladera no ha salido nunca de esta cocina, hija, que la mía es de arcilla vieja”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "arcilla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "camisa",
+    "sentence": "Rocío abre con masa en las manos y ceniza en la camisa.",
+    "payload": {
+      "answer": "Shirt with buttons down the front and a collar.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a woolly hat",
+        "we fit in",
+        "Shirt with buttons down the front and a collar.",
+        "the folk music of Veracruz"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/55c3aafbe6deceb1.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío abre con masa en las manos y ceniza en la camisa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "camisa",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "ceniza",
+    "sentence": "ceniza",
+    "payload": {
+      "answer": "ceniza",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "vendedora",
+        "ceniza",
+        "fecha",
+        "jarana"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "ensaladera,hueso,sopa,nevera",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "ensaladera",
+          "answer": "Big deep bowl that salad is served in.",
+          "options": [
+            "Hot liquid food with vegetables, eaten with a spoon.",
+            "Hard white part inside meat, left after eating.",
+            "Big deep bowl that salad is served in.",
+            "Cold cupboard where food is kept so it lasts."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "hueso",
+          "answer": "Hard white part inside meat, left after eating.",
+          "options": [
+            "Hot liquid food with vegetables, eaten with a spoon.",
+            "Hard white part inside meat, left after eating.",
+            "Big deep bowl that salad is served in.",
+            "Cold cupboard where food is kept so it lasts."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sopa",
+          "answer": "Hot liquid food with vegetables, eaten with a spoon.",
+          "options": [
+            "Hot liquid food with vegetables, eaten with a spoon.",
+            "Hard white part inside meat, left after eating.",
+            "Big deep bowl that salad is served in.",
+            "Cold cupboard where food is kept so it lasts."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "nevera",
+          "answer": "Cold cupboard where food is kept so it lasts.",
+          "options": [
+            "Hot liquid food with vegetables, eaten with a spoon.",
+            "Hard white part inside meat, left after eating.",
+            "Big deep bowl that salad is served in.",
+            "Cold cupboard where food is kept so it lasts."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "de comer",
+    "sentence": "La que le da _____ cada jueves es la que quiere su piso para otra.",
+    "payload": {
+      "answer": "de comer",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "de comer",
+        "guita verde",
+        "pondremos las pilas",
+        "la calle está dura"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/555ed323a55e7a77.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La que le da de comer cada jueves es la que quiere su piso para otra.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "de comer",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "de par en par",
+    "sentence": "Deja los cacharros en la silla, junto a una pila de platos y la nevera de par en par.",
+    "payload": {
+      "answer": "Wide open, with nothing holding the door back.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "huffs",
+        "Wide open, with nothing holding the door back.",
+        "the shadows",
+        "they unpack"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1652648c517fc2b8.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Deja los cacharros en la silla, junto a una pila de platos y la nevera de par en par.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "de par en par",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "ensaladera",
+    "sentence": "ensaladera",
+    "payload": {
+      "answer": "ensaladera",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "ensaladera",
+        "parrilla",
+        "conservacionista",
+        "mitología"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "arcilla,camisa,hacer falta,jueves",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "arcilla",
+          "answer": "Brown earth that is baked hard to make pots.",
+          "options": [
+            "To be needed; something you had no need to do.",
+            "The fourth day of the week, after Wednesday.",
+            "Shirt with buttons down the front and a collar.",
+            "Brown earth that is baked hard to make pots."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "camisa",
+          "answer": "Shirt with buttons down the front and a collar.",
+          "options": [
+            "To be needed; something you had no need to do.",
+            "The fourth day of the week, after Wednesday.",
+            "Shirt with buttons down the front and a collar.",
+            "Brown earth that is baked hard to make pots."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "hacer falta",
+          "answer": "To be needed; something you had no need to do.",
+          "options": [
+            "To be needed; something you had no need to do.",
+            "The fourth day of the week, after Wednesday.",
+            "Shirt with buttons down the front and a collar.",
+            "Brown earth that is baked hard to make pots."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "jueves",
+          "answer": "The fourth day of the week, after Wednesday.",
+          "options": [
+            "To be needed; something you had no need to do.",
+            "The fourth day of the week, after Wednesday.",
+            "Shirt with buttons down the front and a collar.",
+            "Brown earth that is baked hard to make pots."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "gracias",
+    "sentence": "Rosa le sigue el juego cuando Irene le da las _____ por la sopa.",
+    "payload": {
+      "answer": "gracias",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "gracias",
+        "cuevas",
+        "lámparas",
+        "creencias"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f4cda6e903a0fc72.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rosa le sigue el juego cuando Irene le da las gracias por la sopa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "gracias",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hacer falta",
+    "sentence": "“No hacía falta subirlo; de verdad que no hacía falta, mujer”, dice sin mirarla.",
+    "payload": {
+      "answer": "To be needed; something you had no need to do.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "his stay",
+        "moves in",
+        "heavy",
+        "To be needed; something you had no need to do."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c67f0f348f9a975a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“No hacía falta subirlo; de verdad que no hacía falta, mujer”, dice sin mirarla.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "hacer falta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hueso",
+    "sentence": "Detrás hay una olla al fuego y hueso de ternera en la tabla.",
+    "payload": {
+      "answer": "Hard white part inside meat, left after eating.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "they ached",
+        "Hard white part inside meat, left after eating.",
+        "affects",
+        "the wardrobe"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aa3a41576c6779b2.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Detrás hay una olla al fuego y hueso de ternera en la tabla.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "hueso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ponerse malo",
+    "sentence": "“Yo no hago sopa en noviembre, que se me pone mala en dos días”, contesta Rosa.",
+    "payload": {
+      "answer": "To go bad, when food stops being good to eat.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "adds",
+        "To go bad, when food stops being good to eat.",
+        "will guide you",
+        "the life and soul of the party"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/160460fe5390d49b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Yo no hago sopa en noviembre, que se me pone mala en dos días”, contesta Rosa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "ponerse malo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "recipiente",
+    "sentence": "En la cocina de Irene hay tres recipientes y un trapo ajenos.",
+    "payload": {
+      "answer": "Any pot or box that you keep food inside.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a demo",
+        "Any pot or box that you keep food inside.",
+        "to get back",
+        "monument"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f81537449b793cb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la cocina de Irene hay tres recipientes y un trapo ajenos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "recipiente",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tetera",
+    "sentence": "Con la tetera en la mano, Irene llama a la puerta de arriba.",
+    "payload": {
+      "answer": "Pot with a spout and a lid, for making tea.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Pot with a spout and a lid, for making tea.",
+        "the shared herbal infusion drunk through a straw",
+        "the growing, the cultivation",
+        "stain, dirty up"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61f3ba8badaf3254.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Con la tetera en la mano, Irene llama a la puerta de arriba.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "tetera",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "recipientes",
+    "sentence": "En la cocina de Irene hay tres _____ y un trapo ajenos.",
+    "payload": {
+      "answer": "recipientes",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "recipientes",
+        "estática",
+        "voluntariado",
+        "umbral"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8f81537449b793cb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la cocina de Irene hay tres recipientes y un trapo ajenos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "el-caldo-no-era-suyo",
+        "targetWord": "recipiente",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "juego",
+    "sentence": "juego",
+    "payload": {
+      "answer": "juego",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "lazo",
+        "incienso",
+        "armadillo",
+        "juego"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "juego,gracias,tabla,ternera",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "juego",
+          "answer": "Something people go along with, half serious and half not.",
+          "options": [
+            "Flat board of wood that you cut food on.",
+            "Something people go along with, half serious and half not.",
+            "Meat from a young cow, cooked slowly for a stew.",
+            "The words you say when somebody has done something for you."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "gracias",
+          "answer": "The words you say when somebody has done something for you.",
+          "options": [
+            "Flat board of wood that you cut food on.",
+            "Something people go along with, half serious and half not.",
+            "Meat from a young cow, cooked slowly for a stew.",
+            "The words you say when somebody has done something for you."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tabla",
+          "answer": "Flat board of wood that you cut food on.",
+          "options": [
+            "Flat board of wood that you cut food on.",
+            "Something people go along with, half serious and half not.",
+            "Meat from a young cow, cooked slowly for a stew.",
+            "The words you say when somebody has done something for you."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "ternera",
+          "answer": "Meat from a young cow, cooked slowly for a stew.",
+          "options": [
+            "Flat board of wood that you cut food on.",
+            "Something people go along with, half serious and half not.",
+            "Meat from a young cow, cooked slowly for a stew.",
+            "The words you say when somebody has done something for you."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

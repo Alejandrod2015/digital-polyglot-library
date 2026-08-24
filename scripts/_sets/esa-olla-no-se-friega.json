@@ -1,0 +1,917 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "al fuego",
+    "sentence": "Comen con el mantel puesto y la sartén todavía _____.",
+    "payload": {
+      "answer": "al fuego",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "serpiente emplumada",
+        "al fuego",
+        "chupando un clavo",
+        "reyes magos"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9033feead8e69300.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Comen con el mantel puesto y la sartén todavía al fuego.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "al fuego",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aroma",
+    "sentence": "El aroma sube y se le pega a la ropa mientras pica el perejil.",
+    "payload": {
+      "answer": "The good smell that hot food sends around a room.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "training cones",
+        "carries you",
+        "the promise",
+        "The good smell that hot food sends around a room."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e9b95c1d60549bb2.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El aroma sube y se le pega a la ropa mientras pica el perejil.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "aroma",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "caldo",
+    "sentence": "caldo",
+    "payload": {
+      "answer": "caldo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "caldo",
+        "descubrimiento",
+        "lamento",
+        "vistazo"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "colador",
+    "sentence": "En la cocina hay una cazuela tapada, un _____ en el fregadero y humo tibio.",
+    "payload": {
+      "answer": "colador",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "temblor",
+        "colador",
+        "kilo",
+        "güey"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa873bee508e143d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la cocina hay una cazuela tapada, un colador en el fregadero y humo tibio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "colador",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuchara",
+    "sentence": "“Y revuelve con la cuchara vieja, que la nueva le cambia el gusto a todo”.",
+    "payload": {
+      "answer": "Round tool with a handle, for eating soup with.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "kites (Mexican word)",
+        "suffered",
+        "Round tool with a handle, for eating soup with.",
+        "a bridge"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/17f712efbe3d4b30.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y revuelve con la cuchara vieja, que la nueva le cambia el gusto a todo”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "cuchara",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "darse cuenta",
+    "sentence": "darse cuenta",
+    "payload": {
+      "answer": "darse cuenta",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "estoy dentro",
+        "ideas locas",
+        "darse cuenta",
+        "punto de encuentro"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "olla,revolver,hervir,caldo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "olla",
+          "answer": "Deep round pot with two handles, for soups and stews.",
+          "options": [
+            "To heat water until it bubbles and steam comes off.",
+            "Deep round pot with two handles, for soups and stews.",
+            "To move food round inside a pot while it cooks.",
+            "Hot clear soup made by boiling meat or vegetables."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "revolver",
+          "answer": "To move food round inside a pot while it cooks.",
+          "options": [
+            "To heat water until it bubbles and steam comes off.",
+            "Deep round pot with two handles, for soups and stews.",
+            "To move food round inside a pot while it cooks.",
+            "Hot clear soup made by boiling meat or vegetables."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "hervir",
+          "answer": "To heat water until it bubbles and steam comes off.",
+          "options": [
+            "To heat water until it bubbles and steam comes off.",
+            "Deep round pot with two handles, for soups and stews.",
+            "To move food round inside a pot while it cooks.",
+            "Hot clear soup made by boiling meat or vegetables."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "caldo",
+          "answer": "Hot clear soup made by boiling meat or vegetables.",
+          "options": [
+            "To heat water until it bubbles and steam comes off.",
+            "Deep round pot with two handles, for soups and stews.",
+            "To move food round inside a pot while it cooks.",
+            "Hot clear soup made by boiling meat or vegetables."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "fuego",
+    "sentence": "Esa olla negra lleva cuarenta años en el mismo _____.",
+    "payload": {
+      "answer": "fuego",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "pasadizo",
+        "círculo",
+        "fuego",
+        "efectivo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ffdecee48adc2d6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Esa olla negra lleva cuarenta años en el mismo fuego.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "fuego",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marcha",
+    "sentence": "Nadie repite nada, nadie traduce nada y la conversación no baja la marcha.",
+    "payload": {
+      "answer": "The speed at which something is moving along.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "exercises",
+        "Mexican masked wrestling",
+        "to fry it",
+        "The speed at which something is moving along."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20144376f42d66e6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Nadie repite nada, nadie traduce nada y la conversación no baja la marcha.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "marcha",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "moja",
+    "sentence": "Irene _____ la cuchara, aguarda un ratito y contesta que le falta poco.",
+    "payload": {
+      "answer": "moja",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "moja",
+        "cerraba",
+        "cuidarla",
+        "sostenía"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb080fbbc2a0f6dc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene moja la cuchara, aguarda un ratito y contesta que le falta poco.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "mojar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "al fuego",
+    "sentence": "Comen con el mantel puesto y la sartén todavía _____.",
+    "payload": {
+      "answer": "al fuego",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "qué raye",
+        "montaña rusa",
+        "al fuego",
+        "restos humanos"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9033feead8e69300.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Comen con el mantel puesto y la sartén todavía al fuego.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "al fuego",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aroma",
+    "sentence": "El aroma sube y se le pega a la ropa mientras pica el perejil.",
+    "payload": {
+      "answer": "The good smell that hot food sends around a room.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "The good smell that hot food sends around a room.",
+        "clattering about with",
+        "greenery",
+        "in full swing"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e9b95c1d60549bb2.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "El aroma sube y se le pega a la ropa mientras pica el perejil.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "aroma",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "caldo",
+    "sentence": "caldo",
+    "payload": {
+      "answer": "caldo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "llanto",
+        "lunfardo",
+        "caldo",
+        "bardo"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "aroma,al fuego,mantel,mojar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "aroma",
+          "answer": "The good smell that hot food sends around a room.",
+          "options": [
+            "To put something into a liquid for a moment.",
+            "On the cooker with the flame under it, cooking.",
+            "The good smell that hot food sends around a room.",
+            "Cloth that you put over a table before eating."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "al fuego",
+          "answer": "On the cooker with the flame under it, cooking.",
+          "options": [
+            "To put something into a liquid for a moment.",
+            "On the cooker with the flame under it, cooking.",
+            "The good smell that hot food sends around a room.",
+            "Cloth that you put over a table before eating."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "mantel",
+          "answer": "Cloth that you put over a table before eating.",
+          "options": [
+            "To put something into a liquid for a moment.",
+            "On the cooker with the flame under it, cooking.",
+            "The good smell that hot food sends around a room.",
+            "Cloth that you put over a table before eating."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "mojar",
+          "answer": "To put something into a liquid for a moment.",
+          "options": [
+            "To put something into a liquid for a moment.",
+            "On the cooker with the flame under it, cooking.",
+            "The good smell that hot food sends around a room.",
+            "Cloth that you put over a table before eating."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "colador",
+    "sentence": "En la cocina hay una cazuela tapada, un _____ en el fregadero y humo tibio.",
+    "payload": {
+      "answer": "colador",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ajos",
+        "carretera",
+        "derecho",
+        "colador"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fa873bee508e143d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la cocina hay una cazuela tapada, un colador en el fregadero y humo tibio.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "colador",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuchara",
+    "sentence": "“Y revuelve con la cuchara vieja, que la nueva le cambia el gusto a todo”.",
+    "payload": {
+      "answer": "Round tool with a handle, for eating soup with.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "drummed",
+        "Round tool with a handle, for eating soup with.",
+        "to keep an eye on",
+        "I got (a grade)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/17f712efbe3d4b30.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y revuelve con la cuchara vieja, que la nueva le cambia el gusto a todo”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "cuchara",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "darse cuenta",
+    "sentence": "darse cuenta",
+    "payload": {
+      "answer": "darse cuenta",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "me vendría bien",
+        "bajo control",
+        "darse cuenta",
+        "le metemos"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "cuchara,fuego,revolver,picar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cuchara",
+          "answer": "Round tool with a handle, for eating soup with.",
+          "options": [
+            "To move food round inside a pot while it cooks.",
+            "The flame of the cooker, under a pot or a pan.",
+            "Round tool with a handle, for eating soup with.",
+            "To cut food into very small pieces with a knife."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "fuego",
+          "answer": "The flame of the cooker, under a pot or a pan.",
+          "options": [
+            "To move food round inside a pot while it cooks.",
+            "The flame of the cooker, under a pot or a pan.",
+            "Round tool with a handle, for eating soup with.",
+            "To cut food into very small pieces with a knife."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "revolver",
+          "answer": "To move food round inside a pot while it cooks.",
+          "options": [
+            "To move food round inside a pot while it cooks.",
+            "The flame of the cooker, under a pot or a pan.",
+            "Round tool with a handle, for eating soup with.",
+            "To cut food into very small pieces with a knife."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "picar",
+          "answer": "To cut food into very small pieces with a knife.",
+          "options": [
+            "To move food round inside a pot while it cooks.",
+            "The flame of the cooker, under a pot or a pan.",
+            "Round tool with a handle, for eating soup with.",
+            "To cut food into very small pieces with a knife."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "fuego",
+    "sentence": "Esa olla negra lleva cuarenta años en el mismo _____.",
+    "payload": {
+      "answer": "fuego",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "pedacito",
+        "colado",
+        "fuego",
+        "descubrimiento"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ffdecee48adc2d6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Esa olla negra lleva cuarenta años en el mismo fuego.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "fuego",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "marcha",
+    "sentence": "Nadie repite nada, nadie traduce nada y la conversación no baja la marcha.",
+    "payload": {
+      "answer": "The speed at which something is moving along.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "ambitions",
+        "the parade",
+        "the slits, the gaps",
+        "The speed at which something is moving along."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/20144376f42d66e6.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Nadie repite nada, nadie traduce nada y la conversación no baja la marcha.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "marcha",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mojar",
+    "sentence": "Irene moja la cuchara, aguarda un ratito y contesta que le falta poco.",
+    "payload": {
+      "answer": "To put something into a liquid for a moment.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "To put something into a liquid for a moment.",
+        "great, decent (Argentine slang)",
+        "tricky",
+        "buzzed"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb080fbbc2a0f6dc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene moja la cuchara, aguarda un ratito y contesta que le falta poco.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "mojar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pimienta",
+    "sentence": "“Prueba eso y dime si le falta sal o si le sobra pimienta, guapa”, pide Rosa.",
+    "payload": {
+      "answer": "Dark powder with a sharp taste, put on food.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "nervous",
+        "heats up",
+        "hang",
+        "Dark powder with a sharp taste, put on food."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bbbf54ed2603bbe7.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Prueba eso y dime si le falta sal o si le sobra pimienta, guapa”, pide Rosa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "pimienta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "moja",
+    "sentence": "Irene _____ la cuchara, aguarda un ratito y contesta que le falta poco.",
+    "payload": {
+      "answer": "moja",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "moja",
+        "atrapa",
+        "desea",
+        "adora"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb080fbbc2a0f6dc.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene moja la cuchara, aguarda un ratito y contesta que le falta poco.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "esa-olla-no-se-friega",
+        "targetWord": "mojar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "fregadero",
+    "sentence": "fregadero",
+    "payload": {
+      "answer": "fregadero",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "lago",
+        "fregadero",
+        "vistazo",
+        "quiosco"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "hervir",
+    "sentence": "hervir",
+    "payload": {
+      "answer": "hervir",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "refresca",
+        "pita",
+        "hervir",
+        "logrado"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "humo",
+    "sentence": "humo",
+    "payload": {
+      "answer": "humo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "cuentito",
+        "humo",
+        "apoyo",
+        "anciano"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "olla,caldo,darse cuenta,pelar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "olla",
+          "answer": "Deep round pot with two handles, for soups and stews.",
+          "options": [
+            "To take the skin off a potato or a fruit.",
+            "Deep round pot with two handles, for soups and stews.",
+            "To see something you had not understood before.",
+            "Hot clear soup made by boiling meat or vegetables."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "caldo",
+          "answer": "Hot clear soup made by boiling meat or vegetables.",
+          "options": [
+            "To take the skin off a potato or a fruit.",
+            "Deep round pot with two handles, for soups and stews.",
+            "To see something you had not understood before.",
+            "Hot clear soup made by boiling meat or vegetables."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "darse cuenta",
+          "answer": "To see something you had not understood before.",
+          "options": [
+            "To take the skin off a potato or a fruit.",
+            "Deep round pot with two handles, for soups and stews.",
+            "To see something you had not understood before.",
+            "Hot clear soup made by boiling meat or vegetables."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pelar",
+          "answer": "To take the skin off a potato or a fruit.",
+          "options": [
+            "To take the skin off a potato or a fruit.",
+            "Deep round pot with two handles, for soups and stews.",
+            "To see something you had not understood before.",
+            "Hot clear soup made by boiling meat or vegetables."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

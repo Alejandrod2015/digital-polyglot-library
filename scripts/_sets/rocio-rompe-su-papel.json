@@ -1,0 +1,982 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "a mano",
+    "sentence": "Le enseña una suma _____ y un papel del cajero con dos billetes doblados.",
+    "payload": {
+      "answer": "a mano",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "en orden",
+        "oí decir",
+        "a mano",
+        "ni dudarlo"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/326515696bceff2c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Le enseña una suma a mano y un papel del cajero con dos billetes doblados.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "a mano",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caro",
+    "sentence": "Quique sirve dos cafés caros que huelen a quemado y se queda al lado.",
+    "payload": {
+      "answer": "Costing more money than you would want to pay.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the paperwork",
+        "Costing more money than you would want to pay.",
+        "to let out",
+        "a painting"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/186589d27270b0a9.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Quique sirve dos cafés caros que huelen a quemado y se queda al lado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "caro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cajero",
+    "sentence": "cajero",
+    "payload": {
+      "answer": "cajero",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "limonero",
+        "adorno",
+        "cajero",
+        "monedero"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "caros",
+    "sentence": "Quique sirve dos cafés _____ que huelen a quemado y se queda al lado.",
+    "payload": {
+      "answer": "caros",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "sorprendidos",
+        "ocultos",
+        "caros",
+        "simbólicos"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/186589d27270b0a9.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Quique sirve dos cafés caros que huelen a quemado y se queda al lado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "caro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cartón",
+    "sentence": "Ese jueves Rocío baja al bar con una carpeta de cartón y la abre delante.",
+    "payload": {
+      "answer": "Thick stiff paper that boxes and folders are made of.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Thick stiff paper that boxes and folders are made of.",
+        "a smooth talker (Argentine slang)",
+        "funny",
+        "the paperwork"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/751066f209084e36.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ese jueves Rocío baja al bar con una carpeta de cartón y la abre delante.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "cartón",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "céntimo",
+    "sentence": "céntimo",
+    "payload": {
+      "answer": "céntimo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "lago",
+        "céntimo",
+        "lodo",
+        "microcentro"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "caro,cartón,romper,estómago",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "caro",
+          "answer": "Costing more money than you would want to pay.",
+          "options": [
+            "The part inside you that goes tight when you are afraid.",
+            "Thick stiff paper that boxes and folders are made of.",
+            "To break something in two so it cannot be used.",
+            "Costing more money than you would want to pay."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cartón",
+          "answer": "Thick stiff paper that boxes and folders are made of.",
+          "options": [
+            "The part inside you that goes tight when you are afraid.",
+            "Thick stiff paper that boxes and folders are made of.",
+            "To break something in two so it cannot be used.",
+            "Costing more money than you would want to pay."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "romper",
+          "answer": "To break something in two so it cannot be used.",
+          "options": [
+            "The part inside you that goes tight when you are afraid.",
+            "Thick stiff paper that boxes and folders are made of.",
+            "To break something in two so it cannot be used.",
+            "Costing more money than you would want to pay."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "estómago",
+          "answer": "The part inside you that goes tight when you are afraid.",
+          "options": [
+            "The part inside you that goes tight when you are afraid.",
+            "Thick stiff paper that boxes and folders are made of.",
+            "To break something in two so it cannot be used.",
+            "Costing more money than you would want to pay."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "céntimos",
+    "sentence": "Saca un monedero de un tarjetero viejo y le enseña lo que resta al mes: unos _____.",
+    "payload": {
+      "answer": "céntimos",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "asientos",
+        "eucaliptos",
+        "vidrios",
+        "céntimos"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2c2025e7cd27ce1e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Saca un monedero de un tarjetero viejo y le enseña lo que resta al mes: unos céntimos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "céntimo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "clip",
+    "sentence": "En la portada hay un clip, una mancha de tierra y una fecha ya vieja.",
+    "payload": {
+      "answer": "Small bent wire that holds two papers together.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "echo, ring out",
+        "Small bent wire that holds two papers together.",
+        "the coffee bushes",
+        "madness"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a74af3ca02a9898e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la portada hay un clip, una mancha de tierra y una fecha ya vieja.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "clip",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "costaba",
+    "sentence": "Le _____ menos que alquilar abajo y le salía casi un sueldo al año.",
+    "payload": {
+      "answer": "costaba",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "costaba",
+        "desmorona",
+        "dominaba",
+        "avanza"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/835294423bd76089.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Le costaba menos que alquilar abajo y le salía casi un sueldo al año”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "costar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "a mano",
+    "sentence": "Le enseña una suma _____ y un papel del cajero con dos billetes doblados.",
+    "payload": {
+      "answer": "a mano",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "día de Muertos",
+        "procesión de los pasos",
+        "granito de arena",
+        "a mano"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/326515696bceff2c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Le enseña una suma a mano y un papel del cajero con dos billetes doblados.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "a mano",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caro",
+    "sentence": "Quique sirve dos cafés caros que huelen a quemado y se queda al lado.",
+    "payload": {
+      "answer": "Costing more money than you would want to pay.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "girl, mate (Colombian street slang)",
+        "to picture myself",
+        "to get the plan together",
+        "Costing more money than you would want to pay."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/186589d27270b0a9.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Quique sirve dos cafés caros que huelen a quemado y se queda al lado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "caro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cajero",
+    "sentence": "cajero",
+    "payload": {
+      "answer": "cajero",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "peso",
+        "cajero",
+        "laberinto",
+        "remero"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "suma,costar,estómago,tarjetero",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "suma",
+          "answer": "The number you get when you add several numbers.",
+          "options": [
+            "The number you get when you add several numbers.",
+            "To be worth a certain amount of money to get.",
+            "The part inside you that goes tight when you are afraid.",
+            "Small case for keeping cards, thinner than a purse."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "costar",
+          "answer": "To be worth a certain amount of money to get.",
+          "options": [
+            "The number you get when you add several numbers.",
+            "To be worth a certain amount of money to get.",
+            "The part inside you that goes tight when you are afraid.",
+            "Small case for keeping cards, thinner than a purse."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "estómago",
+          "answer": "The part inside you that goes tight when you are afraid.",
+          "options": [
+            "The number you get when you add several numbers.",
+            "To be worth a certain amount of money to get.",
+            "The part inside you that goes tight when you are afraid.",
+            "Small case for keeping cards, thinner than a purse."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tarjetero",
+          "answer": "Small case for keeping cards, thinner than a purse.",
+          "options": [
+            "The number you get when you add several numbers.",
+            "To be worth a certain amount of money to get.",
+            "The part inside you that goes tight when you are afraid.",
+            "Small case for keeping cards, thinner than a purse."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "caros",
+    "sentence": "Quique sirve dos cafés _____ que huelen a quemado y se queda al lado.",
+    "payload": {
+      "answer": "caros",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "fallecidos",
+        "vencidos",
+        "caros",
+        "emotivos"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/186589d27270b0a9.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Quique sirve dos cafés caros que huelen a quemado y se queda al lado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "caro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cartón",
+    "sentence": "Ese jueves Rocío baja al bar con una carpeta de cartón y la abre delante.",
+    "payload": {
+      "answer": "Thick stiff paper that boxes and folders are made of.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "pot",
+        "Thick stiff paper that boxes and folders are made of.",
+        "to chat casually",
+        "the dancers"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/751066f209084e36.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ese jueves Rocío baja al bar con una carpeta de cartón y la abre delante.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "cartón",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "céntimo",
+    "sentence": "céntimo",
+    "payload": {
+      "answer": "céntimo",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "tributo",
+        "céntimo",
+        "tronco",
+        "alimento"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "junta,cartón,delante,en dos",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "junta",
+          "answer": "The meeting where the owners of a building decide things.",
+          "options": [
+            "In front of you, where you can see it.",
+            "Thick stiff paper that boxes and folders are made of.",
+            "The meeting where the owners of a building decide things.",
+            "Into two pieces, cut or torn down the middle."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cartón",
+          "answer": "Thick stiff paper that boxes and folders are made of.",
+          "options": [
+            "In front of you, where you can see it.",
+            "Thick stiff paper that boxes and folders are made of.",
+            "The meeting where the owners of a building decide things.",
+            "Into two pieces, cut or torn down the middle."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "delante",
+          "answer": "In front of you, where you can see it.",
+          "options": [
+            "In front of you, where you can see it.",
+            "Thick stiff paper that boxes and folders are made of.",
+            "The meeting where the owners of a building decide things.",
+            "Into two pieces, cut or torn down the middle."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "en dos",
+          "answer": "Into two pieces, cut or torn down the middle.",
+          "options": [
+            "In front of you, where you can see it.",
+            "Thick stiff paper that boxes and folders are made of.",
+            "The meeting where the owners of a building decide things.",
+            "Into two pieces, cut or torn down the middle."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "céntimos",
+    "sentence": "Saca un monedero de un tarjetero viejo y le enseña lo que resta al mes: unos _____.",
+    "payload": {
+      "answer": "céntimos",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "hermanos",
+        "desafíos",
+        "pochoclos",
+        "céntimos"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2c2025e7cd27ce1e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Saca un monedero de un tarjetero viejo y le enseña lo que resta al mes: unos céntimos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "céntimo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "clip",
+    "sentence": "En la portada hay un clip, una mancha de tierra y una fecha ya vieja.",
+    "payload": {
+      "answer": "Small bent wire that holds two papers together.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "sweet corn flatbread, served with cheese",
+        "hundreds",
+        "fragments",
+        "Small bent wire that holds two papers together."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a74af3ca02a9898e.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "En la portada hay un clip, una mancha de tierra y una fecha ya vieja.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "clip",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "costar",
+    "sentence": "“Le costaba menos que alquilar abajo y le salía casi un sueldo al año”.",
+    "payload": {
+      "answer": "To be worth a certain amount of money to get.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "To be worth a certain amount of money to get.",
+        "a lump, a knot",
+        "punches (Argentine slang)",
+        "used for rites and ceremonies"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/835294423bd76089.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Le costaba menos que alquilar abajo y le salía casi un sueldo al año”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "costar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en dos",
+    "sentence": "Rocío coge el papel, lo rompe en dos y deja los trozos debajo del platillo.",
+    "payload": {
+      "answer": "Into two pieces, cut or torn down the middle.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Into two pieces, cut or torn down the middle.",
+        "the spines",
+        "the magic",
+        "a nice little juice"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d79eba083b168745.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío coge el papel, lo rompe en dos y deja los trozos debajo del platillo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "en dos",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estómago",
+    "sentence": "Irene reconoce el papel de las grapas y se le cierra el estómago.",
+    "payload": {
+      "answer": "The part inside you that goes tight when you are afraid.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "The part inside you that goes tight when you are afraid.",
+        "to dance",
+        "to protect",
+        "sighing"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8b1e066b09aa74db.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene reconoce el papel de las grapas y se le cierra el estómago.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "estómago",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hermano",
+    "sentence": "“Mi hermano quería el local para guardar cosas en verano”, dice Rocío.",
+    "payload": {
+      "answer": "A man who has the same parents as you.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "come here (Colombian voseo)",
+        "the orange marigold used in Mexican rituals",
+        "carrots",
+        "A man who has the same parents as you."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5663fa3e5ab15d9d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Mi hermano quería el local para guardar cosas en verano”, dice Rocío.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "hermano",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "junta",
+    "sentence": "“Y esto es lo que sacaba; ni para pagar la junta del año, mira”, añade.",
+    "payload": {
+      "answer": "The meeting where the owners of a building decide things.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "The meeting where the owners of a building decide things.",
+        "dances",
+        "irritation",
+        "builds"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/506d62d7883cf6b0.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Y esto es lo que sacaba; ni para pagar la junta del año, mira”, añade.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "junta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "costaba",
+    "sentence": "Le _____ menos que alquilar abajo y le salía casi un sueldo al año.",
+    "payload": {
+      "answer": "costaba",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "titilaba",
+        "marcaba",
+        "acaricia",
+        "costaba"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/835294423bd76089.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Le costaba menos que alquilar abajo y le salía casi un sueldo al año”.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "rocio-rompe-su-papel",
+        "targetWord": "costar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "delante",
+    "sentence": "delante",
+    "payload": {
+      "answer": "delante",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "Apenas",
+        "ligeramente",
+        "delante",
+        "recién"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "sueldo,céntimo,restar,cajero",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "sueldo",
+          "answer": "The money somebody is paid for a month of work.",
+          "options": [
+            "To take one number away from another one.",
+            "The smallest coin, one hundredth of a euro.",
+            "The money somebody is paid for a month of work.",
+            "Machine in a wall that gives you your money."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "céntimo",
+          "answer": "The smallest coin, one hundredth of a euro.",
+          "options": [
+            "To take one number away from another one.",
+            "The smallest coin, one hundredth of a euro.",
+            "The money somebody is paid for a month of work.",
+            "Machine in a wall that gives you your money."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "restar",
+          "answer": "To take one number away from another one.",
+          "options": [
+            "To take one number away from another one.",
+            "The smallest coin, one hundredth of a euro.",
+            "The money somebody is paid for a month of work.",
+            "Machine in a wall that gives you your money."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cajero",
+          "answer": "Machine in a wall that gives you your money.",
+          "options": [
+            "To take one number away from another one.",
+            "The smallest coin, one hundredth of a euro.",
+            "The money somebody is paid for a month of work.",
+            "Machine in a wall that gives you your money."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,999 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "a esta hora",
+    "sentence": "Mi madre me sentaba aquí _____ y no hablábamos nunca, cuenta Rosa.",
+    "payload": {
+      "answer": "a esta hora",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "campo de batalla",
+        "a esta hora",
+        "piedra caliza",
+        "manos curtidas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6511d429fe4f5a97.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Mi madre me sentaba aquí a esta hora y no hablábamos nunca”, cuenta Rosa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "a esta hora",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arrastrar",
+    "sentence": "Rosa deja la masa en reposo, se limpia las manos y arrastra una silla hasta la entrada.",
+    "payload": {
+      "answer": "To pull something along the floor instead of lifting it.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "typical",
+        "criticised",
+        "To pull something along the floor instead of lifting it.",
+        "exhausted"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60147d0fbeb3df4d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rosa deja la masa en reposo, se limpia las manos y arrastra una silla hasta la entrada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "arrastrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "boca",
+    "sentence": "boca",
+    "payload": {
+      "answer": "boca",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "boca",
+        "nuca",
+        "joda",
+        "Guía"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "arrastra",
+    "sentence": "Rosa deja la masa en reposo, se limpia las manos y _____ una silla hasta la entrada.",
+    "payload": {
+      "answer": "arrastra",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "respira",
+        "mezcla",
+        "buscándola",
+        "arrastra"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60147d0fbeb3df4d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rosa deja la masa en reposo, se limpia las manos y arrastra una silla hasta la entrada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "arrastrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuarto",
+    "sentence": "Huele a masa en el cuarto de atrás de la panadería.",
+    "payload": {
+      "answer": "A room in a house or behind a shop.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "A room in a house or behind a shop.",
+        "harvests",
+        "attentively",
+        "surround"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/936c9e94bfb1a45c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Huele a masa en el cuarto de atrás de la panadería.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "cuarto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "cuenco",
+    "sentence": "cuenco",
+    "payload": {
+      "answer": "cuenco",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "boleto",
+        "recuerdo",
+        "cuenco",
+        "monumento"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "boca,espalda,lentamente,espeso",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "boca",
+          "answer": "The opening in your face that you eat and speak with.",
+          "options": [
+            "The whole back of your body, from neck to waist.",
+            "Thick and heavy, hard to stir or to pour.",
+            "The opening in your face that you eat and speak with.",
+            "Slowly, taking much more time than you would expect."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "espalda",
+          "answer": "The whole back of your body, from neck to waist.",
+          "options": [
+            "The whole back of your body, from neck to waist.",
+            "Thick and heavy, hard to stir or to pour.",
+            "The opening in your face that you eat and speak with.",
+            "Slowly, taking much more time than you would expect."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "lentamente",
+          "answer": "Slowly, taking much more time than you would expect.",
+          "options": [
+            "The whole back of your body, from neck to waist.",
+            "Thick and heavy, hard to stir or to pour.",
+            "The opening in your face that you eat and speak with.",
+            "Slowly, taking much more time than you would expect."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "espeso",
+          "answer": "Thick and heavy, hard to stir or to pour.",
+          "options": [
+            "The whole back of your body, from neck to waist.",
+            "Thick and heavy, hard to stir or to pour.",
+            "The opening in your face that you eat and speak with.",
+            "Slowly, taking much more time than you would expect."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "espalda",
+    "sentence": "Irene se sienta con la _____ contra la pared.",
+    "payload": {
+      "answer": "espalda",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "gastronomía",
+        "boca",
+        "sinfonía",
+        "espalda"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f04a61d18ba5121.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene se sienta con la espalda contra la pared.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "espalda",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "espeso",
+    "sentence": "La masa sube muy lentamente y se pone espesa por dentro.",
+    "payload": {
+      "answer": "Thick and heavy, hard to stir or to pour.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the preparations",
+        "eagle",
+        "Thick and heavy, hard to stir or to pour.",
+        "could stand it"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5813271d551a1e75.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La masa sube muy lentamente y se pone espesa por dentro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "espeso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "espesa",
+    "sentence": "La masa sube muy lentamente y se pone _____ por dentro.",
+    "payload": {
+      "answer": "espesa",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "profunda",
+        "relajada",
+        "encajada",
+        "espesa"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5813271d551a1e75.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La masa sube muy lentamente y se pone espesa por dentro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "espeso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "a esta hora",
+    "sentence": "Mi madre me sentaba aquí _____ y no hablábamos nunca, cuenta Rosa.",
+    "payload": {
+      "answer": "a esta hora",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "empleada doméstica",
+        "sombrero de paja",
+        "a esta hora",
+        "en serio"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6511d429fe4f5a97.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Mi madre me sentaba aquí a esta hora y no hablábamos nunca”, cuenta Rosa.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "a esta hora",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "arrastrar",
+    "sentence": "Rosa deja la masa en reposo, se limpia las manos y arrastra una silla hasta la entrada.",
+    "payload": {
+      "answer": "To pull something along the floor instead of lifting it.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a reflection",
+        "To pull something along the floor instead of lifting it.",
+        "values, appreciates",
+        "the charm"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60147d0fbeb3df4d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rosa deja la masa en reposo, se limpia las manos y arrastra una silla hasta la entrada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "arrastrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "boca",
+    "sentence": "boca",
+    "payload": {
+      "answer": "boca",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "mariposa",
+        "barriga",
+        "boca",
+        "paisa"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "arrastrar,verdadero,cuenco,paloma",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "arrastrar",
+          "answer": "To pull something along the floor instead of lifting it.",
+          "options": [
+            "True; really felt, and not said just to be nice.",
+            "Grey town bird that walks around looking for crumbs.",
+            "To pull something along the floor instead of lifting it.",
+            "Round deep dish with no handles, for olives or soup."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "verdadero",
+          "answer": "True; really felt, and not said just to be nice.",
+          "options": [
+            "True; really felt, and not said just to be nice.",
+            "Grey town bird that walks around looking for crumbs.",
+            "To pull something along the floor instead of lifting it.",
+            "Round deep dish with no handles, for olives or soup."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "cuenco",
+          "answer": "Round deep dish with no handles, for olives or soup.",
+          "options": [
+            "True; really felt, and not said just to be nice.",
+            "Grey town bird that walks around looking for crumbs.",
+            "To pull something along the floor instead of lifting it.",
+            "Round deep dish with no handles, for olives or soup."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "paloma",
+          "answer": "Grey town bird that walks around looking for crumbs.",
+          "options": [
+            "True; really felt, and not said just to be nice.",
+            "Grey town bird that walks around looking for crumbs.",
+            "To pull something along the floor instead of lifting it.",
+            "Round deep dish with no handles, for olives or soup."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "arrastra",
+    "sentence": "Rosa deja la masa en reposo, se limpia las manos y _____ una silla hasta la entrada.",
+    "payload": {
+      "answer": "arrastra",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "asomaba",
+        "arreglarla",
+        "arrojarla",
+        "arrastra"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60147d0fbeb3df4d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rosa deja la masa en reposo, se limpia las manos y arrastra una silla hasta la entrada.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "arrastrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuarto",
+    "sentence": "Huele a masa en el cuarto de atrás de la panadería.",
+    "payload": {
+      "answer": "A room in a house or behind a shop.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "powerful",
+        "piñata, hit repeatedly",
+        "are dropping",
+        "A room in a house or behind a shop."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/936c9e94bfb1a45c.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Huele a masa en el cuarto de atrás de la panadería.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "cuarto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "cuenco",
+    "sentence": "cuenco",
+    "payload": {
+      "answer": "cuenco",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "periodismo",
+        "tapado",
+        "ermitaño",
+        "cuenco"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "cuarto,masa,tierno,reposo",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "cuarto",
+          "answer": "A room in a house or behind a shop.",
+          "options": [
+            "Soft to bite, still fresh and not gone hard.",
+            "Soft mix of flour and water, before it becomes bread.",
+            "A room in a house or behind a shop.",
+            "Time when something is left still, to rest and change."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "masa",
+          "answer": "Soft mix of flour and water, before it becomes bread.",
+          "options": [
+            "Soft to bite, still fresh and not gone hard.",
+            "Soft mix of flour and water, before it becomes bread.",
+            "A room in a house or behind a shop.",
+            "Time when something is left still, to rest and change."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tierno",
+          "answer": "Soft to bite, still fresh and not gone hard.",
+          "options": [
+            "Soft to bite, still fresh and not gone hard.",
+            "Soft mix of flour and water, before it becomes bread.",
+            "A room in a house or behind a shop.",
+            "Time when something is left still, to rest and change."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "reposo",
+          "answer": "Time when something is left still, to rest and change.",
+          "options": [
+            "Soft to bite, still fresh and not gone hard.",
+            "Soft mix of flour and water, before it becomes bread.",
+            "A room in a house or behind a shop.",
+            "Time when something is left still, to rest and change."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "espalda",
+    "sentence": "Irene se sienta con la _____ contra la pared.",
+    "payload": {
+      "answer": "espalda",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "posta",
+        "provoleta",
+        "promesa",
+        "espalda"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7f04a61d18ba5121.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene se sienta con la espalda contra la pared.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "espalda",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "espeso",
+    "sentence": "La masa sube muy lentamente y se pone espesa por dentro.",
+    "payload": {
+      "answer": "Thick and heavy, hard to stir or to pour.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "people willing to help out",
+        "Thick and heavy, hard to stir or to pour.",
+        "with the hairs standing on end",
+        "simple"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5813271d551a1e75.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La masa sube muy lentamente y se pone espesa por dentro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "espeso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estirar",
+    "sentence": "Irene estira las piernas y no busca nada que decir.",
+    "payload": {
+      "answer": "To make a part of your body longer and straighter.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "that would suit me nicely",
+        "decorated",
+        "To make a part of your body longer and straighter.",
+        "you brightened"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a2575881ead72e7.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene estira las piernas y no busca nada que decir.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "estirar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "paloma",
+    "sentence": "Una paloma anda por el patio y las dos la miran un ratito.",
+    "payload": {
+      "answer": "Grey town bird that walks around looking for crumbs.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "a donkey, as in working like one",
+        "Grey town bird that walks around looking for crumbs.",
+        "travel blog they are writing",
+        "the bitter herbal spirit drunk across Argentina"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/665d3ca3a2832987.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Una paloma anda por el patio y las dos la miran un ratito.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "paloma",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sal",
+    "sentence": "“Se está bien sin hacer nada”, dice Irene, y le sale corta y verdadera.",
+    "payload": {
+      "answer": "White grains you put on food to give it taste.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "seats",
+        "White grains you put on food to give it taste.",
+        "steps",
+        "the village festival"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36791099624c5837.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Se está bien sin hacer nada”, dice Irene, y le sale corta y verdadera.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "sal",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "espesa",
+    "sentence": "La masa sube muy lentamente y se pone _____ por dentro.",
+    "payload": {
+      "answer": "espesa",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "turística",
+        "espesa",
+        "azteca",
+        "libanesa"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5813271d551a1e75.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "La masa sube muy lentamente y se pone espesa por dentro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "espeso",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "estira",
+    "sentence": "Irene _____ las piernas y no busca nada que decir.",
+    "payload": {
+      "answer": "estira",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "transmitirla",
+        "estira",
+        "arroja",
+        "titilaba"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a2575881ead72e7.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene estira las piernas y no busca nada que decir.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "estirar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "sale",
+    "sentence": "Se está bien sin hacer nada, dice Irene, y le _____ corta y verdadera.",
+    "payload": {
+      "answer": "sale",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ancestros",
+        "señal",
+        "sale",
+        "naturaleza"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/36791099624c5837.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Se está bien sin hacer nada”, dice Irene, y le sale corta y verdadera.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "la-masa-quiere-media-hora",
+        "targetWord": "sal",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "lentamente",
+    "sentence": "lentamente",
+    "payload": {
+      "answer": "lentamente",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "despacio",
+        "nomás",
+        "honestamente",
+        "lentamente"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "masa",
+    "sentence": "masa",
+    "payload": {
+      "answer": "masa",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "oficinista",
+        "lunfa",
+        "guayaba",
+        "masa"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "a esta hora,espalda,patio,espeso",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "a esta hora",
+          "answer": "At this time of day, the same time every day.",
+          "options": [
+            "The whole back of your body, from neck to waist.",
+            "Small open space with walls, behind or inside a house.",
+            "Thick and heavy, hard to stir or to pour.",
+            "At this time of day, the same time every day."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "espalda",
+          "answer": "The whole back of your body, from neck to waist.",
+          "options": [
+            "The whole back of your body, from neck to waist.",
+            "Small open space with walls, behind or inside a house.",
+            "Thick and heavy, hard to stir or to pour.",
+            "At this time of day, the same time every day."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "patio",
+          "answer": "Small open space with walls, behind or inside a house.",
+          "options": [
+            "The whole back of your body, from neck to waist.",
+            "Small open space with walls, behind or inside a house.",
+            "Thick and heavy, hard to stir or to pour.",
+            "At this time of day, the same time every day."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "espeso",
+          "answer": "Thick and heavy, hard to stir or to pour.",
+          "options": [
+            "The whole back of your body, from neck to waist.",
+            "Small open space with walls, behind or inside a house.",
+            "Thick and heavy, hard to stir or to pour.",
+            "At this time of day, the same time every day."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

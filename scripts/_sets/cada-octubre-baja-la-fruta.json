@@ -1,0 +1,867 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "al lado",
+    "sentence": "Irene mira las verduras que asoman por el borde y aguarda _____.",
+    "payload": {
+      "answer": "al lado",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "una mala pasada",
+        "al lado",
+        "alma de la fiesta",
+        "brisa salada"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a3b224e61f49dcf.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene mira las verduras que asoman por el borde y aguarda al lado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "al lado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aljibe",
+    "sentence": "“Si quieres verlo, sube conmigo, que hoy toca regar y el aljibe está hasta arriba”, dice Álvaro.",
+    "payload": {
+      "answer": "Stone tank where a house keeps rain water.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "forgotten",
+        "Stone tank where a house keeps rain water.",
+        "childhood",
+        "to pull"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b5342c791ff01aaa.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Si quieres verlo, sube conmigo, que hoy toca regar y el aljibe está hasta arriba”, dice Álvaro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "aljibe",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "calabaza",
+    "sentence": "calabaza",
+    "payload": {
+      "answer": "calabaza",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "calabaza",
+        "caza",
+        "gaita",
+        "sinfonía"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "cebolla",
+    "sentence": "Abajo se vive del agosto; aquí arriba se vive de la _____ y ya está, añade.",
+    "payload": {
+      "answer": "cebolla",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "búsqueda",
+        "posta",
+        "tierra",
+        "cebolla"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e77deef4eb0b4df3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Abajo se vive del agosto; aquí arriba se vive de la cebolla y ya está”, añade.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "cebolla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "falda",
+    "sentence": "Irene baja con la falda sucia y el canasto de zanahorias y pepinos.",
+    "payload": {
+      "answer": "Piece of clothing that hangs from the waist down.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "odd, strange",
+        "Piece of clothing that hangs from the waist down.",
+        "damp",
+        "obsidian, volcanic glass"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/78ecea693c839f75.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene baja con la falda sucia y el canasto de zanahorias y pepinos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "falda",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "grano",
+    "sentence": "grano",
+    "payload": {
+      "answer": "grano",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "jugo",
+        "codazo",
+        "grano",
+        "capo"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "grano,perejil,zanahoria,sucio",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "grano",
+          "answer": "One small hard piece of rice, salt or seed.",
+          "options": [
+            "Dirty, with earth or dust all over it.",
+            "One small hard piece of rice, salt or seed.",
+            "Long orange vegetable that grows under the ground.",
+            "Small green herb with flat leaves, cut over food."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "perejil",
+          "answer": "Small green herb with flat leaves, cut over food.",
+          "options": [
+            "Dirty, with earth or dust all over it.",
+            "One small hard piece of rice, salt or seed.",
+            "Long orange vegetable that grows under the ground.",
+            "Small green herb with flat leaves, cut over food."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "zanahoria",
+          "answer": "Long orange vegetable that grows under the ground.",
+          "options": [
+            "Dirty, with earth or dust all over it.",
+            "One small hard piece of rice, salt or seed.",
+            "Long orange vegetable that grows under the ground.",
+            "Small green herb with flat leaves, cut over food."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sucio",
+          "answer": "Dirty, with earth or dust all over it.",
+          "options": [
+            "Dirty, with earth or dust all over it.",
+            "One small hard piece of rice, salt or seed.",
+            "Long orange vegetable that grows under the ground.",
+            "Small green herb with flat leaves, cut over food."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "hierba",
+    "sentence": "Suben por un atajo entre _____ alta que deja el mar abajo.",
+    "payload": {
+      "answer": "hierba",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "semilla",
+        "hierba",
+        "piña",
+        "historia"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/462d48ba945395f2.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Suben por un atajo entre hierba alta que deja el mar abajo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "hierba",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "huerto",
+    "sentence": "Álvaro, el del huerto de arriba, arrastra un canasto hasta el bar y lo deja en el suelo.",
+    "payload": {
+      "answer": "Small piece of land where a family grows vegetables.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "tourist",
+        "lavish",
+        "the roller shutter",
+        "Small piece of land where a family grows vegetables."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f68548a27815eb39.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Álvaro, el del huerto de arriba, arrastra un canasto hasta el bar y lo deja en el suelo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "huerto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "loma",
+    "sentence": "Desde la _____ se ve la playa vacía y las sombrillas guardadas.",
+    "payload": {
+      "answer": "loma",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "iglesia",
+        "zamba",
+        "loma",
+        "pizarra"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d073edd64fe7dd2b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Desde la loma se ve la playa vacía y las sombrillas guardadas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "loma",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "al lado",
+    "sentence": "Irene mira las verduras que asoman por el borde y aguarda _____.",
+    "payload": {
+      "answer": "al lado",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "tiros libres",
+        "tómatelo con calma",
+        "al lado",
+        "águila harpía"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3a3b224e61f49dcf.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene mira las verduras que asoman por el borde y aguarda al lado.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "al lado",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aljibe",
+    "sentence": "“Si quieres verlo, sube conmigo, que hoy toca regar y el aljibe está hasta arriba”, dice Álvaro.",
+    "payload": {
+      "answer": "Stone tank where a house keeps rain water.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Stone tank where a house keeps rain water.",
+        "offering up",
+        "hills",
+        "back, rear"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b5342c791ff01aaa.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Si quieres verlo, sube conmigo, que hoy toca regar y el aljibe está hasta arriba”, dice Álvaro.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "aljibe",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "calabaza",
+    "sentence": "calabaza",
+    "payload": {
+      "answer": "calabaza",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "mapa",
+        "niñera",
+        "calabaza",
+        "magia"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "zanahoria,huerto,loma,sucio",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "zanahoria",
+          "answer": "Long orange vegetable that grows under the ground.",
+          "options": [
+            "Small piece of land where a family grows vegetables.",
+            "Dirty, with earth or dust all over it.",
+            "Long orange vegetable that grows under the ground.",
+            "Low round hill, softer and lower than a mountain."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "huerto",
+          "answer": "Small piece of land where a family grows vegetables.",
+          "options": [
+            "Small piece of land where a family grows vegetables.",
+            "Dirty, with earth or dust all over it.",
+            "Long orange vegetable that grows under the ground.",
+            "Low round hill, softer and lower than a mountain."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "loma",
+          "answer": "Low round hill, softer and lower than a mountain.",
+          "options": [
+            "Small piece of land where a family grows vegetables.",
+            "Dirty, with earth or dust all over it.",
+            "Long orange vegetable that grows under the ground.",
+            "Low round hill, softer and lower than a mountain."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sucio",
+          "answer": "Dirty, with earth or dust all over it.",
+          "options": [
+            "Small piece of land where a family grows vegetables.",
+            "Dirty, with earth or dust all over it.",
+            "Long orange vegetable that grows under the ground.",
+            "Low round hill, softer and lower than a mountain."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "cebolla",
+    "sentence": "Abajo se vive del agosto; aquí arriba se vive de la _____ y ya está, añade.",
+    "payload": {
+      "answer": "cebolla",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "esencia",
+        "ensalada",
+        "cebolla",
+        "jefa"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e77deef4eb0b4df3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Abajo se vive del agosto; aquí arriba se vive de la cebolla y ya está”, añade.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "cebolla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "falda",
+    "sentence": "Irene baja con la falda sucia y el canasto de zanahorias y pepinos.",
+    "payload": {
+      "answer": "Piece of clothing that hangs from the waist down.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "the judges",
+        "let's face",
+        "Piece of clothing that hangs from the waist down.",
+        "work"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/78ecea693c839f75.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene baja con la falda sucia y el canasto de zanahorias y pepinos.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "falda",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "grano",
+    "sentence": "grano",
+    "payload": {
+      "answer": "grano",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "paso",
+        "grano",
+        "Mamo",
+        "evento"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "rama,hierba,limonero,aljibe",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "rama",
+          "answer": "One of the arms of a tree, with leaves on it.",
+          "options": [
+            "One of the arms of a tree, with leaves on it.",
+            "Stone tank where a house keeps rain water.",
+            "Tree that gives lemons, common in gardens down south.",
+            "The green plants that cover the ground in a field."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "hierba",
+          "answer": "The green plants that cover the ground in a field.",
+          "options": [
+            "One of the arms of a tree, with leaves on it.",
+            "Stone tank where a house keeps rain water.",
+            "Tree that gives lemons, common in gardens down south.",
+            "The green plants that cover the ground in a field."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "limonero",
+          "answer": "Tree that gives lemons, common in gardens down south.",
+          "options": [
+            "One of the arms of a tree, with leaves on it.",
+            "Stone tank where a house keeps rain water.",
+            "Tree that gives lemons, common in gardens down south.",
+            "The green plants that cover the ground in a field."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "aljibe",
+          "answer": "Stone tank where a house keeps rain water.",
+          "options": [
+            "One of the arms of a tree, with leaves on it.",
+            "Stone tank where a house keeps rain water.",
+            "Tree that gives lemons, common in gardens down south.",
+            "The green plants that cover the ground in a field."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "hierba",
+    "sentence": "Suben por un atajo entre _____ alta que deja el mar abajo.",
+    "payload": {
+      "answer": "hierba",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "hierba",
+        "zapatería",
+        "cautela",
+        "lata"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/462d48ba945395f2.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Suben por un atajo entre hierba alta que deja el mar abajo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "hierba",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "huerto",
+    "sentence": "Álvaro, el del huerto de arriba, arrastra un canasto hasta el bar y lo deja en el suelo.",
+    "payload": {
+      "answer": "Small piece of land where a family grows vegetables.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "really wound up (Argentine slang)",
+        "his stay",
+        "Small piece of land where a family grows vegetables.",
+        "basic"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f68548a27815eb39.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Álvaro, el del huerto de arriba, arrastra un canasto hasta el bar y lo deja en el suelo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "huerto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "loma",
+    "sentence": "Desde la loma se ve la playa vacía y las sombrillas guardadas.",
+    "payload": {
+      "answer": "Low round hill, softer and lower than a mountain.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "aged",
+        "shoulders",
+        "floor tiles",
+        "Low round hill, softer and lower than a mountain."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d073edd64fe7dd2b.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Desde la loma se ve la playa vacía y las sombrillas guardadas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "loma",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rama",
+    "sentence": "“Toca la rama del limonero, que pincha bastante menos de lo que parece”, dice.",
+    "payload": {
+      "answer": "One of the arms of a tree, with leaves on it.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "One of the arms of a tree, with leaves on it.",
+        "painter (female)",
+        "the tide",
+        "onward, keep going (short for para adelante)"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7c18b74d2ebe0dbb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Toca la rama del limonero, que pincha bastante menos de lo que parece”, dice.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "cada-octubre-baja-la-fruta",
+        "targetWord": "rama",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "hasta arriba",
+    "sentence": "hasta arriba",
+    "payload": {
+      "answer": "hasta arriba",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "valía la pena",
+        "campo de batalla",
+        "a la mitad",
+        "hasta arriba"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "limonero",
+    "sentence": "limonero",
+    "payload": {
+      "answer": "limonero",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "limonero",
+        "trago",
+        "sueño",
+        "kiosco"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "al lado,verdura,pepino,mar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "al lado",
+          "answer": "Right next to it, with nothing in between.",
+          "options": [
+            "Right next to it, with nothing in between.",
+            "Any green plant that people grow in order to eat.",
+            "Long green vegetable that people eat raw in salads.",
+            "The salt water that covers most of the world."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "verdura",
+          "answer": "Any green plant that people grow in order to eat.",
+          "options": [
+            "Right next to it, with nothing in between.",
+            "Any green plant that people grow in order to eat.",
+            "Long green vegetable that people eat raw in salads.",
+            "The salt water that covers most of the world."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pepino",
+          "answer": "Long green vegetable that people eat raw in salads.",
+          "options": [
+            "Right next to it, with nothing in between.",
+            "Any green plant that people grow in order to eat.",
+            "Long green vegetable that people eat raw in salads.",
+            "The salt water that covers most of the world."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "mar",
+          "answer": "The salt water that covers most of the world.",
+          "options": [
+            "Right next to it, with nothing in between.",
+            "Any green plant that people grow in order to eat.",
+            "Long green vegetable that people eat raw in salads.",
+            "The salt water that covers most of the world."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

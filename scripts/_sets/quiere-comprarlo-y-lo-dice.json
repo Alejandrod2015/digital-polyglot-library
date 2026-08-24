@@ -1,0 +1,933 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "acostumbrarte",
+    "sentence": "Te faltaba _____ a querer algo en alto, contesta Rocío, sin tristeza.",
+    "payload": {
+      "answer": "acostumbrarte",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "otorgan",
+        "precedieron",
+        "brotan",
+        "acostumbrarte"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/623ecaebf2346edd.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Te faltaba acostumbrarte a querer algo en alto”, contesta Rocío, sin tristeza.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "acostumbrarse",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acostumbrarse",
+    "sentence": "“Te faltaba acostumbrarte a querer algo en alto”, contesta Rocío, sin tristeza.",
+    "payload": {
+      "answer": "To get used to something until it stops feeling strange.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "they put in",
+        "To get used to something until it stops feeling strange.",
+        "wandering",
+        "to age"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/623ecaebf2346edd.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Te faltaba acostumbrarte a querer algo en alto”, contesta Rocío, sin tristeza.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "acostumbrarse",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "alegrar",
+    "sentence": "alegrar",
+    "payload": {
+      "answer": "alegrar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "guían",
+        "alegrar",
+        "sueñes",
+        "revisaba"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "alegra",
+    "sentence": "Se quedan calladas y a Irene la _____ esa paz nueva.",
+    "payload": {
+      "answer": "alegra",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "gemía",
+        "alegra",
+        "caía",
+        "lava"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/80e6c739750e2718.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Se quedan calladas y a Irene la alegra esa paz nueva.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "alegrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amable",
+    "sentence": "Rocío deja el trapo, se seca las manos y se apoya en el aparador, amable.",
+    "payload": {
+      "answer": "Kind; treating you well without being asked to.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "straight at it",
+        "furrows",
+        "Kind; treating you well without being asked to.",
+        "the victory lap around the pitch"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ab5380ce307bbeb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío deja el trapo, se seca las manos y se apoya en el aparador, amable.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "amable",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "amistad",
+    "sentence": "amistad",
+    "payload": {
+      "answer": "amistad",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "combinación",
+        "anciano",
+        "cancha",
+        "amistad"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "entero,aparador,preocupado,débil",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "entero",
+          "answer": "Whole and complete, with no part of it missing.",
+          "options": [
+            "Low cupboard in a kitchen where dishes are kept.",
+            "Whole and complete, with no part of it missing.",
+            "Worried; with something heavy going round your head.",
+            "Weak; without much strength left behind it at all."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "aparador",
+          "answer": "Low cupboard in a kitchen where dishes are kept.",
+          "options": [
+            "Low cupboard in a kitchen where dishes are kept.",
+            "Whole and complete, with no part of it missing.",
+            "Worried; with something heavy going round your head.",
+            "Weak; without much strength left behind it at all."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "preocupado",
+          "answer": "Worried; with something heavy going round your head.",
+          "options": [
+            "Low cupboard in a kitchen where dishes are kept.",
+            "Whole and complete, with no part of it missing.",
+            "Worried; with something heavy going round your head.",
+            "Weak; without much strength left behind it at all."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "débil",
+          "answer": "Weak; without much strength left behind it at all.",
+          "options": [
+            "Low cupboard in a kitchen where dishes are kept.",
+            "Whole and complete, with no part of it missing.",
+            "Worried; with something heavy going round your head.",
+            "Weak; without much strength left behind it at all."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "débil",
+    "sentence": "Yo creía que era mi español, y era yo, dice, con una sonrisa _____.",
+    "payload": {
+      "answer": "débil",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "bordado",
+        "acogedor",
+        "temblorosa",
+        "débil"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b98e41eb33b1e03d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Yo creía que era mi español, y era yo”, dice, con una sonrisa débil.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "débil",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deseo",
+    "sentence": "Irene llega sin frase preparada, sin valor de reserva y con el deseo suelto.",
+    "payload": {
+      "answer": "Something you want a lot and have not said yet.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to capture",
+        "Something you want a lot and have not said yet.",
+        "astronomers",
+        "invites them"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b0ff515244e5e103.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene llega sin frase preparada, sin valor de reserva y con el deseo suelto.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "deseo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "emoción",
+    "sentence": "Quiero comprarlo yo, y lo quiero decir hoy, delante de ti, dice, y la _____ sale entera.",
+    "payload": {
+      "answer": "emoción",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "esposa",
+        "emoción",
+        "vallado",
+        "flor"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e62d9d8a5a43537.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Quiero comprarlo yo, y lo quiero decir hoy, delante de ti”, dice, y la emoción sale entera.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "emoción",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "acostumbrarte",
+    "sentence": "Te faltaba _____ a querer algo en alto, contesta Rocío, sin tristeza.",
+    "payload": {
+      "answer": "acostumbrarte",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "pelando",
+        "enfrentarse",
+        "acostumbrarte",
+        "manchen"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/623ecaebf2346edd.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Te faltaba acostumbrarte a querer algo en alto”, contesta Rocío, sin tristeza.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "acostumbrarse",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acostumbrarse",
+    "sentence": "“Te faltaba acostumbrarte a querer algo en alto”, contesta Rocío, sin tristeza.",
+    "payload": {
+      "answer": "To get used to something until it stops feeling strange.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to apply for",
+        "passports",
+        "To get used to something until it stops feeling strange.",
+        "lemon verbena, drunk as a calming tea"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/623ecaebf2346edd.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Te faltaba acostumbrarte a querer algo en alto”, contesta Rocío, sin tristeza.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "acostumbrarse",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "alegrar",
+    "sentence": "alegrar",
+    "payload": {
+      "answer": "alegrar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "logrado",
+        "buscarla",
+        "alegrar",
+        "alimentarse"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "alegrar,valor,acostumbrarse,por dentro",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "alegrar",
+          "answer": "To make somebody feel lighter and better than before.",
+          "options": [
+            "To get used to something until it stops feeling strange.",
+            "The strength it takes to do something that frightens you.",
+            "To make somebody feel lighter and better than before.",
+            "Inside your own head, where nobody else hears."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "valor",
+          "answer": "The strength it takes to do something that frightens you.",
+          "options": [
+            "To get used to something until it stops feeling strange.",
+            "The strength it takes to do something that frightens you.",
+            "To make somebody feel lighter and better than before.",
+            "Inside your own head, where nobody else hears."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "acostumbrarse",
+          "answer": "To get used to something until it stops feeling strange.",
+          "options": [
+            "To get used to something until it stops feeling strange.",
+            "The strength it takes to do something that frightens you.",
+            "To make somebody feel lighter and better than before.",
+            "Inside your own head, where nobody else hears."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "por dentro",
+          "answer": "Inside your own head, where nobody else hears.",
+          "options": [
+            "To get used to something until it stops feeling strange.",
+            "The strength it takes to do something that frightens you.",
+            "To make somebody feel lighter and better than before.",
+            "Inside your own head, where nobody else hears."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "alegra",
+    "sentence": "Se quedan calladas y a Irene la _____ esa paz nueva.",
+    "payload": {
+      "answer": "alegra",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "freírla",
+        "probarla",
+        "alegra",
+        "ajusta"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/80e6c739750e2718.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Se quedan calladas y a Irene la alegra esa paz nueva.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "alegrar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amable",
+    "sentence": "Rocío deja el trapo, se seca las manos y se apoya en el aparador, amable.",
+    "payload": {
+      "answer": "Kind; treating you well without being asked to.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "Kind; treating you well without being asked to.",
+        "threaten to",
+        "founded",
+        "hesitating"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ab5380ce307bbeb.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío deja el trapo, se seca las manos y se apoya en el aparador, amable.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "amable",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "amistad",
+    "sentence": "amistad",
+    "payload": {
+      "answer": "amistad",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "escepticismo",
+        "bicicletas",
+        "amistad",
+        "vivencias"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "entero,amable,débil,helado",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "entero",
+          "answer": "Whole and complete, with no part of it missing.",
+          "options": [
+            "Ice cold; cold enough to make you pull back.",
+            "Kind; treating you well without being asked to.",
+            "Weak; without much strength left behind it at all.",
+            "Whole and complete, with no part of it missing."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "amable",
+          "answer": "Kind; treating you well without being asked to.",
+          "options": [
+            "Ice cold; cold enough to make you pull back.",
+            "Kind; treating you well without being asked to.",
+            "Weak; without much strength left behind it at all.",
+            "Whole and complete, with no part of it missing."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "débil",
+          "answer": "Weak; without much strength left behind it at all.",
+          "options": [
+            "Ice cold; cold enough to make you pull back.",
+            "Kind; treating you well without being asked to.",
+            "Weak; without much strength left behind it at all.",
+            "Whole and complete, with no part of it missing."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "helado",
+          "answer": "Ice cold; cold enough to make you pull back.",
+          "options": [
+            "Ice cold; cold enough to make you pull back.",
+            "Kind; treating you well without being asked to.",
+            "Weak; without much strength left behind it at all.",
+            "Whole and complete, with no part of it missing."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "débil",
+    "sentence": "Yo creía que era mi español, y era yo, dice, con una sonrisa _____.",
+    "payload": {
+      "answer": "débil",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "dormida",
+        "débil",
+        "inmóviles",
+        "calientes"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b98e41eb33b1e03d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Yo creía que era mi español, y era yo”, dice, con una sonrisa débil.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "débil",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "deseo",
+    "sentence": "Irene llega sin frase preparada, sin valor de reserva y con el deseo suelto.",
+    "payload": {
+      "answer": "Something you want a lot and have not said yet.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "dizziness",
+        "Something you want a lot and have not said yet.",
+        "you're flying, you look stunning",
+        "we used to dream"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b0ff515244e5e103.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene llega sin frase preparada, sin valor de reserva y con el deseo suelto.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "deseo",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "emoción",
+    "sentence": "“Quiero comprarlo yo, y lo quiero decir hoy, delante de ti”, dice, y la emoción sale entera.",
+    "payload": {
+      "answer": "The strong feeling that comes with an important moment.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "nice and warm",
+        "the rivalry",
+        "rings out",
+        "The strong feeling that comes with an important moment."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3e62d9d8a5a43537.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Quiero comprarlo yo, y lo quiero decir hoy, delante de ti”, dice, y la emoción sale entera.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "emoción",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "en alto",
+    "sentence": "Nunca había dicho en alto que quiere quedarse con el piso.",
+    "payload": {
+      "answer": "Out loud, where other people can hear you say it.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "floating garden plots built by the Aztecs",
+        "a lemon tree",
+        "Out loud, where other people can hear you say it.",
+        "a collection"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5be1f0b308986a50.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Nunca había dicho en alto que quiere quedarse con el piso.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "en alto",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escoba",
+    "sentence": "Rocío friega preocupada, con la escoba apoyada y un aire helado detrás.",
+    "payload": {
+      "answer": "Long brush for sweeping the floor of a room.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "limit",
+        "everyday life",
+        "Long brush for sweeping the floor of a room.",
+        "the one who teaches you the ropes"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ab786fd38634ca9.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío friega preocupada, con la escoba apoyada y un aire helado detrás.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "escoba",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "por dentro",
+    "sentence": "Desde julio no le pasaba: por dentro ya no hay nada que guardar.",
+    "payload": {
+      "answer": "Inside your own head, where nobody else hears.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "wrapped around",
+        "Inside your own head, where nobody else hears.",
+        "cloudy",
+        "food"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e634aac67963fe0a.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Desde julio no le pasaba: por dentro ya no hay nada que guardar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-cabe-callarse",
+        "targetWord": "por dentro",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "aparador",
+    "sentence": "aparador",
+    "payload": {
+      "answer": "aparador",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "unicornio",
+        "conservadora",
+        "petroglifos",
+        "aparador"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "asustar",
+    "sentence": "asustar",
+    "payload": {
+      "answer": "asustar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "formar",
+        "Mienten",
+        "asustar",
+        "resistido"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "asustar,deseo,escoba,tristeza",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "asustar",
+          "answer": "To make somebody afraid of what might happen.",
+          "options": [
+            "To make somebody afraid of what might happen.",
+            "Something you want a lot and have not said yet.",
+            "Long brush for sweeping the floor of a room.",
+            "The heavy quiet feeling of something being lost."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "deseo",
+          "answer": "Something you want a lot and have not said yet.",
+          "options": [
+            "To make somebody afraid of what might happen.",
+            "Something you want a lot and have not said yet.",
+            "Long brush for sweeping the floor of a room.",
+            "The heavy quiet feeling of something being lost."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "escoba",
+          "answer": "Long brush for sweeping the floor of a room.",
+          "options": [
+            "To make somebody afraid of what might happen.",
+            "Something you want a lot and have not said yet.",
+            "Long brush for sweeping the floor of a room.",
+            "The heavy quiet feeling of something being lost."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "tristeza",
+          "answer": "The heavy quiet feeling of something being lost.",
+          "options": [
+            "To make somebody afraid of what might happen.",
+            "Something you want a lot and have not said yet.",
+            "Long brush for sweeping the floor of a room.",
+            "The heavy quiet feeling of something being lost."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]

@@ -1,0 +1,1016 @@
+[
+  {
+    "type": "fill_blank",
+    "word": "aguarda",
+    "sentence": "Ahora solo _____ con calma, sin buscar temas.",
+    "payload": {
+      "answer": "aguarda",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "ajusta",
+        "arrojarla",
+        "brinda",
+        "aguarda"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f57a7b5b82bce85.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ahora solo aguarda con calma, sin buscar temas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "aguardar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aguardar",
+    "sentence": "Ahora solo aguarda con calma, sin buscar temas.",
+    "payload": {
+      "answer": "To wait quietly, without asking when it will end.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "dead in his tracks",
+        "To wait quietly, without asking when it will end.",
+        "they laugh",
+        "gardening"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f57a7b5b82bce85.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ahora solo aguarda con calma, sin buscar temas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "aguardar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "almohada",
+    "sentence": "almohada",
+    "payload": {
+      "answer": "almohada",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "incógnita",
+        "almohada",
+        "boca",
+        "experta"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "coloca",
+    "sentence": "Irene le abre sin preguntar nada, le acerca la butaca y _____ una sábana detrás.",
+    "payload": {
+      "answer": "coloca",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "coloca",
+        "arroja",
+        "raspa",
+        "baila"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/529e31e6985624ee.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene le abre sin preguntar nada, le acerca la butaca y coloca una sábana detrás.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "colocar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colocar",
+    "sentence": "Irene le abre sin preguntar nada, le acerca la butaca y coloca una sábana detrás.",
+    "payload": {
+      "answer": "To put something carefully in the place it should be.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "to listen to it",
+        "they used to",
+        "carried away",
+        "To put something carefully in the place it should be."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/529e31e6985624ee.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene le abre sin preguntar nada, le acerca la butaca y coloca una sábana detrás.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "colocar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "listen_choose",
+    "word": "colcha",
+    "sentence": "colcha",
+    "payload": {
+      "answer": "colcha",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "estática",
+        "liga",
+        "colcha",
+        "gorra"
+      ],
+      "language": "spanish"
+    },
+    "featured": true
+  },
+  {
+    "type": "match_meaning",
+    "word": "penumbra,sábana,despertar,aguardar",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "penumbra",
+          "answer": "The half dark of a room before anybody turns lights on.",
+          "options": [
+            "To wait quietly, without asking when it will end.",
+            "To stop being asleep and open your eyes again.",
+            "The half dark of a room before anybody turns lights on.",
+            "Large thin cloth that goes between you and the bed."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sábana",
+          "answer": "Large thin cloth that goes between you and the bed.",
+          "options": [
+            "To wait quietly, without asking when it will end.",
+            "To stop being asleep and open your eyes again.",
+            "The half dark of a room before anybody turns lights on.",
+            "Large thin cloth that goes between you and the bed."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "despertar",
+          "answer": "To stop being asleep and open your eyes again.",
+          "options": [
+            "To wait quietly, without asking when it will end.",
+            "To stop being asleep and open your eyes again.",
+            "The half dark of a room before anybody turns lights on.",
+            "Large thin cloth that goes between you and the bed."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "aguardar",
+          "answer": "To wait quietly, without asking when it will end.",
+          "options": [
+            "To wait quietly, without asking when it will end.",
+            "To stop being asleep and open your eyes again.",
+            "The half dark of a room before anybody turns lights on.",
+            "Large thin cloth that goes between you and the bed."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "despertar",
+    "sentence": "Se te da bien esto de callarte; en agosto no sabías nada de eso, susurra Rocío al _____.",
+    "payload": {
+      "answer": "despertar",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "camellando",
+        "despertar",
+        "emprendemos",
+        "iluminar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6580a5484003c0fd.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Se te da bien esto de callarte; en agosto no sabías nada de eso”, susurra Rocío al despertar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "despertar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ladrido",
+    "sentence": "Fuera, un ladrido corto cruza el patio y una rama golpea la ventana.",
+    "payload": {
+      "answer": "The short loud sound that a dog makes.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "coastal",
+        "mansion",
+        "blocks",
+        "The short loud sound that a dog makes."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a8467b69eba7c222.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Fuera, un ladrido corto cruza el patio y una rama golpea la ventana.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "ladrido",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "luces",
+    "sentence": "Las dos permanecen así hasta que se apagan las _____ de la terraza.",
+    "payload": {
+      "answer": "luces",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "profundidad",
+        "luces",
+        "situación",
+        "taita"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9a84cb6e977136ba.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Las dos permanecen así hasta que se apagan las luces de la terraza.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "luces",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": true
+  },
+  {
+    "type": "fill_blank",
+    "word": "aguarda",
+    "sentence": "Ahora solo _____ con calma, sin buscar temas.",
+    "payload": {
+      "answer": "aguarda",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "transporta",
+        "raspa",
+        "jugándonosla",
+        "aguarda"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f57a7b5b82bce85.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ahora solo aguarda con calma, sin buscar temas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "aguardar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aguardar",
+    "sentence": "Ahora solo aguarda con calma, sin buscar temas.",
+    "payload": {
+      "answer": "To wait quietly, without asking when it will end.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "sceptical",
+        "an illusion",
+        "lit",
+        "To wait quietly, without asking when it will end."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f57a7b5b82bce85.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ahora solo aguarda con calma, sin buscar temas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "aguardar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "almohada",
+    "sentence": "almohada",
+    "payload": {
+      "answer": "almohada",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "taxista",
+        "colcha",
+        "almohada",
+        "cascada"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "descansar,sábana,susurrar,dormido",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "descansar",
+          "answer": "To stop doing things for a while and get your strength back.",
+          "options": [
+            "To speak so quietly that only one person hears you.",
+            "To stop doing things for a while and get your strength back.",
+            "Asleep, or only half awake and still very slow.",
+            "Large thin cloth that goes between you and the bed."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "sábana",
+          "answer": "Large thin cloth that goes between you and the bed.",
+          "options": [
+            "To speak so quietly that only one person hears you.",
+            "To stop doing things for a while and get your strength back.",
+            "Asleep, or only half awake and still very slow.",
+            "Large thin cloth that goes between you and the bed."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "susurrar",
+          "answer": "To speak so quietly that only one person hears you.",
+          "options": [
+            "To speak so quietly that only one person hears you.",
+            "To stop doing things for a while and get your strength back.",
+            "Asleep, or only half awake and still very slow.",
+            "Large thin cloth that goes between you and the bed."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "dormido",
+          "answer": "Asleep, or only half awake and still very slow.",
+          "options": [
+            "To speak so quietly that only one person hears you.",
+            "To stop doing things for a while and get your strength back.",
+            "Asleep, or only half awake and still very slow.",
+            "Large thin cloth that goes between you and the bed."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "coloca",
+    "sentence": "Irene le abre sin preguntar nada, le acerca la butaca y _____ una sábana detrás.",
+    "payload": {
+      "answer": "coloca",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "alcanza",
+        "evoluciona",
+        "coloca",
+        "recupera"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/529e31e6985624ee.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene le abre sin preguntar nada, le acerca la butaca y coloca una sábana detrás.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "colocar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "colocar",
+    "sentence": "Irene le abre sin preguntar nada, le acerca la butaca y coloca una sábana detrás.",
+    "payload": {
+      "answer": "To put something carefully in the place it should be.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "To put something carefully in the place it should be.",
+        "to graduate",
+        "enough",
+        "handed down from the ancestors"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/529e31e6985624ee.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Irene le abre sin preguntar nada, le acerca la butaca y coloca una sábana detrás.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "colocar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "colcha",
+    "sentence": "colcha",
+    "payload": {
+      "answer": "colcha",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "colcha",
+        "mochila",
+        "semilla",
+        "independencia"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "colocar,perezoso,siesta,mejilla",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "colocar",
+          "answer": "To put something carefully in the place it should be.",
+          "options": [
+            "The short sleep people take after eating at midday.",
+            "The soft side of your face, under your eye.",
+            "Slow and heavy, with no wish to do anything.",
+            "To put something carefully in the place it should be."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "perezoso",
+          "answer": "Slow and heavy, with no wish to do anything.",
+          "options": [
+            "The short sleep people take after eating at midday.",
+            "The soft side of your face, under your eye.",
+            "Slow and heavy, with no wish to do anything.",
+            "To put something carefully in the place it should be."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "siesta",
+          "answer": "The short sleep people take after eating at midday.",
+          "options": [
+            "The short sleep people take after eating at midday.",
+            "The soft side of your face, under your eye.",
+            "Slow and heavy, with no wish to do anything.",
+            "To put something carefully in the place it should be."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "mejilla",
+          "answer": "The soft side of your face, under your eye.",
+          "options": [
+            "The short sleep people take after eating at midday.",
+            "The soft side of your face, under your eye.",
+            "Slow and heavy, with no wish to do anything.",
+            "To put something carefully in the place it should be."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "despertar",
+    "sentence": "Se te da bien esto de callarte; en agosto no sabías nada de eso, susurra Rocío al _____.",
+    "payload": {
+      "answer": "despertar",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "interrumpir",
+        "compitiendo",
+        "afectar",
+        "despertar"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6580a5484003c0fd.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Se te da bien esto de callarte; en agosto no sabías nada de eso”, susurra Rocío al despertar.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "despertar",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ladrido",
+    "sentence": "Fuera, un ladrido corto cruza el patio y una rama golpea la ventana.",
+    "payload": {
+      "answer": "The short loud sound that a dog makes.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "read, showed",
+        "figure, carved piece",
+        "astonished",
+        "The short loud sound that a dog makes."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a8467b69eba7c222.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Fuera, un ladrido corto cruza el patio y una rama golpea la ventana.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "ladrido",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luces",
+    "sentence": "Las dos permanecen así hasta que se apagan las luces de la terraza.",
+    "payload": {
+      "answer": "The lamps of a place, and the light they give.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "gave way",
+        "to get back",
+        "The lamps of a place, and the light they give.",
+        "a bite"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9a84cb6e977136ba.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Las dos permanecen así hasta que se apagan las luces de la terraza.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "luces",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pantufla",
+    "sentence": "Rocío sube perezosa, con pantuflas y muy poco sueño encima.",
+    "payload": {
+      "answer": "Soft warm shoe you only wear inside the house.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "grandson",
+        "the fish are biting",
+        "to descend",
+        "Soft warm shoe you only wear inside the house."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b144ceb87dd80b74.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío sube perezosa, con pantuflas y muy poco sueño encima.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "pantufla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "penumbra",
+    "sentence": "Ya hay penumbra en la escalera a las siete y el domingo se hace largo.",
+    "payload": {
+      "answer": "The half dark of a room before anybody turns lights on.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "mobile phone",
+        "the Lady in White, a Buenos Aires ghost story",
+        "The half dark of a room before anybody turns lights on.",
+        "To stop doing things for a while and get your strength back."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b71da27050e9a3b3.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Ya hay penumbra en la escalera a las siete y el domingo se hace largo.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "penumbra",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "primera vez",
+    "sentence": "Antes, la primera vez, habría llenado ese silencio con tres preguntas.",
+    "payload": {
+      "answer": "The first time something happens, when it is all new.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "light up",
+        "The first time something happens, when it is all new.",
+        "the fruit, the result",
+        "festive"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/26cd6ad86b818355.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Antes, la primera vez, habría llenado ese silencio con tres preguntas.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "primera vez",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "siesta",
+    "sentence": "“Lo he aprendido aquí, contigo y con la siesta”, contesta Irene, y le acerca un vaso.",
+    "payload": {
+      "answer": "The short sleep people take after eating at midday.",
+      "prompt": "Choose the meaning that fits this word in context.",
+      "options": [
+        "in love with",
+        "a doorway",
+        "calls, songs",
+        "The short sleep people take after eating at midday."
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/adcfee059089099d.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "“Lo he aprendido aquí, contigo y con la siesta”, contesta Irene, y le acerca un vaso.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "siesta",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "fill_blank",
+    "word": "pantuflas",
+    "sentence": "Rocío sube perezosa, con _____ y muy poco sueño encima.",
+    "payload": {
+      "answer": "pantuflas",
+      "prompt": "Complete the sentence with the right word or expression.",
+      "options": [
+        "temporadas",
+        "especias",
+        "pantuflas",
+        "uñas"
+      ],
+      "audioClip": {
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b144ceb87dd80b74.mp3",
+        "voiceId": null,
+        "language": "spanish",
+        "sentence": "Rocío sube perezosa, con pantuflas y muy poco sueño encima.",
+        "cachedUrl": null,
+        "segmentId": null,
+        "storySlug": "ya-no-le-pesa-callarse",
+        "targetWord": "pantufla",
+        "storySource": "user",
+        "wordClipUrl": null,
+        "wordVoiceId": null,
+        "audioWordEndSec": null,
+        "audioWordStartSec": null,
+        "audioSentenceEndSec": null,
+        "audioSentenceStartSec": null
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "descansar",
+    "sentence": "descansar",
+    "payload": {
+      "answer": "descansar",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "sobrellevarlo",
+        "competir",
+        "descansar",
+        "superado"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "dormido",
+    "sentence": "dormido",
+    "payload": {
+      "answer": "dormido",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "ajado",
+        "famoso",
+        "dormido",
+        "anaranjado"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "listen_choose",
+    "word": "mejilla",
+    "sentence": "mejilla",
+    "payload": {
+      "answer": "mejilla",
+      "prompt": "Listen and choose the word you hear.",
+      "options": [
+        "mejilla",
+        "taza",
+        "remera",
+        "muñeca"
+      ],
+      "language": "spanish"
+    },
+    "featured": false
+  },
+  {
+    "type": "match_meaning",
+    "word": "aguardar,primera vez,pantufla,no pasa nada",
+    "sentence": "",
+    "payload": {
+      "pairs": [
+        {
+          "word": "aguardar",
+          "answer": "To wait quietly, without asking when it will end.",
+          "options": [
+            "Soft warm shoe you only wear inside the house.",
+            "It does not matter; there is no problem here.",
+            "The first time something happens, when it is all new.",
+            "To wait quietly, without asking when it will end."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "primera vez",
+          "answer": "The first time something happens, when it is all new.",
+          "options": [
+            "Soft warm shoe you only wear inside the house.",
+            "It does not matter; there is no problem here.",
+            "The first time something happens, when it is all new.",
+            "To wait quietly, without asking when it will end."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "pantufla",
+          "answer": "Soft warm shoe you only wear inside the house.",
+          "options": [
+            "Soft warm shoe you only wear inside the house.",
+            "It does not matter; there is no problem here.",
+            "The first time something happens, when it is all new.",
+            "To wait quietly, without asking when it will end."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        },
+        {
+          "word": "no pasa nada",
+          "answer": "It does not matter; there is no problem here.",
+          "options": [
+            "Soft warm shoe you only wear inside the house.",
+            "It does not matter; there is no problem here.",
+            "The first time something happens, when it is all new.",
+            "To wait quietly, without asking when it will end."
+          ],
+          "voiceId": null,
+          "language": "spanish",
+          "wordClipUrl": null,
+          "wordVoiceId": null
+        }
+      ],
+      "prompt": "Match the words to their meanings."
+    },
+    "featured": false
+  }
+]
