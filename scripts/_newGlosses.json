@@ -8665,6 +8665,22 @@
     "vacías": {
       "g": "empty, with nothing inside (feminine plural)",
       "t": "adjective"
+    },
+    "borres": {
+      "g": "delete (borrar, subjunctive after no)",
+      "t": "verb"
+    },
+    "renglones": {
+      "g": "the lines of writing on a page",
+      "t": "noun"
+    },
+    "tocarla": {
+      "g": "to touch it with your hand (tocar + la)",
+      "t": "verb"
+    },
+    "viniendo": {
+      "g": "coming here regularly (venir)",
+      "t": "verb"
     }
   }
 }
