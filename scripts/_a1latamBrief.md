@@ -51,6 +51,68 @@ el contenido NUEVO no lleva ancianos ni niños. Al continuarlos: los jovenes
 (Lucia, Camilo, Mateo) son adultos en activo, y los abuelos no reaparecen. La
 tia Rosa se queda solo si se la escribe como adulta de 40-55, no como anciana.
 
+## Elenco y espina, tema por tema
+
+Nadie es nuevo: los siete elencos vienen del A0 y siguen en su sitio. Cada
+ficha cita lo que el A0 dejo escrito, para no volver a inventar biografia.
+
+**1 · Night Buses · Cusco · Elena + Julio**
+A0: "Elena es turista en Cusco, Peru"; "Se llama Julio y vive en Cusco", chofer
+de taxi, la lleva al mirador y le propone Machu Picchu.
+A1: Elena sigue hacia el sur y el unico transporte es el bus de noche.
+(1) comprar el pasaje y entender que incluye · (2) la noche a bordo, el frio,
+las paradas · (3) llegar sola y agradecerle a Julio por telefono.
+
+**2 · Prices & Change · Ciudad de Mexico · Ana + la señora del mercado + Carla**
+A0: Ana no comprende el menu y aprende "picante"; "¿por que no hay horchata en
+mi pais?"; en la tercera ya guia a su amiga Carla.
+A1: Ana ya no teme el menu; ahora el problema es el dinero.
+(1) el precio no esta escrito y hay que preguntarlo · (2) el vuelto sale mal y
+hay que decirlo sin pelear · (3) Ana le enseña a Carla a preguntar antes de pagar.
+
+**3 · Calls & Messages · Cartagena · Lucia + su mama (Jorge, por telefono)**
+A0: la foto del tio Jorge, musico en Argentina; la llamada; "El proximo año,
+visito Cartagena. Lo prometo."
+A1: llega ese proximo año y hay que cuadrarlo por mensajes.
+(1) Jorge manda una fecha · (2) la mama no contesta y Lucia media · (3) el viaje
+queda confirmado, con hora y todo.
+
+**4 · Help & Repairs · Oaxaca · Mateo + la tia Rosa**
+A0: el alebrije que "cuida la casa"; Rosa lo movia cada noche; "la magia esta en
+la historia, en la imaginacion".
+A1: el alebrije se rompe.
+(1) se cae y pierde una pata · (2) Mateo lo pega mal y queda peor · (3) Rosa le
+enseña a repararlo de verdad, y el secreto pasa de nuevo.
+
+**5 · Names for Things · Buenos Aires · Pablo + Marta + Lucas**
+A0: Pablo recien llegado y timido; Marta es de Buenos Aires; el cumpleaños de
+Lucas; "¿Ves? No sos timido".
+A1: Pablo ya tiene amigos, pero sigue pidiendo mal.
+(1) pide una cosa y le traen otra · (2) Marta le hace una lista de dos columnas ·
+(3) Pablo corrige a otro recien llegado.
+
+**6 · Doors & Neighbours · Barranquilla · Camilo + su mama**
+A0: el Carnaval, el disfraz de plumas, "por unos dias, toda la ciudad es una
+sola familia".
+A1: pasado el Carnaval, el barrio de diario.
+(1) llega un vecino nuevo · (2) hay que pedirle un favor · (3) la puerta que se
+queda abierta.
+
+**7 · Trails & Weather · Patagonia · Valentina + su papa**
+A0: el sendero, la mochila pesada, el condor, la lluvia bajo la roca, el lago
+azul; "la aventura no es llegar; la aventura es el camino".
+A1: Valentina vuelve al mismo sendero y ahora lee ella el tiempo.
+(1) el parte y lo que hay que llevar · (2) la tormenta que si llega · (3) la
+cumbre, o darse la vuelta.
+
+## Sin espina comun, a proposito
+
+El A0 no tiene una y el A1 tampoco: son siete arcos independientes de tres. Es
+lo que separa esta forma de la version anterior, que colgaba las 21 de una sola
+protagonista que viajaba. Choca con la tabla de `project_journey_structure_plan`
+(Traveler: 2 personajes fijos), pero esa tabla dice de si misma que "no describe
+lo que existe"; el A0 manda porque es lo que el alumno acaba de leer.
+
 ## Lo que queda por rehacer
 
 Las 21 historias, enteras. El vocabulario (420 plazas) esta validado y sin
