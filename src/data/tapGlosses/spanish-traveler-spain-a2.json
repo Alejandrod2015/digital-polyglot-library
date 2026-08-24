@@ -2335,10 +2335,6 @@
    "g": "none, not any (fem.)",
    "t": "adjective"
   },
-  "ninguno": {
-   "g": "none, no one",
-   "t": "pronoun"
-  },
   "no": {
    "g": "no, not",
    "t": "adverb"
@@ -2695,6 +2691,10 @@
    "g": "the plants",
    "t": "noun"
   },
+  "platillo": {
+   "g": "the small plate that goes under a coffee cup",
+   "t": "noun"
+  },
   "platos": {
    "g": "plates, dishes",
    "t": "noun"
@@ -2890,6 +2890,10 @@
   "quique": {
    "g": "Quique (name of the man who runs the bar)",
    "t": "noun"
+  },
+  "quién": {
+   "g": "who",
+   "t": "pronoun"
   },
   "qué": {
    "g": "what",
@@ -3653,6 +3657,10 @@
   },
   "tronco": {
    "g": "trunk",
+   "t": "noun"
+  },
+  "trozos": {
+   "g": "pieces, bits torn or broken off",
    "t": "noun"
   },
   "tubo": {

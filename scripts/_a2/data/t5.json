@@ -256,7 +256,7 @@
   "slug": "el-caldo-no-era-suyo",
   "arcType": "late-reveal",
   "synopsis": "Alguien lleva desde octubre dándole de comer a Irene sin firmar el favor, y ella se lo ha estado agradeciendo a la persona equivocada. El día en que devuelve los cacharros al piso correcto se le junta lo bueno con lo malo en la misma puerta: la que la alimenta cada jueves es también la que tiene medio prometido su piso a otra. Baja sin saber cuál de las dos cosas pesa más.",
-  "text": "En la cocina de Irene hay tres recipientes y un trapo ajenos. Uno aparece tapado en el suelo cada semana, tibio y sin una letra escrita. Rosa le sigue el juego cuando Irene le da las gracias por la sopa.\n\n“Yo no hago sopa en noviembre, que se me pone mala en dos días”, contesta Rosa. “Y esa ensaladera no ha salido nunca de esta cocina, hija, que la mía es de arcilla vieja”. Con la tetera en la mano, Irene llama a la puerta de arriba.\n\nRocío abre con masa en las manos y ceniza en la camisa. Detrás hay una olla al fuego y hueso de ternera en la tabla. “No hacía falta subirlo; de verdad que no hacía falta, mujer”, dice sin mirarla.\n\nDeja los cacharros en una silla, junto a la nevera de par en par y una pila de platos. La que le da de comer cada jueves es la que quiere su piso para otra. Baja al patio con las dos cosas encima.",
+  "text": "En la cocina de Irene hay tres recipientes y un trapo ajenos. Uno aparece tapado en el suelo cada semana, tibio y sin letra. Rosa le sigue el juego cuando Irene le da las gracias por la sopa.\n\n“Yo no hago sopa en noviembre, que se me pone mala en dos días”, contesta Rosa. “Y esa ensaladera no ha salido nunca de esta cocina, hija, que la mía es de arcilla vieja”. Con la tetera en la mano, Irene llama a la puerta de arriba.\n\nRocío abre con masa en las manos y ceniza en la camisa. Detrás hay una olla al fuego y hueso de ternera en la tabla. “No hacía falta subirlo; de verdad que no hacía falta, mujer”, dice sin mirarla.\n\nDeja los cacharros en la silla, junto a una pila de platos y la nevera de par en par. La que le da de comer cada jueves es la que quiere su piso para otra. Baja al patio sin saber a quién dar las gracias.",
   "vocab": [
    {
     "word": "recipiente",
@@ -351,11 +351,6 @@
     "word": "trapo",
     "type": "noun",
     "definition": "Old piece of cloth kept for cleaning or drying."
-   },
-   {
-    "word": "silla",
-    "type": "noun",
-    "definition": "A seat with a back, for one person at a table."
    },
    {
     "word": "ceniza",

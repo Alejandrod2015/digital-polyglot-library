@@ -466,5 +466,13 @@
  "subieron": {
   "g": "they went up (past of subir)",
   "t": "verb"
+ },
+ "trozos": {
+  "g": "pieces, bits torn or broken off",
+  "t": "noun"
+ },
+ "platillo": {
+  "g": "the small plate that goes under a coffee cup",
+  "t": "noun"
  }
 }
