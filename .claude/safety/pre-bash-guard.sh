@@ -641,7 +641,7 @@ fi
 #     salta. `--dry` no cuesta nada y pasa.
 if printf '%s' "$COMMAND" | grep -qE '(generateCover\.ts|_gen[A-Za-z0-9]*Covers?\.ts|api\.bfl\.ai|api\.us1\.bfl\.ai|generateFluxImageBuffer|images/generations|gemini-[0-9a-z.-]*image)' \
    && ! printf '%s' "$COMMAND" | grep -qE -- '--dry'; then
-    IMG_CHECK="$(printf '%s' "$PAYLOAD" | /usr/bin/python3 -c '
+    IMG_CHECK="$(DPL_IMG_CMD="$COMMAND" printf '%s' "$PAYLOAD" | DPL_IMG_CMD="$COMMAND" /usr/bin/python3 -c '
 import json, sys, re, os, hashlib
 try:
     payload = json.load(sys.stdin)
@@ -688,8 +688,14 @@ for m in verb_pat.finditer(last):
     break
 if not autorizado:
     print("no_verb"); sys.exit(0)
-# Un disparador, una imagen.
-huella = hashlib.sha1(last.strip().encode("utf-8")).hexdigest()[:16]
+# Un disparador, una tirada POR IMAGEN. La huella lleva el mensaje Y el
+# comando, que es lo que identifica a que historia va la portada: asi un
+# mensaje que pide "el resto del tema" puede sacar sus tres, y el que ya
+# saco una no puede volver a tirarla. Lo que se bloquea es RE-TIRAR la
+# misma portada por iniciativa propia, que es lo que paso.
+cmd = os.environ.get("DPL_IMG_CMD", "")
+cmd = re.sub(r"\s+", " ", cmd).strip()
+huella = hashlib.sha1((last.strip() + "\n" + cmd).encode("utf-8")).hexdigest()[:16]
 libro = os.path.join(os.path.dirname(tp), "..", "..", ".image-spend")
 libro = os.environ.get("DPL_IMAGE_SPEND_FILE") or ".claude/safety/.image-spend"
 try:
@@ -711,9 +717,9 @@ print("ok")
         log_audit "BLOCK_IMAGE[$IMG_CHECK]" "$COMMAND"
         if [ "$IMG_CHECK" = "already_spent" ]; then
             cat >&2 <<EOF
-[safety-guard] BLOCKED: este mensaje del usuario YA gasto su imagen.
+[safety-guard] BLOCKED: esta portada YA se tiro con este mensaje.
 
-Un disparador = UNA imagen. No hay presupuesto de dos tiradas: el "TOPE: 2"
+Un disparador = UNA tirada POR IMAGEN. No hay presupuesto de dos: el "TOPE: 2"
 de CLAUDE.md era un techo, y desde el 2026-08-24 el tope es 1.
 
 Si la tirada salio mal, ENSENALA, di que esta mal y ESPERA. El usuario decide
