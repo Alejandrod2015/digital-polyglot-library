@@ -106,6 +106,27 @@ en 7.2.
 `Journey.nextJourneyId` (`scripts/_a2/encadenar.ts`). El A1 apuntaba al B1 y
 ahora apunta al A2.
 
+## Reglas sin gate, medidas a mano (2026-08-24)
+
+`scripts/_a2/reglas.ts`. De las que ningun check mide, tres fallaban y se
+arreglaron; el resto ya estaban bien.
+
+| regla | antes | ahora |
+|---|---|---|
+| frase que cierra en relativa colgada | 7 | 0 |
+| plazas marcadas `anchor` | 0 de 438 | 126 de 439 (28%) |
+| ancla cultural con plaza (`guapa` como trato) | no | si, en `el-atajo-no-era-un-atajo` |
+| imperativo breve solo en su turno | 0 | 0 |
+| glosas con `=` | 0 | 0 |
+| comillas angulares o rectas | 0 | 0 |
+| guiones largos | 0 | 0 |
+| argot en nivel A | 0 | 0 |
+| arco 1 a 3 dentro de cada tema | leido, encaja | |
+
+Las siete relativas se cortaron ANTES de generar un segundo de audio, que es
+cuando sale gratis: esa forma sube el tono al final y el gate F0 agota sus tres
+tomas sin arreglarlo, porque no es azar de la toma sino la forma de la frase.
+
 ## Pendiente
 
 - **Portadas**: ninguna. Gastan creditos de imagen y esperan al verbo del
