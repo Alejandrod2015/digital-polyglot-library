@@ -34,9 +34,33 @@ const prisma = new PrismaClient();
 
 /** viejo slug -> { slug, label, evidence } */
 const CAMBIOS: Record<string, { slug: string; label: string; evidence: string[] }> = {
-  "hands-and-gestures": {
+  "errands-and-parcels": {
+    slug: "helping-and-favours", label: "Helping & Favours",
+    evidence: ["every time she need something, that I can’t seem to understand, reached for or fixed"],
+  },
+  "rest-and-free-time": {
+    slug: "rest-and-free-time", label: "Rest & Free Time",
+    evidence: ["He lives with his grandmother who only speaks Spanish"],
+  },
+  "body-and-manners": {
     slug: "body-and-manners", label: "Body & Manners",
     evidence: ["I appreciate being able to instantly check translations that I don’t understand."],
+  },
+  "countryside-and-gardens": {
+    slug: "countryside-and-nature", label: "Countryside & Nature",
+    evidence: ["To be able to speak  Spanish when travelling to Spain"],
+  },
+  "cooking-and-kitchen": {
+    slug: "kitchen-and-cooking", label: "Kitchen & Cooking",
+    evidence: ["He lives with his grandmother who only speaks Spanish"],
+  },
+  "feelings-and-confidence": {
+    slug: "feelings-and-confidence", label: "Feelings & Confidence",
+    evidence: ["I don’t want to call my boyfriend over every time she need something"],
+  },
+  "paperwork-and-keys": {
+    slug: "home-and-paperwork", label: "Home & Paperwork",
+    evidence: ["Holiday home in Spain and I wish to talk to neighbours"],
   },
 };
 
