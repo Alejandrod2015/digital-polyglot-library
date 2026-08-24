@@ -1141,6 +1141,34 @@ function RetentionPanel({
     };
   };
 
+  /**
+   * Media ponderada por columna: la curva de retención de toda la gente junta,
+   * que es lo que se lee de un vistazo cuando cada cohorte trae dos o tres
+   * personas y sus porcentajes saltan entre 0 y 100.
+   *
+   * Solo entran las celdas CERRADAS. Una parcial mete en el promedio a quien
+   * todavía no ha llegado a ese día, así que la columna se hundiría a base de
+   * ceros que no son abandono sino falta de tiempo.
+   */
+  const averages = Array.from({ length: buckets }, (_, n) => {
+    let retained = 0;
+    let base = 0;
+    let closed = 0;
+    for (const c of cohorts) {
+      const cell = c.cells[n];
+      if (!cell || cell.partial) continue;
+      retained += cell.retained;
+      base += c.users;
+      closed += 1;
+    }
+    return {
+      retained,
+      base,
+      closed,
+      pct: base > 0 ? Math.round((retained / base) * 1000) / 10 : null,
+    };
+  });
+
   return (
     <div className="mx-panel" style={{ marginBottom: 12 }}>
       <div className="mx-panel__head">
@@ -1252,6 +1280,53 @@ function RetentionPanel({
                 </tr>
               ))}
             </tbody>
+            <tfoot>
+              <tr style={{ fontWeight: 600 }}>
+                <td
+                  style={{
+                    padding: "7px 6px 5px",
+                    whiteSpace: "nowrap",
+                    borderTop: "1px solid var(--mx-border, rgba(255,255,255,0.14))",
+                  }}
+                >
+                  Promedio
+                </td>
+                <td
+                  style={{
+                    padding: "7px 6px 5px",
+                    textAlign: "right",
+                    opacity: 0.75,
+                    borderTop: "1px solid var(--mx-border, rgba(255,255,255,0.14))",
+                  }}
+                >
+                  {cohorts.reduce((sum, c) => sum + c.users, 0)}
+                </td>
+                {averages.map((avg, n) => (
+                  <td
+                    key={n}
+                    style={{
+                      ...cellStyle({
+                        retained: avg.retained,
+                        pct: avg.pct ?? 0,
+                        partial: false,
+                      }),
+                      padding: "7px 6px 5px",
+                      borderTop: "1px solid var(--mx-border, rgba(255,255,255,0.14))",
+                      opacity: avg.pct === null ? 0.4 : 1,
+                    }}
+                    title={
+                      avg.pct === null
+                        ? "Ninguna cohorte ha cerrado este tramo todavía"
+                        : `${avg.retained} de ${avg.base}, en ${avg.closed} ${
+                            avg.closed === 1 ? "cohorte cerrada" : "cohortes cerradas"
+                          }`
+                    }
+                  >
+                    {avg.pct === null ? "s/d" : `${avg.pct}%`}
+                  </td>
+                ))}
+              </tr>
+            </tfoot>
           </table>
         </div>
       )}
@@ -1277,7 +1352,11 @@ function RetentionPanel({
         escribe el servidor (correos de ciclo de vida y envíos de aviso). Los
         hitos son sin techo: &laquo;a partir del día 7&raquo; incluye a quien
         dio señal ese día o cualquiera posterior. Las tarjetas de arriba no
-        dependen del grano: salen de la misma gente en los dos casos.
+        dependen del grano: salen de la misma gente en los dos casos. La fila
+        &laquo;Promedio&raquo; es la media ponderada de la columna contando
+        personas, no cohortes, y deja fuera los tramos aún abiertos: por eso su
+        base se estrecha hacia la derecha y pone &laquo;s/d&raquo; donde nadie
+        ha cumplido todavía ese día.
         {omittedCohorts > 0
           ? ` Quedan ${omittedCohorts} tramos más antiguos fuera de la tabla.`
           : ""}
