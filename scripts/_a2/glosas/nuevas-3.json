@@ -394,5 +394,17 @@
  "listas": {
   "g": "ready (fem. plural); prepared and waiting",
   "t": "adjective"
+ },
+ "vino": {
+  "g": "came (past of venir); also: wine",
+  "t": "verb"
+ },
+ "pasar": {
+  "g": "to spend time somewhere; also: to pass, to happen",
+  "t": "verb"
+ },
+ "quedado": {
+  "g": "stayed (se ha quedado: she has stayed on)",
+  "t": "verb"
  }
 }

@@ -2399,10 +2399,6 @@
    "g": "another (fem.)",
    "t": "adjective"
   },
-  "otras": {
-   "g": "others (fem.)",
-   "t": "adjective"
-  },
   "otro": {
    "g": "another, other",
    "t": "adjective"
@@ -2519,6 +2515,10 @@
    "g": "they pass, happen",
    "t": "verb"
   },
+  "pasar": {
+   "g": "to spend time somewhere; also: to pass, to happen",
+   "t": "verb"
+  },
   "pastillas": {
    "g": "pills, small hard pieces of medicine",
    "t": "noun"
@@ -2549,10 +2549,6 @@
   },
   "pensaba": {
    "g": "thought, expected",
-   "t": "verb"
-  },
-  "pensarlo": {
-   "g": "to think it over",
    "t": "verb"
   },
   "penumbra": {
@@ -2801,6 +2797,10 @@
   },
   "queda": {
    "g": "stays; (me queda) I have left; (quedarse) to stay on",
+   "t": "verb"
+  },
+  "quedado": {
+   "g": "stayed (se ha quedado: she has stayed on)",
    "t": "verb"
   },
   "quedan": {
@@ -3769,6 +3769,10 @@
   },
   "viene": {
    "g": "he/she comes",
+   "t": "verb"
+  },
+  "vino": {
+   "g": "came (past of venir); also: wine",
    "t": "verb"
   },
   "vista": {
