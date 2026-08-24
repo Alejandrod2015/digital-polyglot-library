@@ -6755,7 +6755,7 @@
    "t": "noun"
   },
   "collega": {
-   "g": "connects",
+   "g": "connects (collegare); colleague",
    "t": "verb"
   },
   "collo": {
@@ -6767,8 +6767,8 @@
    "t": "noun"
   },
   "consegna": {
-   "g": "hands over",
-   "t": "verb"
+   "g": "delivery; hands over (consegnare)",
+   "t": "noun"
   },
   "contratto": {
    "g": "contract",
@@ -6943,7 +6943,7 @@
    "t": "noun"
   },
   "firma": {
-   "g": "signs",
+   "g": "signs (firmare); signature",
    "t": "verb"
   },
   "forma": {
@@ -7095,7 +7095,7 @@
    "t": "noun"
   },
   "male": {
-   "g": "badly, and in fare male also to hurt or to be sore",
+   "g": "badly; fa male, hurts",
    "t": "adverb"
   },
   "mamma": {
@@ -7595,8 +7595,8 @@
    "t": "noun"
   },
   "sveglia": {
-   "g": "to wake up (svegliarsi)",
-   "t": "adjective"
+   "g": "alarm, alarm clock",
+   "t": "noun"
   },
   "tamburo": {
    "g": "drum",
@@ -8996,6 +8996,58 @@
   },
   "sono": {
    "g": "am, are; there are (esserci)",
+   "t": "verb"
+  },
+  "porta": {
+   "g": "door; brings, takes (portare)",
+   "t": "noun"
+  },
+  "mezzo": {
+   "g": "half; in mezzo, in the middle",
+   "t": "adjective"
+  },
+  "conto": {
+   "g": "count, sum; bill",
+   "t": "noun"
+  },
+  "cucina": {
+   "g": "cooks (cucinare); kitchen",
+   "t": "verb"
+  },
+  "ferma": {
+   "g": "still, not moving; stops (fermare)",
+   "t": "verb"
+  },
+  "turno": {
+   "g": "shift at work; di turno, on duty",
+   "t": "noun"
+  },
+  "campo": {
+   "g": "phone signal, coverage",
+   "t": "noun"
+  },
+  "serve": {
+   "g": "is needed",
+   "t": "verb"
+  },
+  "conta": {
+   "g": "counts",
+   "t": "verb"
+  },
+  "tempo": {
+   "g": "time",
+   "t": "noun"
+  },
+  "lungo": {
+   "g": "long",
+   "t": "adjective"
+  },
+  "tira": {
+   "g": "pulls",
+   "t": "verb"
+  },
+  "abita": {
+   "g": "lives, has their home",
    "t": "verb"
   }
  }

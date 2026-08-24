@@ -40,7 +40,7 @@
    "t": "verb"
   },
   "abita": {
-   "g": "lives; resides",
+   "g": "lives, has their home",
    "t": "verb"
   },
   "abito": {
@@ -528,7 +528,7 @@
    "t": "noun"
   },
   "campo": {
-   "g": "square; field",
+   "g": "phone signal, coverage",
    "t": "noun"
   },
   "cancello": {
@@ -728,7 +728,7 @@
    "t": "noun"
   },
   "collega": {
-   "g": "connects",
+   "g": "connects (collegare); colleague",
    "t": "verb"
   },
   "collo": {
@@ -788,8 +788,8 @@
    "t": "verb"
   },
   "consegna": {
-   "g": "hands over",
-   "t": "verb"
+   "g": "delivery; hands over (consegnare)",
+   "t": "noun"
   },
   "consegne": {
    "g": "deliveries (consegna)",
@@ -800,11 +800,11 @@
    "t": "verb"
   },
   "conta": {
-   "g": "counts; matters",
+   "g": "counts",
    "t": "verb"
   },
   "conto": {
-   "g": "bill, check",
+   "g": "count, sum; bill",
    "t": "noun"
   },
   "contratto": {
@@ -908,8 +908,8 @@
    "t": "noun"
   },
   "cucina": {
-   "g": "kitchen",
-   "t": "noun"
+   "g": "cooks (cucinare); kitchen",
+   "t": "verb"
   },
   "cura": {
    "g": "course of treatment",
@@ -1284,7 +1284,7 @@
    "t": "noun"
   },
   "ferma": {
-   "g": "stops",
+   "g": "still, not moving; stops (fermare)",
    "t": "verb"
   },
   "fermano": {
@@ -1352,7 +1352,7 @@
    "t": "preposition"
   },
   "firma": {
-   "g": "signs",
+   "g": "signs (firmare); signature",
    "t": "verb"
   },
   "firmare": {
@@ -1828,7 +1828,7 @@
    "t": "adjective"
   },
   "lungo": {
-   "g": "long; along",
+   "g": "long",
    "t": "adjective"
   },
   "lunigiana": {
@@ -1888,7 +1888,7 @@
    "t": "noun"
   },
   "male": {
-   "g": "badly, and in fare male also to hurt or to be sore",
+   "g": "badly; fa male, hurts",
    "t": "adverb"
   },
   "mamma": {
@@ -2036,7 +2036,7 @@
    "t": "noun"
   },
   "mezzo": {
-   "g": "half",
+   "g": "half; in mezzo, in the middle",
    "t": "adjective"
   },
   "mi": {
@@ -2620,7 +2620,7 @@
    "t": "noun"
   },
   "porta": {
-   "g": "door",
+   "g": "door; brings, takes (portare)",
    "t": "noun"
   },
   "portano": {
@@ -3220,7 +3220,7 @@
    "t": "noun"
   },
   "serve": {
-   "g": "serves; is needed",
+   "g": "is needed",
    "t": "verb"
   },
   "sessanta": {
@@ -3552,8 +3552,8 @@
    "t": "noun"
   },
   "sveglia": {
-   "g": "to wake up (svegliarsi)",
-   "t": "adjective"
+   "g": "alarm, alarm clock",
+   "t": "noun"
   },
   "sveglio": {
    "g": "I wake you up",
@@ -3652,7 +3652,7 @@
    "t": "noun"
   },
   "tempo": {
-   "g": "time, weather",
+   "g": "time",
    "t": "noun"
   },
   "tenda": {
@@ -3696,7 +3696,7 @@
    "t": "noun"
   },
   "tira": {
-   "g": "pulls; blows",
+   "g": "pulls",
    "t": "verb"
   },
   "toglie": {
@@ -3804,7 +3804,7 @@
    "t": "adjective"
   },
   "turno": {
-   "g": "turn",
+   "g": "shift at work; di turno, on duty",
    "t": "noun"
   },
   "tutta": {
