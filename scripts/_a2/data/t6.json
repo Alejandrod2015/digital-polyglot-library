@@ -1,0 +1,365 @@
+[
+ {
+  "topic": "nerves-and-courage",
+  "slotIndex": 1,
+  "title": "Tres veces cuelga antes",
+  "slug": "tres-veces-cuelga-antes",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Preguntar por el precio del piso obliga a llamar a Málaga y a hablar sola con alguien que no la conoce, sin nadie al lado que le termine las frases. Irene escribe lo que va a decir, lo dice en voz baja y cuelga tres veces antes de que suene. La cuarta aguanta hasta el final, y quien descuelga al otro lado no es la persona que ella esperaba.",
+  "text": "Tres veces marca el número de Málaga con el auricular en la mano. Irene escribe la frase, la dice en voz baja y le sale tensa. A solas, sin Rocío detrás terminándosela, le entra un temor nuevo.\n\n“Un poco de ánimo, hija, que es una pregunta de dos líneas y ya está, mujer”, dice Rocío. “Y si te atascas, te atascas, que aquí no se ha muerto nadie por eso, guapa”, añade. Irene toma aliento y disimula el susto delante del cristal.\n\nLe sale una voz tímida que no reconoce y se le queda la boca seca. La sangre le sube a la cara y el corazón le golpea. “No es vergüenza, es coraje lo que me falta, y lo sé desde el lunes”, se dice sola.\n\nA la cuarta marca con toda la intención y no cuelga, ni valiente ni cobarde. Alguien descuelga al otro lado y saluda con una voz que ella conoce. Arriba, tres pisos por encima, se oye el mismo saludo un segundo después.",
+  "vocab": [
+   {
+    "word": "marcar",
+    "surface": "marca",
+    "type": "verb",
+    "definition": "To press the numbers of a telephone one by one."
+   },
+   {
+    "word": "auricular",
+    "type": "noun",
+    "definition": "The part of a telephone you hold against your ear.",
+    "surface": "auricular"
+   },
+   {
+    "word": "en voz baja",
+    "type": "expression",
+    "definition": "Very quietly, so that nobody else can hear you."
+   },
+   {
+    "word": "a solas",
+    "type": "expression",
+    "definition": "On your own, with nobody there to help you."
+   },
+   {
+    "word": "temor",
+    "type": "noun",
+    "definition": "A quiet fear of something that has not happened yet."
+   },
+   {
+    "word": "ánimo",
+    "type": "noun",
+    "definition": "The push you give somebody so that they dare to act."
+   },
+   {
+    "word": "atascarse",
+    "surface": "atascas",
+    "type": "verb",
+    "definition": "To get stuck in the middle of what you were saying."
+   },
+   {
+    "word": "cristal",
+    "surface": "cristal",
+    "type": "noun",
+    "definition": "The glass of a window, cold and clear to the touch."
+   },
+   {
+    "word": "aliento",
+    "type": "noun",
+    "definition": "The air you take in before doing something hard."
+   },
+   {
+    "word": "disimular",
+    "surface": "disimula",
+    "type": "verb",
+    "definition": "To hide what you feel so that nobody sees it."
+   },
+   {
+    "word": "susto",
+    "type": "noun",
+    "definition": "A short sharp fright that passes very quickly."
+   },
+   {
+    "word": "tímido",
+    "surface": "tímida",
+    "type": "adjective",
+    "definition": "Shy; afraid to speak in front of other people."
+   },
+   {
+    "word": "reconocer",
+    "surface": "reconoce",
+    "type": "verb",
+    "definition": "To know something again when you meet it a second time."
+   },
+   {
+    "word": "sangre",
+    "type": "noun",
+    "definition": "The red liquid that runs inside your body."
+   },
+   {
+    "word": "corazón",
+    "type": "noun",
+    "definition": "The part inside your chest that beats all day."
+   },
+   {
+    "word": "vergüenza",
+    "type": "noun",
+    "definition": "The hot feeling of being watched while you fail."
+   },
+   {
+    "word": "coraje",
+    "type": "noun",
+    "definition": "The courage to do the thing that frightens you."
+   },
+   {
+    "word": "intención",
+    "type": "noun",
+    "definition": "What you really mean to do when you start."
+   },
+   {
+    "word": "valiente",
+    "type": "adjective",
+    "definition": "Brave; ready to do the thing that scares you."
+   },
+   {
+    "word": "cobarde",
+    "type": "adjective",
+    "definition": "Too afraid to do what you know you should."
+   },
+   {
+    "word": "descolgar",
+    "surface": "descuelga",
+    "type": "verb",
+    "definition": "To pick up a telephone that is ringing."
+   },
+   {
+    "word": "lado",
+    "type": "noun",
+    "definition": "One of the two ends of a telephone conversation."
+   }
+  ]
+ },
+ {
+  "topic": "nerves-and-courage",
+  "slotIndex": 2,
+  "title": "Álvaro pregunta y ya",
+  "slug": "alvaro-pregunta-y-ya",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Álvaro le suelta a Quique una pregunta de dinero sin envolverla en nada y se lleva una respuesta igual de corta, sin que nadie se enfade. Irene, que lleva cinco meses preguntando de lado y pidiendo perdón antes de abrir la boca, ve las dos maneras una al lado de la otra en la misma barra. Descubre que su cortesía no era educación: era miedo con buena ropa.",
+  "text": "Hay dos maneras de preguntar y esta tarde Irene las ve juntas. Álvaro entra con el canasto vacío y se sienta junto a Quique. Ella lleva cinco meses preguntando de lado, con medias palabras y muchas excusas.\n\n“Quique, ¿cuánto te ha dejado el verano este año, en dinero?”, pregunta Álvaro a la cara. “Poco, y bastante menos que el otro”, contesta él, y no se enfada nada. Nadie engaña a nadie, nadie se molesta, y la conversación sigue con calma.\n\nIrene se da cuenta de que su curiosidad siempre sale envuelta en excusas. “Perdona, no quiero molestar, era solo por saber, si se puede”, dice ella todavía. Quique se ríe y le acerca un café caliente con medio bizcocho.\n\n“Pregunta y ya, guapa, que la vuelta larga cansa más que la pregunta”, le dice. Ella lo intenta, le sale corta y auténtica, y con más entusiasmo del que esperaba. La respuesta llega igual de corta y las dos se quedan en la misma barra.",
+  "vocab": [
+   {
+    "word": "manera",
+    "surface": "maneras",
+    "type": "noun",
+    "definition": "One of the ways in which a thing can be done."
+   },
+   {
+    "word": "de lado",
+    "type": "expression",
+    "definition": "Sideways; not straight at the thing you really mean."
+   },
+   {
+    "word": "palabra",
+    "surface": "palabras",
+    "type": "noun",
+    "definition": "One of the units that a sentence is made of."
+   },
+   {
+    "word": "excusas",
+    "type": "noun",
+    "definition": "Reasons you give first so that nobody gets cross."
+   },
+   {
+    "word": "cara",
+    "type": "noun",
+    "definition": "The front of your head, where your eyes are."
+   },
+   {
+    "word": "enfadar",
+    "surface": "enfada",
+    "type": "verb",
+    "definition": "To make somebody angry about what you just said."
+   },
+   {
+    "word": "engañar",
+    "surface": "engaña",
+    "type": "verb",
+    "definition": "To make somebody believe a thing that is not true."
+   },
+   {
+    "word": "molestar",
+    "type": "verb",
+    "definition": "To bother somebody who did not ask to be bothered."
+   },
+   {
+    "word": "curiosidad",
+    "type": "noun",
+    "definition": "The wish to know something that is not your business."
+   },
+   {
+    "word": "y ya",
+    "type": "expression",
+    "definition": "And that is it, with nothing added afterwards."
+   },
+   {
+    "word": "vuelta",
+    "type": "noun",
+    "definition": "The long way round instead of the short one."
+   },
+   {
+    "word": "cansar",
+    "surface": "cansa",
+    "type": "verb",
+    "definition": "To make somebody tired of what you are doing."
+   },
+   {
+    "word": "intentar",
+    "surface": "intenta",
+    "type": "verb",
+    "definition": "To try to do something that you might not manage."
+   },
+   {
+    "word": "auténtico",
+    "surface": "auténtica",
+    "type": "adjective",
+    "definition": "Real and honest, with nothing put on top."
+   },
+   {
+    "word": "entusiasmo",
+    "type": "noun",
+    "definition": "The bright energy you feel when something goes well."
+   },
+   {
+    "word": "junto",
+    "type": "adjective",
+    "definition": "Right next to something, with nothing in between."
+   },
+   {
+    "word": "tarde",
+    "type": "noun",
+    "definition": "The part of the day between lunch and the evening."
+   },
+   {
+    "word": "todavía",
+    "type": "adverb",
+    "definition": "Still; at a moment when it should already have stopped."
+   },
+   {
+    "word": "año",
+    "type": "noun",
+    "definition": "The twelve months from one January to the next."
+   },
+   {
+    "word": "medio",
+    "type": "adjective",
+    "definition": "Half of something; one of its two equal parts."
+   }
+  ]
+ },
+ {
+  "topic": "nerves-and-courage",
+  "slotIndex": 3,
+  "title": "Ya no cabe callarse",
+  "slug": "ya-no-cabe-callarse",
+  "arcType": "reframe-turn",
+  "synopsis": "Irene sube a decirle a Rocío la frase que lleva desde octubre guardándose, y le sale entera y sin temblor. Lo que descubre en la respuesta no es lo que temía: su vecina llevaba dos meses esperándola. Lo que la tenía parada nunca fue el idioma, sino que hay frases que, una vez dichas, ya no se pueden guardar otra vez.",
+  "text": "Nunca había dicho en alto que quiere quedarse con el piso. Rocío friega preocupada, con la escoba apoyada, sin tristeza y con un aire helado detrás. Irene llega sin frase preparada y con el deseo suelto en la boca.\n\n“Quiero comprarlo yo, y lo quiero decir hoy, delante de ti”, dice, y la emoción sale entera. Rocío deja el trapo, se seca las manos y se apoya en el aparador, amable. “Ya lo sabía, hija; llevo dos meses esperando a que lo dijeras tú, de verdad”.\n\nLo que a Irene la asustaba no era el idioma ni el valor, sino la amistad de después. Era el sentimiento de decir algo que ya no se guarda. “Yo creía que era mi español, y era yo”, dice, con una sonrisa débil.\n\n“Te faltaba acostumbrarte a querer algo en alto, que eso cuesta años”, contesta Rocío. Se quedan calladas y a Irene la alegra esa paz nueva. Por primera vez desde julio, a Irene la alegra no traducir por dentro.",
+  "vocab": [
+   {
+    "word": "en alto",
+    "type": "expression",
+    "definition": "Out loud, where other people can hear you say it."
+   },
+   {
+    "word": "preocupado",
+    "surface": "preocupada",
+    "type": "adjective",
+    "definition": "Worried; with something heavy going round your head."
+   },
+   {
+    "word": "deseo",
+    "type": "noun",
+    "definition": "Something you want a lot and have not said yet."
+   },
+   {
+    "word": "entero",
+    "type": "adjective",
+    "definition": "Whole and complete, with no part of it missing.",
+    "surface": "entera"
+   },
+   {
+    "word": "emoción",
+    "type": "noun",
+    "definition": "The strong feeling that comes with an important moment."
+   },
+   {
+    "word": "aparador",
+    "type": "noun",
+    "definition": "Low cupboard in a kitchen where dishes are kept."
+   },
+   {
+    "word": "amable",
+    "type": "adjective",
+    "definition": "Kind; treating you well without being asked to."
+   },
+   {
+    "word": "asustar",
+    "surface": "asustaba",
+    "type": "verb",
+    "definition": "To make somebody afraid of what might happen."
+   },
+   {
+    "word": "valor",
+    "type": "noun",
+    "definition": "The strength it takes to do something that frightens you."
+   },
+   {
+    "word": "sentimiento",
+    "type": "noun",
+    "definition": "What a person feels inside about something that matters."
+   },
+   {
+    "word": "débil",
+    "type": "adjective",
+    "definition": "Weak; without much strength left behind it at all."
+   },
+   {
+    "word": "acostumbrarse",
+    "surface": "acostumbrarte",
+    "type": "verb",
+    "definition": "To get used to something until it stops feeling strange."
+   },
+   {
+    "word": "tristeza",
+    "type": "noun",
+    "definition": "The heavy quiet feeling of something being lost."
+   },
+   {
+    "word": "alegrar",
+    "surface": "alegra",
+    "type": "verb",
+    "definition": "To make somebody feel lighter and better than before."
+   },
+   {
+    "word": "helado",
+    "type": "adjective",
+    "definition": "Ice cold; cold enough to make you pull back."
+   },
+   {
+    "word": "por dentro",
+    "type": "expression",
+    "definition": "Inside your own head, where nobody else hears."
+   },
+   {
+    "word": "paz",
+    "type": "noun",
+    "definition": "A calm with nothing pushing at you from inside."
+   },
+   {
+    "word": "sonrisa",
+    "type": "noun",
+    "definition": "The shape your mouth makes when you are pleased."
+   },
+   {
+    "word": "escoba",
+    "type": "noun",
+    "definition": "Long brush for sweeping the floor of a room."
+   },
+   {
+    "word": "amistad",
+    "type": "noun",
+    "definition": "The bond between two people who look after each other."
+   }
+  ]
+ }
+]
