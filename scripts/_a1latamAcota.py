@@ -108,7 +108,7 @@ R("una-nota-de-voz-en-getsemani",
 
 R("sin-senal-junto-a-la-muralla",
   "El tono suena cuatro veces y entra la llamada. “¿Vas a ir a esa boda",
-  "El tono suena cuatro veces y entra la llamada. Lucía no saluda y suelta: “¿Vas a ir a esa boda")
+  "El tono suena cuatro veces y entra la llamada. Lucía habla sin saludar y suelta: “¿Vas a ir a esa boda")
 R("sin-senal-junto-a-la-muralla",
   "“No sé todavía.” “Eso ya no es una respuesta, mamá; llevas un año diciendo eso.” Su madre demora en contestar y Lucía le habla suavemente, casi tan bajo que no se oye.",
   "“No sé todavía”, contesta su madre. “Eso ya no es una respuesta, mamá; llevas un año diciendo eso”, responde Lucía suavemente, casi tan bajo que no se oye. La madre demora en contestar.")
@@ -396,6 +396,10 @@ R("una-carta-cruza-a-buenos-aires",
 R("dos-entradas-para-palermo",
   "En Palermo, Sofía baja del colectivo con dos entradas en la mano. Pablo la espera en una banca, con el morral entre las piernas.",
   "En Palermo espera Sofía, una amiga del grupo, con dos entradas. Pablo está en una banca, con el morral entre las piernas.")
+
+# El gate de contenido agoto sus tres tomas en la 8: Hernando pegaba "Lucía no"
+# y el STT oia "luciano" las tres veces. Cuando una oracion falla asi no es
+# suerte, es la oracion; se reescribe para separar el nombre del "no".
 
 json.dump(D, open("scripts/_a1latamV3.json", "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 if fallos:
