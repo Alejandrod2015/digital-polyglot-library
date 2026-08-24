@@ -1,0 +1,393 @@
+[
+ {
+  "topic": "fetching-and-handing-over",
+  "slotIndex": 1,
+  "title": "Eso no es un cordel",
+  "slug": "eso-no-es-un-cordel",
+  "arcType": "reframe-turn",
+  "synopsis": "Septiembre vacía el pueblo por las tardes y Rocío empieza a mandar a Irene a por cosas cuyo nombre ella no tiene. Le apunta seis en un cuaderno, Irene sube con lo que no era, y la corrección no llega como una clase sino como una mano que gira el objeto despacio. Lo que se lleva de la escalera no es la palabra nueva, sino la calma con que su vecina espera sin repetir nada.",
+  "text": "Irene lleva dos semanas oyendo cómo se vacía Nerja por las tardes. Rocío, la vecina de arriba, sube con un cuaderno y le anota seis cosas con letra fina. Reconoce dos palabras y las otras cuatro las mira como un mapa.\n\n“Bájame el canasto del patio y el cordel que dejé detrás de la puerta”, dice Rocío. “Y no tardes, guapa, que huele a lluvia y quiero cerrar la ventana”. Irene se agacha junto al muro y agarra un cesto por el borde.\n\nDe un gancho cuelga una cinta y la alcanza sin pensarlo. Sube tres pisos con las dos cosas apretadas contra el pecho, y esta vez no dice nada. “Eso es una cinta”, dice Rocío, y le da la vuelta.\n\n“El cordel es áspero y sirve para atar; esto solo sirve para adornar”. Irene lo apunta debajo de las seis y baja de nuevo al patio. Vuelve con el cordel enrollado, y lo que se le queda no es la palabra sino la calma con la que espera.",
+  "vocab": [
+   {
+    "word": "vaciar",
+    "surface": "vacía",
+    "type": "verb",
+    "definition": "To become empty, when the people or things inside leave."
+   },
+   {
+    "word": "cuaderno",
+    "type": "noun",
+    "definition": "Small book of blank pages for writing notes by hand."
+   },
+   {
+    "word": "anotar",
+    "surface": "anota",
+    "type": "verb",
+    "definition": "To write something short down so you do not forget."
+   },
+   {
+    "word": "letra",
+    "type": "noun",
+    "definition": "The shape of the words somebody writes by hand."
+   },
+   {
+    "word": "fino",
+    "surface": "fina",
+    "type": "adjective",
+    "definition": "Thin and narrow, the opposite of thick or heavy."
+   },
+   {
+    "word": "canasto",
+    "type": "noun",
+    "definition": "Big open basket with two handles, used for carrying things."
+   },
+   {
+    "word": "cordel",
+    "type": "noun",
+    "definition": "Thin rough string that you use for tying things together."
+   },
+   {
+    "word": "agacharse",
+    "surface": "agacha",
+    "type": "verb",
+    "definition": "To bend down low, usually to reach something near the ground."
+   },
+   {
+    "word": "muro",
+    "type": "noun",
+    "definition": "Thick outside wall of stone that closes off a yard."
+   },
+   {
+    "word": "agarrar",
+    "surface": "agarra",
+    "type": "verb",
+    "definition": "To take hold of something firmly with your whole hand."
+   },
+   {
+    "word": "cesto",
+    "type": "noun",
+    "definition": "Basket, wider and lower than a canasto, and without handles."
+   },
+   {
+    "word": "borde",
+    "type": "noun",
+    "definition": "The outer edge of an object, where the object stops."
+   },
+   {
+    "word": "gancho",
+    "type": "noun",
+    "definition": "Curved piece of metal on a wall for hanging things on."
+   },
+   {
+    "word": "colgar",
+    "surface": "cuelga",
+    "type": "verb",
+    "definition": "To hang something up so that it stays off the floor."
+   },
+   {
+    "word": "cinta",
+    "type": "noun",
+    "definition": "Narrow strip of cloth or paper, used for tying or decorating."
+   },
+   {
+    "word": "alcanzar",
+    "surface": "alcanza",
+    "type": "verb",
+    "definition": "To reach something high or far away and get it down."
+   },
+   {
+    "word": "apretar",
+    "surface": "apretadas",
+    "type": "verb",
+    "definition": "To press something hard against you so it cannot fall."
+   },
+   {
+    "word": "pecho",
+    "type": "noun",
+    "definition": "The front of your body between the neck and the stomach."
+   },
+   {
+    "word": "áspero",
+    "type": "adjective",
+    "definition": "Rough to the touch, not smooth or soft at all."
+   },
+   {
+    "word": "atar",
+    "type": "verb",
+    "definition": "To tie something with string so that it holds together."
+   },
+   {
+    "word": "adornar",
+    "type": "verb",
+    "definition": "To add something pretty to a thing, for decoration only."
+   },
+   {
+    "word": "de nuevo",
+    "type": "expression",
+    "definition": "Again; one more time, after having already done it once."
+   },
+   {
+    "word": "enrollar",
+    "surface": "enrollado",
+    "type": "verb",
+    "definition": "To wind something long around itself into a tidy roll."
+   },
+   {
+    "word": "calma",
+    "type": "noun",
+    "definition": "The quiet, unhurried way somebody waits or does something."
+   },
+   {
+    "word": "esta vez",
+    "type": "expression",
+    "definition": "This time, unlike the other times it happened before."
+   }
+  ]
+ },
+ {
+  "topic": "fetching-and-handing-over",
+  "slotIndex": 2,
+  "title": "Todos le llenan el cesto",
+  "slug": "todos-le-llenan-el-cesto",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "El bar cierra a las siete y a Irene le va apareciendo comida en el cesto sin haber pedido nada: Quique le acerca un tarro y unos limones, Rosa le llena la bandeja de frascos y nadie le cobra. La frase con la que todos se despiden es la misma y suena a final. Cuando por fin pregunta hacia la escalera por qué le dan cosas hoy, la respuesta de Rocío no contesta a eso y abre otra cosa.",
+  "text": "El bar cierra a las siete y la panadería de Rosa está a oscuras. Quique regenta el bar desde hace veinte años y hoy le llena el cesto a Irene. Dentro hay un tarro de miel, dos limones y queso envuelto en papel grueso.\n\n“Llévatelo, guapa, que a mí me queda de sobra”, dice, y le acerca el cesto. “Y pásate por la panadería sin falta, que Rosa te tiene algo desde el jueves”. Irene sube la cuesta con el saco pesado, la muñeca tensa y la calle que huele a pan.\n\nRosa, la panadera, le llena la bandeja con frascos y una lata. Nadie le cobra nada y todas se despiden igual. “Que te vaya muy bien, hija, y no te olvides de nosotros”, dice Rosa, y le aprieta el hombro.\n\nIrene deja el cesto en el suelo, tira del cordón y se sienta en la banqueta. “Rocío, ¿por qué me dan todos cosas hoy?”, pregunta hacia arriba. La vecina tarda en contestar: “Porque en octubre os vais todos”.",
+  "vocab": [
+   {
+    "word": "a oscuras",
+    "surface": "a oscuras",
+    "type": "expression",
+    "definition": "In the dark, with all the lights already turned off."
+   },
+   {
+    "word": "tarro",
+    "type": "noun",
+    "definition": "Small glass jar with a lid, for honey or jam."
+   },
+   {
+    "word": "miel",
+    "type": "noun",
+    "definition": "Sweet thick food that bees make, eaten on bread."
+   },
+   {
+    "word": "limón",
+    "surface": "limones",
+    "type": "noun",
+    "definition": "Small yellow fruit with a very sour juice inside."
+   },
+   {
+    "word": "banqueta",
+    "type": "noun",
+    "definition": "Low seat with no back, used only for a moment.",
+    "surface": "banqueta"
+   },
+   {
+    "word": "envolver",
+    "surface": "envuelto",
+    "type": "verb",
+    "definition": "To cover something completely in paper or cloth."
+   },
+   {
+    "word": "grueso",
+    "type": "adjective",
+    "definition": "Thick, with a lot of space between its two sides."
+   },
+   {
+    "word": "cordón",
+    "type": "noun",
+    "definition": "Thin round cord, like the one in a shoe."
+   },
+   {
+    "word": "acercar",
+    "surface": "acerca",
+    "type": "verb",
+    "definition": "To move something nearer to the person you are with."
+   },
+   {
+    "word": "sin falta",
+    "type": "expression",
+    "definition": "Without fail; make sure you really do it."
+   },
+   {
+    "word": "saco",
+    "type": "noun",
+    "definition": "Big cloth bag for carrying heavy things on your back."
+   },
+   {
+    "word": "pesado",
+    "type": "adjective",
+    "definition": "Heavy; hard to carry because it weighs a lot."
+   },
+   {
+    "word": "muñeca",
+    "type": "noun",
+    "definition": "The joint between your hand and your arm."
+   },
+   {
+    "word": "tenso",
+    "surface": "tensa",
+    "type": "adjective",
+    "definition": "Tight and stiff, ready to hurt if it moves wrong."
+   },
+   {
+    "word": "bandeja",
+    "type": "noun",
+    "definition": "Flat tray you carry plates or glasses on."
+   },
+   {
+    "word": "frasco",
+    "surface": "frascos",
+    "type": "noun",
+    "definition": "Small bottle with a wide neck, for creams or jam."
+   },
+   {
+    "word": "lata",
+    "type": "noun",
+    "definition": "Metal tin that keeps food good for a long time."
+   },
+   {
+    "word": "despedirse",
+    "surface": "despiden",
+    "type": "verb",
+    "definition": "To say goodbye to somebody before they leave."
+   },
+   {
+    "word": "hombro",
+    "type": "noun",
+    "definition": "The part of the body where the arm joins the neck."
+   },
+   {
+    "word": "suelo",
+    "type": "noun",
+    "definition": "The floor; the flat surface you walk on."
+   },
+   {
+    "word": "contestar",
+    "type": "verb",
+    "definition": "To answer somebody who has asked you something."
+   },
+   {
+    "word": "octubre",
+    "type": "noun",
+    "definition": "The tenth month of the year, after September."
+   }
+  ]
+ },
+ {
+  "topic": "fetching-and-handing-over",
+  "slotIndex": 3,
+  "title": "Ahora pide ella",
+  "slug": "ahora-pide-ella",
+  "arcType": "recurring-character-callback",
+  "synopsis": "En la farmacia hay cuatro cajones abiertos y Marta subida a una banqueta pidiendo cosas con la mano y sin nombrarlas. Irene le va poniendo en la mano lo que necesita antes de que lo diga, y por primera vez es ella la que suelta el nombre de las cosas en voz alta. Al final Marta le pregunta por octubre y la respuesta le sale más seca de lo que Irene esperaba.",
+  "text": "En la farmacia hay cuatro cajones abiertos y un botiquín sin tapa en el suelo. Marta lleva nueve años detrás de ese mostrador y hoy está subida a una banqueta. Apunta hacia la repisa de las vendas y espera sin decir el nombre de nada.\n\nIrene alcanza una caja del suelo y saca un tubo de esparadrapo. “Ese no, hija, el otro, que ese es muy ancho”, dice Marta sin bajarse. “Y ordena las pastillas en el estante de abajo, que ahí se ven mejor”.\n\nIrene le pone dos tiritas en la mano y le sostiene el estante. “Esto son tiritas y eso una venda”, dice ella primero. “Ya te sabes los nombres mejor que mi sobrina”, contesta Marta, y se ríe.\n\n“Yo creía que te ibas en octubre, como todas las de verano”, dice desde arriba. Irene cierra el último cajón con el pie y se queda con la mano en el borde. “Yo me quedo”, dice, y le sale más seco de lo que pensaba.",
+  "vocab": [
+   {
+    "word": "cajón",
+    "surface": "cajones",
+    "type": "noun",
+    "definition": "Box that slides in and out of a piece of furniture."
+   },
+   {
+    "word": "botiquín",
+    "type": "noun",
+    "definition": "Small box where a house keeps medicines and bandages."
+   },
+   {
+    "word": "tapa",
+    "type": "noun",
+    "definition": "The lid that closes a box, a jar or a pot."
+   },
+   {
+    "word": "repisa",
+    "type": "noun",
+    "definition": "Narrow shelf fixed to a wall, for small things."
+   },
+   {
+    "word": "venda",
+    "type": "noun",
+    "definition": "Long strip of cloth wrapped around a cut or a wound."
+   },
+   {
+    "word": "tubo",
+    "type": "noun",
+    "definition": "Long round thing you squeeze to get cream out."
+   },
+   {
+    "word": "esparadrapo",
+    "type": "noun",
+    "definition": "Sticky tape used to hold a bandage on the skin."
+   },
+   {
+    "word": "ancho",
+    "type": "adjective",
+    "definition": "Wide; with a lot of space from side to side."
+   },
+   {
+    "word": "desde arriba",
+    "type": "expression",
+    "definition": "From a higher place, looking down at somebody."
+   },
+   {
+    "word": "ordenar",
+    "surface": "ordena",
+    "type": "verb",
+    "definition": "To put things in their right place, one by one."
+   },
+   {
+    "word": "pastilla",
+    "surface": "pastillas",
+    "type": "noun",
+    "definition": "Small hard piece of medicine that you swallow whole."
+   },
+   {
+    "word": "estante",
+    "type": "noun",
+    "definition": "Flat board in a cupboard where things are kept."
+   },
+   {
+    "word": "tirita",
+    "surface": "tiritas",
+    "type": "noun",
+    "definition": "Small sticky strip you put over a little cut."
+   },
+   {
+    "word": "sostener",
+    "surface": "sostiene",
+    "type": "verb",
+    "definition": "To hold something up so that it does not fall."
+   },
+   {
+    "word": "sobrina",
+    "type": "noun",
+    "definition": "The daughter of your brother or of your sister."
+   },
+   {
+    "word": "creer",
+    "surface": "creía",
+    "type": "verb",
+    "definition": "To think that something is true when it is not."
+   },
+   {
+    "word": "como todas",
+    "type": "expression",
+    "definition": "Like everybody else does, with no difference at all."
+   },
+   {
+    "word": "verano",
+    "type": "noun",
+    "definition": "The hottest season of the year, when the tourists come."
+   },
+   {
+    "word": "pie",
+    "type": "noun",
+    "definition": "The part of the body you stand and walk on."
+   },
+   {
+    "word": "seco",
+    "type": "adjective",
+    "definition": "Said in very few words, with no warmth around them."
+   }
+  ]
+ }
+]
