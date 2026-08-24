@@ -111,7 +111,14 @@ export default async function RootLayout({
         </head>
 
         {/* ✅ layout estable: usa min-h-screen, no h-screen */}
-        <body className="bg-[var(--bg-content)] text-[var(--foreground)] min-h-screen flex flex-col pt-[env(safe-area-inset-top)]">
+        {/* suppressHydrationWarning: las extensiones del navegador (ColorZilla,
+            Grammarly) escriben atributos en <body> ANTES de que React hidrate
+            (`cz-shortcut-listen`, `data-gr-*`) y React lo reporta como mismatch.
+            No es nuestro HTML y no se puede evitar desde el servidor. */}
+        <body
+          suppressHydrationWarning
+          className="bg-[var(--bg-content)] text-[var(--foreground)] min-h-screen flex flex-col pt-[env(safe-area-inset-top)]"
+        >
           <AppShell
             currentVersion={currentVersion}
             initialIsSignedIn={initialIsSignedIn}
