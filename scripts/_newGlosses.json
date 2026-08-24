@@ -8733,6 +8733,26 @@
     "creciendo": {
       "g": "getting longer or bigger (crecer)",
       "t": "verb"
+    },
+    "cargar": {
+      "g": "to charge (a phone, a lantern)",
+      "t": "verb"
+    },
+    "sobrino": {
+      "g": "nephew",
+      "t": "noun"
+    },
+    "defiende": {
+      "g": "stands her ground (defenderse)",
+      "t": "verb"
+    },
+    "cortar": {
+      "g": "to hang up, to end the call",
+      "t": "verb"
+    },
+    "comenta": {
+      "g": "remarks, says in passing (comentar)",
+      "t": "verb"
     }
   }
 }

@@ -11113,6 +11113,38 @@
   "creciendo": {
    "g": "getting longer or bigger (crecer)",
    "t": "verb"
+  },
+  "cargar": {
+   "g": "to charge (a phone, a lantern)",
+   "t": "verb"
+  },
+  "comenta": {
+   "g": "remarks, says in passing (comentar)",
+   "t": "verb"
+  },
+  "cortar": {
+   "g": "to hang up, to end the call",
+   "t": "verb"
+  },
+  "defiende": {
+   "g": "stands her ground (defenderse)",
+   "t": "verb"
+  },
+  "domingos": {
+   "g": "Sundays",
+   "t": "noun"
+  },
+  "oído": {
+   "g": "the ear",
+   "t": "noun"
+  },
+  "sobrino": {
+   "g": "nephew",
+   "t": "noun"
+  },
+  "viajera": {
+   "g": "a traveler",
+   "t": "noun"
   }
  }
 }

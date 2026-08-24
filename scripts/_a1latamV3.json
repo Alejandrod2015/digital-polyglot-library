@@ -1,0 +1,2755 @@
+[
+  {
+    "slug": "el-terminal-terrestre-a-las-ocho",
+    "title": "El Terminal Terrestre a las ocho",
+    "text": "El Terminal Terrestre de Cusco, en Perú, huele a gasolina y a pan. En la puerta está Elena, una viajera de paso, con la valija y un bolso, y busca el letrero de su ruta. Junto a la taquilla espera Julio, un chofer que ya la llevó al mirador.\n\n“¿A qué hora sale?”, pregunta Elena. Julio contesta: “El horario cambia; hoy sale a las ocho en punto.” Ella mira el letrero y esa hora no está escrita ahí.\n\nDetrás del vidrio le dan el boleto y un pasaje de papel. “Queda un asiento disponible, adelante y del lado de la ventana”, le repite Julio. Elena lo escucha y aprieta los labios.\n\n“Es el triple de lo que cuesta ese viaje de día”, se queja Elena. Julio le explica: “La gente con plata toma el avión, y de noche falta gente; por eso sube.” Después lleva la valija y el equipaje hasta la puerta.\n\nOtro viajero pide ese asiento y se queda sin él. Elena apunta el precio en la libreta y guarda el pasaje en el bolso. “A las ocho estoy aquí”, dice Julio, y vuelve al taxi.",
+    "topic": "night-buses",
+    "slotIndex": 1,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "terminal",
+        "surface": "terminal",
+        "definition": "the building where long-distance buses arrive and leave"
+      },
+      {
+        "type": "noun",
+        "word": "taquilla",
+        "surface": "taquilla",
+        "definition": "the small window where tickets are sold to travellers"
+      },
+      {
+        "type": "noun",
+        "word": "boleto",
+        "surface": "boleto",
+        "definition": "the ticket you buy to travel on a bus"
+      },
+      {
+        "type": "noun",
+        "word": "pasaje",
+        "surface": "pasaje",
+        "definition": "the printed slip that proves you paid for a seat"
+      },
+      {
+        "type": "noun",
+        "word": "horario",
+        "surface": "horario",
+        "definition": "the list of times at which buses leave and arrive"
+      },
+      {
+        "type": "noun",
+        "word": "ruta",
+        "surface": "ruta",
+        "definition": "the road a bus follows between two towns or cities"
+      },
+      {
+        "type": "noun",
+        "word": "precio",
+        "surface": "precio",
+        "definition": "the amount of money something costs to buy"
+      },
+      {
+        "type": "noun",
+        "word": "letrero",
+        "surface": "letrero",
+        "definition": "a board with words on it that announces something"
+      },
+      {
+        "type": "adjective",
+        "word": "disponible",
+        "surface": "disponible",
+        "definition": "free to be used or taken by someone else"
+      },
+      {
+        "type": "noun",
+        "word": "asiento",
+        "surface": "asiento",
+        "definition": "the place where one person sits inside a bus"
+      },
+      {
+        "type": "noun",
+        "word": "equipaje",
+        "surface": "equipaje",
+        "definition": "all the bags a person carries when travelling somewhere"
+      },
+      {
+        "type": "noun",
+        "word": "valija",
+        "surface": "valija",
+        "definition": "a large stiff bag with a handle for clothes"
+      },
+      {
+        "type": "noun",
+        "word": "bolso",
+        "surface": "bolso",
+        "definition": "a soft bag carried by hand or over the shoulder"
+      },
+      {
+        "type": "noun",
+        "word": "libreta",
+        "surface": "libreta",
+        "definition": "a small notebook for writing short notes down"
+      },
+      {
+        "type": "noun",
+        "word": "viajero",
+        "surface": "viajero",
+        "definition": "a person who is making a journey somewhere else"
+      },
+      {
+        "type": "expression",
+        "word": "falta gente",
+        "surface": "falta gente",
+        "definition": "there are not enough people for something to work"
+      },
+      {
+        "type": "expression",
+        "word": "en punto",
+        "surface": "en punto",
+        "definition": "exactly at that hour, not a minute later"
+      },
+      {
+        "type": "adjective",
+        "word": "triple",
+        "surface": "triple",
+        "definition": "three times as much as the amount named"
+      },
+      {
+        "type": "expression",
+        "word": "la gente con plata",
+        "surface": "La gente con plata",
+        "definition": "people who have enough money to spend freely"
+      },
+      {
+        "type": "noun",
+        "word": "avión",
+        "surface": "avión",
+        "definition": "the machine that carries people through the air"
+      }
+    ],
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Elena vuelve a Cusco y quiere seguir viaje de noche, pero el letrero de la terminal no dice la misma hora que dice la taquilla. Julio la acompaña y le traduce lo que nadie escribe en ninguna parte: por qué queda un solo asiento libre, por qué es adelante y por qué el mismo viaje cuesta el triple cuando se hace a oscuras."
+  },
+  {
+    "slug": "la-manta-del-bus-cama",
+    "title": "La manta del bus cama",
+    "text": "Con el abrigo en el brazo, Elena cruza el andén en la oscuridad. Sube al bus cama por el pasillo estrecho. Un farol viejo alumbra medio andén y nada más.\n\nEl bus arranca y Elena apoya la cabeza en la ventanilla. Entra una llamada de Julio, que pregunta: “¿Pediste la manta a tiempo, antes de que apagaran la luz de arriba?”\n\n“Sí, y también el cinturón, que estaba debajo del asiento y no al costado”, contesta Elena. “Entonces ya está; duerme antes de la primera curva”, dice él. Ella saca lentamente el termo del bolso.\n\nJulio insiste antes de cortar: “Come algo ahora, que no paran hasta las tres de la mañana.” En cada parada alguien sube y el bus se llena despacio. Elena muerde una galleta mientras el chofer frena y arranca otra vez.\n\nUna mujer del asiento de al lado se acomoda y comenta: “Ese asiento nunca es cómodo.” Elena se duerme sin darse cuenta y se despierta cuando entra la primera luz. Afuera no hay pueblo y se tapa con la manta hasta la nariz.",
+    "topic": "night-buses",
+    "slotIndex": 2,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "andén",
+        "surface": "andén",
+        "definition": "the raised strip where passengers wait beside the buses"
+      },
+      {
+        "type": "noun",
+        "word": "oscuridad",
+        "surface": "oscuridad",
+        "definition": "the state of a place when there is no light"
+      },
+      {
+        "type": "noun",
+        "word": "manta",
+        "surface": "manta",
+        "definition": "a thick cloth you put over yourself to keep warm"
+      },
+      {
+        "type": "noun",
+        "word": "cinturón",
+        "surface": "cinturón",
+        "definition": "the strap that holds a passenger against the seat"
+      },
+      {
+        "type": "noun",
+        "word": "termo",
+        "surface": "termo",
+        "definition": "a tall flask that keeps a drink hot for hours"
+      },
+      {
+        "type": "noun",
+        "word": "pasillo",
+        "surface": "pasillo",
+        "definition": "the narrow walking space between two rows of seats"
+      },
+      {
+        "type": "noun",
+        "word": "ventanilla",
+        "surface": "ventanilla",
+        "definition": "the small window beside a seat on a bus"
+      },
+      {
+        "type": "noun",
+        "word": "curva",
+        "surface": "curva",
+        "definition": "a bend where the road turns to one side"
+      },
+      {
+        "type": "verb",
+        "word": "frenar",
+        "surface": "frena",
+        "definition": "to make a vehicle slow down or come to a stop"
+      },
+      {
+        "type": "verb",
+        "word": "despertar",
+        "surface": "se despierta",
+        "definition": "to stop sleeping and open your eyes again"
+      },
+      {
+        "type": "verb",
+        "word": "dormirse",
+        "surface": "Se duerme",
+        "definition": "to fall asleep without meaning to do it"
+      },
+      {
+        "type": "noun",
+        "word": "abrigo",
+        "surface": "abrigo",
+        "definition": "a warm coat you wear over the other clothes"
+      },
+      {
+        "type": "noun",
+        "word": "farol",
+        "surface": "farol",
+        "definition": "a tall lamp that lights a street or a yard"
+      },
+      {
+        "type": "noun",
+        "word": "parada",
+        "surface": "parada",
+        "definition": "a place where a bus stops to let people on"
+      },
+      {
+        "type": "noun",
+        "word": "galleta",
+        "surface": "galleta",
+        "definition": "a small hard sweet biscuit you eat with your hands"
+      },
+      {
+        "type": "adjective",
+        "word": "cómodo",
+        "surface": "cómodo",
+        "definition": "pleasant to sit in, without making your body hurt"
+      },
+      {
+        "type": "adverb",
+        "word": "lentamente",
+        "surface": "lentamente",
+        "definition": "doing something slowly, taking more time than usual"
+      },
+      {
+        "type": "adverb",
+        "word": "mientras",
+        "surface": "mientras",
+        "definition": "during the same time that something else is happening"
+      },
+      {
+        "type": "expression",
+        "word": "a tiempo",
+        "surface": "a tiempo",
+        "definition": "early enough for it to still be possible"
+      },
+      {
+        "type": "expression",
+        "word": "sin darse cuenta",
+        "surface": "sin darse cuenta",
+        "definition": "without noticing that it was happening at all"
+      }
+    ],
+    "arcType": "reframe-turn",
+    "synopsis": "Ocho horas de noche dentro del bus, con el andén a oscuras y un farol que alumbra la mitad. Julio llama para saber si pidió la manta a tiempo, y Elena descubre que un viaje así no se aguanta con paciencia: se aguanta con tres cosas que hay que pedir antes de que apaguen la luz, y ella acaba de aprender cuáles son."
+  },
+  {
+    "slug": "amanece-en-juliaca-sin-letrero",
+    "title": "Amanece en Juliaca sin letrero",
+    "text": "El amanecer llega tarde a Juliaca y el bus, que salía a las siete en punto, entra con dos horas de retraso. Elena baja al estacionamiento y no se oye un motor. El trayecto fue tan largo que le duelen las rodillas.\n\nDetrás de la puerta, un hombre vende termos y pan. Elena prende el teléfono y no encuentra señal. Tampoco hay un letrero, y apoya la valija contra la pared.\n\nAl fin aparece una raya de señal y llama a Julio, aunque seguramente está durmiendo. “¿Llegaste bien, o te bajaron en otro lado?”, pregunta él. “Con retraso, pero la llegada fue tranquila”, dice Elena.\n\nElla sigue: “La subida fue lenta y en la bajada frenó bastante.” “Eso es normal ahí; ese motor no aguanta la bajada de otra manera”, responde Julio. Elena subraya el nombre del pueblo en la libreta.\n\nJulio le ofrece algo antes de cortar: “Anótate este número, de alguien que maneja por esa zona.” Se lo dicta despacio y le presta el contacto. “Ponlo en la libreta, por si acaso”, insiste, y Elena guarda una pila de repuesto en el bolso.",
+    "topic": "night-buses",
+    "slotIndex": 3,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "llegada",
+        "surface": "llegada",
+        "definition": "the moment when someone or something arrives somewhere"
+      },
+      {
+        "type": "noun",
+        "word": "trayecto",
+        "surface": "trayecto",
+        "definition": "the whole distance a bus covers between two places"
+      },
+      {
+        "type": "noun",
+        "word": "retraso",
+        "surface": "retraso",
+        "definition": "the extra time you wait when something comes late"
+      },
+      {
+        "type": "noun",
+        "word": "subida",
+        "surface": "subida",
+        "definition": "a stretch of road that climbs towards higher ground"
+      },
+      {
+        "type": "noun",
+        "word": "bajada",
+        "surface": "bajada",
+        "definition": "a stretch of road that goes down towards lower ground"
+      },
+      {
+        "type": "noun",
+        "word": "pueblo",
+        "surface": "pueblo",
+        "definition": "a small town with few streets and few people"
+      },
+      {
+        "type": "noun",
+        "word": "estacionamiento",
+        "surface": "estacionamiento",
+        "definition": "the open ground where vehicles are left standing"
+      },
+      {
+        "type": "verb",
+        "word": "apoyar",
+        "surface": "apoya",
+        "definition": "to rest something against a surface so it stays there"
+      },
+      {
+        "type": "verb",
+        "word": "subrayar",
+        "surface": "subraya",
+        "definition": "to draw a line under a word you wrote"
+      },
+      {
+        "type": "verb",
+        "word": "prender",
+        "surface": "prende",
+        "definition": "to switch on a light, a screen or a machine"
+      },
+      {
+        "type": "verb",
+        "word": "poner",
+        "surface": "Ponlo",
+        "definition": "to place something somewhere or write it down"
+      },
+      {
+        "type": "verb",
+        "word": "prestar",
+        "surface": "presta",
+        "definition": "to give something for a while, expecting it back"
+      },
+      {
+        "type": "adverb",
+        "word": "detrás",
+        "surface": "Detrás",
+        "definition": "at the back of something, on its far side"
+      },
+      {
+        "type": "adverb",
+        "word": "tampoco",
+        "surface": "Tampoco",
+        "definition": "not that one either, adding a second missing thing"
+      },
+      {
+        "type": "adverb",
+        "word": "aunque",
+        "surface": "aunque",
+        "definition": "even so, marking a fact that works against"
+      },
+      {
+        "type": "adverb",
+        "word": "tan",
+        "surface": "tan",
+        "definition": "so much, to that degree or that extent"
+      },
+      {
+        "type": "adverb",
+        "word": "bastante",
+        "surface": "bastante",
+        "definition": "quite a lot, more than a little but not fully"
+      },
+      {
+        "type": "adverb",
+        "word": "seguramente",
+        "surface": "seguramente",
+        "definition": "most likely, though nobody has checked it yet"
+      },
+      {
+        "type": "expression",
+        "word": "de repuesto",
+        "surface": "de repuesto",
+        "definition": "kept aside in case the first one fails"
+      },
+      {
+        "type": "expression",
+        "word": "al fin",
+        "surface": "Al fin",
+        "definition": "after a long wait, the thing finally happens"
+      }
+    ],
+    "arcType": "recurring-character-callback",
+    "synopsis": "El bus llega de noche y con dos horas de retraso a un pueblo que no anuncia su nombre en ninguna parte. Elena llama a Julio para decirle que llegó y él, medio dormido, le pasa el número de alguien que maneja por esa zona. El viaje deja de terminar cuando ella baja del bus y empieza a tener continuación."
+  },
+  {
+    "slug": "jitomates-sin-precio-en-coyoacan",
+    "title": "Jitomates sin precio en Coyoacán",
+    "text": "Es lunes y el mercado de Coyoacán huele a cebolla recién cortada. Ana, una visitante que ya conoce el puesto, cruza la puerta abierta y camina hasta la verdura de la señora de siempre. En la fila de adelante hay cola, y nadie parece apurado.\n\n“¿A cómo el jitomate hoy?”, pregunta Ana. “Según el tamaño; los chicos están en oferta y los grandes no”, contesta la señora, que la reconoce y le sonríe con la mano llena de limones.\n\nAna busca una cifra escrita y no encuentra ninguna en toda la fila. Pide medio de jitomate y unos limones. La señora lo envuelve todo en una bolsita.\n\n“Y un pedazo de queso, del salado”, pide Ana. “Ese es el bueno, pero cuesta el triple que el otro”, avisa la señora. Ana mira la tabla limpia y cómo pesa sin apuro.\n\n“Le pongo un paquete de servilletas y una docena de limones listos”, ofrece la señora, y le trae todo junto y pide un número redondo. Ana apunta la cifra en la libreta y se va con la bolsita llena.",
+    "topic": "prices-and-change",
+    "slotIndex": 1,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "cola",
+        "surface": "cola",
+        "definition": "a line of people waiting one behind the other"
+      },
+      {
+        "type": "noun",
+        "word": "oferta",
+        "surface": "oferta",
+        "definition": "a lower price offered on something for a while"
+      },
+      {
+        "type": "noun",
+        "word": "cifra",
+        "surface": "cifra",
+        "definition": "a number written or said as an amount of money"
+      },
+      {
+        "type": "verb",
+        "word": "pedir",
+        "surface": "Pide",
+        "definition": "to ask a seller to give you something you want"
+      },
+      {
+        "type": "verb",
+        "word": "costar",
+        "surface": "cuesta",
+        "definition": "to have a certain price when you buy it"
+      },
+      {
+        "type": "noun",
+        "word": "mostrador",
+        "surface": "puesto",
+        "definition": "the long table where a seller shows the goods"
+      },
+      {
+        "type": "adjective",
+        "word": "apurado",
+        "surface": "apurado",
+        "definition": "in a hurry, wanting to finish something quickly"
+      },
+      {
+        "type": "noun",
+        "word": "verdura",
+        "surface": "verdura",
+        "definition": "plants such as onions or lettuce grown to eat"
+      },
+      {
+        "type": "noun",
+        "word": "jitomate",
+        "surface": "jitomate",
+        "definition": "the red round fruit Mexicans put in cooked food"
+      },
+      {
+        "type": "noun",
+        "word": "bolsita",
+        "surface": "bolsita",
+        "definition": "a small thin bag for carrying a few things"
+      },
+      {
+        "type": "verb",
+        "word": "envolver",
+        "surface": "envuelve",
+        "definition": "to wrap something in paper or plastic to carry it"
+      },
+      {
+        "type": "adjective",
+        "word": "medio",
+        "surface": "medio",
+        "definition": "half of the usual amount that is sold"
+      },
+      {
+        "type": "noun",
+        "word": "docena",
+        "surface": "docena",
+        "definition": "a group of twelve things sold or counted together"
+      },
+      {
+        "type": "adjective",
+        "word": "listo",
+        "surface": "listos",
+        "definition": "finished and ready for someone to take away"
+      },
+      {
+        "type": "preposition",
+        "word": "según",
+        "surface": "Según",
+        "definition": "depending on the thing that is named next"
+      },
+      {
+        "type": "adjective",
+        "word": "limpio",
+        "surface": "limpia",
+        "definition": "clean, with no dirt or mark left on it"
+      },
+      {
+        "type": "adjective",
+        "word": "abierto",
+        "surface": "abierta",
+        "definition": "not closed, with nothing blocking the way through"
+      },
+      {
+        "type": "adjective",
+        "word": "salado",
+        "surface": "salado",
+        "definition": "tasting strongly of salt and not sweet at all"
+      },
+      {
+        "type": "verb",
+        "word": "traer",
+        "surface": "trae",
+        "definition": "to bring something to the person who is here"
+      },
+      {
+        "type": "noun",
+        "word": "paquete",
+        "surface": "paquete",
+        "definition": "several small things wrapped together to be sold"
+      }
+    ],
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Ana vuelve al mercado que ya conoce, pero esta vez no viene a comer sino a llenar una bolsa para toda la semana. Descubre que en los puestos no hay una sola cifra escrita y que preguntar cuánto cuesta, en voz alta y antes de que le envuelvan nada, es la única forma de saber si le están cobrando lo mismo que a los demás."
+  },
+  {
+    "slug": "veinte-pesos-menos-en-coyoacan",
+    "title": "Veinte pesos menos en Coyoacán",
+    "text": "La luz del mediodía cae de lado en Coyoacán y Ana vuelve el martes con el monedero casi vacío. Suma en la cabeza lo que va a gastar y le alcanza para poco. La señora la ve venir a tiempo y le guarda el lugar.\n\n“¿Tienes sencillo o billete grande?”, pregunta la señora. “Solo un billete grande, no me quedó nada suelto desde la mañana”, dice Ana. La señora canta el total y le devuelve un cambio que no es exacto.\n\nAna revisa las monedas antes de guardarlas. La cantidad no coincide con lo que marca el papel. Le faltan veinte pesos, y no de más sino de menos.\n\n“Creo que aquí falta algo, o conté yo muy rápido”, dice Ana. “A ver, compara: yo puse el número y tú me diste justo, ni un peso de más”, responde la señora con un gesto corto. Ana espera nerviosa.\n\n“Yo no gano quitándote monedas; usted ya viene seguido”, se defiende ella. Aparecen los veinte pesos debajo del papel y nadie pierde nada. La señora resta el error y por eso Ana vuelve a ese puesto.",
+    "topic": "prices-and-change",
+    "slotIndex": 2,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "monedero",
+        "surface": "monedero",
+        "definition": "a small purse for carrying coins in your pocket"
+      },
+      {
+        "type": "expression",
+        "word": "casi vacío",
+        "surface": "casi vacío",
+        "definition": "with almost nothing left inside it any more"
+      },
+      {
+        "type": "verb",
+        "word": "sumar",
+        "surface": "Suma",
+        "definition": "to add numbers together to get a total"
+      },
+      {
+        "type": "verb",
+        "word": "alcanzar",
+        "surface": "alcanza",
+        "definition": "to be enough for what you need to buy"
+      },
+      {
+        "type": "noun",
+        "word": "sencillo",
+        "surface": "sencillo",
+        "definition": "small coins and notes for paying exact amounts"
+      },
+      {
+        "type": "noun",
+        "word": "total",
+        "surface": "total",
+        "definition": "the whole amount you have to pay in the end"
+      },
+      {
+        "type": "noun",
+        "word": "cambio",
+        "surface": "cambio",
+        "definition": "the money a seller gives back after you pay"
+      },
+      {
+        "type": "adjective",
+        "word": "exacto",
+        "surface": "exacto",
+        "definition": "right down to the last coin, with nothing missing"
+      },
+      {
+        "type": "verb",
+        "word": "revisar",
+        "surface": "revisa",
+        "definition": "to look at something carefully to check it is right"
+      },
+      {
+        "type": "noun",
+        "word": "cantidad",
+        "surface": "cantidad",
+        "definition": "how much of something there is when counted"
+      },
+      {
+        "type": "verb",
+        "word": "marcar",
+        "surface": "marca",
+        "definition": "to show a number, as a screen or a paper does"
+      },
+      {
+        "type": "expression",
+        "word": "de más",
+        "surface": "de más",
+        "definition": "more than the amount that was actually needed"
+      },
+      {
+        "type": "verb",
+        "word": "comparar",
+        "surface": "compara",
+        "definition": "to look at two amounts and see which is bigger"
+      },
+      {
+        "type": "adjective",
+        "word": "nervioso",
+        "surface": "nerviosa",
+        "definition": "worried and unable to keep still or quiet"
+      },
+      {
+        "type": "adjective",
+        "word": "justo",
+        "surface": "justo",
+        "definition": "exactly the amount, with nothing over or missing"
+      },
+      {
+        "type": "adjective",
+        "word": "corto",
+        "surface": "corto",
+        "definition": "short, not long in size or in time"
+      },
+      {
+        "type": "verb",
+        "word": "perder",
+        "surface": "pierde",
+        "definition": "to end up with less money than you had before"
+      },
+      {
+        "type": "verb",
+        "word": "ganar",
+        "surface": "gano",
+        "definition": "to end up with more money than you had before"
+      },
+      {
+        "type": "verb",
+        "word": "restar",
+        "surface": "resta",
+        "definition": "to take one number away from another one"
+      },
+      {
+        "type": "expression",
+        "word": "por eso",
+        "surface": "Por eso",
+        "definition": "for that reason, because of what just happened"
+      }
+    ],
+    "arcType": "late-reveal",
+    "synopsis": "Ana paga con el monedero casi vacío y el cambio que le devuelven no cuadra. Decirlo en voz alta delante de otros clientes le da más miedo que perder el dinero, y el mercado le enseña que reclamar veinte pesos no rompe nada: se cuenta otra vez, aparecen debajo del papel y al día siguiente la señora le guarda el lugar igual que siempre."
+  },
+  {
+    "slug": "carla-paga-sin-probar-la-horchata",
+    "title": "Carla paga sin probar la horchata",
+    "text": "El sábado Ana sale temprano con Carla, una amiga que no conoce el mercado y que huele todo antes de tocarlo. “Todo se ve caro”, dice Carla y aprieta la bolsa. Ana le explica que para dos personas el gasto se elige antes de entrar.\n\n“¿Cuánto cuesta la torta?”, pregunta Carla. “Cincuenta, y con descuento la mitad si te llevas dos”, le contesta Ana. Carla paga con un billete y se va sin la feria.\n\nCompran fresas, pan blando y leche para el desayuno. Ana le sopla al oído: “Pídele el azúcar y la horchata en bolsita aparte, que si no te la revuelve.” Carla mira todo y no pregunta ningún número.\n\n“Mañana untas la manteca sobre el pan blando”, le explica Ana. “¿Y eso se come así, sin más?”, pregunta Carla. Ana se ríe y le dice que sí, que se come así.\n\nCarla carga la bolsa y ya pesa demasiado para una cuadra. “Durante la semana esto ahorra bastante”, dice Ana, aunque hoy no lo parezca. El sol ya está caliente y el sábado sale pesado; los otros seis días, no.",
+    "topic": "prices-and-change",
+    "slotIndex": 3,
+    "vocab": [
+      {
+        "type": "adjective",
+        "word": "caro",
+        "surface": "caro",
+        "definition": "costing a lot more money than you expected"
+      },
+      {
+        "type": "noun",
+        "word": "persona",
+        "surface": "personas",
+        "definition": "one human being counted among a group of others"
+      },
+      {
+        "type": "noun",
+        "word": "gasto",
+        "surface": "gasto",
+        "definition": "the money that goes out when you buy things"
+      },
+      {
+        "type": "verb",
+        "word": "elegir",
+        "surface": "elige",
+        "definition": "to pick one thing instead of the others available"
+      },
+      {
+        "type": "noun",
+        "word": "torta",
+        "surface": "torta",
+        "definition": "a filled bread roll eaten as a quick meal"
+      },
+      {
+        "type": "noun",
+        "word": "descuento",
+        "surface": "descuento",
+        "definition": "money taken off the normal price of something"
+      },
+      {
+        "type": "noun",
+        "word": "mitad",
+        "surface": "mitad",
+        "definition": "one of the two equal parts of something"
+      },
+      {
+        "type": "noun",
+        "word": "feria",
+        "surface": "feria",
+        "definition": "the small coins Mexicans get back after paying"
+      },
+      {
+        "type": "noun",
+        "word": "fresa",
+        "surface": "fresas",
+        "definition": "the small red sweet fruit that grows near the ground"
+      },
+      {
+        "type": "adjective",
+        "word": "caliente",
+        "surface": "caliente",
+        "definition": "hot to the touch, not cold at all"
+      },
+      {
+        "type": "noun",
+        "word": "leche",
+        "surface": "leche",
+        "definition": "the white drink that comes from cows and goats"
+      },
+      {
+        "type": "noun",
+        "word": "azúcar",
+        "surface": "azúcar",
+        "definition": "the sweet white powder added to food and drinks"
+      },
+      {
+        "type": "verb",
+        "word": "untar",
+        "surface": "untas",
+        "definition": "to spread something soft over bread with a knife"
+      },
+      {
+        "type": "noun",
+        "word": "manteca",
+        "surface": "manteca",
+        "definition": "the soft white fat used for cooking and spreading"
+      },
+      {
+        "type": "adjective",
+        "word": "blando",
+        "surface": "blando",
+        "definition": "soft, easy to press in with your fingers"
+      },
+      {
+        "type": "verb",
+        "word": "comerse",
+        "surface": "se come",
+        "definition": "to eat something up in a particular way"
+      },
+      {
+        "type": "verb",
+        "word": "cargar",
+        "surface": "carga",
+        "definition": "to carry something heavy from one place to another"
+      },
+      {
+        "type": "preposition",
+        "word": "durante",
+        "surface": "Durante",
+        "definition": "through the whole of a period of time"
+      },
+      {
+        "type": "verb",
+        "word": "ahorrar",
+        "surface": "ahorra",
+        "definition": "to keep money instead of spending it now"
+      },
+      {
+        "type": "adjective",
+        "word": "pesado",
+        "surface": "pesado",
+        "definition": "heavy and hard to carry for very long"
+      }
+    ],
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Llega Carla, que no conoce el mercado, y hace lo que Ana hacía el año pasado: paga el primer número que le dicen y se va sin la feria. Ana ya no explica el picante ni el menú; ahora explica que el gasto de la semana se decide antes de entrar, y que la bolsa pesa igual para las dos pero cuesta la mitad si se pregunta a tiempo."
+  },
+  {
+    "slug": "una-nota-de-voz-en-getsemani",
+    "title": "Una nota de voz en Getsemaní",
+    "text": "A las seis suena un zumbido en el celular de Lucía, una mujer que trabaja lejos. En la pantalla hay un mensaje con un apellido que aquí no se dice delante de su madre. Afuera Getsemaní suena a puerto temprano.\n\nLa nota de voz dura once segundos y Lucía la pone en altavoz. Se oye un saludo corto y Jorge avisa: “Voy la semana del quince y llevo la guitarra, si tu mamá me deja.” La nota sigue más bajo, y él pide: “Dile que no pregunte todavía, que ya bastante tiene.”\n\nLucía deja el teléfono encendido y no se mueve. Su madre entra, ve la foto de la pantalla y se queda en silencio. “Es el de la caja: tu tío Jorge, que anda lejos y no llama a su hermana”, dice ella.\n\n“¿Qué fecha dijo?”, pregunta la madre en voz alta. “La del quince, para la boda de tu primo”, contesta Lucía. La madre, nerviosa, corta el teléfono con un dedo y se va a la cocina.\n\nLa noticia corre antes del mediodía y da vueltas toda la mañana. Lucía anota la fecha y deja el teléfono apagado.",
+    "topic": "calls-and-messages",
+    "slotIndex": 1,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "celular",
+        "surface": "celular",
+        "definition": "the small phone that a person carries everywhere"
+      },
+      {
+        "type": "noun",
+        "word": "zumbido",
+        "surface": "zumbido",
+        "definition": "the low buzzing sound a phone makes when it vibrates"
+      },
+      {
+        "type": "noun",
+        "word": "pantalla",
+        "surface": "pantalla",
+        "definition": "the flat lit surface where a phone shows things"
+      },
+      {
+        "type": "noun",
+        "word": "mensaje",
+        "surface": "mensaje",
+        "definition": "a short piece of writing sent to another phone"
+      },
+      {
+        "type": "noun",
+        "word": "apellido",
+        "surface": "apellido",
+        "definition": "the family name that comes after your first name"
+      },
+      {
+        "type": "expression",
+        "word": "nota de voz",
+        "surface": "nota de voz",
+        "definition": "a short recording sent instead of a written message"
+      },
+      {
+        "type": "noun",
+        "word": "altavoz",
+        "surface": "altavoz",
+        "definition": "the part of a phone that plays sound out loud"
+      },
+      {
+        "type": "noun",
+        "word": "saludo",
+        "surface": "saludo",
+        "definition": "the short friendly words you say when you arrive"
+      },
+      {
+        "type": "noun",
+        "word": "semana",
+        "surface": "semana",
+        "definition": "the period of seven days from Monday to Sunday"
+      },
+      {
+        "type": "adjective",
+        "word": "encendido",
+        "surface": "encendido",
+        "definition": "switched on and still working at this moment"
+      },
+      {
+        "type": "noun",
+        "word": "madre",
+        "surface": "madre",
+        "definition": "the woman who gave birth to you and raised you"
+      },
+      {
+        "type": "expression",
+        "word": "en silencio",
+        "surface": "en silencio",
+        "definition": "without saying a single word to anybody there"
+      },
+      {
+        "type": "verb",
+        "word": "andar",
+        "surface": "anda",
+        "definition": "to walk or move from one place to another"
+      },
+      {
+        "type": "noun",
+        "word": "fecha",
+        "surface": "fecha",
+        "definition": "the day, month and year when something happens"
+      },
+      {
+        "type": "noun",
+        "word": "primo",
+        "surface": "primo",
+        "definition": "the son of your uncle or of your aunt"
+      },
+      {
+        "type": "noun",
+        "word": "noticia",
+        "surface": "noticia",
+        "definition": "a piece of information about something that just happened"
+      },
+      {
+        "type": "adjective",
+        "word": "apagado",
+        "surface": "apagado",
+        "definition": "switched off and not working at this moment"
+      },
+      {
+        "type": "noun",
+        "word": "boda",
+        "surface": "boda",
+        "definition": "the party held when two people get married"
+      },
+      {
+        "type": "noun",
+        "word": "hermana",
+        "surface": "hermana",
+        "definition": "a woman who has the same parents as you"
+      },
+      {
+        "type": "adjective",
+        "word": "alto",
+        "surface": "alta",
+        "definition": "tall, or loud when it is about a sound"
+      }
+    ],
+    "arcType": "reframe-turn",
+    "synopsis": "Llega la nota de voz que en esa casa nadie esperaba ya: el tio Jorge pone fecha a la visita que prometio hace un año y la cuelga de la boda del primo. Lucia la escucha en altavoz delante de su madre, que mira la foto de la pantalla, no dice nada y apaga el telefono con un dedo antes de irse a la cocina."
+  },
+  {
+    "slug": "sin-senal-junto-a-la-muralla",
+    "title": "Sin señal junto a la muralla",
+    "text": "Tres días seguidos Lucía marca el número y nadie contesta. La señal se cae a media tarde y la puerta queda cerrada. Desde el patio le gritan que camine hasta la muralla, donde siempre entra algo.\n\nAl cuarto día aprieta el botón sin prisa y espera. El tono suena cuatro veces y entra la llamada. Lucía no saluda y suelta: “¿Vas a ir a esa boda o me vas a hacer ir sola delante de todo el mundo?”\n\n“No sé todavía”, contesta su madre. “Eso ya no es una respuesta, mamá; llevas un año diciendo eso”, responde Lucía suavemente, casi tan bajo que no se oye. La madre demora en contestar.\n\nLucía le explica que Jorge no viene por ella sino por el primo. La red se cae otra vez, la conexión va lenta y hay que marcar de nuevo. En el teléfono, el contacto sigue guardado entero.\n\nLucía acerca la boca al micrófono y avisa: “Ni una mentira más en esta casa, ni por él ni por ti, ni por la boda.” Del otro lado hay temor, y eso también se oye.",
+    "topic": "calls-and-messages",
+    "slotIndex": 2,
+    "vocab": [
+      {
+        "type": "adverb",
+        "word": "seguido",
+        "surface": "seguidos",
+        "definition": "one after another, without a break between them"
+      },
+      {
+        "type": "verb",
+        "word": "marcar",
+        "surface": "marca",
+        "definition": "to press the numbers that call another telephone"
+      },
+      {
+        "type": "noun",
+        "word": "número",
+        "surface": "número",
+        "definition": "the digits you press to reach somebody by phone"
+      },
+      {
+        "type": "noun",
+        "word": "señal",
+        "surface": "señal",
+        "definition": "the invisible link that lets a phone reach the network"
+      },
+      {
+        "type": "adjective",
+        "word": "cerrado",
+        "surface": "cerrada",
+        "definition": "shut, with no way to get in or out"
+      },
+      {
+        "type": "adjective",
+        "word": "bajo",
+        "surface": "bajo",
+        "definition": "low, close to the ground, or quiet to hear"
+      },
+      {
+        "type": "noun",
+        "word": "botón",
+        "surface": "botón",
+        "definition": "the small part you press to make something happen"
+      },
+      {
+        "type": "expression",
+        "word": "sin prisa",
+        "surface": "sin prisa",
+        "definition": "calmly, without any rush to get it finished"
+      },
+      {
+        "type": "noun",
+        "word": "tono",
+        "surface": "tono",
+        "definition": "the repeated sound a phone makes before somebody answers"
+      },
+      {
+        "type": "noun",
+        "word": "llamada",
+        "surface": "llamada",
+        "definition": "one occasion of speaking to somebody by telephone"
+      },
+      {
+        "type": "expression",
+        "word": "ya no",
+        "surface": "ya no",
+        "definition": "not any more, though it was true before"
+      },
+      {
+        "type": "verb",
+        "word": "demorar",
+        "surface": "demora",
+        "definition": "to take longer than expected before doing something"
+      },
+      {
+        "type": "adverb",
+        "word": "suavemente",
+        "surface": "suavemente",
+        "definition": "in a soft gentle way, without raising the voice"
+      },
+      {
+        "type": "noun",
+        "word": "red",
+        "surface": "red",
+        "definition": "the system that carries phone calls and internet"
+      },
+      {
+        "type": "adjective",
+        "word": "lento",
+        "surface": "lenta",
+        "definition": "taking a long time, moving with little speed"
+      },
+      {
+        "type": "noun",
+        "word": "contacto",
+        "surface": "contacto",
+        "definition": "a name and number saved inside a phone"
+      },
+      {
+        "type": "noun",
+        "word": "micrófono",
+        "surface": "micrófono",
+        "definition": "the part of a phone that picks up your voice"
+      },
+      {
+        "type": "noun",
+        "word": "mentira",
+        "surface": "mentira",
+        "definition": "something said that the speaker knows is untrue"
+      },
+      {
+        "type": "noun",
+        "word": "temor",
+        "surface": "temor",
+        "definition": "a quiet fear about something that might happen"
+      },
+      {
+        "type": "noun",
+        "word": "conexión",
+        "surface": "conexión",
+        "definition": "the working link between a phone and the network"
+      }
+    ],
+    "arcType": "recurring-character-callback",
+    "synopsis": "Lucia marca el numero de su madre tres dias seguidos y no obtiene respuesta, porque la senal se cae y porque su madre tampoco quiere contestar. Cuando por fin entra la llamada, la conversacion no va de la boda ni del viaje: va de una pelea de hace años que en esa casa se sigue contando con medias verdades."
+  },
+  {
+    "slug": "una-carta-cruza-a-buenos-aires",
+    "title": "Una carta cruza a Buenos Aires",
+    "text": "Lucía pide permiso a su jefa y se queda hasta tarde. Abre el correo y escribe la contraseña dos veces. El teclado suena fuerte en el cuarto vacío.\n\nEn la aplicación aparece un aviso: quedan dos asientos disponibles para esa semana. Lucía le escribe a Jorge: “Te mando el enlace; contéstame antes de que se me apague el teléfono en rojo.” Conecta el cargador y espera.\n\n“¿Lo compro o no? Quedan dos y se van a ir hoy”, insiste ella. “Cómpralo, y no me preguntes más”, escribe Jorge. La respuesta llega exactamente un minuto después, sin un signo de más y sin un perdón.\n\nSu madre pone una carta en un sobre. Le pide: “Esto se lo das tú en la mano; nunca se lo mando yo por correo, y no borres nada.” Lucía lee los renglones uno por uno y no borra ninguno.\n\nJorge mete la guitarra en una funda delgada, la ata al bolso y la trae desde Buenos Aires. Su sobrina lo espera con un cartel propio, hecho con sus manos. La calma que faltaba es suya, y llega con quince años de retraso.",
+    "topic": "calls-and-messages",
+    "slotIndex": 3,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "jefa",
+        "surface": "jefa",
+        "definition": "the woman who is in charge of your work"
+      },
+      {
+        "type": "noun",
+        "word": "correo",
+        "surface": "correo",
+        "definition": "the system for sending written messages between computers"
+      },
+      {
+        "type": "noun",
+        "word": "contraseña",
+        "surface": "contraseña",
+        "definition": "the secret word that lets you open an account"
+      },
+      {
+        "type": "noun",
+        "word": "teclado",
+        "surface": "teclado",
+        "definition": "the set of keys you press to write letters"
+      },
+      {
+        "type": "noun",
+        "word": "aplicación",
+        "surface": "aplicación",
+        "definition": "a program on a phone that does one job"
+      },
+      {
+        "type": "noun",
+        "word": "aviso",
+        "surface": "aviso",
+        "definition": "a short message telling you that something has happened"
+      },
+      {
+        "type": "noun",
+        "word": "cargador",
+        "surface": "cargador",
+        "definition": "the cable that puts power back into a phone"
+      },
+      {
+        "type": "adverb",
+        "word": "exactamente",
+        "surface": "exactamente",
+        "definition": "in a way that is right down to the detail"
+      },
+      {
+        "type": "expression",
+        "word": "en rojo",
+        "surface": "en rojo",
+        "definition": "with almost no battery power left at all"
+      },
+      {
+        "type": "noun",
+        "word": "perdón",
+        "surface": "perdón",
+        "definition": "the words you say when you want to be forgiven"
+      },
+      {
+        "type": "noun",
+        "word": "carta",
+        "surface": "carta",
+        "definition": "a written message on paper sent to somebody"
+      },
+      {
+        "type": "noun",
+        "word": "sobre",
+        "surface": "sobre",
+        "definition": "the paper cover a letter is put inside"
+      },
+      {
+        "type": "adverb",
+        "word": "nunca",
+        "surface": "nunca",
+        "definition": "at no time at all, not even once"
+      },
+      {
+        "type": "expression",
+        "word": "uno por uno",
+        "surface": "uno por uno",
+        "definition": "taking each single thing in turn, without skipping"
+      },
+      {
+        "type": "verb",
+        "word": "borrar",
+        "surface": "borra",
+        "definition": "to remove writing so that it cannot be read"
+      },
+      {
+        "type": "verb",
+        "word": "atar",
+        "surface": "ata",
+        "definition": "to tie something with a string or a rope"
+      },
+      {
+        "type": "noun",
+        "word": "sobrina",
+        "surface": "sobrina",
+        "definition": "the daughter of your brother or of your sister"
+      },
+      {
+        "type": "adjective",
+        "word": "propio",
+        "surface": "propio",
+        "definition": "belonging to that person and to nobody else"
+      },
+      {
+        "type": "adjective",
+        "word": "delgado",
+        "surface": "delgada",
+        "definition": "thin, measuring very little from side to side"
+      },
+      {
+        "type": "adjective",
+        "word": "suyo",
+        "surface": "suya",
+        "definition": "belonging to him or to her, not to you"
+      }
+    ],
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Lucia compra el pasaje desde la oficina, de noche y con permiso de su jefa, y su madre contesta con una sola palabra. Lo que no llega por mensaje llega en papel: una carta corta dentro de un sobre que ella no piensa mandar por correo, porque quiere que la lleve su hija en la mano y se la entregue a Jorge en el aeropuerto."
+  },
+  {
+    "slug": "el-alebrije-pierde-una-pata",
+    "title": "El alebrije pierde una pata",
+    "text": "El alebrije lleva doce años en la misma repisa, con polvo. Mateo, un sobrino que pasa los domingos ahí, baja la figura y se le resbala. Cae de lado, Mateo no llega a frenarla y una pata rueda debajo.\n\nMateo moja un paño y ve la raya larga sobre la pintura del ala. Apaga la luz para mirarla mejor. Dice algo bajo y no se mueve.\n\nLa tía Rosa, una mujer que talla figuras, entra secándose las manos, calla y no hace ningún gesto. “Se rompió, tía, y fue mi culpa; se me fue de la mano”, dice Mateo. “Se rompió, sí; no te pongas así, que es madera y no un hueso”, contesta ella.\n\nLa pata rota es fina y la punta está partida. Debajo queda un hueco claro. “Es común que se caigan; esta lleva doce años ahí arriba”, dice la tía Rosa, y se agacha a buscarla.\n\n“Yo la guardo, tía; no se la enseñes a nadie todavía, ni al vecino”, pide Mateo, y la aprieta con la palma. Pone la tapa de vidrio para tapar el canto y la mancha. Esa noche sigue en su repisa.",
+    "topic": "help-and-repairs",
+    "slotIndex": 1,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "repisa",
+        "surface": "repisa",
+        "definition": "a narrow board fixed to a wall for objects"
+      },
+      {
+        "type": "noun",
+        "word": "polvo",
+        "surface": "polvo",
+        "definition": "the grey dirt that settles on things over time"
+      },
+      {
+        "type": "noun",
+        "word": "figura",
+        "surface": "figura",
+        "definition": "a small carved shape of an animal or person"
+      },
+      {
+        "type": "noun",
+        "word": "canto",
+        "surface": "canto",
+        "definition": "the narrow edge of something flat or thin"
+      },
+      {
+        "type": "noun",
+        "word": "pata",
+        "surface": "pata",
+        "definition": "one of the legs of an animal or a table"
+      },
+      {
+        "type": "noun",
+        "word": "pintura",
+        "surface": "pintura",
+        "definition": "the coloured coat spread over wood or a wall"
+      },
+      {
+        "type": "noun",
+        "word": "raya",
+        "surface": "raya",
+        "definition": "a long thin line drawn or scratched on something"
+      },
+      {
+        "type": "verb",
+        "word": "apagar",
+        "surface": "apaga",
+        "definition": "to switch off a light or a machine"
+      },
+      {
+        "type": "verb",
+        "word": "mojar",
+        "surface": "moja",
+        "definition": "to make something wet by putting water on it"
+      },
+      {
+        "type": "noun",
+        "word": "mancha",
+        "surface": "mancha",
+        "definition": "a dirty mark that spoils the look of something"
+      },
+      {
+        "type": "verb",
+        "word": "romperse",
+        "surface": "Se rompió",
+        "definition": "to break into pieces without anyone meaning it"
+      },
+      {
+        "type": "verb",
+        "word": "callar",
+        "surface": "calla",
+        "definition": "to stop talking and stay without saying anything"
+      },
+      {
+        "type": "noun",
+        "word": "gesto",
+        "surface": "gesto",
+        "definition": "a quick movement of the face or the hands"
+      },
+      {
+        "type": "adjective",
+        "word": "roto",
+        "surface": "rota",
+        "definition": "broken, with a piece missing or out of place"
+      },
+      {
+        "type": "adjective",
+        "word": "fino",
+        "surface": "fina",
+        "definition": "very thin, easy to break between your fingers"
+      },
+      {
+        "type": "noun",
+        "word": "punta",
+        "surface": "punta",
+        "definition": "the sharp or narrow end of a long thing"
+      },
+      {
+        "type": "noun",
+        "word": "hueco",
+        "surface": "hueco",
+        "definition": "an empty space where something used to be"
+      },
+      {
+        "type": "adjective",
+        "word": "común",
+        "surface": "común",
+        "definition": "happening often, not strange or surprising at all"
+      },
+      {
+        "type": "noun",
+        "word": "tapa",
+        "surface": "tapa",
+        "definition": "the flat piece that covers the top of something"
+      },
+      {
+        "type": "noun",
+        "word": "palma",
+        "surface": "palma",
+        "definition": "the inner flat side of your open hand"
+      }
+    ],
+    "arcType": "late-reveal",
+    "synopsis": "La figura de madera que segun la tia Rosa cuida la casa lleva doce años en la misma repisa, y a Mateo se le cae al bajarla para limpiarla. Pierde una pata y gana una raya en la pintura del ala. Nadie grita ni lo regaña, pero esa noche el alebrije no se mueve de sitio y en la casa nadie dice en voz alta que se rompio."
+  },
+  {
+    "slug": "el-copal-no-se-pega-solo",
+    "title": "El copal no se pega solo",
+    "text": "Esa noche Mateo intenta juntar la pata de copal con la goma que Rosa guarda en la cocina. Pone pegamento en las dos partes y cuenta hasta sesenta. El cuarto huele fuerte y le pican los ojos.\n\n“¿Y si queda torcida?”, pregunta Mateo. “Se despega y ya está; no te preocupes”, contesta Rosa desde la puerta, sin entrar.\n\nMateo sujeta la pata con un trozo de cinta adhesiva y la estira bien. Rosa le avisa: “Déjala boca abajo para que seque toda la noche.” Mateo obedece y no la toca más.\n\nPor la mañana la pata aguanta medio minuto y ya no puede más. “La goma dejó una raya y no quedó recta”, dice él desde el patio. Doblar la cinta no sirvió de nada; si la rompe otra vez, se acabó.\n\n“Esto es más complicado de lo que parece”, dice Mateo. “Todo lo es la primera vez”, responde Rosa. Él mira el extremo suelto y nada queda firme.",
+    "topic": "help-and-repairs",
+    "slotIndex": 2,
+    "vocab": [
+      {
+        "type": "verb",
+        "word": "juntar",
+        "surface": "juntar",
+        "definition": "to put two separate pieces back together again"
+      },
+      {
+        "type": "noun",
+        "word": "goma",
+        "surface": "goma",
+        "definition": "the sticky liquid used to hold two things together"
+      },
+      {
+        "type": "noun",
+        "word": "pegamento",
+        "surface": "pegamento",
+        "definition": "the sticky paste used for joining broken pieces"
+      },
+      {
+        "type": "noun",
+        "word": "parte",
+        "surface": "partes",
+        "definition": "one of the pieces that a whole thing has"
+      },
+      {
+        "type": "adjective",
+        "word": "torcido",
+        "surface": "torcida",
+        "definition": "bent to one side instead of being straight"
+      },
+      {
+        "type": "expression",
+        "word": "no te preocupes",
+        "surface": "no te preocupes",
+        "definition": "words said to calm somebody who is worried"
+      },
+      {
+        "type": "verb",
+        "word": "intentar",
+        "surface": "intenta",
+        "definition": "to try to do something that may not work"
+      },
+      {
+        "type": "verb",
+        "word": "sujetar",
+        "surface": "sujeta",
+        "definition": "to hold something in place so it cannot move"
+      },
+      {
+        "type": "expression",
+        "word": "cinta adhesiva",
+        "surface": "cinta adhesiva",
+        "definition": "a long sticky strip used to hold things together"
+      },
+      {
+        "type": "noun",
+        "word": "trozo",
+        "surface": "trozo",
+        "definition": "a small piece cut or broken off something bigger"
+      },
+      {
+        "type": "verb",
+        "word": "estirar",
+        "surface": "estira",
+        "definition": "to make something longer by pulling at it"
+      },
+      {
+        "type": "verb",
+        "word": "secar",
+        "surface": "seque",
+        "definition": "to become dry after being wet or sticky"
+      },
+      {
+        "type": "noun",
+        "word": "extremo",
+        "surface": "extremo",
+        "definition": "the far end of something long and narrow"
+      },
+      {
+        "type": "adjective",
+        "word": "recto",
+        "surface": "recta",
+        "definition": "straight, without any bend along its whole length"
+      },
+      {
+        "type": "adjective",
+        "word": "firme",
+        "surface": "firme",
+        "definition": "steady and solid, not moving when you push"
+      },
+      {
+        "type": "verb",
+        "word": "poder",
+        "surface": "puede",
+        "definition": "to be able to do the thing you want"
+      },
+      {
+        "type": "verb",
+        "word": "doblar",
+        "surface": "Doblar",
+        "definition": "to bend something so it is no longer straight"
+      },
+      {
+        "type": "verb",
+        "word": "romper",
+        "surface": "rompe",
+        "definition": "to break something so it comes apart in pieces"
+      },
+      {
+        "type": "verb",
+        "word": "servir",
+        "surface": "sirvió",
+        "definition": "to be useful for the job you needed done"
+      },
+      {
+        "type": "adjective",
+        "word": "complicado",
+        "surface": "complicado",
+        "definition": "hard to do because it has many small steps"
+      }
+    ],
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Mateo intenta arreglar la pata solo y de noche, con la goma que encuentra en el cajon de la cocina. La pega torcida, la sujeta con cinta y la deja secar boca abajo. Por la mañana la pata aguanta el peso durante medio minuto y se suelta otra vez, y ahora ademas hay un trozo de madera pegado donde no debia."
+  },
+  {
+    "slug": "rosa-afila-una-varilla-de-copal",
+    "title": "Rosa afila una varilla de copal",
+    "text": "Rosa deja el cajón de las herramientas abierto el sábado. Suelta la tapa, saca el destornillador y empuja la caja al centro. El cuarto está frío y la tabla raspa al tocarla.\n\nRosa empieza: “Primero se limpia y después se pega, paso a paso, sin prisa.” “¿Y el clavo, no sirve?”, pregunta Mateo. “El clavo no: eso es para muebles, y esto no es un mueble sino una figura”, contesta ella.\n\nRosa afila la varilla de copal y abre un hueco profundo con un cuchillo romo. Mete la varilla en la pata y la otra punta en el cuerpo. Todo a mano: la pieza pesa poco y cabe en la palma.\n\nLe pasa el pincel y un poco de barniz usado. “Ahora lo terminas tú: una capa fina, y también la raya del ala, que se nota”, dice Rosa. Mateo lo hace despacio.\n\nMoja la punta, repara el ala y arregla lo que queda; más fácil de lo que parecía. Con eso es suficiente, y esa noche mueve el alebrije dos dedos. Nadie en la casa lo ve, y ese es el punto.",
+    "topic": "help-and-repairs",
+    "slotIndex": 3,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "cajón",
+        "surface": "cajón",
+        "definition": "the sliding box inside a table where things are kept"
+      },
+      {
+        "type": "noun",
+        "word": "herramienta",
+        "surface": "herramientas",
+        "definition": "a thing you hold to build or mend something"
+      },
+      {
+        "type": "verb",
+        "word": "soltar",
+        "surface": "Suelta",
+        "definition": "to let go of something you were holding"
+      },
+      {
+        "type": "noun",
+        "word": "destornillador",
+        "surface": "destornillador",
+        "definition": "the tool used to turn screws into wood"
+      },
+      {
+        "type": "verb",
+        "word": "empujar",
+        "surface": "empuja",
+        "definition": "to push something so that it moves away"
+      },
+      {
+        "type": "noun",
+        "word": "clavo",
+        "surface": "clavo",
+        "definition": "a thin metal pin hammered in to hold wood"
+      },
+      {
+        "type": "expression",
+        "word": "paso a paso",
+        "surface": "paso a paso",
+        "definition": "doing one small part first and the next after"
+      },
+      {
+        "type": "noun",
+        "word": "varilla",
+        "surface": "varilla",
+        "definition": "a thin straight stick of wood or metal"
+      },
+      {
+        "type": "adjective",
+        "word": "romo",
+        "surface": "romo",
+        "definition": "not sharp any more, worn down at the edge"
+      },
+      {
+        "type": "adjective",
+        "word": "profundo",
+        "surface": "profundo",
+        "definition": "going a long way down from the surface"
+      },
+      {
+        "type": "expression",
+        "word": "a mano",
+        "surface": "a mano",
+        "definition": "using only the hands, with no machine involved"
+      },
+      {
+        "type": "verb",
+        "word": "pesar",
+        "surface": "pesa",
+        "definition": "to have a certain weight when you lift it"
+      },
+      {
+        "type": "verb",
+        "word": "caber",
+        "surface": "cabe",
+        "definition": "to fit inside a space without being forced"
+      },
+      {
+        "type": "noun",
+        "word": "pincel",
+        "surface": "pincel",
+        "definition": "the small brush used for putting paint on"
+      },
+      {
+        "type": "noun",
+        "word": "barniz",
+        "surface": "barniz",
+        "definition": "the clear liquid brushed on wood to protect it"
+      },
+      {
+        "type": "adjective",
+        "word": "usado",
+        "surface": "usado",
+        "definition": "that somebody has already used some time before"
+      },
+      {
+        "type": "verb",
+        "word": "reparar",
+        "surface": "repara",
+        "definition": "to mend something that was broken or damaged"
+      },
+      {
+        "type": "verb",
+        "word": "arreglar",
+        "surface": "arregla",
+        "definition": "to put something right so it works again"
+      },
+      {
+        "type": "adjective",
+        "word": "fácil",
+        "surface": "fácil",
+        "definition": "needing little effort or skill to get done"
+      },
+      {
+        "type": "adjective",
+        "word": "suficiente",
+        "surface": "suficiente",
+        "definition": "as much as is needed, with nothing more required"
+      }
+    ],
+    "arcType": "recurring-character-callback",
+    "synopsis": "La tia Rosa saca las herramientas y le enseña a Mateo que una figura no se arregla con clavos sino con una varilla fina metida a mano en un hueco profundo. Le pasa el pincel para que termine el la pintura, y esa misma noche Mateo mueve el alebrije dos dedos a la izquierda sin que nadie en la casa lo vea, que es exactamente lo que ella hacia."
+  },
+  {
+    "slug": "un-lomito-completo-en-san-telmo",
+    "title": "Un lomito completo en San Telmo",
+    "text": "En San Telmo, Pablo, un vecino que llegó hace un año, entra al bar de siempre con Marta, una amiga que trabaja a la vuelta. El mesero llena el vaso y deja el menú abierto sobre la mesa. Huele a pan tostado desde la cocina.\n\n“Un lomito y un cortado, por favor”, pide Pablo. “¿El lomito completo o simple?”, pregunta el mesero. Pablo no sabe qué quiere decir completo y contesta que sí.\n\nPablo se queja: “Esto no es lo que pedí; llegó un plato diferente y con tres cosas encima.” El mesero le deja cuchillo, tenedor y cuchara y se va. “Erraste al contestar, nada más”, se da cuenta él.\n\n“Mirá vos, pediste el completo”, se ríe Marta. “Yo quería el simple, pero dije que sí sin pensar”, contesta él. Marta le explica que el modo de pedir tiene su frase correcta y en este idioma todo suena parecido.\n\nLo incorrecto no fue la palabra sino el sí. Pablo tarda en salir y se equivoca dos veces más antes del postre. Pide una medialuna y esta vez le traen la factura.",
+    "topic": "names-for-things",
+    "slotIndex": 1,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "mesero",
+        "surface": "mesero",
+        "definition": "the man who brings food to the tables"
+      },
+      {
+        "type": "verb",
+        "word": "llenar",
+        "surface": "llena",
+        "definition": "to fill something until there is no space left"
+      },
+      {
+        "type": "noun",
+        "word": "menú",
+        "surface": "menú",
+        "definition": "the list of dishes a place can serve you"
+      },
+      {
+        "type": "noun",
+        "word": "lomito",
+        "surface": "lomito",
+        "definition": "a thin beef steak served inside a bread roll"
+      },
+      {
+        "type": "noun",
+        "word": "cortado",
+        "surface": "cortado",
+        "definition": "a small coffee with a little milk in it"
+      },
+      {
+        "type": "adjective",
+        "word": "diferente",
+        "surface": "diferente",
+        "definition": "not the same as the other thing named"
+      },
+      {
+        "type": "noun",
+        "word": "cuchillo",
+        "surface": "cuchillo",
+        "definition": "the sharp tool used for cutting food at table"
+      },
+      {
+        "type": "verb",
+        "word": "salir",
+        "surface": "salir",
+        "definition": "to go out of a place towards the street"
+      },
+      {
+        "type": "verb",
+        "word": "tardar",
+        "surface": "tarda",
+        "definition": "to take a long time to do something"
+      },
+      {
+        "type": "expression",
+        "word": "darse cuenta",
+        "surface": "se da cuenta",
+        "definition": "to suddenly understand something you had not seen"
+      },
+      {
+        "type": "noun",
+        "word": "modo",
+        "surface": "modo",
+        "definition": "the particular way in which something is done"
+      },
+      {
+        "type": "expression",
+        "word": "mirá vos",
+        "surface": "Mirá vos",
+        "definition": "words Argentines say when something mildly surprises them"
+      },
+      {
+        "type": "noun",
+        "word": "frase",
+        "surface": "frase",
+        "definition": "a group of words said together as one unit"
+      },
+      {
+        "type": "adjective",
+        "word": "correcto",
+        "surface": "correcta",
+        "definition": "right, exactly as it should be said or done"
+      },
+      {
+        "type": "noun",
+        "word": "idioma",
+        "surface": "idioma",
+        "definition": "the language that a whole country speaks every day"
+      },
+      {
+        "type": "adjective",
+        "word": "parecido",
+        "surface": "parecido",
+        "definition": "almost the same, but not exactly the same"
+      },
+      {
+        "type": "adjective",
+        "word": "incorrecto",
+        "surface": "incorrecto",
+        "definition": "wrong, not the way it should be said"
+      },
+      {
+        "type": "verb",
+        "word": "equivocarse",
+        "surface": "se equivoca",
+        "definition": "to say or do the wrong thing by mistake"
+      },
+      {
+        "type": "verb",
+        "word": "dejar",
+        "surface": "deja",
+        "definition": "to leave something where it is and not take it"
+      },
+      {
+        "type": "noun",
+        "word": "factura",
+        "surface": "factura",
+        "definition": "a sweet pastry, or the paper that says what you owe"
+      }
+    ],
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Pablo lleva un año en la ciudad y ya tiene con quien sentarse, pero sigue pidiendo mal. Dice que si a una pregunta que no entiende y le llega un plato distinto del que esperaba. Marta se rie y le señala lo unico que no habia visto: lo que falla no son las palabras sueltas sino la frase entera con que se pide."
+  },
+  {
+    "slug": "dos-columnas-y-una-birome",
+    "title": "Dos columnas y una birome",
+    "text": "El jueves la lluvia suena fuerte sobre Buenos Aires y Marta llega con una pizarra y un marcador grueso. La empuja contra la pared, delante de Pablo, y traza una línea ancha por el medio. El marcador chirría alto sobre el vidrio.\n\nMarta empieza: “A la izquierda tu columna, a la derecha la de acá.” “¿Y si las dos palabras son iguales?”, pregunta Pablo. “Entonces no va en la pizarra, no la llenes de más”, contesta ella.\n\nPablo copia todo en una hoja con una birome prestada. Marta le dicta despacio, él no niega ninguna y la lista sigue creciendo. Es media clase, y Pablo cierra la libreta con dos palabras escritas.\n\n“Esto es necesario si querés vivir acá”, dice Marta. “Jamás lo tires; eso dura”, insiste. Pablo estira la hoja, la pliega en cuatro y la guarda quieto.\n\nMarta guarda la pizarra con la nota encima: así no se olvida. “Está todo mal”, dice Pablo, y Marta contesta que no, que ahora está escrito. “Trato hecho”, contesta él, y eso sí es verdadero.",
+    "topic": "names-for-things",
+    "slotIndex": 2,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "pizarra",
+        "surface": "pizarra",
+        "definition": "a flat dark board you write on with chalk"
+      },
+      {
+        "type": "verb",
+        "word": "olvidar",
+        "surface": "olvida",
+        "definition": "to stop remembering something that you once knew"
+      },
+      {
+        "type": "adjective",
+        "word": "ancho",
+        "surface": "ancha",
+        "definition": "wide, measuring a lot from side to side"
+      },
+      {
+        "type": "verb",
+        "word": "durar",
+        "surface": "dura",
+        "definition": "to keep working or lasting for a long time"
+      },
+      {
+        "type": "noun",
+        "word": "izquierda",
+        "surface": "izquierda",
+        "definition": "the side of your body where your heart is"
+      },
+      {
+        "type": "noun",
+        "word": "columna",
+        "surface": "columna",
+        "definition": "a tall narrow list of words one under another"
+      },
+      {
+        "type": "noun",
+        "word": "hoja",
+        "surface": "hoja",
+        "definition": "a single flat sheet of paper for writing"
+      },
+      {
+        "type": "noun",
+        "word": "birome",
+        "surface": "birome",
+        "register": "cultural",
+        "definition": "the everyday pen that people in Argentina write with"
+      },
+      {
+        "type": "verb",
+        "word": "negar",
+        "surface": "niega",
+        "definition": "to say that something is not true at all"
+      },
+      {
+        "type": "noun",
+        "word": "clase",
+        "surface": "clase",
+        "definition": "a time when somebody teaches and others learn"
+      },
+      {
+        "type": "verb",
+        "word": "seguir",
+        "surface": "sigue",
+        "definition": "to keep on doing what you were already doing"
+      },
+      {
+        "type": "adjective",
+        "word": "necesario",
+        "surface": "necesario",
+        "definition": "that you really need if you want it to work"
+      },
+      {
+        "type": "adverb",
+        "word": "jamás",
+        "surface": "Jamás",
+        "definition": "at no moment, not ever in your whole life"
+      },
+      {
+        "type": "verb",
+        "word": "plegar",
+        "surface": "pliega",
+        "definition": "to fold something over on itself several times"
+      },
+      {
+        "type": "adjective",
+        "word": "quieto",
+        "surface": "quieto",
+        "definition": "staying still, without moving even a little bit"
+      },
+      {
+        "type": "verb",
+        "word": "cerrar",
+        "surface": "cierra",
+        "definition": "to shut something so it cannot be opened"
+      },
+      {
+        "type": "noun",
+        "word": "nota",
+        "surface": "nota",
+        "definition": "a few words written down so you remember them"
+      },
+      {
+        "type": "expression",
+        "word": "está todo mal",
+        "surface": "Está todo mal",
+        "definition": "words said when nothing seems right at all"
+      },
+      {
+        "type": "expression",
+        "word": "trato hecho",
+        "surface": "Trato hecho",
+        "definition": "words that close an agreement between two people"
+      },
+      {
+        "type": "adjective",
+        "word": "verdadero",
+        "surface": "verdadero",
+        "definition": "true, matching what really is the case here"
+      }
+    ],
+    "arcType": "reframe-turn",
+    "synopsis": "Marta aparece con una pizarra y parte la pared en dos: a la izquierda lo que Pablo dice, a la derecha lo que se dice aca. No es una clase de vocabulario sino un mapa de las veces que va a quedar mal, y Pablo lo copia entero en una hoja que despues pliega en cuatro y guarda como si fuera un documento."
+  },
+  {
+    "slug": "pablo-explica-el-bondi",
+    "title": "Pablo explica el bondi",
+    "text": "En la avenida, frente a la cartelera del cine, hay gente esperando, y entre ella Pablo. Nadia, una recién llegada que todavía no entiende nada, mira la vitrina del bar. El vidrio sucio no deja ver el interior.\n\n“¿Este colectivo va al centro?”, pregunta Nadia. “Ese bondi va, sí, pero el otro no”, contesta alguien de la fila. Nadia intenta decir bondi y no le sale.\n\nPablo se acerca con la campera abierta y las zapatillas mojadas. Alrededor la gente sube y baja sin mirar a nadie. “Colectivo y bondi son la misma cosa; acá se dice de las dos maneras”, le explica él.\n\n“¿Y la pileta del club es piscina?”, pregunta Nadia. “Piscina se entiende, pero acá nadie la llama así”, contesta Pablo. “Anótalo donde puedas”, insiste, y Nadia saca un lápiz y lo mete en la manga.\n\nFuera de la parada, Lucas no tarda en llegar con dos churros. La nevera del bar está vacía y hace calor. Nadia suelta el pasaporte y se sienta en una silla; le duelen los pies de esperar.",
+    "topic": "names-for-things",
+    "slotIndex": 3,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "avenida",
+        "surface": "avenida",
+        "definition": "a wide street with many lanes of traffic"
+      },
+      {
+        "type": "adverb",
+        "word": "frente",
+        "surface": "frente",
+        "definition": "directly in front of the thing that is named"
+      },
+      {
+        "type": "verb",
+        "word": "doler",
+        "surface": "duelen",
+        "definition": "to hurt, as a part of your body does"
+      },
+      {
+        "type": "noun",
+        "word": "vidrio",
+        "surface": "vidrio",
+        "definition": "the hard clear material windows are made of"
+      },
+      {
+        "type": "adjective",
+        "word": "sucio",
+        "surface": "sucio",
+        "definition": "covered in dirt and needing to be cleaned"
+      },
+      {
+        "type": "verb",
+        "word": "sacar",
+        "surface": "saca",
+        "definition": "to take something out of a bag or pocket"
+      },
+      {
+        "type": "adverb",
+        "word": "alrededor",
+        "surface": "Alrededor",
+        "definition": "on every side of the place you are in"
+      },
+      {
+        "type": "noun",
+        "word": "colectivo",
+        "surface": "colectivo",
+        "definition": "the city bus, as most Latin Americans call it"
+      },
+      {
+        "type": "noun",
+        "word": "bondi",
+        "surface": "bondi",
+        "register": "cultural",
+        "definition": "the city bus, as people in Buenos Aires call it"
+      },
+      {
+        "type": "noun",
+        "word": "campera",
+        "surface": "campera",
+        "definition": "a short jacket worn over the other clothes"
+      },
+      {
+        "type": "noun",
+        "word": "zapatillas",
+        "surface": "zapatillas",
+        "definition": "the soft shoes worn for walking and sport"
+      },
+      {
+        "type": "noun",
+        "word": "pileta",
+        "surface": "pileta",
+        "definition": "the pool where people swim, in River Plate speech"
+      },
+      {
+        "type": "noun",
+        "word": "lápiz",
+        "surface": "lápiz",
+        "definition": "the wooden stick with grey inside for writing"
+      },
+      {
+        "type": "noun",
+        "word": "manga",
+        "surface": "manga",
+        "definition": "the part of a shirt that covers your arm"
+      },
+      {
+        "type": "adverb",
+        "word": "fuera",
+        "surface": "Fuera",
+        "definition": "outside the place that has just been named"
+      },
+      {
+        "type": "noun",
+        "word": "churro",
+        "surface": "churros",
+        "definition": "a long fried stick of dough eaten sweet"
+      },
+      {
+        "type": "verb",
+        "word": "vaciar",
+        "surface": "vacía",
+        "definition": "to empty something so nothing is left inside"
+      },
+      {
+        "type": "noun",
+        "word": "nevera",
+        "surface": "nevera",
+        "definition": "the cold cupboard that keeps food and drinks fresh"
+      },
+      {
+        "type": "noun",
+        "word": "pasaporte",
+        "surface": "pasaporte",
+        "definition": "the small book that proves who you are abroad"
+      },
+      {
+        "type": "verb",
+        "word": "meter",
+        "surface": "mete",
+        "definition": "to put something inside a bag or a hole"
+      }
+    ],
+    "arcType": "late-reveal",
+    "synopsis": "En la parada de la avenida hay una recien llegada que pregunta por el colectivo y no entiende la respuesta. Pablo se oye a si mismo explicando lo que hace un año no sabia, y se da cuenta de que ya no traduce las palabras sueltas: ahora traduce el modo, que es lo que le habian escrito a el en una columna hace unos meses."
+  },
+  {
+    "slug": "un-candado-nuevo-tras-el-carnaval",
+    "title": "Un candado nuevo tras el Carnaval",
+    "text": "Después del Carnaval, Barranquilla vuelve a ser una calle normal. En el portón del edificio hay una reja nueva y un candado que nadie conoce. Camilo cruza el patio con dos bolsas.\n\nEn el segundo piso vive Alveiro, un inquilino que llegó el lunes. “Paga el cuarto por noche y no saluda a nadie en el patio”, dice su mamá desde la terraza. “El alquiler se cobra los viernes, como a todos”, contesta Camilo.\n\n“¿Usted sabe quién es?”, pregunta Camilo. “Ni idea; el patrón no dijo nada, ni a mí ni a nadie”, responde ella. Se abanica en la terraza, al lado de una planta seca.\n\nLa cerradura del portón es nueva y el cerrojo no gira. Camilo empuja con el hombro y el sol calienta la tapia. Seguramente nadie tiene todavía la llave que hace falta.\n\nAlveiro baja, mira la reja cerrada y vuelve a subir sin decir nada. “Ese piso es barato porque el ventilador no funciona”, dice ella. Camilo sigue con la duda; el vecino, con la suya.",
+    "topic": "doors-and-neighbours",
+    "slotIndex": 1,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "portón",
+        "surface": "portón",
+        "definition": "the big door that closes the entrance of a building"
+      },
+      {
+        "type": "noun",
+        "word": "reja",
+        "surface": "reja",
+        "definition": "a set of metal bars fixed across an opening"
+      },
+      {
+        "type": "noun",
+        "word": "candado",
+        "surface": "candado",
+        "definition": "the small lock you hang on a gate or chain"
+      },
+      {
+        "type": "noun",
+        "word": "patio",
+        "surface": "patio",
+        "definition": "the open space inside or behind a house"
+      },
+      {
+        "type": "noun",
+        "word": "inquilino",
+        "surface": "inquilino",
+        "definition": "the person who pays to live in somebody's room"
+      },
+      {
+        "type": "noun",
+        "word": "cuarto",
+        "surface": "cuarto",
+        "definition": "one of the rooms where a person sleeps"
+      },
+      {
+        "type": "expression",
+        "word": "por noche",
+        "surface": "por noche",
+        "definition": "for each night that a person stays there"
+      },
+      {
+        "type": "noun",
+        "word": "alquiler",
+        "surface": "alquiler",
+        "definition": "the money paid every month for a room"
+      },
+      {
+        "type": "noun",
+        "word": "patrón",
+        "surface": "patrón",
+        "definition": "the man who owns the building or the business"
+      },
+      {
+        "type": "verb",
+        "word": "abanico",
+        "surface": "abanica",
+        "definition": "to move air onto yourself to feel cooler"
+      },
+      {
+        "type": "noun",
+        "word": "terraza",
+        "surface": "terraza",
+        "definition": "the flat open roof where people sit outside"
+      },
+      {
+        "type": "noun",
+        "word": "planta",
+        "surface": "planta",
+        "definition": "a green living thing grown in soil or a pot"
+      },
+      {
+        "type": "noun",
+        "word": "cerradura",
+        "surface": "cerradura",
+        "definition": "the part of a door where the key goes in"
+      },
+      {
+        "type": "noun",
+        "word": "cerrojo",
+        "surface": "cerrojo",
+        "definition": "the metal bar you slide across to close a door"
+      },
+      {
+        "type": "verb",
+        "word": "girar",
+        "surface": "gira",
+        "definition": "to turn around a fixed point, as a key does"
+      },
+      {
+        "type": "verb",
+        "word": "calentar",
+        "surface": "calienta",
+        "definition": "to make something warmer than it was before"
+      },
+      {
+        "type": "noun",
+        "word": "tapia",
+        "surface": "tapia",
+        "definition": "a long wall of earth or brick around a yard"
+      },
+      {
+        "type": "adjective",
+        "word": "barato",
+        "surface": "barato",
+        "definition": "costing little money compared with the other rooms"
+      },
+      {
+        "type": "noun",
+        "word": "ventilador",
+        "surface": "ventilador",
+        "definition": "the machine with blades that pushes air around"
+      },
+      {
+        "type": "noun",
+        "word": "vecino",
+        "surface": "vecino",
+        "definition": "a person who lives in the house next to yours"
+      }
+    ],
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Pasado el Carnaval, Barranquilla vuelve a ser una calle normal y en el edificio hay un candado nuevo que nadie sabe de donde salio. En el segundo piso vive desde el lunes Alveiro, que paga por noche, no saluda y tiene un ventilador que no funciona. Camilo pregunta y nadie en la casa sabe darle una respuesta."
+  },
+  {
+    "slug": "un-favor-a-oscuras-en-barranquilla",
+    "title": "Un favor a oscuras en Barranquilla",
+    "text": "Se va la electricidad en todo el barrio de Barranquilla un martes por la tarde. La bombilla del pasillo queda muerta y el interruptor no responde. Camilo baja con una linterna y golpea la puerta de Alveiro.\n\n“Disculpe, ¿le sobra un enchufe para cargar la linterna?”, pregunta Camilo. “Me sobra, sí; suba”, contesta Alveiro desde arriba, y deja la puerta entornada.\n\nCamilo sube con un taburete. Ata la linterna arriba y se sienta en el borde. Camilo le avisa: “A la lista del edificio le faltan dos nombres y uno es el suyo.” Alveiro no se queja de nada.\n\n“Hazme el favor y firma abajo”, pide Camilo. “Le debo una, entonces, y de las grandes”, dice Alveiro. Incluso le ofrece la escoba para bajar la telaraña del techo.\n\n“Ya volvió la luz”, grita alguien del patio, y el pasillo se pone duro de blanco a las nueve. Camilo saca la billetera y no le cobra nada. Bajan juntos y el portón queda abierto.",
+    "topic": "doors-and-neighbours",
+    "slotIndex": 2,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "electricidad",
+        "surface": "electricidad",
+        "definition": "the power that makes lamps and machines work"
+      },
+      {
+        "type": "noun",
+        "word": "bombilla",
+        "surface": "bombilla",
+        "definition": "the glass ball that gives light in a lamp"
+      },
+      {
+        "type": "noun",
+        "word": "interruptor",
+        "surface": "interruptor",
+        "definition": "the small switch that turns a light on"
+      },
+      {
+        "type": "noun",
+        "word": "linterna",
+        "surface": "linterna",
+        "definition": "a small lamp you carry in your hand"
+      },
+      {
+        "type": "expression",
+        "word": "disculpe",
+        "surface": "Disculpe",
+        "definition": "the polite word you say before asking a stranger"
+      },
+      {
+        "type": "verb",
+        "word": "sobrar",
+        "surface": "sobra",
+        "definition": "to be left over after everything needed is used"
+      },
+      {
+        "type": "noun",
+        "word": "enchufe",
+        "surface": "enchufe",
+        "definition": "the hole in the wall where a cable goes"
+      },
+      {
+        "type": "verb",
+        "word": "contestar",
+        "surface": "contesta",
+        "definition": "to give an answer to what somebody asked"
+      },
+      {
+        "type": "noun",
+        "word": "taburete",
+        "surface": "taburete",
+        "definition": "a small seat with no back to lean on"
+      },
+      {
+        "type": "noun",
+        "word": "borde",
+        "surface": "borde",
+        "definition": "the outer edge of a surface or an object"
+      },
+      {
+        "type": "noun",
+        "word": "lista",
+        "surface": "lista",
+        "definition": "names written one under another on a sheet"
+      },
+      {
+        "type": "verb",
+        "word": "faltar",
+        "surface": "faltan",
+        "definition": "to be missing from the place they should be"
+      },
+      {
+        "type": "verb",
+        "word": "quejarse",
+        "surface": "se queja",
+        "definition": "to say out loud that something is wrong"
+      },
+      {
+        "type": "expression",
+        "word": "hazme el favor",
+        "surface": "Hazme el favor",
+        "definition": "words used when asking somebody for a small favour"
+      },
+      {
+        "type": "verb",
+        "word": "deber",
+        "surface": "debo",
+        "definition": "to owe somebody money or a favour in return"
+      },
+      {
+        "type": "adverb",
+        "word": "incluso",
+        "surface": "Incluso",
+        "definition": "even that as well, going further than anyone expected"
+      },
+      {
+        "type": "verb",
+        "word": "ofrecer",
+        "surface": "ofrece",
+        "definition": "to say you will give something to somebody"
+      },
+      {
+        "type": "noun",
+        "word": "escoba",
+        "surface": "escoba",
+        "definition": "the long brush used for sweeping the floor"
+      },
+      {
+        "type": "adjective",
+        "word": "duro",
+        "surface": "duro",
+        "definition": "strong and sharp, not soft or gentle at all"
+      },
+      {
+        "type": "noun",
+        "word": "billetera",
+        "surface": "billetera",
+        "definition": "the flat folding case for notes and cards"
+      }
+    ],
+    "arcType": "recurring-character-callback",
+    "synopsis": "Se va la electricidad en el bloque entero y Camilo sube donde Alveiro con una linterna a pedir un enchufe prestado. Lo que empieza como un favor de cinco minutos termina con una firma en la lista del edificio y una escoba prestada, porque en ese barrio nadie devuelve un favor sin ofrecer otro encima."
+  },
+  {
+    "slug": "la-cubeta-sube-dos-pisos",
+    "title": "La cubeta sube dos pisos",
+    "text": "Un sábado el grifo del segundo suelta un hilo y se para. Camilo golpea la puerta de Alveiro y avisa: “El agua no sube por la tubería y la ducha quedó seca desde ayer.” El azulejo del baño sigue mojado de la noche anterior.\n\n“Suba a bañarse arriba”, ofrece Alveiro. “¿Y la cubeta?”, pregunta Camilo. “La cubeta se la presto yo”, contesta él.\n\n“Ahí tienes un paño limpio; el resto lo encuentras solo”, dice Alveiro. “El desagüe gotea desde hace meses, ya lo sé”, añade. Gotea, pero el vapor sale caliente.\n\nEn el cuarto de Camilo hay una manta doblada, una cortina corrida y un bote. La almohada y la sábana están dobladas sobre el colchón. El ropero no cierra desde el año pasado.\n\nCamilo moja el paño en la espuma del lavabo, apaga la luz y el agua vuelve con la limpieza a medias. Alveiro suelta la jarra vacía y baja la frazada doblada. Las dos puertas se quedan abiertas todo el fin de semana.",
+    "topic": "doors-and-neighbours",
+    "slotIndex": 3,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "grifo",
+        "surface": "grifo",
+        "definition": "the part you turn to let water out"
+      },
+      {
+        "type": "noun",
+        "word": "ducha",
+        "surface": "ducha",
+        "definition": "the place where water falls on you to wash"
+      },
+      {
+        "type": "noun",
+        "word": "azulejo",
+        "surface": "azulejo",
+        "definition": "a flat square tile fixed on a bathroom wall"
+      },
+      {
+        "type": "adjective",
+        "word": "mojado",
+        "surface": "mojado",
+        "definition": "covered with water and not yet dry at all"
+      },
+      {
+        "type": "noun",
+        "word": "cubeta",
+        "surface": "cubeta",
+        "definition": "a round open container for carrying water by hand"
+      },
+      {
+        "type": "noun",
+        "word": "paño",
+        "surface": "paño",
+        "definition": "a small piece of cloth used for drying things"
+      },
+      {
+        "type": "noun",
+        "word": "desagüe",
+        "surface": "desagüe",
+        "definition": "the hole where the used water runs away"
+      },
+      {
+        "type": "verb",
+        "word": "gotear",
+        "surface": "gotea",
+        "definition": "to let water fall slowly, drop by drop"
+      },
+      {
+        "type": "noun",
+        "word": "vapor",
+        "surface": "vapor",
+        "definition": "the warm white cloud that rises from hot water"
+      },
+      {
+        "type": "noun",
+        "word": "cortina",
+        "surface": "cortina",
+        "definition": "the cloth hung over a window or a doorway"
+      },
+      {
+        "type": "noun",
+        "word": "bote",
+        "surface": "bote",
+        "definition": "an open can used for rubbish or for water"
+      },
+      {
+        "type": "noun",
+        "word": "almohada",
+        "surface": "almohada",
+        "definition": "the soft bag you rest your head on"
+      },
+      {
+        "type": "noun",
+        "word": "sábana",
+        "surface": "sábana",
+        "definition": "the wide thin cloth that you sleep between"
+      },
+      {
+        "type": "noun",
+        "word": "colchón",
+        "surface": "colchón",
+        "definition": "the thick soft part of a bed you lie on"
+      },
+      {
+        "type": "noun",
+        "word": "ropero",
+        "surface": "ropero",
+        "definition": "the tall cupboard where clothes are hung up"
+      },
+      {
+        "type": "noun",
+        "word": "espuma",
+        "surface": "espuma",
+        "definition": "the white bubbles that soap makes in water"
+      },
+      {
+        "type": "noun",
+        "word": "lavabo",
+        "surface": "lavabo",
+        "definition": "the small basin where you wash your hands"
+      },
+      {
+        "type": "noun",
+        "word": "limpieza",
+        "surface": "limpieza",
+        "definition": "the work of making a place clean again"
+      },
+      {
+        "type": "noun",
+        "word": "jarra",
+        "surface": "jarra",
+        "definition": "a tall container with a handle for pouring water"
+      },
+      {
+        "type": "noun",
+        "word": "frazada",
+        "surface": "frazada",
+        "definition": "a thick cloth put over a bed for warmth"
+      }
+    ],
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "El sabado el agua no sube al segundo piso y Alveiro se queda sin ducha. La mama de Camilo manda a decir que suba a bañarse arriba, y lo que empieza siendo una cubeta prestada termina con las dos puertas sin cerrar durante todo el fin de semana, que es exactamente lo que en esa calle significa conocer a alguien."
+  },
+  {
+    "slug": "dos-entradas-para-palermo",
+    "title": "Dos entradas para Palermo",
+    "text": "En Palermo espera Sofía, una amiga del grupo, con dos entradas. Pablo está en una banca, con el morral entre las piernas. Suena un ruido de ensayo en toda la calle.\n\nSofía le ofrece: “Te consigo entrada para el ensayo del jueves, pero avisá hoy.” “Voy”, dice Pablo. Ella no se conforma y le pide que conteste bien, si viene solo o con alguien.\n\nAl fondo del local, la fila ya da la vuelta a la cuadra. Sofía deja el teléfono y anota quién lleva qué. Pablo entiende que aquí un plan no se cierra con un sí.\n\n“Yo llevo la letra y vos traé algo”, dice Sofía. “¿Y a qué hora quedamos?”, pregunta Pablo. “A las ocho en la acera, no adentro”, contesta ella.\n\nPablo se queda sentado en el bordillo, mirando el escenario vacío, y hace una pausa. “Estás ansioso”, le dice Sofía. “Un poco; es la primera vez que me invitan y no sé si voy a entender la mitad”, contesta él.",
+    "topic": "plans-and-invitations",
+    "slotIndex": 1,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "entrada",
+        "surface": "entradas",
+        "definition": "the ticket that lets you into a show"
+      },
+      {
+        "type": "noun",
+        "word": "banca",
+        "surface": "banca",
+        "definition": "a long seat for several people in a street"
+      },
+      {
+        "type": "noun",
+        "word": "morral",
+        "surface": "morral",
+        "definition": "a soft bag carried over one shoulder only"
+      },
+      {
+        "type": "noun",
+        "word": "ruido",
+        "surface": "ruido",
+        "definition": "a loud sound that is not music or speech"
+      },
+      {
+        "type": "noun",
+        "word": "ensayo",
+        "surface": "ensayo",
+        "definition": "a practice session held before the real show"
+      },
+      {
+        "type": "noun",
+        "word": "fondo",
+        "surface": "fondo",
+        "definition": "the far end of a room, away from the door"
+      },
+      {
+        "type": "noun",
+        "word": "local",
+        "surface": "local",
+        "definition": "a small shop or bar in a city street"
+      },
+      {
+        "type": "verb",
+        "word": "avisar",
+        "surface": "avisá",
+        "definition": "to tell somebody in time so they can plan"
+      },
+      {
+        "type": "verb",
+        "word": "quedar",
+        "surface": "quedamos",
+        "definition": "to agree on a time and place to meet"
+      },
+      {
+        "type": "noun",
+        "word": "plan",
+        "surface": "plan",
+        "definition": "what people have agreed they will do together"
+      },
+      {
+        "type": "noun",
+        "word": "fila",
+        "surface": "fila",
+        "definition": "a line of people waiting to get in"
+      },
+      {
+        "type": "noun",
+        "word": "escenario",
+        "surface": "escenario",
+        "definition": "the raised floor where a band plays music"
+      },
+      {
+        "type": "noun",
+        "word": "cuadra",
+        "surface": "cuadra",
+        "definition": "the length of a street between two corners"
+      },
+      {
+        "type": "noun",
+        "word": "letra",
+        "surface": "letra",
+        "definition": "the words that a singer sings in a song"
+      },
+      {
+        "type": "noun",
+        "word": "acera",
+        "surface": "acera",
+        "definition": "the raised path beside a road for walking"
+      },
+      {
+        "type": "noun",
+        "word": "bordillo",
+        "surface": "bordillo",
+        "definition": "the stone edge between the path and the road"
+      },
+      {
+        "type": "adjective",
+        "word": "sentado",
+        "surface": "sentado",
+        "definition": "resting on a seat rather than standing up"
+      },
+      {
+        "type": "adjective",
+        "word": "ansioso",
+        "surface": "ansioso",
+        "definition": "worried about something that is about to happen"
+      },
+      {
+        "type": "verb",
+        "word": "invitar",
+        "surface": "invitan",
+        "definition": "to ask somebody to come to something with you"
+      },
+      {
+        "type": "noun",
+        "word": "pausa",
+        "surface": "pausa",
+        "definition": "a short stop in the middle of doing something"
+      }
+    ],
+    "arcType": "reframe-turn",
+    "synopsis": "Sofia consigue dos entradas para el ensayo abierto de una banda en Palermo y avisa con dos dias de antelacion, que en ese grupo es mucho. Pablo dice que si sin mirar la fecha y descubre que aceptar una invitacion aca no se hace por mensaje: se queda uno en la vereda hasta que el plan tiene hora, lugar y quien lleva que."
+  },
+  {
+    "slug": "otro-sello-para-corrientes",
+    "title": "Otro sello para Corrientes",
+    "text": "Un lunes temprano, en Buenos Aires, Lucas manda a Pablo a una oficina de Corrientes, donde una empleada atiende el mostrador. Empuja la puerta con la carpeta bajo el brazo y la cédula en el bolsillo. Huele a papel viejo desde la puerta.\n\n“¿Trae la planilla completa?”, pregunta la empleada. “Creo que sí; la llené anoche”, dice Pablo. “Le falta la casilla y el sello de la empresa”, avisa ella.\n\nLa empleada le aprueba el pedido y le marca dónde firmar. Apoya los papeles en orden y le presta un lápiz. Pablo pregunta si es el único trámite.\n\n“Es la regla: primero el sello y después el servicio”, explica la empleada. “¿Y cuánto tarda?”, pregunta él. Ella mueve la cabeza y no promete nada.\n\nDesde el escritorio, la empleada lo mira y Pablo no se pone enojado. “Entonces vuelvo mañana: ida y vuelta otra vez, y un veinte por ciento de suerte”, dice Pablo. La empleada le dice que tanto papel se aprende rápido.",
+    "topic": "plans-and-invitations",
+    "slotIndex": 2,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "oficina",
+        "surface": "oficina",
+        "definition": "a room where people work sitting at desks"
+      },
+      {
+        "type": "noun",
+        "word": "carpeta",
+        "surface": "carpeta",
+        "definition": "a stiff folder for keeping loose papers together"
+      },
+      {
+        "type": "noun",
+        "word": "cédula",
+        "surface": "cédula",
+        "definition": "the card that proves who a person is"
+      },
+      {
+        "type": "noun",
+        "word": "planilla",
+        "surface": "planilla",
+        "definition": "a printed sheet with boxes you must fill in"
+      },
+      {
+        "type": "adjective",
+        "word": "completo",
+        "surface": "completa",
+        "definition": "with nothing left out or missing at all"
+      },
+      {
+        "type": "noun",
+        "word": "casilla",
+        "surface": "casilla",
+        "definition": "a small box on a form where you write"
+      },
+      {
+        "type": "noun",
+        "word": "sello",
+        "surface": "sello",
+        "definition": "the ink mark that makes a paper official"
+      },
+      {
+        "type": "noun",
+        "word": "empresa",
+        "surface": "empresa",
+        "definition": "a company that employs people and sells something"
+      },
+      {
+        "type": "noun",
+        "word": "empleado",
+        "surface": "empleada",
+        "definition": "a person who works for a company or office"
+      },
+      {
+        "type": "verb",
+        "word": "aprobar",
+        "surface": "aprueba",
+        "definition": "to say yes to something in an official way"
+      },
+      {
+        "type": "noun",
+        "word": "pedido",
+        "surface": "pedido",
+        "definition": "a request made to somebody who is in charge"
+      },
+      {
+        "type": "noun",
+        "word": "escritorio",
+        "surface": "escritorio",
+        "definition": "the table where somebody works sitting down all day"
+      },
+      {
+        "type": "noun",
+        "word": "orden",
+        "surface": "orden",
+        "definition": "the way things are arranged one after another"
+      },
+      {
+        "type": "adjective",
+        "word": "único",
+        "surface": "único",
+        "definition": "the only one of its kind in that place"
+      },
+      {
+        "type": "noun",
+        "word": "regla",
+        "surface": "regla",
+        "definition": "something that must be done in a fixed way"
+      },
+      {
+        "type": "noun",
+        "word": "servicio",
+        "surface": "servicio",
+        "definition": "the work an office does for the public"
+      },
+      {
+        "type": "expression",
+        "word": "por ciento",
+        "surface": "por ciento",
+        "definition": "out of every hundred, as a share of something"
+      },
+      {
+        "type": "adjective",
+        "word": "enojado",
+        "surface": "enojado",
+        "definition": "angry about something that has just gone wrong"
+      },
+      {
+        "type": "expression",
+        "word": "ida y vuelta",
+        "surface": "ida y vuelta",
+        "definition": "going somewhere and coming back the same day"
+      },
+      {
+        "type": "adverb",
+        "word": "tanto",
+        "surface": "tanto",
+        "definition": "such a large amount of something as that"
+      }
+    ],
+    "arcType": "late-reveal",
+    "synopsis": "Para tocar en un local de la calle Corrientes hace falta un papel que nadie sabe explicar, y Lucas manda a Pablo a la oficina con una carpeta y la cedula. La empleada le aprueba media planilla, le pide otro sello y le dice sin enojarse que vuelva mañana, que es como funciona el servicio y no una desgracia personal."
+  },
+  {
+    "slug": "empanadas-y-un-submarino",
+    "title": "Empanadas y un submarino",
+    "text": "Doce escalones más arriba, la terraza de Lucas queda amplia y sin techo. En Buenos Aires nadie sube con las manos vacías. Pablo llega con la picada y las empanadas, y Sofía sube detrás.\n\nLucas ata un globo a la cadena de metal, llena la bandeja y la sostiene con el brazo estirado. “Traje de más, por si acaso”, dice Pablo. “Siempre falta algo, así que está bien”, contesta Lucas.\n\nSofía llega con malas noticias y las suelta de golpe: “Se cae el ensayo del jueves; el local no nos dio permiso.” Nadie habla durante un rato y después el clima se pone ligero otra vez. Marta le pasa un submarino caliente.\n\n“¿Y ahora qué hacemos el jueves?”, pregunta Sofía. “Lo mismo, pero acá, y a las nueve en punto”, contesta Lucas. “Entonces yo traigo el asado y vos ponés tanto disco como quieras”, se ríe Pablo.\n\nPablo mira alrededor y se le queda la mirada quieta un momento. Tiene la mejilla caliente, el labio partido de reír y un peso menos en el pecho. Con las piernas cansadas, nadie baja los escalones hasta las tres.",
+    "topic": "plans-and-invitations",
+    "slotIndex": 3,
+    "vocab": [
+      {
+        "type": "noun",
+        "word": "escalón",
+        "surface": "escalones",
+        "definition": "one of the steps you climb in a stair"
+      },
+      {
+        "type": "adjective",
+        "word": "amplio",
+        "surface": "amplia",
+        "definition": "with a lot of open space inside it"
+      },
+      {
+        "type": "noun",
+        "word": "picada",
+        "surface": "picada",
+        "definition": "small plates of food shared before a meal"
+      },
+      {
+        "type": "noun",
+        "word": "empanada",
+        "surface": "empanadas",
+        "definition": "a folded pastry filled with meat or cheese"
+      },
+      {
+        "type": "noun",
+        "word": "globo",
+        "surface": "globo",
+        "definition": "a coloured rubber bag that is filled with air"
+      },
+      {
+        "type": "noun",
+        "word": "cadena",
+        "surface": "cadena",
+        "definition": "metal rings joined together in a long line"
+      },
+      {
+        "type": "verb",
+        "word": "sostener",
+        "surface": "sostiene",
+        "definition": "to hold something up so it does not fall"
+      },
+      {
+        "type": "noun",
+        "word": "brazo",
+        "surface": "brazo",
+        "definition": "the part of the body from shoulder to hand"
+      },
+      {
+        "type": "expression",
+        "word": "malas noticias",
+        "surface": "malas noticias",
+        "definition": "news that somebody will not be glad to hear"
+      },
+      {
+        "type": "noun",
+        "word": "clima",
+        "surface": "clima",
+        "definition": "the general mood among the people who are present"
+      },
+      {
+        "type": "adjective",
+        "word": "ligero",
+        "surface": "ligero",
+        "definition": "light and easy, not heavy or serious at all"
+      },
+      {
+        "type": "noun",
+        "word": "submarino",
+        "surface": "submarino",
+        "definition": "hot milk with a chocolate bar melted inside"
+      },
+      {
+        "type": "noun",
+        "word": "asado",
+        "surface": "asado",
+        "definition": "meat cooked slowly over a fire out of doors"
+      },
+      {
+        "type": "noun",
+        "word": "mirada",
+        "surface": "mirada",
+        "definition": "the way a person looks at something or someone"
+      },
+      {
+        "type": "noun",
+        "word": "mejilla",
+        "surface": "mejilla",
+        "definition": "the soft side of your face below the eye"
+      },
+      {
+        "type": "noun",
+        "word": "labio",
+        "surface": "labio",
+        "definition": "one of the two soft edges of your mouth"
+      },
+      {
+        "type": "noun",
+        "word": "pecho",
+        "surface": "pecho",
+        "definition": "the front part of your body below the neck"
+      },
+      {
+        "type": "noun",
+        "word": "pierna",
+        "surface": "piernas",
+        "definition": "one of the two parts you walk with"
+      },
+      {
+        "type": "noun",
+        "word": "metal",
+        "surface": "metal",
+        "definition": "hard shiny material such as iron or steel"
+      },
+      {
+        "type": "adverb",
+        "word": "tanto",
+        "surface": "tanto",
+        "definition": "such a large amount of something as that"
+      }
+    ],
+    "arcType": "recurring-character-callback",
+    "synopsis": "El asado en la terraza de Lucas junta a los mismos de siempre y a Pablo, que esta vez no llega de invitado sino con la picada y las empanadas bajo el brazo. Sofia trae la noticia mala de la noche, y lo que decide el final no es lo que dicen sino que nadie se va a su casa hasta que se enfria el ultimo submarino."
+  }
+]
