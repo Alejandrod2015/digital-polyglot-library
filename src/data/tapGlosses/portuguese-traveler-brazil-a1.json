@@ -3970,6 +3970,10 @@
   "enquanto": {
    "g": "while",
    "t": "conjunction"
+  },
+  "carga": {
+   "g": "load, the box she is carrying",
+   "t": "noun"
   }
  }
 }

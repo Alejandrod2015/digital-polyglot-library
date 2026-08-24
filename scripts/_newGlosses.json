@@ -2517,6 +2517,10 @@
   "consegue": {
    "g": "manages to (conseguir)",
    "t": "verb"
+  },
+  "carga": {
+   "g": "load, the box she is carrying",
+   "t": "noun"
   }
  }
 }
