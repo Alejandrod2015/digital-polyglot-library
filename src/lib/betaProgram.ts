@@ -40,7 +40,9 @@ export const BETA_PLAN = "premium";
 
 /**
  * Statuses that occupy a tester slot. `pending` is deliberately absent: an
- * application that has not been decided yet is not consuming capacity.
+ * application that has not been decided yet is not consuming capacity, and so
+ * is `removed`, which is where a kicked tester lands: no plan, no TestFlight
+ * seat, no emails, no slot.
  */
 const ACTIVE_STATUSES = ["invited", "accepted"];
 
@@ -572,6 +574,14 @@ export async function declineApplicant(
  * removing the member by hand in groups.google.com or unpublishing the track
  * for everyone. Taking the plan back is what actually ends the perk, and it is
  * the half that matters.
+ *
+ * The row lands on `removed`, which is the whole point of that status: the
+ * tester keeps their history and their feedback, and stops being counted or
+ * chased. Leaving it on `accepted` produced two wrong readings at once, both
+ * seen on 2026-08-23 after one click of Remove: the kicked tester still filled
+ * a slot in "activeTesters", and the "Blocked at Apple" alarm fired on them,
+ * because a row that says invited while Apple has no tester id is exactly the
+ * silent failure that alarm exists to catch.
  */
 export async function removeTesterAccess(
   signupId: string,
@@ -595,6 +605,7 @@ export async function removeTesterAccess(
   await prisma.betaSignup.update({
     where: { id: signupId },
     data: {
+      status: "removed",
       ascTesterId: null,
       ...(opts.revokePlan ? { planRevokedAt: new Date() } : {}),
       ...(error ? { ascError: error } : {}),

@@ -81,6 +81,7 @@ type Applicant = {
   clerkUserId: string | null;
   lastActiveAt: string | null;
   planGrantedAt: string | null;
+  planRevokedAt: string | null;
   createdAt: string;
   _count?: { feedback: number };
   /** Real usage from UserMetric. Null until the tester has signed in. */
@@ -311,6 +312,7 @@ const STATUS_COLORS: Record<string, string> = {
   invited: "#60a5fa",
   accepted: "#34d399",
   declined: "#f87171",
+  removed: "#9aa7bd",
   new: "#fbbf24",
   triaged: "#a78bfa",
   in_progress: "#60a5fa",
@@ -1277,6 +1279,10 @@ export default function BetaProgramClient() {
 
   const needsReview = data.applicants.filter((a) => a.status === "waitlist" || a.status === "pending");
   const testers = data.applicants.filter((a) => a.status === "invited" || a.status === "accepted");
+  // Kicked testers still belong on this page. They stop being counted and stop
+  // being chased, but a program where someone can vanish from every screen is
+  // one where you cannot answer "what happened to Chris?" a week later.
+  const removedTesters = data.applicants.filter((a) => a.status === "removed");
 
   const tabs: Array<{ key: Tab; label: string; count?: number }> = [
     { key: "review", label: "Review queue", count: needsReview.length },
@@ -1355,7 +1361,13 @@ export default function BetaProgramClient() {
       {tab === "testers" && (
         <>
           <PlayTrackPanel play={data.play} onDone={load} />
-          <Testers testers={testers} busy={busy} onAction={applicantAction} play={data.play} />
+          <Testers
+            testers={testers}
+            removed={removedTesters}
+            busy={busy}
+            onAction={applicantAction}
+            play={data.play}
+          />
         </>
       )}
 
@@ -1746,16 +1758,18 @@ function ReviewQueue({
 
 function Testers({
   testers,
+  removed,
   busy,
   onAction,
   play,
 }: {
   testers: Applicant[];
+  removed: Applicant[];
   busy: string | null;
   onAction: (id: string, action: string, extra?: Record<string, unknown>) => Promise<void>;
   play: PlayState | null;
 }) {
-  if (testers.length === 0) {
+  if (testers.length === 0 && removed.length === 0) {
     return <div style={{ ...card, color: "var(--muted)", fontSize: 13 }}>No testers yet.</div>;
   }
 
@@ -1849,6 +1863,25 @@ function Testers({
           </div>
         );
       })}
+
+      {/* One quiet line each, and no Apple pill: the whole point of the status
+          is that we no longer expect Apple to hold anything for them. */}
+      {removed.length > 0 && (
+        <div style={{ ...card, color: "var(--muted)", fontSize: 12 }}>
+          <div style={{ fontWeight: 700, marginBottom: 6 }}>
+            Removed ({removed.length})
+          </div>
+          {removed.map((t) => (
+            <div key={t.id} style={{ display: "flex", gap: 8, padding: "3px 0" }}>
+              <span style={{ fontWeight: 600 }}>{t.firstName ?? "(no name)"}</span>
+              <span>{t.email}</span>
+              <span style={{ marginLeft: "auto" }}>
+                access taken back {ago(t.planRevokedAt)}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
