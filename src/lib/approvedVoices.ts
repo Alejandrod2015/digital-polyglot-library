@@ -44,7 +44,7 @@ export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   gfKKsLN1k0oYYN9n2dXX: { note: "Violetta (IT, f); narradora + práctica de Friends IT A0; user-approved 2026-07-20" },
   "2EWay75ikIPKrY4w2j69": { note: "Nuria Storyteller & Calm (ES peninsular, f); narradora + práctica de Friends ES Spain A0; user-approved 2026-07-20" },
   eHAEFkimnYz57pupUMcq: { note: "Javier Rojas Learning & Storytelling (ES peninsular, m); narrador de Friends ES Spain A0; user-approved 2026-07-28" },
-  jipeLrCHZ6ByxrU2JP9i: { note: "Maia Sweet Natural Storyteller (ES peninsular, f); PRÁCTICA de Friends ES Spain A0; user-approved 2026-07-28 (narración aún NO aprobada, pendiente audición)" },
+  jipeLrCHZ6ByxrU2JP9i: { note: "Maia Sweet Natural Storyteller (ES peninsular, f); práctica de Friends ES Spain A0 (user-approved 2026-07-28) y NARRACIÓN aprobada por el usuario el 2026-08-24 tras oír el título y el primer párrafo del Traveler ES/spain A2 con los ajustes de producción (audición: media/review/a2-audicion-maia.html)" },
   SJJe86Va82zRzg6zi2dX: { note: "Ela Empathetic & Warm (DE, f); Nora en Hanseat DE C1; ya suena en Expat DE; user-approved 2026-07-20" },
   WHaUUVTDq47Yqc9aDbkH: { note: "ENNIAH Friendly & Motivating (DE, f); Wiebke en Hanseat DE C1; ya suena en Expat DE; user-approved 2026-07-20" },
   JDXBO1etYlVlJZRMoYzH: { note: "Marius Young Calm (DE, m); Ole en Hanseat DE C1; ya suena en Expat DE; user-approved 2026-07-20" },
