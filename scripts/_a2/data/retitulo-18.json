@@ -1,0 +1,123 @@
+[
+  {
+    "topic": "nerves-and-courage",
+    "slotIndex": 3,
+    "title": "Quiere comprarlo y lo dice",
+    "synopsis": "Irene sube a decirle a Rocío la frase que lleva desde octubre guardándose, y le sale entera y sin temblor. Lo que descubre en la respuesta no es lo que temía: su vecina llevaba dos meses esperándola. Lo que la tenía parada nunca fue el idioma, sino que hay frases que, una vez dichas, ya no se pueden guardar otra vez.",
+    "text": "Nunca había dicho en alto que quiere quedarse con el piso. Rocío friega preocupada, con la escoba apoyada y un aire helado detrás. Irene llega sin frase preparada, sin valor de reserva y con el deseo suelto.\n\n“Quiero comprarlo yo, y lo quiero decir hoy, delante de ti”, dice, y la emoción sale entera. Rocío deja el trapo, se seca las manos y se apoya en el aparador, amable. “Ya lo sabía, hija; llevo dos meses esperando a que lo dijeras tú, de verdad”.\n\nLo que la asustaba no era el idioma, sino la amistad de después. Era el sentimiento de soltar algo; una frase dicha en alto ya no se guarda. “Yo creía que era mi español, y era yo”, dice, con una sonrisa débil.\n\n“Te faltaba acostumbrarte a querer algo en alto”, contesta Rocío, sin tristeza. Se quedan calladas y a Irene la alegra esa paz nueva. Desde julio no le pasaba: por dentro ya no hay nada que guardar.",
+    "vocab": [
+      {
+        "type": "expression",
+        "word": "en alto",
+        "definition": "Out loud, where other people can hear you say it."
+      },
+      {
+        "type": "adjective",
+        "word": "preocupado",
+        "surface": "preocupada",
+        "definition": "Worried; with something heavy going round your head."
+      },
+      {
+        "type": "noun",
+        "word": "deseo",
+        "anchor": true,
+        "definition": "Something you want a lot and have not said yet."
+      },
+      {
+        "type": "adjective",
+        "word": "entero",
+        "surface": "entera",
+        "definition": "Whole and complete, with no part of it missing."
+      },
+      {
+        "type": "noun",
+        "word": "emoción",
+        "anchor": true,
+        "definition": "The strong feeling that comes with an important moment."
+      },
+      {
+        "type": "noun",
+        "word": "aparador",
+        "anchor": true,
+        "definition": "Low cupboard in a kitchen where dishes are kept."
+      },
+      {
+        "type": "adjective",
+        "word": "amable",
+        "definition": "Kind; treating you well without being asked to."
+      },
+      {
+        "type": "verb",
+        "word": "asustar",
+        "surface": "asustaba",
+        "definition": "To make somebody afraid of what might happen."
+      },
+      {
+        "type": "noun",
+        "word": "valor",
+        "definition": "The strength it takes to do something that frightens you."
+      },
+      {
+        "type": "noun",
+        "word": "sentimiento",
+        "definition": "What a person feels inside about something that matters."
+      },
+      {
+        "type": "adjective",
+        "word": "débil",
+        "definition": "Weak; without much strength left behind it at all."
+      },
+      {
+        "type": "verb",
+        "word": "acostumbrarse",
+        "surface": "acostumbrarte",
+        "definition": "To get used to something until it stops feeling strange."
+      },
+      {
+        "type": "noun",
+        "word": "tristeza",
+        "anchor": true,
+        "definition": "The heavy quiet feeling of something being lost."
+      },
+      {
+        "type": "verb",
+        "word": "alegrar",
+        "surface": "alegra",
+        "definition": "To make somebody feel lighter and better than before."
+      },
+      {
+        "type": "adjective",
+        "word": "helado",
+        "definition": "Ice cold; cold enough to make you pull back."
+      },
+      {
+        "type": "expression",
+        "word": "por dentro",
+        "definition": "Inside your own head, where nobody else hears."
+      },
+      {
+        "type": "noun",
+        "word": "paz",
+        "definition": "A calm with nothing pushing at you from inside."
+      },
+      {
+        "type": "noun",
+        "word": "sonrisa",
+        "definition": "The shape your mouth makes when you are pleased."
+      },
+      {
+        "type": "noun",
+        "word": "escoba",
+        "anchor": true,
+        "definition": "Long brush for sweeping the floor of a room."
+      },
+      {
+        "type": "noun",
+        "word": "amistad",
+        "anchor": true,
+        "definition": "The bond between two people who look after each other."
+      }
+    ],
+    "arcType": "reframe-turn"
+  }
+]
