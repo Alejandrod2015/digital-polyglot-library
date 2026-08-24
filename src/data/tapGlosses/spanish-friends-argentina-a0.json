@@ -68,7 +68,7 @@
    "t": "verb"
   },
   "acomodo": {
-   "g": "I make room for you, I fit you in",
+   "g": "I sort out, I fit them in (acomodar)",
    "t": "verb"
   },
   "acá": {
@@ -108,7 +108,7 @@
    "t": "noun"
   },
   "aguanta": {
-   "g": "hold on",
+   "g": "holds up, holds (aguantar)",
    "t": "verb"
   },
   "aguanto": {
@@ -132,7 +132,7 @@
    "t": "preposition"
   },
   "alcanza": {
-   "g": "hands over, passes",
+   "g": "hands it over (alcanzar)",
    "t": "verb"
   },
   "algo": {
@@ -156,7 +156,7 @@
    "t": "noun"
   },
   "anda": {
-   "g": "walks, goes",
+   "g": "is he feeling (andar); it does not work (no anda)",
    "t": "verb"
   },
   "anota": {
@@ -260,7 +260,7 @@
    "t": "adverb"
   },
   "atender": {
-   "g": "to serve, tend to",
+   "g": "to serve the customers",
    "t": "verb"
   },
   "atiende": {
@@ -304,7 +304,7 @@
    "t": "noun"
   },
   "baja": {
-   "g": "goes down, lowers",
+   "g": "lowers (bajar); down, closed (persiana baja)",
    "t": "verb"
   },
   "bajito": {
@@ -320,7 +320,7 @@
    "t": "noun"
   },
   "banco": {
-   "g": "a stool",
+   "g": "the bank",
    "t": "noun"
   },
   "bancos": {
@@ -368,7 +368,7 @@
    "t": "adjective"
   },
   "buenas": {
-   "g": "in a good mood (de buenas)",
+   "g": "hello, a casual greeting",
    "t": "adjective"
   },
   "busca": {
@@ -424,7 +424,7 @@
    "t": "adjective"
   },
   "callada": {
-   "g": "quiet, silent",
+   "g": "quiet, saying nothing (fem.)",
    "t": "adjective"
   },
   "calladas": {
@@ -524,7 +524,7 @@
    "t": "adjective"
   },
   "chico": {
-   "g": "boy",
+   "g": "small",
    "t": "noun"
   },
   "cierra": {
@@ -540,7 +540,7 @@
    "t": "noun"
   },
   "claro": {
-   "g": "clear",
+   "g": "lighter (of hair colour)",
    "t": "adjective"
   },
   "clienta": {
@@ -600,7 +600,7 @@
    "t": "verb"
   },
   "contenta": {
-   "g": "happy, pleased",
+   "g": "happy",
    "t": "adjective"
   },
   "contesta": {
@@ -672,7 +672,7 @@
    "t": "number"
   },
   "cuarto": {
-   "g": "the room",
+   "g": "quarter (past the hour)",
    "t": "noun"
   },
   "cuatro": {
@@ -688,7 +688,7 @@
    "t": "noun"
   },
   "cuesta": {
-   "g": "a slope",
+   "g": "it costs you something, it is hard (costar)",
    "t": "noun"
   },
   "cuidado": {
@@ -748,7 +748,7 @@
    "t": "verb"
   },
   "decir": {
-   "g": "to say, to mean",
+   "g": "to say",
    "t": "verb"
   },
   "decírtelo": {
@@ -788,7 +788,7 @@
    "t": "noun"
   },
   "derecha": {
-   "g": "to stand up straight (pararse derecha)",
+   "g": "right (her right hand)",
    "t": "adjective"
   },
   "derecho": {
@@ -832,7 +832,7 @@
    "t": "verb"
   },
   "devuelve": {
-   "g": "returns, gives back",
+   "g": "gives it back (devolver)",
    "t": "verb"
   },
   "devuelvo": {
@@ -876,7 +876,7 @@
    "t": "noun"
   },
   "dormí": {
-   "g": "I slept",
+   "g": "sleep (vos command of dormir)",
    "t": "verb"
   },
   "dormís": {
@@ -964,7 +964,7 @@
    "t": "adjective"
   },
   "enorme": {
-   "g": "huge, enormous",
+   "g": "huge",
    "t": "adjective"
   },
   "enseguida": {
@@ -1201,7 +1201,7 @@
    "t": "adjective"
   },
   "fuerte": {
-   "g": "loud, strong",
+   "g": "loud",
    "t": "adjective"
   },
   "fusible": {
@@ -1449,7 +1449,7 @@
    "t": "adjective"
   },
   "libre": {
-   "g": "the free highway",
+   "g": "free (a free moment)",
    "t": "noun"
   },
   "libreta": {
@@ -1553,7 +1553,7 @@
    "t": "noun"
   },
   "mano": {
-   "g": "hand; bro, dude",
+   "g": "hand",
    "t": "noun"
   },
   "manos": {
@@ -1597,7 +1597,7 @@
    "t": "noun"
   },
   "mejor": {
-   "g": "better, best",
+   "g": "better",
    "t": "adjective"
   },
   "menos": {
@@ -1925,7 +1925,7 @@
    "t": "verb"
   },
   "patio": {
-   "g": "courtyard, yard",
+   "g": "the yard of the house",
    "t": "noun"
   },
   "pedazos": {
@@ -1945,7 +1945,7 @@
    "t": "verb"
   },
   "pega": {
-   "g": "hits, sticks; job",
+   "g": "sticks it up (pegar)",
    "t": "verb"
   },
   "pegado": {
@@ -2033,11 +2033,11 @@
    "t": "verb"
   },
   "pierdo": {
-   "g": "I get lost",
+   "g": "I lose her (perder)",
    "t": "verb"
   },
   "pieza": {
-   "g": "a dance number",
+   "g": "a room of the house",
    "t": "noun"
   },
   "pileta": {
@@ -2053,7 +2053,7 @@
    "t": "slang"
   },
   "platos": {
-   "g": "plates, dishes",
+   "g": "the plates",
    "t": "noun"
   },
   "pocillo": {
@@ -2141,7 +2141,7 @@
    "t": "adjective"
   },
   "primero": {
-   "g": "the first one",
+   "g": "the first floor (el vecino del primero); first",
    "t": "adjective"
   },
   "probala": {
@@ -2233,7 +2233,7 @@
    "t": "verb"
   },
   "querer": {
-   "g": "to want, love",
+   "g": "by accident (sin querer)",
    "t": "verb"
   },
   "querés": {
@@ -2265,7 +2265,7 @@
    "t": "adverb"
   },
   "raro": {
-   "g": "weird, strange",
+   "g": "odd, not himself",
    "t": "adjective"
   },
   "ratito": {
@@ -2293,7 +2293,7 @@
    "t": "noun"
   },
   "reloj": {
-   "g": "clock, watch",
+   "g": "clock",
    "t": "noun"
   },
   "remis": {
@@ -2329,7 +2329,7 @@
    "t": "verb"
   },
   "respuesta": {
-   "g": "an answer, a response",
+   "g": "an answer",
    "t": "noun"
   },
   "revisa": {
@@ -2369,7 +2369,7 @@
    "t": "noun"
   },
   "rápido": {
-   "g": "fast, quick",
+   "g": "fast",
    "t": "adjective"
   },
   "ríen": {
@@ -2398,7 +2398,7 @@
    "t": "verb"
   },
   "sale": {
-   "g": "goes out; okay",
+   "g": "goes out, comes out (salir)",
    "t": "verb"
   },
   "salgo": {
@@ -2422,7 +2422,7 @@
    "t": "noun"
   },
   "seguidas": {
-   "g": "one after the other, in a row",
+   "g": "in a row, one after the other",
    "t": "adjective"
   },
   "segundo": {
@@ -2482,7 +2482,7 @@
    "t": "verb"
   },
   "siente": {
-   "g": "to feel",
+   "g": "feels (sentir)",
    "t": "verb"
   },
   "siete": {
@@ -2526,7 +2526,7 @@
    "t": "adjective"
   },
   "soltar": {
-   "g": "to let go, release",
+   "g": "to let go of",
    "t": "verb"
   },
   "somos": {
@@ -2558,7 +2558,7 @@
    "t": "verb"
   },
   "sueldo": {
-   "g": "a salary, wages",
+   "g": "a salary",
    "t": "noun"
   },
   "suelta": {
@@ -2578,7 +2578,7 @@
    "t": "noun"
   },
   "sé": {
-   "g": "i know",
+   "g": "I know",
    "t": "verb"
   },
   "sí": {
@@ -2746,7 +2746,7 @@
    "t": "verb"
   },
   "trabajo": {
-   "g": "work, job",
+   "g": "a job",
    "t": "noun"
   },
   "trae": {
@@ -2790,15 +2790,15 @@
    "t": "pronoun"
   },
   "turno": {
-   "g": "a work shift",
+   "g": "an appointment at the salon; a turn at the counter",
    "t": "noun"
   },
   "turnos": {
-   "g": "appointments booked through the day",
+   "g": "the appointments of the day",
    "t": "noun"
   },
   "térmica": {
-   "g": "thermal, the trip switch of the panel",
+   "g": "the trip switch of the panel (llave térmica)",
    "t": "adjective"
   },
   "ubica": {
@@ -2822,7 +2822,7 @@
    "t": "article"
   },
   "va": {
-   "g": "he/she goes",
+   "g": "goes (ir); does it go here? (¿va en esta carilla?)",
    "t": "verb"
   },
   "vacía": {
@@ -2863,7 +2863,7 @@
    "t": "verb"
   },
   "verdad": {
-   "g": "truth, right?",
+   "g": "true, right?",
    "t": "noun"
   },
   "vereda": {
@@ -2871,7 +2871,7 @@
    "t": "noun"
   },
   "vergüenza": {
-   "g": "shame, embarrassment",
+   "g": "embarrassment",
    "t": "noun"
   },
   "vez": {
@@ -3044,7 +3044,7 @@
    "t": "noun"
   },
   "alta": {
-   "g": "tall, high",
+   "g": "high",
    "t": "adjective"
   },
   "anotame": {
@@ -3068,7 +3068,7 @@
    "t": "verb"
   },
   "avisar": {
-   "g": "to give warning, let know",
+   "g": "to let somebody know",
    "t": "verb"
   },
   "ayer": {
@@ -3088,7 +3088,7 @@
    "t": "verb"
   },
   "bandeja": {
-   "g": "handed on a plate (servido en bandeja)",
+   "g": "a tray",
    "t": "noun"
   },
   "banquito": {
@@ -3096,7 +3096,7 @@
    "t": "noun"
   },
   "barro": {
-   "g": "mud, clay",
+   "g": "mud",
    "t": "noun"
   },
   "bolsa": {
@@ -3128,7 +3128,7 @@
    "t": "noun"
   },
   "callado": {
-   "g": "quiet, silent",
+   "g": "quiet, saying nothing",
    "t": "adjective"
   },
   "cansado": {
@@ -3156,7 +3156,7 @@
    "t": "noun"
   },
   "cartera": {
-   "g": "wallet",
+   "g": "a handbag",
    "t": "noun"
   },
   "cepillo": {
@@ -3180,7 +3180,7 @@
    "t": "adjective"
   },
   "completo": {
-   "g": "complete, full",
+   "g": "I make up the rest (completar)",
    "t": "adjective"
   },
   "compro": {
@@ -3236,11 +3236,11 @@
    "t": "verb"
   },
   "duro": {
-   "g": "hard, stiff",
+   "g": "hard, stale",
    "t": "adjective"
   },
   "eléctrico": {
-   "g": "electric, worked by electricity",
+   "g": "electric (portero eléctrico: the door buzzer)",
    "t": "adjective"
   },
   "enfrente": {
@@ -3248,7 +3248,7 @@
    "t": "adverb"
   },
   "engancha": {
-   "g": "gets going",
+   "g": "catches, snags (engancharse)",
    "t": "verb"
   },
   "enjuago": {
@@ -3548,7 +3548,7 @@
    "t": "verb"
   },
   "roto": {
-   "g": "the broken telephone game (teléfono roto)",
+   "g": "broken",
    "t": "adjective"
   },
   "ríe": {
@@ -3596,7 +3596,7 @@
    "t": "adjective"
   },
   "taller": {
-   "g": "a workshop, garage",
+   "g": "a workshop",
    "t": "noun"
   },
   "tarro": {
@@ -3628,7 +3628,7 @@
    "t": "verb"
   },
   "trapo": {
-   "g": "a worn out raspy voice (voz de trapo)",
+   "g": "a cloth for cleaning",
    "t": "noun"
   },
   "vamos": {
@@ -3644,7 +3644,7 @@
    "t": "noun"
   },
   "vela": {
-   "g": "candle",
+   "g": "candle (a la vela: with no power)",
    "t": "noun"
   },
   "ventanilla": {
@@ -3660,7 +3660,7 @@
    "t": "noun"
   },
   "vino": {
-   "g": "wine; he/she came",
+   "g": "wine",
    "t": "noun"
   },
   "vuelto": {
@@ -3708,7 +3708,7 @@
    "t": "noun"
   },
   "alto": {
-   "g": "tall",
+   "g": "up high (en alto)",
    "t": "adjective"
   },
   "casi": {
@@ -3788,7 +3788,7 @@
    "t": "article"
   },
   "blanco": {
-   "g": "the target of teasing",
+   "g": "white",
    "t": "noun"
   },
   "candado": {
@@ -3868,7 +3868,7 @@
    "t": "noun"
   },
   "pegada": {
-   "g": "blasting music (champeta pegada)",
+   "g": "stuck up (on the fridge)",
    "t": "adjective"
   },
   "puede": {
@@ -3932,7 +3932,7 @@
    "t": "noun"
   },
   "señal": {
-   "g": "a sign",
+   "g": "phone signal, reception",
    "t": "noun"
   }
  }

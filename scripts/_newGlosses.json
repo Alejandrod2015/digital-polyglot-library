@@ -6651,7 +6651,7 @@
    "t": "verb"
   },
   "turnos": {
-   "g": "appointments booked through the day",
+   "g": "the appointments of the day",
    "t": "noun"
   },
   "siete": {
@@ -6883,7 +6883,7 @@
    "t": "noun"
   },
   "térmica": {
-   "g": "thermal, the trip switch of the panel",
+   "g": "the trip switch of the panel (llave térmica)",
    "t": "adjective"
   },
   "destornillador": {
@@ -6999,7 +6999,7 @@
    "t": "noun"
   },
   "acomodo": {
-   "g": "I make room for you, I fit you in",
+   "g": "I sort out, I fit them in (acomodar)",
    "t": "verb"
   },
   "corro": {
@@ -7111,7 +7111,7 @@
    "t": "verb"
   },
   "seguidas": {
-   "g": "one after the other, in a row",
+   "g": "in a row, one after the other",
    "t": "adjective"
   },
   "cocinero": {
@@ -7299,7 +7299,7 @@
    "t": "noun"
   },
   "eléctrico": {
-   "g": "electric, worked by electricity",
+   "g": "electric (portero eléctrico: the door buzzer)",
    "t": "adjective"
   },
   "ramo": {
@@ -7800,6 +7800,250 @@
   },
   "apoya": {
    "g": "rests, puts down (apoyar)",
+   "t": "verb"
+  },
+  "aguanta": {
+   "g": "holds up, holds (aguantar)",
+   "t": "verb"
+  },
+  "buenas": {
+   "g": "hello, a casual greeting",
+   "t": "adjective"
+  },
+  "banco": {
+   "g": "the bank",
+   "t": "noun"
+  },
+  "derecha": {
+   "g": "right (her right hand)",
+   "t": "adjective"
+  },
+  "cuesta": {
+   "g": "it costs you something, it is hard (costar)",
+   "t": "noun"
+  },
+  "chico": {
+   "g": "small",
+   "t": "noun"
+  },
+  "claro": {
+   "g": "lighter (of hair colour)",
+   "t": "adjective"
+  },
+  "dormí": {
+   "g": "sleep (vos command of dormir)",
+   "t": "verb"
+  },
+  "anda": {
+   "g": "is he feeling (andar); it does not work (no anda)",
+   "t": "verb"
+  },
+  "cuarto": {
+   "g": "quarter (past the hour)",
+   "t": "noun"
+  },
+  "baja": {
+   "g": "lowers (bajar); down, closed (persiana baja)",
+   "t": "verb"
+  },
+  "devuelve": {
+   "g": "gives it back (devolver)",
+   "t": "verb"
+  },
+  "decir": {
+   "g": "to say",
+   "t": "verb"
+  },
+  "libre": {
+   "g": "free (a free moment)",
+   "t": "noun"
+  },
+  "pega": {
+   "g": "sticks it up (pegar)",
+   "t": "verb"
+  },
+  "pierdo": {
+   "g": "I lose her (perder)",
+   "t": "verb"
+  },
+  "pieza": {
+   "g": "a room of the house",
+   "t": "noun"
+  },
+  "sale": {
+   "g": "goes out, comes out (salir)",
+   "t": "verb"
+  },
+  "alta": {
+   "g": "high",
+   "t": "adjective"
+  },
+  "mano": {
+   "g": "hand",
+   "t": "noun"
+  },
+  "querer": {
+   "g": "by accident (sin querer)",
+   "t": "verb"
+  },
+  "siente": {
+   "g": "feels (sentir)",
+   "t": "verb"
+  },
+  "sé": {
+   "g": "I know",
+   "t": "verb"
+  },
+  "reloj": {
+   "g": "clock",
+   "t": "noun"
+  },
+  "mejor": {
+   "g": "better",
+   "t": "adjective"
+  },
+  "raro": {
+   "g": "odd, not himself",
+   "t": "adjective"
+  },
+  "bandeja": {
+   "g": "a tray",
+   "t": "noun"
+  },
+  "engancha": {
+   "g": "catches, snags (engancharse)",
+   "t": "verb"
+  },
+  "roto": {
+   "g": "broken",
+   "t": "adjective"
+  },
+  "trapo": {
+   "g": "a cloth for cleaning",
+   "t": "noun"
+  },
+  "blanco": {
+   "g": "white",
+   "t": "noun"
+  },
+  "pegada": {
+   "g": "stuck up (on the fridge)",
+   "t": "adjective"
+  },
+  "vino": {
+   "g": "wine",
+   "t": "noun"
+  },
+  "cartera": {
+   "g": "a handbag",
+   "t": "noun"
+  },
+  "señal": {
+   "g": "phone signal, reception",
+   "t": "noun"
+  },
+  "alto": {
+   "g": "up high (en alto)",
+   "t": "adjective"
+  },
+  "duro": {
+   "g": "hard, stale",
+   "t": "adjective"
+  },
+  "completo": {
+   "g": "I make up the rest (completar)",
+   "t": "adjective"
+  },
+  "vela": {
+   "g": "candle (a la vela: with no power)",
+   "t": "noun"
+  },
+  "barro": {
+   "g": "mud",
+   "t": "noun"
+  },
+  "taller": {
+   "g": "a workshop",
+   "t": "noun"
+  },
+  "sueldo": {
+   "g": "a salary",
+   "t": "noun"
+  },
+  "patio": {
+   "g": "the yard of the house",
+   "t": "noun"
+  },
+  "platos": {
+   "g": "the plates",
+   "t": "noun"
+  },
+  "callado": {
+   "g": "quiet, saying nothing",
+   "t": "adjective"
+  },
+  "callada": {
+   "g": "quiet, saying nothing (fem.)",
+   "t": "adjective"
+  },
+  "verdad": {
+   "g": "true, right?",
+   "t": "noun"
+  },
+  "vergüenza": {
+   "g": "embarrassment",
+   "t": "noun"
+  },
+  "atender": {
+   "g": "to serve the customers",
+   "t": "verb"
+  },
+  "alcanza": {
+   "g": "hands it over (alcanzar)",
+   "t": "verb"
+  },
+  "fuerte": {
+   "g": "loud",
+   "t": "adjective"
+  },
+  "enorme": {
+   "g": "huge",
+   "t": "adjective"
+  },
+  "contenta": {
+   "g": "happy",
+   "t": "adjective"
+  },
+  "respuesta": {
+   "g": "an answer",
+   "t": "noun"
+  },
+  "rápido": {
+   "g": "fast",
+   "t": "adjective"
+  },
+  "soltar": {
+   "g": "to let go of",
+   "t": "verb"
+  },
+  "trabajo": {
+   "g": "a job",
+   "t": "noun"
+  },
+  "avisar": {
+   "g": "to let somebody know",
+   "t": "verb"
+  },
+  "turno": {
+   "g": "an appointment at the salon; a turn at the counter",
+   "t": "noun"
+  },
+  "primero": {
+   "g": "the first floor (el vecino del primero); first",
+   "t": "adjective"
+  },
+  "va": {
+   "g": "goes (ir); does it go here? (¿va en esta carilla?)",
    "t": "verb"
   }
  }
