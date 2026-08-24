@@ -13,6 +13,7 @@ import { useMemo } from "react";
 import ExploreSearch from "@/components/ExploreSearch";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { formatLanguage, formatRegion, formatTopic } from "@domain/displayFormat";
+import { broadLevelFromCefr, normalizeBroadLevel, resolveCefrLevel } from "@domain/cefr";
 import { getBookCardMeta } from "@domain/bookCardMeta";
 import { ChevronDown } from "lucide-react";
 import {
@@ -49,6 +50,8 @@ type BookStoryItem = {
   language: string;
   region?: string;
   level: string;
+  /** CEFR fino cuando la historia lo trae; `level` es la banda gruesa. */
+  cefrLevel?: string;
   coverUrl: string;
   topics: string[];
 };
@@ -159,6 +162,7 @@ function extractBookStories(allBooksUnknown: unknown[]): BookStoryItem[] {
       const storyLanguage = getString(story, "language") ?? language;
       const storyRegion = getString(story, "region") ?? region;
       const storyLevel = getString(story, "level") ?? level;
+      const storyCefrLevel = getString(story, "cefrLevel") ?? getString(b, "cefrLevel");
       // El libro argentino guarda `coverUrl` en vez de `cover`; los otros usan `cover`.
       // Sin chequear ambos, las stories argentinas caen al book cover por default.
       const storyCoverRaw =
@@ -183,6 +187,7 @@ function extractBookStories(allBooksUnknown: unknown[]): BookStoryItem[] {
         language: storyLanguage,
         region: storyRegion || undefined,
         level: storyLevel,
+        cefrLevel: storyCefrLevel ?? undefined,
         coverUrl,
         topics,
       });
@@ -223,6 +228,9 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
   const selectedTopicKey = normalizeTopicKey(topicFromUrl);
   const languageFromUrl = searchParams.get("language") ?? "";
   const regionFromUrl = searchParams.get("region") ?? "";
+  // Nivel en la URL, para que un filtro puesto se pueda compartir y sobreviva
+  // a la recarga, igual que idioma, región y tema.
+  const selectedLevelKey = normalizeBroadLevel(searchParams.get("level") ?? "") ?? "";
   // Free-text search via topbar Cmd+K. Substring-matches contra
   // title, topic, region, themes. Lowercase, sin diacríticos para
   // que "panaderia" matchee "Panadería". Vacío = no filtra.
@@ -267,6 +275,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     previewBookStories,
     languageChips,
     regionChips,
+    levelChips,
+    selectedLevelLabel,
     selectedLanguageLabel,
     selectedRegionLabel,
     topicChips,
@@ -459,7 +469,49 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
         )
       : regionFilteredPolyglotStories;
 
-    const rankedBooks = [...topicFilteredBooks].sort((a, b) => {
+    // Nivel. Se filtra por BANDA (Beginner/Intermediate/Advanced): es lo único
+    // que guardan los libros y es la palabra que usa el alumno. Una ficha sin
+    // nivel resoluble NO se esconde; desaparecer en silencio es peor que
+    // sobrar. Va después del tema para que los recuentos del desplegable
+    // cuenten lo que de verdad queda delante.
+    const bandOf = (cefrValue?: string | null, broadValue?: string | null) =>
+      broadLevelFromCefr(resolveCefrLevel(cefrValue ?? null, broadValue ?? null));
+    const keepsLevel = (band: string | null) =>
+      !selectedLevelKey || !band || band === selectedLevelKey;
+
+    const levelCounts: Record<string, number> = { beginner: 0, intermediate: 0, advanced: 0 };
+    const countLevel = (band: string | null) => {
+      if (band && band in levelCounts) levelCounts[band] += 1;
+    };
+    for (const book of topicFilteredBooks) {
+      if (!isRecord(book)) continue;
+      countLevel(bandOf(getString(book, "cefrLevel"), getString(book, "level")));
+    }
+    for (const story of topicFilteredBookStories) countLevel(bandOf(story.cefrLevel, story.level));
+    for (const story of topicFilteredPolyglotStories) countLevel(bandOf(null, story.level));
+
+    const levelFilteredBooks = topicFilteredBooks.filter(
+      (book) =>
+        isRecord(book) && keepsLevel(bandOf(getString(book, "cefrLevel"), getString(book, "level")))
+    );
+    const levelFilteredBookStories = topicFilteredBookStories.filter((story) =>
+      keepsLevel(bandOf(story.cefrLevel, story.level))
+    );
+    const levelFilteredPolyglotStories = topicFilteredPolyglotStories.filter((story) =>
+      keepsLevel(bandOf(null, story.level))
+    );
+
+    const levelOptions: FilterChip[] = (["beginner", "intermediate", "advanced"] as const)
+      .map((band) => ({
+        key: band,
+        label: `${band[0].toUpperCase()}${band.slice(1)}`,
+        count: levelCounts[band],
+      }))
+      .filter((chip) => chip.count > 0);
+    const levelSelectedLabel =
+      levelOptions.find((chip) => chip.key === selectedLevelKey)?.label ?? "";
+
+    const rankedBooks = [...levelFilteredBooks].sort((a, b) => {
       const scoreBook = (book: unknown) => {
         if (!isRecord(book)) return 0;
         const slug = getString(book, "slug") ?? "";
@@ -480,7 +532,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
       return scoreBook(b) - scoreBook(a);
     });
 
-    const rankedBookStories = [...topicFilteredBookStories].sort((a, b) => {
+    const rankedBookStories = [...levelFilteredBookStories].sort((a, b) => {
       const scoreStory = (story: BookStoryItem) =>
         scoreTopicLabelAgainstOnboarding(
           [...story.topics, story.storyTitle, story.bookTitle].join(" "),
@@ -490,7 +542,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
       return scoreStory(b) - scoreStory(a) || a.storyTitle.localeCompare(b.storyTitle);
     });
 
-    const rankedPolyglotStories = [...topicFilteredPolyglotStories].sort((a, b) => {
+    const rankedPolyglotStories = [...levelFilteredPolyglotStories].sort((a, b) => {
       const scorePolyglot = (story: UserStory) =>
         scoreTopicLabelAgainstOnboarding(
           [story.topic, ...(story.themes ?? []), story.title, story.text].filter(Boolean).join(" "),
@@ -543,6 +595,8 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
       previewBookStories: preview,
       languageChips: languageOptions,
       regionChips: regionOptions,
+      levelChips: levelOptions,
+      selectedLevelLabel: levelSelectedLabel,
       selectedLanguageLabel: languageSelectedLabel,
       selectedRegionLabel: regionSelectedLabel,
       topicChips: chips,
@@ -552,6 +606,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     polyglotStories,
     normalizedTargetLanguages,
     selectedLanguageKey,
+    selectedLevelKey,
     selectedRegionKey,
     selectedTopicKey,
     effectiveLanguageValue,
@@ -625,7 +680,7 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
     return `${base}?${params.toString()}`;
   };
 
-  const setFilterInUrl = (name: "language" | "region" | "topic", value: string) => {
+  const setFilterInUrl = (name: "language" | "region" | "topic" | "level", value: string) => {
     const params = new URLSearchParams(searchParams.toString());
 
     if (value) {
@@ -694,6 +749,31 @@ export default function ExploreClient({ polyglotStories }: ExploreClientProps) {
                   >
                     <option value="">All regions</option>
                     {regionChips.map((chip) => (
+                      <option key={chip.key} value={chip.label}>
+                        {chip.label} ({chip.count})
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[var(--muted)] md:right-4" />
+                </div>
+              </label>
+
+              {/* Nivel. Estaba el badge en cada ficha pero no había forma de
+                  filtrar por él, así que un principiante tenía que ir mirando
+                  ficha a ficha. Un tester de la beta lo dijo tal cual el
+                  2026-08-23: no encontraba cómo volver al nivel básico. */}
+              <label className="block min-w-[150px] flex-1 sm:min-w-[170px] md:min-w-[200px]">
+                <span className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+                  Level
+                </span>
+                <div className="relative">
+                  <select
+                    value={selectedLevelLabel ?? ""}
+                    onChange={(event) => setFilterInUrl("level", event.target.value)}
+                    className="w-full appearance-none rounded-xl border border-[var(--card-border)] bg-[var(--bg-content)] px-3 pr-11 py-2 text-[13px] font-medium text-[var(--foreground)] outline-none transition-colors hover:bg-[var(--card-bg-hover)] focus:border-blue-300/40 md:px-4 md:pr-12 md:py-2.5 md:text-sm"
+                  >
+                    <option value="">All levels</option>
+                    {levelChips.map((chip) => (
                       <option key={chip.key} value={chip.label}>
                         {chip.label} ({chip.count})
                       </option>

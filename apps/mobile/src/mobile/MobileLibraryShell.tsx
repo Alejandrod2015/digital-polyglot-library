@@ -34,6 +34,7 @@ import { Feather, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   CEFR_DISPLAY_LABELS,
   LEVEL_LABELS,
+  broadLevelFromCefr,
   cefrDisplayLabel,
   formatCefrDisplay,
   formatLanguage,
@@ -1191,6 +1192,33 @@ const LANGUAGE_OPTIONS = [
 
 const LEVEL_OPTIONS = ["Beginner", "Intermediate", "Advanced"] as const;
 
+/** Opciones del filtro de nivel de Explore, en el mismo orden de la escalera. */
+const EXPLORE_LEVEL_OPTIONS = ["All", ...LEVEL_OPTIONS] as const;
+type ExploreLevelOption = (typeof EXPLORE_LEVEL_OPTIONS)[number];
+
+/**
+ * ¿Esta historia o libro cae en la banda que el alumno eligió en Explore?
+ *
+ * Trabaja en BANDA (Beginner/Intermediate/Advanced) y no en CEFR por dos
+ * razones: los libros del catálogo solo guardan la banda, y es la palabra que
+ * usa el propio alumno. Un tester de la beta lo escribió así el 2026-08-23:
+ * "I could not find a way to get back to basic level from the advanced".
+ * `resolveCefrLevel` acepta las dos formas, así que una fila con `cefrLevel`
+ * (journey, standalone) y un libro con `level` grueso se comparan igual.
+ */
+function matchesExploreLevel(
+  selected: ExploreLevelOption,
+  cefrValue?: string | null,
+  broadValue?: string | null
+) {
+  if (selected === "All") return true;
+  const broad = broadLevelFromCefr(resolveCefrLevel(cefrValue ?? null, broadValue ?? null));
+  // Sin nivel resoluble no se esconde: una ficha sin datos no es una ficha de
+  // otro nivel, y desaparecer en silencio es peor que sobrar.
+  if (!broad) return true;
+  return broad === selected.toLowerCase();
+}
+
 const REGION_OPTIONS = [
   "Colombia",
   "Mexico",
@@ -2335,6 +2363,7 @@ export function MobileLibraryShell(args: {
   const [selectedExploreLanguage, setSelectedExploreLanguage] = useState<string>("All");
   const [selectedExploreRegion, setSelectedExploreRegion] = useState<string>("All");
   const [selectedExploreTopic, setSelectedExploreTopic] = useState<string>("All");
+  const [selectedExploreLevel, setSelectedExploreLevel] = useState<ExploreLevelOption>("All");
   // Una colección abierta muestra su propia página con la lista completa
   // de stories que matchean. Funciona igual que `expandedExploreSection`
   // pero el universo se calcula con `matchCollectionRule` en vez de los
@@ -6344,6 +6373,7 @@ export function MobileLibraryShell(args: {
         if (selectedExploreLanguage !== "All" && language !== selectedExploreLanguage) return false;
         if (selectedExploreRegion !== "All" && region !== selectedExploreRegion) return false;
         if (selectedExploreTopic !== "All" && topic !== selectedExploreTopic) return false;
+        if (!matchesExploreLevel(selectedExploreLevel, null, story.level ?? null)) return false;
 
         if (!query) return true;
 
@@ -6371,6 +6401,7 @@ export function MobileLibraryShell(args: {
     exploreQuery,
     remoteStories,
     selectedExploreLanguage,
+    selectedExploreLevel,
     selectedExploreRegion,
     selectedExploreTopic,
   ]);
@@ -12404,6 +12435,9 @@ export function MobileLibraryShell(args: {
     () =>
       exploreBaseFilteredBooks
         .filter((book) => {
+          if (!matchesExploreLevel(selectedExploreLevel, book.cefrLevel ?? null, book.level)) {
+            return false;
+          }
           if (selectedExploreTopic === "All") return true;
           return formatTopic(book.topic) === selectedExploreTopic;
         })
@@ -12421,7 +12455,7 @@ export function MobileLibraryShell(args: {
             );
           return scoreBook(b) - scoreBook(a) || a.title.localeCompare(b.title);
         }),
-    [exploreBaseFilteredBooks, preferences.dailyMinutes, preferences.interests, preferences.learningGoal, selectedExploreTopic]
+    [exploreBaseFilteredBooks, preferences.dailyMinutes, preferences.interests, preferences.learningGoal, selectedExploreLevel, selectedExploreTopic]
   );
 
   const filteredExploreStories = useMemo<StoryCardModel[]>(
@@ -12431,6 +12465,15 @@ export function MobileLibraryShell(args: {
           book.stories.map<StoryCardModel | null>((story) => {
             const storyTopic = formatTopic(story.topic ?? book.topic);
             if (selectedExploreTopic !== "All" && storyTopic !== selectedExploreTopic) return null;
+            if (
+              !matchesExploreLevel(
+                selectedExploreLevel,
+                story.cefrLevel ?? book.cefrLevel ?? null,
+                story.level ?? book.level
+              )
+            ) {
+              return null;
+            }
             const resolved = resolveStorySelection(story.id, book, story);
             if (!resolved) return null;
             return {
@@ -12455,7 +12498,7 @@ export function MobileLibraryShell(args: {
           return scoreStory(b) - scoreStory(a) || a.title.localeCompare(b.title);
         })
         .slice(0, 12),
-    [exploreBaseFilteredBooks, preferences.interests, preferences.learningGoal, selectedExploreTopic]
+    [exploreBaseFilteredBooks, preferences.interests, preferences.learningGoal, selectedExploreLevel, selectedExploreTopic]
   );
 
   // Grid items with raw topic + read-time, used by the 2x2 hero grid in
@@ -12490,6 +12533,7 @@ export function MobileLibraryShell(args: {
           story.cefrLevel ?? book.cefrLevel ?? null,
           story.level ?? book.level
         );
+        if (!matchesExploreLevel(selectedExploreLevel, cefr, story.level ?? book.level)) continue;
         items.push({
           key: `explore-grid-${story.id}`,
           title: story.title,
@@ -12540,7 +12584,7 @@ export function MobileLibraryShell(args: {
       return bScore - aScore || a.title.localeCompare(b.title);
     });
     return items;
-  }, [exploreBaseFilteredBooks, filteredStandaloneStoryCards, preferences.interests, preferences.learningGoal, selectedExploreTopic]);
+  }, [exploreBaseFilteredBooks, filteredStandaloneStoryCards, preferences.interests, preferences.learningGoal, selectedExploreLevel, selectedExploreTopic]);
 
   // El grid principal nunca aplica filter de colección; ese se hace en
   // la página dedicada (expandedCollectionKey). Aquí solo recortamos a
@@ -13164,6 +13208,40 @@ export function MobileLibraryShell(args: {
           ) : null}
         </View>
 
+      </View>
+
+      {/* Filtro de nivel. Va VISIBLE bajo la búsqueda, no en un menú: la queja
+          del tester no era que el filtro fallara, era que no lo encontraba. */}
+      <View style={styles.exploreLevelFilterRow}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          decelerationRate="normal"
+          contentContainerStyle={styles.favoriteFilterChips}
+        >
+          {EXPLORE_LEVEL_OPTIONS.map((level) => (
+            <Pressable
+              key={`explore-level-${level}`}
+              onPress={() => setSelectedExploreLevel(level)}
+              accessibilityRole="button"
+              accessibilityLabel={level === "All" ? "Show every level" : `Show ${level} only`}
+              testID={`qa-explore-level-${level.toLowerCase()}`}
+              style={[
+                styles.filterChip,
+                selectedExploreLevel === level ? styles.filterChipActive : null,
+              ]}
+            >
+              <Text
+                style={[
+                  styles.filterChipText,
+                  selectedExploreLevel === level ? styles.filterChipTextActive : null,
+                ]}
+              >
+                {level === "All" ? "All levels" : level}
+              </Text>
+            </Pressable>
+          ))}
+        </ScrollView>
       </View>
 
       {__DEV__ && filteredExploreBooks.length > 0 ? (
@@ -22286,6 +22364,11 @@ const styles = StyleSheet.create({
   },
   exploreTopicRows: {
     gap: 6,
+  },
+  exploreLevelFilterRow: {
+    paddingHorizontal: 16,
+    paddingTop: 4,
+    paddingBottom: 12,
   },
   filterSection: {
     gap: 8,
