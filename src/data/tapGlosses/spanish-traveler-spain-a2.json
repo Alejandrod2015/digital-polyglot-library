@@ -875,6 +875,10 @@
    "g": "things",
    "t": "noun"
   },
+  "costa": {
+   "g": "the coast, where the land meets the sea",
+   "t": "noun"
+  },
   "costaba": {
    "g": "cost",
    "t": "verb"
@@ -1009,10 +1013,6 @@
   },
   "de": {
    "g": "of, from",
-   "t": "preposition"
-  },
-  "debajo": {
-   "g": "beneath",
    "t": "preposition"
   },
   "decir": {
@@ -1378,10 +1378,6 @@
   "español": {
    "g": "Spanish",
    "t": "noun"
-  },
-  "espera": {
-   "g": "waits for",
-   "t": "verb"
   },
   "esperaba": {
    "g": "expected, waited for",
@@ -2754,6 +2750,10 @@
   "prueba": {
    "g": "tries; tastes; also: a test",
    "t": "verb"
+  },
+  "pueblo": {
+   "g": "a small town, smaller than a city",
+   "t": "noun"
   },
   "pueblos": {
    "g": "towns, villages",

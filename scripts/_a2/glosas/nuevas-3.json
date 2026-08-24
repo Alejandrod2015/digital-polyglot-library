@@ -406,5 +406,13 @@
  "quedado": {
   "g": "stayed (se ha quedado: she has stayed on)",
   "t": "verb"
+ },
+ "pueblo": {
+  "g": "a small town, smaller than a city",
+  "t": "noun"
+ },
+ "costa": {
+  "g": "the coast, where the land meets the sea",
+  "t": "noun"
  }
 }
