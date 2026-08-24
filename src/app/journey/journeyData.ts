@@ -833,9 +833,19 @@ async function buildJourneyVariantsFromStudio(
     });
   }
 
-  // Sort by variant first, then by Journey.createdAt, so the order is
-  // stable and groups regional variants together for the picker.
-  tracks.sort((a, b) => a.label.localeCompare(b.label));
+  // Orden por NIVEL primero, y dentro del nivel por nombre. El nombre de un
+  // journey no dice nada de su dificultad: ordenando solo por él, "Friends"
+  // (C1) quedaba delante de "Traveler" (A0), y como el cliente toma el PRIMER
+  // track de su variante, un principiante de LATAM aterrizaba en el C1. El
+  // 2026-08-22 un tester abrió las historias 1 y 2 del journey C1 un minuto
+  // después de terminar el onboarding, escribió que no encontraba la forma de
+  // volver al básico y puntuó 4/10.
+  const levelRank = (track: JourneyVariantTrack) => {
+    const first = (track.levels[0]?.id ?? "").trim().toLowerCase();
+    const index = (JOURNEY_LEVEL_IDS as readonly string[]).indexOf(first);
+    return index < 0 ? JOURNEY_LEVEL_IDS.length : index;
+  };
+  tracks.sort((a, b) => levelRank(a) - levelRank(b) || a.label.localeCompare(b.label));
 
   return tracks;
 }

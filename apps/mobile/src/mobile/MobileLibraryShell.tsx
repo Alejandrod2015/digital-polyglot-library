@@ -16175,8 +16175,8 @@ export function MobileLibraryShell(args: {
     // (often a C1 journey). That made a Beginner journey (Mexico A0) render
     // "Advanced" + C1 topics in the topic panels. Match, in order: explicit
     // selection → the active journey's own Studio track (its id lives in
-    // `journey.variant`, a cuid; `journey.id` for legacy rows) → the
-    // region/variant code → first track.
+    // `journey.variant`, a cuid; `journey.id` for legacy rows) → el track de su
+    // variante que case con el placement → el más fácil de su variante.
     const preferredVariantKey = String(
       getJourneyVariantFromPreferences(
         remoteJourney.language ?? "Spanish",
@@ -16186,17 +16186,29 @@ export function MobileLibraryShell(args: {
     )
       .trim()
       .toLowerCase();
+    // Entre los tracks de SU variante manda el nivel, no el orden de la lista.
+    // El servidor ya los manda de menor a mayor, así que el primero es el más
+    // fácil; pero si su placement (a0/a1/…/c1) coincide con uno, ese gana. Sin
+    // esto, dos journeys de la misma variante y distinto nivel se resolvían por
+    // posición: el 2026-08-22 un principiante de LATAM cayó en el C1.
+    const variantTracks = preferredVariantKey
+      ? remoteJourney.tracks.filter(
+          (track) => (track.variant ?? "").trim().toLowerCase() === preferredVariantKey
+        )
+      : [];
+    const placementLevelKey = (preferences.journeyPlacementLevel ?? "").trim().toLowerCase();
     const baseTrack =
       (selectedJourneyTrackId
         ? remoteJourney.tracks.find((track) => track.id === selectedJourneyTrackId)
         : null) ??
       remoteJourney.tracks.find((track) => track.id === activeJourney?.variant) ??
       remoteJourney.tracks.find((track) => track.id === activeJourney?.id) ??
-      (preferredVariantKey
-        ? remoteJourney.tracks.find(
-            (track) => (track.variant ?? "").trim().toLowerCase() === preferredVariantKey
+      (placementLevelKey
+        ? variantTracks.find((track) =>
+            track.levels.some((level) => level.id.trim().toLowerCase() === placementLevelKey)
           )
         : null) ??
+      variantTracks[0] ??
       remoteJourney.tracks[0] ??
       null;
     if (!baseTrack) return null;
