@@ -418,5 +418,21 @@
  "respaldo": {
   "g": "the back of a chair, the part you lean on",
   "t": "noun"
+ },
+ "va": {
+  "g": "goes (va derecha: she goes straight to it)",
+  "t": "verb"
+ },
+ "derecha": {
+  "g": "straight, without stopping; also: the right side",
+  "t": "adjective"
+ },
+ "apoyada": {
+  "g": "leaning against something, propped up",
+  "t": "adjective"
+ },
+ "preparada": {
+  "g": "prepared, thought out in advance",
+  "t": "adjective"
  }
 }

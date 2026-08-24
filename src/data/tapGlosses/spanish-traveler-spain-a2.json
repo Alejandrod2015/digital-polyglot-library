@@ -243,6 +243,10 @@
    "g": "rests, leans, supports",
    "t": "verb"
   },
+  "apoyada": {
+   "g": "leaning against something, propped up",
+   "t": "adjective"
+  },
   "aprendido": {
    "g": "learnt",
    "t": "verb"
@@ -1071,6 +1075,10 @@
    "g": "money paid up front to hold something",
    "t": "noun"
   },
+  "derecha": {
+   "g": "straight, without stopping; also: the right side",
+   "t": "adjective"
+  },
   "descansa": {
    "g": "rests",
    "t": "verb"
@@ -1250,6 +1258,10 @@
   "enfada": {
    "g": "gets angry",
    "t": "verb"
+  },
+  "enfrente": {
+   "g": "across, opposite",
+   "t": "adverb"
   },
   "engaña": {
    "g": "tricks somebody, tells them what is not true",
@@ -2731,6 +2743,10 @@
    "g": "worried",
    "t": "adjective"
   },
+  "preparada": {
+   "g": "prepared, thought out in advance",
+   "t": "adjective"
+  },
   "primera": {
    "g": "first",
    "t": "adjective"
@@ -3642,6 +3658,10 @@
   "uñas": {
    "g": "fingernails",
    "t": "noun"
+  },
+  "va": {
+   "g": "goes (va derecha: she goes straight to it)",
+   "t": "verb"
   },
   "vacía": {
    "g": "empty",
