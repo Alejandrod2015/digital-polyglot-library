@@ -476,6 +476,29 @@ export default function Player({
     }
   }, [hasPlayableAudio, resolvedSrc]);
 
+  // EL ICONO SALE DEL ELEMENTO, NO DE QUIEN PULSA.
+  //
+  // `isPlaying` solo se actualizaba en el toggle y en los handlers de la media
+  // session, asi que cualquier play o pause que no viniera de ahi (teclas de
+  // medios, otra pestana robando el foco, el propio navegador reanudando tras
+  // un seek) dejaba el estado colgado y el boton mostraba play mientras sonaba.
+  // El <audio> es la unica fuente de verdad: nos suscribimos a sus eventos.
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const alSonar = () => setIsPlaying(true);
+    const alParar = () => setIsPlaying(false);
+    audio.addEventListener("play", alSonar);
+    audio.addEventListener("pause", alParar);
+    audio.addEventListener("ended", alParar);
+    setIsPlaying(!audio.paused && !audio.ended);
+    return () => {
+      audio.removeEventListener("play", alSonar);
+      audio.removeEventListener("pause", alParar);
+      audio.removeEventListener("ended", alParar);
+    };
+  }, [hasPlayableAudio, resolvedSrc]);
+
   useEffect(() => {
     if (!hasPlayableAudio) return;
     const audio = audioRef.current;
