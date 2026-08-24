@@ -343,10 +343,6 @@
    "g": "warns, lets know",
    "t": "verb"
   },
-  "avisar": {
-   "g": "to give warning, let know",
-   "t": "verb"
-  },
   "aviso": {
    "g": "a warning",
    "t": "noun"
@@ -791,6 +787,10 @@
    "g": "complete, whole",
    "t": "adjective"
   },
+  "comprar": {
+   "g": "to buy",
+   "t": "verb"
+  },
   "comprarlo": {
    "g": "to buy it",
    "t": "verb"
@@ -949,10 +949,6 @@
   },
   "cuenta": {
    "g": "bank account; also: tells; (darse cuenta) to realise",
-   "t": "noun"
-  },
-  "cuerpo": {
-   "g": "body",
    "t": "noun"
   },
   "cuesta": {
@@ -2945,6 +2941,10 @@
   },
   "reserva": {
    "g": "(de reserva) held back in case you need it",
+   "t": "noun"
+  },
+  "respaldo": {
+   "g": "the back of a chair, the part you lean on",
    "t": "noun"
   },
   "respuesta": {
