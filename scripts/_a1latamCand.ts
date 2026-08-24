@@ -4,7 +4,7 @@ import { PrismaClient } from "../src/generated/prisma";
 import { variantPool } from "@/lib/languageVariant";
 import { isSpanishA1A2 } from "@/lib/cefr/spanishA1A2";
 const CAND: Record<string, string[]> = {
-  "expresiones para la 2": ["sin darse cuenta","a esa hora","otra vez","medio andén","hasta la nariz","de noche","por si acaso","a tiempo"],
+  "mercado DF": ["fresa","mango","limón","cebolla","frijol","queso","pollo","kilo","bolsa","peso"],
 };
 const p = new PrismaClient();
 (async () => {

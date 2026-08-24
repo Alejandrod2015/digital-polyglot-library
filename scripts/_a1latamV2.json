@@ -391,5 +391,398 @@
         "type": "expression"
       }
     ]
+  },
+  {
+    "topic": "prices-and-change",
+    "slotIndex": 1,
+    "slug": "aqui-nadie-pone-el-precio",
+    "title": "Aquí nadie pone el precio",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Ana vuelve al mercado que ya conoce, pero esta vez no viene a comer sino a llenar una bolsa para toda la semana. Descubre que en los puestos no hay una sola cifra escrita y que preguntar cuánto cuesta, en voz alta y antes de que le envuelvan nada, es la única forma de saber si le están cobrando lo mismo que a los demás.",
+    "text": "Es lunes y el mercado huele a cebolla recién cortada. Ana entra por la carnicería y camina hasta el puesto de verdura. En la fila de adelante hay cola, y nadie parece apurado.\n\n“¿A cómo el jitomate?” “Según el tamaño; los chicos están en oferta.” La señora la reconoce y le sonríe con la mano llena de limones.\n\nAna busca una cifra escrita y no encuentra ninguna en todo el puesto. Pide medio de jitomate y unos limones. La señora lo envuelve todo en una bolsita.\n\n“Y una rebanada de queso, del salado.” “Ese es el bueno, pero cuesta un poco más.” Ana mira cómo la señora corta y pesa sin apuro.\n\nLa señora le trae una pila de servilletas y una docena de limones listos. Le cobra un número redondo y Ana lo repite en voz alta. La cifra suena razonable, pero no tiene con qué compararla.",
+    "vocab": [
+      {
+        "word": "cola",
+        "surface": "cola",
+        "definition": "a line of people waiting one behind the other",
+        "type": "noun"
+      },
+      {
+        "word": "oferta",
+        "surface": "oferta",
+        "definition": "a lower price offered on something for a while",
+        "type": "noun"
+      },
+      {
+        "word": "cifra",
+        "surface": "cifra",
+        "definition": "a number written or said as an amount of money",
+        "type": "noun"
+      },
+      {
+        "word": "pedir",
+        "surface": "Pide",
+        "definition": "to ask a seller to give you something you want",
+        "type": "verb"
+      },
+      {
+        "word": "costar",
+        "surface": "cuesta",
+        "definition": "to have a certain price when you buy it",
+        "type": "verb"
+      },
+      {
+        "word": "cobrar",
+        "surface": "cobra",
+        "definition": "to ask a buyer for the money something costs",
+        "type": "verb"
+      },
+      {
+        "word": "apurado",
+        "surface": "apurado",
+        "definition": "in a hurry, wanting to finish something quickly",
+        "type": "adjective"
+      },
+      {
+        "word": "verdura",
+        "surface": "verdura",
+        "definition": "plants such as onions or lettuce grown to eat",
+        "type": "noun"
+      },
+      {
+        "word": "jitomate",
+        "surface": "jitomate",
+        "definition": "the red round fruit Mexicans put in cooked food",
+        "type": "noun"
+      },
+      {
+        "word": "bolsita",
+        "surface": "bolsita",
+        "definition": "a small thin bag for carrying a few things",
+        "type": "noun"
+      },
+      {
+        "word": "envolver",
+        "surface": "envuelve",
+        "definition": "to wrap something in paper or plastic to carry it",
+        "type": "verb"
+      },
+      {
+        "word": "medio",
+        "surface": "medio",
+        "definition": "half of the usual amount that is sold",
+        "type": "adjective"
+      },
+      {
+        "word": "docena",
+        "surface": "docena",
+        "definition": "a group of twelve things sold or counted together",
+        "type": "noun"
+      },
+      {
+        "word": "listo",
+        "surface": "listos",
+        "definition": "finished and ready for someone to take away",
+        "type": "adjective"
+      },
+      {
+        "word": "según",
+        "surface": "Según",
+        "definition": "depending on the thing that is named next",
+        "type": "preposition"
+      },
+      {
+        "word": "carnicería",
+        "surface": "carnicería",
+        "definition": "the stall or shop where meat is cut and sold",
+        "type": "noun"
+      },
+      {
+        "word": "rebanada",
+        "surface": "rebanada",
+        "definition": "a flat piece cut from something larger with a knife",
+        "type": "noun"
+      },
+      {
+        "word": "salado",
+        "surface": "salado",
+        "definition": "tasting strongly of salt and not sweet at all",
+        "type": "adjective"
+      },
+      {
+        "word": "traer",
+        "surface": "trae",
+        "definition": "to bring something to the person who is here",
+        "type": "verb"
+      },
+      {
+        "word": "pila",
+        "surface": "pila",
+        "definition": "a small heap of flat things placed one over another",
+        "type": "noun"
+      }
+    ]
+  },
+  {
+    "topic": "prices-and-change",
+    "slotIndex": 2,
+    "slug": "faltan-veinte-y-no-sobran",
+    "title": "Faltan veinte y no sobran",
+    "arcType": "reframe-turn",
+    "synopsis": "Ana paga con el monedero casi vacío y el cambio que le devuelven no cuadra. Decirlo en voz alta delante de otros clientes le da más miedo que perder el dinero, y el mercado le enseña que reclamar veinte pesos no rompe nada: se cuenta otra vez, aparecen debajo del papel y al día siguiente la señora le guarda el lugar igual que siempre.",
+    "text": "El martes el puesto huele a cilantro y Ana vuelve con el monedero casi vacío. Suma en la cabeza lo que va a gastar y le alcanza para poco. La señora ya la ve venir y le guarda el lugar.\n\n“¿Tienes sencillo?” “Solo un billete grande.” La señora hace la cuenta, canta el total y le devuelve un cambio que no es exacto.\n\nAna revisa las monedas en la palma antes de guardarlas. La cantidad no coincide con lo que marca el papel. Le faltan veinte pesos, y no de más sino de menos.\n\n“Creo que aquí falta algo.” “A ver, compara: yo puse un número redondo y tú me diste justo.” La señora deja la tarjeta de los precios sobre el cajón.\n\nAparecen los veinte pesos debajo del papel y nadie pierde nada. “Yo no gano quitándote monedas”, dice la señora, y resta el error. Por eso Ana vuelve a ese puesto y no al de enfrente.",
+    "vocab": [
+      {
+        "word": "monedero",
+        "surface": "monedero",
+        "definition": "a small purse for carrying coins in your pocket",
+        "type": "noun"
+      },
+      {
+        "word": "casi vacío",
+        "surface": "casi vacío",
+        "definition": "with almost nothing left inside it any more",
+        "type": "expression"
+      },
+      {
+        "word": "sumar",
+        "surface": "Suma",
+        "definition": "to add numbers together to get a total",
+        "type": "verb"
+      },
+      {
+        "word": "alcanzar",
+        "surface": "alcanza",
+        "definition": "to be enough for what you need to buy",
+        "type": "verb"
+      },
+      {
+        "word": "sencillo",
+        "surface": "sencillo",
+        "definition": "small coins and notes for paying exact amounts",
+        "type": "noun"
+      },
+      {
+        "word": "total",
+        "surface": "total",
+        "definition": "the whole amount you have to pay in the end",
+        "type": "noun"
+      },
+      {
+        "word": "cambio",
+        "surface": "cambio",
+        "definition": "the money a seller gives back after you pay",
+        "type": "noun"
+      },
+      {
+        "word": "exacto",
+        "surface": "exacto",
+        "definition": "right down to the last coin, with nothing missing",
+        "type": "adjective"
+      },
+      {
+        "word": "revisar",
+        "surface": "revisa",
+        "definition": "to look at something carefully to check it is right",
+        "type": "verb"
+      },
+      {
+        "word": "cantidad",
+        "surface": "cantidad",
+        "definition": "how much of something there is when counted",
+        "type": "noun"
+      },
+      {
+        "word": "marcar",
+        "surface": "marca",
+        "definition": "to show a number, as a screen or a paper does",
+        "type": "verb"
+      },
+      {
+        "word": "de más",
+        "surface": "de más",
+        "definition": "more than the amount that was actually needed",
+        "type": "expression"
+      },
+      {
+        "word": "comparar",
+        "surface": "compara",
+        "definition": "to look at two amounts and see which is bigger",
+        "type": "verb"
+      },
+      {
+        "word": "redondo",
+        "surface": "redondo",
+        "definition": "ending in zero, with no small coins involved",
+        "type": "adjective"
+      },
+      {
+        "word": "justo",
+        "surface": "justo",
+        "definition": "exactly the amount, with nothing over or missing",
+        "type": "adjective"
+      },
+      {
+        "word": "tarjeta",
+        "surface": "tarjeta",
+        "definition": "a stiff piece of card with writing on it",
+        "type": "noun"
+      },
+      {
+        "word": "perder",
+        "surface": "pierde",
+        "definition": "to end up with less money than you had before",
+        "type": "verb"
+      },
+      {
+        "word": "ganar",
+        "surface": "gano",
+        "definition": "to end up with more money than you had before",
+        "type": "verb"
+      },
+      {
+        "word": "restar",
+        "surface": "resta",
+        "definition": "to take one number away from another one",
+        "type": "verb"
+      },
+      {
+        "word": "por eso",
+        "surface": "Por eso",
+        "definition": "for that reason, because of what just happened",
+        "type": "expression"
+      }
+    ]
+  },
+  {
+    "topic": "prices-and-change",
+    "slotIndex": 3,
+    "slug": "carla-paga-sin-preguntar",
+    "title": "Carla paga sin preguntar",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Llega Carla, que no conoce el mercado, y hace lo que Ana hacía el año pasado: paga el primer número que le dicen y se va sin la feria. Ana ya no explica el picante ni el menú; ahora explica que el gasto de la semana se decide antes de entrar, y que la bolsa pesa igual para las dos pero cuesta la mitad si se pregunta a tiempo.",
+    "text": "El sábado Ana sale temprano con Carla, una amiga que no conoce el mercado y que huele todo antes de tocarlo. “Todo se ve caro”, dice Carla y aprieta la bolsa. Ana le explica que para dos personas el gasto se elige antes de entrar.\n\n“¿Cuánto la torta?” “Cincuenta, y con descuento la mitad si llevas dos.” Carla paga con un billete y se va sin la feria.\n\nCompran fresas, un tazón de barro y leche para el desayuno. Ana pide azúcar en bolsita aparte. Carla mira todo y no pregunta ningún número.\n\n“Mañana untas la manteca y encima la mermelada.” “¿Y eso se come así, sin más?” Ana se ríe y le dice que sí, que se come así.\n\nCarla carga la bolsa y ya pesa demasiado para una cuadra. “Durante la semana esto ahorra bastante”, dice Ana. El sábado sale pesado, pero los otros seis días no.",
+    "vocab": [
+      {
+        "word": "caro",
+        "surface": "caro",
+        "definition": "costing a lot more money than you expected",
+        "type": "adjective"
+      },
+      {
+        "word": "persona",
+        "surface": "personas",
+        "definition": "one human being counted among a group of others",
+        "type": "noun"
+      },
+      {
+        "word": "gasto",
+        "surface": "gasto",
+        "definition": "the money that goes out when you buy things",
+        "type": "noun"
+      },
+      {
+        "word": "elegir",
+        "surface": "elige",
+        "definition": "to pick one thing instead of the others available",
+        "type": "verb"
+      },
+      {
+        "word": "torta",
+        "surface": "torta",
+        "definition": "a filled bread roll eaten as a quick meal",
+        "type": "noun"
+      },
+      {
+        "word": "descuento",
+        "surface": "descuento",
+        "definition": "money taken off the normal price of something",
+        "type": "noun"
+      },
+      {
+        "word": "mitad",
+        "surface": "mitad",
+        "definition": "one of the two equal parts of something",
+        "type": "noun"
+      },
+      {
+        "word": "feria",
+        "surface": "feria",
+        "definition": "the small coins Mexicans get back after paying",
+        "type": "noun"
+      },
+      {
+        "word": "fresa",
+        "surface": "fresas",
+        "definition": "the small red sweet fruit that grows near the ground",
+        "type": "noun"
+      },
+      {
+        "word": "tazón",
+        "surface": "tazón",
+        "definition": "a wide deep dish for drinking or serving food",
+        "type": "noun"
+      },
+      {
+        "word": "leche",
+        "surface": "leche",
+        "definition": "the white drink that comes from cows and goats",
+        "type": "noun"
+      },
+      {
+        "word": "azúcar",
+        "surface": "azúcar",
+        "definition": "the sweet white powder added to food and drinks",
+        "type": "noun"
+      },
+      {
+        "word": "untar",
+        "surface": "untas",
+        "definition": "to spread something soft over bread with a knife",
+        "type": "verb"
+      },
+      {
+        "word": "manteca",
+        "surface": "manteca",
+        "definition": "the soft white fat used for cooking and spreading",
+        "type": "noun"
+      },
+      {
+        "word": "mermelada",
+        "surface": "mermelada",
+        "definition": "sweet fruit paste spread on bread in the morning",
+        "type": "noun"
+      },
+      {
+        "word": "comerse",
+        "surface": "se come",
+        "definition": "to eat something up in a particular way",
+        "type": "verb"
+      },
+      {
+        "word": "cargar",
+        "surface": "carga",
+        "definition": "to carry something heavy from one place to another",
+        "type": "verb"
+      },
+      {
+        "word": "durante",
+        "surface": "Durante",
+        "definition": "through the whole of a period of time",
+        "type": "preposition"
+      },
+      {
+        "word": "ahorrar",
+        "surface": "ahorra",
+        "definition": "to keep money instead of spending it now",
+        "type": "verb"
+      },
+      {
+        "word": "pesado",
+        "surface": "pesado",
+        "definition": "heavy and hard to carry for very long",
+        "type": "adjective"
+      }
+    ]
   }
 ]
