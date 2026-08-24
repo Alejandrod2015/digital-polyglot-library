@@ -1570,5 +1570,400 @@
         "type": "adjective"
       }
     ]
+  },
+  {
+    "topic": "names-for-things",
+    "slotIndex": 1,
+    "slug": "pidio-el-completo-sin-saberlo",
+    "title": "Pidió el completo sin saberlo",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Pablo lleva un año en la ciudad y ya tiene con quien sentarse, pero sigue pidiendo mal. Dice que si a una pregunta que no entiende y le llega un plato distinto del que esperaba. Marta se rie y le señala lo unico que no habia visto: lo que falla no son las palabras sueltas sino la frase entera con que se pide.",
+    "text": "En Buenos Aires, Pablo, un vecino que llegó hace un año, entra al bar de siempre. El mesero pone el mantel y deja el menú abierto. Huele a pan tostado desde la cocina.\n\n“Un lomito y un cortado, por favor.” “¿El lomito completo o simple?” Pablo no sabe qué quiere decir completo y contesta que sí.\n\nLlega un plato diferente del que esperaba y con tres cosas encima. El mesero le deja cuchillo, tenedor y cuchara sin decir nada. Pablo se da cuenta de que erró al contestar.\n\n“Mirá vos, pediste el completo.” “Yo quería el simple, pero dije que sí.” Marta le explica que el modo de pedir tiene su frase correcta y en este idioma todo suena parecido.\n\nLo incorrecto no fue la palabra sino el sí. Pablo se equivoca dos veces más antes del postre. Pide una medialuna y esta vez le traen la factura.",
+    "vocab": [
+      {
+        "word": "mesero",
+        "surface": "mesero",
+        "definition": "the man who brings food to the tables",
+        "type": "noun"
+      },
+      {
+        "word": "mantel",
+        "surface": "mantel",
+        "definition": "the cloth spread over a table before eating",
+        "type": "noun"
+      },
+      {
+        "word": "menú",
+        "surface": "menú",
+        "definition": "the list of dishes a place can serve you",
+        "type": "noun"
+      },
+      {
+        "word": "lomito",
+        "surface": "lomito",
+        "definition": "a thin beef steak served inside a bread roll",
+        "type": "noun"
+      },
+      {
+        "word": "cortado",
+        "surface": "cortado",
+        "definition": "a small coffee with a little milk in it",
+        "type": "noun"
+      },
+      {
+        "word": "diferente",
+        "surface": "diferente",
+        "definition": "not the same as the other thing named",
+        "type": "adjective"
+      },
+      {
+        "word": "cuchillo",
+        "surface": "cuchillo",
+        "definition": "the sharp tool used for cutting food at table",
+        "type": "noun"
+      },
+      {
+        "word": "tenedor",
+        "surface": "tenedor",
+        "definition": "the tool with points used for lifting food",
+        "type": "noun"
+      },
+      {
+        "word": "cuchara",
+        "surface": "cuchara",
+        "definition": "the round tool used for eating soup and rice",
+        "type": "noun"
+      },
+      {
+        "word": "darse cuenta",
+        "surface": "se da cuenta",
+        "definition": "to suddenly understand something you had not seen",
+        "type": "expression"
+      },
+      {
+        "word": "modo",
+        "surface": "modo",
+        "definition": "the particular way in which something is done",
+        "type": "noun"
+      },
+      {
+        "word": "mirá vos",
+        "surface": "Mirá vos",
+        "definition": "words Argentines say when something mildly surprises them",
+        "type": "expression"
+      },
+      {
+        "word": "frase",
+        "surface": "frase",
+        "definition": "a group of words said together as one unit",
+        "type": "noun"
+      },
+      {
+        "word": "correcto",
+        "surface": "correcta",
+        "definition": "right, exactly as it should be said or done",
+        "type": "adjective"
+      },
+      {
+        "word": "idioma",
+        "surface": "idioma",
+        "definition": "the language that a whole country speaks every day",
+        "type": "noun"
+      },
+      {
+        "word": "parecido",
+        "surface": "parecido",
+        "definition": "almost the same, but not exactly the same",
+        "type": "adjective"
+      },
+      {
+        "word": "incorrecto",
+        "surface": "incorrecto",
+        "definition": "wrong, not the way it should be said",
+        "type": "adjective"
+      },
+      {
+        "word": "equivocarse",
+        "surface": "se equivoca",
+        "definition": "to say or do the wrong thing by mistake",
+        "type": "verb"
+      },
+      {
+        "word": "medialuna",
+        "surface": "medialuna",
+        "definition": "a small sweet curved roll eaten with coffee",
+        "type": "noun"
+      },
+      {
+        "word": "factura",
+        "surface": "factura",
+        "definition": "a sweet pastry, or the paper that says what you owe",
+        "type": "noun"
+      }
+    ]
+  },
+  {
+    "topic": "names-for-things",
+    "slotIndex": 2,
+    "slug": "dos-columnas-en-la-pizarra",
+    "title": "Dos columnas en la pizarra",
+    "arcType": "reframe-turn",
+    "synopsis": "Marta aparece con una pizarra y parte la pared en dos: a la izquierda lo que Pablo dice, a la derecha lo que se dice aca. No es una clase de vocabulario sino un mapa de las veces que va a quedar mal, y Pablo lo copia entero en una hoja que despues pliega en cuatro y guarda como si fuera un documento.",
+    "text": "El jueves huele a lluvia en Buenos Aires y Marta llega con una pizarra y un marcador grueso. La apoya contra la pared, delante de Pablo, y traza una línea ancha por el medio. La tinta chirría sobre el vidrio.\n\n“A la izquierda tu columna, a la derecha la de acá.” “¿Y si son iguales?” “Entonces no va.”\n\nPablo copia todo en una hoja con una birome prestada. Marta le dicta despacio y él no niega ninguna. Es media clase y un juego a la vez.\n\n“Esto es necesario si querés vivir acá.” “Jamás lo tires.” Pablo pliega la hoja en cuatro y la guarda quieto.\n\nSobre la mesa quedan un folleto viejo y una nota con dos palabras. “Está todo mal”, dice Pablo, y Marta contesta que no, que ahora está escrito. “Trato hecho”, y eso sí es verdadero.",
+    "vocab": [
+      {
+        "word": "pizarra",
+        "surface": "pizarra",
+        "definition": "a flat dark board you write on with chalk",
+        "type": "noun"
+      },
+      {
+        "word": "marcador",
+        "surface": "marcador",
+        "definition": "a thick pen that writes wide coloured lines",
+        "type": "noun"
+      },
+      {
+        "word": "ancho",
+        "surface": "ancha",
+        "definition": "wide, measuring a lot from side to side",
+        "type": "adjective"
+      },
+      {
+        "word": "tinta",
+        "surface": "tinta",
+        "definition": "the coloured liquid that runs inside a pen",
+        "type": "noun"
+      },
+      {
+        "word": "izquierda",
+        "surface": "izquierda",
+        "definition": "the side of your body where your heart is",
+        "type": "noun"
+      },
+      {
+        "word": "columna",
+        "surface": "columna",
+        "definition": "a tall narrow list of words one under another",
+        "type": "noun"
+      },
+      {
+        "word": "hoja",
+        "surface": "hoja",
+        "definition": "a single flat sheet of paper for writing",
+        "type": "noun"
+      },
+      {
+        "word": "birome",
+        "surface": "birome",
+        "definition": "the everyday pen that people in Argentina write with",
+        "type": "noun",
+        "register": "cultural"
+      },
+      {
+        "word": "negar",
+        "surface": "niega",
+        "definition": "to say that something is not true at all",
+        "type": "verb"
+      },
+      {
+        "word": "clase",
+        "surface": "clase",
+        "definition": "a time when somebody teaches and others learn",
+        "type": "noun"
+      },
+      {
+        "word": "juego",
+        "surface": "juego",
+        "definition": "something done for fun, with a few simple rules",
+        "type": "noun"
+      },
+      {
+        "word": "necesario",
+        "surface": "necesario",
+        "definition": "that you really need if you want it to work",
+        "type": "adjective"
+      },
+      {
+        "word": "jamás",
+        "surface": "Jamás",
+        "definition": "at no moment, not ever in your whole life",
+        "type": "adverb"
+      },
+      {
+        "word": "plegar",
+        "surface": "pliega",
+        "definition": "to fold something over on itself several times",
+        "type": "verb"
+      },
+      {
+        "word": "quieto",
+        "surface": "quieto",
+        "definition": "staying still, without moving even a little bit",
+        "type": "adjective"
+      },
+      {
+        "word": "folleto",
+        "surface": "folleto",
+        "definition": "a thin printed paper that announces something to people",
+        "type": "noun"
+      },
+      {
+        "word": "nota",
+        "surface": "nota",
+        "definition": "a few words written down so you remember them",
+        "type": "noun"
+      },
+      {
+        "word": "está todo mal",
+        "surface": "Está todo mal",
+        "definition": "words said when nothing seems right at all",
+        "type": "expression"
+      },
+      {
+        "word": "trato hecho",
+        "surface": "Trato hecho",
+        "definition": "words that close an agreement between two people",
+        "type": "expression"
+      },
+      {
+        "word": "verdadero",
+        "surface": "verdadero",
+        "definition": "true, matching what really is the case here",
+        "type": "adjective"
+      }
+    ]
+  },
+  {
+    "topic": "names-for-things",
+    "slotIndex": 3,
+    "slug": "pablo-explica-el-bondi",
+    "title": "Pablo explica el bondi",
+    "arcType": "late-reveal",
+    "synopsis": "En la parada de la avenida hay una recien llegada que pregunta por el colectivo y no entiende la respuesta. Pablo se oye a si mismo explicando lo que hace un año no sabia, y se da cuenta de que ya no traduce las palabras sueltas: ahora traduce el modo, que es lo que le habian escrito a el en una columna hace unos meses.",
+    "text": "En la avenida, frente a la cartelera del cine, hay gente esperando. Nadia, una recién llegada que todavía no entiende nada, mira la vitrina del bar. El vidrio sucio no deja ver el interior.\n\n“¿Este colectivo va al centro?” “Ese bondi va, sí, pero el otro no.” Nadia intenta decir bondi y no le sale.\n\nPablo se acerca con la campera abierta y las zapatillas mojadas. Alrededor la gente sube y baja sin mirar a nadie. Pablo le explica que colectivo y bondi son la misma cosa.\n\n“¿Y la pileta del club es piscina?” “Piscina se entiende, pero acá nadie la llama así.” Nadia saca un lápiz del bolsillo y anota en la manga.\n\nFuera de la parada, Lucas los espera con dos churros y una limonada. La nevera del bar está vacía y hace calor. Nadia guarda el pasaporte y se sienta en una butaca de plástico.",
+    "vocab": [
+      {
+        "word": "avenida",
+        "surface": "avenida",
+        "definition": "a wide street with many lanes of traffic",
+        "type": "noun"
+      },
+      {
+        "word": "frente",
+        "surface": "frente",
+        "definition": "directly in front of the thing that is named",
+        "type": "adverb"
+      },
+      {
+        "word": "cartelera",
+        "surface": "cartelera",
+        "definition": "the board that shows what films are playing",
+        "type": "noun"
+      },
+      {
+        "word": "vidrio",
+        "surface": "vidrio",
+        "definition": "the hard clear material windows are made of",
+        "type": "noun"
+      },
+      {
+        "word": "sucio",
+        "surface": "sucio",
+        "definition": "covered in dirt and needing to be cleaned",
+        "type": "adjective"
+      },
+      {
+        "word": "vitrina",
+        "surface": "vitrina",
+        "definition": "the glass front where a shop shows its goods",
+        "type": "noun"
+      },
+      {
+        "word": "alrededor",
+        "surface": "Alrededor",
+        "definition": "on every side of the place you are in",
+        "type": "adverb"
+      },
+      {
+        "word": "colectivo",
+        "surface": "colectivo",
+        "definition": "the city bus, as most Latin Americans call it",
+        "type": "noun"
+      },
+      {
+        "word": "bondi",
+        "surface": "bondi",
+        "definition": "the city bus, as people in Buenos Aires call it",
+        "type": "noun",
+        "register": "cultural"
+      },
+      {
+        "word": "campera",
+        "surface": "campera",
+        "definition": "a short jacket worn over the other clothes",
+        "type": "noun"
+      },
+      {
+        "word": "zapatillas",
+        "surface": "zapatillas",
+        "definition": "the soft shoes worn for walking and sport",
+        "type": "noun"
+      },
+      {
+        "word": "pileta",
+        "surface": "pileta",
+        "definition": "the pool where people swim, in River Plate speech",
+        "type": "noun"
+      },
+      {
+        "word": "lápiz",
+        "surface": "lápiz",
+        "definition": "the wooden stick with grey inside for writing",
+        "type": "noun"
+      },
+      {
+        "word": "manga",
+        "surface": "manga",
+        "definition": "the part of a shirt that covers your arm",
+        "type": "noun"
+      },
+      {
+        "word": "fuera",
+        "surface": "Fuera",
+        "definition": "outside the place that has just been named",
+        "type": "adverb"
+      },
+      {
+        "word": "churro",
+        "surface": "churros",
+        "definition": "a long fried stick of dough eaten sweet",
+        "type": "noun"
+      },
+      {
+        "word": "limonada",
+        "surface": "limonada",
+        "definition": "a cold drink made with lemons and water",
+        "type": "noun"
+      },
+      {
+        "word": "nevera",
+        "surface": "nevera",
+        "definition": "the cold cupboard that keeps food and drinks fresh",
+        "type": "noun"
+      },
+      {
+        "word": "pasaporte",
+        "surface": "pasaporte",
+        "definition": "the small book that proves who you are abroad",
+        "type": "noun"
+      },
+      {
+        "word": "butaca",
+        "surface": "butaca",
+        "definition": "a low chair with arms for sitting back",
+        "type": "noun"
+      }
+    ]
   }
 ]
