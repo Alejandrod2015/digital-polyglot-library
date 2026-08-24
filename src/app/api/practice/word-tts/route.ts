@@ -49,7 +49,11 @@ const CLIENT_FALLBACK_VOICE = "yHD4CsKkghm19ToGLJEC";
 const WORD_LANGUAGE_DEFAULT_VOICE: Record<string, string> = {
   de: "Ww7Sq9tx9CCOiNOwWgsx", // narrador Expat/Friends DE (aprobado)
   it: "gfKKsLN1k0oYYN9n2dXX", // Violetta IT (aprobado)
-  // es se queda con Hernando/otras; fr/pt no tienen voz aprobada aún.
+  pt: "7iqXtOF3wl3pomwXFY7G", // Fernanda BR, práctica del Traveler PT-BR (aprobada 2026-08-12)
+  fr: "ucMmKRQbfDEYyb2IIGax", // Aurore FR, práctica del Expat FR (aprobada 2026-08-23)
+  // es se queda con Hernando/otras. Un idioma que falte aquí devuelve 404 y se
+  // queda mudo, así que cuando el usuario apruebe una voz nueva hay que
+  // anotarla también aquí: tenerla en la allowlist no basta.
 };
 
 type Body = {
@@ -173,7 +177,7 @@ export async function POST(request: NextRequest) {
   } else if (isGenericFallback && approvedLangVoice) {
     renderVoiceId = approvedLangVoice;
   } else if (isGenericFallback && langCode !== "es" && langCode !== "en") {
-    // Fallback genérico español para un idioma SIN voz aprobada (fr/pt): no
+    // Fallback genérico español para un idioma SIN voz aprobada: no
     // pronunciar con acento equivocado; degradar a "sin audio" explícito.
     return NextResponse.json(
       { error: "No approved voice for this language", code: "UNSUPPORTED_LANGUAGE" },

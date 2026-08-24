@@ -11,7 +11,9 @@
  *   - es → Hernando (CO) unless the caller supplies an approved EL voice
  *   - it → Violetta
  *   - de → Expat/Friends DE narrator
- *   - pt / fr → NO approved voice → 404 (silent) until the user approves one
+ *   - pt → Fernanda BR (aprobada 2026-08-12 para la práctica del Traveler PT-BR)
+ *   - fr → Aurore FR (aprobada 2026-08-23 para la práctica del Expat FR)
+ *   - cualquier otro idioma → 404 (silencio) hasta que el usuario apruebe una
  *
  * The MP3 is cached in R2 keyed by (version|language|variant|voice|sentence),
  * so each unique tuple costs exactly one ElevenLabs call ever.
@@ -44,12 +46,24 @@ const ELEVEN_SENTENCE_MODEL = "eleven_multilingual_v2";
 
 // Default per-language ElevenLabs voice for practice sentences. Every id here
 // MUST be on the approved allowlist (assertVoiceApproved enforces it at render).
-// Languages absent from this map (pt, fr, …) have no approved voice → the route
-// returns 404 and the sentence stays silent, per the ElevenLabs-only policy.
+// Un idioma que falte aquí no tiene voz aprobada: la ruta devuelve 404 y la
+// oración se queda muda, que es la política de solo-ElevenLabs. Cuando el
+// usuario apruebe una voz nueva para un idioma, hay que ANOTARLA AQUÍ; que la
+// voz esté en la allowlist no basta, y ese olvido es lo que dejó mudo al
+// portugués durante doce días.
 const ELEVEN_SENTENCE_VOICE: Record<string, string> = {
   spanish: "yHD4CsKkghm19ToGLJEC", // Narrator CO - Hernando (approved)
   italian: "gfKKsLN1k0oYYN9n2dXX", // Violetta IT (approved)
   german: "Ww7Sq9tx9CCOiNOwWgsx", // Expat/Friends DE narrator (approved)
+  // Portugués y francés SÍ tienen voz aprobada desde el 2026-08-12 y el
+  // 2026-08-23, y las dos lo están para PRÁCTICA en su idioma. El mapa se
+  // quedó sin actualizar, así que este endpoint seguía devolviendo 404 y la
+  // app se quedaba muda: un tester del Traveler PT-BR escribió el 2026-08-24
+  // "audio is still not working in listening exercises". Los ejercicios de
+  // escucha son los únicos que dependen de esta ruta en caliente; meaning y
+  // fill_blank llevan su clip pre-horneado y por eso sí sonaban.
+  portuguese: "7iqXtOF3wl3pomwXFY7G", // Fernanda BR, práctica de Traveler PT-BR A0 (approved)
+  french: "ucMmKRQbfDEYyb2IIGax", // Aurore FR, práctica de Expat FR A0 (approved)
 };
 
 // Bumping CACHE_VERSION invalidates every previously cached R2 path without
@@ -173,7 +187,7 @@ export async function POST(request: NextRequest) {
   // ElevenLabs-only voice resolution: prefer the story's own voice when it is an
   // APPROVED ElevenLabs voice; otherwise the approved language default. A Piper/
   // Kokoro hint (contains "/") is never approved → ignored. Languages with no
-  // approved voice (pt/fr) get no audio (404), by policy.
+  // approved voice get no audio (404), by policy.
   const voiceId = isVoiceApproved(hintedVoiceId)
     ? hintedVoiceId
     : ELEVEN_SENTENCE_VOICE[language.toLowerCase()] ?? null;
