@@ -675,9 +675,16 @@ last = msgs[-1] or ""
 last = re.sub(r"<system-reminder>.*?</system-reminder>", "", last, flags=re.DOTALL|re.IGNORECASE)
 last = re.sub(r"<task-notification>.*?</task-notification>", "", last, flags=re.DOTALL|re.IGNORECASE)
 # El verbo tiene que NOMBRAR la imagen. "dale" / "sigue" / "ok" no valen.
+# El verbo tiene que ir pegado a la imagen. Dos formas valen:
+#   "genera la portada" / "regenera la imagen"  -> el nombre entero
+#   "regenera la de Veinte pesos"               -> la elipsis, que es como
+#                                                  habla el usuario cuando ya
+#                                                  estamos mirando portadas
+# Lo que sigue sin valer, a proposito: "dale", "sigue", "ok", "perfecto".
 verb_pat = re.compile(
-    r"\b(genera|regenera|lanza|manda|haz|tira|renderea|render)\s+(el\s+|la\s+|los\s+|las\s+|una\s+|un\s+)?"
-    r"(portada|portadas|imagen|imagenes|imágenes|cover|covers)\b",
+    r"\b(genera|regenera|lanza|manda|haz|tira|renderea|render)\s+"
+    r"(?:(?:el|la|los|las|una|un)\s+)?"
+    r"(?:(portada|portadas|imagen|imagenes|imágenes|cover|covers)\b|(?:el|la|los|las)\s+de\b)",
     re.IGNORECASE)
 autorizado = False
 for m in verb_pat.finditer(last):
