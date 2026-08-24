@@ -2477,6 +2477,14 @@
   "consigo": {
    "g": "I manage to (conseguir)",
    "t": "verb"
+  },
+  "carrega": {
+   "g": "carries (carregar)",
+   "t": "verb"
+  },
+  "pinga": {
+   "g": "drips (pingar)",
+   "t": "verb"
   }
  }
 }

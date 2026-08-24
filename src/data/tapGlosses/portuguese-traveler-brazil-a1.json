@@ -3922,6 +3922,18 @@
   "costas": {
    "g": "back of the body",
    "t": "noun"
+  },
+  "carrega": {
+   "g": "carries (carregar)",
+   "t": "verb"
+  },
+  "escreve": {
+   "g": "writes (escrever)",
+   "t": "verb"
+  },
+  "pinga": {
+   "g": "drips (pingar)",
+   "t": "verb"
   }
  }
 }
