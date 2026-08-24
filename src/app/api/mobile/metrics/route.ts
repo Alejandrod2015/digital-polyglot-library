@@ -5,6 +5,7 @@ import type { Prisma } from "@/generated/prisma";
 import { prisma } from "@/lib/prisma";
 import { getActiveMobileSession } from "@/lib/mobileSession";
 import { mobilePlatformFromRequest } from "@/lib/mobilePlatform";
+import { isInternalEmail } from "@/lib/internalAccounts";
 
 type MetricBody = {
   storySlug: string;
@@ -64,6 +65,12 @@ const ALLOWED_EVENT_TYPES = new Set([
   "story_abandoned",
   "vocab_marked_known",
   "vocab_marked_unknown",
+  // La impresion del pulgar: se emite cuando la fila de valorar se PINTA, no
+  // cuando se toca. Sin ella el denominador hay que inferirlo de
+  // `audio_complete` y `practice_session_completed`, que es adivinar: no todo
+  // final de audio ensena la fila. metadata.surface dice cual de las dos
+  // puertas fue.
+  "rating_prompt_shown",
 ]);
 
 function isMetricBody(x: unknown): x is MetricBody {
@@ -95,6 +102,12 @@ export async function POST(req: NextRequest): Promise<Response> {
       return NextResponse.json({ error: "Invalid eventType" }, { status: 400 });
     }
 
+    // Igual que en el pulgar: quien es de casa queda sellado en la fila. Sin
+    // esto, la unica forma de restar al equipo de un recuento es reconocer sus
+    // userId de memoria, y UserMetric no guarda correo. La lista se cachea 60s
+    // por instancia, asi que no es una consulta por evento.
+    const internal = await isInternalEmail(session.email).catch(() => false);
+
     await prisma.userMetric.create({
       data: {
         userId: session.sub,
@@ -107,6 +120,7 @@ export async function POST(req: NextRequest): Promise<Response> {
           // El cliente dice de qué sistema viene; antes esto era "ios" fijo,
           // así que ningún evento de Android existía como tal.
           platform: mobilePlatformFromRequest(req),
+          internal,
         } as Prisma.InputJsonValue,
       },
     });

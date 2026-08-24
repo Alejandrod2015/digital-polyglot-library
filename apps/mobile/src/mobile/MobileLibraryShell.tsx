@@ -2529,6 +2529,34 @@ export function MobileLibraryShell(args: {
     return { key: "favorites", bookSlug: null };
   })();
 
+  /**
+   * Que la fila de pulgares de la práctica se PINTÓ. La otra puerta la cuenta
+   * el lector; sin las dos, un cero de votos no se puede leer: no se sabe si
+   * la gente ve la pregunta y pasa, o si nunca le llegó a aparecer.
+   *
+   * Una vez por sujeto (historia, tema o favoritos) y por pantalla de
+   * resultados; volver a practicar lo mismo vuelve a contar, porque es otra
+   * ocasión real de responder.
+   */
+  const ratingShownForPracticeRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (!practiceComplete) {
+      ratingShownForPracticeRef.current = null;
+      return;
+    }
+    if (!canSendPracticeFeedback || !practiceRatingSubject.key) return;
+    if (ratingShownForPracticeRef.current === practiceRatingSubject.key) return;
+    ratingShownForPracticeRef.current = practiceRatingSubject.key;
+    void trackReaderEvent("rating_prompt_shown", {
+      storySlug: practiceRatingSubject.key,
+      bookSlug: practiceRatingSubject.bookSlug ?? undefined,
+      metadata: { surface: "practice", alreadyRated: practiceRatingLiked !== null },
+    });
+    // `trackReaderEvent` y el sujeto se recalculan en cada render; el ref es
+    // quien decide, así que la lista corta no se salta ninguna impresión.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [practiceComplete, canSendPracticeFeedback, practiceRatingSubject.key]);
+
   // Siembra el pulgar ya dado (por ejemplo, votado al final de la historia
   // hace un minuto) para que el panel de práctica no vuelva a preguntar en
   // frío algo que la persona ya contestó.
@@ -11846,6 +11874,7 @@ export function MobileLibraryShell(args: {
       | "story_abandoned"
       | "vocab_marked_known"
       | "vocab_marked_unknown"
+      | "rating_prompt_shown"
       | "audio_complete",
     payload: { storySlug: string; bookSlug?: string; value?: number; metadata?: Record<string, unknown> }
   ) {

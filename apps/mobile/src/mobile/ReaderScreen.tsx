@@ -1350,6 +1350,7 @@ export function ReaderScreen(args: {
       | "story_abandoned"
       | "vocab_marked_known"
       | "vocab_marked_unknown"
+      | "rating_prompt_shown"
       | "audio_complete",
     payload: { storySlug: string; bookSlug?: string; value?: number; metadata?: Record<string, unknown> }
   ) => void;
@@ -2003,6 +2004,8 @@ export function ReaderScreen(args: {
   // Only auto-open the practice prompt once per story view so dismissing it
   // doesn't cause it to re-pop every time the user scrolls near the bottom.
   const promptShownForStoryRef = useRef<string | null>(null);
+  /** Si ya se contó que la fila de pulgares se pintó para esta historia. */
+  const ratingShownForStoryRef = useRef<string | null>(null);
   // Tracks whether we've already emitted `audio_complete` for the active
   // story. The expo-av status update keeps firing after `didJustFinish`
   // (looping isPlaying=false ticks), so without this guard we'd flood the
@@ -2012,6 +2015,7 @@ export function ReaderScreen(args: {
     setEndOfStoryPromptVisible(false);
     setStoryCompleted(false);
     promptShownForStoryRef.current = null;
+    ratingShownForStoryRef.current = null;
     audioCompleteFiredForStoryRef.current = null;
     // A cero: si la tarjeta no se renderiza (historia sin terminar), nadie
     // vuelve a llamar a su onLayout y una altura vieja desajustaría el mapeo
@@ -2091,6 +2095,37 @@ export function ReaderScreen(args: {
    *  comentario después. Antes desaparecía tras votar y dejaba un "Thanks,
    *  noted" que no llevaba a ningún sitio. */
   const showRatingRow = Boolean(sessionToken);
+
+  /**
+   * La impresion, no el toque. El 2026-08-24 nueve testers pasaron 53 veces por
+   * un final de historia o de practica sin que llegara un solo pulgar, y no
+   * habia forma de saber si la fila se les habia pintado siquiera: el
+   * denominador se estaba infiriendo de `audio_complete`, que no es lo mismo.
+   * Una fila enseñada y no tocada es un dato; una fila que nunca se pinto es
+   * otro problema completamente distinto.
+   *
+   * Una vez por historia y por montaje, igual que el propio panel.
+   */
+  useEffect(() => {
+    if (!endOfStoryPromptVisible || endOfStoryFace !== "practice") return;
+    if (!showRatingRow || !onOpenPractice || !story.slug) return;
+    if (ratingShownForStoryRef.current === story.id) return;
+    ratingShownForStoryRef.current = story.id;
+    trackReaderEventRef.current?.("rating_prompt_shown", {
+      storySlug: story.slug,
+      bookSlug: book.slug,
+      metadata: { surface: "story", alreadyRated: storyAlreadyRated },
+    });
+  }, [
+    endOfStoryPromptVisible,
+    endOfStoryFace,
+    showRatingRow,
+    onOpenPractice,
+    story.id,
+    story.slug,
+    book.slug,
+    storyAlreadyRated,
+  ]);
 
   async function postStoryRating(liked: boolean, comment?: string) {
     if (!sessionToken) return;
