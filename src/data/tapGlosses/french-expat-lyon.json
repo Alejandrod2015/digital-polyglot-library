@@ -56,7 +56,7 @@
    "t": "verb"
   },
   "aller": {
-   "g": "word this scene needs and the rest do not (aller)",
+   "g": "to go (aller); to be all right (ça va aller)",
    "t": "noun"
   },
   "allume": {
@@ -64,7 +64,7 @@
    "t": "verb"
   },
   "allumée": {
-   "g": "word this scene needs and the rest do not (allumée)",
+   "g": "switched on (allumer)",
    "t": "noun"
   },
   "alors": {
@@ -124,7 +124,7 @@
    "t": "verb"
   },
   "arrivée": {
-   "g": "arrival (l'arrivée)",
+   "g": "arrived (arriver); arrival (l'arrivée)",
    "t": "noun"
   },
   "arrêts": {
@@ -220,11 +220,11 @@
    "t": "noun"
   },
   "bas": {
-   "g": "in a very quiet voice (tout bas)",
+   "g": "the bottom (en bas); in a very quiet voice (tout bas)",
    "t": "phrase"
   },
   "basse": {
-   "g": "low, close to the ground (bas)",
+   "g": "low (bas); in a quiet voice (à voix basse)",
    "t": "adjective"
   },
   "beau": {
@@ -248,7 +248,7 @@
    "t": "noun"
   },
   "blanche": {
-   "g": "word this scene needs and the rest do not (blanche)",
+   "g": "white (blanc)",
    "t": "noun"
   },
   "bleue": {
@@ -272,7 +272,7 @@
    "t": "adjective"
   },
   "bonne": {
-   "g": "good (bon); the right wave (la bonne vague)",
+   "g": "good (bon); the right one (la bonne clé)",
    "t": "adjective"
   },
   "bouge": {
@@ -280,7 +280,7 @@
    "t": "verb"
   },
   "bouges": {
-   "g": "word this scene needs and the rest do not (bouges)",
+   "g": "move (bouger)",
    "t": "noun"
   },
   "boulangerie": {
@@ -372,7 +372,7 @@
    "t": "noun"
   },
   "cassée": {
-   "g": "word this scene needs and the rest do not (cassée)",
+   "g": "broken (casser)",
    "t": "noun"
   },
   "ce": {
@@ -412,7 +412,7 @@
    "t": "adjective"
   },
   "chaise": {
-   "g": "word this scene needs and the rest do not (chaise)",
+   "g": "chair (la chaise)",
    "t": "noun"
   },
   "chaises": {
@@ -448,7 +448,7 @@
    "t": "verb"
   },
   "chaussure": {
-   "g": "word this scene needs and the rest do not (chaussure)",
+   "g": "shoe (la chaussure)",
    "t": "noun"
   },
   "chaussures": {
@@ -656,7 +656,7 @@
    "t": "noun"
   },
   "croit": {
-   "g": "word this scene needs and the rest do not (croit)",
+   "g": "believes, thinks so (croire)",
    "t": "noun"
   },
   "croix": {
@@ -684,7 +684,7 @@
    "t": "noun"
   },
   "dames": {
-   "g": "word this scene needs and the rest do not (dames)",
+   "g": "ladies (la dame)",
    "t": "noun"
   },
   "dans": {
@@ -728,7 +728,7 @@
    "t": "verb"
   },
   "demandé": {
-   "g": "word this scene needs and the rest do not (demandé)",
+   "g": "asked (demander)",
    "t": "noun"
   },
   "demie": {
@@ -844,7 +844,7 @@
    "t": "noun"
   },
   "dois": {
-   "g": "word this scene needs and the rest do not (dois)",
+   "g": "must, have to (devoir)",
    "t": "noun"
   },
   "doit": {
@@ -860,7 +860,7 @@
    "t": "verb"
   },
   "dort": {
-   "g": "word this scene needs and the rest do not (dort)",
+   "g": "sleeps (dormir)",
    "t": "noun"
   },
   "dossier": {
@@ -940,7 +940,7 @@
    "t": "adverb"
   },
   "entend": {
-   "g": "word this scene needs and the rest do not (entend)",
+   "g": "hears (entendre)",
    "t": "noun"
   },
   "entre": {
@@ -960,7 +960,7 @@
    "t": "noun"
   },
   "escaliers": {
-   "g": "word this scene needs and the rest do not (escaliers)",
+   "g": "stairs (l'escalier)",
    "t": "noun"
   },
   "essaie": {
@@ -1040,7 +1040,7 @@
    "t": "noun"
   },
   "fenêtres": {
-   "g": "word this scene needs and the rest do not (fenêtres)",
+   "g": "windows (la fenêtre)",
    "t": "noun"
   },
   "ferme": {
@@ -1212,7 +1212,7 @@
    "t": "adjective"
   },
   "haute": {
-   "g": "high, tall (haut)",
+   "g": "high, tall (haut); aloud (à voix haute)",
    "t": "adjective"
   },
   "heure": {
@@ -1320,7 +1320,7 @@
    "t": "noun"
   },
   "juin": {
-   "g": "sixth month, at the start of summer (le juin)",
+   "g": "June, the sixth month (juin)",
    "t": "noun"
   },
   "juliette": {
@@ -1460,7 +1460,7 @@
    "t": "adverb"
   },
   "lève": {
-   "g": "raises, lifts (lever); gives a thumbs-up (lève le pouce)",
+   "g": "raises, lifts (lever)",
    "t": "verb"
   },
   "léa": {
@@ -1624,7 +1624,7 @@
    "t": "noun"
   },
   "mise": {
-   "g": "to put a thing in its place (mettre)",
+   "g": "set, laid (mettre la table)",
    "t": "verb"
   },
   "moi": {
@@ -1788,7 +1788,7 @@
    "t": "pronoun"
   },
   "onze": {
-   "g": "word this scene needs and the rest do not (onze)",
+   "g": "eleven (onze)",
    "t": "noun"
   },
   "oranges": {
@@ -1888,7 +1888,7 @@
    "t": "adverb"
   },
   "passe": {
-   "g": "passes by (passer), without stopping",
+   "g": "goes by (passer); goes through (la carte passe)",
    "t": "verb"
   },
   "pastille": {
@@ -2016,7 +2016,7 @@
    "t": "noun"
   },
   "plus": {
-   "g": "more; softer (plus douce)",
+   "g": "more (plus); the most (le plus)",
    "t": "adverb"
   },
   "plusieurs": {
@@ -2136,7 +2136,7 @@
    "t": "verb"
   },
   "pressée": {
-   "g": "word this scene needs and the rest do not (pressée)",
+   "g": "in a hurry (pressé)",
    "t": "noun"
   },
   "prix": {
@@ -2172,7 +2172,7 @@
    "t": "noun"
   },
   "prénoms": {
-   "g": "word this scene needs and the rest do not (prénoms)",
+   "g": "first names (le prénom)",
    "t": "noun"
   },
   "prépare": {
@@ -2212,7 +2212,7 @@
    "t": "number"
   },
   "quatrième": {
-   "g": "word this scene needs and the rest do not (quatrième)",
+   "g": "fourth; the fourth floor (le quatrième)",
    "t": "noun"
   },
   "que": {
@@ -2228,7 +2228,7 @@
    "t": "pronoun"
   },
   "quelque": {
-   "g": "thing you do not name (quelque chose)",
+   "g": "some, any (quelque); something (quelque chose)",
    "t": "adjective"
   },
   "question": {
@@ -2364,7 +2364,7 @@
    "t": "verb"
   },
   "repart": {
-   "g": "word this scene needs and the rest do not (repart)",
+   "g": "leaves again (repartir)",
    "t": "noun"
   },
   "repas": {
@@ -2376,7 +2376,7 @@
    "t": "noun"
   },
   "reprend": {
-   "g": "word this scene needs and the rest do not (reprend)",
+   "g": "takes some more (reprendre)",
    "t": "noun"
   },
   "reprennent": {
@@ -2400,7 +2400,7 @@
    "t": "verb"
   },
   "restée": {
-   "g": "word this scene needs and the rest do not (restée)",
+   "g": "stayed (rester)",
    "t": "noun"
   },
   "retard": {
@@ -2412,7 +2412,7 @@
    "t": "verb"
   },
   "revenue": {
-   "g": "word this scene needs and the rest do not (revenue)",
+   "g": "come back (revenir)",
    "t": "noun"
   },
   "revient": {
@@ -2456,7 +2456,7 @@
    "t": "noun"
   },
   "rue": {
-   "g": "part of a town around your home (le quartier)",
+   "g": "street (la rue)",
    "t": "noun"
   },
   "rues": {
@@ -2488,7 +2488,7 @@
    "t": "verb"
   },
   "répond": {
-   "g": "word this story needs to work (répond)",
+   "g": "answers (répondre)",
    "t": "noun"
   },
   "répond-il": {
@@ -2496,7 +2496,7 @@
    "t": "verb"
   },
   "répondent": {
-   "g": "word this scene needs and the rest do not (répondent)",
+   "g": "they answer (répondre)",
    "t": "noun"
   },
   "répondre": {
@@ -2604,7 +2604,7 @@
    "t": "verb"
   },
   "secrétaire": {
-   "g": "word this scene needs and the rest do not (secrétaire)",
+   "g": "the person who answers in an office (la secrétaire)",
    "t": "noun"
   },
   "semaine": {
@@ -2640,7 +2640,7 @@
    "t": "adjective"
   },
   "seule": {
-   "g": "only one, with no other (seule)",
+   "g": "only one, with no other (seul)",
    "t": "adjective"
   },
   "si": {
@@ -2652,11 +2652,11 @@
    "t": "adjective"
   },
   "sienne": {
-   "g": "the one that is hers) (hers (la sienne)",
+   "g": "hers (la sienne)",
    "t": "pronoun"
   },
   "signe": {
-   "g": "word this scene needs and the rest do not (signe)",
+   "g": "signs (signer)",
    "t": "noun"
   },
   "silence": {
@@ -2704,7 +2704,7 @@
    "t": "noun"
   },
   "soit": {
-   "g": "either, or (soit)",
+   "g": "we are (être, after jusqu'à ce que); either, or (soit)",
    "t": "conjunction"
   },
   "son": {
@@ -2928,7 +2928,7 @@
    "t": "verb"
   },
   "travailler": {
-   "g": "word this scene needs and the rest do not (travailler)",
+   "g": "to work (travailler)",
    "t": "noun"
   },
   "travailles": {
@@ -2960,7 +2960,7 @@
    "t": "verb"
   },
   "trompent": {
-   "g": "word this scene needs and the rest do not (trompent)",
+   "g": "get it wrong (se tromper)",
    "t": "noun"
   },
   "trop": {
@@ -3316,7 +3316,7 @@
    "t": "adjective"
   },
   "eau": {
-   "g": "water; the river bank walk (l'eau)",
+   "g": "water (l'eau)",
    "t": "noun"
   },
   "embêter": {
