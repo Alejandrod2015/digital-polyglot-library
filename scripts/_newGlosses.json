@@ -8713,6 +8713,22 @@
     "parezca": {
       "g": "it seems (parecer, subjunctive after aunque)",
       "t": "verb"
+    },
+    "sirve": {
+      "g": "is useful for the job (servir)",
+      "t": "verb"
+    },
+    "olvida": {
+      "g": "forgets, stops remembering (olvidar)",
+      "t": "verb"
+    },
+    "frenarla": {
+      "g": "to stop it falling (frenar + la)",
+      "t": "verb"
+    },
+    "escritas": {
+      "g": "written down (feminine plural)",
+      "t": "adjective"
     }
   }
 }
