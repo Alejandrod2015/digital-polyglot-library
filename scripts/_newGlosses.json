@@ -2485,6 +2485,18 @@
   "pinga": {
    "g": "drips (pingar)",
    "t": "verb"
+  },
+  "anda": {
+   "g": "moves, goes (andar)",
+   "t": "verb"
+  },
+  "embora": {
+   "g": "ir embora, to go away",
+   "t": "adverb"
+  },
+  "aguentar": {
+   "g": "to bear, to hold the weight",
+   "t": "verb"
   }
  }
 }

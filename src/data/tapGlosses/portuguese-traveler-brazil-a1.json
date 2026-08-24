@@ -3934,6 +3934,18 @@
   "pinga": {
    "g": "drips (pingar)",
    "t": "verb"
+  },
+  "aguentar": {
+   "g": "to bear, to hold the weight",
+   "t": "verb"
+  },
+  "embora": {
+   "g": "ir embora, to go away",
+   "t": "adverb"
+  },
+  "peso": {
+   "g": "weight",
+   "t": "noun"
   }
  }
 }
