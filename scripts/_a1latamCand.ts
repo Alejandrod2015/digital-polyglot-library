@@ -4,12 +4,10 @@ import { PrismaClient } from "../src/generated/prisma";
 import { variantPool } from "@/lib/languageVariant";
 import { isSpanishA1A2 } from "@/lib/cefr/spanishA1A2";
 const CAND: Record<string, string[]> = {
-  "1 Night Buses · Cusco": ["terminal","parada","madrugada","neblina","altura","soroche","abrigo","respaldo","horario","retraso","mirador","pueblo","asiento","bolso","cobija"],
-  "2 Prices & Change · CDMX": ["puesto","kilo","bolsa","báscula","maduro","fresco","probar","pesar","envolver","regatear","rebanada","manojo","aguacate","jitomate","salsa","propina","feria","suelto","montón","costal"],
-  "3 Calls & Messages · Cartagena": ["saludo","abrazo","recado","videollamada","audio","buzón","timbre","colgar","promesa","tío","hermano","sobrina","primo","pariente","noticia"],
-  "4 Help & Repairs · Oaxaca": ["madera","astilla","lija","barniz","pincel","figura","pata","resina","taller","tallar","pintar","alebrije","copal","banco","pegar"],
-  "6 Doors & Neighbours · Barranquilla": ["patio","terraza","timbre","portón","esquina","tendero","bulla","ventilador","abanico","hamaca","mecedora","patacón","vecindario","saludar","calor"],
-  "7 Plans & Invitations · Buenos Aires": ["quedar","invitar","entrada","fila","escenario","banda","ensayo","letra","coro","aplauso","brindis","vaso","servilleta","cumpleaños","regalo","globo","azotea","vista","invitación","parrilla","asado","picada","tarde","juntarse","avisar","tocar","cantar","ruido","luz","escalón"],
+  "2 Prices & Change · CDMX": ["apurado","pedir","alcanzar","costar","valer","justo","exacto","redondo","mostrar","cargar","llevar","traer","oler","dulce","agrio","salado","blando","maduro","pequeño","grande"],
+  "3 Calls & Messages · Cartagena": ["sobrino","madre","hija","apellido","cumplir","edad","retrato","carta","sobre","canción","guitarra","hermana","boda","fiesta","abrir"],
+  "4 Help & Repairs · Oaxaca": ["oscuro","claro","filo","hueco","grieta","torcido","viejo","pequeño","entero","liso"],
+  "5 Names for Things · Buenos Aires": ["alfajor","lomito","cortado","submarino","panqueque","churro","milanesa","empanada"],
 };
 const p = new PrismaClient();
 (async () => {
