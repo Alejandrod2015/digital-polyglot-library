@@ -6,7 +6,7 @@
   "slug": "tres-veces-cuelga-antes",
   "arcType": "mini-cliffhanger",
   "synopsis": "Preguntar por el precio del piso obliga a llamar a Málaga y a hablar sola con alguien que no la conoce, sin nadie al lado que le termine las frases. Irene escribe lo que va a decir, lo dice en voz baja y cuelga tres veces antes de que suene. La cuarta aguanta hasta el final, y quien descuelga al otro lado no es la persona que ella esperaba.",
-  "text": "Tres veces marca el número de Málaga con el auricular en la mano. Irene escribe la frase, la dice en voz baja y le sale tensa. A solas, sin Rocío detrás terminándosela, le entra un temor nuevo.\n\n“Un poco de ánimo, hija, que es una pregunta de dos líneas y nada más”, dice Rocío. “Y si te atascas, te atascas, que aquí no se ha muerto nadie por eso”, añade. Irene toma aliento y disimula el susto delante del cristal, en penumbra.\n\nLe sale una voz tímida que no reconoce y se le queda la boca seca. La sangre le sube a la cara y el corazón le golpea. “No es vergüenza, es coraje lo que me falta, y lo sé desde el lunes”, se dice sola.\n\nA la cuarta marca con toda la intención y no cuelga, ni valiente ni cobarde. Alguien descuelga al otro lado y saluda con una voz que ella conoce. Arriba, tres pisos por encima, se oye el mismo saludo un segundo después.",
+  "text": "Tres veces marca el número de Málaga con el auricular en la mano. Irene escribe la frase, la dice en voz baja y le sale tensa. A solas, sin Rocío detrás terminándosela, le entra un temor nuevo.\n\n“Un poco de ánimo, hija, que es una pregunta de dos líneas y nada más”, dice Rocío. “Y si te atascas, te atascas, que aquí no se ha muerto nadie por eso”, añade. Irene toma aliento y disimula el susto delante del cristal, en penumbra.\n\nLe sale una voz tímida que no reconoce y se le queda la boca seca. La sangre le sube a la cara y el corazón le golpea muy fuerte. “No es vergüenza, es coraje lo que me falta, y lo sé desde el lunes”, se dice sola.\n\nA la cuarta marca con toda la intención y no cuelga: ni valiente ni cobarde. Alguien descuelga al otro lado y saluda; Irene conoce esa voz. Arriba, tres pisos por encima, se oye el mismo saludo un segundo después.",
   "vocab": [
    {
     "word": "marcar",
@@ -18,7 +18,8 @@
     "word": "auricular",
     "type": "noun",
     "definition": "The part of a telephone you hold against your ear.",
-    "surface": "auricular"
+    "surface": "auricular",
+    "anchor": true
    },
    {
     "word": "en voz baja",
@@ -50,12 +51,14 @@
     "word": "cristal",
     "surface": "cristal",
     "type": "noun",
-    "definition": "The glass of a window, cold and clear to the touch."
+    "definition": "The glass of a window, cold and clear to the touch.",
+    "anchor": true
    },
    {
     "word": "aliento",
     "type": "noun",
-    "definition": "The air you take in before doing something hard."
+    "definition": "The air you take in before doing something hard.",
+    "anchor": true
    },
    {
     "word": "disimular",
@@ -66,7 +69,8 @@
    {
     "word": "susto",
     "type": "noun",
-    "definition": "A short sharp fright that passes very quickly."
+    "definition": "A short sharp fright that passes very quickly.",
+    "anchor": true
    },
    {
     "word": "tímido",
@@ -83,12 +87,14 @@
    {
     "word": "sangre",
     "type": "noun",
-    "definition": "The red liquid that runs inside your body."
+    "definition": "The red liquid that runs inside your body.",
+    "anchor": true
    },
    {
     "word": "corazón",
     "type": "noun",
-    "definition": "The part inside your chest that beats all day."
+    "definition": "The part inside your chest that beats all day.",
+    "anchor": true
    },
    {
     "word": "vergüenza",
@@ -141,7 +147,8 @@
     "word": "manera",
     "surface": "maneras",
     "type": "noun",
-    "definition": "One of the ways in which a thing can be done."
+    "definition": "One of the ways in which a thing can be done.",
+    "anchor": true
    },
    {
     "word": "de lado",
@@ -157,12 +164,14 @@
    {
     "word": "excusas",
     "type": "noun",
-    "definition": "Reasons you give first so that nobody gets cross."
+    "definition": "Reasons you give first so that nobody gets cross.",
+    "anchor": true
    },
    {
     "word": "cara",
     "type": "noun",
-    "definition": "The front of your head, where your eyes are."
+    "definition": "The front of your head, where your eyes are.",
+    "anchor": true
    },
    {
     "word": "enfadar",
@@ -184,7 +193,8 @@
    {
     "word": "curiosidad",
     "type": "noun",
-    "definition": "The wish to know something that is not your business."
+    "definition": "The wish to know something that is not your business.",
+    "anchor": true
    },
    {
     "word": "y ya",
@@ -194,7 +204,8 @@
    {
     "word": "vuelta",
     "type": "noun",
-    "definition": "The long way round instead of the short one."
+    "definition": "The long way round instead of the short one.",
+    "anchor": true
    },
    {
     "word": "cansar",
@@ -217,7 +228,8 @@
    {
     "word": "entusiasmo",
     "type": "noun",
-    "definition": "The bright energy you feel when something goes well."
+    "definition": "The bright energy you feel when something goes well.",
+    "anchor": true
    },
    {
     "word": "junto",
@@ -253,7 +265,7 @@
   "slug": "ya-no-cabe-callarse",
   "arcType": "reframe-turn",
   "synopsis": "Irene sube a decirle a Rocío la frase que lleva desde octubre guardándose, y le sale entera y sin temblor. Lo que descubre en la respuesta no es lo que temía: su vecina llevaba dos meses esperándola. Lo que la tenía parada nunca fue el idioma, sino que hay frases que, una vez dichas, ya no se pueden guardar otra vez.",
-  "text": "Nunca había dicho en alto que quiere quedarse con el piso. Rocío friega preocupada, con la escoba apoyada, sin tristeza y con un aire helado detrás. Irene llega sin frase preparada y con el deseo suelto en la boca.\n\n“Quiero comprarlo yo, y lo quiero decir hoy, delante de ti”, dice, y la emoción sale entera. Rocío deja el trapo, se seca las manos y se apoya en el aparador, amable. “Ya lo sabía, hija; llevo dos meses esperando a que lo dijeras tú, de verdad”.\n\nLo que a Irene la asustaba no era el idioma ni el valor, sino la amistad de después. Era el sentimiento de decir algo que ya no se guarda. “Yo creía que era mi español, y era yo”, dice, con una sonrisa débil.\n\n“Te faltaba acostumbrarte a querer algo en alto, que eso cuesta años”, contesta Rocío. Se quedan calladas y entra por la ventana una paz nueva. Por primera vez desde julio, a Irene la alegra no traducir por dentro.",
+  "text": "Nunca había dicho en alto que quiere quedarse con el piso. Rocío friega preocupada, con la escoba apoyada y un aire helado detrás. Irene llega sin frase preparada, sin valor de reserva y con el deseo suelto.\n\n“Quiero comprarlo yo, y lo quiero decir hoy, delante de ti”, dice, y la emoción sale entera. Rocío deja el trapo, se seca las manos y se apoya en el aparador, amable. “Ya lo sabía, hija; llevo dos meses esperando a que lo dijeras tú, de verdad”.\n\nLo que a Irene la asustaba no era el idioma, sino la amistad de después. Era el sentimiento de soltar algo; una frase dicha en alto ya no se guarda. “Yo creía que era mi español, y era yo”, dice, con una sonrisa débil.\n\n“Te faltaba acostumbrarte a querer algo en alto”, contesta Rocío, sin tristeza. Se quedan calladas y a Irene la alegra esa paz nueva. Desde julio no le pasaba: hoy no traduce por dentro.",
   "vocab": [
    {
     "word": "en alto",
@@ -269,7 +281,8 @@
    {
     "word": "deseo",
     "type": "noun",
-    "definition": "Something you want a lot and have not said yet."
+    "definition": "Something you want a lot and have not said yet.",
+    "anchor": true
    },
    {
     "word": "entero",
@@ -280,12 +293,14 @@
    {
     "word": "emoción",
     "type": "noun",
-    "definition": "The strong feeling that comes with an important moment."
+    "definition": "The strong feeling that comes with an important moment.",
+    "anchor": true
    },
    {
     "word": "aparador",
     "type": "noun",
-    "definition": "Low cupboard in a kitchen where dishes are kept."
+    "definition": "Low cupboard in a kitchen where dishes are kept.",
+    "anchor": true
    },
    {
     "word": "amable",
@@ -322,7 +337,8 @@
    {
     "word": "tristeza",
     "type": "noun",
-    "definition": "The heavy quiet feeling of something being lost."
+    "definition": "The heavy quiet feeling of something being lost.",
+    "anchor": true
    },
    {
     "word": "alegrar",
@@ -353,12 +369,14 @@
    {
     "word": "escoba",
     "type": "noun",
-    "definition": "Long brush for sweeping the floor of a room."
+    "definition": "Long brush for sweeping the floor of a room.",
+    "anchor": true
    },
    {
     "word": "amistad",
     "type": "noun",
-    "definition": "The bond between two people who look after each other."
+    "definition": "The bond between two people who look after each other.",
+    "anchor": true
    }
   ]
  }

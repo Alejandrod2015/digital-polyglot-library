@@ -17,7 +17,8 @@
    {
     "word": "cuaderno",
     "type": "noun",
-    "definition": "Small book of blank pages for writing notes by hand."
+    "definition": "Small book of blank pages for writing notes by hand.",
+    "anchor": true
    },
    {
     "word": "anotar",
@@ -39,12 +40,14 @@
    {
     "word": "canasto",
     "type": "noun",
-    "definition": "Big open basket with two handles, used for carrying things."
+    "definition": "Big open basket with two handles, used for carrying things.",
+    "anchor": true
    },
    {
     "word": "cordel",
     "type": "noun",
-    "definition": "Thin rough string that you use for tying things together."
+    "definition": "Thin rough string that you use for tying things together.",
+    "anchor": true
    },
    {
     "word": "agacharse",
@@ -55,7 +58,8 @@
    {
     "word": "muro",
     "type": "noun",
-    "definition": "Thick outside wall of stone that closes off a yard."
+    "definition": "Thick outside wall of stone that closes off a yard.",
+    "anchor": true
    },
    {
     "word": "agarrar",
@@ -76,7 +80,8 @@
    {
     "word": "gancho",
     "type": "noun",
-    "definition": "Curved piece of metal on a wall for hanging things on."
+    "definition": "Curved piece of metal on a wall for hanging things on.",
+    "anchor": true
    },
    {
     "word": "colgar",
@@ -87,7 +92,8 @@
    {
     "word": "cinta",
     "type": "noun",
-    "definition": "Narrow strip of cloth or paper, used for tying or decorating."
+    "definition": "Narrow strip of cloth or paper, used for tying or decorating.",
+    "anchor": true
    },
    {
     "word": "alcanzar",
@@ -151,7 +157,7 @@
   "slug": "todos-le-llenan-el-cesto",
   "arcType": "mini-cliffhanger",
   "synopsis": "El bar cierra a las siete y a Irene le va apareciendo comida en el cesto sin haber pedido nada: Quique le acerca un tarro y unos limones, Rosa le llena la bandeja de frascos y nadie le cobra. La frase con la que todos se despiden es la misma y suena a final. Cuando por fin pregunta hacia la escalera por qué le dan cosas hoy, la respuesta de Rocío no contesta a eso y abre otra cosa.",
-  "text": "El bar cierra a las siete y Rosa, la panadera, ya está a oscuras. Quique regenta el bar desde hace veinte años y hoy le llena el cesto. Dentro hay un tarro de miel, dos limones y queso envuelto en papel grueso.\n\n“Llévatelo, guapa, que a mí me queda de sobra”, dice, y le acerca el cesto. “Y pásate por la panadería sin falta, que Rosa te tiene algo desde el jueves”. Irene sube la cuesta con el saco pesado, la muñeca tensa y la calle que huele a pan.\n\nRosa le llena la bandeja con frascos y una lata. Nadie le cobra nada y todas se despiden con una mueca. “Que te vaya muy bien, y no te olvides de esta calle nunca”, dice Rosa, y le aprieta el hombro.\n\nIrene deja el cesto en el suelo, tira del cordón y se sienta en la banqueta. “Rocío, ¿por qué me dan todos cosas hoy?”, pregunta hacia arriba. La vecina tarda en contestar: “Porque en octubre os vais todos”.",
+  "text": "El bar cierra a las siete y Rosa, la panadera, ya está a oscuras. Quique regenta el bar desde hace veinte años y hoy le llena el cesto. Dentro hay un tarro de miel, dos limones y queso envuelto en papel grueso.\n\n“Llévatelo, guapa, que a mí me queda de sobra”, dice, y le acerca el cesto. “Y pásate por la panadería sin falta, que Rosa te tiene algo desde el jueves”. Irene sube la cuesta con el saco pesado y la muñeca tensa. La calle huele a pan.\n\nRosa le llena la bandeja con frascos y una lata. Nadie le cobra nada y todas se despiden con una mueca. “Que te vaya muy bien, y no te olvides de esta calle nunca”, dice Rosa, y le aprieta el hombro.\n\nIrene deja el cesto en el suelo, tira del cordón y se sienta en la banqueta. “Rocío, ¿por qué me dan todos cosas hoy?”, pregunta hacia arriba. La vecina tarda en contestar: “Porque en octubre os vais todos”.",
   "vocab": [
    {
     "word": "a oscuras",
@@ -162,24 +168,28 @@
    {
     "word": "tarro",
     "type": "noun",
-    "definition": "Small glass jar with a lid, for honey or jam."
+    "definition": "Small glass jar with a lid, for honey or jam.",
+    "anchor": true
    },
    {
     "word": "miel",
     "type": "noun",
-    "definition": "Sweet thick food that bees make, eaten on bread."
+    "definition": "Sweet thick food that bees make, eaten on bread.",
+    "anchor": true
    },
    {
     "word": "limón",
     "surface": "limones",
     "type": "noun",
-    "definition": "Small yellow fruit with a very sour juice inside."
+    "definition": "Small yellow fruit with a very sour juice inside.",
+    "anchor": true
    },
    {
     "word": "banqueta",
     "type": "noun",
     "definition": "Low seat with no back, used only for a moment.",
-    "surface": "banqueta"
+    "surface": "banqueta",
+    "anchor": true
    },
    {
     "word": "envolver",
@@ -211,7 +221,8 @@
    {
     "word": "saco",
     "type": "noun",
-    "definition": "Big cloth bag for carrying heavy things on your back."
+    "definition": "Big cloth bag for carrying heavy things on your back.",
+    "anchor": true
    },
    {
     "word": "pesado",
@@ -232,7 +243,8 @@
    {
     "word": "bandeja",
     "type": "noun",
-    "definition": "Flat tray you carry plates or glasses on."
+    "definition": "Flat tray you carry plates or glasses on.",
+    "anchor": true
    },
    {
     "word": "frasco",
@@ -291,7 +303,8 @@
    {
     "word": "botiquín",
     "type": "noun",
-    "definition": "Small box where a house keeps medicines and bandages."
+    "definition": "Small box where a house keeps medicines and bandages.",
+    "anchor": true
    },
    {
     "word": "tapa",
@@ -301,12 +314,14 @@
    {
     "word": "repisa",
     "type": "noun",
-    "definition": "Narrow shelf fixed to a wall, for small things."
+    "definition": "Narrow shelf fixed to a wall, for small things.",
+    "anchor": true
    },
    {
     "word": "venda",
     "type": "noun",
-    "definition": "Long strip of cloth wrapped around a cut or a wound."
+    "definition": "Long strip of cloth wrapped around a cut or a wound.",
+    "anchor": true
    },
    {
     "word": "tubo",
@@ -316,7 +331,8 @@
    {
     "word": "esparadrapo",
     "type": "noun",
-    "definition": "Sticky tape used to hold a bandage on the skin."
+    "definition": "Sticky tape used to hold a bandage on the skin.",
+    "anchor": true
    },
    {
     "word": "ancho",
@@ -338,7 +354,8 @@
     "word": "pastilla",
     "surface": "pastillas",
     "type": "noun",
-    "definition": "Small hard piece of medicine that you swallow whole."
+    "definition": "Small hard piece of medicine that you swallow whole.",
+    "anchor": true
    },
    {
     "word": "estante",
@@ -349,7 +366,8 @@
     "word": "tirita",
     "surface": "tiritas",
     "type": "noun",
-    "definition": "Small sticky strip you put over a little cut."
+    "definition": "Small sticky strip you put over a little cut.",
+    "anchor": true
    },
    {
     "word": "sostener",

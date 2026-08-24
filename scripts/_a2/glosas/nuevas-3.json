@@ -1,85 +1,370 @@
 {
- "auricular": {"g": "the handset of a telephone", "t": "noun"},
- "solas": {"g": "alone (a solas: on your own, with nobody helping)", "t": "expression"},
- "terminándosela": {"g": "finishing it off for her", "t": "verb"},
- "temor": {"g": "a quiet fear of something not yet happened", "t": "noun"},
- "atascas": {"g": "you get stuck in the middle of a sentence", "t": "verb"},
- "disimula": {"g": "hides what she feels so nobody sees it", "t": "verb"},
- "cuarta": {"g": "the fourth one", "t": "number"},
- "intención": {"g": "what you really mean to do", "t": "noun"},
- "cobarde": {"g": "too afraid to do what you should", "t": "adjective"},
- "descuelga": {"g": "picks up the telephone", "t": "verb"},
- "friega": {"g": "washes up, scrubs the dishes or the floor", "t": "verb"},
- "suelto": {"g": "loose, not held back (here: the wish, unguarded)", "t": "adjective"},
- "comprarlo": {"g": "to buy it", "t": "verb"},
- "aparador": {"g": "low kitchen cupboard where dishes are kept", "t": "noun"},
- "dijeras": {"g": "you said it (after esperando a que)", "t": "verb"},
- "asustaba": {"g": "used to frighten her", "t": "verb"},
- "amistad": {"g": "friendship, the bond between two people", "t": "noun"},
- "sentimiento": {"g": "what a person feels inside about something", "t": "noun"},
- "débil": {"g": "weak, without much strength behind it", "t": "adjective"},
- "acostumbrarte": {"g": "to get used to it, said to you", "t": "verb"},
- "alegra": {"g": "makes her feel lighter and better", "t": "verb"},
- "traducir": {"g": "to translate", "t": "verb"},
- "cartón": {"g": "cardboard", "t": "noun"},
- "clip": {"g": "paper clip", "t": "noun"},
- "huelen": {"g": "they smell (of something)", "t": "verb"},
- "sacaba": {"g": "used to make (money) out of it", "t": "verb"},
- "pagar": {"g": "to pay", "t": "verb"},
- "cajero": {"g": "cash machine in a wall", "t": "noun"},
- "doblados": {"g": "folded", "t": "adjective"},
- "decírtelo": {"g": "to say it to you", "t": "verb"},
- "monedero": {"g": "small purse for coins", "t": "noun"},
- "tarjetero": {"g": "small case for keeping cards", "t": "noun"},
- "resta": {"g": "subtracts, takes one number off another", "t": "verb"},
- "céntimos": {"g": "cents, the smallest coins", "t": "noun"},
- "explicado": {"g": "explained, now understood", "t": "adjective"},
- "rellano": {"g": "the flat landing between two flights of stairs", "t": "noun"},
- "diciembre": {"g": "December", "t": "noun"},
- "candado": {"g": "padlock", "t": "noun"},
- "sótano": {"g": "basement room under a building", "t": "noun"},
- "bisagra": {"g": "hinge of a door", "t": "noun"},
- "llave": {"g": "key", "t": "noun"},
- "pestillo": {"g": "small bolt you slide across a door", "t": "noun"},
- "picaporte": {"g": "door handle", "t": "noun"},
- "verja": {"g": "iron gate with bars", "t": "noun"},
- "brinda": {"g": "raises a glass to something", "t": "verb"},
- "subo": {"g": "I bring up, I take up", "t": "verb"},
- "recibidor": {"g": "small entrance room just inside the front door", "t": "noun"},
- "alfombrilla": {"g": "small mat by a door", "t": "noun"},
- "vestíbulo": {"g": "the hall between the front door and the stairs", "t": "noun"},
- "cuarenta": {"g": "forty", "t": "number"},
- "preguntarle": {"g": "to ask her", "t": "verb"},
- "colador": {"g": "strainer, bowl with holes that lets water out", "t": "noun"},
- "fregadero": {"g": "kitchen sink", "t": "noun"},
- "patatas": {"g": "potatoes", "t": "noun"},
- "córtalas": {"g": "cut them (an order to one person)", "t": "verb"},
- "échalas": {"g": "throw them in, drop them in", "t": "verb"},
- "hierva": {"g": "it boils (after antes de que)", "t": "verb"},
- "pimienta": {"g": "pepper, the dark powder put on food", "t": "noun"},
- "traduce": {"g": "translates", "t": "verb"},
- "marcha": {"g": "the speed something is moving at", "t": "noun"},
- "traducido": {"g": "translated", "t": "verb"},
- "soso": {"g": "with too little salt, flat in taste", "t": "adjective"},
- "escrita": {"g": "written down", "t": "adjective"},
- "cuece": {"g": "boils food slowly in water", "t": "verb"},
- "fríe": {"g": "fries in hot oil", "t": "verb"},
- "mojar": {"g": "to dip something into a liquid", "t": "verb"},
- "correcto": {"g": "correct, done by the book", "t": "adjective"},
- "tenedor": {"g": "fork", "t": "noun"},
- "rebana": {"g": "slices bread, one flat piece after another", "t": "verb"},
- "tazón": {"g": "big cup with no handle, for soup or milk", "t": "noun"},
- "equivocado": {"g": "wrong, not the way it should have been", "t": "adjective"},
- "haga": {"g": "it is needed (in lo que haga falta: whatever is needed)", "t": "verb"},
- "hablas": {"g": "you speak", "t": "verb"},
- "arreglas": {"g": "you fix it, you put it right", "t": "verb"},
- "poquito": {"g": "a tiny amount", "t": "noun"},
- "ácido": {"g": "sharp and sour, like lemon", "t": "adjective"},
- "tercer": {"g": "third", "t": "number"},
- "recipientes": {"g": "pots or containers you keep food in", "t": "noun"},
- "suyos": {"g": "theirs, hers, his", "t": "pronoun"},
- "ensaladera": {"g": "big deep bowl for serving salad", "t": "noun"},
- "arcilla": {"g": "clay, baked hard to make pots", "t": "noun"},
- "tetera": {"g": "teapot", "t": "noun"},
- "ceniza": {"g": "ash left after something has burned", "t": "noun"}
+ "auricular": {
+  "g": "the handset of a telephone",
+  "t": "noun"
+ },
+ "solas": {
+  "g": "alone (a solas: on your own, with nobody helping)",
+  "t": "expression"
+ },
+ "terminándosela": {
+  "g": "finishing it off for her",
+  "t": "verb"
+ },
+ "temor": {
+  "g": "a quiet fear of something not yet happened",
+  "t": "noun"
+ },
+ "atascas": {
+  "g": "you get stuck in the middle of a sentence",
+  "t": "verb"
+ },
+ "disimula": {
+  "g": "hides what she feels so nobody sees it",
+  "t": "verb"
+ },
+ "cuarta": {
+  "g": "the fourth one",
+  "t": "number"
+ },
+ "intención": {
+  "g": "what you really mean to do",
+  "t": "noun"
+ },
+ "cobarde": {
+  "g": "too afraid to do what you should",
+  "t": "adjective"
+ },
+ "descuelga": {
+  "g": "picks up the telephone",
+  "t": "verb"
+ },
+ "friega": {
+  "g": "washes up, scrubs the dishes or the floor",
+  "t": "verb"
+ },
+ "suelto": {
+  "g": "loose, not held back (here: the wish, unguarded)",
+  "t": "adjective"
+ },
+ "comprarlo": {
+  "g": "to buy it",
+  "t": "verb"
+ },
+ "aparador": {
+  "g": "low kitchen cupboard where dishes are kept",
+  "t": "noun"
+ },
+ "dijeras": {
+  "g": "you said it (after esperando a que)",
+  "t": "verb"
+ },
+ "asustaba": {
+  "g": "used to frighten her",
+  "t": "verb"
+ },
+ "amistad": {
+  "g": "friendship, the bond between two people",
+  "t": "noun"
+ },
+ "sentimiento": {
+  "g": "what a person feels inside about something",
+  "t": "noun"
+ },
+ "débil": {
+  "g": "weak, without much strength behind it",
+  "t": "adjective"
+ },
+ "acostumbrarte": {
+  "g": "to get used to it, said to you",
+  "t": "verb"
+ },
+ "alegra": {
+  "g": "makes her feel lighter and better",
+  "t": "verb"
+ },
+ "traducir": {
+  "g": "to translate",
+  "t": "verb"
+ },
+ "cartón": {
+  "g": "cardboard",
+  "t": "noun"
+ },
+ "clip": {
+  "g": "paper clip",
+  "t": "noun"
+ },
+ "huelen": {
+  "g": "they smell (of something)",
+  "t": "verb"
+ },
+ "sacaba": {
+  "g": "used to make (money) out of it",
+  "t": "verb"
+ },
+ "pagar": {
+  "g": "to pay",
+  "t": "verb"
+ },
+ "cajero": {
+  "g": "cash machine in a wall",
+  "t": "noun"
+ },
+ "doblados": {
+  "g": "folded",
+  "t": "adjective"
+ },
+ "decírtelo": {
+  "g": "to say it to you",
+  "t": "verb"
+ },
+ "monedero": {
+  "g": "small purse for coins",
+  "t": "noun"
+ },
+ "tarjetero": {
+  "g": "small case for keeping cards",
+  "t": "noun"
+ },
+ "resta": {
+  "g": "subtracts, takes one number off another",
+  "t": "verb"
+ },
+ "céntimos": {
+  "g": "cents, the smallest coins",
+  "t": "noun"
+ },
+ "explicado": {
+  "g": "explained, now understood",
+  "t": "adjective"
+ },
+ "rellano": {
+  "g": "the flat landing between two flights of stairs",
+  "t": "noun"
+ },
+ "diciembre": {
+  "g": "December",
+  "t": "noun"
+ },
+ "candado": {
+  "g": "padlock",
+  "t": "noun"
+ },
+ "sótano": {
+  "g": "basement room under a building",
+  "t": "noun"
+ },
+ "bisagra": {
+  "g": "hinge of a door",
+  "t": "noun"
+ },
+ "llave": {
+  "g": "key",
+  "t": "noun"
+ },
+ "pestillo": {
+  "g": "small bolt you slide across a door",
+  "t": "noun"
+ },
+ "picaporte": {
+  "g": "door handle",
+  "t": "noun"
+ },
+ "verja": {
+  "g": "iron gate with bars",
+  "t": "noun"
+ },
+ "brinda": {
+  "g": "raises a glass to something",
+  "t": "verb"
+ },
+ "subo": {
+  "g": "I bring up, I take up",
+  "t": "verb"
+ },
+ "recibidor": {
+  "g": "small entrance room just inside the front door",
+  "t": "noun"
+ },
+ "alfombrilla": {
+  "g": "small mat by a door",
+  "t": "noun"
+ },
+ "vestíbulo": {
+  "g": "the hall between the front door and the stairs",
+  "t": "noun"
+ },
+ "cuarenta": {
+  "g": "forty",
+  "t": "number"
+ },
+ "preguntarle": {
+  "g": "to ask her",
+  "t": "verb"
+ },
+ "colador": {
+  "g": "strainer, bowl with holes that lets water out",
+  "t": "noun"
+ },
+ "fregadero": {
+  "g": "kitchen sink",
+  "t": "noun"
+ },
+ "patatas": {
+  "g": "potatoes",
+  "t": "noun"
+ },
+ "córtalas": {
+  "g": "cut them (an order to one person)",
+  "t": "verb"
+ },
+ "échalas": {
+  "g": "throw them in, drop them in",
+  "t": "verb"
+ },
+ "hierva": {
+  "g": "it boils (after antes de que)",
+  "t": "verb"
+ },
+ "pimienta": {
+  "g": "pepper, the dark powder put on food",
+  "t": "noun"
+ },
+ "traduce": {
+  "g": "translates",
+  "t": "verb"
+ },
+ "marcha": {
+  "g": "the speed something is moving at",
+  "t": "noun"
+ },
+ "traducido": {
+  "g": "translated",
+  "t": "verb"
+ },
+ "soso": {
+  "g": "with too little salt, flat in taste",
+  "t": "adjective"
+ },
+ "escrita": {
+  "g": "written down",
+  "t": "adjective"
+ },
+ "cuece": {
+  "g": "boils food slowly in water",
+  "t": "verb"
+ },
+ "fríe": {
+  "g": "fries in hot oil",
+  "t": "verb"
+ },
+ "mojar": {
+  "g": "to dip something into a liquid",
+  "t": "verb"
+ },
+ "correcto": {
+  "g": "correct, done by the book",
+  "t": "adjective"
+ },
+ "tenedor": {
+  "g": "fork",
+  "t": "noun"
+ },
+ "rebana": {
+  "g": "slices bread, one flat piece after another",
+  "t": "verb"
+ },
+ "tazón": {
+  "g": "big cup with no handle, for soup or milk",
+  "t": "noun"
+ },
+ "equivocado": {
+  "g": "wrong, not the way it should have been",
+  "t": "adjective"
+ },
+ "haga": {
+  "g": "it is needed (in lo que haga falta: whatever is needed)",
+  "t": "verb"
+ },
+ "hablas": {
+  "g": "you speak",
+  "t": "verb"
+ },
+ "arreglas": {
+  "g": "you fix it, you put it right",
+  "t": "verb"
+ },
+ "poquito": {
+  "g": "a tiny amount",
+  "t": "noun"
+ },
+ "ácido": {
+  "g": "sharp and sour, like lemon",
+  "t": "adjective"
+ },
+ "tercer": {
+  "g": "third",
+  "t": "number"
+ },
+ "recipientes": {
+  "g": "pots or containers you keep food in",
+  "t": "noun"
+ },
+ "suyos": {
+  "g": "theirs, hers, his",
+  "t": "pronoun"
+ },
+ "ensaladera": {
+  "g": "big deep bowl for serving salad",
+  "t": "noun"
+ },
+ "arcilla": {
+  "g": "clay, baked hard to make pots",
+  "t": "noun"
+ },
+ "tetera": {
+  "g": "teapot",
+  "t": "noun"
+ },
+ "ceniza": {
+  "g": "ash left after something has burned",
+  "t": "noun"
+ },
+ "fuerte": {
+  "g": "hard, strongly; also: loud",
+  "t": "adverb"
+ },
+ "acertar": {
+  "g": "to get it right, to guess right",
+  "t": "verb"
+ },
+ "ajenos": {
+  "g": "belonging to other people, not yours",
+  "t": "adjective"
+ },
+ "semana": {
+  "g": "week",
+  "t": "noun"
+ },
+ "cacharros": {
+  "g": "pots, pans and dishes, all together",
+  "t": "noun"
+ },
+ "reserva": {
+  "g": "(de reserva) held back in case you need it",
+  "t": "noun"
+ },
+ "soltar": {
+  "g": "to let something out in one go, to say it",
+  "t": "verb"
+ },
+ "dicha": {
+  "g": "said, spoken out (past participle of decir)",
+  "t": "adjective"
+ },
+ "pasaba": {
+  "g": "happened to her; used to happen",
+  "t": "verb"
+ }
 }

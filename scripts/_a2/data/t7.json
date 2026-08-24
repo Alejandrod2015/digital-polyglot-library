@@ -6,12 +6,13 @@
   "slug": "dos-papeles-y-una-firma",
   "arcType": "late-reveal",
   "synopsis": "La empleada de Málaga le abre la carpeta del piso encima del escritorio y le va marcando lo que falta: la fecha, la dirección entera, el código de la cuenta. Irene firma creyendo que ya no queda nada por saber. Lo que sale del archivador después lleva una fecha de septiembre, un depósito pagado y una letra redonda que ella conoce de la escalera.",
-  "text": "La carpeta del piso está en un escritorio frío y la abre una empleada joven. Dentro hay dos papeles con sellos y poco más. Irene deja su credencial al lado y aguarda con las manos abajo.\n\n“Aquí falta la fecha, y aquí la dirección completa, con el número y la letra”, dice la empleada. “Y verifique el código de la cuenta, que si baila un número se cae todo”. Irene saca el recibo del banco y lo deja encima de todo.\n\nCoge el bolígrafo, firma despacio y la tinta se le corre, aún húmeda. “Hay otra persona desde septiembre, con un ingreso más bajo que el suyo”, añade. La empleada saca del archivador un papel con dos grapas.\n\nEs un informe corto, con un folleto y un depósito ya pagado desde septiembre. No es alguien de Málaga ni una oficina de fuera, y lo entiende a la vez. Es la letra redonda y apretada de Rocío, del mismo día que le subió el canasto.",
+  "text": "La carpeta del piso está en un escritorio frío y la abre una empleada joven. Dentro hay dos papeles con sellos y poco más. Irene deja su credencial al lado y aguarda con las manos abajo.\n\n“Aquí falta la fecha, y aquí la dirección completa, con el número y la letra”, dice la empleada. “Y verifique el código de la cuenta, que si baila un número se cae todo”. Irene saca el recibo del banco y lo deja encima de todo.\n\nCoge el bolígrafo, firma despacio y la tinta se le corre, aún húmeda. “Hay otra persona desde septiembre, con un ingreso más bajo que el suyo”, añade. La empleada saca del archivador un papel con dos grapas.\n\nEs un informe corto, con un folleto y un depósito ya pagado desde septiembre. No es alguien de Málaga ni una oficina de fuera, y lo entiende a la vez. Es la letra redonda y apretada de Rocío. La fecha es la del canasto de octubre.",
   "vocab": [
    {
     "word": "escritorio",
     "type": "noun",
-    "definition": "Table with drawers where somebody works sitting down."
+    "definition": "Table with drawers where somebody works sitting down.",
+    "anchor": true
    },
    {
     "word": "empleado",
@@ -27,7 +28,8 @@
    {
     "word": "sellos",
     "type": "noun",
-    "definition": "Ink marks an office puts on paper to make it official."
+    "definition": "Ink marks an office puts on paper to make it official.",
+    "anchor": true
    },
    {
     "word": "informe",
@@ -37,12 +39,14 @@
    {
     "word": "folleto",
     "type": "noun",
-    "definition": "Thin printed paper that explains or advertises something."
+    "definition": "Thin printed paper that explains or advertises something.",
+    "anchor": true
    },
    {
     "word": "credencial",
     "type": "noun",
-    "definition": "Card that proves who you are when they ask."
+    "definition": "Card that proves who you are when they ask.",
+    "anchor": true
    },
    {
     "word": "fecha",
@@ -94,13 +98,15 @@
    {
     "word": "archivador",
     "type": "noun",
-    "definition": "Tall cupboard where an office keeps all its papers."
+    "definition": "Tall cupboard where an office keeps all its papers.",
+    "anchor": true
    },
    {
     "word": "grapa",
     "surface": "grapas",
     "type": "noun",
-    "definition": "Small metal clip that holds sheets of paper together."
+    "definition": "Small metal clip that holds sheets of paper together.",
+    "anchor": true
    },
    {
     "word": "depósito",
@@ -136,17 +142,20 @@
    {
     "word": "cartón",
     "type": "noun",
-    "definition": "Thick stiff paper that boxes and folders are made of."
+    "definition": "Thick stiff paper that boxes and folders are made of.",
+    "anchor": true
    },
    {
     "word": "portada",
     "type": "noun",
-    "definition": "The front sheet of a folder or of a book."
+    "definition": "The front sheet of a folder or of a book.",
+    "anchor": true
    },
    {
     "word": "clip",
     "type": "noun",
-    "definition": "Small bent wire that holds two papers together."
+    "definition": "Small bent wire that holds two papers together.",
+    "anchor": true
    },
    {
     "word": "estómago",
@@ -198,17 +207,20 @@
    {
     "word": "cajero",
     "type": "noun",
-    "definition": "Machine in a wall that gives you your money."
+    "definition": "Machine in a wall that gives you your money.",
+    "anchor": true
    },
    {
     "word": "monedero",
     "type": "noun",
-    "definition": "Small purse where you keep coins in your pocket."
+    "definition": "Small purse where you keep coins in your pocket.",
+    "anchor": true
    },
    {
     "word": "tarjetero",
     "type": "noun",
-    "definition": "Small case for keeping cards, thinner than a purse."
+    "definition": "Small case for keeping cards, thinner than a purse.",
+    "anchor": true
    },
    {
     "word": "restar",
@@ -263,22 +275,26 @@
    {
     "word": "candado",
     "type": "noun",
-    "definition": "Lock with a curved bar that hangs on a door."
+    "definition": "Lock with a curved bar that hangs on a door.",
+    "anchor": true
    },
    {
     "word": "reja",
     "type": "noun",
-    "definition": "Grid of iron bars over a window or a door."
+    "definition": "Grid of iron bars over a window or a door.",
+    "anchor": true
    },
    {
     "word": "sótano",
     "type": "noun",
-    "definition": "Room under a building where things are stored."
+    "definition": "Room under a building where things are stored.",
+    "anchor": true
    },
    {
     "word": "portón",
     "type": "noun",
-    "definition": "Big heavy street door at the entrance of a building."
+    "definition": "Big heavy street door at the entrance of a building.",
+    "anchor": true
    },
    {
     "word": "cadera",
@@ -288,7 +304,8 @@
    {
     "word": "bisagra",
     "type": "noun",
-    "definition": "Metal joint that lets a door swing open and shut."
+    "definition": "Metal joint that lets a door swing open and shut.",
+    "anchor": true
    },
    {
     "word": "desde siempre",
@@ -334,7 +351,8 @@
    {
     "word": "alfombrilla",
     "type": "noun",
-    "definition": "Small mat you put down in front of a door."
+    "definition": "Small mat you put down in front of a door.",
+    "anchor": true
    },
    {
     "word": "vestíbulo",

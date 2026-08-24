@@ -42,7 +42,8 @@
    {
     "word": "aljibe",
     "type": "noun",
-    "definition": "Stone tank where a house keeps rain water."
+    "definition": "Stone tank where a house keeps rain water.",
+    "anchor": true
    },
    {
     "word": "hasta arriba",
@@ -52,7 +53,8 @@
    {
     "word": "cebolla",
     "type": "noun",
-    "definition": "Round white vegetable with layers that makes you cry."
+    "definition": "Round white vegetable with layers that makes you cry.",
+    "anchor": true
    },
    {
     "word": "hierba",
@@ -62,17 +64,20 @@
    {
     "word": "perejil",
     "type": "noun",
-    "definition": "Small green herb with flat leaves, cut over food."
+    "definition": "Small green herb with flat leaves, cut over food.",
+    "anchor": true
    },
    {
     "word": "limonero",
     "type": "noun",
-    "definition": "Tree that gives lemons, common in gardens down south."
+    "definition": "Tree that gives lemons, common in gardens down south.",
+    "anchor": true
    },
    {
     "word": "calabaza",
     "type": "noun",
-    "definition": "Big heavy orange vegetable with a very hard skin."
+    "definition": "Big heavy orange vegetable with a very hard skin.",
+    "anchor": true
    },
    {
     "word": "raíz",
@@ -104,7 +109,8 @@
     "word": "zanahoria",
     "surface": "zanahorias",
     "type": "noun",
-    "definition": "Long orange vegetable that grows under the ground."
+    "definition": "Long orange vegetable that grows under the ground.",
+    "anchor": true
    },
    {
     "word": "pepino",
@@ -152,7 +158,8 @@
    {
     "word": "cabra",
     "type": "noun",
-    "definition": "Farm animal with horns that climbs rocks and eats grass."
+    "definition": "Farm animal with horns that climbs rocks and eats grass.",
+    "anchor": true
    },
    {
     "word": "roca",
@@ -167,12 +174,14 @@
    {
     "word": "barranco",
     "type": "noun",
-    "definition": "Deep narrow cut in a hill where rain water runs down."
+    "definition": "Deep narrow cut in a hill where rain water runs down.",
+    "anchor": true
    },
    {
     "word": "prado",
     "type": "noun",
-    "definition": "Flat green field where farm animals eat grass."
+    "definition": "Flat green field where farm animals eat grass.",
+    "anchor": true
    },
    {
     "word": "huella",
@@ -187,12 +196,14 @@
    {
     "word": "cuneta",
     "type": "noun",
-    "definition": "The low ditch at the side of a country road."
+    "definition": "The low ditch at the side of a country road.",
+    "anchor": true
    },
    {
     "word": "arboleda",
     "type": "noun",
-    "definition": "Small group of trees that grow close together."
+    "definition": "Small group of trees that grow close together.",
+    "anchor": true
    },
    {
     "word": "desvío",
@@ -213,7 +224,8 @@
     "word": "oveja",
     "surface": "ovejas",
     "type": "noun",
-    "definition": "Farm animal with thick white wool, kept for its milk."
+    "definition": "Farm animal with thick white wool, kept for its milk.",
+    "anchor": true
    },
    {
     "word": "cerro",
@@ -273,17 +285,20 @@
    {
     "word": "tijera",
     "type": "noun",
-    "definition": "Tool with two blades that you use to cut things."
+    "definition": "Tool with two blades that you use to cut things.",
+    "anchor": true
    },
    {
     "word": "ramo",
     "type": "noun",
-    "definition": "A bunch of flowers or herbs held in one hand."
+    "definition": "A bunch of flowers or herbs held in one hand.",
+    "anchor": true
    },
    {
     "word": "lechuga",
     "type": "noun",
-    "definition": "Big green salad plant with wide soft leaves."
+    "definition": "Big green salad plant with wide soft leaves.",
+    "anchor": true
    },
    {
     "word": "amargo",
@@ -295,7 +310,8 @@
     "word": "uva",
     "surface": "uvas",
     "type": "noun",
-    "definition": "Small round green or dark fruit that grows in bunches."
+    "definition": "Small round green or dark fruit that grows in bunches.",
+    "anchor": true
    },
    {
     "word": "cáscara",
@@ -330,12 +346,14 @@
     "word": "espinaca",
     "surface": "espinacas",
     "type": "noun",
-    "definition": "Dark green leaf that is cooked or eaten in salad."
+    "definition": "Dark green leaf that is cooked or eaten in salad.",
+    "anchor": true
    },
    {
     "word": "pala",
     "type": "noun",
-    "definition": "Tool with a flat blade for moving earth about."
+    "definition": "Tool with a flat blade for moving earth about.",
+    "anchor": true
    },
    {
     "word": "febrero",

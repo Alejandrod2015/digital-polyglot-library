@@ -59,6 +59,10 @@
    "g": "brings closer",
    "t": "verb"
   },
+  "acertar": {
+   "g": "to get it right, to guess right",
+   "t": "verb"
+  },
   "acomoda": {
    "g": "arranges, settles",
    "t": "verb"
@@ -117,6 +121,10 @@
   },
   "ajena": {
    "g": "someone else's",
+   "t": "adjective"
+  },
+  "ajenos": {
+   "g": "belonging to other people, not yours",
    "t": "adjective"
   },
   "ajusta": {
@@ -523,6 +531,10 @@
    "g": "goat",
    "t": "noun"
   },
+  "cacharros": {
+   "g": "pots, pans and dishes, all together",
+   "t": "noun"
+  },
   "cada": {
    "g": "each, every",
    "t": "adjective"
@@ -875,10 +887,6 @@
    "g": "card that proves who you are",
    "t": "noun"
   },
-  "cree": {
-   "g": "believes, thinks",
-   "t": "verb"
-  },
   "creía": {
    "g": "believed",
    "t": "verb"
@@ -1122,6 +1130,10 @@
   "dice": {
    "g": "says",
    "t": "verb"
+  },
+  "dicha": {
+   "g": "said, spoken out (past participle of decir)",
+   "t": "adjective"
   },
   "dicho": {
    "g": "said",
@@ -1553,6 +1565,10 @@
   },
   "fuera": {
    "g": "outside",
+   "t": "adverb"
+  },
+  "fuerte": {
+   "g": "hard, strongly; also: loud",
    "t": "adverb"
   },
   "ganas": {
@@ -2495,6 +2511,10 @@
    "g": "happens, passes",
    "t": "verb"
   },
+  "pasaba": {
+   "g": "happened to her; used to happen",
+   "t": "verb"
+  },
   "pasada": {
    "g": "(de pasada) in passing, without stopping to explain",
    "t": "expression"
@@ -2927,6 +2947,10 @@
    "g": "rest; time left still so it can change",
    "t": "noun"
   },
+  "reserva": {
+   "g": "(de reserva) held back in case you need it",
+   "t": "noun"
+  },
   "respuesta": {
    "g": "an answer, a response",
    "t": "noun"
@@ -3059,10 +3083,6 @@
    "g": "oneself, himself",
    "t": "pronoun"
   },
-  "sea": {
-   "g": "may be, is",
-   "t": "verb"
-  },
   "seca": {
    "g": "dry (fem.); also: she dries",
    "t": "adjective"
@@ -3081,6 +3101,10 @@
   },
   "sellos": {
    "g": "official ink stamps on a paper",
+   "t": "noun"
+  },
+  "semana": {
+   "g": "week",
    "t": "noun"
   },
   "semanas": {
@@ -3222,6 +3246,10 @@
   "solo": {
    "g": "only, alone",
    "t": "adverb"
+  },
+  "soltar": {
+   "g": "to let something out in one go, to say it",
+   "t": "verb"
   },
   "sombrillas": {
    "g": "beach umbrellas",

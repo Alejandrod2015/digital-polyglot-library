@@ -11,7 +11,8 @@
    {
     "word": "terraza",
     "type": "noun",
-    "definition": "The tables a bar puts outside on the street."
+    "definition": "The tables a bar puts outside on the street.",
+    "anchor": true
    },
    {
     "word": "vacío",
@@ -28,22 +29,26 @@
     "word": "butaca",
     "surface": "butacas",
     "type": "noun",
-    "definition": "Big soft chair with arms, made for sitting long."
+    "definition": "Big soft chair with arms, made for sitting long.",
+    "anchor": true
    },
    {
     "word": "cojín",
     "type": "noun",
-    "definition": "Soft bag of cloth you put under you when sitting."
+    "definition": "Soft bag of cloth you put under you when sitting.",
+    "anchor": true
    },
    {
     "word": "libreta",
     "type": "noun",
-    "definition": "Small notebook you carry to write short things down."
+    "definition": "Small notebook you carry to write short things down.",
+    "anchor": true
    },
    {
     "word": "novela",
     "type": "noun",
-    "definition": "Long story in a book, made up by a writer."
+    "definition": "Long story in a book, made up by a writer.",
+    "anchor": true
    },
    {
     "word": "bostezar",
@@ -104,7 +109,8 @@
    {
     "word": "sorbo",
     "type": "noun",
-    "definition": "The small amount of drink you take in one go."
+    "definition": "The small amount of drink you take in one go.",
+    "anchor": true
    },
    {
     "word": "tibio",
@@ -141,7 +147,8 @@
    {
     "word": "masa",
     "type": "noun",
-    "definition": "Soft mix of flour and water, before it becomes bread."
+    "definition": "Soft mix of flour and water, before it becomes bread.",
+    "anchor": true
    },
    {
     "word": "cuarto",
@@ -151,7 +158,8 @@
    {
     "word": "reposo",
     "type": "noun",
-    "definition": "Time when something is left still, to rest and change."
+    "definition": "Time when something is left still, to rest and change.",
+    "anchor": true
    },
    {
     "word": "arrastrar",
@@ -173,12 +181,14 @@
    {
     "word": "paloma",
     "type": "noun",
-    "definition": "Grey town bird that walks around looking for crumbs."
+    "definition": "Grey town bird that walks around looking for crumbs.",
+    "anchor": true
    },
    {
     "word": "patio",
     "type": "noun",
-    "definition": "Small open space with walls, behind or inside a house."
+    "definition": "Small open space with walls, behind or inside a house.",
+    "anchor": true
    },
    {
     "word": "ratito",
@@ -227,13 +237,15 @@
    {
     "word": "cuenco",
     "type": "noun",
-    "definition": "Round deep dish with no handles, for olives or soup."
+    "definition": "Round deep dish with no handles, for olives or soup.",
+    "anchor": true
    },
    {
     "word": "rodaja",
     "surface": "rodajas",
     "type": "noun",
-    "definition": "Round flat piece cut across bread or a fruit."
+    "definition": "Round flat piece cut across bread or a fruit.",
+    "anchor": true
    },
    {
     "word": "tierno",
@@ -271,7 +283,8 @@
     "word": "pantufla",
     "surface": "pantuflas",
     "type": "noun",
-    "definition": "Soft warm shoe you only wear inside the house."
+    "definition": "Soft warm shoe you only wear inside the house.",
+    "anchor": true
    },
    {
     "word": "sueño",
@@ -292,7 +305,8 @@
    {
     "word": "colcha",
     "type": "noun",
-    "definition": "Thin cover you put over a bed or over your legs."
+    "definition": "Thin cover you put over a bed or over your legs.",
+    "anchor": true
    },
    {
     "word": "primera vez",
@@ -308,7 +322,8 @@
    {
     "word": "sábana",
     "type": "noun",
-    "definition": "Large thin cloth that goes between you and the bed."
+    "definition": "Large thin cloth that goes between you and the bed.",
+    "anchor": true
    },
    {
     "word": "aguardar",
@@ -325,12 +340,14 @@
    {
     "word": "siesta",
     "type": "noun",
-    "definition": "The short sleep people take after eating at midday."
+    "definition": "The short sleep people take after eating at midday.",
+    "anchor": true
    },
    {
     "word": "almohada",
     "type": "noun",
-    "definition": "Soft bag you put your head on to sleep."
+    "definition": "Soft bag you put your head on to sleep.",
+    "anchor": true
    },
    {
     "word": "mejilla",
@@ -340,7 +357,8 @@
    {
     "word": "ladrido",
     "type": "noun",
-    "definition": "The short loud sound that a dog makes."
+    "definition": "The short loud sound that a dog makes.",
+    "anchor": true
    },
    {
     "word": "susurrar",

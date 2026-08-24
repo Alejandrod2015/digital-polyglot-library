@@ -6,7 +6,7 @@
   "slug": "dos-dedos-no-son-dos",
   "arcType": "reframe-turn",
   "synopsis": "Irene pide en la pescadería con la mano, convencida de que los números no necesitan traducción, y se lleva el doble de lo que quería. Quique le enseña en la barra que aquí se empieza a contar por otro dedo y que el tamaño se dice con las dos manos abiertas. Lo que cambia no es un dato: es descubrir que llevaba dos meses hablando un segundo idioma sin saber que existía.",
-  "text": "Dos dedos alzados en la pescadería no significan lo que Irene cree. La mujer del mercado le envuelve cuatro calamares en una bandeja. Irene se mira la palma seca y no encuentra el error.\n\nEn el bar, Quique se ríe, levanta el brazo y pone la palma hacia dentro. “Aquí se empieza a contar por este dedo, guapa, no por el de al lado”, dice, y le marca el orden. “Y lo hondo de una cazuela no se dice con palabras: se abre así y ya está”, añade.\n\nIrene copia el signo y le sale torcido, con la muñeca girada. “Más recto, hombre, que ahora mismo estás diciendo otra cosa muy distinta”, dice Quique, y le agita el codo. Lo intenta de nuevo hasta que le sale liso.\n\nAl día siguiente vuelve a la pescadería y no abre la boca. Alza la mano firme, sin curva, y la mujer le pone dos calamares. Irene sale con un temblor tonto en el pecho.",
+  "text": "Dos dedos alzados en la pescadería significan otra cosa, y Irene todavía no lo sabe. La mujer del mercado le envuelve cuatro calamares en una bandeja. Irene se mira la palma seca y no encuentra el error.\n\nEn el bar, Quique se ríe, levanta el brazo y pone la palma hacia dentro. “Aquí se empieza a contar por este dedo, guapa, no por el de al lado”, dice, y le marca el orden. “Y lo hondo de una cazuela no se dice con palabras: se abre así y ya está”, añade.\n\nIrene copia el signo y le sale torcido, con la muñeca girada. “Más recto, hombre, que ahora mismo estás diciendo otra cosa muy distinta”, dice Quique, y le agita el codo. Lo intenta de nuevo hasta que le sale liso.\n\nAl día siguiente vuelve a la pescadería y no abre la boca. Alza la mano firme, sin curva, y la mujer le pone dos calamares. Irene sale con un temblor tonto en el pecho.",
   "vocab": [
    {
     "word": "dedo",
@@ -23,18 +23,21 @@
    {
     "word": "pescadería",
     "type": "noun",
-    "definition": "Shop where fresh fish is sold over a wet counter."
+    "definition": "Shop where fresh fish is sold over a wet counter.",
+    "anchor": true
    },
    {
     "word": "mercado",
     "type": "noun",
-    "definition": "Place with many small stalls where food is sold."
+    "definition": "Place with many small stalls where food is sold.",
+    "anchor": true
    },
    {
     "word": "calamar",
     "surface": "calamares",
     "type": "noun",
-    "definition": "Soft white sea animal with many arms, fried in rings."
+    "definition": "Soft white sea animal with many arms, fried in rings.",
+    "anchor": true
    },
    {
     "word": "mano",
@@ -60,7 +63,8 @@
    {
     "word": "cazuela",
     "type": "noun",
-    "definition": "Wide round clay pot used for cooking slow food."
+    "definition": "Wide round clay pot used for cooking slow food.",
+    "anchor": true
    },
    {
     "word": "ya está",
@@ -70,7 +74,8 @@
    {
     "word": "signo",
     "type": "noun",
-    "definition": "A movement or mark that stands for a whole word."
+    "definition": "A movement or mark that stands for a whole word.",
+    "anchor": true
    },
    {
     "word": "torcido",
@@ -112,7 +117,8 @@
    {
     "word": "curva",
     "type": "noun",
-    "definition": "A soft bend in a line instead of a straight run."
+    "definition": "A soft bend in a line instead of a straight run.",
+    "anchor": true
    },
    {
     "word": "temblor",
@@ -149,7 +155,8 @@
    {
     "word": "cola",
     "type": "noun",
-    "definition": "A line of people waiting one behind the other."
+    "definition": "A line of people waiting one behind the other.",
+    "anchor": true
    },
    {
     "word": "tacto",
@@ -170,7 +177,8 @@
     "word": "uña",
     "surface": "uñas",
     "type": "noun",
-    "definition": "The hard flat part on the end of each finger."
+    "definition": "The hard flat part on the end of each finger.",
+    "anchor": true
    },
    {
     "word": "sacudida",
@@ -186,23 +194,27 @@
    {
     "word": "esquema",
     "type": "noun",
-    "definition": "Simple drawing that shows how parts fit together."
+    "definition": "Simple drawing that shows how parts fit together.",
+    "anchor": true
    },
    {
     "word": "silueta",
     "surface": "siluetas",
     "type": "noun",
-    "definition": "The dark shape of a person seen against the light."
+    "definition": "The dark shape of a person seen against the light.",
+    "anchor": true
    },
    {
     "word": "línea",
     "type": "noun",
-    "definition": "A long thin mark drawn from one point to another."
+    "definition": "A long thin mark drawn from one point to another.",
+    "anchor": true
    },
    {
     "word": "símbolo",
     "type": "noun",
-    "definition": "A sign that stands for an idea, not for a thing."
+    "definition": "A sign that stands for an idea, not for a thing.",
+    "anchor": true
    },
    {
     "word": "trazar",
@@ -247,7 +259,7 @@
   "slug": "su-mano-llega-antes",
   "arcType": "recurring-character-callback",
   "synopsis": "A Irene se le adelanta el cuerpo antes que el idioma, y por primera vez no es un accidente: ve venir el tropiezo de Marta y contesta con dos dedos en el hombro en lugar de con una frase. La tensión de la escena no es si acierta, sino qué pasa después. Lo que la desarma no es el gracias, sino que nadie se detenga a comentarlo, porque a estas alturas ya no es noticia.",
-  "text": "Su mano se adelanta a la palabra por primera vez. Marta cruza la farmacia cargando un cajón cuadrado y no ve el bordillo. Irene junta dos dedos, se los apoya en el hombro y aparta; el toque es delicado.\n\nMarta se para en seco, voltea la cabeza y le entrega el cajón sin preguntar. “Gracias, mujer, que lo llevo encima desde ayer y ya ando torcida”, dice. “Ponlo en el tablón de arriba de la estantería, que ahí no estorba a nadie”.\n\nIrene lo sube y siente una vibración larga en los brazos. Una punta puntiaguda del cajón se le clava en la barriga. Lo acomoda en el estante, ajusta el borde contra la pared y espera.\n\n“Estás aprendiendo a hablar sin boca, y eso aquí vale más que las palabras”, dice Marta. Se queda a lo suyo, fija una etiqueta en el cristal frío y no levanta la vista. Nadie la felicita, y a Irene le golpea eso, que ya no sea noticia.",
+  "text": "Su mano se adelanta a la palabra por primera vez. Marta cruza la farmacia cargando un cajón cuadrado y no ve el bordillo. Irene junta dos dedos, se los apoya en el hombro y aparta; el toque es delicado.\n\nMarta se para en seco, voltea la cabeza y le entrega el cajón sin preguntar. “Gracias, mujer, que lo llevo encima desde ayer y ya ando torcida”, dice. “Ponlo en el tablón de arriba de la estantería, que ahí no estorba a nadie”.\n\nIrene lo sube, siente una vibración larga en los brazos y una punta puntiaguda se le clava en la barriga. Lo acomoda en el estante, ajusta el borde contra la pared y espera.\n\n“Estás aprendiendo a hablar sin boca, y eso aquí vale más que las palabras”, dice Marta. Se queda a lo suyo, fija una etiqueta en el cristal frío y no levanta la vista. Nadie la felicita, y ese silencio le golpea: acertar ya no es noticia.",
   "vocab": [
    {
     "word": "cargar",
@@ -263,7 +275,8 @@
    {
     "word": "bordillo",
     "type": "noun",
-    "definition": "The raised stone edge between the street and the path."
+    "definition": "The raised stone edge between the street and the path.",
+    "anchor": true
    },
    {
     "word": "juntar",
@@ -302,22 +315,26 @@
    {
     "word": "tablón",
     "type": "noun",
-    "definition": "Thick wide board of wood used as a shelf."
+    "definition": "Thick wide board of wood used as a shelf.",
+    "anchor": true
    },
    {
     "word": "estantería",
     "type": "noun",
-    "definition": "Tall piece of furniture made of several shelves."
+    "definition": "Tall piece of furniture made of several shelves.",
+    "anchor": true
    },
    {
     "word": "vibración",
     "type": "noun",
-    "definition": "A fast small shaking you feel through your hands."
+    "definition": "A fast small shaking you feel through your hands.",
+    "anchor": true
    },
    {
     "word": "punta",
     "type": "noun",
-    "definition": "The sharp or narrow end of a long thing."
+    "definition": "The sharp or narrow end of a long thing.",
+    "anchor": true
    },
    {
     "word": "puntiagudo",
@@ -357,7 +374,8 @@
    {
     "word": "noticia",
     "type": "noun",
-    "definition": "A piece of news that people find worth telling."
+    "definition": "A piece of news that people find worth telling.",
+    "anchor": true
    }
   ]
  }

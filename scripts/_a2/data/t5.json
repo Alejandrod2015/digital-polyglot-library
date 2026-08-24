@@ -11,7 +11,8 @@
    {
     "word": "olla",
     "type": "noun",
-    "definition": "Deep round pot with two handles, for soups and stews."
+    "definition": "Deep round pot with two handles, for soups and stews.",
+    "anchor": true
    },
    {
     "word": "fuego",
@@ -21,12 +22,14 @@
    {
     "word": "colador",
     "type": "noun",
-    "definition": "Bowl full of small holes that lets the water run out."
+    "definition": "Bowl full of small holes that lets the water run out.",
+    "anchor": true
    },
    {
     "word": "fregadero",
     "type": "noun",
-    "definition": "The sink in a kitchen where you wash the dishes."
+    "definition": "The sink in a kitchen where you wash the dishes.",
+    "anchor": true
    },
    {
     "word": "humo",
@@ -48,7 +51,8 @@
    {
     "word": "caldo",
     "type": "noun",
-    "definition": "Hot clear soup made by boiling meat or vegetables."
+    "definition": "Hot clear soup made by boiling meat or vegetables.",
+    "anchor": true
    },
    {
     "word": "hervir",
@@ -92,12 +96,14 @@
    {
     "word": "mantel",
     "type": "noun",
-    "definition": "Cloth that you put over a table before eating."
+    "definition": "Cloth that you put over a table before eating.",
+    "anchor": true
    },
    {
     "word": "sartén",
     "type": "noun",
-    "definition": "Flat pan with a long handle, used for frying."
+    "definition": "Flat pan with a long handle, used for frying.",
+    "anchor": true
    },
    {
     "word": "marcha",
@@ -159,12 +165,14 @@
    {
     "word": "tenedor",
     "type": "noun",
-    "definition": "Eating tool with points, used for meat and salad."
+    "definition": "Eating tool with points, used for meat and salad.",
+    "anchor": true
    },
    {
     "word": "soso",
     "type": "adjective",
-    "definition": "With too little salt, so the taste falls flat."
+    "definition": "With too little salt, so the taste falls flat.",
+    "anchor": true
    },
    {
     "word": "rebanar",
@@ -175,7 +183,8 @@
    {
     "word": "tazón",
     "type": "noun",
-    "definition": "Big cup with no handle, used for soup or milk."
+    "definition": "Big cup with no handle, used for soup or milk.",
+    "anchor": true
    },
    {
     "word": "equivocado",
@@ -191,7 +200,8 @@
    {
     "word": "cuchillo",
     "type": "noun",
-    "definition": "Sharp tool with one blade, used to cut food."
+    "definition": "Sharp tool with one blade, used to cut food.",
+    "anchor": true
    },
    {
     "word": "poquito",
@@ -201,7 +211,8 @@
    {
     "word": "ácido",
     "type": "adjective",
-    "definition": "Sharp and sour, like lemon juice on your tongue."
+    "definition": "Sharp and sour, like lemon juice on your tongue.",
+    "anchor": true
    },
    {
     "word": "intento",
@@ -221,7 +232,8 @@
    {
     "word": "salsa",
     "type": "noun",
-    "definition": "Thick liquid poured over food to give it taste."
+    "definition": "Thick liquid poured over food to give it taste.",
+    "anchor": true
    },
    {
     "word": "echar de menos",
@@ -244,7 +256,7 @@
   "slug": "el-caldo-no-era-suyo",
   "arcType": "late-reveal",
   "synopsis": "Alguien lleva desde octubre dándole de comer a Irene sin firmar el favor, y ella se lo ha estado agradeciendo a la persona equivocada. El día en que devuelve los cacharros al piso correcto se le junta lo bueno con lo malo en la misma puerta: la que la alimenta cada jueves es también la que tiene medio prometido su piso a otra. Baja sin saber cuál de las dos cosas pesa más.",
-  "text": "En la cocina de Irene hay tres recipientes y un trapo que no son suyos. Desde octubre aparece uno tapado en el suelo, tibio y sin letra. Rosa le sigue el juego cuando ella le da las gracias por la sopa.\n\n“Yo no hago sopa en noviembre, que se me pone mala en dos días”, contesta Rosa. “Y esa ensaladera no ha salido nunca de mi cocina, que la mía es de arcilla vieja”. Con la tetera en la mano, Irene llama a la puerta de arriba.\n\nRocío abre con masa en las manos y ceniza en la camisa. Detrás hay una olla al fuego y hueso de ternera en la tabla. “No hacía falta subirlo; de verdad que no hacía ninguna falta, mujer”, dice sin mirarla.\n\nIrene los deja en una silla, junto a la nevera de par en par y una pila de platos. La que le da de comer cada jueves es la que quiere su piso para otra. Baja al patio con las dos cosas encima.",
+  "text": "En la cocina de Irene hay tres recipientes y un trapo ajenos. Uno aparece tapado en el suelo cada semana, tibio y sin una letra escrita. Rosa le sigue el juego cuando le dan las gracias por la sopa.\n\n“Yo no hago sopa en noviembre, que se me pone mala en dos días”, contesta Rosa. “Y esa ensaladera no ha salido nunca de esta cocina, hija, que la mía es de arcilla vieja”. Con la tetera en la mano, Irene llama a la puerta de arriba.\n\nRocío abre con masa en las manos y ceniza en la camisa. Detrás hay una olla al fuego y hueso de ternera en la tabla. “No hacía falta subirlo; de verdad que no hacía falta, mujer”, dice sin mirarla.\n\nDeja los cacharros en una silla, junto a la nevera de par en par. La que le da de comer cada jueves es la que quiere su piso para otra. Baja al patio con la pila de platos y las dos cosas encima.",
   "vocab": [
    {
     "word": "recipiente",
@@ -271,17 +283,20 @@
    {
     "word": "ensaladera",
     "type": "noun",
-    "definition": "Big deep bowl that salad is served in."
+    "definition": "Big deep bowl that salad is served in.",
+    "anchor": true
    },
    {
     "word": "arcilla",
     "type": "noun",
-    "definition": "Brown earth that is baked hard to make pots."
+    "definition": "Brown earth that is baked hard to make pots.",
+    "anchor": true
    },
    {
     "word": "tetera",
     "type": "noun",
-    "definition": "Pot with a spout and a lid, for making tea."
+    "definition": "Pot with a spout and a lid, for making tea.",
+    "anchor": true
    },
    {
     "word": "camisa",
@@ -291,7 +306,8 @@
    {
     "word": "nevera",
     "type": "noun",
-    "definition": "Cold cupboard where food is kept so it lasts."
+    "definition": "Cold cupboard where food is kept so it lasts.",
+    "anchor": true
    },
    {
     "word": "hueso",
@@ -301,7 +317,8 @@
    {
     "word": "ternera",
     "type": "noun",
-    "definition": "Meat from a young cow, cooked slowly for a stew."
+    "definition": "Meat from a young cow, cooked slowly for a stew.",
+    "anchor": true
    },
    {
     "word": "hacer falta",
@@ -322,7 +339,8 @@
    {
     "word": "pila",
     "type": "noun",
-    "definition": "A stack of things put one on top of another."
+    "definition": "A stack of things put one on top of another.",
+    "anchor": true
    },
    {
     "word": "gracias",
