@@ -688,8 +688,24 @@ for m in verb_pat.finditer(last):
     break
 if not autorizado:
     print("no_verb"); sys.exit(0)
-# Un disparador, una imagen.
-huella = hashlib.sha1(last.strip().encode("utf-8")).hexdigest()[:16]
+# Un disparador = UNA tirada POR IMAGEN (2026-08-25). Antes la huella era solo
+# el mensaje, asi que "genera las 2 portadas que faltan" solo dejaba pasar una.
+# Ahora la huella lleva tambien el objetivo (el storyId del comando), de modo
+# que un mensaje puede tirar varias portadas DISTINTAS y sigue bloqueando la
+# segunda tirada de la MISMA. Re-tirar una portada exige un mensaje nuevo.
+cmd = ""
+try:
+    cmd = (payload.get("tool_input") or {}).get("command") or ""
+except Exception:
+    cmd = ""
+objetivo = ""
+mo = re.search(r"\bc[a-z0-9]{20,}\b", cmd)
+if mo:
+    objetivo = mo.group(0)
+else:
+    mo = re.search(r"[\w./-]+/([\w-]+)\.txt\b", cmd)
+    objetivo = mo.group(1) if mo else ""
+huella = hashlib.sha1((last.strip() + "|" + objetivo).encode("utf-8")).hexdigest()[:16]
 libro = os.path.join(os.path.dirname(tp), "..", "..", ".image-spend")
 libro = os.environ.get("DPL_IMAGE_SPEND_FILE") or ".claude/safety/.image-spend"
 try:
@@ -711,10 +727,10 @@ print("ok")
         log_audit "BLOCK_IMAGE[$IMG_CHECK]" "$COMMAND"
         if [ "$IMG_CHECK" = "already_spent" ]; then
             cat >&2 <<EOF
-[safety-guard] BLOCKED: este mensaje del usuario YA gasto su imagen.
+[safety-guard] BLOCKED: este mensaje del usuario YA gasto la tirada de ESTA imagen.
 
-Un disparador = UNA imagen. No hay presupuesto de dos tiradas: el "TOPE: 2"
-de CLAUDE.md era un techo, y desde el 2026-08-24 el tope es 1.
+Un disparador = UNA tirada POR IMAGEN. Un mismo mensaje puede generar varias
+portadas DISTINTAS, pero la SEGUNDA tirada de la misma portada esta prohibida.
 
 Si la tirada salio mal, ENSENALA, di que esta mal y ESPERA. El usuario decide
 si se vuelve a tirar, y para eso tiene que escribirlo otra vez.
