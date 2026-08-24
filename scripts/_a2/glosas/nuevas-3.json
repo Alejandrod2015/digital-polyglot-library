@@ -434,5 +434,29 @@
  "preparada": {
   "g": "prepared, thought out in advance",
   "t": "adjective"
+ },
+ "ido": {
+  "g": "gone (no se ha ido: she has not left)",
+  "t": "verb"
+ },
+ "fondo": {
+  "g": "the far end or bottom of a place",
+  "t": "noun"
+ },
+ "horas": {
+  "g": "hours; the passing time you count",
+  "t": "noun"
+ },
+ "cuerpo": {
+  "g": "the body; also the feeling you carry in it",
+  "t": "noun"
+ },
+ "espera": {
+  "g": "waits; also: the wait",
+  "t": "verb"
+ },
+ "debajo": {
+  "g": "underneath, below something else",
+  "t": "adverb"
  }
 }

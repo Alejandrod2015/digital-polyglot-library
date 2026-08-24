@@ -955,6 +955,10 @@
    "g": "bank account; also: tells; (darse cuenta) to realise",
    "t": "noun"
   },
+  "cuerpo": {
+   "g": "the body; also the feeling you carry in it",
+   "t": "noun"
+  },
   "cuesta": {
    "g": "slope; also: it costs, it takes effort",
    "t": "noun"
@@ -1014,6 +1018,10 @@
   "de": {
    "g": "of, from",
    "t": "preposition"
+  },
+  "debajo": {
+   "g": "underneath, below something else",
+   "t": "adverb"
   },
   "decir": {
    "g": "to say, to mean",
@@ -1146,10 +1154,6 @@
   "diciendo": {
    "g": "saying",
    "t": "verb"
-  },
-  "diez": {
-   "g": "ten",
-   "t": "number"
   },
   "dijeras": {
    "g": "you said it (after esperando a que)",
@@ -1387,6 +1391,10 @@
    "g": "Spanish",
    "t": "noun"
   },
+  "espera": {
+   "g": "waits; also: the wait",
+   "t": "verb"
+  },
   "esperaba": {
    "g": "expected, waited for",
    "t": "verb"
@@ -1521,6 +1529,10 @@
   },
   "folleto": {
    "g": "the brochure",
+   "t": "noun"
+  },
+  "fondo": {
+   "g": "the far end or bottom of a place",
    "t": "noun"
   },
   "frascos": {
@@ -1755,6 +1767,10 @@
    "g": "hour, time",
    "t": "noun"
   },
+  "horas": {
+   "g": "hours; the passing time you count",
+   "t": "noun"
+  },
   "horizonte": {
    "g": "the horizon",
    "t": "noun"
@@ -1802,6 +1818,10 @@
   "idioma": {
    "g": "language",
    "t": "noun"
+  },
+  "ido": {
+   "g": "gone (no se ha ido: she has not left)",
+   "t": "verb"
   },
   "igual": {
    "g": "same; anyway",
@@ -2765,10 +2785,6 @@
   },
   "pueblo": {
    "g": "a small town, smaller than a city",
-   "t": "noun"
-  },
-  "pueblos": {
-   "g": "towns, villages",
    "t": "noun"
   },
   "puede": {
