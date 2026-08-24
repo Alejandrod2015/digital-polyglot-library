@@ -684,7 +684,9 @@ last = re.sub(r"<task-notification>.*?</task-notification>", "", last, flags=re.
 verb_pat = re.compile(
     r"\b(genera|regenera|lanza|manda|haz|tira|renderea|render)\s+"
     r"(?:(?:el|la|los|las|una|un)\s+)?"
-    r"(?:(portada|portadas|imagen|imagenes|imágenes|cover|covers)\b|(?:el|la|los|las)\s+de\b)",
+    r"(?:(portada|portadas|imagen|imagenes|imágenes|cover|covers)\b"
+    r"|(?:el|la|los|las)\s+de\b"
+    r"|(?:esa|esta|ese|este|esas|estas|esos|estos)\b)",
     re.IGNORECASE)
 autorizado = False
 for m in verb_pat.finditer(last):
