@@ -3962,6 +3962,14 @@
   "diante": {
    "g": "in front of (diante de)",
    "t": "preposition"
+  },
+  "consegue": {
+   "g": "manages to (conseguir)",
+   "t": "verb"
+  },
+  "enquanto": {
+   "g": "while",
+   "t": "conjunction"
   }
  }
 }

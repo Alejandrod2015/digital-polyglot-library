@@ -243,6 +243,10 @@
    "g": "rests, leans, supports",
    "t": "verb"
   },
+  "apoyada": {
+   "g": "leaning against something, propped up",
+   "t": "adjective"
+  },
   "aprendido": {
    "g": "learnt",
    "t": "verb"
@@ -341,10 +345,6 @@
   },
   "avisa": {
    "g": "warns, lets know",
-   "t": "verb"
-  },
-  "avisar": {
-   "g": "to give warning, let know",
    "t": "verb"
   },
   "aviso": {
@@ -791,6 +791,10 @@
    "g": "complete, whole",
    "t": "adjective"
   },
+  "comprar": {
+   "g": "to buy",
+   "t": "verb"
+  },
   "comprarlo": {
    "g": "to buy it",
    "t": "verb"
@@ -875,6 +879,10 @@
    "g": "things",
    "t": "noun"
   },
+  "costa": {
+   "g": "the coast, where the land meets the sea",
+   "t": "noun"
+  },
   "costaba": {
    "g": "cost",
    "t": "verb"
@@ -947,10 +955,6 @@
    "g": "bank account; also: tells; (darse cuenta) to realise",
    "t": "noun"
   },
-  "cuerpo": {
-   "g": "body",
-   "t": "noun"
-  },
   "cuesta": {
    "g": "slope; also: it costs, it takes effort",
    "t": "noun"
@@ -1009,10 +1013,6 @@
   },
   "de": {
    "g": "of, from",
-   "t": "preposition"
-  },
-  "debajo": {
-   "g": "beneath",
    "t": "preposition"
   },
   "decir": {
@@ -1074,6 +1074,10 @@
   "depósito": {
    "g": "money paid up front to hold something",
    "t": "noun"
+  },
+  "derecha": {
+   "g": "straight, without stopping; also: the right side",
+   "t": "adjective"
   },
   "descansa": {
    "g": "rests",
@@ -1255,6 +1259,10 @@
    "g": "gets angry",
    "t": "verb"
   },
+  "enfrente": {
+   "g": "across, opposite",
+   "t": "adverb"
+  },
   "engaña": {
    "g": "tricks somebody, tells them what is not true",
    "t": "verb"
@@ -1378,10 +1386,6 @@
   "español": {
    "g": "Spanish",
    "t": "noun"
-  },
-  "espera": {
-   "g": "waits for",
-   "t": "verb"
   },
   "esperaba": {
    "g": "expected, waited for",
@@ -2399,10 +2403,6 @@
    "g": "another (fem.)",
    "t": "adjective"
   },
-  "otras": {
-   "g": "others (fem.)",
-   "t": "adjective"
-  },
   "otro": {
    "g": "another, other",
    "t": "adjective"
@@ -2519,6 +2519,10 @@
    "g": "they pass, happen",
    "t": "verb"
   },
+  "pasar": {
+   "g": "to spend time somewhere; also: to pass, to happen",
+   "t": "verb"
+  },
   "pastillas": {
    "g": "pills, small hard pieces of medicine",
    "t": "noun"
@@ -2549,10 +2553,6 @@
   },
   "pensaba": {
    "g": "thought, expected",
-   "t": "verb"
-  },
-  "pensarlo": {
-   "g": "to think it over",
    "t": "verb"
   },
   "penumbra": {
@@ -2743,6 +2743,10 @@
    "g": "worried",
    "t": "adjective"
   },
+  "preparada": {
+   "g": "prepared, thought out in advance",
+   "t": "adjective"
+  },
   "primera": {
    "g": "first",
    "t": "adjective"
@@ -2758,6 +2762,10 @@
   "prueba": {
    "g": "tries; tastes; also: a test",
    "t": "verb"
+  },
+  "pueblo": {
+   "g": "a small town, smaller than a city",
+   "t": "noun"
   },
   "pueblos": {
    "g": "towns, villages",
@@ -2801,6 +2809,10 @@
   },
   "queda": {
    "g": "stays; (me queda) I have left; (quedarse) to stay on",
+   "t": "verb"
+  },
+  "quedado": {
+   "g": "stayed (se ha quedado: she has stayed on)",
    "t": "verb"
   },
   "quedan": {
@@ -2945,6 +2957,10 @@
   },
   "reserva": {
    "g": "(de reserva) held back in case you need it",
+   "t": "noun"
+  },
+  "respaldo": {
+   "g": "the back of a chair, the part you lean on",
    "t": "noun"
   },
   "respuesta": {
@@ -3643,6 +3659,10 @@
    "g": "fingernails",
    "t": "noun"
   },
+  "va": {
+   "g": "goes (va derecha: she goes straight to it)",
+   "t": "verb"
+  },
   "vacía": {
    "g": "empty",
    "t": "adjective"
@@ -3769,6 +3789,10 @@
   },
   "viene": {
    "g": "he/she comes",
+   "t": "verb"
+  },
+  "vino": {
+   "g": "came (past of venir); also: wine",
    "t": "verb"
   },
   "vista": {
