@@ -1,0 +1,369 @@
+[
+ {
+  "topic": "company-and-long-afternoons",
+  "slotIndex": 1,
+  "title": "Nadie mira el reloj",
+  "slug": "nadie-mira-el-reloj",
+  "arcType": "juxtaposition-discovery",
+  "synopsis": "Irene todavía cuenta la tarde en tareas y llega al bar con una libreta, una novela y la certeza de que una tarde sin plan es una tarde perdida. Enfrente tiene a dos personas que llevan años sabiendo estar sentadas sin llenar el hueco. La tensión no es el aburrimiento, sino descubrir a las ocho que aquí estar es una manera de hacer, y que ella acaba de hacerlo tres horas seguidas.",
+  "text": "Un martes de finales de septiembre la terraza está vacía. Quique saca dos butacas a la puerta y Rocío se sienta. Irene llega por la calle con una libreta y una novela, y no las abre.\n\n“Siéntate, guapa, que hoy no hay nada que hacer y mañana tampoco”, dice Quique. Rocío bosteza callada sobre el cojín y mece la butaca con el talón. Pasan veinte minutos sin que nadie hable e Irene se siente aburrida.\n\n“¿Y vosotros qué hacéis aquí toda la tarde, si no viene nadie?”, pregunta al fin. “Esto que ves, y a veces ni eso”, contesta Rocío con una mueca, y tararea algo muy bajo. “La tarde no se llena, hija; por ahora se aguanta sentada y se acaba sola”, dice Quique.\n\nIrene se mete la libreta en el bolsillo y prueba a no hacer nada. Al principio le pesa; luego da un sorbo al café tibio y deja de contar las horas. A las ocho se pone de pie con un gusto raro en el cuerpo.",
+  "vocab": [
+   {
+    "word": "terraza",
+    "type": "noun",
+    "definition": "The tables a bar puts outside on the street."
+   },
+   {
+    "word": "vacío",
+    "surface": "vacía",
+    "type": "adjective",
+    "definition": "Empty, with nobody and nothing left inside it."
+   },
+   {
+    "word": "calle",
+    "type": "noun",
+    "definition": "The road between two rows of houses in a town."
+   },
+   {
+    "word": "butaca",
+    "surface": "butacas",
+    "type": "noun",
+    "definition": "Big soft chair with arms, made for sitting long."
+   },
+   {
+    "word": "cojín",
+    "type": "noun",
+    "definition": "Soft bag of cloth you put under you when sitting."
+   },
+   {
+    "word": "libreta",
+    "type": "noun",
+    "definition": "Small notebook you carry to write short things down."
+   },
+   {
+    "word": "novela",
+    "type": "noun",
+    "definition": "Long story in a book, made up by a writer."
+   },
+   {
+    "word": "bostezar",
+    "surface": "bosteza",
+    "type": "verb",
+    "definition": "To open your mouth wide because you are sleepy or bored."
+   },
+   {
+    "word": "callado",
+    "surface": "callada",
+    "type": "adjective",
+    "definition": "Saying nothing, staying quiet without being angry about it."
+   },
+   {
+    "word": "mecer",
+    "surface": "mece",
+    "type": "verb",
+    "definition": "To move something slowly back and forward, again and again."
+   },
+   {
+    "word": "talón",
+    "type": "noun",
+    "definition": "The hard back part of your foot, under the ankle."
+   },
+   {
+    "word": "aburrido",
+    "surface": "aburrida",
+    "type": "adjective",
+    "definition": "Bored, with nothing to do and the time going slowly."
+   },
+   {
+    "word": "al fin",
+    "type": "expression",
+    "definition": "At last, after waiting longer than you wanted to."
+   },
+   {
+    "word": "a veces",
+    "type": "expression",
+    "definition": "Sometimes; on some days but not on the others."
+   },
+   {
+    "word": "tararear",
+    "surface": "tararea",
+    "type": "verb",
+    "definition": "To sing a tune quietly with your mouth almost closed."
+   },
+   {
+    "word": "bolsillo",
+    "type": "noun",
+    "definition": "The small cloth bag sewn inside your trousers or coat."
+   },
+   {
+    "word": "pesar",
+    "surface": "pesa",
+    "type": "verb",
+    "definition": "To feel heavy and hard to carry, even without weight."
+   },
+   {
+    "word": "sorbo",
+    "type": "noun",
+    "definition": "The small amount of drink you take in one go."
+   },
+   {
+    "word": "tibio",
+    "type": "adjective",
+    "definition": "Warm, but not hot enough any more to be nice."
+   },
+   {
+    "word": "por ahora",
+    "type": "expression",
+    "definition": "For now; from this moment until something else changes."
+   },
+   {
+    "word": "gusto",
+    "type": "noun",
+    "definition": "A good feeling something leaves in you afterwards.",
+    "surface": "gusto"
+   },
+   {
+    "word": "mueca",
+    "type": "noun",
+    "definition": "A quick face somebody pulls instead of saying a word."
+   }
+  ]
+ },
+ {
+  "topic": "company-and-long-afternoons",
+  "slotIndex": 2,
+  "title": "La masa quiere media hora",
+  "slug": "la-masa-quiere-media-hora",
+  "arcType": "daily-encounter",
+  "synopsis": "A las cinco Rosa deja la masa en reposo y arrastra dos sillas hasta la puerta del cuarto de atrás. No hay nada que decir y ninguna de las dos lo intenta: pasa una paloma, sube la masa y la tarde se estira sola. Rosa suelta un recuerdo pequeño de cuando era ella la que se sentaba ahí, y luego vuelve el calor del horno sin que nadie lo comente.",
+  "text": "Huele a masa en el cuarto de atrás de la panadería de Rosa. Rosa deja la masa en reposo, se limpia las manos y arrastra dos sillas hasta la entrada. Irene se sienta con la espalda contra la pared.\n\n“Ahora no se toca, guapa; la masa quiere media hora quieta y luego sube sola”, dice Rosa. Una paloma anda por el patio y las dos la miran un ratito. Irene estira las piernas y no busca nada que decir.\n\n“Mi madre me sentaba aquí a esta hora y no hablábamos nunca”, cuenta Rosa. “Yo creía que era por algo malo, y era lo mejor del día”, añade con la boca llena. La masa sube muy lentamente y se pone espesa por dentro.\n\n“Se está bien sin hacer nada”, dice Irene, y le sale corta y verdadera. Rosa acerca un cuenco con rodajas de pan tierno y sal por encima. A las seis vuelve el calor del horno y ninguna de las dos lo comenta.",
+  "vocab": [
+   {
+    "word": "masa",
+    "type": "noun",
+    "definition": "Soft mix of flour and water, before it becomes bread."
+   },
+   {
+    "word": "cuarto",
+    "type": "noun",
+    "definition": "A room in a house or behind a shop."
+   },
+   {
+    "word": "reposo",
+    "type": "noun",
+    "definition": "Time when something is left still, to rest and change."
+   },
+   {
+    "word": "arrastrar",
+    "surface": "arrastra",
+    "type": "verb",
+    "definition": "To pull something along the floor instead of lifting it."
+   },
+   {
+    "word": "espalda",
+    "type": "noun",
+    "definition": "The whole back of your body, from neck to waist."
+   },
+   {
+    "word": "sin hacer nada",
+    "type": "expression",
+    "definition": "Doing nothing at all, and not minding about it.",
+    "surface": "sin hacer nada"
+   },
+   {
+    "word": "paloma",
+    "type": "noun",
+    "definition": "Grey town bird that walks around looking for crumbs."
+   },
+   {
+    "word": "patio",
+    "type": "noun",
+    "definition": "Small open space with walls, behind or inside a house."
+   },
+   {
+    "word": "ratito",
+    "type": "noun",
+    "definition": "A short little while, shorter than a proper rato."
+   },
+   {
+    "word": "estirar",
+    "surface": "estira",
+    "type": "verb",
+    "definition": "To make a part of your body longer and straighter."
+   },
+   {
+    "word": "pierna",
+    "surface": "piernas",
+    "type": "noun",
+    "definition": "Each of the two long parts you stand on."
+   },
+   {
+    "word": "a esta hora",
+    "type": "expression",
+    "definition": "At this time of day, the same time every day."
+   },
+   {
+    "word": "boca",
+    "type": "noun",
+    "definition": "The opening in your face that you eat and speak with."
+   },
+   {
+    "word": "lentamente",
+    "type": "adverb",
+    "definition": "Slowly, taking much more time than you would expect."
+   },
+   {
+    "word": "espeso",
+    "surface": "espesa",
+    "type": "adjective",
+    "definition": "Thick and heavy, hard to stir or to pour."
+   },
+   {
+    "word": "verdadero",
+    "surface": "verdadera",
+    "type": "adjective",
+    "definition": "True; really felt, and not said just to be nice."
+   },
+   {
+    "word": "cuenco",
+    "type": "noun",
+    "definition": "Round deep dish with no handles, for olives or soup."
+   },
+   {
+    "word": "rodaja",
+    "surface": "rodajas",
+    "type": "noun",
+    "definition": "Round flat piece cut across bread or a fruit."
+   },
+   {
+    "word": "tierno",
+    "type": "adjective",
+    "definition": "Soft to bite, still fresh and not gone hard."
+   },
+   {
+    "word": "sal",
+    "type": "noun",
+    "definition": "White grains you put on food to give it taste."
+   }
+  ]
+ },
+ {
+  "topic": "company-and-long-afternoons",
+  "slotIndex": 3,
+  "title": "Ya no le pesa callarse",
+  "slug": "ya-no-le-pesa-callarse",
+  "arcType": "harmonic-close",
+  "synopsis": "Un domingo de octubre Rocío sube perezosa, con sueño y sin ganas de hablar, y por primera vez es Irene la que sostiene la tarde. No la llena de preguntas ni de temas: pone una colcha en el suelo, aguarda, y deja que su vecina se duerma media hora en la butaca. Cuando Rocío despierta, lo que dice no tiene nada que ver con la tarde y lo dice todo.",
+  "text": "Ya hay penumbra en la escalera a las siete y el domingo se hace largo. Rocío sube perezosa, con pantuflas y muy poco sueño encima. Irene le abre sin preguntar nada, le acerca la butaca y coloca una sábana detrás.\n\n“Hoy no tengo conversación, hija, y tampoco tengo ganas de que me la den”, dice Rocío. “No pasa nada, descansa un rato y ya hablamos mañana”, contesta Irene, y le echa una colcha por encima. Antes, la primera vez, habría llenado ese silencio con tres preguntas.\n\nAhora solo aguarda, sin buscar temas. Rocío se queda dormida media hora con la almohada bajo la mejilla. Fuera, un ladrido corto cruza el patio y nadie se mueve.\n\n“Se te da bien esto de callarte, guapa; en agosto no sabías”, susurra Rocío al despertar. “Lo he aprendido aquí, contigo y con la siesta”, contesta Irene, y le acerca un vaso. Las dos permanecen así hasta que se apagan las luces de la terraza.",
+  "vocab": [
+   {
+    "word": "penumbra",
+    "type": "noun",
+    "definition": "The half dark of a room before anybody turns lights on."
+   },
+   {
+    "word": "perezoso",
+    "surface": "perezosa",
+    "type": "adjective",
+    "definition": "Slow and heavy, with no wish to do anything."
+   },
+   {
+    "word": "pantufla",
+    "surface": "pantuflas",
+    "type": "noun",
+    "definition": "Soft warm shoe you only wear inside the house."
+   },
+   {
+    "word": "sueño",
+    "type": "noun",
+    "definition": "The wish to sleep that comes over you at night."
+   },
+   {
+    "word": "no pasa nada",
+    "type": "expression",
+    "definition": "It does not matter; there is no problem here."
+   },
+   {
+    "word": "descansar",
+    "surface": "descansa",
+    "type": "verb",
+    "definition": "To stop doing things for a while and get your strength back."
+   },
+   {
+    "word": "colcha",
+    "type": "noun",
+    "definition": "Thin cover you put over a bed or over your legs."
+   },
+   {
+    "word": "primera vez",
+    "type": "expression",
+    "definition": "The first time something happens, when it is all new."
+   },
+   {
+    "word": "colocar",
+    "surface": "coloca",
+    "type": "verb",
+    "definition": "To put something carefully in the place it should be."
+   },
+   {
+    "word": "sábana",
+    "type": "noun",
+    "definition": "Large thin cloth that goes between you and the bed."
+   },
+   {
+    "word": "aguardar",
+    "surface": "aguarda",
+    "type": "verb",
+    "definition": "To wait quietly, without asking when it will end."
+   },
+   {
+    "word": "dormido",
+    "surface": "dormida",
+    "type": "adjective",
+    "definition": "Asleep, or only half awake and still very slow."
+   },
+   {
+    "word": "siesta",
+    "type": "noun",
+    "definition": "The short sleep people take after eating at midday."
+   },
+   {
+    "word": "almohada",
+    "type": "noun",
+    "definition": "Soft bag you put your head on to sleep."
+   },
+   {
+    "word": "mejilla",
+    "type": "noun",
+    "definition": "The soft side of your face, under your eye."
+   },
+   {
+    "word": "ladrido",
+    "type": "noun",
+    "definition": "The short loud sound that a dog makes."
+   },
+   {
+    "word": "susurrar",
+    "surface": "susurra",
+    "type": "verb",
+    "definition": "To speak so quietly that only one person hears you."
+   },
+   {
+    "word": "despertar",
+    "type": "verb",
+    "definition": "To stop being asleep and open your eyes again."
+   },
+   {
+    "word": "permanecer",
+    "surface": "permanecen",
+    "type": "verb",
+    "definition": "To stay in the same place, without moving away."
+   },
+   {
+    "word": "luces",
+    "type": "noun",
+    "definition": "The lamps of a place, and the light they give."
+   }
+  ]
+ }
+]
