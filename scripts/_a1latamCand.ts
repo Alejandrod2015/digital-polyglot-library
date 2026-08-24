@@ -4,10 +4,7 @@ import { PrismaClient } from "../src/generated/prisma";
 import { variantPool } from "@/lib/languageVariant";
 import { isSpanishA1A2 } from "@/lib/cefr/spanishA1A2";
 const CAND: Record<string, string[]> = {
-  "2 Prices & Change · CDMX": ["apurado","pedir","alcanzar","costar","valer","justo","exacto","redondo","mostrar","cargar","llevar","traer","oler","dulce","agrio","salado","blando","maduro","pequeño","grande"],
-  "3 Calls & Messages · Cartagena": ["sobrino","madre","hija","apellido","cumplir","edad","retrato","carta","sobre","canción","guitarra","hermana","boda","fiesta","abrir"],
-  "4 Help & Repairs · Oaxaca": ["oscuro","claro","filo","hueco","grieta","torcido","viejo","pequeño","entero","liso"],
-  "5 Names for Things · Buenos Aires": ["alfajor","lomito","cortado","submarino","panqueque","churro","milanesa","empanada"],
+  "expresiones para la 2": ["sin darse cuenta","a esa hora","otra vez","medio andén","hasta la nariz","de noche","por si acaso","a tiempo"],
 };
 const p = new PrismaClient();
 (async () => {

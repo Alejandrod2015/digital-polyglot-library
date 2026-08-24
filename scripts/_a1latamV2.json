@@ -1,0 +1,395 @@
+[
+  {
+    "topic": "night-buses",
+    "slotIndex": 1,
+    "slug": "nadie-escribe-la-hora",
+    "title": "Nadie escribe la hora",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "Elena vuelve a Cusco y quiere seguir viaje de noche, pero el letrero de la terminal no dice la misma hora que dice la taquilla. Julio la acompaña y le traduce lo que nadie escribe en ninguna parte: por qué queda un solo asiento libre, por qué es adelante y por qué el mismo viaje cuesta el triple cuando se hace a oscuras.",
+    "text": "El terminal de Cusco, en Perú, huele a gasolina y a pan. Elena llega con la valija y un bolso, y busca el letrero de su ruta. Junto a la taquilla espera Julio, un chofer de taxi que ya la llevó al mirador.\n\n“¿A qué hora sale?” “El horario cambia; hoy sale a las ocho en punto.” Elena mira el letrero y esa hora no está escrita ahí.\n\nEn la taquilla venden el boleto y le dan un pasaje de papel. “Queda un asiento disponible, adelante y del lado de la ventana.” Elena lo escucha y no dice nada.\n\n“Es el triple de lo que cuesta ese viaje de día.” “La gente con plata toma el avión, y de noche falta gente; por eso sube.” Julio lleva la valija y el equipaje hasta la puerta.\n\nOtro viajero quiere ese lugar y se va sin comprar. Elena apunta el precio en la libreta y guarda el pasaje en el bolso. “A las ocho estoy aquí”, dice Julio, y vuelve al taxi.",
+    "vocab": [
+      {
+        "word": "terminal",
+        "surface": "terminal",
+        "definition": "the building where long-distance buses arrive and leave",
+        "type": "noun"
+      },
+      {
+        "word": "taquilla",
+        "surface": "taquilla",
+        "definition": "the small window where tickets are sold to travellers",
+        "type": "noun"
+      },
+      {
+        "word": "boleto",
+        "surface": "boleto",
+        "definition": "the ticket you buy to travel on a bus",
+        "type": "noun"
+      },
+      {
+        "word": "pasaje",
+        "surface": "pasaje",
+        "definition": "the printed slip that proves you paid for a seat",
+        "type": "noun"
+      },
+      {
+        "word": "horario",
+        "surface": "horario",
+        "definition": "the list of times at which buses leave and arrive",
+        "type": "noun"
+      },
+      {
+        "word": "ruta",
+        "surface": "ruta",
+        "definition": "the road a bus follows between two towns or cities",
+        "type": "noun"
+      },
+      {
+        "word": "precio",
+        "surface": "precio",
+        "definition": "the amount of money something costs to buy",
+        "type": "noun"
+      },
+      {
+        "word": "letrero",
+        "surface": "letrero",
+        "definition": "a board with words on it that announces something",
+        "type": "noun"
+      },
+      {
+        "word": "disponible",
+        "surface": "disponible",
+        "definition": "free to be used or taken by someone else",
+        "type": "adjective"
+      },
+      {
+        "word": "asiento",
+        "surface": "asiento",
+        "definition": "the place where one person sits inside a bus",
+        "type": "noun"
+      },
+      {
+        "word": "equipaje",
+        "surface": "equipaje",
+        "definition": "all the bags a person carries when travelling somewhere",
+        "type": "noun"
+      },
+      {
+        "word": "valija",
+        "surface": "valija",
+        "definition": "a large stiff bag with a handle for clothes",
+        "type": "noun"
+      },
+      {
+        "word": "bolso",
+        "surface": "bolso",
+        "definition": "a soft bag carried by hand or over the shoulder",
+        "type": "noun"
+      },
+      {
+        "word": "libreta",
+        "surface": "libreta",
+        "definition": "a small notebook for writing short notes down",
+        "type": "noun"
+      },
+      {
+        "word": "viajero",
+        "surface": "viajero",
+        "definition": "a person who is making a journey somewhere else",
+        "type": "noun"
+      },
+      {
+        "word": "falta gente",
+        "surface": "falta gente",
+        "definition": "there are not enough people for something to work",
+        "type": "expression"
+      },
+      {
+        "word": "en punto",
+        "surface": "en punto",
+        "definition": "exactly at that hour, not a minute later",
+        "type": "expression"
+      },
+      {
+        "word": "triple",
+        "surface": "triple",
+        "definition": "three times as much as the amount named",
+        "type": "adjective"
+      },
+      {
+        "word": "la gente con plata",
+        "surface": "La gente con plata",
+        "definition": "people who have enough money to spend freely",
+        "type": "expression"
+      },
+      {
+        "word": "avión",
+        "surface": "avión",
+        "definition": "the machine that carries people through the air",
+        "type": "noun"
+      }
+    ]
+  },
+  {
+    "topic": "night-buses",
+    "slotIndex": 2,
+    "slug": "la-manta-se-pide-antes",
+    "title": "La manta se pide antes",
+    "arcType": "reframe-turn",
+    "synopsis": "Ocho horas de noche dentro del bus, con el andén a oscuras y un farol que alumbra la mitad. Julio llama para saber si pidió la manta a tiempo, y Elena descubre que un viaje así no se aguanta con paciencia: se aguanta con tres cosas que hay que pedir antes de que apaguen la luz, y ella acaba de aprender cuáles son.",
+    "text": "El andén queda en la oscuridad y el bus abre las puertas a las ocho. Elena sube por el pasillo con el abrigo en el brazo. Un farol viejo alumbra medio andén y nada más.\n\nEl bus arranca y Elena apoya la cabeza en la ventanilla. Entra una llamada de Julio. “¿Pediste la manta a tiempo?”\n\n“Sí, y también el cinturón, que estaba debajo del asiento.” “Entonces ya está; duerme antes de la primera curva.” Elena saca lentamente el termo del bolso.\n\nEn cada parada alguien sube y el bus se llena despacio. Elena come una galleta mientras el chofer frena y arranca otra vez. Nadie habla y el motor suena parejo.\n\nEl asiento nunca es cómodo, pero se duerme igual sin darse cuenta. Se despierta cuando entra la primera luz y afuera no hay pueblo. Se tapa con la manta hasta la nariz y espera la luz.",
+    "vocab": [
+      {
+        "word": "andén",
+        "surface": "andén",
+        "definition": "the raised strip where passengers wait beside the buses",
+        "type": "noun"
+      },
+      {
+        "word": "oscuridad",
+        "surface": "oscuridad",
+        "definition": "the state of a place when there is no light",
+        "type": "noun"
+      },
+      {
+        "word": "manta",
+        "surface": "manta",
+        "definition": "a thick cloth you put over yourself to keep warm",
+        "type": "noun"
+      },
+      {
+        "word": "cinturón",
+        "surface": "cinturón",
+        "definition": "the strap that holds a passenger against the seat",
+        "type": "noun"
+      },
+      {
+        "word": "termo",
+        "surface": "termo",
+        "definition": "a tall flask that keeps a drink hot for hours",
+        "type": "noun"
+      },
+      {
+        "word": "pasillo",
+        "surface": "pasillo",
+        "definition": "the narrow walking space between two rows of seats",
+        "type": "noun"
+      },
+      {
+        "word": "ventanilla",
+        "surface": "ventanilla",
+        "definition": "the small window beside a seat on a bus",
+        "type": "noun"
+      },
+      {
+        "word": "curva",
+        "surface": "curva",
+        "definition": "a bend where the road turns to one side",
+        "type": "noun"
+      },
+      {
+        "word": "frenar",
+        "surface": "frena",
+        "definition": "to make a vehicle slow down or come to a stop",
+        "type": "verb"
+      },
+      {
+        "word": "despertar",
+        "surface": "se despierta",
+        "definition": "to stop sleeping and open your eyes again",
+        "type": "verb"
+      },
+      {
+        "word": "dormirse",
+        "surface": "Se duerme",
+        "definition": "to fall asleep without meaning to do it",
+        "type": "verb"
+      },
+      {
+        "word": "abrigo",
+        "surface": "abrigo",
+        "definition": "a warm coat you wear over the other clothes",
+        "type": "noun"
+      },
+      {
+        "word": "farol",
+        "surface": "farol",
+        "definition": "a tall lamp that lights a street or a yard",
+        "type": "noun"
+      },
+      {
+        "word": "parada",
+        "surface": "parada",
+        "definition": "a place where a bus stops to let people on",
+        "type": "noun"
+      },
+      {
+        "word": "galleta",
+        "surface": "galleta",
+        "definition": "a small hard sweet biscuit you eat with your hands",
+        "type": "noun"
+      },
+      {
+        "word": "cómodo",
+        "surface": "cómodo",
+        "definition": "pleasant to sit in, without making your body hurt",
+        "type": "adjective"
+      },
+      {
+        "word": "lentamente",
+        "surface": "lentamente",
+        "definition": "doing something slowly, taking more time than usual",
+        "type": "adverb"
+      },
+      {
+        "word": "mientras",
+        "surface": "mientras",
+        "definition": "during the same time that something else is happening",
+        "type": "adverb"
+      },
+      {
+        "word": "a tiempo",
+        "surface": "a tiempo",
+        "definition": "early enough for it to still be possible",
+        "type": "expression"
+      },
+      {
+        "word": "sin darse cuenta",
+        "surface": "sin darse cuenta",
+        "definition": "without noticing that it was happening at all",
+        "type": "expression"
+      }
+    ]
+  },
+  {
+    "topic": "night-buses",
+    "slotIndex": 3,
+    "slug": "el-pueblo-no-tiene-letrero",
+    "title": "El pueblo no tiene letrero",
+    "arcType": "recurring-character-callback",
+    "synopsis": "El bus llega de noche y con dos horas de retraso a un pueblo que no anuncia su nombre en ninguna parte. Elena llama a Julio para decirle que llegó y él, medio dormido, le pasa el número de alguien que maneja por esa zona. El viaje deja de terminar cuando ella baja del bus y empieza a tener continuación.",
+    "text": "El bus entra al pueblo con dos horas de retraso y todavía es de noche. Elena baja al estacionamiento y huele a pan recién hecho. El trayecto fue tan largo que le duelen las rodillas.\n\nDetrás de la puerta, un hombre vende termos y pan. Elena prende el teléfono y no encuentra señal. Tampoco hay un letrero, y apoya la valija contra la pared.\n\nAl fin aparece una raya de señal y llama a Julio, aunque seguramente está durmiendo. “¿Llegaste bien?” “Con retraso, pero la llegada fue tranquila.”\n\n“La subida fue lenta y en la bajada el chofer frenó bastante.” “Eso es normal ahí.” Elena subraya el nombre del pueblo en la libreta.\n\nJulio le presta un número: el de alguien que maneja por esa zona. “Ponlo en la libreta, por si acaso.” Elena lo escribe y guarda una pila de repuesto en el bolso.",
+    "vocab": [
+      {
+        "word": "llegada",
+        "surface": "llegada",
+        "definition": "the moment when someone or something arrives somewhere",
+        "type": "noun"
+      },
+      {
+        "word": "trayecto",
+        "surface": "trayecto",
+        "definition": "the whole distance a bus covers between two places",
+        "type": "noun"
+      },
+      {
+        "word": "retraso",
+        "surface": "retraso",
+        "definition": "the extra time you wait when something comes late",
+        "type": "noun"
+      },
+      {
+        "word": "subida",
+        "surface": "subida",
+        "definition": "a stretch of road that climbs towards higher ground",
+        "type": "noun"
+      },
+      {
+        "word": "bajada",
+        "surface": "bajada",
+        "definition": "a stretch of road that goes down towards lower ground",
+        "type": "noun"
+      },
+      {
+        "word": "pueblo",
+        "surface": "pueblo",
+        "definition": "a small town with few streets and few people",
+        "type": "noun"
+      },
+      {
+        "word": "estacionamiento",
+        "surface": "estacionamiento",
+        "definition": "the open ground where vehicles are left standing",
+        "type": "noun"
+      },
+      {
+        "word": "apoyar",
+        "surface": "apoya",
+        "definition": "to rest something against a surface so it stays there",
+        "type": "verb"
+      },
+      {
+        "word": "subrayar",
+        "surface": "subraya",
+        "definition": "to draw a line under a word you wrote",
+        "type": "verb"
+      },
+      {
+        "word": "prender",
+        "surface": "prende",
+        "definition": "to switch on a light, a screen or a machine",
+        "type": "verb"
+      },
+      {
+        "word": "poner",
+        "surface": "Ponlo",
+        "definition": "to place something somewhere or write it down",
+        "type": "verb"
+      },
+      {
+        "word": "prestar",
+        "surface": "presta",
+        "definition": "to give something for a while, expecting it back",
+        "type": "verb"
+      },
+      {
+        "word": "detrás",
+        "surface": "Detrás",
+        "definition": "at the back of something, on its far side",
+        "type": "adverb"
+      },
+      {
+        "word": "tampoco",
+        "surface": "Tampoco",
+        "definition": "not that one either, adding a second missing thing",
+        "type": "adverb"
+      },
+      {
+        "word": "aunque",
+        "surface": "aunque",
+        "definition": "even so, marking a fact that works against",
+        "type": "adverb"
+      },
+      {
+        "word": "tan",
+        "surface": "tan",
+        "definition": "so much, to that degree or that extent",
+        "type": "adverb"
+      },
+      {
+        "word": "bastante",
+        "surface": "bastante",
+        "definition": "quite a lot, more than a little but not fully",
+        "type": "adverb"
+      },
+      {
+        "word": "seguramente",
+        "surface": "seguramente",
+        "definition": "most likely, though nobody has checked it yet",
+        "type": "adverb"
+      },
+      {
+        "word": "de repuesto",
+        "surface": "de repuesto",
+        "definition": "kept aside in case the first one fails",
+        "type": "expression"
+      },
+      {
+        "word": "al fin",
+        "surface": "Al fin",
+        "definition": "after a long wait, the thing finally happens",
+        "type": "expression"
+      }
+    ]
+  }
+]
