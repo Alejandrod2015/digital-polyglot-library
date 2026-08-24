@@ -1,42 +1,58 @@
 # Traveler · spanish/latam · A1 (journey cmt5vxwgd0007324oesy195k8, draft)
 
-Continúa el A0 latam (cmqrtaj1p000032qtda86z6um). Reparto heredado, no inventado.
+REHECHO el 2026-08-24. La version anterior partia de una premisa inventada:
+Ana como "guia de la Ciudad de Mexico" que recorria cuatro paises. En el A0 Ana
+NO es mexicana ni es guia; es una visitante cuyo pais no se nombra nunca
+("Ana mira el menu, pero no comprende mucho", "¿por que no hay horchata en mi
+pais?"). Y el A0 no tiene protagonista: son siete arcos independientes.
 
-## Temas (portón de evidencia, `assertTopicsGrounded`, 7 citas distintas de 6 personas)
+## La forma del A0, leida de la base (no supuesta)
 
-| # | slug | label | cita verbatim de BetaSignup |
+| tema | lugar | elenco | protagonista |
 |---|---|---|---|
-| 1 | night-buses | Night Buses | "speak Spanish when travelling" (Geraldine) |
-| 2 | rooms-and-keys | Rooms & Keys | "Holiday home in Spain" (Vincent) |
-| 3 | prices-and-change | Prices & Change | "Conduct full business meetings" (Christopher) |
-| 4 | calls-and-messages | Calls & Messages | "I want to have my own conversations with her" (Jaelyn) |
-| 5 | help-and-repairs | Help & Repairs | "reached for or fixed" (Jaelyn) |
-| 6 | names-for-things | Names for Things | "understand and use slang from Colombia" (Ty) |
-| 7 | drivers-and-guides | Drivers & Guides | "for my job and friends" (Earl) |
+| food-everyday-life | Ciudad de Mexico | Ana, la señora del mercado, Carla | Ana, visitante sin pais |
+| home-family | Cartagena | Lucia, su mama, la abuela, el tio Jorge | Lucia, local |
+| meeting-new-people | Buenos Aires | Pablo, Marta, Lucas, Sofia | Pablo, recien llegado sin pais |
+| places-getting-around | Cusco | Elena, Julio | Elena, turista sin pais |
+| community-celebrations | Barranquilla | Camilo, su mama, su abuelo | Camilo, local |
+| legends-folklore | Oaxaca | Mateo, la tia Rosa | Mateo, local |
+| nature-adventure | Patagonia, Chile | Valentina, su papa | Valentina |
 
-## Reparto
+Reglas que salen de ahi y que el A1 hereda:
+- Un sitio por tema. Nadie cruza de tema.
+- A quien viene de fuera no se le nombra el pais: es "turista" y dice "mi pais".
+- Cada tema es un arco de tres con un giro emocional, no tres estampas.
 
-Fijos (2): **Ana**, guía de la Ciudad de México, en las 21. **Julio**, chofer de Cusco, en 6.
-Uno nuevo por tema, presentado en la primera historia del tema:
-Milagros (dueña del hostal, Arequipa), Rubén (cambista, Cusco), Pablo (vendedor de
-celulares, Buenos Aires; viene del A0), Marta (arregla lo que otros tiran, Buenos Aires;
-del A0), Lucas (mesero, Buenos Aires; del A0), Efraín (mecánico, Cusco).
-Presentaciones: aposición 3, tras el lugar 3, con ser 2. Todos adultos en activo.
+## Los siete temas del A1 (porton `assertTopicsGrounded`: OK)
 
-## Espina que atraviesa las 21
+| # | slug | label | lugar | elenco que continua | cita verbatim |
+|---|---|---|---|---|---|
+| 1 | night-buses | Night Buses | Cusco | Elena + Julio | "speak  Spanish when travelling" (Geraldine) |
+| 2 | prices-and-change | Prices & Change | Ciudad de Mexico | Ana + la señora + Carla | "Conduct full business meetings in Spanish" (Christopher) |
+| 3 | calls-and-messages | Calls & Messages | Cartagena | Lucia + su mama | "I want to have my own conversations with her" (Jaelyn) |
+| 4 | help-and-repairs | Help & Repairs | Oaxaca | Mateo + la tia Rosa | "reached for or fixed" (Jaelyn) |
+| 5 | names-for-things | Names for Things | Buenos Aires | Pablo + Marta + Lucas | "understand and use slang from Colombia" (Ty) |
+| 6 | doors-and-neighbours | Doors & Neighbours | Barranquilla | Camilo + su mama | "I wish to talk to neighbours" (Vincent) |
+| 7 | trails-and-weather | Trails & Weather | Patagonia | Valentina + su papa | "a different way to learn Spanish" (Earl) |
 
-¿Ana se lanza con su propia ruta o vuelve al mostrador? La libreta, el precio y la
-lista son el objeto recurrente; el escritorio de su oficina se lo dan a otra en la 9
-(la que acaba peor de como empieza) y la ruta vende sus dos primeros pasajes en la 21.
+`doors-and-neighbours` y `trails-and-weather` son slugs NUEVOS: se crean con
+`isUniversal: false`.
 
-## Vocabulario
+**La cita 7 es la mas floja de las siete y no lo escondo.** "A different way to
+learn Spanish" respalda cualquier tema, que es justo lo que el porton existe
+para impedir; pasa porque cumple el minimo de 3 palabras y 15 caracteres. En
+las 31 frases escritas del corpus no hay ninguna que pida montaña, sendero ni
+clima. Si el tema 7 se cae, se cae por ahi.
 
-420 plazas, todas distintas, cero solape con Traveler ES latam A0, México A0 y España A1
-(845 lemas quemados). Máximo 2 lemas de journeys de otro tipo por historia.
-21 plazas son conectores de A1 (aunque, mientras, según, incluso, tampoco, tanto...),
-que es lo que separa un A1 de un A0 más largo y lo único que recircula de verdad.
+## Choque con la regla de edades
 
-## Estado de los gates
+Cuatro elencos del A0 se apoyan en abuela, abuelo o tia, y desde el 2026-07-07
+el contenido NUEVO no lleva ancianos ni niños. Al continuarlos: los jovenes
+(Lucia, Camilo, Mateo) son adultos en activo, y los abuelos no reaparecen. La
+tia Rosa se queda solo si se la escribe como adulta de 40-55, no como anciana.
 
-- `validateGeneratedStory`: **21/21 ok===true**.
-- Gate de journey: **12 de 13**. Falla `journey-vocab-recirculation`: 2,00 frente a 2,5.
+## Lo que queda por rehacer
+
+Las 21 historias, enteras. El vocabulario (420 plazas) esta validado y sin
+solape, pero esta pegado a las escenas viejas, asi que hay que re-encajarlo
+escena a escena.
