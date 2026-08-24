@@ -8693,6 +8693,18 @@
     "olvide": {
       "g": "forget (olvidar, subjunctive after para que)",
       "t": "verb"
+    },
+    "blando": {
+      "g": "soft, easy to press in with your fingers",
+      "t": "adjective"
+    },
+    "lámpara": {
+      "g": "the lamp that lights a room or a table",
+      "t": "noun"
+    },
+    "funda": {
+      "g": "the soft cover that protects an instrument",
+      "t": "noun"
     }
   }
 }

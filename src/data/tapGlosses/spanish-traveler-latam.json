@@ -11057,6 +11057,38 @@
   "pieza": {
    "g": "a dance number",
    "t": "noun"
+  },
+  "acabó": {
+   "g": "ended up",
+   "t": "verb"
+  },
+  "anda": {
+   "g": "walks, goes",
+   "t": "verb"
+  },
+  "blando": {
+   "g": "soft, easy to press in with your fingers",
+   "t": "adjective"
+  },
+  "cuello": {
+   "g": "collar, neck",
+   "t": "noun"
+  },
+  "estira": {
+   "g": "stretches out",
+   "t": "verb"
+  },
+  "funda": {
+   "g": "the soft cover that protects an instrument",
+   "t": "noun"
+  },
+  "lámpara": {
+   "g": "the lamp that lights a room or a table",
+   "t": "noun"
+  },
+  "mirarla": {
+   "g": "to look at her",
+   "t": "verb"
   }
  }
 }

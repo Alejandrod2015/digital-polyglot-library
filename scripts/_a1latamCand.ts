@@ -4,7 +4,8 @@ import { PrismaClient } from "../src/generated/prisma";
 import { variantPool } from "@/lib/languageVariant";
 import { isSpanishA1A2 } from "@/lib/cefr/spanishA1A2";
 const CAND: Record<string, string[]> = {
-  "portables libres": ["soltar","mover","guardar","empujar","levantar","bajar","acercar","alejar","tardar","durar","caber","sonar","oler","doler","pesar","medir","contar","olvidar","recordar","seguir","volver","salir","entrar","subir","llenar","vaciar","abrir","cerrar","romper","limpiar","cambiar","probar","buscar","encontrar","perder","dejar","poner","sacar","meter","tocar"],
+  "verbos": ["esperar","llamar","mandar","llevar","traer","pedir","dar","decir","ver","oir","saber","querer","deber","poder","hacer","ir","venir","estar","tener","andar","correr","saltar","tirar","empezar","terminar","seguir","parar","cortar","pegar","atar","colgar","apagar","prender","llenar","secar","mojar","doblar","estirar","apretar","aflojar"],
+  "adjetivos": ["largo","corto","alto","bajo","ancho","estrecho","grueso","delgado","nuevo","limpio","oscuro","claro","fuerte","suave","dulce","amargo","tibio","helado","lleno","abierto","cerrado","listo","tranquilo","nervioso","cansado","contento","serio","amable","joven","fácil"],
 };
 const p = new PrismaClient();
 (async () => {
