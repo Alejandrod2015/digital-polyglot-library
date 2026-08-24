@@ -913,7 +913,17 @@ export async function validateGeneratedStory(
   // es una decision de producto del usuario y no cambia al subir de nivel; lo
   // que cambia es la densidad. La referencia es el A1 de Espana, que corre de
   // 132 a 168 palabras con media 157, holgadamente dentro de 115-170.
-  const isOneMinuteTier = isA0 || ["A1", "B1"].includes((context.level ?? "").toUpperCase());
+  //
+  // A2 entra el 2026-08-24, al abrir el escalon que faltaba entre el A1 y el
+  // B1 de Espana, y NO es una decision nueva: es la misma que ya estaba
+  // escrita dos parrafos arriba ("la duracion de una historia es una decision
+  // de producto del usuario y no cambia al subir de nivel"). A2 se habia
+  // quedado fuera de la lista por omision, no por criterio, y eso dejaba la
+  // cadena a0 -> a1 -> a2 -> b1 con un bulto en medio: 132-168 palabras en el
+  // A1, 220-280 en el A2 y otra vez 132-168 en el B1. Meterlo APRIETA la
+  // ventana (de 180-320 a 100-190), no la abre, asi que no es calibrar hacia
+  // abajo para que pase nada.
+  const isOneMinuteTier = isA0 || ["A1", "A2", "B1"].includes((context.level ?? "").toUpperCase());
   const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = isOneMinuteTier
     ? [100, 190, 115, 170]
     : [180, 320, 220, 280];

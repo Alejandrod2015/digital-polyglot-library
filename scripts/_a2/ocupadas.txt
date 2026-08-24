@@ -1,0 +1,890 @@
+a la hora de nadie	traveler/a1
+a la vista	traveler/a1
+a las nueve	traveler/a1
+a las once	traveler/a1
+a por	traveler/a1
+a ver	traveler/a1
+abierto	traveler/a1
+abre	traveler/a1
+abrirse	traveler/a1
+aceite	traveler/a1
+aceituna	traveler/b1
+aceitunas	traveler/a1
+acera	traveler/a1
+acercarse	traveler/a1
+aclarar	traveler/b1
+acordarse	traveler/a1
+acuerdo	traveler/b1
+admitir	traveler/b1
+advertir	traveler/b1
+agosto	traveler/a1
+agradable	traveler/b1
+agradecido	traveler/b1
+aguantar	traveler/a1
+ahorrar	traveler/b1
+ajo	traveler/a1
+al dia siguiente	traveler/a1
+al fondo	traveler/a1
+al lado de	traveler/a1
+al pasar	traveler/a1
+al reves	traveler/a1
+al tragar	traveler/a1
+alambre	traveler/b1
+albanil	traveler/b1
+alegrarse	traveler/b1
+alga	traveler/b1
+algo de alguien	traveler/a1
+algo de picar	traveler/a1
+algo mas	traveler/a1
+alivio	traveler/b1
+almacen	traveler/a1
+ambiente	traveler/b1
+anadir	traveler/a1
+anda	traveler/a1
+andando	traveler/a1
+antes	traveler/a1
+antipatico	traveler/b1
+anuncio	traveler/b1
+apagado	traveler/b1
+apagar	traveler/a1
+aparato	traveler/b1
+apellido	traveler/a1
+apilar	traveler/b1
+apoyada	traveler/a1
+apoyo	traveler/b1
+aprobacion	traveler/b1
+aprobar	traveler/b1
+apuntar	traveler/a1
+argumento	traveler/b1
+armario	traveler/b1
+arreglar	traveler/a1
+arreglos	traveler/b1
+asentir	traveler/a1
+asomar	traveler/a1
+asunto	traveler/b1
+atreverse	traveler/b1
+aun	traveler/a1
+aunque sea	traveler/a1
+avisar	traveler/a1
+azucar	traveler/b1
+azulejo	traveler/b1
+baja	traveler/a1
+bajar	traveler/a1
+bajo	traveler/a1
+baldosa	traveler/b1
+banco	traveler/a1
+barandilla	traveler/a1
+barato	traveler/b1
+barra	traveler/a1
+barro	traveler/b1
+basura	traveler/b1
+bata	traveler/a1
+batir	traveler/a1
+bebida	traveler/a1
+beneficio	traveler/b1
+bien dicho	traveler/a1
+bizcocho	traveler/a1
+blanca	traveler/a1
+blando	traveler/b1
+boda	traveler/a1
+bollo	traveler/b1
+bolsa	traveler/a1
+bolso	traveler/a1
+borrar	traveler/a1
+bote	traveler/b1
+brocha	traveler/b1
+broma	traveler/b1
+buenas	traveler/a1
+buenos dias	traveler/a1
+buscar	traveler/a1
+caber	traveler/a1
+cada poco	traveler/a1
+cadena	traveler/b1
+caerse	traveler/a1
+caja	traveler/a1
+caliente	traveler/a1
+callar	traveler/b1
+cambiar la cara	traveler/a1
+camion	traveler/b1
+campo	traveler/b1
+cana	traveler/a1
+canela	traveler/a1
+cantidad	traveler/b1
+capa	traveler/b1
+carga	traveler/b1
+caridad	traveler/b1
+carnet	traveler/b1
+carpintero	traveler/b1
+carta	traveler/a1
+cartel	traveler/a1
+cartera	traveler/a1
+casilla	traveler/b1
+casualidad	traveler/b1
+ceja	traveler/a1
+celebrar	traveler/a1
+cemento	traveler/b1
+cena	traveler/a1
+centimetro	traveler/b1
+cepillo	traveler/b1
+cerrado	traveler/a1
+cerradura	traveler/b1
+cerrar	traveler/a1
+cerrojo	traveler/b1
+cerveza	traveler/b1
+cesta	traveler/b1
+charanga	traveler/a1
+cheque	traveler/b1
+chica	traveler/a1
+chiste	traveler/b1
+chocar	traveler/a1
+chorro	traveler/b1
+chubasco	traveler/b1
+cierre	traveler/b1
+cifra	traveler/b1
+claro	traveler/a1
+clavo	traveler/b1
+cliente	traveler/b1
+cobrar	traveler/a1
+coche	traveler/a1
+cocina	traveler/a1
+codo	traveler/a1
+coger aire	traveler/a1
+cola del pan	traveler/a1
+colaboracion	traveler/b1
+coleccion	traveler/b1
+colgado	traveler/a1
+comedor	traveler/a1
+comentario	traveler/b1
+comision	traveler/a1
+comparar	traveler/b1
+compasion	traveler/b1
+complicarse	traveler/a1
+compra	traveler/a1
+comprar	traveler/a1
+comprobar	traveler/b1
+compromiso	traveler/b1
+comunidad	traveler/b1
+con cuidado	traveler/a1
+condicion	traveler/b1
+confianza	traveler/b1
+confiar	traveler/b1
+confundir	traveler/a1
+confusion	traveler/b1
+conocer	traveler/a1
+consecuencia	traveler/b1
+consejo	traveler/b1
+consulta	traveler/b1
+contado	traveler/b1
+contar	traveler/a1
+contenedor	traveler/b1
+contenta	traveler/a1
+contesta	traveler/a1
+contexto	traveler/b1
+contrato	traveler/b1
+contraventana	traveler/b1
+conversacion	traveler/a1
+convivir	traveler/b1
+copa	traveler/b1
+correo	traveler/b1
+corta	traveler/a1
+cortes	traveler/b1
+cortina	traveler/b1
+cosa	traveler/a1
+costumbre	traveler/a1
+crecer	traveler/b1
+credito	traveler/b1
+crisis	traveler/b1
+criticar	traveler/b1
+cruce	traveler/b1
+cruzar	traveler/a1
+cruzarse	traveler/a1
+cuantos vamos a ser	traveler/a1
+cubeta	traveler/b1
+cubo	traveler/a1
+cuello	traveler/a1
+cuenta	traveler/a1
+cuerda	traveler/b1
+cumpleanero	traveler/a1
+cunada	traveler/a1
+cuota	traveler/b1
+danado	traveler/b1
+dar pereza	traveler/a1
+dar tiempo	traveler/a1
+darse la vuelta	traveler/a1
+dato	traveler/b1
+de broma	traveler/a1
+de cerca	traveler/a1
+de dos en dos	traveler/a1
+de frente	traveler/a1
+de golpe	traveler/a1
+de hecho	traveler/b1
+de memoria	traveler/a1
+de otra manera	traveler/a1
+de pie	traveler/a1
+debajo	traveler/a1
+debate	traveler/b1
+deber una	traveler/a1
+deber	traveler/b1
+decidir	traveler/a1
+decidirse	traveler/a1
+decir que si	traveler/a1
+decision	traveler/b1
+deducir	traveler/b1
+defender	traveler/b1
+dejar	traveler/a1
+del bueno	traveler/a1
+del todo	traveler/a1
+delantal	traveler/a1
+demasiado	traveler/a1
+dentro	traveler/a1
+desacuerdo	traveler/b1
+desague	traveler/b1
+desayunar	traveler/a1
+descansillo	traveler/a1
+descanso	traveler/b1
+desconfiar	traveler/b1
+descuento	traveler/b1
+despacio	traveler/a1
+despejado	traveler/b1
+desprecio	traveler/b1
+detergente	traveler/b1
+deuda	traveler/b1
+devolver	traveler/b1
+dias	traveler/a1
+diccionario	traveler/a1
+dificultad	traveler/b1
+difundir	traveler/b1
+dignidad	traveler/b1
+directo	traveler/b1
+disco	traveler/b1
+discreto	traveler/b1
+doblar	traveler/a1
+docena	traveler/b1
+documento	traveler/b1
+doler	traveler/a1
+dormir	traveler/a1
+dos veces	traveler/a1
+drama	traveler/b1
+duda	traveler/a1
+dueno	traveler/a1
+durar	traveler/a1
+duro	traveler/b1
+echada	traveler/a1
+edificio	traveler/a1
+educado	traveler/a1
+el de al lado	traveler/a1
+embarcadero	traveler/b1
+empanada	traveler/a1
+empezar	traveler/a1
+empleo	traveler/b1
+empresa	traveler/b1
+empujar	traveler/a1
+en concreto	traveler/b1
+en cuanto	traveler/b1
+en realidad	traveler/b1
+en voz alta	traveler/a1
+encima de	traveler/a1
+encontrar	traveler/a1
+encontrarse	traveler/a1
+enfrente	traveler/a1
+enorme	traveler/a1
+ensayo	traveler/b1
+enseguida	traveler/a1
+ensenar	traveler/a1
+entender	traveler/a1
+entendido	traveler/a1
+enterarse	traveler/b1
+entrega	traveler/b1
+envidia	traveler/b1
+envuelto	traveler/a1
+equipo	traveler/b1
+equivocarse	traveler/b1
+error	traveler/a1
+es decir	traveler/b1
+es que	traveler/a1
+esa cara	traveler/a1
+esa semana	traveler/a1
+escalera	traveler/a1
+escalon	traveler/a1
+escapar	traveler/b1
+escena	traveler/a1
+esconder	traveler/b1
+escondido	traveler/a1
+escribir	traveler/a1
+escrito	traveler/a1
+escuchar	traveler/a1
+esfuerzo	traveler/b1
+eso si	traveler/a1
+espejo	traveler/a1
+espera	traveler/a1
+esperar	traveler/a1
+espesar	traveler/a1
+esponja	traveler/b1
+espuma	traveler/b1
+esquina	traveler/a1
+estanco	traveler/a1
+este ano	traveler/a1
+estufa	traveler/b1
+etiqueta	traveler/b1
+evitar	traveler/b1
+exacto	traveler/b1
+excusa	traveler/a1
+explicacion	traveler/b1
+explicar	traveler/a1
+extender	traveler/b1
+fachada	traveler/a1
+factura	traveler/b1
+fallar	traveler/b1
+faltar	traveler/b1
+farmaceutica	traveler/a1
+faro	traveler/b1
+farola	traveler/b1
+felicidades	traveler/a1
+felicitar	traveler/b1
+felpudo	traveler/b1
+festejar	traveler/b1
+ficha	traveler/b1
+fiebre	traveler/a1
+fiel	traveler/b1
+finalizar	traveler/b1
+flecha	traveler/a1
+fontanero	traveler/b1
+franco	traveler/b1
+frase	traveler/b1
+fregar	traveler/b1
+fregona	traveler/a1
+fria	traveler/a1
+fritanga	traveler/a1
+frotar	traveler/b1
+funcionar	traveler/a1
+ganar	traveler/b1
+garganta	traveler/a1
+gas	traveler/b1
+gastar	traveler/b1
+gestion	traveler/b1
+gesto	traveler/b1
+golpe	traveler/b1
+gotear	traveler/b1
+gracia	traveler/b1
+grasa	traveler/b1
+grava	traveler/b1
+grifo	traveler/b1
+gritar	traveler/a1
+grosero	traveler/b1
+guante	traveler/b1
+guapa	traveler/a1
+guardar	traveler/a1
+guiso	traveler/a1
+habitual	traveler/b1
+hablando de	traveler/a1
+hablar mal	traveler/a1
+hacer cola	traveler/a1
+hacerse a	traveler/a1
+hambre	traveler/a1
+harina	traveler/a1
+hermana	traveler/a1
+herramienta	traveler/b1
+hielo	traveler/b1
+hierro	traveler/b1
+hija	traveler/a1
+hilo	traveler/b1
+hoja	traveler/b1
+honesto	traveler/b1
+hora	traveler/a1
+horario	traveler/a1
+hornear	traveler/b1
+horno	traveler/a1
+hueco	traveler/a1
+huevo	traveler/b1
+humedas	traveler/a1
+humilde	traveler/b1
+idioma	traveler/b1
+igual de	traveler/a1
+igual	traveler/a1
+igualdad	traveler/b1
+imagen	traveler/b1
+importancia	traveler/b1
+imprudente	traveler/b1
+impuesto	traveler/b1
+incomodo	traveler/b1
+inferir	traveler/b1
+inquilino	traveler/b1
+insistir	traveler/a1
+instalacion	traveler/b1
+instrucciones	traveler/a1
+interrumpir	traveler/b1
+interruptor	traveler/b1
+inundacion	traveler/b1
+inutil	traveler/b1
+invierno	traveler/a1
+invitar	traveler/a1
+jabon	traveler/a1
+jamon	traveler/a1
+jarabe	traveler/a1
+jornada	traveler/b1
+juicio	traveler/b1
+julio	traveler/a1
+juntarse	traveler/b1
+justo	traveler/a1
+la del primero	traveler/a1
+ladera	traveler/b1
+ladrillo	traveler/b1
+lampara	traveler/b1
+lancha	traveler/b1
+lapiz	traveler/b1
+largo	traveler/a1
+lealtad	traveler/b1
+leche	traveler/b1
+leer	traveler/a1
+lejano	traveler/a1
+lema	traveler/b1
+lento	traveler/b1
+letrero	traveler/b1
+levadura	traveler/b1
+levantar	traveler/a1
+levantarse	traveler/a1
+levante	traveler/b1
+libre	traveler/a1
+ligera	traveler/a1
+lijar	traveler/b1
+limpieza	traveler/b1
+lista	traveler/b1
+llama	traveler/a1
+llamada	traveler/b1
+llaves	traveler/a1
+llenarse	traveler/a1
+lleno	traveler/a1
+llevar	traveler/a1
+lo que te salga	traveler/a1
+lodo	traveler/b1
+logro	traveler/b1
+losa	traveler/b1
+luego	traveler/a1
+luz	traveler/a1
+madera	traveler/a1
+mala cara	traveler/a1
+mala idea	traveler/a1
+malecon	traveler/b1
+maleducado	traveler/b1
+maleta	traveler/a1
+manana	traveler/a1
+mancha	traveler/b1
+mandar	traveler/a1
+manguera	traveler/b1
+manta	traveler/b1
+maquina	traveler/a1
+marchando	traveler/a1
+marcharse	traveler/a1
+marea	traveler/b1
+margen	traveler/b1
+martes	traveler/a1
+martillo	traveler/b1
+marzo	traveler/a1
+mas bajo	traveler/a1
+material	traveler/b1
+mayoria	traveler/b1
+media hora	traveler/a1
+mejor dicho	traveler/b1
+mejor	traveler/a1
+mejora	traveler/b1
+menos cinco	traveler/a1
+mensaje	traveler/a1
+mentir	traveler/b1
+mesa larga	traveler/a1
+mesilla	traveler/a1
+miembro	traveler/b1
+minoria	traveler/b1
+minutos	traveler/a1
+mio	traveler/a1
+mira que	traveler/a1
+mira	traveler/a1
+mirada	traveler/b1
+mismo	traveler/a1
+mitad	traveler/b1
+modesto	traveler/b1
+mojado	traveler/b1
+molde	traveler/b1
+moneda	traveler/a1
+montar	traveler/a1
+morado	traveler/b1
+morder	traveler/a1
+mostrador	traveler/a1
+movil	traveler/a1
+muchas gracias	traveler/a1
+mueble	traveler/b1
+muelle	traveler/b1
+mueve	traveler/a1
+mujer	traveler/a1
+murmullo	traveler/b1
+murmurar	traveler/b1
+muy bueno	traveler/a1
+negar	traveler/b1
+negativa	traveler/b1
+negociar	traveler/b1
+negocio	traveler/b1
+ni el gato	traveler/a1
+nino	traveler/a1
+nivel	traveler/b1
+no hace falta	traveler/a1
+no tiene ciencia	traveler/b1
+nombre	traveler/a1
+nota	traveler/b1
+notar	traveler/a1
+novedad	traveler/b1
+novios	traveler/a1
+nudo	traveler/b1
+nueva	traveler/a1
+numeros	traveler/a1
+o sea	traveler/b1
+obligacion	traveler/b1
+obra	traveler/b1
+ocho minutos	traveler/a1
+ocultar	traveler/b1
+ocupado	traveler/a1
+ofender	traveler/b1
+oferta	traveler/b1
+oficio	traveler/b1
+ofrecer	traveler/b1
+oir	traveler/a1
+oler	traveler/a1
+olor	traveler/a1
+oracion	traveler/b1
+orden	traveler/b1
+ordenado	traveler/a1
+oreja	traveler/b1
+otono	traveler/b1
+otra vez sera	traveler/a1
+otra vez	traveler/a1
+oye	traveler/a1
+pagar	traveler/a1
+pagina	traveler/b1
+palma	traveler/b1
+pan	traveler/a1
+panaderia	traveler/a1
+panadero	traveler/b1
+papel	traveler/a1
+papelera	traveler/b1
+paquete	traveler/a1
+para ser de	traveler/a1
+parada	traveler/a1
+pararse	traveler/a1
+pareja	traveler/a1
+parentesco	traveler/a1
+parte	traveler/b1
+pasa	traveler/a1
+pasillo	traveler/b1
+pastel	traveler/b1
+patatas	traveler/a1
+pausa	traveler/b1
+pedida	traveler/a1
+pedido	traveler/b1
+pedir	traveler/a1
+pegarse	traveler/a1
+peinada	traveler/a1
+peldano	traveler/b1
+pena	traveler/b1
+pensar	traveler/a1
+pequena	traveler/a1
+percibir	traveler/b1
+perderse	traveler/a1
+perdida	traveler/a1
+perdon	traveler/b1
+perdona	traveler/a1
+periodico	traveler/a1
+perjuicio	traveler/b1
+persiana	traveler/a1
+persistir	traveler/b1
+pesa	traveler/a1
+pesca	traveler/b1
+peso	traveler/b1
+piensa	traveler/a1
+pijama	traveler/a1
+pincel	traveler/b1
+pincho de tortilla	traveler/a1
+pintura	traveler/b1
+piso de arriba	traveler/a1
+pista	traveler/b1
+pizarra	traveler/b1
+plantilla	traveler/b1
+plastico	traveler/b1
+plata	traveler/a1
+plato	traveler/a1
+platos	traveler/a1
+plazo	traveler/b1
+pliegue	traveler/b1
+polvo	traveler/b1
+ponerse colorada	traveler/a1
+por delante	traveler/a1
+por donde empezar	traveler/a1
+por ella	traveler/a1
+por la tarde	traveler/a1
+por orden	traveler/a1
+por si acaso	traveler/a1
+por si	traveler/a1
+por todas partes	traveler/a1
+porcentaje	traveler/b1
+portal	traveler/a1
+portero	traveler/b1
+poste	traveler/b1
+postre	traveler/a1
+precio	traveler/b1
+pregon	traveler/a1
+pregunta	traveler/a1
+premio	traveler/b1
+prensa	traveler/b1
+preocuparse	traveler/a1
+prepararse	traveler/a1
+presentar	traveler/b1
+presidente	traveler/b1
+prestamo	traveler/b1
+prestar	traveler/b1
+prima	traveler/a1
+primavera	traveler/b1
+primo	traveler/b1
+prisa	traveler/b1
+privacidad	traveler/b1
+privado	traveler/b1
+privilegio	traveler/b1
+profundidad	traveler/b1
+prometer	traveler/b1
+pronto	traveler/a1
+proponer	traveler/a1
+propuesta	traveler/b1
+proveedor	traveler/b1
+prudente	traveler/b1
+publicar	traveler/b1
+pueblo vecino	traveler/a1
+pueblo	traveler/a1
+puerta	traveler/a1
+puesto	traveler/a1
+pulir	traveler/b1
+punto de vista	traveler/b1
+punto	traveler/b1
+que rabia	traveler/a1
+que tal	traveler/a1
+que viene	traveler/a1
+quedar	traveler/a1
+quedarse	traveler/a1
+quejarse	traveler/b1
+queso	traveler/a1
+quicio	traveler/b1
+quien es quien	traveler/a1
+quieta	traveler/a1
+quieto	traveler/b1
+quiosco	traveler/b1
+quitar	traveler/a1
+racion	traveler/b1
+rafaga	traveler/b1
+rango	traveler/b1
+raro	traveler/a1
+raya	traveler/a1
+razon	traveler/b1
+reaccion	traveler/b1
+rebaja	traveler/b1
+receta	traveler/a1
+rechazar	traveler/b1
+reclamacion	traveler/b1
+recoger	traveler/a1
+recuerda	traveler/a1
+red	traveler/b1
+reforma	traveler/b1
+regalo	traveler/a1
+registro	traveler/b1
+reir	traveler/a1
+reirse	traveler/a1
+relajado	traveler/b1
+relato	traveler/b1
+rellano	traveler/a1
+reloj	traveler/a1
+reparado	traveler/b1
+reparar	traveler/b1
+repasar	traveler/a1
+repetir	traveler/a1
+replica	traveler/b1
+reserva	traveler/b1
+reservado	traveler/b1
+respirar	traveler/a1
+responder	traveler/a1
+respuesta	traveler/a1
+resta	traveler/b1
+resto	traveler/b1
+resultado	traveler/b1
+resumir	traveler/b1
+retraso	traveler/b1
+reunion	traveler/b1
+revelar	traveler/b1
+revisar	traveler/b1
+rincon	traveler/b1
+risueno	traveler/b1
+rodilla	traveler/a1
+rodillas	traveler/a1
+rodillo	traveler/b1
+ronda	traveler/a1
+roto	traveler/b1
+rotonda	traveler/b1
+rotulador	traveler/b1
+ruido	traveler/a1
+ruidoso	traveler/b1
+sacar	traveler/a1
+sacrificio	traveler/b1
+sacudir	traveler/b1
+salado	traveler/b1
+saldo	traveler/b1
+salir	traveler/a1
+saludar	traveler/a1
+saludo	traveler/a1
+sardina	traveler/b1
+satira	traveler/b1
+satisfactorio	traveler/b1
+se me ha ido la mano	traveler/a1
+secar	traveler/a1
+secretaria	traveler/b1
+secreto	traveler/b1
+seguidas	traveler/a1
+seguir	traveler/a1
+segundo	traveler/a1
+sello	traveler/b1
+semana	traveler/a1
+senal	traveler/b1
+senalar	traveler/a1
+sencillo	traveler/b1
+senda	traveler/b1
+senoras	traveler/a1
+sensato	traveler/b1
+sentada	traveler/a1
+sentarse	traveler/a1
+sentido	traveler/b1
+sereno	traveler/b1
+serie	traveler/a1
+servilleta	traveler/a1
+servilletas	traveler/a1
+sierra	traveler/b1
+sigue con	traveler/a1
+silaba	traveler/b1
+silbido	traveler/b1
+silencio	traveler/a1
+sillon	traveler/b1
+simpatico	traveler/b1
+sin darle importancia	traveler/a1
+sin levantar la vista	traveler/a1
+sin mas	traveler/a1
+sin mirarla	traveler/a1
+sin preguntar	traveler/a1
+sin prisa	traveler/a1
+sin querer	traveler/b1
+sincero	traveler/b1
+sitio	traveler/a1
+situacion	traveler/b1
+sobrar	traveler/b1
+sobrellevar	traveler/b1
+sobrio	traveler/b1
+sofa	traveler/a1
+sol	traveler/a1
+sola	traveler/a1
+solicitud	traveler/b1
+solidario	traveler/b1
+soltar	traveler/a1
+sombra	traveler/a1
+sonar	traveler/a1
+sonriente	traveler/b1
+sorprender	traveler/a1
+sospechar	traveler/b1
+sube	traveler/a1
+subrayar	traveler/b1
+sujetar	traveler/b1
+sumar	traveler/b1
+suspicaz	traveler/b1
+susurro	traveler/b1
+tabique	traveler/b1
+taburete	traveler/b1
+tacano	traveler/b1
+taller	traveler/a1
+tamano	traveler/b1
+tapar	traveler/b1
+tapete	traveler/b1
+tapia	traveler/b1
+tardar	traveler/a1
+tarea	traveler/b1
+tarifa	traveler/b1
+tarjeta	traveler/b1
+techo	traveler/b1
+tela	traveler/b1
+telefonillo	traveler/a1
+temprano	traveler/a1
+tendero	traveler/b1
+tercero	traveler/a1
+testigo	traveler/b1
+texto	traveler/b1
+tia	traveler/a1
+tiempo	traveler/a1
+timbre	traveler/a1
+timidez	traveler/a1
+tiza	traveler/a1
+toca	traveler/a1
+toldo	traveler/a1
+tono	traveler/b1
+tonta	traveler/a1
+tonto	traveler/b1
+tornillo	traveler/b1
+torpe	traveler/b1
+tortilla	traveler/a1
+tos seca	traveler/a1
+tostada	traveler/a1
+total, que	traveler/a1
+total	traveler/b1
+traduccion	traveler/b1
+traducir	traveler/a1
+traer	traveler/a1
+tragar	traveler/a1
+tranquilidad	traveler/b1
+tranquilo	traveler/a1
+transmitir	traveler/b1
+trapear	traveler/b1
+trato	traveler/b1
+trecho	traveler/b1
+triunfo	traveler/b1
+trozo	traveler/a1
+tuberia	traveler/b1
+tuyo	traveler/a1
+umbral	traveler/b1
+un buen rato	traveler/a1
+un poco	traveler/a1
+unanime	traveler/b1
+union	traveler/b1
+uy	traveler/a1
+vacia	traveler/a1
+vale	traveler/a1
+valla	traveler/b1
+valorar	traveler/b1
+varilla	traveler/b1
+vaso	traveler/a1
+vecina	traveler/a1
+vecinas	traveler/a1
+veinte minutos	traveler/a1
+velero	traveler/b1
+vencer	traveler/b1
+venir	traveler/a1
+vente	traveler/a1
+ventilador	traveler/a1
+verbena	traveler/a1
+verduleria	traveler/b1
+vergonzoso	traveler/b1
+version	traveler/b1
+viaje	traveler/a1
+vigilar	traveler/b1
+vinagre	traveler/a1
+vino	traveler/a1
+visto bueno	traveler/b1
+vitrina	traveler/b1
+vivienda	traveler/b1
+vocabulario	traveler/b1
+votacion	traveler/b1
+voto	traveler/b1
+vuelve	traveler/a1
+vulgar	traveler/b1
+y media	traveler/a1
+y veinte	traveler/a1
+y ya esta	traveler/a1
+ya te diran	traveler/a1
+ya veremos	traveler/a1
+zumo	traveler/a1
