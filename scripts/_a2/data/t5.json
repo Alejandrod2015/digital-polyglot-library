@@ -1,0 +1,359 @@
+[
+ {
+  "topic": "pots-and-home-cooking",
+  "slotIndex": 1,
+  "title": "Esa olla no se friega",
+  "slug": "esa-olla-no-se-friega",
+  "arcType": "daily-encounter",
+  "synopsis": "Rosa la sube a comer a su casa un jueves y en esa cocina no hay idioma de repuesto: nadie baja la marcha, nadie traduce, nadie repite. Irene tiene que seguir una conversación entera hecha de instrucciones cortas mientras pela, revuelve y aguarda su turno con la cuchara. Lo que se lleva de esa mesa no es un plato, es la primera hora seguida en la que no ha traducido nada por dentro.",
+  "text": "Esa olla negra de Rosa, la panadera, lleva cuarenta años en el mismo fuego. Sube a Irene a comer un jueves, sin avisar y sin preguntarle si entiende. En la cocina hay una cazuela tapada, un colador en el fregadero y humo tibio.\n\n“Pela esas patatas, córtalas en rodajas y échalas al caldo antes de que hierva”, dice Rosa. “Y revuelve con la cuchara vieja, que la nueva le cambia el gusto a todo”. Irene pela despacio, corta y revuelve sin que nadie la espere ni un poco.\n\nEl aroma sube y se le pega a la ropa mientras pica el perejil. “Prueba eso y dime si le falta sal o si le sobra pimienta, guapa”, pide Rosa. Irene moja la cuchara, aguarda un ratito y contesta que le falta poco.\n\nComen con el mantel puesto y la sartén todavía al fuego. Nadie repite nada, nadie traduce nada y la conversación no baja la marcha. Al bajar, Irene se da cuenta de que no ha traducido en una hora.",
+  "vocab": [
+   {
+    "word": "olla",
+    "type": "noun",
+    "definition": "Deep round pot with two handles, for soups and stews."
+   },
+   {
+    "word": "fuego",
+    "type": "noun",
+    "definition": "The flame of the cooker, under a pot or a pan."
+   },
+   {
+    "word": "colador",
+    "type": "noun",
+    "definition": "Bowl full of small holes that lets the water run out."
+   },
+   {
+    "word": "fregadero",
+    "type": "noun",
+    "definition": "The sink in a kitchen where you wash the dishes."
+   },
+   {
+    "word": "humo",
+    "type": "noun",
+    "definition": "The grey cloud that rises from something hot or burning."
+   },
+   {
+    "word": "pelar",
+    "surface": "pela",
+    "type": "verb",
+    "definition": "To take the skin off a potato or a fruit."
+   },
+   {
+    "word": "patata",
+    "surface": "patatas",
+    "type": "noun",
+    "definition": "Round vegetable that grows underground and is boiled or fried."
+   },
+   {
+    "word": "caldo",
+    "type": "noun",
+    "definition": "Hot clear soup made by boiling meat or vegetables."
+   },
+   {
+    "word": "hervir",
+    "surface": "hierva",
+    "type": "verb",
+    "definition": "To heat water until it bubbles and steam comes off."
+   },
+   {
+    "word": "revolver",
+    "surface": "revuelve",
+    "type": "verb",
+    "definition": "To move food round inside a pot while it cooks."
+   },
+   {
+    "word": "cuchara",
+    "type": "noun",
+    "definition": "Round tool with a handle, for eating soup with."
+   },
+   {
+    "word": "aroma",
+    "type": "noun",
+    "definition": "The good smell that hot food sends around a room."
+   },
+   {
+    "word": "picar",
+    "surface": "pica",
+    "type": "verb",
+    "definition": "To cut food into very small pieces with a knife."
+   },
+   {
+    "word": "pimienta",
+    "type": "noun",
+    "definition": "Dark powder with a sharp taste, put on food."
+   },
+   {
+    "word": "mojar",
+    "surface": "moja",
+    "type": "verb",
+    "definition": "To put something into a liquid for a moment."
+   },
+   {
+    "word": "mantel",
+    "type": "noun",
+    "definition": "Cloth that you put over a table before eating."
+   },
+   {
+    "word": "sartén",
+    "type": "noun",
+    "definition": "Flat pan with a long handle, used for frying."
+   },
+   {
+    "word": "marcha",
+    "type": "noun",
+    "definition": "The speed at which something is moving along."
+   },
+   {
+    "word": "darse cuenta",
+    "surface": "da cuenta",
+    "type": "expression",
+    "definition": "To see something you had not understood before."
+   },
+   {
+    "word": "al fuego",
+    "surface": "al fuego",
+    "type": "expression",
+    "definition": "On the cooker with the flame under it, cooking."
+   }
+  ]
+ },
+ {
+  "topic": "pots-and-home-cooking",
+  "slotIndex": 2,
+  "title": "Le sale soso",
+  "slug": "le-sale-soso",
+  "arcType": "reframe-turn",
+  "synopsis": "Irene cocina por primera vez para Rocío y Quique con la lista escrita al lado y cada cantidad medida hasta el final. Le sale correcto y le sale soso, y nadie se atreve a decirlo hasta el segundo plato. Lo que Quique le suelta mientras rebana el pan no habla de la comida: habla de la misma costumbre que le tiene el español agarrotado desde julio.",
+  "text": "Un jueves Irene cocina por primera vez para Rocío y Quique. Lleva la lista escrita al lado del fregadero, con un número en cada línea. Mezcla, cuece y fríe siguiendo el orden, sin mojar la cuchara ni una vez.\n\n“Está muy correcto, hija, de verdad”, dice Rocío, y deja el tenedor de lado. “Correcto y soso, que no es lo mismo y tú lo sabes”, añade Quique mientras rebana el pan. Irene mira su tazón y no entiende dónde está lo equivocado.\n\n“Aquí no se pesa nada, guapa; se prueba, y al final se cambia lo que haga falta”, dice Quique. “Igual que cuando hablas: suelta la frase entera y luego la arreglas por detrás”. Ella prueba con el cuchillo, echa un poquito más de sal y le encuentra el punto ácido.\n\nAl tercer intento el caldo sale sabroso y algo picante. Rocío repite y a Quique se le queda salsa en la barbilla. Irene guarda la lista en un cajón y esa noche no la echa de menos.",
+  "vocab": [
+   {
+    "word": "número",
+    "type": "noun",
+    "definition": "A figure that says how much or how many."
+   },
+   {
+    "word": "escrita",
+    "type": "adjective",
+    "definition": "Written down on paper instead of kept in your head.",
+    "surface": "escrita"
+   },
+   {
+    "word": "mezclar",
+    "surface": "Mezcla",
+    "type": "verb",
+    "definition": "To put two things together so they become one."
+   },
+   {
+    "word": "cocer",
+    "surface": "cuece",
+    "type": "verb",
+    "definition": "To cook food slowly in water over a low flame."
+   },
+   {
+    "word": "freír",
+    "surface": "fríe",
+    "type": "verb",
+    "definition": "To cook food in hot oil in a flat pan."
+   },
+   {
+    "word": "tenedor",
+    "type": "noun",
+    "definition": "Eating tool with points, used for meat and salad."
+   },
+   {
+    "word": "soso",
+    "type": "adjective",
+    "definition": "With too little salt, so the taste falls flat."
+   },
+   {
+    "word": "rebanar",
+    "surface": "rebana",
+    "type": "verb",
+    "definition": "To cut bread into flat pieces, one after another."
+   },
+   {
+    "word": "tazón",
+    "type": "noun",
+    "definition": "Big cup with no handle, used for soup or milk."
+   },
+   {
+    "word": "equivocado",
+    "type": "adjective",
+    "definition": "Wrong; not the way the thing should have been."
+   },
+   {
+    "word": "cambiar",
+    "surface": "cambia",
+    "type": "verb",
+    "definition": "To make something different from how it was."
+   },
+   {
+    "word": "cuchillo",
+    "type": "noun",
+    "definition": "Sharp tool with one blade, used to cut food."
+   },
+   {
+    "word": "poquito",
+    "type": "noun",
+    "definition": "A very small amount, less than a little."
+   },
+   {
+    "word": "ácido",
+    "type": "adjective",
+    "definition": "Sharp and sour, like lemon juice on your tongue."
+   },
+   {
+    "word": "intento",
+    "type": "noun",
+    "definition": "One try at doing something you have not managed yet."
+   },
+   {
+    "word": "sabroso",
+    "type": "adjective",
+    "definition": "With a full good taste that makes you want more."
+   },
+   {
+    "word": "picante",
+    "type": "adjective",
+    "definition": "Hot in the mouth, the way pepper or chilli is."
+   },
+   {
+    "word": "salsa",
+    "type": "noun",
+    "definition": "Thick liquid poured over food to give it taste."
+   },
+   {
+    "word": "echar de menos",
+    "surface": "echa de menos",
+    "type": "expression",
+    "definition": "To miss something you no longer have with you."
+   },
+   {
+    "word": "de verdad",
+    "surface": "de verdad",
+    "type": "expression",
+    "definition": "Really; said to show that you are not joking."
+   }
+  ]
+ },
+ {
+  "topic": "pots-and-home-cooking",
+  "slotIndex": 3,
+  "title": "El caldo no era suyo",
+  "slug": "el-caldo-no-era-suyo",
+  "arcType": "late-reveal",
+  "synopsis": "Alguien lleva desde octubre dándole de comer a Irene sin firmar el favor, y ella se lo ha estado agradeciendo a la persona equivocada. El día en que devuelve los cacharros al piso correcto se le junta lo bueno con lo malo en la misma puerta: la que la alimenta cada jueves es también la que tiene medio prometido su piso a otra. Baja sin saber cuál de las dos cosas pesa más.",
+  "text": "En la cocina de Irene hay tres recipientes y un trapo que no son suyos. Desde octubre aparece uno tapado en el suelo, tibio y sin una letra. Rosa le sigue el juego cuando ella le da las gracias por la sopa.\n\n“Yo no hago sopa en noviembre, hija, que se me pone mala en dos días”, contesta Rosa. “Y esa ensaladera no ha salido nunca de mi cocina, que la mía es de arcilla”. Con la tetera en la mano, Irene llama a la puerta de arriba.\n\nRocío abre con masa en las manos y ceniza en la camisa. Detrás hay una olla al fuego y hueso de ternera en la tabla. “No hacía falta subirlo, guapa; de verdad que no hacía ninguna falta”, dice sin mirarla.\n\nIrene los deja en una silla, junto a la nevera de par en par y una pila de platos. La que le da de comer cada jueves es la que quiere su piso para otra. Baja con las dos cosas dando vueltas.",
+  "vocab": [
+   {
+    "word": "recipiente",
+    "surface": "recipientes",
+    "type": "noun",
+    "definition": "Any pot or box that you keep food inside."
+   },
+   {
+    "word": "juego",
+    "type": "noun",
+    "definition": "Something people go along with, half serious and half not."
+   },
+   {
+    "word": "sopa",
+    "type": "noun",
+    "definition": "Hot liquid food with vegetables, eaten with a spoon."
+   },
+   {
+    "word": "ponerse malo",
+    "surface": "pone mala",
+    "type": "expression",
+    "definition": "To go bad, when food stops being good to eat."
+   },
+   {
+    "word": "ensaladera",
+    "type": "noun",
+    "definition": "Big deep bowl that salad is served in."
+   },
+   {
+    "word": "arcilla",
+    "type": "noun",
+    "definition": "Brown earth that is baked hard to make pots."
+   },
+   {
+    "word": "tetera",
+    "type": "noun",
+    "definition": "Pot with a spout and a lid, for making tea."
+   },
+   {
+    "word": "camisa",
+    "type": "noun",
+    "definition": "Shirt with buttons down the front and a collar."
+   },
+   {
+    "word": "nevera",
+    "type": "noun",
+    "definition": "Cold cupboard where food is kept so it lasts."
+   },
+   {
+    "word": "hueso",
+    "type": "noun",
+    "definition": "Hard white part inside meat, left after eating."
+   },
+   {
+    "word": "ternera",
+    "type": "noun",
+    "definition": "Meat from a young cow, cooked slowly for a stew."
+   },
+   {
+    "word": "hacer falta",
+    "surface": "hacía falta",
+    "type": "expression",
+    "definition": "To be needed; something you had no need to do."
+   },
+   {
+    "word": "tabla",
+    "type": "noun",
+    "definition": "Flat board of wood that you cut food on."
+   },
+   {
+    "word": "de comer",
+    "type": "expression",
+    "definition": "Food to eat, given to somebody who needs it."
+   },
+   {
+    "word": "pila",
+    "type": "noun",
+    "definition": "A stack of things put one on top of another."
+   },
+   {
+    "word": "gracias",
+    "type": "noun",
+    "definition": "The words you say when somebody has done something for you."
+   },
+   {
+    "word": "trapo",
+    "type": "noun",
+    "definition": "Old piece of cloth kept for cleaning or drying."
+   },
+   {
+    "word": "silla",
+    "type": "noun",
+    "definition": "A seat with a back, for one person at a table."
+   },
+   {
+    "word": "ceniza",
+    "type": "noun",
+    "definition": "Grey powder that is left after something has burned."
+   },
+   {
+    "word": "de par en par",
+    "type": "expression",
+    "definition": "Wide open, with nothing holding the door back."
+   },
+   {
+    "word": "jueves",
+    "type": "noun",
+    "definition": "The fourth day of the week, after Wednesday."
+   }
+  ]
+ }
+]
