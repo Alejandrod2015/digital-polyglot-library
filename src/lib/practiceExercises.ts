@@ -444,10 +444,24 @@ function getDistractorWords(
   // agreement instead of meaning. Falls back to the looser tiers below when the
   // pool can't fill 4; so it never starves the exercise. CEFR-band filtering
   // is intentionally NOT here: items carry no level yet (that's phase 1).
-  const targetAgr = normalizeKey(item.language) === "spanish" ? spanishAgreement(item.word) : null;
+  //
+  // LA CONCORDANCIA SE MIDE SOBRE LA FORMA, NO SOBRE EL LEMA (2026-08-24). El
+  // arreglo del 2026-08-23 hizo que `fill_blank` EMITIERA los distractores en
+  // su superficie, pero el tramo de concordancia seguia comparando el LEMA del
+  // objetivo contra el LEMA del candidato. Mientras lema y superficie coinciden
+  // no se nota; en cuanto el vocab usa `surface` de verdad (`fino` -> "fina",
+  // `tenso` -> "tensa", `alzar` -> "alzados") el tramo elige por la clase
+  // equivocada y las cuatro opciones vuelven a delatarse por la forma. Medido
+  // sobre el mismo audito y con control: Traveler ES A1 1%, B1 2%, Friends A0
+  // 5% y el A2 de Espana, que marca superficie en la mitad de sus plazas, 44%.
+  // Es la misma correccion que el aleman ya tenia dos lineas mas abajo.
+  const agrSource = answerForm && !answerIsMultiword ? answerForm : item.word;
+  const targetAgr = normalizeKey(item.language) === "spanish" ? spanishAgreement(agrSource) : null;
   const agreementMatch = (candidate: PracticeFavoriteItem): boolean => {
     if (!targetAgr) return false;
-    const a = spanishAgreement(candidate.word);
+    const a = spanishAgreement(
+      !answerForm || answerIsMultiword ? candidate.word : candidate.surface || candidate.word
+    );
     return !!a && a.gender === targetAgr.gender && a.plural === targetAgr.plural;
   };
   // Alemán: misma idea que la concordancia española, otra dimensión. Se aplica
