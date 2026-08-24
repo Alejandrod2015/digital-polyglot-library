@@ -3954,6 +3954,10 @@
   "subiu": {
    "g": "got on, went up (subir)",
    "t": "verb"
+  },
+  "oferta": {
+   "g": "offer, the deal she turns down",
+   "t": "noun"
   }
  }
 }
