@@ -397,9 +397,9 @@
     "slotIndex": 1,
     "slug": "aqui-nadie-pone-el-precio",
     "title": "Aquí nadie pone el precio",
-    "arcType": "mini-cliffhanger",
+    "arcType": "juxtaposition-discovery",
     "synopsis": "Ana vuelve al mercado que ya conoce, pero esta vez no viene a comer sino a llenar una bolsa para toda la semana. Descubre que en los puestos no hay una sola cifra escrita y que preguntar cuánto cuesta, en voz alta y antes de que le envuelvan nada, es la única forma de saber si le están cobrando lo mismo que a los demás.",
-    "text": "Es lunes y el mercado huele a cebolla recién cortada. Ana entra por la carnicería y camina hasta el puesto de verdura. En la fila de adelante hay cola, y nadie parece apurado.\n\n“¿A cómo el jitomate?” “Según el tamaño; los chicos están en oferta.” La señora la reconoce y le sonríe con la mano llena de limones.\n\nAna busca una cifra escrita y no encuentra ninguna en todo el puesto. Pide medio de jitomate y unos limones. La señora lo envuelve todo en una bolsita.\n\n“Y una rebanada de queso, del salado.” “Ese es el bueno, pero cuesta un poco más.” Ana mira cómo la señora corta y pesa sin apuro.\n\nLa señora le trae una pila de servilletas y una docena de limones listos. Le cobra un número redondo y Ana lo repite en voz alta. La cifra suena razonable, pero no tiene con qué compararla.",
+    "text": "Es lunes y el mercado huele a cebolla recién cortada. Ana entra por la carnicería y camina hasta el puesto de verdura. En la fila de adelante hay cola, y nadie parece apurado.\n\n“¿A cómo el jitomate?” “Según el tamaño; los chicos están en oferta.” La señora la reconoce y le sonríe con la mano llena de limones.\n\nAna busca una cifra escrita y no encuentra ninguna en toda la fila. Pide medio de jitomate y unos limones. La señora lo envuelve todo en una bolsita.\n\n“Y una rebanada de queso, del salado.” “Ese es el bueno, pero cuesta un poco más.” Ana mira cómo la señora corta y pesa sin apuro.\n\nLa señora le trae un paquete de servilletas y una docena de limones listos. Le pide un número redondo y Ana lo repite en voz alta. La cifra suena razonable, pero no tiene con qué compararla.",
     "vocab": [
       {
         "word": "cola",
@@ -432,10 +432,10 @@
         "type": "verb"
       },
       {
-        "word": "cobrar",
-        "surface": "cobra",
-        "definition": "to ask a buyer for the money something costs",
-        "type": "verb"
+        "word": "mostrador",
+        "surface": "puesto",
+        "definition": "the long table where a seller shows the goods",
+        "type": "noun"
       },
       {
         "word": "apurado",
@@ -516,9 +516,9 @@
         "type": "verb"
       },
       {
-        "word": "pila",
-        "surface": "pila",
-        "definition": "a small heap of flat things placed one over another",
+        "word": "paquete",
+        "surface": "paquete",
+        "definition": "several small things wrapped together to be sold",
         "type": "noun"
       }
     ]
@@ -528,7 +528,7 @@
     "slotIndex": 2,
     "slug": "faltan-veinte-y-no-sobran",
     "title": "Faltan veinte y no sobran",
-    "arcType": "reframe-turn",
+    "arcType": "late-reveal",
     "synopsis": "Ana paga con el monedero casi vacío y el cambio que le devuelven no cuadra. Decirlo en voz alta delante de otros clientes le da más miedo que perder el dinero, y el mercado le enseña que reclamar veinte pesos no rompe nada: se cuenta otra vez, aparecen debajo del papel y al día siguiente la señora le guarda el lugar igual que siempre.",
     "text": "El martes el puesto huele a cilantro y Ana vuelve con el monedero casi vacío. Suma en la cabeza lo que va a gastar y le alcanza para poco. La señora ya la ve venir y le guarda el lugar.\n\n“¿Tienes sencillo?” “Solo un billete grande.” La señora hace la cuenta, canta el total y le devuelve un cambio que no es exacto.\n\nAna revisa las monedas en la palma antes de guardarlas. La cantidad no coincide con lo que marca el papel. Le faltan veinte pesos, y no de más sino de menos.\n\n“Creo que aquí falta algo.” “A ver, compara: yo puse un número redondo y tú me diste justo.” La señora deja la tarjeta de los precios sobre el cajón.\n\nAparecen los veinte pesos debajo del papel y nadie pierde nada. “Yo no gano quitándote monedas”, dice la señora, y resta el error. Por eso Ana vuelve a ese puesto y no al de enfrente.",
     "vocab": [
@@ -659,7 +659,7 @@
     "slotIndex": 3,
     "slug": "carla-paga-sin-preguntar",
     "title": "Carla paga sin preguntar",
-    "arcType": "juxtaposition-discovery",
+    "arcType": "mini-cliffhanger",
     "synopsis": "Llega Carla, que no conoce el mercado, y hace lo que Ana hacía el año pasado: paga el primer número que le dicen y se va sin la feria. Ana ya no explica el picante ni el menú; ahora explica que el gasto de la semana se decide antes de entrar, y que la bolsa pesa igual para las dos pero cuesta la mitad si se pregunta a tiempo.",
     "text": "El sábado Ana sale temprano con Carla, una amiga que no conoce el mercado y que huele todo antes de tocarlo. “Todo se ve caro”, dice Carla y aprieta la bolsa. Ana le explica que para dos personas el gasto se elige antes de entrar.\n\n“¿Cuánto la torta?” “Cincuenta, y con descuento la mitad si llevas dos.” Carla paga con un billete y se va sin la feria.\n\nCompran fresas, un tazón de barro y leche para el desayuno. Ana pide azúcar en bolsita aparte. Carla mira todo y no pregunta ningún número.\n\n“Mañana untas la manteca y encima la mermelada.” “¿Y eso se come así, sin más?” Ana se ríe y le dice que sí, que se come así.\n\nCarla carga la bolsa y ya pesa demasiado para una cuadra. “Durante la semana esto ahorra bastante”, dice Ana. El sábado sale pesado, pero los otros seis días no.",
     "vocab": [
@@ -781,6 +781,399 @@
         "word": "pesado",
         "surface": "pesado",
         "definition": "heavy and hard to carry for very long",
+        "type": "adjective"
+      }
+    ]
+  },
+  {
+    "topic": "calls-and-messages",
+    "slotIndex": 1,
+    "slug": "once-segundos-y-una-guitarra",
+    "title": "Once segundos y una guitarra",
+    "arcType": "reframe-turn",
+    "synopsis": "Llega la nota de voz que en esa casa nadie esperaba ya: el tio Jorge pone fecha a la visita que prometio hace un año y la cuelga de la boda del primo. Lucia la escucha en altavoz delante de su madre, que mira la foto de la pantalla, no dice nada y apaga el telefono con un dedo antes de irse a la cocina.",
+    "text": "El celular de Lucía suelta un zumbido a las seis de la mañana. En la pantalla hay un mensaje con un apellido que aquí casi no se dice. Afuera empieza a oler a mar.\n\nEs una nota de voz de once segundos y Lucía la pone en altavoz. Se oye una guitarra al fondo y después un saludo corto. “Voy en la semana del quince y llevo la guitarra.”\n\nLucía deja el teléfono encendido en la mesa y no se mueve. Su madre entra, ve la foto de la pantalla y se queda en silencio. Es el mismo retrato de la caja: Jorge, que no llama a su hermana hace un año.\n\n“¿Qué fecha dijo?” “La del quince, para la boda de tu primo.” La madre apaga el teléfono con un dedo y se va a la cocina.\n\nLa noticia recorre la familia antes del mediodía. La misma duda da vueltas y nadie se atreve con la importante. Lucía escribe la fecha en la agenda y deja el teléfono apagado.",
+    "vocab": [
+      {
+        "word": "celular",
+        "surface": "celular",
+        "definition": "the small phone that a person carries everywhere",
+        "type": "noun"
+      },
+      {
+        "word": "zumbido",
+        "surface": "zumbido",
+        "definition": "the low buzzing sound a phone makes when it vibrates",
+        "type": "noun"
+      },
+      {
+        "word": "pantalla",
+        "surface": "pantalla",
+        "definition": "the flat lit surface where a phone shows things",
+        "type": "noun"
+      },
+      {
+        "word": "mensaje",
+        "surface": "mensaje",
+        "definition": "a short piece of writing sent to another phone",
+        "type": "noun"
+      },
+      {
+        "word": "apellido",
+        "surface": "apellido",
+        "definition": "the family name that comes after your first name",
+        "type": "noun"
+      },
+      {
+        "word": "nota de voz",
+        "surface": "nota de voz",
+        "definition": "a short recording sent instead of a written message",
+        "type": "expression"
+      },
+      {
+        "word": "altavoz",
+        "surface": "altavoz",
+        "definition": "the part of a phone that plays sound out loud",
+        "type": "noun"
+      },
+      {
+        "word": "saludo",
+        "surface": "saludo",
+        "definition": "the short friendly words you say when you arrive",
+        "type": "noun"
+      },
+      {
+        "word": "semana",
+        "surface": "semana",
+        "definition": "the period of seven days from Monday to Sunday",
+        "type": "noun"
+      },
+      {
+        "word": "encendido",
+        "surface": "encendido",
+        "definition": "switched on and still working at this moment",
+        "type": "adjective"
+      },
+      {
+        "word": "madre",
+        "surface": "madre",
+        "definition": "the woman who gave birth to you and raised you",
+        "type": "noun"
+      },
+      {
+        "word": "en silencio",
+        "surface": "en silencio",
+        "definition": "without saying a single word to anybody there",
+        "type": "expression"
+      },
+      {
+        "word": "retrato",
+        "surface": "retrato",
+        "definition": "a picture that shows one person's face closely",
+        "type": "noun"
+      },
+      {
+        "word": "fecha",
+        "surface": "fecha",
+        "definition": "the day, month and year when something happens",
+        "type": "noun"
+      },
+      {
+        "word": "primo",
+        "surface": "primo",
+        "definition": "the son of your uncle or of your aunt",
+        "type": "noun"
+      },
+      {
+        "word": "noticia",
+        "surface": "noticia",
+        "definition": "a piece of information about something that just happened",
+        "type": "noun"
+      },
+      {
+        "word": "apagado",
+        "surface": "apagado",
+        "definition": "switched off and not working at this moment",
+        "type": "adjective"
+      },
+      {
+        "word": "boda",
+        "surface": "boda",
+        "definition": "the party held when two people get married",
+        "type": "noun"
+      },
+      {
+        "word": "hermana",
+        "surface": "hermana",
+        "definition": "a woman who has the same parents as you",
+        "type": "noun"
+      },
+      {
+        "word": "agenda",
+        "surface": "agenda",
+        "definition": "a book with dates where you write what is coming",
+        "type": "noun"
+      }
+    ]
+  },
+  {
+    "topic": "calls-and-messages",
+    "slotIndex": 2,
+    "slug": "tres-dias-marcando",
+    "title": "Tres días marcando",
+    "arcType": "recurring-character-callback",
+    "synopsis": "Lucia marca el numero de su madre tres dias seguidos y no obtiene respuesta, porque la senal se cae y porque su madre tampoco quiere contestar. Cuando por fin entra la llamada, la conversacion no va de la boda ni del viaje: va de una pelea de hace años que en esa casa se sigue contando con medias verdades.",
+    "text": "Tres días seguidos Lucía marca el número y nadie contesta. La señal se cae a media tarde y el patio queda pálido de sol. Su madre trabaja en la otra punta de la ciudad.\n\nAl cuarto día usa el auricular y aprieta el botón sin prisa. El tono suena cuatro veces y entra la llamada. “¿Vas a ir a la boda o no?”\n\n“No sé.” “Eso ya no es una respuesta.” Su madre demora en contestar y Lucía le habla suavemente.\n\nLucía le explica que Jorge no viene por ella sino por el primo. La red se cae otra vez, la conexión va lenta y hay que marcar de nuevo. En el contacto del teléfono el nombre sigue guardado entero.\n\nLucía acerca la boca al micrófono para que se oiga bien. “Ni una mentira más en esta casa.” Del otro lado hay temor, y eso también se oye.",
+    "vocab": [
+      {
+        "word": "seguido",
+        "surface": "seguidos",
+        "definition": "one after another, without a break between them",
+        "type": "adverb"
+      },
+      {
+        "word": "marcar",
+        "surface": "marca",
+        "definition": "to press the numbers that call another telephone",
+        "type": "verb"
+      },
+      {
+        "word": "número",
+        "surface": "número",
+        "definition": "the digits you press to reach somebody by phone",
+        "type": "noun"
+      },
+      {
+        "word": "señal",
+        "surface": "señal",
+        "definition": "the invisible link that lets a phone reach the network",
+        "type": "noun"
+      },
+      {
+        "word": "pálido",
+        "surface": "pálido",
+        "definition": "looking washed out, with very little colour left",
+        "type": "adjective"
+      },
+      {
+        "word": "auricular",
+        "surface": "auricular",
+        "definition": "the part of a phone you hold against your ear",
+        "type": "noun"
+      },
+      {
+        "word": "botón",
+        "surface": "botón",
+        "definition": "the small part you press to make something happen",
+        "type": "noun"
+      },
+      {
+        "word": "sin prisa",
+        "surface": "sin prisa",
+        "definition": "calmly, without any rush to get it finished",
+        "type": "expression"
+      },
+      {
+        "word": "tono",
+        "surface": "tono",
+        "definition": "the repeated sound a phone makes before somebody answers",
+        "type": "noun"
+      },
+      {
+        "word": "llamada",
+        "surface": "llamada",
+        "definition": "one occasion of speaking to somebody by telephone",
+        "type": "noun"
+      },
+      {
+        "word": "ya no",
+        "surface": "ya no",
+        "definition": "not any more, though it was true before",
+        "type": "expression"
+      },
+      {
+        "word": "demorar",
+        "surface": "demora",
+        "definition": "to take longer than expected before doing something",
+        "type": "verb"
+      },
+      {
+        "word": "suavemente",
+        "surface": "suavemente",
+        "definition": "in a soft gentle way, without raising the voice",
+        "type": "adverb"
+      },
+      {
+        "word": "red",
+        "surface": "red",
+        "definition": "the system that carries phone calls and internet",
+        "type": "noun"
+      },
+      {
+        "word": "lento",
+        "surface": "lenta",
+        "definition": "taking a long time, moving with little speed",
+        "type": "adjective"
+      },
+      {
+        "word": "contacto",
+        "surface": "contacto",
+        "definition": "a name and number saved inside a phone",
+        "type": "noun"
+      },
+      {
+        "word": "micrófono",
+        "surface": "micrófono",
+        "definition": "the part of a phone that picks up your voice",
+        "type": "noun"
+      },
+      {
+        "word": "mentira",
+        "surface": "mentira",
+        "definition": "something said that the speaker knows is untrue",
+        "type": "noun"
+      },
+      {
+        "word": "temor",
+        "surface": "temor",
+        "definition": "a quiet fear about something that might happen",
+        "type": "noun"
+      },
+      {
+        "word": "conexión",
+        "surface": "conexión",
+        "definition": "the working link between a phone and the network",
+        "type": "noun"
+      }
+    ]
+  },
+  {
+    "topic": "calls-and-messages",
+    "slotIndex": 3,
+    "slug": "la-carta-la-lleva-ella",
+    "title": "La carta la lleva ella",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Lucia compra el pasaje desde la oficina, de noche y con permiso de su jefa, y su madre contesta con una sola palabra. Lo que no llega por mensaje llega en papel: una carta corta dentro de un sobre que ella no piensa mandar por correo, porque quiere que la lleve su hija en la mano y se la entregue a Jorge en el aeropuerto.",
+    "text": "El viernes Lucía pide permiso a su jefa y se queda en la oficina hasta tarde. Abre el correo y escribe la contraseña dos veces. El teclado suena fuerte en el cuarto vacío.\n\nEn la aplicación aparece un aviso: quedan dos asientos para esa semana. Conecta el cargador porque el teléfono está en rojo. Manda el enlace a su madre y espera.\n\n“¿Lo compro o no?” “Cómpralo.” La respuesta llega exactamente un minuto después, sin un signo de más y sin un perdón.\n\nSu madre escribe también una carta corta y la mete en un sobre. “Esto se lo das tú; nunca se lo mando yo.” Lucía lee los renglones uno por uno y no borra ninguno.\n\nEn la maleta de Jorge cabe la guitarra y poco más. Su sobrina lo espera con un cartel propio, hecho con sus manos. La despedida que faltaba es suya, y llega con quince años de retraso.",
+    "vocab": [
+      {
+        "word": "jefa",
+        "surface": "jefa",
+        "definition": "the woman who is in charge of your work",
+        "type": "noun"
+      },
+      {
+        "word": "correo",
+        "surface": "correo",
+        "definition": "the system for sending written messages between computers",
+        "type": "noun"
+      },
+      {
+        "word": "contraseña",
+        "surface": "contraseña",
+        "definition": "the secret word that lets you open an account",
+        "type": "noun"
+      },
+      {
+        "word": "teclado",
+        "surface": "teclado",
+        "definition": "the set of keys you press to write letters",
+        "type": "noun"
+      },
+      {
+        "word": "aplicación",
+        "surface": "aplicación",
+        "definition": "a program on a phone that does one job",
+        "type": "noun"
+      },
+      {
+        "word": "aviso",
+        "surface": "aviso",
+        "definition": "a short message telling you that something has happened",
+        "type": "noun"
+      },
+      {
+        "word": "cargador",
+        "surface": "cargador",
+        "definition": "the cable that puts power back into a phone",
+        "type": "noun"
+      },
+      {
+        "word": "exactamente",
+        "surface": "exactamente",
+        "definition": "in a way that is right down to the detail",
+        "type": "adverb"
+      },
+      {
+        "word": "en rojo",
+        "surface": "en rojo",
+        "definition": "with almost no battery power left at all",
+        "type": "expression"
+      },
+      {
+        "word": "perdón",
+        "surface": "perdón",
+        "definition": "the words you say when you want to be forgiven",
+        "type": "noun"
+      },
+      {
+        "word": "carta",
+        "surface": "carta",
+        "definition": "a written message on paper sent to somebody",
+        "type": "noun"
+      },
+      {
+        "word": "sobre",
+        "surface": "sobre",
+        "definition": "the paper cover a letter is put inside",
+        "type": "noun"
+      },
+      {
+        "word": "nunca",
+        "surface": "nunca",
+        "definition": "at no time at all, not even once",
+        "type": "adverb"
+      },
+      {
+        "word": "uno por uno",
+        "surface": "uno por uno",
+        "definition": "taking each single thing in turn, without skipping",
+        "type": "expression"
+      },
+      {
+        "word": "borrar",
+        "surface": "borra",
+        "definition": "to remove writing so that it cannot be read",
+        "type": "verb"
+      },
+      {
+        "word": "maleta",
+        "surface": "maleta",
+        "definition": "the large bag you take on a long trip",
+        "type": "noun"
+      },
+      {
+        "word": "sobrina",
+        "surface": "sobrina",
+        "definition": "the daughter of your brother or of your sister",
+        "type": "noun"
+      },
+      {
+        "word": "propio",
+        "surface": "propio",
+        "definition": "belonging to that person and to nobody else",
+        "type": "adjective"
+      },
+      {
+        "word": "despedida",
+        "surface": "despedida",
+        "definition": "the moment of saying goodbye before somebody leaves",
+        "type": "noun"
+      },
+      {
+        "word": "suyo",
+        "surface": "suya",
+        "definition": "belonging to him or to her, not to you",
         "type": "adjective"
       }
     ]
