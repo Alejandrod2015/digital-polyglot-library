@@ -3974,6 +3974,10 @@
   "carga": {
    "g": "load, the box she is carrying",
    "t": "noun"
+  },
+  "desta": {
+   "g": "of this (de + esta)",
+   "t": "preposition"
   }
  }
 }
