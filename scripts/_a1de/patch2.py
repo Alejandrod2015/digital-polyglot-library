@@ -121,7 +121,7 @@ vocab=[
  ("noun","Schlüssel",None,"A key; the one that finally turns in the right door."),
  ("noun","Sessel",None,"An armchair; a big soft chair for one single person."),
  ("noun","Kissen",None,"A cushion or pillow; the soft square you lean or sleep on."),
- ("adjective","alt","alten","Old; the chest of drawers the present came out of."),
+ ("adjective","alt","alten","Old; it has been in the family for many years and is not new."),
  ("noun","Spiegel",None,"A mirror; the glass on the wall in which you see yourself."),
  ("noun","Balkon",None,"A balcony; the small open floor outside the window of a flat."),
  ("noun","Raum",None,"A room, or the free space inside it that you can use."),

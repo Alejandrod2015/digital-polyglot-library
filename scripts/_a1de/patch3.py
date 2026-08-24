@@ -34,7 +34,7 @@ vocab=[
  ("adverb","drinnen",None,"Inside; in the closed part of a building, not out in the open."),
  ("noun","Nachbartisch",None,"The table next to yours, close enough to speak to the people there."),
  ("noun","Sitzbank",None,"A bench; a long wooden seat that several people share."),
- ("adjective","neu",None,"New; only two weeks in town and nobody known yet."),
+ ("adjective","neu",None,"New; recently arrived somewhere and not yet known by anyone."),
  ("noun","Bier",None,"Beer; the cold drink that gives the Bavarian beer garden its name."),
  ("noun","Brezel",None,"A pretzel; a salty knot of bread eaten in southern Germany."),
  ("adverb","zusammen",None,"Together; with other people and not each one on their own."),

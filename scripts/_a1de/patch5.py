@@ -125,7 +125,7 @@ vocab=[
  ("noun","Schein",None,"A glow; the soft light that a candle or a lamp gives off."),
  ("adverb","vielleicht",None,"Maybe; you are not sure, but it might well be so."),
  ("noun","Atem",None,"Breath; the air that comes out of your mouth, white when cold."),
- ("verb","stimmen","stimmt","To be right; you say it when the other person has a point."),
+ ("noun","Schachtel",None,"A small box of card; the one that held the candles."),
  ("adjective","genug",None,"Enough; as much as you need, so nobody has to go without."),
  ("noun","Glühwein",None,"Mulled wine; hot spiced wine that warms you at a winter market."),
  ("adjective","komisch",None,"Strange or funny; not what you would normally expect."),

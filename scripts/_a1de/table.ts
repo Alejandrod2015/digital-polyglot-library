@@ -8,7 +8,7 @@ const A1 = "cmqfnp3tf000032afygkqp8z2";
   const j = await p.journey.findUnique({ where: { id: A1 }, select: { topics: true } });
   const rows = await p.journeyStory.findMany({
     where: { journeyId: A1 },
-    select: { slug: true, topic: true, slotIndex: true, status: true, audioStatus: true, coverUrl: true, audioUrl: true },
+    select: { slug: true, topic: true, slotIndex: true, status: true, audioStatus: true, coverUrl: true, audioUrl: true, voiceId: true },
   });
   const orden = j?.topics ?? [];
   rows.sort((a, b) => (orden.indexOf(a.topic) - orden.indexOf(b.topic)) || (a.slotIndex - b.slotIndex));

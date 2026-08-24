@@ -11,9 +11,9 @@ Finn: Alles drin. Wasser, Brot und zwei Äpfel.
 Mia: Hörst du, wie ruhig es hier ist?
 Finn: Nur die Vögel und der Wind in den Bäumen.
 
-Die beiden folgen dem Pfad. Die Erde riecht nach Holz.
+Die beiden folgen dem Wanderweg. Die Erde riecht nach Holz.
 
-Finn: Pass auf, hier liegt ein Ast über dem Weg. Richtig herum?
+Finn: Pass auf, hier liegt ein Ast über dem Weg.
 Mia: Danke. Schau, ein Schmetterling auf dem Blatt.
 Finn: Vielleicht steht da vorne wieder die Ziege am Zaun.
 Mia: Ein Hund bellt irgendwo. Wir sind also nicht allein.
@@ -38,7 +38,7 @@ vocab=[
  ("noun","Ast",None,"A branch; the arm of a tree that grows out of the trunk."),
  ("noun","Blatt",None,"A leaf; the flat green part that grows on a branch."),
  ("noun","Schmetterling",None,"A butterfly; the insect with big coloured wings in summer."),
- ("adverb","richtig",None,"Right; the correct way round and not the other one."),
+ ("noun","Studentin",None,"A female student; someone who studies at a university."),
  ("adverb","hinunter",None,"Downwards; from up here down towards the valley."),
  ("noun","Pause",None,"A break; a short rest in the middle of a walk or of work."),
  ("noun","Weile",None,"A while; a stretch of time that passes on a long walk."),

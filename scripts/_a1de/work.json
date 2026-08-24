@@ -726,7 +726,7 @@
     "type": "adjective",
     "word": "alt",
     "surface": "alten",
-    "definition": "Old; the chest of drawers the present came out of."
+    "definition": "Old; it has been in the family for many years and is not new."
    },
    {
     "type": "noun",
@@ -857,7 +857,7 @@
     "type": "adjective",
     "word": "neu",
     "surface": null,
-    "definition": "New; only two weeks in town and nobody known yet."
+    "definition": "New; recently arrived somewhere and not yet known by anyone."
    },
    {
     "type": "noun",
@@ -1379,9 +1379,9 @@
    },
    {
     "type": "noun",
-    "word": "Kirche",
+    "word": "Fenster",
     "surface": null,
-    "definition": "A church; the building where Christians meet to pray and sing."
+    "definition": "A window; the glass opening you look through from inside."
    },
    {
     "type": "noun",
@@ -1473,10 +1473,10 @@
     "definition": "To drink; to take water, coffee or juice into your mouth."
    },
    {
-    "type": "adjective",
-    "word": "wild",
+    "type": "noun",
+    "word": "Kuchen",
     "surface": null,
-    "definition": "Wild; here in the phrase that says a problem is not serious."
+    "definition": "A cake; the sweet one served with coffee to guests."
    },
    {
     "type": "noun",
@@ -1485,10 +1485,10 @@
     "definition": "A cake; the round sweet cake with cream that Germans serve to guests."
    },
    {
-    "type": "adjective",
-    "word": "halb",
-    "surface": null,
-    "definition": "Half; here half as bad as it sounds, not serious at all."
+    "type": "noun",
+    "word": "Stuhl",
+    "surface": "Stühle",
+    "definition": "A chair; the seats standing empty around the table."
    },
    {
     "type": "noun",
@@ -1914,10 +1914,10 @@
     "definition": "Breath; the air that comes out of your mouth, white when cold."
    },
    {
-    "type": "verb",
-    "word": "stimmen",
-    "surface": "stimmt",
-    "definition": "To be right; you say it when the other person has a point."
+    "type": "noun",
+    "word": "Schachtel",
+    "surface": null,
+    "definition": "A small box of card; the one that held the candles."
    },
    {
     "type": "adjective",
@@ -1982,7 +1982,7 @@
   "title": "Der Pfad in den Wald",
   "slug": "der-pfad-in-den-wald",
   "synopsis": "An einem frischen Morgen im Schwarzwald schnüren Mia und Finn ihre Schuhe und gehen los. Kein Abenteuer, kein Ziel außer dem Tal von oben: nur ein schmaler Weg, eine Wurzel quer im Gras, ein Schmetterling auf einem Blatt und eine Ziege am Zaun. Die Wanderung selbst ist die ganze Geschichte, und beiden reicht das vollkommen.",
-  "text": "Ihre Schuhe schnürt Mia vor der Waldhütte im Schwarzwald. Mia ist eine Studentin aus Freiburg, und Finn, ein Freund aus dem Kurs, füllt die Flaschen für den Rucksack.\n\nMia: Hast du genug Wasser? Der Wanderweg ist lang.\nFinn: Alles drin. Wasser, Brot und zwei Äpfel.\nMia: Hörst du, wie ruhig es hier ist?\nFinn: Nur die Vögel und der Wind in den Bäumen.\n\nDie beiden folgen dem Pfad. Die Erde riecht nach Holz.\n\nFinn: Pass auf, hier liegt ein Ast über dem Weg. Richtig herum?\nMia: Danke. Schau, ein Schmetterling auf dem Blatt.\nFinn: Vielleicht steht da vorne wieder die Ziege am Zaun.\nMia: Ein Hund bellt irgendwo. Wir sind also nicht allein.\n\nNach einer Weile machen sie am Baum Pause, bevor es hinunter ins Tal geht. Eine Biene summt über dem Gras.\n\nMia: Von hier sieht man schon das ganze Tal.\nFinn: Kein Mensch außer uns. Genau dafür sind wir hier.\nMia: Stimmt, der Rest geht bergauf. Wir haben den ganzen Tag.",
+  "text": "Ihre Schuhe schnürt Mia vor der Waldhütte im Schwarzwald. Mia ist eine Studentin aus Freiburg, und Finn, ein Freund aus dem Kurs, füllt die Flaschen für den Rucksack.\n\nMia: Hast du genug Wasser? Der Wanderweg ist lang.\nFinn: Alles drin. Wasser, Brot und zwei Äpfel.\nMia: Hörst du, wie ruhig es hier ist?\nFinn: Nur die Vögel und der Wind in den Bäumen.\n\nDie beiden folgen dem Wanderweg. Die Erde riecht nach Holz.\n\nFinn: Pass auf, hier liegt ein Ast über dem Weg.\nMia: Danke. Schau, ein Schmetterling auf dem Blatt.\nFinn: Vielleicht steht da vorne wieder die Ziege am Zaun.\nMia: Ein Hund bellt irgendwo. Wir sind also nicht allein.\n\nNach einer Weile machen sie am Baum Pause, bevor es hinunter ins Tal geht. Eine Biene summt über dem Gras.\n\nMia: Von hier sieht man schon das ganze Tal.\nFinn: Kein Mensch außer uns. Genau dafür sind wir hier.\nMia: Stimmt, der Rest geht bergauf. Wir haben den ganzen Tag.",
   "vocab": [
    {
     "type": "verb",
@@ -2069,10 +2069,10 @@
     "definition": "A butterfly; the insect with big coloured wings in summer."
    },
    {
-    "type": "adverb",
-    "word": "richtig",
+    "type": "noun",
+    "word": "Studentin",
     "surface": null,
-    "definition": "Right; the correct way round and not the other one."
+    "definition": "A female student; someone who studies at a university."
    },
    {
     "type": "adverb",
@@ -2375,13 +2375,13 @@
   "title": "Der Biss im Ring",
   "slug": "der-biss-im-ring",
   "synopsis": "Vor dem Heidelberger Schlosstor erzählt Lukas die Legende von der Hexe, die in den eisernen Ring gebissen haben soll. Hanna hält nichts davon und sucht die nüchterne Erklärung im Wetter und im alten Eisen. Dann legt sie selbst die Hand auf den Ring, und unter ihren Fingern trifft die kühle Physik auf etwas, das dort eigentlich nicht sein dürfte.",
-  "text": "Hanna, eine Lehrerin aus der Stadt, steht am Abend mit Lukas vor dem Schlosstor in Heidelberg. Ihr Freund Lukas mag alte Sagen, Hanna glaubt an das, was sie sieht.\n\nLukas: Kennst du die Legende? Eine Hexe hat in den eisernen Ring gebissen.\nHanna: Eine Hexe, die in Eisen beißt? Nur eine Geschichte.\n\nLukas zeigt auf den schweren Ring am Tor. Im letzten Licht sieht er fast schwarz aus.\n\nLukas: Wer sich durchbeißt, sagt die Sage, dem gehört das Schloss.\nHanna: Niemand hat es geschafft. An Wunder glaube ich nicht.\nLukas: Sieh ihn dir genau an. Die Spur ist noch da.\nHanna: Das ist altes Eisen. Das kommt vom Wetter, nicht von Zähnen.\n\nHanna legt die Hand auf den Ring und fühlt darüber. Bald runzelt sie die Stirn.\n\nHanna: Hier ist wirklich eine Kerbe. Klein, aber tief.\nLukas: Siehst du? Ich sage nicht, dass es eine Hexe war.\nHanna: Ich auch nicht. Aber woher kommt sie, mitten in der Nacht?",
+  "text": "Hanna, eine Lehrerin aus der Stadt, steht am Abend mit Lukas vor dem Schlosstor in Heidelberg. Ihr Freund Lukas mag alte Sagen, Hanna glaubt an das, was sie sieht.\n\nLukas: Kennst du die Legende? Eine Hexe hat in den eisernen Ring gebissen.\nHanna: Eine Hexe, die in Eisen beißt? Nur eine Geschichte.\n\nLukas zeigt auf den schweren Ring am Tor. Im letzten Licht sieht er fast schwarz aus.\n\nLukas: Wer sich durchbeißt, sagt die Sage, dem gehört das Schloss.\nHanna: Niemand hat es geschafft. An Wunder glaube ich nicht.\nLukas: Sieh ihn dir genau an. Die Spur ist noch da.\nHanna: Das ist altes Eisen. Das kommt vom Wetter, nicht von Zähnen.\n\nHanna legt die Hand auf den Ring und fühlt darüber. Dann runzelt sie die Stirn.\n\nHanna: Hier ist wirklich eine Kerbe. Klein, aber tief.\nLukas: Siehst du? Ich sage nicht, dass es eine Hexe war.\nHanna: Ich auch nicht. Aber woher kommt sie, mitten in der Nacht?",
   "vocab": [
    {
-    "type": "adverb",
-    "word": "bald",
+    "type": "noun",
+    "word": "Licht",
     "surface": null,
-    "definition": "Soon; in a short time, before the light is gone."
+    "definition": "Light; here the last daylight before the sun goes down."
    },
    {
     "type": "noun",
