@@ -208,7 +208,7 @@
    "t": "noun"
   },
   "apoya": {
-   "g": "rests, leans, supports",
+   "g": "rests, puts down (apoyar)",
    "t": "verb"
   },
   "aprieta": {
@@ -308,7 +308,7 @@
    "t": "verb"
   },
   "bajito": {
-   "g": "softly, short",
+   "g": "softly, in a low voice",
    "t": "adverb"
   },
   "bajo": {
@@ -400,7 +400,7 @@
    "t": "noun"
   },
   "caja": {
-   "g": "a hand drum",
+   "g": "a box, a toolbox",
    "t": "noun"
   },
   "cajero": {
@@ -408,7 +408,7 @@
    "t": "noun"
   },
   "cajón": {
-   "g": "drawer, crate",
+   "g": "a drawer; the till of the shop",
    "t": "noun"
   },
   "calcula": {
@@ -560,7 +560,7 @@
    "t": "noun"
   },
   "cola": {
-   "g": "line, tail",
+   "g": "the queue, the line of people",
    "t": "noun"
   },
   "colgada": {
@@ -628,7 +628,7 @@
    "t": "verb"
   },
   "corta": {
-   "g": "he cuts (the engine)",
+   "g": "cuts (cortar); goes off (the light); short of (quedarse corta)",
    "t": "verb"
   },
   "cortas": {
@@ -684,7 +684,7 @@
    "t": "noun"
   },
   "cuenta": {
-   "g": "account; bill",
+   "g": "tells, says (contar); counts (contar)",
    "t": "noun"
   },
   "cuesta": {
@@ -720,7 +720,7 @@
    "t": "noun"
   },
   "da": {
-   "g": "he turns over",
+   "g": "it makes me feel (dar); goes round (dar la vuelta)",
    "t": "verb"
   },
   "dale": {
@@ -760,7 +760,7 @@
    "t": "verb"
   },
   "dejo": {
-   "g": "a faint hint of feeling",
+   "g": "I leave it (dejar)",
    "t": "noun"
   },
   "dejámelo": {
@@ -1077,7 +1077,7 @@
    "t": "verb"
   },
   "espero": {
-   "g": "I hope, I wait",
+   "g": "I wait for you (esperar)",
    "t": "verb"
   },
   "esta": {
@@ -1085,7 +1085,7 @@
    "t": "pronoun"
   },
   "este": {
-   "g": "this (one); um",
+   "g": "this (one)",
    "t": "pronoun"
   },
   "esto": {
@@ -1173,11 +1173,11 @@
    "t": "noun"
   },
   "floja": {
-   "g": "lazy; weak",
+   "g": "loose, not tight (fem.)",
    "t": "adjective"
   },
   "flojo": {
-   "g": "sluggish, limp",
+   "g": "loose, not tight",
    "t": "adjective"
   },
   "foto": {
@@ -1361,7 +1361,7 @@
    "t": "noun"
   },
   "julio": {
-   "g": "Julio",
+   "g": "July",
    "t": "noun"
   },
   "junta": {
@@ -1525,7 +1525,7 @@
    "t": "article"
   },
   "lugar": {
-   "g": "instead of (en lugar de)",
+   "g": "room, space; the place kept in a queue",
    "t": "noun"
   },
   "lunes": {
@@ -1645,7 +1645,7 @@
    "t": "noun"
   },
   "mira": {
-   "g": "look, hey",
+   "g": "looks at (mirar)",
    "t": "verb"
   },
   "mirar": {
@@ -1881,7 +1881,7 @@
    "t": "noun"
   },
   "parado": {
-   "g": "standing, stopped",
+   "g": "standing, waiting on his feet",
    "t": "adjective"
   },
   "parar": {
@@ -2173,7 +2173,7 @@
    "t": "verb"
   },
   "prueba": {
-   "g": "a test",
+   "g": "tries out (probar)",
    "t": "noun"
   },
   "próxima": {
@@ -2245,7 +2245,7 @@
    "t": "verb"
   },
   "quieta": {
-   "g": "to leave alone (dejar quieta)",
+   "g": "still, not moving",
    "t": "adjective"
   },
   "quietos": {
@@ -2606,7 +2606,7 @@
    "t": "adverb"
   },
   "tapa": {
-   "g": "the cover",
+   "g": "the cover (of a notebook); covers up (tapar)",
    "t": "noun"
   },
   "tapamos": {
@@ -2614,7 +2614,7 @@
    "t": "verb"
   },
   "tarde": {
-   "g": "afternoon, late",
+   "g": "late",
    "t": "noun"
   },
   "te": {
@@ -2622,7 +2622,7 @@
    "t": "pronoun"
   },
   "techo": {
-   "g": "roof, ceiling",
+   "g": "the roof; the ceiling",
    "t": "noun"
   },
   "teléfono": {
@@ -2674,7 +2674,7 @@
    "t": "verb"
   },
   "tiempo": {
-   "g": "time, weather",
+   "g": "time",
    "t": "noun"
   },
   "tiene": {
@@ -2698,7 +2698,7 @@
    "t": "noun"
   },
   "toca": {
-   "g": "touches, has to",
+   "g": "rings (the bell)",
    "t": "verb"
   },
   "toco": {
@@ -3144,7 +3144,7 @@
    "t": "noun"
   },
   "carga": {
-   "g": "load, cargo",
+   "g": "fills up, loads (cargar)",
    "t": "noun"
   },
   "carilla": {
@@ -3188,7 +3188,7 @@
    "t": "verb"
   },
   "cordón": {
-   "g": "the kerb, or a shoelace",
+   "g": "the kerb of the pavement",
    "t": "noun"
   },
   "corré": {
@@ -3412,7 +3412,7 @@
    "t": "adjective"
   },
   "local": {
-   "g": "shop, local",
+   "g": "the shop premises, the salon itself",
    "t": "noun"
   },
   "lápiz": {
@@ -3472,7 +3472,7 @@
    "t": "noun"
   },
   "pasar": {
-   "g": "to spend (time)",
+   "g": "to go by; to get through (a month)",
    "t": "verb"
   },
   "pedirle": {
@@ -3492,7 +3492,7 @@
    "t": "noun"
   },
   "peso": {
-   "g": "a peso, a coin",
+   "g": "the weight of it",
    "t": "noun"
   },
   "piensa": {
@@ -3840,7 +3840,7 @@
    "t": "noun"
   },
   "codo": {
-   "g": "stingy, cheap",
+   "g": "the elbow",
    "t": "adjective"
   },
   "despareja": {
@@ -3908,7 +3908,7 @@
    "t": "noun"
   },
   "ve": {
-   "g": "sees, goes",
+   "g": "sees (ver)",
    "t": "verb"
   },
   "vuelvas": {

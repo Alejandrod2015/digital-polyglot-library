@@ -7491,7 +7491,7 @@
    "t": "noun"
   },
   "cordón": {
-   "g": "the kerb, or a shoelace",
+   "g": "the kerb of the pavement",
    "t": "noun"
   },
   "suelto": {
@@ -7681,6 +7681,126 @@
   "balanza": {
    "g": "scales, for weighing on the shop counter (fem. noun)",
    "t": "noun"
+  },
+  "codo": {
+   "g": "the elbow",
+   "t": "adjective"
+  },
+  "ve": {
+   "g": "sees (ver)",
+   "t": "verb"
+  },
+  "local": {
+   "g": "the shop premises, the salon itself",
+   "t": "noun"
+  },
+  "toca": {
+   "g": "rings (the bell)",
+   "t": "verb"
+  },
+  "cola": {
+   "g": "the queue, the line of people",
+   "t": "noun"
+  },
+  "cajón": {
+   "g": "a drawer; the till of the shop",
+   "t": "noun"
+  },
+  "espero": {
+   "g": "I wait for you (esperar)",
+   "t": "verb"
+  },
+  "carga": {
+   "g": "fills up, loads (cargar)",
+   "t": "noun"
+  },
+  "peso": {
+   "g": "the weight of it",
+   "t": "noun"
+  },
+  "tiempo": {
+   "g": "time",
+   "t": "noun"
+  },
+  "mira": {
+   "g": "looks at (mirar)",
+   "t": "verb"
+  },
+  "flojo": {
+   "g": "loose, not tight",
+   "t": "adjective"
+  },
+  "floja": {
+   "g": "loose, not tight (fem.)",
+   "t": "adjective"
+  },
+  "parado": {
+   "g": "standing, waiting on his feet",
+   "t": "adjective"
+  },
+  "tarde": {
+   "g": "late",
+   "t": "noun"
+  },
+  "techo": {
+   "g": "the roof; the ceiling",
+   "t": "noun"
+  },
+  "caja": {
+   "g": "a box, a toolbox",
+   "t": "noun"
+  },
+  "corta": {
+   "g": "cuts (cortar); goes off (the light); short of (quedarse corta)",
+   "t": "verb"
+  },
+  "da": {
+   "g": "it makes me feel (dar); goes round (dar la vuelta)",
+   "t": "verb"
+  },
+  "dejo": {
+   "g": "I leave it (dejar)",
+   "t": "noun"
+  },
+  "lugar": {
+   "g": "room, space; the place kept in a queue",
+   "t": "noun"
+  },
+  "quieta": {
+   "g": "still, not moving",
+   "t": "adjective"
+  },
+  "prueba": {
+   "g": "tries out (probar)",
+   "t": "noun"
+  },
+  "julio": {
+   "g": "July",
+   "t": "noun"
+  },
+  "tapa": {
+   "g": "the cover (of a notebook); covers up (tapar)",
+   "t": "noun"
+  },
+  "pasar": {
+   "g": "to go by; to get through (a month)",
+   "t": "verb"
+  },
+  "bajito": {
+   "g": "softly, in a low voice",
+   "t": "adverb"
+  },
+  "este": {
+   "g": "this (one)",
+   "t": "pronoun"
+  },
+  "cuenta": {
+   "g": "tells, says (contar); counts (contar)",
+   "t": "noun"
+  },
+  "apoya": {
+   "g": "rests, puts down (apoyar)",
+   "t": "verb"
   }
  }
 }
