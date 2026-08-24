@@ -3914,6 +3914,14 @@
   "tira": {
    "g": "takes out, takes off (tirar)",
    "t": "verb"
+  },
+  "consigo": {
+   "g": "I manage to (conseguir)",
+   "t": "verb"
+  },
+  "costas": {
+   "g": "back of the body",
+   "t": "noun"
   }
  }
 }

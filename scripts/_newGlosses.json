@@ -2473,6 +2473,10 @@
   "dormir": {
    "g": "to sleep",
    "t": "verb"
+  },
+  "consigo": {
+   "g": "I manage to (conseguir)",
+   "t": "verb"
   }
  }
 }
