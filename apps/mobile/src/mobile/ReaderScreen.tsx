@@ -230,7 +230,7 @@ const SaveWordButton = memo(function SaveWordButton({
 }: {
   word: string;
   saved: boolean;
-  onToggle: () => void;
+  onToggle: (desiredSaved: boolean) => void;
 }) {
   /**
    * El botón responde con estado PROPIO y el guardado sale del frame del toque.
@@ -272,14 +272,18 @@ const SaveWordButton = memo(function SaveWordButton({
     <Animated.View style={{ transform: [{ scale }] }}>
     <Pressable
       onPress={() => {
-        setLocal(!shown);
-        if (!shown) {
+        const next = !shown;
+        setLocal(next);
+        if (next) {
           Animated.sequence([
             Animated.spring(scale, { toValue: 1.12, friction: 4, tension: 180, useNativeDriver: true }),
             Animated.spring(scale, { toValue: 1, friction: 5, tension: 120, useNativeDriver: true }),
           ]).start();
         }
-        setTimeout(onToggle, 0);
+        // Se manda el estado de DESTINO, no "invierte lo que haya". Dos toques
+        // seguidos ya no pueden anadir dos veces ni dejar el boton diciendo una
+        // cosa y la lista otra: el shell lleva la palabra a este estado y punto.
+        setTimeout(() => onToggle(next), 0);
       }}
       accessibilityLabel={saved ? "Remove from saved words" : "Save word"}
       hitSlop={6}
@@ -1340,7 +1344,7 @@ export function ReaderScreen(args: {
    */
   onOpenFeedback?: () => void;
   isFavoriteWord: (word: string) => boolean;
-  onToggleFavoriteWord: (item: VocabItem, contextSentence?: string) => void;
+  onToggleFavoriteWord: (item: VocabItem, contextSentence?: string, desiredSaved?: boolean) => void;
   onTrackReaderEvent?: (
     eventType:
       | "story_opened"
@@ -3191,7 +3195,9 @@ export function ReaderScreen(args: {
                 <SaveWordButton
                   word={selectedVocab.word}
                   saved={isFavoriteWord(selectedVocab.word)}
-                  onToggle={() => onToggleFavoriteWord(selectedVocab, selectedVocab.note)}
+                  onToggle={(desiredSaved) =>
+                    onToggleFavoriteWord(selectedVocab, selectedVocab.note, desiredSaved)
+                  }
                 />
               </View>
             </View>

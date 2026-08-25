@@ -7257,7 +7257,31 @@ export function MobileLibraryShell(args: {
     }
   }
 
-  async function toggleFavoriteWord(item: VocabItem, contextSentence?: string) {
+  /**
+   * Guarda o quita una palabra. `desiredSaved` dice a que estado hay que
+   * LLEGAR; cuando no viene, se invierte lo que haya (el comportamiento de
+   * siempre, para las llamadas que aun no lo pasan).
+   *
+   * Antes cada toque era un giro a ciegas sobre `favoriteWords` leido del
+   * closure del render en que se pulso. Dos toques seguidos, si el segundo caia
+   * antes de que el padre volviera a pintar, veian los DOS `exists === false` y
+   * los DOS anadian: la palabra acababa duplicada en la lista y el boton decia
+   * "Save word" sobre algo ya guardado.
+   *
+   * Ty lo conto por el otro extremo: "I would press the button and nothing would
+   * happen, so I would press again. The result was that the word would finally
+   * save, and then immediately unsave."
+   *
+   * Con un estado de destino explicito la operacion es IDEMPOTENTE: pedir
+   * "guardada" dos veces la deja guardada una vez, y el estado del que se parte
+   * se lee con la forma funcional de `setFavoriteWords`, o sea del ULTIMO
+   * estado, nunca del que hubiera cuando se toco.
+   */
+  async function toggleFavoriteWord(
+    item: VocabItem,
+    contextSentence?: string,
+    desiredSaved?: boolean
+  ) {
     if (!selection) return;
 
     const favorite: MobileFavoriteItem = {
@@ -7271,29 +7295,42 @@ export function MobileLibraryShell(args: {
       language: selection.story.language ?? selection.book.language,
     };
     const identity = buildFavoriteIdentity(favorite);
-    const exists = favoriteWordsByKey.has(identity);
-    const nextItems = exists
-      ? favoriteWords.filter((entry) => buildFavoriteIdentity(entry) !== identity)
-      : [favorite, ...favoriteWords];
+    // El destino: lo que pidio el boton, o la inversion de lo que hay.
+    const shouldSave = desiredSaved ?? !favoriteWordsByKey.has(identity);
 
-    setFavoriteWords(nextItems);
+    // `exists` y la lista nueva salen del estado MAS RECIENTE, no del closure.
+    let exists = false;
+    let nextItems: MobileFavoriteItem[] = [];
+    setFavoriteWords((current) => {
+      exists = current.some((entry) => buildFavoriteIdentity(entry) === identity);
+      if (shouldSave === exists) {
+        // Ya esta como se pedia. Sin cambio de estado y sin escritura.
+        nextItems = current;
+        return current;
+      }
+      nextItems = shouldSave
+        ? [favorite, ...current.filter((entry) => buildFavoriteIdentity(entry) !== identity)]
+        : current.filter((entry) => buildFavoriteIdentity(entry) !== identity);
+      return nextItems;
+    });
+    if (shouldSave === exists) return;
     await saveLocalFavorites(sessionUserId, nextItems);
-    showDebug(`fav toggle: ${exists ? "remove" : "add"} "${favorite.word}" userId=${sessionUserId?.slice(0, 8) ?? "-"}`);
+    showDebug(`fav toggle: ${shouldSave ? "add" : "remove"} "${favorite.word}" userId=${sessionUserId?.slice(0, 8) ?? "-"}`);
 
     // Try the server now if we have a token; on failure (or no token -
     // offline / signed-out-but-anchored), persist the operation in the
     // pending queue so the next hydrate replays it before pulling from
     // the server. Without this, the optimistic state silently disappears
     // when connectivity returns.
-    const op = exists
-      ? ({ kind: "remove" as const, word: favorite.word, queuedAt: new Date().toISOString() })
-      : ({ kind: "add" as const, item: favorite, queuedAt: new Date().toISOString() });
+    const op = shouldSave
+      ? ({ kind: "add" as const, item: favorite, queuedAt: new Date().toISOString() })
+      : ({ kind: "remove" as const, word: favorite.word, queuedAt: new Date().toISOString() });
     if (sessionToken) {
       try {
-        if (exists) {
-          await removeFavoriteOnServer(sessionToken, favorite.word);
-        } else {
+        if (shouldSave) {
           await addFavoriteOnServer(sessionToken, favorite);
+        } else {
+          await removeFavoriteOnServer(sessionToken, favorite.word);
         }
         showDebug(`fav server ok`);
       } catch (err) {
@@ -19469,7 +19506,9 @@ export function MobileLibraryShell(args: {
             canSendPracticeFeedback ? () => setFeedbackScreen("story complete") : undefined
           }
           isFavoriteWord={isFavoriteWord}
-          onToggleFavoriteWord={(item, contextSentence) => void toggleFavoriteWord(item, contextSentence)}
+          onToggleFavoriteWord={(item, contextSentence, desiredSaved) =>
+            void toggleFavoriteWord(item, contextSentence, desiredSaved)
+          }
           onTrackReaderEvent={trackReaderEvent}
         />
         {feedbackSheet}
