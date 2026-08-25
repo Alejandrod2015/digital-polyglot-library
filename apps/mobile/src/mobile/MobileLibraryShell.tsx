@@ -8752,6 +8752,25 @@ export function MobileLibraryShell(args: {
     }
 
     setPracticeIndex((current) => current + 1);
+    // El contador se rearma AQUI, no solo en el effect (1).
+    //
+    // Un tester escribio "the next question was immediately marked wrong", y
+    // esto era. Tras un timeout, `practiceTimerRemaining` se queda en 0. Este
+    // avance ponia el indice nuevo y `practiceRevealed` en false, pero dejaba el
+    // 0. En la pasada de effects que sigue, el effect (1) PROGRAMA el reset y el
+    // effect (3) lee el 0 VIEJO de ese mismo render: los dos ven el valor del
+    // render, y una llamada a `setState` dentro de un effect no es visible para
+    // el effect siguiente. Con el ejercicio nuevo ya destapado y el contador a
+    // cero, el effect (3) lo suspendia en el acto. Cualquier pregunta agotada
+    // por tiempo tumbaba tambien la siguiente, sin que al usuario le diera
+    // tiempo ni a leerla.
+    //
+    // Poniendolo aqui, el render que sigue al avance ya trae 15 (o 20 en match)
+    // y el effect (3) se corta en su propio guard `practiceTimerRemaining > 0`.
+    // El effect (1) se queda como red de seguridad: cubre el arranque de sesion
+    // y el fin del countdown 3-2-1, que no pasan por aqui.
+    const nextExercise = practiceExercises[practiceIndex + 1];
+    setPracticeTimerRemaining(nextExercise?.kind === "match" ? 20 : 15);
     setPracticeSelectedOption(null);
     setPracticeRevealed(false);
     setPracticeTimedOut(false);
