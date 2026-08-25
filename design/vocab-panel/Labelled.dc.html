@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+  <style>
+    body { margin: 0; background: #0b1220; font-family: Nunito, "Geist Sans", system-ui, sans-serif; }
+    a { color: #7dd3fc; } a:hover { color: #38bdf8; }
+    .tense-chip { cursor: pointer; user-select: none; }
+  </style>
+</helmet>
+<div style="display: flex; flex-direction: column; gap: 22px; padding: 28px; width: 504px; box-sizing: border-box">
+
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <span style="color: #9aa7bd; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase">Option B · Full table, three tenses</span>
+    <span style="color: #e6eaf2; font-size: 15px; line-height: 21px; opacity: 0.75">The whole conjugation, with the form from the story lit up. The tense chips switch it.</span>
+  </div>
+
+  <div style="color: #e6eaf2; font-size: 17px; line-height: 27px; opacity: 0.5">
+    {{ before }}<span style="color: #7dd3fc; opacity: 1; font-weight: 700">{{ word }}</span>{{ after }}
+  </div>
+
+  <div style="background: #111a2b; border: 1px dashed rgba(255, 255, 255, 0.14); border-radius: 20px; padding: 14px 18px 16px; box-shadow: 0 8px 14px rgba(0, 0, 0, 0.22); display: flex; flex-direction: column; gap: 14px">
+
+    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <span style="color: #e6eaf2; font-size: 16px; font-weight: 700; line-height: 22px">{{ chunkEs }}</span>
+        <span style="color: #e6eaf2; font-size: 15px; line-height: 21px; opacity: 0.8">{{ chunkEn }}</span>
+      </div>
+      <span style="display: grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.22); color: #e6eaf2; flex-shrink: 0">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6L6 18"></path><path d="M6 6l12 12"></path></svg>
+      </span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 9px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 13px">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+        <span style="display: inline-flex; align-items: baseline; gap: 7px">
+          <span style="background: {{ typeColor }}; color: #ffffff; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px">{{ type }}</span>
+          <span style="color: #e6eaf2; font-size: 14px; font-weight: 700">{{ lemma }}</span>
+        </span>
+        <div style="display: flex; gap: 6px">
+          <sc-for list="{{ tenses }}" as="t" hint-placeholder-count="3">
+            <span class="tense-chip" onClick="{{ t.pick }}" style="background: {{ t.bg }}; border: 1px solid {{ t.border }}; color: {{ t.color }}; font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 999px">{{ t.name }}</span>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 14px">
+        <sc-for list="{{ forms }}" as="f" hint-placeholder-count="6">
+          <span style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; background: {{ f.bg }}; border-radius: 8px; padding: 4px 8px">
+            <span style="color: #9aa7bd; font-size: 12px; font-weight: 600">{{ f.person }}</span>
+            <span style="color: {{ f.color }}; font-size: 15px; font-weight: 700">{{ f.form }}</span>
+          </span>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: flex">
+      <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.14); color: #e6eaf2; font-weight: 700; font-size: 13px; padding: 8px 14px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5 5 0 00-7.1 0L12 7.3l-1.7-1.7a5 5 0 10-7.1 7.1l8.8 8.8 8.8-8.8a5 5 0 000-7.1z"></path></svg>
+        Save word
+      </span>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"word":{"editor":"enum","options":["baja","helado","nada"],"default":"baja","section":"Content"}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tense: 0 };
+  }
+  renderVals() {
+    const PERSONS = ["yo", "tú", "él, ella", "nosotros", "vosotros", "ellos"];
+    const WORDS = {
+      baja: {
+        type: "verb", typeColor: "rgba(248, 113, 113, 0.6)", lemma: "bajar",
+        before: "Lucía ", after: " del tren en Madrid, y su amiga Marta la espera en la estación.",
+        chunkEs: "baja del tren", chunkEn: "gets off the train",
+        here: "baja",
+        tenses: [
+          { name: "Presente", forms: ["bajo", "bajas", "baja", "bajamos", "bajáis", "bajan"] },
+          { name: "Pretérito", forms: ["bajé", "bajaste", "bajó", "bajamos", "bajasteis", "bajaron"] },
+          { name: "Futuro", forms: ["bajaré", "bajarás", "bajará", "bajaremos", "bajaréis", "bajarán"] }
+        ]
+      },
+      helado: {
+        type: "noun", typeColor: "rgba(56, 189, 248, 0.65)", lemma: "el helado",
+        before: "Después, las dos comen un ", after: " de fresa, y Lucía saca un poco de pan para el pato.",
+        chunkEs: "un helado de fresa", chunkEn: "a strawberry ice cream",
+        here: "un helado",
+        persons: ["uno", "varios", "el que ya sabes", "los que ya sabes", "de qué", "con qué"],
+        tenses: [
+          { name: "Formas", forms: ["un helado", "dos helados", "el helado", "los helados", "de fresa", "con nata"] }
+        ]
+      },
+      nada: {
+        type: "verb", typeColor: "rgba(248, 113, 113, 0.6)", lemma: "nadar",
+        before: "Un pato ", after: " cerca de ellas.",
+        chunkEs: "Un pato nada cerca", chunkEn: "A duck swims nearby",
+        here: "nada",
+        tenses: [
+          { name: "Presente", forms: ["nado", "nadas", "nada", "nadamos", "nadáis", "nadan"] },
+          { name: "Pretérito", forms: ["nadé", "nadaste", "nadó", "nadamos", "nadasteis", "nadaron"] },
+          { name: "Futuro", forms: ["nadaré", "nadarás", "nadará", "nadaremos", "nadaréis", "nadarán"] }
+        ]
+      }
+    };
+    const key = this.props.word ?? "baja";
+    const w = WORDS[key] ?? WORDS.baja;
+    const index = Math.min(this.state.tense, w.tenses.length - 1);
+    const persons = w.persons ?? PERSONS;
+    const forms = w.tenses[index].forms.map((form, i) => {
+      const here = index === 0 && form === w.here;
+      return {
+        person: persons[i],
+        form,
+        bg: here ? "rgba(125, 211, 252, 0.16)" : "rgba(255, 255, 255, 0.04)",
+        color: here ? "#7dd3fc" : "#e6eaf2"
+      };
+    });
+    const tenses = w.tenses.map((t, i) => ({
+      name: t.name,
+      bg: i === index ? "rgba(255, 255, 255, 0.14)" : "transparent",
+      border: i === index ? "rgba(255, 255, 255, 0.28)" : "rgba(255, 255, 255, 0.12)",
+      color: i === index ? "#e6eaf2" : "#9aa7bd",
+      pick: () => this.setState({ tense: i })
+    }));
+    return { word: key, ...w, forms, tenses };
+  }
+}
+</script>
+</body>
+</html>

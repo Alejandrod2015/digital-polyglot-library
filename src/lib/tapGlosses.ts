@@ -9,6 +9,7 @@ import spanishFriendsColombia from "@/data/tapGlosses/spanish-friends-colombia.j
 import spanishFriendsArgentina from "@/data/tapGlosses/spanish-friends-argentina.json";
 import spanishFriendsSpainA0 from "@/data/tapGlosses/spanish-friends-spain-a0.json";
 import spanishTravelerMexicoA0 from "@/data/tapGlosses/spanish-traveler-mexico-a0.json";
+import spanishTravelerSpainA2 from "@/data/tapGlosses/spanish-traveler-spain-a2.json";
 import spanishFriendsMexico from "@/data/tapGlosses/spanish-friends-mexico.json";
 import italianFriendsA0 from "@/data/tapGlosses/italian-friends-a0.json";
 import germanTravelerA0 from "@/data/tapGlosses/german-traveler-a0.json";
@@ -31,11 +32,32 @@ import talkingPointsDe from "@/data/tapGlosses/talking-points-de.json";
 // mismas claves que el vocab curado (verb|noun|adjective|adverb|pronoun|
 // preposition|conjunction|article|number|expression|other) para reusar los colores
 // de badge y clasificar bien los favoritos guardados desde el diccionario.
-export type TapGloss = { g: string; t: string; r?: string };
+// `c` y `f` son la capa de CONTEXTO, y solo existen dentro de `byStory`: la
+// misma palabra no significa lo mismo en dos historias ("baja del tren" no es
+// "baja la voz"), así que el trozo traducido y sus formas tienen que colgar de
+// la historia, no del journey. `glosses` sigue siendo el mapa global
+// de toda la vida y es el que se usa cuando una historia no tiene capa propia.
+export type TapGloss = {
+  g: string;
+  t: string;
+  r?: string;
+  /** El trozo mínimo con sentido alrededor de la palabra, en la lengua de la
+   *  historia y en inglés. "baja" -> { es: "baja del tren", en: "gets off the train" }. */
+  c?: { es: string; en: string };
+  /** Las FORMAS de la palabra, que es lo que se enseña en vez de explicarla:
+   *  la conjugación de un verbo, la concordancia de un adjetivo, el artículo y
+   *  el plural de un sustantivo, el paradigma de un pronombre. Las palabras que
+   *  no se declinan (adverbios, preposiciones) traen tres usos reales. `rows`
+   *  son pares [etiqueta, forma]; `here` marca cuál sale en esta historia, y es
+   *  la que la tarjeta enciende. Ausente en los nombres propios, que no enseñan
+   *  nada y dejan la tarjeta en dos líneas. */
+  f?: { label: string; rows: string[][]; here: number };
+};
 
 type TapGlossBundle = {
   slugs: string[];
   glosses: Record<string, TapGloss>;
+  byStory?: Record<string, Record<string, TapGloss>>;
 };
 
 const BUNDLES: TapGlossBundle[] = [
@@ -50,6 +72,7 @@ const BUNDLES: TapGlossBundle[] = [
   spanishFriendsArgentina as TapGlossBundle,
   spanishFriendsSpainA0 as TapGlossBundle,
   spanishTravelerMexicoA0 as TapGlossBundle,
+  spanishTravelerSpainA2 as TapGlossBundle,
   spanishFriendsMexico as TapGlossBundle,
   italianFriendsA0 as TapGlossBundle,
   germanTravelerA0 as TapGlossBundle,
@@ -62,7 +85,12 @@ const BUNDLES: TapGlossBundle[] = [
 
 export function getTapGlossesForSlug(slug: string): Record<string, TapGloss> | null {
   for (const bundle of BUNDLES) {
-    if (bundle.slugs.includes(slug)) return bundle.glosses;
+    if (!bundle.slugs.includes(slug)) continue;
+    const perStory = bundle.byStory?.[slug];
+    // La capa de la historia pisa a la global palabra a palabra, y las que no
+    // tenga se quedan con la glosa de siempre; así una historia se puede subir
+    // a la capa de contexto sin tocar las otras veinte del journey.
+    return perStory ? { ...bundle.glosses, ...perStory } : bundle.glosses;
   }
   return null;
 }

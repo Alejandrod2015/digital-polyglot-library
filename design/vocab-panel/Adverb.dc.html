@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+  <style>
+    body { margin: 0; background: #0b1220; font-family: Nunito, "Geist Sans", system-ui, sans-serif; }
+    a { color: #7dd3fc; } a:hover { color: #38bdf8; }
+    .forms-toggle { cursor: pointer; user-select: none; }
+  </style>
+</helmet>
+<div style="display: flex; flex-direction: column; gap: 18px; padding: 26px; width: 504px; box-sizing: border-box">
+
+  <div style="display: flex; align-items: baseline; gap: 8px">
+    <span style="color: #9aa7bd; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase">Adverb</span>
+    <span style="color: #9aa7bd; font-size: 11px; font-weight: 600; opacity: 0.7">37 of 669 · 6%</span>
+  </div>
+
+  <div style="color: #e6eaf2; font-size: 16px; line-height: 26px; opacity: 0.5">
+    Lucía habla <span style="color: #7dd3fc; opacity: 1; font-weight: 700">despacio</span> y con miedo.
+  </div>
+
+  <div style="background: #111a2b; border: 1px dashed rgba(255, 255, 255, 0.14); border-radius: 20px; padding: 14px 18px 16px; box-shadow: 0 8px 14px rgba(0, 0, 0, 0.22); display: flex; flex-direction: column; gap: 12px">
+
+    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <span style="color: #e6eaf2; font-size: 18px; font-weight: 700; line-height: 24px">habla despacio</span>
+        <span style="color: #e6eaf2; font-size: 15px; line-height: 22px; opacity: 0.8">speaks slowly</span>
+      </div>
+      <span style="display: grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.22); color: #e6eaf2; flex-shrink: 0">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6L6 18"></path><path d="M6 6l12 12"></path></svg>
+      </span>
+    </div>
+
+    <div style="display: flex; align-items: flex-start; gap: 10px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px">
+      <span style="display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0; padding-top: 2px">
+        <span style="background: rgba(167, 139, 250, 0.65); color: #ffffff; font-size: 9px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 7px; border-radius: 999px">adverb</span>
+        <span style="color: #9aa7bd; font-size: 12px; font-weight: 700">se usa así</span>
+      </span>
+      <div style="display: flex; gap: 6px; flex-wrap: wrap">
+        <sc-for list="{{ peek }}" as="f" hint-placeholder-count="3">
+          <span style="display: inline-flex; align-items: baseline; gap: 5px; background: {{ f.bg }}; border-radius: 8px; padding: 3px 8px">
+            <span style="color: #9aa7bd; font-size: 11px; font-weight: 600">{{ f.person }}</span>
+            <span style="color: {{ f.color }}; font-size: 14px; font-weight: 700">{{ f.form }}</span>
+          </span>
+        </sc-for>
+      </div>
+    </div>
+
+    <sc-if value="{{ showRest }}" hint-placeholder-val="{{ true }}">
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 14px">
+        <sc-for list="{{ rest }}" as="f" hint-placeholder-count="3">
+          <span style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; background: rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 4px 8px">
+            <span style="color: #9aa7bd; font-size: 12px; font-weight: 600">{{ f.person }}</span>
+            <span style="color: #e6eaf2; font-size: 15px; font-weight: 700">{{ f.form }}</span>
+          </span>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap">
+      <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.14); color: #e6eaf2; font-weight: 700; font-size: 13px; padding: 8px 14px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5 5 0 00-7.1 0L12 7.3l-1.7-1.7a5 5 0 10-7.1 7.1l8.8 8.8 8.8-8.8a5 5 0 000-7.1z"></path></svg>
+        Save word
+      </span>
+      <sc-if value="{{ hasRest }}" hint-placeholder-val="{{ true }}">
+        <span class="forms-toggle" onClick="{{ toggle }}" style="display: inline-flex; align-items: center; gap: 6px; border: 1px solid {{ toggleBorder }}; color: {{ toggleColor }}; font-weight: 700; font-size: 13px; padding: 8px 14px; border-radius: 999px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h10"></path></svg>
+          {{ toggleLabel }}
+        </span>
+      </sc-if>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"startOpen":{"editor":"boolean","default":false,"section":"Content"}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { open: null };
+  }
+  renderVals() {
+    const persons = ["", "", ""];
+    const forms = ["habla despacio", "muy despacio", "más despacio"];
+    const here = 0;
+    const noRest = true;
+    const open = this.state.open === null ? (this.props.startOpen ?? false) : this.state.open;
+    const rows = forms.map((form, i) => ({
+      person: persons[i] ?? "",
+      form,
+      bg: i === here ? "rgba(125, 211, 252, 0.16)" : "rgba(255, 255, 255, 0.04)",
+      color: i === here ? "#7dd3fc" : "#e6eaf2"
+    }));
+    const rest = noRest ? [] : rows.slice(3);
+    return {
+      peek: rows.slice(0, 3),
+      rest,
+      hasRest: rest.length > 0,
+      showRest: rest.length > 0 && open,
+      toggleLabel: open ? "Fewer forms" : "All forms",
+      toggleColor: open ? "#e6eaf2" : "#9aa7bd",
+      toggleBorder: open ? "rgba(255, 255, 255, 0.22)" : "rgba(255, 255, 255, 0.14)",
+      toggle: () => this.setState({ open: !open })
+    };
+  }
+}
+</script>
+</body>
+</html>

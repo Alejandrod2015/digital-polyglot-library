@@ -2699,5 +2699,2499 @@
    "g": "travels",
    "t": "verb"
   }
+ },
+ "byStory": {
+  "marta-ensena-el-retiro": {
+   "lucía": {
+    "g": "Lucía (name)",
+    "t": "noun"
+   },
+   "baja": {
+    "g": "goes down, lowers",
+    "t": "verb",
+    "c": {
+     "es": "baja del tren",
+     "en": "gets off the train"
+    },
+    "f": {
+     "label": "bajar",
+     "rows": [
+      [
+       "yo",
+       "bajo"
+      ],
+      [
+       "tú",
+       "bajas"
+      ],
+      [
+       "él, ella",
+       "baja"
+      ],
+      [
+       "nosotros",
+       "bajamos"
+      ],
+      [
+       "vosotros",
+       "bajáis"
+      ],
+      [
+       "ellos",
+       "bajan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition",
+    "c": {
+     "es": "del tren",
+     "en": "from the train"
+    },
+    "f": {
+     "label": "de + el",
+     "rows": [
+      [
+       "masculino",
+       "del tren"
+      ],
+      [
+       "femenino",
+       "de la calle"
+      ],
+      [
+       "con a",
+       "al parque"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "tren": {
+    "g": "the train",
+    "t": "noun",
+    "c": {
+     "es": "del tren",
+     "en": "the train"
+    },
+    "f": {
+     "label": "el tren",
+     "rows": [
+      [
+       "uno",
+       "un tren"
+      ],
+      [
+       "varios",
+       "dos trenes"
+      ],
+      [
+       "ese",
+       "el tren"
+      ],
+      [
+       "esos",
+       "los trenes"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition",
+    "c": {
+     "es": "en Madrid",
+     "en": "in Madrid"
+    },
+    "f": {
+     "label": "se usa así",
+     "rows": [
+      [
+       "ciudad",
+       "en Madrid"
+      ],
+      [
+       "sitio",
+       "en la estación"
+      ],
+      [
+       "encima",
+       "en la mano"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "madrid": {
+    "g": "Madrid (city)",
+    "t": "noun",
+    "c": {
+     "es": "en Madrid",
+     "en": "in Madrid"
+    }
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction",
+    "c": {
+     "es": "y su amiga",
+     "en": "and her friend"
+    },
+    "f": {
+     "label": "y o e",
+     "rows": [
+      [
+       "normal",
+       "y su amiga"
+      ],
+      [
+       "antes de i",
+       "madre e hija"
+      ],
+      [
+       "con tú",
+       "y tú"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "su": {
+    "g": "his, her, their",
+    "t": "pronoun",
+    "c": {
+     "es": "su amiga",
+     "en": "her friend"
+    },
+    "f": {
+     "label": "de quién",
+     "rows": [
+      [
+       "una cosa",
+       "su amiga"
+      ],
+      [
+       "varias",
+       "sus amigas"
+      ],
+      [
+       "de él",
+       "su amigo"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "amiga": {
+    "g": "a female friend",
+    "t": "noun",
+    "c": {
+     "es": "su amiga Marta",
+     "en": "her friend Marta"
+    },
+    "f": {
+     "label": "la amiga",
+     "rows": [
+      [
+       "uno",
+       "una amiga"
+      ],
+      [
+       "varios",
+       "dos amigas"
+      ],
+      [
+       "ese",
+       "la amiga"
+      ],
+      [
+       "esos",
+       "las amigas"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "marta": {
+    "g": "Marta (name)",
+    "t": "noun"
+   },
+   "la": {
+    "g": "the; her, it",
+    "t": "pronoun",
+    "c": {
+     "es": "la espera",
+     "en": "waits for her"
+    },
+    "f": {
+     "label": "a quién",
+     "rows": [
+      [
+       "me",
+       "me espera"
+      ],
+      [
+       "te",
+       "te espera"
+      ],
+      [
+       "her",
+       "la espera"
+      ],
+      [
+       "him",
+       "lo espera"
+      ],
+      [
+       "us",
+       "nos espera"
+      ],
+      [
+       "them",
+       "las espera"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "espera": {
+    "g": "waits for",
+    "t": "verb",
+    "c": {
+     "es": "la espera en la estáción",
+     "en": "waits for her at the station"
+    },
+    "f": {
+     "label": "esperar",
+     "rows": [
+      [
+       "yo",
+       "espero"
+      ],
+      [
+       "tú",
+       "esperas"
+      ],
+      [
+       "él, ella",
+       "espera"
+      ],
+      [
+       "nosotros",
+       "esperamos"
+      ],
+      [
+       "vosotros",
+       "esperáis"
+      ],
+      [
+       "ellos",
+       "esperan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "estación": {
+    "g": "the station",
+    "t": "noun",
+    "c": {
+     "es": "en la estáción",
+     "en": "at the station"
+    },
+    "f": {
+     "label": "la estación",
+     "rows": [
+      [
+       "uno",
+       "una estación"
+      ],
+      [
+       "varios",
+       "dos estaciones"
+      ],
+      [
+       "ese",
+       "la estación"
+      ],
+      [
+       "esos",
+       "las estaciones"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition",
+    "c": {
+     "es": "con flores en la mano",
+     "en": "with flowers in her hand"
+    },
+    "f": {
+     "label": "se usa así",
+     "rows": [
+      [
+       "qué llevas",
+       "con flores"
+      ],
+      [
+       "cómo",
+       "con miedo"
+      ],
+      [
+       "descripción",
+       "con ojos grandes"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "flores": {
+    "g": "flowers",
+    "t": "noun",
+    "c": {
+     "es": "con flores",
+     "en": "with flowers"
+    },
+    "f": {
+     "label": "la flor",
+     "rows": [
+      [
+       "uno",
+       "una flor"
+      ],
+      [
+       "varios",
+       "dos flores"
+      ],
+      [
+       "ese",
+       "la flor"
+      ],
+      [
+       "esos",
+       "las flores"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "mano": {
+    "g": "hand; bro, dude",
+    "t": "noun",
+    "c": {
+     "es": "en la mano",
+     "en": "in her hand"
+    },
+    "f": {
+     "label": "la mano",
+     "rows": [
+      [
+       "uno",
+       "una mano"
+      ],
+      [
+       "varios",
+       "dos manos"
+      ],
+      [
+       "ese",
+       "la mano"
+      ],
+      [
+       "esos",
+       "las manos"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "las": {
+    "g": "the; them",
+    "t": "article",
+    "c": {
+     "es": "Las dos amigas",
+     "en": "The two friends"
+    },
+    "f": {
+     "label": "el o la",
+     "rows": [
+      [
+       "femenino",
+       "las amigas"
+      ],
+      [
+       "masculino",
+       "los amigos"
+      ],
+      [
+       "las dos",
+       "las dos"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "dos": {
+    "g": "two",
+    "t": "number",
+    "c": {
+     "es": "las dos amigas",
+     "en": "the two friends"
+    },
+    "f": {
+     "label": "los números",
+     "rows": [
+      [
+       "dos",
+       "dos amigas"
+      ],
+      [
+       "ambas",
+       "las dos"
+      ],
+      [
+       "veces",
+       "dos veces"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "amigas": {
+    "g": "female friends",
+    "t": "noun",
+    "c": {
+     "es": "las dos amigas",
+     "en": "the two friends"
+    },
+    "f": {
+     "label": "la amiga",
+     "rows": [
+      [
+       "uno",
+       "una amiga"
+      ],
+      [
+       "varios",
+       "dos amigas"
+      ],
+      [
+       "ese",
+       "la amiga"
+      ],
+      [
+       "esos",
+       "las amigas"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun",
+    "c": {
+     "es": "se abrazan",
+     "en": "they hug each other"
+    },
+    "f": {
+     "label": "entre quiénes",
+     "rows": [
+      [
+       "dos personas",
+       "se abrazan"
+      ],
+      [
+       "una sola",
+       "se abraza"
+      ],
+      [
+       "nosotras",
+       "nos abrazamos"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "abrazan": {
+    "g": "they hug",
+    "t": "verb",
+    "c": {
+     "es": "se abrazan",
+     "en": "they hug each other"
+    },
+    "f": {
+     "label": "abrazar",
+     "rows": [
+      [
+       "yo",
+       "abrazo"
+      ],
+      [
+       "tú",
+       "abrazas"
+      ],
+      [
+       "él, ella",
+       "abraza"
+      ],
+      [
+       "nosotros",
+       "abrazamos"
+      ],
+      [
+       "vosotros",
+       "abrazáis"
+      ],
+      [
+       "ellos",
+       "abrazan"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb",
+    "c": {
+     "es": "muy contentas",
+     "en": "very happy"
+    },
+    "f": {
+     "label": "se usa así",
+     "rows": [
+      [
+       "con adjetivo",
+       "muy contentas"
+      ],
+      [
+       "con adverbio",
+       "muy despacio"
+      ],
+      [
+       "no con nombre",
+       "mucha gente"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "contentas": {
+    "g": "happy",
+    "t": "adjective",
+    "c": {
+     "es": "muy contentas",
+     "en": "very happy"
+    },
+    "f": {
+     "label": "contento",
+     "rows": [
+      [
+       "él",
+       "contento"
+      ],
+      [
+       "ella",
+       "contenta"
+      ],
+      [
+       "ellos",
+       "contentos"
+      ],
+      [
+       "ellas",
+       "contentas"
+      ]
+     ],
+     "here": 3
+    }
+   },
+   "lleva": {
+    "g": "carries, takes",
+    "t": "verb",
+    "c": {
+     "es": "lleva a Lucía al parque",
+     "en": "takes Lucía to the park"
+    },
+    "f": {
+     "label": "llevar",
+     "rows": [
+      [
+       "yo",
+       "llevo"
+      ],
+      [
+       "tú",
+       "llevas"
+      ],
+      [
+       "él, ella",
+       "lleva"
+      ],
+      [
+       "nosotros",
+       "llevamos"
+      ],
+      [
+       "vosotros",
+       "lleváis"
+      ],
+      [
+       "ellos",
+       "llevan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition",
+    "c": {
+     "es": "a Lucía",
+     "en": "Lucía"
+    },
+    "f": {
+     "label": "la a de persona",
+     "rows": [
+      [
+       "persona",
+       "lleva a Lucía"
+      ],
+      [
+       "persona",
+       "abraza a su amiga"
+      ],
+      [
+       "hora",
+       "a las dos"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "al": {
+    "g": "to the",
+    "t": "preposition",
+    "c": {
+     "es": "al parque",
+     "en": "to the park"
+    },
+    "f": {
+     "label": "a + el",
+     "rows": [
+      [
+       "masculino",
+       "al parque"
+      ],
+      [
+       "femenino",
+       "a la calle"
+      ],
+      [
+       "con de",
+       "del parque"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "parque": {
+    "g": "park",
+    "t": "noun",
+    "c": {
+     "es": "al parque del Retiro",
+     "en": "to the Retiro park"
+    },
+    "f": {
+     "label": "el parque",
+     "rows": [
+      [
+       "uno",
+       "un parque"
+      ],
+      [
+       "varios",
+       "dos parques"
+      ],
+      [
+       "ese",
+       "el parque"
+      ],
+      [
+       "esos",
+       "los parques"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "retiro": {
+    "g": "the Retiro (park)",
+    "t": "noun",
+    "c": {
+     "es": "el parque del Retiro",
+     "en": "the Retiro park"
+    }
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb",
+    "c": {
+     "es": "Hay árboles altos",
+     "en": "There are tall trees"
+    },
+    "f": {
+     "label": "haber",
+     "rows": [
+      [
+       "ahora",
+       "hay"
+      ],
+      [
+       "antes",
+       "había"
+      ],
+      [
+       "mañana",
+       "habrá"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "árboles": {
+    "g": "trees",
+    "t": "noun",
+    "c": {
+     "es": "árboles altos",
+     "en": "tall trees"
+    },
+    "f": {
+     "label": "el árbol",
+     "rows": [
+      [
+       "uno",
+       "un árbol"
+      ],
+      [
+       "varios",
+       "dos árboles"
+      ],
+      [
+       "ese",
+       "el árbol"
+      ],
+      [
+       "esos",
+       "los árboles"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "altos": {
+    "g": "tall",
+    "t": "adjective",
+    "c": {
+     "es": "árboles altos",
+     "en": "tall trees"
+    },
+    "f": {
+     "label": "alto",
+     "rows": [
+      [
+       "él",
+       "alto"
+      ],
+      [
+       "ella",
+       "alta"
+      ],
+      [
+       "ellos",
+       "altos"
+      ],
+      [
+       "ellas",
+       "altas"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "mucha": {
+    "g": "a lot of",
+    "t": "adjective",
+    "c": {
+     "es": "mucha gente",
+     "en": "a lot of people"
+    },
+    "f": {
+     "label": "mucho",
+     "rows": [
+      [
+       "él",
+       "mucho"
+      ],
+      [
+       "ella",
+       "mucha"
+      ],
+      [
+       "ellos",
+       "muchos"
+      ],
+      [
+       "ellas",
+       "muchas"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "gente": {
+    "g": "people",
+    "t": "noun",
+    "c": {
+     "es": "mucha gente",
+     "en": "a lot of people"
+    },
+    "f": {
+     "label": "la gente",
+     "rows": [
+      [
+       "mucha",
+       "mucha gente"
+      ],
+      [
+       "poca",
+       "poca gente"
+      ],
+      [
+       "toda",
+       "toda la gente"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "el": {
+    "g": "the",
+    "t": "article",
+    "c": {
+     "es": "el sol",
+     "en": "the sun"
+    },
+    "f": {
+     "label": "el o la",
+     "rows": [
+      [
+       "masculino",
+       "el sol"
+      ],
+      [
+       "femenino",
+       "la mano"
+      ],
+      [
+       "plural",
+       "los ojos"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "sol": {
+    "g": "sun",
+    "t": "noun",
+    "c": {
+     "es": "el sol brilla",
+     "en": "the sun shines"
+    },
+    "f": {
+     "label": "el sol",
+     "rows": [
+      [
+       "el astro",
+       "el sol"
+      ],
+      [
+       "al aire",
+       "al sol"
+      ],
+      [
+       "el tiempo",
+       "hace sol"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "brilla": {
+    "g": "shines",
+    "t": "verb",
+    "c": {
+     "es": "el sol brilla",
+     "en": "the sun shines"
+    },
+    "f": {
+     "label": "brillar",
+     "rows": [
+      [
+       "yo",
+       "brillo"
+      ],
+      [
+       "tú",
+       "brillas"
+      ],
+      [
+       "él, ella",
+       "brilla"
+      ],
+      [
+       "nosotros",
+       "brillamos"
+      ],
+      [
+       "vosotros",
+       "brilláis"
+      ],
+      [
+       "ellos",
+       "brillan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "sobre": {
+    "g": "about, on",
+    "t": "preposition",
+    "c": {
+     "es": "sobre el agua",
+     "en": "over the water"
+    },
+    "f": {
+     "label": "se usa así",
+     "rows": [
+      [
+       "encima",
+       "sobre el agua"
+      ],
+      [
+       "encima",
+       "sobre la mesa"
+      ],
+      [
+       "hora",
+       "sobre las dos"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "agua": {
+    "g": "water",
+    "t": "noun",
+    "c": {
+     "es": "el agua del lago",
+     "en": "the lake water"
+    },
+    "f": {
+     "label": "el agua",
+     "rows": [
+      [
+       "una",
+       "el agua"
+      ],
+      [
+       "varias",
+       "las aguas"
+      ],
+      [
+       "fría",
+       "agua fría"
+      ],
+      [
+       "un poco",
+       "un vaso de agua"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "lago": {
+    "g": "lake",
+    "t": "noun",
+    "c": {
+     "es": "del lago",
+     "en": "of the lake"
+    },
+    "f": {
+     "label": "el lago",
+     "rows": [
+      [
+       "uno",
+       "un lago"
+      ],
+      [
+       "varios",
+       "dos lagos"
+      ],
+      [
+       "ese",
+       "el lago"
+      ],
+      [
+       "esos",
+       "los lagos"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "mira": {
+    "g": "look, hey",
+    "t": "verb",
+    "c": {
+     "es": "mira todo",
+     "en": "looks at everything"
+    },
+    "f": {
+     "label": "mirar",
+     "rows": [
+      [
+       "yo",
+       "miro"
+      ],
+      [
+       "tú",
+       "miras"
+      ],
+      [
+       "él, ella",
+       "mira"
+      ],
+      [
+       "nosotros",
+       "miramos"
+      ],
+      [
+       "vosotros",
+       "miráis"
+      ],
+      [
+       "ellos",
+       "miran"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "todo": {
+    "g": "all, everything",
+    "t": "pronoun",
+    "c": {
+     "es": "mira todo",
+     "en": "everything"
+    },
+    "f": {
+     "label": "se usa así",
+     "rows": [
+      [
+       "cosas",
+       "mira todo"
+      ],
+      [
+       "tiempo",
+       "todo el día"
+      ],
+      [
+       "gente",
+       "todos"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "ojos": {
+    "g": "eyes",
+    "t": "noun",
+    "c": {
+     "es": "con ojos grandes",
+     "en": "with wide eyes"
+    },
+    "f": {
+     "label": "el ojo",
+     "rows": [
+      [
+       "uno",
+       "un ojo"
+      ],
+      [
+       "varios",
+       "dos ojos"
+      ],
+      [
+       "ese",
+       "el ojo"
+      ],
+      [
+       "esos",
+       "los ojos"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "grandes": {
+    "g": "big",
+    "t": "adjective",
+    "c": {
+     "es": "ojos grandes",
+     "en": "wide eyes"
+    },
+    "f": {
+     "label": "grande",
+     "rows": [
+      [
+       "uno",
+       "grande"
+      ],
+      [
+       "varios",
+       "grandes"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "habla": {
+    "g": "speaks, talks",
+    "t": "verb",
+    "c": {
+     "es": "habla despacio",
+     "en": "speaks slowly"
+    },
+    "f": {
+     "label": "hablar",
+     "rows": [
+      [
+       "yo",
+       "hablo"
+      ],
+      [
+       "tú",
+       "hablas"
+      ],
+      [
+       "él, ella",
+       "habla"
+      ],
+      [
+       "nosotros",
+       "hablamos"
+      ],
+      [
+       "vosotros",
+       "habláis"
+      ],
+      [
+       "ellos",
+       "hablan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "despacio": {
+    "g": "slowly",
+    "t": "adverb",
+    "c": {
+     "es": "habla despacio",
+     "en": "speaks slowly"
+    },
+    "f": {
+     "label": "se usa así",
+     "rows": [
+      [
+       "con un verbo",
+       "habla despacio"
+      ],
+      [
+       "más fuerte",
+       "muy despacio"
+      ],
+      [
+       "comparando",
+       "más despacio"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "miedo": {
+    "g": "fear",
+    "t": "noun",
+    "c": {
+     "es": "con miedo",
+     "en": "afraid"
+    },
+    "f": {
+     "label": "el miedo",
+     "rows": [
+      [
+       "tener",
+       "tener miedo"
+      ],
+      [
+       "cómo",
+       "con miedo"
+      ],
+      [
+       "dar",
+       "me da miedo"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "mi": {
+    "g": "my",
+    "t": "pronoun",
+    "c": {
+     "es": "Mi español",
+     "en": "My Spanish"
+    },
+    "f": {
+     "label": "de quién",
+     "rows": [
+      [
+       "una cosa",
+       "mi español"
+      ],
+      [
+       "varias",
+       "mis amigas"
+      ],
+      [
+       "de ti",
+       "tu español"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "español": {
+    "g": "Spanish",
+    "t": "noun",
+    "c": {
+     "es": "Mi español es malo",
+     "en": "My Spanish is bad"
+    },
+    "f": {
+     "label": "el español",
+     "rows": [
+      [
+       "el idioma",
+       "el español"
+      ],
+      [
+       "hablar",
+       "hablo español"
+      ],
+      [
+       "en qué",
+       "en español"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "c": {
+     "es": "es malo",
+     "en": "is bad"
+    },
+    "f": {
+     "label": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "malo": {
+    "g": "bad",
+    "t": "adjective",
+    "c": {
+     "es": "es malo",
+     "en": "is bad"
+    },
+    "f": {
+     "label": "malo",
+     "rows": [
+      [
+       "él",
+       "malo"
+      ],
+      [
+       "ella",
+       "mala"
+      ],
+      [
+       "ellos",
+       "malos"
+      ],
+      [
+       "ellas",
+       "malas"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "c": {
+     "es": "dice",
+     "en": "she says"
+    },
+    "f": {
+     "label": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "le": {
+    "g": "to him, her, it",
+    "t": "pronoun",
+    "c": {
+     "es": "le toca el brazo",
+     "en": "touches her arm"
+    },
+    "f": {
+     "label": "a quién",
+     "rows": [
+      [
+       "me",
+       "me toca"
+      ],
+      [
+       "te",
+       "te toca"
+      ],
+      [
+       "her, him",
+       "le toca"
+      ],
+      [
+       "us",
+       "nos toca"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "toca": {
+    "g": "touches, has to",
+    "t": "verb",
+    "c": {
+     "es": "le toca el brazo",
+     "en": "touches her arm"
+    },
+    "f": {
+     "label": "tocar",
+     "rows": [
+      [
+       "yo",
+       "toco"
+      ],
+      [
+       "tú",
+       "tocas"
+      ],
+      [
+       "él, ella",
+       "toca"
+      ],
+      [
+       "nosotros",
+       "tocamos"
+      ],
+      [
+       "vosotros",
+       "tocáis"
+      ],
+      [
+       "ellos",
+       "tocan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "brazo": {
+    "g": "arm",
+    "t": "noun",
+    "c": {
+     "es": "el brazo",
+     "en": "her arm"
+    },
+    "f": {
+     "label": "el brazo",
+     "rows": [
+      [
+       "uno",
+       "un brazo"
+      ],
+      [
+       "varios",
+       "dos brazos"
+      ],
+      [
+       "ese",
+       "el brazo"
+      ],
+      [
+       "esos",
+       "los brazos"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "tu": {
+    "g": "your",
+    "t": "pronoun",
+    "c": {
+     "es": "Tu español",
+     "en": "Your Spanish"
+    },
+    "f": {
+     "label": "de quién",
+     "rows": [
+      [
+       "una cosa",
+       "tu español"
+      ],
+      [
+       "varias",
+       "tus amigas"
+      ],
+      [
+       "de mí",
+       "mi español"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "bueno": {
+    "g": "good, well",
+    "t": "adjective",
+    "c": {
+     "es": "es bueno",
+     "en": "is good"
+    },
+    "f": {
+     "label": "bueno",
+     "rows": [
+      [
+       "él",
+       "bueno"
+      ],
+      [
+       "ella",
+       "buena"
+      ],
+      [
+       "ellos",
+       "buenos"
+      ],
+      [
+       "ellas",
+       "buenas"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "tranquila": {
+    "g": "calm, relax (fem.)",
+    "t": "adjective",
+    "c": {
+     "es": "Tranquila",
+     "en": "Don't worry"
+    },
+    "f": {
+     "label": "tranquilo",
+     "rows": [
+      [
+       "él",
+       "tranquilo"
+      ],
+      [
+       "ella",
+       "tranquila"
+      ],
+      [
+       "ellos",
+       "tranquilos"
+      ],
+      [
+       "ellas",
+       "tranquilas"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "responde": {
+    "g": "answers",
+    "t": "verb",
+    "c": {
+     "es": "responde",
+     "en": "she answers"
+    },
+    "f": {
+     "label": "responder",
+     "rows": [
+      [
+       "yo",
+       "respondo"
+      ],
+      [
+       "tú",
+       "respondes"
+      ],
+      [
+       "él, ella",
+       "responde"
+      ],
+      [
+       "nosotros",
+       "respondemos"
+      ],
+      [
+       "vosotros",
+       "respondéis"
+      ],
+      [
+       "ellos",
+       "responden"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "suben": {
+    "g": "to go up",
+    "t": "verb",
+    "c": {
+     "es": "suben a una barca",
+     "en": "they get into a boat"
+    },
+    "f": {
+     "label": "subir",
+     "rows": [
+      [
+       "yo",
+       "subo"
+      ],
+      [
+       "tú",
+       "subes"
+      ],
+      [
+       "él, ella",
+       "sube"
+      ],
+      [
+       "nosotros",
+       "subimos"
+      ],
+      [
+       "vosotros",
+       "subís"
+      ],
+      [
+       "ellos",
+       "suben"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "una": {
+    "g": "a, one (fem.)",
+    "t": "article",
+    "c": {
+     "es": "una barca pequeña",
+     "en": "a small boat"
+    },
+    "f": {
+     "label": "un o una",
+     "rows": [
+      [
+       "femenino",
+       "una barca"
+      ],
+      [
+       "masculino",
+       "un pato"
+      ],
+      [
+       "varias",
+       "unas barcas"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "barca": {
+    "g": "a small boat",
+    "t": "noun",
+    "c": {
+     "es": "una barca pequeña",
+     "en": "a small boat"
+    },
+    "f": {
+     "label": "la barca",
+     "rows": [
+      [
+       "uno",
+       "una barca"
+      ],
+      [
+       "varios",
+       "dos barcas"
+      ],
+      [
+       "ese",
+       "la barca"
+      ],
+      [
+       "esos",
+       "las barcas"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "pequeña": {
+    "g": "small, little",
+    "t": "adjective",
+    "c": {
+     "es": "barca pequeña",
+     "en": "small boat"
+    },
+    "f": {
+     "label": "pequeño",
+     "rows": [
+      [
+       "él",
+       "pequeño"
+      ],
+      [
+       "ella",
+       "pequeña"
+      ],
+      [
+       "ellos",
+       "pequeños"
+      ],
+      [
+       "ellas",
+       "pequeñas"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "rema": {
+    "g": "rows",
+    "t": "verb",
+    "c": {
+     "es": "Lucía rema",
+     "en": "Lucía rows"
+    },
+    "f": {
+     "label": "remar",
+     "rows": [
+      [
+       "yo",
+       "remo"
+      ],
+      [
+       "tú",
+       "remas"
+      ],
+      [
+       "él, ella",
+       "rema"
+      ],
+      [
+       "nosotros",
+       "remamos"
+      ],
+      [
+       "vosotros",
+       "remáis"
+      ],
+      [
+       "ellos",
+       "reman"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "canta": {
+    "g": "one sings",
+    "t": "verb",
+    "c": {
+     "es": "canta una canción",
+     "en": "sings a song"
+    },
+    "f": {
+     "label": "cantar",
+     "rows": [
+      [
+       "yo",
+       "canto"
+      ],
+      [
+       "tú",
+       "cantas"
+      ],
+      [
+       "él, ella",
+       "canta"
+      ],
+      [
+       "nosotros",
+       "cantamos"
+      ],
+      [
+       "vosotros",
+       "cantáis"
+      ],
+      [
+       "ellos",
+       "cantan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "canción": {
+    "g": "a song",
+    "t": "noun",
+    "c": {
+     "es": "una canción",
+     "en": "a song"
+    },
+    "f": {
+     "label": "la canción",
+     "rows": [
+      [
+       "uno",
+       "una canción"
+      ],
+      [
+       "varios",
+       "dos canciones"
+      ],
+      [
+       "ese",
+       "la canción"
+      ],
+      [
+       "esos",
+       "las canciones"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "está": {
+    "g": "is",
+    "t": "verb",
+    "c": {
+     "es": "el agua está fría",
+     "en": "the water is cold"
+    },
+    "f": {
+     "label": "estar",
+     "rows": [
+      [
+       "yo",
+       "estoy"
+      ],
+      [
+       "tú",
+       "estás"
+      ],
+      [
+       "él, ella",
+       "está"
+      ],
+      [
+       "nosotros",
+       "estamos"
+      ],
+      [
+       "vosotros",
+       "estáis"
+      ],
+      [
+       "ellos",
+       "están"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "fría": {
+    "g": "cold",
+    "t": "adjective",
+    "c": {
+     "es": "está fría",
+     "en": "is cold"
+    },
+    "f": {
+     "label": "frío",
+     "rows": [
+      [
+       "él",
+       "frío"
+      ],
+      [
+       "ella",
+       "fría"
+      ],
+      [
+       "ellos",
+       "fríos"
+      ],
+      [
+       "ellas",
+       "frías"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "limpia": {
+    "g": "clean",
+    "t": "adjective",
+    "c": {
+     "es": "muy limpia",
+     "en": "very clean"
+    },
+    "f": {
+     "label": "limpio",
+     "rows": [
+      [
+       "él",
+       "limpio"
+      ],
+      [
+       "ella",
+       "limpia"
+      ],
+      [
+       "ellos",
+       "limpios"
+      ],
+      [
+       "ellas",
+       "limpias"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "un": {
+    "g": "a, one",
+    "t": "article",
+    "c": {
+     "es": "Un pato",
+     "en": "A duck"
+    },
+    "f": {
+     "label": "un o una",
+     "rows": [
+      [
+       "masculino",
+       "un pato"
+      ],
+      [
+       "femenino",
+       "una barca"
+      ],
+      [
+       "varios",
+       "unos patos"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "pato": {
+    "g": "duck; broke",
+    "t": "noun",
+    "c": {
+     "es": "Un pato nada",
+     "en": "A duck swims"
+    },
+    "f": {
+     "label": "el pato",
+     "rows": [
+      [
+       "uno",
+       "un pato"
+      ],
+      [
+       "varios",
+       "dos patos"
+      ],
+      [
+       "ese",
+       "el pato"
+      ],
+      [
+       "esos",
+       "los patos"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "nada": {
+    "g": "nothing",
+    "t": "pronoun",
+    "c": {
+     "es": "Un pato nada cerca",
+     "en": "A duck swims nearby"
+    },
+    "f": {
+     "label": "nadar",
+     "rows": [
+      [
+       "yo",
+       "nado"
+      ],
+      [
+       "tú",
+       "nadas"
+      ],
+      [
+       "él, ella",
+       "nada"
+      ],
+      [
+       "nosotros",
+       "nadamos"
+      ],
+      [
+       "vosotros",
+       "nadáis"
+      ],
+      [
+       "ellos",
+       "nadan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "cerca": {
+    "g": "near, close",
+    "t": "adverb",
+    "c": {
+     "es": "cerca de ellas",
+     "en": "near them"
+    },
+    "f": {
+     "label": "se usa así",
+     "rows": [
+      [
+       "de alguien",
+       "cerca de ellas"
+      ],
+      [
+       "mucho",
+       "muy cerca"
+      ],
+      [
+       "de un sitio",
+       "cerca del lago"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition",
+    "c": {
+     "es": "cerca de ellas",
+     "en": "near them"
+    },
+    "f": {
+     "label": "se usa así",
+     "rows": [
+      [
+       "de qué",
+       "de fresa"
+      ],
+      [
+       "dónde",
+       "cerca de"
+      ],
+      [
+       "de dónde",
+       "del tren"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "ellas": {
+    "g": "they, them (women)",
+    "t": "pronoun",
+    "c": {
+     "es": "cerca de ellas",
+     "en": "near them"
+    },
+    "f": {
+     "label": "quiénes",
+     "rows": [
+      [
+       "todas mujeres",
+       "ellas"
+      ],
+      [
+       "con un hombre",
+       "ellos"
+      ],
+      [
+       "nosotras",
+       "nosotras"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "después": {
+    "g": "after, later",
+    "t": "adverb",
+    "c": {
+     "es": "Después",
+     "en": "Afterwards"
+    },
+    "f": {
+     "label": "cuándo",
+     "rows": [
+      [
+       "luego",
+       "después"
+      ],
+      [
+       "de algo",
+       "después de comer"
+      ],
+      [
+       "poco",
+       "poco después"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "comen": {
+    "g": "they eat",
+    "t": "verb",
+    "c": {
+     "es": "comen un helado",
+     "en": "they eat an ice cream"
+    },
+    "f": {
+     "label": "comer",
+     "rows": [
+      [
+       "yo",
+       "como"
+      ],
+      [
+       "tú",
+       "comes"
+      ],
+      [
+       "él, ella",
+       "come"
+      ],
+      [
+       "nosotros",
+       "comemos"
+      ],
+      [
+       "vosotros",
+       "coméis"
+      ],
+      [
+       "ellos",
+       "comen"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "helado": {
+    "g": "cold, iced",
+    "t": "noun",
+    "c": {
+     "es": "un helado de fresa",
+     "en": "a strawberry ice cream"
+    },
+    "f": {
+     "label": "el helado",
+     "rows": [
+      [
+       "uno",
+       "un helado"
+      ],
+      [
+       "varios",
+       "dos helados"
+      ],
+      [
+       "ese",
+       "el helado"
+      ],
+      [
+       "esos",
+       "los helados"
+      ],
+      [
+       "de qué",
+       "de fresa"
+      ],
+      [
+       "con qué",
+       "con nata"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "fresa": {
+    "g": "preppy, snobby (Mexican)",
+    "t": "adjective",
+    "c": {
+     "es": "de fresa",
+     "en": "strawberry"
+    },
+    "f": {
+     "label": "la fresa",
+     "rows": [
+      [
+       "de qué",
+       "de fresa"
+      ],
+      [
+       "una",
+       "una fresa"
+      ],
+      [
+       "varias",
+       "dos fresas"
+      ],
+      [
+       "esas",
+       "las fresas"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "saca": {
+    "g": "takes out, pulls out",
+    "t": "verb",
+    "c": {
+     "es": "saca un poco de pan",
+     "en": "takes out a bit of bread"
+    },
+    "f": {
+     "label": "sacar",
+     "rows": [
+      [
+       "yo",
+       "saco"
+      ],
+      [
+       "tú",
+       "sacas"
+      ],
+      [
+       "él, ella",
+       "saca"
+      ],
+      [
+       "nosotros",
+       "sacamos"
+      ],
+      [
+       "vosotros",
+       "sacáis"
+      ],
+      [
+       "ellos",
+       "sacan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "poco": {
+    "g": "little by little (poco a poco)",
+    "t": "adverb",
+    "c": {
+     "es": "un poco de pan",
+     "en": "a bit of bread"
+    },
+    "f": {
+     "label": "cuánto",
+     "rows": [
+      [
+       "de algo",
+       "un poco de pan"
+      ],
+      [
+       "despacio",
+       "poco a poco"
+      ],
+      [
+       "más",
+       "un poco más"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "pan": {
+    "g": "bread",
+    "t": "noun",
+    "c": {
+     "es": "un poco de pan",
+     "en": "some bread"
+    },
+    "f": {
+     "label": "el pan",
+     "rows": [
+      [
+       "en general",
+       "el pan"
+      ],
+      [
+       "un poco",
+       "un poco de pan"
+      ],
+      [
+       "una pieza",
+       "una barra de pan"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "para": {
+    "g": "for, to",
+    "t": "preposition",
+    "c": {
+     "es": "para el pato",
+     "en": "for the duck"
+    },
+    "f": {
+     "label": "para quién",
+     "rows": [
+      [
+       "alguien",
+       "para el pato"
+      ],
+      [
+       "ti",
+       "para ti"
+      ],
+      [
+       "cuándo",
+       "para mañana"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "abraza": {
+    "g": "hugs",
+    "t": "verb",
+    "c": {
+     "es": "abraza a su amiga",
+     "en": "hugs her friend"
+    },
+    "f": {
+     "label": "abrazar",
+     "rows": [
+      [
+       "yo",
+       "abrazo"
+      ],
+      [
+       "tú",
+       "abrazas"
+      ],
+      [
+       "él, ella",
+       "abraza"
+      ],
+      [
+       "nosotros",
+       "abrazamos"
+      ],
+      [
+       "vosotros",
+       "abrazáis"
+      ],
+      [
+       "ellos",
+       "abrazan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "otra": {
+    "g": "another (fem.)",
+    "t": "adjective",
+    "c": {
+     "es": "otra vez",
+     "en": "again"
+    },
+    "f": {
+     "label": "otro",
+     "rows": [
+      [
+       "él",
+       "otro"
+      ],
+      [
+       "ella",
+       "otra"
+      ],
+      [
+       "ellos",
+       "otros"
+      ],
+      [
+       "ellas",
+       "otras"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "vez": {
+    "g": "time, occasion",
+    "t": "noun",
+    "c": {
+     "es": "otra vez",
+     "en": "again"
+    },
+    "f": {
+     "label": "la vez",
+     "rows": [
+      [
+       "otra",
+       "otra vez"
+      ],
+      [
+       "una",
+       "una vez"
+      ],
+      [
+       "dos",
+       "dos veces"
+      ],
+      [
+       "muchas",
+       "muchas veces"
+      ]
+     ],
+     "here": 0
+    }
+   }
+  }
  }
 }

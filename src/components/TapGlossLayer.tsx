@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Heart, Search, X } from "lucide-react";
+import { Heart, List, Search, X } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import type { TapGloss } from "@/lib/tapGlosses";
 import {
@@ -39,6 +39,11 @@ type GlossState = {
   type: VocabTypeKey;
   register: VocabRegisterKey | null;
   sentence?: string;
+  /** Trozo con sentido alrededor de la palabra, traducido. Cuando existe manda
+   *  él: una principiante no entiende "goes down" sobre "baja del tren". */
+  chunk?: { es: string; en: string };
+  /** Las formas de la palabra; ver `TapGloss.f`. */
+  forms?: { label: string; rows: string[][]; here: number };
 };
 
 type FavoriteItem = {
@@ -76,6 +81,9 @@ function tokenFromText(text: string): string {
 export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
   const [selected, setSelected] = React.useState<GlossState | null>(null);
   const [isFav, setIsFav] = React.useState(false);
+  // La tarjeta abre con tres formas; el resto del paradigma se despliega. Se
+  // cierra en cada palabra nueva para que no herede el estado de la anterior.
+  const [formsOpen, setFormsOpen] = React.useState(false);
   const { user, isLoaded } = useUser();
   const favsRef = React.useRef<FavoriteItem[]>([]);
   // Posicionamiento IDÉNTICO a VocabPanel (mismo default y misma medición
@@ -166,7 +174,10 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
         type: normalizeVocabType(entry.t, { word, definition: entry.g }) ?? "other",
         register: normalizeVocabRegister(entry.r),
         sentence: contextSentence(el.closest("p, blockquote"), word),
+        chunk: entry.c,
+        forms: entry.f,
       });
+      setFormsOpen(false);
       setIsFav(
         favsRef.current.some((f) => (f.word ?? "").trim().toLowerCase() === word.trim().toLowerCase())
       );
@@ -174,6 +185,11 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
     document.addEventListener("click", handler);
     return () => document.removeEventListener("click", handler);
   }, [glosses]);
+
+  // La forma que sale en la historia no se esconde nunca: si está fuera de las
+  // tres primeras (contentas es la cuarta de contento), la tarjeta abre con el
+  // paradigma entero y el botón sobra.
+  const formsExpanded = formsOpen || (selected?.forms ? selected.forms.here >= 3 : false);
 
   const toggleFavorite = async () => {
     if (!selected) return;
@@ -310,13 +326,77 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
           <X size={14} strokeWidth={2.6} style={{ pointerEvents: "none" }} />
         </button>
       </div>
-      <p
-        className="mt-1.5 text-[var(--foreground)]"
-        style={{ fontSize: 15, lineHeight: "22px", opacity: 0.9 }}
-      >
-        {selected.gloss}
-      </p>
-      <div className="mt-3 flex">
+      {/* Con capa de contexto la tarjeta enseña el TROZO traducido y una línea
+          de gramática; la glosa suelta ("goes down, lowers") se guarda para las
+          historias que todavía no la tienen. Una tester de la beta tocó tres
+          veces "helado" porque la tarjeta le contestaba "cold, iced" mientras
+          leía que se comían uno (2026-08-24). */}
+      {selected.chunk ? (
+        <p
+          className="mt-1.5 text-[var(--foreground)]"
+          style={{ fontSize: 15, lineHeight: "22px" }}
+        >
+          <span style={{ fontWeight: 700 }}>{selected.chunk.es}</span>
+          <span style={{ opacity: 0.55, padding: "0 6px" }}>→</span>
+          <span style={{ opacity: 0.9 }}>{selected.chunk.en}</span>
+        </p>
+      ) : (
+        <p
+          className="mt-1.5 text-[var(--foreground)]"
+          style={{ fontSize: 15, lineHeight: "22px", opacity: 0.9 }}
+        >
+          {selected.gloss}
+        </p>
+      )}
+      {/* Las FORMAS, no una explicación: la conjugación del verbo, la
+          concordancia del adjetivo, el artículo y el plural del sustantivo. La
+          que sale en la historia va encendida. Tres a la vista y el resto bajo
+          "All forms", para que la tarjeta de una preposición siga siendo corta. */}
+      {selected.forms ? (
+        <div className="mt-2.5 flex items-start gap-2.5">
+          <span
+            className="shrink-0 text-[var(--muted)]"
+            style={{ fontSize: 12, fontWeight: 700, paddingTop: 3 }}
+          >
+            {selected.forms.label}
+          </span>
+          <div className="flex flex-wrap gap-1.5">
+            {selected.forms.rows
+              .slice(0, formsExpanded ? undefined : 3)
+              .map((row, index) => {
+                const [person, form] = row;
+                const isHere = index === selected.forms!.here;
+                return (
+                  <span
+                    key={`${person}-${form}`}
+                    className="inline-flex items-baseline gap-1.5"
+                    style={{
+                      background: isHere ? "rgba(125, 211, 252, 0.16)" : "var(--chip-bg)",
+                      borderRadius: 8,
+                      padding: "3px 8px",
+                    }}
+                  >
+                    {person ? (
+                      <span style={{ color: "var(--muted)", fontSize: 11, fontWeight: 600 }}>
+                        {person}
+                      </span>
+                    ) : null}
+                    <span
+                      style={{
+                        color: isHere ? "#7dd3fc" : "var(--foreground)",
+                        fontSize: 14,
+                        fontWeight: 700,
+                      }}
+                    >
+                      {form}
+                    </span>
+                  </span>
+                );
+              })}
+          </div>
+        </div>
+      ) : null}
+      <div className="mt-3 flex flex-wrap items-center gap-2">
         <button
           type="button"
           onClick={(e) => {
@@ -352,6 +432,28 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
           <Heart size={14} strokeWidth={2.4} fill={isFav ? "currentColor" : "none"} />
           {isFav ? "Saved" : "Save word"}
         </button>
+        {selected.forms && selected.forms.rows.length > 3 && selected.forms.here < 3 ? (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setFormsOpen((open) => !open);
+            }}
+            className="inline-flex items-center gap-2 transition-all cursor-pointer"
+            style={{
+              backgroundColor: "transparent",
+              border: `1px solid ${formsOpen ? "var(--chip-border)" : "var(--card-border)"}`,
+              color: formsOpen ? "var(--foreground)" : "var(--muted)",
+              fontWeight: 700,
+              fontSize: 13,
+              padding: "8px 14px",
+              borderRadius: 999,
+            }}
+          >
+            <List size={14} strokeWidth={2.4} />
+            {formsOpen ? "Fewer forms" : "All forms"}
+          </button>
+        ) : null}
       </div>
     </div>
   );

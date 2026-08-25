@@ -1,0 +1,109 @@
+{
+  "artboards": [
+    {
+      "file": "Verb.dc.html",
+      "title": "Verb · baja",
+      "page": "page-1",
+      "x": 0,
+      "y": 0,
+      "w": 504,
+      "h": 470
+    },
+    {
+      "file": "Noun.dc.html",
+      "title": "Noun · helado",
+      "page": "page-1",
+      "x": 560,
+      "y": 0,
+      "w": 504,
+      "h": 470
+    },
+    {
+      "file": "Adjective.dc.html",
+      "title": "Adjective · contentas",
+      "page": "page-1",
+      "x": 1120,
+      "y": 0,
+      "w": 504,
+      "h": 470
+    },
+    {
+      "file": "Pronoun.dc.html",
+      "title": "Pronoun · la",
+      "page": "page-1",
+      "x": 0,
+      "y": 520,
+      "w": 504,
+      "h": 470
+    },
+    {
+      "file": "Adverb.dc.html",
+      "title": "Adverb · despacio",
+      "page": "page-1",
+      "x": 560,
+      "y": 520,
+      "w": 504,
+      "h": 430
+    },
+    {
+      "file": "Contraction.dc.html",
+      "title": "Function words · del",
+      "page": "page-1",
+      "x": 1120,
+      "y": 520,
+      "w": 504,
+      "h": 430
+    },
+    {
+      "file": "Progressive.dc.html",
+      "title": "Option C · the picker",
+      "page": "page-2",
+      "x": 0,
+      "y": 0,
+      "w": 504,
+      "h": 520
+    },
+    {
+      "file": "Main.dc.html",
+      "title": "Option A · One row of forms",
+      "page": "page-2",
+      "x": 560,
+      "y": 0,
+      "w": 504,
+      "h": 520
+    },
+    {
+      "file": "Labelled.dc.html",
+      "title": "Option B · Full table",
+      "page": "page-2",
+      "x": 1120,
+      "y": 0,
+      "w": 504,
+      "h": 560
+    }
+  ],
+  "annotations": [
+    {
+      "id": "brief",
+      "page": "page-1",
+      "x": 0,
+      "y": -170,
+      "w": 700,
+      "text": "Option C applied to every word type, with real words from marta-ensena-el-retiro.\nThe English line never changes; what changes is the block under it.\nAdverbs and function words have no paradigm, so the card stays short and the All forms button is gone.\nThe percentages are this journey's real bundle: 669 glosses."
+    }
+  ],
+  "pages": [
+    {
+      "id": "page-1",
+      "name": "Word types"
+    },
+    {
+      "id": "page-2",
+      "name": "Directions"
+    }
+  ],
+  "launch": {
+    "view": "canvas",
+    "page": "page-1"
+  }
+}

@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+  <style>
+    body { margin: 0; background: #0b1220; font-family: Nunito, "Geist Sans", system-ui, sans-serif; }
+    a { color: #7dd3fc; } a:hover { color: #38bdf8; }
+  </style>
+</helmet>
+<div style="display: flex; flex-direction: column; gap: 22px; padding: 28px; width: 504px; box-sizing: border-box">
+
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <span style="color: #9aa7bd; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase">Option A · One row of forms</span>
+    <span style="color: #e6eaf2; font-size: 15px; line-height: 21px; opacity: 0.75">Phrase, then the three forms she will meet first. Nothing else.</span>
+  </div>
+
+  <div style="color: #e6eaf2; font-size: 17px; line-height: 27px; opacity: 0.5">
+    {{ before }}<span style="color: #7dd3fc; opacity: 1; font-weight: 700">{{ word }}</span>{{ after }}
+  </div>
+
+  <div style="background: #111a2b; border: 1px dashed rgba(255, 255, 255, 0.14); border-radius: 20px; padding: 14px 18px 16px; box-shadow: 0 8px 14px rgba(0, 0, 0, 0.22); display: flex; flex-direction: column; gap: 12px">
+
+    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px">
+      <div style="display: flex; align-items: center; gap: 6px">
+        <span style="display: inline-flex; align-items: center; gap: 4px; background: rgba(148, 163, 184, 0.28); color: #e6eaf2; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; opacity: 0.85">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.6-3.6"></path></svg>
+          {{ word }}
+        </span>
+        <span style="background: {{ typeColor }}; color: #ffffff; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px">{{ type }}</span>
+        <span style="color: #9aa7bd; font-size: 12px; font-weight: 600">{{ lemma }}</span>
+      </div>
+      <span style="display: grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.22); color: #e6eaf2; flex-shrink: 0">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6L6 18"></path><path d="M6 6l12 12"></path></svg>
+      </span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <span style="color: #e6eaf2; font-size: 22px; font-weight: 800; line-height: 29px">{{ chunkEs }}</span>
+      <span style="color: #e6eaf2; font-size: 17px; line-height: 24px; opacity: 0.82">{{ chunkEn }}</span>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px">
+      <sc-for list="{{ forms }}" as="f" hint-placeholder-count="3">
+        <span style="display: inline-flex; align-items: baseline; gap: 6px; background: {{ f.bg }}; border: 1px solid {{ f.border }}; border-radius: 12px; padding: 6px 10px">
+          <span style="color: #9aa7bd; font-size: 11px; font-weight: 700">{{ f.person }}</span>
+          <span style="color: {{ f.color }}; font-size: 15px; font-weight: 700">{{ f.form }}</span>
+        </span>
+      </sc-for>
+    </div>
+
+    <div style="display: flex">
+      <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.14); color: #e6eaf2; font-weight: 700; font-size: 13px; padding: 8px 14px; border-radius: 999px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5 5 0 00-7.1 0L12 7.3l-1.7-1.7a5 5 0 10-7.1 7.1l8.8 8.8 8.8-8.8a5 5 0 000-7.1z"></path></svg>
+        Save word
+      </span>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"word":{"editor":"enum","options":["baja","helado","nada"],"default":"baja","section":"Content"}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const HERE = { bg: "rgba(125, 211, 252, 0.16)", border: "rgba(125, 211, 252, 0.55)", color: "#7dd3fc" };
+    const REST = { bg: "rgba(255, 255, 255, 0.05)", border: "rgba(255, 255, 255, 0.12)", color: "#e6eaf2" };
+    const row = (person, form, here) => ({ person, form, ...(here ? HERE : REST) });
+    const WORDS = {
+      baja: {
+        type: "verb", typeColor: "rgba(248, 113, 113, 0.6)", lemma: "bajar",
+        before: "Lucía ", after: " del tren en Madrid, y su amiga Marta la espera en la estación.",
+        chunkEs: "baja del tren", chunkEn: "gets off the train",
+        forms: [row("yo", "bajo"), row("tú", "bajas"), row("él, ella", "baja", true)]
+      },
+      helado: {
+        type: "noun", typeColor: "rgba(56, 189, 248, 0.65)", lemma: "el helado",
+        before: "Después, las dos comen un ", after: " de fresa, y Lucía saca un poco de pan para el pato.",
+        chunkEs: "un helado de fresa", chunkEn: "a strawberry ice cream",
+        forms: [row("uno", "un helado", true), row("varios", "dos helados"), row("de qué", "de fresa, de chocolate")]
+      },
+      nada: {
+        type: "verb", typeColor: "rgba(248, 113, 113, 0.6)", lemma: "nadar",
+        before: "Un pato ", after: " cerca de ellas.",
+        chunkEs: "Un pato nada cerca", chunkEn: "A duck swims nearby",
+        forms: [row("yo", "nado"), row("tú", "nadas"), row("él, ella", "nada", true)]
+      }
+    };
+    const key = this.props.word ?? "baja";
+    const w = WORDS[key] ?? WORDS.baja;
+    return { word: key, ...w };
+  }
+}
+</script>
+</body>
+</html>
