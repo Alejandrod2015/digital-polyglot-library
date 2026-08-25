@@ -12,6 +12,7 @@ import {
   getJourneyTopicRequiredStoryCount,
   getUnlockedLevelCount,
 } from "@/app/journey/journeyData";
+import { JOURNEY_LEVEL_IDS, normalizeJourneyPlacementLevel } from "@/lib/journeyUnlock";
 import {
   getCompletedJourneyStoryKeys,
   getJourneyDueReviewItems,
@@ -103,48 +104,26 @@ export async function GET(req: NextRequest): Promise<Response> {
       getJourneyDueReviewItems(200, session.sub),
     ]);
 
-  // SAFETY NET: si el usuario tiene `journeyPlacementLevel` set pero
-  // todavía no ha terminado ni una sola historia EN EL IDIOMA ACTUAL,
-  // el placement no aporta; solo está marcando como `skipped` los
-  // niveles inferiores y empujando la "next" hacia abajo. En ese caso
-  // lo limpiamos en Clerk y servimos la respuesta sin placement.
-  // Self-healing: cualquier futura request ya verá
-  // `journeyPlacementLevel = null` desde Clerk.
+  // El resultado del test de nivel del onboarding, tal cual. NO se limpia.
   //
-  // Nota importante: comparamos contra los progressKeys de las
-  // historias DEL TRACK ACTUAL (filtradas por idioma). El set
-  // `completedStoryKeys` es global (incluye todos los idiomas), así
-  // que un usuario con progreso en otros idiomas pero 0 en este sigue
-  // disparando el self-heal.
-  let journeyPlacementLevel = rawJourneyPlacementLevel;
-  if (journeyPlacementLevel) {
-    let hasProgressInThisLanguage = false;
-    outer: for (const track of rawTracks) {
-      for (const level of track.levels) {
-        for (const topic of level.topics) {
-          for (const story of topic.stories) {
-            if (completedStoryKeys.has(story.progressKey)) {
-              hasProgressInThisLanguage = true;
-              break outer;
-            }
-          }
-        }
-      }
-    }
-    if (!hasProgressInThisLanguage) {
-      try {
-        const updatedMetadata: Record<string, unknown> = { ...(user.publicMetadata ?? {}) };
-        delete updatedMetadata.journeyPlacementLevel;
-        await clerkClient.users.updateUserMetadata(session.sub, {
-          publicMetadata: updatedMetadata,
-        });
-        journeyPlacementLevel = null;
-      } catch {
-        // Best-effort: si Clerk falla, simplemente seguimos con el valor
-        // actual; la próxima request volverá a intentar.
-      }
-    }
-  }
+  // Aquí vivía un self-heal del 2026-05-02: si el usuario tenía placement pero
+  // no había terminado ninguna historia EN ESTE IDIOMA, se le BORRABA de Clerk.
+  // Nació para placements heredados de un flujo de test anterior, que marcaban
+  // `skipped` los niveles inferiores de un journey multinivel y dejaban la
+  // "next" a mitad del track.
+  //
+  // Hoy hace justo el daño que venía a evitar. Un usuario recién salido del
+  // onboarding tiene, por definición, cero historias terminadas, así que la
+  // PRIMERA carga del journey borraba el resultado de su test antes de que
+  // llegara a usarse una sola vez. Ty (beta, 2026-08-23) dio B2 a las 03:47 y a
+  // los pocos segundos su B2 ya no existía; escribió "I can't get it back to
+  // B2", y tenía razón, porque no quedaba nada a lo que volver.
+  //
+  // Y su premisa ya no se sostiene: ningún journey servible es multinivel (los
+  // 13 activos son 1 nivel x 7 temas x 3 historias, y los legacy multinivel
+  // están archivados), así que `placementIndex + 1` no puede pasar de 1 y el
+  // placement no puede empujar la "next" a ninguna parte.
+  const journeyPlacementLevel = rawJourneyPlacementLevel;
   // Serve only the variant the learner asked for. A Spain learner was being
   // offered the LATAM C1 Friends journey alongside his A0 Spain one and read
   // two of its stories before writing in about the Mexican slang (2026-08-20);
@@ -177,8 +156,59 @@ export async function GET(req: NextRequest): Promise<Response> {
     : rawTracks;
   // Variable kept under the original name so the rest of the route reads
   // unchanged.
-  const tracks = matchingTracks.length > 0 ? matchingTracks : rawTracks;
-  const variantFilterApplied = tracks === matchingTracks && matchingTracks.length < rawTracks.length;
+  const servedTracks = matchingTracks.length > 0 ? matchingTracks : rawTracks;
+  const variantFilterApplied =
+    servedTracks === matchingTracks && matchingTracks.length < rawTracks.length;
+
+  // El primero de la lista manda, así que el primero tiene que ser el que le
+  // toca por nivel.
+  //
+  // El cliente antiguo (todo build <= 314) no mira el placement: coge el PRIMER
+  // track cuya variante casa y se queda ahí. `buildJourneyVariants` los ordena
+  // de menor a mayor nivel, que es lo correcto para un catálogo y lo peor
+  // posible para ese cliente: el 2026-08-24 ese cambio de orden movió a un
+  // tester de B2 del Friends C1 al Traveler A0 de un día para otro, sin que él
+  // tocara nada. Antes, con el orden por nombre, el primero era el C1 y un
+  // principiante caía ahí. Las dos veces el fallo es el mismo: el orden decide
+  // el nivel de alguien.
+  //
+  // Aquí, que es el único sitio que conoce su placement, se reordena por
+  // CERCANÍA a él. El cliente nuevo tampoco pierde: sigue encontrando por `find`
+  // el track que casa exacto, y su reserva (`variantTracks[0]`) pasa de ser "el
+  // más fácil" a "el más cercano", que es lo que quería decir.
+  //
+  // Sin placement no se toca nada: se sirve el orden ascendente de siempre.
+  //
+  // Empate a distancia (b2 con un b1 y un c1 delante): gana el de ABAJO. Una
+  // historia un punto por debajo se lee entera; una por encima se abandona.
+  const placementRank = (JOURNEY_LEVEL_IDS as readonly string[]).indexOf(
+    normalizeJourneyPlacementLevel(journeyPlacementLevel) ?? ""
+  );
+  const distanceToPlacement = (track: (typeof servedTracks)[number]) => {
+    let best = { distance: Number.MAX_SAFE_INTEGER, above: 1 };
+    for (const level of track.levels) {
+      const rank = (JOURNEY_LEVEL_IDS as readonly string[]).indexOf(
+        level.id.trim().toLowerCase()
+      );
+      if (rank < 0) continue;
+      const candidate = { distance: Math.abs(rank - placementRank), above: rank > placementRank ? 1 : 0 };
+      if (
+        candidate.distance < best.distance ||
+        (candidate.distance === best.distance && candidate.above < best.above)
+      ) {
+        best = candidate;
+      }
+    }
+    return best;
+  };
+  const tracks =
+    placementRank < 0
+      ? servedTracks
+      : [...servedTracks].sort((a, b) => {
+          const da = distanceToPlacement(a);
+          const db = distanceToPlacement(b);
+          return da.distance - db.distance || da.above - db.above || a.label.localeCompare(b.label);
+        });
 
   const dueReviewProgressKeySet = new Set(
     dueReviewItems.map((item) => item.progressKey).filter((value): value is string => Boolean(value))
