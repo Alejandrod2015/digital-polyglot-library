@@ -12,13 +12,13 @@ import {
   getJourneyTopicRequiredStoryCount,
   getUnlockedLevelCount,
 } from "@/app/journey/journeyData";
-import { JOURNEY_LEVEL_IDS, normalizeJourneyPlacementLevel } from "@/lib/journeyUnlock";
 import {
   getCompletedJourneyStoryKeys,
   getJourneyDueReviewItems,
   getPassedJourneyCheckpointKeys,
   getPracticedJourneyTopicKeys,
 } from "@/lib/journeyProgress";
+import { orderTracksByPlacement } from "@/lib/journeyTrackOrder";
 import { variantMatchesPreference } from "@/lib/languageVariant";
 import { resolveLearnerVariant } from "@/lib/learnerVariant";
 import { getActiveMobileSession } from "@/lib/mobileSession";
@@ -161,71 +161,10 @@ export async function GET(req: NextRequest): Promise<Response> {
     servedTracks === matchingTracks && matchingTracks.length < rawTracks.length;
 
   // El primero de la lista manda, así que el primero tiene que ser el que le
-  // toca por nivel.
-  //
-  // El cliente antiguo (todo build <= 314) no mira el placement: coge el PRIMER
-  // track cuya variante casa y se queda ahí. `buildJourneyVariants` los ordena
-  // de menor a mayor nivel, que es lo correcto para un catálogo y lo peor
-  // posible para ese cliente: el 2026-08-24 ese cambio de orden movió a un
-  // tester de B2 del Friends C1 al Traveler A0 de un día para otro, sin que él
-  // tocara nada. Antes, con el orden por nombre, el primero era el C1 y un
-  // principiante caía ahí. Las dos veces el fallo es el mismo: el orden decide
-  // el nivel de alguien.
-  //
-  // Aquí, que es el único sitio que conoce su placement, se reordena por
-  // CERCANÍA a él. El cliente nuevo tampoco pierde: sigue encontrando por `find`
-  // el track que casa exacto, y su reserva (`variantTracks[0]`) pasa de ser "el
-  // más fácil" a "el más cercano", que es lo que quería decir.
-  //
-  // Sin placement no se toca nada: se sirve el orden ascendente de siempre.
-  //
-  // Empate a distancia (b2 con un b1 y un c1 delante): gana el de ABAJO. Una
-  // historia un punto por debajo se lee entera; una por encima se abandona.
-  //
-  // Segundo desempate, y no es teórico: gana el track de SU variante exacta. El
-  // pool de LATAM mete en la misma bolsa "latam", "mexico" y "colombia", así que
-  // a igual distancia había dos C1 empatados y el primero salía por orden
-  // alfabético del label, que en los dos casos es "Friends". Ty tiene
-  // `preferredVariant: null` en Clerk, de modo que su app no filtra por variante
-  // y se come literalmente el primero de la lista: sin este desempate volvía al
-  // Friends de Colombia en vez de al de LATAM, que es el que estaba leyendo.
-  const placementRank = (JOURNEY_LEVEL_IDS as readonly string[]).indexOf(
-    normalizeJourneyPlacementLevel(journeyPlacementLevel) ?? ""
-  );
-  const exactVariantRank = (track: (typeof servedTracks)[number]) =>
-    learnerVariant && (track.variant ?? "").trim().toLowerCase() === learnerVariant.trim().toLowerCase()
-      ? 0
-      : 1;
-  const distanceToPlacement = (track: (typeof servedTracks)[number]) => {
-    let best = { distance: Number.MAX_SAFE_INTEGER, above: 1 };
-    for (const level of track.levels) {
-      const rank = (JOURNEY_LEVEL_IDS as readonly string[]).indexOf(
-        level.id.trim().toLowerCase()
-      );
-      if (rank < 0) continue;
-      const candidate = { distance: Math.abs(rank - placementRank), above: rank > placementRank ? 1 : 0 };
-      if (
-        candidate.distance < best.distance ||
-        (candidate.distance === best.distance && candidate.above < best.above)
-      ) {
-        best = candidate;
-      }
-    }
-    return best;
-  };
-  const tracks =
-    placementRank < 0
-      ? servedTracks
-      : [...servedTracks].sort((a, b) => {
-          const da = distanceToPlacement(a);
-          const db = distanceToPlacement(b);
-          return (
-            da.distance - db.distance ||
-            exactVariantRank(a) - exactVariantRank(b) ||
-            da.above - db.above ||
-            a.label.localeCompare(b.label)
-          );
-        });
+  // toca por nivel. El porqué, los criterios y el historial de las dos veces
+  // que este orden decidió mal el nivel de alguien viven en
+  // `orderTracksByPlacement`, que es donde se pueden probar.
+  const tracks = orderTracksByPlacement(servedTracks, journeyPlacementLevel, learnerVariant);
 
   const dueReviewProgressKeySet = new Set(
     dueReviewItems.map((item) => item.progressKey).filter((value): value is string => Boolean(value))
