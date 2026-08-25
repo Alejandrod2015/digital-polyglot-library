@@ -16551,6 +16551,7 @@ export function MobileLibraryShell(args: {
       setActiveScreen("home");
       setActiveJourneyLanguage(language);
       void loadJourneyForLanguage(language, { requireTrackId: trackId });
+      trackSelectionIsExplicitRef.current = true;
       setSelectedJourneyTrackId(trackId);
       shellScrollRef.current?.scrollTo({ y: 0, animated: false });
     };
@@ -16610,6 +16611,7 @@ export function MobileLibraryShell(args: {
         setActiveJourneyLanguage(language);
         void loadJourneyForLanguage(language);
       }
+      trackSelectionIsExplicitRef.current = true;
       setSelectedJourneyTrackId(journeyId);
 
       // Avisos que apuntan a UNA historia (el de "historia a medias") mandan
@@ -16981,6 +16983,28 @@ export function MobileLibraryShell(args: {
       }),
     [activeJourneyPrimaryAction, continueReading, dueFavoritesCount, preferences.dailyMinutes, preferences.learningGoal]
   );
+
+  // Cuando llega un payload NUEVO del servidor, una eleccion AUTOMATICA de track
+  // se descarta para que se vuelva a resolver con el orden nuevo. Una eleccion
+  // EXPLICITA (enlace, aviso, selector) se respeta siempre.
+  //
+  // Sin esto el arreglo del servidor no le llega al usuario en su primer
+  // arranque. La secuencia: `hydrateOfflineState` siembra `remoteJourney` desde
+  // el cache de DISCO (siempre gana, disco contra red), el efecto de abajo clava
+  // `selectedJourneyTrackId` en el `tracks[0]` VIEJO, y cuando el payload fresco
+  // llega ya hay una seleccion, asi que `??` no la toca y `baseTrack` la
+  // prefiere sobre todo lo demas. El usuario se queda la sesion entera en el
+  // track de ayer, y solo ve el nuevo al segundo arranque en frio, porque para
+  // entonces el cache de disco ya se reescribio.
+  const trackSelectionIsExplicitRef = useRef(false);
+  const lastResolvedPayloadRef = useRef<MobileJourneyPayload | null>(null);
+  useEffect(() => {
+    if (!remoteJourney) return;
+    if (lastResolvedPayloadRef.current === remoteJourney) return;
+    lastResolvedPayloadRef.current = remoteJourney;
+    if (trackSelectionIsExplicitRef.current) return;
+    setSelectedJourneyTrackId(null);
+  }, [remoteJourney]);
 
   useEffect(() => {
     if (!activeJourneyTrack) {
