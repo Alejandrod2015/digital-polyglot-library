@@ -181,9 +181,21 @@ export async function GET(req: NextRequest): Promise<Response> {
   //
   // Empate a distancia (b2 con un b1 y un c1 delante): gana el de ABAJO. Una
   // historia un punto por debajo se lee entera; una por encima se abandona.
+  //
+  // Segundo desempate, y no es teórico: gana el track de SU variante exacta. El
+  // pool de LATAM mete en la misma bolsa "latam", "mexico" y "colombia", así que
+  // a igual distancia había dos C1 empatados y el primero salía por orden
+  // alfabético del label, que en los dos casos es "Friends". Ty tiene
+  // `preferredVariant: null` en Clerk, de modo que su app no filtra por variante
+  // y se come literalmente el primero de la lista: sin este desempate volvía al
+  // Friends de Colombia en vez de al de LATAM, que es el que estaba leyendo.
   const placementRank = (JOURNEY_LEVEL_IDS as readonly string[]).indexOf(
     normalizeJourneyPlacementLevel(journeyPlacementLevel) ?? ""
   );
+  const exactVariantRank = (track: (typeof servedTracks)[number]) =>
+    learnerVariant && (track.variant ?? "").trim().toLowerCase() === learnerVariant.trim().toLowerCase()
+      ? 0
+      : 1;
   const distanceToPlacement = (track: (typeof servedTracks)[number]) => {
     let best = { distance: Number.MAX_SAFE_INTEGER, above: 1 };
     for (const level of track.levels) {
@@ -207,7 +219,12 @@ export async function GET(req: NextRequest): Promise<Response> {
       : [...servedTracks].sort((a, b) => {
           const da = distanceToPlacement(a);
           const db = distanceToPlacement(b);
-          return da.distance - db.distance || da.above - db.above || a.label.localeCompare(b.label);
+          return (
+            da.distance - db.distance ||
+            exactVariantRank(a) - exactVariantRank(b) ||
+            da.above - db.above ||
+            a.label.localeCompare(b.label)
+          );
         });
 
   const dueReviewProgressKeySet = new Set(
