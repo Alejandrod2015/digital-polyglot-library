@@ -2163,6 +2163,21 @@ export function ReaderScreen(args: {
     setEndOfStoryPromptVisible(false);
     setEndOfStoryFace("practice");
     setStoryRatingComment("");
+    // Al cerrar, el lector baja hasta la tarjeta de practica.
+    //
+    // La puerta permanente ya existia, pero vive DEBAJO del ultimo parrafo y el
+    // popup la tapa mientras esta arriba, asi que quien lo cierra vuelve al
+    // texto sin haberla visto nunca. Ty, que se estudio la app entera, escribio
+    // "there needs to be an intuitive way to trigger the exercises" y conto que
+    // para recuperarla ponia el audio a 1.5x hasta el final para volver a
+    // disparar el popup. Reconstruyendo a mano el evento, que es exactamente lo
+    // que la tarjeta venia a evitar.
+    //
+    // Cerrar el popup deja la tarjeta a la vista. Nada que buscar y nada que
+    // aprenderse: el sitio al que vuelves ES la puerta.
+    requestAnimationFrame(() => {
+      scrollViewRef.current?.scrollToEnd({ animated: true });
+    });
   }
 
   /**
