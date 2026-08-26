@@ -22,6 +22,7 @@ import LanguageBadge from "@/components/LanguageBadge";
 import RegionBadge from "@/components/RegionBadge";
 import ScrollToTopOnPathChange from "@/components/ScrollToTopOnPathChange";
 import VocabPanel from "@/components/VocabPanel";
+import type { TapGloss } from "@/lib/tapGlosses";
 
 // Reuse the canonical shape rather than re-declaring a near-copy; VocabPanel
 // is typed against this one and a structural near-miss fails to assign.
@@ -68,6 +69,7 @@ export type StoryReaderShellProps = {
     language?: string | null;
     source?: "polyglot" | "standalone";
     vocab?: VocabItem[];
+    glosses?: Record<string, TapGloss>;
   } | null;
 };
 

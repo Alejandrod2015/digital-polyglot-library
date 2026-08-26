@@ -107,6 +107,24 @@
       "y": 0,
       "w": 390,
       "h": 844
+    },
+    {
+      "file": "CuratedBefore.dc.html",
+      "title": "Antes · solo la definición",
+      "page": "page-4",
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "file": "CuratedAfter.dc.html",
+      "title": "Después · el mismo cuerpo + su definición",
+      "page": "page-4",
+      "x": 440,
+      "y": 0,
+      "w": 390,
+      "h": 844
     }
   ],
   "annotations": [
@@ -125,6 +143,14 @@
       "y": -190,
       "w": 820,
       "text": "Übergabeprotokoll, el peor caso del formato: ocho formas de 21 letras. Medido a 390 x 844.\nA: el bloque hace scroll dentro. Techo fijo de 314 px, pero corta una fila por la mitad.\nB: See more / See less. Cerrado 326 px, abierto 484. Ninguna fila cortada y dice cuántas faltan. El botón funciona."
+    },
+    {
+      "id": "curada",
+      "page": "page-4",
+      "x": 0,
+      "y": -190,
+      "w": 820,
+      "text": "La pill curada de tren, antes y después. Las curadas son la capa que la historia SÍ quiere enseñar, y hasta ahora daban menos gramática que el diccionario incidental.\nDespués: el mismo cuerpo del quick lookup (trozo en contexto, género, plural) y encima lo suyo, la definición.\nLa curada NO tiene audio: los segmentos solo sirven para que la palabra guardada sepa a qué frase volver.\nCruce medido en esta historia: 23 de las 24 curadas ya tienen capa de contexto; la que falta es otra vez, de dos palabras."
     }
   ],
   "pages": [
@@ -139,10 +165,14 @@
     {
       "id": "page-3",
       "name": "Worst case"
+    },
+    {
+      "id": "page-4",
+      "name": "Curated pill"
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-1"
+    "page": "page-4"
   }
 }

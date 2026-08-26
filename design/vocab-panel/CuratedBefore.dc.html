@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+  <style>
+    body { margin: 0; background: #0b1220; font-family: Nunito, "Geist Sans", system-ui, sans-serif; }
+    a { color: #7dd3fc; } a:hover { color: #38bdf8; }
+  </style>
+</helmet>
+<div style="position: relative; width: 390px; height: 844px; background: #0b1220; overflow: hidden">
+  <div style="padding: 20px 18px 0; color: #e6eaf2; font-size: 17px; line-height: 27px; opacity: 0.45">
+    Lucía baja del <span style="color: #7dd3fc; opacity: 1; font-weight: 700; text-decoration: underline; text-decoration-color: rgba(125,211,252,0.5); text-underline-offset: 4px">tren</span> en Madrid, y su amiga Marta la espera en la estación con flores en la mano.
+  </div>
+  <div style="position: absolute; left: 18px; right: 18px; bottom: 108px"><div id="card" style="background: #111a2b; border: 1px solid rgba(255,255,255,0.14); border-radius: 20px; padding: 16px 18px; box-shadow: 0 8px 14px rgba(0,0,0,0.22); display: flex; flex-direction: column; gap: 10px">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px">
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px; min-width: 0">
+          <span style="color: #ffffff; font-size: 22px; font-weight: 800">tren</span>
+          
+          <span style="display: inline-flex; align-items: center; gap: 4px; background: rgba(59, 130, 246, 0.4); color: #ffffff; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h12v18H6a2 2 0 01-2-2z"></path><path d="M8 3v18"></path></svg> Story vocab</span>
+          <span style="display: inline-flex; align-items: center; gap: 4px; background: rgba(56, 189, 248, 0.65); color: #ffffff; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px">noun</span>
+        </div>
+        <span style="display: grid; place-items: center; width: 32px; height: 32px; border-radius: 999px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); color: #e6eaf2; flex-shrink: 0; font-size: 15px">×</span>
+      </div>
+      
+      <p style="margin: 0; color: #e6eaf2; font-size: 15px; line-height: 22px; opacity: 0.9">a vehicle that carries people on rails</p>
+      
+      <div style="display: flex; align-items: center; gap: 10px"><span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); color: #e6eaf2; font-weight: 800; font-size: 14px; padding: 10px 16px; border-radius: 999px">♥ Save word</span></div>
+    </div></div>
+  <div style="position: absolute; left: 12px; right: 12px; bottom: 16px; height: 80px; background: #111a2b; border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; gap: 18px; color: #9aa7bd; font-size: 12px">
+    <span>0:00</span><span style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 999px; background: #2f6df6; color: #fff">▶</span><span>0:59</span>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

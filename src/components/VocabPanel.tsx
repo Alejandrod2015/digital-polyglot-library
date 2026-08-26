@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { BookOpen, Heart, X } from "lucide-react";
+import { BookOpen, ChevronDown, ChevronUp, Heart, X } from "lucide-react";
 import { VocabItem } from "@/types/books";
 import { useUser } from "@clerk/nextjs";
 import { normalizeVocabType, getVocabTypeLabel, normalizeVocabRegister, getVocabRegisterLabel, type VocabTypeKey } from "@/lib/vocabTypes";
@@ -10,6 +10,7 @@ import {
   findBestAudioSegment,
   splitStoryTextIntoSentences,
 } from "@/lib/audioSegments";
+import type { TapGloss } from "@/lib/tapGlosses";
 
 type FavoriteItem = {
   word: string;
@@ -85,6 +86,11 @@ interface VocabPanelProps {
     source?: "polyglot" | "standalone";
     vocab?: VocabItem[];
     audioSegments?: unknown;
+    /** Capa de contexto de la historia, la misma del diccionario: trozo
+     *  traducido, género y formas. Las curadas son la capa que la historia SÍ
+     *  quiere enseñar, así que no pueden dar menos gramática que un toque
+     *  cualquiera (2026-08-26). */
+    glosses?: Record<string, TapGloss>;
   };
   initialWord?: string | null;
   initialDefinition?: string | null;
@@ -99,6 +105,9 @@ export default function VocabPanel({
 }: VocabPanelProps) {
   const [selectedWord, setSelectedWord] = useState(initialWord);
   const [definition, setDefinition] = useState(initialDefinition);
+  // El paradigma de un verbo o un pronombre se abre desde el enlace; se cierra
+  // al cambiar de palabra para no heredar el estado de la anterior.
+  const [formsOpen, setFormsOpen] = useState(false);
   const [selectedSentence, setSelectedSentence] = useState<string | undefined>(undefined);
   const [selectedSourcePath, setSelectedSourcePath] = useState<string | undefined>(undefined);
   const [isFav, setIsFav] = useState(false);
@@ -236,6 +245,7 @@ export default function VocabPanel({
       });
       setSelectedWord(item?.word ?? word);
       setDefinition(item?.definition ?? null);
+      setFormsOpen(false);
       setSelectedSentence(sentence);
       setSelectedSourcePath(buildSourcePath(sentence, word));
       if (process.env.NODE_ENV !== "production") {
@@ -350,6 +360,22 @@ export default function VocabPanel({
   // diccionario (TapGlossReader).
   const selectedRegister = normalizeVocabRegister(selectedItem?.register);
 
+  // La entrada de contexto se busca por la palabra y por su forma en el texto:
+  // el vocab curado guarda el lema ("esperar") y la capa va por superficie
+  // ("espera"), así que sin las dos claves se pierde la mitad.
+  const glossEntry: TapGloss | null = (() => {
+    const mapa = story.glosses;
+    if (!mapa || !selectedWord) return null;
+    const claves = [selectedWord, selectedItem?.surface, selectedItem?.word]
+      .filter((x): x is string => Boolean(x))
+      .map((x) => x.trim().toLowerCase());
+    for (const clave of claves) {
+      const hit = mapa[clave];
+      if (hit?.c) return hit;
+    }
+    return null;
+  })();
+
   if (!selectedWord) return null;
 
   return (
@@ -397,11 +423,21 @@ export default function VocabPanel({
         {/* Header: word + type badge (left) · close × (right) */}
         <div className="flex items-start justify-between gap-3">
           <div className="flex flex-1 flex-col gap-0.5 min-w-0">
-            <span
-              className="text-white truncate"
-              style={{ fontSize: 22, fontWeight: 800 }}
-            >
-              {selectedWord}
+            <span className="flex flex-wrap items-baseline gap-2">
+              <span
+                className="text-white"
+                style={{ fontSize: 22, fontWeight: 800 }}
+              >
+                {selectedWord}
+              </span>
+              {glossEntry?.gm ? (
+                <span
+                  className="text-[var(--muted)]"
+                  style={{ fontSize: 14, fontWeight: 600, fontStyle: "italic" }}
+                >
+                  {glossEntry.gm}
+                </span>
+              ) : null}
             </span>
             {/* Rol explícito del panel: contraparte del chip "Quick
                 lookup" del diccionario (TapGlossReader). Azul + libro =
@@ -481,6 +517,19 @@ export default function VocabPanel({
           </button>
         </div>
 
+        {/* El trozo en contexto, el mismo que enseña el diccionario. Va delante
+            de la definición: primero qué dice AQUÍ, luego qué es en general. */}
+        {glossEntry?.c ? (
+          <p
+            className="mt-1.5 text-[var(--foreground)]"
+            style={{ fontSize: 15, lineHeight: "22px" }}
+          >
+            <span style={{ fontWeight: 700 }}>{glossEntry.c.es}</span>
+            <span style={{ opacity: 0.55, padding: "0 6px" }}>→</span>
+            <span style={{ opacity: 0.9 }}>{glossEntry.c.en}</span>
+          </p>
+        ) : null}
+
         {/* Definition */}
         {definition ? (
           <p
@@ -495,8 +544,46 @@ export default function VocabPanel({
           </p>
         )}
 
+        {/* Las formas, igual que en el diccionario: lo que la palabra cambia y
+            no sale ya arriba. Las de tipo "expand" (verbos, pronombres) se
+            despliegan desde el enlace de la fila de abajo. */}
+        {glossEntry?.f && (glossEntry.f.kind !== "expand" || formsOpen) ? (
+          <div className="mt-2.5 flex flex-wrap gap-1.5">
+            {glossEntry.f.rows.map((row, index) => {
+              const [person, form] = row;
+              const isHere = index === glossEntry.f!.here;
+              return (
+                <span
+                  key={`${person}-${form}`}
+                  className="inline-flex items-baseline gap-1.5"
+                  style={{
+                    background: isHere ? "rgba(125, 211, 252, 0.16)" : "var(--chip-bg)",
+                    borderRadius: 8,
+                    padding: "3px 8px",
+                  }}
+                >
+                  {person ? (
+                    <span style={{ color: "var(--muted)", fontSize: 11, fontWeight: 600 }}>
+                      {person}
+                    </span>
+                  ) : null}
+                  <span
+                    style={{
+                      color: isHere ? "#7dd3fc" : "var(--foreground)",
+                      fontSize: 14,
+                      fontWeight: 700,
+                    }}
+                  >
+                    {form}
+                  </span>
+                </span>
+              );
+            })}
+          </div>
+        ) : null}
+
         {/* Action row: save chip; cyan glow at rest, gold when active */}
-        <div className="mt-3 flex">
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
           <button
             type="button"
             onClick={(e) => {
@@ -544,6 +631,24 @@ export default function VocabPanel({
             />
             {isFav ? "Saved" : "Save word"}
           </button>
+          {glossEntry?.f?.kind === "expand" && glossEntry.f.link ? (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setFormsOpen((open) => !open);
+              }}
+              className="inline-flex items-center gap-1.5 cursor-pointer"
+              style={{ color: "#7dd3fc", fontSize: 13, fontWeight: 700, padding: "8px 2px" }}
+            >
+              {formsOpen ? "Hide" : glossEntry.f.link}
+              {formsOpen ? (
+                <ChevronUp size={13} strokeWidth={2.6} />
+              ) : (
+                <ChevronDown size={13} strokeWidth={2.6} />
+              )}
+            </button>
+          ) : null}
         </div>
     </div>
   );

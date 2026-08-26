@@ -504,6 +504,10 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
         title: resolvedStory.title,
         language: resolvedStory.language ?? undefined,
         vocab: safeVocab,
+        // La capa de contexto de la historia es la MISMA que usa el diccionario.
+        // Las curadas son la capa que la historia sí quiere enseñar, así que no
+        // pueden dar menos gramática que un toque cualquiera.
+        glosses: tapGlosses ?? undefined,
       }}
     >
       {/* Texto principal */}
