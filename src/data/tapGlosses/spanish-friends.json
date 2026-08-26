@@ -31132,19 +31132,35 @@
   "el-psicologo-de-la-barra": {
    "psicólogo": {
     "g": "psychologist",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El psicólogo de la barra",
+     "en": "The bar-stool psychologist"
+    }
    },
    "de": {
     "g": "of, from",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "El psicólogo de la barra",
+     "en": "The bar-stool psychologist"
+    }
    },
    "barra": {
     "g": "the bar counter",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el psicólogo de la barra",
+     "en": "the bar-stool psychologist"
+    }
    },
    "flor": {
     "g": "flower; great (slang)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Flor llegó bajoneada",
+     "en": "Flor turned up down in the dumps"
+    }
    },
    "llegó": {
     "g": "arrived",
@@ -31180,19 +31196,35 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Flor llegó bajoneada",
+     "en": "Flor turned up down in the dumps"
     }
    },
    "bajoneada": {
     "g": "bummed out, down",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "llegó bajoneada",
+     "en": "turned up down in the dumps"
+    }
    },
    "y": {
     "g": "and",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "y Tomás se ofreció de psicólogo",
+     "en": "and Tomás volunteered as psychologist"
+    }
    },
    "se": {
     "g": "oneself, himself",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Tomás se ofreció de psicólogo improvisado",
+     "en": "Tomás volunteered as stand-in psychologist"
+    }
    },
    "ofreció": {
     "g": "offered",
@@ -31228,35 +31260,67 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se ofreció de psicólogo improvisado",
+     "en": "volunteered as stand-in psychologist"
     }
    },
    "improvisado": {
     "g": "improvised",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "psicólogo improvisado",
+     "en": "stand-in psychologist"
+    }
    },
    "contame": {
     "g": "tell me",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "Contame todo, flaca",
+     "en": "Tell me everything, love"
+    }
    },
    "todo": {
     "g": "all, everything",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Contame todo",
+     "en": "Tell me everything"
+    }
    },
    "flaca": {
     "g": "skinny girl; babe",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Contame todo, flaca",
+     "en": "Tell me everything, love"
+    }
    },
    "que": {
     "g": "that",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "que para eso están los amigos",
+     "en": "that is what friends are for"
+    }
    },
    "para": {
     "g": "for, to",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "para eso están los amigos",
+     "en": "that is what friends are for"
+    }
    },
    "eso": {
     "g": "that",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "para eso están los amigos",
+     "en": "that is what friends are for"
+    }
    },
    "están": {
     "g": "that is what they are for (para eso están)",
@@ -31292,11 +31356,19 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "para eso están los amigos",
+     "en": "that is what friends are for"
     }
    },
    "amigos": {
     "g": "friends",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "para eso están los amigos",
+     "en": "that is what friends are for"
+    }
    },
    "dijo": {
     "g": "said",
@@ -31332,15 +31404,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "dijo, muy pancho",
+     "en": "he said, completely unbothered"
     }
    },
    "muy": {
     "g": "very",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "muy pancho",
+     "en": "completely unbothered"
+    }
    },
    "pancho": {
     "g": "Pancho; hot dog; fuss",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "muy pancho",
+     "en": "completely unbothered"
+    }
    },
    "acomodó": {
     "g": "straightened, adjusted",
@@ -31376,39 +31460,75 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Se acomodó en el taburete",
+     "en": "He settled onto the stool"
     }
    },
    "en": {
     "g": "in, on",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "en el taburete",
+     "en": "onto the stool"
+    }
    },
    "taburete": {
     "g": "a bar stool",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Se acomodó en el taburete",
+     "en": "He settled onto the stool"
+    }
    },
    "como": {
     "g": "like, as",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "como si fuera un diván carísimo",
+     "en": "as if it were a very expensive couch"
+    }
    },
    "si": {
     "g": "if, whether",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "como si fuera un diván carísimo",
+     "en": "as if it were a very expensive couch"
+    }
    },
    "fuera": {
     "g": "outside; were",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "como si fuera un diván",
+     "en": "as if it were a couch"
+    }
    },
    "diván": {
     "g": "a therapy couch",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un diván carísimo de consultorio",
+     "en": "a very expensive therapist's couch"
+    }
    },
    "carísimo": {
     "g": "super expensive",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "un diván carísimo",
+     "en": "a very expensive couch"
+    }
    },
    "consultorio": {
     "g": "a doctor's office",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "diván de consultorio",
+     "en": "a therapist's couch"
+    }
    },
    "arrancó": {
     "g": "started off",
@@ -31444,23 +31564,43 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Flor arrancó a contar",
+     "en": "Flor launched into it"
     }
    },
    "a": {
     "g": "to, at",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "arrancó a contar",
+     "en": "launched into telling it"
+    }
    },
    "contar": {
     "g": "to tell, count",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "arrancó a contar",
+     "en": "launched into telling it"
+    }
    },
    "chabón": {
     "g": "guy, dude",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el chabón que le gustaba",
+     "en": "the guy she liked"
+    }
    },
    "le": {
     "g": "to him, her, it",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "el chabón que le gustaba",
+     "en": "the guy she liked"
+    }
    },
    "gustaba": {
     "g": "she liked him (le gustaba)",
@@ -31496,6 +31636,10 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "el chabón que le gustaba",
+     "en": "the guy she liked"
     }
    },
    "era": {
@@ -31532,35 +31676,67 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "era un careta total",
+     "en": "was a total phoney"
     }
    },
    "careta": {
     "g": "mask, front",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un careta total",
+     "en": "a total phoney"
+    }
    },
    "total": {
     "g": "anyway, total",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "un careta total",
+     "en": "a total phoney"
+    }
    },
    "había": {
     "g": "there was; had",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "La había dejado colgada dos veces",
+     "en": "He had left her hanging twice"
+    }
    },
    "dejado": {
     "g": "left",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "La había dejado colgada",
+     "en": "He had left her hanging"
+    }
    },
    "colgada": {
     "g": "left hanging (dejar colgada)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "dejado colgada",
+     "en": "left hanging"
+    }
    },
    "veces": {
     "g": "times, occasions",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "dos veces",
+     "en": "twice"
+    }
    },
    "encima": {
     "g": "on top; besides",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "y encima chamuyaba a otras minas",
+     "en": "and on top of that he was chatting up other women"
+    }
    },
    "chamuyaba": {
     "g": "was sweet talking (chamuyar)",
@@ -31596,27 +31772,51 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "chamuyaba a otras minas",
+     "en": "was chatting up other women"
     }
    },
    "otras": {
     "g": "others (fem.)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "otras minas",
+     "en": "other women"
+    }
    },
    "minas": {
     "g": "women, girls (porteño)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "otras minas",
+     "en": "other women"
+    }
    },
    "al": {
     "g": "to the",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "al mismo tiempo",
+     "en": "at the same time"
+    }
    },
    "mismo": {
     "g": "same",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "al mismo tiempo",
+     "en": "at the same time"
+    }
    },
    "tiempo": {
     "g": "time, weather",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "al mismo tiempo",
+     "en": "at the same time"
+    }
    },
    "es": {
     "g": "is",
@@ -31652,23 +31852,43 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Es un forro",
+     "en": "He is a jerk"
     }
    },
    "forro": {
     "g": "jerk, asshole (Argentine)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Es un forro",
+     "en": "He is a jerk"
+    }
    },
    "sacátelo": {
     "g": "get him out of your head",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "sacátelo de la cabeza ya",
+     "en": "get him out of your head right now"
+    }
    },
    "cabeza": {
     "g": "head",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "sacátelo de la cabeza",
+     "en": "get him out of your head"
+    }
    },
    "ya": {
     "g": "already, now",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "sacátelo de la cabeza ya",
+     "en": "get him out of your head right now"
+    }
    },
    "sentenció": {
     "g": "declared with authority",
@@ -31704,19 +31924,35 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "sentenció Tomás con autoridad",
+     "en": "Tomás pronounced with authority"
     }
    },
    "con": {
     "g": "with",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "con autoridad",
+     "en": "with authority"
+    }
    },
    "autoridad": {
     "g": "authority",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con autoridad",
+     "en": "with authority"
+    }
    },
    "pibe": {
     "g": "kid, guy",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El pibe se mandó una teoría larguísima",
+     "en": "The lad launched into an enormous theory"
+    }
    },
    "mandó": {
     "g": "sent",
@@ -31752,23 +31988,43 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se mandó una teoría larguísima",
+     "en": "launched into an enormous theory"
     }
    },
    "teoría": {
     "g": "a theory",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "una teoría larguísima",
+     "en": "an enormous theory"
+    }
    },
    "larguísima": {
     "g": "very long",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "una teoría larguísima",
+     "en": "an enormous theory"
+    }
    },
    "sobre": {
     "g": "about, on",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "sobre cómo funcionaba el amor",
+     "en": "about how love worked"
+    }
    },
    "cómo": {
     "g": "how",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "cómo funcionaba el amor",
+     "en": "how love worked"
+    }
    },
    "funcionaba": {
     "g": "was working",
@@ -31804,11 +32060,19 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "cómo funcionaba el amor",
+     "en": "how love worked"
     }
    },
    "amor": {
     "g": "love",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "cómo funcionaba el amor",
+     "en": "how love worked"
+    }
    },
    "hablaba": {
     "g": "was talking, spoke",
@@ -31844,39 +32108,75 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "Hablaba de señales, de códigos",
+     "en": "He talked about signals, about codes"
     }
    },
    "señales": {
     "g": "signs, signals",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Hablaba de señales",
+     "en": "He talked about signals"
+    }
    },
    "códigos": {
     "g": "unwritten codes and rules",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "de códigos",
+     "en": "about codes"
+    }
    },
    "banderas": {
     "g": "red flags (banderas rojas)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "banderas rojas",
+     "en": "red flags"
+    }
    },
    "rojas": {
     "g": "red flags (banderas rojas)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "banderas rojas",
+     "en": "red flags"
+    }
    },
    "experto": {
     "g": "expert",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "como todo un experto del tema",
+     "en": "like a total expert on the subject"
+    }
    },
    "del": {
     "g": "of the",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "experto del tema",
+     "en": "expert on the subject"
+    }
    },
    "tema": {
     "g": "topic, issue",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "experto del tema",
+     "en": "expert on the subject"
+    }
    },
    "lo": {
     "g": "it, him",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Flor lo escuchaba",
+     "en": "Flor listened to him"
+    }
    },
    "escuchaba": {
     "g": "was listening",
@@ -31912,71 +32212,139 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "Flor lo escuchaba",
+     "en": "Flor listened to him"
     }
    },
    "entre": {
     "g": "between, among",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "entre sorprendida y aliviada",
+     "en": "half surprised, half relieved"
+    }
    },
    "sorprendida": {
     "g": "surprised",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "entre sorprendida y aliviada",
+     "en": "half surprised, half relieved"
+    }
    },
    "aliviada": {
     "g": "relieved",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "aliviada de tener semejante gurú al lado",
+     "en": "relieved to have such a guru beside her"
+    }
    },
    "tener": {
     "g": "to have",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "de tener semejante gurú al lado",
+     "en": "to have such a guru beside her"
+    }
    },
    "semejante": {
     "g": "such a",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "semejante gurú",
+     "en": "such a guru"
+    }
    },
    "gurú": {
     "g": "a guru, an expert",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "semejante gurú al lado",
+     "en": "such a guru beside her"
+    }
    },
    "lado": {
     "g": "side",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "al lado",
+     "en": "beside her"
+    }
    },
    "vos": {
     "g": "you (Arg.)",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Vos tenés que hacerte la difícil",
+     "en": "You have to play hard to get"
+    }
    },
    "tenés": {
     "g": "you have (voseo)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "Vos tenés que hacerte la difícil",
+     "en": "You have to play hard to get"
+    }
    },
    "hacerte": {
     "g": "to play hard to get (hacerte la difícil)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "hacerte la difícil",
+     "en": "play hard to get"
+    }
    },
    "difícil": {
     "g": "to play hard to get (hacerse la difícil)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "hacerte la difícil",
+     "en": "play hard to get"
+    }
    },
    "no": {
     "g": "no, not",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "no le des bola tan fácil",
+     "en": "do not give him the time of day so easily"
+    }
    },
    "des": {
     "g": "you give",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "no le des bola",
+     "en": "do not give him the time of day"
+    }
    },
    "bola": {
     "g": "the gang, group of friends",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "no le des bola",
+     "en": "do not give him the time of day"
+    }
    },
    "tan": {
     "g": "so, such",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "tan fácil",
+     "en": "so easily"
+    }
    },
    "fácil": {
     "g": "easy",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "tan fácil",
+     "en": "so easily"
+    }
    },
    "aconsejaba": {
     "g": "was advising",
@@ -32012,11 +32380,19 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "le aconsejaba",
+     "en": "he advised her"
     }
    },
    "te": {
     "g": "you, yourself",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Si te busca",
+     "en": "If he comes looking for you"
+    }
    },
    "busca": {
     "g": "looks for, seeks",
@@ -32052,23 +32428,43 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Si te busca",
+     "en": "If he comes looking for you"
     }
    },
    "labure": {
     "g": "to work hard for it (laburar)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "que labure para conseguirte",
+     "en": "let him work for it"
+    }
    },
    "conseguirte": {
     "g": "to win you over",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "que labure para conseguirte",
+     "en": "let him work to get you"
+    }
    },
    "regales": {
     "g": "do not hand it over free (no le regales)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "no le regales nada",
+     "en": "do not give him anything for free"
+    }
    },
    "nada": {
     "g": "nothing",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "no le regales nada",
+     "en": "do not give him anything for free"
+    }
    },
    "agregaba": {
     "g": "added, chimed in",
@@ -32104,19 +32500,35 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "agregaba convencido",
+     "en": "he added, convinced"
     }
    },
    "convencido": {
     "g": "convinced",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "agregaba convencido",
+     "en": "he added, convinced"
+    }
    },
    "cada": {
     "g": "each, every",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "Cada consejo sonaba más pulido",
+     "en": "Each piece of advice sounded more polished"
+    }
    },
    "consejo": {
     "g": "advice, a tip",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Cada consejo sonaba más pulido",
+     "en": "Each piece of advice sounded more polished"
+    }
    },
    "sonaba": {
     "g": "sounded, rang a bell",
@@ -32152,39 +32564,75 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "sonaba más pulido que el anterior",
+     "en": "sounded more polished than the last"
     }
    },
    "más": {
     "g": "more",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "más pulido que el anterior",
+     "en": "more polished than the last"
+    }
    },
    "pulido": {
     "g": "polished, refined",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "más pulido que el anterior",
+     "en": "more polished than the last"
+    }
    },
    "anterior": {
     "g": "previous",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "que el anterior",
+     "en": "than the last one"
+    }
    },
    "sacado": {
     "g": "gotten, pulled out",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "como sacado de un libro",
+     "en": "as if straight out of a book"
+    }
    },
    "libro": {
     "g": "a book",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "sacado de un libro",
+     "en": "straight out of a book"
+    }
    },
    "casi": {
     "g": "almost",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "ya casi curada del bajón",
+     "en": "by now almost cured of the slump"
+    }
    },
    "curada": {
     "g": "cured, healed",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "casi curada del bajón",
+     "en": "almost cured of the slump"
+    }
    },
    "bajón": {
     "g": "downer, low mood",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "curada del bajón",
+     "en": "cured of the slump"
+    }
    },
    "miró": {
     "g": "looked",
@@ -32220,43 +32668,83 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "lo miró con una admiración nueva",
+     "en": "she looked at him with new admiration"
     }
    },
    "admiración": {
     "g": "admiration",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con una admiración nueva",
+     "en": "with new admiration"
+    }
    },
    "nueva": {
     "g": "new (fem.)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "una admiración nueva",
+     "en": "new admiration"
+    }
    },
    "sos": {
     "g": "you are",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "Sos un genio, Tomás",
+     "en": "You are a genius, Tomás"
+    }
    },
    "genio": {
     "g": "a bad temper (mal genio)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Sos un genio",
+     "en": "You are a genius"
+    }
    },
    "dónde": {
     "g": "where",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "de dónde sacás toda esta posta",
+     "en": "where do you get all this wisdom"
+    }
    },
    "sacás": {
     "g": "where you get it (de dónde sacás)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "de dónde sacás toda esta posta",
+     "en": "where do you get all this wisdom"
+    }
    },
    "toda": {
     "g": "all, whole (fem.)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "toda esta posta",
+     "en": "all this wisdom"
+    }
    },
    "esta": {
     "g": "this (one)",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "toda esta posta",
+     "en": "all this wisdom"
+    }
    },
    "posta": {
     "g": "for real, true",
-    "t": "expression"
+    "t": "expression",
+    "c": {
+     "es": "toda esta posta",
+     "en": "all this straight-up wisdom"
+    }
    },
    "preguntó": {
     "g": "asked",
@@ -32292,15 +32780,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "le preguntó agradecida",
+     "en": "she asked him gratefully"
     }
    },
    "agradecida": {
     "g": "grateful",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "le preguntó agradecida",
+     "en": "she asked him gratefully"
+    }
    },
    "él": {
     "g": "he, him",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Él sonrió con humildad falsa",
+     "en": "He smiled with fake modesty"
+    }
    },
    "sonrió": {
     "g": "he/she smiled",
@@ -32336,31 +32836,59 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Él sonrió con humildad falsa",
+     "en": "He smiled with fake modesty"
     }
    },
    "humildad": {
     "g": "humility",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con humildad falsa",
+     "en": "with fake modesty"
+    }
    },
    "falsa": {
     "g": "fake",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "humildad falsa",
+     "en": "fake modesty"
+    }
    },
    "otro": {
     "g": "another, other",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "se mandó otro trago",
+     "en": "he knocked back another drink"
+    }
    },
    "trago": {
     "g": "a swig, a gulp of drink",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "se mandó otro trago sin apuro",
+     "en": "he knocked back another drink, in no hurry"
+    }
    },
    "sin": {
     "g": "without",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "sin apuro",
+     "en": "in no hurry"
+    }
    },
    "apuro": {
     "g": "rush, tight spot",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "sin apuro",
+     "en": "in no hurry"
+    }
    },
    "venía": {
     "g": "he/she was coming",
@@ -32396,11 +32924,19 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "Camila, que venía llegando",
+     "en": "Camila, who was just arriving"
     }
    },
    "llegando": {
     "g": "arriving",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "que venía llegando",
+     "en": "who was just arriving"
+    }
    },
    "escuchó": {
     "g": "listened",
@@ -32436,15 +32972,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "escuchó la última parte",
+     "en": "heard the last part"
     }
    },
    "última": {
     "g": "last, final",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "la última parte",
+     "en": "the last part"
+    }
    },
    "parte": {
     "g": "part",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "la última parte",
+     "en": "the last part"
+    }
    },
    "soltó": {
     "g": "he/she let go, blurted",
@@ -32480,23 +33028,43 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "soltó una carcajada enorme",
+     "en": "let out an enormous laugh"
     }
    },
    "carcajada": {
     "g": "a burst of loud laughter",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "una carcajada enorme",
+     "en": "an enormous laugh"
+    }
    },
    "enorme": {
     "g": "huge, enormous",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "una carcajada enorme",
+     "en": "an enormous laugh"
+    }
    },
    "serio": {
     "g": "serious",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "En serio",
+     "en": "Seriously"
+    }
    },
    "este": {
     "g": "this (one); um",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "este te está dando consejos de mujeres",
+     "en": "this one is giving you advice about women"
+    }
    },
    "está": {
     "g": "is",
@@ -32532,19 +33100,35 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "te está dando consejos",
+     "en": "is giving you advice"
     }
    },
    "dando": {
     "g": "giving",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "te está dando consejos de mujeres",
+     "en": "is giving you advice about women"
+    }
    },
    "consejos": {
     "g": "pieces of advice",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "consejos de mujeres",
+     "en": "advice about women"
+    }
    },
    "mujeres": {
     "g": "women",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "consejos de mujeres",
+     "en": "advice about women"
+    }
    },
    "tiró": {
     "g": "he/she threw, tossed",
@@ -32580,11 +33164,19 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "tiró sin filtro",
+     "en": "she fired off, with no filter"
     }
    },
    "filtro": {
     "g": "with no filter (sin filtro)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "sin filtro",
+     "en": "with no filter"
+    }
    },
    "hizo": {
     "g": "did, made",
@@ -32620,27 +33212,51 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Tomás le hizo señas desesperadas",
+     "en": "Tomás signalled at her frantically"
     }
    },
    "señas": {
     "g": "hand signals, gestures",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "le hizo señas desesperadas",
+     "en": "signalled at her frantically"
+    }
    },
    "desesperadas": {
     "g": "desperate",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "señas desesperadas",
+     "en": "frantic signals"
+    }
    },
    "callara": {
     "g": "would shut up",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "para que se callara la boca",
+     "en": "to get her to shut up"
+    }
    },
    "boca": {
     "g": "mouth",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "se callara la boca",
+     "en": "shut her mouth"
+    }
    },
    "pero": {
     "g": "but",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "Pero Camila ya estaba lanzada",
+     "en": "But Camila was already off"
+    }
    },
    "estaba": {
     "g": "was, used to be",
@@ -32676,23 +33292,43 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "ya estaba lanzada",
+     "en": "was already off"
     }
    },
    "lanzada": {
     "g": "on a roll, unstoppable (lanzado)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "ya estaba lanzada",
+     "en": "was already off"
+    }
    },
    "bomba": {
     "g": "to drop a bombshell (soltar la bomba)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "soltó la bomba",
+     "en": "dropped the bombshell"
+    }
    },
    "piedad": {
     "g": "mercy",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "sin piedad ninguna",
+     "en": "without an ounce of mercy"
+    }
    },
    "ninguna": {
     "g": "none, not any (fem.)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "sin piedad ninguna",
+     "en": "without an ounce of mercy"
+    }
    },
    "tuvo": {
     "g": "had",
@@ -32728,35 +33364,67 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "este pibe no tuvo una cita en toda su vida",
+     "en": "this lad has never had a date in his life"
     }
    },
    "cita": {
     "g": "a date",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "no tuvo una cita",
+     "en": "has never had a date"
+    }
    },
    "su": {
     "g": "his, her, their",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "en toda su vida",
+     "en": "in his whole life"
+    }
    },
    "vida": {
     "g": "life",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "en toda su vida",
+     "en": "in his whole life"
+    }
    },
    "solo": {
     "g": "only, alone",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "es más solo que perro en la calle",
+     "en": "he is lonelier than a stray dog"
+    }
    },
    "perro": {
     "g": "dog; dude",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "más solo que perro en la calle",
+     "en": "lonelier than a stray dog"
+    }
    },
    "calle": {
     "g": "street",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "perro en la calle",
+     "en": "a dog on the street"
+    }
    },
    "gran": {
     "g": "great, grand",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "El gran psicólogo de la barra",
+     "en": "The great bar-stool psychologist"
+    }
    },
    "puso": {
     "g": "put, placed",
@@ -32792,11 +33460,19 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se puso rojo",
+     "en": "went red"
     }
    },
    "rojo": {
     "g": "red, blushing",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "se puso rojo",
+     "en": "went red"
+    }
    },
    "pudo": {
     "g": "could, managed",
@@ -32832,11 +33508,19 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "no pudo defenderse",
+     "en": "could not defend himself"
     }
    },
    "defenderse": {
     "g": "to defend oneself",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "no pudo defenderse",
+     "en": "could not defend himself"
+    }
    }
   },
   "rodrigo-se-lo-busco": {
