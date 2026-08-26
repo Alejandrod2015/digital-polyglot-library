@@ -47,7 +47,7 @@ export default async function GlossShotPage({
 
   const story = await prisma.journeyStory.findFirst({
     where: { slug },
-    select: { slug: true, title: true, text: true, vocab: true },
+    select: { slug: true, title: true, text: true, vocab: true, coverUrl: true },
   });
   if (!story) notFound();
 
@@ -71,9 +71,21 @@ export default async function GlossShotPage({
 
   return (
     <div className="min-h-screen bg-[var(--background)] px-5 py-7">
-      <h1 className="text-3xl font-extrabold text-center mb-6 text-[var(--foreground)]">
+      <h1 className="text-3xl font-extrabold text-center mb-5 text-[var(--foreground)]">
         {story.title}
       </h1>
+      {story.coverUrl ? (
+        <div className="mb-7">
+          <div className="relative mx-auto w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-[#102746]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={story.coverUrl}
+              alt=""
+              className="block w-full aspect-[16/10] object-contain"
+            />
+          </div>
+        </div>
+      ) : null}
       <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
         <Reader
           text={text}
@@ -116,6 +128,29 @@ export function writeHarness(): void {
   writeFileSync(`${HARNESS}/page.tsx`, HARNESS_PAGE);
 }
 
+
+/**
+ * Next tarda varios segundos en registrar una ruta recien escrita, y mientras
+ * responde 404. Un sleep fijo no vale: el 2026-08-26 el generador del GIF se
+ * quedo colgado porque navego al 404 y luego espero por elementos que no
+ * existian.
+ */
+export async function waitForHarness(base: string, timeoutMs = 90_000): Promise<void> {
+  const url = `${base}/dev-glossshot?slug=marta-ensena-el-retiro&mode=after`;
+  const deadline = Date.now() + timeoutMs;
+  let last = 0;
+  while (Date.now() < deadline) {
+    try {
+      const res = await fetch(url, { method: "GET" });
+      last = res.status;
+      if (res.ok) return;
+    } catch {
+      last = 0;
+    }
+    await new Promise((r) => setTimeout(r, 1500));
+  }
+  throw new Error(`El harness no respondio 200 en ${timeoutMs} ms (ultimo: ${last}).`);
+}
 
 export function removeHarness(): void {
   rmSync(HARNESS, { recursive: true, force: true });

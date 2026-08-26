@@ -12,7 +12,7 @@
  */
 import { chromium } from "playwright";
 import { mkdirSync } from "node:fs";
-import { writeHarness, removeHarness } from "./_glossHarness";
+import { writeHarness, removeHarness, waitForHarness } from "./_glossHarness";
 
 const BASE = process.env.SHOT_BASE ?? "http://localhost:3000";
 const OUT = "public/email/glosses";
@@ -27,8 +27,7 @@ const SHOTS: Shot[] = [
 async function main() {
   mkdirSync(OUT, { recursive: true });
   writeHarness();
-  // El dev server tiene que compilar la ruta recien escrita.
-  await new Promise((r) => setTimeout(r, 1500));
+  await waitForHarness(BASE);
   // Usa el Chrome ya instalado: playwright no tiene su binario descargado.
   const browser = await chromium.launch({ channel: "chrome" });
   const context = await browser.newContext({

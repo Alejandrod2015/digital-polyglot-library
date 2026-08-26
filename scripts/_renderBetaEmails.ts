@@ -83,7 +83,7 @@ const improvementGeneric: BetaEmailData = {
       fullSizeImage: "/email/glosses/baja-after.png",
     },
     askThem: TRY_IT,
-    ctaUrl: "https://digitalpolyglot.com/stories",
+    ctaUrl: "https://digitalpolyglot.com/explore",
   },
 };
 
@@ -109,7 +109,7 @@ const improvementColombe: BetaEmailData = {
     },
     changes: ["Articles, numbers and character names are no longer tappable. The card had nothing to add about them."],
     askThem: TRY_IT,
-    ctaUrl: "https://digitalpolyglot.com/stories",
+    ctaUrl: "https://digitalpolyglot.com/explore",
   },
 };
 
@@ -136,7 +136,7 @@ const improvementTy: BetaEmailData = {
     },
     changes: ["Highlighted words got the same treatment, on top of the definition they already had."],
     askThem: TRY_IT,
-    ctaUrl: "https://digitalpolyglot.com/stories",
+    ctaUrl: "https://digitalpolyglot.com/explore",
   },
 };
 

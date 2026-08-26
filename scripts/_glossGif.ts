@@ -14,7 +14,7 @@
 import { chromium, type Page } from "playwright";
 import { execFileSync } from "node:child_process";
 import { mkdirSync, writeFileSync, rmSync, statSync } from "node:fs";
-import { writeHarness, removeHarness } from "./_glossHarness";
+import { writeHarness, removeHarness, waitForHarness } from "./_glossHarness";
 
 const BASE = process.env.SHOT_BASE ?? "http://localhost:3000";
 const OUT = "public/email/glosses";
@@ -55,12 +55,29 @@ async function unring(page: Page): Promise<void> {
   await page.evaluate(() => document.getElementById("tap-ring")?.remove());
 }
 
+/** Fuera lo que no es la app: cookies, instalar, soporte. Se remontan, asi que
+ *  se llama antes de CADA fotograma y no una sola vez. */
+async function hideChrome(page: Page): Promise<void> {
+  // Solo los hijos directos del body: los banners son portales al final del
+  // documento. Barrer `body *` llegaba a ocultar un ancestro del texto, y con
+  // el la palabra que hay que tocar.
+  await page.evaluate(() => {
+    Array.from(document.body.children).forEach((node) => {
+      const el = node as HTMLElement;
+      const text = (el.textContent ?? "").trim();
+      if (text.startsWith("COOKIE CHOICES") || text.startsWith("Install Digital Polyglot")) {
+        el.style.display = "none";
+      }
+    });
+  });
+}
+
 async function main() {
   mkdirSync(OUT, { recursive: true });
   rmSync(TMP, { recursive: true, force: true });
   mkdirSync(TMP, { recursive: true });
   writeHarness();
-  await new Promise((r) => setTimeout(r, 1500));
+  await waitForHarness(BASE);
 
   const browser = await chromium.launch({ channel: "chrome" });
   const context = await browser.newContext({
@@ -73,41 +90,65 @@ async function main() {
   });
   const page = await context.newPage();
 
+  const step = (msg: string) => console.log(`  · ${msg}`);
+
   for (const clip of CLIPS) {
+    step(`${clip.file}: abriendo`);
+    // `networkidle` se queda esperando por la portada, que viene de R2: se
+    // espera a que la imagen este pintada, y con tope.
     await page.goto(`${BASE}/dev-glossshot?slug=${clip.slug}&mode=after`, {
-      waitUntil: "networkidle",
+      waitUntil: "domcontentloaded",
+      timeout: 60_000,
     });
+    await page
+      .waitForFunction(
+        () => {
+          const img = document.querySelector("img");
+          return !img || (img.complete && img.naturalWidth > 0);
+        },
+        undefined,
+        { timeout: 20_000 },
+      )
+      .catch(() => console.warn(`  aviso: la portada de ${clip.slug} no cargo a tiempo`));
     await page.addStyleTag({
       content: "nextjs-portal{display:none!important}[data-nextjs-toast]{display:none!important}",
     });
 
+    step("portada lista");
     const word = page.locator(`[data-token="${clip.word}"]`).first();
-    await word.scrollIntoViewIfNeeded();
 
     // Frames con su duracion en segundos. El ultimo se mantiene: es el estado
     // que el lector tiene que llevarse.
     const frames: Array<{ file: string; seconds: number }> = [];
     let n = 0;
     const grab = async (seconds: number) => {
+      await hideChrome(page);
       const file = `${TMP}/f${String(n++).padStart(2, "0")}.png`;
       await page.screenshot({ path: file });
       frames.push({ file, seconds });
     };
 
-    await page.evaluate(() => {
-      document.querySelectorAll("body *").forEach((node) => {
-        const el = node as HTMLElement;
-        const text = (el.textContent ?? "").trim();
-        if (text.startsWith("COOKIE CHOICES") || text.startsWith("Install Digital Polyglot")) {
-          el.style.display = "none";
-        }
-      });
-    });
 
+    // Empieza por arriba: portada y titulo, que es la historia tal como se
+    // abre. Sin eso, el correo enseña un parrafo suelto.
+    await page.waitForTimeout(400);
+    await grab(1.4);
+
+    step("scroll a la palabra");
+    await word.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(250);
+    // Empieza por arriba: portada y titulo, que es la historia tal como se
+    // abre. Sin eso, el correo enseña un parrafo suelto.
+    await page.waitForTimeout(400);
+    await grab(1.4);
+
+    await word.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(250);
     await ring(page, `[data-token="${clip.word}"]`);
     await grab(1.0);
     await unring(page);
 
+    step("tap");
     await word.click();
     await page.locator("text=QUICK LOOKUP").first().waitFor({ state: "visible" });
     await page.waitForTimeout(200);
@@ -127,6 +168,7 @@ async function main() {
         await page.waitForTimeout(250);
       }
     }
+    step("cierre");
     await grab(3.0);
 
     // ffmpeg con el demuxer concat: duracion por fotograma sin repetirlos.

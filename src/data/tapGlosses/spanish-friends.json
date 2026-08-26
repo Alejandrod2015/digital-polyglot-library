@@ -2631,10 +2631,6 @@
    "g": "falls",
    "t": "verb"
   },
-  "marina": {
-   "g": "Marina; navy",
-   "t": "noun"
-  },
   "apartamento": {
    "g": "apartment",
    "t": "noun"
@@ -4431,10 +4427,6 @@
    "g": "blurted out, fired off",
    "t": "verb"
   },
-  "flor": {
-   "g": "flower; great (slang)",
-   "t": "noun"
-  },
   "listos": {
    "g": "ready",
    "t": "adjective"
@@ -5346,10 +5338,6 @@
   "saludó": {
    "g": "greeted, said hi",
    "t": "verb"
-  },
-  "pilar": {
-   "g": "pillar; Pilar (name)",
-   "t": "noun"
   },
   "velocidad": {
    "g": "at full speed (a toda velocidad)",
@@ -9608,7 +9596,8 @@
     "c": {
      "es": "Café y pan de yema",
      "en": "Coffee and egg-yolk bread"
-    }
+    },
+    "gm": "m."
    },
    "y": {
     "g": "and",
@@ -9624,7 +9613,8 @@
     "c": {
      "es": "pan de yema",
      "en": "egg-yolk bread"
-    }
+    },
+    "gm": "m."
    },
    "de": {
     "g": "of, from",
@@ -9640,7 +9630,8 @@
     "c": {
      "es": "pan de yema",
      "en": "egg-yolk bread"
-    }
+    },
+    "gm": "f."
    },
    "domingo": {
     "g": "Sunday",
@@ -9648,7 +9639,8 @@
     "c": {
      "es": "El domingo siguiente",
      "en": "The following Sunday"
-    }
+    },
+    "gm": "m."
    },
    "siguiente": {
     "g": "next, following",
@@ -9664,7 +9656,8 @@
     "c": {
      "es": "la bola se juntó tranquila",
      "en": "the crew met up quietly"
-    }
+    },
+    "gm": "f."
    },
    "se": {
     "g": "oneself, himself",
@@ -9736,7 +9729,8 @@
     "c": {
      "es": "en casa de Nayeli",
      "en": "at Nayeli's place"
-    }
+    },
+    "gm": "f."
    },
    "con": {
     "g": "with",
@@ -9768,7 +9762,8 @@
     "c": {
      "es": "No hubo carrilla",
      "en": "There was no ribbing"
-    }
+    },
+    "gm": "f."
    },
    "esta": {
     "g": "this (one)",
@@ -9784,7 +9779,8 @@
     "c": {
      "es": "esta vez",
      "en": "this time"
-    }
+    },
+    "gm": "f."
    },
    "porque": {
     "g": "because",
@@ -9856,7 +9852,8 @@
     "c": {
      "es": "por los suelos",
      "en": "on the floor"
-    }
+    },
+    "gm": "m."
    },
    "habían": {
     "g": "there were; had",
@@ -9888,7 +9885,8 @@
     "c": {
      "es": "corrido del trabajo",
      "en": "let go from her job"
-    }
+    },
+    "gm": "m."
    },
    "jueves": {
     "g": "Thursday",
@@ -9896,7 +9894,8 @@
     "c": {
      "es": "el jueves",
      "en": "on Thursday"
-    }
+    },
+    "gm": "m."
    },
    "así": {
     "g": "like this, so",
@@ -9944,7 +9943,8 @@
     "c": {
      "es": "sin hacer preguntas",
      "en": "without asking questions"
-    }
+    },
+    "gm": "f."
    },
    "le": {
     "g": "to him, her, it",
@@ -10000,7 +10000,8 @@
     "c": {
      "es": "un tejate bien frío",
      "en": "an ice-cold tejate"
-    }
+    },
+    "gm": "m."
    },
    "bien": {
     "g": "well, good",
@@ -10016,7 +10017,8 @@
     "c": {
      "es": "un tejate bien frío",
      "en": "an ice-cold tejate"
-    }
+    },
+    "gm": "m."
    },
    "sentó": {
     "g": "sat down; suited",
@@ -10080,7 +10082,8 @@
     "c": {
      "es": "se sentó a su lado",
      "en": "sat down beside her"
-    }
+    },
+    "gm": "m."
    },
    "llegó": {
     "g": "arrived",
@@ -10136,7 +10139,8 @@
     "c": {
      "es": "cargado de tlayudas",
      "en": "loaded with tlayudas"
-    }
+    },
+    "gm": "f."
    },
    "diciendo": {
     "g": "saying",
@@ -10176,7 +10180,8 @@
     "c": {
      "es": "con la panza llena",
      "en": "on a full stomach"
-    }
+    },
+    "gm": "f."
    },
    "llena": {
     "g": "full",
@@ -10336,7 +10341,8 @@
     "c": {
      "es": "como una guelaguetza",
      "en": "like a guelaguetza, the Oaxacan custom of mutual help"
-    }
+    },
+    "gm": "f."
    },
    "hoy": {
     "g": "today",
@@ -10424,7 +10430,8 @@
     "c": {
      "es": "se le caía el mundo",
      "en": "their world fell apart"
-    }
+    },
+    "gm": "m."
    },
    "demás": {
     "g": "the others",
@@ -10480,7 +10487,8 @@
     "c": {
      "es": "le hacían el paro",
      "en": "had their back"
-    }
+    },
+    "gm": "m."
    },
    "lo": {
     "g": "it, him",
@@ -10544,7 +10552,8 @@
     "c": {
      "es": "No era lástima",
      "en": "It was not pity"
-    }
+    },
+    "gm": "f."
    },
    "puro": {
     "g": "pure; just, only",
@@ -10560,7 +10569,8 @@
     "c": {
      "es": "puro cariño del bueno",
      "en": "pure affection, the real kind"
-    }
+    },
+    "gm": "m."
    },
    "bueno": {
     "g": "good, well",
@@ -10640,7 +10650,8 @@
     "c": {
      "es": "con sus penas",
      "en": "with her troubles"
-    }
+    },
+    "gm": "f."
    },
    "híjole": {
     "g": "wow, geez (Mexican)",
@@ -10776,7 +10787,8 @@
     "c": {
      "es": "Ni modo que te dejáramos sola",
      "en": "No way were we leaving you on your own"
-    }
+    },
+    "gm": "m."
    },
    "dejáramos": {
     "g": "that we would leave",
@@ -10928,7 +10940,8 @@
     "c": {
      "es": "echarle la mano",
      "en": "help her out"
-    }
+    },
+    "gm": "f."
    },
    "buscar": {
     "g": "to look for, to search",
@@ -10952,7 +10965,8 @@
     "c": {
      "es": "buscar otra chamba",
      "en": "look for another job"
-    }
+    },
+    "gm": "f."
    },
    "tenía": {
     "g": "I/he/she had",
@@ -11000,7 +11014,8 @@
     "c": {
      "es": "un conecte",
      "en": "a contact"
-    }
+    },
+    "gm": "m."
    },
    "otro": {
     "g": "another, other",
@@ -11072,7 +11087,8 @@
     "c": {
      "es": "jalaba gente",
      "en": "was taking people on"
-    }
+    },
+    "gm": "f."
    },
    "red": {
     "g": "a network of people",
@@ -11080,7 +11096,8 @@
     "c": {
      "es": "La red de la bola",
      "en": "The crew's network"
-    }
+    },
+    "gm": "f."
    },
    "valía": {
     "g": "was worth",
@@ -11112,7 +11129,8 @@
     "c": {
      "es": "cualquier bolsa de trabajo",
      "en": "any job board"
-    }
+    },
+    "gm": "f."
    },
    "tarde": {
     "g": "afternoon, late",
@@ -11120,7 +11138,8 @@
     "c": {
      "es": "Para la tarde",
      "en": "By the afternoon"
-    }
+    },
+    "gm": "f."
    },
    "ya": {
     "g": "already, now",
@@ -11144,7 +11163,8 @@
     "c": {
      "es": "las puntadas de Rodrigo",
      "en": "Rodrigo's wisecracks"
-    }
+    },
+    "gm": "f."
    },
    "había": {
     "g": "there was; had",
@@ -11176,7 +11196,8 @@
     "c": {
      "es": "se había vuelto pura fiesta",
      "en": "had turned into a party"
-    }
+    },
+    "gm": "f."
    },
    "planeara": {
     "g": "would plan",
@@ -11248,7 +11269,8 @@
     "c": {
      "es": "a buena onda",
      "en": "of good vibes"
-    }
+    },
+    "gm": "f."
    },
    "resolvió": {
     "g": "solved, fixed",
@@ -11296,7 +11318,8 @@
     "c": {
      "es": "le resolvió el problema",
      "en": "solved her problem"
-    }
+    },
+    "gm": "m."
    },
    "esa": {
     "g": "that (one)",
@@ -11320,7 +11343,8 @@
     "c": {
      "es": "con el corazón lleno",
      "en": "with a full heart"
-    }
+    },
+    "gm": "m."
    },
    "lleno": {
     "g": "full",
@@ -11432,7 +11456,8 @@
     "c": {
      "es": "Un amigo de a de veras",
      "en": "A real friend"
-    }
+    },
+    "gm": "m."
    },
    "veras": {
     "g": "for real (de a de veras)",
@@ -11626,7 +11651,8 @@
     "c": {
      "es": "Todo es weón",
      "en": "Everything is weón, the Chilean all-purpose word for guy"
-    }
+    },
+    "gm": "m."
    },
    "en": {
     "g": "in, on",
@@ -11642,7 +11668,8 @@
     "c": {
      "es": "En la terraza",
      "en": "On the terrace"
-    }
+    },
+    "gm": "f."
    },
    "mirando": {
     "g": "looking, watching",
@@ -11658,7 +11685,8 @@
     "c": {
      "es": "el lago del sur",
      "en": "the southern lake"
-    }
+    },
+    "gm": "m."
    },
    "del": {
     "g": "of the",
@@ -11674,7 +11702,8 @@
     "c": {
      "es": "el lago del sur",
      "en": "the southern lake"
-    }
+    },
+    "gm": "m."
    },
    "arrancó": {
     "g": "started off",
@@ -11722,7 +11751,8 @@
     "c": {
      "es": "una historia bien choro",
      "en": "a great story"
-    }
+    },
+    "gm": "f."
    },
    "bien": {
     "g": "well, good",
@@ -11738,7 +11768,8 @@
     "c": {
      "es": "una historia bien choro",
      "en": "a great story"
-    }
+    },
+    "gm": "m."
    },
    "resulta": {
     "g": "it turns out",
@@ -11810,7 +11841,8 @@
     "c": {
      "es": "llegó con la weá",
      "en": "turned up with the thing"
-    }
+    },
+    "gm": "f."
    },
    "y": {
     "g": "and",
@@ -11994,7 +12026,8 @@
     "c": {
      "es": "con cara de perdida",
      "en": "looking completely lost"
-    }
+    },
+    "gm": "f."
    },
    "de": {
     "g": "of, from",
@@ -12234,7 +12267,8 @@
     "c": {
      "es": "como si el problema fuera de ella",
      "en": "as if the problem were hers"
-    }
+    },
+    "gm": "m."
    },
    "fuera": {
     "g": "outside; were",
@@ -12258,7 +12292,8 @@
     "c": {
      "es": "no de su relato",
      "en": "not with his story"
-    }
+    },
+    "gm": "m."
    },
    "cagaba": {
     "g": "cracking up (cagarse de la risa)",
@@ -12306,7 +12341,8 @@
     "c": {
      "es": "se cagaba de la risa",
      "en": "was in fits of laughter"
-    }
+    },
+    "gm": "f."
    },
    "weveo": {
     "g": "Chilean messing about and banter",
@@ -12314,7 +12350,8 @@
     "c": {
      "es": "el weveo cuático que se armaba",
      "en": "the ridiculous banter building up"
-    }
+    },
+    "gm": "m."
    },
    "cuático": {
     "g": "over-the-top, dramatic",
@@ -12434,7 +12471,8 @@
     "c": {
      "es": "la cosa más fome del mundo",
      "en": "the most tedious thing in the world"
-    }
+    },
+    "gm": "f."
    },
    "más": {
     "g": "more",
@@ -12458,7 +12496,8 @@
     "c": {
      "es": "del mundo",
      "en": "in the world"
-    }
+    },
+    "gm": "m."
    },
    "encontraba": {
     "g": "thought, found (an opinion)",
@@ -12562,7 +12601,8 @@
     "c": {
      "es": "dejaban la conversación como las pelotas",
      "en": "left the conversation useless"
-    }
+    },
+    "gm": "f."
    },
    "pelotas": {
     "g": "balls; no way",
@@ -12570,7 +12610,8 @@
     "c": {
      "es": "como las pelotas",
      "en": "useless"
-    }
+    },
+    "gm": "f."
    },
    "pensaba": {
     "g": "was not going to (no lo pensaba)",
@@ -12674,7 +12715,8 @@
     "c": {
      "es": "a propósito",
      "en": "on purpose"
-    }
+    },
+    "gm": "m."
    },
    "latear": {
     "g": "to bore stiff, to drag on",
@@ -12714,7 +12756,8 @@
     "c": {
      "es": "achuntarle al reclamo",
      "en": "taking the point"
-    }
+    },
+    "gm": "m."
    },
    "siguió": {
     "g": "he/she followed, kept on",
@@ -12938,7 +12981,8 @@
     "c": {
      "es": "un buen rato",
      "en": "a good while"
-    }
+    },
+    "gm": "m."
    },
    "pesar": {
     "g": "to weigh; grief",
@@ -13002,7 +13046,8 @@
     "c": {
      "es": "ningún nombre",
      "en": "no name"
-    }
+    },
+    "gm": "m."
    },
    "entendían": {
     "g": "understood each other",
@@ -13098,7 +13143,8 @@
     "c": {
      "es": "cambiaban de significado",
      "en": "changed meaning"
-    }
+    },
+    "gm": "m."
    },
    "según": {
     "g": "according to",
@@ -13114,7 +13160,8 @@
     "c": {
      "es": "según el tono",
      "en": "depending on the tone"
-    }
+    },
+    "gm": "m."
    },
    "mueca": {
     "g": "a face or grimace",
@@ -13122,7 +13169,8 @@
     "c": {
      "es": "la mueca de la cara",
      "en": "the face pulled"
-    }
+    },
+    "gm": "f."
    },
    "idioma": {
     "g": "language",
@@ -13130,7 +13178,8 @@
     "c": {
      "es": "Era un idioma secreto medio brígido",
      "en": "It was a secret language, a bit intense"
-    }
+    },
+    "gm": "m."
    },
    "secreto": {
     "g": "secret",
@@ -13138,7 +13187,8 @@
     "c": {
      "es": "un idioma secreto",
      "en": "a secret language"
-    }
+    },
+    "gm": "m."
    },
    "medio": {
     "g": "half; kind of",
@@ -13178,7 +13228,8 @@
     "c": {
      "es": "por la actitud",
      "en": "from the attitude"
-    }
+    },
+    "gm": "f."
    },
    "palabra": {
     "g": "word",
@@ -13186,7 +13237,8 @@
     "c": {
      "es": "que por la palabra",
      "en": "than from the word"
-    }
+    },
+    "gm": "f."
    },
    "poco": {
     "g": "little by little (poco a poco)",
@@ -13258,7 +13310,8 @@
     "c": {
      "es": "el mismo juego",
      "en": "the same game"
-    }
+    },
+    "gm": "m."
    },
    "ah": {
     "g": "ah, oh",
@@ -13338,7 +13391,8 @@
     "c": {
      "es": "con la otra weona",
      "en": "with the other woman"
-    }
+    },
+    "gm": "f."
    },
    "lanzó": {
     "g": "threw, launched",
@@ -13386,7 +13440,8 @@
     "c": {
      "es": "al tiro",
      "en": "straight away"
-    }
+    },
+    "gm": "m."
    },
    "levantó": {
     "g": "lifted, raised",
@@ -13434,7 +13489,8 @@
     "c": {
      "es": "levantó el pulgar",
      "en": "gave a thumbs up"
-    }
+    },
+    "gm": "m."
    },
    "feliz": {
     "g": "happy",
@@ -13482,7 +13538,8 @@
     "c": {
      "es": "achuntado justo al clavo",
      "en": "hit the nail on the head"
-    }
+    },
+    "gm": "m."
    },
    "estaba": {
     "g": "was, used to be",
@@ -13530,7 +13587,8 @@
     "c": {
      "es": "no estaba en las palabras",
      "en": "was not in the words"
-    }
+    },
+    "gm": "f."
    },
    "sino": {
     "g": "but rather",
@@ -13618,7 +13676,8 @@
     "c": {
      "es": "un código que nadie de afuera pillaba",
      "en": "a code no outsider could crack"
-    }
+    },
+    "gm": "m."
    },
    "nadie": {
     "g": "nobody",
@@ -13698,7 +13757,8 @@
     "c": {
      "es": "buscarle la lógica",
      "en": "look for the logic"
-    }
+    },
+    "gm": "f."
    },
    "sentirle": {
     "g": "to feel its humor (sentirle la talla)",
@@ -13714,7 +13774,8 @@
     "c": {
      "es": "sentirle la talla",
      "en": "feel the joke"
-    }
+    },
+    "gm": "f."
    }
   },
   "el-domingo-se-arregla": {
@@ -13724,7 +13785,8 @@
     "c": {
      "es": "El domingo se arregla",
      "en": "Sunday sorts it out"
-    }
+    },
+    "gm": "m."
    },
    "se": {
     "g": "oneself, himself",
@@ -13748,7 +13810,8 @@
     "c": {
      "es": "el parche se juntó en casa de Valeria",
      "en": "the crew met up at Valeria's place"
-    }
+    },
+    "gm": "m."
    },
    "juntó": {
     "g": "gathered, put together",
@@ -13804,7 +13867,8 @@
     "c": {
      "es": "en casa de Valeria",
      "en": "at Valeria's place"
-    }
+    },
+    "gm": "f."
    },
    "de": {
     "g": "of, from",
@@ -13828,7 +13892,8 @@
     "c": {
      "es": "con arepa y chocolate caliente",
      "en": "over arepas and hot chocolate"
-    }
+    },
+    "gm": "f."
    },
    "y": {
     "g": "and",
@@ -13844,7 +13909,8 @@
     "c": {
      "es": "chocolate caliente",
      "en": "hot chocolate"
-    }
+    },
+    "gm": "m."
    },
    "caliente": {
     "g": "hot",
@@ -13932,7 +13998,8 @@
     "c": {
      "es": "la mamera de andar peleados",
      "en": "the drag of being at odds"
-    }
+    },
+    "gm": "f."
    },
    "andar": {
     "g": "to walk, go around",
@@ -14036,7 +14103,8 @@
     "c": {
      "es": "sin rodeos",
      "en": "no beating about the bush"
-    }
+    },
+    "gm": "m."
    },
    "cuadremos": {
     "g": "let us sort it out",
@@ -14060,7 +14128,8 @@
     "c": {
      "es": "cuadremos esta vaina",
      "en": "sort this thing out"
-    }
+    },
+    "gm": "f."
    },
    "vez": {
     "g": "time, occasion",
@@ -14068,7 +14137,8 @@
     "c": {
      "es": "de una vez",
      "en": "once and for all"
-    }
+    },
+    "gm": "f."
    },
    "propuso": {
     "g": "proposed, suggested",
@@ -14148,7 +14218,8 @@
     "c": {
      "es": "dar la cara",
      "en": "front up"
-    }
+    },
+    "gm": "f."
    },
    "reconocer": {
     "g": "to admit, acknowledge",
@@ -14188,14 +14259,6 @@
     "c": {
      "es": "hablado de más",
      "en": "said too much"
-    }
-   },
-   "marina": {
-    "g": "Marina; navy",
-    "t": "noun",
-    "c": {
-     "es": "Marina admitió",
-     "en": "Marina admitted"
     }
    },
    "admitió": {
@@ -14252,7 +14315,8 @@
     "c": {
      "es": "su prueba de la lengua floja",
      "en": "her loose-tongue test"
-    }
+    },
+    "gm": "f."
    },
    "lengua": {
     "g": "a loose tongue (lengua floja)",
@@ -14260,7 +14324,8 @@
     "c": {
      "es": "la lengua floja",
      "en": "a loose tongue"
-    }
+    },
+    "gm": "f."
    },
    "floja": {
     "g": "lazy; weak",
@@ -14284,7 +14349,8 @@
     "c": {
      "es": "no había estado muy chévere",
      "en": "had not been very cool"
-    }
+    },
+    "gm": "m."
    },
    "muy": {
     "g": "very",
@@ -14356,7 +14422,8 @@
     "c": {
      "es": "su parte sobre la mesa",
      "en": "their share on the table"
-    }
+    },
+    "gm": "f."
    },
    "sobre": {
     "g": "about, on",
@@ -14372,7 +14439,8 @@
     "c": {
      "es": "sobre la mesa",
      "en": "on the table"
-    }
+    },
+    "gm": "f."
    },
    "echarse": {
     "g": "to blame each other (echarse la culpa)",
@@ -14388,7 +14456,8 @@
     "c": {
      "es": "echarse la culpa",
      "en": "dumping the blame"
-    }
+    },
+    "gm": "f."
    },
    "entero": {
     "g": "whole, entire",
@@ -14412,7 +14481,8 @@
     "c": {
      "es": "mordisco de arepa",
      "en": "a bite of arepa"
-    }
+    },
+    "gm": "m."
    },
    "sorbo": {
     "g": "a sip",
@@ -14420,7 +14490,8 @@
     "c": {
      "es": "sorbo de chocolate",
      "en": "a sip of chocolate"
-    }
+    },
+    "gm": "m."
    },
    "ambiente": {
     "g": "the mood, atmosphere",
@@ -14428,7 +14499,8 @@
     "c": {
      "es": "el ambiente se fue soltando",
      "en": "the mood loosened up"
-    }
+    },
+    "gm": "m."
    },
    "soltando": {
     "g": "letting out, blurting",
@@ -14484,7 +14556,8 @@
     "c": {
      "es": "odiaba los pleitos",
      "en": "hated fights"
-    }
+    },
+    "gm": "m."
    },
    "hacía": {
     "g": "was doing, made",
@@ -14532,7 +14605,8 @@
     "c": {
      "es": "hacía de juez",
      "en": "acted as judge"
-    }
+    },
+    "gm": "m."
    },
    "para": {
     "g": "for, to",
@@ -14572,7 +14646,8 @@
     "c": {
      "es": "la bravura se volvió recocha",
      "en": "the anger turned into banter"
-    }
+    },
+    "gm": "f."
    },
    "volvió": {
     "g": "he/she came back",
@@ -14620,7 +14695,8 @@
     "c": {
      "es": "se volvió recocha",
      "en": "turned into banter"
-    }
+    },
+    "gm": "f."
    },
    "risa": {
     "g": "laughter",
@@ -14628,7 +14704,8 @@
     "c": {
      "es": "recocha y risa floja",
      "en": "banter and easy laughter"
-    }
+    },
+    "gm": "f."
    },
    "marica": {
     "g": "dude or mate, rough but everyday",
@@ -14636,7 +14713,8 @@
     "c": {
      "es": "Marica, ya",
      "en": "Come on, mate, enough"
-    }
+    },
+    "gm": "f."
    },
    "dejemos": {
     "g": "let's leave, let",
@@ -14652,7 +14730,8 @@
     "c": {
      "es": "esta bobada",
      "en": "this nonsense"
-    }
+    },
+    "gm": "f."
    },
    "quieta": {
     "g": "to leave alone (dejar quieta)",
@@ -14716,7 +14795,8 @@
     "c": {
      "es": "estirando la mano",
      "en": "holding out his hand"
-    }
+    },
+    "gm": "f."
    },
    "apretó": {
     "g": "squeezed, shook (hand)",
@@ -14812,7 +14892,8 @@
     "c": {
      "es": "hicieron las paces",
      "en": "made up"
-    }
+    },
+    "gm": "f."
    },
    "abrazo": {
     "g": "hug",
@@ -14820,7 +14901,8 @@
     "c": {
      "es": "un abrazo de esos que valen más que mil perdones",
      "en": "the kind of hug worth more than a thousand apologies"
-    }
+    },
+    "gm": "m."
    },
    "esos": {
     "g": "those",
@@ -14844,7 +14926,8 @@
     "c": {
      "es": "mil perdones",
      "en": "a thousand apologies"
-    }
+    },
+    "gm": "m."
    },
    "respiró": {
     "g": "breathed, relaxed",
@@ -14932,7 +15015,8 @@
     "c": {
      "es": "un bulto de encima",
      "en": "a weight off them"
-    }
+    },
+    "gm": "m."
    },
    "encima": {
     "g": "on top; besides",
@@ -14988,7 +15072,8 @@
     "c": {
      "es": "una regla nueva para el grupo",
      "en": "a new rule for the group"
-    }
+    },
+    "gm": "f."
    },
    "nueva": {
     "g": "new (fem.)",
@@ -15004,7 +15089,8 @@
     "c": {
      "es": "para el grupo",
      "en": "for the group"
-    }
+    },
+    "gm": "m."
    },
    "medio": {
     "g": "half; kind of",
@@ -15028,7 +15114,8 @@
     "c": {
      "es": "medio en chiste",
      "en": "half as a joke"
-    }
+    },
+    "gm": "m."
    },
    "lo": {
     "g": "it, him",
@@ -15100,7 +15187,8 @@
     "c": {
      "es": "sin soltar prenda",
      "en": "without breathing a word"
-    }
+    },
+    "gm": "f."
    },
    "por": {
     "g": "for, by",
@@ -15180,7 +15268,8 @@
     "c": {
      "es": "la próxima rumba completa",
      "en": "the whole next night out"
-    }
+    },
+    "gm": "f."
    },
    "completa": {
     "g": "complete, whole",
@@ -15236,7 +15325,8 @@
     "c": {
      "es": "Sellaron el trato",
      "en": "They sealed the deal"
-    }
+    },
+    "gm": "m."
    },
    "brindis": {
     "g": "a toast with drinks",
@@ -15244,7 +15334,8 @@
     "c": {
      "es": "un brindis de chocolate",
      "en": "a toast with chocolate"
-    }
+    },
+    "gm": "m."
    },
    "chocando": {
     "g": "clinking (glasses)",
@@ -15260,7 +15351,8 @@
     "c": {
      "es": "chocando las tazas",
      "en": "clinking the mugs"
-    }
+    },
+    "gm": "f."
    },
    "fueran": {
     "g": "as if they were",
@@ -15276,7 +15368,8 @@
     "c": {
      "es": "como si fueran polas",
      "en": "as if they were beers"
-    }
+    },
+    "gm": "f."
    },
    "dijo": {
     "g": "said",
@@ -15332,7 +15425,8 @@
     "c": {
      "es": "ese pacto duraba",
      "en": "that pact would last"
-    }
+    },
+    "gm": "m."
    },
    "duraba": {
     "g": "would last",
@@ -15396,7 +15490,8 @@
     "c": {
      "es": "el próximo chisme irresistible",
      "en": "the next irresistible piece of gossip"
-    }
+    },
+    "gm": "m."
    },
    "irresistible": {
     "g": "irresistible",
@@ -15476,7 +15571,8 @@
     "c": {
      "es": "ni una semana",
      "en": "not even a week"
-    }
+    },
+    "gm": "f."
    },
    "les": {
     "g": "to them, you all",
@@ -15532,7 +15628,8 @@
     "c": {
      "es": "les dio risa la mentira",
      "en": "the lie made them laugh"
-    }
+    },
+    "gm": "f."
    },
    "al": {
     "g": "to the",
@@ -15556,7 +15653,8 @@
     "c": {
      "es": "Al caer la tarde",
      "en": "As evening fell"
-    }
+    },
+    "gm": "f."
    },
    "enredo": {
     "g": "mess, mix-up",
@@ -15564,7 +15662,8 @@
     "c": {
      "es": "el enredo ya era otra anécdota",
      "en": "the mess was just another story"
-    }
+    },
+    "gm": "m."
    },
    "era": {
     "g": "was, used to be",
@@ -15620,7 +15719,8 @@
     "c": {
      "es": "otra anécdota más para reírse",
      "en": "another story to laugh about"
-    }
+    },
+    "gm": "f."
    },
    "reírse": {
     "g": "to laugh",
@@ -15644,7 +15744,8 @@
     "c": {
      "es": "con la panza llena de arepa",
      "en": "with bellies full of arepa"
-    }
+    },
+    "gm": "f."
    },
    "llena": {
     "g": "full",
@@ -15660,7 +15761,8 @@
     "c": {
      "es": "el corazón liviano",
      "en": "a light heart"
-    }
+    },
+    "gm": "m."
    },
    "liviano": {
     "g": "light, unburdened",
@@ -15750,7 +15852,8 @@
     "c": {
      "es": "El mismo chabón",
      "en": "The same guy"
-    }
+    },
+    "gm": "m."
    },
    "en": {
     "g": "in, on",
@@ -15766,7 +15869,8 @@
     "c": {
      "es": "En la previa",
      "en": "At the pre-drinks"
-    }
+    },
+    "gm": "f."
    },
    "con": {
     "g": "with",
@@ -15782,7 +15886,8 @@
     "c": {
      "es": "con música y escabio",
      "en": "with music and booze"
-    }
+    },
+    "gm": "f."
    },
    "y": {
     "g": "and",
@@ -15798,15 +15903,8 @@
     "c": {
      "es": "música y escabio",
      "en": "music and booze"
-    }
-   },
-   "flor": {
-    "g": "flower; great (slang)",
-    "t": "noun",
-    "c": {
-     "es": "Camila y Flor se pusieron a largar todo",
-     "en": "Camila and Flor started spilling everything"
-    }
+    },
+    "gm": "m."
    },
    "se": {
     "g": "oneself, himself",
@@ -15829,7 +15927,7 @@
        "puse"
       ],
       [
-       "tú",
+       "vos",
        "pusiste"
       ],
       [
@@ -15893,7 +15991,7 @@
        "estoy"
       ],
       [
-       "tú",
+       "vos",
        "estás"
       ],
       [
@@ -15942,7 +16040,8 @@
     "c": {
      "es": "piba",
      "en": "girl"
-    }
+    },
+    "gm": "f."
    },
    "conocí": {
     "g": "I met",
@@ -15958,7 +16057,8 @@
     "c": {
      "es": "un pibe soñado",
      "en": "a dream guy"
-    }
+    },
+    "gm": "m."
    },
    "soñado": {
     "g": "dreamy, ideal",
@@ -15981,7 +16081,7 @@
        "arranqué"
       ],
       [
-       "tú",
+       "vos",
        "arrancaste"
       ],
       [
@@ -16014,7 +16114,8 @@
     "c": {
      "es": "una sonrisa boba",
      "en": "a silly grin"
-    }
+    },
+    "gm": "f."
    },
    "boba": {
     "g": "silly, goofy",
@@ -16054,7 +16155,8 @@
     "c": {
      "es": "salta de la silla",
      "en": "jumped out of her chair"
-    }
+    },
+    "gm": "f."
    },
    "porque": {
     "g": "because",
@@ -16093,7 +16195,7 @@
        "venía"
       ],
       [
-       "tú",
+       "vos",
        "venías"
       ],
       [
@@ -16149,7 +16251,7 @@
        "empecé"
       ],
       [
-       "tú",
+       "vos",
        "empezaste"
       ],
       [
@@ -16206,7 +16308,8 @@
     "c": {
      "es": "sus respectivos candidatos",
      "en": "their respective men"
-    }
+    },
+    "gm": "m."
    },
    "muertas": {
     "g": "dying of excitement (muertas de la emoción)",
@@ -16222,7 +16325,8 @@
     "c": {
      "es": "muertas de la emoción",
      "en": "beside themselves with excitement"
-    }
+    },
+    "gm": "f."
    },
    "contó": {
     "g": "told, recounted",
@@ -16237,7 +16341,7 @@
        "conté"
       ],
       [
-       "tú",
+       "vos",
        "contaste"
       ],
       [
@@ -16293,7 +16397,7 @@
        "era"
       ],
       [
-       "tú",
+       "vos",
        "eras"
       ],
       [
@@ -16342,7 +16446,8 @@
     "c": {
      "es": "con una labia impresionante",
      "en": "with an impressive gift of the gab"
-    }
+    },
+    "gm": "f."
    },
    "impresionante": {
     "g": "impressive",
@@ -16365,7 +16470,7 @@
        "asintié"
       ],
       [
-       "tú",
+       "vos",
        "asintiaste"
       ],
       [
@@ -16413,7 +16518,7 @@
        "tenía"
       ],
       [
-       "tú",
+       "vos",
        "tenías"
       ],
       [
@@ -16462,7 +16567,8 @@
     "c": {
      "es": "la misma descripción",
      "en": "the same description"
-    }
+    },
+    "gm": "f."
    },
    "siguieron": {
     "g": "they followed, kept on",
@@ -16477,7 +16583,7 @@
        "seguí"
       ],
       [
-       "tú",
+       "vos",
        "seguiste"
       ],
       [
@@ -16526,7 +16632,8 @@
     "c": {
      "es": "entre risas",
      "en": "amid laughter"
-    }
+    },
+    "gm": "f."
    },
    "sin": {
     "g": "without",
@@ -16550,7 +16657,8 @@
     "c": {
      "es": "sin darse cuenta",
      "en": "without realising"
-    }
+    },
+    "gm": "f."
    },
    "del": {
     "g": "of the",
@@ -16566,7 +16674,8 @@
     "c": {
      "es": "el bardo que se venía encima",
      "en": "the trouble coming their way"
-    }
+    },
+    "gm": "m."
    },
    "encima": {
     "g": "on top; besides",
@@ -16582,7 +16691,8 @@
     "c": {
      "es": "Los dos pibes las habían invitado al mismo bar",
      "en": "The two lads had invited them to the same bar"
-    }
+    },
+    "gm": "m."
    },
    "habían": {
     "g": "there were; had",
@@ -16598,7 +16708,8 @@
     "c": {
      "es": "las habían invitado",
      "en": "had invited them"
-    }
+    },
+    "gm": "m."
    },
    "al": {
     "g": "to the",
@@ -16614,7 +16725,8 @@
     "c": {
      "es": "al mismo bar",
      "en": "to the same bar"
-    }
+    },
+    "gm": "m."
    },
    "verso": {
     "g": "a smooth lie, a rehearsed line",
@@ -16622,7 +16734,8 @@
     "c": {
      "es": "con el mismo verso trillado",
      "en": "with the same tired line"
-    }
+    },
+    "gm": "m."
    },
    "trillado": {
     "g": "worn out, overused (a line)",
@@ -16646,7 +16759,8 @@
     "c": {
      "es": "la remera que describían",
      "en": "the T-shirt they described"
-    }
+    },
+    "gm": "f."
    },
    "describían": {
     "g": "were describing",
@@ -16661,7 +16775,7 @@
        "describía"
       ],
       [
-       "tú",
+       "vos",
        "describías"
       ],
       [
@@ -16702,7 +16816,8 @@
     "c": {
      "es": "con letras blancas",
      "en": "with white lettering"
-    }
+    },
+    "gm": "f."
    },
    "blancas": {
     "g": "white",
@@ -16726,7 +16841,8 @@
     "c": {
      "es": "El clima fue cambiando",
      "en": "The mood shifted"
-    }
+    },
+    "gm": "m."
    },
    "fue": {
     "g": "was, went",
@@ -16741,7 +16857,7 @@
        "fui"
       ],
       [
-       "tú",
+       "vos",
        "fuiste"
       ],
       [
@@ -16782,7 +16898,8 @@
     "c": {
      "es": "de la euforia a una sospecha",
      "en": "from euphoria to suspicion"
-    }
+    },
+    "gm": "f."
    },
    "sospecha": {
     "g": "suspicion",
@@ -16790,7 +16907,8 @@
     "c": {
      "es": "una sospecha bastante incómoda",
      "en": "a fairly uncomfortable suspicion"
-    }
+    },
+    "gm": "f."
    },
    "bastante": {
     "g": "quite, rather",
@@ -16853,7 +16971,7 @@
        "pregunté"
       ],
       [
-       "tú",
+       "vos",
        "preguntaste"
       ],
       [
@@ -16901,7 +17019,7 @@
        "quedé"
       ],
       [
-       "tú",
+       "vos",
        "quedaste"
       ],
       [
@@ -16942,7 +17060,8 @@
     "c": {
      "es": "con el vaso a mitad de camino",
      "en": "with the glass halfway"
-    }
+    },
+    "gm": "m."
    },
    "mitad": {
     "g": "half",
@@ -16950,7 +17069,8 @@
     "c": {
      "es": "a mitad de camino de la boca",
      "en": "halfway to her mouth"
-    }
+    },
+    "gm": "f."
    },
    "camino": {
     "g": "path, road",
@@ -16958,7 +17078,8 @@
     "c": {
      "es": "a mitad de camino",
      "en": "halfway"
-    }
+    },
+    "gm": "m."
    },
    "boca": {
     "g": "mouth",
@@ -16966,7 +17087,8 @@
     "c": {
      "es": "a mitad de camino de la boca",
      "en": "halfway to her mouth"
-    }
+    },
+    "gm": "f."
    },
    "chamuyándose": {
     "g": "sweet talking (chamuyar)",
@@ -16982,7 +17104,8 @@
     "c": {
      "es": "a las dos amigas",
      "en": "both friends"
-    }
+    },
+    "gm": "f."
    },
    "tiempo": {
     "g": "time, weather",
@@ -16990,7 +17113,8 @@
     "c": {
      "es": "al mismo tiempo",
      "en": "at the same time"
-    }
+    },
+    "gm": "m."
    },
    "cada": {
     "g": "each, every",
@@ -17006,7 +17130,8 @@
     "c": {
      "es": "un chamuyero serial",
      "en": "a serial smooth talker"
-    }
+    },
+    "gm": "m."
    },
    "serial": {
     "g": "serial, repeat",
@@ -17029,7 +17154,7 @@
        "verseaba"
       ],
       [
-       "tú",
+       "vos",
        "verseabas"
       ],
       [
@@ -17085,7 +17210,7 @@
        "pinché"
       ],
       [
-       "tú",
+       "vos",
        "pinchaste"
       ],
       [
@@ -17118,7 +17243,8 @@
     "c": {
      "es": "de golpe",
      "en": "all at once"
-    }
+    },
+    "gm": "m."
    },
    "calentura": {
     "g": "hot anger boiling over",
@@ -17126,7 +17252,8 @@
     "c": {
      "es": "con la calentura subiendo",
      "en": "with the anger rising"
-    }
+    },
+    "gm": "f."
    },
    "subiendo": {
     "g": "rising, building up",
@@ -17150,7 +17277,8 @@
     "c": {
      "es": "el cachetazo inicial",
      "en": "the initial slap in the face"
-    }
+    },
+    "gm": "m."
    },
    "inicial": {
     "g": "initial, at first",
@@ -17173,7 +17301,7 @@
        "miré"
       ],
       [
-       "tú",
+       "vos",
        "miraste"
       ],
       [
@@ -17213,7 +17341,7 @@
        "cambié"
       ],
       [
-       "tú",
+       "vos",
        "cambiaste"
       ],
       [
@@ -17246,7 +17374,8 @@
     "c": {
      "es": "cambió de destino",
      "en": "changed target"
-    }
+    },
+    "gm": "m."
    },
    "vez": {
     "g": "time, occasion",
@@ -17254,7 +17383,8 @@
     "c": {
      "es": "En vez de pelearse entre ellas",
      "en": "Instead of turning on each other"
-    }
+    },
+    "gm": "f."
    },
    "pelearse": {
     "g": "to fight each other",
@@ -17285,7 +17415,7 @@
        "alié"
       ],
       [
-       "tú",
+       "vos",
        "aliaste"
       ],
       [
@@ -17326,7 +17456,8 @@
     "c": {
      "es": "contra el forro",
      "en": "against the jerk"
-    }
+    },
+    "gm": "m."
    },
    "peligrosa": {
     "g": "dangerous",
@@ -17357,7 +17488,7 @@
        "quería"
       ],
       [
-       "tú",
+       "vos",
        "querías"
       ],
       [
@@ -17405,7 +17536,7 @@
        "iba"
       ],
       [
-       "tú",
+       "vos",
        "ibas"
       ],
       [
@@ -17461,7 +17592,7 @@
        "armé"
       ],
       [
-       "tú",
+       "vos",
        "armaste"
       ],
       [
@@ -17494,7 +17625,8 @@
     "c": {
      "es": "un plan de venganza",
      "en": "a revenge plan"
-    }
+    },
+    "gm": "m."
    },
    "venganza": {
     "g": "revenge",
@@ -17502,7 +17634,8 @@
     "c": {
      "es": "un plan de venganza",
      "en": "a revenge plan"
-    }
+    },
+    "gm": "f."
    },
    "ahí": {
     "g": "there",
@@ -17518,7 +17651,8 @@
     "c": {
      "es": "entre carcajadas",
      "en": "amid howls of laughter"
-    }
+    },
+    "gm": "f."
    },
    "trago": {
     "g": "a swig, a gulp of drink",
@@ -17526,7 +17660,8 @@
     "c": {
      "es": "trago va trago viene",
      "en": "one drink after another"
-    }
+    },
+    "gm": "m."
    },
    "va": {
     "g": "he/she goes",
@@ -17541,7 +17676,7 @@
        "voy"
       ],
       [
-       "tú",
+       "vos",
        "vas"
       ],
       [
@@ -17581,8 +17716,8 @@
        "vengo"
       ],
       [
-       "tú",
-       "vienes"
+       "vos",
+       "venís"
       ],
       [
        "él, ella",
@@ -17622,7 +17757,8 @@
     "c": {
      "es": "no tenía ni idea del quilombo",
      "en": "had no idea of the mess"
-    }
+    },
+    "gm": "f."
    },
    "quilombo": {
     "g": "mess, chaos",
@@ -17630,7 +17766,8 @@
     "c": {
      "es": "el quilombo que se le venía encima",
      "en": "the mess heading his way"
-    }
+    },
+    "gm": "m."
    },
    "le": {
     "g": "to him, her, it",
@@ -17654,7 +17791,8 @@
     "c": {
      "es": "Nada cura un desamor",
      "en": "Nothing cures heartbreak"
-    }
+    },
+    "gm": "f."
    },
    "desamor": {
     "g": "heartbreak, lost love",
@@ -17662,7 +17800,8 @@
     "c": {
      "es": "un desamor",
      "en": "heartbreak"
-    }
+    },
+    "gm": "m."
    },
    "tan": {
     "g": "so, such",
@@ -17694,7 +17833,8 @@
     "c": {
      "es": "una amiga con sed de revancha",
      "en": "a friend out for revenge"
-    }
+    },
+    "gm": "f."
    },
    "sed": {
     "g": "thirst; thirst for payback (sed de revancha)",
@@ -17702,7 +17842,8 @@
     "c": {
      "es": "con sed de revancha",
      "en": "thirsty for revenge"
-    }
+    },
+    "gm": "f."
    },
    "revancha": {
     "g": "rematch, revenge",
@@ -17710,7 +17851,8 @@
     "c": {
      "es": "sed de revancha",
      "en": "thirsty for revenge"
-    }
+    },
+    "gm": "f."
    }
   },
   "andres-en-la-pista": {
@@ -17728,7 +17870,8 @@
     "c": {
      "es": "en la pista",
      "en": "on the dance floor"
-    }
+    },
+    "gm": "f."
    },
    "sábado": {
     "g": "Saturday",
@@ -17736,7 +17879,8 @@
     "c": {
      "es": "El sábado la parranda estaba a millón",
      "en": "On Saturday the party was in full swing"
-    }
+    },
+    "gm": "m."
    },
    "parranda": {
     "g": "party, spree",
@@ -17744,7 +17888,8 @@
     "c": {
      "es": "la parranda estaba a millón",
      "en": "the party was in full swing"
-    }
+    },
+    "gm": "f."
    },
    "estaba": {
     "g": "was, used to be",
@@ -17808,7 +17953,8 @@
     "c": {
      "es": "con champeta pegada",
      "en": "with champeta blasting"
-    }
+    },
+    "gm": "f."
    },
    "pegada": {
     "g": "blasting music (champeta pegada)",
@@ -17832,7 +17978,8 @@
     "c": {
      "es": "birras bien frías",
      "en": "ice-cold beers"
-    }
+    },
+    "gm": "f."
    },
    "bien": {
     "g": "well, good",
@@ -17912,7 +18059,8 @@
     "c": {
      "es": "no le quitaba el ojo",
      "en": "could not take his eyes off her"
-    }
+    },
+    "gm": "m."
    },
    "traga": {
     "g": "swallows, is smitten (Col.)",
@@ -17984,7 +18132,8 @@
     "c": {
      "es": "en la mitad de la pista",
      "en": "in the middle of the dance floor"
-    }
+    },
+    "gm": "f."
    },
    "de": {
     "g": "of, from",
@@ -18056,7 +18205,8 @@
     "c": {
      "es": "Ahí está tu momento",
      "en": "There is your moment"
-    }
+    },
+    "gm": "m."
    },
    "galán": {
     "g": "handsome guy, heartthrob",
@@ -18064,7 +18214,8 @@
     "c": {
      "es": "tu momento, galán",
      "en": "your moment, lover boy"
-    }
+    },
+    "gm": "m."
    },
    "vayas": {
     "g": "do not screw it up (no la vayas a embarrar)",
@@ -18136,7 +18287,8 @@
     "c": {
      "es": "dándole un codazo",
      "en": "giving him a nudge"
-    }
+    },
+    "gm": "m."
    },
    "ya": {
     "g": "already, now",
@@ -18200,7 +18352,8 @@
     "c": {
      "es": "diera el primer paso",
      "en": "took the first step"
-    }
+    },
+    "gm": "m."
    },
    "recordaba": {
     "g": "remembered",
@@ -18248,7 +18401,8 @@
     "c": {
      "es": "el corte tieso",
      "en": "the stiff haircut"
-    }
+    },
+    "gm": "m."
    },
    "tieso": {
     "g": "stiff, rigid",
@@ -18264,7 +18418,8 @@
     "c": {
      "es": "el papelón con la vecina",
      "en": "the embarrassment with the neighbour"
-    }
+    },
+    "gm": "m."
    },
    "vecina": {
     "g": "a female neighbor",
@@ -18272,7 +18427,8 @@
     "c": {
      "es": "el papelón con la vecina",
      "en": "the embarrassment with the neighbour"
-    }
+    },
+    "gm": "f."
    },
    "esto": {
     "g": "this",
@@ -18400,7 +18556,8 @@
     "c": {
      "es": "va a ser un show",
      "en": "is going to be a show"
-    }
+    },
+    "gm": "m."
    },
    "comentó": {
     "g": "commented",
@@ -18552,7 +18709,8 @@
     "c": {
      "es": "peleaba con la música",
      "en": "was fighting the music"
-    }
+    },
+    "gm": "f."
    },
    "todo": {
     "g": "all, everything",
@@ -18568,7 +18726,8 @@
     "c": {
      "es": "tieso de los brazos",
      "en": "stiff through the arms"
-    }
+    },
+    "gm": "m."
    },
    "parche": {
     "g": "hangout, crew",
@@ -18576,7 +18735,8 @@
     "c": {
      "es": "El parche entero se dobló de la risa",
      "en": "The whole crew doubled over laughing"
-    }
+    },
+    "gm": "m."
    },
    "entero": {
     "g": "whole, entire",
@@ -18632,7 +18792,8 @@
     "c": {
      "es": "se dobló de la risa",
      "en": "doubled over laughing"
-    }
+    },
+    "gm": "f."
    },
    "al": {
     "g": "to the",
@@ -18672,7 +18833,8 @@
     "c": {
      "es": "semejante ridiculez",
      "en": "such a ridiculous display"
-    }
+    },
+    "gm": "f."
    },
    "miró": {
     "g": "looked",
@@ -18792,7 +18954,8 @@
     "c": {
      "es": "la cara de bobo feliz",
      "en": "that happy fool's face"
-    }
+    },
+    "gm": "f."
    },
    "bobo": {
     "g": "a fool, said fondly",
@@ -18800,7 +18963,8 @@
     "c": {
      "es": "cara de bobo feliz",
      "en": "a happy fool's face"
-    }
+    },
+    "gm": "m."
    },
    "feliz": {
     "g": "happy",
@@ -18856,7 +19020,8 @@
     "c": {
      "es": "le sacó una sonrisa",
      "en": "got a smile out of her"
-    }
+    },
+    "gm": "f."
    },
    "vez": {
     "g": "time, occasion",
@@ -18864,7 +19029,8 @@
     "c": {
      "es": "En vez de irse",
      "en": "Instead of walking off"
-    }
+    },
+    "gm": "f."
    },
    "irse": {
     "g": "to leave",
@@ -18968,7 +19134,8 @@
     "c": {
      "es": "con paciencia",
      "en": "patiently"
-    }
+    },
+    "gm": "f."
    },
    "podía": {
     "g": "could",
@@ -19088,7 +19255,8 @@
     "c": {
      "es": "congelado de la dicha",
      "en": "frozen with joy"
-    }
+    },
+    "gm": "f."
    },
    "fue": {
     "g": "was, went",
@@ -19144,7 +19312,8 @@
     "c": {
      "es": "agarrando el ritmo",
      "en": "picking up the rhythm"
-    }
+    },
+    "gm": "m."
    },
    "llevado": {
     "g": "carried, led",
@@ -19160,7 +19329,8 @@
     "c": {
      "es": "por la mano de la china",
      "en": "by the girl's hand"
-    }
+    },
+    "gm": "f."
    },
    "china": {
     "g": "a girl, on the coast",
@@ -19168,7 +19338,8 @@
     "c": {
      "es": "la mano de la china",
      "en": "the girl's hand"
-    }
+    },
+    "gm": "f."
    },
    "envolvió": {
     "g": "wrapped up, swept up",
@@ -19216,7 +19387,8 @@
     "c": {
      "es": "de repente",
      "en": "all of a sudden"
-    }
+    },
+    "gm": "m."
    },
    "pelao": {
     "g": "kid, guy; broke",
@@ -19224,7 +19396,8 @@
     "c": {
      "es": "el pelao ya no se veía tan ridículo",
      "en": "the lad no longer looked so ridiculous"
-    }
+    },
+    "gm": "m."
    },
    "veía": {
     "g": "looked, seemed",
@@ -19320,7 +19493,8 @@
     "c": {
      "es": "con la boca abierta",
      "en": "jaws dropped"
-    }
+    },
+    "gm": "f."
    },
    "abierta": {
     "g": "open",
@@ -19376,7 +19550,8 @@
     "c": {
      "es": "El perdedor de siempre",
      "en": "The usual loser"
-    }
+    },
+    "gm": "m."
    },
    "siempre": {
     "g": "always",
@@ -19424,7 +19599,8 @@
     "c": {
      "es": "la más buenona de la fiesta",
      "en": "the best-looking one at the party"
-    }
+    },
+    "gm": "f."
    },
    "todavía": {
     "g": "still, yet",
@@ -19440,7 +19616,8 @@
     "c": {
      "es": "todavía en shock",
      "en": "still in shock"
-    }
+    },
+    "gm": "m."
    },
    "murmuró": {
     "g": "murmured",
@@ -19488,7 +19665,8 @@
     "c": {
      "es": "un No joda",
      "en": "a coastal exclamation, roughly no way"
-    }
+    },
+    "gm": "f."
    },
    "admitió": {
     "g": "admitted",
@@ -19536,7 +19714,8 @@
     "c": {
      "es": "el milagro existía",
      "en": "the miracle was real"
-    }
+    },
+    "gm": "m."
    },
    "existía": {
     "g": "existed",
@@ -19600,7 +19779,8 @@
     "c": {
      "es": "terminó la canción",
      "en": "the song finished"
-    }
+    },
+    "gm": "f."
    },
    "volvió": {
     "g": "he/she came back",
@@ -19656,7 +19836,8 @@
     "c": {
      "es": "caminando en las nubes",
      "en": "walking on air"
-    }
+    },
+    "gm": "f."
    },
    "nada": {
     "g": "nothing",
@@ -19720,7 +19901,8 @@
     "c": {
      "es": "levantó las cejas",
      "en": "raised his eyebrows"
-    }
+    },
+    "gm": "f."
    },
    "triunfo": {
     "g": "triumph, victory",
@@ -19728,7 +19910,8 @@
     "c": {
      "es": "una cara de triunfo insoportable",
      "en": "an unbearably triumphant look"
-    }
+    },
+    "gm": "m."
    },
    "insoportable": {
     "g": "unbearable, too much",
@@ -19744,7 +19927,8 @@
     "c": {
      "es": "el rey de la pista",
      "en": "the king of the dance floor"
-    }
+    },
+    "gm": "m."
    },
    "era": {
     "g": "was, used to be",
@@ -19792,37 +19976,70 @@
     "c": {
      "es": "no era un chiste",
      "en": "was not a joke"
-    }
+    },
+    "gm": "m."
    }
   },
   "el-asado-a-la-orilla": {
    "asado": {
     "g": "barbecue",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El asado a la orilla",
+     "en": "The barbecue by the shore"
+    },
+    "gm": "m."
    },
    "a": {
     "g": "to, at",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "a la orilla",
+     "en": "by the shore"
+    }
    },
    "orilla": {
     "g": "edge, shore",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "a la orilla",
+     "en": "by the shore"
+    },
+    "gm": "f."
    },
    "último": {
     "g": "last, latest",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "El último día del verano",
+     "en": "The last day of summer"
+    }
    },
    "día": {
     "g": "day",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El último día del verano",
+     "en": "The last day of summer"
+    },
+    "gm": "m."
    },
    "del": {
     "g": "of the",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "del verano",
+     "en": "of summer"
+    }
    },
    "verano": {
     "g": "summer",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El último día del verano",
+     "en": "The last day of summer"
+    },
+    "gm": "m."
    },
    "hicieron": {
     "g": "they did, made",
@@ -19858,15 +20075,28 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "hicieron un asado a la orilla del lago",
+     "en": "they had a barbecue by the lakeshore"
     }
    },
    "lago": {
     "g": "lake",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "a la orilla del lago",
+     "en": "by the lakeshore"
+    },
+    "gm": "m."
    },
    "y": {
     "g": "and",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "y quedó la escoba",
+     "en": "and it turned into chaos"
+    }
    },
    "quedó": {
     "g": "stayed, ended up",
@@ -19902,15 +20132,28 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "quedó la escoba",
+     "en": "it turned into chaos"
     }
    },
    "escoba": {
     "g": "broom",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "quedó la escoba",
+     "en": "it turned into chaos"
+    },
+    "gm": "f."
    },
    "se": {
     "g": "oneself, himself",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Benjamín se puso a cargo de la parrilla",
+     "en": "Benjamín took charge of the grill"
+    }
    },
    "puso": {
     "g": "put, placed",
@@ -19946,47 +20189,94 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se puso a cargo de la parrilla",
+     "en": "took charge of the grill"
     }
    },
    "cargo": {
     "g": "in charge of (a cargo de)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "a cargo de la parrilla",
+     "en": "in charge of the grill"
+    },
+    "gm": "m."
    },
    "de": {
     "g": "of, from",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "a cargo de la parrilla",
+     "en": "in charge of the grill"
+    }
    },
    "parrilla": {
     "g": "the barbecue grill",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "a cargo de la parrilla",
+     "en": "in charge of the grill"
+    },
+    "gm": "f."
    },
    "jurando": {
     "g": "swearing, vowing",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "jurando que la carne le salía seca",
+     "en": "swearing his meat always came out dry"
+    }
    },
    "que": {
     "g": "that",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "jurando que la carne le salía seca",
+     "en": "swearing his meat always came out dry"
+    }
    },
    "carne": {
     "g": "meat",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "la carne le salía seca",
+     "en": "his meat came out dry"
+    },
+    "gm": "f."
    },
    "le": {
     "g": "to him, her, it",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "la carne le salía seca",
+     "en": "his meat came out dry"
+    }
    },
    "salía": {
     "g": "would not go out (no salía)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "la carne le salía seca",
+     "en": "his meat came out dry"
+    }
    },
    "seca": {
     "g": "really skilled, an ace (seco)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "le salía seca",
+     "en": "came out dry"
+    }
    },
    "lo": {
     "g": "it, him",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Nico y Javiera lo weviaban",
+     "en": "Nico and Javiera took the mickey out of him"
+    }
    },
    "weviaban": {
     "g": "were teasing, messing around (weviar)",
@@ -20022,15 +20312,27 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "lo weviaban",
+     "en": "took the mickey out of him"
     }
    },
    "seco": {
     "g": "dry; ace, great",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "de seco no tenía ni el apodo",
+     "en": "he was not dry in any sense"
+    }
    },
    "no": {
     "g": "no, not",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "de seco no tenía ni el apodo",
+     "en": "he was not dry in any sense"
+    }
    },
    "tenía": {
     "g": "I/he/she had",
@@ -20066,39 +20368,78 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "no tenía ni el apodo",
+     "en": "he did not even have the nickname"
     }
    },
    "ni": {
     "g": "not even, nor",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "no tenía ni el apodo",
+     "en": "he did not even have the nickname"
+    }
    },
    "apodo": {
     "g": "a nickname",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "ni el apodo",
+     "en": "not even the nickname"
+    },
+    "gm": "m."
    },
    "contra": {
     "g": "against",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "Contra todo pronóstico",
+     "en": "Against all the odds"
+    }
    },
    "todo": {
     "g": "all, everything",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Contra todo pronóstico",
+     "en": "Against all the odds"
+    }
    },
    "pronóstico": {
     "g": "against all odds (contra todo pronóstico)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Contra todo pronóstico",
+     "en": "Against all the odds"
+    },
+    "gm": "m."
    },
    "por": {
     "g": "for, by",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "por pura cuea",
+     "en": "by pure luck"
+    }
    },
    "pura": {
     "g": "pure; nothing but",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "por pura cuea",
+     "en": "by pure luck"
+    }
    },
    "cuea": {
     "g": "by sheer luck (por pura cuea)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "por pura cuea",
+     "en": "by pure luck"
+    },
+    "gm": "f."
    },
    "salió": {
     "g": "went out, turned out",
@@ -20134,43 +20475,88 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "la carne salió en su punto",
+     "en": "the meat came out just right"
     }
    },
    "en": {
     "g": "in, on",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "salió en su punto",
+     "en": "came out just right"
+    }
    },
    "su": {
     "g": "his, her, their",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "en su punto",
+     "en": "just right"
+    }
    },
    "punto": {
     "g": "point, dot",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "en su punto",
+     "en": "just right"
+    },
+    "gm": "m."
    },
    "rica": {
     "g": "tasty, delicious",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "quedó rica",
+     "en": "turned out delicious"
+    }
    },
    "entre": {
     "g": "between, among",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "Entre choripán, un terremoto y un pisco",
+     "en": "Between choripán, a terremoto and a pisco"
+    }
    },
    "choripán": {
     "g": "grilled sausage in bread",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Entre choripán",
+     "en": "Between choripán, a sausage sandwich"
+    },
+    "gm": "m."
    },
    "terremoto": {
     "g": "a strong sweet Chilean drink",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un terremoto",
+     "en": "a terremoto, a sweet Chilean wine drink"
+    },
+    "gm": "m."
    },
    "pisco": {
     "g": "Chilean grape brandy",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un pisco",
+     "en": "a pisco"
+    },
+    "gm": "m."
    },
    "grupo": {
     "g": "group",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el grupo se instaló a disfrutar la tarde",
+     "en": "the group settled in to enjoy the afternoon"
+    },
+    "gm": "m."
    },
    "instaló": {
     "g": "settled in",
@@ -20206,19 +20592,37 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se instaló a disfrutar la tarde",
+     "en": "settled in to enjoy the afternoon"
     }
    },
    "disfrutar": {
     "g": "to enjoy",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "a disfrutar la tarde",
+     "en": "to enjoy the afternoon"
+    }
    },
    "tarde": {
     "g": "afternoon, late",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "disfrutar la tarde",
+     "en": "enjoy the afternoon"
+    },
+    "gm": "f."
    },
    "weveo": {
     "g": "Chilean messing about and banter",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El weveo estaba prendido",
+     "en": "The banter was in full swing"
+    },
+    "gm": "m."
    },
    "estaba": {
     "g": "was, used to be",
@@ -20254,47 +20658,95 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "El weveo estaba prendido",
+     "en": "The banter was in full swing"
     }
    },
    "prendido": {
     "g": "turned on, lit",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "estaba prendido",
+     "en": "was in full swing"
+    }
    },
    "con": {
     "g": "with",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "con tallas volando",
+     "en": "with jokes flying about"
+    }
    },
    "tallas": {
     "g": "jokes, witty cracks",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con tallas volando de un lado para el otro",
+     "en": "with jokes flying back and forth"
+    },
+    "gm": "f."
    },
    "volando": {
     "g": "flying, whizzing by",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "tallas volando de un lado para el otro",
+     "en": "jokes flying back and forth"
+    }
    },
    "lado": {
     "g": "side",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "de un lado para el otro",
+     "en": "back and forth"
+    },
+    "gm": "m."
    },
    "para": {
     "g": "for, to",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "de un lado para el otro",
+     "en": "back and forth"
+    }
    },
    "otro": {
     "g": "another, other",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "de un lado para el otro",
+     "en": "back and forth"
+    }
    },
    "estómago": {
     "g": "stomach",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Con el estómago lleno",
+     "en": "On a full stomach"
+    },
+    "gm": "m."
    },
    "lleno": {
     "g": "full",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "el estómago lleno",
+     "en": "a full stomach"
+    }
    },
    "conversación": {
     "g": "conversation",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "la conversación se fue poniendo más íntima",
+     "en": "the conversation grew more intimate"
+    },
+    "gm": "f."
    },
    "fue": {
     "g": "was, went",
@@ -20330,19 +20782,35 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se fue poniendo más íntima",
+     "en": "grew more intimate"
     }
    },
    "poniendo": {
     "g": "putting",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "se fue poniendo más íntima",
+     "en": "grew more intimate"
+    }
    },
    "más": {
     "g": "more",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "más íntima",
+     "en": "more intimate"
+    }
    },
    "íntima": {
     "g": "intimate, personal",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "más íntima",
+     "en": "more intimate"
+    }
    },
    "recordaron": {
     "g": "they remembered, recalled",
@@ -20378,31 +20846,62 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "Recordaron los carretes legendarios",
+     "en": "They remembered the legendary parties"
     }
    },
    "carretes": {
     "g": "parties, nights out",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "los carretes legendarios",
+     "en": "the legendary parties"
+    },
+    "gm": "m."
    },
    "legendarios": {
     "g": "legendary",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "los carretes legendarios",
+     "en": "the legendary parties"
+    }
    },
    "cagadas": {
     "g": "screw ups, blunders",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "las cagadas épicas de cada uno",
+     "en": "everyone's epic screw-ups"
+    },
+    "gm": "f."
    },
    "épicas": {
     "g": "epic",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "las cagadas épicas",
+     "en": "the epic screw-ups"
+    }
    },
    "cada": {
     "g": "each, every",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "de cada uno",
+     "en": "of each of them"
+    }
    },
    "anécdota": {
     "g": "an anecdote, a funny story",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Cada anécdota venía con su carcajada",
+     "en": "Every story came with its laugh"
+    },
+    "gm": "f."
    },
    "venía": {
     "g": "he/she was coming",
@@ -20438,27 +20937,54 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "Cada anécdota venía con su carcajada",
+     "en": "Every story came with its laugh"
     }
    },
    "carcajada": {
     "g": "a burst of loud laughter",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "venía con su carcajada",
+     "en": "came with its laugh"
+    },
+    "gm": "f."
    },
    "pero": {
     "g": "but",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "pero también con un dejo de nostalgia",
+     "en": "but also with a touch of nostalgia"
+    }
    },
    "también": {
     "g": "also, too",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "pero también con un dejo de nostalgia",
+     "en": "but also with a touch of nostalgia"
+    }
    },
    "dejo": {
     "g": "a faint hint of feeling",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un dejo de nostalgia",
+     "en": "a touch of nostalgia"
+    },
+    "gm": "m."
    },
    "nostalgia": {
     "g": "nostalgia, wistfulness",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un dejo de nostalgia",
+     "en": "a touch of nostalgia"
+    },
+    "gm": "f."
    },
    "comentó": {
     "g": "commented",
@@ -20494,23 +21020,43 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Javiera comentó que el verano se había pasado volando",
+     "en": "Javiera said the summer had flown by"
     }
    },
    "había": {
     "g": "there was; had",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "el verano se había pasado volando",
+     "en": "the summer had flown by"
+    }
    },
    "pasado": {
     "g": "past, last",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "se había pasado volando",
+     "en": "had flown by"
+    }
    },
    "pronto": {
     "g": "soon",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "Pronto cada uno agarraría para su lado",
+     "en": "Soon each of them would go their own way"
+    }
    },
    "agarraría": {
     "g": "would go own way (agarrar para su lado)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "cada uno agarraría para su lado",
+     "en": "each of them would go their own way"
+    }
    },
    "pega": {
     "g": "hits, sticks; job",
@@ -20546,31 +21092,61 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "con la pega y la vida tirando fuerte",
+     "en": "with work and life pulling hard"
     }
    },
    "vida": {
     "g": "life",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "la pega y la vida tirando fuerte",
+     "en": "work and life pulling hard"
+    },
+    "gm": "f."
    },
    "tirando": {
     "g": "throwing, getting by",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "la vida tirando fuerte",
+     "en": "life pulling hard"
+    }
    },
    "fuerte": {
     "g": "loud, strong",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "tirando fuerte",
+     "en": "pulling hard"
+    }
    },
    "idea": {
     "g": "idea",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "La idea de que el grupo se separara",
+     "en": "The thought of the group breaking up"
+    },
+    "gm": "f."
    },
    "separara": {
     "g": "would split up (se separara)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "que el grupo se separara",
+     "en": "the group breaking up"
+    }
    },
    "les": {
     "g": "to them, you all",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "les apretó el pecho a todos",
+     "en": "made all their chests tighten"
+    }
    },
    "apretó": {
     "g": "squeezed, shook (hand)",
@@ -20606,19 +21182,36 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "les apretó el pecho",
+     "en": "made their chests tighten"
     }
    },
    "pecho": {
     "g": "a tight ache in the chest (apretar el pecho)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "les apretó el pecho",
+     "en": "made their chests tighten"
+    },
+    "gm": "m."
    },
    "todos": {
     "g": "everyone, all",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "a todos",
+     "en": "for all of them"
+    }
    },
    "nunca": {
     "g": "never",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "que nunca se ponía sentimental",
+     "en": "who never got sentimental"
+    }
    },
    "ponía": {
     "g": "was getting",
@@ -20654,11 +21247,19 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "nunca se ponía sentimental",
+     "en": "never got sentimental"
     }
    },
    "sentimental": {
     "g": "sentimental",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "nunca se ponía sentimental",
+     "en": "never got sentimental"
+    }
    },
    "soltó": {
     "g": "he/she let go, blurted",
@@ -20694,31 +21295,60 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "soltó algo sincero de repente",
+     "en": "suddenly said something heartfelt"
     }
    },
    "algo": {
     "g": "something",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "algo sincero",
+     "en": "something heartfelt"
+    }
    },
    "sincero": {
     "g": "sincere, heartfelt",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "algo sincero",
+     "en": "something heartfelt"
+    }
    },
    "repente": {
     "g": "suddenly (de repente)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "de repente",
+     "en": "suddenly"
+    },
+    "gm": "m."
    },
    "igual": {
     "g": "same; anyway",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "Igual pase lo que pase",
+     "en": "Whatever happens"
+    }
    },
    "pase": {
     "g": "whatever happens (pase lo que pase)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "pase lo que pase",
+     "en": "whatever happens"
+    }
    },
    "ustedes": {
     "g": "you all",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "ustedes son mi gente",
+     "en": "you lot are my people"
+    }
    },
    "son": {
     "g": "they are",
@@ -20754,19 +21384,36 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "ustedes son mi gente",
+     "en": "you lot are my people"
     }
    },
    "mi": {
     "g": "my",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "mi gente",
+     "en": "my people"
+    }
    },
    "gente": {
     "g": "people",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "ustedes son mi gente",
+     "en": "you lot are my people"
+    },
+    "gm": "f."
    },
    "cachái": {
     "g": "you get it, right?",
-    "t": "expression"
+    "t": "expression",
+    "c": {
+     "es": "cachái",
+     "en": "you know"
+    }
    },
    "dijo": {
     "g": "said",
@@ -20802,15 +21449,28 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "dijo mirando el lago",
+     "en": "he said, looking at the lake"
     }
    },
    "mirando": {
     "g": "looking, watching",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "mirando el lago",
+     "en": "looking at the lake"
+    }
    },
    "silencio": {
     "g": "silence",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El silencio que siguió",
+     "en": "The silence that followed"
+    },
+    "gm": "m."
    },
    "siguió": {
     "g": "he/she followed, kept on",
@@ -20846,6 +21506,10 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "El silencio que siguió",
+     "en": "The silence that followed"
     }
    },
    "valió": {
@@ -20882,15 +21546,28 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "valió más que cualquier discurso",
+     "en": "was worth more than any speech"
     }
    },
    "cualquier": {
     "g": "any",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "más que cualquier discurso",
+     "en": "more than any speech"
+    }
    },
    "discurso": {
     "g": "a speech",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "cualquier discurso",
+     "en": "any speech"
+    },
+    "gm": "m."
    },
    "levantó": {
     "g": "lifted, raised",
@@ -20926,51 +21603,104 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Benjamín levantó su vaso",
+     "en": "Benjamín raised his glass"
     }
    },
    "vaso": {
     "g": "a glass",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "levantó su vaso",
+     "en": "raised his glass"
+    },
+    "gm": "m."
    },
    "propuso": {
     "g": "proposed, suggested",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "propuso un brindis",
+     "en": "he proposed a toast"
+    }
    },
    "brindis": {
     "g": "a toast with drinks",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un brindis medio en talla, medio en serio",
+     "en": "a toast, half joking, half serious"
+    },
+    "gm": "m."
    },
    "medio": {
     "g": "half; kind of",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "medio en talla, medio en serio",
+     "en": "half joking, half serious"
+    }
    },
    "talla": {
     "g": "size",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "medio en talla",
+     "en": "half joking"
+    },
+    "gm": "f."
    },
    "serio": {
     "g": "serious",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "medio en serio",
+     "en": "half serious"
+    }
    },
    "eterno": {
     "g": "eternal, forever",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "Por el weveo eterno",
+     "en": "To banter for ever"
+    }
    },
    "aunque": {
     "g": "although",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "aunque estemos viejos y con guata",
+     "en": "even when we are old and paunchy"
+    }
    },
    "estemos": {
     "g": "even if we are (aunque estemos)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "aunque estemos viejos y con guata",
+     "en": "even when we are old and paunchy"
+    }
    },
    "viejos": {
     "g": "old folks; parents (slang)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "estemos viejos",
+     "en": "we are old"
+    },
+    "gm": "m."
    },
    "guata": {
     "g": "belly, gut (Chilean)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con guata",
+     "en": "with a belly"
+    },
+    "gm": "f."
    },
    "declaró": {
     "g": "declared",
@@ -21006,31 +21736,60 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "declaró con solemnidad falsa",
+     "en": "he declared with fake solemnity"
     }
    },
    "solemnidad": {
     "g": "solemnity, mock seriousness",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con solemnidad falsa",
+     "en": "with fake solemnity"
+    },
+    "gm": "f."
    },
    "falsa": {
     "g": "fake",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "solemnidad falsa",
+     "en": "fake solemnity"
+    }
    },
    "rieron": {
     "g": "they laughed",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "Todos se rieron ya medio curados",
+     "en": "They all laughed, half drunk by now"
+    }
    },
    "ya": {
     "g": "already, now",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "ya medio curados",
+     "en": "half drunk by now"
+    }
    },
    "curados": {
     "g": "drunk, tipsy (curao)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "medio curados",
+     "en": "half drunk"
+    }
    },
    "dentro": {
     "g": "inside",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "pero por dentro sabían",
+     "en": "but deep down they knew"
+    }
    },
    "sabían": {
     "g": "they knew",
@@ -21066,15 +21825,28 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "por dentro sabían que ese deseo era la firme",
+     "en": "deep down they knew that wish was the real thing"
     }
    },
    "ese": {
     "g": "that (one)",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "ese deseo",
+     "en": "that wish"
+    }
    },
    "deseo": {
     "g": "a wish",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "ese deseo era la firme",
+     "en": "that wish was the real thing"
+    },
+    "gm": "m."
    },
    "era": {
     "g": "was, used to be",
@@ -21110,15 +21882,28 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "era la firme",
+     "en": "was the real thing"
     }
    },
    "firme": {
     "g": "firm, steady",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "era la firme",
+     "en": "was the real thing"
+    }
    },
    "sol": {
     "g": "sun",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El sol se escondió tras el cerro",
+     "en": "The sun went down behind the hill"
+    },
+    "gm": "m."
    },
    "escondió": {
     "g": "hid, went down",
@@ -21154,31 +21939,61 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "El sol se escondió tras el cerro",
+     "en": "The sun went down behind the hill"
     }
    },
    "tras": {
     "g": "one after another (uno tras otro)",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "tras el cerro",
+     "en": "behind the hill"
+    }
    },
    "cerro": {
     "g": "a hill",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "tras el cerro",
+     "en": "behind the hill"
+    },
+    "gm": "m."
    },
    "quieto": {
     "g": "still, quiet",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "el lago quedó quieto como espejo",
+     "en": "the lake went still as a mirror"
+    }
    },
    "como": {
     "g": "like, as",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "quieto como espejo",
+     "en": "still as a mirror"
+    }
    },
    "espejo": {
     "g": "a mirror",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "quieto como espejo",
+     "en": "still as a mirror"
+    },
+    "gm": "m."
    },
    "nadie": {
     "g": "nobody",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Nadie quería ser el primero",
+     "en": "Nobody wanted to be the first"
+    }
    },
    "quería": {
     "g": "wanted",
@@ -21214,31 +22029,61 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "Nadie quería ser el primero",
+     "en": "Nobody wanted to be the first"
     }
    },
    "ser": {
     "g": "to be",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "ser el primero en decir",
+     "en": "to be the first to say"
+    }
    },
    "primero": {
     "g": "the first one",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "el primero en decir",
+     "en": "the first to say"
+    }
    },
    "decir": {
     "g": "to say, to mean",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "el primero en decir que era hora de irse",
+     "en": "the first to say it was time to go"
+    }
    },
    "hora": {
     "g": "hour, time",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "era hora de irse a la casa",
+     "en": "it was time to go home"
+    },
+    "gm": "f."
    },
    "irse": {
     "g": "to leave",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "hora de irse a la casa",
+     "en": "time to go home"
+    }
    },
    "casa": {
     "g": "house, home",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "irse a la casa",
+     "en": "go home"
+    },
+    "gm": "f."
    },
    "tiene": {
     "g": "he/she has",
@@ -21274,27 +22119,52 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Un weveo no tiene que durar para siempre",
+     "en": "Banter does not have to last for ever"
     }
    },
    "durar": {
     "g": "to last",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "no tiene que durar para siempre",
+     "en": "does not have to last for ever"
+    }
    },
    "siempre": {
     "g": "always",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "para siempre",
+     "en": "for ever"
+    }
    },
    "basta": {
     "g": "it is enough for it (le basta)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "le basta con dejar huella",
+     "en": "it is enough that it leaves a mark"
+    }
    },
    "dejar": {
     "g": "to leave, let",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "dejar huella",
+     "en": "leave a mark"
+    }
    },
    "huella": {
     "g": "to leave a mark (dejar huella)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "dejar huella",
+     "en": "leave a mark"
+    },
+    "gm": "f."
    }
   },
   "almuerzo-en-el-jato": {
@@ -21304,7 +22174,8 @@
     "c": {
      "es": "Almuerzo en el jato",
      "en": "Lunch at the flat"
-    }
+    },
+    "gm": "m."
    },
    "en": {
     "g": "in, on",
@@ -21320,7 +22191,8 @@
     "c": {
      "es": "en el jato",
      "en": "at the flat"
-    }
+    },
+    "gm": "m."
    },
    "al": {
     "g": "to the",
@@ -21336,7 +22208,8 @@
     "c": {
      "es": "Al mediodía",
      "en": "At midday"
-    }
+    },
+    "gm": "m."
    },
    "invitó": {
     "g": "invited; treated",
@@ -21392,7 +22265,8 @@
     "c": {
      "es": "invitó a la chochera",
      "en": "invited the gang"
-    }
+    },
+    "gm": "f."
    },
    "su": {
     "g": "his, her, their",
@@ -21440,7 +22314,8 @@
     "c": {
      "es": "Pasen, causas",
      "en": "Come in, mates"
-    }
+    },
+    "gm": "f."
    },
    "siéntanse": {
     "g": "sit down (you all)",
@@ -21456,7 +22331,8 @@
     "c": {
      "es": "siéntanse en su casa",
      "en": "make yourselves at home"
-    }
+    },
+    "gm": "f."
    },
    "que": {
     "g": "that",
@@ -21496,7 +22372,8 @@
     "c": {
      "es": "ya casi sale el ceviche",
      "en": "the ceviche is nearly ready"
-    }
+    },
+    "gm": "m."
    },
    "recibió": {
     "g": "greeted, received",
@@ -21552,7 +22429,8 @@
     "c": {
      "es": "La cocina olía a limón y cebolla",
      "en": "The kitchen smelled of lime and onion"
-    }
+    },
+    "gm": "f."
    },
    "olía": {
     "g": "smelled",
@@ -21600,7 +22478,8 @@
     "c": {
      "es": "a limón y cebolla",
      "en": "of lime and onion"
-    }
+    },
+    "gm": "m."
    },
    "y": {
     "g": "and",
@@ -21616,7 +22495,8 @@
     "c": {
      "es": "limón y cebolla",
      "en": "lime and onion"
-    }
+    },
+    "gm": "f."
    },
    "todos": {
     "g": "everyone, all",
@@ -21688,7 +22568,8 @@
     "c": {
      "es": "se les hizo agua la boca",
      "en": "their mouths started watering"
-    }
+    },
+    "gm": "f."
    },
    "boca": {
     "g": "mouth",
@@ -21696,7 +22577,8 @@
     "c": {
      "es": "se les hizo agua la boca",
      "en": "their mouths started watering"
-    }
+    },
+    "gm": "f."
    },
    "llegó": {
     "g": "arrived",
@@ -21784,7 +22666,8 @@
     "c": {
      "es": "un hambre de la gran flauta",
      "en": "absolutely starving"
-    }
+    },
+    "gm": "f."
    },
    "de": {
     "g": "of, from",
@@ -21808,7 +22691,8 @@
     "c": {
      "es": "de la gran flauta",
      "en": "enormous"
-    }
+    },
+    "gm": "f."
    },
    "broder": {
     "g": "bro, buddy",
@@ -21816,7 +22700,8 @@
     "c": {
      "es": "Broder, sírveme harto",
      "en": "Bro, give me plenty"
-    }
+    },
+    "gm": "m."
    },
    "sírveme": {
     "g": "serve me",
@@ -21888,7 +22773,8 @@
     "c": {
      "es": "sin un sol",
      "en": "without a penny"
-    }
+    },
+    "gm": "m."
    },
    "bolsillo": {
     "g": "a pocket",
@@ -21896,7 +22782,8 @@
     "c": {
      "es": "en el bolsillo",
      "en": "in my pocket"
-    }
+    },
+    "gm": "m."
    },
    "pidió": {
     "g": "asked, requested",
@@ -21944,7 +22831,8 @@
     "c": {
      "es": "sin roche",
      "en": "without a shred of embarrassment"
-    }
+    },
+    "gm": "m."
    },
    "rió": {
     "g": "laughed",
@@ -22152,7 +23040,8 @@
     "c": {
      "es": "la mesa pequeña de la sala",
      "en": "the small table in the living room"
-    }
+    },
+    "gm": "f."
    },
    "pequeña": {
     "g": "small, little",
@@ -22168,15 +23057,8 @@
     "c": {
      "es": "la mesa de la sala",
      "en": "the living room table"
-    }
-   },
-   "pilar": {
-    "g": "pillar; Pilar (name)",
-    "t": "noun",
-    "c": {
-     "es": "Pilar, que ya iba cachando la jerga",
-     "en": "Pilar, who was getting the hang of the slang"
-    }
+    },
+    "gm": "f."
    },
    "cachando": {
     "g": "getting it, understanding",
@@ -22192,7 +23074,8 @@
     "c": {
      "es": "cachando la jerga",
      "en": "getting the hang of the slang"
-    }
+    },
+    "gm": "f."
    },
    "soltó": {
     "g": "he/she let go, blurted",
@@ -22240,7 +23123,8 @@
     "c": {
      "es": "un par de palabras nuevas",
      "en": "a couple of new words"
-    }
+    },
+    "gm": "m."
    },
    "palabras": {
     "g": "words",
@@ -22248,7 +23132,8 @@
     "c": {
      "es": "un par de palabras nuevas",
      "en": "a couple of new words"
-    }
+    },
+    "gm": "f."
    },
    "nuevas": {
     "g": "new",
@@ -22264,7 +23149,8 @@
     "c": {
      "es": "como yapa",
      "en": "as a bonus"
-    }
+    },
+    "gm": "f."
    },
    "patas": {
     "g": "to blunder badly (meter las patas)",
@@ -22272,7 +23158,8 @@
     "c": {
      "es": "Los patas la aplaudieron",
      "en": "The mates gave her a round of applause"
-    }
+    },
+    "gm": "m."
    },
    "aplaudieron": {
     "g": "applauded",
@@ -22336,7 +23223,8 @@
     "c": {
      "es": "la chibola iba agarrando calle",
      "en": "the girl was picking up street smarts"
-    }
+    },
+    "gm": "f."
    },
    "agarrando": {
     "g": "finding the groove (agarrar el ritmo)",
@@ -22352,7 +23240,8 @@
     "c": {
      "es": "agarrando calle",
      "en": "picking up street smarts"
-    }
+    },
+    "gm": "f."
    },
    "entre": {
     "g": "between, among",
@@ -22368,7 +23257,8 @@
     "c": {
      "es": "Entre bocado y bocado",
      "en": "Between one mouthful and the next"
-    }
+    },
+    "gm": "m."
    },
    "empezó": {
     "g": "started",
@@ -22416,7 +23306,8 @@
     "c": {
      "es": "empezó la sobremesa",
      "en": "the after-lunch chat started"
-    }
+    },
+    "gm": "f."
    },
    "puros": {
     "g": "nothing but, sheer",
@@ -22432,7 +23323,8 @@
     "c": {
      "es": "puros cuentos exagerados",
      "en": "nothing but tall tales"
-    }
+    },
+    "gm": "m."
    },
    "exagerados": {
     "g": "exaggerated, over the top",
@@ -22488,7 +23380,8 @@
     "c": {
      "es": "una vez",
      "en": "once"
-    }
+    },
+    "gm": "f."
    },
    "comió": {
     "g": "ate",
@@ -22536,7 +23429,8 @@
     "c": {
      "es": "veinte anticuchos con ají",
      "en": "twenty anticuchos with chilli"
-    }
+    },
+    "gm": "m."
    },
    "ají": {
     "g": "a hot chili pepper",
@@ -22544,7 +23438,8 @@
     "c": {
      "es": "anticuchos con ají",
      "en": "anticuchos with chilli"
-    }
+    },
+    "gm": "m."
    },
    "creía": {
     "g": "believed",
@@ -22656,7 +23551,8 @@
     "c": {
      "es": "medio plato",
      "en": "half a plate"
-    }
+    },
+    "gm": "m."
    },
    "lo": {
     "g": "it, him",
@@ -22760,7 +23656,8 @@
     "c": {
      "es": "se cayó de risa",
      "en": "fell about laughing"
-    }
+    },
+    "gm": "f."
    },
    "respondida": {
     "g": "a comeback, a retort",
@@ -22768,7 +23665,8 @@
     "c": {
      "es": "la respondida de la novata",
      "en": "the newcomer's comeback"
-    }
+    },
+    "gm": "f."
    },
    "novata": {
     "g": "a female newbie",
@@ -22776,7 +23674,8 @@
     "c": {
      "es": "la respondida de la novata",
      "en": "the newcomer's comeback"
-    }
+    },
+    "gm": "f."
    },
    "sacó": {
     "g": "took out, pulled",
@@ -22824,7 +23723,8 @@
     "c": {
      "es": "unas chelas bien al polo",
      "en": "some ice-cold beers"
-    }
+    },
+    "gm": "f."
    },
    "bien": {
     "g": "well, good",
@@ -22840,7 +23740,8 @@
     "c": {
      "es": "al polo",
      "en": "ice-cold"
-    }
+    },
+    "gm": "m."
    },
    "para": {
     "g": "for, to",
@@ -22864,7 +23765,8 @@
     "c": {
      "es": "la tarde tranquila",
      "en": "the quiet afternoon"
-    }
+    },
+    "gm": "f."
    },
    "tranquila": {
     "g": "calm, relax (fem.)",
@@ -22928,7 +23830,8 @@
     "c": {
      "es": "no tenían apuro",
      "en": "in no rush"
-    }
+    },
+    "gm": "m."
    },
    "solo": {
     "g": "only, alone",
@@ -22992,7 +23895,8 @@
     "c": {
      "es": "matando el rato",
      "en": "killing time"
-    }
+    },
+    "gm": "m."
    },
    "haciendo": {
     "g": "doing",
@@ -23008,7 +23912,8 @@
     "c": {
      "es": "haciendo hora",
      "en": "passing the time"
-    }
+    },
+    "gm": "f."
    },
    "era": {
     "g": "was, used to be",
@@ -23064,7 +23969,8 @@
     "c": {
      "es": "del montón",
      "en": "ordinary"
-    }
+    },
+    "gm": "m."
    },
    "nada": {
     "g": "nothing",
@@ -23088,7 +23994,8 @@
     "c": {
      "es": "nada del otro mundo",
      "en": "nothing special"
-    }
+    },
+    "gm": "m."
    },
    "planes": {
     "g": "plans",
@@ -23096,7 +24003,8 @@
     "c": {
      "es": "sin planes ni pretensiones",
      "en": "with no plans and no pretensions"
-    }
+    },
+    "gm": "m."
    },
    "ni": {
     "g": "not even, nor",
@@ -23112,7 +24020,8 @@
     "c": {
      "es": "sin planes ni pretensiones",
      "en": "with no plans and no pretensions"
-    }
+    },
+    "gm": "f."
    },
    "embargo": {
     "g": "however (sin embargo)",
@@ -23120,7 +24029,8 @@
     "c": {
      "es": "Y sin embargo",
      "en": "And yet"
-    }
+    },
+    "gm": "m."
    },
    "justo": {
     "g": "just, exactly; fair",
@@ -23144,7 +24054,8 @@
     "c": {
      "es": "esa clase de tarde",
      "en": "that kind of afternoon"
-    }
+    },
+    "gm": "f."
    },
    "después": {
     "g": "after, later",
@@ -23168,7 +24079,8 @@
     "c": {
      "es": "La comida se terminó rápido",
      "en": "The food went fast"
-    }
+    },
+    "gm": "f."
    },
    "terminó": {
     "g": "he/she finished, ended",
@@ -23224,7 +24136,8 @@
     "c": {
      "es": "la conversación siguió por horas",
      "en": "the conversation went on for hours"
-    }
+    },
+    "gm": "f."
    },
    "siguió": {
     "g": "he/she followed, kept on",
@@ -23280,7 +24193,8 @@
     "c": {
      "es": "por horas",
      "en": "for hours"
-    }
+    },
+    "gm": "f."
    },
    "cuando": {
     "g": "when",
@@ -23296,7 +24210,8 @@
     "c": {
      "es": "por fin",
      "en": "finally"
-    }
+    },
+    "gm": "m."
    },
    "pararon": {
     "g": "stood up",
@@ -23408,7 +24323,8 @@
     "c": {
      "es": "con abrazos",
      "en": "with hugs"
-    }
+    },
+    "gm": "m."
    },
    "promesa": {
     "g": "a promise",
@@ -23416,7 +24332,8 @@
     "c": {
      "es": "la promesa de repetir el jato",
      "en": "the promise to do it again"
-    }
+    },
+    "gm": "f."
    },
    "repetir": {
     "g": "to do it again",
@@ -23440,7 +24357,8 @@
     "c": {
      "es": "la otra semana",
      "en": "next week"
-    }
+    },
+    "gm": "f."
    },
    "ninguno": {
     "g": "none, no one",
@@ -23506,7 +24424,8 @@
     "c": {
      "es": "La chibola nos superó",
      "en": "The girl outdid us"
-    }
+    },
+    "gm": "f."
    },
    "nos": {
     "g": "us, ourselves",
@@ -23562,7 +24481,8 @@
     "c": {
      "es": "Semanas después",
      "en": "Weeks later"
-    }
+    },
+    "gm": "f."
    },
    "después": {
     "g": "after, later",
@@ -23570,14 +24490,6 @@
     "c": {
      "es": "Semanas después",
      "en": "Weeks later"
-    }
-   },
-   "pilar": {
-    "g": "pillar; Pilar (name)",
-    "t": "noun",
-    "c": {
-     "es": "Pilar ya manejaba la jerga",
-     "en": "Pilar had the slang down"
     }
    },
    "ya": {
@@ -23634,7 +24546,8 @@
     "c": {
      "es": "manejaba la jerga",
      "en": "had the slang down"
-    }
+    },
+    "gm": "f."
    },
    "mejor": {
     "g": "better, best",
@@ -23674,7 +24587,8 @@
     "c": {
      "es": "sus propios maestros",
      "en": "her own teachers"
-    }
+    },
+    "gm": "m."
    },
    "lo": {
     "g": "it, him",
@@ -23746,7 +24660,8 @@
     "c": {
      "es": "pura confusión",
      "en": "pure confusion"
-    }
+    },
+    "gm": "f."
    },
    "en": {
     "g": "in, on",
@@ -23762,7 +24677,8 @@
     "c": {
      "es": "en el paradero",
      "en": "at the bus stop"
-    }
+    },
+    "gm": "m."
    },
    "se": {
     "g": "oneself, himself",
@@ -23802,7 +24718,8 @@
     "c": {
      "es": "se había vuelto su cancha",
      "en": "had become her home turf"
-    }
+    },
+    "gm": "f."
    },
    "y": {
     "g": "and",
@@ -23874,7 +24791,8 @@
     "c": {
      "es": "una mezcla de orgullo y de miedo",
      "en": "a mix of pride and fear"
-    }
+    },
+    "gm": "f."
    },
    "de": {
     "g": "of, from",
@@ -23890,7 +24808,8 @@
     "c": {
      "es": "de orgullo y de miedo",
      "en": "of pride and fear"
-    }
+    },
+    "gm": "m."
    },
    "miedo": {
     "g": "fear",
@@ -23898,7 +24817,8 @@
     "c": {
      "es": "de orgullo y de miedo",
      "en": "of pride and fear"
-    }
+    },
+    "gm": "m."
    },
    "plena": {
     "g": "right in the middle of (en plena mesa)",
@@ -23914,7 +24834,8 @@
     "c": {
      "es": "En plena reunión",
      "en": "Right in the middle of the get-together"
-    }
+    },
+    "gm": "f."
    },
    "novata": {
     "g": "a female newbie",
@@ -23922,7 +24843,8 @@
     "c": {
      "es": "la novata soltó una frase tan cerrada",
      "en": "the newcomer let out such an impenetrable sentence"
-    }
+    },
+    "gm": "f."
    },
    "soltó": {
     "g": "he/she let go, blurted",
@@ -23970,7 +24892,8 @@
     "c": {
      "es": "una frase tan cerrada",
      "en": "such an impenetrable sentence"
-    }
+    },
+    "gm": "f."
    },
    "tan": {
     "g": "so, such",
@@ -24082,7 +25005,8 @@
     "c": {
      "es": "Mezcló palabras al revés",
      "en": "She mixed words spoken backwards"
-    }
+    },
+    "gm": "f."
    },
    "al": {
     "g": "to the",
@@ -24098,7 +25022,8 @@
     "c": {
      "es": "al revés",
      "en": "backwards"
-    }
+    },
+    "gm": "m."
    },
    "apócopes": {
     "g": "clipped shortened words",
@@ -24106,7 +25031,8 @@
     "c": {
      "es": "apócopes y muletillas",
      "en": "shortenings and filler words"
-    }
+    },
+    "gm": "m."
    },
    "muletillas": {
     "g": "filler words, verbal tics",
@@ -24114,7 +25040,8 @@
     "c": {
      "es": "apócopes y muletillas",
      "en": "shortenings and filler words"
-    }
+    },
+    "gm": "f."
    },
    "ni": {
     "g": "not even, nor",
@@ -24226,7 +25153,8 @@
     "c": {
      "es": "ni michi",
      "en": "not a single bit"
-    }
+    },
+    "gm": "m."
    },
    "dónde": {
     "g": "where",
@@ -24314,7 +25242,8 @@
     "c": {
      "es": "con la misma moneda",
      "en": "in kind"
-    }
+    },
+    "gm": "f."
    },
    "tirando": {
     "g": "throwing, getting by",
@@ -24330,7 +25259,8 @@
     "c": {
      "es": "su mejor floro",
      "en": "his best patter"
-    }
+    },
+    "gm": "m."
    },
    "pero": {
     "g": "but",
@@ -24450,7 +25380,8 @@
     "c": {
      "es": "El maestro terminó monse",
      "en": "The master ended up looking clueless"
-    }
+    },
+    "gm": "m."
    },
    "terminó": {
     "g": "he/she finished, ended",
@@ -24514,7 +25445,8 @@
     "c": {
      "es": "rascándose la cabeza",
      "en": "scratching his head"
-    }
+    },
+    "gm": "f."
    },
    "peor": {
     "g": "worse, worst",
@@ -24530,7 +25462,8 @@
     "c": {
      "es": "el peor novato",
      "en": "the greenest beginner"
-    }
+    },
+    "gm": "m."
    },
    "cosa": {
     "g": "thing",
@@ -24538,7 +25471,8 @@
     "c": {
      "es": "La cosa se volvió un duelo de jerga",
      "en": "It turned into a slang duel"
-    }
+    },
+    "gm": "f."
    },
    "volvió": {
     "g": "he/she came back",
@@ -24586,7 +25520,8 @@
     "c": {
      "es": "un duelo de jerga",
      "en": "a slang duel"
-    }
+    },
+    "gm": "m."
    },
    "mesa": {
     "g": "table",
@@ -24594,7 +25529,8 @@
     "c": {
      "es": "en plena mesa del jato",
      "en": "right at the table in the flat"
-    }
+    },
+    "gm": "f."
    },
    "del": {
     "g": "of the",
@@ -24610,7 +25546,8 @@
     "c": {
      "es": "la mesa del jato",
      "en": "the table in the flat"
-    }
+    },
+    "gm": "m."
    },
    "cada": {
     "g": "each, every",
@@ -24698,7 +25635,8 @@
     "c": {
      "es": "sin respuesta",
      "en": "with no answer"
-    }
+    },
+    "gm": "f."
    },
    "iba": {
     "g": "was going",
@@ -24754,7 +25692,8 @@
     "c": {
      "es": "un paso adelante",
      "en": "a step ahead"
-    }
+    },
+    "gm": "m."
    },
    "adelante": {
     "g": "ahead, forward",
@@ -24850,7 +25789,8 @@
     "c": {
      "es": "el más pro del grupo",
      "en": "the sharpest in the group"
-    }
+    },
+    "gm": "m."
    },
    "grupo": {
     "g": "group",
@@ -24858,7 +25798,8 @@
     "c": {
      "es": "el más pro del grupo",
      "en": "the sharpest in the group"
-    }
+    },
+    "gm": "m."
    },
    "tuvo": {
     "g": "had",
@@ -24938,7 +25879,8 @@
     "c": {
      "es": "tú ganas",
      "en": "you win"
-    }
+    },
+    "gm": "f."
    },
    "eres": {
     "g": "you are",
@@ -24986,7 +25928,8 @@
     "c": {
      "es": "eres una crack",
      "en": "you are a star"
-    }
+    },
+    "gm": "f."
    },
    "chata": {
     "g": "shorty, a fond nickname (chato)",
@@ -24994,7 +25937,8 @@
     "c": {
      "es": "una crack, chata",
      "en": "a star, girl"
-    }
+    },
+    "gm": "f."
    },
    "declaró": {
     "g": "declared",
@@ -25050,7 +25994,8 @@
     "c": {
      "es": "entre risas",
      "en": "laughing"
-    }
+    },
+    "gm": "f."
    },
    "levantó": {
     "g": "lifted, raised",
@@ -25098,7 +26043,8 @@
     "c": {
      "es": "levantó la mano de Pilar",
      "en": "raised Pilar's hand"
-    }
+    },
+    "gm": "f."
    },
    "a": {
     "g": "to, at",
@@ -25114,7 +26060,8 @@
     "c": {
      "es": "una campeona de box",
      "en": "a boxing champion"
-    }
+    },
+    "gm": "f."
    },
    "box": {
     "g": "boxing",
@@ -25122,7 +26069,8 @@
     "c": {
      "es": "campeona de box",
      "en": "boxing champion"
-    }
+    },
+    "gm": "m."
    },
    "llegó": {
     "g": "arrived",
@@ -25226,7 +26174,8 @@
     "c": {
      "es": "la reina indiscutible",
      "en": "the undisputed queen"
-    }
+    },
+    "gm": "f."
    },
    "indiscutible": {
     "g": "undisputed, beyond doubt",
@@ -25250,7 +26199,8 @@
     "c": {
      "es": "adoptado como alumna",
      "en": "taken on as a student"
-    }
+    },
+    "gm": "f."
    },
    "terminaron": {
     "g": "they finished, broke up",
@@ -25306,7 +26256,8 @@
     "c": {
      "es": "pidiéndole clases a ella",
      "en": "asking her for lessons"
-    }
+    },
+    "gm": "f."
    },
    "ella": {
     "g": "she",
@@ -25322,7 +26273,8 @@
     "c": {
      "es": "El mundo al revés",
      "en": "The world turned upside down"
-    }
+    },
+    "gm": "m."
    },
    "igual": {
     "g": "same; anyway",
@@ -25434,7 +26386,8 @@
     "c": {
      "es": "disfrutó el momento",
      "en": "enjoyed the moment"
-    }
+    },
+    "gm": "m."
    },
    "achoró": {
     "g": "got cocky and tough (achorarse)",
@@ -25610,7 +26563,8 @@
     "c": {
      "es": "somos yunta para siempre",
      "en": "we are a crew for good"
-    }
+    },
+    "gm": "f."
    },
    "para": {
     "g": "for, to",
@@ -25738,7 +26692,8 @@
     "c": {
      "es": "solo un idioma",
      "en": "just a language"
-    }
+    },
+    "gm": "m."
    },
    "forma": {
     "g": "properly, in style (en forma)",
@@ -25746,7 +26701,8 @@
     "c": {
      "es": "era su forma de quererse",
      "en": "it was how they loved each other"
-    }
+    },
+    "gm": "f."
    },
    "quererse": {
     "g": "to care for each other",
@@ -25758,14 +26714,6 @@
    }
   },
   "pilar-no-entiende-nada": {
-   "pilar": {
-    "g": "pillar; Pilar (name)",
-    "t": "noun",
-    "c": {
-     "es": "Pilar no entiende nada",
-     "en": "Pilar does not understand a thing"
-    }
-   },
    "no": {
     "g": "no, not",
     "t": "adverb",
@@ -25804,7 +26752,8 @@
     "c": {
      "es": "En el paradero",
      "en": "At the bus stop"
-    }
+    },
+    "gm": "m."
    },
    "esperando": {
     "g": "waiting",
@@ -25820,7 +26769,8 @@
     "c": {
      "es": "esperando la combi",
      "en": "waiting for the minibus"
-    }
+    },
+    "gm": "f."
    },
    "bajo": {
     "g": "low, under",
@@ -25836,7 +26786,8 @@
     "c": {
      "es": "el cielo gris de Lima",
      "en": "the grey Lima sky"
-    }
+    },
+    "gm": "m."
    },
    "gris": {
     "g": "gray",
@@ -25860,7 +26811,8 @@
     "c": {
      "es": "el cielo gris de Lima",
      "en": "the grey Lima sky"
-    }
+    },
+    "gm": "f."
    },
    "saludó": {
     "g": "greeted, said hi",
@@ -25924,7 +26876,8 @@
     "c": {
      "es": "a toda velocidad",
      "en": "at top speed"
-    }
+    },
+    "gm": "f."
    },
    "recibió": {
     "g": "greeted, received",
@@ -26028,7 +26981,8 @@
     "c": {
      "es": "habla causa",
      "en": "hey mate"
-    }
+    },
+    "gm": "f."
    },
    "y": {
     "g": "and",
@@ -26052,7 +27006,8 @@
     "c": {
      "es": "todo piña",
      "en": "rubbish luck"
-    }
+    },
+    "gm": "f."
    },
    "que": {
     "g": "that",
@@ -26140,7 +27095,8 @@
     "c": {
      "es": "se quedó en blanco",
      "en": "went blank"
-    }
+    },
+    "gm": "m."
    },
    "sin": {
     "g": "without",
@@ -26172,7 +27128,8 @@
     "c": {
      "es": "ni la mitad de lo que le decían",
      "en": "not even half of what they were saying"
-    }
+    },
+    "gm": "f."
    },
    "lo": {
     "g": "it, him",
@@ -26276,7 +27233,8 @@
     "c": {
      "es": "al toque",
      "en": "straight away"
-    }
+    },
+    "gm": "m."
    },
    "tirando": {
     "g": "throwing, getting by",
@@ -26300,7 +27258,8 @@
     "c": {
      "es": "tirando más jerga",
      "en": "throwing more slang"
-    }
+    },
+    "gm": "f."
    },
    "encima": {
     "g": "on top; besides",
@@ -26380,7 +27339,8 @@
     "c": {
      "es": "es floro nomás",
      "en": "it is just chat"
-    }
+    },
+    "gm": "m."
    },
    "nomás": {
     "g": "just, only",
@@ -26476,7 +27436,8 @@
     "c": {
      "es": "entre risas",
      "en": "laughing"
-    }
+    },
+    "gm": "f."
    },
    "pero": {
     "g": "but",
@@ -26500,7 +27461,8 @@
     "c": {
      "es": "cada palabra rara",
      "en": "every strange word"
-    }
+    },
+    "gm": "f."
    },
    "rara": {
     "g": "strange, odd",
@@ -26556,7 +27518,8 @@
     "c": {
      "es": "en el roche de no entender nada",
      "en": "into the embarrassment of understanding nothing"
-    }
+    },
+    "gm": "m."
    },
    "notó": {
     "g": "noticed",
@@ -26612,7 +27575,8 @@
     "c": {
      "es": "su cara de lorna perdida",
      "en": "her lost, clueless look"
-    }
+    },
+    "gm": "f."
    },
    "lorna": {
     "g": "Lorna (name); dummy",
@@ -26620,7 +27584,8 @@
     "c": {
      "es": "cara de lorna perdida",
      "en": "a lost, clueless look"
-    }
+    },
+    "gm": "f."
    },
    "perdida": {
     "g": "lost, clueless",
@@ -26684,7 +27649,8 @@
     "c": {
      "es": "echarle una mano",
      "en": "help her out"
-    }
+    },
+    "gm": "f."
    },
    "rápido": {
     "g": "fast, quick",
@@ -26756,7 +27722,8 @@
     "c": {
      "es": "causa y pata querían decir amigo del alma",
      "en": "causa and pata meant closest friend"
-    }
+    },
+    "gm": "f."
    },
    "querían": {
     "g": "meant (querían decir)",
@@ -26812,7 +27779,8 @@
     "c": {
      "es": "amigo del alma",
      "en": "closest friend"
-    }
+    },
+    "gm": "m."
    },
    "del": {
     "g": "of the",
@@ -26828,7 +27796,8 @@
     "c": {
      "es": "amigo del alma",
      "en": "closest friend"
-    }
+    },
+    "gm": "f."
    },
    "asentía": {
     "g": "was nodding",
@@ -27004,7 +27973,8 @@
     "c": {
      "es": "Varias palabras sonaban como volteadas",
      "en": "Several words sounded flipped around"
-    }
+    },
+    "gm": "f."
    },
    "sonaban": {
     "g": "sounded",
@@ -27060,7 +28030,8 @@
     "c": {
      "es": "con las sílabas cambiadas de lugar",
      "en": "with the syllables swapped around"
-    }
+    },
+    "gm": "f."
    },
    "cambiadas": {
     "g": "swapped, switched around",
@@ -27076,7 +28047,8 @@
     "c": {
      "es": "cambiadas de lugar",
      "en": "swapped around"
-    }
+    },
+    "gm": "m."
    },
    "rato": {
     "g": "a while",
@@ -27084,7 +28056,8 @@
     "c": {
      "es": "Se quedó un rato callada",
      "en": "She stayed quiet for a while"
-    }
+    },
+    "gm": "m."
    },
    "callada": {
     "g": "quiet, silent",
@@ -27108,7 +28081,8 @@
     "c": {
      "es": "armando el rompecabezas",
      "en": "putting the puzzle together"
-    }
+    },
+    "gm": "m."
    },
    "cabeza": {
     "g": "head",
@@ -27116,7 +28090,8 @@
     "c": {
      "es": "en la cabeza",
      "en": "in her head"
-    }
+    },
+    "gm": "f."
    },
    "pronto": {
     "g": "soon",
@@ -27172,7 +28147,8 @@
     "c": {
      "es": "se le prendió el foco",
      "en": "the penny dropped"
-    }
+    },
+    "gm": "m."
    },
    "sonrisa": {
     "g": "smile",
@@ -27180,7 +28156,8 @@
     "c": {
      "es": "una sonrisa pícara le cruzó la cara",
      "en": "a mischievous smile crossed her face"
-    }
+    },
+    "gm": "f."
    },
    "pícara": {
     "g": "sly, mischievous",
@@ -27348,7 +28325,8 @@
     "c": {
      "es": "una frase entera hablada al revés",
      "en": "a whole sentence spoken backwards"
-    }
+    },
+    "gm": "f."
    },
    "entera": {
     "g": "whole, entire",
@@ -27372,7 +28350,8 @@
     "c": {
      "es": "al revés",
      "en": "backwards"
-    }
+    },
+    "gm": "m."
    },
    "perfecta": {
     "g": "perfect",
@@ -27428,7 +28407,8 @@
     "c": {
      "es": "con los ojos como platos",
      "en": "with their eyes like saucers"
-    }
+    },
+    "gm": "m."
    },
    "platos": {
     "g": "plates, dishes",
@@ -27436,7 +28416,8 @@
     "c": {
      "es": "los ojos como platos",
      "en": "eyes like saucers"
-    }
+    },
+    "gm": "m."
    },
    "poder": {
     "g": "to be able",
@@ -27460,7 +28441,8 @@
     "c": {
      "es": "La chibola que hace un rato no pescaba nada",
      "en": "The girl who a moment ago was not catching a thing"
-    }
+    },
+    "gm": "f."
    },
    "hace": {
     "g": "does, makes; ago",
@@ -27604,7 +28586,8 @@
     "c": {
      "es": "su propio juego",
      "en": "their own game"
-    }
+    },
+    "gm": "m."
    },
    "muerto": {
     "g": "dead",
@@ -27620,7 +28603,8 @@
     "c": {
      "es": "muerto de risa",
      "en": "in stitches"
-    }
+    },
+    "gm": "f."
    },
    "soltó": {
     "g": "he/she let go, blurted",
@@ -27676,7 +28660,8 @@
     "c": {
      "es": "esa germa",
      "en": "that girl"
-    }
+    },
+    "gm": "f."
    },
    "era": {
     "g": "was, used to be",
@@ -27796,7 +28781,8 @@
     "c": {
      "es": "su pequeña victoria",
      "en": "her small victory"
-    }
+    },
+    "gm": "f."
    },
    "plena": {
     "g": "right in the middle of (en plena mesa)",
@@ -27812,7 +28798,8 @@
     "c": {
      "es": "en plena vereda",
      "en": "right there on the pavement"
-    }
+    },
+    "gm": "f."
    },
    "pasó": {
     "g": "happened, passed",
@@ -27868,7 +28855,8 @@
     "c": {
      "es": "la sensación del grupo",
      "en": "the star of the group"
-    }
+    },
+    "gm": "f."
    },
    "grupo": {
     "g": "group",
@@ -27876,7 +28864,8 @@
     "c": {
      "es": "la sensación del grupo",
      "en": "the star of the group"
-    }
+    },
+    "gm": "m."
    },
    "minutos": {
     "g": "minutes",
@@ -27884,7 +28873,8 @@
     "c": {
      "es": "en cinco minutos",
      "en": "in five minutes"
-    }
+    },
+    "gm": "m."
    },
    "entrar": {
     "g": "to get into, to join",
@@ -27900,7 +28890,8 @@
     "c": {
      "es": "entrar de verdad",
      "en": "really get in"
-    }
+    },
+    "gm": "f."
    },
    "yunta": {
     "g": "close buddy, best pal (Arg.)",
@@ -27908,7 +28899,8 @@
     "c": {
      "es": "entrar a una yunta",
      "en": "get into a crew"
-    }
+    },
+    "gm": "f."
    },
    "hay": {
     "g": "there is, there are",
@@ -27940,7 +28932,8 @@
     "c": {
      "es": "en su propio código",
      "en": "in their own code"
-    }
+    },
+    "gm": "m."
    }
   },
   "itzel-no-sabe-nada": {
@@ -28054,7 +29047,8 @@
     "c": {
      "es": "llegó al café",
      "en": "turned up at the café"
-    }
+    },
+    "gm": "m."
    },
    "con": {
     "g": "with",
@@ -28070,7 +29064,8 @@
     "c": {
      "es": "una sonrisa que olía a travesura",
      "en": "a smile that smelled of mischief"
-    }
+    },
+    "gm": "f."
    },
    "que": {
     "g": "that",
@@ -28134,7 +29129,8 @@
     "c": {
      "es": "olía a travesura",
      "en": "smelled of mischief"
-    }
+    },
+    "gm": "f."
    },
    "desde": {
     "g": "since, from",
@@ -28166,7 +29162,8 @@
     "c": {
      "es": "un plan entre manos",
      "en": "a plan up his sleeve"
-    }
+    },
+    "gm": "m."
    },
    "entre": {
     "g": "between, among",
@@ -28182,7 +29179,8 @@
     "c": {
      "es": "entre manos",
      "en": "up his sleeve"
-    }
+    },
+    "gm": "f."
    },
    "y": {
     "g": "and",
@@ -28238,7 +29236,8 @@
     "c": {
      "es": "las ganas de presumirlo",
      "en": "the urge to show it off"
-    }
+    },
+    "gm": "f."
    },
    "de": {
     "g": "of, from",
@@ -28334,7 +29333,8 @@
     "c": {
      "es": "le hizo una seña",
      "en": "he signalled"
-    }
+    },
+    "gm": "f."
    },
    "para": {
     "g": "for, to",
@@ -28406,7 +29406,8 @@
     "c": {
      "es": "Le eché los perros",
      "en": "I put in a word"
-    }
+    },
+    "gm": "m."
    },
    "mi": {
     "g": "my",
@@ -28422,7 +29423,8 @@
     "c": {
      "es": "mi cuate",
      "en": "my mate"
-    }
+    },
+    "gm": "m."
    },
    "salga": {
     "g": "goes out (on a date)",
@@ -28486,7 +29488,8 @@
     "c": {
      "es": "en voz baja",
      "en": "under his breath"
-    }
+    },
+    "gm": "f."
    },
    "baja": {
     "g": "goes down, lowers",
@@ -28574,7 +29577,8 @@
     "c": {
      "es": "abrió los ojos",
      "en": "her eyes went wide"
-    }
+    },
+    "gm": "m."
    },
    "emocionada": {
     "g": "excited",
@@ -28606,7 +29610,8 @@
     "c": {
      "es": "el borlote que se venía",
      "en": "the row that was coming"
-    }
+    },
+    "gm": "m."
    },
    "venía": {
     "g": "he/she was coming",
@@ -28726,7 +29731,8 @@
     "c": {
      "es": "hacer buena química",
      "en": "hit it off"
-    }
+    },
+    "gm": "f."
    },
    "inmediato": {
     "g": "immediate; at once (de inmediato)",
@@ -28742,7 +29748,8 @@
     "c": {
      "es": "El problema es que Itzel no tenía ni idea",
      "en": "The trouble is Itzel had no idea"
-    }
+    },
+    "gm": "m."
    },
    "es": {
     "g": "is",
@@ -28838,7 +29845,8 @@
     "c": {
      "es": "no tenía ni idea",
      "en": "had no idea"
-    }
+    },
+    "gm": "f."
    },
    "odiaba": {
     "g": "hated",
@@ -28894,7 +29902,8 @@
     "c": {
      "es": "le arreglaran citas",
      "en": "set up on dates"
-    }
+    },
+    "gm": "f."
    },
    "si": {
     "g": "if, whether",
@@ -28974,7 +29983,8 @@
     "c": {
      "es": "poner una madriza",
      "en": "give us a beating"
-    }
+    },
+    "gm": "f."
    },
    "bromeó": {
     "g": "joked",
@@ -29134,7 +30144,8 @@
     "c": {
      "es": "el mensajero del asunto",
      "en": "the messenger in all this"
-    }
+    },
+    "gm": "m."
    },
    "del": {
     "g": "of the",
@@ -29150,7 +30161,8 @@
     "c": {
      "es": "el mensajero del asunto",
      "en": "the messenger in all this"
-    }
+    },
+    "gm": "m."
    },
    "aun": {
     "g": "even, still",
@@ -29222,7 +30234,8 @@
     "c": {
      "es": "para el viernes en la noche",
      "en": "for Friday night"
-    }
+    },
+    "gm": "m."
    },
    "noche": {
     "g": "night",
@@ -29230,7 +30243,8 @@
     "c": {
      "es": "el viernes en la noche",
      "en": "Friday night"
-    }
+    },
+    "gm": "f."
    },
    "su": {
     "g": "his, her, their",
@@ -29246,7 +30260,8 @@
     "c": {
      "es": "Su amigo, un chavo medio tímido",
      "en": "His friend, a fairly shy guy"
-    }
+    },
+    "gm": "m."
    },
    "chavo": {
     "g": "guy, kid",
@@ -29254,7 +30269,8 @@
     "c": {
      "es": "un chavo medio tímido",
      "en": "a fairly shy guy"
-    }
+    },
+    "gm": "m."
    },
    "medio": {
     "g": "half; kind of",
@@ -29326,7 +30342,8 @@
     "c": {
      "es": "caer al bar",
      "en": "show up at the bar"
-    }
+    },
+    "gm": "m."
    },
    "falta": {
     "g": "without fail (sin falta)",
@@ -29334,7 +30351,8 @@
     "c": {
      "es": "sin falta",
      "en": "without fail"
-    }
+    },
+    "gm": "f."
    },
    "nadie": {
     "g": "nobody",
@@ -29454,7 +30472,8 @@
     "c": {
      "es": "el grupo se juntó en un bar",
      "en": "the group met up at a bar"
-    }
+    },
+    "gm": "m."
    },
    "juntó": {
     "g": "gathered, put together",
@@ -29502,7 +30521,8 @@
     "c": {
      "es": "un bar de la calle Alcalá",
      "en": "a bar on Alcalá street"
-    }
+    },
+    "gm": "f."
    },
    "alcalá": {
     "g": "Alcalá, a famous pedestrian street in Oaxaca",
@@ -29510,7 +30530,8 @@
     "c": {
      "es": "la calle Alcalá",
      "en": "Alcalá street"
-    }
+    },
+    "gm": "m."
    },
    "andaba": {
     "g": "was going around",
@@ -29574,7 +30595,8 @@
     "c": {
      "es": "la encerrona que le tenían montada",
      "en": "the set-up they had waiting for her"
-    }
+    },
+    "gm": "f."
    },
    "tenían": {
     "g": "they had",
@@ -29670,7 +30692,8 @@
     "c": {
      "es": "checaba la puerta cada dos minutos",
      "en": "kept checking the door every two minutes"
-    }
+    },
+    "gm": "f."
    },
    "cada": {
     "g": "each, every",
@@ -29686,7 +30709,8 @@
     "c": {
      "es": "cada dos minutos",
      "en": "every two minutes"
-    }
+    },
+    "gm": "m."
    },
    "sudando": {
     "g": "sweating",
@@ -29702,7 +30726,8 @@
     "c": {
      "es": "sudando frío",
      "en": "in a cold sweat"
-    }
+    },
+    "gm": "m."
    },
    "dentro": {
     "g": "inside",
@@ -29718,7 +30743,8 @@
     "c": {
      "es": "Las horas pasaban",
      "en": "The hours went by"
-    }
+    },
+    "gm": "f."
    },
    "pasaban": {
     "g": "were passing",
@@ -29846,7 +30872,8 @@
     "c": {
      "es": "contestaba el celular",
      "en": "answering his phone"
-    }
+    },
+    "gm": "m."
    },
    "empezó": {
     "g": "started",
@@ -29926,7 +30953,8 @@
     "c": {
      "es": "a última hora",
      "en": "at the last minute"
-    }
+    },
+    "gm": "f."
    },
    "cosa": {
     "g": "thing",
@@ -29934,7 +30962,8 @@
     "c": {
      "es": "La cosa se estaba poniendo bien cañón",
      "en": "Things were getting really hairy"
-    }
+    },
+    "gm": "f."
    },
    "estaba": {
     "g": "was, used to be",
@@ -30006,7 +31035,8 @@
     "c": {
      "es": "para su reputación",
      "en": "for his reputation"
-    }
+    },
+    "gm": "f."
    },
    "justo": {
     "g": "just, exactly; fair",
@@ -30038,7 +31068,8 @@
     "c": {
      "es": "cantar la retirada",
      "en": "call it off"
-    }
+    },
+    "gm": "f."
    },
    "golpe": {
     "g": "hit, blow",
@@ -30046,7 +31077,8 @@
     "c": {
      "es": "la puerta se abrió de golpe",
      "en": "the door flew open"
-    }
+    },
+    "gm": "m."
    },
    "entró": {
     "g": "entered, went in",
@@ -30118,7 +31150,8 @@
     "c": {
      "es": "nadie en esa mesa",
      "en": "nobody at that table"
-    }
+    },
+    "gm": "f."
    },
    "esperaba": {
     "g": "expected, waited for",
@@ -30238,7 +31271,8 @@
     "c": {
      "es": "contuvo el aliento",
      "en": "held its breath"
-    }
+    },
+    "gm": "m."
    }
   },
   "el-corte-nuevo-de-andres": {
@@ -30248,7 +31282,8 @@
     "c": {
      "es": "El corte nuevo de Andrés",
      "en": "Andrés's new haircut"
-    }
+    },
+    "gm": "m."
    },
    "nuevo": {
     "g": "new",
@@ -30280,7 +31315,8 @@
     "c": {
      "es": "En la esquina del barrio",
      "en": "On the corner of the neighbourhood"
-    }
+    },
+    "gm": "f."
    },
    "del": {
     "g": "of the",
@@ -30296,7 +31332,8 @@
     "c": {
      "es": "la esquina del barrio",
      "en": "the corner of the neighbourhood"
-    }
+    },
+    "gm": "m."
    },
    "con": {
     "g": "with",
@@ -30416,7 +31453,8 @@
     "c": {
      "es": "la reunión de siempre",
      "en": "the usual get-together"
-    }
+    },
+    "gm": "f."
    },
    "siempre": {
     "g": "always",
@@ -30528,7 +31566,8 @@
     "c": {
      "es": "como si la calle fuera suya",
      "en": "as if he owned the street"
-    }
+    },
+    "gm": "f."
    },
    "fuera": {
     "g": "outside; were",
@@ -30720,7 +31759,8 @@
     "c": {
      "es": "ese peinado tan tieso",
      "en": "that stiff hairdo"
-    }
+    },
+    "gm": "m."
    },
    "tan": {
     "g": "so, such",
@@ -30744,7 +31784,8 @@
     "c": {
      "es": "tan tieso, mane",
      "en": "so stiff, mate"
-    }
+    },
+    "gm": "m."
    },
    "rió": {
     "g": "laughed",
@@ -30840,7 +31881,8 @@
     "c": {
      "es": "montando chercha",
      "en": "ribbing him"
-    }
+    },
+    "gm": "f."
    },
    "sin": {
     "g": "without",
@@ -30856,7 +31898,8 @@
     "c": {
      "es": "sin piedad",
      "en": "mercilessly"
-    }
+    },
+    "gm": "f."
    },
    "entre": {
     "g": "between, among",
@@ -30872,7 +31915,8 @@
     "c": {
      "es": "Entre risas",
      "en": "Between laughs"
-    }
+    },
+    "gm": "f."
    },
    "remató": {
     "g": "finished off with a jab",
@@ -30920,7 +31964,8 @@
     "c": {
      "es": "un Eche",
      "en": "a coastal exclamation of surprise"
-    }
+    },
+    "gm": "m."
    },
    "había": {
     "g": "there was; had",
@@ -30944,7 +31989,8 @@
     "c": {
      "es": "se lo había hecho el barbero",
      "en": "the barber had done it for him"
-    }
+    },
+    "gm": "m."
    },
    "ojos": {
     "g": "eyes",
@@ -30952,7 +31998,8 @@
     "c": {
      "es": "con los ojos cerrados",
      "en": "with his eyes shut"
-    }
+    },
+    "gm": "m."
    },
    "cerrados": {
     "g": "closed",
@@ -31024,7 +32071,8 @@
     "c": {
      "es": "se pasó la mano por el pelo",
      "en": "he ran his hand through his hair"
-    }
+    },
+    "gm": "f."
    },
    "pelo": {
     "g": "hair",
@@ -31032,7 +32080,8 @@
     "c": {
      "es": "la mano por el pelo",
      "en": "his hand through his hair"
-    }
+    },
+    "gm": "m."
    },
    "orgulloso": {
     "g": "proud",
@@ -31048,7 +32097,8 @@
     "c": {
      "es": "El pelao arrancó con un Ajá",
      "en": "The lad started off with an Ajá"
-    }
+    },
+    "gm": "m."
    },
    "arrancó": {
     "g": "started off",
@@ -31152,7 +32202,8 @@
     "c": {
      "es": "con toda la confianza",
      "en": "full of confidence"
-    }
+    },
+    "gm": "f."
    },
    "que": {
     "g": "that",
@@ -31208,7 +32259,8 @@
     "c": {
      "es": "alguna china",
      "en": "some girl"
-    }
+    },
+    "gm": "f."
    },
    "amigas": {
     "g": "female friends",
@@ -31216,7 +32268,8 @@
     "c": {
      "es": "Las dos amigas se miraron",
      "en": "The two friends looked at each other"
-    }
+    },
+    "gm": "f."
    },
    "miraron": {
     "g": "looked at each other",
@@ -31304,7 +32357,8 @@
     "c": {
      "es": "soltaron la carcajada",
      "en": "burst out laughing"
-    }
+    },
+    "gm": "f."
    },
    "al": {
     "g": "to the",
@@ -31328,7 +32382,8 @@
     "c": {
      "es": "al mismo tiempo",
      "en": "at the same time"
-    }
+    },
+    "gm": "m."
    },
    "fama": {
     "g": "fame, reputation",
@@ -31336,7 +32391,8 @@
     "c": {
      "es": "La fama de Andrés con las mujeres",
      "en": "Andrés's reputation with women"
-    }
+    },
+    "gm": "f."
    },
    "mujeres": {
     "g": "women",
@@ -31344,7 +32400,8 @@
     "c": {
      "es": "con las mujeres",
      "en": "with women"
-    }
+    },
+    "gm": "f."
    },
    "era": {
     "g": "was, used to be",
@@ -31392,7 +32449,8 @@
     "c": {
      "es": "un chiste viejo",
      "en": "an old joke"
-    }
+    },
+    "gm": "m."
    },
    "viejo": {
     "g": "old",
@@ -31408,7 +32466,8 @@
     "c": {
      "es": "en el parche",
      "en": "in the crew"
-    }
+    },
+    "gm": "m."
    },
    "según": {
     "g": "according to",
@@ -31432,7 +32491,8 @@
     "c": {
      "es": "el man llevaba meses",
      "en": "the guy had spent months"
-    }
+    },
+    "gm": "m."
    },
    "llevaba": {
     "g": "was carrying, wore",
@@ -31480,7 +32540,8 @@
     "c": {
      "es": "llevaba meses",
      "en": "had spent months"
-    }
+    },
+    "gm": "m."
    },
    "tirándose": {
     "g": "throwing themselves",
@@ -31496,7 +32557,8 @@
     "c": {
      "es": "tirándose los peros",
      "en": "striking out"
-    }
+    },
+    "gm": "m."
    },
    "quedándose": {
     "g": "staying, ending up",
@@ -31528,7 +32590,8 @@
     "c": {
      "es": "Cada vacilada suya terminaba en calabaza",
      "en": "Every flirtation of his ended in rejection"
-    }
+    },
+    "gm": "f."
    },
    "terminaba": {
     "g": "ended up",
@@ -31576,7 +32639,8 @@
     "c": {
      "es": "terminaba en calabaza",
      "en": "ended in rejection"
-    }
+    },
+    "gm": "f."
    },
    "entero": {
     "g": "whole, entire",
@@ -31632,7 +32696,8 @@
     "c": {
      "es": "lo sabía de sobra",
      "en": "knew full well"
-    }
+    },
+    "gm": "f."
    },
    "aun": {
     "g": "even, still",
@@ -31672,7 +32737,8 @@
     "c": {
      "es": "esta vez",
      "en": "this time"
-    }
+    },
+    "gm": "f."
    },
    "cosa": {
     "g": "thing",
@@ -31680,7 +32746,8 @@
     "c": {
      "es": "la cosa iba a ser distinta",
      "en": "it was going to be different"
-    }
+    },
+    "gm": "f."
    },
    "iba": {
     "g": "was going",
@@ -31816,7 +32883,8 @@
     "c": {
      "es": "sacarlo de casillas",
      "en": "wind him up"
-    }
+    },
+    "gm": "f."
    },
    "bueno": {
     "g": "good, well",
@@ -31832,7 +32900,8 @@
     "c": {
      "es": "Bueno, picaflor",
      "en": "All right then, ladies' man"
-    }
+    },
+    "gm": "m."
    },
    "muéstranos": {
     "g": "show us",
@@ -31976,7 +33045,8 @@
     "c": {
      "es": "le pasó una birra fría",
      "en": "she passed him a cold beer"
-    }
+    },
+    "gm": "f."
    },
    "fría": {
     "g": "cold",
@@ -32000,7 +33070,8 @@
     "c": {
      "es": "darle valor",
      "en": "give him courage"
-    }
+    },
+    "gm": "m."
    },
    "antes": {
     "g": "before",
@@ -32016,7 +33087,8 @@
     "c": {
      "es": "antes del intento",
      "en": "before the attempt"
-    }
+    },
+    "gm": "m."
    },
    "tomó": {
     "g": "drank down (se tomó)",
@@ -32064,7 +33136,8 @@
     "c": {
      "es": "de un solo trago",
      "en": "in one go"
-    }
+    },
+    "gm": "m."
    },
    "acomodó": {
     "g": "straightened, adjusted",
@@ -32112,7 +33185,8 @@
     "c": {
      "es": "el cuello de la camisa",
      "en": "the shirt collar"
-    }
+    },
+    "gm": "m."
    },
    "camisa": {
     "g": "shirt",
@@ -32120,7 +33194,8 @@
     "c": {
      "es": "el cuello de la camisa",
      "en": "the shirt collar"
-    }
+    },
+    "gm": "f."
    },
    "respiró": {
     "g": "breathed, relaxed",
@@ -32184,7 +33259,8 @@
     "c": {
      "es": "un trampolín altísimo",
      "en": "a very high diving board"
-    }
+    },
+    "gm": "m."
    },
    "altísimo": {
     "g": "really high, sky high",
@@ -32256,7 +33332,8 @@
     "c": {
      "es": "el espectáculo que se venía",
      "en": "the show that was coming"
-    }
+    },
+    "gm": "m."
    },
    "venía": {
     "g": "he/she was coming",
@@ -32312,7 +33389,8 @@
     "c": {
      "es": "pasó una vecina",
      "en": "a neighbour walked by"
-    }
+    },
+    "gm": "f."
    },
    "lanzó": {
     "g": "threw, launched",
@@ -32376,7 +33454,8 @@
     "c": {
      "es": "su mejor sonrisa de conquistador",
      "en": "his best ladykiller smile"
-    }
+    },
+    "gm": "f."
    },
    "conquistador": {
     "g": "a smooth charmer",
@@ -32384,7 +33463,8 @@
     "c": {
      "es": "sonrisa de conquistador",
      "en": "ladykiller smile"
-    }
+    },
+    "gm": "m."
    },
    "ella": {
     "g": "she",
@@ -32456,7 +33536,8 @@
     "c": {
      "es": "con su bolsa del mercado",
      "en": "with her shopping bag"
-    }
+    },
+    "gm": "f."
    },
    "mercado": {
     "g": "the market",
@@ -32464,7 +33545,8 @@
     "c": {
      "es": "su bolsa del mercado",
      "en": "her shopping bag"
-    }
+    },
+    "gm": "m."
    },
    "doblaron": {
     "g": "to crack up (doblarse de risa)",
@@ -32512,7 +33594,8 @@
     "c": {
      "es": "se doblaron de la risa",
      "en": "they doubled over laughing"
-    }
+    },
+    "gm": "f."
    },
    "juró": {
     "g": "swore, vowed",
@@ -32610,7 +33693,8 @@
     "c": {
      "es": "El carrete del sábado",
      "en": "Saturday's party"
-    }
+    },
+    "gm": "m."
    },
    "del": {
     "g": "of the",
@@ -32626,7 +33710,8 @@
     "c": {
      "es": "El carrete del sábado",
      "en": "Saturday's party"
-    }
+    },
+    "gm": "m."
    },
    "armaron": {
     "g": "they put together",
@@ -32682,7 +33767,8 @@
     "c": {
      "es": "en la casa de Javiera",
      "en": "at Javiera's place"
-    }
+    },
+    "gm": "f."
    },
    "de": {
     "g": "of, from",
@@ -32722,7 +33808,8 @@
     "c": {
      "es": "poniendo su parte",
      "en": "chipping in their share"
-    }
+    },
+    "gm": "f."
    },
    "yo": {
     "g": "I",
@@ -32778,7 +33865,8 @@
     "c": {
      "es": "Yo llevo el copete",
      "en": "I will bring the booze"
-    }
+    },
+    "gm": "m."
    },
    "no": {
     "g": "no, not",
@@ -32850,7 +33938,8 @@
     "c": {
      "es": "un pituto filete",
      "en": "a top contact"
-    }
+    },
+    "gm": "m."
    },
    "filete": {
     "g": "great, top quality (Chile)",
@@ -32906,7 +33995,8 @@
     "c": {
      "es": "El problema es que andaba pato",
      "en": "The trouble is he was broke"
-    }
+    },
+    "gm": "m."
    },
    "es": {
     "g": "is",
@@ -33002,7 +34092,8 @@
     "c": {
      "es": "andaba pato",
      "en": "he was broke"
-    }
+    },
+    "gm": "m."
    },
    "sin": {
     "g": "without",
@@ -33018,7 +34109,8 @@
     "c": {
      "es": "sin un peso partido por la mitad",
      "en": "without a penny to his name"
-    }
+    },
+    "gm": "m."
    },
    "partido": {
     "g": "penniless (sin un peso partido)",
@@ -33042,7 +34134,8 @@
     "c": {
      "es": "partido por la mitad",
      "en": "split in half"
-    }
+    },
+    "gm": "f."
    },
    "lo": {
     "g": "it, him",
@@ -33106,7 +34199,8 @@
     "c": {
      "es": "con desconfianza",
      "en": "suspiciously"
-    }
+    },
+    "gm": "f."
    },
    "porque": {
     "g": "because",
@@ -33146,7 +34240,8 @@
     "c": {
      "es": "sus promesas al lote",
      "en": "his throwaway promises"
-    }
+    },
+    "gm": "f."
    },
    "al": {
     "g": "to the",
@@ -33162,7 +34257,8 @@
     "c": {
      "es": "al lote",
      "en": "made carelessly"
-    }
+    },
+    "gm": "m."
    },
    "seguro": {
     "g": "sure; insurance",
@@ -33178,7 +34274,8 @@
     "c": {
      "es": "Seguro, cabro",
      "en": "Right, sure, mate"
-    }
+    },
+    "gm": "m."
    },
    "mira": {
     "g": "look, hey",
@@ -33402,7 +34499,8 @@
     "c": {
      "es": "el trago estaba asegurado",
      "en": "the drink was sorted"
-    }
+    },
+    "gm": "m."
    },
    "estaba": {
     "g": "was, used to be",
@@ -33458,7 +34556,8 @@
     "c": {
      "es": "La idea era simple",
      "en": "The plan was simple"
-    }
+    },
+    "gm": "f."
    },
    "era": {
     "g": "was, used to be",
@@ -33514,7 +34613,8 @@
     "c": {
      "es": "un amigo de un amigo",
      "en": "a friend of a friend"
-    }
+    },
+    "gm": "m."
    },
    "le": {
     "g": "to him, her, it",
@@ -33578,7 +34678,8 @@
     "c": {
      "es": "a precio de risa",
      "en": "dirt cheap"
-    }
+    },
+    "gm": "m."
    },
    "risa": {
     "g": "laughter",
@@ -33586,7 +34687,8 @@
     "c": {
      "es": "a precio de risa",
      "en": "dirt cheap"
-    }
+    },
+    "gm": "f."
    },
    "ese": {
     "g": "that (one)",
@@ -33658,7 +34760,8 @@
     "c": {
      "es": "quedar como rey",
      "en": "come out a hero"
-    }
+    },
+    "gm": "m."
    },
    "gastar": {
     "g": "to spend",
@@ -33682,7 +34785,8 @@
     "c": {
      "es": "nada de lucas",
      "en": "no money"
-    }
+    },
+    "gm": "f."
    },
    "confiado": {
     "g": "confident, trusting",
@@ -33842,7 +34946,8 @@
     "c": {
      "es": "en una hora",
      "en": "in an hour"
-    }
+    },
+    "gm": "f."
    },
    "pasaron": {
     "g": "passed, went by",
@@ -33890,7 +34995,8 @@
     "c": {
      "es": "Pasaron las horas",
      "en": "The hours went by"
-    }
+    },
+    "gm": "f."
    },
    "llenando": {
     "g": "filling up",
@@ -33906,7 +35012,8 @@
     "c": {
      "es": "llenando de gente con sed",
      "en": "filling up with thirsty people"
-    }
+    },
+    "gm": "f."
    },
    "sed": {
     "g": "thirst; thirst for payback (sed de revancha)",
@@ -33914,7 +35021,8 @@
     "c": {
      "es": "gente con sed",
      "en": "thirsty people"
-    }
+    },
+    "gm": "f."
    },
    "música": {
     "g": "music",
@@ -33922,7 +35030,8 @@
     "c": {
      "es": "La música sonaba fuerte",
      "en": "The music was blaring"
-    }
+    },
+    "gm": "f."
    },
    "sonaba": {
     "g": "sounded, rang a bell",
@@ -33986,7 +35095,8 @@
     "c": {
      "es": "la mesa de los tragos",
      "en": "the drinks table"
-    }
+    },
+    "gm": "f."
    },
    "tragos": {
     "g": "drinks",
@@ -33994,7 +35104,8 @@
     "c": {
      "es": "la mesa de los tragos",
      "en": "the drinks table"
-    }
+    },
+    "gm": "m."
    },
    "seguía": {
     "g": "kept, was following",
@@ -34122,7 +35233,8 @@
     "c": {
      "es": "mirando la puerta",
      "en": "checking the door"
-    }
+    },
+    "gm": "f."
    },
    "minutos": {
     "g": "minutes",
@@ -34130,7 +35242,8 @@
     "c": {
      "es": "cada cinco minutos",
      "en": "every five minutes"
-    }
+    },
+    "gm": "m."
    },
    "este": {
     "g": "this (one); um",
@@ -34146,7 +35259,8 @@
     "c": {
      "es": "Este gil nos cagó",
      "en": "This idiot has stitched us up"
-    }
+    },
+    "gm": "m."
    },
    "nos": {
     "g": "us, ourselves",
@@ -34306,7 +35420,8 @@
     "c": {
      "es": "Los invitados ya preguntaban por el trago",
      "en": "The guests were already asking about the drink"
-    }
+    },
+    "gm": "m."
    },
    "preguntaban": {
     "g": "were asking",
@@ -34410,7 +35525,8 @@
     "c": {
      "es": "El ambiente se estaba poniendo penca",
      "en": "The mood was turning grim"
-    }
+    },
+    "gm": "m."
    },
    "penca": {
     "g": "lame, uncool",
@@ -34490,7 +35606,8 @@
     "c": {
      "es": "como veinte mensajes",
      "en": "about twenty messages"
-    }
+    },
+    "gm": "m."
    },
    "quedaron": {
     "g": "they stayed",
@@ -34546,7 +35663,8 @@
     "c": {
      "es": "sin respuesta",
      "en": "with no reply"
-    }
+    },
+    "gm": "f."
    },
    "cosa": {
     "g": "thing",
@@ -34554,7 +35672,8 @@
     "c": {
      "es": "La cosa pintaba para desastre",
      "en": "It was shaping up to be a disaster"
-    }
+    },
+    "gm": "f."
    },
    "pintaba": {
     "g": "was heading toward (pintar para)",
@@ -34610,7 +35729,8 @@
     "c": {
      "es": "pintaba para desastre",
      "en": "shaping up to be a disaster"
-    }
+    },
+    "gm": "m."
    },
    "ella": {
     "g": "she",
@@ -34674,7 +35794,8 @@
     "c": {
      "es": "a un pelo de convertirse en el fracaso del año",
      "en": "a hair away from becoming the flop of the year"
-    }
+    },
+    "gm": "m."
    },
    "convertirse": {
     "g": "to turn into",
@@ -34690,7 +35811,8 @@
     "c": {
      "es": "el fracaso del año",
      "en": "the flop of the year"
-    }
+    },
+    "gm": "m."
    },
    "año": {
     "g": "year",
@@ -34698,7 +35820,8 @@
     "c": {
      "es": "el fracaso del año",
      "en": "the flop of the year"
-    }
+    },
+    "gm": "m."
    },
    "justo": {
     "g": "just, exactly; fair",
@@ -34730,7 +35853,8 @@
     "c": {
      "es": "perdían la esperanza",
      "en": "losing hope"
-    }
+    },
+    "gm": "f."
    },
    "sonó": {
     "g": "it rang, sounded",
@@ -34778,7 +35902,8 @@
     "c": {
      "es": "sonó el timbre",
      "en": "the doorbell rang"
-    }
+    },
+    "gm": "m."
    },
    "golpes": {
     "g": "knocks, blows",
@@ -34786,7 +35911,8 @@
     "c": {
      "es": "tres golpes fuertes",
      "en": "three hard knocks"
-    }
+    },
+    "gm": "m."
    },
    "fuertes": {
     "g": "hard, strong",
@@ -34818,7 +35944,8 @@
     "c": {
      "es": "mirando hacia la entrada",
      "en": "looking towards the door"
-    }
+    },
+    "gm": "f."
    },
    "alma": {
     "g": "with all your heart (con el alma)",
@@ -34826,7 +35953,8 @@
     "c": {
      "es": "con el alma en un hilo",
      "en": "with their hearts in their mouths"
-    }
+    },
+    "gm": "f."
    },
    "hilo": {
     "g": "on tenterhooks (con el alma en un hilo)",
@@ -34834,7 +35962,8 @@
     "c": {
      "es": "el alma en un hilo",
      "en": "hearts in their mouths"
-    }
+    },
+    "gm": "m."
    },
    "tenía": {
     "g": "I/he/she had",
@@ -34948,7 +36077,8 @@
     "c": {
      "es": "El psicólogo de la barra",
      "en": "The bar-stool psychologist"
-    }
+    },
+    "gm": "m."
    },
    "de": {
     "g": "of, from",
@@ -34964,15 +36094,8 @@
     "c": {
      "es": "el psicólogo de la barra",
      "en": "the bar-stool psychologist"
-    }
-   },
-   "flor": {
-    "g": "flower; great (slang)",
-    "t": "noun",
-    "c": {
-     "es": "Flor llegó bajoneada",
-     "en": "Flor turned up down in the dumps"
-    }
+    },
+    "gm": "f."
    },
    "llegó": {
     "g": "arrived",
@@ -34987,7 +36110,7 @@
        "llegué"
       ],
       [
-       "tú",
+       "vos",
        "llegaste"
       ],
       [
@@ -35051,7 +36174,7 @@
        "ofrecié"
       ],
       [
-       "tú",
+       "vos",
        "ofreciaste"
       ],
       [
@@ -35108,7 +36231,8 @@
     "c": {
      "es": "Contame todo, flaca",
      "en": "Tell me everything, love"
-    }
+    },
+    "gm": "f."
    },
    "que": {
     "g": "that",
@@ -35147,7 +36271,7 @@
        "estoy"
       ],
       [
-       "tú",
+       "vos",
        "estás"
       ],
       [
@@ -35180,7 +36304,8 @@
     "c": {
      "es": "para eso están los amigos",
      "en": "that is what friends are for"
-    }
+    },
+    "gm": "m."
    },
    "dijo": {
     "g": "said",
@@ -35195,7 +36320,7 @@
        "dije"
       ],
       [
-       "tú",
+       "vos",
        "dijiste"
       ],
       [
@@ -35236,7 +36361,8 @@
     "c": {
      "es": "muy pancho",
      "en": "completely unbothered"
-    }
+    },
+    "gm": "m."
    },
    "acomodó": {
     "g": "straightened, adjusted",
@@ -35251,7 +36377,7 @@
        "acomodé"
       ],
       [
-       "tú",
+       "vos",
        "acomodaste"
       ],
       [
@@ -35292,7 +36418,8 @@
     "c": {
      "es": "Se acomodó en el taburete",
      "en": "He settled onto the stool"
-    }
+    },
+    "gm": "m."
    },
    "como": {
     "g": "like, as",
@@ -35324,7 +36451,8 @@
     "c": {
      "es": "un diván carísimo de consultorio",
      "en": "a very expensive therapist's couch"
-    }
+    },
+    "gm": "m."
    },
    "carísimo": {
     "g": "super expensive",
@@ -35340,7 +36468,8 @@
     "c": {
      "es": "diván de consultorio",
      "en": "a therapist's couch"
-    }
+    },
+    "gm": "m."
    },
    "arrancó": {
     "g": "started off",
@@ -35355,7 +36484,7 @@
        "arranqué"
       ],
       [
-       "tú",
+       "vos",
        "arrancaste"
       ],
       [
@@ -35404,7 +36533,8 @@
     "c": {
      "es": "el chabón que le gustaba",
      "en": "the guy she liked"
-    }
+    },
+    "gm": "m."
    },
    "le": {
     "g": "to him, her, it",
@@ -35427,7 +36557,7 @@
        "gustaba"
       ],
       [
-       "tú",
+       "vos",
        "gustabas"
       ],
       [
@@ -35467,7 +36597,7 @@
        "era"
       ],
       [
-       "tú",
+       "vos",
        "eras"
       ],
       [
@@ -35500,7 +36630,8 @@
     "c": {
      "es": "un careta total",
      "en": "a total phoney"
-    }
+    },
+    "gm": "m."
    },
    "total": {
     "g": "anyway, total",
@@ -35540,7 +36671,8 @@
     "c": {
      "es": "dos veces",
      "en": "twice"
-    }
+    },
+    "gm": "f."
    },
    "encima": {
     "g": "on top; besides",
@@ -35563,7 +36695,7 @@
        "chamuyaba"
       ],
       [
-       "tú",
+       "vos",
        "chamuyabas"
       ],
       [
@@ -35604,7 +36736,8 @@
     "c": {
      "es": "otras minas",
      "en": "other women"
-    }
+    },
+    "gm": "f."
    },
    "al": {
     "g": "to the",
@@ -35628,7 +36761,8 @@
     "c": {
      "es": "al mismo tiempo",
      "en": "at the same time"
-    }
+    },
+    "gm": "m."
    },
    "es": {
     "g": "is",
@@ -35643,8 +36777,8 @@
        "soy"
       ],
       [
-       "tú",
-       "eres"
+       "vos",
+       "sos"
       ],
       [
        "él, ella",
@@ -35676,7 +36810,8 @@
     "c": {
      "es": "Es un forro",
      "en": "He is a jerk"
-    }
+    },
+    "gm": "m."
    },
    "sacátelo": {
     "g": "get him out of your head",
@@ -35692,7 +36827,8 @@
     "c": {
      "es": "sacátelo de la cabeza",
      "en": "get him out of your head"
-    }
+    },
+    "gm": "f."
    },
    "ya": {
     "g": "already, now",
@@ -35715,7 +36851,7 @@
        "sentencié"
       ],
       [
-       "tú",
+       "vos",
        "sentenciaste"
       ],
       [
@@ -35756,7 +36892,8 @@
     "c": {
      "es": "con autoridad",
      "en": "with authority"
-    }
+    },
+    "gm": "f."
    },
    "pibe": {
     "g": "kid, guy",
@@ -35764,7 +36901,8 @@
     "c": {
      "es": "El pibe se mandó una teoría larguísima",
      "en": "The lad launched into an enormous theory"
-    }
+    },
+    "gm": "m."
    },
    "mandó": {
     "g": "sent",
@@ -35779,7 +36917,7 @@
        "mandé"
       ],
       [
-       "tú",
+       "vos",
        "mandaste"
       ],
       [
@@ -35812,7 +36950,8 @@
     "c": {
      "es": "una teoría larguísima",
      "en": "an enormous theory"
-    }
+    },
+    "gm": "f."
    },
    "larguísima": {
     "g": "very long",
@@ -35851,7 +36990,7 @@
        "funcionaba"
       ],
       [
-       "tú",
+       "vos",
        "funcionabas"
       ],
       [
@@ -35884,7 +37023,8 @@
     "c": {
      "es": "cómo funcionaba el amor",
      "en": "how love worked"
-    }
+    },
+    "gm": "m."
    },
    "hablaba": {
     "g": "was talking, spoke",
@@ -35899,7 +37039,7 @@
        "hablaba"
       ],
       [
-       "tú",
+       "vos",
        "hablabas"
       ],
       [
@@ -35932,7 +37072,8 @@
     "c": {
      "es": "Hablaba de señales",
      "en": "He talked about signals"
-    }
+    },
+    "gm": "f."
    },
    "códigos": {
     "g": "unwritten codes and rules",
@@ -35940,7 +37081,8 @@
     "c": {
      "es": "de códigos",
      "en": "about codes"
-    }
+    },
+    "gm": "m."
    },
    "banderas": {
     "g": "red flags (banderas rojas)",
@@ -35948,7 +37090,8 @@
     "c": {
      "es": "banderas rojas",
      "en": "red flags"
-    }
+    },
+    "gm": "f."
    },
    "rojas": {
     "g": "red flags (banderas rojas)",
@@ -35964,7 +37107,8 @@
     "c": {
      "es": "como todo un experto del tema",
      "en": "like a total expert on the subject"
-    }
+    },
+    "gm": "m."
    },
    "del": {
     "g": "of the",
@@ -35980,7 +37124,8 @@
     "c": {
      "es": "experto del tema",
      "en": "expert on the subject"
-    }
+    },
+    "gm": "m."
    },
    "lo": {
     "g": "it, him",
@@ -36003,7 +37148,7 @@
        "escuchaba"
       ],
       [
-       "tú",
+       "vos",
        "escuchabas"
       ],
       [
@@ -36076,7 +37221,8 @@
     "c": {
      "es": "semejante gurú al lado",
      "en": "such a guru beside her"
-    }
+    },
+    "gm": "m."
    },
    "lado": {
     "g": "side",
@@ -36084,7 +37230,8 @@
     "c": {
      "es": "al lado",
      "en": "beside her"
-    }
+    },
+    "gm": "m."
    },
    "vos": {
     "g": "you (Arg.)",
@@ -36140,7 +37287,8 @@
     "c": {
      "es": "no le des bola",
      "en": "do not give him the time of day"
-    }
+    },
+    "gm": "f."
    },
    "tan": {
     "g": "so, such",
@@ -36171,7 +37319,7 @@
        "aconsejaba"
       ],
       [
-       "tú",
+       "vos",
        "aconsejabas"
       ],
       [
@@ -36219,8 +37367,8 @@
        "busco"
       ],
       [
-       "tú",
-       "buscas"
+       "vos",
+       "buscás"
       ],
       [
        "él, ella",
@@ -36291,7 +37439,7 @@
        "agregaba"
       ],
       [
-       "tú",
+       "vos",
        "agregabas"
       ],
       [
@@ -36340,7 +37488,8 @@
     "c": {
      "es": "Cada consejo sonaba más pulido",
      "en": "Each piece of advice sounded more polished"
-    }
+    },
+    "gm": "m."
    },
    "sonaba": {
     "g": "sounded, rang a bell",
@@ -36355,7 +37504,7 @@
        "sonaba"
       ],
       [
-       "tú",
+       "vos",
        "sonabas"
       ],
       [
@@ -36420,7 +37569,8 @@
     "c": {
      "es": "sacado de un libro",
      "en": "straight out of a book"
-    }
+    },
+    "gm": "m."
    },
    "casi": {
     "g": "almost",
@@ -36444,7 +37594,8 @@
     "c": {
      "es": "curada del bajón",
      "en": "cured of the slump"
-    }
+    },
+    "gm": "m."
    },
    "miró": {
     "g": "looked",
@@ -36459,7 +37610,7 @@
        "miré"
       ],
       [
-       "tú",
+       "vos",
        "miraste"
       ],
       [
@@ -36492,7 +37643,8 @@
     "c": {
      "es": "con una admiración nueva",
      "en": "with new admiration"
-    }
+    },
+    "gm": "f."
    },
    "nueva": {
     "g": "new (fem.)",
@@ -36516,7 +37668,8 @@
     "c": {
      "es": "Sos un genio",
      "en": "You are a genius"
-    }
+    },
+    "gm": "m."
    },
    "dónde": {
     "g": "where",
@@ -36571,7 +37724,7 @@
        "pregunté"
       ],
       [
-       "tú",
+       "vos",
        "preguntaste"
       ],
       [
@@ -36627,7 +37780,7 @@
        "sonrié"
       ],
       [
-       "tú",
+       "vos",
        "sonriaste"
       ],
       [
@@ -36660,7 +37813,8 @@
     "c": {
      "es": "con humildad falsa",
      "en": "with fake modesty"
-    }
+    },
+    "gm": "f."
    },
    "falsa": {
     "g": "fake",
@@ -36684,7 +37838,8 @@
     "c": {
      "es": "se mandó otro trago sin apuro",
      "en": "he knocked back another drink, in no hurry"
-    }
+    },
+    "gm": "m."
    },
    "sin": {
     "g": "without",
@@ -36700,7 +37855,8 @@
     "c": {
      "es": "sin apuro",
      "en": "in no hurry"
-    }
+    },
+    "gm": "m."
    },
    "venía": {
     "g": "he/she was coming",
@@ -36715,7 +37871,7 @@
        "venía"
       ],
       [
-       "tú",
+       "vos",
        "venías"
       ],
       [
@@ -36763,7 +37919,7 @@
        "escuché"
       ],
       [
-       "tú",
+       "vos",
        "escuchaste"
       ],
       [
@@ -36804,7 +37960,8 @@
     "c": {
      "es": "la última parte",
      "en": "the last part"
-    }
+    },
+    "gm": "f."
    },
    "soltó": {
     "g": "he/she let go, blurted",
@@ -36819,7 +37976,7 @@
        "solté"
       ],
       [
-       "tú",
+       "vos",
        "soltaste"
       ],
       [
@@ -36852,7 +38009,8 @@
     "c": {
      "es": "una carcajada enorme",
      "en": "an enormous laugh"
-    }
+    },
+    "gm": "f."
    },
    "enorme": {
     "g": "huge, enormous",
@@ -36891,7 +38049,7 @@
        "estoy"
       ],
       [
-       "tú",
+       "vos",
        "estás"
       ],
       [
@@ -36932,7 +38090,8 @@
     "c": {
      "es": "consejos de mujeres",
      "en": "advice about women"
-    }
+    },
+    "gm": "m."
    },
    "mujeres": {
     "g": "women",
@@ -36940,7 +38099,8 @@
     "c": {
      "es": "consejos de mujeres",
      "en": "advice about women"
-    }
+    },
+    "gm": "f."
    },
    "tiró": {
     "g": "he/she threw, tossed",
@@ -36955,7 +38115,7 @@
        "tiré"
       ],
       [
-       "tú",
+       "vos",
        "tiraste"
       ],
       [
@@ -36988,7 +38148,8 @@
     "c": {
      "es": "sin filtro",
      "en": "with no filter"
-    }
+    },
+    "gm": "m."
    },
    "hizo": {
     "g": "did, made",
@@ -37003,7 +38164,7 @@
        "hice"
       ],
       [
-       "tú",
+       "vos",
        "hiciste"
       ],
       [
@@ -37036,7 +38197,8 @@
     "c": {
      "es": "le hizo señas desesperadas",
      "en": "signalled at her frantically"
-    }
+    },
+    "gm": "f."
    },
    "desesperadas": {
     "g": "desperate",
@@ -37060,7 +38222,8 @@
     "c": {
      "es": "se callara la boca",
      "en": "shut her mouth"
-    }
+    },
+    "gm": "f."
    },
    "pero": {
     "g": "but",
@@ -37083,7 +38246,7 @@
        "estaba"
       ],
       [
-       "tú",
+       "vos",
        "estabas"
       ],
       [
@@ -37124,7 +38287,8 @@
     "c": {
      "es": "soltó la bomba",
      "en": "dropped the bombshell"
-    }
+    },
+    "gm": "f."
    },
    "piedad": {
     "g": "mercy",
@@ -37132,7 +38296,8 @@
     "c": {
      "es": "sin piedad ninguna",
      "en": "without an ounce of mercy"
-    }
+    },
+    "gm": "f."
    },
    "ninguna": {
     "g": "none, not any (fem.)",
@@ -37155,7 +38320,7 @@
        "tuve"
       ],
       [
-       "tú",
+       "vos",
        "tuviste"
       ],
       [
@@ -37188,7 +38353,8 @@
     "c": {
      "es": "no tuvo una cita",
      "en": "has never had a date"
-    }
+    },
+    "gm": "f."
    },
    "su": {
     "g": "his, her, their",
@@ -37204,7 +38370,8 @@
     "c": {
      "es": "en toda su vida",
      "en": "in his whole life"
-    }
+    },
+    "gm": "f."
    },
    "solo": {
     "g": "only, alone",
@@ -37220,7 +38387,8 @@
     "c": {
      "es": "más solo que perro en la calle",
      "en": "lonelier than a stray dog"
-    }
+    },
+    "gm": "m."
    },
    "calle": {
     "g": "street",
@@ -37228,7 +38396,8 @@
     "c": {
      "es": "perro en la calle",
      "en": "a dog on the street"
-    }
+    },
+    "gm": "f."
    },
    "gran": {
     "g": "great, grand",
@@ -37251,7 +38420,7 @@
        "puse"
       ],
       [
-       "tú",
+       "vos",
        "pusiste"
       ],
       [
@@ -37299,7 +38468,7 @@
        "pude"
       ],
       [
-       "tú",
+       "vos",
        "pudiste"
       ],
       [
@@ -37398,7 +38567,8 @@
     "c": {
      "es": "Los sábados",
      "en": "On Saturdays"
-    }
+    },
+    "gm": "m."
    },
    "palomilla": {
     "g": "a tight group of friends",
@@ -37406,7 +38576,8 @@
     "c": {
      "es": "la palomilla de Nayeli",
      "en": "Nayeli's gang"
-    }
+    },
+    "gm": "f."
    },
    "de": {
     "g": "of, from",
@@ -37470,7 +38641,8 @@
     "c": {
      "es": "el zócalo de Oaxaca",
      "en": "the main square of Oaxaca"
-    }
+    },
+    "gm": "m."
    },
    "oaxaca": {
     "g": "Oaxaca (place)",
@@ -37478,7 +38650,8 @@
     "c": {
      "es": "el zócalo de Oaxaca",
      "en": "the main square of Oaxaca"
-    }
+    },
+    "gm": "f."
    },
    "a": {
     "g": "to, at",
@@ -37502,7 +38675,8 @@
     "c": {
      "es": "echar relajo",
      "en": "to mess around"
-    }
+    },
+    "gm": "m."
    },
    "hasta": {
     "g": "until, even",
@@ -37534,7 +38708,8 @@
     "c": {
      "es": "dolía la panza",
      "en": "their bellies hurt"
-    }
+    },
+    "gm": "f."
    },
    "ese": {
     "g": "that (one)",
@@ -37550,7 +38725,8 @@
     "c": {
      "es": "En ese grupo",
      "en": "In that group"
-    }
+    },
+    "gm": "m."
    },
    "picaba": {
     "g": "took it personally, got annoyed",
@@ -37606,7 +38782,8 @@
     "c": {
      "es": "se picaba por una broma",
      "en": "took a joke personally"
-    }
+    },
+    "gm": "f."
    },
    "ya": {
     "g": "already, now",
@@ -37646,7 +38823,8 @@
     "c": {
      "es": "Esa tarde",
      "en": "That afternoon"
-    }
+    },
+    "gm": "f."
    },
    "blanco": {
     "g": "the target of teasing",
@@ -37654,7 +38832,8 @@
     "c": {
      "es": "el blanco fue Rodrigo",
      "en": "the target was Rodrigo"
-    }
+    },
+    "gm": "m."
    },
    "fue": {
     "g": "was, went",
@@ -37750,7 +38929,8 @@
     "c": {
      "es": "unos tenis bien fresas",
      "en": "some posh sneakers"
-    }
+    },
+    "gm": "m."
    },
    "bien": {
     "g": "well, good",
@@ -37934,7 +39114,8 @@
     "c": {
      "es": "un riñón",
      "en": "a kidney"
-    }
+    },
+    "gm": "m."
    },
    "para": {
     "g": "for, to",
@@ -37958,7 +39139,8 @@
     "c": {
      "es": "El vato aguantó vara",
      "en": "The guy took it on the chin"
-    }
+    },
+    "gm": "m."
    },
    "aguantó": {
     "g": "held on, endured",
@@ -38006,7 +39188,8 @@
     "c": {
      "es": "aguantó vara",
      "en": "took it on the chin"
-    }
+    },
+    "gm": "f."
    },
    "sin": {
     "g": "without",
@@ -38110,7 +39293,8 @@
     "c": {
      "es": "En lugar de rajarse",
      "en": "Instead of backing down"
-    }
+    },
+    "gm": "m."
    },
    "rajarse": {
     "g": "to chicken out",
@@ -38270,7 +39454,8 @@
     "c": {
      "es": "eran de oro",
      "en": "were gold"
-    }
+    },
+    "gm": "m."
    },
    "cuando": {
     "g": "when",
@@ -38382,7 +39567,8 @@
     "c": {
      "es": "soltó una carcajada",
      "en": "burst out laughing"
-    }
+    },
+    "gm": "f."
    },
    "nomás": {
     "g": "just, only",
@@ -38446,7 +39632,8 @@
     "c": {
      "es": "envidia de la buena",
      "en": "the good kind of envy"
-    }
+    },
+    "gm": "f."
    },
    "buena": {
     "g": "good",
@@ -38510,7 +39697,8 @@
     "c": {
      "es": "quitado de la pena",
      "en": "unbothered"
-    }
+    },
+    "gm": "f."
    },
    "no": {
     "g": "no, not",
@@ -38558,7 +39746,8 @@
     "c": {
      "es": "tanto billete de repente",
      "en": "so much cash all of a sudden"
-    }
+    },
+    "gm": "m."
    },
    "repente": {
     "g": "suddenly (de repente)",
@@ -38566,7 +39755,8 @@
     "c": {
      "es": "de repente",
      "en": "all of a sudden"
-    }
+    },
+    "gm": "m."
    },
    "hizo": {
     "g": "did, made",
@@ -38614,7 +39804,8 @@
     "c": {
      "es": "se hizo el occiso",
      "en": "played dumb"
-    }
+    },
+    "gm": "m."
    },
    "buen": {
     "g": "good",
@@ -38630,7 +39821,8 @@
     "c": {
      "es": "un buen rato",
      "en": "quite a while"
-    }
+    },
+    "gm": "m."
    },
    "dándole": {
     "g": "giving it; keeping at it",
@@ -38646,7 +39838,8 @@
     "c": {
      "es": "dándole vueltas al asunto",
      "en": "going round in circles about it"
-    }
+    },
+    "gm": "f."
    },
    "al": {
     "g": "to the",
@@ -38662,7 +39855,8 @@
     "c": {
      "es": "dándole vueltas al asunto",
      "en": "going round in circles about it"
-    }
+    },
+    "gm": "m."
    },
    "final": {
     "g": "final, ending",
@@ -38670,7 +39864,8 @@
     "c": {
      "es": "Al final",
      "en": "In the end"
-    }
+    },
+    "gm": "m."
    },
    "entre": {
     "g": "between, among",
@@ -38742,7 +39937,8 @@
     "c": {
      "es": "soltando la verdad",
      "en": "letting the truth out"
-    }
+    },
+    "gm": "f."
    },
    "resulta": {
     "g": "it turns out",
@@ -38766,7 +39962,8 @@
     "c": {
      "es": "un jale de guía",
      "en": "a job as a guide"
-    }
+    },
+    "gm": "m."
    },
    "guía": {
     "g": "a guide",
@@ -38774,7 +39971,8 @@
     "c": {
      "es": "un jale de guía",
      "en": "a job as a guide"
-    }
+    },
+    "gm": "f."
    },
    "mezcalería": {
     "g": "mezcal bar",
@@ -38782,7 +39980,8 @@
     "c": {
      "es": "una mezcalería del centro",
      "en": "a mezcal bar downtown"
-    }
+    },
+    "gm": "f."
    },
    "del": {
     "g": "of the",
@@ -38798,7 +39997,8 @@
     "c": {
      "es": "una mezcalería del centro",
      "en": "a mezcal bar downtown"
-    }
+    },
+    "gm": "m."
    },
    "fresa": {
     "g": "preppy, snobby (Mexican)",
@@ -38838,7 +40038,8 @@
     "c": {
      "es": "frente a los turistas",
      "en": "in front of the tourists"
-    }
+    },
+    "gm": "m."
    },
    "turistas": {
     "g": "tourists",
@@ -38846,7 +40047,8 @@
     "c": {
      "es": "frente a los turistas",
      "en": "in front of the tourists"
-    }
+    },
+    "gm": "m."
    },
    "puesto": {
     "g": "got his act together (puesto las pilas)",
@@ -38862,7 +40064,8 @@
     "c": {
      "es": "puesto las pilas",
      "en": "knuckled down"
-    }
+    },
+    "gm": "f."
    },
    "durante": {
     "g": "during, for",
@@ -38878,7 +40081,8 @@
     "c": {
      "es": "durante meses",
      "en": "for months"
-    }
+    },
+    "gm": "m."
    },
    "ahorrar": {
     "g": "to save money",
@@ -38902,7 +40106,8 @@
     "c": {
      "es": "estrenar en forma",
      "en": "do it properly"
-    }
+    },
+    "gm": "f."
    },
    "silencio": {
     "g": "silence",
@@ -38910,7 +40115,8 @@
     "c": {
      "es": "El silencio duró poco",
      "en": "The silence did not last long"
-    }
+    },
+    "gm": "m."
    },
    "duró": {
     "g": "it lasted",
@@ -38974,7 +40180,8 @@
     "c": {
      "es": "la burla se volviera aplauso",
      "en": "the teasing turned into applause"
-    }
+    },
+    "gm": "f."
    },
    "volviera": {
     "g": "would turn into",
@@ -38990,7 +40197,8 @@
     "c": {
      "es": "se volviera aplauso",
      "en": "turned into applause"
-    }
+    },
+    "gm": "m."
    },
    "entonces": {
     "g": "then, so",
@@ -39046,7 +40254,8 @@
     "c": {
      "es": "ya la armaste, mano",
      "en": "you have pulled it off, man"
-    }
+    },
+    "gm": "f."
    },
    "dijo": {
     "g": "said",
@@ -39102,7 +40311,8 @@
     "c": {
      "es": "con harto orgullo",
      "en": "with a lot of pride"
-    }
+    },
+    "gm": "m."
    },
    "práctica": {
     "g": "practice",
@@ -39110,7 +40320,8 @@
     "c": {
      "es": "Itzel, más práctica",
      "en": "Itzel, more practical"
-    }
+    },
+    "gm": "f."
    },
    "volada": {
     "g": "spaced out; whim (Mex.)",
@@ -39126,7 +40337,8 @@
     "c": {
      "es": "si había descuento para la raza",
      "en": "whether there was a discount for the crew"
-    }
+    },
+    "gm": "m."
    },
    "raza": {
     "g": "the crew, your people",
@@ -39134,7 +40346,8 @@
     "c": {
      "es": "descuento para la raza",
      "en": "a discount for the crew"
-    }
+    },
+    "gm": "f."
    },
    "prometió": {
     "g": "promised",
@@ -39198,7 +40411,8 @@
     "c": {
      "es": "de gorra",
      "en": "for free"
-    }
+    },
+    "gm": "f."
    },
    "su": {
     "g": "his, her, their",
@@ -39222,7 +40436,8 @@
     "c": {
      "es": "su primer recorrido de mezcal",
      "en": "his first mezcal tour"
-    }
+    },
+    "gm": "m."
    },
    "mezcal": {
     "g": "mezcal, the Oaxacan agave spirit",
@@ -39230,7 +40445,8 @@
     "c": {
      "es": "recorrido de mezcal",
      "en": "mezcal tour"
-    }
+    },
+    "gm": "m."
    },
    "brindaron": {
     "g": "they toasted",
@@ -39278,7 +40494,8 @@
     "c": {
      "es": "unas caguamas heladas",
      "en": "cold litre bottles of beer"
-    }
+    },
+    "gm": "f."
    },
    "heladas": {
     "g": "ice cold",
@@ -39294,7 +40511,8 @@
     "c": {
      "es": "por el trabajo",
      "en": "to the job"
-    }
+    },
+    "gm": "m."
    },
    "habían": {
     "g": "there were; had",
@@ -39318,7 +40536,8 @@
     "c": {
      "es": "la carrilla terminó",
      "en": "the ribbing ended"
-    }
+    },
+    "gm": "f."
    },
    "terminó": {
     "g": "he/she finished, ended",
@@ -39398,7 +40617,8 @@
     "c": {
      "es": "en puro apapacho",
      "en": "in nothing but affection"
-    }
+    },
+    "gm": "m."
    }
   },
   "llega-el-guachiman": {
@@ -39448,7 +40668,8 @@
     "c": {
      "es": "el guachimán",
      "en": "the security guard"
-    }
+    },
+    "gm": "m."
    },
    "ya": {
     "g": "already, now",
@@ -39472,7 +40693,8 @@
     "c": {
      "es": "Ya de madrugada",
      "en": "By the small hours"
-    }
+    },
+    "gm": "f."
    },
    "con": {
     "g": "with",
@@ -39488,7 +40710,8 @@
     "c": {
      "es": "las birras calientes",
      "en": "the beers gone warm"
-    }
+    },
+    "gm": "f."
    },
    "calientes": {
     "g": "hot, worked up",
@@ -39520,7 +40743,8 @@
     "c": {
      "es": "medio mundo jincho",
      "en": "half of them drunk"
-    }
+    },
+    "gm": "m."
    },
    "jincho": {
     "g": "drunk, wasted",
@@ -39536,7 +40760,8 @@
     "c": {
      "es": "la parranda iba de salida",
      "en": "the party was winding down"
-    }
+    },
+    "gm": "f."
    },
    "iba": {
     "g": "was going",
@@ -39584,7 +40809,8 @@
     "c": {
      "es": "iba de salida",
      "en": "was winding down"
-    }
+    },
+    "gm": "f."
    },
    "por": {
     "g": "for, by",
@@ -39600,7 +40826,8 @@
     "c": {
      "es": "por fin",
      "en": "finally"
-    }
+    },
+    "gm": "m."
    },
    "tenía": {
     "g": "I/he/she had",
@@ -39648,7 +40875,8 @@
     "c": {
      "es": "el cuadre con la china",
      "en": "a thing going with the girl"
-    }
+    },
+    "gm": "m."
    },
    "china": {
     "g": "a girl, on the coast",
@@ -39656,7 +40884,8 @@
     "c": {
      "es": "el cuadre con la china",
      "en": "a thing going with the girl"
-    }
+    },
+    "gm": "f."
    },
    "no": {
     "g": "no, not",
@@ -39792,7 +41021,8 @@
     "c": {
      "es": "a un rincón",
      "en": "to a corner"
-    }
+    },
+    "gm": "m."
    },
    "para": {
     "g": "for, to",
@@ -39832,7 +41062,8 @@
     "c": {
      "es": "sin tanto ruido",
      "en": "without so much noise"
-    }
+    },
+    "gm": "m."
    },
    "conversación": {
     "g": "conversation",
@@ -39840,7 +41071,8 @@
     "c": {
      "es": "La conversación fluía sabroso",
      "en": "The conversation was flowing nicely"
-    }
+    },
+    "gm": "f."
    },
    "fluía": {
     "g": "flowed easily",
@@ -39872,7 +41104,8 @@
     "c": {
      "es": "por primera vez",
      "en": "for the first time"
-    }
+    },
+    "gm": "f."
    },
    "pelao": {
     "g": "kid, guy; broke",
@@ -39880,7 +41113,8 @@
     "c": {
      "es": "el pelao no estaba dañando el momento",
      "en": "the lad was not ruining the moment"
-    }
+    },
+    "gm": "m."
    },
    "estaba": {
     "g": "was, used to be",
@@ -39936,7 +41170,8 @@
     "c": {
      "es": "dañando el momento",
      "en": "ruining the moment"
-    }
+    },
+    "gm": "m."
    },
    "reía": {
     "g": "laughed",
@@ -39960,7 +41195,8 @@
     "c": {
      "es": "sus chistes malos",
      "en": "his bad jokes"
-    }
+    },
+    "gm": "m."
    },
    "malos": {
     "g": "bad",
@@ -40024,7 +41260,8 @@
     "c": {
      "es": "le seguía el juego",
      "en": "played along with him"
-    }
+    },
+    "gm": "m."
    },
    "gusto": {
     "g": "taste, pleasure",
@@ -40032,7 +41269,8 @@
     "c": {
      "es": "con gusto",
      "en": "happily"
-    }
+    },
+    "gm": "m."
    },
    "vigilaban": {
     "g": "were keeping watch",
@@ -40104,7 +41342,8 @@
     "c": {
      "es": "orgullosas del milagro",
      "en": "proud of the miracle"
-    }
+    },
+    "gm": "m."
    },
    "míralo": {
     "g": "look at him/it",
@@ -40120,7 +41359,8 @@
     "c": {
      "es": "el bobo por fin la está haciendo bien",
      "en": "the idiot is finally doing it right"
-    }
+    },
+    "gm": "m."
    },
    "está": {
     "g": "is",
@@ -40280,7 +41520,8 @@
     "c": {
      "es": "cruzó los dedos",
      "en": "crossed her fingers"
-    }
+    },
+    "gm": "m."
    },
    "rogando": {
     "g": "begging, pleading",
@@ -40336,7 +41577,8 @@
     "c": {
      "es": "en el último minuto",
      "en": "at the last minute"
-    }
+    },
+    "gm": "m."
    },
    "escena": {
     "g": "a scene",
@@ -40344,7 +41586,8 @@
     "c": {
      "es": "La escena parecía sacada de una novela",
      "en": "The scene looked like something out of a soap"
-    }
+    },
+    "gm": "f."
    },
    "parecía": {
     "g": "seemed, looked like",
@@ -40368,7 +41611,8 @@
     "c": {
      "es": "sacada de una novela",
      "en": "straight out of a soap"
-    }
+    },
+    "gm": "f."
    },
    "bajó": {
     "g": "went down, lowered",
@@ -40416,7 +41660,8 @@
     "c": {
      "es": "bajó la voz",
      "en": "lowered his voice"
-    }
+    },
+    "gm": "f."
    },
    "armó": {
     "g": "put together, threw",
@@ -40464,7 +41709,8 @@
     "c": {
      "es": "se armó de valor",
      "en": "worked up the courage"
-    }
+    },
+    "gm": "m."
    },
    "lanzar": {
     "g": "to throw out, to launch",
@@ -40480,7 +41726,8 @@
     "c": {
      "es": "la pregunta clave",
      "en": "the big question"
-    }
+    },
+    "gm": "f."
    },
    "clave": {
     "g": "key, crucial",
@@ -40512,7 +41759,8 @@
     "c": {
      "es": "conseguir el número",
      "en": "getting the number"
-    }
+    },
+    "gm": "m."
    },
    "corazón": {
     "g": "heart",
@@ -40520,7 +41768,8 @@
     "c": {
      "es": "con el corazón latiendo a mil",
      "en": "with his heart racing"
-    }
+    },
+    "gm": "m."
    },
    "latiendo": {
     "g": "beating (heart)",
@@ -40576,7 +41825,8 @@
     "c": {
      "es": "una sonrisa que prometía puro sí",
      "en": "a smile that promised nothing but yes"
-    }
+    },
+    "gm": "f."
    },
    "prometía": {
     "g": "promised, hinted at",
@@ -40664,7 +41914,8 @@
     "c": {
      "es": "el guachimán del edificio",
      "en": "the building's security guard"
-    }
+    },
+    "gm": "m."
    },
    "cara": {
     "g": "face",
@@ -40672,7 +41923,8 @@
     "c": {
      "es": "con cara de pocos amigos",
      "en": "looking thoroughly unfriendly"
-    }
+    },
+    "gm": "f."
    },
    "pocos": {
     "g": "few",
@@ -40688,7 +41940,8 @@
     "c": {
      "es": "cara de pocos amigos",
      "en": "a thoroughly unfriendly look"
-    }
+    },
+    "gm": "m."
    },
    "acabó": {
     "g": "ended up",
@@ -40736,7 +41989,8 @@
     "c": {
      "es": "Se acabó la rumba",
      "en": "Party is over"
-    }
+    },
+    "gm": "f."
    },
    "muchachos": {
     "g": "guys, folks",
@@ -40744,7 +41998,8 @@
     "c": {
      "es": "muchachos",
      "en": "lads"
-    }
+    },
+    "gm": "m."
    },
    "bajarle": {
     "g": "to turn it down, ease off",
@@ -40824,7 +42079,8 @@
     "c": {
      "es": "de mal genio",
      "en": "in a foul mood"
-    }
+    },
+    "gm": "m."
    },
    "música": {
     "g": "music",
@@ -40832,7 +42088,8 @@
     "c": {
      "es": "La música se cortó de golpe",
      "en": "The music cut out all at once"
-    }
+    },
+    "gm": "f."
    },
    "cortó": {
     "g": "cut; broke up",
@@ -40880,7 +42137,8 @@
     "c": {
      "es": "de golpe",
      "en": "all at once"
-    }
+    },
+    "gm": "m."
    },
    "todo": {
     "g": "all, everything",
@@ -40936,7 +42194,8 @@
     "c": {
      "es": "pegó el grito al cielo",
      "en": "hit the roof"
-    }
+    },
+    "gm": "m."
    },
    "cielo": {
     "g": "to protest loudly (pegar el grito al cielo)",
@@ -40944,7 +42203,8 @@
     "c": {
      "es": "el grito al cielo",
      "en": "hit the roof"
-    }
+    },
+    "gm": "m."
    },
    "plantó": {
     "g": "planted himself, blocking (plantarse)",
@@ -41008,7 +42268,8 @@
     "c": {
      "es": "como un muro imposible",
      "en": "like an immovable wall"
-    }
+    },
+    "gm": "m."
    },
    "imposible": {
     "g": "impossible",
@@ -41064,7 +42325,8 @@
     "c": {
      "es": "le rogó con la mirada",
      "en": "begged him with his eyes"
-    }
+    },
+    "gm": "f."
    },
    "más": {
     "g": "more",
@@ -41096,7 +42358,8 @@
     "c": {
      "es": "el hombre no estaba para vacilar",
      "en": "the man was in no mood to mess about"
-    }
+    },
+    "gm": "m."
    },
    "vacilar": {
     "g": "to tease",
@@ -41160,7 +42423,8 @@
     "c": {
      "es": "espantar a la gente",
      "en": "shooing people away"
-    }
+    },
+    "gm": "f."
    },
    "piedad": {
     "g": "mercy",
@@ -41168,7 +42432,8 @@
     "c": {
      "es": "sin piedad",
      "en": "without mercy"
-    }
+    },
+    "gm": "f."
    },
    "sacó": {
     "g": "took out, pulled",
@@ -41224,7 +42489,8 @@
     "c": {
      "es": "sacó su celular",
      "en": "got her phone out"
-    }
+    },
+    "gm": "m."
    },
    "pasarle": {
     "g": "to pass to him or her",
@@ -41392,7 +42658,8 @@
     "c": {
      "es": "con la mano estirada",
      "en": "with his hand out"
-    }
+    },
+    "gm": "f."
    },
    "estirada": {
     "g": "stretched out",
@@ -41476,14 +42743,6 @@
    }
   },
   "marina-llega-con-visaje": {
-   "marina": {
-    "g": "Marina; navy",
-    "t": "noun",
-    "c": {
-     "es": "Marina llega con visaje",
-     "en": "Marina arrives with gossip"
-    }
-   },
    "llega": {
     "g": "arrives",
     "t": "verb",
@@ -41538,7 +42797,8 @@
     "c": {
      "es": "llega con visaje",
      "en": "arrives with a bit of drama"
-    }
+    },
+    "gm": "m."
    },
    "entró": {
     "g": "entered, went in",
@@ -41594,7 +42854,8 @@
     "c": {
      "es": "entró al apartamento",
      "en": "came into the flat"
-    }
+    },
+    "gm": "m."
    },
    "cara": {
     "g": "face",
@@ -41602,7 +42863,8 @@
     "c": {
      "es": "con cara de que traía un chisme",
      "en": "with a look that said she had gossip"
-    }
+    },
+    "gm": "f."
    },
    "de": {
     "g": "of, from",
@@ -41634,7 +42896,8 @@
     "c": {
      "es": "un chisme bien jugoso",
      "en": "some really juicy gossip"
-    }
+    },
+    "gm": "m."
    },
    "bien": {
     "g": "well, good",
@@ -41674,7 +42937,8 @@
     "c": {
      "es": "tirado en el sofá",
      "en": "sprawled on the sofa"
-    }
+    },
+    "gm": "m."
    },
    "celular": {
     "g": "cellphone",
@@ -41682,7 +42946,8 @@
     "c": {
      "es": "con el celular",
      "en": "with his phone"
-    }
+    },
+    "gm": "m."
    },
    "casi": {
     "g": "almost",
@@ -41746,7 +43011,8 @@
     "c": {
      "es": "levantó la cabeza",
      "en": "looked up"
-    }
+    },
+    "gm": "f."
    },
    "parce": {
     "g": "buddy, mate; classic Colombian",
@@ -41754,7 +43020,8 @@
     "c": {
      "es": "Parce, suelte ese aparato",
      "en": "Mate, put that thing down"
-    }
+    },
+    "gm": "m."
    },
    "suelte": {
     "g": "let go of, drop",
@@ -41778,7 +43045,8 @@
     "c": {
      "es": "suelte ese aparato",
      "en": "put that thing down"
-    }
+    },
+    "gm": "m."
    },
    "esto": {
     "g": "this",
@@ -41930,7 +43198,8 @@
     "c": {
      "es": "alguien del edificio",
      "en": "someone in the building"
-    }
+    },
+    "gm": "m."
    },
    "andaba": {
     "g": "was going around",
@@ -41978,7 +43247,8 @@
     "c": {
      "es": "un enredo tremendo",
      "en": "a huge mess"
-    }
+    },
+    "gm": "m."
    },
    "tremendo": {
     "g": "huge, tremendous",
@@ -41994,7 +43264,8 @@
     "c": {
      "es": "con una vecina",
      "en": "with a neighbour"
-    }
+    },
+    "gm": "f."
    },
    "salió": {
     "g": "went out, turned out",
@@ -42042,7 +43313,8 @@
     "c": {
      "es": "salió de la cocina",
      "en": "came out of the kitchen"
-    }
+    },
+    "gm": "f."
    },
    "tinto": {
     "g": "red wine; black coffee (Col.)",
@@ -42050,7 +43322,8 @@
     "c": {
      "es": "con un tinto",
      "en": "with a black coffee"
-    }
+    },
+    "gm": "m."
    },
    "y": {
     "g": "and",
@@ -42170,7 +43443,8 @@
     "c": {
      "es": "en ascuas",
      "en": "hanging"
-    }
+    },
+    "gm": "f."
    },
    "apuró": {
     "g": "hurried, pressed",
@@ -42274,7 +43548,8 @@
     "c": {
      "es": "bajó la voz",
      "en": "lowered her voice"
-    }
+    },
+    "gm": "f."
    },
    "como": {
     "g": "like, as",
@@ -42306,7 +43581,8 @@
     "c": {
      "es": "un secreto de Estado",
      "en": "a state secret"
-    }
+    },
+    "gm": "m."
    },
    "estado": {
     "g": "state, been",
@@ -42314,7 +43590,8 @@
     "c": {
      "es": "un secreto de Estado",
      "en": "a state secret"
-    }
+    },
+    "gm": "m."
    },
    "arrancó": {
     "g": "started off",
@@ -42410,7 +43687,8 @@
     "c": {
      "es": "mensajes escondidos",
      "en": "hidden messages"
-    }
+    },
+    "gm": "m."
    },
    "escondidos": {
     "g": "hidden",
@@ -42426,7 +43704,8 @@
     "c": {
      "es": "una fiesta a las malas",
      "en": "a party thrown behind someone's back"
-    }
+    },
+    "gm": "f."
    },
    "malas": {
     "g": "by force or on the sly (a las malas)",
@@ -42442,7 +43721,8 @@
     "c": {
      "es": "un man sospechoso",
      "en": "a suspicious guy"
-    }
+    },
+    "gm": "m."
    },
    "sospechoso": {
     "g": "suspicious",
@@ -42466,7 +43746,8 @@
     "c": {
      "es": "por fin",
      "en": "finally"
-    }
+    },
+    "gm": "m."
    },
    "ya": {
     "g": "already, now",
@@ -42490,7 +43771,8 @@
     "c": {
      "es": "enganchado en el cuento",
      "en": "hooked on the story"
-    }
+    },
+    "gm": "m."
    },
    "problema": {
     "g": "problem",
@@ -42498,7 +43780,8 @@
     "c": {
      "es": "El problema empezó cuando",
      "en": "The trouble started when"
-    }
+    },
+    "gm": "m."
    },
    "empezó": {
     "g": "started",
@@ -42554,7 +43837,8 @@
     "c": {
      "es": "los detalles se le hicieron rarísimos",
      "en": "the details started sounding very odd"
-    }
+    },
+    "gm": "m."
    },
    "hicieron": {
     "g": "they did, made",
@@ -42610,7 +43894,8 @@
     "c": {
      "es": "La fecha, el edificio, el carro",
      "en": "The date, the building, the car"
-    }
+    },
+    "gm": "f."
    },
    "carro": {
     "g": "car",
@@ -42618,7 +43903,8 @@
     "c": {
      "es": "el carro que describían",
      "en": "the car they were describing"
-    }
+    },
+    "gm": "m."
    },
    "describían": {
     "g": "were describing",
@@ -42714,7 +44000,8 @@
     "c": {
      "es": "demasiado conocido",
      "en": "far too familiar"
-    }
+    },
+    "gm": "m."
    },
    "quedó": {
     "g": "stayed, ended up",
@@ -42770,7 +44057,8 @@
     "c": {
      "es": "un momentico",
      "en": "a little moment"
-    }
+    },
+    "gm": "m."
    },
    "atando": {
     "g": "putting the pieces together (atar cabos)",
@@ -42786,7 +44074,8 @@
     "c": {
      "es": "atando cabos",
      "en": "putting two and two together"
-    }
+    },
+    "gm": "m."
    },
    "susto": {
     "g": "a fright, a scare",
@@ -42794,7 +44083,8 @@
     "c": {
      "es": "con cara de susto",
      "en": "looking horrified"
-    }
+    },
+    "gm": "m."
    },
    "pare": {
     "g": "stop, hold on",
@@ -42866,7 +44156,8 @@
     "c": {
      "es": "entre la risa y el sofocón",
      "en": "half laughing, half mortified"
-    }
+    },
+    "gm": "f."
    },
    "sofocón": {
     "g": "a fluster of shock and heat",
@@ -42874,7 +44165,8 @@
     "c": {
      "es": "entre la risa y el sofocón",
      "en": "half laughing, half mortified"
-    }
+    },
+    "gm": "m."
    },
    "hablan": {
     "g": "they talk",
@@ -42970,7 +44262,8 @@
     "c": {
      "es": "es mi primo",
      "en": "is my cousin"
-    }
+    },
+    "gm": "m."
    },
    "esa": {
     "g": "that (one)",
@@ -43026,7 +44319,8 @@
     "c": {
      "es": "fue en mi casa",
      "en": "was at my place"
-    }
+    },
+    "gm": "f."
    },
    "silencio": {
     "g": "silence",
@@ -43034,7 +44328,8 @@
     "c": {
      "es": "El silencio duró dos segundos",
      "en": "The silence lasted two seconds"
-    }
+    },
+    "gm": "m."
    },
    "duró": {
     "g": "it lasted",
@@ -43082,7 +44377,8 @@
     "c": {
      "es": "dos segundos",
      "en": "two seconds"
-    }
+    },
+    "gm": "m."
    },
    "antes": {
     "g": "before",
@@ -43106,7 +44402,8 @@
     "c": {
      "es": "estallaran de la carcajada",
      "en": "burst out laughing"
-    }
+    },
+    "gm": "f."
    },
    "resulta": {
     "g": "it turns out",
@@ -43146,7 +44443,8 @@
     "c": {
      "es": "dado tantas vueltas",
      "en": "gone round so many times"
-    }
+    },
+    "gm": "f."
    },
    "volvió": {
     "g": "he/she came back",
@@ -43202,7 +44500,8 @@
     "c": {
      "es": "De boca en boca",
      "en": "Passed from mouth to mouth"
-    }
+    },
+    "gm": "f."
    },
    "reunión": {
     "g": "a gathering, a meeting",
@@ -43210,7 +44509,8 @@
     "c": {
      "es": "una reunión familiar",
      "en": "a family get-together"
-    }
+    },
+    "gm": "f."
    },
    "familiar": {
     "g": "family, a family gathering",
@@ -43234,7 +44534,8 @@
     "c": {
      "es": "un escándalo de telenovela",
      "en": "a soap-opera scandal"
-    }
+    },
+    "gm": "m."
    },
    "telenovela": {
     "g": "a soap opera",
@@ -43242,7 +44543,8 @@
     "c": {
      "es": "un escándalo de telenovela",
      "en": "a soap-opera scandal"
-    }
+    },
+    "gm": "f."
    },
    "achantada": {
     "g": "embarrassed, sheepish",
@@ -43370,7 +44672,8 @@
     "c": {
      "es": "Al final se rieron un buen rato",
      "en": "In the end they laughed for a good while"
-    }
+    },
+    "gm": "m."
    },
    "rieron": {
     "g": "they laughed",
@@ -43394,7 +44697,8 @@
     "c": {
      "es": "un buen rato",
      "en": "a good while"
-    }
+    },
+    "gm": "m."
    },
    "teléfono": {
     "g": "phone",
@@ -43402,7 +44706,8 @@
     "c": {
      "es": "el teléfono roto",
      "en": "the game of telephone"
-    }
+    },
+    "gm": "m."
    },
    "roto": {
     "g": "the broken telephone game (teléfono roto)",
@@ -43418,7 +44723,8 @@
     "c": {
      "es": "en que se volvió el parche",
      "en": "that the hangout had turned into"
-    }
+    },
+    "gm": "m."
    },
    "amenazó": {
     "g": "threatened",
@@ -43498,7 +44804,8 @@
     "c": {
      "es": "la próxima vez",
      "en": "next time"
-    }
+    },
+    "gm": "f."
    },
    "así": {
     "g": "like this, so",
@@ -43603,7 +44910,7 @@
        "doy"
       ],
       [
-       "tú",
+       "vos",
        "das"
       ],
       [
@@ -43651,7 +44958,7 @@
        "entré"
       ],
       [
-       "tú",
+       "vos",
        "entraste"
       ],
       [
@@ -43692,7 +44999,8 @@
     "c": {
      "es": "entró al bar",
      "en": "came into the bar"
-    }
+    },
+    "gm": "m."
    },
    "tirándose": {
     "g": "throwing themselves",
@@ -43716,7 +45024,8 @@
     "c": {
      "es": "tirándose en la silla",
      "en": "flopping into the chair"
-    }
+    },
+    "gm": "f."
    },
    "hecha": {
     "g": "made, done",
@@ -43732,7 +45041,8 @@
     "c": {
      "es": "hecha pelota",
      "en": "completely wrecked"
-    }
+    },
+    "gm": "f."
    },
    "y": {
     "g": "and",
@@ -43755,7 +45065,7 @@
        "largué"
       ],
       [
-       "tú",
+       "vos",
        "largaste"
       ],
       [
@@ -43819,7 +45129,7 @@
        "doy"
       ],
       [
-       "tú",
+       "vos",
        "das"
       ],
       [
@@ -43868,7 +45178,8 @@
     "c": {
      "es": "este laburo",
      "en": "this job"
-    }
+    },
+    "gm": "m."
    },
    "boludo": {
     "g": "dude, idiot",
@@ -43876,7 +45187,8 @@
     "c": {
      "es": "boludo",
      "en": "mate"
-    }
+    },
+    "gm": "m."
    },
    "disparó": {
     "g": "blurted out, fired off",
@@ -43891,7 +45203,7 @@
        "disparé"
       ],
       [
-       "tú",
+       "vos",
        "disparaste"
       ],
       [
@@ -43942,14 +45254,6 @@
      "en": "settling in properly"
     }
    },
-   "flor": {
-    "g": "flower; great (slang)",
-    "t": "noun",
-    "c": {
-     "es": "Tomás y Flor se miraron",
-     "en": "Tomás and Flor looked at each other"
-    }
-   },
    "se": {
     "g": "oneself, himself",
     "t": "pronoun",
@@ -43971,7 +45275,7 @@
        "miré"
       ],
       [
-       "tú",
+       "vos",
        "miraste"
       ],
       [
@@ -44028,7 +45332,8 @@
     "c": {
      "es": "el desahogo de siempre",
      "en": "the usual venting"
-    }
+    },
+    "gm": "m."
    },
    "siempre": {
     "g": "always",
@@ -44060,7 +45365,8 @@
     "c": {
      "es": "el jefe le mandaba un quilombo tras otro",
      "en": "the boss threw one mess after another at her"
-    }
+    },
+    "gm": "m."
    },
    "le": {
     "g": "to him, her, it",
@@ -44083,7 +45389,7 @@
        "mandaba"
       ],
       [
-       "tú",
+       "vos",
        "mandabas"
       ],
       [
@@ -44116,7 +45422,8 @@
     "c": {
      "es": "un quilombo tras otro",
      "en": "one mess after another"
-    }
+    },
+    "gm": "m."
    },
    "tras": {
     "g": "one after another (uno tras otro)",
@@ -44148,7 +45455,8 @@
     "c": {
      "es": "sin respiro",
      "en": "with no let-up"
-    }
+    },
+    "gm": "m."
    },
    "ni": {
     "g": "not even, nor",
@@ -44179,7 +45487,7 @@
        "quedaba"
       ],
       [
-       "tú",
+       "vos",
        "quedabas"
       ],
       [
@@ -44228,7 +45536,8 @@
     "c": {
      "es": "hasta tarde",
      "en": "until late"
-    }
+    },
+    "gm": "f."
    },
    "reventada": {
     "g": "burnt out, exhausted",
@@ -44267,7 +45576,7 @@
        "rajaba"
       ],
       [
-       "tú",
+       "vos",
        "rajabas"
       ],
       [
@@ -44308,7 +45617,8 @@
     "c": {
      "es": "rajaban a horario",
      "en": "cleared off on time"
-    }
+    },
+    "gm": "m."
    },
    "encima": {
     "g": "on top; besides",
@@ -44324,7 +45634,8 @@
     "c": {
      "es": "el sueldo era una miseria",
      "en": "the pay was a pittance"
-    }
+    },
+    "gm": "m."
    },
    "era": {
     "g": "was, used to be",
@@ -44339,7 +45650,7 @@
        "era"
       ],
       [
-       "tú",
+       "vos",
        "eras"
       ],
       [
@@ -44372,7 +45683,8 @@
     "c": {
      "es": "era una miseria",
      "en": "was a pittance"
-    }
+    },
+    "gm": "f."
    },
    "ese": {
     "g": "that (one)",
@@ -44388,7 +45700,8 @@
     "c": {
      "es": "con ese mango no le alcanzaba para nada",
      "en": "that kind of money did not stretch at all"
-    }
+    },
+    "gm": "m."
    },
    "alcanzaba": {
     "g": "was not enough (no le alcanzaba)",
@@ -44403,7 +45716,7 @@
        "alcanzaba"
       ],
       [
-       "tú",
+       "vos",
        "alcanzabas"
       ],
       [
@@ -44451,7 +45764,7 @@
        "banqué"
       ],
       [
-       "tú",
+       "vos",
        "bancaste"
       ],
       [
@@ -44484,7 +45797,8 @@
     "c": {
      "es": "en silencio",
      "en": "in silence"
-    }
+    },
+    "gm": "m."
    },
    "dejándola": {
     "g": "letting her",
@@ -44508,7 +45822,8 @@
     "c": {
      "es": "todo el bajón",
      "en": "the whole slump"
-    }
+    },
+    "gm": "m."
    },
    "interrumpir": {
     "g": "to interrupt",
@@ -44531,7 +45846,7 @@
        "acerqué"
       ],
       [
-       "tú",
+       "vos",
        "acercaste"
       ],
       [
@@ -44564,7 +45879,8 @@
     "c": {
      "es": "le acercó una birra",
      "en": "slid her a beer"
-    }
+    },
+    "gm": "f."
    },
    "dijo": {
     "g": "said",
@@ -44579,7 +45895,7 @@
        "dije"
       ],
       [
-       "tú",
+       "vos",
        "dijiste"
       ],
       [
@@ -44628,7 +45944,8 @@
     "c": {
      "es": "con confianza",
      "en": "freely"
-    }
+    },
+    "gm": "f."
    },
    "está": {
     "g": "is",
@@ -44643,7 +45960,7 @@
        "estoy"
       ],
       [
-       "tú",
+       "vos",
        "estás"
       ],
       [
@@ -44691,8 +46008,8 @@
        "soy"
       ],
       [
-       "tú",
-       "eres"
+       "vos",
+       "sos"
       ],
       [
        "él, ella",
@@ -44724,7 +46041,8 @@
     "c": {
      "es": "es un garrón",
      "en": "it is a raw deal"
-    }
+    },
+    "gm": "m."
    },
    "me": {
     "g": "me, myself",
@@ -44747,8 +46065,8 @@
        "quiero"
       ],
       [
-       "tú",
-       "quieres"
+       "vos",
+       "querés"
       ],
       [
        "él, ella",
@@ -44803,7 +46121,7 @@
        "cerré"
       ],
       [
-       "tú",
+       "vos",
        "cerraste"
       ],
       [
@@ -44844,7 +46162,8 @@
     "c": {
      "es": "Entre queja y queja",
      "en": "Between one complaint and the next"
-    }
+    },
+    "gm": "f."
    },
    "empezó": {
     "g": "started",
@@ -44859,7 +46178,7 @@
        "empecé"
       ],
       [
-       "tú",
+       "vos",
        "empezaste"
       ],
       [
@@ -44900,7 +46219,8 @@
     "c": {
      "es": "los detalles del último proyecto imposible",
      "en": "the details of the last impossible project"
-    }
+    },
+    "gm": "m."
    },
    "del": {
     "g": "of the",
@@ -44924,7 +46244,8 @@
     "c": {
      "es": "el último proyecto imposible",
      "en": "the last impossible project"
-    }
+    },
+    "gm": "m."
    },
    "imposible": {
     "g": "impossible",
@@ -44956,7 +46277,8 @@
     "c": {
      "es": "la cuenta más grande de la empresa",
      "en": "the biggest account in the company"
-    }
+    },
+    "gm": "f."
    },
    "grande": {
     "g": "big, great",
@@ -44972,7 +46294,8 @@
     "c": {
      "es": "de la empresa",
      "en": "in the company"
-    }
+    },
+    "gm": "f."
    },
    "sola": {
     "g": "alone",
@@ -44995,7 +46318,7 @@
        "pasé"
       ],
       [
-       "tú",
+       "vos",
        "pasaste"
       ],
       [
@@ -45028,7 +46351,8 @@
     "c": {
      "es": "tres semanas al horno",
      "en": "three weeks flat out"
-    }
+    },
+    "gm": "f."
    },
    "horno": {
     "g": "in deep trouble (al horno)",
@@ -45036,7 +46360,8 @@
     "c": {
      "es": "al horno",
      "en": "flat out"
-    }
+    },
+    "gm": "m."
    },
    "dormir": {
     "g": "to sleep",
@@ -45075,7 +46400,7 @@
        "frené"
       ],
       [
-       "tú",
+       "vos",
        "frenaste"
       ],
       [
@@ -45116,7 +46441,8 @@
     "c": {
      "es": "una pregunta que la dejó pensando",
      "en": "a question that left her thinking"
-    }
+    },
+    "gm": "f."
    },
    "dejó": {
     "g": "let, left",
@@ -45131,7 +46457,7 @@
        "dejé"
       ],
       [
-       "tú",
+       "vos",
        "dejaste"
       ],
       [
@@ -45212,7 +46538,8 @@
     "c": {
      "es": "el cliente más importante",
      "en": "the most important client"
-    }
+    },
+    "gm": "m."
    },
    "importante": {
     "g": "important",
@@ -45251,8 +46578,8 @@
        "odio"
       ],
       [
-       "tú",
-       "odias"
+       "vos",
+       "odiás"
       ],
       [
        "él, ella",
@@ -45291,7 +46618,7 @@
        "quedé"
       ],
       [
-       "tú",
+       "vos",
        "quedaste"
       ],
       [
@@ -45340,7 +46667,8 @@
     "c": {
      "es": "un rato largo",
      "en": "a long while"
-    }
+    },
+    "gm": "m."
    },
    "largo": {
     "g": "long; get lost",
@@ -45371,7 +46699,7 @@
        "soné"
       ],
       [
-       "tú",
+       "vos",
        "sonaste"
       ],
       [
@@ -45404,7 +46732,8 @@
     "c": {
      "es": "le sonó el celular",
      "en": "her phone went off"
-    }
+    },
+    "gm": "m."
    },
    "mensaje": {
     "g": "a message",
@@ -45412,7 +46741,8 @@
     "c": {
      "es": "un mensaje del jefe en persona",
      "en": "a message from the boss himself"
-    }
+    },
+    "gm": "m."
    },
    "persona": {
     "g": "in person (en persona)",
@@ -45420,7 +46750,8 @@
     "c": {
      "es": "del jefe en persona",
      "en": "from the boss himself"
-    }
+    },
+    "gm": "f."
    },
    "lo": {
     "g": "it, him",
@@ -45443,7 +46774,7 @@
        "leyé"
       ],
       [
-       "tú",
+       "vos",
        "leyaste"
       ],
       [
@@ -45476,7 +46807,8 @@
     "c": {
      "es": "dos veces",
      "en": "twice"
-    }
+    },
+    "gm": "f."
    },
    "creerlo": {
     "g": "to believe it",
@@ -45492,7 +46824,8 @@
     "c": {
      "es": "la cara se le fue transformando",
      "en": "her face slowly changed"
-    }
+    },
+    "gm": "f."
    },
    "fue": {
     "g": "was, went",
@@ -45507,7 +46840,7 @@
        "fui"
       ],
       [
-       "tú",
+       "vos",
        "fuiste"
       ],
       [
@@ -45571,7 +46904,7 @@
        "felicitaba"
       ],
       [
-       "tú",
+       "vos",
        "felicitabas"
       ],
       [
@@ -45612,7 +46945,8 @@
     "c": {
      "es": "jefa de área",
      "en": "head of department"
-    }
+    },
+    "gm": "f."
    },
    "área": {
     "g": "area manager (jefa de área)",
@@ -45620,7 +46954,8 @@
     "c": {
      "es": "jefa de área",
      "en": "head of department"
-    }
+    },
+    "gm": "f."
    },
    "dio": {
     "g": "gave",
@@ -45635,7 +46970,7 @@
        "di"
       ],
       [
-       "tú",
+       "vos",
        "diste"
       ],
       [
@@ -45668,7 +47003,8 @@
     "c": {
      "es": "se le dio vuelta",
      "en": "flipped right over"
-    }
+    },
+    "gm": "f."
    },
    "golpe": {
     "g": "hit, blow",
@@ -45676,7 +47012,8 @@
     "c": {
      "es": "de golpe todo tenía otro sentido",
      "en": "all at once everything made a different kind of sense"
-    }
+    },
+    "gm": "m."
    },
    "tenía": {
     "g": "I/he/she had",
@@ -45691,7 +47028,7 @@
        "tenía"
       ],
       [
-       "tú",
+       "vos",
        "tenías"
       ],
       [
@@ -45724,7 +47061,8 @@
     "c": {
      "es": "otro sentido",
      "en": "a different kind of sense"
-    }
+    },
+    "gm": "m."
    },
    "maltrato": {
     "g": "mistreatment, abuse",
@@ -45732,7 +47070,8 @@
     "c": {
      "es": "El maltrato no era maltrato",
      "en": "The bad treatment was not bad treatment"
-    }
+    },
+    "gm": "m."
    },
    "prueba": {
     "g": "a test",
@@ -45740,7 +47079,8 @@
     "c": {
      "es": "era una prueba de fuego",
      "en": "it was a trial by fire"
-    }
+    },
+    "gm": "f."
    },
    "fuego": {
     "g": "a trial by fire (prueba de fuego)",
@@ -45748,7 +47088,8 @@
     "c": {
      "es": "una prueba de fuego",
      "en": "a trial by fire"
-    }
+    },
+    "gm": "m."
    },
    "pasado": {
     "g": "past, last",
@@ -45771,7 +47112,7 @@
        "levanté"
       ],
       [
-       "tú",
+       "vos",
        "levantaste"
       ],
       [
@@ -45811,7 +47152,7 @@
        "brindé"
       ],
       [
-       "tú",
+       "vos",
        "brindaste"
       ],
       [
@@ -45860,7 +47201,8 @@
     "c": {
      "es": "muerto de risa",
      "en": "in stitches"
-    }
+    },
+    "gm": "f."
    }
   },
   "la-lengua-de-julian": {
@@ -45870,7 +47212,8 @@
     "c": {
      "es": "La lengua de Julián",
      "en": "Julián's loose tongue"
-    }
+    },
+    "gm": "f."
    },
    "de": {
     "g": "of, from",
@@ -45934,7 +47277,8 @@
     "c": {
      "es": "llegó del camello",
      "en": "got home from work"
-    }
+    },
+    "gm": "m."
    },
    "bien": {
     "g": "well, good",
@@ -45974,7 +47318,8 @@
     "c": {
      "es": "un guayabo del sábado",
      "en": "Saturday's hangover"
-    }
+    },
+    "gm": "m."
    },
    "sábado": {
     "g": "Saturday",
@@ -45982,7 +47327,8 @@
     "c": {
      "es": "un guayabo del sábado",
      "en": "Saturday's hangover"
-    }
+    },
+    "gm": "m."
    },
    "que": {
     "g": "that",
@@ -46110,7 +47456,8 @@
     "c": {
      "es": "Se tiró en el sofá",
      "en": "He threw himself on the sofa"
-    }
+    },
+    "gm": "m."
    },
    "jurando": {
     "g": "swearing, vowing",
@@ -46134,7 +47481,8 @@
     "c": {
      "es": "esa noche no salía",
      "en": "that night he was not going out"
-    }
+    },
+    "gm": "f."
    },
    "salía": {
     "g": "would not go out (no salía)",
@@ -46198,7 +47546,8 @@
     "c": {
      "es": "parceros",
      "en": "mates"
-    }
+    },
+    "gm": "m."
    },
    "vengo": {
     "g": "I come",
@@ -46294,7 +47643,8 @@
     "c": {
      "es": "con voz de trapo",
      "en": "in a wrung-out voice"
-    }
+    },
+    "gm": "f."
    },
    "trapo": {
     "g": "a worn out raspy voice (voz de trapo)",
@@ -46302,7 +47652,8 @@
     "c": {
      "es": "voz de trapo",
      "en": "a wrung-out voice"
-    }
+    },
+    "gm": "m."
    },
    "pero": {
     "g": "but",
@@ -46318,7 +47669,8 @@
     "c": {
      "es": "el parche insistió",
      "en": "the crew kept at it"
-    }
+    },
+    "gm": "m."
    },
    "insistió": {
     "g": "insisted",
@@ -46366,7 +47718,8 @@
     "c": {
      "es": "a las dos polas",
      "en": "two beers in"
-    }
+    },
+    "gm": "f."
    },
    "ya": {
     "g": "already, now",
@@ -46454,7 +47807,8 @@
     "c": {
      "es": "hablando por los codos",
      "en": "talking nineteen to the dozen"
-    }
+    },
+    "gm": "m."
    },
    "entre": {
     "g": "between, among",
@@ -46470,7 +47824,8 @@
     "c": {
      "es": "Entre risas y guaro",
      "en": "Between the laughing and the rum"
-    }
+    },
+    "gm": "f."
    },
    "guaro": {
     "g": "booze, aguardiente",
@@ -46478,7 +47833,8 @@
     "c": {
      "es": "risas y guaro",
      "en": "laughing and rum"
-    }
+    },
+    "gm": "m."
    },
    "le": {
     "g": "to him, her, it",
@@ -46550,7 +47906,8 @@
     "c": {
      "es": "más de la cuenta",
      "en": "more than it should"
-    }
+    },
+    "gm": "f."
    },
    "sin": {
     "g": "without",
@@ -46614,15 +47971,8 @@
     "c": {
      "es": "un secreto de Marina",
      "en": "a secret of Marina's"
-    }
-   },
-   "marina": {
-    "g": "Marina; navy",
-    "t": "noun",
-    "c": {
-     "es": "un secreto de Marina",
-     "en": "a secret of Marina's"
-    }
+    },
+    "gm": "m."
    },
    "había": {
     "g": "there was; had",
@@ -46654,7 +48004,8 @@
     "c": {
      "es": "guardar con el alma",
      "en": "keep on his life"
-    }
+    },
+    "gm": "f."
    },
    "cuarto": {
     "g": "the room",
@@ -46662,7 +48013,8 @@
     "c": {
      "es": "El cuarto entero se quedó callado",
      "en": "The whole room went quiet"
-    }
+    },
+    "gm": "m."
    },
    "entero": {
     "g": "whole, entire",
@@ -46766,7 +48118,8 @@
     "c": {
      "es": "el frío de la embarrada",
      "en": "the chill of the blunder"
-    }
+    },
+    "gm": "m."
    },
    "embarrada": {
     "g": "screwup, mess",
@@ -46774,7 +48127,8 @@
     "c": {
      "es": "el frío de la embarrada",
      "en": "the chill of the blunder"
-    }
+    },
+    "gm": "f."
    },
    "trató": {
     "g": "tried",
@@ -46846,7 +48200,8 @@
     "c": {
      "es": "ya el chisme estaba servido en bandeja",
      "en": "the gossip was already served up on a plate"
-    }
+    },
+    "gm": "m."
    },
    "servido": {
     "g": "handed on a plate (servido en bandeja)",
@@ -46862,7 +48217,8 @@
     "c": {
      "es": "servido en bandeja",
      "en": "served up on a plate"
-    }
+    },
+    "gm": "f."
    },
    "sapo": {
     "g": "toad; nosy, snitch",
@@ -46870,7 +48226,8 @@
     "c": {
      "es": "más sapo que otra cosa",
      "en": "more of a snitch than anything"
-    }
+    },
+    "gm": "m."
    },
    "otra": {
     "g": "another (fem.)",
@@ -46886,7 +48243,8 @@
     "c": {
      "es": "que otra cosa",
      "en": "than anything else"
-    }
+    },
+    "gm": "f."
    },
    "relamió": {
     "g": "licked his lips with relish",
@@ -46934,7 +48292,8 @@
     "c": {
      "es": "se relamió con la primicia",
      "en": "licked his lips at the scoop"
-    }
+    },
+    "gm": "f."
    },
    "al": {
     "g": "to the",
@@ -46958,7 +48317,8 @@
     "c": {
      "es": "Al otro día",
      "en": "The next day"
-    }
+    },
+    "gm": "m."
    },
    "despertó": {
     "g": "woke up",
@@ -47006,7 +48366,8 @@
     "c": {
      "es": "con una preocupación peor",
      "en": "with a worse worry"
-    }
+    },
+    "gm": "f."
    },
    "peor": {
     "g": "worse, worst",
@@ -47062,7 +48423,8 @@
     "c": {
      "es": "a pedazos",
      "en": "in pieces"
-    }
+    },
+    "gm": "m."
    },
    "cara": {
     "g": "face",
@@ -47070,7 +48432,8 @@
     "c": {
      "es": "la cara de todos",
      "en": "everyone's face"
-    }
+    },
+    "gm": "f."
    },
    "todos": {
     "g": "everyone, all",
@@ -47142,7 +48505,8 @@
     "c": {
      "es": "metido las patas",
      "en": "put his foot in it"
-    }
+    },
+    "gm": "f."
    },
    "fondo": {
     "g": "the back, background",
@@ -47150,7 +48514,8 @@
     "c": {
      "es": "hasta el fondo",
      "en": "right in it"
-    }
+    },
+    "gm": "m."
    },
    "llamó": {
     "g": "called",
@@ -47198,7 +48563,8 @@
     "c": {
      "es": "con el corazón en la mano",
      "en": "with his heart in his hands"
-    }
+    },
+    "gm": "m."
    },
    "mano": {
     "g": "hand; bro, dude",
@@ -47206,7 +48572,8 @@
     "c": {
      "es": "el corazón en la mano",
      "en": "his heart in his hands"
-    }
+    },
+    "gm": "f."
    },
    "confesar": {
     "g": "to confess",
@@ -47238,7 +48605,8 @@
     "c": {
      "es": "por otro lado",
      "en": "from somewhere else"
-    }
+    },
+    "gm": "m."
    },
    "ella": {
     "g": "she",
@@ -47294,7 +48662,8 @@
     "c": {
      "es": "en silencio",
      "en": "in silence"
-    }
+    },
+    "gm": "m."
    },
    "dejándolo": {
     "g": "letting him",
@@ -47326,7 +48695,8 @@
     "c": {
      "es": "sudar cada palabra",
      "en": "sweat every word"
-    }
+    },
+    "gm": "f."
    },
    "pedía": {
     "g": "was begging, asking",
@@ -47406,7 +48776,8 @@
     "c": {
      "es": "le fuera la vida",
      "en": "his life depended on it"
-    }
+    },
+    "gm": "f."
    },
    "frase": {
     "g": "a sentence, a phrase",
@@ -47414,7 +48785,8 @@
     "c": {
      "es": "en cada frase",
      "en": "in every sentence"
-    }
+    },
+    "gm": "f."
    },
    "cuando": {
     "g": "when",
@@ -47430,7 +48802,8 @@
     "c": {
      "es": "por fin",
      "en": "finally"
-    }
+    },
+    "gm": "m."
    },
    "calló": {
     "g": "fell silent",
@@ -47478,7 +48851,8 @@
     "c": {
      "es": "Marina soltó una risa",
      "en": "Marina let out a laugh"
-    }
+    },
+    "gm": "f."
    },
    "descolocó": {
     "g": "threw him off completely",
@@ -47542,7 +48916,8 @@
     "c": {
      "es": "Tranquilo, güevón",
      "en": "Relax, mate"
-    }
+    },
+    "gm": "m."
    },
    "ese": {
     "g": "that (one)",
@@ -47646,7 +49021,8 @@
     "c": {
      "es": "sin culpa",
      "en": "without a shred of guilt"
-    }
+    },
+    "gm": "f."
    },
    "soltado": {
     "g": "blurted, let out",
@@ -47662,7 +49038,8 @@
     "c": {
      "es": "a propósito",
      "en": "on purpose"
-    }
+    },
+    "gm": "m."
    },
    "ver": {
     "g": "to see",
@@ -47678,7 +49055,8 @@
     "c": {
      "es": "si el man aguantaba",
      "en": "whether the guy could hold out"
-    }
+    },
+    "gm": "m."
    },
    "aguantaba": {
     "g": "put up with",
@@ -47726,7 +49104,8 @@
     "c": {
      "es": "aguantaba una prueba",
      "en": "could pass a test"
-    }
+    },
+    "gm": "f."
    },
    "supo": {
     "g": "knew, found out",
@@ -47814,7 +49193,8 @@
     "c": {
      "es": "semejante trampa",
      "en": "a trick like that"
-    }
+    },
+    "gm": "f."
    },
    "lección": {
     "g": "a lesson",
@@ -47822,7 +49202,8 @@
     "c": {
      "es": "La lección le quedó grabada",
      "en": "The lesson stuck with him"
-    }
+    },
+    "gm": "f."
    },
    "grabada": {
     "g": "burned in, engraved in memory",
@@ -47886,7 +49267,8 @@
     "c": {
      "es": "tarde o temprano lo cazan",
      "en": "sooner or later they catch you"
-    }
+    },
+    "gm": "f."
    },
    "temprano": {
     "g": "early",
@@ -47910,7 +49292,8 @@
     "c": {
      "es": "los secretos siempre tenían dueño y trampa",
      "en": "the secrets always had an owner and a catch"
-    }
+    },
+    "gm": "m."
    },
    "siempre": {
     "g": "always",
@@ -47966,7 +49349,8 @@
     "c": {
      "es": "tenían dueño y trampa",
      "en": "had an owner and a catch"
-    }
+    },
+    "gm": "m."
    }
   }
  }
