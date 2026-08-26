@@ -80,6 +80,24 @@
       "y": 0,
       "w": 504,
       "h": 560
+    },
+    {
+      "file": "WorstCapped.dc.html",
+      "title": "A · scroll dentro del bloque · 314 px · 37%",
+      "page": "page-3",
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844
+    },
+    {
+      "file": "SeeMore.dc.html",
+      "title": "B · See more / See less · 326 px cerrado, 484 abierto",
+      "page": "page-3",
+      "x": 440,
+      "y": 0,
+      "w": 390,
+      "h": 844
     }
   ],
   "annotations": [
@@ -90,6 +108,14 @@
       "y": -170,
       "w": 700,
       "text": "Option C applied to every word type, with real words from marta-ensena-el-retiro.\nThe English line never changes; what changes is the block under it.\nAdverbs and function words have no paradigm, so the card stays short and the All forms button is gone.\nThe percentages are this journey's real bundle: 669 glosses."
+    },
+    {
+      "id": "worst",
+      "page": "page-3",
+      "x": 0,
+      "y": -190,
+      "w": 820,
+      "text": "Übergabeprotokoll, el peor caso del formato: ocho formas de 21 letras. Medido a 390 x 844.\nA: el bloque hace scroll dentro. Techo fijo de 314 px, pero corta una fila por la mitad.\nB: See more / See less. Cerrado 326 px, abierto 484. Ninguna fila cortada y dice cuántas faltan. El botón funciona."
     }
   ],
   "pages": [
@@ -100,10 +126,14 @@
     {
       "id": "page-2",
       "name": "Directions"
+    },
+    {
+      "id": "page-3",
+      "name": "Worst case"
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-1"
+    "page": "page-3"
   }
 }

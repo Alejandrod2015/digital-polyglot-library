@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Heart, List, Search, X } from "lucide-react";
+import { ChevronDown, ChevronUp, Heart, Search, X } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import type { TapGloss } from "@/lib/tapGlosses";
 import {
@@ -177,7 +177,9 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
         chunk: entry.c,
         forms: entry.f,
       });
-      setFormsOpen(false);
+      // Abre desplegada cuando la forma de la historia cae fuera de las tres
+      // primeras (contentas es la cuarta de contento): esa no se esconde nunca.
+      setFormsOpen(entry.f ? entry.f.here >= 3 : false);
       setIsFav(
         favsRef.current.some((f) => (f.word ?? "").trim().toLowerCase() === word.trim().toLowerCase())
       );
@@ -185,11 +187,6 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
     document.addEventListener("click", handler);
     return () => document.removeEventListener("click", handler);
   }, [glosses]);
-
-  // La forma que sale en la historia no se esconde nunca: si está fuera de las
-  // tres primeras (contentas es la cuarta de contento), la tarjeta abre con el
-  // paradigma entero y el botón sobra.
-  const formsExpanded = formsOpen || (selected?.forms ? selected.forms.here >= 3 : false);
 
   const toggleFavorite = async () => {
     if (!selected) return;
@@ -351,7 +348,8 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
       {/* Las FORMAS, no una explicación: la conjugación del verbo, la
           concordancia del adjetivo, el artículo y el plural del sustantivo. La
           que sale en la historia va encendida. Tres a la vista y el resto bajo
-          "All forms", para que la tarjeta de una preposición siga siendo corta. */}
+          "See N more", que dice cuántas faltan y deja el borde de abajo limpio;
+          con el recorte anterior la tarjeta cortaba una fila por la mitad. */}
       {selected.forms ? (
         <div className="mt-2.5 flex items-start gap-2.5">
           <span
@@ -362,7 +360,7 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
           </span>
           <div className="flex flex-wrap gap-1.5">
             {selected.forms.rows
-              .slice(0, formsExpanded ? undefined : 3)
+              .slice(0, formsOpen ? undefined : 3)
               .map((row, index) => {
                 const [person, form] = row;
                 const isHere = index === selected.forms!.here;
@@ -395,6 +393,24 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
               })}
           </div>
         </div>
+      ) : null}
+      {selected.forms && selected.forms.rows.length > 3 ? (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            setFormsOpen((open) => !open);
+          }}
+          className="mt-1.5 inline-flex items-center gap-1.5 self-start cursor-pointer"
+          style={{ color: "#7dd3fc", fontSize: 13, fontWeight: 700, padding: "4px 2px" }}
+        >
+          {formsOpen ? "See less" : `See ${selected.forms.rows.length - 3} more`}
+          {formsOpen ? (
+            <ChevronUp size={13} strokeWidth={2.6} />
+          ) : (
+            <ChevronDown size={13} strokeWidth={2.6} />
+          )}
+        </button>
       ) : null}
       <div className="mt-3 flex flex-wrap items-center gap-2">
         <button
@@ -432,28 +448,6 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
           <Heart size={14} strokeWidth={2.4} fill={isFav ? "currentColor" : "none"} />
           {isFav ? "Saved" : "Save word"}
         </button>
-        {selected.forms && selected.forms.rows.length > 3 && selected.forms.here < 3 ? (
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              setFormsOpen((open) => !open);
-            }}
-            className="inline-flex items-center gap-2 transition-all cursor-pointer"
-            style={{
-              backgroundColor: "transparent",
-              border: `1px solid ${formsOpen ? "var(--chip-border)" : "var(--card-border)"}`,
-              color: formsOpen ? "var(--foreground)" : "var(--muted)",
-              fontWeight: 700,
-              fontSize: 13,
-              padding: "8px 14px",
-              borderRadius: 999,
-            }}
-          >
-            <List size={14} strokeWidth={2.4} />
-            {formsOpen ? "Fewer forms" : "All forms"}
-          </button>
-        ) : null}
       </div>
     </div>
   );

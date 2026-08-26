@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap">
+  <style>
+    body { margin: 0; background: #0b1220; font-family: Nunito, "Geist Sans", system-ui, sans-serif; }
+    a { color: #7dd3fc; } a:hover { color: #38bdf8; }
+    .see-toggle { cursor: pointer; user-select: none; }
+  </style>
+</helmet>
+<div style="position: relative; width: 390px; height: 844px; background: #0b1220; overflow: hidden">
+  <div style="padding: 20px 18px 0; color: #e6eaf2; font-size: 17px; line-height: 27px; opacity: 0.45">
+    Die Vermieterin legt das <span style="color: #7dd3fc; opacity: 1; font-weight: 700">Übergabeprotokoll</span> auf den Tisch und wartet, bis beide unterschrieben haben.
+  </div>
+  <div style="position: absolute; left: 18px; right: 18px; bottom: 108px">
+    <div style="background: #111a2b; border: 1px dashed rgba(255, 255, 255, 0.14); border-radius: 20px; padding: 12px 18px 16px; box-shadow: 0 8px 14px rgba(0, 0, 0, 0.22); display: flex; flex-direction: column; gap: 10px">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px">
+        <div style="display: flex; flex-direction: column; gap: 3px; min-width: 0">
+          <span style="color: #e6eaf2; font-size: 18px; font-weight: 700; line-height: 24px; overflow-wrap: anywhere">Übergabeprotokoll</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px">
+            <span style="background: rgba(148, 163, 184, 0.28); color: #e6eaf2; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; opacity: 0.85">Quick lookup</span>
+            <span style="background: rgba(56, 189, 248, 0.65); color: #ffffff; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px">noun</span>
+          </span>
+        </div>
+        <span style="display: grid; place-items: center; width: 28px; height: 28px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.22); color: #e6eaf2; flex-shrink: 0; font-size: 14px">×</span>
+      </div>
+      <p style="margin: 0; color: #e6eaf2; font-size: 15px; line-height: 22px"><span style="font-weight: 700">das Übergabeprotokoll unterschreiben</span><span style="opacity: 0.55; padding: 0 6px">→</span><span style="opacity: 0.9">to sign the flat handover report</span></p>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <span style="color: #9aa7bd; font-size: 12px; font-weight: 700">das Übergabeprotokoll</span>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <sc-for list="{{ rows }}" as="r" hint-placeholder-count="3">
+            <span style="display: flex; align-items: baseline; gap: 10px; background: {{ r.bg }}; border-radius: 8px; padding: 4px 9px; min-width: 0">
+              <span style="color: #9aa7bd; font-size: 11px; font-weight: 600; width: 56px; flex-shrink: 0">{{ r.caso }}</span>
+              <span style="color: {{ r.color }}; font-size: 13px; font-weight: 700; min-width: 0; overflow-wrap: anywhere">{{ r.forma }}</span>
+            </span>
+          </sc-for>
+        </div>
+        <span class="see-toggle" onClick="{{ toggle }}" style="display: inline-flex; align-items: center; gap: 5px; align-self: flex-start; color: #7dd3fc; font-size: 13px; font-weight: 700; padding: 4px 2px">
+          {{ etiqueta }}
+          <sc-if value="{{ abierto }}" hint-placeholder-val="{{ true }}">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"></path></svg>
+          </sc-if>
+          <sc-if value="{{ cerrado }}" hint-placeholder-val="{{ true }}">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </sc-if>
+        </span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap">
+        <span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.14); color: #e6eaf2; font-weight: 700; font-size: 13px; padding: 8px 14px; border-radius: 999px">♥ Save word</span>
+      </div>
+    </div>
+  </div>
+  <div style="position: absolute; left: 12px; right: 12px; bottom: 16px; height: 80px; background: #111a2b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; gap: 18px; color: #9aa7bd; font-size: 12px">
+    <span>0:00</span><span style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 999px; background: #2f6df6; color: #fff">▶</span><span>0:59</span>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"startOpen":{"editor":"boolean","default":false,"section":"Content"}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { open: null };
+  }
+  renderVals() {
+    const TODAS = [["Nom.","das Übergabeprotokoll"],["Akk.","das Übergabeprotokoll"],["Dat.","dem Übergabeprotokoll"],["Gen.","des Übergabeprotokolls"],["Pl.","die Übergabeprotokolle"],["Pl. Dat.","den Übergabeprotokollen"],["unbest.","ein Übergabeprotokoll"],["verneint","kein Übergabeprotokoll"]];
+    const abierto = this.state.open === null ? (this.props.startOpen ?? false) : this.state.open;
+    const visibles = abierto ? TODAS : TODAS.slice(0, 3);
+    return {
+      rows: visibles.map((r, i) => ({
+        caso: r[0], forma: r[1],
+        bg: i === 0 ? "rgba(125, 211, 252, 0.16)" : "rgba(255, 255, 255, 0.04)",
+        color: i === 0 ? "#7dd3fc" : "#e6eaf2"
+      })),
+      abierto,
+      cerrado: !abierto,
+      etiqueta: abierto ? "See less" : `See ${TODAS.length - 3} more`,
+      toggle: () => this.setState({ open: !abierto })
+    };
+  }
+}
+</script>
+</body>
+</html>
