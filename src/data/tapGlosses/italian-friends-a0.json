@@ -557,10 +557,6 @@
    "g": "who",
    "t": "pronoun"
   },
-  "chiara": {
-   "g": "Chiara (name)",
-   "t": "other"
-  },
   "chiede": {
    "g": "asks",
    "t": "verb"
@@ -773,10 +769,6 @@
    "g": "they decide",
    "t": "verb"
   },
-  "dei": {
-   "g": "of the, some",
-   "t": "article"
-  },
   "del": {
    "g": "of the, some",
    "t": "preposition"
@@ -881,10 +873,6 @@
    "g": "straight",
    "t": "adjective"
   },
-  "due": {
-   "g": "two",
-   "t": "number"
-  },
   "duomo": {
    "g": "cathedral",
    "t": "noun"
@@ -900,10 +888,6 @@
   "ed": {
    "g": "and",
    "t": "conjunction"
-  },
-  "elena": {
-   "g": "Elena (name)",
-   "t": "other"
   },
   "enorme": {
    "g": "enormous, huge",
@@ -1181,10 +1165,6 @@
    "g": "already",
    "t": "adverb"
   },
-  "gli": {
-   "g": "the; to him",
-   "t": "article"
-  },
   "gondola": {
    "g": "gondola",
    "t": "noun"
@@ -1265,17 +1245,9 @@
    "g": "I have",
    "t": "verb"
   },
-  "i": {
-   "g": "the",
-   "t": "article"
-  },
   "idea": {
    "g": "idea",
    "t": "noun"
-  },
-  "il": {
-   "g": "the",
-   "t": "article"
   },
   "importante": {
    "g": "important",
@@ -1321,14 +1293,6 @@
    "g": "I",
    "t": "pronoun"
   },
-  "l": {
-   "g": "the",
-   "t": "article"
-  },
-  "la": {
-   "g": "the; her",
-   "t": "article"
-  },
   "larga": {
    "g": "wide",
    "t": "adjective"
@@ -1344,10 +1308,6 @@
   "lavorano": {
    "g": "they work",
    "t": "verb"
-  },
-  "le": {
-   "g": "the; them",
-   "t": "article"
   },
   "lecca": {
    "g": "licks",
@@ -1396,10 +1356,6 @@
   "limoni": {
    "g": "lemons",
    "t": "noun"
-  },
-  "lo": {
-   "g": "the; it, him",
-   "t": "article"
   },
   "locale": {
    "g": "place, venue",
@@ -1548,10 +1504,6 @@
   "milano": {
    "g": "Milan",
    "t": "other"
-  },
-  "mille": {
-   "g": "thousand",
-   "t": "number"
   },
   "molta": {
    "g": "much, a lot of",
@@ -2093,10 +2045,6 @@
    "g": "neighborhood",
    "t": "noun"
   },
-  "quattro": {
-   "g": "four",
-   "t": "number"
-  },
   "quel": {
    "g": "that",
    "t": "adjective"
@@ -2360,10 +2308,6 @@
   "segue": {
    "g": "follows",
    "t": "verb"
-  },
-  "sei": {
-   "g": "six",
-   "t": "number"
   },
   "semplice": {
    "g": "simple",
@@ -2737,17 +2681,9 @@
    "g": "trattoria (restaurant)",
    "t": "noun"
   },
-  "tre": {
-   "g": "three",
-   "t": "number"
-  },
   "treno": {
    "g": "train",
    "t": "noun"
-  },
-  "trenta": {
-   "g": "thirty",
-   "t": "number"
   },
   "trevi": {
    "g": "Trevi (fountain)",
@@ -2796,14 +2732,6 @@
   "ultimo": {
    "g": "last",
    "t": "adjective"
-  },
-  "un": {
-   "g": "a, an",
-   "t": "article"
-  },
-  "una": {
-   "g": "a, an",
-   "t": "article"
   },
   "unisce": {
    "g": "joins, unites",

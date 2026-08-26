@@ -79,10 +79,6 @@
    "g": "then",
    "t": "adverb"
   },
-  "das": {
-   "g": "the (neuter); also 'that'",
-   "t": "article"
-  },
   "dass": {
    "g": "that; introduces a clause",
    "t": "conjunction"
@@ -99,18 +95,6 @@
    "g": "your",
    "t": "adjective"
   },
-  "dem": {
-   "g": "the (dative)",
-   "t": "article"
-  },
-  "den": {
-   "g": "the (accusative masculine, or dative plural)",
-   "t": "article"
-  },
-  "der": {
-   "g": "the (masculine)",
-   "t": "article"
-  },
   "derselben": {
    "g": "of the same; of those very respondents ('derselben Befragten')",
    "t": "pronoun"
@@ -123,10 +107,6 @@
    "g": "Germany",
    "t": "noun"
   },
-  "die": {
-   "g": "the (feminine, or plural)",
-   "t": "article"
-  },
   "dienstagabend": {
    "g": "Tuesday evening",
    "t": "noun"
@@ -135,29 +115,9 @@
    "g": "outside",
    "t": "adverb"
   },
-  "drei": {
-   "g": "three",
-   "t": "number"
-  },
   "du": {
    "g": "you (informal singular)",
    "t": "pronoun"
-  },
-  "ein": {
-   "g": "a, an",
-   "t": "article"
-  },
-  "eine": {
-   "g": "a, an (feminine)",
-   "t": "article"
-  },
-  "einem": {
-   "g": "a (dative)",
-   "t": "article"
-  },
-  "einen": {
-   "g": "a (accusative masculine)",
-   "t": "article"
   },
   "einschränken": {
    "g": "to restrict; to allow something only within limits",
@@ -339,10 +299,6 @@
    "g": "worked out (nachrechnen); redid the arithmetic to check",
    "t": "verb"
   },
-  "neunundsechzig": {
-   "g": "sixty-nine",
-   "t": "number"
-  },
   "nicht": {
    "g": "not",
    "t": "adverb"
@@ -469,14 +425,6 @@
    "g": "gives away (verraten); reveals what was meant to stay private",
    "t": "verb"
   },
-  "vierundzwanzig": {
-   "g": "twenty-four",
-   "t": "number"
-  },
-  "vierzig": {
-   "g": "forty",
-   "t": "number"
-  },
   "warst": {
    "g": "you were (sein)",
    "t": "verb"
@@ -528,10 +476,6 @@
   "zeigt": {
    "g": "points, shows (zeigen)",
    "t": "verb"
-  },
-  "zwanzig": {
-   "g": "twenty",
-   "t": "number"
   },
   "zweite": {
    "g": "second; every other payment ('jede zweite Zahlung')",

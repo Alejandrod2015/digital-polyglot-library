@@ -365,10 +365,6 @@
    "g": "they walk, go",
    "t": "verb"
   },
-  "andrés": {
-   "g": "Andrés (name)",
-   "t": "noun"
-  },
   "andén": {
    "g": "sidewalk, platform",
    "t": "noun"
@@ -1057,10 +1053,6 @@
    "g": "changed",
    "t": "verb"
   },
-  "camilo": {
-   "g": "Camilo (name)",
-   "t": "noun"
-  },
   "camina": {
    "g": "walks",
    "t": "verb"
@@ -1737,10 +1729,6 @@
    "g": "when",
    "t": "conjunction"
   },
-  "cuatro": {
-   "g": "four",
-   "t": "number"
-  },
   "cuchara": {
    "g": "spoon",
    "t": "noun"
@@ -1875,10 +1863,6 @@
   },
   "dedos": {
    "g": "fingers",
-   "t": "noun"
-  },
-  "deivis": {
-   "g": "Deivis (name)",
    "t": "noun"
   },
   "deja": {
@@ -2017,10 +2001,6 @@
    "g": "teeth",
    "t": "noun"
   },
-  "diez": {
-   "g": "ten",
-   "t": "number"
-  },
   "diga": {
    "g": "say (subjunctive)",
    "t": "verb"
@@ -2109,10 +2089,6 @@
    "g": "nicely golden, browned",
    "t": "adjective"
   },
-  "dos": {
-   "g": "two",
-   "t": "number"
-  },
   "doña": {
    "g": "madam, Mrs.",
    "t": "noun"
@@ -2155,14 +2131,6 @@
   },
   "ejército": {
    "g": "army",
-   "t": "noun"
-  },
-  "el": {
-   "g": "the",
-   "t": "article"
-  },
-  "elena": {
-   "g": "Elena (name)",
    "t": "noun"
   },
   "ella": {
@@ -2561,10 +2529,6 @@
    "g": "family",
    "t": "noun"
   },
-  "fanny": {
-   "g": "Fanny (name)",
-   "t": "noun"
-  },
   "fanático": {
    "g": "fan, fanatic",
    "t": "noun"
@@ -2587,10 +2551,6 @@
   },
   "feria": {
    "g": "fair, festival",
-   "t": "noun"
-  },
-  "ferney": {
-   "g": "Ferney (name)",
    "t": "noun"
   },
   "ficha": {
@@ -3337,10 +3297,6 @@
    "g": "was judging",
    "t": "verb"
   },
-  "la": {
-   "g": "the; her, it",
-   "t": "article"
-  },
   "lado": {
    "g": "side",
    "t": "noun"
@@ -3368,10 +3324,6 @@
   "largarse": {
    "g": "to leave, clear off",
    "t": "verb"
-  },
-  "las": {
-   "g": "the; them",
-   "t": "article"
   },
   "lateral": {
    "g": "side, lateral",
@@ -3561,10 +3513,6 @@
    "g": "hills",
    "t": "noun"
   },
-  "los": {
-   "g": "the; them",
-   "t": "article"
-  },
   "luces": {
    "g": "lights",
    "t": "noun"
@@ -3703,14 +3651,6 @@
   },
   "manteca": {
    "g": "lard, fat",
-   "t": "noun"
-  },
-  "manu": {
-   "g": "Manu (name)",
-   "t": "noun"
-  },
-  "manuela": {
-   "g": "Manuela (name)",
    "t": "noun"
   },
   "maní": {
@@ -3872,14 +3812,6 @@
   "mija": {
    "g": "dear, honey (girl)",
    "t": "expression"
-  },
-  "mil": {
-   "g": "a thousand",
-   "t": "number"
-  },
-  "miles": {
-   "g": "thousands",
-   "t": "number"
   },
   "minuto": {
    "g": "minute",
@@ -4177,10 +4109,6 @@
    "g": "not even, nor",
    "t": "conjunction"
   },
-  "nico": {
-   "g": "Nico (name)",
-   "t": "noun"
-  },
   "niegan": {
    "g": "they deny, refuse",
    "t": "verb"
@@ -4229,17 +4157,9 @@
    "g": "news",
    "t": "noun"
   },
-  "nubia": {
-   "g": "Nubia (name)",
-   "t": "noun"
-  },
   "nudo": {
    "g": "knot",
    "t": "noun"
-  },
-  "nueve": {
-   "g": "nine",
-   "t": "number"
   },
   "nuevo": {
    "g": "new",
@@ -4392,10 +4312,6 @@
   "oíste": {
    "g": "you heard",
    "t": "verb"
-  },
-  "pa": {
-   "g": "for, to (short for para)",
-   "t": "preposition"
   },
   "paciencia": {
    "g": "patience",
@@ -5353,10 +5269,6 @@
    "g": "queen",
    "t": "noun"
   },
-  "reinaldo": {
-   "g": "Reinaldo (name)",
-   "t": "other"
-  },
   "reja": {
    "g": "iron grille, bars",
    "t": "noun"
@@ -5552,10 +5464,6 @@
   "ronda": {
    "g": "round, patrol",
    "t": "noun"
-  },
-  "ronny": {
-   "g": "Ronny (name)",
-   "t": "other"
   },
   "rozaban": {
    "g": "they brushed against",
@@ -6381,10 +6289,6 @@
    "g": "truce",
    "t": "noun"
   },
-  "treinta": {
-   "g": "thirty",
-   "t": "number"
-  },
   "trepando": {
    "g": "climbing",
    "t": "verb"
@@ -6392,10 +6296,6 @@
   "trepó": {
    "g": "climbed up",
    "t": "verb"
-  },
-  "tres": {
-   "g": "three",
-   "t": "number"
   },
   "tripas": {
    "g": "guts, intestines",
@@ -6448,26 +6348,6 @@
   "tú": {
    "g": "you",
    "t": "pronoun"
-  },
-  "un": {
-   "g": "a, one",
-   "t": "article"
-  },
-  "una": {
-   "g": "a, one (fem.)",
-   "t": "article"
-  },
-  "unas": {
-   "g": "some (fem.)",
-   "t": "article"
-  },
-  "uno": {
-   "g": "one",
-   "t": "number"
-  },
-  "unos": {
-   "g": "some, a few",
-   "t": "article"
   },
   "usted": {
    "g": "you (formal)",
@@ -6548,10 +6428,6 @@
   "vecinos": {
    "g": "neighbors",
    "t": "noun"
-  },
-  "veinte": {
-   "g": "twenty",
-   "t": "number"
   },
   "velas": {
    "g": "candles",
@@ -6785,18 +6661,6 @@
    "g": "road, route",
    "t": "noun"
   },
-  "wilfrido": {
-   "g": "Wilfrido (man's name)",
-   "t": "noun"
-  },
-  "wilson": {
-   "g": "Wilson (man's name)",
-   "t": "noun"
-  },
-  "wílmer": {
-   "g": "Wilmer (man's name)",
-   "t": "noun"
-  },
   "y": {
    "g": "and",
    "t": "conjunction"
@@ -6805,32 +6669,12 @@
    "g": "already, now",
    "t": "adverb"
   },
-  "yaneth": {
-   "g": "Yaneth (woman's name)",
-   "t": "noun"
-  },
-  "yina": {
-   "g": "Yina (woman's name)",
-   "t": "noun"
-  },
-  "yiría": {
-   "g": "Yiria (woman's name)",
-   "t": "noun"
-  },
   "yo": {
    "g": "I",
    "t": "pronoun"
   },
   "yuca": {
    "g": "cassava, yuca",
-   "t": "noun"
-  },
-  "yudy": {
-   "g": "Yudy (woman's name)",
-   "t": "noun"
-  },
-  "yésica": {
-   "g": "Yesica (woman's name)",
    "t": "noun"
   },
   "zapote": {
@@ -6847,10 +6691,6 @@
   },
   "árboles": {
    "g": "trees",
-   "t": "noun"
-  },
-  "édgar": {
-   "g": "Edgar (man's name)",
    "t": "noun"
   },
   "él": {
@@ -6891,10 +6731,6 @@
   },
   "pelo": {
    "g": "hair",
-   "t": "noun"
-  },
-  "petrona": {
-   "g": "Petrona (woman's name)",
    "t": "noun"
   },
   "piedras": {
@@ -6940,6 +6776,10 @@
   "videollamada": {
    "g": "video call",
    "t": "noun"
+  },
+  "pa": {
+   "g": "for, to (short for para)",
+   "t": "preposition"
   }
  }
 }

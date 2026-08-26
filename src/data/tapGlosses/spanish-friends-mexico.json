@@ -65,10 +65,6 @@
    "g": "in, on",
    "t": "preposition"
   },
-  "la": {
-   "g": "the; her, it",
-   "t": "article"
-  },
   "arena": {
    "g": "sand",
    "t": "noun"
@@ -141,10 +137,6 @@
    "g": "between, among",
    "t": "preposition"
   },
-  "el": {
-   "g": "the",
-   "t": "article"
-  },
   "olor": {
    "g": "smell",
    "t": "noun"
@@ -176,10 +168,6 @@
   "puso": {
    "g": "put, placed",
    "t": "verb"
-  },
-  "una": {
-   "g": "a, one (fem.)",
-   "t": "article"
   },
   "mano": {
    "g": "hand; bro, dude",
@@ -248,10 +236,6 @@
   "fue": {
    "g": "was, went",
    "t": "verb"
-  },
-  "un": {
-   "g": "a, one",
-   "t": "article"
   },
   "desmadre": {
    "g": "chaos, wild mess",
@@ -505,10 +489,6 @@
    "g": "they, them (women)",
    "t": "pronoun"
   },
-  "dos": {
-   "g": "two",
-   "t": "number"
-  },
   "hacia": {
    "g": "toward",
    "t": "preposition"
@@ -581,10 +561,6 @@
    "g": "they walked",
    "t": "verb"
   },
-  "los": {
-   "g": "the; them",
-   "t": "article"
-  },
   "hablaba": {
    "g": "was talking, spoke",
    "t": "verb"
@@ -624,10 +600,6 @@
   "embarrada": {
    "g": "screwup, mess",
    "t": "noun"
-  },
-  "las": {
-   "g": "the; them",
-   "t": "article"
   },
   "rodillas": {
    "g": "knees",
@@ -869,10 +841,6 @@
    "g": "night",
    "t": "noun"
   },
-  "unos": {
-   "g": "some, a few",
-   "t": "article"
-  },
   "esquina": {
    "g": "corner",
    "t": "noun"
@@ -963,10 +931,6 @@
   },
   "san": {
    "g": "Saint",
-   "t": "noun"
-  },
-  "juan": {
-   "g": "Juan (name)",
    "t": "noun"
   },
   "dios": {
@@ -1088,10 +1052,6 @@
   "lleva": {
    "g": "carries, takes",
    "t": "verb"
-  },
-  "cinco": {
-   "g": "five",
-   "t": "number"
   },
   "presumió": {
    "g": "bragged",
@@ -1581,10 +1541,6 @@
    "g": "was doing, made",
    "t": "verb"
   },
-  "tres": {
-   "g": "three",
-   "t": "number"
-  },
   "tan": {
    "g": "so, such",
    "t": "adverb"
@@ -1675,10 +1631,6 @@
   },
   "patio": {
    "g": "courtyard, yard",
-   "t": "noun"
-  },
-  "beto": {
-   "g": "Beto (name)",
    "t": "noun"
   },
   "ganas": {
@@ -2141,10 +2093,6 @@
    "g": "crazy",
    "t": "adjective"
   },
-  "mil": {
-   "g": "a thousand",
-   "t": "number"
-  },
   "patrón": {
    "g": "the boss",
    "t": "noun"
@@ -2223,10 +2171,6 @@
   },
   "mezcal": {
    "g": "mezcal, the Oaxacan agave spirit",
-   "t": "noun"
-  },
-  "nayeli": {
-   "g": "Nayeli (name)",
    "t": "noun"
   },
   "venía": {
@@ -2320,10 +2264,6 @@
   "enfrente": {
    "g": "across, opposite",
    "t": "adverb"
-  },
-  "cuatro": {
-   "g": "four",
-   "t": "number"
   },
   "sintiéndose": {
    "g": "feeling",
@@ -2596,10 +2536,6 @@
   "tortillas": {
    "g": "flatbreads",
    "t": "noun"
-  },
-  "unas": {
-   "g": "some (fem.)",
-   "t": "article"
   },
   "daban": {
    "g": "gave, considered",
@@ -2912,10 +2848,6 @@
   "agarró": {
    "g": "caught, got",
    "t": "verb"
-  },
-  "renata": {
-   "g": "Renata (name)",
-   "t": "noun"
   },
   "buenísima": {
    "g": "really good",
@@ -3609,14 +3541,6 @@
    "g": "to work",
    "t": "verb"
   },
-  "diego": {
-   "g": "Diego (name)",
-   "t": "noun"
-  },
-  "uno": {
-   "g": "one",
-   "t": "number"
-  },
   "sino": {
    "g": "but rather",
    "t": "conjunction"
@@ -3877,20 +3801,12 @@
    "g": "border",
    "t": "noun"
   },
-  "regina": {
-   "g": "Regina (name)",
-   "t": "noun"
-  },
   "chilanga": {
    "g": "woman from Mexico City",
    "t": "noun"
   },
   "hueso": {
    "g": "bone",
-   "t": "noun"
-  },
-  "nacho": {
-   "g": "Nacho (name)",
    "t": "noun"
   },
   "función": {
@@ -3985,10 +3901,6 @@
    "g": "out of the corner of the eye",
    "t": "expression"
   },
-  "segunda": {
-   "g": "second",
-   "t": "numeral"
-  },
   "berreaba": {
    "g": "was bawling, yelling",
    "t": "verb"
@@ -4040,10 +3952,6 @@
   "cuándo": {
    "g": "when",
    "t": "adverb"
-  },
-  "marisol": {
-   "g": "Marisol (name)",
-   "t": "noun"
   },
   "marimba": {
    "g": "a marimba",
@@ -4184,10 +4092,6 @@
   "enseñando": {
    "g": "teaching, showing",
    "t": "verb"
-  },
-  "chucho": {
-   "g": "Chucho (name)",
-   "t": "noun"
   },
   "prepa": {
    "g": "high school",
@@ -4345,10 +4249,6 @@
    "g": "buddy, pal",
    "t": "slang"
   },
-  "mauricio": {
-   "g": "Mauricio (name)",
-   "t": "noun"
-  },
   "tapatío": {
    "g": "man from Guadalajara",
    "t": "noun"
@@ -4379,10 +4279,6 @@
   },
   "marchanta": {
    "g": "the market vendor lady",
-   "t": "noun"
-  },
-  "lupe": {
-   "g": "Lupe (name)",
    "t": "noun"
   },
   "dorados": {
@@ -4460,10 +4356,6 @@
   "aquella": {
    "g": "that",
    "t": "determiner"
-  },
-  "alondra": {
-   "g": "Alondra (name)",
-   "t": "noun"
   },
   "tapatía": {
    "g": "woman from Guadalajara",
@@ -4615,10 +4507,6 @@
   },
   "lija": {
    "g": "sandpaper",
-   "t": "noun"
-  },
-  "bere": {
-   "g": "Bere (name)",
    "t": "noun"
   },
   "paseado": {
@@ -4824,14 +4712,6 @@
   "plática": {
    "g": "the conversation, chat",
    "t": "noun"
-  },
-  "chuy": {
-   "g": "Chuy (name)",
-   "t": "noun"
-  },
-  "seis": {
-   "g": "six",
-   "t": "numeral"
   },
   "mochilas": {
    "g": "backpacks",
@@ -5052,10 +4932,6 @@
   "oaxaqueña": {
    "g": "from Oaxaca",
    "t": "adjective"
-  },
-  "aldo": {
-   "g": "Aldo (name)",
-   "t": "noun"
   },
   "palenqueros": {
    "g": "mezcal distillers",
@@ -5357,10 +5233,6 @@
    "g": "reviews",
    "t": "noun"
   },
-  "damián": {
-   "g": "Damián (name)",
-   "t": "noun"
-  },
   "yucateco": {
    "g": "Yucatecan man",
    "t": "adjective"
@@ -5649,10 +5521,6 @@
    "g": "the lights",
    "t": "noun"
   },
-  "chente": {
-   "g": "Chente (name)",
-   "t": "noun"
-  },
   "banco": {
    "g": "a stool",
    "t": "noun"
@@ -5663,10 +5531,6 @@
   },
   "cafés": {
    "g": "coffees",
-   "t": "noun"
-  },
-  "fabiola": {
-   "g": "Fabiola (name)",
    "t": "noun"
   },
   "chava": {
@@ -6065,10 +5929,6 @@
    "g": "border checkpoint",
    "t": "noun"
   },
-  "cuau": {
-   "g": "Cuau (name)",
-   "t": "noun"
-  },
   "tijuanense": {
    "g": "from Tijuana",
    "t": "adjective"
@@ -6192,10 +6052,6 @@
   "seguían": {
    "g": "kept going",
    "t": "verb"
-  },
-  "brenda": {
-   "g": "Brenda (name)",
-   "t": "noun"
   },
   "avenida": {
    "g": "the avenue",

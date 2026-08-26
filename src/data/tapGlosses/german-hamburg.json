@@ -45,10 +45,6 @@
    "g": "over, across; about",
    "t": "preposition"
   },
-  "das": {
-   "g": "the; that",
-   "t": "article"
-  },
   "kopfsteinpflaster": {
    "g": "cobblestones, cobbled paving",
    "t": "noun"
@@ -137,10 +133,6 @@
    "g": "before",
    "t": "conjunction"
   },
-  "den": {
-   "g": "the (accusative)",
-   "t": "article"
-  },
   "mund": {
    "g": "mouth",
    "t": "noun"
@@ -164,10 +156,6 @@
   "für": {
    "g": "for",
    "t": "preposition"
-  },
-  "ein": {
-   "g": "a, an; one",
-   "t": "article"
   },
   "wunderschöner": {
    "g": "a beautiful (wunderschön)",
@@ -213,10 +201,6 @@
    "g": "me (dative)",
    "t": "pronoun"
   },
-  "eine": {
-   "g": "a, an",
-   "t": "article"
-  },
   "ganze": {
    "g": "whole (ganz)",
    "t": "adjective"
@@ -236,10 +220,6 @@
   "ist": {
    "g": "is (sein)",
    "t": "verb"
-  },
-  "der": {
-   "g": "the; who, which",
-   "t": "article"
   },
   "fehler": {
    "g": "mistake (der Fehler)",
@@ -329,10 +309,6 @@
    "g": "holds (halten)",
    "t": "verb"
   },
-  "die": {
-   "g": "the; who, which",
-   "t": "article"
-  },
   "anderen": {
    "g": "other (declined)",
    "t": "pronoun"
@@ -348,10 +324,6 @@
   "an": {
    "g": "at, on, to",
    "t": "preposition"
-  },
-  "einer": {
-   "g": "one (of them); a (dative)",
-   "t": "article"
   },
   "bäckerei": {
    "g": "a bakery",
@@ -397,10 +369,6 @@
    "g": "take (nehmen); I assume (nehme ich an)",
    "t": "verb"
   },
-  "zwei": {
-   "g": "two",
-   "t": "number"
-  },
   "diesen": {
    "g": "this (accusative)",
    "t": "pronoun"
@@ -420,10 +388,6 @@
   "noch": {
    "g": "still, yet; fourteen more (noch vierzehn)",
    "t": "adverb"
-  },
-  "einen": {
-   "g": "a, an (accusative)",
-   "t": "article"
   },
   "schönen": {
    "g": "nice, lovely (schön)",
@@ -456,10 +420,6 @@
   "nach": {
    "g": "after; home (to; nach Hause)",
    "t": "preposition"
-  },
-  "dem": {
-   "g": "the (dative)",
-   "t": "article"
   },
   "mittag": {
    "g": "midday, noon",
@@ -766,10 +726,6 @@
    "g": "under",
    "t": "preposition"
   },
-  "einem": {
-   "g": "a, an (dative)",
-   "t": "article"
-  },
   "vordach": {
    "g": "a canopy, porch roof",
    "t": "noun"
@@ -1014,10 +970,6 @@
    "g": "gives (geben); there is (es gibt)",
    "t": "verb"
   },
-  "kein": {
-   "g": "no, not a",
-   "t": "article"
-  },
   "schlechtes": {
    "g": "bad (schlecht)",
    "t": "adjective"
@@ -1029,10 +981,6 @@
   "lebensmotto": {
    "g": "a motto to live by",
    "t": "noun"
-  },
-  "eins": {
-   "g": "one",
-   "t": "number"
   },
   "sonne": {
    "g": "sun (die Sonne)",
@@ -1518,10 +1466,6 @@
   "zettel": {
    "g": "note, slip of paper (der Zettel)",
    "t": "noun"
-  },
-  "keine": {
-   "g": "no, not a (kein)",
-   "t": "article"
   },
   "regel": {
    "g": "rule (die Regel)",
@@ -2505,10 +2449,6 @@
    "g": "clean",
    "t": "adjective"
   },
-  "zehn": {
-   "g": "ten",
-   "t": "number"
-  },
   "keinen": {
    "g": "no, none (kein)",
    "t": "pronoun"
@@ -2572,10 +2512,6 @@
   "karton": {
    "g": "cardboard box (der Karton)",
    "t": "noun"
-  },
-  "erste": {
-   "g": "first (erst, declined)",
-   "t": "number"
   },
   "kennengelernt": {
    "g": "got to know, met (kennenlernen)",
@@ -2673,10 +2609,6 @@
    "g": "a handshake (that seals a deal)",
    "t": "noun"
   },
-  "keinem": {
-   "g": "no, not a (kein, dative)",
-   "t": "article"
-  },
   "überflüssigen": {
    "g": "superfluous, needless (überflüssig)",
    "t": "adjective"
@@ -2720,10 +2652,6 @@
   "wiegt": {
    "g": "weighs (wiegen)",
    "t": "verb"
-  },
-  "drei": {
-   "g": "three",
-   "t": "number"
   },
   "seiten": {
    "g": "pages (die Seite)",
@@ -2888,10 +2816,6 @@
   "sammle": {
    "g": "I collect (sammeln)",
    "t": "verb"
-  },
-  "eines": {
-   "g": "of a",
-   "t": "article"
   },
   "tages": {
    "g": "of the day (Tag)",
@@ -3509,10 +3433,6 @@
    "g": "sizes up, gets acquainted (beschnuppern)",
    "t": "verb"
   },
-  "zweiten": {
-   "g": "second (zweit, declined)",
-   "t": "number"
-  },
   "kaffee": {
    "g": "coffee (der Kaffee)",
    "t": "noun"
@@ -3628,10 +3548,6 @@
   "manche": {
    "g": "some (people)",
    "t": "pronoun"
-  },
-  "zwanzig": {
-   "g": "twenty",
-   "t": "number"
   },
   "behandle": {
    "g": "treat (behandeln)",
@@ -3916,10 +3832,6 @@
   "teeküche": {
    "g": "an office kitchenette",
    "t": "noun"
-  },
-  "des": {
-   "g": "of the (genitive)",
-   "t": "article"
   },
   "kontors": {
    "g": "of the Kontor (Kontor)",
@@ -4244,10 +4156,6 @@
   "seid": {
    "g": "you are (sein)",
    "t": "verb"
-  },
-  "sechs": {
-   "g": "six",
-   "t": "number"
   },
   "woche": {
    "g": "week (die Woche)",
@@ -5959,10 +5867,6 @@
    "g": "goodwill, benevolence",
    "t": "noun"
   },
-  "zweite": {
-   "g": "second (zweit, declined)",
-   "t": "number"
-  },
   "nimmst": {
    "g": "you take; an die Hand nehmen (nehmen)",
    "t": "verb"
@@ -6143,10 +6047,6 @@
    "g": "shouts (schreien)",
    "t": "verb"
   },
-  "sieben": {
-   "g": "seven",
-   "t": "number"
-  },
   "stand": {
    "g": "stood; was written (stehen, past)",
    "t": "verb"
@@ -6178,10 +6078,6 @@
   "verlieben": {
    "g": "to fall in love (sich verlieben)",
    "t": "verb"
-  },
-  "vier": {
-   "g": "four",
-   "t": "number"
   },
   "völlig": {
    "g": "completely, totally",

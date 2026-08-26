@@ -581,10 +581,6 @@
    "g": "unkindness",
    "t": "noun"
   },
-  "cento": {
-   "g": "hundred",
-   "t": "number"
-  },
   "cerca": {
    "g": "looks for",
    "t": "verb"
@@ -652,14 +648,6 @@
   "cima": {
    "g": "top, peak",
    "t": "noun"
-  },
-  "cinquanta": {
-   "g": "fifty",
-   "t": "number"
-  },
-  "cinque": {
-   "g": "five",
-   "t": "number"
   },
   "città": {
    "g": "city",
@@ -889,10 +877,6 @@
    "g": "of the",
    "t": "preposition"
   },
-  "dei": {
-   "g": "of the, some",
-   "t": "article"
-  },
   "del": {
    "g": "of the, some",
    "t": "preposition"
@@ -920,14 +904,6 @@
   "dice": {
    "g": "says",
    "t": "verb"
-  },
-  "diciotto": {
-   "g": "eighteen",
-   "t": "number"
-  },
-  "dieci": {
-   "g": "ten",
-   "t": "number"
   },
   "dietro": {
    "g": "behind",
@@ -1032,10 +1008,6 @@
   "dritto": {
    "g": "straight",
    "t": "adverb"
-  },
-  "due": {
-   "g": "two",
-   "t": "number"
   },
   "dura": {
    "g": "lasts",
@@ -1341,10 +1313,6 @@
    "g": "already",
    "t": "adverb"
   },
-  "gli": {
-   "g": "the; to him",
-   "t": "article"
-  },
   "gomito": {
    "g": "elbow",
    "t": "noun"
@@ -1401,14 +1369,6 @@
    "g": "you have",
    "t": "verb"
   },
-  "i": {
-   "g": "the",
-   "t": "article"
-  },
-  "il": {
-   "g": "the",
-   "t": "article"
-  },
   "in": {
    "g": "in",
    "t": "preposition"
@@ -1457,14 +1417,6 @@
    "g": "Italy",
    "t": "noun"
   },
-  "l": {
-   "g": "the",
-   "t": "article"
-  },
-  "la": {
-   "g": "the; her",
-   "t": "article"
-  },
   "lampeggia": {
    "g": "flashes",
    "t": "verb"
@@ -1492,10 +1444,6 @@
   "lavoro": {
    "g": "work, job",
    "t": "noun"
-  },
-  "le": {
-   "g": "the; them",
-   "t": "article"
   },
   "legge": {
    "g": "reads",
@@ -1560,10 +1508,6 @@
   "litigare": {
    "g": "to argue",
    "t": "verb"
-  },
-  "lo": {
-   "g": "the; it, him",
-   "t": "article"
   },
   "lontano": {
    "g": "far, distant",
@@ -1837,10 +1781,6 @@
    "g": "normal",
    "t": "adjective"
   },
-  "nove": {
-   "g": "nine",
-   "t": "number"
-  },
   "numeri": {
    "g": "numbers",
    "t": "noun"
@@ -1928,10 +1868,6 @@
   "ottiene": {
    "g": "gets, obtains",
    "t": "verb"
-  },
-  "otto": {
-   "g": "eight",
-   "t": "number"
   },
   "pacchetto": {
    "g": "small parcel",
@@ -2353,10 +2289,6 @@
    "g": "how much",
    "t": "adjective"
   },
-  "quaranta": {
-   "g": "forty",
-   "t": "number"
-  },
   "quartieri": {
    "g": "districts, quarters",
    "t": "noun"
@@ -2364,10 +2296,6 @@
   "quasi": {
    "g": "almost",
    "t": "adverb"
-  },
-  "quattro": {
-   "g": "four",
-   "t": "number"
   },
   "quegli": {
    "g": "those",
@@ -2388,10 +2316,6 @@
   "qui": {
    "g": "here",
    "t": "adverb"
-  },
-  "quindici": {
-   "g": "fifteen",
-   "t": "number"
   },
   "raccoglie": {
    "g": "picks up",
@@ -2689,10 +2613,6 @@
    "g": "second course; second",
    "t": "noun"
   },
-  "sedici": {
-   "g": "sixteen",
-   "t": "number"
-  },
   "sedie": {
    "g": "chairs",
    "t": "noun"
@@ -2733,10 +2653,6 @@
    "g": "secret",
    "t": "noun"
   },
-  "sei": {
-   "g": "six",
-   "t": "number"
-  },
   "sembra": {
    "g": "seems",
    "t": "verb"
@@ -2776,10 +2692,6 @@
   "servizio": {
    "g": "service",
    "t": "noun"
-  },
-  "sette": {
-   "g": "seven",
-   "t": "number"
   },
   "si": {
    "g": "oneself, himself",
@@ -3201,10 +3113,6 @@
    "g": "trattoria (restaurant)",
    "t": "noun"
   },
-  "tre": {
-   "g": "three",
-   "t": "number"
-  },
   "trema": {
    "g": "shivers",
    "t": "verb"
@@ -3264,18 +3172,6 @@
   "ulivi": {
    "g": "olive trees",
    "t": "noun"
-  },
-  "un": {
-   "g": "a, an",
-   "t": "article"
-  },
-  "una": {
-   "g": "a, an",
-   "t": "article"
-  },
-  "uno": {
-   "g": "one",
-   "t": "number"
   },
   "unte": {
    "g": "greasy",
@@ -3340,10 +3236,6 @@
   "venditore": {
    "g": "seller, vendor",
    "t": "noun"
-  },
-  "venti": {
-   "g": "twenty",
-   "t": "number"
   },
   "vento": {
    "g": "wind",
@@ -3428,10 +3320,6 @@
   "zaino": {
    "g": "backpack",
    "t": "noun"
-  },
-  "zero": {
-   "g": "zero",
-   "t": "number"
   },
   "zucchero": {
    "g": "sugar",

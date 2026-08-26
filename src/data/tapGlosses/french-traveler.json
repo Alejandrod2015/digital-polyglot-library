@@ -131,14 +131,6 @@
    "g": "calm, quiet",
    "t": "adjective"
   },
-  "ce": {
-   "g": "this, that",
-   "t": "article"
-  },
-  "cette": {
-   "g": "this, that (feminine)",
-   "t": "article"
-  },
   "chaud": {
    "g": "hot, warm",
    "t": "adjective"
@@ -150,10 +142,6 @@
   "ciel": {
    "g": "sky (le ciel)",
    "t": "noun"
-  },
-  "cinq": {
-   "g": "five",
-   "t": "number"
   },
   "combinaison": {
    "g": "wetsuit (la combinaison)",
@@ -219,14 +207,6 @@
    "g": "last, final",
    "t": "adjective"
   },
-  "des": {
-   "g": "of the (de + les); some",
-   "t": "article"
-  },
-  "deux": {
-   "g": "two",
-   "t": "number"
-  },
   "devant": {
    "g": "in front of",
    "t": "preposition"
@@ -238,10 +218,6 @@
   "douce": {
    "g": "soft, gentle (doux)",
    "t": "adjective"
-  },
-  "du": {
-   "g": "of the, from the (de + le)",
-   "t": "article"
   },
   "eau": {
    "g": "water (l'eau)",
@@ -343,25 +319,9 @@
    "g": "I",
    "t": "pronoun"
   },
-  "l": {
-   "g": "the (l', from le/la before a vowel)",
-   "t": "article"
-  },
-  "la": {
-   "g": "the (feminine); her, it",
-   "t": "article"
-  },
-  "le": {
-   "g": "the (masculine); him, it",
-   "t": "article"
-  },
   "lente": {
    "g": "slow (lent)",
    "t": "adjective"
-  },
-  "les": {
-   "g": "the (plural)",
-   "t": "article"
   },
   "leurs": {
    "g": "their (plural)",
@@ -631,21 +591,9 @@
    "g": "all; everybody (tout le monde)",
    "t": "pronoun"
   },
-  "trois": {
-   "g": "three",
-   "t": "number"
-  },
   "tu": {
    "g": "you (informal)",
    "t": "pronoun"
-  },
-  "un": {
-   "g": "a, an; one",
-   "t": "article"
-  },
-  "une": {
-   "g": "a, an (feminine)",
-   "t": "article"
   },
   "vague": {
    "g": "wave (la vague)",

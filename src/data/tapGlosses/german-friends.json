@@ -29,10 +29,6 @@
    "g": "since; for",
    "t": "preposition"
   },
-  "einem": {
-   "g": "a, one (dat.)",
-   "t": "article"
-  },
   "jahr": {
    "g": "year",
    "t": "noun"
@@ -40,10 +36,6 @@
   "wohnt": {
    "g": "lives, resides (wohnen)",
    "t": "verb"
-  },
-  "nadia": {
-   "g": "Nadia (name)",
-   "t": "other"
   },
   "in": {
    "g": "in, into",
@@ -55,10 +47,6 @@
   },
   "doch": {
    "g": "yet, after all; do too (particle)",
-   "t": "other"
-  },
-  "timos": {
-   "g": "Timo's (a name)",
    "t": "other"
   },
   "alte": {
@@ -97,17 +85,9 @@
    "g": "lugs; drags (schleppen)",
    "t": "verb"
   },
-  "timo": {
-   "g": "Timo (a name)",
-   "t": "other"
-  },
   "endlich": {
    "g": "finally, at last",
    "t": "adverb"
-  },
-  "den": {
-   "g": "the (accusative, dative)",
-   "t": "article"
   },
   "späti": {
    "g": "a late-night corner shop (Berlin)",
@@ -153,14 +133,6 @@
    "g": "to wait",
    "t": "verb"
   },
-  "micha": {
-   "g": "Micha (name)",
-   "t": "other"
-  },
-  "der": {
-   "g": "the; who, which",
-   "t": "article"
-  },
   "mit": {
    "g": "with",
    "t": "preposition"
@@ -176,14 +148,6 @@
   "und": {
    "g": "and",
    "t": "conjunction"
-  },
-  "jule": {
-   "g": "Jule (name)",
-   "t": "other"
-  },
-  "die": {
-   "g": "the; who, which",
-   "t": "article"
   },
   "noch": {
    "g": "still, yet",
@@ -297,10 +261,6 @@
    "g": "out; from; off",
    "t": "preposition"
   },
-  "dem": {
-   "g": "the (dative)",
-   "t": "article"
-  },
   "lehrbuch": {
    "g": "a textbook",
    "t": "noun"
@@ -348,10 +308,6 @@
   "drückt": {
    "g": "presses, pushes (drücken)",
    "t": "verb"
-  },
-  "eine": {
-   "g": "a, one (eine)",
-   "t": "article"
   },
   "molle": {
    "g": "a beer (Berlin)",
@@ -469,10 +425,6 @@
    "g": "are (sein)",
    "t": "verb"
   },
-  "drei": {
-   "g": "three",
-   "t": "number"
-  },
   "viel": {
    "g": "much, a lot",
    "t": "adverb"
@@ -484,10 +436,6 @@
   "nennt": {
    "g": "calls, names (nennen)",
    "t": "verb"
-  },
-  "einen": {
-   "g": "a, one (acc.)",
-   "t": "article"
   },
   "verpeilten": {
    "g": "scatterbrained, disorganised",
@@ -541,10 +489,6 @@
    "g": "warmer, more cordial",
    "t": "adjective"
   },
-  "das": {
-   "g": "the; that, which",
-   "t": "article"
-  },
   "grinsen": {
    "g": "to grin",
    "t": "verb"
@@ -556,10 +500,6 @@
   "taucht": {
    "g": "dives; surfaces (tauchen)",
    "t": "verb"
-  },
-  "ein": {
-   "g": "a, one",
-   "t": "article"
   },
   "neuer": {
    "g": "new (inflected)",
@@ -812,10 +752,6 @@
   "um": {
    "g": "around; at (a time); in order to",
    "t": "preposition"
-  },
-  "zwei": {
-   "g": "two",
-   "t": "number"
   },
   "stichelt": {
    "g": "needles; teases (sticheln)",
@@ -1089,10 +1025,6 @@
    "g": "below, downstairs",
    "t": "adverb"
   },
-  "dritten": {
-   "g": "third (dritte)",
-   "t": "number"
-  },
   "rein": {
    "g": "in; inside",
    "t": "adverb"
@@ -1245,10 +1177,6 @@
    "g": "squints and blinks",
    "t": "verb"
   },
-  "erste": {
-   "g": "first (erste)",
-   "t": "number"
-  },
   "essen": {
    "g": "to eat; food (essen)",
    "t": "verb"
@@ -1352,10 +1280,6 @@
   "nach": {
    "g": "to, after; according to",
    "t": "preposition"
-  },
-  "einer": {
-   "g": "a, one; someone",
-   "t": "article"
   },
   "kleinen": {
    "g": "small, little",
@@ -1509,10 +1433,6 @@
    "g": "falls (fallen)",
    "t": "verb"
   },
-  "kein": {
-   "g": "no, not a",
-   "t": "article"
-  },
   "großes": {
    "g": "big, large",
    "t": "adjective"
@@ -1612,10 +1532,6 @@
   "freund": {
    "g": "a friend; boyfriend",
    "t": "noun"
-  },
-  "hauke": {
-   "g": "Hauke (name)",
-   "t": "other"
   },
   "seiner": {
    "g": "his (seiner)",
@@ -1937,10 +1853,6 @@
    "g": "warmth, cordiality",
    "t": "noun"
   },
-  "tausend": {
-   "g": "thousand",
-   "t": "number"
-  },
   "sprüchen": {
    "g": "sayings; one-liners (Sprüche)",
    "t": "noun"
@@ -1976,10 +1888,6 @@
   "fotografieren": {
    "g": "to photograph, take photos",
    "t": "verb"
-  },
-  "frauke": {
-   "g": "Frauke (name)",
-   "t": "other"
   },
   "lotsen": {
    "g": "to steer, guide",
@@ -2741,10 +2649,6 @@
    "g": "completely, utterly",
    "t": "adverb"
   },
-  "meike": {
-   "g": "Meike (name)",
-   "t": "other"
-  },
   "kleines": {
    "g": "small, little",
    "t": "adjective"
@@ -2768,10 +2672,6 @@
   "nachbar": {
    "g": "a neighbor",
    "t": "noun"
-  },
-  "bruno": {
-   "g": "Bruno (man's name)",
-   "t": "other"
   },
   "echter": {
    "g": "a real, genuine (echt)",
@@ -2865,10 +2765,6 @@
    "g": "to pull; to move; to drift",
    "t": "verb"
   },
-  "ersten": {
-   "g": "first (erste)",
-   "t": "number"
-  },
   "jecke": {
    "g": "(Cologne) carnival revellers; crazy folk",
    "t": "noun"
@@ -2949,10 +2845,6 @@
    "g": "rolls over, overwhelms (überrollen)",
    "t": "verb"
   },
-  "zehn": {
-   "g": "ten",
-   "t": "number"
-  },
   "minuten": {
    "g": "minutes",
    "t": "noun"
@@ -3021,10 +2913,6 @@
    "g": "till, checkout, cash register",
    "t": "noun"
   },
-  "dat": {
-   "g": "the, that (Ruhr for das)",
-   "t": "article"
-  },
   "läuft": {
    "g": "runs; goes (laufen)",
    "t": "verb"
@@ -3032,10 +2920,6 @@
   "klüngel": {
    "g": "(Cologne) cliquey old-boy dealing",
    "t": "noun"
-  },
-  "katrin": {
-   "g": "Katrin (name)",
-   "t": "other"
   },
   "schneidet": {
    "g": "cuts, slices (schneiden)",
@@ -3064,10 +2948,6 @@
   "betreibt": {
    "g": "runs, operates (betreiben)",
    "t": "verb"
-  },
-  "ollie": {
-   "g": "Ollie (name)",
-   "t": "other"
   },
   "büdchen": {
    "g": "a small kiosk (Cologne)",
@@ -3341,10 +3221,6 @@
    "g": "the bank, shore (of a river)",
    "t": "noun"
   },
-  "des": {
-   "g": "of the (genitive); Bavarian 'das'",
-   "t": "article"
-  },
   "rheins": {
    "g": "of the Rhine",
    "t": "noun"
@@ -3377,10 +3253,6 @@
    "g": "grabs, packs (packen)",
    "t": "verb"
   },
-  "jana": {
-   "g": "Jana (name)",
-   "t": "other"
-  },
   "markt": {
    "g": "a market",
    "t": "noun"
@@ -3388,10 +3260,6 @@
   "verkauft": {
    "g": "sells (verkaufen)",
    "t": "verb"
-  },
-  "basti": {
-   "g": "Basti (nickname for Sebastian)",
-   "t": "other"
   },
   "abends": {
    "g": "in the evening(s)",
@@ -3577,10 +3445,6 @@
    "g": "hums (summen)",
    "t": "verb"
   },
-  "janas": {
-   "g": "Jana's (name)",
-   "t": "other"
-  },
   "gelehnt": {
    "g": "leaned (lehnen)",
    "t": "verb"
@@ -3633,10 +3497,6 @@
    "g": "searches; looks for (suchen)",
    "t": "verb"
   },
-  "korbinian": {
-   "g": "Korbinian (name)",
-   "t": "other"
-  },
   "breiter": {
    "g": "wider; broad",
    "t": "adjective"
@@ -3656,10 +3516,6 @@
   "feiertag": {
    "g": "a public holiday",
    "t": "noun"
-  },
-  "reserl": {
-   "g": "Reserl (a name)",
-   "t": "other"
   },
   "wirtin": {
    "g": "the landlady, female publican",
@@ -3921,10 +3777,6 @@
    "g": "heaves, hefts (something heavy)",
    "t": "verb"
   },
-  "sepp": {
-   "g": "Sepp (a name)",
-   "t": "other"
-  },
   "gerade": {
    "g": "straight; just now, right now",
    "t": "adverb"
@@ -3964,10 +3816,6 @@
   "tochter": {
    "g": "a daughter",
    "t": "noun"
-  },
-  "vroni": {
-   "g": "Vroni (name)",
-   "t": "other"
   },
   "kassiert": {
    "g": "collects money, cashes in (kassieren)",
@@ -4509,10 +4357,6 @@
    "g": "sinks into (hineinsinken)",
    "t": "verb"
   },
-  "ronny": {
-   "g": "Ronny (a name)",
-   "t": "other"
-  },
   "knallt": {
    "g": "bangs, slams (knallen)",
    "t": "verb"
@@ -4556,10 +4400,6 @@
   "currywurstbude": {
    "g": "a currywurst stand",
    "t": "noun"
-  },
-  "bea": {
-   "g": "Bea (woman's name)",
-   "t": "other"
   },
   "laden": {
    "g": "to load; invite; a shop",
@@ -4801,10 +4641,6 @@
    "g": "a fence",
    "t": "noun"
   },
-  "kalle": {
-   "g": "Kalle (name)",
-   "t": "other"
-  },
   "grillgut": {
    "g": "food for grilling",
    "t": "noun"
@@ -4844,10 +4680,6 @@
   "dose": {
    "g": "a can, tin",
    "t": "noun"
-  },
-  "jette": {
-   "g": "Jette (name)",
-   "t": "other"
   },
   "auffe": {
    "g": "at work, on the job (Ruhr)",
@@ -4932,10 +4764,6 @@
   "bohei": {
    "g": "a big loud fuss",
    "t": "noun"
-  },
-  "vierzig": {
-   "g": "forty",
-   "t": "number"
   },
   "durchmalochten": {
    "g": "toiled through, grafted through (durchmalochen)",
@@ -5081,10 +4909,6 @@
    "g": "a scarf",
    "t": "noun"
   },
-  "deniz": {
-   "g": "Deniz (name)",
-   "t": "other"
-  },
   "geliehen": {
    "g": "borrowed; lent (leihen)",
    "t": "verb"
@@ -5092,10 +4916,6 @@
   "drängt": {
    "g": "pushes, urges (drängen)",
    "t": "verb"
-  },
-  "ronnys": {
-   "g": "Ronny's (a name)",
-   "t": "other"
   },
   "enge": {
    "g": "narrow, tight (eng)",
@@ -5108,10 +4928,6 @@
   "bildschirm": {
    "g": "a screen",
    "t": "noun"
-  },
-  "borussia": {
-   "g": "Borussia (football club name)",
-   "t": "other"
   },
   "spielt": {
    "g": "plays (spielen)",
@@ -5304,10 +5120,6 @@
   "schickt": {
    "g": "sends (schicken)",
    "t": "verb"
-  },
-  "konrad": {
-   "g": "Konrad (name)",
-   "t": "other"
   },
   "früheren": {
    "g": "earlier, former (früher)",
@@ -5553,10 +5365,6 @@
    "g": "throws (werfen)",
    "t": "verb"
   },
-  "steffi": {
-   "g": "Steffi (a name)",
-   "t": "other"
-  },
   "kofferraum": {
    "g": "car boot, trunk",
    "t": "noun"
@@ -5592,10 +5400,6 @@
   "hinaus": {
    "g": "out, outside",
    "t": "adverb"
-  },
-  "steffis": {
-   "g": "Steffi's (a name)",
-   "t": "other"
   },
   "datsche": {
    "g": "a small weekend cottage (East German)",
@@ -5897,10 +5701,6 @@
    "g": "to let, leave",
    "t": "verb"
   },
-  "vier": {
-   "g": "four",
-   "t": "number"
-  },
   "wirt": {
    "g": "the landlord, publican",
    "t": "noun"
@@ -6136,10 +5936,6 @@
   "putzeimer": {
    "g": "a cleaning bucket",
    "t": "noun"
-  },
-  "achim": {
-   "g": "Achim (man's name)",
-   "t": "other"
   },
   "treppenhaus": {
    "g": "the stairwell of a building",
@@ -6704,10 +6500,6 @@
   "teller": {
    "g": "a plate",
    "t": "noun"
-  },
-  "zweites": {
-   "g": "a second (zweit)",
-   "t": "number"
   },
   "vollen": {
    "g": "full (voll)",

@@ -25,10 +25,6 @@
   "uma-fatia-gratis"
  ],
  "glosses": {
-  "a": {
-   "g": "the; her, it",
-   "t": "article"
-  },
   "abaixa": {
    "g": "lowers (abaixar)",
    "t": "verb"
@@ -228,10 +224,6 @@
   "artista": {
    "g": "artist",
    "t": "noun"
-  },
-  "as": {
-   "g": "the (fem. pl.)",
-   "t": "article"
   },
   "assim": {
    "g": "like this, so",
@@ -589,10 +581,6 @@
    "g": "mobile phone",
    "t": "noun"
   },
-  "cem": {
-   "g": "a hundred",
-   "t": "number"
-  },
   "centavos": {
    "g": "cents (centavo)",
    "t": "noun"
@@ -664,14 +652,6 @@
   "cima": {
    "g": "top, above",
    "t": "preposition"
-  },
-  "cinco": {
-   "g": "five",
-   "t": "number"
-  },
-  "cinquenta": {
-   "g": "fifty",
-   "t": "number"
   },
   "cintura": {
    "g": "waist",
@@ -961,10 +941,6 @@
    "g": "gives back (devolver)",
    "t": "verb"
   },
-  "dez": {
-   "g": "ten",
-   "t": "number"
-  },
   "dia": {
    "g": "day",
    "t": "noun"
@@ -1009,10 +985,6 @@
    "g": "sweet",
    "t": "adjective"
   },
-  "dois": {
-   "g": "two",
-   "t": "number"
-  },
   "dona": {
    "g": "owner, lady of the shop",
    "t": "noun"
@@ -1032,14 +1004,6 @@
   "dourados": {
    "g": "golden (dourado)",
    "t": "adjective"
-  },
-  "doze": {
-   "g": "twelve",
-   "t": "number"
-  },
-  "duas": {
-   "g": "two (fem.)",
-   "t": "number"
   },
   "dura": {
    "g": "lasts (durar)",
@@ -1709,10 +1673,6 @@
    "g": "fear",
    "t": "noun"
   },
-  "meia": {
-   "g": "half",
-   "t": "number"
-  },
   "meio": {
    "g": "middle; half",
    "t": "noun"
@@ -1768,10 +1728,6 @@
   "mexem": {
    "g": "move (mexer)",
    "t": "verb"
-  },
-  "mil": {
-   "g": "a thousand",
-   "t": "number"
   },
   "minha": {
    "g": "my (fem.)",
@@ -1945,10 +1901,6 @@
    "g": "banknotes (nota)",
    "t": "noun"
   },
-  "nove": {
-   "g": "nine",
-   "t": "number"
-  },
   "novo": {
    "g": "new; again (de novo)",
    "t": "adverb"
@@ -1985,10 +1937,6 @@
    "g": "numbers (número)",
    "t": "noun"
   },
-  "o": {
-   "g": "the; him, it",
-   "t": "article"
-  },
   "ocupa": {
    "g": "takes up (ocupar)",
    "t": "verb"
@@ -1996,10 +1944,6 @@
   "oferece": {
    "g": "offers (oferecer)",
    "t": "verb"
-  },
-  "oito": {
-   "g": "eight",
-   "t": "number"
   },
   "olha": {
    "g": "looks (olhar)",
@@ -2028,10 +1972,6 @@
   "onde": {
    "g": "where",
    "t": "pronoun"
-  },
-  "os": {
-   "g": "the (masc. pl.)",
-   "t": "article"
   },
   "ou": {
    "g": "or",
@@ -2465,10 +2405,6 @@
    "g": "how much",
    "t": "pronoun"
   },
-  "quarenta": {
-   "g": "forty",
-   "t": "number"
-  },
   "quarteirões": {
    "g": "blocks (quarteirão)",
    "t": "noun"
@@ -2476,10 +2412,6 @@
   "quase": {
    "g": "almost",
    "t": "adverb"
-  },
-  "quatro": {
-   "g": "four",
-   "t": "number"
   },
   "que": {
    "g": "that, which",
@@ -2717,10 +2649,6 @@
    "g": "holds tight (segurar)",
    "t": "verb"
   },
-  "seis": {
-   "g": "six",
-   "t": "number"
-  },
   "sem": {
    "g": "without",
    "t": "preposition"
@@ -2764,10 +2692,6 @@
   "servem": {
    "g": "are used for (servir)",
    "t": "verb"
-  },
-  "sete": {
-   "g": "seven",
-   "t": "number"
   },
   "silêncio": {
    "g": "silence",
@@ -2969,10 +2893,6 @@
    "g": "trail",
    "t": "noun"
   },
-  "trinta": {
-   "g": "thirty",
-   "t": "number"
-  },
   "tritura": {
    "g": "crushes (triturar)",
    "t": "verb"
@@ -2993,10 +2913,6 @@
    "g": "back, behind",
    "t": "noun"
   },
-  "três": {
-   "g": "three",
-   "t": "number"
-  },
   "tudo": {
    "g": "everything",
    "t": "pronoun"
@@ -3012,18 +2928,6 @@
   "têm": {
    "g": "have (ter)",
    "t": "verb"
-  },
-  "um": {
-   "g": "a, one",
-   "t": "article"
-  },
-  "uma": {
-   "g": "a, one (fem.)",
-   "t": "article"
-  },
-  "uns": {
-   "g": "some",
-   "t": "article"
   },
   "vapor": {
    "g": "steam",
@@ -3088,10 +2992,6 @@
   "vidro": {
    "g": "glass",
    "t": "noun"
-  },
-  "vinte": {
-   "g": "twenty",
-   "t": "number"
   },
   "violão": {
    "g": "guitar",

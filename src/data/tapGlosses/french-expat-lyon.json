@@ -377,10 +377,6 @@
    "g": "broken (casser)",
    "t": "noun"
   },
-  "ce": {
-   "g": "this, that",
-   "t": "article"
-  },
   "celle": {
    "g": "the one, female (celle)",
    "t": "pronoun"
@@ -397,17 +393,9 @@
    "g": "that one (celui-là)",
    "t": "pronoun"
   },
-  "cent": {
-   "g": "hundred (cent)",
-   "t": "number"
-  },
   "cet": {
    "g": "this (cet)",
    "t": "determiner"
-  },
-  "cette": {
-   "g": "this, that (feminine)",
-   "t": "article"
   },
   "chacun": {
    "g": "every single person, one by one (chacun)",
@@ -512,10 +500,6 @@
   "choses": {
    "g": "things (la chose)",
    "t": "noun"
-  },
-  "cinq": {
-   "g": "five",
-   "t": "number"
   },
   "citronnelle": {
    "g": "plant burnt to keep insects away (la citronnelle)",
@@ -753,10 +737,6 @@
    "g": "at the back of somebody or something (derrière)",
    "t": "preposition"
   },
-  "des": {
-   "g": "of the (de + les); some",
-   "t": "article"
-  },
   "descend": {
    "g": "goes down (descendre)",
    "t": "verb"
@@ -772,10 +752,6 @@
   "dessus": {
    "g": "on the top of something (dessus)",
    "t": "adverb"
-  },
-  "deux": {
-   "g": "two",
-   "t": "number"
   },
   "deuxième": {
    "g": "second, number two in a series",
@@ -833,14 +809,6 @@
    "g": "he says (dire)",
    "t": "verb"
   },
-  "dix": {
-   "g": "ten (dix)",
-   "t": "number"
-  },
-  "dix-huit": {
-   "g": "eighteen (dix-huit)",
-   "t": "number"
-  },
   "docteur": {
    "g": "another word for the person who treats you (le docteur)",
    "t": "noun"
@@ -884,10 +852,6 @@
   "douze": {
    "g": "number after eleven (douze)",
    "t": "adjective"
-  },
-  "du": {
-   "g": "of the, from the (de + le)",
-   "t": "article"
   },
   "dur": {
    "g": "hard to do, needing effort (dur)",
@@ -1237,10 +1201,6 @@
    "g": "bad feeling when you think you did wrong (la honte)",
    "t": "noun"
   },
-  "huit": {
-   "g": "eight (huit)",
-   "t": "number"
-  },
   "hésiter": {
    "g": "to wait because you are not sure (hésiter)",
    "t": "verb"
@@ -1337,14 +1297,6 @@
    "g": "in tune (juste); just, only (juste)",
    "t": "adverb"
   },
-  "l": {
-   "g": "the (l', from le/la before a vowel)",
-   "t": "article"
-  },
-  "la": {
-   "g": "the (feminine); her, it",
-   "t": "article"
-  },
   "laine": {
    "g": "wool (la laine)",
    "t": "noun"
@@ -1369,10 +1321,6 @@
    "g": "to clean something with water (laver)",
    "t": "verb"
   },
-  "le": {
-   "g": "the (masculine); him, it",
-   "t": "article"
-  },
   "lendemain": {
    "g": "day after the day you are talking about (le lendemain)",
    "t": "noun"
@@ -1380,10 +1328,6 @@
   "lentement": {
    "g": "not fast, taking your time (lentement)",
    "t": "adverb"
-  },
-  "les": {
-   "g": "the (plural)",
-   "t": "article"
   },
   "leur": {
    "g": "their; to them (leur)",
@@ -1612,10 +1556,6 @@
   "milieu": {
    "g": "part that is in the centre (le milieu)",
    "t": "noun"
-  },
-  "mille": {
-   "g": "thousand (mille)",
-   "t": "number"
   },
   "minuit": {
    "g": "twelve at night, the middle of the night (minuit)",
@@ -2209,10 +2149,6 @@
    "g": "neighbourhood (le quartier)",
    "t": "noun"
   },
-  "quatre": {
-   "g": "four (quatre)",
-   "t": "number"
-  },
   "quatrième": {
    "g": "fourth; the fourth floor (le quatrième)",
    "t": "noun"
@@ -2244,10 +2180,6 @@
   "qui": {
    "g": "who, which (qui)",
    "t": "pronoun"
-  },
-  "quinze": {
-   "g": "fifteen (quinze)",
-   "t": "number"
   },
   "quittera": {
    "g": "will leave (quitter)",
@@ -2625,10 +2557,6 @@
    "g": "smells; feels (sentir)",
    "t": "verb"
   },
-  "sept": {
-   "g": "seven (sept)",
-   "t": "number"
-  },
   "septembre": {
    "g": "September (septembre)",
    "t": "noun"
@@ -2684,10 +2612,6 @@
   "sirop": {
    "g": "sweet thick medicine you drink (le sirop)",
    "t": "noun"
-  },
-  "six": {
-   "g": "six (six)",
-   "t": "number"
   },
   "sociale": {
    "g": "state office that pays part of your care (la sécurité sociale)",
@@ -2945,14 +2869,6 @@
    "g": "very wet, wet all the way through (trempé)",
    "t": "adjective"
   },
-  "trente": {
-   "g": "thirty (trente)",
-   "t": "number"
-  },
-  "trois": {
-   "g": "three",
-   "t": "number"
-  },
   "troisième": {
    "g": "flat two floors above the street (le troisième)",
    "t": "noun"
@@ -3004,14 +2920,6 @@
   "tôt": {
    "g": "early, before the usual time (tôt)",
    "t": "adverb"
-  },
-  "un": {
-   "g": "a, an; one",
-   "t": "article"
-  },
-  "une": {
-   "g": "a, an (feminine)",
-   "t": "article"
   },
   "va": {
    "g": "goes (aller)",
@@ -3120,18 +3028,6 @@
   "ville": {
    "g": "town, city (la ville)",
    "t": "noun"
-  },
-  "vingt": {
-   "g": "number after nineteen (vingt)",
-   "t": "number"
-  },
-  "vingt-cinq": {
-   "g": "twenty-five (vingt-cinq)",
-   "t": "number"
-  },
-  "vingt-deux": {
-   "g": "twenty-two (vingt-deux)",
-   "t": "number"
   },
   "visages": {
    "g": "front part of your head (le visage)",

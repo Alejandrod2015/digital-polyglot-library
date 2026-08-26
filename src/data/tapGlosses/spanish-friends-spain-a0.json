@@ -45,10 +45,6 @@
    "g": "a female friend",
    "t": "noun"
   },
-  "la": {
-   "g": "the; her, it",
-   "t": "article"
-  },
   "espera": {
    "g": "waits for",
    "t": "verb"
@@ -60,14 +56,6 @@
   "mano": {
    "g": "hand; bro, dude",
    "t": "noun"
-  },
-  "las": {
-   "g": "the; them",
-   "t": "article"
-  },
-  "dos": {
-   "g": "two",
-   "t": "number"
   },
   "amigas": {
    "g": "female friends",
@@ -112,10 +100,6 @@
   "gente": {
    "g": "people",
    "t": "noun"
-  },
-  "el": {
-   "g": "the",
-   "t": "article"
   },
   "sol": {
    "g": "sun",
@@ -205,10 +189,6 @@
    "g": "to go up",
    "t": "verb"
   },
-  "una": {
-   "g": "a, one (fem.)",
-   "t": "article"
-  },
   "pequeña": {
    "g": "small, little",
    "t": "adjective"
@@ -228,10 +208,6 @@
   "fría": {
    "g": "cold",
    "t": "adjective"
-  },
-  "un": {
-   "g": "a, one",
-   "t": "article"
   },
   "pato": {
    "g": "duck; broke",
@@ -321,10 +297,6 @@
    "g": "city",
    "t": "noun"
   },
-  "diego": {
-   "g": "Diego (name)",
-   "t": "noun"
-  },
   "hermano": {
    "g": "brother",
    "t": "noun"
@@ -332,14 +304,6 @@
   "camina": {
    "g": "walks",
    "t": "verb"
-  },
-  "los": {
-   "g": "the; them",
-   "t": "article"
-  },
-  "tres": {
-   "g": "three",
-   "t": "number"
   },
   "repente": {
    "g": "suddenly (de repente)",
@@ -1373,10 +1337,6 @@
    "g": "already, now",
    "t": "adverb"
   },
-  "diez": {
-   "g": "ten",
-   "t": "number"
-  },
   "temprano": {
    "g": "early",
    "t": "adverb"
@@ -1472,10 +1432,6 @@
   "hambre": {
    "g": "hunger",
    "t": "noun"
-  },
-  "uno": {
-   "g": "one",
-   "t": "number"
   },
   "rara": {
    "g": "strange, odd",
@@ -1637,10 +1593,6 @@
    "g": "hour, time",
    "t": "noun"
   },
-  "unos": {
-   "g": "some, a few",
-   "t": "article"
-  },
   "montaña": {
    "g": "mountain",
    "t": "noun"
@@ -1717,20 +1669,12 @@
    "g": "camera",
    "t": "noun"
   },
-  "lucía": {
-   "g": "Lucía (name)",
-   "t": "noun"
-  },
   "tren": {
    "g": "the train",
    "t": "noun"
   },
   "madrid": {
    "g": "Madrid (city)",
-   "t": "noun"
-  },
-  "marta": {
-   "g": "Marta (name)",
    "t": "noun"
   },
   "estación": {
@@ -1865,10 +1809,6 @@
    "g": "sand",
    "t": "noun"
   },
-  "pau": {
-   "g": "Pau (name)",
-   "t": "noun"
-  },
   "barcelona": {
    "g": "Barcelona (city)",
    "t": "noun"
@@ -1979,10 +1919,6 @@
   },
   "sevilla": {
    "g": "Seville (city)",
-   "t": "noun"
-  },
-  "carmen": {
-   "g": "Carmen (name)",
    "t": "noun"
   },
   "zumo": {
@@ -2125,10 +2061,6 @@
    "g": "Valencia (city)",
    "t": "noun"
   },
-  "vicente": {
-   "g": "Vicente (name)",
-   "t": "noun"
-  },
   "dulces": {
    "g": "sweet",
    "t": "adjective"
@@ -2253,10 +2185,6 @@
    "g": "Bilbao (city)",
    "t": "noun"
   },
-  "ander": {
-   "g": "Ander (name)",
-   "t": "noun"
-  },
   "llueve": {
    "g": "it rains",
    "t": "verb"
@@ -2349,10 +2277,6 @@
    "g": "she writes",
    "t": "verb"
   },
-  "nerea": {
-   "g": "Nerea (name)",
-   "t": "noun"
-  },
   "pintxos": {
    "g": "pintxos (tapas)",
    "t": "noun"
@@ -2391,10 +2315,6 @@
   },
   "granada": {
    "g": "Granada (city)",
-   "t": "noun"
-  },
-  "nuria": {
-   "g": "Nuria (name)",
    "t": "noun"
   },
   "albaicín": {
@@ -2517,10 +2437,6 @@
    "g": "I am",
    "t": "verb"
   },
-  "iñaki": {
-   "g": "Iñaki (name)",
-   "t": "noun"
-  },
   "sebastián": {
    "g": "Sebastián (San Sebastián)",
    "t": "noun"
@@ -2555,10 +2471,6 @@
   },
   "bares": {
    "g": "bars",
-   "t": "noun"
-  },
-  "ane": {
-   "g": "Ane (name)",
    "t": "noun"
   },
   "gambas": {
@@ -2704,10 +2616,6 @@
  },
  "byStory": {
   "marta-ensena-el-retiro": {
-   "lucía": {
-    "g": "Lucía (name)",
-    "t": "noun"
-   },
    "baja": {
     "g": "goes down, lowers",
     "t": "verb",
@@ -2851,10 +2759,6 @@
      "here": -1
     },
     "gm": "f."
-   },
-   "marta": {
-    "g": "Marta (name)",
-    "t": "noun"
    },
    "la": {
     "g": "the; her, it",
@@ -3000,41 +2904,6 @@
     },
     "gm": "f."
    },
-   "las": {
-    "g": "the; them",
-    "t": "article",
-    "c": {
-     "es": "Las dos amigas",
-     "en": "The two friends"
-    },
-    "f": {
-     "label": "",
-     "kind": "line",
-     "rows": [
-      [
-       "",
-       "las amigas"
-      ],
-      [
-       "",
-       "los amigos"
-      ],
-      [
-       "",
-       "las dos"
-      ]
-     ],
-     "here": 0
-    }
-   },
-   "dos": {
-    "g": "two",
-    "t": "number",
-    "c": {
-     "es": "las dos amigas",
-     "en": "the two friends"
-    }
-   },
    "amigas": {
     "g": "female friends",
     "t": "noun",
@@ -3148,8 +3017,7 @@
        "contentos"
       ]
      ],
-     "here": -1,
-     "lemma": "contento"
+     "here": -1
     }
    },
    "lleva": {
@@ -3316,8 +3184,7 @@
        "altas"
       ]
      ],
-     "here": -1,
-     "lemma": "alto"
+     "here": -1
     }
    },
    "mucha": {
@@ -3343,8 +3210,7 @@
        "muchas"
       ]
      ],
-     "here": -1,
-     "lemma": "mucho"
+     "here": -1
     }
    },
    "gente": {
@@ -3355,29 +3221,6 @@
      "en": "a lot of people"
     },
     "gm": "f."
-   },
-   "el": {
-    "g": "the",
-    "t": "article",
-    "c": {
-     "es": "el sol",
-     "en": "the sun"
-    },
-    "f": {
-     "label": "",
-     "kind": "line",
-     "rows": [
-      [
-       "",
-       "la mano"
-      ],
-      [
-       "",
-       "los ojos"
-      ]
-     ],
-     "here": 0
-    }
    },
    "sol": {
     "g": "sun",
@@ -3556,8 +3399,7 @@
        "grande"
       ]
      ],
-     "here": -1,
-     "lemma": "grande"
+     "here": -1
     }
    },
    "habla": {
@@ -3917,8 +3759,7 @@
        "tranquilas"
       ]
      ],
-     "here": -1,
-     "lemma": "tranquilo"
+     "here": -1
     }
    },
    "responde": {
@@ -4001,33 +3842,6 @@
      "lemma": "subir"
     }
    },
-   "una": {
-    "g": "a, one (fem.)",
-    "t": "article",
-    "c": {
-     "es": "una barca pequeña",
-     "en": "a small boat"
-    },
-    "f": {
-     "label": "",
-     "kind": "line",
-     "rows": [
-      [
-       "",
-       "una barca"
-      ],
-      [
-       "",
-       "un pato"
-      ],
-      [
-       "",
-       "unas barcas"
-      ]
-     ],
-     "here": 0
-    }
-   },
    "barca": {
     "g": "a small boat",
     "t": "noun",
@@ -4070,8 +3884,7 @@
        "pequeñas"
       ]
      ],
-     "here": -1,
-     "lemma": "pequeño"
+     "here": -1
     }
    },
    "rema": {
@@ -4236,8 +4049,7 @@
        "frías"
       ]
      ],
-     "here": -1,
-     "lemma": "frío"
+     "here": -1
     }
    },
    "limpia": {
@@ -4263,31 +4075,7 @@
        "limpias"
       ]
      ],
-     "here": -1,
-     "lemma": "limpio"
-    }
-   },
-   "un": {
-    "g": "a, one",
-    "t": "article",
-    "c": {
-     "es": "Un pato",
-     "en": "A duck"
-    },
-    "f": {
-     "label": "",
-     "kind": "line",
-     "rows": [
-      [
-       "",
-       "una barca"
-      ],
-      [
-       "",
-       "unos patos"
-      ]
-     ],
-     "here": 0
+     "here": -1
     }
    },
    "pato": {
@@ -4612,8 +4400,7 @@
        "otras"
       ]
      ],
-     "here": -1,
-     "lemma": "otro"
+     "here": -1
     }
    },
    "vez": {

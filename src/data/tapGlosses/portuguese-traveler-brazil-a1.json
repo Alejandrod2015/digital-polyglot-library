@@ -25,10 +25,6 @@
   "o-sino-das-seis"
  ],
  "glosses": {
-  "a": {
-   "g": "the; her, it",
-   "t": "article"
-  },
   "abafado": {
    "g": "stuffy, airless",
    "t": "adjective"
@@ -272,10 +268,6 @@
   "arrepende": {
    "g": "do you regret it? (arrepender-se)",
    "t": "verb"
-  },
-  "as": {
-   "g": "the (fem. pl.)",
-   "t": "article"
   },
   "assim": {
    "g": "like this, so",
@@ -701,10 +693,6 @@
    "g": "mobile phone",
    "t": "noun"
   },
-  "cem": {
-   "g": "a hundred",
-   "t": "number"
-  },
   "centro": {
    "g": "town centre",
    "t": "noun"
@@ -760,14 +748,6 @@
   "cima": {
    "g": "top, above",
    "t": "preposition"
-  },
-  "cinco": {
-   "g": "five",
-   "t": "number"
-  },
-  "cinquenta": {
-   "g": "fifty",
-   "t": "number"
   },
   "cinza": {
    "g": "grey",
@@ -1121,14 +1101,6 @@
    "g": "slowly",
    "t": "adverb"
   },
-  "dez": {
-   "g": "ten",
-   "t": "number"
-  },
-  "dezoito": {
-   "g": "eighteen",
-   "t": "number"
-  },
   "dia": {
    "g": "day",
    "t": "noun"
@@ -1189,10 +1161,6 @@
    "g": "dock",
    "t": "noun"
   },
-  "dois": {
-   "g": "two",
-   "t": "number"
-  },
   "dona": {
    "g": "owner, lady of the shop",
    "t": "noun"
@@ -1208,10 +1176,6 @@
   "dos": {
    "g": "of the (pl.)",
    "t": "preposition"
-  },
-  "duas": {
-   "g": "two (fem.)",
-   "t": "number"
   },
   "duna": {
    "g": "dune",
@@ -2041,10 +2005,6 @@
    "g": "me",
    "t": "pronoun"
   },
-  "meia": {
-   "g": "half",
-   "t": "number"
-  },
   "meio": {
    "g": "middle; half",
    "t": "noun"
@@ -2092,10 +2052,6 @@
   "meu": {
    "g": "my",
    "t": "pronoun"
-  },
-  "mil": {
-   "g": "a thousand",
-   "t": "number"
   },
   "mina": {
    "g": "mine",
@@ -2325,10 +2281,6 @@
    "g": "mist",
    "t": "noun"
   },
-  "o": {
-   "g": "the; him, it",
-   "t": "article"
-  },
   "obriga": {
    "g": "forces you (obrigar)",
    "t": "verb"
@@ -2340,14 +2292,6 @@
   "ocupada": {
    "g": "taken (ocupado)",
    "t": "adjective"
-  },
-  "oitava": {
-   "g": "eighth (oitavo)",
-   "t": "number"
-  },
-  "oito": {
-   "g": "eight",
-   "t": "number"
   },
   "olha": {
    "g": "looks (olhar)",
@@ -2373,10 +2317,6 @@
    "g": "where",
    "t": "pronoun"
   },
-  "onze": {
-   "g": "eleven",
-   "t": "number"
-  },
   "onça": {
    "g": "jaguar",
    "t": "noun"
@@ -2384,10 +2324,6 @@
   "ordem": {
    "g": "the order of them",
    "t": "noun"
-  },
-  "os": {
-   "g": "the (masc. pl.)",
-   "t": "article"
   },
   "ou": {
    "g": "or",
@@ -2857,14 +2793,6 @@
    "g": "how much",
    "t": "pronoun"
   },
-  "quarenta": {
-   "g": "forty",
-   "t": "number"
-  },
-  "quarta": {
-   "g": "fourth (quarto)",
-   "t": "number"
-  },
   "quarto": {
    "g": "room",
    "t": "noun"
@@ -2872,10 +2800,6 @@
   "quase": {
    "g": "almost",
    "t": "adverb"
-  },
-  "quatro": {
-   "g": "four",
-   "t": "number"
   },
   "que": {
    "g": "that, which",
@@ -2913,17 +2837,9 @@
    "g": "kilometres (quilômetro)",
    "t": "noun"
   },
-  "quinta": {
-   "g": "fifth (quinto)",
-   "t": "number"
-  },
   "quintal": {
    "g": "back yard",
    "t": "noun"
-  },
-  "quinze": {
-   "g": "fifteen",
-   "t": "number"
   },
   "quis": {
    "g": "she wanted (querer)",
@@ -3189,10 +3105,6 @@
    "g": "I know (saber)",
    "t": "verb"
   },
-  "seis": {
-   "g": "six",
-   "t": "number"
-  },
   "sem": {
    "g": "without",
    "t": "preposition"
@@ -3244,10 +3156,6 @@
   "serve": {
    "g": "that will do (servir)",
    "t": "verb"
-  },
-  "sete": {
-   "g": "seven",
-   "t": "number"
   },
   "seu": {
    "g": "your",
@@ -3553,17 +3461,9 @@
    "g": "pillow",
    "t": "noun"
   },
-  "trezentas": {
-   "g": "three hundred",
-   "t": "number"
-  },
   "trilho": {
    "g": "rail",
    "t": "noun"
-  },
-  "trinta": {
-   "g": "thirty",
-   "t": "number"
   },
   "troco": {
    "g": "change",
@@ -3584,10 +3484,6 @@
   "trás": {
    "g": "back, behind",
    "t": "noun"
-  },
-  "três": {
-   "g": "three",
-   "t": "number"
   },
   "tudo": {
    "g": "everything",
@@ -3625,18 +3521,6 @@
    "g": "tunnel",
    "t": "noun"
   },
-  "um": {
-   "g": "a, one",
-   "t": "article"
-  },
-  "uma": {
-   "g": "a, one (fem.)",
-   "t": "article"
-  },
-  "umas": {
-   "g": "about, some (um)",
-   "t": "article"
-  },
   "umidade": {
    "g": "damp in the air",
    "t": "noun"
@@ -3644,10 +3528,6 @@
   "unha": {
    "g": "fingernail",
    "t": "noun"
-  },
-  "uns": {
-   "g": "some",
-   "t": "article"
   },
   "usa": {
    "g": "uses (usar)",
@@ -3776,10 +3656,6 @@
   "vidros": {
    "g": "jars (vidro)",
    "t": "noun"
-  },
-  "vinte": {
-   "g": "twenty",
-   "t": "number"
   },
   "vira": {
    "g": "turns; becomes (virar)",

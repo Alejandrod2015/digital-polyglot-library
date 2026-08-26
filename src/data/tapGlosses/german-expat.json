@@ -41,10 +41,6 @@
    "g": "to read off, deduce from",
    "t": "verb"
   },
-  "acht": {
-   "g": "eight",
-   "t": "number"
-  },
   "ahnen": {
    "g": "to suspect, have an inkling",
    "t": "verb"
@@ -305,10 +301,6 @@
    "g": "from that, out of it",
    "t": "adverb"
   },
-  "das": {
-   "g": "the; that",
-   "t": "article"
-  },
   "dass": {
    "g": "that (conjunction)",
    "t": "conjunction"
@@ -321,25 +313,9 @@
    "g": "of your",
    "t": "pronoun"
   },
-  "dem": {
-   "g": "the (dative)",
-   "t": "article"
-  },
-  "den": {
-   "g": "the (accusative)",
-   "t": "article"
-  },
-  "der": {
-   "g": "the; who, which",
-   "t": "article"
-  },
   "derweil": {
    "g": "meanwhile",
    "t": "adverb"
-  },
-  "des": {
-   "g": "of the (genitive)",
-   "t": "article"
   },
   "deutlich": {
    "g": "clearly, noticeably",
@@ -348,10 +324,6 @@
   "dich": {
    "g": "you (accusative)",
    "t": "pronoun"
-  },
-  "die": {
-   "g": "the; who, which",
-   "t": "article"
   },
   "diese": {
    "g": "this, these",
@@ -380,10 +352,6 @@
   "draußen": {
    "g": "outside",
    "t": "adverb"
-  },
-  "drei": {
-   "g": "three",
-   "t": "number"
   },
   "drinnen": {
    "g": "inside",
@@ -421,34 +389,6 @@
   "eher": {
    "g": "sooner, rather; sooner X than Y (eher X als Y)",
    "t": "adverb"
-  },
-  "ein": {
-   "g": "a, an; one",
-   "t": "article"
-  },
-  "eine": {
-   "g": "a, an",
-   "t": "article"
-  },
-  "einem": {
-   "g": "a, an (dative)",
-   "t": "article"
-  },
-  "einen": {
-   "g": "a, an (accusative)",
-   "t": "article"
-  },
-  "einer": {
-   "g": "one (of them); a (dative)",
-   "t": "article"
-  },
-  "eines": {
-   "g": "of a",
-   "t": "article"
-  },
-  "elf": {
-   "g": "eleven",
-   "t": "number"
   },
   "entscheidend": {
    "g": "decisive, crucial",
@@ -577,10 +517,6 @@
   "fängt": {
    "g": "starts (anfangen; fängt ... an)",
    "t": "verb"
-  },
-  "fünf": {
-   "g": "five",
-   "t": "number"
   },
   "für": {
    "g": "for",
@@ -842,10 +778,6 @@
    "g": "returns (zurückkehren; kehrt ... zurück)",
    "t": "verb"
   },
-  "kein": {
-   "g": "no, not a",
-   "t": "article"
-  },
   "keiner": {
    "g": "nobody",
    "t": "pronoun"
@@ -1069,10 +1001,6 @@
    "g": "district in Berlin",
    "t": "noun"
   },
-  "neun": {
-   "g": "nine",
-   "t": "number"
-  },
   "nicht": {
    "g": "not",
    "t": "adverb"
@@ -1255,10 +1183,6 @@
    "g": "written (schriftlich)",
    "t": "adjective"
   },
-  "sechs": {
-   "g": "six",
-   "t": "number"
-  },
   "seelenruhig": {
    "g": "completely unfazed, serene",
    "t": "adverb"
@@ -1302,10 +1226,6 @@
   "sie": {
    "g": "she; they; you (formal)",
    "t": "pronoun"
-  },
-  "sieben": {
-   "g": "seven",
-   "t": "number"
   },
   "siehst": {
    "g": "you don't look like (du siehst nicht aus, from aussehen)",
@@ -1566,17 +1486,9 @@
    "g": "contract (der Vertrag)",
    "t": "noun"
   },
-  "vier": {
-   "g": "four",
-   "t": "number"
-  },
   "viertel": {
    "g": "quarter; quarter to seven (Viertel vor sieben)",
    "t": "expression"
-  },
-  "vierzehn": {
-   "g": "fourteen",
-   "t": "number"
   },
   "vom": {
    "g": "from the (von + dem)",
@@ -1758,21 +1670,9 @@
    "g": "withdrawn (zurückziehen)",
    "t": "verb"
   },
-  "zwanzig": {
-   "g": "twenty",
-   "t": "number"
-  },
-  "zwei": {
-   "g": "two",
-   "t": "number"
-  },
   "zwischenmiete": {
    "g": "temporary sublet (die Zwischenmiete)",
    "t": "noun"
-  },
-  "zwölf": {
-   "g": "twelve",
-   "t": "number"
   },
   "öfter": {
    "g": "more often, several times",
@@ -1905,10 +1805,6 @@
   "donnerstags": {
    "g": "on Thursdays",
    "t": "adverb"
-  },
-  "dreizehn": {
-   "g": "thirteen",
-   "t": "number"
   },
   "drin": {
    "g": "inside (colloquial for darin)",
@@ -2054,10 +1950,6 @@
   "fünften": {
    "g": "fifth (declined)",
    "t": "adjective"
-  },
-  "fünfzehn": {
-   "g": "fifteen",
-   "t": "number"
   },
   "ganz": {
    "g": "completely, quite",
@@ -2220,14 +2112,6 @@
    "g": "the cat flatshare (die Katzen-WG)",
    "t": "noun"
   },
-  "keine": {
-   "g": "no, not a (kein)",
-   "t": "article"
-  },
-  "keinem": {
-   "g": "no, not a (kein, dative)",
-   "t": "article"
-  },
   "keller": {
    "g": "basement, cellar (der Keller)",
    "t": "noun"
@@ -2389,10 +2273,6 @@
    "g": "envious",
    "t": "adjective"
   },
-  "neunzehn": {
-   "g": "nineteen",
-   "t": "number"
-  },
   "niemanden": {
    "g": "nobody (accusative)",
    "t": "pronoun"
@@ -2532,10 +2412,6 @@
   "setzt": {
    "g": "sits down (sich setzen)",
    "t": "verb"
-  },
-  "siebzig": {
-   "g": "seventy",
-   "t": "number"
   },
   "sofa": {
    "g": "sofa (das Sofa)",
@@ -3739,14 +3615,6 @@
    "g": "German mail (colloquial compound)",
    "t": "noun"
   },
-  "achtzehn": {
-   "g": "eighteen",
-   "t": "number"
-  },
-  "sechsunddreißig": {
-   "g": "thirty-six",
-   "t": "number"
-  },
   "euro": {
    "g": "euro (der Euro)",
    "t": "noun"
@@ -3879,10 +3747,6 @@
    "g": "drama (das Drama)",
    "t": "noun"
   },
-  "eins": {
-   "g": "one",
-   "t": "number"
-  },
   "laufbahn": {
    "g": "career path (die Laufbahn)",
    "t": "noun"
@@ -3986,10 +3850,6 @@
   "ahnung": {
    "g": "idea, clue (die Ahnung); no idea (Keine Ahnung)",
    "t": "noun"
-  },
-  "anderthalb": {
-   "g": "one and a half",
-   "t": "number"
   },
   "ankündigt": {
    "g": "announces (ankündigen)",
@@ -4522,10 +4382,6 @@
    "g": "three times",
    "t": "adverb"
   },
-  "dritter": {
-   "g": "third (dritt, declined); third floor (dritter Stock)",
-   "t": "number"
-  },
   "eingeladen": {
    "g": "invited (einladen, participle)",
    "t": "verb"
@@ -4553,10 +4409,6 @@
   "errät": {
    "g": "guesses correctly (erraten)",
    "t": "verb"
-  },
-  "erste": {
-   "g": "first (erst, declined)",
-   "t": "number"
   },
   "esse": {
    "g": "eat (essen, ich form)",
@@ -5171,14 +5023,6 @@
    "g": "to write back",
    "t": "verb"
   },
-  "zweite": {
-   "g": "second (zweit, declined)",
-   "t": "number"
-  },
-  "zweiten": {
-   "g": "second (zweit, declined)",
-   "t": "number"
-  },
   "zählt": {
    "g": "counts (zählen); does not count (zählt nicht)",
    "t": "verb"
@@ -5523,10 +5367,6 @@
    "g": "fills (füllen)",
    "t": "verb"
   },
-  "fünfte": {
-   "g": "fifth",
-   "t": "number"
-  },
   "füttern": {
    "g": "to feed an animal",
    "t": "verb"
@@ -5678,10 +5518,6 @@
   "hoffe": {
    "g": "hope (hoffen)",
    "t": "verb"
-  },
-  "hundert": {
-   "g": "hundred",
-   "t": "number"
   },
   "hunger": {
    "g": "hunger, appetite",

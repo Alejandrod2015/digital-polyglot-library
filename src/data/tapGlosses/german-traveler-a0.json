@@ -325,10 +325,6 @@
    "g": "then",
    "t": "adverb"
   },
-  "das": {
-   "g": "the/that",
-   "t": "article"
-  },
   "david": {
    "g": "David",
    "t": "other"
@@ -345,25 +341,9 @@
    "g": "your",
    "t": "pronoun"
   },
-  "dem": {
-   "g": "the",
-   "t": "article"
-  },
-  "den": {
-   "g": "the",
-   "t": "article"
-  },
   "denkt": {
    "g": "thinks",
    "t": "verb"
-  },
-  "der": {
-   "g": "the",
-   "t": "article"
-  },
-  "die": {
-   "g": "the",
-   "t": "article"
   },
   "diese": {
    "g": "this/these",
@@ -397,10 +377,6 @@
    "g": "turns",
    "t": "verb"
   },
-  "drei": {
-   "g": "three",
-   "t": "number"
-  },
   "dresden": {
    "g": "Dresden",
    "t": "other"
@@ -429,26 +405,6 @@
    "g": "no matter / doesn't matter",
    "t": "adjective"
   },
-  "ein": {
-   "g": "a / an",
-   "t": "article"
-  },
-  "eine": {
-   "g": "a / an",
-   "t": "article"
-  },
-  "einem": {
-   "g": "a / an (dative)",
-   "t": "article"
-  },
-  "einen": {
-   "g": "a / an (accusative)",
-   "t": "article"
-  },
-  "einer": {
-   "g": "a / an",
-   "t": "article"
-  },
   "einfach": {
    "g": "simple / easy",
    "t": "adjective"
@@ -457,16 +413,8 @@
    "g": "simple / easy",
    "t": "adjective"
   },
-  "eins": {
-   "g": "one",
-   "t": "number"
-  },
   "elbe": {
    "g": "Elbe (river)",
-   "t": "other"
-  },
-  "emma": {
-   "g": "Emma (name)",
    "t": "other"
   },
   "endlich": {
@@ -588,10 +536,6 @@
   "finden": {
    "g": "to find",
    "t": "verb"
-  },
-  "finn": {
-   "g": "Finn (name)",
-   "t": "other"
   },
   "fisch": {
    "g": "fish",
@@ -1037,10 +981,6 @@
    "g": "now",
    "t": "adverb"
   },
-  "jonas": {
-   "g": "Jonas (name)",
-   "t": "other"
-  },
   "junge": {
    "g": "boy",
    "t": "noun"
@@ -1084,14 +1024,6 @@
   "kauft": {
    "g": "buys",
    "t": "verb"
-  },
-  "kein": {
-   "g": "no, not a",
-   "t": "article"
-  },
-  "keine": {
-   "g": "no, not any",
-   "t": "article"
   },
   "kenne": {
    "g": "know",
@@ -1281,14 +1213,6 @@
    "g": "quiet, softly",
    "t": "adjective"
   },
-  "lena": {
-   "g": "Lena (name)",
-   "t": "other"
-  },
-  "leon": {
-   "g": "Leon (name)",
-   "t": "other"
-  },
   "leute": {
    "g": "people",
    "t": "noun"
@@ -1373,17 +1297,9 @@
    "g": "man",
    "t": "noun"
   },
-  "marie": {
-   "g": "Marie (name)",
-   "t": "other"
-  },
   "markt": {
    "g": "market",
    "t": "noun"
-  },
-  "max": {
-   "g": "Max (name)",
-   "t": "other"
   },
   "mehr": {
    "g": "more",
@@ -1408,10 +1324,6 @@
   "metall": {
    "g": "metal",
    "t": "noun"
-  },
-  "mia": {
-   "g": "Mia (name)",
-   "t": "other"
   },
   "mich": {
    "g": "me",
@@ -1560,10 +1472,6 @@
   "noch": {
    "g": "still, yet",
    "t": "adverb"
-  },
-  "nora": {
-   "g": "Nora (name)",
-   "t": "other"
   },
   "nummer": {
    "g": "number",
@@ -2049,10 +1957,6 @@
    "g": "table",
    "t": "noun"
   },
-  "tobias": {
-   "g": "Tobias (name)",
-   "t": "other"
-  },
   "touristen": {
    "g": "tourists",
    "t": "noun"
@@ -2152,10 +2056,6 @@
   "vielleicht": {
    "g": "maybe, perhaps",
    "t": "adverb"
-  },
-  "vier": {
-   "g": "four",
-   "t": "number"
   },
   "viktualienmarkt": {
    "g": "Viktualienmarkt (Munich market)",
@@ -2385,17 +2285,9 @@
    "g": "together",
    "t": "adverb"
   },
-  "zwei": {
-   "g": "two",
-   "t": "number"
-  },
   "zwischen": {
    "g": "between",
    "t": "preposition"
-  },
-  "zwölf": {
-   "g": "twelve",
-   "t": "number"
   },
   "ändert": {
    "g": "changes",
@@ -2885,10 +2777,6 @@
    "g": "to reach",
    "t": "verb"
   },
-  "erste": {
-   "g": "first (erst, declined)",
-   "t": "number"
-  },
   "ersten": {
    "g": "first",
    "t": "adjective"
@@ -3048,10 +2936,6 @@
   "füllt": {
    "g": "fills (füllen)",
    "t": "verb"
-  },
-  "fünf": {
-   "g": "five",
-   "t": "number"
   },
   "ganzen": {
    "g": "whole, all the (colloquial)",
@@ -4161,10 +4045,6 @@
    "g": "pupils (der Schüler)",
    "t": "noun"
   },
-  "sechs": {
-   "g": "six",
-   "t": "number"
-  },
   "sehe": {
    "g": "I see (sehen)",
    "t": "verb"
@@ -4224,10 +4104,6 @@
   "sicher": {
    "g": "surely, certainly; safe",
    "t": "adverb"
-  },
-  "sieben": {
-   "g": "seven",
-   "t": "number"
   },
   "siehst": {
    "g": "you don't look like (du siehst nicht aus, from aussehen)",
@@ -4389,10 +4265,6 @@
    "g": "bags (die Tasche)",
    "t": "noun"
   },
-  "tausend": {
-   "g": "thousand",
-   "t": "number"
-  },
   "tee": {
    "g": "tea",
    "t": "noun"
@@ -4536,10 +4408,6 @@
   "versuche": {
    "g": "attempts (der Versuch)",
    "t": "noun"
-  },
-  "vierzig": {
-   "g": "forty",
-   "t": "number"
   },
   "voller": {
    "g": "full of (voll)",
@@ -4701,10 +4569,6 @@
    "g": "a fence",
    "t": "noun"
   },
-  "zehn": {
-   "g": "ten",
-   "t": "number"
-  },
   "zerbrochen": {
    "g": "broken to pieces",
    "t": "adjective"
@@ -4752,10 +4616,6 @@
   "zweimal": {
    "g": "twice",
    "t": "adverb"
-  },
-  "zweiten": {
-   "g": "second (zweit, declined)",
-   "t": "number"
   },
   "zähle": {
    "g": "count (zählen)",
@@ -4861,10 +4721,6 @@
    "g": "there, to that place",
    "t": "adverb"
   },
-  "dreißig": {
-   "g": "thirty",
-   "t": "number"
-  },
   "fahrrad": {
    "g": "a bicycle",
    "t": "noun"
@@ -4896,10 +4752,6 @@
   "kanne": {
    "g": "a pot, jug",
    "t": "noun"
-  },
-  "katrin": {
-   "g": "Katrin (name)",
-   "t": "other"
   },
   "köpfe": {
    "g": "heads (der Kopf)",
@@ -4964,10 +4816,6 @@
   "ärmeln": {
    "g": "sleeves (der Ärmel)",
    "t": "noun"
-  },
-  "katrins": {
-   "g": "Katrin's (a name)",
-   "t": "other"
   }
  }
 }

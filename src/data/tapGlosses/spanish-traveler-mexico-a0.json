@@ -25,10 +25,6 @@
   "pablo-pinta-un-gato"
  ],
  "glosses": {
-  "sofía": {
-   "g": "Sofia (name)",
-   "t": "noun"
-  },
   "sube": {
    "g": "goes up, climbs",
    "t": "verb"
@@ -37,17 +33,9 @@
    "g": "to, at",
    "t": "preposition"
   },
-  "una": {
-   "g": "a, one (fem.)",
-   "t": "article"
-  },
   "en": {
    "g": "in, on",
    "t": "preposition"
-  },
-  "la": {
-   "g": "the; her, it",
-   "t": "article"
   },
   "es": {
    "g": "is",
@@ -65,14 +53,6 @@
    "g": "colors",
    "t": "noun"
   },
-  "mateo": {
-   "g": "Mateo (name)",
-   "t": "noun"
-  },
-  "el": {
-   "g": "the",
-   "t": "article"
-  },
   "señor": {
    "g": "a man",
    "t": "noun"
@@ -84,10 +64,6 @@
   "tiene": {
    "g": "he/she has",
    "t": "verb"
-  },
-  "un": {
-   "g": "a, one",
-   "t": "article"
   },
   "sombrero": {
    "g": "hat",
@@ -196,10 +172,6 @@
   "habla": {
    "g": "speaks, talks",
    "t": "verb"
-  },
-  "las": {
-   "g": "the; them",
-   "t": "article"
   },
   "plantas": {
    "g": "the plants",
@@ -325,10 +297,6 @@
    "g": "they are",
    "t": "verb"
   },
-  "lucía": {
-   "g": "Lucía (name)",
-   "t": "noun"
-  },
   "trabaja": {
    "g": "to work",
    "t": "verb"
@@ -437,10 +405,6 @@
    "g": "tears",
    "t": "noun"
   },
-  "dos": {
-   "g": "two",
-   "t": "number"
-  },
   "antes": {
    "g": "before",
    "t": "adverb"
@@ -475,10 +439,6 @@
   },
   "barrio": {
    "g": "neighborhood",
-   "t": "noun"
-  },
-  "carmen": {
-   "g": "Carmen (name)",
    "t": "noun"
   },
   "vende": {
@@ -925,10 +885,6 @@
    "g": "points at, points out",
    "t": "verb"
   },
-  "unas": {
-   "g": "some (fem.)",
-   "t": "article"
-  },
   "montañas": {
    "g": "mountains",
    "t": "noun"
@@ -953,10 +909,6 @@
    "g": "strolls",
    "t": "verb"
   },
-  "diego": {
-   "g": "Diego (name)",
-   "t": "noun"
-  },
   "taller": {
    "g": "a workshop, garage",
    "t": "noun"
@@ -968,10 +920,6 @@
   "madera": {
    "g": "wood",
    "t": "noun"
-  },
-  "los": {
-   "g": "the; them",
-   "t": "article"
   },
   "animales": {
    "g": "animals",
@@ -1337,10 +1285,6 @@
    "g": "trip, journey",
    "t": "noun"
   },
-  "beto": {
-   "g": "Beto (name)",
-   "t": "noun"
-  },
   "funicular": {
    "g": "a funicular",
    "t": "noun"
@@ -1471,10 +1415,6 @@
   },
   "guitarra": {
    "g": "the guitar",
-   "t": "noun"
-  },
-  "nico": {
-   "g": "Nico (name)",
    "t": "noun"
   },
   "estudia": {
@@ -1883,10 +1823,6 @@
   },
   "mujeres": {
    "g": "women",
-   "t": "noun"
-  },
-  "pablo": {
-   "g": "Pablo (name)",
    "t": "noun"
   },
   "zona": {
@@ -2617,10 +2553,6 @@
    "g": "I visit",
    "t": "verb"
   },
-  "ana": {
-   "g": "Ana (name)",
-   "t": "noun"
-  },
   "gafas": {
    "g": "goggles",
    "t": "noun"
@@ -2716,10 +2648,6 @@
   "invita": {
    "g": "he invites",
    "t": "verb"
-  },
-  "juan": {
-   "g": "Juan (name)",
-   "t": "noun"
   },
   "dios": {
    "g": "God",
@@ -3389,10 +3317,6 @@
    "g": "while, meanwhile",
    "t": "conjunction"
   },
-  "mil": {
-   "g": "a thousand",
-   "t": "number"
-  },
   "mirando": {
    "g": "looking, watching",
    "t": "verb"
@@ -3781,10 +3705,6 @@
    "g": "tube, the snorkel you breathe through",
    "t": "noun"
   },
-  "uno": {
-   "g": "one",
-   "t": "number"
-  },
   "usado": {
    "g": "used before (usar)",
    "t": "verb"
@@ -3808,10 +3728,6 @@
   "veces": {
    "g": "times, occasions",
    "t": "noun"
-  },
-  "veinte": {
-   "g": "twenty",
-   "t": "number"
   },
   "venció": {
    "g": "overcame, beat (vencer)",

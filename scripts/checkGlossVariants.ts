@@ -47,6 +47,25 @@ const VOSEO = new Set(["argentina", "uruguay"]);
 
 type Fallo = { fichero: string; historia: string; palabra: string; motivo: string };
 
+/** Tipos que no se tocan: el artículo y el número no son vocabulario. El tipo
+ *  "other" NO entra aquí aunque lo parezca: en alemán es un cajón de sastre con
+ *  Kreuzberg, la Elbphilharmonie y las partículas doch, ja y halt, que son de lo
+ *  más útil que hay. Los nombres que viven ahí se cazan por la glosa, abajo. */
+const TIPOS_NO_TOCABLES = new Set(["article", "number", "numeral"]);
+
+/** "Marta (name)", "Timo (a name)", "Basti (nickname for Sebastian)": la glosa
+ *  repite la palabra y no enseña nada. El contrato ya decía que los personajes
+ *  inventados no se glosan; los reales y culturales llevan descriptor de lo que
+ *  SON ("Madrid (city)", "Kreuzberg (Berlin district)") y no caen aquí. */
+function esNombreDePersonaje(clave: string, glosa: string): boolean {
+  const g = (glosa ?? "").trim();
+  if (!g) return false;
+  if (/\((?:nick)?name for /i.test(g)) return true;
+  const cap = clave.charAt(0).toUpperCase() + clave.slice(1);
+  const escapada = cap.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`^${escapada}(?:'s)? \\((?:a |man's |woman's |girl's |boy's )?name\\)$`).test(g);
+}
+
 function esFormaDeVos(forma: string): boolean {
   const limpia = forma.trim().toLowerCase();
   if (!limpia) return false;
@@ -59,6 +78,16 @@ function esFormaDeVos(forma: string): boolean {
 function revisa(fichero: string, bundle: Bundle): Fallo[] {
   const fallos: Fallo[] = [];
   const variante = (bundle.variant ?? "").trim().toLowerCase();
+
+  for (const [palabra, entrada] of Object.entries((bundle as { glosses?: Record<string, { t?: string; g?: string }> }).glosses ?? {})) {
+    if (entrada?.t && TIPOS_NO_TOCABLES.has(entrada.t)) {
+      fallos.push({ fichero, historia: "-", palabra, motivo: `tipo "${entrada.t}": no debe ser tocable` });
+    }
+    if (entrada?.g && esNombreDePersonaje(palabra, entrada.g)) {
+      fallos.push({ fichero, historia: "-", palabra, motivo: "nombre de personaje inventado: la glosa repite la palabra" });
+    }
+  }
+
   if ((bundle.language ?? "").toLowerCase() !== "spanish") return fallos;
   if (!variante) {
     fallos.push({ fichero, historia: "-", palabra: "-", motivo: "el bundle no dice de qué variante es" });

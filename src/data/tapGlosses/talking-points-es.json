@@ -142,21 +142,9 @@
    "g": "almost",
    "t": "adverb"
   },
-  "catorce": {
-   "g": "fourteen",
-   "t": "number"
-  },
   "caída": {
    "g": "a fall; a drop from one measurement to the next",
    "t": "noun"
-  },
-  "cien": {
-   "g": "a hundred",
-   "t": "number"
-  },
-  "ciento": {
-   "g": "hundred; per cent ('por ciento')",
-   "t": "number"
   },
   "cierra": {
    "g": "closes (cerrar); here, shuts down for good",
@@ -213,10 +201,6 @@
   "cuando": {
    "g": "when",
    "t": "conjunction"
-  },
-  "cuatro": {
-   "g": "four",
-   "t": "number"
   },
   "cuenta": {
    "g": "counts (contar)",
@@ -286,10 +270,6 @@
    "g": "say (decir)",
    "t": "verb"
   },
-  "diez": {
-   "g": "ten",
-   "t": "number"
-  },
   "dijeron": {
    "g": "said (decir, past)",
    "t": "verb"
@@ -303,10 +283,6 @@
    "t": "verb",
    "r": "colloquial"
   },
-  "doce": {
-   "g": "twelve",
-   "t": "number"
-  },
   "donde": {
    "g": "where",
    "t": "conjunction"
@@ -314,14 +290,6 @@
   "dormiste": {
    "g": "you slept (dormir)",
    "t": "verb"
-  },
-  "dos": {
-   "g": "two",
-   "t": "number"
-  },
-  "doscientos": {
-   "g": "two hundred",
-   "t": "number"
   },
   "duerme": {
    "g": "sleeps (dormir)",
@@ -334,10 +302,6 @@
   "efecto": {
    "g": "effect",
    "t": "noun"
-  },
-  "el": {
-   "g": "the (masculine)",
-   "t": "article"
   },
   "ellos": {
    "g": "them, they",
@@ -480,18 +444,10 @@
    "g": "July",
    "t": "noun"
   },
-  "la": {
-   "g": "the (feminine)",
-   "t": "article"
-  },
   "largo": {
    "g": "long; placed after a number it means 'and a bit'",
    "t": "adjective",
    "r": "colloquial"
-  },
-  "las": {
-   "g": "the (feminine plural)",
-   "t": "article"
   },
   "limitación": {
    "g": "a limit; a cap set by rule",
@@ -508,10 +464,6 @@
   "lo": {
    "g": "it; the last thing (also builds 'lo último')",
    "t": "pronoun"
-  },
-  "los": {
-   "g": "the (masculine plural)",
-   "t": "article"
   },
   "mañana": {
    "g": "morning; at six in the morning ('a las seis de la mañana')",
@@ -532,10 +484,6 @@
   "menos": {
    "g": "fewer, less",
    "t": "adverb"
-  },
-  "mil": {
-   "g": "a thousand",
-   "t": "number"
   },
   "mirando": {
    "g": "looking at (mirar)",
@@ -592,10 +540,6 @@
   "nota": {
    "g": "it shows, it is noticeable ('se nota', from notarse)",
    "t": "verb"
-  },
-  "novecientos": {
-   "g": "nine hundred",
-   "t": "number"
   },
   "noviembre": {
    "g": "November",
@@ -789,17 +733,9 @@
    "g": "reflexive and impersonal marker; turns a verb into 'is done' with no named doer",
    "t": "pronoun"
   },
-  "seis": {
-   "g": "six",
-   "t": "number"
-  },
   "si": {
    "g": "if",
    "t": "conjunction"
-  },
-  "siete": {
-   "g": "seven",
-   "t": "number"
   },
   "sigue": {
    "g": "stays, carries on (seguir)",
@@ -883,18 +819,6 @@
    "t": "noun",
    "r": "colloquial"
   },
-  "treinta": {
-   "g": "thirty",
-   "t": "number"
-  },
-  "tres": {
-   "g": "three",
-   "t": "number"
-  },
-  "trescientos": {
-   "g": "three hundred",
-   "t": "number"
-  },
   "tu": {
    "g": "your",
    "t": "adjective"
@@ -919,21 +843,9 @@
    "g": "tourist-, for visitors (plural)",
    "t": "adjective"
   },
-  "un": {
-   "g": "a, an",
-   "t": "article"
-  },
-  "una": {
-   "g": "a, an (feminine)",
-   "t": "article"
-  },
   "universidad": {
    "g": "university",
    "t": "noun"
-  },
-  "uno": {
-   "g": "one",
-   "t": "number"
   },
   "unos": {
    "g": "some; before a number, 'about'",

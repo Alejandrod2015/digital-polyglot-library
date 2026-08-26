@@ -455,10 +455,6 @@
    "g": "friends",
    "t": "noun"
   },
-  "ana": {
-   "g": "Ana (name)",
-   "t": "noun"
-  },
   "ancha": {
    "g": "wide",
    "t": "adjective"
@@ -466,10 +462,6 @@
   "andamos": {
    "g": "we get, we go around",
    "t": "verb"
-  },
-  "andrés": {
-   "g": "Andrés (name)",
-   "t": "noun"
   },
   "anima": {
    "g": "dares, gets up the nerve",
@@ -915,14 +907,6 @@
    "g": "Belgrano",
    "t": "noun"
   },
-  "benjamín": {
-   "g": "Benjamín (name)",
-   "t": "noun"
-  },
-  "beto": {
-   "g": "Beto (name)",
-   "t": "noun"
-  },
   "bien": {
    "g": "well, good",
    "t": "adverb"
@@ -1139,14 +1123,6 @@
    "g": "I changed",
    "t": "verb"
   },
-  "camila": {
-   "g": "Camila (name)",
-   "t": "noun"
-  },
-  "camilo": {
-   "g": "Camilo (name)",
-   "t": "noun"
-  },
   "camina": {
    "g": "walks",
    "t": "verb"
@@ -1245,14 +1221,6 @@
   },
   "cariño": {
    "g": "affection, dear",
-   "t": "noun"
-  },
-  "carla": {
-   "g": "Carla (name)",
-   "t": "noun"
-  },
-  "carmen": {
-   "g": "Carmen (name)",
    "t": "noun"
   },
   "carnaval": {
@@ -1415,10 +1383,6 @@
   "cierto": {
    "g": "true; certain",
    "t": "adjective"
-  },
-  "cinco": {
-   "g": "five",
-   "t": "number"
   },
   "cintas": {
    "g": "ribbons",
@@ -1871,14 +1835,6 @@
    "g": "the room",
    "t": "noun"
   },
-  "cuatro": {
-   "g": "four",
-   "t": "number"
-  },
-  "cuatrocientos": {
-   "g": "four hundred",
-   "t": "number"
-  },
   "cubren": {
    "g": "they cover",
    "t": "verb"
@@ -2042,10 +1998,6 @@
   "dando": {
    "g": "giving",
    "t": "verb"
-  },
-  "daniela": {
-   "g": "Daniela (name)",
-   "t": "noun"
   },
   "danza": {
    "g": "dance",
@@ -2280,14 +2232,6 @@
    "g": "you say",
    "t": "verb"
   },
-  "diego": {
-   "g": "Diego (name)",
-   "t": "noun"
-  },
-  "diez": {
-   "g": "ten",
-   "t": "number"
-  },
   "diferente": {
    "g": "different",
    "t": "adjective"
@@ -2420,14 +2364,6 @@
    "g": "they slept",
    "t": "verb"
   },
-  "dos": {
-   "g": "two",
-   "t": "number"
-  },
-  "doscientos": {
-   "g": "two hundred",
-   "t": "number"
-  },
   "doy": {
    "g": "I give",
    "t": "verb"
@@ -2504,10 +2440,6 @@
    "g": "building",
    "t": "noun"
   },
-  "el": {
-   "g": "the",
-   "t": "article"
-  },
   "elección": {
    "g": "choice",
    "t": "noun"
@@ -2519,10 +2451,6 @@
   "elegantes": {
    "g": "elegant",
    "t": "adjective"
-  },
-  "elena": {
-   "g": "Elena (name)",
-   "t": "noun"
   },
   "ella": {
    "g": "she",
@@ -3799,17 +3727,9 @@
    "g": "the island",
    "t": "noun"
   },
-  "itzel": {
-   "g": "Itzel (name)",
-   "t": "noun"
-  },
   "izquierdos": {
    "g": "left",
    "t": "adjective"
-  },
-  "javiera": {
-   "g": "Javiera (name)",
-   "t": "noun"
   },
   "jefa": {
    "g": "a female boss",
@@ -3841,10 +3761,6 @@
   },
   "julio": {
    "g": "Julio",
-   "t": "noun"
-  },
-  "julián": {
-   "g": "Julián (name)",
    "t": "noun"
   },
   "junta": {
@@ -3882,10 +3798,6 @@
   "kilo": {
    "g": "kilo",
    "t": "noun"
-  },
-  "la": {
-   "g": "the; her, it",
-   "t": "article"
   },
   "laberinto": {
    "g": "labyrinth, maze",
@@ -3926,10 +3838,6 @@
   "largo": {
    "g": "long; get lost",
    "t": "adjective"
-  },
-  "las": {
-   "g": "the; them",
-   "t": "article"
   },
   "late": {
    "g": "beats",
@@ -4203,10 +4111,6 @@
    "g": "a ridge",
    "t": "noun"
   },
-  "los": {
-   "g": "the; them",
-   "t": "article"
-  },
   "lucas": {
    "g": "Lucas; grand, thousands",
    "t": "noun"
@@ -4219,17 +4123,9 @@
    "g": "wrestling, lucha libre",
    "t": "noun"
   },
-  "lucho": {
-   "g": "Lucho (name)",
-   "t": "noun"
-  },
   "luchó": {
    "g": "fought, struggled",
    "t": "verb"
-  },
-  "lucía": {
-   "g": "Lucía (name)",
-   "t": "noun"
   },
   "luego": {
    "g": "later, then",
@@ -4361,10 +4257,6 @@
    "g": "butterflies",
    "t": "noun"
   },
-  "marta": {
-   "g": "Marta (name)",
-   "t": "noun"
-  },
   "martes": {
    "g": "Tuesday",
    "t": "noun"
@@ -4376,10 +4268,6 @@
   "matar": {
    "g": "to kill",
    "t": "verb"
-  },
-  "mateo": {
-   "g": "Mateo (name)",
-   "t": "noun"
   },
   "mañana": {
    "g": "tomorrow; morning",
@@ -4484,10 +4372,6 @@
   "mija": {
    "g": "dear, honey (girl)",
    "t": "expression"
-  },
-  "mil": {
-   "g": "a thousand",
-   "t": "number"
   },
   "minuto": {
    "g": "minute",
@@ -4935,10 +4819,6 @@
    "g": "new (fem.)",
    "t": "adjective"
   },
-  "nueve": {
-   "g": "nine",
-   "t": "number"
-  },
   "nuevo": {
    "g": "new",
    "t": "adjective"
@@ -4974,14 +4854,6 @@
   "observa": {
    "g": "she watches",
    "t": "verb"
-  },
-  "ochenta": {
-   "g": "eighty",
-   "t": "number"
-  },
-  "ocho": {
-   "g": "eight",
-   "t": "number"
   },
   "ocupadas": {
    "g": "occupied, taken",
@@ -5110,10 +4982,6 @@
   "oíste": {
    "g": "you heard",
    "t": "verb"
-  },
-  "pablo": {
-   "g": "Pablo (name)",
-   "t": "noun"
   },
   "paciencia": {
    "g": "patience",
@@ -6235,10 +6103,6 @@
    "g": "the oars",
    "t": "noun"
   },
-  "renata": {
-   "g": "Renata (name)",
-   "t": "noun"
-  },
   "rendirme": {
    "g": "to give up",
    "t": "verb"
@@ -6329,10 +6193,6 @@
   },
   "rock": {
    "g": "rock",
-   "t": "noun"
-  },
-  "rodrigo": {
-   "g": "Rodrigo (name)",
    "t": "noun"
   },
   "roja": {
@@ -6572,10 +6432,6 @@
    "g": "sure; insurance",
    "t": "adjective"
   },
-  "seis": {
-   "g": "six",
-   "t": "number"
-  },
   "semana": {
    "g": "week",
    "t": "noun"
@@ -6762,10 +6618,6 @@
   },
   "sofá": {
    "g": "couch, sofa",
-   "t": "noun"
-  },
-  "sofía": {
-   "g": "Sofia (name)",
    "t": "noun"
   },
   "sol": {
@@ -7274,10 +7126,6 @@
    "g": "to drink",
    "t": "verb"
   },
-  "tomás": {
-   "g": "Tomas (name)",
-   "t": "noun"
-  },
   "tormenta": {
    "g": "a storm",
    "t": "noun"
@@ -7371,17 +7219,9 @@
    "g": "was carrying, had",
    "t": "verb"
   },
-  "treinta": {
-   "g": "thirty",
-   "t": "number"
-  },
   "tren": {
    "g": "the train",
    "t": "noun"
-  },
-  "tres": {
-   "g": "three",
-   "t": "number"
   },
   "triste": {
    "g": "sad",
@@ -7464,33 +7304,9 @@
    "g": "ukulele",
    "t": "noun"
   },
-  "un": {
-   "g": "a, one",
-   "t": "article"
-  },
-  "una": {
-   "g": "a, one (fem.)",
-   "t": "article"
-  },
-  "unas": {
-   "g": "some (fem.)",
-   "t": "article"
-  },
   "une": {
    "g": "unites, brings together",
    "t": "verb"
-  },
-  "unión": {
-   "g": "Unión (street name)",
-   "t": "noun"
-  },
-  "uno": {
-   "g": "one",
-   "t": "number"
-  },
-  "unos": {
-   "g": "some, a few",
-   "t": "article"
   },
   "urgente": {
    "g": "urgent",
@@ -7587,10 +7403,6 @@
   "vecinos": {
    "g": "neighbors",
    "t": "noun"
-  },
-  "veinte": {
-   "g": "twenty",
-   "t": "number"
   },
   "vela": {
    "g": "candle",

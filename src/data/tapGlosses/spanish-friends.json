@@ -27,10 +27,6 @@
    "g": "in, on",
    "t": "preposition"
   },
-  "el": {
-   "g": "the",
-   "t": "article"
-  },
   "grupo": {
    "g": "group",
    "t": "noun"
@@ -39,17 +35,9 @@
    "g": "of, from",
    "t": "preposition"
   },
-  "sofía": {
-   "g": "Sofia (name)",
-   "t": "noun"
-  },
   "había": {
    "g": "there was; had",
    "t": "verb"
-  },
-  "una": {
-   "g": "a, one (fem.)",
-   "t": "article"
   },
   "regla": {
    "g": "rule",
@@ -82,10 +70,6 @@
   "pedir": {
    "g": "to order, ask for",
    "t": "verb"
-  },
-  "la": {
-   "g": "the; her, it",
-   "t": "article"
   },
   "cena": {
    "g": "dinner",
@@ -195,10 +179,6 @@
    "g": "to him, her, it",
    "t": "pronoun"
   },
-  "mateo": {
-   "g": "Mateo (name)",
-   "t": "noun"
-  },
   "muy": {
    "g": "very",
    "t": "adverb"
@@ -231,17 +211,9 @@
    "g": "arrived",
    "t": "verb"
   },
-  "los": {
-   "g": "the; them",
-   "t": "article"
-  },
   "tacos": {
    "g": "tacos",
    "t": "noun"
-  },
-  "las": {
-   "g": "the; them",
-   "t": "article"
   },
   "chelas": {
    "g": "beers",
@@ -286,10 +258,6 @@
   "sospechosa": {
    "g": "suspicious",
    "t": "adjective"
-  },
-  "renata": {
-   "g": "Renata (name)",
-   "t": "noun"
   },
   "lo": {
    "g": "it, him",
@@ -338,10 +306,6 @@
   "choteándolo": {
    "g": "mocking him",
    "t": "verb"
-  },
-  "pablo": {
-   "g": "Pablo (name)",
-   "t": "noun"
   },
   "levantó": {
    "g": "lifted, raised",
@@ -514,10 +478,6 @@
   "cotorrear": {
    "g": "to chat, joke around",
    "t": "verb"
-  },
-  "un": {
-   "g": "a, one",
-   "t": "article"
   },
   "rato": {
    "g": "a while",
@@ -727,10 +687,6 @@
    "g": "times, occasions",
    "t": "noun"
   },
-  "dos": {
-   "g": "two",
-   "t": "number"
-  },
   "demás": {
    "g": "the others",
    "t": "pronoun"
@@ -870,10 +826,6 @@
   "gachos": {
    "g": "nasty, mean",
    "t": "adjective"
-  },
-  "uno": {
-   "g": "one",
-   "t": "number"
   },
   "versión": {
    "g": "version, story",
@@ -1051,10 +1003,6 @@
    "g": "bag, purse",
    "t": "noun"
   },
-  "cuatro": {
-   "g": "four",
-   "t": "number"
-  },
   "entradas": {
    "g": "tickets",
    "t": "noun"
@@ -1102,10 +1050,6 @@
   "apantalló": {
    "g": "dazzled, impressed",
    "t": "verb"
-  },
-  "tres": {
-   "g": "three",
-   "t": "number"
   },
   "sola": {
    "g": "alone",
@@ -1419,10 +1363,6 @@
    "g": "sat through, endured",
    "t": "verb"
   },
-  "diez": {
-   "g": "ten",
-   "t": "number"
-  },
   "intentos": {
    "g": "attempts",
    "t": "noun"
@@ -1627,10 +1567,6 @@
    "g": "a tight group of friends",
    "t": "noun"
   },
-  "nayeli": {
-   "g": "Nayeli (name)",
-   "t": "noun"
-  },
   "juntaba": {
    "g": "gathered, got together",
    "t": "verb"
@@ -1679,17 +1615,9 @@
    "g": "was, went",
    "t": "verb"
   },
-  "rodrigo": {
-   "g": "Rodrigo (name)",
-   "t": "noun"
-  },
   "estrenando": {
    "g": "showing off new thing",
    "t": "verb"
-  },
-  "unos": {
-   "g": "some, a few",
-   "t": "article"
   },
   "tenis": {
    "g": "sneakers, trainers",
@@ -1698,10 +1626,6 @@
   "fresas": {
    "g": "posh, snobby",
    "t": "adjective"
-  },
-  "itzel": {
-   "g": "Itzel (name)",
-   "t": "noun"
   },
   "arrancó": {
    "g": "started off",
@@ -2046,10 +1970,6 @@
   "brindaron": {
    "g": "they toasted",
    "t": "verb"
-  },
-  "unas": {
-   "g": "some (fem.)",
-   "t": "article"
   },
   "caguamas": {
    "g": "large sharing bottles of beer",
@@ -2727,10 +2647,6 @@
    "g": "juicy, full of scandal",
    "t": "adjective"
   },
-  "julián": {
-   "g": "Julián (name)",
-   "t": "noun"
-  },
   "tirado": {
    "g": "sprawled, flopped down",
    "t": "adjective"
@@ -2781,10 +2697,6 @@
   },
   "vecina": {
    "g": "a female neighbor",
-   "t": "noun"
-  },
-  "valeria": {
-   "g": "Valeria (name)",
    "t": "noun"
   },
   "cocina": {
@@ -3511,10 +3423,6 @@
    "g": "are worth",
    "t": "verb"
   },
-  "mil": {
-   "g": "a thousand",
-   "t": "number"
-  },
   "perdones": {
    "g": "apologies, pardons",
    "t": "noun"
@@ -3651,10 +3559,6 @@
    "g": "would get going (se armaba)",
    "t": "verb"
   },
-  "andrés": {
-   "g": "Andrés (name)",
-   "t": "noun"
-  },
   "corte": {
    "g": "cut, style",
    "t": "noun"
@@ -3679,10 +3583,6 @@
    "g": "he/she saw",
    "t": "verb"
   },
-  "daniela": {
-   "g": "Daniela (name)",
-   "t": "noun"
-  },
   "ombe": {
    "g": "man, dude (excl.)",
    "t": "expression"
@@ -3697,10 +3597,6 @@
   },
   "mane": {
    "g": "a guy, on the coast",
-   "t": "noun"
-  },
-  "yuly": {
-   "g": "Yuly (name)",
    "t": "noun"
   },
   "montando": {
@@ -3954,10 +3850,6 @@
   "parranda": {
    "g": "party, spree",
    "t": "noun"
-  },
-  "millón": {
-   "g": "million",
-   "t": "number"
   },
   "champeta": {
    "g": "fast Afro Caribbean music and dance",
@@ -4503,10 +4395,6 @@
    "g": "to grab",
    "t": "verb"
   },
-  "camila": {
-   "g": "Camila (name)",
-   "t": "noun"
-  },
   "hecha": {
    "g": "made, done",
    "t": "adjective"
@@ -4542,10 +4430,6 @@
   "disparó": {
    "g": "blurted out, fired off",
    "t": "verb"
-  },
-  "tomás": {
-   "g": "Tomas (name)",
-   "t": "noun"
   },
   "flor": {
    "g": "flower; great (slang)",
@@ -5303,10 +5187,6 @@
    "g": "would not be called (no se llamará)",
    "t": "verb"
   },
-  "nico": {
-   "g": "Nico (name)",
-   "t": "noun"
-  },
   "despacio": {
    "g": "slowly",
    "t": "adverb"
@@ -5463,10 +5343,6 @@
    "g": "Lima (city); lime",
    "t": "noun"
   },
-  "diego": {
-   "g": "Diego (name)",
-   "t": "noun"
-  },
   "saludó": {
    "g": "greeted, said hi",
    "t": "verb"
@@ -5506,10 +5382,6 @@
   "decían": {
    "g": "were saying",
    "t": "verb"
-  },
-  "beto": {
-   "g": "Beto (name)",
-   "t": "noun"
   },
   "sumó": {
    "g": "joined in (sumarse)",
@@ -5751,10 +5623,6 @@
    "g": "the sensation, the star",
    "t": "noun"
   },
-  "cinco": {
-   "g": "five",
-   "t": "number"
-  },
   "entrar": {
    "g": "to get into, to join",
    "t": "verb"
@@ -5930,10 +5798,6 @@
   "comió": {
    "g": "ate",
    "t": "verb"
-  },
-  "veinte": {
-   "g": "twenty",
-   "t": "number"
   },
   "anticuchos": {
    "g": "grilled beef heart skewers",
@@ -6263,10 +6127,6 @@
    "g": "south",
    "t": "noun"
   },
-  "benjamín": {
-   "g": "Benjamín (name)",
-   "t": "noun"
-  },
   "historia": {
    "g": "story, history",
    "t": "noun"
@@ -6286,10 +6146,6 @@
   "entusiasmado": {
    "g": "excited, enthusiastic",
    "t": "adjective"
-  },
-  "javiera": {
-   "g": "Javiera (name)",
-   "t": "noun"
   },
   "cachar": {
    "g": "to get, understand",
@@ -7008,32 +6864,6 @@
      "here": 0
     }
    },
-   "el": {
-    "g": "the",
-    "t": "article",
-    "c": {
-     "es": "el jueves que te tocaba",
-     "en": "the Thursday it was your turn"
-    },
-    "f": {
-     "label": "el / la / los / las",
-     "rows": [
-      [
-       "masculino",
-       "el jueves"
-      ],
-      [
-       "femenino",
-       "la cena"
-      ],
-      [
-       "plural",
-       "los jueves"
-      ]
-     ],
-     "here": 0
-    }
-   },
    "de": {
     "g": "of, from",
     "t": "preposition",
@@ -7607,10 +7437,6 @@
      ],
      "here": 0
     }
-   },
-   "renata": {
-    "g": "Renata (name)",
-    "t": "noun"
    },
    "inmediato": {
     "g": "straight away",
@@ -9006,32 +8832,6 @@
      "here": 0
     }
    },
-   "el": {
-    "g": "the",
-    "t": "article",
-    "c": {
-     "es": "colgarla en el refri",
-     "en": "to stick it on the fridge"
-    },
-    "f": {
-     "label": "el / la / los / las",
-     "rows": [
-      [
-       "masculino",
-       "el refri"
-      ],
-      [
-       "femenino",
-       "la foto"
-      ],
-      [
-       "plural",
-       "los cuatro"
-      ]
-     ],
-     "here": 0
-    }
-   },
    "que": {
     "g": "what",
     "t": "conjunction",
@@ -9681,32 +9481,6 @@
       [
        "plural",
        "borrosas"
-      ]
-     ],
-     "here": 0
-    }
-   },
-   "décima": {
-    "g": "the tenth one",
-    "t": "number",
-    "c": {
-     "es": "La décima quedó toda chueca",
-     "en": "The tenth one came out all crooked"
-    },
-    "f": {
-     "label": "décimo / décima",
-     "rows": [
-      [
-       "femenino",
-       "la décima"
-      ],
-      [
-       "masculino",
-       "el décimo"
-      ],
-      [
-       "cardinal",
-       "diez"
       ]
      ],
      "here": 0

@@ -705,17 +705,9 @@
    "g": "basket, wide and low, carried in both arms",
    "t": "noun"
   },
-  "cien": {
-   "g": "a hundred",
-   "t": "number"
-  },
   "cierra": {
    "g": "closes",
    "t": "verb"
-  },
-  "cinco": {
-   "g": "five",
-   "t": "number"
   },
   "cinta": {
    "g": "narrow strip of cloth or paper, for tying or decorating",
@@ -921,21 +913,9 @@
    "g": "when",
    "t": "conjunction"
   },
-  "cuarenta": {
-   "g": "forty",
-   "t": "number"
-  },
-  "cuarta": {
-   "g": "the fourth one",
-   "t": "number"
-  },
   "cuarto": {
    "g": "the room",
    "t": "noun"
-  },
-  "cuatro": {
-   "g": "four",
-   "t": "number"
   },
   "cuchara": {
    "g": "spoon",
@@ -1201,10 +1181,6 @@
    "g": "asleep",
    "t": "adjective"
   },
-  "dos": {
-   "g": "two",
-   "t": "number"
-  },
   "débil": {
    "g": "weak, without much strength behind it",
    "t": "adjective"
@@ -1228,10 +1204,6 @@
   "echa": {
    "g": "throws, pours",
    "t": "verb"
-  },
-  "el": {
-   "g": "the",
-   "t": "article"
   },
   "ella": {
    "g": "she",
@@ -1857,10 +1829,6 @@
    "g": "winter",
    "t": "noun"
   },
-  "irene": {
-   "g": "Irene (name of the woman who has moved here)",
-   "t": "noun"
-  },
   "izquierda": {
    "g": "left side (a la izquierda: on the left)",
    "t": "noun"
@@ -1897,10 +1865,6 @@
    "g": "just, exactly; fair",
    "t": "adverb"
   },
-  "la": {
-   "g": "the; her, it",
-   "t": "article"
-  },
   "labio": {
    "g": "lip",
    "t": "noun"
@@ -1920,10 +1884,6 @@
   "largo": {
    "g": "long; (hacerse largo) to drag on",
    "t": "adjective"
-  },
-  "las": {
-   "g": "the; them",
-   "t": "article"
   },
   "lata": {
    "g": "tin, metal food container",
@@ -2053,10 +2013,6 @@
    "g": "hill",
    "t": "noun"
   },
-  "los": {
-   "g": "the; them",
-   "t": "article"
-  },
   "luces": {
    "g": "lights",
    "t": "noun"
@@ -2119,10 +2075,6 @@
   },
   "marcha": {
    "g": "the speed something is moving at",
-   "t": "noun"
-  },
-  "marta": {
-   "g": "Marta (name)",
    "t": "noun"
   },
   "martes": {
@@ -2365,10 +2317,6 @@
    "g": "new (fem.)",
    "t": "adjective"
   },
-  "nueve": {
-   "g": "nine",
-   "t": "number"
-  },
   "nuevo": {
    "g": "new",
    "t": "adjective"
@@ -2388,10 +2336,6 @@
   "o": {
    "g": "or",
    "t": "conjunction"
-  },
-  "ocho": {
-   "g": "eight",
-   "t": "number"
   },
   "octubre": {
    "g": "October",
@@ -2889,10 +2833,6 @@
    "g": "still, not moving",
    "t": "adjective"
   },
-  "quique": {
-   "g": "Quique (name of the man who runs the bar)",
-   "t": "noun"
-  },
   "quién": {
    "g": "who",
    "t": "pronoun"
@@ -3007,10 +2947,6 @@
   },
   "roca": {
    "g": "the rock",
-   "t": "noun"
-  },
-  "rocío": {
-   "g": "Rocío (name)",
    "t": "noun"
   },
   "rodajas": {
@@ -3137,10 +3073,6 @@
    "g": "second",
    "t": "adjective"
   },
-  "seis": {
-   "g": "six",
-   "t": "number"
-  },
   "sellos": {
    "g": "official ink stamps on a paper",
    "t": "noun"
@@ -3200,10 +3132,6 @@
   "siesta": {
    "g": "afternoon nap",
    "t": "noun"
-  },
-  "siete": {
-   "g": "seven",
-   "t": "number"
   },
   "significan": {
    "g": "they mean",
@@ -3521,10 +3449,6 @@
    "g": "tense",
    "t": "adjective"
   },
-  "tercer": {
-   "g": "third",
-   "t": "number"
-  },
   "terminándosela": {
    "g": "finishing it off for her",
    "t": "verb"
@@ -3649,10 +3573,6 @@
    "g": "drawing the same line over and over",
    "t": "verb"
   },
-  "tres": {
-   "g": "three",
-   "t": "number"
-  },
   "tristeza": {
    "g": "sadness",
    "t": "noun"
@@ -3676,22 +3596,6 @@
   "tú": {
    "g": "you",
    "t": "pronoun"
-  },
-  "un": {
-   "g": "a, one",
-   "t": "article"
-  },
-  "una": {
-   "g": "a, one (fem.)",
-   "t": "article"
-  },
-  "uno": {
-   "g": "one",
-   "t": "number"
-  },
-  "unos": {
-   "g": "some, a few",
-   "t": "article"
   },
   "uvas": {
    "g": "grapes",
@@ -3748,10 +3652,6 @@
   "vecina": {
    "g": "a female neighbor",
    "t": "noun"
-  },
-  "veinte": {
-   "g": "twenty",
-   "t": "number"
   },
   "ven": {
    "g": "they see; (se ven) they can be seen",
@@ -3892,10 +3792,6 @@
   "ácido": {
    "g": "sharp and sour, like lemon",
    "t": "adjective"
-  },
-  "álvaro": {
-   "g": "Álvaro (name of the man with the vegetable plot)",
-   "t": "noun"
   },
   "ánimo": {
    "g": "encouragement; (un poco de ánimo) go on, you can do it",

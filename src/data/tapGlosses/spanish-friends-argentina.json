@@ -871,10 +871,6 @@
    "g": "where",
    "t": "adverb"
   },
-  "dos": {
-   "g": "two",
-   "t": "number"
-  },
   "dudó": {
    "g": "hesitated, doubted",
    "t": "verb"
@@ -910,10 +906,6 @@
   "e": {
    "g": "and (before words starting with i)",
    "t": "conjunction"
-  },
-  "el": {
-   "g": "the",
-   "t": "article"
   },
   "ella": {
    "g": "she",
@@ -1411,10 +1403,6 @@
    "g": "was judging",
    "t": "verb"
   },
-  "la": {
-   "g": "the; her, it",
-   "t": "article"
-  },
   "labia": {
    "g": "the gift of the gab",
    "t": "noun"
@@ -1438,10 +1426,6 @@
   "largo": {
    "g": "long; get lost",
    "t": "adjective"
-  },
-  "las": {
-   "g": "the; them",
-   "t": "article"
   },
   "le": {
    "g": "to him, her, it",
@@ -1506,10 +1490,6 @@
   "lo": {
    "g": "it, him",
    "t": "pronoun"
-  },
-  "los": {
-   "g": "the; them",
-   "t": "article"
   },
   "luces": {
    "g": "lights",
@@ -1638,10 +1618,6 @@
   "mientras": {
    "g": "while, meanwhile",
    "t": "conjunction"
-  },
-  "mil": {
-   "g": "a thousand",
-   "t": "number"
   },
   "mira": {
    "g": "look, hey",
@@ -2475,10 +2451,6 @@
    "g": "the after meal chat",
    "t": "noun"
   },
-  "sofía": {
-   "g": "Sofia (name)",
-   "t": "noun"
-  },
   "sol": {
    "g": "sun",
    "t": "noun"
@@ -2683,10 +2655,6 @@
    "g": "everyone, all",
    "t": "pronoun"
   },
-  "tomás": {
-   "g": "Tomas (name)",
-   "t": "noun"
-  },
   "tomó": {
    "g": "drank down (se tomó)",
    "t": "verb"
@@ -2719,17 +2687,9 @@
    "g": "was carrying, had",
    "t": "verb"
   },
-  "treinta": {
-   "g": "thirty",
-   "t": "number"
-  },
   "trepando": {
    "g": "climbing",
    "t": "verb"
-  },
-  "tres": {
-   "g": "three",
-   "t": "number"
   },
   "tu": {
    "g": "your",
@@ -2742,26 +2702,6 @@
   "turística": {
    "g": "touristy",
    "t": "adjective"
-  },
-  "un": {
-   "g": "a, one",
-   "t": "article"
-  },
-  "una": {
-   "g": "a, one (fem.)",
-   "t": "article"
-  },
-  "unas": {
-   "g": "some (fem.)",
-   "t": "article"
-  },
-  "uno": {
-   "g": "one",
-   "t": "number"
-  },
-  "unos": {
-   "g": "some, a few",
-   "t": "article"
   },
   "ustedes": {
    "g": "you all",
@@ -3011,10 +2951,6 @@
    "g": "watches, keeps an eye on",
    "t": "verb"
   },
-  "ailén": {
-   "g": "Ailen (name)",
-   "t": "noun"
-  },
   "aires": {
    "g": "Aires (Buenos Aires)",
    "t": "noun"
@@ -3134,10 +3070,6 @@
   "aquel": {
    "g": "that",
    "t": "determiner"
-  },
-  "ariel": {
-   "g": "Ariel (name)",
-   "t": "noun"
   },
   "arma": {
    "g": "forms, comes together",
@@ -3311,10 +3243,6 @@
    "g": "an oak barrel",
    "t": "noun"
   },
-  "bauti": {
-   "g": "Bauti (name)",
-   "t": "noun"
-  },
   "berreta": {
    "g": "cheap, shoddy",
    "t": "slang"
@@ -3407,10 +3335,6 @@
    "g": "mist, haze",
    "t": "noun"
   },
-  "bruno": {
-   "g": "Bruno (name)",
-   "t": "noun"
-  },
   "buenos": {
    "g": "Buenos (Aires)",
    "t": "adjective"
@@ -3487,10 +3411,6 @@
    "g": "instead, on the other hand",
    "t": "expression"
   },
-  "cami": {
-   "g": "Cami (name)",
-   "t": "noun"
-  },
   "caminan": {
    "g": "walk",
    "t": "verb"
@@ -3566,10 +3486,6 @@
   "cargadas": {
    "g": "laden, loaded",
    "t": "adjective"
-  },
-  "carla": {
-   "g": "Carla (name)",
-   "t": "noun"
   },
   "caro": {
    "g": "expensive",
@@ -3693,14 +3609,6 @@
   },
   "cimarrón": {
    "g": "unsweetened mate",
-   "t": "noun"
-  },
-  "cincuenta": {
-   "g": "fifty",
-   "t": "numeral"
-  },
-  "ciro": {
-   "g": "Ciro (name)",
    "t": "noun"
   },
   "city": {
@@ -3957,10 +3865,6 @@
   },
   "decisión": {
    "g": "decision",
-   "t": "noun"
-  },
-  "delfina": {
-   "g": "Delfina (name)",
    "t": "noun"
   },
   "delirio": {
@@ -4267,14 +4171,6 @@
    "g": "to miss",
    "t": "verb"
   },
-  "fabián": {
-   "g": "Fabian (name)",
-   "t": "noun"
-  },
-  "facundo": {
-   "g": "Facundo (name)",
-   "t": "noun"
-  },
   "faena": {
    "g": "the task, work",
    "t": "noun"
@@ -4302,10 +4198,6 @@
   "fastidiada": {
    "g": "annoyed",
    "t": "adjective"
-  },
-  "fede": {
-   "g": "Fede (name)",
-   "t": "noun"
   },
   "fernet": {
    "g": "fernet (liquor)",
@@ -4361,10 +4253,6 @@
   },
   "folletos": {
    "g": "brochures",
-   "t": "noun"
-  },
-  "fontanarrosa": {
-   "g": "Fontanarrosa (name)",
    "t": "noun"
   },
   "frena": {
@@ -4631,14 +4519,6 @@
    "g": "the gem",
    "t": "noun"
   },
-  "juli": {
-   "g": "Juli (name)",
-   "t": "noun"
-  },
-  "julieta": {
-   "g": "Julieta (name)",
-   "t": "noun"
-  },
   "juncos": {
    "g": "the reeds",
    "t": "noun"
@@ -4767,14 +4647,6 @@
    "g": "a ridge",
    "t": "noun"
   },
-  "lucho": {
-   "g": "Lucho (name)",
-   "t": "noun"
-  },
-  "ludmila": {
-   "g": "Ludmila (name)",
-   "t": "noun"
-  },
   "luna": {
    "g": "the moon",
    "t": "noun"
@@ -4813,10 +4685,6 @@
   },
   "malbec": {
    "g": "Malbec wine",
-   "t": "noun"
-  },
-  "malena": {
-   "g": "Malena (name)",
    "t": "noun"
   },
   "malvender": {
@@ -4923,10 +4791,6 @@
    "g": "the tables",
    "t": "noun"
   },
-  "messi": {
-   "g": "Messi (name)",
-   "t": "noun"
-  },
   "mete": {
    "g": "puts her in",
    "t": "verb"
@@ -4938,10 +4802,6 @@
   "metida": {
    "g": "immersed, in there",
    "t": "adjective"
-  },
-  "micaela": {
-   "g": "Micaela (name)",
-   "t": "noun"
   },
   "micro": {
    "g": "the bus",
@@ -5063,10 +4923,6 @@
    "g": "was born",
    "t": "verb"
   },
-  "nahuel": {
-   "g": "Nahuel (name)",
-   "t": "noun"
-  },
   "negocia": {
    "g": "is negotiable",
    "t": "verb"
@@ -5110,10 +4966,6 @@
   "obelisco": {
    "g": "the Obelisk",
    "t": "noun"
-  },
-  "ocho": {
-   "g": "eight",
-   "t": "numeral"
   },
   "ola": {
    "g": "the wave",
@@ -5603,14 +5455,6 @@
    "g": "the boardwalk",
    "t": "noun"
   },
-  "rami": {
-   "g": "Rami (name)",
-   "t": "noun"
-  },
-  "ramiro": {
-   "g": "Ramiro (name)",
-   "t": "noun"
-  },
   "rasguea": {
    "g": "strums",
    "t": "verb"
@@ -5755,10 +5599,6 @@
    "g": "steals",
    "t": "verb"
   },
-  "rocío": {
-   "g": "Rocío (name)",
-   "t": "noun"
-  },
   "roja": {
    "g": "red",
    "t": "adjective"
@@ -5847,10 +5687,6 @@
    "g": "to be",
    "t": "verb"
   },
-  "seba": {
-   "g": "Seba (name)",
-   "t": "noun"
-  },
   "seguile": {
    "g": "to follow",
    "t": "verb"
@@ -5909,10 +5745,6 @@
   },
   "solazo": {
    "g": "blazing sun",
-   "t": "noun"
-  },
-  "sole": {
-   "g": "Sole (name)",
    "t": "noun"
   },
   "sombrillas": {
@@ -6163,10 +5995,6 @@
    "g": "to treat",
    "t": "verb"
   },
-  "trece": {
-   "g": "thirteen",
-   "t": "numeral"
-  },
   "trepaba": {
    "g": "to climb",
    "t": "verb"
@@ -6322,10 +6150,6 @@
   "xeneize": {
    "g": "Boca Juniors",
    "t": "slang"
-  },
-  "yamila": {
-   "g": "Yamila (name)",
-   "t": "noun"
   },
   "zafar": {
    "g": "to slip away",
@@ -6786,10 +6610,6 @@
   "encargó": {
    "g": "ordered, commissioned",
    "t": "verb"
-  },
-  "doscientos": {
-   "g": "two hundred",
-   "t": "numeral"
   },
   "viste": {
    "g": "you see, right",
