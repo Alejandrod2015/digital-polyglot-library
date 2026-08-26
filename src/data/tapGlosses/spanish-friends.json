@@ -9604,39 +9604,75 @@
   "cafe-y-pan-de-yema": {
    "café": {
     "g": "coffee",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Café y pan de yema",
+     "en": "Coffee and egg-yolk bread"
+    }
    },
    "y": {
     "g": "and",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "Café y pan de yema",
+     "en": "Coffee and egg-yolk bread"
+    }
    },
    "pan": {
     "g": "bread",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "pan de yema",
+     "en": "egg-yolk bread"
+    }
    },
    "de": {
     "g": "of, from",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "pan de yema",
+     "en": "egg-yolk bread"
+    }
    },
    "yema": {
     "g": "Oaxacan egg yolk bread (pan de yema)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "pan de yema",
+     "en": "egg-yolk bread"
+    }
    },
    "domingo": {
     "g": "Sunday",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El domingo siguiente",
+     "en": "The following Sunday"
+    }
    },
    "siguiente": {
     "g": "next, following",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "El domingo siguiente",
+     "en": "The following Sunday"
+    }
    },
    "bola": {
     "g": "the gang, group of friends",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "la bola se juntó tranquila",
+     "en": "the crew met up quietly"
+    }
    },
    "se": {
     "g": "oneself, himself",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "la bola se juntó",
+     "en": "the crew met up"
+    }
    },
    "juntó": {
     "g": "gathered, put together",
@@ -9672,47 +9708,91 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "la bola se juntó tranquila",
+     "en": "the crew met up quietly"
     }
    },
    "tranquila": {
     "g": "calm, relax (fem.)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "se juntó tranquila",
+     "en": "met up quietly"
+    }
    },
    "en": {
     "g": "in, on",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "en casa de Nayeli",
+     "en": "at Nayeli's place"
+    }
    },
    "casa": {
     "g": "house, home",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "en casa de Nayeli",
+     "en": "at Nayeli's place"
+    }
    },
    "con": {
     "g": "with",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "con café y pan de yema",
+     "en": "over coffee and egg-yolk bread"
+    }
    },
    "no": {
     "g": "no, not",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "No hubo carrilla esta vez",
+     "en": "There was no ribbing this time"
+    }
    },
    "hubo": {
     "g": "there was",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "No hubo carrilla esta vez",
+     "en": "There was no ribbing this time"
+    }
    },
    "carrilla": {
     "g": "teasing, ribbing",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "No hubo carrilla",
+     "en": "There was no ribbing"
+    }
    },
    "esta": {
     "g": "this (one)",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "esta vez",
+     "en": "this time"
+    }
    },
    "vez": {
     "g": "time, occasion",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "esta vez",
+     "en": "this time"
+    }
    },
    "porque": {
     "g": "because",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "porque Itzel andaba con el ánimo por los suelos",
+     "en": "because Itzel was feeling very low"
+    }
    },
    "andaba": {
     "g": "was going around",
@@ -9748,67 +9828,131 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "andaba con el ánimo por los suelos",
+     "en": "was feeling very low"
     }
    },
    "ánimo": {
     "g": "cheer up, hang in there",
-    "t": "expression"
+    "t": "expression",
+    "c": {
+     "es": "con el ánimo por los suelos",
+     "en": "feeling very low"
+    }
    },
    "por": {
     "g": "for, by",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "el ánimo por los suelos",
+     "en": "spirits on the floor"
+    }
    },
    "suelos": {
     "g": "spirits totally down (ánimo por los suelos)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "por los suelos",
+     "en": "on the floor"
+    }
    },
    "habían": {
     "g": "there were; had",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "La habían corrido del trabajo",
+     "en": "She had been let go from her job"
+    }
    },
    "corrido": {
     "g": "fired, kicked out of a job",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "La habían corrido del trabajo",
+     "en": "She had been let go from her job"
+    }
    },
    "del": {
     "g": "of the",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "del trabajo",
+     "en": "from her job"
+    }
    },
    "trabajo": {
     "g": "work, job",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "corrido del trabajo",
+     "en": "let go from her job"
+    }
    },
    "jueves": {
     "g": "Thursday",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el jueves",
+     "en": "on Thursday"
+    }
    },
    "así": {
     "g": "like this, so",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "así nomás",
+     "en": "just like that"
+    }
    },
    "nomás": {
     "g": "just, only",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "así nomás, sin avisar",
+     "en": "just like that, with no warning"
+    }
    },
    "sin": {
     "g": "without",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "sin avisar",
+     "en": "with no warning"
+    }
    },
    "avisar": {
     "g": "to give warning, let know",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "sin avisar",
+     "en": "with no warning"
+    }
    },
    "hacer": {
     "g": "to do, make",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "sin hacer preguntas",
+     "en": "without asking questions"
+    }
    },
    "preguntas": {
     "g": "questions",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "sin hacer preguntas",
+     "en": "without asking questions"
+    }
    },
    "le": {
     "g": "to him, her, it",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "le sirvió un tejate",
+     "en": "poured her a tejate"
+    }
    },
    "sirvió": {
     "g": "served, poured",
@@ -9844,19 +9988,35 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "le sirvió un tejate bien frío",
+     "en": "poured her an ice-cold tejate"
     }
    },
    "tejate": {
     "g": "a cold Oaxacan maize and cacao drink",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un tejate bien frío",
+     "en": "an ice-cold tejate"
+    }
    },
    "bien": {
     "g": "well, good",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "bien frío",
+     "en": "ice-cold"
+    }
    },
    "frío": {
     "g": "cold",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un tejate bien frío",
+     "en": "an ice-cold tejate"
+    }
    },
    "sentó": {
     "g": "sat down; suited",
@@ -9892,19 +10052,35 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se sentó a su lado",
+     "en": "sat down beside her"
     }
    },
    "a": {
     "g": "to, at",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "a su lado",
+     "en": "beside her"
+    }
    },
    "su": {
     "g": "his, her, their",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "a su lado",
+     "en": "beside her"
+    }
    },
    "lado": {
     "g": "side",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "se sentó a su lado",
+     "en": "sat down beside her"
+    }
    },
    "llegó": {
     "g": "arrived",
@@ -9940,43 +10116,83 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Rodrigo llegó cargado de tlayudas",
+     "en": "Rodrigo arrived loaded with tlayudas"
     }
    },
    "cargado": {
     "g": "loaded up, carrying a lot",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "llegó cargado de tlayudas",
+     "en": "arrived loaded with tlayudas"
+    }
    },
    "tlayudas": {
     "g": "tlayudas (Oaxacan dish)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "cargado de tlayudas",
+     "en": "loaded with tlayudas"
+    }
    },
    "diciendo": {
     "g": "saying",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "diciendo que nadie llora con la panza llena",
+     "en": "saying nobody cries on a full stomach"
+    }
    },
    "que": {
     "g": "that",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "que nadie llora con la panza llena",
+     "en": "that nobody cries on a full stomach"
+    }
    },
    "nadie": {
     "g": "nobody",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "nadie llora con la panza llena",
+     "en": "nobody cries on a full stomach"
+    }
    },
    "llora": {
     "g": "cries",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "nadie llora",
+     "en": "nobody cries"
+    }
    },
    "panza": {
     "g": "belly, gut",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con la panza llena",
+     "en": "on a full stomach"
+    }
    },
    "llena": {
     "g": "full",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "la panza llena",
+     "en": "a full stomach"
+    }
    },
    "poco": {
     "g": "little by little (poco a poco)",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "Poco a poco",
+     "en": "Little by little"
+    }
    },
    "fue": {
     "g": "was, went",
@@ -10012,23 +10228,43 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "la bola fue cayendo",
+     "en": "the crew kept turning up"
     }
    },
    "cayendo": {
     "g": "falling",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "fue cayendo con algo para compartir",
+     "en": "kept turning up with something to share"
+    }
    },
    "algo": {
     "g": "something",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "algo para compartir",
+     "en": "something to share"
+    }
    },
    "para": {
     "g": "for, to",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "algo para compartir",
+     "en": "something to share"
+    }
    },
    "compartir": {
     "g": "to share",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "algo para compartir",
+     "en": "something to share"
+    }
    },
    "funcionaba": {
     "g": "was working",
@@ -10064,43 +10300,83 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "Así funcionaba entre ellos",
+     "en": "That is how it worked among them"
     }
    },
    "entre": {
     "g": "between, among",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "entre ellos",
+     "en": "among them"
+    }
    },
    "ellos": {
     "g": "they",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "entre ellos",
+     "en": "among them"
+    }
    },
    "como": {
     "g": "like, as",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "como una guelaguetza",
+     "en": "like a guelaguetza"
+    }
    },
    "guelaguetza": {
     "g": "the Oaxacan spirit of mutual giving",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "como una guelaguetza",
+     "en": "like a guelaguetza, the Oaxacan custom of mutual help"
+    }
    },
    "hoy": {
     "g": "today",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "hoy por ti, mañana por mí",
+     "en": "today for you, tomorrow for me"
+    }
    },
    "ti": {
     "g": "you",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "hoy por ti",
+     "en": "today for you"
+    }
    },
    "mañana": {
     "g": "tomorrow; morning",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "mañana por mí",
+     "en": "tomorrow for me"
+    }
    },
    "mí": {
     "g": "me",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "mañana por mí",
+     "en": "tomorrow for me"
+    }
    },
    "cuando": {
     "g": "when",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "Cuando a uno se le caía el mundo",
+     "en": "When one of them had their world fall apart"
+    }
    },
    "caía": {
     "g": "his world fell apart (se le caía el mundo)",
@@ -10136,15 +10412,27 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "se le caía el mundo",
+     "en": "their world fell apart"
     }
    },
    "mundo": {
     "g": "world",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "se le caía el mundo",
+     "en": "their world fell apart"
+    }
    },
    "demás": {
     "g": "the others",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "los demás le hacían el paro",
+     "en": "the others had their back"
+    }
    },
    "hacían": {
     "g": "they were doing",
@@ -10180,19 +10468,35 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "le hacían el paro",
+     "en": "had their back"
     }
    },
    "paro": {
     "g": "to do a favor (hacer el paro)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "le hacían el paro",
+     "en": "had their back"
+    }
    },
    "lo": {
     "g": "it, him",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "sin que lo pidiera",
+     "en": "without them asking"
+    }
    },
    "pidiera": {
     "g": "would ask for",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "sin que lo pidiera",
+     "en": "without them asking"
+    }
    },
    "era": {
     "g": "was, used to be",
@@ -10228,23 +10532,43 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "No era lástima",
+     "en": "It was not pity"
     }
    },
    "lástima": {
     "g": "pity",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "No era lástima",
+     "en": "It was not pity"
+    }
    },
    "puro": {
     "g": "pure; just, only",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "era puro cariño del bueno",
+     "en": "it was pure affection, the real kind"
+    }
    },
    "cariño": {
     "g": "affection, dear",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "puro cariño del bueno",
+     "en": "pure affection, the real kind"
+    }
    },
    "bueno": {
     "g": "good, well",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "cariño del bueno",
+     "en": "the real kind of affection"
+    }
    },
    "intentó": {
     "g": "tried",
@@ -10280,43 +10604,83 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Itzel intentó disculparse",
+     "en": "Itzel tried to apologise"
     }
    },
    "disculparse": {
     "g": "to apologize",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "intentó disculparse",
+     "en": "tried to apologise"
+    }
    },
    "aguarles": {
     "g": "to spoil it for them",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "por aguarles el domingo",
+     "en": "for spoiling their Sunday"
+    }
    },
    "sus": {
     "g": "his, her, their (plural)",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "con sus penas",
+     "en": "with her troubles"
+    }
    },
    "penas": {
     "g": "sorrows, troubles",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con sus penas",
+     "en": "with her troubles"
+    }
    },
    "híjole": {
     "g": "wow, geez (Mexican)",
-    "t": "expression"
+    "t": "expression",
+    "c": {
+     "es": "Híjole, ni te disculpes",
+     "en": "Oh come on, do not even apologise"
+    }
    },
    "ni": {
     "g": "not even, nor",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "ni te disculpes",
+     "en": "do not even apologise"
+    }
    },
    "te": {
     "g": "you, yourself",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "ni te disculpes",
+     "en": "do not even apologise"
+    }
    },
    "disculpes": {
     "g": "apologize",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "ni te disculpes",
+     "en": "do not even apologise"
+    }
    },
    "eso": {
     "g": "that",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "para eso estamos",
+     "en": "that is what we are here for"
+    }
    },
    "estamos": {
     "g": "we are",
@@ -10352,6 +10716,10 @@
       ]
      ],
      "here": 3
+    },
+    "c": {
+     "es": "para eso estamos",
+     "en": "that is what we are here for"
     }
    },
    "cortó": {
@@ -10388,15 +10756,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "la cortó Rodrigo de inmediato",
+     "en": "Rodrigo cut her off straight away"
     }
    },
    "inmediato": {
     "g": "immediate; at once (de inmediato)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "de inmediato",
+     "en": "straight away"
+    }
    },
    "modo": {
     "g": "way, manner",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Ni modo que te dejáramos sola",
+     "en": "No way were we leaving you on your own"
+    }
    },
    "dejáramos": {
     "g": "that we would leave",
@@ -10432,11 +10812,19 @@
       ]
      ],
      "here": 3
+    },
+    "c": {
+     "es": "que te dejáramos sola",
+     "en": "that we would leave you on your own"
     }
    },
    "sola": {
     "g": "alone",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "te dejáramos sola",
+     "en": "leave you on your own"
+    }
    },
    "remató": {
     "g": "finished off with a jab",
@@ -10472,11 +10860,19 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "remató Nayeli con cariño",
+     "en": "Nayeli added warmly"
     }
    },
    "todos": {
     "g": "everyone, all",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Entre todos empezaron a echarle la mano",
+     "en": "Between them they started helping her out"
+    }
    },
    "empezaron": {
     "g": "they started",
@@ -10512,27 +10908,51 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "empezaron a echarle la mano",
+     "en": "started helping her out"
     }
    },
    "echarle": {
     "g": "to lend a hand (echarle la mano)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "echarle la mano",
+     "en": "help her out"
+    }
    },
    "mano": {
     "g": "hand; bro, dude",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "echarle la mano",
+     "en": "help her out"
+    }
    },
    "buscar": {
     "g": "to look for, to search",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "para buscar otra chamba",
+     "en": "to look for another job"
+    }
    },
    "otra": {
     "g": "another (fem.)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "otra chamba",
+     "en": "another job"
+    }
    },
    "chamba": {
     "g": "work, job",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "buscar otra chamba",
+     "en": "look for another job"
+    }
    },
    "tenía": {
     "g": "I/he/she had",
@@ -10568,23 +10988,43 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "Uno tenía un conecte",
+     "en": "One of them had a contact"
     }
    },
    "conecte": {
     "g": "a useful contact who hooks you up",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un conecte",
+     "en": "a contact"
+    }
    },
    "otro": {
     "g": "another, other",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "otro conocía a alguien",
+     "en": "another knew someone"
+    }
    },
    "conocía": {
     "g": "knew, was acquainted with",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "otro conocía a alguien",
+     "en": "another knew someone"
+    }
    },
    "alguien": {
     "g": "someone",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "conocía a alguien que jalaba gente",
+     "en": "knew someone who was hiring"
+    }
    },
    "jalaba": {
     "g": "recruited, brought people in",
@@ -10620,71 +11060,139 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "alguien que jalaba gente",
+     "en": "someone who was hiring"
     }
    },
    "gente": {
     "g": "people",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "jalaba gente",
+     "en": "was taking people on"
+    }
    },
    "red": {
     "g": "a network of people",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "La red de la bola",
+     "en": "The crew's network"
+    }
    },
    "valía": {
     "g": "was worth",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "valía más que cualquier bolsa de trabajo",
+     "en": "was worth more than any job board"
+    }
    },
    "más": {
     "g": "more",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "valía más que cualquier bolsa de trabajo",
+     "en": "was worth more than any job board"
+    }
    },
    "cualquier": {
     "g": "any",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "cualquier bolsa de trabajo",
+     "en": "any job board"
+    }
    },
    "bolsa": {
     "g": "bag",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "cualquier bolsa de trabajo",
+     "en": "any job board"
+    }
    },
    "tarde": {
     "g": "afternoon, late",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Para la tarde",
+     "en": "By the afternoon"
+    }
    },
    "ya": {
     "g": "already, now",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "ya se reía otra vez",
+     "en": "she was laughing again"
+    }
    },
    "reía": {
     "g": "laughed",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "ya se reía otra vez",
+     "en": "she was laughing again"
+    }
    },
    "puntadas": {
     "g": "witty funny remarks",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "las puntadas de Rodrigo",
+     "en": "Rodrigo's wisecracks"
+    }
    },
    "había": {
     "g": "there was; had",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "El café se había vuelto pura fiesta",
+     "en": "The get-together had turned into a party"
+    }
    },
    "vuelto": {
     "g": "turned into",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "se había vuelto pura fiesta",
+     "en": "had turned into a party"
+    }
    },
    "pura": {
     "g": "pure; nothing but",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "pura fiesta",
+     "en": "a proper party"
+    }
    },
    "fiesta": {
     "g": "party",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "se había vuelto pura fiesta",
+     "en": "had turned into a party"
+    }
    },
    "planeara": {
     "g": "would plan",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "sin que nadie lo planeara siquiera",
+     "en": "without anyone even planning it"
+    }
    },
    "siquiera": {
     "g": "even, so much as",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "sin que nadie lo planeara siquiera",
+     "en": "without anyone even planning it"
+    }
    },
    "olía": {
     "g": "smelled",
@@ -10720,15 +11228,27 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "La casa de Nayeli olía a pan",
+     "en": "Nayeli's house smelled of bread"
     }
    },
    "buena": {
     "g": "good",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "a buena onda",
+     "en": "of good vibes"
+    }
    },
    "onda": {
     "g": "vibe, what's up",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "a buena onda",
+     "en": "of good vibes"
+    }
    },
    "resolvió": {
     "g": "solved, fixed",
@@ -10764,27 +11284,51 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Nadie le resolvió el problema",
+     "en": "Nobody solved her problem"
     }
    },
    "problema": {
     "g": "problem",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "le resolvió el problema",
+     "en": "solved her problem"
+    }
    },
    "esa": {
     "g": "that (one)",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "esa tarde",
+     "en": "that afternoon"
+    }
    },
    "pero": {
     "g": "but",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "pero Itzel se fue con el corazón lleno",
+     "en": "but Itzel left with a full heart"
+    }
    },
    "corazón": {
     "g": "heart",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con el corazón lleno",
+     "en": "with a full heart"
+    }
    },
    "lleno": {
     "g": "full",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "el corazón lleno",
+     "en": "a full heart"
+    }
    },
    "sabía": {
     "g": "knew",
@@ -10820,11 +11364,19 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "Sabía que esta bola no la iba a dejar sola",
+     "en": "She knew this crew was not going to leave her alone"
     }
    },
    "pasara": {
     "g": "whatever happened",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "pasara lo que pasara",
+     "en": "whatever happened"
+    }
    },
    "iba": {
     "g": "was going",
@@ -10860,19 +11412,35 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "no la iba a dejar sola",
+     "en": "was not going to leave her alone"
     }
    },
    "dejar": {
     "g": "to leave, let",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "dejar sola",
+     "en": "leave her alone"
+    }
    },
    "amigo": {
     "g": "friend",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Un amigo de a de veras",
+     "en": "A real friend"
+    }
    },
    "veras": {
     "g": "for real (de a de veras)",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "de a de veras",
+     "en": "for real"
+    }
    },
    "reconoce": {
     "g": "is recognized (se reconoce)",
@@ -10908,6 +11476,10 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se reconoce así",
+     "en": "is known by this"
     }
    },
    "aparece": {
@@ -10944,11 +11516,19 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "aparece con tlayudas",
+     "en": "shows up with tlayudas"
     }
    },
    "justo": {
     "g": "just, exactly; fair",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "justo cuando el mundo se te cae",
+     "en": "right when your world is falling apart"
+    }
    },
    "cae": {
     "g": "falls",
@@ -10984,6 +11564,10 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "cuando el mundo se te cae",
+     "en": "when your world is falling apart"
     }
    }
   },
@@ -33894,7 +34478,11 @@
   "marina-llega-con-visaje": {
    "marina": {
     "g": "Marina; navy",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Marina llega con visaje",
+     "en": "Marina arrives with gossip"
+    }
    },
    "llega": {
     "g": "arrives",
@@ -33930,15 +34518,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Marina llega con visaje",
+     "en": "Marina arrives with gossip"
     }
    },
    "con": {
     "g": "with",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "con visaje",
+     "en": "with gossip"
+    }
    },
    "visaje": {
     "g": "showy drama, a fuss",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "llega con visaje",
+     "en": "arrives with a bit of drama"
+    }
    },
    "entró": {
     "g": "entered, went in",
@@ -33974,67 +34574,131 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Marina entró al apartamento",
+     "en": "Marina came into the flat"
     }
    },
    "al": {
     "g": "to the",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "al apartamento",
+     "en": "into the flat"
+    }
    },
    "apartamento": {
     "g": "apartment",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "entró al apartamento",
+     "en": "came into the flat"
+    }
    },
    "cara": {
     "g": "face",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con cara de que traía un chisme",
+     "en": "with a look that said she had gossip"
+    }
    },
    "de": {
     "g": "of, from",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "cara de que traía un chisme",
+     "en": "a look that said she had gossip"
+    }
    },
    "que": {
     "g": "that",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "cara de que traía un chisme",
+     "en": "a look that said she had gossip"
+    }
    },
    "traía": {
     "g": "was carrying, had",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "traía un chisme bien jugoso",
+     "en": "she had some really juicy gossip"
+    }
    },
    "chisme": {
     "g": "gossip",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un chisme bien jugoso",
+     "en": "some really juicy gossip"
+    }
    },
    "bien": {
     "g": "well, good",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "bien jugoso",
+     "en": "really juicy"
+    }
    },
    "jugoso": {
     "g": "juicy, full of scandal",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "un chisme bien jugoso",
+     "en": "some really juicy gossip"
+    }
    },
    "tirado": {
     "g": "sprawled, flopped down",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "tirado en el sofá",
+     "en": "sprawled on the sofa"
+    }
    },
    "en": {
     "g": "in, on",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "en el sofá",
+     "en": "on the sofa"
+    }
    },
    "sofá": {
     "g": "couch, sofa",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "tirado en el sofá",
+     "en": "sprawled on the sofa"
+    }
    },
    "celular": {
     "g": "cellphone",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con el celular",
+     "en": "with his phone"
+    }
    },
    "casi": {
     "g": "almost",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "casi ni levantó la cabeza",
+     "en": "barely even looked up"
+    }
    },
    "ni": {
     "g": "not even, nor",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "casi ni levantó la cabeza",
+     "en": "barely even looked up"
+    }
    },
    "levantó": {
     "g": "lifted, raised",
@@ -34070,31 +34734,59 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "casi ni levantó la cabeza",
+     "en": "barely even looked up"
     }
    },
    "cabeza": {
     "g": "head",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "levantó la cabeza",
+     "en": "looked up"
+    }
    },
    "parce": {
     "g": "buddy, mate; classic Colombian",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Parce, suelte ese aparato",
+     "en": "Mate, put that thing down"
+    }
    },
    "suelte": {
     "g": "let go of, drop",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "suelte ese aparato",
+     "en": "put that thing down"
+    }
    },
    "ese": {
     "g": "that (one)",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "ese aparato",
+     "en": "that thing"
+    }
    },
    "aparato": {
     "g": "the gadget, the device",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "suelte ese aparato",
+     "en": "put that thing down"
+    }
    },
    "esto": {
     "g": "this",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "esto está muy bacano",
+     "en": "this is really good"
+    }
    },
    "está": {
     "g": "is",
@@ -34130,19 +34822,35 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "esto está muy bacano",
+     "en": "this is really good"
     }
    },
    "muy": {
     "g": "very",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "muy bacano",
+     "en": "really good"
+    }
    },
    "bacano": {
     "g": "cool, awesome",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "está muy bacano",
+     "en": "is really good"
+    }
    },
    "le": {
     "g": "to him, her, it",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "le soltó ella",
+     "en": "she blurted at him"
+    }
    },
    "soltó": {
     "g": "he/she let go, blurted",
@@ -34178,27 +34886,51 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "le soltó ella",
+     "en": "she blurted at him"
     }
    },
    "ella": {
     "g": "she",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "le soltó ella",
+     "en": "she blurted at him"
+    }
    },
    "según": {
     "g": "according to",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "Según Marina",
+     "en": "According to Marina"
+    }
    },
    "alguien": {
     "g": "someone",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "alguien del edificio",
+     "en": "someone in the building"
+    }
    },
    "del": {
     "g": "of the",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "alguien del edificio",
+     "en": "someone in the building"
+    }
    },
    "edificio": {
     "g": "building",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "alguien del edificio",
+     "en": "someone in the building"
+    }
    },
    "andaba": {
     "g": "was going around",
@@ -34234,19 +34966,35 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "andaba en un enredo tremendo",
+     "en": "was caught up in a huge mess"
     }
    },
    "enredo": {
     "g": "mess, mix-up",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un enredo tremendo",
+     "en": "a huge mess"
+    }
    },
    "tremendo": {
     "g": "huge, tremendous",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "un enredo tremendo",
+     "en": "a huge mess"
+    }
    },
    "vecina": {
     "g": "a female neighbor",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con una vecina",
+     "en": "with a neighbour"
+    }
    },
    "salió": {
     "g": "went out, turned out",
@@ -34282,23 +35030,43 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Valeria salió de la cocina",
+     "en": "Valeria came out of the kitchen"
     }
    },
    "cocina": {
     "g": "kitchen",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "salió de la cocina",
+     "en": "came out of the kitchen"
+    }
    },
    "tinto": {
     "g": "red wine; black coffee (Col.)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con un tinto",
+     "en": "with a black coffee"
+    }
    },
    "y": {
     "g": "and",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "y se sentó a chismosear",
+     "en": "and sat down to gossip"
+    }
    },
    "se": {
     "g": "oneself, himself",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "se sentó a chismosear",
+     "en": "sat down to gossip"
+    }
    },
    "sentó": {
     "g": "sat down; suited",
@@ -34334,39 +35102,75 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se sentó a chismosear también",
+     "en": "sat down to gossip too"
     }
    },
    "a": {
     "g": "to, at",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "a chismosear",
+     "en": "to gossip"
+    }
    },
    "chismosear": {
     "g": "to gossip and swap stories",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "se sentó a chismosear",
+     "en": "sat down to gossip"
+    }
    },
    "también": {
     "g": "also, too",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "a chismosear también",
+     "en": "to gossip too"
+    }
    },
    "cuente": {
     "g": "tell it, spill it",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "Cuente, cuente",
+     "en": "Tell us, go on"
+    }
    },
    "no": {
     "g": "no, not",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "no me deje en ascuas",
+     "en": "do not leave me hanging"
+    }
    },
    "me": {
     "g": "me, myself",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "no me deje en ascuas",
+     "en": "do not leave me hanging"
+    }
    },
    "deje": {
     "g": "do not leave me (no me deje)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "no me deje en ascuas",
+     "en": "do not leave me hanging"
+    }
    },
    "ascuas": {
     "g": "on edge, tenterhooks",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "en ascuas",
+     "en": "hanging"
+    }
    },
    "apuró": {
     "g": "hurried, pressed",
@@ -34402,15 +35206,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "la apuró, toda intrigada",
+     "en": "she hurried her along, intrigued"
     }
    },
    "toda": {
     "g": "all, whole (fem.)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "toda intrigada",
+     "en": "completely intrigued"
+    }
    },
    "intrigada": {
     "g": "intrigued, curious",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "toda intrigada",
+     "en": "completely intrigued"
+    }
    },
    "bajó": {
     "g": "went down, lowered",
@@ -34446,31 +35262,59 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Marina bajó la voz",
+     "en": "Marina lowered her voice"
     }
    },
    "voz": {
     "g": "voice",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "bajó la voz",
+     "en": "lowered her voice"
+    }
    },
    "como": {
     "g": "like, as",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "como si fuera un secreto de Estado",
+     "en": "as if it were a state secret"
+    }
    },
    "si": {
     "g": "if, whether",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "como si fuera un secreto de Estado",
+     "en": "as if it were a state secret"
+    }
    },
    "fuera": {
     "g": "outside; were",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "como si fuera un secreto de Estado",
+     "en": "as if it were a state secret"
+    }
    },
    "secreto": {
     "g": "secret",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un secreto de Estado",
+     "en": "a state secret"
+    }
    },
    "estado": {
     "g": "state, been",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un secreto de Estado",
+     "en": "a state secret"
+    }
    },
    "arrancó": {
     "g": "started off",
@@ -34506,11 +35350,19 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "arrancó con todo el visaje",
+     "en": "launched into the whole show"
     }
    },
    "todo": {
     "g": "all, everything",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "con todo el visaje",
+     "en": "with the whole show"
+    }
    },
    "habló": {
     "g": "talked, spoke",
@@ -34546,55 +35398,107 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Habló de mensajes escondidos",
+     "en": "She talked about hidden messages"
     }
    },
    "mensajes": {
     "g": "messages",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "mensajes escondidos",
+     "en": "hidden messages"
+    }
    },
    "escondidos": {
     "g": "hidden",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "mensajes escondidos",
+     "en": "hidden messages"
+    }
    },
    "fiesta": {
     "g": "party",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "una fiesta a las malas",
+     "en": "a party thrown behind someone's back"
+    }
    },
    "malas": {
     "g": "by force or on the sly (a las malas)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "a las malas",
+     "en": "behind someone's back"
+    }
    },
    "man": {
     "g": "guy, dude",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un man sospechoso",
+     "en": "a suspicious guy"
+    }
    },
    "sospechoso": {
     "g": "suspicious",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "un man sospechoso",
+     "en": "a suspicious guy"
+    }
    },
    "por": {
     "g": "for, by",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "por fin soltó el celular",
+     "en": "finally put the phone down"
+    }
    },
    "fin": {
     "g": "end",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "por fin",
+     "en": "finally"
+    }
    },
    "ya": {
     "g": "already, now",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "ya bien enganchado en el cuento",
+     "en": "by now properly hooked on the story"
+    }
    },
    "enganchado": {
     "g": "hooked, absorbed",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "bien enganchado en el cuento",
+     "en": "properly hooked on the story"
+    }
    },
    "cuento": {
     "g": "story, tale",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "enganchado en el cuento",
+     "en": "hooked on the story"
+    }
    },
    "problema": {
     "g": "problem",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El problema empezó cuando",
+     "en": "The trouble started when"
+    }
    },
    "empezó": {
     "g": "started",
@@ -34630,15 +35534,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "El problema empezó",
+     "en": "The trouble started"
     }
    },
    "cuando": {
     "g": "when",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "cuando los detalles se le hicieron rarísimos",
+     "en": "when the details started sounding very odd to her"
+    }
    },
    "detalles": {
     "g": "details",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "los detalles se le hicieron rarísimos",
+     "en": "the details started sounding very odd"
+    }
    },
    "hicieron": {
     "g": "they did, made",
@@ -34674,19 +35590,35 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "se le hicieron rarísimos",
+     "en": "started sounding very odd to her"
     }
    },
    "rarísimos": {
     "g": "really strange, very odd",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "se le hicieron rarísimos",
+     "en": "started sounding very odd"
+    }
    },
    "fecha": {
     "g": "the date",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "La fecha, el edificio, el carro",
+     "en": "The date, the building, the car"
+    }
    },
    "carro": {
     "g": "car",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el carro que describían",
+     "en": "the car they were describing"
+    }
    },
    "describían": {
     "g": "were describing",
@@ -34722,6 +35654,10 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "el carro que describían",
+     "en": "the car they were describing"
     }
    },
    "sonaba": {
@@ -34758,15 +35694,27 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "todo le sonaba demasiado conocido",
+     "en": "it all sounded far too familiar"
     }
    },
    "demasiado": {
     "g": "too much",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "demasiado conocido",
+     "en": "far too familiar"
+    }
    },
    "conocido": {
     "g": "acquaintance; known",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "demasiado conocido",
+     "en": "far too familiar"
+    }
    },
    "quedó": {
     "g": "stayed, ended up",
@@ -34802,35 +35750,67 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Se quedó callada un momentico",
+     "en": "She went quiet for a moment"
     }
    },
    "callada": {
     "g": "quiet, silent",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "Se quedó callada",
+     "en": "She went quiet"
+    }
    },
    "momentico": {
     "g": "a tiny little moment",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un momentico",
+     "en": "a little moment"
+    }
    },
    "atando": {
     "g": "putting the pieces together (atar cabos)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "atando cabos con cara de susto",
+     "en": "putting it together, looking horrified"
+    }
    },
    "cabos": {
     "g": "loose ends",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "atando cabos",
+     "en": "putting two and two together"
+    }
    },
    "susto": {
     "g": "a fright, a scare",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con cara de susto",
+     "en": "looking horrified"
+    }
    },
    "pare": {
     "g": "stop, hold on",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "Pare ahí",
+     "en": "Stop right there"
+    }
    },
    "ahí": {
     "g": "there",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "Pare ahí",
+     "en": "Stop right there"
+    }
    },
    "frenó": {
     "g": "stopped, braked them",
@@ -34866,19 +35846,35 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "los frenó de una",
+     "en": "she stopped them dead"
     }
    },
    "entre": {
     "g": "between, among",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "entre la risa y el sofocón",
+     "en": "half laughing, half mortified"
+    }
    },
    "risa": {
     "g": "laughter",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "entre la risa y el sofocón",
+     "en": "half laughing, half mortified"
+    }
    },
    "sofocón": {
     "g": "a fluster of shock and heat",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "entre la risa y el sofocón",
+     "en": "half laughing, half mortified"
+    }
    },
    "hablan": {
     "g": "they talk",
@@ -34914,6 +35910,10 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "Ese man del que hablan",
+     "en": "That guy you are talking about"
     }
    },
    "es": {
@@ -34950,19 +35950,35 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "es mi primo",
+     "en": "is my cousin"
     }
    },
    "mi": {
     "g": "my",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "es mi primo",
+     "en": "is my cousin"
+    }
    },
    "primo": {
     "g": "cousin; buddy",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "es mi primo",
+     "en": "is my cousin"
+    }
    },
    "esa": {
     "g": "that (one)",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "esa fiesta fue en mi casa",
+     "en": "that party was at my place"
+    }
    },
    "fue": {
     "g": "was, went",
@@ -34998,15 +36014,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "esa fiesta fue en mi casa",
+     "en": "that party was at my place"
     }
    },
    "casa": {
     "g": "house, home",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "fue en mi casa",
+     "en": "was at my place"
+    }
    },
    "silencio": {
     "g": "silence",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El silencio duró dos segundos",
+     "en": "The silence lasted two seconds"
+    }
    },
    "duró": {
     "g": "it lasted",
@@ -35042,43 +36070,83 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "El silencio duró dos segundos",
+     "en": "The silence lasted two seconds"
     }
    },
    "segundos": {
     "g": "seconds",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "dos segundos",
+     "en": "two seconds"
+    }
    },
    "antes": {
     "g": "before",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "antes de que estallaran de la carcajada",
+     "en": "before they burst out laughing"
+    }
    },
    "estallaran": {
     "g": "would burst out",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "estallaran de la carcajada",
+     "en": "they burst out laughing"
+    }
    },
    "carcajada": {
     "g": "a burst of loud laughter",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "estallaran de la carcajada",
+     "en": "burst out laughing"
+    }
    },
    "resulta": {
     "g": "it turns out",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "Resulta que el chisme había dado tantas vueltas",
+     "en": "It turns out the gossip had gone round so many times"
+    }
    },
    "había": {
     "g": "there was; had",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "había dado tantas vueltas",
+     "en": "had gone round so many times"
+    }
    },
    "dado": {
     "g": "to go around (dar vueltas)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "había dado tantas vueltas",
+     "en": "had gone round so many times"
+    }
    },
    "tantas": {
     "g": "so many",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "tantas vueltas por el edificio",
+     "en": "so many times round the building"
+    }
    },
    "vueltas": {
     "g": "turns, laps",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "dado tantas vueltas",
+     "en": "gone round so many times"
+    }
    },
    "volvió": {
     "g": "he/she came back",
@@ -35114,39 +36182,75 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "volvió todo deformado",
+     "en": "came back completely twisted"
     }
    },
    "deformado": {
     "g": "distorted, twisted out of shape",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "volvió todo deformado",
+     "en": "came back completely twisted"
+    }
    },
    "boca": {
     "g": "mouth",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "De boca en boca",
+     "en": "Passed from mouth to mouth"
+    }
    },
    "reunión": {
     "g": "a gathering, a meeting",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "una reunión familiar",
+     "en": "a family get-together"
+    }
    },
    "familiar": {
     "g": "family, a family gathering",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "una reunión familiar",
+     "en": "a family get-together"
+    }
    },
    "vuelto": {
     "g": "turned into",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "se había vuelto un escándalo de telenovela",
+     "en": "had turned into a soap-opera scandal"
+    }
    },
    "escándalo": {
     "g": "a scandal",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un escándalo de telenovela",
+     "en": "a soap-opera scandal"
+    }
    },
    "telenovela": {
     "g": "a soap opera",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un escándalo de telenovela",
+     "en": "a soap-opera scandal"
+    }
    },
    "achantada": {
     "g": "embarrassed, sheepish",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "Marina, toda achantada",
+     "en": "Marina, thoroughly embarrassed"
+    }
    },
    "juró": {
     "g": "swore, vowed",
@@ -35182,11 +36286,19 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "juró que ella solo repetía",
+     "en": "swore she was only repeating"
     }
    },
    "solo": {
     "g": "only, alone",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "ella solo repetía lo que le habían rajado",
+     "en": "she was only repeating what she had been told"
+    }
    },
    "repetía": {
     "g": "was repeating",
@@ -35222,47 +36334,91 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "solo repetía lo que le habían rajado",
+     "en": "was only repeating what she had been told"
     }
    },
    "lo": {
     "g": "it, him",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "lo que le habían rajado",
+     "en": "what she had been told"
+    }
    },
    "habían": {
     "g": "there were; had",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "lo que le habían rajado",
+     "en": "what she had been told"
+    }
    },
    "rajado": {
     "g": "badmouthed, gossiped",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "le habían rajado",
+     "en": "she had been told"
+    }
    },
    "final": {
     "g": "final, ending",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Al final se rieron un buen rato",
+     "en": "In the end they laughed for a good while"
+    }
    },
    "rieron": {
     "g": "they laughed",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "se rieron un buen rato",
+     "en": "they laughed for a good while"
+    }
    },
    "buen": {
     "g": "good",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "un buen rato",
+     "en": "a good while"
+    }
    },
    "rato": {
     "g": "a while",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un buen rato",
+     "en": "a good while"
+    }
    },
    "teléfono": {
     "g": "phone",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el teléfono roto",
+     "en": "the game of telephone"
+    }
    },
    "roto": {
     "g": "the broken telephone game (teléfono roto)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "el teléfono roto",
+     "en": "the game of telephone"
+    }
    },
    "parche": {
     "g": "hangout, crew",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "en que se volvió el parche",
+     "en": "that the hangout had turned into"
+    }
    },
    "amenazó": {
     "g": "threatened",
@@ -35298,31 +36454,59 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Valeria los amenazó con inventarles un chisme peor",
+     "en": "Valeria threatened to make up worse gossip about them"
     }
    },
    "inventarles": {
     "g": "to make up for them",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "inventarles a ellos un chisme peor",
+     "en": "make up worse gossip about them"
+    }
    },
    "ellos": {
     "g": "they",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "inventarles a ellos",
+     "en": "make it up about them"
+    }
    },
    "peor": {
     "g": "worse, worst",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "un chisme peor",
+     "en": "worse gossip"
+    }
    },
    "próxima": {
     "g": "next",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "la próxima vez",
+     "en": "next time"
+    }
    },
    "vez": {
     "g": "time, occasion",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "la próxima vez",
+     "en": "next time"
+    }
    },
    "así": {
     "g": "like this, so",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "Así aprendieron",
+     "en": "That is how they learned"
+    }
    },
    "aprendieron": {
     "g": "they learned",
@@ -35358,23 +36542,43 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "Así aprendieron",
+     "en": "That is how they learned"
     }
    },
    "mejor": {
     "g": "better, best",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "el mejor chisme",
+     "en": "the best gossip"
+    }
    },
    "siempre": {
     "g": "always",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "casi siempre es puro cuento inflado",
+     "en": "is nearly always pure blown-up nonsense"
+    }
    },
    "puro": {
     "g": "pure; just, only",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "puro cuento inflado",
+     "en": "pure blown-up nonsense"
+    }
    },
    "inflado": {
     "g": "blown up, exaggerated",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "puro cuento inflado",
+     "en": "pure blown-up nonsense"
+    }
    }
   },
   "camila-no-da-mas": {
