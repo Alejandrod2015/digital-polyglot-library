@@ -1,0 +1,129 @@
+/**
+ * Lint de VARIANTE en las glosas de contexto.
+ *
+ *   npx tsx scripts/checkGlossVariants.ts
+ *   npm run lint:gloss-variants
+ *
+ * Las tarjetas de vocabulario enseñan formas: la conjugación de un verbo, el
+ * paradigma de un pronombre. Esas formas NO son las mismas en España, en
+ * México y en Argentina, y el fallo es invisible en revisión: `vosotros nadáis`
+ * en un journey de Bogotá se lee como español correcto, solo que nadie habla
+ * así allí. Este lint cruza cada bundle con la variante de su journey (grabada
+ * en el propio fichero, porque el nombre miente: `spanish-friends.json` es
+ * LATAM) y falla cuando una forma no pertenece a esa variante.
+ *
+ * Reglas, por variante:
+ *
+ *   España            vosotros sí; `ustedes` solo como tratamiento formal.
+ *   LATAM, México,    NUNCA vosotros, ni `os`, ni `vuestro`. La segunda del
+ *   Colombia          plural es `ustedes`, y su forma coincide con la de ellos.
+ *   Argentina         además, VOSEO: la segunda del singular es `vos`, no `tú`,
+ *                     y su forma lleva la tilde en la última sílaba
+ *                     (hablás, comés, vivís; ser es `sos`). El imperativo
+ *                     también cambia: hablá, comé, viví.
+ *
+ * Solo mira lo que se puede comprobar sin juicio: etiquetas de persona
+ * prohibidas, formas de vosotros, posesivos de vosotros y formas de `vos` que
+ * no estén acentuadas. Lo que no se puede comprobar así (léxico regional,
+ * registro) sigue siendo trabajo de leerlo.
+ */
+import fs from "node:fs";
+import path from "node:path";
+
+type Fila = [string, string];
+type Formas = { rows?: Fila[]; lemma?: string; link?: string };
+type Entrada = { c?: { es: string; en: string }; f?: Formas };
+type Bundle = {
+  language?: string;
+  variant?: string;
+  slugs?: string[];
+  byStory?: Record<string, Record<string, Entrada>>;
+};
+
+const DIR = "src/data/tapGlosses";
+/** Variantes sin vosotros. Argentina va aparte porque suma el voseo. */
+const SIN_VOSOTROS = new Set(["latam", "mexico", "colombia", "argentina", "peru", "chile"]);
+const VOSEO = new Set(["argentina", "uruguay"]);
+
+type Fallo = { fichero: string; historia: string; palabra: string; motivo: string };
+
+function esFormaDeVos(forma: string): boolean {
+  const limpia = forma.trim().toLowerCase();
+  if (!limpia) return false;
+  // sos, vas, das y estás son irregulares que ya son correctos en voseo.
+  if (["sos", "vas", "das", "estás", "has", "tenés", "vení"].includes(limpia)) return true;
+  const ultima = limpia.split(/\s+/).pop() ?? limpia;
+  return /(ás|és|ís)$/.test(ultima);
+}
+
+function revisa(fichero: string, bundle: Bundle): Fallo[] {
+  const fallos: Fallo[] = [];
+  const variante = (bundle.variant ?? "").trim().toLowerCase();
+  if ((bundle.language ?? "").toLowerCase() !== "spanish") return fallos;
+  if (!variante) {
+    fallos.push({ fichero, historia: "-", palabra: "-", motivo: "el bundle no dice de qué variante es" });
+    return fallos;
+  }
+
+  for (const [historia, entradas] of Object.entries(bundle.byStory ?? {})) {
+    for (const [palabra, entrada] of Object.entries(entradas)) {
+      const filas = entrada.f?.rows ?? [];
+      for (const [etiqueta, forma] of filas) {
+        const et = String(etiqueta ?? "").trim().toLowerCase();
+        const fo = String(forma ?? "").trim().toLowerCase();
+
+        if (SIN_VOSOTROS.has(variante)) {
+          if (et.includes("vosotros") || et.includes("vosotras")) {
+            fallos.push({ fichero, historia, palabra, motivo: `persona "${etiqueta}" en un journey ${variante}; ahí es ustedes` });
+          }
+          if (/\bos\b/.test(fo)) {
+            fallos.push({ fichero, historia, palabra, motivo: `"${forma}" usa el pronombre os, que en ${variante} es los o les` });
+          }
+          if (/\bvuestr[oa]s?\b/.test(fo)) {
+            fallos.push({ fichero, historia, palabra, motivo: `"${forma}" usa vuestro, que en ${variante} es de ustedes` });
+          }
+        }
+
+        if (VOSEO.has(variante)) {
+          if (et === "tú" || et === "tu") {
+            fallos.push({ fichero, historia, palabra, motivo: `persona "tú" en un journey ${variante}; ahí es vos` });
+          }
+          if (et.includes("vos") && !esFormaDeVos(fo)) {
+            fallos.push({ fichero, historia, palabra, motivo: `"${forma}" no es forma de vos; el voseo acentúa la última sílaba (hablás, comés, vivís)` });
+          }
+        }
+      }
+    }
+  }
+  return fallos;
+}
+
+function main() {
+  const ficheros = fs
+    .readdirSync(DIR)
+    .filter((f) => f.endsWith(".json") && !f.startsWith("talking-points"));
+  const fallos: Fallo[] = [];
+  let revisados = 0;
+  let conCapa = 0;
+
+  for (const f of ficheros) {
+    const bundle = JSON.parse(fs.readFileSync(path.join(DIR, f), "utf8")) as Bundle;
+    revisados += 1;
+    if (bundle.byStory && Object.keys(bundle.byStory).length > 0) conCapa += 1;
+    fallos.push(...revisa(f, bundle));
+  }
+
+  if (fallos.length === 0) {
+    console.log(`gloss-variants: limpio (${revisados} bundles, ${conCapa} con capa de contexto)`);
+    return;
+  }
+
+  console.error(`gloss-variants: ${fallos.length} formas que no son de su variante\n`);
+  for (const f of fallos) {
+    console.error(`  ${f.fichero} · ${f.historia} · ${f.palabra}: ${f.motivo}`);
+  }
+  console.error("\nLas formas se corrigen en el bundle; la variante de cada journey manda.");
+  process.exit(1);
+}
+
+main();
