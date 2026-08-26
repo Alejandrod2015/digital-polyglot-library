@@ -2761,7 +2761,7 @@
      "rows": [
       [
        "",
-       "del = de + el"
+       "from the (de + el)"
       ]
      ],
      "here": 0
@@ -3213,7 +3213,7 @@
      "rows": [
       [
        "",
-       "al = a + el"
+       "to the (a + el)"
       ]
      ],
      "here": 0
@@ -4525,7 +4525,7 @@
     }
    },
    "poco": {
-    "g": "little by little (poco a poco)",
+    "g": "a little, a bit",
     "t": "adverb",
     "c": {
      "es": "un poco de pan",

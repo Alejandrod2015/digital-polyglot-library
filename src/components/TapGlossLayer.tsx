@@ -355,9 +355,23 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
           historias que todavía no la tienen. Una tester de la beta tocó tres
           veces "helado" porque la tarjeta le contestaba "cold, iced" mientras
           leía que se comían uno (2026-08-24). */}
-      {selected.chunk ? (
+      {/* La traducción de la PALABRA, solo cuando no hay formas que enseñar.
+          En una preposición el trozo la esconde: "cerca de ellas → near them"
+          no contiene ningún "de", así que sin esta línea la tarjeta nunca dice
+          qué es. Donde sí hay formas no se pinta, porque esa glosa está escrita
+          para la palabra suelta y a veces contradice la frase ("helado" es
+          "cold, iced" ahí, y en la historia es un helado). */}
+      {!selected.forms ? (
         <p
           className="mt-1.5 text-[var(--foreground)]"
+          style={{ fontSize: 16, fontWeight: 700, lineHeight: "23px" }}
+        >
+          {selected.gloss}
+        </p>
+      ) : null}
+      {selected.chunk ? (
+        <p
+          className={selected.forms ? "mt-1.5 text-[var(--foreground)]" : "mt-1 text-[var(--foreground)]"}
           style={{ fontSize: 15, lineHeight: "22px" }}
         >
           <span style={{ fontWeight: 700 }}>{selected.chunk.es}</span>

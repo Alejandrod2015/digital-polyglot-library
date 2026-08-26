@@ -125,6 +125,24 @@
       "y": 0,
       "w": 390,
       "h": 844
+    },
+    {
+      "file": "FunctionB.dc.html",
+      "title": "B · de, dentro de cerca de",
+      "page": "page-5",
+      "x": 0,
+      "y": 0,
+      "w": 504,
+      "h": 420
+    },
+    {
+      "file": "FunctionC.dc.html",
+      "title": "C · en, tres usos del texto",
+      "page": "page-5",
+      "x": 560,
+      "y": 0,
+      "w": 504,
+      "h": 420
     }
   ],
   "annotations": [
@@ -151,6 +169,14 @@
       "y": -190,
       "w": 820,
       "text": "La pill curada de tren, antes y después. Las curadas son la capa que la historia SÍ quiere enseñar, y hasta ahora daban menos gramática que el diccionario incidental.\nDespués: el mismo cuerpo del quick lookup (trozo en contexto, género, plural) y encima lo suyo, la definición.\nLa curada NO tiene audio: los segmentos solo sirven para que la palabra guardada sepa a qué frase volver.\nCruce medido en esta historia: 23 de las 24 curadas ya tienen capa de contexto; la que falta es otra vez, de dos palabras."
+    },
+    {
+      "id": "funcion",
+      "page": "page-5",
+      "x": 0,
+      "y": -170,
+      "w": 820,
+      "text": "Las 16 palabras de función que hoy se quedan sin bloque. Al tocar de, la tarjeta decía cerca de ellas → near them, donde de no aparece por ningún lado.\nB para las que pertenecen a una construcción: cerca de, de fresa, empieza a. C para las sueltas, con ejemplos sacados del texto de la historia.\nLas fichas siguen el contrato de las glosas: sentido primero, forma entre paréntesis, nunca un signo igual."
     }
   ],
   "pages": [
@@ -169,10 +195,14 @@
     {
       "id": "page-4",
       "name": "Curated pill"
+    },
+    {
+      "id": "page-5",
+      "name": "Function words"
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-4"
+    "page": "page-5"
   }
 }
