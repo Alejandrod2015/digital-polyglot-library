@@ -6979,5 +6979,2765 @@
    "g": "touches, has to",
    "t": "verb"
   }
+ },
+ "byStory": {
+  "le-toca-a-mateo": {
+   "en": {
+    "g": "in",
+    "t": "preposition",
+    "c": {
+     "es": "En el grupo de Sofía",
+     "en": "In Sofía's group"
+    },
+    "f": {
+     "label": "en",
+     "rows": [
+      [
+       "lugar",
+       "en el grupo"
+      ],
+      [
+       "tiempo",
+       "en la práctica"
+      ],
+      [
+       "medio",
+       "en el coche"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "el": {
+    "g": "the",
+    "t": "article",
+    "c": {
+     "es": "el jueves que te tocaba",
+     "en": "the Thursday it was your turn"
+    },
+    "f": {
+     "label": "el / la / los / las",
+     "rows": [
+      [
+       "masculino",
+       "el jueves"
+      ],
+      [
+       "femenino",
+       "la cena"
+      ],
+      [
+       "plural",
+       "los jueves"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition",
+    "c": {
+     "es": "el grupo de Sofía",
+     "en": "Sofía's group"
+    },
+    "f": {
+     "label": "de",
+     "rows": [
+      [
+       "posesión",
+       "el grupo de Sofía"
+      ],
+      [
+       "origen",
+       "la vista del celular"
+      ],
+      [
+       "material",
+       "monedas de plata"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "que": {
+    "g": "that, which",
+    "t": "conjunction",
+    "c": {
+     "es": "una regla que nadie escribió",
+     "en": "a rule that nobody wrote"
+    },
+    "f": {
+     "label": "que",
+     "rows": [
+      [
+       "relativo",
+       "la regla que nadie escribió"
+      ],
+      [
+       "completivo",
+       "dijo que pagaba"
+      ],
+      [
+       "comparativo",
+       "más que nunca"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "se": {
+    "g": "himself, herself (reflexive)",
+    "t": "pronoun",
+    "c": {
+     "es": "se puso a contar",
+     "en": "he started counting"
+    },
+    "f": {
+     "label": "me / te / se / nos / se",
+     "rows": [
+      [
+       "yo",
+       "me puse"
+      ],
+      [
+       "tú",
+       "te pusiste"
+      ],
+      [
+       "él, ella",
+       "se puso"
+      ],
+      [
+       "nosotros",
+       "nos pusimos"
+      ],
+      [
+       "ustedes, ellos",
+       "se pusieron"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "escribió": {
+    "g": "wrote",
+    "t": "verb",
+    "c": {
+     "es": "una regla que nadie escribió",
+     "en": "a rule nobody wrote"
+    },
+    "f": {
+     "label": "escribir (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "escribí"
+      ],
+      [
+       "tú",
+       "escribiste"
+      ],
+      [
+       "él, ella",
+       "escribió"
+      ],
+      [
+       "nosotros",
+       "escribimos"
+      ],
+      [
+       "ustedes, ellos",
+       "escribieron"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "tocaba": {
+    "g": "it was (your) turn",
+    "t": "verb",
+    "c": {
+     "es": "el jueves que te tocaba pedir la cena",
+     "en": "the Thursday it was your turn to order dinner"
+    },
+    "f": {
+     "label": "tocar, en el sentido de turno (imperfecto)",
+     "rows": [
+      [
+       "a mí",
+       "me tocaba"
+      ],
+      [
+       "a ti",
+       "te tocaba"
+      ],
+      [
+       "a él, a ella",
+       "le tocaba"
+      ],
+      [
+       "a nosotros",
+       "nos tocaba"
+      ],
+      [
+       "a ustedes, a ellos",
+       "les tocaba"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "pedir": {
+    "g": "to order, to ask for",
+    "t": "verb",
+    "c": {
+     "es": "pedir la cena",
+     "en": "to order dinner"
+    },
+    "f": {
+     "label": "pedir (presente)",
+     "rows": [
+      [
+       "yo",
+       "pido"
+      ],
+      [
+       "tú",
+       "pides"
+      ],
+      [
+       "él, ella",
+       "pide"
+      ],
+      [
+       "nosotros",
+       "pedimos"
+      ],
+      [
+       "ustedes, ellos",
+       "piden"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "pagabas": {
+    "g": "you paid",
+    "t": "verb",
+    "c": {
+     "es": "pagabas y punto",
+     "en": "you paid, end of story"
+    },
+    "f": {
+     "label": "pagar (imperfecto)",
+     "rows": [
+      [
+       "yo",
+       "pagaba"
+      ],
+      [
+       "tú",
+       "pagabas"
+      ],
+      [
+       "él, ella",
+       "pagaba"
+      ],
+      [
+       "nosotros",
+       "pagábamos"
+      ],
+      [
+       "ustedes, ellos",
+       "pagaban"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "punto": {
+    "g": "and that is that",
+    "t": "noun",
+    "c": {
+     "es": "pagabas y punto",
+     "en": "you paid, and that was that"
+    },
+    "f": {
+     "label": "punto",
+     "rows": [
+      [
+       "cierra el tema",
+       "y punto"
+      ],
+      [
+       "hora exacta",
+       "a las dos en punto"
+      ],
+      [
+       "opinión",
+       "punto de vista"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "quería": {
+    "g": "wanted",
+    "t": "verb",
+    "c": {
+     "es": "Ninguno quería quedar como el codo",
+     "en": "None of them wanted to come across as the cheapskate"
+    },
+    "f": {
+     "label": "querer (imperfecto)",
+     "rows": [
+      [
+       "yo",
+       "quería"
+      ],
+      [
+       "tú",
+       "querías"
+      ],
+      [
+       "él, ella",
+       "quería"
+      ],
+      [
+       "nosotros",
+       "queríamos"
+      ],
+      [
+       "ustedes, ellos",
+       "querían"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "quedar": {
+    "g": "to come across as",
+    "t": "verb",
+    "c": {
+     "es": "quedar como el codo del cuento",
+     "en": "to come across as the famous cheapskate"
+    },
+    "f": {
+     "label": "quedar, con sus sentidos",
+     "rows": [
+      [
+       "dar una imagen",
+       "quedar como el codo"
+      ],
+      [
+       "sobrar",
+       "quedan dos tacos"
+      ],
+      [
+       "citarse",
+       "quedamos a las ocho"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "como": {
+    "g": "like, as",
+    "t": "preposition",
+    "c": {
+     "es": "como el codo del cuento",
+     "en": "like the cheapskate in the story"
+    },
+    "f": {
+     "label": "como",
+     "rows": [
+      [
+       "comparación",
+       "como el codo"
+      ],
+      [
+       "función",
+       "trabaja como mesero"
+      ],
+      [
+       "causa",
+       "como no pagó, se fue"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "cuento": {
+    "g": "story, tale",
+    "t": "noun",
+    "c": {
+     "es": "el codo del cuento",
+     "en": "the cheapskate everyone tells stories about"
+    },
+    "f": {
+     "label": "el cuento",
+     "rows": [
+      [
+       "singular",
+       "el cuento"
+      ],
+      [
+       "plural",
+       "los cuentos"
+      ],
+      [
+       "hacer creer",
+       "echar el cuento"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "daba": {
+    "g": "gave, made (them) feel",
+    "t": "verb",
+    "c": {
+     "es": "a todos les daba hueva soltar la lana",
+     "en": "they all found it a drag to hand over the cash"
+    },
+    "f": {
+     "label": "dar (imperfecto)",
+     "rows": [
+      [
+       "a mí",
+       "me daba"
+      ],
+      [
+       "a ti",
+       "te daba"
+      ],
+      [
+       "a él, a ella",
+       "le daba"
+      ],
+      [
+       "a nosotros",
+       "nos daba"
+      ],
+      [
+       "a ustedes, a ellos",
+       "les daba"
+      ]
+     ],
+     "here": 4
+    }
+   },
+   "soltar": {
+    "g": "to hand over, to let go of",
+    "t": "verb",
+    "c": {
+     "es": "soltar la lana",
+     "en": "to hand over the cash"
+    },
+    "f": {
+     "label": "soltar (presente)",
+     "rows": [
+      [
+       "yo",
+       "suelto"
+      ],
+      [
+       "tú",
+       "sueltas"
+      ],
+      [
+       "él, ella",
+       "suelta"
+      ],
+      [
+       "nosotros",
+       "soltamos"
+      ],
+      [
+       "ustedes, ellos",
+       "sueltan"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "práctica": {
+    "g": "practice",
+    "t": "noun",
+    "c": {
+     "es": "En la práctica, cada semana era una negociación",
+     "en": "In practice, every week was a negotiation"
+    },
+    "f": {
+     "label": "la práctica",
+     "rows": [
+      [
+       "en los hechos",
+       "en la práctica"
+      ],
+      [
+       "singular",
+       "la práctica"
+      ],
+      [
+       "plural",
+       "las prácticas"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "llevaba": {
+    "g": "had spent (days)",
+    "t": "verb",
+    "c": {
+     "es": "llevaba días anunciando que andaba corto",
+     "en": "had spent days announcing he was short on cash"
+    },
+    "f": {
+     "label": "llevar, en el sentido de tiempo acumulado",
+     "rows": [
+      [
+       "yo",
+       "llevaba días"
+      ],
+      [
+       "tú",
+       "llevabas días"
+      ],
+      [
+       "él, ella",
+       "llevaba días"
+      ],
+      [
+       "nosotros",
+       "llevábamos días"
+      ],
+      [
+       "ustedes, ellos",
+       "llevaban días"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "anunciando": {
+    "g": "announcing",
+    "t": "verb",
+    "c": {
+     "es": "anunciando que andaba corto",
+     "en": "announcing that he was short on cash"
+    },
+    "f": {
+     "label": "anunciar (gerundio)",
+     "rows": [
+      [
+       "infinitivo",
+       "anunciar"
+      ],
+      [
+       "gerundio",
+       "anunciando"
+      ],
+      [
+       "pretérito",
+       "anunció"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "puso": {
+    "g": "started (doing)",
+    "t": "verb",
+    "c": {
+     "es": "se puso a contar las monedas",
+     "en": "he started counting the coins"
+    },
+    "f": {
+     "label": "ponerse a, o sea empezar (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "me puse a"
+      ],
+      [
+       "tú",
+       "te pusiste a"
+      ],
+      [
+       "él, ella",
+       "se puso a"
+      ],
+      [
+       "nosotros",
+       "nos pusimos a"
+      ],
+      [
+       "ustedes, ellos",
+       "se pusieron a"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "lentitud": {
+    "g": "slowness",
+    "t": "noun",
+    "c": {
+     "es": "con una lentitud sospechosa",
+     "en": "with suspicious slowness"
+    },
+    "f": {
+     "label": "la lentitud",
+     "rows": [
+      [
+       "sustantivo",
+       "la lentitud"
+      ],
+      [
+       "adjetivo",
+       "lento"
+      ],
+      [
+       "adverbio",
+       "lentamente"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "renata": {
+    "g": "Renata (name)",
+    "t": "noun"
+   },
+   "inmediato": {
+    "g": "straight away",
+    "t": "adjective",
+    "c": {
+     "es": "lo cachó de inmediato",
+     "en": "she caught him straight away"
+    },
+    "f": {
+     "label": "inmediato",
+     "rows": [
+      [
+       "al instante",
+       "de inmediato"
+      ],
+      [
+       "masculino",
+       "un cambio inmediato"
+      ],
+      [
+       "femenino",
+       "una respuesta inmediata"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "ni": {
+    "g": "not even, it is not as if",
+    "t": "conjunction",
+    "c": {
+     "es": "ni que fueras a quebrar",
+     "en": "it is not as if you were going broke"
+    },
+    "f": {
+     "label": "ni",
+     "rows": [
+      [
+       "exagera al otro",
+       "ni que fueras a quebrar"
+      ],
+      [
+       "ni siquiera",
+       "ni me habló"
+      ],
+      [
+       "ni... ni",
+       "ni tacos ni chelas"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "fueras": {
+    "g": "you were (going to)",
+    "t": "verb",
+    "c": {
+     "es": "ni que fueras a quebrar",
+     "en": "it is not as if you were going broke"
+    },
+    "f": {
+     "label": "ir (imperfecto de subjuntivo)",
+     "rows": [
+      [
+       "yo",
+       "fuera"
+      ],
+      [
+       "tú",
+       "fueras"
+      ],
+      [
+       "él, ella",
+       "fuera"
+      ],
+      [
+       "nosotros",
+       "fuéramos"
+      ],
+      [
+       "ustedes, ellos",
+       "fueran"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "quebrar": {
+    "g": "to go broke",
+    "t": "verb",
+    "c": {
+     "es": "ni que fueras a quebrar",
+     "en": "it is not as if you were going broke"
+    },
+    "f": {
+     "label": "quebrar (presente)",
+     "rows": [
+      [
+       "yo",
+       "quiebro"
+      ],
+      [
+       "tú",
+       "quiebras"
+      ],
+      [
+       "él, ella",
+       "quiebra"
+      ],
+      [
+       "nosotros",
+       "quebramos"
+      ],
+      [
+       "ustedes, ellos",
+       "quiebran"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "soltó": {
+    "g": "fired at him, came out with",
+    "t": "verb",
+    "c": {
+     "es": "le soltó",
+     "en": "she fired at him"
+    },
+    "f": {
+     "label": "soltar, aquí no es dar dinero (pretérito)",
+     "rows": [
+      [
+       "decir de golpe",
+       "le soltó"
+      ],
+      [
+       "dar dinero",
+       "soltó la lana"
+      ],
+      [
+       "dejar ir",
+       "soltó la mano"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "siguió": {
+    "g": "kept on",
+    "t": "verb",
+    "c": {
+     "es": "Siguió choteándolo",
+     "en": "She kept on mocking him"
+    },
+    "f": {
+     "label": "seguir + gerundio (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "seguí choteándolo"
+      ],
+      [
+       "tú",
+       "seguiste choteándolo"
+      ],
+      [
+       "él, ella",
+       "siguió choteándolo"
+      ],
+      [
+       "nosotros",
+       "seguimos choteándolo"
+      ],
+      [
+       "ustedes, ellos",
+       "siguieron choteándolo"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "levantó": {
+    "g": "looked up",
+    "t": "verb",
+    "c": {
+     "es": "levantó la vista del celular",
+     "en": "looked up from his phone"
+    },
+    "f": {
+     "label": "levantar (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "levanté"
+      ],
+      [
+       "tú",
+       "levantaste"
+      ],
+      [
+       "él, ella",
+       "levantó"
+      ],
+      [
+       "nosotros",
+       "levantamos"
+      ],
+      [
+       "ustedes, ellos",
+       "levantaron"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "vista": {
+    "g": "gaze, eyes",
+    "t": "noun",
+    "c": {
+     "es": "levantó la vista del celular",
+     "en": "looked up from his phone"
+    },
+    "f": {
+     "label": "la vista",
+     "rows": [
+      [
+       "mirada",
+       "levantó la vista"
+      ],
+      [
+       "sentido",
+       "perder la vista"
+      ],
+      [
+       "panorama",
+       "una vista bonita"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "sumarse": {
+    "g": "to join in",
+    "t": "verb",
+    "c": {
+     "es": "para sumarse",
+     "en": "to join in"
+    },
+    "f": {
+     "label": "sumarse (presente)",
+     "rows": [
+      [
+       "yo",
+       "me sumo"
+      ],
+      [
+       "tú",
+       "te sumas"
+      ],
+      [
+       "él, ella",
+       "se suma"
+      ],
+      [
+       "nosotros",
+       "nos sumamos"
+      ],
+      [
+       "ustedes, ellos",
+       "se suman"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "echó": {
+    "g": "piled on",
+    "t": "verb",
+    "c": {
+     "es": "La mesa entera se le echó encima",
+     "en": "The whole table piled on him"
+    },
+    "f": {
+     "label": "echarse encima (pretérito)",
+     "rows": [
+      [
+       "ir contra alguien",
+       "se le echó encima"
+      ],
+      [
+       "tirar",
+       "echó la moneda"
+      ],
+      [
+       "hablar de más",
+       "echar choro"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "encima": {
+    "g": "on top of him",
+    "t": "adverb",
+    "c": {
+     "es": "se le echó encima",
+     "en": "came down on him"
+    },
+    "f": {
+     "label": "encima",
+     "rows": [
+      [
+       "ir contra alguien",
+       "se le echó encima"
+      ],
+      [
+       "además",
+       "y encima aguantaba la burla"
+      ],
+      [
+       "sobre algo",
+       "encima de la mesa"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "propuso": {
+    "g": "suggested",
+    "t": "verb",
+    "c": {
+     "es": "Alguien propuso lo de siempre",
+     "en": "Someone suggested the usual"
+    },
+    "f": {
+     "label": "proponer (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "propuse"
+      ],
+      [
+       "tú",
+       "propusiste"
+      ],
+      [
+       "él, ella",
+       "propuso"
+      ],
+      [
+       "nosotros",
+       "propusimos"
+      ],
+      [
+       "ustedes, ellos",
+       "propusieron"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "siempre": {
+    "g": "the usual",
+    "t": "adverb",
+    "c": {
+     "es": "lo de siempre",
+     "en": "the usual thing"
+    },
+    "f": {
+     "label": "siempre",
+     "rows": [
+      [
+       "lo de costumbre",
+       "lo de siempre"
+      ],
+      [
+       "frecuencia",
+       "siempre paga"
+      ],
+      [
+       "para siempre",
+       "se fue para siempre"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "cuadraban": {
+    "g": "did not add up",
+    "t": "verb",
+    "c": {
+     "es": "las cuentas no cuadraban",
+     "en": "the numbers did not add up"
+    },
+    "f": {
+     "label": "cuadrar (imperfecto)",
+     "rows": [
+      [
+       "yo",
+       "cuadraba"
+      ],
+      [
+       "tú",
+       "cuadrabas"
+      ],
+      [
+       "él, ella",
+       "cuadraba"
+      ],
+      [
+       "nosotros",
+       "cuadrábamos"
+      ],
+      [
+       "ustedes, ellos",
+       "cuadraban"
+      ]
+     ],
+     "here": 4
+    }
+   },
+   "pura": {
+    "g": "total, nothing but",
+    "t": "adjective",
+    "c": {
+     "es": "Pura mamada",
+     "en": "Total nonsense"
+    },
+    "f": {
+     "label": "puro / pura",
+     "rows": [
+      [
+       "femenino",
+       "pura mamada"
+      ],
+      [
+       "masculino",
+       "puro cuento"
+      ],
+      [
+       "plural",
+       "puras excusas"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "creyó": {
+    "g": "believed",
+    "t": "verb",
+    "c": {
+     "es": "nadie le creyó una palabra",
+     "en": "nobody believed a word he said"
+    },
+    "f": {
+     "label": "creer (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "creí"
+      ],
+      [
+       "tú",
+       "creíste"
+      ],
+      [
+       "él, ella",
+       "creyó"
+      ],
+      [
+       "nosotros",
+       "creímos"
+      ],
+      [
+       "ustedes, ellos",
+       "creyeron"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "dejado": {
+    "g": "left (behind)",
+    "t": "verb",
+    "c": {
+     "es": "había dejado la cartera en el coche",
+     "en": "had left his wallet in the car"
+    },
+    "f": {
+     "label": "dejar (participio)",
+     "rows": [
+      [
+       "infinitivo",
+       "dejar"
+      ],
+      [
+       "participio",
+       "había dejado"
+      ],
+      [
+       "pretérito",
+       "dejó"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "dejó": {
+    "g": "let him",
+    "t": "verb",
+    "c": {
+     "es": "lo dejó cotorrear un rato",
+     "en": "she let him ramble for a while"
+    },
+    "f": {
+     "label": "dejar, aquí es permitir (pretérito)",
+     "rows": [
+      [
+       "permitir",
+       "lo dejó cotorrear"
+      ],
+      [
+       "olvidar algo",
+       "dejó la cartera"
+      ],
+      [
+       "abandonar",
+       "dejó la mesa"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "dejándolo": {
+    "g": "letting him",
+    "t": "verb",
+    "c": {
+     "es": "dejándolo enredarse solito",
+     "en": "letting him tangle himself up on his own"
+    },
+    "f": {
+     "label": "dejar + lo (gerundio)",
+     "rows": [
+      [
+       "a él",
+       "dejándolo"
+      ],
+      [
+       "a ella",
+       "dejándola"
+      ],
+      [
+       "a ellos",
+       "dejándolos"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "enredarse": {
+    "g": "to get tangled up",
+    "t": "verb",
+    "c": {
+     "es": "enredarse solito",
+     "en": "to tangle himself up on his own"
+    },
+    "f": {
+     "label": "enredarse (presente)",
+     "rows": [
+      [
+       "yo",
+       "me enredo"
+      ],
+      [
+       "tú",
+       "te enredas"
+      ],
+      [
+       "él, ella",
+       "se enreda"
+      ],
+      [
+       "nosotros",
+       "nos enredamos"
+      ],
+      [
+       "ustedes, ellos",
+       "se enredan"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "montado": {
+    "g": "stuck in, riding on",
+    "t": "adjective",
+    "c": {
+     "es": "lo tuvo montado en la mentira",
+     "en": "she had him stuck in the lie"
+    },
+    "f": {
+     "label": "montado / montada",
+     "rows": [
+      [
+       "masculino",
+       "montado en la mentira"
+      ],
+      [
+       "femenino",
+       "montada en la bici"
+      ],
+      [
+       "plural",
+       "montados en el coche"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "apuesta": {
+    "g": "a bet",
+    "t": "noun",
+    "c": {
+     "es": "había ganado una apuesta",
+     "en": "he had won a bet"
+    },
+    "f": {
+     "label": "la apuesta",
+     "rows": [
+      [
+       "singular",
+       "una apuesta"
+      ],
+      [
+       "plural",
+       "las apuestas"
+      ],
+      [
+       "verbo",
+       "apostar"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "traía": {
+    "g": "had on him",
+    "t": "verb",
+    "c": {
+     "es": "traía dinero de sobra",
+     "en": "he had cash to spare on him"
+    },
+    "f": {
+     "label": "traer (imperfecto)",
+     "rows": [
+      [
+       "yo",
+       "traía"
+      ],
+      [
+       "tú",
+       "traías"
+      ],
+      [
+       "él, ella",
+       "traía"
+      ],
+      [
+       "nosotros",
+       "traíamos"
+      ],
+      [
+       "ustedes, ellos",
+       "traían"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "cerraba": {
+    "g": "wrapped up",
+    "t": "verb",
+    "c": {
+     "es": "Así se cerraba otro jueves",
+     "en": "That is how another Thursday wrapped up"
+    },
+    "f": {
+     "label": "cerrarse (imperfecto)",
+     "rows": [
+      [
+       "yo",
+       "me cerraba"
+      ],
+      [
+       "tú",
+       "te cerrabas"
+      ],
+      [
+       "él, ella",
+       "se cerraba"
+      ],
+      [
+       "nosotros",
+       "nos cerrábamos"
+      ],
+      [
+       "ustedes, ellos",
+       "se cerraban"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "aguantaba": {
+    "g": "put up with",
+    "t": "verb",
+    "c": {
+     "es": "encima aguantaba la burla",
+     "en": "and on top of that he put up with the teasing"
+    },
+    "f": {
+     "label": "aguantar (imperfecto)",
+     "rows": [
+      [
+       "yo",
+       "aguantaba"
+      ],
+      [
+       "tú",
+       "aguantabas"
+      ],
+      [
+       "él, ella",
+       "aguantaba"
+      ],
+      [
+       "nosotros",
+       "aguantábamos"
+      ],
+      [
+       "ustedes, ellos",
+       "aguantaban"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "burla": {
+    "g": "teasing, mockery",
+    "t": "noun",
+    "c": {
+     "es": "aguantaba la burla hasta el jueves siguiente",
+     "en": "put up with the teasing until the next Thursday"
+    },
+    "f": {
+     "label": "la burla",
+     "rows": [
+      [
+       "singular",
+       "la burla"
+      ],
+      [
+       "plural",
+       "las burlas"
+      ],
+      [
+       "verbo",
+       "burlarse de alguien"
+      ]
+     ],
+     "here": 0
+    }
+   }
+  },
+  "ahorita-salgo": {
+   "en": {
+    "g": "in",
+    "t": "preposition",
+    "c": {
+     "es": "En la banda de Sofía",
+     "en": "In Sofía's crew"
+    },
+    "f": {
+     "label": "en",
+     "rows": [
+      [
+       "grupo",
+       "en la banda"
+      ],
+      [
+       "lugar",
+       "en la esquina"
+      ],
+      [
+       "tiempo",
+       "en toda la noche"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "había": {
+    "g": "had (done something)",
+    "t": "verb",
+    "c": {
+     "es": "lo había convertido en deporte",
+     "en": "had turned it into a sport"
+    },
+    "f": {
+     "label": "haber, y en esta historia hace tres cosas distintas",
+     "rows": [
+      [
+       "auxiliar",
+       "lo había convertido"
+      ],
+      [
+       "obligación sin sujeto",
+       "había que sumarle una hora"
+      ],
+      [
+       "existía",
+       "había una regla"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "esquina": {
+    "g": "street corner",
+    "t": "noun",
+    "c": {
+     "es": "echando raíces en la esquina",
+     "en": "putting down roots on the corner"
+    },
+    "f": {
+     "label": "la esquina",
+     "rows": [
+      [
+       "singular",
+       "la esquina"
+      ],
+      [
+       "plural",
+       "las esquinas"
+      ],
+      [
+       "a la vuelta",
+       "en la esquina de siempre"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "fin": {
+    "g": "at last",
+    "t": "noun",
+    "c": {
+     "es": "Cuando por fin apareció la morra",
+     "en": "When the girl finally showed up"
+    },
+    "f": {
+     "label": "fin",
+     "rows": [
+      [
+       "por fin",
+       "por fin apareció"
+      ],
+      [
+       "el final",
+       "el fin de la noche"
+      ],
+      [
+       "fin de semana",
+       "el fin de semana"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "reina": {
+    "g": "queen, the absolute best at",
+    "t": "noun",
+    "c": {
+     "es": "era la reina de llegar tarde",
+     "en": "she was the queen of showing up late"
+    },
+    "f": {
+     "label": "la reina",
+     "rows": [
+      [
+       "campeona de algo",
+       "la reina de llegar tarde"
+      ],
+      [
+       "singular",
+       "la reina"
+      ],
+      [
+       "masculino",
+       "el rey"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "convertido": {
+    "g": "turned (it) into",
+    "t": "verb",
+    "c": {
+     "es": "lo había convertido en deporte",
+     "en": "had turned it into a sport"
+    },
+    "f": {
+     "label": "convertir en (participio)",
+     "rows": [
+      [
+       "infinitivo",
+       "convertir en deporte"
+      ],
+      [
+       "participio",
+       "había convertido en deporte"
+      ],
+      [
+       "pretérito",
+       "convirtió en deporte"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "acordaste": {
+    "g": "you remembered",
+    "t": "verb",
+    "c": {
+     "es": "ya te acordaste de nosotros",
+     "en": "so you finally remembered us"
+    },
+    "f": {
+     "label": "acordarse de (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "me acordé"
+      ],
+      [
+       "tú",
+       "te acordaste"
+      ],
+      [
+       "él, ella",
+       "se acordó"
+      ],
+      [
+       "nosotros",
+       "nos acordamos"
+      ],
+      [
+       "ustedes, ellos",
+       "se acordaron"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "oyera": {
+    "g": "could hear",
+    "t": "verb",
+    "c": {
+     "es": "para que lo oyera toda la cuadra",
+     "en": "so the whole block could hear him"
+    },
+    "f": {
+     "label": "oír (imperfecto de subjuntivo)",
+     "rows": [
+      [
+       "yo",
+       "oyera"
+      ],
+      [
+       "tú",
+       "oyeras"
+      ],
+      [
+       "él, ella",
+       "oyera"
+      ],
+      [
+       "nosotros",
+       "oyéramos"
+      ],
+      [
+       "ustedes, ellos",
+       "oyeran"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "sumaron": {
+    "g": "joined in",
+    "t": "verb",
+    "c": {
+     "es": "Los demás se sumaron igual de gachos",
+     "en": "The others joined in, just as nasty"
+    },
+    "f": {
+     "label": "sumarse (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "me sumé"
+      ],
+      [
+       "tú",
+       "te sumaste"
+      ],
+      [
+       "él, ella",
+       "se sumó"
+      ],
+      [
+       "nosotros",
+       "nos sumamos"
+      ],
+      [
+       "ustedes, ellos",
+       "se sumaron"
+      ]
+     ],
+     "here": 4
+    }
+   },
+   "dejó": {
+    "g": "left (them)",
+    "t": "verb",
+    "c": {
+     "es": "los dejó afuera de un cine",
+     "en": "left them standing outside a cinema"
+    },
+    "f": {
+     "label": "dejar, con sus dos sentidos aquí",
+     "rows": [
+      [
+       "abandonar a alguien",
+       "los dejó afuera"
+      ],
+      [
+       "permitir",
+       "dejó que la siguieran"
+      ],
+      [
+       "olvidar algo",
+       "dejó el bolso"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "sacó": {
+    "g": "trotted out, pulled out",
+    "t": "verb",
+    "c": {
+     "es": "sacó su pretexto de siempre",
+     "en": "trotted out her usual excuse"
+    },
+    "f": {
+     "label": "sacar, y en esta historia sale dos veces",
+     "rows": [
+      [
+       "poner una excusa",
+       "sacó su pretexto"
+      ],
+      [
+       "sacar un objeto",
+       "sacó cuatro entradas"
+      ],
+      [
+       "sacar de un sitio",
+       "sacó el bolso del coche"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "pretexto": {
+    "g": "excuse",
+    "t": "noun",
+    "c": {
+     "es": "su pretexto de siempre",
+     "en": "her usual excuse"
+    },
+    "f": {
+     "label": "el pretexto",
+     "rows": [
+      [
+       "singular",
+       "el pretexto"
+      ],
+      [
+       "plural",
+       "los pretextos"
+      ],
+      [
+       "poner uno",
+       "sacó un pretexto"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "tocado": {
+    "g": "had had to",
+    "t": "verb",
+    "c": {
+     "es": "le había tocado chambear hasta tarde",
+     "en": "she had had to work late"
+    },
+    "f": {
+     "label": "tocarle a alguien, o sea caerle en suerte",
+     "rows": [
+      [
+       "a mí",
+       "me había tocado"
+      ],
+      [
+       "a ti",
+       "te había tocado"
+      ],
+      [
+       "a él, a ella",
+       "le había tocado"
+      ],
+      [
+       "a nosotros",
+       "nos había tocado"
+      ],
+      [
+       "a ustedes, a ellos",
+       "les había tocado"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "armó": {
+    "g": "kicked up (a fuss)",
+    "t": "verb",
+    "c": {
+     "es": "ni armó bronca",
+     "en": "nor did she kick up a fuss"
+    },
+    "f": {
+     "label": "armar bronca (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "armé bronca"
+      ],
+      [
+       "tú",
+       "armaste bronca"
+      ],
+      [
+       "él, ella",
+       "armó bronca"
+      ],
+      [
+       "nosotros",
+       "armamos bronca"
+      ],
+      [
+       "ustedes, ellos",
+       "armaron bronca"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "siguieran": {
+    "g": "kept on",
+    "t": "verb",
+    "c": {
+     "es": "Dejó que la siguieran agandallando",
+     "en": "She let them keep pushing her around"
+    },
+    "f": {
+     "label": "seguir + gerundio (imperfecto de subjuntivo)",
+     "rows": [
+      [
+       "yo",
+       "siguiera"
+      ],
+      [
+       "tú",
+       "siguieras"
+      ],
+      [
+       "él, ella",
+       "siguiera"
+      ],
+      [
+       "nosotros",
+       "siguiéramos"
+      ],
+      [
+       "ustedes, ellos",
+       "siguieran"
+      ]
+     ],
+     "here": 4
+    }
+   },
+   "cansó": {
+    "g": "got tired of",
+    "t": "verb",
+    "c": {
+     "es": "el grupo se cansó de burlarse",
+     "en": "the group got tired of mocking her"
+    },
+    "f": {
+     "label": "cansarse de (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "me cansé"
+      ],
+      [
+       "tú",
+       "te cansaste"
+      ],
+      [
+       "él, ella",
+       "se cansó"
+      ],
+      [
+       "nosotros",
+       "nos cansamos"
+      ],
+      [
+       "ustedes, ellos",
+       "se cansaron"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "disimular": {
+    "g": "to hide it, to play it cool",
+    "t": "verb",
+    "c": {
+     "es": "sin poder disimular",
+     "en": "unable to hide it"
+    },
+    "f": {
+     "label": "disimular (presente)",
+     "rows": [
+      [
+       "yo",
+       "disimulo"
+      ],
+      [
+       "tú",
+       "disimulas"
+      ],
+      [
+       "él, ella",
+       "disimula"
+      ],
+      [
+       "nosotros",
+       "disimulamos"
+      ],
+      [
+       "ustedes, ellos",
+       "disimulan"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "movimiento": {
+    "g": "move",
+    "t": "noun",
+    "c": {
+     "es": "con un movimiento bien chingón",
+     "en": "with a seriously slick move"
+    },
+    "f": {
+     "label": "el movimiento",
+     "rows": [
+      [
+       "jugada",
+       "un movimiento chingón"
+      ],
+      [
+       "singular",
+       "el movimiento"
+      ],
+      [
+       "plural",
+       "los movimientos"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "amanecieron": {
+    "g": "woke up (in the morning)",
+    "t": "verb",
+    "c": {
+     "es": "amanecieron crudos",
+     "en": "they woke up hungover"
+    },
+    "f": {
+     "label": "amanecer (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "amanecí"
+      ],
+      [
+       "tú",
+       "amaneciste"
+      ],
+      [
+       "él, ella",
+       "amaneció"
+      ],
+      [
+       "nosotros",
+       "amanecimos"
+      ],
+      [
+       "ustedes, ellos",
+       "amanecieron"
+      ]
+     ],
+     "here": 4
+    }
+   },
+   "arrepentidos": {
+    "g": "regretful",
+    "t": "adjective",
+    "c": {
+     "es": "crudos, arrepentidos y felices",
+     "en": "hungover, regretful and happy"
+    },
+    "f": {
+     "label": "arrepentido / arrepentida",
+     "rows": [
+      [
+       "masculino plural",
+       "arrepentidos"
+      ],
+      [
+       "masculino",
+       "arrepentido"
+      ],
+      [
+       "femenino",
+       "arrepentida"
+      ]
+     ],
+     "here": 0
+    }
+   }
+  },
+  "diez-intentos": {
+   "de": {
+    "g": "of",
+    "t": "preposition",
+    "c": {
+     "es": "una foto de los cuatro",
+     "en": "a photo of the four of them"
+    },
+    "f": {
+     "label": "de",
+     "rows": [
+      [
+       "contenido",
+       "una foto de los cuatro"
+      ],
+      [
+       "material",
+       "un imán del súper"
+      ],
+      [
+       "origen",
+       "desde el fondo de la mesa"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "el": {
+    "g": "the",
+    "t": "article",
+    "c": {
+     "es": "colgarla en el refri",
+     "en": "to stick it on the fridge"
+    },
+    "f": {
+     "label": "el / la / los / las",
+     "rows": [
+      [
+       "masculino",
+       "el refri"
+      ],
+      [
+       "femenino",
+       "la foto"
+      ],
+      [
+       "plural",
+       "los cuatro"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "que": {
+    "g": "what",
+    "t": "conjunction",
+    "c": {
+     "es": "Lo que nadie imaginó",
+     "en": "What nobody imagined"
+    },
+    "f": {
+     "label": "que",
+     "rows": [
+      [
+       "lo que",
+       "lo que nadie imaginó"
+      ],
+      [
+       "relativo",
+       "la foto que colgaron"
+      ],
+      [
+       "comparativo",
+       "tardaron más en acomodarse que en cenar"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "medio": {
+    "g": "kind of, half",
+    "t": "adverb",
+    "c": {
+     "es": "una idea medio cursi",
+     "en": "a kind of corny idea"
+    },
+    "f": {
+     "label": "medio, y en esta historia sale con los dos sentidos",
+     "rows": [
+      [
+       "un poco",
+       "medio cursi"
+      ],
+      [
+       "la mitad",
+       "medio mantel"
+      ],
+      [
+       "a medias",
+       "a medio hacer"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "opuso": {
+    "g": "objected",
+    "t": "verb",
+    "c": {
+     "es": "Nadie se opuso",
+     "en": "Nobody objected"
+    },
+    "f": {
+     "label": "oponerse (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "me opuse"
+      ],
+      [
+       "tú",
+       "te opusiste"
+      ],
+      [
+       "él, ella",
+       "se opuso"
+      ],
+      [
+       "nosotros",
+       "nos opusimos"
+      ],
+      [
+       "ustedes, ellos",
+       "se opusieron"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "volver": {
+    "g": "to turn into",
+    "t": "verb",
+    "c": {
+     "es": "se iba a volver semejante desmadre",
+     "en": "was going to turn into such a mess"
+    },
+    "f": {
+     "label": "volverse, que aquí no es regresar",
+     "rows": [
+      [
+       "convertirse en",
+       "se iba a volver un desmadre"
+      ],
+      [
+       "regresar",
+       "volver a casa"
+      ],
+      [
+       "repetir",
+       "volver a intentarlo"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "semejante": {
+    "g": "such a",
+    "t": "adjective",
+    "c": {
+     "es": "semejante desmadre",
+     "en": "such a mess"
+    },
+    "f": {
+     "label": "semejante",
+     "rows": [
+      [
+       "tan grande",
+       "semejante desmadre"
+      ],
+      [
+       "parecido",
+       "un caso semejante"
+      ],
+      [
+       "plural",
+       "semejantes ideas"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "tardaron": {
+    "g": "took longer",
+    "t": "verb",
+    "c": {
+     "es": "Tardaron más en acomodarse que en cenar",
+     "en": "They took longer getting into position than eating"
+    },
+    "f": {
+     "label": "tardar (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "tardé"
+      ],
+      [
+       "tú",
+       "tardaste"
+      ],
+      [
+       "él, ella",
+       "tardó"
+      ],
+      [
+       "nosotros",
+       "tardamos"
+      ],
+      [
+       "ustedes, ellos",
+       "tardaron"
+      ]
+     ],
+     "here": 4
+    }
+   },
+   "acomodarse": {
+    "g": "to get into position",
+    "t": "verb",
+    "c": {
+     "es": "Tardaron más en acomodarse",
+     "en": "They took longer getting into position"
+    },
+    "f": {
+     "label": "acomodarse (presente)",
+     "rows": [
+      [
+       "yo",
+       "me acomodo"
+      ],
+      [
+       "tú",
+       "te acomodas"
+      ],
+      [
+       "él, ella",
+       "se acomoda"
+      ],
+      [
+       "nosotros",
+       "nos acomodamos"
+      ],
+      [
+       "ustedes, ellos",
+       "se acomodan"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "pose": {
+    "g": "a pose",
+    "t": "noun",
+    "c": {
+     "es": "se aventó una pose de portada de disco",
+     "en": "he struck an album cover pose"
+    },
+    "f": {
+     "label": "la pose",
+     "rows": [
+      [
+       "singular",
+       "una pose"
+      ],
+      [
+       "plural",
+       "las poses"
+      ],
+      [
+       "hacerla",
+       "aventarse una pose"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "pedido": {
+    "g": "asked for",
+    "t": "verb",
+    "c": {
+     "es": "que nadie le había pedido",
+     "en": "that nobody had asked him for"
+    },
+    "f": {
+     "label": "pedir (participio)",
+     "rows": [
+      [
+       "infinitivo",
+       "pedir"
+      ],
+      [
+       "participio",
+       "había pedido"
+      ],
+      [
+       "pretérito",
+       "pidió"
+      ]
+     ],
+     "here": 1
+    }
+   },
+   "convencido": {
+    "g": "convinced",
+    "t": "adjective",
+    "c": {
+     "es": "convencido de que era el galán del grupo",
+     "en": "convinced he was the heartthrob of the group"
+    },
+    "f": {
+     "label": "convencido / convencida",
+     "rows": [
+      [
+       "masculino",
+       "convencido"
+      ],
+      [
+       "femenino",
+       "convencida"
+      ],
+      [
+       "plural",
+       "convencidos"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "risa": {
+    "g": "a laugh",
+    "t": "noun",
+    "c": {
+     "es": "una cara de mamón que dio risa",
+     "en": "a smug face that got a laugh"
+    },
+    "f": {
+     "label": "la risa",
+     "rows": [
+      [
+       "dar risa",
+       "dio risa"
+      ],
+      [
+       "singular",
+       "la risa"
+      ],
+      [
+       "plural",
+       "las risas"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "parado": {
+    "g": "standing",
+    "t": "adjective",
+    "c": {
+     "es": "parado como el mero mero",
+     "en": "standing there like the big shot"
+    },
+    "f": {
+     "label": "parado, que en México es de pie",
+     "rows": [
+      [
+       "de pie",
+       "parado como el mero mero"
+      ],
+      [
+       "femenino",
+       "parada"
+      ],
+      [
+       "plural",
+       "parados"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "piedad": {
+    "g": "mercy",
+    "t": "noun",
+    "c": {
+     "es": "le dijo Pablo, sin piedad",
+     "en": "Pablo told him, without mercy"
+    },
+    "f": {
+     "label": "la piedad",
+     "rows": [
+      [
+       "sin piedad",
+       "sin piedad"
+      ],
+      [
+       "singular",
+       "la piedad"
+      ],
+      [
+       "tener",
+       "tener piedad de alguien"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "apuraba": {
+    "g": "was hurrying them along",
+    "t": "verb",
+    "c": {
+     "es": "Renata apuraba desde atrás",
+     "en": "Renata was hurrying them along from the back"
+    },
+    "f": {
+     "label": "apurar, que en México es meter prisa (imperfecto)",
+     "rows": [
+      [
+       "yo",
+       "apuraba"
+      ],
+      [
+       "tú",
+       "apurabas"
+      ],
+      [
+       "él, ella",
+       "apuraba"
+      ],
+      [
+       "nosotros",
+       "apurábamos"
+      ],
+      [
+       "ustedes, ellos",
+       "apuraban"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "desde": {
+    "g": "from",
+    "t": "preposition",
+    "c": {
+     "es": "apuraba desde atrás",
+     "en": "was hurrying them along from the back"
+    },
+    "f": {
+     "label": "desde",
+     "rows": [
+      [
+       "lugar",
+       "desde atrás"
+      ],
+      [
+       "lugar",
+       "desde el fondo"
+      ],
+      [
+       "tiempo",
+       "desde el lunes"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "apoyaron": {
+    "g": "propped",
+    "t": "verb",
+    "c": {
+     "es": "apoyaron el celular en una silla",
+     "en": "they propped the phone on a chair"
+    },
+    "f": {
+     "label": "apoyar, que aquí es recostar algo (pretérito)",
+     "rows": [
+      [
+       "recostar algo",
+       "apoyaron el celular"
+      ],
+      [
+       "respaldar a alguien",
+       "lo apoyaron en todo"
+      ],
+      [
+       "infinitivo",
+       "apoyar"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "corrieron": {
+    "g": "ran",
+    "t": "verb",
+    "c": {
+     "es": "corrieron a la marca",
+     "en": "they ran to their spot"
+    },
+    "f": {
+     "label": "correr (pretérito)",
+     "rows": [
+      [
+       "yo",
+       "corrí"
+      ],
+      [
+       "tú",
+       "corriste"
+      ],
+      [
+       "él, ella",
+       "corrió"
+      ],
+      [
+       "nosotros",
+       "corrimos"
+      ],
+      [
+       "ustedes, ellos",
+       "corrieron"
+      ]
+     ],
+     "here": 4
+    }
+   },
+   "usar": {
+    "g": "to use",
+    "t": "verb",
+    "c": {
+     "es": "nadie sabía usar el temporizador",
+     "en": "nobody knew how to use the timer"
+    },
+    "f": {
+     "label": "usar (presente)",
+     "rows": [
+      [
+       "yo",
+       "uso"
+      ],
+      [
+       "tú",
+       "usas"
+      ],
+      [
+       "él, ella",
+       "usa"
+      ],
+      [
+       "nosotros",
+       "usamos"
+      ],
+      [
+       "ustedes, ellos",
+       "usan"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "temporizador": {
+    "g": "the timer",
+    "t": "noun",
+    "c": {
+     "es": "nadie sabía usar el temporizador",
+     "en": "nobody knew how to use the timer"
+    },
+    "f": {
+     "label": "el temporizador",
+     "rows": [
+      [
+       "singular",
+       "el temporizador"
+      ],
+      [
+       "plural",
+       "los temporizadores"
+      ],
+      [
+       "ponerlo",
+       "poner el temporizador"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "saliera": {
+    "g": "came out",
+    "t": "verb",
+    "c": {
+     "es": "antes de que saliera una decente",
+     "en": "before a decent one came out"
+    },
+    "f": {
+     "label": "salir, que de una foto es quedar (imperfecto de subjuntivo)",
+     "rows": [
+      [
+       "yo",
+       "saliera"
+      ],
+      [
+       "tú",
+       "salieras"
+      ],
+      [
+       "él, ella",
+       "saliera"
+      ],
+      [
+       "nosotros",
+       "saliéramos"
+      ],
+      [
+       "ustedes, ellos",
+       "salieran"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "quietos": {
+    "g": "still",
+    "t": "adjective",
+    "c": {
+     "es": "ahora sí, todos quietos",
+     "en": "right, everybody hold still"
+    },
+    "f": {
+     "label": "quieto / quieta",
+     "rows": [
+      [
+       "masculino plural",
+       "todos quietos"
+      ],
+      [
+       "masculino",
+       "quieto"
+      ],
+      [
+       "femenino",
+       "quieta"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "fondo": {
+    "g": "the back",
+    "t": "noun",
+    "c": {
+     "es": "le contestaba Mateo desde el fondo",
+     "en": "Mateo answered him from the back"
+    },
+    "f": {
+     "label": "el fondo",
+     "rows": [
+      [
+       "parte de atrás",
+       "desde el fondo"
+      ],
+      [
+       "parte de abajo",
+       "el fondo del vaso"
+      ],
+      [
+       "a fondo",
+       "conocer algo a fondo"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "borrosa": {
+    "g": "blurry",
+    "t": "adjective",
+    "c": {
+     "es": "La primera salió borrosa",
+     "en": "The first one came out blurry"
+    },
+    "f": {
+     "label": "borroso / borrosa",
+     "rows": [
+      [
+       "femenino",
+       "borrosa"
+      ],
+      [
+       "masculino",
+       "borroso"
+      ],
+      [
+       "plural",
+       "borrosas"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "décima": {
+    "g": "the tenth one",
+    "t": "number",
+    "c": {
+     "es": "La décima quedó toda chueca",
+     "en": "The tenth one came out all crooked"
+    },
+    "f": {
+     "label": "décimo / décima",
+     "rows": [
+      [
+       "femenino",
+       "la décima"
+      ],
+      [
+       "masculino",
+       "el décimo"
+      ],
+      [
+       "cardinal",
+       "diez"
+      ]
+     ],
+     "here": 0
+    }
+   },
+   "imán": {
+    "g": "a magnet",
+    "t": "noun",
+    "c": {
+     "es": "con un imán del súper",
+     "en": "with a magnet from the supermarket"
+    },
+    "f": {
+     "label": "el imán",
+     "rows": [
+      [
+       "singular",
+       "un imán"
+      ],
+      [
+       "plural",
+       "los imanes"
+      ],
+      [
+       "adjetivo",
+       "magnético"
+      ]
+     ],
+     "here": 0
+    }
+   }
+  }
  }
 }
