@@ -93,13 +93,13 @@ async function main() {
   });
   const page = await context.newPage();
 
-  const step = (msg: string) => console.log(`  · ${msg}`);
+  const step = (msg: string) => process.stderr.write(`  · ${msg}\n`);
 
   for (const clip of CLIPS.filter((c) => !onlyArg || c.file === onlyArg)) {
     step(`${clip.file}: abriendo`);
     // `networkidle` se queda esperando por la portada, que viene de R2: se
     // espera a que la imagen este pintada, y con tope.
-    await page.goto(`${BASE}/dev-glossshot?slug=${clip.slug}&mode=after`, {
+    await page.goto(`${BASE}/dev-glossshot?slug=${clip.slug}`, {
       waitUntil: "domcontentloaded",
       timeout: 60_000,
     });
@@ -121,6 +121,12 @@ async function main() {
         "[data-nextjs-toast]{display:none!important}",
         // El aviso de instalar la app, por su etiqueta, que es estable.
         '[aria-label="Install Digital Polyglot to your home screen"]{display:none!important}',
+        // La barra de pestañas de la web: va pegada al borde inferior, el
+        // redondeo del telefono se come el ultimo icono, y ademas dice "Sign
+        // in" a gente que tiene sesion. La pantalla es la historia.
+        "nav.fixed{display:none!important}",
+        // El globo de feedback de la web, que se cuela en la esquina.
+        '[aria-label="Send feedback"]{display:none!important}',
         "*{scroll-behavior:auto!important}",
       ].join(""),
     });
@@ -146,15 +152,8 @@ async function main() {
     await grab(1.4);
 
     step("scroll a la palabra");
-    await word.evaluate((el) => el.scrollIntoView({ block: "center" }));
+    await word.evaluate((el) => el.scrollIntoView({ block: "center" }), undefined, { timeout: 15_000 });
     await page.waitForTimeout(500);
-    // Empieza por arriba: portada y titulo, que es la historia tal como se
-    // abre. Sin eso, el correo enseña un parrafo suelto.
-    await page.waitForTimeout(400);
-    await grab(1.4);
-
-    await word.scrollIntoViewIfNeeded();
-    await page.waitForTimeout(250);
     await ring(page, `[data-token="${clip.word}"]`);
     await grab(1.0);
     await unring(page);

@@ -749,6 +749,39 @@
     "uno",
     "veinte"
    ]
+  },
+  "spanish-traveler-spain-a1": {
+   "articles": [
+    "el",
+    "la",
+    "las",
+    "los",
+    "un",
+    "una",
+    "unas",
+    "unos"
+   ],
+   "numerals": [
+    "cien",
+    "cinco",
+    "cuatro",
+    "diez",
+    "dos",
+    "nueve",
+    "ocho",
+    "segunda",
+    "seis",
+    "tres",
+    "uno",
+    "veinte"
+   ],
+   "characterNames": [
+    "irene",
+    "marta",
+    "nico",
+    "quique",
+    "rocío"
+   ]
   }
  }
 }

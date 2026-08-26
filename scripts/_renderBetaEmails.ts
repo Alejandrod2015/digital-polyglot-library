@@ -74,7 +74,6 @@ const improvementGeneric: BetaEmailData = {
   assetBase: SHOT_BASE,
   improvement: {
     headline: HEADLINE,
-    changes: GLOSS_CHANGES,
     example: {
       word: "baja",
       sentence: "Lucía baja del tren en Madrid.",
@@ -82,6 +81,7 @@ const improvementGeneric: BetaEmailData = {
       image: "/email/glosses/baja-tap.gif",
       fullSizeImage: "/email/glosses/baja-after.png",
     },
+    changes: GLOSS_CHANGES,
     askThem: TRY_IT,
     ctaUrl: "https://digitalpolyglot.com/explore",
   },

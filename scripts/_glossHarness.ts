@@ -1,26 +1,24 @@
 /**
- * El harness /dev-glossshot: una ruta que renderiza el lector real (el de hoy
- * y el de antes de la capa de contexto) sin el paywall, para poder capturarlo.
- * Se escribe al vuelo, el dev server la recoge por HMR, y se borra al acabar.
- * La usan `_glossShots.ts` (capturas) y `_glossGif.ts` (animacion).
+ * El harness /dev-glossshot: una ruta que renderiza el lector real sin el
+ * paywall, para poder capturarlo. Se escribe al vuelo, el dev server la recoge,
+ * y se borra al acabar. La usan `_glossShots.ts` (capturas) y `_glossGif.ts`
+ * (animacion).
+ *
+ * Desde 2b1700bb las glosas viven en la tabla `TapGlossSet`, no en los JSON de
+ * `src/data/tapGlosses`, y `getTapGlossesForSlug` es asincrona.
+ *
+ * La pantalla es TEXTO: titulo y cuerpo, sin la portada de la historia. Lo que
+ * el correo enseña es la tarjeta de una palabra, y la portada solo quita sitio.
  */
-import { execFileSync } from "node:child_process";
 import { mkdirSync, writeFileSync, rmSync } from "node:fs";
 
 export const HARNESS = "src/app/dev-glossshot";
-/** El commit anterior a la capa de contexto: el lector que vieron los testers. */
-export const BEFORE_REF = "5d0ca237^";
 
 const HARNESS_PAGE = String.raw`// GENERADO por scripts/_glossHarness.ts, y borrado al terminar la captura.
 // Renderiza el lector real (TapGlossReader + TapGlossLayer) con las glosas de
 // una historia, saltando el paywall porque en local no hay sesion.
 import { notFound } from "next/navigation";
 import TapGlossReader from "@/components/TapGlossReader";
-import TapGlossReaderLegacy from "./legacy/TapGlossReaderLegacy";
-// Los bundles tal como estaban antes de la capa de contexto (5d0ca237^), para
-// que el "antes" sea lo que el tester vio y no una reconstruccion.
-import spainA0Before from "./legacy/spain-a0.before.json";
-import friendsLatamBefore from "./legacy/friends-latam.before.json";
 import { getTapGlossesForSlug } from "@/lib/tapGlosses";
 import { prisma } from "@/lib/prisma";
 
@@ -40,32 +38,25 @@ function vocabOf(raw: unknown): VocabItem[] {
 export default async function GlossShotPage({
   searchParams,
 }: {
-  searchParams: Promise<{ slug?: string; mode?: string }>;
+  searchParams: Promise<{ slug?: string }>;
 }) {
   if (process.env.NODE_ENV === "production") notFound();
-  const { slug = "marta-ensena-el-retiro", mode = "after" } = await searchParams;
+  const { slug = "marta-ensena-el-retiro" } = await searchParams;
 
   const story = await prisma.journeyStory.findFirst({
     where: { slug },
-    select: { slug: true, title: true, text: true, vocab: true, coverUrl: true },
+    select: { slug: true, title: true, text: true, vocab: true },
   });
   if (!story) notFound();
 
-  const full = getTapGlossesForSlug(slug) ?? {};
-  // "before" = el lector tal como estaba antes de la capa de contexto: el
-  // componente de 5d0ca237^ y la glosa plana del diccionario global.
-  const before = mode === "before";
-  const legacyBundle = [spainA0Before, friendsLatamBefore].find((b) =>
-    (b.slugs as string[]).includes(slug),
-  );
-  const glosses = before
-    ? ((legacyBundle?.glosses ?? {}) as typeof full)
-    : full;
-  const Reader = before ? TapGlossReaderLegacy : TapGlossReader;
+  const glosses = (await getTapGlossesForSlug(slug)) ?? {};
+  // Diagnostico visible en el DOM: si el harness no pinta palabras tocables,
+  // esto dice si el problema son los datos o el render.
+  const conteo = Object.keys(glosses).length;
 
   const text = (story.text ?? "")
     .split(/\n+/)
-    .map((line) => line.trim())
+    .map((line: string) => line.trim())
     .filter(Boolean)
     .join("\n\n");
 
@@ -74,20 +65,8 @@ export default async function GlossShotPage({
       <h1 className="text-3xl font-extrabold text-center mb-5 text-[var(--foreground)]">
         {story.title}
       </h1>
-      {story.coverUrl ? (
-        <div className="mb-7">
-          <div className="relative mx-auto w-full max-w-3xl overflow-hidden rounded-2xl border border-white/10 bg-[#102746]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={story.coverUrl}
-              alt=""
-              className="block w-full aspect-[16/10] object-contain"
-            />
-          </div>
-        </div>
-      ) : null}
-      <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
-        <Reader
+      <div data-glosses={conteo} className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
+        <TapGlossReader
           text={text}
           vocab={vocabOf(story.vocab)}
           glosses={glosses}
@@ -99,35 +78,10 @@ export default async function GlossShotPage({
 }
 `;
 
-export function show(path: string): string {
-  return execFileSync("git", ["show", `${BEFORE_REF}:${path}`], { encoding: "utf-8", maxBuffer: 64e6 });
-}
-
-/** Escribe la ruta de captura con el lector de hoy y el de antes, lado a lado. */
 export function writeHarness(): void {
-  mkdirSync(`${HARNESS}/legacy`, { recursive: true });
-  writeFileSync(
-    `${HARNESS}/legacy/TapGlossLayerLegacy.tsx`,
-    show("src/components/TapGlossLayer.tsx"),
-  );
-  writeFileSync(
-    `${HARNESS}/legacy/TapGlossReaderLegacy.tsx`,
-    show("src/components/TapGlossReader.tsx").replace(
-      '@/components/TapGlossLayer',
-      "./TapGlossLayerLegacy",
-    ),
-  );
-  writeFileSync(
-    `${HARNESS}/legacy/spain-a0.before.json`,
-    show("src/data/tapGlosses/spanish-friends-spain-a0.json"),
-  );
-  writeFileSync(
-    `${HARNESS}/legacy/friends-latam.before.json`,
-    show("src/data/tapGlosses/spanish-friends.json"),
-  );
+  mkdirSync(HARNESS, { recursive: true });
   writeFileSync(`${HARNESS}/page.tsx`, HARNESS_PAGE);
 }
-
 
 /**
  * Next tarda varios segundos en registrar una ruta recien escrita, y mientras
@@ -136,12 +90,14 @@ export function writeHarness(): void {
  * existian.
  */
 export async function waitForHarness(base: string, timeoutMs = 90_000): Promise<void> {
-  const url = `${base}/dev-glossshot?slug=marta-ensena-el-retiro&mode=after`;
+  const url = `${base}/dev-glossshot?slug=marta-ensena-el-retiro`;
   const deadline = Date.now() + timeoutMs;
   let last = 0;
   while (Date.now() < deadline) {
     try {
-      const res = await fetch(url, { method: "GET" });
+      // Con tope: un dev server que acepta la conexion y no contesta dejaba
+      // el fetch (y el script entero) colgado sin llegar a reintentar.
+      const res = await fetch(url, { method: "GET", signal: AbortSignal.timeout(8000) });
       last = res.status;
       if (res.ok) return;
     } catch {

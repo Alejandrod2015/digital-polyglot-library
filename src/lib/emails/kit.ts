@@ -359,23 +359,15 @@ export function phoneFrame(width: number, inner: string, screenBg: string = DPE.
  * `assetBase`; ver `scripts/_glossShots.ts`.
  */
 export function phoneShot(src: string, alt: string, width = 206, href?: string): string {
-  // `width` es el ancho de la PANTALLA, que es lo que `phoneFrame` recibe: el
-  // marco (7px de padding + 1px de borde) se dibuja POR FUERA. Restarlo aqui
-  // dejaba la captura 16px mas estrecha que su pantalla, con una banda de
-  // fondo azul a un lado.
-  const inner = width;
-  const img = `<img src="${src}" alt="${esc(alt)}" width="${inner}" style="display:block;width:${inner}px;max-width:100%;height:auto;border-radius:0 0 42px 42px;border:0;" />`;
-  // La franja del notch se pinta del fondo de la app, no del azul del kit: si
-  // no, entre el notch y la captura aparece una linea de otro color y el
-  // telefono deja de parecer un telefono.
-  const APP_BG = "#0b1e36";
-  // Con `href` el telefono entero es el enlace a la captura a tamaño real:
-  // dentro del correo cabe a 256 px, y a veces lo que se quiere leer es la
-  // letra pequeña de la tarjeta.
+  // La captura NO va a sangre: queda un marco de pantalla alrededor (7px de
+  // padding + 1px de borde del `phoneFrame` a cada lado), que es lo que hace
+  // que se lea como un telefono con su pantalla dentro. Llevarla al borde se
+  // probo el 2026-08-26 y el usuario pidio volver a esto.
+  const inner = width - 16;
+  const img = `<img src="${src}" alt="${esc(alt)}" width="${inner}" style="display:block;width:${inner}px;max-width:100%;height:auto;border-radius:0 0 42px 42px;border:0;margin:0 auto;" />`;
   return phoneFrame(
     width,
     href ? `<a href="${href}" style="display:block;text-decoration:none;">${img}</a>` : img,
-    APP_BG,
   );
 }
 

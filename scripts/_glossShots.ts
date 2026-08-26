@@ -6,9 +6,7 @@
  *   npm run dev            # el harness necesita el server en :3000
  *   npx tsx scripts/_glossShots.ts
  *
- * Solo el estado NUEVO: el correo no enseña un "antes" que ya no existe. El
- * harness sigue sabiendo montar el lector anterior (mode=before) por si hace
- * falta comparar, pero eso no sale en ningun correo.
+ * Solo el estado NUEVO: el correo no enseña un "antes" que ya no existe.
  */
 import { chromium } from "playwright";
 import { mkdirSync } from "node:fs";
@@ -17,11 +15,11 @@ import { writeHarness, removeHarness, waitForHarness } from "./_glossHarness";
 const BASE = process.env.SHOT_BASE ?? "http://localhost:3000";
 const OUT = "public/email/glosses";
 
-type Shot = { file: string; slug: string; word: string; mode: "before" | "after"; expand?: boolean };
+type Shot = { file: string; slug: string; word: string; expand?: boolean };
 
 const SHOTS: Shot[] = [
-  { file: "baja-after", slug: "marta-ensena-el-retiro", word: "baja", mode: "after", expand: true },
-  { file: "punto-after", slug: "le-toca-a-mateo", word: "punto", mode: "after", expand: true },
+  { file: "baja-after", slug: "marta-ensena-el-retiro", word: "baja", expand: true },
+  { file: "punto-after", slug: "le-toca-a-mateo", word: "punto", expand: true },
 ];
 
 async function main() {
@@ -46,7 +44,7 @@ async function main() {
   const page = await context.newPage();
 
   for (const shot of SHOTS) {
-    await page.goto(`${BASE}/dev-glossshot?slug=${shot.slug}&mode=${shot.mode}`, {
+    await page.goto(`${BASE}/dev-glossshot?slug=${shot.slug}`, {
       waitUntil: "networkidle",
     });
     // Fuera todo lo que no es la app: el banner de cookies, el de instalar, el

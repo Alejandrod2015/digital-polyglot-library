@@ -9,7 +9,7 @@
  * conjuga cuando la forma pertenece a un paradigma conocido, y si no, la
  * palabra se queda sin bloque en vez de con una conjugación adivinada.
  *
- *   npx tsx scripts/buildGlossForms.ts <bundle.json> [--dry]
+ *   npx tsx scripts/buildGlossForms.ts <bundle> <textos.json> [--dry]
  *
  * De dónde sale cada cosa:
  *
@@ -30,7 +30,11 @@
  * ustedes, y Argentina cambia además la segunda del singular por vos. El lint
  * `checkGlossVariants.ts` vuelve a comprobarlo después.
  */
+import { config } from "dotenv"; config({ path: ".env.local", quiet: true });
 import fs from "node:fs";
+import { PrismaClient } from "../src/generated/prisma";
+
+const prisma = new PrismaClient();
 
 type Entrada = {
   g: string;
@@ -268,14 +272,25 @@ function formasAdjetivo(forma: string): { masculino: string; filas: string[][]; 
 const ARTICULOS_M = new Set(["el", "un", "los", "unos", "del", "al"]);
 const ARTICULOS_F = new Set(["la", "una", "las", "unas"]);
 
-function main() {
-  const ruta = process.argv[2];
+async function main() {
+  const nombre = process.argv[2];
   const dry = process.argv.includes("--dry");
-  if (!ruta) {
-    console.error("uso: npx tsx scripts/buildGlossForms.ts <bundle.json> [--dry]");
+  if (!nombre) {
+    console.error("uso: npx tsx scripts/buildGlossForms.ts <bundle> <textos.json> [--dry]");
     process.exit(1);
   }
-  const bundle = JSON.parse(fs.readFileSync(ruta, "utf8")) as Bundle;
+  // Las glosas viven en dp_tap_glosses_v1 desde el 2026-08-26: la fila de slug
+  // "" es el mapa global del bundle y las demas son la capa de cada historia.
+  const filas = await prisma.tapGlossSet.findMany({ where: { bundle: nombre } });
+  const global = filas.find((f) => f.slug === "");
+  if (!global) { console.error(`el bundle ${nombre} no existe en la base`); process.exit(1); }
+  const bundle: Bundle = {
+    language: global.language ?? undefined,
+    variant: global.variant ?? undefined,
+    slugs: global.slugs,
+    glosses: global.glosses as Bundle["glosses"],
+    byStory: Object.fromEntries(filas.filter((f) => f.slug !== "").map((f) => [f.slug, f.glosses as Record<string, Entrada>])),
+  };
   const variante = (bundle.variant ?? "").trim().toLowerCase();
   const P = personas(variante);
 
@@ -369,7 +384,7 @@ function main() {
   }
 
   console.log(
-    `${ruta.split("/").pop()}: ${verbos} verbos conjugados, ${sustantivos} sustantivos con número, ` +
+    `${nombre}: ${verbos} verbos conjugados, ${sustantivos} sustantivos con número, ` +
       `${adjetivos} adjetivos con concordancia, ${sinNada} sin bloque` +
       (saltadas.length ? `\n  intactas por estar escritas a mano: ${saltadas.join(", ")}` : "")
   );
@@ -378,7 +393,15 @@ function main() {
     return;
   }
   bundle.byStory = salida;
-  fs.writeFileSync(ruta, JSON.stringify(bundle, null, 1) + "\n", "utf8");
+  for (const [slug, entradas] of Object.entries(salida)) {
+    await prisma.tapGlossSet.upsert({
+      where: { bundle_slug: { bundle: nombre, slug } },
+      create: { bundle: nombre, slug, language: bundle.language ?? null, variant: bundle.variant ?? null,
+                slugs: [], glosses: entradas as never },
+      update: { glosses: entradas as never },
+    });
+  }
+  await prisma.$disconnect();
 }
 
 main();
