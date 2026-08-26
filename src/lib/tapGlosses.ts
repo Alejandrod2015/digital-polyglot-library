@@ -51,7 +51,16 @@ export type TapGloss = {
    *  son pares [etiqueta, forma]; `here` marca cuál sale en esta historia, y es
    *  la que la tarjeta enciende. Ausente en los nombres propios, que no enseñan
    *  nada y dejan la tarjeta en dos líneas. */
-  f?: { label: string; rows: string[][]; here: number };
+  f?: {
+    label: string;
+    /** "table": la conjugación de un verbo, con persona y desplegable. "line":
+     *  todo lo demás, en una sola fila de fichas y sin desplegable. Un
+     *  sustantivo solo necesita su artículo y su plural, y una preposición no
+     *  necesita nada; llenar esas tarjetas con un paradigma era ruido. */
+    kind?: "line" | "table";
+    rows: string[][];
+    here: number;
+  };
 };
 
 type TapGlossBundle = {

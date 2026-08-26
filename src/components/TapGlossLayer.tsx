@@ -43,7 +43,7 @@ type GlossState = {
    *  él: una principiante no entiende "goes down" sobre "baja del tren". */
   chunk?: { es: string; en: string };
   /** Las formas de la palabra; ver `TapGloss.f`. */
-  forms?: { label: string; rows: string[][]; here: number };
+  forms?: { label: string; kind?: "line" | "table"; rows: string[][]; here: number };
 };
 
 type FavoriteItem = {
@@ -179,7 +179,7 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
       });
       // Abre desplegada cuando la forma de la historia cae fuera de las tres
       // primeras (contentas es la cuarta de contento): esa no se esconde nunca.
-      setFormsOpen(entry.f ? entry.f.here >= 3 : false);
+      setFormsOpen(entry.f?.kind === "table" ? entry.f.here >= 3 : false);
       setIsFav(
         favsRef.current.some((f) => (f.word ?? "").trim().toLowerCase() === word.trim().toLowerCase())
       );
@@ -352,15 +352,17 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
           con el recorte anterior la tarjeta cortaba una fila por la mitad. */}
       {selected.forms ? (
         <div className="mt-2.5 flex items-start gap-2.5">
-          <span
-            className="shrink-0 text-[var(--muted)]"
-            style={{ fontSize: 12, fontWeight: 700, paddingTop: 3 }}
-          >
-            {selected.forms.label}
-          </span>
+          {selected.forms.label ? (
+            <span
+              className="shrink-0 text-[var(--muted)]"
+              style={{ fontSize: 12, fontWeight: 700, paddingTop: 3 }}
+            >
+              {selected.forms.label}
+            </span>
+          ) : null}
           <div className="flex flex-wrap gap-1.5">
             {selected.forms.rows
-              .slice(0, formsOpen ? undefined : 3)
+              .slice(0, selected.forms.kind === "table" && !formsOpen ? 3 : undefined)
               .map((row, index) => {
                 const [person, form] = row;
                 const isHere = index === selected.forms!.here;
@@ -394,7 +396,7 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
           </div>
         </div>
       ) : null}
-      {selected.forms && selected.forms.rows.length > 3 ? (
+      {selected.forms && selected.forms.kind === "table" && selected.forms.rows.length > 3 ? (
         <button
           type="button"
           onClick={(e) => {

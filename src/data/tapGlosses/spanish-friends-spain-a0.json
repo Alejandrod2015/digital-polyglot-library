@@ -2741,7 +2741,8 @@
        "bajan"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "del": {
@@ -2752,19 +2753,12 @@
      "en": "from the train"
     },
     "f": {
-     "label": "de + el",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "masculino",
-       "del tren"
-      ],
-      [
-       "femenino",
-       "de la calle"
-      ],
-      [
-       "con a",
-       "al parque"
+       "",
+       "del = de + el"
       ]
      ],
      "here": 0
@@ -2778,26 +2772,19 @@
      "en": "the train"
     },
     "f": {
-     "label": "el tren",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "un tren"
-      ],
-      [
-       "varios",
-       "dos trenes"
-      ],
-      [
-       "ese",
+       "",
        "el tren"
       ],
       [
-       "esos",
+       "",
        "los trenes"
       ]
      ],
-     "here": 2
+     "here": 0
     }
    },
    "en": {
@@ -2806,24 +2793,6 @@
     "c": {
      "es": "en Madrid",
      "en": "in Madrid"
-    },
-    "f": {
-     "label": "se usa así",
-     "rows": [
-      [
-       "ciudad",
-       "en Madrid"
-      ],
-      [
-       "sitio",
-       "en la estación"
-      ],
-      [
-       "encima",
-       "en la mano"
-      ]
-     ],
-     "here": 0
     }
    },
    "madrid": {
@@ -2840,24 +2809,6 @@
     "c": {
      "es": "y su amiga",
      "en": "and her friend"
-    },
-    "f": {
-     "label": "y o e",
-     "rows": [
-      [
-       "normal",
-       "y su amiga"
-      ],
-      [
-       "antes de i",
-       "madre e hija"
-      ],
-      [
-       "con tú",
-       "y tú"
-      ]
-     ],
-     "here": 0
     }
    },
    "su": {
@@ -2868,18 +2819,19 @@
      "en": "her friend"
     },
     "f": {
-     "label": "de quién",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "una cosa",
+       "",
        "su amiga"
       ],
       [
-       "varias",
+       "",
        "sus amigas"
       ],
       [
-       "de él",
+       "",
        "su amigo"
       ]
      ],
@@ -2894,22 +2846,15 @@
      "en": "her friend Marta"
     },
     "f": {
-     "label": "la amiga",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "una amiga"
-      ],
-      [
-       "varios",
-       "dos amigas"
-      ],
-      [
-       "ese",
+       "",
        "la amiga"
       ],
       [
-       "esos",
+       "",
        "las amigas"
       ]
      ],
@@ -2928,30 +2873,31 @@
      "en": "waits for her"
     },
     "f": {
-     "label": "a quién",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "me",
+       "",
        "me espera"
       ],
       [
-       "te",
+       "",
        "te espera"
       ],
       [
-       "her",
+       "",
        "la espera"
       ],
       [
-       "him",
+       "",
        "lo espera"
       ],
       [
-       "us",
+       "",
        "nos espera"
       ],
       [
-       "them",
+       "",
        "las espera"
       ]
      ],
@@ -2993,7 +2939,8 @@
        "esperan"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "estación": {
@@ -3004,26 +2951,19 @@
      "en": "at the station"
     },
     "f": {
-     "label": "la estación",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "una estación"
-      ],
-      [
-       "varios",
-       "dos estaciones"
-      ],
-      [
-       "ese",
+       "",
        "la estación"
       ],
       [
-       "esos",
+       "",
        "las estaciones"
       ]
      ],
-     "here": 2
+     "here": 0
     }
    },
    "con": {
@@ -3032,24 +2972,6 @@
     "c": {
      "es": "con flores en la mano",
      "en": "with flowers in her hand"
-    },
-    "f": {
-     "label": "se usa así",
-     "rows": [
-      [
-       "qué llevas",
-       "con flores"
-      ],
-      [
-       "cómo",
-       "con miedo"
-      ],
-      [
-       "descripción",
-       "con ojos grandes"
-      ]
-     ],
-     "here": 0
     }
    },
    "flores": {
@@ -3060,22 +2982,15 @@
      "en": "with flowers"
     },
     "f": {
-     "label": "la flor",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "una flor"
-      ],
-      [
-       "varios",
-       "dos flores"
-      ],
-      [
-       "ese",
+       "",
        "la flor"
       ],
       [
-       "esos",
+       "",
        "las flores"
       ]
      ],
@@ -3090,26 +3005,19 @@
      "en": "in her hand"
     },
     "f": {
-     "label": "la mano",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "una mano"
-      ],
-      [
-       "varios",
-       "dos manos"
-      ],
-      [
-       "ese",
+       "",
        "la mano"
       ],
       [
-       "esos",
+       "",
        "las manos"
       ]
      ],
-     "here": 2
+     "here": 0
     }
    },
    "las": {
@@ -3120,18 +3028,19 @@
      "en": "The two friends"
     },
     "f": {
-     "label": "el o la",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "femenino",
+       "",
        "las amigas"
       ],
       [
-       "masculino",
+       "",
        "los amigos"
       ],
       [
-       "las dos",
+       "",
        "las dos"
       ]
      ],
@@ -3144,24 +3053,6 @@
     "c": {
      "es": "las dos amigas",
      "en": "the two friends"
-    },
-    "f": {
-     "label": "los números",
-     "rows": [
-      [
-       "dos",
-       "dos amigas"
-      ],
-      [
-       "ambas",
-       "las dos"
-      ],
-      [
-       "veces",
-       "dos veces"
-      ]
-     ],
-     "here": 0
     }
    },
    "amigas": {
@@ -3172,22 +3063,15 @@
      "en": "the two friends"
     },
     "f": {
-     "label": "la amiga",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "una amiga"
-      ],
-      [
-       "varios",
-       "dos amigas"
-      ],
-      [
-       "ese",
+       "",
        "la amiga"
       ],
       [
-       "esos",
+       "",
        "las amigas"
       ]
      ],
@@ -3202,18 +3086,19 @@
      "en": "they hug each other"
     },
     "f": {
-     "label": "entre quiénes",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "dos personas",
+       "",
        "se abrazan"
       ],
       [
-       "una sola",
+       "",
        "se abraza"
       ],
       [
-       "nosotras",
+       "",
        "nos abrazamos"
       ]
      ],
@@ -3255,7 +3140,8 @@
        "abrazan"
       ]
      ],
-     "here": 5
+     "here": 5,
+     "kind": "table"
     }
    },
    "muy": {
@@ -3264,24 +3150,6 @@
     "c": {
      "es": "muy contentas",
      "en": "very happy"
-    },
-    "f": {
-     "label": "se usa así",
-     "rows": [
-      [
-       "con adjetivo",
-       "muy contentas"
-      ],
-      [
-       "con adverbio",
-       "muy despacio"
-      ],
-      [
-       "no con nombre",
-       "mucha gente"
-      ]
-     ],
-     "here": 0
     }
    },
    "contentas": {
@@ -3292,22 +3160,23 @@
      "en": "very happy"
     },
     "f": {
-     "label": "contento",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "él",
+       "",
        "contento"
       ],
       [
-       "ella",
+       "",
        "contenta"
       ],
       [
-       "ellos",
+       "",
        "contentos"
       ],
       [
-       "ellas",
+       "",
        "contentas"
       ]
      ],
@@ -3349,7 +3218,8 @@
        "llevan"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "a": {
@@ -3358,24 +3228,6 @@
     "c": {
      "es": "a Lucía",
      "en": "Lucía"
-    },
-    "f": {
-     "label": "la a de persona",
-     "rows": [
-      [
-       "persona",
-       "lleva a Lucía"
-      ],
-      [
-       "persona",
-       "abraza a su amiga"
-      ],
-      [
-       "hora",
-       "a las dos"
-      ]
-     ],
-     "here": 0
     }
    },
    "al": {
@@ -3386,19 +3238,12 @@
      "en": "to the park"
     },
     "f": {
-     "label": "a + el",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "masculino",
-       "al parque"
-      ],
-      [
-       "femenino",
-       "a la calle"
-      ],
-      [
-       "con de",
-       "del parque"
+       "",
+       "al = a + el"
       ]
      ],
      "here": 0
@@ -3412,26 +3257,19 @@
      "en": "to the Retiro park"
     },
     "f": {
-     "label": "el parque",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "un parque"
-      ],
-      [
-       "varios",
-       "dos parques"
-      ],
-      [
-       "ese",
+       "",
        "el parque"
       ],
       [
-       "esos",
+       "",
        "los parques"
       ]
      ],
-     "here": 2
+     "here": 0
     }
    },
    "retiro": {
@@ -3465,7 +3303,8 @@
        "habrá"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "table"
     }
    },
    "árboles": {
@@ -3476,22 +3315,15 @@
      "en": "tall trees"
     },
     "f": {
-     "label": "el árbol",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "un árbol"
-      ],
-      [
-       "varios",
-       "dos árboles"
-      ],
-      [
-       "ese",
+       "",
        "el árbol"
       ],
       [
-       "esos",
+       "",
        "los árboles"
       ]
      ],
@@ -3506,22 +3338,23 @@
      "en": "tall trees"
     },
     "f": {
-     "label": "alto",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "él",
+       "",
        "alto"
       ],
       [
-       "ella",
+       "",
        "alta"
       ],
       [
-       "ellos",
+       "",
        "altos"
       ],
       [
-       "ellas",
+       "",
        "altas"
       ]
      ],
@@ -3536,22 +3369,23 @@
      "en": "a lot of people"
     },
     "f": {
-     "label": "mucho",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "él",
+       "",
        "mucho"
       ],
       [
-       "ella",
+       "",
        "mucha"
       ],
       [
-       "ellos",
+       "",
        "muchos"
       ],
       [
-       "ellas",
+       "",
        "muchas"
       ]
      ],
@@ -3566,19 +3400,12 @@
      "en": "a lot of people"
     },
     "f": {
-     "label": "la gente",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "mucha",
-       "mucha gente"
-      ],
-      [
-       "poca",
-       "poca gente"
-      ],
-      [
-       "toda",
-       "toda la gente"
+       "",
+       "la gente"
       ]
      ],
      "here": 0
@@ -3592,18 +3419,19 @@
      "en": "the sun"
     },
     "f": {
-     "label": "el o la",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "masculino",
+       "",
        "el sol"
       ],
       [
-       "femenino",
+       "",
        "la mano"
       ],
       [
-       "plural",
+       "",
        "los ojos"
       ]
      ],
@@ -3618,19 +3446,12 @@
      "en": "the sun shines"
     },
     "f": {
-     "label": "el sol",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "el astro",
+       "",
        "el sol"
-      ],
-      [
-       "al aire",
-       "al sol"
-      ],
-      [
-       "el tiempo",
-       "hace sol"
       ]
      ],
      "here": 0
@@ -3671,7 +3492,8 @@
        "brillan"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "sobre": {
@@ -3680,24 +3502,6 @@
     "c": {
      "es": "sobre el agua",
      "en": "over the water"
-    },
-    "f": {
-     "label": "se usa así",
-     "rows": [
-      [
-       "encima",
-       "sobre el agua"
-      ],
-      [
-       "encima",
-       "sobre la mesa"
-      ],
-      [
-       "hora",
-       "sobre las dos"
-      ]
-     ],
-     "here": 0
     }
    },
    "agua": {
@@ -3708,23 +3512,16 @@
      "en": "the lake water"
     },
     "f": {
-     "label": "el agua",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "una",
+       "",
        "el agua"
       ],
       [
-       "varias",
+       "",
        "las aguas"
-      ],
-      [
-       "fría",
-       "agua fría"
-      ],
-      [
-       "un poco",
-       "un vaso de agua"
       ]
      ],
      "here": 0
@@ -3738,26 +3535,19 @@
      "en": "of the lake"
     },
     "f": {
-     "label": "el lago",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "un lago"
-      ],
-      [
-       "varios",
-       "dos lagos"
-      ],
-      [
-       "ese",
+       "",
        "el lago"
       ],
       [
-       "esos",
+       "",
        "los lagos"
       ]
      ],
-     "here": 2
+     "here": 0
     }
    },
    "mira": {
@@ -3795,7 +3585,8 @@
        "miran"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "todo": {
@@ -3804,24 +3595,6 @@
     "c": {
      "es": "mira todo",
      "en": "everything"
-    },
-    "f": {
-     "label": "se usa así",
-     "rows": [
-      [
-       "cosas",
-       "mira todo"
-      ],
-      [
-       "tiempo",
-       "todo el día"
-      ],
-      [
-       "gente",
-       "todos"
-      ]
-     ],
-     "here": 0
     }
    },
    "ojos": {
@@ -3832,22 +3605,15 @@
      "en": "with wide eyes"
     },
     "f": {
-     "label": "el ojo",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "un ojo"
-      ],
-      [
-       "varios",
-       "dos ojos"
-      ],
-      [
-       "ese",
+       "",
        "el ojo"
       ],
       [
-       "esos",
+       "",
        "los ojos"
       ]
      ],
@@ -3862,14 +3628,15 @@
      "en": "wide eyes"
     },
     "f": {
-     "label": "grande",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
+       "",
        "grande"
       ],
       [
-       "varios",
+       "",
        "grandes"
       ]
      ],
@@ -3911,7 +3678,8 @@
        "hablan"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "despacio": {
@@ -3920,24 +3688,6 @@
     "c": {
      "es": "habla despacio",
      "en": "speaks slowly"
-    },
-    "f": {
-     "label": "se usa así",
-     "rows": [
-      [
-       "con un verbo",
-       "habla despacio"
-      ],
-      [
-       "más fuerte",
-       "muy despacio"
-      ],
-      [
-       "comparando",
-       "más despacio"
-      ]
-     ],
-     "here": 0
     }
    },
    "miedo": {
@@ -3948,22 +3698,15 @@
      "en": "afraid"
     },
     "f": {
-     "label": "el miedo",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "tener",
-       "tener miedo"
-      ],
-      [
-       "cómo",
-       "con miedo"
-      ],
-      [
-       "dar",
-       "me da miedo"
+       "",
+       "el miedo"
       ]
      ],
-     "here": 1
+     "here": 0
     }
    },
    "mi": {
@@ -3974,18 +3717,19 @@
      "en": "My Spanish"
     },
     "f": {
-     "label": "de quién",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "una cosa",
+       "",
        "mi español"
       ],
       [
-       "varias",
+       "",
        "mis amigas"
       ],
       [
-       "de ti",
+       "",
        "tu español"
       ]
      ],
@@ -4000,19 +3744,12 @@
      "en": "My Spanish is bad"
     },
     "f": {
-     "label": "el español",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "el idioma",
+       "",
        "el español"
-      ],
-      [
-       "hablar",
-       "hablo español"
-      ],
-      [
-       "en qué",
-       "en español"
       ]
      ],
      "here": 0
@@ -4053,7 +3790,8 @@
        "son"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "malo": {
@@ -4064,22 +3802,23 @@
      "en": "is bad"
     },
     "f": {
-     "label": "malo",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "él",
+       "",
        "malo"
       ],
       [
-       "ella",
+       "",
        "mala"
       ],
       [
-       "ellos",
+       "",
        "malos"
       ],
       [
-       "ellas",
+       "",
        "malas"
       ]
      ],
@@ -4121,7 +3860,8 @@
        "dicen"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "le": {
@@ -4132,22 +3872,23 @@
      "en": "touches her arm"
     },
     "f": {
-     "label": "a quién",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "me",
+       "",
        "me toca"
       ],
       [
-       "te",
+       "",
        "te toca"
       ],
       [
-       "her, him",
+       "",
        "le toca"
       ],
       [
-       "us",
+       "",
        "nos toca"
       ]
      ],
@@ -4189,7 +3930,8 @@
        "tocan"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "brazo": {
@@ -4200,26 +3942,19 @@
      "en": "her arm"
     },
     "f": {
-     "label": "el brazo",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "un brazo"
-      ],
-      [
-       "varios",
-       "dos brazos"
-      ],
-      [
-       "ese",
+       "",
        "el brazo"
       ],
       [
-       "esos",
+       "",
        "los brazos"
       ]
      ],
-     "here": 2
+     "here": 0
     }
    },
    "tu": {
@@ -4230,18 +3965,19 @@
      "en": "Your Spanish"
     },
     "f": {
-     "label": "de quién",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "una cosa",
+       "",
        "tu español"
       ],
       [
-       "varias",
+       "",
        "tus amigas"
       ],
       [
-       "de mí",
+       "",
        "mi español"
       ]
      ],
@@ -4256,22 +3992,23 @@
      "en": "is good"
     },
     "f": {
-     "label": "bueno",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "él",
+       "",
        "bueno"
       ],
       [
-       "ella",
+       "",
        "buena"
       ],
       [
-       "ellos",
+       "",
        "buenos"
       ],
       [
-       "ellas",
+       "",
        "buenas"
       ]
      ],
@@ -4286,22 +4023,23 @@
      "en": "Don't worry"
     },
     "f": {
-     "label": "tranquilo",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "él",
+       "",
        "tranquilo"
       ],
       [
-       "ella",
+       "",
        "tranquila"
       ],
       [
-       "ellos",
+       "",
        "tranquilos"
       ],
       [
-       "ellas",
+       "",
        "tranquilas"
       ]
      ],
@@ -4343,7 +4081,8 @@
        "responden"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "suben": {
@@ -4381,7 +4120,8 @@
        "suben"
       ]
      ],
-     "here": 5
+     "here": 5,
+     "kind": "table"
     }
    },
    "una": {
@@ -4392,18 +4132,19 @@
      "en": "a small boat"
     },
     "f": {
-     "label": "un o una",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "femenino",
+       "",
        "una barca"
       ],
       [
-       "masculino",
+       "",
        "un pato"
       ],
       [
-       "varias",
+       "",
        "unas barcas"
       ]
      ],
@@ -4418,22 +4159,15 @@
      "en": "a small boat"
     },
     "f": {
-     "label": "la barca",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "una barca"
-      ],
-      [
-       "varios",
-       "dos barcas"
-      ],
-      [
-       "ese",
+       "",
        "la barca"
       ],
       [
-       "esos",
+       "",
        "las barcas"
       ]
      ],
@@ -4448,22 +4182,23 @@
      "en": "small boat"
     },
     "f": {
-     "label": "pequeño",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "él",
+       "",
        "pequeño"
       ],
       [
-       "ella",
+       "",
        "pequeña"
       ],
       [
-       "ellos",
+       "",
        "pequeños"
       ],
       [
-       "ellas",
+       "",
        "pequeñas"
       ]
      ],
@@ -4505,7 +4240,8 @@
        "reman"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "canta": {
@@ -4543,7 +4279,8 @@
        "cantan"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "canción": {
@@ -4554,22 +4291,15 @@
      "en": "a song"
     },
     "f": {
-     "label": "la canción",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "una canción"
-      ],
-      [
-       "varios",
-       "dos canciones"
-      ],
-      [
-       "ese",
+       "",
        "la canción"
       ],
       [
-       "esos",
+       "",
        "las canciones"
       ]
      ],
@@ -4611,7 +4341,8 @@
        "están"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "fría": {
@@ -4622,22 +4353,23 @@
      "en": "is cold"
     },
     "f": {
-     "label": "frío",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "él",
+       "",
        "frío"
       ],
       [
-       "ella",
+       "",
        "fría"
       ],
       [
-       "ellos",
+       "",
        "fríos"
       ],
       [
-       "ellas",
+       "",
        "frías"
       ]
      ],
@@ -4652,22 +4384,23 @@
      "en": "very clean"
     },
     "f": {
-     "label": "limpio",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "él",
+       "",
        "limpio"
       ],
       [
-       "ella",
+       "",
        "limpia"
       ],
       [
-       "ellos",
+       "",
        "limpios"
       ],
       [
-       "ellas",
+       "",
        "limpias"
       ]
      ],
@@ -4682,18 +4415,19 @@
      "en": "A duck"
     },
     "f": {
-     "label": "un o una",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "masculino",
+       "",
        "un pato"
       ],
       [
-       "femenino",
+       "",
        "una barca"
       ],
       [
-       "varios",
+       "",
        "unos patos"
       ]
      ],
@@ -4708,22 +4442,15 @@
      "en": "A duck swims"
     },
     "f": {
-     "label": "el pato",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "un pato"
-      ],
-      [
-       "varios",
-       "dos patos"
-      ],
-      [
-       "ese",
+       "",
        "el pato"
       ],
       [
-       "esos",
+       "",
        "los patos"
       ]
      ],
@@ -4738,30 +4465,31 @@
      "en": "A duck swims nearby"
     },
     "f": {
-     "label": "nadar",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "yo",
+       "",
        "nado"
       ],
       [
-       "tú",
+       "",
        "nadas"
       ],
       [
-       "él, ella",
+       "",
        "nada"
       ],
       [
-       "nosotros",
+       "",
        "nadamos"
       ],
       [
-       "vosotros",
+       "",
        "nadáis"
       ],
       [
-       "ellos",
+       "",
        "nadan"
       ]
      ],
@@ -4774,24 +4502,6 @@
     "c": {
      "es": "cerca de ellas",
      "en": "near them"
-    },
-    "f": {
-     "label": "se usa así",
-     "rows": [
-      [
-       "de alguien",
-       "cerca de ellas"
-      ],
-      [
-       "mucho",
-       "muy cerca"
-      ],
-      [
-       "de un sitio",
-       "cerca del lago"
-      ]
-     ],
-     "here": 0
     }
    },
    "de": {
@@ -4800,24 +4510,6 @@
     "c": {
      "es": "cerca de ellas",
      "en": "near them"
-    },
-    "f": {
-     "label": "se usa así",
-     "rows": [
-      [
-       "de qué",
-       "de fresa"
-      ],
-      [
-       "dónde",
-       "cerca de"
-      ],
-      [
-       "de dónde",
-       "del tren"
-      ]
-     ],
-     "here": 0
     }
    },
    "ellas": {
@@ -4828,18 +4520,19 @@
      "en": "near them"
     },
     "f": {
-     "label": "quiénes",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "todas mujeres",
+       "",
        "ellas"
       ],
       [
-       "con un hombre",
+       "",
        "ellos"
       ],
       [
-       "nosotras",
+       "",
        "nosotras"
       ]
      ],
@@ -4852,24 +4545,6 @@
     "c": {
      "es": "Después",
      "en": "Afterwards"
-    },
-    "f": {
-     "label": "cuándo",
-     "rows": [
-      [
-       "luego",
-       "después"
-      ],
-      [
-       "de algo",
-       "después de comer"
-      ],
-      [
-       "poco",
-       "poco después"
-      ]
-     ],
-     "here": 0
     }
    },
    "comen": {
@@ -4907,7 +4582,8 @@
        "comen"
       ]
      ],
-     "here": 5
+     "here": 5,
+     "kind": "table"
     }
    },
    "helado": {
@@ -4918,31 +4594,16 @@
      "en": "a strawberry ice cream"
     },
     "f": {
-     "label": "el helado",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "uno",
-       "un helado"
-      ],
-      [
-       "varios",
-       "dos helados"
-      ],
-      [
-       "ese",
+       "",
        "el helado"
       ],
       [
-       "esos",
+       "",
        "los helados"
-      ],
-      [
-       "de qué",
-       "de fresa"
-      ],
-      [
-       "con qué",
-       "con nata"
       ]
      ],
      "here": 0
@@ -4956,22 +4617,23 @@
      "en": "strawberry"
     },
     "f": {
-     "label": "la fresa",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "de qué",
+       "",
        "de fresa"
       ],
       [
-       "una",
+       "",
        "una fresa"
       ],
       [
-       "varias",
+       "",
        "dos fresas"
       ],
       [
-       "esas",
+       "",
        "las fresas"
       ]
      ],
@@ -5013,7 +4675,8 @@
        "sacan"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "poco": {
@@ -5022,24 +4685,6 @@
     "c": {
      "es": "un poco de pan",
      "en": "a bit of bread"
-    },
-    "f": {
-     "label": "cuánto",
-     "rows": [
-      [
-       "de algo",
-       "un poco de pan"
-      ],
-      [
-       "despacio",
-       "poco a poco"
-      ],
-      [
-       "más",
-       "un poco más"
-      ]
-     ],
-     "here": 0
     }
    },
    "pan": {
@@ -5050,22 +4695,15 @@
      "en": "some bread"
     },
     "f": {
-     "label": "el pan",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "en general",
+       "",
        "el pan"
-      ],
-      [
-       "un poco",
-       "un poco de pan"
-      ],
-      [
-       "una pieza",
-       "una barra de pan"
       ]
      ],
-     "here": 1
+     "here": 0
     }
    },
    "para": {
@@ -5074,24 +4712,6 @@
     "c": {
      "es": "para el pato",
      "en": "for the duck"
-    },
-    "f": {
-     "label": "para quién",
-     "rows": [
-      [
-       "alguien",
-       "para el pato"
-      ],
-      [
-       "ti",
-       "para ti"
-      ],
-      [
-       "cuándo",
-       "para mañana"
-      ]
-     ],
-     "here": 0
     }
    },
    "abraza": {
@@ -5129,7 +4749,8 @@
        "abrazan"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "table"
     }
    },
    "otra": {
@@ -5140,22 +4761,23 @@
      "en": "again"
     },
     "f": {
-     "label": "otro",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "él",
+       "",
        "otro"
       ],
       [
-       "ella",
+       "",
        "otra"
       ],
       [
-       "ellos",
+       "",
        "otros"
       ],
       [
-       "ellas",
+       "",
        "otras"
       ]
      ],
@@ -5170,23 +4792,16 @@
      "en": "again"
     },
     "f": {
-     "label": "la vez",
+     "label": "",
+     "kind": "line",
      "rows": [
       [
-       "otra",
-       "otra vez"
+       "",
+       "la vez"
       ],
       [
-       "una",
-       "una vez"
-      ],
-      [
-       "dos",
-       "dos veces"
-      ],
-      [
-       "muchas",
-       "muchas veces"
+       "",
+       "las veces"
       ]
      ],
      "here": 0
