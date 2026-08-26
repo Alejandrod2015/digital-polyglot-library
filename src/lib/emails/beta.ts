@@ -1,11 +1,11 @@
 // Beta program email compositions. Same design system as the lifecycle sends
 // (src/lib/emails/kit.ts) so a tester never sees two different products.
 //
-// The through-line across all of them: a beta tester is doing you a favour,
-// and the only currency you can pay them in is evidence that their report
-// changed the app. Every send either asks for something specific or shows
-// them what their last answer produced. None of them say "we value your
-// feedback" without naming the feedback.
+// The through-line across all of them: a beta tester is doing the product a
+// favour, so every send is specific about what it asks or about what is new.
+// Ninguno dice "we value your feedback" sin enseñar algo, y ninguno cuenta la
+// mejora como el pago de un favor: se agradece el mensaje y se enseña el
+// trabajo, sin atribuirle la decision a quien escribio.
 
 import {
   DPE,
@@ -21,6 +21,7 @@ import {
   ctaSecondary,
   hi,
   badge,
+  phoneShot,
 } from "./kit";
 import { publicBaseUrl } from "@/lib/emails/publicBaseUrl";
 import type { BuiltEmail } from "./lifecycle";
@@ -41,7 +42,11 @@ export type BetaEmailKind =
   | "release_note"
   | "final_survey"
   | "review_ask"
-  | "review_recover";
+  | "review_recover"
+  // Not a build note and not a survey: the send that shows a piece of work
+  // the product is proud of. Kept apart from `release_note` because it is not
+  // tied to a build and must not carry "open TestFlight and tap Update".
+  | "improvement";
 
 export type BetaEmailData = {
   baseUrl?: string;
@@ -77,11 +82,63 @@ export type BetaEmailData = {
     askThem?: string | null;
   };
   /**
-   * This tester's own reports that shipped in this build. The single highest
-   * leverage line in the whole program: name what they said, then show it
-   * fixed.
+   * Los arreglos de este build que tocan a ESTE lector, para que no se le
+   * pierdan entre los demas. Se listan como arreglos, nunca como deuda
+   * saldada con quien los reporto.
    */
   fixedForThem?: string[];
+  /**
+   * The "we heard you" send. Everything in it is data, not copy baked into
+   * the builder, so the same email can carry a different piece of work next
+   * time without a second builder.
+   *
+   * La mitad personal es `quote` + `highlights`: con ellos el correo va
+   * dirigido a quien escribio, y sin ellos es la misma noticia para todos los
+   * demas. No hay un tercer modo, a proposito: un correo a medias ("some of
+   * you mentioned...") es justo lo que este programa no manda.
+   */
+  improvement?: {
+    /** Overrides the headline. The default answers "what got better". */
+    headline?: string | null;
+    /** Overrides the subject line. */
+    subject?: string | null;
+    /** What changed, for every tester. The body of the news. */
+    changes: string[];
+    /** Sus palabras, literales. Citar es TODA la personalizacion: se agradece
+     *  el mensaje, no se le atribuye la decision de construir. */
+    quote?: string | null;
+    /** When they wrote it, e.g. "in your final survey, 23 August". */
+    quotedAt?: string | null;
+    /** Lo que hace la app ahora, contado en los terminos de esta persona. */
+    highlights?: string[];
+    /**
+     * One word from a story THEY read, before and after. Abstract claims about
+     * definitions are cheap; a word they tapped and the two versions of what
+     * it said is the proof.
+     */
+    example?: {
+      word: string;
+      /** La frase de la historia donde sale, para situarla. */
+      sentence?: string | null;
+      /** Lo que la tarjeta dice ahora, en una linea. */
+      caption: string;
+      /**
+       * La captura o la animacion de la tarjeta, servida desde `assetBase`
+       * (public/email/...). Se enseña solo el ESTADO NUEVO: un "antes" pone al
+       * lector a mirar lo que ya no existe.
+       */
+      image?: string | null;
+      /** Version fija y a tamaño real, para el enlace de debajo. */
+      fullSizeImage?: string | null;
+    } | null;
+
+    /** The one thing to go and try. */
+    askThem?: string | null;
+    /** Where the change is live. Defaults to the web reader. */
+    ctaUrl?: string | null;
+    ctaLabel?: string | null;
+  };
+
   /** Days the beta still has to run, for the final-stretch sends. */
   daysLeft?: number;
   /**
@@ -141,10 +198,15 @@ function note(text: string): string {
 }
 
 /**
- * Every email in this family is written in the first person: "I read every
- * one", "reply and I will resend it". Until 2026-08-11 none of them said who
- * "I" was, and the plain-text half signed off as the brand, so a personal
- * sentence arrived signed by a company. Same name `personal.ts` already uses.
+ * The body of every email in this family speaks as "we", never as "I": "we
+ * read all of them", "reply and we will send it again". The signature is the
+ * one place a person appears, and it stays: a name under a mail that says
+ * "we" reads as someone answering for the team, which is what happens.
+ *
+ * WHY: hasta el 2026-08-26 estos correos hablaban en primera persona del
+ * singular y uno de ellos llegó a encabezar un bloque con "What you told me".
+ * El usuario: "Nunca hables de mí. Nunca personalices. Siempre nosotros".
+ * Mismo nombre que ya usa `personal.ts`.
  */
 const SIGN_OFF = "Alejandro";
 
@@ -203,7 +265,7 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
       : android
         ? `${cardTitle("Getting in")}
     <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
-      Your Android access is being set up. Reply to this email and I will send your install link straight away.
+      Your Android access is being set up. Reply to this email and we will send your install link straight away.
     </p>`
         : `${cardTitle("Getting in takes about two minutes")}
     ${bullets([
@@ -219,7 +281,7 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
       [
         "Every language, every story and the audio are open to you.",
         "Pick a language when you open the app. You can change it whenever you want.",
-        "Tell me something is broken and you will hear from me when it is fixed.",
+        "Tell us something is broken and you will hear back when it is fixed.",
       ],
       "gold",
     )}`,
@@ -229,7 +291,7 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
   const ask = card(
     `${cardTitle("Then just use it", DPE.sky)}
     <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
-      When something breaks or annoys you, tap ${hi("Send feedback")} in Settings and tell me in one line. I read all of them.
+      When something breaks or annoys you, tap ${hi("Send feedback")} in Settings and tell us in one line. We read all of them.
     </p>`,
     "rgba(125,211,252,0.3)",
   );
@@ -252,7 +314,7 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
         androidReady
           ? `Your install link is below. Google does not send one, so this email is the invitation.`
           : android
-            ? `One step left on my side before you can install.`
+            ? `One step left on our side before you can install.`
             : `Apple is sending your TestFlight invite to your Apple ID right now.`,
       )}`,
       "40px 44px 0",
@@ -274,10 +336,10 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
     block(
       note(
         androidReady
-          ? "If the opt-in page says you are not a tester, it is almost always the Google account: open the link in a browser while signed in as the address you gave me. Reply here and I will sort it."
+          ? "If the opt-in page says you are not a tester, it is almost always the Google account: open the link in a browser while signed in as the address you gave us. Reply here and we will sort it."
           : android
-            ? "Reply to this email and I will send your install link."
-            : "If Apple's invite has not shown up in fifteen minutes, check the spam folder of your Apple ID address, then reply here and I will send it again.",
+            ? "Reply to this email and we will send your install link."
+            : "If Apple's invite has not shown up in fifteen minutes, check the spam folder of your Apple ID address, then reply here and we will send it again.",
       ),
       "8px 44px 0",
     ),
@@ -294,7 +356,7 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
       // The preheader is the line they read in the inbox, so it cannot promise
       // two minutes to someone who has to wait for a reply first.
       preheader: android && !androidReady
-        ? "You're in. One step left on my side."
+        ? "You're in. One step left on our side."
         : "Two minutes to install, then everything is unlocked.",
       blocks,
       baseUrl: b,
@@ -323,7 +385,7 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
           ]
         : android
           ? [
-              "One step left on my side before you can install. Reply to this email and I will send your install link straight away.",
+              "One step left on our side before you can install. Reply to this email and we will send your install link straight away.",
               "",
             ]
           : [
@@ -339,13 +401,13 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
             ]),
       "Every language, every story and the audio are open to you. Pick a language when you open the app. You can change it whenever you want.",
       "",
-      "Then just use it. When something breaks or annoys you, tap Send feedback in Settings and tell me in one line. I read all of them.",
+      "Then just use it. When something breaks or annoys you, tap Send feedback in Settings and tell us in one line. We read all of them.",
       "",
       androidReady
-        ? "If the opt-in page says you are not a tester, it is almost always the Google account: open the link in a browser while signed in as the address you gave me. Reply here and I will sort it."
+        ? "If the opt-in page says you are not a tester, it is almost always the Google account: open the link in a browser while signed in as the address you gave us. Reply here and we will sort it."
         : android
           ? ""
-          : "If Apple's invite has not shown up in fifteen minutes, check the spam folder of your Apple ID address, then reply here and I will send it again.",
+          : "If Apple's invite has not shown up in fifteen minutes, check the spam folder of your Apple ID address, then reply here and we will send it again.",
       "",
       "Thanks for being one of the first.",
       "",
@@ -396,7 +458,7 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
       [
         "Every language, every story and the audio are open to you.",
         "Pick a language when you open the app. You can change it whenever you want.",
-        "Tell me something is broken and you will hear from me when it is fixed.",
+        "Tell us something is broken and you will hear back when it is fixed.",
       ],
       "gold",
     )}`,
@@ -406,7 +468,7 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
   const ask = card(
     `${cardTitle("Then just use it", DPE.sky)}
     <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
-      When something breaks or annoys you, tap ${hi("Send feedback")} in Settings and tell me in one line. I read all of them.
+      When something breaks or annoys you, tap ${hi("Send feedback")} in Settings and tell us in one line. We read all of them.
     </p>`,
     "rgba(125,211,252,0.3)",
   );
@@ -437,7 +499,7 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
     block(perks, "16px 44px 0", false),
     block(ask, "16px 44px 0", false),
     block(
-      note("Stuck at any step, reply and tell me what the screen says. Android's way of doing this is genuinely fiddly, and it is not your fault."),
+      note("Stuck at any step, reply and tell us what the screen says. Android's way of doing this is genuinely fiddly, and it is not your fault."),
       "8px 44px 0",
     ),
     block(lead("Thanks for being one of the first."), "18px 44px 0"),
@@ -470,9 +532,9 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
       "",
       "Every language, every story and the audio are open to you. Pick a language when you open the app. You can change it whenever you want.",
       "",
-      "Then just use it. When something breaks or annoys you, tap Send feedback in Settings and tell me in one line. I read all of them.",
+      "Then just use it. When something breaks or annoys you, tap Send feedback in Settings and tell us in one line. We read all of them.",
       "",
-      "Stuck at any step, reply and tell me what the screen says.",
+      "Stuck at any step, reply and tell us what the screen says.",
       "",
       "Thanks for being one of the first.",
       "",
@@ -491,7 +553,7 @@ export function buildBetaWaitlistEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("Application received")}${head(`You're on the<br/>${gold("shortlist")}.`, 40)}${lead(
-        `Thanks for applying, ${esc(name)}. I run the beta in small groups so every report gets read properly, which means invites go out in waves.`,
+        `Thanks for applying, ${esc(name)}. We run the beta in small groups so every report gets read properly, which means invites go out in waves.`,
       )}`,
       "40px 44px 0",
     ),
@@ -501,7 +563,7 @@ export function buildBetaWaitlistEmail(data?: BetaEmailData): BuiltEmail {
         ${bullets([
           "You keep your place. There is nothing to reapply for.",
           "When the next wave opens, invites go out oldest first.",
-          "You will hear from me either way. No silent rejections.",
+          "You will hear from us either way. No silent rejections.",
         ])}`,
       ),
       "28px 44px 0",
@@ -525,9 +587,9 @@ export function buildBetaWaitlistEmail(data?: BetaEmailData): BuiltEmail {
     text: [
       `Thanks for applying, ${name}.`,
       "",
-      `I run the beta in small groups so every report gets read properly, which means invites go out in waves.`,
+      `We run the beta in small groups so every report gets read properly, which means invites go out in waves.`,
       "",
-      "You keep your place, there is nothing to reapply for, and invites go out oldest first when the next wave opens. You will hear from me either way.",
+      "You keep your place, there is nothing to reapply for, and invites go out oldest first when the next wave opens. You will hear from us either way.",
       "",
       SIGN_OFF,
     ].join("\n"),
@@ -550,13 +612,13 @@ export function buildBetaDeclinedEmail(data?: BetaEmailData): BuiltEmail {
     block(
       card(
         `<p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
-          That is about the shape of this round, not about you. You can read on the web today at no cost, and I will write when the app opens up properly.
+          That is about the shape of this round, not about you. You can read on the web today at no cost, and we will write when the app opens up properly.
         </p>`,
       ),
       "28px 44px 0",
       false,
     ),
-    block(ctaSecondary("Read on the web", `${b}/stories`), "24px 44px 0"),
+    block(ctaSecondary("Read on the web", `${b}/explore`), "24px 44px 0"),
   ];
 
   return {
@@ -573,7 +635,7 @@ export function buildBetaDeclinedEmail(data?: BetaEmailData): BuiltEmail {
       "",
       "The current beta is a small group, and your application is not a fit for this round.",
       "",
-      `You can read on the web today at no cost: ${b}/stories`,
+      `You can read on the web today at no cost: ${b}/explore`,
       "",
       SIGN_OFF,
     ].join("\n"),
@@ -621,8 +683,8 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
     block(
       note(
         android
-          ? "Still stuck? Reply and tell me exactly what the page says, and which Google account you are signed in with."
-          : "Still stuck? Reply with the Apple ID address you want it sent to and I will fire a fresh invite.",
+          ? "Still stuck? Reply and tell us exactly what the page says, and which Google account you are signed in with."
+          : "Still stuck? Reply with the Apple ID address you want it sent to and we will send a fresh invite.",
       ),
       "16px 44px 0",
     ),
@@ -651,8 +713,8 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
       ...(ctaUrl ? [`${ctaLabel}: ${ctaUrl}`] : []),
       "",
       android
-        ? "Still stuck? Reply and tell me what the page says, and which Google account you are signed in with."
-        : "Still stuck? Reply with the Apple ID address you want it sent to and I will fire a fresh invite.",
+        ? "Still stuck? Reply and tell us what the page says, and which Google account you are signed in with."
+        : "Still stuck? Reply with the Apple ID address you want it sent to and we will send a fresh invite.",
       "",
       SIGN_OFF,
     ].join("\n"),
@@ -670,7 +732,7 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("One question")}${head(`What ${gold("annoyed")} you<br/>the most?`, 40)}${lead(
-        `A week in, ${esc(name)}. I do not want a review. I want the one thing that made you frown.`,
+        `A week in, ${esc(name)}. We do not want a review. We want the one thing that made you frown.`,
       )}`,
       "40px 44px 0",
     ),
@@ -686,7 +748,7 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
       "28px 44px 0",
       false,
     ),
-    block(cta("Tell me the one thing", url), "24px 44px 0"),
+    block(cta("Tell us the one thing", url), "24px 44px 0"),
     block(note("Or just hit reply. Both land in the same place."), "14px 44px 0"),
   ];
 
@@ -702,11 +764,11 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
     text: [
       `A week in, ${name}.`,
       "",
-      "I do not want a review. I want the one thing that made you frown: a slow screen, a word that would not tap, audio that started late, a button you could not find.",
+      "We do not want a review. We want the one thing that made you frown: a slow screen, a word that would not tap, audio that started late, a button you could not find.",
       "",
       "One sentence is a complete answer.",
       "",
-      `Tell me: ${url}`,
+      `Tell us: ${url}`,
       "",
       "Or just hit reply. Both land in the same place.",
       "",
@@ -719,7 +781,7 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
 export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
-  const url = data?.feedbackUrl ?? `${b}/beta/survey`;
+  const url = data?.feedbackUrl ?? `${b}/beta/feedback?kind=mid_survey`;
 
   const blocks = [
     block(
@@ -730,7 +792,7 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
     ),
     block(
       card(
-        `${cardTitle("What I am asking")}
+        `${cardTitle("What we are asking")}
         ${bullets([
           "How likely you are to recommend it, on a scale of nought to ten.",
           "The one thing you would fix before anyone else sees it.",
@@ -768,8 +830,9 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
 }
 
 /* ══════════════════════════════════════════════ 7 · RELEASE NOTE */
-// The engine of the whole program. `fixedForThem` is what turns a changelog
-// into a reason to keep reporting.
+// `fixedForThem` son los arreglos que tocan a ESTE lector, listados aparte
+// para que no se le pierdan en el changelog. Se enseña lo arreglado, no la
+// factura de quien lo dijo (ver la regla del mensaje en el builder 12).
 export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
@@ -792,7 +855,7 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
   const yours =
     fixedForThem.length > 0
       ? card(
-          `${cardTitle("You reported this. It is fixed.", DPE.green)}
+          `${cardTitle("Fixed in this build", DPE.green)}
           ${bullets(fixedForThem, "green")}`,
           "rgba(95,208,163,0.32)",
         )
@@ -842,7 +905,7 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
     html: betaShell({
       preheader:
         fixedForThem.length > 0
-          ? "Something you reported is fixed in this one."
+          ? "Something you mentioned is fixed in this one."
           : updateInstruction,
       blocks,
       baseUrl: b,
@@ -855,7 +918,7 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
       headline,
       "",
       ...(fixedForThem.length > 0
-        ? ["You reported this, and it is fixed:", ...fixedForThem.map((f) => `  - ${f}`), ""]
+        ? ["Fixed in this build:", ...fixedForThem.map((f) => `  - ${f}`), ""]
         : []),
       "What changed in this one:",
       ...whatsNew.map((w) => `  - ${w}`),
@@ -875,7 +938,7 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
 export function buildBetaFinalSurveyEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
   const name = firstNameOr(data, "there");
-  const url = data?.feedbackUrl ?? `${b}/beta/final`;
+  const url = data?.feedbackUrl ?? `${b}/beta/feedback?kind=final_survey`;
 
   const blocks = [
     block(
@@ -963,13 +1026,13 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
       false,
     ),
     block(cta("Leave a review", reviewUrl), "24px 44px 0"),
-    block(note("And if you would rather not, that is genuinely fine. You already gave me the part that mattered most."), "16px 44px 0"),
+    block(note("And if you would rather not, that is genuinely fine. You already gave us the part that mattered most."), "16px 44px 0"),
   ];
 
   return {
     subject: "It shipped, and you shaped it",
     html: betaShell({
-      preheader: "One review from you is worth more than any ad I could buy.",
+      preheader: "One review from you is worth more than any ad we could buy.",
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
@@ -1011,13 +1074,13 @@ export function buildBetaReviewRecoverEmail(data?: BetaEmailData): BuiltEmail {
     block(
       card(
         `<p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">
-          I am not going to ask you for a review. I want the sentence that starts with ${hi("it would have worked for me if")}. That is the roadmap.
+          We are not going to ask you for a review. We want the sentence that starts with ${hi("it would have worked for me if")}. That is the roadmap.
         </p>`,
       ),
       "28px 44px 0",
       false,
     ),
-    block(ctaSecondary("Tell me what was missing", url), "24px 44px 0"),
+    block(ctaSecondary("Tell us what was missing", url), "24px 44px 0"),
     block(note("Your access stays on either way. Thank you for sticking with a half-built app for as long as you did."), "16px 44px 0"),
   ];
 
@@ -1035,11 +1098,207 @@ export function buildBetaReviewRecoverEmail(data?: BetaEmailData): BuiltEmail {
       "",
       "You did not rate it highly, and that is the more useful answer of the two.",
       "",
-      "I am not going to ask you for a review. I want the sentence that starts with 'it would have worked for me if'. That is the roadmap.",
+      "We are not going to ask you for a review. We want the sentence that starts with 'it would have worked for me if'. That is the roadmap.",
       "",
-      `Tell me: ${url}`,
+      `Tell us: ${url}`,
       "",
       "Your access stays on either way.",
+      "",
+      SIGN_OFF,
+    ].join("\n"),
+  };
+}
+
+/* ══════════════════════════════════════════════ 12 · IMPROVEMENT */
+// The counterpart to `release_note`: that one is tied to a build, this one to
+// a piece of work worth a mail of its own.
+//
+// REGLA DEL MENSAJE (2026-08-26, y la unica que importa aqui): el correo
+// cuenta una mejora del producto y agradece el feedback, pero NUNCA presenta
+// el feedback como la causa del cambio. Ni "you asked for this", ni "a
+// tester's feedback pointed at it, so we built it". La decision de construir
+// es del producto; el feedback se agradece y se cita, no se cobra.
+//
+// Dos formas del mismo correo. A quien escribio, se le agradece y se le cita;
+// a todos los demas les llega la misma noticia sin cita. Nada mas cambia.
+export function buildBetaImprovementEmail(data?: BetaEmailData): BuiltEmail {
+  const b = base(data);
+  const name = firstNameOr(data, "there");
+  const h = data?.improvement;
+  const quote = h?.quote?.trim() ?? "";
+  const highlights = (h?.highlights ?? []).filter((line) => line.trim().length > 0);
+  const changes = (h?.changes ?? []).filter((line) => line.trim().length > 0);
+  const example = h?.example ?? null;
+  const personal = quote.length > 0 || highlights.length > 0;
+
+  // El titular dice QUE se resuelve, no como: el mecanismo se cuenta en el
+  // bloque de abajo y se ve en las capturas. Un titular que describe la
+  // implementacion obliga a leerlo dos veces para saber si te importa.
+  const headline = h?.headline?.trim() || "Something new to try";
+
+  const ctaUrl = h?.ctaUrl ?? `${b}/explore`;
+  const ctaLabel = h?.ctaLabel ?? "Open a story and tap a word";
+
+  // Their sentence, set as a quote rather than paraphrased. A paraphrase is
+  // where "we value your feedback" comes from: it always ends up describing
+  // the complaint in the product's vocabulary instead of theirs.
+  const said = quote
+    ? card(
+        `${cardTitle("Your feedback", DPE.sky)}
+        <p style="margin:0;font-family:${DPE.font};font-weight:600;font-style:italic;font-size:15.5px;line-height:1.6;color:${DPE.fg};border-left:3px solid ${DPE.sky};padding-left:14px;">${esc(quote)}</p>
+        ${h?.quotedAt ? note(esc(h.quotedAt)) : ""}`,
+        "rgba(125,211,252,0.3)",
+      )
+    : "";
+
+  const yours =
+    highlights.length > 0
+      ? card(
+          `${cardTitle("What we built", DPE.green)}
+          ${bullets(highlights, "green")}`,
+          "rgba(95,208,163,0.32)",
+        )
+      : "";
+
+  const everyone =
+    changes.length > 0
+      ? card(
+          `${cardTitle(personal ? "Also in this update" : "What we built")}
+          ${bullets(changes)}`,
+        )
+      : "";
+
+  // Before and after on one word. Two rows, the old line struck through, so
+  // the difference is visible without reading a sentence about it.
+  // Las capturas se guardan como ruta ("/email/glosses/x.png") y se sirven
+  // desde `assetBase`, igual que el logo: una URL absoluta escrita a mano
+  // apuntaria a produccion incluso en la previsualizacion.
+  const shotUrl = (path: string | null | undefined): string | null =>
+    !path ? null : path.startsWith("http") ? path : `${assetBase(data)}${path}`;
+
+  // El ejemplo: la tarjeta nueva dentro del telefono, y debajo la misma frase
+  // en texto. La linea se queda aunque haya imagen: media bandeja de entrada
+  // abre con las imagenes apagadas, y una prueba que no se ve no prueba nada.
+  const shown = example
+    ? card(
+        `${cardTitle("One example, out of every word in the journey", DPE.gold)}
+        <div style="font-family:${DPE.font};font-weight:900;font-size:20px;color:${DPE.fg};">${esc(example.word)}</div>
+        ${
+          example.sentence
+            ? `<div style="font-family:${DPE.font};font-weight:600;font-size:13.5px;color:${DPE.muted};margin-top:2px;">${esc(example.sentence)}</div>`
+            : ""
+        }
+        ${
+          shotUrl(example.image)
+            ? `<div style="margin-top:18px;text-align:center;">${phoneShot(
+                shotUrl(example.image)!,
+                `Tapping ${example.word} in a story`,
+                272,
+                shotUrl(example.fullSizeImage) ?? shotUrl(example.image)!,
+              )}</div>`
+            : ""
+        }
+        <div style="margin-top:14px;text-align:center;font-family:${DPE.font};font-weight:700;font-size:14.5px;line-height:1.45;color:${DPE.fg};">${esc(example.caption)}</div>
+        ${
+          shotUrl(example.fullSizeImage)
+            ? `<div style="margin-top:12px;text-align:center;font-family:${DPE.font};font-weight:700;font-size:13px;">
+                <a href="${shotUrl(example.fullSizeImage)}" style="color:${DPE.sky};text-decoration:underline;">See it full size</a>
+              </div>`
+            : ""
+        }`,
+        "rgba(252,211,77,0.26)",
+      )
+    : "";
+
+  const ask = h?.askThem?.trim()
+    ? card(
+        `${cardTitle("Give it a try", DPE.sky)}
+        <p style="margin:0;font-family:${DPE.font};font-weight:600;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">${esc(h.askThem)}</p>`,
+        "rgba(125,211,252,0.3)",
+      )
+    : "";
+
+  const blocks = [
+    block(
+      `${eyebrow(personal ? "Thank you for the feedback" : "What is new")}${head(esc(headline), 38)}${lead(
+        personal
+          ? `Thank you for writing to us, ${esc(name)}. We read every message, and this is an improvement we wanted to get right, for you and for everyone learning with us.`
+          : `We have been working on how words explain themselves while you read, ${esc(name)}. Here is what is new.`,
+      )}`,
+      "40px 44px 0",
+    ),
+    ...(said ? [block(said, "28px 44px 0", false)] : []),
+    // Primero lo que hace la app ahora, y solo despues una palabra que lo
+    // ensena. Al reves, el correo parece ir de esa palabra.
+    ...(yours ? [block(yours, said ? "16px 44px 0" : "28px 44px 0", false)] : []),
+    ...(everyone && !yours ? [block(everyone, said ? "16px 44px 0" : "28px 44px 0", false)] : []),
+    ...(shown ? [block(shown, "16px 44px 0", false)] : []),
+    ...(everyone && yours ? [block(everyone, "16px 44px 0", false)] : []),
+    ...(ask ? [block(ask, "16px 44px 0", false)] : []),
+    block(cta(ctaLabel, ctaUrl), "26px 44px 0"),
+    block(
+      note(
+        personal
+          ? "Thank you again for the feedback. If you have more, we are right here: just reply."
+          : "If you have feedback of your own, we are right here: just reply.",
+      ),
+      "18px 44px 0",
+    ),
+  ];
+
+  return {
+    subject:
+      h?.subject?.trim() ||
+      (personal
+        ? "Thank you for the feedback. Here is what we built."
+        : `What is new: ${headline.toLowerCase()}`),
+    html: betaShell({
+      preheader: personal
+        ? "Thank you for the feedback. Here is what is new."
+        : "Here is what is new in the reader.",
+      blocks,
+      baseUrl: b,
+      assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
+    }),
+    text: [
+      personal
+        ? `Thank you for writing to us, ${name}. We read every message, and this is an improvement we wanted to get right, for you and for everyone learning with us.`
+        : `We have been working on how words explain themselves while you read, ${name}. Here is what is new.`,
+      "",
+      headline,
+      "",
+      ...(quote ? [`Your feedback:`, `  "${quote}"`, ...(h?.quotedAt ? [`  (${h.quotedAt})`] : []), ""] : []),
+      ...(highlights.length > 0
+        ? ["What we built:", ...highlights.map((line) => `  - ${line}`), ""]
+        : changes.length > 0
+          ? ["What we built:", ...changes.map((line) => `  - ${line}`), ""]
+          : []),
+      ...(example
+        ? [
+            `One example, out of every word in the journey: ${example.word}`,
+            ...(example.sentence ? [`  ${example.sentence}`] : []),
+            `  ${example.caption}`,
+            ...(example.fullSizeImage || example.image
+              ? [
+                  `  see it: ${(() => {
+                    const path = example.fullSizeImage ?? example.image!;
+                    return path.startsWith("http") ? path : `${assetBase(data)}${path}`;
+                  })()}`,
+                ]
+              : []),
+            "",
+          ]
+        : []),
+      ...(changes.length > 0 && highlights.length > 0
+        ? ["Also in this update:", ...changes.map((line) => `  - ${line}`), ""]
+        : []),
+      ...(h?.askThem ? [`Give it a try: ${h.askThem}`, ""] : []),
+      `${ctaLabel}: ${ctaUrl}`,
+      "",
+      personal
+        ? "Thank you again for the feedback. If you have more, we are right here: just reply."
+        : "If you have feedback of your own, we are right here: just reply.",
       "",
       SIGN_OFF,
     ].join("\n"),
@@ -1058,4 +1317,5 @@ export const BETA_EMAIL_BUILDERS: Record<BetaEmailKind, (data?: BetaEmailData) =
   final_survey: buildBetaFinalSurveyEmail,
   review_ask: buildBetaReviewAskEmail,
   review_recover: buildBetaReviewRecoverEmail,
+  improvement: buildBetaImprovementEmail,
 };

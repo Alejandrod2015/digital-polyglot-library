@@ -130,7 +130,7 @@ const improvementTy: BetaEmailData = {
     example: {
       word: "punto",
       sentence: "Pagabas y punto. (Le toca a Mateo)",
-      caption: "pagabas y punto: you paid, and that was that, with its other uses underneath.",
+      caption: "pagabas y punto: you paid, end of story, with its other uses underneath.",
       image: "/email/glosses/punto-tap.gif",
       fullSizeImage: "/email/glosses/punto-after.png",
     },

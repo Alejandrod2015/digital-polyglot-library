@@ -337,15 +337,46 @@ export function coverArt(height = 116, radius = 13): string {
 
 /* ── phone frame (welcome hero) ───────────────────────────── */
 
-export function phoneFrame(width: number, inner: string): string {
+export function phoneFrame(width: number, inner: string, screenBg: string = DPE.screen): string {
   // Email-safe device: solid colors + real border + drawn notch (no gradients,
   // shadows or position:absolute, which Gmail strips).
   return `<div style="width:${width}px;max-width:${width}px;margin:0 auto;background:#05080f;background-color:#05080f;border:1px solid rgba(125,211,252,0.16);border-radius:48px;padding:7px;">
-    <div style="background:${DPE.screen};background-color:${DPE.screen};border-radius:42px;">
+    <div style="background:${screenBg};background-color:${screenBg};border-radius:42px;">
       <div style="text-align:center;padding:12px 0 2px;line-height:0;"><span style="display:inline-block;width:98px;height:26px;border-radius:999px;background:#05080f;background-color:#05080f;"></span></div>
       ${inner}
     </div>
   </div>`;
+}
+
+/**
+ * EL estandar para enseñar una captura de la app en un correo: dentro del
+ * telefono, nunca suelta. Una captura recortada flotando en el cuerpo del
+ * correo se lee como un pantallazo de soporte; el mismo pixel dentro del
+ * marco se lee como el producto. Cualquier correo que enseñe pantalla pasa
+ * por aqui.
+ *
+ * La captura se toma a 390 x 844 (el viewport del telefono) y se sirve desde
+ * `assetBase`; ver `scripts/_glossShots.ts`.
+ */
+export function phoneShot(src: string, alt: string, width = 206, href?: string): string {
+  // `width` es el ancho de la PANTALLA, que es lo que `phoneFrame` recibe: el
+  // marco (7px de padding + 1px de borde) se dibuja POR FUERA. Restarlo aqui
+  // dejaba la captura 16px mas estrecha que su pantalla, con una banda de
+  // fondo azul a un lado.
+  const inner = width;
+  const img = `<img src="${src}" alt="${esc(alt)}" width="${inner}" style="display:block;width:${inner}px;max-width:100%;height:auto;border-radius:0 0 42px 42px;border:0;" />`;
+  // La franja del notch se pinta del fondo de la app, no del azul del kit: si
+  // no, entre el notch y la captura aparece una linea de otro color y el
+  // telefono deja de parecer un telefono.
+  const APP_BG = "#0b1e36";
+  // Con `href` el telefono entero es el enlace a la captura a tamaño real:
+  // dentro del correo cabe a 256 px, y a veces lo que se quiere leer es la
+  // letra pequeña de la tarjeta.
+  return phoneFrame(
+    width,
+    href ? `<a href="${href}" style="display:block;text-decoration:none;">${img}</a>` : img,
+    APP_BG,
+  );
 }
 
 /* ── multi-column row helper (equal columns + gap spacers) ── */

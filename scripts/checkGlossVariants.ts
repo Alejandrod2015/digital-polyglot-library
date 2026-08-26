@@ -27,8 +27,10 @@
  * no estén acentuadas. Lo que no se puede comprobar así (léxico regional,
  * registro) sigue siendo trabajo de leerlo.
  */
+import { config } from "dotenv"; config({ path: ".env.local", quiet: true });
 import fs from "node:fs";
 import path from "node:path";
+import { PrismaClient } from "../src/generated/prisma";
 
 type Fila = [string, string];
 type Formas = { rows?: Fila[]; lemma?: string; link?: string };
@@ -40,7 +42,7 @@ type Bundle = {
   byStory?: Record<string, Record<string, Entrada>>;
 };
 
-const DIR = "src/data/tapGlosses";
+const prisma = new PrismaClient();
 /** Variantes sin vosotros. Argentina va aparte porque suma el voseo. */
 const SIN_VOSOTROS = new Set(["latam", "mexico", "colombia", "argentina", "peru", "chile"]);
 const VOSEO = new Set(["argentina", "uruguay"]);
@@ -144,21 +146,37 @@ function revisa(fichero: string, bundle: Bundle): Fallo[] {
   return fallos;
 }
 
-function main() {
-  const ficheros = fs
-    .readdirSync(DIR)
-    .filter((f) => f.endsWith(".json") && !f.startsWith("talking-points"));
+async function main() {
+  // Las glosas viven en dp_tap_glosses_v1 desde el 2026-08-26: una fila por
+  // (bundle, historia) y la de slug "" es el mapa global. Aqui se rearman los
+  // bundles tal como los esperaba el lint cuando eran ficheros.
+  const filas = await prisma.tapGlossSet.findMany({
+    select: { bundle: true, slug: true, language: true, variant: true, glosses: true },
+  });
+  const bundles = new Map<string, Bundle>();
+  for (const f of filas) {
+    if (f.bundle.startsWith("talking-points")) continue;
+    const b = bundles.get(f.bundle) ?? { slugs: [], glosses: {}, byStory: {} };
+    if (f.slug === "") {
+      b.language = f.language ?? undefined;
+      b.variant = f.variant ?? undefined;
+      (b as { glosses: Record<string, unknown> }).glosses = f.glosses as Record<string, never>;
+    } else {
+      (b.byStory ??= {})[f.slug] = f.glosses as Record<string, Entrada>;
+    }
+    bundles.set(f.bundle, b);
+  }
   const fallos: Fallo[] = [];
   let revisados = 0;
   let conCapa = 0;
 
-  for (const f of ficheros) {
-    const bundle = JSON.parse(fs.readFileSync(path.join(DIR, f), "utf8")) as Bundle;
+  for (const [nombre, bundle] of bundles) {
     revisados += 1;
     if (bundle.byStory && Object.keys(bundle.byStory).length > 0) conCapa += 1;
-    fallos.push(...revisa(f, bundle));
+    fallos.push(...revisa(`${nombre}.json`, bundle));
   }
 
+  await prisma.$disconnect();
   if (fallos.length === 0) {
     console.log(`gloss-variants: limpio (${revisados} bundles, ${conCapa} con capa de contexto)`);
     return;

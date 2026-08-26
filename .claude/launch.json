@@ -120,6 +120,19 @@
       ],
       "port": 3000,
       "autoPort": true
+    },
+    {
+      "_comment": "Medición de la tarjeta de vocabulario en el peor caso; borrar cuando se cierre el tema.",
+      "name": "medir-tarjeta-8901",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8901",
+        "--directory",
+        "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library/e0b2c0be-7980-4159-b119-a44a486d464c/scratchpad/medir"
+      ],
+      "port": 8901
     }
   ]
 }

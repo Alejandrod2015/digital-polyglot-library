@@ -20,7 +20,7 @@ import { checkKaraokeUsable } from "@/lib/karaokeQualityGate";
 import TapGlossReader from "@/components/TapGlossReader";
 import TapGlossLayer from "@/components/TapGlossLayer";
 import TapGlossText from "@/components/TapGlossText";
-import { getTapGlossesForSlug } from "@/lib/tapGlosses";
+import type { TapGlossMap } from "@/lib/tapGlosses";
 import StoryReaderShell from "@/components/StoryReaderShell";
 import { countryLabel, type TalkingPiece, type TalkingTopic } from "@/lib/talkingPoints";
 import { photoCredit } from "@/lib/wikimediaCommons";
@@ -38,9 +38,12 @@ function angleLabel(angle: string): string {
 export default function PieceClient({
   topic,
   piece,
+  glosses,
 }: {
   topic: TalkingTopic;
   piece: TalkingPiece;
+  /** Las glosas de esta pieza, consultadas en el server component padre. */
+  glosses: TapGlossMap;
 }) {
   const written = piece.body.length > 0;
   const endRef = useRef<HTMLDivElement | null>(null);
@@ -78,11 +81,10 @@ export default function PieceClient({
     ).usable;
   }, [piece.audioWordTimings, piece.slug, text]);
 
-  // TAP-ANY-WORD. Every word in the body has a gloss, authored per language in
-  // src/data/tapGlosses/talking-points-*.json and covering 100% of the tokens
-  // these four pieces actually use. Two bundles rather than one because the key
-  // is the bare surface form and Spanish and German collide on it ("bar").
-  const glosses = useMemo(() => getTapGlossesForSlug(piece.slug), [piece.slug]);
+  // TAP-ANY-WORD. Every word in the body has a gloss, one bundle per language
+  // because the key is the bare surface form and Spanish and German collide on
+  // it ("bar"). Las glosas llegan por prop desde el server component: viven en
+  // la base (dp_tap_glosses_v1) y este componente es de cliente.
   const glossStory = useMemo(
     () => ({ slug: piece.slug, title: piece.title, language: topic.language }),
     [piece.slug, piece.title, topic.language]

@@ -1,42 +1,27 @@
-import germanExpat from "@/data/tapGlosses/german-expat.json";
-import germanHamburg from "@/data/tapGlosses/german-hamburg.json";
-import germanFriends from "@/data/tapGlosses/german-friends.json";
-import frenchTraveler from "@/data/tapGlosses/french-traveler.json";
-import frenchExpatLyon from "@/data/tapGlosses/french-expat-lyon.json";
-import spanishFriends from "@/data/tapGlosses/spanish-friends.json";
-import spanishTravelerLatam from "@/data/tapGlosses/spanish-traveler-latam.json";
-import spanishFriendsColombia from "@/data/tapGlosses/spanish-friends-colombia.json";
-import spanishFriendsArgentina from "@/data/tapGlosses/spanish-friends-argentina.json";
-import spanishFriendsSpainA0 from "@/data/tapGlosses/spanish-friends-spain-a0.json";
-import spanishTravelerMexicoA0 from "@/data/tapGlosses/spanish-traveler-mexico-a0.json";
-import spanishTravelerSpainA2 from "@/data/tapGlosses/spanish-traveler-spain-a2.json";
-import spanishFriendsMexico from "@/data/tapGlosses/spanish-friends-mexico.json";
-import italianFriendsA0 from "@/data/tapGlosses/italian-friends-a0.json";
-import germanTravelerA0 from "@/data/tapGlosses/german-traveler-a0.json";
-import portugueseTravelerBrazilA0 from "@/data/tapGlosses/portuguese-traveler-brazil-a0.json";
-import portugueseTravelerBrazilA1 from "@/data/tapGlosses/portuguese-traveler-brazil-a1.json";
-import italianTravelerA0 from "@/data/tapGlosses/italian-traveler-a0.json";
-// Talking Points. Same contract as a journey bundle, split by language because
-// the key is the bare surface form and the two languages collide on it: "bar"
-// is a Spanish noun and a German adverb, "in" and "man" likewise.
-import talkingPointsEs from "@/data/tapGlosses/talking-points-es.json";
-import talkingPointsDe from "@/data/tapGlosses/talking-points-de.json";
+import "server-only";
+import { prisma } from "@/lib/prisma";
 
 // Piloto "tap any word" (2026-07-06): glosses contextuales autorados por
-// historia/journey, precomputados en el repo. El reader envuelve cada
-// palabra con gloss en un span tapeable; las 20-25 curadas del vocab[]
-// siguen intactas como pills (capa de enseñanza). Este archivo decide
-// qué historias participan; hoy solo el journey Expat alemán C1.
+// historia/journey. El reader envuelve cada palabra con gloss en un span
+// tapeable; las 20-25 curadas del vocab[] siguen intactas como pills (capa de
+// enseñanza).
+//
+// DONDE VIVEN (cambiado el 2026-08-26). Hasta hoy, en `src/data/tapGlosses/*.json`
+// importados aqui, o sea EMPAQUETADOS EN EL BUILD: cambiar una glosa exigia un
+// build de Vercel y el JSON iba por 2,5 MB con solo 2 de 18 journeys hechos.
+// Ahora viven en la tabla `dp_tap_glosses_v1`, como el texto de la historia, su
+// vocabulario y su audio. Escribir la capa de un journey es una escritura en la
+// base y se ve al instante.
 //
 // Cada entrada: { g: gloss en inglés, t: tipo gramatical } donde t usa las
 // mismas claves que el vocab curado (verb|noun|adjective|adverb|pronoun|
-// preposition|conjunction|article|number|expression|other) para reusar los colores
-// de badge y clasificar bien los favoritos guardados desde el diccionario.
-// `c` y `f` son la capa de CONTEXTO, y solo existen dentro de `byStory`: la
-// misma palabra no significa lo mismo en dos historias ("baja del tren" no es
-// "baja la voz"), así que el trozo traducido y sus formas tienen que colgar de
-// la historia, no del journey. `glosses` sigue siendo el mapa global
-// de toda la vida y es el que se usa cuando una historia no tiene capa propia.
+// preposition|conjunction|article|number|expression|other) para reusar los
+// colores de badge y clasificar bien los favoritos guardados desde el
+// diccionario. `c` y `f` son la capa de CONTEXTO y solo existen en la fila de
+// la HISTORIA: la misma palabra no significa lo mismo en dos ("baja del tren"
+// no es "baja la voz"), asi que el trozo traducido y sus formas cuelgan de la
+// historia, no del journey. La fila de slug "" es el mapa global del bundle y
+// es el que se usa cuando una historia no tiene capa propia.
 export type TapGloss = {
   g: string;
   t: string;
@@ -44,17 +29,14 @@ export type TapGloss = {
   /** El trozo mínimo con sentido alrededor de la palabra, en la lengua de la
    *  historia y en inglés. "baja" -> { es: "baja del tren", en: "gets off the train" }. */
   c?: { es: string; en: string };
-  /** Las FORMAS de la palabra, que es lo que se enseña en vez de explicarla:
-   *  la conjugación de un verbo, la concordancia de un adjetivo, el artículo y
-   *  el plural de un sustantivo, el paradigma de un pronombre. Las palabras que
-   *  no se declinan (adverbios, preposiciones) traen tres usos reales. `rows`
-   *  son pares [etiqueta, forma]; `here` marca cuál sale en esta historia, y es
-   *  la que la tarjeta enciende. Ausente en los nombres propios, que no enseñan
-   *  nada y dejan la tarjeta en dos líneas. */
   /** Marca de género para los sustantivos ("m." / "f."), pegada a la palabra
    *  como en un diccionario. Es lo único que el distintivo de tipo no dice, y
    *  `el` no se lo dice a quien viene del inglés. */
   gm?: string;
+  /** Las FORMAS de la palabra, que es lo que se enseña en vez de explicarla:
+   *  la conjugación de un verbo, la concordancia de un adjetivo, el artículo y
+   *  el plural de un sustantivo, el paradigma de un pronombre. Las palabras que
+   *  no se declinan (adverbios, preposiciones) traen tres usos reales. */
   f?: {
     label?: string;
     /** "line": las formas que FALTAN, siempre a la vista y sin desplegable (el
@@ -71,49 +53,41 @@ export type TapGloss = {
     lemma?: string;
     rows: string[][];
     /** Índice de la forma que sale en la historia, para encenderla al
-     *  desplegar. -1 cuando esa forma no está en la lista, que es lo normal en
-     *  las de tipo "line" desde que no se repite. */
+     *  desplegar. -1 cuando esa forma no está en la lista. */
     here: number;
   };
 };
 
-type TapGlossBundle = {
-  slugs: string[];
-  glosses: Record<string, TapGloss>;
-  byStory?: Record<string, Record<string, TapGloss>>;
-};
+export type TapGlossMap = Record<string, TapGloss>;
 
-const BUNDLES: TapGlossBundle[] = [
-  germanExpat as TapGlossBundle,
-  germanHamburg as TapGlossBundle,
-  germanFriends as TapGlossBundle,
-  frenchTraveler as TapGlossBundle,
-  frenchExpatLyon as TapGlossBundle,
-  spanishFriends as TapGlossBundle,
-  spanishTravelerLatam as TapGlossBundle,
-  spanishFriendsColombia as TapGlossBundle,
-  spanishFriendsArgentina as TapGlossBundle,
-  spanishFriendsSpainA0 as TapGlossBundle,
-  spanishTravelerMexicoA0 as TapGlossBundle,
-  spanishTravelerSpainA2 as TapGlossBundle,
-  spanishFriendsMexico as TapGlossBundle,
-  italianFriendsA0 as TapGlossBundle,
-  germanTravelerA0 as TapGlossBundle,
-  portugueseTravelerBrazilA0 as TapGlossBundle,
-  portugueseTravelerBrazilA1 as TapGlossBundle,
-  italianTravelerA0 as TapGlossBundle,
-  talkingPointsEs as TapGlossBundle,
-  talkingPointsDe as TapGlossBundle,
-];
+/** Cache por proceso. Las glosas cambian cuando alguien corre un script de
+ *  autoria, no en mitad de una peticion, asi que no hace falta invalidarla
+ *  fina: el TTL corto la refresca sola sin castigar a la base en cada lectura. */
+const TTL_MS = 60_000;
+const cache = new Map<string, { at: number; value: TapGlossMap | null }>();
 
-export function getTapGlossesForSlug(slug: string): Record<string, TapGloss> | null {
-  for (const bundle of BUNDLES) {
-    if (!bundle.slugs.includes(slug)) continue;
-    const perStory = bundle.byStory?.[slug];
-    // La capa de la historia pisa a la global palabra a palabra, y las que no
-    // tenga se quedan con la glosa de siempre; así una historia se puede subir
-    // a la capa de contexto sin tocar las otras veinte del journey.
-    return perStory ? { ...bundle.glosses, ...perStory } : bundle.glosses;
+/**
+ * Las glosas de una historia: el mapa global de su bundle con la capa de esa
+ * historia encima, palabra a palabra. Devuelve null si ninguna fila la cubre,
+ * que es lo que el lector usa para degradar a solo pills curadas.
+ */
+export async function getTapGlossesForSlug(slug: string): Promise<TapGlossMap | null> {
+  const hit = cache.get(slug);
+  if (hit && Date.now() - hit.at < TTL_MS) return hit.value;
+
+  // Una sola consulta: la fila de ESTA historia y la global de su bundle. El
+  // bundle sale del `slugs` de la fila global, que es donde se declara que
+  // historias cubre.
+  const filas = await prisma.tapGlossSet.findMany({
+    where: { OR: [{ slug }, { slug: "", slugs: { has: slug } }] },
+    select: { slug: true, glosses: true },
+  });
+  const global = filas.find((f) => f.slug === "");
+  const propia = filas.find((f) => f.slug === slug);
+  let value: TapGlossMap | null = null;
+  if (global || propia) {
+    value = { ...((global?.glosses as TapGlossMap) ?? {}), ...((propia?.glosses as TapGlossMap) ?? {}) };
   }
-  return null;
+  cache.set(slug, { at: Date.now(), value });
+  return value;
 }

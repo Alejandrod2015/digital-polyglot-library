@@ -198,7 +198,10 @@ async function main() {
       "-safe", "0",
       "-i", `${TMP}/list.txt`,
       "-filter_complex",
-      "[0:v]scale=468:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=128[p];[b][p]paletteuse=dither=bayer:bayer_scale=3",
+      // 780 px: el doble de los 256 a los que el correo lo pinta, que es lo
+      // que pide una pantalla retina. A 468 el telefono se veia blando, y en
+      // el visor con zoom, directamente mal.
+      "[0:v]scale=780:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=96[p];[b][p]paletteuse=dither=bayer:bayer_scale=4",
       "-loop", "0",
       gif,
     ], { stdio: "pipe" });

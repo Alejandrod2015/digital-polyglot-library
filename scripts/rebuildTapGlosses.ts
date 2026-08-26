@@ -49,7 +49,7 @@ import { PrismaClient } from "../src/generated/prisma";
 import { extractStoryPlainText } from "../src/lib/storyPlainText";
 
 const prisma = new PrismaClient();
-const DIR = path.resolve(__dirname, "../src/data/tapGlosses");
+
 const MANUAL = path.resolve(__dirname, "_newGlosses.json");
 
 /** Bundles hermanos por idioma: de ahí se copian las glosas ya escritas. */
@@ -120,11 +120,25 @@ function familyOf(bundle: string): string {
   return "";
 }
 
-function loadBundle(name: string) {
-  return JSON.parse(fs.readFileSync(path.join(DIR, `${name}.json`), "utf8")) as {
-    slugs: string[];
-    glosses: Record<string, { g: string; t?: string }>;
-  };
+type BundleLeido = { slugs: string[]; glosses: Record<string, { g: string; t?: string }> };
+
+/** Las glosas viven en dp_tap_glosses_v1 desde el 2026-08-26. Se cargan todas
+ *  de una y se cachean: este script mira cada bundle contra sus hermanos, asi
+ *  que una consulta por bundle serian veinte por bundle. */
+let CACHE: Map<string, BundleLeido> | null = null;
+async function cargaTodo(prismaCliente: PrismaClient): Promise<Map<string, BundleLeido>> {
+  if (CACHE) return CACHE;
+  const filas = await prismaCliente.tapGlossSet.findMany({
+    where: { slug: "" },
+    select: { bundle: true, slugs: true, glosses: true },
+  });
+  CACHE = new Map(filas.map((f) => [f.bundle, { slugs: f.slugs, glosses: f.glosses as BundleLeido["glosses"] }]));
+  return CACHE;
+}
+function loadBundle(name: string): BundleLeido {
+  const b = CACHE?.get(name);
+  if (!b) throw new Error(`bundle ${name} no esta en la base; corre syncTapGlosses.ts`);
+  return b;
 }
 
 async function main() {
@@ -144,11 +158,11 @@ async function main() {
     ? JSON.parse(fs.readFileSync(MANUAL, "utf8"))
     : {};
 
-  const names = fs
-    .readdirSync(DIR)
-    .filter((f) => f.endsWith(".json") && !f.startsWith("talking-points"))
-    .map((f) => f.replace(/\.json$/, ""))
-    .filter((n) => (only ? n === only : true));
+  await cargaTodo(prisma);
+  const names = [...(CACHE?.keys() ?? [])]
+    .filter((n) => !n.startsWith("talking-points"))
+    .filter((n) => (only ? n === only : true))
+    .sort();
 
   let totalAdded = 0;
   const blocked: string[] = [];
@@ -231,10 +245,10 @@ async function main() {
     // `git blame` sobre una glosa concreta.
     const merged: Record<string, { g: string; t?: string }> = { ...bundle.glosses };
     for (const key of Object.keys(additions).sort()) merged[key] = additions[key];
-    fs.writeFileSync(
-      path.join(DIR, `${name}.json`),
-      JSON.stringify({ slugs: bundle.slugs, glosses: merged }, null, 1)
-    );
+    await prisma.tapGlossSet.update({
+      where: { bundle_slug: { bundle: name, slug: "" } },
+      data: { glosses: merged as never },
+    });
   }
 
   if (check) {

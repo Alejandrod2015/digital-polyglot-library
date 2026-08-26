@@ -348,9 +348,9 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
 
   const displayText = resolvedStory.text;
   const normalizedText = normalizePolyglotStoryText(displayText);
-  // Piloto tap-any-word: glosses precomputados solo para las historias
-  // registradas en src/data/tapGlosses (hoy: journey Expat alemán C1).
-  const tapGlosses = getTapGlossesForSlug(resolvedStory.slug);
+  // Piloto tap-any-word: las glosas viven en la base (dp_tap_glosses_v1) desde
+  // el 2026-08-26; antes se importaban de src/data y viajaban en el build.
+  const tapGlosses = await getTapGlossesForSlug(resolvedStory.slug);
   const lockedPreviewHtml = getLockedStoryPreviewHtml(resolvedStory.text);
   const safeVocab = normalizePolyglotVocab(resolvedStory.vocab);
   const fallbackReturnHref =

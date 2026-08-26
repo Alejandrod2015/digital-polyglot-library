@@ -1,5 +1,6 @@
 // Sirve los glosses "quick lookup" del piloto tap-any-word a la app mobile.
-// En el reader WEB los glosses se leen por SSR (`getTapGlossesForSlug`); la
+// En el reader WEB los glosses se leen por SSR (`getTapGlossesForSlug`, que
+// consulta la tabla dp_tap_glosses_v1); la
 // app no tiene ese acceso directo, así que los pide por HTTP al abrir una
 // historia (por slug). Devuelve `{ glosses: {} }` cuando el journey de esa
 // historia todavía no tiene bundle, para que el reader degrade a solo
@@ -28,6 +29,6 @@ export async function GET(req: NextRequest): Promise<Response> {
     return NextResponse.json({ error: "slug query param required" }, { status: 400 });
   }
 
-  const glosses = getTapGlossesForSlug(slug);
+  const glosses = await getTapGlossesForSlug(slug);
   return NextResponse.json({ slug, glosses: glosses ?? {} });
 }

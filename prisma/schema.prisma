@@ -1295,3 +1295,40 @@ model StoryRating {
   @@index([createdAt])
   @@map("dp_story_ratings_v1")
 }
+
+/// Capa de "tap any word": la glosa de cada palabra tocable de una historia.
+///
+/// POR QUE EN LA BASE Y NO EN EL REPO (2026-08-26). Vivia en
+/// `src/data/tapGlosses/*.json`, importado por `src/lib/tapGlosses.ts`, o sea
+/// EMPAQUETADO EN EL BUILD. Consecuencia: cambiar una glosa exigia un build de
+/// Vercel, y escribir la capa de los 16 journeys que faltan habrian sido
+/// dieciseis. Ademas el JSON iba por 2,5 MB con solo 2 de 18 journeys hechos.
+/// El texto de la historia, su vocabulario y su audio nunca tuvieron ese
+/// problema: viven aqui y salen a produccion sin build. Esto los iguala.
+///
+/// Una fila por (bundle, slug). `slug` vacio es el mapa GLOBAL del journey, que
+/// vale para todas sus historias; con slug es la capa de contexto de ESA
+/// historia, que pisa a la global palabra a palabra. Es el mismo contrato que
+/// tenia el JSON (`glosses` + `byStory`), movido tal cual para que el lector no
+/// cambie de comportamiento.
+model TapGlossSet {
+  id        String   @id @default(cuid())
+  /// Nombre del bundle, el que tenia el fichero: "spanish-friends".
+  bundle    String
+  /// Slug de la historia, o "" para el mapa global del bundle.
+  slug      String
+  /// Idioma y variante del journey. Los lee el lint de variante, que sin ellos
+  /// no puede saber si `vosotros` pinta algo en este journey.
+  language  String?
+  variant   String?
+  /// Slugs de las historias que cubre el bundle. Solo en la fila global.
+  slugs     String[]
+  /// palabra -> { g, t, r?, gm?, c?, f? }
+  glosses   Json
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  @@unique([bundle, slug])
+  @@index([slug])
+  @@map("dp_tap_glosses_v1")
+}
