@@ -83,7 +83,10 @@ export default async function GlossShotPage({
     .join("\n\n");
 
   return (
-    <div className="min-h-screen bg-[var(--background)] px-5 py-8">
+    <div className="min-h-screen bg-[var(--background)] px-5 py-7">
+      <h1 className="text-3xl font-extrabold text-center mb-6 text-[var(--foreground)]">
+        {story.title}
+      </h1>
       <div className="max-w-[65ch] mx-auto text-xl leading-relaxed text-[var(--foreground)] space-y-6">
         <Reader
           text={text}
@@ -142,26 +145,29 @@ async function main() {
   await new Promise((r) => setTimeout(r, 1500));
   // Usa el Chrome ya instalado: playwright no tiene su binario descargado.
   const browser = await chromium.launch({ channel: "chrome" });
-  const page = await browser.newPage({
-    viewport: { width: 430, height: 900 },
-    deviceScaleFactor: 3,
+  const context = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    // 2x basta: en el correo la captura se pinta a 256 px de ancho.
+    deviceScaleFactor: 2,
     // La app se lee en oscuro y el correo es oscuro: una captura clara
     // dentro del correo parece de otro producto.
     colorScheme: "dark",
   });
+  // El banner de cookies tapa la tarjeta. Se responde antes de cargar (la
+  // opcion que menos rastrea) para que no llegue a montarse.
+  await context.addInitScript(() => {
+    window.localStorage.setItem("dp_cookie_consent_v1", "rejected");
+  });
+  const page = await context.newPage();
 
   for (const shot of SHOTS) {
     await page.goto(`${BASE}/dev-glossshot?slug=${shot.slug}&mode=${shot.mode}`, {
       waitUntil: "networkidle",
     });
-    // El banner de cookies y el de instalar tapan la tarjeta.
-    await page.evaluate(() => {
-      document.querySelectorAll("div").forEach((el) => {
-        const t = (el.textContent ?? "").trim();
-        if (t.startsWith("COOKIE CHOICES") || t.startsWith("Install Digital Polyglot")) {
-          (el as HTMLElement).style.display = "none";
-        }
-      });
+    // Fuera todo lo que no es la app: el banner de cookies, el de instalar, el
+    // globo de soporte y el indicador de dev de Next.
+    await page.addStyleTag({
+      content: "nextjs-portal{display:none!important}[data-nextjs-toast]{display:none!important}",
     });
 
     const word = page.locator(`[data-token="${shot.word}"]`).first();
@@ -177,16 +183,29 @@ async function main() {
         await page.waitForTimeout(150);
       }
     }
-    // El recorte de la tarjeta arrastra el texto de la historia que asoma por
-    // los bordes redondeados. Se apaga el cuerpo y queda solo la tarjeta.
+    // Se limpia DESPUES de abrir la tarjeta: los banners se remontan al
+    // hidratar y volverian a asomar por debajo del popup. Sin funciones
+    // nombradas aqui dentro: esbuild las reescribe con `__name` y la pagina
+    // no tiene ese helper.
     await page.evaluate(() => {
-      // El cuerpo de la historia es el primer hijo del contenedor relativo;
-      // el popup es el segundo, y es lo unico que tiene que salir.
-      const body = document.querySelector<HTMLElement>("div.relative > div:first-child");
-      if (body) body.style.visibility = "hidden";
+      document.querySelectorAll("body *").forEach((node) => {
+        const el = node as HTMLElement;
+        const text = (el.textContent ?? "").trim();
+        if (text.includes("QUICK LOOKUP")) return;
+        const fixed = getComputedStyle(el).position === "fixed";
+        if (
+          text.startsWith("COOKIE CHOICES") ||
+          text.startsWith("Install Digital Polyglot") ||
+          (fixed && el.clientHeight < 120 && el.clientWidth < 120)
+        ) {
+          el.style.display = "none";
+        }
+      });
     });
-    await page.waitForTimeout(200);
-    await card.screenshot({ path: `${OUT}/${shot.file}.png` });
+    await page.waitForTimeout(250);
+    // La pantalla entera, no la tarjeta recortada: en el correo va dentro de
+    // un telefono, y un recorte suelto dentro del marco no se lee como la app.
+    await page.screenshot({ path: `${OUT}/${shot.file}.png` });
     console.log(`${shot.file}.png`);
   }
 

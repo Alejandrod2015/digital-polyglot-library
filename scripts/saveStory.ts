@@ -38,7 +38,7 @@ import * as fs from "fs";
 import { PrismaClient } from "../src/generated/prisma";
 import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
-import { validateJourneyStories, type JourneyStoryInput } from "@/lib/validateJourneyStories";
+import { validateJourneyStories, type JourneyStoryInput, type JourneyCheck } from "@/lib/validateJourneyStories";
 
 /** Build the cross-story summary the canonical validator needs to run its
  *  repetition / rotation / opening-rhythm / motif checks against siblings. */
@@ -63,6 +63,38 @@ function summarize(d: any): ExistingStorySummary {
     openingFirstSentence: firstSentence,
     motifTags: extractStoryMotifs(String(d.text)),
   };
+}
+
+/**
+ * ¿La edición empeora esta regla de conjunto respecto a como estaba?
+ *
+ * Conservador a propósito: devuelve "empeora" siempre que no pueda demostrar
+ * lo contrario. Cuatro casos y ninguno más:
+ *
+ *   1. Antes pasaba y ahora no        -> EMPEORA. Sin excepción.
+ *   2. El detalle es idéntico          -> igual. La edición no la tocó.
+ *   3. Los dos detallan historias, y   -> igual o mejor. Ninguna historia
+ *      las de ahora son un subconjunto    nueva entra en la lista de fallos.
+ *      de las de antes
+ *   4. Cualquier otra cosa             -> EMPEORA.
+ *
+ * Se compara por SLUG y no por los números del detalle porque el sentido de
+ * un número depende de la regla: en `journey-quoted-speech-band` un 3% es
+ * peor que un 7%, y en `journey-closing-alone` 17 es peor que 12. El conjunto
+ * de historias señaladas, en cambio, significa lo mismo en todas.
+ */
+function empeora(antes: JourneyCheck | undefined, ahora: JourneyCheck, slugs: string[]): boolean {
+  if (!antes || antes.status === "pass") return true;
+  const da = (antes.detail ?? "").trim();
+  const dh = (ahora.detail ?? "").trim();
+  if (da === dh) return false;
+  const mencionadas = (d: string) => new Set(slugs.filter((s) => d.includes(s)));
+  const A = mencionadas(da);
+  const H = mencionadas(dh);
+  if (A.size === 0 || H.size === 0) return true;
+  if (H.size > A.size) return true;
+  for (const s of H) if (!A.has(s)) return true;
+  return false;
 }
 
 function arg(name: string, fallback?: string): string | undefined {
@@ -97,6 +129,21 @@ function slugify(s: string): string {
   // defs, no-digits, arc, CEFR, distribution, cross-story dedup all still gate.
   const narrator = flag("narrator");
   const typographyOnly = flag("typography-only");
+  // TRINQUETE (2026-08-26). El gate de conjunto es absoluto: exige que las 21
+  // historias cumplan el estandar de HOY. Un journey escrito antes de una
+  // regla queda congelado para siempre, sin poder recibir ni la correccion de
+  // una palabra: el Friends ES/Spain A0 se escribio el 19 de julio y las
+  // cuatro reglas de apertura, cierre, habla citada y repeticion entraron el
+  // 23 de agosto. Eso mete en el mismo saco dos cosas distintas: "esta edicion
+  // introduce un defecto" y "este journey arrastra deuda anterior a la regla".
+  // Solo la primera es motivo para no dejar escribir.
+  //
+  // Con --no-regression el gate deja de exigir limpieza y pasa a exigir que la
+  // edicion NO EMPEORE: mide el conjunto ANTES (lo que hay en la base) y
+  // DESPUES (con la edicion), regla a regla. Lo que no sepa comparar, lo
+  // rechaza. NO toca el validador canonico por historia, que sigue en cero
+  // tolerancia; esto es solo para las reglas de CONJUNTO.
+  const noRegression = flag("no-regression");
   // These checks all assume the multivoice "Speaker: line" format: they read
   // character names / turns from speaker labels, which a narrated prose story
   // (names in the prose, not in labels) does not have. Exempt ONLY these; the
@@ -492,6 +539,7 @@ function slugify(s: string): string {
   if (journeyId) {
     const p3 = new PrismaClient();
     let todas: JourneyStoryInput[] = [];
+    const base: JourneyStoryInput[] = [];
     let realPeople: string[] | undefined;
     try {
       const enTanda = new Map<string, any>(stories.map((d: any) => [`${d.topic}#${d.slotIndex}`, d]));
@@ -512,6 +560,13 @@ function slugify(s: string): string {
         if (!text.trim()) continue;
         todas.push({ slug: d?.slug ?? f.slug ?? k, title: d?.title ?? f.title ?? "", text,
                      vocab: (d?.vocab ?? f.vocab) as never, language: ctx.language, level: ctx.level });
+        // El MISMO conjunto sin la edición encima, para poder medir el antes.
+        // Solo las filas que ya existen: una historia que solo está en la
+        // tanda es contenido nuevo y no tiene "antes" contra el que comparar.
+        if (String(f.text ?? "").trim()) {
+          base.push({ slug: f.slug ?? k, title: f.title ?? "", text: String(f.text),
+                      vocab: f.vocab as never, language: ctx.language, level: ctx.level });
+        }
       }
       for (const [k, d] of enTanda) if (!vistos.has(k))
         todas.push({ slug: d.slug ?? k, title: d.title, text: String(d.text), vocab: d.vocab,
@@ -534,9 +589,42 @@ function slugify(s: string): string {
       const malos = jc.filter((c) => c.status !== "pass");
       console.log(`\n── gate de journey (${todas.length} historias) ──`);
       for (const c of jc) console.log(`   ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : "SIN IMPLEMENTAR"} [${c.id}] ${c.detail ?? ""}`);
-      if (malos.length) {
+      if (malos.length && !noRegression) {
         console.error(`\n✗ GATE DE JOURNEY: ${malos.length} regla(s) de conjunto sin cumplir. NOTHING WRITTEN.`);
+        console.error(`   Si el journey ya arrastraba estos fallos de antes de la regla, --no-regression`);
+        console.error(`   mide el conjunto antes y despues y solo deja pasar lo que no los empeore.`);
         process.exit(1);
+      }
+      if (malos.length && noRegression) {
+        // Medir el ANTES con el mismo checker y el mismo contexto: la unica
+        // diferencia entre los dos conjuntos es la edicion.
+        if (base.length !== todas.length) {
+          console.error(`\n✗ --no-regression no aplica: la tanda añade historias nuevas (${todas.length} ahora, ${base.length} en la base).`);
+          console.error(`   El trinquete solo sirve para EDITAR lo que ya existe. NOTHING WRITTEN.`);
+          process.exit(1);
+        }
+        const antes = validateJourneyStories(base, { language: ctx.language, level: ctx.level, realPeople });
+        const porId = new Map(antes.map((c) => [c.id, c]));
+        const slugs = todas.map((t) => t.slug);
+        const peores = malos.filter((c) => empeora(porId.get(c.id), c, slugs));
+        console.log(`\n── trinquete (--no-regression) ──`);
+        for (const c of malos) {
+          const a = porId.get(c.id);
+          const veredicto = empeora(a, c, slugs) ? "EMPEORA" : a?.status === "pass" ? "?" : "igual o mejor";
+          console.log(`   ${veredicto.padEnd(14)} [${c.id}] antes: ${a?.status ?? "sin medir"}`);
+        }
+        if (peores.length) {
+          console.error(`\n✗ TRINQUETE: ${peores.length} regla(s) de conjunto que la edicion EMPEORA. NOTHING WRITTEN.`);
+          for (const c of peores) {
+            console.error(`   [${c.id}]`);
+            console.error(`     antes:  ${porId.get(c.id)?.detail ?? "(pasaba)"}`);
+            console.error(`     ahora:  ${c.detail ?? ""}`);
+          }
+          process.exit(1);
+        }
+        console.log(`\n⚠ GATE DE JOURNEY: ${malos.length} regla(s) siguen sin cumplirse, y siguen ahi despues`);
+        console.log(`  de esta edicion. Pasan por el trinquete porque la edicion no las empeora, NO`);
+        console.log(`  porque esten arregladas. El journey sigue debiendo esa pasada.`);
       }
     }
   }
