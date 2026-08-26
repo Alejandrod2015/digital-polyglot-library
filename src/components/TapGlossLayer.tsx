@@ -49,6 +49,7 @@ type GlossState = {
     label?: string;
     kind?: "line" | "expand";
     link?: string;
+    lemma?: string;
     rows: string[][];
     here: number;
   };
@@ -261,6 +262,15 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
             >
               {selected.word}
             </span>
+            {selected.forms?.lemma &&
+            selected.forms.lemma.toLowerCase() !== selected.word.toLowerCase() ? (
+              <span
+                className="text-[var(--muted)]"
+                style={{ fontSize: 13, fontWeight: 600, fontStyle: "italic" }}
+              >
+                {selected.forms.lemma}
+              </span>
+            ) : null}
             {selected.genderMark ? (
               <span
                 className="text-[var(--muted)]"

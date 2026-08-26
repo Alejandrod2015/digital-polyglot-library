@@ -108,6 +108,11 @@ export default function VocabPanel({
   // El paradigma de un verbo o un pronombre se abre desde el enlace; se cierra
   // al cambiar de palabra para no heredar el estado de la anterior.
   const [formsOpen, setFormsOpen] = useState(false);
+  // La palabra tal cual sale en la historia. El vocab curado guarda el lema
+  // ("esperar") y el lector enseñaba ese, mientras el diccionario enseñaba la
+  // forma del texto ("espera"): dos tarjetas, dos cabeceras distintas para la
+  // misma palabra. Manda siempre la del texto, que es la que la alumna ve.
+  const [surfaceWord, setSurfaceWord] = useState<string | null>(null);
   const [selectedSentence, setSelectedSentence] = useState<string | undefined>(undefined);
   const [selectedSourcePath, setSelectedSourcePath] = useState<string | undefined>(undefined);
   const [isFav, setIsFav] = useState(false);
@@ -244,6 +249,9 @@ export default function VocabPanel({
         return vocabWord === normalizedWord || vocabSurface === normalizedWord;
       });
       setSelectedWord(item?.word ?? word);
+      setSurfaceWord(
+        (el.textContent ?? word).replace(/^[^\p{L}]+|[^\p{L}]+$/gu, "").trim() || word
+      );
       setDefinition(item?.definition ?? null);
       setFormsOpen(false);
       setSelectedSentence(sentence);
@@ -279,6 +287,7 @@ export default function VocabPanel({
 
       if (!panel.contains(target)) {
         setSelectedWord(null);
+    setSurfaceWord(null);
         setDefinition(null);
         setSelectedSentence(undefined);
         setSelectedSourcePath(undefined);
@@ -428,8 +437,21 @@ export default function VocabPanel({
                 className="text-white"
                 style={{ fontSize: 22, fontWeight: 800 }}
               >
-                {selectedWord}
+                {surfaceWord ?? selectedWord}
               </span>
+              {(() => {
+                const cabecera = (surfaceWord ?? selectedWord ?? "").toLowerCase();
+                const lema = glossEntry?.f?.lemma ?? selectedItem?.word ?? null;
+                if (!lema || lema.toLowerCase() === cabecera) return null;
+                return (
+                  <span
+                    className="text-[var(--muted)]"
+                    style={{ fontSize: 14, fontWeight: 600, fontStyle: "italic" }}
+                  >
+                    {lema}
+                  </span>
+                );
+              })()}
               {glossEntry?.gm ? (
                 <span
                   className="text-[var(--muted)]"

@@ -65,6 +65,10 @@ export type TapGloss = {
     kind?: "line" | "expand";
     /** Texto del enlace en las de tipo "expand". */
     link?: string;
+    /** Forma de diccionario (infinitivo del verbo, masculino singular del
+     *  adjetivo). Se enseña junto a la palabra cuando NO coincide con la que
+     *  sale en la historia; la cabecera siempre manda la del texto. */
+    lemma?: string;
     rows: string[][];
     /** Índice de la forma que sale en la historia, para encenderla al
      *  desplegar. -1 cuando esa forma no está en la lista, que es lo normal en
