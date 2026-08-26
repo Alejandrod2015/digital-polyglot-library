@@ -51,14 +51,24 @@ export type TapGloss = {
    *  son pares [etiqueta, forma]; `here` marca cuál sale en esta historia, y es
    *  la que la tarjeta enciende. Ausente en los nombres propios, que no enseñan
    *  nada y dejan la tarjeta en dos líneas. */
+  /** Marca de género para los sustantivos ("m." / "f."), pegada a la palabra
+   *  como en un diccionario. Es lo único que el distintivo de tipo no dice, y
+   *  `el` no se lo dice a quien viene del inglés. */
+  gm?: string;
   f?: {
-    label: string;
-    /** "table": la conjugación de un verbo, con persona y desplegable. "line":
-     *  todo lo demás, en una sola fila de fichas y sin desplegable. Un
-     *  sustantivo solo necesita su artículo y su plural, y una preposición no
-     *  necesita nada; llenar esas tarjetas con un paradigma era ruido. */
-    kind?: "line" | "table";
+    label?: string;
+    /** "line": las formas que FALTAN, siempre a la vista y sin desplegable (el
+     *  plural de un sustantivo, las otras concordancias de un adjetivo). Nunca
+     *  repite la que ya sale en el trozo de arriba.
+     *  "expand": no enseña nada de entrada y el enlace nombra lo que hay detrás
+     *  ("See conjugation"), que se despliega dentro de la tarjeta. */
+    kind?: "line" | "expand";
+    /** Texto del enlace en las de tipo "expand". */
+    link?: string;
     rows: string[][];
+    /** Índice de la forma que sale en la historia, para encenderla al
+     *  desplegar. -1 cuando esa forma no está en la lista, que es lo normal en
+     *  las de tipo "line" desde que no se repite. */
     here: number;
   };
 };

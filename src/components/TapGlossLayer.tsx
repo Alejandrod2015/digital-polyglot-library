@@ -43,7 +43,15 @@ type GlossState = {
    *  él: una principiante no entiende "goes down" sobre "baja del tren". */
   chunk?: { es: string; en: string };
   /** Las formas de la palabra; ver `TapGloss.f`. */
-  forms?: { label: string; kind?: "line" | "table"; rows: string[][]; here: number };
+  /** Marca de género del sustantivo ("m." / "f."), junto a la palabra. */
+  genderMark?: string;
+  forms?: {
+    label?: string;
+    kind?: "line" | "expand";
+    link?: string;
+    rows: string[][];
+    here: number;
+  };
 };
 
 type FavoriteItem = {
@@ -175,11 +183,12 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
         register: normalizeVocabRegister(entry.r),
         sentence: contextSentence(el.closest("p, blockquote"), word),
         chunk: entry.c,
+        genderMark: entry.gm,
         forms: entry.f,
       });
       // Abre desplegada cuando la forma de la historia cae fuera de las tres
       // primeras (contentas es la cuarta de contento): esa no se esconde nunca.
-      setFormsOpen(entry.f?.kind === "table" ? entry.f.here >= 3 : false);
+      setFormsOpen(false);
       setIsFav(
         favsRef.current.some((f) => (f.word ?? "").trim().toLowerCase() === word.trim().toLowerCase())
       );
@@ -245,13 +254,21 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex flex-1 flex-col gap-0.5 min-w-0">
-          <span
-            className="truncate text-[var(--foreground)]"
-            style={{ fontSize: 18, fontWeight: 700 }}
-          >
-            {selected.word}
-          </span>
-          <span className="flex items-center gap-1.5" style={{ marginTop: 3 }}>
+          <span className="flex flex-wrap items-baseline gap-1.5">
+            <span
+              className="text-[var(--foreground)]"
+              style={{ fontSize: 18, fontWeight: 700 }}
+            >
+              {selected.word}
+            </span>
+            {selected.genderMark ? (
+              <span
+                className="text-[var(--muted)]"
+                style={{ fontSize: 13, fontWeight: 600, fontStyle: "italic" }}
+              >
+                {selected.genderMark}
+              </span>
+            ) : null}
             <span
               className="inline-flex items-center gap-1"
               style={{
@@ -350,71 +367,41 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
           que sale en la historia va encendida. Tres a la vista y el resto bajo
           "See N more", que dice cuántas faltan y deja el borde de abajo limpio;
           con el recorte anterior la tarjeta cortaba una fila por la mitad. */}
-      {selected.forms ? (
-        <div className="mt-2.5 flex items-start gap-2.5">
-          {selected.forms.label ? (
-            <span
-              className="shrink-0 text-[var(--muted)]"
-              style={{ fontSize: 12, fontWeight: 700, paddingTop: 3 }}
-            >
-              {selected.forms.label}
-            </span>
-          ) : null}
-          <div className="flex flex-wrap gap-1.5">
-            {selected.forms.rows
-              .slice(0, selected.forms.kind === "table" && !formsOpen ? 3 : undefined)
-              .map((row, index) => {
-                const [person, form] = row;
-                const isHere = index === selected.forms!.here;
-                return (
-                  <span
-                    key={`${person}-${form}`}
-                    className="inline-flex items-baseline gap-1.5"
-                    style={{
-                      background: isHere ? "rgba(125, 211, 252, 0.16)" : "var(--chip-bg)",
-                      borderRadius: 8,
-                      padding: "3px 8px",
-                    }}
-                  >
-                    {person ? (
-                      <span style={{ color: "var(--muted)", fontSize: 11, fontWeight: 600 }}>
-                        {person}
-                      </span>
-                    ) : null}
-                    <span
-                      style={{
-                        color: isHere ? "#7dd3fc" : "var(--foreground)",
-                        fontSize: 14,
-                        fontWeight: 700,
-                      }}
-                    >
-                      {form}
-                    </span>
+      {selected.forms && (selected.forms.kind !== "expand" || formsOpen) ? (
+        <div className="mt-2.5 flex flex-wrap gap-1.5">
+          {selected.forms.rows.map((row, index) => {
+            const [person, form] = row;
+            const isHere = index === selected.forms!.here;
+            return (
+              <span
+                key={`${person}-${form}`}
+                className="inline-flex items-baseline gap-1.5"
+                style={{
+                  background: isHere ? "rgba(125, 211, 252, 0.16)" : "var(--chip-bg)",
+                  borderRadius: 8,
+                  padding: "3px 8px",
+                }}
+              >
+                {person ? (
+                  <span style={{ color: "var(--muted)", fontSize: 11, fontWeight: 600 }}>
+                    {person}
                   </span>
-                );
-              })}
-          </div>
+                ) : null}
+                <span
+                  style={{
+                    color: isHere ? "#7dd3fc" : "var(--foreground)",
+                    fontSize: 14,
+                    fontWeight: 700,
+                  }}
+                >
+                  {form}
+                </span>
+              </span>
+            );
+          })}
         </div>
       ) : null}
-      {selected.forms && selected.forms.kind === "table" && selected.forms.rows.length > 3 ? (
-        <button
-          type="button"
-          onClick={(e) => {
-            e.stopPropagation();
-            setFormsOpen((open) => !open);
-          }}
-          className="mt-1.5 inline-flex items-center gap-1.5 self-start cursor-pointer"
-          style={{ color: "#7dd3fc", fontSize: 13, fontWeight: 700, padding: "4px 2px" }}
-        >
-          {formsOpen ? "See less" : `See ${selected.forms.rows.length - 3} more`}
-          {formsOpen ? (
-            <ChevronUp size={13} strokeWidth={2.6} />
-          ) : (
-            <ChevronDown size={13} strokeWidth={2.6} />
-          )}
-        </button>
-      ) : null}
-      <div className="mt-3 flex flex-wrap items-center gap-2">
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
         <button
           type="button"
           onClick={(e) => {
@@ -450,6 +437,24 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
           <Heart size={14} strokeWidth={2.4} fill={isFav ? "currentColor" : "none"} />
           {isFav ? "Saved" : "Save word"}
         </button>
+        {selected.forms?.kind === "expand" && selected.forms.link ? (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setFormsOpen((open) => !open);
+            }}
+            className="inline-flex items-center gap-1.5 cursor-pointer"
+            style={{ color: "#7dd3fc", fontSize: 13, fontWeight: 700, padding: "8px 2px" }}
+          >
+            {formsOpen ? "Hide" : selected.forms.link}
+            {formsOpen ? (
+              <ChevronUp size={13} strokeWidth={2.6} />
+            ) : (
+              <ChevronDown size={13} strokeWidth={2.6} />
+            )}
+          </button>
+        ) : null}
       </div>
     </div>
   );

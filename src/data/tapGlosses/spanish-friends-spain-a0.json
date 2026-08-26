@@ -2714,7 +2714,8 @@
      "en": "gets off the train"
     },
     "f": {
-     "label": "bajar",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -2741,8 +2742,7 @@
        "bajan"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "del": {
@@ -2772,20 +2772,16 @@
      "en": "the train"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "el tren"
-      ],
-      [
-       "",
+       "pl.",
        "los trenes"
       ]
      ],
-     "here": 0
-    }
+     "here": -1
+    },
+    "gm": "m."
    },
    "en": {
     "g": "in, on",
@@ -2824,10 +2820,6 @@
      "rows": [
       [
        "",
-       "su amiga"
-      ],
-      [
-       "",
        "sus amigas"
       ],
       [
@@ -2846,20 +2838,16 @@
      "en": "her friend Marta"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "la amiga"
-      ],
-      [
-       "",
+       "pl.",
        "las amigas"
       ]
      ],
-     "here": 0
-    }
+     "here": -1
+    },
+    "gm": "f."
    },
    "marta": {
     "g": "Marta (name)",
@@ -2873,8 +2861,8 @@
      "en": "waits for her"
     },
     "f": {
-     "label": "",
-     "kind": "line",
+     "kind": "expand",
+     "link": "See all object pronouns",
      "rows": [
       [
        "",
@@ -2912,7 +2900,8 @@
      "en": "waits for her at the station"
     },
     "f": {
-     "label": "esperar",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -2939,8 +2928,7 @@
        "esperan"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "estación": {
@@ -2951,20 +2939,16 @@
      "en": "at the station"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "la estación"
-      ],
-      [
-       "",
+       "pl.",
        "las estaciones"
       ]
      ],
-     "here": 0
-    }
+     "here": -1
+    },
+    "gm": "f."
    },
    "con": {
     "g": "with",
@@ -2982,20 +2966,16 @@
      "en": "with flowers"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "la flor"
-      ],
-      [
-       "",
+       "pl.",
        "las flores"
       ]
      ],
-     "here": 1
-    }
+     "here": -1
+    },
+    "gm": "f."
    },
    "mano": {
     "g": "hand; bro, dude",
@@ -3005,20 +2985,16 @@
      "en": "in her hand"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "la mano"
-      ],
-      [
-       "",
+       "pl.",
        "las manos"
       ]
      ],
-     "here": 0
-    }
+     "here": -1
+    },
+    "gm": "f."
    },
    "las": {
     "g": "the; them",
@@ -3063,20 +3039,16 @@
      "en": "the two friends"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "la amiga"
-      ],
-      [
-       "",
+       "pl.",
        "las amigas"
       ]
      ],
-     "here": 1
-    }
+     "here": -1
+    },
+    "gm": "f."
    },
    "se": {
     "g": "oneself, himself",
@@ -3089,10 +3061,6 @@
      "label": "",
      "kind": "line",
      "rows": [
-      [
-       "",
-       "se abrazan"
-      ],
       [
        "",
        "se abraza"
@@ -3113,7 +3081,8 @@
      "en": "they hug each other"
     },
     "f": {
-     "label": "abrazar",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -3140,8 +3109,7 @@
        "abrazan"
       ]
      ],
-     "here": 5,
-     "kind": "table"
+     "here": 5
     }
    },
    "muy": {
@@ -3160,27 +3128,22 @@
      "en": "very happy"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
+       "m.",
        "contento"
       ],
       [
-       "",
+       "f.",
        "contenta"
       ],
       [
-       "",
+       "m. pl.",
        "contentos"
-      ],
-      [
-       "",
-       "contentas"
       ]
      ],
-     "here": 3
+     "here": -1
     }
    },
    "lleva": {
@@ -3191,7 +3154,8 @@
      "en": "takes Lucía to the park"
     },
     "f": {
-     "label": "llevar",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -3218,8 +3182,7 @@
        "llevan"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "a": {
@@ -3257,20 +3220,16 @@
      "en": "to the Retiro park"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "el parque"
-      ],
-      [
-       "",
+       "pl.",
        "los parques"
       ]
      ],
-     "here": 0
-    }
+     "here": -1
+    },
+    "gm": "m."
    },
    "retiro": {
     "g": "the Retiro (park)",
@@ -3288,7 +3247,8 @@
      "en": "There are tall trees"
     },
     "f": {
-     "label": "haber",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "ahora",
@@ -3303,8 +3263,7 @@
        "habrá"
       ]
      ],
-     "here": 0,
-     "kind": "table"
+     "here": 0
     }
    },
    "árboles": {
@@ -3315,20 +3274,16 @@
      "en": "tall trees"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "el árbol"
-      ],
-      [
-       "",
+       "pl.",
        "los árboles"
       ]
      ],
-     "here": 1
-    }
+     "here": -1
+    },
+    "gm": "m."
    },
    "altos": {
     "g": "tall",
@@ -3338,27 +3293,22 @@
      "en": "tall trees"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
+       "m.",
        "alto"
       ],
       [
-       "",
+       "f.",
        "alta"
       ],
       [
-       "",
-       "altos"
-      ],
-      [
-       "",
+       "f. pl.",
        "altas"
       ]
      ],
-     "here": 2
+     "here": -1
     }
    },
    "mucha": {
@@ -3369,27 +3319,22 @@
      "en": "a lot of people"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
+       "m.",
        "mucho"
       ],
       [
-       "",
-       "mucha"
-      ],
-      [
-       "",
+       "m. pl.",
        "muchos"
       ],
       [
-       "",
+       "f. pl.",
        "muchas"
       ]
      ],
-     "here": 1
+     "here": -1
     }
    },
    "gente": {
@@ -3399,17 +3344,7 @@
      "es": "mucha gente",
      "en": "a lot of people"
     },
-    "f": {
-     "label": "",
-     "kind": "line",
-     "rows": [
-      [
-       "",
-       "la gente"
-      ]
-     ],
-     "here": 0
-    }
+    "gm": "f."
    },
    "el": {
     "g": "the",
@@ -3422,10 +3357,6 @@
      "label": "",
      "kind": "line",
      "rows": [
-      [
-       "",
-       "el sol"
-      ],
       [
        "",
        "la mano"
@@ -3445,17 +3376,7 @@
      "es": "el sol brilla",
      "en": "the sun shines"
     },
-    "f": {
-     "label": "",
-     "kind": "line",
-     "rows": [
-      [
-       "",
-       "el sol"
-      ]
-     ],
-     "here": 0
-    }
+    "gm": "m."
    },
    "brilla": {
     "g": "shines",
@@ -3465,7 +3386,8 @@
      "en": "the sun shines"
     },
     "f": {
-     "label": "brillar",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -3492,8 +3414,7 @@
        "brillan"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "sobre": {
@@ -3512,20 +3433,16 @@
      "en": "the lake water"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "el agua"
-      ],
-      [
-       "",
+       "pl.",
        "las aguas"
       ]
      ],
-     "here": 0
-    }
+     "here": -1
+    },
+    "gm": "m."
    },
    "lago": {
     "g": "lake",
@@ -3535,20 +3452,16 @@
      "en": "of the lake"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "el lago"
-      ],
-      [
-       "",
+       "pl.",
        "los lagos"
       ]
      ],
-     "here": 0
-    }
+     "here": -1
+    },
+    "gm": "m."
    },
    "mira": {
     "g": "look, hey",
@@ -3558,7 +3471,8 @@
      "en": "looks at everything"
     },
     "f": {
-     "label": "mirar",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -3585,8 +3499,7 @@
        "miran"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "todo": {
@@ -3605,20 +3518,16 @@
      "en": "with wide eyes"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "el ojo"
-      ],
-      [
-       "",
+       "pl.",
        "los ojos"
       ]
      ],
-     "here": 1
-    }
+     "here": -1
+    },
+    "gm": "m."
    },
    "grandes": {
     "g": "big",
@@ -3628,19 +3537,14 @@
      "en": "wide eyes"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
+       "m.",
        "grande"
-      ],
-      [
-       "",
-       "grandes"
       ]
      ],
-     "here": 1
+     "here": -1
     }
    },
    "habla": {
@@ -3651,7 +3555,8 @@
      "en": "speaks slowly"
     },
     "f": {
-     "label": "hablar",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -3678,8 +3583,7 @@
        "hablan"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "despacio": {
@@ -3697,17 +3601,7 @@
      "es": "con miedo",
      "en": "afraid"
     },
-    "f": {
-     "label": "",
-     "kind": "line",
-     "rows": [
-      [
-       "",
-       "el miedo"
-      ]
-     ],
-     "here": 0
-    }
+    "gm": "m."
    },
    "mi": {
     "g": "my",
@@ -3720,10 +3614,6 @@
      "label": "",
      "kind": "line",
      "rows": [
-      [
-       "",
-       "mi español"
-      ],
       [
        "",
        "mis amigas"
@@ -3743,17 +3633,7 @@
      "es": "Mi español es malo",
      "en": "My Spanish is bad"
     },
-    "f": {
-     "label": "",
-     "kind": "line",
-     "rows": [
-      [
-       "",
-       "el español"
-      ]
-     ],
-     "here": 0
-    }
+    "gm": "m."
    },
    "es": {
     "g": "is",
@@ -3763,7 +3643,8 @@
      "en": "is bad"
     },
     "f": {
-     "label": "ser",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -3790,8 +3671,7 @@
        "son"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "malo": {
@@ -3802,27 +3682,22 @@
      "en": "is bad"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "malo"
-      ],
-      [
-       "",
+       "f.",
        "mala"
       ],
       [
-       "",
+       "m. pl.",
        "malos"
       ],
       [
-       "",
+       "f. pl.",
        "malas"
       ]
      ],
-     "here": 0
+     "here": -1
     }
    },
    "dice": {
@@ -3833,7 +3708,8 @@
      "en": "she says"
     },
     "f": {
-     "label": "decir",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -3860,8 +3736,7 @@
        "dicen"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "le": {
@@ -3872,8 +3747,8 @@
      "en": "touches her arm"
     },
     "f": {
-     "label": "",
-     "kind": "line",
+     "kind": "expand",
+     "link": "See all object pronouns",
      "rows": [
       [
        "",
@@ -3903,7 +3778,8 @@
      "en": "touches her arm"
     },
     "f": {
-     "label": "tocar",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -3930,8 +3806,7 @@
        "tocan"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "brazo": {
@@ -3942,20 +3817,16 @@
      "en": "her arm"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "el brazo"
-      ],
-      [
-       "",
+       "pl.",
        "los brazos"
       ]
      ],
-     "here": 0
-    }
+     "here": -1
+    },
+    "gm": "m."
    },
    "tu": {
     "g": "your",
@@ -3968,10 +3839,6 @@
      "label": "",
      "kind": "line",
      "rows": [
-      [
-       "",
-       "tu español"
-      ],
       [
        "",
        "tus amigas"
@@ -3992,27 +3859,22 @@
      "en": "is good"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "bueno"
-      ],
-      [
-       "",
+       "f.",
        "buena"
       ],
       [
-       "",
+       "m. pl.",
        "buenos"
       ],
       [
-       "",
+       "f. pl.",
        "buenas"
       ]
      ],
-     "here": 0
+     "here": -1
     }
    },
    "tranquila": {
@@ -4023,27 +3885,22 @@
      "en": "Don't worry"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
+       "m.",
        "tranquilo"
       ],
       [
-       "",
-       "tranquila"
-      ],
-      [
-       "",
+       "m. pl.",
        "tranquilos"
       ],
       [
-       "",
+       "f. pl.",
        "tranquilas"
       ]
      ],
-     "here": 1
+     "here": -1
     }
    },
    "responde": {
@@ -4054,7 +3911,8 @@
      "en": "she answers"
     },
     "f": {
-     "label": "responder",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -4081,8 +3939,7 @@
        "responden"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "suben": {
@@ -4093,7 +3950,8 @@
      "en": "they get into a boat"
     },
     "f": {
-     "label": "subir",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -4120,8 +3978,7 @@
        "suben"
       ]
      ],
-     "here": 5,
-     "kind": "table"
+     "here": 5
     }
    },
    "una": {
@@ -4159,20 +4016,16 @@
      "en": "a small boat"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "la barca"
-      ],
-      [
-       "",
+       "pl.",
        "las barcas"
       ]
      ],
-     "here": 0
-    }
+     "here": -1
+    },
+    "gm": "f."
    },
    "pequeña": {
     "g": "small, little",
@@ -4182,27 +4035,22 @@
      "en": "small boat"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
+       "m.",
        "pequeño"
       ],
       [
-       "",
-       "pequeña"
-      ],
-      [
-       "",
+       "m. pl.",
        "pequeños"
       ],
       [
-       "",
+       "f. pl.",
        "pequeñas"
       ]
      ],
-     "here": 1
+     "here": -1
     }
    },
    "rema": {
@@ -4213,7 +4061,8 @@
      "en": "Lucía rows"
     },
     "f": {
-     "label": "remar",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -4240,8 +4089,7 @@
        "reman"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "canta": {
@@ -4252,7 +4100,8 @@
      "en": "sings a song"
     },
     "f": {
-     "label": "cantar",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -4279,8 +4128,7 @@
        "cantan"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "canción": {
@@ -4291,20 +4139,16 @@
      "en": "a song"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "la canción"
-      ],
-      [
-       "",
+       "pl.",
        "las canciones"
       ]
      ],
-     "here": 0
-    }
+     "here": -1
+    },
+    "gm": "f."
    },
    "está": {
     "g": "is",
@@ -4314,7 +4158,8 @@
      "en": "the water is cold"
     },
     "f": {
-     "label": "estar",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -4341,8 +4186,7 @@
        "están"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "fría": {
@@ -4353,27 +4197,22 @@
      "en": "is cold"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
+       "m.",
        "frío"
       ],
       [
-       "",
-       "fría"
-      ],
-      [
-       "",
+       "m. pl.",
        "fríos"
       ],
       [
-       "",
+       "f. pl.",
        "frías"
       ]
      ],
-     "here": 1
+     "here": -1
     }
    },
    "limpia": {
@@ -4384,27 +4223,22 @@
      "en": "very clean"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
+       "m.",
        "limpio"
       ],
       [
-       "",
-       "limpia"
-      ],
-      [
-       "",
+       "m. pl.",
        "limpios"
       ],
       [
-       "",
+       "f. pl.",
        "limpias"
       ]
      ],
-     "here": 1
+     "here": -1
     }
    },
    "un": {
@@ -4418,10 +4252,6 @@
      "label": "",
      "kind": "line",
      "rows": [
-      [
-       "",
-       "un pato"
-      ],
       [
        "",
        "una barca"
@@ -4442,20 +4272,16 @@
      "en": "A duck swims"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "el pato"
-      ],
-      [
-       "",
+       "pl.",
        "los patos"
       ]
      ],
-     "here": 0
-    }
+     "here": -1
+    },
+    "gm": "m."
    },
    "nada": {
     "g": "nothing",
@@ -4555,7 +4381,8 @@
      "en": "they eat an ice cream"
     },
     "f": {
-     "label": "comer",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -4582,8 +4409,7 @@
        "comen"
       ]
      ],
-     "here": 5,
-     "kind": "table"
+     "here": 5
     }
    },
    "helado": {
@@ -4594,20 +4420,16 @@
      "en": "a strawberry ice cream"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "el helado"
-      ],
-      [
-       "",
+       "pl.",
        "los helados"
       ]
      ],
-     "here": 0
-    }
+     "here": -1
+    },
+    "gm": "m."
    },
    "fresa": {
     "g": "preppy, snobby (Mexican)",
@@ -4617,27 +4439,22 @@
      "en": "strawberry"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "de fresa"
-      ],
-      [
-       "",
+       "f.",
        "una fresa"
       ],
       [
-       "",
+       "m. pl.",
        "dos fresas"
       ],
       [
-       "",
+       "f. pl.",
        "las fresas"
       ]
      ],
-     "here": 0
+     "here": -1
     }
    },
    "saca": {
@@ -4648,7 +4465,8 @@
      "en": "takes out a bit of bread"
     },
     "f": {
-     "label": "sacar",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -4675,8 +4493,7 @@
        "sacan"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "poco": {
@@ -4694,17 +4511,7 @@
      "es": "un poco de pan",
      "en": "some bread"
     },
-    "f": {
-     "label": "",
-     "kind": "line",
-     "rows": [
-      [
-       "",
-       "el pan"
-      ]
-     ],
-     "here": 0
-    }
+    "gm": "m."
    },
    "para": {
     "g": "for, to",
@@ -4722,7 +4529,8 @@
      "en": "hugs her friend"
     },
     "f": {
-     "label": "abrazar",
+     "kind": "expand",
+     "link": "See conjugation",
      "rows": [
       [
        "yo",
@@ -4749,8 +4557,7 @@
        "abrazan"
       ]
      ],
-     "here": 2,
-     "kind": "table"
+     "here": 2
     }
    },
    "otra": {
@@ -4761,27 +4568,22 @@
      "en": "again"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
+       "m.",
        "otro"
       ],
       [
-       "",
-       "otra"
-      ],
-      [
-       "",
+       "m. pl.",
        "otros"
       ],
       [
-       "",
+       "f. pl.",
        "otras"
       ]
      ],
-     "here": 1
+     "here": -1
     }
    },
    "vez": {
@@ -4792,20 +4594,16 @@
      "en": "again"
     },
     "f": {
-     "label": "",
      "kind": "line",
      "rows": [
       [
-       "",
-       "la vez"
-      ],
-      [
-       "",
+       "pl.",
        "las veces"
       ]
      ],
-     "here": 0
-    }
+     "here": -1
+    },
+    "gm": "f."
    }
   }
  }

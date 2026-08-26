@@ -2,57 +2,66 @@
   "artboards": [
     {
       "file": "Verb.dc.html",
-      "title": "Verb · baja",
+      "title": "Verb · baja · 134 px",
       "page": "page-1",
       "x": 0,
       "y": 0,
       "w": 504,
-      "h": 470
+      "h": 420
     },
     {
-      "file": "Noun.dc.html",
-      "title": "Noun · helado",
+      "file": "NounM.dc.html",
+      "title": "Noun masculine · brazo · 170 px",
       "page": "page-1",
       "x": 560,
       "y": 0,
       "w": 504,
-      "h": 470
+      "h": 420
+    },
+    {
+      "file": "NounF.dc.html",
+      "title": "Noun feminine · estación · 170 px",
+      "page": "page-1",
+      "x": 1120,
+      "y": 0,
+      "w": 504,
+      "h": 420
     },
     {
       "file": "Adjective.dc.html",
-      "title": "Adjective · contentas",
+      "title": "Adjective · contentas · 170 px",
       "page": "page-1",
-      "x": 1120,
+      "x": 1680,
       "y": 0,
       "w": 504,
-      "h": 470
+      "h": 420
     },
     {
       "file": "Pronoun.dc.html",
-      "title": "Pronoun · la",
+      "title": "Pronoun · la · 134 px",
       "page": "page-1",
       "x": 0,
-      "y": 520,
+      "y": 560,
       "w": 504,
-      "h": 470
-    },
-    {
-      "file": "Adverb.dc.html",
-      "title": "Adverb · despacio",
-      "page": "page-1",
-      "x": 560,
-      "y": 520,
-      "w": 504,
-      "h": 430
+      "h": 420
     },
     {
       "file": "Contraction.dc.html",
-      "title": "Function words · del",
+      "title": "Function words · del · 170 px",
+      "page": "page-1",
+      "x": 560,
+      "y": 560,
+      "w": 504,
+      "h": 420
+    },
+    {
+      "file": "Adverb.dc.html",
+      "title": "Adverb · despacio · 134 px",
       "page": "page-1",
       "x": 1120,
-      "y": 520,
+      "y": 560,
       "w": 504,
-      "h": 430
+      "h": 420
     },
     {
       "file": "Progressive.dc.html",
@@ -107,7 +116,7 @@
       "x": 0,
       "y": -170,
       "w": 700,
-      "text": "Option C applied to every word type, with real words from marta-ensena-el-retiro.\nThe English line never changes; what changes is the block under it.\nAdverbs and function words have no paradigm, so the card stays short and the All forms button is gone.\nThe percentages are this journey's real bundle: 669 glosses."
+      "text": "Los siete tipos, sin repetir lo que ya dice la línea de arriba.\nLa ficha de la forma que sale en la historia desaparece: estaba dos veces. Queda solo lo que falta (el plural, las otras concordancias).\nEl enlace se muda a la fila de Save word y deja de gastar una fila propia.\nAlturas medidas: verbo, pronombre y adverbio 134 px; sustantivo, adjetivo y contracción 170."
     },
     {
       "id": "worst",
@@ -134,6 +143,6 @@
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-3"
+    "page": "page-1"
   }
 }
