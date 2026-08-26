@@ -2680,7 +2680,7 @@
     "t": "noun",
     "c": {
      "es": "del tren",
-     "en": "the train"
+     "en": "from the train"
     },
     "f": {
      "kind": "line",
@@ -3126,15 +3126,15 @@
      "link": "See conjugation",
      "rows": [
       [
-       "ahora",
+       "now",
        "hay"
       ],
       [
-       "antes",
+       "past",
        "había"
       ],
       [
-       "mañana",
+       "future",
        "habrá"
       ]
      ],
@@ -3362,7 +3362,7 @@
     "t": "pronoun",
     "c": {
      "es": "mira todo",
-     "en": "everything"
+     "en": "looks at everything"
     }
    },
    "ojos": {
@@ -4325,7 +4325,7 @@
     "t": "noun",
     "c": {
      "es": "un poco de pan",
-     "en": "some bread"
+     "en": "a bit of bread"
     },
     "gm": "m."
    },
@@ -4553,7 +4553,7 @@
     "t": "preposition",
     "c": {
      "es": "de la Barceloneta",
-     "en": "of la Barceloneta"
+     "en": "of La Barceloneta"
     }
    },
    "a": {
@@ -4640,7 +4640,7 @@
      "kind": "line",
      "rows": [
       [
-       "varios",
+       "pl.",
        "sus amigos"
       ]
      ],
@@ -4767,11 +4767,11 @@
      "kind": "line",
      "rows": [
       [
-       "él",
+       "he",
        "él"
       ],
       [
-       "ellas",
+       "they (f.)",
        "ellas"
       ]
      ],
@@ -5216,7 +5216,7 @@
      "kind": "line",
      "rows": [
       [
-       "una cosa",
+       "sing.",
        "su pie"
       ]
      ],
@@ -5538,7 +5538,7 @@
     "t": "noun",
     "c": {
      "es": "en el fondo",
-     "en": "on the bottom"
+     "en": "at the bottom"
     },
     "gm": "m."
    },
@@ -5627,7 +5627,7 @@
     "t": "verb",
     "c": {
      "es": "El mar suena bajo el sol",
-     "en": "The sea sounds under the sun"
+     "en": "The sea murmurs under the sun"
     },
     "f": {
      "kind": "expand",
@@ -5836,7 +5836,7 @@
     "t": "preposition",
     "c": {
      "es": "empieza a llover",
-     "en": "starts to rain"
+     "en": "it starts to rain"
     }
    },
    "caminan": {
@@ -5866,7 +5866,7 @@
      "kind": "line",
      "rows": [
       [
-       "completo",
+       "full form",
        "grande"
       ]
      ],
@@ -5995,7 +5995,7 @@
      "kind": "line",
      "rows": [
       [
-       "con un hombre",
+       "m.",
        "ellos"
       ]
      ],
@@ -6100,13 +6100,13 @@
     "t": "verb",
     "c": {
      "es": "empieza a llover",
-     "en": "starts to rain"
+     "en": "it starts to rain"
     },
     "f": {
      "kind": "line",
      "rows": [
       [
-       "ahora",
+       "now",
        "llueve"
       ]
      ],
@@ -7068,7 +7068,7 @@
      "kind": "line",
      "rows": [
       [
-       "varios",
+       "pl.",
        "sus amigos"
       ]
      ],
@@ -7195,7 +7195,7 @@
      "kind": "line",
      "rows": [
       [
-       "ayer",
+       "past",
        "llovía"
       ]
      ],
@@ -7511,15 +7511,15 @@
      "kind": "line",
      "rows": [
       [
-       "a mí",
+       "to me",
        "me"
       ],
       [
-       "a ti",
+       "to you",
        "te"
       ],
       [
-       "a ellos",
+       "to them",
        "les"
       ]
      ],
@@ -8209,11 +8209,11 @@
      "kind": "line",
      "rows": [
       [
-       "a mí",
+       "to me",
        "me"
       ],
       [
-       "a él",
+       "to him",
        "le"
       ]
      ],
@@ -8271,7 +8271,7 @@
      "kind": "line",
      "rows": [
       [
-       "varias",
+       "pl.",
        "mis ciudades"
       ]
      ],
@@ -8508,7 +8508,7 @@
     },
     "c": {
      "es": "quiere dormir ya",
-     "en": "wants to sleep now"
+     "en": "wants to sleep right now"
     }
    },
    "dormir": {
@@ -8522,7 +8522,7 @@
      "kind": "line",
      "rows": [
       [
-       "ella",
+       "él, ella",
        "duerme"
       ]
      ],
@@ -9439,7 +9439,7 @@
     "t": "verb",
     "c": {
      "es": "hablan en voz baja",
-     "en": "speak quietly"
+     "en": "speak in a low voice"
     },
     "f": {
      "kind": "expand",
@@ -9479,7 +9479,7 @@
     "t": "preposition",
     "c": {
      "es": "en voz baja",
-     "en": "quietly"
+     "en": "in a low voice"
     }
    },
    "voz": {
@@ -10124,7 +10124,7 @@
      "kind": "line",
      "rows": [
       [
-       "él",
+       "él, ella",
        "ve"
       ]
      ],
@@ -10262,7 +10262,7 @@
     "t": "verb",
     "c": {
      "es": "Suena la Plaza Mayor",
-     "en": "The Plaza Mayor is playing"
+     "en": "The Plaza Mayor is full of music"
     },
     "f": {
      "kind": "expand",
@@ -10983,7 +10983,7 @@
      "kind": "line",
      "rows": [
       [
-       "varias",
+       "pl.",
        "sus madres"
       ]
      ],
@@ -12600,7 +12600,7 @@
     "t": "verb",
     "c": {
      "es": "Lucía toma un poco",
-     "en": "Lucía has a sip"
+     "en": "Lucía has a little"
     },
     "f": {
      "kind": "expand",
@@ -12981,7 +12981,7 @@
      "kind": "line",
      "rows": [
       [
-       "ella",
+       "él, ella",
        "para"
       ]
      ],
@@ -13039,7 +13039,7 @@
      "kind": "line",
      "rows": [
       [
-       "varios",
+       "pl.",
        "sus vasos"
       ]
      ],
@@ -13141,7 +13141,7 @@
        "la suya"
       ],
       [
-       "míos",
+       "mine",
        "el mío"
       ]
      ],
@@ -13159,7 +13159,7 @@
      "kind": "line",
      "rows": [
       [
-       "a un hombre",
+       "m.",
        "bienvenido"
       ]
      ],
@@ -13600,7 +13600,7 @@
     "t": "conjunction",
     "c": {
      "es": "y su amiga Nerea espera",
-     "en": "and her friend Nerea is waiting"
+     "en": "and his friend Nerea is waiting"
     }
    },
    "su": {
@@ -13614,7 +13614,7 @@
      "kind": "line",
      "rows": [
       [
-       "varias",
+       "pl.",
        "sus amigas"
       ]
      ],
@@ -14844,7 +14844,7 @@
      "kind": "line",
      "rows": [
       [
-       "completo",
+       "full form",
        "bueno"
       ],
       [
@@ -15097,7 +15097,7 @@
      "kind": "line",
      "rows": [
       [
-       "ella",
+       "él, ella",
        "vuelve"
       ]
      ],
@@ -15365,7 +15365,7 @@
      "kind": "line",
      "rows": [
       [
-       "varios",
+       "pl.",
        "sus amigos"
       ]
      ],
@@ -15452,7 +15452,7 @@
     "t": "adverb",
     "c": {
      "es": "muy cerca",
-     "en": "very near"
+     "en": "very close"
     }
    },
    "cerca": {
@@ -15601,7 +15601,7 @@
      "kind": "line",
      "rows": [
       [
-       "él",
+       "él, ella",
        "compra"
       ]
      ],
@@ -16308,7 +16308,7 @@
     "t": "noun",
     "c": {
      "es": "la bolsa pesa mucho",
-     "en": "the bag is heavy"
+     "en": "the bag is very heavy"
     },
     "gm": "f.",
     "f": {
@@ -16327,7 +16327,7 @@
     "t": "verb",
     "c": {
      "es": "la bolsa pesa mucho",
-     "en": "the bag is heavy"
+     "en": "the bag is very heavy"
     },
     "f": {
      "kind": "expand",
@@ -16737,11 +16737,11 @@
      "kind": "line",
      "rows": [
       [
-       "ella",
+       "she",
        "ella"
       ],
       [
-       "ellos",
+       "they",
        "ellos"
       ]
      ],
@@ -16809,7 +16809,7 @@
     "t": "adverb",
     "c": {
      "es": "dice que sí",
-     "en": "says yes"
+     "en": "she says yes"
     }
    },
    "está": {
@@ -17198,7 +17198,7 @@
     "t": "verb",
     "c": {
      "es": "Lucía mira todo con calma",
-     "en": "Lucía takes it all in calmly"
+     "en": "Lucía looks at everything calmly"
     },
     "f": {
      "kind": "expand",
@@ -17772,15 +17772,15 @@
      "kind": "line",
      "rows": [
       [
-       "a mí",
+       "to me",
        "me"
       ],
       [
-       "a ti",
+       "to you",
        "te"
       ],
       [
-       "a ellos",
+       "to them",
        "les"
       ]
      ],
@@ -18634,7 +18634,7 @@
     "t": "adjective",
     "c": {
      "es": "una playa famosa de Valencia",
-     "en": "a famous Valencia beach"
+     "en": "a famous beach in Valencia"
     },
     "f": {
      "kind": "line",
@@ -19121,7 +19121,7 @@
      "kind": "line",
      "rows": [
       [
-       "él",
+       "él, ella",
        "come"
       ]
      ],
@@ -19603,7 +19603,7 @@
     "t": "verb",
     "c": {
      "es": "el mar suena cerca",
-     "en": "the sea sounds close by"
+     "en": "you can hear the sea close by"
     },
     "f": {
      "kind": "expand",
@@ -19803,7 +19803,7 @@
     "t": "adjective",
     "c": {
      "es": "el plato típico",
-     "en": "the typical dish"
+     "en": "the local speciality"
     },
     "f": {
      "kind": "line",
@@ -19829,7 +19829,7 @@
     "t": "adverb",
     "c": {
      "es": "el plato típico de aquí",
-     "en": "the typical dish here"
+     "en": "the local speciality"
     }
    },
    "ríen": {
@@ -20416,7 +20416,7 @@
     },
     "c": {
      "es": "da una fresa a Lucía",
-     "en": "gives Lucía a strawberry"
+     "en": "gives a strawberry to Lucía"
     }
    },
    "fresa": {
@@ -20844,11 +20844,11 @@
      "kind": "line",
      "rows": [
       [
-       "él",
+       "he",
        "él"
       ],
       [
-       "ellas",
+       "they (f.)",
        "ellas"
       ]
      ],
@@ -22190,11 +22190,11 @@
      "kind": "line",
      "rows": [
       [
-       "él",
+       "he",
        "él"
       ],
       [
-       "ellas",
+       "they (f.)",
        "ellas"
       ]
      ],
@@ -24747,7 +24747,7 @@
      "kind": "line",
      "rows": [
       [
-       "una cosa",
+       "sing.",
        "su torre"
       ]
      ],
@@ -24841,15 +24841,15 @@
      "kind": "line",
      "rows": [
       [
-       "a mí",
+       "to me",
        "me"
       ],
       [
-       "a ti",
+       "to you",
        "te"
       ],
       [
-       "a ellos",
+       "to them",
        "les"
       ]
      ],
@@ -25525,7 +25525,7 @@
     "t": "noun",
     "c": {
      "es": "La gente habla en voz baja",
-     "en": "People speak quietly"
+     "en": "People speak in a low voice"
     },
     "gm": "f."
    },
@@ -25534,7 +25534,7 @@
     "t": "verb",
     "c": {
      "es": "habla en voz baja",
-     "en": "speaks quietly"
+     "en": "speaks in a low voice"
     },
     "f": {
      "kind": "expand",
@@ -25574,7 +25574,7 @@
     "t": "preposition",
     "c": {
      "es": "en voz baja",
-     "en": "quietly"
+     "en": "in a low voice"
     }
    },
    "voz": {
@@ -25685,7 +25685,7 @@
     "t": "preposition",
     "c": {
      "es": "hacia arriba",
-     "en": "upwards"
+     "en": "up"
     }
    },
    "arriba": {
@@ -25747,7 +25747,7 @@
      "kind": "line",
      "rows": [
       [
-       "ella",
+       "él, ella",
        "recuerda"
       ]
      ],
@@ -26521,7 +26521,7 @@
      "kind": "line",
      "rows": [
       [
-       "ella",
+       "él, ella",
        "ve"
       ]
      ],
@@ -26635,7 +26635,7 @@
      "kind": "line",
      "rows": [
       [
-       "varios",
+       "pl.",
        "sus países"
       ]
      ],
@@ -27267,11 +27267,11 @@
      "kind": "line",
      "rows": [
       [
-       "él",
+       "he",
        "él"
       ],
       [
-       "ellas",
+       "they (f.)",
        "ellas"
       ]
      ],
@@ -27391,7 +27391,7 @@
     "t": "noun",
     "c": {
      "es": "La tarde es muy bonita",
-     "en": "The afternoon is very lovely"
+     "en": "The afternoon is very pretty"
     },
     "gm": "f.",
     "f": {
@@ -27442,7 +27442,7 @@
     },
     "c": {
      "es": "La tarde es muy bonita",
-     "en": "The afternoon is very lovely"
+     "en": "The afternoon is very pretty"
     }
    },
    "bonita": {
@@ -27450,7 +27450,7 @@
     "t": "adjective",
     "c": {
      "es": "muy bonita",
-     "en": "very lovely"
+     "en": "very pretty"
     },
     "f": {
      "kind": "line",
@@ -28228,7 +28228,7 @@
     "t": "adverb",
     "c": {
      "es": "pasa despacio",
-     "en": "goes slowly by"
+     "en": "goes slowly"
     }
    },
    "por": {
@@ -29133,11 +29133,11 @@
      "kind": "line",
      "rows": [
       [
-       "él",
+       "he",
        "él"
       ],
       [
-       "ellas",
+       "they (f.)",
        "ellas"
       ]
      ],
@@ -29514,7 +29514,7 @@
      "kind": "line",
      "rows": [
       [
-       "varias",
+       "pl.",
        "sus amigas"
       ]
      ],
@@ -30010,15 +30010,15 @@
      "kind": "line",
      "rows": [
       [
-       "a mí",
+       "to me",
        "me"
       ],
       [
-       "a ti",
+       "to you",
        "te"
       ],
       [
-       "a ellos",
+       "to them",
        "les"
       ]
      ],
@@ -30118,11 +30118,11 @@
      "kind": "line",
      "rows": [
       [
-       "él",
+       "he",
        "él"
       ],
       [
-       "ellas",
+       "they (f.)",
        "ellas"
       ]
      ],
@@ -31371,7 +31371,7 @@
      "kind": "line",
      "rows": [
       [
-       "varios",
+       "pl.",
        "sus amigos"
       ]
      ],
@@ -31436,11 +31436,11 @@
      "kind": "line",
      "rows": [
       [
-       "él",
+       "he",
        "él"
       ],
       [
-       "ellas",
+       "they (f.)",
        "ellas"
       ]
      ],
@@ -31525,7 +31525,7 @@
      "kind": "line",
      "rows": [
       [
-       "normal",
+       "usually",
        "y"
       ]
      ],
@@ -32462,7 +32462,7 @@
     "t": "adjective",
     "c": {
      "es": "otro para él",
-     "en": "another for him"
+     "en": "one for him"
     },
     "f": {
      "kind": "line",
@@ -32560,15 +32560,15 @@
      "kind": "line",
      "rows": [
       [
-       "a mí",
+       "to me",
        "me"
       ],
       [
-       "a ti",
+       "to you",
        "te"
       ],
       [
-       "a ellos",
+       "to them",
        "les"
       ]
      ],
@@ -32692,7 +32692,7 @@
      "kind": "line",
      "rows": [
       [
-       "ella",
+       "él, ella",
        "vuelve"
       ]
      ],
@@ -32737,11 +32737,11 @@
      "kind": "line",
      "rows": [
       [
-       "ella",
+       "she",
        "ella"
       ],
       [
-       "ellos",
+       "they",
        "ellos"
       ]
      ],
@@ -33111,7 +33111,7 @@
      "kind": "line",
      "rows": [
       [
-       "ella",
+       "él, ella",
        "ve"
       ]
      ],
@@ -34295,7 +34295,7 @@
     "t": "noun",
     "c": {
      "es": "las torres son de color dorado",
-     "en": "the towers are golden"
+     "en": "the towers are golden in colour"
     },
     "gm": "f.",
     "f": {
@@ -34346,7 +34346,7 @@
     },
     "c": {
      "es": "las torres son de color dorado",
-     "en": "the towers are golden"
+     "en": "the towers are golden in colour"
     }
    },
    "color": {
@@ -34868,7 +34868,7 @@
     "t": "noun",
     "c": {
      "es": "La Giralda desde arriba",
-     "en": "The Giralda from the top"
+     "en": "The Giralda from up there"
     }
    },
    "desde": {
@@ -34876,7 +34876,7 @@
     "t": "preposition",
     "c": {
      "es": "desde arriba",
-     "en": "from the top"
+     "en": "from up there"
     }
    },
    "arriba": {
@@ -34884,7 +34884,7 @@
     "t": "adverb",
     "c": {
      "es": "desde arriba",
-     "en": "from the top"
+     "en": "from up there"
     }
    },
    "campanas": {
@@ -35094,7 +35094,7 @@
      "kind": "line",
      "rows": [
       [
-       "con un hombre",
+       "m.",
        "ellos"
       ]
      ],
@@ -35303,7 +35303,7 @@
      "kind": "line",
      "rows": [
       [
-       "ella",
+       "él, ella",
        "sube"
       ]
      ],
@@ -35844,7 +35844,7 @@
      "kind": "line",
      "rows": [
       [
-       "varias",
+       "pl.",
        "sus casas"
       ]
      ],

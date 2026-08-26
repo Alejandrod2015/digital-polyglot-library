@@ -1,4 +1,4 @@
-// Renders all ten beta emails to HTML without sending anything.
+// Renders every beta email to HTML without sending anything.
 //
 // They were written in one sitting and are meant to be read weeks apart, which
 // is exactly the case the project's own rule targets: any batch of three or
@@ -45,6 +45,77 @@ const release: BetaEmailData = {
   ],
 };
 
+// The three shapes of the "we heard you" send, with the real work behind the
+// glosses. Two testers reported it in their final surveys, so the personal
+// version is rendered twice: quoting one person is easy to get right by
+// accident, and the failure mode only shows when two of them sit side by side.
+const GLOSS_CHANGES = [
+  "Tap any word and the card leads with the phrase it belongs to, translated the way it is used right there.",
+  "Verbs show the conjugation with the person and the tense, nouns their gender and plural, adjectives their agreement.",
+  "The card leads with the word exactly as the story spells it, with the infinitive beside it when the two differ.",
+  "Highlighted words got the same treatment: the definition you already had, plus the phrase and the forms.",
+  "Articles, numbers and character names are no longer tappable. The card had nothing to add about them.",
+];
+
+const heardYouGeneric: BetaEmailData = {
+  ...common,
+  heardYou: {
+    changes: GLOSS_CHANGES,
+    askThem: "Open any story, tap a verb, and see whether the card tells you who is doing it and when.",
+    ctaUrl: "https://digitalpolyglot.com/stories",
+  },
+};
+
+const heardYouColombe: BetaEmailData = {
+  ...common,
+  firstName: "Colombe",
+  heardYou: {
+    headline: "A word now explains the sentence it is in",
+    quote:
+      "What made me almost delete the app is the lack of opportunities to understand the grammar after clicking on the word. Also, the word wasn't really explained much, and I had to actively search for the meaning.",
+    quotedAt: "In your final survey, 24 August.",
+    becauseOfYou: [
+      "Every word of the two stories you read now carries the phrase it sits in, translated, plus its forms.",
+      "The 122 verb forms in the other 20 stories of your journey show their conjugation when you tap them.",
+      "You tapped baja, helado and paraguas three times each. All three said something about the word instead of about the sentence. They do not any more.",
+    ],
+    example: {
+      word: "helado",
+      sentence: "Marta enseña el Retiro",
+      before: "cold, iced (adjective)",
+      after: "un helado de fresa: a strawberry ice cream. m., pl. los helados",
+    },
+    changes: GLOSS_CHANGES.slice(2),
+    askThem: "Reopen Marta enseña el Retiro and tap baja. If the card still does not explain the grammar, tell me.",
+    ctaUrl: "https://digitalpolyglot.com/stories",
+  },
+};
+
+const heardYouTy: BetaEmailData = {
+  ...common,
+  firstName: "Ty",
+  heardYou: {
+    headline: "Same word, different story, different meaning",
+    quote:
+      "While highlighted words and phrases are well defined, other words sometimes did not reflect the actual context of the sentence. Often, the definition of a word changes depending on phrasing.",
+    quotedAt: "In your review, 23 August.",
+    becauseOfYou: [
+      "You were right about the cause: one flat list of 1,739 words served all 21 stories, so a word could only ever have one meaning.",
+      "The 95 words you tapped in your three stories now carry the phrase they belong to, and the same word says different things in different stories.",
+      "Tapping the same word five times in a row is the signature of a card that is not answering. Those were the ones fixed first.",
+    ],
+    example: {
+      word: "punto",
+      sentence: "Le toca a Mateo",
+      before: "point, dot",
+      after: "pagabas y punto: you paid, and that was that",
+    },
+    changes: GLOSS_CHANGES.slice(2),
+    askThem: "Reopen Le toca a Mateo and tap punto, tocaba and quedar. Those three were yours.",
+    ctaUrl: "https://digitalpolyglot.com/stories",
+  },
+};
+
 const ORDER: Array<{ kind: BetaEmailKind; label: string; data: BetaEmailData }> = [
   { kind: "accepted", label: "1 · Accepted, you're in", data: common },
   { kind: "accepted_android", label: "1b · Accepted, Android", data: { ...common, platform: "android" } },
@@ -69,6 +140,19 @@ const ORDER: Array<{ kind: BetaEmailKind; label: string; data: BetaEmailData }> 
   { kind: "final_survey", label: "8 · Final survey", data: common },
   { kind: "review_ask", label: "9 · Review ask (happy)", data: common },
   { kind: "review_recover", label: "10 · Recovery (unhappy)", data: common },
+  { kind: "heard_you", label: "11 · We heard you (everyone else)", data: heardYouGeneric },
+  {
+    kind: "heard_you",
+    label: "11b · We heard you (the tester who reported it)",
+    data: heardYouColombe,
+    file: "heard_you_colombe",
+  },
+  {
+    kind: "heard_you",
+    label: "11c · We heard you (the other reporter)",
+    data: heardYouTy,
+    file: "heard_you_ty",
+  },
 ];
 
 const cards: string[] = [];
@@ -96,7 +180,7 @@ for (const entry of ORDER) {
 
 writeFileSync(
   `${OUT}/index.html`,
-  `<!doctype html><meta charset="utf-8"><title>Beta emails, all ten in order</title>
+  `<!doctype html><meta charset="utf-8"><title>Beta emails, in order</title>
 <style>
   body { margin:0; background:#0b1220; color:#e7eefc; font:15px/1.5 -apple-system,system-ui,sans-serif; }
   h1 { font-size:22px; margin:28px 24px 6px; }
@@ -108,7 +192,7 @@ writeFileSync(
   a { color:#7dd3fc; font-size:13px; }
   iframe { width:100%; max-width:620px; height:900px; border:1px solid #1e3358; border-radius:12px; background:#051834; }
 </style>
-<h1>The ten beta emails, in the order a tester receives them</h1>
+<h1>The beta emails, in the order a tester receives them</h1>
 <p class="hint">Read them straight through, the way one person would over six weeks. What matters is not
 whether each is good on its own but whether they sound like ten different moments or like one template
 wearing ten hats: repeated openings, the same sentence rhythm, the same closing move.</p>
