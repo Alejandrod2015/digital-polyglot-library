@@ -4422,6 +4422,9562 @@
     },
     "gm": "f."
    }
+  },
+  "la-barceloneta-despierta": {
+   "barceloneta": {
+    "g": "the Barceloneta (beach)",
+    "t": "noun"
+   },
+   "despierta": {
+    "g": "awake",
+    "t": "adjective"
+   },
+   "sol": {
+    "g": "sun",
+    "t": "noun"
+   },
+   "sube": {
+    "g": "goes up, climbs",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "subir",
+     "rows": [
+      [
+       "yo",
+       "subo"
+      ],
+      [
+       "tú",
+       "subes"
+      ],
+      [
+       "él, ella",
+       "sube"
+      ],
+      [
+       "nosotros",
+       "subimos"
+      ],
+      [
+       "vosotros",
+       "subís"
+      ],
+      [
+       "ellos",
+       "suben"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "sobre": {
+    "g": "about, on",
+    "t": "preposition"
+   },
+   "playa": {
+    "g": "the beach",
+    "t": "noun"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "camina": {
+    "g": "walks",
+    "t": "verb"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "arena": {
+    "g": "sand",
+    "t": "noun"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "su": {
+    "g": "his, her, their",
+    "t": "pronoun"
+   },
+   "amigo": {
+    "g": "friend",
+    "t": "noun"
+   },
+   "lleva": {
+    "g": "carries, takes",
+    "t": "verb"
+   },
+   "agua": {
+    "g": "water",
+    "t": "noun"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "fruta": {
+    "g": "fruit",
+    "t": "noun"
+   },
+   "ella": {
+    "g": "she",
+    "t": "pronoun"
+   },
+   "toalla": {
+    "g": "a towel",
+    "t": "noun"
+   },
+   "azul": {
+    "g": "blue",
+    "t": "adjective"
+   },
+   "mar": {
+    "g": "the sea",
+    "t": "noun"
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "tranquilo": {
+    "g": "calm, chill",
+    "t": "adjective"
+   },
+   "toca": {
+    "g": "touches, has to",
+    "t": "verb"
+   },
+   "mano": {
+    "g": "hand; bro, dude",
+    "t": "noun"
+   },
+   "al": {
+    "g": "to the",
+    "t": "preposition"
+   },
+   "principio": {
+    "g": "beginning",
+    "t": "noun"
+   },
+   "tiene": {
+    "g": "he/she has",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "tener",
+     "rows": [
+      [
+       "yo",
+       "tengo"
+      ],
+      [
+       "tú",
+       "tienes"
+      ],
+      [
+       "él, ella",
+       "tiene"
+      ],
+      [
+       "nosotros",
+       "tenemos"
+      ],
+      [
+       "vosotros",
+       "tenéis"
+      ],
+      [
+       "ellos",
+       "tienen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "poco": {
+    "g": "little by little (poco a poco)",
+    "t": "adverb"
+   },
+   "miedo": {
+    "g": "fear",
+    "t": "noun"
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition"
+   },
+   "pero": {
+    "g": "but",
+    "t": "conjunction"
+   },
+   "caliente": {
+    "g": "hot",
+    "t": "adjective"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "salta": {
+    "g": "jumps up",
+    "t": "verb"
+   },
+   "llama": {
+    "g": "calls, names",
+    "t": "verb"
+   },
+   "deja": {
+    "g": "leaves, lets",
+    "t": "verb"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "entra": {
+    "g": "comes in",
+    "t": "verb"
+   },
+   "despacio": {
+    "g": "slowly",
+    "t": "adverb"
+   },
+   "sus": {
+    "g": "his, her, their (plural)",
+    "t": "pronoun"
+   },
+   "pies": {
+    "g": "feet",
+    "t": "noun"
+   },
+   "amigos": {
+    "g": "friends",
+    "t": "noun"
+   },
+   "nadan": {
+    "g": "they swim",
+    "t": "verb"
+   },
+   "cerca": {
+    "g": "near, close",
+    "t": "adverb"
+   },
+   "orilla": {
+    "g": "edge, shore",
+    "t": "noun"
+   },
+   "ola": {
+    "g": "the wave",
+    "t": "noun"
+   },
+   "llega": {
+    "g": "arrives",
+    "t": "verb"
+   },
+   "moja": {
+    "g": "dips",
+    "t": "verb"
+   },
+   "cara": {
+    "g": "face",
+    "t": "noun"
+   },
+   "mucho": {
+    "g": "a lot, much",
+    "t": "adverb"
+   },
+   "busca": {
+    "g": "looks for, seeks",
+    "t": "verb"
+   },
+   "concha": {
+    "g": "a shell",
+    "t": "noun"
+   },
+   "blanca": {
+    "g": "white, pale",
+    "t": "adjective"
+   },
+   "fondo": {
+    "g": "the back, background",
+    "t": "noun"
+   },
+   "da": {
+    "g": "he turns over",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "dar",
+     "rows": [
+      [
+       "yo",
+       "doy"
+      ],
+      [
+       "tú",
+       "das"
+      ],
+      [
+       "él, ella",
+       "da"
+      ],
+      [
+       "nosotros",
+       "damos"
+      ],
+      [
+       "vosotros",
+       "dais"
+      ],
+      [
+       "ellos",
+       "dan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "comen": {
+    "g": "they eat",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comer",
+     "rows": [
+      [
+       "yo",
+       "como"
+      ],
+      [
+       "tú",
+       "comes"
+      ],
+      [
+       "él, ella",
+       "come"
+      ],
+      [
+       "nosotros",
+       "comemos"
+      ],
+      [
+       "vosotros",
+       "coméis"
+      ],
+      [
+       "ellos",
+       "comen"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "suena": {
+    "g": "to sound",
+    "t": "verb"
+   },
+   "bajo": {
+    "g": "low, under",
+    "t": "adjective"
+   },
+   "barcelona": {
+    "g": "Barcelona (city)",
+    "t": "noun"
+   },
+   "espera": {
+    "g": "waits for",
+    "t": "verb"
+   },
+   "tarde": {
+    "g": "afternoon, late",
+    "t": "noun"
+   }
+  },
+  "churros-en-la-gran-via": {
+   "chocolate": {
+    "g": "thick hot chocolate",
+    "t": "noun"
+   },
+   "caliente": {
+    "g": "hot",
+    "t": "adjective"
+   },
+   "para": {
+    "g": "for, to",
+    "t": "preposition"
+   },
+   "nubes": {
+    "g": "walking on air (en las nubes)",
+    "t": "noun"
+   },
+   "grises": {
+    "g": "gray",
+    "t": "adjective"
+   },
+   "cubren": {
+    "g": "they cover",
+    "t": "verb"
+   },
+   "madrid": {
+    "g": "Madrid (city)",
+    "t": "noun"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "caminan": {
+    "g": "walk",
+    "t": "verb"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "gran": {
+    "g": "great, grand",
+    "t": "adjective"
+   },
+   "calle": {
+    "g": "street",
+    "t": "noun"
+   },
+   "famosa": {
+    "g": "famous",
+    "t": "adjective"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "ciudad": {
+    "g": "city",
+    "t": "noun"
+   },
+   "hermano": {
+    "g": "brother",
+    "t": "noun"
+   },
+   "camina": {
+    "g": "walks",
+    "t": "verb"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "ellas": {
+    "g": "they, them (women)",
+    "t": "pronoun"
+   },
+   "miran": {
+    "g": "they look at",
+    "t": "verb"
+   },
+   "tiendas": {
+    "g": "shops",
+    "t": "noun"
+   },
+   "grandes": {
+    "g": "big",
+    "t": "adjective"
+   },
+   "repente": {
+    "g": "suddenly (de repente)",
+    "t": "noun"
+   },
+   "empieza": {
+    "g": "begins",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "empezar",
+     "rows": [
+      [
+       "yo",
+       "empiezo"
+      ],
+      [
+       "tú",
+       "empiezas"
+      ],
+      [
+       "él, ella",
+       "empieza"
+      ],
+      [
+       "nosotros",
+       "empezamos"
+      ],
+      [
+       "vosotros",
+       "empezáis"
+      ],
+      [
+       "ellos",
+       "empiezan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "llover": {
+    "g": "to rain",
+    "t": "verb"
+   },
+   "lluvia": {
+    "g": "rain",
+    "t": "noun"
+   },
+   "cae": {
+    "g": "falls",
+    "t": "verb"
+   },
+   "fuerte": {
+    "g": "loud, strong",
+    "t": "adjective"
+   },
+   "sobre": {
+    "g": "about, on",
+    "t": "preposition"
+   },
+   "no": {
+    "g": "no, not",
+    "t": "adverb"
+   },
+   "tiene": {
+    "g": "he/she has",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "tener",
+     "rows": [
+      [
+       "yo",
+       "tengo"
+      ],
+      [
+       "tú",
+       "tienes"
+      ],
+      [
+       "él, ella",
+       "tiene"
+      ],
+      [
+       "nosotros",
+       "tenemos"
+      ],
+      [
+       "vosotros",
+       "tenéis"
+      ],
+      [
+       "ellos",
+       "tienen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "paraguas": {
+    "g": "umbrella",
+    "t": "noun"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "triste": {
+    "g": "sad",
+    "t": "adjective"
+   },
+   "entonces": {
+    "g": "then, so",
+    "t": "adverb"
+   },
+   "ve": {
+    "g": "sees, goes",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ver",
+     "rows": [
+      [
+       "yo",
+       "veo"
+      ],
+      [
+       "tú",
+       "ves"
+      ],
+      [
+       "él, ella",
+       "ve"
+      ],
+      [
+       "nosotros",
+       "vemos"
+      ],
+      [
+       "vosotros",
+       "veis"
+      ],
+      [
+       "ellos",
+       "ven"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "esquina": {
+    "g": "corner",
+    "t": "noun"
+   },
+   "amigos": {
+    "g": "friends",
+    "t": "noun"
+   },
+   "entran": {
+    "g": "come in",
+    "t": "verb"
+   },
+   "dentro": {
+    "g": "inside",
+    "t": "adverb"
+   },
+   "hace": {
+    "g": "does, makes; ago",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "hacer",
+     "rows": [
+      [
+       "yo",
+       "hago"
+      ],
+      [
+       "tú",
+       "haces"
+      ],
+      [
+       "él, ella",
+       "hace"
+      ],
+      [
+       "nosotros",
+       "hacemos"
+      ],
+      [
+       "vosotros",
+       "hacéis"
+      ],
+      [
+       "ellos",
+       "hacen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "calor": {
+    "g": "heat",
+    "t": "noun"
+   },
+   "huele": {
+    "g": "smells",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "oler",
+     "rows": [
+      [
+       "yo",
+       "huelo"
+      ],
+      [
+       "tú",
+       "hueles"
+      ],
+      [
+       "él, ella",
+       "huele"
+      ],
+      [
+       "nosotros",
+       "olemos"
+      ],
+      [
+       "vosotros",
+       "oléis"
+      ],
+      [
+       "ellos",
+       "huelen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "bien": {
+    "g": "well, good",
+    "t": "adverb"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "saluda": {
+    "g": "greets",
+    "t": "verb"
+   },
+   "sonrisa": {
+    "g": "smile",
+    "t": "noun"
+   },
+   "pide": {
+    "g": "asks",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "pedir",
+     "rows": [
+      [
+       "yo",
+       "pido"
+      ],
+      [
+       "tú",
+       "pides"
+      ],
+      [
+       "él, ella",
+       "pide"
+      ],
+      [
+       "nosotros",
+       "pedimos"
+      ],
+      [
+       "vosotros",
+       "pedís"
+      ],
+      [
+       "ellos",
+       "piden"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "churros": {
+    "g": "churros",
+    "t": "noun"
+   },
+   "todos": {
+    "g": "everyone, all",
+    "t": "pronoun"
+   },
+   "dulce": {
+    "g": "sweet",
+    "t": "adjective"
+   },
+   "prueba": {
+    "g": "a test",
+    "t": "noun"
+   },
+   "churro": {
+    "g": "a churro",
+    "t": "noun"
+   },
+   "delicioso": {
+    "g": "delicious",
+    "t": "adjective"
+   },
+   "fuera": {
+    "g": "outside; were",
+    "t": "adverb"
+   },
+   "sigue": {
+    "g": "is still there",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "seguir",
+     "rows": [
+      [
+       "yo",
+       "sigo"
+      ],
+      [
+       "tú",
+       "sigues"
+      ],
+      [
+       "él, ella",
+       "sigue"
+      ],
+      [
+       "nosotros",
+       "seguimos"
+      ],
+      [
+       "vosotros",
+       "seguís"
+      ],
+      [
+       "ellos",
+       "siguen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "pero": {
+    "g": "but",
+    "t": "conjunction"
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "risas": {
+    "g": "laughs, laughter",
+    "t": "noun"
+   },
+   "moja": {
+    "g": "dips",
+    "t": "verb"
+   },
+   "otro": {
+    "g": "another, other",
+    "t": "adjective"
+   },
+   "saca": {
+    "g": "takes out, pulls out",
+    "t": "verb"
+   },
+   "guarda": {
+    "g": "keeps, guards",
+    "t": "verb"
+   },
+   "momento": {
+    "g": "moment",
+    "t": "noun"
+   }
+  },
+  "lucia-llega-a-bilbao": {
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "llega": {
+    "g": "arrives",
+    "t": "verb"
+   },
+   "bilbao": {
+    "g": "Bilbao (city)",
+    "t": "noun"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "tarde": {
+    "g": "afternoon, late",
+    "t": "noun"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "espera": {
+    "g": "waits for",
+    "t": "verb"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "sonrisa": {
+    "g": "smile",
+    "t": "noun"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "su": {
+    "g": "his, her, their",
+    "t": "pronoun"
+   },
+   "amigo": {
+    "g": "friend",
+    "t": "noun"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "abrazan": {
+    "g": "they hug",
+    "t": "verb"
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "contenta": {
+    "g": "happy, pleased",
+    "t": "adjective"
+   },
+   "fuera": {
+    "g": "outside; were",
+    "t": "adverb"
+   },
+   "llueve": {
+    "g": "it rains",
+    "t": "verb"
+   },
+   "poco": {
+    "g": "little by little (poco a poco)",
+    "t": "adverb"
+   },
+   "que": {
+    "g": "that",
+    "t": "conjunction"
+   },
+   "abre": {
+    "g": "opens, whets",
+    "t": "verb"
+   },
+   "paraguas": {
+    "g": "umbrella",
+    "t": "noun"
+   },
+   "grande": {
+    "g": "big, great",
+    "t": "adjective"
+   },
+   "negro": {
+    "g": "off the books",
+    "t": "expression"
+   },
+   "caminan": {
+    "g": "walk",
+    "t": "verb"
+   },
+   "cerca": {
+    "g": "near, close",
+    "t": "adverb"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "agua": {
+    "g": "water",
+    "t": "noun"
+   },
+   "tranquila": {
+    "g": "calm, relax (fem.)",
+    "t": "adjective"
+   },
+   "mira": {
+    "g": "look, hey",
+    "t": "verb"
+   },
+   "puentes": {
+    "g": "bridges",
+    "t": "noun"
+   },
+   "ciudad": {
+    "g": "city",
+    "t": "noun"
+   },
+   "le": {
+    "g": "to him, her, it",
+    "t": "pronoun"
+   },
+   "casco": {
+    "g": "helmet",
+    "t": "noun"
+   },
+   "viejo": {
+    "g": "old",
+    "t": "adjective"
+   },
+   "calles": {
+    "g": "streets",
+    "t": "noun"
+   },
+   "son": {
+    "g": "they are",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "estrechas": {
+    "g": "narrow",
+    "t": "adjective"
+   },
+   "bonitas": {
+    "g": "pretty",
+    "t": "adjective"
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "muchas": {
+    "g": "many",
+    "t": "determiner"
+   },
+   "tiendas": {
+    "g": "shops",
+    "t": "noun"
+   },
+   "saca": {
+    "g": "takes out, pulls out",
+    "t": "verb"
+   },
+   "hora": {
+    "g": "hour, time",
+    "t": "noun"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "otra": {
+    "g": "another (fem.)",
+    "t": "adjective"
+   },
+   "vez": {
+    "g": "time, occasion",
+    "t": "noun"
+   },
+   "cielo": {
+    "g": "to protest loudly (pegar el grito al cielo)",
+    "t": "noun"
+   },
+   "cambia": {
+    "g": "changes",
+    "t": "verb"
+   },
+   "lluvia": {
+    "g": "rain",
+    "t": "noun"
+   },
+   "para": {
+    "g": "for, to",
+    "t": "preposition"
+   },
+   "sale": {
+    "g": "goes out; okay",
+    "t": "verb"
+   },
+   "sol": {
+    "g": "sun",
+    "t": "noun"
+   },
+   "brilla": {
+    "g": "shines",
+    "t": "verb"
+   },
+   "luz": {
+    "g": "the light",
+    "t": "noun"
+   },
+   "suave": {
+    "g": "soft",
+    "t": "adjective"
+   },
+   "respira": {
+    "g": "breathes",
+    "t": "verb"
+   },
+   "aire": {
+    "g": "air",
+    "t": "noun"
+   },
+   "limpio": {
+    "g": "clean",
+    "t": "adjective"
+   },
+   "fresco": {
+    "g": "fresh; cheeky",
+    "t": "adjective"
+   },
+   "pregunta": {
+    "g": "question; asks",
+    "t": "noun"
+   },
+   "te": {
+    "g": "you, yourself",
+    "t": "pronoun"
+   },
+   "gusta": {
+    "g": "likes",
+    "t": "verb"
+   },
+   "mi": {
+    "g": "my",
+    "t": "pronoun"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "mucho": {
+    "g": "a lot, much",
+    "t": "adverb"
+   },
+   "cansada": {
+    "g": "tired",
+    "t": "adjective"
+   },
+   "pero": {
+    "g": "but",
+    "t": "conjunction"
+   },
+   "feliz": {
+    "g": "happy",
+    "t": "adjective"
+   },
+   "visitan": {
+    "g": "they visit",
+    "t": "verb"
+   },
+   "museo": {
+    "g": "the museum",
+    "t": "noun"
+   },
+   "famoso": {
+    "g": "famous",
+    "t": "adjective"
+   },
+   "ahora": {
+    "g": "now",
+    "t": "adverb"
+   },
+   "quiere": {
+    "g": "wants",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "querer",
+     "rows": [
+      [
+       "yo",
+       "quiero"
+      ],
+      [
+       "tú",
+       "quieres"
+      ],
+      [
+       "él, ella",
+       "quiere"
+      ],
+      [
+       "nosotros",
+       "queremos"
+      ],
+      [
+       "vosotros",
+       "queréis"
+      ],
+      [
+       "ellos",
+       "quieren"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "dormir": {
+    "g": "to sleep",
+    "t": "verb"
+   },
+   "ya": {
+    "g": "already, now",
+    "t": "adverb"
+   }
+  },
+  "el-museo-guggenheim": {
+   "museo": {
+    "g": "the museum",
+    "t": "noun"
+   },
+   "guggenheim": {
+    "g": "Guggenheim (museum)",
+    "t": "noun"
+   },
+   "abre": {
+    "g": "opens, whets",
+    "t": "verb"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "llegan": {
+    "g": "they arrive",
+    "t": "verb"
+   },
+   "temprano": {
+    "g": "early",
+    "t": "adverb"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "grande": {
+    "g": "big, great",
+    "t": "adjective"
+   },
+   "moderno": {
+    "g": "modern",
+    "t": "adjective"
+   },
+   "paredes": {
+    "g": "walls",
+    "t": "noun"
+   },
+   "brillan": {
+    "g": "they shine",
+    "t": "verb"
+   },
+   "como": {
+    "g": "like, as",
+    "t": "preposition"
+   },
+   "plata": {
+    "g": "money",
+    "t": "slang"
+   },
+   "mucho": {
+    "g": "a lot, much",
+    "t": "adverb"
+   },
+   "ojos": {
+    "g": "eyes",
+    "t": "noun"
+   },
+   "fuera": {
+    "g": "outside; were",
+    "t": "adverb"
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "perro": {
+    "g": "dog; dude",
+    "t": "noun"
+   },
+   "enorme": {
+    "g": "huge, enormous",
+    "t": "adjective"
+   },
+   "hecho": {
+    "g": "done",
+    "t": "verb"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "muchas": {
+    "g": "many",
+    "t": "determiner"
+   },
+   "flores": {
+    "g": "flowers",
+    "t": "noun"
+   },
+   "colores": {
+    "g": "colors",
+    "t": "noun"
+   },
+   "turistas": {
+    "g": "tourists",
+    "t": "noun"
+   },
+   "sacan": {
+    "g": "to take",
+    "t": "verb"
+   },
+   "fotos": {
+    "g": "photos",
+    "t": "noun"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "cerca": {
+    "g": "near, close",
+    "t": "adverb"
+   },
+   "toca": {
+    "g": "touches, has to",
+    "t": "verb"
+   },
+   "flor": {
+    "g": "flower; great (slang)",
+    "t": "noun"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "cuidado": {
+    "g": "care",
+    "t": "noun"
+   },
+   "dentro": {
+    "g": "inside",
+    "t": "adverb"
+   },
+   "arte": {
+    "g": "art",
+    "t": "noun"
+   },
+   "raro": {
+    "g": "weird, strange",
+    "t": "adjective"
+   },
+   "bonito": {
+    "g": "pretty, nice",
+    "t": "adjective"
+   },
+   "formas": {
+    "g": "shapes",
+    "t": "noun"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "todas": {
+    "g": "all (feminine)",
+    "t": "pronoun"
+   },
+   "partes": {
+    "g": "parts",
+    "t": "noun"
+   },
+   "anda": {
+    "g": "walks, goes",
+    "t": "verb"
+   },
+   "despacio": {
+    "g": "slowly",
+    "t": "adverb"
+   },
+   "mientras": {
+    "g": "while, meanwhile",
+    "t": "conjunction"
+   },
+   "lee": {
+    "g": "reads",
+    "t": "verb"
+   },
+   "carteles": {
+    "g": "signs",
+    "t": "noun"
+   },
+   "hablan": {
+    "g": "they talk",
+    "t": "verb"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "voz": {
+    "g": "voice",
+    "t": "noun"
+   },
+   "baja": {
+    "g": "goes down, lowers",
+    "t": "verb"
+   },
+   "repente": {
+    "g": "suddenly (de repente)",
+    "t": "noun"
+   },
+   "ve": {
+    "g": "sees, goes",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ver",
+     "rows": [
+      [
+       "yo",
+       "veo"
+      ],
+      [
+       "tú",
+       "ves"
+      ],
+      [
+       "él, ella",
+       "ve"
+      ],
+      [
+       "nosotros",
+       "vemos"
+      ],
+      [
+       "vosotros",
+       "veis"
+      ],
+      [
+       "ellos",
+       "ven"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "metal": {
+    "g": "metal",
+    "t": "noun"
+   },
+   "alta": {
+    "g": "tall, high",
+    "t": "adjective"
+   },
+   "siente": {
+    "g": "to feel",
+    "t": "verb"
+   },
+   "poco": {
+    "g": "little by little (poco a poco)",
+    "t": "adverb"
+   },
+   "miedo": {
+    "g": "fear",
+    "t": "noun"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "no": {
+    "g": "no, not",
+    "t": "adverb"
+   },
+   "real": {
+    "g": "real",
+    "t": "adjective"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "al": {
+    "g": "to the",
+    "t": "preposition"
+   },
+   "final": {
+    "g": "final, ending",
+    "t": "noun"
+   },
+   "salen": {
+    "g": "they go out",
+    "t": "verb"
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition"
+   },
+   "contentos": {
+    "g": "happy",
+    "t": "adjective"
+   },
+   "compra": {
+    "g": "buys, purchase",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comprar",
+     "rows": [
+      [
+       "yo",
+       "compro"
+      ],
+      [
+       "tú",
+       "compras"
+      ],
+      [
+       "él, ella",
+       "compra"
+      ],
+      [
+       "nosotros",
+       "compramos"
+      ],
+      [
+       "vosotros",
+       "compráis"
+      ],
+      [
+       "ellos",
+       "compran"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "postal": {
+    "g": "postcard",
+    "t": "noun"
+   },
+   "bonita": {
+    "g": "pretty",
+    "t": "adjective"
+   },
+   "escribe": {
+    "g": "she writes",
+    "t": "verb"
+   },
+   "mensaje": {
+    "g": "a message",
+    "t": "noun"
+   },
+   "corto": {
+    "g": "short",
+    "t": "adjective"
+   },
+   "plan": {
+    "g": "plan",
+    "t": "noun"
+   },
+   "ya": {
+    "g": "already, now",
+    "t": "adverb"
+   },
+   "existe": {
+    "g": "exists",
+    "t": "verb"
+   },
+   "porque": {
+    "g": "because",
+    "t": "conjunction"
+   },
+   "quiere": {
+    "g": "wants",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "querer",
+     "rows": [
+      [
+       "yo",
+       "quiero"
+      ],
+      [
+       "tú",
+       "quieres"
+      ],
+      [
+       "él, ella",
+       "quiere"
+      ],
+      [
+       "nosotros",
+       "queremos"
+      ],
+      [
+       "vosotros",
+       "queréis"
+      ],
+      [
+       "ellos",
+       "quieren"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "ver": {
+    "g": "to see",
+    "t": "verb"
+   }
+  },
+  "suena-la-plaza-mayor": {
+   "suena": {
+    "g": "to sound",
+    "t": "verb"
+   },
+   "plaza": {
+    "g": "square, plaza",
+    "t": "noun"
+   },
+   "mayor": {
+    "g": "main",
+    "t": "adjective"
+   },
+   "guitarra": {
+    "g": "the guitar",
+    "t": "noun"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "cuando": {
+    "g": "when",
+    "t": "conjunction"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "llegan": {
+    "g": "they arrive",
+    "t": "verb"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "tarde": {
+    "g": "afternoon, late",
+    "t": "noun"
+   },
+   "espera": {
+    "g": "waits for",
+    "t": "verb"
+   },
+   "junto": {
+    "g": "together, next to",
+    "t": "adverb"
+   },
+   "estatua": {
+    "g": "the statue",
+    "t": "noun"
+   },
+   "llena": {
+    "g": "full",
+    "t": "adjective"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "turistas": {
+    "g": "tourists",
+    "t": "noun"
+   },
+   "hombre": {
+    "g": "man",
+    "t": "noun"
+   },
+   "toca": {
+    "g": "touches, has to",
+    "t": "verb"
+   },
+   "alegre": {
+    "g": "cheerful, happy",
+    "t": "adjective"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "mucha": {
+    "g": "a lot of",
+    "t": "adjective"
+   },
+   "gente": {
+    "g": "people",
+    "t": "noun"
+   },
+   "baila": {
+    "g": "dances",
+    "t": "verb"
+   },
+   "aplaude": {
+    "g": "claps",
+    "t": "verb"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "mueve": {
+    "g": "moves",
+    "t": "verb"
+   },
+   "pies": {
+    "g": "feet",
+    "t": "noun"
+   },
+   "centro": {
+    "g": "the town center, downtown",
+    "t": "noun"
+   },
+   "amigos": {
+    "g": "friends",
+    "t": "noun"
+   },
+   "miran": {
+    "g": "they look at",
+    "t": "verb"
+   },
+   "tiendas": {
+    "g": "shops",
+    "t": "noun"
+   },
+   "busca": {
+    "g": "looks for, seeks",
+    "t": "verb"
+   },
+   "regalo": {
+    "g": "a gift",
+    "t": "noun"
+   },
+   "para": {
+    "g": "for, to",
+    "t": "preposition"
+   },
+   "su": {
+    "g": "his, her, their",
+    "t": "pronoun"
+   },
+   "madre": {
+    "g": "the mother",
+    "t": "noun"
+   },
+   "encuentra": {
+    "g": "finds",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "encontrar",
+     "rows": [
+      [
+       "yo",
+       "encuentro"
+      ],
+      [
+       "tú",
+       "encuentras"
+      ],
+      [
+       "él, ella",
+       "encuentra"
+      ],
+      [
+       "nosotros",
+       "encontramos"
+      ],
+      [
+       "vosotros",
+       "encontráis"
+      ],
+      [
+       "ellos",
+       "encuentran"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "abanico": {
+    "g": "a fan",
+    "t": "noun"
+   },
+   "rojo": {
+    "g": "red, blushing",
+    "t": "adjective"
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "bonito": {
+    "g": "pretty, nice",
+    "t": "adjective"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "perfecto": {
+    "g": "perfectly",
+    "t": "adjective"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "compra": {
+    "g": "buys, purchase",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comprar",
+     "rows": [
+      [
+       "yo",
+       "compro"
+      ],
+      [
+       "tú",
+       "compras"
+      ],
+      [
+       "él, ella",
+       "compra"
+      ],
+      [
+       "nosotros",
+       "compramos"
+      ],
+      [
+       "vosotros",
+       "compráis"
+      ],
+      [
+       "ellos",
+       "compran"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "postales": {
+    "g": "postcards",
+    "t": "noun"
+   },
+   "madrid": {
+    "g": "Madrid (city)",
+    "t": "noun"
+   },
+   "paga": {
+    "g": "pays for",
+    "t": "verb"
+   },
+   "nevera": {
+    "g": "fridge",
+    "t": "noun"
+   },
+   "guarda": {
+    "g": "keeps, guards",
+    "t": "verb"
+   },
+   "bolso": {
+    "g": "bag, purse",
+    "t": "noun"
+   },
+   "ese": {
+    "g": "that (one)",
+    "t": "pronoun"
+   },
+   "momento": {
+    "g": "moment",
+    "t": "noun"
+   },
+   "echa": {
+    "g": "throws, pours",
+    "t": "verb"
+   },
+   "menos": {
+    "g": "less, fewer",
+    "t": "adverb"
+   },
+   "familia": {
+    "g": "family",
+    "t": "noun"
+   },
+   "cielo": {
+    "g": "to protest loudly (pegar el grito al cielo)",
+    "t": "noun"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "pone": {
+    "g": "puts",
+    "t": "verb"
+   },
+   "naranja": {
+    "g": "orange",
+    "t": "noun"
+   },
+   "sobre": {
+    "g": "about, on",
+    "t": "preposition"
+   },
+   "comen": {
+    "g": "they eat",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comer",
+     "rows": [
+      [
+       "yo",
+       "como"
+      ],
+      [
+       "tú",
+       "comes"
+      ],
+      [
+       "él, ella",
+       "come"
+      ],
+      [
+       "nosotros",
+       "comemos"
+      ],
+      [
+       "vosotros",
+       "coméis"
+      ],
+      [
+       "ellos",
+       "comen"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "calamares": {
+    "g": "squid",
+    "t": "noun"
+   },
+   "bar": {
+    "g": "bar",
+    "t": "noun"
+   },
+   "manda": {
+    "g": "sends, orders",
+    "t": "verb"
+   },
+   "foto": {
+    "g": "photo",
+    "t": "noun"
+   },
+   "responde": {
+    "g": "answers",
+    "t": "verb"
+   }
+  },
+  "naranjas-para-dos-amigas": {
+   "naranjas": {
+    "g": "oranges",
+    "t": "noun"
+   },
+   "para": {
+    "g": "for, to",
+    "t": "preposition"
+   },
+   "amigas": {
+    "g": "female friends",
+    "t": "noun"
+   },
+   "sol": {
+    "g": "sun",
+    "t": "noun"
+   },
+   "entra": {
+    "g": "comes in",
+    "t": "verb"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "terraza": {
+    "g": "terrace, rooftop",
+    "t": "noun"
+   },
+   "cuando": {
+    "g": "when",
+    "t": "conjunction"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "llega": {
+    "g": "arrives",
+    "t": "verb"
+   },
+   "sevilla": {
+    "g": "Seville (city)",
+    "t": "noun"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "espera": {
+    "g": "waits for",
+    "t": "verb"
+   },
+   "mesa": {
+    "g": "table",
+    "t": "noun"
+   },
+   "cerca": {
+    "g": "near, close",
+    "t": "adverb"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "ventana": {
+    "g": "window",
+    "t": "noun"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "abrazan": {
+    "g": "they hug",
+    "t": "verb"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "fuerza": {
+    "g": "strength, force",
+    "t": "noun"
+   },
+   "fin": {
+    "g": "end",
+    "t": "noun"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "vasos": {
+    "g": "glasses (drinking)",
+    "t": "noun"
+   },
+   "zumo": {
+    "g": "juice",
+    "t": "noun"
+   },
+   "mira": {
+    "g": "look, hey",
+    "t": "verb"
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition"
+   },
+   "patio": {
+    "g": "courtyard, yard",
+    "t": "noun"
+   },
+   "tiene": {
+    "g": "he/she has",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "tener",
+     "rows": [
+      [
+       "yo",
+       "tengo"
+      ],
+      [
+       "tú",
+       "tienes"
+      ],
+      [
+       "él, ella",
+       "tiene"
+      ],
+      [
+       "nosotros",
+       "tenemos"
+      ],
+      [
+       "vosotros",
+       "tenéis"
+      ],
+      [
+       "ellos",
+       "tienen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "muchas": {
+    "g": "many",
+    "t": "determiner"
+   },
+   "maduras": {
+    "g": "ripe",
+    "t": "adjective"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "estas": {
+    "g": "these",
+    "t": "pronoun"
+   },
+   "toma": {
+    "g": "to drink",
+    "t": "verb"
+   },
+   "poco": {
+    "g": "little by little (poco a poco)",
+    "t": "adverb"
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "dulce": {
+    "g": "sweet",
+    "t": "adjective"
+   },
+   "bebe": {
+    "g": "drinks",
+    "t": "verb"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "contenta": {
+    "g": "happy, pleased",
+    "t": "adjective"
+   },
+   "camarero": {
+    "g": "a waiter",
+    "t": "noun"
+   },
+   "trae": {
+    "g": "to bring",
+    "t": "verb"
+   },
+   "pan": {
+    "g": "bread",
+    "t": "noun"
+   },
+   "aceite": {
+    "g": "oil",
+    "t": "noun"
+   },
+   "tranquila": {
+    "g": "calm, relax (fem.)",
+    "t": "adjective"
+   },
+   "aire": {
+    "g": "air",
+    "t": "noun"
+   },
+   "huele": {
+    "g": "smells",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "oler",
+     "rows": [
+      [
+       "yo",
+       "huelo"
+      ],
+      [
+       "tú",
+       "hueles"
+      ],
+      [
+       "él, ella",
+       "huele"
+      ],
+      [
+       "nosotros",
+       "olemos"
+      ],
+      [
+       "vosotros",
+       "oléis"
+      ],
+      [
+       "ellos",
+       "huelen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "naranja": {
+    "g": "orange",
+    "t": "noun"
+   },
+   "que": {
+    "g": "that",
+    "t": "conjunction"
+   },
+   "hablan": {
+    "g": "they talk",
+    "t": "verb"
+   },
+   "sin": {
+    "g": "without",
+    "t": "preposition"
+   },
+   "parar": {
+    "g": "to stop",
+    "t": "verb"
+   },
+   "levanta": {
+    "g": "lifts, raises",
+    "t": "verb"
+   },
+   "su": {
+    "g": "his, her, their",
+    "t": "pronoun"
+   },
+   "vaso": {
+    "g": "a glass",
+    "t": "noun"
+   },
+   "otra": {
+    "g": "another (fem.)",
+    "t": "adjective"
+   },
+   "vez": {
+    "g": "time, occasion",
+    "t": "noun"
+   },
+   "gracias": {
+    "g": "thanks",
+    "t": "expression"
+   },
+   "todo": {
+    "g": "all, everything",
+    "t": "pronoun"
+   },
+   "suyo": {
+    "g": "his, hers, theirs",
+    "t": "pronoun"
+   },
+   "bienvenida": {
+    "g": "welcome",
+    "t": "interjection"
+   },
+   "felices": {
+    "g": "happy (plural)",
+    "t": "adjective"
+   }
+  },
+  "pintxos-en-el-casco-viejo": {
+   "pintxo": {
+    "g": "a pintxo",
+    "t": "noun"
+   },
+   "fuerte": {
+    "g": "loud, strong",
+    "t": "adjective"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "noche": {
+    "g": "night",
+    "t": "noun"
+   },
+   "lleva": {
+    "g": "carries, takes",
+    "t": "verb"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "bar": {
+    "g": "bar",
+    "t": "noun"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "su": {
+    "g": "his, her, their",
+    "t": "pronoun"
+   },
+   "amiga": {
+    "g": "a female friend",
+    "t": "noun"
+   },
+   "espera": {
+    "g": "waits for",
+    "t": "verb"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "puerta": {
+    "g": "door",
+    "t": "noun"
+   },
+   "saluda": {
+    "g": "greets",
+    "t": "verb"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "besos": {
+    "g": "kisses (beso); dos besos is the normal Spanish greeting",
+    "t": "noun"
+   },
+   "entran": {
+    "g": "come in",
+    "t": "verb"
+   },
+   "juntos": {
+    "g": "together",
+    "t": "adjective"
+   },
+   "huele": {
+    "g": "smells",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "oler",
+     "rows": [
+      [
+       "yo",
+       "huelo"
+      ],
+      [
+       "tú",
+       "hueles"
+      ],
+      [
+       "él, ella",
+       "huele"
+      ],
+      [
+       "nosotros",
+       "olemos"
+      ],
+      [
+       "vosotros",
+       "oléis"
+      ],
+      [
+       "ellos",
+       "huelen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "bien": {
+    "g": "well, good",
+    "t": "adverb"
+   },
+   "barra": {
+    "g": "the bar counter",
+    "t": "noun"
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "muchos": {
+    "g": "many",
+    "t": "adjective"
+   },
+   "pintxos": {
+    "g": "pintxos (tapas)",
+    "t": "noun"
+   },
+   "ricos": {
+    "g": "tasty",
+    "t": "adjective"
+   },
+   "cada": {
+    "g": "each, every",
+    "t": "adjective"
+   },
+   "tiene": {
+    "g": "he/she has",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "tener",
+     "rows": [
+      [
+       "yo",
+       "tengo"
+      ],
+      [
+       "tú",
+       "tienes"
+      ],
+      [
+       "él, ella",
+       "tiene"
+      ],
+      [
+       "nosotros",
+       "tenemos"
+      ],
+      [
+       "vosotros",
+       "tenéis"
+      ],
+      [
+       "ellos",
+       "tienen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "pan": {
+    "g": "bread",
+    "t": "noun"
+   },
+   "algo": {
+    "g": "something",
+    "t": "pronoun"
+   },
+   "encima": {
+    "g": "on top; besides",
+    "t": "adverb"
+   },
+   "mira": {
+    "g": "look, hey",
+    "t": "verb"
+   },
+   "todo": {
+    "g": "all, everything",
+    "t": "pronoun"
+   },
+   "hambre": {
+    "g": "hunger",
+    "t": "noun"
+   },
+   "pide": {
+    "g": "asks",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "pedir",
+     "rows": [
+      [
+       "yo",
+       "pido"
+      ],
+      [
+       "tú",
+       "pides"
+      ],
+      [
+       "él, ella",
+       "pide"
+      ],
+      [
+       "nosotros",
+       "pedimos"
+      ],
+      [
+       "vosotros",
+       "pedís"
+      ],
+      [
+       "ellos",
+       "piden"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "varios": {
+    "g": "several",
+    "t": "determiner"
+   },
+   "platos": {
+    "g": "plates, dishes",
+    "t": "noun"
+   },
+   "bebida": {
+    "g": "a drink",
+    "t": "noun"
+   },
+   "para": {
+    "g": "for, to",
+    "t": "preposition"
+   },
+   "todos": {
+    "g": "everyone, all",
+    "t": "pronoun"
+   },
+   "toma": {
+    "g": "to drink",
+    "t": "verb"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "tortilla": {
+    "g": "omelette",
+    "t": "noun"
+   },
+   "prueba": {
+    "g": "a test",
+    "t": "noun"
+   },
+   "pescado": {
+    "g": "the fish",
+    "t": "noun"
+   },
+   "sabor": {
+    "g": "flavor, taste",
+    "t": "noun"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "pone": {
+    "g": "puts",
+    "t": "verb"
+   },
+   "cara": {
+    "g": "face",
+    "t": "noun"
+   },
+   "rara": {
+    "g": "strange, odd",
+    "t": "adjective"
+   },
+   "al": {
+    "g": "to the",
+    "t": "preposition"
+   },
+   "principio": {
+    "g": "beginning",
+    "t": "noun"
+   },
+   "duda": {
+    "g": "hesitates",
+    "t": "verb"
+   },
+   "pero": {
+    "g": "but",
+    "t": "conjunction"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "mucho": {
+    "g": "a lot, much",
+    "t": "adverb"
+   },
+   "delicioso": {
+    "g": "delicious",
+    "t": "adjective"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "aplaude": {
+    "g": "claps",
+    "t": "verb"
+   },
+   "contenta": {
+    "g": "happy, pleased",
+    "t": "adjective"
+   },
+   "otro": {
+    "g": "another, other",
+    "t": "adjective"
+   },
+   "igual": {
+    "g": "same; anyway",
+    "t": "adverb"
+   },
+   "comen": {
+    "g": "they eat",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comer",
+     "rows": [
+      [
+       "yo",
+       "como"
+      ],
+      [
+       "tú",
+       "comes"
+      ],
+      [
+       "él, ella",
+       "come"
+      ],
+      [
+       "nosotros",
+       "comemos"
+      ],
+      [
+       "vosotros",
+       "coméis"
+      ],
+      [
+       "ellos",
+       "comen"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "charlan": {
+    "g": "they chat",
+    "t": "verb"
+   },
+   "buen": {
+    "g": "good",
+    "t": "adjective"
+   },
+   "rato": {
+    "g": "a while",
+    "t": "noun"
+   },
+   "pasa": {
+    "g": "happens, passes",
+    "t": "verb"
+   },
+   "cuando": {
+    "g": "when",
+    "t": "conjunction"
+   },
+   "salen": {
+    "g": "they go out",
+    "t": "verb"
+   },
+   "calle": {
+    "g": "street",
+    "t": "noun"
+   },
+   "queda": {
+    "g": "stays, remains",
+    "t": "verb"
+   },
+   "como": {
+    "g": "like, as",
+    "t": "preposition"
+   },
+   "recuerdo": {
+    "g": "a memory",
+    "t": "noun"
+   },
+   "ya": {
+    "g": "already, now",
+    "t": "adverb"
+   },
+   "quiere": {
+    "g": "wants",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "querer",
+     "rows": [
+      [
+       "yo",
+       "quiero"
+      ],
+      [
+       "tú",
+       "quieres"
+      ],
+      [
+       "él, ella",
+       "quiere"
+      ],
+      [
+       "nosotros",
+       "queremos"
+      ],
+      [
+       "vosotros",
+       "queréis"
+      ],
+      [
+       "ellos",
+       "quieren"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "volver": {
+    "g": "to return, go back",
+    "t": "verb"
+   }
+  },
+  "naranjas-en-el-mercado": {
+   "compra": {
+    "g": "buys, purchase",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comprar",
+     "rows": [
+      [
+       "yo",
+       "compro"
+      ],
+      [
+       "tú",
+       "compras"
+      ],
+      [
+       "él, ella",
+       "compra"
+      ],
+      [
+       "nosotros",
+       "compramos"
+      ],
+      [
+       "vosotros",
+       "compráis"
+      ],
+      [
+       "ellos",
+       "compran"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "fruta": {
+    "g": "fruit",
+    "t": "noun"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "visita": {
+    "g": "visit, visits",
+    "t": "noun"
+   },
+   "su": {
+    "g": "his, her, their",
+    "t": "pronoun"
+   },
+   "amigo": {
+    "g": "friend",
+    "t": "noun"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "valencia": {
+    "g": "Valencia (city)",
+    "t": "noun"
+   },
+   "vive": {
+    "g": "to live",
+    "t": "verb"
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "cerca": {
+    "g": "near, close",
+    "t": "adverb"
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition"
+   },
+   "mercado": {
+    "g": "the market",
+    "t": "noun"
+   },
+   "que": {
+    "g": "that",
+    "t": "conjunction"
+   },
+   "esta": {
+    "g": "this (one)",
+    "t": "pronoun"
+   },
+   "van": {
+    "g": "to go",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ir",
+     "rows": [
+      [
+       "yo",
+       "voy"
+      ],
+      [
+       "tú",
+       "vas"
+      ],
+      [
+       "él, ella",
+       "va"
+      ],
+      [
+       "nosotros",
+       "vamos"
+      ],
+      [
+       "vosotros",
+       "vais"
+      ],
+      [
+       "ellos",
+       "van"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "juntos": {
+    "g": "together",
+    "t": "adjective"
+   },
+   "comprar": {
+    "g": "to buy",
+    "t": "verb"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "grande": {
+    "g": "big, great",
+    "t": "adjective"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "bonito": {
+    "g": "pretty, nice",
+    "t": "adjective"
+   },
+   "naranjas": {
+    "g": "oranges",
+    "t": "noun"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "dulces": {
+    "g": "sweet",
+    "t": "adjective"
+   },
+   "frescas": {
+    "g": "fresh",
+    "t": "adjective"
+   },
+   "toca": {
+    "g": "touches, has to",
+    "t": "verb"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "mano": {
+    "g": "hand; bro, dude",
+    "t": "noun"
+   },
+   "todo": {
+    "g": "all, everything",
+    "t": "pronoun"
+   },
+   "huele": {
+    "g": "smells",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "oler",
+     "rows": [
+      [
+       "yo",
+       "huelo"
+      ],
+      [
+       "tú",
+       "hueles"
+      ],
+      [
+       "él, ella",
+       "huele"
+      ],
+      [
+       "nosotros",
+       "olemos"
+      ],
+      [
+       "vosotros",
+       "oléis"
+      ],
+      [
+       "ellos",
+       "huelen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "bien": {
+    "g": "well, good",
+    "t": "adverb"
+   },
+   "olor": {
+    "g": "smell",
+    "t": "noun"
+   },
+   "rico": {
+    "g": "rich; tasty",
+    "t": "adjective"
+   },
+   "mujer": {
+    "g": "woman",
+    "t": "noun"
+   },
+   "trabaja": {
+    "g": "to work",
+    "t": "verb"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "llama": {
+    "g": "calls, names",
+    "t": "verb"
+   },
+   "amparo": {
+    "g": "Amparo, a woman's first name",
+    "t": "noun"
+   },
+   "vende": {
+    "g": "sells",
+    "t": "verb"
+   },
+   "verdura": {
+    "g": "vegetables",
+    "t": "noun"
+   },
+   "habla": {
+    "g": "speaks, talks",
+    "t": "verb"
+   },
+   "estas": {
+    "g": "these",
+    "t": "pronoun"
+   },
+   "son": {
+    "g": "they are",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "mejores": {
+    "g": "the best",
+    "t": "adjective"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "muchas": {
+    "g": "many",
+    "t": "determiner"
+   },
+   "bolsa": {
+    "g": "bag",
+    "t": "noun"
+   },
+   "pesa": {
+    "g": "weighs",
+    "t": "verb"
+   },
+   "mucho": {
+    "g": "a lot, much",
+    "t": "adverb"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "comemos": {
+    "g": "shall we eat",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comer",
+     "rows": [
+      [
+       "yo",
+       "como"
+      ],
+      [
+       "tú",
+       "comes"
+      ],
+      [
+       "él, ella",
+       "come"
+      ],
+      [
+       "nosotros",
+       "comemos"
+      ],
+      [
+       "vosotros",
+       "coméis"
+      ],
+      [
+       "ellos",
+       "comen"
+      ]
+     ],
+     "here": 3
+    }
+   },
+   "todas": {
+    "g": "all (feminine)",
+    "t": "pronoun"
+   },
+   "hoy": {
+    "g": "today",
+    "t": "adverb"
+   },
+   "pregunta": {
+    "g": "question; asks",
+    "t": "noun"
+   },
+   "salen": {
+    "g": "they go out",
+    "t": "verb"
+   },
+   "calle": {
+    "g": "street",
+    "t": "noun"
+   },
+   "sol": {
+    "g": "sun",
+    "t": "noun"
+   },
+   "brilla": {
+    "g": "shines",
+    "t": "verb"
+   },
+   "fuerte": {
+    "g": "loud, strong",
+    "t": "adjective"
+   },
+   "come": {
+    "g": "eats",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comer",
+     "rows": [
+      [
+       "yo",
+       "como"
+      ],
+      [
+       "tú",
+       "comes"
+      ],
+      [
+       "él, ella",
+       "come"
+      ],
+      [
+       "nosotros",
+       "comemos"
+      ],
+      [
+       "vosotros",
+       "coméis"
+      ],
+      [
+       "ellos",
+       "comen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "naranja": {
+    "g": "orange",
+    "t": "noun"
+   },
+   "fresca": {
+    "g": "fresh",
+    "t": "adjective"
+   },
+   "contenta": {
+    "g": "happy, pleased",
+    "t": "adjective"
+   },
+   "manos": {
+    "g": "hands",
+    "t": "noun"
+   }
+  },
+  "ane-trae-mas-pintxos": {
+   "trae": {
+    "g": "to bring",
+    "t": "verb"
+   },
+   "pintxos": {
+    "g": "pintxos (tapas)",
+    "t": "noun"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "pasean": {
+    "g": "they stroll",
+    "t": "verb"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "casco": {
+    "g": "helmet",
+    "t": "noun"
+   },
+   "viejo": {
+    "g": "old",
+    "t": "adjective"
+   },
+   "entre": {
+    "g": "between, among",
+    "t": "preposition"
+   },
+   "calles": {
+    "g": "streets",
+    "t": "noun"
+   },
+   "estrechas": {
+    "g": "narrow",
+    "t": "adjective"
+   },
+   "bonitas": {
+    "g": "pretty",
+    "t": "adjective"
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "muchos": {
+    "g": "many",
+    "t": "adjective"
+   },
+   "bares": {
+    "g": "bars",
+    "t": "noun"
+   },
+   "gente": {
+    "g": "people",
+    "t": "noun"
+   },
+   "habla": {
+    "g": "speaks, talks",
+    "t": "verb"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "mira": {
+    "g": "look, hey",
+    "t": "verb"
+   },
+   "todo": {
+    "g": "all, everything",
+    "t": "pronoun"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "calma": {
+    "g": "calm",
+    "t": "noun"
+   },
+   "pide": {
+    "g": "asks",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "pedir",
+     "rows": [
+      [
+       "yo",
+       "pido"
+      ],
+      [
+       "tú",
+       "pides"
+      ],
+      [
+       "él, ella",
+       "pide"
+      ],
+      [
+       "nosotros",
+       "pedimos"
+      ],
+      [
+       "vosotros",
+       "pedís"
+      ],
+      [
+       "ellos",
+       "piden"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "para": {
+    "g": "for, to",
+    "t": "preposition"
+   },
+   "todos": {
+    "g": "everyone, all",
+    "t": "pronoun"
+   },
+   "son": {
+    "g": "they are",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "sobre": {
+    "g": "about, on",
+    "t": "preposition"
+   },
+   "pan": {
+    "g": "bread",
+    "t": "noun"
+   },
+   "prueba": {
+    "g": "a test",
+    "t": "noun"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "tortilla": {
+    "g": "omelette",
+    "t": "noun"
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "rico": {
+    "g": "rich; tasty",
+    "t": "adjective"
+   },
+   "entonces": {
+    "g": "then, so",
+    "t": "adverb"
+   },
+   "llega": {
+    "g": "arrives",
+    "t": "verb"
+   },
+   "amiga": {
+    "g": "a female friend",
+    "t": "noun"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "llama": {
+    "g": "calls, names",
+    "t": "verb"
+   },
+   "trabaja": {
+    "g": "to work",
+    "t": "verb"
+   },
+   "platos": {
+    "g": "plates, dishes",
+    "t": "noun"
+   },
+   "mesa": {
+    "g": "table",
+    "t": "noun"
+   },
+   "huele": {
+    "g": "smells",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "oler",
+     "rows": [
+      [
+       "yo",
+       "huelo"
+      ],
+      [
+       "tú",
+       "hueles"
+      ],
+      [
+       "él, ella",
+       "huele"
+      ],
+      [
+       "nosotros",
+       "olemos"
+      ],
+      [
+       "vosotros",
+       "oléis"
+      ],
+      [
+       "ellos",
+       "huelen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "bien": {
+    "g": "well, good",
+    "t": "adverb"
+   },
+   "queso": {
+    "g": "cheese",
+    "t": "noun"
+   },
+   "gambas": {
+    "g": "prawns",
+    "t": "noun"
+   },
+   "le": {
+    "g": "to him, her, it",
+    "t": "pronoun"
+   },
+   "gusta": {
+    "g": "likes",
+    "t": "verb"
+   },
+   "mucho": {
+    "g": "a lot, much",
+    "t": "adverb"
+   },
+   "bebe": {
+    "g": "drinks",
+    "t": "verb"
+   },
+   "vaso": {
+    "g": "a glass",
+    "t": "noun"
+   },
+   "sidra": {
+    "g": "cider",
+    "t": "noun"
+   },
+   "agua": {
+    "g": "water",
+    "t": "noun"
+   },
+   "hablan": {
+    "g": "they talk",
+    "t": "verb"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "bar": {
+    "g": "bar",
+    "t": "noun"
+   },
+   "lleno": {
+    "g": "full",
+    "t": "adjective"
+   },
+   "ruido": {
+    "g": "noise",
+    "t": "noun"
+   },
+   "alegre": {
+    "g": "cheerful, happy",
+    "t": "adjective"
+   },
+   "paga": {
+    "g": "pays for",
+    "t": "verb"
+   },
+   "cuenta": {
+    "g": "account; bill",
+    "t": "noun"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "gracias": {
+    "g": "thanks",
+    "t": "expression"
+   },
+   "amigos": {
+    "g": "friends",
+    "t": "noun"
+   },
+   "salen": {
+    "g": "they go out",
+    "t": "verb"
+   },
+   "contentos": {
+    "g": "happy",
+    "t": "adjective"
+   }
+  },
+  "paella-en-la-malvarrosa": {
+   "roba": {
+    "g": "steals",
+    "t": "verb"
+   },
+   "comida": {
+    "g": "food",
+    "t": "noun"
+   },
+   "lleva": {
+    "g": "carries, takes",
+    "t": "verb"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "playa": {
+    "g": "the beach",
+    "t": "noun"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "malvarrosa": {
+    "g": "the Malvarrosa (beach)",
+    "t": "noun"
+   },
+   "famosa": {
+    "g": "famous",
+    "t": "adjective"
+   },
+   "valencia": {
+    "g": "Valencia (city)",
+    "t": "noun"
+   },
+   "hace": {
+    "g": "does, makes; ago",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "hacer",
+     "rows": [
+      [
+       "yo",
+       "hago"
+      ],
+      [
+       "tú",
+       "haces"
+      ],
+      [
+       "él, ella",
+       "hace"
+      ],
+      [
+       "nosotros",
+       "hacemos"
+      ],
+      [
+       "vosotros",
+       "hacéis"
+      ],
+      [
+       "ellos",
+       "hacen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "sol": {
+    "g": "sun",
+    "t": "noun"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "calor": {
+    "g": "heat",
+    "t": "noun"
+   },
+   "arena": {
+    "g": "sand",
+    "t": "noun"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "dorada": {
+    "g": "golden",
+    "t": "adjective"
+   },
+   "caminan": {
+    "g": "walk",
+    "t": "verb"
+   },
+   "cerca": {
+    "g": "near, close",
+    "t": "adverb"
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition"
+   },
+   "mar": {
+    "g": "the sea",
+    "t": "noun"
+   },
+   "agua": {
+    "g": "water",
+    "t": "noun"
+   },
+   "azul": {
+    "g": "blue",
+    "t": "adjective"
+   },
+   "tranquila": {
+    "g": "calm, relax (fem.)",
+    "t": "adjective"
+   },
+   "mete": {
+    "g": "puts her in",
+    "t": "verb"
+   },
+   "pies": {
+    "g": "feet",
+    "t": "noun"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "mucho": {
+    "g": "a lot, much",
+    "t": "adverb"
+   },
+   "entonces": {
+    "g": "then, so",
+    "t": "adverb"
+   },
+   "tiene": {
+    "g": "he/she has",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "tener",
+     "rows": [
+      [
+       "yo",
+       "tengo"
+      ],
+      [
+       "tú",
+       "tienes"
+      ],
+      [
+       "él, ella",
+       "tiene"
+      ],
+      [
+       "nosotros",
+       "tenemos"
+      ],
+      [
+       "vosotros",
+       "tenéis"
+      ],
+      [
+       "ellos",
+       "tienen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "idea": {
+    "g": "idea",
+    "t": "noun"
+   },
+   "vamos": {
+    "g": "we go",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ir",
+     "rows": [
+      [
+       "yo",
+       "voy"
+      ],
+      [
+       "tú",
+       "vas"
+      ],
+      [
+       "él, ella",
+       "va"
+      ],
+      [
+       "nosotros",
+       "vamos"
+      ],
+      [
+       "vosotros",
+       "vais"
+      ],
+      [
+       "ellos",
+       "van"
+      ]
+     ],
+     "here": 3
+    }
+   },
+   "comer": {
+    "g": "to eat",
+    "t": "verb"
+   },
+   "paella": {
+    "g": "paella",
+    "t": "noun"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "al": {
+    "g": "to the",
+    "t": "preposition"
+   },
+   "lado": {
+    "g": "side",
+    "t": "noun"
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "restaurante": {
+    "g": "the restaurant",
+    "t": "noun"
+   },
+   "plato": {
+    "g": "a plate, a dish",
+    "t": "noun"
+   },
+   "camarero": {
+    "g": "a waiter",
+    "t": "noun"
+   },
+   "trae": {
+    "g": "to bring",
+    "t": "verb"
+   },
+   "amarilla": {
+    "g": "yellow",
+    "t": "adjective"
+   },
+   "huele": {
+    "g": "smells",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "oler",
+     "rows": [
+      [
+       "yo",
+       "huelo"
+      ],
+      [
+       "tú",
+       "hueles"
+      ],
+      [
+       "él, ella",
+       "huele"
+      ],
+      [
+       "nosotros",
+       "olemos"
+      ],
+      [
+       "vosotros",
+       "oléis"
+      ],
+      [
+       "ellos",
+       "huelen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "maravilla": {
+    "g": "wonder, marvel",
+    "t": "noun"
+   },
+   "arroz": {
+    "g": "rice",
+    "t": "noun"
+   },
+   "pollo": {
+    "g": "chicken",
+    "t": "noun"
+   },
+   "verduras": {
+    "g": "vegetables",
+    "t": "noun"
+   },
+   "prueba": {
+    "g": "a test",
+    "t": "noun"
+   },
+   "poco": {
+    "g": "little by little (poco a poco)",
+    "t": "adverb"
+   },
+   "levanta": {
+    "g": "lifts, raises",
+    "t": "verb"
+   },
+   "pulgar": {
+    "g": "the thumb",
+    "t": "noun"
+   },
+   "feliz": {
+    "g": "happy",
+    "t": "adjective"
+   },
+   "comen": {
+    "g": "they eat",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comer",
+     "rows": [
+      [
+       "yo",
+       "como"
+      ],
+      [
+       "tú",
+       "comes"
+      ],
+      [
+       "él, ella",
+       "come"
+      ],
+      [
+       "nosotros",
+       "comemos"
+      ],
+      [
+       "vosotros",
+       "coméis"
+      ],
+      [
+       "ellos",
+       "comen"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "despacio": {
+    "g": "slowly",
+    "t": "adverb"
+   },
+   "suena": {
+    "g": "to sound",
+    "t": "verb"
+   },
+   "repente": {
+    "g": "suddenly (de repente)",
+    "t": "noun"
+   },
+   "gamba": {
+    "g": "a prawn",
+    "t": "noun"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   }
+  },
+  "la-boqueria-huele-a-fruta": {
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "huele": {
+    "g": "smells",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "oler",
+     "rows": [
+      [
+       "yo",
+       "huelo"
+      ],
+      [
+       "tú",
+       "hueles"
+      ],
+      [
+       "él, ella",
+       "huele"
+      ],
+      [
+       "nosotros",
+       "olemos"
+      ],
+      [
+       "vosotros",
+       "oléis"
+      ],
+      [
+       "ellos",
+       "huelen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "fruta": {
+    "g": "fruit",
+    "t": "noun"
+   },
+   "llena": {
+    "g": "full",
+    "t": "adjective"
+   },
+   "bolsa": {
+    "g": "bag",
+    "t": "noun"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "naranjas": {
+    "g": "oranges",
+    "t": "noun"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "mira": {
+    "g": "look, hey",
+    "t": "verb"
+   },
+   "paradas": {
+    "g": "the market stalls",
+    "t": "noun"
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition"
+   },
+   "mercado": {
+    "g": "the market",
+    "t": "noun"
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "muchos": {
+    "g": "many",
+    "t": "adjective"
+   },
+   "colores": {
+    "g": "colors",
+    "t": "noun"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "todo": {
+    "g": "all, everything",
+    "t": "pronoun"
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "bien": {
+    "g": "well, good",
+    "t": "adverb"
+   },
+   "al": {
+    "g": "to the",
+    "t": "preposition"
+   },
+   "lado": {
+    "g": "side",
+    "t": "noun"
+   },
+   "puerta": {
+    "g": "door",
+    "t": "noun"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "vende": {
+    "g": "sells",
+    "t": "verb"
+   },
+   "fresas": {
+    "g": "posh, snobby",
+    "t": "adjective"
+   },
+   "rojas": {
+    "g": "red flags (banderas rojas)",
+    "t": "adjective"
+   },
+   "compra": {
+    "g": "buys, purchase",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comprar",
+     "rows": [
+      [
+       "yo",
+       "compro"
+      ],
+      [
+       "tú",
+       "compras"
+      ],
+      [
+       "él, ella",
+       "compra"
+      ],
+      [
+       "nosotros",
+       "compramos"
+      ],
+      [
+       "vosotros",
+       "compráis"
+      ],
+      [
+       "ellos",
+       "compran"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "poco": {
+    "g": "little by little (poco a poco)",
+    "t": "adverb"
+   },
+   "da": {
+    "g": "he turns over",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "dar",
+     "rows": [
+      [
+       "yo",
+       "doy"
+      ],
+      [
+       "tú",
+       "das"
+      ],
+      [
+       "él, ella",
+       "da"
+      ],
+      [
+       "nosotros",
+       "damos"
+      ],
+      [
+       "vosotros",
+       "dais"
+      ],
+      [
+       "ellos",
+       "dan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "fresa": {
+    "g": "preppy, snobby (Mexican)",
+    "t": "adjective"
+   },
+   "prueba": {
+    "g": "a test",
+    "t": "noun"
+   },
+   "dulce": {
+    "g": "sweet",
+    "t": "adjective"
+   },
+   "abre": {
+    "g": "opens, whets",
+    "t": "verb"
+   },
+   "ojos": {
+    "g": "eyes",
+    "t": "noun"
+   },
+   "cerca": {
+    "g": "near, close",
+    "t": "adverb"
+   },
+   "pan": {
+    "g": "bread",
+    "t": "noun"
+   },
+   "fresco": {
+    "g": "fresh; cheeky",
+    "t": "adjective"
+   },
+   "corta": {
+    "g": "he cuts (the engine)",
+    "t": "verb"
+   },
+   "trozo": {
+    "g": "a piece",
+    "t": "noun"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "tomate": {
+    "g": "tomato",
+    "t": "noun"
+   },
+   "come": {
+    "g": "eats",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comer",
+     "rows": [
+      [
+       "yo",
+       "como"
+      ],
+      [
+       "tú",
+       "comes"
+      ],
+      [
+       "él, ella",
+       "come"
+      ],
+      [
+       "nosotros",
+       "comemos"
+      ],
+      [
+       "vosotros",
+       "coméis"
+      ],
+      [
+       "ellos",
+       "comen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "despacio": {
+    "g": "slowly",
+    "t": "adverb"
+   },
+   "porque": {
+    "g": "because",
+    "t": "conjunction"
+   },
+   "sabor": {
+    "g": "flavor, taste",
+    "t": "noun"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "nuevo": {
+    "g": "new",
+    "t": "adjective"
+   },
+   "para": {
+    "g": "for, to",
+    "t": "preposition"
+   },
+   "ella": {
+    "g": "she",
+    "t": "pronoun"
+   },
+   "siguen": {
+    "g": "they go on",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "seguir",
+     "rows": [
+      [
+       "yo",
+       "sigo"
+      ],
+      [
+       "tú",
+       "sigues"
+      ],
+      [
+       "él, ella",
+       "sigue"
+      ],
+      [
+       "nosotros",
+       "seguimos"
+      ],
+      [
+       "vosotros",
+       "seguís"
+      ],
+      [
+       "ellos",
+       "siguen"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "entre": {
+    "g": "between, among",
+    "t": "preposition"
+   },
+   "hombre": {
+    "g": "man",
+    "t": "noun"
+   },
+   "flores": {
+    "g": "flowers",
+    "t": "noun"
+   },
+   "otro": {
+    "g": "another, other",
+    "t": "adjective"
+   },
+   "pescado": {
+    "g": "the fish",
+    "t": "noun"
+   },
+   "queso": {
+    "g": "cheese",
+    "t": "noun"
+   },
+   "fuerte": {
+    "g": "loud, strong",
+    "t": "adjective"
+   },
+   "final": {
+    "g": "final, ending",
+    "t": "noun"
+   },
+   "paga": {
+    "g": "pays for",
+    "t": "verb"
+   },
+   "guarda": {
+    "g": "keeps, guards",
+    "t": "verb"
+   },
+   "salen": {
+    "g": "they go out",
+    "t": "verb"
+   },
+   "ramblas": {
+    "g": "Las Ramblas (street)",
+    "t": "noun"
+   },
+   "mucha": {
+    "g": "a lot of",
+    "t": "adjective"
+   },
+   "gente": {
+    "g": "people",
+    "t": "noun"
+   },
+   "calle": {
+    "g": "street",
+    "t": "noun"
+   },
+   "pone": {
+    "g": "puts",
+    "t": "verb"
+   },
+   "naranja": {
+    "g": "orange",
+    "t": "noun"
+   },
+   "mano": {
+    "g": "hand; bro, dude",
+    "t": "noun"
+   }
+  },
+  "un-funicular-hasta-igueldo": {
+   "funicular": {
+    "g": "a funicular",
+    "t": "noun"
+   },
+   "hasta": {
+    "g": "until, even",
+    "t": "preposition"
+   },
+   "igueldo": {
+    "g": "Igueldo (hill)",
+    "t": "noun"
+   },
+   "tiene": {
+    "g": "he/she has",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "tener",
+     "rows": [
+      [
+       "yo",
+       "tengo"
+      ],
+      [
+       "tú",
+       "tienes"
+      ],
+      [
+       "él, ella",
+       "tiene"
+      ],
+      [
+       "nosotros",
+       "tenemos"
+      ],
+      [
+       "vosotros",
+       "tenéis"
+      ],
+      [
+       "ellos",
+       "tienen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "plan": {
+    "g": "plan",
+    "t": "noun"
+   },
+   "nuevo": {
+    "g": "new",
+    "t": "adjective"
+   },
+   "hoy": {
+    "g": "today",
+    "t": "adverb"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "suben": {
+    "g": "to go up",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "subir",
+     "rows": [
+      [
+       "yo",
+       "subo"
+      ],
+      [
+       "tú",
+       "subes"
+      ],
+      [
+       "él, ella",
+       "sube"
+      ],
+      [
+       "nosotros",
+       "subimos"
+      ],
+      [
+       "vosotros",
+       "subís"
+      ],
+      [
+       "ellos",
+       "suben"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "al": {
+    "g": "to the",
+    "t": "preposition"
+   },
+   "monte": {
+    "g": "hill, bush",
+    "t": "noun"
+   },
+   "lleva": {
+    "g": "carries, takes",
+    "t": "verb"
+   },
+   "arriba": {
+    "g": "up, above",
+    "t": "adverb"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "siente": {
+    "g": "to feel",
+    "t": "verb"
+   },
+   "poco": {
+    "g": "little by little (poco a poco)",
+    "t": "adverb"
+   },
+   "nerviosa": {
+    "g": "nervous",
+    "t": "adjective"
+   },
+   "pero": {
+    "g": "but",
+    "t": "conjunction"
+   },
+   "va": {
+    "g": "he/she goes",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ir",
+     "rows": [
+      [
+       "yo",
+       "voy"
+      ],
+      [
+       "tú",
+       "vas"
+      ],
+      [
+       "él, ella",
+       "va"
+      ],
+      [
+       "nosotros",
+       "vamos"
+      ],
+      [
+       "vosotros",
+       "vais"
+      ],
+      [
+       "ellos",
+       "van"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "tranquilo": {
+    "g": "calm, chill",
+    "t": "adjective"
+   },
+   "sube": {
+    "g": "goes up, climbs",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "subir",
+     "rows": [
+      [
+       "yo",
+       "subo"
+      ],
+      [
+       "tú",
+       "subes"
+      ],
+      [
+       "él, ella",
+       "sube"
+      ],
+      [
+       "nosotros",
+       "subimos"
+      ],
+      [
+       "vosotros",
+       "subís"
+      ],
+      [
+       "ellos",
+       "suben"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "despacio": {
+    "g": "slowly",
+    "t": "adverb"
+   },
+   "mira": {
+    "g": "look, hey",
+    "t": "verb"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "ventana": {
+    "g": "window",
+    "t": "noun"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "enorme": {
+    "g": "huge, enormous",
+    "t": "adjective"
+   },
+   "playa": {
+    "g": "the beach",
+    "t": "noun"
+   },
+   "parece": {
+    "g": "seems",
+    "t": "verb"
+   },
+   "desde": {
+    "g": "since, from",
+    "t": "preposition"
+   },
+   "abre": {
+    "g": "opens, whets",
+    "t": "verb"
+   },
+   "mucho": {
+    "g": "a lot, much",
+    "t": "adverb"
+   },
+   "ojos": {
+    "g": "eyes",
+    "t": "noun"
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "parque": {
+    "g": "park",
+    "t": "noun"
+   },
+   "antiguo": {
+    "g": "old, former",
+    "t": "adjective"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "atracciones": {
+    "g": "rides",
+    "t": "noun"
+   },
+   "luces": {
+    "g": "lights",
+    "t": "noun"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "colores": {
+    "g": "colors",
+    "t": "noun"
+   },
+   "viento": {
+    "g": "wind",
+    "t": "noun"
+   },
+   "fuerte": {
+    "g": "loud, strong",
+    "t": "adjective"
+   },
+   "ya": {
+    "g": "already, now",
+    "t": "adverb"
+   },
+   "no": {
+    "g": "no, not",
+    "t": "adverb"
+   },
+   "ahora": {
+    "g": "now",
+    "t": "adverb"
+   },
+   "ella": {
+    "g": "she",
+    "t": "pronoun"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "mar": {
+    "g": "the sea",
+    "t": "noun"
+   },
+   "sol": {
+    "g": "sun",
+    "t": "noun"
+   },
+   "baja": {
+    "g": "goes down, lowers",
+    "t": "verb"
+   },
+   "cielo": {
+    "g": "to protest loudly (pegar el grito al cielo)",
+    "t": "noun"
+   },
+   "vuelve": {
+    "g": "returns, comes back",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "volver",
+     "rows": [
+      [
+       "yo",
+       "vuelvo"
+      ],
+      [
+       "tú",
+       "vuelves"
+      ],
+      [
+       "él, ella",
+       "vuelve"
+      ],
+      [
+       "nosotros",
+       "volvemos"
+      ],
+      [
+       "vosotros",
+       "volvéis"
+      ],
+      [
+       "ellos",
+       "vuelven"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "naranja": {
+    "g": "orange",
+    "t": "noun"
+   },
+   "saca": {
+    "g": "takes out, pulls out",
+    "t": "verb"
+   },
+   "hace": {
+    "g": "does, makes; ago",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "hacer",
+     "rows": [
+      [
+       "yo",
+       "hago"
+      ],
+      [
+       "tú",
+       "haces"
+      ],
+      [
+       "él, ella",
+       "hace"
+      ],
+      [
+       "nosotros",
+       "hacemos"
+      ],
+      [
+       "vosotros",
+       "hacéis"
+      ],
+      [
+       "ellos",
+       "hacen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "foto": {
+    "g": "photo",
+    "t": "noun"
+   },
+   "bajan": {
+    "g": "get off, get down",
+    "t": "verb"
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition"
+   },
+   "para": {
+    "g": "for, to",
+    "t": "preposition"
+   },
+   "este": {
+    "g": "this (one); um",
+    "t": "pronoun"
+   },
+   "lugar": {
+    "g": "instead of (en lugar de)",
+    "t": "noun"
+   },
+   "mejor": {
+    "g": "better, best",
+    "t": "adjective"
+   },
+   "acuerdo": {
+    "g": "agreement",
+    "t": "noun"
+   },
+   "genial": {
+    "g": "great",
+    "t": "adjective"
+   }
+  },
+  "la-ciudad-de-las-artes": {
+   "luces": {
+    "g": "lights",
+    "t": "noun"
+   },
+   "sobre": {
+    "g": "about, on",
+    "t": "preposition"
+   },
+   "agua": {
+    "g": "water",
+    "t": "noun"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "visitan": {
+    "g": "they visit",
+    "t": "verb"
+   },
+   "lugar": {
+    "g": "instead of (en lugar de)",
+    "t": "noun"
+   },
+   "especial": {
+    "g": "special",
+    "t": "adjective"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "llama": {
+    "g": "calls, names",
+    "t": "verb"
+   },
+   "ciudad": {
+    "g": "city",
+    "t": "noun"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "artes": {
+    "g": "arts",
+    "t": "noun"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "valencia": {
+    "g": "Valencia (city)",
+    "t": "noun"
+   },
+   "edificios": {
+    "g": "buildings",
+    "t": "noun"
+   },
+   "son": {
+    "g": "they are",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "blancos": {
+    "g": "white",
+    "t": "adjective"
+   },
+   "modernos": {
+    "g": "modern",
+    "t": "adjective"
+   },
+   "todo": {
+    "g": "all, everything",
+    "t": "pronoun"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "alto": {
+    "g": "tall",
+    "t": "adjective"
+   },
+   "mira": {
+    "g": "look, hey",
+    "t": "verb"
+   },
+   "azul": {
+    "g": "blue",
+    "t": "adjective"
+   },
+   "alrededor": {
+    "g": "around",
+    "t": "adverb"
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "muchas": {
+    "g": "many",
+    "t": "determiner"
+   },
+   "fuentes": {
+    "g": "fountains",
+    "t": "noun"
+   },
+   "cielo": {
+    "g": "to protest loudly (pegar el grito al cielo)",
+    "t": "noun"
+   },
+   "claro": {
+    "g": "clear",
+    "t": "adjective"
+   },
+   "limpio": {
+    "g": "clean",
+    "t": "adjective"
+   },
+   "luz": {
+    "g": "the light",
+    "t": "noun"
+   },
+   "bonita": {
+    "g": "pretty",
+    "t": "adjective"
+   },
+   "sorprendida": {
+    "g": "surprised",
+    "t": "adjective"
+   },
+   "entonces": {
+    "g": "then, so",
+    "t": "adverb"
+   },
+   "llega": {
+    "g": "arrives",
+    "t": "verb"
+   },
+   "rosa": {
+    "g": "pink",
+    "t": "adjective"
+   },
+   "hermana": {
+    "g": "sister",
+    "t": "noun"
+   },
+   "bici": {
+    "g": "a bike",
+    "t": "noun"
+   },
+   "hola": {
+    "g": "hello",
+    "t": "interjection"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "sonrisa": {
+    "g": "smile",
+    "t": "noun"
+   },
+   "caminan": {
+    "g": "walk",
+    "t": "verb"
+   },
+   "juntos": {
+    "g": "together",
+    "t": "adjective"
+   },
+   "conoce": {
+    "g": "it knows you",
+    "t": "verb"
+   },
+   "bien": {
+    "g": "well, good",
+    "t": "adverb"
+   },
+   "entran": {
+    "g": "come in",
+    "t": "verb"
+   },
+   "edificio": {
+    "g": "building",
+    "t": "noun"
+   },
+   "dentro": {
+    "g": "inside",
+    "t": "adverb"
+   },
+   "peces": {
+    "g": "fish",
+    "t": "noun"
+   },
+   "muchos": {
+    "g": "many",
+    "t": "adjective"
+   },
+   "colores": {
+    "g": "colors",
+    "t": "noun"
+   },
+   "pez": {
+    "g": "a fish",
+    "t": "noun"
+   },
+   "naranja": {
+    "g": "orange",
+    "t": "noun"
+   },
+   "bonito": {
+    "g": "pretty, nice",
+    "t": "adjective"
+   },
+   "despacio": {
+    "g": "slowly",
+    "t": "adverb"
+   },
+   "toca": {
+    "g": "touches, has to",
+    "t": "verb"
+   },
+   "cristal": {
+    "g": "the glass",
+    "t": "noun"
+   },
+   "dedo": {
+    "g": "a finger",
+    "t": "noun"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "noche": {
+    "g": "night",
+    "t": "noun"
+   },
+   "encienden": {
+    "g": "turn on",
+    "t": "verb"
+   },
+   "brilla": {
+    "g": "shines",
+    "t": "verb"
+   },
+   "mucho": {
+    "g": "a lot, much",
+    "t": "adverb"
+   },
+   "parte": {
+    "g": "part",
+    "t": "noun"
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition"
+   },
+   "queda": {
+    "g": "stays, remains",
+    "t": "verb"
+   },
+   "poco": {
+    "g": "little by little (poco a poco)",
+    "t": "adverb"
+   },
+   "oscura": {
+    "g": "dark",
+    "t": "adjective"
+   },
+   "vuelven": {
+    "g": "to return",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "volver",
+     "rows": [
+      [
+       "yo",
+       "vuelvo"
+      ],
+      [
+       "tú",
+       "vuelves"
+      ],
+      [
+       "él, ella",
+       "vuelve"
+      ],
+      [
+       "nosotros",
+       "volvemos"
+      ],
+      [
+       "vosotros",
+       "volvéis"
+      ],
+      [
+       "ellos",
+       "vuelven"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "casa": {
+    "g": "house, home",
+    "t": "noun"
+   }
+  },
+  "lucia-mira-la-sagrada-familia": {
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "mira": {
+    "g": "look, hey",
+    "t": "verb"
+   },
+   "sagrada": {
+    "g": "sacred",
+    "t": "adjective"
+   },
+   "familia": {
+    "g": "family",
+    "t": "noun"
+   },
+   "sale": {
+    "g": "goes out; okay",
+    "t": "verb"
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition"
+   },
+   "metro": {
+    "g": "the subway",
+    "t": "noun"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "levanta": {
+    "g": "lifts, raises",
+    "t": "verb"
+   },
+   "cabeza": {
+    "g": "head",
+    "t": "noun"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "ve": {
+    "g": "sees, goes",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ver",
+     "rows": [
+      [
+       "yo",
+       "veo"
+      ],
+      [
+       "tú",
+       "ves"
+      ],
+      [
+       "él, ella",
+       "ve"
+      ],
+      [
+       "nosotros",
+       "vemos"
+      ],
+      [
+       "vosotros",
+       "veis"
+      ],
+      [
+       "ellos",
+       "ven"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "iglesia": {
+    "g": "the church",
+    "t": "noun"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "alta": {
+    "g": "tall, high",
+    "t": "adjective"
+   },
+   "sus": {
+    "g": "his, her, their (plural)",
+    "t": "pronoun"
+   },
+   "torres": {
+    "g": "towers",
+    "t": "noun"
+   },
+   "suben": {
+    "g": "to go up",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "subir",
+     "rows": [
+      [
+       "yo",
+       "subo"
+      ],
+      [
+       "tú",
+       "subes"
+      ],
+      [
+       "él, ella",
+       "sube"
+      ],
+      [
+       "nosotros",
+       "subimos"
+      ],
+      [
+       "vosotros",
+       "subís"
+      ],
+      [
+       "ellos",
+       "suben"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "hasta": {
+    "g": "until, even",
+    "t": "preposition"
+   },
+   "cielo": {
+    "g": "to protest loudly (pegar el grito al cielo)",
+    "t": "noun"
+   },
+   "le": {
+    "g": "to him, her, it",
+    "t": "pronoun"
+   },
+   "cuenta": {
+    "g": "account; bill",
+    "t": "noun"
+   },
+   "historia": {
+    "g": "story, history",
+    "t": "noun"
+   },
+   "arquitecto": {
+    "g": "an architect",
+    "t": "noun"
+   },
+   "empieza": {
+    "g": "begins",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "empezar",
+     "rows": [
+      [
+       "yo",
+       "empiezo"
+      ],
+      [
+       "tú",
+       "empiezas"
+      ],
+      [
+       "él, ella",
+       "empieza"
+      ],
+      [
+       "nosotros",
+       "empezamos"
+      ],
+      [
+       "vosotros",
+       "empezáis"
+      ],
+      [
+       "ellos",
+       "empiezan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "mucho": {
+    "g": "a lot, much",
+    "t": "adverb"
+   },
+   "tiempo": {
+    "g": "time, weather",
+    "t": "noun"
+   },
+   "no": {
+    "g": "no, not",
+    "t": "adverb"
+   },
+   "terminada": {
+    "g": "finished",
+    "t": "adjective"
+   },
+   "que": {
+    "g": "that",
+    "t": "conjunction"
+   },
+   "cada": {
+    "g": "each, every",
+    "t": "adjective"
+   },
+   "llegan": {
+    "g": "they arrive",
+    "t": "verb"
+   },
+   "obreros": {
+    "g": "workers",
+    "t": "noun"
+   },
+   "al": {
+    "g": "to the",
+    "t": "preposition"
+   },
+   "lugar": {
+    "g": "instead of (en lugar de)",
+    "t": "noun"
+   },
+   "pasan": {
+    "g": "they pass, happen",
+    "t": "verb"
+   },
+   "puerta": {
+    "g": "door",
+    "t": "noun"
+   },
+   "calma": {
+    "g": "calm",
+    "t": "noun"
+   },
+   "dentro": {
+    "g": "inside",
+    "t": "adverb"
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "mucha": {
+    "g": "a lot of",
+    "t": "adjective"
+   },
+   "luz": {
+    "g": "the light",
+    "t": "noun"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "colores": {
+    "g": "colors",
+    "t": "noun"
+   },
+   "ventanas": {
+    "g": "the windows",
+    "t": "noun"
+   },
+   "parecen": {
+    "g": "seem",
+    "t": "verb"
+   },
+   "flores": {
+    "g": "flowers",
+    "t": "noun"
+   },
+   "grandes": {
+    "g": "big",
+    "t": "adjective"
+   },
+   "abre": {
+    "g": "opens, whets",
+    "t": "verb"
+   },
+   "boca": {
+    "g": "mouth",
+    "t": "noun"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "sorpresa": {
+    "g": "surprise",
+    "t": "noun"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "columnas": {
+    "g": "the columns",
+    "t": "noun"
+   },
+   "centro": {
+    "g": "the town center, downtown",
+    "t": "noun"
+   },
+   "piedra": {
+    "g": "stone",
+    "t": "noun"
+   },
+   "gente": {
+    "g": "people",
+    "t": "noun"
+   },
+   "habla": {
+    "g": "speaks, talks",
+    "t": "verb"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "voz": {
+    "g": "voice",
+    "t": "noun"
+   },
+   "baja": {
+    "g": "goes down, lowers",
+    "t": "verb"
+   },
+   "todos": {
+    "g": "everyone, all",
+    "t": "pronoun"
+   },
+   "miran": {
+    "g": "they look at",
+    "t": "verb"
+   },
+   "hacia": {
+    "g": "toward",
+    "t": "preposition"
+   },
+   "arriba": {
+    "g": "up, above",
+    "t": "adverb"
+   },
+   "quiere": {
+    "g": "wants",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "querer",
+     "rows": [
+      [
+       "yo",
+       "quiero"
+      ],
+      [
+       "tú",
+       "quieres"
+      ],
+      [
+       "él, ella",
+       "quiere"
+      ],
+      [
+       "nosotros",
+       "queremos"
+      ],
+      [
+       "vosotros",
+       "queréis"
+      ],
+      [
+       "ellos",
+       "quieren"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "recordar": {
+    "g": "to remember",
+    "t": "verb"
+   },
+   "este": {
+    "g": "this (one); um",
+    "t": "pronoun"
+   },
+   "para": {
+    "g": "for, to",
+    "t": "preposition"
+   },
+   "siempre": {
+    "g": "always",
+    "t": "adverb"
+   },
+   "da": {
+    "g": "he turns over",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "dar",
+     "rows": [
+      [
+       "yo",
+       "doy"
+      ],
+      [
+       "tú",
+       "das"
+      ],
+      [
+       "él, ella",
+       "da"
+      ],
+      [
+       "nosotros",
+       "damos"
+      ],
+      [
+       "vosotros",
+       "dais"
+      ],
+      [
+       "ellos",
+       "dan"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "mano": {
+    "g": "hand; bro, dude",
+    "t": "noun"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "bajan": {
+    "g": "get off, get down",
+    "t": "verb"
+   },
+   "escaleras": {
+    "g": "stairs",
+    "t": "noun"
+   },
+   "poco": {
+    "g": "little by little (poco a poco)",
+    "t": "adverb"
+   },
+   "afuera": {
+    "g": "outside",
+    "t": "adverb"
+   },
+   "barcelona": {
+    "g": "Barcelona (city)",
+    "t": "noun"
+   },
+   "sigue": {
+    "g": "is still there",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "seguir",
+     "rows": [
+      [
+       "yo",
+       "sigo"
+      ],
+      [
+       "tú",
+       "sigues"
+      ],
+      [
+       "él, ella",
+       "sigue"
+      ],
+      [
+       "nosotros",
+       "seguimos"
+      ],
+      [
+       "vosotros",
+       "seguís"
+      ],
+      [
+       "ellos",
+       "siguen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "llena": {
+    "g": "full",
+    "t": "adjective"
+   }
+  },
+  "la-nieve-de-sierra-nevada": {
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "toca": {
+    "g": "touches, has to",
+    "t": "verb"
+   },
+   "nieve": {
+    "g": "the snow",
+    "t": "noun"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "toman": {
+    "g": "they have",
+    "t": "verb"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "mira": {
+    "g": "look, hey",
+    "t": "verb"
+   },
+   "ventana": {
+    "g": "window",
+    "t": "noun"
+   },
+   "lo": {
+    "g": "it, him",
+    "t": "pronoun"
+   },
+   "lejos": {
+    "g": "far",
+    "t": "adverb"
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "altas": {
+    "g": "high",
+    "t": "adjective"
+   },
+   "explica": {
+    "g": "explains",
+    "t": "verb"
+   },
+   "algo": {
+    "g": "something",
+    "t": "pronoun"
+   },
+   "importante": {
+    "g": "important",
+    "t": "adjective"
+   },
+   "esas": {
+    "g": "those",
+    "t": "pronoun"
+   },
+   "son": {
+    "g": "they are",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "sierra": {
+    "g": "mountain range",
+    "t": "noun"
+   },
+   "nevada": {
+    "g": "Nevada (mountains)",
+    "t": "noun"
+   },
+   "entonces": {
+    "g": "then, so",
+    "t": "adverb"
+   },
+   "propone": {
+    "g": "proposes",
+    "t": "verb"
+   },
+   "plan": {
+    "g": "plan",
+    "t": "noun"
+   },
+   "bonito": {
+    "g": "pretty, nice",
+    "t": "adjective"
+   },
+   "vamos": {
+    "g": "we go",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ir",
+     "rows": [
+      [
+       "yo",
+       "voy"
+      ],
+      [
+       "tú",
+       "vas"
+      ],
+      [
+       "él, ella",
+       "va"
+      ],
+      [
+       "nosotros",
+       "vamos"
+      ],
+      [
+       "vosotros",
+       "vais"
+      ],
+      [
+       "ellos",
+       "van"
+      ]
+     ],
+     "here": 3
+    }
+   },
+   "ver": {
+    "g": "to see",
+    "t": "verb"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "nunca": {
+    "g": "never",
+    "t": "adverb"
+   },
+   "ve": {
+    "g": "sees, goes",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ver",
+     "rows": [
+      [
+       "yo",
+       "veo"
+      ],
+      [
+       "tú",
+       "ves"
+      ],
+      [
+       "él, ella",
+       "ve"
+      ],
+      [
+       "nosotros",
+       "vemos"
+      ],
+      [
+       "vosotros",
+       "veis"
+      ],
+      [
+       "ellos",
+       "ven"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "su": {
+    "g": "his, her, their",
+    "t": "pronoun"
+   },
+   "que": {
+    "g": "that",
+    "t": "conjunction"
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "emocionada": {
+    "g": "excited",
+    "t": "adjective"
+   },
+   "preparan": {
+    "g": "they prepare",
+    "t": "verb"
+   },
+   "ropa": {
+    "g": "clothes",
+    "t": "noun"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "abrigo": {
+    "g": "warm clothing",
+    "t": "noun"
+   },
+   "sube": {
+    "g": "goes up, climbs",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "subir",
+     "rows": [
+      [
+       "yo",
+       "subo"
+      ],
+      [
+       "tú",
+       "subes"
+      ],
+      [
+       "él, ella",
+       "sube"
+      ],
+      [
+       "nosotros",
+       "subimos"
+      ],
+      [
+       "vosotros",
+       "subís"
+      ],
+      [
+       "ellos",
+       "suben"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "carretera": {
+    "g": "the road",
+    "t": "noun"
+   },
+   "viaje": {
+    "g": "trip, journey",
+    "t": "noun"
+   },
+   "dura": {
+    "g": "hard, tough; lasts",
+    "t": "adjective"
+   },
+   "hora": {
+    "g": "hour, time",
+    "t": "noun"
+   },
+   "fuera": {
+    "g": "outside; were",
+    "t": "adverb"
+   },
+   "hace": {
+    "g": "does, makes; ago",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "hacer",
+     "rows": [
+      [
+       "yo",
+       "hago"
+      ],
+      [
+       "tú",
+       "haces"
+      ],
+      [
+       "él, ella",
+       "hace"
+      ],
+      [
+       "nosotros",
+       "hacemos"
+      ],
+      [
+       "vosotros",
+       "hacéis"
+      ],
+      [
+       "ellos",
+       "hacen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "mucho": {
+    "g": "a lot, much",
+    "t": "adverb"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "pone": {
+    "g": "puts",
+    "t": "verb"
+   },
+   "gorro": {
+    "g": "a hat",
+    "t": "noun"
+   },
+   "guantes": {
+    "g": "gloves",
+    "t": "noun"
+   },
+   "lleva": {
+    "g": "carries, takes",
+    "t": "verb"
+   },
+   "bufanda": {
+    "g": "a scarf",
+    "t": "noun"
+   },
+   "gruesa": {
+    "g": "thick",
+    "t": "adjective"
+   },
+   "al": {
+    "g": "to the",
+    "t": "preposition"
+   },
+   "final": {
+    "g": "final, ending",
+    "t": "noun"
+   },
+   "llegan": {
+    "g": "they arrive",
+    "t": "verb"
+   },
+   "todo": {
+    "g": "all, everything",
+    "t": "pronoun"
+   },
+   "blanco": {
+    "g": "the target of teasing",
+    "t": "noun"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "manos": {
+    "g": "hands",
+    "t": "noun"
+   },
+   "suave": {
+    "g": "soft",
+    "t": "adjective"
+   },
+   "ella": {
+    "g": "she",
+    "t": "pronoun"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "bola": {
+    "g": "the gang, group of friends",
+    "t": "noun"
+   },
+   "blanca": {
+    "g": "white, pale",
+    "t": "adjective"
+   },
+   "juegan": {
+    "g": "they play",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "jugar",
+     "rows": [
+      [
+       "yo",
+       "juego"
+      ],
+      [
+       "tú",
+       "juegas"
+      ],
+      [
+       "él, ella",
+       "juega"
+      ],
+      [
+       "nosotros",
+       "jugamos"
+      ],
+      [
+       "vosotros",
+       "jugáis"
+      ],
+      [
+       "ellos",
+       "juegan"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "rato": {
+    "g": "a while",
+    "t": "noun"
+   },
+   "tarde": {
+    "g": "afternoon, late",
+    "t": "noun"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "bonita": {
+    "g": "pretty",
+    "t": "adjective"
+   },
+   "guarda": {
+    "g": "keeps, guards",
+    "t": "verb"
+   },
+   "este": {
+    "g": "this (one); um",
+    "t": "pronoun"
+   },
+   "recuerdo": {
+    "g": "a memory",
+    "t": "noun"
+   },
+   "sonrisa": {
+    "g": "smile",
+    "t": "noun"
+   }
+  },
+  "triana-y-su-ceramica-azul": {
+   "triana": {
+    "g": "Triana (neighborhood)",
+    "t": "noun"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "su": {
+    "g": "his, her, their",
+    "t": "pronoun"
+   },
+   "azul": {
+    "g": "blue",
+    "t": "adjective"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "cruza": {
+    "g": "crosses",
+    "t": "verb"
+   },
+   "puente": {
+    "g": "the bridge",
+    "t": "noun"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "tarde": {
+    "g": "afternoon, late",
+    "t": "noun"
+   },
+   "van": {
+    "g": "to go",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ir",
+     "rows": [
+      [
+       "yo",
+       "voy"
+      ],
+      [
+       "tú",
+       "vas"
+      ],
+      [
+       "él, ella",
+       "va"
+      ],
+      [
+       "nosotros",
+       "vamos"
+      ],
+      [
+       "vosotros",
+       "vais"
+      ],
+      [
+       "ellos",
+       "van"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "al": {
+    "g": "to the",
+    "t": "preposition"
+   },
+   "barrio": {
+    "g": "neighborhood",
+    "t": "noun"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "conoce": {
+    "g": "it knows you",
+    "t": "verb"
+   },
+   "cada": {
+    "g": "each, every",
+    "t": "adjective"
+   },
+   "calle": {
+    "g": "street",
+    "t": "noun"
+   },
+   "guadalquivir": {
+    "g": "the Guadalquivir (river)",
+    "t": "noun"
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "tranquilo": {
+    "g": "calm, chill",
+    "t": "adjective"
+   },
+   "barco": {
+    "g": "a boat",
+    "t": "noun"
+   },
+   "pasa": {
+    "g": "happens, passes",
+    "t": "verb"
+   },
+   "despacio": {
+    "g": "slowly",
+    "t": "adverb"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "agua": {
+    "g": "water",
+    "t": "noun"
+   },
+   "entran": {
+    "g": "come in",
+    "t": "verb"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "tienda": {
+    "g": "a shop",
+    "t": "noun"
+   },
+   "vende": {
+    "g": "sells",
+    "t": "verb"
+   },
+   "platos": {
+    "g": "plates, dishes",
+    "t": "noun"
+   },
+   "tienen": {
+    "g": "they have",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "tener",
+     "rows": [
+      [
+       "yo",
+       "tengo"
+      ],
+      [
+       "tú",
+       "tienes"
+      ],
+      [
+       "él, ella",
+       "tiene"
+      ],
+      [
+       "nosotros",
+       "tenemos"
+      ],
+      [
+       "vosotros",
+       "tenéis"
+      ],
+      [
+       "ellos",
+       "tienen"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "muchos": {
+    "g": "many",
+    "t": "adjective"
+   },
+   "colores": {
+    "g": "colors",
+    "t": "noun"
+   },
+   "bonitos": {
+    "g": "pretty",
+    "t": "adjective"
+   },
+   "compra": {
+    "g": "buys, purchase",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comprar",
+     "rows": [
+      [
+       "yo",
+       "compro"
+      ],
+      [
+       "tú",
+       "compras"
+      ],
+      [
+       "él, ella",
+       "compra"
+      ],
+      [
+       "nosotros",
+       "compramos"
+      ],
+      [
+       "vosotros",
+       "compráis"
+      ],
+      [
+       "ellos",
+       "compran"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "para": {
+    "g": "for, to",
+    "t": "preposition"
+   },
+   "madre": {
+    "g": "the mother",
+    "t": "noun"
+   },
+   "taza": {
+    "g": "cup, mug",
+    "t": "noun"
+   },
+   "salen": {
+    "g": "they go out",
+    "t": "verb"
+   },
+   "otra": {
+    "g": "another (fem.)",
+    "t": "adjective"
+   },
+   "vez": {
+    "g": "time, occasion",
+    "t": "noun"
+   },
+   "cielo": {
+    "g": "to protest loudly (pegar el grito al cielo)",
+    "t": "noun"
+   },
+   "naranja": {
+    "g": "orange",
+    "t": "noun"
+   },
+   "rosa": {
+    "g": "pink",
+    "t": "adjective"
+   },
+   "gente": {
+    "g": "people",
+    "t": "noun"
+   },
+   "pasea": {
+    "g": "strolls",
+    "t": "verb"
+   },
+   "habla": {
+    "g": "speaks, talks",
+    "t": "verb"
+   },
+   "cerca": {
+    "g": "near, close",
+    "t": "adverb"
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "flores": {
+    "g": "flowers",
+    "t": "noun"
+   },
+   "todo": {
+    "g": "all, everything",
+    "t": "pronoun"
+   },
+   "huele": {
+    "g": "smells",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "oler",
+     "rows": [
+      [
+       "yo",
+       "huelo"
+      ],
+      [
+       "tú",
+       "hueles"
+      ],
+      [
+       "él, ella",
+       "huele"
+      ],
+      [
+       "nosotros",
+       "olemos"
+      ],
+      [
+       "vosotros",
+       "oléis"
+      ],
+      [
+       "ellos",
+       "huelen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "bien": {
+    "g": "well, good",
+    "t": "adverb"
+   },
+   "sientan": {
+    "g": "to seat",
+    "t": "verb"
+   },
+   "miran": {
+    "g": "they look at",
+    "t": "verb"
+   },
+   "juntas": {
+    "g": "together",
+    "t": "adjective"
+   },
+   "silencio": {
+    "g": "silence",
+    "t": "noun"
+   },
+   "termina": {
+    "g": "ends up",
+    "t": "verb"
+   },
+   "guarda": {
+    "g": "keeps, guards",
+    "t": "verb"
+   },
+   "plato": {
+    "g": "a plate, a dish",
+    "t": "noun"
+   },
+   "cuidado": {
+    "g": "care",
+    "t": "noun"
+   },
+   "ella": {
+    "g": "she",
+    "t": "pronoun"
+   },
+   "mejor": {
+    "g": "better, best",
+    "t": "adjective"
+   },
+   "sevilla": {
+    "g": "Seville (city)",
+    "t": "noun"
+   }
+  },
+  "las-tapas-son-gratis": {
+   "tapas": {
+    "g": "empanada wrappers",
+    "t": "noun"
+   },
+   "son": {
+    "g": "they are",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "gratis": {
+    "g": "free (no cost)",
+    "t": "adjective"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "visita": {
+    "g": "visit, visits",
+    "t": "noun"
+   },
+   "granada": {
+    "g": "Granada (city)",
+    "t": "noun"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "primera": {
+    "g": "first",
+    "t": "adjective"
+   },
+   "vez": {
+    "g": "time, occasion",
+    "t": "noun"
+   },
+   "su": {
+    "g": "his, her, their",
+    "t": "pronoun"
+   },
+   "amiga": {
+    "g": "a female friend",
+    "t": "noun"
+   },
+   "vive": {
+    "g": "to live",
+    "t": "verb"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "trabaja": {
+    "g": "to work",
+    "t": "verb"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "tienda": {
+    "g": "a shop",
+    "t": "noun"
+   },
+   "hoy": {
+    "g": "today",
+    "t": "adverb"
+   },
+   "pasean": {
+    "g": "they stroll",
+    "t": "verb"
+   },
+   "juntas": {
+    "g": "together",
+    "t": "adjective"
+   },
+   "barrio": {
+    "g": "neighborhood",
+    "t": "noun"
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition"
+   },
+   "zona": {
+    "g": "the area",
+    "t": "noun"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "bonita": {
+    "g": "pretty",
+    "t": "adjective"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "calles": {
+    "g": "streets",
+    "t": "noun"
+   },
+   "estrechas": {
+    "g": "narrow",
+    "t": "adjective"
+   },
+   "casas": {
+    "g": "houses",
+    "t": "noun"
+   },
+   "blancas": {
+    "g": "white",
+    "t": "adjective"
+   },
+   "mira": {
+    "g": "look, hey",
+    "t": "verb"
+   },
+   "todo": {
+    "g": "all, everything",
+    "t": "pronoun"
+   },
+   "le": {
+    "g": "to him, her, it",
+    "t": "pronoun"
+   },
+   "parece": {
+    "g": "seems",
+    "t": "verb"
+   },
+   "antiguo": {
+    "g": "old, former",
+    "t": "adjective"
+   },
+   "desde": {
+    "g": "since, from",
+    "t": "preposition"
+   },
+   "arriba": {
+    "g": "up, above",
+    "t": "adverb"
+   },
+   "ella": {
+    "g": "she",
+    "t": "pronoun"
+   },
+   "ve": {
+    "g": "sees, goes",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ver",
+     "rows": [
+      [
+       "yo",
+       "veo"
+      ],
+      [
+       "tú",
+       "ves"
+      ],
+      [
+       "él, ella",
+       "ve"
+      ],
+      [
+       "nosotros",
+       "vemos"
+      ],
+      [
+       "vosotros",
+       "veis"
+      ],
+      [
+       "ellos",
+       "ven"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "alhambra": {
+    "g": "the Alhambra (palace)",
+    "t": "noun"
+   },
+   "palacio": {
+    "g": "the palace",
+    "t": "noun"
+   },
+   "enorme": {
+    "g": "huge, enormous",
+    "t": "adjective"
+   },
+   "tiene": {
+    "g": "he/she has",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "tener",
+     "rows": [
+      [
+       "yo",
+       "tengo"
+      ],
+      [
+       "tú",
+       "tienes"
+      ],
+      [
+       "él, ella",
+       "tiene"
+      ],
+      [
+       "nosotros",
+       "tenemos"
+      ],
+      [
+       "vosotros",
+       "tenéis"
+      ],
+      [
+       "ellos",
+       "tienen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "hambre": {
+    "g": "hunger",
+    "t": "noun"
+   },
+   "que": {
+    "g": "that",
+    "t": "conjunction"
+   },
+   "entra": {
+    "g": "comes in",
+    "t": "verb"
+   },
+   "bar": {
+    "g": "bar",
+    "t": "noun"
+   },
+   "pide": {
+    "g": "asks",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "pedir",
+     "rows": [
+      [
+       "yo",
+       "pido"
+      ],
+      [
+       "tú",
+       "pides"
+      ],
+      [
+       "él, ella",
+       "pide"
+      ],
+      [
+       "nosotros",
+       "pedimos"
+      ],
+      [
+       "vosotros",
+       "pedís"
+      ],
+      [
+       "ellos",
+       "piden"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "refrescos": {
+    "g": "soft drinks",
+    "t": "noun"
+   },
+   "camarero": {
+    "g": "a waiter",
+    "t": "noun"
+   },
+   "trae": {
+    "g": "to bring",
+    "t": "verb"
+   },
+   "plato": {
+    "g": "a plate, a dish",
+    "t": "noun"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "comida": {
+    "g": "food",
+    "t": "noun"
+   },
+   "sorprendida": {
+    "g": "surprised",
+    "t": "adjective"
+   },
+   "porque": {
+    "g": "because",
+    "t": "conjunction"
+   },
+   "buenas": {
+    "g": "in a good mood (de buenas)",
+    "t": "adjective"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "siempre": {
+    "g": "always",
+    "t": "adverb"
+   },
+   "pasa": {
+    "g": "happens, passes",
+    "t": "verb"
+   },
+   "esto": {
+    "g": "this",
+    "t": "pronoun"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "prueba": {
+    "g": "a test",
+    "t": "noun"
+   },
+   "cierra": {
+    "g": "closes",
+    "t": "verb"
+   },
+   "ojos": {
+    "g": "eyes",
+    "t": "noun"
+   },
+   "gusto": {
+    "g": "taste, pleasure",
+    "t": "noun"
+   },
+   "comen": {
+    "g": "they eat",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comer",
+     "rows": [
+      [
+       "yo",
+       "como"
+      ],
+      [
+       "tú",
+       "comes"
+      ],
+      [
+       "él, ella",
+       "come"
+      ],
+      [
+       "nosotros",
+       "comemos"
+      ],
+      [
+       "vosotros",
+       "coméis"
+      ],
+      [
+       "ellos",
+       "comen"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "despacio": {
+    "g": "slowly",
+    "t": "adverb"
+   },
+   "tarde": {
+    "g": "afternoon, late",
+    "t": "noun"
+   },
+   "tranquila": {
+    "g": "calm, relax (fem.)",
+    "t": "adjective"
+   },
+   "amigas": {
+    "g": "female friends",
+    "t": "noun"
+   },
+   "hablan": {
+    "g": "they talk",
+    "t": "verb"
+   },
+   "contenta": {
+    "g": "happy, pleased",
+    "t": "adjective"
+   },
+   "sin": {
+    "g": "without",
+    "t": "preposition"
+   },
+   "prisa": {
+    "g": "hurry",
+    "t": "noun"
+   }
+  },
+  "lucia-llega-a-san-sebastian": {
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "llega": {
+    "g": "arrives",
+    "t": "verb"
+   },
+   "san": {
+    "g": "Saint",
+    "t": "noun"
+   },
+   "viaja": {
+    "g": "travels",
+    "t": "verb"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "su": {
+    "g": "his, her, their",
+    "t": "pronoun"
+   },
+   "amigo": {
+    "g": "friend",
+    "t": "noun"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "hoy": {
+    "g": "today",
+    "t": "adverb"
+   },
+   "ella": {
+    "g": "she",
+    "t": "pronoun"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "tren": {
+    "g": "the train",
+    "t": "noun"
+   },
+   "espera": {
+    "g": "waits for",
+    "t": "verb"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "toma": {
+    "g": "to drink",
+    "t": "verb"
+   },
+   "maleta": {
+    "g": "suitcase",
+    "t": "noun"
+   },
+   "caminan": {
+    "g": "walk",
+    "t": "verb"
+   },
+   "juntos": {
+    "g": "together",
+    "t": "adjective"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "calle": {
+    "g": "street",
+    "t": "noun"
+   },
+   "hace": {
+    "g": "does, makes; ago",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "hacer",
+     "rows": [
+      [
+       "yo",
+       "hago"
+      ],
+      [
+       "tú",
+       "haces"
+      ],
+      [
+       "él, ella",
+       "hace"
+      ],
+      [
+       "nosotros",
+       "hacemos"
+      ],
+      [
+       "vosotros",
+       "hacéis"
+      ],
+      [
+       "ellos",
+       "hacen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "sol": {
+    "g": "sun",
+    "t": "noun"
+   },
+   "cielo": {
+    "g": "to protest loudly (pegar el grito al cielo)",
+    "t": "noun"
+   },
+   "azul": {
+    "g": "blue",
+    "t": "adjective"
+   },
+   "habla": {
+    "g": "speaks, talks",
+    "t": "verb"
+   },
+   "despacio": {
+    "g": "slowly",
+    "t": "adverb"
+   },
+   "que": {
+    "g": "that",
+    "t": "conjunction"
+   },
+   "entiende": {
+    "g": "understands",
+    "t": "verb"
+   },
+   "casi": {
+    "g": "almost",
+    "t": "adverb"
+   },
+   "todo": {
+    "g": "all, everything",
+    "t": "pronoun"
+   },
+   "ciudad": {
+    "g": "city",
+    "t": "noun"
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "bonita": {
+    "g": "pretty",
+    "t": "adjective"
+   },
+   "limpia": {
+    "g": "clean",
+    "t": "adjective"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "playa": {
+    "g": "the beach",
+    "t": "noun"
+   },
+   "cerca": {
+    "g": "near, close",
+    "t": "adverb"
+   },
+   "vamos": {
+    "g": "we go",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ir",
+     "rows": [
+      [
+       "yo",
+       "voy"
+      ],
+      [
+       "tú",
+       "vas"
+      ],
+      [
+       "él, ella",
+       "va"
+      ],
+      [
+       "nosotros",
+       "vamos"
+      ],
+      [
+       "vosotros",
+       "vais"
+      ],
+      [
+       "ellos",
+       "van"
+      ]
+     ],
+     "here": 3
+    }
+   },
+   "concha": {
+    "g": "a shell",
+    "t": "noun"
+   },
+   "arena": {
+    "g": "sand",
+    "t": "noun"
+   },
+   "suave": {
+    "g": "soft",
+    "t": "adjective"
+   },
+   "clara": {
+    "g": "clear, light",
+    "t": "adjective"
+   },
+   "mar": {
+    "g": "the sea",
+    "t": "noun"
+   },
+   "tranquilo": {
+    "g": "calm, chill",
+    "t": "adjective"
+   },
+   "muchas": {
+    "g": "many",
+    "t": "determiner"
+   },
+   "personas": {
+    "g": "people",
+    "t": "noun"
+   },
+   "nadan": {
+    "g": "they swim",
+    "t": "verb"
+   },
+   "juegan": {
+    "g": "they play",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "jugar",
+     "rows": [
+      [
+       "yo",
+       "juego"
+      ],
+      [
+       "tú",
+       "juegas"
+      ],
+      [
+       "él, ella",
+       "juega"
+      ],
+      [
+       "nosotros",
+       "jugamos"
+      ],
+      [
+       "vosotros",
+       "jugáis"
+      ],
+      [
+       "ellos",
+       "juegan"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "mira": {
+    "g": "look, hey",
+    "t": "verb"
+   },
+   "agua": {
+    "g": "water",
+    "t": "noun"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "calma": {
+    "g": "calm",
+    "t": "noun"
+   },
+   "pero": {
+    "g": "but",
+    "t": "conjunction"
+   },
+   "contenta": {
+    "g": "happy, pleased",
+    "t": "adjective"
+   },
+   "compra": {
+    "g": "buys, purchase",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comprar",
+     "rows": [
+      [
+       "yo",
+       "compro"
+      ],
+      [
+       "tú",
+       "compras"
+      ],
+      [
+       "él, ella",
+       "compra"
+      ],
+      [
+       "nosotros",
+       "compramos"
+      ],
+      [
+       "vosotros",
+       "compráis"
+      ],
+      [
+       "ellos",
+       "compran"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "helados": {
+    "g": "ice creams",
+    "t": "noun"
+   },
+   "para": {
+    "g": "for, to",
+    "t": "preposition"
+   },
+   "otro": {
+    "g": "another, other",
+    "t": "adjective"
+   },
+   "comen": {
+    "g": "they eat",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "comer",
+     "rows": [
+      [
+       "yo",
+       "como"
+      ],
+      [
+       "tú",
+       "comes"
+      ],
+      [
+       "él, ella",
+       "come"
+      ],
+      [
+       "nosotros",
+       "comemos"
+      ],
+      [
+       "vosotros",
+       "coméis"
+      ],
+      [
+       "ellos",
+       "comen"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "bueno": {
+    "g": "good, well",
+    "t": "adjective"
+   },
+   "le": {
+    "g": "to him, her, it",
+    "t": "pronoun"
+   },
+   "gusta": {
+    "g": "likes",
+    "t": "verb"
+   },
+   "mucho": {
+    "g": "a lot, much",
+    "t": "adverb"
+   },
+   "feliz": {
+    "g": "happy",
+    "t": "adjective"
+   },
+   "quiere": {
+    "g": "wants",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "querer",
+     "rows": [
+      [
+       "yo",
+       "quiero"
+      ],
+      [
+       "tú",
+       "quieres"
+      ],
+      [
+       "él, ella",
+       "quiere"
+      ],
+      [
+       "nosotros",
+       "queremos"
+      ],
+      [
+       "vosotros",
+       "queréis"
+      ],
+      [
+       "ellos",
+       "quieren"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "volver": {
+    "g": "to return, go back",
+    "t": "verb"
+   }
+  },
+  "el-plan-de-nuria": {
+   "no": {
+    "g": "no, not",
+    "t": "adverb"
+   },
+   "quedan": {
+    "g": "remain",
+    "t": "verb"
+   },
+   "entradas": {
+    "g": "tickets",
+    "t": "noun"
+   },
+   "tiene": {
+    "g": "he/she has",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "tener",
+     "rows": [
+      [
+       "yo",
+       "tengo"
+      ],
+      [
+       "tú",
+       "tienes"
+      ],
+      [
+       "él, ella",
+       "tiene"
+      ],
+      [
+       "nosotros",
+       "tenemos"
+      ],
+      [
+       "vosotros",
+       "tenéis"
+      ],
+      [
+       "ellos",
+       "tienen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "sorpresa": {
+    "g": "surprise",
+    "t": "noun"
+   },
+   "para": {
+    "g": "for, to",
+    "t": "preposition"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "amigas": {
+    "g": "female friends",
+    "t": "noun"
+   },
+   "quieren": {
+    "g": "they want",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "querer",
+     "rows": [
+      [
+       "yo",
+       "quiero"
+      ],
+      [
+       "tú",
+       "quieres"
+      ],
+      [
+       "él, ella",
+       "quiere"
+      ],
+      [
+       "nosotros",
+       "queremos"
+      ],
+      [
+       "vosotros",
+       "queréis"
+      ],
+      [
+       "ellos",
+       "quieren"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "ver": {
+    "g": "to see",
+    "t": "verb"
+   },
+   "alhambra": {
+    "g": "the Alhambra (palace)",
+    "t": "noun"
+   },
+   "conoce": {
+    "g": "it knows you",
+    "t": "verb"
+   },
+   "bien": {
+    "g": "well, good",
+    "t": "adverb"
+   },
+   "ciudad": {
+    "g": "city",
+    "t": "noun"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "hace": {
+    "g": "does, makes; ago",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "hacer",
+     "rows": [
+      [
+       "yo",
+       "hago"
+      ],
+      [
+       "tú",
+       "haces"
+      ],
+      [
+       "él, ella",
+       "hace"
+      ],
+      [
+       "nosotros",
+       "hacemos"
+      ],
+      [
+       "vosotros",
+       "hacéis"
+      ],
+      [
+       "ellos",
+       "hacen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "invitada": {
+    "g": "the guest",
+    "t": "noun"
+   },
+   "sigue": {
+    "g": "is still there",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "seguir",
+     "rows": [
+      [
+       "yo",
+       "sigo"
+      ],
+      [
+       "tú",
+       "sigues"
+      ],
+      [
+       "él, ella",
+       "sigue"
+      ],
+      [
+       "nosotros",
+       "seguimos"
+      ],
+      [
+       "vosotros",
+       "seguís"
+      ],
+      [
+       "ellos",
+       "siguen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "contenta": {
+    "g": "happy, pleased",
+    "t": "adjective"
+   },
+   "salen": {
+    "g": "they go out",
+    "t": "verb"
+   },
+   "temprano": {
+    "g": "early",
+    "t": "adverb"
+   },
+   "casa": {
+    "g": "house, home",
+    "t": "noun"
+   },
+   "soleado": {
+    "g": "sunny",
+    "t": "adjective"
+   },
+   "caminan": {
+    "g": "walk",
+    "t": "verb"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "cuesta": {
+    "g": "a slope",
+    "t": "noun"
+   },
+   "larga": {
+    "g": "long",
+    "t": "adjective"
+   },
+   "cansada": {
+    "g": "tired",
+    "t": "adjective"
+   },
+   "pero": {
+    "g": "but",
+    "t": "conjunction"
+   },
+   "fin": {
+    "g": "end",
+    "t": "noun"
+   },
+   "llegan": {
+    "g": "they arrive",
+    "t": "verb"
+   },
+   "puerta": {
+    "g": "door",
+    "t": "noun"
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition"
+   },
+   "palacio": {
+    "g": "the palace",
+    "t": "noun"
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "mucha": {
+    "g": "a lot of",
+    "t": "adjective"
+   },
+   "gente": {
+    "g": "people",
+    "t": "noun"
+   },
+   "en": {
+    "g": "in, on",
+    "t": "preposition"
+   },
+   "fila": {
+    "g": "line, row",
+    "t": "noun"
+   },
+   "habla": {
+    "g": "speaks, talks",
+    "t": "verb"
+   },
+   "con": {
+    "g": "with",
+    "t": "preposition"
+   },
+   "hombre": {
+    "g": "man",
+    "t": "noun"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "mala": {
+    "g": "bad",
+    "t": "adjective"
+   },
+   "noticia": {
+    "g": "news",
+    "t": "noun"
+   },
+   "agotadas": {
+    "g": "sold out",
+    "t": "adjective"
+   },
+   "billetes": {
+    "g": "tickets",
+    "t": "noun"
+   },
+   "hoy": {
+    "g": "today",
+    "t": "adverb"
+   },
+   "explica": {
+    "g": "explains",
+    "t": "verb"
+   },
+   "problema": {
+    "g": "problem",
+    "t": "noun"
+   },
+   "calma": {
+    "g": "calm",
+    "t": "noun"
+   },
+   "triste": {
+    "g": "sad",
+    "t": "adjective"
+   },
+   "otra": {
+    "g": "another (fem.)",
+    "t": "adjective"
+   },
+   "idea": {
+    "g": "idea",
+    "t": "noun"
+   },
+   "suben": {
+    "g": "to go up",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "subir",
+     "rows": [
+      [
+       "yo",
+       "subo"
+      ],
+      [
+       "tú",
+       "subes"
+      ],
+      [
+       "él, ella",
+       "sube"
+      ],
+      [
+       "nosotros",
+       "subimos"
+      ],
+      [
+       "vosotros",
+       "subís"
+      ],
+      [
+       "ellos",
+       "suben"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "mirador": {
+    "g": "the lookout",
+    "t": "noun"
+   },
+   "famoso": {
+    "g": "famous",
+    "t": "adjective"
+   },
+   "desde": {
+    "g": "since, from",
+    "t": "preposition"
+   },
+   "vista": {
+    "g": "view, sight",
+    "t": "noun"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "bonita": {
+    "g": "pretty",
+    "t": "adjective"
+   },
+   "brilla": {
+    "g": "shines",
+    "t": "verb"
+   },
+   "sol": {
+    "g": "sun",
+    "t": "noun"
+   },
+   "torres": {
+    "g": "towers",
+    "t": "noun"
+   },
+   "son": {
+    "g": "they are",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "color": {
+    "g": "color",
+    "t": "noun"
+   },
+   "dorado": {
+    "g": "golden",
+    "t": "adjective"
+   },
+   "respira": {
+    "g": "breathes",
+    "t": "verb"
+   },
+   "hondo": {
+    "g": "to breathe deep (respirar hondo)",
+    "t": "adjective"
+   },
+   "saca": {
+    "g": "takes out, pulls out",
+    "t": "verb"
+   },
+   "este": {
+    "g": "this (one); um",
+    "t": "pronoun"
+   },
+   "lugar": {
+    "g": "instead of (en lugar de)",
+    "t": "noun"
+   },
+   "feliz": {
+    "g": "happy",
+    "t": "adjective"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "juntas": {
+    "g": "together",
+    "t": "adjective"
+   },
+   "vuelven": {
+    "g": "to return",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "volver",
+     "rows": [
+      [
+       "yo",
+       "vuelvo"
+      ],
+      [
+       "tú",
+       "vuelves"
+      ],
+      [
+       "él, ella",
+       "vuelve"
+      ],
+      [
+       "nosotros",
+       "volvemos"
+      ],
+      [
+       "vosotros",
+       "volvéis"
+      ],
+      [
+       "ellos",
+       "vuelven"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "plan": {
+    "g": "plan",
+    "t": "noun"
+   },
+   "mejor": {
+    "g": "better, best",
+    "t": "adjective"
+   }
+  },
+  "la-giralda-desde-arriba": {
+   "giralda": {
+    "g": "the Giralda (tower)",
+    "t": "noun"
+   },
+   "desde": {
+    "g": "since, from",
+    "t": "preposition"
+   },
+   "arriba": {
+    "g": "up, above",
+    "t": "adverb"
+   },
+   "campanas": {
+    "g": "the bells",
+    "t": "noun"
+   },
+   "suenan": {
+    "g": "they ring",
+    "t": "verb"
+   },
+   "fuerte": {
+    "g": "loud, strong",
+    "t": "adjective"
+   },
+   "mientras": {
+    "g": "while, meanwhile",
+    "t": "conjunction"
+   },
+   "a": {
+    "g": "to, at",
+    "t": "preposition"
+   },
+   "y": {
+    "g": "and",
+    "t": "conjunction"
+   },
+   "caminan": {
+    "g": "walk",
+    "t": "verb"
+   },
+   "por": {
+    "g": "for, by",
+    "t": "preposition"
+   },
+   "plaza": {
+    "g": "square, plaza",
+    "t": "noun"
+   },
+   "bonita": {
+    "g": "pretty",
+    "t": "adjective"
+   },
+   "delante": {
+    "g": "in front",
+    "t": "adverb"
+   },
+   "de": {
+    "g": "of, from",
+    "t": "preposition"
+   },
+   "ellas": {
+    "g": "they, them (women)",
+    "t": "pronoun"
+   },
+   "torre": {
+    "g": "tower",
+    "t": "noun"
+   },
+   "alta": {
+    "g": "tall, high",
+    "t": "adjective"
+   },
+   "sevilla": {
+    "g": "Seville (city)",
+    "t": "noun"
+   },
+   "mira": {
+    "g": "look, hey",
+    "t": "verb"
+   },
+   "grande": {
+    "g": "big, great",
+    "t": "adjective"
+   },
+   "dice": {
+    "g": "says",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "decir",
+     "rows": [
+      [
+       "yo",
+       "digo"
+      ],
+      [
+       "tú",
+       "dices"
+      ],
+      [
+       "él, ella",
+       "dice"
+      ],
+      [
+       "nosotros",
+       "decimos"
+      ],
+      [
+       "vosotros",
+       "decís"
+      ],
+      [
+       "ellos",
+       "dicen"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "quiere": {
+    "g": "wants",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "querer",
+     "rows": [
+      [
+       "yo",
+       "quiero"
+      ],
+      [
+       "tú",
+       "quieres"
+      ],
+      [
+       "él, ella",
+       "quiere"
+      ],
+      [
+       "nosotros",
+       "queremos"
+      ],
+      [
+       "vosotros",
+       "queréis"
+      ],
+      [
+       "ellos",
+       "quieren"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "subir": {
+    "g": "to go up",
+    "t": "verb"
+   },
+   "amigas": {
+    "g": "female friends",
+    "t": "noun"
+   },
+   "suben": {
+    "g": "to go up",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "subir",
+     "rows": [
+      [
+       "yo",
+       "subo"
+      ],
+      [
+       "tú",
+       "subes"
+      ],
+      [
+       "él, ella",
+       "sube"
+      ],
+      [
+       "nosotros",
+       "subimos"
+      ],
+      [
+       "vosotros",
+       "subís"
+      ],
+      [
+       "ellos",
+       "suben"
+      ]
+     ],
+     "here": 5
+    }
+   },
+   "despacio": {
+    "g": "slowly",
+    "t": "adverb"
+   },
+   "paso": {
+    "g": "step; I pass",
+    "t": "noun"
+   },
+   "no": {
+    "g": "no, not",
+    "t": "adverb"
+   },
+   "hay": {
+    "g": "there is, there are",
+    "t": "verb"
+   },
+   "escaleras": {
+    "g": "stairs",
+    "t": "noun"
+   },
+   "porque": {
+    "g": "because",
+    "t": "conjunction"
+   },
+   "camino": {
+    "g": "path, road",
+    "t": "noun"
+   },
+   "es": {
+    "g": "is",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ser",
+     "rows": [
+      [
+       "yo",
+       "soy"
+      ],
+      [
+       "tú",
+       "eres"
+      ],
+      [
+       "él, ella",
+       "es"
+      ],
+      [
+       "nosotros",
+       "somos"
+      ],
+      [
+       "vosotros",
+       "sois"
+      ],
+      [
+       "ellos",
+       "son"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "rampa": {
+    "g": "a ramp",
+    "t": "noun"
+   },
+   "larga": {
+    "g": "long",
+    "t": "adjective"
+   },
+   "ancha": {
+    "g": "wide",
+    "t": "adjective"
+   },
+   "respira": {
+    "g": "breathes",
+    "t": "verb"
+   },
+   "pero": {
+    "g": "but",
+    "t": "conjunction"
+   },
+   "bien": {
+    "g": "well, good",
+    "t": "adverb"
+   },
+   "ciudad": {
+    "g": "city",
+    "t": "noun"
+   },
+   "hermosa": {
+    "g": "beautiful",
+    "t": "adjective"
+   },
+   "ve": {
+    "g": "sees, goes",
+    "t": "verb",
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ver",
+     "rows": [
+      [
+       "yo",
+       "veo"
+      ],
+      [
+       "tú",
+       "ves"
+      ],
+      [
+       "él, ella",
+       "ve"
+      ],
+      [
+       "nosotros",
+       "vemos"
+      ],
+      [
+       "vosotros",
+       "veis"
+      ],
+      [
+       "ellos",
+       "ven"
+      ]
+     ],
+     "here": 2
+    }
+   },
+   "tejados": {
+    "g": "roofs",
+    "t": "noun"
+   },
+   "rojos": {
+    "g": "red",
+    "t": "adjective"
+   },
+   "al": {
+    "g": "to the",
+    "t": "preposition"
+   },
+   "fondo": {
+    "g": "the back, background",
+    "t": "noun"
+   },
+   "viento": {
+    "g": "wind",
+    "t": "noun"
+   },
+   "fresco": {
+    "g": "fresh; cheeky",
+    "t": "adjective"
+   },
+   "agradable": {
+    "g": "pleasant",
+    "t": "adjective"
+   },
+   "se": {
+    "g": "oneself, himself",
+    "t": "pronoun"
+   },
+   "su": {
+    "g": "his, her, their",
+    "t": "pronoun"
+   },
+   "casa": {
+    "g": "house, home",
+    "t": "noun"
+   },
+   "blanca": {
+    "g": "white, pale",
+    "t": "adjective"
+   },
+   "cerca": {
+    "g": "near, close",
+    "t": "adverb"
+   },
+   "del": {
+    "g": "of the",
+    "t": "preposition"
+   },
+   "puente": {
+    "g": "the bridge",
+    "t": "noun"
+   },
+   "vivo": {
+    "g": "alive, sharp",
+    "t": "adjective"
+   },
+   "lado": {
+    "g": "side",
+    "t": "noun"
+   },
+   "repente": {
+    "g": "suddenly (de repente)",
+    "t": "noun"
+   },
+   "otra": {
+    "g": "another (fem.)",
+    "t": "adjective"
+   },
+   "vez": {
+    "g": "time, occasion",
+    "t": "noun"
+   },
+   "muy": {
+    "g": "very",
+    "t": "adverb"
+   },
+   "e": {
+    "g": "and (before words starting with i)",
+    "t": "conjunction"
+   },
+   "tapa": {
+    "g": "the cover",
+    "t": "noun"
+   },
+   "sonido": {
+    "g": "the sound",
+    "t": "noun"
+   },
+   "enorme": {
+    "g": "huge, enormous",
+    "t": "adjective"
+   },
+   "bonito": {
+    "g": "pretty, nice",
+    "t": "adjective"
+   },
+   "bajan": {
+    "g": "get off, get down",
+    "t": "verb"
+   },
+   "juntas": {
+    "g": "together",
+    "t": "adjective"
+   },
+   "contentas": {
+    "g": "happy",
+    "t": "adjective"
+   }
   }
  }
 }

@@ -361,7 +361,7 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
           qué es. Donde sí hay formas no se pinta, porque esa glosa está escrita
           para la palabra suelta y a veces contradice la frase ("helado" es
           "cold, iced" ahí, y en la historia es un helado). */}
-      {!selected.forms ? (
+      {!selected.forms || !selected.chunk ? (
         <p
           className="mt-1.5 text-[var(--foreground)]"
           style={{ fontSize: 16, fontWeight: 700, lineHeight: "23px" }}
