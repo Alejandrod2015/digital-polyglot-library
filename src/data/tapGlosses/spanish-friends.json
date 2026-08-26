@@ -38238,11 +38238,19 @@
   "la-lengua-de-julian": {
    "lengua": {
     "g": "a loose tongue (lengua floja)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "La lengua de Julián",
+     "en": "Julián's loose tongue"
+    }
    },
    "de": {
     "g": "of, from",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "La lengua de Julián",
+     "en": "Julián's loose tongue"
+    }
    },
    "llegó": {
     "g": "arrived",
@@ -38278,51 +38286,99 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Julián llegó del camello bien cascado",
+     "en": "Julián got home from work wrecked"
     }
    },
    "del": {
     "g": "of the",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "del camello",
+     "en": "from work"
+    }
    },
    "camello": {
     "g": "job, work",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "llegó del camello",
+     "en": "got home from work"
+    }
    },
    "bien": {
     "g": "well, good",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "bien cascado",
+     "en": "completely wrecked"
+    }
    },
    "cascado": {
     "g": "worn out, beat up",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "bien cascado",
+     "en": "completely wrecked"
+    }
    },
    "y": {
     "g": "and",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "y con un guayabo del sábado",
+     "en": "and with Saturday's hangover"
+    }
    },
    "con": {
     "g": "with",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "con un guayabo del sábado",
+     "en": "with Saturday's hangover"
+    }
    },
    "guayabo": {
     "g": "hangover (Colombian)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un guayabo del sábado",
+     "en": "Saturday's hangover"
+    }
    },
    "sábado": {
     "g": "Saturday",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un guayabo del sábado",
+     "en": "Saturday's hangover"
+    }
    },
    "que": {
     "g": "that",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "un guayabo que no lo dejaba",
+     "en": "a hangover that would not leave him alone"
+    }
    },
    "no": {
     "g": "no, not",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "que no lo dejaba",
+     "en": "that would not leave him alone"
+    }
    },
    "lo": {
     "g": "it, him",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "no lo dejaba",
+     "en": "would not leave him alone"
+    }
    },
    "dejaba": {
     "g": "would not let up (no lo dejaba)",
@@ -38358,11 +38414,19 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "no lo dejaba",
+     "en": "would not leave him alone"
     }
    },
    "se": {
     "g": "oneself, himself",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Se tiró en el sofá",
+     "en": "He threw himself on the sofa"
+    }
    },
    "tiró": {
     "g": "he/she threw, tossed",
@@ -38398,59 +38462,115 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Se tiró en el sofá",
+     "en": "He threw himself on the sofa"
     }
    },
    "en": {
     "g": "in, on",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "en el sofá",
+     "en": "on the sofa"
+    }
    },
    "sofá": {
     "g": "couch, sofa",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Se tiró en el sofá",
+     "en": "He threw himself on the sofa"
+    }
    },
    "jurando": {
     "g": "swearing, vowing",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "jurando que esa noche no salía",
+     "en": "swearing he was not going out that night"
+    }
    },
    "esa": {
     "g": "that (one)",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "esa noche",
+     "en": "that night"
+    }
    },
    "noche": {
     "g": "night",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "esa noche no salía",
+     "en": "that night he was not going out"
+    }
    },
    "salía": {
     "g": "would not go out (no salía)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "no salía ni amarrado",
+     "en": "was not going out, no chance"
+    }
    },
    "ni": {
     "g": "not even, nor",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "no salía ni amarrado",
+     "en": "was not going out, no chance"
+    }
    },
    "amarrado": {
     "g": "not even by force (ni amarrado)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "ni amarrado",
+     "en": "not even tied up"
+    }
    },
    "me": {
     "g": "me, myself",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "No me manden a rumbear",
+     "en": "Do not send me out partying"
+    }
    },
    "manden": {
     "g": "do not send me (no me manden)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "No me manden a rumbear",
+     "en": "Do not send me out partying"
+    }
    },
    "a": {
     "g": "to, at",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "a rumbear",
+     "en": "out partying"
+    }
    },
    "rumbear": {
     "g": "to party, go out",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "manden a rumbear",
+     "en": "send me out partying"
+    }
    },
    "parceros": {
     "g": "buddies, dudes",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "parceros",
+     "en": "mates"
+    }
    },
    "vengo": {
     "g": "I come",
@@ -38486,11 +38606,19 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "que vengo muerto",
+     "en": "I am dead on my feet"
     }
    },
    "muerto": {
     "g": "dead",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "vengo muerto",
+     "en": "dead on my feet"
+    }
    },
    "pidió": {
     "g": "asked, requested",
@@ -38526,23 +38654,43 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "pidió con voz de trapo",
+     "en": "he begged in a wrung-out voice"
     }
    },
    "voz": {
     "g": "voice",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con voz de trapo",
+     "en": "in a wrung-out voice"
+    }
    },
    "trapo": {
     "g": "a worn out raspy voice (voz de trapo)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "voz de trapo",
+     "en": "a wrung-out voice"
+    }
    },
    "pero": {
     "g": "but",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "Pero el parche insistió",
+     "en": "But the crew kept at it"
+    }
    },
    "parche": {
     "g": "hangout, crew",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el parche insistió",
+     "en": "the crew kept at it"
+    }
    },
    "insistió": {
     "g": "insisted",
@@ -38578,15 +38726,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "el parche insistió",
+     "en": "the crew kept at it"
     }
    },
    "polas": {
     "g": "beers",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "a las dos polas",
+     "en": "two beers in"
+    }
    },
    "ya": {
     "g": "already, now",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "ya estaba prendido",
+     "en": "he was already lit up"
+    }
    },
    "estaba": {
     "g": "was, used to be",
@@ -38622,43 +38782,83 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "ya estaba prendido",
+     "en": "he was already lit up"
     }
    },
    "prendido": {
     "g": "turned on, lit",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "estaba prendido",
+     "en": "was lit up"
+    }
    },
    "hablando": {
     "g": "talking, speaking",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "hablando hasta por los codos",
+     "en": "talking nineteen to the dozen"
+    }
    },
    "hasta": {
     "g": "until, even",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "hablando hasta por los codos",
+     "en": "talking nineteen to the dozen"
+    }
    },
    "por": {
     "g": "for, by",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "hasta por los codos",
+     "en": "nineteen to the dozen"
+    }
    },
    "codos": {
     "g": "to talk nonstop (hablar hasta por los codos)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "hablando por los codos",
+     "en": "talking nineteen to the dozen"
+    }
    },
    "entre": {
     "g": "between, among",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "Entre risas y guaro",
+     "en": "Between the laughing and the rum"
+    }
    },
    "risas": {
     "g": "laughs, laughter",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Entre risas y guaro",
+     "en": "Between the laughing and the rum"
+    }
    },
    "guaro": {
     "g": "booze, aguardiente",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "risas y guaro",
+     "en": "laughing and rum"
+    }
    },
    "le": {
     "g": "to him, her, it",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "la lengua se le fue soltando",
+     "en": "his tongue kept loosening"
+    }
    },
    "fue": {
     "g": "was, went",
@@ -38694,27 +38894,51 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se le fue soltando",
+     "en": "kept loosening"
     }
    },
    "soltando": {
     "g": "letting out, blurting",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "la lengua se le fue soltando",
+     "en": "his tongue kept loosening"
+    }
    },
    "más": {
     "g": "more",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "más de la cuenta",
+     "en": "more than it should"
+    }
    },
    "cuenta": {
     "g": "account; bill",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "más de la cuenta",
+     "en": "more than it should"
+    }
    },
    "sin": {
     "g": "without",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "Sin darse cuenta",
+     "en": "Without realising"
+    }
    },
    "darse": {
     "g": "to give oneself; realize",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "Sin darse cuenta",
+     "en": "Without realising"
+    }
    },
    "soltó": {
     "g": "he/she let go, blurted",
@@ -38750,39 +38974,75 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "soltó un secreto de Marina",
+     "en": "he let out a secret of Marina's"
     }
    },
    "secreto": {
     "g": "secret",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un secreto de Marina",
+     "en": "a secret of Marina's"
+    }
    },
    "marina": {
     "g": "Marina; navy",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un secreto de Marina",
+     "en": "a secret of Marina's"
+    }
    },
    "había": {
     "g": "there was; had",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "que había jurado guardar",
+     "en": "that he had sworn to keep"
+    }
    },
    "jurado": {
     "g": "sworn, promised",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "había jurado guardar con el alma",
+     "en": "had sworn on his life to keep"
+    }
    },
    "guardar": {
     "g": "to keep, save",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "jurado guardar",
+     "en": "sworn to keep"
+    }
    },
    "alma": {
     "g": "with all your heart (con el alma)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "guardar con el alma",
+     "en": "keep on his life"
+    }
    },
    "cuarto": {
     "g": "the room",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El cuarto entero se quedó callado",
+     "en": "The whole room went quiet"
+    }
    },
    "entero": {
     "g": "whole, entire",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "El cuarto entero",
+     "en": "The whole room"
+    }
    },
    "quedó": {
     "g": "stayed, ended up",
@@ -38818,11 +39078,19 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se quedó callado",
+     "en": "went quiet"
     }
    },
    "callado": {
     "g": "quiet, silent",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "se quedó callado",
+     "en": "went quiet"
+    }
    },
    "sintió": {
     "g": "felt",
@@ -38858,15 +39126,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Julián sintió el frío de la embarrada",
+     "en": "Julián felt the chill of the blunder"
     }
    },
    "frío": {
     "g": "cold",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el frío de la embarrada",
+     "en": "the chill of the blunder"
+    }
    },
    "embarrada": {
     "g": "screwup, mess",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el frío de la embarrada",
+     "en": "the chill of the blunder"
+    }
    },
    "trató": {
     "g": "tried",
@@ -38902,43 +39182,83 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Trató de echar para atrás",
+     "en": "He tried to backtrack"
     }
    },
    "echar": {
     "g": "to throw, put; kick out",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "echar para atrás",
+     "en": "backtrack"
+    }
    },
    "para": {
     "g": "for, to",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "echar para atrás",
+     "en": "backtrack"
+    }
    },
    "atrás": {
     "g": "behind, back",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "echar para atrás",
+     "en": "backtrack"
+    }
    },
    "chisme": {
     "g": "gossip",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "ya el chisme estaba servido en bandeja",
+     "en": "the gossip was already served up on a plate"
+    }
    },
    "servido": {
     "g": "handed on a plate (servido en bandeja)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "estaba servido en bandeja",
+     "en": "was served up on a plate"
+    }
    },
    "bandeja": {
     "g": "handed on a plate (servido en bandeja)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "servido en bandeja",
+     "en": "served up on a plate"
+    }
    },
    "sapo": {
     "g": "toad; nosy, snitch",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "más sapo que otra cosa",
+     "en": "more of a snitch than anything"
+    }
    },
    "otra": {
     "g": "another (fem.)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "más sapo que otra cosa",
+     "en": "more of a snitch than anything"
+    }
    },
    "cosa": {
     "g": "thing",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "que otra cosa",
+     "en": "than anything else"
+    }
    },
    "relamió": {
     "g": "licked his lips with relish",
@@ -38974,23 +39294,43 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se relamió con la primicia",
+     "en": "licked his lips at the scoop"
     }
    },
    "primicia": {
     "g": "a fresh scoop of news",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "se relamió con la primicia",
+     "en": "licked his lips at the scoop"
+    }
    },
    "al": {
     "g": "to the",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "Al otro día",
+     "en": "The next day"
+    }
    },
    "otro": {
     "g": "another, other",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "Al otro día",
+     "en": "The next day"
+    }
    },
    "día": {
     "g": "day",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Al otro día",
+     "en": "The next day"
+    }
    },
    "despertó": {
     "g": "woke up",
@@ -39026,15 +39366,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Julián despertó con el guayabo",
+     "en": "Julián woke up with the hangover"
     }
    },
    "preocupación": {
     "g": "worry, concern",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con una preocupación peor",
+     "en": "with a worse worry"
+    }
    },
    "peor": {
     "g": "worse, worst",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "una preocupación peor",
+     "en": "a worse worry"
+    }
    },
    "recordaba": {
     "g": "remembered",
@@ -39070,23 +39422,43 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "Recordaba a pedazos la noche",
+     "en": "He remembered the night in pieces"
     }
    },
    "pedazos": {
     "g": "in bits and pieces (a pedazos)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "a pedazos",
+     "en": "in pieces"
+    }
    },
    "cara": {
     "g": "face",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "la cara de todos",
+     "en": "everyone's face"
+    }
    },
    "todos": {
     "g": "everyone, all",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "la cara de todos",
+     "en": "everyone's face"
+    }
    },
    "completa": {
     "g": "complete, whole",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "se la recordaba completa",
+     "en": "he remembered that one whole"
+    }
    },
    "sabía": {
     "g": "knew",
@@ -39122,19 +39494,35 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "Sabía que había metido las patas",
+     "en": "He knew he had put his foot in it"
     }
    },
    "metido": {
     "g": "involved, mixed up",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "había metido las patas hasta el fondo",
+     "en": "had put his foot right in it"
+    }
    },
    "patas": {
     "g": "to blunder badly (meter las patas)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "metido las patas",
+     "en": "put his foot in it"
+    }
    },
    "fondo": {
     "g": "the back, background",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "hasta el fondo",
+     "en": "right in it"
+    }
    },
    "llamó": {
     "g": "called",
@@ -39170,35 +39558,67 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Llamó a Marina con el corazón en la mano",
+     "en": "He called Marina with his heart in his hands"
     }
    },
    "corazón": {
     "g": "heart",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con el corazón en la mano",
+     "en": "with his heart in his hands"
+    }
    },
    "mano": {
     "g": "hand; bro, dude",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el corazón en la mano",
+     "en": "his heart in his hands"
+    }
    },
    "confesar": {
     "g": "to confess",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "para confesar",
+     "en": "to own up"
+    }
    },
    "antes": {
     "g": "before",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "antes de que le llegara por otro lado",
+     "en": "before it reached her from someone else"
+    }
    },
    "llegara": {
     "g": "before it reached him",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "antes de que le llegara por otro lado",
+     "en": "before it reached her from someone else"
+    }
    },
    "lado": {
     "g": "side",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "por otro lado",
+     "en": "from somewhere else"
+    }
    },
    "ella": {
     "g": "she",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Ella lo escuchó en silencio",
+     "en": "She listened to him in silence"
+    }
    },
    "escuchó": {
     "g": "listened",
@@ -39234,27 +39654,51 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "lo escuchó en silencio",
+     "en": "listened to him in silence"
     }
    },
    "silencio": {
     "g": "silence",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "en silencio",
+     "en": "in silence"
+    }
    },
    "dejándolo": {
     "g": "letting him",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "dejándolo sudar cada palabra",
+     "en": "letting him sweat every word"
+    }
    },
    "sudar": {
     "g": "to sweat",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "dejándolo sudar cada palabra",
+     "en": "letting him sweat every word"
+    }
    },
    "cada": {
     "g": "each, every",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "cada palabra",
+     "en": "every word"
+    }
    },
    "palabra": {
     "g": "word",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "sudar cada palabra",
+     "en": "sweat every word"
+    }
    },
    "pedía": {
     "g": "was begging, asking",
@@ -39290,39 +39734,75 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "Julián pedía perdón",
+     "en": "Julián kept apologising"
     }
    },
    "perdón": {
     "g": "sorry, pardon",
-    "t": "expression"
+    "t": "expression",
+    "c": {
+     "es": "pedía perdón",
+     "en": "kept apologising"
+    }
    },
    "como": {
     "g": "like, as",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "como si le fuera la vida",
+     "en": "as if his life depended on it"
+    }
    },
    "si": {
     "g": "if, whether",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "como si le fuera la vida en cada frase",
+     "en": "as if his life depended on every sentence"
+    }
    },
    "fuera": {
     "g": "outside; were",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "como si le fuera la vida",
+     "en": "as if his life depended on it"
+    }
    },
    "vida": {
     "g": "life",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "le fuera la vida",
+     "en": "his life depended on it"
+    }
    },
    "frase": {
     "g": "a sentence, a phrase",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "en cada frase",
+     "en": "in every sentence"
+    }
    },
    "cuando": {
     "g": "when",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "Cuando por fin se calló",
+     "en": "When he finally shut up"
+    }
    },
    "fin": {
     "g": "end",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "por fin",
+     "en": "finally"
+    }
    },
    "calló": {
     "g": "fell silent",
@@ -39358,11 +39838,19 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "por fin se calló",
+     "en": "he finally shut up"
     }
    },
    "risa": {
     "g": "laughter",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Marina soltó una risa",
+     "en": "Marina let out a laugh"
+    }
    },
    "descolocó": {
     "g": "threw him off completely",
@@ -39398,23 +39886,43 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "una risa que lo descolocó por completo",
+     "en": "a laugh that threw him completely"
     }
    },
    "completo": {
     "g": "complete, full",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "por completo",
+     "en": "completely"
+    }
    },
    "tranquilo": {
     "g": "calm, chill",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "Tranquilo, güevón",
+     "en": "Relax, mate"
+    }
    },
    "güevón": {
     "g": "dude or fool, said warmly",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Tranquilo, güevón",
+     "en": "Relax, mate"
+    }
    },
    "ese": {
     "g": "that (one)",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "ese secreto me lo inventé yo",
+     "en": "I made that secret up myself"
+    }
    },
    "inventé": {
     "g": "I made it up",
@@ -39450,11 +39958,19 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "me lo inventé yo",
+     "en": "I made it up myself"
     }
    },
    "yo": {
     "g": "I",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "me lo inventé yo",
+     "en": "I made it up myself"
+    }
    },
    "confesó": {
     "g": "confessed",
@@ -39490,27 +40006,51 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "le confesó sin culpa",
+     "en": "she admitted, without a shred of guilt"
     }
    },
    "culpa": {
     "g": "blame, fault",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "sin culpa",
+     "en": "without a shred of guilt"
+    }
    },
    "soltado": {
     "g": "blurted, let out",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "Lo había soltado a propósito",
+     "en": "She had let it out on purpose"
+    }
    },
    "propósito": {
     "g": "on purpose (a propósito)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "a propósito",
+     "en": "on purpose"
+    }
    },
    "ver": {
     "g": "to see",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "para ver si el man aguantaba una prueba",
+     "en": "to see whether the guy could pass a test"
+    }
    },
    "man": {
     "g": "guy, dude",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "si el man aguantaba",
+     "en": "whether the guy could hold out"
+    }
    },
    "aguantaba": {
     "g": "put up with",
@@ -39546,11 +40086,19 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "si el man aguantaba una prueba",
+     "en": "whether the guy could pass a test"
     }
    },
    "prueba": {
     "g": "a test",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "aguantaba una prueba",
+     "en": "could pass a test"
+    }
    },
    "supo": {
     "g": "knew, found out",
@@ -39586,39 +40134,75 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Julián no supo si sentirse aliviado",
+     "en": "Julián did not know whether to feel relieved"
     }
    },
    "sentirse": {
     "g": "to feel",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "no supo si sentirse aliviado o estafado",
+     "en": "did not know whether to feel relieved or conned"
+    }
    },
    "aliviado": {
     "g": "relieved",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "sentirse aliviado o estafado",
+     "en": "feel relieved or conned"
+    }
    },
    "o": {
     "g": "or",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "aliviado o estafado",
+     "en": "relieved or conned"
+    }
    },
    "estafado": {
     "g": "cheated, conned",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "sentirse estafado",
+     "en": "feel conned"
+    }
    },
    "semejante": {
     "g": "such a",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "por semejante trampa",
+     "en": "by a trick like that"
+    }
    },
    "trampa": {
     "g": "a trick, a trap",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "semejante trampa",
+     "en": "a trick like that"
+    }
    },
    "lección": {
     "g": "a lesson",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "La lección le quedó grabada",
+     "en": "The lesson stuck with him"
+    }
    },
    "grabada": {
     "g": "burned in, engraved in memory",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "le quedó grabada",
+     "en": "stuck with him"
+    }
    },
    "tiene": {
     "g": "he/she has",
@@ -39654,31 +40238,59 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "al que tiene la lengua floja",
+     "en": "whoever has a loose tongue"
     }
    },
    "floja": {
     "g": "lazy; weak",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "la lengua floja",
+     "en": "a loose tongue"
+    }
    },
    "tarde": {
     "g": "afternoon, late",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "tarde o temprano lo cazan",
+     "en": "sooner or later they catch you"
+    }
    },
    "temprano": {
     "g": "early",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "tarde o temprano",
+     "en": "sooner or later"
+    }
    },
    "cazan": {
     "g": "catch out, trap",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "tarde o temprano lo cazan",
+     "en": "sooner or later they catch you"
+    }
    },
    "secretos": {
     "g": "secrets",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "los secretos siempre tenían dueño y trampa",
+     "en": "the secrets always had an owner and a catch"
+    }
    },
    "siempre": {
     "g": "always",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "siempre tenían dueño y trampa",
+     "en": "always had an owner and a catch"
+    }
    },
    "tenían": {
     "g": "they had",
@@ -39714,11 +40326,19 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "siempre tenían dueño",
+     "en": "always had an owner"
     }
    },
    "dueño": {
     "g": "owner",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "tenían dueño y trampa",
+     "en": "had an owner and a catch"
+    }
    }
   }
  }
