@@ -4808,23 +4808,85 @@
   "churros-en-la-gran-via": {
    "chocolate": {
     "g": "thick hot chocolate",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "chocolate caliente",
+     "en": "hot chocolate"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "chocolates"
+      ]
+     ],
+     "here": -1
+    }
    },
    "caliente": {
     "g": "hot",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "chocolate caliente",
+     "en": "hot chocolate"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "calientes"
+      ]
+     ],
+     "here": -1
+    }
    },
    "para": {
     "g": "for, to",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "para tres",
+     "en": "for three"
+    }
    },
    "nubes": {
-    "g": "walking on air (en las nubes)",
-    "t": "noun"
+    "g": "clouds",
+    "t": "noun",
+    "c": {
+     "es": "las nubes grises",
+     "en": "the grey clouds"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "sing.",
+       "la nube"
+      ]
+     ],
+     "here": -1
+    }
    },
    "grises": {
     "g": "gray",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "las nubes grises",
+     "en": "the grey clouds"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "sing.",
+       "gris"
+      ]
+     ],
+     "here": -1
+    }
    },
    "cubren": {
     "g": "they cover",
@@ -4832,75 +4894,243 @@
    },
    "madrid": {
     "g": "Madrid (city)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "cubren Madrid",
+     "en": "cover Madrid"
+    }
    },
    "y": {
     "g": "and",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "y Lucía y Marta",
+     "en": "and Lucía and Marta"
+    }
    },
    "a": {
     "g": "to, at",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "empieza a llover",
+     "en": "starts to rain"
+    }
    },
    "caminan": {
     "g": "walk",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "caminan por la Gran Vía",
+     "en": "walk along the Gran Vía"
+    }
    },
    "por": {
     "g": "for, by",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "caminan por la Gran Vía",
+     "en": "walk along the Gran Vía"
+    }
    },
    "gran": {
     "g": "great, grand",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "la Gran Vía",
+     "en": "the Gran Vía"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "completo",
+       "grande"
+      ]
+     ],
+     "here": -1
+    }
    },
    "calle": {
     "g": "street",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "la calle más famosa",
+     "en": "the most famous street"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "las calles"
+      ]
+     ],
+     "here": -1
+    }
    },
    "famosa": {
     "g": "famous",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "la calle más famosa",
+     "en": "the most famous street"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "m.",
+       "famoso"
+      ],
+      [
+       "m. pl.",
+       "famosos"
+      ],
+      [
+       "f. pl.",
+       "famosas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "de": {
     "g": "of, from",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "de la ciudad",
+     "en": "of the city"
+    }
    },
    "ciudad": {
     "g": "city",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "de la ciudad",
+     "en": "of the city"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "las ciudades"
+      ]
+     ],
+     "here": -1
+    }
    },
    "hermano": {
     "g": "brother",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el hermano de Marta",
+     "en": "Marta's brother"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "los hermanos"
+      ],
+      [
+       "f.",
+       "la hermana"
+      ]
+     ],
+     "here": -1
+    }
    },
    "camina": {
     "g": "walks",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "camina con ellas",
+     "en": "walks with them"
+    }
    },
    "con": {
     "g": "with",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "camina con ellas",
+     "en": "walks with them"
+    }
    },
    "ellas": {
     "g": "they, them (women)",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "con ellas",
+     "en": "with them"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "con un hombre",
+       "ellos"
+      ]
+     ],
+     "here": -1
+    }
    },
    "miran": {
     "g": "they look at",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "miran las tiendas",
+     "en": "look at the shops"
+    }
    },
    "tiendas": {
     "g": "shops",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "las tiendas grandes",
+     "en": "the big shops"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "sing.",
+       "la tienda"
+      ]
+     ],
+     "here": -1
+    }
    },
    "grandes": {
     "g": "big",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "las tiendas grandes",
+     "en": "the big shops"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "sing.",
+       "grande"
+      ]
+     ],
+     "here": -1
+    }
    },
    "repente": {
     "g": "suddenly (de repente)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "de repente",
+     "en": "suddenly"
+    }
    },
    "empieza": {
     "g": "begins",
@@ -4936,31 +5166,80 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "empieza a llover",
+     "en": "it starts to rain"
     }
    },
    "llover": {
     "g": "to rain",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "empieza a llover",
+     "en": "starts to rain"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "ahora",
+       "llueve"
+      ]
+     ],
+     "here": -1
+    }
    },
    "lluvia": {
     "g": "rain",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "la lluvia cae fuerte",
+     "en": "the rain falls hard"
+    },
+    "gm": "f."
    },
    "cae": {
     "g": "falls",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "la lluvia cae fuerte",
+     "en": "the rain falls hard"
+    }
    },
    "fuerte": {
     "g": "loud, strong",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "cae fuerte",
+     "en": "falls hard"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "fuertes"
+      ]
+     ],
+     "here": -1
+    }
    },
    "sobre": {
     "g": "about, on",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "sobre la calle",
+     "en": "onto the street"
+    }
    },
    "no": {
     "g": "no, not",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "no tiene paraguas",
+     "en": "does not have an umbrella"
+    }
    },
    "tiene": {
     "g": "he/she has",
@@ -4996,11 +5275,30 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "no tiene paraguas",
+     "en": "does not have an umbrella"
     }
    },
    "paraguas": {
     "g": "umbrella",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "no tiene paraguas",
+     "en": "does not have an umbrella"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "los paraguas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "dice": {
     "g": "says",
@@ -5036,18 +5334,40 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "dice, triste",
+     "en": "she says, sad"
     }
    },
    "triste": {
     "g": "sad",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "dice, triste",
+     "en": "she says, sad"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "tristes"
+      ]
+     ],
+     "here": -1
+    }
    },
    "entonces": {
     "g": "then, so",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "Entonces Diego ve un café",
+     "en": "Then Diego sees a café"
+    }
    },
    "ve": {
-    "g": "sees, goes",
+    "g": "sees",
     "t": "verb",
     "f": {
      "kind": "expand",
@@ -5080,30 +5400,80 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "ve un café pequeño",
+     "en": "sees a small café"
     }
    },
    "en": {
     "g": "in, on",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "en la esquina",
+     "en": "on the corner"
+    }
    },
    "esquina": {
     "g": "corner",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "en la esquina",
+     "en": "on the corner"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "las esquinas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "amigos": {
     "g": "friends",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "los tres amigos",
+     "en": "the three friends"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "sing.",
+       "el amigo"
+      ],
+      [
+       "f.",
+       "las amigas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "entran": {
     "g": "come in",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "entran rápido",
+     "en": "come in quickly"
+    }
    },
    "dentro": {
     "g": "inside",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "Dentro hace calor",
+     "en": "Inside it is warm"
+    }
    },
    "hace": {
-    "g": "does, makes; ago",
+    "g": "makes; it is (weather)",
     "t": "verb",
     "f": {
      "kind": "expand",
@@ -5136,11 +5506,20 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Dentro hace calor",
+     "en": "Inside it is warm"
     }
    },
    "calor": {
     "g": "heat",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "hace calor",
+     "en": "it is warm"
+    },
+    "gm": "m."
    },
    "huele": {
     "g": "smells",
@@ -5176,27 +5555,62 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "huele muy bien",
+     "en": "smells very good"
     }
    },
    "muy": {
     "g": "very",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "huele muy bien",
+     "en": "smells very good"
+    }
    },
    "bien": {
     "g": "well, good",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "huele muy bien",
+     "en": "smells very good"
+    }
    },
    "se": {
     "g": "oneself, himself",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "los saluda",
+     "en": "greets them"
+    }
    },
    "saluda": {
     "g": "greets",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "los saluda con una sonrisa",
+     "en": "greets them with a smile"
+    }
    },
    "sonrisa": {
     "g": "smile",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con una sonrisa",
+     "en": "with a smile"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "las sonrisas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "pide": {
     "g": "asks",
@@ -5232,35 +5646,159 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "pide chocolate caliente",
+     "en": "orders hot chocolate"
     }
    },
    "churros": {
     "g": "churros",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "chocolate caliente y churros",
+     "en": "hot chocolate and churros"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "sing.",
+       "el churro"
+      ]
+     ],
+     "here": -1
+    }
    },
    "todos": {
     "g": "everyone, all",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "para todos",
+     "en": "for everyone"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "f.",
+       "todas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "dulce": {
     "g": "sweet",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "muy caliente y dulce",
+     "en": "very hot and sweet"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "dulces"
+      ]
+     ],
+     "here": -1
+    }
    },
    "prueba": {
-    "g": "a test",
-    "t": "noun"
+    "g": "tries",
+    "t": "verb",
+    "c": {
+     "es": "Lucía prueba un churro",
+     "en": "Lucía tries a churro"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "probar",
+     "here": 2,
+     "rows": [
+      [
+       "yo",
+       "pruebo"
+      ],
+      [
+       "tú",
+       "pruebas"
+      ],
+      [
+       "él, ella",
+       "prueba"
+      ],
+      [
+       "nosotros",
+       "probamos"
+      ],
+      [
+       "vosotros",
+       "probáis"
+      ],
+      [
+       "ellos",
+       "prueban"
+      ]
+     ]
+    }
    },
    "churro": {
     "g": "a churro",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "prueba un churro",
+     "en": "tries a churro"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "los churros"
+      ]
+     ],
+     "here": -1
+    }
    },
    "delicioso": {
     "g": "delicious",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "Está delicioso",
+     "en": "It is delicious"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "f.",
+       "deliciosa"
+      ],
+      [
+       "m. pl.",
+       "deliciosos"
+      ],
+      [
+       "f. pl.",
+       "deliciosas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "fuera": {
-    "g": "outside; were",
-    "t": "adverb"
+    "g": "outside",
+    "t": "adverb",
+    "c": {
+     "es": "Fuera sigue la lluvia",
+     "en": "Outside the rain goes on"
+    }
    },
    "sigue": {
     "g": "is still there",
@@ -5296,39 +5834,115 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Fuera sigue la lluvia",
+     "en": "Outside the rain goes on"
     }
    },
    "pero": {
     "g": "but",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "pero dentro hay risas",
+     "en": "but inside there is laughter"
+    }
    },
    "hay": {
     "g": "there is, there are",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "dentro hay risas",
+     "en": "inside there is laughter"
+    }
    },
    "risas": {
     "g": "laughs, laughter",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "hay risas",
+     "en": "there is laughter"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "sing.",
+       "la risa"
+      ]
+     ],
+     "here": -1
+    }
    },
    "moja": {
     "g": "dips",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "moja otro churro",
+     "en": "dips another churro"
+    }
    },
    "otro": {
     "g": "another, other",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "otro churro",
+     "en": "another churro"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "f.",
+       "otra"
+      ],
+      [
+       "m. pl.",
+       "otros"
+      ],
+      [
+       "f. pl.",
+       "otras"
+      ]
+     ],
+     "here": -1
+    }
    },
    "saca": {
     "g": "takes out, pulls out",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "saca el móvil",
+     "en": "takes out her phone"
+    }
    },
    "guarda": {
     "g": "keeps, guards",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "guarda el momento",
+     "en": "keeps the moment"
+    }
    },
    "momento": {
     "g": "moment",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "guarda el momento",
+     "en": "keeps the moment"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "los momentos"
+      ]
+     ],
+     "here": -1
+    }
    }
   },
   "lucia-llega-a-bilbao": {
