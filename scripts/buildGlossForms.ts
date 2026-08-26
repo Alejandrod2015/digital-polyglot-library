@@ -111,18 +111,115 @@ function presente(inf: string, variante: string): string[] | null {
   return filas;
 }
 
-/** Del infinitivo a las formas: sirve para saber qué palabra del texto es qué. */
+// ── Pretérito e imperfecto ───────────────────────────────────────────────
+// El A0 narra en presente y con eso bastaba. Estas historias C1 narran en
+// PASADO, asi que una tabla de presente enseña un paradigma que no es el que
+// el lector tiene delante. Las dos formas del pasado son mas regulares que el
+// presente: el imperfecto solo tiene tres irregulares en toda la lengua, y el
+// preterito concentra los suyos en una lista cerrada de raices fuertes.
+
+/** Raiz fuerte del preterito. Terminaciones sin tilde: -e, -iste, -o, -imos… */
+const PRET_FUERTE: Record<string, string> = {
+  tener: "tuv", estar: "estuv", poder: "pud", poner: "pus", saber: "sup",
+  querer: "quis", venir: "vin", hacer: "hic", decir: "dij", traer: "traj",
+  andar: "anduv", caber: "cup", haber: "hub", conducir: "conduj", producir: "produj",
+};
+/** Los que no siguen ningun patron: se escriben enteros. */
+const PRET_ENTERO: Record<string, string[]> = {
+  ser: ["fui", "fuiste", "fue", "fuimos", "fuisteis", "fueron"],
+  ir: ["fui", "fuiste", "fue", "fuimos", "fuisteis", "fueron"],
+  dar: ["di", "diste", "dio", "dimos", "disteis", "dieron"],
+  ver: ["vi", "viste", "vio", "vimos", "visteis", "vieron"],
+};
+/** -ir con cambio vocalico: solo en la 3a persona (pidio, pidieron). */
+const PRET_CAMBIO: Record<string, string> = {
+  pedir: "pid", seguir: "sigu", sentir: "sint", dormir: "durm", morir: "mur",
+  repetir: "repit", servir: "sirv", vestir: "vist", preferir: "prefir",
+  mentir: "mint", divertir: "divirt", conseguir: "consigu", reir: "ri", reír: "ri",
+  sonreir: "sonri", sonreír: "sonri", elegir: "elig", corregir: "corrig",
+};
+/** Raiz que pasa la i a y entre vocales (leyo, cayo, oyo, construyo). */
+const PRET_Y = /(?:[aeiou]er|[aeiou]ir|uir)$/;
+
+function preterito(inf: string): string[] | null {
+  if (PRET_ENTERO[inf]) return [...PRET_ENTERO[inf]];
+  const raiz = inf.slice(0, -2);
+  const fin = inf.slice(-2);
+  if (PRET_FUERTE[inf]) {
+    const r = PRET_FUERTE[inf];
+    const tercera = inf === "hacer" ? "hizo" : `${r}o`;
+    const ellos = r.endsWith("j") ? `${r}eron` : `${r}ieron`;
+    return [`${r}e`, `${r}iste`, tercera, `${r}imos`, `${r}isteis`, ellos];
+  }
+  if (fin === "ar") {
+    // La ortografia protege el sonido de la raiz en la 1a: busque, llegue, empece.
+    let yo = `${raiz}é`;
+    if (raiz.endsWith("c")) yo = `${raiz.slice(0, -1)}qué`;
+    else if (raiz.endsWith("g")) yo = `${raiz}ué`;
+    else if (raiz.endsWith("z")) yo = `${raiz.slice(0, -1)}cé`;
+    return [yo, `${raiz}aste`, `${raiz}ó`, `${raiz}amos`, `${raiz}asteis`, `${raiz}aron`];
+  }
+  if (fin !== "er" && fin !== "ir") return null;
+  const cambio = PRET_CAMBIO[inf];
+  const r3 = cambio ?? raiz;
+  if (PRET_Y.test(inf) && !cambio) {
+    return [`${raiz}í`, `${raiz}iste`, `${raiz}yó`, `${raiz}imos`, `${raiz}isteis`, `${raiz}yeron`];
+  }
+  const tercera = cambio === "ri" || cambio === "sonri" ? `${r3}o` : `${r3}ió`;
+  const ellos = cambio === "ri" || cambio === "sonri" ? `${r3}eron` : `${r3}ieron`;
+  return [`${raiz}í`, `${raiz}iste`, tercera, `${raiz}imos`, `${raiz}isteis`, ellos];
+}
+
+/** Imperfecto. Tres irregulares en toda la lengua y ni uno mas. */
+function imperfecto(inf: string): string[] | null {
+  if (inf === "ser") return ["era", "eras", "era", "éramos", "erais", "eran"];
+  if (inf === "ir") return ["iba", "ibas", "iba", "íbamos", "ibais", "iban"];
+  if (inf === "ver") return ["veía", "veías", "veía", "veíamos", "veíais", "veían"];
+  const raiz = inf.slice(0, -2);
+  const fin = inf.slice(-2);
+  if (fin === "ar") return [`${raiz}aba`, `${raiz}abas`, `${raiz}aba`, `${raiz}ábamos`, `${raiz}abais`, `${raiz}aban`];
+  if (fin === "er" || fin === "ir") return [`${raiz}ía`, `${raiz}ías`, `${raiz}ía`, `${raiz}íamos`, `${raiz}íais`, `${raiz}ían`];
+  return null;
+}
+
+/** Adapta cualquier tabla de seis a la variante (ustedes toma la de ellos). */
+function aVariante(filas: string[], variante: string): string[] {
+  const out = [...filas];
+  if (variante !== "spain") out[4] = out[5];
+  return out;
+}
+
+export type Tiempo = "presente" | "pretérito" | "imperfecto";
+const TIEMPOS: Array<{ id: Tiempo; fn: (inf: string, v: string) => string[] | null }> = [
+  { id: "presente", fn: (inf, v) => presente(inf, v) },
+  { id: "pretérito", fn: (inf, v) => { const f = preterito(inf); return f ? aVariante(f, v) : null; } },
+  { id: "imperfecto", fn: (inf, v) => { const f = imperfecto(inf); return f ? aVariante(f, v) : null; } },
+];
+
+/** Del infinitivo a las formas: sirve para saber qué palabra del texto es qué.
+ *  Indexa los tres tiempos, y el primero que reclame una forma se la queda. El
+ *  orden importa poco porque las formas casi no chocan entre tiempos; donde
+ *  chocan (hablamos, presente y preterito) gana el presente, que es el que un
+ *  hispanohablante lee por defecto. */
 function indicePorForma(infinitivos: string[], variante: string) {
-  const mapa = new Map<string, { inf: string; i: number }>();
-  for (const inf of infinitivos) {
-    const filas = presente(inf, variante);
-    if (!filas) continue;
-    filas.forEach((f, i) => {
-      const clave = f.toLowerCase();
-      if (!mapa.has(clave)) mapa.set(clave, { inf, i });
-    });
+  const mapa = new Map<string, { inf: string; i: number; tiempo: Tiempo }>();
+  for (const { id, fn } of TIEMPOS) {
+    for (const inf of infinitivos) {
+      const filas = fn(inf, variante);
+      if (!filas) continue;
+      filas.forEach((f, i) => {
+        const clave = f.toLowerCase();
+        if (!mapa.has(clave)) mapa.set(clave, { inf, i, tiempo: id });
+      });
+    }
   }
   return mapa;
+}
+
+/** La tabla del tiempo que toca, ya adaptada a la variante. */
+function tablaDe(inf: string, tiempo: Tiempo, variante: string): string[] | null {
+  const t = TIEMPOS.find((x) => x.id === tiempo);
+  return t ? t.fn(inf, variante) : null;
 }
 
 // ── Sustantivos ──────────────────────────────────────────────────────────
@@ -190,6 +287,20 @@ function main() {
     const m = /\(([a-záéíóúñ]+(?:ar|er|ir))\)/.exec(v?.g ?? "");
     if (m) infinitivos.add(m[1]);
   }
+  // Infinitivos que la propia historia delata. Solo -ar, y solo por formas que
+  // NO pueden venir de otra conjugacion: -o con tilde y -aba(n) son de -ar y de
+  // nada mas. En -er / -ir no se hace: el preterito y el imperfecto de las dos
+  // son identicos (-io, -ia), asi que la forma no dice cual es el infinitivo y
+  // la etiqueta saldria inventada la mitad de las veces.
+  for (const texto of Object.values(
+    JSON.parse(fs.readFileSync(process.argv[3] ?? "/dev/null", "utf8").trim() || "{}") as Record<string, string>
+  )) {
+    for (const w of (texto.match(/\p{L}+/gu) ?? []).map((x) => x.toLowerCase())) {
+      if (bundle.glosses[w]?.t !== "verb") continue;
+      const m = /^(.+?)(ó|aron|aba|abas|ábamos|aban|é|aste|amos|asteis)$/.exec(w);
+      if (m && m[1].length >= 2) infinitivos.add(`${m[1]}ar`);
+    }
+  }
   const porForma = indicePorForma([...infinitivos], variante);
 
   const textos = JSON.parse(fs.readFileSync(process.argv[3] ?? "/dev/null", "utf8").trim() || "{}") as Record<string, string>;
@@ -204,7 +315,7 @@ function main() {
     const yaEscrita = Object.values(salida[slug] ?? {}).some((e) => e?.c);
     if (yaEscrita) { saltadas.push(slug); continue; }
     const entradas = (salida[slug] ??= {});
-    const palabras = (texto.match(/[^\W\d_]+/gu) ?? []).map((w) => w.toLowerCase());
+    const palabras = (texto.match(/\p{L}+/gu) ?? []).map((w) => w.toLowerCase());
     const vistas = new Set<string>();
 
     palabras.forEach((palabra, i) => {
@@ -217,11 +328,14 @@ function main() {
       if (base.t === "verb") {
         const hit = porForma.get(palabra);
         if (hit) {
-          const filas = presente(hit.inf, variante)!;
+          // El tiempo lo decide la forma que sale en la historia, no el script:
+          // estas narran en pasado y una tabla de presente enseñaria otro
+          // paradigma que el que el lector tiene delante.
+          const filas = tablaDe(hit.inf, hit.tiempo, variante)!;
           entrada.f = {
             kind: "expand",
             link: "See conjugation",
-            lemma: hit.inf,
+            lemma: hit.tiempo === "presente" ? hit.inf : `${hit.inf} (${hit.tiempo})`,
             rows: filas.map((f, idx) => [P[idx], f]),
             here: hit.i,
           };

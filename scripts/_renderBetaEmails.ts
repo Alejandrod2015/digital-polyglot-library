@@ -38,99 +38,104 @@ const release: BetaEmailData = {
       "The streak chips stop showing zeros before you have any progress.",
     ],
     knownIssues: ["Practice audio still cuts the last syllable on very short words."],
-    askThem: "Open a story, skip forward twice, and tell me if the highlight keeps up.",
+    askThem: "Open a story, skip forward twice, and tell us if the highlight keeps up.",
   },
+  // Se escriben como ARREGLOS, no como la queja de quien lo dijo: el bloque
+  // enseña lo que ya funciona, no la factura del reporte.
   fixedForThem: [
-    "The audio started about a second late every time I opened a story.",
+    "Story audio no longer starts a second late when you open a story.",
   ],
 };
 
-// The three shapes of the "we heard you" send, with the real work behind the
-// glosses. Two testers reported it in their final surveys, so the personal
-// version is rendered twice: quoting one person is easy to get right by
-// accident, and the failure mode only shows when two of them sit side by side.
-const GLOSS_CHANGES = [
-  "Tap any word and the card leads with the phrase it belongs to, translated the way it is used right there.",
-  "Verbs show the conjugation with the person and the tense, nouns their gender and plural, adjectives their agreement.",
-  "The card leads with the word exactly as the story spells it, with the infinitive beside it when the two differ.",
-  "Highlighted words got the same treatment: the definition you already had, plus the phrase and the forms.",
-  "Articles, numbers and character names are no longer tappable. The card had nothing to add about them.",
-];
-
+// Las tres formas del correo de la mejora de las glosas. La version personal
+// se renderiza dos veces: citar a una persona sale bien por casualidad, y el
+// fallo solo se ve con las dos al lado.
+//
+// El copy cuenta lo que hace la app ahora. Ni el expediente de quien escribio
+// (cuantas veces toco una palabra, cuantas historias abrio), ni la mejora
+// presentada como consecuencia de su mensaje.
 // Las capturas viven en public/email/glosses y se sirven desde `assetBase`;
 // en la previsualizacion se apunta al dev server para poder verlas ya.
 const SHOT_BASE = "http://localhost:3000";
 
-const heardYouGeneric: BetaEmailData = {
+const GLOSS_CHANGES = [
+  "Tap any word and the card shows the phrase it belongs to, translated the way it is used right there.",
+  "Highlighted words got the same treatment, on top of the definition they already had.",
+];
+
+// El titular es el mismo para los tres: la mejora es una, y lo que resuelve
+// no cambia segun quien la lea.
+const HEADLINE = "A better way to learn as you read";
+
+const TRY_IT = "Open a story and tap a few words while you read. If something is still unclear, tell us.";
+
+const improvementGeneric: BetaEmailData = {
   ...common,
   assetBase: SHOT_BASE,
-  heardYou: {
+  improvement: {
+    headline: HEADLINE,
     changes: GLOSS_CHANGES,
     example: {
       word: "baja",
       sentence: "Lucía baja del tren en Madrid.",
-      before: "goes down, lowers",
-      after: "baja del tren: gets off the train, with the whole present tense of bajar",
-      beforeImage: "/email/glosses/baja-before.png",
-      afterImage: "/email/glosses/baja-after.png",
+      caption: "baja del tren: gets off the train, with the forms of the verb underneath.",
+      image: "/email/glosses/baja-tap.gif",
+      fullSizeImage: "/email/glosses/baja-after.png",
     },
-    askThem: "Open any story, tap a verb, and see whether the card tells you who is doing it and when.",
+    askThem: TRY_IT,
     ctaUrl: "https://digitalpolyglot.com/stories",
   },
 };
 
-const heardYouColombe: BetaEmailData = {
+const improvementColombe: BetaEmailData = {
   ...common,
   firstName: "Colombe",
   assetBase: SHOT_BASE,
-  heardYou: {
-    headline: "A word now explains the sentence it is in",
+  improvement: {
+    headline: HEADLINE,
     quote:
       "What made me almost delete the app is the lack of opportunities to understand the grammar after clicking on the word. Also, the word wasn't really explained much, and I had to actively search for the meaning.",
     quotedAt: "In your final survey, 24 August.",
-    becauseOfYou: [
-      "Every word of the two stories you read now carries the phrase it sits in, translated, plus its forms.",
-      "The 122 verb forms in the other 20 stories of your journey show their conjugation when you tap them.",
-      "You tapped baja, helado and paraguas three times each. All three said something about the word instead of about the sentence. They do not any more.",
+    highlights: [
+      "Tap any word and the card shows the phrase it belongs to, translated the way it is used right there.",
+      "It covers every story in your journey, not only the ones you have read.",
     ],
     example: {
       word: "baja",
-      sentence: "Lucía baja del tren en Madrid. (Marta enseña el Retiro)",
-      before: "goes down, lowers",
-      after: "baja del tren: gets off the train, with the whole present tense of bajar",
-      beforeImage: "/email/glosses/baja-before.png",
-      afterImage: "/email/glosses/baja-after.png",
+      sentence: "Lucía baja del tren en Madrid.",
+      caption: "baja del tren: gets off the train, with the forms of the verb underneath.",
+      image: "/email/glosses/baja-tap.gif",
+      fullSizeImage: "/email/glosses/baja-after.png",
     },
-    changes: GLOSS_CHANGES.slice(2),
-    askThem: "Reopen Marta enseña el Retiro and tap baja. If the card still does not explain the grammar, tell me.",
+    changes: ["Articles, numbers and character names are no longer tappable. The card had nothing to add about them."],
+    askThem: TRY_IT,
     ctaUrl: "https://digitalpolyglot.com/stories",
   },
 };
 
-const heardYouTy: BetaEmailData = {
+const improvementTy: BetaEmailData = {
   ...common,
   firstName: "Ty",
   assetBase: SHOT_BASE,
-  heardYou: {
-    headline: "Same word, different story, different meaning",
+  improvement: {
+    headline: HEADLINE,
     quote:
       "While highlighted words and phrases are well defined, other words sometimes did not reflect the actual context of the sentence. Often, the definition of a word changes depending on phrasing.",
     quotedAt: "In your review, 23 August.",
-    becauseOfYou: [
-      "You were right about the cause: one flat list of 1,739 words served all 21 stories, so a word could only ever have one meaning.",
-      "The 95 words you tapped in your three stories now carry the phrase they belong to, and the same word says different things in different stories.",
-      "Tapping the same word five times in a row is the signature of a card that is not answering. Those were the ones fixed first.",
+    highlights: [
+      "Tap any word and the card shows the phrase it belongs to, translated the way it is used right there.",
+      "The same word can say different things in different stories, which is how the language actually works.",
+      "It covers every story in the journey, not only the ones you have read.",
     ],
     example: {
       word: "punto",
       sentence: "Pagabas y punto. (Le toca a Mateo)",
-      before: "point, dot",
-      after: "pagabas y punto: you paid, and that was that, with the other two uses underneath",
-      beforeImage: "/email/glosses/punto-before.png",
-      afterImage: "/email/glosses/punto-after.png",
+      caption: "pagabas y punto: you paid, and that was that, with its other uses underneath.",
+      image: "/email/glosses/punto-tap.gif",
+      fullSizeImage: "/email/glosses/punto-after.png",
     },
-    changes: GLOSS_CHANGES.slice(2),
-    askThem: "Reopen Le toca a Mateo and tap punto, tocaba and quedar. Those three were yours.",
+    changes: ["Highlighted words got the same treatment, on top of the definition they already had."],
+    askThem: TRY_IT,
     ctaUrl: "https://digitalpolyglot.com/stories",
   },
 };
@@ -159,18 +164,18 @@ const ORDER: Array<{ kind: BetaEmailKind; label: string; data: BetaEmailData }> 
   { kind: "final_survey", label: "8 · Final survey", data: common },
   { kind: "review_ask", label: "9 · Review ask (happy)", data: common },
   { kind: "review_recover", label: "10 · Recovery (unhappy)", data: common },
-  { kind: "heard_you", label: "11 · You told us (everyone else)", data: heardYouGeneric },
+  { kind: "improvement", label: "11 · Mejora (todos los demás)", data: improvementGeneric },
   {
-    kind: "heard_you",
-    label: "11b · You told us (the tester who reported it)",
-    data: heardYouColombe,
-    file: "heard_you_colombe",
+    kind: "improvement",
+    label: "11b · Mejora (quien escribió)",
+    data: improvementColombe,
+    file: "improvement_colombe",
   },
   {
-    kind: "heard_you",
-    label: "11c · You told us (the other reporter)",
-    data: heardYouTy,
-    file: "heard_you_ty",
+    kind: "improvement",
+    label: "11c · Mejora (el otro que escribió)",
+    data: improvementTy,
+    file: "improvement_ty",
   },
 ];
 

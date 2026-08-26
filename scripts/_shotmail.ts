@@ -1,5 +1,5 @@
 /**
- * Los tres correos "we heard you" a PNG, para mirarlos como se miran los
+ * Los tres correos de la mejora a PNG, para mirarlos como se miran los
  * correos: enteros y de un vistazo. Requiere `_renderBetaEmails.ts` antes y el
  * dev server en :3000 (las capturas de las tarjetas se sirven de ahi).
  *
@@ -8,7 +8,7 @@
 import { chromium } from "playwright";
 
 const OUT = "/tmp/claude-501/beta-emails";
-const files = ["heard_you", "heard_you_colombe", "heard_you_ty"];
+const files = ["improvement", "improvement_colombe", "improvement_ty"];
 
 async function main() {
   const b = await chromium.launch({ channel: "chrome" });
