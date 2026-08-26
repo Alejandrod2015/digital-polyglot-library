@@ -33905,31 +33905,12 @@
      "here": -1
     }
    },
-   "billetes": {
-    "g": "tickets",
-    "t": "noun",
-    "c": {
-     "es": "no quedan billetes para hoy",
-     "en": "there are no tickets left for today"
-    },
-    "gm": "m.",
-    "f": {
-     "kind": "line",
-     "rows": [
-      [
-       "sing.",
-       "el billete"
-      ]
-     ],
-     "here": -1
-    }
-   },
    "hoy": {
     "g": "today",
     "t": "adverb",
     "c": {
-     "es": "para hoy",
-     "en": "for today"
+     "es": "hoy no quedan entradas",
+     "en": "there are no tickets left today"
     }
    },
    "explica": {
@@ -34724,8 +34705,8 @@
     "g": "they are",
     "t": "verb",
     "c": {
-     "es": "las entradas están agotadas",
-     "en": "the tickets are sold out"
+     "es": "están agotadas",
+     "en": "are sold out"
     },
     "f": {
      "kind": "expand",
