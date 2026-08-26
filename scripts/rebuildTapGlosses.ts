@@ -70,12 +70,26 @@ const FAMILIES: Record<string, string[]> = {
 };
 
 /**
- * Nombres de PERSONAJE inventados: tocarlos y no obtener nada no es un fallo
- * de cobertura, así que no cuentan como hueco. Los nombres REALES (Frida
- * Kahlo) sí se glosan, y viven en el fichero manual como cualquier otra.
+ * Palabras que NO son tocables a propósito: artículos, números y el reparto
+ * inventado de cada journey. No cuentan como hueco de cobertura porque el
+ * lector solo envuelve en un span tocable lo que TIENE glosa, así que quitar
+ * la entrada no deja un toque muerto, deja texto normal.
+ *
+ * Vive fuera, en `tap-gloss-exempt.json`, y lo lee también
+ * `checkGlossVariants.ts`, que falla si alguna de estas TIENE glosa. Antes era
+ * una regex de nombres aquí dentro, y por eso los dos lints acabaron pidiendo
+ * cosas contrarias: este contaba `el`, `dos` y `Pau` como huecos mientras el
+ * otro prohibía justo esas entradas. Un nombre propio REAL (Messi, Borussia)
+ * no está exento: se glosa con lo que ES.
  */
-const CHARACTER_NAMES =
-  /^(iv[áa]n|lupe|javier|rafa|marta|elena|kanek|to[ñn]o|sof[íi]a|luc[íi]a|chela|timo|nadia|pablo|carmen|rosa|mateo|nico|ana|marina|nerea|greve|ole|nora|merle|bia|tiago|caio|lia|nara|vitor|dani|teo|irene|dario|gaia|livia|rafaela|matheus|bruna|larissa|selma|dora|neide|iara|vera|solange|dorival|tain[áa])$/i;
+const EXEMPT: Record<string, { articles: string[]; numerals: string[]; characterNames: string[] }> =
+  JSON.parse(fs.readFileSync(path.join("scripts", "tap-gloss-exempt.json"), "utf8")).bundles;
+
+function exemptFor(bundle: string): Set<string> {
+  const e = EXEMPT[bundle];
+  if (!e) return new Set();
+  return new Set([...e.articles, ...e.numerals, ...e.characterNames].map((w) => w.toLowerCase()));
+}
 
 /**
  * COPIA EXACTA de lo que hace el lector, en dos pasos. Inventarme el corte
@@ -158,6 +172,7 @@ async function main() {
       bundle.slugs
     );
 
+    const exempt = exemptFor(name);
     const needed = new Set<string>();
     for (const story of stories) {
       // CUERPO y TÍTULO. El título es la superficie que faltaba.
@@ -165,7 +180,7 @@ async function main() {
       for (const source of [body, story.title ?? ""]) {
         for (const token of source.match(TAPPABLE) ?? []) {
           const key = glossKey(token);
-          if (!key || own.has(key) || CHARACTER_NAMES.test(key)) continue;
+          if (!key || own.has(key) || exempt.has(key)) continue;
           needed.add(key);
         }
       }

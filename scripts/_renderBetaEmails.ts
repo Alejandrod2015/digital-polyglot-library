@@ -57,10 +57,23 @@ const GLOSS_CHANGES = [
   "Articles, numbers and character names are no longer tappable. The card had nothing to add about them.",
 ];
 
+// Las capturas viven en public/email/glosses y se sirven desde `assetBase`;
+// en la previsualizacion se apunta al dev server para poder verlas ya.
+const SHOT_BASE = "http://localhost:3000";
+
 const heardYouGeneric: BetaEmailData = {
   ...common,
+  assetBase: SHOT_BASE,
   heardYou: {
     changes: GLOSS_CHANGES,
+    example: {
+      word: "baja",
+      sentence: "Lucía baja del tren en Madrid.",
+      before: "goes down, lowers",
+      after: "baja del tren: gets off the train, with the whole present tense of bajar",
+      beforeImage: "/email/glosses/baja-before.png",
+      afterImage: "/email/glosses/baja-after.png",
+    },
     askThem: "Open any story, tap a verb, and see whether the card tells you who is doing it and when.",
     ctaUrl: "https://digitalpolyglot.com/stories",
   },
@@ -69,6 +82,7 @@ const heardYouGeneric: BetaEmailData = {
 const heardYouColombe: BetaEmailData = {
   ...common,
   firstName: "Colombe",
+  assetBase: SHOT_BASE,
   heardYou: {
     headline: "A word now explains the sentence it is in",
     quote:
@@ -80,10 +94,12 @@ const heardYouColombe: BetaEmailData = {
       "You tapped baja, helado and paraguas three times each. All three said something about the word instead of about the sentence. They do not any more.",
     ],
     example: {
-      word: "helado",
-      sentence: "Marta enseña el Retiro",
-      before: "cold, iced (adjective)",
-      after: "un helado de fresa: a strawberry ice cream. m., pl. los helados",
+      word: "baja",
+      sentence: "Lucía baja del tren en Madrid. (Marta enseña el Retiro)",
+      before: "goes down, lowers",
+      after: "baja del tren: gets off the train, with the whole present tense of bajar",
+      beforeImage: "/email/glosses/baja-before.png",
+      afterImage: "/email/glosses/baja-after.png",
     },
     changes: GLOSS_CHANGES.slice(2),
     askThem: "Reopen Marta enseña el Retiro and tap baja. If the card still does not explain the grammar, tell me.",
@@ -94,6 +110,7 @@ const heardYouColombe: BetaEmailData = {
 const heardYouTy: BetaEmailData = {
   ...common,
   firstName: "Ty",
+  assetBase: SHOT_BASE,
   heardYou: {
     headline: "Same word, different story, different meaning",
     quote:
@@ -106,9 +123,11 @@ const heardYouTy: BetaEmailData = {
     ],
     example: {
       word: "punto",
-      sentence: "Le toca a Mateo",
+      sentence: "Pagabas y punto. (Le toca a Mateo)",
       before: "point, dot",
-      after: "pagabas y punto: you paid, and that was that",
+      after: "pagabas y punto: you paid, and that was that, with the other two uses underneath",
+      beforeImage: "/email/glosses/punto-before.png",
+      afterImage: "/email/glosses/punto-after.png",
     },
     changes: GLOSS_CHANGES.slice(2),
     askThem: "Reopen Le toca a Mateo and tap punto, tocaba and quedar. Those three were yours.",

@@ -47,6 +47,13 @@ const VOSEO = new Set(["argentina", "uruguay"]);
 
 type Fallo = { fichero: string; historia: string; palabra: string; motivo: string };
 
+/** La MISMA lista que usa el check de cobertura para no contarlas como hueco.
+ *  Aquí se mira al revés: si una palabra exenta tiene glosa, vuelve a ser
+ *  tocable y el otro lint deja de avisar de ella. Un solo fichero para las dos
+ *  direcciones, que es lo que impide que vuelvan a contradecirse. */
+const EXEMPT: Record<string, { articles: string[]; numerals: string[]; characterNames: string[] }> =
+  JSON.parse(fs.readFileSync(path.join("scripts", "tap-gloss-exempt.json"), "utf8")).bundles;
+
 /** Tipos que no se tocan: el artículo y el número no son vocabulario. El tipo
  *  "other" NO entra aquí aunque lo parezca: en alemán es un cajón de sastre con
  *  Kreuzberg, la Elbphilharmonie y las partículas doch, ja y halt, que son de lo
@@ -85,6 +92,16 @@ function revisa(fichero: string, bundle: Bundle): Fallo[] {
     }
     if (entrada?.g && esNombreDePersonaje(palabra, entrada.g)) {
       fallos.push({ fichero, historia: "-", palabra, motivo: "nombre de personaje inventado: la glosa repite la palabra" });
+    }
+    const exenta = EXEMPT[fichero.replace(/\.json$/, "")];
+    if (exenta) {
+      const p = palabra.toLowerCase();
+      const clase = exenta.articles.includes(p) ? "artículo"
+        : exenta.numerals.includes(p) ? "número"
+        : exenta.characterNames.includes(p) ? "nombre de personaje" : null;
+      if (clase) {
+        fallos.push({ fichero, historia: "-", palabra, motivo: `${clase} exento en tap-gloss-exempt.json: no debe tener glosa` });
+      }
     }
   }
 

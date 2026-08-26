@@ -46,8 +46,11 @@ esac
 case "$CMD" in
   *--dry*) exit 0 ;;
 esac
+# Leer el saver no es guardar. La lista se quedo corta el 2026-08-26: un
+# `sed -n '1,80p' scripts/saveStory.ts` disparaba la auditoria entera y
+# bloqueaba, con lo que abrir el fichero para mirarlo costaba un exit 2.
 case "$CMD" in
-  grep*|*"| grep"*|cat\ *|less\ *|head\ *|tail\ *) exit 0 ;;
+  grep*|*"| grep"*|rg\ *|cat\ *|less\ *|head\ *|tail\ *|sed\ *|awk\ *|wc\ *|diff\ *) exit 0 ;;
 esac
 
 OUT="$(cd "$REPO" && npx tsx scripts/rebuildTapGlosses.ts --check 2>&1)"

@@ -7254,6 +7254,14 @@
   "vuelve": {
    "g": "returns, comes back",
    "t": "verb"
+  },
+  "messi": {
+   "g": "Messi (footballer, born in Rosario)",
+   "t": "other"
+  },
+  "fontanarrosa": {
+   "g": "Fontanarrosa (cartoonist and writer from Rosario)",
+   "t": "other"
   }
  }
 }
