@@ -16488,19 +16488,35 @@
   "andres-en-la-pista": {
    "en": {
     "g": "in, on",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "Andrés en la pista",
+     "en": "Andrés on the dance floor"
+    }
    },
    "pista": {
     "g": "clue; dance floor",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "en la pista",
+     "en": "on the dance floor"
+    }
    },
    "sábado": {
     "g": "Saturday",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El sábado la parranda estaba a millón",
+     "en": "On Saturday the party was in full swing"
+    }
    },
    "parranda": {
     "g": "party, spree",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "la parranda estaba a millón",
+     "en": "the party was in full swing"
+    }
    },
    "estaba": {
     "g": "was, used to be",
@@ -16536,47 +16552,91 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "la parranda estaba a millón",
+     "en": "the party was in full swing"
     }
    },
    "a": {
     "g": "to, at",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "estaba a millón",
+     "en": "was in full swing"
+    }
    },
    "con": {
     "g": "with",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "con champeta pegada",
+     "en": "with champeta blasting"
+    }
    },
    "champeta": {
     "g": "fast Afro Caribbean music and dance",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con champeta pegada",
+     "en": "with champeta blasting"
+    }
    },
    "pegada": {
     "g": "blasting music (champeta pegada)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "champeta pegada",
+     "en": "champeta blasting"
+    }
    },
    "y": {
     "g": "and",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "y birras bien frías",
+     "en": "and ice-cold beers"
+    }
    },
    "birras": {
     "g": "beers",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "birras bien frías",
+     "en": "ice-cold beers"
+    }
    },
    "bien": {
     "g": "well, good",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "bien frías",
+     "en": "ice-cold"
+    }
    },
    "frías": {
     "g": "cold (plural)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "birras bien frías",
+     "en": "ice-cold beers"
+    }
    },
    "no": {
     "g": "no, not",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "no le quitaba el ojo",
+     "en": "could not take his eyes off her"
+    }
    },
    "le": {
     "g": "to him, her, it",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "no le quitaba el ojo a una traga",
+     "en": "could not take his eyes off a girl he fancied"
+    }
    },
    "quitaba": {
     "g": "was taking away",
@@ -16612,19 +16672,35 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "no le quitaba el ojo",
+     "en": "could not take his eyes off her"
     }
    },
    "ojo": {
     "g": "eye; watch out",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "no le quitaba el ojo",
+     "en": "could not take his eyes off her"
+    }
    },
    "traga": {
     "g": "swallows, is smitten (Col.)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "una traga que bailaba sabroso",
+     "en": "a girl he fancied who danced beautifully"
+    }
    },
    "que": {
     "g": "that",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "una traga que bailaba sabroso",
+     "en": "a girl he fancied who danced beautifully"
+    }
    },
    "bailaba": {
     "g": "was dancing",
@@ -16660,23 +16736,43 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "que bailaba sabroso",
+     "en": "who danced beautifully"
     }
    },
    "sabroso": {
     "g": "to dance with flavor (bailar sabroso)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "bailaba sabroso",
+     "en": "danced beautifully"
+    }
    },
    "mitad": {
     "g": "half",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "en la mitad de la pista",
+     "en": "in the middle of the dance floor"
+    }
    },
    "de": {
     "g": "of, from",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "en la mitad de la pista",
+     "en": "in the middle of the dance floor"
+    }
    },
    "ahí": {
     "g": "there",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "Ahí está tu momento",
+     "en": "There is your moment"
+    }
    },
    "está": {
     "g": "is",
@@ -16712,27 +16808,51 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Ahí está tu momento",
+     "en": "There is your moment"
     }
    },
    "tu": {
     "g": "your",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "tu momento",
+     "en": "your moment"
+    }
    },
    "momento": {
     "g": "moment",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Ahí está tu momento",
+     "en": "There is your moment"
+    }
    },
    "galán": {
     "g": "handsome guy, heartthrob",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "tu momento, galán",
+     "en": "your moment, lover boy"
+    }
    },
    "vayas": {
     "g": "do not screw it up (no la vayas a embarrar)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "no la vayas a embarrar",
+     "en": "do not go and blow it"
+    }
    },
    "embarrar": {
     "g": "to screw it up (embarrarla)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "no la vayas a embarrar",
+     "en": "do not go and blow it"
+    }
    },
    "dijo": {
     "g": "said",
@@ -16768,47 +16888,91 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "le dijo Yuly",
+     "en": "Yuly told him"
     }
    },
    "dándole": {
     "g": "giving it; keeping at it",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "dándole un codazo",
+     "en": "giving him a nudge"
+    }
    },
    "codazo": {
     "g": "a nudge with the elbow",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "dándole un codazo",
+     "en": "giving him a nudge"
+    }
    },
    "ya": {
     "g": "already, now",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "Daniela ya se estaba riendo",
+     "en": "Daniela was already laughing"
+    }
    },
    "se": {
     "g": "oneself, himself",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "ya se estaba riendo",
+     "en": "was already laughing"
+    }
    },
    "riendo": {
     "g": "laughing",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "ya se estaba riendo",
+     "en": "was already laughing"
+    }
    },
    "antes": {
     "g": "before",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "antes de que él diera el primer paso",
+     "en": "before he took the first step"
+    }
    },
    "él": {
     "g": "he, him",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "antes de que él diera el primer paso",
+     "en": "before he took the first step"
+    }
    },
    "diera": {
     "g": "would give",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "antes de que él diera el primer paso",
+     "en": "before he took the first step"
+    }
    },
    "primer": {
     "g": "first",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "el primer paso",
+     "en": "the first step"
+    }
    },
    "paso": {
     "g": "step; I pass",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "diera el primer paso",
+     "en": "took the first step"
+    }
    },
    "recordaba": {
     "g": "remembered",
@@ -16844,31 +17008,59 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "Recordaba el corte tieso",
+     "en": "She remembered the stiff haircut"
     }
    },
    "corte": {
     "g": "cut, style",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el corte tieso",
+     "en": "the stiff haircut"
+    }
    },
    "tieso": {
     "g": "stiff, rigid",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "el corte tieso",
+     "en": "the stiff haircut"
+    }
    },
    "papelón": {
     "g": "an embarrassing spectacle",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el papelón con la vecina",
+     "en": "the embarrassment with the neighbour"
+    }
    },
    "vecina": {
     "g": "a female neighbor",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el papelón con la vecina",
+     "en": "the embarrassment with the neighbour"
+    }
    },
    "esto": {
     "g": "this",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Esto lo tengo que ver",
+     "en": "This I have to see"
+    }
    },
    "lo": {
     "g": "it, him",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Esto lo tengo que ver",
+     "en": "This I have to see"
+    }
    },
    "tengo": {
     "g": "I have",
@@ -16904,15 +17096,27 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "lo tengo que ver",
+     "en": "I have to see it"
     }
    },
    "ver": {
     "g": "to see",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "lo tengo que ver",
+     "en": "I have to see it"
+    }
    },
    "vale": {
     "g": "okay; it's worth",
-    "t": "expression"
+    "t": "expression",
+    "c": {
+     "es": "vale, va a ser un show",
+     "en": "mate, this is going to be a show"
+    }
    },
    "va": {
     "g": "he/she goes",
@@ -16948,15 +17152,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "va a ser un show",
+     "en": "is going to be a show"
     }
    },
    "ser": {
     "g": "to be",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "va a ser un show",
+     "en": "is going to be a show"
+    }
    },
    "show": {
     "g": "show, scene",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "va a ser un show",
+     "en": "is going to be a show"
+    }
    },
    "comentó": {
     "g": "commented",
@@ -16992,6 +17208,10 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "le comentó a Yuly",
+     "en": "she said to Yuly"
     }
    },
    "metió": {
@@ -17028,19 +17248,35 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Andrés se metió a la pista",
+     "en": "Andrés got onto the dance floor"
     }
    },
    "moviéndose": {
     "g": "moving",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "moviéndose bien descoordinada",
+     "en": "moving completely out of time"
+    }
    },
    "descoordinada": {
     "g": "clumsy, out of sync",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "moviéndose bien descoordinada",
+     "en": "moving completely out of time"
+    }
    },
    "parecía": {
     "g": "seemed, looked like",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "Parecía que peleaba con la música",
+     "en": "He looked like he was fighting the music"
+    }
    },
    "peleaba": {
     "g": "was fighting, struggling",
@@ -17076,27 +17312,51 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "peleaba con la música",
+     "en": "was fighting the music"
     }
    },
    "música": {
     "g": "music",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "peleaba con la música",
+     "en": "was fighting the music"
+    }
    },
    "todo": {
     "g": "all, everything",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "todo tieso de los brazos",
+     "en": "stiff all through the arms"
+    }
    },
    "brazos": {
     "g": "arms",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "tieso de los brazos",
+     "en": "stiff through the arms"
+    }
    },
    "parche": {
     "g": "hangout, crew",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El parche entero se dobló de la risa",
+     "en": "The whole crew doubled over laughing"
+    }
    },
    "entero": {
     "g": "whole, entire",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "El parche entero",
+     "en": "The whole crew"
+    }
    },
    "dobló": {
     "g": "doubled over laughing",
@@ -17132,31 +17392,59 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se dobló de la risa",
+     "en": "doubled over laughing"
     }
    },
    "risa": {
     "g": "laughter",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "se dobló de la risa",
+     "en": "doubled over laughing"
+    }
    },
    "al": {
     "g": "to the",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "al verlo hacer semejante ridiculez",
+     "en": "seeing him make such a fool of himself"
+    }
    },
    "verlo": {
     "g": "to see him",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "al verlo hacer semejante ridiculez",
+     "en": "seeing him make such a fool of himself"
+    }
    },
    "hacer": {
     "g": "to do, make",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "hacer semejante ridiculez",
+     "en": "make such a fool of himself"
+    }
    },
    "semejante": {
     "g": "such a",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "semejante ridiculez",
+     "en": "such a ridiculous display"
+    }
    },
    "ridiculez": {
     "g": "an absurd silly thing",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "semejante ridiculez",
+     "en": "such a ridiculous display"
+    }
    },
    "miró": {
     "g": "looked",
@@ -17192,55 +17480,107 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "La traga lo miró de arriba abajo",
+     "en": "The girl looked him up and down"
     }
    },
    "arriba": {
     "g": "up, above",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "de arriba abajo",
+     "en": "up and down"
+    }
    },
    "abajo": {
     "g": "down, below",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "de arriba abajo",
+     "en": "up and down"
+    }
    },
    "como": {
     "g": "like, as",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "como si lo fuera a dejar en ridículo",
+     "en": "as if she were about to humiliate him"
+    }
    },
    "si": {
     "g": "if, whether",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "como si lo fuera a dejar en ridículo",
+     "en": "as if she were about to humiliate him"
+    }
    },
    "fuera": {
     "g": "outside; were",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "como si lo fuera a dejar en ridículo",
+     "en": "as if she were about to humiliate him"
+    }
    },
    "dejar": {
     "g": "to leave, let",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "dejar en ridículo",
+     "en": "humiliate him"
+    }
    },
    "ridículo": {
     "g": "to humiliate (dejar en ridículo)",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "dejar en ridículo",
+     "en": "humiliate him"
+    }
    },
    "pero": {
     "g": "but",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "Pero algo en la cara de bobo feliz",
+     "en": "But something in that happy fool's face"
+    }
    },
    "algo": {
     "g": "something",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "algo en la cara de bobo feliz",
+     "en": "something in that happy fool's face"
+    }
    },
    "cara": {
     "g": "face",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "la cara de bobo feliz",
+     "en": "that happy fool's face"
+    }
    },
    "bobo": {
     "g": "a fool, said fondly",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "cara de bobo feliz",
+     "en": "a happy fool's face"
+    }
    },
    "feliz": {
     "g": "happy",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "cara de bobo feliz",
+     "en": "a happy fool's face"
+    }
    },
    "sacó": {
     "g": "took out, pulled",
@@ -17276,19 +17616,35 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "le sacó una sonrisa",
+     "en": "got a smile out of her"
     }
    },
    "sonrisa": {
     "g": "smile",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "le sacó una sonrisa",
+     "en": "got a smile out of her"
+    }
    },
    "vez": {
     "g": "time, occasion",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "En vez de irse",
+     "en": "Instead of walking off"
+    }
    },
    "irse": {
     "g": "to leave",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "En vez de irse",
+     "en": "Instead of walking off"
+    }
    },
    "acercó": {
     "g": "came closer",
@@ -17324,6 +17680,10 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se acercó y le empezó a marcar el paso",
+     "en": "she came over and started showing him the step"
     }
    },
    "empezó": {
@@ -17360,15 +17720,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "le empezó a marcar el paso",
+     "en": "started showing him the step"
     }
    },
    "marcar": {
     "g": "to guide the steps (marcar el paso)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "marcar el paso con paciencia",
+     "en": "showing him the step patiently"
+    }
    },
    "paciencia": {
     "g": "patience",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con paciencia",
+     "en": "patiently"
+    }
    },
    "podía": {
     "g": "could",
@@ -17404,19 +17776,35 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "Andrés no lo podía creer",
+     "en": "Andrés could not believe it"
     }
    },
    "creer": {
     "g": "to believe",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "no lo podía creer",
+     "en": "could not believe it"
+    }
    },
    "por": {
     "g": "for, by",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "por poco se queda congelado",
+     "en": "he almost froze"
+    }
    },
    "poco": {
     "g": "little by little (poco a poco)",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "por poco se queda congelado de la dicha",
+     "en": "he almost froze with joy"
+    }
    },
    "queda": {
     "g": "stays, remains",
@@ -17452,15 +17840,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "se queda congelado de la dicha",
+     "en": "froze with joy"
     }
    },
    "congelado": {
     "g": "frozen stiff with nerves",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "congelado de la dicha",
+     "en": "frozen with joy"
+    }
    },
    "dicha": {
     "g": "bliss, joy",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "congelado de la dicha",
+     "en": "frozen with joy"
+    }
    },
    "fue": {
     "g": "was, went",
@@ -17496,27 +17896,51 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "fue agarrando el ritmo",
+     "en": "he gradually picked up the rhythm"
     }
    },
    "agarrando": {
     "g": "finding the groove (agarrar el ritmo)",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "fue agarrando el ritmo",
+     "en": "gradually picked up the rhythm"
+    }
    },
    "ritmo": {
     "g": "to find the groove (agarrar el ritmo)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "agarrando el ritmo",
+     "en": "picking up the rhythm"
+    }
    },
    "llevado": {
     "g": "carried, led",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "llevado por la mano de la china",
+     "en": "led by the girl's hand"
+    }
    },
    "mano": {
     "g": "hand; bro, dude",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "por la mano de la china",
+     "en": "by the girl's hand"
+    }
    },
    "china": {
     "g": "a girl, on the coast",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "la mano de la china",
+     "en": "the girl's hand"
+    }
    },
    "envolvió": {
     "g": "wrapped up, swept up",
@@ -17552,15 +17976,27 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "La champeta los envolvió",
+     "en": "The champeta swept them up"
     }
    },
    "repente": {
     "g": "suddenly (de repente)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "de repente",
+     "en": "all of a sudden"
+    }
    },
    "pelao": {
     "g": "kid, guy; broke",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el pelao ya no se veía tan ridículo",
+     "en": "the lad no longer looked so ridiculous"
+    }
    },
    "veía": {
     "g": "looked, seemed",
@@ -17596,11 +18032,19 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "ya no se veía tan ridículo",
+     "en": "no longer looked so ridiculous"
     }
    },
    "tan": {
     "g": "so, such",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "tan ridículo",
+     "en": "so ridiculous"
+    }
    },
    "quedaron": {
     "g": "they stayed",
@@ -17636,71 +18080,139 @@
       ]
      ],
      "here": 4
+    },
+    "c": {
+     "es": "se quedaron con la boca abierta",
+     "en": "their jaws dropped"
     }
    },
    "boca": {
     "g": "mouth",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con la boca abierta",
+     "en": "jaws dropped"
+    }
    },
    "abierta": {
     "g": "open",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "la boca abierta",
+     "en": "jaw dropped"
+    }
    },
    "sin": {
     "g": "without",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "sin saber si reírse o aplaudir",
+     "en": "not knowing whether to laugh or clap"
+    }
    },
    "saber": {
     "g": "to know",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "sin saber si reírse o aplaudir",
+     "en": "not knowing whether to laugh or clap"
+    }
    },
    "reírse": {
     "g": "to laugh",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "si reírse o aplaudir",
+     "en": "whether to laugh or clap"
+    }
    },
    "o": {
     "g": "or",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "reírse o aplaudir",
+     "en": "laugh or clap"
+    }
    },
    "aplaudir": {
     "g": "to clap, applaud",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "reírse o aplaudir",
+     "en": "laugh or clap"
+    }
    },
    "perdedor": {
     "g": "a loser",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "El perdedor de siempre",
+     "en": "The usual loser"
+    }
    },
    "siempre": {
     "g": "always",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "El perdedor de siempre",
+     "en": "The usual loser"
+    }
    },
    "bailando": {
     "g": "dancing",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "estaba bailando pegado",
+     "en": "was dancing close"
+    }
    },
    "pegado": {
     "g": "dancing close together",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "bailando pegado",
+     "en": "dancing close"
+    }
    },
    "más": {
     "g": "more",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "la traga más buenona de la fiesta",
+     "en": "the best-looking girl at the party"
+    }
    },
    "buenona": {
     "g": "very good looking, attractive",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "la más buenona de la fiesta",
+     "en": "the best-looking one at the party"
+    }
    },
    "fiesta": {
     "g": "party",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "la más buenona de la fiesta",
+     "en": "the best-looking one at the party"
+    }
    },
    "todavía": {
     "g": "still, yet",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "todavía en shock",
+     "en": "still in shock"
+    }
    },
    "shock": {
     "g": "shock, stunned state",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "todavía en shock",
+     "en": "still in shock"
+    }
    },
    "murmuró": {
     "g": "murmured",
@@ -17736,11 +18248,19 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "murmuró un No joda",
+     "en": "muttered a No joda"
     }
    },
    "joda": {
     "g": "joke, mess around (Argentine)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un No joda",
+     "en": "a coastal exclamation, roughly no way"
+    }
    },
    "admitió": {
     "g": "admitted",
@@ -17776,19 +18296,35 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "admitió que el milagro existía",
+     "en": "admitted the miracle was real"
     }
    },
    "milagro": {
     "g": "a miracle",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el milagro existía",
+     "en": "the miracle was real"
+    }
    },
    "existía": {
     "g": "existed",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "el milagro existía",
+     "en": "the miracle was real"
+    }
    },
    "cuando": {
     "g": "when",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "Cuando terminó la canción",
+     "en": "When the song finished"
+    }
    },
    "terminó": {
     "g": "he/she finished, ended",
@@ -17824,11 +18360,19 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Cuando terminó la canción",
+     "en": "When the song finished"
     }
    },
    "canción": {
     "g": "a song",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "terminó la canción",
+     "en": "the song finished"
+    }
    },
    "volvió": {
     "g": "he/she came back",
@@ -17864,23 +18408,43 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "Andrés volvió al parche",
+     "en": "Andrés went back to the crew"
     }
    },
    "caminando": {
     "g": "walking",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "caminando en las nubes",
+     "en": "walking on air"
+    }
    },
    "nubes": {
     "g": "walking on air (en las nubes)",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "caminando en las nubes",
+     "en": "walking on air"
+    }
    },
    "nada": {
     "g": "nothing",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "No dijo nada",
+     "en": "He said nothing"
+    }
    },
    "solo": {
     "g": "only, alone",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "solo levantó las cejas",
+     "en": "he just raised his eyebrows"
+    }
    },
    "levantó": {
     "g": "lifted, raised",
@@ -17916,23 +18480,43 @@
       ]
      ],
      "here": 2
+    },
+    "c": {
+     "es": "solo levantó las cejas",
+     "en": "he just raised his eyebrows"
     }
    },
    "cejas": {
     "g": "eyebrows",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "levantó las cejas",
+     "en": "raised his eyebrows"
+    }
    },
    "triunfo": {
     "g": "triumph, victory",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "una cara de triunfo insoportable",
+     "en": "an unbearably triumphant look"
+    }
    },
    "insoportable": {
     "g": "unbearable, too much",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "una cara de triunfo insoportable",
+     "en": "an unbearably triumphant look"
+    }
    },
    "rey": {
     "g": "king",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el rey de la pista",
+     "en": "the king of the dance floor"
+    }
    },
    "era": {
     "g": "was, used to be",
@@ -17968,11 +18552,19 @@
       ]
      ],
      "here": 0
+    },
+    "c": {
+     "es": "el rey de la pista no era un chiste",
+     "en": "the king of the dance floor was not a joke"
     }
    },
    "chiste": {
     "g": "joke",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "no era un chiste",
+     "en": "was not a joke"
+    }
    }
   },
   "el-asado-a-la-orilla": {
