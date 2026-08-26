@@ -6945,7 +6945,7 @@
     "t": "verb",
     "c": {
      "es": "una regla que nadie escribió",
-     "en": "a rule nobody wrote"
+     "en": "a rule that nobody wrote"
     },
     "f": {
      "rows": [
@@ -7087,7 +7087,7 @@
     "t": "noun",
     "c": {
      "es": "pagabas y punto",
-     "en": "you paid, and that was that"
+     "en": "you paid, end of story"
     },
     "f": {
      "rows": [
@@ -10332,7 +10332,7 @@
     "t": "preposition",
     "c": {
      "es": "como una guelaguetza",
-     "en": "like a guelaguetza"
+     "en": "like a guelaguetza, the Oaxacan custom of mutual help"
     }
    },
    "guelaguetza": {
@@ -11602,7 +11602,7 @@
     "t": "pronoun",
     "c": {
      "es": "Todo es weón",
-     "en": "Everything is weón"
+     "en": "Everything is weón, the Chilean all-purpose word for guy"
     }
    },
    "es": {
@@ -11642,7 +11642,7 @@
     },
     "c": {
      "es": "Todo es weón",
-     "en": "Everything is weón"
+     "en": "Everything is weón, the Chilean all-purpose word for guy"
     }
    },
    "weón": {
@@ -11969,7 +11969,7 @@
     "t": "adjective",
     "c": {
      "es": "contaba entusiasmado",
-     "en": "told it, full of enthusiasm"
+     "en": "he told it, full of enthusiasm"
     }
    },
    "lo": {
@@ -14102,7 +14102,7 @@
     "t": "noun",
     "c": {
      "es": "sin rodeos",
-     "en": "no beating about the bush"
+     "en": "straight, no beating about the bush"
     },
     "gm": "m."
    },
@@ -14891,7 +14891,7 @@
     "t": "noun",
     "c": {
      "es": "hicieron las paces",
-     "en": "made up"
+     "en": "they made up"
     },
     "gm": "f."
    },
@@ -14982,7 +14982,7 @@
     "t": "conjunction",
     "c": {
      "es": "como si le hubieran quitado un bulto",
-     "en": "as if a weight had been lifted"
+     "en": "as if a weight had been lifted off them"
     }
    },
    "le": {
@@ -15105,7 +15105,7 @@
     "t": "adjective",
     "c": {
      "es": "medio en serio",
-     "en": "half seriously"
+     "en": "half serious"
     }
    },
    "chiste": {
@@ -15752,7 +15752,7 @@
     "t": "adjective",
     "c": {
      "es": "la panza llena",
-     "en": "a full belly"
+     "en": "a full stomach"
     }
    },
    "corazón": {
@@ -16623,7 +16623,7 @@
     "t": "preposition",
     "c": {
      "es": "entre risas",
-     "en": "amid laughter"
+     "en": "laughing"
     }
    },
    "risas": {
@@ -16631,7 +16631,7 @@
     "t": "noun",
     "c": {
      "es": "entre risas",
-     "en": "amid laughter"
+     "en": "laughing"
     },
     "gm": "f."
    },
@@ -19303,7 +19303,7 @@
     "t": "verb",
     "c": {
      "es": "fue agarrando el ritmo",
-     "en": "gradually picked up the rhythm"
+     "en": "he gradually picked up the rhythm"
     }
    },
    "ritmo": {
@@ -19386,7 +19386,7 @@
     "t": "noun",
     "c": {
      "es": "de repente",
-     "en": "all of a sudden"
+     "en": "suddenly"
     },
     "gm": "m."
    },
@@ -20668,8 +20668,8 @@
     "g": "turned on, lit",
     "t": "adjective",
     "c": {
-     "es": "estaba prendido",
-     "en": "was in full swing"
+     "es": "El weveo estaba prendido",
+     "en": "The banter was in full swing"
     }
    },
    "con": {
@@ -21059,44 +21059,13 @@
     }
    },
    "pega": {
-    "g": "hits, sticks; job",
-    "t": "verb",
-    "f": {
-     "kind": "expand",
-     "link": "See conjugation",
-     "lemma": "pegar",
-     "rows": [
-      [
-       "yo",
-       "pego"
-      ],
-      [
-       "tú",
-       "pegas"
-      ],
-      [
-       "él, ella",
-       "pega"
-      ],
-      [
-       "nosotros",
-       "pegamos"
-      ],
-      [
-       "ustedes",
-       "pegan"
-      ],
-      [
-       "ellos",
-       "pegan"
-      ]
-     ],
-     "here": 2
-    },
+    "g": "work, job (Chile)",
+    "t": "noun",
     "c": {
      "es": "con la pega y la vida tirando fuerte",
      "en": "with work and life pulling hard"
-    }
+    },
+    "gm": "f."
    },
    "vida": {
     "g": "life",
@@ -23829,7 +23798,7 @@
     "t": "noun",
     "c": {
      "es": "no tenían apuro",
-     "en": "in no rush"
+     "en": "they were in no rush"
     },
     "gm": "m."
    },
@@ -25315,7 +25284,7 @@
     },
     "c": {
      "es": "le devolvió otra frase",
-     "en": "fired back another sentence"
+     "en": "fired back another sentence at him"
     }
    },
    "otra": {
@@ -25634,7 +25603,7 @@
     "t": "noun",
     "c": {
      "es": "sin respuesta",
-     "en": "with no answer"
+     "en": "with no reply"
     },
     "gm": "f."
    },
@@ -26562,7 +26531,7 @@
     "t": "noun",
     "c": {
      "es": "somos yunta para siempre",
-     "en": "we are a crew for good"
+     "en": "we are a crew for ever"
     },
     "gm": "f."
    },
@@ -26571,7 +26540,7 @@
     "t": "preposition",
     "c": {
      "es": "para siempre",
-     "en": "for good"
+     "en": "for ever"
     }
    },
    "les": {
@@ -26811,8 +26780,7 @@
     "c": {
      "es": "el cielo gris de Lima",
      "en": "the grey Lima sky"
-    },
-    "gm": "f."
+    }
    },
    "saludó": {
     "g": "greeted, said hi",
@@ -26997,7 +26965,7 @@
     "t": "pronoun",
     "c": {
      "es": "todo piña",
-     "en": "all rubbish luck"
+     "en": "rubbish luck"
     }
    },
    "piña": {
@@ -28138,7 +28106,7 @@
     },
     "c": {
      "es": "se le prendió el foco",
-     "en": "it clicked"
+     "en": "the penny dropped"
     }
    },
    "foco": {
@@ -30530,8 +30498,7 @@
     "c": {
      "es": "la calle Alcalá",
      "en": "Alcalá street"
-    },
-    "gm": "m."
+    }
    },
    "andaba": {
     "g": "was going around",
@@ -31344,44 +31311,13 @@
     }
    },
    "picó": {
-    "g": "it stung, bit",
-    "t": "verb",
-    "f": {
-     "kind": "expand",
-     "link": "See conjugation",
-     "lemma": "picar (pretérito)",
-     "rows": [
-      [
-       "yo",
-       "piqué"
-      ],
-      [
-       "tú",
-       "picaste"
-      ],
-      [
-       "él, ella",
-       "picó"
-      ],
-      [
-       "nosotros",
-       "picamos"
-      ],
-      [
-       "ustedes",
-       "picaron"
-      ],
-      [
-       "ellos",
-       "picaron"
-      ]
-     ],
-     "here": 2
-    },
+    "g": "sound system (Caribbean Colombia)",
+    "t": "noun",
     "c": {
      "es": "con el picó sonando durísimo",
      "en": "with the sound system blasting"
-    }
+    },
+    "gm": "m."
    },
    "sonando": {
     "g": "ringing, sounding",
@@ -32226,7 +32162,7 @@
     "t": "adverb",
     "c": {
      "es": "hoy sí caigo parado",
-     "en": "today I really do land on my feet"
+     "en": "today I land on my feet"
     }
    },
    "caigo": {
@@ -37399,7 +37335,7 @@
     "t": "verb",
     "c": {
      "es": "que labure para conseguirte",
-     "en": "let him work for it"
+     "en": "let him work to get you"
     }
    },
    "conseguirte": {
@@ -37692,7 +37628,7 @@
     "t": "adjective",
     "c": {
      "es": "toda esta posta",
-     "en": "all this wisdom"
+     "en": "all this straight-up wisdom"
     }
    },
    "esta": {
@@ -37700,7 +37636,7 @@
     "t": "pronoun",
     "c": {
      "es": "toda esta posta",
-     "en": "all this wisdom"
+     "en": "all this straight-up wisdom"
     }
    },
    "posta": {
@@ -38650,8 +38586,7 @@
     "c": {
      "es": "el zócalo de Oaxaca",
      "en": "the main square of Oaxaca"
-    },
-    "gm": "f."
+    }
    },
    "a": {
     "g": "to, at",
@@ -39754,7 +39689,7 @@
     "t": "noun",
     "c": {
      "es": "de repente",
-     "en": "all of a sudden"
+     "en": "suddenly"
     },
     "gm": "m."
    },
@@ -39812,7 +39747,7 @@
     "t": "adjective",
     "c": {
      "es": "un buen rato",
-     "en": "quite a while"
+     "en": "a good while"
     }
    },
    "rato": {
@@ -39820,7 +39755,7 @@
     "t": "noun",
     "c": {
      "es": "un buen rato",
-     "en": "quite a while"
+     "en": "a good while"
     },
     "gm": "m."
    },
@@ -40948,7 +40883,7 @@
     "t": "verb",
     "c": {
      "es": "no lo pensaba soltar",
-     "en": "was not about to let it go"
+     "en": "he was not about to let it go"
     }
    },
    "se": {
@@ -41708,7 +41643,7 @@
     "t": "noun",
     "c": {
      "es": "se armó de valor",
-     "en": "worked up the courage"
+     "en": "he worked up the courage"
     },
     "gm": "m."
    },
@@ -42431,7 +42366,7 @@
     "t": "noun",
     "c": {
      "es": "sin piedad",
-     "en": "without mercy"
+     "en": "mercilessly"
     },
     "gm": "f."
    },
@@ -43885,7 +43820,7 @@
     "t": "adjective",
     "c": {
      "es": "se le hicieron rarísimos",
-     "en": "started sounding very odd"
+     "en": "started sounding very odd to her"
     }
    },
    "fecha": {
@@ -44401,7 +44336,7 @@
     "t": "noun",
     "c": {
      "es": "estallaran de la carcajada",
-     "en": "burst out laughing"
+     "en": "they burst out laughing"
     },
     "gm": "f."
    },
@@ -47773,8 +47708,8 @@
     "g": "turned on, lit",
     "t": "adjective",
     "c": {
-     "es": "estaba prendido",
-     "en": "was lit up"
+     "es": "ya estaba prendido",
+     "en": "he was already lit up"
     }
    },
    "hablando": {

@@ -72,6 +72,9 @@ async function hideChrome(page: Page): Promise<void> {
   });
 }
 
+/** `--only=<file>` regenera un solo clip, para depurar sin rehacer los dos. */
+const onlyArg = process.argv.find((a) => a.startsWith("--only="))?.slice(7);
+
 async function main() {
   mkdirSync(OUT, { recursive: true });
   rmSync(TMP, { recursive: true, force: true });
@@ -92,7 +95,7 @@ async function main() {
 
   const step = (msg: string) => console.log(`  · ${msg}`);
 
-  for (const clip of CLIPS) {
+  for (const clip of CLIPS.filter((c) => !onlyArg || c.file === onlyArg)) {
     step(`${clip.file}: abriendo`);
     // `networkidle` se queda esperando por la portada, que viene de R2: se
     // espera a que la imagen este pintada, y con tope.
@@ -111,7 +114,15 @@ async function main() {
       )
       .catch(() => console.warn(`  aviso: la portada de ${clip.slug} no cargo a tiempo`));
     await page.addStyleTag({
-      content: "nextjs-portal{display:none!important}[data-nextjs-toast]{display:none!important}",
+      // Sin scroll suave: `scrollIntoViewIfNeeded` espera a que el elemento
+      // este quieto, y con la animacion en marcha no lo esta nunca.
+      content: [
+        "nextjs-portal{display:none!important}",
+        "[data-nextjs-toast]{display:none!important}",
+        // El aviso de instalar la app, por su etiqueta, que es estable.
+        '[aria-label="Install Digital Polyglot to your home screen"]{display:none!important}',
+        "*{scroll-behavior:auto!important}",
+      ].join(""),
     });
 
     step("portada lista");
@@ -135,8 +146,8 @@ async function main() {
     await grab(1.4);
 
     step("scroll a la palabra");
-    await word.scrollIntoViewIfNeeded();
-    await page.waitForTimeout(250);
+    await word.evaluate((el) => el.scrollIntoView({ block: "center" }));
+    await page.waitForTimeout(500);
     // Empieza por arriba: portada y titulo, que es la historia tal como se
     // abre. Sin eso, el correo enseña un parrafo suelto.
     await page.waitForTimeout(400);
