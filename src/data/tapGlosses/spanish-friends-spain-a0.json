@@ -18102,35 +18102,175 @@
   "la-nieve-de-sierra-nevada": {
    "a": {
     "g": "to, at",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "A lo lejos",
+     "en": "In the distance"
+    }
    },
    "toca": {
     "g": "touches, has to",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "Lucía toca la nieve",
+     "en": "Lucía touches the snow"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "tocar",
+     "here": 2,
+     "rows": [
+      [
+       "yo",
+       "toco"
+      ],
+      [
+       "tú",
+       "tocas"
+      ],
+      [
+       "él, ella",
+       "toca"
+      ],
+      [
+       "nosotros",
+       "tocamos"
+      ],
+      [
+       "vosotros",
+       "tocáis"
+      ],
+      [
+       "ellos",
+       "tocan"
+      ]
+     ]
+    }
    },
    "nieve": {
     "g": "the snow",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "toca la nieve",
+     "en": "touches the snow"
+    },
+    "gm": "f."
    },
    "y": {
     "g": "and",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "y Lucía mira por la ventana",
+     "en": "and Lucía looks out of the window"
+    }
    },
    "toman": {
     "g": "they have",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "toman un café por la mañana",
+     "en": "have a coffee in the morning"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "tomar",
+     "here": 5,
+     "rows": [
+      [
+       "yo",
+       "tomo"
+      ],
+      [
+       "tú",
+       "tomas"
+      ],
+      [
+       "él, ella",
+       "toma"
+      ],
+      [
+       "nosotros",
+       "tomamos"
+      ],
+      [
+       "vosotros",
+       "tomáis"
+      ],
+      [
+       "ellos",
+       "toman"
+      ]
+     ]
+    }
    },
    "por": {
     "g": "for, by",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "por la mañana",
+     "en": "in the morning"
+    }
    },
    "mira": {
-    "g": "look, hey",
-    "t": "verb"
+    "g": "looks",
+    "t": "verb",
+    "c": {
+     "es": "mira por la ventana",
+     "en": "looks out of the window"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "mirar",
+     "here": 2,
+     "rows": [
+      [
+       "yo",
+       "miro"
+      ],
+      [
+       "tú",
+       "miras"
+      ],
+      [
+       "él, ella",
+       "mira"
+      ],
+      [
+       "nosotros",
+       "miramos"
+      ],
+      [
+       "vosotros",
+       "miráis"
+      ],
+      [
+       "ellos",
+       "miran"
+      ]
+     ]
+    }
    },
    "ventana": {
     "g": "window",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "por la ventana",
+     "en": "out of the window"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "las ventanas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "lo": {
     "g": "it, him",
@@ -18138,31 +18278,137 @@
    },
    "lejos": {
     "g": "far",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "A lo lejos",
+     "en": "In the distance"
+    }
    },
    "hay": {
     "g": "there is, there are",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "hay montañas altas",
+     "en": "there are high mountains"
+    }
    },
    "altas": {
     "g": "high",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "montañas altas",
+     "en": "high mountains"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "m.",
+       "alto"
+      ],
+      [
+       "f.",
+       "alta"
+      ],
+      [
+       "m. pl.",
+       "altos"
+      ]
+     ],
+     "here": -1
+    }
    },
    "explica": {
     "g": "explains",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "Nuria explica algo importante",
+     "en": "Nuria explains something important"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "explicar",
+     "here": 2,
+     "rows": [
+      [
+       "yo",
+       "explico"
+      ],
+      [
+       "tú",
+       "explicas"
+      ],
+      [
+       "él, ella",
+       "explica"
+      ],
+      [
+       "nosotros",
+       "explicamos"
+      ],
+      [
+       "vosotros",
+       "explicáis"
+      ],
+      [
+       "ellos",
+       "explican"
+      ]
+     ]
+    }
    },
    "algo": {
     "g": "something",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "algo importante",
+     "en": "something important"
+    }
    },
    "importante": {
     "g": "important",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "algo importante",
+     "en": "something important"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "importantes"
+      ]
+     ],
+     "here": -1
+    }
    },
    "esas": {
     "g": "those",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "esas montañas son Sierra Nevada",
+     "en": "those mountains are Sierra Nevada"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "f.",
+       "esa"
+      ],
+      [
+       "m.",
+       "ese"
+      ],
+      [
+       "m. pl.",
+       "esos"
+      ]
+     ],
+     "here": -1
+    }
    },
    "son": {
     "g": "they are",
@@ -18171,6 +18417,7 @@
      "kind": "expand",
      "link": "See conjugation",
      "lemma": "ser",
+     "here": 5,
      "rows": [
       [
        "yo",
@@ -18196,33 +18443,122 @@
        "ellos",
        "son"
       ]
-     ],
-     "here": 5
+     ]
+    },
+    "c": {
+     "es": "esas montañas son Sierra Nevada",
+     "en": "those mountains are Sierra Nevada"
     }
    },
    "sierra": {
     "g": "mountain range",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "Sierra Nevada",
+     "en": "Sierra Nevada"
+    },
+    "gm": "f."
    },
    "nevada": {
-    "g": "Nevada (mountains)",
-    "t": "noun"
+    "g": "snowy (Sierra Nevada)",
+    "t": "noun",
+    "c": {
+     "es": "Sierra Nevada",
+     "en": "Sierra Nevada"
+    }
    },
    "entonces": {
     "g": "then, so",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "Entonces Nuria propone un plan",
+     "en": "Then Nuria suggests a plan"
+    }
    },
    "propone": {
     "g": "proposes",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "propone un plan bonito",
+     "en": "suggests a lovely plan"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "proponer",
+     "here": 2,
+     "rows": [
+      [
+       "yo",
+       "propono"
+      ],
+      [
+       "tú",
+       "propones"
+      ],
+      [
+       "él, ella",
+       "propone"
+      ],
+      [
+       "nosotros",
+       "proponemos"
+      ],
+      [
+       "vosotros",
+       "proponéis"
+      ],
+      [
+       "ellos",
+       "proponen"
+      ]
+     ]
+    }
    },
    "plan": {
     "g": "plan",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un plan bonito",
+     "en": "a lovely plan"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "los planes"
+      ]
+     ],
+     "here": -1
+    }
    },
    "bonito": {
     "g": "pretty, nice",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "un plan bonito",
+     "en": "a lovely plan"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "f.",
+       "bonita"
+      ],
+      [
+       "m. pl.",
+       "bonitos"
+      ],
+      [
+       "f. pl.",
+       "bonitas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "vamos": {
     "g": "we go",
@@ -18231,6 +18567,7 @@
      "kind": "expand",
      "link": "See conjugation",
      "lemma": "ir",
+     "here": 3,
      "rows": [
       [
        "yo",
@@ -18256,13 +18593,30 @@
        "ellos",
        "van"
       ]
-     ],
-     "here": 3
+     ]
+    },
+    "c": {
+     "es": "Vamos a ver la nieve",
+     "en": "Let us go and see the snow"
     }
    },
    "ver": {
     "g": "to see",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "Vamos a ver",
+     "en": "Let us go and see"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "ella",
+       "ve"
+      ]
+     ],
+     "here": -1
+    }
    },
    "dice": {
     "g": "says",
@@ -18271,6 +18625,7 @@
      "kind": "expand",
      "link": "See conjugation",
      "lemma": "decir",
+     "here": 2,
      "rows": [
       [
        "yo",
@@ -18296,13 +18651,20 @@
        "ellos",
        "dicen"
       ]
-     ],
-     "here": 2
+     ]
+    },
+    "c": {
+     "es": "dice",
+     "en": "she says"
     }
    },
    "nunca": {
     "g": "never",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "Lucía nunca ve la nieve",
+     "en": "Lucía never sees snow"
+    }
    },
    "ve": {
     "g": "sees, goes",
@@ -18311,6 +18673,7 @@
      "kind": "expand",
      "link": "See conjugation",
      "lemma": "ver",
+     "here": 2,
      "rows": [
       [
        "yo",
@@ -18336,45 +18699,156 @@
        "ellos",
        "ven"
       ]
-     ],
-     "here": 2
+     ]
+    },
+    "c": {
+     "es": "nunca ve la nieve",
+     "en": "never sees snow"
     }
    },
    "en": {
     "g": "in, on",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "en su país",
+     "en": "in her country"
+    }
    },
    "su": {
     "g": "his, her, their",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "su país",
+     "en": "her country"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "varios",
+       "sus países"
+      ]
+     ],
+     "here": -1
+    }
    },
    "que": {
     "g": "that",
-    "t": "conjunction"
+    "t": "conjunction",
+    "c": {
+     "es": "así que",
+     "en": "so"
+    }
    },
    "muy": {
     "g": "very",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "muy emocionada",
+     "en": "very excited"
+    }
    },
    "emocionada": {
     "g": "excited",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "muy emocionada",
+     "en": "very excited"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "m.",
+       "emocionado"
+      ],
+      [
+       "m. pl.",
+       "emocionados"
+      ],
+      [
+       "f. pl.",
+       "emocionadas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "preparan": {
     "g": "they prepare",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "preparan ropa de abrigo",
+     "en": "get warm clothes ready"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "preparar",
+     "here": 5,
+     "rows": [
+      [
+       "yo",
+       "preparo"
+      ],
+      [
+       "tú",
+       "preparas"
+      ],
+      [
+       "él, ella",
+       "prepara"
+      ],
+      [
+       "nosotros",
+       "preparamos"
+      ],
+      [
+       "vosotros",
+       "preparáis"
+      ],
+      [
+       "ellos",
+       "preparan"
+      ]
+     ]
+    }
    },
    "ropa": {
     "g": "clothes",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "ropa de abrigo",
+     "en": "warm clothes"
+    },
+    "gm": "f."
    },
    "de": {
     "g": "of, from",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "ropa de abrigo",
+     "en": "warm clothes"
+    }
    },
    "abrigo": {
     "g": "warm clothing",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "ropa de abrigo",
+     "en": "warm clothes"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "los abrigos"
+      ]
+     ],
+     "here": -1
+    }
    },
    "sube": {
     "g": "goes up, climbs",
@@ -18383,6 +18857,7 @@
      "kind": "expand",
      "link": "See conjugation",
      "lemma": "subir",
+     "here": 2,
      "rows": [
       [
        "yo",
@@ -18408,29 +18883,117 @@
        "ellos",
        "suben"
       ]
-     ],
-     "here": 2
+     ]
+    },
+    "c": {
+     "es": "sube por la carretera",
+     "en": "goes up the road"
     }
    },
    "carretera": {
     "g": "the road",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "por la carretera",
+     "en": "up the road"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "las carreteras"
+      ]
+     ],
+     "here": -1
+    }
    },
    "viaje": {
     "g": "trip, journey",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "el viaje dura una hora",
+     "en": "the journey lasts an hour"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "los viajes"
+      ]
+     ],
+     "here": -1
+    }
    },
    "dura": {
-    "g": "hard, tough; lasts",
-    "t": "adjective"
+    "g": "lasts",
+    "t": "verb",
+    "c": {
+     "es": "el viaje dura una hora",
+     "en": "the journey lasts an hour"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "durar",
+     "here": 2,
+     "rows": [
+      [
+       "yo",
+       "duro"
+      ],
+      [
+       "tú",
+       "duras"
+      ],
+      [
+       "él, ella",
+       "dura"
+      ],
+      [
+       "nosotros",
+       "duramos"
+      ],
+      [
+       "vosotros",
+       "duráis"
+      ],
+      [
+       "ellos",
+       "duran"
+      ]
+     ]
+    }
    },
    "hora": {
     "g": "hour, time",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "una hora",
+     "en": "an hour"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "las horas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "fuera": {
     "g": "outside; were",
-    "t": "adverb"
+    "t": "adverb",
+    "c": {
+     "es": "Fuera hace mucho frío",
+     "en": "Outside it is very cold"
+    }
    },
    "hace": {
     "g": "does, makes; ago",
@@ -18439,6 +19002,7 @@
      "kind": "expand",
      "link": "See conjugation",
      "lemma": "hacer",
+     "here": 2,
      "rows": [
       [
        "yo",
@@ -18464,13 +19028,20 @@
        "ellos",
        "hacen"
       ]
-     ],
-     "here": 2
+     ]
+    },
+    "c": {
+     "es": "hace mucho frío",
+     "en": "it is very cold"
     }
    },
    "mucho": {
-    "g": "a lot, much",
-    "t": "adverb"
+    "g": "a lot; very",
+    "t": "adverb",
+    "c": {
+     "es": "mucho frío",
+     "en": "very cold"
+    }
    },
    "se": {
     "g": "oneself, himself",
@@ -18478,75 +19049,373 @@
    },
    "pone": {
     "g": "puts",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "se pone un gorro",
+     "en": "puts on a hat"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "poner",
+     "here": 2,
+     "rows": [
+      [
+       "yo",
+       "pongo"
+      ],
+      [
+       "tú",
+       "pones"
+      ],
+      [
+       "él, ella",
+       "pone"
+      ],
+      [
+       "nosotros",
+       "ponemos"
+      ],
+      [
+       "vosotros",
+       "ponéis"
+      ],
+      [
+       "ellos",
+       "ponen"
+      ]
+     ]
+    }
    },
    "gorro": {
     "g": "a hat",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un gorro y unos guantes",
+     "en": "a hat and gloves"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "los gorros"
+      ]
+     ],
+     "here": -1
+    }
    },
    "guantes": {
     "g": "gloves",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "unos guantes",
+     "en": "gloves"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "sing.",
+       "el guante"
+      ]
+     ],
+     "here": -1
+    }
    },
    "lleva": {
     "g": "carries, takes",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "lleva una bufanda gruesa",
+     "en": "wears a thick scarf"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "llevar",
+     "here": 2,
+     "rows": [
+      [
+       "yo",
+       "llevo"
+      ],
+      [
+       "tú",
+       "llevas"
+      ],
+      [
+       "él, ella",
+       "lleva"
+      ],
+      [
+       "nosotros",
+       "llevamos"
+      ],
+      [
+       "vosotros",
+       "lleváis"
+      ],
+      [
+       "ellos",
+       "llevan"
+      ]
+     ]
+    }
    },
    "bufanda": {
     "g": "a scarf",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "una bufanda gruesa",
+     "en": "a thick scarf"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "las bufandas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "gruesa": {
     "g": "thick",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "una bufanda gruesa",
+     "en": "a thick scarf"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "m.",
+       "grueso"
+      ],
+      [
+       "m. pl.",
+       "gruesos"
+      ],
+      [
+       "f. pl.",
+       "gruesas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "al": {
     "g": "to the",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "Al final",
+     "en": "In the end"
+    }
    },
    "final": {
-    "g": "final, ending",
-    "t": "noun"
+    "g": "end",
+    "t": "noun",
+    "c": {
+     "es": "Al final",
+     "en": "In the end"
+    },
+    "gm": "m."
    },
    "llegan": {
     "g": "they arrive",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "llegan a la montaña",
+     "en": "get to the mountain"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "llegar",
+     "here": 5,
+     "rows": [
+      [
+       "yo",
+       "llego"
+      ],
+      [
+       "tú",
+       "llegas"
+      ],
+      [
+       "él, ella",
+       "llega"
+      ],
+      [
+       "nosotros",
+       "llegamos"
+      ],
+      [
+       "vosotros",
+       "llegáis"
+      ],
+      [
+       "ellos",
+       "llegan"
+      ]
+     ]
+    }
    },
    "todo": {
     "g": "all, everything",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "todo está blanco",
+     "en": "everything is white"
+    }
    },
    "blanco": {
-    "g": "the target of teasing",
-    "t": "noun"
+    "g": "white",
+    "t": "adjective",
+    "c": {
+     "es": "todo está blanco",
+     "en": "everything is white"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "f.",
+       "blanca"
+      ],
+      [
+       "m. pl.",
+       "blancos"
+      ],
+      [
+       "f. pl.",
+       "blancas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "con": {
     "g": "with",
-    "t": "preposition"
+    "t": "preposition",
+    "c": {
+     "es": "con las manos",
+     "en": "with her hands"
+    }
    },
    "manos": {
     "g": "hands",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con las manos",
+     "en": "with her hands"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "sing.",
+       "la mano"
+      ]
+     ],
+     "here": -1
+    }
    },
    "suave": {
     "g": "soft",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "fría y suave",
+     "en": "cold and soft"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "suaves"
+      ]
+     ],
+     "here": -1
+    }
    },
    "ella": {
     "g": "she",
-    "t": "pronoun"
+    "t": "pronoun",
+    "c": {
+     "es": "Ella se ríe de alegría",
+     "en": "She laughs with joy"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "él",
+       "él"
+      ],
+      [
+       "ellas",
+       "ellas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "e": {
     "g": "and (before words starting with i)",
     "t": "conjunction"
    },
    "bola": {
-    "g": "the gang, group of friends",
-    "t": "noun"
+    "g": "ball",
+    "t": "noun",
+    "c": {
+     "es": "Nuria hace una bola blanca",
+     "en": "Nuria makes a white ball"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "las bolas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "blanca": {
     "g": "white, pale",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "una bola blanca",
+     "en": "a white ball"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "m.",
+       "blanco"
+      ],
+      [
+       "m. pl.",
+       "blancos"
+      ],
+      [
+       "f. pl.",
+       "blancas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "juegan": {
     "g": "they play",
@@ -18555,6 +19424,7 @@
      "kind": "expand",
      "link": "See conjugation",
      "lemma": "jugar",
+     "here": 5,
      "rows": [
       [
        "yo",
@@ -18580,17 +19450,50 @@
        "ellos",
        "juegan"
       ]
-     ],
-     "here": 5
+     ]
+    },
+    "c": {
+     "es": "las dos juegan un rato",
+     "en": "the two of them play for a while"
     }
    },
    "rato": {
     "g": "a while",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "un rato",
+     "en": "a while"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "los ratos"
+      ]
+     ],
+     "here": -1
+    }
    },
    "tarde": {
     "g": "afternoon, late",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "La tarde es muy bonita",
+     "en": "The afternoon is very lovely"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "las tardes"
+      ]
+     ],
+     "here": -1
+    }
    },
    "es": {
     "g": "is",
@@ -18599,6 +19502,7 @@
      "kind": "expand",
      "link": "See conjugation",
      "lemma": "ser",
+     "here": 2,
      "rows": [
       [
        "yo",
@@ -18624,29 +19528,377 @@
        "ellos",
        "son"
       ]
-     ],
-     "here": 2
+     ]
+    },
+    "c": {
+     "es": "La tarde es muy bonita",
+     "en": "The afternoon is very lovely"
     }
    },
    "bonita": {
     "g": "pretty",
-    "t": "adjective"
+    "t": "adjective",
+    "c": {
+     "es": "muy bonita",
+     "en": "very lovely"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "m.",
+       "bonito"
+      ],
+      [
+       "m. pl.",
+       "bonitos"
+      ],
+      [
+       "f. pl.",
+       "bonitas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "guarda": {
     "g": "keeps, guards",
-    "t": "verb"
+    "t": "verb",
+    "c": {
+     "es": "guarda este recuerdo",
+     "en": "keeps this memory"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "guardar",
+     "here": 2,
+     "rows": [
+      [
+       "yo",
+       "guardo"
+      ],
+      [
+       "tú",
+       "guardas"
+      ],
+      [
+       "él, ella",
+       "guarda"
+      ],
+      [
+       "nosotros",
+       "guardamos"
+      ],
+      [
+       "vosotros",
+       "guardáis"
+      ],
+      [
+       "ellos",
+       "guardan"
+      ]
+     ]
+    }
    },
    "este": {
-    "g": "this (one); um",
-    "t": "pronoun"
+    "g": "this",
+    "t": "pronoun",
+    "c": {
+     "es": "este recuerdo",
+     "en": "this memory"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "f.",
+       "esta"
+      ],
+      [
+       "m. pl.",
+       "estos"
+      ],
+      [
+       "f. pl.",
+       "estas"
+      ]
+     ],
+     "here": -1
+    }
    },
    "recuerdo": {
     "g": "a memory",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "este recuerdo",
+     "en": "this memory"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "los recuerdos"
+      ]
+     ],
+     "here": -1
+    }
    },
    "sonrisa": {
     "g": "smile",
-    "t": "noun"
+    "t": "noun",
+    "c": {
+     "es": "con una sonrisa",
+     "en": "with a smile"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "las sonrisas"
+      ]
+     ],
+     "here": -1
+    }
+   },
+   "café": {
+    "g": "coffee",
+    "t": "noun",
+    "c": {
+     "es": "un café por la mañana",
+     "en": "a coffee in the morning"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "los cafés"
+      ]
+     ],
+     "here": -1
+    }
+   },
+   "mañana": {
+    "g": "tomorrow; morning",
+    "t": "adverb",
+    "c": {
+     "es": "por la mañana",
+     "en": "in the morning"
+    }
+   },
+   "montañas": {
+    "g": "mountains",
+    "t": "noun",
+    "c": {
+     "es": "montañas altas",
+     "en": "high mountains"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "sing.",
+       "la montaña"
+      ]
+     ],
+     "here": -1
+    }
+   },
+   "país": {
+    "g": "the country",
+    "t": "noun",
+    "c": {
+     "es": "en su país",
+     "en": "in her country"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "los países"
+      ]
+     ],
+     "here": -1
+    }
+   },
+   "así": {
+    "g": "like this, so",
+    "t": "adverb",
+    "c": {
+     "es": "así que está muy emocionada",
+     "en": "so she is very excited"
+    }
+   },
+   "está": {
+    "g": "is",
+    "t": "verb",
+    "c": {
+     "es": "está muy emocionada",
+     "en": "is very excited"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "estar",
+     "here": 2,
+     "rows": [
+      [
+       "yo",
+       "estoy"
+      ],
+      [
+       "tú",
+       "estás"
+      ],
+      [
+       "él, ella",
+       "está"
+      ],
+      [
+       "nosotros",
+       "estamos"
+      ],
+      [
+       "vosotros",
+       "estáis"
+      ],
+      [
+       "ellos",
+       "están"
+      ]
+     ]
+    }
+   },
+   "autobús": {
+    "g": "the bus",
+    "t": "noun",
+    "c": {
+     "es": "El autobús sube por la carretera",
+     "en": "The bus goes up the road"
+    },
+    "gm": "m.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "los autobuses"
+      ]
+     ],
+     "here": -1
+    }
+   },
+   "frío": {
+    "g": "cold",
+    "t": "noun",
+    "c": {
+     "es": "hace mucho frío",
+     "en": "it is very cold"
+    },
+    "gm": "m."
+   },
+   "montaña": {
+    "g": "mountain",
+    "t": "noun",
+    "c": {
+     "es": "a la montaña",
+     "en": "to the mountain"
+    },
+    "gm": "f.",
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "pl.",
+       "las montañas"
+      ]
+     ],
+     "here": -1
+    }
+   },
+   "fría": {
+    "g": "cold",
+    "t": "adjective",
+    "c": {
+     "es": "la nieve está fría y suave",
+     "en": "the snow is cold and soft"
+    },
+    "f": {
+     "kind": "line",
+     "rows": [
+      [
+       "m.",
+       "frío"
+      ],
+      [
+       "m. pl.",
+       "fríos"
+      ],
+      [
+       "f. pl.",
+       "frías"
+      ]
+     ],
+     "here": -1
+    }
+   },
+   "ríe": {
+    "g": "laughs",
+    "t": "verb",
+    "c": {
+     "es": "se ríe de alegría",
+     "en": "laughs with joy"
+    },
+    "f": {
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "reír",
+     "here": 2,
+     "rows": [
+      [
+       "yo",
+       "río"
+      ],
+      [
+       "tú",
+       "ríes"
+      ],
+      [
+       "él, ella",
+       "ríe"
+      ],
+      [
+       "nosotros",
+       "reímos"
+      ],
+      [
+       "vosotros",
+       "reís"
+      ],
+      [
+       "ellos",
+       "ríen"
+      ]
+     ]
+    }
+   },
+   "alegría": {
+    "g": "joy",
+    "t": "noun",
+    "c": {
+     "es": "de alegría",
+     "en": "with joy"
+    },
+    "gm": "f."
    }
   },
   "triana-y-su-ceramica-azul": {
