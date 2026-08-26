@@ -6846,22 +6846,22 @@
      "en": "In Sofía's group"
     },
     "f": {
-     "label": "en",
      "rows": [
       [
-       "lugar",
+       "place",
        "en el grupo"
       ],
       [
-       "tiempo",
+       "time",
        "en la práctica"
       ],
       [
-       "medio",
+       "means",
        "en el coche"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "de": {
@@ -6872,14 +6872,13 @@
      "en": "Sofía's group"
     },
     "f": {
-     "label": "de",
      "rows": [
       [
-       "posesión",
+       "possession",
        "el grupo de Sofía"
       ],
       [
-       "origen",
+       "origin",
        "la vista del celular"
       ],
       [
@@ -6887,7 +6886,8 @@
        "monedas de plata"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "que": {
@@ -6898,22 +6898,22 @@
      "en": "a rule that nobody wrote"
     },
     "f": {
-     "label": "que",
      "rows": [
       [
-       "relativo",
+       "relative",
        "la regla que nadie escribió"
       ],
       [
-       "completivo",
+       "after a verb",
        "dijo que pagaba"
       ],
       [
-       "comparativo",
+       "comparison",
        "más que nunca"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "se": {
@@ -6924,7 +6924,6 @@
      "en": "he started counting"
     },
     "f": {
-     "label": "me / te / se / nos / se",
      "rows": [
       [
        "yo",
@@ -6947,7 +6946,10 @@
        "se pusieron"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "me / te / se / nos / se"
     }
    },
    "escribió": {
@@ -6958,7 +6960,6 @@
      "en": "a rule nobody wrote"
     },
     "f": {
-     "label": "escribir (pretérito)",
      "rows": [
       [
        "yo",
@@ -6981,7 +6982,10 @@
        "escribieron"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "escribir"
     }
    },
    "tocaba": {
@@ -6992,30 +6996,30 @@
      "en": "the Thursday it was your turn to order dinner"
     },
     "f": {
-     "label": "tocar, en el sentido de turno (imperfecto)",
      "rows": [
       [
-       "a mí",
+       "to me",
        "me tocaba"
       ],
       [
-       "a ti",
+       "to you",
        "te tocaba"
       ],
       [
-       "a él, a ella",
+       "to him, to her",
        "le tocaba"
       ],
       [
-       "a nosotros",
+       "to us",
        "nos tocaba"
       ],
       [
-       "a ustedes, a ellos",
+       "to you all, to them",
        "les tocaba"
       ]
      ],
-     "here": 1
+     "here": 1,
+     "kind": "line"
     }
    },
    "pedir": {
@@ -7026,7 +7030,6 @@
      "en": "to order dinner"
     },
     "f": {
-     "label": "pedir (presente)",
      "rows": [
       [
        "yo",
@@ -7049,7 +7052,10 @@
        "piden"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "pedir"
     }
    },
    "pagabas": {
@@ -7060,7 +7066,6 @@
      "en": "you paid, end of story"
     },
     "f": {
-     "label": "pagar (imperfecto)",
      "rows": [
       [
        "yo",
@@ -7083,7 +7088,10 @@
        "pagaban"
       ]
      ],
-     "here": 1
+     "here": 1,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "pagar"
     }
    },
    "punto": {
@@ -7094,23 +7102,24 @@
      "en": "you paid, and that was that"
     },
     "f": {
-     "label": "punto",
      "rows": [
       [
-       "cierra el tema",
+       "closes the subject",
        "y punto"
       ],
       [
-       "hora exacta",
+       "exact time",
        "a las dos en punto"
       ],
       [
-       "opinión",
+       "opinion",
        "punto de vista"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "m."
    },
    "quería": {
     "g": "wanted",
@@ -7120,7 +7129,6 @@
      "en": "None of them wanted to come across as the cheapskate"
     },
     "f": {
-     "label": "querer (imperfecto)",
      "rows": [
       [
        "yo",
@@ -7143,7 +7151,10 @@
        "querían"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "querer"
     }
    },
    "quedar": {
@@ -7154,22 +7165,22 @@
      "en": "to come across as the famous cheapskate"
     },
     "f": {
-     "label": "quedar, con sus sentidos",
      "rows": [
       [
-       "dar una imagen",
+       "to give an impression",
        "quedar como el codo"
       ],
       [
-       "sobrar",
+       "to be left over",
        "quedan dos tacos"
       ],
       [
-       "citarse",
+       "to arrange to meet",
        "quedamos a las ocho"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "como": {
@@ -7180,22 +7191,22 @@
      "en": "like the cheapskate in the story"
     },
     "f": {
-     "label": "como",
      "rows": [
       [
-       "comparación",
+       "comparison",
        "como el codo"
       ],
       [
-       "función",
+       "role",
        "trabaja como mesero"
       ],
       [
-       "causa",
+       "cause",
        "como no pagó, se fue"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "cuento": {
@@ -7206,23 +7217,24 @@
      "en": "the cheapskate everyone tells stories about"
     },
     "f": {
-     "label": "el cuento",
      "rows": [
       [
-       "singular",
+       "sing.",
        "el cuento"
       ],
       [
-       "plural",
+       "pl.",
        "los cuentos"
       ],
       [
-       "hacer creer",
+       "to make believe",
        "echar el cuento"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "m."
    },
    "daba": {
     "g": "gave, made (them) feel",
@@ -7232,30 +7244,30 @@
      "en": "they all found it a drag to hand over the cash"
     },
     "f": {
-     "label": "dar (imperfecto)",
      "rows": [
       [
-       "a mí",
+       "to me",
        "me daba"
       ],
       [
-       "a ti",
+       "to you",
        "te daba"
       ],
       [
-       "a él, a ella",
+       "to him, to her",
        "le daba"
       ],
       [
-       "a nosotros",
+       "to us",
        "nos daba"
       ],
       [
-       "a ustedes, a ellos",
+       "to you all, to them",
        "les daba"
       ]
      ],
-     "here": 4
+     "here": 4,
+     "kind": "line"
     }
    },
    "soltar": {
@@ -7266,7 +7278,6 @@
      "en": "to hand over the cash"
     },
     "f": {
-     "label": "soltar (presente)",
      "rows": [
       [
        "yo",
@@ -7289,7 +7300,10 @@
        "sueltan"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "soltar"
     }
    },
    "práctica": {
@@ -7300,23 +7314,24 @@
      "en": "In practice, every week was a negotiation"
     },
     "f": {
-     "label": "la práctica",
      "rows": [
       [
-       "en los hechos",
+       "in practice",
        "en la práctica"
       ],
       [
-       "singular",
+       "sing.",
        "la práctica"
       ],
       [
-       "plural",
+       "pl.",
        "las prácticas"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "f."
    },
    "llevaba": {
     "g": "had spent (days)",
@@ -7326,7 +7341,6 @@
      "en": "had spent days announcing he was short on cash"
     },
     "f": {
-     "label": "llevar, en el sentido de tiempo acumulado",
      "rows": [
       [
        "yo",
@@ -7349,7 +7363,10 @@
        "llevaban días"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "llevar"
     }
    },
    "anunciando": {
@@ -7360,22 +7377,22 @@
      "en": "announcing that he was short on cash"
     },
     "f": {
-     "label": "anunciar (gerundio)",
      "rows": [
       [
-       "infinitivo",
+       "infinitive",
        "anunciar"
       ],
       [
-       "gerundio",
+       "gerund",
        "anunciando"
       ],
       [
-       "pretérito",
+       "preterite",
        "anunció"
       ]
      ],
-     "here": 1
+     "here": 1,
+     "kind": "line"
     }
    },
    "puso": {
@@ -7386,7 +7403,6 @@
      "en": "he started counting the coins"
     },
     "f": {
-     "label": "ponerse a, o sea empezar (pretérito)",
      "rows": [
       [
        "yo",
@@ -7409,7 +7425,10 @@
        "se pusieron a"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ponerse a, o sea empezar"
     }
    },
    "lentitud": {
@@ -7420,23 +7439,24 @@
      "en": "with suspicious slowness"
     },
     "f": {
-     "label": "la lentitud",
      "rows": [
       [
-       "sustantivo",
+       "as a noun",
        "la lentitud"
       ],
       [
-       "adjetivo",
+       "as an adjective",
        "lento"
       ],
       [
-       "adverbio",
+       "as an adverb",
        "lentamente"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "f."
    },
    "inmediato": {
     "g": "straight away",
@@ -7446,22 +7466,22 @@
      "en": "she caught him straight away"
     },
     "f": {
-     "label": "inmediato",
      "rows": [
       [
-       "al instante",
+       "instantly",
        "de inmediato"
       ],
       [
-       "masculino",
+       "m.",
        "un cambio inmediato"
       ],
       [
-       "femenino",
+       "f.",
        "una respuesta inmediata"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "ni": {
@@ -7472,22 +7492,22 @@
      "en": "it is not as if you were going broke"
     },
     "f": {
-     "label": "ni",
      "rows": [
       [
-       "exagera al otro",
+       "exaggerates the other one",
        "ni que fueras a quebrar"
       ],
       [
-       "ni siquiera",
+       "not even",
        "ni me habló"
       ],
       [
-       "ni... ni",
+       "neither... nor",
        "ni tacos ni chelas"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "fueras": {
@@ -7498,7 +7518,6 @@
      "en": "it is not as if you were going broke"
     },
     "f": {
-     "label": "ir (imperfecto de subjuntivo)",
      "rows": [
       [
        "yo",
@@ -7521,7 +7540,10 @@
        "fueran"
       ]
      ],
-     "here": 1
+     "here": 1,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "ir"
     }
    },
    "quebrar": {
@@ -7532,7 +7554,6 @@
      "en": "it is not as if you were going broke"
     },
     "f": {
-     "label": "quebrar (presente)",
      "rows": [
       [
        "yo",
@@ -7555,7 +7576,10 @@
        "quiebran"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "quebrar"
     }
    },
    "soltó": {
@@ -7566,22 +7590,22 @@
      "en": "she fired at him"
     },
     "f": {
-     "label": "soltar, aquí no es dar dinero (pretérito)",
      "rows": [
       [
-       "decir de golpe",
+       "to blurt out",
        "le soltó"
       ],
       [
-       "dar dinero",
+       "to hand over money",
        "soltó la lana"
       ],
       [
-       "dejar ir",
+       "to let go",
        "soltó la mano"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "siguió": {
@@ -7592,7 +7616,6 @@
      "en": "She kept on mocking him"
     },
     "f": {
-     "label": "seguir + gerundio (pretérito)",
      "rows": [
       [
        "yo",
@@ -7615,7 +7638,10 @@
        "siguieron choteándolo"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "seguir + gerundio"
     }
    },
    "levantó": {
@@ -7626,7 +7652,6 @@
      "en": "looked up from his phone"
     },
     "f": {
-     "label": "levantar (pretérito)",
      "rows": [
       [
        "yo",
@@ -7649,7 +7674,10 @@
        "levantaron"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "levantar"
     }
    },
    "vista": {
@@ -7660,23 +7688,24 @@
      "en": "looked up from his phone"
     },
     "f": {
-     "label": "la vista",
      "rows": [
       [
-       "mirada",
+       "a look",
        "levantó la vista"
       ],
       [
-       "sentido",
+       "sense",
        "perder la vista"
       ],
       [
-       "panorama",
+       "a view",
        "una vista bonita"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "f."
    },
    "sumarse": {
     "g": "to join in",
@@ -7686,7 +7715,6 @@
      "en": "to join in"
     },
     "f": {
-     "label": "sumarse (presente)",
      "rows": [
       [
        "yo",
@@ -7709,7 +7737,10 @@
        "se suman"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "sumarse"
     }
    },
    "echó": {
@@ -7720,22 +7751,22 @@
      "en": "The whole table piled on him"
     },
     "f": {
-     "label": "echarse encima (pretérito)",
      "rows": [
       [
-       "ir contra alguien",
+       "to go against someone",
        "se le echó encima"
       ],
       [
-       "tirar",
+       "to toss",
        "echó la moneda"
       ],
       [
-       "hablar de más",
+       "to say too much",
        "echar choro"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "encima": {
@@ -7746,22 +7777,22 @@
      "en": "came down on him"
     },
     "f": {
-     "label": "encima",
      "rows": [
       [
-       "ir contra alguien",
+       "to go against someone",
        "se le echó encima"
       ],
       [
-       "además",
+       "besides",
        "y encima aguantaba la burla"
       ],
       [
-       "sobre algo",
+       "about something",
        "encima de la mesa"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "propuso": {
@@ -7772,7 +7803,6 @@
      "en": "Someone suggested the usual"
     },
     "f": {
-     "label": "proponer (pretérito)",
      "rows": [
       [
        "yo",
@@ -7795,7 +7825,10 @@
        "propusieron"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "proponer"
     }
    },
    "siempre": {
@@ -7806,22 +7839,22 @@
      "en": "the usual thing"
     },
     "f": {
-     "label": "siempre",
      "rows": [
       [
-       "lo de costumbre",
+       "the usual",
        "lo de siempre"
       ],
       [
-       "frecuencia",
+       "how often",
        "siempre paga"
       ],
       [
-       "para siempre",
+       "for good",
        "se fue para siempre"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "cuadraban": {
@@ -7832,7 +7865,6 @@
      "en": "the numbers did not add up"
     },
     "f": {
-     "label": "cuadrar (imperfecto)",
      "rows": [
       [
        "yo",
@@ -7855,7 +7887,10 @@
        "cuadraban"
       ]
      ],
-     "here": 4
+     "here": 4,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "cuadrar"
     }
    },
    "pura": {
@@ -7866,22 +7901,22 @@
      "en": "Total nonsense"
     },
     "f": {
-     "label": "puro / pura",
      "rows": [
       [
-       "femenino",
+       "f.",
        "pura mamada"
       ],
       [
-       "masculino",
+       "m.",
        "puro cuento"
       ],
       [
-       "plural",
+       "pl.",
        "puras excusas"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "creyó": {
@@ -7892,7 +7927,6 @@
      "en": "nobody believed a word he said"
     },
     "f": {
-     "label": "creer (pretérito)",
      "rows": [
       [
        "yo",
@@ -7915,7 +7949,10 @@
        "creyeron"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "creer"
     }
    },
    "dejado": {
@@ -7926,22 +7963,22 @@
      "en": "had left his wallet in the car"
     },
     "f": {
-     "label": "dejar (participio)",
      "rows": [
       [
-       "infinitivo",
+       "infinitive",
        "dejar"
       ],
       [
-       "participio",
+       "past participle",
        "había dejado"
       ],
       [
-       "pretérito",
+       "preterite",
        "dejó"
       ]
      ],
-     "here": 1
+     "here": 1,
+     "kind": "line"
     }
    },
    "dejó": {
@@ -7952,22 +7989,22 @@
      "en": "she let him ramble for a while"
     },
     "f": {
-     "label": "dejar, aquí es permitir (pretérito)",
      "rows": [
       [
-       "permitir",
+       "to allow",
        "lo dejó cotorrear"
       ],
       [
-       "olvidar algo",
+       "to forget something",
        "dejó la cartera"
       ],
       [
-       "abandonar",
+       "to abandon",
        "dejó la mesa"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "dejándolo": {
@@ -7978,22 +8015,22 @@
      "en": "letting him tangle himself up on his own"
     },
     "f": {
-     "label": "dejar + lo (gerundio)",
      "rows": [
       [
-       "a él",
+       "to him",
        "dejándolo"
       ],
       [
-       "a ella",
+       "to her",
        "dejándola"
       ],
       [
-       "a ellos",
+       "to them",
        "dejándolos"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "enredarse": {
@@ -8004,7 +8041,6 @@
      "en": "to tangle himself up on his own"
     },
     "f": {
-     "label": "enredarse (presente)",
      "rows": [
       [
        "yo",
@@ -8027,7 +8063,10 @@
        "se enredan"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "enredarse"
     }
    },
    "montado": {
@@ -8038,22 +8077,22 @@
      "en": "she had him stuck in the lie"
     },
     "f": {
-     "label": "montado / montada",
      "rows": [
       [
-       "masculino",
+       "m.",
        "montado en la mentira"
       ],
       [
-       "femenino",
+       "f.",
        "montada en la bici"
       ],
       [
-       "plural",
+       "pl.",
        "montados en el coche"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "apuesta": {
@@ -8064,23 +8103,24 @@
      "en": "he had won a bet"
     },
     "f": {
-     "label": "la apuesta",
      "rows": [
       [
-       "singular",
+       "sing.",
        "una apuesta"
       ],
       [
-       "plural",
+       "pl.",
        "las apuestas"
       ],
       [
-       "verbo",
+       "as a verb",
        "apostar"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "f."
    },
    "traía": {
     "g": "had on him",
@@ -8090,7 +8130,6 @@
      "en": "he had cash to spare on him"
     },
     "f": {
-     "label": "traer (imperfecto)",
      "rows": [
       [
        "yo",
@@ -8113,7 +8152,10 @@
        "traían"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "traer"
     }
    },
    "cerraba": {
@@ -8124,7 +8166,6 @@
      "en": "That is how another Thursday wrapped up"
     },
     "f": {
-     "label": "cerrarse (imperfecto)",
      "rows": [
       [
        "yo",
@@ -8147,7 +8188,10 @@
        "se cerraban"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "cerrarse"
     }
    },
    "aguantaba": {
@@ -8158,7 +8202,6 @@
      "en": "and on top of that he put up with the teasing"
     },
     "f": {
-     "label": "aguantar (imperfecto)",
      "rows": [
       [
        "yo",
@@ -8181,7 +8224,10 @@
        "aguantaban"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "aguantar"
     }
    },
    "burla": {
@@ -8192,23 +8238,24 @@
      "en": "put up with the teasing until the next Thursday"
     },
     "f": {
-     "label": "la burla",
      "rows": [
       [
-       "singular",
+       "sing.",
        "la burla"
       ],
       [
-       "plural",
+       "pl.",
        "las burlas"
       ],
       [
-       "verbo",
+       "as a verb",
        "burlarse de alguien"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "f."
    }
   },
   "ahorita-salgo": {
@@ -8220,22 +8267,22 @@
      "en": "In Sofía's crew"
     },
     "f": {
-     "label": "en",
      "rows": [
       [
-       "grupo",
+       "group",
        "en la banda"
       ],
       [
-       "lugar",
+       "place",
        "en la esquina"
       ],
       [
-       "tiempo",
+       "time",
        "en toda la noche"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "había": {
@@ -8246,22 +8293,22 @@
      "en": "had turned it into a sport"
     },
     "f": {
-     "label": "haber, y en esta historia hace tres cosas distintas",
      "rows": [
       [
-       "auxiliar",
+       "auxiliary",
        "lo había convertido"
       ],
       [
-       "obligación sin sujeto",
+       "impersonal obligation",
        "había que sumarle una hora"
       ],
       [
-       "existía",
+       "there was",
        "había una regla"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "esquina": {
@@ -8272,23 +8319,24 @@
      "en": "putting down roots on the corner"
     },
     "f": {
-     "label": "la esquina",
      "rows": [
       [
-       "singular",
+       "sing.",
        "la esquina"
       ],
       [
-       "plural",
+       "pl.",
        "las esquinas"
       ],
       [
-       "a la vuelta",
+       "on the way back",
        "en la esquina de siempre"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "f."
    },
    "fin": {
     "g": "at last",
@@ -8298,23 +8346,24 @@
      "en": "When the girl finally showed up"
     },
     "f": {
-     "label": "fin",
      "rows": [
       [
-       "por fin",
+       "at last",
        "por fin apareció"
       ],
       [
-       "el final",
+       "the end",
        "el fin de la noche"
       ],
       [
-       "fin de semana",
+       "weekend",
        "el fin de semana"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "m."
    },
    "reina": {
     "g": "queen, the absolute best at",
@@ -8324,23 +8373,24 @@
      "en": "she was the queen of showing up late"
     },
     "f": {
-     "label": "la reina",
      "rows": [
       [
-       "campeona de algo",
+       "champion at something",
        "la reina de llegar tarde"
       ],
       [
-       "singular",
+       "sing.",
        "la reina"
       ],
       [
-       "masculino",
+       "m.",
        "el rey"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "f."
    },
    "convertido": {
     "g": "turned (it) into",
@@ -8350,22 +8400,22 @@
      "en": "had turned it into a sport"
     },
     "f": {
-     "label": "convertir en (participio)",
      "rows": [
       [
-       "infinitivo",
+       "infinitive",
        "convertir en deporte"
       ],
       [
-       "participio",
+       "past participle",
        "había convertido en deporte"
       ],
       [
-       "pretérito",
+       "preterite",
        "convirtió en deporte"
       ]
      ],
-     "here": 1
+     "here": 1,
+     "kind": "line"
     }
    },
    "acordaste": {
@@ -8376,7 +8426,6 @@
      "en": "so you finally remembered us"
     },
     "f": {
-     "label": "acordarse de (pretérito)",
      "rows": [
       [
        "yo",
@@ -8399,7 +8448,10 @@
        "se acordaron"
       ]
      ],
-     "here": 1
+     "here": 1,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "acordarse de"
     }
    },
    "oyera": {
@@ -8410,7 +8462,6 @@
      "en": "so the whole block could hear him"
     },
     "f": {
-     "label": "oír (imperfecto de subjuntivo)",
      "rows": [
       [
        "yo",
@@ -8433,7 +8484,10 @@
        "oyeran"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "oír"
     }
    },
    "sumaron": {
@@ -8444,7 +8498,6 @@
      "en": "The others joined in, just as nasty"
     },
     "f": {
-     "label": "sumarse (pretérito)",
      "rows": [
       [
        "yo",
@@ -8467,7 +8520,10 @@
        "se sumaron"
       ]
      ],
-     "here": 4
+     "here": 4,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "sumarse"
     }
    },
    "dejó": {
@@ -8478,22 +8534,22 @@
      "en": "left them standing outside a cinema"
     },
     "f": {
-     "label": "dejar, con sus dos sentidos aquí",
      "rows": [
       [
-       "abandonar a alguien",
+       "to walk out on someone",
        "los dejó afuera"
       ],
       [
-       "permitir",
+       "to allow",
        "dejó que la siguieran"
       ],
       [
-       "olvidar algo",
+       "to forget something",
        "dejó el bolso"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "sacó": {
@@ -8504,22 +8560,22 @@
      "en": "trotted out her usual excuse"
     },
     "f": {
-     "label": "sacar, y en esta historia sale dos veces",
      "rows": [
       [
-       "poner una excusa",
+       "to make an excuse",
        "sacó su pretexto"
       ],
       [
-       "sacar un objeto",
+       "to take an object out",
        "sacó cuatro entradas"
       ],
       [
-       "sacar de un sitio",
+       "to get out of a place",
        "sacó el bolso del coche"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "pretexto": {
@@ -8530,23 +8586,24 @@
      "en": "her usual excuse"
     },
     "f": {
-     "label": "el pretexto",
      "rows": [
       [
-       "singular",
+       "sing.",
        "el pretexto"
       ],
       [
-       "plural",
+       "pl.",
        "los pretextos"
       ],
       [
-       "poner uno",
+       "to put one",
        "sacó un pretexto"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "m."
    },
    "tocado": {
     "g": "had had to",
@@ -8556,30 +8613,30 @@
      "en": "she had had to work late"
     },
     "f": {
-     "label": "tocarle a alguien, o sea caerle en suerte",
      "rows": [
       [
-       "a mí",
+       "to me",
        "me había tocado"
       ],
       [
-       "a ti",
+       "to you",
        "te había tocado"
       ],
       [
-       "a él, a ella",
+       "to him, to her",
        "le había tocado"
       ],
       [
-       "a nosotros",
+       "to us",
        "nos había tocado"
       ],
       [
-       "a ustedes, a ellos",
+       "to you all, to them",
        "les había tocado"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "line"
     }
    },
    "armó": {
@@ -8590,7 +8647,6 @@
      "en": "nor did she kick up a fuss"
     },
     "f": {
-     "label": "armar bronca (pretérito)",
      "rows": [
       [
        "yo",
@@ -8613,7 +8669,10 @@
        "armaron bronca"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "armar bronca"
     }
    },
    "siguieran": {
@@ -8624,7 +8683,6 @@
      "en": "She let them keep pushing her around"
     },
     "f": {
-     "label": "seguir + gerundio (imperfecto de subjuntivo)",
      "rows": [
       [
        "yo",
@@ -8647,7 +8705,10 @@
        "siguieran"
       ]
      ],
-     "here": 4
+     "here": 4,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "seguir + gerundio"
     }
    },
    "cansó": {
@@ -8658,7 +8719,6 @@
      "en": "the group got tired of mocking her"
     },
     "f": {
-     "label": "cansarse de (pretérito)",
      "rows": [
       [
        "yo",
@@ -8681,7 +8741,10 @@
        "se cansaron"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "cansarse de"
     }
    },
    "disimular": {
@@ -8692,7 +8755,6 @@
      "en": "unable to hide it"
     },
     "f": {
-     "label": "disimular (presente)",
      "rows": [
       [
        "yo",
@@ -8715,7 +8777,10 @@
        "disimulan"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "disimular"
     }
    },
    "movimiento": {
@@ -8726,23 +8791,24 @@
      "en": "with a seriously slick move"
     },
     "f": {
-     "label": "el movimiento",
      "rows": [
       [
-       "jugada",
+       "a move",
        "un movimiento chingón"
       ],
       [
-       "singular",
+       "sing.",
        "el movimiento"
       ],
       [
-       "plural",
+       "pl.",
        "los movimientos"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "m."
    },
    "amanecieron": {
     "g": "woke up (in the morning)",
@@ -8752,7 +8818,6 @@
      "en": "they woke up hungover"
     },
     "f": {
-     "label": "amanecer (pretérito)",
      "rows": [
       [
        "yo",
@@ -8775,7 +8840,10 @@
        "amanecieron"
       ]
      ],
-     "here": 4
+     "here": 4,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "amanecer"
     }
    },
    "arrepentidos": {
@@ -8786,22 +8854,22 @@
      "en": "hungover, regretful and happy"
     },
     "f": {
-     "label": "arrepentido / arrepentida",
      "rows": [
       [
-       "masculino plural",
+       "m. pl.",
        "arrepentidos"
       ],
       [
-       "masculino",
+       "m.",
        "arrepentido"
       ],
       [
-       "femenino",
+       "f.",
        "arrepentida"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    }
   },
@@ -8814,10 +8882,9 @@
      "en": "a photo of the four of them"
     },
     "f": {
-     "label": "de",
      "rows": [
       [
-       "contenido",
+       "contents",
        "una foto de los cuatro"
       ],
       [
@@ -8825,11 +8892,12 @@
        "un imán del súper"
       ],
       [
-       "origen",
+       "origin",
        "desde el fondo de la mesa"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "que": {
@@ -8840,22 +8908,22 @@
      "en": "What nobody imagined"
     },
     "f": {
-     "label": "que",
      "rows": [
       [
-       "lo que",
+       "what",
        "lo que nadie imaginó"
       ],
       [
-       "relativo",
+       "relative",
        "la foto que colgaron"
       ],
       [
-       "comparativo",
+       "comparison",
        "tardaron más en acomodarse que en cenar"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "medio": {
@@ -8866,22 +8934,22 @@
      "en": "a kind of corny idea"
     },
     "f": {
-     "label": "medio, y en esta historia sale con los dos sentidos",
      "rows": [
       [
-       "un poco",
+       "a bit",
        "medio cursi"
       ],
       [
-       "la mitad",
+       "half",
        "medio mantel"
       ],
       [
-       "a medias",
+       "halfway",
        "a medio hacer"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "opuso": {
@@ -8892,7 +8960,6 @@
      "en": "Nobody objected"
     },
     "f": {
-     "label": "oponerse (pretérito)",
      "rows": [
       [
        "yo",
@@ -8915,7 +8982,10 @@
        "se opusieron"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "oponerse"
     }
    },
    "volver": {
@@ -8926,22 +8996,22 @@
      "en": "was going to turn into such a mess"
     },
     "f": {
-     "label": "volverse, que aquí no es regresar",
      "rows": [
       [
-       "convertirse en",
+       "to turn into",
        "se iba a volver un desmadre"
       ],
       [
-       "regresar",
+       "to go back",
        "volver a casa"
       ],
       [
-       "repetir",
+       "to do it again",
        "volver a intentarlo"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "semejante": {
@@ -8952,22 +9022,22 @@
      "en": "such a mess"
     },
     "f": {
-     "label": "semejante",
      "rows": [
       [
-       "tan grande",
+       "that big",
        "semejante desmadre"
       ],
       [
-       "parecido",
+       "similar",
        "un caso semejante"
       ],
       [
-       "plural",
+       "pl.",
        "semejantes ideas"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "tardaron": {
@@ -8978,7 +9048,6 @@
      "en": "They took longer getting into position than eating"
     },
     "f": {
-     "label": "tardar (pretérito)",
      "rows": [
       [
        "yo",
@@ -9001,7 +9070,10 @@
        "tardaron"
       ]
      ],
-     "here": 4
+     "here": 4,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "tardar"
     }
    },
    "acomodarse": {
@@ -9012,7 +9084,6 @@
      "en": "They took longer getting into position"
     },
     "f": {
-     "label": "acomodarse (presente)",
      "rows": [
       [
        "yo",
@@ -9035,7 +9106,10 @@
        "se acomodan"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "acomodarse"
     }
    },
    "pose": {
@@ -9046,23 +9120,24 @@
      "en": "he struck an album cover pose"
     },
     "f": {
-     "label": "la pose",
      "rows": [
       [
-       "singular",
+       "sing.",
        "una pose"
       ],
       [
-       "plural",
+       "pl.",
        "las poses"
       ],
       [
-       "hacerla",
+       "to pull it off",
        "aventarse una pose"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "f."
    },
    "pedido": {
     "g": "asked for",
@@ -9072,22 +9147,22 @@
      "en": "that nobody had asked him for"
     },
     "f": {
-     "label": "pedir (participio)",
      "rows": [
       [
-       "infinitivo",
+       "infinitive",
        "pedir"
       ],
       [
-       "participio",
+       "past participle",
        "había pedido"
       ],
       [
-       "pretérito",
+       "preterite",
        "pidió"
       ]
      ],
-     "here": 1
+     "here": 1,
+     "kind": "line"
     }
    },
    "convencido": {
@@ -9098,22 +9173,22 @@
      "en": "convinced he was the heartthrob of the group"
     },
     "f": {
-     "label": "convencido / convencida",
      "rows": [
       [
-       "masculino",
+       "m.",
        "convencido"
       ],
       [
-       "femenino",
+       "f.",
        "convencida"
       ],
       [
-       "plural",
+       "pl.",
        "convencidos"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "risa": {
@@ -9124,23 +9199,24 @@
      "en": "a smug face that got a laugh"
     },
     "f": {
-     "label": "la risa",
      "rows": [
       [
-       "dar risa",
+       "to be funny",
        "dio risa"
       ],
       [
-       "singular",
+       "sing.",
        "la risa"
       ],
       [
-       "plural",
+       "pl.",
        "las risas"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "f."
    },
    "parado": {
     "g": "standing",
@@ -9150,22 +9226,22 @@
      "en": "standing there like the big shot"
     },
     "f": {
-     "label": "parado, que en México es de pie",
      "rows": [
       [
-       "de pie",
+       "standing",
        "parado como el mero mero"
       ],
       [
-       "femenino",
+       "f.",
        "parada"
       ],
       [
-       "plural",
+       "pl.",
        "parados"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "piedad": {
@@ -9176,23 +9252,24 @@
      "en": "Pablo told him, without mercy"
     },
     "f": {
-     "label": "la piedad",
      "rows": [
       [
-       "sin piedad",
+       "mercilessly",
        "sin piedad"
       ],
       [
-       "singular",
+       "sing.",
        "la piedad"
       ],
       [
-       "tener",
+       "to have",
        "tener piedad de alguien"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "f."
    },
    "apuraba": {
     "g": "was hurrying them along",
@@ -9202,7 +9279,6 @@
      "en": "Renata was hurrying them along from the back"
     },
     "f": {
-     "label": "apurar, que en México es meter prisa (imperfecto)",
      "rows": [
       [
        "yo",
@@ -9225,7 +9301,10 @@
        "apuraban"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "apurar, que en México es meter prisa"
     }
    },
    "desde": {
@@ -9236,22 +9315,22 @@
      "en": "was hurrying them along from the back"
     },
     "f": {
-     "label": "desde",
      "rows": [
       [
-       "lugar",
+       "place",
        "desde atrás"
       ],
       [
-       "lugar",
+       "place",
        "desde el fondo"
       ],
       [
-       "tiempo",
+       "time",
        "desde el lunes"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "apoyaron": {
@@ -9262,22 +9341,22 @@
      "en": "they propped the phone on a chair"
     },
     "f": {
-     "label": "apoyar, que aquí es recostar algo (pretérito)",
      "rows": [
       [
-       "recostar algo",
+       "to lean something",
        "apoyaron el celular"
       ],
       [
-       "respaldar a alguien",
+       "to back someone up",
        "lo apoyaron en todo"
       ],
       [
-       "infinitivo",
+       "infinitive",
        "apoyar"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "corrieron": {
@@ -9288,7 +9367,6 @@
      "en": "they ran to their spot"
     },
     "f": {
-     "label": "correr (pretérito)",
      "rows": [
       [
        "yo",
@@ -9311,7 +9389,10 @@
        "corrieron"
       ]
      ],
-     "here": 4
+     "here": 4,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "correr"
     }
    },
    "usar": {
@@ -9322,7 +9403,6 @@
      "en": "nobody knew how to use the timer"
     },
     "f": {
-     "label": "usar (presente)",
      "rows": [
       [
        "yo",
@@ -9345,7 +9425,10 @@
        "usan"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "usar"
     }
    },
    "temporizador": {
@@ -9356,23 +9439,24 @@
      "en": "nobody knew how to use the timer"
     },
     "f": {
-     "label": "el temporizador",
      "rows": [
       [
-       "singular",
+       "sing.",
        "el temporizador"
       ],
       [
-       "plural",
+       "pl.",
        "los temporizadores"
       ],
       [
-       "ponerlo",
+       "to put it",
        "poner el temporizador"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "m."
    },
    "saliera": {
     "g": "came out",
@@ -9382,7 +9466,6 @@
      "en": "before a decent one came out"
     },
     "f": {
-     "label": "salir, que de una foto es quedar (imperfecto de subjuntivo)",
      "rows": [
       [
        "yo",
@@ -9405,7 +9488,10 @@
        "salieran"
       ]
      ],
-     "here": 2
+     "here": 2,
+     "kind": "expand",
+     "link": "See conjugation",
+     "lemma": "salir, que de una foto es quedar"
     }
    },
    "quietos": {
@@ -9416,22 +9502,22 @@
      "en": "right, everybody hold still"
     },
     "f": {
-     "label": "quieto / quieta",
      "rows": [
       [
-       "masculino plural",
+       "m. pl.",
        "todos quietos"
       ],
       [
-       "masculino",
+       "m.",
        "quieto"
       ],
       [
-       "femenino",
+       "f.",
        "quieta"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "fondo": {
@@ -9442,23 +9528,24 @@
      "en": "Mateo answered him from the back"
     },
     "f": {
-     "label": "el fondo",
      "rows": [
       [
-       "parte de atrás",
+       "the back",
        "desde el fondo"
       ],
       [
-       "parte de abajo",
+       "the bottom",
        "el fondo del vaso"
       ],
       [
-       "a fondo",
+       "thoroughly",
        "conocer algo a fondo"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "m."
    },
    "borrosa": {
     "g": "blurry",
@@ -9468,22 +9555,22 @@
      "en": "The first one came out blurry"
     },
     "f": {
-     "label": "borroso / borrosa",
      "rows": [
       [
-       "femenino",
+       "f.",
        "borrosa"
       ],
       [
-       "masculino",
+       "m.",
        "borroso"
       ],
       [
-       "plural",
+       "pl.",
        "borrosas"
       ]
      ],
-     "here": 0
+     "here": 0,
+     "kind": "line"
     }
    },
    "imán": {
@@ -9494,23 +9581,24 @@
      "en": "with a magnet from the supermarket"
     },
     "f": {
-     "label": "el imán",
      "rows": [
       [
-       "singular",
+       "sing.",
        "un imán"
       ],
       [
-       "plural",
+       "pl.",
        "los imanes"
       ],
       [
-       "adjetivo",
+       "as an adjective",
        "magnético"
       ]
      ],
-     "here": 0
-    }
+     "here": 0,
+     "kind": "line"
+    },
+    "gm": "m."
    }
   }
  }
