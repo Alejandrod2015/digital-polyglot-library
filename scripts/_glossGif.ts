@@ -52,9 +52,9 @@ async function ring(page: Page, selector: string): Promise<void> {
 }
 
 /**
- * Maqueta: atenua el cuerpo de la historia mientras la tarjeta esta abierta,
- * para que el panel mande. HOY NO LO HACE NI LA WEB NI LA APP; si se aprueba,
- * hay que implementarlo en `TapGlossLayer` y volver a capturar.
+ * Atenua el cuerpo de la historia mientras la tarjeta esta abierta, para que
+ * el panel mande. Es un realce DE LA CAPTURA: el lector no lo hace, y no hace
+ * falta que lo haga, porque no promete ninguna funcionalidad.
  */
 async function dimStory(page: Page, on: boolean): Promise<void> {
   await page.evaluate((encendido) => {

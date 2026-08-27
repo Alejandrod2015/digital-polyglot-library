@@ -213,9 +213,13 @@ const SIGN_OFF = "Alejandro";
 // Just the name, matching the plain-text half exactly. The brand is already
 // on the footer logo directly underneath; repeating it here would put the
 // company back in the signature slot, which is the thing being fixed.
+//
+// Centrada y sobre una raya corta: alineada a la izquierda quedaba colgando
+// bajo un cierre centrado, como si se hubiera caido del parrafo anterior.
 function signature(): string {
-  return `<div style="text-align:left;">
-    <p style="margin:0;font-family:${DPE.font};font-weight:700;font-size:15.5px;line-height:1.6;color:${DPE.fgSoft};">${esc(SIGN_OFF)}</p>
+  return `<div style="text-align:center;">
+    <div style="width:34px;height:1px;background:${DPE.hair};margin:0 auto 14px;"></div>
+    <p style="margin:0;font-family:${DPE.font};font-weight:700;font-size:15px;line-height:1.6;color:${DPE.muted};">${esc(SIGN_OFF)}</p>
   </div>`;
 }
 
@@ -225,7 +229,7 @@ function signature(): string {
  * in anyone's voice and must not grow a personal signature by side effect.
  */
 function betaShell(opts: Parameters<typeof shell>[0]): string {
-  return shell({ ...opts, blocks: [...opts.blocks, block(signature(), "26px 44px 0", false)] });
+  return shell({ ...opts, blocks: [...opts.blocks, block(signature(), "30px 44px 0")] });
 }
 
 /* ══════════════════════════════════════════════ 1 · ACCEPTED */
