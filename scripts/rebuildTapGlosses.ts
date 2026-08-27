@@ -61,6 +61,7 @@ const FAMILIES: Record<string, string[]> = {
     "spanish-friends-mexico",
     "spanish-friends-spain-a0",
     "spanish-traveler-latam",
+    "spanish-traveler-latam-a1",
     "spanish-traveler-mexico-a0",
     "spanish-traveler-spain-a1",
     "spanish-traveler-spain-a2",
@@ -233,7 +234,7 @@ async function main() {
         `${fromManual.length} escritas a mano, ${uncovered.length} SIN CUBRIR`
     );
     if (uncovered.length > 0) {
-      console.log(`   sin cubrir: ${uncovered.slice(0, 20).join(", ")}`);
+      console.log(`   sin cubrir: ${uncovered.join(" ")}`);
       blocked.push(name);
       continue;
     }

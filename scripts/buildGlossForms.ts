@@ -681,6 +681,9 @@ async function main() {
         else if (/gu$/.test(raiz)) raiz = raiz.slice(0, -1);
         else if (/c$/.test(raiz)) raiz = `${raiz.slice(0, -1)}z`;
       }
+      // `traé` es el imperativo voseante de traer, no un preterito: cortando
+      // por la `é` sale "traar", y ningun infinitivo espanol junta dos aes.
+      if (idioma !== "portuguese" && /a$/.test(raiz)) continue;
       infinitivos.add(`${raiz}ar`);
     }
   }
