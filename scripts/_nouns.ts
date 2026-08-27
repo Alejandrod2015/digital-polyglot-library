@@ -6,7 +6,7 @@ async function main() {
   const filas = await p.tapGlossSet.findMany({ where: { bundle } });
   const g = filas.find((f) => f.slug === "")!.glosses as Record<string, any>;
   const s = new Set<string>();
-  for (const f of filas.filter((x) => x.slug !== "")) for (const w of Object.keys(f.glosses as Record<string, any>)) if (g[w]?.t === "noun") s.add(w);
+  for (const f of filas.filter((x) => x.slug !== "")) for (const [w, e] of Object.entries(f.glosses as Record<string, any>)) if ((e.t ?? g[w]?.t) === "noun") s.add(w);
   console.log(s.size, "sustantivos\n" + [...s].sort().join(" "));
   await p.$disconnect();
 }

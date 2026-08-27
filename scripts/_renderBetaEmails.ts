@@ -107,7 +107,6 @@ const improvementColombe: BetaEmailData = {
       image: "/email/glosses/baja-tap.gif",
       fullSizeImage: "/email/glosses/baja-after.png",
     },
-    changes: ["Articles, numbers and character names are no longer tappable. The card had nothing to add about them."],
     askThem: TRY_IT,
     ctaUrl: "https://digitalpolyglot.com/explore",
   },

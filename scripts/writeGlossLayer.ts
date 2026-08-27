@@ -3,7 +3,12 @@
  *
  *   npx tsx scripts/writeGlossLayer.ts <bundle> <slug> <trozos.json>
  *
- * `trozos.json`: { "palabra": { "es": "...", "en": "...", "gm"?: "m."|"f." } }
+ * `trozos.json`: { "palabra": { "es": "...", "en": "...", "gm"?, "g"?, "t"? }
+ *
+ * `g` y `t` solo se ponen cuando el bundle eligio el OTRO sentido: `cuenta` es
+ * la cuenta del bar en el mapa global y aqui es "ella cuenta que viene de
+ * lejos". La glosa global vale para todo el bundle y la historia manda sobre
+ * ella, que es justo para lo que existe esta capa.
  *
  * Cada entrada de la historia PISA la glosa global del bundle entera, asi que
  * aqui se parte de la global (g y t intactos) y encima van el trozo, el genero
@@ -18,7 +23,7 @@ import fs from "node:fs";
 import { PrismaClient } from "../src/generated/prisma";
 
 const prisma = new PrismaClient();
-type Trozo = { es: string; en: string; gm?: string };
+type Trozo = { es: string; en: string; gm?: string; g?: string; t?: string };
 
 async function main() {
   const [bundle, slug, fichero] = process.argv.slice(2);
@@ -46,6 +51,8 @@ async function main() {
     e.t ??= plana[w].t;
     e.c = { es: t.es, en: t.en };
     if (t.gm) e.gm = t.gm;
+    if (t.g) e.g = t.g;
+    if (t.t) e.t = t.t;
     capa[w] = e;
   }
   await prisma.tapGlossSet.upsert({
