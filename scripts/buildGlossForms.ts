@@ -193,6 +193,89 @@ function aVariante(filas: string[], variante: string): string[] {
   return out;
 }
 
+
+// ── Portugués de Brasil ──────────────────────────────────────────────────
+// El paradigma brasileño tiene CINCO casillas útiles, no seis: `tu` casi no se
+// usa y `vós` no existe fuera de la liturgia, así que la segunda persona la
+// ocupa `você`, que conjuga como la tercera. Se escribe una fila por persona
+// igual que en español para que la tarjeta se lea igual, con `você` en la
+// segunda y `vocês` en la quinta.
+const PT_PERSONAS = ["eu", "você", "ele, ela", "nós", "vocês", "eles"];
+
+/** Los que no siguen patrón: se escriben enteros, tiempo a tiempo. */
+const PT_IRR: Record<string, Record<Tiempo, string[]>> = {
+  ser:    { presente: ["sou","é","é","somos","são","são"], "pretérito": ["fui","foi","foi","fomos","foram","foram"], imperfecto: ["era","era","era","éramos","eram","eram"] },
+  estar:  { presente: ["estou","está","está","estamos","estão","estão"], "pretérito": ["estive","esteve","esteve","estivemos","estiveram","estiveram"], imperfecto: ["estava","estava","estava","estávamos","estavam","estavam"] },
+  ter:    { presente: ["tenho","tem","tem","temos","têm","têm"], "pretérito": ["tive","teve","teve","tivemos","tiveram","tiveram"], imperfecto: ["tinha","tinha","tinha","tínhamos","tinham","tinham"] },
+  ir:     { presente: ["vou","vai","vai","vamos","vão","vão"], "pretérito": ["fui","foi","foi","fomos","foram","foram"], imperfecto: ["ia","ia","ia","íamos","iam","iam"] },
+  fazer:  { presente: ["faço","faz","faz","fazemos","fazem","fazem"], "pretérito": ["fiz","fez","fez","fizemos","fizeram","fizeram"], imperfecto: ["fazia","fazia","fazia","fazíamos","faziam","faziam"] },
+  dizer:  { presente: ["digo","diz","diz","dizemos","dizem","dizem"], "pretérito": ["disse","disse","disse","dissemos","disseram","disseram"], imperfecto: ["dizia","dizia","dizia","dizíamos","diziam","diziam"] },
+  poder:  { presente: ["posso","pode","pode","podemos","podem","podem"], "pretérito": ["pude","pôde","pôde","pudemos","puderam","puderam"], imperfecto: ["podia","podia","podia","podíamos","podiam","podiam"] },
+  querer: { presente: ["quero","quer","quer","queremos","querem","querem"], "pretérito": ["quis","quis","quis","quisemos","quiseram","quiseram"], imperfecto: ["queria","queria","queria","queríamos","queriam","queriam"] },
+  vir:    { presente: ["venho","vem","vem","vimos","vêm","vêm"], "pretérito": ["vim","veio","veio","viemos","vieram","vieram"], imperfecto: ["vinha","vinha","vinha","vínhamos","vinham","vinham"] },
+  ver:    { presente: ["vejo","vê","vê","vemos","veem","veem"], "pretérito": ["vi","viu","viu","vimos","viram","viram"], imperfecto: ["via","via","via","víamos","viam","viam"] },
+  dar:    { presente: ["dou","dá","dá","damos","dão","dão"], "pretérito": ["dei","deu","deu","demos","deram","deram"], imperfecto: ["dava","dava","dava","dávamos","davam","davam"] },
+  saber:  { presente: ["sei","sabe","sabe","sabemos","sabem","sabem"], "pretérito": ["soube","soube","soube","soubemos","souberam","souberam"], imperfecto: ["sabia","sabia","sabia","sabíamos","sabiam","sabiam"] },
+  pôr:    { presente: ["ponho","põe","põe","pomos","põem","põem"], "pretérito": ["pus","pôs","pôs","pusemos","puseram","puseram"], imperfecto: ["punha","punha","punha","púnhamos","punham","punham"] },
+  trazer: { presente: ["trago","traz","traz","trazemos","trazem","trazem"], "pretérito": ["trouxe","trouxe","trouxe","trouxemos","trouxeram","trouxeram"], imperfecto: ["trazia","trazia","trazia","trazíamos","traziam","traziam"] },
+  haver:  { presente: ["hei","há","há","havemos","hão","hão"], "pretérito": ["houve","houve","houve","houvemos","houveram","houveram"], imperfecto: ["havia","havia","havia","havíamos","haviam","haviam"] },
+};
+
+/**
+ * Familias que NO se conjugan por regla porque la regla las rompe:
+ *
+ *   -air, -uir, -oer   cair da "cao, cae" en vez de "caio, cai"
+ *   -ear, -iar         passear da "passeo" en vez de "passeio"
+ *   -ir con cambio     dormir da "dormo" en vez de "durmo"
+ *   -er con cambio     perder da "perdo" en vez de "perco"
+ *
+ * Verificado el 2026-08-27 mirando las 137 tablas generadas para el A0
+ * brasileño: la fila que sale en el texto coincidia, y las otras cinco no. Una
+ * palabra sin bloque no enseña nada; una con el bloque mal enseña algo falso.
+ */
+const PT_NO_REGULARES = /(air|uir|oer|ear|iar)$/;
+const PT_CAMBIO = new Set([
+  "dormir","servir","pedir","ouvir","seguir","sentir","vestir","preferir","repetir","medir",
+  "mentir","conseguir","divertir","subir","fugir","cobrir","descobrir","engolir","tossir",
+  "perder","valer","caber","ler","crer","erguer","doer","soer","medir",
+]);
+
+function ptConjuga(inf: string, tiempo: Tiempo): string[] | null {
+  if (PT_IRR[inf]) return [...PT_IRR[inf][tiempo]];
+  if (PT_NO_REGULARES.test(inf) || PT_CAMBIO.has(inf)) return null;
+  const raiz = inf.slice(0, -2);
+  const fin = inf.slice(-2);
+  if (fin !== "ar" && fin !== "er" && fin !== "ir") return null;
+  if (tiempo === "presente") {
+    // La primera persona protege el sonido de la raiz: conheco se escribe
+    // conheço, dirigo se escribe dirijo, ergo se escribe ergo.
+    let eu = `${raiz}o`;
+    if (fin !== "ar") {
+      if (raiz.endsWith("c")) eu = `${raiz.slice(0, -1)}ço`;
+      else if (raiz.endsWith("g")) eu = `${raiz.slice(0, -1)}jo`;
+      else if (raiz.endsWith("gu")) eu = `${raiz.slice(0, -1)}o`;
+    }
+    if (fin === "ar") return [eu, `${raiz}a`, `${raiz}a`, `${raiz}amos`, `${raiz}am`, `${raiz}am`];
+    if (fin === "er") return [eu, `${raiz}e`, `${raiz}e`, `${raiz}emos`, `${raiz}em`, `${raiz}em`];
+    return [eu, `${raiz}e`, `${raiz}e`, `${raiz}imos`, `${raiz}em`, `${raiz}em`];
+  }
+  if (tiempo === "pretérito") {
+    if (fin === "ar") {
+      // La ortografia protege el sonido de la raiz en la primera: fiquei,
+      // cheguei, comecei.
+      let eu = `${raiz}ei`;
+      if (raiz.endsWith("c")) eu = `${raiz.slice(0, -1)}quei`;
+      else if (raiz.endsWith("g")) eu = `${raiz}uei`;
+      else if (raiz.endsWith("ç")) eu = `${raiz.slice(0, -1)}cei`;
+      return [eu, `${raiz}ou`, `${raiz}ou`, `${raiz}amos`, `${raiz}aram`, `${raiz}aram`];
+    }
+    if (fin === "er") return [`${raiz}i`, `${raiz}eu`, `${raiz}eu`, `${raiz}emos`, `${raiz}eram`, `${raiz}eram`];
+    return [`${raiz}i`, `${raiz}iu`, `${raiz}iu`, `${raiz}imos`, `${raiz}iram`, `${raiz}iram`];
+  }
+  if (fin === "ar") return [`${raiz}ava`, `${raiz}ava`, `${raiz}ava`, `${raiz}ávamos`, `${raiz}avam`, `${raiz}avam`];
+  return [`${raiz}ia`, `${raiz}ia`, `${raiz}ia`, `${raiz}íamos`, `${raiz}iam`, `${raiz}iam`];
+}
+
 export type Tiempo = "presente" | "pretérito" | "imperfecto";
 const TIEMPOS: Array<{ id: Tiempo; fn: (inf: string, v: string) => string[] | null }> = [
   { id: "presente", fn: (inf, v) => presente(inf, v) },
@@ -200,16 +283,24 @@ const TIEMPOS: Array<{ id: Tiempo; fn: (inf: string, v: string) => string[] | nu
   { id: "imperfecto", fn: (inf, v) => { const f = imperfecto(inf); return f ? aVariante(f, v) : null; } },
 ];
 
+/** Idioma del bundle: decide el paradigma y las etiquetas de persona. Un
+ *  idioma que no esté aquí NO se conjuga; el script para antes de escribir. */
+const IDIOMAS: Record<string, { personas: (v: string) => string[]; conjuga: (inf: string, t: Tiempo, v: string) => string[] | null }> = {
+  spanish: { personas, conjuga: (inf, t, v) => tablaDeES(inf, t, v) },
+  portuguese: { personas: () => PT_PERSONAS, conjuga: (inf, t) => ptConjuga(inf, t) },
+};
+
 /** Del infinitivo a las formas: sirve para saber qué palabra del texto es qué.
  *  Indexa los tres tiempos, y el primero que reclame una forma se la queda. El
  *  orden importa poco porque las formas casi no chocan entre tiempos; donde
  *  chocan (hablamos, presente y preterito) gana el presente, que es el que un
  *  hispanohablante lee por defecto. */
-function indicePorForma(infinitivos: string[], variante: string) {
+function indicePorForma(infinitivos: string[], variante: string, idioma: string) {
+  const motor = IDIOMAS[idioma];
   const mapa = new Map<string, { inf: string; i: number; tiempo: Tiempo }>();
-  for (const { id, fn } of TIEMPOS) {
+  for (const { id } of TIEMPOS) {
     for (const inf of infinitivos) {
-      const filas = fn(inf, variante);
+      const filas = motor.conjuga(inf, id, variante);
       if (!filas) continue;
       filas.forEach((f, i) => {
         const clave = f.toLowerCase();
@@ -220,8 +311,8 @@ function indicePorForma(infinitivos: string[], variante: string) {
   return mapa;
 }
 
-/** La tabla del tiempo que toca, ya adaptada a la variante. */
-function tablaDe(inf: string, tiempo: Tiempo, variante: string): string[] | null {
+/** La tabla del tiempo que toca, ya adaptada a la variante. Solo español. */
+function tablaDeES(inf: string, tiempo: Tiempo, variante: string): string[] | null {
   const t = TIEMPOS.find((x) => x.id === tiempo);
   return t ? t.fn(inf, variante) : null;
 }
@@ -292,7 +383,14 @@ async function main() {
     byStory: Object.fromEntries(filas.filter((f) => f.slug !== "").map((f) => [f.slug, f.glosses as Record<string, Entrada>])),
   };
   const variante = (bundle.variant ?? "").trim().toLowerCase();
-  const P = personas(variante);
+  const idioma = (bundle.language ?? "").toLowerCase();
+  const motor = IDIOMAS[idioma];
+  if (!motor) {
+    console.error(`idioma "${idioma}" sin paradigma escrito: no conjugo nada antes que conjugar mal.`);
+    console.error(`Escribe su entrada en IDIOMAS y vuelve. Idiomas listos: ${Object.keys(IDIOMAS).join(", ")}`);
+    process.exit(1);
+  }
+  const P = motor.personas(variante);
 
   // Los infinitivos que este bundle conoce: los que ya están glosados como
   // verbo en su forma de diccionario, más los irregulares de la tabla.
@@ -312,11 +410,16 @@ async function main() {
   )) {
     for (const w of (texto.match(/\p{L}+/gu) ?? []).map((x) => x.toLowerCase())) {
       if (bundle.glosses[w]?.t !== "verb") continue;
-      const m = /^(.+?)(ó|aron|aba|abas|ábamos|aban|é|aste|amos|asteis)$/.exec(w);
+      // Terminaciones que solo puede tener un -ar, por idioma. En -er / -ir no
+      // se hace: sus pasados coinciden y la etiqueta saldria inventada.
+      const FIN = idioma === "portuguese"
+        ? /^(.+?)(ou|aram|ava|avam|ávamos|ei|amos)$/
+        : /^(.+?)(ó|aron|aba|abas|ábamos|aban|é|aste|amos|asteis)$/;
+      const m = FIN.exec(w);
       if (m && m[1].length >= 2) infinitivos.add(`${m[1]}ar`);
     }
   }
-  const porForma = indicePorForma([...infinitivos], variante);
+  const porForma = indicePorForma([...infinitivos], variante, idioma);
 
   const textos = JSON.parse(fs.readFileSync(process.argv[3] ?? "/dev/null", "utf8").trim() || "{}") as Record<string, string>;
 
@@ -346,7 +449,7 @@ async function main() {
           // El tiempo lo decide la forma que sale en la historia, no el script:
           // estas narran en pasado y una tabla de presente enseñaria otro
           // paradigma que el que el lector tiene delante.
-          const filas = tablaDe(hit.inf, hit.tiempo, variante)!;
+          const filas = motor.conjuga(hit.inf, hit.tiempo, variante)!;
           entrada.f = {
             kind: "expand",
             link: "See conjugation",

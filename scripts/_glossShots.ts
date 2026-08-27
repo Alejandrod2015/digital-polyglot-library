@@ -19,7 +19,6 @@ type Shot = { file: string; slug: string; word: string; expand?: boolean };
 
 const SHOTS: Shot[] = [
   { file: "baja-after", slug: "marta-ensena-el-retiro", word: "baja", expand: true },
-  { file: "punto-after", slug: "le-toca-a-mateo", word: "punto", expand: true },
 ];
 
 async function main() {

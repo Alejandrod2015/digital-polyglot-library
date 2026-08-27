@@ -78,7 +78,6 @@ const config = {
     "expo-web-browser",
     "expo-notifications",
     "expo-iap",
-    "./plugins/without-apple-signin",
     // Solo hace algo cuando el build apunta a un http:// local; ver el plugin.
     "./plugins/allow-local-cleartext",
     [
@@ -114,6 +113,13 @@ const config = {
     ],
   ],
   ios: {
+    // Sign in with Apple. La guía 4.8 de la App Store obliga a ofrecer un
+    // login equivalente en privacidad en cuanto la app ofrece Google o
+    // Facebook, que es justo nuestro caso. Esto añade el entitlement
+    // `com.apple.developer.applesignin` al target; el perfil de
+    // aprovisionamiento tiene que llevar la capability habilitada en el
+    // Apple Developer portal o la firma falla.
+    usesAppleSignIn: true,
     // iPhone-only para el lanzamiento: declarar iPad obliga a subir capturas
     // de iPad. Se puede añadir iPad después; quitarlo una vez publicado, no.
     supportsTablet: false,

@@ -1,15 +1,15 @@
 /**
- * La animacion del correo de la mejora: una palabra que se toca, la tarjeta que
- * se abre y la conjugacion que se despliega, dentro de la pantalla del telefono.
- * Sale a public/email/glosses/<palabra>-tap.gif, que es de donde la sirve el
- * correo.
+ * La animacion del correo de la mejora, dentro de la pantalla del telefono: la
+ * tarjeta de una palabra ya abierta, el dedo sobre "See conjugation" y el verbo
+ * entero desplegado. Sale a public/email/glosses/<palabra>-tap.gif, que es de
+ * donde la sirve el correo.
  *
  *   npm run dev                  # el harness necesita el server en :3000
  *   npx tsx scripts/_glossGif.ts
  *
  * GIF y no video ni CSS: un correo no ejecuta nada. Outlook de escritorio
- * ademas se queda con el PRIMER fotograma, asi que el primero ya enseña la
- * historia con el dedo sobre la palabra y se entiende parado.
+ * ademas se queda con el PRIMER fotograma, asi que ese primero ya es la
+ * tarjeta abierta y se entiende parado.
  */
 import { chromium, type Page } from "playwright";
 import { execFileSync } from "node:child_process";
@@ -22,10 +22,10 @@ const TMP = "/tmp/claude-501/gloss-gif";
 
 type Clip = { slug: string; word: string; file: string };
 
-const CLIPS: Clip[] = [
-  { slug: "marta-ensena-el-retiro", word: "baja", file: "baja-tap" },
-  { slug: "le-toca-a-mateo", word: "punto", file: "punto-tap" },
-];
+// Un solo clip: la animacion es el DESPLIEGUE de la conjugacion, y solo las
+// glosas del journey de España tienen ese desplegable (las de LATAM llevan
+// filas de sentidos, sin paradigma).
+const CLIPS: Clip[] = [{ slug: "marta-ensena-el-retiro", word: "baja", file: "baja-tap" }];
 
 /** Anillo de toque sobre un elemento, para que se lea como un dedo y no como un salto. */
 async function ring(page: Page, selector: string): Promise<void> {
@@ -97,22 +97,12 @@ async function main() {
 
   for (const clip of CLIPS.filter((c) => !onlyArg || c.file === onlyArg)) {
     step(`${clip.file}: abriendo`);
-    // `networkidle` se queda esperando por la portada, que viene de R2: se
-    // espera a que la imagen este pintada, y con tope.
+    // `domcontentloaded` y no `networkidle`: el audio del player deja la red
+    // abierta y el segundo no llega nunca.
     await page.goto(`${BASE}/dev-glossshot?slug=${clip.slug}`, {
       waitUntil: "domcontentloaded",
       timeout: 60_000,
     });
-    await page
-      .waitForFunction(
-        () => {
-          const img = document.querySelector("img");
-          return !img || (img.complete && img.naturalWidth > 0);
-        },
-        undefined,
-        { timeout: 20_000 },
-      )
-      .catch(() => console.warn(`  aviso: la portada de ${clip.slug} no cargo a tiempo`));
     await page.addStyleTag({
       // Sin scroll suave: `scrollIntoViewIfNeeded` espera a que el elemento
       // este quieto, y con la animacion en marcha no lo esta nunca.
@@ -131,7 +121,6 @@ async function main() {
       ].join(""),
     });
 
-    step("portada lista");
     const word = page.locator(`[data-token="${clip.word}"]`).first();
 
     // Frames con su duracion en segundos. El ultimo se mantiene: es el estado
@@ -146,40 +135,30 @@ async function main() {
     };
 
 
-    // Empieza por arriba: portada y titulo, que es la historia tal como se
-    // abre. Sin eso, el correo enseña un parrafo suelto.
-    await page.waitForTimeout(400);
-    await grab(1.4);
-
-    step("scroll a la palabra");
+    // La animacion empieza con la tarjeta YA abierta: lo que tiene que verse
+    // es el paso de la ficha corta a la conjugacion entera, no el camino
+    // hasta ella.
+    step("abrir la tarjeta");
     await word.evaluate((el) => el.scrollIntoView({ block: "center" }), undefined, { timeout: 15_000 });
-    await page.waitForTimeout(500);
-    await ring(page, `[data-token="${clip.word}"]`);
-    await grab(1.0);
-    await unring(page);
-
-    step("tap");
+    await page.waitForTimeout(400);
     await word.click();
     await page.locator("text=QUICK LOOKUP").first().waitFor({ state: "visible" });
-    await page.waitForTimeout(200);
-    await grab(1.6);
+    await page.waitForTimeout(300);
+    await grab(1.8);
 
     const expand = page.getByRole("button", { name: /See conjugation|See all|See \d+ more/ }).first();
-    if (await expand.count()) {
-      const id = await expand.evaluate((el) => {
-        el.setAttribute("data-shot-target", "1");
-        return "1";
-      });
-      if (id) {
-        await ring(page, "[data-shot-target]");
-        await grab(0.5);
-        await unring(page);
-        await expand.click();
-        await page.waitForTimeout(250);
-      }
+    if (!(await expand.count())) {
+      throw new Error(`${clip.word} no tiene desplegable de conjugacion; el clip se quedaria quieto.`);
     }
+    await expand.evaluate((el) => el.setAttribute("data-shot-target", "1"));
+    step("tocar See conjugation");
+    await ring(page, "[data-shot-target]");
+    await grab(0.7);
+    await unring(page);
+    await expand.click();
+    await page.waitForTimeout(300);
     step("cierre");
-    await grab(3.0);
+    await grab(3.2);
 
     // ffmpeg con el demuxer concat: duracion por fotograma sin repetirlos.
     const list = frames

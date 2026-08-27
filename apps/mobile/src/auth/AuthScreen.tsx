@@ -1,6 +1,8 @@
+import * as AppleAuthentication from "expo-apple-authentication";
 import * as WebBrowser from "expo-web-browser";
 import { Feather } from "@expo/vector-icons";
 import { useClerk, useSignIn, useSignUp, useSSO } from "@clerk/expo";
+import { useSignInWithApple } from "@clerk/expo/apple";
 import { useCallback, useState } from "react";
 import {
   ActivityIndicator,
@@ -96,8 +98,36 @@ export function AuthScreen(args: {
 
   const { setActive } = useClerk();
   const { startSSOFlow } = useSSO();
+  const { startAppleAuthenticationFlow } = useSignInWithApple();
   const { signIn } = useSignIn();
   const { signUp } = useSignUp();
+
+  // ── Sign in with Apple (nativo, solo iOS) ───────────────────────────
+  // No pasa por `startSSOFlow` como Google y Facebook: Apple exige el diálogo
+  // nativo del sistema, no una hoja de Safari, y su botón es el componente
+  // propio de `expo-apple-authentication`, no uno dibujado por nosotros.
+  // El hook de Clerk canjea el identityToken por una sesión y, si el Apple ID
+  // no tenía cuenta, hace el transfer a signUp por su cuenta.
+  //
+  // Cancelar el diálogo no es un error: el hook devuelve `createdSessionId`
+  // nulo y aquí no se pinta nada, que es lo que espera quien cierra la hoja.
+  const handleAppleSignIn = useCallback(async () => {
+    setError(null);
+    setSubmitting("apple");
+    try {
+      const { createdSessionId, setActive: appleSetActive } = await startAppleAuthenticationFlow();
+      if (createdSessionId) {
+        const activate = appleSetActive || setActive;
+        await activate({ session: createdSessionId });
+        onClerkSessionCreated();
+      }
+    } catch (err) {
+      console.error("[auth] apple sign-in error:", err);
+      setError(toErrorMessage(err));
+    } finally {
+      setSubmitting(null);
+    }
+  }, [startAppleAuthenticationFlow, setActive, onClerkSessionCreated]);
 
   // ── Social OAuth ────────────────────────────────────────────────────
   const handleSocialSignIn = useCallback(async (strategy: "oauth_google" | "oauth_facebook") => {
@@ -359,6 +389,27 @@ export function AuthScreen(args: {
         Sign in to keep your saved words, stories, and listening progress on all your devices.
       </Text>
       <View style={styles.actions}>
+        {Platform.OS === "ios" ? (
+          <View
+            style={submitting !== null && styles.buttonDisabled}
+            pointerEvents={submitting !== null ? "none" : "auto"}
+          >
+            {submitting === "apple" ? (
+              <View style={styles.appleButtonBusy}>
+                <ActivityIndicator color="#1a1a1a" size="small" />
+              </View>
+            ) : (
+              <AppleAuthentication.AppleAuthenticationButton
+                buttonType={AppleAuthentication.AppleAuthenticationButtonType.SIGN_IN}
+                buttonStyle={AppleAuthentication.AppleAuthenticationButtonStyle.WHITE}
+                cornerRadius={16}
+                style={styles.appleButton}
+                onPress={() => void handleAppleSignIn()}
+              />
+            )}
+          </View>
+        ) : null}
+
         <View style={styles.socialRow}>
           <Pressable
             disabled={submitting !== null}
@@ -473,6 +524,11 @@ const styles = StyleSheet.create({
   headline: { color: "#f5f7fb", fontSize: 36, fontWeight: "800", lineHeight: 42, marginBottom: 12 },
   subtext: { color: "#7a95b3", fontSize: 15, lineHeight: 22, marginBottom: 28 },
   actions: { gap: 10 },
+  // El botón de Apple es el componente nativo: alto y ancho van por `style`
+  // (sin ellos no se pinta) y el radio por `cornerRadius`. Poner aquí
+  // `backgroundColor` o `borderRadius` no funciona y va contra la guía.
+  appleButton: { width: "100%", height: 48 },
+  appleButtonBusy: { width: "100%", height: 48, alignItems: "center", justifyContent: "center", backgroundColor: "#ffffff", borderRadius: 16 },
   socialRow: { flexDirection: "row", gap: 10 },
   socialButton: { flex: 1, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, backgroundColor: "#ffffff", borderRadius: 16, paddingVertical: 14 },
   socialIcon: { color: "#4285F4", fontSize: 20, fontWeight: "700", fontFamily: "System" },
