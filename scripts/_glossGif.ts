@@ -1,15 +1,15 @@
 /**
  * La animacion del correo de la mejora, dentro de la pantalla del telefono: la
- * tarjeta de una palabra ya abierta, el dedo sobre "See conjugation" y el verbo
- * entero desplegado. Sale a public/email/glosses/<palabra>-tap.gif, que es de
- * donde la sirve el correo.
+ * historia, el toque en una palabra, la tarjeta (con el texto atenuado detras)
+ * y el despliegue de la conjugacion. Sale a public/email/glosses/<palabra>-tap.gif,
+ * que es de donde la sirve el correo.
  *
  *   npm run dev                  # el harness necesita el server en :3000
  *   npx tsx scripts/_glossGif.ts
  *
  * GIF y no video ni CSS: un correo no ejecuta nada. Outlook de escritorio
- * ademas se queda con el PRIMER fotograma, asi que ese primero ya es la
- * tarjeta abierta y se entiende parado.
+ * ademas se queda con el PRIMER fotograma, que aqui es la historia con el
+ * dedo sobre la palabra: se entiende parado.
  */
 import { chromium, type Page } from "playwright";
 import { execFileSync } from "node:child_process";
@@ -49,6 +49,27 @@ async function ring(page: Page, selector: string): Promise<void> {
     ].join(";");
     document.body.appendChild(dot);
   }, selector);
+}
+
+/**
+ * Maqueta: atenua el cuerpo de la historia mientras la tarjeta esta abierta,
+ * para que el panel mande. HOY NO LO HACE NI LA WEB NI LA APP; si se aprueba,
+ * hay que implementarlo en `TapGlossLayer` y volver a capturar.
+ */
+async function dimStory(page: Page, on: boolean): Promise<void> {
+  await page.evaluate((encendido) => {
+    // Solo el TEXTO: el titulo y el cuerpo de la historia. El panel vive
+    // dentro del mismo contenedor, asi que atenuar el contenedor entero lo
+    // apagaba tambien a el.
+    const targets = [
+      document.querySelector("h1"),
+      document.querySelector("div.relative > *:first-child"),
+    ].filter(Boolean) as HTMLElement[];
+    targets.forEach((el) => {
+      el.style.transition = "opacity .18s ease";
+      el.style.opacity = encendido ? "0.42" : "";
+    });
+  }, on);
 }
 
 async function unring(page: Page): Promise<void> {
@@ -135,15 +156,24 @@ async function main() {
     };
 
 
-    // La animacion empieza con la tarjeta YA abierta: lo que tiene que verse
-    // es el paso de la ficha corta a la conjugacion entera, no el camino
-    // hasta ella.
-    step("abrir la tarjeta");
+    // La secuencia es la de un lector de verdad: la historia como se ve al
+    // entrar, el toque en la palabra, el panel (con el texto atenuado detras)
+    // y el despliegue de la conjugacion.
+    step("historia");
     await word.evaluate((el) => el.scrollIntoView({ block: "center" }), undefined, { timeout: 15_000 });
     await page.waitForTimeout(400);
+    await grab(1.4);
+
+    step("tocar la palabra");
+    await ring(page, `[data-token="${clip.word}"]`);
+    await grab(0.6);
+    await unring(page);
+
     await word.click();
     await page.locator("text=QUICK LOOKUP").first().waitFor({ state: "visible" });
+    await dimStory(page, true);
     await page.waitForTimeout(300);
+    step("panel abierto");
     await grab(1.8);
 
     const expand = page.getByRole("button", { name: /See conjugation|See all|See \d+ more/ }).first();

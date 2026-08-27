@@ -84,7 +84,25 @@ const IRREGULARES: Record<string, string[]> = {
   contar: ["cuento", "cuentas", "cuenta", "contamos", "contáis", "cuentan"],
   encontrar: ["encuentro", "encuentras", "encuentra", "encontramos", "encontráis", "encuentran"],
   sentarse: ["me siento", "te sientas", "se sienta", "nos sentamos", "os sentáis", "se sientan"],
+  salir: ["salgo", "sales", "sale", "salimos", "salís", "salen"],
+  caer: ["caigo", "caes", "cae", "caemos", "caéis", "caen"],
+  traer: ["traigo", "traes", "trae", "traemos", "traéis", "traen"],
+  poner: ["pongo", "pones", "pone", "ponemos", "ponéis", "ponen"],
+  valer: ["valgo", "vales", "vale", "valemos", "valéis", "valen"],
+  oír: ["oigo", "oyes", "oye", "oímos", "oís", "oyen"],
+  oir: ["oigo", "oyes", "oye", "oímos", "oís", "oyen"],
 };
+
+/** La primera persona de -cer / -cir NO es regular y el fallo no se ve en la
+ *  tabla salvo que se lea la fila de yo: `conoco`, `creco`, `agradeco` no
+ *  existen. Vocal delante, -zco (conozco, crezco, produzco); consonante
+ *  delante, -zo (venzo, esparzo). `hacer` y `decir` ya van enteros arriba. */
+function primeraDeCer(inf: string): string | null {
+  const m = /^(.*?)([aeiouáéíóú]|[^aeiouáéíóú])c(er|ir)$/.exec(inf);
+  if (!m) return null;
+  const esVocal = /[aeiouáéíóú]/.test(m[2]);
+  return `${m[1]}${m[2]}${esVocal ? "zco" : "zo"}`;
+}
 
 function conjugaRegular(inf: string): string[] | null {
   const raiz = inf.slice(0, -2);
@@ -100,6 +118,10 @@ function presente(inf: string, variante: string): string[] | null {
   const base = IRREGULARES[inf] ?? conjugaRegular(inf);
   if (!base) return null;
   const filas = [...base];
+  if (!IRREGULARES[inf]) {
+    const yo = primeraDeCer(inf);
+    if (yo) filas[0] = yo;
+  }
   if (variante !== "spain") {
     // ustedes toma la forma de ellos; el hueco de vosotros desaparece.
     filas[4] = filas[5];
@@ -639,7 +661,22 @@ async function main() {
         ? /^(.+?)(ou|aram|ava|avam|ávamos|ei|amos)$/
         : /^(.+?)(ó|aron|aba|abas|ábamos|aban|é|aste|amos|asteis)$/;
       const m = FIN.exec(w);
-      if (m && m[1].length >= 2) infinitivos.add(`${m[1]}ar`);
+      if (!m || m[1].length < 2) continue;
+      let raiz = m[1];
+      // `-ió` NO es de -ar: esa i es de la terminacion (decidió, escribió,
+      // perdió, apareció). Cortando por `ó` sale `decidiar`, que no existe, y
+      // la tarjeta ensena un verbo inventado. Cual de los dos es, -er o -ir,
+      // no lo dice la forma, asi que aqui se renuncia.
+      if (idioma !== "portuguese" && /i$/.test(raiz) && /^(ó|é)$/.test(m[2])) continue;
+      // La ortografia de la 1a del preterito tapa la raiz: pegué es de pegar,
+      // busqué de buscar, empecé de empezar. Sin deshacerla salen `peguar` y
+      // `busquar`.
+      if (idioma !== "portuguese" && m[2] === "é") {
+        if (/qu$/.test(raiz)) raiz = `${raiz.slice(0, -2)}c`;
+        else if (/gu$/.test(raiz)) raiz = raiz.slice(0, -1);
+        else if (/c$/.test(raiz)) raiz = `${raiz.slice(0, -1)}z`;
+      }
+      infinitivos.add(`${raiz}ar`);
     }
   }
   const porForma = indicePorForma([...infinitivos], variante, idioma);
@@ -665,6 +702,10 @@ async function main() {
       if (!base) return;
       vistas.add(palabra);
       const entrada: Entrada = { ...(entradas[palabra] ?? {}), g: base.g, t: base.t };
+      // La tabla se REHACE, no se hereda: si esta pasada ya no sabe conjugar
+      // la palabra, tiene que quedarse sin bloque. Heredandola, un arreglo del
+      // motor dejaba viva la tabla equivocada que el arreglo venia a quitar.
+      delete entrada.f;
 
       if (base.t === "verb") {
         const hit = porForma.get(palabra);
