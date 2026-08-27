@@ -662,6 +662,11 @@ async function main() {
         : /^(.+?)(ó|aron|aba|abas|ábamos|aban|é|aste|amos|asteis)$/;
       const m = FIN.exec(w);
       if (!m || m[1].length < 2) continue;
+      // Las terminaciones del imperfecto tambien caben DENTRO de un presente:
+      // `acaba` no es el imperfecto de "acar", es el presente de acabar. Con
+      // dos letras de raiz sale un infinitivo que no existe, asi que ahi se
+      // piden tres. Se pierde algun `amaba`, que es el lado bueno de fallar.
+      if (/^(aba|abas|ábamos|aban|ava|avam|ávamos)$/.test(m[2]) && m[1].length < 3) continue;
       let raiz = m[1];
       // `-ió` NO es de -ar: esa i es de la terminacion (decidió, escribió,
       // perdió, apareció). Cortando por `ó` sale `decidiar`, que no existe, y
