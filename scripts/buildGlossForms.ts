@@ -276,6 +276,80 @@ function ptConjuga(inf: string, tiempo: Tiempo): string[] | null {
   return [`${raiz}ia`, `${raiz}ia`, `${raiz}ia`, `${raiz}íamos`, `${raiz}iam`, `${raiz}iam`];
 }
 
+
+// ── Italiano ─────────────────────────────────────────────────────────────
+// Estas historias narran en PRESENTE, como el A0 español, y el pasado que sale
+// es el imperfetto. El passato remoto es literario y no aparece, asi que no se
+// escribe: un tiempo que ninguna historia usa no vale la superficie de error.
+const IT_PERSONAS = ["io", "tu", "lui, lei", "noi", "voi", "loro"];
+
+/** Los -ire que meten -isc- en las tres personas del singular y en loro. */
+const IT_ISC = new Set([
+  "capire","finire","preferire","pulire","spedire","costruire","unire","punire","sparire",
+  "colpire","guarire","chiarire","fornire","riunire","stupire","suggerire","restituire",
+]);
+
+/** Irregulares del presente, enteros. */
+const IT_IRR: Record<string, string[]> = {
+  essere:  ["sono","sei","è","siamo","siete","sono"],
+  avere:   ["ho","hai","ha","abbiamo","avete","hanno"],
+  andare:  ["vado","vai","va","andiamo","andate","vanno"],
+  fare:    ["faccio","fai","fa","facciamo","fate","fanno"],
+  dire:    ["dico","dici","dice","diciamo","dite","dicono"],
+  stare:   ["sto","stai","sta","stiamo","state","stanno"],
+  dare:    ["do","dai","dà","diamo","date","danno"],
+  venire:  ["vengo","vieni","viene","veniamo","venite","vengono"],
+  uscire:  ["esco","esci","esce","usciamo","uscite","escono"],
+  potere:  ["posso","puoi","può","possiamo","potete","possono"],
+  volere:  ["voglio","vuoi","vuole","vogliamo","volete","vogliono"],
+  dovere:  ["devo","devi","deve","dobbiamo","dovete","devono"],
+  sapere:  ["so","sai","sa","sappiamo","sapete","sanno"],
+  bere:    ["bevo","bevi","beve","beviamo","bevete","bevono"],
+  tenere:  ["tengo","tieni","tiene","teniamo","tenete","tengono"],
+  rimanere:["rimango","rimani","rimane","rimaniamo","rimanete","rimangono"],
+  salire:  ["salgo","sali","sale","saliamo","salite","salgono"],
+  sedere:  ["siedo","siedi","siede","sediamo","sedete","siedono"],
+  sedersi: ["mi siedo","ti siedi","si siede","ci sediamo","vi sedete","si siedono"],
+  piacere: ["piaccio","piaci","piace","piacciamo","piacete","piacciono"],
+  scegliere:["scelgo","scegli","sceglie","scegliamo","scegliete","scelgono"],
+  togliere:["tolgo","togli","toglie","togliamo","togliete","tolgono"],
+  morire:  ["muoio","muori","muore","moriamo","morite","muoiono"],
+  tradurre:["traduco","traduci","traduce","traduciamo","traducete","traducono"],
+};
+
+/** Familias que la regla rompe y que por eso NO se conjugan. */
+const IT_NO = /(rre|urre|orre)$/;
+
+/** La h de -care / -gare y la i que se cae en -ciare / -giare. */
+function itRaiz(raiz: string, term: string): string {
+  if (term.startsWith("i")) {
+    if (raiz.endsWith("c") || raiz.endsWith("g")) return `${raiz}h`;
+    if (raiz.endsWith("ci") || raiz.endsWith("gi")) return raiz.slice(0, -1);
+  }
+  return raiz;
+}
+
+function itConjuga(inf: string, tiempo: Tiempo): string[] | null {
+  if (tiempo === "pretérito") return null;
+  if (IT_IRR[inf] && tiempo === "presente") return [...IT_IRR[inf]];
+  if (IT_NO.test(inf) && !IT_IRR[inf]) return null;
+  const raiz = inf.slice(0, -3);
+  const fin = inf.slice(-3);
+  if (fin !== "are" && fin !== "ere" && fin !== "ire") return null;
+  if (tiempo === "imperfecto") {
+    const v = fin[0];
+    return [`${raiz}${v}vo`, `${raiz}${v}vi`, `${raiz}${v}va`, `${raiz}${v}vamo`, `${raiz}${v}vate`, `${raiz}${v}vano`];
+  }
+  if (fin === "are") {
+    return [`${raiz}o`, `${itRaiz(raiz, "i")}i`, `${raiz}a`, `${itRaiz(raiz, "iamo")}iamo`, `${raiz}ate`, `${raiz}ano`];
+  }
+  if (fin === "ere") return [`${raiz}o`, `${raiz}i`, `${raiz}e`, `${raiz}iamo`, `${raiz}ete`, `${raiz}ono`];
+  if (IT_ISC.has(inf)) {
+    return [`${raiz}isco`, `${raiz}isci`, `${raiz}isce`, `${raiz}iamo`, `${raiz}ite`, `${raiz}iscono`];
+  }
+  return [`${raiz}o`, `${raiz}i`, `${raiz}e`, `${raiz}iamo`, `${raiz}ite`, `${raiz}ono`];
+}
+
 export type Tiempo = "presente" | "pretérito" | "imperfecto";
 const TIEMPOS: Array<{ id: Tiempo; fn: (inf: string, v: string) => string[] | null }> = [
   { id: "presente", fn: (inf, v) => presente(inf, v) },
@@ -288,6 +362,7 @@ const TIEMPOS: Array<{ id: Tiempo; fn: (inf: string, v: string) => string[] | nu
 const IDIOMAS: Record<string, { personas: (v: string) => string[]; conjuga: (inf: string, t: Tiempo, v: string) => string[] | null }> = {
   spanish: { personas, conjuga: (inf, t, v) => tablaDeES(inf, t, v) },
   portuguese: { personas: () => PT_PERSONAS, conjuga: (inf, t) => ptConjuga(inf, t) },
+  italian: { personas: () => IT_PERSONAS, conjuga: (inf, t) => itConjuga(inf, t) },
 };
 
 /** Del infinitivo a las formas: sirve para saber qué palabra del texto es qué.
@@ -394,10 +469,20 @@ async function main() {
 
   // Los infinitivos que este bundle conoce: los que ya están glosados como
   // verbo en su forma de diccionario, más los irregulares de la tabla.
-  const infinitivos = new Set<string>(Object.keys(IRREGULARES));
+  // Los irregulares de SU idioma, no los del español: sembrar la lista con
+  // "ser" y "tener" en un bundle italiano no rompia nada (ninguno acaba en
+  // -are/-ere/-ire) pero era suerte, no diseño.
+  const infinitivos = new Set<string>(
+    idioma === "italian" ? Object.keys(IT_IRR)
+      : idioma === "portuguese" ? Object.keys(PT_IRR)
+      : Object.keys(IRREGULARES)
+  );
   for (const [k, v] of Object.entries(bundle.glosses)) {
-    if (v?.t === "verb" && /(ar|er|ir)$/.test(k)) infinitivos.add(k);
-    const m = /\(([a-záéíóúñ]+(?:ar|er|ir))\)/.exec(v?.g ?? "");
+    const FIN_INF = idioma === "italian" ? /(are|ere|ire)$/ : /(ar|er|ir)$/;
+    if (v?.t === "verb" && FIN_INF.test(k)) infinitivos.add(k);
+    const m = idioma === "italian"
+      ? /\(([a-zàèéìòù]+(?:are|ere|ire))\)/.exec(v?.g ?? "")
+      : /\(([a-záéíóúñ]+(?:ar|er|ir))\)/.exec(v?.g ?? "");
     if (m) infinitivos.add(m[1]);
   }
   // Infinitivos que la propia historia delata. Solo -ar, y solo por formas que
@@ -412,6 +497,7 @@ async function main() {
       if (bundle.glosses[w]?.t !== "verb") continue;
       // Terminaciones que solo puede tener un -ar, por idioma. En -er / -ir no
       // se hace: sus pasados coinciden y la etiqueta saldria inventada.
+      if (idioma === "italian") continue; // ver el comentario de arriba
       const FIN = idioma === "portuguese"
         ? /^(.+?)(ou|aram|ava|avam|ávamos|ei|amos)$/
         : /^(.+?)(ó|aron|aba|abas|ábamos|aban|é|aste|amos|asteis)$/;
