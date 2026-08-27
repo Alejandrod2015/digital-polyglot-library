@@ -288,9 +288,9 @@ export const PRODUCT_TOUR_MESSAGES = [
   {
     id: "home",
     target: "home",
-    targetLabel: "Home",
+    targetLabel: "Journey",
     title: "Your journey",
-    body: "Home is your journey: a step-by-step path of short stories. Start at the top and work down. Each one teaches the real, everyday language in context.",
+    body: "This is your journey: a step-by-step path of short stories. Start at the top and work down. Each one teaches real, everyday language in context.",
   },
   {
     id: "progress",
@@ -304,13 +304,13 @@ export const PRODUCT_TOUR_MESSAGES = [
     target: "practice",
     targetLabel: "Practice",
     title: "Practice",
-    body: "Lock in the words you've learned with quick, focused practice rounds.",
+    body: "Lock in the words you save with quick, focused practice rounds.",
   },
   {
     id: "favorites",
     target: "favorites",
     targetLabel: "Favorites",
     title: "Favorites",
-    body: "Tap a highlighted word in any story to save it; all your saved words live here to revisit.",
+    body: "Tap any word in a story to save it; every word you save lives here, ready to revisit.",
   },
 ] as const;
