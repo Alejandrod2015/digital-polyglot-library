@@ -474,8 +474,10 @@ function deConjuga(inf: string, tiempo: Tiempo): string[] | null {
     const base = inf.slice(prefijo.length);
     const filas = DE_IRR[base] ? DE_IRR[base][tiempo] : deDebil(base, tiempo);
     if (!filas) return null;
-    // El infinitivo y las formas de wir/sie no separan; las demas si.
-    return filas.map((f, i) => (i === 3 || i === 5 ? `${prefijo}${f}` : `${f} … ${prefijo}`));
+    // En oracion principal el prefijo se va al final en las SEIS personas:
+    // "wir bringen das mit", no "wir mitbringen". Solo el infinitivo lo lleva
+    // pegado, y el infinitivo ya va en la etiqueta `lemma`, no en una fila.
+    return filas.map((f) => `${f} … ${prefijo}`);
   }
   if (!/en$/.test(inf)) return null;
   return deDebil(inf, tiempo);
