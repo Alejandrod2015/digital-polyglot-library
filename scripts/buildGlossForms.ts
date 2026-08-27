@@ -350,6 +350,137 @@ function itConjuga(inf: string, tiempo: Tiempo): string[] | null {
   return [`${raiz}o`, `${raiz}i`, `${raiz}e`, `${raiz}iamo`, `${raiz}ite`, `${raiz}ono`];
 }
 
+
+// ── Alemán ───────────────────────────────────────────────────────────────
+// El más difícil de los cuatro, y por eso el que más se niega a conjugar. Tres
+// trampas que no tiene ninguna lengua romance de este fichero:
+//
+//   1. El PARTICIPIO acaba en -en igual que el infinitivo (angekommen,
+//      geschrieben, verstanden). Conjugarlo como infinitivo daria "ich
+//      angekomme", que no existe.
+//   2. Los verbos FUERTES cambian la vocal en du y er (fahren -> du fährst),
+//      y no hay regla: van escritos uno a uno.
+//   3. Los SEPARABLES sueltan el prefijo (aufstehen -> ich stehe auf), asi que
+//      la fila no es una palabra sino dos con algo en medio.
+//
+// Lo que no cae en la tabla no se conjuga.
+const DE_PERSONAS = ["ich", "du", "er, sie, es", "wir", "ihr", "sie, Sie"];
+
+/** Participios de prefijo inseparable: no llevan ge-, asi que la forma sola no
+ *  los delata y hay que nombrarlos. */
+const DE_PART_INSEP = new Set([
+  "begriffen","bestanden","verstanden","verschwunden","vergessen","unterschrieben","zerbrochen",
+  "beschrieben","empfangen","entschieden","erfahren","verloren","versprochen","vertreten",
+]);
+
+/** Formas FLEXIONADAS que acaban en -en y que la busqueda de infinitivos
+ *  recoge por su forma: un preterito de plural (anfingen, wussten), un
+ *  Konjunktiv (brauchten, mochten). Verificado el 2026-08-27 leyendo las 99
+ *  tablas generadas: cada una de estas producia un paradigma inventado del
+ *  tipo "ich finge … an". */
+const DE_NO_ES_INFINITIVO = new Set([
+  "anfingen","bräuchten","möchten","wussten","dachten","gingen","kamen","waren","hatten",
+  "wurden","konnten","mussten","durften","wollten","sollten","mochten","standen","fanden",
+  // kennenlernen separa por el PRIMER verbo ("ich lerne dich kennen"), que es un
+  // patron distinto al del prefijo y no vale la pena escribir para un caso.
+  "kennenlernen","dabeihaben",
+]);
+
+/** Participios y formas de pasado que TERMINAN en -en pero no son infinitivos. */
+function esParticipio(w: string): boolean {
+  if (DE_PART_INSEP.has(w)) return true;
+  if (/^ge.+(en|t)$/.test(w)) return true;
+  // ge- interno de los separables: angekommen, aufgeschlagen, herumgesprochen.
+  if (/^[a-zäöüß]{2,}ge[a-zäöüß]+(en|t)$/.test(w) && !/^(gegen|gehen|gehören|gedeihen|gewinnen)$/.test(w)) return true;
+  return false;
+}
+
+/** Fuertes e irregulares: presente y Präteritum enteros. */
+const DE_IRR: Record<string, { presente: string[]; "pretérito": string[] }> = {
+  sein:    { presente: ["bin","bist","ist","sind","seid","sind"], "pretérito": ["war","warst","war","waren","wart","waren"] },
+  haben:   { presente: ["habe","hast","hat","haben","habt","haben"], "pretérito": ["hatte","hattest","hatte","hatten","hattet","hatten"] },
+  werden:  { presente: ["werde","wirst","wird","werden","werdet","werden"], "pretérito": ["wurde","wurdest","wurde","wurden","wurdet","wurden"] },
+  können:  { presente: ["kann","kannst","kann","können","könnt","können"], "pretérito": ["konnte","konntest","konnte","konnten","konntet","konnten"] },
+  müssen:  { presente: ["muss","musst","muss","müssen","müsst","müssen"], "pretérito": ["musste","musstest","musste","mussten","musstet","mussten"] },
+  dürfen:  { presente: ["darf","darfst","darf","dürfen","dürft","dürfen"], "pretérito": ["durfte","durftest","durfte","durften","durftet","durften"] },
+  wollen:  { presente: ["will","willst","will","wollen","wollt","wollen"], "pretérito": ["wollte","wolltest","wollte","wollten","wolltet","wollten"] },
+  sollen:  { presente: ["soll","sollst","soll","sollen","sollt","sollen"], "pretérito": ["sollte","solltest","sollte","sollten","solltet","sollten"] },
+  mögen:   { presente: ["mag","magst","mag","mögen","mögt","mögen"], "pretérito": ["mochte","mochtest","mochte","mochten","mochtet","mochten"] },
+  wissen:  { presente: ["weiß","weißt","weiß","wissen","wisst","wissen"], "pretérito": ["wusste","wusstest","wusste","wussten","wusstet","wussten"] },
+  gehen:   { presente: ["gehe","gehst","geht","gehen","geht","gehen"], "pretérito": ["ging","gingst","ging","gingen","gingt","gingen"] },
+  kommen:  { presente: ["komme","kommst","kommt","kommen","kommt","kommen"], "pretérito": ["kam","kamst","kam","kamen","kamt","kamen"] },
+  sehen:   { presente: ["sehe","siehst","sieht","sehen","seht","sehen"], "pretérito": ["sah","sahst","sah","sahen","saht","sahen"] },
+  lesen:   { presente: ["lese","liest","liest","lesen","lest","lesen"], "pretérito": ["las","lasest","las","lasen","last","lasen"] },
+  nehmen:  { presente: ["nehme","nimmst","nimmt","nehmen","nehmt","nehmen"], "pretérito": ["nahm","nahmst","nahm","nahmen","nahmt","nahmen"] },
+  geben:   { presente: ["gebe","gibst","gibt","geben","gebt","geben"], "pretérito": ["gab","gabst","gab","gaben","gabt","gaben"] },
+  sprechen:{ presente: ["spreche","sprichst","spricht","sprechen","sprecht","sprechen"], "pretérito": ["sprach","sprachst","sprach","sprachen","spracht","sprachen"] },
+  lassen:  { presente: ["lasse","lässt","lässt","lassen","lasst","lassen"], "pretérito": ["ließ","ließt","ließ","ließen","ließt","ließen"] },
+  halten:  { presente: ["halte","hältst","hält","halten","haltet","halten"], "pretérito": ["hielt","hieltst","hielt","hielten","hieltet","hielten"] },
+  tragen:  { presente: ["trage","trägst","trägt","tragen","tragt","tragen"], "pretérito": ["trug","trugst","trug","trugen","trugt","trugen"] },
+  fahren:  { presente: ["fahre","fährst","fährt","fahren","fahrt","fahren"], "pretérito": ["fuhr","fuhrst","fuhr","fuhren","fuhrt","fuhren"] },
+  laufen:  { presente: ["laufe","läufst","läuft","laufen","lauft","laufen"], "pretérito": ["lief","liefst","lief","liefen","lieft","liefen"] },
+  finden:  { presente: ["finde","findest","findet","finden","findet","finden"], "pretérito": ["fand","fandst","fand","fanden","fandet","fanden"] },
+  bringen: { presente: ["bringe","bringst","bringt","bringen","bringt","bringen"], "pretérito": ["brachte","brachtest","brachte","brachten","brachtet","brachten"] },
+  denken:  { presente: ["denke","denkst","denkt","denken","denkt","denken"], "pretérito": ["dachte","dachtest","dachte","dachten","dachtet","dachten"] },
+  bleiben: { presente: ["bleibe","bleibst","bleibt","bleiben","bleibt","bleiben"], "pretérito": ["blieb","bliebst","blieb","blieben","bliebt","blieben"] },
+  heißen:  { presente: ["heiße","heißt","heißt","heißen","heißt","heißen"], "pretérito": ["hieß","hießt","hieß","hießen","hießt","hießen"] },
+  stehen:  { presente: ["stehe","stehst","steht","stehen","steht","stehen"], "pretérito": ["stand","standst","stand","standen","standet","standen"] },
+  verstehen:{ presente: ["verstehe","verstehst","versteht","verstehen","versteht","verstehen"], "pretérito": ["verstand","verstandst","verstand","verstanden","verstandet","verstanden"] },
+  ziehen:  { presente: ["ziehe","ziehst","zieht","ziehen","zieht","ziehen"], "pretérito": ["zog","zogst","zog","zogen","zogt","zogen"] },
+  gießen:  { presente: ["gieße","gießt","gießt","gießen","gießt","gießen"], "pretérito": ["goss","gossest","goss","gossen","gosst","gossen"] },
+  rufen:   { presente: ["rufe","rufst","ruft","rufen","ruft","rufen"], "pretérito": ["rief","riefst","rief","riefen","rieft","riefen"] },
+  trinken: { presente: ["trinke","trinkst","trinkt","trinken","trinkt","trinken"], "pretérito": ["trank","trankst","trank","tranken","trankt","tranken"] },
+  schwören:{ presente: ["schwöre","schwörst","schwört","schwören","schwört","schwören"], "pretérito": ["schwor","schworst","schwor","schworen","schwort","schworen"] },
+  riechen: { presente: ["rieche","riechst","riecht","riechen","riecht","riechen"], "pretérito": ["roch","rochst","roch","rochen","rocht","rochen"] },
+  schreiben:{ presente: ["schreibe","schreibst","schreibt","schreiben","schreibt","schreiben"], "pretérito": ["schrieb","schriebst","schrieb","schrieben","schriebt","schrieben"] },
+  vergessen:{ presente: ["vergesse","vergisst","vergisst","vergessen","vergesst","vergessen"], "pretérito": ["vergaß","vergaßt","vergaß","vergaßen","vergaßt","vergaßen"] },
+  sitzen:  { presente: ["sitze","sitzt","sitzt","sitzen","sitzt","sitzen"], "pretérito": ["saß","saßest","saß","saßen","saßt","saßen"] },
+  liegen:  { presente: ["liege","liegst","liegt","liegen","liegt","liegen"], "pretérito": ["lag","lagst","lag","lagen","lagt","lagen"] },
+  streiten:{ presente: ["streite","streitest","streitet","streiten","streitet","streiten"], "pretérito": ["stritt","strittst","stritt","stritten","strittet","stritten"] },
+  laden:   { presente: ["lade","lädst","lädt","laden","ladet","laden"], "pretérito": ["lud","ludst","lud","luden","ludet","luden"] },
+  raten:   { presente: ["rate","rätst","rät","raten","ratet","raten"], "pretérito": ["riet","rietst","riet","rieten","rietet","rieten"] },
+  besitzen:{ presente: ["besitze","besitzt","besitzt","besitzen","besitzt","besitzen"], "pretérito": ["besaß","besaßest","besaß","besaßen","besaßt","besaßen"] },
+  hängen:  { presente: ["hänge","hängst","hängt","hängen","hängt","hängen"], "pretérito": ["hing","hingst","hing","hingen","hingt","hingen"] },
+};
+
+/** Débiles: la regla. La -e de apoyo en raices en -t, -d y en -chn / -ffn / -gn,
+ *  y la fusion de la -s en du cuando la raiz ya acaba en s, ß, z o x. */
+function deDebil(inf: string, tiempo: Tiempo): string[] | null {
+  const raiz = inf.endsWith("eln") || inf.endsWith("ern") ? inf.slice(0, -1) : inf.slice(0, -2);
+  if (!raiz) return null;
+  const apoyo = /(t|d|chn|ffn|gn|dm|tm)$/.test(raiz);
+  const sibilante = /(s|ß|z|x)$/.test(raiz);
+  const e = apoyo ? "e" : "";
+  if (tiempo === "presente") {
+    const du = sibilante ? `${raiz}${e}t` : `${raiz}${e}st`;
+    return [`${raiz}e`, du, `${raiz}${e}t`, `${raiz}en`, `${raiz}${e}t`, `${raiz}en`];
+  }
+  if (tiempo === "pretérito") {
+    return [`${raiz}${e}te`, `${raiz}${e}test`, `${raiz}${e}te`, `${raiz}${e}ten`, `${raiz}${e}tet`, `${raiz}${e}ten`];
+  }
+  return null;
+}
+
+/** Prefijos que se sueltan. La fila se escribe "stehe … auf" para que se vea. */
+const DE_SEPARABLES = /^(ab|an|auf|aus|bei|ein|her|hin|los|mit|nach|vor|weg|zu|zurück|zusammen|herum|rein|durch)(?=[a-zäöüß]{3,})/;
+
+function deConjuga(inf: string, tiempo: Tiempo): string[] | null {
+  if (tiempo === "imperfecto") return null; // el alemán no tiene esa casilla
+  if (esParticipio(inf) || DE_NO_ES_INFINITIVO.has(inf)) return null;
+  if (DE_IRR[inf]) return [...DE_IRR[inf][tiempo]];
+  const sep = DE_SEPARABLES.exec(inf);
+  if (sep) {
+    const prefijo = sep[1];
+    const base = inf.slice(prefijo.length);
+    const filas = DE_IRR[base] ? DE_IRR[base][tiempo] : deDebil(base, tiempo);
+    if (!filas) return null;
+    // El infinitivo y las formas de wir/sie no separan; las demas si.
+    return filas.map((f, i) => (i === 3 || i === 5 ? `${prefijo}${f}` : `${f} … ${prefijo}`));
+  }
+  if (!/en$/.test(inf)) return null;
+  return deDebil(inf, tiempo);
+}
+
 export type Tiempo = "presente" | "pretérito" | "imperfecto";
 const TIEMPOS: Array<{ id: Tiempo; fn: (inf: string, v: string) => string[] | null }> = [
   { id: "presente", fn: (inf, v) => presente(inf, v) },
@@ -363,6 +494,7 @@ const IDIOMAS: Record<string, { personas: (v: string) => string[]; conjuga: (inf
   spanish: { personas, conjuga: (inf, t, v) => tablaDeES(inf, t, v) },
   portuguese: { personas: () => PT_PERSONAS, conjuga: (inf, t) => ptConjuga(inf, t) },
   italian: { personas: () => IT_PERSONAS, conjuga: (inf, t) => itConjuga(inf, t) },
+  german: { personas: () => DE_PERSONAS, conjuga: (inf, t) => deConjuga(inf, t) },
 };
 
 /** Del infinitivo a las formas: sirve para saber qué palabra del texto es qué.
@@ -475,10 +607,13 @@ async function main() {
   const infinitivos = new Set<string>(
     idioma === "italian" ? Object.keys(IT_IRR)
       : idioma === "portuguese" ? Object.keys(PT_IRR)
+      : idioma === "german" ? Object.keys(DE_IRR)
       : Object.keys(IRREGULARES)
   );
   for (const [k, v] of Object.entries(bundle.glosses)) {
-    const FIN_INF = idioma === "italian" ? /(are|ere|ire)$/ : /(ar|er|ir)$/;
+    const FIN_INF = idioma === "italian" ? /(are|ere|ire)$/
+      : idioma === "german" ? /(en|eln|ern)$/
+      : /(ar|er|ir)$/;
     if (v?.t === "verb" && FIN_INF.test(k)) infinitivos.add(k);
     const m = idioma === "italian"
       ? /\(([a-zàèéìòù]+(?:are|ere|ire))\)/.exec(v?.g ?? "")
@@ -497,7 +632,7 @@ async function main() {
       if (bundle.glosses[w]?.t !== "verb") continue;
       // Terminaciones que solo puede tener un -ar, por idioma. En -er / -ir no
       // se hace: sus pasados coinciden y la etiqueta saldria inventada.
-      if (idioma === "italian") continue; // ver el comentario de arriba
+      if (idioma === "italian" || idioma === "german") continue; // ver el comentario de arriba
       const FIN = idioma === "portuguese"
         ? /^(.+?)(ou|aram|ava|avam|ávamos|ei|amos)$/
         : /^(.+?)(ó|aron|aba|abas|ábamos|aban|é|aste|amos|asteis)$/;
