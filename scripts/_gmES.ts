@@ -8,9 +8,9 @@ import { PrismaClient } from "../src/generated/prisma";
 const p = new PrismaClient();
 // Solo lo que MARCA genero. `su`, `mi` y `cada` no lo marcan, y metiendolos
 // salia "su alma" = m. y "cada cosa" = m.
-const M = new Set(["el","un","los","unos","del","al","este","ese","aquel","estos","esos","otro","otros"]);
-const F = new Set(["la","una","las","unas","esta","esa","aquella","estas","esas","otra","otras"]);
-const PLURAL = new Set(["los","unos","las","unas","estos","esos","estas","esas","otros","otras"]);
+const M = new Set(process.env.IT ? ["il","lo","un","uno","i","gli","del","dello","dei","degli","al","allo","ai","agli","nel","nello","nei","negli","sul","sullo","sui","sugli","dal","dallo","dai","dagli","questo","quello","questi","quei","altro","altri"] : ["el","un","los","unos","del","al","este","ese","aquel","estos","esos","otro","otros"]);
+const F = new Set(process.env.IT ? ["la","una","le","della","delle","alla","alle","nella","nelle","sulla","sulle","dalla","dalle","questa","quella","queste","quelle","altra","altre"] : ["la","una","las","unas","esta","esa","aquella","estas","esas","otra","otras"]);
+const PLURAL = new Set(process.env.IT ? ["i","gli","le","dei","degli","delle","ai","agli","alle","nei","negli","nelle","sui","sugli","sulle","dai","dagli","dalle","questi","quei","queste","quelle","altri","altre"] : ["los","unos","las","unas","estos","esos","estas","esas","otros","otras"]);
 /** Femeninas que llevan `el` por empezar por a tonica: el alma, el arpa. */
 const F_CON_EL = new Set(["alma","arpa","hambre","agua","aula","area","área","ave","hacha","ala","aguila","águila"]);
 (async () => {

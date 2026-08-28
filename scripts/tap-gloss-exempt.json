@@ -898,6 +898,54 @@
         "zwanzig",
         "zwei"
       ]
+    },
+    "italian-traveler-a1": {
+      "articles": [
+        "dei",
+        "gli",
+        "i",
+        "il",
+        "l",
+        "la",
+        "le",
+        "lo",
+        "un",
+        "una",
+        "uno"
+      ],
+      "characterNames": [
+        "dario",
+        "gaia",
+        "irene",
+        "marta",
+        "martina",
+        "nico",
+        "rosa",
+        "teo"
+      ],
+      "numerals": [
+        "cento",
+        "cinque",
+        "dieci",
+        "dodici",
+        "due",
+        "nove",
+        "otto",
+        "quaranta",
+        "quarantuno",
+        "quattordici",
+        "quattro",
+        "quindici",
+        "sei",
+        "sessanta",
+        "sette",
+        "tre",
+        "trecento",
+        "trentanove",
+        "undici",
+        "venti",
+        "zero"
+      ]
     }
   }
 }

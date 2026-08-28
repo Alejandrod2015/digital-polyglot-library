@@ -355,16 +355,23 @@ const IT_IRR: Record<string, string[]> = {
   togliere:["tolgo","togli","toglie","togliamo","togliete","tolgono"],
   morire:  ["muoio","muori","muore","moriamo","morite","muoiono"],
   tradurre:["traduco","traduci","traduce","traduciamo","traducete","traducono"],
+  valere:  ["valgo","vali","vale","valiamo","valete","valgono"],
+  spegnere:["spengo","spegni","spegne","spegniamo","spegnete","spengono"],
+  comparire:["compaio","compari","compare","compariamo","comparite","compaiono"],
+  dispiacere:["dispiaccio","dispiaci","dispiace","dispiacciamo","dispiacete","dispiacciono"],
 };
 
 /** Familias que la regla rompe y que por eso NO se conjugan. */
 const IT_NO = /(rre|urre|orre)$/;
 
-/** La h de -care / -gare y la i que se cae en -ciare / -giare. */
+/** La h de -care / -gare y la i que se cae delante de otra i.
+ *  La regla no es solo de -ciare y -giare: CUALQUIER raiz acabada en i pierde
+ *  la suya cuando la terminacion empieza por i. Sin eso salian `fischii`,
+ *  `soffiiamo` y `spogliiamo`, que no son palabras. */
 function itRaiz(raiz: string, term: string): string {
   if (term.startsWith("i")) {
     if (raiz.endsWith("c") || raiz.endsWith("g")) return `${raiz}h`;
-    if (raiz.endsWith("ci") || raiz.endsWith("gi")) return raiz.slice(0, -1);
+    if (raiz.endsWith("i")) return raiz.slice(0, -1);
   }
   return raiz;
 }
