@@ -1206,18 +1206,10 @@ export function buildBetaImprovementEmail(data?: BetaEmailData): BuiltEmail {
                 // tarjeta, un telefono mas ancho sacaba el correo de una
                 // pantalla de 375px.
                 248,
-                shotUrl(example.fullSizeImage) ?? shotUrl(example.image)!,
               )}</div>`
             : ""
         }
-        <div style="margin-top:14px;text-align:center;font-family:${DPE.font};font-weight:700;font-size:14.5px;line-height:1.45;color:${DPE.fg};">${esc(example.caption)}</div>
-        ${
-          shotUrl(example.fullSizeImage)
-            ? `<div style="margin-top:12px;text-align:center;font-family:${DPE.font};font-weight:700;font-size:13px;">
-                <a href="${shotUrl(example.fullSizeImage)}" style="color:${DPE.sky};text-decoration:underline;">See it full size</a>
-              </div>`
-            : ""
-        }`,
+        <div style="margin-top:14px;text-align:center;font-family:${DPE.font};font-weight:700;font-size:14.5px;line-height:1.45;color:${DPE.fg};">${esc(example.caption)}</div>`,
         "rgba(252,211,77,0.26)",
       )
     : "";
@@ -1291,14 +1283,6 @@ export function buildBetaImprovementEmail(data?: BetaEmailData): BuiltEmail {
             `One example, out of every word in the journey: ${example.word}`,
             ...(example.sentence ? [`  ${example.sentence}`] : []),
             `  ${example.caption}`,
-            ...(example.fullSizeImage || example.image
-              ? [
-                  `  see it: ${(() => {
-                    const path = example.fullSizeImage ?? example.image!;
-                    return path.startsWith("http") ? path : `${assetBase(data)}${path}`;
-                  })()}`,
-                ]
-              : []),
             "",
           ]
         : []),
