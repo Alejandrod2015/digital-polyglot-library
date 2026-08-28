@@ -425,7 +425,7 @@ export function OnboardingFlow({
   }
 
   return (
-    <View style={styles.container} accessibilityLabel="qa-onboarding-flow" testID="qa-onboarding-flow">
+    <View style={styles.container} testID="qa-onboarding-flow">
       <View style={styles.header}>
         <Pressable onPress={handleBack} hitSlop={12} style={styles.backButton}>
           <Feather name="chevron-left" size={20} color="#f5f7fb" />

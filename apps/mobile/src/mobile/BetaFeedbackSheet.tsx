@@ -176,7 +176,8 @@ export default function BetaFeedbackSheet({
         <Pressable
           style={StyleSheet.absoluteFill}
           onPress={close}
-          accessibilityLabel="qa-feedback-dismiss"
+          accessibilityLabel="Close feedback"
+          testID="qa-feedback-dismiss"
         />
         <View style={[styles.sheetWrap, { paddingBottom: keyboardHeight }]}>
           <View style={styles.sheet}>

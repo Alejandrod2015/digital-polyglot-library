@@ -2651,14 +2651,14 @@ export function ReaderScreen(args: {
   }
 
   return (
-    <View style={styles.screen} accessibilityLabel="qa-reader-screen" testID="qa-reader-screen">
+    <View style={styles.screen} testID="qa-reader-screen">
       {/* Floating back button; always reachable regardless of scroll
           position, so the user doesn't have to scroll back to the top of a
           long story to tap "back to journey". */}
       <Pressable
         onPress={onBack}
         accessibilityRole="button"
-        accessibilityLabel="qa-reader-back-floating"
+        accessibilityLabel="Back to Journey"
         testID="qa-reader-back-floating"
         style={styles.floatingBackButton}
         hitSlop={10}
@@ -2866,7 +2866,7 @@ export function ReaderScreen(args: {
               <Pressable
                 onPress={onOpenPractice}
                 style={styles.readerPracticeCardButton}
-                accessibilityLabel="qa-reader-practice-card"
+                accessibilityLabel="Start practice"
                 testID="qa-reader-practice-card"
               >
                 <Feather name="zap" size={16} color="#0c1626" />
@@ -2887,7 +2887,7 @@ export function ReaderScreen(args: {
               onPress={onOpenFeedback}
               style={styles.readerFeedbackLink}
               accessibilityRole="button"
-              accessibilityLabel="qa-reader-feedback"
+              accessibilityLabel="Tell us about this story"
               testID="qa-reader-feedback"
             >
               <Feather name="message-square" size={13} color="#8aa0bd" />
@@ -2906,7 +2906,6 @@ export function ReaderScreen(args: {
             styles.endOfStoryBackdrop,
             ratingKeyboardHeight > 0 ? { paddingBottom: ratingKeyboardHeight } : null,
           ]}
-          accessibilityLabel="qa-reader-practice-prompt"
           testID="qa-reader-practice-prompt"
           pointerEvents="box-none"
         >
@@ -2916,7 +2915,8 @@ export function ReaderScreen(args: {
           >
             <Pressable
               style={StyleSheet.absoluteFillObject}
-              accessibilityLabel="qa-reader-practice-prompt-dismiss"
+              accessibilityLabel="Dismiss"
+              testID="qa-reader-practice-prompt-dismiss"
               onPress={requestCloseEndOfStoryPrompt}
             />
           </Animated.View>
@@ -2936,7 +2936,8 @@ export function ReaderScreen(args: {
               onPress={requestCloseEndOfStoryPrompt}
               style={styles.endOfStoryDialogClose}
               hitSlop={12}
-              accessibilityLabel="qa-reader-practice-prompt-close"
+              accessibilityLabel="Close"
+              testID="qa-reader-practice-prompt-close"
             >
               <Feather name="x" size={18} color="#aebcd3" />
             </Pressable>
@@ -2975,13 +2976,13 @@ export function ReaderScreen(args: {
                   multiline
                   maxLength={2000}
                   style={styles.storyRatingInput}
-                  accessibilityLabel="qa-reader-rating-comment"
+                  accessibilityLabel="Tell us about this story"
                   testID="qa-reader-rating-comment"
                 />
                 <Pressable
                   onPress={handleStoryRatingSend}
                   accessibilityRole="button"
-                  accessibilityLabel="qa-reader-rating-send"
+                  accessibilityLabel="Send feedback"
                   testID="qa-reader-rating-send"
                   style={styles.endOfStoryButton}
                 >
@@ -3006,7 +3007,7 @@ export function ReaderScreen(args: {
                   <Pressable
                     onPress={() => handleStoryVote(false, "later")}
                     accessibilityRole="button"
-                    accessibilityLabel="qa-reader-rating-down"
+                    accessibilityLabel="Didn't like this story"
                     testID="qa-reader-rating-down"
                     style={styles.storyRatingButton}
                   >
@@ -3016,7 +3017,7 @@ export function ReaderScreen(args: {
                   <Pressable
                     onPress={() => handleStoryVote(true, "later")}
                     accessibilityRole="button"
-                    accessibilityLabel="qa-reader-rating-up"
+                    accessibilityLabel="Liked this story"
                     testID="qa-reader-rating-up"
                     style={styles.storyRatingButton}
                   >
@@ -3073,7 +3074,7 @@ export function ReaderScreen(args: {
                   });
                 }}
                 accessibilityRole="button"
-                accessibilityLabel="qa-reader-practice-story"
+                accessibilityLabel="Start practice"
                 testID="qa-reader-practice-story"
                 style={styles.endOfStoryButton}
               >
@@ -3099,7 +3100,7 @@ export function ReaderScreen(args: {
                   <Pressable
                     onPress={() => handleStoryVote(false, "practice")}
                     accessibilityRole="button"
-                    accessibilityLabel="qa-reader-rating-down-inline"
+                    accessibilityLabel="Didn't like this story"
                     testID="qa-reader-rating-down-inline"
                     style={[
                       styles.storyRatingButton,
@@ -3123,7 +3124,7 @@ export function ReaderScreen(args: {
                   <Pressable
                     onPress={() => handleStoryVote(true, "practice")}
                     accessibilityRole="button"
-                    accessibilityLabel="qa-reader-rating-up-inline"
+                    accessibilityLabel="Liked this story"
                     testID="qa-reader-rating-up-inline"
                     style={[
                       styles.storyRatingButton,
@@ -3162,11 +3163,10 @@ export function ReaderScreen(args: {
         <View
           style={[styles.vocabOverlay, { paddingBottom: playerDockHeight + 12 }]}
           pointerEvents="box-none"
-          accessibilityLabel="qa-reader-vocab-overlay"
           testID="qa-reader-vocab-overlay"
         >
           <Pressable style={styles.vocabBubbleWrap} onPress={() => undefined}>
-            <View style={styles.vocabBubble} accessibilityLabel="qa-reader-vocab-bubble" testID="qa-reader-vocab-bubble">
+            <View style={styles.vocabBubble} testID="qa-reader-vocab-bubble">
               <View style={styles.vocabBubbleHeader}>
                 <View style={styles.vocabBubbleTitleStack}>
                   <Text style={styles.vocabBubbleWord}>{selectedVocab.word}</Text>

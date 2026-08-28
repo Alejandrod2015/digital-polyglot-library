@@ -67,7 +67,6 @@ export function PracticeExitConfirm({
             borderColor: `${accent}44`,
           },
         ]}
-        accessibilityLabel="qa-practice-exit-confirm"
         testID="qa-practice-exit-confirm"
       >
         <Text style={styles.title}>Exit without finishing?</Text>

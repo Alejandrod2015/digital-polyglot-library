@@ -167,7 +167,6 @@ export function PracticeExitSheet({
       style={styles.container}
       pointerEvents="box-none"
       accessibilityViewIsModal
-      accessibilityLabel="qa-practice-exit-sheet"
       testID="qa-practice-exit-sheet"
     >
       <Animated.View
@@ -195,7 +194,8 @@ export function PracticeExitSheet({
           onPress={rating?.boxOpen ? rating.onCloseBox : onContinuePracticing}
           style={styles.closeButton}
           hitSlop={12}
-          accessibilityLabel="qa-practice-exit-close"
+          accessibilityLabel="Close"
+          testID="qa-practice-exit-close"
         >
           <Feather name="x" size={18} color="#aebcd3" />
         </Pressable>
@@ -231,14 +231,14 @@ export function PracticeExitSheet({
               multiline
               maxLength={2000}
               style={styles.ratingInput}
-              accessibilityLabel="qa-practice-exit-rating-comment"
+              accessibilityLabel="Tell us about this practice"
               testID="qa-practice-exit-rating-comment"
             />
             <Pressable
               onPress={rating.onSend}
               style={styles.ratingSend}
               accessibilityRole="button"
-              accessibilityLabel="qa-practice-exit-rating-send"
+              accessibilityLabel="Send feedback"
               testID="qa-practice-exit-rating-send"
             >
               <Feather name="send" size={15} color="#0e1727" />
@@ -264,7 +264,7 @@ export function PracticeExitSheet({
           onPress={onContinuePracticing}
           style={styles.primaryButton}
           accessibilityRole="button"
-          accessibilityLabel="qa-practice-exit-continue"
+          accessibilityLabel="Continue practicing"
           testID="qa-practice-exit-continue"
         >
           <Feather name="play" size={16} color="#0e1727" />
@@ -290,7 +290,7 @@ export function PracticeExitSheet({
                       rating.liked === false ? styles.ratingButtonDown : null,
                     ]}
                     accessibilityRole="button"
-                    accessibilityLabel="qa-practice-exit-rating-down"
+                    accessibilityLabel="Didn't like this practice"
                     testID="qa-practice-exit-rating-down"
                   >
                     <Feather
@@ -314,7 +314,7 @@ export function PracticeExitSheet({
                       rating.liked === true ? styles.ratingButtonUp : null,
                     ]}
                     accessibilityRole="button"
-                    accessibilityLabel="qa-practice-exit-rating-up"
+                    accessibilityLabel="Liked this practice"
                     testID="qa-practice-exit-rating-up"
                   >
                     <Feather
@@ -341,7 +341,7 @@ export function PracticeExitSheet({
           onPress={onExitAnyway}
           style={styles.exitLink}
           accessibilityRole="button"
-          accessibilityLabel="qa-practice-exit-anyway"
+          accessibilityLabel="Exit anyway"
           testID="qa-practice-exit-anyway"
         >
           <Text style={styles.exitLinkText}>Exit anyway</Text>

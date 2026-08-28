@@ -423,7 +423,7 @@ export function MobileSettingsScreen({
               <Pressable
                 onPress={() => setFeedbackOpen(true)}
                 style={styles.feedbackInvite}
-                accessibilityLabel="qa-settings-feedback"
+                accessibilityLabel="Send feedback"
                 testID="qa-settings-feedback"
               >
                 <View style={styles.feedbackInviteIcon}>

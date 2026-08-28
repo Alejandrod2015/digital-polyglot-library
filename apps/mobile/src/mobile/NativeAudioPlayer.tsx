@@ -463,7 +463,7 @@ export function NativeAudioPlayer({
           <Pressable
             onPress={onPrevious}
             style={[styles.iconButton, styles.chapterNavButton]}
-            accessibilityLabel="qa-player-previous"
+            accessibilityLabel="Previous story"
             testID="qa-player-previous"
           >
             <Feather name="skip-back" size={18} color="rgba(219,233,255,0.7)" />
@@ -478,7 +478,7 @@ export function NativeAudioPlayer({
         <Pressable
           onPress={() => void togglePlayback()}
           style={[styles.primaryButton, styles.playButton]}
-          accessibilityLabel="qa-player-play-toggle"
+          accessibilityLabel="Play or pause"
           testID="qa-player-play-toggle"
         >
           {pendingPlay && !playback.isLoaded ? (
@@ -505,7 +505,7 @@ export function NativeAudioPlayer({
           <Pressable
             onPress={onNext}
             style={[styles.iconButton, styles.chapterNavButton]}
-            accessibilityLabel="qa-player-next"
+            accessibilityLabel="Next story"
             testID="qa-player-next"
           >
             <Feather name="skip-forward" size={18} color="rgba(219,233,255,0.7)" />
@@ -516,7 +516,7 @@ export function NativeAudioPlayer({
           ref={speedInlineButtonRef}
           onPress={() => toggleSpeedPicker(speedInlineButtonRef)}
           style={[styles.speedButton, styles.speedButtonInline]}
-          accessibilityLabel="qa-player-speed"
+          accessibilityLabel="Playback speed"
           testID="qa-player-speed"
         >
           <Text style={styles.speedButtonText}>

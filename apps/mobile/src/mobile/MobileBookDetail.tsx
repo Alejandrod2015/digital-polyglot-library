@@ -5,7 +5,7 @@ import { useAndroidBottomInset } from "./useAndroidBottomInset";
 import { BookHomeCard, BookWebCard, type BookCardModel } from "./MobileCards";
 import { ProgressiveImage } from "./ProgressiveImage";
 
-type BookDetailTab = "stories" | "vocab" | "reviews" | "about";
+type BookDetailTab = "stories" | "vocab" | "about";
 type BookStoryPickerSection = "topic" | "sort";
 
 type FilterOption = {
@@ -75,7 +75,6 @@ type Props = {
   suggestedStories: BookDetailStoryCardItem[];
   relatedBooks: BookCardModel[];
   vocabWords: string[];
-  reviewQuotes: string[];
   aboutText: string;
 };
 
@@ -114,7 +113,6 @@ export function MobileBookDetail({
   suggestedStories,
   relatedBooks,
   vocabWords,
-  reviewQuotes,
   aboutText,
 }: Props) {
   // Los Modal van en otra ventana: el inset de Android se aplica aquí.
@@ -123,7 +121,6 @@ export function MobileBookDetail({
     <View style={styles.shell}>
       <ScrollView
         ref={scrollRef}
-        accessibilityLabel="qa-book-detail-screen"
         testID="qa-book-detail-screen"
         style={styles.scrollView}
         contentContainerStyle={[styles.container, styles.containerGrow]}
@@ -137,7 +134,7 @@ export function MobileBookDetail({
           <Pressable
             onPress={onPressBack}
             accessibilityRole="button"
-            accessibilityLabel="qa-book-detail-back"
+            accessibilityLabel="Back"
             testID="qa-book-detail-back"
             style={styles.iconButton}
           >
@@ -181,10 +178,6 @@ export function MobileBookDetail({
                 <Text style={styles.statLabel}>Avg length</Text>
                 <Text style={styles.statValue}>{averageMinutes}m</Text>
               </View>
-              <View style={styles.statCard}>
-                <Text style={styles.statLabel}>Learner score</Text>
-                <Text style={styles.statValue}>4.8</Text>
-              </View>
             </View>
 
             <View style={styles.actions}>
@@ -192,7 +185,7 @@ export function MobileBookDetail({
                 <Pressable
                   onPress={onPressStartReading}
                   accessibilityRole="button"
-                  accessibilityLabel="qa-book-start-reading"
+                  accessibilityLabel="Start story"
                   testID="qa-book-start-reading"
                   style={[styles.inlineButton, styles.primaryButton]}
                 >
@@ -215,7 +208,7 @@ export function MobileBookDetail({
         </View>
 
         <View style={styles.tabs}>
-          {(["stories", "vocab", "reviews", "about"] as BookDetailTab[]).map((tab) => (
+          {(["stories", "vocab", "about"] as BookDetailTab[]).map((tab) => (
             <Pressable
               key={tab}
               onPress={() => onSelectTab(tab)}
@@ -225,7 +218,7 @@ export function MobileBookDetail({
               style={[styles.tab, selectedTab === tab ? styles.tabActive : null]}
             >
               <Text style={[styles.tabText, selectedTab === tab ? styles.tabTextActive : null]}>
-                {tab === "stories" ? "Stories" : tab === "vocab" ? "Vocab" : tab === "reviews" ? "Reviews" : "About"}
+                {tab === "stories" ? "Stories" : tab === "vocab" ? "Vocab" : "About"}
               </Text>
             </Pressable>
           ))}
@@ -247,7 +240,7 @@ export function MobileBookDetail({
                 <TextInput
                   value={storySearchQuery}
                   onChangeText={onChangeStorySearchQuery}
-                  accessibilityLabel="qa-book-story-search-input"
+                  accessibilityLabel="Search a story"
                   testID="qa-book-story-search-input"
                   placeholder="Search a story"
                   placeholderTextColor="#7f95b2"
@@ -392,16 +385,6 @@ export function MobileBookDetail({
                 </View>
               ))}
             </View>
-          </View>
-        ) : null}
-
-        {selectedTab === "reviews" ? (
-          <View style={styles.reviewGrid}>
-            {reviewQuotes.map((quote) => (
-              <View key={quote} style={styles.reviewCard}>
-                <Text style={styles.reviewText}>{quote}</Text>
-              </View>
-            ))}
           </View>
         ) : null}
 
@@ -807,19 +790,5 @@ const styles = StyleSheet.create({
     color: "#dbe9ff",
     fontSize: 13,
     fontWeight: "700",
-  },
-  reviewGrid: { gap: 10 },
-  reviewCard: {
-    borderRadius: 18,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.08)",
-    backgroundColor: "rgba(255,255,255,0.04)",
-    padding: 16,
-  },
-  reviewText: {
-    color: "#eef4ff",
-    fontSize: 14,
-    lineHeight: 20,
-    fontWeight: "600",
   },
 });

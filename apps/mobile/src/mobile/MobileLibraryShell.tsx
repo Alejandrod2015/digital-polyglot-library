@@ -942,7 +942,7 @@ type JourneyMilestone = {
   onPress: () => void;
 };
 
-type BookDetailTab = "stories" | "vocab" | "reviews" | "about";
+type BookDetailTab = "stories" | "vocab" | "about";
 type BookStorySortKey = "recommended" | "shortest" | "longest" | "title";
 type BookStoryPickerSection = "topic" | "sort";
 
@@ -7767,7 +7767,7 @@ export function MobileLibraryShell(args: {
       return {
         title: "Checkpoint cleared",
         body: `${topic.label} is fully cleared.`,
-        cta: "Back to journey",
+        cta: "Back to Journey",
         onPress: () => {
           setActiveScreen("home");
           setJourneyDetailTopicId(null);
@@ -7782,7 +7782,7 @@ export function MobileLibraryShell(args: {
         body: topic.checkpointPassed
           ? `${topic.label} is already cleared. Jump into the next topic.`
           : `${topic.label} is ready for its checkpoint now.`,
-        cta: topic.checkpointPassed ? "Back to journey" : "Start checkpoint",
+        cta: topic.checkpointPassed ? "Back to Journey" : "Start checkpoint",
         onPress: () => {
           setActiveScreen("home");
           if (!topic.checkpointPassed) {
@@ -11485,11 +11485,28 @@ export function MobileLibraryShell(args: {
     );
   }
 
-  function getSpotlightSelection(): ReaderSelection | null {
-    const firstBook = CATALOG_BOOKS[0];
-    const firstStory = firstBook?.stories[0];
-    if (!firstBook || !firstStory) return null;
-    return resolveStorySelection(firstStory.id, firstBook, firstStory);
+  /**
+   * Historia destacada del menu. ROTA de verdad: el indice sale del numero
+   * de dia del calendario local, asi que "Story of the Day" cambia cada dia
+   * y "Story of the Week" cada lunes, sin red y sin estado que guardar.
+   *
+   * Antes devolvia siempre `CATALOG_BOOKS[0].stories[0]`, o sea que las tres
+   * etiquetas por plan (week / day / featured) abrian la MISMA historia para
+   * siempre. La etiqueta prometia una rotacion que no existia.
+   */
+  function getSpotlightSelection(period: "day" | "week" = "week"): ReaderSelection | null {
+    const pool = CATALOG_BOOKS.flatMap((book) => book.stories.map((story) => ({ book, story })));
+    if (pool.length === 0) return null;
+    const now = new Date();
+    const dayNumber = Math.floor(
+      Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000
+    );
+    // El 1970-01-01 cayo en jueves; el +3 mueve el corte al LUNES, el mismo
+    // dia en el que se reinicia la semana de Progress (getStartOfWeekUtc).
+    const bucket = period === "week" ? Math.floor((dayNumber + 3) / 7) : dayNumber;
+    const pick = pool[((bucket % pool.length) + pool.length) % pool.length];
+    if (!pick) return null;
+    return resolveStorySelection(pick.story.id, pick.book, pick.story);
   }
 
   function handleBottomTabPress(tab: BottomTab) {
@@ -11569,15 +11586,16 @@ export function MobileLibraryShell(args: {
   }, [savedJourneyStoryCards, savedStoryCards, accountStoryCards, savedStoryAt]);
 
   const featuredHomeStory = useMemo(() => {
-    const spotlight = getSpotlightSelection();
-    if (!spotlight) return null;
     if (effectivePlan === "free") {
-      return { label: "Story of the Week", selection: spotlight };
+      const spotlight = getSpotlightSelection("week");
+      return spotlight ? { label: "Story of the Week", selection: spotlight } : null;
     }
     if (effectivePlan === "basic") {
-      return { label: "Story of the Day", selection: spotlight };
+      const spotlight = getSpotlightSelection("day");
+      return spotlight ? { label: "Story of the Day", selection: spotlight } : null;
     }
-    return { label: "Featured Story", selection: spotlight };
+    const spotlight = getSpotlightSelection("week");
+    return spotlight ? { label: "Featured Story", selection: spotlight } : null;
   }, [effectivePlan]);
 
   const latestBookCards = useMemo(
@@ -13086,7 +13104,6 @@ export function MobileLibraryShell(args: {
       {didFirstHydrate && latestBookCards.length > 0 ? (
       <View
         style={styles.section}
-        accessibilityLabel="qa-home-latest-books-section"
         testID="qa-home-latest-books-section"
       >
         <View style={styles.sectionHeader}>
@@ -13104,7 +13121,7 @@ export function MobileLibraryShell(args: {
       ) : null}
 
       {didFirstHydrate && (latestStoryCards.length > 0 || homeStandaloneStoryCards.length > 0) ? (
-      <View style={styles.section} accessibilityLabel="qa-home-latest-stories-section" testID="qa-home-latest-stories-section">
+      <View style={styles.section} testID="qa-home-latest-stories-section">
         <View style={styles.sectionHeader}>
           <View>
             <Text style={styles.sectionEyebrow}>Library</Text>
@@ -13180,7 +13197,7 @@ export function MobileLibraryShell(args: {
             <TextInput
               value={exploreQuery}
               onChangeText={setExploreQuery}
-              accessibilityLabel="qa-explore-search-input"
+              accessibilityLabel="Search stories and books"
               testID="qa-explore-search-input"
               placeholder="Search"
               placeholderTextColor="#7f95b2"
@@ -13303,7 +13320,7 @@ export function MobileLibraryShell(args: {
       {__DEV__ && filteredExploreBooks.length > 0 ? (
         <View style={styles.qaDevOnlyRow}>
           <Pressable
-            accessibilityLabel="qa-explore-open-first-book"
+            accessibilityLabel="QA open first book"
             testID="qa-explore-open-first-book"
             onPress={() => openBook(filteredExploreBooks[0] ?? CATALOG_BOOKS[0])}
             style={styles.qaDevOnlyButton}
@@ -14216,7 +14233,7 @@ export function MobileLibraryShell(args: {
                       setActiveScreen("home");
                     },
                     title: "Done",
-                    subtitle: "Back to journey",
+                    subtitle: "Back to Journey",
                     icon: "home",
                   };
                 }
@@ -14386,13 +14403,13 @@ export function MobileLibraryShell(args: {
                               multiline
                               maxLength={2000}
                               style={styles.practiceRatingInput}
-                              accessibilityLabel="qa-practice-rating-comment"
+                              accessibilityLabel="Tell us about this practice"
                               testID="qa-practice-rating-comment"
                             />
                             <Pressable
                               onPress={handlePracticeRatingSend}
                               accessibilityRole="button"
-                              accessibilityLabel="qa-practice-rating-send"
+                              accessibilityLabel="Send feedback"
                               testID="qa-practice-rating-send"
                               style={styles.practiceRatingSend}
                             >
@@ -14409,7 +14426,7 @@ export function MobileLibraryShell(args: {
                               <Pressable
                                 onPress={() => handlePracticeVote(false)}
                                 accessibilityRole="button"
-                                accessibilityLabel="qa-practice-rating-down"
+                                accessibilityLabel="Didn't like this practice"
                                 testID="qa-practice-rating-down"
                                 style={[
                                   styles.practiceRatingButton,
@@ -14435,7 +14452,7 @@ export function MobileLibraryShell(args: {
                               <Pressable
                                 onPress={() => handlePracticeVote(true)}
                                 accessibilityRole="button"
-                                accessibilityLabel="qa-practice-rating-up"
+                                accessibilityLabel="Liked this practice"
                                 testID="qa-practice-rating-up"
                                 style={[
                                   styles.practiceRatingButton,
@@ -14808,7 +14825,7 @@ export function MobileLibraryShell(args: {
                         style={styles.practiceRelatedFavoriteButton}
                       >
                         <Text style={styles.practiceRelatedFavoriteButtonText}>
-                          {currentPracticeFavoriteSaved ? "Remove from favorites" : "Save to favorites"}
+                          {currentPracticeFavoriteSaved ? "Saved" : "Save word"}
                         </Text>
                       </Pressable>
                     ) : null}
@@ -15613,11 +15630,13 @@ export function MobileLibraryShell(args: {
           <View style={styles.heroTextBlock}>
             <Text style={styles.eyebrow}>Saved</Text>
             <Text style={styles.title}>Your saved stories</Text>
-            {/* Decía "Saved, synced and ready to resume" y lo de "synced" era
-                falso: el marcador solo escribe un fichero local de este
-                teléfono, no hay nada que sincronice con el servidor ni con la
-                web. El texto ahora dice lo que de verdad pasa. */}
-            <Text style={styles.subtitle}>Bookmarked on this phone, ready to resume.</Text>
+            {/* Dos vidas de este texto. Primero decía "Saved, synced" cuando
+                el marcador solo escribía un fichero local, y era mentira.
+                Luego se quedó en "on this phone" y volvió a serlo al revés:
+                desde el 2026-08-18 lo guardado sube a la cuenta por
+                /api/mobile/library y se fusiona al arrancar, y las tarjetas
+                de esta misma pantalla ya dicen "Saved to your account". */}
+            <Text style={styles.subtitle}>Saved to your account, ready on any phone.</Text>
           </View>
         </View>
       </View>
@@ -16748,7 +16767,7 @@ export function MobileLibraryShell(args: {
           next?.unlocked && nextLabel
             ? `You finished every story in ${track.label}. ${nextLabel} is open.`
             : `You finished every story in ${track.label}. Nice work.`,
-        cta: next?.unlocked ? "See what's next" : "Back to journey",
+        cta: next?.unlocked ? "See what's next" : "Back to Journey",
         onPress: () => {
           setActiveScreen("home");
           setJourneyDetailTopicId(null);
@@ -18117,7 +18136,7 @@ export function MobileLibraryShell(args: {
           setLanguageSwitchOpen(true);
         }}
         accessibilityRole="button"
-        accessibilityLabel="qa-journey-language-switch"
+        accessibilityLabel="Choose journey language"
         testID="qa-journey-language-switch"
         hitSlop={12}
         style={({ pressed }) => [
@@ -19142,7 +19161,7 @@ export function MobileLibraryShell(args: {
         <View style={styles.progressWeekCard}>
           <View style={styles.progressWeekHeader}>
             <Text style={styles.progressWeekEyebrow}>THIS WEEK</Text>
-            <Text style={styles.progressWeekResets}>Resets Sun</Text>
+            <Text style={styles.progressWeekResets}>Resets Mon</Text>
           </View>
           <View style={styles.progressWeekList}>
             {bars.map((bar) => {
@@ -19666,11 +19685,6 @@ export function MobileLibraryShell(args: {
           onPress: () => openBook(book),
         }))}
         vocabWords={selectedBookVocabList.map((item) => item.word)}
-        reviewQuotes={[
-          "Perfect length for daily practice.",
-          "Great vocabulary and natural dialogues.",
-          "Easy to binge 3-4 stories in one session.",
-        ]}
         aboutText={selectedBook.description?.trim() || selectedBook.subtitle?.trim() || "No description available yet."}
       />
     );
@@ -19919,7 +19933,7 @@ export function MobileLibraryShell(args: {
                 icon="story"
                 label="Story of the Week"
                 onPress={() => {
-                  const spotlight = getSpotlightSelection();
+                  const spotlight = getSpotlightSelection("week");
                   if (spotlight) openSelection(spotlight);
                 }}
                 accent="#f8c15c"
@@ -19930,7 +19944,7 @@ export function MobileLibraryShell(args: {
                 icon="story"
                 label="Story of the Day"
                 onPress={() => {
-                  const spotlight = getSpotlightSelection();
+                  const spotlight = getSpotlightSelection("day");
                   if (spotlight) openSelection(spotlight);
                 }}
                 accent="#f8c15c"
@@ -20254,7 +20268,7 @@ export function MobileLibraryShell(args: {
       {activeScreen === "favorites" && shellScrollY > 400 ? (
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel="Volver al inicio"
+          accessibilityLabel="Back to top"
           onPress={() => {
             shellScrollRef.current?.scrollTo({ y: 0, animated: true });
           }}
@@ -20723,7 +20737,7 @@ export function MobileLibraryShell(args: {
 
       <Modal visible={shouldShowOnboardingSurvey} transparent animationType="fade">
         <View style={[styles.modalBackdrop, { paddingBottom: androidBottomInset }]}>
-          <View style={styles.onboardingModal} accessibilityLabel="qa-onboarding-survey" testID="qa-onboarding-survey">
+          <View style={styles.onboardingModal} testID="qa-onboarding-survey">
             <View style={styles.onboardingProgressRow}>
               {onboardingSurveySteps.map((step, index) => (
                 <View
@@ -20786,7 +20800,7 @@ export function MobileLibraryShell(args: {
               <Pressable
                 onPress={() => setOnboardingSurveyStep((current) => Math.max(0, current - 1))}
                 disabled={onboardingSurveyStep === 0 || preferencesLoading}
-                accessibilityLabel="qa-onboarding-back"
+                accessibilityLabel="Back"
                 testID="qa-onboarding-back"
                 style={[styles.inlineButton, onboardingSurveyStep === 0 || preferencesLoading ? styles.disabledActionButton : null]}
               >
@@ -20801,7 +20815,7 @@ export function MobileLibraryShell(args: {
                   setOnboardingSurveyStep((current) => Math.min(onboardingSurveySteps.length - 1, current + 1));
                 }}
                 disabled={preferencesLoading}
-                accessibilityLabel="qa-onboarding-next"
+                accessibilityLabel="Next"
                 testID="qa-onboarding-next"
                 style={[styles.inlineButton, styles.primaryButton, preferencesLoading ? styles.disabledActionButton : null]}
               >
@@ -20851,7 +20865,6 @@ export function MobileLibraryShell(args: {
               <View
                 pointerEvents="box-none"
                 style={styles.tourOverlay}
-                accessibilityLabel="qa-onboarding-tour"
                 testID="qa-onboarding-tour"
               >
                 <Pressable onPress={() => {}} style={styles.tourScrim} />
@@ -20868,7 +20881,7 @@ export function MobileLibraryShell(args: {
                     <Pressable
                       onPress={() => void completeOnboardingTour()}
                       disabled={preferencesLoading}
-                      accessibilityLabel="qa-onboarding-tour-skip"
+                      accessibilityLabel="Skip the tour"
                       testID="qa-onboarding-tour-skip"
                       hitSlop={8}
                     >
@@ -20896,7 +20909,7 @@ export function MobileLibraryShell(args: {
                           setOnboardingTourStep((current) => (current === null ? 0 : Math.max(0, current - 1)))
                         }
                         disabled={preferencesLoading}
-                        accessibilityLabel="qa-onboarding-tour-back"
+                        accessibilityLabel="Back"
                         testID="qa-onboarding-tour-back"
                         hitSlop={8}
                       >
@@ -20912,7 +20925,7 @@ export function MobileLibraryShell(args: {
                         setOnboardingTourStep(step + 1);
                       }}
                       disabled={preferencesLoading}
-                      accessibilityLabel="qa-onboarding-tour-next"
+                      accessibilityLabel="Next"
                       testID="qa-onboarding-tour-next"
                       style={[styles.tourNextBtn, preferencesLoading ? styles.disabledActionButton : null]}
                     >

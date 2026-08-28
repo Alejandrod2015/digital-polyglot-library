@@ -37,7 +37,7 @@ export function ReaderSkeleton() {
   const animated = { opacity: pulse };
 
   return (
-    <View style={styles.container} accessibilityLabel="qa-reader-skeleton" testID="qa-reader-skeleton">
+    <View style={styles.container} testID="qa-reader-skeleton">
       {/* Top bar; back button + bookmark icons, just shapes */}
       <View style={styles.topBar}>
         <Animated.View style={[styles.topBarButton, animated]} />
