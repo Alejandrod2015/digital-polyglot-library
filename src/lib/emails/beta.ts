@@ -163,6 +163,18 @@ function assetBase(data?: BetaEmailData): string {
   return data?.assetBase ?? EMAIL_ASSET_BASE;
 }
 
+/**
+ * El nombre como VOCATIVO, listo para pegar al final de una frase: ", Colombe"
+ * o cadena vacia. `firstNameOr` sirve para un saludo ("Hi there"), pero
+ * incrustado en medio de una frase el respaldo suena a error: "we have been
+ * working on how words explain themselves while you read, there." Muchos
+ * BetaSignup no traen nombre.
+ */
+function vocative(data: BetaEmailData | undefined): string {
+  const n = data?.firstName?.trim();
+  return n ? `, ${n}` : "";
+}
+
 function firstNameOr(data: BetaEmailData | undefined, fallback: string): string {
   const n = data?.firstName?.trim();
   return n && n.length > 0 ? n : fallback;
@@ -312,7 +324,7 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
 
   const blocks = [
     block(
-      `${eyebrow("Beta access")}${head(`You're ${gold("in")}, ${esc(name)}.`, 40)}${lead(
+      `${eyebrow("Beta access")}${head(`You're ${gold("in")}${esc(vocative(data))}.`, 40)}${lead(
         `Thank you for signing up. As a beta tester you help shape the app that many more people will later use to learn and improve their languages.`,
       )}${lead(
         androidReady
@@ -368,7 +380,7 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `You are in, ${name}.`,
+      `You are in${vocative(data)}.`,
       "",
       ...(data?.personalNote?.trim() ? [data.personalNote.trim(), ""] : []),
       `Thank you for signing up. As a beta tester you help shape the app that many more people will later use to learn and improve their languages.`,
@@ -487,7 +499,7 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
 
   const blocks = [
     block(
-      `${eyebrow("Beta access")}${head(`You're ${gold("in")}, ${esc(name)}.`, 40)}${lead(
+      `${eyebrow("Beta access")}${head(`You're ${gold("in")}${esc(vocative(data))}.`, 40)}${lead(
         `Thank you for signing up. As a beta tester you help shape the app that many more people will later use to learn and improve their languages.`,
       )}${lead(`Google does not send an invite of its own, so everything you need is right here.`,
       )}`,
@@ -519,7 +531,7 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `You are in, ${name}.`,
+      `You are in${vocative(data)}.`,
       "",
       ...(data?.personalNote?.trim() ? [data.personalNote.trim(), ""] : []),
       `Thank you for signing up. As a beta tester you help shape the app that many more people will later use to learn and improve their languages.`,
@@ -557,7 +569,7 @@ export function buildBetaWaitlistEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("Application received")}${head(`You're on the<br/>${gold("shortlist")}.`, 40)}${lead(
-        `Thanks for applying, ${esc(name)}. We run the beta in small groups so every report gets read properly, which means invites go out in waves.`,
+        `Thanks for applying${esc(vocative(data))}. We run the beta in small groups so every report gets read properly, which means invites go out in waves.`,
       )}`,
       "40px 24px 0",
     ),
@@ -589,7 +601,7 @@ export function buildBetaWaitlistEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `Thanks for applying, ${name}.`,
+      `Thanks for applying${vocative(data)}.`,
       "",
       `We run the beta in small groups so every report gets read properly, which means invites go out in waves.`,
       "",
@@ -609,7 +621,7 @@ export function buildBetaDeclinedEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("About your application")}${head(`Not this ${gold("round")}.`, 40)}${lead(
-        `Thanks for applying, ${esc(name)}. The current beta is a small group, and your application is not a fit for this round.`,
+        `Thanks for applying${esc(vocative(data))}. The current beta is a small group, and your application is not a fit for this round.`,
       )}`,
       "40px 24px 0",
     ),
@@ -635,7 +647,7 @@ export function buildBetaDeclinedEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `Thanks for applying, ${name}.`,
+      `Thanks for applying${vocative(data)}.`,
       "",
       "The current beta is a small group, and your application is not a fit for this round.",
       "",
@@ -736,7 +748,7 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("One question")}${head(`What ${gold("annoyed")} you<br/>the most?`, 40)}${lead(
-        `A week in, ${esc(name)}. We do not want a review. We want the one thing that made you frown.`,
+        `A week in${esc(vocative(data))}. We do not want a review. We want the one thing that made you frown.`,
       )}`,
       "40px 24px 0",
     ),
@@ -766,7 +778,7 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `A week in, ${name}.`,
+      `A week in${vocative(data)}.`,
       "",
       "We do not want a review. We want the one thing that made you frown: a slow screen, a word that would not tap, audio that started late, a button you could not find.",
       "",
@@ -790,7 +802,7 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("Three weeks in")}${head(`Three questions,<br/>${gold("ninety")} seconds.`, 40)}${lead(
-        `Three weeks down, three to go. What you say now decides what gets built in the second half, ${esc(name)}, so this is the moment your answers are worth the most.`,
+        `Three weeks down, three to go. What you say now decides what gets built in the second half${esc(vocative(data))}, so this is the moment your answers are worth the most.`,
       )}`,
       "40px 24px 0",
     ),
@@ -819,7 +831,7 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `Three weeks down, three to go, ${name}. This is the halfway point of the beta.`,
+      `Three weeks down, three to go${vocative(data)}. This is the halfway point of the beta.`,
       "",
       "Three questions, ninety seconds:",
       "  1. How likely are you to recommend it, nought to ten?",
@@ -890,7 +902,7 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("New version")}${head(esc(headline), 38)}${lead(
-        `${updateSource} will offer you the update, ${esc(name)}.`,
+        `${updateSource} will offer you the update${esc(vocative(data))}.`,
       )}`,
       "40px 24px 0",
     ),
@@ -917,7 +929,7 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `There is a new version, ${name}.`,
+      `There is a new version${vocative(data)}.`,
       "",
       headline,
       "",
@@ -947,7 +959,7 @@ export function buildBetaFinalSurveyEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("The beta is closing")}${head(`Last ask, and the<br/>${gold("biggest")} one.`, 38)}${lead(
-        `The app goes to the App Store shortly. What you say here, ${esc(name)}, is the last thing that can still change it before everyone else arrives.`,
+        `The app goes to the App Store shortly. What you say here${esc(vocative(data))}, is the last thing that can still change it before everyone else arrives.`,
       )}`,
       "40px 24px 0",
     ),
@@ -981,7 +993,7 @@ export function buildBetaFinalSurveyEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `The beta is closing, ${name}, and the app goes to the App Store shortly.`,
+      `The beta is closing${vocative(data)}, and the app goes to the App Store shortly.`,
       "",
       "Four questions:",
       "  1. Nought to ten, how likely are you to recommend it?",
@@ -1013,7 +1025,7 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("It's live")}${head(`It shipped, and<br/>you ${gold("shaped")} it.`, 38)}${lead(
-        `It is out, ${esc(name)}. Digital Polyglot is on ${esc(store)}. You rated it highly a few days ago, and there is one thing that would genuinely help now.`,
+        `It is out${esc(vocative(data))}. Digital Polyglot is on ${esc(store)}. You rated it highly a few days ago, and there is one thing that would genuinely help now.`,
       )}`,
       "40px 24px 0",
     ),
@@ -1043,7 +1055,7 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `It is out, ${name}. Digital Polyglot is on ${store}.`,
+      `It is out${vocative(data)}. Digital Polyglot is on ${store}.`,
       "",
       "You rated it highly a few days ago, and there is one thing that would genuinely help: a review.",
       "",
@@ -1071,7 +1083,7 @@ export function buildBetaReviewRecoverEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("It's live")}${head(`It shipped, but not<br/>${gold("for")} you yet.`, 38)}${lead(
-        `Digital Polyglot is on the App Store. You did not rate it highly, ${esc(name)}, and that is the more useful answer of the two.`,
+        `Digital Polyglot is on the App Store. You did not rate it highly${esc(vocative(data))}, and that is the more useful answer of the two.`,
       )}`,
       "40px 24px 0",
     ),
@@ -1098,7 +1110,7 @@ export function buildBetaReviewRecoverEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `Digital Polyglot is on the App Store, ${name}.`,
+      `Digital Polyglot is on the App Store${vocative(data)}.`,
       "",
       "You did not rate it highly, and that is the more useful answer of the two.",
       "",
@@ -1226,8 +1238,8 @@ export function buildBetaImprovementEmail(data?: BetaEmailData): BuiltEmail {
     block(
       `${eyebrow(personal ? "Thank you for the feedback" : "What is new")}${head(esc(headline), 38)}${lead(
         personal
-          ? `Thank you for writing to us, ${esc(name)}. We read every message, and this is an improvement we wanted to get right, for you and for everyone learning with us.`
-          : `We have been working on how words explain themselves while you read, ${esc(name)}. Here is what is new.`,
+          ? `Thank you for writing to us${esc(vocative(data))}. We read every message, and this is an improvement we wanted to get right, for you and for everyone learning with us.`
+          : `We have been working on how words explain themselves while you read${esc(vocative(data))}. Here is what is new.`,
       )}`,
       "40px 24px 0",
     ),
@@ -1267,8 +1279,8 @@ export function buildBetaImprovementEmail(data?: BetaEmailData): BuiltEmail {
     }),
     text: [
       personal
-        ? `Thank you for writing to us, ${name}. We read every message, and this is an improvement we wanted to get right, for you and for everyone learning with us.`
-        : `We have been working on how words explain themselves while you read, ${name}. Here is what is new.`,
+        ? `Thank you for writing to us${vocative(data)}. We read every message, and this is an improvement we wanted to get right, for you and for everyone learning with us.`
+        : `We have been working on how words explain themselves while you read${vocative(data)}. Here is what is new.`,
       "",
       headline,
       "",
