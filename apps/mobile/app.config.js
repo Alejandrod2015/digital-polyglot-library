@@ -124,6 +124,16 @@ const config = {
     // de iPad. Se puede añadir iPad después; quitarlo una vez publicado, no.
     supportsTablet: false,
     bundleIdentifier: "com.digitalpolyglot.mobile",
+    // Universal Links: con esto, un enlace https a digitalpolyglot.com/go/app
+    // abre la app DIRECTAMENTE, sin el dialogo "¿Abrir en...?" del esquema
+    // propio y sin pantalla intermedia. El otro extremo es
+    // /.well-known/apple-app-site-association, que ya sirve
+    // JJSDKZ9AN7.com.digitalpolyglot.mobile. Ojo: iOS solo lee ese fichero al
+    // INSTALAR, asi que esto no surte efecto hasta un build nuevo.
+    associatedDomains: [
+      "applinks:digitalpolyglot.com",
+      "applinks:www.digitalpolyglot.com",
+    ],
     // OJO: este `buildNumber` es la fuente de verdad para el
     // CFBundleVersion del IPA. Tiene PRECEDENCIA sobre `app.json`
     // (Expo descarta app.json cuando existe app.config.js). EAS
@@ -152,6 +162,21 @@ const config = {
     // apunta aquí vía GOOGLE_PLAY_PACKAGE_NAME, y el assetlinks.json de
     // producción publica las huellas de este package.
     package: "com.digitalpolyglot.app",
+    // App Links, el equivalente de los Universal Links. El assetlinks.json de
+    // produccion ya publica las huellas de ESTE package (por eso el enlace
+    // abre la app y no el navegador), y aqui se declara el otro extremo.
+    // `autoVerify` es lo que evita el dialogo de "abrir con".
+    intentFilters: [
+      {
+        action: "VIEW",
+        autoVerify: true,
+        data: [
+          { scheme: "https", host: "digitalpolyglot.com", pathPrefix: "/go/app" },
+          { scheme: "https", host: "www.digitalpolyglot.com", pathPrefix: "/go/app" },
+        ],
+        category: ["BROWSABLE", "DEFAULT"],
+      },
+    ],
     // Fuente de verdad del versionCode del AAB, igual que `ios.buildNumber`
     // para el IPA: Expo descarta app.json, y EAS `autoIncrement` no muta JS.
     // La TWA gastó el 1, así que la app Expo arranca en 2. Bumpear a mano en

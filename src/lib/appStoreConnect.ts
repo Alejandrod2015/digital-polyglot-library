@@ -92,7 +92,7 @@ function base64url(input: Buffer | string): string {
 // ever handing Apple a token that is about to expire mid-request.
 let cachedJwt: { token: string; createdAtMs: number; keyId: string } | null = null;
 
-function buildAscJwt(config: AscConfig, nowMs: number): string {
+export function buildAscJwt(config: AscConfig, nowMs: number): string {
   if (
     cachedJwt &&
     cachedJwt.keyId === config.keyId &&

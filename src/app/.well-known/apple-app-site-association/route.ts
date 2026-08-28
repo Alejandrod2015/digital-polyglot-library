@@ -4,13 +4,14 @@
  * y sin pantalla intermedia. Si la app no esta instalada, el mismo enlace
  * carga la web, que es justo el comportamiento que se busca en `/go/app`.
  *
- * Faltan dos piezas ademas de este fichero, y las dos son del usuario:
- *   1. `APPLE_TEAM_ID` en el entorno (Membership de developer.apple.com). Sin
- *      ella esta ruta devuelve 404, que es mejor que servir un JSON invalido:
- *      iOS cachea el fichero y un contenido malo tarda dias en corregirse.
- *   2. Un BUILD NUEVO de la app declarando `associatedDomains:
- *      ["applinks:digitalpolyglot.com", "applinks:www.digitalpolyglot.com"]`
- *      en `apps/mobile/app.json`.
+ * `APPLE_TEAM_ID` es el `seedId` de los bundle ids en App Store Connect
+ * (JJSDKZ9AN7; se saca con `npx tsx scripts/_appleTeamId.ts`). Sin esa
+ * variable la ruta devuelve 404, que es mejor que servir un JSON invalido:
+ * iOS cachea el fichero y un contenido malo tarda dias en corregirse.
+ *
+ * `apps/mobile/app.config.js` ya declara los `associatedDomains`, pero iOS
+ * SOLO lee este fichero al instalar la app: hasta que no salga un build nuevo,
+ * el enlace sigue abriendo el navegador.
  *
  * El fichero se sirve SIN extension y como `application/json`, que es como
  * Apple lo pide.
