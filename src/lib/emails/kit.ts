@@ -54,8 +54,10 @@ export function cta(label: string, href: string, block = false): string {
   // on the parent does NOT center a block-level table).
   return `<table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;margin:0 auto;">
     <tr>
-      <td align="center" style="background:#fcd34d !important;background-color:#fcd34d !important;border-radius:16px;padding:18px 32px;text-align:center;">
-        <a href="${href}" style="color:#000 !important;font-family:${DPE.font};font-weight:900;font-size:18px;letter-spacing:-0.01em;text-decoration:none;display:block;white-space:nowrap;">${label}</a>
+      <td align="center" style="background:#fcd34d !important;background-color:#fcd34d !important;border-radius:16px;padding:17px 24px;text-align:center;">
+        <!-- Sin white-space nowrap: un CTA largo fijaba el ancho minimo del
+             correo entero y en un movil de 375px lo sacaba de la pantalla. -->
+        <a href="${href}" style="color:#000 !important;font-family:${DPE.font};font-weight:900;font-size:17px;letter-spacing:-0.01em;text-decoration:none;display:block;">${label}</a>
       </td>
     </tr>
   </table>`;
@@ -455,7 +457,10 @@ body,-webkit-text-size-adjust{-webkit-text-size-adjust:100%;-ms-text-size-adjust
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="${DPE.navy}" style="width:100%;background:${DPE.navy};">
   <tr><td align="center" style="padding:0;">
     <!--[if mso]><table role="presentation" width="560" align="center" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
-    <table role="presentation" align="center" width="560" cellpadding="0" cellspacing="0" bgcolor="${DPE.navy}" class="wrap" style="width:560px;max-width:560px;margin:0 auto;background:${navyBg};background-color:${DPE.navy};font-family:${DPE.font};">
+    <!-- Ancho fluido con tope, NO 560 fijos: iCloud Mail en el movil no aplica
+         las media queries de la cabecera, y con un ancho fijo el correo se
+         salia por la derecha (visto el 2026-08-28 en un iPhone). -->
+    <table role="presentation" align="center" width="100%" cellpadding="0" cellspacing="0" bgcolor="${DPE.navy}" class="wrap" style="width:100%;max-width:560px;margin:0 auto;background:${navyBg};background-color:${DPE.navy};font-family:${DPE.font};">
       ${body}
       ${footer(footerAlign, footerNote, baseUrl, assetBase, unsubscribeToken)}
     </table>

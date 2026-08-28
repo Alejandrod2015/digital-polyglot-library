@@ -5,11 +5,10 @@
  *
  *   npx tsx scripts/_sendImprovementPreview.ts delcarpio321@gmail.com
  *
- * Las imagenes van ADJUNTAS y referenciadas con `cid:`, no por URL: en
- * `public/email/glosses` estan, pero hasta que eso se despliegue
- * reader.digitalpolyglot.com devuelve 404 y el correo llegaria con el hueco.
+ * Las imagenes van por URL, como en el envio real. Se probo con `cid:` y
+ * adjuntos mientras no estaban desplegadas, y iCloud Mail entregaba el correo
+ * con el CUERPO EN BLANCO: no monta el HTML que referencia partes inline.
  */
-import { readFileSync } from "node:fs";
 import { config } from "dotenv";
 import { BETA_EMAIL_BUILDERS, type BetaEmailData } from "../src/lib/emails/beta";
 
@@ -20,8 +19,6 @@ const to = process.argv[2];
 if (!to) throw new Error("Falta la direccion: npx tsx scripts/_sendImprovementPreview.ts <email>");
 
 const ASSETS = "https://reader.digitalpolyglot.com";
-const GIF = "public/email/glosses/baja-tap.gif";
-const PNG = "public/email/glosses/baja-after.png";
 
 const HEADLINE = "A better way to learn as you read";
 const TRY_IT =
@@ -96,22 +93,10 @@ const CASES: Array<{ label: string; data: BetaEmailData }> = [
   },
 ];
 
-/** Cambia las URLs de los assets por referencias `cid:` a los adjuntos. */
-function withInlineAssets(html: string): string {
-  return html
-    .replaceAll(`${ASSETS}/email/glosses/baja-tap.gif`, "cid:baja-tap")
-    .replaceAll(`${ASSETS}/email/glosses/baja-after.png`, "cid:baja-after");
-}
-
 async function main() {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.EMAIL_FROM;
   if (!apiKey || !from) throw new Error("Faltan RESEND_API_KEY o EMAIL_FROM.");
-
-  const attachments = [
-    { filename: "baja-tap.gif", content: readFileSync(GIF).toString("base64"), content_id: "baja-tap" },
-    { filename: "baja-after.png", content: readFileSync(PNG).toString("base64"), content_id: "baja-after" },
-  ];
 
   for (const c of CASES) {
     const { subject, html, text } = BETA_EMAIL_BUILDERS.improvement(c.data);
@@ -122,9 +107,8 @@ async function main() {
         from,
         to,
         subject: `[preview ${c.label}] ${subject}`,
-        html: withInlineAssets(html),
+        html,
         text,
-        attachments,
       }),
     });
     const body = await res.json().catch(() => ({}));

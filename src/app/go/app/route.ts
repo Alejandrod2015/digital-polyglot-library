@@ -9,8 +9,15 @@
  *
  * En movil NO se puede hacer un 302 al esquema propio (`digitalpolyglot://`):
  * Safari y Chrome lo rechazan como respuesta de navegacion. Se devuelve una
- * pagina minima que intenta abrirlo y, si a los 1,2 s el navegador sigue
- * visible (es decir, la app no se abrio), manda a la tienda.
+ * pagina minima que lo intenta y deja a la vista los dos enlaces (instalar y
+ * leer en la web), SIN redirigir sola: el dialogo de confirmacion de iOS deja
+ * la pagina visible mientras el usuario decide, asi que un temporizador acaba
+ * mandando a la App Store a quien ya tiene la app.
+ *
+ * Lo definitivo es un Universal Link (iOS) y un App Link (Android): abren la
+ * app sin dialogo y sin pantalla intermedia, pero exigen publicar
+ * .well-known/apple-app-site-association y assetlinks.json Y un build nuevo de
+ * cada app que declare el dominio.
  *
  * `?to=` viaja hasta la app para poder enlazar un journey concreto mas
  * adelante; hoy nadie lo usa y el valor por defecto es la raiz.
@@ -57,23 +64,33 @@ function bridge(deepLink: string, storeUrl: string, webUrl: string): string {
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Opening Digital Polyglot</title>
 <style>
+  :root { color-scheme: dark; }
   body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
-    background:#051834; color:#c2d2e8; font:600 16px/1.5 -apple-system,system-ui,sans-serif; text-align:center; padding:24px; }
-  a { color:#7dd3fc; }
+    background:#051834; color:#c2d2e8; font:600 16px/1.6 -apple-system,system-ui,sans-serif; text-align:center; padding:28px; }
+  h1 { font-size:19px; color:#eef4fc; margin:0 0 6px; }
+  p { margin:0 0 22px; font-size:14.5px; color:#8aa0be; }
+  a.btn { display:block; max-width:320px; margin:0 auto 12px; padding:15px 22px; border-radius:14px;
+    background:#fcd34d; color:#000; font-weight:800; text-decoration:none; }
+  a.alt { color:#7dd3fc; font-size:14px; }
 </style>
 </head><body>
 <div>
-  <p>Opening the app…</p>
-  <p style="font-size:14px;">Nothing happened? <a href="${esc(storeUrl)}">Install it</a> or <a href="${esc(webUrl)}">read on the web</a>.</p>
+  <h1>Opening the app…</h1>
+  <p>If nothing happens, the app may not be installed on this device.</p>
+  <a class="btn" href="${esc(deepLink)}">Open the app</a>
+  <p style="margin-top:16px;">
+    <a class="alt" href="${esc(storeUrl)}">Install it</a>
+    &nbsp;&middot;&nbsp;
+    <a class="alt" href="${esc(webUrl)}">Read on the web</a>
+  </p>
 </div>
 <script>
-  (function () {
-    var hidden = false;
-    document.addEventListener("visibilitychange", function () { if (document.hidden) hidden = true; });
-    window.addEventListener("pagehide", function () { hidden = true; });
-    window.location.href = ${JSON.stringify(deepLink)};
-    setTimeout(function () { if (!hidden) window.location.replace(${JSON.stringify(storeUrl)}); }, 1200);
-  })();
+  // Se INTENTA abrir la app, pero NO se redirige sola a la tienda. El dialogo
+  // de confirmacion de iOS ("¿Abrir en...?") deja la pagina visible mientras
+  // el usuario decide, asi que cualquier temporizador se dispara antes de
+  // tiempo y lo saca a la App Store teniendo la app instalada (visto en un
+  // iPhone el 2026-08-28). Con los dos enlaces a la vista, decide la persona.
+  window.location.href = ${JSON.stringify(deepLink)};
 </script>
 </body></html>`;
 }

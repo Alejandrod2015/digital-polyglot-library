@@ -229,7 +229,7 @@ function signature(): string {
  * in anyone's voice and must not grow a personal signature by side effect.
  */
 function betaShell(opts: Parameters<typeof shell>[0]): string {
-  return shell({ ...opts, blocks: [...opts.blocks, block(signature(), "30px 44px 0")] });
+  return shell({ ...opts, blocks: [...opts.blocks, block(signature(), "30px 24px 0")] });
 }
 
 /* ══════════════════════════════════════════════ 1 · ACCEPTED */
@@ -321,22 +321,22 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
             ? `One step left on our side before you can install.`
             : `Apple is sending your TestFlight invite to your Apple ID right now.`,
       )}`,
-      "40px 44px 0",
+      "40px 24px 0",
     ),
-    ...(personal ? [block(personal, "26px 44px 0", false)] : []),
-    block(steps, "28px 44px 0", false),
+    ...(personal ? [block(personal, "26px 24px 0", false)] : []),
+    block(steps, "28px 24px 0", false),
     ...(androidReady
       ? [
           ...(groupUrl
-            ? [block(ctaSecondary("Join the testers group", groupUrl), "24px 44px 0")]
+            ? [block(ctaSecondary("Join the testers group", groupUrl), "24px 24px 0")]
             : []),
-          block(cta("Become a tester", optInUrl!), groupUrl ? "12px 44px 0" : "24px 44px 0"),
+          block(cta("Become a tester", optInUrl!), groupUrl ? "12px 24px 0" : "24px 24px 0"),
         ]
       : android
         ? []
-        : [block(cta("Open TestFlight", tfUrl), "24px 44px 0")]),
-    block(perks, "24px 44px 0", false),
-    block(ask, "16px 44px 0", false),
+        : [block(cta("Open TestFlight", tfUrl), "24px 24px 0")]),
+    block(perks, "24px 24px 0", false),
+    block(ask, "16px 24px 0", false),
     block(
       note(
         androidReady
@@ -345,9 +345,9 @@ export function buildBetaAcceptedEmail(data?: BetaEmailData): BuiltEmail {
             ? "Reply to this email and we will send your install link."
             : "If Apple's invite has not shown up in fifteen minutes, check the spam folder of your Apple ID address, then reply here and we will send it again.",
       ),
-      "8px 44px 0",
+      "8px 24px 0",
     ),
-    block(lead("Thanks for being one of the first."), "18px 44px 0"),
+    block(lead("Thanks for being one of the first."), "18px 24px 0"),
   ];
 
   return {
@@ -491,22 +491,22 @@ export function buildBetaAcceptedAndroidEmail(data?: BetaEmailData): BuiltEmail 
         `Thank you for signing up. As a beta tester you help shape the app that many more people will later use to learn and improve their languages.`,
       )}${lead(`Google does not send an invite of its own, so everything you need is right here.`,
       )}`,
-      "40px 44px 0",
+      "40px 24px 0",
     ),
-    ...(personal ? [block(personal, "26px 44px 0", false)] : []),
-    block(steps, "28px 44px 0", false),
-    ...(joinUrl ? [block(cta("Join the testers group", joinUrl), "24px 44px 0")] : []),
+    ...(personal ? [block(personal, "26px 24px 0", false)] : []),
+    block(steps, "28px 24px 0", false),
+    ...(joinUrl ? [block(cta("Join the testers group", joinUrl), "24px 24px 0")] : []),
     ...(optInUrl
-      ? [block(joinUrl ? ctaSecondary("Open the tester link", optInUrl) : cta("Open the tester link", optInUrl), "12px 44px 0")]
+      ? [block(joinUrl ? ctaSecondary("Open the tester link", optInUrl) : cta("Open the tester link", optInUrl), "12px 24px 0")]
       : []),
-    block(accountWarning, "24px 44px 0", false),
-    block(perks, "16px 44px 0", false),
-    block(ask, "16px 44px 0", false),
+    block(accountWarning, "24px 24px 0", false),
+    block(perks, "16px 24px 0", false),
+    block(ask, "16px 24px 0", false),
     block(
       note("Stuck at any step, reply and tell us what the screen says. Android's way of doing this is genuinely fiddly, and it is not your fault."),
-      "8px 44px 0",
+      "8px 24px 0",
     ),
-    block(lead("Thanks for being one of the first."), "18px 44px 0"),
+    block(lead("Thanks for being one of the first."), "18px 24px 0"),
   ];
 
   return {
@@ -559,7 +559,7 @@ export function buildBetaWaitlistEmail(data?: BetaEmailData): BuiltEmail {
       `${eyebrow("Application received")}${head(`You're on the<br/>${gold("shortlist")}.`, 40)}${lead(
         `Thanks for applying, ${esc(name)}. We run the beta in small groups so every report gets read properly, which means invites go out in waves.`,
       )}`,
-      "40px 44px 0",
+      "40px 24px 0",
     ),
     block(
       card(
@@ -570,12 +570,12 @@ export function buildBetaWaitlistEmail(data?: BetaEmailData): BuiltEmail {
           "You will hear from us either way. No silent rejections.",
         ])}`,
       ),
-      "28px 44px 0",
+      "28px 24px 0",
       false,
     ),
     block(
       note("Nothing to do in the meantime. If your situation changes, or you have a question, just reply to this email."),
-      "20px 44px 0",
+      "20px 24px 0",
     ),
   ];
 
@@ -611,7 +611,7 @@ export function buildBetaDeclinedEmail(data?: BetaEmailData): BuiltEmail {
       `${eyebrow("About your application")}${head(`Not this ${gold("round")}.`, 40)}${lead(
         `Thanks for applying, ${esc(name)}. The current beta is a small group, and your application is not a fit for this round.`,
       )}`,
-      "40px 44px 0",
+      "40px 24px 0",
     ),
     block(
       card(
@@ -619,10 +619,10 @@ export function buildBetaDeclinedEmail(data?: BetaEmailData): BuiltEmail {
           That is about the shape of this round, not about you. You can read on the web today at no cost, and we will write when the app opens up properly.
         </p>`,
       ),
-      "28px 44px 0",
+      "28px 24px 0",
       false,
     ),
-    block(ctaSecondary("Read on the web", `${b}/explore`), "24px 44px 0"),
+    block(ctaSecondary("Read on the web", `${b}/explore`), "24px 24px 0"),
   ];
 
   return {
@@ -680,17 +680,17 @@ export function buildBetaInstallNudgeEmail(data?: BetaEmailData): BuiltEmail {
           ? `Hi ${esc(name)}. Your tester link went out a few days ago and it looks like the app never opened. Android's testing flow is genuinely fiddly, so it is very likely the flow and not you.`
           : `Hi ${esc(name)}. Your TestFlight invite went out a few days ago and it looks like the app never opened. That is usually Apple's email, not you.`,
       )}`,
-      "40px 44px 0",
+      "40px 24px 0",
     ),
-    block(card(`${cardTitle("The two things that go wrong")}${bullets(reasons)}`), "28px 44px 0", false),
-    ...(ctaUrl ? [block(cta(ctaLabel, ctaUrl), "24px 44px 0")] : []),
+    block(card(`${cardTitle("The two things that go wrong")}${bullets(reasons)}`), "28px 24px 0", false),
+    ...(ctaUrl ? [block(cta(ctaLabel, ctaUrl), "24px 24px 0")] : []),
     block(
       note(
         android
           ? "Still stuck? Reply and tell us exactly what the page says, and which Google account you are signed in with."
           : "Still stuck? Reply with the Apple ID address you want it sent to and we will send a fresh invite.",
       ),
-      "16px 44px 0",
+      "16px 24px 0",
     ),
   ];
 
@@ -738,7 +738,7 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
       `${eyebrow("One question")}${head(`What ${gold("annoyed")} you<br/>the most?`, 40)}${lead(
         `A week in, ${esc(name)}. We do not want a review. We want the one thing that made you frown.`,
       )}`,
-      "40px 44px 0",
+      "40px 24px 0",
     ),
     block(
       card(
@@ -749,11 +749,11 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
           One sentence is a complete answer.
         </p>`,
       ),
-      "28px 44px 0",
+      "28px 24px 0",
       false,
     ),
-    block(cta("Tell us the one thing", url), "24px 44px 0"),
-    block(note("Or just hit reply. Both land in the same place."), "14px 44px 0"),
+    block(cta("Tell us the one thing", url), "24px 24px 0"),
+    block(note("Or just hit reply. Both land in the same place."), "14px 24px 0"),
   ];
 
   return {
@@ -792,7 +792,7 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
       `${eyebrow("Three weeks in")}${head(`Three questions,<br/>${gold("ninety")} seconds.`, 40)}${lead(
         `Three weeks down, three to go. What you say now decides what gets built in the second half, ${esc(name)}, so this is the moment your answers are worth the most.`,
       )}`,
-      "40px 44px 0",
+      "40px 24px 0",
     ),
     block(
       card(
@@ -803,10 +803,10 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
           "The one thing you would be sad to lose.",
         ])}`,
       ),
-      "28px 44px 0",
+      "28px 24px 0",
       false,
     ),
-    block(cta("Answer the three", url), "24px 44px 0"),
+    block(cta("Answer the three", url), "24px 24px 0"),
   ];
 
   return {
@@ -892,15 +892,15 @@ export function buildBetaReleaseNoteEmail(data?: BetaEmailData): BuiltEmail {
       `${eyebrow("New version")}${head(esc(headline), 38)}${lead(
         `${updateSource} will offer you the update, ${esc(name)}.`,
       )}`,
-      "40px 44px 0",
+      "40px 24px 0",
     ),
-    ...(yours ? [block(yours, "28px 44px 0", false)] : []),
-    block(changes, yours ? "16px 44px 0" : "28px 44px 0", false),
-    ...(ask ? [block(ask, "16px 44px 0", false)] : []),
-    ...(issues ? [block(issues, "16px 44px 0", false)] : []),
+    ...(yours ? [block(yours, "28px 24px 0", false)] : []),
+    block(changes, yours ? "16px 24px 0" : "28px 24px 0", false),
+    ...(ask ? [block(ask, "16px 24px 0", false)] : []),
+    ...(issues ? [block(issues, "16px 24px 0", false)] : []),
     block(
       `${badge(`Build ${build}`, "sky")}${note(`${updateInstruction} If it does not show yet, give it ten minutes.`)}`,
-      "24px 44px 0",
+      "24px 24px 0",
     ),
   ];
 
@@ -949,7 +949,7 @@ export function buildBetaFinalSurveyEmail(data?: BetaEmailData): BuiltEmail {
       `${eyebrow("The beta is closing")}${head(`Last ask, and the<br/>${gold("biggest")} one.`, 38)}${lead(
         `The app goes to the App Store shortly. What you say here, ${esc(name)}, is the last thing that can still change it before everyone else arrives.`,
       )}`,
-      "40px 44px 0",
+      "40px 24px 0",
     ),
     block(
       card(
@@ -961,13 +961,13 @@ export function buildBetaFinalSurveyEmail(data?: BetaEmailData): BuiltEmail {
           "What is still missing?",
         ])}`,
       ),
-      "28px 44px 0",
+      "28px 24px 0",
       false,
     ),
-    block(cta("Give my final answers", url), "24px 44px 0"),
+    block(cta("Give my final answers", url), "24px 24px 0"),
     block(
       note("Thank you for the last few weeks. Being early and being honest are two different things, and you did both."),
-      "16px 44px 0",
+      "16px 24px 0",
     ),
   ];
 
@@ -1015,7 +1015,7 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
       `${eyebrow("It's live")}${head(`It shipped, and<br/>you ${gold("shaped")} it.`, 38)}${lead(
         `It is out, ${esc(name)}. Digital Polyglot is on ${esc(store)}. You rated it highly a few days ago, and there is one thing that would genuinely help now.`,
       )}`,
-      "40px 44px 0",
+      "40px 24px 0",
     ),
     block(
       card(
@@ -1026,11 +1026,11 @@ export function buildBetaReviewAskEmail(data?: BetaEmailData): BuiltEmail {
           Two sentences about what it actually did for you beats five stars and no words.
         </p>`,
       ),
-      "28px 44px 0",
+      "28px 24px 0",
       false,
     ),
-    block(cta("Leave a review", reviewUrl), "24px 44px 0"),
-    block(note("And if you would rather not, that is genuinely fine. You already gave us the part that mattered most."), "16px 44px 0"),
+    block(cta("Leave a review", reviewUrl), "24px 24px 0"),
+    block(note("And if you would rather not, that is genuinely fine. You already gave us the part that mattered most."), "16px 24px 0"),
   ];
 
   return {
@@ -1073,7 +1073,7 @@ export function buildBetaReviewRecoverEmail(data?: BetaEmailData): BuiltEmail {
       `${eyebrow("It's live")}${head(`It shipped, but not<br/>${gold("for")} you yet.`, 38)}${lead(
         `Digital Polyglot is on the App Store. You did not rate it highly, ${esc(name)}, and that is the more useful answer of the two.`,
       )}`,
-      "40px 44px 0",
+      "40px 24px 0",
     ),
     block(
       card(
@@ -1081,11 +1081,11 @@ export function buildBetaReviewRecoverEmail(data?: BetaEmailData): BuiltEmail {
           We are not going to ask you for a review. We want the sentence that starts with ${hi("it would have worked for me if")}. That is the roadmap.
         </p>`,
       ),
-      "28px 44px 0",
+      "28px 24px 0",
       false,
     ),
-    block(ctaSecondary("Tell us what was missing", url), "24px 44px 0"),
-    block(note("Your access stays on either way. Thank you for sticking with a half-built app for as long as you did."), "16px 44px 0"),
+    block(ctaSecondary("Tell us what was missing", url), "24px 24px 0"),
+    block(note("Your access stays on either way. Thank you for sticking with a half-built app for as long as you did."), "16px 24px 0"),
   ];
 
   return {
@@ -1202,7 +1202,10 @@ export function buildBetaImprovementEmail(data?: BetaEmailData): BuiltEmail {
             ? `<div style="margin-top:18px;text-align:center;">${phoneShot(
                 shotUrl(example.image)!,
                 `Tapping ${example.word} in a story`,
-                272,
+                // 248 y no 272: con el marco (16px) y los margenes de la
+                // tarjeta, un telefono mas ancho sacaba el correo de una
+                // pantalla de 375px.
+                248,
                 shotUrl(example.fullSizeImage) ?? shotUrl(example.image)!,
               )}</div>`
             : ""
@@ -1234,24 +1237,24 @@ export function buildBetaImprovementEmail(data?: BetaEmailData): BuiltEmail {
           ? `Thank you for writing to us, ${esc(name)}. We read every message, and this is an improvement we wanted to get right, for you and for everyone learning with us.`
           : `We have been working on how words explain themselves while you read, ${esc(name)}. Here is what is new.`,
       )}`,
-      "40px 44px 0",
+      "40px 24px 0",
     ),
-    ...(said ? [block(said, "28px 44px 0", false)] : []),
+    ...(said ? [block(said, "28px 24px 0", false)] : []),
     // Primero lo que hace la app ahora, y solo despues una palabra que lo
     // ensena. Al reves, el correo parece ir de esa palabra.
-    ...(yours ? [block(yours, said ? "16px 44px 0" : "28px 44px 0", false)] : []),
-    ...(everyone && !yours ? [block(everyone, said ? "16px 44px 0" : "28px 44px 0", false)] : []),
-    ...(shown ? [block(shown, "16px 44px 0", false)] : []),
-    ...(everyone && yours ? [block(everyone, "16px 44px 0", false)] : []),
-    ...(ask ? [block(ask, "16px 44px 0", false)] : []),
-    block(cta(ctaLabel, ctaUrl), "26px 44px 0"),
+    ...(yours ? [block(yours, said ? "16px 24px 0" : "28px 24px 0", false)] : []),
+    ...(everyone && !yours ? [block(everyone, said ? "16px 24px 0" : "28px 24px 0", false)] : []),
+    ...(shown ? [block(shown, "16px 24px 0", false)] : []),
+    ...(everyone && yours ? [block(everyone, "16px 24px 0", false)] : []),
+    ...(ask ? [block(ask, "16px 24px 0", false)] : []),
+    block(cta(ctaLabel, ctaUrl), "26px 24px 0"),
     block(
       note(
         personal
           ? "Thank you again for the feedback. If you have more, we are right here: just reply."
           : "If you have feedback of your own, we are right here: just reply.",
       ),
-      "18px 44px 0",
+      "18px 24px 0",
     ),
   ];
 
