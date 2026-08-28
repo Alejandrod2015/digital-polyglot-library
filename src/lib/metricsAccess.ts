@@ -36,9 +36,18 @@ export async function getInternalUserIds(): Promise<string[]> {
     return internalIdsCache.ids;
   }
   const members = await getStudioMembers();
-  const emails = members
-    .map((m) => m.email.trim().toLowerCase())
+  // `METRICS_INTERNAL_EMAILS` cuenta tambien aqui, no solo en el resumen
+  // semanal: son dos listas que hasta hoy no coincidian, asi que un correo
+  // apuntado ahi seguia contando como usuario real en el panel. Sirve para
+  // cuentas del equipo que NO deben tener acceso al Studio, que es lo que
+  // implicaria darles fila en studio_members.
+  const extraEmails = (process.env.METRICS_INTERNAL_EMAILS ?? "")
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
     .filter(Boolean);
+  const emails = Array.from(
+    new Set([...members.map((m) => m.email.trim().toLowerCase()), ...extraEmails]),
+  ).filter(Boolean);
 
   const ids: string[] = [];
   for (const email of emails) {
