@@ -83,7 +83,6 @@ const improvementGeneric: BetaEmailData = {
     },
     changes: GLOSS_CHANGES,
     askThem: TRY_IT,
-    ctaUrl: "https://digitalpolyglot.com/explore",
   },
 };
 
@@ -108,7 +107,6 @@ const improvementColombe: BetaEmailData = {
       fullSizeImage: "/email/glosses/baja-after.png",
     },
     askThem: TRY_IT,
-    ctaUrl: "https://digitalpolyglot.com/explore",
   },
 };
 
@@ -135,7 +133,6 @@ const improvementTy: BetaEmailData = {
     },
     changes: ["Highlighted words got the same treatment, on top of the definition they already had."],
     askThem: TRY_IT,
-    ctaUrl: "https://digitalpolyglot.com/explore",
   },
 };
 

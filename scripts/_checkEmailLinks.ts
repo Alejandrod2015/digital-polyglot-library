@@ -112,6 +112,15 @@ async function status(url: string): Promise<number> {
  * Lo que NO tiene excusa es una ruta de la web que no existe.
  */
 function excuse(url: string): string | null {
+  // Una ruta que YA existe en el repo pero todavia no se ha desplegado: es
+  // pendiente, no rota. Lo que se busca aqui son URLs que no existen en
+  // ninguna parte, como el viejo /stories.
+  if (url.startsWith(BASE)) {
+    const path = new URL(url).pathname.replace(/^\/+|\/+$/g, "");
+    if (path && ["route.ts", "route.tsx", "page.tsx"].some((f) => existsSync(`src/app/${path}/${f}`))) {
+      return "sin desplegar (la ruta existe en src/app/)";
+    }
+  }
   if (url.startsWith(ASSETS)) {
     const path = url.slice(ASSETS.length);
     if (existsSync(`public${path}`)) return "sin desplegar (existe en public/)";

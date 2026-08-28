@@ -1140,7 +1140,12 @@ export function buildBetaImprovementEmail(data?: BetaEmailData): BuiltEmail {
   // implementacion obliga a leerlo dos veces para saber si te importa.
   const headline = h?.headline?.trim() || "Something new to try";
 
-  const ctaUrl = h?.ctaUrl ?? `${b}/explore`;
+  // UN solo boton, y el destino lo decide `/go/app` mirando el dispositivo
+  // DESDE EL QUE SE ABRE el correo: iPhone y Android van a la app (con la
+  // tienda de respaldo si no la tienen) y el escritorio al lector web. En el
+  // correo no se puede ramificar por dispositivo, solo por lo que el tester
+  // declaro al apuntarse, que es justo lo que falla cuando lee en otro.
+  const ctaUrl = h?.ctaUrl ?? `${b}/go/app`;
   const ctaLabel = h?.ctaLabel ?? "Open a story and tap a word";
 
   // Their sentence, set as a quote rather than paraphrased. A paraphrase is
