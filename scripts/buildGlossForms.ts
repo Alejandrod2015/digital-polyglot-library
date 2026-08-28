@@ -90,8 +90,14 @@ const IRREGULARES: Record<string, string[]> = {
   poner: ["pongo", "pones", "pone", "ponemos", "ponéis", "ponen"],
   valer: ["valgo", "vales", "vale", "valemos", "valéis", "valen"],
   oír: ["oigo", "oyes", "oye", "oímos", "oís", "oyen"],
-  oir: ["oigo", "oyes", "oye", "oímos", "oís", "oyen"],
 };
+
+/** Infinitivos que ninguna glosa nombra y que el texto NO deja deducir. La
+ *  vuelta atras desde la forma solo sabe sacar -ar, asi que `gruñó` daba
+ *  "gruñar": la i de -ir se come detras de ñ y de ll, y ahi las dos
+ *  conjugaciones acaban igual. Sembrando el infinitivo de verdad, el indice lo
+ *  encuentra antes que al inventado. */
+const CONOCIDOS = ["gruñir", "bullir", "teñir", "reñir", "ceñir", "tañer", "engullir", "zambullir"];
 
 /** La primera persona de -cer / -cir NO es regular y el fallo no se ve en la
  *  tabla salvo que se lea la fila de yo: `conoco`, `creco`, `agradeco` no
@@ -170,7 +176,10 @@ const PRET_Y = /(?:[aeiou]er|[aeiou]ir|uir)$/;
 function preterito(inf: string): string[] | null {
   if (PRET_ENTERO[inf]) return [...PRET_ENTERO[inf]];
   const raiz = inf.slice(0, -2);
-  const fin = inf.slice(-2);
+  // `oír` acaba en "ír", no en "ir", y sin deshacer la tilde no entraba por
+  // ninguna rama: devolvia null y ganaba un alias sin tilde que ademas
+  // ensenaba el infinitivo mal escrito.
+  const fin = inf.slice(-2).replace(/^í/, "i").replace(/^é/, "e").replace(/^á/, "a");
   if (PRET_FUERTE[inf]) {
     const r = PRET_FUERTE[inf];
     const tercera = inf === "hacer" ? "hizo" : `${r}o`;
@@ -188,11 +197,20 @@ function preterito(inf: string): string[] | null {
   if (fin !== "er" && fin !== "ir") return null;
   const cambio = PRET_CAMBIO[inf];
   const r3 = cambio ?? raiz;
-  if (PRET_Y.test(inf) && !cambio) {
-    return [`${raiz}í`, `${raiz}iste`, `${raiz}yó`, `${raiz}imos`, `${raiz}isteis`, `${raiz}yeron`];
+  if (PRET_Y.test(`${raiz}${fin}`) && !cambio) {
+    // Detras de vocal la i queda tonica y se escribe con tilde: caiste y
+    // caimos no son palabras, caíste y caímos si. En los de -uir no, porque
+    // "ui" no la lleva (construiste, construimos).
+    const t = /[aeo]$/.test(raiz) ? "í" : "i";
+    return [`${raiz}í`, `${raiz}${t}ste`, `${raiz}yó`, `${raiz}${t}mos`, `${raiz}${t}steis`, `${raiz}yeron`];
   }
-  const tercera = cambio === "ri" || cambio === "sonri" ? `${r3}o` : `${r3}ió`;
-  const ellos = cambio === "ri" || cambio === "sonri" ? `${r3}eron` : `${r3}ieron`;
+  // La i de la terminacion se come detras de ñ, ll y j: gruñó, bulló, dijo.
+  const comeI = /(?:ñ|ll|j)$/.test(r3);
+  // `rio` va sin tilde (monosilabo); `gruñó` la lleva, que es donde cae el
+  // acento. Se come la i, no la tilde.
+  const monosilabo = cambio === "ri" || cambio === "sonri";
+  const tercera = monosilabo ? `${r3}o` : comeI ? `${r3}ó` : `${r3}ió`;
+  const ellos = monosilabo || comeI ? `${r3}eron` : `${r3}ieron`;
   return [`${raiz}í`, `${raiz}iste`, tercera, `${raiz}imos`, `${raiz}isteis`, ellos];
 }
 
@@ -202,7 +220,7 @@ function imperfecto(inf: string): string[] | null {
   if (inf === "ir") return ["iba", "ibas", "iba", "íbamos", "ibais", "iban"];
   if (inf === "ver") return ["veía", "veías", "veía", "veíamos", "veíais", "veían"];
   const raiz = inf.slice(0, -2);
-  const fin = inf.slice(-2);
+  const fin = inf.slice(-2).replace(/^í/, "i").replace(/^é/, "e").replace(/^á/, "a");
   if (fin === "ar") return [`${raiz}aba`, `${raiz}abas`, `${raiz}aba`, `${raiz}ábamos`, `${raiz}abais`, `${raiz}aban`];
   if (fin === "er" || fin === "ir") return [`${raiz}ía`, `${raiz}ías`, `${raiz}ía`, `${raiz}íamos`, `${raiz}íais`, `${raiz}ían`];
   return null;
@@ -643,7 +661,7 @@ async function main() {
     idioma === "italian" ? Object.keys(IT_IRR)
       : idioma === "portuguese" ? Object.keys(PT_IRR)
       : idioma === "german" ? Object.keys(DE_IRR)
-      : Object.keys(IRREGULARES)
+      : [...Object.keys(IRREGULARES), ...CONOCIDOS]
   );
   for (const [k, v] of Object.entries(bundle.glosses)) {
     const FIN_INF = idioma === "italian" ? /(are|ere|ire)$/
