@@ -406,6 +406,10 @@ const DE_NO_ES_INFINITIVO = new Set([
   // kennenlernen separa por el PRIMER verbo ("ich lerne dich kennen"), que es un
   // patron distinto al del prefijo y no vale la pena escribir para un caso.
   "kennenlernen","dabeihaben",
+  // Participios fuertes SIN ge-: acaban en -en y parecen infinitivos, pero no
+  // lo son. `verwoben` daba "verwobe / verwobst", que no es una palabra.
+  "verwoben","verloren","gewonnen","vergessen","verstanden","begonnen","empfohlen",
+  "entschieden","geschrieben","genommen","gesprochen","gestohlen","zerbrochen",
 ]);
 
 /** Participios y formas de pasado que TERMINAN en -en pero no son infinitivos. */
@@ -421,6 +425,13 @@ function esParticipio(w: string): boolean {
 const DE_IRR: Record<string, { presente: string[]; "pretérito": string[] }> = {
   sein:    { presente: ["bin","bist","ist","sind","seid","sind"], "pretérito": ["war","warst","war","waren","wart","waren"] },
   haben:   { presente: ["habe","hast","hat","haben","habt","haben"], "pretérito": ["hatte","hattest","hatte","hatten","hattet","hatten"] },
+  // Fuertes con cambio de vocal en du y er/sie/es. Sin ellos el generador los
+  // trata como debiles y saca `esst` para du, `fallst`, `stoßt`, `werft`: la
+  // fila que el lector NO tiene delante, que es justo la que nadie mira.
+  essen:   { presente: ["esse","isst","isst","essen","esst","essen"], "pretérito": ["aß","aßest","aß","aßen","aßt","aßen"] },
+  fallen:  { presente: ["falle","fällst","fällt","fallen","fallt","fallen"], "pretérito": ["fiel","fielst","fiel","fielen","fielt","fielen"] },
+  stoßen:  { presente: ["stoße","stößt","stößt","stoßen","stoßt","stoßen"], "pretérito": ["stieß","stießest","stieß","stießen","stießt","stießen"] },
+  werfen:  { presente: ["werfe","wirfst","wirft","werfen","werft","werfen"], "pretérito": ["warf","warfst","warf","warfen","warft","warfen"] },
   werden:  { presente: ["werde","wirst","wird","werden","werdet","werden"], "pretérito": ["wurde","wurdest","wurde","wurden","wurdet","wurden"] },
   können:  { presente: ["kann","kannst","kann","können","könnt","können"], "pretérito": ["konnte","konntest","konnte","konnten","konntet","konnten"] },
   müssen:  { presente: ["muss","musst","muss","müssen","müsst","müssen"], "pretérito": ["musste","musstest","musste","mussten","musstet","mussten"] },
