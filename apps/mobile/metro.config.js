@@ -5,7 +5,11 @@ const projectRoot = __dirname;
 const workspaceRoot = path.resolve(projectRoot, "../..");
 const projectNodeModules = path.resolve(projectRoot, "node_modules");
 const workspaceNodeModules = path.resolve(workspaceRoot, "node_modules");
-const vendoredClerkReact = path.resolve(projectRoot, "vendor/@clerk/react");
+// `@clerk/react` ya no se vendoriza. La copia de vendor/ se quedó en la 6.1.3
+// mientras `@clerk/expo` 4.6 pide la ^6.14.7, y npm ya la instala aquí; el
+// alias sigue existiendo solo porque `disableHierarchicalLookup` obliga a
+// nombrar cada paquete, no porque haya nada parcheado dentro.
+const vendoredClerkReact = path.resolve(projectNodeModules, "@clerk/react");
 
 const config = getDefaultConfig(projectRoot);
 
