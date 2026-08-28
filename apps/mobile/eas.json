@@ -22,6 +22,10 @@
       "android": {
         "buildType": "app-bundle"
       }
+    },
+    "production-local": {
+      "extends": "production",
+      "credentialsSource": "local"
     }
   },
   "submit": {

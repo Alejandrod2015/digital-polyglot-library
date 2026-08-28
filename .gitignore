@@ -107,3 +107,6 @@ apps/mobile/.expo/
 /_reroll_*.mp3
 /_identity_*.mp3
 /scratchpad/
+
+# Credenciales de firma locales de iOS (llevan la clave del .p12).
+apps/mobile/credentials.json

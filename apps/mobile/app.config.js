@@ -140,7 +140,7 @@ const config = {
     // `autoIncrement: true` NO funciona aquí porque EAS no muta JS.
     // Bumpear manualmente cada release a (max submitted on App Store
     // Connect) + 1.
-    buildNumber: "313",
+    buildNumber: "314",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
       // Background audio: story playback keeps sounding when the app is
