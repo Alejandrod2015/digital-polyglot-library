@@ -872,5 +872,1139 @@
    "g": "outward journey",
    "t": "noun"
   }
+ },
+ "german-traveler-a1": {
+  "schmaler": {
+   "g": "narrow (schmal)",
+   "t": "adjective"
+  },
+  "bach": {
+   "g": "stream, brook (der Bach)",
+   "t": "noun"
+  },
+  "bergab": {
+   "g": "downhill",
+   "t": "adverb"
+  },
+  "feuchter": {
+   "g": "damp (feucht)",
+   "t": "adjective"
+  },
+  "knie": {
+   "g": "knee (das Knie)",
+   "t": "noun"
+  },
+  "abstieg": {
+   "g": "the way down, descent (der Abstieg)",
+   "t": "noun"
+  },
+  "pfahl": {
+   "g": "post, stake (der Pfahl)",
+   "t": "noun"
+  },
+  "wegrand": {
+   "g": "the edge of the path (der Wegrand)",
+   "t": "noun"
+  },
+  "holzschild": {
+   "g": "wooden sign (das Holzschild)",
+   "t": "noun"
+  },
+  "pfeil": {
+   "g": "arrow (der Pfeil)",
+   "t": "noun"
+  },
+  "hinwollen": {
+   "g": "to want to go there (hinwollen)",
+   "t": "verb"
+  },
+  "waldhütte": {
+   "g": "forest hut (die Waldhütte)",
+   "t": "noun"
+  },
+  "abendlicht": {
+   "g": "evening light (das Abendlicht)",
+   "t": "noun"
+  },
+  "waldweg": {
+   "g": "forest track (der Waldweg)",
+   "t": "noun"
+  },
+  "waldrand": {
+   "g": "the edge of the forest (der Waldrand)",
+   "t": "noun"
+  },
+  "heil": {
+   "g": "unhurt, in one piece",
+   "t": "adjective"
+  },
+  "unserem": {
+   "g": "our (unser)",
+   "t": "pronoun"
+  },
+  "klüger": {
+   "g": "wiser, cleverer (klug)",
+   "t": "adjective"
+  },
+  "schlosstor": {
+   "g": "castle gate (das Schlosstor)",
+   "t": "noun"
+  },
+  "hexe": {
+   "g": "witch (die Hexe)",
+   "t": "noun"
+  },
+  "eisernen": {
+   "g": "iron (eisern)",
+   "t": "adjective"
+  },
+  "ring": {
+   "g": "ring (der Ring)",
+   "t": "noun"
+  },
+  "gebissen": {
+   "g": "bitten (beißen)",
+   "t": "verb"
+  },
+  "durchbeißt": {
+   "g": "bites through (durchbeißen)",
+   "t": "verb"
+  },
+  "geschafft": {
+   "g": "managed it (schaffen)",
+   "t": "verb"
+  },
+  "zähnen": {
+   "g": "teeth (die Zähne)",
+   "t": "noun"
+  },
+  "runzelt": {
+   "g": "wrinkles, furrows (runzeln)",
+   "t": "verb"
+  },
+  "stirn": {
+   "g": "forehead (die Stirn)",
+   "t": "noun"
+  },
+  "kerbe": {
+   "g": "notch, groove (die Kerbe)",
+   "t": "noun"
+  },
+  "biss": {
+   "g": "bite (der Biss)",
+   "t": "noun"
+  },
+  "kinderzimmer": {
+   "g": "child's room (das Kinderzimmer)",
+   "t": "noun"
+  },
+  "teppich": {
+   "g": "carpet, rug (der Teppich)",
+   "t": "noun"
+  },
+  "umziehen": {
+   "g": "to move house (umziehen)",
+   "t": "verb"
+  },
+  "sohn": {
+   "g": "son (der Sohn)",
+   "t": "noun"
+  },
+  "mama": {
+   "g": "mum, mummy (die Mama)",
+   "t": "noun"
+  },
+  "hefte": {
+   "g": "exercise books (die Hefte)",
+   "t": "noun"
+  },
+  "hierbleiben": {
+   "g": "to stay here (hierbleiben)",
+   "t": "verb"
+  },
+  "räumt": {
+   "g": "clears, tidies (räumen)",
+   "t": "verb"
+  },
+  "kommode": {
+   "g": "chest of drawers (die Kommode)",
+   "t": "noun"
+  },
+  "untersten": {
+   "g": "bottom, lowest (unterst)",
+   "t": "adjective"
+  },
+  "kiste": {
+   "g": "crate, box (die Kiste)",
+   "t": "noun"
+  },
+  "bilder": {
+   "g": "pictures (die Bilder)",
+   "t": "noun"
+  },
+  "schultag": {
+   "g": "school day (der Schultag)",
+   "t": "noun"
+  },
+  "vergeht": {
+   "g": "passes, goes by (vergehen)",
+   "t": "verb"
+  },
+  "kindheit": {
+   "g": "childhood (die Kindheit)",
+   "t": "noun"
+  },
+  "erinnerungen": {
+   "g": "memories (die Erinnerungen)",
+   "t": "noun"
+  },
+  "wirtshaus": {
+   "g": "pub, inn (das Wirtshaus)",
+   "t": "noun"
+  },
+  "zögert": {
+   "g": "hesitates (zögern)",
+   "t": "verb"
+  },
+  "stören": {
+   "g": "to disturb, to bother (stören)",
+   "t": "verb"
+  },
+  "kartoffelsuppe": {
+   "g": "potato soup (die Kartoffelsuppe)",
+   "t": "noun"
+  },
+  "kartenspiel": {
+   "g": "card game (das Kartenspiel)",
+   "t": "noun"
+  },
+  "umgebung": {
+   "g": "the area around, surroundings (die Umgebung)",
+   "t": "noun"
+  },
+  "denkst": {
+   "g": "you think (denken)",
+   "t": "verb"
+  },
+  "feste": {
+   "g": "firm, fixed (fest)",
+   "t": "adjective"
+  },
+  "genauso": {
+   "g": "just the same, exactly so",
+   "t": "adverb"
+  },
+  "gewohnheit": {
+   "g": "habit (die Gewohnheit)",
+   "t": "noun"
+  },
+  "fing": {
+   "g": "began (anfangen)",
+   "t": "verb"
+  },
+  "neuem": {
+   "g": "new (neu)",
+   "t": "adjective"
+  },
+  "beruf": {
+   "g": "job, profession (der Beruf)",
+   "t": "noun"
+  },
+  "zufall": {
+   "g": "chance, coincidence (der Zufall)",
+   "t": "noun"
+  },
+  "straßenbahn": {
+   "g": "tram (die Straßenbahn)",
+   "t": "noun"
+  },
+  "haltestelle": {
+   "g": "stop (die Haltestelle)",
+   "t": "noun"
+  },
+  "gepäck": {
+   "g": "luggage (das Gepäck)",
+   "t": "noun"
+  },
+  "plätze": {
+   "g": "seats; squares (die Plätze)",
+   "t": "noun"
+  },
+  "kreuzung": {
+   "g": "crossroads (die Kreuzung)",
+   "t": "noun"
+  },
+  "ampel": {
+   "g": "traffic light (die Ampel)",
+   "t": "noun"
+  },
+  "zebrastreifen": {
+   "g": "zebra crossing (der Zebrastreifen)",
+   "t": "noun"
+  },
+  "dom": {
+   "g": "cathedral (der Dom)",
+   "t": "noun"
+  },
+  "säßen": {
+   "g": "would be sitting (sitzen)",
+   "t": "verb"
+  },
+  "dahinter": {
+   "g": "behind it",
+   "t": "adverb"
+  },
+  "rathaus": {
+   "g": "town hall (das Rathaus)",
+   "t": "noun"
+  },
+  "station": {
+   "g": "stop, station (die Station)",
+   "t": "noun"
+  },
+  "umsteigen": {
+   "g": "to change trains (umsteigen)",
+   "t": "verb"
+  },
+  "vorhin": {
+   "g": "a moment ago",
+   "t": "adverb"
+  },
+  "verspätung": {
+   "g": "delay (die Verspätung)",
+   "t": "noun"
+  },
+  "rundfahrt": {
+   "g": "round trip, sightseeing tour (die Rundfahrt)",
+   "t": "noun"
+  },
+  "weihnachtsmarkt": {
+   "g": "Christmas market (der Weihnachtsmarkt)",
+   "t": "noun"
+  },
+  "bäckerin": {
+   "g": "baker, a woman (die Bäckerin)",
+   "t": "noun"
+  },
+  "fürth": {
+   "g": "Fürth, the town next to Nuremberg",
+   "t": "noun"
+  },
+  "gebackenen": {
+   "g": "baked (backen)",
+   "t": "verb"
+  },
+  "plätzchen": {
+   "g": "Christmas biscuits (die Plätzchen)",
+   "t": "noun"
+  },
+  "holzhütte": {
+   "g": "wooden hut, market stall (die Holzhütte)",
+   "t": "noun"
+  },
+  "gold": {
+   "g": "gold (das Gold)",
+   "t": "noun"
+  },
+  "echtem": {
+   "g": "real, genuine (echt)",
+   "t": "adjective"
+  },
+  "kundin": {
+   "g": "customer, a woman (die Kundin)",
+   "t": "noun"
+  },
+  "mütze": {
+   "g": "woolly hat, cap (die Mütze)",
+   "t": "noun"
+  },
+  "zimtsterne": {
+   "g": "cinnamon stars, a Christmas biscuit (die Zimtsterne)",
+   "t": "noun"
+  },
+  "marmelade": {
+   "g": "jam (die Marmelade)",
+   "t": "noun"
+  },
+  "fabrik": {
+   "g": "factory (die Fabrik)",
+   "t": "noun"
+  },
+  "gebacken": {
+   "g": "baked (backen)",
+   "t": "verb"
+  },
+  "mehl": {
+   "g": "flour (das Mehl)",
+   "t": "noun"
+  },
+  "papiertüte": {
+   "g": "paper bag (die Papiertüte)",
+   "t": "noun"
+  },
+  "goldenen": {
+   "g": "golden (golden)",
+   "t": "adjective"
+  },
+  "glühwein": {
+   "g": "mulled wine (der Glühwein)",
+   "t": "noun"
+  },
+  "teurer": {
+   "g": "more expensive (teuer)",
+   "t": "adjective"
+  },
+  "lichtern": {
+   "g": "lights (die Lichter)",
+   "t": "noun"
+  },
+  "schachtel": {
+   "g": "small box (die Schachtel)",
+   "t": "noun"
+  },
+  "streichhölzer": {
+   "g": "matches (die Streichhölzer)",
+   "t": "noun"
+  },
+  "klarer": {
+   "g": "clear (klar)",
+   "t": "adjective"
+  },
+  "nachthimmel": {
+   "g": "night sky (der Nachthimmel)",
+   "t": "noun"
+  },
+  "sterne": {
+   "g": "stars (die Sterne)",
+   "t": "noun"
+  },
+  "ausräume": {
+   "g": "clear out (ausräumen)",
+   "t": "verb"
+  },
+  "stell": {
+   "g": "put, stand it (stellen)",
+   "t": "verb"
+  },
+  "goldene": {
+   "g": "golden (golden)",
+   "t": "adjective"
+  },
+  "dunkeln": {
+   "g": "dark (dunkel)",
+   "t": "adjective"
+  },
+  "schein": {
+   "g": "glow, light (der Schein)",
+   "t": "noun"
+  },
+  "wangen": {
+   "g": "cheeks (die Wangen)",
+   "t": "noun"
+  },
+  "reihe": {
+   "g": "row, line (die Reihe)",
+   "t": "noun"
+  },
+  "winterluft": {
+   "g": "winter air (die Winterluft)",
+   "t": "noun"
+  },
+  "genug": {
+   "g": "enough",
+   "t": "adverb"
+  },
+  "strom": {
+   "g": "electricity, power (der Strom)",
+   "t": "noun"
+  },
+  "elektrisches": {
+   "g": "electric (elektrisch)",
+   "t": "adjective"
+  },
+  "weihnachtslied": {
+   "g": "Christmas carol (das Weihnachtslied)",
+   "t": "noun"
+  },
+  "hütten": {
+   "g": "huts, stalls (die Hütten)",
+   "t": "noun"
+  },
+  "achtet": {
+   "g": "pays attention (achten auf)",
+   "t": "verb"
+  },
+  "darauf": {
+   "g": "on it, to it",
+   "t": "adverb"
+  },
+  "merken": {
+   "g": "to notice; to remember (merken)",
+   "t": "verb"
+  },
+  "dichte": {
+   "g": "thick, dense (dicht)",
+   "t": "adjective"
+  },
+  "nebelwand": {
+   "g": "wall of fog (die Nebelwand)",
+   "t": "noun"
+  },
+  "innerhalb": {
+   "g": "within, inside of",
+   "t": "preposition"
+  },
+  "herüber": {
+   "g": "over here, across",
+   "t": "adverb"
+  },
+  "gebirge": {
+   "g": "mountain range (das Gebirge)",
+   "t": "noun"
+  },
+  "wanderstock": {
+   "g": "walking stick (der Wanderstock)",
+   "t": "noun"
+  },
+  "welcher": {
+   "g": "which one",
+   "t": "pronoun"
+  },
+  "unserer": {
+   "g": "our (unser)",
+   "t": "pronoun"
+  },
+  "hörst": {
+   "g": "you hear (hören)",
+   "t": "verb"
+  },
+  "rauscht": {
+   "g": "rushes, roars softly (rauschen)",
+   "t": "verb"
+  },
+  "linie": {
+   "g": "line, route number (die Linie)",
+   "t": "noun"
+  },
+  "nachbarstand": {
+   "g": "the next stall along (der Nachbarstand)",
+   "t": "noun"
+  },
+  "papiertüten": {
+   "g": "paper bags (die Papiertüten)",
+   "t": "noun"
+  },
+  "stromausfall": {
+   "g": "power cut (der Stromausfall)",
+   "t": "noun"
+  },
+  "bleib": {
+   "g": "stay! (bleiben)",
+   "t": "verb"
+  },
+  "holen": {
+   "g": "to fetch, to get (holen)",
+   "t": "verb"
+  },
+  "handys": {
+   "g": "mobile phones (die Handys)",
+   "t": "noun"
+  },
+  "heraus": {
+   "g": "out, out of it",
+   "t": "adverb"
+  },
+  "taschenlampen": {
+   "g": "torches (die Taschenlampen)",
+   "t": "noun"
+  },
+  "akku": {
+   "g": "battery (der Akku)",
+   "t": "noun"
+  },
+  "kabel": {
+   "g": "cable (das Kabel)",
+   "t": "noun"
+  },
+  "schmale": {
+   "g": "narrow (schmal)",
+   "t": "adjective"
+  },
+  "steintreppe": {
+   "g": "stone stairs (die Steintreppe)",
+   "t": "noun"
+  },
+  "kellertür": {
+   "g": "cellar door (die Kellertür)",
+   "t": "noun"
+  },
+  "weinfass": {
+   "g": "wine barrel (das Weinfass)",
+   "t": "noun"
+  },
+  "gelagert": {
+   "g": "stored (lagern)",
+   "t": "verb"
+  },
+  "spinnen": {
+   "g": "spiders (die Spinnen)",
+   "t": "noun"
+  },
+  "mäuse": {
+   "g": "mice (die Mäuse)",
+   "t": "noun"
+  },
+  "schaltet": {
+   "g": "switches (schalten)",
+   "t": "verb"
+  },
+  "taschenlampe": {
+   "g": "torch (die Taschenlampe)",
+   "t": "noun"
+  },
+  "seines": {
+   "g": "his (sein)",
+   "t": "pronoun"
+  },
+  "stimmen": {
+   "g": "voices (die Stimmen)",
+   "t": "noun"
+  },
+  "raum": {
+   "g": "room, space (der Raum)",
+   "t": "noun"
+  },
+  "psst": {
+   "g": "shh!",
+   "t": "expression"
+  },
+  "geräusch": {
+   "g": "noise, sound (das Geräusch)",
+   "t": "noun"
+  },
+  "waren": {
+   "g": "were (sein)",
+   "t": "verb"
+  },
+  "ohr": {
+   "g": "ear (das Ohr)",
+   "t": "noun"
+  },
+  "leiser": {
+   "g": "quieter (leise)",
+   "t": "adjective"
+  },
+  "hintersten": {
+   "g": "furthest back (hinterst)",
+   "t": "adjective"
+  },
+  "kellers": {
+   "g": "of the cellar (der Keller)",
+   "t": "noun"
+  },
+  "sache": {
+   "g": "thing, matter (die Sache)",
+   "t": "noun"
+  },
+  "schnürt": {
+   "g": "laces up (schnüren)",
+   "t": "verb"
+  },
+  "studentin": {
+   "g": "student, a woman (die Studentin)",
+   "t": "noun"
+  },
+  "äpfel": {
+   "g": "apples (die Äpfel)",
+   "t": "noun"
+  },
+  "ast": {
+   "g": "branch (der Ast)",
+   "t": "noun"
+  },
+  "schmetterling": {
+   "g": "butterfly (der Schmetterling)",
+   "t": "noun"
+  },
+  "ziege": {
+   "g": "goat (die Ziege)",
+   "t": "noun"
+  },
+  "bellt": {
+   "g": "barks (bellen)",
+   "t": "verb"
+  },
+  "baum": {
+   "g": "tree (der Baum)",
+   "t": "noun"
+  },
+  "biene": {
+   "g": "bee (die Biene)",
+   "t": "noun"
+  },
+  "bergauf": {
+   "g": "uphill",
+   "t": "adverb"
+  },
+  "lastwagen": {
+   "g": "lorry, truck (der Lastwagen)",
+   "t": "noun"
+  },
+  "umzugstag": {
+   "g": "moving day (der Umzugstag)",
+   "t": "noun"
+  },
+  "bücherkiste": {
+   "g": "box of books (die Bücherkiste)",
+   "t": "noun"
+  },
+  "bücher": {
+   "g": "books (die Bücher)",
+   "t": "noun"
+  },
+  "schweiß": {
+   "g": "sweat (der Schweiß)",
+   "t": "noun"
+  },
+  "wasserflasche": {
+   "g": "water bottle (die Wasserflasche)",
+   "t": "noun"
+  },
+  "hausflur": {
+   "g": "entrance hall of a building (der Hausflur)",
+   "t": "noun"
+  },
+  "halte": {
+   "g": "hold, stop (halten)",
+   "t": "verb"
+  },
+  "türschloss": {
+   "g": "door lock (das Türschloss)",
+   "t": "noun"
+  },
+  "möglich": {
+   "g": "possible",
+   "t": "adjective"
+  },
+  "bekommen": {
+   "g": "to get, to receive (bekommen)",
+   "t": "verb"
+  },
+  "mieterin": {
+   "g": "tenant, a woman (die Mieterin)",
+   "t": "noun"
+  },
+  "etage": {
+   "g": "floor, storey (die Etage)",
+   "t": "noun"
+  },
+  "englischen": {
+   "g": "English (englisch)",
+   "t": "adjective"
+  },
+  "samstagnachmittag": {
+   "g": "Saturday afternoon (der Samstagnachmittag)",
+   "t": "noun"
+  },
+  "eisbach": {
+   "g": "the Eisbach, the surfable stream in Munich",
+   "t": "noun"
+  },
+  "lauf": {
+   "g": "run! (laufen)",
+   "t": "verb"
+  },
+  "findest": {
+   "g": "you find (finden)",
+   "t": "verb"
+  },
+  "sportschuhen": {
+   "g": "trainers (die Sportschuhe)",
+   "t": "noun"
+  },
+  "menschenmenge": {
+   "g": "crowd of people (die Menschenmenge)",
+   "t": "noun"
+  },
+  "ufermauer": {
+   "g": "the wall along the bank (die Ufermauer)",
+   "t": "noun"
+  },
+  "welle": {
+   "g": "wave (die Welle)",
+   "t": "noun"
+  },
+  "surft": {
+   "g": "surfs (surfen)",
+   "t": "verb"
+  },
+  "pappe": {
+   "g": "cardboard (die Pappe)",
+   "t": "noun"
+  },
+  "buchstaben": {
+   "g": "letters of the alphabet (die Buchstaben)",
+   "t": "noun"
+  },
+  "lese": {
+   "g": "I read (lesen)",
+   "t": "verb"
+  },
+  "tische": {
+   "g": "tables (die Tische)",
+   "t": "noun"
+  },
+  "sommerabend": {
+   "g": "summer evening (der Sommerabend)",
+   "t": "noun"
+  },
+  "sitzplatz": {
+   "g": "seat (der Sitzplatz)",
+   "t": "noun"
+  },
+  "stuhl": {
+   "g": "chair (der Stuhl)",
+   "t": "noun"
+  },
+  "nachbartisch": {
+   "g": "the next table (der Nachbartisch)",
+   "t": "noun"
+  },
+  "sitzbank": {
+   "g": "bench (die Sitzbank)",
+   "t": "noun"
+  },
+  "kellner": {
+   "g": "waiter (der Kellner)",
+   "t": "noun"
+  },
+  "heiße": {
+   "g": "I am called (heißen)",
+   "t": "verb"
+  },
+  "einsam": {
+   "g": "lonely",
+   "t": "adjective"
+  },
+  "lauteste": {
+   "g": "loudest (laut)",
+   "t": "adjective"
+  },
+  "wärmer": {
+   "g": "warmer (warm)",
+   "t": "adjective"
+  },
+  "freier": {
+   "g": "free, unoccupied (frei)",
+   "t": "adjective"
+  },
+  "springen": {
+   "g": "to jump (springen)",
+   "t": "verb"
+  },
+  "nichte": {
+   "g": "niece (die Nichte)",
+   "t": "noun"
+  },
+  "feiert": {
+   "g": "celebrates (feiern)",
+   "t": "verb"
+  },
+  "geburtstag": {
+   "g": "birthday (der Geburtstag)",
+   "t": "noun"
+  },
+  "anschluss": {
+   "g": "connection, connecting train (der Anschluss)",
+   "t": "noun"
+  },
+  "fahrplan": {
+   "g": "timetable (der Fahrplan)",
+   "t": "noun"
+  },
+  "lautsprecher": {
+   "g": "loudspeaker (der Lautsprecher)",
+   "t": "noun"
+  },
+  "fahrkarte": {
+   "g": "ticket (die Fahrkarte)",
+   "t": "noun"
+  },
+  "unruhig": {
+   "g": "restless, uneasy",
+   "t": "adjective"
+  },
+  "feier": {
+   "g": "party, celebration (die Feier)",
+   "t": "noun"
+  },
+  "schaffen": {
+   "g": "to manage it, to make it (schaffen)",
+   "t": "verb"
+  },
+  "taxi": {
+   "g": "taxi (das Taxi)",
+   "t": "noun"
+  },
+  "rolltreppe": {
+   "g": "escalator (die Rolltreppe)",
+   "t": "noun"
+  },
+  "ziel": {
+   "g": "destination, goal (das Ziel)",
+   "t": "noun"
+  },
+  "übrig": {
+   "g": "left over, remaining",
+   "t": "adjective"
+  },
+  "klingel": {
+   "g": "doorbell (die Klingel)",
+   "t": "noun"
+  },
+  "störung": {
+   "g": "fault, disruption (die Störung)",
+   "t": "noun"
+  },
+  "zitrone": {
+   "g": "lemon (die Zitrone)",
+   "t": "noun"
+  },
+  "kabeljau": {
+   "g": "cod (der Kabeljau)",
+   "t": "noun"
+  },
+  "läden": {
+   "g": "shops (die Läden)",
+   "t": "noun"
+  },
+  "minze": {
+   "g": "mint (die Minze)",
+   "t": "noun"
+  },
+  "kräuter": {
+   "g": "herbs (die Kräuter)",
+   "t": "noun"
+  },
+  "passen": {
+   "g": "to fit; to go well together (passen)",
+   "t": "verb"
+  },
+  "mahlzeit": {
+   "g": "meal (die Mahlzeit)",
+   "t": "noun"
+  },
+  "limonade": {
+   "g": "fizzy drink, lemonade (die Limonade)",
+   "t": "noun"
+  },
+  "fantastisch": {
+   "g": "fantastic",
+   "t": "adjective"
+  },
+  "gemeinsam": {
+   "g": "together, shared",
+   "t": "adjective"
+  },
+  "hinterste": {
+   "g": "the furthest back (hinterst)",
+   "t": "adjective"
+  },
+  "kellerfenster": {
+   "g": "cellar window (das Kellerfenster)",
+   "t": "noun"
+  },
+  "leuchte": {
+   "g": "shine, point a light (leuchten)",
+   "t": "verb"
+  },
+  "fenstersims": {
+   "g": "window ledge (das Fenstersims)",
+   "t": "noun"
+  },
+  "eule": {
+   "g": "owl (die Eule)",
+   "t": "noun"
+  },
+  "geflogen": {
+   "g": "flown (fliegen)",
+   "t": "verb"
+  },
+  "flügel": {
+   "g": "wings (die Flügel)",
+   "t": "noun"
+  },
+  "hielten": {
+   "g": "held; took for (halten)",
+   "t": "verb"
+  },
+  "gespenst": {
+   "g": "ghost (das Gespenst)",
+   "t": "noun"
+  },
+  "nachtvogel": {
+   "g": "night bird (der Nachtvogel)",
+   "t": "noun"
+  },
+  "nachtluft": {
+   "g": "night air (die Nachtluft)",
+   "t": "noun"
+  },
+  "köchin": {
+   "g": "cook, a woman (die Köchin)",
+   "t": "noun"
+  },
+  "altona": {
+   "g": "Altona, a district of Hamburg",
+   "t": "noun"
+  },
+  "geschäft": {
+   "g": "shop; business (das Geschäft)",
+   "t": "noun"
+  },
+  "markttag": {
+   "g": "market day (der Markttag)",
+   "t": "noun"
+  },
+  "verkäufer": {
+   "g": "seller, stallholder (der Verkäufer)",
+   "t": "noun"
+  },
+  "blauer": {
+   "g": "blue (blau)",
+   "t": "adjective"
+  },
+  "guter": {
+   "g": "good (gut)",
+   "t": "adjective"
+  },
+  "billiger": {
+   "g": "cheaper (billig)",
+   "t": "adjective"
+  },
+  "einverstanden": {
+   "g": "agreed, all right",
+   "t": "adjective"
+  },
+  "abgemacht": {
+   "g": "agreed, it's a deal",
+   "t": "expression"
+  },
+  "zwiebel": {
+   "g": "onion (die Zwiebel)",
+   "t": "noun"
+  },
+  "pfeffer": {
+   "g": "pepper (der Pfeffer)",
+   "t": "noun"
+  },
+  "gekauft": {
+   "g": "bought (kaufen)",
+   "t": "verb"
+  },
+  "hole": {
+   "g": "I fetch (holen)",
+   "t": "verb"
+  },
+  "geschlossenen": {
+   "g": "closed (geschlossen)",
+   "t": "adjective"
+  },
+  "fingern": {
+   "g": "fingers (die Finger)",
+   "t": "noun"
+  },
+  "schlimm": {
+   "g": "bad, serious",
+   "t": "adjective"
+  },
+  "tiefer": {
+   "g": "deeper (tief)",
+   "t": "adjective"
+  },
+  "leicht": {
+   "g": "light; easy",
+   "t": "adjective"
+  },
+  "bad": {
+   "g": "bathroom (das Bad)",
+   "t": "noun"
+  },
+  "wände": {
+   "g": "walls (die Wände)",
+   "t": "noun"
+  },
+  "nackt": {
+   "g": "bare, naked",
+   "t": "adjective"
+  },
+  "sessel": {
+   "g": "armchair (der Sessel)",
+   "t": "noun"
+  },
+  "kissen": {
+   "g": "cushion (das Kissen)",
+   "t": "noun"
+  },
+  "kaffeetasse": {
+   "g": "coffee cup (die Kaffeetasse)",
+   "t": "noun"
+  },
+  "geschenk": {
+   "g": "present (das Geschenk)",
+   "t": "noun"
+  },
+  "nackte": {
+   "g": "bare (nackt)",
+   "t": "adjective"
+  },
+  "viertelstunde": {
+   "g": "quarter of an hour (die Viertelstunde)",
+   "t": "noun"
+  },
+  "beeilt": {
+   "g": "hurries (sich beeilen)",
+   "t": "verb"
+  },
+  "wild": {
+   "g": "wild",
+   "t": "adjective"
+  },
+  "torte": {
+   "g": "cake, gateau (die Torte)",
+   "t": "noun"
+  },
+  "sahne": {
+   "g": "cream (die Sahne)",
+   "t": "noun"
+  },
+  "kaffeekanne": {
+   "g": "coffee pot (die Kaffeekanne)",
+   "t": "noun"
+  },
+  "erstaunt": {
+   "g": "astonished",
+   "t": "adjective"
+  },
+  "dachten": {
+   "g": "thought (denken)",
+   "t": "verb"
+  },
+  "lustige": {
+   "g": "funny (lustig)",
+   "t": "adjective"
+  },
+  "onkel": {
+   "g": "uncle (der Onkel)",
+   "t": "noun"
+  },
+  "selben": {
+   "g": "same (derselbe)",
+   "t": "pronoun"
+  },
+  "schneide": {
+   "g": "I cut (schneiden)",
+   "t": "verb"
+  }
  }
 }

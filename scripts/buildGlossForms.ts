@@ -424,6 +424,9 @@ const DE_NO_ES_INFINITIVO = new Set([
   // kennenlernen separa por el PRIMER verbo ("ich lerne dich kennen"), que es un
   // patron distinto al del prefijo y no vale la pena escribir para un caso.
   "kennenlernen","dabeihaben",
+  // Preteritos en -en que parecen infinitivos: `hielten` es de halten, no de
+  // un verbo "hielten". Su tabla buena la pone la pasada de preterito.
+  "hielten","liefen","riefen","hießen","stießen","fielen","hingen","gingen",
   // Participios fuertes SIN ge-: acaban en -en y parecen infinitivos, pero no
   // lo son. `verwoben` daba "verwobe / verwobst", que no es una palabra.
   "verwoben","verloren","gewonnen","vergessen","verstanden","begonnen","empfohlen",
@@ -469,7 +472,7 @@ const DE_IRR: Record<string, { presente: string[]; "pretérito": string[] }> = {
   geben:   { presente: ["gebe","gibst","gibt","geben","gebt","geben"], "pretérito": ["gab","gabst","gab","gaben","gabt","gaben"] },
   sprechen:{ presente: ["spreche","sprichst","spricht","sprechen","sprecht","sprechen"], "pretérito": ["sprach","sprachst","sprach","sprachen","spracht","sprachen"] },
   lassen:  { presente: ["lasse","lässt","lässt","lassen","lasst","lassen"], "pretérito": ["ließ","ließt","ließ","ließen","ließt","ließen"] },
-  halten:  { presente: ["halte","hältst","hält","halten","haltet","halten"], "pretérito": ["hielt","hieltst","hielt","hielten","hieltet","hielten"] },
+  halten:  { presente: ["halte","hältst","hält","halten","haltet","halten"], "pretérito": ["hielt","hieltest","hielt","hielten","hieltet","hielten"] },
   tragen:  { presente: ["trage","trägst","trägt","tragen","tragt","tragen"], "pretérito": ["trug","trugst","trug","trugen","trugt","trugen"] },
   fahren:  { presente: ["fahre","fährst","fährt","fahren","fahrt","fahren"], "pretérito": ["fuhr","fuhrst","fuhr","fuhren","fuhrt","fuhren"] },
   laufen:  { presente: ["laufe","läufst","läuft","laufen","lauft","laufen"], "pretérito": ["lief","liefst","lief","liefen","lieft","liefen"] },
@@ -515,6 +518,21 @@ function deDebil(inf: string, tiempo: Tiempo): string[] | null {
   return null;
 }
 
+/** Formas que el motor NO sabe etiquetar y por eso deja SIN bloque.
+ *  `verstanden` es participio ("Ich habe nichts verstanden") y coincide con la
+ *  tercera del plural del preterito: la tabla saldria bien escrita pero con la
+ *  fila equivocada encendida, que es peor que no tener tabla.
+ *  `säßen` es Konjunktiv II y ese tiempo no existe en el generador. */
+const DE_NO_RESOLVER = new Set(["verstanden","säßen","hätten","wären","würden","könnten","müssten"]);
+
+/** Separables cuyo prefijo NO esta en la lista de arriba. `um` y `hier` no
+ *  pueden ir en la regex: `umarmen` es INSEPARABLE ("ich umarme dich") y
+ *  saldria "arme … um", que no es aleman. Se nombran uno a uno. */
+const DE_SEPARABLES_EXTRA: Record<string, string> = {
+  umsteigen: "um", umziehen: "um", umdrehen: "um", umfallen: "um", umkehren: "um",
+  hierbleiben: "hier", hierlassen: "hier",
+};
+
 /** Prefijos que se sueltan. La fila se escribe "stehe … auf" para que se vea. */
 const DE_SEPARABLES = /^(ab|an|auf|aus|bei|ein|her|hin|los|mit|nach|vor|weg|zu|zurück|zusammen|herum|rein|durch)(?=[a-zäöüß]{3,})/;
 
@@ -523,8 +541,9 @@ function deConjuga(inf: string, tiempo: Tiempo): string[] | null {
   if (esParticipio(inf) || DE_NO_ES_INFINITIVO.has(inf)) return null;
   if (DE_IRR[inf]) return [...DE_IRR[inf][tiempo]];
   const sep = DE_SEPARABLES.exec(inf);
-  if (sep) {
-    const prefijo = sep[1];
+  const extra = DE_SEPARABLES_EXTRA[inf];
+  if (sep || extra) {
+    const prefijo = extra ?? sep![1];
     const base = inf.slice(prefijo.length);
     const filas = DE_IRR[base] ? DE_IRR[base][tiempo] : deDebil(base, tiempo);
     if (!filas) return null;
@@ -567,8 +586,19 @@ function indicePorForma(infinitivos: string[], variante: string, idioma: string)
       if (!filas) continue;
       filas.forEach((f, i) => {
         const clave = f.toLowerCase();
+        // Formas que el motor no sabe etiquetar: mejor sin bloque que con la
+        // fila equivocada encendida. Ver DE_NO_RESOLVER.
+        if (idioma === "german" && DE_NO_RESOLVER.has(clave)) return;
         if (!mapa.has(clave)) mapa.set(clave, { inf, i, tiempo: id });
       });
+      // El infinitivo de un separable no coincide con ninguna fila: `umsteigen`
+      // no es "steige … um". Sin esto la palabra del texto se queda sin tabla.
+      // Entra con here = -1, que es justo lo que es: un infinitivo, ninguna
+      // persona encendida.
+      if (idioma === "german" && id === "presente" && !mapa.has(inf.toLowerCase())
+          && !DE_NO_RESOLVER.has(inf.toLowerCase())) {
+        mapa.set(inf.toLowerCase(), { inf, i: -1, tiempo: id });
+      }
     }
   }
   return mapa;

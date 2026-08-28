@@ -842,6 +842,62 @@
         "uno",
         "veinte"
       ]
+    },
+    "german-traveler-a1": {
+      "articles": [
+        "das",
+        "dem",
+        "den",
+        "der",
+        "des",
+        "die",
+        "ein",
+        "eine",
+        "einem",
+        "einen",
+        "einer",
+        "kein",
+        "keine"
+      ],
+      "characterNames": [
+        "anja",
+        "anjas",
+        "ben",
+        "berger",
+        "bernd",
+        "clara",
+        "finn",
+        "greta",
+        "hanna",
+        "jonas",
+        "kai",
+        "kais",
+        "lena",
+        "lukas",
+        "max",
+        "mia",
+        "petra",
+        "pia",
+        "sofie",
+        "stefan",
+        "theo",
+        "tobias"
+      ],
+      "numerals": [
+        "drei",
+        "dreißig",
+        "dritt",
+        "dritter",
+        "erste",
+        "fünf",
+        "neun",
+        "neunzehn",
+        "sieben",
+        "vier",
+        "zehn",
+        "zwanzig",
+        "zwei"
+      ]
     }
   }
 }
