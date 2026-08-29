@@ -4351,6 +4351,112 @@
   "limite": {
    "g": "the limit (il limite)",
    "t": "noun"
+  },
+  "ambulanza": {
+   "g": "an ambulance (l'ambulanza)",
+   "t": "noun"
+  },
+  "università": {
+   "g": "the university (l'università)",
+   "t": "noun"
+  },
+  "estate": {
+   "g": "summer (l'estate)",
+   "t": "noun"
+  },
+  "inverno": {
+   "g": "winter (l'inverno)",
+   "t": "noun"
+  },
+  "erba": {
+   "g": "the grass (l'erba)",
+   "t": "noun"
+  },
+  "autostrada": {
+   "g": "the motorway (l'autostrada)",
+   "t": "noun"
+  },
+  "olio": {
+   "g": "the oil (l'olio)",
+   "t": "noun"
+  },
+  "ultima": {
+   "g": "last (ultimo, ultima)",
+   "t": "adjective"
+  },
+  "ingresso": {
+   "g": "the way in (l'ingresso)",
+   "t": "noun"
+  },
+  "albergo": {
+   "g": "the hotel (l'albergo)",
+   "t": "noun"
+  },
+  "impiegato": {
+   "g": "the clerk (l'impiegato)",
+   "t": "noun"
+  },
+  "aereo": {
+   "g": "the plane (l'aereo)",
+   "t": "noun"
+  },
+  "assicurazione": {
+   "g": "the insurance (l'assicurazione)",
+   "t": "noun"
+  },
+  "aeroporto": {
+   "g": "the airport (l'aeroporto)",
+   "t": "noun"
+  },
+  "abito": {
+   "g": "a dress (l'abito)",
+   "t": "noun"
+  },
+  "impiegata": {
+   "g": "the clerk, a woman (l'impiegata)",
+   "t": "noun"
+  }
+ },
+ "italian-traveler-a0": {
+  "orologio": {
+   "g": "a watch (l'orologio)",
+   "t": "noun"
+  },
+  "oste": {
+   "g": "the innkeeper, the man who runs the place (l'oste)",
+   "t": "noun"
+  },
+  "asciugamano": {
+   "g": "a towel (l'asciugamano)",
+   "t": "noun"
+  },
+  "ombra": {
+   "g": "shade (l'ombra)",
+   "t": "noun"
+  },
+  "autobus": {
+   "g": "the bus (l'autobus)",
+   "t": "noun"
+  },
+  "autista": {
+   "g": "the driver (l'autista)",
+   "t": "noun"
+  },
+  "ingresso": {
+   "g": "the way in (l'ingresso)",
+   "t": "noun"
+  },
+  "uscita": {
+   "g": "the way out (l'uscita)",
+   "t": "noun"
+  },
+  "entrata": {
+   "g": "the entrance (l'entrata)",
+   "t": "noun"
+  },
+  "isola": {
+   "g": "the island (l'isola)",
+   "t": "noun"
   }
  }
 }

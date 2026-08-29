@@ -99,21 +99,27 @@ function exemptFor(bundle: string): Set<string> {
  * daba palabras fantasma (`s`, de partir `schmeckt's`) y me escondía otras.
  *
  *  1. `TAPPABLE`: la unidad que el usuario puede tocar. Conserva apóstrofos y
- *     guiones (ver `ReaderScreen.tsx`, la regex de troceo de palabras).
- *  2. `glossKey`: la clave con la que se busca en el bundle. El lector la saca
- *     con `\p{L}+(?:-\p{L}+)*` sobre el token en minúsculas, o sea que el
- *     guion une pero el apóstrofo CORTA: `schmeckt's` busca `schmeckt`.
+ *     guiones. Vive en `src/lib/tapGlossKey.ts`, que es el mismo modulo que
+ *     importa el lector, para que las dos reglas no vuelvan a separarse.
+ *  2. Las CANDIDATAS: al tocar `l'acqua` el lector prueba `l'acqua`, luego
+ *     `acqua` y por ultimo `l`, y se queda con la primera que exista.
  *
- * Consecuencia conocida y NO arreglada aquí: en italiano `l'acqua` se toca
- * entera pero busca la clave `l`, así que toda la elisión depende de una
- * glosa para `l`. Eso es un fallo del lector, no del bundle, y tocarlo desde
- * aquí sería arreglar a ciegas la mitad de un problema.
+ * La cobertura no se mide contra esa lista entera, porque entonces `l'acqua`
+ * contaria como cubierta por la glosa del articulo `l` y saldria "the" al
+ * tocar la palabra. Se exige la candidata con CARNE: la cola de la elision
+ * cuando es una palabra (`acqua`, `ami`), y la cabeza cuando la cola es un
+ * clitico de una o dos letras (`schmeckt's` -> `schmeckt`).
  */
-const TAPPABLE = /[\p{L}\p{N}][\p{L}\p{N}'\-]*/gu;
+import { TAPPABLE, glossKeyCandidates } from "../src/lib/tapGlossKey";
 
-function glossKey(token: string): string {
-  const m = token.toLowerCase().match(/\p{L}+(?:-\p{L}+)*/u);
-  return m ? m[0] : "";
+/** La clave que este token OBLIGA a tener, y las que valen para darlo por
+ *  cubierto (el token entero cuenta: `aujourd'hui` no es `aujourd` + `hui`). */
+function claveExigida(token: string): { exige: string; valen: string[] } {
+  const cand = glossKeyCandidates(token);
+  if (cand.length < 3) return { exige: cand[0] ?? "", valen: cand.slice(0, 1) };
+  const [entera, cola, cabeza] = cand;
+  const conCarne = cola.length >= 3 ? cola : cabeza;
+  return { exige: conCarne, valen: [entera, conCarne] };
 }
 
 function familyOf(bundle: string): string {
@@ -196,9 +202,10 @@ async function main() {
       const body = extractStoryPlainText(story.text ?? "");
       for (const source of [body, story.title ?? ""]) {
         for (const token of source.match(TAPPABLE) ?? []) {
-          const key = glossKey(token);
-          if (!key || own.has(key) || exempt.has(key)) continue;
-          needed.add(key);
+          const { exige, valen } = claveExigida(token);
+          if (!exige) continue;
+          if (valen.some((k) => own.has(k) || exempt.has(k))) continue;
+          needed.add(exige);
         }
       }
     }

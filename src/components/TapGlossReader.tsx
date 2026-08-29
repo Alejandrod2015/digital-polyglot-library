@@ -4,6 +4,7 @@ import React from "react";
 import StoryContent from "@/components/StoryContent";
 import TapGlossLayer from "@/components/TapGlossLayer";
 import type { TapGloss } from "@/lib/tapGlosses";
+import { WORD_SPLIT, resolveGloss } from "@/lib/tapGlossKey";
 
 // Piloto "tap any word" (2026-07-06) para el path SIN word timings:
 // envuelve StoryContent marcando cada palabra con gloss como span
@@ -16,7 +17,9 @@ type TapGlossReaderProps = {
   story?: { slug: string; title: string; language?: string | null };
 };
 
-const WORD_SPLIT = /(\p{L}+(?:-\p{L}+)*)/u;
+// El troceo y la clave vienen de `@/lib/tapGlossKey`, compartidos con el
+// titulo y la capa de karaoke: el apostrofo UNE al partir y la clave se busca
+// por candidatas. Ver [[project_tap_gloss_elision]].
 
 export default function TapGlossReader({ text, vocab, glosses, story }: TapGlossReaderProps) {
   const renderWord = React.useCallback(
@@ -25,10 +28,10 @@ export default function TapGlossReader({ text, vocab, glosses, story }: TapGloss
       if (parts.length === 1) return chunk;
       return parts.map((part, i) => {
         if (i % 2 === 1) {
-          const key = part.toLowerCase();
-          if (glosses[key]) {
+          const hit = resolveGloss(glosses, part);
+          if (hit) {
             return (
-              <span key={i} className="tap-word cursor-pointer" data-token={key}>
+              <span key={i} className="tap-word cursor-pointer" data-token={hit.token}>
                 {part}
               </span>
             );

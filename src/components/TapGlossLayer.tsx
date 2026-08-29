@@ -4,6 +4,7 @@ import React from "react";
 import { ChevronDown, ChevronUp, Heart, Search, X } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import type { TapGloss } from "@/lib/tapGlosses";
+import { resolveGloss } from "@/lib/tapGlossKey";
 import {
   getVocabTypeLabel,
   getVocabRegisterLabel,
@@ -80,12 +81,10 @@ function contextSentence(node: HTMLElement | null, word: string): string | undef
   return best.length > 160 ? `${best.slice(0, 159).trimEnd()}…` : best;
 }
 
-// Token de lookup desde el texto visible del span: minúsculas y sin
-// puntuación pegada ("Neukölln." -> "neukölln").
-function tokenFromText(text: string): string {
-  const m = text.toLowerCase().match(/\p{L}+(?:-\p{L}+)*/u);
-  return m ? m[0] : "";
-}
+// La clave de lookup vive en `@/lib/tapGlossKey`, compartida con el título, el
+// lector sin audio y el script de cobertura. La que había aquí cortaba en el
+// apóstrofo y se quedaba con el primer tramo: en el italiano publicado, tocar
+// `l'acqua` buscaba `l` y `acqua` era inalcanzable.
 
 export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
   const [selected, setSelected] = React.useState<GlossState | null>(null);
@@ -170,8 +169,12 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
         setSelected(null);
         return;
       }
-      const token = el.dataset.token ?? tokenFromText(el.textContent ?? "");
-      const entry = token ? glosses[token] : undefined;
+      const fromData = el.dataset.token ? glosses[el.dataset.token] : undefined;
+      const hit = fromData
+        ? { token: el.dataset.token as string, gloss: fromData }
+        : resolveGloss(glosses, el.textContent ?? "");
+      const token = hit?.token ?? "";
+      const entry = hit?.gloss;
       if (!entry) {
         setSelected(null);
         return;

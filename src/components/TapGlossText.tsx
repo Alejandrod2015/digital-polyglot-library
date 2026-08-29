@@ -2,6 +2,7 @@
 
 import React from "react";
 import type { TapGloss } from "@/lib/tapGlosses";
+import { WORD_SPLIT, resolveGloss } from "@/lib/tapGlossKey";
 
 // Tokeniza CUALQUIER cadena suelta (hoy: el título de la historia) igual que
 // TapGlossReader hace con el cuerpo, marcando como `.tap-word` las palabras que
@@ -12,7 +13,9 @@ import type { TapGloss } from "@/lib/tapGlosses";
 // El título se quedaba fuera del diccionario porque se renderiza como nodo de
 // texto plano: ni `.tap-word` ni `[data-word-index]` existían sobre él y el
 // listener no tenía a qué engancharse.
-const WORD_SPLIT = /(\p{L}+(?:-\p{L}+)*)/u;
+// El troceo y la clave viven en `@/lib/tapGlossKey`: el apostrofo UNE al
+// partir (`l'aria` es un span) y luego la clave se busca por candidatas, asi
+// que `aria` es alcanzable. Ver [[project_tap_gloss_elision]].
 
 export default function TapGlossText({
   text,
@@ -27,10 +30,10 @@ export default function TapGlossText({
     <>
       {parts.map((part, i) => {
         if (i % 2 === 1) {
-          const key = part.toLowerCase();
-          if (glosses[key]) {
+          const hit = resolveGloss(glosses, part);
+          if (hit) {
             return (
-              <span key={i} className="tap-word cursor-pointer" data-token={key}>
+              <span key={i} className="tap-word cursor-pointer" data-token={hit.token}>
                 {part}
               </span>
             );
