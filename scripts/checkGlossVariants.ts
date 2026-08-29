@@ -78,10 +78,33 @@ function esNombreDePersonaje(clave: string, glosa: string): boolean {
 function esFormaDeVos(forma: string): boolean {
   const limpia = forma.trim().toLowerCase();
   if (!limpia) return false;
-  // sos, vas, das y estás son irregulares que ya son correctos en voseo.
-  if (["sos", "vas", "das", "estás", "has", "tenés", "vení"].includes(limpia)) return true;
+  // Los monosílabos del presente no llevan tilde y ya son correctos en voseo:
+  // vos sos, vos vas, vos das, vos ves, vos has. `estás` y los dos regulares
+  // se quedan como muestra de lo que sí la lleva.
+  if (["sos", "vas", "das", "ves", "estás", "has", "tenés", "vení"].includes(limpia)) return true;
   const ultima = limpia.split(/\s+/).pop() ?? limpia;
   return /(ás|és|ís)$/.test(ultima);
+}
+
+/**
+ * ¿El paradigma está en presente de indicativo?
+ *
+ * El voseo solo cambia la forma en el presente y en el imperativo. En
+ * pretérito, imperfecto o condicional, `vos` toma exactamente la misma forma
+ * que `tú` (vos escuchaste, vos escuchabas, vos escucharías), así que pedirle
+ * la tilde de la última sílaba marcaba como error una conjugación correcta.
+ *
+ * El tiempo no viene escrito en ninguna parte: las filas son personas. Se
+ * deduce de la fila de `yo`, que en presente acaba en -o (hablo, veo, tengo)
+ * salvo los cuatro en -oy y `sé` / `he`.
+ */
+function esParadigmaEnPresente(filas: Fila[]): boolean {
+  const yo = filas.find(([etiqueta]) => String(etiqueta ?? "").trim().toLowerCase() === "yo");
+  // Sin la fila de `yo` no hay de dónde deducirlo; se revisa igual, que es el
+  // lado seguro: el lint avisa y lo mira una persona.
+  if (!yo) return true;
+  const forma = String(yo[1] ?? "").trim().toLowerCase().split(/\s+/).pop() ?? "";
+  return /o$/.test(forma) || ["soy", "estoy", "voy", "doy", "sé", "he"].includes(forma);
 }
 
 function revisa(fichero: string, bundle: Bundle): Fallo[] {
@@ -116,6 +139,7 @@ function revisa(fichero: string, bundle: Bundle): Fallo[] {
   for (const [historia, entradas] of Object.entries(bundle.byStory ?? {})) {
     for (const [palabra, entrada] of Object.entries(entradas)) {
       const filas = entrada.f?.rows ?? [];
+      const presente = esParadigmaEnPresente(filas);
       for (const [etiqueta, forma] of filas) {
         const et = String(etiqueta ?? "").trim().toLowerCase();
         const fo = String(forma ?? "").trim().toLowerCase();
@@ -136,7 +160,7 @@ function revisa(fichero: string, bundle: Bundle): Fallo[] {
           if (et === "tú" || et === "tu") {
             fallos.push({ fichero, historia, palabra, motivo: `persona "tú" en un journey ${variante}; ahí es vos` });
           }
-          if (et.includes("vos") && !esFormaDeVos(fo)) {
+          if (et.includes("vos") && presente && !esFormaDeVos(fo)) {
             fallos.push({ fichero, historia, palabra, motivo: `"${forma}" no es forma de vos; el voseo acentúa la última sílaba (hablás, comés, vivís)` });
           }
         }
