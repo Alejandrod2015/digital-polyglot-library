@@ -90,6 +90,8 @@ const IRREGULARES: Record<string, string[]> = {
   poner: ["pongo", "pones", "pone", "ponemos", "ponéis", "ponen"],
   valer: ["valgo", "vales", "vale", "valemos", "valéis", "valen"],
   oír: ["oigo", "oyes", "oye", "oímos", "oís", "oyen"],
+  dormir: ["duermo", "duermes", "duerme", "dormimos", "dormís", "duermen"],
+  morir: ["muero", "mueres", "muere", "morimos", "morís", "mueren"],
 };
 
 /** Infinitivos que ninguna glosa nombra y que el texto NO deja deducir. La
@@ -139,6 +141,11 @@ function presente(inf: string, variante: string): string[] | null {
     if (inf === "ser") filas[1] = "sos";
     if (inf === "ir") filas[1] = "vas";
     if (inf === "tener") filas[1] = "tenés";
+    // Las de una sola sílaba no llevan tilde: vos das, vos ves. La regla de
+    // arriba daba "dás" y "vés", que son faltas de ortografía servidas en la
+    // tarjeta del diccionario.
+    if (inf === "dar") filas[1] = "das";
+    if (inf === "ver") filas[1] = "ves";
   }
   return filas;
 }
@@ -532,6 +539,28 @@ function deDebil(inf: string, tiempo: Tiempo): string[] | null {
  *  `säßen` es Konjunktiv II y ese tiempo no existe en el generador. */
 const DE_NO_RESOLVER = new Set(["verstanden","säßen","hätten","wären","würden","könnten","müssten"]);
 
+/** El imperativo voseante choca con el preterito: `dormí` es a la vez "sleep!"
+ *  y "yo dormí". El motor no distingue cual, y en el A0 argentino, que narra
+ *  en presente, casi siempre es la orden. Mejor sin bloque que con la fila del
+ *  preterito encendida sobre un imperativo, que es la misma clase de fallo que
+ *  ya tenian `säßen` y `verstanden` en aleman.
+ *
+ *  Se construye con la regla REGULAR (cae la -r, la ultima vocal lleva tilde) y
+ *  solo para formas de dos silabas o mas: `sé` de ser y `vé` de ver son
+ *  monosilabos y ademas `sé` es la primera de saber, asi que negarlas quitaria
+ *  una tabla buena a cambio de nada. */
+function imperativosVoseo(infinitivos: string[]): Set<string> {
+  const fuera = new Set<string>();
+  for (const inf of infinitivos) {
+    if (!/(ar|er|ir)$/.test(inf)) continue;
+    const cuerpo = inf.slice(0, -1);
+    const forma = cuerpo.replace(/([aei])$/, (v) => ({ a: "á", e: "é", i: "í" })[v] ?? v);
+    if ((forma.match(/[aeiouáéíóú]/g) ?? []).length < 2) continue;
+    fuera.add(forma);
+  }
+  return fuera;
+}
+
 /** Separables cuyo prefijo NO esta en la lista de arriba. `um` y `hier` no
  *  pueden ir en la regex: `umarmen` es INSEPARABLE ("ich umarme dich") y
  *  saldria "arme … um", que no es aleman. Se nombran uno a uno. */
@@ -587,6 +616,9 @@ const IDIOMAS: Record<string, { personas: (v: string) => string[]; conjuga: (inf
 function indicePorForma(infinitivos: string[], variante: string, idioma: string) {
   const motor = IDIOMAS[idioma];
   const mapa = new Map<string, { inf: string; i: number; tiempo: Tiempo }>();
+  const voseo = idioma === "spanish" && (variante === "argentina" || variante === "uruguay")
+    ? imperativosVoseo(infinitivos)
+    : new Set<string>();
   for (const { id } of TIEMPOS) {
     for (const inf of infinitivos) {
       const filas = motor.conjuga(inf, id, variante);
@@ -596,6 +628,7 @@ function indicePorForma(infinitivos: string[], variante: string, idioma: string)
         // Formas que el motor no sabe etiquetar: mejor sin bloque que con la
         // fila equivocada encendida. Ver DE_NO_RESOLVER.
         if (idioma === "german" && DE_NO_RESOLVER.has(clave)) return;
+        if (voseo.has(clave)) return;
         if (!mapa.has(clave)) mapa.set(clave, { inf, i, tiempo: id });
       });
       // El infinitivo de un separable no coincide con ninguna fila: `umsteigen`
@@ -753,6 +786,10 @@ async function main() {
       // `traé` es el imperativo voseante de traer, no un preterito: cortando
       // por la `é` sale "traar", y ningun infinitivo espanol junta dos aes.
       if (idioma !== "portuguese" && /a$/.test(raiz)) continue;
+      // Y en voseo eso vale para TODA forma acabada en -é, no solo si la raiz
+      // acaba en a: `corré` es el imperativo de correr, y cortando por la e
+      // salia "corrar" con su tabla entera inventada, `corró` incluido.
+      if (m[2] === "é" && (variante === "argentina" || variante === "uruguay")) continue;
       infinitivos.add(`${raiz}ar`);
     }
   }

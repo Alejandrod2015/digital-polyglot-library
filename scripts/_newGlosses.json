@@ -4458,5 +4458,603 @@
    "g": "the island (l'isola)",
    "t": "noun"
   }
+ },
+ "spanish-friends-argentina-a0": {
+  "peluquera": {
+   "g": "hairdresser (woman)",
+   "t": "noun"
+  },
+  "clienta": {
+   "g": "customer (woman)",
+   "t": "noun"
+  },
+  "clientas": {
+   "g": "customers (women)",
+   "t": "noun"
+  },
+  "electricista": {
+   "g": "electrician",
+   "t": "noun"
+  },
+  "cocinero": {
+   "g": "cook",
+   "t": "noun"
+  },
+  "enfermera": {
+   "g": "nurse",
+   "t": "noun"
+  },
+  "portero": {
+   "g": "building caretaker",
+   "t": "noun"
+  },
+  "remitente": {
+   "g": "sender, the return address on an envelope",
+   "t": "noun"
+  },
+  "villa": {
+   "g": "Villa, first half of the neighbourhood name Villa Crespo",
+   "t": "noun"
+  },
+  "crespo": {
+   "g": "Crespo, second half of the neighbourhood name Villa Crespo",
+   "t": "noun"
+  },
+  "warnes": {
+   "g": "Warnes, a street in Buenos Aires",
+   "t": "noun"
+  },
+  "aráoz": {
+   "g": "Aráoz, a street in Buenos Aires",
+   "t": "noun"
+  },
+  "ferretería": {
+   "g": "hardware shop",
+   "t": "noun"
+  },
+  "rotisería": {
+   "g": "takeaway shop selling hot food",
+   "t": "noun"
+  },
+  "fiambrería": {
+   "g": "deli, cold cuts shop",
+   "t": "noun"
+  },
+  "peluquería": {
+   "g": "hair salon",
+   "t": "noun"
+  },
+  "hospital": {
+   "g": "hospital",
+   "t": "noun"
+  },
+  "ph": {
+   "g": "PH, a Buenos Aires house opening onto a shared passage",
+   "t": "noun"
+  },
+  "chapa": {
+   "g": "sheet metal, the roofing kind",
+   "t": "noun"
+  },
+  "baldosa": {
+   "g": "floor tile",
+   "t": "noun"
+  },
+  "balde": {
+   "g": "bucket",
+   "t": "noun"
+  },
+  "tacho": {
+   "g": "bin, bucket",
+   "t": "noun"
+  },
+  "broches": {
+   "g": "clothes pegs",
+   "t": "noun"
+  },
+  "soga": {
+   "g": "clothes line, rope",
+   "t": "noun"
+  },
+  "percha": {
+   "g": "coat hanger",
+   "t": "noun"
+  },
+  "gotera": {
+   "g": "leak dripping from the ceiling",
+   "t": "noun"
+  },
+  "canilla": {
+   "g": "tap (Arg.)",
+   "t": "noun"
+  },
+  "rejilla": {
+   "g": "floor drain",
+   "t": "noun"
+  },
+  "felpudo": {
+   "g": "doormat",
+   "t": "noun"
+  },
+  "maceta": {
+   "g": "flowerpot",
+   "t": "noun"
+  },
+  "mesada": {
+   "g": "kitchen counter",
+   "t": "noun"
+  },
+  "esponja": {
+   "g": "sponge",
+   "t": "noun"
+  },
+  "lavandina": {
+   "g": "bleach (Arg.)",
+   "t": "noun"
+  },
+  "cable": {
+   "g": "cable, wire",
+   "t": "noun"
+  },
+  "tablero": {
+   "g": "fuse box, electrical panel",
+   "t": "noun"
+  },
+  "fusible": {
+   "g": "fuse",
+   "t": "noun"
+  },
+  "térmica": {
+   "g": "circuit breaker",
+   "t": "noun"
+  },
+  "despertador": {
+   "g": "alarm clock",
+   "t": "noun"
+  },
+  "cajita": {
+   "g": "little box",
+   "t": "noun"
+  },
+  "pinza": {
+   "g": "pliers",
+   "t": "noun"
+  },
+  "tornillo": {
+   "g": "screw",
+   "t": "noun"
+  },
+  "tornillos": {
+   "g": "screws",
+   "t": "noun"
+  },
+  "clavos": {
+   "g": "nails",
+   "t": "noun"
+  },
+  "ranura": {
+   "g": "the slot in the head of a screw",
+   "t": "noun"
+  },
+  "zapatilla": {
+   "g": "trainer, sneaker (Arg.)",
+   "t": "noun"
+  },
+  "balanza": {
+   "g": "scales",
+   "t": "noun"
+  },
+  "cartelito": {
+   "g": "little sign",
+   "t": "noun"
+  },
+  "sellito": {
+   "g": "little stamp",
+   "t": "noun"
+  },
+  "carilla": {
+   "g": "side of a sheet of paper",
+   "t": "noun"
+  },
+  "renglón": {
+   "g": "line on a page",
+   "t": "noun"
+  },
+  "revista": {
+   "g": "magazine",
+   "t": "noun"
+  },
+  "boleta": {
+   "g": "bill, receipt (Arg.)",
+   "t": "noun"
+  },
+  "contrato": {
+   "g": "contract",
+   "t": "noun"
+  },
+  "monto": {
+   "g": "amount, sum",
+   "t": "noun"
+  },
+  "aumento": {
+   "g": "rise, increase",
+   "t": "noun"
+  },
+  "fiado": {
+   "g": "credit at the corner shop, paid later",
+   "t": "noun"
+  },
+  "turnos": {
+   "g": "appointments",
+   "t": "noun"
+  },
+  "moto": {
+   "g": "motorbike",
+   "t": "noun"
+  },
+  "remis": {
+   "g": "a booked car with a driver (Arg.)",
+   "t": "noun"
+  },
+  "champú": {
+   "g": "shampoo",
+   "t": "noun"
+  },
+  "peine": {
+   "g": "comb",
+   "t": "noun"
+  },
+  "cepillo": {
+   "g": "brush",
+   "t": "noun"
+  },
+  "gel": {
+   "g": "hair gel",
+   "t": "noun"
+  },
+  "crema": {
+   "g": "cream",
+   "t": "noun"
+  },
+  "tintura": {
+   "g": "hair dye",
+   "t": "noun"
+  },
+  "mechón": {
+   "g": "lock of hair",
+   "t": "noun"
+  },
+  "pelos": {
+   "g": "hairs",
+   "t": "noun"
+  },
+  "rodete": {
+   "g": "bun, hair gathered at the back",
+   "t": "noun"
+  },
+  "ruleros": {
+   "g": "hair rollers",
+   "t": "noun"
+  },
+  "hebilla": {
+   "g": "hair clip",
+   "t": "noun"
+  },
+  "secador": {
+   "g": "hairdryer",
+   "t": "noun"
+  },
+  "guardapolvo": {
+   "g": "work coat, the overall worn over clothes",
+   "t": "noun"
+  },
+  "ru-bio": {
+   "g": "blond, said one syllable at a time (rubio)",
+   "t": "noun"
+  },
+  "ce-ni-za": {
+   "g": "ash, said one syllable at a time (ceniza)",
+   "t": "noun"
+  },
+  "milanesas": {
+   "g": "breaded cutlets",
+   "t": "noun"
+  },
+  "tiras": {
+   "g": "short ribs, strips of beef",
+   "t": "noun"
+  },
+  "migas": {
+   "g": "crumbs",
+   "t": "noun"
+  },
+  "yerba": {
+   "g": "the leaf that mate is made from",
+   "t": "noun"
+  },
+  "pava": {
+   "g": "kettle for mate",
+   "t": "noun"
+  },
+  "azucarera": {
+   "g": "sugar bowl",
+   "t": "noun"
+  },
+  "caramelos": {
+   "g": "sweets",
+   "t": "noun"
+  },
+  "brasa": {
+   "g": "embers",
+   "t": "noun"
+  },
+  "cebado": {
+   "g": "freshly poured, said of mate",
+   "t": "adjective"
+  },
+  "enero": {
+   "g": "January",
+   "t": "noun"
+  },
+  "ruidito": {
+   "g": "small noise",
+   "t": "noun"
+  },
+  "gastada": {
+   "g": "worn out (f.)",
+   "t": "adjective"
+  },
+  "lisa": {
+   "g": "smooth, bald, said of a tyre",
+   "t": "adjective"
+  },
+  "dibujados": {
+   "g": "drawn, sketched",
+   "t": "adjective"
+  },
+  "levantado": {
+   "g": "pinned up, lifted",
+   "t": "adjective"
+  },
+  "despareja": {
+   "g": "uneven (f.)",
+   "t": "adjective"
+  },
+  "apurada": {
+   "g": "in a hurry (f.)",
+   "t": "adjective"
+  },
+  "eléctrico": {
+   "g": "electric",
+   "t": "adjective"
+  },
+  "despacito": {
+   "g": "slowly, softly",
+   "t": "adverb"
+  },
+  "fijate": {
+   "g": "have a look (vos)",
+   "t": "verb"
+  },
+  "repetímelo": {
+   "g": "say it to me again (vos)",
+   "t": "verb"
+  },
+  "esperame": {
+   "g": "wait for me (vos)",
+   "t": "verb"
+  },
+  "decímelo": {
+   "g": "tell it to me (vos)",
+   "t": "verb"
+  },
+  "alcanzame": {
+   "g": "pass me (vos)",
+   "t": "verb"
+  },
+  "agarrame": {
+   "g": "hold this for me (vos)",
+   "t": "verb"
+  },
+  "perdoname": {
+   "g": "sorry, forgive me (vos)",
+   "t": "verb"
+  },
+  "disculpá": {
+   "g": "sorry, excuse me (vos)",
+   "t": "verb"
+  },
+  "escribime": {
+   "g": "write it down for me (vos)",
+   "t": "verb"
+  },
+  "tocame": {
+   "g": "do my hair, touch up (vos)",
+   "t": "verb"
+  },
+  "prestame": {
+   "g": "lend me (vos)",
+   "t": "verb"
+  },
+  "bancame": {
+   "g": "hang on for me, wait (vos, Arg.)",
+   "t": "verb"
+  },
+  "peiname": {
+   "g": "comb my hair (vos)",
+   "t": "verb"
+  },
+  "agarrá": {
+   "g": "take, grab (vos)",
+   "t": "verb"
+  },
+  "tomá": {
+   "g": "here, take it (vos)",
+   "t": "verb"
+  },
+  "largá": {
+   "g": "out with it, let it go (vos)",
+   "t": "verb"
+  },
+  "corré": {
+   "g": "move it aside (vos)",
+   "t": "verb"
+  },
+  "subí": {
+   "g": "come up (vos)",
+   "t": "verb"
+  },
+  "preguntás": {
+   "g": "you ask (vos)",
+   "t": "verb"
+  },
+  "dormís": {
+   "g": "you sleep (vos)",
+   "t": "verb"
+  },
+  "anotás": {
+   "g": "you write down (vos)",
+   "t": "verb"
+  },
+  "pensás": {
+   "g": "you think (vos)",
+   "t": "verb"
+  },
+  "ayudás": {
+   "g": "you help (vos)",
+   "t": "verb"
+  },
+  "dejás": {
+   "g": "you leave (vos)",
+   "t": "verb"
+  },
+  "escuchás": {
+   "g": "you listen (vos)",
+   "t": "verb"
+  },
+  "aguantás": {
+   "g": "you put up with it (vos)",
+   "t": "verb"
+  },
+  "preferís": {
+   "g": "you prefer (vos)",
+   "t": "verb"
+  },
+  "volvés": {
+   "g": "you come back (vos)",
+   "t": "verb"
+  },
+  "enterás": {
+   "g": "you find out (vos)",
+   "t": "verb"
+  },
+  "enjuaga": {
+   "g": "rinses",
+   "t": "verb"
+  },
+  "enjuago": {
+   "g": "I rinse",
+   "t": "verb"
+  },
+  "peino": {
+   "g": "I comb",
+   "t": "verb"
+  },
+  "aprieto": {
+   "g": "I tighten",
+   "t": "verb"
+  },
+  "acomodo": {
+   "g": "I sort out, I fit in",
+   "t": "verb"
+  },
+  "anoto": {
+   "g": "I write down",
+   "t": "verb"
+  },
+  "repito": {
+   "g": "I repeat",
+   "t": "verb"
+  },
+  "pido": {
+   "g": "I ask for",
+   "t": "verb"
+  },
+  "leo": {
+   "g": "I read",
+   "t": "verb"
+  },
+  "termino": {
+   "g": "I finish",
+   "t": "verb"
+  },
+  "pago": {
+   "g": "I pay",
+   "t": "verb"
+  },
+  "despierto": {
+   "g": "I wake you",
+   "t": "verb"
+  },
+  "nombra": {
+   "g": "names, mentions",
+   "t": "verb"
+  },
+  "anuncia": {
+   "g": "announces",
+   "t": "verb"
+  },
+  "protesta": {
+   "g": "complains",
+   "t": "verb"
+  },
+  "tacha": {
+   "g": "crosses out",
+   "t": "verb"
+  },
+  "cruje": {
+   "g": "creaks",
+   "t": "verb"
+  },
+  "zumba": {
+   "g": "buzzes",
+   "t": "verb"
+  },
+  "alcanzan": {
+   "g": "are enough",
+   "t": "verb"
+  },
+  "atienden": {
+   "g": "they see you, they serve you",
+   "t": "verb"
+  },
+  "llame": {
+   "g": "calls (subjunctive)",
+   "t": "verb"
+  },
+  "vuelvas": {
+   "g": "you come back (subjunctive)",
+   "t": "verb"
+  },
+  "lavar": {
+   "g": "to wash",
+   "t": "verb"
+  },
+  "mirarlo": {
+   "g": "to look at him",
+   "t": "verb"
+  },
+  "pedirme": {
+   "g": "to ask me",
+   "t": "verb"
+  },
+  "ayudarte": {
+   "g": "to help you",
+   "t": "verb"
+  },
+  "disculpa": {
+   "g": "apologises",
+   "t": "verb"
+  }
  }
 }
