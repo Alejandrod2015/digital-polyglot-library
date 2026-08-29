@@ -1,0 +1,55 @@
+{%- comment -%}
+  Bloque de la beta para la notificacion "Order confirmation" de Shopify.
+
+  Se pega A MANO en Settings > Notifications > Customer notifications >
+  Order confirmation, JUSTO ANTES de <table class="row footer"> (linea 3792
+  el 2026-08-28, despues del ultimo <table class="row section"> y de su
+  </table> de cierre). No hay forma de versionarlo: Shopify no expone las
+  plantillas de notificacion por API con el token que tenemos.
+
+  El enlace lleva las utm que lee src/lib/betaSource.ts. Sin ellas el alta
+  entra como "directo" y el correo de pedido no se puede medir, que es
+  exactamente lo que pasaba hasta hoy.
+
+  utm_content sale del primer articulo del pedido, para saber QUE libro trae
+  testers. Si el pedido viene raro y el titulo sale vacio, el parametro no se
+  pinta y la URL sigue siendo valida.
+{%- endcomment -%}
+
+{%- assign dp_item = line_items | first -%}
+{%- assign dp_slug = dp_item.title | handleize -%}
+{%- capture dp_beta_url -%}
+https://www.digitalpolyglot.com/beta?utm_source=shop&utm_medium=order_confirmation&utm_campaign=beta_2026q3{% if dp_slug != blank %}&utm_content={{ dp_slug }}{% endif %}
+{%- endcapture -%}
+
+<table class="row section">
+  <tr>
+    <td class="section__cell">
+      <center>
+        <table class="container">
+          <tr>
+            <td>
+              <table style="width:100%;border-collapse:separate;border-spacing:0;border:1px solid #e5e5e5;border-radius:6px;">
+                <tr>
+                  <td style="padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#545454;">
+                    <h3 style="margin:0 0 8px;font-size:18px;line-height:1.3;color:#333333;">Try the app before anyone else</h3>
+                    <p style="margin:0 0 18px;font-size:15px;line-height:1.5;">
+                      The same authentic language you get in print, now on your phone: short stories set in real places, read aloud, with the words locals actually use one tap away. We are running a private beta on iPhone and Android, and customers get first pick of the spots.
+                    </p>
+                    <a href="{{ dp_beta_url }}"
+                       style="display:inline-block;padding:12px 22px;background-color:{{ shop.email_accent_color | default: '#1a1a1a' }};color:#ffffff;font-size:15px;font-weight:600;text-decoration:none;border-radius:4px;">
+                      Apply for the beta
+                    </a>
+                    <p style="margin:16px 0 0;font-size:13px;line-height:1.5;color:#777777;">
+                      It takes two minutes. We read every application and reply either way.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </center>
+    </td>
+  </tr>
+</table>

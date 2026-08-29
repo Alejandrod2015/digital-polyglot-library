@@ -197,7 +197,7 @@ export const EXPECTED_BETA_SOURCES: Array<{ key: string; label: string; group: B
     key: "shop:order_confirmation",
     label: "Tienda: email de pedido",
     group: "shop",
-    hint: "notifications/order-confirmation-beta-block.html, pegado a mano",
+    hint: "shopify/notifications/order-confirmation-beta-block.html, pegado a mano",
   },
   {
     key: "email:newsletter",
