@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { trackGa4Event } from "@/lib/ga4";
+import { trackMetaLead } from "@/lib/metaPixel";
 // La lista vive en un módulo compartido: el portón de temas necesita saber
 // cuáles de estas respuestas son un clic y no una frase escrita.
 import { BETA_MOTIVATIONS } from "@/lib/betaMotivations";
@@ -517,6 +518,17 @@ export default function BetaSignupForm() {
         target_language: targetLanguage,
         native_language: nativeLanguage,
       });
+      // Meta optimiza sobre este evento, así que una re-solicitud de alguien
+      // que ya está en la lista NO cuenta: repetiría a la misma persona como
+      // conversión nueva y enseñaría al algoritmo a buscar más de lo mismo.
+      // GA4 sí las guarda las dos, con la bandera `duplicate`.
+      if (data.duplicate !== true) {
+        trackMetaLead({
+          content_name: "beta_apply",
+          target_language: targetLanguage,
+          native_language: nativeLanguage,
+        });
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Network error. Please try again.");
     } finally {

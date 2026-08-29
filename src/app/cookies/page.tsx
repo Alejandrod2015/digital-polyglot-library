@@ -30,6 +30,7 @@ export default function CookiePolicyPage() {
           <li><span className="font-medium">Strictly necessary cookies</span> for authentication, security, and core app functionality.</li>
           <li><span className="font-medium">Preference storage</span> for settings such as theme and reading state on your device.</li>
           <li><span className="font-medium">Analytics cookies</span> only if you consent, to understand usage and improve the product.</li>
+          <li><span className="font-medium">Advertising cookies</span> only if you consent, to measure which of our ads bring people to the app.</li>
         </ul>
       </section>
 
@@ -39,14 +40,15 @@ export default function CookiePolicyPage() {
           <li>Clerk for authentication and session management.</li>
           <li>Stripe for checkout and billing-related session handling.</li>
           <li>Google Analytics 4 for analytics, only where consent has been given.</li>
+          <li>Meta (Facebook) for advertising measurement, only where consent has been given.</li>
         </ul>
       </section>
 
       <section className="mt-8">
         <h2 className="text-xl font-semibold">3) Managing consent</h2>
         <p className="mt-3 text-[15px] leading-7">
-          On first visit, we ask whether you want to allow analytics cookies. If you reject them,
-          analytics scripts are not loaded. Essential cookies remain active because they are needed
+          On first visit, we ask whether you want to allow analytics and advertising cookies. If
+          you reject them, neither the analytics nor the advertising scripts are loaded. Essential cookies remain active because they are needed
           to provide the service securely.
         </p>
       </section>

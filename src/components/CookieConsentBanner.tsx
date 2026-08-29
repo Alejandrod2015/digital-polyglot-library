@@ -50,8 +50,9 @@ export default function CookieConsentBanner({
             Cookie choices
           </p>
           <p className="mt-2 text-sm leading-6 text-blue-50/92">
-            We use essential cookies to run the app. We would also like to use analytics cookies
-            to understand usage and improve the product. You can accept or reject analytics now.
+            We use essential cookies to run the app. We would also like to use analytics and
+            advertising cookies to understand usage, measure our ads and improve the product. You
+            can accept or reject them now.
           </p>
           <p className="mt-2 text-xs leading-5 text-blue-100/65">
             Read our <Link href="/privacy" className="text-white underline underline-offset-2">Privacy Policy</Link> and{" "}
@@ -67,7 +68,7 @@ export default function CookieConsentBanner({
             }}
             className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10"
           >
-            Reject analytics
+            Reject
           </button>
           <button
             type="button"
@@ -77,7 +78,7 @@ export default function CookieConsentBanner({
             }}
             className="rounded-full bg-[#2563eb] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1d4ed8]"
           >
-            Accept analytics
+            Accept
           </button>
         </div>
       </div>

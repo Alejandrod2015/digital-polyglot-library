@@ -11,6 +11,7 @@ import FeedbackButton from "@/components/FeedbackButton";
 import NavigationTimingTracker from "@/components/NavigationTimingTracker";
 import ThemeController from "@/components/ThemeController";
 import GA4Tracker from "@/components/GA4Tracker";
+import MetaPixel from "@/components/MetaPixel";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import ServiceWorkerBootstrap from "@/components/ServiceWorkerBootstrap";
 import { OfflineIndicator } from "@/components/OfflineIndicator";
@@ -71,6 +72,9 @@ export default function AppShell({
         <Suspense fallback={null}>
           <GA4Tracker requiresConsentOptIn={requiresConsentOptIn} />
         </Suspense>
+        <Suspense fallback={null}>
+          <MetaPixel requiresConsentOptIn={requiresConsentOptIn} />
+        </Suspense>
         <CookieConsentBanner requiresConsentOptIn={requiresConsentOptIn} />
       </>
     );
@@ -111,6 +115,9 @@ export default function AppShell({
 
       <Suspense fallback={null}>
         <GA4Tracker requiresConsentOptIn={requiresConsentOptIn} />
+      </Suspense>
+      <Suspense fallback={null}>
+        <MetaPixel requiresConsentOptIn={requiresConsentOptIn} />
       </Suspense>
       <Suspense fallback={null}>
         <NavigationTimingTracker />
