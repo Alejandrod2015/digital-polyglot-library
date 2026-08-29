@@ -69,6 +69,11 @@ export type RetentionCell = {
   pct: number;
   /** El tramo aún no ha terminado para todos los miembros de la cohorte. */
   partial: boolean;
+  /**
+   * Quiénes componen el porcentaje. Sin esto una celda al 33% obliga a
+   * cruzar la tabla con la lista de altas a mano para saber de quién habla.
+   */
+  retainedIds: string[];
 };
 
 export type RetentionCohort = {
@@ -77,6 +82,8 @@ export type RetentionCohort = {
   users: number;
   /** Una celda por tramo desde el alta; el índice 0 es el tramo del alta. */
   cells: RetentionCell[];
+  /** Todos los de la cohorte, para poder nombrar también a quien no volvió. */
+  userIds: string[];
 };
 
 export type RetentionMilestone = {
@@ -193,16 +200,17 @@ export function buildRetention({
     .map(([startDay, userIds]) => ({
       start: isoDate(startDay),
       users: userIds.length,
+      userIds: [...userIds],
       cells: Array.from({ length: columns }, (_, n) => {
         const from = n * width;
         const to = from + width;
-        let retained = 0;
+        const retainedIds: string[] = [];
         for (const userId of userIds) {
           const offsets = offsetsOf.get(userId);
           if (!offsets) continue;
           for (const offset of offsets) {
             if (offset >= from && offset < to) {
-              retained += 1;
+              retainedIds.push(userId);
               break;
             }
           }
@@ -210,7 +218,12 @@ export function buildRetention({
         // El último en darse de alta en ese tramo lo hizo, como muy tarde, el
         // último día del tramo. Su tramo n se cierra width*(n+1) días después.
         const closesOn = startDay + (width - 1) + width * (n + 1);
-        return { retained, pct: pctOf(retained, userIds.length), partial: nowDay < closesOn };
+        return {
+          retained: retainedIds.length,
+          pct: pctOf(retainedIds.length, userIds.length),
+          partial: nowDay < closesOn,
+          retainedIds,
+        };
       }),
     }));
 

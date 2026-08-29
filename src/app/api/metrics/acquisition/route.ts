@@ -500,11 +500,38 @@ export async function GET(req: NextRequest): Promise<Response> {
       bucketDays: 1,
     });
 
+    // Quien es quien en la tabla de retencion. Las celdas viajan con ids, y
+    // sin este diccionario un 33% no se puede leer como "volvio Fulano": la
+    // lista de "Altas recientes" se corta en 50 y la cohorte puede ser mayor.
+    const retentionUsers: Record<
+      string,
+      {
+        name: string | null;
+        email: string | null;
+        /** Suma del punto más lejano alcanzado en cada historia, en la ventana entera. */
+        listenedSeconds: number;
+        listenedApprox: boolean;
+        listenedStories: number;
+        completedStory: boolean;
+      }
+    > = {};
+    for (const r of recent) {
+      retentionUsers[r.userId] = {
+        name: r.name,
+        email: r.email,
+        listenedSeconds: r.listenedSeconds,
+        listenedApprox: r.listenedApprox,
+        listenedStories: r.listenedStories,
+        completedStory: r.completedStory,
+      };
+    }
+
     const payload = {
       source: "clerk" as const,
       windowDays: days,
       retention,
       retentionDaily,
+      retentionUsers,
       signups: {
         totalAllTime: totalExternal,
         last7d: signupsLast7d,

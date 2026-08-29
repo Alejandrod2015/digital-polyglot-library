@@ -887,6 +887,8 @@ type RetentionCellPayload = {
   pct: number;
   /** El tramo no ha terminado para todos: solo puede subir. */
   partial: boolean;
+  /** Quiénes cuentan en ese porcentaje. Falta en respuestas cacheadas viejas. */
+  retainedIds?: string[];
 };
 
 type RetentionPayload = {
@@ -897,6 +899,8 @@ type RetentionPayload = {
     start: string;
     users: number;
     cells: RetentionCellPayload[];
+    /** Toda la cohorte, para nombrar también a quien no volvió. */
+    userIds?: string[];
   }>;
   omittedCohorts: number;
   overall: {
@@ -913,6 +917,16 @@ type RetentionPayload = {
   };
 };
 
+type RetentionUserPayload = {
+  name: string | null;
+  email: string | null;
+  /** Suma del punto más lejano alcanzado en cada historia, en toda la ventana. */
+  listenedSeconds: number;
+  listenedApprox: boolean;
+  listenedStories: number;
+  completedStory: boolean;
+};
+
 type AcquisitionPayload = {
   source: string;
   windowDays: number;
@@ -920,6 +934,8 @@ type AcquisitionPayload = {
   retention?: RetentionPayload;
   /** La misma retención agrupada por día de alta. */
   retentionDaily?: RetentionPayload;
+  /** Quién es cada id de la retención y cuánto lleva alcanzado. */
+  retentionUsers?: Record<string, RetentionUserPayload>;
   signups: {
     totalAllTime: number;
     last7d: number;
@@ -1096,6 +1112,118 @@ function FunnelBar({
 }
 
 /**
+ * Contenido de la tarjeta que sale al pasar el cursor por una celda de la
+ * tabla de retención. Se guarda ya resuelta a nombres para que el render de
+ * la tarjeta no vuelva a tocar el diccionario de usuarios.
+ */
+type HoverCard = {
+  x: number;
+  y: number;
+  title: string;
+  headline: string;
+  /** Lo alcanzado por la gente de la celda, ya sumado. */
+  listened: string | null;
+  note?: string;
+  returned: HoverPerson[];
+  missing: HoverPerson[];
+};
+
+/** Una persona dentro de la tarjeta: cómo se llama y cuánto lleva alcanzado. */
+type HoverPerson = {
+  id: string;
+  label: string;
+  listened: string | null;
+  approx: boolean;
+  completed: boolean;
+};
+
+/** Cuántos nombres caben en la tarjeta antes de que estorbe más que ayuda. */
+const HOVER_NAME_LIMIT = 5;
+
+/**
+ * Una persona de la tarjeta. Quien entró con código por correo o con Apple
+ * escondiendo el nombre no deja ninguno en Clerk, así que el correo es el
+ * segundo mejor identificador y el id, el último recurso. El tiempo es el de
+ * la ventana entera, no el del tramo: la instrumentación guarda hasta dónde
+ * llegó cada quien en cada historia, no cuánto avanzó cada día.
+ */
+function retentionPerson(
+  userId: string,
+  users?: Record<string, RetentionUserPayload>,
+): HoverPerson {
+  const u = users?.[userId];
+  const label = u?.name || u?.email || userId.slice(-8);
+  const seconds = u?.listenedSeconds ?? 0;
+  return {
+    id: userId,
+    label,
+    listened: seconds > 0 ? formatListened(seconds) : null,
+    approx: Boolean(u?.listenedApprox),
+    completed: Boolean(u?.completedStory),
+  };
+}
+
+function HoverNameList({ label, people }: { label: string; people: HoverPerson[] }) {
+  if (people.length === 0) return null;
+  // Delante van los que más han alcanzado: en una lista recortada, quien
+  // escucha es la información y quien no aparece llega igual en el recuento.
+  const sorted = [...people].sort(
+    (a, b) => (b.listened ? 1 : 0) - (a.listened ? 1 : 0) || a.label.localeCompare(b.label),
+  );
+  const shown = sorted.slice(0, HOVER_NAME_LIMIT);
+  return (
+    <div style={{ marginTop: 6 }}>
+      <div style={{ fontSize: 10, letterSpacing: "0.05em", textTransform: "uppercase", opacity: 0.55 }}>
+        {label} ({people.length})
+      </div>
+      <ul style={{ margin: "3px 0 0", padding: 0, listStyle: "none" }}>
+        {shown.map((p) => (
+          <li
+            key={p.id}
+            style={{ display: "flex", gap: 8, fontSize: 11.5, lineHeight: 1.5, alignItems: "baseline" }}
+          >
+            <span style={{ flex: 1, minWidth: 0, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+              {p.completed ? <span style={{ color: "#5ad19a" }}>✓ </span> : null}
+              {p.label}
+            </span>
+            <span style={{ opacity: p.listened ? 0.8 : 0.4, whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums" }}>
+              {p.listened ? `${p.listened}${p.approx ? "*" : ""}` : "sin audio"}
+            </span>
+          </li>
+        ))}
+        {people.length > shown.length ? (
+          <li style={{ fontSize: 11.5, opacity: 0.6 }}>y {people.length - shown.length} más</li>
+        ) : null}
+      </ul>
+    </div>
+  );
+}
+
+/**
+ * Lo alcanzado por un grupo de la tarjeta: la suma, y cuánta de esa gente no
+ * tiene ni un segundo medido. Sin la segunda mitad, un total alto esconde que
+ * lo puso una sola persona.
+ */
+function summariseListened(
+  people: HoverPerson[],
+  users?: Record<string, RetentionUserPayload>,
+): string | null {
+  if (people.length === 0) return null;
+  let seconds = 0;
+  let withAudio = 0;
+  let approx = false;
+  for (const p of people) {
+    const u = users?.[p.id];
+    const s = u?.listenedSeconds ?? 0;
+    if (s > 0) withAudio += 1;
+    seconds += s;
+    if (u?.listenedApprox) approx = true;
+  }
+  if (seconds <= 0) return "nadie con audio medido";
+  return `${formatListened(seconds)}${approx ? "*" : ""} entre ${withAudio} de ${people.length}`;
+}
+
+/**
  * Tabla de retención por cohorte de alta.
  *
  * Cada fila es un tramo de altas (una semana, o un día si se pide grano fino)
@@ -1111,13 +1239,22 @@ function FunnelBar({
 function RetentionPanel({
   retention,
   retentionDaily,
+  users,
   days,
 }: {
   retention: RetentionPayload;
   retentionDaily?: RetentionPayload;
+  users?: Record<string, RetentionUserPayload>;
   days: number;
 }) {
   const [grain, setGrain] = useState<"weekly" | "daily">("weekly");
+  /**
+   * Celda sobre la que está el cursor. La tabla es un damero de porcentajes
+   * sobre cohortes de dos o tres personas, así que la pregunta que sigue a
+   * cualquier celda es siempre la misma: quién. La tarjeta la responde con
+   * nombres en vez de obligar a cruzarla con la lista de altas.
+   */
+  const [hover, setHover] = useState<HoverCard | null>(null);
   const active = grain === "daily" && retentionDaily ? retentionDaily : retention;
   const { cohorts, buckets, overall, omittedCohorts } = active;
   const isDaily = active.bucketDays === 1;
@@ -1168,6 +1305,82 @@ function RetentionPanel({
       pct: base > 0 ? Math.round((retained / base) * 1000) / 10 : null,
     };
   });
+
+  const personOf = (id: string) => retentionPerson(id, users);
+  const columnLabel = (n: number) => (n === 0 ? (isDaily ? "Día 0" : "Sem 0") : `+${n}`);
+
+  /**
+   * Fecha de calendario de la columna. Solo se puede dar en diario: en semanal
+   * la cohorte reúne siete días de altas y cada persona corre su propio reloj,
+   * así que la columna no cae en un día común a todos.
+   */
+  const columnDate = (start: string, n: number): string | null => {
+    if (!isDaily) return null;
+    const base = Date.parse(`${start}T00:00:00Z`);
+    if (Number.isNaN(base)) return null;
+    return new Date(base + n * 86400000).toISOString().slice(0, 10);
+  };
+
+  const positionOf = (e: React.MouseEvent) => ({ x: e.clientX, y: e.clientY });
+
+  const cohortCard = (
+    e: React.MouseEvent,
+    c: RetentionPayload["cohorts"][number],
+    cell: RetentionCellPayload,
+    n: number,
+  ): HoverCard => {
+    const on = columnDate(c.start, n);
+    const retainedIds = cell.retainedIds;
+    const missingIds = retainedIds
+      ? (c.userIds ?? []).filter((id) => !retainedIds.includes(id))
+      : [];
+    const returned = (retainedIds ?? []).map(personOf);
+    return {
+      ...positionOf(e),
+      title: `Alta ${c.start} · ${columnLabel(n)}${on ? ` (${on})` : ""}`,
+      headline: `${cell.retained} de ${c.users} · ${cell.pct}%`,
+      listened: summariseListened(returned, users),
+      note: !retainedIds
+        ? "Esta respuesta viene de antes de que las celdas trajeran nombres; recarga la página."
+        : cell.partial
+          ? "Tramo abierto: aún no ha terminado para toda la cohorte, así que solo puede subir."
+          : undefined,
+      returned,
+      missing: missingIds.map(personOf),
+    };
+  };
+
+  /**
+   * La fila del promedio junta a la gente de todas las cohortes que ya
+   * cerraron ese tramo, que es exactamente la base con la que se calcula.
+   */
+  const averageCard = (e: React.MouseEvent, n: number): HoverCard => {
+    const closed = cohorts.filter((c) => c.cells[n] && !c.cells[n].partial);
+    const returned: HoverPerson[] = [];
+    const missing: HoverPerson[] = [];
+    for (const c of closed) {
+      const ids = c.cells[n].retainedIds;
+      if (!ids) continue;
+      for (const id of c.userIds ?? []) {
+        (ids.includes(id) ? returned : missing).push(personOf(id));
+      }
+    }
+    const avg = averages[n];
+    return {
+      ...positionOf(e),
+      title: `Promedio · ${columnLabel(n)}`,
+      listened: summariseListened(returned, users),
+      headline:
+        avg.pct === null
+          ? "Ninguna cohorte ha cerrado este tramo todavía"
+          : `${avg.retained} de ${avg.base} · ${avg.pct}% · ${avg.closed} ${
+              avg.closed === 1 ? "cohorte cerrada" : "cohortes cerradas"
+            }`,
+      note: "Media ponderada por personas, no por cohortes; los tramos abiertos quedan fuera.",
+      returned,
+      missing,
+    };
+  };
 
   return (
     <div className="mx-panel" style={{ marginBottom: 12 }}>
@@ -1270,8 +1483,10 @@ function RetentionPanel({
                   {c.cells.map((cell, n) => (
                     <td
                       key={n}
-                      style={cellStyle(cell)}
-                      title={`${cell.retained} de ${c.users}${cell.partial ? " (tramo abierto)" : ""}`}
+                      style={{ ...cellStyle(cell), cursor: "default" }}
+                      onMouseEnter={(e) => setHover(cohortCard(e, c, cell, n))}
+                      onMouseMove={(e) => setHover(cohortCard(e, c, cell, n))}
+                      onMouseLeave={() => setHover(null)}
                     >
                       {cell.pct}%
                       {cell.partial ? "\u00b7" : ""}
@@ -1313,14 +1528,11 @@ function RetentionPanel({
                       padding: "7px 6px 5px",
                       borderTop: "1px solid var(--mx-border, rgba(255,255,255,0.14))",
                       opacity: avg.pct === null ? 0.4 : 1,
+                      cursor: "default",
                     }}
-                    title={
-                      avg.pct === null
-                        ? "Ninguna cohorte ha cerrado este tramo todavía"
-                        : `${avg.retained} de ${avg.base}, en ${avg.closed} ${
-                            avg.closed === 1 ? "cohorte cerrada" : "cohortes cerradas"
-                          }`
-                    }
+                    onMouseEnter={(e) => setHover(averageCard(e, n))}
+                    onMouseMove={(e) => setHover(averageCard(e, n))}
+                    onMouseLeave={() => setHover(null)}
                   >
                     {avg.pct === null ? "s/d" : `${avg.pct}%`}
                   </td>
@@ -1359,8 +1571,55 @@ function RetentionPanel({
         ha cumplido todavía ese día.
         {omittedCohorts > 0
           ? ` Quedan ${omittedCohorts} tramos más antiguos fuera de la tabla.`
-          : ""}
+          : ""}{" "}
+        Al pasar el cursor por un porcentaje sale quién lo compone.
       </p>
+
+      {hover ? (
+        <div
+          style={{
+            position: "fixed",
+            // Se pega al cursor, pero sin salirse por el borde derecho ni por
+            // abajo: la tabla llega hasta el final del panel y la tarjeta de
+            // una cohorte grande mide bastante.
+            left: Math.min(hover.x + 16, Math.max(8, window.innerWidth - 320)),
+            top: Math.min(hover.y + 16, Math.max(8, window.innerHeight - 410)),
+            zIndex: 60,
+            width: 320,
+            // Alto de la peor tarjeta posible: cabecera, tiempo, nota, las dos
+            // listas llenas hasta el tope y el pie. Así nada queda cortado.
+            maxHeight: 400,
+            overflow: "hidden",
+            pointerEvents: "none",
+            padding: "9px 11px",
+            borderRadius: 8,
+            fontSize: 12,
+            lineHeight: 1.45,
+            color: "var(--mx-text, #e2e8f0)",
+            background: "var(--mx-panel, #0f172a)",
+            border: "1px solid var(--mx-border, rgba(255,255,255,0.16))",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.45)",
+          }}
+        >
+          <div style={{ opacity: 0.6, fontSize: 11 }}>{hover.title}</div>
+          <div style={{ fontWeight: 600, marginTop: 2 }}>{hover.headline}</div>
+          {hover.listened ? (
+            <div style={{ marginTop: 3, fontSize: 11.5, opacity: 0.85 }}>
+              Alcanzado: {hover.listened}
+            </div>
+          ) : null}
+          {hover.note ? (
+            <div style={{ marginTop: 4, fontSize: 11, opacity: 0.6 }}>{hover.note}</div>
+          ) : null}
+          <HoverNameList label="Dieron señal" people={hover.returned} />
+          <HoverNameList label="No dieron señal" people={hover.missing} />
+          <div style={{ marginTop: 7, fontSize: 10.5, opacity: 0.5, lineHeight: 1.4 }}>
+            El tiempo es de la ventana entera, no de este tramo: es la suma del punto
+            más lejano alcanzado en cada historia, y el asterisco marca que el
+            progreso se graba a saltos de ~20s.
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -1463,6 +1722,7 @@ function AcquisitionView({
         <RetentionPanel
           retention={acq.retention}
           retentionDaily={acq.retentionDaily}
+          users={acq.retentionUsers}
           days={days}
         />
       )}
