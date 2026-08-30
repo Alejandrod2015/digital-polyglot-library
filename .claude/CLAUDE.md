@@ -291,6 +291,33 @@ that ALWAYS runs before any Bash command. It does two things:
    cinco personas al otro lado. **Nunca uses jerga para describir una acción
    irreversible hacia fuera: di "escribir a 5 personas", no "triar".**
 
+6g. **Gate de veracidad de lo que se anuncia (BLOQUEANTE, 2026-08-30).**
+   El 6f comprueba la AUTORIZACIÓN; este comprueba que lo anunciado sea
+   CIERTO. Ningún correo que anuncie algo sale hasta responder, superficie por
+   superficie, si eso se ve: **web, iOS y Android**, las tres, porque el botón
+   `/go/app` lleva a TestFlight o a Play en un móvil y al lector web en
+   escritorio. La respuesta vive en `.claude/safety/comms-claim-check.json`
+   (gitignored, caduca en una hora) y el hook
+   `.claude/safety/pre-comms-claim-guard.sh` BLOQUEA el envío si falta, si
+   caducó, si alguna superficie va sin prueba pegada, si alguna dice
+   `live: false`, o si hay cambios sin commitear o commits sin subir. La
+   prueba de iOS y de Android es la versión **de la tienda**, nunca la que
+   tengas instalada a mano: una build local no la ve nadie más. Previsualizar
+   y `--dry` pasan sin gate. Sin variable de escape.
+
+   Cuando una superficie sale en rojo hay dos salidas y ninguna es enviar
+   igual: se arregla la superficie, o se reescribe el correo para no prometer
+   lo que ahí no está.
+
+   WHY: el 28/08 salieron 12 correos "We heard your feedback" anunciando la
+   capa de contexto de las glosas. Se veía en web y en ninguna de las dos
+   apps, porque el lector de RN declaraba la glosa sin el campo `c` y tiraba
+   el trozo que la API le mandaba. A la pregunta "¿antes de mandar correos hay
+   que hacer push?" respondí "no hace falta", que era cierto sobre los assets
+   del correo y dejaba fuera lo único que importaba: que lo anunciado no
+   existía donde el correo mandaba a la gente. Autorizado no es cierto, y
+   "está subido" no es "se ve".
+
 7. **Approved-voices gate (BLOCKING — no bypass)**. Production audio
    (story narration, practice clips, word audio) may ONLY be rendered
    with an ElevenLabs voiceId on the allowlist `src/lib/approvedVoices.ts`.

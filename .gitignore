@@ -110,3 +110,4 @@ apps/mobile/.expo/
 
 # Credenciales de firma locales de iOS (llevan la clave del .p12).
 apps/mobile/credentials.json
+.claude/safety/comms-claim-check.json
