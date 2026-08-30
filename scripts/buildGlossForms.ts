@@ -77,6 +77,7 @@ const IRREGULARES: Record<string, string[]> = {
   pedir: ["pido", "pides", "pide", "pedimos", "pedís", "piden"],
   empezar: ["empiezo", "empiezas", "empieza", "empezamos", "empezáis", "empiezan"],
   probar: ["pruebo", "pruebas", "prueba", "probamos", "probáis", "prueban"],
+  perder:  ["pierdo", "pierdes", "pierde", "perdemos", "perdéis", "pierden"],
   volver: ["vuelvo", "vuelves", "vuelve", "volvemos", "volvéis", "vuelven"],
   seguir: ["sigo", "sigues", "sigue", "seguimos", "seguís", "siguen"],
   oler: ["huelo", "hueles", "huele", "olemos", "oléis", "huelen"],
