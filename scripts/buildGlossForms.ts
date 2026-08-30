@@ -487,6 +487,8 @@ const DE_IRR: Record<string, { presente: string[]; "pretérito": string[] }> = {
   sprechen:{ presente: ["spreche","sprichst","spricht","sprechen","sprecht","sprechen"], "pretérito": ["sprach","sprachst","sprach","sprachen","spracht","sprachen"] },
   lassen:  { presente: ["lasse","lässt","lässt","lassen","lasst","lassen"], "pretérito": ["ließ","ließt","ließ","ließen","ließt","ließen"] },
   halten:  { presente: ["halte","hältst","hält","halten","haltet","halten"], "pretérito": ["hielt","hieltest","hielt","hielten","hieltet","hielten"] },
+  helfen:  { presente: ["helfe","hilfst","hilft","helfen","helft","helfen"], "pretérito": ["half","halfst","half","halfen","halft","halfen"] },
+  treffen: { presente: ["treffe","triffst","trifft","treffen","trefft","treffen"], "pretérito": ["traf","trafst","traf","trafen","traft","trafen"] },
   tragen:  { presente: ["trage","trägst","trägt","tragen","tragt","tragen"], "pretérito": ["trug","trugst","trug","trugen","trugt","trugen"] },
   fahren:  { presente: ["fahre","fährst","fährt","fahren","fahrt","fahren"], "pretérito": ["fuhr","fuhrst","fuhr","fuhren","fuhrt","fuhren"] },
   laufen:  { presente: ["laufe","läufst","läuft","laufen","lauft","laufen"], "pretérito": ["lief","liefst","lief","liefen","lieft","liefen"] },
@@ -567,15 +569,45 @@ function imperativosVoseo(infinitivos: string[]): Set<string> {
 const DE_SEPARABLES_EXTRA: Record<string, string> = {
   umsteigen: "um", umziehen: "um", umdrehen: "um", umfallen: "um", umkehren: "um",
   hierbleiben: "hier", hierlassen: "hier",
+  // `fest` y `da` no pueden ir en la regex: se comerian `festigen`, `danken`,
+  // `dauern`. Se nombran, igual que los `um-`.
+  festhalten: "fest", festmachen: "fest", feststehen: "fest", festbinden: "fest",
+  dableiben: "da", dalassen: "da", dastehen: "da",
 };
 
+/** Verbo INSEPARABLE cuya base cambia de vocal: la fila de du y la de er son
+ *  las que se ven mal. `er` y `ver` no hacen falta aqui (los coge la regla
+ *  general); estos llevan un prefijo que en OTROS verbos si se suelta, asi que
+ *  se nombran uno a uno en vez de adivinar. */
+const DE_INSEPARABLES_FUERTES: Record<string, string> = {
+  übertreffen: "über", übernehmen: "über", überfahren: "über",
+  widersprechen: "wider", unterhalten: "unter", unternehmen: "unter",
+  durchschlafen: "durch",
+};
+
+/** Prefijos inseparables que NUNCA se sueltan: la conjugacion es la de la base
+ *  con el prefijo pegado delante, cambio de vocal incluido. Sin esto `ertragen`
+ *  salia "ertragst" en vez de "erträgst". */
+const DE_INSEPARABLES = /^(be|ge|er|ver|zer|ent|emp|miss)(?=[a-zäöüß]{3,})/;
+
 /** Prefijos que se sueltan. La fila se escribe "stehe … auf" para que se vea. */
-const DE_SEPARABLES = /^(ab|an|auf|aus|bei|ein|her|hin|los|mit|nach|vor|weg|zu|zurück|zusammen|herum|rein|durch)(?=[a-zäöüß]{3,})/;
+// El orden importa: `herein` va ANTES que `her`, o `hereinkommen` se parte en
+// "her" + "einkommen" y sale "einkomme … her", que no es aleman.
+const DE_SEPARABLES = /^(herein|heraus|herauf|herunter|hervor|hinein|hinaus|hinauf|hinunter|zurück|zusammen|herum|nach|raus|rein|durch|ab|an|auf|aus|bei|ein|her|hin|los|mit|vor|weg|zu)(?=[a-zäöüß]{3,})/;
 
 function deConjuga(inf: string, tiempo: Tiempo): string[] | null {
   if (tiempo === "imperfecto") return null; // el alemán no tiene esa casilla
   if (esParticipio(inf) || DE_NO_ES_INFINITIVO.has(inf)) return null;
   if (DE_IRR[inf]) return [...DE_IRR[inf][tiempo]];
+  // `aufzutreten`, `nachzudenken`: el infinitivo con zu no tiene paradigma
+  // propio, y el prefijo lo partia en "auf" + "zutreten" -> "zutrete … auf".
+  if (/^(?:[a-zäöüß]{2,8})zu[a-zäöüß]{4,}en$/.test(inf) && DE_SEPARABLES.test(inf)) return null;
+  const ins = DE_INSEPARABLES_FUERTES[inf];
+  const insRegex = DE_INSEPARABLES.exec(inf);
+  const prefijoIns = ins ?? (insRegex ? insRegex[1] : null);
+  if (prefijoIns && DE_IRR[inf.slice(prefijoIns.length)]) {
+    return DE_IRR[inf.slice(prefijoIns.length)][tiempo].map((f) => `${prefijoIns}${f}`);
+  }
   const sep = DE_SEPARABLES.exec(inf);
   const extra = DE_SEPARABLES_EXTRA[inf];
   if (sep || extra) {
