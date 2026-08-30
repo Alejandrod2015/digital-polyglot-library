@@ -372,10 +372,15 @@ export default function VocabPanel({
   // La entrada de contexto se busca por la palabra y por su forma en el texto:
   // el vocab curado guarda el lema ("esperar") y la capa va por superficie
   // ("espera"), así que sin las dos claves se pierde la mitad.
+  //
+  // El orden importa y manda la palabra REALMENTE tocada. El trozo describe
+  // una ocurrencia concreta, así que la clave fiel es la del texto; el lema
+  // solo entra cuando la superficie no tiene entrada. Al revés se corre el
+  // riesgo de enseñar otra acepción de la misma grafía.
   const glossEntry: TapGloss | null = (() => {
     const mapa = story.glosses;
     if (!mapa || !selectedWord) return null;
-    const claves = [selectedWord, selectedItem?.surface, selectedItem?.word]
+    const claves = [surfaceWord, selectedItem?.surface, selectedWord, selectedItem?.word]
       .filter((x): x is string => Boolean(x))
       .map((x) => x.trim().toLowerCase());
     for (const clave of claves) {

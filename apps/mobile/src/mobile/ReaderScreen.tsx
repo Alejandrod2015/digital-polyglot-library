@@ -65,7 +65,12 @@ import {
 // por /api/mobile/tap-glosses por slug. `glossTokenFromText` normaliza el
 // texto visible de un token a la key del bundle (minúsculas, sin puntuación),
 // igual que `tokenFromText` en TapGlossLayer (web), para que matcheen.
-type TapGloss = { g: string; t?: string; r?: string };
+/** Lo que devuelve /api/mobile/tap-glosses. `c` es la capa de CONTEXTO: el
+ *  trozo donde la palabra vive de verdad y su ingles. Cuando existe manda el
+ *  trozo: una principiante no entiende "goes down" sobre "baja del tren".
+ *  Estuvo llegando en la respuesta y el lector lo tiraba, asi que la capa
+ *  entera solo se veia en web. */
+type TapGloss = { g: string; t?: string; r?: string; c?: { es: string; en: string } };
 function glossTokenFromText(text: string): string {
   const m = text.toLowerCase().match(/\p{L}+(?:-\p{L}+)*/u);
   return m ? m[0] : "";
@@ -381,7 +386,7 @@ function renderHighlightedParagraph(
   text: string,
   vocab: VocabItem[],
   paragraphKey: string,
-  onWordPress: (word: VocabItem, contextSentence?: string) => void,
+  onWordPress: (word: VocabItem, contextSentence?: string, tapped?: string) => void,
   variant: "paragraph" | "quote" = "paragraph",
   // Set compartido a nivel de historia: cada palabra del vocab se
   // resalta SOLO la primera vez que aparece en todo el texto. Si no
@@ -475,7 +480,7 @@ function renderHighlightedParagraph(
           <View style={styles.karaokeWordContainerVocab}>
             <Text
               style={styles.karaokeWordTextVocabWhite}
-              onPress={vocabItem ? () => onWordPress(vocabItem, text) : undefined}
+              onPress={vocabItem ? () => onWordPress(vocabItem, text, matchedText) : undefined}
             >
               {matchedText}
             </Text>
@@ -492,7 +497,7 @@ function renderHighlightedParagraph(
         <Text
           key={`${paragraphKey}-voc-${key++}`}
           style={baseTextStyle}
-          onPress={() => onWordPress(vocabItem, text)}
+          onPress={() => onWordPress(vocabItem, text, matchedText)}
         >
           {matchedText}
         </Text>
@@ -805,7 +810,7 @@ function renderKaraokeParagraph(args: {
   activeWordIndex: number | null;
   vocabLookup: Map<string, VocabItem>;
   paragraphKey: string;
-  onWordPress: (item: VocabItem, contextSentence?: string) => void;
+  onWordPress: (item: VocabItem, contextSentence?: string, tapped?: string) => void;
   variant: "paragraph" | "quote";
   // Shared across all paragraphs of the story: a vocab word only renders
   // as a pill the first time it shows up. Mirrors the legacy reader's
@@ -959,7 +964,7 @@ function renderKaraokeParagraph(args: {
           bg = "#f8c15c";
           textColor = "#0e1727";
         }
-        if (vocabItem) onPress = () => onWordPress(vocabItem, paragraph.text);
+        if (vocabItem) onPress = () => onWordPress(vocabItem, paragraph.text, w.text);
         else {
           const hit = lookupGloss(glosses, w.text);
           const glossToken = hit?.token ?? "";
@@ -1230,7 +1235,7 @@ function renderKaraokeParagraph(args: {
           key={`${paragraphKey}-w-${i}`}
           style={styles.karaokeWordOuter}
           hitSlop={{ top: 6, bottom: 6, left: 4, right: 4 }}
-          onPress={() => onWordPress(vocabItem, paragraph.text)}
+          onPress={() => onWordPress(vocabItem, paragraph.text, w.text)}
         >
           <View style={containerStyle}>
             <Text style={wordTextStyle}>{w.text}</Text>
@@ -1521,6 +1526,7 @@ export function ReaderScreen(args: {
         register: gloss.r,
         note: contextSentence,
         quickLookup: true,
+        chunk: gloss.c,
       });
       trackReaderEventRef.current?.("vocab_clicked", {
         storySlug: story.slug ?? story.id,
@@ -1812,7 +1818,7 @@ export function ReaderScreen(args: {
   // y el "quick lookup" del piloto tap-any-word (gloss). `quickLookup` marca
   // la segunda para mostrar el chip correcto en la burbuja.
   const [selectedVocab, setSelectedVocab] = useState<
-    (VocabItem & { quickLookup?: boolean }) | null
+    (VocabItem & { quickLookup?: boolean; chunk?: { es: string; en: string } }) | null
   >(null);
 
   const [endOfStoryPromptVisible, setEndOfStoryPromptVisible] = useState(false);
@@ -2544,8 +2550,19 @@ export function ReaderScreen(args: {
           activeWordIndex,
           vocabLookup: karaokeVocabLookup,
           paragraphKey: `${story.id}-k-${index}`,
-          onWordPress: (item, contextSentence) => {
-            setSelectedVocab(contextSentence ? { ...item, note: contextSentence } : item);
+          onWordPress: (item, contextSentence, tapped) => {
+            // El trozo se busca por la palabra TOCADA, no por el lema del
+            // vocabulario. "esperar" no aparece en el texto y "espera" sí, y es
+            // esa ocurrencia la que el trozo describe. Buscando por lema se
+            // acierta a medias: en la otra mitad se enseñaría otra acepción.
+            // `surface` es tambien una forma del texto, no el lema, asi que
+            // vale de respaldo cuando el toque no trae token (las frases de
+            // varias palabras y el render legacy).
+            const chunk =
+              (tapped ? lookupGloss(tapGlosses, tapped)?.gloss.c : undefined) ??
+              (item.surface ? lookupGloss(tapGlosses, item.surface)?.gloss.c : undefined);
+            const base = contextSentence ? { ...item, note: contextSentence } : item;
+            setSelectedVocab(chunk ? { ...base, chunk } : base);
             trackReaderEventRef.current?.("vocab_clicked", {
               storySlug: story.slug ?? story.id,
               bookSlug: book.slug,
@@ -3205,6 +3222,13 @@ export function ReaderScreen(args: {
               </View>
               {compactDefinition ? (
                 <Text style={styles.vocabBubbleDefinition}>{compactDefinition}</Text>
+              ) : null}
+              {selectedVocab.chunk ? (
+                <Text style={styles.vocabBubbleChunk}>
+                  <Text style={styles.vocabBubbleChunkSource}>{selectedVocab.chunk.es}</Text>
+                  <Text style={styles.vocabBubbleChunkArrow}>{"  \u2192  "}</Text>
+                  <Text>{selectedVocab.chunk.en}</Text>
+                </Text>
               ) : null}
               <View style={styles.vocabActionRow}>
                 <SaveWordButton
@@ -4134,6 +4158,19 @@ const styles = StyleSheet.create({
     color: "#eef4ff",
     fontSize: 15,
     lineHeight: 22,
+  },
+  vocabBubbleChunk: {
+    color: "#eef4ff",
+    fontSize: 15,
+    lineHeight: 22,
+    marginTop: 6,
+    opacity: 0.9,
+  },
+  vocabBubbleChunkSource: {
+    fontWeight: "700",
+  },
+  vocabBubbleChunkArrow: {
+    opacity: 0.55,
   },
   vocabAction: {
     alignSelf: "flex-start",
