@@ -16,6 +16,7 @@ import {
   EXPECTED_BETA_SOURCES,
 } from "@/lib/betaSource";
 import type { BetaSourceGroup } from "@/lib/betaSource";
+import { targetVariantLabel } from "@/lib/targetVariants";
 
 const ACCENT = "#14b8a6";
 
@@ -873,11 +874,18 @@ function onDate(iso: string | null): string {
  * was only ever visible in the seconds before you clicked Invite.
  */
 function ApplicationSummary({ a, showReason }: { a: Applicant; showReason: boolean }) {
+  // El paréntesis del formulario ("Latin America (general)") desambigua una
+  // lista de países; dentro de otro paréntesis solo estorba.
+  const variant = targetVariantLabel(a.targetLanguage, a.targetVariant)?.replace(/\s*\(.*\)$/, "");
   return (
     <>
       <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
-        {a.targetLanguage} · {a.currentLevel} · {a.weeklyHours ?? "?"} hrs/wk ·{" "}
-        {a.motivation ?? "?"}
+        {a.targetLanguage}
+        {/* La variante decide a qué journey se le invita, así que va pegada al
+            idioma y no escondida en el panel de demanda. Sin ella la ficha
+            dice "Spanish" y calla si pide España o Latinoamérica. */}
+        {variant ? ` (${variant})` : ""}{" "}
+        · {a.currentLevel} · {a.weeklyHours ?? "?"} hrs/wk · {a.motivation ?? "?"}
         {motivationJourneyType(a.motivation)
           ? ` · pide ${motivationJourneyType(a.motivation)!.label}`
           : ""}
