@@ -905,7 +905,12 @@ export async function validateGeneratedStory(
   // gramática dentro (perfecto, subordinadas, pronombres de objeto). La
   // ventana se le da ESTRECHA, la misma del A0, para no abrir un agujero por
   // el que luego entre un A1 de 100 palabras sin que salte nada.
-  const isOneMinuteTier = isA0 || (context.level ?? "").toUpperCase() === "A1";
+  // A2 entra el 2026-08-31 por decisión del usuario: A2 también es tier de un
+  // minuto. No es aflojar el gate para que pase un texto; es alinearlo con lo
+  // que la tabla "Criterios por nivel" del spec ya decía desde el 2026-08-19
+  // (A2 = 128-155 palabras) y que el validador no había recogido.
+  const isOneMinuteTier =
+    isA0 || ["A1", "A2"].includes((context.level ?? "").toUpperCase());
   const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = isOneMinuteTier
     ? [100, 190, 115, 170]
     : [180, 320, 220, 280];
