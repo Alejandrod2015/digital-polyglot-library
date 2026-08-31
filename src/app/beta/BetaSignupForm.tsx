@@ -976,7 +976,7 @@ export default function BetaSignupForm() {
           className="mt-0.5 h-4 w-4 flex-shrink-0 accent-[#fcd34d]"
         />
         <span>
-          I agree to my data being processed for the Digital Polyglot beta program as described in the{" "}
+          Required: I agree to my data being processed for the Digital Polyglot beta program as described in the{" "}
           <a className="underline text-white" href="/privacy" target="_blank" rel="noreferrer">
             Privacy Policy
           </a>
@@ -995,8 +995,8 @@ export default function BetaSignupForm() {
           className="mt-0.5 h-4 w-4 flex-shrink-0 accent-[#fcd34d]"
         />
         <span>
-          Optional: send me beta tester perks, like exclusive discounts and early news about the app.
-          One email at a time, and you can unsubscribe whenever you want.
+          Optional: send me beta tester perks, like exclusive discounts and early news about the app
+          once it&apos;s live. One email at a time, and you can unsubscribe whenever you want.
         </span>
       </label>
 
