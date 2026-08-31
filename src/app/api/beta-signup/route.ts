@@ -81,6 +81,7 @@ type Body = {
   topicInterests?: unknown;
   applicationReason?: unknown;
   consent?: unknown;
+  marketingConsent?: unknown;
   attribution?: AttributionInput;
   // Antibot signals
   website?: unknown;
@@ -213,6 +214,9 @@ export async function POST(req: NextRequest) {
     : [];
   const applicationReason = asTrimmedString(body.applicationReason, APPLICATION_REASON_MAX);
   const consent = body.consent === true;
+  // Opcional y aparte: la casilla obligatoria solo cubre el programa de beta,
+  // así que lo promocional necesita su propia marca y su propia fecha.
+  const marketingConsent = body.marketingConsent === true;
   // Merge browser-side attribution (utm, referrer, landing url, tz) with
   // server-side attribution (geo from Vercel + accept-language + user-agent).
   // Server side is the trustier source, so it overrides if both are present.
@@ -307,6 +311,7 @@ export async function POST(req: NextRequest) {
       applicationReason,
       attribution: attribution ?? undefined,
       consentedAt: new Date(),
+      marketingConsentAt: marketingConsent ? new Date() : null,
       // Also written as first-class columns (2026-07-30): the triage engine
       // and the TestFlight invite read these on every row. They stay in
       // `attribution` too so the older Studio view keeps rendering.

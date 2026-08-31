@@ -174,6 +174,7 @@ type FormState = {
   topicInterestsOtherOpen: boolean;
   applicationReason: string;
   consent: boolean;
+  marketingConsent: boolean;
   // Honeypot: campo oculto vía CSS. Si llega lleno = bot.
   // Cero fricción para humanos (display:none) y atrapa el 80-90%
   // de bots tontos que rellenan todo lo que ven.
@@ -201,6 +202,7 @@ const initialState: FormState = {
   topicInterestsOtherOpen: false,
   applicationReason: "",
   consent: false,
+  marketingConsent: false,
   website: "",
 };
 
@@ -437,6 +439,7 @@ export default function BetaSignupForm() {
           topicInterests,
           applicationReason,
           consent: form.consent,
+          marketingConsent: form.marketingConsent,
           attribution: attributionRef.current,
           // Antibot signals para el server (revalida estos checks).
           website: form.website,
@@ -978,6 +981,22 @@ export default function BetaSignupForm() {
             Privacy Policy
           </a>
           . I can request deletion any time.
+        </span>
+      </label>
+
+      {/* Segunda casilla, opcional y desmarcada. La de arriba solo cubre el
+          programa de beta: sin esta no se le puede mandar nada promocional
+          cuando la beta termine. Se guarda como `marketingConsentAt`. */}
+      <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-4 text-xs font-bold leading-relaxed text-white/65">
+        <input
+          type="checkbox"
+          checked={form.marketingConsent}
+          onChange={(e) => update("marketingConsent", e.target.checked)}
+          className="mt-0.5 h-4 w-4 flex-shrink-0 accent-[#fcd34d]"
+        />
+        <span>
+          Optional: send me beta tester perks, like exclusive discounts and early news about the app.
+          One email at a time, and you can unsubscribe whenever you want.
         </span>
       </label>
 

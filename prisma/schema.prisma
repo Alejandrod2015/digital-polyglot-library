@@ -620,6 +620,12 @@ model BetaSignup {
   // without asking.
   attribution       Json?
   consentedAt       DateTime
+  // Segundo permiso, OPCIONAL y desmarcado por defecto (2026-08-31): ofertas
+  // para testers y novedades del producto. La casilla obligatoria de arriba
+  // solo cubre el programa de beta, asi que sin esta fecha no se le puede
+  // escribir nada promocional, ni siquiera una peticion de resena fuera de
+  // la secuencia de cierre. Null = no lo marco.
+  marketingConsentAt DateTime?
   status            String    @default("pending")
   notes             String?
   invitedAt         DateTime?

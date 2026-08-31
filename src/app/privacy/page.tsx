@@ -93,6 +93,15 @@ export default function PrivacyPage() {
           where we have a valid legal basis under applicable data protection law or your explicit
           consent.
         </p>
+        <p className="mt-3 text-[15px] leading-7">
+          <span className="font-medium">Beta program.</span> If you apply to the beta, we use the
+          details you send to review your application and to run the program: the confirmation, your
+          invite, instructions, requests for feedback, and the closing message when the beta ends.
+          Those emails are part of the program you signed up for. Separately, and only if you tick
+          the optional box on the form, we email you beta tester perks such as exclusive discounts
+          and early news about the app. That one is consent, you can withdraw it any time from the
+          unsubscribe link in any of those emails, and withdrawing it does not affect the beta.
+        </p>
       </section>
 
       <section className="mt-8">
