@@ -365,12 +365,40 @@ function slugify(s: string): string {
       });
       const out = new Set<string>();
       const duro = new Set<string>();
+      // La capa PORTABLE se reabre entre journeys (decision del 2026-08-23,
+      // montando el Traveler IT A1). El A0 se lleva casi todos los verbos,
+      // adjetivos, adverbios y expresiones del idioma, y sin ellos un nivel
+      // posterior solo puede ensenar sustantivos pegados a su escena, que por
+      // construccion no reaparecen nunca: la escalera de recirculacion se
+      // vuelve aritmeticamente imposible y la prosa se deforma para alojar lo
+      // raro que queda libre.
+      //
+      // La decision estaba en memoria y en el brief, pero NO en el codigo: el
+      // 2026-09-01, escribiendo el A2 latam, de 41 palabras corrientes de la
+      // escena habia 39 bloqueadas y lo que quedaba libre era "pecera",
+      // "abaco", "cernidor" y "grapadora". De ahi salieron frases que no
+      // ocurren, solo alojan una palabra ("bosqueja el reflejo"). El prefiltro
+      // reabre 1.990 lemas, entre ellos apoyar, quedar, tomar, buscar,
+      // dibujar y acercarse.
+      //
+      // Tiene que cubrir los DOS cubos: abrir solo el de tolerancia cero no
+      // sirve de nada, porque `vocab-taught-elsewhere` (tope 2) sigue
+      // bloqueando por la misma capa.
+      //
+      // Lo que NO se reabre: los sustantivos, los nombres de comida y las
+      // piezas de la escena siguen a cero, y las historias del PROPIO journey
+      // (mas abajo) tambien, portables incluidas: ahi repetir una palabra es
+      // cobrarle dos veces al mismo lector.
+      const PORTABLES = new Set(["verb", "adjective", "adverb", "expression"]);
       for (const r of otras) {
         // El mismo TIPO de journey (Traveler A0 -> Traveler A1) va al cubo
         // duro; los de otro tipo, al blando de hasta dos por historia.
         const destino = mio.typeSlug && r.journey?.typeSlug === mio.typeSlug ? duro : out;
-        for (const v of ((r.vocab as Array<{ word?: unknown }> | null) ?? []))
-          if (v?.word) destino.add(String(v.word));
+        for (const v of ((r.vocab as Array<{ word?: unknown; type?: unknown }> | null) ?? [])) {
+          if (!v?.word) continue;
+          if (PORTABLES.has(String(v.type ?? "").toLowerCase())) continue;
+          destino.add(String(v.word));
+        }
       }
       // ...y el vocabulario de las historias YA GUARDADAS de ESTE journey que
       // no vienen en este fichero. `vocab-repetition` solo compara contra lo
@@ -559,13 +587,14 @@ function slugify(s: string): string {
         const text = d ? String(d.text) : String(f.text ?? "");
         if (!text.trim()) continue;
         todas.push({ slug: d?.slug ?? f.slug ?? k, title: d?.title ?? f.title ?? "", text,
-                     vocab: (d?.vocab ?? f.vocab) as never, language: ctx.language, level: ctx.level });
+                     vocab: (d?.vocab ?? f.vocab) as never, language: ctx.language, level: ctx.level,
+                     topic: f.topic });
         // El MISMO conjunto sin la edición encima, para poder medir el antes.
         // Solo las filas que ya existen: una historia que solo está en la
         // tanda es contenido nuevo y no tiene "antes" contra el que comparar.
         if (String(f.text ?? "").trim()) {
           base.push({ slug: f.slug ?? k, title: f.title ?? "", text: String(f.text),
-                      vocab: f.vocab as never, language: ctx.language, level: ctx.level });
+                      vocab: f.vocab as never, language: ctx.language, level: ctx.level topic: f.topic });
         }
       }
       for (const [k, d] of enTanda) if (!vistos.has(k))

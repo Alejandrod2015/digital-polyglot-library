@@ -32,6 +32,9 @@ export type JourneyStoryInput = {
   language: string;
   level: string;
   vocab?: Array<{ word: string; surface?: string | null }> | null;
+  /** Tema al que pertenece, EN ORDEN DE LECTURA. Sin el, las reglas de
+   *  reparto por tema no se pueden medir y salen como no implementadas. */
+  topic?: string | null;
 };
 
 export type JourneyCheck = {
@@ -77,6 +80,14 @@ const HABLA_POR_IDIOMA: Record<string, string> = {
   // Frances (2026-08-23). Sin esta lista el reparto salia vacio y el cierre a
   // solas decia "protagonista ?" en las 21: castOf caia en la lista alemana.
   FR: "dit|demande|répond|ajoute|explique|répète|crie|écrit|raconte|promet|rit|appelle|propose|corrige|note",
+  // Espanol (2026-08-31). Sin esta lista `castOf` caia en la alemana y el
+  // reparto salia VACIO en los ocho journeys de espanol, que es el mismo fallo
+  // que se arreglo en portugues y en frances. Presente Y preterito, porque la
+  // ultima historia de un tema se narra a menudo en pasado.
+  ES: "dice|dijo|pregunta|pregunto|preguntó|responde|respondio|respondió|contesta|contesto|contestó|" +
+      "cuenta|conto|contó|explica|explico|explicó|repite|repitio|repitió|avisa|aviso|avisó|" +
+      "grita|grito|gritó|llama|llamo|llamó|pide|pidio|pidió|insiste|insistio|insistió|" +
+      "agrega|agrego|agregó|escribe|escribio|escribió|suelta|solto|soltó|corrige|corrigio|corrigió",
 };
 function castOf(stories: JourneyStoryInput[], lang: string): string[] {
   const HABLA = HABLA_POR_IDIOMA[lang] ?? HABLA_POR_IDIOMA.DE;
@@ -164,10 +175,35 @@ const FORMAS_FR: Array<[string, (n: string) => RegExp]> = [
   ["con etre", (n) => new RegExp(`\\b${n}\\s+est\\s+(?:un|une)\\s+${NUC_FR}`, "iu")],
 ];
 
+/**
+ * Las tres formas aprobadas en ESPANOL (2026-08-31). Mismo contrato que el
+ * portugues y el frances, y por la misma razon: sin ellas el check devolvia
+ * `not-implemented` para ES, que bloquea igual que un fallo, asi que ningun
+ * journey de espanol podia guardarse.
+ *
+ *   aposicion        Elena, una viajera de paso, busca el letrero de su ruta.
+ *   quien            Quien abre la puerta es Mireya, la duena de la casa.
+ *   nombre y oficio  Julio maneja un taxi desde antes de que naciera su hija.
+ *
+ * La tercera pide un verbo que DIGA QUE ES la persona (oficio, papel o cuanto
+ * lleva ahi); "Elena llega" no presenta a nadie y por eso no entra.
+ */
+const NUC_ES = "(?:[a-zá-úüñ]+\\s+){0,3}[a-zá-úüñ]+";
+const VERBO_SER_ES =
+  "(?:es|era|fue|trabaja|trabajaba|vende|vendia|vendía|maneja|manejaba|cuida|cuidaba|" +
+  "pinta|pintaba|vive|vivia|vivía|alquila|alquilaba|estudia|estudiaba|atiende|atendia|atendía|" +
+  "toca|tocaba|cocina|cocinaba|nacio|nació|lleva|llevaba|reparte|repartia|repartía)";
+const FORMAS_ES: Array<[string, (n: string) => RegExp]> = [
+  ["aposicion", (n) => new RegExp(`${n},\\s+(?:un|una|el|la)\\s+${NUC_ES}`, "iu")],
+  ["quien", (n) => new RegExp(`\\bQuien\\s+[a-zá-úüñ]+(?:\\s+[a-zá-úüñ]+){0,3}\\s+es\\s+${n}\\b`, "iu")],
+  ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+${VERBO_SER_ES}\\b`, "iu")],
+];
+
 const FORMAS_POR_IDIOMA: Record<string, Array<[string, (n: string) => RegExp]>> = {
   DE: FORMAS_DE,
   PT: FORMAS_PT,
   FR: FORMAS_FR,
+  ES: FORMAS_ES,
 };
 
 /** Forma de la apertura: que clase de sujeto abre la primera frase. */
@@ -194,6 +230,27 @@ function openingShapeFR(text: string): string {
   if (/^(À|Au|Aux|Dans|Sur|Sous|Devant|Derrière|Chez|En|Entre|Après|Avant|Depuis|Vers|Pendant|Fin|Ici)$/.test(w)) return "lugar o tiempo delante";
   if (/^(Il|Elle|Ils|Elles|On|Personne|Quelqu'un|Tout|Toute|Tous)$/.test(w)) return "pronombre";
   if (/^(Deux|Trois|Quatre|Cinq|Six|Sept|Huit|Neuf|Dix|Vingt|Trente|Chaque|Une fois)$/.test(w)) return "hora o cantidad";
+  if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
+  return "otra";
+}
+
+/**
+ * Forma de la apertura en ESPANOL (2026-08-31). Puerto fiel del portugues y el
+ * frances, categoria por categoria. Sin el, `openingShape` (aleman) metia 20 de
+ * las 21 del A1 LATAM en el mismo cajon, "sustantivo o nombre desnudo", y la
+ * regla fallaba sin decir nada util: no medía la variedad, medía el idioma.
+ */
+function openingShapeES(text: string): string {
+  const f = sentences(text)[0] ?? "";
+  const w = (f.split(/\s+/)[0] ?? "").replace(/[.,:;]$/, "");
+  if (f.startsWith(QUOTE_OPEN)) return "replica directa";
+  if (/^(El|La|Los|Las)$/.test(w)) return "articulo definido + sustantivo";
+  if (/^(Un|Una|Unos|Unas)$/.test(w)) return "articulo indefinido + sustantivo";
+  if (/^(Su|Sus|Mi|Mis|Nuestro|Nuestra|Nuestros|Nuestras)$/.test(w)) return "posesivo + sustantivo";
+  if (/^(En|Desde|Entre|Dentro|Detras|Detrás|Despues|Después|Antes|Sobre|Debajo|Junto|Frente|Afuera|Adentro|Bajo|Hacia|Tras|Durante|Cerca|Arriba|Abajo|Al|A|De|Con|Por|Para|Hoy|Ayer|Anoche|Ahora|Todavia|Todavía|Aqui|Aquí|Alli|Allí|Afuera)$/.test(w)) return "lugar o tiempo delante";
+  if (/^(Nadie|Alguien|Todos|Todas|Cada|Dos|Tres|Cuatro|Cinco|Seis|Siete|Ocho|Nueve|Diez|Quince|Veinte|Media|Medio|Nada|Ninguno|Ninguna)$/.test(w)) return "cantidad o pronombre";
+  if (/^(Cuando|Mientras|Aunque|Apenas|Si)$/.test(w)) return "subordinada delante";
+  if (/^Quien\b/.test(f)) return "quien + verbo";
   if (/^\p{Lu}\p{Ll}+$/u.test(w)) return "sustantivo o nombre desnudo";
   return "otra";
 }
@@ -295,6 +352,7 @@ export function validateJourneyStories(
     for (const s of stories) {
       const f = lang === "PT" ? openingShapePT(s.text)
         : lang === "FR" ? openingShapeFR(s.text)
+        : lang === "ES" ? openingShapeES(s.text)
         : openingShape(s.text);
       porForma.set(f, [...(porForma.get(f) ?? []), s.slug]);
     }
@@ -493,7 +551,15 @@ export function validateJourneyStories(
   // con este mismo criterio. Suelo 2,5: por debajo de los tres, exactamente el
   // criterio con el que se puso el 3,0, y a proposito NO el 2,62 del journey
   // que lo destapo, que seria calibrar la vara sobre lo que tiene que aprobar.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 2.5, A1: 1.6 };
+  // A2 anadido el 2026-08-31, con el MISMO metodo y ni un gramo mas de
+  // permiso: se mide el UNICO A2 publicado del catalogo (Traveler ES/spain,
+  // vivo) con esta misma formula y el suelo se pone por debajo. Da 1,35 de
+  // media, asi que el suelo es 1,3; a proposito NO el 1,35 del journey que
+  // sirve de vara, que seria calibrar sobre lo que tiene que aprobar. Sin este
+  // renglon el nivel entero devolvia `not-implemented`, que bloquea igual que
+  // un fallo: ningun A2 podia guardarse. Implementar el peldano que faltaba no
+  // es relajar el gate; bajarlo hasta que pase un texto concreto, si.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 2.5, A1: 1.6, A2: 1.3 };
   // La media sola se maquilla: una palabra en nueve historias tapa a nueve que
   // salen una vez. Asi que la cola tambien se mide.
   //
@@ -508,7 +574,10 @@ export function validateJourneyStories(
   // que es el mismo criterio con el que el suelo se puso por debajo de el; y a
   // proposito NO el 62% del journey que lo destapo, que seria calibrar la vara
   // sobre lo que tiene que aprobar. Donde no hay publicado no se mide.
-  const TOPE_COLA_POR_NIVEL: Record<string, number> = { A0: 0.30, A1: 0.70 };
+  // A2 (2026-08-31): el mismo A2 publicado deja el 75% de cola con esta
+  // formula, asi que el tope va por ENCIMA, en 0,80, igual que el 0,70 del A1
+  // se puso por encima de su 69%.
+  const TOPE_COLA_POR_NIVEL: Record<string, number> = { A0: 0.30, A1: 0.70, A2: 0.80 };
   // A las portables se les pide el MISMO suelo medido del nivel, no el ideal de
   // 4: el 3,0 salió de journeys publicados que no marcan ancladas, así que
   // exigir 4 sería inventar un número. Lo que cambia es QUÉ entra en la media.
@@ -590,6 +659,91 @@ export function validateJourneyStories(
     push("journey-rules-inventory", "Toda regla de docs/story-rules.json tiene su check",
       sinCheck.length === 0,
       `Declaradas en docs/story-rules.json y sin implementar: ${sinCheck.join(", ")}`);
+  }
+
+  // ── Forma del reparto ───────────────────────────────────────
+  //
+  // Cuatro reglas duras que vivian SOLO en la memoria del proyecto
+  // (`project_journey_structure_plan`) y por tanto dependian de que quien
+  // escribe se acordara de leerlas. El 2026-09-01 el usuario pidio que dejara
+  // de ser posible saltarselas. Son de conjunto: ninguna se puede ver
+  // mirando una historia suelta, que es justo por lo que no estaban en
+  // `validateGeneratedStory`.
+  //
+  // Definiciones, tomadas de la propia memoria: FIJO es el que sale en al
+  // menos la mitad de las historias (valen las menciones, no hace falta que
+  // hable) y PROTAGONISTA el que sale en todas.
+  {
+    // Candidatos: los que HABLAN en algun momento del journey (`cast`), no
+    // todo nombre propio recurrente. Con `castLegacy` a secas el A0 mexicano
+    // daba "Oaxaca" y "Mexico" por personajes: los toponimos se repiten mas
+    // que la gente. La PRESENCIA si se cuenta por mencion, que es lo que pide
+    // la memoria ("valen las menciones, no hace falta que hable").
+    const nombres = cast;
+    const saleEn = (n: string) =>
+      stories.filter((s) => new RegExp(`\\b${n}\\b`, "u").test(s.text));
+    const presencia = new Map(nombres.map((n) => [n, saleEn(n).length]));
+    const total = stories.length;
+    const fijos = nombres.filter((n) => (presencia.get(n) ?? 0) >= Math.ceil(total / 2));
+    const enTodas = nombres.filter((n) => presencia.get(n) === total);
+    const ficha = (n: string) => `${n} (${presencia.get(n)}/${total})`;
+
+    push("journey-cast-fixed-max-two", "Nunca mas de 2 personajes fijos",
+      fijos.length <= 2,
+      `${fijos.length} salen en media o mas: ${fijos.map(ficha).join(", ")}. ` +
+      `Tres voces sostenidas se confunden de oido; el tope es 2.`);
+
+    // Un check que no sabe medir NO puede fallar, igual que el de presentacion:
+    // si el detector de habla no saco reparto, el rojo seria del detector.
+    if (!nombres.length) {
+      noImpl("journey-cast-protagonist-in-all", "El protagonista sale en todas",
+        `El detector de habla no encontro reparto en ${lang || "?"}. Sin nombres ` +
+        `no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.`);
+    } else {
+      push("journey-cast-protagonist-in-all", "El protagonista sale en todas",
+        enTodas.length >= 1,
+        `Ninguno sale en las ${total}. El mas presente es ${ficha(nombres[0])}.`);
+    }
+
+    // Las dos por tema necesitan saber donde empieza cada uno.
+    const temas = stories.map((s) => s.topic ?? null);
+    if (temas.some((t) => !t)) {
+      const why = "Las historias llegan sin `topic`, asi que no se puede saber " +
+        "en que tema aparece cada personaje por primera vez. Quien llame al " +
+        "checker tiene que pasar el tema en orden de lectura.";
+      noImpl("journey-cast-one-new-per-topic", "Un personaje nuevo por tema, en su primera historia", why);
+      noImpl("journey-cast-first-story-only-fixed", "La primera historia del journey solo lleva fijos", why);
+    } else {
+      const orden: string[] = [];
+      for (const t of temas as string[]) if (!orden.includes(t)) orden.push(t);
+      const primeraDe = new Map<string, number>();
+      orden.forEach((t) => primeraDe.set(t, temas.indexOf(t)));
+
+      const nuevosPorTema = new Map<string, string[]>(orden.map((t) => [t, []]));
+      const fueraDeSuTema: string[] = [];
+      for (const n of nombres) {
+        if (fijos.includes(n)) continue;
+        const i0 = stories.findIndex((s) => new RegExp(`\\b${n}\\b`, "u").test(s.text));
+        // Si el detector de habla lo vio pero el de mencion no lo encuentra
+        // (acentos, forma flexionada), no se puede decir de que tema es.
+        if (i0 < 0) continue;
+        const t = temas[i0] as string;
+        nuevosPorTema.get(t)!.push(n);
+        if (i0 !== primeraDe.get(t)) fueraDeSuTema.push(`${n} (aparece en la ${i0 - primeraDe.get(t)! + 1}a de ${t})`);
+      }
+      const conDeMas = orden.filter((t) => nuevosPorTema.get(t)!.length > 1);
+      push("journey-cast-one-new-per-topic", "Un personaje nuevo por tema, presentado en su primera historia",
+        conDeMas.length === 0 && fueraDeSuTema.length === 0,
+        [conDeMas.length ? `temas con mas de uno: ${conDeMas.map((t) => `${t} (${nuevosPorTema.get(t)!.join(", ")})`).join(" | ")}` : "",
+         fueraDeSuTema.length ? `presentados tarde: ${fueraDeSuTema.join(", ")}` : ""].filter(Boolean).join(" · "));
+
+      const intrusos = nombres.filter((n) =>
+        !fijos.includes(n) && new RegExp(`\\b${n}\\b`, "u").test(stories[0].text));
+      push("journey-cast-first-story-only-fixed", "La primera historia del journey solo lleva a los fijos",
+        intrusos.length === 0,
+        `${intrusos.join(", ")} sale en la primera sin ser fijo. La primera historia ` +
+        `presenta el reparto estable y nada mas.`);
+    }
   }
 
   return out;
