@@ -5253,6 +5253,26 @@
   "abren": {
    "g": "they open (abrir)",
    "t": "verb"
+  },
+  "enséñeme": {
+   "g": "teach me (enseñar)",
+   "t": "verb"
+  },
+  "tela": {
+   "g": "cloth",
+   "t": "noun"
+  },
+  "ponérselo": {
+   "g": "to make it (ponerle)",
+   "t": "verb"
+  },
+  "desayuné": {
+   "g": "I have had breakfast (desayunar)",
+   "t": "verb"
+  },
+  "dígamelo": {
+   "g": "you tell me (decir)",
+   "t": "verb"
   }
  }
 }

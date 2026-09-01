@@ -1,0 +1,2611 @@
+[
+ {
+  "topic": "bosses-and-workmates",
+  "slotIndex": 1,
+  "title": "Uniforme prestado en Barranquilla",
+  "slug": "uniforme-prestado-en-barranquilla",
+  "synopsis": "Un patio de fábrica a las seis de la mañana, con olor a goma quemada y una mujer repartiendo ropa de trabajo. Camilo empieza quince días de prueba y nadie le dice dónde ponerse ni qué hacer con las manos. Las instrucciones existen, pero están escritas en el suelo y en el orden en que la gente se para.",
+  "text": "A las seis de la mañana el patio de la fábrica ya huele a caucho quemado. Camilo, un muchacho de Barranquilla que bailó en el Carnaval hace dos años, llega con los papeles de la entrevista. Quien reparte los uniformes es Yaneth, encargada del turno de la mañana.\n\n“Este es el más chico que queda, y no va a llegar otro hasta el mes que viene”, dice Yaneth. Camilo se lo pone encima de la camisa y le sobra por todos lados. En el casillero de al lado, un trabajador robusto lo mira y no se ríe.\n\n“¿Y dónde me pongo?”, pregunta Camilo, con la agenda abierta y sin nada escrito. “Los que llegan temprano se ponen aquí; los demás, donde puedan”, contesta ella. La asamblea del viernes decide los sectores, pero viene demorada desde marzo.\n\nCamilo busca una raya en el suelo, una marca en el tablero o un número, y no encuentra ninguno. “La línea de la puerta es la lista, y esa se hace sola”, agrega Yaneth desde el corredor. Camilo entiende que el sector no se pide, se ocupa con el cuerpo, y eso lo preocupa más que la asamblea.\n\n“El jefe es estricto con la hora y no con la ropa; llega cinco minutos antes y nadie te dice nada”, le suelta Yaneth. En la carga hay que apresurar el paso y no preguntar demasiado. Camilo trabaja rápidamente, se le acelera el pulso y la camisa se le pega.\n\n“¿Voy bien o lo estoy haciendo al revés?”, pregunta, molesto, al final del día, y los otros siguen cargando. La prueba dura quince días y hoy es apenas el primer día. En su casillero encuentra otro uniforme doblado, y por primera vez consigue uno de su medida.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "fábrica",
+    "definition": "Factory; big building where things are made by machines and workers."
+   },
+   {
+    "type": "noun",
+    "word": "caucho",
+    "definition": "Rubber; soft grey material used for tyres and shoe soles."
+   },
+   {
+    "type": "noun",
+    "word": "entrevista",
+    "definition": "Meeting where somebody asks you questions to decide about a job."
+   },
+   {
+    "type": "noun",
+    "word": "uniforme",
+    "definition": "Set of clothes everybody wears at the same job or school."
+   },
+   {
+    "type": "adjective",
+    "word": "robusto",
+    "definition": "Strong and heavily built, with wide shoulders and thick arms."
+   },
+   {
+    "type": "noun",
+    "word": "casillero",
+    "definition": "Locker; small closed box at work for your own things."
+   },
+   {
+    "type": "noun",
+    "word": "agenda",
+    "definition": "Small book with dates where you write what you must do."
+   },
+   {
+    "type": "noun",
+    "word": "asamblea",
+    "definition": "Meeting where all the workers gather and decide something together."
+   },
+   {
+    "type": "noun",
+    "word": "sector",
+    "definition": "One marked part of a workplace, with its own job and people."
+   },
+   {
+    "type": "adjective",
+    "word": "demorado",
+    "surface": "demorada",
+    "definition": "Delayed, happening later than it should have happened."
+   },
+   {
+    "type": "verb",
+    "word": "preocupar",
+    "surface": "preocupa",
+    "definition": "To worry somebody, to leave them uneasy about what may happen."
+   },
+   {
+    "type": "noun",
+    "word": "jefe",
+    "definition": "Boss; the person who decides what the others must do."
+   },
+   {
+    "type": "adjective",
+    "word": "estricto",
+    "definition": "Strict, letting nobody break the rule even a little."
+   },
+   {
+    "type": "verb",
+    "word": "apresurar",
+    "definition": "To hurry something along, to make it go faster than usual."
+   },
+   {
+    "type": "adverb",
+    "word": "rápidamente",
+    "definition": "Quickly, using very little time to finish something."
+   },
+   {
+    "type": "verb",
+    "word": "acelerar",
+    "surface": "acelera",
+    "definition": "To speed up, to go faster than a moment before."
+   },
+   {
+    "type": "noun",
+    "word": "prueba",
+    "definition": "Trial period at a new job, before they keep you or not."
+   },
+   {
+    "type": "expression",
+    "word": "primer día",
+    "definition": "First day, the opening one of a longer stretch of days."
+   },
+   {
+    "type": "noun",
+    "word": "trabajador",
+    "definition": "Worker; person who does the physical job in a place."
+   },
+   {
+    "type": "expression",
+    "word": "por primera vez",
+    "definition": "For the first time, never having happened before this moment."
+   },
+   {
+    "type": "verb",
+    "word": "conseguir",
+    "surface": "consigue",
+    "definition": "To get something you wanted, often after some effort."
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ },
+ {
+  "topic": "bosses-and-workmates",
+  "slotIndex": 2,
+  "title": "Yaneth no dice nada",
+  "slug": "yaneth-no-dice-nada",
+  "synopsis": "Un autobús que se queda parado en el puente deja a un trabajador nuevo media hora tarde, y la encargada no le llama la atención. Arriba del edificio, alguien que hace la noche en la misma planta le explica que ese silencio no es perdón sino aviso. El viernes se reparten los sectores y nadie sabe si Camilo sigue escrito.",
+  "text": "El minibús de las cinco se queda atrasado en el puente y llega media hora después. Camilo cruza el patio de la fábrica corriendo y se pone el uniforme en el casillero. Yaneth lo ve entrar, marca algo con un marcador rojo y no le dice nada.\n\nAlveiro trabaja en la misma planta, siempre por la noche, desde antes que llegara Camilo. Esa tarde suben al techo con dos vasos de limonada, mientras abajo continúa el ruido de las máquinas. “Cuando ella se pone molesta, no pasa nada; cuando se queda muda, ya te escribió”, explica Alveiro.\n\n“Yo llegué tarde una sola vez, y fue por el puente”, contesta Camilo. “Aquí nadie te levanta la voz; únicamente te sacan del sector, aunque seas trabajador”, agrega Alveiro. Camilo saca sus notas y empieza a organizar la semana entera, apresurado y sin levantar la vista.\n\n“¿Y no puedo explicarle lo del puente y llegar apresurado?”, pregunta, con el lápiz parado. “Puedes, pero ella no acepta explicaciones a fin de mes”, dice Alveiro. Camilo pone una alarma para las cuatro, porque el jefe es estricto con la entrevista, y marca el calendario.\n\nEl mensajero de la fábrica llega en bicicleta y deja un papel doblado para Camilo. Es la fecha del examen médico y Camilo, atrasado ya con todo, no logra entender la letra. “Eso lo firma el jefe; ella ni lo mira”, le dice Alveiro, ya con el uniforme puesto.\n\nCamilo agenda la cita para el martes, después de la asamblea, y planifica el resto solo. “El viernes reparten los sectores y después no se vuelve a hablar del tema”, avisa Alveiro. Camilo se queda en el techo, mirando el puente y la fábrica, sin saber si sigue en esa lista.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "minibús",
+    "definition": "Small bus with few seats, used for short city routes."
+   },
+   {
+    "type": "adjective",
+    "word": "atrasado",
+    "definition": "Behind time, later than the hour it was meant to be."
+   },
+   {
+    "type": "noun",
+    "word": "marcador",
+    "definition": "Thick pen with strong ink, used for writing on lists."
+   },
+   {
+    "type": "noun",
+    "word": "limonada",
+    "definition": "Cold drink made with lemon juice, water and sugar."
+   },
+   {
+    "type": "adjective",
+    "word": "molesto",
+    "surface": "molesta",
+    "definition": "Annoyed, bothered by something somebody did or said."
+   },
+   {
+    "type": "expression",
+    "word": "por la noche",
+    "definition": "At night, during the dark hours after the evening."
+   },
+   {
+    "type": "adverb",
+    "word": "únicamente",
+    "definition": "Only that and nothing else, with no other thing added."
+   },
+   {
+    "type": "noun",
+    "word": "notas",
+    "definition": "Short things you write down so you do not forget them."
+   },
+   {
+    "type": "verb",
+    "word": "organizar",
+    "definition": "To put things in order so that everything works well."
+   },
+   {
+    "type": "verb",
+    "word": "aceptar",
+    "surface": "acepta",
+    "definition": "To agree to take or allow something somebody offers you."
+   },
+   {
+    "type": "expression",
+    "word": "a fin de mes",
+    "definition": "At the end of the month, when wages and bills arrive."
+   },
+   {
+    "type": "noun",
+    "word": "alarma",
+    "definition": "Sound set to go off at an hour, so you wake up."
+   },
+   {
+    "type": "noun",
+    "word": "calendario",
+    "definition": "Sheet with all the days of the year in order."
+   },
+   {
+    "type": "noun",
+    "word": "mensajero",
+    "definition": "Person whose job is carrying letters and packages between places."
+   },
+   {
+    "type": "noun",
+    "word": "bicicleta",
+    "definition": "Bike; two wheels you move by pushing the pedals."
+   },
+   {
+    "type": "noun",
+    "word": "examen",
+    "definition": "Set of checks a doctor does to see how you are."
+   },
+   {
+    "type": "noun",
+    "word": "médico",
+    "definition": "Doctor; the person who checks your health and writes what helps."
+   },
+   {
+    "type": "verb",
+    "word": "lograr",
+    "surface": "logra",
+    "definition": "To manage to do something difficult after trying hard."
+   },
+   {
+    "type": "verb",
+    "word": "agendar",
+    "surface": "agenda",
+    "register": "regional",
+    "definition": "To put an appointment in the diary for a given day."
+   },
+   {
+    "type": "noun",
+    "word": "cita",
+    "definition": "Fixed appointment with somebody at an agreed day and hour."
+   },
+   {
+    "type": "verb",
+    "word": "planificar",
+    "surface": "planifica",
+    "definition": "To decide in advance the steps you will follow."
+   }
+  ],
+  "arcType": "mini-cliffhanger"
+ },
+ {
+  "topic": "bosses-and-workmates",
+  "slotIndex": 3,
+  "title": "Viernes de asamblea",
+  "slug": "viernes-de-asamblea",
+  "synopsis": "Los tres turnos se juntan delante de un tablero para repartir los sectores del año. Camilo se pone de pie y habla por delante de gente que apenas conoce, y la encargada le contesta con una frase corta y seca. Lo que lee después, en la mitad de la lista, cambia el sentido de sus tres primeras semanas.",
+  "text": "Cuando dan las once, el pasillo huele a café recalentado y los tres turnos se juntan delante del tablero. Yaneth clasifica unos papeles encima de una tarima, con el marcador rojo en la boca, y divide al grupo. Camilo se sienta atrás, con la agenda cerrada y las notas del casillero en el bolsillo.\n\n“Empezamos por el sector de carga, que es el que nadie quiere y que siempre le toca al último que entró”, comienza ella. Un trabajador robusto pide el mismo sector de siempre y no explica por qué. “Eso ya está escogido desde marzo, y no lo vamos a discutir hoy”, contesta Yaneth sin soltar el portafolios.\n\nCamilo se pone de pie, molesto, con el uniforme puesto, y siente la presión de veinte personas. “Llevo tres semanas y nadie me ha dicho si lo estoy haciendo bien”, dice. Alguien mueve una silla, alguien deja un vaso de limonada y la sala se queda en calma severa.\n\n“Aquí no se dice lo bueno, se dice lo malo”, responde Yaneth. “Y de ti no he tenido nada que decir en tres semanas.” Camilo se sienta de una vez, con el panfleto arrugado y la agenda entre los dedos.\n\nElla continúa con la lista del proyecto y llega a la mitad. “Camilo pasa a la conferencia de máquinas, desde la próxima semana”, lee. El programa incompleto que colgaron el viernes pasado ya llevaba su nombre escrito.\n\nAlveiro le hace una seña desde el fondo, con el resultado del examen médico en la mano. Camilo mira la fecha del papel, terminada ya la prueba de quince días, y ve que no es la que imaginaba. Yaneth resuelve el resto de la lista y le pasa el suyo doblado, sin ningún reconocimiento delante de nadie.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "tablero",
+    "definition": "Flat board on a wall where lists and notices are shown."
+   },
+   {
+    "type": "verb",
+    "word": "clasificar",
+    "surface": "clasifica",
+    "definition": "To sort things into groups by what they are."
+   },
+   {
+    "type": "noun",
+    "word": "tarima",
+    "definition": "Low wooden platform you stand on to be seen."
+   },
+   {
+    "type": "verb",
+    "word": "dividir",
+    "surface": "divide",
+    "definition": "To split one group or thing into smaller separate parts."
+   },
+   {
+    "type": "noun",
+    "word": "panfleto",
+    "definition": "Small printed sheet that explains one thing in few words."
+   },
+   {
+    "type": "noun",
+    "word": "proyecto",
+    "definition": "Piece of work planned in advance, with steps and an aim."
+   },
+   {
+    "type": "verb",
+    "word": "comenzar",
+    "surface": "comienza",
+    "definition": "To start something, to do the first part of it."
+   },
+   {
+    "type": "adjective",
+    "word": "escogido",
+    "definition": "Chosen, picked out already and no longer open to change."
+   },
+   {
+    "type": "noun",
+    "word": "portafolios",
+    "definition": "Flat case for carrying papers to and from work."
+   },
+   {
+    "type": "noun",
+    "word": "presión",
+    "definition": "The weight you feel when others expect something from you."
+   },
+   {
+    "type": "expression",
+    "word": "de una vez",
+    "definition": "Once and for all, without leaving it for another day."
+   },
+   {
+    "type": "verb",
+    "word": "continuar",
+    "surface": "continúa",
+    "definition": "To carry on with something without stopping or changing it."
+   },
+   {
+    "type": "noun",
+    "word": "conferencia",
+    "definition": "Talk given to a group of people about one subject."
+   },
+   {
+    "type": "expression",
+    "word": "la próxima semana",
+    "definition": "Next week, the seven days that start after this one."
+   },
+   {
+    "type": "noun",
+    "word": "programa",
+    "definition": "Written plan of what happens, and on which day."
+   },
+   {
+    "type": "adjective",
+    "word": "incompleto",
+    "definition": "Missing a part, not finished and not ready to use."
+   },
+   {
+    "type": "noun",
+    "word": "seña",
+    "definition": "Small movement of the hand that means something agreed."
+   },
+   {
+    "type": "verb",
+    "word": "resolver",
+    "surface": "resuelve",
+    "definition": "To settle a problem so that nothing is left open."
+   },
+   {
+    "type": "noun",
+    "word": "reconocimiento",
+    "definition": "Open praise, saying out loud that somebody did well."
+   },
+   {
+    "type": "adjective",
+    "word": "arrugado",
+    "definition": "Crumpled, with folds and creases from being squeezed in a hand."
+   },
+   {
+    "type": "adjective",
+    "word": "severo",
+    "surface": "severa",
+    "definition": "Serious and hard, with no warmth and no room for jokes."
+   }
+  ],
+  "arcType": "late-reveal"
+ },
+ {
+  "topic": "close-friends",
+  "slotIndex": 1,
+  "title": "La ocurrencia de Pablo en Chacarita",
+  "slug": "la-ocurrencia-de-pablo-en-chacarita",
+  "synopsis": "Una mesa de bar con cinco personas, un chiste que sale mal y una silla que queda vacía media hora. Pablo intenta arreglarlo tres veces y cada intento lo deja peor que el anterior. En la vereda, dos desconocidos discuten a gritos por un auto mal puesto y terminan dándose la mano.",
+  "text": "En el bar de Chacarita hay cinco sillas ocupadas y un pan recién hecho en la mesa. Marta trabaja en una librería de la avenida desde hace cinco años. Pablo llega tarde con un mate frío en la mano y suelta un cuento que le parece gracioso.\n\n“Vos leés tanto que ya hablás como los libros que vendés”, dice con una risa corta. “Y encima cobrás por eso, que es lo mejor de todo el asunto, si lo pensás bien.” La mesa entera se pone dura y alguien cambia de tema con una pregunta horrible sobre fútbol.\n\nLa frase entristece a Marta, que junta sus cosas y se va sin discutir. “Fue una ocurrencia, nada más”, se defiende Pablo, enfadado consigo mismo. “Yo no quise decir eso; me salió al revés de como lo tenía pensado en la cabeza.”\n\nLos demás siguen con el fútbol, y con una sonrisa falsa Pablo se esconde detrás de la carta. Afuera, un grito parte la tarde en dos y todos giran la cabeza. Un muchacho y otro más grande se pelean por un auto puesto delante de una entrada.\n\nEl estruendo de una puerta llega al área de adentro, donde la charla ya aburre. “¡Sacá eso de ahí, que llevo veinte minutos!”, se oye desde la esquina. En la vereda, treinta segundos después, los dos hablan del partido del domingo, ya amistosos.\n\n“Cada jueves te pasa lo mismo”, dice uno, y el otro se ríe y le da la mano. Pablo los mira con asombro desde su silla, porque acaban de terminar lo que empezaron. “No puede ser que ellos lo arreglen en medio minuto”, dice, y nadie le explica nada.",
+  "vocab": [
+   {
+    "type": "expression",
+    "word": "recién hecho",
+    "definition": "Just made, still warm from being finished a moment ago."
+   },
+   {
+    "type": "noun",
+    "word": "librería",
+    "definition": "Bookshop; the shop where books are sold, not a library."
+   },
+   {
+    "type": "noun",
+    "word": "cuento",
+    "definition": "Story told out loud, short and with a point at the end."
+   },
+   {
+    "type": "noun",
+    "word": "risa",
+    "definition": "The sound and the act of laughing at something."
+   },
+   {
+    "type": "noun",
+    "word": "ocurrencia",
+    "definition": "Sudden bright remark somebody makes, usually meant as a joke."
+   },
+   {
+    "type": "adjective",
+    "word": "enfadado",
+    "definition": "Angry, upset with somebody or with yourself about something."
+   },
+   {
+    "type": "verb",
+    "word": "esconderse",
+    "surface": "esconde",
+    "definition": "To put yourself where other people cannot see you."
+   },
+   {
+    "type": "noun",
+    "word": "vereda",
+    "register": "regional",
+    "definition": "Pavement; the raised path beside the road for walking."
+   },
+   {
+    "type": "noun",
+    "word": "grito",
+    "definition": "Shout; a loud sound made with the voice all at once."
+   },
+   {
+    "type": "verb",
+    "word": "partir",
+    "surface": "parte",
+    "definition": "To split something into pieces or into two halves."
+   },
+   {
+    "type": "noun",
+    "word": "muchacho",
+    "definition": "Young man, old enough to work but still called a lad."
+   },
+   {
+    "type": "noun",
+    "word": "estruendo",
+    "definition": "Very loud crashing noise that everybody around can hear."
+   },
+   {
+    "type": "noun",
+    "word": "área",
+    "definition": "Part of a place marked off for one use, like tables."
+   },
+   {
+    "type": "adjective",
+    "word": "amistoso",
+    "surface": "amistosos",
+    "definition": "Friendly, in the way people who like each other behave."
+   },
+   {
+    "type": "expression",
+    "word": "cada jueves",
+    "surface": "Cada jueves",
+    "definition": "Every Thursday, week after week on the same day."
+   },
+   {
+    "type": "noun",
+    "word": "asombro",
+    "definition": "Surprise so big that you stand there without moving."
+   },
+   {
+    "type": "verb",
+    "word": "acabar",
+    "surface": "acaban",
+    "definition": "To finish something and leave nothing of it pending."
+   },
+   {
+    "type": "expression",
+    "word": "no puede ser",
+    "surface": "No puede ser",
+    "definition": "It cannot be; said when something surprises or annoys you."
+   },
+   {
+    "type": "verb",
+    "word": "aburrir",
+    "surface": "aburre",
+    "definition": "To make somebody tired of something because it never changes."
+   },
+   {
+    "type": "verb",
+    "word": "entristecer",
+    "surface": "entristece",
+    "definition": "To make somebody feel sad about what just happened."
+   },
+   {
+    "type": "adjective",
+    "word": "falso",
+    "surface": "falsa",
+    "definition": "Not true, or not really felt though it looks real."
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ },
+ {
+  "topic": "close-friends",
+  "slotIndex": 2,
+  "title": "Sofía camina hasta la pastelería",
+  "slug": "sofia-camina-hasta-la-pasteleria",
+  "synopsis": "Un domingo por la mañana, dos personas caminan veinte cuadras porque una de ellas quiere hablar sin público delante. Pablo lleva tres días convencido de que el problema fue lo que dijo en el bar. Lo que escucha por el camino no lo tranquiliza, porque abre una cuenta más vieja y todavía sin cerrar.",
+  "text": "Nadie tiene prisa ese domingo y la luz entra fuerte por el hall del edificio. Sofía, una compañera del grupo que estudia de noche, toca el timbre a las nueve. Pablo baja sin peinarse y los dos caminan hacia la pastelería del distrito, por la vereda.\n\n“Vos creés que Marta se enojó por el chiste”, dice Sofía en la primera esquina. “No fue eso, y por eso te vine a buscar en vez de escribirte.” Pablo se queda parado en la zona de los talleres, enfadado como en el bar y sin entender.\n\n“¿Y entonces qué fue?”, pregunta, con un aspecto peor que el de ayer. “Fue el encuentro de mayo, cuando dijiste delante de todos que ella exagera.” Pablo no se acuerda de ese encuentro y se le va la energía de golpe.\n\nSofía parte una medialuna en dos partes, cariñosa, y le da la mitad más grande. “Ella se guardó eso cada domingo desde mayo, y nunca te lo dijo.” Pablo se orienta mal, se extravía dos calles y pasan delante de una biblioteca cerrada.\n\n“Yo pensé que estaba todo bien”, dice él, con una risa curiosa y muy baja. “Estaba bien porque ella se ocultaba, no porque estuviera bien”, contesta Sofía. Dentro de una cabina de teléfono un muchacho pega un grito y nadie se da vuelta.\n\n“Hablá vos con ella, que yo ya fracasé dos veces”, pide Pablo, con una cara pobre. “No; esto lo arreglás vos y en el tiempo correcto”, responde Sofía, y se aleja por la vereda. Marta trabaja hasta las siete, y Pablo todavía no sabe con qué palabra empezar.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "pastelería",
+    "definition": "Shop that makes and sells cakes and sweet pastries."
+   },
+   {
+    "type": "noun",
+    "word": "compañera",
+    "definition": "Woman you study or work with, part of the same group."
+   },
+   {
+    "type": "noun",
+    "word": "distrito",
+    "definition": "One named part of a city, with its own streets and shops."
+   },
+   {
+    "type": "noun",
+    "word": "zona",
+    "definition": "Area of a city or a place, seen as a single piece."
+   },
+   {
+    "type": "noun",
+    "word": "aspecto",
+    "definition": "The way somebody looks to others at a given moment."
+   },
+   {
+    "type": "noun",
+    "word": "encuentro",
+    "definition": "Meeting; the time a group came together on some day."
+   },
+   {
+    "type": "noun",
+    "word": "energía",
+    "definition": "The force you have inside for doing things that day."
+   },
+   {
+    "type": "noun",
+    "word": "medialuna",
+    "register": "regional",
+    "definition": "Small sweet crescent roll eaten with coffee in the morning."
+   },
+   {
+    "type": "expression",
+    "word": "en dos partes",
+    "definition": "Into two pieces, split right down the middle."
+   },
+   {
+    "type": "expression",
+    "word": "cada domingo",
+    "definition": "Every Sunday, week after week on the same day."
+   },
+   {
+    "type": "verb",
+    "word": "orientarse",
+    "surface": "orienta",
+    "definition": "To work out where you are and which way to go."
+   },
+   {
+    "type": "verb",
+    "word": "extraviarse",
+    "surface": "extravía",
+    "definition": "To get lost, to end up somewhere you did not mean."
+   },
+   {
+    "type": "adjective",
+    "word": "curiosa",
+    "definition": "Odd, strange in a way that makes you notice it."
+   },
+   {
+    "type": "verb",
+    "word": "ocultarse",
+    "surface": "ocultaba",
+    "definition": "To hide what you feel so that nobody sees it."
+   },
+   {
+    "type": "noun",
+    "word": "cabina",
+    "definition": "Small closed booth, big enough for one person standing."
+   },
+   {
+    "type": "verb",
+    "word": "fracasar",
+    "surface": "fracasé",
+    "definition": "To try something and not get it right at all."
+   },
+   {
+    "type": "expression",
+    "word": "tiempo correcto",
+    "definition": "The right moment for doing something, neither early nor late."
+   },
+   {
+    "type": "verb",
+    "word": "alejarse",
+    "surface": "aleja",
+    "definition": "To move away from somebody, putting distance between you."
+   },
+   {
+    "type": "adjective",
+    "word": "pobre",
+    "definition": "Poor; also said with pity about somebody having a bad time."
+   },
+   {
+    "type": "verb",
+    "word": "peinarse",
+    "surface": "peinarse",
+    "definition": "To tidy your hair with a comb before going out."
+   },
+   {
+    "type": "noun",
+    "word": "talleres",
+    "surface": "talleres",
+    "definition": "Workshops; small places where things are repaired or made."
+   }
+  ],
+  "arcType": "mini-cliffhanger"
+ },
+ {
+  "topic": "close-friends",
+  "slotIndex": 3,
+  "title": "Dos mates en la librería",
+  "slug": "dos-mates-en-la-libreria",
+  "synopsis": "Una librería a las siete de la tarde, con la mitad de las luces apagadas y una sola persona detrás del cajón. Pablo ensaya la disculpa por el camino y le sale entera y perfecta, que es justo lo que la arruina. La segunda, la que dice mal y a medias, es la que cambia algo entre los dos.",
+  "text": "A las siete la librería tiene una sola luz encendida y el escaparate sin gente delante. Marta cierra la caja, ubica los libros nuevos en el escaparate y aparta dos para la biblioteca. Pablo entra con dos mates preparados y sin ninguna ocurrencia guardada.\n\n“Quiero pedirte perdón por lo de mayo y por lo del bar”, empieza él. “Estuve mal, lo pensé mucho y entiendo perfectamente cómo te sentiste.” Marta lo escucha entero, asiente cansada y sigue situando libros en su estante.\n\n“Eso lo repasaste en el colectivo, con esa energía de examen”, contesta ella. “Te salió en tres partes, como una fábula, y no te creo ni la mitad.” Pablo se queda con el mate en la mano y con cara de asombro, sin nada preparado.\n\n“Bueno, no sé qué decir”, admite, y derrama un poco de agua en la caja. “Me dio un miedo horrible de que tuvieras razón, y por eso hice el chiste.” Marta lo mira de perfil por primera vez, ya no enfadada, y algo se le afloja.\n\n“Eso sí es tuyo”, dice ella, y remueve el mate antes de tomarlo. El giro no está en la frase larga sino en la corta, que tiene toda la esencia. Los dos se sientan cerca del acceso, en la vereda, con la barrera de cajas todavía sin abrir.\n\n“Ya es el momento de hablar del encuentro de mayo”, dice Marta, cariñosa. Pablo toma el suyo de un solo trago y le pasa el otro. Afuera el barrio sigue activo y ninguno de los dos se levanta.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "escaparate",
+    "definition": "Shop window where the goods are shown to the street."
+   },
+   {
+    "type": "verb",
+    "word": "ubicar",
+    "surface": "ubica",
+    "register": "regional",
+    "definition": "To put something in the exact place where it belongs."
+   },
+   {
+    "type": "noun",
+    "word": "mate",
+    "register": "cultural",
+    "definition": "Hot green drink shared from a gourd through a metal straw."
+   },
+   {
+    "type": "verb",
+    "word": "situar",
+    "surface": "situando",
+    "definition": "To place something in a chosen spot, one by one."
+   },
+   {
+    "type": "expression",
+    "word": "en tres partes",
+    "definition": "In three pieces, split into three separate bits."
+   },
+   {
+    "type": "noun",
+    "word": "fábula",
+    "definition": "Short old story with animals that teaches a lesson."
+   },
+   {
+    "type": "verb",
+    "word": "derramar",
+    "surface": "derrama",
+    "definition": "To let liquid fall out of its container by accident."
+   },
+   {
+    "type": "adjective",
+    "word": "horrible",
+    "definition": "Awful, so bad or so strong that it feels ugly."
+   },
+   {
+    "type": "verb",
+    "word": "aflojar",
+    "surface": "afloja",
+    "register": "colloquial",
+    "definition": "To loosen, to stop being tight or hard."
+   },
+   {
+    "type": "verb",
+    "word": "remover",
+    "surface": "remueve",
+    "definition": "To stir something round so that it mixes together."
+   },
+   {
+    "type": "noun",
+    "word": "giro",
+    "definition": "Turn; the moment a thing changes direction or meaning."
+   },
+   {
+    "type": "noun",
+    "word": "acceso",
+    "definition": "Way in; the opening through which you enter a place."
+   },
+   {
+    "type": "noun",
+    "word": "barrera",
+    "definition": "Barrier; something placed across a way to block it."
+   },
+   {
+    "type": "expression",
+    "word": "ya es el momento",
+    "surface": "Ya es el momento",
+    "definition": "The time has come, and waiting longer makes no sense."
+   },
+   {
+    "type": "adjective",
+    "word": "cariñosa",
+    "definition": "Warm and affectionate in the way she treats somebody."
+   },
+   {
+    "type": "expression",
+    "word": "de un solo trago",
+    "definition": "In one swallow, drinking it all without stopping once."
+   },
+   {
+    "type": "adjective",
+    "word": "activo",
+    "definition": "Busy and full of movement, with a lot going on."
+   },
+   {
+    "type": "noun",
+    "word": "biblioteca",
+    "definition": "Place that lends books out for free to anybody."
+   },
+   {
+    "type": "noun",
+    "word": "perfil",
+    "definition": "Side view of a face, seen from left or right."
+   },
+   {
+    "type": "noun",
+    "word": "esencia",
+    "definition": "The heart of something, the part that really matters."
+   },
+   {
+    "type": "adjective",
+    "word": "encendida",
+    "surface": "asiente",
+    "definition": "Switched on and giving out light in the room."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "doctors-and-nurses",
+  "slotIndex": 1,
+  "title": "Ya van tres semanas de tos",
+  "slug": "ya-van-tres-semanas-de-tos",
+  "synopsis": "Una casa de patio con una olla hirviendo desde temprano y una mujer que lleva veinte días diciendo que no es nada. La hija escucha la misma frase cada mañana y empieza a contar los días en voz baja. Una bolsa de farmacia dejada junto a la puerta lleva dentro un papel que su madre nunca mencionó.",
+  "text": "Nidia, la madre de Lucía, lleva tres semanas con una tos que no se le va. Quien la oye es Lucía, hija suya, que trabaja en la oficina del puerto. En la cocina hierve una olla de agua con hojas de tilo y menta.\n\n“Es un catarro y ya está pasando, no te preocupes por mí ni un minuto más”, dice Nidia, y estornuda. Lucía le acerca la taza, tranquila, y le mira la nariz roja de tanto sonarse. “Llevas veinte días diciendo cada día lo mismo”, contesta ella.\n\n“La gripe de aquí dura así, mija; el tilo con menta lo arregla todo.” Nidia toma el agua hervida despacio, aunque le queda insípida y tibia. “Tómala tú también, que estás sedienta desde que llegaste del puerto.”\n\nLucía sale al corredor y encuentra una bolsa de la farmacia detrás de la puerta. Adentro hay una medicina en gotas que ella no compró y un papel doblado. “¿Y esto de dónde salió, si yo no lo compré?”, pregunta Lucía desde el corredor.\n\n“Eso lo trajo una amiga, y hace años que me lo recomienda para la tos”, responde Nidia. Lucía deja la bolsa de la farmacia donde estaba y no vuelve a preguntar esa noche. El agua se enfría en la taza y a Nidia la temperatura no le baja en toda la noche.\n\nAl amanecer saca el papel de la bolsa de la farmacia y lo lee junto a la ventana. Es una cita en la clínica del centro para el jueves, y Lucía no comprende nada. Su madre nunca habló de esa cita ni de su salud, y hoy ya es martes.",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "toser",
+    "surface": "tos",
+    "definition": "To push air out loudly because your throat hurts."
+   },
+   {
+    "type": "noun",
+    "word": "tilo",
+    "register": "cultural",
+    "definition": "Lime blossom, dried and used to make a calming hot drink."
+   },
+   {
+    "type": "noun",
+    "word": "menta",
+    "definition": "Mint; green leaf with a fresh taste, used in drinks."
+   },
+   {
+    "type": "noun",
+    "word": "catarro",
+    "definition": "Common cold, with a blocked nose and a sore throat."
+   },
+   {
+    "type": "verb",
+    "word": "estornudar",
+    "surface": "estornuda",
+    "definition": "To blow air out of your nose suddenly and loudly."
+   },
+   {
+    "type": "noun",
+    "word": "nariz",
+    "definition": "Nose; the part of your face you breathe through."
+   },
+   {
+    "type": "expression",
+    "word": "cada día",
+    "definition": "Every day, one day after another without missing any."
+   },
+   {
+    "type": "noun",
+    "word": "gripe",
+    "definition": "Flu; illness with fever, aches and a heavy tired feeling."
+   },
+   {
+    "type": "adjective",
+    "word": "hervida",
+    "definition": "Boiled; heated in water until bubbles come to the top."
+   },
+   {
+    "type": "adjective",
+    "word": "insípida",
+    "definition": "Tasteless, with no flavour at all when you drink it."
+   },
+   {
+    "type": "adjective",
+    "word": "sediento",
+    "surface": "sedienta",
+    "definition": "Thirsty, badly needing something to drink right now."
+   },
+   {
+    "type": "noun",
+    "word": "farmacia",
+    "definition": "Shop where medicines are sold and advice is given."
+   },
+   {
+    "type": "noun",
+    "word": "medicina",
+    "definition": "Substance you take to get better from an illness."
+   },
+   {
+    "type": "expression",
+    "word": "hace años",
+    "definition": "Years ago, a long time before the present moment."
+   },
+   {
+    "type": "verb",
+    "word": "enfriar",
+    "surface": "enfría",
+    "definition": "To get cold, to lose the heat it had before."
+   },
+   {
+    "type": "noun",
+    "word": "clínica",
+    "definition": "Small medical centre where doctors see people by appointment."
+   },
+   {
+    "type": "verb",
+    "word": "comprender",
+    "surface": "comprende",
+    "definition": "To understand what something means or why it happens."
+   },
+   {
+    "type": "noun",
+    "word": "corredor",
+    "definition": "Long narrow passage joining the rooms of a house."
+   },
+   {
+    "type": "noun",
+    "word": "salud",
+    "definition": "The state of your body, good or bad, over time."
+   },
+   {
+    "type": "noun",
+    "word": "gota",
+    "surface": "gotas",
+    "definition": "Very small drop of liquid, the last bit in a cup."
+   },
+   {
+    "type": "noun",
+    "word": "temperatura",
+    "definition": "How hot or cold a body or a place is."
+   }
+  ],
+  "arcType": "mini-cliffhanger"
+ },
+ {
+  "topic": "doctors-and-nurses",
+  "slotIndex": 2,
+  "title": "Sala de espera en Cartagena",
+  "slug": "sala-de-espera-en-cartagena",
+  "synopsis": "Veinte sillas de plástico, un ventilador que gira despacio y gente esperando su nombre desde las siete. Lucía va apuntando en el teléfono cómo cuenta cada uno lo que le pasa, sin saber todavía para qué. Cuando llaman a su madre entiende que en su casa siempre se usaron las mismas tres palabras.",
+  "text": "La sala de espera de la clínica se llena a las siete de la mañana. Un señor con una muleta cuenta en voz alta cómo se cayó de la moto. Nidia se sienta al lado, con la bolsa de la farmacia en las piernas, y la médica todavía no llega.\n\n“A mí me arde el tobillo, como si tuviera una brasa metida adentro”, describe él. “Y de noche es peor, porque el dolor sube y me quita la noche entera.” Lucía escucha, con la alergia de su madre en la cabeza, y apunta en el teléfono lo que dice cada uno.\n\nUna mujer con yeso en el brazo enseña una herida vieja que ya casi no es visible. “Esto me lo hice cada lunes, subiendo la misma escalera con las bolsas del mercado”, se ríe ella. Nidia asiente, se acomoda y sigue igual de ausente que en la casa.\n\n“¿Y usted qué tiene, señora, que la veo callada y aquí llevamos dos horas?”, le pregunta el de la muleta. “Nada, un dolorcito, un catarro”, responde ella, y ahí se termina su parte. La enfermera sale con una lista ordenada y llama tres apellidos seguidos.\n\nAdentro examinan a Nidia, que tose dos veces con la gripe encima, y le escuchan el pulmón. “¿Y esto desde cuándo le pasa?”, pregunta la médica, y Nidia contesta que desde hace poquito. “Tres semanas, y con tos por la noche”, corrige Lucía en voz baja, y su madre no dice lo contrario.\n\nLa médica escribe un medicamento y pide que analicen una muestra en el centro. Afuera le ayudan a Nidia a entender dónde queda el sitio, y ella suspira. En el taxi, Lucía piensa en la tos de su madre y cuenta nueve palabras para un tobillo ajeno y tres para ella.",
+  "vocab": [
+   {
+    "type": "expression",
+    "word": "sala de espera",
+    "definition": "Room with chairs where people sit until they are called."
+   },
+   {
+    "type": "noun",
+    "word": "muleta",
+    "definition": "Stick under the arm that helps you walk with a hurt leg."
+   },
+   {
+    "type": "noun",
+    "word": "tobillo",
+    "definition": "Ankle; the joint between your foot and your leg."
+   },
+   {
+    "type": "noun",
+    "word": "dolor",
+    "surface": "dolorcito",
+    "definition": "Pain; the bad feeling in a part of your body."
+   },
+   {
+    "type": "noun",
+    "word": "yeso",
+    "definition": "Hard white cover put on a broken arm or leg."
+   },
+   {
+    "type": "noun",
+    "word": "herida",
+    "definition": "Cut or wound on the body, healed or still healing."
+   },
+   {
+    "type": "adjective",
+    "word": "visible",
+    "definition": "Able to be seen, clear enough for anybody to notice."
+   },
+   {
+    "type": "expression",
+    "word": "cada lunes",
+    "definition": "Every Monday, week after week on the same day."
+   },
+   {
+    "type": "adjective",
+    "word": "ausente",
+    "definition": "Absent in mind, there in body but thinking of something else."
+   },
+   {
+    "type": "verb",
+    "word": "describir",
+    "surface": "describe",
+    "definition": "To say in words how something feels, looks or happens."
+   },
+   {
+    "type": "noun",
+    "word": "enfermera",
+    "definition": "Woman trained to look after sick people beside the doctor."
+   },
+   {
+    "type": "adjective",
+    "word": "ordenada",
+    "definition": "Sorted, with everything written or placed in the right order."
+   },
+   {
+    "type": "verb",
+    "word": "examinar",
+    "surface": "examinan",
+    "definition": "To look at somebody carefully to find out what is wrong."
+   },
+   {
+    "type": "noun",
+    "word": "pulmón",
+    "definition": "Lung; the organ inside your chest that fills with air."
+   },
+   {
+    "type": "noun",
+    "word": "médica",
+    "definition": "Woman doctor, the one who checks you and decides treatment."
+   },
+   {
+    "type": "noun",
+    "word": "medicamento",
+    "definition": "Medicine a doctor writes down for you to buy and take."
+   },
+   {
+    "type": "verb",
+    "word": "analizar",
+    "surface": "analicen",
+    "definition": "To study something closely in order to find out what it is."
+   },
+   {
+    "type": "noun",
+    "word": "muestra",
+    "definition": "Small amount taken from your body so it can be tested."
+   },
+   {
+    "type": "noun",
+    "word": "brasa",
+    "definition": "Piece of burning coal, red hot and glowing without flame."
+   },
+   {
+    "type": "verb",
+    "word": "ayudar",
+    "surface": "ayudan",
+    "definition": "To do something that makes things easier for somebody."
+   },
+   {
+    "type": "adjective",
+    "word": "entera",
+    "definition": "Whole, complete, with no part of it left out."
+   }
+  ],
+  "arcType": "juxtaposition-discovery"
+ },
+ {
+  "topic": "doctors-and-nurses",
+  "slotIndex": 3,
+  "title": "Jorge llama desde Buenos Aires",
+  "slug": "jorge-llama-desde-buenos-aires",
+  "synopsis": "Una llamada larga desde el sur, un domingo por la tarde, con el teléfono encima de la mesa y las dos escuchando. El tío que la familia casi no nombra hace la misma pregunta que hizo Lucía y recibe otra respuesta. Después le explica cuál es la palabra que en esa casa significa de verdad estoy mal.",
+  "text": "El domingo por la tarde suena el teléfono que Nidia esperaba desde el jueves. Jorge vive en Buenos Aires desde hace muchos años y llama una vez al mes. Lucía lo deja encima de la mesa, en altavoz, y se queda a un lado.\n\n“Buenas tardes, hermanita, ¿y cómo vas de eso que tenías?”, pregunta él. “Regular, ahí vamos”, contesta Nidia, y no agrega una sola palabra más. Lucía levanta la cara, porque esa palabra no se la había oído nunca en veinte años.\n\n“Entonces vamos mal, y me lo estás diciendo con esa palabra”, dice Jorge sin subir la voz. “Cuando ella dice regular, la cosa lleva un mes andando; en eso soy sabio.” Nidia se ríe bajito y le pide a su hermano que no se ponga pesado.\n\n“Lucía, en este hogar nadie dice nunca que le duele algo, ni con gripe”, explica Jorge. “Desde niños es así, y no hay solución; se dice regular y hay que salir para el hospital.” A Lucía le interesa eso más que el papel de la clínica.\n\nEl martes reciben el papel del laboratorio y no aparece nada malo. Es una alergia vieja que se juntó con un resfriado y un catarro, y le apretó el pulmón; la farmacia tenía razón. Nidia lo lee dos veces, suspira, se toma la medicina y por fin duerme sin pesadillas.\n\n“Regular ya no, entonces, y esto lo apunto”, le dice Lucía, y su madre contesta tranquila que va bien. El miedo no desaparece del todo, aunque la relación entre las dos queda más abierta. Jorge pregunta por el recorrido más barato de diciembre y manda una invitación, y Lucía guarda esa palabra en la memoria.",
+  "vocab": [
+   {
+    "type": "expression",
+    "word": "muchos años",
+    "definition": "Many years, a long stretch of time already gone by."
+   },
+   {
+    "type": "expression",
+    "word": "Buenas tardes",
+    "definition": "Good afternoon; the greeting people use after midday."
+   },
+   {
+    "type": "adjective",
+    "word": "regular",
+    "register": "colloquial",
+    "definition": "So-so; neither well nor badly, said when you feel poorly."
+   },
+   {
+    "type": "noun",
+    "word": "hermanita",
+    "register": "colloquial",
+    "definition": "Little sister; a warm way to speak to your own sister."
+   },
+   {
+    "type": "expression",
+    "word": "Desde niños",
+    "definition": "Since childhood, from the time they were both small."
+   },
+   {
+    "type": "noun",
+    "word": "solución",
+    "definition": "The answer that ends a problem and puts it away."
+   },
+   {
+    "type": "verb",
+    "word": "interesar",
+    "surface": "interesa",
+    "definition": "To catch somebody's attention so they want to know more."
+   },
+   {
+    "type": "verb",
+    "word": "recibir",
+    "surface": "reciben",
+    "definition": "To be given something that somebody sends or hands you."
+   },
+   {
+    "type": "noun",
+    "word": "alergia",
+    "definition": "Bad reaction of the body to dust, food or a plant."
+   },
+   {
+    "type": "noun",
+    "word": "resfriado",
+    "definition": "Cold; the illness you catch with a runny nose."
+   },
+   {
+    "type": "verb",
+    "word": "suspirar",
+    "surface": "suspira",
+    "definition": "To let out a long breath because of feeling something."
+   },
+   {
+    "type": "expression",
+    "word": "por fin",
+    "definition": "At last, after waiting a long time for it."
+   },
+   {
+    "type": "adjective",
+    "word": "tranquila",
+    "definition": "Calm and no longer worried about what may happen."
+   },
+   {
+    "type": "verb",
+    "word": "desaparecer",
+    "surface": "desaparece",
+    "definition": "To go away completely, leaving no sign behind."
+   },
+   {
+    "type": "noun",
+    "word": "relación",
+    "definition": "The way two people get on and treat each other."
+   },
+   {
+    "type": "noun",
+    "word": "invitación",
+    "definition": "Offer asking somebody to come to a place or an event."
+   },
+   {
+    "type": "noun",
+    "word": "recorrido",
+    "definition": "Route; the way a trip goes from start to finish."
+   },
+   {
+    "type": "adjective",
+    "word": "sabio",
+    "definition": "Wise, saying the true thing in few and simple words."
+   },
+   {
+    "type": "noun",
+    "word": "hogar",
+    "definition": "Home; the house and the family life inside it."
+   },
+   {
+    "type": "noun",
+    "word": "pesadilla",
+    "surface": "pesadillas",
+    "definition": "Bad dream that wakes you up feeling frightened."
+   },
+   {
+    "type": "noun",
+    "word": "memoria",
+    "definition": "Memory; the part of your mind that keeps what you learn."
+   }
+  ],
+  "arcType": "recurring-character-callback"
+ },
+ {
+  "topic": "drivers-and-guides",
+  "slotIndex": 1,
+  "title": "Julio no contesta el jueves",
+  "slug": "julio-no-contesta-el-jueves",
+  "synopsis": "Un cuarto alquilado con dos valijas abiertas encima de la cama y ocho días por delante. Elena reparte lo que se lleva y lo que deja, y espera una llamada que no llega en toda la tarde. Cuando el chofer aparece por fin, la razón de su silencio no tiene nada que ver con ella.",
+  "text": "Quien reparte la ropa en dos montones es Elena, viajera de paso que se va el jueves. La habitación queda casi vacía y las dos valijas siguen abiertas encima de la cama. Julio maneja el mismo taxi desde hace once años y hoy no contesta el teléfono.\n\nElena sube sola a la colina, con las valijas ya repartidas, y mira el paisaje sin conocer las cumbres. El aire es gélido a esa hora y abajo la ciudad todavía duerme. “Qué momento para irse, justo ahora”, dice en voz alta, aunque no hay nadie cerca.\n\nUna muchacha del mercado le vende un portarretrato de madera, un álbum y unas semillas. “Este me lo llevo como tesoro, que allá no se consiguen”, le explica, y guarda el vuelto en los bolsillos. La muchacha sonríe, no pregunta nada y le da un envoltorio de papel.\n\nJulio aparece el miércoles al atardecer, con el maletín del taxi, y se queda en la puerta. “Estuve arreglando papeles, y no era cosa de contarla por teléfono”, dice él. Elena descubre que trae las manos sucias y una camisa de trabajo.\n\n“Me voy a Lima el mes que viene, a manejar con mi hermano”, agrega Julio. “Así que esta despedida es doble, y a mí me toca la más larga.” Elena se sienta en la cama, entre la ropa y el envoltorio del mercado, y tarda en contestar.\n\n“Yo pensé que estabas enojado conmigo”, contesta ella al final. “No, estaba escalando la misma cuesta que tú, de paso”, dice Julio. Desde la ventana la ciudad se ve luminosa y las dos cajas que Elena envía siguen abiertas y lindas.",
+  "vocab": [
+   {
+    "type": "expression",
+    "word": "casi vacía",
+    "definition": "Nearly empty, with almost nothing left inside it."
+   },
+   {
+    "type": "noun",
+    "word": "cumbre",
+    "surface": "cumbres",
+    "definition": "Top of a mountain, the highest point of all."
+   },
+   {
+    "type": "noun",
+    "word": "colina",
+    "definition": "Small hill, lower and rounder than a mountain."
+   },
+   {
+    "type": "noun",
+    "word": "paisaje",
+    "definition": "Everything you see when you look out over a place."
+   },
+   {
+    "type": "expression",
+    "word": "sin conocer",
+    "definition": "Without knowing them, having never learnt what they are."
+   },
+   {
+    "type": "adjective",
+    "word": "gélido",
+    "definition": "Icy cold, so cold that it hurts the skin."
+   },
+   {
+    "type": "adjective",
+    "word": "luminosa",
+    "definition": "Full of light, bright and easy to see from far."
+   },
+   {
+    "type": "adjective",
+    "word": "lindo",
+    "surface": "lindas",
+    "register": "regional",
+    "definition": "Lovely, nice to look at in a simple everyday way."
+   },
+   {
+    "type": "noun",
+    "word": "portarretrato",
+    "definition": "Frame that stands on a table and holds one photo."
+   },
+   {
+    "type": "noun",
+    "word": "álbum",
+    "definition": "Book with empty pages for keeping photos inside."
+   },
+   {
+    "type": "noun",
+    "word": "tesoro",
+    "definition": "Something you keep because it matters, not because it costs."
+   },
+   {
+    "type": "noun",
+    "word": "muchacha",
+    "surface": "muchacha",
+    "definition": "Young woman, old enough to work and run a stall."
+   },
+   {
+    "type": "verb",
+    "word": "enviar",
+    "surface": "envía",
+    "definition": "To send something to somebody who is far away."
+   },
+   {
+    "type": "noun",
+    "word": "envoltorio",
+    "definition": "Paper or plastic that something came wrapped inside."
+   },
+   {
+    "type": "verb",
+    "word": "descubrir",
+    "surface": "descubre",
+    "definition": "To find out something that was there without you knowing."
+   },
+   {
+    "type": "noun",
+    "word": "despedida",
+    "definition": "Goodbye; the moment two people part before a long time apart."
+   },
+   {
+    "type": "verb",
+    "word": "escalar",
+    "surface": "escalando",
+    "definition": "To climb up a hill or a mountain with effort."
+   },
+   {
+    "type": "expression",
+    "word": "de paso",
+    "definition": "At the same time, while doing something else anyway."
+   },
+   {
+    "type": "noun",
+    "word": "bolsillos",
+    "definition": "Pockets; the small cloth bags sewn into your clothes."
+   },
+   {
+    "type": "noun",
+    "word": "cajas",
+    "definition": "Boxes; square containers for carrying or sending things."
+   },
+   {
+    "type": "noun",
+    "word": "viajera",
+    "definition": "Woman who is travelling, passing through a place."
+   }
+  ],
+  "arcType": "late-reveal"
+ },
+ {
+  "topic": "drivers-and-guides",
+  "slotIndex": 2,
+  "title": "La camioneta de Juliaca",
+  "slug": "la-camioneta-de-juliaca",
+  "synopsis": "Un número apuntado en una libreta hace un año vuelve a servir cuando la ruta se cierra por la lluvia. Elena llama sin muchas esperanzas y del otro lado contesta alguien que se acuerda de su nombre. El viaje de vuelta se hace por caminos que ella no habría encontrado sola.",
+  "text": "Tres días lluviosos dejan cortada la carretera del sur y esta mañana sigue tormentosa. Elena busca en la libreta, entre las valijas abiertas, el número del chofer que Julio le dictó. Marca sin muchas esperanzas, tormentosa la mañana, y se oye el agua contra la ventana.\n\n“Usted es la de la libreta, la del bus de Juliaca”, dice el chofer. “Yo la llevo, pero salimos ahora y a lo mejor llegamos de noche.” Por suerte la camioneta tiene lugar atrás y el motor arranca a la primera.\n\nEl chofer conduce despacio entre la niebla, reduce en cada curva y no habla mucho. Pasan un túnel corto, dos semáforos apagados, un peatón con paraguas y una glorieta. “Más o menos dos horas, si el agua nos deja pasar”, calcula él.\n\nLa autopista nueva está cerrada y toman un camino de tierra hacia una villa. Hay una choza de madera en la villa y una motocicleta caída al lado de un charco. “Aquí paramos cinco minutos, que hay que revisar una llanta”, avisa el chofer.\n\nElena baja, se estira y bebe de la cantimplora sin bajarse el abrigo. El paisaje natural es distinto del de la colina de Cusco, sin cumbres y más verde. “Julio me dio su número hace un año, cuando el álbum todavía estaba vacío”, cuenta ella.\n\n“Él programa a la gente antes de que la necesite”, contesta el chofer, que es mayor. “Y a mí me avisó en marzo de que usted iba a llamar algún día.” La camioneta aparca en Cusco a las once y Elena piensa en la despedida y en el tesoro sin envolver.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "tormentoso",
+    "surface": "tormentosa",
+    "definition": "Stormy, with heavy rain and wind all at once."
+   },
+   {
+    "type": "expression",
+    "word": "a lo mejor",
+    "definition": "Maybe; it could turn out that way but nobody knows."
+   },
+   {
+    "type": "expression",
+    "word": "por suerte",
+    "surface": "Por suerte",
+    "definition": "Luckily; it worked out well without anybody planning it."
+   },
+   {
+    "type": "noun",
+    "word": "camioneta",
+    "definition": "Small van or pick-up used for people and goods."
+   },
+   {
+    "type": "verb",
+    "word": "conducir",
+    "surface": "conduce",
+    "definition": "To drive a car or a van along a road."
+   },
+   {
+    "type": "verb",
+    "word": "reducir",
+    "surface": "reduce",
+    "definition": "To make something smaller, here to slow down the speed."
+   },
+   {
+    "type": "noun",
+    "word": "túnel",
+    "definition": "Passage cut through a hill so a road can pass."
+   },
+   {
+    "type": "noun",
+    "word": "semáforo",
+    "surface": "semáforos",
+    "definition": "Traffic light with red, amber and green for the cars."
+   },
+   {
+    "type": "noun",
+    "word": "peatón",
+    "definition": "Person walking in the street rather than driving."
+   },
+   {
+    "type": "expression",
+    "word": "más o menos",
+    "surface": "Más o menos",
+    "definition": "About that much, roughly, without counting it exactly."
+   },
+   {
+    "type": "noun",
+    "word": "autopista",
+    "definition": "Wide fast road with several lanes in each direction."
+   },
+   {
+    "type": "noun",
+    "word": "villa",
+    "definition": "Small town, bigger than a village and with its own square."
+   },
+   {
+    "type": "noun",
+    "word": "choza",
+    "definition": "Simple small house built of wood, mud or straw."
+   },
+   {
+    "type": "noun",
+    "word": "motocicleta",
+    "definition": "Motorbike; two wheels with an engine between them."
+   },
+   {
+    "type": "noun",
+    "word": "llanta",
+    "register": "regional",
+    "definition": "Tyre; the rubber ring that goes around a wheel."
+   },
+   {
+    "type": "noun",
+    "word": "cantimplora",
+    "definition": "Flat bottle you carry water in when walking far."
+   },
+   {
+    "type": "adjective",
+    "word": "natural",
+    "definition": "Belonging to nature, not built or changed by people."
+   },
+   {
+    "type": "verb",
+    "word": "programar",
+    "surface": "programa",
+    "definition": "To arrange something in advance so it happens later."
+   },
+   {
+    "type": "adjective",
+    "word": "mayor",
+    "definition": "Older, further on in years than the other people there."
+   },
+   {
+    "type": "verb",
+    "word": "aparcar",
+    "surface": "aparca",
+    "definition": "To leave a car standing in a place and stop."
+   },
+   {
+    "type": "adjective",
+    "word": "lluvioso",
+    "surface": "lluviosos",
+    "definition": "Rainy, with water falling on and off all day."
+   }
+  ],
+  "arcType": "recurring-character-callback"
+ },
+ {
+  "topic": "drivers-and-guides",
+  "slotIndex": 3,
+  "title": "Buen viaje, dice Julio",
+  "slug": "buen-viaje-dice-julio",
+  "synopsis": "Una mañana sin nada urgente, una caminata larga por la alameda y dos personas que ya no tienen mucho que arreglar. Cada uno sabe adónde va y ninguno de los dos promete volver en una fecha concreta. Lo que se dicen al final es corto y cabe entero en dos palabras de siempre.",
+  "text": "El jueves amanece cálido y sin viento, cosa rara en esta parte del año. Elena termina la caminata por la alameda con el maletín y las valijas ya cerradas. Julio la espera al lado del monumento de la glorieta, con el taxi mal aparcado.\n\n“Te guardé esto para el viaje, y no lo abras hasta el avión”, dice él. “Adentro hay pan tostado y unas semillas de la laguna, para la caminata.” Elena lo abre igual, prueba una semilla y pone cara de haber esperado otra cosa.\n\n“Se saborea mejor frío, aunque nadie me cree cuando lo digo”, se defiende Julio. “Está bueno, en serio”, admite ella, y guarda el resto para el aeropuerto. Los dos caminan sin prisa, con el envoltorio del mercado, hasta la glorieta de la alameda.\n\n“¿Y cuándo te vas tú?”, pregunta Elena, ya cerca de la estación. “El doce, o el trece; todavía no está claro”, contesta Julio, ya tranquilo. Ninguno de los dos conmemora nada ni nombra lo que suele decirse en estos casos.\n\nEl taxi arranca y la colina va quedando atrás, detrás de la ventana sucia. Elena mira la meseta, invisible detrás de la niebla baja de la mañana. “Yo vuelvo, pero no te digo cuándo”, dice ella, y él asiente sin mirarla.\n\n“Mejor así, que las fechas se rompen solas”, contesta Julio, que odia los atardeceres de despedida. Ya en la terminal le baja el maletín y el álbum, le da la mano y no se mueve. “Buen viaje”, dice él, y ella le contesta “Hasta luego” de vuelta, sin prometer un mes.",
+  "vocab": [
+   {
+    "type": "adjective",
+    "word": "cálido",
+    "definition": "Warm and pleasant, without being hot or heavy."
+   },
+   {
+    "type": "noun",
+    "word": "caminata",
+    "definition": "Long walk taken for pleasure rather than to arrive."
+   },
+   {
+    "type": "noun",
+    "word": "alameda",
+    "definition": "Wide street lined with trees on both sides."
+   },
+   {
+    "type": "noun",
+    "word": "maletín",
+    "definition": "Small flat case with a handle, for papers or a laptop."
+   },
+   {
+    "type": "noun",
+    "word": "monumento",
+    "definition": "Stone figure or column put up to remember something."
+   },
+   {
+    "type": "adjective",
+    "word": "tostado",
+    "definition": "Toasted; heated until it turns golden and goes crisp."
+   },
+   {
+    "type": "noun",
+    "word": "semilla",
+    "surface": "semillas",
+    "definition": "Seed; the small hard part that a plant grows from."
+   },
+   {
+    "type": "noun",
+    "word": "laguna",
+    "definition": "Small lake, shallow and often close to a village."
+   },
+   {
+    "type": "verb",
+    "word": "saborear",
+    "surface": "saborea",
+    "definition": "To taste something slowly and enjoy the flavour of it."
+   },
+   {
+    "type": "noun",
+    "word": "aeropuerto",
+    "definition": "Place where planes take off and land with passengers."
+   },
+   {
+    "type": "noun",
+    "word": "glorieta",
+    "definition": "Round open space where several streets or paths meet."
+   },
+   {
+    "type": "noun",
+    "word": "estación",
+    "definition": "Station where buses or trains stop to pick people up."
+   },
+   {
+    "type": "verb",
+    "word": "conmemorar",
+    "surface": "conmemora",
+    "definition": "To mark a day or a parting with some special act."
+   },
+   {
+    "type": "noun",
+    "word": "meseta",
+    "definition": "High flat land that stretches out between the mountains."
+   },
+   {
+    "type": "adjective",
+    "word": "invisible",
+    "definition": "Impossible to see, hidden behind something or too far away."
+   },
+   {
+    "type": "noun",
+    "word": "niebla",
+    "definition": "Fog; thick low cloud that hides what is behind it."
+   },
+   {
+    "type": "noun",
+    "word": "atardecer",
+    "definition": "Late afternoon, the hours when the light starts to go."
+   },
+   {
+    "type": "expression",
+    "word": "buen viaje",
+    "surface": "Buen viaje",
+    "definition": "Have a good trip; said to somebody about to leave."
+   },
+   {
+    "type": "expression",
+    "word": "hasta luego",
+    "surface": "Hasta luego",
+    "definition": "See you later; a goodbye that leaves the date open."
+   },
+   {
+    "type": "expression",
+    "word": "de vuelta",
+    "definition": "Back in return, answering what the other person just said."
+   },
+   {
+    "type": "noun",
+    "word": "fechas",
+    "definition": "Dates; the exact days written down for something to happen."
+   }
+  ],
+  "arcType": "harmonic-close"
+ },
+ {
+  "topic": "friends-of-friends",
+  "slotIndex": 1,
+  "title": "Mientras Lucas prueba la guitarra",
+  "slug": "mientras-lucas-prueba-la-guitarra",
+  "synopsis": "Un local de barrio con un altavoz viejo y tres sillas ocupadas por instrumentos prestados. Pablo cree que va de visita, a mirar a un amigo tocar una tarde cualquiera. La tarde entera avanza sobre ese malentendido, hasta que un papel pegado en la puerta le dice desde cuándo lo estaban esperando a él.",
+  "text": "En un local de Palermo, el parlante viejo suena antes de que entre nadie. Pablo estudia música en un instituto desde hace un año y todavía no toca delante de gente, ni en el cuarteto. Lucas, un amigo del barrio que arma canciones desde chico, enchufa la guitarra en el parlante.\n\n“Vení, sentate acá, que hoy sos parte del trío y no del público”, dice Lucas. Sobre una silla hay un tambor chico, una flauta, un silbato y unos audífonos. Pablo se queda de pie junto a la puerta, con las manos en los bolsillos.\n\n“Yo vine a mirar nada más, que para eso no hace falta ensayar”, contesta Pablo, y balancea el pie. “Nadie viene a mirar un ensayo; venís porque hacés falta al mediodía y esta noche”, le dice Lucas. El ritmo del tambor es lento y la melodía vuelve tres veces.\n\nPablo agarra el tambor y sigue el compás con el pie. “Más flojo, que esto no es una marcha y el parlante lo agranda todo”, le corrige Lucas. La melodía cambia cuando él entra, y sale distinta de como la imaginaba.\n\nDespués de media hora el trío suena más calmado y menos intenso que al empezar. “¿Y si me equivoco en la función?”, pregunta Pablo con el palito en la mano. “Te vas a equivocar seguro, y te aseguro que nadie lo va a notar”, contesta Lucas.\n\nPablo prefería creer que lo habían invitado por compañía y nada más. En la puerta hay un afiche que frecuentemente nadie mira, con cuatro nombres. El suyo está el último, en tinta más nueva, y lo acompaña una fecha de hace dos semanas.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "parlante",
+    "register": "regional",
+    "definition": "Loudspeaker; the box that music comes out of, loudly."
+   },
+   {
+    "type": "noun",
+    "word": "cuarteto",
+    "definition": "Group of four musicians who play together as one."
+   },
+   {
+    "type": "noun",
+    "word": "trío",
+    "definition": "Group of three musicians who play together as one."
+   },
+   {
+    "type": "noun",
+    "word": "tambor",
+    "definition": "Drum; round instrument you hit to keep the beat."
+   },
+   {
+    "type": "noun",
+    "word": "flauta",
+    "definition": "Long thin instrument you blow into to make high notes."
+   },
+   {
+    "type": "noun",
+    "word": "silbato",
+    "definition": "Whistle; small object you blow to make a sharp sound."
+   },
+   {
+    "type": "expression",
+    "word": "al mediodía",
+    "definition": "At midday, around twelve, when the sun is highest."
+   },
+   {
+    "type": "expression",
+    "word": "esta noche",
+    "definition": "Tonight, the evening and night hours of today."
+   },
+   {
+    "type": "noun",
+    "word": "ritmo",
+    "definition": "The beat of a piece of music, its regular pattern."
+   },
+   {
+    "type": "noun",
+    "word": "melodía",
+    "definition": "Tune; the line of notes you remember and can sing."
+   },
+   {
+    "type": "verb",
+    "word": "balancear",
+    "surface": "balancea",
+    "definition": "To swing something gently from one side to the other."
+   },
+   {
+    "type": "noun",
+    "word": "compás",
+    "definition": "Musical time; the count that tells you when each beat falls."
+   },
+   {
+    "type": "adjective",
+    "word": "distinto",
+    "surface": "distinta",
+    "definition": "Different from what you knew or expected before."
+   },
+   {
+    "type": "verb",
+    "word": "imaginar",
+    "surface": "imaginaba",
+    "definition": "To picture something in your head before you see it."
+   },
+   {
+    "type": "adjective",
+    "word": "calmado",
+    "definition": "Calm and unhurried, with nothing pushing it along."
+   },
+   {
+    "type": "adjective",
+    "word": "intenso",
+    "definition": "Very strong in feeling or force, almost too much."
+   },
+   {
+    "type": "noun",
+    "word": "función",
+    "definition": "Show; one performance given in front of an audience."
+   },
+   {
+    "type": "noun",
+    "word": "instituto",
+    "definition": "School where adults take courses after finishing normal school."
+   },
+   {
+    "type": "verb",
+    "word": "preferir",
+    "surface": "prefería",
+    "definition": "To like one thing more than another and choose it."
+   },
+   {
+    "type": "noun",
+    "word": "afiche",
+    "register": "regional",
+    "definition": "Poster; printed sheet stuck on a wall to announce something."
+   },
+   {
+    "type": "adverb",
+    "word": "frecuentemente",
+    "definition": "Often, happening many times over a period of days."
+   },
+   {
+    "type": "verb",
+    "word": "acompañar",
+    "surface": "acompaña",
+    "definition": "To go along with somebody or something, at its side."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "friends-of-friends",
+  "slotIndex": 2,
+  "title": "Nahuel abre a las cinco",
+  "slug": "nahuel-abre-a-las-cinco",
+  "synopsis": "Una tarde cualquiera de martes en el local, con la puerta abierta y nadie apurado. El hermano de Lucas abre siempre a la misma hora y coloca las sillas en el mismo sitio. Pablo aprende que en ese grupo la mitad de las cosas se dicen tocando y la otra mitad no se dicen.",
+  "text": "Quien abre los martes es Nahuel, hermano menor de Lucas. Llega a las cinco, coloca cuatro sillas junto al parlante y abre la puerta con un chirrido. Pablo entra con el poema que escribió en el colectivo y se sienta encima de una estera.\n\n“Traje una letra, aunque capaz que no sirve para nada”, dice Pablo, y la comparte. “Leela vos, que si la leo yo se me va a notar todo”, agrega enseguida. Lucas la lee de pie, marcando el compás con el pie, y la deja encima del parlante.\n\n“La poesía está bien, pero es larga para el ritmo que tocamos nosotros”, contesta Lucas. “Cortala por la mitad y quedate con la parte del final, que es la buena.” Nahuel afina el violín y silba la melodía del final, veloz y distinta.\n\nPablo la corta, pálido, y desea que nadie le pida leerla en voz alta. Contra la pared hay un trofeo brillante y una cartelera con un farolito de papel. Nahuel se pone los audífonos y controla el piano desde el otro lado del local.\n\n“¿Y esto lo hacen cada semana, aunque no venga nadie?”, pregunta Pablo. “Todas, y también cuando llueve y no aparece ni el del kiosco”, responde Nahuel. La luz baja detrás del edificio y el local queda sombrío, casi calmado.\n\nLa práctica avanza sin apuro, con un ritmo intenso, y a nadie le importa que sea martes. Lucas homenajea a un músico viejo con la flauta y Nahuel lo detiene a los dos compases. “La próxima vez traé la letra entera”, dice Nahuel, y la apunta en un papel colorido.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "poema",
+    "definition": "Short piece of writing in lines, often about a feeling."
+   },
+   {
+    "type": "verb",
+    "word": "compartir",
+    "surface": "comparte",
+    "definition": "To let others have or see something that is yours."
+   },
+   {
+    "type": "verb",
+    "word": "silbar",
+    "surface": "silba",
+    "definition": "To make a tune with air blown between your lips."
+   },
+   {
+    "type": "noun",
+    "word": "poesía",
+    "definition": "Writing in verse, and the art of making it."
+   },
+   {
+    "type": "verb",
+    "word": "desear",
+    "surface": "desea",
+    "definition": "To want something to happen, often quietly and without saying it."
+   },
+   {
+    "type": "noun",
+    "word": "trofeo",
+    "definition": "Cup or figure given as a prize for winning something."
+   },
+   {
+    "type": "adjective",
+    "word": "brillante",
+    "definition": "Shiny, throwing back the light that falls on it."
+   },
+   {
+    "type": "expression",
+    "word": "cada semana",
+    "definition": "Every week, once in each seven-day period without fail."
+   },
+   {
+    "type": "noun",
+    "word": "audífonos",
+    "register": "regional",
+    "definition": "Headphones; two small speakers you wear over your ears."
+   },
+   {
+    "type": "verb",
+    "word": "controlar",
+    "surface": "controla",
+    "definition": "To keep watch over something so it works as it should."
+   },
+   {
+    "type": "adjective",
+    "word": "sombrío",
+    "definition": "Dark and a little sad, with very little light inside."
+   },
+   {
+    "type": "noun",
+    "word": "práctica",
+    "definition": "The act of repeating something until you can do it well."
+   },
+   {
+    "type": "verb",
+    "word": "avanzar",
+    "surface": "avanza",
+    "definition": "To move forward, to get further along than before."
+   },
+   {
+    "type": "verb",
+    "word": "homenajear",
+    "surface": "homenajea",
+    "definition": "To honour somebody publicly for what they did."
+   },
+   {
+    "type": "expression",
+    "word": "próxima vez",
+    "definition": "Next time, the following occasion the same thing happens."
+   },
+   {
+    "type": "adjective",
+    "word": "colorido",
+    "definition": "Full of bright colours, easy to notice from far away."
+   },
+   {
+    "type": "adjective",
+    "word": "menor",
+    "definition": "Younger; the one born after the others in a family."
+   },
+   {
+    "type": "noun",
+    "word": "kiosco",
+    "register": "regional",
+    "definition": "Small street stand selling sweets, drinks and newspapers."
+   },
+   {
+    "type": "noun",
+    "word": "chirrido",
+    "definition": "Sharp thin noise made by something old rubbing or turning."
+   },
+   {
+    "type": "adjective",
+    "word": "veloz",
+    "definition": "Fast, moving or going by in very little time."
+   },
+   {
+    "type": "verb",
+    "word": "detener",
+    "surface": "detiene",
+    "definition": "To stop something that was going on until then."
+   }
+  ],
+  "arcType": "daily-encounter"
+ },
+ {
+  "topic": "friends-of-friends",
+  "slotIndex": 3,
+  "title": "Jueves de función en San Telmo",
+  "slug": "jueves-de-funcion-en-san-telmo",
+  "synopsis": "Un teatro chico de barrio, con veinte sillas y una entrada por el costado. Pablo pasa la tarde entera convencido de que le van a temblar las manos y de que se le va a notar. Lo que ocurre en el escenario no es un triunfo ni un desastre, sino algo mucho más tranquilo.",
+  "text": "El teatro de San Telmo tiene veinte sillas y una luminaria sola en el techo. Pablo cruza la antesala con el tambor y el silbato, y con las manos frías. Lucas y Nahuel ya están adentro, hablando con la mujer que cobra en la puerta trasera.\n\n“Hoy vino gente, no te asustes, que son todos del barrio”, dice Lucas al verlo llegar. “Y si te olvidás una parte, seguí igual, que nadie de ahí abajo se va a dar cuenta.” Pablo deja el saco en el hall, sobre una estera, junto a la vidriera de la cartelera.\n\n“Estás pálido”, le dice Nahuel, y le pasa un vaso de agua. “Tomá esto, y respirá dos veces antes de entrar, que a mí me sirve, en serio.” El resplandor de la luminaria le hace un destello en los ojos y el silbato le pesa.\n\n“¿Y si me quedo mudo y no entro?”, pregunta Pablo esta tarde por cuarta vez. “Entonces entramos nosotros y seguimos, que para eso somos tres”, contesta Lucas. Las primeras notas salen despacio, el trío marca el ritmo y Pablo tarda cuatro compases.\n\nNadie lo mira, nadie lo corrige y la melodía se separa en dos antes de juntarse. Al final, la gente de las veinte sillas aclama con más ruido del que parecía posible. “Salió precioso, y el poema no hizo falta”, dice Lucas, calmado, y se pone a enrollar cables.\n\nAfuera, dos farolitos iluminan la cartelera de la plazoleta y un afiche colorido. Los tres se sientan con el tambor, la flauta y los audífonos de Nahuel en el suelo. “Buenas noches”, les dice la mujer de la puerta, y Pablo siente una felicidad tranquila.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "teatro",
+    "definition": "Building with a stage where plays and shows are given."
+   },
+   {
+    "type": "noun",
+    "word": "luminaria",
+    "definition": "Big lamp fixed high up to light a whole room."
+   },
+   {
+    "type": "noun",
+    "word": "antesala",
+    "definition": "Small room you cross before reaching the main one."
+   },
+   {
+    "type": "expression",
+    "word": "puerta trasera",
+    "definition": "Back door, the one at the rear of a building."
+   },
+   {
+    "type": "verb",
+    "word": "asustarse",
+    "surface": "asustes",
+    "definition": "To get frightened, to feel sudden fear about something."
+   },
+   {
+    "type": "noun",
+    "word": "hall",
+    "definition": "Wide entrance space just inside the door of a building."
+   },
+   {
+    "type": "noun",
+    "word": "vidriera",
+    "register": "regional",
+    "definition": "Shop window, the big glass front facing the street."
+   },
+   {
+    "type": "adjective",
+    "word": "pálido",
+    "definition": "Pale, with the colour gone out of your face."
+   },
+   {
+    "type": "noun",
+    "word": "resplandor",
+    "definition": "Strong steady light that spreads out from a lamp."
+   },
+   {
+    "type": "noun",
+    "word": "destello",
+    "definition": "Short flash of light that appears and goes at once."
+   },
+   {
+    "type": "expression",
+    "word": "esta tarde",
+    "definition": "This afternoon, the hours between midday and the evening."
+   },
+   {
+    "type": "verb",
+    "word": "separar",
+    "surface": "separa",
+    "definition": "To move two things apart so they are no longer together."
+   },
+   {
+    "type": "verb",
+    "word": "aclamar",
+    "surface": "aclama",
+    "definition": "To cheer loudly for somebody who has just performed."
+   },
+   {
+    "type": "adjective",
+    "word": "precioso",
+    "definition": "Beautiful, so lovely that you want to say it out loud."
+   },
+   {
+    "type": "noun",
+    "word": "plazoleta",
+    "definition": "Small square, a widening of the street with a few trees."
+   },
+   {
+    "type": "noun",
+    "word": "farolito",
+    "register": "regional",
+    "definition": "Small hanging lamp, often coloured, used at street fairs."
+   },
+   {
+    "type": "verb",
+    "word": "iluminar",
+    "surface": "iluminan",
+    "definition": "To give light to a place so it can be seen."
+   },
+   {
+    "type": "noun",
+    "word": "cartelera",
+    "definition": "Board or page listing which shows are on and when."
+   },
+   {
+    "type": "expression",
+    "word": "buenas noches",
+    "surface": "Buenas noches",
+    "definition": "Good evening, or good night when leaving after dark."
+   },
+   {
+    "type": "noun",
+    "word": "felicidad",
+    "definition": "The quiet good feeling of things going well for you."
+   },
+   {
+    "type": "noun",
+    "word": "estera",
+    "definition": "Flat woven mat used to cover a floor or a table."
+   }
+  ],
+  "arcType": "harmonic-close"
+ },
+ {
+  "topic": "neighbours-and-landlords",
+  "slotIndex": 1,
+  "title": "Tres cajas para Coyoacán",
+  "slug": "tres-cajas-para-coyoacan",
+  "synopsis": "Una casa vieja con tres habitaciones arriba recibe a una inquilina nueva un martes por la tarde. La casera le enseña el dormitorio, el clóset y la lavadora, y le va soltando las normas de la casa como si fueran favores. Ana entiende cada palabra y no entiende ninguna regla. Cuando se queda sola, sabe que el jueves hay que pagar y no sabe cuánto.",
+  "text": "Tres cajas y una maleta caben apenas en el asiento de atrás del taxi. Ana, una estudiante de Guadalajara que lleva dos años en la ciudad, se muda hoy a una casa de Coyoacán. Mireya alquila las tres habitaciones de arriba y la espera con la puerta principal abierta.\n\n“Sube despacio, que el ascensor lleva sin funcionar desde marzo y la escalera es de las viejas”, dice Mireya. Ana carga una caja por una escalera angosta y se detiene a mitad de camino. El dormitorio de arriba huele a jabón y a madera vieja, y nada más.\n\n“El clóset está vacío y el perchero es tuyo”, agrega la casera desde el dormitorio. Un ventanal ancho da al patio y deja el cuarto luminoso a esta hora. Ana suelta la maleta encima del cubrecama doblado y asiente como si ya lo supiera.\n\n“La lavadora la usamos todas, pero por la mañana; después no queda agua en la cisterna.” Ana escucha eso como un consejo amable y no como una orden. Mireya saca de una caja una funda limpia y un edredón bastante gastado.\n\n“Esto lo dejó la inquilina anterior, quédatelo si te sirve”, le dice. Ana enchufa la lamparita con un alargador y guarda los platos en el gabinete de la cocina. Después tiende dos camisas en el colgador y mete la fruta en el refrigerador prestado.\n\n“¿Y la ducha?”, pregunta Ana desde el pasillo. Mireya se asoma desde la planta baja, barriendo el garaje con una escoba vieja. “Hay, pero se acaba rápido; los jueves cobro y ahora mismo no te digo cuánto.”",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "mudarse",
+    "surface": "muda",
+    "definition": "To move house, leave one home and settle into another."
+   },
+   {
+    "type": "noun",
+    "word": "casera",
+    "definition": "Woman who owns a house and rents rooms to tenants."
+   },
+   {
+    "type": "noun",
+    "word": "habitación",
+    "surface": "habitaciones",
+    "definition": "Room in a house, usually one where somebody sleeps."
+   },
+   {
+    "type": "expression",
+    "word": "puerta principal",
+    "definition": "Main door of a building, the one facing the street."
+   },
+   {
+    "type": "noun",
+    "word": "ascensor",
+    "definition": "Lift; small cabin that carries people between floors of a building."
+   },
+   {
+    "type": "verb",
+    "word": "detenerse",
+    "surface": "detiene",
+    "definition": "To stop moving for a moment, then carry on."
+   },
+   {
+    "type": "expression",
+    "word": "planta baja",
+    "definition": "Ground floor of a building, level with the street outside."
+   },
+   {
+    "type": "noun",
+    "word": "dormitorio",
+    "definition": "Bedroom; the room with the bed where somebody sleeps."
+   },
+   {
+    "type": "adjective",
+    "word": "angosto",
+    "surface": "angosta",
+    "definition": "Narrow, with little space from one side to the other."
+   },
+   {
+    "type": "adjective",
+    "word": "luminoso",
+    "definition": "Full of natural light, bright without any lamp turned on."
+   },
+   {
+    "type": "noun",
+    "word": "ventanal",
+    "definition": "Big window, much taller and wider than an ordinary one."
+   },
+   {
+    "type": "noun",
+    "word": "clóset",
+    "definition": "Built-in wardrobe; closed space in the wall for hanging clothes."
+   },
+   {
+    "type": "noun",
+    "word": "perchero",
+    "definition": "Stand or rail with hooks where coats and clothes hang."
+   },
+   {
+    "type": "noun",
+    "word": "lavadora",
+    "definition": "Washing machine; the machine that washes clothes with water and soap."
+   },
+   {
+    "type": "expression",
+    "word": "por la mañana",
+    "definition": "In the morning, during the hours before midday."
+   },
+   {
+    "type": "noun",
+    "word": "cisterna",
+    "definition": "Tank that stores water for a house, often on the roof."
+   },
+   {
+    "type": "noun",
+    "word": "gabinete",
+    "definition": "Kitchen or wall cupboard with doors, used to keep things."
+   },
+   {
+    "type": "noun",
+    "word": "edredón",
+    "definition": "Thick quilt filled with padding, put on top of the bed."
+   },
+   {
+    "type": "adjective",
+    "word": "gastado",
+    "definition": "Worn out from long use, thin and faded but still usable."
+   },
+   {
+    "type": "noun",
+    "word": "alargador",
+    "definition": "Extension cable that carries electricity from a far plug."
+   },
+   {
+    "type": "verb",
+    "word": "asomarse",
+    "surface": "asoma",
+    "definition": "To lean out or look out towards something from a door."
+   },
+   {
+    "type": "verb",
+    "word": "tender",
+    "surface": "tiende",
+    "definition": "To hang washed clothes out flat so they dry."
+   },
+   {
+    "type": "expression",
+    "word": "ahora mismo",
+    "definition": "Right now, at this exact moment and not later."
+   }
+  ],
+  "arcType": "mini-cliffhanger"
+ },
+ {
+  "topic": "neighbours-and-landlords",
+  "slotIndex": 2,
+  "title": "Ya no queda agua caliente",
+  "slug": "ya-no-queda-agua-caliente",
+  "synopsis": "Es jueves y en la casa de arriba el agua se acaba antes de las ocho. Una amiga llega con bolsas para arreglar el cuarto y la casera sube con el recibo. Lo que Ana había tomado por un consejo amable resulta ser la única forma en que esta casa dice sus reglas: una vez, en voz baja y sin repetirla nunca.",
+  "text": "Es jueves y en la casa de Mireya el agua sube a las siete de la mañana. Ana se despierta tarde en el dormitorio angosto, se mete a la regadera y sale con jabón. La cañería suena dos veces y después no sale nada.\n\nAbajo, quien espera con bolsas es Carla, amiga suya de la escuela. “Te traje una funda y un cubrecama que ya no uso”, dice Carla. “Y una lamparita, porque la tuya alumbra menos que una vela.”\n\nLas dos suben la alfombra por la escalera, porque el ascensor sigue sin funcionar. Ana cuelga una camisa en el colgador, al lado del perchero, y pone el velador bajo el ventanal. El cuarto se ve menos desordenado, aunque la puerta del gabinete sigue quebrada y el edredón gastado.\n\nMireya toca con el papel del mes pasado y con el recibo de la lavadora. “La inquilina del fondo se ducha a las seis y hoy la cisterna estaba vacía”, dice. “Yo no repito las cosas, y el martes te lo dije.”\n\nAna entiende entonces que aquel consejo amable, dicho en la planta baja, era una regla. “Perdón, creí que lo decías por decir”, contesta, con la puerta del aseo abierta detrás. “Aquí las cosas se dicen nada más que una vez; esta semana ya te tocaba saberlo”, responde Mireya, y baja.\n\nCarla plancha una camisa encima de la mesa, junto al microondas y al refrigerador. El cuarto queda arreglado, con la mampara limpia y el inodoro sin gotear, aunque chico para dos. “La próxima mudanza la hacemos en fin de semana”, dice Carla, y Ana se acuesta vestida.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "regadera",
+    "register": "regional",
+    "definition": "Shower head, and by extension the shower itself in Mexico."
+   },
+   {
+    "type": "verb",
+    "word": "despertarse",
+    "surface": "despierta",
+    "definition": "To wake up, stop sleeping and open your eyes."
+   },
+   {
+    "type": "noun",
+    "word": "cañería",
+    "definition": "Pipe that carries water through the walls of a house."
+   },
+   {
+    "type": "noun",
+    "word": "funda",
+    "definition": "Cloth cover you slide over a pillow or a cushion."
+   },
+   {
+    "type": "noun",
+    "word": "cubrecama",
+    "definition": "Bedspread; the wide cloth that covers a made bed."
+   },
+   {
+    "type": "noun",
+    "word": "lamparita",
+    "definition": "Small lamp or bulb that gives a little light nearby."
+   },
+   {
+    "type": "noun",
+    "word": "alfombra",
+    "definition": "Rug; thick cloth laid on the floor of a room."
+   },
+   {
+    "type": "noun",
+    "word": "colgador",
+    "definition": "Hanger or hook where clothes hang without folding."
+   },
+   {
+    "type": "noun",
+    "word": "velador",
+    "register": "regional",
+    "definition": "Small bedside table, tall enough to reach from the bed."
+   },
+   {
+    "type": "adjective",
+    "word": "desordenado",
+    "definition": "Messy, with things left where they should not be."
+   },
+   {
+    "type": "adjective",
+    "word": "quebrado",
+    "surface": "quebrada",
+    "definition": "Broken, cracked or snapped so it no longer works well."
+   },
+   {
+    "type": "expression",
+    "word": "mes pasado",
+    "definition": "Last month, the month that finished before this one."
+   },
+   {
+    "type": "noun",
+    "word": "inquilina",
+    "definition": "Woman who pays rent to live in somebody else's house."
+   },
+   {
+    "type": "verb",
+    "word": "ducharse",
+    "surface": "ducha",
+    "definition": "To wash yourself standing up under running water at home."
+   },
+   {
+    "type": "expression",
+    "word": "esta semana",
+    "definition": "This week, the seven days we are living right now."
+   },
+   {
+    "type": "verb",
+    "word": "planchar",
+    "surface": "plancha",
+    "definition": "To press clothes flat with a hot iron."
+   },
+   {
+    "type": "adjective",
+    "word": "arreglado",
+    "definition": "Tidy and sorted out, with everything back in its place."
+   },
+   {
+    "type": "noun",
+    "word": "aseo",
+    "definition": "Small bathroom, and also the act of keeping it clean."
+   },
+   {
+    "type": "noun",
+    "word": "mudanza",
+    "definition": "House move; carrying all your things to a new home."
+   },
+   {
+    "type": "expression",
+    "word": "fin de semana",
+    "definition": "Weekend, the two days when most people do not work."
+   },
+   {
+    "type": "verb",
+    "word": "acostarse",
+    "surface": "acuesta",
+    "definition": "To lie down on a bed, usually to go to sleep."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "neighbours-and-landlords",
+  "slotIndex": 3,
+  "title": "Jamaica fría para Carla",
+  "slug": "jamaica-fria-para-carla",
+  "synopsis": "Dos amigas se sientan en el patio con un jarro frío mientras una de ellas decide dónde vivir. Carla ha dormido un mes en un hostal y quiere algo suyo. Ana ya conoce la casa por dentro y, sobre todo, conoce a la casera: sabe traducir lo que Mireya dice una sola vez y en voz baja.",
+  "text": "Dos vasos de jamaica sudan encima de la mesa del patio de Mireya. Carla lleva un mes en un hostal barato del centro y quiere algo suyo. Ana cocina para las dos, con la lavadora andando, y saca un plato del microondas.\n\n“Vi un departamento cerca del metro, pero cuesta el doble”, cuenta Carla. “Y una pensión con garaje, aunque el desayuno se paga por su cuenta.” Ana espera de pie a que su amiga termine la lista entera.\n\n“Arriba quedó libre el ático, con dormitorio y perchero”, dice Ana. La mampara es nueva aunque frágil, la regadera funciona y el inodoro no se tapa. Carla mira el techo y probablemente ya sabe la respuesta.\n\nMireya cruza el patio con una escoba y las saluda sin detenerse. “Si alguien quiere subir, que suba antes del quince”, suelta, y sigue barriendo. Carla calcula la mudanza y el desayuno aparte, y espera un resto de frase que no llega.\n\n“Eso quiere decir que el cuarto es tuyo si contestas hoy”, le explica Ana. “No lo va a repetir, aunque se lo pidas de todos modos.” Las dos suben al ático, que huele a jabón, con un edredón y una funda en la caja.\n\nEl refrigerador del ático anda con un alargador, pero la puerta es resistente y cierra. Carla deja la mochila sobre la alfombra y se aloja esa misma tarde. Abajo, Ana almuerza sola, limpia la cisterna del aseo y merienda con la casera.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "jamaica",
+    "register": "cultural",
+    "definition": "Hibiscus flower drink, dark red and served very cold in Mexico."
+   },
+   {
+    "type": "noun",
+    "word": "hostal",
+    "definition": "Cheap place to sleep, with shared rooms and a shared bathroom."
+   },
+   {
+    "type": "verb",
+    "word": "cocinar",
+    "surface": "cocina",
+    "definition": "To prepare food with heat so that it can be eaten."
+   },
+   {
+    "type": "noun",
+    "word": "microondas",
+    "definition": "Small oven that heats food fast with electric waves."
+   },
+   {
+    "type": "noun",
+    "word": "departamento",
+    "register": "regional",
+    "definition": "Flat; a home inside a bigger building, all on one floor."
+   },
+   {
+    "type": "noun",
+    "word": "pensión",
+    "definition": "Small guest house where you rent a room by the month."
+   },
+   {
+    "type": "noun",
+    "word": "garaje",
+    "definition": "Closed space next to a house for keeping a car."
+   },
+   {
+    "type": "noun",
+    "word": "desayuno",
+    "definition": "Breakfast; the first food of the day, early in the morning."
+   },
+   {
+    "type": "expression",
+    "word": "por su cuenta",
+    "definition": "On its own, paid or done separately from everything else."
+   },
+   {
+    "type": "noun",
+    "word": "ático",
+    "definition": "Top flat of a building, right under the roof itself."
+   },
+   {
+    "type": "noun",
+    "word": "mampara",
+    "definition": "Glass or plastic panel that keeps shower water inside."
+   },
+   {
+    "type": "adjective",
+    "word": "frágil",
+    "definition": "Easy to break, so you must hold it with care."
+   },
+   {
+    "type": "noun",
+    "word": "inodoro",
+    "definition": "Toilet; the seat with water where you go to the bathroom."
+   },
+   {
+    "type": "adverb",
+    "word": "probablemente",
+    "definition": "Most likely, though nobody can be completely sure about it."
+   },
+   {
+    "type": "verb",
+    "word": "barrer",
+    "surface": "barriendo",
+    "definition": "To clean a floor by pushing the dust with a brush."
+   },
+   {
+    "type": "expression",
+    "word": "de todos modos",
+    "definition": "Anyway; whatever happens, the result will be the same."
+   },
+   {
+    "type": "noun",
+    "word": "refrigerador",
+    "register": "regional",
+    "definition": "Fridge; the cold cupboard that keeps food from going bad."
+   },
+   {
+    "type": "adjective",
+    "word": "resistente",
+    "definition": "Strong, made to last without breaking or wearing out."
+   },
+   {
+    "type": "verb",
+    "word": "alojarse",
+    "surface": "aloja",
+    "definition": "To stay somewhere for a while, as a guest or tenant."
+   },
+   {
+    "type": "verb",
+    "word": "almorzar",
+    "surface": "almuerza",
+    "definition": "To eat the main meal in the middle of the day."
+   },
+   {
+    "type": "verb",
+    "word": "merendar",
+    "surface": "merienda",
+    "definition": "To eat something small in the late afternoon."
+   }
+  ],
+  "arcType": "recurring-character-callback"
+ },
+ {
+  "topic": "teachers-and-customers",
+  "slotIndex": 1,
+  "title": "Mateo pinta su primer alebrije",
+  "slug": "mateo-pinta-su-primer-alebrije",
+  "synopsis": "Un cuarto de trabajo en Oaxaca, con botes abiertos y una figura de madera esperando su primer color. Mateo lleva un año mirando cómo lo hace su tía y hoy le toca a él, sin que nadie le diga si va bien. La tarde entera pasa en silencio, y lo que ocurre al final vale más que cualquier comentario.",
+  "text": "En el cuarto de trabajo huele a esmalte y hay ocho envases abiertos. Mateo, un sobrino de dieciocho años que llegó de la costa a Oaxaca, se sienta delante de una figura sin color. Rosa pinta alebrijes desde antes de que existiera la carretera nueva, y hoy no piensa tocar nada.\n\n“Empezá por el contorno y después rellená, que al revés no sale”, dice Rosa desde la puerta. “Y si te queda torcido lo dejás torcido; ya veremos después si sirve o no sirve.” Mateo esboza una línea marrón con el plumón fino y le tiembla al final.\n\n“La témpera cubre mal y se te va a ver la textura de la madera”, agrega ella. “Eso le pasa a todo el mundo, y a mí también me pasa todavía.” Mateo prueba la acuarela violeta encima del contorno y el color se abre como una mancha.\n\n“Con esmalte queda con brillo, pero ya no lo podés corregir nunca más”, dice Rosa. “Vos elegí: o queda lindo y quieto, o queda vivo y con errores.” Él elige el esmalte, colorea las alas y espera dos horas a que seque.\n\nRosa entra, mira el muñeco de reojo y sale a hablar con la vecina. Por la tarde Mateo decora la cola con puntos plateados muy chicos. Clava un alfiler en la base, pega una tira de fieltro por debajo y lo barniza entero.\n\n“Ya está”, dice él en voz alta, con el mosaico del ala todavía fresco. Rosa vuelve cuando cae el sol, con el pan del día anterior y unas tijeras en la bolsa. Rosa no dice ni bien ni mal, y coloca el alebrije en la tablilla alta donde solo hay terminados.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "envase",
+    "surface": "envases",
+    "register": "regional",
+    "definition": "Tin or jar with a lid, used to keep paint inside."
+   },
+   {
+    "type": "noun",
+    "word": "contorno",
+    "definition": "Outline; the line that goes around the edge of a shape."
+   },
+   {
+    "type": "noun",
+    "word": "plumón",
+    "register": "regional",
+    "definition": "Felt-tip pen with coloured ink and a soft point."
+   },
+   {
+    "type": "adjective",
+    "word": "marrón",
+    "definition": "Brown, the colour of wood and of wet earth."
+   },
+   {
+    "type": "noun",
+    "word": "témpera",
+    "definition": "Thick water paint that dries flat, used on wood and paper."
+   },
+   {
+    "type": "noun",
+    "word": "textura",
+    "definition": "How a surface feels or looks when you get close."
+   },
+   {
+    "type": "noun",
+    "word": "acuarela",
+    "definition": "Thin water paint that lets the colour underneath show."
+   },
+   {
+    "type": "noun",
+    "word": "esmalte",
+    "definition": "Shiny hard paint that cannot be changed once it dries."
+   },
+   {
+    "type": "noun",
+    "word": "brillo",
+    "definition": "Shine; the light that bounces off a smooth surface."
+   },
+   {
+    "type": "verb",
+    "word": "colorear",
+    "surface": "colorea",
+    "definition": "To fill a drawn shape with colour, inside its lines."
+   },
+   {
+    "type": "noun",
+    "word": "muñeco",
+    "definition": "Small carved or made figure of an animal or a person."
+   },
+   {
+    "type": "verb",
+    "word": "decorar",
+    "surface": "decora",
+    "definition": "To add colour and shapes to make something look better."
+   },
+   {
+    "type": "adjective",
+    "word": "plateado",
+    "surface": "plateados",
+    "definition": "Silver-coloured, shining like a coin in the light."
+   },
+   {
+    "type": "noun",
+    "word": "mosaico",
+    "definition": "Pattern made of many small pieces set side by side."
+   },
+   {
+    "type": "verb",
+    "word": "clavar",
+    "surface": "Clava",
+    "definition": "To push a nail or a pin into something so it holds."
+   },
+   {
+    "type": "noun",
+    "word": "alfiler",
+    "definition": "Thin metal pin with a sharp point and a small head."
+   },
+   {
+    "type": "verb",
+    "word": "barnizar",
+    "surface": "barniza",
+    "definition": "To cover wood with a clear coat that protects it."
+   },
+   {
+    "type": "expression",
+    "word": "día anterior",
+    "definition": "The day before, the one just gone by."
+   },
+   {
+    "type": "noun",
+    "word": "tablilla",
+    "surface": "tablilla",
+    "definition": "Small narrow shelf fixed high on a wall."
+   },
+   {
+    "type": "verb",
+    "word": "esbozar",
+    "surface": "esboza",
+    "definition": "To draw the first rough lines of a shape."
+   },
+   {
+    "type": "adjective",
+    "word": "terminado",
+    "surface": "terminados",
+    "definition": "Finished, with nothing left to add or to correct."
+   }
+  ],
+  "arcType": "late-reveal"
+ },
+ {
+  "topic": "teachers-and-customers",
+  "slotIndex": 2,
+  "title": "Ofelia pide que baje el precio",
+  "slug": "ofelia-pide-que-baje-el-precio",
+  "synopsis": "Una compradora entra al cuarto de trabajo con un catálogo bajo el brazo y mira una figura durante mucho rato. Dice tres cosas seguidas que suenan a que no le gusta nada, y Mateo empieza a guardar sus cosas. Lo que la mujer quiere no tiene que ver con lo que acaba de decir en voz alta.",
+  "text": "El jueves de la feria artesanal Mateo trabaja solo en el cuarto de arriba. Quien entra sin tocar es Ofelia, compradora de siempre. Trae un catálogo grueso bajo el brazo y un bloc con hojas sueltas.\n\n“Este de aquí tiene las alas muy finas y el borde rugoso”, dice Ofelia, y lo levanta. “Y el color violeta se te fue para el azul, mirá.” Mateo guarda los crayones en el estuche y cierra la caja de plastilina.\n\n“La cartulina del fondo tampoco combina, y esa marca de aquí sobra”, agrega ella, con un separador en la mano. Rosa la escucha desde la puerta, con un envase de témpera en la mano, y no se muestra. Mateo mira el contorno que esbozó ayer con el plumón y siente que la tarde se le vino abajo.\n\n“¿Cuántos días te lleva un muñeco así, con ese contorno?”, pregunta Ofelia de repente. “Cuatro”, contesta Mateo, con las tijeras todavía en la mano. “Entonces necesito doce para diciembre, y los quiero con esta misma forma.”\n\nMateo se queda quieto, con un alicate en una mano y una pinza en la otra. Rosa sonríe apenas y le clava una tachuela al papel del exhibidor. “Ella no le busca lo malo a lo que no piensa comprar”, le dice en voz baja.\n\nOfelia despliega el bloc, ornamenta la hoja con una raya y anota los doce. “Que las alas te queden así de finas, no me las arregles”, aclara antes de salir. Mateo mira la figura otra vez, con su brillo de esmalte, y por primera vez la ve casi lista.",
+  "vocab": [
+   {
+    "type": "expression",
+    "word": "feria artesanal",
+    "definition": "Craft fair where makers sell what they made by hand."
+   },
+   {
+    "type": "noun",
+    "word": "catálogo",
+    "definition": "Book of pictures showing everything a shop or maker offers."
+   },
+   {
+    "type": "noun",
+    "word": "bloc",
+    "definition": "Pad of loose sheets held together along one edge."
+   },
+   {
+    "type": "adjective",
+    "word": "fina",
+    "surface": "finas",
+    "definition": "Thin and delicate, made with care and little thickness."
+   },
+   {
+    "type": "adjective",
+    "word": "violeta",
+    "definition": "Purple, the colour that sits between blue and red."
+   },
+   {
+    "type": "noun",
+    "word": "crayón",
+    "surface": "crayones",
+    "register": "regional",
+    "definition": "Coloured wax stick children and makers draw with."
+   },
+   {
+    "type": "noun",
+    "word": "plastilina",
+    "definition": "Soft coloured clay that never dries, used for shaping."
+   },
+   {
+    "type": "noun",
+    "word": "cartulina",
+    "definition": "Thick stiff paper, halfway between paper and card."
+   },
+   {
+    "type": "verb",
+    "word": "combinar",
+    "surface": "combina",
+    "definition": "To go well together, as two colours side by side."
+   },
+   {
+    "type": "verb",
+    "word": "mostrarse",
+    "surface": "muestra",
+    "definition": "To let others see what you think or how you feel."
+   },
+   {
+    "type": "noun",
+    "word": "tijeras",
+    "definition": "Tool with two blades, held in one hand, for cutting."
+   },
+   {
+    "type": "noun",
+    "word": "forma",
+    "definition": "Shape; the outline that makes one thing look like itself."
+   },
+   {
+    "type": "noun",
+    "word": "pinza",
+    "definition": "Small tool with two arms for holding tiny things."
+   },
+   {
+    "type": "noun",
+    "word": "tachuela",
+    "definition": "Short nail with a wide flat head, pushed in by hand."
+   },
+   {
+    "type": "noun",
+    "word": "exhibidor",
+    "definition": "Stand or board where goods are shown to buyers."
+   },
+   {
+    "type": "noun",
+    "word": "estuche",
+    "surface": "estuche",
+    "definition": "Small hard case for keeping pens or tools tidy."
+   },
+   {
+    "type": "verb",
+    "word": "ornamentar",
+    "surface": "ornamenta",
+    "definition": "To add small decorations to the edge of something."
+   },
+   {
+    "type": "verb",
+    "word": "desplegar",
+    "surface": "despliega",
+    "definition": "To open something out flat that was folded up."
+   },
+   {
+    "type": "noun",
+    "word": "separador",
+    "definition": "Strip of card put between pages to mark a place."
+   },
+   {
+    "type": "expression",
+    "word": "casi lista",
+    "definition": "Almost ready, needing only a last small thing."
+   },
+   {
+    "type": "noun",
+    "word": "marca",
+    "definition": "Small sign left on a surface to show something."
+   }
+  ],
+  "arcType": "reframe-turn"
+ },
+ {
+  "topic": "teachers-and-customers",
+  "slotIndex": 3,
+  "title": "Doce alas para diciembre",
+  "slug": "doce-alas-para-diciembre",
+  "synopsis": "Tres personas trabajando en el mismo cuarto un domingo largo, con la puerta abierta y la radio apagada. Cada uno hace una parte y nadie explica nada, porque a estas alturas ya no hace falta. La tarde termina como empezó, con las manos sucias y doce figuras puestas en fila sobre la mesa.",
+  "text": "Ese domingo la puerta del cuarto queda abierta y entra un aire seco de la sierra. Rosa trabaja en la mesa larga con la navaja, una cuchilla chica y el plumón. Mateo desenvuelve los muñecos nuevos y Ofelia desata el empaque de los adhesivos y las tijeras.\n\n“Yo hago las patas y tú las alas”, dice Rosa sin levantar la vista. “Y que nadie toque las mías hasta que estén secas, por favor.” Mateo rasga una tira de cartulina y la deja al lado, para el montaje.\n\nOfelia coloca un retrato viejo de la familia encima de la tablilla del fondo. “Este collage lo hizo tu abuela con recortes de revista”, le cuenta a Mateo. “Buen día para verlo, ahora que ya sabes qué mirar.”\n\nLa madera del alicate está rugosa y la tenaza vieja aprieta de un solo lado. Mateo separa doce cuerpos, doce colas y veinticuatro alas todavía sin témpera ni acuarela. Rosa cose una marca en cada muñeco, con aguja gruesa y con un hilo duradero.\n\n“Así se hacía antes y así se sigue haciendo”, dice Rosa, con el esmalte abierto al lado. El aire seco encoge las alas finas y hay que barnizar dos otra vez. “Se hacen de nuevo y ya”, dice Rosa, sin enojo ninguno.\n\nAl final del domingo hay doce muñecos terminados, con brillo, y la cuchilla afilada en su estuche. “Vuelvo el jueves por las doce”, dice Ofelia, y se despide desde la puerta. “Que le vaya bien”, le contesta Mateo, y sigue limpiando la mesa larga.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "navaja",
+    "definition": "Small folding knife, carried in a pocket and used for cutting."
+   },
+   {
+    "type": "noun",
+    "word": "cuchilla",
+    "definition": "Flat sharp blade fixed in a handle, for fine cutting."
+   },
+   {
+    "type": "verb",
+    "word": "desenvolver",
+    "surface": "desenvuelve",
+    "definition": "To take the paper off something that was wrapped up."
+   },
+   {
+    "type": "verb",
+    "word": "desatar",
+    "surface": "desata",
+    "definition": "To untie a knot or a string that holds something closed."
+   },
+   {
+    "type": "noun",
+    "word": "adhesivo",
+    "surface": "adhesivos",
+    "definition": "Sticky strip or glue that holds two pieces together."
+   },
+   {
+    "type": "verb",
+    "word": "rasgar",
+    "surface": "rasga",
+    "definition": "To tear paper or cloth by pulling it apart."
+   },
+   {
+    "type": "noun",
+    "word": "montaje",
+    "definition": "The step of putting all the pieces together into one."
+   },
+   {
+    "type": "noun",
+    "word": "retrato",
+    "definition": "Picture of a person, painted or taken with a camera."
+   },
+   {
+    "type": "noun",
+    "word": "collage",
+    "definition": "Picture made by sticking cut pieces of paper together."
+   },
+   {
+    "type": "expression",
+    "word": "buen día",
+    "surface": "Buen día",
+    "definition": "Good morning; also a good day for doing something."
+   },
+   {
+    "type": "noun",
+    "word": "alicate",
+    "definition": "Hand tool with two arms for gripping and bending wire."
+   },
+   {
+    "type": "adjective",
+    "word": "rugosa",
+    "definition": "Rough to the touch, with a bumpy uneven surface."
+   },
+   {
+    "type": "noun",
+    "word": "tenaza",
+    "definition": "Heavy tool with two jaws for pulling nails out."
+   },
+   {
+    "type": "verb",
+    "word": "coser",
+    "surface": "cose",
+    "definition": "To join two pieces of cloth using a needle and thread."
+   },
+   {
+    "type": "noun",
+    "word": "aguja",
+    "definition": "Thin sharp metal stick with a hole for the thread."
+   },
+   {
+    "type": "adjective",
+    "word": "duradero",
+    "surface": "duradero",
+    "definition": "Made to last a long time without breaking or wearing out."
+   },
+   {
+    "type": "verb",
+    "word": "encoger",
+    "surface": "encoge",
+    "definition": "To get smaller, pulling in on itself as it dries."
+   },
+   {
+    "type": "adjective",
+    "word": "afilada",
+    "definition": "Sharp, with an edge that cuts easily and cleanly."
+   },
+   {
+    "type": "expression",
+    "word": "que le vaya bien",
+    "surface": "Que le vaya bien",
+    "definition": "All the best; said to somebody who is leaving."
+   },
+   {
+    "type": "noun",
+    "word": "empaque",
+    "register": "regional",
+    "definition": "Wrapping or box that something comes packed inside."
+   },
+   {
+    "type": "noun",
+    "word": "tira",
+    "definition": "Long narrow strip cut from paper or cloth."
+   }
+  ],
+  "arcType": "harmonic-close"
+ }
+]

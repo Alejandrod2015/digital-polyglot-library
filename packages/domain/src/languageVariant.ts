@@ -100,6 +100,16 @@ const LATAM_TOPIC_COUNTRY: Record<string, LanguageVariant> = {
   "community-celebrations": "colombia",
   "nature-adventure": "chile",
   "legends-folklore": "mexico",
+  // Traveler (A2): el nombre del tema no lleva sitio, así que el país lo pinta
+  // el eyebrow desde aquí. El orden es el de la ruta lineal del brief:
+  // Rosario, Salento, Medellín, el cruce del sur, Arequipa, Guadalajara, Mérida.
+  "friends-and-reunions": "argentina",
+  "staying-with-locals": "colombia",
+  "jokes-and-misunderstandings": "colombia",
+  "borders-and-crossings": "peru",
+  "secrets-and-curiosity": "peru",
+  "work-trips-and-meetings": "mexico",
+  "local-life-and-routines": "mexico",
 };
 
 /**
