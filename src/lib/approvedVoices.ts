@@ -37,6 +37,7 @@ export const APPROVED_VOICES: Record<string, ApprovedVoice> = {
   acHf5gp7AGOY30tJjvD4: { note: "Friends LATAM voice (published)" },
   "57D8YIbQSuE3REDPO6Vm": { note: "Friends LATAM voice (published)" },
   zwsW3KvGYEC2nBc7rlnA: { note: "Traveler LATAM voice (published)" },
+  ulJB4yAMefhHYn0FWgGy: { note: "Terry (PE, m); narrador de 3 historias publicadas del Traveler LATAM A1 y el elegido para las 21 del A2; user-approved 2026-09-02. Faltaba por antiguedad de la semilla: el A1 se publico despues del 2026-07-19." },
 
   // ── Approved by the user 2026-07-20 (audition by ear), to cast the
   // remaining draft journeys. Italian + peninsular Spanish + the four
