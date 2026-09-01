@@ -27,7 +27,12 @@ const REPO = path.resolve(__dirname, "..");
 
 function dirMemoria(): string {
   if (process.env.DPL_MEMORY_DIR) return process.env.DPL_MEMORY_DIR;
-  const slug = REPO.replace(/\//g, "-");
+  // Desde un worktree, REPO es <repo>/.claude/worktrees/<nombre>; la memoria
+  // vive bajo el slug del repo PRINCIPAL, asi que se recorta el sufijo. Sin
+  // esto el lint no encuentra nada y pasa en vacio, que es justo lo que vino
+  // a impedir.
+  const principal = REPO.replace(/\/\.claude\/worktrees\/[^/]+$/, "");
+  const slug = principal.replace(/\//g, "-");
   return path.join(
     process.env.HOME ?? "", ".claude", "projects", slug, "memory"
   );
@@ -68,7 +73,11 @@ type Fallo = { fichero: string; motivo: string; detalle?: string };
 function main() {
   const dir = dirMemoria();
   if (!fs.existsSync(dir)) {
-    console.log(`hard-rules: no hay memoria en ${dir}; nada que revisar.`);
+    // Pasar en vacio es el fallo que este lint vino a impedir: si no encuentra
+    // la memoria, es un error, no un visto bueno.
+    console.error(`hard-rules: no encuentro la memoria en ${dir}.`);
+    console.error("Apuntala con DPL_MEMORY_DIR si vive en otro sitio.");
+    process.exitCode = 1;
     return;
   }
   const { ids, hooks, scripts, funcs } = artefactos();
