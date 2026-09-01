@@ -5501,6 +5501,90 @@
   "arequipa": {
    "g": "Arequipa, a city in southern Peru",
    "t": "noun"
+  },
+  "creerle": {
+   "g": "to believe him (creer)",
+   "t": "verb"
+  },
+  "pensión": {
+   "g": "a guesthouse, rooms let by the night",
+   "t": "noun"
+  },
+  "devuelven": {
+   "g": "they throw back at her (devolver)",
+   "t": "verb"
+  },
+  "inquilinos": {
+   "g": "the lodgers, the people renting rooms",
+   "t": "noun"
+  },
+  "describe": {
+   "g": "describes it (describir)",
+   "t": "verb"
+  },
+  "diario": {
+   "g": "the daily newspaper",
+   "t": "noun"
+  },
+  "decírmelo": {
+   "g": "telling me (decir)",
+   "t": "verb"
+  },
+  "prefiere": {
+   "g": "prefers (preferir)",
+   "t": "verb"
+  },
+  "consigue": {
+   "g": "gets, manages (conseguir)",
+   "t": "verb"
+  },
+  "cera": {
+   "g": "floor wax",
+   "t": "noun"
+  },
+  "librero": {
+   "g": "the bookshelf",
+   "t": "noun"
+  },
+  "lámpara": {
+   "g": "the lamp",
+   "t": "noun"
+  },
+  "avisan": {
+   "g": "they warn her (avisar)",
+   "t": "verb"
+  },
+  "escritos": {
+   "g": "the written entries",
+   "t": "noun"
+  },
+  "candil": {
+   "g": "an oil lamp",
+   "t": "noun"
+  },
+  "viajó": {
+   "g": "travelled (viajar)",
+   "t": "verb"
+  },
+  "pesan": {
+   "g": "weigh (pesar)",
+   "t": "verb"
+  },
+  "velón": {
+   "g": "a thick candle",
+   "t": "noun"
+  },
+  "busque": {
+   "g": "look for her (buscar)",
+   "t": "verb"
+  },
+  "imagina": {
+   "g": "pictures it (imaginar)",
+   "t": "verb"
+  },
+  "ciudades": {
+   "g": "cities",
+   "t": "noun"
   }
  }
 }
