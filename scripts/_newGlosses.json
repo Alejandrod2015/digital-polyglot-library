@@ -5729,6 +5729,10 @@
   "hablé": {
    "g": "I spoke (hablar)",
    "t": "verb"
+  },
+  "contárselo": {
+   "g": "telling it to them (contar)",
+   "t": "verb"
   }
  }
 }
