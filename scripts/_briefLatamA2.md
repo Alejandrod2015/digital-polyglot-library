@@ -390,6 +390,25 @@ escena y no reaparecen. En el A1 latam etiquetar a mano movió 40 palabras a
 anclado y subió del 46% al 55% lo que de verdad reaparece, sin tocar prosa. La
 clasificación se hace a mano, tema por tema, en el momento de elegir las 20.
 
+### 4.2.3 Envíos del tema 3 (anotados el 2026-09-01, antes de escribir)
+
+Siete portables ajenas por receptora, segun la recalibracion de 4.2.2. Van en el
+TEXTO y no gastan plaza.
+
+| Receptora | Aloja (7) | De |
+|---|---|---|
+| H7 | esperar, aguantar, callar, molestar, raro, seguro, amable | H4, H5 |
+| H8 | repetir, sobrar, tranquilo, devolver, seco, justo, lento | H5, H6 |
+| H9 | probar, prestar, aprender, listo, limpio, mostrar, pagar | H4, H6 |
+
+Campo del tema comprobado libre entero contra el gate real: invitada,
+celebracion, fiesta, musica, guitarra, companero, cafeteria, restaurante,
+gaseosa, apariencia, mas cuento, foto y larga. Trece sustantivos para nueve
+plazas ancladas, que es el primer tema con holgura.
+
+`invitada` gasta una de las DOS reaperturas que el journey se permite en total
+(la otra fue `camara` en el tema 1). No queda ninguna mas.
+
 ## 5. Exclusión de vocab: cero solape
 
 Extraído de la base el 2026-08-31: **731 superficies distintas** entre el A0 y el

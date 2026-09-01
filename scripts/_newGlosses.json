@@ -5273,6 +5273,58 @@
   "dígamelo": {
    "g": "you tell me (decir)",
    "t": "verb"
+  },
+  "alquila": {
+   "g": "rents out (alquilar)",
+   "t": "verb"
+  },
+  "cuartos": {
+   "g": "rooms",
+   "t": "noun"
+  },
+  "celebración": {
+   "g": "a party, a celebration",
+   "t": "noun"
+  },
+  "presidente": {
+   "g": "the president",
+   "t": "noun"
+  },
+  "aclara": {
+   "g": "sets it straight (aclarar)",
+   "t": "verb"
+  },
+  "dígales": {
+   "g": "tell them (decir)",
+   "t": "verb"
+  },
+  "gaseosa": {
+   "g": "a fizzy drink",
+   "t": "noun"
+  },
+  "negar": {
+   "g": "to deny",
+   "t": "verb"
+  },
+  "firmó": {
+   "g": "signed (firmar)",
+   "t": "verb"
+  },
+  "miente": {
+   "g": "lies (mentir)",
+   "t": "verb"
+  },
+  "haya": {
+   "g": "there is (haber)",
+   "t": "verb"
+  },
+  "decido": {
+   "g": "I decide (decidir)",
+   "t": "verb"
+  },
+  "falso": {
+   "g": "false, made up",
+   "t": "adjective"
   }
  }
 }

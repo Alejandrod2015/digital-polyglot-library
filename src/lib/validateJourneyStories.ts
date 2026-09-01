@@ -104,10 +104,19 @@ function castOf(stories: JourneyStoryInput[], lang: string): string[] {
     }
   }
   const hablan = new Set([...cuentaHabla].filter(([, v]) => v.size >= 2).map(([k]) => k));
-  return castLegacy(stories).filter((n) => hablan.has(n));
+  return castLegacy(stories, lang).filter((n) => hablan.has(n));
 }
-function castLegacy(stories: JourneyStoryInput[]): string[] {
-  const ART = /\b(der|die|das|den|dem|des|ein|eine|einen|einem|einer|zum|zur|im|am|beim|vom|le|la|les|un|une|du|el|los|las|il|lo|gli|o|a|os|as|um|uma)\s+$/i;
+function castLegacy(stories: JourneyStoryInput[], lang = ""): string[] {
+  // OJO CON LA `a` Y LA `o`: son articulos en portugues y PREPOSICION y
+  // CONJUNCION en espanol. Con la lista comun, "presenta a Marisol",
+  // "pregunta a Yolanda" o "busca a Fabian" metian a todo el reparto en
+  // `conArticulo`, que lo expulsa del cast para siempre. Resultado medido el
+  // 2026-09-01: el reparto salia VACIO en espanol y los cuatro checks de
+  // reparto pasaban sin medir nada, que es peor que fallar.
+  const SOLO_PT = lang === "ES" || lang === "FR" || lang === "IT" ? "" : "|o|a|os|as|um|uma";
+  const ART = new RegExp(
+    `\\b(der|die|das|den|dem|des|ein|eine|einen|einem|einer|zum|zur|im|am|beim|vom|` +
+    `le|la|les|un|une|du|el|los|las|il|lo|gli${SOLO_PT})\\s+$`, "i");
   // OJO: aqui van ARTICULOS, no preposiciones. Meter "de", "da", "no"... echa
   // del reparto a cualquiera que aparezca en "a mao de Rafaela" o "a filha da
   // Neide", que es media historia: el 2026-08-23 el reparto salio VACIO y el
@@ -194,7 +203,10 @@ const VERBO_SER_ES =
   "pinta|pintaba|vive|vivia|vivía|alquila|alquilaba|estudia|estudiaba|atiende|atendia|atendía|" +
   "toca|tocaba|cocina|cocinaba|nacio|nació|lleva|llevaba|reparte|repartia|repartía)";
 const FORMAS_ES: Array<[string, (n: string) => RegExp]> = [
-  ["aposicion", (n) => new RegExp(`${n},\\s+(?:un|una|el|la)\\s+${NUC_ES}`, "iu")],
+  // El APELLIDO no rompe la aposicion: "Marisol Cortes, una fotografa de Lima"
+  // es el caso de libro y el detector lo daba por no presentado porque exigia
+  // la coma pegada al nombre de pila (2026-09-01).
+  ["aposicion", (n) => new RegExp(`${n}(?:\\s+[A-ZÁ-Ú][a-zá-úñ]+)?,\\s+(?:un|una|el|la)\\s+${NUC_ES}`, "iu")],
   ["quien", (n) => new RegExp(`\\bQuien\\s+[a-zá-úüñ]+(?:\\s+[a-zá-úüñ]+){0,3}\\s+es\\s+${n}\\b`, "iu")],
   ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+${VERBO_SER_ES}\\b`, "iu")],
 ];
@@ -684,7 +696,16 @@ export function validateJourneyStories(
       stories.filter((s) => new RegExp(`\\b${n}\\b`, "u").test(s.text));
     const presencia = new Map(nombres.map((n) => [n, saleEn(n).length]));
     const total = stories.length;
-    const fijos = nombres.filter((n) => (presencia.get(n) ?? 0) >= Math.ceil(total / 2));
+    // FIJO = sale en mas de UN tema. La primera version lo definia por
+    // fraccion (la mitad de las historias), y con el journey a medio escribir
+    // eso convertia en fijo al interlocutor de un tema: con 6 historias
+    // guardadas, Yolanda salia 3/6 y contaba como tercer fijo. La memoria dice
+    // otra cosa: los fijos son los que el lector reconoce a lo largo del
+    // journey, y el interlocutor vive dentro de su tema. Por temas la cuenta
+    // sale igual con 6 historias que con 21.
+    const temasDe = (n: string) =>
+      new Set(saleEn(n).map((s) => s.topic ?? "")).size;
+    const fijos = nombres.filter((n) => temasDe(n) >= 2);
     const enTodas = nombres.filter((n) => presencia.get(n) === total);
     const ficha = (n: string) => `${n} (${presencia.get(n)}/${total})`;
 
@@ -737,12 +758,16 @@ export function validateJourneyStories(
         [conDeMas.length ? `temas con mas de uno: ${conDeMas.map((t) => `${t} (${nuevosPorTema.get(t)!.join(", ")})`).join(" | ")}` : "",
          fueraDeSuTema.length ? `presentados tarde: ${fueraDeSuTema.join(", ")}` : ""].filter(Boolean).join(" · "));
 
-      const intrusos = nombres.filter((n) =>
-        !fijos.includes(n) && new RegExp(`\\b${n}\\b`, "u").test(stories[0].text));
-      push("journey-cast-first-story-only-fixed", "La primera historia del journey solo lleva a los fijos",
-        intrusos.length === 0,
-        `${intrusos.join(", ")} sale en la primera sin ser fijo. La primera historia ` +
-        `presenta el reparto estable y nada mas.`);
+      // Se mide por CUANTOS, no por quienes. "Solo los fijos" quiere decir
+      // dos personas y ninguna mas, y eso se puede comprobar con el journey a
+      // medio escribir; quien es fijo, no: el 2026-09-01, con dos temas de
+      // siete, Leandro todavia no habia reaparecido fuera del suyo y el check
+      // lo daba por intruso en la historia que protagoniza.
+      const enPrimera = nombres.filter((n) => new RegExp(`\\b${n}\\b`, "u").test(stories[0].text));
+      push("journey-cast-first-story-only-fixed", "La primera historia del journey no pasa de dos personajes",
+        enPrimera.length <= 2,
+        `${enPrimera.length} en la primera (${enPrimera.join(", ")}). La abre el reparto ` +
+        `estable y nadie mas: dos personas como mucho.`);
     }
   }
 
