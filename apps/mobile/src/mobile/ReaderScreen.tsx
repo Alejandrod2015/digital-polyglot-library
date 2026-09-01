@@ -1828,7 +1828,7 @@ export function ReaderScreen(args: {
    * una tontería es exactamente lo que hace que la gente cierre sin mirar.
    *
    *   practice → la tarjeta de práctica de siempre, con la fila de pulgares
-   *              debajo de "Maybe later".
+   *              entre el botón de practicar y "Maybe later".
    *   vote     → a lo que lleva "Maybe later" mientras no haya voto: quien no
    *              va a practicar es justo el que hay que alcanzar.
    *   comment  → tras votar. El voto YA está enviado cuando esta cara aparece.
@@ -3099,13 +3099,12 @@ export function ReaderScreen(args: {
                 <Text style={styles.endOfStoryButtonText}>Start practice</Text>
               </Pressable>
             </View>
-            <Pressable
-              onPress={requestCloseEndOfStoryPrompt}
-              accessibilityRole="button"
-              style={styles.endOfStoryDialogSecondary}
-            >
-              <Text style={styles.endOfStoryDialogSecondaryText}>Maybe later</Text>
-            </Pressable>
+            {/* La fila de pulgares va ANTES de "Maybe later", no al fondo del
+                panel. Estaba debajo de la salida, o sea despues de la unica linea
+                que toca quien se va: en 57 finales de audio de testers (agosto,
+                sin contar al equipo) no llego un solo voto. Encima de la salida
+                se cruza con la mirada que ya va camino de "Maybe later", y sigue
+                debajo del CTA de practica, que es la accion principal del panel. */}
             {showRatingRow && storyRatingJustSent ? (
               <View style={styles.storyRatingBlock}>
                 <RatingSentToast onDone={() => setStoryRatingJustSent(false)} />
@@ -3165,6 +3164,13 @@ export function ReaderScreen(args: {
                 </View>
               </View>
             ) : null}
+            <Pressable
+              onPress={requestCloseEndOfStoryPrompt}
+              accessibilityRole="button"
+              style={styles.endOfStoryDialogSecondary}
+            >
+              <Text style={styles.endOfStoryDialogSecondaryText}>Maybe later</Text>
+            </Pressable>
               </>
             )}
           </Animated.View>
