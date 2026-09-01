@@ -82,20 +82,34 @@ function main() {
     duras++;
 
     // Lo que la memoria dice que la hace cumplir.
+    //
+    // No basta con que el nombre APAREZCA: tiene que aparecer donde se habla
+    // de hacer cumplir. `project_journey_structure_plan` menciona
+    // `src/lib/journeyType.ts` como sitio donde vive un dato, y con la version
+    // ingenua de este lint eso la daba por cubierta, que es justo la regla que
+    // el lint existe para cazar. Se mira la linea y la siguiente.
+    const ENFORCE = /BLOQUEA|bloquea|gate|hook|\bcheck\b|lint|valida|enforce|rechaza|salta el|se comprueba|comprobado por/i;
+    const lineas = txt.split("\n");
+    const ventanas = lineas
+      .map((l, k) => `${l}\n${lineas[k + 1] ?? ""}`)
+      .filter((v) => ENFORCE.test(v))
+      .join("\n");
+
     const citados = {
-      ids: [...txt.matchAll(/`([a-z][a-z0-9-]{4,})`/g)].map((m) => m[1]).filter((x) => ids.has(x)),
-      // Solo los guards del proyecto, que llevan todos prefijo. Sin esto,
-      // "esm.sh" (un CDN citado de pasada) contaba como hook prometido.
-      hooks: [...txt.matchAll(/((?:pre|post|stop)-[a-z0-9-]+\.sh)/g)].map((m) => m[1]),
-      scripts: [...txt.matchAll(/npm run ([a-z0-9:-]+)/g)].map((m) => m[1]),
-      funcs: [...txt.matchAll(/`?(validate[A-Za-z]+|assert[A-Za-z]+)`?/g)].map((m) => m[1]),
+      ids: [...ventanas.matchAll(/`([a-z][a-z0-9-]{4,})`/g)].map((m) => m[1]).filter((x) => ids.has(x)),
+      hooks: [...ventanas.matchAll(/((?:pre|post|stop)-[a-z0-9-]+\.sh)/g)].map((m) => m[1]),
+      scripts: [...ventanas.matchAll(/npm run ([a-z0-9:-]+)/g)].map((m) => m[1]),
+      funcs: [...ventanas.matchAll(/`?(validate[A-Za-z]+|assert[A-Za-z]+)`?/g)].map((m) => m[1]),
+      rutas: [...ventanas.matchAll(/((?:scripts|src\/lib)\/[A-Za-z0-9_\/-]+\.ts)/g)]
+        .map((m) => m[1]).filter((r) => fs.existsSync(path.join(REPO, r))),
     };
 
     // Lo citado tiene que EXISTIR. Prometer una red que no esta es peor que
     // no prometer nada.
     const fantasmas = [
-      ...citados.hooks.filter((h) => !hooks.has(h) && !fs.existsSync(path.join(REPO, ".claude", "safety", h))),
-      ...citados.scripts.filter((s) => !scripts.has(s)),
+      ...[...txt.matchAll(/((?:pre|post|stop)-[a-z0-9-]+\.sh)/g)].map((m) => m[1])
+        .filter((h) => !hooks.has(h) && !fs.existsSync(path.join(REPO, ".claude", "safety", h))),
+      ...[...txt.matchAll(/npm run ([a-z0-9:-]+)/g)].map((m) => m[1]).filter((x) => !scripts.has(x)),
     ];
     if (fantasmas.length) {
       fallos.push({ fichero: f, motivo: "nombra enforcement que NO existe", detalle: fantasmas.join(", ") });
@@ -104,7 +118,8 @@ function main() {
 
     const tieneAlguno =
       citados.ids.length > 0 || citados.hooks.length > 0 ||
-      citados.scripts.length > 0 || citados.funcs.length > 0;
+      citados.scripts.length > 0 || citados.funcs.length > 0 ||
+      citados.rutas.length > 0;
 
     if (tieneAlguno) { conGate++; continue; }
     if (ADMITE_SIN_GATE.test(txt)) { admitidas++; continue; }
