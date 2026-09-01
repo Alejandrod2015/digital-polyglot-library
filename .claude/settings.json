@@ -27,6 +27,10 @@
           {
             "type": "command",
             "command": "$CLAUDE_PROJECT_DIR/.claude/safety/pre-comms-claim-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/safety/pre-emdash-guard.sh"
           }
         ]
       },

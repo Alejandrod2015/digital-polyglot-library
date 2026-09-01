@@ -35,8 +35,27 @@ except Exception:
     print("PASS"); raise SystemExit
 
 tool = p.get("tool_name") or ""
-if tool not in ("Edit", "Write", "MultiEdit"):
+if tool not in ("Edit", "Write", "MultiEdit", "Bash"):
     print("PASS"); raise SystemExit
+
+# Brazo Bash (2026-09-01). El gate escuchaba solo a Edit/Write/MultiEdit, asi
+# que escribir el mismo fichero con un heredoc de python, un `sed -i` o un
+# `tee` lo esquivaba entero sin querer. Aqui no hay `file_path`: se mira el
+# texto del COMANDO, y solo cuando toca uno de los seis arboles vigilados.
+if tool == "Bash":
+    cmd = (p.get("tool_input") or {}).get("command", "") or ""
+    LECTURA = ("grep", "rg", "cat", "less", "head", "tail", "sed -n",
+               "awk", "wc", "diff", "git log", "git show", "git diff")
+    if cmd.lstrip().startswith(LECTURA):
+        print("PASS"); raise SystemExit
+    if not any(("/" + r + "/") in cmd or cmd.count(r + "/") for r in
+               ("src", "content", "apps/mobile", "scripts", "docs", "public")):
+        print("PASS"); raise SystemExit
+    malos = [n for ch, _k, n in DASHES if ch in cmd]
+    if not malos:
+        print("PASS"); raise SystemExit
+    print("BLOCK\t" + ", ".join(malos) + "\tcomando Bash que escribe en el repo")
+    raise SystemExit
 
 ti = p.get("tool_input") or {}
 fp = (ti.get("file_path") or "").replace("\\", "/")
