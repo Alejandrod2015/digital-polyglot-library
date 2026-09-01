@@ -5325,6 +5325,74 @@
   "falso": {
    "g": "false, made up",
    "t": "adjective"
+  },
+  "limpias": {
+   "g": "clean (limpio)",
+   "t": "adjective"
+  },
+  "suyas": {
+   "g": "hers, her own (suyo)",
+   "t": "adjective"
+  },
+  "pruebo": {
+   "g": "I try it (probar)",
+   "t": "verb"
+  },
+  "apariencia": {
+   "g": "the look of a thing from outside",
+   "t": "noun"
+  },
+  "salvarla": {
+   "g": "to save her (salvar)",
+   "t": "verb"
+  },
+  "reduce": {
+   "g": "gets smaller (reducir)",
+   "t": "verb"
+  },
+  "prestan": {
+   "g": "they lend her (prestar)",
+   "t": "verb"
+  },
+  "usó": {
+   "g": "used (usar)",
+   "t": "verb"
+  },
+  "continúa": {
+   "g": "carries on (continuar)",
+   "t": "verb"
+  },
+  "compañero": {
+   "g": "a member of the same group",
+   "t": "noun"
+  },
+  "repiten": {
+   "g": "they repeat it (repetir)",
+   "t": "verb"
+  },
+  "tenso": {
+   "g": "tense, strained",
+   "t": "adjective"
+  },
+  "clarito": {
+   "g": "nice and clearly (claro)",
+   "t": "adverb"
+  },
+  "quise": {
+   "g": "I meant to (querer)",
+   "t": "verb"
+  },
+  "devolver": {
+   "g": "to give back",
+   "t": "verb"
+  },
+  "cambiar": {
+   "g": "to change, to switch to another",
+   "t": "verb"
+  },
+  "esconder": {
+   "g": "to hide",
+   "t": "verb"
   }
  }
 }
