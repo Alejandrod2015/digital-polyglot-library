@@ -5056,5 +5056,203 @@
    "g": "apologises",
    "t": "verb"
   }
+ },
+ "spanish-traveler-latam-a2": {
+  "chilla": {
+   "g": "screeches (chillar)",
+   "t": "verb"
+  },
+  "marcos": {
+   "g": "picture frames",
+   "t": "noun"
+  },
+  "apoyados": {
+   "g": "propped, leaning (apoyar)",
+   "t": "verb"
+  },
+  "lijando": {
+   "g": "sanding (lijar)",
+   "t": "verb"
+  },
+  "espejito": {
+   "g": "a little mirror",
+   "t": "noun"
+  },
+  "marco": {
+   "g": "a frame",
+   "t": "noun"
+  },
+  "contarlo": {
+   "g": "telling it (contar)",
+   "t": "verb"
+  },
+  "páginas": {
+   "g": "the pages",
+   "t": "noun"
+  },
+  "pensado": {
+   "g": "thought out, planned (pensar)",
+   "t": "verb"
+  },
+  "guardé": {
+   "g": "I put it away (guardar)",
+   "t": "verb"
+  },
+  "abrí": {
+   "g": "I opened (abrir)",
+   "t": "verb"
+  },
+  "llegás": {
+   "g": "you get there in time (llegar)",
+   "t": "verb"
+  },
+  "salento": {
+   "g": "Salento, a town in Colombia's coffee country",
+   "t": "noun"
+  },
+  "fotógrafa": {
+   "g": "a photographer",
+   "t": "noun"
+  },
+  "estrecha": {
+   "g": "narrow",
+   "t": "adjective"
+  },
+  "saludarla": {
+   "g": "greeting her (saludar)",
+   "t": "verb"
+  },
+  "valijas": {
+   "g": "the suitcases",
+   "t": "noun"
+  },
+  "explicarte": {
+   "g": "to explain to you (explicar)",
+   "t": "verb"
+  },
+  "comé": {
+   "g": "eat up (comer)",
+   "t": "verb"
+  },
+  "portarretratos": {
+   "g": "a standing photo frame",
+   "t": "noun"
+  },
+  "llevátelo": {
+   "g": "take it with you (llevarse)",
+   "t": "verb"
+  },
+  "abras": {
+   "g": "open it (abrir)",
+   "t": "verb"
+  },
+  "alojamiento": {
+   "g": "a place to stay",
+   "t": "noun"
+  },
+  "quédese": {
+   "g": "stay on (quedarse)",
+   "t": "verb"
+  },
+  "quiera": {
+   "g": "you want (querer)",
+   "t": "verb"
+  },
+  "cafetera": {
+   "g": "the coffee pot",
+   "t": "noun"
+  },
+  "deber": {
+   "g": "to owe",
+   "t": "verb"
+  },
+  "merienda": {
+   "g": "an afternoon snack",
+   "t": "noun"
+  },
+  "enfría": {
+   "g": "goes cold (enfriarse)",
+   "t": "verb"
+  },
+  "tercer": {
+   "g": "third",
+   "t": "adjective"
+  },
+  "corregirse": {
+   "g": "to put herself right (corregirse)",
+   "t": "verb"
+  },
+  "trabajando": {
+   "g": "working (trabajar)",
+   "t": "verb"
+  },
+  "tiende": {
+   "g": "hangs out to dry (tender)",
+   "t": "verb"
+  },
+  "cobertor": {
+   "g": "the bedspread",
+   "t": "noun"
+  },
+  "secado": {
+   "g": "dried (secarse)",
+   "t": "verb"
+  },
+  "tomo": {
+   "g": "I take (tomar)",
+   "t": "verb"
+  },
+  "hervir": {
+   "g": "to boil",
+   "t": "verb"
+  },
+  "oírse": {
+   "g": "to hear herself (oírse)",
+   "t": "verb"
+  },
+  "debe": {
+   "g": "must (deber)",
+   "t": "verb"
+  },
+  "guardarropa": {
+   "g": "the wardrobe",
+   "t": "noun"
+  },
+  "enseñe": {
+   "g": "teach her (enseñar)",
+   "t": "verb"
+  },
+  "muchachas": {
+   "g": "young women",
+   "t": "noun"
+  },
+  "sentadas": {
+   "g": "sitting there (sentarse)",
+   "t": "verb"
+  },
+  "dejarse": {
+   "g": "to let herself (dejarse)",
+   "t": "verb"
+  },
+  "échelo": {
+   "g": "pour it (echar)",
+   "t": "verb"
+  },
+  "mezcle": {
+   "g": "stir it (mezclar)",
+   "t": "verb"
+  },
+  "cuarta": {
+   "g": "fourth",
+   "t": "adjective"
+  },
+  "corrección": {
+   "g": "the correction",
+   "t": "noun"
+  },
+  "abren": {
+   "g": "they open (abrir)",
+   "t": "verb"
+  }
  }
 }

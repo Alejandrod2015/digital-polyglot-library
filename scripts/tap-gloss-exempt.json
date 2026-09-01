@@ -258,6 +258,62 @@
     "zwölf"
    ]
   },
+  "german-traveler-a1": {
+   "articles": [
+    "das",
+    "dem",
+    "den",
+    "der",
+    "des",
+    "die",
+    "ein",
+    "eine",
+    "einem",
+    "einen",
+    "einer",
+    "kein",
+    "keine"
+   ],
+   "characterNames": [
+    "anja",
+    "anjas",
+    "ben",
+    "berger",
+    "bernd",
+    "clara",
+    "finn",
+    "greta",
+    "hanna",
+    "jonas",
+    "kai",
+    "kais",
+    "lena",
+    "lukas",
+    "max",
+    "mia",
+    "petra",
+    "pia",
+    "sofie",
+    "stefan",
+    "theo",
+    "tobias"
+   ],
+   "numerals": [
+    "drei",
+    "dreißig",
+    "dritt",
+    "dritter",
+    "erste",
+    "fünf",
+    "neun",
+    "neunzehn",
+    "sieben",
+    "vier",
+    "zehn",
+    "zwanzig",
+    "zwei"
+   ]
+  },
   "italian-friends-a0": {
    "articles": [
     "dei",
@@ -331,6 +387,54 @@
     "sei",
     "sette",
     "tre",
+    "venti",
+    "zero"
+   ]
+  },
+  "italian-traveler-a1": {
+   "articles": [
+    "dei",
+    "gli",
+    "i",
+    "il",
+    "l",
+    "la",
+    "le",
+    "lo",
+    "un",
+    "una",
+    "uno"
+   ],
+   "characterNames": [
+    "dario",
+    "gaia",
+    "irene",
+    "marta",
+    "martina",
+    "nico",
+    "rosa",
+    "teo"
+   ],
+   "numerals": [
+    "cento",
+    "cinque",
+    "dieci",
+    "dodici",
+    "due",
+    "nove",
+    "otto",
+    "quaranta",
+    "quarantuno",
+    "quattordici",
+    "quattro",
+    "quindici",
+    "sei",
+    "sessanta",
+    "sette",
+    "tre",
+    "trecento",
+    "trentanove",
+    "undici",
     "venti",
     "zero"
    ]
@@ -524,6 +628,45 @@
     "uno"
    ]
   },
+  "spanish-friends-argentina-a0": {
+   "articles": [
+    "el",
+    "la",
+    "las",
+    "los",
+    "un",
+    "una",
+    "unas",
+    "unos"
+   ],
+   "characterNames": [
+    "agustina",
+    "brenda",
+    "damián",
+    "emanuel",
+    "facu",
+    "facundo",
+    "julieta",
+    "lea",
+    "leandro",
+    "yamila"
+   ],
+   "numerals": [
+    "catorce",
+    "cuarenta",
+    "diez",
+    "dos",
+    "mil",
+    "nueve",
+    "ocho",
+    "seis",
+    "siete",
+    "treinta",
+    "tres",
+    "uno",
+    "veinte"
+   ]
+  },
   "spanish-friends-colombia": {
    "articles": [
     "el",
@@ -703,112 +846,6 @@
     "veinte"
    ]
   },
-  "spanish-traveler-mexico-a0": {
-   "articles": [
-    "el",
-    "la",
-    "las",
-    "los",
-    "un",
-    "una",
-    "unas"
-   ],
-   "characterNames": [
-    "ana",
-    "beto",
-    "carmen",
-    "chela",
-    "diego",
-    "elena",
-    "iván",
-    "javier",
-    "juan",
-    "kanek",
-    "lucía",
-    "lupe",
-    "marina",
-    "marta",
-    "mateo",
-    "nico",
-    "pablo",
-    "rafa",
-    "sofía",
-    "toño"
-   ],
-   "numerals": [
-    "dos",
-    "mil",
-    "uno",
-    "veinte"
-   ]
-  },
-  "spanish-traveler-spain-a2": {
-   "articles": [
-    "el",
-    "la",
-    "las",
-    "los",
-    "un",
-    "una",
-    "unos"
-   ],
-   "characterNames": [
-    "irene",
-    "marta",
-    "quique",
-    "rocío",
-    "álvaro"
-   ],
-   "numerals": [
-    "cien",
-    "cinco",
-    "cuarenta",
-    "cuarta",
-    "cuatro",
-    "dos",
-    "nueve",
-    "ocho",
-    "seis",
-    "siete",
-    "tercer",
-    "tres",
-    "uno",
-    "veinte"
-   ]
-  },
-  "spanish-traveler-spain-a1": {
-   "articles": [
-    "el",
-    "la",
-    "las",
-    "los",
-    "un",
-    "una",
-    "unas",
-    "unos"
-   ],
-   "numerals": [
-    "cien",
-    "cinco",
-    "cuatro",
-    "diez",
-    "dos",
-    "nueve",
-    "ocho",
-    "segunda",
-    "seis",
-    "tres",
-    "uno",
-    "veinte"
-   ],
-   "characterNames": [
-    "irene",
-    "marta",
-    "nico",
-    "quique",
-    "rocío"
-   ]
-  },
   "spanish-traveler-latam-a1": {
    "articles": [
     "el",
@@ -850,111 +887,7 @@
     "veinte"
    ]
   },
-  "german-traveler-a1": {
-   "articles": [
-    "das",
-    "dem",
-    "den",
-    "der",
-    "des",
-    "die",
-    "ein",
-    "eine",
-    "einem",
-    "einen",
-    "einer",
-    "kein",
-    "keine"
-   ],
-   "characterNames": [
-    "anja",
-    "anjas",
-    "ben",
-    "berger",
-    "bernd",
-    "clara",
-    "finn",
-    "greta",
-    "hanna",
-    "jonas",
-    "kai",
-    "kais",
-    "lena",
-    "lukas",
-    "max",
-    "mia",
-    "petra",
-    "pia",
-    "sofie",
-    "stefan",
-    "theo",
-    "tobias"
-   ],
-   "numerals": [
-    "drei",
-    "dreißig",
-    "dritt",
-    "dritter",
-    "erste",
-    "fünf",
-    "neun",
-    "neunzehn",
-    "sieben",
-    "vier",
-    "zehn",
-    "zwanzig",
-    "zwei"
-   ]
-  },
-  "italian-traveler-a1": {
-   "articles": [
-    "dei",
-    "gli",
-    "i",
-    "il",
-    "l",
-    "la",
-    "le",
-    "lo",
-    "un",
-    "una",
-    "uno"
-   ],
-   "characterNames": [
-    "dario",
-    "gaia",
-    "irene",
-    "marta",
-    "martina",
-    "nico",
-    "rosa",
-    "teo"
-   ],
-   "numerals": [
-    "cento",
-    "cinque",
-    "dieci",
-    "dodici",
-    "due",
-    "nove",
-    "otto",
-    "quaranta",
-    "quarantuno",
-    "quattordici",
-    "quattro",
-    "quindici",
-    "sei",
-    "sessanta",
-    "sette",
-    "tre",
-    "trecento",
-    "trentanove",
-    "undici",
-    "venti",
-    "zero"
-   ]
-  },
-  "spanish-friends-argentina-a0": {
+  "spanish-traveler-latam-a2": {
    "articles": [
     "el",
     "la",
@@ -966,28 +899,119 @@
     "unos"
    ],
    "characterNames": [
-    "agustina",
-    "brenda",
-    "damián",
-    "emanuel",
-    "facu",
-    "facundo",
-    "julieta",
-    "lea",
+    "cortés",
     "leandro",
-    "yamila"
+    "marisol",
+    "yolanda"
    ],
    "numerals": [
-    "catorce",
-    "cuarenta",
-    "diez",
+    "dos",
+    "once",
+    "tres",
+    "uno"
+   ]
+  },
+  "spanish-traveler-mexico-a0": {
+   "articles": [
+    "el",
+    "la",
+    "las",
+    "los",
+    "un",
+    "una",
+    "unas"
+   ],
+   "characterNames": [
+    "ana",
+    "beto",
+    "carmen",
+    "chela",
+    "diego",
+    "elena",
+    "iván",
+    "javier",
+    "juan",
+    "kanek",
+    "lucía",
+    "lupe",
+    "marina",
+    "marta",
+    "mateo",
+    "nico",
+    "pablo",
+    "rafa",
+    "sofía",
+    "toño"
+   ],
+   "numerals": [
     "dos",
     "mil",
+    "uno",
+    "veinte"
+   ]
+  },
+  "spanish-traveler-spain-a1": {
+   "articles": [
+    "el",
+    "la",
+    "las",
+    "los",
+    "un",
+    "una",
+    "unas",
+    "unos"
+   ],
+   "numerals": [
+    "cien",
+    "cinco",
+    "cuatro",
+    "diez",
+    "dos",
+    "nueve",
+    "ocho",
+    "segunda",
+    "seis",
+    "tres",
+    "uno",
+    "veinte"
+   ],
+   "characterNames": [
+    "irene",
+    "marta",
+    "nico",
+    "quique",
+    "rocío"
+   ]
+  },
+  "spanish-traveler-spain-a2": {
+   "articles": [
+    "el",
+    "la",
+    "las",
+    "los",
+    "un",
+    "una",
+    "unos"
+   ],
+   "characterNames": [
+    "irene",
+    "marta",
+    "quique",
+    "rocío",
+    "álvaro"
+   ],
+   "numerals": [
+    "cien",
+    "cinco",
+    "cuarenta",
+    "cuarta",
+    "cuatro",
+    "dos",
     "nueve",
     "ocho",
     "seis",
     "siete",
-    "treinta",
+    "tercer",
     "tres",
     "uno",
     "veinte"
