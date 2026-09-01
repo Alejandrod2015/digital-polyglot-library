@@ -5585,6 +5585,150 @@
   "ciudades": {
    "g": "cities",
    "t": "noun"
+  },
+  "enterarse": {
+   "g": "to find out",
+   "t": "verb"
+  },
+  "firmo": {
+   "g": "I sign (firmar)",
+   "t": "verb"
+  },
+  "corbata": {
+   "g": "a tie",
+   "t": "noun"
+  },
+  "ascensor": {
+   "g": "the lift",
+   "t": "noun"
+  },
+  "imaginar": {
+   "g": "to picture in your head",
+   "t": "verb"
+  },
+  "confunde": {
+   "g": "gets muddled (confundirse)",
+   "t": "verb"
+  },
+  "coma": {
+   "g": "eat (comer)",
+   "t": "verb"
+  },
+  "aeropuerto": {
+   "g": "the airport",
+   "t": "noun"
+  },
+  "sorbete": {
+   "g": "a sorbet, a fruit ice",
+   "t": "noun"
+  },
+  "cuídese": {
+   "g": "take care (cuidarse)",
+   "t": "verb"
+  },
+  "siéntese": {
+   "g": "sit down (sentarse)",
+   "t": "verb"
+  },
+  "ensalada": {
+   "g": "a salad",
+   "t": "noun"
+  },
+  "chuleta": {
+   "g": "a chop, a cut of meat on the bone",
+   "t": "noun"
+  },
+  "tarta": {
+   "g": "a cake",
+   "t": "noun"
+  },
+  "dígalo": {
+   "g": "say it (decir)",
+   "t": "verb"
+  },
+  "quito": {
+   "g": "I take it out (quitar)",
+   "t": "verb"
+  },
+  "interesaba": {
+   "g": "mattered to her (interesar)",
+   "t": "verb"
+  },
+  "contestan": {
+   "g": "they answer (contestar)",
+   "t": "verb"
+  },
+  "apoyan": {
+   "g": "they back her (apoyar)",
+   "t": "verb"
+  },
+  "agenda": {
+   "g": "the diary of the day's hours",
+   "t": "noun"
+  },
+  "recalentado": {
+   "g": "reheated (recalentar)",
+   "t": "verb"
+  },
+  "describo": {
+   "g": "I describe it (describir)",
+   "t": "verb"
+  },
+  "modelo": {
+   "g": "the plan put forward",
+   "t": "noun"
+  },
+  "corredor": {
+   "g": "the corridor",
+   "t": "noun"
+  },
+  "sirva": {
+   "g": "is of use (servir)",
+   "t": "verb"
+  },
+  "envía": {
+   "g": "sends (enviar)",
+   "t": "verb"
+  },
+  "sabiendo": {
+   "g": "knowing (saber)",
+   "t": "verb"
+  },
+  "frutería": {
+   "g": "the fruit stall",
+   "t": "noun"
+  },
+  "secando": {
+   "g": "drying (secar)",
+   "t": "verb"
+  },
+  "ordenando": {
+   "g": "tidying up (ordenar)",
+   "t": "verb"
+  },
+  "apunte": {
+   "g": "put it on the slate (apuntar)",
+   "t": "verb"
+  },
+  "apuntaba": {
+   "g": "used to put it on the slate (apuntar)",
+   "t": "verb"
+  },
+  "deudas": {
+   "g": "debts",
+   "t": "noun"
+  },
+  "llamara": {
+   "g": "called him (llamar)",
+   "t": "verb"
+  },
+  "conste": {
+   "g": "let it be clear (constar)",
+   "t": "verb"
+  },
+  "hablé": {
+   "g": "I spoke (hablar)",
+   "t": "verb"
   }
  }
 }
