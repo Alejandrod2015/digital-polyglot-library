@@ -454,6 +454,26 @@ el primero que pedia la escena.
 quiere creerle" es la semilla del motivo de este tema. Comprobada en la base
 antes de escribir H13; si un recorte se la lleva, hay que reponerla.
 
+### 4.2.6 Envios de los temas 6 y 7 (anotados el 2026-09-01, antes de escribir)
+
+| Receptora | Aloja (7) | De |
+|---|---|---|
+| H16 | preguntar, responder, describir, conseguir, entender, servir, preferir | H13 |
+| H17 | agarrar, encender, esconder, propone, parar, cambiar, peor | H14 |
+| H18 | intentar, olvidar, imaginar, cuidar, callarse, menos, aqui | H15 |
+| H19 | oir, detener, avanzar, sujetar, asomarse, mojado, marron | H13, H12 |
+| H20 | acordarse, guardar, comer, mirar, dejar, bueno, abajo | H14 |
+| H21 | vino, arrastrar, sumar, propio, hacia, banco, escena | H15 |
+
+Campos aprobados, comprobados libres enteros contra el gate:
+- Tema 6: ensalada, mantequilla, salchicha, chuleta, modelo, experiencia, tarta,
+  sorbete. (`panel` se gasto en el tema 4.)
+- Tema 7: fruteria, carniceria, heladeria, dulceria, supermercado, tomate, melon,
+  sandia, durazno.
+
+Gastados y fuera: acuerdo, reunion, pasillo, propuesta, panel. El lexico de
+oficina lo agoto el A1, que es lo que ya avisaba la tabla de campos.
+
 ## 5. Exclusión de vocab: cero solape
 
 Extraído de la base el 2026-08-31: **731 superficies distintas** entre el A0 y el
