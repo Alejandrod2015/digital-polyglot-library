@@ -361,7 +361,7 @@ function slugify(s: string): string {
           journey: { language: mio.language, status: { not: "archived" } },
           journeyId: { not: journeyId },
         },
-        select: { vocab: true, journey: { select: { typeSlug: true } } },
+        select: { vocab: true, journey: { select: { typeSlug: true, levels: true } } },
       });
       const out = new Set<string>();
       const duro = new Set<string>();
@@ -390,14 +390,38 @@ function slugify(s: string): string {
       // (mas abajo) tambien, portables incluidas: ahi repetir una palabra es
       // cobrarle dos veces al mismo lector.
       const PORTABLES = new Set(["verb", "adjective", "adverb", "expression"]);
+      const miNivel = (ctx.level ?? "").toLowerCase();
       for (const r of otras) {
-        // El mismo TIPO de journey (Traveler A0 -> Traveler A1) va al cubo
-        // duro; los de otro tipo, al blando de hasta dos por historia.
-        const destino = mio.typeSlug && r.journey?.typeSlug === mio.typeSlug ? duro : out;
+        const mismoTipo = !!mio.typeSlug && r.journey?.typeSlug === mio.typeSlug;
+        const mismoNivel = (r.journey?.levels ?? []).some(
+          (l) => String(l).toLowerCase() === miNivel
+        );
         for (const v of ((r.vocab as Array<{ word?: unknown; type?: unknown }> | null) ?? [])) {
           if (!v?.word) continue;
-          if (PORTABLES.has(String(v.type ?? "").toLowerCase())) continue;
-          destino.add(String(v.word));
+          const portable = PORTABLES.has(String(v.type ?? "").toLowerCase());
+          // CAPA PORTABLE: se reabre entre journeys del mismo tipo, decision
+          // del 2026-08-23.
+          // La portable se exime SIEMPRE, venga del tipo que venga: asi
+          // estaba antes del 2026-09-01 y al condicionarla a `mismoTipo`
+          // se colo una regresion que dejo en rojo historias ya guardadas.
+          if (portable) continue;
+          // CAPA ANCLADA: se reabre entre NIVELES del mismo tipo (2026-09-01).
+          //
+          // El mismo argumento que abrio la portable, medido en el A2 latam:
+          // con la anclada a cero contra todo el tipo, los temas 1 a 4 gastaron
+          // 260 plazas y dejaron seco el pozo de sustantivos. En la sexta
+          // historia seguida las palabras que la escena pedia (mesa, cena,
+          // lampara, ciudad, luz) estaban todas gastadas por el A0 y el A1, y
+          // lo unico que quedaba libre no cabia en la escena: la prosa se
+          // dobla para alojar la palabra, que es el defecto que el usuario
+          // caza siempre y con razon.
+          //
+          // Lo que NO cambia: dentro del MISMO nivel sigue a cero, y dentro
+          // del propio journey tambien (mas abajo). Ahi repetir es cobrarle
+          // dos veces al mismo lector. Entre niveles no: quien hace el A2 no
+          // tiene por que haber hecho el A0.
+          if (!portable && mismoTipo && !mismoNivel) continue;
+          (mismoTipo ? duro : out).add(String(v.word));
         }
       }
       // ...y el vocabulario de las historias YA GUARDADAS de ESTE journey que

@@ -433,6 +433,27 @@ plazas ancladas.
 lexico del tramite lo agotaron el A0, el A1 y los journeys de Espana, que es lo
 que ya decia la escena aprobada del 2026-08-31.
 
+### 4.2.5 Envíos del tema 5 (anotados el 2026-09-01, antes de escribir)
+
+Corrige lo que la tabla del tema 4 dejo visto: **H12 se quedo con 1 portable y
+19 ancladas, y 0 en "vuelven despues"**. Sus portables se alojan aqui, junto con
+los siete de H8 que el tema 4 no pudo recoger.
+
+| Receptora | Aloja (7) | De |
+|---|---|---|
+| H13 | detenerse, subirse, sujetar, asomarse, avanzar, marrón, mojado | H12 |
+| H14 | casi, luego, dejarse, parar, cambiar, esconder, proponer | H8 |
+| H15 | ordenado, estricto, bajarse, arrastrar, sumar, propio, descargar | H12 |
+
+Campo del tema comprobado libre entero: inquilinos, diario, escritos, candil,
+velon, frascos, cajita, librero, proposito y pension. Diez sustantivos para
+nueve plazas ancladas. `secreto` esta gastado y no entra ni en broma, que era
+el primero que pedia la escena.
+
+**Candado de continuidad**: la frase de H3 "Ella no le cree del todo y a la vez
+quiere creerle" es la semilla del motivo de este tema. Comprobada en la base
+antes de escribir H13; si un recorte se la lleva, hay que reponerla.
+
 ## 5. Exclusión de vocab: cero solape
 
 Extraído de la base el 2026-08-31: **731 superficies distintas** entre el A0 y el
