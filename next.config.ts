@@ -43,6 +43,13 @@ const nextConfig: NextConfig = {
       { source: "/about-us/", destination: "/", permanent: true },
       { source: "/careers", destination: "/", permanent: true },
       { source: "/careers/", destination: "/", permanent: true },
+      // Consolidacion del cluster "spanish sayings" (2026-09-01): tres URLs
+      // competian por la misma consulta y ninguna pasaba de la posicion 36.
+      // El contenido util de estas dos se fusiono en el dicho superviviente.
+      { source: "/blog/top-10-spanish-sayings", destination: "/blog/25-spanish-dichos-traditional-sayings-with-meanings", permanent: true },
+      { source: "/blog/top-10-spanish-sayings/", destination: "/blog/25-spanish-dichos-traditional-sayings-with-meanings", permanent: true },
+      { source: "/blog/key-sayings-you-need-to-speak-spanish-like-a-native", destination: "/blog/25-spanish-dichos-traditional-sayings-with-meanings", permanent: true },
+      { source: "/blog/key-sayings-you-need-to-speak-spanish-like-a-native/", destination: "/blog/25-spanish-dichos-traditional-sayings-with-meanings", permanent: true },
     ];
   },
   async rewrites() {
