@@ -5393,6 +5393,114 @@
   "esconder": {
    "g": "to hide",
    "t": "verb"
+  },
+  "canoa": {
+   "g": "a canoe",
+   "t": "noun"
+  },
+  "amarrada": {
+   "g": "tied up (amarrar)",
+   "t": "verb"
+  },
+  "oficial": {
+   "g": "the officer on duty",
+   "t": "noun"
+  },
+  "preparó": {
+   "g": "got ready (preparar)",
+   "t": "verb"
+  },
+  "panel": {
+   "g": "the board with the times",
+   "t": "noun"
+  },
+  "venga": {
+   "g": "come (venir)",
+   "t": "verb"
+  },
+  "húmedo": {
+   "g": "damp",
+   "t": "adjective"
+  },
+  "motivo": {
+   "g": "a reason",
+   "t": "noun"
+  },
+  "convence": {
+   "g": "convinces (convencer)",
+   "t": "verb"
+  },
+  "llovió": {
+   "g": "it rained (llover)",
+   "t": "verb"
+  },
+  "llegue": {
+   "g": "goes over (llegarse)",
+   "t": "verb"
+  },
+  "ofrecen": {
+   "g": "they offer her (ofrecer)",
+   "t": "verb"
+  },
+  "uniforme": {
+   "g": "a uniform",
+   "t": "noun"
+  },
+  "balsa": {
+   "g": "a raft",
+   "t": "noun"
+  },
+  "oculta": {
+   "g": "hides (ocultar)",
+   "t": "verb"
+  },
+  "ticket": {
+   "g": "the ticket",
+   "t": "noun"
+  },
+  "severa": {
+   "g": "stern (severo)",
+   "t": "adjective"
+  },
+  "corregida": {
+   "g": "corrected (corregir)",
+   "t": "verb"
+  },
+  "detenerse": {
+   "g": "to stop",
+   "t": "verb"
+  },
+  "chaleco": {
+   "g": "a life vest",
+   "t": "noun"
+  },
+  "descargan": {
+   "g": "they unload (descargar)",
+   "t": "verb"
+  },
+  "ordenada": {
+   "g": "tidy, in order (ordenado)",
+   "t": "adjective"
+  },
+  "estricta": {
+   "g": "strict (estricto)",
+   "t": "adjective"
+  },
+  "señorita": {
+   "g": "miss, a polite form of address",
+   "t": "noun"
+  },
+  "decirlo": {
+   "g": "to say it (decir)",
+   "t": "verb"
+  },
+  "acelere": {
+   "g": "speeds up (acelerar)",
+   "t": "verb"
+  },
+  "arequipa": {
+   "g": "Arequipa, a city in southern Peru",
+   "t": "noun"
   }
  }
 }
