@@ -50,7 +50,12 @@ esac
 # `sed -n '1,80p' scripts/saveStory.ts` disparaba la auditoria entera y
 # bloqueaba, con lo que abrir el fichero para mirarlo costaba un exit 2.
 case "$CMD" in
-  grep*|*"| grep"*|rg\ *|cat\ *|less\ *|head\ *|tail\ *|sed\ *|awk\ *|wc\ *|diff\ *) exit 0 ;;
+  # Solo se salta si el comando EMPIEZA por una herramienta de lectura.
+  # `*"| grep"*` estaba de mas y era el agujero: casaba con CUALQUIER
+  # comando que canalizara su salida a grep, incluido un saveStory real.
+  # El 2026-09-01 se guardaron tres historias sin una sola glosa porque
+  # todas las llamadas iban con `| grep -v dotenv` para acortar la salida.
+  grep*|rg\ *|cat\ *|less\ *|head\ *|tail\ *|sed\ *|awk\ *|wc\ *|diff\ *) exit 0 ;;
 esac
 
 OUT="$(cd "$REPO" && npx tsx scripts/rebuildTapGlosses.ts --check 2>&1)"
