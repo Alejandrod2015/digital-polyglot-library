@@ -26,6 +26,10 @@ const CIUDAD: Record<string,string> = {
   const slugsBundle=new Set(
     filasGlosa.filter(r=>r.slug!=="" && Object.keys((r.glosses??{}) as object).length>0).map(r=>r.slug)
   );
+  const BUNDLE="spanish-traveler-latam-a2";
+  const filasA2=await p.tapGlossSet.findMany({where:{bundle:BUNDLE},select:{glosses:true}});
+  const formasBundle=new Set<string>();
+  for(const r of filasA2) for(const k of Object.keys((r.glosses??{}) as object)) formasBundle.add(k.toLowerCase());
   console.log("## tabla por temas\n");
   console.log("| # | Ciudad · Tema | Escritas+vocab | Glosas tap | Práctica | Audio | Cover |");
   console.log("|---|---|---|---|---|---|---|");
@@ -56,7 +60,11 @@ const CIUDAD: Record<string,string> = {
     const idx=conTexto.findIndex(x=>x.id===s.id);
     const vs=((s.vocab as any[])??[]);
     const formas=new Set([...tok(String(s.text)), ...tok(String(s.title??""))]);
-    const conGlosa=[...formas].filter(f=>slugsBundle.has(f)).length;
+    // COBERTURA de glosas: formas del cuerpo+titulo que tienen entrada en el
+    // bundle. `slugsBundle` son SLUGS de historia, no formas: filtrando con el
+    // la columna daba 0 siempre. Las formas viven en el mapa global del bundle
+    // mas la capa de contexto de la propia historia.
+    const conGlosa=[...formas].filter(f=>formasBundle.has(f)).length;
     let port=0,anc=0,antes=0,desp=0,suma=0;
     for (const v of vs) {
       const k=clave(v);

@@ -409,6 +409,30 @@ plazas ancladas, que es el primer tema con holgura.
 `invitada` gasta una de las DOS reaperturas que el journey se permite en total
 (la otra fue `camara` en el tema 1). No queda ninguna mas.
 
+### 4.2.4 Envíos del tema 4 (anotados el 2026-09-01, antes de escribir)
+
+La tabla por historias del tema 3 enseño el problema que hay que corregir aqui:
+**H8 y H9 tienen 0 en "vuelven despues"**, o sea que todo lo que ensenan muere
+ahi. Y las ancladas suben de 11 en H1 a 18 en H8, al reves de lo que pide el
+diseno (70/30 a favor de portables).
+
+| Receptora | Aloja (7) | De |
+|---|---|---|
+| H10 | preparar, tragar, tenso, callado, amargo, borrar, doler | H8 |
+| H11 | empezar, arreglar, ocultar, faltar, anotar, decidir, pronto | H9 |
+| H12 | firmar, reducir, apuntar, entregar, rechazar, apenas, alcanzar | H9 |
+
+Los siete de H8 que quedan sin reencuentro aqui (casi, luego, dejarse, parar,
+cambiar, esconder, proponer) van al tema 5, y se anotan alli antes de escribir.
+
+Campo del tema comprobado libre entero: canoa, balsa, puerto, costa, isla,
+ticket, panel, balde, mas corriente y espera. Diez sustantivos para nueve
+plazas ancladas.
+
+**Gastados y por tanto fuera**: rio, orilla, lancha, muelle, fila, sello. El
+lexico del tramite lo agotaron el A0, el A1 y los journeys de Espana, que es lo
+que ya decia la escena aprobada del 2026-08-31.
+
 ## 5. Exclusión de vocab: cero solape
 
 Extraído de la base el 2026-08-31: **731 superficies distintas** entre el A0 y el
