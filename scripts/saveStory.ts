@@ -594,7 +594,7 @@ function slugify(s: string): string {
         // tanda es contenido nuevo y no tiene "antes" contra el que comparar.
         if (String(f.text ?? "").trim()) {
           base.push({ slug: f.slug ?? k, title: f.title ?? "", text: String(f.text),
-                      vocab: f.vocab as never, language: ctx.language, level: ctx.level topic: f.topic });
+                      vocab: f.vocab as never, language: ctx.language, level: ctx.level, topic: f.topic });
         }
       }
       for (const [k, d] of enTanda) if (!vistos.has(k))
