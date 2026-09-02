@@ -45,7 +45,10 @@ const prisma = new PrismaClient();
     select: { id: true, slug: true, title: true, text: true, topic: true, audioUrl: true },
   });
   if (!s?.text) throw new Error(`no encuentro la historia ${slug}`);
-  if (s.audioUrl) throw new Error(`${slug} YA tiene audio; no se pisa`);
+  // Pisar audio existente exige decirlo: --rehacer. Sin eso, no se toca.
+  if (s.audioUrl && !process.argv.includes("--rehacer")) {
+    throw new Error(`${slug} YA tiene audio; para rehacerlo pasa --rehacer`);
+  }
 
   const voiceId = VOZ_POR_TEMA[s.topic];
   if (!voiceId) throw new Error(`sin narrador para el tema ${s.topic}`);
