@@ -5749,6 +5749,10 @@
   "comprador": {
    "g": "buyer",
    "t": "noun"
+  },
+  "apure": {
+   "g": "rush, hurry (apurarse)",
+   "t": "verb"
   }
  }
 }
