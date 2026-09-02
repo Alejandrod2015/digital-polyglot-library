@@ -154,6 +154,31 @@ than once, do NOT defend with the same metrics. Switch the frame of review
 user's concern is addressed or you can articulate what they're asking that
 you haven't measured.
 
+## Karaoke y texto: el orden es texto primero (BLOQUEANTE, 2026-09-02)
+
+**Primero se cierra el TEXTO, despues se narra.** Nunca al reves.
+
+El lector con karaoke (`HighlightedStoryContent`) no pinta desde el texto: parte
+los parrafos por cada salto de linea de `payload.storyPlainText`, que es una
+COPIA del texto guardada AL ALINEAR. Editar los parrafos despues de narrar no
+cambia nada en pantalla; la historia se sigue viendo con la forma vieja. Y no
+avisa nadie: el validador pasa, las glosas pasan, y el defecto **solo se ve
+abriendo la pagina CON SESION INICIADA**, porque sin sesion manda `StoryContent`,
+que agrupa de tres en tres y disimula el problema.
+
+Enforced por `npm run lint:karaoke-fresh` (`scripts/checkKaraokeFresh.ts`),
+enganchado al hook `pre-push`: compara cuantos bloques pinta el lector contra
+cuantos parrafos tiene el texto, en TODA historia con `audioUrl`.
+
+Arreglo, y no gasta creditos de ElevenLabs porque usa el audio que ya existe y
+alinea en Modal: `npx tsx scripts/_realinea.ts`.
+
+WHY: el 2026-09-02 el A2 latam se veia como una lista de trece renglones donde
+el texto ya tenia cinco parrafos. Perdi horas reagrupando parrafos y midiendo en
+la vista ANONIMA, y desde ahi afirme lo que el usuario veia en la suya. Dos
+reglas salen de ahi: el orden (texto y luego audio), y que la vista sin sesion
+no sirve para juzgar la del usuario.
+
 ## Story validation gate (BLOCKING — no bypass)
 
 A `JourneyStory`'s content (title/slug/text/vocab/arcType/synopsis) reaches
