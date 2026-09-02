@@ -32,6 +32,9 @@ export type JourneyStoryInput = {
   language: string;
   level: string;
   vocab?: Array<{ word: string; surface?: string | null }> | null;
+  /** Tema al que pertenece, EN ORDEN DE LECTURA. Sin el, las reglas de
+   *  reparto por tema no se pueden medir y salen como no implementadas. */
+  topic?: string | null;
 };
 
 export type JourneyCheck = {
@@ -656,6 +659,91 @@ export function validateJourneyStories(
     push("journey-rules-inventory", "Toda regla de docs/story-rules.json tiene su check",
       sinCheck.length === 0,
       `Declaradas en docs/story-rules.json y sin implementar: ${sinCheck.join(", ")}`);
+  }
+
+  // ── Forma del reparto ───────────────────────────────────────
+  //
+  // Cuatro reglas duras que vivian SOLO en la memoria del proyecto
+  // (`project_journey_structure_plan`) y por tanto dependian de que quien
+  // escribe se acordara de leerlas. El 2026-09-01 el usuario pidio que dejara
+  // de ser posible saltarselas. Son de conjunto: ninguna se puede ver
+  // mirando una historia suelta, que es justo por lo que no estaban en
+  // `validateGeneratedStory`.
+  //
+  // Definiciones, tomadas de la propia memoria: FIJO es el que sale en al
+  // menos la mitad de las historias (valen las menciones, no hace falta que
+  // hable) y PROTAGONISTA el que sale en todas.
+  {
+    // Candidatos: los que HABLAN en algun momento del journey (`cast`), no
+    // todo nombre propio recurrente. Con `castLegacy` a secas el A0 mexicano
+    // daba "Oaxaca" y "Mexico" por personajes: los toponimos se repiten mas
+    // que la gente. La PRESENCIA si se cuenta por mencion, que es lo que pide
+    // la memoria ("valen las menciones, no hace falta que hable").
+    const nombres = cast;
+    const saleEn = (n: string) =>
+      stories.filter((s) => new RegExp(`\\b${n}\\b`, "u").test(s.text));
+    const presencia = new Map(nombres.map((n) => [n, saleEn(n).length]));
+    const total = stories.length;
+    const fijos = nombres.filter((n) => (presencia.get(n) ?? 0) >= Math.ceil(total / 2));
+    const enTodas = nombres.filter((n) => presencia.get(n) === total);
+    const ficha = (n: string) => `${n} (${presencia.get(n)}/${total})`;
+
+    push("journey-cast-fixed-max-two", "Nunca mas de 2 personajes fijos",
+      fijos.length <= 2,
+      `${fijos.length} salen en media o mas: ${fijos.map(ficha).join(", ")}. ` +
+      `Tres voces sostenidas se confunden de oido; el tope es 2.`);
+
+    // Un check que no sabe medir NO puede fallar, igual que el de presentacion:
+    // si el detector de habla no saco reparto, el rojo seria del detector.
+    if (!nombres.length) {
+      noImpl("journey-cast-protagonist-in-all", "El protagonista sale en todas",
+        `El detector de habla no encontro reparto en ${lang || "?"}. Sin nombres ` +
+        `no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.`);
+    } else {
+      push("journey-cast-protagonist-in-all", "El protagonista sale en todas",
+        enTodas.length >= 1,
+        `Ninguno sale en las ${total}. El mas presente es ${ficha(nombres[0])}.`);
+    }
+
+    // Las dos por tema necesitan saber donde empieza cada uno.
+    const temas = stories.map((s) => s.topic ?? null);
+    if (temas.some((t) => !t)) {
+      const why = "Las historias llegan sin `topic`, asi que no se puede saber " +
+        "en que tema aparece cada personaje por primera vez. Quien llame al " +
+        "checker tiene que pasar el tema en orden de lectura.";
+      noImpl("journey-cast-one-new-per-topic", "Un personaje nuevo por tema, en su primera historia", why);
+      noImpl("journey-cast-first-story-only-fixed", "La primera historia del journey solo lleva fijos", why);
+    } else {
+      const orden: string[] = [];
+      for (const t of temas as string[]) if (!orden.includes(t)) orden.push(t);
+      const primeraDe = new Map<string, number>();
+      orden.forEach((t) => primeraDe.set(t, temas.indexOf(t)));
+
+      const nuevosPorTema = new Map<string, string[]>(orden.map((t) => [t, []]));
+      const fueraDeSuTema: string[] = [];
+      for (const n of nombres) {
+        if (fijos.includes(n)) continue;
+        const i0 = stories.findIndex((s) => new RegExp(`\\b${n}\\b`, "u").test(s.text));
+        // Si el detector de habla lo vio pero el de mencion no lo encuentra
+        // (acentos, forma flexionada), no se puede decir de que tema es.
+        if (i0 < 0) continue;
+        const t = temas[i0] as string;
+        nuevosPorTema.get(t)!.push(n);
+        if (i0 !== primeraDe.get(t)) fueraDeSuTema.push(`${n} (aparece en la ${i0 - primeraDe.get(t)! + 1}a de ${t})`);
+      }
+      const conDeMas = orden.filter((t) => nuevosPorTema.get(t)!.length > 1);
+      push("journey-cast-one-new-per-topic", "Un personaje nuevo por tema, presentado en su primera historia",
+        conDeMas.length === 0 && fueraDeSuTema.length === 0,
+        [conDeMas.length ? `temas con mas de uno: ${conDeMas.map((t) => `${t} (${nuevosPorTema.get(t)!.join(", ")})`).join(" | ")}` : "",
+         fueraDeSuTema.length ? `presentados tarde: ${fueraDeSuTema.join(", ")}` : ""].filter(Boolean).join(" · "));
+
+      const intrusos = nombres.filter((n) =>
+        !fijos.includes(n) && new RegExp(`\\b${n}\\b`, "u").test(stories[0].text));
+      push("journey-cast-first-story-only-fixed", "La primera historia del journey solo lleva a los fijos",
+        intrusos.length === 0,
+        `${intrusos.join(", ")} sale en la primera sin ser fijo. La primera historia ` +
+        `presenta el reparto estable y nada mas.`);
+    }
   }
 
   return out;

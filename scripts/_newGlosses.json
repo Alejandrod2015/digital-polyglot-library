@@ -5145,6 +5145,594 @@
   "abras": {
    "g": "open it (abrir)",
    "t": "verb"
+  },
+  "alojamiento": {
+   "g": "a place to stay",
+   "t": "noun"
+  },
+  "quédese": {
+   "g": "stay on (quedarse)",
+   "t": "verb"
+  },
+  "quiera": {
+   "g": "you want (querer)",
+   "t": "verb"
+  },
+  "cafetera": {
+   "g": "the coffee pot",
+   "t": "noun"
+  },
+  "deber": {
+   "g": "to owe",
+   "t": "verb"
+  },
+  "merienda": {
+   "g": "an afternoon snack",
+   "t": "noun"
+  },
+  "enfría": {
+   "g": "goes cold (enfriarse)",
+   "t": "verb"
+  },
+  "tercer": {
+   "g": "third",
+   "t": "adjective"
+  },
+  "corregirse": {
+   "g": "to put herself right (corregirse)",
+   "t": "verb"
+  },
+  "trabajando": {
+   "g": "working (trabajar)",
+   "t": "verb"
+  },
+  "tiende": {
+   "g": "hangs out to dry (tender)",
+   "t": "verb"
+  },
+  "cobertor": {
+   "g": "the bedspread",
+   "t": "noun"
+  },
+  "secado": {
+   "g": "dried (secarse)",
+   "t": "verb"
+  },
+  "tomo": {
+   "g": "I take (tomar)",
+   "t": "verb"
+  },
+  "hervir": {
+   "g": "to boil",
+   "t": "verb"
+  },
+  "oírse": {
+   "g": "to hear herself (oírse)",
+   "t": "verb"
+  },
+  "debe": {
+   "g": "must (deber)",
+   "t": "verb"
+  },
+  "guardarropa": {
+   "g": "the wardrobe",
+   "t": "noun"
+  },
+  "enseñe": {
+   "g": "teach her (enseñar)",
+   "t": "verb"
+  },
+  "muchachas": {
+   "g": "young women",
+   "t": "noun"
+  },
+  "sentadas": {
+   "g": "sitting there (sentarse)",
+   "t": "verb"
+  },
+  "dejarse": {
+   "g": "to let herself (dejarse)",
+   "t": "verb"
+  },
+  "échelo": {
+   "g": "pour it (echar)",
+   "t": "verb"
+  },
+  "mezcle": {
+   "g": "stir it (mezclar)",
+   "t": "verb"
+  },
+  "cuarta": {
+   "g": "fourth",
+   "t": "adjective"
+  },
+  "corrección": {
+   "g": "the correction",
+   "t": "noun"
+  },
+  "abren": {
+   "g": "they open (abrir)",
+   "t": "verb"
+  },
+  "enséñeme": {
+   "g": "teach me (enseñar)",
+   "t": "verb"
+  },
+  "tela": {
+   "g": "cloth",
+   "t": "noun"
+  },
+  "ponérselo": {
+   "g": "to make it (ponerle)",
+   "t": "verb"
+  },
+  "desayuné": {
+   "g": "I have had breakfast (desayunar)",
+   "t": "verb"
+  },
+  "dígamelo": {
+   "g": "you tell me (decir)",
+   "t": "verb"
+  },
+  "alquila": {
+   "g": "rents out (alquilar)",
+   "t": "verb"
+  },
+  "cuartos": {
+   "g": "rooms",
+   "t": "noun"
+  },
+  "celebración": {
+   "g": "a party, a celebration",
+   "t": "noun"
+  },
+  "presidente": {
+   "g": "the president",
+   "t": "noun"
+  },
+  "aclara": {
+   "g": "sets it straight (aclarar)",
+   "t": "verb"
+  },
+  "dígales": {
+   "g": "tell them (decir)",
+   "t": "verb"
+  },
+  "gaseosa": {
+   "g": "a fizzy drink",
+   "t": "noun"
+  },
+  "negar": {
+   "g": "to deny",
+   "t": "verb"
+  },
+  "firmó": {
+   "g": "signed (firmar)",
+   "t": "verb"
+  },
+  "miente": {
+   "g": "lies (mentir)",
+   "t": "verb"
+  },
+  "haya": {
+   "g": "there is (haber)",
+   "t": "verb"
+  },
+  "decido": {
+   "g": "I decide (decidir)",
+   "t": "verb"
+  },
+  "falso": {
+   "g": "false, made up",
+   "t": "adjective"
+  },
+  "limpias": {
+   "g": "clean (limpio)",
+   "t": "adjective"
+  },
+  "suyas": {
+   "g": "hers, her own (suyo)",
+   "t": "adjective"
+  },
+  "pruebo": {
+   "g": "I try it (probar)",
+   "t": "verb"
+  },
+  "apariencia": {
+   "g": "the look of a thing from outside",
+   "t": "noun"
+  },
+  "salvarla": {
+   "g": "to save her (salvar)",
+   "t": "verb"
+  },
+  "reduce": {
+   "g": "gets smaller (reducir)",
+   "t": "verb"
+  },
+  "prestan": {
+   "g": "they lend her (prestar)",
+   "t": "verb"
+  },
+  "usó": {
+   "g": "used (usar)",
+   "t": "verb"
+  },
+  "continúa": {
+   "g": "carries on (continuar)",
+   "t": "verb"
+  },
+  "compañero": {
+   "g": "a member of the same group",
+   "t": "noun"
+  },
+  "repiten": {
+   "g": "they repeat it (repetir)",
+   "t": "verb"
+  },
+  "tenso": {
+   "g": "tense, strained",
+   "t": "adjective"
+  },
+  "clarito": {
+   "g": "nice and clearly (claro)",
+   "t": "adverb"
+  },
+  "quise": {
+   "g": "I meant to (querer)",
+   "t": "verb"
+  },
+  "devolver": {
+   "g": "to give back",
+   "t": "verb"
+  },
+  "cambiar": {
+   "g": "to change, to switch to another",
+   "t": "verb"
+  },
+  "esconder": {
+   "g": "to hide",
+   "t": "verb"
+  },
+  "canoa": {
+   "g": "a canoe",
+   "t": "noun"
+  },
+  "amarrada": {
+   "g": "tied up (amarrar)",
+   "t": "verb"
+  },
+  "oficial": {
+   "g": "the officer on duty",
+   "t": "noun"
+  },
+  "preparó": {
+   "g": "got ready (preparar)",
+   "t": "verb"
+  },
+  "panel": {
+   "g": "the board with the times",
+   "t": "noun"
+  },
+  "venga": {
+   "g": "come (venir)",
+   "t": "verb"
+  },
+  "húmedo": {
+   "g": "damp",
+   "t": "adjective"
+  },
+  "motivo": {
+   "g": "a reason",
+   "t": "noun"
+  },
+  "convence": {
+   "g": "convinces (convencer)",
+   "t": "verb"
+  },
+  "llovió": {
+   "g": "it rained (llover)",
+   "t": "verb"
+  },
+  "llegue": {
+   "g": "goes over (llegarse)",
+   "t": "verb"
+  },
+  "ofrecen": {
+   "g": "they offer her (ofrecer)",
+   "t": "verb"
+  },
+  "uniforme": {
+   "g": "a uniform",
+   "t": "noun"
+  },
+  "balsa": {
+   "g": "a raft",
+   "t": "noun"
+  },
+  "oculta": {
+   "g": "hides (ocultar)",
+   "t": "verb"
+  },
+  "ticket": {
+   "g": "the ticket",
+   "t": "noun"
+  },
+  "severa": {
+   "g": "stern (severo)",
+   "t": "adjective"
+  },
+  "corregida": {
+   "g": "corrected (corregir)",
+   "t": "verb"
+  },
+  "detenerse": {
+   "g": "to stop",
+   "t": "verb"
+  },
+  "chaleco": {
+   "g": "a life vest",
+   "t": "noun"
+  },
+  "descargan": {
+   "g": "they unload (descargar)",
+   "t": "verb"
+  },
+  "ordenada": {
+   "g": "tidy, in order (ordenado)",
+   "t": "adjective"
+  },
+  "estricta": {
+   "g": "strict (estricto)",
+   "t": "adjective"
+  },
+  "señorita": {
+   "g": "miss, a polite form of address",
+   "t": "noun"
+  },
+  "decirlo": {
+   "g": "to say it (decir)",
+   "t": "verb"
+  },
+  "acelere": {
+   "g": "speeds up (acelerar)",
+   "t": "verb"
+  },
+  "arequipa": {
+   "g": "Arequipa, a city in southern Peru",
+   "t": "noun"
+  },
+  "creerle": {
+   "g": "to believe him (creer)",
+   "t": "verb"
+  },
+  "pensión": {
+   "g": "a guesthouse, rooms let by the night",
+   "t": "noun"
+  },
+  "devuelven": {
+   "g": "they throw back at her (devolver)",
+   "t": "verb"
+  },
+  "inquilinos": {
+   "g": "the lodgers, the people renting rooms",
+   "t": "noun"
+  },
+  "describe": {
+   "g": "describes it (describir)",
+   "t": "verb"
+  },
+  "diario": {
+   "g": "the daily newspaper",
+   "t": "noun"
+  },
+  "decírmelo": {
+   "g": "telling me (decir)",
+   "t": "verb"
+  },
+  "prefiere": {
+   "g": "prefers (preferir)",
+   "t": "verb"
+  },
+  "consigue": {
+   "g": "gets, manages (conseguir)",
+   "t": "verb"
+  },
+  "cera": {
+   "g": "floor wax",
+   "t": "noun"
+  },
+  "librero": {
+   "g": "the bookshelf",
+   "t": "noun"
+  },
+  "lámpara": {
+   "g": "the lamp",
+   "t": "noun"
+  },
+  "avisan": {
+   "g": "they warn her (avisar)",
+   "t": "verb"
+  },
+  "escritos": {
+   "g": "the written entries",
+   "t": "noun"
+  },
+  "candil": {
+   "g": "an oil lamp",
+   "t": "noun"
+  },
+  "viajó": {
+   "g": "travelled (viajar)",
+   "t": "verb"
+  },
+  "pesan": {
+   "g": "weigh (pesar)",
+   "t": "verb"
+  },
+  "velón": {
+   "g": "a thick candle",
+   "t": "noun"
+  },
+  "busque": {
+   "g": "look for her (buscar)",
+   "t": "verb"
+  },
+  "imagina": {
+   "g": "pictures it (imaginar)",
+   "t": "verb"
+  },
+  "ciudades": {
+   "g": "cities",
+   "t": "noun"
+  },
+  "enterarse": {
+   "g": "to find out",
+   "t": "verb"
+  },
+  "firmo": {
+   "g": "I sign (firmar)",
+   "t": "verb"
+  },
+  "corbata": {
+   "g": "a tie",
+   "t": "noun"
+  },
+  "ascensor": {
+   "g": "the lift",
+   "t": "noun"
+  },
+  "imaginar": {
+   "g": "to picture in your head",
+   "t": "verb"
+  },
+  "confunde": {
+   "g": "gets muddled (confundirse)",
+   "t": "verb"
+  },
+  "coma": {
+   "g": "eat (comer)",
+   "t": "verb"
+  },
+  "aeropuerto": {
+   "g": "the airport",
+   "t": "noun"
+  },
+  "sorbete": {
+   "g": "a sorbet, a fruit ice",
+   "t": "noun"
+  },
+  "cuídese": {
+   "g": "take care (cuidarse)",
+   "t": "verb"
+  },
+  "siéntese": {
+   "g": "sit down (sentarse)",
+   "t": "verb"
+  },
+  "ensalada": {
+   "g": "a salad",
+   "t": "noun"
+  },
+  "chuleta": {
+   "g": "a chop, a cut of meat on the bone",
+   "t": "noun"
+  },
+  "tarta": {
+   "g": "a cake",
+   "t": "noun"
+  },
+  "dígalo": {
+   "g": "say it (decir)",
+   "t": "verb"
+  },
+  "quito": {
+   "g": "I take it out (quitar)",
+   "t": "verb"
+  },
+  "interesaba": {
+   "g": "mattered to her (interesar)",
+   "t": "verb"
+  },
+  "contestan": {
+   "g": "they answer (contestar)",
+   "t": "verb"
+  },
+  "apoyan": {
+   "g": "they back her (apoyar)",
+   "t": "verb"
+  },
+  "agenda": {
+   "g": "the diary of the day's hours",
+   "t": "noun"
+  },
+  "recalentado": {
+   "g": "reheated (recalentar)",
+   "t": "verb"
+  },
+  "describo": {
+   "g": "I describe it (describir)",
+   "t": "verb"
+  },
+  "modelo": {
+   "g": "the plan put forward",
+   "t": "noun"
+  },
+  "corredor": {
+   "g": "the corridor",
+   "t": "noun"
+  },
+  "sirva": {
+   "g": "is of use (servir)",
+   "t": "verb"
+  },
+  "envía": {
+   "g": "sends (enviar)",
+   "t": "verb"
+  },
+  "sabiendo": {
+   "g": "knowing (saber)",
+   "t": "verb"
+  },
+  "frutería": {
+   "g": "the fruit stall",
+   "t": "noun"
+  },
+  "secando": {
+   "g": "drying (secar)",
+   "t": "verb"
+  },
+  "ordenando": {
+   "g": "tidying up (ordenar)",
+   "t": "verb"
+  },
+  "apunte": {
+   "g": "put it on the slate (apuntar)",
+   "t": "verb"
+  },
+  "apuntaba": {
+   "g": "used to put it on the slate (apuntar)",
+   "t": "verb"
+  },
+  "deudas": {
+   "g": "debts",
+   "t": "noun"
+  },
+  "llamara": {
+   "g": "called him (llamar)",
+   "t": "verb"
+  },
+  "conste": {
+   "g": "let it be clear (constar)",
+   "t": "verb"
+  },
+  "hablé": {
+   "g": "I spoke (hablar)",
+   "t": "verb"
+  },
+  "contárselo": {
+   "g": "telling it to them (contar)",
+   "t": "verb"
   }
  }
 }

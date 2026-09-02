@@ -54,6 +54,18 @@ interlocutor es hispanohablante nativo del sitio donde se le oye. La ficha
 literal (edad, pelo, color fijo de ropa) se repite igual en las tres historias de
 su tema y también en el prompt de portada.
 
+**Candado de voces por pais (2026-09-01).** Marisol es limeña y suena limeña en
+los siete paises; ningun personaje imita el acento del sitio donde esta. Cada
+interlocutor se dobla SIEMPRE con voz aprobada de SU pais: Leandro argentino,
+Yolanda y Fabian colombianos, Karina y Zoila peruanas, Araceli y Salvador
+mexicanos. Marisol no vosea nunca, ni cuando le hablan de vos.
+
+Esto es lo que resuelve la regla dura de `project_journey_structure_plan`: todos
+los personajes son nativos de la VARIANTE (latam), que es la unidad que fija la
+regla, no de la ciudad. El patron ya esta publicado: el A0 latam recorre
+Cartagena, Barranquilla, Cusco, Buenos Aires, Oaxaca y Ciudad de Mexico, y el A1
+latam Cusco, Buenos Aires y Barranquilla.
+
 ### 2.1 Los dos fijos
 
 | Papel | Personaje | Ficha literal | De dónde es | Presencia |
@@ -297,6 +309,43 @@ palabras, y eso es una lista, no una historia. Reparto nuevo:
 `doblada` ya se reencontró en H3 y se queda como está. El encuentro 4 de las
 siete sigue en H7, sin cambios. **H3 queda con sus 20 plazas y la semilla
 candado, y nada más.**
+
+### 4.2.2 La escalera se recalibra a 7 ajenas por receptora (2026-09-01)
+
+**El problema.** La tabla 4.2 reparte 14 portables por historia en dos grupos de
+7, asi que cada receptora aloja 14 palabras ajenas. Con las tres mudadas de H1,
+H4 y H5 tenian que alojar 17. Sumadas a sus 20 plazas propias son **37
+obligaciones lexicas en 125-145 palabras**, una cada 3,6. El propio brief ya
+habia declarado imposible 27 en 135 palabras ("una cada cinco palabras, y eso es
+una lista, no una historia") y por eso saco seis de H3. 37 es mucho peor.
+
+**Y la tabla se monto sobre un supuesto que ya no vale**: 14 portables por
+historia. El tema 1 reescrito a un minuto tiene 17, 18 y 19. Los envios son mas
+grandes de lo que la tabla cree.
+
+**Lo que el gate pide de verdad.** `journey-vocab-recirculation` para A2 pide
+media 1,3 y cola por debajo del 80%. Con 18 portables por historia y 21
+historias son 378 portables:
+
+| Objetivo | Reencuentros que hacen falta | Por historia |
+|---|---|---|
+| media 1,3 | 113 | 5,4 |
+| media 1,4 (margen) | 151 | 7,2 |
+| cola por debajo del 80% | 76 | 3,6 |
+
+**Decision: 7 portables ajenas por historia receptora, no 17.** Cubre la media
+con margen y deja la historia en 27 obligaciones, que es el orden de lo que ya
+esta escrito y leido. Las 14 de la tabla no venian de ninguna regla: venian de
+partir en dos un numero inventado.
+
+**Metodo, que es lo que fallo antes:** los envios se anotan aqui ANTES de
+escribir la receptora.
+
+| Receptora | Aloja (7) | De |
+|---|---|---|
+| H4 | limpiar, dejar, aceptar, insistir, caliente, entender, despacio | H1, H2 |
+| H5 | escuchar, quieto, apoyar, soltar, tardar, elegir, bajito | H1, H2 |
+| H6 | abrir, guardar, pedir, reconocer, apurado, juntos, todavia | H3 |
 
 **Lección de método:** los envíos hay que anotarlos ANTES de escribir la historia
 receptora, no después de cerrar el tema. Dentro de un mismo tema la receptora

@@ -587,13 +587,14 @@ function slugify(s: string): string {
         const text = d ? String(d.text) : String(f.text ?? "");
         if (!text.trim()) continue;
         todas.push({ slug: d?.slug ?? f.slug ?? k, title: d?.title ?? f.title ?? "", text,
-                     vocab: (d?.vocab ?? f.vocab) as never, language: ctx.language, level: ctx.level });
+                     vocab: (d?.vocab ?? f.vocab) as never, language: ctx.language, level: ctx.level,
+                     topic: f.topic });
         // El MISMO conjunto sin la edición encima, para poder medir el antes.
         // Solo las filas que ya existen: una historia que solo está en la
         // tanda es contenido nuevo y no tiene "antes" contra el que comparar.
         if (String(f.text ?? "").trim()) {
           base.push({ slug: f.slug ?? k, title: f.title ?? "", text: String(f.text),
-                      vocab: f.vocab as never, language: ctx.language, level: ctx.level });
+                      vocab: f.vocab as never, language: ctx.language, level: ctx.level, topic: f.topic });
         }
       }
       for (const [k, d] of enTanda) if (!vistos.has(k))
