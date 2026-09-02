@@ -131,7 +131,45 @@ function familyOf(bundle: string): string {
   return "";
 }
 
-type BundleLeido = { slugs: string[]; glosses: Record<string, { g: string; t?: string }> };
+/** Palabras que delatan que un fragmento de glosa esta en INGLES y no cita una
+ *  expresion espanola. Con una basta: "(the tool)", "(feminine)". */
+const INGLES = new Set([
+  "the","a","an","of","to","in","on","for","and","or","is","it","that","you","he","she",
+  "his","her","its","verb","noun","adjective","adverb","form","past","plural","singular",
+  "subjunctive","imperative","literally","also","as","if","were","from","with","meaning",
+  "feminine","masculine","name","city","street","informal","slang","polite","tool","cutting",
+]);
+
+/** Trozos de una glosa que pretenden CITAR una expresion: lo que va entre
+ *  parentesis, y la clausula inicial de "en voz alta, out loud". */
+function fragmentosCitados(g: string): string[] {
+  const out: string[] = [];
+  for (const m of g.matchAll(/\(([^)]+)\)/g)) out.push(m[1]);
+  for (const trozo of g.split(";")) {
+    const coma = trozo.indexOf(",");
+    if (coma > 0) out.push(trozo.slice(0, coma));
+  }
+  return out.map((t) => t.trim().toLowerCase()).filter((t) => t.split(/\s+/).length >= 2);
+}
+
+/**
+ * true si la glosa cita una expresion ESPANOLA que no existe en este corpus:
+ * viene de la frase de otro journey y aqui no significa eso.
+ *
+ * Recuperada el 2026-09-02 de la rama claude/focused-nash-dae34b, del 23 de
+ * agosto, que nunca se fusiono. La memoria feedback_gloss_in_context la daba
+ * por vigente y aqui no existia, asi que las copias entraban sin filtro.
+ */
+export function citaAjena(gloss: string, corpus: string): boolean {
+  for (const frag of fragmentosCitados(gloss)) {
+    const palabras = frag.split(/[^\p{L}]+/u).filter(Boolean);
+    if (palabras.some((w) => INGLES.has(w))) continue;
+    if (!corpus.includes(frag)) return true;
+  }
+  return false;
+}
+
+type BundleLeido = { slugs: string[]; glosses: Record<string, { g: string; t?: string; rev?: boolean }> };
 
 /** Las glosas viven en dp_tap_glosses_v1 desde el 2026-08-26. Se cargan todas
  *  de una y se cachean: este script mira cada bundle contra sus hermanos, asi
@@ -165,7 +203,7 @@ async function main() {
   const only = onlyIdx >= 0 ? argv[onlyIdx + 1] : null;
   const stale: string[] = [];
 
-  const manual: Record<string, Record<string, { g: string; t?: string }>> = fs.existsSync(MANUAL)
+  const manual: Record<string, Record<string, { g: string; t?: string; rev?: boolean }>> = fs.existsSync(MANUAL)
     ? JSON.parse(fs.readFileSync(MANUAL, "utf8"))
     : {};
 
@@ -183,7 +221,7 @@ async function main() {
     const own = new Map(Object.entries(bundle.glosses).map(([k, v]) => [k.toLowerCase(), v]));
 
     // Pool hermano: primera aparición gana, y el propio bundle no cuenta.
-    const sibling = new Map<string, { g: string; t?: string }>();
+    const sibling = new Map<string, { g: string; t?: string; rev?: boolean }>();
     for (const other of FAMILIES[familyOf(name)] ?? []) {
       if (other === name) continue;
       for (const [k, v] of Object.entries(loadBundle(other).glosses)) {
@@ -196,6 +234,13 @@ async function main() {
       `SELECT "title","text" FROM "dp_journey_stories_v1" WHERE "slug" = ANY($1::text[])`,
       bundle.slugs
     );
+
+    // Corpus de ESTE bundle: para comprobar que la expresion que cita una
+    // glosa hermana existe aqui y no viene de la frase de otro journey.
+    const corpus = stories
+      .map((st) => `${st.title ?? ""} ${extractStoryPlainText(st.text ?? "")}`)
+      .join(" ")
+      .toLowerCase();
 
     const exempt = exemptFor(name);
     const needed = new Set<string>();
@@ -220,7 +265,7 @@ async function main() {
     const fromSibling: string[] = [];
     const fromManual: string[] = [];
     const uncovered: string[] = [];
-    const additions: Record<string, { g: string; t?: string }> = {};
+    const additions: Record<string, { g: string; t?: string; rev?: boolean }> = {};
 
     for (const key of needed) {
       const sib = sibling.get(key);
@@ -229,8 +274,11 @@ async function main() {
       if (man) {
         additions[key] = man;
         fromManual.push(key);
-      } else if (sib) {
-        additions[key] = sib;
+      } else if (sib && !citaAjena(sib.g, corpus)) {
+        // Toda copia nace SIN REVISAR: tiene glosa, pero no se ha leido contra
+        // la frase donde cae, y hasta que se lea no puede publicarse ni
+        // narrarse (lint:glosses-reviewed).
+        additions[key] = { ...sib, rev: false };
         fromSibling.push(key);
       } else {
         uncovered.push(key);
@@ -255,7 +303,7 @@ async function main() {
     // ordenadas entre ellas. Reordenar el fichero entero daba un diff de
     // 44.000 líneas para 391 altas, que es irrevisable y arruina cualquier
     // `git blame` sobre una glosa concreta.
-    const merged: Record<string, { g: string; t?: string }> = { ...bundle.glosses };
+    const merged: Record<string, { g: string; t?: string; rev?: boolean }> = { ...bundle.glosses };
     for (const key of Object.keys(additions).sort()) merged[key] = additions[key];
     await prisma.tapGlossSet.update({
       where: { bundle_slug: { bundle: name, slug: "" } },

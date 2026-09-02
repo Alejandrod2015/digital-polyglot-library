@@ -24,6 +24,7 @@
     "lint:no-emdash": "tsx scripts/checkNoEmDash.ts",
     "lint:no-emojis": "tsx scripts/checkNoEmojis.ts",
     "lint:voices-published": "tsx scripts/checkVoicesPublished.ts",
+    "lint:glosses-reviewed": "tsx scripts/checkGlossesReviewed.ts",
     "lint:no-emdash:db": "tsx scripts/checkNoEmDashDb.ts",
     "lint:gloss-variants": "tsx scripts/checkGlossVariants.ts",
     "lint:hard-rules": "tsx scripts/checkHardRules.ts"
