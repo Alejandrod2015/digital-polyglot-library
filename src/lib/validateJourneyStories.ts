@@ -721,9 +721,31 @@ export function validateJourneyStories(
         `El detector de habla no encontro reparto en ${lang || "?"}. Sin nombres ` +
         `no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.`);
     } else {
-      push("journey-cast-protagonist-in-all", "El protagonista sale en todas",
-        enTodas.length >= 1,
-        `Ninguno sale en las ${total}. El mas presente es ${ficha(nombres[0])}.`);
+      // Se mide POR TEMA, no sobre el journey entero (2026-09-02). La regla
+      // que lo pedia en las 21 obliga a que alguien viaje de un sitio a otro,
+      // y el usuario lo prohibio: cada tema pasa en un lugar y los que hablan
+      // son de ahi, asi que nadie cruza de tema. Lo que sigue importando, y es
+      // lo que este check vino a proteger, es que dentro del tema haya un hilo:
+      // las tres historias tienen que compartir a alguien. Un journey de un
+      // solo sitio lo cumple igual, porque su protagonista sale en todos los
+      // temas.
+      const porTema = new Map<string, typeof stories>();
+      for (const st of stories) {
+        const t = st.topic ?? "";
+        porTema.set(t, [...(porTema.get(t) ?? []), st]);
+      }
+      // Vale CUALQUIERA de las dos formas. La vieja (alguien en las 21) la
+      // cumplen los journeys ya publicados, y exigirles ademas la nueva los
+      // ponia en rojo: el A0 latam, el A0 brasileno y el A0 de relaciones
+      // tienen su protagonista en todas, pero hay temas donde las tres
+      // historias no lo NOMBRAN. Calibrado contra el catalogo antes de shipear.
+      const huerfanos = enTodas.length >= 1 ? [] : [...porTema].filter(([, ss]) =>
+        !nombres.some((n) => ss.every((st) => st.text.includes(n)))
+      );
+      push("journey-cast-protagonist-in-all", "Alguien en todas, o alguien en las tres de cada tema",
+        huerfanos.length === 0,
+        `Sin hilo en ${huerfanos.length} tema(s): ${huerfanos.map(([t, ss]) =>
+          `${t || "?"} (${ss.map((s) => s.slug).join(", ")})`).join(" · ")}`);
     }
 
     // Las dos por tema necesitan saber donde empieza cada uno.
@@ -752,8 +774,19 @@ export function validateJourneyStories(
         nuevosPorTema.get(t)!.push(n);
         if (i0 !== primeraDe.get(t)) fueraDeSuTema.push(`${n} (aparece en la ${i0 - primeraDe.get(t)! + 1}a de ${t})`);
       }
-      const conDeMas = orden.filter((t) => nuevosPorTema.get(t)!.length > 1);
-      push("journey-cast-one-new-per-topic", "Un personaje nuevo por tema, presentado en su primera historia",
+      // El tope de nuevos por tema depende de la FORMA del journey (2026-09-02).
+      // Con un protagonista que recorre los temas, cada tema estrena solo a su
+      // interlocutor: uno. Sin el, porque cada tema pasa en un sitio distinto y
+      // los que hablan son de ahi, el tema estrena a su pareja entera: dos. La
+      // diferencia no es de rigor, es de que journey se esta escribiendo, y se
+      // deduce de si alguien aparece en todos los temas.
+      const recorre = nombres.some((n) =>
+        orden.every((t) => stories.some((st) => (st.topic ?? "") === t && st.text.includes(n)))
+      );
+      const topeNuevos = recorre ? 1 : 2;
+      const conDeMas = orden.filter((t) => nuevosPorTema.get(t)!.length > topeNuevos);
+      push("journey-cast-one-new-per-topic",
+        `Como mucho ${topeNuevos} personaje(s) nuevo(s) por tema, presentados en su primera historia`,
         conDeMas.length === 0 && fueraDeSuTema.length === 0,
         [conDeMas.length ? `temas con mas de uno: ${conDeMas.map((t) => `${t} (${nuevosPorTema.get(t)!.join(", ")})`).join(" | ")}` : "",
          fueraDeSuTema.length ? `presentados tarde: ${fueraDeSuTema.join(", ")}` : ""].filter(Boolean).join(" · "));

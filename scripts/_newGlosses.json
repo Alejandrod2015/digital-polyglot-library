@@ -5733,6 +5733,18 @@
   "contárselo": {
    "g": "telling it to them (contar)",
    "t": "verb"
+  },
+  "anotar": {
+   "g": "to write down, to note",
+   "t": "verb"
+  },
+  "pagos": {
+   "g": "payments",
+   "t": "noun"
+  },
+  "cede": {
+   "g": "gives way (ceder)",
+   "t": "verb"
   }
  }
 }
