@@ -5745,6 +5745,10 @@
   "cede": {
    "g": "gives way (ceder)",
    "t": "verb"
+  },
+  "comprador": {
+   "g": "buyer",
+   "t": "noun"
   }
  }
 }
