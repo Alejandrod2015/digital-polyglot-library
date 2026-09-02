@@ -31,7 +31,12 @@ const prisma = new PrismaClient();
 function bloques(s: string): string[] {
   // Fuera el HTML de las historias de libro: el payload guarda texto plano y
   // compararlo con markup daba falso positivo en 40 historias legacy.
-  const plano = s.replace(/<[^>]+>/g, "\n");
+  // Y fuera la tipografia de las comillas: el alineador guarda las rectas
+  // donde el texto lleva curvas, y eso son otros 20 falsos positivos.
+  const plano = s
+    .replace(/<[^>]+>/g, "\n")
+    .replace(/[\u201C\u201D\u00AB\u00BB]/g, '"')
+    .replace(/[\u2018\u2019]/g, "'");
   return plano.split(/\n+/).map((x) => x.replace(/\s+/g, " ").trim()).filter(Boolean);
 }
 
@@ -56,10 +61,24 @@ const CONOCIDOS: Set<string> = new Set(
     if (!foto) continue; // sin alineacion no hay karaoke que se desfase
     conKaraoke++;
     if (!s.text) continue;
-    // Lo que decide la forma en pantalla es CUANTOS bloques hay.
+    // Dos formas de ir por detras, y las dos importan:
+    // 1) otra CANTIDAD de bloques: la pagina se ve con la forma vieja.
+    // 2) el mismo numero pero otro CONTENIDO: el audio dice una cosa y el
+    //    lector pinta otra. Paso el 2026-09-02 al reescribir la apertura de
+    //    "En serio no era": 5 bloques antes y 5 despues, y el gate lo dejaba
+    //    pasar mientras la narracion seguia diciendo la frase vieja.
     const A = bloques(foto), B = bloques(s.text);
-    if (A.length !== B.length && !CONOCIDOS.has(s.slug)) {
+    if (CONOCIDOS.has(s.slug)) continue;
+    if (A.length !== B.length) {
       malas.push({ slug: s.slug, motivo: `el lector pinta ${A.length} bloque(s) y el texto tiene ${B.length}` });
+    } else {
+      const i = A.findIndex((x, k) => x !== B[k]);
+      if (i >= 0) {
+        malas.push({
+          slug: s.slug,
+          motivo: `el bloque ${i + 1} no es el que se narro: "${A[i].slice(0, 44)}..." frente a "${B[i].slice(0, 44)}..."`,
+        });
+      }
     }
   }
 

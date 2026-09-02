@@ -304,19 +304,7 @@ fi
 #
 #     User rule (2026-06-01): "samples" by default = free preview URLs.
 #     Only generate when the user explicitly says one of the verbs below.
-# El verbo hace falta SINTETICE COMO SINTETICE: por curl directo, o llamando a
-# la libreria desde un .ts. Antes solo miraba la URL en la linea de comando, y
-# por ahi pasaban los scripts de narracion (2026-09-02).
-_TTS_TS=""
-for _f in $(printf '%s' "$COMMAND" | grep -oE '[A-Za-z0-9_./-]+\.ts' || true); do
-    for _cand in "$_f" "$CLAUDE_PROJECT_DIR/$_f" "$PWD/$_f" $(ls -d .claude/worktrees/*/"$_f" 2>/dev/null); do
-        [ -f "$_cand" ] || continue
-        if grep -qE 'generateAndUploadMultiVoiceAudio|generateAndUploadAudio|/v1/text-to-speech' "$_cand" 2>/dev/null; then
-            _TTS_TS="$_cand"; break 2
-        fi
-    done
-done
-if printf '%s' "$COMMAND" | grep -qE 'api\.elevenlabs\.io/v1/text-to-speech/' || [ -n "$_TTS_TS" ]; then
+if printf '%s' "$COMMAND" | grep -qE 'api\.elevenlabs\.io/v1/text-to-speech/'; then
     VERB_CHECK="$(printf '%s' "$PAYLOAD" | /usr/bin/python3 -c '
 import json, sys, re, os
 try:
@@ -574,30 +562,8 @@ fi
 #     curl directo (no script) no matchea y pasa con el verbo normal (6c).
 #     El flag es para cuando el ENTREGABLE es el audio completo de esa
 #     historia y el usuario lo pidió, NUNCA para un test.
-#     OJO (2026-09-02): esto matcheaba por NOMBRE de archivo, y por eso
-#     `scripts/_narraUnaA2.ts` narraba historias enteras sin pasar por aqui:
-#     no lleva "audio" en el nombre. Ahora se mira tambien el CONTENIDO del
-#     .ts invocado, que es lo que de verdad sintetiza.
-# Los scripts de MUESTRA quedan fuera del candado: sintetizan titulo y primer
-# parrafo, que es justo lo que la regla sample-first pide antes de pagar la
-# historia entera. Meterlos dentro convertia el candado en un muro contra su
-# propia recomendacion (2026-09-02).
-_ES_MUESTRA=0
-printf '%s' "$COMMAND" | grep -qiE '(_muestra|_sample)[A-Za-z0-9_]*\.ts' && _ES_MUESTRA=1
-_TS_AUDIO=""
-# La ruta del comando es relativa al cwd de QUIEN lo lanza, que puede ser un
-# worktree, mientras el hook corre desde el repo principal. Se prueban las dos.
-for _f in $(printf '%s' "$COMMAND" | grep -oE '[A-Za-z0-9_./-]+\.ts' || true); do
-    for _cand in "$_f" "$CLAUDE_PROJECT_DIR/$_f" "$PWD/$_f" $(ls -d .claude/worktrees/*/"$_f" 2>/dev/null); do
-        [ -f "$_cand" ] || continue
-        if grep -qE 'generateAndUploadMultiVoiceAudio|generateAndUploadAudio|/v1/text-to-speech' "$_cand" 2>/dev/null; then
-            _TS_AUDIO="$_cand"; break 2
-        fi
-    done
-done
 if printf '%s' "$COMMAND" | grep -qE '\b(tsx|ts-node|node|npx)\b' \
-   && { printf '%s' "$COMMAND" | grep -qiE '(generate|render|_gen)[a-z0-9_]*audio[a-z0-9_]*\.ts' || [ -n "$_TS_AUDIO" ]; } \
-   && [ "$_ES_MUESTRA" -eq 0 ] \
+   && printf '%s' "$COMMAND" | grep -qiE '(generate|render|_gen)[a-z0-9_]*audio[a-z0-9_]*\.ts' \
    && ! printf '%s' "$COMMAND" | grep -qiE 'timing'; then
     if ! printf '%s' "$COMMAND" | grep -qE 'DPL_AUDIO_FULL_OK=1'; then
         block "Full-story audio regeneration is locked (sample-first). Regenerar el audio COMPLETO de una historia para PROBAR un cambio es un desperdicio caro. Testea con UNA sola linea de muestra (la oracion afectada) via un curl directo a api.elevenlabs.io/v1/text-to-speech (eso pasa con el verbo de audio, 6c). Solo si el ENTREGABLE es el audio COMPLETO de esa historia (no un test) y el usuario lo pidio explicitamente, corre con el opt-in consciente: DPL_AUDIO_FULL_OK=1 <comando>."
