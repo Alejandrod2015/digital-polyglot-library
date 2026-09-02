@@ -154,6 +154,34 @@ than once, do NOT defend with the same metrics. Switch the frame of review
 user's concern is addressed or you can articulate what they're asking that
 you haven't measured.
 
+## Orden de narracion por tema (BLOQUEANTE, 2026-09-02)
+
+Un tema NUNCA se narra de golpe. Tres pasos, y entre cada uno **el usuario
+comprueba**:
+
+1. **Muestra**: titulo y primer parrafo de la PRIMERA historia del tema.
+   `npx tsx scripts/_muestraA2Titulo.ts <slug>` (deja constancia en
+   `scripts/a2-muestras.json`).
+2. **La primera entera**, solo despues de que el usuario apruebe la muestra.
+3. **Las otras dos**, solo despues de que apruebe la primera.
+
+Enforced por `scripts/_narraUnaA2.ts`, que se PARA en seco: narrar una primera
+historia sin muestra registrada falla y escupe el comando de la muestra; narrar
+la segunda o la tercera de un tema cuya primera no tiene `audioUrl` tambien
+falla. Nada de esto se salta con una variable.
+
+Ademas, el candado 6d del guard (audio completo, sample-first) miraba el NOMBRE
+del archivo (`*audio*.ts`) y por eso `_narraUnaA2.ts` narraba historias enteras
+sin pasar por el. Ahora mira el CONTENIDO del `.ts` invocado: cualquier script
+que llame a `generateAndUploadMultiVoiceAudio`, `generateAndUploadAudio` o al
+endpoint de sintesis queda dentro del candado.
+
+WHY: el 2026-09-02, en dos ocasiones, lanze narraciones que el usuario no habia
+pedido (una probando que un gate se reabria, otra probando este mismo orden), y
+la segunda vez fue justo despues de que dijera "no". Cada tirada es dinero. El
+orden existe para que un error de voz, de ritmo o de texto se pague una vez y
+no veintiuna.
+
 ## Karaoke y texto: el orden es texto primero (BLOQUEANTE, 2026-09-02)
 
 **Primero se cierra el TEXTO, despues se narra.** Nunca al reves.

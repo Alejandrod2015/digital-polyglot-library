@@ -21,18 +21,11 @@ config({ path: ".env", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
 import { generateAndUploadMultiVoiceAudio } from "../src/lib/elevenlabs";
 import { generateWordTimingsForStory } from "../src/lib/audioWordTimings";
+import * as fs from "fs";
+import * as path from "path";
 
 const JOURNEY = "cmtgelq560007j84n3ujx9bpd";
-/** Narrador por tema: el del pais de la escena, como en el A0 y el A1 latam. */
-const VOZ_POR_TEMA: Record<string, string> = {
-  "friends-and-reunions": "MjtZn5tagxL1RO6w9ER5",        // Lionel, AR (Rosario)
-  "staying-with-locals": "yHD4CsKkghm19ToGLJEC",         // Hernando, CO (Salento)
-  "jokes-and-misunderstandings": "yHD4CsKkghm19ToGLJEC", // Hernando, CO (Medellin)
-  "borders-and-crossings": "ulJB4yAMefhHYn0FWgGy",       // Terry, PE (Santa Rosa)
-  "secrets-and-curiosity": "ulJB4yAMefhHYn0FWgGy",       // Terry, PE (Arequipa)
-  "work-trips-and-meetings": "JW8DGEuLp9WxIS5IdxMM",     // Andreti, MX (Guadalajara)
-  "local-life-and-routines": "JW8DGEuLp9WxIS5IdxMM",     // Andreti, MX (Merida)
-};
+import { VOZ_POR_TEMA } from "./_a2Voces";
 
 const prisma = new PrismaClient();
 
@@ -42,7 +35,7 @@ const prisma = new PrismaClient();
 
   const s = await prisma.journeyStory.findFirst({
     where: { journeyId: JOURNEY, slug },
-    select: { id: true, slug: true, title: true, text: true, topic: true, audioUrl: true },
+    select: { id: true, slug: true, title: true, text: true, topic: true, slotIndex: true, audioUrl: true },
   });
   if (!s?.text) throw new Error(`no encuentro la historia ${slug}`);
   // Pisar audio existente exige decirlo: --rehacer. Sin eso, no se toca.
@@ -52,6 +45,34 @@ const prisma = new PrismaClient();
 
   const voiceId = VOZ_POR_TEMA[s.topic];
   if (!voiceId) throw new Error(`sin narrador para el tema ${s.topic}`);
+
+  // ORDEN DE NARRACION POR TEMA (regla dura, 2026-09-02). Primero la muestra
+  // de titulo y primer parrafo, que el usuario comprueba; luego la primera
+  // historia entera, que vuelve a comprobar; y solo entonces el resto del
+  // tema. Cada paso se para hasta que el anterior existe, porque narrar de
+  // golpe y equivocarse cuesta creditos y ya paso dos veces.
+  const REGISTRO = path.join(__dirname, "a2-muestras.json");
+  const muestras = fs.existsSync(REGISTRO)
+    ? (JSON.parse(fs.readFileSync(REGISTRO, "utf8")) as Record<string, unknown>)
+    : {};
+  if (s.slotIndex === 1 && !muestras[s.slug] && !process.argv.includes("--rehacer")) {
+    throw new Error(
+      `${slug} es la PRIMERA de su tema y no tiene muestra.\n` +
+      `  NODE_OPTIONS="--conditions=react-server" npx tsx scripts/_muestraA2Titulo.ts ${slug}`
+    );
+  }
+  if (s.slotIndex > 1) {
+    const primera = await prisma.journeyStory.findFirst({
+      where: { journeyId: JOURNEY, topic: s.topic, slotIndex: 1 },
+      select: { slug: true, audioUrl: true },
+    });
+    if (!primera?.audioUrl) {
+      throw new Error(
+        `la primera de este tema (${primera?.slug}) todavia no esta narrada.\n` +
+        `  El orden es: muestra, primera entera, y luego el resto.`
+      );
+    }
+  }
 
   // Ninguna historia se narra con glosas copiadas sin leer: el audio es lo caro
   // y es justo donde el error se vuelve irreversible. Ver checkGlossesReviewed.

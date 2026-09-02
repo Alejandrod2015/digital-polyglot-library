@@ -87,13 +87,15 @@ const FAMILIES: Record<string, string[]> = {
  * otro prohibía justo esas entradas. Un nombre propio REAL (Messi, Borussia)
  * no está exento: se glosa con lo que ES.
  */
-const EXEMPT: Record<string, { articles: string[]; numerals: string[]; characterNames: string[] }> =
+const EXEMPT: Record<string, { articles: string[]; numerals: string[]; characterNames: string[]; placeNames?: string[] }> =
   JSON.parse(fs.readFileSync(path.join("scripts", "tap-gloss-exempt.json"), "utf8")).bundles;
 
 function exemptFor(bundle: string): Set<string> {
   const e = EXEMPT[bundle];
   if (!e) return new Set();
-  return new Set([...e.articles, ...e.numerals, ...e.characterNames].map((w) => w.toLowerCase()));
+  // placeNames: trozos de un toponimo que solos significan otra cosa
+  // ("Santa Rosa" glosaba `rosa` como "pink"). No se glosan.
+  return new Set([...e.articles, ...e.numerals, ...e.characterNames, ...(e.placeNames ?? [])].map((w) => w.toLowerCase()));
 }
 
 /**
