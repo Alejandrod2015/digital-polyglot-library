@@ -57,7 +57,21 @@ const latamCoreTopics: JourneyTopicPlan[] = [
 
 // a1 and a2 are the same 7 topics in the published corpus today.
 const a1LatamTopics: JourneyTopicPlan[] = latamCoreTopics;
-const a2LatamTopics: JourneyTopicPlan[] = latamCoreTopics;
+
+// El A2 Traveler latam (2026-09) recorre cuatro paises, y ni las historias ni
+// la cabecera del lector dicen cual: el lector anglosajon ve "Salento" y luego
+// "Arequipa" sin saber que ha cambiado de pais. La CIUDAD va en la etiqueta del
+// tema, que es el unico sitio de la pantalla donde cabe el sitio. El pais no:
+// lo prohibe la regla de nombres de tema, y la ciudad ya lo ancla.
+const a2LatamTopics: JourneyTopicPlan[] = [
+  topic("friends-and-reunions", "Friends & Reunions · Rosario", 3),
+  topic("staying-with-locals", "Staying With Locals · Salento", 3),
+  topic("jokes-and-misunderstandings", "Jokes & Misunderstandings · Medellin", 3),
+  topic("borders-and-crossings", "Borders & Crossings · Santa Rosa", 3),
+  topic("secrets-and-curiosity", "Secrets & Curiosity · Arequipa", 3),
+  topic("work-trips-and-meetings", "Work Trips & Meetings · Guadalajara", 3),
+  topic("local-life-and-routines", "Local Life & Routines · Merida", 3),
+];
 
 const b1LatamTopics: JourneyTopicPlan[] = [
   topic("opinions-life-choices", "Opinions & Life Choices"),
