@@ -5761,6 +5761,18 @@
   "cobro": {
    "g": "I charge for it (cobrar)",
    "t": "verb"
+  },
+  "cose": {
+   "g": "sews (coser)",
+   "t": "verb"
+  },
+  "medidas": {
+   "g": "measurements",
+   "t": "noun"
+  },
+  "costurera": {
+   "g": "seamstress",
+   "t": "noun"
   }
  }
 }
