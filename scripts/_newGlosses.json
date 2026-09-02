@@ -5773,6 +5773,10 @@
   "costurera": {
    "g": "seamstress",
    "t": "noun"
+  },
+  "hablarse": {
+   "g": "speaking to each other (hablarse)",
+   "t": "verb"
   }
  }
 }
