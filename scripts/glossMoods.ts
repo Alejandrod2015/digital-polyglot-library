@@ -289,13 +289,23 @@ export function vosSubjuntivo(filas: string[]): string | null {
 }
 
 /** El pronombre que acompaña a cada persona. Reflexivo, cambia con la persona
- *  (me vaya, te vayas, se vaya); de objeto, se queda igual en las seis. */
-const REFLEXIVOS = ["me", "te", "se", "nos", "se", "se"];
-export function conClitico(filas: string[], clitico: string): string[] {
+ *  (me vaya, te vayas, se vaya); de objeto, se queda igual en las seis.
+ *
+ *  La quinta casilla depende de la variante, igual que la forma verbal: en
+ *  España es vosotros y lleva `os`, en el resto es ustedes y lleva `se`. Sin
+ *  esto la tarjeta del A2 de España enseñaba "vosotros se vayáis" (visto en el
+ *  Pixel, 2026-09-03). */
+function reflexivos(variante: string): string[] {
+  return variante === "spain"
+    ? ["me", "te", "se", "nos", "os", "se"]
+    : ["me", "te", "se", "nos", "se", "se"];
+}
+export function conClitico(filas: string[], clitico: string, variante = ""): string[] {
   const c = clitico.trim();
   if (!c) return filas;
-  const refl = ["me", "te", "se", "nos"].includes(c);
-  return filas.map((f, i) => `${refl ? REFLEXIVOS[i] : c} ${f}`);
+  const refl = ["me", "te", "se", "nos", "os"].includes(c);
+  const tabla = reflexivos(variante);
+  return filas.map((f, i) => `${refl ? tabla[i] : c} ${f}`);
 }
 
 // ── Francés ─────────────────────────────────────────────────────────────

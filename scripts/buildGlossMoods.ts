@@ -334,7 +334,7 @@ function bloqueES(
       mood: "Subjunctive", kind: "expand", link: "See subjunctive",
       lemma: `${lema(sp.inf, cl)} (present subjunctive)`,
       head: [["present", `${cl}${ind[sp.i]}`], ["subjunctive", `${cl}${w}`]],
-      rows: conClitico(aVarianteModo(tabla, variante), cl).map((f, i) => [P[i], f]), here: sp.i,
+      rows: conClitico(aVarianteModo(tabla, variante), cl, variante).map((f, i) => [P[i], f]), here: sp.i,
     };
   }
 
@@ -347,7 +347,7 @@ function bloqueES(
       mood: "Past subjunctive", kind: "expand", link: "See past subjunctive",
       lemma: `${lema(pa.inf, clp)} (past subjunctive)`,
       head: [["preterite", `${clp}${pret[pa.i]}`], ["past subjunctive", `${clp}${w}`]],
-      rows: conClitico(aVarianteModo(subjuntivoPasadoES(pa.inf)!, variante), clp).map((f, i) => [P[i], f]),
+      rows: conClitico(aVarianteModo(subjuntivoPasadoES(pa.inf)!, variante), clp, variante).map((f, i) => [P[i], f]),
       here: pa.i,
     };
   }
@@ -361,7 +361,7 @@ function bloqueES(
       mood: "Conditional", kind: "expand", link: "See conditional",
       lemma: `${co.inf} (conditional)`,
       head: [["present", `${clc}${ind[co.i]}`], ["conditional", `${clc}${w}`]],
-      rows: conClitico(aVarianteModo(condicionalES(co.inf)!, variante), clc).map((f, i) => [P[i], f]),
+      rows: conClitico(aVarianteModo(condicionalES(co.inf)!, variante), clc, variante).map((f, i) => [P[i], f]),
       here: co.i,
     };
   }

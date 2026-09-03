@@ -4356,7 +4356,12 @@ const styles = StyleSheet.create({
   },
   vocabActionRow: {
     flexDirection: "row",
-    justifyContent: "flex-start",
+    // El enlace del paradigma va al otro extremo, como en el lector web. Con
+    // `flex-start` y sin alinear, "See subjunctive" se montaba encima del boton
+    // de guardar (visto en el Pixel, 2026-09-03). Con un solo hijo, que es el
+    // caso del vocab curado, `space-between` se comporta igual que antes.
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   vocabActionText: {
     color: "#ffffff",
