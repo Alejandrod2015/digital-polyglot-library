@@ -17,6 +17,29 @@ export type DashboardKpis = {
   totalListenedMinutes: number;
   savedStories: number;
   savedBooks: number;
+  /** Parejas persona+historia con alguna señal en el rango. Falta en respuestas viejas. */
+  storiesStarted?: number;
+  /** De esas, las que llegaron al final. */
+  storiesFinished?: number;
+};
+
+/**
+ * Una fila de la tabla por persona: cada cifra con su gemela del periodo
+ * anterior al lado, que es lo que deja leerla como mejora o como caída.
+ */
+export type MetricsPerUserRow = {
+  userId: string;
+  name: string | null;
+  email: string | null;
+  minutes: number;
+  prevMinutes: number;
+  activeDays: number;
+  prevActiveDays: number;
+  storiesFinished: number;
+  prevStoriesFinished: number;
+  practices: number;
+  prevPractices: number;
+  lastAt: string | null;
 };
 
 /** Una persona detrás de una tarjeta de KPI, para la tarjeta al pasar el cursor. */
@@ -155,6 +178,8 @@ export type DashboardData = {
       avgMinutesLast7Days: number;
       distribution: Array<{ bucket: string; users: number }>;
     };
+    /** Falta en respuestas cacheadas de antes de que existiera la tabla. */
+    perUser?: MetricsPerUserRow[];
   };
   learning: {
     practice: {

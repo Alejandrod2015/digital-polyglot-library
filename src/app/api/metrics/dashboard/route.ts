@@ -65,6 +65,27 @@ type ReminderTapRow = {
   metadata?: unknown;
 };
 
+/**
+ * Una persona en la tabla de Audiencia. Cada cifra viene con su gemela del
+ * periodo anterior (mismo número de días, justo antes), que es lo que permite
+ * leer la fila como "mejora" o "empeora" en vez de como un número suelto.
+ */
+type MetricsPerUserRow = {
+  userId: string;
+  name: string | null;
+  email: string | null;
+  minutes: number;
+  prevMinutes: number;
+  activeDays: number;
+  prevActiveDays: number;
+  storiesFinished: number;
+  prevStoriesFinished: number;
+  practices: number;
+  prevPractices: number;
+  /** Última señal suya en el rango. */
+  lastAt: string | null;
+};
+
 /** Una persona detrás de una tarjeta de KPI. */
 type MetricsKpiUser = {
   userId: string;
@@ -114,6 +135,10 @@ type DashboardResponse = {
     totalListenedMinutes: number;
     savedStories: number;
     savedBooks: number;
+    /** Parejas persona+historia con alguna señal en el rango. */
+    storiesStarted: number;
+    /** De esas, las que llegaron al final. */
+    storiesFinished: number;
   };
   /**
    * Quién compone el DAU y el WAU. Un "4" no dice si son cuatro personas
@@ -263,6 +288,12 @@ type DashboardResponse = {
       avgMinutesLast7Days: number;
       distribution: Array<{ bucket: string; users: number }>;
     };
+    /**
+     * Una fila por persona activa en el rango, con lo mismo medido en el
+     * periodo anterior al lado. Las medias del panel esconden justo lo que se
+     * quiere saber: si alguien concreto va a más o a menos.
+     */
+    perUser: MetricsPerUserRow[];
   };
   learning: LearningMetrics;
 };
@@ -317,6 +348,8 @@ function createEmptyDashboardResponse(from: Date, to: Date, days: number): Dashb
       totalListenedMinutes: 0,
       savedStories: 0,
       savedBooks: 0,
+      storiesStarted: 0,
+      storiesFinished: 0,
     },
     kpiUsers: { dau: [], wau: [] },
     daily: [],
@@ -396,6 +429,7 @@ function createEmptyDashboardResponse(from: Date, to: Date, days: number): Dashb
         avgMinutesLast7Days: 0,
         distribution: [],
       },
+      perUser: [],
     },
     learning: emptyLearningMetrics(),
   };
@@ -1274,7 +1308,49 @@ export async function GET(req: NextRequest): Promise<Response> {
 
   const plays = events.filter((e) => e.eventType === "audio_play").length;
   const completions = events.filter((e) => e.eventType === "audio_complete").length;
-  const completionRate = plays > 0 ? Math.round((completions / plays) * 100) : 0;
+
+  // ── Terminadas sobre empezadas ──
+  // Antes esto era `audio_complete` entre `audio_play`, y daba 261%: el lector
+  // del móvil manda `story_opened` y `audio_complete` pero NUNCA `audio_play`,
+  // así que el numerador contaba las dos superficies y el denominador solo la
+  // web. Encima contaba eventos, de modo que volver a oír una historia subía
+  // el ritmo sin que nadie terminara nada nuevo.
+  //
+  // Ahora la unidad es la pareja persona+historia, y "empezada" es cualquier
+  // señal sobre ella (abrirla, darle al play o terminarla), que es lo único
+  // que las dos superficies emiten igual. Una historia terminada cuenta
+  // siempre como empezada, así que el porcentaje no puede pasar de 100.
+  const pairKey = (r: { userId: string; storySlug: string }) => `${r.userId}::${r.storySlug}`;
+  const slugFilter = {
+    ...(storySlug ? { storySlug } : {}),
+    ...(bookSlug ? { bookSlug } : {}),
+  };
+  const [startedPairs, finishedPairs, prevStartedPairs, prevFinishedPairs] = await Promise.all([
+    needsEventData ? prisma.userMetric.findMany({
+      where: { ...userScope, createdAt: { gte: from, lte: to }, eventType: { in: ["story_opened", "audio_play", "audio_complete"] }, ...slugFilter },
+      distinct: ["userId", "storySlug"],
+      select: { userId: true, storySlug: true },
+    }) : Promise.resolve([]),
+    needsEventData ? prisma.userMetric.findMany({
+      where: { ...userScope, createdAt: { gte: from, lte: to }, eventType: "audio_complete", ...slugFilter },
+      distinct: ["userId", "storySlug"],
+      select: { userId: true, storySlug: true },
+    }) : Promise.resolve([]),
+    needsPrevData ? prisma.userMetric.findMany({
+      where: { ...userScope, createdAt: { gte: prevFrom, lte: prevTo }, eventType: { in: ["story_opened", "audio_play", "audio_complete"] }, ...slugFilter },
+      distinct: ["userId", "storySlug"],
+      select: { userId: true, storySlug: true },
+    }) : Promise.resolve([]),
+    needsPrevData ? prisma.userMetric.findMany({
+      where: { ...userScope, createdAt: { gte: prevFrom, lte: prevTo }, eventType: "audio_complete", ...slugFilter },
+      distinct: ["userId", "storySlug"],
+      select: { userId: true, storySlug: true },
+    }) : Promise.resolve([]),
+  ]);
+  const storiesStarted = new Set(startedPairs.map(pairKey)).size;
+  const storiesFinished = new Set(finishedPairs.map(pairKey)).size;
+  const completionRate =
+    storiesStarted > 0 ? Math.round((storiesFinished / storiesStarted) * 100) : 0;
 
   const byDay = new Map<string, { plays: number; completions: number }>();
   const byStory = new Map<string, { plays: number; completions: number }>();
@@ -1699,8 +1775,10 @@ export async function GET(req: NextRequest): Promise<Response> {
       prevByStory.add(row.storySlug);
       if (row.bookSlug) prevByBook.add(row.bookSlug);
     }
+    const prevStarted = new Set(prevStartedPairs.map(pairKey)).size;
+    const prevFinished = new Set(prevFinishedPairs.map(pairKey)).size;
     const prevCompletionRate =
-      prevPlays > 0 ? Math.round((prevCompletions / prevPlays) * 100) : 0;
+      prevStarted > 0 ? Math.round((prevFinished / prevStarted) * 100) : 0;
     const prevByUserStoryMaxSeconds = new Map<string, number>();
     for (const row of prevProgressRows as ProgressRow[]) {
       const value = getProgressValue(row);
@@ -1791,6 +1869,101 @@ export async function GET(req: NextRequest): Promise<Response> {
       // señal dice más que quien pasó por ahí hace seis días.
       .sort((a, b) => (b.lastAt ?? "").localeCompare(a.lastAt ?? ""));
 
+  // ── Una fila por persona ──
+  // Se calcula sobre filas crudas de las dos ventanas porque cada columna sale
+  // de un evento distinto: los minutos del progreso más lejano por historia,
+  // los días activos de las fechas, las terminadas de `audio_complete` y las
+  // prácticas de `practice_session_completed`. Solo en la pestaña Audiencia.
+  type FilaCruda = {
+    userId: string;
+    storySlug: string;
+    eventType: string;
+    value: number | null;
+    metadata: unknown;
+    createdAt: Date;
+  };
+  const [filasAhora, filasAntes] = needsAudienceData
+    ? await Promise.all([
+        prisma.userMetric.findMany({
+          where: { ...userScope, createdAt: { gte: from, lte: to } },
+          select: { userId: true, storySlug: true, eventType: true, value: true, metadata: true, createdAt: true },
+          take: 100000,
+        }),
+        prisma.userMetric.findMany({
+          where: { ...userScope, createdAt: { gte: prevFrom, lte: prevTo } },
+          select: { userId: true, storySlug: true, eventType: true, value: true, metadata: true, createdAt: true },
+          take: 100000,
+        }),
+      ])
+    : [[] as FilaCruda[], [] as FilaCruda[]];
+
+  type Resumen = {
+    minutos: number;
+    dias: Set<string>;
+    terminadas: Set<string>;
+    practicas: number;
+    ultimo: Date | null;
+  };
+  const resumePorPersona = (filas: FilaCruda[]): Map<string, Resumen> => {
+    const porPersona = new Map<string, Resumen>();
+    // El progreso no se suma tal cual: de cada historia cuenta el punto más
+    // lejano alcanzado, igual que en el resto del panel.
+    const masLejano = new Map<string, number>();
+    for (const f of filas) {
+      const r = porPersona.get(f.userId) ?? {
+        minutos: 0,
+        dias: new Set<string>(),
+        terminadas: new Set<string>(),
+        practicas: 0,
+        ultimo: null,
+      };
+      r.dias.add(localDayKey(f.createdAt));
+      if (!r.ultimo || f.createdAt > r.ultimo) r.ultimo = f.createdAt;
+      if (f.eventType === "audio_complete") r.terminadas.add(f.storySlug);
+      if (f.eventType === "practice_session_completed") r.practicas += 1;
+      if (["audio_pause", "audio_complete", "continue_listening"].includes(f.eventType)) {
+        const segundos = getProgressValue(f as ProgressRow);
+        if (Number.isFinite(segundos) && segundos > 0) {
+          const clave = `${f.userId}::${f.storySlug}`;
+          if (segundos > (masLejano.get(clave) ?? 0)) masLejano.set(clave, segundos);
+        }
+      }
+      porPersona.set(f.userId, r);
+    }
+    for (const [clave, segundos] of masLejano) {
+      const userId = clave.split("::")[0];
+      const r = porPersona.get(userId);
+      if (r) r.minutos += segundos / 60;
+    }
+    return porPersona;
+  };
+
+  const ahora = resumePorPersona(filasAhora as FilaCruda[]);
+  const antes = resumePorPersona(filasAntes as FilaCruda[]);
+  const identidadesPerUser = needsAudienceData
+    ? await resolveUserIdentities(Array.from(ahora.keys()))
+    : new Map<string, { name: string | null; email: string | null }>();
+  const perUser: MetricsPerUserRow[] = Array.from(ahora.entries())
+    .map(([userId, r]) => {
+      const antesR = antes.get(userId);
+      const quien = identidadesPerUser.get(userId);
+      return {
+        userId,
+        name: quien?.name ?? null,
+        email: quien?.email ?? null,
+        minutes: Math.round(r.minutos * 10) / 10,
+        prevMinutes: Math.round((antesR?.minutos ?? 0) * 10) / 10,
+        activeDays: r.dias.size,
+        prevActiveDays: antesR?.dias.size ?? 0,
+        storiesFinished: r.terminadas.size,
+        prevStoriesFinished: antesR?.terminadas.size ?? 0,
+        practices: r.practicas,
+        prevPractices: antesR?.practicas ?? 0,
+        lastAt: r.ultimo ? r.ultimo.toISOString() : null,
+      };
+    })
+    .sort((a, b) => b.minutes - a.minutes || b.activeDays - a.activeDays);
+
   const payload: DashboardResponse = {
     ...createEmptyDashboardResponse(from, to, days),
     ...(prevKpisPayload
@@ -1817,6 +1990,8 @@ export async function GET(req: NextRequest): Promise<Response> {
       totalListenedMinutes,
       savedStories,
       savedBooks,
+      storiesStarted,
+      storiesFinished,
     },
     daily,
     topStories,
@@ -1902,6 +2077,7 @@ export async function GET(req: NextRequest): Promise<Response> {
         avgMinutesLast7Days,
         distribution,
       },
+      perUser,
     },
     learning: learningPayload,
   };

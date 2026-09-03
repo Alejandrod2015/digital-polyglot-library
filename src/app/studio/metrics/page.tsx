@@ -14,6 +14,7 @@ import {
   KpiCard,
 } from "@/components/studio/metrics/MetricsPrimitives";
 import UserDetailDrawer from "@/components/studio/metrics/UserDetailDrawer";
+import { PerUserTable } from "@/components/studio/metrics/PerUserTable";
 import type {
   DashboardData,
   MetricsSection,
@@ -877,6 +878,8 @@ function AudienceView({ data }: { data: DashboardData }) {
           )}
         </div>
       </div>
+
+      <PerUserTable rows={data.audience.perUser ?? []} days={data.range.days} />
     </div>
   );
 }
