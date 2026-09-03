@@ -656,6 +656,130 @@ if printf '%s' "$COMMAND" | grep -qE '\b(tsx|ts-node|node|npx)\b'; then
     done
 fi
 
+# 6g. IMAGE SPEND LOCK (2026-08-24). Cada imagen cuesta dinero real y el usuario
+#     lo controla imagen a imagen. Dos candados, no uno:
+#
+#       (1) el ULTIMO mensaje del usuario tiene que nombrar la imagen con un
+#           verbo ("genera la portada", "regenera la imagen"). Un "dale", un
+#           "sigue" o un "ok" NO autorizan, igual que en el porton de audio.
+#       (2) UN disparador = UNA imagen. El mensaje que autoriza se apunta en
+#           `.claude/safety/.image-spend`; si ese mismo mensaje ya gasto una
+#           tirada, la siguiente se BLOQUEA aunque el verbo siga ahi.
+#
+#     WHY: el 2026-08-24, con un solo "genera la portada", tire dos veces la
+#     primera portada del A1 latam. Habia leido el "TOPE: 2 tiradas por portada"
+#     de CLAUDE.md como un presupuesto que podia gastarme solo; es un techo que
+#     prohibe seguir tirando, no un permiso. El usuario: "Cambia para que nunca
+#     vuelvas a generar algo sin que yo te lo diga. Nada de 2 tiradas, solo 1."
+#     Si la tirada sale mal, se ENSENA y se espera. CLAUDE_AUTHORIZED=1 no lo
+#     salta. `--dry` no cuesta nada y pasa.
+if printf '%s' "$COMMAND" | grep -qE '(generateCover\.ts|_gen[A-Za-z0-9]*Covers?\.ts|api\.bfl\.ai|api\.us1\.bfl\.ai|generateFluxImageBuffer|images/generations|gemini-[0-9a-z.-]*image)' \
+   && ! printf '%s' "$COMMAND" | grep -qE -- '--dry'; then
+    IMG_CHECK="$(printf '%s' "$PAYLOAD" | /usr/bin/python3 -c '
+import json, sys, re, os, hashlib
+try:
+    payload = json.load(sys.stdin)
+except Exception:
+    print("missing_payload"); sys.exit(0)
+tp = payload.get("transcript_path") or ""
+if not tp or not os.path.exists(tp):
+    print("missing_transcript"); sys.exit(0)
+msgs = []
+try:
+    with open(tp) as f:
+        for line in f:
+            try:
+                obj = json.loads(line)
+            except Exception:
+                continue
+            if obj.get("type") != "user":
+                continue
+            content = obj.get("message", {}).get("content", "")
+            if isinstance(content, str):
+                msgs.append(content)
+            elif isinstance(content, list):
+                for part in content:
+                    if isinstance(part, dict) and part.get("type") == "text":
+                        msgs.append(part.get("text", ""))
+except Exception:
+    print("read_error"); sys.exit(0)
+if not msgs:
+    print("no_user_messages"); sys.exit(0)
+last = msgs[-1] or ""
+last = re.sub(r"<system-reminder>.*?</system-reminder>", "", last, flags=re.DOTALL|re.IGNORECASE)
+last = re.sub(r"<task-notification>.*?</task-notification>", "", last, flags=re.DOTALL|re.IGNORECASE)
+# El verbo tiene que NOMBRAR la imagen. "dale" / "sigue" / "ok" no valen.
+verb_pat = re.compile(
+    r"\b(genera|regenera|lanza|manda|haz|tira|renderea|render)\s+(el\s+|la\s+|los\s+|las\s+|una\s+|un\s+)?"
+    r"(portada|portadas|imagen|imagenes|imágenes|cover|covers)\b",
+    re.IGNORECASE)
+autorizado = False
+for m in verb_pat.finditer(last):
+    prefix = last[max(0, m.start() - 12):m.start()].lower()
+    if re.search(r"\bno\s*$", prefix) or re.search(r"\bnunca\s*$", prefix):
+        continue
+    autorizado = True
+    break
+if not autorizado:
+    print("no_verb"); sys.exit(0)
+# Un disparador, una imagen.
+huella = hashlib.sha1(last.strip().encode("utf-8")).hexdigest()[:16]
+libro = os.path.join(os.path.dirname(tp), "..", "..", ".image-spend")
+libro = os.environ.get("DPL_IMAGE_SPEND_FILE") or ".claude/safety/.image-spend"
+try:
+    gastados = set(open(libro).read().split())
+except Exception:
+    gastados = set()
+if huella in gastados:
+    print("already_spent"); sys.exit(0)
+try:
+    os.makedirs(os.path.dirname(libro), exist_ok=True)
+    with open(libro, "a") as f:
+        f.write(huella + "\n")
+except Exception:
+    pass
+print("ok")
+' 2>/dev/null || echo "python_error")"
+
+    if [ "$IMG_CHECK" != "ok" ]; then
+        log_audit "BLOCK_IMAGE[$IMG_CHECK]" "$COMMAND"
+        if [ "$IMG_CHECK" = "already_spent" ]; then
+            cat >&2 <<EOF
+[safety-guard] BLOCKED: este mensaje del usuario YA gasto su imagen.
+
+Un disparador = UNA imagen. No hay presupuesto de dos tiradas: el "TOPE: 2"
+de CLAUDE.md era un techo, y desde el 2026-08-24 el tope es 1.
+
+Si la tirada salio mal, ENSENALA, di que esta mal y ESPERA. El usuario decide
+si se vuelve a tirar, y para eso tiene que escribirlo otra vez.
+
+Command refused:
+  $COMMAND
+EOF
+        else
+            cat >&2 <<EOF
+[safety-guard] BLOCKED: generacion de imagen sin verbo del usuario.
+
+Este guard lee el ULTIMO mensaje del usuario en el transcript. Sin bypass por
+variable de entorno: cada imagen cuesta dinero real.
+
+Para autorizar, el usuario escribe en su proximo mensaje algo que NOMBRE la
+imagen:
+  "genera la portada" / "regenera la portada" / "genera la imagen" /
+  "lanza la imagen" / "haz la portada" / "tira la portada"
+
+"dale", "sigue", "ok" y "perfecto" NO autorizan, a proposito.
+Componer el prompt y verlo con --dry es gratis y pasa sin gate.
+
+Diagnostic: $IMG_CHECK
+Command refused:
+  $COMMAND
+EOF
+        fi
+        exit 2
+    fi
+fi
+
 # 7. Hard-block: rm -rf on paths that look like the repo root or home.
 if printf '%s' "$COMMAND" | grep -qE '\brm[[:space:]]+-[rRfFv]+[[:space:]]+(/Users/[^/[:space:]]+/?[[:space:]]*$|~[[:space:]]*$|\$HOME[[:space:]]*$|\.\.[[:space:]]*$|/[[:space:]]*$|\*[[:space:]]*$)'; then
     block "rm -rf on a path that looks like \$HOME, /, or .. Never do this."

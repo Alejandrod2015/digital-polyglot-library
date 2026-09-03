@@ -133,6 +133,19 @@
         "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library/e0b2c0be-7980-4159-b119-a44a486d464c/scratchpad/medir"
       ],
       "port": 8901
+    },
+    {
+      "_comment": "El mural del A2 latam. Borrar cuando se cierre el journey.",
+      "name": "mural-a2-8910",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8910",
+        "--directory",
+        "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-nervous-pike-a97800/816d487c-9869-42d0-9769-c2d1506e72b3/scratchpad/mural"
+      ],
+      "port": 8910
     }
   ]
 }
