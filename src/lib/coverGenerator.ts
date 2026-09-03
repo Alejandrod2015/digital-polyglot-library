@@ -323,7 +323,18 @@ export async function generateFluxImageBuffer(prompt: string): Promise<Buffer> {
 
     const status = (extractFluxStatus(polled) ?? "").toLowerCase();
     if (status.includes("moderated") || status.includes("content policy") || status.includes("not found")) {
-      throw new Error(`Flux rejected the prompt (status: "${status}"). The cover prompt likely triggered content moderation; try simplifying the synopsis or reducing negative constraint words in the prompt.`);
+      // El estado CRUDO importa: BFL distingue "Request Moderated" (le molesta
+      // el PROMPT) de "Content Moderated" (le molesta la IMAGEN que salio), y
+      // el arreglo es distinto en cada caso. Aplastar los dos en un mismo
+      // mensaje me hizo perder cuatro disparadores del usuario el 2026-09-03
+      // adivinando que palabra del prompt sobraba, cuando el aviso podia
+      // decirlo.
+      const cual = status.includes("request")
+        ? 'entrada: le molesta el PROMPT, quita o cambia palabras de la escena'
+        : status.includes("content")
+          ? 'salida: le molesta la IMAGEN generada, cambia la escena o la accion'
+          : "no dice de que lado";
+      throw new Error(`Flux moderó la peticion. Estado crudo: "${status}" (${cual}).`);
     }
     if (status.includes("error") || status.includes("fail")) {
       throw new Error("Flux generation failed while polling.");
