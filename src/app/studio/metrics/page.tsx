@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import StudioShell from "@/components/studio/StudioShell";
 import {
   ComingSoonView,
@@ -236,6 +236,15 @@ export default function MetricsDashboard() {
   const [storySlug, setStorySlug] = useState("");
   const [cohort, setCohort] = useState<MetricsCohort>("all");
   const [section, setSection] = useState<MetricsSection>("overview");
+  /**
+   * La pestaña que se está mirando AHORA, legible desde dentro de una petición
+   * en vuelo. Cambiar de pestaña dispara una petición sin cancelar la
+   * anterior, y la del Resumen tarda más que las demás: al llegar la última
+   * pisaba los datos de la pestaña abierta y la dejaba con todo a cero. El
+   * estado `section` no sirve para esto porque la función asíncrona se queda
+   * con el valor que tenía cuando arrancó.
+   */
+  const sectionRef = useRef<MetricsSection>("overview");
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -300,9 +309,15 @@ export default function MetricsDashboard() {
         throw new Error(`HTTP ${res.status}: ${body.slice(0, 200)}`);
       }
       const json = (await res.json()) as DashboardData;
+      // La respuesta se guarda siempre: aunque llegue tarde, la pestaña que la
+      // pidió la encontrará en la caché sin volver a pedirla.
       setSectionCache((c) => ({ ...c, [targetSection]: json }));
+      if (sectionRef.current !== targetSection) return;
       setData(json);
     } catch (err) {
+      // Un fallo de una pestaña que ya no se está mirando no pinta un error
+      // encima de los datos buenos de la que sí.
+      if (sectionRef.current !== targetSection) return;
       const msg = err instanceof Error ? err.message : String(err);
       const message = msg.includes("403")
         ? "No tienes acceso a métricas."
@@ -311,11 +326,12 @@ export default function MetricsDashboard() {
       console.error("Error loading metrics dashboard:", err);
       setData(EMPTY_DATA);
     } finally {
-      setLoading(false);
+      if (sectionRef.current === targetSection) setLoading(false);
     }
   }
 
   useEffect(() => {
+    sectionRef.current = section;
     if (section === "content") {
       void loadPipelineMetrics();
       return;
@@ -324,10 +340,13 @@ export default function MetricsDashboard() {
       setData(sectionCache[section] ?? EMPTY_DATA);
       return;
     }
+    // Un `setTimeout(0)` para no pedir dentro del render del cambio de
+    // pestaña, y nada más: envolverlo además en `requestAnimationFrame`
+    // ataba la petición a que el navegador fuera a pintar, así que en una
+    // pestaña en segundo plano no salía nunca y la sección se quedaba a cero
+    // hasta volver a ella.
     const timeoutId = window.setTimeout(() => {
-      window.requestAnimationFrame(() => {
-        void loadMetrics(section);
-      });
+      void loadMetrics(section);
     }, 0);
     return () => {
       window.clearTimeout(timeoutId);
