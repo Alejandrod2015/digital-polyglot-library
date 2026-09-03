@@ -54,7 +54,7 @@ export default function ImpressumPage() {
       <section className="mt-8">
         <h2 className="text-xl font-semibold">Tax information</h2>
         <p className="mt-3 text-[15px] leading-7">
-          No VAT ID has been provided.
+          VAT ID (USt-IdNr.): <span className="font-medium">DE456792567</span>
           <br />
           Small business status applies under <span className="font-medium">§ 19 UStG</span>
           {" "}(Kleinunternehmerregelung).

@@ -57,7 +57,8 @@ export default function ImpressumDePage() {
       <section className="mt-8">
         <h2 className="text-xl font-semibold">Steuerliche Angaben</h2>
         <p className="mt-3 text-[15px] leading-7">
-          Es wurde keine Umsatzsteuer-Identifikationsnummer angegeben.
+          Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:{" "}
+          <span className="font-medium">DE456792567</span>
           <br />
           Es gilt die <span className="font-medium">Kleinunternehmerregelung gemäß § 19 UStG</span>.
         </p>
