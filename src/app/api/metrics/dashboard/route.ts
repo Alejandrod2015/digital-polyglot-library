@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess";
 import { buildMetricsUserScope, parseMetricsCohort } from "@/lib/metricsCohort";
-import { resolveUserEmails } from "@/lib/metricsUserEmails";
+import { resolveUserEmails, resolveUserIdentities } from "@/lib/metricsUserEmails";
 import { books } from "@/data/books";
 import { getStandaloneStoriesByIds, getStandaloneStoriesBySlugs } from "@/lib/standaloneStories";
 import {
@@ -64,6 +64,17 @@ type ReminderTapRow = {
   metadata?: unknown;
 };
 
+/** Una persona detrás de una tarjeta de KPI. */
+type MetricsKpiUser = {
+  userId: string;
+  name: string | null;
+  email: string | null;
+  /** Eventos suyos en la ventana de la tarjeta (24h en DAU, 7d en WAU). */
+  events: number;
+  /** Su última señal, para poder ordenar por quién sigue ahí. */
+  lastAt: string | null;
+};
+
 type DashboardResponse = {
   range: {
     from: string;
@@ -102,6 +113,15 @@ type DashboardResponse = {
     totalListenedMinutes: number;
     savedStories: number;
     savedBooks: number;
+  };
+  /**
+   * Quién compone el DAU y el WAU. Un "4" no dice si son cuatro personas
+   * distintas de ayer o las mismas de siempre, y esa es justo la pregunta
+   * que sigue a la cifra cuando hay cuatro.
+   */
+  kpiUsers: {
+    dau: MetricsKpiUser[];
+    wau: MetricsKpiUser[];
   };
   daily: Array<{
     date: string;
@@ -297,6 +317,7 @@ function createEmptyDashboardResponse(from: Date, to: Date, days: number): Dashb
       savedStories: 0,
       savedBooks: 0,
     },
+    kpiUsers: { dau: [], wau: [] },
     daily: [],
     topStories: [],
     topBooks: [],
@@ -840,25 +861,30 @@ export async function GET(req: NextRequest): Promise<Response> {
       orderBy: { createdAt: "asc" },
       take: 20000,
     }) : Promise.resolve([]),
-    needsOverviewData ? prisma.userMetric.findMany({
+    // Agrupado en vez de `distinct`: cuesta lo mismo y de paso trae cuántos
+    // eventos puso cada uno y cuándo fue el último, que es lo que la tarjeta
+    // enseña al pasar el cursor. La cifra sigue siendo el número de filas.
+    needsOverviewData ? prisma.userMetric.groupBy({
+      by: ["userId"],
       where: {
         ...userScope,
         createdAt: { gte: new Date(now.getTime() - 24 * 60 * 60 * 1000), lte: now },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
       },
-      distinct: ["userId"],
-      select: { userId: true },
+      _count: { _all: true },
+      _max: { createdAt: true },
     }) : Promise.resolve([]),
-    needsOverviewData ? prisma.userMetric.findMany({
+    needsOverviewData ? prisma.userMetric.groupBy({
+      by: ["userId"],
       where: {
         ...userScope,
         createdAt: { gte: new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000), lte: now },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
       },
-      distinct: ["userId"],
-      select: { userId: true },
+      _count: { _all: true },
+      _max: { createdAt: true },
     }) : Promise.resolve([]),
     needsProgressData ? prisma.userMetric.findMany({
       where: {
@@ -1728,6 +1754,32 @@ export async function GET(req: NextRequest): Promise<Response> {
   });
 
 
+  // ── Quién compone el DAU y el WAU ──
+  // Los ids se resuelven contra Clerk una sola vez para los dos conjuntos:
+  // el WAU contiene al DAU, así que pedirlos por separado repetiría
+  // llamadas. La caché de `resolveUserIdentities` hace el resto.
+  type KpiGroupRow = { userId: string; _count: { _all: number }; _max: { createdAt: Date | null } };
+  const dauGroups = dauRows as unknown as KpiGroupRow[];
+  const wauGroups = wauRows as unknown as KpiGroupRow[];
+  const kpiIdentities = needsOverviewData
+    ? await resolveUserIdentities([...wauGroups, ...dauGroups].map((r) => r.userId))
+    : new Map<string, { name: string | null; email: string | null }>();
+  const toKpiUsers = (rows: KpiGroupRow[]): MetricsKpiUser[] =>
+    rows
+      .map((row) => {
+        const who = kpiIdentities.get(row.userId);
+        return {
+          userId: row.userId,
+          name: who?.name ?? null,
+          email: who?.email ?? null,
+          events: row._count._all,
+          lastAt: row._max.createdAt ? row._max.createdAt.toISOString() : null,
+        };
+      })
+      // El más reciente arriba: en una lista recortada, quien acaba de dar
+      // señal dice más que quien pasó por ahí hace seis días.
+      .sort((a, b) => (b.lastAt ?? "").localeCompare(a.lastAt ?? ""));
+
   const payload: DashboardResponse = {
     ...createEmptyDashboardResponse(from, to, days),
     ...(prevKpisPayload
@@ -1740,6 +1792,7 @@ export async function GET(req: NextRequest): Promise<Response> {
           prevKpis: prevKpisPayload,
         }
       : {}),
+    kpiUsers: { dau: toKpiUsers(dauGroups), wau: toKpiUsers(wauGroups) },
     kpis: {
       dau: dauRows.length,
       wau: wauRows.length,

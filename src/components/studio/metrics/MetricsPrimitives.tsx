@@ -1,6 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
+import { PeopleHoverCard } from "./PeopleHoverCard";
+import type { MetricsKpiUser } from "./types";
 
 /**
  * Shared visual primitives for the studio metrics dashboard. The
@@ -131,6 +134,13 @@ type KpiCardProps = {
   hero?: boolean;
   hint?: string;
   inverted?: boolean;
+  /**
+   * Quién compone la cifra. Cuando viene, la tarjeta enseña esa gente al
+   * pasar el cursor; cuando no, la tarjeta se comporta como siempre.
+   */
+  people?: MetricsKpiUser[];
+  /** Qué ventana cubre esa gente, para la cabecera de la tarjeta flotante. */
+  peopleWindow?: string;
 };
 
 export function KpiCard({
@@ -143,14 +153,22 @@ export function KpiCard({
   hero = false,
   hint,
   inverted = false,
+  people,
+  peopleWindow,
 }: KpiCardProps) {
   const accentColor = ACCENT_VAR[accent];
   const dataAccent = accent === "accent" ? undefined : accent;
   const numericValue = typeof value === "number" ? value : Number(value);
+  const [hover, setHover] = useState<{ x: number; y: number } | null>(null);
+  const hoverable = Array.isArray(people);
+  const track = (e: React.MouseEvent) => setHover({ x: e.clientX, y: e.clientY });
   return (
     <div
       className={hero ? "mx-kpi mx-kpi--hero" : "mx-kpi"}
       data-accent={dataAccent}
+      onMouseEnter={hoverable ? track : undefined}
+      onMouseMove={hoverable ? track : undefined}
+      onMouseLeave={hoverable ? () => setHover(null) : undefined}
     >
       <div className="mx-kpi__head">
         <div className="mx-kpi__label">{label}</div>
@@ -173,6 +191,15 @@ export function KpiCard({
         )}
       </div>
       {hint && <div className="mx-kpi__hint">{hint}</div>}
+      {hover && people ? (
+        <PeopleHoverCard
+          x={hover.x}
+          y={hover.y}
+          title={peopleWindow ? `${label} · ${peopleWindow}` : label}
+          headline={`${people.length} ${people.length === 1 ? "persona" : "personas"}`}
+          people={people}
+        />
+      ) : null}
     </div>
   );
 }

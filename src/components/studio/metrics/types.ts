@@ -19,11 +19,23 @@ export type DashboardKpis = {
   savedBooks: number;
 };
 
+/** Una persona detrás de una tarjeta de KPI, para la tarjeta al pasar el cursor. */
+export type MetricsKpiUser = {
+  userId: string;
+  name: string | null;
+  email: string | null;
+  /** Eventos suyos en la ventana de la tarjeta: 24h en DAU, 7d en WAU. */
+  events: number;
+  lastAt: string | null;
+};
+
 export type DashboardData = {
   range: { from: string; to: string; days: number };
   prevRange?: { from: string; to: string; days: number };
   kpis: DashboardKpis;
   prevKpis?: DashboardKpis;
+  /** Falta en respuestas cacheadas de antes de que las tarjetas dijeran quién. */
+  kpiUsers?: { dau: MetricsKpiUser[]; wau: MetricsKpiUser[] };
   daily: Array<{
     date: string;
     plays: number;

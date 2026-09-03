@@ -69,6 +69,8 @@ export function ResumenView({ data }: { data: DashboardData }) {
           spark={sparkPlays}
           accent="accent"
           hint="usuarios activos hoy"
+          people={data.kpiUsers?.dau}
+          peopleWindow="últimas 24 h"
         />
         <KpiCard
           hero
@@ -78,6 +80,8 @@ export function ResumenView({ data }: { data: DashboardData }) {
           spark={sparkPlays}
           accent="cyan"
           hint="últimos 7 días"
+          people={data.kpiUsers?.wau}
+          peopleWindow="últimos 7 días"
         />
         <KpiCard
           hero
