@@ -248,10 +248,10 @@ function aVariante(filas: string[], variante: string): string[] {
 // ocupa `você`, que conjuga como la tercera. Se escribe una fila por persona
 // igual que en español para que la tarjeta se lea igual, con `você` en la
 // segunda y `vocês` en la quinta.
-const PT_PERSONAS = ["eu", "você", "ele, ela", "nós", "vocês", "eles"];
+export const PT_PERSONAS = ["eu", "você", "ele, ela", "nós", "vocês", "eles"];
 
 /** Los que no siguen patrón: se escriben enteros, tiempo a tiempo. */
-const PT_IRR: Record<string, Record<Tiempo, string[]>> = {
+export const PT_IRR: Record<string, Record<Tiempo, string[]>> = {
   ser:    { presente: ["sou","é","é","somos","são","são"], "pretérito": ["fui","foi","foi","fomos","foram","foram"], imperfecto: ["era","era","era","éramos","eram","eram"] },
   estar:  { presente: ["estou","está","está","estamos","estão","estão"], "pretérito": ["estive","esteve","esteve","estivemos","estiveram","estiveram"], imperfecto: ["estava","estava","estava","estávamos","estavam","estavam"] },
   ter:    { presente: ["tenho","tem","tem","temos","têm","têm"], "pretérito": ["tive","teve","teve","tivemos","tiveram","tiveram"], imperfecto: ["tinha","tinha","tinha","tínhamos","tinham","tinham"] },
@@ -288,7 +288,7 @@ const PT_CAMBIO = new Set([
   "perder","valer","caber","ler","crer","erguer","doer","soer","medir",
 ]);
 
-function ptConjuga(inf: string, tiempo: Tiempo): string[] | null {
+export function ptConjuga(inf: string, tiempo: Tiempo): string[] | null {
   if (PT_IRR[inf]) return [...PT_IRR[inf][tiempo]];
   if (PT_NO_REGULARES.test(inf) || PT_CAMBIO.has(inf)) return null;
   const raiz = inf.slice(0, -2);
@@ -329,16 +329,16 @@ function ptConjuga(inf: string, tiempo: Tiempo): string[] | null {
 // Estas historias narran en PRESENTE, como el A0 español, y el pasado que sale
 // es el imperfetto. El passato remoto es literario y no aparece, asi que no se
 // escribe: un tiempo que ninguna historia usa no vale la superficie de error.
-const IT_PERSONAS = ["io", "tu", "lui, lei", "noi", "voi", "loro"];
+export const IT_PERSONAS = ["io", "tu", "lui, lei", "noi", "voi", "loro"];
 
 /** Los -ire que meten -isc- en las tres personas del singular y en loro. */
-const IT_ISC = new Set([
+export const IT_ISC = new Set([
   "capire","finire","preferire","pulire","spedire","costruire","unire","punire","sparire",
   "colpire","guarire","chiarire","fornire","riunire","stupire","suggerire","restituire",
 ]);
 
 /** Irregulares del presente, enteros. */
-const IT_IRR: Record<string, string[]> = {
+export const IT_IRR: Record<string, string[]> = {
   essere:  ["sono","sei","è","siamo","siete","sono"],
   avere:   ["ho","hai","ha","abbiamo","avete","hanno"],
   andare:  ["vado","vai","va","andiamo","andate","vanno"],
@@ -376,7 +376,7 @@ const IT_NO = /(rre|urre|orre)$/;
  *  La regla no es solo de -ciare y -giare: CUALQUIER raiz acabada en i pierde
  *  la suya cuando la terminacion empieza por i. Sin eso salian `fischii`,
  *  `soffiiamo` y `spogliiamo`, que no son palabras. */
-function itRaiz(raiz: string, term: string): string {
+export function itRaiz(raiz: string, term: string): string {
   if (term.startsWith("i")) {
     if (raiz.endsWith("c") || raiz.endsWith("g")) return `${raiz}h`;
     if (raiz.endsWith("i")) return raiz.slice(0, -1);
@@ -384,7 +384,7 @@ function itRaiz(raiz: string, term: string): string {
   return raiz;
 }
 
-function itConjuga(inf: string, tiempo: Tiempo): string[] | null {
+export function itConjuga(inf: string, tiempo: Tiempo): string[] | null {
   if (tiempo === "pretérito") return null;
   if (IT_IRR[inf] && tiempo === "presente") return [...IT_IRR[inf]];
   if (IT_NO.test(inf) && !IT_IRR[inf]) return null;

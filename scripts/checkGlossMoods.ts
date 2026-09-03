@@ -25,17 +25,19 @@
  */
 import { config } from "dotenv"; config({ path: ".env.local", quiet: true });
 import { PrismaClient } from "../src/generated/prisma";
-import { moodsDeBundle, paquetesVivos } from "./buildGlossMoods";
+import { moodsDeBundle, paquetesVivos, CON_MOTOR } from "./buildGlossMoods";
 
 const prisma = new PrismaClient();
 
 const MODOS = new Set([
-  "Subjunctive", "Past subjunctive", "Conditional", "Formal command",
+  "Subjunctive", "Past subjunctive", "Future subjunctive", "Conditional", "Formal command",
   "Negative command", "Command", "Command + pronoun", "Verb + pronoun", "Konjunktiv II",
 ]);
-/** Los idiomas con tablas de modo escritas. El resto se NOMBRA en la salida:
- *  callarse es como una capa entera se queda fuera sin que nadie lo note. */
-const CON_TABLAS = ["spanish", "german", "italian", "portuguese"];
+/** La lista vive en el generador, no aqui: dos copias se desincronizan y el
+ *  lint acaba dando verde sobre un idioma que ya tiene motor. El resto se
+ *  NOMBRA en la salida, que callarse es como una capa entera se queda fuera
+ *  sin que nadie lo note. */
+const CON_TABLAS = CON_MOTOR;
 
 type Fallo = { bundle: string; slug: string; palabra: string; que: string };
 

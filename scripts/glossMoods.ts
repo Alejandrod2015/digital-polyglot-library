@@ -33,7 +33,10 @@
  *      no se convierte en el subjuntivo de sentir.
  *   2. Una lista de formas ambiguas por idioma que nunca se marcan.
  */
-import { presente, preterito, personas, indicePorForma } from "./buildGlossForms";
+import {
+  presente, preterito, personas, indicePorForma,
+  itConjuga, itRaiz, ptConjuga,
+} from "./buildGlossForms";
 
 export type Modo =
   | "Subjunctive"
@@ -44,6 +47,7 @@ export type Modo =
   | "Command"
   | "Command + pronoun"
   | "Verb + pronoun"
+  | "Future subjunctive"
   | "Konjunktiv II";
 
 export type Bloque = {
@@ -294,6 +298,141 @@ export function conClitico(filas: string[], clitico: string): string[] {
   return filas.map((f, i) => `${refl ? REFLEXIVOS[i] : c} ${f}`);
 }
 
+// ── Francés ─────────────────────────────────────────────────────────────
+// El francés no tenía NINGUNA tabla en el proyecto: `buildGlossForms.ts` no lo
+// lleva en `IDIOMAS`, así que sus paquetes no tienen ni bloque de indicativo.
+// Aquí va lo justo para la capa gramatical, y el presente vive en este fichero
+// (y no en el otro) porque solo se usa para la celda de contraste; meter el
+// francés en el generador de indicativos es otra pasada y otra revisión.
+//
+// La regla que de verdad decide en francés: el sujeto es OBLIGATORIO, así que
+// un imperativo es exactamente un verbo SIN pronombre sujeto delante. Por eso
+// `je`, `tu`, `il`, `elle`, `on`, `nous`, `vous` y `ils` no entran en la lista
+// de lo que puede precederlo, y `Vous cherchez quelque chose ?` no pasa por
+// orden. La otra red es la inversión del narrador (`dit Hugo`, `explique-t-elle`,
+// `répète Manon`), que en el corpus de Lyon es lo más frecuente de todo.
+export const FR_PERSONAS = ["je", "tu", "il, elle", "nous", "vous", "ils"];
+
+type FrVerbo = { pres: string[]; subj?: string[]; cond?: string; impTu?: string };
+const FR_IRR: Record<string, FrVerbo> = {
+  être: { pres: ["suis", "es", "est", "sommes", "êtes", "sont"], subj: ["sois", "sois", "soit", "soyons", "soyez", "soient"], cond: "ser", impTu: "sois" },
+  avoir: { pres: ["ai", "as", "a", "avons", "avez", "ont"], subj: ["aie", "aies", "ait", "ayons", "ayez", "aient"], cond: "aur", impTu: "aie" },
+  aller: { pres: ["vais", "vas", "va", "allons", "allez", "vont"], subj: ["aille", "ailles", "aille", "allions", "alliez", "aillent"], cond: "ir", impTu: "va" },
+  faire: { pres: ["fais", "fais", "fait", "faisons", "faites", "font"], subj: ["fasse", "fasses", "fasse", "fassions", "fassiez", "fassent"], cond: "fer", impTu: "fais" },
+  dire: { pres: ["dis", "dis", "dit", "disons", "dites", "disent"], subj: ["dise", "dises", "dise", "disions", "disiez", "disent"], cond: "dir", impTu: "dis" },
+  pouvoir: { pres: ["peux", "peux", "peut", "pouvons", "pouvez", "peuvent"], subj: ["puisse", "puisses", "puisse", "puissions", "puissiez", "puissent"], cond: "pourr" },
+  vouloir: { pres: ["veux", "veux", "veut", "voulons", "voulez", "veulent"], subj: ["veuille", "veuilles", "veuille", "voulions", "vouliez", "veuillent"], cond: "voudr", impTu: "veuille" },
+  savoir: { pres: ["sais", "sais", "sait", "savons", "savez", "savent"], subj: ["sache", "saches", "sache", "sachions", "sachiez", "sachent"], cond: "saur", impTu: "sache" },
+  devoir: { pres: ["dois", "dois", "doit", "devons", "devez", "doivent"], subj: ["doive", "doives", "doive", "devions", "deviez", "doivent"], cond: "devr" },
+  venir: { pres: ["viens", "viens", "vient", "venons", "venez", "viennent"], subj: ["vienne", "viennes", "vienne", "venions", "veniez", "viennent"], cond: "viendr", impTu: "viens" },
+  tenir: { pres: ["tiens", "tiens", "tient", "tenons", "tenez", "tiennent"], subj: ["tienne", "tiennes", "tienne", "tenions", "teniez", "tiennent"], cond: "tiendr", impTu: "tiens" },
+  prendre: { pres: ["prends", "prends", "prend", "prenons", "prenez", "prennent"], subj: ["prenne", "prennes", "prenne", "prenions", "preniez", "prennent"], cond: "prendr", impTu: "prends" },
+  voir: { pres: ["vois", "vois", "voit", "voyons", "voyez", "voient"], subj: ["voie", "voies", "voie", "voyions", "voyiez", "voient"], cond: "verr", impTu: "vois" },
+  mettre: { pres: ["mets", "mets", "met", "mettons", "mettez", "mettent"], cond: "mettr", impTu: "mets" },
+  partir: { pres: ["pars", "pars", "part", "partons", "partez", "partent"], cond: "partir", impTu: "pars" },
+  sortir: { pres: ["sors", "sors", "sort", "sortons", "sortez", "sortent"], cond: "sortir", impTu: "sors" },
+  dormir: { pres: ["dors", "dors", "dort", "dormons", "dormez", "dorment"], cond: "dormir", impTu: "dors" },
+  sentir: { pres: ["sens", "sens", "sent", "sentons", "sentez", "sentent"], cond: "sentir", impTu: "sens" },
+  ouvrir: { pres: ["ouvre", "ouvres", "ouvre", "ouvrons", "ouvrez", "ouvrent"], cond: "ouvrir", impTu: "ouvre" },
+  offrir: { pres: ["offre", "offres", "offre", "offrons", "offrez", "offrent"], cond: "offrir", impTu: "offre" },
+  écrire: { pres: ["écris", "écris", "écrit", "écrivons", "écrivez", "écrivent"], cond: "écrir", impTu: "écris" },
+  lire: { pres: ["lis", "lis", "lit", "lisons", "lisez", "lisent"], cond: "lir", impTu: "lis" },
+  boire: { pres: ["bois", "bois", "boit", "buvons", "buvez", "boivent"], cond: "boir", impTu: "bois" },
+  croire: { pres: ["crois", "crois", "croit", "croyons", "croyez", "croient"], cond: "croir", impTu: "crois" },
+  connaître: { pres: ["connais", "connais", "connaît", "connaissons", "connaissez", "connaissent"], cond: "connaîtr", impTu: "connais" },
+  vivre: { pres: ["vis", "vis", "vit", "vivons", "vivez", "vivent"], cond: "vivr", impTu: "vis" },
+  suivre: { pres: ["suis", "suis", "suit", "suivons", "suivez", "suivent"], cond: "suivr", impTu: "suis" },
+  rire: { pres: ["ris", "ris", "rit", "rions", "riez", "rient"], cond: "rir", impTu: "ris" },
+  courir: { pres: ["cours", "cours", "court", "courons", "courez", "courent"], cond: "courr", impTu: "cours" },
+  recevoir: { pres: ["reçois", "reçois", "reçoit", "recevons", "recevez", "reçoivent"], cond: "recevr", impTu: "reçois" },
+  attendre: { pres: ["attends", "attends", "attend", "attendons", "attendez", "attendent"], cond: "attendr", impTu: "attends" },
+  entendre: { pres: ["entends", "entends", "entend", "entendons", "entendez", "entendent"], cond: "entendr", impTu: "entends" },
+  répondre: { pres: ["réponds", "réponds", "répond", "répondons", "répondez", "répondent"], cond: "répondr", impTu: "réponds" },
+  descendre: { pres: ["descends", "descends", "descend", "descendons", "descendez", "descendent"], cond: "descendr", impTu: "descends" },
+  perdre: { pres: ["perds", "perds", "perd", "perdons", "perdez", "perdent"], cond: "perdr", impTu: "perds" },
+  vendre: { pres: ["vends", "vends", "vend", "vendons", "vendez", "vendent"], cond: "vendr", impTu: "vends" },
+};
+
+/**
+ * Los -er que cambian la raíz y que por eso NO se conjugan: acheter da
+ * `achète`, appeler da `appelle`, préférer da `préfère`, manger da `mangeons`,
+ * payer da `paie`. La regla plana daría `achete`, `appele` y `mangons`, y esa
+ * fila se ve al desplegar. Sin bloque antes que con la tabla inventada.
+ */
+const FR_NO_REGULAR = /(eler|eter|ayer|oyer|uyer|cer|ger|é[a-zà-ÿ]{1,3}er|e[lnrtsvm]er)$/;
+
+export function presenteFR(inf: string): string[] | null {
+  const irr = FR_IRR[inf];
+  if (irr) return [...irr.pres];
+  if (FR_NO_REGULAR.test(inf)) return null;
+  const raiz = inf.slice(0, -2);
+  if (inf.endsWith("er")) return [`${raiz}e`, `${raiz}es`, `${raiz}e`, `${raiz}ons`, `${raiz}ez`, `${raiz}ent`];
+  if (inf.endsWith("ir")) return [`${raiz}is`, `${raiz}is`, `${raiz}it`, `${raiz}issons`, `${raiz}issez`, `${raiz}issent`];
+  if (inf.endsWith("re")) {
+    const r = inf.slice(0, -2);
+    return [`${r}s`, `${r}s`, r, `${r}ons`, `${r}ez`, `${r}ent`];
+  }
+  return null;
+}
+
+export function subjonctifFR(inf: string): string[] | null {
+  const irr = FR_IRR[inf];
+  if (irr?.subj) return [...irr.subj];
+  if (FR_NO_REGULAR.test(inf)) return null;
+  const raiz = inf.slice(0, -2);
+  if (inf.endsWith("er")) return [`${raiz}e`, `${raiz}es`, `${raiz}e`, `${raiz}ions`, `${raiz}iez`, `${raiz}ent`];
+  if (inf.endsWith("ir")) return [`${raiz}isse`, `${raiz}isses`, `${raiz}isse`, `${raiz}issions`, `${raiz}issiez`, `${raiz}issent`];
+  // Los -re irregulares sin `subj` escrito se quedan fuera: su raíz de
+  // subjuntivo no sale de ninguna regla (prendre da prenne, boire da boive).
+  if (inf.endsWith("re") && !irr) {
+    const r = inf.slice(0, -2);
+    return [`${r}e`, `${r}es`, `${r}e`, `${r}ions`, `${r}iez`, `${r}ent`];
+  }
+  return null;
+}
+
+export function conditionnelFR(inf: string): string[] | null {
+  const irr = FR_IRR[inf];
+  let r = irr?.cond;
+  if (!r) {
+    if (FR_NO_REGULAR.test(inf)) return null;
+    if (inf.endsWith("er") || inf.endsWith("ir")) r = inf;
+    else if (inf.endsWith("re")) r = inf.slice(0, -1);
+    else return null;
+  }
+  return [`${r}ais`, `${r}ais`, `${r}ait`, `${r}ions`, `${r}iez`, `${r}aient`];
+}
+
+/** Imperativo: tú, nosotros y vosotros. En los -er la de tú pierde la -s
+ *  (`regarde`, no `regardes`), que es lo que la vuelve idéntica a la tercera
+ *  del indicativo y obliga a mirar la posición en la frase. */
+export function imperatifFR(inf: string): string[][] | null {
+  const pres = presenteFR(inf);
+  if (!pres) return null;
+  const irr = FR_IRR[inf];
+  const tu = irr?.impTu ?? (inf.endsWith("er") ? pres[0] : pres[1]);
+  return [["tu", tu], ["vous", pres[4]], ["nous", pres[3]]];
+}
+
+const FR_ANTES_OK = new Set([
+  "et", "mais", "puis", "alors", "donc", "ne", "n", "bon", "oh", "ah", "eh",
+  "me", "m", "te", "t", "se", "s", "le", "la", "les", "lui", "leur", "y", "en",
+  "surtout", "maintenant",
+]);
+/** Verbos de decir. En frances la inversion del narrador (`demande sa mere`,
+ *  `repete Manon`) cae justo detras de una interrogacion dentro de la comilla,
+ *  asi que al partir la frase por los signos queda en cabeza y pasaba por
+ *  orden. Estos no llevan bloque de imperativo nunca. */
+const FR_VERBOS_DECIR = new Set([
+  "dit", "dis", "demande", "demandent", "r\u00e9pond", "r\u00e9pondent", "ajoute", "explique",
+  "corrige", "r\u00e9p\u00e8te", "confirme", "murmure", "crie", "propose", "raconte",
+  "insiste", "pr\u00e9cise", "conclut", "lance", "coupe", "reprend", "soupire",
+]);
+export function esOrdenFR(oracion: string, forma: string): boolean {
+  if (FR_VERBOS_DECIR.has(forma.toLowerCase())) return false;
+  return abreLineaDeDialogo(oracion, forma, FR_ANTES_OK);
+}
+
 // ── Enclíticos ───────────────────────────────────────────────────────────
 // `cuéntame` no está en ninguna tabla y el lector tampoco sabe partirla: no la
 // encuentra en un diccionario ni adivina dónde acaba el verbo. Aquí se parte.
@@ -402,6 +541,220 @@ export const DE_IMP: Record<string, { inf: string; ihr: string; sie: string }> =
   halt: { inf: "halten", ihr: "haltet", sie: "halten Sie" },
   schreib: { inf: "schreiben", ihr: "schreibt", sie: "schreiben Sie" },
 };
+
+// ── Italiano ────────────────────────────────────────────────────────────
+// El congiuntivo sale de la PRIMERA persona del presente, que es la regla real
+// de la lengua: `vado` da `vada`, `dico` da `dica`, `tolgo` da `tolga`. Noi y
+// voi NO la siguen (vada pero andiamo), asi que esas dos casillas se sacan de
+// la raiz del infinitivo. Las que ni siquiera eso resuelve van escritas.
+const IT_SUBJ_IRR: Record<string, string[]> = {
+  essere: ["sia", "sia", "sia", "siamo", "siate", "siano"],
+  avere: ["abbia", "abbia", "abbia", "abbiamo", "abbiate", "abbiano"],
+  dare: ["dia", "dia", "dia", "diamo", "diate", "diano"],
+  stare: ["stia", "stia", "stia", "stiamo", "stiate", "stiano"],
+  sapere: ["sappia", "sappia", "sappia", "sappiamo", "sappiate", "sappiano"],
+  dovere: ["debba", "debba", "debba", "dobbiamo", "dobbiate", "debbano"],
+};
+
+export function congiuntivoIT(inf: string): string[] | null {
+  if (IT_SUBJ_IRR[inf]) return [...IT_SUBJ_IRR[inf]];
+  const pres = itConjuga(inf, "presente");
+  if (!pres) return null;
+  const yo = pres[0];
+  if (!yo.endsWith("o") || yo.includes(" ")) return null;
+  const raizYo = yo.slice(0, -1);
+  const raiz = inf.slice(0, -3);
+  const fin = inf.slice(-3);
+  if (fin !== "are" && fin !== "ere" && fin !== "ire") return null;
+  const t = fin === "are" ? "i" : "a";
+  // La i de la raiz se cae delante de otra i: mangiare da `mangi`, no `mangii`,
+  // y soffiare da `soffi`. Es la misma regla que ya aplica el indicativo.
+  const yoT = itRaiz(raizYo, t);
+  const noi = `${itRaiz(raiz, "iamo")}iamo`;
+  const voi = `${itRaiz(raiz, "iate")}iate`;
+  return [`${yoT}${t}`, `${yoT}${t}`, `${yoT}${t}`, noi, voi, `${yoT}${t}no`];
+}
+
+/** Congiuntivo imperfetto. Regular desde el infinitivo salvo seis verbos, que
+ *  llevan la raiz larga (fare da facessi, no "fassi"). */
+const IT_IMPF_IRR: Record<string, string> = {
+  essere: "fo", dare: "de", stare: "ste", fare: "face", dire: "dice",
+  bere: "beve", tradurre: "traduce",
+};
+export function congiuntivoImperfettoIT(inf: string): string[] | null {
+  const irr = IT_IMPF_IRR[inf];
+  const fin = inf.slice(-3);
+  if (!irr && fin !== "are" && fin !== "ere" && fin !== "ire") return null;
+  const base = irr ? `${irr}ss` : `${inf.slice(0, -3)}${fin[0]}ss`;
+  return [`${base}i`, `${base}i`, `${base}e`, `${base}imo`, `${base}e`, `${base}ero`]
+    .map((f, i) => (i === 4 ? `${base.slice(0, -2)}ste` : f));
+}
+
+const IT_COND_RAIZ: Record<string, string> = {
+  essere: "sar", avere: "avr", andare: "andr", fare: "far", dare: "dar",
+  stare: "star", potere: "potr", volere: "vorr", dovere: "dovr", sapere: "sapr",
+  venire: "verr", vedere: "vedr", rimanere: "rimarr", tenere: "terr", bere: "berr",
+  vivere: "vivr",
+};
+export function condizionaleIT(inf: string): string[] | null {
+  let r = IT_COND_RAIZ[inf];
+  if (!r) {
+    const fin = inf.slice(-3);
+    if (fin !== "are" && fin !== "ere" && fin !== "ire") return null;
+    r = fin === "ire" ? inf.slice(0, -1) : `${inf.slice(0, -3)}er`;
+  }
+  return [`${r}ei`, `${r}esti`, `${r}ebbe`, `${r}emmo`, `${r}este`, `${r}ebbero`];
+}
+
+/** Imperativo. La celda de `tu` en los -are es la raiz + a, que es la MISMA
+ *  palabra que la tercera del indicativo, asi que el modo lo decide la posicion
+ *  en la oracion, igual que en aleman y en frances. */
+const IT_IMP_TU: Record<string, string> = {
+  dire: "di'", fare: "fa'", dare: "da'", stare: "sta'", andare: "va'",
+  essere: "sii", avere: "abbi",
+};
+export function imperativoIT(inf: string): string[][] | null {
+  const pres = itConjuga(inf, "presente");
+  const subj = congiuntivoIT(inf);
+  if (!pres || !subj) return null;
+  const fin = inf.slice(-3);
+  const tu = IT_IMP_TU[inf] ?? (fin === "are" ? `${inf.slice(0, -3)}a` : pres[1]);
+  return [["Lei", subj[2]], ["tu", tu], ["voi", pres[4]]];
+}
+
+/**
+ * En italiano y en frances el imperativo es LA MISMA PALABRA que el indicativo:
+ * `guarda` es "el mira" y "mira tu", `regarde` igual. La posicion en la frase
+ * que basta en espanol (donde `deje` no es `deja`) aqui marca de orden medio
+ * corpus: leyendo la salida salian "riapre il rifugio, guarda fuori",
+ * "mangia un panino", "ne chauffe rien" y "demande sa mere", todas indicativo.
+ *
+ * Asi que aqui se pide la posicion MAS fuerte que existe: la palabra abre una
+ * linea de dialogo. Entre la comilla y la forma caben una negacion, un
+ * pronombre atono y un conector, y nada mas. Se pierden las ordenes de media
+ * frase ("adesso guardate quanta gente"), y se prefiere perderlas: una orden
+ * que no se marca no ensena nada, una indicativo marcada de orden ensena algo
+ * falso y ningun lint la ve.
+ */
+const COMILLAS_ABRE = ["\u201c", "\u201d", "\u00ab", "\u00bb", '"', "\u2014"];
+/** Sujeto DETRAS del verbo. "Non paghi tu" y "Guidi tu fino a Savona" abren la
+ *  linea de dialogo igual que una orden, pero llevan su sujeto pospuesto: son
+ *  indicativo. Un imperativo nunca lleva sujeto. */
+const SUJETOS_POSPUESTOS = new Set([
+  "io", "tu", "lui", "lei", "noi", "voi", "loro",
+  "je", "il", "elle", "on", "ils", "elles", "nous", "vous",
+]);
+function abreLineaDeDialogo(oracion: string, forma: string, permitidos: Set<string>): boolean {
+  const limpia = oracion.trimStart();
+  if (!COMILLAS_ABRE.some((c) => limpia.startsWith(c))) return false;
+  const i = limpia.toLowerCase().search(new RegExp(`\\b${forma.toLowerCase()}\\b`));
+  if (i < 0) return false;
+  // Solo cuenta como sujeto pospuesto si va PEGADO, sin coma en medio:
+  // "Non paghi tu" es indicativo, pero en "Entre, on prend l'aperitif" el `on`
+  // es de la clausula siguiente y `Entre` sigue siendo una orden.
+  const cola = limpia.slice(i + forma.length).split(/[,;:.!?"\u201c\u201d]/)[0];
+  const detras = cola.toLowerCase().split(/[^\p{L}\u00e0-\u00ff]+/u).filter(Boolean)[0];
+  if (detras && SUJETOS_POSPUESTOS.has(detras)) return false;
+  const antes = limpia.slice(1, i).toLowerCase().split(/[^\p{L}\u00e0\u00e2\u00e7\u00e9\u00e8\u00ea\u00eb\u00ee\u00ef\u00f4\u00fb\u00f9\u00fc\u00ff\u0153]+/u).filter(Boolean);
+  return antes.length <= 2 && antes.every((w) => permitidos.has(w));
+}
+
+const IT_ANTES_OK = new Set([
+  "e", "ma", "poi", "allora", "dai", "su", "beh", "no", "non", "ora", "adesso",
+  "mi", "ti", "si", "ci", "vi", "lo", "la", "li", "le", "ne", "gli", "pero", "quindi",
+]);
+export function esOrdenIT(oracion: string, forma: string): boolean {
+  return abreLineaDeDialogo(oracion, forma, IT_ANTES_OK);
+}
+
+// ── Portugués de Brasil ─────────────────────────────────────────────────
+// Cinco casillas utiles, como en `buildGlossForms.ts`: `tu` casi no se usa y
+// `vos` no existe, asi que la segunda persona la ocupa `você`.
+const PT_SUBJ_IRR: Record<string, string> = {
+  ser: "sej", estar: "estej", ter: "tenh", fazer: "faç", dizer: "dig",
+  poder: "poss", querer: "queir", saber: "saib", haver: "haj", ver: "vej",
+  vir: "venh", trazer: "trag", pôr: "ponh", ir: "vá", dar: "dê",
+};
+export function subjuntivoPresentePT(inf: string): string[] | null {
+  const irr = PT_SUBJ_IRR[inf];
+  if (inf === "ir") return ["vá", "vá", "vá", "vamos", "vão", "vão"];
+  if (inf === "dar") return ["dê", "dê", "dê", "demos", "dêem", "dêem"];
+  if (irr) return [`${irr}a`, `${irr}a`, `${irr}a`, `${irr}amos`, `${irr}am`, `${irr}am`];
+  const pres = ptConjuga(inf, "presente");
+  if (!pres) return null;
+  const yo = pres[0];
+  if (!yo.endsWith("o")) return null;
+  const raiz = yo.slice(0, -1);
+  const t = inf.slice(-2) === "ar" ? "e" : "a";
+  return [`${raiz}${t}`, `${raiz}${t}`, `${raiz}${t}`, `${raiz}${t}mos`, `${raiz}${t}m`, `${raiz}${t}m`];
+}
+
+/** Imperfeito do subjuntivo, desde la TERCERA DEL PLURAL del preterito sin su
+ *  -ram. Vale para toda la lengua: falaram da falasse, foram da fosse. */
+export function subjuntivoImperfeitoPT(inf: string): string[] | null {
+  const pret = ptConjuga(inf, "pretérito");
+  if (!pret) return null;
+  const base = pret[5].replace(/ram$/, "");
+  if (base === pret[5]) return null;
+  const i = Math.max(...["a", "e", "i", "o", "u"].map((v) => base.lastIndexOf(v)));
+  const CIRC: Record<string, string> = { a: "á", e: "ê", i: "í", o: "ô", u: "ú" };
+  if (i < 0) return null;
+  const nos = `${base.slice(0, i)}${CIRC[base[i]]}${base.slice(i + 1)}ssemos`;
+  return [`${base}sse`, `${base}sse`, `${base}sse`, nos, `${base}ssem`, `${base}ssem`];
+}
+
+/**
+ * Futuro do subjuntivo, que en Brasil se oye a diario ("quando eu tiver",
+ * "se for"). Solo los IRREGULARES: en los regulares esa forma es la misma
+ * palabra que el infinitivo ("quando falar"), y marcar de subjuntivo un
+ * infinitivo es peor que no marcar nada.
+ */
+export const PT_FUT_SUBJ: Record<string, string[]> = {
+  ser: ["for", "for", "for", "formos", "forem", "forem"],
+  ir: ["for", "for", "for", "formos", "forem", "forem"],
+  ter: ["tiver", "tiver", "tiver", "tivermos", "tiverem", "tiverem"],
+  estar: ["estiver", "estiver", "estiver", "estivermos", "estiverem", "estiverem"],
+  fazer: ["fizer", "fizer", "fizer", "fizermos", "fizerem", "fizerem"],
+  poder: ["puder", "puder", "puder", "pudermos", "puderem", "puderem"],
+  vir: ["vier", "vier", "vier", "viermos", "vierem", "vierem"],
+  saber: ["souber", "souber", "souber", "soubermos", "souberem", "souberem"],
+  querer: ["quiser", "quiser", "quiser", "quisermos", "quiserem", "quiserem"],
+  haver: ["houver", "houver", "houver", "houvermos", "houverem", "houverem"],
+  trazer: ["trouxer", "trouxer", "trouxer", "trouxermos", "trouxerem", "trouxerem"],
+  dizer: ["disser", "disser", "disser", "dissermos", "disserem", "disserem"],
+};
+
+const PT_COND_RAIZ: Record<string, string> = {
+  fazer: "far", dizer: "dir", trazer: "trar", pôr: "por",
+};
+export function condicionalPT(inf: string): string[] | null {
+  const r = PT_COND_RAIZ[inf] ?? (/(ar|er|ir|ôr)$/.test(inf) ? inf : null);
+  if (!r) return null;
+  const i = ["ia", "ia", "ia", "íamos", "iam", "iam"];
+  return i.map((x, n) => (n === 3 ? `${r}${x}` : `${r}${x}`));
+}
+
+/** Imperativo de você, que es la forma de subjuntivo. La de `tu` coincide con
+ *  el indicativo ("olha", "espera") y por eso NO se marca: en Brasil esa misma
+ *  palabra es la tercera del presente en la mayoria de las frases. */
+export function imperativoPT(inf: string): string[][] | null {
+  const subj = subjuntivoPresentePT(inf);
+  if (!subj) return null;
+  return [["você", subj[2]], ["vocês", subj[5]]];
+}
+
+const PT_ANTES_OK = new Set([
+  "e", "mas", "então", "aí", "olha", "não", "nem", "já", "agora", "depois",
+  "me", "te", "se", "nos", "lhe", "lhes", "o", "a", "os", "as", "por", "favor",
+]);
+export function esOrdenPT(oracion: string, forma: string): boolean {
+  const i = oracion.toLowerCase().search(new RegExp(`\\b${forma.toLowerCase()}\\b`));
+  if (i < 0) return false;
+  const trozo = oracion.slice(0, i);
+  const corte = Math.max(...[..."“”\"'.,;:¿?¡!()"].map((c) => trozo.lastIndexOf(c)));
+  const antes = trozo.slice(corte + 1).toLowerCase().split(/[^\p{L}áéíóúâêôãõç]+/u).filter(Boolean);
+  return antes.every((w) => PT_ANTES_OK.has(w));
+}
 
 // ── Italiano y portugués ─────────────────────────────────────────────────
 // Tablas cortas y escritas a mano, no un motor: en estos dos paquetes el modo

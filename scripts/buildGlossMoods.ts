@@ -19,9 +19,188 @@ import { presente, preterito, personas, indicePorForma, IRREGULARES } from "./bu
 import {
   type Bloque, type Modo, subjuntivoPresenteES, subjuntivoPasadoES, condicionalES,
   imperativoES, esOrdenES, esOrdenDE, negadaAquiES, parteEncliticaES, ES_IMP_TU, ES_PRON_EN,
-  aVarianteModo, conClitico, vosSubjuntivo,
-  DE_K2, DE_IMP, IT_MODOS, PT_MODOS,
+  aVarianteModo, conClitico, vosSubjuntivo, DE_K2, DE_IMP,
+  congiuntivoIT, congiuntivoImperfettoIT, condizionaleIT, imperativoIT, esOrdenIT,
+  subjuntivoPresentePT, subjuntivoImperfeitoPT, PT_FUT_SUBJ, condicionalPT, imperativoPT, esOrdenPT,
+  presenteFR, subjonctifFR, conditionnelFR, imperatifFR, esOrdenFR, FR_PERSONAS,
 } from "./glossMoods";
+import { itConjuga, ptConjuga, IT_PERSONAS, PT_PERSONAS } from "./buildGlossForms";
+
+/**
+ * Un idioma = un motor. Lo que el motor tiene que saber decir es: el presente
+ * (para la celda de contraste), que formas son INDICATIVO (lo que no se toca),
+ * los modos, y si una forma en una oracion dada es una orden.
+ *
+ * Un idioma que no este aqui NO se marca. Hoy estan los cinco que tienen
+ * paquete: espanol, aleman, italiano, portugues y frances; el espanol y el
+ * aleman van por su propio camino mas abajo (encliticos y voseo el uno,
+ * tablas cerradas de Konjunktiv II el otro).
+ */
+type Motor = {
+  personas: string[];
+  presente: (inf: string) => string[] | null;
+  indicativos: Array<(inf: string) => string[] | null>;
+  subj?: (inf: string) => string[] | null;
+  subjPasado?: (inf: string) => string[] | null;
+  subjFuturo?: (inf: string) => string[] | null;
+  cond?: (inf: string) => string[] | null;
+  imper?: (inf: string) => string[][] | null;
+  esOrden: (oracion: string, forma: string) => boolean;
+  /**
+   * Formas que PODRIAN ser indicativo aunque el motor no sepa conjugar ese
+   * verbo. Es la red que faltaba: `ptConjuga` se niega a conjugar `cobrir` y
+   * `sentir` (raiz que cambia), asi que `cobre` y `sente` no estaban en el
+   * indice de indicativo y los reclamaba el subjuntivo de `cobrar` y de
+   * `sentar`, que son la misma palabra. Un homografo sin resolver se queda sin
+   * bloque.
+   */
+  posibleIndicativo: (inf: string) => string[];
+  /** El infinitivo, para el enlace y el lema. */
+  finales: RegExp;
+};
+
+export const MOTORES: Record<string, Motor> = {
+  italian: {
+    personas: IT_PERSONAS,
+    presente: (inf) => itConjuga(inf, "presente"),
+    indicativos: [(inf) => itConjuga(inf, "presente"), (inf) => itConjuga(inf, "imperfecto")],
+    subj: congiuntivoIT,
+    subjPasado: congiuntivoImperfettoIT,
+    cond: condizionaleIT,
+    imper: imperativoIT,
+    esOrden: esOrdenIT,
+    posibleIndicativo: (inf) => {
+      const r = inf.slice(0, -3);
+      if (!/(are|ere|ire)$/.test(inf)) return [];
+      return inf.endsWith("are") ? [`${r}a`, `${r}i`, `${r}ano`] : [`${r}e`, `${r}i`, `${r}ono`];
+    },
+    finales: /(are|ere|ire)$/,
+  },
+  portuguese: {
+    personas: PT_PERSONAS,
+    presente: (inf) => ptConjuga(inf, "presente"),
+    indicativos: [
+      (inf) => ptConjuga(inf, "presente"),
+      (inf) => ptConjuga(inf, "pretérito"),
+      (inf) => ptConjuga(inf, "imperfecto"),
+    ],
+    subj: subjuntivoPresentePT,
+    subjPasado: subjuntivoImperfeitoPT,
+    subjFuturo: (inf) => PT_FUT_SUBJ[inf] ?? null,
+    cond: condicionalPT,
+    imper: imperativoPT,
+    esOrden: esOrdenPT,
+    posibleIndicativo: (inf) => {
+      const r = inf.slice(0, -2);
+      if (!/(ar|er|ir)$/.test(inf)) return [];
+      if (inf.endsWith("ar")) return [`${r}a`, `${r}am`];
+      // Los -ir de Brasil suben la vocal de la raiz en la tercera: sumir da
+      // `some`, subir da `sobe`, fugir da `foge`. Sin esta variante, `some`
+      // se lo quedaba el subjuntivo de `somar`, que es la misma palabra, y
+      // salieron seis "O sol some" marcados de subjuntivo.
+      const subida = r.replace(/u([^aeiou]*)$/, "o$1");
+      return [`${r}e`, `${r}em`, `${subida}e`, `${subida}em`];
+    },
+    finales: /(ar|er|ir|ôr)$/,
+  },
+  french: {
+    personas: FR_PERSONAS,
+    presente: presenteFR,
+    indicativos: [presenteFR],
+    subj: subjonctifFR,
+    cond: conditionnelFR,
+    imper: imperatifFR,
+    esOrden: esOrdenFR,
+    posibleIndicativo: (inf) => {
+      const r = inf.slice(0, -2);
+      if (inf.endsWith("er")) return [`${r}e`, `${r}es`, `${r}ent`];
+      if (inf.endsWith("ir")) return [`${r}is`, `${r}it`, `${r}issent`];
+      if (inf.endsWith("re")) return [`${r}s`, r, `${r}ent`];
+      return [];
+    },
+    finales: /(er|ir|re|oir)$/,
+  },
+};
+
+type Idx = Map<string, { inf: string; i: number }>;
+
+/** Los idiomas con capa gramatical escrita. Uno que no este aqui no se marca,
+ *  y el lint lo NOMBRA en cada pasada en vez de callarse. */
+export const CON_MOTOR = ["spanish", "german", "italian", "portuguese", "french"];
+
+/** El bloque de un idioma con motor generico (italiano, portugues, frances). */
+function bloqueMotor(
+  motor: Motor, w: string, oracion: string,
+  idx: { subj: Idx; pas: Idx; fut: Idx; cond: Idx; imper: Idx }
+): Bloque | null {
+  const P = motor.personas;
+  const par = (etiqueta: string, izq: string, aqui: string): string[][] =>
+    [[etiqueta, izq], [etiqueta === "preterite" ? "past subjunctive" : "subjunctive", aqui]];
+
+  // El imperativo va PRIMERO, y solo si la posicion en la frase lo prueba: en
+  // frances `regarde` es la tercera del indicativo y el imperativo de tu, y en
+  // italiano `scusi` es la segunda del indicativo y la orden de cortesia.
+  const im = idx.imper.get(w);
+  if (im && motor.imper && motor.esOrden(oracion, w)) {
+    const cel = motor.imper(im.inf)!;
+    const formal = cel[im.i]?.[0];
+    return {
+      mood: formal === "Lei" || formal === "você" || formal === "vous" ? "Formal command" : "Command",
+      kind: "line", head: [], rows: cel, here: im.i,
+    };
+  }
+
+  const sp = idx.subj.get(w);
+  if (sp) {
+    const tabla = motor.subj!(sp.inf)!;
+    const ind = motor.presente(sp.inf);
+    if (!ind) return null;
+    return {
+      mood: "Subjunctive", kind: "expand", link: `See ${sp.inf}`,
+      lemma: `${sp.inf} (present subjunctive)`,
+      head: par("present", ind[sp.i], w),
+      rows: tabla.map((f, i) => [P[i], f]), here: sp.i,
+    };
+  }
+
+  const pa = idx.pas.get(w);
+  if (pa && motor.subjPasado) {
+    const ind = motor.indicativos[1]?.(pa.inf) ?? motor.presente(pa.inf);
+    if (!ind) return null;
+    return {
+      mood: "Past subjunctive", kind: "expand", link: `See ${pa.inf}`,
+      lemma: `${pa.inf} (past subjunctive)`,
+      head: par("preterite", ind[pa.i], w),
+      rows: motor.subjPasado(pa.inf)!.map((f, i) => [P[i], f]), here: pa.i,
+    };
+  }
+
+  const fu = idx.fut.get(w);
+  if (fu && motor.subjFuturo) {
+    const ind = motor.presente(fu.inf);
+    if (!ind) return null;
+    return {
+      mood: "Future subjunctive", kind: "expand", link: `See ${fu.inf}`,
+      lemma: `${fu.inf} (future subjunctive)`,
+      head: [["present", ind[fu.i]], ["future subjunctive", w]],
+      rows: motor.subjFuturo(fu.inf)!.map((f, i) => [P[i], f]), here: fu.i,
+    };
+  }
+
+  const co = idx.cond.get(w);
+  if (co && motor.cond) {
+    const ind = motor.presente(co.inf);
+    if (!ind) return null;
+    return {
+      mood: "Conditional", kind: "expand", link: `See ${co.inf}`,
+      lemma: `${co.inf} (conditional)`,
+      head: [["present", ind[co.i]], ["conditional", w]],
+      rows: motor.cond(co.inf)!.map((f, i) => [P[i], f]), here: co.i,
+    };
+  }
+
+  return null;
+}
 
 const prisma = new PrismaClient();
 type Entrada = { g?: string; t?: string; c?: { es: string; en: string }; f?: Record<string, unknown> };
@@ -195,8 +374,10 @@ function bloqueES(
   return null;
 }
 
-function bloqueOtro(idioma: string, w: string, oracion: string): Bloque | null {
-  if (idioma === "german") {
+/** Aleman: tablas cerradas, no motor. Solo entra la forma de Konjunktiv II que
+ *  NO coincide con el Prateritum, y el imperativo de du que ningun indicativo
+ *  comparte. Ver los comentarios de `DE_K2` y `DE_IMP`. */
+function bloqueDE(w: string, oracion: string): Bloque | null {
     const k = DE_K2[w];
     if (k) return {
       mood: "Konjunktiv II", kind: "expand", link: `See ${k.inf}`,
@@ -211,23 +392,8 @@ function bloqueOtro(idioma: string, w: string, oracion: string): Bloque | null {
       rows: [["du", w], ["ihr", im.ihr], ["Sie", im.sie]], here: 0,
     };
     return null;
-  }
-  const tabla = idioma === "italian" ? IT_MODOS : idioma === "portuguese" ? PT_MODOS : null;
-  const m = tabla?.[w];
-  if (!m) return null;
-  if (m.modo === "Formal command") {
-    return { mood: m.modo, kind: "line", head: [], rows: m.rows, here: 0 };
-  }
-  const etiqueta: Record<string, string> = {
-    Subjunctive: "subjunctive", "Past subjunctive": "past subjunctive", Conditional: "conditional",
-  };
-  return {
-    mood: m.modo, kind: "expand", link: `See ${m.inf}`,
-    lemma: `${m.inf} (${etiqueta[m.modo] ?? m.modo.toLowerCase()})`,
-    head: [[m.modo === "Past subjunctive" ? "preterite" : "present", m.ind], [etiqueta[m.modo] ?? "", w]],
-    rows: m.rows, here: m.rows.findIndex((r) => r[1] === w),
-  };
 }
+
 
 /** Los bloques que le tocan a un paquete, sin escribir nada. Lo comparten el
  *  generador y el lint `checkGlossMoods.ts`, para que el lint mida exactamente
@@ -244,17 +410,23 @@ export async function moodsDeBundle(
   if (!global) return null;
   const idioma = (global.language ?? "").toLowerCase();
   const variante = (global.variant ?? "").trim().toLowerCase();
-  if (!["spanish", "german", "italian", "portuguese"].includes(idioma)) {
-    return { pendientes: [], idioma, capas: [] };
-  }
+  if (!CON_MOTOR.includes(idioma)) return { pendientes: [], idioma, capas: [] };
   const capas = filas.filter((f) => f.slug !== "");
   const plana = global.glosses as Record<string, Entrada>;
 
   const infinitivos = new Set<string>(idioma === "spanish" ? Object.keys(IRREGULARES) : []);
-  const FIN = idioma === "italian" ? /(are|ere|ire)$/ : idioma === "german" ? /(en|eln|ern)$/ : /(ar|er|ir|ír)$/;
+  // Las terminaciones del infinitivo son de cada idioma. Con la regex espanola,
+  // los `-re` y los `-oir` franceses no entraban en el barrido y medio motor se
+  // quedaba sin verbos.
+  const FIN = idioma === "italian" ? /(are|ere|ire)$/
+    : idioma === "german" ? /(en|eln|ern)$/
+    : idioma === "french" ? /(er|ir|re|oir)$/
+    : /(ar|er|ir|ír)$/;
   const TOK = idioma === "italian"
     ? /\b([a-zàèéìòù]{3,}(?:are|ere|ire))(?:si)?\b/g
-    : /\b([a-záéíóúñãõçü]{2,}(?:ar|er|ir|ír))(?:se|me|te|nos)?\b/g;
+    : idioma === "french"
+      ? /\b([a-zàâçéèêëîïôûùüÿœ]{2,}(?:er|ir|re|oir))\b/g
+      : /\b([a-záéíóúñãõçü]{2,}(?:ar|er|ir|ír))(?:se|me|te|nos)?\b/g;
   for (const fuente of [plana, ...capas.map((c) => c.glosses as Record<string, Entrada>)]) {
     for (const [k, v] of Object.entries(fuente)) {
       if (v?.t === "verb" && FIN.test(k)) infinitivos.add(k);
@@ -295,6 +467,49 @@ export async function moodsDeBundle(
   const idxPas = idioma === "spanish" ? mk(subjuntivoPasadoES) : new Map();
   const idxCond = idioma === "spanish" ? mk(condicionalES) : new Map();
 
+  // Italiano, portugues y frances: un motor por idioma. El indice de indicativo
+  // se llena con TODOS los tiempos que el motor sabe, porque lo que ya es
+  // indicativo no se toca; el de imperativo indexa las celdas de la orden, que
+  // en estos tres idiomas son las que chocan con el indicativo.
+  const motor = MOTORES[idioma];
+  const idxM = { subj: new Map() as Idx, pas: new Map() as Idx, fut: new Map() as Idx, cond: new Map() as Idx, imper: new Map() as Idx };
+  if (motor) {
+    for (const gen of motor.indicativos) {
+      for (const inf of infinitivos) {
+        for (const f of gen(inf) ?? []) indicativo.add(f.toLowerCase());
+      }
+    }
+    for (const inf of infinitivos) {
+      for (const f of motor.posibleIndicativo(inf)) indicativo.add(f.toLowerCase());
+    }
+    // Misma preferencia de persona que en espanol: cuando varias casillas son
+    // la MISMA palabra (`tiver` es eu, voce y ele a la vez), gana la tercera
+    // del singular, que es la lectura corriente en narracion. Quedarse con la
+    // primera que aparece dejaba `tiver` rotulado de "eu".
+    const PREF_M = [2, 1, 5, 3, 0, 4];
+    const llena = (destino: Idx, gen?: (inf: string) => string[] | null) => {
+      if (!gen) return;
+      for (const inf of infinitivos) {
+        (gen(inf) ?? []).forEach((f, i) => {
+          const k = f.toLowerCase();
+          const y = destino.get(k);
+          if (!y) destino.set(k, { inf, i });
+          else if (y.inf === inf && PREF_M.indexOf(i) < PREF_M.indexOf(y.i)) destino.set(k, { inf, i });
+        });
+      }
+    };
+    llena(idxM.subj, motor.subj);
+    llena(idxM.pas, motor.subjPasado);
+    llena(idxM.fut, motor.subjFuturo);
+    llena(idxM.cond, motor.cond);
+    for (const inf of infinitivos) {
+      (motor.imper?.(inf) ?? []).forEach(([, f], i) => {
+        const k = f.toLowerCase();
+        if (!idxM.imper.has(k)) idxM.imper.set(k, { inf, i });
+      });
+    }
+  }
+
   const textos = new Map<string, string>();
   {
     const st = await prismaC.journeyStory.findMany({
@@ -317,11 +532,23 @@ export async function moodsDeBundle(
       if (fuente?.t !== "verb") continue;
       const e = capa[w] ?? plana[w];
       if (!fuerza && e.f && (e.f as { mood?: string }).mood) continue;
-      if (indicativo.has(w) || AMBIGUAS.has(w) || SIN_BLOQUE.has(w)) continue;
+      if (AMBIGUAS.has(w) || SIN_BLOQUE.has(w)) continue;
       const oracion = oracionDe(texto, e.c?.es ?? "", w);
+      // El imperativo GANA al indicativo, pero solo con la posicion de la frase
+      // de su parte: en frances `regarde` es la tercera del indicativo y la
+      // orden de tu, y en italiano `scusi` es la segunda del indicativo y la
+      // orden de cortesia. Sin esta precedencia, o se pierden todas las ordenes
+      // o el presente entero sale marcado de subjuntivo (en frances el
+      // subjonctif de los -er es la misma palabra que el indicativo).
+      const ordenProbada = !!motor && idxM.imper.has(w) && motor.esOrden(oracion, w);
+      if (!ordenProbada && indicativo.has(w)) continue;
       const b = idioma === "spanish"
         ? bloqueES(w, oracion, variante, idxSubj, idxPas, idxCond, infinitivos, P)
-        : bloqueOtro(idioma, w, oracion);
+        : idioma === "german"
+          ? bloqueDE(w, oracion)
+          : motor
+            ? bloqueMotor(motor, w, oracion, idxM)
+            : null;
       if (!b) continue;
       if (b.here < 0 && b.kind === "expand") continue;
       pendientes.push({ slug: fila.slug, palabra: w, bloque: b, oracion });
@@ -355,7 +582,7 @@ async function main() {
   for (const nombre of objetivo) {
     const r = await moodsDeBundle(prisma, nombre, fuerza);
     if (!r) { console.error(`el paquete ${nombre} no existe en la base`); process.exitCode = 1; continue; }
-    if (!["spanish", "german", "italian", "portuguese"].includes(r.idioma)) {
+    if (!CON_MOTOR.includes(r.idioma)) {
       console.log(`${nombre}: idioma "${r.idioma}" sin tablas de modo, no toco nada`);
       continue;
     }
