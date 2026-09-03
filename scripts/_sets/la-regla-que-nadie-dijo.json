@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "lavado,cobertor,guardarropa,ajeno",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "lavado",
-     "answer": "the washing",
-     "options": [
-      "the washing",
-      "a bedspread",
-      "a wardrobe",
-      "not one's own"
-     ]
-    },
-    {
-     "word": "cobertor",
-     "answer": "a bedspread",
-     "options": [
-      "the washing",
-      "a bedspread",
-      "a wardrobe",
-      "not one's own"
-     ]
-    },
-    {
-     "word": "guardarropa",
-     "answer": "a wardrobe",
-     "options": [
-      "the washing",
-      "a bedspread",
-      "a wardrobe",
-      "not one's own"
-     ]
-    },
-    {
-     "word": "ajeno",
-     "answer": "not one's own",
-     "options": [
-      "the washing",
-      "a bedspread",
-      "a wardrobe",
-      "not one's own"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "lavado,cobertor,guardarropa,ajeno",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "lavado",
+          "answer": "the washing",
+          "options": [
+            "the washing",
+            "a bedspread",
+            "a wardrobe",
+            "not one's own"
+          ]
+        },
+        {
+          "word": "cobertor",
+          "answer": "a bedspread",
+          "options": [
+            "the washing",
+            "a bedspread",
+            "a wardrobe",
+            "not one's own"
+          ]
+        },
+        {
+          "word": "guardarropa",
+          "answer": "a wardrobe",
+          "options": [
+            "the washing",
+            "a bedspread",
+            "a wardrobe",
+            "not one's own"
+          ]
+        },
+        {
+          "word": "ajeno",
+          "answer": "not one's own",
+          "options": [
+            "the washing",
+            "a bedspread",
+            "a wardrobe",
+            "not one's own"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "friega",
-  "sentence": "Decide corregirse trabajando y _____ los platos sucios.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "friega",
-   "options": [
-    "friega",
-    "rompe",
-    "guarda",
-    "cuenta"
-   ],
-   "translation": "She decides to make up for it by working and _____ the dirty plates.",
-   "optionTranslations": [
-    "scrubs",
-    "breaks",
-    "puts away",
-    "counts"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "Decide corregirse trabajando y friega los platos sucios.",
-    "targetWord": "friega",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "barre",
-  "sentence": "Hay polvo en el cuarto y ella lo _____ despacio.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "barre",
-   "options": [
-    "barre",
-    "pinta",
-    "moja",
-    "cierra"
-   ],
-   "translation": "There is dust in the room and she _____ it slowly.",
-   "optionTranslations": [
-    "sweeps",
-    "paints",
-    "wets",
-    "closes"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "Hay polvo en el cuarto y ella lo barre despacio.",
-    "targetWord": "barre",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "tiende",
-  "sentence": "Saca la ropa mojada y la _____ al sol.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "tiende",
-   "options": [
-    "tiende",
-    "dobla",
-    "plancha",
-    "lava"
-   ],
-   "translation": "She takes the wet clothes out and _____ them in the sun.",
-   "optionTranslations": [
-    "hangs out",
-    "folds",
-    "irons",
-    "washes"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "Saca la ropa mojada y la tiende al sol.",
-    "targetWord": "tiende",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "hervir",
-  "sentence": "Pone el agua a _____ para el café.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "hervir",
-   "options": [
-    "hervir",
-    "secar",
-    "enfriar",
-    "cortar"
-   ],
-   "translation": "She puts the water on to _____ for the coffee.",
-   "optionTranslations": [
-    "boil",
-    "dry",
-    "cool",
-    "cut"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "Pone el agua a hervir para el café.",
-    "targetWord": "hervir",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "acomodar",
-  "sentence": "Repite lo mismo y [[acomoda]] el cobertor de otra forma.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to arrange",
-   "options": [
-    "to arrange",
-    "to remove",
-    "to buy",
-    "to measure"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "Repite lo mismo y acomoda el cobertor de otra forma.",
-    "targetWord": "acomoda",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "planchar",
-  "sentence": "A la mañana [[plancha]] la camisa que ya se había secado.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to iron",
-   "options": [
-    "to iron",
-    "to wash",
-    "to sew",
-    "to fold"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "A la mañana plancha la camisa que ya se había secado.",
-    "targetWord": "plancha",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "molestar",
-  "sentence": "Yo solo quiero ayudar, insiste, y no ve que [[molesta]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to be a bother",
-   "options": [
-    "to be a bother",
-    "to be a help",
-    "to be a joke",
-    "to be a rule"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "Yo solo quiero ayudar, insiste, y no ve que molesta.",
-    "targetWord": "molesta",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "aguantar",
-  "sentence": "Amparo se moja las manos, escucha y [[aguanta]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to put up with it",
-   "options": [
-    "to put up with it",
-    "to give up",
-    "to answer back",
-    "to walk out"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "Amparo se moja las manos, escucha y aguanta.",
-    "targetWord": "aguanta",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sobrar",
-  "sentence": "Suelta la palabra que [[sobra]] y Yolanda calla.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to be one too many",
-   "options": [
-    "to be one too many",
-    "to be missing",
-    "to be needed",
-    "to be right"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "Suelta la palabra que sobra y Yolanda calla.",
-    "targetWord": "sobra",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "repetir",
-  "sentence": "Delante de ella [[repite]] lo mismo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to do again",
-   "options": [
-    "to do again",
-    "to undo",
-    "to explain",
-    "to promise"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "Delante de ella repite lo mismo.",
-    "targetWord": "repite",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "secarse",
-  "sentence": "Plancha la camisa que ya se había [[secado]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to dry",
-   "options": [
-    "to dry",
-    "to shrink",
-    "to tear",
-    "to fade"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "Plancha la camisa que ya se había secado.",
-    "targetWord": "secado",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "friega",
+    "sentence": "Decide corregirse trabajando y _____ los platos sucios.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "friega",
+      "options": [
+        "friega",
+        "rompe",
+        "guarda",
+        "cuenta"
+      ],
+      "translation": "She decides to make up for it by working and _____ the dirty plates.",
+      "optionTranslations": [
+        "scrubs",
+        "breaks",
+        "puts away",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "Decide corregirse trabajando y friega los platos sucios.",
+        "targetWord": "friega",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9701facf773daece.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "callar",
-  "sentence": "Yolanda [[calla]] y Amparo se queda quieta.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to say nothing",
-   "options": [
-    "to say nothing",
-    "to shout",
-    "to laugh",
-    "to agree"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "Yolanda calla y Amparo se queda quieta.",
-    "targetWord": "calla",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "barre",
+    "sentence": "Hay polvo en el cuarto y ella lo _____ despacio.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "barre",
+      "options": [
+        "barre",
+        "pinta",
+        "moja",
+        "cierra"
+      ],
+      "translation": "There is dust in the room and she _____ it slowly.",
+      "optionTranslations": [
+        "sweeps",
+        "paints",
+        "wets",
+        "closes"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "Hay polvo en el cuarto y ella lo barre despacio.",
+        "targetWord": "barre",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8f2dc91e7381328.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "amable",
-  "sentence": "Yo solo quiero ayudar, insiste ella, [[amable]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "kind",
-   "options": [
-    "kind",
-    "rude",
-    "tired",
-    "proud"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "Yo solo quiero ayudar, insiste ella, amable.",
-    "targetWord": "amable",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "tiende",
+    "sentence": "Saca la ropa mojada y la _____ al sol.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tiende",
+      "options": [
+        "tiende",
+        "dobla",
+        "plancha",
+        "lava"
+      ],
+      "translation": "She takes the wet clothes out and _____ them in the sun.",
+      "optionTranslations": [
+        "hangs out",
+        "folds",
+        "irons",
+        "washes"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "Saca la ropa mojada y la tiende al sol.",
+        "targetWord": "tiende",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74de2731b9e86a08.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "libre",
-  "sentence": "El domingo deje [[libre]] el guardarropa.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "free, clear",
-   "options": [
-    "free, clear",
-    "full",
-    "locked",
-    "broken"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "El domingo deje libre el guardarropa.",
-    "targetWord": "libre",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "hervir",
+    "sentence": "Pone el agua a _____ para el café.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "hervir",
+      "options": [
+        "hervir",
+        "secar",
+        "enfriar",
+        "cortar"
+      ],
+      "translation": "She puts the water on to _____ for the coffee.",
+      "optionTranslations": [
+        "boil",
+        "dry",
+        "cool",
+        "cut"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "Pone el agua a hervir para el café.",
+        "targetWord": "hervir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/242200862c7f2066.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "suave",
-  "sentence": "A la mañana habla bajito, con voz [[suave]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "soft",
-   "options": [
-    "soft",
-    "harsh",
-    "loud",
-    "quick"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "A la mañana habla bajito, con voz suave.",
-    "targetWord": "suave",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "acomodar",
+    "sentence": "Repite lo mismo y [[acomoda]] el cobertor de otra forma.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to arrange",
+      "options": [
+        "to arrange",
+        "to remove",
+        "to buy",
+        "to measure"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "Repite lo mismo y acomoda el cobertor de otra forma.",
+        "targetWord": "acomoda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7ff290139629e3ac.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "mojar",
-  "sentence": "Amparo se [[moja]] las manos, escucha y aguanta.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to get wet",
-   "options": [
-    "to get wet",
-    "to dry off",
-    "to warm up",
-    "to rub"
-   ],
-   "audioClip": {
-    "storySlug": "la-regla-que-nadie-dijo",
-    "storySource": "user",
-    "sentence": "Amparo se moja las manos, escucha y aguanta.",
-    "targetWord": "moja",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "planchar",
+    "sentence": "A la mañana [[plancha]] la camisa que ya se había secado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to iron",
+      "options": [
+        "to iron",
+        "to wash",
+        "to sew",
+        "to fold"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "A la mañana plancha la camisa que ya se había secado.",
+        "targetWord": "plancha",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/86dae0ea3b5895ac.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "molestar",
+    "sentence": "Yo solo quiero ayudar, insiste, y no ve que [[molesta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be a bother",
+      "options": [
+        "to be a bother",
+        "to be a help",
+        "to be a joke",
+        "to be a rule"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "Yo solo quiero ayudar, insiste, y no ve que molesta.",
+        "targetWord": "molesta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a889bba0fa310cb.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "aguantar",
+    "sentence": "Amparo se moja las manos, escucha y [[aguanta]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to put up with it",
+      "options": [
+        "to put up with it",
+        "to give up",
+        "to answer back",
+        "to walk out"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "Amparo se moja las manos, escucha y aguanta.",
+        "targetWord": "aguanta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1b4128b02b65bafc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sobrar",
+    "sentence": "Suelta la palabra que [[sobra]] y Yolanda calla.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be one too many",
+      "options": [
+        "to be one too many",
+        "to be missing",
+        "to be needed",
+        "to be right"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "Suelta la palabra que sobra y Yolanda calla.",
+        "targetWord": "sobra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0dfd5b2d0838a838.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "repetir",
+    "sentence": "Delante de ella [[repite]] lo mismo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to do again",
+      "options": [
+        "to do again",
+        "to undo",
+        "to explain",
+        "to promise"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "Delante de ella repite lo mismo.",
+        "targetWord": "repite",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a30f4988783b5aab.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "secarse",
+    "sentence": "Plancha la camisa que ya se había [[secado]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dry",
+      "options": [
+        "to dry",
+        "to shrink",
+        "to tear",
+        "to fade"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "Plancha la camisa que ya se había secado.",
+        "targetWord": "secado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/521dd2d341a8de24.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "callar",
+    "sentence": "Yolanda [[calla]] y Amparo se queda quieta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to say nothing",
+      "options": [
+        "to say nothing",
+        "to shout",
+        "to laugh",
+        "to agree"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "Yolanda calla y Amparo se queda quieta.",
+        "targetWord": "calla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/61e4f6474526e380.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "amable",
+    "sentence": "Yo solo quiero ayudar, insiste ella, [[amable]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "kind",
+      "options": [
+        "kind",
+        "rude",
+        "tired",
+        "proud"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "Yo solo quiero ayudar, insiste ella, amable.",
+        "targetWord": "amable",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e00736b7cba37a3e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "libre",
+    "sentence": "El domingo deje [[libre]] el guardarropa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "free, clear",
+      "options": [
+        "free, clear",
+        "full",
+        "locked",
+        "broken"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "El domingo deje libre el guardarropa.",
+        "targetWord": "libre",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cff50d22c210f5f7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "suave",
+    "sentence": "A la mañana habla con voz [[suave]], sin gritar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soft",
+      "options": [
+        "soft",
+        "harsh",
+        "loud",
+        "quick"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "A la mañana habla con voz suave, sin gritar.",
+        "targetWord": "suave",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d7b4d8f2fb2c2a0e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mojar",
+    "sentence": "Amparo se [[moja]] las manos, escucha y aguanta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get wet",
+      "options": [
+        "to get wet",
+        "to dry off",
+        "to warm up",
+        "to rub"
+      ],
+      "audioClip": {
+        "storySlug": "la-regla-que-nadie-dijo",
+        "storySource": "user",
+        "sentence": "Amparo se moja las manos, escucha y aguanta.",
+        "targetWord": "moja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1b4128b02b65bafc.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

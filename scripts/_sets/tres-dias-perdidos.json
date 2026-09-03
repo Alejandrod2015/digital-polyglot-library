@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "isla,corriente,chaleco,regreso",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "isla",
-     "answer": "island",
-     "options": [
-      "island",
-      "current",
-      "life vest",
-      "return trip"
-     ]
-    },
-    {
-     "word": "corriente",
-     "answer": "current",
-     "options": [
-      "island",
-      "current",
-      "life vest",
-      "return trip"
-     ]
-    },
-    {
-     "word": "chaleco",
-     "answer": "life vest",
-     "options": [
-      "island",
-      "current",
-      "life vest",
-      "return trip"
-     ]
-    },
-    {
-     "word": "regreso",
-     "answer": "return trip",
-     "options": [
-      "island",
-      "current",
-      "life vest",
-      "return trip"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "isla,corriente,chaleco,regreso",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "isla",
+          "answer": "island",
+          "options": [
+            "island",
+            "current",
+            "life vest",
+            "return trip"
+          ]
+        },
+        {
+          "word": "corriente",
+          "answer": "current",
+          "options": [
+            "island",
+            "current",
+            "life vest",
+            "return trip"
+          ]
+        },
+        {
+          "word": "chaleco",
+          "answer": "life vest",
+          "options": [
+            "island",
+            "current",
+            "life vest",
+            "return trip"
+          ]
+        },
+        {
+          "word": "regreso",
+          "answer": "return trip",
+          "options": [
+            "island",
+            "current",
+            "life vest",
+            "return trip"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "mojada",
-  "sentence": "Sacó la carga del agua y ahora está toda _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "mojada",
-   "options": [
-    "mojada",
-    "vendida",
-    "cerrada",
-    "vacía"
-   ],
-   "translation": "He took the load out of the water and now it is all _____.",
-   "optionTranslations": [
-    "wet",
-    "sold",
-    "closed",
-    "empty"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "Sacó la carga del agua y ahora está toda mojada.",
-    "targetWord": "mojada",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "marrón",
-  "sentence": "El agua del río no es azul: es _____ y espesa.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "marrón",
-   "options": [
-    "marrón",
-    "dorada",
-    "clara",
-    "verde"
-   ],
-   "translation": "The river water is not blue: it is _____ and thick.",
-   "optionTranslations": [
-    "brown",
-    "golden",
-    "clear",
-    "green"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "El agua del río no es azul: es marrón y espesa.",
-    "targetWord": "marrón",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "arrastra",
-  "sentence": "El bulto pesa mucho y por eso lo _____ por el suelo.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "arrastra",
-   "options": [
-    "arrastra",
-    "levanta",
-    "guarda",
-    "abre"
-   ],
-   "translation": "The bundle is very heavy, so he _____ it along the ground.",
-   "optionTranslations": [
-    "drags",
-    "lifts",
-    "puts away",
-    "opens"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "El bulto pesa mucho y por eso lo arrastra por el suelo.",
-    "targetWord": "arrastra",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "estricta",
-  "sentence": "No deja pasar ni un error: es muy _____ con los papeles.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "estricta",
-   "options": [
-    "estricta",
-    "alegre",
-    "lenta",
-    "nueva"
-   ],
-   "translation": "She lets no mistake through: she is very _____ with papers.",
-   "optionTranslations": [
-    "strict",
-    "cheerful",
-    "slow",
-    "new"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "No deja pasar ni un error: es muy estricta con los papeles.",
-    "targetWord": "estricta",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "detenerse",
-  "sentence": "Firma sin [[detenerse]] y le devuelve el papel.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to stop",
-   "options": [
-    "to stop",
-    "to look up",
-    "to complain",
-    "to smile"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "Firma sin detenerse y le devuelve el papel.",
-    "targetWord": "detenerse",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "subirse",
-  "sentence": "Percy se [[sube]] y sujeta el chaleco.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to get on board",
-   "options": [
-    "to get on board",
-    "to sit down",
-    "to jump off",
-    "to lie back"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "Percy se sube y sujeta el chaleco.",
-    "targetWord": "sube",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "asomarse",
-  "sentence": "Se [[asoma]] mientras descargan, y avanza.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to lean out",
-   "options": [
-    "to lean out",
-    "to hide",
-    "to shout",
-    "to sleep"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "Se asoma mientras descargan, y avanza.",
-    "targetWord": "asoma",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "sujetar",
-  "sentence": "Percy se sube y [[sujeta]] el chaleco.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to hold on to",
-   "options": [
-    "to hold on to",
-    "to fold",
-    "to throw",
-    "to open"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "Percy se sube y sujeta el chaleco.",
-    "targetWord": "sujeta",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "acelerar",
-  "sentence": "Lo dice antes de que la balsa [[acelere]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to speed up",
-   "options": [
-    "to speed up",
-    "to sink",
-    "to turn back",
-    "to stop"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "Lo dice antes de que la balsa acelere.",
-    "targetWord": "acelere",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "avanzar",
-  "sentence": "Se asoma mientras descargan, y [[avanza]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to move forward",
-   "options": [
-    "to move forward",
-    "to fall back",
-    "to look round",
-    "to sit down"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "Se asoma mientras descargan, y avanza.",
-    "targetWord": "avanza",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "ordenado",
-  "sentence": "Le devuelve el papel, [[ordenada]] y estricta.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "tidy",
-   "options": [
-    "tidy",
-    "noisy",
-    "rushed",
-    "careless"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "Le devuelve el papel, ordenada y estricta.",
-    "targetWord": "ordenada",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "mojada",
+    "sentence": "Sacó la carga del agua y ahora está toda _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mojada",
+      "options": [
+        "mojada",
+        "vendida",
+        "cerrada",
+        "vacía"
+      ],
+      "translation": "He took the load out of the water and now it is all _____.",
+      "optionTranslations": [
+        "wet",
+        "sold",
+        "closed",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "Sacó la carga del agua y ahora está toda mojada.",
+        "targetWord": "mojada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/dab3a8e23b05993f.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "descargar",
-  "sentence": "Se asoma mientras [[descargan]] la balsa.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to unload",
-   "options": [
-    "to unload",
-    "to load up",
-    "to tie up",
-    "to paint"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "Se asoma mientras descargan la balsa.",
-    "targetWord": "descargan",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "marrón",
+    "sentence": "El agua del río no es azul: es _____ y espesa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "marrón",
+      "options": [
+        "marrón",
+        "dorada",
+        "clara",
+        "verde"
+      ],
+      "translation": "The river water is not blue: it is _____ and thick.",
+      "optionTranslations": [
+        "brown",
+        "golden",
+        "clear",
+        "green"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "El agua del río no es azul: es marrón y espesa.",
+        "targetWord": "marrón",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/fb3a68f7b6fc6994.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "bajarse",
-  "sentence": "En la isla [[baja]] y arrastra la carga.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to get off",
-   "options": [
-    "to get off",
-    "to climb up",
-    "to swim out",
-    "to wait"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "En la isla baja y arrastra la carga.",
-    "targetWord": "baja",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "arrastra",
+    "sentence": "El bulto pesa mucho y por eso lo _____ por el suelo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "arrastra",
+      "options": [
+        "arrastra",
+        "levanta",
+        "guarda",
+        "abre"
+      ],
+      "translation": "The bundle is very heavy, so he _____ it along the ground.",
+      "optionTranslations": [
+        "drags",
+        "lifts",
+        "puts away",
+        "opens"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "El bulto pesa mucho y por eso lo arrastra por el suelo.",
+        "targetWord": "arrastra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e92b61c12bcd4da3.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sumar",
-  "sentence": "[[Suma]] tres días perdidos y el regreso se le reduce.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to add up",
-   "options": [
-    "to add up",
-    "to forget",
-    "to double",
-    "to lose"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "Suma tres días perdidos y el regreso se le reduce.",
-    "targetWord": "suma",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "estricta",
+    "sentence": "No deja pasar ni un error: es muy _____ con los papeles.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "estricta",
+      "options": [
+        "estricta",
+        "alegre",
+        "lenta",
+        "nueva"
+      ],
+      "translation": "She lets no mistake through: she is very _____ with papers.",
+      "optionTranslations": [
+        "strict",
+        "cheerful",
+        "slow",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "No deja pasar ni un error: es muy estricta con los papeles.",
+        "targetWord": "estricta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e9e4a2cfc7035db3.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "anoche",
-  "sentence": "El agua subió [[anoche]] y ahora corre fuerte.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "last night",
-   "options": [
-    "last night",
-    "this morning",
-    "next week",
-    "every year"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "El agua subió anoche y ahora corre fuerte.",
-    "targetWord": "anoche",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "detenerse",
+    "sentence": "Firma sin [[detenerse]] y le devuelve el papel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stop",
+      "options": [
+        "to stop",
+        "to look up",
+        "to complain",
+        "to smile"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "Firma sin detenerse y le devuelve el papel.",
+        "targetWord": "detenerse",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4dd7e79eea43e646.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "propio",
-  "sentence": "En la isla no hay nada que hacer con la balsa [[propia]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "own",
-   "options": [
-    "own",
-    "borrowed",
-    "broken",
-    "empty"
-   ],
-   "audioClip": {
-    "storySlug": "tres-dias-perdidos",
-    "storySource": "user",
-    "sentence": "En la isla no hay nada que hacer con la balsa propia.",
-    "targetWord": "propia",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "subirse",
+    "sentence": "Percy se [[sube]] y sujeta el chaleco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get on board",
+      "options": [
+        "to get on board",
+        "to sit down",
+        "to jump off",
+        "to lie back"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "Percy se sube y sujeta el chaleco.",
+        "targetWord": "sube",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b2639c4a353b1ee.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "asomarse",
+    "sentence": "Se [[asoma]] mientras descargan, y avanza.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lean out",
+      "options": [
+        "to lean out",
+        "to hide",
+        "to shout",
+        "to sleep"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "Se asoma mientras descargan, y avanza.",
+        "targetWord": "asoma",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2089f42b6251d0ad.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sujetar",
+    "sentence": "Percy se sube y [[sujeta]] el chaleco.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hold on to",
+      "options": [
+        "to hold on to",
+        "to fold",
+        "to throw",
+        "to open"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "Percy se sube y sujeta el chaleco.",
+        "targetWord": "sujeta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5b2639c4a353b1ee.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acelerar",
+    "sentence": "Lo dice antes de que la balsa [[acelere]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to speed up",
+      "options": [
+        "to speed up",
+        "to sink",
+        "to turn back",
+        "to stop"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "Lo dice antes de que la balsa acelere.",
+        "targetWord": "acelere",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5571fc000bc96fe6.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "avanzar",
+    "sentence": "Se asoma mientras descargan, y [[avanza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to move forward",
+      "options": [
+        "to move forward",
+        "to fall back",
+        "to look round",
+        "to sit down"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "Se asoma mientras descargan, y avanza.",
+        "targetWord": "avanza",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2089f42b6251d0ad.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ordenado",
+    "sentence": "Le devuelve el papel, [[ordenada]] y estricta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "tidy",
+      "options": [
+        "tidy",
+        "noisy",
+        "rushed",
+        "careless"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "Le devuelve el papel, ordenada y estricta.",
+        "targetWord": "ordenada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/19e0b2d861238029.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "descargar",
+    "sentence": "Se asoma mientras [[descargan]] la balsa.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to unload",
+      "options": [
+        "to unload",
+        "to load up",
+        "to tie up",
+        "to paint"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "Se asoma mientras descargan la balsa.",
+        "targetWord": "descargan",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e838168f05566433.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bajarse",
+    "sentence": "En la isla [[baja]] y arrastra la carga.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get off",
+      "options": [
+        "to get off",
+        "to climb up",
+        "to swim out",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "En la isla baja y arrastra la carga.",
+        "targetWord": "baja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/60cdd22c9d9fba76.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sumar",
+    "sentence": "[[Suma]] tres días perdidos y el regreso se le reduce.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to add up",
+      "options": [
+        "to add up",
+        "to forget",
+        "to double",
+        "to lose"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "Suma tres días perdidos y el regreso se le reduce.",
+        "targetWord": "suma",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/54537b59ebc495a9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "anoche",
+    "sentence": "El agua subió [[anoche]] y ahora corre fuerte.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "last night",
+      "options": [
+        "last night",
+        "this morning",
+        "next week",
+        "every year"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "El agua subió anoche y ahora corre fuerte.",
+        "targetWord": "anoche",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/25f87b4be25d1c10.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "propio",
+    "sentence": "En la isla no hay nada que hacer con la balsa [[propia]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "own",
+      "options": [
+        "own",
+        "borrowed",
+        "broken",
+        "empty"
+      ],
+      "audioClip": {
+        "storySlug": "tres-dias-perdidos",
+        "storySource": "user",
+        "sentence": "En la isla no hay nada que hacer con la balsa propia.",
+        "targetWord": "propia",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a14c782f01ac1a0b.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

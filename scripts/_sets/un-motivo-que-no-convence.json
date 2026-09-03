@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "puerto,canoa,panel,espera",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "puerto",
-     "answer": "port",
-     "options": [
-      "port",
-      "canoe",
-      "notice board",
-      "wait"
-     ]
-    },
-    {
-     "word": "canoa",
-     "answer": "canoe",
-     "options": [
-      "port",
-      "canoe",
-      "notice board",
-      "wait"
-     ]
-    },
-    {
-     "word": "panel",
-     "answer": "notice board",
-     "options": [
-      "port",
-      "canoe",
-      "notice board",
-      "wait"
-     ]
-    },
-    {
-     "word": "espera",
-     "answer": "wait",
-     "options": [
-      "port",
-      "canoe",
-      "notice board",
-      "wait"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "puerto,canoa,panel,espera",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "puerto",
+          "answer": "port",
+          "options": [
+            "port",
+            "canoe",
+            "notice board",
+            "wait"
+          ]
+        },
+        {
+          "word": "canoa",
+          "answer": "canoe",
+          "options": [
+            "port",
+            "canoe",
+            "notice board",
+            "wait"
+          ]
+        },
+        {
+          "word": "panel",
+          "answer": "notice board",
+          "options": [
+            "port",
+            "canoe",
+            "notice board",
+            "wait"
+          ]
+        },
+        {
+          "word": "espera",
+          "answer": "wait",
+          "options": [
+            "port",
+            "canoe",
+            "notice board",
+            "wait"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "amarrada",
-  "sentence": "La canoa sigue _____ al poste y no puede salir.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "amarrada",
-   "options": [
-    "amarrada",
-    "vendida",
-    "pintada",
-    "cargada"
-   ],
-   "translation": "The canoe is still _____ to the post and cannot leave.",
-   "optionTranslations": [
-    "tied up",
-    "sold",
-    "painted",
-    "loaded"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "La canoa sigue amarrada al poste y no puede salir.",
-    "targetWord": "amarrada",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "cruzar",
-  "sentence": "Sin el permiso no puede _____ el río hoy.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "cruzar",
-   "options": [
-    "cruzar",
-    "vender",
-    "pagar",
-    "guardar"
-   ],
-   "translation": "Without the permit he cannot _____ the river today.",
-   "optionTranslations": [
-    "to cross",
-    "to sell",
-    "to pay",
-    "to keep"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "Sin el permiso no puede cruzar el río hoy.",
-    "targetWord": "cruzar",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "señala",
-  "sentence": "No dice nada más y _____ el panel de la pared.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "señala",
-   "options": [
-    "señala",
-    "limpia",
-    "abre",
-    "cuelga"
-   ],
-   "translation": "She says nothing more and _____ the board on the wall.",
-   "optionTranslations": [
-    "points at",
-    "cleans",
-    "opens",
-    "hangs"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "No dice nada más y señala el panel de la pared.",
-    "targetWord": "señala",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "nublado",
-  "sentence": "El cielo está _____ y no se ve el sol.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "nublado",
-   "options": [
-    "nublado",
-    "mojado",
-    "caliente",
-    "abierto"
-   ],
-   "translation": "The sky is _____ and the sun cannot be seen.",
-   "optionTranslations": [
-    "cloudy",
-    "wet",
-    "hot",
-    "open"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "El cielo está nublado y no se ve el sol.",
-    "targetWord": "nublado",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "amanecer",
-  "sentence": "Cuando [[amanece]] nublado, el puerto ya tiene gente.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to dawn",
-   "options": [
-    "to dawn",
-    "to rain",
-    "to freeze",
-    "to clear up"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "Cuando amanece nublado, el puerto ya tiene gente.",
-    "targetWord": "amanece",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "depender",
-  "sentence": "No [[depende]] de mí, repite la oficial.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to depend",
-   "options": [
-    "to depend",
-    "to matter",
-    "to belong",
-    "to change"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "No depende de mí, repite la oficial.",
-    "targetWord": "depende",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "firme",
-  "sentence": "La fecha está mal escrita, dice [[firme]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "firm",
-   "options": [
-    "firm",
-    "unsure",
-    "amused",
-    "tired"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "La fecha está mal escrita, dice firme.",
-    "targetWord": "firme",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "húmedo",
-  "sentence": "El aire [[húmedo]] pesa encima del río.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "damp",
-   "options": [
-    "damp",
-    "dry",
-    "cold",
-    "clean"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "El aire húmedo pesa encima del río.",
-    "targetWord": "húmedo",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "empezar",
-  "sentence": "Mira el río donde [[empieza]] la corriente.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to begin",
-   "options": [
-    "to begin",
-    "to end",
-    "to widen",
-    "to slow down"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "Mira el río donde empieza la corriente.",
-    "targetWord": "empieza",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "apurarse",
-  "sentence": "Ella no se [[apura]] con el papel.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to hurry",
-   "options": [
-    "to hurry",
-    "to worry",
-    "to complain",
-    "to apologise"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "Ella no se apura con el papel.",
-    "targetWord": "apura",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "explicarse",
-  "sentence": "El jueves se me va el comprador, se [[explica]] él.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to explain oneself",
-   "options": [
-    "to explain oneself",
-    "to say goodbye",
-    "to change one's mind",
-    "to ask for help"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "El jueves se me va el comprador, se explica él.",
-    "targetWord": "explica",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "amarrada",
+    "sentence": "La canoa sigue _____ al poste y no puede salir.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "amarrada",
+      "options": [
+        "amarrada",
+        "vendida",
+        "pintada",
+        "cargada"
+      ],
+      "translation": "The canoe is still _____ to the post and cannot leave.",
+      "optionTranslations": [
+        "tied up",
+        "sold",
+        "painted",
+        "loaded"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "La canoa sigue amarrada al poste y no puede salir.",
+        "targetWord": "amarrada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4e454e78ef7e86a2.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "repetirse",
-  "sentence": "No depende de mí, [[repite]] la oficial.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to repeat",
-   "options": [
-    "to repeat",
-    "to whisper",
-    "to shout",
-    "to promise"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "No depende de mí, repite la oficial.",
-    "targetWord": "repite",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "cruzar",
+    "sentence": "Sin el permiso no puede _____ el río hoy.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cruzar",
+      "options": [
+        "cruzar",
+        "vender",
+        "pagar",
+        "guardar"
+      ],
+      "translation": "Without the permit he cannot _____ the river today.",
+      "optionTranslations": [
+        "to cross",
+        "to sell",
+        "to pay",
+        "to keep"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "Sin el permiso no puede cruzar el río hoy.",
+        "targetWord": "cruzar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e75f801bf56a513b.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "hondo",
-  "sentence": "La espera se le hace [[honda]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "deep",
-   "options": [
-    "deep",
-    "short",
-    "loud",
-    "sweet"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "La espera se le hace honda.",
-    "targetWord": "honda",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "señala",
+    "sentence": "No dice nada más y _____ el panel de la pared.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "señala",
+      "options": [
+        "señala",
+        "limpia",
+        "abre",
+        "cuelga"
+      ],
+      "translation": "She says nothing more and _____ the board on the wall.",
+      "optionTranslations": [
+        "points at",
+        "cleans",
+        "opens",
+        "hangs"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "No dice nada más y señala el panel de la pared.",
+        "targetWord": "señala",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/58b4361449ca5b94.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "apoyarse",
-  "sentence": "Se [[apoya]] en el mostrador y no dice nada.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to lean",
-   "options": [
-    "to lean",
-    "to sit",
-    "to knock",
-    "to climb"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "Se apoya en el mostrador y no dice nada.",
-    "targetWord": "apoya",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "nublado",
+    "sentence": "El cielo está _____ y no se ve el sol.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "nublado",
+      "options": [
+        "nublado",
+        "mojado",
+        "caliente",
+        "abierto"
+      ],
+      "translation": "The sky is _____ and the sun cannot be seen.",
+      "optionTranslations": [
+        "cloudy",
+        "wet",
+        "hot",
+        "open"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "El cielo está nublado y no se ve el sol.",
+        "targetWord": "nublado",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4fd72f748b87b6cb.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "horario",
-  "sentence": "Señala el panel con los [[horarios]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "timetable",
-   "options": [
-    "timetable",
-    "receipt",
-    "map",
-    "price list"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "Señala el panel con los horarios.",
-    "targetWord": "horarios",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "amanecer",
+    "sentence": "Cuando [[amanece]] nublado, el puerto ya tiene gente.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to dawn",
+      "options": [
+        "to dawn",
+        "to rain",
+        "to freeze",
+        "to clear up"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "Cuando amanece nublado, el puerto ya tiene gente.",
+        "targetWord": "amanece",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3343a21f1b1681b.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "acordarse",
-  "sentence": "Se [[acuerda]] de decirlo despacio.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to remember",
-   "options": [
-    "to remember",
-    "to forget",
-    "to decide",
-    "to insist"
-   ],
-   "audioClip": {
-    "storySlug": "un-motivo-que-no-convence",
-    "storySource": "user",
-    "sentence": "Se acuerda de decirlo despacio.",
-    "targetWord": "acuerda",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "depender",
+    "sentence": "No [[depende]] de mí, repite la oficial.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to depend",
+      "options": [
+        "to depend",
+        "to matter",
+        "to belong",
+        "to change"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "No depende de mí, repite la oficial.",
+        "targetWord": "depende",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/153e4752112459cc.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "firme",
+    "sentence": "La fecha está mal escrita, dice [[firme]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "firm",
+      "options": [
+        "firm",
+        "unsure",
+        "amused",
+        "tired"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "La fecha está mal escrita, dice firme.",
+        "targetWord": "firme",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f9e7c88bfb2bc10c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "húmedo",
+    "sentence": "El aire [[húmedo]] pesa encima del río.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "damp",
+      "options": [
+        "damp",
+        "dry",
+        "cold",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "El aire húmedo pesa encima del río.",
+        "targetWord": "húmedo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d96f8013d2c8b42a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "empezar",
+    "sentence": "Mira el río donde [[empieza]] la corriente del sur.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to begin",
+      "options": [
+        "to begin",
+        "to end",
+        "to widen",
+        "to slow down"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "Mira el río donde empieza la corriente del sur.",
+        "targetWord": "empieza",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3826a2a0e9fb7c81.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apurarse",
+    "sentence": "Ella no se [[apura]] con el papel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hurry",
+      "options": [
+        "to hurry",
+        "to worry",
+        "to complain",
+        "to apologise"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "Ella no se apura con el papel.",
+        "targetWord": "apura",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0edbb5accc96556f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "explicarse",
+    "sentence": "El jueves se me va el comprador, se [[explica]] él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to explain oneself",
+      "options": [
+        "to explain oneself",
+        "to say goodbye",
+        "to change one's mind",
+        "to ask for help"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "El jueves se me va el comprador, se explica él.",
+        "targetWord": "explica",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/446b18ce9ddf5219.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "repetirse",
+    "sentence": "No depende de mí, [[repite]] la oficial.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to repeat",
+      "options": [
+        "to repeat",
+        "to whisper",
+        "to shout",
+        "to promise"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "No depende de mí, repite la oficial.",
+        "targetWord": "repite",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/153e4752112459cc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "hondo",
+    "sentence": "La espera se le hace [[honda]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "deep",
+      "options": [
+        "deep",
+        "short",
+        "loud",
+        "sweet"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "La espera se le hace honda.",
+        "targetWord": "honda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7eea2d1911f5fdb2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apoyarse",
+    "sentence": "Se [[apoya]] en el mostrador y no dice nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lean",
+      "options": [
+        "to lean",
+        "to sit",
+        "to knock",
+        "to climb"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "Se apoya en el mostrador y no dice nada.",
+        "targetWord": "apoya",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/95ba2ff8e72c5233.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "horario",
+    "sentence": "Señala el panel con los [[horarios]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "timetable",
+      "options": [
+        "timetable",
+        "receipt",
+        "map",
+        "price list"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "Señala el panel con los horarios.",
+        "targetWord": "horarios",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/443981ad3c95e0db.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acordarse",
+    "sentence": "Se [[acuerda]] de decirlo despacio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to remember",
+      "options": [
+        "to remember",
+        "to forget",
+        "to decide",
+        "to insist"
+      ],
+      "audioClip": {
+        "storySlug": "un-motivo-que-no-convence",
+        "storySource": "user",
+        "sentence": "Se acuerda de decirlo despacio.",
+        "targetWord": "acuerda",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e3049360114c3f6.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "librero,cajita,comedor,cera",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "librero",
-     "answer": "a bookshelf",
-     "options": [
-      "a bookshelf",
-      "a small box",
-      "a dining room",
-      "wax polish"
-     ]
-    },
-    {
-     "word": "cajita",
-     "answer": "a small box",
-     "options": [
-      "a bookshelf",
-      "a small box",
-      "a dining room",
-      "wax polish"
-     ]
-    },
-    {
-     "word": "comedor",
-     "answer": "a dining room",
-     "options": [
-      "a bookshelf",
-      "a small box",
-      "a dining room",
-      "wax polish"
-     ]
-    },
-    {
-     "word": "cera",
-     "answer": "wax polish",
-     "options": [
-      "a bookshelf",
-      "a small box",
-      "a dining room",
-      "wax polish"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "librero,cajita,comedor,cera",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "librero",
+          "answer": "a bookshelf",
+          "options": [
+            "a bookshelf",
+            "a small box",
+            "a dining room",
+            "wax polish"
+          ]
+        },
+        {
+          "word": "cajita",
+          "answer": "a small box",
+          "options": [
+            "a bookshelf",
+            "a small box",
+            "a dining room",
+            "wax polish"
+          ]
+        },
+        {
+          "word": "comedor",
+          "answer": "a dining room",
+          "options": [
+            "a bookshelf",
+            "a small box",
+            "a dining room",
+            "wax polish"
+          ]
+        },
+        {
+          "word": "cera",
+          "answer": "wax polish",
+          "options": [
+            "a bookshelf",
+            "a small box",
+            "a dining room",
+            "wax polish"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "agarra",
-  "sentence": "Va al librero y _____ el libro con las dos manos.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "agarra",
-   "options": [
-    "agarra",
-    "limpia",
-    "cuenta",
-    "pinta"
-   ],
-   "translation": "She goes to the bookshelf and _____ the book with both hands.",
-   "optionTranslations": [
-    "grabs",
-    "cleans",
-    "counts",
-    "paints"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "Va al librero y agarra el libro con las dos manos.",
-    "targetWord": "agarra",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "enciende",
-  "sentence": "Está oscuro y _____ la lámpara para leer.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "enciende",
-   "options": [
-    "enciende",
-    "apaga",
-    "tapa",
-    "rompe"
-   ],
-   "translation": "It is dark and she _____ the lamp to read.",
-   "optionTranslations": [
-    "switches on",
-    "switches off",
-    "covers",
-    "breaks"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "Está oscuro y enciende la lámpara para leer.",
-    "targetWord": "enciende",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "encontró",
-  "sentence": "Abrió el libro y lo que _____ no era lo suyo.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "encontró",
-   "options": [
-    "encontró",
-    "perdió",
-    "vendió",
-    "escribió"
-   ],
-   "translation": "She opened the book and what she _____ was not hers.",
-   "optionTranslations": [
-    "found",
-    "lost",
-    "sold",
-    "wrote"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "Abrió el libro y lo que encontró no era lo suyo.",
-    "targetWord": "encontró",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "peor",
-  "sentence": "No le grita, le sirve más arroz, y eso es _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "peor",
-   "options": [
-    "peor",
-    "mejor",
-    "igual",
-    "raro"
-   ],
-   "translation": "She does not shout, she serves her more rice, and that is _____.",
-   "optionTranslations": [
-    "worse",
-    "better",
-    "the same",
-    "odd"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "No le grita, le sirve más arroz, y eso es peor.",
-    "targetWord": "peor",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "cosa",
-  "sentence": "Solo miro una [[cosa]], y la dejo donde estaba.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "one thing",
-   "options": [
-    "one thing",
-    "one person",
-    "one page",
-    "one minute"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "Solo miro una cosa, y la dejo donde estaba.",
-    "targetWord": "cosa",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "mujer",
-  "sentence": "Otra [[mujer]] la ve desde la puerta.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a woman",
-   "options": [
-    "a woman",
-    "a girl",
-    "a man",
-    "a couple"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "Otra mujer la ve desde la puerta.",
-    "targetWord": "mujer",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "clima",
-  "sentence": "Y va a cambiar el [[clima]] esta semana, dicen por ahí.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the weather",
-   "options": [
-    "the weather",
-    "the price",
-    "the timetable",
-    "the mood"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "Y va a cambiar el clima esta semana, dicen por ahí.",
-    "targetWord": "clima",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "grito",
-  "sentence": "Eso es peor que un [[grito]], y se deja mirar.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a shout",
-   "options": [
-    "a shout",
-    "a joke",
-    "a favour",
-    "a whisper"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "Eso es peor que un grito, y se deja mirar.",
-    "targetWord": "grito",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "escritos",
-  "sentence": "Entre los [[escritos]] del libro está la letra de su padre.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "writings",
-   "options": [
-    "writings",
-    "photographs",
-    "stamps",
-    "drawings"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "Entre los escritos del libro está la letra de su padre.",
-    "targetWord": "escritos",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "lámpara",
-  "sentence": "Agarra el libro y enciende la [[lámpara]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a lamp",
-   "options": [
-    "a lamp",
-    "a match",
-    "a window",
-    "a candle"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "Agarra el libro y enciende la lámpara.",
-    "targetWord": "lámpara",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "cena",
-  "sentence": "Ya lo sabe la casa entera, le avisan antes de la [[cena]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "dinner",
-   "options": [
-    "dinner",
-    "breakfast",
-    "the trip",
-    "the party"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "Ya lo sabe la casa entera, le avisan antes de la cena.",
-    "targetWord": "cena",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "agarra",
+    "sentence": "Va al librero y _____ el libro con las dos manos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "agarra",
+      "options": [
+        "agarra",
+        "limpia",
+        "cuenta",
+        "pinta"
+      ],
+      "translation": "She goes to the bookshelf and _____ the book with both hands.",
+      "optionTranslations": [
+        "grabs",
+        "cleans",
+        "counts",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "Va al librero y agarra el libro con las dos manos.",
+        "targetWord": "agarra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/cbe37f382674661e.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "bueno",
-  "sentence": "Está [[bueno]], gracias, alcanza a decir Cecilia.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "fine, good",
-   "options": [
-    "fine, good",
-    "strange",
-    "cold",
-    "enough"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "Está bueno, gracias, alcanza a decir Cecilia.",
-    "targetWord": "bueno",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "enciende",
+    "sentence": "Está oscuro y _____ la lámpara para leer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "enciende",
+      "options": [
+        "enciende",
+        "apaga",
+        "tapa",
+        "rompe"
+      ],
+      "translation": "It is dark and she _____ the lamp to read.",
+      "optionTranslations": [
+        "switches on",
+        "switches off",
+        "covers",
+        "breaks"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "Está oscuro y enciende la lámpara para leer.",
+        "targetWord": "enciende",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8447ab085ea976a4.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "semana",
-  "sentence": "Va a cambiar el clima esta [[semana]], dicen por ahí.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "week",
-   "options": [
-    "week",
-    "month",
-    "evening",
-    "season"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "Va a cambiar el clima esta semana, dicen por ahí.",
-    "targetWord": "semana",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "encontró",
+    "sentence": "Abrió el libro y lo que _____ no era lo suyo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "encontró",
+      "options": [
+        "encontró",
+        "perdió",
+        "vendió",
+        "escribió"
+      ],
+      "translation": "She opened the book and what she _____ was not hers.",
+      "optionTranslations": [
+        "found",
+        "lost",
+        "sold",
+        "wrote"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "Abrió el libro y lo que encontró no era lo suyo.",
+        "targetWord": "encontró",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc628f6923edff62.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "libro",
-  "sentence": "Va al librero y agarra el [[libro]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a book",
-   "options": [
-    "a book",
-    "a plate",
-    "a coat",
-    "a key"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "Va al librero y agarra el libro.",
-    "targetWord": "libro",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "peor",
+    "sentence": "No le grita, le sirve más arroz, y eso es _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "peor",
+      "options": [
+        "peor",
+        "mejor",
+        "igual",
+        "raro"
+      ],
+      "translation": "She does not shout, she serves her more rice, and that is _____.",
+      "optionTranslations": [
+        "worse",
+        "better",
+        "the same",
+        "odd"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "No le grita, le sirve más arroz, y eso es peor.",
+        "targetWord": "peor",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/39f1891e138ad679.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "señorita",
-  "sentence": "¿Busca algo, [[señorita]]?, pregunta abajo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "miss",
-   "options": [
-    "miss",
-    "madam",
-    "sir",
-    "neighbour"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "¿Busca algo, señorita?, pregunta abajo.",
-    "targetWord": "señorita",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "cosa",
+    "sentence": "Solo miro una [[cosa]], y la dejo donde estaba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "one thing",
+      "options": [
+        "one thing",
+        "one person",
+        "one page",
+        "one minute"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "Solo miro una cosa, y la dejo donde estaba.",
+        "targetWord": "cosa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9435df04fd822f51.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "abajo",
-  "sentence": "¿Busca algo, señorita?, pregunta [[abajo]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "downstairs",
-   "options": [
-    "downstairs",
-    "upstairs",
-    "outside",
-    "next door"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-la-duena-calla",
-    "storySource": "user",
-    "sentence": "¿Busca algo, señorita?, pregunta abajo.",
-    "targetWord": "abajo",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "mujer",
+    "sentence": "Otra [[mujer]] la ve desde la puerta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a woman",
+      "options": [
+        "a woman",
+        "a girl",
+        "a man",
+        "a couple"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "Otra mujer la ve desde la puerta.",
+        "targetWord": "mujer",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/880f9c365f92d77b.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "clima",
+    "sentence": "Y va a cambiar el [[clima]] esta semana, dicen por ahí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the weather",
+      "options": [
+        "the weather",
+        "the price",
+        "the timetable",
+        "the mood"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "Y va a cambiar el clima esta semana, dicen por ahí.",
+        "targetWord": "clima",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ac80cbaff5ba8cc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "grito",
+    "sentence": "Eso es peor que un [[grito]], y se deja mirar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a shout",
+      "options": [
+        "a shout",
+        "a joke",
+        "a favour",
+        "a whisper"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "Eso es peor que un grito, y se deja mirar.",
+        "targetWord": "grito",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d3f9096df0b4aaa7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escritos",
+    "sentence": "Entre los [[escritos]] del libro está la letra de su padre.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "writings",
+      "options": [
+        "writings",
+        "photographs",
+        "stamps",
+        "drawings"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "Entre los escritos del libro está la letra de su padre.",
+        "targetWord": "escritos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/93de921f398d9844.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lámpara",
+    "sentence": "Agarra el libro y enciende la [[lámpara]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lamp",
+      "options": [
+        "a lamp",
+        "a match",
+        "a window",
+        "a candle"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "Agarra el libro y enciende la lámpara.",
+        "targetWord": "lámpara",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6e402a6054fca58c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cena",
+    "sentence": "Ya lo sabe la casa entera, le avisan antes de la [[cena]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dinner",
+      "options": [
+        "dinner",
+        "breakfast",
+        "the trip",
+        "the party"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "Ya lo sabe la casa entera, le avisan antes de la cena.",
+        "targetWord": "cena",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f8945f57892c072b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "bueno",
+    "sentence": "Está [[bueno]], gracias, alcanza a decir sin levantar la voz.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "fine, good",
+      "options": [
+        "fine, good",
+        "strange",
+        "cold",
+        "enough"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "Está bueno, gracias, alcanza a decir sin levantar la voz.",
+        "targetWord": "bueno",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/aaadee00005cda6d.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "semana",
+    "sentence": "Va a cambiar el clima esta [[semana]], dicen por ahí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "week",
+      "options": [
+        "week",
+        "month",
+        "evening",
+        "season"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "Va a cambiar el clima esta semana, dicen por ahí.",
+        "targetWord": "semana",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/be7a394032a47ec0.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "libro",
+    "sentence": "Va al librero y agarra el [[libro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a book",
+      "options": [
+        "a book",
+        "a plate",
+        "a coat",
+        "a key"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "Va al librero y agarra el libro.",
+        "targetWord": "libro",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a38b64eaef958fa5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "señorita",
+    "sentence": "¿Busca algo, [[señorita]]?, pregunta abajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "miss",
+      "options": [
+        "miss",
+        "madam",
+        "sir",
+        "neighbour"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "¿Busca algo, señorita?, pregunta abajo.",
+        "targetWord": "señorita",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08d7f217cfdac33f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "abajo",
+    "sentence": "¿Busca algo, señorita?, pregunta [[abajo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "downstairs",
+      "options": [
+        "downstairs",
+        "upstairs",
+        "outside",
+        "next door"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-la-duena-calla",
+        "storySource": "user",
+        "sentence": "¿Busca algo, señorita?, pregunta abajo.",
+        "targetWord": "abajo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08d7f217cfdac33f.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

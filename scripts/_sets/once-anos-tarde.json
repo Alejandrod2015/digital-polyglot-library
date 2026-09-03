@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "vereda,valija,portarretratos,gastado",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "vereda",
-     "answer": "sidewalk",
-     "options": [
-      "sidewalk",
-      "suitcase",
-      "photo frame",
-      "worn out"
-     ]
-    },
-    {
-     "word": "valija",
-     "answer": "suitcase",
-     "options": [
-      "sidewalk",
-      "suitcase",
-      "photo frame",
-      "worn out"
-     ]
-    },
-    {
-     "word": "portarretratos",
-     "answer": "photo frame",
-     "options": [
-      "sidewalk",
-      "suitcase",
-      "photo frame",
-      "worn out"
-     ]
-    },
-    {
-     "word": "gastado",
-     "answer": "worn out",
-     "options": [
-      "sidewalk",
-      "suitcase",
-      "photo frame",
-      "worn out"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "vereda,valija,portarretratos,gastado",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "vereda",
+          "answer": "sidewalk",
+          "options": [
+            "sidewalk",
+            "suitcase",
+            "photo frame",
+            "worn out"
+          ]
+        },
+        {
+          "word": "valija",
+          "answer": "suitcase",
+          "options": [
+            "sidewalk",
+            "suitcase",
+            "photo frame",
+            "worn out"
+          ]
+        },
+        {
+          "word": "portarretratos",
+          "answer": "photo frame",
+          "options": [
+            "sidewalk",
+            "suitcase",
+            "photo frame",
+            "worn out"
+          ]
+        },
+        {
+          "word": "gastado",
+          "answer": "worn out",
+          "options": [
+            "sidewalk",
+            "suitcase",
+            "photo frame",
+            "worn out"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "limpia",
-  "sentence": "El mostrador está sucio y el dueño lo _____ con un trapo.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "limpia",
-   "options": [
-    "limpia",
-    "abre",
-    "cierra",
-    "mira"
-   ],
-   "translation": "The counter is dirty and the owner _____ it with a cloth.",
-   "optionTranslations": [
-    "cleans",
-    "opens",
-    "closes",
-    "looks at"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "El mostrador está sucio y el dueño lo limpia con un trapo.",
-    "targetWord": "limpia",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "deja",
-  "sentence": "Llega cansada y _____ las valijas en el piso.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "deja",
-   "options": [
-    "deja",
-    "lava",
-    "abre",
-    "cuenta"
-   ],
-   "translation": "She arrives tired and _____ the suitcases on the floor.",
-   "optionTranslations": [
-    "puts down",
-    "washes",
-    "opens",
-    "counts"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "Llega cansada y deja las valijas en el piso.",
-    "targetWord": "deja",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "acepta",
-  "sentence": "Le ofrecen un plato y ella lo _____ sin hablar.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "acepta",
-   "options": [
-    "acepta",
-    "rompe",
-    "paga",
-    "busca"
-   ],
-   "translation": "They offer her a plate and she _____ it without speaking.",
-   "optionTranslations": [
-    "accepts",
-    "breaks",
-    "pays for",
-    "looks for"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "Le ofrecen un plato y ella lo acepta sin hablar.",
-    "targetWord": "acepta",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "saca",
-  "sentence": "Abre el cajón y _____ un cuaderno viejo.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "saca",
-   "options": [
-    "saca",
-    "guarda",
-    "pinta",
-    "cierra"
-   ],
-   "translation": "He opens the drawer and _____ an old notebook.",
-   "optionTranslations": [
-    "takes out",
-    "puts away",
-    "paints",
-    "closes"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "Abre el cajón y saca un cuaderno viejo.",
-    "targetWord": "saca",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "oscuro",
-  "sentence": "La vereda está [[oscura]] y no se ve el suelo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "dark",
-   "options": [
-    "dark",
-    "wet",
-    "quiet",
-    "wide"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "La vereda está oscura y no se ve el suelo.",
-    "targetWord": "oscura",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "quieto",
-  "sentence": "Se queda [[quieta]] en el medio del salón.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "still",
-   "options": [
-    "still",
-    "seated",
-    "cold",
-    "alone"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "Se queda quieta en el medio del salón.",
-    "targetWord": "quieta",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "explicar",
-  "sentence": "Vine a [[explicarte]] por qué me fui.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to explain",
-   "options": [
-    "to explain",
-    "to ask",
-    "to promise",
-    "to thank"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "Vine a explicarte por qué me fui.",
-    "targetWord": "explicarte",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "escuchar",
-  "sentence": "Leandro la [[escucha]], pero sigue con lo suyo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to listen",
-   "options": [
-    "to listen",
-    "to answer",
-    "to watch",
-    "to wait"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "Leandro la escucha, pero sigue con lo suyo.",
-    "targetWord": "escucha",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "insistir",
-  "sentence": "Come algo primero, [[insiste]] él, y acerca un plato.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to insist",
-   "options": [
-    "to insist",
-    "to refuse",
-    "to whisper",
-    "to laugh"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "Come algo primero, insiste él, y acerca un plato.",
-    "targetWord": "insiste",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "estrecho",
-  "sentence": "Una fila de árboles vuelve la vereda [[estrecha]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "narrow",
-   "options": [
-    "narrow",
-    "long",
-    "clean",
-    "bright"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "Una fila de árboles vuelve la vereda estrecha.",
-    "targetWord": "estrecha",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "entero",
-  "sentence": "Tiene una noche [[entera]] por delante.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "whole",
-   "options": [
-    "whole",
-    "short",
-    "quiet",
-    "cold"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "Tiene una noche entera por delante.",
-    "targetWord": "entera",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "limpia",
+    "sentence": "El mostrador está sucio y el dueño lo _____ con un trapo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "limpia",
+      "options": [
+        "limpia",
+        "abre",
+        "cierra",
+        "mira"
+      ],
+      "translation": "The counter is dirty and the owner _____ it with a cloth.",
+      "optionTranslations": [
+        "cleans",
+        "opens",
+        "closes",
+        "looks at"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "El mostrador está sucio y el dueño lo limpia con un trapo.",
+        "targetWord": "limpia",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/08fdaf0d5cc0ccde.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "saludar",
-  "sentence": "Dice once años sin [[saludarla]] siquiera.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to greet",
-   "options": [
-    "to greet",
-    "to answer",
-    "to thank",
-    "to call"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "Dice once años sin saludarla siquiera.",
-    "targetWord": "saludarla",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "deja",
+    "sentence": "Llega cansada y _____ las valijas en el piso.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "deja",
+      "options": [
+        "deja",
+        "lava",
+        "abre",
+        "cuenta"
+      ],
+      "translation": "She arrives tired and _____ the suitcases on the floor.",
+      "optionTranslations": [
+        "puts down",
+        "washes",
+        "opens",
+        "counts"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "Llega cansada y deja las valijas en el piso.",
+        "targetWord": "deja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f0483e1dd2207f64.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "acercar",
-  "sentence": "Le [[acerca]] un plato por encima del mostrador.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to bring closer",
-   "options": [
-    "to bring closer",
-    "to take away",
-    "to pick up",
-    "to point at"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "Le acerca un plato por encima del mostrador.",
-    "targetWord": "acerca",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "acepta",
+    "sentence": "Le ofrecen un plato y ella lo _____ sin hablar.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "acepta",
+      "options": [
+        "acepta",
+        "rompe",
+        "paga",
+        "busca"
+      ],
+      "translation": "They offer her a plate and she _____ it without speaking.",
+      "optionTranslations": [
+        "accepts",
+        "breaks",
+        "pays for",
+        "looks for"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "Le ofrecen un plato y ella lo acepta sin hablar.",
+        "targetWord": "acepta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28f6df7141ab2749.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "despacio",
-  "sentence": "Ella acepta y come [[despacio]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "slowly",
-   "options": [
-    "slowly",
-    "loudly",
-    "early",
-    "alone"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "Ella acepta y come despacio.",
-    "targetWord": "despacio",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "saca",
+    "sentence": "Abre el cajón y _____ un cuaderno viejo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "saca",
+      "options": [
+        "saca",
+        "guarda",
+        "pinta",
+        "cierra"
+      ],
+      "translation": "He opens the drawer and _____ an old notebook.",
+      "optionTranslations": [
+        "takes out",
+        "puts away",
+        "paints",
+        "closes"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "Abre el cajón y saca un cuaderno viejo.",
+        "targetWord": "saca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d9bbbd18a97bfb00.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "blanco y negro",
-  "sentence": "En la pared hay una foto en [[blanco y negro]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "black and white",
-   "options": [
-    "black and white",
-    "in full colour",
-    "very small",
-    "badly lit"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "En la pared hay una foto en blanco y negro.",
-    "targetWord": "blanco y negro",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "oscuro",
+    "sentence": "La vereda está [[oscura]] y no se ve el suelo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "dark",
+      "options": [
+        "dark",
+        "wet",
+        "quiet",
+        "wide"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "La vereda está oscura y no se ve el suelo.",
+        "targetWord": "oscura",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2e56cdbf07fc3ec2.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "mirar",
-  "sentence": "Marisol lo [[mira]] de reojo mientras come.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to look at",
-   "options": [
-    "to look at",
-    "to hide",
-    "to move",
-    "to touch"
-   ],
-   "audioClip": {
-    "storySlug": "once-anos-tarde",
-    "storySource": "user",
-    "sentence": "Marisol lo mira de reojo mientras come.",
-    "targetWord": "mira",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "quieto",
+    "sentence": "Se queda [[quieta]] en el medio del salón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "still",
+      "options": [
+        "still",
+        "seated",
+        "cold",
+        "alone"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "Se queda quieta en el medio del salón.",
+        "targetWord": "quieta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bee38df528fcfdb3.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "explicar",
+    "sentence": "Vine a [[explicarte]] por qué me fui.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to explain",
+      "options": [
+        "to explain",
+        "to ask",
+        "to promise",
+        "to thank"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "Vine a explicarte por qué me fui.",
+        "targetWord": "explicarte",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a30a8ad4c519b47d.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "escuchar",
+    "sentence": "Leandro la [[escucha]], pero sigue con lo suyo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to listen",
+      "options": [
+        "to listen",
+        "to answer",
+        "to watch",
+        "to wait"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "Leandro la escucha, pero sigue con lo suyo.",
+        "targetWord": "escucha",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5f4f849f297f4bad.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "insistir",
+    "sentence": "Come algo primero, [[insiste]] él, y acerca un plato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to insist",
+      "options": [
+        "to insist",
+        "to refuse",
+        "to whisper",
+        "to laugh"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "Come algo primero, insiste él, y acerca un plato.",
+        "targetWord": "insiste",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d8e1b044dc1cdedd.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "estrecho",
+    "sentence": "Una fila de árboles vuelve la vereda [[estrecha]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "narrow",
+      "options": [
+        "narrow",
+        "long",
+        "clean",
+        "bright"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "Una fila de árboles vuelve la vereda estrecha.",
+        "targetWord": "estrecha",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b78f0e852f045045.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "entero",
+    "sentence": "Tiene una noche [[entera]] por delante.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "whole",
+      "options": [
+        "whole",
+        "short",
+        "quiet",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "Tiene una noche entera por delante.",
+        "targetWord": "entera",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ae31cc02c379c3c1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "saludar",
+    "sentence": "Dice once años sin [[saludarla]] siquiera.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to greet",
+      "options": [
+        "to greet",
+        "to answer",
+        "to thank",
+        "to call"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "Dice once años sin saludarla siquiera.",
+        "targetWord": "saludarla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7e1fe3fc39dce950.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acercar",
+    "sentence": "Le [[acerca]] un plato por encima del mostrador.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to bring closer",
+      "options": [
+        "to bring closer",
+        "to take away",
+        "to pick up",
+        "to point at"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "Le acerca un plato por encima del mostrador.",
+        "targetWord": "acerca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/723760533d646df9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "despacio",
+    "sentence": "Ella acepta y come [[despacio]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slowly",
+      "options": [
+        "slowly",
+        "loudly",
+        "early",
+        "alone"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "Ella acepta y come despacio.",
+        "targetWord": "despacio",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7020681042d7aaba.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "blanco y negro",
+    "sentence": "En la pared hay una foto en [[blanco y negro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "black and white",
+      "options": [
+        "black and white",
+        "in full colour",
+        "very small",
+        "badly lit"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "En la pared hay una foto en blanco y negro.",
+        "targetWord": "blanco y negro",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c0d7cf73bfa4ad52.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mirar",
+    "sentence": "Marisol lo [[mira]] de reojo mientras come.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to look at",
+      "options": [
+        "to look at",
+        "to hide",
+        "to move",
+        "to touch"
+      ],
+      "audioClip": {
+        "storySlug": "once-anos-tarde",
+        "storySource": "user",
+        "sentence": "Marisol lo mira de reojo mientras come.",
+        "targetWord": "mira",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/344fd7490940c878.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

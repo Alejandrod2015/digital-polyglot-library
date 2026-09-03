@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "ensalada,chuleta,tarta,postre",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "ensalada",
-     "answer": "a salad",
-     "options": [
-      "a salad",
-      "a chop",
-      "a cake",
-      "dessert"
-     ]
-    },
-    {
-     "word": "chuleta",
-     "answer": "a chop",
-     "options": [
-      "a salad",
-      "a chop",
-      "a cake",
-      "dessert"
-     ]
-    },
-    {
-     "word": "tarta",
-     "answer": "a cake",
-     "options": [
-      "a salad",
-      "a chop",
-      "a cake",
-      "dessert"
-     ]
-    },
-    {
-     "word": "postre",
-     "answer": "dessert",
-     "options": [
-      "a salad",
-      "a chop",
-      "a cake",
-      "dessert"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "ensalada,chuleta,tarta,postre",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "ensalada",
+          "answer": "a salad",
+          "options": [
+            "a salad",
+            "a chop",
+            "a cake",
+            "dessert"
+          ]
+        },
+        {
+          "word": "chuleta",
+          "answer": "a chop",
+          "options": [
+            "a salad",
+            "a chop",
+            "a cake",
+            "dessert"
+          ]
+        },
+        {
+          "word": "tarta",
+          "answer": "a cake",
+          "options": [
+            "a salad",
+            "a chop",
+            "a cake",
+            "dessert"
+          ]
+        },
+        {
+          "word": "postre",
+          "answer": "dessert",
+          "options": [
+            "a salad",
+            "a chop",
+            "a cake",
+            "dessert"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "prisa",
-  "sentence": "La comida es larga y nadie tiene _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "prisa",
-   "options": [
-    "prisa",
-    "hambre",
-    "frío",
-    "razón"
-   ],
-   "translation": "The lunch is long and nobody is in a _____.",
-   "optionTranslations": [
-    "hurry",
-    "hunger",
-    "cold",
-    "right"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "La comida es larga y nadie tiene prisa.",
-    "targetWord": "prisa",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "corta",
-  "sentence": "Tiene el cuchillo en la mano pero no _____ la carne.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "corta",
-   "options": [
-    "corta",
-    "paga",
-    "pide",
-    "calienta"
-   ],
-   "translation": "She has the knife in her hand but does not _____ the meat.",
-   "optionTranslations": [
-    "cut",
-    "pay for",
-    "order",
-    "heat"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "Tiene el cuchillo en la mano pero no corta la carne.",
-    "targetWord": "corta",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "levanta",
-  "sentence": "Cuando él habla por fin, la jefa _____ la vista del plato.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "levanta",
-   "options": [
-    "levanta",
-    "baja",
-    "cierra",
-    "limpia"
-   ],
-   "translation": "When he finally speaks, the boss _____ her eyes from the plate.",
-   "optionTranslations": [
-    "lifts",
-    "lowers",
-    "closes",
-    "cleans"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "Cuando él habla por fin, la jefa levanta la vista del plato.",
-    "targetWord": "levanta",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "chico",
-  "sentence": "No pide los seis camiones: pide uno _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "chico",
-   "options": [
-    "chico",
-    "caro",
-    "viejo",
-    "lleno"
-   ],
-   "translation": "He does not ask for the six trucks: he asks for one _____ one.",
-   "optionTranslations": [
-    "small",
-    "expensive",
-    "old",
-    "full"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "No pide los seis camiones: pide uno chico.",
-    "targetWord": "chico",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "comer",
-  "sentence": "[[Coma]] y no hable de horarios hasta el final.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to eat",
-   "options": [
-    "to eat",
-    "to drink",
-    "to wait",
-    "to speak"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "Coma y no hable de horarios hasta el final.",
-    "targetWord": "coma",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "hablar",
-  "sentence": "Coma y no [[hable]] de horarios hasta el final.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to talk",
-   "options": [
-    "to talk",
-    "to eat",
-    "to leave",
-    "to listen"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "Coma y no hable de horarios hasta el final.",
-    "targetWord": "hable",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "interesar",
-  "sentence": "Es la parte que más le [[interesaba]] a él.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to matter to somebody",
-   "options": [
-    "to matter to somebody",
-    "to bore somebody",
-    "to belong to somebody",
-    "to surprise somebody"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "Es la parte que más le interesaba a él.",
-    "targetWord": "interesaba",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ganar",
-  "sentence": "Ernesto [[gana]] poco, y esa noche lo llaman.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to win",
-   "options": [
-    "to win",
-    "to lose",
-    "to pay",
-    "to owe"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "Ernesto gana poco, y esa noche lo llaman.",
-    "targetWord": "gana",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "perder",
-  "sentence": "Sabe bien lo que [[pierde]] con ese cambio.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to lose",
-   "options": [
-    "to lose",
-    "to gain",
-    "to save",
-    "to spend"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "Sabe bien lo que pierde con ese cambio.",
-    "targetWord": "pierde",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "jefa",
-  "sentence": "La [[jefa]] está en la otra punta, callada.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the boss",
-   "options": [
-    "the boss",
-    "the cook",
-    "the guest",
-    "the waitress"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "La jefa está en la otra punta, callada.",
-    "targetWord": "jefa",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "llamada",
-  "sentence": "Su jefe le hace una [[llamada]] de un minuto.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a phone call",
-   "options": [
-    "a phone call",
-    "a visit",
-    "a letter",
-    "a meeting"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "Su jefe le hace una llamada de un minuto.",
-    "targetWord": "llamada",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "prisa",
+    "sentence": "La comida es larga y nadie tiene _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prisa",
+      "options": [
+        "prisa",
+        "hambre",
+        "frío",
+        "razón"
+      ],
+      "translation": "The lunch is long and nobody is in a _____.",
+      "optionTranslations": [
+        "hurry",
+        "hunger",
+        "cold",
+        "right"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "La comida es larga y nadie tiene prisa.",
+        "targetWord": "prisa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f19fee09cd32d8cb.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "comida",
-  "sentence": "Araceli lo lleva a una [[comida]] larga que no es de trabajo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a lunch",
-   "options": [
-    "a lunch",
-    "a shop",
-    "a trip",
-    "an office"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "Araceli lo lleva a una comida larga que no es de trabajo.",
-    "targetWord": "comida",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "corta",
+    "sentence": "Tiene el cuchillo en la mano pero no _____ la carne.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "corta",
+      "options": [
+        "corta",
+        "paga",
+        "pide",
+        "calienta"
+      ],
+      "translation": "She has the knife in her hand but does not _____ the meat.",
+      "optionTranslations": [
+        "cut",
+        "pay for",
+        "order",
+        "heat"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "Tiene el cuchillo en la mano pero no corta la carne.",
+        "targetWord": "corta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b4618215298dd1b5.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "parte",
-  "sentence": "Le quito la [[parte]] del centro, dice Ernesto.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a part",
-   "options": [
-    "a part",
-    "a price",
-    "a day",
-    "a truck"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "Le quito la parte del centro, dice Ernesto.",
-    "targetWord": "parte",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "levanta",
+    "sentence": "Cuando él habla por fin, la jefa _____ la vista del plato.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "levanta",
+      "options": [
+        "levanta",
+        "baja",
+        "cierra",
+        "limpia"
+      ],
+      "translation": "When he finally speaks, the boss _____ her eyes from the plate.",
+      "optionTranslations": [
+        "lifts",
+        "lowers",
+        "closes",
+        "cleans"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "Cuando él habla por fin, la jefa levanta la vista del plato.",
+        "targetWord": "levanta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4031d71d69e2c343.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "malo",
-  "sentence": "Ernesto suelta un chiste [[malo]] y nadie se ríe.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "bad",
-   "options": [
-    "bad",
-    "funny",
-    "short",
-    "old"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "Ernesto suelta un chiste malo y nadie se ríe.",
-    "targetWord": "malo",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "chico",
+    "sentence": "No pide los seis camiones: pide uno _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "chico",
+      "options": [
+        "chico",
+        "caro",
+        "viejo",
+        "lleno"
+      ],
+      "translation": "He does not ask for the six trucks: he asks for one _____ one.",
+      "optionTranslations": [
+        "small",
+        "expensive",
+        "old",
+        "full"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "No pide los seis camiones: pide uno chico.",
+        "targetWord": "chico",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/66afdeb1f723f1df.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "callada",
-  "sentence": "La jefa está en la otra punta, [[callada]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "silent",
-   "options": [
-    "silent",
-    "busy",
-    "late",
-    "pleased"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "La jefa está en la otra punta, callada.",
-    "targetWord": "callada",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "comer",
+    "sentence": "[[Coma]] y no hable de horarios hasta el final.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to eat",
+      "options": [
+        "to eat",
+        "to drink",
+        "to wait",
+        "to speak"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "Coma y no hable de horarios hasta el final.",
+        "targetWord": "coma",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29959d18395f0210.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "largo",
-  "sentence": "Araceli lo lleva a una comida [[larga]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "long",
-   "options": [
-    "long",
-    "short",
-    "cheap",
-    "cold"
-   ],
-   "audioClip": {
-    "storySlug": "la-chuleta-antes-del-postre",
-    "storySource": "user",
-    "sentence": "Araceli lo lleva a una comida larga.",
-    "targetWord": "larga",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "hablar",
+    "sentence": "Coma y no [[hable]] de horarios hasta el final.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to talk",
+      "options": [
+        "to talk",
+        "to eat",
+        "to leave",
+        "to listen"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "Coma y no hable de horarios hasta el final.",
+        "targetWord": "hable",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29959d18395f0210.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "interesar",
+    "sentence": "Es la parte que más le [[interesaba]] a él.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to matter to somebody",
+      "options": [
+        "to matter to somebody",
+        "to bore somebody",
+        "to belong to somebody",
+        "to surprise somebody"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "Es la parte que más le interesaba a él.",
+        "targetWord": "interesaba",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b73d14028dafd8f5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ganar",
+    "sentence": "Ernesto [[gana]] poco, y esa noche lo llaman.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to win",
+      "options": [
+        "to win",
+        "to lose",
+        "to pay",
+        "to owe"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "Ernesto gana poco, y esa noche lo llaman.",
+        "targetWord": "gana",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ccbca40c432d11fa.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "perder",
+    "sentence": "Sabe bien lo que [[pierde]] con ese cambio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to lose",
+      "options": [
+        "to lose",
+        "to gain",
+        "to save",
+        "to spend"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "Sabe bien lo que pierde con ese cambio.",
+        "targetWord": "pierde",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c40794e3fa4d299.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "jefa",
+    "sentence": "La [[jefa]] está en la otra punta, callada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the boss",
+      "options": [
+        "the boss",
+        "the cook",
+        "the guest",
+        "the waitress"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "La jefa está en la otra punta, callada.",
+        "targetWord": "jefa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8519d89188f5b69e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llamada",
+    "sentence": "Su jefe le hace una [[llamada]] de un minuto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a phone call",
+      "options": [
+        "a phone call",
+        "a visit",
+        "a letter",
+        "a meeting"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "Su jefe le hace una llamada de un minuto.",
+        "targetWord": "llamada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed90595f2f9b1cc9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "comida",
+    "sentence": "Araceli lo lleva a una [[comida]] larga que no es de trabajo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a lunch",
+      "options": [
+        "a lunch",
+        "a shop",
+        "a trip",
+        "an office"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "Araceli lo lleva a una comida larga que no es de trabajo.",
+        "targetWord": "comida",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/128b0dfa971e6c66.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parte",
+    "sentence": "Le quito la [[parte]] del centro, dice Ernesto.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a part",
+      "options": [
+        "a part",
+        "a price",
+        "a day",
+        "a truck"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "Le quito la parte del centro, dice Ernesto.",
+        "targetWord": "parte",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4bda11e1e39e8f92.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "malo",
+    "sentence": "Ernesto suelta un chiste [[malo]] y nadie se ríe.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "bad",
+      "options": [
+        "bad",
+        "funny",
+        "short",
+        "old"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "Ernesto suelta un chiste malo y nadie se ríe.",
+        "targetWord": "malo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3d3d1276180d8417.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "callada",
+    "sentence": "La jefa está en la otra punta, [[callada]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "silent",
+      "options": [
+        "silent",
+        "busy",
+        "late",
+        "pleased"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "La jefa está en la otra punta, callada.",
+        "targetWord": "callada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8519d89188f5b69e.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "largo",
+    "sentence": "Araceli lo lleva a una comida [[larga]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "long",
+      "options": [
+        "long",
+        "short",
+        "cheap",
+        "cold"
+      ],
+      "audioClip": {
+        "storySlug": "la-chuleta-antes-del-postre",
+        "storySource": "user",
+        "sentence": "Araceli lo lleva a una comida larga.",
+        "targetWord": "larga",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/eb41757e1039dff1.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

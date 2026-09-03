@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "cafetería,compañero,carrera,media",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "cafetería",
-     "answer": "a coffee shop",
-     "options": [
-      "a coffee shop",
-      "a workmate",
-      "a degree course",
-      "half"
-     ]
-    },
-    {
-     "word": "compañero",
-     "answer": "a workmate",
-     "options": [
-      "a coffee shop",
-      "a workmate",
-      "a degree course",
-      "half"
-     ]
-    },
-    {
-     "word": "carrera",
-     "answer": "a degree course",
-     "options": [
-      "a coffee shop",
-      "a workmate",
-      "a degree course",
-      "half"
-     ]
-    },
-    {
-     "word": "media",
-     "answer": "half",
-     "options": [
-      "a coffee shop",
-      "a workmate",
-      "a degree course",
-      "half"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "cafetería,compañero,carrera,media",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "cafetería",
+          "answer": "a coffee shop",
+          "options": [
+            "a coffee shop",
+            "a workmate",
+            "a degree course",
+            "half"
+          ]
+        },
+        {
+          "word": "compañero",
+          "answer": "a workmate",
+          "options": [
+            "a coffee shop",
+            "a workmate",
+            "a degree course",
+            "half"
+          ]
+        },
+        {
+          "word": "carrera",
+          "answer": "a degree course",
+          "options": [
+            "a coffee shop",
+            "a workmate",
+            "a degree course",
+            "half"
+          ]
+        },
+        {
+          "word": "media",
+          "answer": "half",
+          "options": [
+            "a coffee shop",
+            "a workmate",
+            "a degree course",
+            "half"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "tenso",
-  "sentence": "Nadie habla y el momento se pone muy _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "tenso",
-   "options": [
-    "tenso",
-    "alegre",
-    "barato",
-    "corto"
-   ],
-   "translation": "Nobody speaks and the moment turns very _____.",
-   "optionTranslations": [
-    "tense",
-    "cheerful",
-    "cheap",
-    "short"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Nadie habla y el momento se pone muy tenso.",
-    "targetWord": "tenso",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "amarga",
-  "sentence": "Se queda callada y con la boca _____ toda la tarde.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "amarga",
-   "options": [
-    "amarga",
-    "dulce",
-    "abierta",
-    "limpia"
-   ],
-   "translation": "She stays quiet with a _____ taste in her mouth all afternoon.",
-   "optionTranslations": [
-    "bitter",
-    "sweet",
-    "open",
-    "clean"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Se queda callada y con la boca amarga toda la tarde.",
-    "targetWord": "amarga",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "borrar",
-  "sentence": "Lo dijo delante de todos y ya no lo puede _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "borrar",
-   "options": [
-    "borrar",
-    "repetir",
-    "escribir",
-    "contar"
-   ],
-   "translation": "She said it in front of everybody and now cannot _____ it.",
-   "optionTranslations": [
-    "erase",
-    "repeat",
-    "write",
-    "tell"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Lo dijo delante de todos y ya no lo puede borrar.",
-    "targetWord": "borrar",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "esconder",
-  "sentence": "La historia es larga y ya no la puede _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "esconder",
-   "options": [
-    "esconder",
-    "vender",
-    "prestar",
-    "medir"
-   ],
-   "translation": "The story is long and she can no longer _____ it.",
-   "optionTranslations": [
-    "hide",
-    "sell",
-    "lend",
-    "measure"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "La historia es larga y ya no la puede esconder.",
-    "targetWord": "esconder",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "preparar",
-  "sentence": "Hoy invito yo, dice, y [[prepara]] la suya.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to get ready",
-   "options": [
-    "to get ready",
-    "to pay for",
-    "to spill",
-    "to order"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Hoy invito yo, dice, y prepara la suya.",
-    "targetWord": "prepara",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tragar",
-  "sentence": "Le salió clarito, dice él despacio, y [[traga]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to swallow",
-   "options": [
-    "to swallow",
-    "to smile",
-    "to nod",
-    "to sigh"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Le salió clarito, dice él despacio, y traga.",
-    "targetWord": "traga",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "equivocarse",
-  "sentence": "Usted se [[equivoca]] con la gente, le dice al fin.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to be wrong",
-   "options": [
-    "to be wrong",
-    "to be rude",
-    "to be late",
-    "to be shy"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Usted se equivoca con la gente, le dice al fin.",
-    "targetWord": "equivoca",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "doler",
-  "sentence": "Le [[duele]] y no lo dice a nadie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to hurt",
-   "options": [
-    "to hurt",
-    "to bore",
-    "to please",
-    "to surprise"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Le duele y no lo dice a nadie.",
-    "targetWord": "duele",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "proponer",
-  "sentence": "Nadie [[propone]] cambiar de tema y ella no lo nota.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to suggest",
-   "options": [
-    "to suggest",
-    "to refuse",
-    "to promise",
-    "to remember"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Nadie propone cambiar de tema y ella no lo nota.",
-    "targetWord": "propone",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "callado",
-  "sentence": "Se queda [[callada]] y amarga, sin dejarse ver.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "silent",
-   "options": [
-    "silent",
-    "angry",
-    "busy",
-    "proud"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Se queda callada y amarga, sin dejarse ver.",
-    "targetWord": "callada",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "claro",
-  "sentence": "Le salió [[clarito]], y justo, dice él despacio.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "clearly",
-   "options": [
-    "clearly",
-    "slowly",
-    "kindly",
-    "loudly"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Le salió clarito, y justo, dice él despacio.",
-    "targetWord": "clarito",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "tenso",
+    "sentence": "Nadie habla y todo se pone muy _____ en el salón.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "tenso",
+      "options": [
+        "tenso",
+        "alegre",
+        "barato",
+        "corto"
+      ],
+      "translation": "Nobody speaks and everything turns very _____ in the hall.",
+      "optionTranslations": [
+        "tense",
+        "cheerful",
+        "cheap",
+        "short"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Nadie habla y todo se pone muy tenso en el salón.",
+        "targetWord": "tenso",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/80b626bb9b711e22.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "casi",
-  "sentence": "[[Casi]] todos se juntan cada tarde en la cafetería.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "almost",
-   "options": [
-    "almost",
-    "never",
-    "already",
-    "only"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Casi todos se juntan cada tarde en la cafetería.",
-    "targetWord": "casi",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "amarga",
+    "sentence": "Se queda callada y con la boca _____ toda la tarde.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "amarga",
+      "options": [
+        "amarga",
+        "dulce",
+        "abierta",
+        "limpia"
+      ],
+      "translation": "She stays quiet with a _____ taste in her mouth all afternoon.",
+      "optionTranslations": [
+        "bitter",
+        "sweet",
+        "open",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Se queda callada y con la boca amarga toda la tarde.",
+        "targetWord": "amarga",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1ede6af9a2af37f5.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "luego",
-  "sentence": "Fabián se ríe también, y [[luego]] todos lo repiten.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "then",
-   "options": [
-    "then",
-    "before",
-    "instead",
-    "meanwhile"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Fabián se ríe también, y luego todos lo repiten.",
-    "targetWord": "luego",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "borrar",
+    "sentence": "Lo dijo delante de todos y ya no lo puede _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "borrar",
+      "options": [
+        "borrar",
+        "repetir",
+        "escribir",
+        "contar"
+      ],
+      "translation": "She said it in front of everybody and now cannot _____ it.",
+      "optionTranslations": [
+        "erase",
+        "repeat",
+        "write",
+        "tell"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Lo dijo delante de todos y ya no lo puede borrar.",
+        "targetWord": "borrar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0ad986067634b115.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "dejarse",
-  "sentence": "Se queda callada y amarga, sin [[dejarse]] ver.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to let oneself",
-   "options": [
-    "to let oneself",
-    "to make oneself",
-    "to find oneself",
-    "to ask oneself"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Se queda callada y amarga, sin dejarse ver.",
-    "targetWord": "dejarse",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "esconder",
+    "sentence": "La historia es larga y ya no la puede _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "esconder",
+      "options": [
+        "esconder",
+        "vender",
+        "prestar",
+        "medir"
+      ],
+      "translation": "The story is long and she can no longer _____ it.",
+      "optionTranslations": [
+        "hide",
+        "sell",
+        "lend",
+        "measure"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "La historia es larga y ya no la puede esconder.",
+        "targetWord": "esconder",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b5c5e002755b8fb0.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "parar",
-  "sentence": "Él contesta seco, sin [[parar]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to stop",
-   "options": [
-    "to stop",
-    "to look",
-    "to listen",
-    "to breathe"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Él contesta seco, sin parar.",
-    "targetWord": "parar",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "preparar",
+    "sentence": "Hoy invito yo, dice, y [[prepara]] la suya.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to get ready",
+      "options": [
+        "to get ready",
+        "to pay for",
+        "to spill",
+        "to order"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Hoy invito yo, dice, y prepara la suya.",
+        "targetWord": "prepara",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f93c58531fda9b28.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "cambiar",
-  "sentence": "Nadie propone [[cambiar]] de tema.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to change",
-   "options": [
-    "to change",
-    "to choose",
-    "to open",
-    "to finish"
-   ],
-   "audioClip": {
-    "storySlug": "la-broma-que-se-cobra",
-    "storySource": "user",
-    "sentence": "Nadie propone cambiar de tema.",
-    "targetWord": "cambiar",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "tragar",
+    "sentence": "Le salió clarito, dice él despacio, y [[traga]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to swallow",
+      "options": [
+        "to swallow",
+        "to smile",
+        "to nod",
+        "to sigh"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Le salió clarito, dice él despacio, y traga.",
+        "targetWord": "traga",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/74431f40677841d9.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "equivocarse",
+    "sentence": "Usted se [[equivoca]] con la gente, le dice al fin.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be wrong",
+      "options": [
+        "to be wrong",
+        "to be rude",
+        "to be late",
+        "to be shy"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Usted se equivoca con la gente, le dice al fin.",
+        "targetWord": "equivoca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b3174d5bca97445a.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doler",
+    "sentence": "Le [[duele]] y no lo dice a nadie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to hurt",
+      "options": [
+        "to hurt",
+        "to bore",
+        "to please",
+        "to surprise"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Le duele y no lo dice a nadie.",
+        "targetWord": "duele",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/52853577ef9f31ca.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "proponer",
+    "sentence": "Nadie [[propone]] cambiar de tema y ella no lo nota.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to suggest",
+      "options": [
+        "to suggest",
+        "to refuse",
+        "to promise",
+        "to remember"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Nadie propone cambiar de tema y ella no lo nota.",
+        "targetWord": "propone",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3579fa606f3124c8.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "callado",
+    "sentence": "Se queda [[callada]] y amarga, sin decir una palabra más.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "silent",
+      "options": [
+        "silent",
+        "angry",
+        "busy",
+        "proud"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Se queda callada y amarga, sin decir una palabra más.",
+        "targetWord": "callada",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/29beaa870f16ee2f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "claro",
+    "sentence": "Le salió [[clarito]] y justo, dice él sin mirar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clearly",
+      "options": [
+        "clearly",
+        "slowly",
+        "kindly",
+        "loudly"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Le salió clarito y justo, dice él sin mirar.",
+        "targetWord": "clarito",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c9ef870b090de0fd.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "casi",
+    "sentence": "[[Casi]] todos se juntan cada tarde en el mismo bar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "almost",
+      "options": [
+        "almost",
+        "never",
+        "already",
+        "only"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Casi todos se juntan cada tarde en el mismo bar.",
+        "targetWord": "casi",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/13054192c523a254.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "luego",
+    "sentence": "Fabián se ríe también, y [[luego]] todos lo repiten.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "then",
+      "options": [
+        "then",
+        "before",
+        "instead",
+        "meanwhile"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Fabián se ríe también, y luego todos lo repiten.",
+        "targetWord": "luego",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5af2e236b8e6a752.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dejarse",
+    "sentence": "Se queda callada y amarga, sin [[dejarse]] ver.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to let oneself",
+      "options": [
+        "to let oneself",
+        "to make oneself",
+        "to find oneself",
+        "to ask oneself"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Se queda callada y amarga, sin dejarse ver.",
+        "targetWord": "dejarse",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b8d0d6a4a7e79988.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "parar",
+    "sentence": "Él contesta seco, sin [[parar]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stop",
+      "options": [
+        "to stop",
+        "to look",
+        "to listen",
+        "to breathe"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Él contesta seco, sin parar.",
+        "targetWord": "parar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b60e4fb6e03632c1.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cambiar",
+    "sentence": "Nadie propone [[cambiar]] de tema.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to change",
+      "options": [
+        "to change",
+        "to choose",
+        "to open",
+        "to finish"
+      ],
+      "audioClip": {
+        "storySlug": "la-broma-que-se-cobra",
+        "storySource": "user",
+        "sentence": "Nadie propone cambiar de tema.",
+        "targetWord": "cambiar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3feeef5435dff34c.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

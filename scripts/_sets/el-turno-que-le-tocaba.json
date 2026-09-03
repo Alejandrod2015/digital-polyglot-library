@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "turno,hoja,cortina,regalo",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "turno",
-     "answer": "a turn",
-     "options": [
-      "a turn",
-      "a sheet of paper",
-      "a shutter",
-      "a gift"
-     ]
-    },
-    {
-     "word": "hoja",
-     "answer": "a sheet of paper",
-     "options": [
-      "a turn",
-      "a sheet of paper",
-      "a shutter",
-      "a gift"
-     ]
-    },
-    {
-     "word": "cortina",
-     "answer": "a shutter",
-     "options": [
-      "a turn",
-      "a sheet of paper",
-      "a shutter",
-      "a gift"
-     ]
-    },
-    {
-     "word": "regalo",
-     "answer": "a gift",
-     "options": [
-      "a turn",
-      "a sheet of paper",
-      "a shutter",
-      "a gift"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "turno,hoja,cortina,regalo",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "turno",
+          "answer": "a turn",
+          "options": [
+            "a turn",
+            "a sheet of paper",
+            "a shutter",
+            "a gift"
+          ]
+        },
+        {
+          "word": "hoja",
+          "answer": "a sheet of paper",
+          "options": [
+            "a turn",
+            "a sheet of paper",
+            "a shutter",
+            "a gift"
+          ]
+        },
+        {
+          "word": "cortina",
+          "answer": "a shutter",
+          "options": [
+            "a turn",
+            "a sheet of paper",
+            "a shutter",
+            "a gift"
+          ]
+        },
+        {
+          "word": "regalo",
+          "answer": "a gift",
+          "options": [
+            "a turn",
+            "a sheet of paper",
+            "a shutter",
+            "a gift"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "empuja",
-  "sentence": "La cuenta no cierra y _____ el papel hacia el vecino.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "empuja",
-   "options": [
-    "empuja",
-    "dobla",
-    "quema",
-    "firma"
-   ],
-   "translation": "The accounts do not add up and she _____ the paper towards the neighbour.",
-   "optionTranslations": [
-    "pushes",
-    "folds",
-    "burns",
-    "signs"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "La cuenta no cierra y empuja el papel hacia el vecino.",
-    "targetWord": "empuja",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "rompe",
-  "sentence": "La hoja vieja ya no sirve y la _____ en dos.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "rompe",
-   "options": [
-    "rompe",
-    "guarda",
-    "copia",
-    "cuelga"
-   ],
-   "translation": "The old sheet is no use now and she _____ it in two.",
-   "optionTranslations": [
-    "tears up",
-    "keeps",
-    "copies",
-    "hangs up"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "La hoja vieja ya no sirve y la rompe en dos.",
-    "targetWord": "rompe",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "cierra",
-  "sentence": "Baja la persiana y _____ el puesto hasta mañana.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "cierra",
-   "options": [
-    "cierra",
-    "abre",
-    "lava",
-    "pinta"
-   ],
-   "translation": "She pulls the shutter down and _____ the stall until tomorrow.",
-   "optionTranslations": [
-    "closes",
-    "opens",
-    "washes",
-    "paints"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "Baja la persiana y cierra el puesto hasta mañana.",
-    "targetWord": "cierra",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "vacía",
-  "sentence": "Se llevó toda la fruta y la mesa quedó _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "vacía",
-   "options": [
-    "vacía",
-    "mojada",
-    "rota",
-    "llena"
-   ],
-   "translation": "She took all the fruit away and the table was left _____.",
-   "optionTranslations": [
-    "empty",
-    "wet",
-    "broken",
-    "full"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "Se llevó toda la fruta y la mesa quedó vacía.",
-    "targetWord": "vacía",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "tocar",
-  "sentence": "Es mi turno, este mes me [[tocaba]] a mí.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to fall to somebody",
-   "options": [
-    "to fall to somebody",
-    "to belong to somebody",
-    "to suit somebody",
-    "to worry somebody"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "Es mi turno, este mes me tocaba a mí.",
-    "targetWord": "tocaba",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "funcionar",
-  "sentence": "Así [[funciona]], y usted acaba de entrar.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to work",
-   "options": [
-    "to work",
-    "to end",
-    "to begin",
-    "to change"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "Así funciona, y usted acaba de entrar.",
-    "targetWord": "funciona",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "poner",
-  "sentence": "Saca doscientos del bolsillo y los [[pone]] encima.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to put down",
-   "options": [
-    "to put down",
-    "to pick up",
-    "to count out",
-    "to hide"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "Saca doscientos del bolsillo y los pone encima.",
-    "targetWord": "pone",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "acabar",
-  "sentence": "Así funciona, y usted [[acaba]] de entrar.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to have just done",
-   "options": [
-    "to have just done",
-    "to be about to do",
-    "to keep on doing",
-    "to stop doing"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "Así funciona, y usted acaba de entrar.",
-    "targetWord": "acaba",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "llamar",
-  "sentence": "Llegó por su cuenta: nadie lo [[llamó]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to call for",
-   "options": [
-    "to call for",
-    "to pay",
-    "to thank",
-    "to expect"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "Llegó por su cuenta: nadie lo llamó.",
-    "targetWord": "llamó",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "contra",
-  "sentence": "Ahora la cuenta no le da en [[contra]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "against her",
-   "options": [
-    "against her",
-    "in her favour",
-    "by half",
-    "in cash"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "Ahora la cuenta no le da en contra.",
-    "targetWord": "contra",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "papel",
-  "sentence": "Empuja el [[papel]] hacia Salvador.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a sheet",
-   "options": [
-    "a sheet",
-    "a coin",
-    "a box",
-    "a cloth"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "Empuja el papel hacia Salvador.",
-    "targetWord": "papel",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "empuja",
+    "sentence": "La cuenta no cierra y _____ el papel hacia el vecino.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "empuja",
+      "options": [
+        "empuja",
+        "dobla",
+        "quema",
+        "firma"
+      ],
+      "translation": "The accounts do not add up and she _____ the paper towards the neighbour.",
+      "optionTranslations": [
+        "pushes",
+        "folds",
+        "burns",
+        "signs"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "La cuenta no cierra y empuja el papel hacia el vecino.",
+        "targetWord": "empuja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/983768d00593c9f2.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "dinero",
-  "sentence": "Falta [[dinero]]: cuatrocientos pesos.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "money",
-   "options": [
-    "money",
-    "time",
-    "fruit",
-    "space"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "Falta dinero: cuatrocientos pesos.",
-    "targetWord": "dinero",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "rompe",
+    "sentence": "La hoja vieja ya no sirve y la _____ en dos.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "rompe",
+      "options": [
+        "rompe",
+        "guarda",
+        "copia",
+        "cuelga"
+      ],
+      "translation": "The old sheet is no use now and she _____ it in two.",
+      "optionTranslations": [
+        "tears up",
+        "keeps",
+        "copies",
+        "hangs up"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "La hoja vieja ya no sirve y la rompe en dos.",
+        "targetWord": "rompe",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8faaeb67837d909e.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sombra",
-  "sentence": "El último día el mercado está en [[sombra]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "shade",
-   "options": [
-    "shade",
-    "sunshine",
-    "silence",
-    "dust"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "El último día el mercado está en sombra.",
-    "targetWord": "sombra",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "cierra",
+    "sentence": "Baja la persiana y _____ el puesto hasta mañana.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cierra",
+      "options": [
+        "cierra",
+        "abre",
+        "lava",
+        "pinta"
+      ],
+      "translation": "She pulls the shutter down and _____ the stall until tomorrow.",
+      "optionTranslations": [
+        "closes",
+        "opens",
+        "washes",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "Baja la persiana y cierra el puesto hasta mañana.",
+        "targetWord": "cierra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a871a81e4f4f4674.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "total",
-  "sentence": "Debajo pone el primer [[total]] que tiene esa cuenta.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a total",
-   "options": [
-    "a total",
-    "a name",
-    "a date",
-    "a price"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "Debajo pone el primer total que tiene esa cuenta.",
-    "targetWord": "total",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "vacía",
+    "sentence": "Se llevó toda la fruta y la mesa quedó _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "vacía",
+      "options": [
+        "vacía",
+        "mojada",
+        "rota",
+        "llena"
+      ],
+      "translation": "She took all the fruit away and the table was left _____.",
+      "optionTranslations": [
+        "empty",
+        "wet",
+        "broken",
+        "full"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "Se llevó toda la fruta y la mesa quedó vacía.",
+        "targetWord": "vacía",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9d9d0012234d45e6.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "primer",
-  "sentence": "Debajo pone el [[primer]] total de la libreta.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "first",
-   "options": [
-    "first",
-    "last",
-    "whole",
-    "wrong"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "Debajo pone el primer total de la libreta.",
-    "targetWord": "primer",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "tocar",
+    "sentence": "Es mi turno, este mes me [[tocaba]] a mí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fall to somebody",
+      "options": [
+        "to fall to somebody",
+        "to belong to somebody",
+        "to suit somebody",
+        "to worry somebody"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "Es mi turno, este mes me tocaba a mí.",
+        "targetWord": "tocaba",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/8103a41708fbd958.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "último",
-  "sentence": "El [[último]] día el mercado está en sombra.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "last",
-   "options": [
-    "last",
-    "first",
-    "next",
-    "longest"
-   ],
-   "audioClip": {
-    "storySlug": "el-turno-que-le-tocaba",
-    "storySource": "user",
-    "sentence": "El último día el mercado está en sombra.",
-    "targetWord": "último",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "funcionar",
+    "sentence": "Así [[funciona]], y usted acaba de entrar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to work",
+      "options": [
+        "to work",
+        "to end",
+        "to begin",
+        "to change"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "Así funciona, y usted acaba de entrar.",
+        "targetWord": "funciona",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28df98b0be2b5e9c.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "poner",
+    "sentence": "Saca doscientos del bolsillo y los [[pone]] sobre el papel.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to put down",
+      "options": [
+        "to put down",
+        "to pick up",
+        "to count out",
+        "to hide"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "Saca doscientos del bolsillo y los pone sobre el papel.",
+        "targetWord": "pone",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc7715382ff6fefc.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "acabar",
+    "sentence": "Así funciona, y usted [[acaba]] de entrar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to have just done",
+      "options": [
+        "to have just done",
+        "to be about to do",
+        "to keep on doing",
+        "to stop doing"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "Así funciona, y usted acaba de entrar.",
+        "targetWord": "acaba",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/28df98b0be2b5e9c.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "llamar",
+    "sentence": "Llegó por su cuenta: nadie lo [[llamó]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to call for",
+      "options": [
+        "to call for",
+        "to pay",
+        "to thank",
+        "to expect"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "Llegó por su cuenta: nadie lo llamó.",
+        "targetWord": "llamó",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5c70b8f8e3a08345.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "contra",
+    "sentence": "Ahora la cuenta no le da en [[contra]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "against her",
+      "options": [
+        "against her",
+        "in her favour",
+        "by half",
+        "in cash"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "Ahora la cuenta no le da en contra.",
+        "targetWord": "contra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/175d687fb80c2d01.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "papel",
+    "sentence": "Empuja el [[papel]] hacia Salvador.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a sheet",
+      "options": [
+        "a sheet",
+        "a coin",
+        "a box",
+        "a cloth"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "Empuja el papel hacia Salvador.",
+        "targetWord": "papel",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4ed2aad908023956.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dinero",
+    "sentence": "Falta [[dinero]] para cerrar la cuenta del mes.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "money",
+      "options": [
+        "money",
+        "time",
+        "fruit",
+        "space"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "Falta dinero para cerrar la cuenta del mes.",
+        "targetWord": "dinero",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3d02245ed941c186.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sombra",
+    "sentence": "El último día el mercado está en [[sombra]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "shade",
+      "options": [
+        "shade",
+        "sunshine",
+        "silence",
+        "dust"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "El último día el mercado está en sombra.",
+        "targetWord": "sombra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7df3e5ea507bbb27.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "total",
+    "sentence": "Debajo pone el primer [[total]] que tiene esa cuenta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a total",
+      "options": [
+        "a total",
+        "a name",
+        "a date",
+        "a price"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "Debajo pone el primer total que tiene esa cuenta.",
+        "targetWord": "total",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d28dc3efedbba19a.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "primer",
+    "sentence": "Debajo pone el [[primer]] total de la libreta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "first",
+      "options": [
+        "first",
+        "last",
+        "whole",
+        "wrong"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "Debajo pone el primer total de la libreta.",
+        "targetWord": "primer",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/33523c18e68a417b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "último",
+    "sentence": "El [[último]] día el mercado está en sombra.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "last",
+      "options": [
+        "last",
+        "first",
+        "next",
+        "longest"
+      ],
+      "audioClip": {
+        "storySlug": "el-turno-que-le-tocaba",
+        "storySource": "user",
+        "sentence": "El último día el mercado está en sombra.",
+        "targetWord": "último",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7df3e5ea507bbb27.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

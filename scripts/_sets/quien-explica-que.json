@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "apariencia,pago,paso,sur",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "apariencia",
-     "answer": "look, appearance",
-     "options": [
-      "look, appearance",
-      "a payment",
-      "a step",
-      "the south"
-     ]
-    },
-    {
-     "word": "pago",
-     "answer": "a payment",
-     "options": [
-      "look, appearance",
-      "a payment",
-      "a step",
-      "the south"
-     ]
-    },
-    {
-     "word": "paso",
-     "answer": "a step",
-     "options": [
-      "look, appearance",
-      "a payment",
-      "a step",
-      "the south"
-     ]
-    },
-    {
-     "word": "sur",
-     "answer": "the south",
-     "options": [
-      "look, appearance",
-      "a payment",
-      "a step",
-      "the south"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "apariencia,pago,paso,sur",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "apariencia",
+          "answer": "look, appearance",
+          "options": [
+            "look, appearance",
+            "a payment",
+            "a step",
+            "the south"
+          ]
+        },
+        {
+          "word": "pago",
+          "answer": "a payment",
+          "options": [
+            "look, appearance",
+            "a payment",
+            "a step",
+            "the south"
+          ]
+        },
+        {
+          "word": "paso",
+          "answer": "a step",
+          "options": [
+            "look, appearance",
+            "a payment",
+            "a step",
+            "the south"
+          ]
+        },
+        {
+          "word": "sur",
+          "answer": "the south",
+          "options": [
+            "look, appearance",
+            "a payment",
+            "a step",
+            "the south"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "entrega",
-  "sentence": "Firma la hoja y se la _____ a la invitada.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "entrega",
-   "options": [
-    "entrega",
-    "rompe",
-    "copia",
-    "esconde"
-   ],
-   "translation": "She signs the sheet and _____ it to the guest.",
-   "optionTranslations": [
-    "hands over",
-    "tears up",
-    "copies",
-    "hides"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "Firma la hoja y se la entrega a la invitada.",
-    "targetWord": "entrega",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "anota",
-  "sentence": "La invitada escucha todo y lo _____ en su libreta.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "anota",
-   "options": [
-    "anota",
-    "canta",
-    "borra",
-    "paga"
-   ],
-   "translation": "The guest listens to everything and _____ it in her notebook.",
-   "optionTranslations": [
-    "writes down",
-    "sings",
-    "erases",
-    "pays"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "La invitada escucha todo y lo anota en su libreta.",
-    "targetWord": "anota",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "reduce",
-  "sentence": "Al final le pagan menos: el pago se _____ a la mitad.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "reduce",
-   "options": [
-    "reduce",
-    "dobla",
-    "pierde",
-    "adelanta"
-   ],
-   "translation": "In the end they pay her less: the payment _____ by half.",
-   "optionTranslations": [
-    "is reduced",
-    "doubles",
-    "is lost",
-    "is brought forward"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "Al final le pagan menos: el pago se reduce a la mitad.",
-    "targetWord": "reduce",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "ocultar",
-  "sentence": "Lo cuenta todo y no intenta _____ nada.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "ocultar",
-   "options": [
-    "ocultar",
-    "vender",
-    "medir",
-    "repetir"
-   ],
-   "translation": "She tells the whole thing and does not try to _____ anything.",
-   "optionTranslations": [
-    "hide",
-    "sell",
-    "measure",
-    "repeat"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "Lo cuenta todo y no intenta ocultar nada.",
-    "targetWord": "ocultar",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "empezar",
-  "sentence": "Liliana entra y [[empieza]] sin esperar a nadie.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to begin",
-   "options": [
-    "to begin",
-    "to give up",
-    "to sit down",
-    "to apologise"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "Liliana entra y empieza sin esperar a nadie.",
-    "targetWord": "empieza",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "arreglar",
-  "sentence": "No lo [[arregla]] bien, y le falta aire.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to fix",
-   "options": [
-    "to fix",
-    "to explain",
-    "to break",
-    "to prove"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "No lo arregla bien, y le falta aire.",
-    "targetWord": "arregla",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "costar",
-  "sentence": "Me dio pena por él, y me [[costó]] menos.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to cost",
-   "options": [
-    "to cost",
-    "to help",
-    "to hurt",
-    "to last"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "Me dio pena por él, y me costó menos.",
-    "targetWord": "costó",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "decidir",
-  "sentence": "La invitada anota y [[decide]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to decide",
-   "options": [
-    "to decide",
-    "to hesitate",
-    "to leave",
-    "to complain"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "La invitada anota y decide.",
-    "targetWord": "decide",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "firmar",
-  "sentence": "El pago se reduce y ella [[firma]] igual.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to sign",
-   "options": [
-    "to sign",
-    "to refuse",
-    "to count",
-    "to keep"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "El pago se reduce y ella firma igual.",
-    "targetWord": "firma",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "faltar",
-  "sentence": "No lo arregla bien, y le [[falta]] aire.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to be short of",
-   "options": [
-    "to be short of",
-    "to be full of",
-    "to give away",
-    "to hold back"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "No lo arregla bien, y le falta aire.",
-    "targetWord": "falta",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "pronto",
-  "sentence": "La invitada pregunta [[pronto]] por qué lo dejó pasar.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "soon",
-   "options": [
-    "soon",
-    "late",
-    "again",
-    "quietly"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "La invitada pregunta pronto por qué lo dejó pasar.",
-    "targetWord": "pronto",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "entrega",
+    "sentence": "Firma la hoja y se la _____ a la mujer.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "entrega",
+      "options": [
+        "entrega",
+        "rompe",
+        "copia",
+        "esconde"
+      ],
+      "translation": "She signs the sheet and _____ it to the woman.",
+      "optionTranslations": [
+        "hands over",
+        "tears up",
+        "copies",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "Firma la hoja y se la entrega a la mujer.",
+        "targetWord": "entrega",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/822d9072384e71d8.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "rechazar",
-  "sentence": "Una, entonces, acepta Liliana, y no lo [[rechaza]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to turn down",
-   "options": [
-    "to turn down",
-    "to take on",
-    "to pay for",
-    "to point out"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "Una, entonces, acepta Liliana, y no lo rechaza.",
-    "targetWord": "rechaza",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "anota",
+    "sentence": "La invitada escucha todo y lo _____ en su libreta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "anota",
+      "options": [
+        "anota",
+        "canta",
+        "borra",
+        "paga"
+      ],
+      "translation": "The guest listens to everything and _____ it in her notebook.",
+      "optionTranslations": [
+        "writes down",
+        "sings",
+        "erases",
+        "pays"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "La invitada escucha todo y lo anota en su libreta.",
+        "targetWord": "anota",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c6cf01dc41e5f469.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "apuntar",
-  "sentence": "Después [[apunta]] el trabajo del jueves.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to note down",
-   "options": [
-    "to note down",
-    "to cross out",
-    "to call off",
-    "to hand in"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "Después apunta el trabajo del jueves.",
-    "targetWord": "apunta",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "reduce",
+    "sentence": "El trabajo se acorta y el pago se _____ igual.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "reduce",
+      "options": [
+        "reduce",
+        "dobla",
+        "pierde",
+        "adelanta"
+      ],
+      "translation": "The job gets shorter and the payment _____ too.",
+      "optionTranslations": [
+        "is reduced",
+        "doubles",
+        "is lost",
+        "is brought forward"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "El trabajo se acorta y el pago se reduce igual.",
+        "targetWord": "reduce",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ac690438d2f2b493.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "continuar",
-  "sentence": "Un paso corto al sur, y [[continúa]] por ahí.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to carry on",
-   "options": [
-    "to carry on",
-    "to turn back",
-    "to slow down",
-    "to give up"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "Un paso corto al sur, y continúa por ahí.",
-    "targetWord": "continúa",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "ocultar",
+    "sentence": "Lo cuenta todo y no intenta _____ nada.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "ocultar",
+      "options": [
+        "ocultar",
+        "vender",
+        "medir",
+        "repetir"
+      ],
+      "translation": "She tells the whole thing and does not try to _____ anything.",
+      "optionTranslations": [
+        "hide",
+        "sell",
+        "measure",
+        "repeat"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "Lo cuenta todo y no intenta ocultar nada.",
+        "targetWord": "ocultar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/31f5a663930f71ae.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "apenas",
-  "sentence": "El ventilador [[apenas]] alcanza en la cafetería.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "hardly",
-   "options": [
-    "hardly",
-    "easily",
-    "always",
-    "already"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "El ventilador apenas alcanza en la cafetería.",
-    "targetWord": "apenas",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "empezar",
+    "sentence": "Liliana entra y [[empieza]] sin esperar a nadie.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to begin",
+      "options": [
+        "to begin",
+        "to give up",
+        "to sit down",
+        "to apologise"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "Liliana entra y empieza sin esperar a nadie.",
+        "targetWord": "empieza",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c9dca7d5f90f7925.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "alcanzar",
-  "sentence": "El ventilador apenas [[alcanza]] para toda la sala.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to be enough",
-   "options": [
-    "to be enough",
-    "to be broken",
-    "to be loud",
-    "to be new"
-   ],
-   "audioClip": {
-    "storySlug": "quien-explica-que",
-    "storySource": "user",
-    "sentence": "El ventilador apenas alcanza para toda la sala.",
-    "targetWord": "alcanza",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "arreglar",
+    "sentence": "No lo [[arregla]] bien, y le falta aire.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to fix",
+      "options": [
+        "to fix",
+        "to explain",
+        "to break",
+        "to prove"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "No lo arregla bien, y le falta aire.",
+        "targetWord": "arregla",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4b3805a14b17c4f3.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "costar",
+    "sentence": "Me dio pena por él, y me [[costó]] menos.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to cost",
+      "options": [
+        "to cost",
+        "to help",
+        "to hurt",
+        "to last"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "Me dio pena por él, y me costó menos.",
+        "targetWord": "costó",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2d5670ecf0c5ec32.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "decidir",
+    "sentence": "La invitada anota todo y [[decide]] sin mirar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to decide",
+      "options": [
+        "to decide",
+        "to hesitate",
+        "to leave",
+        "to complain"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "La invitada anota todo y decide sin mirar.",
+        "targetWord": "decide",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/476f0df81ca3f239.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "firmar",
+    "sentence": "El pago se reduce y ella [[firma]] igual.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sign",
+      "options": [
+        "to sign",
+        "to refuse",
+        "to count",
+        "to keep"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "El pago se reduce y ella firma igual.",
+        "targetWord": "firma",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/791fd89280d8c3a9.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "faltar",
+    "sentence": "No lo arregla bien, y le [[falta]] aire.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be short of",
+      "options": [
+        "to be short of",
+        "to be full of",
+        "to give away",
+        "to hold back"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "No lo arregla bien, y le falta aire.",
+        "targetWord": "falta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/4b3805a14b17c4f3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pronto",
+    "sentence": "La invitada pregunta [[pronto]] por qué lo dejó pasar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "soon",
+      "options": [
+        "soon",
+        "late",
+        "again",
+        "quietly"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "La invitada pregunta pronto por qué lo dejó pasar.",
+        "targetWord": "pronto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bc2344dedd68f5dc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "rechazar",
+    "sentence": "Una, entonces, acepta Liliana, y no lo [[rechaza]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to turn down",
+      "options": [
+        "to turn down",
+        "to take on",
+        "to pay for",
+        "to point out"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "Una, entonces, acepta Liliana, y no lo rechaza.",
+        "targetWord": "rechaza",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/164ee2a4e591e714.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apuntar",
+    "sentence": "Después [[apunta]] el trabajo del jueves.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to note down",
+      "options": [
+        "to note down",
+        "to cross out",
+        "to call off",
+        "to hand in"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "Después apunta el trabajo del jueves.",
+        "targetWord": "apunta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/223b7f9a7c3bbadb.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "continuar",
+    "sentence": "Un paso corto al sur, y [[continúa]] por ahí.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to carry on",
+      "options": [
+        "to carry on",
+        "to turn back",
+        "to slow down",
+        "to give up"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "Un paso corto al sur, y continúa por ahí.",
+        "targetWord": "continúa",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b5c71707a678bdc7.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "apenas",
+    "sentence": "El ventilador [[apenas]] alcanza en la cafetería.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "hardly",
+      "options": [
+        "hardly",
+        "easily",
+        "always",
+        "already"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "El ventilador apenas alcanza en la cafetería.",
+        "targetWord": "apenas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/203666ef4928cf01.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "alcanzar",
+    "sentence": "El ventilador apenas [[alcanza]] para toda la sala.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be enough",
+      "options": [
+        "to be enough",
+        "to be broken",
+        "to be loud",
+        "to be new"
+      ],
+      "audioClip": {
+        "storySlug": "quien-explica-que",
+        "storySource": "user",
+        "sentence": "El ventilador apenas alcanza para toda la sala.",
+        "targetWord": "alcanza",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/acef5af8b4ebe4d1.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

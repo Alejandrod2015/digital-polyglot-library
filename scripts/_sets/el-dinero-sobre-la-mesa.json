@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "alojamiento,percha,cafetera,merienda",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "alojamiento",
-     "answer": "lodging",
-     "options": [
-      "lodging",
-      "a coat hook",
-      "a coffee pot",
-      "an afternoon snack"
-     ]
-    },
-    {
-     "word": "percha",
-     "answer": "a coat hook",
-     "options": [
-      "lodging",
-      "a coat hook",
-      "a coffee pot",
-      "an afternoon snack"
-     ]
-    },
-    {
-     "word": "cafetera",
-     "answer": "a coffee pot",
-     "options": [
-      "lodging",
-      "a coat hook",
-      "a coffee pot",
-      "an afternoon snack"
-     ]
-    },
-    {
-     "word": "merienda",
-     "answer": "an afternoon snack",
-     "options": [
-      "lodging",
-      "a coat hook",
-      "a coffee pot",
-      "an afternoon snack"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "alojamiento,percha,cafetera,merienda",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "alojamiento",
+          "answer": "lodging",
+          "options": [
+            "lodging",
+            "a coat hook",
+            "a coffee pot",
+            "an afternoon snack"
+          ]
+        },
+        {
+          "word": "percha",
+          "answer": "a coat hook",
+          "options": [
+            "lodging",
+            "a coat hook",
+            "a coffee pot",
+            "an afternoon snack"
+          ]
+        },
+        {
+          "word": "cafetera",
+          "answer": "a coffee pot",
+          "options": [
+            "lodging",
+            "a coat hook",
+            "a coffee pot",
+            "an afternoon snack"
+          ]
+        },
+        {
+          "word": "merienda",
+          "answer": "an afternoon snack",
+          "options": [
+            "lodging",
+            "a coat hook",
+            "a coffee pot",
+            "an afternoon snack"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "muestra",
-  "sentence": "Llegan a la casa y ella le _____ el cuarto de arriba.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "muestra",
-   "options": [
-    "muestra",
-    "alquila",
-    "limpia",
-    "pinta"
-   ],
-   "translation": "They reach the house and she _____ her the room upstairs.",
-   "optionTranslations": [
-    "shows",
-    "rents out",
-    "cleans",
-    "paints"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "Llegan a la casa y ella le muestra el cuarto de arriba.",
-    "targetWord": "muestra",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "enfría",
-  "sentence": "Nadie toca la taza y el café se _____ en la mesa.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "enfría",
-   "options": [
-    "enfría",
-    "derrama",
-    "llena",
-    "calienta"
-   ],
-   "translation": "Nobody touches the cup and the coffee _____ on the table.",
-   "optionTranslations": [
-    "goes cold",
-    "spills",
-    "fills up",
-    "heats up"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "Nadie toca la taza y el café se enfría en la mesa.",
-    "targetWord": "enfría",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "quita",
-  "sentence": "Al final entiende y _____ los billetes de la mesa.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "quita",
-   "options": [
-    "quita",
-    "cuenta",
-    "dobla",
-    "suma"
-   ],
-   "translation": "In the end she understands and _____ the notes from the table.",
-   "optionTranslations": [
-    "takes away",
-    "counts",
-    "folds",
-    "adds up"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "Al final entiende y quita los billetes de la mesa.",
-    "targetWord": "quita",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "seca",
-  "sentence": "No dice nada más: contesta muy _____ y sigue.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "seca",
-   "options": [
-    "seca",
-    "alegre",
-    "dulce",
-    "larga"
-   ],
-   "translation": "She says nothing more: she answers very _____ and moves on.",
-   "optionTranslations": [
-    "curtly",
-    "cheerfully",
-    "sweetly",
-    "at length"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "No dice nada más: contesta muy seca y sigue.",
-    "targetWord": "seca",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "recibir",
-  "sentence": "¿Usted le paga a quien la [[recibe]] en su casa?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to take somebody in",
-   "options": [
-    "to take somebody in",
-    "to send somebody away",
-    "to meet somebody out",
-    "to pay somebody back"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "¿Usted le paga a quien la recibe en su casa?",
-    "targetWord": "recibe",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "quedarse",
-  "sentence": "[[Quédese]] los días que quiera, dice Yolanda.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to stay",
-   "options": [
-    "to stay",
-    "to leave",
-    "to pay",
-    "to rest"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "Quédese los días que quiera, dice Yolanda.",
-    "targetWord": "quédese",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "deber",
-  "sentence": "Pone los billetes junto a la cafetera, segura: no [[deber]] nada.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to owe",
-   "options": [
-    "to owe",
-    "to hide",
-    "to spend",
-    "to earn"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "Pone los billetes junto a la cafetera, segura: no deber nada.",
-    "targetWord": "deber",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "servir",
-  "sentence": "Yolanda [[sirve]] un café y la mesa está puesta para uno.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to serve",
-   "options": [
-    "to serve",
-    "to drink",
-    "to buy",
-    "to spill"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "Yolanda sirve un café y la mesa está puesta para uno.",
-    "targetWord": "sirve",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "probar",
-  "sentence": "¿Le sirvo, doña?, [[prueba]] Amparo.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to try",
-   "options": [
-    "to try",
-    "to refuse",
-    "to shout",
-    "to pour"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "¿Le sirvo, doña?, prueba Amparo.",
-    "targetWord": "prueba",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "puesta",
-  "sentence": "La mesa está [[puesta]] para uno.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "laid",
-   "options": [
-    "laid",
-    "broken",
-    "empty",
-    "dirty"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "La mesa está puesta para uno.",
-    "targetWord": "puesta",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "esperar",
-  "sentence": "Amparo [[espera]] e insiste con la merienda.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to wait",
-   "options": [
-    "to wait",
-    "to leave",
-    "to answer",
-    "to eat"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "Amparo espera e insiste con la merienda.",
-    "targetWord": "espera",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "muestra",
+    "sentence": "Llegan a la casa y ella le _____ el cuarto de arriba.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "muestra",
+      "options": [
+        "muestra",
+        "alquila",
+        "limpia",
+        "pinta"
+      ],
+      "translation": "They reach the house and she _____ her the room upstairs.",
+      "optionTranslations": [
+        "shows",
+        "rents out",
+        "cleans",
+        "paints"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "Llegan a la casa y ella le muestra el cuarto de arriba.",
+        "targetWord": "muestra",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c5b10199f98d458a.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "pagar",
-  "sentence": "¿Usted le [[paga]] a quien la recibe en su casa?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to pay",
-   "options": [
-    "to pay",
-    "to thank",
-    "to visit",
-    "to help"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "¿Usted le paga a quien la recibe en su casa?",
-    "targetWord": "paga",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "enfría",
+    "sentence": "Nadie toca la taza y el café se _____ en la mesa.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "enfría",
+      "options": [
+        "enfría",
+        "derrama",
+        "llena",
+        "calienta"
+      ],
+      "translation": "Nobody touches the cup and the coffee _____ on the table.",
+      "optionTranslations": [
+        "goes cold",
+        "spills",
+        "fills up",
+        "heats up"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "Nadie toca la taza y el café se enfría en la mesa.",
+        "targetWord": "enfría",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/bafb77d567ccf196.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "voz baja",
-  "sentence": "¿Hice algo mal?, pregunta al fin, en [[voz baja]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "in a low voice",
-   "options": [
-    "in a low voice",
-    "out loud",
-    "in writing",
-    "by phone"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "¿Hice algo mal?, pregunta al fin, en voz baja.",
-    "targetWord": "voz baja",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "quita",
+    "sentence": "Al final entiende y _____ los billetes del mantel.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "quita",
+      "options": [
+        "quita",
+        "cuenta",
+        "dobla",
+        "suma"
+      ],
+      "translation": "In the end she understands and _____ the notes off the tablecloth.",
+      "optionTranslations": [
+        "takes away",
+        "counts",
+        "folds",
+        "adds up"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "Al final entiende y quita los billetes del mantel.",
+        "targetWord": "quita",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f7289fc19f8937e1.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "seguro",
-  "sentence": "Pone los billetes junto a la cafetera, [[segura]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "sure",
-   "options": [
-    "sure",
-    "doubtful",
-    "afraid",
-    "sorry"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "Pone los billetes junto a la cafetera, segura.",
-    "targetWord": "segura",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "seca",
+    "sentence": "No dice nada más: contesta muy _____ y sigue.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "seca",
+      "options": [
+        "seca",
+        "alegre",
+        "dulce",
+        "larga"
+      ],
+      "translation": "She says nothing more: she answers very _____ and moves on.",
+      "optionTranslations": [
+        "curtly",
+        "cheerfully",
+        "sweetly",
+        "at length"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "No dice nada más: contesta muy seca y sigue.",
+        "targetWord": "seca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/00899bf4a25d1a51.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "raro",
-  "sentence": "A la mañana el dinero sigue ahí, [[raro]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "odd",
-   "options": [
-    "odd",
-    "normal",
-    "useful",
-    "cheap"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "A la mañana el dinero sigue ahí, raro.",
-    "targetWord": "raro",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "recibir",
+    "sentence": "¿Usted le paga a quien la [[recibe]] en su casa?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to take somebody in",
+      "options": [
+        "to take somebody in",
+        "to send somebody away",
+        "to meet somebody out",
+        "to pay somebody back"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "¿Usted le paga a quien la recibe en su casa?",
+        "targetWord": "recibe",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/78d2d0e16aa3249b.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "piso",
-  "sentence": "Deja la valija en el [[piso]] y el abrigo en la percha.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the floor",
-   "options": [
-    "the floor",
-    "the roof",
-    "the street",
-    "the shelf"
-   ],
-   "audioClip": {
-    "storySlug": "el-dinero-sobre-la-mesa",
-    "storySource": "user",
-    "sentence": "Deja la valija en el piso y el abrigo en la percha.",
-    "targetWord": "piso",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "quedarse",
+    "sentence": "[[Quédese]] los días que quiera, dice Yolanda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to stay",
+      "options": [
+        "to stay",
+        "to leave",
+        "to pay",
+        "to rest"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "Quédese los días que quiera, dice Yolanda.",
+        "targetWord": "quédese",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0d9dd14da7237e3e.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "deber",
+    "sentence": "Pone los billetes junto a la cafetera, segura: no [[deber]] nada.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to owe",
+      "options": [
+        "to owe",
+        "to hide",
+        "to spend",
+        "to earn"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "Pone los billetes junto a la cafetera, segura: no deber nada.",
+        "targetWord": "deber",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/672afece524338a5.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "servir",
+    "sentence": "Yolanda [[sirve]] un café y la mesa está puesta para uno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to serve",
+      "options": [
+        "to serve",
+        "to drink",
+        "to buy",
+        "to spill"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "Yolanda sirve un café y la mesa está puesta para uno.",
+        "targetWord": "sirve",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/2fb4dd3148fedf23.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "probar",
+    "sentence": "¿Le sirvo, doña?, [[prueba]] Amparo.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to try",
+      "options": [
+        "to try",
+        "to refuse",
+        "to shout",
+        "to pour"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "¿Le sirvo, doña?, prueba Amparo.",
+        "targetWord": "prueba",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5dca28d582f5ff45.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "puesta",
+    "sentence": "La mesa está [[puesta]] para uno.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "laid",
+      "options": [
+        "laid",
+        "broken",
+        "empty",
+        "dirty"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "La mesa está puesta para uno.",
+        "targetWord": "puesta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/612330bbf7de0c1f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "esperar",
+    "sentence": "Amparo [[espera]] e insiste con la merienda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to wait",
+      "options": [
+        "to wait",
+        "to leave",
+        "to answer",
+        "to eat"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "Amparo espera e insiste con la merienda.",
+        "targetWord": "espera",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/48a98534b0ec9642.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "pagar",
+    "sentence": "¿Usted le [[paga]] a quien la recibe en su casa?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pay",
+      "options": [
+        "to pay",
+        "to thank",
+        "to visit",
+        "to help"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "¿Usted le paga a quien la recibe en su casa?",
+        "targetWord": "paga",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/78d2d0e16aa3249b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "voz baja",
+    "sentence": "¿Hice algo mal?, pregunta al fin, en [[voz baja]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in a low voice",
+      "options": [
+        "in a low voice",
+        "out loud",
+        "in writing",
+        "by phone"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "¿Hice algo mal?, pregunta al fin, en voz baja.",
+        "targetWord": "voz baja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/93770d028aeb22a6.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "seguro",
+    "sentence": "Pone los billetes junto a la cafetera, [[segura]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "sure",
+      "options": [
+        "sure",
+        "doubtful",
+        "afraid",
+        "sorry"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "Pone los billetes junto a la cafetera, segura.",
+        "targetWord": "segura",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9538a753f67343b9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "raro",
+    "sentence": "A la mañana el dinero sigue ahí, [[raro]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "odd",
+      "options": [
+        "odd",
+        "normal",
+        "useful",
+        "cheap"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "A la mañana el dinero sigue ahí, raro.",
+        "targetWord": "raro",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b988cd8330b4a55.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "piso",
+    "sentence": "Deja la valija en el [[piso]] y el abrigo en la percha.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the floor",
+      "options": [
+        "the floor",
+        "the roof",
+        "the street",
+        "the shelf"
+      ],
+      "audioClip": {
+        "storySlug": "el-dinero-sobre-la-mesa",
+        "storySource": "user",
+        "sentence": "Deja la valija en el piso y el abrigo en la percha.",
+        "targetWord": "piso",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/22cdf03a075e7b98.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "pensión,inquilinos,diario,asunto",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "pensión",
-     "answer": "a boarding house",
-     "options": [
-      "a boarding house",
-      "lodgers",
-      "a newspaper",
-      "a matter"
-     ]
-    },
-    {
-     "word": "inquilinos",
-     "answer": "lodgers",
-     "options": [
-      "a boarding house",
-      "lodgers",
-      "a newspaper",
-      "a matter"
-     ]
-    },
-    {
-     "word": "diario",
-     "answer": "a newspaper",
-     "options": [
-      "a boarding house",
-      "lodgers",
-      "a newspaper",
-      "a matter"
-     ]
-    },
-    {
-     "word": "asunto",
-     "answer": "a matter",
-     "options": [
-      "a boarding house",
-      "lodgers",
-      "a newspaper",
-      "a matter"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "pensión,inquilinos,diario,asunto",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "pensión",
+          "answer": "a boarding house",
+          "options": [
+            "a boarding house",
+            "lodgers",
+            "a newspaper",
+            "a matter"
+          ]
+        },
+        {
+          "word": "inquilinos",
+          "answer": "lodgers",
+          "options": [
+            "a boarding house",
+            "lodgers",
+            "a newspaper",
+            "a matter"
+          ]
+        },
+        {
+          "word": "diario",
+          "answer": "a newspaper",
+          "options": [
+            "a boarding house",
+            "lodgers",
+            "a newspaper",
+            "a matter"
+          ]
+        },
+        {
+          "word": "asunto",
+          "answer": "a matter",
+          "options": [
+            "a boarding house",
+            "lodgers",
+            "a newspaper",
+            "a matter"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "describe",
-  "sentence": "No sabe cómo es y por eso no lo _____ bien.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "describe",
-   "options": [
-    "describe",
-    "vende",
-    "llama",
-    "dibuja"
-   ],
-   "translation": "She does not know what he is like, so she does not _____ him well.",
-   "optionTranslations": [
-    "describes",
-    "sells",
-    "calls",
-    "draws"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "No sabe cómo es y por eso no lo describe bien.",
-    "targetWord": "describe",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "oye",
-  "sentence": "Zoila está en el patio y la _____ desde ahí.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "oye",
-   "options": [
-    "oye",
-    "ve",
-    "llama",
-    "busca"
-   ],
-   "translation": "Zoila is in the yard and _____ her from there.",
-   "optionTranslations": [
-    "hears",
-    "sees",
-    "calls",
-    "looks for"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Zoila está en el patio y la oye desde ahí.",
-    "targetWord": "oye",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "conseguir",
-  "sentence": "Si pregunta así, va a _____ que esa persona se vaya.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "conseguir",
-   "options": [
-    "conseguir",
-    "perder",
-    "pedir",
-    "olvidar"
-   ],
-   "translation": "If she asks like that, she is going to _____ that person leave.",
-   "optionTranslations": [
-    "make",
-    "lose",
-    "ask",
-    "forget"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Si pregunta así, va a conseguir que esa persona se vaya.",
-    "targetWord": "conseguir",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "prefiere",
-  "sentence": "No quiere seguir hablando y _____ callarse.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "prefiere",
-   "options": [
-    "prefiere",
-    "promete",
-    "olvida",
-    "insiste"
-   ],
-   "translation": "She does not want to keep talking and _____ to stay quiet.",
-   "optionTranslations": [
-    "prefers",
-    "promises",
-    "forgets",
-    "insists"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "No quiere seguir hablando y prefiere callarse.",
-    "targetWord": "prefiere",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "preguntar",
-  "sentence": "Lleva cuatro días [[preguntando]] un nombre en la ciudad.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to ask",
-   "options": [
-    "to ask",
-    "to answer",
-    "to write",
-    "to travel"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Lleva cuatro días preguntando un nombre en la ciudad.",
-    "targetWord": "preguntando",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "responder",
-  "sentence": "Es un asunto mío, [[responde]] en voz alta.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to answer",
-   "options": [
-    "to answer",
-    "to agree",
-    "to shout",
-    "to whisper"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Es un asunto mío, responde en voz alta.",
-    "targetWord": "responde",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "entender",
-  "sentence": "Cecilia [[entiende]] dos cosas juntas, y ninguna le sirve.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to understand",
-   "options": [
-    "to understand",
-    "to doubt",
-    "to explain",
-    "to forget"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Cecilia entiende dos cosas juntas, y ninguna le sirve.",
-    "targetWord": "entiende",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "servir",
-  "sentence": "Entiende dos cosas juntas, y ninguna le [[sirve]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to be of use",
-   "options": [
-    "to be of use",
-    "to be true",
-    "to be new",
-    "to be enough"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Entiende dos cosas juntas, y ninguna le sirve.",
-    "targetWord": "sirve",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "necesitar",
-  "sentence": "Depende de que yo cuente para qué lo [[necesita]] una.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to need",
-   "options": [
-    "to need",
-    "to owe",
-    "to allow",
-    "to notice"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Depende de que yo cuente para qué lo necesita una.",
-    "targetWord": "necesita",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "dueña",
-  "sentence": "Zoila, la [[dueña]], la oye desde el patio.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "the landlady",
-   "options": [
-    "the landlady",
-    "a lodger",
-    "a neighbour",
-    "a cleaner"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Zoila, la dueña, la oye desde el patio.",
-    "targetWord": "dueña",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "persona",
-  "sentence": "Va a conseguir que esa [[persona]] se vaya.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a person",
-   "options": [
-    "a person",
-    "a family",
-    "a shop",
-    "a street"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Va a conseguir que esa persona se vaya.",
-    "targetWord": "persona",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "describe",
+    "sentence": "No sabe cómo es y por eso no lo _____ bien.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "describe",
+      "options": [
+        "describe",
+        "vende",
+        "llama",
+        "dibuja"
+      ],
+      "translation": "She does not know what he is like, so she does not _____ him well.",
+      "optionTranslations": [
+        "describes",
+        "sells",
+        "calls",
+        "draws"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "No sabe cómo es y por eso no lo describe bien.",
+        "targetWord": "describe",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/22fb8181694a2a73.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "ciudad",
-  "sentence": "Pregunta un nombre en la [[ciudad]] donde nació.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a city",
-   "options": [
-    "a city",
-    "a house",
-    "a school",
-    "a market"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Pregunta un nombre en la ciudad donde nació.",
-    "targetWord": "ciudad",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "oye",
+    "sentence": "Zoila está en el patio y la _____ desde ahí.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "oye",
+      "options": [
+        "oye",
+        "ve",
+        "llama",
+        "busca"
+      ],
+      "translation": "Zoila is in the yard and _____ her from there.",
+      "optionTranslations": [
+        "hears",
+        "sees",
+        "calls",
+        "looks for"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Zoila está en el patio y la oye desde ahí.",
+        "targetWord": "oye",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7a5db5fd5b04baac.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "depender",
-  "sentence": "Decírmelo [[depende]] de que yo cuente para qué.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to depend on",
-   "options": [
-    "to depend on",
-    "to belong to",
-    "to lead to",
-    "to happen to"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Decírmelo depende de que yo cuente para qué.",
-    "targetWord": "depende",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "conseguir",
+    "sentence": "Si pregunta así, va a _____ que esa persona se vaya.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "conseguir",
+      "options": [
+        "conseguir",
+        "perder",
+        "pedir",
+        "olvidar"
+      ],
+      "translation": "If she asks like that, she is going to _____ that person leave.",
+      "optionTranslations": [
+        "make",
+        "lose",
+        "ask",
+        "forget"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Si pregunta así, va a conseguir que esa persona se vaya.",
+        "targetWord": "conseguir",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d7fdfc4932df6f87.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "cosas",
-  "sentence": "Cecilia entiende dos [[cosas]] juntas.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "things",
-   "options": [
-    "things",
-    "words",
-    "people",
-    "days"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Cecilia entiende dos cosas juntas.",
-    "targetWord": "cosas",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "prefiere",
+    "sentence": "No quiere seguir hablando y _____ callarse.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "prefiere",
+      "options": [
+        "prefiere",
+        "promete",
+        "olvida",
+        "insiste"
+      ],
+      "translation": "She does not want to keep talking and _____ to stay quiet.",
+      "optionTranslations": [
+        "prefers",
+        "promises",
+        "forgets",
+        "insists"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "No quiere seguir hablando y prefiere callarse.",
+        "targetWord": "prefiere",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7eb7dcc1d16932c5.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "lejos",
-  "sentence": "Se queda en la ventana con el nombre [[lejos]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "far away",
-   "options": [
-    "far away",
-    "close by",
-    "in hand",
-    "out loud"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Se queda en la ventana con el nombre lejos.",
-    "targetWord": "lejos",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "preguntar",
+    "sentence": "Lleva cuatro días [[preguntando]] un nombre en la ciudad.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to ask",
+      "options": [
+        "to ask",
+        "to answer",
+        "to write",
+        "to travel"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Lleva cuatro días preguntando un nombre en la ciudad.",
+        "targetWord": "preguntando",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1a69ef3e949e0e25.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "juntas",
-  "sentence": "Cecilia entiende dos cosas [[juntas]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "at the same time",
-   "options": [
-    "at the same time",
-    "one by one",
-    "by chance",
-    "in the end"
-   ],
-   "audioClip": {
-    "storySlug": "la-pregunta-que-no-se-hace",
-    "storySource": "user",
-    "sentence": "Cecilia entiende dos cosas juntas.",
-    "targetWord": "juntas",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "responder",
+    "sentence": "Es un asunto mío, [[responde]] en voz alta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to answer",
+      "options": [
+        "to answer",
+        "to agree",
+        "to shout",
+        "to whisper"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Es un asunto mío, responde en voz alta.",
+        "targetWord": "responde",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e136d0817d486b3c.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "entender",
+    "sentence": "Cecilia [[entiende]] dos cosas juntas, y ninguna le sirve.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to understand",
+      "options": [
+        "to understand",
+        "to doubt",
+        "to explain",
+        "to forget"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Cecilia entiende dos cosas juntas, y ninguna le sirve.",
+        "targetWord": "entiende",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f90c34008b2c2a5b.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "servir",
+    "sentence": "Entiende dos cosas juntas, y ninguna le [[sirve]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be of use",
+      "options": [
+        "to be of use",
+        "to be true",
+        "to be new",
+        "to be enough"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Entiende dos cosas juntas, y ninguna le sirve.",
+        "targetWord": "sirve",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6185d042e4c31f28.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "necesitar",
+    "sentence": "Depende de que yo cuente para qué lo [[necesita]] una.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to need",
+      "options": [
+        "to need",
+        "to owe",
+        "to allow",
+        "to notice"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Depende de que yo cuente para qué lo necesita una.",
+        "targetWord": "necesita",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/185d25467ca2dc1e.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "dueña",
+    "sentence": "Zoila, la [[dueña]], la oye desde el patio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "the landlady",
+      "options": [
+        "the landlady",
+        "a lodger",
+        "a neighbour",
+        "a cleaner"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Zoila, la dueña, la oye desde el patio.",
+        "targetWord": "dueña",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a68e4ea0d9d4c8cf.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "persona",
+    "sentence": "Va a conseguir que esa [[persona]] se vaya.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a person",
+      "options": [
+        "a person",
+        "a family",
+        "a shop",
+        "a street"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Va a conseguir que esa persona se vaya.",
+        "targetWord": "persona",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/014f5a684aebf2f2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "ciudad",
+    "sentence": "Pregunta un nombre en la [[ciudad]] donde nació.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a city",
+      "options": [
+        "a city",
+        "a house",
+        "a school",
+        "a market"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Pregunta un nombre en la ciudad donde nació.",
+        "targetWord": "ciudad",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3d367059784c3b37.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "depender",
+    "sentence": "Decírmelo [[depende]] de que yo cuente para qué.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to depend on",
+      "options": [
+        "to depend on",
+        "to belong to",
+        "to lead to",
+        "to happen to"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Decírmelo depende de que yo cuente para qué.",
+        "targetWord": "depende",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c15d9379fa05cfb2.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cosas",
+    "sentence": "Cecilia entiende dos [[cosas]] juntas.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "things",
+      "options": [
+        "things",
+        "words",
+        "people",
+        "days"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Cecilia entiende dos cosas juntas.",
+        "targetWord": "cosas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d81bd255d39e5e76.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lejos",
+    "sentence": "Se queda en la ventana con el nombre [[lejos]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "far away",
+      "options": [
+        "far away",
+        "close by",
+        "in hand",
+        "out loud"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Se queda en la ventana con el nombre lejos.",
+        "targetWord": "lejos",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/76fc3a7123f4a57f.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "juntas",
+    "sentence": "Cecilia entiende dos cosas [[juntas]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "at the same time",
+      "options": [
+        "at the same time",
+        "one by one",
+        "by chance",
+        "in the end"
+      ],
+      "audioClip": {
+        "storySlug": "la-pregunta-que-no-se-hace",
+        "storySource": "user",
+        "sentence": "Cecilia entiende dos cosas juntas.",
+        "targetWord": "juntas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/d81bd255d39e5e76.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

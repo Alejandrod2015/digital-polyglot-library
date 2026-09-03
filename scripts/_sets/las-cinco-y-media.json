@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "frutería,pasillo,manguera,mango",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "frutería",
-     "answer": "a fruit shop",
-     "options": [
-      "a fruit shop",
-      "an aisle",
-      "a hose",
-      "a mango"
-     ]
-    },
-    {
-     "word": "pasillo",
-     "answer": "an aisle",
-     "options": [
-      "a fruit shop",
-      "an aisle",
-      "a hose",
-      "a mango"
-     ]
-    },
-    {
-     "word": "manguera",
-     "answer": "a hose",
-     "options": [
-      "a fruit shop",
-      "an aisle",
-      "a hose",
-      "a mango"
-     ]
-    },
-    {
-     "word": "mango",
-     "answer": "a mango",
-     "options": [
-      "a fruit shop",
-      "an aisle",
-      "a hose",
-      "a mango"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "frutería,pasillo,manguera,mango",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "frutería",
+          "answer": "a fruit shop",
+          "options": [
+            "a fruit shop",
+            "an aisle",
+            "a hose",
+            "a mango"
+          ]
+        },
+        {
+          "word": "pasillo",
+          "answer": "an aisle",
+          "options": [
+            "a fruit shop",
+            "an aisle",
+            "a hose",
+            "a mango"
+          ]
+        },
+        {
+          "word": "manguera",
+          "answer": "a hose",
+          "options": [
+            "a fruit shop",
+            "an aisle",
+            "a hose",
+            "a mango"
+          ]
+        },
+        {
+          "word": "mango",
+          "answer": "a mango",
+          "options": [
+            "a fruit shop",
+            "an aisle",
+            "a hose",
+            "a mango"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "abierto",
-  "sentence": "A las seis su puesto ya está _____ y vende barato.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "abierto",
-   "options": [
-    "abierto",
-    "cerrado",
-    "vacío",
-    "sucio"
-   ],
-   "translation": "At six her stall is already _____ and sells cheap.",
-   "optionTranslations": [
-    "open",
-    "closed",
-    "empty",
-    "dirty"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "A las seis su puesto ya está abierto y vende barato.",
-    "targetWord": "abierto",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "lavan",
-  "sentence": "A las seis _____ el piso del mercado con agua.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "lavan",
-   "options": [
-    "lavan",
-    "pintan",
-    "barren",
-    "cierran"
-   ],
-   "translation": "At six they _____ the market floor with water.",
-   "optionTranslations": [
-    "wash",
-    "paint",
-    "sweep",
-    "close"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "A las seis lavan el piso del mercado con agua.",
-    "targetWord": "lavan",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "secando",
-  "sentence": "La mesa amaneció mojada y pasa la mañana _____ las cajas.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "secando",
-   "options": [
-    "secando",
-    "contando",
-    "pintando",
-    "vendiendo"
-   ],
-   "translation": "The table was wet at dawn and she spends the morning _____ the boxes.",
-   "optionTranslations": [
-    "drying",
-    "counting",
-    "painting",
-    "selling"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "La mesa amaneció mojada y pasa la mañana secando las cajas.",
-    "targetWord": "secando",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "mete",
-  "sentence": "Para que no se moje, _____ la mesa antes de las seis.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "mete",
-   "options": [
-    "mete",
-    "saca",
-    "lava",
-    "rompe"
-   ],
-   "translation": "So that it does not get wet, she _____ the table in before six.",
-   "optionTranslations": [
-    "puts in",
-    "takes out",
-    "washes",
-    "breaks"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "Para que no se moje, mete la mesa antes de las seis.",
-    "targetWord": "mete",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "vender",
-  "sentence": "A las seis ya [[vendió]] tres cajas de mango.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to sell",
-   "options": [
-    "to sell",
-    "to buy",
-    "to carry",
-    "to weigh"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "A las seis ya vendió tres cajas de mango.",
-    "targetWord": "vendió",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "comprar",
-  "sentence": "Qué bueno que está abierto, le dicen, y [[compran]] barato.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to buy",
-   "options": [
-    "to buy",
-    "to sell",
-    "to ask",
-    "to leave"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "Qué bueno que está abierto, le dicen, y compran barato.",
-    "targetWord": "compran",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "ordenar",
-  "sentence": "Pasa la mañana secando cajas y [[ordenando]] la fruta.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to tidy up",
-   "options": [
-    "to tidy up",
-    "to give away",
-    "to count out",
-    "to throw out"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "Pasa la mañana secando cajas y ordenando la fruta.",
-    "targetWord": "ordenando",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "puesto",
-  "sentence": "Gabriela cuida el [[puesto]] de fruta de su hermano.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a market stall",
-   "options": [
-    "a market stall",
-    "a shop window",
-    "a warehouse",
-    "a delivery van"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "Gabriela cuida el puesto de fruta de su hermano.",
-    "targetWord": "puesto",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "caja",
-  "sentence": "A las seis ya vendió tres [[cajas]] de mango.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "a crate",
-   "options": [
-    "a crate",
-    "a shelf",
-    "a basket",
-    "a bag"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "A las seis ya vendió tres cajas de mango.",
-    "targetWord": "cajas",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "cinco",
-  "sentence": "Abre a las [[cinco]] y media, como en el otro mercado.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "five",
-   "options": [
-    "five",
-    "nine",
-    "twelve",
-    "two"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "Abre a las cinco y media, como en el otro mercado.",
-    "targetWord": "cinco",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "doble",
-  "sentence": "A las ocho ellos venden al [[doble]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "twice the price",
-   "options": [
-    "twice the price",
-    "half the price",
-    "the same price",
-    "no price"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "A las ocho ellos venden al doble.",
-    "targetWord": "doble",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "abierto",
+    "sentence": "A las seis su puesto ya está _____ y vende barato.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "abierto",
+      "options": [
+        "abierto",
+        "cerrado",
+        "vacío",
+        "sucio"
+      ],
+      "translation": "At six her stall is already _____ and sells cheap.",
+      "optionTranslations": [
+        "open",
+        "closed",
+        "empty",
+        "dirty"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "A las seis su puesto ya está abierto y vende barato.",
+        "targetWord": "abierto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/0359d33d82543972.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "quién",
-  "sentence": "¿[[Quién]] me mueve la mesa de noche?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "who",
-   "options": [
-    "who",
-    "when",
-    "where",
-    "why"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "¿Quién me mueve la mesa de noche?",
-    "targetWord": "quién",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "lavan",
+    "sentence": "A las seis _____ el piso del mercado con agua.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lavan",
+      "options": [
+        "lavan",
+        "pintan",
+        "barren",
+        "cierran"
+      ],
+      "translation": "At six they _____ the market floor with water.",
+      "optionTranslations": [
+        "wash",
+        "paint",
+        "sweep",
+        "close"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "A las seis lavan el piso del mercado con agua.",
+        "targetWord": "lavan",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/f773572fdd5eb5a7.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "noche",
-  "sentence": "¿Quién me mueve la mesa de [[noche]]?",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "night",
-   "options": [
-    "night",
-    "morning",
-    "summer",
-    "weekend"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "¿Quién me mueve la mesa de noche?",
-    "targetWord": "noche",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "secando",
+    "sentence": "La mesa amaneció mojada y pasa la mañana _____ las cajas.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "secando",
+      "options": [
+        "secando",
+        "contando",
+        "pintando",
+        "vendiendo"
+      ],
+      "translation": "The table was wet at dawn and she spends the morning _____ the boxes.",
+      "optionTranslations": [
+        "drying",
+        "counting",
+        "painting",
+        "selling"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "La mesa amaneció mojada y pasa la mañana secando las cajas.",
+        "targetWord": "secando",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ed6a637f36adff92.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "siguiente",
-  "sentence": "Al día [[siguiente]] abre a las cinco y media.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "next",
-   "options": [
-    "next",
-    "last",
-    "same",
-    "whole"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "Al día siguiente abre a las cinco y media.",
-    "targetWord": "siguiente",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "mete",
+    "sentence": "Para que no se moje, _____ la mesa antes de las seis.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mete",
+      "options": [
+        "mete",
+        "saca",
+        "lava",
+        "rompe"
+      ],
+      "translation": "So that it does not get wet, she _____ the table in before six.",
+      "optionTranslations": [
+        "puts in",
+        "takes out",
+        "washes",
+        "breaks"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "Para que no se moje, mete la mesa antes de las seis.",
+        "targetWord": "mete",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/315b2b784d3b823f.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "como",
-  "sentence": "Abre a las cinco y media, [[como]] en el mercado donde trabajaba.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "as, like",
-   "options": [
-    "as, like",
-    "unlike",
-    "before",
-    "instead of"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "Abre a las cinco y media, como en el mercado donde trabajaba.",
-    "targetWord": "como",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "vender",
+    "sentence": "A las seis ya [[vendió]] tres cajas de mango.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to sell",
+      "options": [
+        "to sell",
+        "to buy",
+        "to carry",
+        "to weigh"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "A las seis ya vendió tres cajas de mango.",
+        "targetWord": "vendió",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/698814dfdca17e70.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "otra vez",
-  "sentence": "Al tercer día la mesa está mojada [[otra vez]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "again",
-   "options": [
-    "again",
-    "at last",
-    "for once",
-    "by then"
-   ],
-   "audioClip": {
-    "storySlug": "las-cinco-y-media",
-    "storySource": "user",
-    "sentence": "Al tercer día la mesa está mojada otra vez.",
-    "targetWord": "otra vez",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "comprar",
+    "sentence": "Qué bueno que está abierto, le dicen, y [[compran]] barato.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to buy",
+      "options": [
+        "to buy",
+        "to sell",
+        "to ask",
+        "to leave"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "Qué bueno que está abierto, le dicen, y compran barato.",
+        "targetWord": "compran",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/03aed37a8a9a97a3.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "ordenar",
+    "sentence": "Pasa la mañana secando cajas y [[ordenando]] la fruta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to tidy up",
+      "options": [
+        "to tidy up",
+        "to give away",
+        "to count out",
+        "to throw out"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "Pasa la mañana secando cajas y ordenando la fruta.",
+        "targetWord": "ordenando",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5339712ad8830ee7.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "puesto",
+    "sentence": "Gabriela cuida el [[puesto]] de fruta de su hermano.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a market stall",
+      "options": [
+        "a market stall",
+        "a shop window",
+        "a warehouse",
+        "a delivery van"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "Gabriela cuida el puesto de fruta de su hermano.",
+        "targetWord": "puesto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a368f051f9138640.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "caja",
+    "sentence": "A las seis ya vendió tres [[cajas]] de mango.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "a crate",
+      "options": [
+        "a crate",
+        "a shelf",
+        "a basket",
+        "a bag"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "A las seis ya vendió tres cajas de mango.",
+        "targetWord": "cajas",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/698814dfdca17e70.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cinco",
+    "sentence": "Abre a las [[cinco]] y media, como en el otro mercado.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "five",
+      "options": [
+        "five",
+        "nine",
+        "twelve",
+        "two"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "Abre a las cinco y media, como en el otro mercado.",
+        "targetWord": "cinco",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7808ab048ab912a3.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "doble",
+    "sentence": "A las ocho ellos venden al [[doble]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "twice the price",
+      "options": [
+        "twice the price",
+        "half the price",
+        "the same price",
+        "no price"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "A las ocho ellos venden al doble.",
+        "targetWord": "doble",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/9dec6ed06554fde8.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quién",
+    "sentence": "¿[[Quién]] me mueve la mesa de noche?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "who",
+      "options": [
+        "who",
+        "when",
+        "where",
+        "why"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "¿Quién me mueve la mesa de noche?",
+        "targetWord": "quién",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/999c213971e6f651.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "noche",
+    "sentence": "¿Quién me mueve la mesa de [[noche]]?",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "night",
+      "options": [
+        "night",
+        "morning",
+        "summer",
+        "weekend"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "¿Quién me mueve la mesa de noche?",
+        "targetWord": "noche",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/999c213971e6f651.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "siguiente",
+    "sentence": "Al día [[siguiente]] abre a las cinco y media.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "next",
+      "options": [
+        "next",
+        "last",
+        "same",
+        "whole"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "Al día siguiente abre a las cinco y media.",
+        "targetWord": "siguiente",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/092752b73220d070.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "como",
+    "sentence": "Abre a las cinco y media, [[como]] en el mercado donde trabajaba.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "as, like",
+      "options": [
+        "as, like",
+        "unlike",
+        "before",
+        "instead of"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "Abre a las cinco y media, como en el mercado donde trabajaba.",
+        "targetWord": "como",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ecd57b49a7dc15f5.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "otra vez",
+    "sentence": "Al tercer día la mesa está mojada [[otra vez]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "again",
+      "options": [
+        "again",
+        "at last",
+        "for once",
+        "by then"
+      ],
+      "audioClip": {
+        "storySlug": "las-cinco-y-media",
+        "storySource": "user",
+        "sentence": "Al tercer día la mesa está mojada otra vez.",
+        "targetWord": "otra vez",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6d510e70c05b6236.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

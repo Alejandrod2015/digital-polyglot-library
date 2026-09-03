@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "muchacha,filtro,gota,tibio",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "muchacha",
-     "answer": "a young woman",
-     "options": [
-      "a young woman",
-      "a cloth filter",
-      "a drop",
-      "lukewarm"
-     ]
-    },
-    {
-     "word": "filtro",
-     "answer": "a cloth filter",
-     "options": [
-      "a young woman",
-      "a cloth filter",
-      "a drop",
-      "lukewarm"
-     ]
-    },
-    {
-     "word": "gota",
-     "answer": "a drop",
-     "options": [
-      "a young woman",
-      "a cloth filter",
-      "a drop",
-      "lukewarm"
-     ]
-    },
-    {
-     "word": "tibio",
-     "answer": "lukewarm",
-     "options": [
-      "a young woman",
-      "a cloth filter",
-      "a drop",
-      "lukewarm"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "muchacha,filtro,gota,tibio",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "muchacha",
+          "answer": "a young woman",
+          "options": [
+            "a young woman",
+            "a cloth filter",
+            "a drop",
+            "lukewarm"
+          ]
+        },
+        {
+          "word": "filtro",
+          "answer": "a cloth filter",
+          "options": [
+            "a young woman",
+            "a cloth filter",
+            "a drop",
+            "lukewarm"
+          ]
+        },
+        {
+          "word": "gota",
+          "answer": "a drop",
+          "options": [
+            "a young woman",
+            "a cloth filter",
+            "a drop",
+            "lukewarm"
+          ]
+        },
+        {
+          "word": "tibio",
+          "answer": "lukewarm",
+          "options": [
+            "a young woman",
+            "a cloth filter",
+            "a drop",
+            "lukewarm"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "enjuaga",
-  "sentence": "Antes de usarlo otra vez, lo _____ con agua limpia.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "enjuaga",
-   "options": [
-    "enjuaga",
-    "dobla",
-    "corta",
-    "guarda"
-   ],
-   "translation": "Before using it again, she _____ it with clean water.",
-   "optionTranslations": [
-    "rinses",
-    "folds",
-    "cuts",
-    "puts away"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "Antes de usarlo otra vez, lo enjuaga con agua limpia.",
-    "targetWord": "enjuaga",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "mezcle",
-  "sentence": "Échelo más lento y _____ bien con la cuchara.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "mezcle",
-   "options": [
-    "mezcle",
-    "corte",
-    "seque",
-    "pague"
-   ],
-   "translation": "Pour it more slowly and _____ well with the spoon.",
-   "optionTranslations": [
-    "stir",
-    "cut",
-    "dry",
-    "pay"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "Échelo más lento y mezcle bien con la cuchara.",
-    "targetWord": "mezcle",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "presta",
-  "sentence": "No tiene filtro propio y la dueña le _____ el suyo.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "presta",
-   "options": [
-    "presta",
-    "vende",
-    "cobra",
-    "esconde"
-   ],
-   "translation": "She has no filter of her own and the landlady _____ hers.",
-   "optionTranslations": [
-    "lends",
-    "sells",
-    "charges for",
-    "hides"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "No tiene filtro propio y la dueña le presta el suyo.",
-    "targetWord": "presta",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "lleno",
-  "sentence": "No cabe una gota más: el vaso está _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "lleno",
-   "options": [
-    "lleno",
-    "vacío",
-    "roto",
-    "limpio"
-   ],
-   "translation": "Not one more drop fits: the glass is _____.",
-   "optionTranslations": [
-    "full",
-    "empty",
-    "broken",
-    "clean"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "No cabe una gota más: el vaso está lleno.",
-    "targetWord": "lleno",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "echar",
-  "sentence": "[[Échelo]] más lento y mezcle, dice Yolanda.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to pour",
-   "options": [
-    "to pour",
-    "to throw away",
-    "to weigh",
-    "to taste"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "Échelo más lento y mezcle, dice Yolanda.",
-    "targetWord": "échelo",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "aprender",
-  "sentence": "A la cuarta sale justo y lo [[aprende]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to learn",
-   "options": [
-    "to learn",
-    "to teach",
-    "to forget",
-    "to try"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "A la cuarta sale justo y lo aprende.",
-    "targetWord": "aprende",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "asentir",
-  "sentence": "Así, dice, y [[asiente]] una vez.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to nod",
-   "options": [
-    "to nod",
-    "to shrug",
-    "to point",
-    "to smile"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "Así, dice, y asiente una vez.",
-    "targetWord": "asiente",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "devolver",
-  "sentence": "Guarda la cinta y se lo [[devuelve]] limpio.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to give back",
-   "options": [
-    "to give back",
-    "to keep",
-    "to throw out",
-    "to lend"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "Guarda la cinta y se lo devuelve limpio.",
-    "targetWord": "devuelve",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "fácil",
-  "sentence": "Le presta un filtro sin ponérselo [[fácil]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "easy",
-   "options": [
-    "easy",
-    "cheap",
-    "clear",
-    "safe"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "Le presta un filtro sin ponérselo fácil.",
-    "targetWord": "fácil",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "lento",
-  "sentence": "Échelo más [[lento]] y mezcle, le pide.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "slow",
-   "options": [
-    "slow",
-    "loud",
-    "hot",
-    "strong"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "Échelo más lento y mezcle, le pide.",
-    "targetWord": "lento",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "justo",
-  "sentence": "A la cuarta sale [[justo]] y lo aprende.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "just right",
-   "options": [
-    "just right",
-    "too soon",
-    "by luck",
-    "at last"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "A la cuarta sale justo y lo aprende.",
-    "targetWord": "justo",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "enjuaga",
+    "sentence": "Antes de usarlo otra vez, lo _____ con agua limpia.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "enjuaga",
+      "options": [
+        "enjuaga",
+        "dobla",
+        "corta",
+        "guarda"
+      ],
+      "translation": "Before using it again, she _____ it with clean water.",
+      "optionTranslations": [
+        "rinses",
+        "folds",
+        "cuts",
+        "puts away"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "Antes de usarlo otra vez, lo enjuaga con agua limpia.",
+        "targetWord": "enjuaga",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/98d58a5a12f539dc.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "listo",
-  "sentence": "Queda tibio, pero está [[listo]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "ready",
-   "options": [
-    "ready",
-    "cold",
-    "broken",
-    "missing"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "Queda tibio, pero está listo.",
-    "targetWord": "listo",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "mezcle",
+    "sentence": "Échelo más lento y _____ bien con la cuchara.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "mezcle",
+      "options": [
+        "mezcle",
+        "corte",
+        "seque",
+        "pague"
+      ],
+      "translation": "Pour it more slowly and _____ well with the spoon.",
+      "optionTranslations": [
+        "stir",
+        "cut",
+        "dry",
+        "pay"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "Échelo más lento y mezcle bien con la cuchara.",
+        "targetWord": "mezcle",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/548c79434896deea.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "tranquilo",
-  "sentence": "El cuarto sigue siendo suyo, dice, [[tranquila]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "calm",
-   "options": [
-    "calm",
-    "angry",
-    "hurried",
-    "amused"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "El cuarto sigue siendo suyo, dice, tranquila.",
-    "targetWord": "tranquila",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "presta",
+    "sentence": "No tiene filtro propio y la dueña le _____ el suyo.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "presta",
+      "options": [
+        "presta",
+        "vende",
+        "cobra",
+        "esconde"
+      ],
+      "translation": "She has no filter of her own and the landlady _____ hers.",
+      "optionTranslations": [
+        "lends",
+        "sells",
+        "charges for",
+        "hides"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "No tiene filtro propio y la dueña le presta el suyo.",
+        "targetWord": "presta",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b3f1df40fa0a2d08.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "limpio",
-  "sentence": "Guarda la cinta y se lo devuelve [[limpia]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "clean",
-   "options": [
-    "clean",
-    "torn",
-    "damp",
-    "new"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "Guarda la cinta y se lo devuelve limpia.",
-    "targetWord": "limpia",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "lleno",
+    "sentence": "No cabe una gota más: el vaso está _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "lleno",
+      "options": [
+        "lleno",
+        "vacío",
+        "roto",
+        "limpio"
+      ],
+      "translation": "Not one more drop fits: the glass is _____.",
+      "optionTranslations": [
+        "full",
+        "empty",
+        "broken",
+        "clean"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "No cabe una gota más: el vaso está lleno.",
+        "targetWord": "lleno",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/3ee69a7e4e07b923.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "nuevo",
-  "sentence": "La única cortina [[nueva]] la cose ella.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "new",
-   "options": [
-    "new",
-    "old",
-    "white",
-    "narrow"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "La única cortina nueva la cose ella.",
-    "targetWord": "nueva",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "echar",
+    "sentence": "[[Échelo]] más lento y mezcle, dice Yolanda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to pour",
+      "options": [
+        "to pour",
+        "to throw away",
+        "to weigh",
+        "to taste"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "Échelo más lento y mezcle, dice Yolanda.",
+        "targetWord": "échelo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c5eea4a555907c9d.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "viejo",
-  "sentence": "Amparo entra a la cocina [[vieja]] de Yolanda.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "old",
-   "options": [
-    "old",
-    "empty",
-    "dark",
-    "warm"
-   ],
-   "audioClip": {
-    "storySlug": "lo-que-si-se-acepta",
-    "storySource": "user",
-    "sentence": "Amparo entra a la cocina vieja de Yolanda.",
-    "targetWord": "vieja",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "aprender",
+    "sentence": "A la cuarta sale justo y lo [[aprende]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to learn",
+      "options": [
+        "to learn",
+        "to teach",
+        "to forget",
+        "to try"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "A la cuarta sale justo y lo aprende.",
+        "targetWord": "aprende",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ffec3db4d9989cb9.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "asentir",
+    "sentence": "Así, dice, y [[asiente]] una vez.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to nod",
+      "options": [
+        "to nod",
+        "to shrug",
+        "to point",
+        "to smile"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "Así, dice, y asiente una vez.",
+        "targetWord": "asiente",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b4875985c68f60f3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "devolver",
+    "sentence": "Guarda la cinta y se lo [[devuelve]] limpio.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to give back",
+      "options": [
+        "to give back",
+        "to keep",
+        "to throw out",
+        "to lend"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "Guarda la cinta y se lo devuelve limpio.",
+        "targetWord": "devuelve",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1abdb59666b949aa.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "fácil",
+    "sentence": "Le presta un filtro sin ponérselo [[fácil]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "easy",
+      "options": [
+        "easy",
+        "cheap",
+        "clear",
+        "safe"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "Le presta un filtro sin ponérselo fácil.",
+        "targetWord": "fácil",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/001c474120bd53f4.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "lento",
+    "sentence": "Échelo más [[lento]] y mezcle, le pide.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "slow",
+      "options": [
+        "slow",
+        "loud",
+        "hot",
+        "strong"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "Échelo más lento y mezcle, le pide.",
+        "targetWord": "lento",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c65bb31733824e67.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "justo",
+    "sentence": "A la cuarta sale [[justo]] y lo aprende.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "just right",
+      "options": [
+        "just right",
+        "too soon",
+        "by luck",
+        "at last"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "A la cuarta sale justo y lo aprende.",
+        "targetWord": "justo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ffec3db4d9989cb9.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "listo",
+    "sentence": "Queda tibio, pero está [[listo]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "ready",
+      "options": [
+        "ready",
+        "cold",
+        "broken",
+        "missing"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "Queda tibio, pero está listo.",
+        "targetWord": "listo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b29b2d4f40d0b08c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "tranquilo",
+    "sentence": "El cuarto sigue siendo suyo, dice, [[tranquila]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "calm",
+      "options": [
+        "calm",
+        "angry",
+        "hurried",
+        "amused"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "El cuarto sigue siendo suyo, dice, tranquila.",
+        "targetWord": "tranquila",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/6b5f493b0af7529c.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "limpio",
+    "sentence": "Guarda la cinta y se lo devuelve [[limpia]] al final.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "clean",
+      "options": [
+        "clean",
+        "torn",
+        "damp",
+        "new"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "Guarda la cinta y se lo devuelve limpia al final.",
+        "targetWord": "limpia",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7fadc301f5ab1dfa.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nuevo",
+    "sentence": "La única cortina [[nueva]] la cose ella.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "new",
+      "options": [
+        "new",
+        "old",
+        "white",
+        "narrow"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "La única cortina nueva la cose ella.",
+        "targetWord": "nueva",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e73cd95a25416625.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "viejo",
+    "sentence": "Amparo entra a la cocina [[vieja]] de Yolanda.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "old",
+      "options": [
+        "old",
+        "empty",
+        "dark",
+        "warm"
+      ],
+      "audioClip": {
+        "storySlug": "lo-que-si-se-acepta",
+        "storySource": "user",
+        "sentence": "Amparo entra a la cocina vieja de Yolanda.",
+        "targetWord": "vieja",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/44af6ba38d6e812d.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

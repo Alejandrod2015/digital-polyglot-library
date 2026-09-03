@@ -1,440 +1,456 @@
 [
- {
-  "type": "match_meaning",
-  "word": "naranja,regla,deudas,nombre",
-  "sentence": "",
-  "payload": {
-   "prompt": "Match the words to their meanings.",
-   "pairs": [
-    {
-     "word": "naranja",
-     "answer": "an orange",
-     "options": [
-      "an orange",
-      "a rule",
-      "debts",
-      "a name"
-     ]
-    },
-    {
-     "word": "regla",
-     "answer": "a rule",
-     "options": [
-      "an orange",
-      "a rule",
-      "debts",
-      "a name"
-     ]
-    },
-    {
-     "word": "deudas",
-     "answer": "debts",
-     "options": [
-      "an orange",
-      "a rule",
-      "debts",
-      "a name"
-     ]
-    },
-    {
-     "word": "nombre",
-     "answer": "a name",
-     "options": [
-      "an orange",
-      "a rule",
-      "debts",
-      "a name"
-     ]
+  {
+    "type": "match_meaning",
+    "word": "naranja,regla,deudas,nombre",
+    "sentence": "",
+    "payload": {
+      "prompt": "Match the words to their meanings.",
+      "pairs": [
+        {
+          "word": "naranja",
+          "answer": "an orange",
+          "options": [
+            "an orange",
+            "a rule",
+            "debts",
+            "a name"
+          ]
+        },
+        {
+          "word": "regla",
+          "answer": "a rule",
+          "options": [
+            "an orange",
+            "a rule",
+            "debts",
+            "a name"
+          ]
+        },
+        {
+          "word": "deudas",
+          "answer": "debts",
+          "options": [
+            "an orange",
+            "a rule",
+            "debts",
+            "a name"
+          ]
+        },
+        {
+          "word": "nombre",
+          "answer": "a name",
+          "options": [
+            "an orange",
+            "a rule",
+            "debts",
+            "a name"
+          ]
+        }
+      ],
+      "audioClip": null
     }
-   ],
-   "audioClip": null
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "cubre",
-  "sentence": "Su hermano no está y ella _____ el puesto un mes.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "cubre",
-   "options": [
-    "cubre",
-    "vende",
-    "pinta",
-    "alquila"
-   ],
-   "translation": "Her brother is away and she _____ the stall for a month.",
-   "optionTranslations": [
-    "covers",
-    "sells",
-    "paints",
-    "rents out"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "Su hermano no está y ella cubre el puesto un mes.",
-    "targetWord": "cubre",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "marcar",
-  "sentence": "Quedan veintinueve nombres sin _____ en la libreta.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "marcar",
-   "options": [
-    "marcar",
-    "pagar",
-    "borrar",
-    "leer"
-   ],
-   "translation": "Twenty nine names are left without _____ in the notebook.",
-   "optionTranslations": [
-    "ticking off",
-    "paying",
-    "erasing",
-    "reading"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "Quedan veintinueve nombres sin marcar en la libreta.",
-    "targetWord": "marcar",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "cargar",
-  "sentence": "No quiere _____ con deudas que no conoce.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "cargar",
-   "options": [
-    "cargar",
-    "contar",
-    "cobrar",
-    "escribir"
-   ],
-   "translation": "She does not want to _____ debts she knows nothing about.",
-   "optionTranslations": [
-    "take on",
-    "count",
-    "charge",
-    "write down"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "No quiere cargar con deudas que no conoce.",
-    "targetWord": "cargar",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "fill_blank",
-  "word": "partida",
-  "sentence": "Se lleva las naranjas y queda el olor a naranja _____.",
-  "payload": {
-   "prompt": "Complete the sentence.",
-   "answer": "partida",
-   "options": [
-    "partida",
-    "seca",
-    "dulce",
-    "verde"
-   ],
-   "translation": "She takes the oranges and the smell of _____ orange stays.",
-   "optionTranslations": [
-    "cut open",
-    "dry",
-    "sweet",
-    "green"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "Se lleva las naranjas y queda el olor a naranja partida.",
-    "targetWord": "partida",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "poder",
-  "sentence": "Yo no [[puedo]] anotar nada, dice Gabriela.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to be able to",
-   "options": [
-    "to be able to",
-    "to want to",
-    "to have to",
-    "to try to"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "Yo no puedo anotar nada, dice Gabriela.",
-    "targetWord": "puedo",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "conocer",
-  "sentence": "Su regla era no cargar con deudas que no [[conoce]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to know",
-   "options": [
-    "to know",
-    "to owe",
-    "to forget",
-    "to accept"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "Su regla era no cargar con deudas que no conoce.",
-    "targetWord": "conoce",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "aparecer",
-  "sentence": "[[Aparece]] la libreta de su hermano en el cajón.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to turn up",
-   "options": [
-    "to turn up",
-    "to run out",
-    "to fall over",
-    "to give in"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "Aparece la libreta de su hermano en el cajón.",
-    "targetWord": "aparece",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "venir",
-  "sentence": "El viernes [[vienen]] once de cuarenta.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to come",
-   "options": [
-    "to come",
-    "to pay",
-    "to call",
-    "to write"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "El viernes vienen once de cuarenta.",
-    "targetWord": "vienen",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "quedar",
-  "sentence": "[[Quedan]] veintinueve nombres sin marcar.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "to be left",
-   "options": [
-    "to be left",
-    "to be paid",
-    "to be lost",
-    "to be added"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "Quedan veintinueve nombres sin marcar.",
-    "targetWord": "quedan",
-    "language": "spanish"
-   }
-  }
- },
- {
-  "type": "meaning_in_context",
-  "word": "cuánto",
-  "sentence": "¿Y [[cuánto]] suma eso?, pregunta Gabriela.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "how much",
-   "options": [
-    "how much",
-    "how often",
-    "how far",
-    "how many people"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "¿Y cuánto suma eso?, pregunta Gabriela.",
-    "targetWord": "cuánto",
-    "language": "spanish"
-   }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "delante",
-  "sentence": "Gabriela come sola con la libreta [[delante]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "in front",
-   "options": [
-    "in front",
-    "behind",
-    "upstairs",
-    "outside"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "Gabriela come sola con la libreta delante.",
-    "targetWord": "delante",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "cubre",
+    "sentence": "Su hermano no está y ella _____ el puesto un mes.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cubre",
+      "options": [
+        "cubre",
+        "vende",
+        "pinta",
+        "alquila"
+      ],
+      "translation": "Her brother is away and she _____ the stall for a month.",
+      "optionTranslations": [
+        "covers",
+        "sells",
+        "paints",
+        "rents out"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "Su hermano no está y ella cubre el puesto un mes.",
+        "targetWord": "cubre",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/7b8d36b41c659e07.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "mayor",
-  "sentence": "Una señora [[mayor]] pide dos kilos de naranja.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "elderly",
-   "options": [
-    "elderly",
-    "younger",
-    "taller",
-    "thinner"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "Una señora mayor pide dos kilos de naranja.",
-    "targetWord": "mayor",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "marcar",
+    "sentence": "Quedan veintinueve nombres sin _____ en la libreta.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "marcar",
+      "options": [
+        "marcar",
+        "pagar",
+        "borrar",
+        "leer"
+      ],
+      "translation": "Twenty nine names are left without _____ in the notebook.",
+      "optionTranslations": [
+        "ticking off",
+        "paying",
+        "erasing",
+        "reading"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "Quedan veintinueve nombres sin marcar en la libreta.",
+        "targetWord": "marcar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/e1467652479f2b98.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "igual",
-  "sentence": "Vuelvo el viernes [[igual]], dice la señora.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "all the same",
-   "options": [
-    "all the same",
-    "for once",
-    "by then",
-    "instead"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "Vuelvo el viernes igual, dice la señora.",
-    "targetWord": "igual",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "cargar",
+    "sentence": "No quiere _____ con deudas que no conoce.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "cargar",
+      "options": [
+        "cargar",
+        "contar",
+        "cobrar",
+        "escribir"
+      ],
+      "translation": "She does not want to _____ debts she knows nothing about.",
+      "optionTranslations": [
+        "take on",
+        "count",
+        "charge",
+        "write down"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "No quiere cargar con deudas que no conoce.",
+        "targetWord": "cargar",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/5d0adb6b95fbe739.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "sola",
-  "sentence": "Gabriela come [[sola]] con la libreta delante.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "alone",
-   "options": [
-    "alone",
-    "early",
-    "outside",
-    "standing"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "Gabriela come sola con la libreta delante.",
-    "targetWord": "sola",
-    "language": "spanish"
-   }
+  {
+    "type": "fill_blank",
+    "word": "partida",
+    "sentence": "Se lleva las naranjas y queda el olor a naranja _____.",
+    "payload": {
+      "prompt": "Complete the sentence.",
+      "answer": "partida",
+      "options": [
+        "partida",
+        "seca",
+        "dulce",
+        "verde"
+      ],
+      "translation": "She takes the oranges and the smell of _____ orange stays.",
+      "optionTranslations": [
+        "cut open",
+        "dry",
+        "sweet",
+        "green"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "Se lleva las naranjas y queda el olor a naranja partida.",
+        "targetWord": "partida",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/a1e422b97a8b48eb.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "nunca",
-  "sentence": "Nadie lo sumó [[nunca]].",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "never",
-   "options": [
-    "never",
-    "always",
-    "already",
-    "hardly"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "Nadie lo sumó nunca.",
-    "targetWord": "nunca",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "poder",
+    "sentence": "Yo no [[puedo]] anotar nada, dice Gabriela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be able to",
+      "options": [
+        "to be able to",
+        "to want to",
+        "to have to",
+        "to try to"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "Yo no puedo anotar nada, dice Gabriela.",
+        "targetWord": "puedo",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/1325cd77d44a4f65.mp3"
+      }
+    }
   },
-  "featured": false
- },
- {
-  "type": "meaning_in_context",
-  "word": "siempre",
-  "sentence": "Aquí [[siempre]] vienen todos, le dijo Salvador.",
-  "payload": {
-   "prompt": "Choose the meaning in context.",
-   "answer": "always",
-   "options": [
-    "always",
-    "never",
-    "rarely",
-    "today"
-   ],
-   "audioClip": {
-    "storySlug": "fiado-hasta-el-viernes",
-    "storySource": "user",
-    "sentence": "Aquí siempre vienen todos, le dijo Salvador.",
-    "targetWord": "siempre",
-    "language": "spanish"
-   }
+  {
+    "type": "meaning_in_context",
+    "word": "conocer",
+    "sentence": "Su regla era no cargar con deudas que no [[conoce]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to know",
+      "options": [
+        "to know",
+        "to owe",
+        "to forget",
+        "to accept"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "Su regla era no cargar con deudas que no conoce.",
+        "targetWord": "conoce",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c12e8624ef88dffd.mp3"
+      }
+    }
   },
-  "featured": false
- }
+  {
+    "type": "meaning_in_context",
+    "word": "aparecer",
+    "sentence": "[[Aparece]] la libreta de su hermano en el cajón.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to turn up",
+      "options": [
+        "to turn up",
+        "to run out",
+        "to fall over",
+        "to give in"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "Aparece la libreta de su hermano en el cajón.",
+        "targetWord": "aparece",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ab5afd793c4b3ac3.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "venir",
+    "sentence": "El viernes [[vienen]] once de cuarenta.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to come",
+      "options": [
+        "to come",
+        "to pay",
+        "to call",
+        "to write"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "El viernes vienen once de cuarenta.",
+        "targetWord": "vienen",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/77cb371eef072223.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "quedar",
+    "sentence": "[[Quedan]] veintinueve nombres sin marcar.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "to be left",
+      "options": [
+        "to be left",
+        "to be paid",
+        "to be lost",
+        "to be added"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "Quedan veintinueve nombres sin marcar.",
+        "targetWord": "quedan",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/c425a1f1a9fe17c2.mp3"
+      }
+    }
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "cuánto",
+    "sentence": "¿Y [[cuánto]] suma eso?, pregunta Gabriela.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "how much",
+      "options": [
+        "how much",
+        "how often",
+        "how far",
+        "how many people"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "¿Y cuánto suma eso?, pregunta Gabriela.",
+        "targetWord": "cuánto",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/25912227d1f22652.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "delante",
+    "sentence": "Gabriela come sola con la libreta [[delante]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "in front",
+      "options": [
+        "in front",
+        "behind",
+        "upstairs",
+        "outside"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "Gabriela come sola con la libreta delante.",
+        "targetWord": "delante",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/878471b126f2ef65.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "mayor",
+    "sentence": "Una señora [[mayor]] pide dos kilos de naranja.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "elderly",
+      "options": [
+        "elderly",
+        "younger",
+        "taller",
+        "thinner"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "Una señora mayor pide dos kilos de naranja.",
+        "targetWord": "mayor",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/27870c7081e0f2dc.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "igual",
+    "sentence": "Vuelvo el viernes [[igual]], dice la señora.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "all the same",
+      "options": [
+        "all the same",
+        "for once",
+        "by then",
+        "instead"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "Vuelvo el viernes igual, dice la señora.",
+        "targetWord": "igual",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/b7512b6ac0466e64.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "sola",
+    "sentence": "Gabriela come [[sola]] con la libreta delante.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "alone",
+      "options": [
+        "alone",
+        "early",
+        "outside",
+        "standing"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "Gabriela come sola con la libreta delante.",
+        "targetWord": "sola",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/878471b126f2ef65.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "nunca",
+    "sentence": "Nadie lo sumó [[nunca]].",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "never",
+      "options": [
+        "never",
+        "always",
+        "already",
+        "hardly"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "Nadie lo sumó nunca.",
+        "targetWord": "nunca",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/ee7578b99196db6b.mp3"
+      }
+    },
+    "featured": false
+  },
+  {
+    "type": "meaning_in_context",
+    "word": "siempre",
+    "sentence": "Aquí [[siempre]] vienen todos, le dijo Salvador.",
+    "payload": {
+      "prompt": "Choose the meaning in context.",
+      "answer": "always",
+      "options": [
+        "always",
+        "never",
+        "rarely",
+        "today"
+      ],
+      "audioClip": {
+        "storySlug": "fiado-hasta-el-viernes",
+        "storySource": "user",
+        "sentence": "Aquí siempre vienen todos, le dijo Salvador.",
+        "targetWord": "siempre",
+        "language": "spanish",
+        "clipUrl": "https://pub-ef067ab826f24d8fbe43b2ac2469bd3a.r2.dev/media/practice/sentence-clip/82dc59517588ee76.mp3"
+      }
+    },
+    "featured": false
+  }
 ]

@@ -146,6 +146,19 @@
         "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-nervous-pike-a97800/816d487c-9869-42d0-9769-c2d1506e72b3/scratchpad/mural"
       ],
       "port": 8910
+    },
+    {
+      "_comment": "Los clips de practica del A2 latam, para oirlos en una pagina. Borrar al cerrar el journey.",
+      "name": "practica-a2-8911",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8911",
+        "--directory",
+        "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-nervous-pike-a97800/816d487c-9869-42d0-9769-c2d1506e72b3/scratchpad/practica"
+      ],
+      "port": 8911
     }
   ]
 }
