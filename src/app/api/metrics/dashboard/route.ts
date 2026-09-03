@@ -6,6 +6,7 @@ import { prisma } from "@/lib/prisma";
 import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess";
 import { buildMetricsUserScope, parseMetricsCohort } from "@/lib/metricsCohort";
 import { resolveUserEmails, resolveUserIdentities } from "@/lib/metricsUserEmails";
+import { localDayKey, startOfLocalDay, startOfLocalDaysAgo } from "@/lib/metricsTime";
 import { books } from "@/data/books";
 import { getStandaloneStoriesByIds, getStandaloneStoriesBySlugs } from "@/lib/standaloneStories";
 import {
@@ -412,8 +413,12 @@ function parseDate(raw: string | null): Date | null {
   return Number.isNaN(d.getTime()) ? null : d;
 }
 
+/**
+ * La fecha de la fila, en el huso del panel. En UTC, la columna de hoy
+ * empezaba a las 02:00 de la madrugada de aquí y se llevaba dos horas de ayer.
+ */
 function toDayKey(date: Date): string {
-  return date.toISOString().slice(0, 10);
+  return localDayKey(date);
 }
 
 function getSavedStoryFilter(storySlug: string | null, storyIdsForFilter: string[]) {
@@ -864,22 +869,28 @@ export async function GET(req: NextRequest): Promise<Response> {
     // Agrupado en vez de `distinct`: cuesta lo mismo y de paso trae cuántos
     // eventos puso cada uno y cuándo fue el último, que es lo que la tarjeta
     // enseña al pasar el cursor. La cifra sigue siendo el número de filas.
+    //
+    // DAU = día de CALENDARIO en el huso del panel, no las últimas 24 horas.
+    // Con la ventana móvil la cifra bajaba sola a media tarde, cuando a alguien
+    // se le cumplían las 24 h desde su último evento, y eso no es que se haya
+    // ido nadie: es que el reloj se movió.
     needsOverviewData ? prisma.userMetric.groupBy({
       by: ["userId"],
       where: {
         ...userScope,
-        createdAt: { gte: new Date(now.getTime() - 24 * 60 * 60 * 1000), lte: now },
+        createdAt: { gte: startOfLocalDay(now), lte: now },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
       },
       _count: { _all: true },
       _max: { createdAt: true },
     }) : Promise.resolve([]),
+    // WAU = los siete días de calendario que acaban hoy, hoy incluido.
     needsOverviewData ? prisma.userMetric.groupBy({
       by: ["userId"],
       where: {
         ...userScope,
-        createdAt: { gte: new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000), lte: now },
+        createdAt: { gte: startOfLocalDaysAgo(now, 6), lte: now },
         ...(storySlug ? { storySlug } : {}),
         ...(bookSlug ? { bookSlug } : {}),
       },
