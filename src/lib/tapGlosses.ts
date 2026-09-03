@@ -39,6 +39,17 @@ export type TapGloss = {
    *  no se declinan (adverbios, preposiciones) traen tres usos reales. */
   f?: {
     label?: string;
+    /** El MODO, cuando la palabra no es un indicativo: "Subjunctive",
+     *  "Formal command", "Konjunktiv II"... Se pinta como distintivo junto al
+     *  tipo y es lo unico de la tarjeta que se lee de un vistazo. Lo escribe
+     *  `scripts/buildGlossMoods.ts`. */
+    mood?: string;
+    /** Celdas SIEMPRE a la vista, delante de `rows`. En los modos con
+     *  paradigma detras son dos: la forma que el lector ya conoce y la que
+     *  tiene delante, cada una con el nombre de SU tiempo
+     *  (`[["present","se va"],["subjunctive","se vaya"]]`). Sin esto, quien
+     *  viene del ingles no tiene como saber que `se vaya` no es `se va`. */
+    head?: string[][];
     /** "line": las formas que FALTAN, siempre a la vista y sin desplegable (el
      *  plural de un sustantivo, las otras concordancias de un adjetivo). Nunca
      *  repite la que ya sale en el trozo de arriba.

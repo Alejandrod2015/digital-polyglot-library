@@ -52,7 +52,7 @@ type Bundle = {
 };
 
 // ── Personas, según la variante ──────────────────────────────────────────
-function personas(variante: string): string[] {
+export function personas(variante: string): string[] {
   if (variante === "argentina" || variante === "uruguay") {
     return ["yo", "vos", "él, ella", "nosotros", "ustedes", "ellos"];
   }
@@ -61,7 +61,7 @@ function personas(variante: string): string[] {
 }
 
 // ── Verbos: regulares por terminación, irregulares a mano ────────────────
-const IRREGULARES: Record<string, string[]> = {
+export const IRREGULARES: Record<string, string[]> = {
   ser: ["soy", "eres", "es", "somos", "sois", "son"],
   estar: ["estoy", "estás", "está", "estamos", "estáis", "están"],
   ir: ["voy", "vas", "va", "vamos", "vais", "van"],
@@ -123,7 +123,7 @@ function conjugaRegular(inf: string): string[] | null {
 }
 
 /** Presente de indicativo del infinitivo, ya adaptado a la variante. */
-function presente(inf: string, variante: string): string[] | null {
+export function presente(inf: string, variante: string): string[] | null {
   const base = IRREGULARES[inf] ?? conjugaRegular(inf);
   if (!base) return null;
   const filas = [...base];
@@ -181,7 +181,7 @@ const PRET_CAMBIO: Record<string, string> = {
 /** Raiz que pasa la i a y entre vocales (leyo, cayo, oyo, construyo). */
 const PRET_Y = /(?:[aeiou]er|[aeiou]ir|uir)$/;
 
-function preterito(inf: string): string[] | null {
+export function preterito(inf: string): string[] | null {
   if (PRET_ENTERO[inf]) return [...PRET_ENTERO[inf]];
   const raiz = inf.slice(0, -2);
   // `oír` acaba en "ír", no en "ir", y sin deshacer la tilde no entraba por
@@ -223,7 +223,7 @@ function preterito(inf: string): string[] | null {
 }
 
 /** Imperfecto. Tres irregulares en toda la lengua y ni uno mas. */
-function imperfecto(inf: string): string[] | null {
+export function imperfecto(inf: string): string[] | null {
   if (inf === "ser") return ["era", "eras", "era", "éramos", "erais", "eran"];
   if (inf === "ir") return ["iba", "ibas", "iba", "íbamos", "ibais", "iban"];
   if (inf === "ver") return ["veía", "veías", "veía", "veíamos", "veíais", "veían"];
@@ -646,7 +646,7 @@ const IDIOMAS: Record<string, { personas: (v: string) => string[]; conjuga: (inf
  *  orden importa poco porque las formas casi no chocan entre tiempos; donde
  *  chocan (hablamos, presente y preterito) gana el presente, que es el que un
  *  hispanohablante lee por defecto. */
-function indicePorForma(infinitivos: string[], variante: string, idioma: string) {
+export function indicePorForma(infinitivos: string[], variante: string, idioma: string) {
   const motor = IDIOMAS[idioma];
   const mapa = new Map<string, { inf: string; i: number; tiempo: Tiempo }>();
   const voseo = idioma === "spanish" && (variante === "argentina" || variante === "uruguay")
@@ -918,4 +918,8 @@ async function main() {
   await prisma.$disconnect();
 }
 
-main();
+// Este fichero es tambien la BIBLIOTECA de conjugacion: `buildGlossMoods.ts`
+// importa `presente`, `preterito` e `indicePorForma` para no reescribir las
+// tablas de irregulares y que las dos pasadas no se desincronicen. Por eso
+// `main()` solo corre cuando el fichero se invoca directamente.
+if (/buildGlossForms\.ts$/.test(process.argv[1] ?? "")) main();
