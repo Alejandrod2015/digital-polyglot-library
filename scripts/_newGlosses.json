@@ -5777,6 +5777,18 @@
   "hablarse": {
    "g": "speaking to each other (hablarse)",
    "t": "verb"
+  },
+  "cuatrocientos": {
+   "g": "four hundred",
+   "t": "noun"
+  },
+  "doscientos": {
+   "g": "two hundred",
+   "t": "noun"
+  },
+  "afloja": {
+   "g": "loosens, slackens (aflojar)",
+   "t": "verb"
   }
  }
 }
