@@ -1,0 +1,440 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "corbata,ascensor,sorbete,sello",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "corbata",
+     "answer": "a tie",
+     "options": [
+      "a tie",
+      "a lift",
+      "an ice lolly",
+      "a stamp"
+     ]
+    },
+    {
+     "word": "ascensor",
+     "answer": "a lift",
+     "options": [
+      "a tie",
+      "a lift",
+      "an ice lolly",
+      "a stamp"
+     ]
+    },
+    {
+     "word": "sorbete",
+     "answer": "an ice lolly",
+     "options": [
+      "a tie",
+      "a lift",
+      "an ice lolly",
+      "a stamp"
+     ]
+    },
+    {
+     "word": "sello",
+     "answer": "a stamp",
+     "options": [
+      "a tie",
+      "a lift",
+      "an ice lolly",
+      "a stamp"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "respira",
+  "sentence": "Sale de la reunión, se afloja la corbata y _____ hondo.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "respira",
+   "options": [
+    "respira",
+    "corre",
+    "grita",
+    "canta"
+   ],
+   "translation": "He leaves the meeting, loosens his tie and _____ deeply.",
+   "optionTranslations": [
+    "breathes",
+    "runs",
+    "shouts",
+    "sings"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "Sale de la reunión, se afloja la corbata y respira hondo.",
+    "targetWord": "respira",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dulce",
+  "sentence": "El sorbete está frío y muy _____, casi de azúcar.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dulce",
+   "options": [
+    "dulce",
+    "amargo",
+    "salado",
+    "seco"
+   ],
+   "translation": "The ice is cold and very _____, almost pure sugar.",
+   "optionTranslations": [
+    "sweet",
+    "bitter",
+    "salty",
+    "dry"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "El sorbete está frío y muy dulce, casi de azúcar.",
+    "targetWord": "dulce",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "corto",
+  "sentence": "No firma el pedido entero: firma uno más _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "corto",
+   "options": [
+    "corto",
+    "caro",
+    "viejo",
+    "sucio"
+   ],
+   "translation": "He does not sign the whole order: he signs a _____ one.",
+   "optionTranslations": [
+    "shorter",
+    "dearer",
+    "older",
+    "dirtier"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "No firma el pedido entero: firma uno más corto.",
+    "targetWord": "corto",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "coloca",
+  "sentence": "Escribe la dirección y _____ el sello en la esquina.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "coloca",
+   "options": [
+    "coloca",
+    "borra",
+    "rompe",
+    "lee"
+   ],
+   "translation": "He writes the address and _____ the stamp in the corner.",
+   "optionTranslations": [
+    "places",
+    "erases",
+    "tears",
+    "reads"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "Escribe la dirección y coloca el sello en la esquina.",
+    "targetWord": "coloca",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sonar",
+  "sentence": "No lo cuento, dice, y le [[suena]] el teléfono.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ring",
+   "options": [
+    "to ring",
+    "to break",
+    "to vibrate",
+    "to switch off"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "No lo cuento, dice, y le suena el teléfono.",
+    "targetWord": "suena",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "confundirse",
+  "sentence": "Intenta imaginar cómo lo dice arriba y se [[confunde]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get muddled",
+   "options": [
+    "to get muddled",
+    "to get angry",
+    "to get bored",
+    "to get lost"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "Intenta imaginar cómo lo dice arriba y se confunde.",
+    "targetWord": "confunde",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "morder",
+  "sentence": "Ernesto [[muerde]] el sorbete: está dulce y frío.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to bite",
+   "options": [
+    "to bite",
+    "to lick",
+    "to drop",
+    "to melt"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "Ernesto muerde el sorbete: está dulce y frío.",
+    "targetWord": "muerde",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llorar",
+  "sentence": "Le dan ganas de [[llorar]] y no lo dice.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to cry",
+   "options": [
+    "to cry",
+    "to laugh",
+    "to shout",
+    "to sleep"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "Le dan ganas de llorar y no lo dice.",
+    "targetWord": "llorar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "subir",
+  "sentence": "Ernesto [[sube]], y esa noche le manda una postal.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to board",
+   "options": [
+    "to board",
+    "to get off",
+    "to sit down",
+    "to wait"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "Ernesto sube, y esa noche le manda una postal.",
+    "targetWord": "sube",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aeropuerto",
+  "sentence": "En el [[aeropuerto]] intenta imaginar cómo lo dice arriba.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "an airport",
+   "options": [
+    "an airport",
+    "a station",
+    "a hotel",
+    "an office"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "En el aeropuerto intenta imaginar cómo lo dice arriba.",
+    "targetWord": "aeropuerto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "jugo",
+  "sentence": "Araceli le compra un [[jugo]] y un sorbete.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a juice",
+   "options": [
+    "a juice",
+    "a coffee",
+    "a bread roll",
+    "a bottle of water"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "Araceli le compra un jugo y un sorbete.",
+    "targetWord": "jugo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "postal",
+  "sentence": "Le manda una [[postal]] a su hija con un camión.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a postcard",
+   "options": [
+    "a postcard",
+    "a parcel",
+    "a photo",
+    "a ticket"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "Le manda una postal a su hija con un camión.",
+    "targetWord": "postal",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ganas",
+  "sentence": "Le dan [[ganas]] de llorar y no lo dice.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the urge",
+   "options": [
+    "the urge",
+    "the time",
+    "the right",
+    "the strength"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "Le dan ganas de llorar y no lo dice.",
+    "targetWord": "ganas",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dibujo",
+  "sentence": "Le manda una postal con el [[dibujo]] de un camión.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a drawing",
+   "options": [
+    "a drawing",
+    "a photo",
+    "a name",
+    "a price"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "Le manda una postal con el dibujo de un camión.",
+    "targetWord": "dibujo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "centro",
+  "sentence": "Nadie de arriba tiene que enterarse de lo del [[centro]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the city centre",
+   "options": [
+    "the city centre",
+    "the airport",
+    "the depot",
+    "the border"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "Nadie de arriba tiene que enterarse de lo del centro.",
+    "targetWord": "centro",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "única",
+  "sentence": "Araceli es la [[única]] de esa oficina que se va a acordar.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "the only one",
+   "options": [
+    "the only one",
+    "the first one",
+    "the last one",
+    "the best one"
+   ],
+   "audioClip": {
+    "storySlug": "firmar-menos",
+    "storySource": "user",
+    "sentence": "Araceli es la única de esa oficina que se va a acordar.",
+    "targetWord": "única",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

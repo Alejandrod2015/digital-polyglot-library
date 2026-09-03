@@ -1,0 +1,440 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "risa,espejito,caliente,bajito",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "risa",
+     "answer": "a laugh",
+     "options": [
+      "a laugh",
+      "a small mirror",
+      "hot",
+      "quietly"
+     ]
+    },
+    {
+     "word": "espejito",
+     "answer": "a small mirror",
+     "options": [
+      "a laugh",
+      "a small mirror",
+      "hot",
+      "quietly"
+     ]
+    },
+    {
+     "word": "caliente",
+     "answer": "hot",
+     "options": [
+      "a laugh",
+      "a small mirror",
+      "hot",
+      "quietly"
+     ]
+    },
+    {
+     "word": "bajito",
+     "answer": "quietly",
+     "options": [
+      "a laugh",
+      "a small mirror",
+      "hot",
+      "quietly"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "apaga",
+  "sentence": "La sierra chilla un rato y después se _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "apaga",
+   "options": [
+    "apaga",
+    "abre",
+    "moja",
+    "dobla"
+   ],
+   "translation": "The saw screeches for a while and then _____.",
+   "optionTranslations": [
+    "switches off",
+    "opens",
+    "gets wet",
+    "folds"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "La sierra chilla un rato y después se apaga.",
+    "targetWord": "apaga",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cuelga",
+  "sentence": "Termina el turno y _____ el guardapolvo en la puerta.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cuelga",
+   "options": [
+    "cuelga",
+    "rompe",
+    "lava",
+    "pierde"
+   ],
+   "translation": "He finishes his shift and _____ the coat by the door.",
+   "optionTranslations": [
+    "hangs up",
+    "tears",
+    "washes",
+    "loses"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Termina el turno y cuelga el guardapolvo en la puerta.",
+    "targetWord": "cuelga",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "aprieta",
+  "sentence": "No quiere hablar y _____ los labios con fuerza.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "aprieta",
+   "options": [
+    "aprieta",
+    "abre",
+    "limpia",
+    "levanta"
+   ],
+   "translation": "He does not want to speak and _____ his lips hard.",
+   "optionTranslations": [
+    "presses together",
+    "opens",
+    "cleans",
+    "lifts"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "No quiere hablar y aprieta los labios con fuerza.",
+    "targetWord": "aprieta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mueve",
+  "sentence": "Para no mirar a nadie, _____ el espejito de lugar.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mueve",
+   "options": [
+    "mueve",
+    "rompe",
+    "cuenta",
+    "guarda"
+   ],
+   "translation": "So as not to look at anybody, she _____ the mirror.",
+   "optionTranslations": [
+    "moves",
+    "breaks",
+    "counts",
+    "puts away"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Para no mirar a nadie, mueve el espejito de lugar.",
+    "targetWord": "mueve",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entrar",
+  "sentence": "Él la ve [[entrar]] y sigue lijando.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come in",
+   "options": [
+    "to come in",
+    "to go out",
+    "to sit down",
+    "to shout"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Él la ve entrar y sigue lijando.",
+    "targetWord": "entrar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "volver",
+  "sentence": "Marisol [[vuelve]] a buscar a Leandro entre los marcos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come back",
+   "options": [
+    "to come back",
+    "to give up",
+    "to hurry",
+    "to look away"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Marisol vuelve a buscar a Leandro entre los marcos.",
+    "targetWord": "vuelve",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "buscar",
+  "sentence": "Marisol vuelve a [[buscar]] a Leandro entre los marcos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to look for",
+   "options": [
+    "to look for",
+    "to greet",
+    "to avoid",
+    "to pay"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Marisol vuelve a buscar a Leandro entre los marcos.",
+    "targetWord": "buscar",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "entender",
+  "sentence": "Ella [[entiende]] que él nunca se estuvo riendo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to understand",
+   "options": [
+    "to understand",
+    "to doubt",
+    "to forget",
+    "to explain"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Ella entiende que él nunca se estuvo riendo.",
+    "targetWord": "entiende",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "elegir",
+  "sentence": "Leandro tarda y [[elige]] mal las palabras.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to choose",
+   "options": [
+    "to choose",
+    "to shout",
+    "to repeat",
+    "to write"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Leandro tarda y elige mal las palabras.",
+    "targetWord": "elige",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "apoyar",
+  "sentence": "Los marcos están [[apoyados]] contra la pared.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lean against",
+   "options": [
+    "to lean against",
+    "to hang up",
+    "to pile up",
+    "to nail down"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Los marcos están apoyados contra la pared.",
+    "targetWord": "apoyados",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "seguir",
+  "sentence": "Él la ve entrar y [[sigue]] lijando.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to carry on",
+   "options": [
+    "to carry on",
+    "to stop",
+    "to turn round",
+    "to start"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Él la ve entrar y sigue lijando.",
+    "targetWord": "sigue",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fuerte",
+  "sentence": "Mirá quién apareció, dice Leandro [[fuerte]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "loudly",
+   "options": [
+    "loudly",
+    "quietly",
+    "slowly",
+    "kindly"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Mirá quién apareció, dice Leandro fuerte.",
+    "targetWord": "fuerte",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "soltar",
+  "sentence": "Alguien [[suelta]] una risa y vuelve al trabajo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to let out",
+   "options": [
+    "to let out",
+    "to hold back",
+    "to point out",
+    "to make up"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Alguien suelta una risa y vuelve al trabajo.",
+    "targetWord": "suelta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "contestar",
+  "sentence": "Yo te escribí dos veces, [[contesta]] ella bajito.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to reply",
+   "options": [
+    "to reply",
+    "to insist",
+    "to laugh",
+    "to leave"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Yo te escribí dos veces, contesta ella bajito.",
+    "targetWord": "contesta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sentir",
+  "sentence": "Marisol [[siente]] la cara caliente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to feel",
+   "options": [
+    "to feel",
+    "to cover",
+    "to wash",
+    "to turn"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Marisol siente la cara caliente.",
+    "targetWord": "siente",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tardar",
+  "sentence": "Leandro [[tarda]] y elige mal las palabras.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to take a while",
+   "options": [
+    "to take a while",
+    "to hurry",
+    "to give in",
+    "to speak up"
+   ],
+   "audioClip": {
+    "storySlug": "los-marcos-contra-la-pared",
+    "storySource": "user",
+    "sentence": "Leandro tarda y elige mal las palabras.",
+    "targetWord": "tarda",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

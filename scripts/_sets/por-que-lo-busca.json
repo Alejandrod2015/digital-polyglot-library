@@ -1,0 +1,440 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "candil,frascos,morral,banco",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "candil",
+     "answer": "an oil lamp",
+     "options": [
+      "an oil lamp",
+      "jars",
+      "a shoulder bag",
+      "a bench"
+     ]
+    },
+    {
+     "word": "frascos",
+     "answer": "jars",
+     "options": [
+      "an oil lamp",
+      "jars",
+      "a shoulder bag",
+      "a bench"
+     ]
+    },
+    {
+     "word": "morral",
+     "answer": "a shoulder bag",
+     "options": [
+      "an oil lamp",
+      "jars",
+      "a shoulder bag",
+      "a bench"
+     ]
+    },
+    {
+     "word": "banco",
+     "answer": "a bench",
+     "options": [
+      "an oil lamp",
+      "jars",
+      "a shoulder bag",
+      "a bench"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "velón",
+  "sentence": "Se fue la luz y ella enciende un _____ en la cocina.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "velón",
+   "options": [
+    "velón",
+    "zapato",
+    "plato",
+    "cuchillo"
+   ],
+   "translation": "The power went out and she lights a _____ in the kitchen.",
+   "optionTranslations": [
+    "thick candle",
+    "shoe",
+    "plate",
+    "knife"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Se fue la luz y ella enciende un velón en la cocina.",
+    "targetWord": "velón",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "intenta",
+  "sentence": "Lo dice mal y ya no _____ explicarlo otra vez.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "intenta",
+   "options": [
+    "intenta",
+    "promete",
+    "paga",
+    "olvida"
+   ],
+   "translation": "She says it badly and does not _____ to explain it again.",
+   "optionTranslations": [
+    "try",
+    "promise",
+    "pay",
+    "forget"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Lo dice mal y ya no intenta explicarlo otra vez.",
+    "targetWord": "intenta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "imagina",
+  "sentence": "Cierra los ojos y se _____ la escena completa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "imagina",
+   "options": [
+    "imagina",
+    "escribe",
+    "dibuja",
+    "cuenta"
+   ],
+   "translation": "She closes her eyes and _____ the whole scene.",
+   "optionTranslations": [
+    "imagines",
+    "writes",
+    "draws",
+    "tells"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Cierra los ojos y se imagina la escena completa.",
+    "targetWord": "imagina",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cuidarla",
+  "sentence": "Prefiere no acercarse y _____ desde lejos.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cuidarla",
+   "options": [
+    "cuidarla",
+    "venderla",
+    "romperla",
+    "medirla"
+   ],
+   "translation": "She prefers not to come close and to _____ from far away.",
+   "optionTranslations": [
+    "look after her",
+    "sell her",
+    "break her",
+    "measure her"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Prefiere no acercarse y cuidarla desde lejos.",
+    "targetWord": "cuidarla",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "vino",
+  "sentence": "Él sí [[vino]], le dice Zoila, una vez.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come",
+   "options": [
+    "to come",
+    "to write",
+    "to pay",
+    "to stay"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Él sí vino, le dice Zoila, una vez.",
+    "targetWord": "vino",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "olvidar",
+  "sentence": "No la busque sin avisar. Eso no lo [[olvida]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to forget",
+   "options": [
+    "to forget",
+    "to forgive",
+    "to notice",
+    "to repeat"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "No la busque sin avisar. Eso no lo olvida.",
+    "targetWord": "olvida",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "callarse",
+  "sentence": "No intenta más y se [[calla]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to go quiet",
+   "options": [
+    "to go quiet",
+    "to speak up",
+    "to walk out",
+    "to laugh"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "No intenta más y se calla.",
+    "targetWord": "calla",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mitad",
+  "sentence": "Es la [[mitad]] de lo que Cecilia quería.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "half",
+   "options": [
+    "half",
+    "all",
+    "none",
+    "twice"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Es la mitad de lo que Cecilia quería.",
+    "targetWord": "mitad",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escena",
+  "sentence": "Se imagina la [[escena]] y prefiere cuidarla desde lejos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a scene",
+   "options": [
+    "a scene",
+    "a photo",
+    "a letter",
+    "a room"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Se imagina la escena y prefiere cuidarla desde lejos.",
+    "targetWord": "escena",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "viaje",
+  "sentence": "Le cambia el [[viaje]] que tenía pensado.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a trip",
+   "options": [
+    "a trip",
+    "a job",
+    "a name",
+    "a price"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Le cambia el viaje que tenía pensado.",
+    "targetWord": "viaje",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "alguien",
+  "sentence": "Pregunto para que [[alguien]] me diga que él tampoco se quedó.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "somebody",
+   "options": [
+    "somebody",
+    "nobody",
+    "everybody",
+    "anybody else"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Pregunto para que alguien me diga que él tampoco se quedó.",
+    "targetWord": "alguien",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "tampoco",
+  "sentence": "Si él [[tampoco]] se quedó, lo mío pesa menos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "not either",
+   "options": [
+    "not either",
+    "also",
+    "instead",
+    "already"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Si él tampoco se quedó, lo mío pesa menos.",
+    "targetWord": "tampoco",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "menos",
+  "sentence": "Si él tampoco se quedó, lo mío pesa [[menos]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "less",
+   "options": [
+    "less",
+    "more",
+    "the same",
+    "enough"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Si él tampoco se quedó, lo mío pesa menos.",
+    "targetWord": "menos",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bien",
+  "sentence": "Lo cuenta mal y no queda [[bien]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "well",
+   "options": [
+    "well",
+    "badly",
+    "late",
+    "loud"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Lo cuenta mal y no queda bien.",
+    "targetWord": "bien",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aquí",
+  "sentence": "Una vez, y no llegó más lejos que [[aquí]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "here",
+   "options": [
+    "here",
+    "there",
+    "home",
+    "abroad"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Una vez, y no llegó más lejos que aquí.",
+    "targetWord": "aquí",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "hacia",
+  "sentence": "Cecilia arrastra el banco [[hacia]] atrás.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "towards",
+   "options": [
+    "towards",
+    "away from",
+    "around",
+    "under"
+   ],
+   "audioClip": {
+    "storySlug": "por-que-lo-busca",
+    "storySource": "user",
+    "sentence": "Cecilia arrastra el banco hacia atrás.",
+    "targetWord": "hacia",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

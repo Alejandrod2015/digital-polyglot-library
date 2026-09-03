@@ -1,0 +1,440 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "agenda,corredor,mensaje,mentira",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "agenda",
+     "answer": "a diary",
+     "options": [
+      "a diary",
+      "a corridor",
+      "a message",
+      "a lie"
+     ]
+    },
+    {
+     "word": "corredor",
+     "answer": "a corridor",
+     "options": [
+      "a diary",
+      "a corridor",
+      "a message",
+      "a lie"
+     ]
+    },
+    {
+     "word": "mensaje",
+     "answer": "a message",
+     "options": [
+      "a diary",
+      "a corridor",
+      "a message",
+      "a lie"
+     ]
+    },
+    {
+     "word": "mentira",
+     "answer": "a lie",
+     "options": [
+      "a diary",
+      "a corridor",
+      "a message",
+      "a lie"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "derrite",
+  "sentence": "A las diez el calor _____ el queso del camión.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "derrite",
+   "options": [
+    "derrite",
+    "enfría",
+    "seca",
+    "lava"
+   ],
+   "translation": "At ten the heat _____ the cheese in the truck.",
+   "optionTranslations": [
+    "melts",
+    "cools",
+    "dries",
+    "washes"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "A las diez el calor derrite el queso del camión.",
+    "targetWord": "derrite",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "cansado",
+  "sentence": "Trabajó doce horas y llega a casa muy _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "cansado",
+   "options": [
+    "cansado",
+    "contento",
+    "nuevo",
+    "limpio"
+   ],
+   "translation": "He worked twelve hours and gets home very _____.",
+   "optionTranslations": [
+    "tired",
+    "pleased",
+    "new",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "Trabajó doce horas y llega a casa muy cansado.",
+    "targetWord": "cansado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "rápido",
+  "sentence": "Salió en dos minutos: fue todo muy _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "rápido",
+   "options": [
+    "rápido",
+    "lento",
+    "caro",
+    "difícil"
+   ],
+   "translation": "It came out in two minutes: it was all very _____.",
+   "optionTranslations": [
+    "quick",
+    "slow",
+    "expensive",
+    "hard"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "Salió en dos minutos: fue todo muy rápido.",
+    "targetWord": "rápido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "envía",
+  "sentence": "Esa noche le _____ un mensaje al jefe desde la casa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "envía",
+   "options": [
+    "envía",
+    "borra",
+    "guarda",
+    "lee"
+   ],
+   "translation": "That night he _____ a message to the boss from home.",
+   "optionTranslations": [
+    "sends",
+    "deletes",
+    "keeps",
+    "reads"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "Esa noche le envía un mensaje al jefe desde la casa.",
+    "targetWord": "envía",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "contar",
+  "sentence": "[[Cuenta]] su modelo despacio y nadie escribe nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to tell",
+   "options": [
+    "to tell",
+    "to count",
+    "to ask",
+    "to hide"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "Cuenta su modelo despacio y nadie escribe nada.",
+    "targetWord": "cuenta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ayudar",
+  "sentence": "Quien lo [[ayuda]] hoy es Araceli.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to help",
+   "options": [
+    "to help",
+    "to hire",
+    "to replace",
+    "to teach"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "Quien lo ayuda hoy es Araceli.",
+    "targetWord": "ayuda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "recordar",
+  "sentence": "[[Recuerda]] la sala y no borra el mensaje.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to remember",
+   "options": [
+    "to remember",
+    "to forget",
+    "to describe",
+    "to leave"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "Recuerda la sala y no borra el mensaje.",
+    "targetWord": "recuerda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "decir",
+  "sentence": "Uno [[dice]] muy interesante dos veces.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to say",
+   "options": [
+    "to say",
+    "to ask",
+    "to sing",
+    "to write"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "Uno dice muy interesante dos veces.",
+    "targetWord": "dice",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "difícil",
+  "sentence": "Aquí el no se dice sonriendo, y es [[difícil]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "hard",
+   "options": [
+    "hard",
+    "easy",
+    "rude",
+    "common"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "Aquí el no se dice sonriendo, y es difícil.",
+    "targetWord": "difícil",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "modelo",
+  "sentence": "Cuenta su [[modelo]] despacio delante de todos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a plan",
+   "options": [
+    "a plan",
+    "a machine",
+    "a price",
+    "a rule"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "Cuenta su modelo despacio delante de todos.",
+    "targetWord": "modelo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sala",
+  "sentence": "En la [[sala]] hace frío y nadie escribe nada.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "a meeting room",
+   "options": [
+    "a meeting room",
+    "a kitchen",
+    "a street",
+    "a lift"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "En la sala hace frío y nadie escribe nada.",
+    "targetWord": "sala",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "frío",
+  "sentence": "En la sala hace [[frío]] y él lleva un mes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "cold",
+   "options": [
+    "cold",
+    "noise",
+    "light",
+    "dust"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "En la sala hace frío y él lleva un mes.",
+    "targetWord": "frío",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llevar",
+  "sentence": "Ernesto [[lleva]] un mes en la oficina de reparto.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to have been for",
+   "options": [
+    "to have been for",
+    "to bring along",
+    "to take away",
+    "to carry out"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "Ernesto lleva un mes en la oficina de reparto.",
+    "targetWord": "lleva",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "escribir",
+  "sentence": "Nadie [[escribe]] nada en toda la junta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to write",
+   "options": [
+    "to write",
+    "to speak",
+    "to listen",
+    "to nod"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "Nadie escribe nada en toda la junta.",
+    "targetWord": "escribe",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "contento",
+  "sentence": "Ernesto sale [[contento]] de la sala.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "pleased",
+   "options": [
+    "pleased",
+    "worried",
+    "angry",
+    "bored"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "Ernesto sale contento de la sala.",
+    "targetWord": "contento",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dos veces",
+  "sentence": "Uno dice muy interesante [[dos veces]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "twice",
+   "options": [
+    "twice",
+    "once",
+    "never",
+    "daily"
+   ],
+   "audioClip": {
+    "storySlug": "muy-interesante",
+    "storySource": "user",
+    "sentence": "Uno dice muy interesante dos veces.",
+    "targetWord": "dos veces",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,440 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "celebración,gaseosa,invitada,cuento",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "celebración",
+     "answer": "a party",
+     "options": [
+      "a party",
+      "a fizzy drink",
+      "a female guest",
+      "a made up story"
+     ]
+    },
+    {
+     "word": "gaseosa",
+     "answer": "a fizzy drink",
+     "options": [
+      "a party",
+      "a fizzy drink",
+      "a female guest",
+      "a made up story"
+     ]
+    },
+    {
+     "word": "invitada",
+     "answer": "a female guest",
+     "options": [
+      "a party",
+      "a fizzy drink",
+      "a female guest",
+      "a made up story"
+     ]
+    },
+    {
+     "word": "cuento",
+     "answer": "a made up story",
+     "options": [
+      "a party",
+      "a fizzy drink",
+      "a female guest",
+      "a made up story"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "alegre",
+  "sentence": "Todos aplauden y él la presenta _____, con una sonrisa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "alegre",
+   "options": [
+    "alegre",
+    "serio",
+    "cansado",
+    "nervioso"
+   ],
+   "translation": "Everybody claps and he introduces her _____, with a smile.",
+   "optionTranslations": [
+    "cheerful",
+    "serious",
+    "tired",
+    "nervous"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Todos aplauden y él la presenta alegre, con una sonrisa.",
+    "targetWord": "alegre",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "torcido",
+  "sentence": "No le sale bien la sonrisa y queda _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "torcido",
+   "options": [
+    "torcido",
+    "limpio",
+    "recto",
+    "nuevo"
+   ],
+   "translation": "The smile does not come out right and it looks _____.",
+   "optionTranslations": [
+    "crooked",
+    "clean",
+    "straight",
+    "new"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "No le sale bien la sonrisa y queda torcido.",
+    "targetWord": "torcido",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "pesado",
+  "sentence": "Nadie habla y el aire se pone _____ en la sala.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "pesado",
+   "options": [
+    "pesado",
+    "dulce",
+    "claro",
+    "fresco"
+   ],
+   "translation": "Nobody speaks and the air turns _____ in the room.",
+   "optionTranslations": [
+    "heavy",
+    "sweet",
+    "clear",
+    "fresh"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Nadie habla y el aire se pone pesado en la sala.",
+    "targetWord": "pesado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "falso",
+  "sentence": "Ese dato no es cierto: es completamente _____.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "falso",
+   "options": [
+    "falso",
+    "largo",
+    "caro",
+    "viejo"
+   ],
+   "translation": "That detail is not true: it is completely _____.",
+   "optionTranslations": [
+    "false",
+    "long",
+    "expensive",
+    "old"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Ese dato no es cierto: es completamente falso.",
+    "targetWord": "falso",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "presentar",
+  "sentence": "Esta es la que tomó fotos, la [[presenta]] él.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to introduce",
+   "options": [
+    "to introduce",
+    "to thank",
+    "to correct",
+    "to invite"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Esta es la que tomó fotos, la presenta él.",
+    "targetWord": "presenta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dudar",
+  "sentence": "Liliana [[duda]] un segundo y no lo aclara.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to hesitate",
+   "options": [
+    "to hesitate",
+    "to agree",
+    "to laugh",
+    "to explain"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Liliana duda un segundo y no lo aclara.",
+    "targetWord": "duda",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aclarar",
+  "sentence": "Liliana duda un segundo y no lo [[aclara]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to set straight",
+   "options": [
+    "to set straight",
+    "to write down",
+    "to repeat",
+    "to translate"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Liliana duda un segundo y no lo aclara.",
+    "targetWord": "aclara",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mentir",
+  "sentence": "Ella [[miente]] un poco más y sigue el juego.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to lie",
+   "options": [
+    "to lie",
+    "to boast",
+    "to apologise",
+    "to whisper"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Ella miente un poco más y sigue el juego.",
+    "targetWord": "miente",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "avisar",
+  "sentence": "Yo le [[aviso]] mañana, dice, y no dice de qué.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to let know",
+   "options": [
+    "to let know",
+    "to pay back",
+    "to ask",
+    "to visit"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Yo le aviso mañana, dice, y no dice de qué.",
+    "targetWord": "aviso",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "aplaudir",
+  "sentence": "Todos [[aplauden]] cuando él la presenta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to clap",
+   "options": [
+    "to clap",
+    "to stand up",
+    "to whistle",
+    "to leave"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Todos aplauden cuando él la presenta.",
+    "targetWord": "aplauden",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reírse",
+  "sentence": "Fabián se [[ríe]] y ella también, sin gracia.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to laugh",
+   "options": [
+    "to laugh",
+    "to cry",
+    "to shout",
+    "to yawn"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Fabián se ríe y ella también, sin gracia.",
+    "targetWord": "ríe",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "brindar",
+  "sentence": "Sigue el juego y [[brinda]] con una gaseosa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to raise a toast",
+   "options": [
+    "to raise a toast",
+    "to pour out",
+    "to pay for",
+    "to spill"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Sigue el juego y brinda con una gaseosa.",
+    "targetWord": "brinda",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "negar",
+  "sentence": "[[Negar]] el cuento sería peor.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to deny",
+   "options": [
+    "to deny",
+    "to repeat",
+    "to finish",
+    "to sell"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Negar el cuento sería peor.",
+    "targetWord": "negar",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "cantar",
+  "sentence": "[[Cantan]] y alguien pide la historia otra vez.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sing",
+   "options": [
+    "to sing",
+    "to dance",
+    "to argue",
+    "to eat"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Cantan y alguien pide la historia otra vez.",
+    "targetWord": "cantan",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "bailar",
+  "sentence": "[[Bailan]], y alguien pide la historia otra vez.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to dance",
+   "options": [
+    "to dance",
+    "to sit",
+    "to sing",
+    "to leave"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Bailan, y alguien pide la historia otra vez.",
+    "targetWord": "bailan",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sonreír",
+  "sentence": "Otro día se los digo, aguanta y [[sonríe]] torcido.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to smile",
+   "options": [
+    "to smile",
+    "to frown",
+    "to sigh",
+    "to nod"
+   ],
+   "audioClip": {
+    "storySlug": "en-serio-no-era",
+    "storySource": "user",
+    "sentence": "Otro día se los digo, aguanta y sonríe torcido.",
+    "targetWord": "sonríe",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

@@ -1,0 +1,440 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "ojo,apurado,juntos,enfrente",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "ojo",
+     "answer": "an eye",
+     "options": [
+      "an eye",
+      "hurried",
+      "together",
+      "opposite"
+     ]
+    },
+    {
+     "word": "apurado",
+     "answer": "hurried",
+     "options": [
+      "an eye",
+      "hurried",
+      "together",
+      "opposite"
+     ]
+    },
+    {
+     "word": "juntos",
+     "answer": "together",
+     "options": [
+      "an eye",
+      "hurried",
+      "together",
+      "opposite"
+     ]
+    },
+    {
+     "word": "enfrente",
+     "answer": "opposite",
+     "options": [
+      "an eye",
+      "hurried",
+      "together",
+      "opposite"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "abre",
+  "sentence": "Marisol _____ el cuaderno y mira la primera página.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "abre",
+   "options": [
+    "abre",
+    "cierra",
+    "guarda",
+    "rompe"
+   ],
+   "translation": "Marisol _____ the notebook and looks at the first page.",
+   "optionTranslations": [
+    "opens",
+    "closes",
+    "puts away",
+    "tears up"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "Marisol abre el cuaderno y mira la primera página.",
+    "targetWord": "abre",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "dobla",
+  "sentence": "El papel es viejo y se _____ en los bordes.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "dobla",
+   "options": [
+    "dobla",
+    "moja",
+    "quema",
+    "borra"
+   ],
+   "translation": "The paper is old and _____ at the edges.",
+   "optionTranslations": [
+    "folds",
+    "gets wet",
+    "burns",
+    "rubs out"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "El papel es viejo y se dobla en los bordes.",
+    "targetWord": "dobla",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "guardé",
+  "sentence": "Lo escribí hace años y lo _____ en un cajón.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "guardé",
+   "options": [
+    "guardé",
+    "vendí",
+    "perdí",
+    "copié"
+   ],
+   "translation": "I wrote it years ago and _____ it in a drawer.",
+   "optionTranslations": [
+    "kept",
+    "sold",
+    "lost",
+    "copied"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "Lo escribí hace años y lo guardé en un cajón.",
+    "targetWord": "guardé",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "recoge",
+  "sentence": "Levanta los ojos y _____ el cuaderno de la mesa.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "recoge",
+   "options": [
+    "recoge",
+    "empuja",
+    "tapa",
+    "cuenta"
+   ],
+   "translation": "She lifts her eyes and _____ the notebook from the table.",
+   "optionTranslations": [
+    "picks up",
+    "pushes",
+    "covers",
+    "counts"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "Levanta los ojos y recoge el cuaderno de la mesa.",
+    "targetWord": "recoge",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llenar",
+  "sentence": "Las páginas están [[llenas]] de nombres y precios.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "full",
+   "options": [
+    "full",
+    "empty",
+    "torn",
+    "clean"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "Las páginas están llenas de nombres y precios.",
+    "targetWord": "llenas",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "reconocer",
+  "sentence": "Marisol [[reconoce]] el plan que habían pensado juntos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to recognise",
+   "options": [
+    "to recognise",
+    "to reject",
+    "to explain",
+    "to hide"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "Marisol reconoce el plan que habían pensado juntos.",
+    "targetWord": "reconoce",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "sentarse",
+  "sentence": "Leandro llega y se [[sienta]] enfrente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to sit down",
+   "options": [
+    "to sit down",
+    "to stand up",
+    "to walk off",
+    "to lean back"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "Leandro llega y se sienta enfrente.",
+    "targetWord": "sienta",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "creer",
+  "sentence": "Ella [[creía]] que venía a pedir perdón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to believe",
+   "options": [
+    "to believe",
+    "to doubt",
+    "to prove",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "Ella creía que venía a pedir perdón.",
+    "targetWord": "creía",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "oler",
+  "sentence": "En la cafetería [[huele]] a café recién hecho.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to smell",
+   "options": [
+    "to smell",
+    "to sound",
+    "to look",
+    "to taste"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "En la cafetería huele a café recién hecho.",
+    "targetWord": "huele",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "correr",
+  "sentence": "La letra [[corre]] apurada y se dobla en los bordes.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to run on",
+   "options": [
+    "to run on",
+    "to stop short",
+    "to fade out",
+    "to spread out"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "La letra corre apurada y se dobla en los bordes.",
+    "targetWord": "corre",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pensar",
+  "sentence": "Lo habían [[pensado]] juntos, antes de irse.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to plan",
+   "options": [
+    "to plan",
+    "to argue",
+    "to write down",
+    "to forget"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "Lo habían pensado juntos, antes de irse.",
+    "targetWord": "pensado",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llegar",
+  "sentence": "Leandro [[llega]] y se sienta enfrente.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to arrive",
+   "options": [
+    "to arrive",
+    "to leave",
+    "to call",
+    "to wait"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "Leandro llega y se sienta enfrente.",
+    "targetWord": "llega",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "solo",
+  "sentence": "¿Esto lo escribiste tú [[solo]]?",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "alone",
+   "options": [
+    "alone",
+    "together",
+    "quickly",
+    "again"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "¿Esto lo escribiste tú solo?",
+    "targetWord": "solo",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "todavía",
+  "sentence": "Vos [[todavía]] llegás a tiempo.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "still",
+   "options": [
+    "still",
+    "never",
+    "already",
+    "hardly"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "Vos todavía llegás a tiempo.",
+    "targetWord": "todavía",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "pedir",
+  "sentence": "Ella creía que venía a [[pedir]] perdón.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to ask for",
+   "options": [
+    "to ask for",
+    "to give back",
+    "to turn down",
+    "to put off"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "Ella creía que venía a pedir perdón.",
+    "targetWord": "pedir",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "mandar",
+  "sentence": "Te [[mando]] la primera foto desde la ruta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to send",
+   "options": [
+    "to send",
+    "to owe",
+    "to promise",
+    "to show"
+   ],
+   "audioClip": {
+    "storySlug": "un-viaje-escrito-a-mano",
+    "storySource": "user",
+    "sentence": "Te mando la primera foto desde la ruta.",
+    "targetWord": "mando",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]

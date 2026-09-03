@@ -1,0 +1,440 @@
+[
+ {
+  "type": "match_meaning",
+  "word": "balsa,balde,costa,uniforme",
+  "sentence": "",
+  "payload": {
+   "prompt": "Match the words to their meanings.",
+   "pairs": [
+    {
+     "word": "balsa",
+     "answer": "raft",
+     "options": [
+      "raft",
+      "bucket",
+      "coast",
+      "uniform"
+     ]
+    },
+    {
+     "word": "balde",
+     "answer": "bucket",
+     "options": [
+      "raft",
+      "bucket",
+      "coast",
+      "uniform"
+     ]
+    },
+    {
+     "word": "costa",
+     "answer": "coast",
+     "options": [
+      "raft",
+      "bucket",
+      "coast",
+      "uniform"
+     ]
+    },
+    {
+     "word": "uniforme",
+     "answer": "uniform",
+     "options": [
+      "raft",
+      "bucket",
+      "coast",
+      "uniform"
+     ]
+    }
+   ],
+   "audioClip": null
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "soleado",
+  "sentence": "Hoy no hay nubes: el día está _____ desde temprano.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "soleado",
+   "options": [
+    "soleado",
+    "mojado",
+    "nublado",
+    "frío"
+   ],
+   "translation": "Today there are no clouds: the day has been _____ since early.",
+   "optionTranslations": [
+    "sunny",
+    "wet",
+    "cloudy",
+    "cold"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Hoy no hay nubes: el día está soleado desde temprano.",
+    "targetWord": "soleado",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "barato",
+  "sentence": "Ese arreglo no es _____: cuesta casi todo el mes.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "barato",
+   "options": [
+    "barato",
+    "limpio",
+    "nuevo",
+    "corto"
+   ],
+   "translation": "That fix is not _____: it costs almost the whole month.",
+   "optionTranslations": [
+    "cheap",
+    "clean",
+    "new",
+    "short"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Ese arreglo no es barato: cuesta casi todo el mes.",
+    "targetWord": "barato",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "temprano",
+  "sentence": "Se levanta muy _____ y llega antes que nadie.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "temprano",
+   "options": [
+    "temprano",
+    "despacio",
+    "tarde",
+    "lejos"
+   ],
+   "translation": "He gets up very _____ and arrives before anybody else.",
+   "optionTranslations": [
+    "early",
+    "slowly",
+    "late",
+    "far"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Se levanta muy temprano y llega antes que nadie.",
+    "targetWord": "temprano",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "fill_blank",
+  "word": "mediodía",
+  "sentence": "La oficina cierra al _____ y ya no abre más.",
+  "payload": {
+   "prompt": "Complete the sentence.",
+   "answer": "mediodía",
+   "options": [
+    "mediodía",
+    "invierno",
+    "viernes",
+    "principio"
+   ],
+   "translation": "The office closes at _____ and does not open again.",
+   "optionTranslations": [
+    "midday",
+    "winter",
+    "Friday",
+    "the start"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "La oficina cierra al mediodía y ya no abre más.",
+    "targetWord": "mediodía",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "dar",
+  "sentence": "La oficina que [[dio]] el papel cierra al mediodía.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to give out",
+   "options": [
+    "to give out",
+    "to lose",
+    "to stamp",
+    "to read"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "La oficina que dio el papel cierra al mediodía.",
+    "targetWord": "dio",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ofrecer",
+  "sentence": "Se lo arreglo hoy, le [[ofrecen]] en la costa.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to offer",
+   "options": [
+    "to offer",
+    "to refuse",
+    "to charge",
+    "to explain"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Se lo arreglo hoy, le ofrecen en la costa.",
+    "targetWord": "ofrecen",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "volverse",
+  "sentence": "Entonces se [[vuelve]] y la ve detrás de él.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to turn round",
+   "options": [
+    "to turn round",
+    "to sit down",
+    "to walk on",
+    "to look away"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Entonces se vuelve y la ve detrás de él.",
+    "targetWord": "vuelve",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "alejarse",
+  "sentence": "Percy se [[aleja]], se devuelve y decide en voz alta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to move away",
+   "options": [
+    "to move away",
+    "to stand up",
+    "to give in",
+    "to shout"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Percy se aleja, se devuelve y decide en voz alta.",
+    "targetWord": "aleja",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "severo",
+  "sentence": "Yo no vi nada, contesta ella, [[severa]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "stern",
+   "options": [
+    "stern",
+    "cheerful",
+    "shy",
+    "bored"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Yo no vi nada, contesta ella, severa.",
+    "targetWord": "severa",
+    "language": "spanish"
+   }
+  }
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "llegar",
+  "sentence": "Percy empieza temprano y [[llega]] lejos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to get far",
+   "options": [
+    "to get far",
+    "to give up",
+    "to look back",
+    "to slow down"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Percy empieza temprano y llega lejos.",
+    "targetWord": "llega",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "ticket",
+  "sentence": "Y pronto, en la fila del [[ticket]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "ticket",
+   "options": [
+    "ticket",
+    "doorway",
+    "market",
+    "office"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Y pronto, en la fila del ticket.",
+    "targetWord": "ticket",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "salir",
+  "sentence": "Se me fue el día entero, dice cuando la otra [[sale]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to leave",
+   "options": [
+    "to leave",
+    "to arrive",
+    "to answer",
+    "to wait"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Se me fue el día entero, dice cuando la otra sale.",
+    "targetWord": "sale",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "distinto",
+  "sentence": "Usted tampoco hizo nada, que es [[distinto]].",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "different",
+   "options": [
+    "different",
+    "the same",
+    "easy",
+    "useless"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Usted tampoco hizo nada, que es distinto.",
+    "targetWord": "distinto",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "devolverse",
+  "sentence": "Se aleja, se [[devuelve]] y decide en voz alta.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to come back",
+   "options": [
+    "to come back",
+    "to fall over",
+    "to keep going",
+    "to give up"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Se aleja, se devuelve y decide en voz alta.",
+    "targetWord": "devuelve",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "fijarse",
+  "sentence": "Se [[fija]] en ella y no oculta que la vio.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "to notice",
+   "options": [
+    "to notice",
+    "to point",
+    "to laugh",
+    "to greet"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Se fija en ella y no oculta que la vio.",
+    "targetWord": "fija",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ },
+ {
+  "type": "meaning_in_context",
+  "word": "voz alta",
+  "sentence": "Decide en [[voz alta]] delante de todos.",
+  "payload": {
+   "prompt": "Choose the meaning in context.",
+   "answer": "out loud",
+   "options": [
+    "out loud",
+    "in a whisper",
+    "by letter",
+    "in secret"
+   ],
+   "audioClip": {
+    "storySlug": "el-que-si-puede-firmar",
+    "storySource": "user",
+    "sentence": "Decide en voz alta delante de todos.",
+    "targetWord": "voz alta",
+    "language": "spanish"
+   }
+  },
+  "featured": false
+ }
+]
