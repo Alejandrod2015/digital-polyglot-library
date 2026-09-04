@@ -48,6 +48,8 @@ type GlossState = {
   genderMark?: string;
   forms?: {
     label?: string;
+    mood?: string;
+    head?: string[][];
     kind?: "line" | "expand";
     link?: string;
     lemma?: string;
@@ -315,6 +317,22 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
                 {getVocabTypeLabel(selected.type)}
               </span>
             ) : null}
+            {selected.forms?.mood ? (
+              <span
+                style={{
+                  border: "1px solid rgba(125, 211, 252, 0.85)",
+                  color: "#7dd3fc",
+                  fontSize: 10,
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  padding: "1px 8px",
+                  borderRadius: 999,
+                }}
+              >
+                {selected.forms.mood}
+              </span>
+            ) : null}
             {selected.register ? (
               <span
                 style={{
@@ -389,12 +407,54 @@ export default function TapGlossLayer({ glosses, story }: TapGlossLayerProps) {
           {selected.gloss}
         </p>
       )}
+      {/* El PAR, siempre a la vista y sin desplegar nada: la forma que el
+          lector ya conoce y la que tiene delante, cada una con el nombre de su
+          tiempo. El azul marca cual sale en la historia, asi que ninguna celda
+          necesita decir "here". Tocar `vaya` devolvia "leaves, goes away
+          (irse)", una entrada de diccionario en indicativo sobre un subjuntivo
+          (2026-09-03). */}
+      {selected.forms?.head?.length ? (
+        <div className="mt-2.5 flex flex-wrap gap-1.5">
+          {selected.forms.head.map(([etiqueta, forma], index) => {
+            const aqui = index === selected.forms!.head!.length - 1;
+            return (
+              <span
+                key={`${etiqueta}-${forma}`}
+                className="inline-flex items-baseline gap-1.5"
+                style={{
+                  background: aqui ? "rgba(125, 211, 252, 0.16)" : "var(--chip-bg)",
+                  borderRadius: 8,
+                  padding: "3px 8px",
+                }}
+              >
+                <span style={{ color: aqui ? "#7dd3fc" : "var(--muted)", fontSize: 11, fontWeight: 600 }}>
+                  {etiqueta}
+                </span>
+                <span
+                  style={{
+                    color: aqui ? "#7dd3fc" : "var(--foreground)",
+                    fontSize: 14,
+                    fontWeight: 700,
+                  }}
+                >
+                  {forma}
+                </span>
+              </span>
+            );
+          })}
+        </div>
+      ) : null}
       {/* Las FORMAS, no una explicación: la conjugación del verbo, la
           concordancia del adjetivo, el artículo y el plural del sustantivo. La
           que sale en la historia va encendida. Tres a la vista y el resto bajo
           "See N more", que dice cuántas faltan y deja el borde de abajo limpio;
           con el recorte anterior la tarjeta cortaba una fila por la mitad. */}
-      {selected.forms && (selected.forms.kind !== "expand" || formsOpen) ? (
+      {/* El paradigma se separa del par con una linea; el lema NO se repite
+          aqui, que ya sale en la cabecera junto a la palabra. */}
+      {selected.forms?.rows?.length && selected.forms.kind === "expand" && formsOpen ? (
+        <div className="mt-2.5" style={{ borderTop: "1px solid var(--card-border)" }} />
+      ) : null}
+      {selected.forms?.rows?.length && (selected.forms.kind !== "expand" || formsOpen) ? (
         <div className="mt-2.5 flex flex-wrap gap-1.5">
           {selected.forms.rows.map((row, index) => {
             const [person, form] = row;

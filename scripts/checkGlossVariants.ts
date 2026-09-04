@@ -62,6 +62,9 @@ const EXEMPT: Record<string, { articles: string[]; numerals: string[]; character
  *  más útil que hay. Los nombres que viven ahí se cazan por la glosa, abajo. */
 const TIPOS_NO_TOCABLES = new Set(["article", "number", "numeral"]);
 
+/** Maximo de palabras del trozo de contexto de una glosa. */
+const TOPE_TROZO = 8;
+
 /** "Marta (name)", "Timo (a name)", "Basti (nickname for Sebastian)": la glosa
  *  repite la palabra y no enseña nada. El contrato ya decía que los personajes
  *  inventados no se glosan; los reales y culturales llevan descriptor de lo que
@@ -126,6 +129,23 @@ function revisa(fichero: string, bundle: Bundle): Fallo[] {
         : exenta.characterNames.includes(p) ? "nombre de personaje" : null;
       if (clase) {
         fallos.push({ fichero, historia: "-", palabra, motivo: `${clase} exento en tap-gloss-exempt.json: no debe tener glosa` });
+      }
+    }
+  }
+
+  // TOPE DEL TROZO DE CONTEXTO: 8 palabras. El trozo tiene que ser el minimo
+  // con sentido alrededor de la palabra, y el catalogo va de hecho en 4 de
+  // mediana y 6 en el p90; ocho deja fuera el 1,4% y es una lista que se puede
+  // vaciar. Puesto el 2026-09-04: tocar `esta` en el B1 devolvia "La habitacion
+  // que le han ensenado esta en un cuarto sin ascensor", doce palabras, que es
+  // la frase entera y no un trozo.
+  for (const [historia, entradas] of Object.entries(bundle.byStory ?? {})) {
+    for (const [palabra, entrada] of Object.entries(entradas)) {
+      const es = (entrada as { c?: { es?: string } }).c?.es;
+      if (!es) continue;
+      const n = String(es).trim().split(/\s+/).length;
+      if (n > TOPE_TROZO) {
+        fallos.push({ fichero, historia, palabra, motivo: `trozo de ${n} palabras (tope ${TOPE_TROZO}): "${es}"` });
       }
     }
   }

@@ -6,7 +6,11 @@
 // historia todavía no tiene bundle, para que el reader degrade a solo
 // story-vocab (las pills curadas) sin romperse.
 //
-// Los glosses son palabra -> { g: gloss EN, t: tipo gramatical, r?: register };
+// Los glosses son palabra -> { g: gloss EN, t: tipo gramatical, r?: register,
+// c?: trozo traducido, gm?: marca de genero, f?: formas y modo }. Se devuelve
+// el mapa ENTERO tal como sale de la base: recortar campos aqui, o declararlos
+// cortos en el lector de RN, es lo que dejo la capa de contexto fuera de las
+// apps en agosto de 2026.
 // la key es la palabra en minúsculas sin puntuación (mismo `tokenFromText`
 // que usa TapGlossLayer en web), para que el reader mobile normalice cada
 // token de la misma forma y matchee.

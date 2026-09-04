@@ -52,7 +52,7 @@ type Bundle = {
 };
 
 // ── Personas, según la variante ──────────────────────────────────────────
-function personas(variante: string): string[] {
+export function personas(variante: string): string[] {
   if (variante === "argentina" || variante === "uruguay") {
     return ["yo", "vos", "él, ella", "nosotros", "ustedes", "ellos"];
   }
@@ -61,7 +61,7 @@ function personas(variante: string): string[] {
 }
 
 // ── Verbos: regulares por terminación, irregulares a mano ────────────────
-const IRREGULARES: Record<string, string[]> = {
+export const IRREGULARES: Record<string, string[]> = {
   ser: ["soy", "eres", "es", "somos", "sois", "son"],
   estar: ["estoy", "estás", "está", "estamos", "estáis", "están"],
   ir: ["voy", "vas", "va", "vamos", "vais", "van"],
@@ -113,6 +113,52 @@ function primeraDeCer(inf: string): string | null {
   return `${m[1]}${m[2]}${esVocal ? "zco" : "zo"}`;
 }
 
+/**
+ * RAIZ TONICA de los verbos que cambian de raiz. La raiz cambiada se escribe
+ * ENTERA, no se deduce: deducirla por la ultima vocal daba "solto" para soltar
+ * y "prefere" para preferir, y una tabla inventada es peor que no tenerla.
+ *
+ * Se aplica solo a las cuatro formas con el acento en la raiz (yo, tu, el,
+ * ellos); nosotros y vosotros mantienen la raiz del infinitivo, que es
+ * exactamente la regla del cambio vocalico.
+ *
+ * Puesto el 2026-09-04: `presente()` no diptongaba, asi que 112 tablas del
+ * catalogo espanol ensenaban "devolve", "encende", "pensa", "serve", "dole",
+ * palabras que no existen. Lo caza el usuario tocando `devuelva` en el B1.
+ */
+const RAIZ_TONICA: Record<string, string> = {
+  // e -> ie
+  acertar: "aciert", apretar: "apriet", atravesar: "atravies", calentar: "calient",
+  cerrar: "cierr", comenzar: "comienz", confesar: "confies", despertar: "despiert",
+  empezar: "empiez", encender: "enciend", encerrar: "encierr", entender: "entiend",
+  helar: "hiel", herrar: "hierr", mentir: "mient", nevar: "niev", pensar: "piens",
+  perder: "pierd", preferir: "prefier", quebrar: "quiebr", querer: "quier",
+  recalentar: "recalient", sentar: "sient", sentir: "sient", temblar: "tiembl",
+  errar: "yerr",
+  // o -> ue
+  acordar: "acuerd", acostar: "acuest", colgar: "cuelg", contar: "cuent",
+  costar: "cuest", devolver: "devuelv", doler: "duel", dormir: "duerm",
+  encontrar: "encuentr", llover: "lluev", morder: "muerd", morir: "muer",
+  mostrar: "muestr", mover: "muev", poder: "pued", probar: "prueb",
+  recordar: "recuerd", reprobar: "reprueb", rodar: "rued", rogar: "rueg",
+  soltar: "suelt", sonar: "suen", soñar: "sueñ", volar: "vuel", volver: "vuelv",
+  // o -> hue, y u -> ue
+  oler: "huel", jugar: "jueg",
+  // e -> i (solo -ir)
+  conseguir: "consigu", corregir: "corrig", elegir: "elig", medir: "mid",
+  pedir: "pid", repetir: "repit", seguir: "sigu", servir: "sirv",
+  teñir: "tiñ", vestir: "vist",
+};
+
+/** La primera persona de los que ademas cambian la consonante: -guir pierde la
+ *  u ante o, y -gir la cambia por j. Sin esto salia "consiguo" y "corrigo". */
+const YO_TONICA: Record<string, string> = {
+  conseguir: "consigo", seguir: "sigo", corregir: "corrijo", elegir: "elijo",
+};
+
+/** Las cuatro personas con el acento en la raiz. */
+const TONICAS = [0, 1, 2, 5];
+
 function conjugaRegular(inf: string): string[] | null {
   const raiz = inf.slice(0, -2);
   const fin = inf.slice(-2);
@@ -123,13 +169,20 @@ function conjugaRegular(inf: string): string[] | null {
 }
 
 /** Presente de indicativo del infinitivo, ya adaptado a la variante. */
-function presente(inf: string, variante: string): string[] | null {
+export function presente(inf: string, variante: string): string[] | null {
   const base = IRREGULARES[inf] ?? conjugaRegular(inf);
   if (!base) return null;
   const filas = [...base];
   if (!IRREGULARES[inf]) {
     const yo = primeraDeCer(inf);
     if (yo) filas[0] = yo;
+    const tonica = RAIZ_TONICA[inf];
+    if (tonica) {
+      const raiz = inf.slice(0, -2);
+      for (const i of TONICAS) filas[i] = tonica + filas[i].slice(raiz.length);
+      const yo = YO_TONICA[inf];
+      if (yo) filas[0] = yo;
+    }
   }
   if (variante !== "spain") {
     // ustedes toma la forma de ellos; el hueco de vosotros desaparece.
@@ -181,7 +234,7 @@ const PRET_CAMBIO: Record<string, string> = {
 /** Raiz que pasa la i a y entre vocales (leyo, cayo, oyo, construyo). */
 const PRET_Y = /(?:[aeiou]er|[aeiou]ir|uir)$/;
 
-function preterito(inf: string): string[] | null {
+export function preterito(inf: string): string[] | null {
   if (PRET_ENTERO[inf]) return [...PRET_ENTERO[inf]];
   const raiz = inf.slice(0, -2);
   // `oír` acaba en "ír", no en "ir", y sin deshacer la tilde no entraba por
@@ -223,7 +276,7 @@ function preterito(inf: string): string[] | null {
 }
 
 /** Imperfecto. Tres irregulares en toda la lengua y ni uno mas. */
-function imperfecto(inf: string): string[] | null {
+export function imperfecto(inf: string): string[] | null {
   if (inf === "ser") return ["era", "eras", "era", "éramos", "erais", "eran"];
   if (inf === "ir") return ["iba", "ibas", "iba", "íbamos", "ibais", "iban"];
   if (inf === "ver") return ["veía", "veías", "veía", "veíamos", "veíais", "veían"];
@@ -646,7 +699,7 @@ const IDIOMAS: Record<string, { personas: (v: string) => string[]; conjuga: (inf
  *  orden importa poco porque las formas casi no chocan entre tiempos; donde
  *  chocan (hablamos, presente y preterito) gana el presente, que es el que un
  *  hispanohablante lee por defecto. */
-function indicePorForma(infinitivos: string[], variante: string, idioma: string) {
+export function indicePorForma(infinitivos: string[], variante: string, idioma: string) {
   const motor = IDIOMAS[idioma];
   const mapa = new Map<string, { inf: string; i: number; tiempo: Tiempo }>();
   const voseo = idioma === "spanish" && (variante === "argentina" || variante === "uruguay")
@@ -732,6 +785,7 @@ const ARTICULOS_F = new Set(["la", "una", "las", "unas"]);
 async function main() {
   const nombre = process.argv[2];
   const dry = process.argv.includes("--dry");
+  const soloFormas = process.argv.includes("--solo-formas");
   if (!nombre) {
     console.error("uso: npx tsx scripts/buildGlossForms.ts <bundle> <textos.json> [--dry]");
     process.exit(1);
@@ -838,7 +892,11 @@ async function main() {
     // Una historia escrita a mano NO se regenera: sus trozos traducidos y sus
     // ajustes (helado es sustantivo aquí, la es pronombre) los perdería.
     const yaEscrita = Object.values(salida[slug] ?? {}).some((e) => e?.c);
-    if (yaEscrita) { saltadas.push(slug); continue; }
+    // `--solo-formas` rellena el bloque `f` de las historias ya escritas SIN
+    // tocarles el trozo, la glosa ni el genero. Sin esto, una historia con capa
+    // de contexto escrita a mano no podia recibir nunca su conjugacion: se
+    // saltaba entera y sus verbos se quedaban sin tabla (2026-09-04).
+    if (yaEscrita && !soloFormas) { saltadas.push(slug); continue; }
     const entradas = (salida[slug] ??= {});
     const palabras = (texto.match(/\p{L}+/gu) ?? []).map((w) => w.toLowerCase());
     const vistas = new Set<string>();
@@ -848,7 +906,11 @@ async function main() {
       const base = bundle.glosses[palabra];
       if (!base) return;
       vistas.add(palabra);
-      const entrada: Entrada = { ...(entradas[palabra] ?? {}), g: base.g, t: base.t };
+      const previa = entradas[palabra] ?? {};
+      const entrada: Entrada = soloFormas
+        ? { ...previa }
+        : { ...previa, g: base.g, t: base.t };
+      if (soloFormas && previa.f) return; // ya tiene bloque: no se toca
       // La tabla se REHACE, no se hereda: si esta pasada ya no sabe conjugar
       // la palabra, tiene que quedarse sin bloque. Heredandola, un arreglo del
       // motor dejaba viva la tabla equivocada que el arreglo venia a quitar.
@@ -918,4 +980,8 @@ async function main() {
   await prisma.$disconnect();
 }
 
-main();
+// Este fichero es tambien la BIBLIOTECA de conjugacion: `buildGlossMoods.ts`
+// importa `presente`, `preterito` e `indicePorForma` para no reescribir las
+// tablas de irregulares y que las dos pasadas no se desincronicen. Por eso
+// `main()` solo corre cuando el fichero se invoca directamente.
+if (/buildGlossForms\.ts$/.test(process.argv[1] ?? "")) main();

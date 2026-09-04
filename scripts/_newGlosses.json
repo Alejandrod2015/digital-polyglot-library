@@ -4415,6 +4415,10 @@
   "impiegata": {
    "g": "the clerk, a woman (l'impiegata)",
    "t": "noun"
+  },
+  "facce": {
+   "g": "faces (faccia)",
+   "t": "noun"
   }
  },
  "italian-traveler-a0": {
@@ -5055,6 +5059,10 @@
   "disculpa": {
    "g": "apologises",
    "t": "verb"
+  },
+  "prestado": {
+   "g": "lent out (prestar)",
+   "t": "adjective"
   }
  },
  "spanish-traveler-latam-a2": {
@@ -5788,6 +5796,218 @@
   },
   "afloja": {
    "g": "loosens, slackens (aflojar)",
+   "t": "verb"
+  }
+ },
+ "german-hamburg": {
+  "schreien": {
+   "g": "shouting (schreien)",
+   "t": "verb"
+  },
+  "flache": {
+   "g": "flat (flach)",
+   "t": "adjective"
+  }
+ },
+ "spanish-traveler-spain-b1": {
+  "traductora": {
+   "g": "translator (female)",
+   "t": "noun"
+  },
+  "españa": {
+   "g": "Spain",
+   "t": "noun"
+  },
+  "habitación": {
+   "g": "room",
+   "t": "noun"
+  },
+  "umbral": {
+   "g": "doorway, threshold",
+   "t": "noun"
+  },
+  "adelantado": {
+   "g": "por adelantado, in advance",
+   "t": "expression"
+  },
+  "irá": {
+   "g": "will go (ir)",
+   "t": "verb"
+  },
+  "comprueba": {
+   "g": "checks (comprobar)",
+   "t": "verb"
+  },
+  "armario": {
+   "g": "wardrobe, cupboard",
+   "t": "noun"
+  },
+  "calefacción": {
+   "g": "heating",
+   "t": "noun"
+  },
+  "sube": {
+   "g": "goes up, rises (subir)",
+   "t": "verb"
+  },
+  "estufa": {
+   "g": "heater",
+   "t": "noun"
+  },
+  "blanda": {
+   "g": "soft (blando)",
+   "t": "adjective"
+  },
+  "baja": {
+   "g": "goes down (bajar)",
+   "t": "verb"
+  },
+  "anuncio": {
+   "g": "notice, announcement",
+   "t": "noun"
+  },
+  "presidenta": {
+   "g": "chairwoman, president (female)",
+   "t": "noun"
+  },
+  "mayoría": {
+   "g": "majority",
+   "t": "noun"
+  },
+  "grite": {
+   "g": "shouts (gritar, subjunctive)",
+   "t": "verb"
+  },
+  "voto": {
+   "g": "vote",
+   "t": "noun"
+  },
+  "plástico": {
+   "g": "plastic",
+   "t": "noun"
+  },
+  "inútil": {
+   "g": "useless",
+   "t": "adjective"
+  },
+  "probamos": {
+   "g": "we tried (probar)",
+   "t": "verb"
+  },
+  "abril": {
+   "g": "April",
+   "t": "noun"
+  },
+  "remata": {
+   "g": "finishes off, caps it (rematar)",
+   "t": "verb"
+  },
+  "resume": {
+   "g": "sums up (resumir)",
+   "t": "verb"
+  },
+  "acta": {
+   "g": "minutes, the written record",
+   "t": "noun"
+  },
+  "ni": {
+   "g": "nor, not even",
+   "t": "conjunction"
+  },
+  "normas": {
+   "g": "rules (norma)",
+   "t": "noun"
+  },
+  "lavadora": {
+   "g": "washing machine",
+   "t": "noun"
+  },
+  "reciclaje": {
+   "g": "recycling",
+   "t": "noun"
+  },
+  "antena": {
+   "g": "aerial, antenna",
+   "t": "noun"
+  },
+  "perchas": {
+   "g": "hangers (percha)",
+   "t": "noun"
+  },
+  "alfombra": {
+   "g": "rug, carpet",
+   "t": "noun"
+  },
+  "parpadea": {
+   "g": "flickers (parpadear)",
+   "t": "verb"
+  },
+  "hueca": {
+   "g": "hollow (hueco)",
+   "t": "adjective"
+  },
+  "altillo": {
+   "g": "the space above a wardrobe",
+   "t": "noun"
+  },
+  "herramienta": {
+   "g": "tool",
+   "t": "noun"
+  },
+  "comprobado": {
+   "g": "ha comprobado, has checked (comprobar)",
+   "t": "verb"
+  },
+  "encienda": {
+   "g": "turns on (encender, subjunctive)",
+   "t": "verb"
+  },
+  "contestarle": {
+   "g": "to answer her (contestar + le)",
+   "t": "verb"
+  },
+  "subiría": {
+   "g": "would go up (subir, conditional)",
+   "t": "verb"
+  },
+  "faltara": {
+   "g": "si le faltara, if you were short of it",
+   "t": "verb"
+  },
+  "cambiará": {
+   "g": "will change (cambiar, future)",
+   "t": "verb"
+  },
+  "bajado": {
+   "g": "ha bajado, has come down (bajar)",
+   "t": "verb"
+  },
+  "saldrá": {
+   "g": "will come out, will pass (salir, future)",
+   "t": "verb"
+  },
+  "taparlo": {
+   "g": "to cover it (tapar + lo)",
+   "t": "verb"
+  },
+  "probado": {
+   "g": "hemos probado, we have tried (probar)",
+   "t": "verb"
+  },
+  "empiece": {
+   "g": "para que empiece, so that it starts (empezar)",
+   "t": "verb"
+  },
+  "haría": {
+   "g": "haría falta, it would take (hacer, conditional)",
+   "t": "verb"
+  },
+  "devuelva": {
+   "g": "gives back (devolver, subjunctive)",
+   "t": "verb"
+  },
+  "arrastrado": {
+   "g": "ha arrastrado, has dragged (arrastrar)",
    "t": "verb"
   }
  }
