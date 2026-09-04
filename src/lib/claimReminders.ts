@@ -21,6 +21,7 @@ import { prisma } from "@/lib/prisma";
 import { getCatalogBookMeta } from "@/lib/catalog";
 import { sendClaimEmail } from "@/lib/email";
 import { getEmailPreference } from "@/lib/emailPreferences";
+import { publicBaseUrl } from "@/lib/emails/publicBaseUrl";
 import { Resend } from "resend";
 
 const HOUR = 60 * 60 * 1000;
@@ -32,7 +33,9 @@ const MAX_REMINDERS = 2;
 const BATCH_LIMIT = 200;
 
 const SUPPORT_EMAIL = "support@digitalpolyglot.com";
-const READER_BASE = "https://reader.digitalpolyglot.com";
+// El mismo host publico que usan los correos. `reader` queda para la API de
+// las apps que ya circulan, no para enlaces que lee una persona.
+const READER_BASE = publicBaseUrl(null);
 
 export interface ClaimReminderResult {
   scanned: number;
