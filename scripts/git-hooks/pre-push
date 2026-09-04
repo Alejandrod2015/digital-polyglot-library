@@ -116,6 +116,59 @@ checkGlossMoods      db
 checkGlossVariants   db
 "
 
+# -- Trinquete de enrolamiento ----------------------------------------
+# Escribir un candado y no engancharlo es la otra forma de fallar en abierto:
+# el lint existe, nadie lo corre, y nadie se entera. Asi nacio el agujero de
+# checkGlossMoods. Todo `lint:*` de package.json tiene que estar en el
+# manifiesto de arriba, o en esta lista de exclusiones con su motivo escrito:
+#
+#   lint:no-emdash:db   barre TODA columna de texto de la base de datos. Corre
+#                       a demanda (npm run lint:no-emdash:db), no en cada push.
+LINTS_EXCLUIDOS="
+lint:no-emdash:db
+"
+
+if ! SUELTOS=$(node -e '
+const p = require("./package.json");
+const manifiesto = process.argv[1].split(/\s+/).filter(Boolean);
+const excluidos = process.argv[2].split(/\s+/).filter(Boolean);
+const out = [];
+for (const [k, v] of Object.entries(p.scripts || {})) {
+  if (!/^lint:/.test(k)) continue;
+  if (excluidos.includes(k)) continue;
+  const m = String(v).match(/scripts\/([A-Za-z0-9_.-]+)\.ts/);
+  if (m && manifiesto.includes(m[1])) continue;
+  out.push("      " + k + "   " + v);
+}
+console.log(out.join("\n"));
+' "$(printf '%s\n' "$LINTS" | awk 'NF {print $1}')" "$LINTS_EXCLUIDOS"); then
+  echo "" >&2
+  echo "  PUSH BLOCKED: no puedo leer los lint:* de package.json." >&2
+  echo "  El trinquete de enrolamiento no puede comprobarse, asi que no pasa." >&2
+  echo "" >&2
+  exit 1
+fi
+
+if [ -n "$SUELTOS" ]; then
+  cat >&2 <<EOM
+
+======================================================================
+  PUSH BLOCKED: un lint que no corre nadie
+
+  Estos scripts lint:* de package.json no estan en el manifiesto LINTS de
+  scripts/git-hooks/pre-push ni en la lista de exclusiones:
+
+$SUELTOS
+
+  Enganchalo al manifiesto (con lo que necesita: db, memoria o nada), o
+  metelo en LINTS_EXCLUIDOS escribiendo POR QUE no corre en cada push.
+  Un candado que existe y no corre es peor que no tenerlo: parece red.
+======================================================================
+
+EOM
+  exit 1
+fi
+
 # Mensaje de remedio de cada candado: que se rompio y como se arregla.
 remedio() {
   case "$1" in
