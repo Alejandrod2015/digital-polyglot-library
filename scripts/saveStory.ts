@@ -35,6 +35,7 @@ try {
 } catch { /* noop */ }
 
 import * as fs from "fs";
+import { variantPool } from "@domain/languageVariant";
 import { PrismaClient } from "../src/generated/prisma";
 import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
@@ -354,14 +355,14 @@ function slugify(s: string): string {
     if (!journeyId) return { taughtElsewhere: [] as string[], taughtSameType: [] as string[] };
     const p2 = new PrismaClient();
     try {
-      const mio = await p2.journey.findUnique({ where: { id: journeyId }, select: { language: true, typeSlug: true } });
+      const mio = await p2.journey.findUnique({ where: { id: journeyId }, select: { language: true, typeSlug: true, variant: true } });
       if (!mio) return { taughtElsewhere: [] as string[], taughtSameType: [] as string[] };
       const otras = await p2.journeyStory.findMany({
         where: {
           journey: { language: mio.language, status: { not: "archived" } },
           journeyId: { not: journeyId },
         },
-        select: { vocab: true, journey: { select: { typeSlug: true, levels: true } } },
+        select: { vocab: true, journey: { select: { typeSlug: true, levels: true, variant: true } } },
       });
       const out = new Set<string>();
       const duro = new Set<string>();
@@ -389,9 +390,25 @@ function slugify(s: string): string {
       // piezas de la escena siguen a cero, y las historias del PROPIO journey
       // (mas abajo) tambien, portables incluidas: ahi repetir una palabra es
       // cobrarle dos veces al mismo lector.
+      // LOS DOS CUBOS SE COMPARAN DENTRO DEL POOL DE VARIANTE. La regla de
+      // cero solape es del 2026-08-18 y su premisa es "el lector ya la tiene en
+      // su repaso". El 2026-08-20 la pestaña de journeys pasó a servir SOLO la
+      // variante del alumno, y en ese emparejamiento España va sola. Desde
+      // entonces la premisa es falsa para otra variante: a un alumno de España
+      // se le estaban quitando las palabras del Traveler LATAM, que no puede
+      // abrir. Mismo tipo y mismo pool: cero. Mismo pool y otro tipo: el tope
+      // de dos por historia. Otro pool: no cuenta. Si no se sabe el pool,
+      // cuenta como el mismo, que es el lado seguro.
+      const miPool = variantPool(mio.variant);
+      const mismoPool = (v?: string | null) => {
+        const suyo = variantPool(v);
+        if (!miPool || !suyo) return true;
+        return miPool === suyo;
+      };
       const PORTABLES = new Set(["verb", "adjective", "adverb", "expression"]);
       const miNivel = (ctx.level ?? "").toLowerCase();
       for (const r of otras) {
+        if (!mismoPool(r.journey?.variant)) continue;
         const mismoTipo = !!mio.typeSlug && r.journey?.typeSlug === mio.typeSlug;
         const mismoNivel = (r.journey?.levels ?? []).some(
           (l) => String(l).toLowerCase() === miNivel
