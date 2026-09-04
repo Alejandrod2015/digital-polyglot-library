@@ -378,4 +378,18 @@ export const SPANISH_B1_LEMMAS: ReadonlySet<string> = new Set([
   "ojos","ojeras","oreja","órgano","palma","párpado","pulmón","reumatismo","riñón","rodilla",
   "sangrado","sensibilidad","sequía","sobrepeso","sudor","tendinitis","tobillo","tos","tristeza","úlcera",
   "uretra","vejiga","vértebra","vesícula",
+
+  // Huecos de la lista, no palabras dificiles (2026-09-04, montando el Traveler
+  // ES/latam B1). El juez marca C2 todo lo que no esta en la lista ni en la
+  // cache, asi que `calcular`, `medir`, `agregar` o `contratar` salian fuera de
+  // nivel en un B1. Entran por estar en cualquier temario B1, que es el
+  // criterio de [[feedback_vocab_zero_overlap_across_journeys]]; NO entra
+  // ninguna palabra para que pase una historia concreta, y lo especifico de la
+  // escena (hilera, yema, sarmiento, changarin) se queda FUERA a proposito: eso
+  // va marcado `register: "cultural"`, que es la exencion que ya existe.
+  "calcular","medir","agregar","contratar","inventar","exigir","confesar",
+  "disculpar","disculpa","justificar","excusarse","adelantarse","madrugar",
+  "armar","pisar","reemplazar","amontonar","tachar","saldar","podar",
+  "atraso","demora","motor","enojo","pretexto","lentitud","hectárea",
+  "agotado","cortante","vendado","lastimado",
 ]);

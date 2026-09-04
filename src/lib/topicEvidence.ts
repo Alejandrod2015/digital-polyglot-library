@@ -122,7 +122,15 @@ export async function assertTopicsGrounded(opts: {
     return out.length ? [`"${p.label}": ${out.join("; ")}`] : [];
   });
 
-  const bad = nameProblems.concat(opts.proposals.flatMap((p) => {
+  // Las citas ALIMENTAN la decision; ya no la bloquean (2026-09-04, decision
+  // del usuario: "estorba; tendria que alimentar a la recomendacion pero no
+  // puede ser tan dura"). El corpus escrito de un idioma puede ser de 27 filas
+  // donde 20 dicen "quiero mejorar mi espanol", y con eso no salen siete temas
+  // sin inventarse la mitad; lo que si sigue haciendo el porton es OBLIGAR a
+  // mirar el corpus, imprimir cuanta gente hay detras de cada tema y decir en
+  // voz alta cuales van sin respaldo. Lo que sigue TIRANDO son las reglas de
+  // NOMBRE, que son comprobables y no dependen de cuanta gente escribio.
+  const evidenceProblems = (opts.proposals.flatMap((p) => {
     if (!p.evidence?.length) return [`"${p.label}": ninguna cita de usuario`];
     const out: string[] = [];
     const short = p.evidence.filter((q) => quoteTooShort(q));
@@ -161,12 +169,19 @@ export async function assertTopicsGrounded(opts: {
   }
   console.log("");
 
-  if (bad.length) {
-    throw new TopicEvidenceError(
-      `TEMAS SIN RESPALDO:\n  - ${bad.join("\n  - ")}\n\n` +
-      `Hay ${writtenMotivations.length} frases escritas a mano y ${reasons.length} applicationReason ` +
-      `de ${opts.language} (${cannedClicks} clics del desplegable no cuentan). ` +
-      `Corre \`npx tsx scripts/userEvidence.ts ${opts.language}\` y elige desde ahí.`,
+  if (evidenceProblems.length) {
+    console.log(
+      `AVISO · temas sin cita de usuario detras (${evidenceProblems.length} de ` +
+      `${opts.proposals.length}). No bloquea, pero que conste:\n  - ` +
+      `${evidenceProblems.join("\n  - ")}\n\n  Hay ${writtenMotivations.length} frases de learningGoal y ` +
+      `${reasons.length} applicationReason de ${opts.language} (${cannedClicks} clics del desplegable no ` +
+      `cuentan). Para leerlas: npx tsx scripts/userEvidence.ts ${opts.language}\n`,
     );
+  }
+
+  // Las de nombre SI tiran: son mecanicas y su incumplimiento se ve en pantalla
+  // (etiqueta larga, "And" en vez de "&", slug que no deriva del nombre).
+  if (nameProblems.length) {
+    throw new TopicEvidenceError(`NOMBRES DE TEMA INVALIDOS:\n  - ${nameProblems.join("\n  - ")}`);
   }
 }

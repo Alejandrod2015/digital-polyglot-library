@@ -49,52 +49,88 @@ const EXPAT_FRENCH: TopicProposal[] = [
 ];
 
 describe("assertTopicsGrounded", () => {
-  it("rechaza los siete temas del Expat francés respaldados por el desplegable", async () => {
-    const err = await assertTopicsGrounded({
-      language: "French",
-      proposals: EXPAT_FRENCH,
-      prisma: fakePrisma(),
-    }).catch((e) => e);
+  /**
+   * Desde el 2026-09-04 la falta de cita AVISA, no bloquea (decision del
+   * usuario: el porton "estorba; tendria que alimentar a la recomendacion pero
+   * no puede ser tan dura"). Lo que se comprueba aqui es que el aviso siga
+   * NOMBRANDO el tema flojo, que es para lo que existe: sin el, un tema sacado
+   * del molde de un curso pasa sin que nadie se entere.
+   */
+  function capturaConsola() {
+    const lineas: string[] = [];
+    const spy = vi.spyOn(console, "log").mockImplementation((...a: unknown[]) => {
+      lineas.push(a.map(String).join(" "));
+    });
+    return { lineas, restore: () => spy.mockRestore() };
+  }
 
-    expect(err).toBeInstanceOf(TopicEvidenceError);
+  it("avisa, sin tirar, de los siete temas del Expat frances respaldados por el desplegable", async () => {
+    const { lineas, restore } = capturaConsola();
+    await expect(
+      assertTopicsGrounded({ language: "French", proposals: EXPAT_FRENCH, prisma: fakePrisma() }),
+    ).resolves.toBeUndefined();
+    restore();
+
+    const salida = lineas.join("\n");
     // Los siete, no uno: ninguno se sostiene con un clic.
-    for (const p of EXPAT_FRENCH) expect(String(err.message)).toContain(`"${p.label}"`);
-    expect(String(err.message)).toContain("demasiado cortas");
+    for (const p of EXPAT_FRENCH) expect(salida).toContain(`"${p.label}"`);
+    expect(salida).toContain("demasiado cortas");
+    expect(salida).toContain("No bloquea");
   });
 
-  it("rechaza el valor enlatado aunque el idioma tenga texto libre al lado", async () => {
-    const err = await assertTopicsGrounded({
-      language: "French",
-      proposals: [{ label: "Family & Relatives", evidence: ["family connection"] }],
-      prisma: fakePrisma([
-        { targetLanguage: "French", motivation: "Family connection", learningGoal: null, applicationReason: "To try new ways to learn" },
-      ]),
-    }).catch((e) => e);
+  it("avisa del valor enlatado aunque el idioma tenga texto libre al lado", async () => {
+    const { lineas, restore } = capturaConsola();
+    await expect(
+      assertTopicsGrounded({
+        language: "French",
+        proposals: [{ label: "Family & Relatives", evidence: ["family connection"] }],
+        prisma: fakePrisma([
+          { targetLanguage: "French", motivation: "Family connection", learningGoal: null, applicationReason: "To try new ways to learn" },
+        ]),
+      }),
+    ).resolves.toBeUndefined();
+    restore();
 
-    expect(err).toBeInstanceOf(TopicEvidenceError);
-    expect(String(err.message)).toContain('"Family & Relatives"');
+    expect(lineas.join("\n")).toContain('"Family & Relatives"');
   });
 
-  it("rechaza una cita larga que nadie escribió", async () => {
-    const err = await assertTopicsGrounded({
-      language: "French",
-      proposals: [{ label: "Houses & Mortgages", evidence: ["buying a house in Lyon next year"] }],
-      prisma: fakePrisma(),
-    }).catch((e) => e);
+  it("avisa de una cita larga que nadie escribio", async () => {
+    const { lineas, restore } = capturaConsola();
+    await expect(
+      assertTopicsGrounded({
+        language: "French",
+        proposals: [{ label: "Houses & Mortgages", evidence: ["buying a house in Lyon next year"] }],
+        prisma: fakePrisma(),
+      }),
+    ).resolves.toBeUndefined();
+    restore();
 
-    expect(err).toBeInstanceOf(TopicEvidenceError);
-    expect(String(err.message)).toContain("nadie escribió");
+    expect(lineas.join("\n")).toContain("nadie escribió");
   });
 
-  it("cuenta las frases ESCRITAS, no las filas, cuando falla", async () => {
-    const err = await assertTopicsGrounded({
+  it("cuenta las frases ESCRITAS, no las filas, en el aviso", async () => {
+    const { lineas, restore } = capturaConsola();
+    await assertTopicsGrounded({
       language: "French",
       proposals: [{ label: "Phone & Internet", evidence: ["move abroad"] }],
       prisma: fakePrisma(),
-    }).catch((e) => e);
+    });
+    restore();
 
     // 2 clics + 2 applicationReason: cero motivaciones escritas.
-    expect(String(err.message)).toContain("Hay 0 frases de learningGoal y 2 applicationReason");
+    expect(lineas.join("\n")).toContain("Hay 0 frases de learningGoal y 2 applicationReason");
+  });
+
+  it("SIGUE tirando cuando el nombre del tema rompe las reglas", async () => {
+    const err = await assertTopicsGrounded({
+      language: "French",
+      proposals: [{ label: "Moving And Deadlines", slug: "moving-and-deadlines", evidence: ["plan to move there in 6-8 months"] }],
+      prisma: fakePrisma(),
+    }).catch((e) => e);
+
+    expect(err).toBeInstanceOf(TopicEvidenceError);
+    expect(String(err.message)).toContain("NOMBRES DE TEMA INVALIDOS");
+    expect(String(err.message)).toContain('usa "And" en vez de "&"');
   });
 
   it("acepta temas citando texto libre de verdad", async () => {

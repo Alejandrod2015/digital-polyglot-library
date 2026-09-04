@@ -571,7 +571,16 @@ export function validateJourneyStories(
   // renglon el nivel entero devolvia `not-implemented`, que bloquea igual que
   // un fallo: ningun A2 podia guardarse. Implementar el peldano que faltaba no
   // es relajar el gate; bajarlo hasta que pase un texto concreto, si.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 2.5, A1: 1.6, A2: 1.3 };
+  // B1 anadido el 2026-09-04, con el mismo metodo pero con una vara MAS FLOJA,
+  // y hay que decirlo: no existe ningun B1 publicado. El unico B1 del catalogo
+  // es el Traveler ES/spain, que sigue en DRAFT y por tanto nunca ha pasado por
+  // el ojo del usuario; puede tener la cifra baja por un defecto que nadie ha
+  // corregido, y entonces el liston hereda el defecto. Da 1,43 de media con
+  // esta formula, asi que el suelo se pone en 1,4, por debajo de el, igual que
+  // en los otros niveles. Cuando se publique un B1, remedir y subir si toca.
+  // Sin este renglon el nivel entero devolvia `not-implemented`, que bloquea
+  // igual que un fallo.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 2.5, A1: 1.6, A2: 1.3, B1: 1.4 };
   // La media sola se maquilla: una palabra en nueve historias tapa a nueve que
   // salen una vez. Asi que la cola tambien se mide.
   //
@@ -589,7 +598,10 @@ export function validateJourneyStories(
   // A2 (2026-08-31): el mismo A2 publicado deja el 75% de cola con esta
   // formula, asi que el tope va por ENCIMA, en 0,80, igual que el 0,70 del A1
   // se puso por encima de su 69%.
-  const TOPE_COLA_POR_NIVEL: Record<string, number> = { A0: 0.30, A1: 0.70, A2: 0.80 };
+  // B1 (2026-09-04): el Traveler ES/spain en draft deja el 82% de cola, asi que
+  // el tope va por ENCIMA, en 0,85. Misma advertencia que en el suelo: la vara
+  // sale de un draft, no de un publicado.
+  const TOPE_COLA_POR_NIVEL: Record<string, number> = { A0: 0.30, A1: 0.70, A2: 0.80, B1: 0.85 };
   // A las portables se les pide el MISMO suelo medido del nivel, no el ideal de
   // 4: el 3,0 salió de journeys publicados que no marcan ancladas, así que
   // exigir 4 sería inventar un número. Lo que cambia es QUÉ entra en la media.

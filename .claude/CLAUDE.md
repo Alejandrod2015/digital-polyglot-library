@@ -429,12 +429,18 @@ that ALWAYS runs before any Bash command. It does two things:
    271, `docs/` 197, las páginas generadas de `public/` 880 y la BD seis
    etiquetas de nivel. Una regla sin gate no es una regla.
 
-9. **Gate de temas (BLOQUEANTE, 2026-08-17).** Un tema de journey nombra el
+9. **Gate de temas (2026-08-17; la parte de EVIDENCIA se bajó a aviso el
+   2026-09-04).** Un tema de journey nombra el
    dominio léxico de sus tres historias y sale de lo que los usuarios
    ESCRIBIERON (`BetaSignup.motivation` / `.applicationReason`), no del molde
    de un curso de principiante. `assertTopicsGrounded`
-   (`src/lib/topicEvidence.ts`) TIRA si un tema no cita, literalmente, una
-   motivación que exista en la base. El hook `.claude/safety/pre-topic-guard.sh`
+   (`src/lib/topicEvidence.ts`) IMPRIME el corpus, dice cuánta gente hay detrás
+   de cada tema y AVISA de los que no citan nada; ya no bloquea por eso. Lo que
+   sigue TIRANDO son las reglas de NOMBRE, que son mecánicas. El cambio lo pidió
+   el usuario el 2026-09-04 montando el Traveler ES/latam B1: "estorba; tendría
+   que alimentar a la recomendación pero no puede ser tan dura". El corpus
+   escrito del español son 36 frases y la mayoría dice "quiero mejorar mi
+   español", así que exigir cita para los siete forzaba a inventarlas. El hook `.claude/safety/pre-topic-guard.sh`
    BLOQUEA cualquier ejecución que escriba en la tabla de temas sin llamarla;
    lee también el `.ts` invocado, no solo la línea de comando. Leer y consultar
    temas pasa sin gate.

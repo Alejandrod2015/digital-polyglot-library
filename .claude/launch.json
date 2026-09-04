@@ -159,6 +159,20 @@
         "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-nervous-pike-a97800/816d487c-9869-42d0-9769-c2d1506e72b3/scratchpad/practica"
       ],
       "port": 8911
+    },
+    {
+      "_comment": "Puerto propio del worktree del ES_Latam_B1_Traveler. Borrar al cerrar el journey.",
+      "name": "next-dev-3011",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev:web",
+        "--",
+        "--port",
+        "3011"
+      ],
+      "port": 3011,
+      "autoPort": false
     }
   ]
 }

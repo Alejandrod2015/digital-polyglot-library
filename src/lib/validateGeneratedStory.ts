@@ -909,11 +909,21 @@ export async function validateGeneratedStory(
   // minuto. No es aflojar el gate para que pase un texto; es alinearlo con lo
   // que la tabla "Criterios por nivel" del spec ya decía desde el 2026-08-19
   // (A2 = 128-155 palabras) y que el validador no había recogido.
-  const isOneMinuteTier =
-    isA0 || ["A1", "A2"].includes((context.level ?? "").toUpperCase());
-  const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = isOneMinuteTier
-    ? [100, 190, 115, 170]
-    : [180, 320, 220, 280];
+  // UNA SOLA BANDA PARA TODOS LOS NIVELES, la del A0 (2026-09-04, decision del
+  // usuario montando el Traveler ES/latam B1: "cambia la regla de la banda de
+  // palabras para que sea igual en todos los journeys, siempre como A0").
+  //
+  // Antes habia dos tiers: A0/A1/A2 en 100-190 y B1 en adelante en 180-320. Eso
+  // hacia que la misma coleccion tuviera historias del doble de largo segun el
+  // nivel, y el coste de TTS escala con las palabras. Lo que sube de nivel es la
+  // densidad lexica y sintactica, no el volumen: un B1 dice mas cosas en el
+  // mismo minuto, no dura dos.
+  //
+  // OJO al ponerlo en marcha: los journeys de B1+ escritos con la banda vieja
+  // quedan por encima. El gate por historia solo se aplica a lo que se ESCRIBE,
+  // asi que no rompe nada guardado; para el gate de conjunto existe
+  // `--no-regression`, que compara antes y despues en vez de exigir limpieza.
+  const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = [100, 190, 115, 170];
   checks.push({
     id: "body-word-count",
     label: `Body is ${bwSoftLo}-${bwSoftHi} words (hard: ${bwHardLo}-${bwHardHi})`,

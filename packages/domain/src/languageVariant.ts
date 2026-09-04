@@ -110,6 +110,16 @@ const LATAM_TOPIC_COUNTRY: Record<string, LanguageVariant> = {
   "secrets-and-curiosity": "peru",
   "work-trips-and-meetings": "mexico",
   "local-life-and-routines": "mexico",
+  // Traveler (B1): antologia igual que el A2, un protagonista por tema y un
+  // sitio distinto en cada uno. El pais no cabe en la etiqueta (la regla de
+  // nombres lo prohibe), asi que se pinta desde aqui.
+  "promises-and-excuses": "argentina",
+  "advice-and-opinions": "colombia",
+  "faith-and-devotion": "peru",
+  "animals-and-farms": "chile",
+  "games-and-bets": "mexico",
+  "pride-and-envy": "argentina",
+  "distance-and-homecoming": "colombia",
 };
 
 /**
