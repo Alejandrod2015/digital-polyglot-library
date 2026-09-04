@@ -13,6 +13,10 @@ import { prisma } from "@/lib/prisma";
 // vocabulario y su audio. Escribir la capa de un journey es una escritura en la
 // base y se ve al instante.
 //
+// EL INDICE DE TODAS LAS REGLAS DE GLOSAS ESTA EN docs/gloss-spec.md: los
+// cinco topes, los cuatro lints y el orden de una historia nueva. Aqui vive el
+// contrato de los campos y nada mas.
+//
 // Cada entrada: { g: gloss en inglés, t: tipo gramatical } donde t usa las
 // mismas claves que el vocab curado (verb|noun|adjective|adverb|pronoun|
 // preposition|conjunction|article|number|expression|other) para reusar los
