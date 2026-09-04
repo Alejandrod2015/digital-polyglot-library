@@ -909,8 +909,15 @@ export async function validateGeneratedStory(
   // minuto. No es aflojar el gate para que pase un texto; es alinearlo con lo
   // que la tabla "Criterios por nivel" del spec ya decía desde el 2026-08-19
   // (A2 = 128-155 palabras) y que el validador no había recogido.
+  // B1 vuelve a entrar el 2026-08-25. Estaba en esta lista y una edicion del
+  // 2026-09-01 la sustituyo por A2 en vez de anadirlo, y con eso las 21 del
+  // Traveler ES/spain B1 pasaron a fallar `body-word-count` de golpe: 167
+  // palabras contra un suelo de 180. El brief del B1 dice literalmente "el
+  // mismo minuto de lectura, no un A1 mas largo... manten esa banda y sube la
+  // gramatica dentro", asi que B1 es tier de un minuto por decision del
+  // usuario. Al anadir un nivel aqui, ANADELO, no lo sustituyas.
   const isOneMinuteTier =
-    isA0 || ["A1", "A2"].includes((context.level ?? "").toUpperCase());
+    isA0 || ["A1", "A2", "B1"].includes((context.level ?? "").toUpperCase());
   const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = isOneMinuteTier
     ? [100, 190, 115, 170]
     : [180, 320, 220, 280];
