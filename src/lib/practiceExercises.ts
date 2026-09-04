@@ -444,10 +444,22 @@ function getDistractorWords(
   // agreement instead of meaning. Falls back to the looser tiers below when the
   // pool can't fill 4; so it never starves the exercise. CEFR-band filtering
   // is intentionally NOT here: items carry no level yet (that's phase 1).
-  const targetAgr = normalizeKey(item.language) === "spanish" ? spanishAgreement(item.word) : null;
+  // La concordancia se mide sobre la forma que va a SER la respuesta y sobre la
+  // que se va a EMITIR, no sobre los lemas (2026-08-23). Medirla en el lema
+  // dejaba pasar "centimetros" (plural) contra tres distractores en singular y
+  // "losas" contra tres masculinos: 66 de los 175 fill_blank del Traveler
+  // ES/spain B1, un 38%, se resolvian mirando la terminacion. Es el mismo fallo
+  // que ya se arreglo para la FORMA unas lineas mas abajo, que no se llevo
+  // hasta esta rama.
+  const agrSource = (c: PracticeFavoriteItem) =>
+    !answerForm || answerIsMultiword ? c.word : c.surface || c.word;
+  const targetAgr =
+    normalizeKey(item.language) === "spanish"
+      ? spanishAgreement(answerForm || item.word)
+      : null;
   const agreementMatch = (candidate: PracticeFavoriteItem): boolean => {
     if (!targetAgr) return false;
-    const a = spanishAgreement(candidate.word);
+    const a = spanishAgreement(agrSource(candidate));
     return !!a && a.gender === targetAgr.gender && a.plural === targetAgr.plural;
   };
   // Alemán: misma idea que la concordancia española, otra dimensión. Se aplica
@@ -464,6 +476,7 @@ function getDistractorWords(
     ) === targetForm;
 
   if (targetAgr) drainFrom(byLang(sameShapeAndType.filter(agreementMatch)));
+  if (targetAgr && picked.length < max) drainFrom(byLang(sameShape.filter(agreementMatch)));
   if (targetForm && picked.length < max) drainFrom(byLang(sameShapeAndType.filter(formMatch)));
   if (targetForm && picked.length < max) drainFrom(byLang(sameShape.filter(formMatch)));
   if (picked.length < max) drainFrom(byLang(sameShapeAndType));

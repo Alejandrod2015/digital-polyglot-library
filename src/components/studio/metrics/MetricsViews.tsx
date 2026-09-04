@@ -100,7 +100,11 @@ export function ResumenView({ data }: { data: DashboardData }) {
           prev={p?.completionRate}
           spark={sparkCr}
           accent="xp"
-          hint="completadas / iniciadas"
+          hint={
+            k.storiesStarted
+              ? `${k.storiesFinished ?? 0} de ${k.storiesStarted} historias empezadas`
+              : "terminadas / empezadas"
+          }
         />
         <KpiCard
           hero

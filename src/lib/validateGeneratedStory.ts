@@ -919,10 +919,17 @@ export async function validateGeneratedStory(
   // densidad lexica y sintactica, no el volumen: un B1 dice mas cosas en el
   // mismo minuto, no dura dos.
   //
-  // OJO al ponerlo en marcha: los journeys de B1+ escritos con la banda vieja
-  // quedan por encima. El gate por historia solo se aplica a lo que se ESCRIBE,
-  // asi que no rompe nada guardado; para el gate de conjunto existe
-  // `--no-regression`, que compara antes y despues en vez de exigir limpieza.
+  // Esto SUSTITUYE a la lista `isOneMinuteTier`, que se borro a proposito. Su
+  // historia explica por que: el 2026-09-01 una edicion cambio A2 por B1 en vez
+  // de anadirlo y dejo las 21 del Traveler ES/spain B1 fallando de golpe (167
+  // palabras contra un suelo de 180). Una lista de niveles que hay que mantener
+  // a mano vuelve a romperse en cuanto aparezca el B2; sin lista no hay nada
+  // que sustituir mal.
+  //
+  // OJO: los journeys de B1+ escritos con la banda vieja quedan por encima. El
+  // gate por historia solo se aplica a lo que se ESCRIBE, asi que no rompe nada
+  // guardado; para el gate de conjunto existe `--no-regression`, que compara
+  // antes y despues en vez de exigir limpieza.
   const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = [100, 190, 115, 170];
   checks.push({
     id: "body-word-count",

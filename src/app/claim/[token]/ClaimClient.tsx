@@ -135,7 +135,7 @@ export default function ClaimClient({ token }: { token: string }) {
         <h1 className="text-2xl font-semibold mb-3">{state.title}</h1>
         <p className="text-white/80 mb-6 max-w-xl">{state.message}</p>
         <a
-          href="https://reader.digitalpolyglot.com/"
+          href="/"
           className="px-4 py-2 bg-white text-[#0D1B2A] rounded-xl hover:bg-gray-200 transition"
         >
           Go to homepage
@@ -264,11 +264,14 @@ export default function ClaimClient({ token }: { token: string }) {
         ))}
       </div>
 
+      {/* Relativos a proposito: quien esta canjeando ya esta en el host bueno,
+          y un absoluto a `reader` lo sacaba del dominio de la web (2026-09-04).
+          `reader` sigue sirviendo la API de las apps que ya circulan. */}
       <a
         href={
           isSignedIn
-            ? "https://reader.digitalpolyglot.com/my-library"
-            : `https://reader.digitalpolyglot.com/sign-in?redirect_url=/claim/${token}`
+            ? "/my-library"
+            : `/sign-in?redirect_url=/claim/${token}`
         }
         className="mt-10 px-6 py-2 bg-white text-[#0D1B2A] rounded-xl hover:bg-gray-200 transition"
       >

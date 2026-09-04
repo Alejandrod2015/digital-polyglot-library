@@ -234,8 +234,10 @@ export async function sendClaimEmail({
 }): Promise<"sent" | "skipped" | "failed"> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.EMAIL_FROM;
-  // El canje vive en el lector, así que ese es su respaldo público, no la web.
-  const baseUrl = publicBaseUrl(null, "https://reader.digitalpolyglot.com");
+  // El canje se sirve igual en los dos hosts, así que su respaldo es la web
+  // pública: `reader` sigue vivo solo para la API de las apps que circulan, y
+  // mandar ahí a una persona la saca del dominio que conoce (2026-09-04).
+  const baseUrl = publicBaseUrl(null);
   const replyTo = "support@digitalpolyglot.com";
 
   if (!apiKey || !from) {
