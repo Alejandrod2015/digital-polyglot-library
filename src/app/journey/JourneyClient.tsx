@@ -17,6 +17,7 @@ import type { JourneyTrackInsights, JourneyVariantTrack } from "./journeyData";
 import { isJourneyStoryComplete } from "@/lib/journeyUnlock";
 import type { JourneyDueReviewItem } from "@/lib/journeyProgress";
 import { formatVariantLabel, topicCountryLabel } from "@/lib/languageVariant";
+import { levelLabel, levelRank, LEVEL_ORDER } from "@/lib/levelLabels";
 import Flag from "@/components/Flag";
 import { TopicPreviewSheet } from "@/components/TopicPreviewSheet";
 import JourneyNextActionFab from "@/components/JourneyNextActionFab";
@@ -215,6 +216,7 @@ export default function JourneyClient({
     label: string;
     language: string | null;
     variant: string | null;
+    levels?: { id: string; title: string }[];
   };
   const [addSheetOpen, setAddSheetOpen] = useState(false);
   const [addLanguage, setAddLanguage] = useState<string | null>(null);
@@ -303,10 +305,24 @@ export default function JourneyClient({
     }));
   }, [catalog]);
 
-  const catalogForLanguage = useMemo(
-    () => (catalog && addLanguage ? catalog.filter((o) => o.language === addLanguage) : []),
-    [catalog, addLanguage]
-  );
+  // Ordenado por pais y, dentro de cada pais, por nivel ascendente. Sin esto
+  // la lista sale en el orden que devuelva la base y las cuatro filas que se
+  // llaman "Traveler" quedan salteadas.
+  const catalogForLanguage = useMemo(() => {
+    if (!catalog || !addLanguage) return [];
+    const rank = (o: CatalogOption) =>
+      Math.min(...[...(o.levels ?? []).map((l) => levelRank(l.id)), LEVEL_ORDER.length]);
+    return catalog
+      .filter((o) => o.language === addLanguage)
+      .slice()
+      .sort((a, b) => {
+        const va = (a.variant ?? "").localeCompare(b.variant ?? "");
+        if (va !== 0) return va;
+        const ra = rank(a) - rank(b);
+        if (ra !== 0) return ra;
+        return a.label.localeCompare(b.label);
+      });
+  }, [catalog, addLanguage]);
 
   const selectedTrack = useMemo(
     () => tracks.find((track) => track.id === selectedVariantId) ?? tracks[0] ?? null,
@@ -870,6 +886,23 @@ export default function JourneyClient({
                           style={{ color: "var(--foreground)" }}
                         >
                           {option.label}
+                          {(option.levels ?? []).length > 0 ? (
+                            <>
+                              {" · "}
+                              {(option.levels ?? [])
+                                .map((l) => levelLabel(l.id).name)
+                                .join(" · ")}
+                              {(option.levels ?? []).length === 1 &&
+                              levelLabel((option.levels ?? [])[0].id).cefr ? (
+                                <span
+                                  className="ml-1 text-[11px] font-semibold"
+                                  style={{ color: "var(--muted)" }}
+                                >
+                                  {levelLabel((option.levels ?? [])[0].id).cefr}
+                                </span>
+                              ) : null}
+                            </>
+                          ) : null}
                         </span>
                         <span
                           className="block text-xs"
