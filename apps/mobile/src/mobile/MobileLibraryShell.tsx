@@ -6613,7 +6613,8 @@ export function MobileLibraryShell(args: {
     (activeOnboardingTourTarget === "home" ||
       activeOnboardingTourTarget === "progress" ||
       activeOnboardingTourTarget === "practice" ||
-      activeOnboardingTourTarget === "favorites");
+      activeOnboardingTourTarget === "favorites" ||
+      activeOnboardingTourTarget === "menu");
 
   function tourTargetMatchesTab(tab: BottomTab) {
     if (!activeOnboardingTourTarget) return false;
@@ -6622,6 +6623,8 @@ export function MobileLibraryShell(args: {
     if (activeOnboardingTourTarget === "progress") return tab === "progress";
     if (activeOnboardingTourTarget === "practice") return tab === "practice";
     if (activeOnboardingTourTarget === "favorites") return tab === "favorites";
+    // Last step is Menu: standalone stories, audiobooks and saved stories.
+    if (activeOnboardingTourTarget === "menu") return tab === "menu";
     return false;
   }
 
@@ -20927,16 +20930,7 @@ export function MobileLibraryShell(args: {
             const step = onboardingTourStep ?? 0;
             const isFirst = step === 0;
             const isLast = step >= PRODUCT_TOUR_MESSAGES.length - 1;
-            const tabIndex =
-              activeOnboardingTourTarget === "home"
-                ? 0
-                : activeOnboardingTourTarget === "progress"
-                  ? bottomTabs.findIndex((t) => t.key === "progress")
-                  : activeOnboardingTourTarget === "practice"
-                    ? 2
-                    : activeOnboardingTourTarget === "favorites"
-                      ? 3
-                      : -1;
+            const tabIndex = bottomTabs.findIndex((t) => tourTargetMatchesTab(t.key));
             const tabCount = bottomTabs.length || 5;
             const GOLD = "#f8c15c";
             const iconName =
@@ -20948,7 +20942,9 @@ export function MobileLibraryShell(args: {
                     ? "refresh-cw"
                     : activeOnboardingTourTarget === "favorites"
                       ? "star"
-                      : "book-open";
+                      : activeOnboardingTourTarget === "menu"
+                        ? "menu"
+                        : "book-open";
             // Tab steps point a down-arrow at the (evenly spaced) target tab.
             const tabCenterX = (viewportWidth * (tabIndex + 0.5)) / tabCount;
             return (

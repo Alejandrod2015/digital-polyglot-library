@@ -416,6 +416,10 @@ export default function HomeClient({
   });
   const [surveyStep, setSurveyStep] = useState(0);
   const [tourStep, setTourStep] = useState<number | null>(null);
+  // Dev-only replay: `/?tour=preview` reopens the product tour on an account
+  // that already finished it, the web twin of the app's "Replay tour" menu
+  // entry. Off in production, and it never writes preferences.
+  const [tourPreview, setTourPreview] = useState(false);
   const [onboardingSaving, setOnboardingSaving] = useState(false);
   const [onboardingError, setOnboardingError] = useState("");
   const plan = isLoaded
@@ -437,11 +441,12 @@ export default function HomeClient({
   const shouldShowSurvey =
     hasSession && isLoaded && !onboardingState.onboardingSurveyCompletedAt;
   const shouldShowTour =
-    hasSession &&
-    isLoaded &&
-    Boolean(onboardingState.onboardingSurveyCompletedAt) &&
-    !onboardingState.onboardingTourCompletedAt &&
-    tourStep !== null;
+    tourStep !== null &&
+    (tourPreview ||
+      (hasSession &&
+        isLoaded &&
+        Boolean(onboardingState.onboardingSurveyCompletedAt) &&
+        !onboardingState.onboardingTourCompletedAt));
   const activeTourMessage = shouldShowTour && tourStep !== null ? PRODUCT_TOUR_MESSAGES[tourStep] : null;
   const activeTourTarget = activeTourMessage?.target ?? null;
 
@@ -551,6 +556,20 @@ export default function HomeClient({
   }, [initialInterests, initialPreferredVariant, initialTargetLanguages, isLoaded, user]);
 
   useEffect(() => {
+    if (process.env.NODE_ENV === "production") return;
+    if (typeof window === "undefined") return;
+    if (new URLSearchParams(window.location.search).get("tour") !== "preview") return;
+    setTourPreview(true);
+    setTourStep(0);
+  }, []);
+
+  useEffect(() => {
+    // The preview drives the step from the URL; don't let the real gate
+    // close it on an account that already finished the tour.
+    if (tourPreview) {
+      setTourStep((current) => current ?? 0);
+      return;
+    }
     if (!hasSession || !isLoaded) return;
     if (!onboardingState.onboardingSurveyCompletedAt) {
       setTourStep(null);
@@ -561,7 +580,13 @@ export default function HomeClient({
       return;
     }
     setTourStep(null);
-  }, [hasSession, isLoaded, onboardingState.onboardingSurveyCompletedAt, onboardingState.onboardingTourCompletedAt]);
+  }, [
+    hasSession,
+    isLoaded,
+    onboardingState.onboardingSurveyCompletedAt,
+    onboardingState.onboardingTourCompletedAt,
+    tourPreview,
+  ]);
 
   useEffect(() => {
     if (!isLoaded || !userId) return;
@@ -1875,6 +1900,11 @@ export default function HomeClient({
   };
 
   const completeTour = async () => {
+    if (tourPreview) {
+      setTourPreview(false);
+      setTourStep(null);
+      return;
+    }
     const success = await saveOnboardingPreferences({
       onboardingTourCompletedAt: new Date().toISOString(),
     });
@@ -1963,7 +1993,7 @@ export default function HomeClient({
       ) : null}
 
       {shouldShowTour && tourStep !== null ? (
-        <div className="fixed inset-0 z-[79] flex items-end justify-center bg-slate-950/45 px-4 pb-8 backdrop-blur-sm md:items-end">
+        <div className="fixed inset-0 z-[79] flex items-end justify-center bg-slate-950/45 px-4 pb-28 backdrop-blur-sm md:pb-8">
           <div className="w-full max-w-xl rounded-[1.6rem] border border-[var(--card-border)] bg-[linear-gradient(180deg,#153355_0%,#102947_100%)] p-6 shadow-[0_24px_60px_rgba(4,12,28,0.45)]">
             <div className="mb-4 flex gap-2">
               {PRODUCT_TOUR_MESSAGES.map((message, index) => (
@@ -1976,7 +2006,7 @@ export default function HomeClient({
               ))}
             </div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">
-              Product tour {tourStep + 1}/5
+              Product tour {tourStep + 1}/{PRODUCT_TOUR_MESSAGES.length}
             </p>
             <div className="mt-3 inline-flex items-center rounded-full border border-[#456790] bg-[#1a3556] px-3 py-1 text-[11px] font-black uppercase tracking-[0.14em] text-[#dcefff]">
               {activeTourMessage?.targetLabel}

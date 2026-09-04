@@ -272,8 +272,15 @@ export function OnboardingFlow({
   const [submitting, setSubmitting] = useState(false);
   // Optional first name (step 1). Seed from the session name when we
   // already have one, so returning users see it pre-filled.
+  //
+  // Solo el PRIMER token. El nombre de sesion es `firstName + lastName`
+  // (src/app/api/mobile/session/route.ts), y lo que este campo guarda vuelve
+  // a `firstName` de Clerk. Sembrarlo entero hacia que el apellido se colara
+  // en el nombre de pila y creciera en cada pasada: "Alejandro del Carpio"
+  // de pila mas "del Carpio" de apellido daba "Alejandro del Carpio del
+  // Carpio" en pantalla, y guardarlo lo dejaba asi en la cuenta.
   const [firstName, setFirstName] = useState(
-    typeof userName === "string" && userName.trim() ? userName.trim() : ""
+    typeof userName === "string" && userName.trim() ? userName.trim().split(/\s+/)[0] : ""
   );
 
   // Fire onboarding_started exactly once per mount. The ref guard
@@ -462,8 +469,8 @@ export function OnboardingFlow({
             <Text style={styles.eyebrow}>STEP 1 · LANGUAGES</Text>
             <Text style={styles.title}>What do you want to learn?</Text>
             <Text style={styles.subtitle}>
-              Pick one or more. The first you pick becomes your starting journey
-             ; the rest will be ready in your language switcher.
+              Pick one or more. The first you pick becomes your starting journey;
+              the rest will be ready in your language switcher.
             </Text>
             <Text style={styles.nameLabel}>What should we call you? (optional)</Text>
             <TextInput
