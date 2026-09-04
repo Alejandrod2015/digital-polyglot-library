@@ -3667,8 +3667,37 @@ export function MobileLibraryShell(args: {
         : null) ??
       null;
     const identityMatched = identityTrack !== null;
+    // Antes de rendirse a `tracks[0]`, se busca el track que este journey
+    // guardado describe. Un journey del onboarding no lleva cuid, pero sí
+    // lleva nombre, región y nivel, y con eso casi siempre hay UN track que
+    // encaja. Sin esta escalera, cualquier journey sin cuid se resolvía al
+    // primero del idioma: se pintaba con el nombre de OTRO journey y, en
+    // cuanto el usuario añadía ese otro, las dos filas se fundían en una y
+    // la suya desaparecía de la lista.
+    const legacyRegion = regionFamily(journey.region ?? journey.variant);
+    const legacyLabel = journey.label?.trim().toLowerCase() || null;
+    const legacyLevel = cefrFromCoarseLevel(journey.level)?.toLowerCase() ?? null;
+    const trackRegion = (t: MobileJourneyTrackSummary) => regionFamily(t.variant);
+    const trackHasLevel = (t: MobileJourneyTrackSummary) =>
+      legacyLevel ? t.levels.some((l) => l.id.toLowerCase() === legacyLevel) : false;
+    const describedTrack = identityTrack
+      ? null
+      : cached?.tracks?.find(
+          (t) => legacyLabel && t.label.trim().toLowerCase() === legacyLabel
+        ) ??
+        cached?.tracks?.find(
+          (t) => legacyRegion && trackRegion(t) === legacyRegion && trackHasLevel(t)
+        ) ??
+        (() => {
+          const sameRegion = (cached?.tracks ?? []).filter(
+            (t) => legacyRegion && trackRegion(t) === legacyRegion
+          );
+          return sameRegion.length === 1 ? sameRegion[0] : null;
+        })() ??
+        null;
     const cachedTrack =
       identityTrack ??
+      describedTrack ??
       // ÚLTIMO RECURSO: el MISMO track al que cae la pantalla de journey
       // (`activeJourneyTrack`, que termina en `tracks[0]`). Sin esto, nombre y
       // contenido se resolvían por caminos distintos y podían discrepar: un
@@ -3782,9 +3811,36 @@ export function MobileLibraryShell(args: {
       kept[kept.indexOf(twin)] = merged;
       return kept;
     }, [] as Array<(typeof journeySwitchEntriesRaw)[number]>);
-  const journeySwitchEntries: LanguageSwitchEntry[] = journeySwitchEntriesDeduped.map(
-    ({ resolvedTrackId: _r, matchedByIdentity: _m, resolvedLabel: _l, ...entry }) => entry
-  );
+  const journeySwitchEntries: LanguageSwitchEntry[] = journeySwitchEntriesDeduped
+    // El journey activo SIEMPRE arriba. Se ordena aquí, al pintar, y no
+    // reordenando `preferences.journeys`: el orden guardado se queda quieto
+    // (que es lo que evitaba que la lista bailara bajo el dedo) y aun así la
+    // primera fila es siempre en la que estás. `sort` es estable, así que el
+    // resto conserva su orden.
+    .slice()
+    .sort((a, b) => Number(b.active) - Number(a.active))
+    .map(({ resolvedTrackId: _r, matchedByIdentity: _m, resolvedLabel: _l, ...entry }) => entry);
+  /**
+   * Track id -> id del journey guardado que YA lo abre. Lo consume el
+   * selector de "Start a new journey" para marcar un track como tuyo.
+   *
+   * Existe porque el selector solo sabía reconocer los journeys del modelo
+   * nuevo, cuyo `variant` ES el cuid del track. Un journey creado en el
+   * onboarding guarda una REGIÓN ahí ("latam"), así que su track salía como
+   * libre, el usuario lo añadía otra vez, y arriba las dos filas se fundían
+   * en una (misma resolución de track) con la nueva ganando. Desde su lado:
+   * "agrego un journey y el que tenía desaparece".
+   *
+   * Se usa la MISMA resolución que pinta las filas, descarte a `tracks[0]`
+   * incluido. Así lo que el selector llama tuyo es exactamente lo que la
+   * lista te enseña como tuyo, y ninguna alta puede tragarse una fila.
+   */
+  const journeyIdByResolvedTrack: Record<string, string> = {};
+  for (const entry of journeySwitchEntriesDeduped) {
+    if (entry.resolvedTrackId && !journeyIdByResolvedTrack[entry.resolvedTrackId]) {
+      journeyIdByResolvedTrack[entry.resolvedTrackId] = entry.id;
+    }
+  }
   /**
    * UNA SOLA RESOLUCIÓN para las dos listas de journeys.
    *
@@ -3960,9 +4016,17 @@ export function MobileLibraryShell(args: {
     // Defensive: if the user somehow lands on an existing combination,
     // activate it instead of duplicating. The panel disables existing
     // combos but this keeps us correct under race conditions.
-    const existing = preferences.journeys.find((j) => j.id === id);
+    const existing =
+      preferences.journeys.find((j) => j.id === id) ??
+      // Mismo track guardado bajo otra identidad (un journey del modelo
+      // viejo, o uno creado antes de que `variant` llevara el cuid). Crear
+      // un gemelo no añade nada: las dos filas se funden en la lista y la
+      // vieja desaparece. Se activa la que ya existe.
+      (input.variant
+        ? preferences.journeys.find((j) => j.variant === input.variant)
+        : undefined);
     if (existing) {
-      void handleJourneySwitch(id);
+      void handleJourneySwitch(existing.id);
       return;
     }
     // Synchronous "already creating this id" check; see ref above.
@@ -3987,16 +4051,33 @@ export function MobileLibraryShell(args: {
     // Bug previo: el body iba con `journeys: []` y el backend borraba
     // la metadata, perdiendo todas las journeys tras kill+launch.
     const nextJourneys = dedupeJourneysById([newJourney, ...preferences.journeys]);
+    // Añadir un journey NO cambia el que estás leyendo. Antes sí: crearlo te
+    // sacaba de tu journey y te dejaba en el nuevo, con su idioma, su nivel y
+    // su contenido cargados, sin que lo hubieras pedido. Ahora se queda en la
+    // lista y entras tocándolo. La excepción es la cuenta sin ningún journey:
+    // ahí no hay nada de lo que sacarte, y quedarse sin activo dejaría la
+    // pantalla vacía.
+    const becomesActive = !preferences.activeJourneyId || preferences.journeys.length === 0;
+    const nextActiveId = becomesActive ? newJourney.id : preferences.activeJourneyId;
+    // `targetLanguages` es el canal legacy que aún dice "cuál es el activo"
+    // por su primer elemento, así que solo se reordena cuando de verdad se
+    // cambia de journey; si no, el idioma nuevo se añade al final.
+    const nextTargetLanguages = becomesActive
+      ? targetLanguagesFromJourneys(nextJourneys)
+      : Array.from(new Set([...preferences.targetLanguages, input.language]));
     setPreferences((current) => ({
       ...current,
       journeys: dedupeJourneysById([newJourney, ...current.journeys]),
-      activeJourneyId: newJourney.id,
-      targetLanguages: targetLanguagesFromJourneys(nextJourneys),
-      preferredVariant: newJourney.variant,
-      journeyFocus: newJourney.focus,
+      activeJourneyId: nextActiveId,
+      targetLanguages: nextTargetLanguages,
+      ...(becomesActive
+        ? { preferredVariant: newJourney.variant, journeyFocus: newJourney.focus }
+        : null),
     }));
-    setActiveJourneyLanguage(input.language);
-    void loadJourneyForLanguage(input.language);
+    if (becomesActive) {
+      setActiveJourneyLanguage(input.language);
+      void loadJourneyForLanguage(input.language);
+    }
     if (sessionToken) {
       try {
         await apiFetch({
@@ -4005,14 +4086,15 @@ export function MobileLibraryShell(args: {
           token: sessionToken,
           method: "POST",
           body: {
-            targetLanguages: [
-              input.language,
-              ...preferences.targetLanguages.filter((n) => n !== input.language),
-            ],
-            preferredVariant: input.variant,
-            journeyFocus: input.focus,
+            targetLanguages: nextTargetLanguages,
+            preferredVariant: becomesActive
+              ? input.variant
+              : preferences.preferredVariant ?? input.variant,
+            journeyFocus: becomesActive
+              ? input.focus
+              : preferences.journeyFocus ?? input.focus,
             journeys: nextJourneys,
-            activeJourneyId: newJourney.id,
+            activeJourneyId: nextActiveId,
           },
         });
       } catch (err) {
@@ -20391,12 +20473,22 @@ export function MobileLibraryShell(args: {
             : handleJourneySwitch
         }
         onAddJourney={() => {
-          // Close the sheet and open the full-screen "Your journeys"
-          // panel where the user can browse all journeys + start a
-          // new one (no longer routed to /settings).
+          // Close the sheet and open the create panel, which lands
+          // straight on the language picker.
           setLanguageSwitchOpen(false);
           setJourneysPanelOpen(true);
         }}
+        onDeleteJourney={
+          // Deleting belongs to the journey list, not to the Explore
+          // language filter, which reuses this same sheet.
+          languageSwitchMode === "explore-filter"
+            ? undefined
+            : async (id) => {
+                // Don't close the sheet: the user typically wants to
+                // see what is left, and maybe delete more.
+                await handleJourneyDelete(id);
+              }
+        }
         showAllOption={languageSwitchMode === "explore-filter"}
         allActive={
           languageSwitchMode === "explore-filter" && selectedExploreLanguage === "All"
@@ -20435,10 +20527,9 @@ export function MobileLibraryShell(args: {
           const specific = track?.variant?.trim();
           return specific ? { ...journey, region: specific } : journey;
         })}
-        activeJourneyId={preferences.activeJourneyId}
-        statsByLanguage={LANG_STATS}
         comingSoonLanguages={comingSoonLanguages}
         unavailableVariants={unavailableVariants}
+        journeyIdByTrack={journeyIdByResolvedTrack}
         onSelect={async (id) => {
           await handleJourneySwitch(id);
           setJourneysPanelOpen(false);
@@ -20446,12 +20537,11 @@ export function MobileLibraryShell(args: {
         onCreate={async (input) => {
           await handleJourneyCreate(input);
           setJourneysPanelOpen(false);
-        }}
-        onDelete={async (id) => {
-          // Don't auto-close on delete: the user typically wants to
-          // see the remaining journeys + maybe delete more or pick
-          // a new active one. They can dismiss with the close button.
-          await handleJourneyDelete(id);
+          // De vuelta a la lista de journeys, con el nuevo ya dentro. Es
+          // donde el usuario decide si entra en él: crear ya no le mueve
+          // de donde estaba.
+          setLanguageSwitchMode("switch");
+          setLanguageSwitchOpen(true);
         }}
         getTracksForLanguage={getTracksForLanguage}
         getTracksForLanguageSync={getTracksForLanguageSync}

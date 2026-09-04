@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
+  Alert,
   Animated,
   Easing,
   PanResponder,
@@ -64,9 +65,14 @@ type Props = {
   journeys: LanguageSwitchEntry[];
   /** Activate a journey by its id. */
   onSelect: (id: string) => void | Promise<void>;
-  /** Open the full-screen "Your journeys" panel where the user can
-   *  add a new (language, focus) combination. */
+  /** Open the full-screen "Start a new journey" panel. */
   onAddJourney: () => void;
+  /** Remove a journey by id, after this sheet confirms with an Alert.
+   *  Deleting lives here (and not in the create panel) because this is
+   *  the surface that already lists the user's journeys. Omit the prop
+   *  to hide the trash buttons; the Explore filter does that, where a
+   *  row means "filter by this language", not "this is my journey". */
+  onDeleteJourney?: (id: string) => void | Promise<void>;
   /** When true, prepends an "All languages" row (used by Explore to
    *  disable the language filter while keeping cross-language
    *  browsing). The row is highlighted when `allActive` is true. */
@@ -97,6 +103,7 @@ export function LanguageSwitchSheet({
   journeys,
   onSelect,
   onAddJourney,
+  onDeleteJourney,
   showAllOption = false,
   allActive = false,
   onSelectAll,
@@ -212,6 +219,33 @@ export function LanguageSwitchSheet({
     } finally {
       setSwitchingTo(null);
     }
+  }
+
+  function handleDeletePress(journey: LanguageSwitchEntry) {
+    if (!onDeleteJourney) return;
+    // Block the destructive path on the last journey; leaving the user
+    // with zero journeys would drop them into the create flow with no
+    // obvious way out, and the active journey id would point nowhere.
+    if (journeys.length <= 1) {
+      Alert.alert(
+        "Can't remove your only journey",
+        "Add another journey first, then remove this one.",
+        [{ text: "OK" }]
+      );
+      return;
+    }
+    Alert.alert(
+      "Remove this journey?",
+      `${journey.displayName} will be removed. Your global progress and saved words stay.`,
+      [
+        { text: "Cancel", style: "cancel" },
+        {
+          text: "Remove",
+          style: "destructive",
+          onPress: () => void onDeleteJourney(journey.id),
+        },
+      ]
+    );
   }
 
   const headerCount = journeys.length;
@@ -392,6 +426,25 @@ export function LanguageSwitchSheet({
                 ) : (
                   <Feather name="chevron-right" size={16} color="rgba(255,255,255,0.45)" />
                 )}
+
+                {/* Trash; stopPropagation so the tap doesn't fall
+                    through to the row Pressable and switch journey. */}
+                {onDeleteJourney ? (
+                  <Pressable
+                    onPress={(e) => {
+                      e.stopPropagation();
+                      handleDeletePress(journey);
+                    }}
+                    hitSlop={10}
+                    style={({ pressed }) => [
+                      styles.rowDeleteButton,
+                      pressed ? styles.rowDeleteButtonPressed : null,
+                    ]}
+                    accessibilityLabel={`Remove ${journey.displayName} journey`}
+                  >
+                    <Feather name="trash-2" size={14} color="rgba(255,255,255,0.5)" />
+                  </Pressable>
+                ) : null}
               </Pressable>
             );
           })}
@@ -587,6 +640,17 @@ const styles = StyleSheet.create({
     height: 22,
     alignItems: "center",
     justifyContent: "center",
+  },
+  rowDeleteButton: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgba(255,255,255,0.04)",
+  },
+  rowDeleteButtonPressed: {
+    backgroundColor: "rgba(220, 38, 38, 0.18)",
   },
   footer: {
     flexDirection: "row",
