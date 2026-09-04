@@ -7,6 +7,7 @@ import { getInternalUserIds, isMetricsAccessAllowed } from "@/lib/metricsAccess"
 import { getBetaUserIds, parseMetricsCohort } from "@/lib/metricsCohort";
 import { resolveStoryLanguages } from "@/lib/storyLanguages";
 import { buildRetention, SERVER_WRITTEN_METRIC_EVENTS } from "@/lib/metricsRetention";
+import { pushTokenPlatform } from "@/lib/mobilePlatform";
 
 const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY! });
 
@@ -313,10 +314,10 @@ export async function GET(req: NextRequest): Promise<Response> {
       else if (pf === "ios" || pf === "mobile") eventIos.add(e.userId);
       else if (pf === "web") eventWeb.add(e.userId);
     }
-    const hasMobilePushToken = (u: (typeof cohort)[number]): boolean => {
-      const pm = (u.privateMetadata ?? {}) as Record<string, unknown>;
-      return Array.isArray(pm.mobilePushTokens) && pm.mobilePushTokens.length > 0;
-    };
+    // El token de push SÍ dice el sistema: cada registro guarda el suyo. Antes
+    // aquí sólo se preguntaba si existía alguno, y el respaldo de abajo daba
+    // "ios" por sentado.
+    const devicePlatform = (u: (typeof cohort)[number]) => pushTokenPlatform(u.privateMetadata);
     const platformFor = (u: (typeof cohort)[number]): "ios" | "android" | "web" | null => {
       // Authoritative: stamped at signup by the mobile session route (el
       // sistema que dice el propio cliente) and the web platform ping ("web").
@@ -324,11 +325,14 @@ export async function GET(req: NextRequest): Promise<Response> {
       // activity/push-token inference below.
       const sp = (u.publicMetadata as Record<string, unknown>)?.signupPlatform;
       if (sp === "ios" || sp === "android" || sp === "web") return sp;
+      // Un evento "android" sólo lo escribe la cabecera del cliente, así que
+      // es una afirmación. Un evento "ios" puede ser el valor por defecto de
+      // la ruta cuando la cabecera no viene, así que NO puede ir por delante
+      // del token de push, que sí sabe en qué teléfono se registró.
       if (eventAndroid.has(u.id)) return "android";
-      // El token de push no distingue sistema, así que sólo puede decir "tiene
-      // la app". Se queda en iOS porque los únicos que la tuvieron antes del
-      // sello son los testers de iPhone.
-      if (eventIos.has(u.id) || hasMobilePushToken(u)) return "ios";
+      const device = devicePlatform(u);
+      if (device) return device;
+      if (eventIos.has(u.id)) return "ios";
       if (eventWeb.has(u.id)) return "web";
       return null;
     };
