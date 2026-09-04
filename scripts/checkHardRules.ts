@@ -153,7 +153,7 @@ function main() {
       // OJO: aqui se FILTRA por existencia solo para no contarla como red
       // valida. La ruta que no existe se denuncia abajo, en `fantasmas`: antes
       // desaparecia en este filter y la memoria pasaba como si tuviera gate.
-      rutas: [...ventanas.matchAll(/((?:scripts|src\/lib)\/[A-Za-z0-9_\/-]+\.ts)/g)]
+      rutas: [...ventanas.matchAll(/(?<![A-Za-z0-9_\/.-])((?:scripts|src\/lib)\/[A-Za-z0-9_\/-]+\.ts)/g)]
         .map((m) => m[1]).filter((r) => fs.existsSync(path.join(REPO, r))),
     };
 
@@ -163,12 +163,15 @@ function main() {
       ...[...txt.matchAll(/((?:pre|post|stop)-[a-z0-9-]+\.sh)/g)].map((m) => m[1])
         .filter((h) => !hooks.has(h) && !fs.existsSync(path.join(REPO, ".claude", "safety", h))),
       ...[...txt.matchAll(/npm run ([a-z0-9:-]+)/g)].map((m) => m[1]).filter((x) => !scripts.has(x)),
-      // Un .ts citado como red tiene que estar en el arbol. Este hueco es el
+      // Un .ts citado como red tiene que estar en el arbol. El lookbehind
+      // evita leer `src/lib/x.ts` DENTRO de `apps/mobile/src/lib/x.ts`:
+      // ese recorte convirtio en fantasma a project_mobile_auth_bug, que
+      // citaba rutas del movil, no del web. Este hueco es el
       // que dejo pasar `feedback_gloss_in_context`, que nombraba
       // `scripts/reviewCopiedGlosses.ts` y su gate `citaAjena`: los dos viven
       // en una rama de agosto que nunca se fusiono, asi que la memoria
       // prometia una red que aqui no existe y el lint decia "limpio".
-      ...[...txt.matchAll(/((?:scripts|src\/lib)\/[A-Za-z0-9_\/-]+\.ts)/g)].map((m) => m[1])
+      ...[...txt.matchAll(/(?<![A-Za-z0-9_\/.-])((?:scripts|src\/lib)\/[A-Za-z0-9_\/-]+\.ts)/g)].map((m) => m[1])
         .filter((r) => !fs.existsSync(path.join(REPO, r))),
     ];
     if (fantasmas.length) {
