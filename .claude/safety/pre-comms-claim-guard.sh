@@ -46,6 +46,28 @@ SENDERS = re.compile(
     r"|api\.resend\.com|resend\.emails\.send"
     r"|/api/cron/(?:beta-lifecycle|lifecycle-emails|claim-reminders)", re.I)
 
+# Un comando que solo es git no envia nada, y sin embargo caia aqui: el
+# porton lee el CONTENIDO de cualquier .ts que nombres, y el motor del
+# calendario contiene el nombre de la funcion que envia. Resultado, el
+# 2026-09-05: `git add src/lib/<el motor>.ts` bloqueado como si fuera un envio.
+# Se comprueban TODOS los segmentos, para que un `git add x && curl ...` siga
+# entrando por la puerta de siempre.
+def solo_git(c):
+    segs = [s.strip() for s in re.split(r"&&|\|\||;|\||\n", c) if s.strip()]
+    if not segs:
+        return False
+    for s in segs:
+        toks = s.split()
+        i = 0
+        while i < len(toks) and re.match(r"^[A-Za-z_][A-Za-z0-9_]*=", toks[i]):
+            i += 1
+        if i >= len(toks) or toks[i] != "git":
+            return False
+    return True
+
+if solo_git(cmd):
+    out("PASS")
+
 hay = cmd
 for m in re.finditer(r"(?:^|\s)((?:scripts|src)/[\w./-]+\.(?:ts|tsx|js|mjs))", cmd):
     try:
