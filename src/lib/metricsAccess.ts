@@ -64,6 +64,27 @@ export async function getInternalUserIds(): Promise<string[]> {
     }
   }
 
+  // Cuentas marcadas en Clerk como fuera de la analítica
+  // (`publicMetadata.analyticsExcluded`). La bandera ya existía y la
+  // respetaban el pixel de Meta y GA4, pero el panel no la miraba: la cuenta
+  // de revisión de Google Play la llevaba puesta desde marzo y aun así salía
+  // como usuario activo cada vez que los revisores entraban con las
+  // credenciales de demo. Marcar la cuenta en Clerk basta ahora para que
+  // desaparezca de todas las pestañas, sin apuntar su id a mano.
+  try {
+    const total = await clerkClient.users.getCount();
+    for (let offset = 0; offset < total && offset < 2000; offset += 100) {
+      const page = await clerkClient.users.getUserList({ limit: 100, offset });
+      for (const user of page.data) {
+        const meta = (user.publicMetadata ?? {}) as Record<string, unknown>;
+        if (meta.analyticsExcluded === true) ids.push(user.id);
+      }
+      if (page.data.length < 100) break;
+    }
+  } catch (error) {
+    console.warn("[metricsAccess] failed to list Clerk users for analyticsExcluded", error);
+  }
+
   // Manual override: tester userIds set in Vercel env. Useful for
   // accounts whose Clerk email doesn't match the studio_members row,
   // or for stale/deleted Clerk users that still have rows in
