@@ -83,7 +83,10 @@
         "3005"
       ],
       "port": 3005,
-      "autoPort": false
+      "autoPort": false,
+      "env": {
+        "NEXT_DIST_DIR": ".next-3005"
+      }
     },
     {
       "_comment": "Puerto propio para verificar sin chocar con otros chats.",

@@ -502,12 +502,25 @@ export async function validateGeneratedStory(
   checks.push({ id: "json-parse", label: "JSON parses correctly", status: "pass" });
 
   // ─── Title ─────────────────────────────────────────────
+  // Palabras Y caracteres. El tope de 6 palabras dejaba pasar titulos de 40
+  // caracteres ("Mit freundlichen Gruessen, das Treppenhaus"): en la tarjeta
+  // del path no caben y salen con puntos suspensivos.
+  //
+  // 26 sale de medir los 489 titulos ya escritos contra el ancho REAL de la
+  // tarjeta mas estrecha que existe, el pill de la app (104px de texto util,
+  // 2 lineas, fuente 12/900). Cortados de los que cumplen cada tope: 24 -> 2,
+  // 26 -> 5, 28 -> 14, 30 -> 31. El salto esta entre 26 y 28; bajar a 24
+  // evitaria 3 cortes mas y dejaria fuera 57 titulos mas.
+  const TITLE_MAX_CHARS = 26;
   const titleWords = countWords(parsed.title);
+  const titleChars = parsed.title.trim().length;
+  const titleWordsOk = titleWords >= 2 && titleWords <= 6;
+  const titleCharsOk = titleChars <= TITLE_MAX_CHARS;
   checks.push({
     id: "title-length",
-    label: "Title is 2-6 words",
-    status: titleWords >= 2 && titleWords <= 6 ? "pass" : "fail",
-    detail: `${titleWords} words`,
+    label: `Title is 2-6 words and <= ${TITLE_MAX_CHARS} characters`,
+    status: titleWordsOk && titleCharsOk ? "pass" : "fail",
+    detail: `${titleWords} words, ${titleChars} characters`,
   });
 
   const TITLE_BANNED = [
@@ -909,8 +922,15 @@ export async function validateGeneratedStory(
   // minuto. No es aflojar el gate para que pase un texto; es alinearlo con lo
   // que la tabla "Criterios por nivel" del spec ya decía desde el 2026-08-19
   // (A2 = 128-155 palabras) y que el validador no había recogido.
+  // B1 vuelve a entrar el 2026-08-25. Estaba en esta lista y una edicion del
+  // 2026-09-01 la sustituyo por A2 en vez de anadirlo, y con eso las 21 del
+  // Traveler ES/spain B1 pasaron a fallar `body-word-count` de golpe: 167
+  // palabras contra un suelo de 180. El brief del B1 dice literalmente "el
+  // mismo minuto de lectura, no un A1 mas largo... manten esa banda y sube la
+  // gramatica dentro", asi que B1 es tier de un minuto por decision del
+  // usuario. Al anadir un nivel aqui, ANADELO, no lo sustituyas.
   const isOneMinuteTier =
-    isA0 || ["A1", "A2"].includes((context.level ?? "").toUpperCase());
+    isA0 || ["A1", "A2", "B1"].includes((context.level ?? "").toUpperCase());
   const [bwHardLo, bwHardHi, bwSoftLo, bwSoftHi] = isOneMinuteTier
     ? [100, 190, 115, 170]
     : [180, 320, 220, 280];

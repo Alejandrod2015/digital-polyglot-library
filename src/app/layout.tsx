@@ -8,6 +8,7 @@ import { Inter, JetBrains_Mono, Nunito } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import { clerkAppearance } from "@/lib/clerkAppearance";
+import { clerkLocalization } from "@/lib/clerkLocalization";
 import { isConsentOptInCountry } from "@/lib/geo";
 import AppShell from "@/components/AppShell";
 import VisitLogger from "@/components/VisitLogger";
@@ -97,6 +98,7 @@ export default async function RootLayout({
     <ClerkProvider
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
       appearance={clerkAppearance}
+      localization={clerkLocalization}
     >
       <html
         lang="en"

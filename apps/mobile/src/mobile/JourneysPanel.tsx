@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
-  Alert,
   Animated,
   Easing,
   Pressable,
@@ -12,18 +11,7 @@ import {
 import { Feather } from "@expo/vector-icons";
 import { LanguageFlag, regionFamily } from "./LanguageFlag";
 import { formatVariantLabel } from "@digital-polyglot/domain";
-import {
-  type Journey,
-  cefrFromCoarseLevel,
-  existingJourneyKeys,
-  focusIcon,
-  focusShortLabel,
-  journeyDisplayName,
-  journeyFlagVariant,
-  journeyIcon,
-  journeyId,
-} from "./journeys";
-import { cefrDisplayLabel } from "@digital-polyglot/domain";
+import { type Journey, existingJourneyKeys, journeyId } from "./journeys";
 import type { JourneyFocus } from "../../../../src/lib/onboarding";
 import { bg as tokenBg, color as tokenColor } from "../theme/tokens";
 
@@ -80,21 +68,19 @@ function LevelMeter({ filled, active }: { filled: number; active: boolean }) {
 const DEFAULT_NEW_JOURNEY_FOCUS: JourneyFocus = "General";
 
 /**
- * Full-screen "Your journeys" panel. Slides up from the bottom (mirror
- * of the sheet pattern but covers the whole viewport) and houses three
- * states:
+ * Full-screen "Start a new journey" panel. Slides up from the bottom
+ * (mirror of the sheet pattern but covers the whole viewport) and is
+ * two steps deep:
  *
- *   1. List; every journey rendered as a card; tapping makes one
- *      active and closes. The active journey is pinned on top.
- *   2. Pick language (sub-state of "create"); 9-language grid, with
- *      English split into US / UK rows. Combinations that already
- *      exist for the chosen focus are disabled and labeled.
- *   3. Pick focus (sub-state of "create"); 4 cards (Travelers,
- *      Business, Culture, Everyday), then a `Start journey` CTA.
+ *   1. Pick language; 9-language grid, with English split into US / UK
+ *      rows. Combinations that already exist are disabled and labeled.
+ *   2. Pick journey; one card per Studio Journey track for the picked
+ *      language, then an `Add journey` CTA that matches the label on
+ *      the sheet footer that opened this panel.
  *
- * Empty case: when the user has 0 journeys (rare; typically only
- * post-onboarding before the first commit) we skip the list and land
- * straight on the create flow with welcome copy.
+ * Browsing, activating and deleting journeys are NOT here; they live
+ * in the flag sheet (`LanguageSwitchSheet`), which is also the only
+ * way in. Back from step 1 therefore returns to that sheet.
  */
 
 type LanguageOption = {
@@ -137,10 +123,6 @@ type Props = {
   onClose: () => void;
   /** All journeys, ordered as they should appear (active first). */
   journeys: Journey[];
-  activeJourneyId: string | null;
-  /** Mock or real per-journey-language stats. The panel doesn't
-   *  compute them; the shell hands them in keyed by language. */
-  statsByLanguage: Record<string, { streak: number; xpTotal: number; progress: number }>;
   /** Languages flagged as Próximamente in Studio Planning; they show up but
    *  can't be picked yet. Hydrated by the shell from /api/mobile/languages. */
   comingSoonLanguages?: ReadonlySet<string>;
@@ -149,6 +131,14 @@ type Props = {
   unavailableVariants?: ReadonlySet<string>;
   /** Activate an existing journey by id and close the panel. */
   onSelect: (id: string) => void | Promise<void>;
+  /** Studio track id -> id of the saved journey that already opens it.
+   *  A journey knows its track through `variant` only under the current
+   *  model; older ones store a region there, so their track looked free
+   *  here and the user could add a second journey onto the same content.
+   *  The shell resolves the mapping the same way it resolves the rows in
+   *  the switch sheet, so a track this marks as taken is a track the user
+   *  can already see in their list. */
+  journeyIdByTrack?: Record<string, string>;
   /** Create a new journey (language + variant + focus). The shell is
    *  responsible for de-duping and persistence. `label` carries the
    *  picked Studio Journey.name so the chrome can render it instead
@@ -163,11 +153,6 @@ type Props = {
     focus: JourneyFocus;
     label?: string | null;
   }) => void | Promise<void>;
-  /** Remove a journey by id. The shell decides what to do with the
-   *  active journey if the deleted one was active (typically it
-   *  promotes the next journey in the list). The panel only fires
-   *  the request after the user confirms via Alert. */
-  onDelete: (id: string) => void | Promise<void>;
   /** Fetch the Studio Journey tracks for a language. Used to populate
    *  Step 2 of the create flow with real journeys instead of the old
    *  4 hardcoded focus categories. The shell typically wraps the
@@ -185,13 +170,11 @@ export function JourneysPanel({
   open,
   onClose,
   journeys,
-  activeJourneyId,
-  statsByLanguage,
   comingSoonLanguages,
   unavailableVariants,
+  journeyIdByTrack,
   onSelect,
   onCreate,
-  onDelete,
   getTracksForLanguage,
   getTracksForLanguageSync,
 }: Props) {
@@ -201,33 +184,34 @@ export function JourneysPanel({
   const backdrop = useRef(new Animated.Value(0)).current;
   const translateY = useRef(new Animated.Value(PANEL_TRAVEL)).current;
   const [mounted, setMounted] = useState(open);
-  // "list" → browse + activate.
   // "pick-language" → step 1 of create flow.
   // "pick-focus"    → step 2 of create flow (now picks a Studio
   //                   Journey track, not one of 4 hardcoded focuses).
-  type Mode = "list" | "pick-language" | "pick-focus";
-  const [mode, setMode] = useState<Mode>("list");
+  // There is no list mode: browsing, activating and deleting journeys
+  // all live in the flag sheet (`LanguageSwitchSheet`). This panel only
+  // creates.
+  type Mode = "pick-language" | "pick-focus";
+  const [mode, setMode] = useState<Mode>("pick-language");
   const [pickedLanguage, setPickedLanguage] = useState<LanguageOption | null>(null);
   const [pickedTrackId, setPickedTrackId] = useState<string | null>(null);
   const [availableTracks, setAvailableTracks] = useState<JourneysPanelTrack[]>([]);
   const [tracksLoading, setTracksLoading] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  // When the panel opens with zero journeys, drop the user straight
-  // into the create flow; the list view would be empty otherwise.
+  // The panel's only entry point is the sheet's "Add journey" CTA, so
+  // it opens straight on the create flow. It used to open on a list of
+  // the journeys the sheet had *just* listed, which made "Add journey"
+  // a button that added nothing: the user had to tap "Start a new
+  // journey" to reach the languages.
   useEffect(() => {
     if (open) {
-      if (journeys.length === 0) {
-        setMode("pick-language");
-      } else {
-        setMode("list");
-      }
+      setMode("pick-language");
       setPickedLanguage(null);
       setPickedTrackId(null);
       setAvailableTracks([]);
       setTracksLoading(false);
     }
-  }, [open, journeys.length]);
+  }, [open]);
 
   // Prefetch tracks for every selectable language as soon as the panel
   // opens, so by the time the user picks one in Step 1 the Step 2
@@ -294,7 +278,7 @@ export function JourneysPanel({
   if (!mounted) return null;
 
   function handleClose() {
-    setMode("list");
+    setMode("pick-language");
     setPickedLanguage(null);
     setPickedTrackId(null);
     setAvailableTracks([]);
@@ -308,12 +292,9 @@ export function JourneysPanel({
       setPickedTrackId(null);
       setAvailableTracks([]);
       setTracksLoading(false);
-    } else if (mode === "pick-language") {
-      // If there are no journeys yet, "back" closes; there's nowhere
-      // to go in the list view.
-      if (journeys.length === 0) handleClose();
-      else setMode("list");
     } else {
+      // Step 1 is the first screen of the panel, so "back" leaves the
+      // panel and returns to the flag sheet the user came from.
       handleClose();
     }
   }
@@ -368,32 +349,6 @@ export function JourneysPanel({
     }
   }
 
-  function handleDeletePress(journey: Journey) {
-    // Block the destructive path on the last journey; leaving the
-    // user with zero journeys would push them straight back into the
-    // create flow with no obvious way out, and the activeJourneyId
-    // bookkeeping would have nothing to point at.
-    if (journeys.length <= 1) {
-      Alert.alert(
-        "Can't remove your only journey",
-        "Add another journey first if you want to switch focuses, then remove this one.",
-        [{ text: "OK" }]
-      );
-      return;
-    }
-    Alert.alert(
-      "Remove this journey?",
-      `${journeyDisplayName(journey)} will be removed. Your global progress and saved words stay.`,
-      [
-        { text: "Cancel", style: "cancel" },
-        {
-          text: "Remove",
-          style: "destructive",
-          onPress: () => void onDelete(journey.id),
-        },
-      ]
-    );
-  }
 
   // Tracks are fetched by language only, so filter to the variant the user
   // picked in step 1. Without this, picking Spanish · Spain shows the LATAM
@@ -404,20 +359,8 @@ export function JourneysPanel({
     ? availableTracks.filter((t) => regionFamily(t.variant) === pickedRegion)
     : availableTracks;
 
-  const headerTitle =
-    mode === "list"
-      ? journeys.length <= 1
-        ? "Your journey"
-        : "Your journeys"
-      : mode === "pick-language"
-        ? "Pick a language"
-        : "Pick a journey";
-  const headerSub =
-    mode === "list"
-      ? `${journeys.length} active`
-      : mode === "pick-language"
-        ? "Step 1 of 2"
-        : "Step 2 of 2";
+  const headerTitle = mode === "pick-language" ? "Pick a language" : "Pick a journey";
+  const headerSub = mode === "pick-language" ? "Step 1 of 2" : "Step 2 of 2";
 
   return (
     <View style={styles.fill} pointerEvents="box-none">
@@ -446,155 +389,6 @@ export function JourneysPanel({
             <Feather name="x" size={20} color="#f5f7fb" />
           </Pressable>
         </View>
-
-        {mode === "list" ? (
-          <ScrollView
-            contentContainerStyle={styles.scroll}
-            showsVerticalScrollIndicator={false}
-          >
-            {journeys.map((journey) => {
-              const isActive = journey.id === activeJourneyId;
-              const stats = statsByLanguage[journey.language] ?? {
-                streak: 0,
-                xpTotal: 0,
-                progress: 0,
-              };
-              const focusLabel = focusShortLabel(journey.focus);
-              // `journeyIcon` deriva el icono del label real
-              // ("Viajero" → send, "Business" → briefcase, etc.) en
-              // lugar de mirar `focus` que bajo el modelo nuevo
-              // siempre vale "General" → coffee. Antes el card pintaba
-              // taza de café para TODOS los journeys.
-              const icon = journeyIcon(journey);
-              // Título = solo el idioma. El nombre específico del
-              // journey ("Conversational", "Viajero", "Travelers"…)
-              // se mueve a la sub-línea para que la línea del idioma
-              // no quede tan larga ("Portuguese · Conversational" se
-              // partía a dos visuales).
-              const journeyNameLabel = (journey.label ?? "").trim() || focusLabel;
-              // Level: normaliza a CEFR con cefrFromCoarseLevel y luego
-              // muestra el nombre amigable (Beginner/Elementary/...) en
-              // lugar del código crudo, igual que el resto de la app.
-              const levelLabel = cefrDisplayLabel(cefrFromCoarseLevel(journey.level));
-              return (
-                <Pressable
-                  key={journey.id}
-                  onPress={() => void onSelect(journey.id)}
-                  style={[
-                    styles.card,
-                    isActive ? styles.cardActive : styles.cardInactive,
-                  ]}
-                >
-                  <View style={styles.cardHeader}>
-                    <LanguageFlag
-                      language={journey.language}
-                      variant={journeyFlagVariant(journey)}
-                      size={44}
-                    />
-                    <View style={styles.cardTitleBlock}>
-                      <Text style={styles.cardTitle}>{journey.language}</Text>
-                      <View style={styles.cardSubLine}>
-                        <Feather
-                          name={icon.feather}
-                          size={12}
-                          color="rgba(255,255,255,0.7)"
-                        />
-                        <Text style={styles.cardSubText}>
-                          {journeyNameLabel}
-                          {levelLabel ? ` · ${levelLabel}` : ""}
-                          {(() => {
-                            // Región (Mexico/LATAM/Germany…) para que la fila diga
-                            // de qué variante es, no solo la bandera.
-                            const region = formatVariantLabel(
-                              journeyFlagVariant(journey)
-                            );
-                            return region ? ` · ${region}` : "";
-                          })()}
-                        </Text>
-                      </View>
-                    </View>
-                    {isActive ? (
-                      <View style={styles.activePill}>
-                        <Text style={styles.activePillText}>ACTIVE</Text>
-                      </View>
-                    ) : (
-                      <Feather name="chevron-right" size={18} color="rgba(255,255,255,0.45)" />
-                    )}
-                  </View>
-                  <View style={styles.cardFooterRow}>
-                    <View style={styles.cardStatsRow}>
-                      <View style={styles.cardStat}>
-                        <Feather
-                          name="zap"
-                          size={12}
-                          color={stats.streak > 0 ? tokenColor.streak : "rgba(255,255,255,0.45)"}
-                        />
-                        <Text style={[styles.cardStatText, {
-                          color: stats.streak > 0 ? tokenColor.streak : "rgba(255,255,255,0.45)",
-                        }]}>
-                          {stats.streak}
-                        </Text>
-                      </View>
-                      <View style={styles.cardStat}>
-                        <Feather name="star" size={12} color={tokenColor.xp} />
-                        <Text style={[styles.cardStatText, { color: tokenColor.xp }]}>
-                          {stats.xpTotal >= 1000
-                            ? `${(stats.xpTotal / 1000).toFixed(1)}k`
-                            : stats.xpTotal}
-                        </Text>
-                      </View>
-                      <View style={styles.cardStat}>
-                        <Feather name="trending-up" size={12} color={tokenColor.cyan} />
-                        <Text style={[styles.cardStatText, { color: tokenColor.cyan }]}>
-                          {stats.progress}%
-                        </Text>
-                      </View>
-                    </View>
-                    {/* Trash button; subtle in normal state, lights
-                        up red on press. Tapping fires an Alert
-                        confirm before any state mutation runs. The
-                        button uses hitSlop so the small icon target
-                        is forgiving; we also stopPropagation so the
-                        whole-card "make active" Pressable above
-                        doesn't swallow the tap. */}
-                    <Pressable
-                      onPress={(e) => {
-                        e.stopPropagation();
-                        handleDeletePress(journey);
-                      }}
-                      hitSlop={10}
-                      style={({ pressed }) => [
-                        styles.cardDeleteButton,
-                        pressed ? styles.cardDeleteButtonPressed : null,
-                      ]}
-                      accessibilityLabel={`Remove ${journey.language} ${focusLabel} journey`}
-                    >
-                      <Feather
-                        name="trash-2"
-                        size={14}
-                        color="rgba(255,255,255,0.5)"
-                      />
-                    </Pressable>
-                  </View>
-                </Pressable>
-              );
-            })}
-
-            <Pressable
-              onPress={() => setMode("pick-language")}
-              style={[styles.card, styles.createCard]}
-            >
-              <View style={styles.createIconRing}>
-                <Feather name="plus" size={20} color={tokenColor.xp} />
-              </View>
-              <View style={{ flex: 1 }}>
-                <Text style={styles.createTitle}>Start a new journey</Text>
-                <Text style={styles.createHint}>Pick a language + focus</Text>
-              </View>
-              <Feather name="chevron-right" size={18} color={tokenColor.xp} />
-            </Pressable>
-          </ScrollView>
-        ) : null}
 
         {mode === "pick-language" ? (
           <ScrollView
@@ -703,15 +497,22 @@ export function JourneysPanel({
                     track.id,
                     DEFAULT_NEW_JOURNEY_FOCUS
                   );
-                  const alreadyExists = existingKeys.has(id);
+                  // The journey that already opens this track, if any. The
+                  // id-based check only sees journeys created under the
+                  // current model; `journeyIdByTrack` also covers the older
+                  // ones, which store a region in `variant` instead of the
+                  // track id.
+                  const existingId =
+                    journeyIdByTrack?.[track.id] ?? (existingKeys.has(id) ? id : null);
+                  const alreadyExists = existingId !== null;
                   const selected = pickedTrackId === track.id;
                   return (
                     <Pressable
                       key={track.id}
                       onPress={() => {
-                        if (alreadyExists) {
+                        if (existingId) {
                           // Tap on an existing combo just activates it.
-                          void onSelect(id);
+                          void onSelect(existingId);
                           handleClose();
                           return;
                         }
@@ -779,7 +580,7 @@ export function JourneysPanel({
               ]}
             >
               <Text style={styles.startButtonText}>
-                {submitting ? "Starting…" : "Start journey"}
+                {submitting ? "Adding…" : "Add journey"}
               </Text>
               <Feather name="arrow-right" size={18} color={tokenBg[1]} />
             </Pressable>
@@ -849,120 +650,8 @@ const styles = StyleSheet.create({
     paddingBottom: 32,
     gap: 12,
   },
-  card: {
-    padding: 14,
-    borderRadius: 22,
-    borderWidth: 1.5,
-    gap: 12,
-  },
-  cardActive: {
-    backgroundColor: "rgba(252, 211, 77, 0.08)",
-    borderColor: "rgba(252, 211, 77, 0.45)",
-  },
-  cardInactive: {
-    backgroundColor: "rgba(255,255,255,0.035)",
-    borderColor: "rgba(255,255,255,0.1)",
-  },
-  cardHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-  },
-  cardTitleBlock: {
-    flex: 1,
-    minWidth: 0,
-  },
-  cardTitle: {
-    color: "#ffffff",
-    fontSize: 16,
-    fontWeight: "900",
-    letterSpacing: -0.3,
-  },
-  cardSubLine: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 6,
-    marginTop: 2,
-  },
-  cardSubText: {
-    color: "rgba(255,255,255,0.7)",
-    fontSize: 12,
-    fontWeight: "700",
-  },
-  activePill: {
-    backgroundColor: tokenColor.xp,
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    borderRadius: 999,
-  },
-  activePillText: {
-    color: tokenBg[1],
-    fontSize: 9.5,
-    fontWeight: "900",
-    letterSpacing: 1.4,
-  },
-  cardFooterRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingLeft: 56,
-  },
-  cardStatsRow: {
-    flexDirection: "row",
-    gap: 16,
-    flexShrink: 1,
-  },
-  cardDeleteButton: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(255,255,255,0.04)",
-  },
-  cardDeleteButtonPressed: {
-    backgroundColor: "rgba(220, 38, 38, 0.18)",
-  },
-  cardStat: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 4,
-  },
-  cardStatText: {
-    fontSize: 12,
-    fontWeight: "900",
-    letterSpacing: -0.2,
-  },
   // Lime-bordered "+ Start a new journey" card. Pinned at the bottom
   // of the journey list so the create CTA is always one tap away.
-  createCard: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 14,
-    backgroundColor: "rgba(252, 211, 77, 0.06)",
-    borderColor: "rgba(252, 211, 77, 0.35)",
-    borderStyle: "dashed",
-  },
-  createIconRing: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    backgroundColor: "rgba(252, 211, 77, 0.12)",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  createTitle: {
-    color: tokenColor.xp,
-    fontSize: 15,
-    fontWeight: "900",
-    letterSpacing: -0.2,
-  },
-  createHint: {
-    color: "rgba(255,255,255,0.55)",
-    fontSize: 12,
-    fontWeight: "700",
-    marginTop: 2,
-  },
   // ─── Step 1: pick language ─────────────────────────────────────────
   welcomeBanner: {
     padding: 14,
@@ -1028,11 +717,6 @@ const styles = StyleSheet.create({
     fontSize: 9,
     fontWeight: "900",
     letterSpacing: 0.5,
-  },
-  allTakenText: {
-    color: "rgba(255,255,255,0.5)",
-    fontSize: 11,
-    fontWeight: "800",
   },
   comingSoonPill: {
     flexShrink: 0,

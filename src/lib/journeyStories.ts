@@ -102,6 +102,7 @@ function readerStatusWhere() {
   // preview them via this list instead of publishing them.
   const PREVIEW_JOURNEY_IDS = [
       "cmtgelq560007j84n3ujx9bpd", // Traveler ES A2 latam (en obra, 2026-08)
+      "cmt5x67ze000l320cpgunu5vi", // Traveler ES B1 spain (en obra, 2026-08)
       "cmsyrge55000732u9oiu8wue3", // Traveler PT-BR A1 (en obra, 2026-08)
       "cmt0a8vb1000m32p1x7r5ba28", // Traveler DE A0 germany (en obra, 2026-08)
       "cmrdqk484000032r4rt2vw4ej", // Friends ES C1 LATAM (in progress)

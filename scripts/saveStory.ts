@@ -16,6 +16,16 @@
  *   npx tsx scripts/saveStory.ts <data.json> --journey <id> \
  *       [--lang ES] [--level c1] [--variant LATAM] [--publish] [--dry]
  *
+ * Modos que NO escriben contenido nuevo y por eso sustituyen el juicio
+ * editorial sobre el resto de la historia por una comprobación mecánica de
+ * que nada más cambia (ver cada bloque para el porqué):
+ *   --typography-only   migración de comillas
+ *   --title-only        acortar un título que se corta en la tarjeta
+ *
+ * ORDEN DE TEMAS (2026-09-05): antes de escribir nada comprueba que el tema
+ * ANTERIOR del journey tenga cierre vigente en scripts/tema-cierres.json
+ * (scripts/cierraTema.ts). Sin variable de escape.
+ *
  * data.json: array of story objects { topic, slotIndex, title, slug?,
  *   synopsis, text, vocab[], arcType }. Rows are matched by
  *   (journeyId, topic, slotIndex) and updated.
@@ -35,10 +45,12 @@ try {
 } catch { /* noop */ }
 
 import * as fs from "fs";
+import { variantPool } from "@domain/languageVariant";
 import { PrismaClient } from "../src/generated/prisma";
 import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
 import { validateJourneyStories, type JourneyStoryInput, type JourneyCheck } from "@/lib/validateJourneyStories";
+import { candadoCierrePrevio, type HistoriaCierre } from "./temaCierres";
 
 /** Build the cross-story summary the canonical validator needs to run its
  *  repetition / rotation / opening-rhythm / motif checks against siblings. */
@@ -129,6 +141,13 @@ function slugify(s: string): string {
   // defs, no-digits, arc, CEFR, distribution, cross-story dedup all still gate.
   const narrator = flag("narrator");
   const typographyOnly = flag("typography-only");
+  // MODO SOLO-TÍTULO (2026-09-04). Mismo problema y misma cura que
+  // --typography-only, un escalón más arriba: el título SÍ es contenido
+  // editorial, así que aquí no basta con una verificación mecánica y el
+  // título nuevo pasa por el validador CANÓNICO. Lo que se levanta es la
+  // exigencia de que el RESTO de la historia cumpla el estándar de hoy, que
+  // es deuda anterior y ajena al cambio. Ver el bloque `titleOnly`.
+  const titleOnly = flag("title-only");
   // TRINQUETE (2026-08-26). El gate de conjunto es absoluto: exige que las 21
   // historias cumplan el estandar de HOY. Un journey escrito antes de una
   // regla queda congelado para siempre, sin poder recibir ni la correccion de
@@ -338,6 +357,99 @@ function slugify(s: string): string {
     return;
   }
 
+  // ── MODO SOLO-TÍTULO ─────────────────────────────────────────
+  //
+  // Cambia el `title` y NADA más. Nace del tope de 26 caracteres
+  // (`TITLE_MAX_CHARS`, 2026-09-04): 110 títulos ya guardados lo superan y
+  // salen cortados con puntos suspensivos en la tarjeta del path, pero por la
+  // vía normal no se pueden arreglar. El gate canónico exige que la historia
+  // ENTERA cumpla el estándar de hoy, y estas se escribieron con el anterior:
+  // de 42 candidatas, 34 fallaban por vocabulario ya enseñado, cuerpo largo o
+  // rotación de arco. Deuda propia, ajena al título.
+  //
+  // ESTO NO RELAJA EL GATE DONDE OCURRE EL CAMBIO. El título nuevo pasa por
+  // `validateGeneratedStory`, el mismo validador de siempre, y se exigen sus
+  // checks `title-*` en verde (largo, patrones prohibidos, lo que se añada
+  // mañana). Lo que se levanta es el juicio sobre el resto del cuerpo, que
+  // aquí no se toca ni un carácter: se comprueba campo a campo contra la base
+  // y a la primera diferencia no se escribe nada.
+  //
+  // AUDIO: rechaza toda historia narrada. El título se lee en la narración
+  // (`buildAlignmentText` lo antepone al cuerpo), así que cambiarlo dejaría a
+  // la voz diciendo el título viejo. Esas se arreglan al re-narrar, no aquí.
+  if (titleOnly) {
+    if (!journeyId) { console.error("FAIL: --title-only requiere --journey <id>."); process.exit(2); }
+    const prisma = new PrismaClient();
+    try {
+      const plan: { id: string; slug: string; antes: string; ahora: string }[] = [];
+      const problemas: string[] = [];
+      for (const d of stories) {
+        const slot = await prisma.journeyStory.findFirst({
+          where: { journeyId, topic: d.topic, slotIndex: d.slotIndex },
+          select: { id: true, slug: true, title: true, text: true, synopsis: true, vocab: true,
+                    arcType: true, audioUrl: true, audioWordTimings: true },
+        });
+        if (!slot) { problemas.push(`sin slot para ${d.topic}#${d.slotIndex}`); continue; }
+        const nombre = slot.slug ?? slot.id;
+
+        if (slot.audioUrl || slot.audioWordTimings) {
+          problemas.push(`${nombre}: ya está narrada; el título se oye en el audio`);
+          continue;
+        }
+        // Todo lo que no sea el título tiene que llegar idéntico.
+        const igual = (a: unknown, b: unknown) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+        for (const campo of ["text", "synopsis", "vocab", "arcType"] as const) {
+          if (d[campo] !== undefined && !igual(d[campo], slot[campo])) {
+            problemas.push(`${nombre}: .${campo} no coincide con la base; --title-only solo cambia el título`);
+          }
+        }
+        if (d.slug !== undefined && d.slug !== slot.slug) {
+          problemas.push(`${nombre}: el slug cambiaría (${slot.slug} -> ${d.slug}); las URLs guardadas dejarían de resolver`);
+        }
+        if (typeof d.title !== "string" || !d.title.trim()) { problemas.push(`${nombre}: falta el título nuevo`); continue; }
+        if (d.title === slot.title) continue; // nada que hacer
+
+        // El título nuevo pasa por el validador canónico; se exigen sus checks de título.
+        const r = await validateGeneratedStory(
+          { ...d, title: d.title, slug: slot.slug ?? undefined },
+          { language: ctx.language, level: ctx.level, variant: ctx.variant } as never
+        );
+        const malos = r.checks.filter((c) => c.id.startsWith("title-") && c.status === "fail");
+        if (malos.length) {
+          for (const c of malos) problemas.push(`${nombre}: [${c.id}] ${c.detail ?? c.label}`);
+          continue;
+        }
+        plan.push({ id: slot.id, slug: nombre, antes: slot.title ?? "", ahora: d.title });
+      }
+
+      // Un título repetido dentro del journey confunde igual que uno cortado.
+      const hermanas = await prisma.journeyStory.findMany({
+        where: { journeyId, id: { notIn: plan.map((p) => p.id) } }, select: { title: true },
+      });
+      const ocupados = new Set(hermanas.map((h) => (h.title ?? "").trim().toLowerCase()).filter(Boolean));
+      for (const p of plan) {
+        if (ocupados.has(p.ahora.trim().toLowerCase())) problemas.push(`${p.slug}: "${p.ahora}" ya es el título de otra historia del journey`);
+      }
+
+      if (problemas.length) {
+        console.error(`✗ [title-only] ${problemas.length} problema(s). NOTHING WRITTEN.`);
+        for (const p of problemas) console.error(`   FAIL ${p}`);
+        process.exit(1);
+      }
+      console.log(`[title-only] ${plan.length}/${stories.length} títulos que cambiar.`);
+      for (const p of plan) console.log(`  · ${p.slug}: "${p.antes}" (${p.antes.length}) -> "${p.ahora}" (${p.ahora.length})`);
+      if (dry) { console.log("--dry: no DB write."); return; }
+      for (const p of plan) {
+        await prisma.journeyStory.update({ where: { id: p.id }, data: { title: p.ahora } });
+        console.log(`  ✓ ${p.slug}`);
+      }
+      console.log(`[title-only] ${plan.length} títulos actualizados.`);
+    } finally {
+      await prisma.$disconnect();
+    }
+    return;
+  }
+
   // ── GATE: canonical validator, in-process, zero tolerance ──
   // Each story is validated against its already-validated SIBLINGS in this
   // batch (vocab-repetition, arcType-rotation, opening-rhythm, motif and
@@ -354,14 +466,14 @@ function slugify(s: string): string {
     if (!journeyId) return { taughtElsewhere: [] as string[], taughtSameType: [] as string[] };
     const p2 = new PrismaClient();
     try {
-      const mio = await p2.journey.findUnique({ where: { id: journeyId }, select: { language: true, typeSlug: true } });
+      const mio = await p2.journey.findUnique({ where: { id: journeyId }, select: { language: true, typeSlug: true, variant: true } });
       if (!mio) return { taughtElsewhere: [] as string[], taughtSameType: [] as string[] };
       const otras = await p2.journeyStory.findMany({
         where: {
           journey: { language: mio.language, status: { not: "archived" } },
           journeyId: { not: journeyId },
         },
-        select: { vocab: true, journey: { select: { typeSlug: true, levels: true } } },
+        select: { vocab: true, journey: { select: { typeSlug: true, levels: true, variant: true } } },
       });
       const out = new Set<string>();
       const duro = new Set<string>();
@@ -389,9 +501,25 @@ function slugify(s: string): string {
       // piezas de la escena siguen a cero, y las historias del PROPIO journey
       // (mas abajo) tambien, portables incluidas: ahi repetir una palabra es
       // cobrarle dos veces al mismo lector.
+      // LOS DOS CUBOS SE COMPARAN DENTRO DEL POOL DE VARIANTE. La regla de
+      // cero solape es del 2026-08-18 y su premisa es "el lector ya la tiene en
+      // su repaso". El 2026-08-20 la pestaña de journeys pasó a servir SOLO la
+      // variante del alumno, y en ese emparejamiento España va sola. Desde
+      // entonces la premisa es falsa para otra variante: a un alumno de España
+      // se le estaban quitando las palabras del Traveler LATAM, que no puede
+      // abrir. Mismo tipo y mismo pool: cero. Mismo pool y otro tipo: el tope
+      // de dos por historia. Otro pool: no cuenta. Si no se sabe el pool,
+      // cuenta como el mismo, que es el lado seguro.
+      const miPool = variantPool(mio.variant);
+      const mismoPool = (v?: string | null) => {
+        const suyo = variantPool(v);
+        if (!miPool || !suyo) return true;
+        return miPool === suyo;
+      };
       const PORTABLES = new Set(["verb", "adjective", "adverb", "expression"]);
       const miNivel = (ctx.level ?? "").toLowerCase();
       for (const r of otras) {
+        if (!mismoPool(r.journey?.variant)) continue;
         const mismoTipo = !!mio.typeSlug && r.journey?.typeSlug === mio.typeSlug;
         const mismoNivel = (r.journey?.levels ?? []).some(
           (l) => String(l).toLowerCase() === miNivel
@@ -575,6 +703,46 @@ function slugify(s: string): string {
   }
   console.log(`\n✓ All ${results.length} stories pass the canonical validator (${ctx.language} ${ctx.level} ${ctx.variant}).`);
 
+  // ── CANDADO DE CIERRE DE TEMA (2026-09-05) ─────────────────────
+  //
+  // No se guardan historias de un tema mientras el ANTERIOR del journey no
+  // tenga un cierre registrado y vigente en scripts/tema-cierres.json. Vigente
+  // quiere decir que el hash del cierre cuadra con lo que hay hoy en la base:
+  // si el texto del tema cerrado cambio despues, el cierre caduca solo.
+  //
+  // Mismo patron que la muestra de narracion: sin variable de escape, y el
+  // error escupe el comando que falta. POR QUE: "listo" era una frase del chat
+  // y no un registro, asi que un tema pasaba por cerrado sin que nadie hubiera
+  // corrido las comprobaciones. Corre tambien en --dry: validar el tema
+  // siguiente antes de cerrar el anterior es justo el orden que esto impide.
+  if (journeyId) {
+    const p4 = new PrismaClient();
+    try {
+      const j4 = await p4.journey.findUnique({ where: { id: journeyId }, select: { topics: true } });
+      const filas4 = await p4.journeyStory.findMany({
+        where: { journeyId },
+        select: { topic: true, slotIndex: true, title: true, text: true, vocab: true },
+      });
+      const porTema = new Map<string, HistoriaCierre[]>();
+      for (const f of filas4) porTema.set(f.topic, [...(porTema.get(f.topic) ?? []), f as HistoriaCierre]);
+      const bloqueo = candadoCierrePrevio({
+        journeyId,
+        topicsOrden: j4?.topics ?? [],
+        temasEnTanda: [...new Set(stories.map((s: any) => String(s.topic)))],
+        historiasPorTema: porTema,
+      });
+      if (bloqueo) {
+        console.error(`\n✗ CANDADO DE CIERRE DE TEMA. NOTHING WRITTEN.\n`);
+        console.error(`  ${bloqueo}`);
+        console.error(
+          `\n  Un tema se cierra antes de empezar el siguiente, y el cierre lo escribe un\n` +
+          `  script que corrio las comprobaciones, no una frase. No hay variable de escape.`
+        );
+        process.exit(1);
+      }
+    } finally { await p4.$disconnect(); }
+  }
+
   // ── GATE DE JOURNEY: lo que solo se ve mirando las 21 juntas ────
   //
   // POR QUÉ (2026-08-23). El validador canónico juzga una historia suelta, y
@@ -635,13 +803,29 @@ function slugify(s: string): string {
         .map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase());
     } finally { await p3.$disconnect(); }
 
-    if (todas.length < 7) {
-      console.log(`\n[gate de journey] SALTADO: solo ${todas.length} historias con texto (hacen falta 7 para medir un conjunto).`);
-    } else {
-      const jc = validateJourneyStories(todas, { language: ctx.language, level: ctx.level, realPeople });
-      const malos = jc.filter((c) => c.status !== "pass");
-      console.log(`\n── gate de journey (${todas.length} historias) ──`);
-      for (const c of jc) console.log(`   ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : "SIN IMPLEMENTAR"} [${c.id}] ${c.detail ?? ""}`);
+    // EL GATE YA NO SE SALTA CON EL JOURNEY A MEDIAS (2026-09-05).
+    //
+    // Antes, por debajo de siete historias no se medía NADA, así que las tres
+    // primeras de un journey no pasaban por ninguna regla de conjunto y el
+    // defecto aparecía cuando ya había 21 escritas. Ahora los checks
+    // prefix-safe (los que no se arreglan añadiendo historias) corren con las
+    // que haya, y los de conjunto devuelven `pending-set`: quedan LISTADOS,
+    // que es lo contrario de saltárselos en silencio. Con siete o más, el
+    // conjunto se juzga entero, exactamente como hasta hoy.
+    {
+      const completo = todas.length >= 7;
+      const jc = validateJourneyStories(todas, {
+        language: ctx.language, level: ctx.level, realPeople, conjuntoCompleto: completo,
+      });
+      const malos = jc.filter((c) => c.status === "fail" || c.status === "not-implemented");
+      const enEspera = jc.filter((c) => c.status === "pending-set");
+      console.log(`\n── gate de journey (${todas.length} historias${completo ? "" : ", conjunto incompleto"}) ──`);
+      for (const c of jc) console.log(`   ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : c.status === "pending-set" ? "en espera" : "SIN IMPLEMENTAR"} [${c.id}] ${c.detail ?? ""}`);
+      if (enEspera.length) {
+        console.log(`\n   ${enEspera.length} regla(s) de conjunto en espera de que el journey este completo:`);
+        for (const c of enEspera) console.log(`     [${c.id}]`);
+        console.log(`   No estan aprobadas; estan sin juzgar. Se cierran con el journey delante.`);
+      }
       if (malos.length && !noRegression) {
         console.error(`\n✗ GATE DE JOURNEY: ${malos.length} regla(s) de conjunto sin cumplir. NOTHING WRITTEN.`);
         console.error(`   Si el journey ya arrastraba estos fallos de antes de la regla, --no-regression`);

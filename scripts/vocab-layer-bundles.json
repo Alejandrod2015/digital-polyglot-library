@@ -1,0 +1,6 @@
+{
+  "_porque": "La regla (docs/story-quality-spec.md §4) nacio el 2026-09-05 y ninguna historia anterior la cumple: 2995 plazas del catalogo se quedaron sin capa. Un lint global bloquearia cada push por deuda vieja, asi que la barrera va por bundle. Un bundle entra aqui cuando TODAS sus plazas tienen su capa; a partir de ahi el lint lo defiende. Los que faltan salen contados al final del lint, que es el pendiente.",
+  "bundles": [
+    "spanish-traveler-spain-b1"
+  ]
+}

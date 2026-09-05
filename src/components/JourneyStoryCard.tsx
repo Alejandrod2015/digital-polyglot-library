@@ -98,7 +98,7 @@ export default function JourneyStoryCard({ story, color, waveOffset }: Props) {
             título; inline `color: #ffffff` lo evita y mantiene
             paridad con dark. */}
         <span
-          className="flex-1 min-w-0 text-[18px] font-black leading-tight tracking-[-0.015em] line-clamp-2"
+          className="flex-1 min-w-0 text-[18px] font-black leading-tight tracking-[-0.015em] line-clamp-3"
           style={{
             textWrap: "balance",
             color: active ? "#ffffff" : "var(--foreground)",

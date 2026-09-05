@@ -20,6 +20,11 @@ export const clerkAppearance = {
     socialButtonsBlockButton:
       "bg-[#133153] border border-white/10 !text-white hover:bg-[#183c66] transition [&_*]:!text-white",
     socialButtonsBlockButtonText: "!text-white",
+    // La manzana de Apple llega negra desde Clerk y sobre el boton oscuro casi
+    // no se ve. `brightness-0` la aplana a negro puro y `invert` la vuelve
+    // blanca, sin tocar la transparencia de alrededor. Google y Facebook se
+    // quedan como estan: sus logos son de color a proposito.
+    socialButtonsProviderIcon__apple: "brightness-0 invert",
     formButtonPrimary:
       "bg-[#2563eb] hover:bg-[#1d4ed8] text-white shadow-md transition",
     formFieldLabel: "text-[#c6d3e5]",

@@ -12,7 +12,6 @@
       "scripts/_buildFriendsSets.py",
       "scripts/_buildSets.py",
       "scripts/_dePracticeAudit.ts",
-      "scripts/_journeysTable3.ts",
       "scripts/_pickBestNarratives.py",
       "scripts/_quotedSpeechAudit.ts",
       "scripts/_sttStoryCheck.ts",

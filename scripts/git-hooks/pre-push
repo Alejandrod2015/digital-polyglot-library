@@ -1,0 +1,385 @@
+#!/bin/sh
+#
+# DPL push barrier: block silent pushes by AI assistants.
+#
+# Reads memory rule: "Push budget hard limit. Default = HOLD. Solo
+# pushear con verbo imperativo. Una autorización = un push."
+#
+# This hook enforces that rule mechanically: every `git push` is
+# blocked unless the environment variable DPL_PUSH_AUTHORIZED=1 is
+# set explicitly for that invocation. The flag is NOT exported into
+# the shell session, it must be prefixed per command:
+#
+#     DPL_PUSH_AUTHORIZED=1 git push origin HEAD:main
+#
+# This makes every bypass visible to the user (they see the flag in
+# the command), so an AI assistant can't push silently. Each bypass
+# is logged to .git/push-audit.log.
+#
+# ESTE es el hook de verdad y vive VERSIONADO en scripts/git-hooks/pre-push.
+# Antes vivia solo en .git/hooks/pre-push, que no viaja en el repo: un clon
+# nuevo se quedaba sin ningun candado y nadie se enteraba. Se activa con
+#
+#     git config core.hooksPath scripts/git-hooks
+#
+# y .git/hooks/pre-push queda como shim que ejecuta este, por si algun entorno
+# ignora hooksPath. Ver docs/spec-gates-fail-closed.md.
+
+if [ "$DPL_PUSH_AUTHORIZED" != "1" ]; then
+  cat >&2 <<'EOM'
+
+══════════════════════════════════════════════════════════════════════
+  PUSH BLOCKED: explicit authorization required
+
+  This repo requires the user's explicit verb ("manda", "ship",
+  "lanza", "push", "deploya") for each push. To prevent AI
+  assistants from pushing without that verb, the pre-push hook
+  blocks every push unless DPL_PUSH_AUTHORIZED=1 is set.
+
+  To authorize THIS push, prefix the command:
+
+      DPL_PUSH_AUTHORIZED=1 git push origin HEAD:main
+
+  Or use the npm helper:
+
+      npm run push -- HEAD:main
+
+  Audit log: .git/push-audit.log
+══════════════════════════════════════════════════════════════════════
+
+EOM
+  exit 1
+fi
+
+# -- Batch gate -------------------------------------------------------
+# Don't ship a PARTIAL deploy while clear deployable work sits
+# uncommitted. Each push to main costs a paid Vercel build, so leaving a
+# ready backend fix behind (e.g. an edited API route) means a second
+# avoidable build. Vercel builds the web app: src/, prisma/, and root
+# config. apps/mobile/** does NOT deploy (local build) and scripts/_*
+# are scratch, so both are excluded. Override (visible, per-command):
+#
+#     DPL_PUSH_AUTHORIZED=1 DPL_PUSH_PARTIAL_OK=1 git push origin HEAD:main
+#
+# Only applies to pushes that target refs/heads/main (the deploy branch).
+REFS_STDIN=$(cat)
+TARGETS_MAIN=$(printf '%s\n' "$REFS_STDIN" | awk '$3 == "refs/heads/main" {print "1"}' | head -1)
+
+if [ "$TARGETS_MAIN" = "1" ] && [ "$DPL_PUSH_PARTIAL_OK" != "1" ]; then
+  PENDING=$( { git diff --name-only; git diff --cached --name-only; \
+    git ls-files --others --exclude-standard; } 2>/dev/null \
+    | sort -u \
+    | grep -E '^(src/|prisma/|middleware\.|next\.config|next-sitemap|package\.json|package-lock\.json|vercel\.json|tsconfig)' \
+    | grep -vE '^scripts/_' )
+
+  if [ -n "$PENDING" ]; then
+    cat >&2 <<EOM
+
+══════════════════════════════════════════════════════════════════════
+  PUSH HELD: deployable changes left uncommitted
+
+  You authorized this push, but these files DEPLOY to production and are
+  NOT in the commits being pushed. Shipping now means a second paid
+  Vercel build to land them. Batch them in, or consciously leave them:
+
+$(printf '%s\n' "$PENDING" | sed 's/^/      • /')
+
+  To INCLUDE them: commit them, then push again.
+  To leave them OUT on purpose, add the visible override:
+
+      DPL_PUSH_AUTHORIZED=1 DPL_PUSH_PARTIAL_OK=1 git push origin HEAD:main
+
+  Audit log: .git/push-audit.log
+══════════════════════════════════════════════════════════════════════
+
+EOM
+    exit 1
+  fi
+fi
+
+# -- Manifiesto de candados -------------------------------------------
+# Un lint por linea: script | que necesita para correr (db, memoria o nada).
+# Antes cada lint iba envuelto en `if [ -f scripts/X.ts ]`, asi que un
+# candado que no estuviera en el arbol se saltaba EN SILENCIO: es lo que
+# llevaba pasando con checkGlossMoods, que vivia en una rama sin integrar y
+# todo push desde main pasaba sin el. Ahora la ausencia BLOQUEA, y quitar un
+# candado exige editar esta lista, que se ve en el diff.
+LINTS="
+checkNoEmDash        -
+checkNoEmojis        -
+checkVoicesPublished db
+checkKaraokeFresh    db
+checkGlossContext    db
+checkGlossesReviewed db
+checkHardRules       memoria
+checkRulesInventory  -
+checkGlossMoods      db
+checkGlossVariants   db
+"
+
+# -- Trinquete de enrolamiento ----------------------------------------
+# Escribir un candado y no engancharlo es la otra forma de fallar en abierto:
+# el lint existe, nadie lo corre, y nadie se entera. Asi nacio el agujero de
+# checkGlossMoods. Todo `lint:*` de package.json tiene que estar en el
+# manifiesto de arriba, o en esta lista de exclusiones con su motivo escrito:
+#
+#   lint:no-emdash:db   barre TODA columna de texto de la base de datos. Corre
+#                       a demanda (npm run lint:no-emdash:db), no en cada push.
+LINTS_EXCLUIDOS="
+lint:no-emdash:db
+"
+
+if ! SUELTOS=$(node -e '
+const p = require("./package.json");
+const manifiesto = process.argv[1].split(/\s+/).filter(Boolean);
+const excluidos = process.argv[2].split(/\s+/).filter(Boolean);
+const out = [];
+for (const [k, v] of Object.entries(p.scripts || {})) {
+  if (!/^lint:/.test(k)) continue;
+  if (excluidos.includes(k)) continue;
+  const m = String(v).match(/scripts\/([A-Za-z0-9_.-]+)\.ts/);
+  if (m && manifiesto.includes(m[1])) continue;
+  out.push("      " + k + "   " + v);
+}
+console.log(out.join("\n"));
+' "$(printf '%s\n' "$LINTS" | awk 'NF {print $1}')" "$LINTS_EXCLUIDOS"); then
+  echo "" >&2
+  echo "  PUSH BLOCKED: no puedo leer los lint:* de package.json." >&2
+  echo "  El trinquete de enrolamiento no puede comprobarse, asi que no pasa." >&2
+  echo "" >&2
+  exit 1
+fi
+
+if [ -n "$SUELTOS" ]; then
+  cat >&2 <<EOM
+
+======================================================================
+  PUSH BLOCKED: un lint que no corre nadie
+
+  Estos scripts lint:* de package.json no estan en el manifiesto LINTS de
+  scripts/git-hooks/pre-push ni en la lista de exclusiones:
+
+$SUELTOS
+
+  Enganchalo al manifiesto (con lo que necesita: db, memoria o nada), o
+  metelo en LINTS_EXCLUIDOS escribiendo POR QUE no corre en cada push.
+  Un candado que existe y no corre es peor que no tenerlo: parece red.
+======================================================================
+
+EOM
+  exit 1
+fi
+
+# Mensaje de remedio de cada candado: que se rompio y como se arregla.
+remedio() {
+  case "$1" in
+    checkNoEmDash)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: guiones largos en el arbol
+
+  La lista de arriba dice archivo:linea y que caracter es. Arreglalo y
+  vuelve a intentar. Comprueba con:  npm run lint:no-emdash
+======================================================================
+
+EOM
+      ;;
+    checkNoEmojis)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: emoji nuevo en la UI
+
+  Arriba salen los archivos que llevan mas que su linea base. Escribe
+  el icono SVG que toque, o reusa uno que ya exista.
+
+  Comprueba con:  npm run lint:no-emojis
+======================================================================
+
+EOM
+      ;;
+    checkVoicesPublished)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: una voz suena en produccion y no esta aprobada
+
+  Arriba sale el id y donde suena. O el usuario la aprueba por escrito
+  ("apruebo la voz"), o esa historia no deberia estar publicada.
+
+  Comprueba con:  npm run lint:voices-published
+======================================================================
+
+EOM
+      ;;
+    checkKaraokeFresh)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: el karaoke va por detras del texto
+
+  Realinea (usa el audio que ya existe, sin creditos):
+    npx tsx scripts/_realinea.ts
+======================================================================
+
+EOM
+      ;;
+    checkGlossContext)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: hay palabras tocables sin su frase
+
+  Escribe el contexto en la fila de SU historia, no en la global.
+  Comprueba con:  npm run lint:gloss-context
+======================================================================
+
+EOM
+      ;;
+    checkGlossesReviewed)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: glosas copiadas sin leer
+
+  Leelas contra la frase donde caen:
+    npx tsx scripts/reviewCopiedGlosses.ts <bundle> --pend
+======================================================================
+
+EOM
+      ;;
+    checkHardRules)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: una regla dura sin quien la haga cumplir
+
+  Arriba salen las memorias. En cada una, o citas el check / guard /
+  script que la aplica, o escribes que no tiene gate. Las dos son
+  respuestas validas; callarse no.
+
+  Comprueba con:  npm run lint:hard-rules
+======================================================================
+
+EOM
+      ;;
+    checkRulesInventory)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: el inventario de reglas no cuadra
+
+  O una fila cita un gate que no existe, o hay un check implementado sin
+  fila, o ha subido el numero de reglas sin gate. Regenera el inventario
+  desde sus fuentes y vuelve a mirar:
+
+    npx tsx scripts/buildRulesInventory.ts
+    npm run lint:rules-inventory
+======================================================================
+
+EOM
+      ;;
+    checkGlossMoods)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: formas no indicativas sin capa gramatical
+
+  Arriba sale paquete, historia y palabra. Se arregla con:
+    npx tsx scripts/buildGlossMoods.ts --all
+  Comprueba con:  npm run lint:gloss-moods
+======================================================================
+
+EOM
+      ;;
+    checkGlossVariants)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: formas que no son de su variante
+
+  Arriba sale bundle, historia y palabra. Comprueba con:
+  npm run lint:gloss-variants
+======================================================================
+
+EOM
+      ;;
+    *)
+      echo "" >&2
+      echo "  PUSH BLOCKED: $1 fallo." >&2
+      echo "" >&2
+      ;;
+  esac
+}
+
+# Que hace cada candado y por que existe:
+#
+#   checkNoEmDash        Ni em dash (U+2014) ni en dash (U+2013) en src/,
+#                        content/, apps/mobile/, scripts/, docs/ ni public/.
+#                        El hook PreToolUse los para al escribir, pero solo
+#                        cuando escribe Claude: esto cubre el resto.
+#   checkNoEmojis        Trinquete: la deuda vieja vive en
+#                        scripts/no-emojis-baseline.json y no bloquea, lo que
+#                        bloquea es SUMAR un emoji a la UI.
+#   checkVoicesPublished Toda voz que narra una historia publicada tiene que
+#                        estar en src/lib/approvedVoices.ts.
+#   checkKaraokeFresh    El karaoke pinta desde una COPIA del texto guardada
+#                        al alinear; editar el texto despues deja la pantalla
+#                        con la forma vieja y nada avisa.
+#   checkGlossContext    Palabra tocable sin la frase donde cae: la tarjeta
+#                        repite la definicion dos veces.
+#   checkGlossesReviewed Una glosa copiada trae el sentido del journey de
+#                        ORIGEN; no sale de aqui sin que alguien la lea.
+#   checkHardRules       Una memoria que se declara dura tiene que nombrar
+#                        quien la hace cumplir, o admitir que no hay nadie.
+#   checkRulesInventory  El inventario maestro de reglas duras: ningun gate
+#                        fantasma, ningun check sin fila, y el numero de reglas
+#                        sin gate solo puede bajar.
+#   checkGlossMoods      Formas no indicativas servidas como entrada de
+#                        diccionario, sin su capa gramatical.
+#   checkGlossVariants   Formas que no son de la variante de su journey
+#                        (`vosotros nadais` en un journey de Bogota).
+#
+# Reglas del bucle:
+#   1. El script no existe   -> push BLOQUEADO (ausencia no es permiso).
+#   2. El script falla       -> push bloqueado, con su mensaje de remedio.
+#   3. El script no PUEDE correr (sin base de datos, sin memoria) -> eso es
+#      un fallo del candado, no un salto: se trata como el caso 2.
+for ENTRADA in $(printf '%s\n' "$LINTS" | awk 'NF {print $1 ":" $2}'); do
+  LINT=${ENTRADA%%:*}
+  NECESITA=${ENTRADA##*:}
+
+  if [ ! -f "scripts/$LINT.ts" ]; then
+    cat >&2 <<EOM
+
+======================================================================
+  PUSH BLOCKED: el candado $LINT no esta en este arbol
+
+  scripts/$LINT.ts no existe: esta en una rama sin integrar, o se borro.
+  Integralo, o quitalo del manifiesto LINTS de scripts/git-hooks/pre-push
+  en un commit visible. No hay variable de escape a proposito: saltarse un
+  candado tiene que verse en un diff.
+
+  (necesita: $NECESITA)
+======================================================================
+
+EOM
+    exit 1
+  fi
+
+  if ! npx --no-install tsx "scripts/$LINT.ts"; then
+    remedio "$LINT"
+    exit 1
+  fi
+done
+
+# Audit log: timestamp | user | commit | branch | partial?
+TS=$(date '+%Y-%m-%d %H:%M:%S')
+USR=$(git config user.name 2>/dev/null || echo "?")
+SHA=$(git rev-parse HEAD 2>/dev/null || echo "?")
+BR=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "?")
+PARTIAL=$([ "$DPL_PUSH_PARTIAL_OK" = "1" ] && echo "PARTIAL-OVERRIDE" || echo "full")
+echo "$TS | $USR | $SHA | $BR | $PARTIAL" >> .git/push-audit.log
+
+exit 0

@@ -16,6 +16,9 @@
 
 # next.js
 /.next/
+# Carpeta de compilacion por sesion (NEXT_DIST_DIR en next.config.ts): varios
+# `next dev` sobre este repo se pisaban los trozos de vendor dentro de /.next.
+/.next-*/
 /out/
 
 # production

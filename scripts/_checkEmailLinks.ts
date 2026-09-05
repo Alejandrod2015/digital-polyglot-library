@@ -38,6 +38,7 @@ const CASES: Array<{ kind: BetaEmailKind; data: BetaEmailData }> = [
   { kind: "declined", data: common },
   { kind: "install_nudge", data: common },
   { kind: "feedback_ask", data: common },
+  { kind: "stuck_ask", data: common },
   { kind: "mid_survey", data: common },
   { kind: "final_survey", data: common },
   { kind: "review_ask", data: common },
@@ -69,6 +70,7 @@ const CASES: Array<{ kind: BetaEmailKind; data: BetaEmailData }> = [
   // Sin `feedbackUrl` ni `ctaUrl`: asi se ven los valores por defecto, que es
   // justo donde se escondian los 404.
   { kind: "feedback_ask", data: { ...common, feedbackUrl: undefined } },
+  { kind: "stuck_ask", data: { ...common, feedbackUrl: undefined } },
   { kind: "mid_survey", data: { ...common, feedbackUrl: undefined } },
   { kind: "final_survey", data: { ...common, feedbackUrl: undefined } },
   { kind: "review_recover", data: { ...common, feedbackUrl: undefined } },

@@ -21,6 +21,18 @@ function isHiddenPath(pathname: string): boolean {
   return false;
 }
 
+// Tab label -> onboarding tour target (the `target` field of
+// PRODUCT_TOUR_MESSAGES). One map feeds both the `data-tour-target`
+// attribute and the highlight, so a new step can't light up the wrong tab.
+// "progress" has no tab on the web bar, so that step highlights nothing here.
+const TOUR_TARGET_BY_LABEL: Record<string, string | undefined> = {
+  Home: "home",
+  Explore: "explore",
+  Practice: "practice",
+  Favorites: "favorites",
+  Menu: "menu",
+};
+
 export default function MobileTabBar() {
   const pathname = usePathname() || "/";
   const { user } = useUser();
@@ -84,7 +96,14 @@ export default function MobileTabBar() {
   void plan;
 
   return (
-    <nav className="md:hidden fixed bottom-0 inset-x-0 z-40 border-t border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur">
+    // Durante el tour, la barra sube por encima del scrim (z-79) para que la
+    // pestana resaltada se vea; si no, el propio velo la apaga y el paso senala
+    // algo que el usuario no distingue.
+    <nav
+      className={`md:hidden fixed bottom-0 inset-x-0 border-t border-[var(--nav-border)] bg-[var(--nav-bg)] backdrop-blur ${
+        onboardingTourTarget ? "z-[81]" : "z-40"
+      }`}
+    >
       <ul className="grid grid-cols-5">
         {tabs.map((tab) => {
           const active =
@@ -97,22 +116,11 @@ export default function MobileTabBar() {
             <li key={tab.href}>
               <Link
                 href={tab.href}
-                data-tour-target={
-                  tab.label === "Home"
-                    ? "home"
-                    : tab.label === "Explore"
-                      ? "explore"
-                      : tab.label === "Practice" || tab.label === "Favorites"
-                        ? "practice-favorites"
-                        : undefined
-                }
+                data-tour-target={TOUR_TARGET_BY_LABEL[tab.label]}
                 className={`flex flex-col items-center justify-center py-4 text-[12.5px] transition-colors ${
                   active ? "text-[var(--nav-text)]" : "text-[var(--nav-text-muted)] hover:text-[var(--nav-text)]"
                 } ${
-                  (tab.label === "Home" && onboardingTourTarget === "home") ||
-                  (tab.label === "Explore" && onboardingTourTarget === "explore") ||
-                  ((tab.label === "Practice" || tab.label === "Favorites") &&
-                    onboardingTourTarget === "practice-favorites")
+                  onboardingTourTarget && TOUR_TARGET_BY_LABEL[tab.label] === onboardingTourTarget
                     ? "rounded-xl border border-[var(--primary)]/45 bg-[var(--primary)]/12 shadow-[0_0_0_1px_rgba(163,230,53,0.15)]"
                     : ""
                 }`}

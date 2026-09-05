@@ -3,7 +3,13 @@ import { withSentryConfig } from "@sentry/nextjs";
 
 const WP_ORIGIN = process.env.WP_ORIGIN_HOST ?? "https://wp.digitalpolyglot.com";
 
+// CARPETA DE COMPILACION POR SESION. Varios `next dev` sobre este mismo repo
+// escriben todos en `.next` y se pisan los trozos de vendor entre ellos: el
+// sintoma es "Cannot find module './vendor-chunks/@clerk.js'" y un 500 en
+// cualquier pagina, con la compilacion recien borrada. Con NEXT_DIST_DIR cada
+// servidor usa la suya y dejan de estorbarse. Sin la variable, todo sigue igual.
 const nextConfig: NextConfig = {
+  ...(process.env.NEXT_DIST_DIR ? { distDir: process.env.NEXT_DIST_DIR } : {}),
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,

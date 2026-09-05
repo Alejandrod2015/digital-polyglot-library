@@ -4,6 +4,7 @@ import { createClerkClient } from "@clerk/backend";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { isMetricsAccessAllowed } from "@/lib/metricsAccess";
+import { pushTokenPlatform } from "@/lib/mobilePlatform";
 
 /**
  * Studio · Métricas → ficha de un usuario.
@@ -657,20 +658,23 @@ export async function GET(
       ? (privateMd.mobilePushTokens as unknown[]).length
       : 0;
     const signupPlatform = str(publicMd.signupPlatform);
+    // El token de push guarda el sistema de cada dispositivo, así que dice el
+    // teléfono real incluso cuando los eventos no lo saben. Va por delante de
+    // un recuento de eventos "ios" porque ese valor es el que la ruta escribe
+    // por defecto cuando la app es vieja y no manda la cabecera; sólo cede
+    // ante un evento "android", que nadie escribe por defecto.
+    const devicePlatform = pushTokenPlatform(privateMd);
     const inferredPlatform: "ios" | "android" | "web" | null =
       signupPlatform === "ios" || signupPlatform === "android" || signupPlatform === "web"
         ? (signupPlatform as "ios" | "android" | "web")
         : platformCounts.android > 0
           ? "android"
-          : platformCounts.ios > platformCounts.web
-            ? "ios"
-            : platformCounts.web > 0
-              ? "web"
-              // El token de push no distingue sistema: sólo dice que la app
-              // está instalada. Los que lo tienen sin más señal son testers
-              // de iPhone, que son los únicos que la tuvieron antes del sello.
-              : pushTokens > 0
-                ? "ios"
+          : devicePlatform
+            ? devicePlatform
+            : platformCounts.ios > platformCounts.web
+              ? "ios"
+              : platformCounts.web > 0
+                ? "web"
                 : null;
 
     const payload = {

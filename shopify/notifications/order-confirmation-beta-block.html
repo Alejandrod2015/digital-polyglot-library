@@ -7,6 +7,10 @@
   </table> de cierre). No hay forma de versionarlo: Shopify no expone las
   plantillas de notificacion por API con el token que tenemos.
 
+  El boton va a #111111 fijo (2026-09-03), no al accent color de la tienda:
+  ese accent es azul y dejaba este CTA distinto del mismo boton en la
+  pantalla de claim y en el email del freebie, que son negros.
+
   El enlace lleva las utm que lee src/lib/betaSource.ts. Sin ellas el alta
   entra como "directo" y el correo de pedido no se puede medir, que es
   exactamente lo que pasaba hasta hoy.
@@ -37,7 +41,7 @@ https://www.digitalpolyglot.com/beta?utm_source=shop&utm_medium=order_confirmati
                       The same authentic language you get in print, now on your phone: short stories set in real places, read aloud, with the words locals actually use one tap away. We are running a private beta on iPhone and Android, and customers get first pick of the spots.
                     </p>
                     <a href="{{ dp_beta_url }}"
-                       style="display:inline-block;padding:12px 22px;background-color:{{ shop.email_accent_color | default: '#1a1a1a' }};color:#ffffff;font-size:15px;font-weight:600;text-decoration:none;border-radius:4px;">
+                       style="display:inline-block;padding:12px 22px;background-color:#111111;color:#ffffff;font-size:15px;font-weight:600;text-decoration:none;border-radius:4px;">
                       Apply for the beta
                     </a>
                     <p style="margin:16px 0 0;font-size:13px;line-height:1.5;color:#777777;">
