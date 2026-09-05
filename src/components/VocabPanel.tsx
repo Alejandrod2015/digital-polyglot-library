@@ -457,6 +457,22 @@ export default function VocabPanel({
                   </span>
                 );
               })()}
+              {glossEntry?.f?.mood ? (
+                <span
+                  style={{
+                    border: "1px solid rgba(125, 211, 252, 0.85)",
+                    color: "#7dd3fc",
+                    fontSize: 10,
+                    fontWeight: 700,
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                    padding: "1px 8px",
+                    borderRadius: 999,
+                  }}
+                >
+                  {glossEntry.f.mood}
+                </span>
+              ) : null}
               {glossEntry?.gm ? (
                 <span
                   className="text-[var(--muted)]"
@@ -555,6 +571,38 @@ export default function VocabPanel({
             <span style={{ opacity: 0.55, padding: "0 6px" }}>→</span>
             <span style={{ opacity: 0.9 }}>{glossEntry.c.en}</span>
           </p>
+        ) : null}
+
+        {/* El PAR, a la vista y sin desplegar nada: la forma que el lector ya
+            conoce y la que tiene delante, cada una con el nombre de su tiempo.
+            El azul marca cual sale en la historia. Es el mismo bloque que el
+            quick lookup (TapGlossLayer): sin el, un subjuntivo se anunciaba
+            solo detras de un "See subjunctive" plegado y la definicion de al
+            lado lo contaba en indicativo (2026-09-05). */}
+        {glossEntry?.f?.head?.length ? (
+          <div className="mt-2.5 flex flex-wrap gap-1.5">
+            {glossEntry.f.head.map(([etiqueta, forma], index) => {
+              const aqui = index === glossEntry.f!.head!.length - 1;
+              return (
+                <span
+                  key={`${etiqueta}-${forma}`}
+                  className="inline-flex items-baseline gap-1.5"
+                  style={{
+                    background: aqui ? "rgba(125, 211, 252, 0.16)" : "var(--chip-bg)",
+                    borderRadius: 8,
+                    padding: "3px 8px",
+                  }}
+                >
+                  <span style={{ color: aqui ? "#7dd3fc" : "var(--muted)", fontSize: 11, fontWeight: 600 }}>
+                    {etiqueta}
+                  </span>
+                  <span style={{ color: aqui ? "#7dd3fc" : "var(--foreground)", fontSize: 14, fontWeight: 700 }}>
+                    {forma}
+                  </span>
+                </span>
+              );
+            })}
+          </div>
         ) : null}
 
         {/* Definition */}

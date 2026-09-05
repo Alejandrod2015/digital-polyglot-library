@@ -354,6 +354,42 @@ Use one of the seven values above. The field is required for every new story and
 - **No long consecutive highlight runs**: do not allow more than 2 vocab pills in a row at render time. Two adjacent pills are acceptable when the phrase naturally demands it; 3 or more consecutive highlighted items read like worksheet markup and break immersion. Technical rule: if the first occurrences of selected vocab create a run of 3+ adjacent highlights, rebalance the selection before saving. Enforced as `vocab-no-consecutive-pills` warn check in the validator.
 - **CEFR lexical discipline (A1/A2)** [added 2026-05-23]: for A1 and A2 levels, vocab MUST be drawn from the learner's top-1500 high-frequency words. The word must be one a beginner meets in their first months; household items, daily actions, family, food, places, body, common verbs, basic adjectives. **Forbidden** for A1/A2 vocab slots: rare, literary, regional, or domain-specific synonyms (the #1 quality leak: the LLM "varies" vocab by raiding the thesaurus). Spanish anti-examples and everyday alternatives: `anafe→estufa`, `talega/morral→bolsa`, `alfiletero→caja de costura`, `escabel/taburete/banquillo→silla`, `anaquel→estante`, `gaveta/cajetín→cajón`, `biombo→pared`, `visillo→cortina`, `alacena→armario de cocina`, `cirio→vela`, `peldaño→escalón`, `purificador/compartimiento→` (simpler nouns), `burbujear→hervir`, `candado/cerrojo→llave/cerradura`, `guardarropa→armario`, `boina/visera→gorra/sombrero`. Principle: **if a 6-year-old native wouldn't say the word, it's not A1 vocab** even if it fits the topic. Enforced as `vocab-level-frequency` check in the validator (lists in `src/lib/cefr/{spanish,german,italian,portuguese,french}A1A2.ts`). Threshold: 0 out-of-level = pass, 1-2 = warn, 3+ = fail. **Caveat (2026-06-04):** the A1A2 lists have been padded with content-specific words from the stories themselves (e.g. DE `fischhand`, `schürze`; ES `jitomate`, `choclo`), so a green `vocab-level-frequency` is partly self-referential; it confirms "word is in the accepted set," not "word is genuinely A1." A rigorous level check needs a neutral frequency lexicon; treat the current check as a floor, not proof.
 
+### La capa gramatical: un slot de vocab es una glosa con etiqueta [2026-09-05]
+
+Hasta hoy el vocab era un diccionario paralelo (`word` + `type` + `definition`)
+y la glosa de toque era mejor profesora: traía la frase donde cae la palabra, el
+modo cuando no era indicativo y la tabla de conjugacion. Medido sobre las 60
+plazas del B1 de España: 43 con frase, **3** con tabla. Nadie pidio esa
+diferencia.
+
+**Un slot de vocab ES una entrada de glosa.** Las unicas diferencias, y son de
+presentacion, no de contenido: lleva su etiqueta de story vocab, el panel tiene
+otro estilo, y la palabra va resaltada en el cuerpo.
+
+Al escribir la lista, cada slot exige:
+
+| campo | cuando | de donde sale |
+|---|---|---|
+| `c` (frase, `es` + `en`) | **siempre** | `writeGlossLayer.ts`, mismo tope de 8 palabras que la glosa |
+| `f` (tabla de formas) | verbo | `buildGlossForms.ts`; sin tabla, el infinitivo entre parentesis en la definicion |
+| `gm` / modo | subjuntivo, condicional, imperativo, enclitico | `buildGlossMoods.ts` |
+| `surface` | **obligatorio si difiere del lema** | la forma tal cual sale en el cuerpo |
+
+Dos trampas que costaron las 17 plazas huerfanas del primer tema:
+
+1. **`surface` era opcional y por eso se perdia la mitad.** El vocab guarda el
+   lema (`devolver`) y la capa va por superficie (`devuelve`), asi que sin las
+   dos claves la busqueda no encuentra nada. Ahora es obligatorio en cuanto las
+   dos formas no coinciden.
+2. **Las expresiones de varias palabras no tenian entrada.** `poco a poco`,
+   `en voz alta`, `por adelantado`: la capa iba por palabra suelta. Se escriben
+   en la fila de la historia con la **frase entera como clave**; el panel ya la
+   busca por `word`, asi que no hace falta tocar el lector.
+
+Lo comprueba `npm run lint:vocab-layer` (`scripts/checkVocabLayer.ts`), en el
+`pre-push` con los otros cuatro lints de glosas. El indice de todas las reglas
+de glosas sigue en `docs/gloss-spec.md`.
+
 ### Selection criteria (what to teach) [added 2026-06-04]
 
 - **Type balance per story (B2+, added 2026-07-06):** minimum 2-3 `expression` items per story; nouns capped at ~40% of the vocab list. At advanced levels idiomatic expressions are the scarcest acquisition (nouns self-acquire); a setting full of concrete objects (Kolonie, market) must not turn the list into an object inventory. Real case: German C1 arrival topic shipped with expressions collapsing 4→1→0 and one story at 52% nouns; both rebalanced. Cross-story synonym check: don't teach a synonym of an already-taught item (`Tresen` after `Theke`); spend the slot elsewhere.

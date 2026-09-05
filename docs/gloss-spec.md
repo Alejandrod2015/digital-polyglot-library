@@ -22,6 +22,7 @@ otras.
 | Lo que NO es tocable | `scripts/tap-gloss-exempt.json` | artículos, numerales y nombres del reparto |
 | Modo y formas | `scripts/glossMoods.ts` | subjuntivo, condicional, imperativo, enclítico |
 | Conjugación, género y plural | `scripts/buildGlossForms.ts` | tablas de verbo, `gm` de los sustantivos |
+| **El vocab es una glosa con etiqueta** | `docs/story-quality-spec.md` §4 | toda plaza de vocab tiene `c`, y `f` si es verbo |
 
 ## Los cinco números
 
@@ -33,7 +34,7 @@ otras.
 | Plazas de vocab por historia | **20 a `max(25, palabras/9)`** | `vocab-count` | el suelo es 20; con 170 palabras eso ya es una pastilla cada 8,5 |
 | Reparto de tipos | ~36% sustantivos | sin gate | medido sobre el Traveler A1 de España; 83% de sustantivos pinta la historia entera del mismo azul |
 
-## Los cuatro lints, y qué caza cada uno
+## Los cinco lints, y qué caza cada uno
 
 Todos corren en el `pre-push`, envueltos en `[ -f ... ]`. **Ese `if` es una
 trampa**: si el fichero no está en la rama, la barrera se salta sola y en
@@ -46,6 +47,7 @@ rama sin integrar mientras el hook lo llamaba sin encontrarlo.
 | `lint:glosses-reviewed` | copia con `rev: false`, o sea copiada y no leída contra su frase |
 | `lint:gloss-moods` | forma que no es indicativo servida como entrada de diccionario |
 | `lint:gloss-variants` | forma de otra variante, tipo no tocable, y el trozo de más de 8 palabras |
+| `lint:vocab-layer` | plaza de vocab sin frase de contexto, verbo sin tabla, o `surface` que falta |
 
 ## El orden de una historia nueva
 
