@@ -96,6 +96,7 @@ import {
 } from "./journeyStorage";
 import { LanguageSwitchSheet, type LanguageSwitchEntry } from "./LanguageSwitchSheet";
 import { OnboardingFlow, type OnboardingPayload } from "./OnboardingFlow";
+import { OnboardingHandoff } from "./OnboardingHandoff";
 import { PracticeCelebration } from "./PracticeCelebration";
 import BetaFeedbackSheet from "./BetaFeedbackSheet";
 import { PracticeExitSheet } from "./PracticeExitSheet";
@@ -3511,6 +3512,23 @@ export function MobileLibraryShell(args: {
   // so we no longer need a transient flag to override the gate
   // without touching prefs.
   const forceOnboardingProper = onboardingOverride === "proper";
+
+  // Curtain between the last onboarding step and the ready Journey.
+  // `commitOnboarding` is a chain of writes and one fetch; without the
+  // curtain the user watched each land (empty Home, journey path with
+  // no stories, then the real path). Set the moment the user taps
+  // "Start journey", cleared when the primary language's journey is
+  // loaded (or by the safety timeout below).
+  const [onboardingHandoff, setOnboardingHandoff] = useState(false);
+  // Milestones of `commitOnboarding` completed so far; drives the
+  // checklist on the curtain. Lives here, not inside the curtain, so
+  // it survives the remount when the survey gate flips.
+  const [onboardingHandoffStep, setOnboardingHandoffStep] = useState<0 | 1 | 2 | 3>(0);
+  // Everything behind the curtain is ready: it plays its exit and
+  // calls back to unmount.
+  const [onboardingHandoffDone, setOnboardingHandoffDone] = useState(false);
+  // Language whose journey the curtain is waiting for.
+  const onboardingHandoffLanguageRef = useRef<string | null>(null);
 
   // Estadisticas por idioma para la hoja de cambio de journey y para el panel.
   //
@@ -19360,6 +19378,44 @@ export function MobileLibraryShell(args: {
     void loadJourneyForLanguage(onboardingTargetLang);
   }, [shouldShowOnboardingSurvey, sessionToken, onboardingTargetLang, loadJourneyForLanguage]);
 
+  // Drop the onboarding curtain only when the screen behind it is
+  // finished: the survey gate has flipped AND the primary language's
+  // journey payload is in. `journeyLanguageLoading` alone is not
+  // enough; it starts false, so we also require the loaded payload to
+  // be for the language we are waiting on.
+  useEffect(() => {
+    if (!onboardingHandoff) return;
+    if (shouldShowOnboardingSurvey) return;
+    if (journeyLanguageLoading) return;
+    const waitingFor = onboardingHandoffLanguageRef.current;
+    if (
+      waitingFor &&
+      remoteJourney?.language?.toLowerCase() !== waitingFor.toLowerCase()
+    ) {
+      return;
+    }
+    // Last milestone. The curtain ticks its final row, closes the bar
+    // and lifts itself; it calls back to unmount (see `onHidden`),
+    // which is what keeps the exit animation from being cut off.
+    setOnboardingHandoffStep(3);
+    setOnboardingHandoffDone(true);
+  }, [onboardingHandoff, shouldShowOnboardingSurvey, journeyLanguageLoading, remoteJourney]);
+
+  // Safety net: never trap the user behind the curtain. If the save or
+  // the journey fetch fails (offline, 500), we lift it anyway after
+  // 12s and let whatever is behind it render, which is the onboarding
+  // itself when the save never landed, so their answers are still
+  // there and "Start journey" can be tapped again.
+  useEffect(() => {
+    if (!onboardingHandoff) return;
+    const timer = setTimeout(() => {
+      setOnboardingHandoff(false);
+      setOnboardingHandoffDone(false);
+      setOnboardingHandoffStep(0);
+    }, 12000);
+    return () => clearTimeout(timer);
+  }, [onboardingHandoff]);
+
   const onboardingSurveySteps = [
     {
       title: "What are you learning?",
@@ -19463,6 +19519,9 @@ export function MobileLibraryShell(args: {
       onboardingSurveyCompletedAt: new Date().toISOString(),
       onboardingTourCompletedAt: null,
     });
+    // Milestone 1 of the curtain's checklist: the answers (name,
+    // languages, level, reminder) are on the account.
+    setOnboardingHandoffStep((current) => (current < 1 ? 1 : current));
     if (!success) return;
     setOnboardingSurveyStep(0);
     setOnboardingTourStep(0);
@@ -19952,7 +20011,12 @@ export function MobileLibraryShell(args: {
       // save above ran BEFORE it was built and never carried it, so the account
       // kept whatever the legacy synthesizer produced, which is a journey with
       // no variant at all.
-      void saveOnboardingPreferences({ journeys, activeJourneyId: journeys[0]?.id ?? null });
+      void saveOnboardingPreferences({ journeys, activeJourneyId: journeys[0]?.id ?? null }).then(
+        // Milestone 2: the journey list itself is persisted. Ticked on
+        // the write resolving, not on having built the array.
+        () => setOnboardingHandoffStep((current) => (current < 2 ? 2 : current)),
+        () => setOnboardingHandoffStep((current) => (current < 2 ? 2 : current))
+      );
       // Set the active journey language so the journey screen lands
       // on the right path right away.
       const primaryLanguage = payload.selections[0]?.language ?? null;
@@ -19970,33 +20034,75 @@ export function MobileLibraryShell(args: {
   const showOnboarding = shouldShowOnboardingSurvey || forceOnboardingProper;
   if (showOnboarding) {
     return (
-      <OnboardingFlow
-        userName={sessionName ?? null}
-        // Always persist now: the previous test-mode "throw away
-        // selections" path is gone; Test mode in the polyglot menu
-        // does a full reset instead and runs onboarding normally.
-        testMode={false}
-        comingSoonLanguages={comingSoonLanguages}
-        unavailableVariants={unavailableVariants}
-        trackEvent={(eventType, metadata) => {
-          void trackOnboardingMetric(eventType, metadata);
-        }}
-        onComplete={async (payload) => {
-          // Set activeScreen BEFORE the await: when the gate flips
-          // (onboardingSurveyCompletedAt set inside commitOnboarding)
-          // and the shell re-renders without the onboarding overlay,
-          // activeScreen is already set; so the user lands directly
-          // there without a one-frame Home flash.
-          setActiveScreen("home");
-          setOnboardingOverride(null);
-          // Land on the Journey path (not the reader): the product tour runs
-          // here next; its step 1 points the user at their first story.
-          await commitOnboarding(payload);
-        }}
-        onCancel={
-          forceOnboardingProper ? () => setOnboardingOverride(null) : undefined
-        }
-      />
+      <View style={styles.onboardingRoot}>
+        <OnboardingFlow
+          userName={sessionName ?? null}
+          // Always persist now: the previous test-mode "throw away
+          // selections" path is gone; Test mode in the polyglot menu
+          // does a full reset instead and runs onboarding normally.
+          testMode={false}
+          comingSoonLanguages={comingSoonLanguages}
+          unavailableVariants={unavailableVariants}
+          trackEvent={(eventType, metadata) => {
+            void trackOnboardingMetric(eventType, metadata);
+          }}
+          onComplete={async (payload) => {
+            // Raise the curtain FIRST, before any state change: from
+            // here on every write and fetch happens behind it, so the
+            // user does not watch the journey assemble itself.
+            onboardingHandoffLanguageRef.current =
+              payload.selections[0]?.language ?? null;
+            setOnboardingHandoffStep(0);
+            setOnboardingHandoffDone(false);
+            setOnboardingHandoff(true);
+            // Set activeScreen BEFORE the await: when the gate flips
+            // (onboardingSurveyCompletedAt set inside commitOnboarding)
+            // and the shell re-renders without the onboarding overlay,
+            // activeScreen is already set; so the user lands directly
+            // there without a one-frame Home flash.
+            setActiveScreen("home");
+            setOnboardingOverride(null);
+            // Land on the Journey path (not the reader): the product tour runs
+            // here next; its step 1 points the user at their first story.
+            await commitOnboarding(payload);
+          }}
+          onCancel={
+            forceOnboardingProper ? () => setOnboardingOverride(null) : undefined
+          }
+        />
+        {/* Curtain OVER the still-mounted flow (not instead of it): if
+            the save fails and the safety timeout lifts it, the user is
+            back on their own answers instead of at step 1. */}
+        {onboardingHandoff ? (
+          <OnboardingHandoff
+            step={onboardingHandoffStep}
+            done={onboardingHandoffDone}
+            onHidden={() => {
+              setOnboardingHandoff(false);
+              setOnboardingHandoffDone(false);
+              setOnboardingHandoffStep(0);
+            }}
+          />
+        ) : null}
+      </View>
+    );
+  }
+
+  // Same curtain once the survey gate has flipped and the flow above
+  // is gone, covering the journey load until the screen is ready.
+  if (onboardingHandoff) {
+    return (
+      <View style={styles.onboardingRoot}>
+        <OnboardingHandoff
+          step={onboardingHandoffStep}
+          done={onboardingHandoffDone}
+          onHidden={() => {
+            setOnboardingHandoff(false);
+            setOnboardingHandoffDone(false);
+            setOnboardingHandoffStep(0);
+          }}
+        />
+      </View>
     );
   }
 
@@ -21799,6 +21905,13 @@ function CelebrationBurst({ progress }: { progress: Animated.Value }) {
 const styles = StyleSheet.create({
   shell: {
     flex: 1,
+  },
+  // Wrapper for the onboarding flow so the handoff curtain can sit on
+  // top of it without unmounting it. Background matches the flow's own
+  // canvas so no seam shows through during the fade.
+  onboardingRoot: {
+    flex: 1,
+    backgroundColor: "#0c1626",
   },
   scrollView: {
     flex: 1,
