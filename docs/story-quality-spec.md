@@ -364,7 +364,12 @@ el cierre y el resto avisan, y el aviso no es un aprobado.
    las manos, no") o una frase simple ("quiere llorar un poco. No llora").
    En niveles bajos lo no dicho no existe: la sobriedad sin cuerpo se lee
    como historia sosa. La contencion es valida solo si el texto muestra lo
-   que cuesta contenerse.
+   que cuesta contenerse. Y la emocion viaja en tres piezas o en ninguna:
+   sensacion, motivo y gesto ("tiene ganas de llorar, pero delante de Chelo
+   no quiere; respira hondo"). Una reversa sin puente ("quiere llorar. No
+   llora") es un salto, no contencion; el esqueleto del paso 3 de /tema
+   existe para que el golpe emocional se escriba ANTES que la prosa y no
+   como parche encima.
 
 Dos tics mas, que ninguna historia delata sola y que BLOQUEAN el cierre: un
 verbo de acotacion que se lleva mas del 40% de las citas del tema (el

@@ -61,10 +61,23 @@ cuesta una frase antes de escribirla y tres historias despues.
 
 ## Paso 3. Escribe las tres
 
-Con el flujo que ya existe (`/generate-story`), en un unico fichero JSON con
-las tres historias del topic: el validador canonico compara cada una contra sus
-hermanas de la misma tanda, asi que separarlas se salta la comprobacion de
-solape dentro del tema.
+**Primero el esqueleto, despues la prosa.** De cada historia, antes de redactar,
+sus 4 o 5 golpes en una linea cada uno, con el golpe EMOCIONAL del plan ya
+colocado entre ellos (que siente, por que, y el gesto donde se ve). La prosa
+crece alrededor de ese esqueleto. Nunca al reves: la emocion incrustada sobre
+prosa ya escrita se nota como parche ("quiere llorar un poco. No llora"), que
+es exactamente como nacio el defecto que el usuario cazo el 2026-09-05.
+
+**La costura de toda emocion: tres piezas o ninguna.** Sensacion, motivo y
+gesto viajan juntos. Una reversa ("tiene ganas de llorar y no llora") lleva su
+porque en la misma oracion ("pero delante de Chelo no quiere") y un gesto que
+la sostenga ("respira hondo"). Dos frases que se contradicen sin puente no son
+contencion: son un salto que el lector siente como error.
+
+Despues, redacta con el flujo que ya existe (`/generate-story`), en un unico
+fichero JSON con las tres historias del topic: el validador canonico compara
+cada una contra sus hermanas de la misma tanda, asi que separarlas se salta la
+comprobacion de solape dentro del tema.
 
 ## Paso 4. Valida en seco, y arregla la historia (nunca el gate)
 
