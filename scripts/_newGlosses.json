@@ -6009,6 +6009,374 @@
   "arrastrado": {
    "g": "ha arrastrado, has dragged (arrastrar)",
    "t": "verb"
+  },
+  "oficinas": {
+   "g": "offices (oficina)",
+   "t": "noun"
+  },
+  "encargada": {
+   "g": "manager, the woman in charge (encargado)",
+   "t": "noun"
+  },
+  "levantarse": {
+   "g": "to stand up (levantar)",
+   "t": "verb"
+  },
+  "tarifa": {
+   "g": "rate, price per unit of work",
+   "t": "noun"
+  },
+  "afirma": {
+   "g": "states, says as a fact (afirmar)",
+   "t": "verb"
+  },
+  "competimos": {
+   "g": "we compete (competir)",
+   "t": "verb"
+  },
+  "plazo": {
+   "g": "deadline",
+   "t": "noun"
+  },
+  "entrega": {
+   "g": "delivery, handing the work in",
+   "t": "noun"
+  },
+  "compromiso": {
+   "g": "commitment",
+   "t": "noun"
+  },
+  "aconseja": {
+   "g": "advises (aconsejar)",
+   "t": "verb"
+  },
+  "rebajar": {
+   "g": "to lower a price (rebajar)",
+   "t": "verb"
+  },
+  "aumenta": {
+   "g": "raises, makes bigger (aumentar)",
+   "t": "verb"
+  },
+  "oficio": {
+   "g": "trade, skilled work",
+   "t": "noun"
+  },
+  "corrigiendo": {
+   "g": "correcting (corregir)",
+   "t": "verb"
+  },
+  "confirma": {
+   "g": "confirms (confirmar)",
+   "t": "verb"
+  },
+  "encargo": {
+   "g": "job, a piece of paid work",
+   "t": "noun"
+  },
+  "calmada": {
+   "g": "calm (calmado)",
+   "t": "adjective"
+  },
+  "discutía": {
+   "g": "was argued over (discutir)",
+   "t": "verb"
+  },
+  "plana": {
+   "g": "flat, of light (plano)",
+   "t": "adjective"
+  },
+  "declara": {
+   "g": "declares to the state (declarar)",
+   "t": "verb"
+  },
+  "calendario": {
+   "g": "calendar",
+   "t": "noun"
+  },
+  "cuota": {
+   "g": "monthly fee",
+   "t": "noun"
+  },
+  "ingresar": {
+   "g": "to take money in (ingresar)",
+   "t": "verb"
+  },
+  "euro": {
+   "g": "euro, the currency of Spain",
+   "t": "noun"
+  },
+  "advierte": {
+   "g": "warns (advertir)",
+   "t": "verb"
+  },
+  "impuesto": {
+   "g": "tax",
+   "t": "noun"
+  },
+  "tengas": {
+   "g": "you have (tener, subjunctive)",
+   "t": "verb"
+  },
+  "ahorro": {
+   "g": "savings",
+   "t": "noun"
+  },
+  "deuda": {
+   "g": "debt",
+   "t": "noun"
+  },
+  "cercana": {
+   "g": "close, near in time (cercano)",
+   "t": "adjective"
+  },
+  "paciente": {
+   "g": "patient, able to wait",
+   "t": "adjective"
+  },
+  "cedí": {
+   "g": "I gave in (ceder)",
+   "t": "verb"
+  },
+  "alerto": {
+   "g": "I warn (alertar)",
+   "t": "verb"
+  },
+  "sea": {
+   "g": "it is (ser, subjunctive)",
+   "t": "verb"
+  },
+  "breve": {
+   "g": "brief, short",
+   "t": "adjective"
+  },
+  "escuchen": {
+   "g": "they listen (escuchar, subjunctive)",
+   "t": "verb"
+  },
+  "deduce": {
+   "g": "works out (deducir)",
+   "t": "verb"
+  },
+  "certeza": {
+   "g": "certainty",
+   "t": "noun"
+  },
+  "coge": {
+   "g": "picks up (coger)",
+   "t": "verb"
+  },
+  "escribir": {
+   "g": "to write (escribir)",
+   "t": "verb"
+  },
+  "criticar": {
+   "g": "to criticise (criticar)",
+   "t": "verb"
+  },
+  "comunica": {
+   "g": "tells, passes on (comunicar)",
+   "t": "verb"
+  },
+  "analiza": {
+   "g": "looks closely at (analizar)",
+   "t": "verb"
+  },
+  "pagarse": {
+   "g": "to be paid (pagar)",
+   "t": "verb"
+  },
+  "colaboró": {
+   "g": "helped, worked with others (colaborar)",
+   "t": "verb"
+  },
+  "llamando": {
+   "g": "calling, phoning (llamar)",
+   "t": "verb"
+  },
+  "desconfiar": {
+   "g": "to distrust (desconfiar)",
+   "t": "verb"
+  },
+  "demuestra": {
+   "g": "show it, prove it (demostrar, command)",
+   "t": "verb"
+  },
+  "defiendas": {
+   "g": "do not defend (defender, negative command)",
+   "t": "verb"
+  },
+  "aprovecha": {
+   "g": "make the most of it (aprovechar, command)",
+   "t": "verb"
+  },
+  "razonable": {
+   "g": "reasonable, fair",
+   "t": "adjective"
+  },
+  "concluye": {
+   "g": "concludes, closes the matter (concluir)",
+   "t": "verb"
+  },
+  "cuestiona": {
+   "g": "questions, doubts (cuestionar)",
+   "t": "verb"
+  },
+  "baste": {
+   "g": "it is enough (bastar, subjunctive)",
+   "t": "verb"
+  },
+  "seca": {
+   "g": "dry, of a short reply (seco)",
+   "t": "adjective"
+  },
+  "empleo": {
+   "g": "job, paid work",
+   "t": "noun"
+  },
+  "trato": {
+   "g": "deal, what two people agree",
+   "t": "noun"
+  },
+  "coordina": {
+   "g": "coordinates, organises who does what (coordinar)",
+   "t": "verb"
+  },
+  "encargos": {
+   "g": "jobs, pieces of paid work (encargo)",
+   "t": "noun"
+  },
+  "agencia": {
+   "g": "agency, a small company that hands out work",
+   "t": "noun"
+  },
+  "ordenador": {
+   "g": "computer, as it is called in Spain",
+   "t": "noun"
+  },
+  "nueve": {
+   "g": "nine",
+   "t": "number"
+  },
+  "comienza": {
+   "g": "begins (comenzar)",
+   "t": "verb"
+  },
+  "ocupa": {
+   "g": "takes up, fills (ocupar)",
+   "t": "verb"
+  },
+  "desacuerdo": {
+   "g": "disagreement",
+   "t": "noun"
+  },
+  "título": {
+   "g": "title",
+   "t": "noun"
+  },
+  "así": {
+   "g": "like this, this way",
+   "t": "adverb"
+  },
+  "texto": {
+   "g": "text, the words of a document",
+   "t": "noun"
+  },
+  "quince": {
+   "g": "fifteen",
+   "t": "number"
+  },
+  "quitado": {
+   "g": "ha quitado, has taken away (quitar)",
+   "t": "verb"
+  },
+  "parecida": {
+   "g": "similar (parecido)",
+   "t": "adjective"
+  },
+  "textos": {
+   "g": "texts, the documents to translate (texto)",
+   "t": "noun"
+  },
+  "ocho": {
+   "g": "eight",
+   "t": "number"
+  },
+  "obras": {
+   "g": "building works (obra)",
+   "t": "noun"
+  },
+  "material": {
+   "g": "materials, what you need to work with",
+   "t": "noun"
+  },
+  "retrasado": {
+   "g": "behind schedule, late",
+   "t": "adjective"
+  },
+  "desorden": {
+   "g": "mess, things not organised",
+   "t": "noun"
+  },
+  "pagando": {
+   "g": "paying for it (pagar)",
+   "t": "verb"
+  },
+  "urgencia": {
+   "g": "urgency, the pressure to finish now",
+   "t": "noun"
+  },
+  "hereda": {
+   "g": "is passed down (heredar)",
+   "t": "verb"
+  },
+  "ley": {
+   "g": "law",
+   "t": "noun"
+  },
+  "determina": {
+   "g": "set it, decide it (determinar, command)",
+   "t": "verb"
+  },
+  "mándala": {
+   "g": "send it yourself (mandar, command with pronoun)",
+   "t": "verb"
+  },
+  "esperas": {
+   "g": "you wait (esperar)",
+   "t": "verb"
+  },
+  "pongan": {
+   "g": "they set it (poner, subjunctive)",
+   "t": "verb"
+  },
+  "ponen": {
+   "g": "they set it (poner)",
+   "t": "verb"
+  },
+  "convoca": {
+   "g": "calls a meeting (convocar)",
+   "t": "verb"
+  },
+  "exacta": {
+   "g": "exact, precise (exacto)",
+   "t": "adjective"
+  },
+  "tardío": {
+   "g": "late, later than it should be",
+   "t": "adjective"
+  },
+  "caben": {
+   "g": "they fit (caber)",
+   "t": "verb"
+  },
+  "iría": {
+   "g": "I would go (ir, conditional)",
+   "t": "verb"
+  },
+  "abran": {
+   "g": "they open (abrir, subjunctive)",
+   "t": "verb"
   }
  }
 }

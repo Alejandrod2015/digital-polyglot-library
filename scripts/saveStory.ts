@@ -759,6 +759,8 @@ function slugify(s: string): string {
   if (journeyId) {
     const p3 = new PrismaClient();
     let todas: JourneyStoryInput[] = [];
+    /** Huecos que el journey declara (temas x 3). Decide si el conjunto esta completo. */
+    let esperadas = 0;
     const base: JourneyStoryInput[] = [];
     let realPeople: string[] | undefined;
     try {
@@ -768,6 +770,7 @@ function slugify(s: string): string {
       // presentacion senalaba la 19 para los siete.
       const j3 = await p3.journey.findUnique({ where: { id: journeyId }, select: { topics: true } });
       const orden = j3?.topics ?? [];
+      esperadas = orden.length * 3;
       const filas = (await p3.journeyStory.findMany({
         where: { journeyId }, select: { slug: true, title: true, text: true, vocab: true, topic: true, slotIndex: true },
       })).sort((a, b) => (orden.indexOf(a.topic) - orden.indexOf(b.topic)) || (a.slotIndex - b.slotIndex));
@@ -789,9 +792,15 @@ function slugify(s: string): string {
                       vocab: f.vocab as never, language: ctx.language, level: ctx.level, topic: f.topic });
         }
       }
+      // CON SU `topic`. Una historia de la tanda cuya fila esta vacia no pasa
+      // por el bucle de arriba y caia aqui sin tema, y entonces los tres checks
+      // de reparto no podian medir en que tema aparece cada personaje por
+      // primera vez: devolvian `not-implemented`, que bloquea igual que un
+      // fallo. El tema viene en el propio fichero de datos, asi que no hace
+      // falta ir a buscarlo. (2026-09-05, escribiendo el tema 2 del B1 ES.)
       for (const [k, d] of enTanda) if (!vistos.has(k))
         todas.push({ slug: d.slug ?? k, title: d.title, text: String(d.text), vocab: d.vocab,
-                     language: ctx.language, level: ctx.level });
+                     language: ctx.language, level: ctx.level, topic: d.topic });
       // Personas REALES: el check de personajes no puede medir sin ellas, y sin
       // la lista devuelve `not-implemented`, que bloquea igual que un fallo.
       // `BetaSignup` no guarda el nombre, solo el correo, asi que el nombre se
@@ -813,7 +822,14 @@ function slugify(s: string): string {
     // que es lo contrario de saltárselos en silencio. Con siete o más, el
     // conjunto se juzga entero, exactamente como hasta hoy.
     {
-      const completo = todas.length >= 7;
+      // "Completo" es el journey ENTERO, no siete historias (2026-09-05). El 7
+      // venia de cuando un journey eran siete historias; con la estructura de
+      // 7 temas x 3 un journey de 21 se declaraba completo con nueve escritas,
+      // y entonces reglas que solo tienen sentido sobre el conjunto (la
+      // escalera de recirculacion, el reparto) pasaban de `pending-set` a
+      // juzgarse (o a `not-implemented`, que bloquea igual) con menos de la
+      // mitad del material. Se mide contra los huecos que el journey declara.
+      const completo = esperadas > 0 ? todas.length >= esperadas : todas.length >= 7;
       const jc = validateJourneyStories(todas, {
         language: ctx.language, level: ctx.level, realPeople, conjuntoCompleto: completo,
       });

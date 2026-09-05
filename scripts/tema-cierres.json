@@ -1,1 +1,77 @@
-{}
+{
+  "cmt5x67ze000l320cpgunu5vi#jobs-and-wages": {
+    "cerrado": "2026-09-05T12:37:58.422Z",
+    "hash": "19c9b927e6694d15",
+    "historias": [
+      "jobs-and-wages#1 nuria-no-negocia",
+      "jobs-and-wages#2 la-cuota-no-espera",
+      "jobs-and-wages#3 cobrar-es-otro-trabajo"
+    ],
+    "checks": [
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista ?): nuria-no-negocia, la-cuota-no-espera, cobrar-es-otro-trabajo",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B1; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en ES. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ]
+  },
+  "cmt5x67ze000l320cpgunu5vi#meetings-and-deadlines": {
+    "cerrado": "2026-09-05T13:25:16.403Z",
+    "hash": "b1b00db8499ac09b",
+    "historias": [
+      "meetings-and-deadlines#1 tres-horas-por-un-punto",
+      "meetings-and-deadlines#2 el-retraso-no-es-suyo",
+      "meetings-and-deadlines#3 reunion-sin-orden-del-dia"
+    ],
+    "checks": [
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B1; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ]
+  },
+  "cmt5x67ze000l320cpgunu5vi#rooms-and-landlords": {
+    "cerrado": "2026-09-05T12:12:13.213Z",
+    "hash": "3cddd53976aaa90e",
+    "historias": [
+      "rooms-and-landlords#1 celia-no-dice-que-si",
+      "rooms-and-landlords#2 arriba-vive-alguien",
+      "rooms-and-landlords#3 la-mayoria-decide-el-techo"
+    ],
+    "checks": [
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Emilio): celia-no-dice-que-si, arriba-vive-alguien, la-mayoria-decide-el-techo",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B1; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ]
+  }
+}

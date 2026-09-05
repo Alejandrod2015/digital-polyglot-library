@@ -946,6 +946,24 @@ export async function validateGeneratedStory(
     detail: `${bodyWords} words`,
   });
 
+  // NARRADA vs DIALOGADA (2026-09-05). Los tres checks que siguen
+  // (`body-dialogue-ratio`, `speakers-count`, `speaker-lines`) miden el
+  // formato multi-voz: turnos `Hablante: linea`. Una historia narrada
+  // (`storyStyle: "narrator"`, documentado en docs/story-quality-spec.md,
+  // seccion "Narrator-style alternative") lleva la cita DENTRO del parrafo y
+  // no tiene un solo turno, asi que los tres daban 0 y fallaban por formato,
+  // no por calidad. Peor: se contradecian con `journey-quoted-speech-band`,
+  // que exige 25-35% de habla citada a las narradas. Ninguna historia puede
+  // estar a la vez en 25-35% citada y en 60-80% de dialogo, y por esa pinza
+  // el tema 1 del B1 de Espana no podia cerrarse de ninguna manera.
+  //
+  // La distincion NO es nueva: validateJourneyStories.ts ya filtra `narradas`
+  // por la comilla curva desde que existe la banda. Esto es el mismo criterio,
+  // mas estricto: comilla curva Y cero turnos. Una historia que quiso ser
+  // dialogada y perdio el formato tiene turnos a medias o ninguna cita, y
+  // sigue fallando, que es lo que debe pasar.
+  const esNarrada = /[“]/.test(parsed.text) && countSpeakerLines(parsed.text) === 0;
+
   // 70/30 dialogue/narrator ratio. User hard rule (2026-06-01):
   // every story = ~70% spoken dialogue + ~30% narrator. This is the
   // single most important structural marker of the "v2-2026-06"
@@ -970,6 +988,7 @@ export async function validateGeneratedStory(
     const spoken = narratorWords + dialogueWords;
     const dialPct = spoken > 0 ? Math.round((dialogueWords * 100) / spoken) : 0;
     const status: CheckStatus =
+      esNarrada ? "pass" :
       spoken === 0 ? "fail" :
       dialPct < 50 || dialPct > 90 ? "fail" :
       dialPct < 60 || dialPct > 80 ? "warn" :
@@ -979,7 +998,9 @@ export async function validateGeneratedStory(
       label: "Body is ~70% dialogue / 30% narrator",
       status,
       detail:
-        spoken === 0
+        esNarrada
+          ? "Historia narrada (cita dentro del parrafo, cero turnos): el reparto de dialogo no aplica. La habla citada la mide journey-quoted-speech-band, banda 25-35%."
+          : spoken === 0
           ? "No words detected after splitting speaker lines vs narrator. Check the text format."
           : `${dialPct}% dialogue (${dialogueWords}w) / ${100 - dialPct}% narrator (${narratorWords}w). Target: 70/30. Acceptable band: 60-80% dialogue. The v2-2026-06 spec is conversational: most of the story should be spoken by characters, narrator just sets the scene and inserts brief action beats.`,
     });
@@ -990,14 +1011,16 @@ export async function validateGeneratedStory(
   checks.push({
     id: "speakers-count",
     label: "At least 2 distinct named speakers",
-    status: speakerNames.length >= 2 ? "pass" : "fail",
-    detail: `${speakerNames.length}: ${speakerNames.join(", ")}`,
+    status: esNarrada || speakerNames.length >= 2 ? "pass" : "fail",
+    detail: esNarrada
+      ? "Historia narrada: no lleva turnos con hablante."
+      : `${speakerNames.length}: ${speakerNames.join(", ")}`,
   });
   checks.push({
     id: "speaker-lines",
     label: "At least 4 speaker turns",
-    status: speakerLines >= 4 ? "pass" : "fail",
-    detail: `${speakerLines} turns`,
+    status: esNarrada || speakerLines >= 4 ? "pass" : "fail",
+    detail: esNarrada ? "Historia narrada: no lleva turnos con hablante." : `${speakerLines} turns`,
   });
 
   // Consecutive narrator paragraphs. Two narrator beats back-to-back

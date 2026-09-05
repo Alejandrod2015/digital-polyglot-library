@@ -327,4 +327,18 @@ function desdeJson(fichero: string) {
   escribirCierre(journeyId, topic, cierre);
   console.log(`\n✓ TEMA CERRADO. Registrado en scripts/tema-cierres.json (hash ${cierre.hash}).`);
   console.log("   Eso, y no una frase, es lo que hace que el tema cuente como listo.");
+
+  // LA TABLA SALE SOLA (2026-09-05). El usuario la pedia a mano despues de cada
+  // tema: "dame la tabla del journey despues de terminar de cada tema, no lo
+  // voy a repetir". El paso 6 del skill /tema ya la mandaba y aun asi se
+  // olvidaba, asi que deja de depender de que alguien se acuerde: el cierre la
+  // imprime. Sale del generador canonico, nunca compuesta a mano.
+  console.log("\n── tabla del journey ──");
+  const { execFileSync } = await import("node:child_process");
+  try {
+    console.log(execFileSync("npx", ["tsx", "scripts/journeysTable.ts", "--journey", journeyId],
+      { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }));
+  } catch {
+    console.log("   (no se pudo generar; correla a mano: npx tsx scripts/journeysTable.ts --journey " + journeyId + ")");
+  }
 })();
