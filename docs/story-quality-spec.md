@@ -369,7 +369,11 @@ el cierre y el resto avisan, y el aviso no es un aprobado.
    no quiere; respira hondo"). Una reversa sin puente ("quiere llorar. No
    llora") es un salto, no contencion; el esqueleto del paso 3 de /tema
    existe para que el golpe emocional se escriba ANTES que la prosa y no
-   como parche encima.
+   como parche encima. Y en niveles bajos, la ULTIMA linea se entiende a la
+   primera: el remate va en imagen concreta ("Iris camina ligera"), nunca en
+   elipsis ("Iris no"). El lector A2 cierra la historia con la sensacion de
+   haberla entendido, que es de donde sale que quiera abrir la siguiente; la
+   elipsis del final es para nativos y aqui resta engagement [2026-09-05].
 
 Dos tics mas, que ninguna historia delata sola y que BLOQUEAN el cierre: un
 verbo de acotacion que se lleva mas del 40% de las citas del tema (el
