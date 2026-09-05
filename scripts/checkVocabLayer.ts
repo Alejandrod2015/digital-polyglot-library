@@ -69,7 +69,11 @@ type Fallo = { historia: string; palabra: string; que: string };
         continue;
       }
       // 2. el verbo, con tabla o con el infinitivo a la vista
-      if (v.type === "verb" && !hit.f && !/\([\p{L}]+\)/u.test(String(hit.g ?? ""))) {
+      // El infinitivo entre parentesis vale con nota detras: los imperativos
+      // se glosan "show it, prove it (demostrar, command)", que es la forma
+      // que pide la spec y que la version estricta (solo `(demostrar)`) daba
+      // por ausente. Lo que se sigue exigiendo es el infinitivo a la vista.
+      if (v.type === "verb" && !hit.f && !/\(\p{L}+(?:,[^)]*)?\)/u.test(String(hit.g ?? ""))) {
         parte.push({ historia: h.slug!, palabra: lema, que: "verbo sin tabla de formas ni infinitivo" });
       }
     }
