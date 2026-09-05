@@ -29,10 +29,22 @@ if (p.get("tool_name") or "") != "Bash":
 cmd = (p.get("tool_input") or {}).get("command", "") or ""
 
 # Los mismos disparadores que el portón de autorización, más el envío suelto.
+#
+# La lista se mantiene A LA PAR con la del 6f en `pre-bash-guard.sh`. El
+# 2026-09-05 esta era mas corta y le faltaba lo que de verdad importa: la RUTA
+# del cron. Un `curl` al endpoint no nombra ninguna funcion, asi que manda los
+# correos de verdad y este porton ni se entera; solo fallo porque el secreto de
+# produccion no coincidia con el local. Un endpoint que envia es un remitente,
+# se llame por funcion o por URL.
 SENDERS = re.compile(
     r"send" r"BetaEmail|run" r"BetaLifecycle|publish" r"Release"
     r"|_sendImprovementToReaders|_runBetaTriage|processApplication"
-    r"|api\.resend\.com", re.I)
+    r"|invite" r"Applicant|decline" r"Applicant|waitlist" r"Applicant"
+    r"|send" r"PersonalNote|_personalNote|_coldNote"
+    r"|send" r"LifecycleEmail|run" r"LifecycleEmails|send" r"WelcomeEmail"
+    r"|send" r"BetaConfirmationEmail|send" r"ClaimEmail"
+    r"|api\.resend\.com|resend\.emails\.send"
+    r"|/api/cron/(?:beta-lifecycle|lifecycle-emails|claim-reminders)", re.I)
 
 hay = cmd
 for m in re.finditer(r"(?:^|\s)((?:scripts|src)/[\w./-]+\.(?:ts|tsx|js|mjs))", cmd):
