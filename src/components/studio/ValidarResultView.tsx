@@ -87,8 +87,8 @@ export function humanize(check: Check): Humanized {
       };
     case "title-length":
       return {
-        text: `El título tiene ${numStr} palabras (debe ser 2 a 6)`,
-        hint: "Recorta o expande hasta el rango.",
+        text: `El título tiene ${detail || `${numStr} palabras`} (debe ser 2 a 6 palabras y como mucho 26 caracteres)`,
+        hint: "Recorta hasta el rango. El tope de 26 caracteres es el ancho real de la tarjeta más estrecha del path; por encima, el título sale cortado con puntos suspensivos.",
       };
     case "title-banned-patterns":
       return {

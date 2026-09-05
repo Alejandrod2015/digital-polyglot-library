@@ -16,6 +16,12 @@
  *   npx tsx scripts/saveStory.ts <data.json> --journey <id> \
  *       [--lang ES] [--level c1] [--variant LATAM] [--publish] [--dry]
  *
+ * Modos que NO escriben contenido nuevo y por eso sustituyen el juicio
+ * editorial sobre el resto de la historia por una comprobación mecánica de
+ * que nada más cambia (ver cada bloque para el porqué):
+ *   --typography-only   migración de comillas
+ *   --title-only        acortar un título que se corta en la tarjeta
+ *
  * data.json: array of story objects { topic, slotIndex, title, slug?,
  *   synopsis, text, vocab[], arcType }. Rows are matched by
  *   (journeyId, topic, slotIndex) and updated.
@@ -130,6 +136,13 @@ function slugify(s: string): string {
   // defs, no-digits, arc, CEFR, distribution, cross-story dedup all still gate.
   const narrator = flag("narrator");
   const typographyOnly = flag("typography-only");
+  // MODO SOLO-TÍTULO (2026-09-04). Mismo problema y misma cura que
+  // --typography-only, un escalón más arriba: el título SÍ es contenido
+  // editorial, así que aquí no basta con una verificación mecánica y el
+  // título nuevo pasa por el validador CANÓNICO. Lo que se levanta es la
+  // exigencia de que el RESTO de la historia cumpla el estándar de hoy, que
+  // es deuda anterior y ajena al cambio. Ver el bloque `titleOnly`.
+  const titleOnly = flag("title-only");
   // TRINQUETE (2026-08-26). El gate de conjunto es absoluto: exige que las 21
   // historias cumplan el estandar de HOY. Un journey escrito antes de una
   // regla queda congelado para siempre, sin poder recibir ni la correccion de
@@ -333,6 +346,99 @@ function slugify(s: string): string {
         console.log(`  ✓ ${x.slug} [${Object.keys(x.fields).join(", ")}]`);
       }
       console.log(`[typography-only] ${plan.length} historias actualizadas.`);
+    } finally {
+      await prisma.$disconnect();
+    }
+    return;
+  }
+
+  // ── MODO SOLO-TÍTULO ─────────────────────────────────────────
+  //
+  // Cambia el `title` y NADA más. Nace del tope de 26 caracteres
+  // (`TITLE_MAX_CHARS`, 2026-09-04): 110 títulos ya guardados lo superan y
+  // salen cortados con puntos suspensivos en la tarjeta del path, pero por la
+  // vía normal no se pueden arreglar. El gate canónico exige que la historia
+  // ENTERA cumpla el estándar de hoy, y estas se escribieron con el anterior:
+  // de 42 candidatas, 34 fallaban por vocabulario ya enseñado, cuerpo largo o
+  // rotación de arco. Deuda propia, ajena al título.
+  //
+  // ESTO NO RELAJA EL GATE DONDE OCURRE EL CAMBIO. El título nuevo pasa por
+  // `validateGeneratedStory`, el mismo validador de siempre, y se exigen sus
+  // checks `title-*` en verde (largo, patrones prohibidos, lo que se añada
+  // mañana). Lo que se levanta es el juicio sobre el resto del cuerpo, que
+  // aquí no se toca ni un carácter: se comprueba campo a campo contra la base
+  // y a la primera diferencia no se escribe nada.
+  //
+  // AUDIO: rechaza toda historia narrada. El título se lee en la narración
+  // (`buildAlignmentText` lo antepone al cuerpo), así que cambiarlo dejaría a
+  // la voz diciendo el título viejo. Esas se arreglan al re-narrar, no aquí.
+  if (titleOnly) {
+    if (!journeyId) { console.error("FAIL: --title-only requiere --journey <id>."); process.exit(2); }
+    const prisma = new PrismaClient();
+    try {
+      const plan: { id: string; slug: string; antes: string; ahora: string }[] = [];
+      const problemas: string[] = [];
+      for (const d of stories) {
+        const slot = await prisma.journeyStory.findFirst({
+          where: { journeyId, topic: d.topic, slotIndex: d.slotIndex },
+          select: { id: true, slug: true, title: true, text: true, synopsis: true, vocab: true,
+                    arcType: true, audioUrl: true, audioWordTimings: true },
+        });
+        if (!slot) { problemas.push(`sin slot para ${d.topic}#${d.slotIndex}`); continue; }
+        const nombre = slot.slug ?? slot.id;
+
+        if (slot.audioUrl || slot.audioWordTimings) {
+          problemas.push(`${nombre}: ya está narrada; el título se oye en el audio`);
+          continue;
+        }
+        // Todo lo que no sea el título tiene que llegar idéntico.
+        const igual = (a: unknown, b: unknown) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+        for (const campo of ["text", "synopsis", "vocab", "arcType"] as const) {
+          if (d[campo] !== undefined && !igual(d[campo], slot[campo])) {
+            problemas.push(`${nombre}: .${campo} no coincide con la base; --title-only solo cambia el título`);
+          }
+        }
+        if (d.slug !== undefined && d.slug !== slot.slug) {
+          problemas.push(`${nombre}: el slug cambiaría (${slot.slug} -> ${d.slug}); las URLs guardadas dejarían de resolver`);
+        }
+        if (typeof d.title !== "string" || !d.title.trim()) { problemas.push(`${nombre}: falta el título nuevo`); continue; }
+        if (d.title === slot.title) continue; // nada que hacer
+
+        // El título nuevo pasa por el validador canónico; se exigen sus checks de título.
+        const r = await validateGeneratedStory(
+          { ...d, title: d.title, slug: slot.slug ?? undefined },
+          { language: ctx.language, level: ctx.level, variant: ctx.variant } as never
+        );
+        const malos = r.checks.filter((c) => c.id.startsWith("title-") && c.status === "fail");
+        if (malos.length) {
+          for (const c of malos) problemas.push(`${nombre}: [${c.id}] ${c.detail ?? c.label}`);
+          continue;
+        }
+        plan.push({ id: slot.id, slug: nombre, antes: slot.title ?? "", ahora: d.title });
+      }
+
+      // Un título repetido dentro del journey confunde igual que uno cortado.
+      const hermanas = await prisma.journeyStory.findMany({
+        where: { journeyId, id: { notIn: plan.map((p) => p.id) } }, select: { title: true },
+      });
+      const ocupados = new Set(hermanas.map((h) => (h.title ?? "").trim().toLowerCase()).filter(Boolean));
+      for (const p of plan) {
+        if (ocupados.has(p.ahora.trim().toLowerCase())) problemas.push(`${p.slug}: "${p.ahora}" ya es el título de otra historia del journey`);
+      }
+
+      if (problemas.length) {
+        console.error(`✗ [title-only] ${problemas.length} problema(s). NOTHING WRITTEN.`);
+        for (const p of problemas) console.error(`   FAIL ${p}`);
+        process.exit(1);
+      }
+      console.log(`[title-only] ${plan.length}/${stories.length} títulos que cambiar.`);
+      for (const p of plan) console.log(`  · ${p.slug}: "${p.antes}" (${p.antes.length}) -> "${p.ahora}" (${p.ahora.length})`);
+      if (dry) { console.log("--dry: no DB write."); return; }
+      for (const p of plan) {
+        await prisma.journeyStory.update({ where: { id: p.id }, data: { title: p.ahora } });
+        console.log(`  ✓ ${p.slug}`);
+      }
+      console.log(`[title-only] ${plan.length} títulos actualizados.`);
     } finally {
       await prisma.$disconnect();
     }
