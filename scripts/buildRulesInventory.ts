@@ -203,7 +203,9 @@ function filasDeClaudeMd(idsCheck: Set<string>): FilaRegla[] {
       .replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "").slice(0, 60);
     out.push({
       id,
-      domain: dominioDe(`${titulo} ${s.slice(0, 400)}`),
+      // Solo por el TITULO. Con el cuerpo dentro, una seccion que nombra de
+      // paso `rulesFor story vocab journey` se clasificaba de vocab.
+      domain: dominioDe(titulo),
       rule: unaLinea(titulo.replace(/\s*\(.*$/, "")),
       gate: gateDeEnforcement(s, idsCheck),
       source: "CLAUDE.md",

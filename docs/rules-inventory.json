@@ -978,6 +978,13 @@
       "source": "story-rules:body-word-count (project_a0_gate_profile) + validator:src/lib/validateGeneratedStory.ts"
     },
     {
+      "id": "claude-md-pedir-una-vez-bloqueante-2026-09-05",
+      "domain": "process",
+      "rule": "Pedir una vez",
+      "gate": "scripts/rulesFor.ts",
+      "source": "CLAUDE.md"
+    },
+    {
       "id": "claude-md-presupuesto-de-palabras-bloqueante-hook-stop",
       "domain": "process",
       "rule": "Presupuesto de palabras",
@@ -1461,6 +1468,13 @@
       "source": "validator:src/lib/validateGeneratedStory.ts"
     },
     {
+      "id": "claude-md-story-validation-gate-blocking-no-bypass",
+      "domain": "story",
+      "rule": "Story validation gate",
+      "gate": "scripts/saveStory.ts",
+      "source": "CLAUDE.md"
+    },
+    {
       "id": "definition-english-level",
       "domain": "story",
       "rule": "Definitions use A1-A2 English vocabulary",
@@ -1739,13 +1753,6 @@
       "rule": "Title does not share >50% tokens with existing titles",
       "gate": "src/lib/validateGeneratedStory.ts#title-uniqueness",
       "source": "validator:src/lib/validateGeneratedStory.ts"
-    },
-    {
-      "id": "claude-md-story-validation-gate-blocking-no-bypass",
-      "domain": "vocab",
-      "rule": "Story validation gate",
-      "gate": "scripts/saveStory.ts",
-      "source": "CLAUDE.md"
     },
     {
       "id": "cultural-anchor-in-vocab",

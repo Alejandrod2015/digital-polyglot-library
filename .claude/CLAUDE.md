@@ -44,6 +44,37 @@ it always holds even mid-task, in summaries, and in verification tables.
 (Classification set 2026-07-25: 5 live, 9 draft, 6 archived. Reclassified the
 draft-vs-archived split by structure via `scripts/_reclassifyDrafts.ts`.)
 
+## Pedir una vez (BLOQUEANTE, 2026-09-05)
+
+El usuario no tiene que recordarle a cada chat que respete las reglas. Toda
+regla dura es una fila de `docs/rules-inventory.json` con su gate declarado, y
+las tareas de dominio entran por una puerta que las CARGA desde ahi:
+
+- **`/tema`**: escribir o cerrar un tema. Empieza por
+  `npx tsx scripts/rulesFor.ts story vocab journey` y cierra con
+  `scripts/cierraTema.ts`, que escribe el registro. "Listo" es esa entrada del
+  registro, nunca una frase del chat.
+- **`/tabla`**: cualquier cuadro de estado del catalogo.
+- **`/audio-tema`**: el orden de narracion, sobre los gates que ya existen.
+
+Dos prohibiciones que salen de aqui:
+
+1. **Una tabla de journeys compuesta a mano esta prohibida.** Se corre
+   `scripts/journeysTable.ts` y se pega SU salida. Si falta una columna, se
+   amplia el script en un commit; nunca se rellena a ojo.
+2. **No se recita una regla de memoria.** Si no sale de `rulesFor`, falta en el
+   inventario, y se añade ahi (`scripts/buildRulesInventory.ts`).
+
+Lo vigila `npm run lint:rules-inventory`, enganchado al manifiesto del
+pre-push: ningun gate fantasma, ningun check implementado sin fila, y el numero
+de reglas sin gate solo puede bajar.
+
+WHY: el 2026-09-05, literal: "Estoy cansado de pedir a los chats que se
+aseguren de revisar y respetar todas las reglas. Solo lo quiero pedir una vez.
+O muchas veces le pido la tabla del journey y me inventa cosas". Habia ocho
+scripts de tabla en `scripts/` porque cada chat se fabrico el suyo. Ver
+`docs/spec-pedirlo-una-vez.md`.
+
 ## Grill before building (expensive/ambiguous features only)
 
 When the user proposes a NEW feature that is expensive (spends image/audio
