@@ -803,6 +803,13 @@
       "source": "validator:src/lib/validateJourneyStories.ts"
     },
     {
+      "id": "journeys-table-canonical",
+      "domain": "journey",
+      "rule": "La tabla de journeys la genera scripts/journeysTable.ts; componerla a mano esta prohibido y los archivados solo salen con --archived",
+      "gate": "process + skill /tabla",
+      "source": "manual"
+    },
+    {
       "id": "no-slang-at-a-level",
       "domain": "journey",
       "rule": "Nada de argot en niveles A",

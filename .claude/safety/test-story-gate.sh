@@ -22,7 +22,7 @@ t "npx tsx scripts/saveStory.ts d.json --journey x"              0 "saveStory: e
 t "npx tsx scripts/_gtest_content.ts"                            2 "text/vocab de primer nivel"
 t "npx tsx scripts/_gtest_spread.ts"                             2 "spread opaco junto a audioFragments"
 t "npx tsx scripts/_gtest_dyn.ts"                                2 "camuflaje por corchete: d[text] = ..."
-t "npx tsx scripts/_ptJourneyTable.ts"                           0 "script de solo lectura"
+t "npx tsx scripts/journeysTable.ts"                             0 "script de solo lectura"
 t "grep -n text scripts/saveStory.ts"                            0 "leer un saver no ejecuta nada"
 t "node -e \"await p.${C}.update({where:{id},data:{text:'x'}})\"" 2 "inline con text"
 t "node -e \"await p.${C}.update({where:{id},data:{audioUrl:u}})\"" 0 "inline solo audioUrl"
