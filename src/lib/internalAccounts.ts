@@ -9,10 +9,24 @@
 // La lista sale de StudioMember, que ya es la fuente de verdad de quien
 // trabaja aqui: asi dar de alta a alguien en el Studio lo excluye de las
 // metricas el mismo dia, sin tocar codigo.
+//
+// Y ademas TODO el dominio de la empresa. StudioMember solo tiene a quien
+// entra al Studio, y hay cuentas nuestras que nunca entran: el 2026-09-05 los
+// dos unicos pulgares "de testers" del programa eran de review@, la cuenta con
+// la que se revisa la app en la tienda. Una cuenta de casa no deja de serlo
+// por no necesitar el Studio.
 
 import { prisma } from "@/lib/prisma";
 
 const TTL_MS = 60_000;
+
+/** El dominio de la empresa. Todo correo suyo es de casa, este o no en el Studio. */
+const INTERNAL_DOMAIN = "@digitalpolyglot.com";
+
+/** Interno por dominio, sin consultar la base: no depende de dar a nadie de alta. */
+function isInternalDomain(email: string): boolean {
+  return email.endsWith(INTERNAL_DOMAIN);
+}
 
 let cache: Set<string> | null = null;
 let cachedAt = 0;
@@ -45,6 +59,7 @@ export function invalidateInternalAccountsCache(): void {
 export async function isInternalEmail(email: string | null | undefined): Promise<boolean> {
   const e = email?.trim().toLowerCase();
   if (!e) return false;
+  if (isInternalDomain(e)) return true;
   return (await listInternalEmails()).has(e);
 }
 
@@ -62,7 +77,8 @@ export async function splitInternal<T>(
   const internal: T[] = [];
   for (const row of rows) {
     const e = emailOf(row)?.trim().toLowerCase();
-    (e && internos.has(e) ? internal : external).push(row);
+    const esInterno = Boolean(e) && (isInternalDomain(e as string) || internos.has(e as string));
+    (esInterno ? internal : external).push(row);
   }
   return { external, internal };
 }
