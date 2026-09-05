@@ -16,6 +16,10 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      'server-only': path.resolve(__dirname, './src/test/serverOnlyStub.ts'),
+      // El prefijo va ANTES del exacto: si no, '@domain/billingCatalog' cae en
+      // el alias de index.ts y vitest se queda sin resolver el subcamino.
+      '@domain/': path.resolve(__dirname, './packages/domain/src') + '/',
       '@domain': path.resolve(__dirname, './packages/domain/src/index.ts'),
     },
   },

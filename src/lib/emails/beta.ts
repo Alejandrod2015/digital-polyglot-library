@@ -38,6 +38,10 @@ export type BetaEmailKind =
   | "declined"
   | "install_nudge"
   | "feedback_ask"
+  // El hermano callado de `feedback_ask`: mismo tamaño, pero para quien entró y
+  // no ha terminado ninguna historia. A esa persona no se le pide una opinión
+  // que todavía no tiene, se le pregunta qué le frenó.
+  | "stuck_ask"
   | "mid_survey"
   | "release_note"
   | "final_survey"
@@ -748,7 +752,7 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
   const blocks = [
     block(
       `${eyebrow("One question")}${head(`What ${gold("annoyed")} you<br/>the most?`, 40)}${lead(
-        `A week in${esc(vocative(data))}. We do not want a review. We want the one thing that made you frown.`,
+        `A story down and an exercise behind you${esc(vocative(data))}. We do not want a review. We want the one thing that made you frown.`,
       )}`,
       "40px 24px 0",
     ),
@@ -769,7 +773,7 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
   ];
 
   return {
-    subject: "What annoyed you most this week?",
+    subject: "What annoyed you most so far?",
     html: betaShell({
       preheader: "One sentence is a complete answer.",
       blocks,
@@ -778,7 +782,7 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `A week in${vocative(data)}.`,
+      `A story down and an exercise behind you${vocative(data)}.`,
       "",
       "We do not want a review. We want the one thing that made you frown: a slow screen, a word that would not tap, audio that started late, a button you could not find.",
       "",
@@ -793,6 +797,69 @@ export function buildBetaFeedbackAskEmail(data?: BetaEmailData): BuiltEmail {
   };
 }
 
+/* ══════════════════════════════════ 5b · STUCK ASK (nothing finished) */
+// For a tester who is in, signed in, and has not finished a single story. The
+// feedback ask above would be asking an opinion they do not have yet; this one
+// asks the only question they can answer, and it is the one we most need.
+export function buildBetaStuckAskEmail(data?: BetaEmailData): BuiltEmail {
+  const b = base(data);
+  const url = data?.feedbackUrl ?? `${b}/beta/feedback`;
+
+  const blocks = [
+    block(
+      `${eyebrow("One question")}${head(`What ${gold("stopped")} you?`, 42)}${lead(
+        `You are in${esc(vocative(data))}, and you have not finished a story yet. That is useful to us, not a problem: whatever got in the way is exactly the thing we want to fix before anyone else meets it.`,
+      )}`,
+      "40px 24px 0",
+    ),
+    block(
+      card(
+        `${cardTitle("It is usually one of these")}
+        ${bullets([
+          "The level felt wrong, too easy or too hard.",
+          "The audio did not play, or started somewhere odd.",
+          "You could not find where to begin.",
+          "Life. No time, no reason to open it yet.",
+        ])}`,
+      ),
+      "28px 24px 0",
+      false,
+    ),
+    block(cta("Tell us which one", url), "24px 24px 0"),
+    block(
+      note("Even the last one is an answer worth having. Or just hit reply, it lands in the same place."),
+      "14px 24px 0",
+    ),
+  ];
+
+  return {
+    subject: "What stopped you?",
+    html: betaShell({
+      preheader: "You have not finished a story yet. We would like to know why.",
+      blocks,
+      baseUrl: b,
+      assetBase: assetBase(data),
+      unsubscribeToken: data?.unsubscribeToken,
+    }),
+    text: [
+      `You are in${vocative(data)}, and you have not finished a story yet.`,
+      "",
+      "That is useful to us, not a problem. Whatever got in the way is the thing we want to fix before anyone else meets it. It is usually one of these:",
+      "",
+      "  1. The level felt wrong, too easy or too hard.",
+      "  2. The audio did not play, or started somewhere odd.",
+      "  3. You could not find where to begin.",
+      "  4. Life. No time, no reason to open it yet.",
+      "",
+      `Tell us which one: ${url}`,
+      "",
+      "Even the last one is an answer worth having. Or just hit reply, it lands in the same place.",
+      "",
+      SIGN_OFF,
+    ].join("\n"),
+  };
+}
+
 /* ══════════════════════════════════════════════ 6 · MID SURVEY */
 export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
   const b = base(data);
@@ -801,8 +868,8 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
 
   const blocks = [
     block(
-      `${eyebrow("Three weeks in")}${head(`Three questions,<br/>${gold("ninety")} seconds.`, 40)}${lead(
-        `Three weeks down, three to go. What you say now decides what gets built in the second half${esc(vocative(data))}, so this is the moment your answers are worth the most.`,
+      `${eyebrow("A few stories in")}${head(`Three questions,<br/>${gold("ninety")} seconds.`, 40)}${lead(
+        `You have read a few and practised a few${esc(vocative(data))}, which is exactly when your answers are worth the most: what you say now decides what gets built next.`,
       )}`,
       "40px 24px 0",
     ),
@@ -824,14 +891,14 @@ export function buildBetaMidSurveyEmail(data?: BetaEmailData): BuiltEmail {
   return {
     subject: "Three questions, ninety seconds",
     html: betaShell({
-      preheader: "Halfway through the beta. Your answers set the second half.",
+      preheader: "You have read a few. Your answers decide what gets built next.",
       blocks,
       baseUrl: b,
       assetBase: assetBase(data),
       unsubscribeToken: data?.unsubscribeToken,
     }),
     text: [
-      `Three weeks down, three to go${vocative(data)}. This is the halfway point of the beta.`,
+      `You have read a few stories and practised a few${vocative(data)}.`,
       "",
       "Three questions, ninety seconds:",
       "  1. How likely are you to recommend it, nought to ten?",
@@ -1320,6 +1387,7 @@ export const BETA_EMAIL_BUILDERS: Record<BetaEmailKind, (data?: BetaEmailData) =
   declined: buildBetaDeclinedEmail,
   install_nudge: buildBetaInstallNudgeEmail,
   feedback_ask: buildBetaFeedbackAskEmail,
+  stuck_ask: buildBetaStuckAskEmail,
   mid_survey: buildBetaMidSurveyEmail,
   release_note: buildBetaReleaseNoteEmail,
   final_survey: buildBetaFinalSurveyEmail,

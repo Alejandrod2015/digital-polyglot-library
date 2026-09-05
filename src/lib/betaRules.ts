@@ -58,6 +58,27 @@ export type BetaRulesConfig = {
   feedbackAskAfterDays: number;
   /** Days after a tester starts before the halfway survey. */
   midSurveyAfterDays: number;
+
+  // ── Puertas de uso. Los días solos no dicen nada: el 2026-09-05 cuatro
+  // testers llevaban 23 días dentro con cero historias, y otra había terminado
+  // siete en su primer día. Lo que decide si alguien tiene algo que contar es
+  // lo que ha hecho, y los días de arriba pasan a ser sólo un suelo para que
+  // una petición no caiga el mismo día que entra. ──
+
+  /** Historias terminadas que abre la primera petición. */
+  feedbackAskMinStories: number;
+  /** Ejercicios completados que abren la primera petición. */
+  feedbackAskMinExercises: number;
+  /** Historias terminadas que abren la encuesta de mitad. */
+  midSurveyMinStories: number;
+  /** Ejercicios completados que abren la encuesta de mitad. */
+  midSurveyMinExercises: number;
+  /**
+   * Días dentro sin terminar una sola historia antes de preguntar qué les
+   * frenó. No es una encuesta: son las personas de las que no sabemos nada, y
+   * su respuesta vale más que un NPS de quien ya está enganchado.
+   */
+  stuckAskAfterDays: number;
   /** Days before betaEndsAt that the final survey goes out. */
   finalSurveyBeforeEndDays: number;
   /**
@@ -83,8 +104,14 @@ export const DEFAULT_BETA_RULES: BetaRulesConfig = {
   launchedAt: null,
   appStoreReviewUrl: null,
   installNudgeAfterDays: 3,
-  feedbackAskAfterDays: 7,
-  midSurveyAfterDays: 21,
+  // Suelos, no calendario: la puerta de verdad son las dos líneas de abajo.
+  feedbackAskAfterDays: 2,
+  midSurveyAfterDays: 7,
+  feedbackAskMinStories: 1,
+  feedbackAskMinExercises: 1,
+  midSurveyMinStories: 3,
+  midSurveyMinExercises: 2,
+  stuckAskAfterDays: 7,
   finalSurveyBeforeEndDays: 5,
   reviewAskMinRating: 8,
 };

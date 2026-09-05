@@ -71,13 +71,15 @@ export function decideBetaEmail(args: {
   /** Their final-survey rating, if they have answered it. */
   finalRating: number | null;
   /**
-   * Stories this tester has actually finished. Gates the two emails that ask
-   * for an opinion: see the note where they are decided.
+   * Stories this tester has actually finished. Gates the emails that ask for
+   * an opinion: see the note where they are decided.
    */
   storiesFinished: number;
+  /** Practice sessions this tester has actually completed. Same job. */
+  exercisesFinished: number;
   alreadySent: Set<string>;
 }): BetaLifecycleDecision {
-  const { tester, now, rules, finalRating, storiesFinished, alreadySent } = args;
+  const { tester, now, rules, finalRating, storiesFinished, exercisesFinished, alreadySent } = args;
   const not = (k: BetaEmailKind) => !alreadySent.has(k);
 
   // ── Post-launch: the review branch. Runs first because once the app is
@@ -131,12 +133,30 @@ export function decideBetaEmail(args: {
   // No enviar aquí no pierde nada: la petición sigue disponible y sale el día
   // que terminen su primera historia, que es cuando por fin tienen algo que
   // contar.
-  const canOpine = storiesFinished > 0;
-  if (canOpine && tenure >= rules.midSurveyAfterDays && not("mid_survey")) {
+  // La puerta es lo que han HECHO; los días sólo evitan que una petición caiga
+  // el mismo día que entran. Antes era al revés y por eso preguntaba a gente
+  // con tres semanas de antigüedad y cero historias, mientras alguien que
+  // terminó siete en su primer día no recibía nada.
+  const didRead = storiesFinished >= rules.midSurveyMinStories;
+  const didPractice = exercisesFinished >= rules.midSurveyMinExercises;
+  if (didRead && didPractice && tenure >= rules.midSurveyAfterDays && not("mid_survey")) {
     return { kind: "mid_survey" };
   }
-  if (canOpine && tenure >= rules.feedbackAskAfterDays && not("feedback_ask")) {
+
+  if (
+    storiesFinished >= rules.feedbackAskMinStories &&
+    exercisesFinished >= rules.feedbackAskMinExercises &&
+    tenure >= rules.feedbackAskAfterDays &&
+    not("feedback_ask")
+  ) {
     return { kind: "feedback_ask" };
+  }
+
+  // Los callados: dentro, con cuenta, y ni una historia terminada. No se les
+  // pide una opinión que no tienen; se les pregunta qué les frenó, que es lo
+  // único que pueden contestar y lo que más falta nos hace saber.
+  if (storiesFinished === 0 && tenure >= rules.stuckAskAfterDays && not("stuck_ask")) {
+    return { kind: "stuck_ask" };
   }
 
   return null;
@@ -190,14 +210,27 @@ export async function runBetaLifecycle(now: Date = new Date()): Promise<BetaLife
   const testerUserIds = testers
     .map((t) => t.clerkUserId)
     .filter((id): id is string => Boolean(id));
+  //
+  // Historias DISTINTAS, no eventos: oír tres veces la misma no son tres
+  // historias, y el umbral de la encuesta de mitad son tres historias.
   const finishedByUser = new Map<string, number>();
+  const exercisesByUser = new Map<string, number>();
   if (testerUserIds.length > 0) {
-    const grouped = await prisma.userMetric.groupBy({
-      by: ["userId"],
+    const finished = await prisma.userMetric.findMany({
       where: { userId: { in: testerUserIds }, eventType: "audio_complete" },
+      select: { userId: true, storySlug: true },
+      distinct: ["userId", "storySlug"],
+    });
+    for (const row of finished) {
+      finishedByUser.set(row.userId, (finishedByUser.get(row.userId) ?? 0) + 1);
+    }
+
+    const practised = await prisma.userMetric.groupBy({
+      by: ["userId"],
+      where: { userId: { in: testerUserIds }, eventType: "practice_session_completed" },
       _count: { _all: true },
     });
-    for (const g of grouped) finishedByUser.set(g.userId, g._count._all);
+    for (const g of practised) exercisesByUser.set(g.userId, g._count._all);
   }
 
   // Final-survey ratings for everyone in one query. The review branch needs
@@ -235,6 +268,7 @@ export async function runBetaLifecycle(now: Date = new Date()): Promise<BetaLife
       rules,
       finalRating: finalBySignup.get(tester.id) ?? null,
       storiesFinished: tester.clerkUserId ? (finishedByUser.get(tester.clerkUserId) ?? 0) : 0,
+      exercisesFinished: tester.clerkUserId ? (exercisesByUser.get(tester.clerkUserId) ?? 0) : 0,
       alreadySent: sentBySignup.get(tester.id) ?? new Set(),
     });
 
