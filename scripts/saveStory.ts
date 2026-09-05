@@ -16,6 +16,10 @@
  *   npx tsx scripts/saveStory.ts <data.json> --journey <id> \
  *       [--lang ES] [--level c1] [--variant LATAM] [--publish] [--dry]
  *
+ * ORDEN DE TEMAS (2026-09-05): antes de escribir nada comprueba que el tema
+ * ANTERIOR del journey tenga cierre vigente en scripts/tema-cierres.json
+ * (scripts/cierraTema.ts). Sin variable de escape.
+ *
  * data.json: array of story objects { topic, slotIndex, title, slug?,
  *   synopsis, text, vocab[], arcType }. Rows are matched by
  *   (journeyId, topic, slotIndex) and updated.
@@ -40,6 +44,7 @@ import { PrismaClient } from "../src/generated/prisma";
 import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
 import { validateJourneyStories, type JourneyStoryInput, type JourneyCheck } from "@/lib/validateJourneyStories";
+import { candadoCierrePrevio, type HistoriaCierre } from "./temaCierres";
 
 /** Build the cross-story summary the canonical validator needs to run its
  *  repetition / rotation / opening-rhythm / motif checks against siblings. */
@@ -591,6 +596,46 @@ function slugify(s: string): string {
     process.exit(1);
   }
   console.log(`\n✓ All ${results.length} stories pass the canonical validator (${ctx.language} ${ctx.level} ${ctx.variant}).`);
+
+  // ── CANDADO DE CIERRE DE TEMA (2026-09-05) ─────────────────────
+  //
+  // No se guardan historias de un tema mientras el ANTERIOR del journey no
+  // tenga un cierre registrado y vigente en scripts/tema-cierres.json. Vigente
+  // quiere decir que el hash del cierre cuadra con lo que hay hoy en la base:
+  // si el texto del tema cerrado cambio despues, el cierre caduca solo.
+  //
+  // Mismo patron que la muestra de narracion: sin variable de escape, y el
+  // error escupe el comando que falta. POR QUE: "listo" era una frase del chat
+  // y no un registro, asi que un tema pasaba por cerrado sin que nadie hubiera
+  // corrido las comprobaciones. Corre tambien en --dry: validar el tema
+  // siguiente antes de cerrar el anterior es justo el orden que esto impide.
+  if (journeyId) {
+    const p4 = new PrismaClient();
+    try {
+      const j4 = await p4.journey.findUnique({ where: { id: journeyId }, select: { topics: true } });
+      const filas4 = await p4.journeyStory.findMany({
+        where: { journeyId },
+        select: { topic: true, slotIndex: true, title: true, text: true, vocab: true },
+      });
+      const porTema = new Map<string, HistoriaCierre[]>();
+      for (const f of filas4) porTema.set(f.topic, [...(porTema.get(f.topic) ?? []), f as HistoriaCierre]);
+      const bloqueo = candadoCierrePrevio({
+        journeyId,
+        topicsOrden: j4?.topics ?? [],
+        temasEnTanda: [...new Set(stories.map((s: any) => String(s.topic)))],
+        historiasPorTema: porTema,
+      });
+      if (bloqueo) {
+        console.error(`\n✗ CANDADO DE CIERRE DE TEMA. NOTHING WRITTEN.\n`);
+        console.error(`  ${bloqueo}`);
+        console.error(
+          `\n  Un tema se cierra antes de empezar el siguiente, y el cierre lo escribe un\n` +
+          `  script que corrio las comprobaciones, no una frase. No hay variable de escape.`
+        );
+        process.exit(1);
+      }
+    } finally { await p4.$disconnect(); }
+  }
 
   // ── GATE DE JOURNEY: lo que solo se ve mirando las 21 juntas ────
   //
