@@ -22,6 +22,10 @@
  *   --typography-only   migración de comillas
  *   --title-only        acortar un título que se corta en la tarjeta
  *
+ * ORDEN DE TEMAS (2026-09-05): antes de escribir nada comprueba que el tema
+ * ANTERIOR del journey tenga cierre vigente en scripts/tema-cierres.json
+ * (scripts/cierraTema.ts). Sin variable de escape.
+ *
  * data.json: array of story objects { topic, slotIndex, title, slug?,
  *   synopsis, text, vocab[], arcType }. Rows are matched by
  *   (journeyId, topic, slotIndex) and updated.
@@ -46,6 +50,7 @@ import { PrismaClient } from "../src/generated/prisma";
 import { validateGeneratedStory, extractStoryMotifs, extractProperNouns, type ExistingStorySummary } from "@/lib/validateGeneratedStory";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
 import { validateJourneyStories, type JourneyStoryInput, type JourneyCheck } from "@/lib/validateJourneyStories";
+import { candadoCierrePrevio, type HistoriaCierre } from "./temaCierres";
 
 /** Build the cross-story summary the canonical validator needs to run its
  *  repetition / rotation / opening-rhythm / motif checks against siblings. */
@@ -698,6 +703,46 @@ function slugify(s: string): string {
   }
   console.log(`\n✓ All ${results.length} stories pass the canonical validator (${ctx.language} ${ctx.level} ${ctx.variant}).`);
 
+  // ── CANDADO DE CIERRE DE TEMA (2026-09-05) ─────────────────────
+  //
+  // No se guardan historias de un tema mientras el ANTERIOR del journey no
+  // tenga un cierre registrado y vigente en scripts/tema-cierres.json. Vigente
+  // quiere decir que el hash del cierre cuadra con lo que hay hoy en la base:
+  // si el texto del tema cerrado cambio despues, el cierre caduca solo.
+  //
+  // Mismo patron que la muestra de narracion: sin variable de escape, y el
+  // error escupe el comando que falta. POR QUE: "listo" era una frase del chat
+  // y no un registro, asi que un tema pasaba por cerrado sin que nadie hubiera
+  // corrido las comprobaciones. Corre tambien en --dry: validar el tema
+  // siguiente antes de cerrar el anterior es justo el orden que esto impide.
+  if (journeyId) {
+    const p4 = new PrismaClient();
+    try {
+      const j4 = await p4.journey.findUnique({ where: { id: journeyId }, select: { topics: true } });
+      const filas4 = await p4.journeyStory.findMany({
+        where: { journeyId },
+        select: { topic: true, slotIndex: true, title: true, text: true, vocab: true },
+      });
+      const porTema = new Map<string, HistoriaCierre[]>();
+      for (const f of filas4) porTema.set(f.topic, [...(porTema.get(f.topic) ?? []), f as HistoriaCierre]);
+      const bloqueo = candadoCierrePrevio({
+        journeyId,
+        topicsOrden: j4?.topics ?? [],
+        temasEnTanda: [...new Set(stories.map((s: any) => String(s.topic)))],
+        historiasPorTema: porTema,
+      });
+      if (bloqueo) {
+        console.error(`\n✗ CANDADO DE CIERRE DE TEMA. NOTHING WRITTEN.\n`);
+        console.error(`  ${bloqueo}`);
+        console.error(
+          `\n  Un tema se cierra antes de empezar el siguiente, y el cierre lo escribe un\n` +
+          `  script que corrio las comprobaciones, no una frase. No hay variable de escape.`
+        );
+        process.exit(1);
+      }
+    } finally { await p4.$disconnect(); }
+  }
+
   // ── GATE DE JOURNEY: lo que solo se ve mirando las 21 juntas ────
   //
   // POR QUÉ (2026-08-23). El validador canónico juzga una historia suelta, y
@@ -758,13 +803,29 @@ function slugify(s: string): string {
         .map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase());
     } finally { await p3.$disconnect(); }
 
-    if (todas.length < 7) {
-      console.log(`\n[gate de journey] SALTADO: solo ${todas.length} historias con texto (hacen falta 7 para medir un conjunto).`);
-    } else {
-      const jc = validateJourneyStories(todas, { language: ctx.language, level: ctx.level, realPeople });
-      const malos = jc.filter((c) => c.status !== "pass");
-      console.log(`\n── gate de journey (${todas.length} historias) ──`);
-      for (const c of jc) console.log(`   ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : "SIN IMPLEMENTAR"} [${c.id}] ${c.detail ?? ""}`);
+    // EL GATE YA NO SE SALTA CON EL JOURNEY A MEDIAS (2026-09-05).
+    //
+    // Antes, por debajo de siete historias no se medía NADA, así que las tres
+    // primeras de un journey no pasaban por ninguna regla de conjunto y el
+    // defecto aparecía cuando ya había 21 escritas. Ahora los checks
+    // prefix-safe (los que no se arreglan añadiendo historias) corren con las
+    // que haya, y los de conjunto devuelven `pending-set`: quedan LISTADOS,
+    // que es lo contrario de saltárselos en silencio. Con siete o más, el
+    // conjunto se juzga entero, exactamente como hasta hoy.
+    {
+      const completo = todas.length >= 7;
+      const jc = validateJourneyStories(todas, {
+        language: ctx.language, level: ctx.level, realPeople, conjuntoCompleto: completo,
+      });
+      const malos = jc.filter((c) => c.status === "fail" || c.status === "not-implemented");
+      const enEspera = jc.filter((c) => c.status === "pending-set");
+      console.log(`\n── gate de journey (${todas.length} historias${completo ? "" : ", conjunto incompleto"}) ──`);
+      for (const c of jc) console.log(`   ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : c.status === "pending-set" ? "en espera" : "SIN IMPLEMENTAR"} [${c.id}] ${c.detail ?? ""}`);
+      if (enEspera.length) {
+        console.log(`\n   ${enEspera.length} regla(s) de conjunto en espera de que el journey este completo:`);
+        for (const c of enEspera) console.log(`     [${c.id}]`);
+        console.log(`   No estan aprobadas; estan sin juzgar. Se cierran con el journey delante.`);
+      }
       if (malos.length && !noRegression) {
         console.error(`\n✗ GATE DE JOURNEY: ${malos.length} regla(s) de conjunto sin cumplir. NOTHING WRITTEN.`);
         console.error(`   Si el journey ya arrastraba estos fallos de antes de la regla, --no-regression`);

@@ -31,7 +31,8 @@
     "lint:gloss-variants": "tsx scripts/checkGlossVariants.ts",
     "lint:gloss-moods": "tsx scripts/checkGlossMoods.ts",
     "lint:hard-rules": "tsx scripts/checkHardRules.ts",
-    "lint:vocab-layer": "tsx scripts/checkVocabLayer.ts"
+    "lint:vocab-layer": "tsx scripts/checkVocabLayer.ts",
+    "lint:rules-inventory": "tsx scripts/checkRulesInventory.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",

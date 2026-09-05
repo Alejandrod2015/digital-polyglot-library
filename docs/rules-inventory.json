@@ -1,0 +1,2017 @@
+{
+  "_why": "Inventario maestro: toda regla dura del proyecto es una fila con su gate declarado (o 'process'/'none' explicitos). Existe porque el cumplimiento dependia de que el chat RECORDARA las reglas. Se genera con scripts/buildRulesInventory.ts desde tres fuentes (los validadores, docs/story-rules.json y las lineas **Enforcement de la memoria mas las secciones BLOQUEANTES de .claude/CLAUDE.md) y lo vigila npm run lint:rules-inventory. Las filas escritas a mano llevan source 'manual' y sobreviven a la regeneracion.",
+  "_gate": {
+    "<ruta>.ts#<check>": "check implementado en ese validador",
+    "<ruta>.ts": "script que hace cumplir la regla",
+    "<hook>.sh": "hook PreToolUse de .claude/safety",
+    "npm run <lint>": "lint enganchado al manifiesto del pre-push",
+    "skill /<nombre>": "puerta que carga las reglas antes de trabajar",
+    "process": "no es comprobable por codigo: es un paso obligatorio del proceso",
+    "none": "hueco conocido: hoy no lo comprueba nadie"
+  },
+  "_generated": "scripts/buildRulesInventory.ts",
+  "rules": [
+    {
+      "id": "approved-voices",
+      "domain": "audio",
+      "rule": "Audio de produccion solo con una voz de la allowlist",
+      "gate": "process",
+      "source": "story-rules:approved-voices (feedback_approved_voices_only)"
+    },
+    {
+      "id": "audio-last-step",
+      "domain": "audio",
+      "rule": "El audio va al final del journey, nunca tema a tema",
+      "gate": "process",
+      "source": "story-rules:audio-last-step (feedback_audio_last_step_of_the_journey)"
+    },
+    {
+      "id": "body-narrator-opening",
+      "domain": "audio",
+      "rule": "El cuerpo abre con un parrafo de narrador, no con una linea de dialogo",
+      "gate": "src/lib/validateGeneratedStory.ts#body-narrator-opening",
+      "source": "story-rules:body-narrator-opening (project_story_quality_spec) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "claude-md-karaoke-y-texto-el-orden-es-texto-primero-bloqueante-2026-09",
+      "domain": "audio",
+      "rule": "Karaoke y texto: el orden es texto primero",
+      "gate": "scripts/checkKaraokeFresh.ts",
+      "source": "CLAUDE.md"
+    },
+    {
+      "id": "claude-md-orden-de-narracion-por-tema-bloqueante-2026-09-02",
+      "domain": "audio",
+      "rule": "Orden de narracion por tema",
+      "gate": "scripts/_muestraA2Titulo.ts",
+      "source": "CLAUDE.md"
+    },
+    {
+      "id": "feedback_ambient_not_under_narrator",
+      "domain": "audio",
+      "rule": "El ruido de fondo (ambient) NUNCA debe sonar mientras el narrador habla; solo bajo diálogo",
+      "gate": "none",
+      "source": "memory:feedback_ambient_not_under_narrator.md"
+    },
+    {
+      "id": "feedback_approved_voices_only",
+      "domain": "audio",
+      "rule": "NUNCA rendear audio de producción con una voz que el usuario no aprobó de oído; hay gate runtime + hook que lo hacen imposible",
+      "gate": "src/lib/approvedVoices.ts",
+      "source": "memory:feedback_approved_voices_only.md"
+    },
+    {
+      "id": "feedback_audio_last_step_of_the_journey",
+      "domain": "audio",
+      "rule": "\"El audio se genera cuando el journey ENTERO está cerrado (21 historias validadas), nunca tema a tema; las reglas de nivel journey solo se pueden comprobar con las 21 delante y rompen texto ya grab...",
+      "gate": "scripts/_narraUnaA2.ts",
+      "source": "memory:feedback_audio_last_step_of_the_journey.md"
+    },
+    {
+      "id": "feedback_audio_qa_gate_mandatory",
+      "domain": "audio",
+      "rule": "\"NUNCA sintetizar audio de práctica (ElevenLabs) sin el gate F0 que re-tira hasta afirmación (no uptalk). Aplicar el gate ANTES de la primera generación, no descubrir el problema después. Enforced...",
+      "gate": "scripts/_genWordClips.ts",
+      "source": "memory:feedback_audio_qa_gate_mandatory.md"
+    },
+    {
+      "id": "feedback_audio_test_sample_before_full",
+      "domain": "audio",
+      "rule": "\"NUNCA generar el audio completo de una historia con ElevenLabs sin antes generar una prueba: 1 diálogo por voz (incluido narrador) y que el usuario lo valide\"",
+      "gate": "pre-bash-guard.sh",
+      "source": "memory:feedback_audio_test_sample_before_full.md"
+    },
+    {
+      "id": "feedback_elevenlabs_accent_unreliable",
+      "domain": "audio",
+      "rule": "# ElevenLabs accent metadata no es confiable",
+      "gate": "process",
+      "source": "memory:feedback_elevenlabs_accent_unreliable.md"
+    },
+    {
+      "id": "feedback_elevenlabs_only_policy",
+      "domain": "audio",
+      "rule": "\"Política DURA del usuario (2026-07-24): NADA en la app puede usar audio que no sea ElevenLabs. Si no hay voz EL, silencio. Discriminador engine vs curación, y dónde está enforced.\"",
+      "gate": "src/lib/elevenlabs.ts",
+      "source": "memory:feedback_elevenlabs_only_policy.md"
+    },
+    {
+      "id": "feedback_exercise_audio_narrator_voice",
+      "domain": "audio",
+      "rule": "El audio de los ejercicios de práctica se hace con ElevenLabs y con la voz del NARRADOR de la historia",
+      "gate": "none",
+      "source": "memory:feedback_exercise_audio_narrator_voice.md"
+    },
+    {
+      "id": "feedback_narration_order_per_topic",
+      "domain": "audio",
+      "rule": "\"REGLA DURA: un tema no se narra de golpe. Muestra, comprobacion, primera entera, comprobacion, y solo entonces el resto\"",
+      "gate": "scripts/_narraUnaA2.ts",
+      "source": "memory:feedback_narration_order_per_topic.md"
+    },
+    {
+      "id": "feedback_narrator_first_person",
+      "domain": "audio",
+      "rule": "\"Las historias estilo narrador pueden ir en primera persona (el narrador vive la historia), no solo tercera distante\"",
+      "gate": "none",
+      "source": "memory:feedback_narrator_first_person.md"
+    },
+    {
+      "id": "feedback_narrator_says_who_speaks",
+      "domain": "audio",
+      "rule": "\"El narrador tiene que decir de quién se habla antes de cada cambio de voz; se mide con scripts/_acotacion.ts y el listón del catálogo es 97-100%\"",
+      "gate": "scripts/_acotacion.ts",
+      "source": "memory:feedback_narrator_says_who_speaks.md"
+    },
+    {
+      "id": "feedback_never_regenerate_audio",
+      "domain": "audio",
+      "rule": "# Never regenerate ElevenLabs audio without explicit permission",
+      "gate": "pre-bash-guard.sh",
+      "source": "memory:feedback_never_regenerate_audio.md"
+    },
+    {
+      "id": "feedback_no_accent_mentions",
+      "domain": "audio",
+      "rule": "Nunca describir en el texto cómo suena/qué acento tiene un personaje",
+      "gate": "src/lib/validateJourneyStories.ts",
+      "source": "memory:feedback_no_accent_mentions.md"
+    },
+    {
+      "id": "feedback_no_false_claims",
+      "domain": "audio",
+      "rule": "NUNCA inventar features que no existen. Específicamente: el audio es IA (no native, no mencionar fuente), no usar \"heritage\" en ningún lado.",
+      "gate": "pre-comms-claim-guard.sh",
+      "source": "memory:feedback_no_false_claims.md"
+    },
+    {
+      "id": "feedback_no_filler_sounds",
+      "domain": "audio",
+      "rule": "Story bodies must never contain laughter/hmm/reaction/stage-direction tokens; ElevenLabs TTS cannot render them naturally and the audio breaks.",
+      "gate": "body-no-banned-tokens",
+      "source": "memory:feedback_no_filler_sounds.md"
+    },
+    {
+      "id": "feedback_no_openai_qa_claude_in_chat",
+      "domain": "audio",
+      "rule": "\"El QA de audio NO usa la API de OpenAI; el juez es Claude aquí en el chat. Nunca reportar \\\"QA unavailable por falta de OPENAI_API_KEY\\\" como si fuera algo que arreglar\"",
+      "gate": "process",
+      "source": "memory:feedback_no_openai_qa_claude_in_chat.md"
+    },
+    {
+      "id": "feedback_no_raw_mp3_cards",
+      "domain": "audio",
+      "rule": "\"Nunca entregar audio como archivo mp3 suelto (tarjeta de descarga). El audio se oye DENTRO de la historia, en el lector de localhost, con el texto delante\"",
+      "gate": "stop-story-audio-link-guard.sh",
+      "source": "memory:feedback_no_raw_mp3_cards.md"
+    },
+    {
+      "id": "feedback_no_s_aspiration",
+      "domain": "audio",
+      "rule": "# Cero aspiración de 's' en cualquier voz, en cualquier caso",
+      "gate": "dialogue-bare-imperative",
+      "source": "memory:feedback_no_s_aspiration.md"
+    },
+    {
+      "id": "feedback_practice_audio_no_trimming",
+      "domain": "audio",
+      "rule": "Audio de práctica - NUNCA recortar/cortar clips; palabras se generan completas (créditos OK); oraciones completas vía segmento o TTS completo",
+      "gate": "none",
+      "source": "memory:feedback_practice_audio_no_trimming.md"
+    },
+    {
+      "id": "feedback_reader_legacy_flash",
+      "domain": "audio",
+      "rule": "Guard rail to never re-break the karaoke first-paint fix",
+      "gate": "none",
+      "source": "memory:feedback_reader_legacy_flash.md"
+    },
+    {
+      "id": "feedback_story_arc_continuity_gate",
+      "domain": "audio",
+      "rule": "\"Antes de dar por listo cualquier topic (o regenerar audio), leer TODAS las historias del arco 1→N en secuencia como el usuario; un validator verde NO basta\"",
+      "gate": "names-cross-story",
+      "source": "memory:feedback_story_arc_continuity_gate.md"
+    },
+    {
+      "id": "feedback_tts_aire_stitching",
+      "domain": "audio",
+      "rule": "\"ORO: el 'aire'/respiración en ElevenLabs lo causa el stitching; NARRADOR = disableStitching:true + antiUptalkGate:true (sin aire Y finales cerrados)\"",
+      "gate": "src/lib/elevenlabs.ts",
+      "source": "memory:feedback_tts_aire_stitching.md"
+    },
+    {
+      "id": "feedback_voice_audition_inline_player",
+      "domain": "audio",
+      "rule": "\"Toda audición/review se entrega como link markdown clicable que abre un reproductor inline (localhost o página en R2). NUNCA SendUserFile, ni URL cruda, ni auto-play. Máximo 10 clips por tanda y U...",
+      "gate": "none",
+      "source": "memory:feedback_voice_audition_inline_player.md"
+    },
+    {
+      "id": "feedback_voice_bans",
+      "domain": "audio",
+      "rule": "\"Voces vetadas y reglas de casting: monótonas y con uptalk fuera, Thorsten y Sebastian y Marina prohibidas, Michael Berger para joven DE, nada de niño ni anciano, y todo fix de voz va system-wide\"",
+      "gate": "src/lib/elevenlabs.ts",
+      "source": "memory:feedback_voice_bans.md"
+    },
+    {
+      "id": "feedback_voice_matches_country",
+      "domain": "audio",
+      "rule": "La voz de un journey DEBE ser del país del journey; nunca sugerir una voz de otro país (p.ej. narrador mexicano para Colombia)",
+      "gate": "none",
+      "source": "memory:feedback_voice_matches_country.md"
+    },
+    {
+      "id": "journey-closing-alone",
+      "domain": "audio",
+      "rule": "Como mucho la mitad de los cierres con el protagonista a solas",
+      "gate": "src/lib/validateJourneyStories.ts#journey-closing-alone",
+      "source": "story-rules:journey-closing-alone (project_a0_narration_story_mold) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-no-accent-mentions",
+      "domain": "audio",
+      "rule": "Las historias no comentan el acento ni el dialecto de nadie",
+      "gate": "src/lib/validateJourneyStories.ts#journey-no-accent-mentions",
+      "source": "story-rules:journey-no-accent-mentions (feedback_no_accent_mentions) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-quoted-speech-band",
+      "domain": "audio",
+      "rule": "Habla citada entre el 25% y el 35% de las palabras del cuerpo, en TODAS las historias",
+      "gate": "src/lib/validateJourneyStories.ts#journey-quoted-speech-band",
+      "source": "story-rules:journey-quoted-speech-band (feedback_narrator_quoted_speech_30pct) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "motif-cross-story",
+      "domain": "audio",
+      "rule": "Los recursos de narracion no se repiten entre hermanas",
+      "gate": "src/lib/validateGeneratedStory.ts#motif-cross-story",
+      "source": "story-rules:motif-cross-story (project_story_continuity_locks) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "narrator-sensory-anchor",
+      "domain": "audio",
+      "rule": "Un ancla sensorial por historia; tres o mas categorias es sobrecarga",
+      "gate": "src/lib/validateGeneratedStory.ts#narrator-sensory-anchor",
+      "source": "story-rules:narrator-sensory-anchor (project_story_quality_spec) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "opening-rhythm-rotation",
+      "domain": "audio",
+      "rule": "La apertura no repite la plantilla de sus hermanas de tema",
+      "gate": "src/lib/validateGeneratedStory.ts#opening-rhythm-rotation",
+      "source": "story-rules:opening-rhythm-rotation (project_a0_narration_story_mold) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "project_audio_dual_path",
+      "domain": "audio",
+      "rule": "Hay dos motores TTS independientes (Piper interno vs ElevenLabs externo) y para saber cuál generó un audio hay que mirar la metadata del MP3, no la DB.",
+      "gate": "none",
+      "source": "memory:project_audio_dual_path.md"
+    },
+    {
+      "id": "project_ios_wsola_mono_artifact",
+      "domain": "audio",
+      "rule": "expo-av rate < 0.7 + shouldCorrectPitch:true on Piper mono 22050 Hz mp3 degrades formants → female voice sounds \"deep/possessed\"",
+      "gate": "none",
+      "source": "memory:project_ios_wsola_mono_artifact.md"
+    },
+    {
+      "id": "project_journey_de_b1_expat",
+      "domain": "audio",
+      "rule": "\"Journey alemán C1 'Expat' (Berlín): 21/21 historias + práctica de los 7 topics sembrada (TODO el contenido listo); solo falta audio 2-21 + clips de práctica (gated); archived hasta launch\"",
+      "gate": "scripts/_genExpatStoryAudio.ts",
+      "source": "memory:project_journey_de_b1_expat.md"
+    },
+    {
+      "id": "project_journey_es_c1_friends",
+      "domain": "audio",
+      "rule": "\"Journey ES C1 LATAM \\\"Friends\\\" (amigos); 7 temas × 3, cada uno país/narrador distinto; estilo NARRADOR; C1 real vulgar. 21/21 escritas+glosas+práctica; audio 3/21\"",
+      "gate": "scripts/_genFriendsStoryAudio.ts",
+      "source": "memory:project_journey_es_c1_friends.md"
+    },
+    {
+      "id": "project_karaoke_accuracy_harness",
+      "domain": "audio",
+      "rule": "Cómo medir la precisión del karaoke (regla whisper + ffmpeg) y su suelo de ruido de 0.17 s",
+      "gate": "none",
+      "source": "memory:project_karaoke_accuracy_harness.md"
+    },
+    {
+      "id": "project_karaoke_drift_correction_removed",
+      "domain": "audio",
+      "rule": "La corrección de drift era la causa del karaoke desincronizado; los timings van crudos de aeneas",
+      "gate": "none",
+      "source": "memory:project_karaoke_drift_correction_removed.md"
+    },
+    {
+      "id": "project_narrator_candidate_giacomo",
+      "domain": "audio",
+      "rule": "\"Spanish-journey male narrator search; front-runner Andreti, backups Giacomo + Ricardo\"",
+      "gate": "none",
+      "source": "memory:project_narrator_candidate_giacomo.md"
+    },
+    {
+      "id": "project_peru_voice_bank",
+      "domain": "audio",
+      "rule": "\"Banco de voces Perú (ElevenLabs) para historias/práctica: estado de candidatas probadas y descartadas\"",
+      "gate": "none",
+      "source": "memory:project_peru_voice_bank.md"
+    },
+    {
+      "id": "project_portuguese_book_unpublished",
+      "domain": "audio",
+      "rule": "\"colloquial-portuguese-stories está despublicado A PROPÓSITO: el audio es portugués de Portugal, no de Brasil\"",
+      "gate": "none",
+      "source": "memory:project_portuguese_book_unpublished.md"
+    },
+    {
+      "id": "project_practice_audio_atomic_download",
+      "domain": "audio",
+      "rule": "Los clips de práctica se descargan a un temporal y se renombran; escribir directo daba media palabra",
+      "gate": "none",
+      "source": "memory:project_practice_audio_atomic_download.md"
+    },
+    {
+      "id": "project_practice_audio_open_issues",
+      "domain": "audio",
+      "rule": "\"Problemas ABIERTOS del audio de práctica (2026-07-24) y la auditoría comprehensiva pendiente. El eje grave sin resolver: el endpoint devuelve 200 pero el device queda MUDO (bug de cliente, necesit...",
+      "gate": "none",
+      "source": "memory:project_practice_audio_open_issues.md"
+    },
+    {
+      "id": "project_practice_audio_web_handoff",
+      "domain": "audio",
+      "rule": "\"Estado del trabajo de practice web + audio (sets curados, sentence-clips, word-tts, voz por país) para retomar en otro chat\"",
+      "gate": "scripts/_validateSets.ts",
+      "source": "memory:project_practice_audio_web_handoff.md"
+    },
+    {
+      "id": "project_practice_db_native_sets_pipeline",
+      "domain": "audio",
+      "rule": "\"Práctica de un journey sembrado directo a DB (sin _sets JSON): volcar DB->_sets/<slug>.json, completar cobertura de vocab, _genPracticeClips (EL+F0), _seedAllSets --apply. NUNCA generateExerciseAu...",
+      "gate": "scripts/_genPracticeClips.ts",
+      "source": "memory:project_practice_db_native_sets_pipeline.md"
+    },
+    {
+      "id": "project_practice_gen_pipeline",
+      "domain": "audio",
+      "rule": "\"Coherencia texto-audio de práctica: regla de oración única ≤100, reuso curado en favoritos, y pipeline de oraciones generadas (desde Claude Code) + horneado EL. Con verificaciones STT.\"",
+      "gate": "scripts/_bakeGenAudio.ts",
+      "source": "memory:project_practice_gen_pipeline.md"
+    },
+    {
+      "id": "project_reader_karaoke_renders_from_timings",
+      "domain": "audio",
+      "rule": "\"Con sesión el lector pinta la historia desde audioWordTimings, no desde text; y en Prisma `undefined` NO vacía una columna Json\"",
+      "gate": "scripts/checkKaraokeFresh.ts",
+      "source": "memory:project_reader_karaoke_renders_from_timings.md"
+    },
+    {
+      "id": "project_reader_rechunks_narrator_prose",
+      "domain": "audio",
+      "rule": "\"El reader TIRA los \\\\n\\\\n de la prosa narrador y rearma párrafos de 3 oraciones; medir distribución de vocab ahí, no en los párrafos escritos\"",
+      "gate": "src/lib/readerParagraphs.ts",
+      "source": "memory:project_reader_rechunks_narrator_prose.md"
+    },
+    {
+      "id": "project_spain_voice_bank",
+      "domain": "audio",
+      "rule": "\"Banco PROVISIONAL de voces español de España (Traveler ES Spain) + feedback \\\"sobreactuadas\\\"\"",
+      "gate": "none",
+      "source": "memory:project_spain_voice_bank.md"
+    },
+    {
+      "id": "project_stt_detector_blind_spot",
+      "domain": "audio",
+      "rule": "El detector de audio NO ve lo que el STT normaliza hacia el texto esperado; cero señales altas no prueba que el audio esté bien",
+      "gate": "scripts/_sttDetect.ts",
+      "source": "memory:project_stt_detector_blind_spot.md"
+    },
+    {
+      "id": "project_tts_qa_auto_ear",
+      "domain": "audio",
+      "rule": "\"Plan investigado (2026-07-02) para QA automático de audio TTS: modelo v2, alignment+VAD, F0 uptalk, juez Gemini; qué atrapa cada capa\"",
+      "gate": "pre-bash-guard.sh",
+      "source": "memory:project_tts_qa_auto_ear.md"
+    },
+    {
+      "id": "project_voice_library_removals",
+      "domain": "audio",
+      "rule": "\"Voces retiradas del Voice Library de ElevenLabs, y la politica: los audios ya generados son perpetuos, asi que retirar una voz solo bloquea generar NUEVO. Se elige por calidad, no por notice period\"",
+      "gate": "pre-voice-approval-guard.sh",
+      "source": "memory:project_voice_library_removals.md"
+    },
+    {
+      "id": "feedback_announcement_must_be_live_everywhere",
+      "domain": "comms",
+      "rule": "Un correo que anuncia algo no sale hasta comprobar que eso se ve en web, iOS y Android; autorizado no es cierto",
+      "gate": "pre-bash-guard.sh",
+      "source": "memory:feedback_announcement_must_be_live_everywhere.md"
+    },
+    {
+      "id": "feedback_check_every_email_link",
+      "domain": "comms",
+      "rule": "Ningún correo se da por listo sin pedir cada uno de sus enlaces contra producción; el comprobador es scripts/_checkEmailLinks.ts",
+      "gate": "scripts/_checkEmailLinks.ts",
+      "source": "memory:feedback_check_every_email_link.md"
+    },
+    {
+      "id": "feedback_emails_speak_as_we",
+      "domain": "comms",
+      "rule": "\"Los correos hablan siempre en \\\"we\\\", nunca en primera persona del singular; la firma es el único sitio donde aparece una persona\"",
+      "gate": "process",
+      "source": "memory:feedback_emails_speak_as_we.md"
+    },
+    {
+      "id": "feedback_never_use_muvn_email",
+      "domain": "comms",
+      "rule": "muvn.de es el email de otra empresa donde trabaja el usuario, NUNCA usarlo para tests/registros/comunicación de DPL",
+      "gate": "none",
+      "source": "memory:feedback_never_use_muvn_email.md"
+    },
+    {
+      "id": "feedback_notification_copy_teases",
+      "domain": "comms",
+      "rule": "El copy de una notificación teasea el contenido; nunca le pasa cuenta al alumno por lo que dejó a medias",
+      "gate": "process",
+      "source": "memory:feedback_notification_copy_teases.md"
+    },
+    {
+      "id": "feedback_thank_the_feedback_dont_report_on_it",
+      "domain": "comms",
+      "rule": "\"El correo de mejoras agradece el feedback y enseña la mejora; nunca detalla el expediente de quien la pidió ni suena a \\\"hacemos lo que nos piden\\\"\"",
+      "gate": "process",
+      "source": "memory:feedback_thank_the_feedback_dont_report_on_it.md"
+    },
+    {
+      "id": "journey-no-real-users",
+      "domain": "comms",
+      "rule": "Ninguna persona real de BetaSignup entra como personaje",
+      "gate": "src/lib/validateJourneyStories.ts#journey-no-real-users",
+      "source": "story-rules:journey-no-real-users (feedback_no_real_users_in_stories) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "project_beta_android_design",
+      "domain": "comms",
+      "rule": "\"Cómo funciona la beta en Android: grupo de Google auto-servicio en el track cerrado, Google no avisa a nadie, y el estado solo se puede saber por track\"",
+      "gate": "none",
+      "source": "memory:project_beta_android_design.md"
+    },
+    {
+      "id": "project_beta_autoinvite_never",
+      "domain": "comms",
+      "rule": "El triaje automatico nunca invita solo; Alejandro revisa y aprueba cada solicitante a mano. Decision firme del 2026-08-21.",
+      "gate": "pre-bash-guard.sh",
+      "source": "memory:project_beta_autoinvite_never.md"
+    },
+    {
+      "id": "project_beta_feedback_table",
+      "domain": "comms",
+      "rule": "La tabla de feedback de la beta se genera con scripts/feedbackTable.ts y el diagnóstico vive en BetaFeedback.adminNotes",
+      "gate": "none",
+      "source": "memory:project_beta_feedback_table.md"
+    },
+    {
+      "id": "project_beta_ios17_requirement_is_false",
+      "domain": "comms",
+      "rule": "\"El requisito 'iPhone needs iOS 17 or newer' de la beta es falso; el borrador #214 de Brevo es la version corregida para el proximo envio\"",
+      "gate": "none",
+      "source": "memory:project_beta_ios17_requirement_is_false.md"
+    },
+    {
+      "id": "project_beta_program_system",
+      "domain": "comms",
+      "rule": "\"Sistema completo de beta testers (triaje automático, TestFlight vía API, feedback, build notes, review ask) y las 4 decisiones que lo definen\"",
+      "gate": "pre-bash-guard.sh",
+      "source": "memory:project_beta_program_system.md"
+    },
+    {
+      "id": "project_business_mailbox_location",
+      "domain": "comms",
+      "rule": "\"El correo de usuarios (support@/contact@) NO esta en el Gmail personal conectado: vive en digitalpolyglots@gmail.com, en el Chrome llamado Browser 2\"",
+      "gate": "none",
+      "source": "memory:project_business_mailbox_location.md"
+    },
+    {
+      "id": "project_clerk_dev_vs_prod_users",
+      "domain": "comms",
+      "rule": "\"El mismo email tiene DOS userIds de Clerk (dev en localhost, live en prod) y .env.local solo trae la clave sk_test\"",
+      "gate": "none",
+      "source": "memory:project_clerk_dev_vs_prod_users.md"
+    },
+    {
+      "id": "project_meta_ads_beta_campaign",
+      "domain": "comms",
+      "rule": "\"La campana de Meta que capta beta testers: IDs, como esta montada, y las dos trampas que costaron dinero el 2026-08-31\"",
+      "gate": "none",
+      "source": "memory:project_meta_ads_beta_campaign.md"
+    },
+    {
+      "id": "project_shop_beta_touchpoints_missing",
+      "domain": "comms",
+      "rule": "De los tres puntos de contacto de la tienda hacia la beta solo funcionaba el email del freebie; el de pedido se instalo el 2026-08-28 y la pantalla tras el claim sigue sin CTA",
+      "gate": "none",
+      "source": "memory:project_shop_beta_touchpoints_missing.md"
+    },
+    {
+      "id": "project_shopify_admin_api_access",
+      "domain": "comms",
+      "rule": "Hay token de Admin API de Shopify en .env.local; la tienda es 5c0086-a6.myshopify.com, no shop.digitalpolyglot.com",
+      "gate": "none",
+      "source": "memory:project_shopify_admin_api_access.md"
+    },
+    {
+      "id": "project_smart_notifications_plan",
+      "domain": "comms",
+      "rule": "Plan largo de notificaciones inteligentes (17 disparadores sobre senales que ya se guardan), reglas de frecuencia y orden de construccion",
+      "gate": "none",
+      "source": "memory:project_smart_notifications_plan.md"
+    },
+    {
+      "id": "project_venice_book_has_no_store_product",
+      "domain": "comms",
+      "rule": "\"El libro italiano de Venecia NO tiene producto en la tienda; \\\"Short Stories in Italian\\\" es otro libro\"",
+      "gate": "none",
+      "source": "memory:project_venice_book_has_no_store_product.md"
+    },
+    {
+      "id": "user_personal_email",
+      "domain": "comms",
+      "rule": "Email personal del usuario para tests/signups/comunicación de DPL",
+      "gate": "none",
+      "source": "memory:user_personal_email.md"
+    },
+    {
+      "id": "claude-md-portadas-prompt-cerrado-antes-de-la-primera-tirada-bloqueant",
+      "domain": "cover",
+      "rule": "Portadas: prompt cerrado antes de la primera tirada",
+      "gate": "none",
+      "source": "CLAUDE.md"
+    },
+    {
+      "id": "feedback_cover_flat_graphic",
+      "domain": "cover",
+      "rule": "# Cover style: flat graphic editorial (NOT painted, NOT anime, NOT vintage)",
+      "gate": "pre-cover-style-guard.sh",
+      "source": "memory:feedback_cover_flat_graphic.md"
+    },
+    {
+      "id": "feedback_cover_follows_voice",
+      "domain": "cover",
+      "rule": "# Cover age/gender MUST follow the voice, never the text. Voice is immovable.",
+      "gate": "none",
+      "source": "memory:feedback_cover_follows_voice.md"
+    },
+    {
+      "id": "feedback_cover_no_blush_real_eyes",
+      "domain": "cover",
+      "rule": "\"Covers: el rubor solo descarta si es exagerado o infantil; los ojos de punto siguen prohibidos siempre\"",
+      "gate": "none",
+      "source": "memory:feedback_cover_no_blush_real_eyes.md"
+    },
+    {
+      "id": "feedback_cover_prompt_closed_before_first_render",
+      "domain": "cover",
+      "rule": "El prompt de portadas se cierra ANTES de la primera tirada (ficha, registro, reparto descrito, sin texto); tope 2 tiradas por portada",
+      "gate": "pre-bash-guard.sh",
+      "source": "memory:feedback_cover_prompt_closed_before_first_render.md"
+    },
+    {
+      "id": "feedback_cover_style",
+      "domain": "cover",
+      "rule": "# Cover style: editorial literario, NO cartoon-bebé",
+      "gate": "pre-cover-style-guard.sh",
+      "source": "memory:feedback_cover_style.md"
+    },
+    {
+      "id": "feedback_cover_two_similar_characters",
+      "domain": "cover",
+      "rule": "\"Dos personajes del mismo sexo y edad parecida salen con LA MISMA CARA; se separan por pelo, complexión y tono de piel, nunca por la ropa\"",
+      "gate": "none",
+      "source": "memory:feedback_cover_two_similar_characters.md"
+    },
+    {
+      "id": "feedback_cover_warm_not_somber",
+      "domain": "cover",
+      "rule": "# Cover editorial = warm + bright, NO somber",
+      "gate": "process",
+      "source": "memory:feedback_cover_warm_not_somber.md"
+    },
+    {
+      "id": "feedback_dont_mention_audio_covers",
+      "domain": "cover",
+      "rule": "Audio y covers son tareas del usuario; NUNCA mencionarlas como pendientes en resúmenes de estado",
+      "gate": "process",
+      "source": "memory:feedback_dont_mention_audio_covers.md"
+    },
+    {
+      "id": "feedback_journey_status_table",
+      "domain": "cover",
+      "rule": "\"Tabla de journeys = correr scripts/journeysTable.ts. Columnas canónicas (2026-08-17): Estado|Journey|Idioma/Var|Nivel|Estilo(narrador/multivoz)|%Citado|No nativos|Voz narrador|Voz práctica|Hist.pu...",
+      "gate": "none",
+      "source": "memory:feedback_journey_status_table.md"
+    },
+    {
+      "id": "feedback_never_spend_image_credits",
+      "domain": "cover",
+      "rule": "Nunca generar imágenes (covers, cover-variants, etc.) por iniciativa propia; siempre requiere disparador explícito del usuario",
+      "gate": "pre-bash-guard.sh",
+      "source": "memory:feedback_never_spend_image_credits.md"
+    },
+    {
+      "id": "feedback_no_book_covers_in_emails",
+      "domain": "cover",
+      "rule": "# Nunca usar covers de libros en emails/mockups",
+      "gate": "none",
+      "source": "memory:feedback_no_book_covers_in_emails.md"
+    },
+    {
+      "id": "feedback_no_infantilized_covers",
+      "domain": "cover",
+      "rule": "Covers cartoon-bebé (ojos gigantes, cabezas redondas, proporciones toddler) están prohibidos. Generación de covers requiere prompt custom, NUNCA buildCoverPrompt.",
+      "gate": "pre-cover-style-guard.sh",
+      "source": "memory:feedback_no_infantilized_covers.md"
+    },
+    {
+      "id": "feedback_no_test_renders_on_approved",
+      "domain": "cover",
+      "rule": "Nunca gastar créditos TTS/imagen re-generando contenido ya aprobado para tests/A-B; los experimentos de config se validan sobre generación que igual hay que hacer",
+      "gate": "pre-bash-guard.sh",
+      "source": "memory:feedback_no_test_renders_on_approved.md"
+    },
+    {
+      "id": "project_cover_style_lock",
+      "domain": "cover",
+      "rule": "\"Candado de estilo de covers: estilo B aprobado en scripts/cover-style.json; SIEMPRE generar covers con scripts/generateCover.ts; el hook bloquea cualquier otro path\"",
+      "gate": "scripts/generateCover.ts",
+      "source": "memory:project_cover_style_lock.md"
+    },
+    {
+      "id": "project_el_mural",
+      "domain": "cover",
+      "rule": "\"«el mural» = las imágenes de producto de un journey en UNA pantalla sin scroll, por scripts/mural.ts; es lo que se da SIEMPRE que el usuario pida ver imágenes\"",
+      "gate": "scripts/mural.ts",
+      "source": "memory:project_el_mural.md"
+    },
+    {
+      "id": "arc-continuity",
+      "domain": "journey",
+      "rule": "Las tres historias de un tema se leen en secuencia 1 a N y encajan",
+      "gate": "none",
+      "source": "story-rules:arc-continuity (feedback_story_arc_continuity_gate)"
+    },
+    {
+      "id": "cefr-two-level-rule",
+      "domain": "journey",
+      "rule": "El cuerpo no pasa de dos niveles CEFR por encima del target. El juez del validador solo conoce el espanol: en DE, IT, FR y PT no mide nada",
+      "gate": "none",
+      "source": "story-rules:cefr-two-level-rule (feedback_cefr_two_level_rule)"
+    },
+    {
+      "id": "claude-md-journey-classification-hard-rule-always-applies-no-exception",
+      "domain": "journey",
+      "rule": "Journey classification",
+      "gate": "scripts/_reclassifyDrafts.ts",
+      "source": "CLAUDE.md"
+    },
+    {
+      "id": "feedback_mandatory_gestalt_read_full_bodies",
+      "domain": "journey",
+      "rule": "La lectura consecutiva de los cuerpos COMPLETOS como usuario final es paso OBLIGATORIO no-negociable antes de declarar listo un journey/lote; nunca ofrecerla como opción ni saltarla",
+      "gate": "none",
+      "source": "memory:feedback_mandatory_gestalt_read_full_bodies.md"
+    },
+    {
+      "id": "feedback_names_target_language_only",
+      "domain": "journey",
+      "rule": "\"Solo nombres y ortografía del idioma del journey en historias; cero diacríticos/alfabetos foráneos (Ayşe en alemán = error grave, nunca repetir)\"",
+      "gate": "scripts/storyClaude.ts",
+      "source": "memory:feedback_names_target_language_only.md"
+    },
+    {
+      "id": "feedback_no_elderly_no_children",
+      "domain": "journey",
+      "rule": "\"PROHIBIDO permanente: personajes viejos/ancianos y niños/adolescentes en historias y casts, en TODOS los journeys e idiomas ('Nunca más', 2026-07-07)\"",
+      "gate": "none",
+      "source": "memory:feedback_no_elderly_no_children.md"
+    },
+    {
+      "id": "feedback_stories_need_stakes",
+      "domain": "journey",
+      "rule": "\"Una historia donde el protagonista solo aprende una costumbre no tiene arco, tiene temario. Hace falta deseo, obstáculo y coste, y una espina que atraviese el journey\"",
+      "gate": "none",
+      "source": "memory:feedback_stories_need_stakes.md"
+    },
+    {
+      "id": "feedback_story_order_confirm_before_render",
+      "domain": "journey",
+      "rule": "\"Para 'la primera/N-ésima historia' de un journey NO usar slotIndex; usar el orden real de la app y confirmar el slug antes de cualquier render que gaste\"",
+      "gate": "process",
+      "source": "memory:feedback_story_order_confirm_before_render.md"
+    },
+    {
+      "id": "journey-a0-floor",
+      "domain": "journey",
+      "rule": "A0: sujeto primero, sin verbos separables partidos, sin `es gibt` y solo presente",
+      "gate": "src/lib/validateJourneyStories.ts#journey-a0-floor",
+      "source": "story-rules:journey-a0-floor (feedback_a0_floor_has_no_gate) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-cast-first-story-only-fixed",
+      "domain": "journey",
+      "rule": "La primera historia del journey solo lleva fijos",
+      "gate": "src/lib/validateJourneyStories.ts#journey-cast-first-story-only-fixed",
+      "source": "validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-cast-fixed-max-two",
+      "domain": "journey",
+      "rule": "Nunca mas de 2 personajes fijos",
+      "gate": "src/lib/validateJourneyStories.ts#journey-cast-fixed-max-two",
+      "source": "validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-cast-one-new-per-topic",
+      "domain": "journey",
+      "rule": "Un personaje nuevo por tema, en su primera historia",
+      "gate": "src/lib/validateJourneyStories.ts#journey-cast-one-new-per-topic",
+      "source": "validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-cast-protagonist-in-all",
+      "domain": "journey",
+      "rule": "El protagonista sale en todas",
+      "gate": "src/lib/validateJourneyStories.ts#journey-cast-protagonist-in-all",
+      "source": "validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-character-introduction",
+      "domain": "journey",
+      "rule": "Cada personaje entra con un sintagma que dice QUE ES, antes de su primera linea citada",
+      "gate": "src/lib/validateJourneyStories.ts#journey-character-introduction",
+      "source": "story-rules:journey-character-introduction (feedback_introduce_characters) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-introduction-form-variety",
+      "domain": "journey",
+      "rule": "Las tres formas de presentacion se alternan; ninguna cubre mas de la mitad del reparto",
+      "gate": "src/lib/validateJourneyStories.ts#journey-introduction-form-variety",
+      "source": "story-rules:journey-introduction-form-variety (feedback_introduce_characters) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-names-target-language",
+      "domain": "journey",
+      "rule": "Los nombres van en la ortografia del idioma de la historia, sin tildes ajenas",
+      "gate": "src/lib/validateJourneyStories.ts#journey-names-target-language",
+      "source": "story-rules:journey-names-target-language (feedback_names_target_language_only) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-no-elderly-no-children",
+      "domain": "journey",
+      "rule": "Ni ancianos ni ninos ni adolescentes en contenido nuevo: solo adultos en activo",
+      "gate": "src/lib/validateJourneyStories.ts#journey-no-elderly-no-children",
+      "source": "story-rules:journey-no-elderly-no-children (feedback_no_elderly_no_children) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-opening-shape",
+      "domain": "journey",
+      "rule": "Ninguna forma de apertura en mas de un tercio de las historias, incluida la que sustituye a la formula dia/hora/lugar",
+      "gate": "src/lib/validateJourneyStories.ts#journey-opening-shape",
+      "source": "story-rules:journey-opening-shape (feedback_stories_need_stakes) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-render-quotes",
+      "domain": "journey",
+      "rule": "Ningun bloque del lector parte una linea citada por la mitad; se mide sobre el render, no sobre el texto",
+      "gate": "src/lib/validateJourneyStories.ts#journey-render-quotes",
+      "source": "story-rules:journey-render-quotes (project_reader_honours_authored_paragraphs) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-repeated-opener",
+      "domain": "journey",
+      "rule": "Ninguna formula de dos o tres palabras abre frase de narrador en 4 o mas historias",
+      "gate": "src/lib/validateJourneyStories.ts#journey-repeated-opener",
+      "source": "story-rules:journey-repeated-opener (feedback_stories_need_stakes) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journey-rules-inventory",
+      "domain": "journey",
+      "rule": "Toda regla de docs/story-rules.json tiene su check",
+      "gate": "src/lib/validateJourneyStories.ts#journey-rules-inventory",
+      "source": "validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "journeys-table-canonical",
+      "domain": "journey",
+      "rule": "La tabla de journeys la genera scripts/journeysTable.ts; componerla a mano esta prohibido y los archivados solo salen con --archived",
+      "gate": "process + skill /tabla",
+      "source": "manual"
+    },
+    {
+      "id": "no-slang-at-a-level",
+      "domain": "journey",
+      "rule": "Nada de argot en niveles A",
+      "gate": "none",
+      "source": "story-rules:no-slang-at-a-level (feedback_no_slang_at_a_level)"
+    },
+    {
+      "id": "project_active_journeys_spanish_only",
+      "domain": "journey",
+      "rule": "\"Al hablar de journeys el marco es LIVE (active) vs DRAFT. ARCHIVED NO CUENTA y NUNCA se menciona (ni como aclaración, ni 'están en archived, no draft', ni al final). Solo si el usuario nombra un a...",
+      "gate": "none",
+      "source": "memory:project_active_journeys_spanish_only.md"
+    },
+    {
+      "id": "project_b1_gap_in_catalogue",
+      "domain": "journey",
+      "rule": "\"El agujero B1 - 19 de 44 solicitantes se declararon Intermediate y el catalogo no tiene ni un B1; un A1 NO sirve a un Intermediate\"",
+      "gate": "src/lib/validateJourneyStories.ts",
+      "source": "memory:project_b1_gap_in_catalogue.md"
+    },
+    {
+      "id": "project_catalog_dump_vs_db",
+      "domain": "journey",
+      "rule": "\"Los libros del catálogo viven en dos copias divergentes; la DB es el contenedor, el dump tenía el contenido curado\"",
+      "gate": "none",
+      "source": "memory:project_catalog_dump_vs_db.md"
+    },
+    {
+      "id": "project_journey_de_c1_hamburg",
+      "domain": "journey",
+      "rule": "\"Journey alemán C1 Expat de Hamburgo (era name='Hanseat', renombrado 2026-08-21): scaffold 21 slots archived; spine=reserva hanseática (no burocracia); cast Nora/Ole/Herr Carstens/Wiebke; piloto T1...",
+      "gate": "none",
+      "source": "memory:project_journey_de_c1_hamburg.md"
+    },
+    {
+      "id": "project_journey_fr_a0_expat_lyon",
+      "domain": "journey",
+      "rule": "\"El Expat FR A0 de Lyon - estado real del journey, reglas anti-molde y la trampa de las comillas que ningun gate caza\"",
+      "gate": "body-quote-style",
+      "source": "memory:project_journey_fr_a0_expat_lyon.md"
+    },
+    {
+      "id": "project_journey_level_model",
+      "domain": "journey",
+      "rule": "\"Un journey contiene un set VARIABLE de niveles (1+), no todos; LATAM A1 y A2 son journeys distintos\"",
+      "gate": "none",
+      "source": "memory:project_journey_level_model.md"
+    },
+    {
+      "id": "project_journey_restructure_7themes",
+      "domain": "journey",
+      "rule": "Plan de reestructurar el journey español a 7 temas × 3 historias (arcos cortos)",
+      "gate": "none",
+      "source": "memory:project_journey_restructure_7themes.md"
+    },
+    {
+      "id": "project_journey_structure_plan",
+      "domain": "journey",
+      "rule": "Plan de journeys - la estructura definitiva por tipo (8 tipos) y las reglas comunes para crear journeys nuevos",
+      "gate": "src/lib/validateJourneyStories.ts",
+      "source": "memory:project_journey_structure_plan.md"
+    },
+    {
+      "id": "project_journey_variant_filtering",
+      "domain": "journey",
+      "rule": "El Journey tab del móvil sirve solo la variante que el alumno pidió; antes servía todas las del idioma",
+      "gate": "none",
+      "source": "memory:project_journey_variant_filtering.md"
+    },
+    {
+      "id": "project_journeys_have_no_names",
+      "domain": "journey",
+      "rule": "Un journey NO tiene nombre propio; el campo name lleva la etiqueta de su TIPO. Se distinguen por tipo + idioma + variante + nivel",
+      "gate": "none",
+      "source": "memory:project_journeys_have_no_names.md"
+    },
+    {
+      "id": "project_level_labels",
+      "domain": "journey",
+      "rule": "\"Etiquetas user-facing de niveles DPL (a0→c2); nombres amigables en inglés, código CEFR solo anotación secundaria, NUNCA A0/Pre-A1/Level 0\"",
+      "gate": "none",
+      "source": "memory:project_level_labels.md"
+    },
+    {
+      "id": "project_story_id_two_forms",
+      "domain": "journey",
+      "rule": "La misma historia de journey tiene dos ids (journey:<id> y journey-<id>); comparar en crudo nunca casa",
+      "gate": "none",
+      "source": "memory:project_story_id_two_forms.md"
+    },
+    {
+      "id": "project_topic_labels_mechanics",
+      "domain": "journey",
+      "rule": "\"Cómo se resuelve el nombre visible de un tema; Topic.label es global por slug, el fallback delata el slug y la caché tarda una hora\"",
+      "gate": "none",
+      "source": "memory:project_topic_labels_mechanics.md"
+    },
+    {
+      "id": "stories-need-stakes",
+      "domain": "journey",
+      "rule": "Deseo, obstaculo y coste en cada historia, y una espina que atraviese el journey",
+      "gate": "none",
+      "source": "story-rules:stories-need-stakes (feedback_stories_need_stakes)"
+    },
+    {
+      "id": "topics-grounded",
+      "domain": "journey",
+      "rule": "Cada tema cita una motivacion real escrita por un solicitante",
+      "gate": "process",
+      "source": "story-rules:topics-grounded (project_topic_naming_rule)"
+    },
+    {
+      "id": "feedback_practice_distractors_must_agree",
+      "domain": "practice",
+      "rule": "Un distractor de fill_blank tiene que concordar en genero y numero con la respuesta, o el hueco se resuelve sin saber el idioma; y el genero se lee del CORPUS, no de la desinencia",
+      "gate": "none",
+      "source": "memory:feedback_practice_distractors_must_agree.md"
+    },
+    {
+      "id": "feedback_practice_exercise_authoring_rules",
+      "domain": "practice",
+      "rule": "Reglas de CONTENIDO para autorar sets de práctica curados; leer antes de generar ejercicios de cualquier historia",
+      "gate": "scripts/_validateSets.ts",
+      "source": "memory:feedback_practice_exercise_authoring_rules.md"
+    },
+    {
+      "id": "feedback_practice_exercise_render_rules",
+      "domain": "practice",
+      "rule": "Practice exercise UI must flex-to-fit any viewport height and shuffle option positions; two recurring bugs",
+      "gate": "none",
+      "source": "memory:feedback_practice_exercise_render_rules.md"
+    },
+    {
+      "id": "feedback_user_never_reads_content",
+      "domain": "practice",
+      "rule": "\"El usuario NUNCA va a leer historias, ejercicios ni copy. La lectura humana es mía, siempre. Nunca proponerle que lea, ni dejar 'lo lee el usuario' en not-verified\"",
+      "gate": "process",
+      "source": "memory:feedback_user_never_reads_content.md"
+    },
+    {
+      "id": "project_curated_sets_gotchas",
+      "domain": "practice",
+      "rule": "\"Tres cosas que muerden al sembrar un set curado fuera del A2 espanol: el idioma escrito a fuego, los distractores que se repiten y los numerales que rechaza Scribe\"",
+      "gate": "none",
+      "source": "memory:project_curated_sets_gotchas.md"
+    },
+    {
+      "id": "project_practice_word_speed",
+      "domain": "practice",
+      "rule": "Velocidad de las palabras de práctica medida en sílabas por segundo; duración NO es velocidad",
+      "gate": "none",
+      "source": "memory:project_practice_word_speed.md"
+    },
+    {
+      "id": "arctype-valid",
+      "domain": "process",
+      "rule": "A0 lleva arcType nulo; los demas, uno de la lista",
+      "gate": "src/lib/validateGeneratedStory.ts#arctype-valid",
+      "source": "story-rules:arctype-valid (project_a0_gate_profile) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-a0-sentence-length",
+      "domain": "process",
+      "rule": "A0: mediana de frase 14 o menos, ninguna por encima de 22",
+      "gate": "src/lib/validateGeneratedStory.ts#body-a0-sentence-length",
+      "source": "story-rules:body-a0-sentence-length (project_a0_gate_profile) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-word-count",
+      "domain": "process",
+      "rule": "A0 y A1: cuerpo de 115 a 170 palabras",
+      "gate": "src/lib/validateGeneratedStory.ts#body-word-count",
+      "source": "story-rules:body-word-count (project_a0_gate_profile) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "claude-md-pedir-una-vez-bloqueante-2026-09-05",
+      "domain": "process",
+      "rule": "Pedir una vez",
+      "gate": "scripts/rulesFor.ts",
+      "source": "CLAUDE.md"
+    },
+    {
+      "id": "claude-md-presupuesto-de-palabras-bloqueante-hook-stop",
+      "domain": "process",
+      "rule": "Presupuesto de palabras",
+      "gate": "stop-word-budget-guard.sh",
+      "source": "CLAUDE.md"
+    },
+    {
+      "id": "claude-md-recomendacion-unica-bloqueante-hook-stop",
+      "domain": "process",
+      "rule": "Recomendación única",
+      "gate": "stop-single-rec-guard.sh",
+      "source": "CLAUDE.md"
+    },
+    {
+      "id": "claude-md-safety-guard-blocking-do-not-bypass",
+      "domain": "process",
+      "rule": "Safety Guard",
+      "gate": "src/lib/approvedVoices.ts",
+      "source": "CLAUDE.md"
+    },
+    {
+      "id": "feedback_a0_true_floor",
+      "domain": "process",
+      "rule": "\"A0 (Beginner) debe ser el piso MÁS simple, no A1; reglas duras de gramática A0 (sobre todo alemán)\"",
+      "gate": "src/lib/validateJourneyStories.ts",
+      "source": "memory:feedback_a0_true_floor.md"
+    },
+    {
+      "id": "feedback_answer_short_by_default",
+      "domain": "process",
+      "rule": "\"Responder CORTO por defecto: la respuesta y ya. Incluye resúmenes de 2 líneas, propuestas de 1 línea, listas de N puntos = N líneas y preguntas de 1-2 líneas\"",
+      "gate": "stop-word-budget-guard.sh",
+      "source": "memory:feedback_answer_short_by_default.md"
+    },
+    {
+      "id": "feedback_city_country_comma",
+      "domain": "process",
+      "rule": "\"Ciudad y pais se dicen con coma, no con dos preposiciones: 'En Arequipa, Peru', nunca 'en Arequipa, en Peru'\"",
+      "gate": "opening-city-without-country",
+      "source": "memory:feedback_city_country_comma.md"
+    },
+    {
+      "id": "feedback_commit_to_recommendations",
+      "domain": "process",
+      "rule": "\"UNA sola recomendación, fraseada para responder sí/no; nunca menús de alternativas, y sostenerla cuando pregunta \\\"¿seguro?\\\". En modo ejecución, elegir el mejor camino y arrancar\"",
+      "gate": "stop-single-rec-guard.sh",
+      "source": "memory:feedback_commit_to_recommendations.md"
+    },
+    {
+      "id": "feedback_dev_server_port_3000",
+      "domain": "process",
+      "rule": "Nunca usar autoPort en dev server local; 3000 fijo siempre. Si está ocupado, otro chat tiene un dev corriendo: ir a investigarlo, no esquivarlo.",
+      "gate": "process",
+      "source": "memory:feedback_dev_server_port_3000.md"
+    },
+    {
+      "id": "feedback_dont_pull_from_conversion",
+      "domain": "process",
+      "rule": "En landings con un único goal (signup/apply), NUNCA agregar CTAs secundarios que envíen al usuario a otra surface, especialmente si es un producto diferente al que vinieron a probar.",
+      "gate": "process",
+      "source": "memory:feedback_dont_pull_from_conversion.md"
+    },
+    {
+      "id": "feedback_eas_build_number",
+      "domain": "process",
+      "rule": "Hard rules to prevent OLD_BUILD_NUMBER rejections wasting build credits",
+      "gate": "none",
+      "source": "memory:feedback_eas_build_number.md"
+    },
+    {
+      "id": "feedback_enforce_rules_at_planning_stage",
+      "domain": "process",
+      "rule": "\"Una regla dura va donde se TOMA la decisión (el plan/brief), no solo en el último checkpoint; el usuario pregunta \\\"¿lo pusiste a la hora de planear?\\\"\"",
+      "gate": "src/lib/journeyCasts.ts",
+      "source": "memory:feedback_enforce_rules_at_planning_stage.md"
+    },
+    {
+      "id": "feedback_incremental_when_testing",
+      "domain": "process",
+      "rule": "\"Al testear/generar, ir poco a poco (1 o pocas), nunca el lote completo de una vez\"",
+      "gate": "none",
+      "source": "memory:feedback_incremental_when_testing.md"
+    },
+    {
+      "id": "feedback_iphone_build",
+      "domain": "process",
+      "rule": "Workflow oficial validado para builds locales iPhone en este Mac. NO usar expo run:ios. Saber detectar syspolicyd hang.",
+      "gate": "process",
+      "source": "memory:feedback_iphone_build.md"
+    },
+    {
+      "id": "feedback_measure_needs_a_control",
+      "domain": "process",
+      "rule": "\"Antes de llamar defecto a una medida, correrla sobre un grupo que se sabe sano; si sale igual, la medida no distingue nada\"",
+      "gate": "process",
+      "source": "memory:feedback_measure_needs_a_control.md"
+    },
+    {
+      "id": "feedback_measurement_is_not_a_defect",
+      "domain": "process",
+      "rule": "Medir un evento no prueba que moleste; el detector de ruido tras los párrafos encuentra respiraciones normales",
+      "gate": "process",
+      "source": "memory:feedback_measurement_is_not_a_defect.md"
+    },
+    {
+      "id": "feedback_mobile_deploy_process",
+      "domain": "process",
+      "rule": "Never commit or submit to TestFlight without first verifying the fix works in a local Release build on the physical iPhone",
+      "gate": "process",
+      "source": "memory:feedback_mobile_deploy_process.md"
+    },
+    {
+      "id": "feedback_mobile_local_build_workflow",
+      "domain": "process",
+      "rule": "Mobile changes stay local until explicit local USB build; backend changes get committed and pushed to main; combined changes go in parallel",
+      "gate": "process",
+      "source": "memory:feedback_mobile_local_build_workflow.md"
+    },
+    {
+      "id": "feedback_never_assume",
+      "domain": "process",
+      "rule": "User corrected Claude for assuming web-only Safari testing when the app is actually Expo/React Native on iOS. Always ask or wait for context.",
+      "gate": "process",
+      "source": "memory:feedback_never_assume.md"
+    },
+    {
+      "id": "feedback_never_launch_without_permission",
+      "domain": "process",
+      "rule": "# Never lanzar build sin permiso explícito",
+      "gate": "process",
+      "source": "memory:feedback_never_launch_without_permission.md"
+    },
+    {
+      "id": "feedback_never_mention_the_human_read",
+      "domain": "process",
+      "rule": "\"La lectura humana se HACE y no se menciona nunca: ni como caveat, ni en not verified, ni como excusa\"",
+      "gate": "process",
+      "source": "memory:feedback_never_mention_the_human_read.md"
+    },
+    {
+      "id": "feedback_no_bare_imperatives",
+      "domain": "process",
+      "rule": "# Imperativos en diálogo: nunca aislados, siempre con cierre",
+      "gate": "dialogue-bare-imperative",
+      "source": "memory:feedback_no_bare_imperatives.md"
+    },
+    {
+      "id": "feedback_no_emojis_use_svg_icons",
+      "domain": "process",
+      "rule": "PROHIBIDO usar emojis en la UI; el proyecto usa íconos SVG monocromos limpios. Nunca poner ⬇/⬆/✅ etc. como glifos en botones/labels",
+      "gate": "none",
+      "source": "memory:feedback_no_emojis_use_svg_icons.md"
+    },
+    {
+      "id": "feedback_no_expo_run_ios",
+      "domain": "process",
+      "rule": "Always use xcodebuild + devicectl install directly. Never npx expo run:ios under any circumstance.",
+      "gate": "process",
+      "source": "memory:feedback_no_expo_run_ios.md"
+    },
+    {
+      "id": "feedback_no_jargon_for_irreversible_actions",
+      "domain": "process",
+      "rule": "Nunca describir una acción irreversible hacia fuera con jerga; nombrar a las personas afectadas y el efecto real",
+      "gate": "pre-bash-guard.sh",
+      "source": "memory:feedback_no_jargon_for_irreversible_actions.md"
+    },
+    {
+      "id": "feedback_no_native_read_suggestion",
+      "domain": "process",
+      "rule": "\"NUNCA sugerir \\\"lectura nativa\\\" / \\\"que lo lea un nativo\\\" como pendiente o caveat\"",
+      "gate": "process",
+      "source": "memory:feedback_no_native_read_suggestion.md"
+    },
+    {
+      "id": "feedback_push_budget_hard_limit",
+      "domain": "process",
+      "rule": "\"Regla unica de push a main: por defecto HOLD, solo abre el verbo imperativo del usuario, un push por lote, y antes de proponerlo se pliegan todos los deployables listos y se miran los otros chats\"",
+      "gate": "pre-bash-guard.sh",
+      "source": "memory:feedback_push_budget_hard_limit.md"
+    },
+    {
+      "id": "feedback_quieres_no_quiero",
+      "domain": "process",
+      "rule": "\"Al ofrecer hacer algo, usar '¿Quieres que...?' (2ª persona), NUNCA '¿Quiero que...?' (1ª persona). Error recurrente.\"",
+      "gate": "process",
+      "source": "memory:feedback_quieres_no_quiero.md"
+    },
+    {
+      "id": "feedback_read_as_human_after_validator",
+      "domain": "process",
+      "rule": "\"Después de pasar checks deterministas (validator, audit LLM, etc.), leer el output como usuario final antes de declarar \\\"done\\\"; los validators son proxy de calidad, no equivalente\"",
+      "gate": "src/lib/validateGeneratedStory.ts",
+      "source": "memory:feedback_read_as_human_after_validator.md"
+    },
+    {
+      "id": "feedback_refine_before_scaling",
+      "domain": "process",
+      "rule": "\"Refinar las pantallas núcleo antes de proponer volumen de contenido; nunca listar \\\"faltan N piezas\\\" como prioridad\"",
+      "gate": "process",
+      "source": "memory:feedback_refine_before_scaling.md"
+    },
+    {
+      "id": "feedback_samples_means_free",
+      "domain": "process",
+      "rule": "# \"Samples\" = preview URLs gratis, NO generaciones pagadas + safety hook enforces this",
+      "gate": "pre-bash-guard.sh",
+      "source": "memory:feedback_samples_means_free.md"
+    },
+    {
+      "id": "feedback_show_it_means_local_reader",
+      "domain": "process",
+      "rule": "\"«muéstramelo» / «en el lector» = el enlace al lector, nunca el texto en el chat; localhost si está en draft, producción si ya está publicado\"",
+      "gate": "process",
+      "source": "memory:feedback_show_it_means_local_reader.md"
+    },
+    {
+      "id": "feedback_spanish_neutral",
+      "domain": "process",
+      "rule": "User prefers neutral Spanish, not Argentine Spanish",
+      "gate": "src/lib/validateGeneratedStory.ts",
+      "source": "memory:feedback_spanish_neutral.md"
+    },
+    {
+      "id": "feedback_state_caveats_once",
+      "domain": "process",
+      "rule": "\"Un caveat se dice UNA vez y no se repite; y cuando acompaña a algo accionable (chips, links, comandos) va ANTES, no después\"",
+      "gate": "process",
+      "source": "memory:feedback_state_caveats_once.md"
+    },
+    {
+      "id": "feedback_syspolicyd_hang",
+      "domain": "process",
+      "rule": "When iPhone/Xcode builds hang at first phase script (e.g. Hermes \"Replace Hermes for the right configuration\"), the cause is usually a wedged syspolicyd daemon at 100% CPU",
+      "gate": "none",
+      "source": "memory:feedback_syspolicyd_hang.md"
+    },
+    {
+      "id": "feedback_user_worktree_is_source_of_truth",
+      "domain": "process",
+      "rule": "Localizar el worktree donde corre el dev server del usuario ANTES de editar; nunca asumir que el cwd es el correcto",
+      "gate": "process",
+      "source": "memory:feedback_user_worktree_is_source_of_truth.md"
+    },
+    {
+      "id": "feedback_verify_costs",
+      "domain": "process",
+      "rule": "Never assume the user pays for a SaaS; always confirm tier before quoting dollar savings",
+      "gate": "process",
+      "source": "memory:feedback_verify_costs.md"
+    },
+    {
+      "id": "feedback_verify_vercel_deploy",
+      "domain": "process",
+      "rule": "After every push to main, confirm Vercel build succeeded via GitHub status API before telling the user the change is live",
+      "gate": "process",
+      "source": "memory:feedback_verify_vercel_deploy.md"
+    },
+    {
+      "id": "no-em-dash",
+      "domain": "process",
+      "rule": "Ni em dash ni en dash en src, content, apps/mobile, scripts, docs ni public",
+      "gate": "process",
+      "source": "story-rules:no-em-dash (feedback_no_em_dash)"
+    },
+    {
+      "id": "project_clerk_expo_api_gotchas",
+      "domain": "process",
+      "rule": "Critical differences between @clerk/expo hooks and Clerk REST API that cause silent failures",
+      "gate": "none",
+      "source": "memory:project_clerk_expo_api_gotchas.md"
+    },
+    {
+      "id": "project_eas_token_and_submit",
+      "domain": "process",
+      "rule": "EXPO_TOKEN vive en ~/.zshrc (no .zshenv); cargarlo para consultar/enviar EAS desde Bash; el auto-submit de EAS puede fallar en silencio",
+      "gate": "none",
+      "source": "memory:project_eas_token_and_submit.md"
+    },
+    {
+      "id": "project_google_play_console",
+      "domain": "process",
+      "rule": "\"Play Console DPL vive en admin@digitalpolyglot.com (Chrome Profile 2), no en las cuentas personales; app com.digitalpolyglot.app en borrador\"",
+      "gate": "none",
+      "source": "memory:project_google_play_console.md"
+    },
+    {
+      "id": "project_local_android_build",
+      "domain": "process",
+      "rule": "\"Local Android builds enabled on this Mac (no EAS); toolchain paths, prebuild/gradle/adb workflow, wireless adb\"",
+      "gate": "none",
+      "source": "memory:project_local_android_build.md"
+    },
+    {
+      "id": "project_local_builds_from_worktree",
+      "domain": "process",
+      "rule": "Builds locales Android/iOS desde un worktree; el node_modules symlinkeado y el equipo de firma rompen el flujo documentado",
+      "gate": "none",
+      "source": "memory:project_local_builds_from_worktree.md"
+    },
+    {
+      "id": "project_localhost_prisma_pgbouncer",
+      "domain": "process",
+      "rule": "Síntoma: páginas que disparan varias queries en paralelo (ej.",
+      "gate": "none",
+      "source": "memory:project_localhost_prisma_pgbouncer.md"
+    },
+    {
+      "id": "project_monorepo_structure",
+      "domain": "process",
+      "rule": "Digital Polyglot is a monorepo with Next.js web app + Expo/React Native iOS app. Mobile auth uses Clerk with native bridge, session exchange, and custom token flow.",
+      "gate": "none",
+      "source": "memory:project_monorepo_structure.md"
+    },
+    {
+      "id": "project_plan_tiers",
+      "domain": "process",
+      "rule": "Qué significa cada plan (free/basic/premium/polyglot/owner); ninguno es código muerto",
+      "gate": "none",
+      "source": "memory:project_plan_tiers.md"
+    },
+    {
+      "id": "project_positioning",
+      "domain": "process",
+      "rule": "# Posicionamiento de DPL: lenguaje auténtico, NO \"lectura\"",
+      "gate": "none",
+      "source": "memory:project_positioning.md"
+    },
+    {
+      "id": "project_simulator_hardware_keyboard_at_sign",
+      "domain": "process",
+      "rule": "En el simulador de iOS la arroba sale como comilla; se resuelve pegando desde el portapapeles",
+      "gate": "none",
+      "source": "memory:project_simulator_hardware_keyboard_at_sign.md"
+    },
+    {
+      "id": "rules-at-planning-stage",
+      "domain": "process",
+      "rule": "La regla dura va en el brief donde se toma la decision, no solo en el ultimo checkpoint",
+      "gate": "process",
+      "source": "story-rules:rules-at-planning-stage (feedback_enforce_rules_at_planning_stage)"
+    },
+    {
+      "id": "a0-engaging",
+      "domain": "story",
+      "rule": "Una A0 es un mini arco con giro y emocion, no una lista de cognados",
+      "gate": "none",
+      "source": "story-rules:a0-engaging (feedback_a0_engaging)"
+    },
+    {
+      "id": "arctype-rotation",
+      "domain": "story",
+      "rule": "arcType rotates (not same as recent stories)",
+      "gate": "src/lib/validateGeneratedStory.ts#arctype-rotation",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-aphoristic-closing",
+      "domain": "story",
+      "rule": "Body does not end on a fortune-cookie maxim",
+      "gate": "src/lib/validateGeneratedStory.ts#body-aphoristic-closing",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-cefr-a0-grammar",
+      "domain": "story",
+      "rule": "A0 body stays within A0/A1 grammar (no B1 constructs)",
+      "gate": "src/lib/validateGeneratedStory.ts#body-cefr-a0-grammar",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-cefr-level",
+      "domain": "story",
+      "rule": "body-cefr-level",
+      "gate": "src/lib/validateGeneratedStory.ts#body-cefr-level",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-cliche-beat",
+      "domain": "story",
+      "rule": "Body avoids overused sentimental beats",
+      "gate": "src/lib/validateGeneratedStory.ts#body-cliche-beat",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-consecutive-narrators",
+      "domain": "story",
+      "rule": "Narrator paragraphs not stacked between dialogue turns",
+      "gate": "src/lib/validateGeneratedStory.ts#body-consecutive-narrators",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-dialogue-ratio",
+      "domain": "story",
+      "rule": "Body is ~70% dialogue / 30% narrator",
+      "gate": "src/lib/validateGeneratedStory.ts#body-dialogue-ratio",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-idiomatic-untaught",
+      "domain": "story",
+      "rule": "Body uses colloquial idioms not in the vocab list",
+      "gate": "src/lib/validateGeneratedStory.ts#body-idiomatic-untaught",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-inner-monologue-tell",
+      "domain": "story",
+      "rule": "Body avoids the narrated-thought crutch (\\",
+      "gate": "src/lib/validateGeneratedStory.ts#body-inner-monologue-tell",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-level-frequency",
+      "domain": "story",
+      "rule": "body-level-frequency",
+      "gate": "src/lib/validateGeneratedStory.ts#body-level-frequency",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-missing-voseo",
+      "domain": "story",
+      "rule": "Rioplatense setting written in tú instead of voseo",
+      "gate": "src/lib/validateGeneratedStory.ts#body-missing-voseo",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-no-banned-tokens",
+      "domain": "story",
+      "rule": "Body has no laughter / filler / stage directions",
+      "gate": "src/lib/validateGeneratedStory.ts#body-no-banned-tokens",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-no-html",
+      "domain": "story",
+      "rule": "Body is plain text (no HTML/markdown tags)",
+      "gate": "src/lib/validateGeneratedStory.ts#body-no-html",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-quote-style",
+      "domain": "story",
+      "rule": "Comillas curvas; angulares y rectas prohibidas",
+      "gate": "src/lib/validateGeneratedStory.ts#body-quote-style",
+      "source": "story-rules:body-quote-style (project_story_quote_style) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-sensory-overload",
+      "domain": "story",
+      "rule": "Body uses too many sensory categories",
+      "gate": "src/lib/validateGeneratedStory.ts#body-sensory-overload",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "body-voseo-forms",
+      "domain": "story",
+      "rule": "Body uses voseo (vos/tenés/sos) in a non-rioplatense setting",
+      "gate": "src/lib/validateGeneratedStory.ts#body-voseo-forms",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "canonical-validation-gate",
+      "domain": "story",
+      "rule": "Una historia solo esta validada con validateGeneratedStory ok===true; los lints de Python no cuentan",
+      "gate": "process",
+      "source": "story-rules:canonical-validation-gate (feedback_story_canonical_validation_gate)"
+    },
+    {
+      "id": "character-names-generation",
+      "domain": "story",
+      "rule": "Character names match the characters' generation",
+      "gate": "src/lib/validateGeneratedStory.ts#character-names-generation",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "character-names-unverified",
+      "domain": "story",
+      "rule": "Character names checked against the region's name bank",
+      "gate": "src/lib/validateGeneratedStory.ts#character-names-unverified",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "claude-md-story-validation-gate-blocking-no-bypass",
+      "domain": "story",
+      "rule": "Story validation gate",
+      "gate": "scripts/saveStory.ts",
+      "source": "CLAUDE.md"
+    },
+    {
+      "id": "definition-english-level",
+      "domain": "story",
+      "rule": "Definitions use A1-A2 English vocabulary",
+      "gate": "src/lib/validateGeneratedStory.ts#definition-english-level",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "dialogue-bare-imperative",
+      "domain": "story",
+      "rule": "Bare imperative ends a dialogue turn (ElevenLabs uptalk)",
+      "gate": "src/lib/validateGeneratedStory.ts#dialogue-bare-imperative",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "dialogue-treasure-hunt-opening",
+      "domain": "story",
+      "rule": "Opening dialogue is locating objects, not setting stakes",
+      "gate": "src/lib/validateGeneratedStory.ts#dialogue-treasure-hunt-opening",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "feedback_a0_engaging",
+      "domain": "story",
+      "rule": "\"Las historias A0 deben ser entretenidas (mini-arco + giro + emoción), no listas de cognados\"",
+      "gate": "none",
+      "source": "memory:feedback_a0_engaging.md"
+    },
+    {
+      "id": "feedback_dont_disable_working_code_on_a_hunch",
+      "domain": "story",
+      "rule": "\"Nunca desactivar algo que funciona por una hipótesis sin comprobar; el historial se mira ANTES, no después\"",
+      "gate": "process",
+      "source": "memory:feedback_dont_disable_working_code_on_a_hunch.md"
+    },
+    {
+      "id": "feedback_introduce_characters",
+      "domain": "story",
+      "rule": "\"Presentar personaje = decir QUÉ ES («uma moça de São Paulo»), no qué hace; tres formas aprobadas que se van alternando; sin gentilicio y sin primera persona\"",
+      "gate": "src/lib/journeyCasts.ts",
+      "source": "memory:feedback_introduce_characters.md"
+    },
+    {
+      "id": "feedback_no_manual_steps_must_scale",
+      "domain": "story",
+      "rule": "Nunca proponer pasos manuales; todo asset/proceso debe ser automatizable por pipeline (1000+ historias)",
+      "gate": "process",
+      "source": "memory:feedback_no_manual_steps_must_scale.md"
+    },
+    {
+      "id": "feedback_screenshots_go_in_a_phone_frame",
+      "domain": "story",
+      "rule": "\"Una captura de la app se enseña siempre dentro del marco del teléfono, nunca suelta, y con la línea en texto debajo\"",
+      "gate": "none",
+      "source": "memory:feedback_screenshots_go_in_a_phone_frame.md"
+    },
+    {
+      "id": "feedback_story_canonical_validation_gate",
+      "domain": "story",
+      "rule": "\"Historia \\\"validada\\\" SOLO con validateGeneratedStory ok===true; Python es lint; hook bloquea el save\"",
+      "gate": "scripts/saveStory.ts",
+      "source": "memory:feedback_story_canonical_validation_gate.md"
+    },
+    {
+      "id": "feedback_test_in_webapp_localhost",
+      "domain": "story",
+      "rule": "\"Las pruebas van SIEMPRE en la webapp real en localhost (/stories/<slug>), nunca páginas HTML sueltas ni URLs públicas\"",
+      "gate": "process",
+      "source": "memory:feedback_test_in_webapp_localhost.md"
+    },
+    {
+      "id": "json-parse",
+      "domain": "story",
+      "rule": "JSON parses correctly",
+      "gate": "src/lib/validateGeneratedStory.ts#json-parse",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "names-cross-story",
+      "domain": "story",
+      "rule": "Character names not reused from prior stories",
+      "gate": "src/lib/validateGeneratedStory.ts#names-cross-story",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "names-match",
+      "domain": "story",
+      "rule": "La sinopsis no promete un personaje que no sale en el cuerpo",
+      "gate": "src/lib/validateGeneratedStory.ts#names-match",
+      "source": "story-rules:names-match (project_character_name_rules) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "narrator-quoted-speech",
+      "domain": "story",
+      "rule": "Narrated prose contains brief quoted speech",
+      "gate": "src/lib/validateGeneratedStory.ts#narrator-quoted-speech",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "narrator-speaker-introduced",
+      "domain": "story",
+      "rule": "Every quoted speaker is named before the first quoted line",
+      "gate": "src/lib/validateGeneratedStory.ts#narrator-speaker-introduced",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "opening-city-without-country",
+      "domain": "story",
+      "rule": "Opening names a LATAM city without its country",
+      "gate": "src/lib/validateGeneratedStory.ts#opening-city-without-country",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "opening-ficha-tecnica",
+      "domain": "story",
+      "rule": "Opening reads like a character profile, not a scene",
+      "gate": "src/lib/validateGeneratedStory.ts#opening-ficha-tecnica",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "opening-formula-day-time-place",
+      "domain": "story",
+      "rule": "Opening avoids the banned 'day + time + place' template",
+      "gate": "src/lib/validateGeneratedStory.ts#opening-formula-day-time-place",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "project_a0_gate_profile",
+      "domain": "story",
+      "rule": "\"saveStory/validateGeneratedStory ahora tiene perfil A0 (gated isA0) calibrado a las 21 A0 LATAM gold; A0 real no pasaba el gate tuneado a C1\"",
+      "gate": "src/lib/validateGeneratedStory.ts",
+      "source": "memory:project_a0_gate_profile.md"
+    },
+    {
+      "id": "project_character_name_rules",
+      "domain": "story",
+      "rule": "\"Las 7 reglas de nombres de personaje, donde vive cada una y si bloquea o solo avisa, mas los dos huecos detectados\"",
+      "gate": "src/lib/characterNames.ts",
+      "source": "memory:project_character_name_rules.md"
+    },
+    {
+      "id": "project_story_continuity_locks",
+      "domain": "story",
+      "rule": "Estado de los candados de código (validateGeneratedStory.ts) contra los defectos de arco del incidente 2026-06-26; qué falta para volverlo imposible",
+      "gate": "src/lib/validateGeneratedStory.ts",
+      "source": "memory:project_story_continuity_locks.md"
+    },
+    {
+      "id": "project_story_quote_style",
+      "domain": "story",
+      "rule": "\"Las comillas del catálogo son las CURVAS “”; las angulares «» están prohibidas y las rectas son deuda del A1 de España. Ningún gate lo comprueba\"",
+      "gate": "body-quote-style",
+      "source": "memory:project_story_quote_style.md"
+    },
+    {
+      "id": "project_story_system_v2_2026_06",
+      "domain": "story",
+      "rule": "# Story system v2 (2026-06-02): kishōtenketsu + recurring cast + cliffhanger rhythm",
+      "gate": "src/lib/validateGeneratedStory.ts",
+      "source": "memory:project_story_system_v2_2026_06.md"
+    },
+    {
+      "id": "setting-matches-journey",
+      "domain": "story",
+      "rule": "Setting belongs to this journey",
+      "gate": "src/lib/validateGeneratedStory.ts#setting-matches-journey",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "speaker-lines",
+      "domain": "story",
+      "rule": "At least 4 speaker turns",
+      "gate": "src/lib/validateGeneratedStory.ts#speaker-lines",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "speakers-count",
+      "domain": "story",
+      "rule": "At least 2 distinct named speakers",
+      "gate": "src/lib/validateGeneratedStory.ts#speakers-count",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "synopsis-length",
+      "domain": "story",
+      "rule": "synopsis-length",
+      "gate": "src/lib/validateGeneratedStory.ts#synopsis-length",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "synopsis-opening-duplicate",
+      "domain": "story",
+      "rule": "Synopsis and body opening describe the same scene",
+      "gate": "src/lib/validateGeneratedStory.ts#synopsis-opening-duplicate",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "title-anchor-recognizability",
+      "domain": "story",
+      "rule": "Title anchor may be too obscure for A1/A2 learners",
+      "gate": "src/lib/validateGeneratedStory.ts#title-anchor-recognizability",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "title-anchor-repetition",
+      "domain": "story",
+      "rule": "Title anchor already used in multiple stories of this journey",
+      "gate": "src/lib/validateGeneratedStory.ts#title-anchor-repetition",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "title-banned-patterns",
+      "domain": "story",
+      "rule": "Title avoids banned patterns",
+      "gate": "src/lib/validateGeneratedStory.ts#title-banned-patterns",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "title-cultural-anchor",
+      "domain": "story",
+      "rule": "Title avoids generic nouns without concrete anchor",
+      "gate": "src/lib/validateGeneratedStory.ts#title-cultural-anchor",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "title-formula-default",
+      "domain": "story",
+      "rule": "Title uses the default \\",
+      "gate": "src/lib/validateGeneratedStory.ts#title-formula-default",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "title-language-consistency",
+      "domain": "story",
+      "rule": "Title uses characters foreign to the target language",
+      "gate": "src/lib/validateGeneratedStory.ts#title-language-consistency",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "title-length",
+      "domain": "story",
+      "rule": "Title is 2-6 words",
+      "gate": "src/lib/validateGeneratedStory.ts#title-length",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "title-pattern-variety",
+      "domain": "story",
+      "rule": "Title structure differs from prior titles",
+      "gate": "src/lib/validateGeneratedStory.ts#title-pattern-variety",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "title-region-mismatch",
+      "domain": "story",
+      "rule": "Title anchor outside the journey's region (LATAM Spanish)",
+      "gate": "src/lib/validateGeneratedStory.ts#title-region-mismatch",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "title-template-monotony",
+      "domain": "story",
+      "rule": "Title follows a template already overused in this journey",
+      "gate": "src/lib/validateGeneratedStory.ts#title-template-monotony",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "title-topic-match",
+      "domain": "story",
+      "rule": "title-topic-match",
+      "gate": "src/lib/validateGeneratedStory.ts#title-topic-match",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "title-uniqueness",
+      "domain": "story",
+      "rule": "Title does not share >50% tokens with existing titles",
+      "gate": "src/lib/validateGeneratedStory.ts#title-uniqueness",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "cultural-anchor-in-vocab",
+      "domain": "vocab",
+      "rule": "El ancla cultural de la historia va SIEMPRE en el vocab",
+      "gate": "none",
+      "source": "story-rules:cultural-anchor-in-vocab (feedback_cultural_anchor_always_vocab)"
+    },
+    {
+      "id": "feedback_calibrate_gates_to_gold_standard",
+      "domain": "vocab",
+      "rule": "\"Un gate de QA se calibra contra un patrón oro, nunca se relaja para que pase lo que el generador logra producir; si el gate rechaza todo, el problema es la config del generador\"",
+      "gate": "process",
+      "source": "memory:feedback_calibrate_gates_to_gold_standard.md"
+    },
+    {
+      "id": "feedback_cefr_two_level_rule",
+      "domain": "vocab",
+      "rule": "\"Regla i+2; el cuerpo de una historia puede tener palabras hasta 2 niveles CEFR encima del target, no más. Para target A1 = A2 y B1 OK, B2/C1/C2 NO. Aplica a TODO el body, no solo al vocab[] resalt...",
+      "gate": "none",
+      "source": "memory:feedback_cefr_two_level_rule.md"
+    },
+    {
+      "id": "feedback_cultural_anchor_always_vocab",
+      "domain": "vocab",
+      "rule": "\"La palabra cultural ancla (mole, fonda, epazote…) SIEMPRE va en el vocab; nunca dejarla fuera por frecuencia. La banda puede extenderse a 30.\"",
+      "gate": "none",
+      "source": "memory:feedback_cultural_anchor_always_vocab.md"
+    },
+    {
+      "id": "feedback_gloss_in_context",
+      "domain": "vocab",
+      "rule": "\"Glosa en contexto: la definicion sale de la frase de la historia, no del diccionario; una copia trae el sentido del journey de origen y hay que releerla contra la oracion donde cae\"",
+      "gate": "none",
+      "source": "memory:feedback_gloss_in_context.md"
+    },
+    {
+      "id": "feedback_missing_content_is_an_opportunity",
+      "domain": "vocab",
+      "rule": "\"Que falte contenido para un idioma, nivel o región NO es un problema ni un motivo para excluir a nadie; es una señal de qué crear\"",
+      "gate": "process",
+      "source": "memory:feedback_missing_content_is_an_opportunity.md"
+    },
+    {
+      "id": "feedback_vocab_scales_with_length",
+      "domain": "vocab",
+      "rule": "\"Historia al tope de palabras (~280-320) = vocab al tope (~25+); vocab escala con el largo del body, nunca banda fija 18-22\"",
+      "gate": "vocab-count",
+      "source": "memory:feedback_vocab_scales_with_length.md"
+    },
+    {
+      "id": "feedback_vocab_type_vs_register",
+      "domain": "vocab",
+      "rule": "\"`type` = categoría gramatical (pinta el color de la pill); `register` = slang. NUNCA type:'slang'; colapsa todo a un color\"",
+      "gate": "none",
+      "source": "memory:feedback_vocab_type_vs_register.md"
+    },
+    {
+      "id": "feedback_vocab_zero_overlap_across_journeys",
+      "domain": "vocab",
+      "rule": "\"REGLA DURA: un journey nunca gasta un slot de vocab en una palabra que otro journey del mismo idioma ya enseña; el objetivo es CERO, no un porcentaje\"",
+      "gate": "vocab-taught-elsewhere",
+      "source": "memory:feedback_vocab_zero_overlap_across_journeys.md"
+    },
+    {
+      "id": "journey-vocab-recirculation",
+      "domain": "vocab",
+      "rule": "Cada plaza de vocab se reencuentra: media de 2 apariciones o mas a lo largo del journey",
+      "gate": "src/lib/validateJourneyStories.ts#journey-vocab-recirculation",
+      "source": "story-rules:journey-vocab-recirculation (project_vocab_recirculation_ladder) + validator:src/lib/validateJourneyStories.ts"
+    },
+    {
+      "id": "project_gloss_mood_layer",
+      "domain": "vocab",
+      "rule": "La capa gramatical de las glosas (modo y par de formas), lo que decide si una forma es orden, y por que el lint importa el generador en vez de copiarlo",
+      "gate": "scripts/buildGlossMoods.ts",
+      "source": "memory:project_gloss_mood_layer.md"
+    },
+    {
+      "id": "project_journey_vocab_audit",
+      "domain": "vocab",
+      "rule": "Snapshot of vocab quality across published JourneyStories; uneven length per level, inflated definitions driven by conflicting prompts. Pending fix.",
+      "gate": "none",
+      "source": "memory:project_journey_vocab_audit.md"
+    },
+    {
+      "id": "project_spanish_cefr_judge_gaps",
+      "domain": "vocab",
+      "rule": "\"El juez CEFR español es list-only y su caché está VACÍA: toda palabra que no esté en las listas cae a C2 y revienta vocab-level-frequency. Anclas culturales exentas vía register.\"",
+      "gate": "scripts/saveStory.ts",
+      "source": "memory:project_spanish_cefr_judge_gaps.md"
+    },
+    {
+      "id": "project_tap_glosses_contract",
+      "domain": "vocab",
+      "rule": "Convención de redacción de las glosas del lookup y el guard que impide que se queden atrás",
+      "gate": "post-story-save-glosses.sh",
+      "source": "memory:project_tap_glosses_contract.md"
+    },
+    {
+      "id": "project_target_audience",
+      "domain": "vocab",
+      "rule": "\"El grupo objetivo de Digital Polyglot Library son anglosajones (English-speaking learners), no hispanohablantes\"",
+      "gate": "none",
+      "source": "memory:project_target_audience.md"
+    },
+    {
+      "id": "project_vocab_multiword_render",
+      "domain": "vocab",
+      "rule": "Vocab con surface multi-palabra no se resaltaba en el reader (matcher token-a-token)",
+      "gate": "none",
+      "source": "memory:project_vocab_multiword_render.md"
+    },
+    {
+      "id": "project_vocab_portable_layer_between_levels",
+      "domain": "vocab",
+      "rule": "El cero de solape se aplica solo al vocab ANCLADO; la capa portable (verbo, adjetivo, adverbio, expresion) se reabre entre niveles del mismo tipo, porque sin ella la escalera de recirculacion es im...",
+      "gate": "scripts/saveStory.ts",
+      "source": "memory:project_vocab_portable_layer_between_levels.md"
+    },
+    {
+      "id": "tap-glosses-fresh",
+      "domain": "vocab",
+      "rule": "Tras editar una historia, ninguna palabra tocable se queda sin glosa",
+      "gate": "process",
+      "source": "story-rules:tap-glosses-fresh (project_tap_glosses_contract)"
+    },
+    {
+      "id": "vocab-count",
+      "domain": "vocab",
+      "rule": "De 20 a 25 plazas, y el tope escala con el largo del cuerpo",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-count",
+      "source": "story-rules:vocab-count (feedback_vocab_scales_with_length) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-cross-story",
+      "domain": "vocab",
+      "rule": "Vocab not repeated from prior stories in this topic (cast-aware)",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-cross-story",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-definitions",
+      "domain": "vocab",
+      "rule": "Definiciones en ingles, de 4 a 14 palabras",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-definitions",
+      "source": "story-rules:vocab-definitions (project_journey_vocab_audit) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-distribution",
+      "domain": "vocab",
+      "rule": "De 3 a 5 plazas por parrafo; nunca amontonadas en la apertura",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-distribution",
+      "source": "story-rules:vocab-distribution (feedback_vocab_distribution) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-in-body",
+      "domain": "vocab",
+      "rule": "Cada plaza de vocab aparece literalmente en el cuerpo",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-in-body",
+      "source": "story-rules:vocab-in-body (project_story_quality_spec) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-journey-overrepresent",
+      "domain": "vocab",
+      "rule": "Expression-type vocab not repeated as vocab in >2 stories",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-journey-overrepresent",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-ladder-shape",
+      "domain": "vocab",
+      "rule": "20 plazas por historia, 12 portables y 8 ancladas",
+      "gate": "none",
+      "source": "story-rules:vocab-ladder-shape (project_vocab_ladder_shape)"
+    },
+    {
+      "id": "vocab-level-frequency",
+      "domain": "vocab",
+      "rule": "vocab-level-frequency",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-level-frequency",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-min-expressions",
+      "domain": "vocab",
+      "rule": "Vocab list has too few multi-word expressions",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-min-expressions",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-no-cognates",
+      "domain": "vocab",
+      "rule": "No transparent cognates",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-no-cognates",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-no-consecutive-pills",
+      "domain": "vocab",
+      "rule": "No 3+ consecutive vocab pills in body",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-no-consecutive-pills",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-no-same-root",
+      "domain": "vocab",
+      "rule": "No same-root vocab duplicates",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-no-same-root",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-pedagogical-redundancy",
+      "domain": "vocab",
+      "rule": "Vocab includes A0-universal items that waste teaching slots",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-pedagogical-redundancy",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-surface-contiguous",
+      "domain": "vocab",
+      "rule": "En aleman el surface es una cadena contigua; nunca el separable partido",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-surface-contiguous",
+      "source": "story-rules:vocab-surface-contiguous (project_vocab_multiword_render) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-taught-elsewhere",
+      "domain": "vocab",
+      "rule": "Vocab repeated from a DIFFERENT journey type: max 2 per story",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-taught-elsewhere",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-taught-same-type",
+      "domain": "vocab",
+      "rule": "Cero vocabulario repetido con otro journey del mismo tipo",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-taught-same-type",
+      "source": "story-rules:vocab-taught-same-type (feedback_vocab_zero_overlap_across_journeys) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-types",
+      "domain": "vocab",
+      "rule": "Cada plaza lleva su categoria gramatical; `type` no es el registro",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-types",
+      "source": "story-rules:vocab-types (feedback_vocab_needs_type) + validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "vocab-utility",
+      "domain": "vocab",
+      "rule": "Vocab earns its slot (no pure paperwork labels)",
+      "gate": "src/lib/validateGeneratedStory.ts#vocab-utility",
+      "source": "validator:src/lib/validateGeneratedStory.ts"
+    }
+  ]
+}
