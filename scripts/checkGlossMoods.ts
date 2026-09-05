@@ -32,6 +32,12 @@ const prisma = new PrismaClient();
 const MODOS = new Set([
   "Subjunctive", "Past subjunctive", "Conditional", "Formal command",
   "Negative command", "Command", "Command + pronoun", "Verb + pronoun", "Konjunktiv II",
+  // Futuro do subjuntivo. Existe en portugues y no en las otras tres lenguas
+  // con tabla, que son de donde salio esta lista, asi que "que tiver" (A1 PT
+  // Brazil, "o repelente mais forte que tiver") bloqueaba el push con un
+  // bloque impecable: par de formas, conjugacion entera, fila encendida y
+  // enlace. La lista no lo conocia; el modo es real.
+  "Future subjunctive",
 ]);
 /** Los idiomas con tablas de modo escritas. El resto se NOMBRA en la salida:
  *  callarse es como una capa entera se queda fuera sin que nadie lo note. */
