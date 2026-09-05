@@ -255,7 +255,7 @@
     },
     {
       "id": "stories-need-stakes",
-      "gate": "none",
+      "gate": "scripts/cierraTema.ts",
       "rule": "Deseo, obstaculo y coste en cada historia, y una espina que atraviese el journey",
       "memory": "feedback_stories_need_stakes"
     },
@@ -294,6 +294,18 @@
       "gate": "none",
       "rule": "20 plazas por historia, 12 portables y 8 ancladas",
       "memory": "project_vocab_ladder_shape"
+    },
+    {
+      "id": "tema-plan-block",
+      "gate": "scripts/cierraTema.ts",
+      "rule": "El tema declara su plan antes de la primera linea de prosa: tipo, nivel, variante, registro, espina y, por historia, que quiere, que se lo impide, que le cuesta y que cambia",
+      "memory": "feedback_stories_need_stakes"
+    },
+    {
+      "id": "tema-tics-detector",
+      "gate": "scripts/cierraTema.ts",
+      "rule": "Los tics se miden sobre las tres historias juntas: un verbo de acotacion por encima del 40% y tres arranques iguales bloquean; estructura clonada, densidad de nivel bajo y registro repetido avisan",
+      "memory": "feedback_stories_need_stakes"
     }
   ]
 }

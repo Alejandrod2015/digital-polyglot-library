@@ -328,6 +328,41 @@ In addition to the existing fields (`title`, `synopsis`, `text`, `vocab`), add:
 
 Use one of the seven values above. The field is required for every new story and validated server-side.
 
+## 3bis. El molde del tema [2026-09-05]
+
+Seis reglas que no se juzgan historia a historia, sino sobre las TRES juntas.
+Las mide `scripts/cierraTema.ts` con el plan del tema (`--plan`); dos bloquean
+el cierre y el resto avisan, y el aviso no es un aprobado.
+
+1. **El tipo decide el punto de vista.** Traveler mira desde fuera y pregunta;
+   Expat vive dentro y ya da cosas por sabidas; Friends se cuenta entre iguales,
+   sin explicar lo que el grupo comparte. Elegido el tipo, el punto de vista no
+   cambia a mitad de tema.
+2. **Nombres propios y lugares, pronunciables por el TTS.** O son de la lista
+   que ya salio bien en este idioma, o se prueban en la muestra del paso 1 de
+   `/audio-tema` antes de repetirse en tres historias. Un nombre que la voz
+   parte en dos se paga en veintiuna narraciones, no en una.
+3. **En niveles bajos, menos sucesos; nunca frases apretadas.** Si el tema se
+   pasa del techo de densidad (9 palabras por oracion en A0, 11 en A1, 13 en
+   A2), la salida es QUITAR un hecho de la escena, no comprimir la oracion que
+   ya esta. Una frase apretada tiene el mismo numero de palabras y menos aire.
+4. **Personaje y ciudad, presentados en el arranque.** Quien es y donde esta,
+   antes de su primera linea de dialogo, con la forma "una moça de São Paulo" y
+   con la coma de "Ciudad, pais". Presentar tarde obliga al lector a leer dos
+   veces la misma escena.
+5. **Al menos un coste no devuelto por tema.** Algo que un personaje pierde y
+   no recupera: el ultimo camion, la mitad del dinero, la tarde. Sin coste hay
+   temario, no arco; es la casilla `cuesta` del plan y por eso el cierre no la
+   deja vacia.
+6. **Registro declarado y variado entre temas.** El plan dice como suena el
+   tema en una linea, y el cierre lo compara con los dos temas anteriores del
+   journey: tres seguidos con el mismo registro avisan.
+
+Dos tics mas, que ninguna historia delata sola y que BLOQUEAN el cierre: un
+verbo de acotacion que se lleva mas del 40% de las citas del tema (el
+"añade/remata" que cerraba 8 de 9 historias del B1 de España), y las tres
+historias abriendo con la misma palabra (el patron "nombre propio + verbo").
+
 ## 4. Vocab
 
 - **Count scales with body DENSITY, not a fixed cap** [2026-06-05]. **Hard minimum 20**; the ceiling = `max(25, round(bodyWords / 9))`. So a normal ~250-word story keeps the 20-25 band, while a denser/longer story earns more (e.g. a 330-word recipe-reunion like `la-fonda-de-tio-beto` → up to ~37, and genuinely wants ~30: the ingredients + the cultural terms `mija`/`marchando`/`epazote`/`guajillo` + the key verbs). Rule of thumb for the TARGET: roughly one teachable item per 10 body words. Do NOT pad to the ceiling; only highlight words that genuinely earn a slot (two-functions test below). History: 18-22 (pre-2026-06-04) → 20-25 (2026-06-04/05) → density-scaled (2026-06-05). Over-pilling is still bounded independently by the no-consecutive-pills + per-paragraph distribution rules, so a high count must still spread across the body, not cluster.
