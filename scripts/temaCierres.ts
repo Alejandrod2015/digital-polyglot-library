@@ -59,7 +59,7 @@ export type Cierre = {
   avisos?: string[];
 };
 
-export const CAMPOS_PLAN = ["tipo", "nivel", "variante", "registro", "espina"] as const;
+export const CAMPOS_PLAN = ["tipo", "nivel", "variante", "registro", "espina", "recursos"] as const;
 export const CAMPOS_PLAN_HISTORIA = ["slot", "quiere", "impide", "cuesta", "cambia", "emocion"] as const;
 
 /**

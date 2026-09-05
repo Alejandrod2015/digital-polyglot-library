@@ -43,6 +43,7 @@ puede quedar vacio:
   "tipo": "Traveler", "nivel": "a2", "variante": "LATAM",
   "registro": "como suena el tema, en una linea",
   "espina": "el hilo que atraviesa el journey y pasa por este tema",
+  "recursos": "los recursos estilisticos que usa el tema, todos del nivel o de abajo (escalera en story-quality-spec.md 3ter; en la duda, un nivel arriba)",
   "historias": [
     { "slot": "1", "quiere": "", "impide": "", "cuesta": "", "cambia": "", "emocion": "" },
     { "slot": "2", "quiere": "", "impide": "", "cuesta": "", "cambia": "", "emocion": "" },
