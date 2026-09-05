@@ -23,7 +23,13 @@ async function run() {
   const prisma = new PrismaClient();
   const story = await prisma.journeyStory.findFirst({ where: { slug, journeyId: JOURNEY_ID }, include: { journey: true } });
   if (!story || !story.text || !story.title) { console.error("Story not found or missing text/title"); process.exit(1); }
-  if (story.audioUrl) { console.error(`[${slug}] YA tiene audioUrl. Aborto para no pisar.`); process.exit(1); }
+  // --force re-renderiza una historia que YA tiene audio. Existe para el caso
+  // "el texto cambió y el audio quedó desfasado": el cache de segmentos es
+  // content-addressed (voiceId|model|settings|texto|trim-v7), así que un
+  // re-render sólo sintetiza los segmentos cuyo TEXTO cambió y sirve el resto
+  // desde R2 gratis. Sin el flag sigue abortando, que es lo correcto por defecto.
+  const force = process.argv.includes("--force");
+  if (story.audioUrl && !force) { console.error(`[${slug}] YA tiene audioUrl. Aborto para no pisar (usa --force si el texto cambió).`); process.exit(1); }
   const guardError = multiVoiceGuardError({ storyText: story.text, dialogueSpec: story.dialogueSpec });
   if (guardError) { console.error("multiVoiceGuard:", guardError); process.exit(1); }
   type Seg = { speaker: string; voice: string; text: string };
