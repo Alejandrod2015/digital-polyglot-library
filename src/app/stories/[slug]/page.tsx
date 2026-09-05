@@ -36,6 +36,7 @@ import { canAccessStoryContent } from "@domain/access";
 import StoryClientGate from "@/app/books/[bookSlug]/[storySlug]/StoryClientGate";
 import { getLockedStoryPreviewHtml } from "@domain/lockedStoryPreview";
 import GetAppCta from "@/components/GetAppCta";
+import OnboardingPlayCoachmark from "@/components/OnboardingPlayCoachmark";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -345,6 +346,8 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
     plan,
     isWeeklyStory,
     isDailyStory,
+    isJourneyStory: resolvedStory.isJourney,
+    isSignedIn: Boolean(userId),
   });
 
   const displayText = resolvedStory.text;
@@ -473,6 +476,12 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
               id="story-player-dock"
               className="fixed bottom-0 left-0 right-0 z-50 bg-transparent"
             >
+              {/* Quien llega desde el onboarding aterriza en la primera
+                  historia de su journey (ver src/app/journey/start), y esta
+                  viñeta le dice que hay algo que pulsar. Solo si de verdad
+                  puede darle: apuntar al play de un reproductor bloqueado
+                  seria peor que no decir nada. */}
+              {hasFullAccess ? <OnboardingPlayCoachmark kind="journey" /> : null}
               <Player
                 src={resolvedStory.audioUrl}
                 bookSlug={resolvedStory.source}

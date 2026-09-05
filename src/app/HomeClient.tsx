@@ -1875,28 +1875,19 @@ export default function HomeClient({
     });
     if (!success) return;
     setSurveyStep(0);
-    // Drop the new user straight into the story their plan can actually
-    // play (free → the weekly story, the only one unlocked), with the
-    // player ready, instead of leaving them on the Home grid where they'd
-    // open a gated story and hit the paywall before ever pressing play.
-    const playSlug = plan === "free" ? featuredWeekSlug : (featuredDaySlug ?? featuredWeekSlug);
-    let storyDest: string | null = null;
-    if (playSlug) {
-      for (const book of Object.values(books)) {
-        if (book.stories.some((s) => s.slug === playSlug)) {
-          // `welcome=onboarding` triggers a one-time coachmark on the story
-          // page that explains why they landed here and points at play.
-          storyDest = `/books/${book.slug}/${playSlug}?welcome=onboarding`;
-          break;
-        }
-      }
-    }
-    if (storyDest) {
-      router.push(storyDest);
-      return;
-    }
-    // No featured story available: fall back to the home tour.
-    setTourStep(0);
+    // Al journey de la persona, que es lo que acaba de pedir en el
+    // cuestionario. La decision (primera historia de su journey, y la
+    // destacada solo si su idioma aun no tiene journey) vive en el servidor,
+    // en /journey/start, porque aqui no hay datos del journey y la eleccion
+    // necesita el track resuelto por idioma y variante.
+    //
+    // Antes se iba directo a la destacada de la semana, que se elige con un
+    // hash sobre todo el catalogo: aterrizaba a un principiante de espanol en
+    // una historia italiana de nivel intermedio.
+    //
+    // El destino final llega con `welcome=onboarding`, que enciende la
+    // viñeta que apunta al play; lo pone /journey/start, no esta llamada.
+    router.push("/journey/start");
   };
 
   const completeTour = async () => {

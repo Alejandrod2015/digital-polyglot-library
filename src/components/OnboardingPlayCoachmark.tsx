@@ -4,12 +4,20 @@ import { useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 /**
- * One-time speech-bubble (viñeta) shown when a user lands on their free
- * story straight from onboarding (`?welcome=onboarding`). It explains why
+ * One-time speech-bubble (viñeta) shown when a user lands on a story
+ * straight from onboarding (`?welcome=onboarding`). It explains why
  * they're here and points down at the player's play button. Dismissible;
  * dismissing clears the query param so a refresh won't show it again.
+ *
+ * `kind` says WHICH story they landed on, because the two sentences are
+ * different promises: the weekly story is the one thing a free catalog
+ * reader can play, and the journey story is step one of their own track.
  */
-export default function OnboardingPlayCoachmark() {
+export default function OnboardingPlayCoachmark({
+  kind = "weekly",
+}: {
+  kind?: "weekly" | "journey";
+}) {
   const params = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -41,7 +49,11 @@ export default function OnboardingPlayCoachmark() {
           ✕
         </button>
         <p className="text-sm leading-snug">
-          <span className="font-semibold">This is your free story this week.</span>{" "}
+          <span className="font-semibold">
+            {kind === "journey"
+              ? "This is the first story of your journey."
+              : "This is your free story this week."}
+          </span>{" "}
           Press play below to start listening; audio and reading together.
         </p>
         {/* Tail pointing down toward the play button */}
