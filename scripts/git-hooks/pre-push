@@ -115,6 +115,7 @@ checkHardRules       memoria
 checkRulesInventory  -
 checkGlossMoods      db
 checkGlossVariants   db
+checkVocabLayer      db
 "
 
 # -- Trinquete de enrolamiento ----------------------------------------
