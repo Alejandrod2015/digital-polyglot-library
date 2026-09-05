@@ -115,6 +115,7 @@ checkHardRules       memoria
 checkRulesInventory  -
 checkGlossMoods      db
 checkGlossVariants   db
+checkVocabLayer      db
 "
 
 # -- Trinquete de enrolamiento ----------------------------------------
@@ -305,6 +306,20 @@ EOM
 
 EOM
       ;;
+    checkVocabLayer)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: una plaza de vocabulario ensena menos que la glosa
+
+  Arriba sale historia y palabra: falta la frase de contexto, la tabla de
+  formas del verbo, o el `surface` de la forma que aparece en el cuerpo.
+
+  Comprueba con:  npm run lint:vocab-layer
+======================================================================
+
+EOM
+      ;;
     *)
       echo "" >&2
       echo "  PUSH BLOCKED: $1 fallo." >&2
@@ -340,6 +355,9 @@ EOM
 #                        diccionario, sin su capa gramatical.
 #   checkGlossVariants   Formas que no son de la variante de su journey
 #                        (`vosotros nadais` en un journey de Bogota).
+#   checkVocabLayer      Una plaza de vocab es una entrada de glosa con
+#                        etiqueta: sin contexto, sin formas del verbo o sin
+#                        `surface`, ensena menos que la glosa de al lado.
 #
 # Reglas del bucle:
 #   1. El script no existe   -> push BLOQUEADO (ausencia no es permiso).
