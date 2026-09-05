@@ -420,6 +420,31 @@ MAIL_PREVIEW_ONLY=0
 if printf '%s' "$COMMAND" | grep -qE -- '--dry'; then
     MAIL_PREVIEW_ONLY=1
 fi
+#     Git no manda correo, y el "requiere ejecutar algo" de arriba no bastaba:
+#     el 2026-09-05 un `git commit` quedo bloqueado porque su MENSAJE contaba
+#     este mismo fallo, y la palabra "curl" en la prosa hizo de interprete. Si
+#     TODOS los segmentos empiezan por git, se exime. El cuerpo de un heredoc
+#     se descarta antes de mirar: ahi va el mensaje del commit, que es texto y
+#     no ordenes. Basta con que un segmento no sea git para caer al gate.
+GIT_ONLY="$(printf '%s' "$COMMAND" | /usr/bin/python3 -c '
+import re, sys
+c = sys.stdin.read()
+c = re.sub(r"<<-?\s*[\x27\"]?(\w+)[\x27\"]?(.*?)^\1\b", " ", c, flags=re.S | re.M)
+segs = [s.strip() for s in re.split(r"&&|\|\||;|\||\n", c) if s.strip()]
+ok = bool(segs)
+for s in segs:
+    toks = s.split()
+    i = 0
+    while i < len(toks) and re.match(r"^[A-Za-z_][A-Za-z0-9_]*=", toks[i]):
+        i += 1
+    if i >= len(toks) or toks[i] != "git":
+        ok = False
+        break
+print(1 if ok else 0)
+' 2>/dev/null || printf 0)"
+if [ "$GIT_ONLY" = "1" ]; then
+    MAIL_PREVIEW_ONLY=1
+fi
 #     Named one by one rather than by a pattern like "any script without
 #     --send". Both of these are written so that nothing leaves without that
 #     flag, and that guarantee is what earns the exemption; a wildcard would
