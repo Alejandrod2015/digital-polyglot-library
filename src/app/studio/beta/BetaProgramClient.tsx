@@ -1108,6 +1108,9 @@ export default function BetaProgramClient() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [tab, setTab] = useState<Tab>("review");
+  // Vive aqui y no dentro de cada panel para que pasar de la cola a los
+  // testers conserve el idioma que estabas mirando.
+  const [audience, setAudience] = useState<AudienceFilter>(NO_AUDIENCE_FILTER);
   const [busy, setBusy] = useState<string | null>(null);
   const [flash, setFlash] = useState<string | null>(null);
 
@@ -1292,6 +1295,15 @@ export default function BetaProgramClient() {
   // one where you cannot answer "what happened to Chris?" a week later.
   const removedTesters = data.applicants.filter((a) => a.status === "removed");
 
+  // El filtro toca las listas de personas y nada mas: Demand y Origin existen
+  // para comparar idiomas entre si, y reducirlos a uno los vacia de sentido.
+  const filtersAudience = tab === "review" || tab === "testers";
+  const audienceRows = tab === "testers" ? [...testers, ...removedTesters] : needsReview;
+  const shownReview = needsReview.filter((a) => matchesAudience(a, audience));
+  const shownTesters = testers.filter((a) => matchesAudience(a, audience));
+  const shownRemoved = removedTesters.filter((a) => matchesAudience(a, audience));
+  const exportRows = filtersAudience ? data.applicants.filter((a) => matchesAudience(a, audience)) : data.applicants;
+
   const tabs: Array<{ key: Tab; label: string; count?: number }> = [
     { key: "review", label: "Review queue", count: needsReview.length },
     { key: "demand", label: "Demand", count: data.applicants.length },
@@ -1332,12 +1344,16 @@ export default function BetaProgramClient() {
             {t.count !== undefined && ` (${t.count})`}
           </button>
         ))}
+        {/* Con el filtro puesto, exportar el total entero seria devolver algo
+            distinto de lo que se esta mirando. */}
         <button
           style={{ ...ghostBtn, marginLeft: "auto" }}
-          disabled={data.applicants.length === 0}
-          onClick={() => exportCsv(data.applicants)}
+          disabled={exportRows.length === 0}
+          onClick={() => exportCsv(exportRows)}
         >
-          Export CSV
+          {exportRows.length === data.applicants.length
+            ? "Export CSV"
+            : `Export CSV (${exportRows.length})`}
         </button>
       </div>
 
@@ -1347,9 +1363,14 @@ export default function BetaProgramClient() {
         </div>
       )}
 
+      {filtersAudience && (
+        <AudienceFilterBar rows={audienceRows} value={audience} onChange={setAudience} />
+      )}
+
       {tab === "review" && (
         <ReviewQueue
-          applicants={needsReview}
+          applicants={shownReview}
+          filtered={audience.language !== null || audience.variant !== null}
           rules={data.rules}
           busy={busy}
           onAction={applicantAction}
@@ -1370,8 +1391,8 @@ export default function BetaProgramClient() {
         <>
           <PlayTrackPanel play={data.play} onDone={load} />
           <Testers
-            testers={testers}
-            removed={removedTesters}
+            testers={shownTesters}
+            removed={shownRemoved}
             busy={busy}
             onAction={applicantAction}
             play={data.play}
@@ -1638,25 +1659,191 @@ function PlayTrackPanel({ play, onDone }: { play: PlayState | null; onDone: () =
   );
 }
 
+/* -- audience filter (language / variant) -- */
+
+/**
+ * Filtro de audiencia para las listas de personas: idioma y, dentro de el,
+ * variante. Se construye desde las filas que hay delante, nunca desde el
+ * catalogo de idiomas: si en la cola solo hay espanol y portugues, solo
+ * salen esos dos botones, y el segundo piso (las variantes) aparece cuando
+ * el idioma elegido tiene mas de una. Un filtro que ofrece opciones vacias
+ * obliga a probarlas una por una para descubrir que no hay nadie detras.
+ */
+type AudienceFilter = { language: string | null; variant: string | null };
+
+const NO_AUDIENCE_FILTER: AudienceFilter = { language: null, variant: null };
+
+/** Las filas anteriores al 2026-08-11 son null porque nunca se les pregunto. */
+const VARIANT_UNASKED = "__unasked";
+
+function audienceVariantKey(a: Applicant): string {
+  return targetVariantLabel(a.targetLanguage, a.targetVariant) ?? VARIANT_UNASKED;
+}
+
+function matchesAudience(a: Applicant, f: AudienceFilter): boolean {
+  if (f.language && a.targetLanguage !== f.language) return false;
+  if (f.variant && audienceVariantKey(a) !== f.variant) return false;
+  return true;
+}
+
+function countBy(rows: Applicant[], key: (a: Applicant) => string): Array<[string, number]> {
+  const m = new Map<string, number>();
+  for (const a of rows) m.set(key(a), (m.get(key(a)) ?? 0) + 1);
+  return [...m.entries()].sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0]));
+}
+
+function FilterChip({
+  label,
+  count,
+  active,
+  onClick,
+}: {
+  label: string;
+  count?: number;
+  active: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      style={{
+        ...ghostBtn,
+        height: 28,
+        fontSize: 12,
+        backgroundColor: active ? `${ACCENT}22` : "transparent",
+        borderColor: active ? ACCENT : "var(--card-border)",
+        color: active ? ACCENT : "var(--muted)",
+      }}
+    >
+      {label}
+      {count !== undefined && ` (${count})`}
+    </button>
+  );
+}
+
+function AudienceFilterBar({
+  rows,
+  value,
+  onChange,
+}: {
+  /** Sin filtrar: los botones cuentan el total, no lo que queda tras filtrar. */
+  rows: Applicant[];
+  value: AudienceFilter;
+  onChange: (f: AudienceFilter) => void;
+}) {
+  const languages = useMemo(() => countBy(rows, (a) => a.targetLanguage), [rows]);
+
+  // Con un solo idioma delante no hay nada que elegir arriba, pero si puede
+  // haber varias variantes dentro: se da por seleccionado.
+  const activeLanguage = value.language ?? (languages.length === 1 ? languages[0][0] : null);
+
+  const variants = useMemo(() => {
+    if (!activeLanguage) return [] as Array<[string, number]>;
+    const rowsOfLanguage = rows.filter((a) => a.targetLanguage === activeLanguage);
+    return countBy(rowsOfLanguage, audienceVariantKey).sort((x, y) => {
+      // "Sin preguntar" no es una region: va al final por mucho que pese.
+      if (x[0] === VARIANT_UNASKED) return 1;
+      if (y[0] === VARIANT_UNASKED) return -1;
+      return y[1] - x[1] || x[0].localeCompare(y[0]);
+    });
+  }, [rows, activeLanguage]);
+
+  // Cuando la lista cambia bajo los pies (invitas al ultimo aleman de la
+  // cola), un filtro que ya no selecciona nada dejaria la pantalla vacia sin
+  // decir por que.
+  useEffect(() => {
+    if (value.language && !languages.some(([l]) => l === value.language)) {
+      onChange(NO_AUDIENCE_FILTER);
+      return;
+    }
+    if (value.variant && !variants.some(([v]) => v === value.variant)) {
+      onChange({ language: value.language, variant: null });
+    }
+  }, [languages, variants, value, onChange]);
+
+  if (languages.length < 2 && variants.length < 2) return null;
+
+  const shown = rows.filter((a) => matchesAudience(a, value)).length;
+  const filtering = value.language !== null || value.variant !== null;
+
+  return (
+    <div style={{ ...card, padding: "10px 12px", display: "flex", flexDirection: "column", gap: 8 }}>
+      {languages.length > 1 && (
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center" }}>
+          <span style={{ fontSize: 11, color: "var(--muted)", width: 58, flexShrink: 0 }}>Language</span>
+          <FilterChip
+            label="All"
+            count={rows.length}
+            active={value.language === null}
+            onClick={() => onChange(NO_AUDIENCE_FILTER)}
+          />
+          {languages.map(([language, n]) => (
+            <FilterChip
+              key={language}
+              label={language}
+              count={n}
+              active={value.language === language}
+              onClick={() => onChange({ language, variant: null })}
+            />
+          ))}
+        </div>
+      )}
+
+      {variants.length > 1 && (
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center" }}>
+          <span style={{ fontSize: 11, color: "var(--muted)", width: 58, flexShrink: 0 }}>Variant</span>
+          <FilterChip label="All" active={value.variant === null} onClick={() => onChange({ language: value.language, variant: null })} />
+          {variants.map(([variant, n]) => (
+            <FilterChip
+              key={variant}
+              label={variant === VARIANT_UNASKED ? "Not asked" : variant}
+              count={n}
+              active={value.variant === variant}
+              onClick={() => onChange({ language: value.language, variant })}
+            />
+          ))}
+        </div>
+      )}
+
+      {filtering && (
+        <div style={{ fontSize: 11, color: "var(--muted)" }}>
+          Showing {shown} of {rows.length}.{" "}
+          <button
+            onClick={() => onChange(NO_AUDIENCE_FILTER)}
+            style={{ background: "none", border: "none", padding: 0, color: ACCENT, fontSize: 11, cursor: "pointer" }}
+          >
+            Clear
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 /* ── review queue ── */
 
 function ReviewQueue({
   applicants,
   rules,
   busy,
+  filtered,
   onAction,
   onDelete,
 }: {
   applicants: Applicant[];
   rules: Rules;
   busy: string | null;
+  /** Una cola vacia por el filtro no es una cola vacia. */
+  filtered?: boolean;
   onAction: (id: string, action: string, extra?: Record<string, unknown>) => Promise<void>;
   onDelete: (id: string, email: string) => Promise<void>;
 }) {
   if (applicants.length === 0) {
     return (
       <div style={{ ...card, color: "var(--muted)", fontSize: 13 }}>
-        Nothing waiting. The rules handled everything that came in.
+        {filtered
+          ? "Nobody in the queue matches this language."
+          : "Nothing waiting. The rules handled everything that came in."}
       </div>
     );
   }

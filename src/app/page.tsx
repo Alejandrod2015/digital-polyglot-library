@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 export default async function HomePage({
   searchParams,
 }: {
-  searchParams: Promise<{ variant?: string }>;
+  searchParams: Promise<{ variant?: string; tour?: string }>;
 }) {
   const { userId } = await auth();
 
@@ -41,8 +41,13 @@ export default async function HomePage({
     console.error("[home] currentUser() failed, falling back to free:", err);
   }
 
-  if (plan === "polyglot") {
-    const { variant } = await searchParams;
+  // `?tour=preview` en desarrollo: el tour de producto vive en HomeClient,
+  // asi que un polyglot (cuya home ES el journey) no puede verlo nunca. Este
+  // desvio solo existe fuera de produccion y solo para previsualizarlo.
+  const { variant, tour } = await searchParams;
+  const tourPreview = tour === "preview" && process.env.NODE_ENV !== "production";
+
+  if (plan === "polyglot" && !tourPreview) {
     const props = await loadJourneyPageProps({ variant, basePath: "/" });
     return <JourneyClient {...props} />;
   }

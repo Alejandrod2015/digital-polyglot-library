@@ -62,7 +62,14 @@ const TOPIC_PALETTE = [
 // Subtle zigzag offsets (left padding) per story row inside a topic.
 // Smoother SINE-style wave: small jumps between adjacent rows so the
 // path reads as a continuous line rather than a jumpy scatter.
-const WAVE_PATTERN = [0, 40, 80, 110, 90, 60, 30, 60, 90];
+//
+// El pico era 110px. En un movil de 375 eso dejaba 81px para el titulo y
+// `line-clamp` lo cortaba: "Un pajaro roba la...", "Trop grande...". Medidos
+// los 489 titulos del catalogo contra ese ancho, se cortaban 417. El pill del
+// path en la app nunca baja de 220px (`journeyNodePill`, minWidth 220) y por
+// eso alli no pasa. Con pico 44 la curva se sigue leyendo y el titulo recupera
+// unos 66px.
+const WAVE_PATTERN = [0, 16, 32, 44, 36, 24, 12, 24, 36];
 
 // Topic-label → emoji map. Used as the thumbnail fallback when a story
 // has no cover so the placeholder doesn't render an empty box or the

@@ -70,7 +70,28 @@ import {
  *  trozo: una principiante no entiende "goes down" sobre "baja del tren".
  *  Estuvo llegando en la respuesta y el lector lo tiraba, asi que la capa
  *  entera solo se veia en web. */
-type TapGloss = { g: string; t?: string; r?: string; c?: { es: string; en: string } };
+/** El mismo contrato que `TapGloss` en `src/lib/tapGlosses.ts`. Declararlo
+ *  corto AQUI es lo que dejo la capa de contexto fuera de las apps en agosto:
+ *  la API mandaba `c` y este tipo lo tiraba. `f` es la capa gramatical
+ *  (`scripts/buildGlossMoods.ts`): el modo, el par siempre visible y el
+ *  paradigma detras del enlace. */
+type TapGlossForms = {
+  mood?: string;
+  head?: string[][];
+  kind?: "line" | "expand";
+  link?: string;
+  lemma?: string;
+  rows?: string[][];
+  here?: number;
+};
+type TapGloss = {
+  g: string;
+  t?: string;
+  r?: string;
+  c?: { es: string; en: string };
+  gm?: string;
+  f?: TapGlossForms;
+};
 function glossTokenFromText(text: string): string {
   const m = text.toLowerCase().match(/\p{L}+(?:-\p{L}+)*/u);
   return m ? m[0] : "";
@@ -1527,7 +1548,9 @@ export function ReaderScreen(args: {
         note: contextSentence,
         quickLookup: true,
         chunk: gloss.c,
+        forms: gloss.f,
       });
+      setFormsOpen(false);
       trackReaderEventRef.current?.("vocab_clicked", {
         storySlug: story.slug ?? story.id,
         bookSlug: book.slug,
@@ -1818,8 +1841,15 @@ export function ReaderScreen(args: {
   // y el "quick lookup" del piloto tap-any-word (gloss). `quickLookup` marca
   // la segunda para mostrar el chip correcto en la burbuja.
   const [selectedVocab, setSelectedVocab] = useState<
-    (VocabItem & { quickLookup?: boolean; chunk?: { es: string; en: string } }) | null
+    (VocabItem & {
+      quickLookup?: boolean;
+      chunk?: { es: string; en: string };
+      forms?: TapGlossForms;
+    }) | null
   >(null);
+  // El paradigma se abre dentro de la burbuja, como en el lector web. Se cierra
+  // en cada palabra nueva para que no herede el estado de la anterior.
+  const [formsOpen, setFormsOpen] = useState(false);
 
   const [endOfStoryPromptVisible, setEndOfStoryPromptVisible] = useState(false);
   /**
@@ -3221,6 +3251,13 @@ export function ReaderScreen(args: {
                       </View>
                     );
                   })()}
+                  {/* El MODO, cuando la palabra no es un indicativo. Es lo
+                      unico de la tarjeta que se lee de un vistazo. */}
+                  {selectedVocab.forms?.mood ? (
+                    <View style={styles.vocabBubbleMoodBadge}>
+                      <Text style={styles.vocabBubbleMoodBadgeText}>{selectedVocab.forms.mood}</Text>
+                    </View>
+                  ) : null}
                 </View>
                 <Pressable onPress={() => setSelectedVocab(null)} style={styles.vocabClose}>
                   <Text style={styles.vocabCloseText}>×</Text>
@@ -3236,6 +3273,52 @@ export function ReaderScreen(args: {
                   <Text>{selectedVocab.chunk.en}</Text>
                 </Text>
               ) : null}
+              {/* El PAR, siempre a la vista: la forma que el lector ya conoce y
+                  la que tiene delante, cada una con el nombre de su tiempo. El
+                  azul marca cual sale en la historia. */}
+              {selectedVocab.forms?.head?.length ? (
+                <View style={styles.vocabBubbleFormsRow}>
+                  {selectedVocab.forms.head.map(([etiqueta, forma], index) => {
+                    const aqui = index === selectedVocab.forms!.head!.length - 1;
+                    return (
+                      <View
+                        key={`head-${etiqueta}-${forma}`}
+                        style={[styles.vocabBubbleFormCell, aqui ? styles.vocabBubbleFormCellHere : null]}
+                      >
+                        <Text style={[styles.vocabBubbleFormLabel, aqui ? styles.vocabBubbleFormHereText : null]}>
+                          {etiqueta}
+                        </Text>
+                        <Text style={[styles.vocabBubbleFormValue, aqui ? styles.vocabBubbleFormHereText : null]}>
+                          {forma}
+                        </Text>
+                      </View>
+                    );
+                  })}
+                </View>
+              ) : null}
+              {selectedVocab.forms?.rows?.length &&
+              (selectedVocab.forms.kind !== "expand" || formsOpen) ? (
+                <View style={styles.vocabBubbleFormsRow}>
+                  {selectedVocab.forms.rows.map(([persona, forma], index) => {
+                    const aqui = index === selectedVocab.forms!.here;
+                    return (
+                      <View
+                        key={`row-${persona}-${forma}`}
+                        style={[styles.vocabBubbleFormCell, aqui ? styles.vocabBubbleFormCellHere : null]}
+                      >
+                        {persona ? (
+                          <Text style={[styles.vocabBubbleFormLabel, aqui ? styles.vocabBubbleFormHereText : null]}>
+                            {persona}
+                          </Text>
+                        ) : null}
+                        <Text style={[styles.vocabBubbleFormValue, aqui ? styles.vocabBubbleFormHereText : null]}>
+                          {forma}
+                        </Text>
+                      </View>
+                    );
+                  })}
+                </View>
+              ) : null}
               <View style={styles.vocabActionRow}>
                 <SaveWordButton
                   word={selectedVocab.word}
@@ -3244,6 +3327,13 @@ export function ReaderScreen(args: {
                     onToggleFavoriteWord(selectedVocab, selectedVocab.note, desiredSaved)
                   }
                 />
+                {selectedVocab.forms?.kind === "expand" && selectedVocab.forms.link ? (
+                  <Pressable onPress={() => setFormsOpen((open) => !open)} hitSlop={8}>
+                    <Text style={styles.vocabBubbleFormsToggle}>
+                      {formsOpen ? "Hide" : selectedVocab.forms.link}
+                    </Text>
+                  </Pressable>
+                ) : null}
               </View>
             </View>
           </Pressable>
@@ -4164,6 +4254,60 @@ const styles = StyleSheet.create({
     color: "#eef4ff",
     fontSize: 15,
     lineHeight: 22,
+  },
+  // La capa gramatical: distintivo de modo y celdas de forma. El azul es el
+  // mismo `#7dd3fc` del lector web, para que la fila encendida se lea igual.
+  vocabBubbleMoodBadge: {
+    alignSelf: "flex-start",
+    paddingHorizontal: 8,
+    paddingVertical: 1,
+    borderRadius: 999,
+    marginTop: 4,
+    borderWidth: 1,
+    borderColor: "rgba(125, 211, 252, 0.85)",
+  },
+  vocabBubbleMoodBadgeText: {
+    color: "#7dd3fc",
+    fontSize: 11,
+    fontWeight: "700",
+    letterSpacing: 0.4,
+    textTransform: "uppercase",
+  },
+  vocabBubbleFormsRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 6,
+    marginTop: 10,
+  },
+  vocabBubbleFormCell: {
+    flexDirection: "row",
+    alignItems: "baseline",
+    gap: 6,
+    backgroundColor: "rgba(148, 163, 184, 0.18)",
+    borderRadius: 8,
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+  },
+  vocabBubbleFormCellHere: {
+    backgroundColor: "rgba(125, 211, 252, 0.16)",
+  },
+  vocabBubbleFormLabel: {
+    color: "#94a3b8",
+    fontSize: 11,
+    fontWeight: "600",
+  },
+  vocabBubbleFormValue: {
+    color: "#eef4ff",
+    fontSize: 14,
+    fontWeight: "700",
+  },
+  vocabBubbleFormHereText: {
+    color: "#7dd3fc",
+  },
+  vocabBubbleFormsToggle: {
+    color: "#7dd3fc",
+    fontSize: 13,
+    fontWeight: "700",
   },
   vocabBubbleChunk: {
     color: "#eef4ff",

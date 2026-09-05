@@ -313,4 +313,11 @@ export const PRODUCT_TOUR_MESSAGES = [
     title: "Favorites",
     body: "Tap any word in a story to save it; every word you save lives here, ready to revisit.",
   },
+  {
+    id: "menu",
+    target: "menu",
+    targetLabel: "Menu",
+    title: "Menu",
+    body: "Everything beyond your journey is in here: Explore for standalone stories, Library for the audiobooks, and Saved for the stories you keep.",
+  },
 ] as const;

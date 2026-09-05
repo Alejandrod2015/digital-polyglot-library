@@ -1038,6 +1038,28 @@
     "uno",
     "veinte"
    ]
+  },
+  "spanish-traveler-spain-b1": {
+   "articles": [
+    "el",
+    "la",
+    "las",
+    "los",
+    "un",
+    "una"
+   ],
+   "characterNames": [
+    "celia",
+    "emilio",
+    "berta"
+   ],
+   "numerals": [
+    "cuatro",
+    "dos",
+    "once",
+    "tres",
+    "uno"
+   ]
   }
  }
 }

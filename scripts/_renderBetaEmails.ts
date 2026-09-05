@@ -148,8 +148,9 @@ const ORDER: Array<{ kind: BetaEmailKind; label: string; data: BetaEmailData }> 
     data: { ...common, platform: "android" },
     file: "install_nudge_android",
   },
-  { kind: "feedback_ask", label: "5 · One-question ask (day 7)", data: common },
-  { kind: "mid_survey", label: "6 · Halfway survey (day 21)", data: common },
+  { kind: "feedback_ask", label: "5 · One-question ask (1 historia + 1 ejercicio)", data: common },
+  { kind: "stuck_ask", label: "5b · Los callados (0 historias, dia 7)", data: common },
+  { kind: "mid_survey", label: "6 · Halfway survey (3 historias + 2 ejercicios)", data: common },
   { kind: "release_note", label: "7 · Build note", data: release },
   {
     kind: "release_note",

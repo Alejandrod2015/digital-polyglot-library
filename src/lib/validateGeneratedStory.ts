@@ -502,12 +502,25 @@ export async function validateGeneratedStory(
   checks.push({ id: "json-parse", label: "JSON parses correctly", status: "pass" });
 
   // ─── Title ─────────────────────────────────────────────
+  // Palabras Y caracteres. El tope de 6 palabras dejaba pasar titulos de 40
+  // caracteres ("Mit freundlichen Gruessen, das Treppenhaus"): en la tarjeta
+  // del path no caben y salen con puntos suspensivos.
+  //
+  // 26 sale de medir los 489 titulos ya escritos contra el ancho REAL de la
+  // tarjeta mas estrecha que existe, el pill de la app (104px de texto util,
+  // 2 lineas, fuente 12/900). Cortados de los que cumplen cada tope: 24 -> 2,
+  // 26 -> 5, 28 -> 14, 30 -> 31. El salto esta entre 26 y 28; bajar a 24
+  // evitaria 3 cortes mas y dejaria fuera 57 titulos mas.
+  const TITLE_MAX_CHARS = 26;
   const titleWords = countWords(parsed.title);
+  const titleChars = parsed.title.trim().length;
+  const titleWordsOk = titleWords >= 2 && titleWords <= 6;
+  const titleCharsOk = titleChars <= TITLE_MAX_CHARS;
   checks.push({
     id: "title-length",
-    label: "Title is 2-6 words",
-    status: titleWords >= 2 && titleWords <= 6 ? "pass" : "fail",
-    detail: `${titleWords} words`,
+    label: `Title is 2-6 words and <= ${TITLE_MAX_CHARS} characters`,
+    status: titleWordsOk && titleCharsOk ? "pass" : "fail",
+    detail: `${titleWords} words, ${titleChars} characters`,
   });
 
   const TITLE_BANNED = [
