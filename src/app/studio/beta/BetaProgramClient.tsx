@@ -16,7 +16,7 @@ import {
   EXPECTED_BETA_SOURCES,
 } from "@/lib/betaSource";
 import type { BetaSourceGroup } from "@/lib/betaSource";
-import { targetVariantLabel } from "@/lib/targetVariants";
+import { canonicalVariantLabel, hasVariantOptions, targetVariantLabel } from "@/lib/targetVariants";
 
 const ACCENT = "#14b8a6";
 
@@ -1675,9 +1675,25 @@ const NO_AUDIENCE_FILTER: AudienceFilter = { language: null, variant: null };
 
 /** Las filas anteriores al 2026-08-11 son null porque nunca se les pregunto. */
 const VARIANT_UNASKED = "__unasked";
+/** Texto libre en un idioma que si tiene lista propia. */
+const VARIANT_OTHER = "__other";
 
+/**
+ * Un idioma con lista solo ofrece las variantes de su lista. Lo que entra por
+ * el hueco de texto libre no es una de ellas: alguien pidio frances y escribio
+ * "australia", que es donde vive. Un chip "French / Australia" inventa un
+ * producto que no existe, asi que todo eso cae junto en "Other" y la respuesta
+ * literal se lee en la ficha, que es su sitio. En los idiomas sin lista
+ * (coreano, polaco, arabe) el formulario PIDE texto libre, y ahi esa respuesta
+ * es la unica que hay: cada una es su propio chip.
+ */
 function audienceVariantKey(a: Applicant): string {
-  return targetVariantLabel(a.targetLanguage, a.targetVariant) ?? VARIANT_UNASKED;
+  const label = targetVariantLabel(a.targetLanguage, a.targetVariant);
+  if (!label) return VARIANT_UNASKED;
+  if (hasVariantOptions(a.targetLanguage) && !canonicalVariantLabel(a.targetLanguage, a.targetVariant)) {
+    return VARIANT_OTHER;
+  }
+  return label;
 }
 
 function matchesAudience(a: Applicant, f: AudienceFilter): boolean {
@@ -1696,16 +1712,19 @@ function FilterChip({
   label,
   count,
   active,
+  title,
   onClick,
 }: {
   label: string;
   count?: number;
   active: boolean;
+  title?: string;
   onClick: () => void;
 }) {
   return (
     <button
       onClick={onClick}
+      title={title}
       style={{
         ...ghostBtn,
         height: 28,
@@ -1741,10 +1760,10 @@ function AudienceFilterBar({
     if (!activeLanguage) return [] as Array<[string, number]>;
     const rowsOfLanguage = rows.filter((a) => a.targetLanguage === activeLanguage);
     return countBy(rowsOfLanguage, audienceVariantKey).sort((x, y) => {
-      // "Sin preguntar" no es una region: va al final por mucho que pese.
-      if (x[0] === VARIANT_UNASKED) return 1;
-      if (y[0] === VARIANT_UNASKED) return -1;
-      return y[1] - x[1] || x[0].localeCompare(y[0]);
+      // Ni "Other" ni "Not asked" nombran una region: van al final por mucho
+      // que pesen, para que lo primero que se lee sea lo que si ofrecemos.
+      const rank = (k: string) => (k === VARIANT_UNASKED ? 2 : k === VARIANT_OTHER ? 1 : 0);
+      return rank(x[0]) - rank(y[0]) || y[1] - x[1] || x[0].localeCompare(y[0]);
     });
   }, [rows, activeLanguage]);
 
@@ -1760,6 +1779,19 @@ function AudienceFilterBar({
       onChange({ language: value.language, variant: null });
     }
   }, [languages, variants, value, onChange]);
+
+  // Lo que escribieron a mano no cabe en el chip, pero sin ello "Other (1)" no
+  // se puede accionar: va en el title.
+  const otherAnswers = activeLanguage
+    ? [
+        ...new Set(
+          rows
+            .filter((a) => a.targetLanguage === activeLanguage && audienceVariantKey(a) === VARIANT_OTHER)
+            .map((a) => targetVariantLabel(a.targetLanguage, a.targetVariant))
+            .filter((v): v is string => Boolean(v)),
+        ),
+      ]
+    : [];
 
   if (languages.length < 2 && variants.length < 2) return null;
 
@@ -1796,7 +1828,14 @@ function AudienceFilterBar({
           {variants.map(([variant, n]) => (
             <FilterChip
               key={variant}
-              label={variant === VARIANT_UNASKED ? "Not asked" : variant}
+              label={variant === VARIANT_UNASKED ? "Not asked" : variant === VARIANT_OTHER ? "Other" : variant}
+              title={
+                variant === VARIANT_OTHER
+                  ? `Wrote it in: ${otherAnswers.join(", ")}. Not a variant we offer for ${activeLanguage}.`
+                  : variant === VARIANT_UNASKED
+                    ? "The form did not ask before 11 Aug 2026."
+                    : undefined
+              }
               count={n}
               active={value.variant === variant}
               onClick={() => onChange({ language: value.language, variant })}

@@ -89,3 +89,20 @@ export function targetVariantLabel(language: string, value: string | null): stri
     .map((w) => (w ? w[0].toUpperCase() + w.slice(1) : w))
     .join(" ");
 }
+
+/**
+ * La etiqueta SOLO si el valor es una de las variantes que ese idioma ofrece.
+ * El texto libre devuelve null, y esa distincion importa: alguien pidio
+ * frances y escribio "australia", que es donde vive, no un frances que
+ * exista. Quien pinte una lista de variantes tiene que poder separarlas.
+ */
+export function canonicalVariantLabel(language: string, value: string | null): string | null {
+  if (!value) return null;
+  const known = TARGET_VARIANTS[language]?.find((v) => v.value === value);
+  return known && known.value !== "other" ? known.label : null;
+}
+
+/** Si el idioma ofrece lista propia. Si no, el texto libre ES la respuesta. */
+export function hasVariantOptions(language: string): boolean {
+  return Array.isArray(TARGET_VARIANTS[language]);
+}
