@@ -44,9 +44,9 @@ puede quedar vacio:
   "registro": "como suena el tema, en una linea",
   "espina": "el hilo que atraviesa el journey y pasa por este tema",
   "historias": [
-    { "slot": "1", "quiere": "", "impide": "", "cuesta": "", "cambia": "" },
-    { "slot": "2", "quiere": "", "impide": "", "cuesta": "", "cambia": "" },
-    { "slot": "3", "quiere": "", "impide": "", "cuesta": "", "cambia": "" }
+    { "slot": "1", "quiere": "", "impide": "", "cuesta": "", "cambia": "", "emocion": "" },
+    { "slot": "2", "quiere": "", "impide": "", "cuesta": "", "cambia": "", "emocion": "" },
+    { "slot": "3", "quiere": "", "impide": "", "cuesta": "", "cambia": "", "emocion": "" }
   ]
 }
 ```

@@ -60,7 +60,7 @@ export type Cierre = {
 };
 
 export const CAMPOS_PLAN = ["tipo", "nivel", "variante", "registro", "espina"] as const;
-export const CAMPOS_PLAN_HISTORIA = ["slot", "quiere", "impide", "cuesta", "cambia"] as const;
+export const CAMPOS_PLAN_HISTORIA = ["slot", "quiere", "impide", "cuesta", "cambia", "emocion"] as const;
 
 /**
  * Devuelve lo que FALTA en un plan, campo a campo y por su nombre. Vacio quiere

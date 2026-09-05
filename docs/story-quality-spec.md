@@ -357,6 +357,14 @@ el cierre y el resto avisan, y el aviso no es un aprobado.
 6. **Registro declarado y variado entre temas.** El plan dice como suena el
    tema en una linea, y el cierre lo compara con los dos temas anteriores del
    journey: tres seguidos con el mismo registro avisan.
+7. **La emocion se ve, o no existe.** [2026-09-05, del usuario: "el
+   protagonista no muestra muchas emociones... temo que eso la haga sosa"]
+   La casilla `emocion` del plan dice que siente el protagonista en el pico de
+   cada historia Y donde se ve en el texto: un gesto del cuerpo ("la voz firme;
+   las manos, no") o una frase simple ("quiere llorar un poco. No llora").
+   En niveles bajos lo no dicho no existe: la sobriedad sin cuerpo se lee
+   como historia sosa. La contencion es valida solo si el texto muestra lo
+   que cuesta contenerse.
 
 Dos tics mas, que ninguna historia delata sola y que BLOQUEAN el cierre: un
 verbo de acotacion que se lleva mas del 40% de las citas del tema (el
