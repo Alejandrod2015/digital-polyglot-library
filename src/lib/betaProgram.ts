@@ -638,6 +638,11 @@ export async function linkClerkUserToBetaSignup(args: {
       // with far more often than with the address they typed on the form.
       OR: [{ email }, { appleIdEmail: email }, { googleEmail: email }],
       status: { in: ACTIVE_STATUSES },
+      // Only rows that were never linked. Without this, a SECOND Clerk user
+      // whose email matches `appleIdEmail`/`googleEmail` (e.g. a native
+      // sign-in that created a fresh account) steals the link from the first
+      // and orphans its history. Every caller wants first-writer-wins.
+      clerkUserId: null,
     },
   });
   if (!signup) return null;
