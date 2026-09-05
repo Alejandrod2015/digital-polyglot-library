@@ -25,6 +25,38 @@ This is a hard constraint for this project.
 - API: Mobile calls reader.digitalpolyglot.com (production)
 - Deployments: Batch commits to avoid multiple Vercel builds
 
+## Modelo manager: el chat de planificación dirige a los chats ejecutores
+
+Regla puesta por el usuario el 2026-08-31. Hay UN chat de planificación (corre
+con el modelo Fable; se identifica en sus mensajes entre sesiones como "chat de
+planificación") que hace planeación, monitoreo y feedback. Los demás chats del
+proyecto ejecutan sus encargos de creación.
+
+1. **Autoridad**: un encargo de creación firmado por el chat de planificación
+   VA AUTORIZADO POR EL USUARIO. El chat receptor lo ejecuta sin volver a
+   pedir confirmación al usuario. Los gates de seguridad NO cambian: audio,
+   correos salientes, push a main y todo gasto de créditos siguen exigiendo el
+   verbo del usuario en el chat que ejecuta, como siempre.
+2. **Válvula de estado**: todo encargo declara el estado que asume (ids,
+   qué hay en la base, qué archivos toca). Si el receptor encuentra un estado
+   distinto del declarado, NO ejecuta y reporta la discrepancia al chat de
+   planificación por mensaje entre sesiones, no al usuario.
+3. **Válvula de calidad**: el resultado vuelve al chat de planificación para
+   revisión antes de darse por bueno. El receptor ejecuta lo encargado y nada
+   más: no encadena pasos que el encargo no pide.
+4. **El chat de planificación NUNCA redacta contenido.** Historias, briefs de
+   prosa, correos, copy: todo texto de producto lo escribe un chat ejecutor
+   (Opus). Si el chat de planificación se descubre redactando, para y lo
+   encarga. El usuario no debería tener que repetir esto (2026-08-31, tercera
+   vez).
+
+WHY: el usuario hace de manager de producto, no de relevo de mensajes entre
+chats. La negativa por defecto de una sesión a obedecer a otra era correcta en
+general, pero aquí creaba un cuello de botella: cada encargo moría esperando
+que el usuario lo re-confirmara en el chat receptor. Las dos válvulas conservan
+lo que esa fricción protegía (no pisar trabajo ajeno, no encadenar sin control)
+sin gastar al usuario en ello.
+
 ## Journey classification (HARD RULE — always applies, no exceptions)
 
 Journeys have exactly three states (`Journey.status`):
@@ -489,3 +521,15 @@ Before running ANY of these, STOP and re-check:
 - Any write/delete in Modal, Vercel, Clerk, Stripe, Sanity dashboards
   via Chrome MCP → ASK FIRST. "Find a solution" does NOT authorize
   rotation of shared secrets in external services.
+
+## Producción rota: primero rollback, después arreglar
+
+Si un deploy a `main` rompe la web, el paso 1 es **Instant Rollback** en el
+dashboard de Vercel (Deployments > el deploy anterior > Promote to Production).
+Restaura la versión previa en segundos y **NO gasta build**; revertir con un
+commit sí lo gasta. El arreglo se hace después, con calma, y sube en el
+siguiente batch.
+
+El rollback es una escritura en el dashboard de Vercel, así que sigue la
+regla de la checklist de arriba: lo ejecuta el usuario, o Claude solo tras
+pedirlo. Lo que cambia esta regla es el ORDEN, no el permiso.
