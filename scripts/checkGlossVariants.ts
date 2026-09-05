@@ -62,6 +62,16 @@ const EXEMPT: Record<string, { articles: string[]; numerals: string[]; character
  *  más útil que hay. Los nombres que viven ahí se cazan por la glosa, abajo. */
 const TIPOS_NO_TOCABLES = new Set(["article", "number", "numeral"]);
 
+/** Linea base de trozos largos: deuda vieja congelada, solo puede bajar. */
+const BASE_TROZOS = path.join(__dirname, "gloss-chunk-baseline.json");
+function leeBaseTrozos(): number {
+  try {
+    return JSON.parse(fs.readFileSync(BASE_TROZOS, "utf8")).trozos as number;
+  } catch {
+    return 0;
+  }
+}
+
 /** Maximo de palabras del trozo de contexto de una glosa. */
 const TOPE_TROZO = 8;
 
@@ -221,16 +231,50 @@ async function main() {
   }
 
   await prisma.$disconnect();
-  if (fallos.length === 0) {
-    console.log(`gloss-variants: limpio (${revisados} bundles, ${conCapa} con capa de contexto)`);
+
+  // Las dos mitades se miden distinto A PROPOSITO. Una forma de otra variante
+  // (un vosotros en un journey de Mexico) es un fallo y nunca hubo ninguno, asi
+  // que sigue en cero. El tope del trozo se puso el 2026-09-04 sobre un
+  // catalogo ya escrito y nacio con 672 encima: se congela ahi y solo puede
+  // bajar, como la linea base de no-emojis. Lo nuevo bloquea igual.
+  const trozos = fallos.filter((f) => f.motivo.startsWith("trozo de"));
+  const variantes = fallos.filter((f) => !f.motivo.startsWith("trozo de"));
+  const baseTrozos = leeBaseTrozos();
+
+  if (process.argv.includes("--apretar")) {
+    fs.writeFileSync(BASE_TROZOS, JSON.stringify({ trozos: trozos.length }, null, 2) + "\n");
+    console.log(`gloss-variants: linea base de trozos apretada a ${trozos.length}.`);
     return;
   }
 
-  console.error(`gloss-variants: ${fallos.length} formas que no son de su variante\n`);
-  for (const f of fallos) {
-    console.error(`  ${f.fichero} · ${f.historia} · ${f.palabra}: ${f.motivo}`);
+  if (variantes.length === 0 && trozos.length <= baseTrozos) {
+    console.log(
+      `gloss-variants: limpio (${revisados} bundles, ${conCapa} con capa de contexto)` +
+        (trozos.length ? ` · ${trozos.length} trozos largos de deuda vieja, linea base ${baseTrozos}` : "")
+    );
+    return;
   }
-  console.error("\nLas formas se corrigen en el bundle; la variante de cada journey manda.");
+
+  if (variantes.length) {
+    console.error(`gloss-variants: ${variantes.length} formas que no son de su variante\n`);
+    for (const f of variantes) {
+      console.error(`  ${f.fichero} · ${f.historia} · ${f.palabra}: ${f.motivo}`);
+    }
+    console.error("\nLas formas se corrigen en el bundle; la variante de cada journey manda.");
+  }
+
+  if (trozos.length > baseTrozos) {
+    console.error(
+      `\ngloss-variants: ${trozos.length} trozos por encima del tope, y la linea base era ${baseTrozos}\n`
+    );
+    for (const f of trozos) {
+      console.error(`  ${f.fichero} · ${f.historia} · ${f.palabra}: ${f.motivo}`);
+    }
+    console.error(
+      "\nEl trozo es el minimo con sentido alrededor de la palabra, no la frase entera." +
+        "\nAl arreglar los viejos, baja la linea base:  npm run lint:gloss-variants -- --apretar"
+    );
+  }
   process.exit(1);
 }
 
