@@ -32,14 +32,55 @@ Si el tema es de un journey concreto, mira ademas donde esta ese journey:
 npx tsx scripts/journeysTable.ts --journey <journeyId>
 ```
 
-## Paso 2. Escribe las tres
+## Paso 2. El PLAN del tema, antes de la primera linea de prosa
 
-Con el flujo que ya existe (`/generate-story`), en un unico fichero JSON con
-las tres historias del topic: el validador canonico compara cada una contra sus
-hermanas de la misma tanda, asi que separarlas se salta la comprobacion de
-solape dentro del tema.
+Se escribe ANTES de escribir, se le ENSEÑA al usuario, y se guarda en un JSON
+que despues pide el cierre. Seis campos del tema y cuatro por historia; ninguno
+puede quedar vacio:
 
-## Paso 3. Valida en seco, y arregla la historia (nunca el gate)
+```json
+{
+  "tipo": "Traveler", "nivel": "a2", "variante": "LATAM",
+  "registro": "como suena el tema, en una linea",
+  "espina": "el hilo que atraviesa el journey y pasa por este tema",
+  "recursos": "los recursos estilisticos que usa el tema, todos del nivel o de abajo (escalera en story-quality-spec.md 3ter; en la duda, un nivel arriba)",
+  "historias": [
+    { "slot": "1", "quiere": "", "impide": "", "cuesta": "", "cambia": "", "emocion": "" },
+    { "slot": "2", "quiere": "", "impide": "", "cuesta": "", "cambia": "", "emocion": "" },
+    { "slot": "3", "quiere": "", "impide": "", "cuesta": "", "cambia": "", "emocion": "" }
+  ]
+}
+```
+
+`cuesta` es lo que el personaje PIERDE y no recupera. Sin coste no hay arco,
+hay temario. `registro` se declara aqui para poder variarlo entre temas: el
+cierre compara el tuyo con el de los dos temas anteriores del journey.
+
+El plan se enseña al usuario y se espera su visto bueno. Escribir prosa antes
+de eso es lo que este paso viene a impedir: corregir el deseo de una historia
+cuesta una frase antes de escribirla y tres historias despues.
+
+## Paso 3. Escribe las tres
+
+**Primero el esqueleto, despues la prosa.** De cada historia, antes de redactar,
+sus 4 o 5 golpes en una linea cada uno, con el golpe EMOCIONAL del plan ya
+colocado entre ellos (que siente, por que, y el gesto donde se ve). La prosa
+crece alrededor de ese esqueleto. Nunca al reves: la emocion incrustada sobre
+prosa ya escrita se nota como parche ("quiere llorar un poco. No llora"), que
+es exactamente como nacio el defecto que el usuario cazo el 2026-09-05.
+
+**La costura de toda emocion: tres piezas o ninguna.** Sensacion, motivo y
+gesto viajan juntos. Una reversa ("tiene ganas de llorar y no llora") lleva su
+porque en la misma oracion ("pero delante de Chelo no quiere") y un gesto que
+la sostenga ("respira hondo"). Dos frases que se contradicen sin puente no son
+contencion: son un salto que el lector siente como error.
+
+Despues, redacta con el flujo que ya existe (`/generate-story`), en un unico
+fichero JSON con las tres historias del topic: el validador canonico compara
+cada una contra sus hermanas de la misma tanda, asi que separarlas se salta la
+comprobacion de solape dentro del tema.
+
+## Paso 4. Valida en seco, y arregla la historia (nunca el gate)
 
 ```
 npx tsx scripts/saveStory.ts <data.json> --journey <id> --lang ES --level a2 --variant LATAM --dry
@@ -48,15 +89,15 @@ npx tsx scripts/saveStory.ts <data.json> --journey <id> --lang ES --level a2 --v
 Un fallo se arregla en el texto. Bajar un umbral para que pase es exactamente
 lo que prohibe `feedback_calibrate_gates_to_gold_standard`.
 
-## Paso 4. Guarda
+## Paso 5. Guarda
 
 El mismo comando sin `--dry`. Es el UNICO camino a la base: cualquier otro
 script que escriba contenido de `JourneyStory` lo bloquea un hook.
 
-## Paso 5. Cierra el tema (esto es lo que sustituye a decir "listo")
+## Paso 6. Cierra el tema (esto es lo que sustituye a decir "listo")
 
 ```
-npx tsx scripts/cierraTema.ts <journeyId> <tema>
+npx tsx scripts/cierraTema.ts <journeyId> <tema> --plan <plan.json>
 ```
 
 Corre todas las comprobaciones aplicables al tema y, solo si TODAS pasan,
@@ -68,11 +109,16 @@ historias. Lo que sigue de ese comando:
 - Lo que el cierre lista como **pendiente de conjunto** (fijos, distribucion,
   escalera) no esta aprobado: esta esperando a que el journey este completo.
   Dilo con esas palabras; no lo escondas en un "todo verde".
+- **Sin `--plan` no cierra.** El plan del paso 2 entra en el registro con el
+  cierre; un campo vacio para el comando y dice cual falta.
+- Los **avisos** del detector de tics (estructura clonada, densidad alta para el
+  nivel, registro repetido tres temas seguidos) no bloquean y tampoco son
+  "limpio": se leen y se dicen, que para eso se midieron.
 - El tema N+1 no se puede guardar sin el cierre de N. Si `saveStory` te para,
   no busques la vuelta: te esta diciendo que el tema anterior nunca se cerro,
   o que su texto cambio despues de cerrarse.
 
-## Paso 6. Informe
+## Paso 7. Informe
 
 Tabla del journey con su generador canonico (`/tabla`), y las dos lineas de
 siempre: `verified:` lo que corrio de verdad y `not verified:` lo que no se

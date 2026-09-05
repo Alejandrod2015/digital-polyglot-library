@@ -911,8 +911,22 @@
       "id": "stories-need-stakes",
       "domain": "journey",
       "rule": "Deseo, obstaculo y coste en cada historia, y una espina que atraviese el journey",
-      "gate": "none",
+      "gate": "scripts/cierraTema.ts",
       "source": "story-rules:stories-need-stakes (feedback_stories_need_stakes)"
+    },
+    {
+      "id": "tema-plan-block",
+      "domain": "journey",
+      "rule": "El tema declara su plan antes de la primera linea de prosa: tipo, nivel, variante, registro, espina y, por historia, que quiere, que se lo impide, que le cuesta y que cambia",
+      "gate": "scripts/cierraTema.ts",
+      "source": "story-rules:tema-plan-block (feedback_stories_need_stakes)"
+    },
+    {
+      "id": "tema-tics-detector",
+      "domain": "journey",
+      "rule": "Los tics se miden sobre las tres historias juntas: un verbo de acotacion por encima del 40% y tres arranques iguales bloquean; estructura clonada, densidad de nivel bajo y registro repetido avisan",
+      "gate": "scripts/cierraTema.ts",
+      "source": "story-rules:tema-tics-detector (feedback_stories_need_stakes)"
     },
     {
       "id": "topics-grounded",
@@ -2012,6 +2026,13 @@
       "rule": "Vocab earns its slot (no pure paperwork labels)",
       "gate": "src/lib/validateGeneratedStory.ts#vocab-utility",
       "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "recursos-por-nivel",
+      "domain": "story",
+      "rule": "Los recursos estilisticos del tema son del nivel o de abajo (escalera 3ter del quality spec); en la duda, un nivel arriba",
+      "gate": "scripts/cierraTema.ts",
+      "source": "docs/story-quality-spec.md 3ter (calibracion con el usuario 2026-09-05)"
     }
   ]
 }

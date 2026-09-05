@@ -1,8 +1,8 @@
 /**
  * cierraTema: "listo" deja de ser una frase y pasa a ser un REGISTRO (I3).
  *
- *   npx tsx scripts/cierraTema.ts <journeyId> <tema>
- *   npx tsx scripts/cierraTema.ts --json <fichero> [--lang ES] [--level a2] [--variant LATAM]
+ *   npx tsx scripts/cierraTema.ts <journeyId> <tema> --plan <plan.json>
+ *   npx tsx scripts/cierraTema.ts --json <fichero> --plan <plan.json> [--lang ES] [--level a2]
  *
  * Corre TODAS las comprobaciones aplicables a un tema y, solo si pasan todas,
  * escribe una entrada en scripts/tema-cierres.json con el hash del contenido de
@@ -11,10 +11,18 @@
  * cambia, el hash deja de cuadrar y el cierre caduca solo.
  *
  * QUE COMPRUEBA
+ *   - EL PLAN (--plan, obligatorio): tipo, nivel, variante, registro, espina y,
+ *     por cada una de las tres, que quiere, que se lo impide, que le cuesta y
+ *     que cambia. Sin plan, o con un campo vacio, el tema NO cierra y el error
+ *     dice cual falta. El plan se guarda dentro de la entrada del registro;
  *   - el validador canonico (validateGeneratedStory) sobre las tres, en seco y
  *     cada una contra sus hermanas, que es como las juzga saveStory;
  *   - guiones largos y emojis en titulo y cuerpo, que en la base no los mira
  *     ningun lint de ficheros;
+ *   - LOS TICS del tema, que ninguna historia por separado delata y que solo se
+ *     ven leyendo las tres seguidas: un verbo de acotacion que se come el resto
+ *     y tres arranques iguales BLOQUEAN; la estructura clonada, la densidad de
+ *     los niveles bajos y el registro repetido tres temas seguidos AVISAN;
  *   - acotacion: cuanta habla citada lleva al narrador al lado (solo avisa, no
  *     bloquea: la regla no tiene gate y decir lo contrario seria mentir);
  *   - la escalera de vocab del tema, informativa: la de verdad es del journey
@@ -43,7 +51,8 @@ import {
 } from "@/lib/validateGeneratedStory";
 import { validateJourneyStories } from "@/lib/validateJourneyStories";
 import {
-  hashTema, escribirCierre, type Cierre, type HistoriaCierre,
+  hashTema, escribirCierre, leerRegistro, claveCierre, faltaEnPlan,
+  type Cierre, type HistoriaCierre, type PlanTema,
 } from "./temaCierres";
 
 type Historia = HistoriaCierre & {
@@ -98,6 +107,109 @@ function acotacion(textos: string[]): { citados: number; conNarrador: number } {
     });
   }
   return { citados, conNarrador };
+}
+
+// ── EL DETECTOR DE TICS ──────────────────────────────────────────────────
+//
+// Todo lo de aqui se mide sobre las TRES historias juntas. Es a proposito: un
+// tic no se ve en una historia, se ve en el tema. El validador canonico juzga
+// cada historia y por eso estos defectos le pasan por debajo enteros.
+
+/** Los parrafos de un texto, sin lineas vacias. */
+const parrafosDe = (t: string) =>
+  t.split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean);
+
+/** Primera palabra util, en minusculas y sin la puntuacion de apertura. */
+function primeraPalabra(s: string): string {
+  const m = s.trim().replace(/^[^\p{L}\p{N}]+/u, "").match(/^[\p{L}\p{N}']+/u);
+  return m ? m[0].toLowerCase() : "";
+}
+
+/**
+ * (a) ACOTACION DOMINANTE. El verbo que va justo detras de la cita. Si uno solo
+ * se lleva mas del 40% de las acotaciones y hay al menos 5 en el tema, el
+ * narrador tiene un tic y se nota leyendo las tres seguidas.
+ *
+ * Caso real (2026-09-05): "añade" y "remata" cerraban 8 de las 9 historias del
+ * B1 de España; cada historia pasaba sola y el tema sonaba a plantilla.
+ */
+const VERBO_TRAS_CITA = new RegExp(`[${String.fromCharCode(0x201d)}"],\\s*([a-záéíóúñ]+)`, "g");
+const TOPE_ACOTACION_DOMINANTE = 0.40;
+const MINIMO_ACOTACIONES = 5;
+
+function verbosDeAcotacion(textos: string[]): { total: number; cuenta: Map<string, number> } {
+  const cuenta = new Map<string, number>();
+  let total = 0;
+  for (const t of textos)
+    for (const m of t.matchAll(VERBO_TRAS_CITA)) {
+      total++;
+      cuenta.set(m[1], (cuenta.get(m[1]) ?? 0) + 1);
+    }
+  return { total, cuenta };
+}
+
+/**
+ * (b) ARRANQUES REPETIDOS. Dos formas del mismo tic: las tres historias
+ * abriendo con la misma palabra, y una palabra que abre mas del 60% de los
+ * parrafos del tema (la trampa "Manon + verbo" de feedback_stories_need_stakes).
+ */
+const TOPE_ARRANQUE_PARRAFOS = 0.60;
+const MINIMO_PARRAFOS = 5;
+
+/**
+ * (d2) SEGUIDILLA. La cara opuesta de la densidad: narracion en rafagas de
+ * oraciones de 3 o 4 palabras ("El dia es largo. Se quema un dedo. Rompe un
+ * vaso.") tampoco suena a historia. Se mide SOLO la narracion (las citas
+ * fuera: el dialogo corto es normal). Avisa, no bloquea: el remate final en
+ * dos golpes es un recurso legitimo; la rafaga sostenida no.
+ */
+const TOPE_SEGUIDILLA = 0.5;
+function seguidillaNarrada(textos: string[]): { cortas: number; total: number } {
+  let cortas = 0, total = 0;
+  for (const t of textos) {
+    const narr = t.replace(/“[^”]*”|"[^"]*"/g, "");
+    for (const o of narr.split(/(?<=[.!?…])\s+|\n+/)) {
+      const n = (o.match(/[\p{L}\p{N}']+/gu) ?? []).length;
+      if (!n) continue;
+      total++;
+      if (n <= 4) cortas++;
+    }
+  }
+  return { cortas, total };
+}
+
+/** (d) DENSIDAD. Palabras por oracion, sobre las tres juntas. */
+function palabrasPorOracion(textos: string[]): { media: number; oraciones: number } {
+  let palabras = 0, oraciones = 0;
+  for (const t of textos)
+    for (const o of t.split(/(?<=[.!?…])\s+|\n+/)) {
+      const n = (o.match(/[\p{L}\p{N}']+/gu) ?? []).length;
+      if (!n) continue;
+      oraciones++;
+      palabras += n;
+    }
+  return { media: oraciones ? palabras / oraciones : 0, oraciones };
+}
+
+/**
+ * El techo de densidad por nivel. En niveles bajos la frase larga no se
+ * "simplifica" apretando: se recortan HECHOS. Por eso esto avisa en vez de
+ * bloquear, que la salida correcta es tirar un suceso, no partir una oracion.
+ */
+const TECHO_DENSIDAD: Record<string, number> = { a0: 9, a1: 11, a2: 13 };
+
+/**
+ * (e) REGISTRO REPETIDO. Los dos temas cerrados justo antes en el mismo
+ * journey. Tres temas seguidos con el mismo registro declarado no es un tono,
+ * es la ausencia de una decision.
+ */
+function registrosPrevios(journeyId: string, topic: string, cuantos = 2): string[] {
+  const reg = leerRegistro();
+  return Object.entries(reg)
+    .filter(([k, v]) => k.startsWith(`${journeyId}#`) && k !== claveCierre(journeyId, topic) && v.plan?.registro)
+    .sort((a, b) => String(b[1].cerrado).localeCompare(String(a[1].cerrado)))
+    .slice(0, cuantos)
+    .map(([, v]) => String(v.plan!.registro).trim().toLowerCase());
 }
 
 /** Encuentros por plaza dentro del tema. La escalera de verdad es del journey. */
@@ -189,8 +301,8 @@ function desdeJson(fichero: string) {
   } else {
     journeyId = process.argv[2]; topic = process.argv[3];
     if (!journeyId || !topic || journeyId.startsWith("--")) {
-      console.error("uso: cierraTema.ts <journeyId> <tema>");
-      console.error("     cierraTema.ts --json <fichero> [--lang ES] [--level a2] [--variant LATAM]");
+      console.error("uso: cierraTema.ts <journeyId> <tema> --plan <plan.json>");
+      console.error("     cierraTema.ts --json <fichero> --plan <plan.json> [--lang ES] [--level a2] [--variant LATAM]");
       process.exit(2);
     }
     datos = await desdeBase(journeyId, topic);
@@ -201,12 +313,50 @@ function desdeJson(fichero: string) {
   const fallos: string[] = [];
   const checks: string[] = [];
   const pendientes: string[] = [];
+  const avisos: string[] = [];
 
   console.log(`\n── cierre del tema "${topic}" · journey ${journeyId} ──`);
   console.log(`   ${conTexto.length}/${esperadas} historias con texto · ${language} ${level} ${variant}`);
 
   if (conTexto.length < esperadas)
     fallos.push(`el tema tiene ${conTexto.length} historias con texto y necesita ${esperadas}`);
+
+  // ── 0. EL PLAN. Sin el, el tema no cierra ────────────────────────────
+  //
+  // El plan se escribe ANTES de la primera linea de prosa y se le enseña al
+  // usuario. Pedirlo aqui, al cerrar, es lo unico que impide que se invente
+  // despues para justificar lo que ya salio.
+  const ficheroPlan = arg("plan");
+  let plan: PlanTema | undefined;
+  if (!ficheroPlan) {
+    fallos.push(
+      "falta el PLAN del tema. Se escribe antes de la prosa y se pasa con --plan <plan.json>:\n" +
+      "     { tipo, nivel, variante, registro, espina, recursos, historias: [{ slot, quiere, impide, cuesta, cambia, emocion } x3] }"
+    );
+    console.log("   [plan]      FALTA (--plan <plan.json>)");
+  } else if (!fs.existsSync(ficheroPlan)) {
+    fallos.push(`el plan ${ficheroPlan} no existe`);
+    console.log(`   [plan]      no existe: ${ficheroPlan}`);
+  } else {
+    let crudo: unknown = null;
+    try {
+      crudo = JSON.parse(fs.readFileSync(ficheroPlan, "utf8"));
+    } catch (e) {
+      fallos.push(`el plan ${ficheroPlan} no es JSON valido: ${(e as Error).message}`);
+    }
+    const falta = crudo === null ? ["el plan entero"] : faltaEnPlan(crudo, esperadas);
+    if (falta.length) {
+      fallos.push(
+        `el plan esta incompleto. Falta por escribir: ${falta.join(", ")}.\n` +
+        "     Un campo vacio no es una decision: escribelo o el tema no cierra."
+      );
+      console.log(`   [plan]      INCOMPLETO: falta ${falta.join(", ")}`);
+    } else {
+      plan = crudo as PlanTema;
+      console.log(`   [plan]      completo · tipo ${plan.tipo} · nivel ${plan.nivel} · registro "${plan.registro}"`);
+      checks.push(`plan del tema completo (registro "${plan.registro}", espina "${plan.espina}")`);
+    }
+  }
 
   // ── 1. Validador canonico, en seco, cada una contra sus hermanas ──
   //
@@ -219,6 +369,16 @@ function desdeJson(fichero: string) {
   const previas: ExistingStorySummary[] = [];
   let okCanonico = 0;
   for (const d of conTexto) {
+    // Una historia a la que le FALTA un campo (synopsis, vocab) es un fallo
+    // del cierre, no un crash: el validador asume el objeto entero.
+    const faltan = (["title", "synopsis", "text"] as const).filter(
+      (campo) => typeof d[campo] !== "string" || !d[campo].trim()
+    );
+    if (faltan.length) {
+      fallos.push(`"${String(d.title ?? d.slug ?? "?")}": sin ${faltan.join(", ")}; el validador canonico necesita la historia completa`);
+      previas.push(resumen(d));
+      continue;
+    }
     const r = await validateGeneratedStory(
       { title: d.title, synopsis: d.synopsis, text: d.text, vocab: d.vocab, arcType: d.arcType } as never,
       {
@@ -265,6 +425,101 @@ function desdeJson(fichero: string) {
     console.log("   [acotacion] no hay parrafos con habla citada");
   }
 
+  // ── 3b. LOS TICS DEL TEMA ────────────────────────────────────────────
+  //
+  // Se mide sobre las tres juntas porque es ahi donde existe el defecto. Dos
+  // bloquean y tres avisan, y la diferencia no es de gravedad sino de arreglo:
+  // lo que bloquea se arregla cambiando una palabra o una linea; lo que avisa
+  // pide rehacer una escena, y esa decision es del que escribe.
+  const textos = conTexto.map((s) => String(s.text ?? ""));
+
+  // (a) Un verbo de acotacion que se come el tema.
+  const va = verbosDeAcotacion(textos);
+  if (va.total >= MINIMO_ACOTACIONES) {
+    const [verbo, n] = [...va.cuenta.entries()].sort((x, y) => y[1] - x[1])[0];
+    const cuota = n / va.total;
+    console.log(`   [tics a]    acotacion dominante: "${verbo}" ${n}/${va.total} (${Math.round(cuota * 100)}%)`);
+    if (cuota > TOPE_ACOTACION_DOMINANTE)
+      fallos.push(
+        `[tics] acotacion dominante: "${verbo}" cierra ${n} de las ${va.total} citas del tema ` +
+        `(${Math.round(cuota * 100)}%, tope ${Math.round(TOPE_ACOTACION_DOMINANTE * 100)}%). ` +
+        "Varia el verbo o quita la acotacion; leidas seguidas suenan a plantilla."
+      );
+    else checks.push(`acotacion dominante bajo tope ("${verbo}" ${Math.round(cuota * 100)}%)`);
+  } else {
+    console.log(`   [tics a]    ${va.total} acotaciones, menos de ${MINIMO_ACOTACIONES}: no se mide`);
+  }
+
+  // (b) Arranques repetidos, en las historias y en los parrafos.
+  const primeras = textos.map((t) => primeraPalabra(t)).filter(Boolean);
+  if (primeras.length === textos.length && textos.length >= 3 && new Set(primeras).size === 1)
+    fallos.push(
+      `[tics] las ${textos.length} historias del tema abren con la misma palabra ("${primeras[0]}"). ` +
+      "Cambia el arranque de al menos una: es lo primero que lee quien abre el tema."
+    );
+  const aperturas = textos.flatMap((t) => parrafosDe(t).map(primeraPalabra)).filter(Boolean);
+  if (aperturas.length >= MINIMO_PARRAFOS) {
+    const cuenta = new Map<string, number>();
+    for (const w of aperturas) cuenta.set(w, (cuenta.get(w) ?? 0) + 1);
+    const [palabra, n] = [...cuenta.entries()].sort((x, y) => y[1] - x[1])[0];
+    const cuota = n / aperturas.length;
+    console.log(`   [tics b]    arranque de parrafo mas repetido: "${palabra}" ${n}/${aperturas.length} (${Math.round(cuota * 100)}%)`);
+    if (cuota > TOPE_ARRANQUE_PARRAFOS)
+      fallos.push(
+        `[tics] "${palabra}" abre ${n} de los ${aperturas.length} parrafos del tema ` +
+        `(${Math.round(cuota * 100)}%, tope ${Math.round(TOPE_ARRANQUE_PARRAFOS * 100)}%). ` +
+        "Es la trampa del nombre propio seguido de verbo: rompe el patron."
+      );
+    else checks.push(`arranques de parrafo variados (mas repetido "${palabra}", ${Math.round(cuota * 100)}%)`);
+  }
+
+  // (c) Estructura clonada. Avisa: tres historias del mismo largo pueden ser
+  //     casualidad, y quien lo arregla tiene que releer, no obedecer.
+  const nParrafos = textos.map((t) => parrafosDe(t).length);
+  if (nParrafos.length >= 3 && new Set(nParrafos).size === 1)
+    avisos.push(
+      `estructura clonada: las ${nParrafos.length} historias tienen ${nParrafos[0]} parrafos exactos. ` +
+      "Leelas seguidas antes de darlas por buenas."
+    );
+
+  // (d) Densidad en niveles bajos, con el nivel que DECLARA el plan.
+  const nivelPlan = String(plan?.nivel ?? level).trim().toLowerCase();
+  const techo = TECHO_DENSIDAD[nivelPlan];
+  if (techo) {
+    const den = palabrasPorOracion(textos);
+    console.log(`   [tics d]    densidad: ${den.media.toFixed(1)} palabras por oracion en ${den.oraciones} oraciones (techo ${techo} en ${nivelPlan})`);
+    if (den.media > techo)
+      avisos.push(
+        `densidad alta para ${nivelPlan}: ${den.media.toFixed(1)} palabras por oracion (techo ${techo}). ` +
+        "En niveles bajos se recortan HECHOS, no se aprietan frases: quita un suceso de la escena."
+      );
+    else checks.push(`densidad ${den.media.toFixed(1)} palabras por oracion (techo ${techo} en ${nivelPlan})`);
+
+    // (d2) Seguidilla de oraciones cortas en la narracion.
+    const seg = seguidillaNarrada(textos);
+    if (seg.total >= 8) {
+      const parte = seg.cortas / seg.total;
+      console.log(`   [tics d2]   seguidilla: ${seg.cortas}/${seg.total} oraciones narradas de 4 palabras o menos (tope ${TOPE_SEGUIDILLA * 100}%)`);
+      if (parte > TOPE_SEGUIDILLA)
+        avisos.push(
+          `seguidilla: ${Math.round(parte * 100)}% de la narracion son oraciones de 4 palabras o menos. ` +
+          "No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+        );
+      else checks.push(`seguidilla ${seg.cortas}/${seg.total} oraciones cortas narradas`);
+    }
+  }
+
+  // (e) Registro repetido tres temas seguidos.
+  if (plan?.registro) {
+    const previos = registrosPrevios(journeyId, topic);
+    const mio = plan.registro.trim().toLowerCase();
+    if (previos.length >= 2 && previos.every((r) => r === mio))
+      avisos.push(
+        `registro repetido: los dos temas anteriores de este journey tambien se cerraron con "${plan.registro}". ` +
+        "Tres seguidos con el mismo tono no es una voz, es una decision que no se tomo."
+      );
+  }
+
   // ── 4. Escalera de vocab del tema, informativa ──
   const esc = escaleraDelTema(conTexto);
   console.log(`   [escalera]  ${esc.media.toFixed(2)} encuentros por plaza dentro del tema (${esc.plazas} plazas)`);
@@ -308,6 +563,7 @@ function desdeJson(fichero: string) {
   checks.push(`gate de conjunto sobre el tema: ${jc.filter((c) => c.status === "pass").length}/${jc.length} medidos y limpios`);
 
   console.log("");
+  for (const a of avisos) console.log(`   aviso (no bloquea): ${a}`);
   for (const p of pendientes) console.log(`   pendiente de conjunto: ${p}`);
 
   if (fallos.length) {
@@ -323,10 +579,16 @@ function desdeJson(fichero: string) {
     historias: conTexto.map((s) => `${s.topic}#${s.slotIndex} ${s.slug ?? s.title ?? ""}`.trim()),
     checks,
     pendientesDeConjunto: pendientes,
+    plan,
+    avisos: avisos.length ? avisos : undefined,
   };
   escribirCierre(journeyId, topic, cierre);
-  console.log(`\n✓ TEMA CERRADO. Registrado en scripts/tema-cierres.json (hash ${cierre.hash}).`);
+  console.log(`\n✓ TEMA CERRADO. Registrado en scripts/tema-cierres.json (hash ${cierre.hash}), con su plan.`);
   console.log("   Eso, y no una frase, es lo que hace que el tema cuente como listo.");
+
+  if (avisos.length)
+    console.log(`   Quedan ${avisos.length} aviso(s) guardados en el registro: no bloquean, pero no son "limpio".`);
+
 
   // LA TABLA SALE SOLA (2026-09-05). El usuario la pedia a mano despues de cada
   // tema: "dame la tabla del journey despues de terminar de cada tema, no lo

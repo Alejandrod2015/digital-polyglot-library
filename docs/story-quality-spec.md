@@ -328,6 +328,97 @@ In addition to the existing fields (`title`, `synopsis`, `text`, `vocab`), add:
 
 Use one of the seven values above. The field is required for every new story and validated server-side.
 
+## 3bis. El molde del tema [2026-09-05]
+
+Seis reglas que no se juzgan historia a historia, sino sobre las TRES juntas.
+Las mide `scripts/cierraTema.ts` con el plan del tema (`--plan`); dos bloquean
+el cierre y el resto avisan, y el aviso no es un aprobado.
+
+1. **El tipo decide el punto de vista.** Traveler mira desde fuera y pregunta;
+   Expat vive dentro y ya da cosas por sabidas; Friends se cuenta entre iguales,
+   sin explicar lo que el grupo comparte. Elegido el tipo, el punto de vista no
+   cambia a mitad de tema.
+2. **Nombres propios y lugares, pronunciables por el TTS.** O son de la lista
+   que ya salio bien en este idioma, o se prueban en la muestra del paso 1 de
+   `/audio-tema` antes de repetirse en tres historias. Un nombre que la voz
+   parte en dos se paga en veintiuna narraciones, no en una.
+3. **En niveles bajos, menos sucesos; nunca frases apretadas.** Si el tema se
+   pasa del techo de densidad (9 palabras por oracion en A0, 11 en A1, 13 en
+   A2), la salida es QUITAR un hecho de la escena, no comprimir la oracion que
+   ya esta. Una frase apretada tiene el mismo numero de palabras y menos aire.
+4. **Personaje y ciudad, presentados en el arranque.** Quien es y donde esta,
+   antes de su primera linea de dialogo, con la forma "una moça de São Paulo" y
+   con la coma de "Ciudad, pais". Presentar tarde obliga al lector a leer dos
+   veces la misma escena.
+5. **Al menos un coste no devuelto por tema.** Algo que un personaje pierde y
+   no recupera: el ultimo camion, la mitad del dinero, la tarde. Sin coste hay
+   temario, no arco; es la casilla `cuesta` del plan y por eso el cierre no la
+   deja vacia.
+6. **Registro declarado y variado entre temas.** El plan dice como suena el
+   tema en una linea, y el cierre lo compara con los dos temas anteriores del
+   journey: tres seguidos con el mismo registro avisan.
+7. **La emocion se ve, o no existe.** [2026-09-05, del usuario: "el
+   protagonista no muestra muchas emociones... temo que eso la haga sosa"]
+   La casilla `emocion` del plan dice que siente el protagonista en el pico de
+   cada historia Y donde se ve en el texto: un gesto del cuerpo ("la voz firme;
+   las manos, no") o una frase simple ("quiere llorar un poco. No llora").
+   En niveles bajos lo no dicho no existe: la sobriedad sin cuerpo se lee
+   como historia sosa. La contencion es valida solo si el texto muestra lo
+   que cuesta contenerse. Y la emocion viaja en tres piezas o en ninguna:
+   sensacion, motivo y gesto ("tiene ganas de llorar, pero delante de Chelo
+   no quiere; respira hondo"). Una reversa sin puente ("quiere llorar. No
+   llora") es un salto, no contencion; el esqueleto del paso 3 de /tema
+   existe para que el golpe emocional se escriba ANTES que la prosa y no
+   como parche encima. Y en niveles bajos, la ULTIMA linea se entiende a la
+   primera: el remate va en imagen concreta ("Iris camina ligera"), nunca en
+   elipsis ("Iris no"). El lector A2 cierra la historia con la sensacion de
+   haberla entendido, que es de donde sale que quiera abrir la siguiente; la
+   elipsis del final es para nativos y aqui resta engagement [2026-09-05].
+
+Dos tics mas, que ninguna historia delata sola y que BLOQUEAN el cierre: un
+verbo de acotacion que se lleva mas del 40% de las citas del tema (el
+"añade/remata" que cerraba 8 de 9 historias del B1 de España), y las tres
+historias abriendo con la misma palabra (el patron "nombre propio + verbo").
+
+## 3ter. La escalera de recursos estilisticos [2026-09-05]
+
+Cada nivel hereda los recursos de abajo; lo nuevo de un nivel es lo que su
+lector ya puede DESCIFRAR. La vara es cuanta inferencia pide el recurso,
+anclada al marco CEFR: lo implicito aparece entre B2 y C1, el juego verbal en
+C2. Un recurso de nivel superior es un FALLO aunque la gramatica sea correcta,
+porque en niveles bajos la sensacion de "lo entendi" ES el engagement, y quien
+tropieza en una linea que no puede descifrar cierra con sabor a derrota.
+**Regla de oro: en la duda, un nivel arriba.** El plan del tema declara en su
+campo `recursos` cuales usa, contra esta tabla.
+
+| Desde | Recurso | Ejemplo |
+|---|---|---|
+| A0 | Repeticion ritmica | "Un dibujo, un boleto. Otro dibujo, otro boleto." |
+| A0 | Contraste con "pero" | "Corre, pero no alcanza al colectivo." |
+| A0 | Imagen concreta | la emocion como gesto visible, nunca abstracta |
+| A1 | Causalidad explicita | "No habla, porque el loro repite todo." |
+| A1 | Humor de situacion | lo gracioso PASA en la escena, no en las palabras |
+| A1 | Gancho final literal | el twist se ve y se entiende a la primera |
+| A2 | Simil simple | "Abraza el cuaderno como a una persona." |
+| A2 | Espejo concreto | "El cuaderno pesa igual que ayer, pero Iris camina ligera." |
+| A2 | Flashback marcado | "Hace tres años, Wences dijo: el viernes vuelvo." |
+| B1 | Reversa cosida | querer y no hacerlo, con motivo y gesto en la misma oracion |
+| B1 | Cambio de ritmo | tras frases largas, una corta como golpe |
+| B2 | Ironia de personaje | decir lo contrario de lo que ambos saben |
+| B2 | Subtexto de dialogo | lo no dicho se muestra en el gesto |
+| B2 | Aforismo de personaje | una sentencia en boca de alguien, con cuentagotas |
+| B2 | Elipsis temporal | el tiempo salta y el lector lo repone |
+| B2 | Narrador con opinion | la voz que cuenta toma partido |
+| C1 | Simbolo sin explicar | el objeto carga el tema y nadie lo subraya |
+| C1 | Elipsis sintactica | "La voz le sale firme; las manos, no." |
+| C1 | Final abierto | el remate que no cierra; el silencio es la respuesta |
+| C1 | Ironia estructural | el lector sabe mas que el personaje |
+| C2 | Narrador no fiable, registro mezclado, parodia | el texto mismo juega |
+| Nunca | Onomatopeyas, risas escritas, moraleja | el TTS las rompe; la moraleja mata el arco |
+
+Lo que engancha en A0-B1 no son los recursos sino los STAKES, que son gratis
+en inferencia: el recurso es condimento y aligerarlo no cuesta historia.
+
 ## 4. Vocab
 
 - **Count scales with body DENSITY, not a fixed cap** [2026-06-05]. **Hard minimum 20**; the ceiling = `max(25, round(bodyWords / 9))`. So a normal ~250-word story keeps the 20-25 band, while a denser/longer story earns more (e.g. a 330-word recipe-reunion like `la-fonda-de-tio-beto` → up to ~37, and genuinely wants ~30: the ingredients + the cultural terms `mija`/`marchando`/`epazote`/`guajillo` + the key verbs). Rule of thumb for the TARGET: roughly one teachable item per 10 body words. Do NOT pad to the ceiling; only highlight words that genuinely earn a slot (two-functions test below). History: 18-22 (pre-2026-06-04) → 20-25 (2026-06-04/05) → density-scaled (2026-06-05). Over-pilling is still bounded independently by the no-consecutive-pills + per-paragraph distribution rules, so a high count must still spread across the body, not cluster.
