@@ -156,6 +156,28 @@ function verbosDeAcotacion(textos: string[]): { total: number; cuenta: Map<strin
 const TOPE_ARRANQUE_PARRAFOS = 0.60;
 const MINIMO_PARRAFOS = 5;
 
+/**
+ * (d2) SEGUIDILLA. La cara opuesta de la densidad: narracion en rafagas de
+ * oraciones de 3 o 4 palabras ("El dia es largo. Se quema un dedo. Rompe un
+ * vaso.") tampoco suena a historia. Se mide SOLO la narracion (las citas
+ * fuera: el dialogo corto es normal). Avisa, no bloquea: el remate final en
+ * dos golpes es un recurso legitimo; la rafaga sostenida no.
+ */
+const TOPE_SEGUIDILLA = 0.5;
+function seguidillaNarrada(textos: string[]): { cortas: number; total: number } {
+  let cortas = 0, total = 0;
+  for (const t of textos) {
+    const narr = t.replace(/“[^”]*”|"[^"]*"/g, "");
+    for (const o of narr.split(/(?<=[.!?…])\s+|\n+/)) {
+      const n = (o.match(/[\p{L}\p{N}']+/gu) ?? []).length;
+      if (!n) continue;
+      total++;
+      if (n <= 4) cortas++;
+    }
+  }
+  return { cortas, total };
+}
+
 /** (d) DENSIDAD. Palabras por oracion, sobre las tres juntas. */
 function palabrasPorOracion(textos: string[]): { media: number; oraciones: number } {
   let palabras = 0, oraciones = 0;
@@ -347,6 +369,16 @@ function desdeJson(fichero: string) {
   const previas: ExistingStorySummary[] = [];
   let okCanonico = 0;
   for (const d of conTexto) {
+    // Una historia a la que le FALTA un campo (synopsis, vocab) es un fallo
+    // del cierre, no un crash: el validador asume el objeto entero.
+    const faltan = (["title", "synopsis", "text"] as const).filter(
+      (campo) => typeof d[campo] !== "string" || !d[campo].trim()
+    );
+    if (faltan.length) {
+      fallos.push(`"${String(d.title ?? d.slug ?? "?")}": sin ${faltan.join(", ")}; el validador canonico necesita la historia completa`);
+      previas.push(resumen(d));
+      continue;
+    }
     const r = await validateGeneratedStory(
       { title: d.title, synopsis: d.synopsis, text: d.text, vocab: d.vocab, arcType: d.arcType } as never,
       {
@@ -462,6 +494,19 @@ function desdeJson(fichero: string) {
         "En niveles bajos se recortan HECHOS, no se aprietan frases: quita un suceso de la escena."
       );
     else checks.push(`densidad ${den.media.toFixed(1)} palabras por oracion (techo ${techo} en ${nivelPlan})`);
+
+    // (d2) Seguidilla de oraciones cortas en la narracion.
+    const seg = seguidillaNarrada(textos);
+    if (seg.total >= 8) {
+      const parte = seg.cortas / seg.total;
+      console.log(`   [tics d2]   seguidilla: ${seg.cortas}/${seg.total} oraciones narradas de 4 palabras o menos (tope ${TOPE_SEGUIDILLA * 100}%)`);
+      if (parte > TOPE_SEGUIDILLA)
+        avisos.push(
+          `seguidilla: ${Math.round(parte * 100)}% de la narracion son oraciones de 4 palabras o menos. ` +
+          "No suena a historia: une con y/pero/porque/cuando, guarda el golpe corto para el remate."
+        );
+      else checks.push(`seguidilla ${seg.cortas}/${seg.total} oraciones cortas narradas`);
+    }
   }
 
   // (e) Registro repetido tres temas seguidos.
