@@ -21,6 +21,27 @@
  * 2. **La lista de reglas vive en `docs/story-rules.json`, no aqui.** El gate
  *    lee el inventario y falla si una regla declarada con `gate: "journey"` no
  *    tiene implementacion. Enumerar deja de depender de que alguien se acuerde.
+ *
+ * 3. **Con el journey a medias no se salta todo (2026-09-05).** Antes, quien
+ *    llamaba a este checker con menos de siete historias se lo saltaba entero
+ *    y no medía nada, así que las tres primeras historias de un journey no
+ *    pasaban por ninguna regla de conjunto hasta que ya había 21 escritas y
+ *    corregir salía caro. Las reglas se parten en dos:
+ *
+ *      PREFIX-SAFE   su veredicto no se arregla añadiendo historias: habla
+ *                    citada por historia, presentación antes de la cita,
+ *                    plantillas de apertura, suelo A0, léxico (acento, edad,
+ *                    personas reales, ortografía de los nombres), el render y
+ *                    la primera historia del journey. Corren con las que haya.
+ *      DE CONJUNTO   son proporciones o cuentas sobre el journey entero
+ *                    (variedad de formas, cierres a solas, escalera de vocab,
+ *                    fijos, protagonista, nuevos por tema). Con el conjunto
+ *                    incompleto devuelven `pending-set` con su medida
+ *                    provisional: ni pasan ni fallan, quedan LISTADAS.
+ *
+ *    `pending-set` no es un aprobado. Quien lo consuma tiene que enseñarlo
+ *    (`cierraTema.ts` lo imprime como "pendiente de conjunto"): callarlo seria
+ *    volver al salto silencioso de antes.
  */
 import rulesDoc from "../../docs/story-rules.json";
 import { renderedParagraphs } from "@/lib/readerParagraphs";
@@ -40,7 +61,9 @@ export type JourneyStoryInput = {
 export type JourneyCheck = {
   id: string;
   label: string;
-  status: "pass" | "fail" | "not-implemented";
+  /** `pending-set`: regla de conjunto que no se puede juzgar todavia porque el
+   *  journey esta a medias. NO es un aprobado; se lista, no se calla. */
+  status: "pass" | "fail" | "not-implemented" | "pending-set";
   detail?: string;
 };
 
@@ -297,6 +320,10 @@ export function validateJourneyStories(
     /** Nombres de personas REALES (solicitantes de la beta). Los pasa
      *  saveStory.ts desde la base; sin ellos el check no puede medir. */
     realPeople?: string[];
+    /** ¿Estan todas las historias del journey? Si no se pasa, se deduce del
+     *  mismo umbral de siempre (7), para que quien ya llamaba a este checker
+     *  siga midiendo exactamente lo que medía. */
+    conjuntoCompleto?: boolean;
   }
 ): JourneyCheck[] {
   const out: JourneyCheck[] = [];
@@ -316,6 +343,22 @@ export function validateJourneyStories(
   const noImpl = (id: string, label: string, why: string) =>
     out.push({ id, label, status: "not-implemented", detail: why });
 
+  // Reglas DE CONJUNTO. Con el journey a medias se miden igual (el numero
+  // provisional informa), pero el veredicto queda en `pending-set`: una
+  // proporcion sobre tres historias no dice nada del journey de 21.
+  const parcial = !(ctx.conjuntoCompleto ?? stories.length >= 7);
+  const enEspera = (detail?: string) =>
+    `pendiente de conjunto: ${stories.length} historia(s) a la vista` +
+    (detail ? ` · medida provisional: ${detail}` : "");
+  const pushSet = (id: string, label: string, ok: boolean, detail?: string) => {
+    if (!parcial) return push(id, label, ok, detail);
+    out.push({ id, label, status: "pending-set", detail: enEspera(ok ? undefined : detail) });
+  };
+  const noImplSet = (id: string, label: string, why: string) => {
+    if (!parcial) return noImpl(id, label, why);
+    out.push({ id, label, status: "pending-set", detail: enEspera(why) });
+  };
+
   // ── 1. Banda de habla citada ────────────────────────────────
   {
     const fuera = narradas
@@ -333,7 +376,7 @@ export function validateJourneyStories(
     const why = `El detector de presentacion no esta escrito para ${lang || "?"}. ` +
       `Un check que no sabe medir NO puede pasar: implementa las tres formas para ${lang} en FORMAS_POR_IDIOMA.`;
     noImpl("journey-character-introduction", "Cada personaje presentado antes de su primera cita", why);
-    noImpl("journey-introduction-form-variety", "Las tres formas de presentacion se alternan", why);
+    noImplSet("journey-introduction-form-variety", "Las tres formas de presentacion se alternan", why);
   } else {
     const formas: string[] = [];
     const malos: string[] = [];
@@ -353,7 +396,9 @@ export function validateJourneyStories(
     const porForma = new Map<string, number>();
     for (const f of formas) porForma.set(f, (porForma.get(f) ?? 0) + 1);
     const peor = Math.max(0, ...porForma.values());
-    push("journey-introduction-form-variety", "Las tres formas de presentacion se alternan",
+    // DE CONJUNTO: es una proporcion sobre el reparto entero, y el reparto no
+    // esta completo hasta que lo estan las historias.
+    pushSet("journey-introduction-form-variety", "Las tres formas de presentacion se alternan",
       formas.length < 3 || peor <= Math.ceil(formas.length / 2),
       `${peor} de ${formas.length} usan la misma forma: ${[...porForma].map(([k, v]) => `${k} x${v}`).join(", ")}`);
   }
@@ -383,7 +428,8 @@ export function validateJourneyStories(
       if (ultimo.includes(QUOTE_OPEN)) return false;
       return !cast.slice(1).some((n) => ultimo.includes(n));
     });
-    push("journey-closing-alone", "Como mucho la mitad de los cierres con el protagonista a solas",
+    // DE CONJUNTO: "la mitad de los cierres" no significa nada sobre tres.
+    pushSet("journey-closing-alone", "Como mucho la mitad de los cierres con el protagonista a solas",
       solos.length <= Math.ceil(stories.length / 2),
       `${solos.length}/${stories.length} (protagonista ${hero || "?"}): ${solos.map((s) => s.slug).join(", ")}`);
   }
@@ -596,10 +642,10 @@ export function validateJourneyStories(
   const TOPE_ANCLADAS = 0.30;
   const suelo = MEDIA_MINIMA[level];
   if (suelo === undefined) {
-    noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
+    noImplSet("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
       `El catalogo no da un liston medido para ${level || "?"}; poner uno seria inventarlo.`);
   } else if (!stories.some((s) => s.vocab && s.vocab.length)) {
-    noImpl("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
+    noImplSet("journey-vocab-recirculation", "Cada plaza de vocab se reencuentra",
       "Las historias llegaron sin vocab.");
   } else {
     const tok = (t: string) => (t.toLowerCase().match(/\p{L}+/gu) ?? []);
@@ -613,7 +659,7 @@ export function validateJourneyStories(
     if (!marca) {
       const media = todas.reduce((a, b) => a + b.n, 0) / todas.length;
       const unaVez = todas.filter((x) => x.n <= 1).length;
-      push("journey-vocab-recirculation", `Cada plaza de vocab se reencuentra (media ${suelo} o mas en ${level})`,
+      pushSet("journey-vocab-recirculation", `Cada plaza de vocab se reencuentra (media ${suelo} o mas en ${level})`,
         media >= suelo,
         `media ${media.toFixed(2)} encuentros por plaza (ideal 4, liston de los buenos ${suelo}) · ${unaVez}/${todas.length} salen una sola vez · sin marcar ancladas`);
     } else {
@@ -628,7 +674,7 @@ export function validateJourneyStories(
       const cola = port.length ? unaVez / port.length : 0;
       const topeCola = TOPE_COLA_POR_NIVEL[level];
       const okCola = topeCola === undefined || cola <= topeCola;
-      push("journey-vocab-recirculation",
+      pushSet("journey-vocab-recirculation",
         `Las portables se reencuentran (media ${pide} o mas en ${level}), las ancladas no pasan del ${Math.round(TOPE_ANCLADAS * 100)}% y la cola no pasa del ${topeCola === undefined ? "?" : Math.round(topeCola * 100)}%`,
         okMedia && okCuota && okCola,
         `portables: media ${media.toFixed(2)} sobre ${port.length} plazas · ${unaVez} salen una sola vez` +
@@ -709,7 +755,7 @@ export function validateJourneyStories(
     const enTodas = nombres.filter((n) => presencia.get(n) === total);
     const ficha = (n: string) => `${n} (${presencia.get(n)}/${total})`;
 
-    push("journey-cast-fixed-max-two", "Nunca mas de 2 personajes fijos",
+    pushSet("journey-cast-fixed-max-two", "Nunca mas de 2 personajes fijos",
       fijos.length <= 2,
       `${fijos.length} salen en media o mas: ${fijos.map(ficha).join(", ")}. ` +
       `Tres voces sostenidas se confunden de oido; el tope es 2.`);
@@ -717,7 +763,7 @@ export function validateJourneyStories(
     // Un check que no sabe medir NO puede fallar, igual que el de presentacion:
     // si el detector de habla no saco reparto, el rojo seria del detector.
     if (!nombres.length) {
-      noImpl("journey-cast-protagonist-in-all", "El protagonista sale en todas",
+      noImplSet("journey-cast-protagonist-in-all", "El protagonista sale en todas",
         `El detector de habla no encontro reparto en ${lang || "?"}. Sin nombres ` +
         `no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.`);
     } else {
@@ -742,7 +788,7 @@ export function validateJourneyStories(
       const huerfanos = enTodas.length >= 1 ? [] : [...porTema].filter(([, ss]) =>
         !nombres.some((n) => ss.every((st) => st.text.includes(n)))
       );
-      push("journey-cast-protagonist-in-all", "Alguien en todas, o alguien en las tres de cada tema",
+      pushSet("journey-cast-protagonist-in-all", "Alguien en todas, o alguien en las tres de cada tema",
         huerfanos.length === 0,
         `Sin hilo en ${huerfanos.length} tema(s): ${huerfanos.map(([t, ss]) =>
           `${t || "?"} (${ss.map((s) => s.slug).join(", ")})`).join(" · ")}`);
@@ -754,7 +800,7 @@ export function validateJourneyStories(
       const why = "Las historias llegan sin `topic`, asi que no se puede saber " +
         "en que tema aparece cada personaje por primera vez. Quien llame al " +
         "checker tiene que pasar el tema en orden de lectura.";
-      noImpl("journey-cast-one-new-per-topic", "Un personaje nuevo por tema, en su primera historia", why);
+      noImplSet("journey-cast-one-new-per-topic", "Un personaje nuevo por tema, en su primera historia", why);
       noImpl("journey-cast-first-story-only-fixed", "La primera historia del journey solo lleva fijos", why);
     } else {
       const orden: string[] = [];
@@ -785,7 +831,7 @@ export function validateJourneyStories(
       );
       const topeNuevos = recorre ? 1 : 2;
       const conDeMas = orden.filter((t) => nuevosPorTema.get(t)!.length > topeNuevos);
-      push("journey-cast-one-new-per-topic",
+      pushSet("journey-cast-one-new-per-topic",
         `Como mucho ${topeNuevos} personaje(s) nuevo(s) por tema, presentados en su primera historia`,
         conDeMas.length === 0 && fueraDeSuTema.length === 0,
         [conDeMas.length ? `temas con mas de uno: ${conDeMas.map((t) => `${t} (${nuevosPorTema.get(t)!.join(", ")})`).join(" | ")}` : "",

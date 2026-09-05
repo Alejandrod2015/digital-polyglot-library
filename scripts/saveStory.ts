@@ -697,13 +697,29 @@ function slugify(s: string): string {
         .map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase());
     } finally { await p3.$disconnect(); }
 
-    if (todas.length < 7) {
-      console.log(`\n[gate de journey] SALTADO: solo ${todas.length} historias con texto (hacen falta 7 para medir un conjunto).`);
-    } else {
-      const jc = validateJourneyStories(todas, { language: ctx.language, level: ctx.level, realPeople });
-      const malos = jc.filter((c) => c.status !== "pass");
-      console.log(`\n── gate de journey (${todas.length} historias) ──`);
-      for (const c of jc) console.log(`   ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : "SIN IMPLEMENTAR"} [${c.id}] ${c.detail ?? ""}`);
+    // EL GATE YA NO SE SALTA CON EL JOURNEY A MEDIAS (2026-09-05).
+    //
+    // Antes, por debajo de siete historias no se medía NADA, así que las tres
+    // primeras de un journey no pasaban por ninguna regla de conjunto y el
+    // defecto aparecía cuando ya había 21 escritas. Ahora los checks
+    // prefix-safe (los que no se arreglan añadiendo historias) corren con las
+    // que haya, y los de conjunto devuelven `pending-set`: quedan LISTADOS,
+    // que es lo contrario de saltárselos en silencio. Con siete o más, el
+    // conjunto se juzga entero, exactamente como hasta hoy.
+    {
+      const completo = todas.length >= 7;
+      const jc = validateJourneyStories(todas, {
+        language: ctx.language, level: ctx.level, realPeople, conjuntoCompleto: completo,
+      });
+      const malos = jc.filter((c) => c.status === "fail" || c.status === "not-implemented");
+      const enEspera = jc.filter((c) => c.status === "pending-set");
+      console.log(`\n── gate de journey (${todas.length} historias${completo ? "" : ", conjunto incompleto"}) ──`);
+      for (const c of jc) console.log(`   ${c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL" : c.status === "pending-set" ? "en espera" : "SIN IMPLEMENTAR"} [${c.id}] ${c.detail ?? ""}`);
+      if (enEspera.length) {
+        console.log(`\n   ${enEspera.length} regla(s) de conjunto en espera de que el journey este completo:`);
+        for (const c of enEspera) console.log(`     [${c.id}]`);
+        console.log(`   No estan aprobadas; estan sin juzgar. Se cierran con el journey delante.`);
+      }
       if (malos.length && !noRegression) {
         console.error(`\n✗ GATE DE JOURNEY: ${malos.length} regla(s) de conjunto sin cumplir. NOTHING WRITTEN.`);
         console.error(`   Si el journey ya arrastraba estos fallos de antes de la regla, --no-regression`);

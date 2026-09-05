@@ -55,7 +55,8 @@ export function checksImplementados(): Map<string, string[]> {
     const txt = fs.readFileSync(p, "utf8");
     const ids = new Set<string>();
     for (const m of txt.matchAll(/id:\s*"([a-z0-9-]+)"/g)) ids.add(m[1]);
-    for (const m of txt.matchAll(/(?:push|noImpl)\(\s*"([a-z0-9-]+)"/g)) ids.add(m[1]);
+    // `push`, `noImpl` y sus variantes de conjunto (`pushSet`, `noImplSet`).
+    for (const m of txt.matchAll(/(?:push|noImpl)(?:Set)?\(\s*"([a-z0-9-]+)"/g)) ids.add(m[1]);
     out.set(f, [...ids].sort());
   }
   return out;
@@ -68,7 +69,7 @@ export function etiquetaDeCheck(fichero: string, id: string): string {
   const txt = fs.readFileSync(p, "utf8");
   const porObjeto = new RegExp(`id:\\s*"${id}"\\s*,\\s*label:\\s*"([^"]+)"`).exec(txt);
   if (porObjeto && porObjeto[1].trim()) return porObjeto[1].trim();
-  const porLlamada = new RegExp(`(?:push|noImpl)\\(\\s*"${id}"\\s*,\\s*[\`"]([^\`"]+)[\`"]`).exec(txt);
+  const porLlamada = new RegExp(`(?:push|noImpl)(?:Set)?\\(\\s*"${id}"\\s*,\\s*[\`"]([^\`"]+)[\`"]`).exec(txt);
   if (porLlamada && porLlamada[1].trim()) return porLlamada[1].trim();
   return id;
 }

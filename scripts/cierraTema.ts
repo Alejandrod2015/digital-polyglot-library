@@ -41,6 +41,7 @@ import {
   validateGeneratedStory, extractStoryMotifs, extractProperNouns,
   type ExistingStorySummary,
 } from "@/lib/validateGeneratedStory";
+import { validateJourneyStories } from "@/lib/validateJourneyStories";
 import {
   hashTema, escribirCierre, type Cierre, type HistoriaCierre,
 } from "./temaCierres";
@@ -135,11 +136,18 @@ async function desdeBase(journeyId: string, topic: string) {
       orderBy: { slotIndex: "asc" },
     });
     const total = await p.journeyStory.count({ where: { journeyId, text: { not: null } } });
+    // Personas REALES, igual que en saveStory: sin la lista el check de
+    // personajes no puede medir y devuelve `not-implemented`, que bloquea.
+    const realPeople = (await p.betaSignup.findMany({ select: { email: true } }))
+      .flatMap((b) => String(b.email ?? "").split("@")[0].split(/[._\-+0-9]+/))
+      .filter((w) => w.length >= 3)
+      .map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase());
     return {
       historias: filas as Historia[],
       language: j.language, level: (j.levels ?? [])[0] ?? "", variant: j.variant ?? "",
       esperadas: j.storiesPerTopic ?? 3,
       historiasDelJourney: total,
+      realPeople,
     };
   } finally {
     await p.$disconnect();
@@ -159,6 +167,7 @@ function desdeJson(fichero: string) {
     variant: arg("variant", obj.variant) ?? "",
     esperadas: Number(obj.storiesPerTopic ?? 3),
     historiasDelJourney: Number(obj.historiasDelJourney ?? historias.length),
+    realPeople: obj.realPeople as string[] | undefined,
   };
 }
 
@@ -167,7 +176,7 @@ function desdeJson(fichero: string) {
   let journeyId: string, topic: string;
   let datos: {
     historias: Historia[]; language: string; level: string; variant: string;
-    esperadas: number; historiasDelJourney: number;
+    esperadas: number; historiasDelJourney: number; realPeople?: string[];
   };
 
   if (modoJson) {
@@ -187,7 +196,7 @@ function desdeJson(fichero: string) {
     datos = await desdeBase(journeyId, topic);
   }
 
-  const { historias, language, level, variant, esperadas, historiasDelJourney } = datos;
+  const { historias, language, level, variant, esperadas, historiasDelJourney, realPeople } = datos;
   const conTexto = historias.filter((s) => String(s.text ?? "").trim());
   const fallos: string[] = [];
   const checks: string[] = [];
@@ -264,9 +273,39 @@ function desdeJson(fichero: string) {
     "se juzga con el journey completo)"
   );
 
-  // ── 5. Lo que solo se ve con el journey entero ──
-  //      Se LISTA, no se calla: un tema cerrado no es un journey aprobado.
-  pendientes.push("gate de conjunto del journey (fijos, distribucion, aperturas): se mide con el journey delante");
+  // ── 5. Gate de conjunto, con las historias que HAY ──
+  //
+  // Desde el 2026-09-05 el checker de journey no se salta con el conjunto a
+  // medias: los checks prefix-safe (los que no se arreglan añadiendo
+  // historias) corren sobre las tres del tema, y los de conjunto devuelven
+  // `pending-set`, que aqui se imprime como pendiente. Un tema cerrado no es
+  // un journey aprobado, y eso se dice, no se calla.
+  const jc = validateJourneyStories(
+    conTexto.map((s) => ({
+      slug: String(s.slug ?? `${s.topic}#${s.slotIndex}`),
+      title: String(s.title ?? ""),
+      text: String(s.text ?? ""),
+      vocab: s.vocab as never,
+      language, level, topic: s.topic,
+    })),
+    { language, level, realPeople, conjuntoCompleto: false }
+  );
+  console.log("");
+  for (const c of jc) {
+    const marca = c.status === "pass" ? "ok  " : c.status === "fail" ? "FAIL"
+      : c.status === "pending-set" ? "espera" : "SIN IMPLEMENTAR";
+    console.log(`   [conjunto] ${marca} ${c.id} ${c.detail ?? ""}`);
+    if (c.status === "fail") fallos.push(`[conjunto] ${c.id}: ${c.detail ?? c.label}`);
+    else if (c.status === "pending-set") pendientes.push(`${c.id}: ${c.detail ?? ""}`);
+    else if (c.status === "not-implemented") {
+      // En modo fixture no hay base, y varios checks necesitan datos que solo
+      // estan ahi (la lista de solicitantes, por ejemplo). Eso no se puede
+      // llamar aprobado: se lista como pendiente, diciendo por que.
+      if (modoJson) pendientes.push(`${c.id} (modo fixture, sin base de datos): ${c.detail ?? ""}`);
+      else fallos.push(`[conjunto] ${c.id} no se pudo medir: ${c.detail ?? c.label}`);
+    }
+  }
+  checks.push(`gate de conjunto sobre el tema: ${jc.filter((c) => c.status === "pass").length}/${jc.length} medidos y limpios`);
 
   console.log("");
   for (const p of pendientes) console.log(`   pendiente de conjunto: ${p}`);
