@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { useAuth, UserButton } from "@clerk/nextjs";
+import GetAppCta from "@/components/GetAppCta";
 
 type Book = {
   id: string;
@@ -36,6 +37,22 @@ export default function ClaimClient({ token }: { token: string }) {
 
   useEffect(() => {
     let cancelled = false;
+
+    // Dev-only preview: /claim/preview-success renders the success state with
+    // sample books, so the screen can be checked on localhost without
+    // redeeming a real token. Dead code in production builds (NODE_ENV is
+    // inlined at build time).
+    if (process.env.NODE_ENV === "development" && token === "preview-success") {
+      setState({
+        status: "success",
+        alreadyOwned: false,
+        books: [
+          { id: "preview-1", title: "Spanish Stories for Beginners", cover: "" },
+          { id: "preview-2", title: "French Short Stories", cover: "" },
+        ],
+      });
+      return;
+    }
 
     async function redeemToken() {
       try {
@@ -277,6 +294,11 @@ export default function ClaimClient({ token }: { token: string }) {
       >
         {isSignedIn ? "Go to my library" : "Sign in to view library"}
       </a>
+
+      {/* The buyer just paid and just got access: the one guaranteed moment
+          to tell them the native apps exist. /go/app detects the device
+          (iOS -> TestFlight, Android -> Play, desktop -> web reader). */}
+      <GetAppCta surface="claim_success" visibility="always" />
     </main>
   );
 }

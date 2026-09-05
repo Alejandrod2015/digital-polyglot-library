@@ -35,6 +35,7 @@ import {
 import { canAccessStoryContent } from "@domain/access";
 import StoryClientGate from "@/app/books/[bookSlug]/[storySlug]/StoryClientGate";
 import { getLockedStoryPreviewHtml } from "@domain/lockedStoryPreview";
+import GetAppCta from "@/components/GetAppCta";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -600,6 +601,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
               vocabCount={safeVocab.length}
               practiceHref={practiceHref}
             />
+            <GetAppCta surface="story_end" />
           </div>
         ) : (
           <div

@@ -27,6 +27,7 @@ import {
 import { canAccessStoryContent } from "@domain/access";
 import { getLockedStoryPreviewHtml } from "@domain/lockedStoryPreview";
 import { getCatalogStory } from "@/lib/catalog";
+import GetAppCta from "@/components/GetAppCta";
 
 type UserPlan = "free" | "basic" | "premium" | "polyglot" | "owner";
 
@@ -297,6 +298,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
             ) : (
               <StoryContent text={visibleText} sentencesPerParagraph={3} vocab={story.vocab ?? []} />
             )}
+            <GetAppCta surface="story_end" />
           </div>
         ) : (
           <div
