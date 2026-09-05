@@ -2026,6 +2026,13 @@
       "rule": "Vocab earns its slot (no pure paperwork labels)",
       "gate": "src/lib/validateGeneratedStory.ts#vocab-utility",
       "source": "validator:src/lib/validateGeneratedStory.ts"
+    },
+    {
+      "id": "recursos-por-nivel",
+      "domain": "story",
+      "rule": "Los recursos estilisticos del tema son del nivel o de abajo (escalera 3ter del quality spec); en la duda, un nivel arriba",
+      "gate": "scripts/cierraTema.ts",
+      "source": "docs/story-quality-spec.md 3ter (calibracion con el usuario 2026-09-05)"
     }
   ]
 }

@@ -331,7 +331,7 @@ function desdeJson(fichero: string) {
   if (!ficheroPlan) {
     fallos.push(
       "falta el PLAN del tema. Se escribe antes de la prosa y se pasa con --plan <plan.json>:\n" +
-      "     { tipo, nivel, variante, registro, espina, historias: [{ slot, quiere, impide, cuesta, cambia, emocion } x3] }"
+      "     { tipo, nivel, variante, registro, espina, recursos, historias: [{ slot, quiere, impide, cuesta, cambia, emocion } x3] }"
     );
     console.log("   [plan]      FALTA (--plan <plan.json>)");
   } else if (!fs.existsSync(ficheroPlan)) {

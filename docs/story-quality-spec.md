@@ -380,6 +380,45 @@ verbo de acotacion que se lleva mas del 40% de las citas del tema (el
 "añade/remata" que cerraba 8 de 9 historias del B1 de España), y las tres
 historias abriendo con la misma palabra (el patron "nombre propio + verbo").
 
+## 3ter. La escalera de recursos estilisticos [2026-09-05]
+
+Cada nivel hereda los recursos de abajo; lo nuevo de un nivel es lo que su
+lector ya puede DESCIFRAR. La vara es cuanta inferencia pide el recurso,
+anclada al marco CEFR: lo implicito aparece entre B2 y C1, el juego verbal en
+C2. Un recurso de nivel superior es un FALLO aunque la gramatica sea correcta,
+porque en niveles bajos la sensacion de "lo entendi" ES el engagement, y quien
+tropieza en una linea que no puede descifrar cierra con sabor a derrota.
+**Regla de oro: en la duda, un nivel arriba.** El plan del tema declara en su
+campo `recursos` cuales usa, contra esta tabla.
+
+| Desde | Recurso | Ejemplo |
+|---|---|---|
+| A0 | Repeticion ritmica | "Un dibujo, un boleto. Otro dibujo, otro boleto." |
+| A0 | Contraste con "pero" | "Corre, pero no alcanza al colectivo." |
+| A0 | Imagen concreta | la emocion como gesto visible, nunca abstracta |
+| A1 | Causalidad explicita | "No habla, porque el loro repite todo." |
+| A1 | Humor de situacion | lo gracioso PASA en la escena, no en las palabras |
+| A1 | Gancho final literal | el twist se ve y se entiende a la primera |
+| A2 | Simil simple | "Abraza el cuaderno como a una persona." |
+| A2 | Espejo concreto | "El cuaderno pesa igual que ayer, pero Iris camina ligera." |
+| A2 | Flashback marcado | "Hace tres años, Wences dijo: el viernes vuelvo." |
+| B1 | Reversa cosida | querer y no hacerlo, con motivo y gesto en la misma oracion |
+| B1 | Cambio de ritmo | tras frases largas, una corta como golpe |
+| B2 | Ironia de personaje | decir lo contrario de lo que ambos saben |
+| B2 | Subtexto de dialogo | lo no dicho se muestra en el gesto |
+| B2 | Aforismo de personaje | una sentencia en boca de alguien, con cuentagotas |
+| B2 | Elipsis temporal | el tiempo salta y el lector lo repone |
+| B2 | Narrador con opinion | la voz que cuenta toma partido |
+| C1 | Simbolo sin explicar | el objeto carga el tema y nadie lo subraya |
+| C1 | Elipsis sintactica | "La voz le sale firme; las manos, no." |
+| C1 | Final abierto | el remate que no cierra; el silencio es la respuesta |
+| C1 | Ironia estructural | el lector sabe mas que el personaje |
+| C2 | Narrador no fiable, registro mezclado, parodia | el texto mismo juega |
+| Nunca | Onomatopeyas, risas escritas, moraleja | el TTS las rompe; la moraleja mata el arco |
+
+Lo que engancha en A0-B1 no son los recursos sino los STAKES, que son gratis
+en inferencia: el recurso es condimento y aligerarlo no cuesta historia.
+
 ## 4. Vocab
 
 - **Count scales with body DENSITY, not a fixed cap** [2026-06-05]. **Hard minimum 20**; the ceiling = `max(25, round(bodyWords / 9))`. So a normal ~250-word story keeps the 20-25 band, while a denser/longer story earns more (e.g. a 330-word recipe-reunion like `la-fonda-de-tio-beto` → up to ~37, and genuinely wants ~30: the ingredients + the cultural terms `mija`/`marchando`/`epazote`/`guajillo` + the key verbs). Rule of thumb for the TARGET: roughly one teachable item per 10 body words. Do NOT pad to the ceiling; only highlight words that genuinely earn a slot (two-functions test below). History: 18-22 (pre-2026-06-04) → 20-25 (2026-06-04/05) → density-scaled (2026-06-05). Over-pilling is still bounded independently by the no-consecutive-pills + per-paragraph distribution rules, so a high count must still spread across the body, not cluster.
