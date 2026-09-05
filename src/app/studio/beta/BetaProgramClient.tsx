@@ -877,6 +877,14 @@ function ApplicationSummary({ a, showReason }: { a: Applicant; showReason: boole
   // El paréntesis del formulario ("Latin America (general)") desambigua una
   // lista de países; dentro de otro paréntesis solo estorba.
   const variant = targetVariantLabel(a.targetLanguage, a.targetVariant)?.replace(/\s*\(.*\)$/, "");
+  // Lo escrito a mano en un idioma que SI ofrece lista no es una variante
+  // suya. En el mismo hueco donde otra ficha dice "French (France)", un
+  // "French (Australia)" asciende a producto lo que solo fue una respuesta.
+  // Se enseña igual, porque es lo que contesto esa persona, pero marcada.
+  const variantIsFreeText =
+    Boolean(variant) &&
+    hasVariantOptions(a.targetLanguage) &&
+    !canonicalVariantLabel(a.targetLanguage, a.targetVariant);
   return (
     <>
       <div style={{ fontSize: 12, color: "var(--muted)", marginTop: 3 }}>
@@ -884,7 +892,7 @@ function ApplicationSummary({ a, showReason }: { a: Applicant; showReason: boole
         {/* La variante decide a qué journey se le invita, así que va pegada al
             idioma y no escondida en el panel de demanda. Sin ella la ficha
             dice "Spanish" y calla si pide España o Latinoamérica. */}
-        {variant ? ` (${variant})` : ""}{" "}
+        {variant ? ` (${variantIsFreeText ? "wrote: " : ""}${variant})` : ""}{" "}
         · {a.currentLevel} · {a.weeklyHours ?? "?"} hrs/wk · {a.motivation ?? "?"}
         {motivationJourneyType(a.motivation)
           ? ` · pide ${motivationJourneyType(a.motivation)!.label}`
