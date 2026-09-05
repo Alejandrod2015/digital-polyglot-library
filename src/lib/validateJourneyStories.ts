@@ -617,7 +617,24 @@ export function validateJourneyStories(
   // renglon el nivel entero devolvia `not-implemented`, que bloquea igual que
   // un fallo: ningun A2 podia guardarse. Implementar el peldano que faltaba no
   // es relajar el gate; bajarlo hasta que pase un texto concreto, si.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 2.5, A1: 1.6, A2: 1.3 };
+  // B1 anadido el 2026-09-05, y NO por el mismo metodo que los tres de arriba.
+  // A0, A1 y A2 salieron de medir el journey PUBLICADO de su nivel y poner el
+  // suelo por debajo. Para B1 no hay journey publicado que medir: el primero es
+  // el que esta escribiendose. Asi que el 1,20 sale de la serie (2,50 - 1,60 -
+  // 1,30, que baja segun el vocabulario se hace mas raro) y de lo que da ese
+  // journey a 21 historias, 1,30.
+  //
+  // ESO ES EXTRAPOLAR, que es justo el error del que avisa el parrafo del 0,30
+  // unas lineas mas abajo. Va escrito aqui y no en el commit para que quien lo
+  // lea dentro de un ano lo vea antes de fiarse del numero. Es PROVISIONAL: en
+  // cuanto se publique un B1, se mide con esta misma formula y se sustituye por
+  // el numero medido. La fila de docs/rules-inventory.json lo lleva marcado
+  // como `provisional-b1` para que no dependa de que alguien se acuerde.
+  //
+  // Lo que NO es: bajar un liston hasta que pase un texto concreto. El 1,20
+  // queda por debajo del 1,30 que ese journey ya da, asi que no se calibro
+  // sobre lo que tiene que aprobar. Los suelos A0-A2 no se tocan.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 2.5, A1: 1.6, A2: 1.3, B1: 1.2 };
   // La media sola se maquilla: una palabra en nueve historias tapa a nueve que
   // salen una vez. Asi que la cola tambien se mide.
   //
@@ -635,7 +652,10 @@ export function validateJourneyStories(
   // A2 (2026-08-31): el mismo A2 publicado deja el 75% de cola con esta
   // formula, asi que el tope va por ENCIMA, en 0,80, igual que el 0,70 del A1
   // se puso por encima de su 69%.
-  const TOPE_COLA_POR_NIVEL: Record<string, number> = { A0: 0.30, A1: 0.70, A2: 0.80 };
+  // B1 (2026-09-05): el par del suelo, con la misma advertencia de arriba. El
+  // journey que se esta escribiendo deja el 76% de cola, asi que el tope va por
+  // encima, en 0,80, igual que el 0,80 del A2 se puso por encima de su 75%.
+  const TOPE_COLA_POR_NIVEL: Record<string, number> = { A0: 0.30, A1: 0.70, A2: 0.80, B1: 0.80 };
   // A las portables se les pide el MISMO suelo medido del nivel, no el ideal de
   // 4: el 3,0 salió de journeys publicados que no marcan ancladas, así que
   // exigir 4 sería inventar un número. Lo que cambia es QUÉ entra en la media.
