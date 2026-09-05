@@ -30,7 +30,8 @@
     "lint:no-emdash:db": "tsx scripts/checkNoEmDashDb.ts",
     "lint:gloss-variants": "tsx scripts/checkGlossVariants.ts",
     "lint:gloss-moods": "tsx scripts/checkGlossMoods.ts",
-    "lint:hard-rules": "tsx scripts/checkHardRules.ts"
+    "lint:hard-rules": "tsx scripts/checkHardRules.ts",
+    "lint:rules-inventory": "tsx scripts/checkRulesInventory.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",

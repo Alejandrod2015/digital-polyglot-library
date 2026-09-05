@@ -112,6 +112,7 @@ checkKaraokeFresh    db
 checkGlossContext    db
 checkGlossesReviewed db
 checkHardRules       memoria
+checkRulesInventory  -
 checkGlossMoods      db
 checkGlossVariants   db
 "
@@ -263,6 +264,22 @@ EOM
 
 EOM
       ;;
+    checkRulesInventory)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: el inventario de reglas no cuadra
+
+  O una fila cita un gate que no existe, o hay un check implementado sin
+  fila, o ha subido el numero de reglas sin gate. Regenera el inventario
+  desde sus fuentes y vuelve a mirar:
+
+    npx tsx scripts/buildRulesInventory.ts
+    npm run lint:rules-inventory
+======================================================================
+
+EOM
+      ;;
     checkGlossMoods)
       cat >&2 <<'EOM'
 
@@ -316,6 +333,9 @@ EOM
 #                        ORIGEN; no sale de aqui sin que alguien la lea.
 #   checkHardRules       Una memoria que se declara dura tiene que nombrar
 #                        quien la hace cumplir, o admitir que no hay nadie.
+#   checkRulesInventory  El inventario maestro de reglas duras: ningun gate
+#                        fantasma, ningun check sin fila, y el numero de reglas
+#                        sin gate solo puede bajar.
 #   checkGlossMoods      Formas no indicativas servidas como entrada de
 #                        diccionario, sin su capa gramatical.
 #   checkGlossVariants   Formas que no son de la variante de su journey
