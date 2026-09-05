@@ -4858,7 +4858,24 @@ export function MobileLibraryShell(args: {
   // differ only by level), so the picker needs the level to tell them apart.
   // Use the friendly label of the track's (single) level.
   const trackToPanelEntry = useCallback(
-    (track: MobileJourneyTrackSummary): JourneysPanelTrack => ({
+    (track: MobileJourneyTrackSummary): JourneysPanelTrack => {
+      // Portada del track: la primera historia con arte que encuentre, bajando
+      // por niveles y temas. No cuesta una llamada nueva; el payload ya trae
+      // `coverUrl` y su thumbhash por historia, que es lo que pinta el path.
+      let cover: { url: string; hash: string | null } | null = null;
+      for (const level of track.levels ?? []) {
+        for (const topic of level.topics ?? []) {
+          for (const story of topic.stories ?? []) {
+            if (story.coverUrl) {
+              cover = { url: story.coverUrl, hash: story.coverThumbhash ?? null };
+              break;
+            }
+          }
+          if (cover) break;
+        }
+        if (cover) break;
+      }
+      return {
       id: track.id,
       label: track.label,
       // Con codigo CEFR entre parentesis ("Elementary (A1)"): en el selector
@@ -4871,7 +4888,10 @@ export function MobileLibraryShell(args: {
         : track.levels?.[0]?.title ?? null,
       levelCode: track.levels?.[0]?.id ?? null,
       variant: track.variant ?? null,
-    }),
+      coverUrl: cover?.url ?? null,
+      coverThumbhash: cover?.hash ?? null,
+      };
+    },
     []
   );
 
@@ -20533,6 +20553,7 @@ export function MobileLibraryShell(args: {
         comingSoonLanguages={comingSoonLanguages}
         unavailableVariants={unavailableVariants}
         journeyIdByTrack={journeyIdByResolvedTrack}
+        placementLevelCode={preferences.journeyPlacementLevel}
         onSelect={async (id) => {
           await handleJourneySwitch(id);
           setJourneysPanelOpen(false);

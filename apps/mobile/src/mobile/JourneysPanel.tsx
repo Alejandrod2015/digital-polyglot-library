@@ -10,6 +10,8 @@ import {
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { LanguageFlag, regionFamily } from "./LanguageFlag";
+import { ProgressiveImage } from "./ProgressiveImage";
+import { getCoverUrl } from "./coverUrl";
 import { formatVariantLabel } from "@digital-polyglot/domain";
 import { type Journey, existingJourneyKeys, journeyId } from "./journeys";
 import type { JourneyFocus } from "../../../../src/lib/onboarding";
@@ -32,33 +34,79 @@ export type JourneysPanelTrack = {
    *  by language only, so this is used to filter to the variant the user
    *  picked (a Spain pick must not show LATAM journeys). */
   variant?: string | null;
+  /** Portada de la primera historia con arte del track. Es la ficha del
+   *  selector: el arte distingue dos journeys mejor que su nivel escrito, y
+   *  ya viaja en el payload, sin llamada extra. */
+  coverUrl?: string | null;
+  /** Thumbhash de esa portada, para el borroso instantáneo mientras baja. */
+  coverThumbhash?: string | null;
 };
 
-// Level meter shown on each journey card instead of a generic map icon.
-// The cards differ only by level, so ascending bars (filled by how advanced
-// the level is) read at a glance and stop the three cards looking identical.
+// Orden CEFR: ordena los niveles dentro de cada region.
 const CEFR_ORDER = ["a0", "a1", "a2", "b1", "b2", "c1", "c2"];
-function levelMeterFilled(code?: string | null): number {
-  const idx = CEFR_ORDER.indexOf((code ?? "").trim().toLowerCase());
-  if (idx < 0) return 1;
-  return Math.min(idx + 1, 3);
+
+/** Que vas a poder HACER con cada tipo de journey. Va en la SUBCABECERA, una
+ *  sola vez: en la fila la ocupa la gramatica del nivel.
+ *
+ *  Tres reglas, las tres aprendidas rompiendolas:
+ *
+ *  1. Describe, no promete. "Travel without translating" y "Sound like you
+ *     live there" prometian lo mismo con otras palabras y no decian que sabra
+ *     hacer el alumno.
+ *  2. Habla del journey, no del comprador. Atarla al dolor de UNA persona
+ *     ("Talk to their family yourself") deja fuera a los demas que hacen ese
+ *     mismo camino.
+ *  3. Sin deicticos: "everyday life there" no señala ningun sitio. La region
+ *     ya esta en la cabecera que hay justo encima de la fila.
+ *
+ *  El contraste es la situacion, que es lo unico que de verdad separa los tres
+ *  caminos: un viaje, una conversacion, el dia a dia.
+ *
+ *  Son los tres tipos que existen en el catalogo vivo (17 Traveler, 8 Friends,
+ *  3 Expat, segun `scripts/journeysTable.ts`). Un tipo nuevo sale sin linea
+ *  hasta que se le escriba la suya; nunca una inventada al vuelo. */
+const TYPE_BLURBS: Record<string, string> = {
+  traveler: "Get through a trip on your own",
+  friends: "Follow and join conversations",
+  expat: "Handle everyday life",
+};
+function typeBlurb(label: string): string | null {
+  return TYPE_BLURBS[label.trim().toLowerCase()] ?? null;
 }
-function LevelMeter({ filled, active }: { filled: number; active: boolean }) {
-  const onColor = active ? tokenBg[1] : tokenColor.cyan;
-  const offColor = active ? "rgba(14,23,39,0.28)" : "rgba(125,211,252,0.25)";
-  return (
-    <View style={styles.levelMeter}>
-      {[0, 1, 2].map((i) => (
-        <View
-          key={i}
-          style={[
-            styles.levelMeterBar,
-            { height: 7 + i * 6, backgroundColor: i < filled ? onColor : offColor },
-          ]}
-        />
-      ))}
-    </View>
-  );
+
+/** Lo que hace distinto a cada nivel, en una linea que NUNCA se corta.
+ *
+ *  Condensa `grammarStructures` de `PEDAGOGICAL_RULES` (src/agents/config),
+ *  que es donde vive la definicion. Se copia aqui corta a proposito: aquella
+ *  lista esta escrita para el generador y una sola de sus entradas ya son 60
+ *  caracteres ("Full range of subjunctive mood including imperfect
+ *  subjunctive"), que en la fila salia partida o cortada.
+ *
+ *  Tope 33 caracteres, y la fila admite dos renglones: en el movil mas
+ *  estrecho envuelve, nunca trunca. Si se toca `PEDAGOGICAL_RULES`, hay que
+ *  revisar estas.
+ *
+ *  A0 no sale de ahi, porque ese archivo empieza en A1. Sale del validador
+ *  (`src/lib/validateGeneratedStory.ts`), que fija el suelo A0 con esas
+ *  palabras: "one idea per short sentence". Su techo gramatical esta escrito
+ *  por exclusion (puede llegar a A1/A2, nunca a B1), asi que no hay una lista
+ *  de estructuras que copiar; lo que de verdad define el nivel es la frase.
+ */
+const LEVEL_GRAMMAR: Record<string, string> = {
+  a0: "Present tense, basic questions",
+  a1: "Present tense, articles, pronouns",
+  a2: "Past, present continuous, future",
+  b1: "Present perfect, relative clauses",
+  b2: "Perfect tenses, conditionals",
+  c1: "All tenses, subjunctive mood",
+  // El C2 de `PEDAGOGICAL_RULES` habla de formas arcaicas y literarias. Eso
+  // no es este producto: aqui se aprende a hablar como la gente del sitio, no
+  // a leer a los clasicos. Se queda la otra mitad de la regla, la flexibilidad
+  // nativa y el cambio de registro, que si describe hablar de verdad.
+  c2: "Native range, any register",
+};
+function grammarLine(levelCode?: string | null): string | null {
+  return LEVEL_GRAMMAR[(levelCode ?? "").trim().toLowerCase()] ?? null;
 }
 
 /** Default focus assigned when the user creates a journey from this
@@ -131,6 +179,9 @@ type Props = {
   unavailableVariants?: ReadonlySet<string>;
   /** Activate an existing journey by id and close the panel. */
   onSelect: (id: string) => void | Promise<void>;
+  /** CEFR code of the learner's placement ("a0", "b1"…), used to mark the
+   *  row that matches their level. Null when they never took the test. */
+  placementLevelCode?: string | null;
   /** Studio track id -> id of the saved journey that already opens it.
    *  A journey knows its track through `variant` only under the current
    *  model; older ones store a region there, so their track looked free
@@ -173,6 +224,7 @@ export function JourneysPanel({
   comingSoonLanguages,
   unavailableVariants,
   journeyIdByTrack,
+  placementLevelCode,
   onSelect,
   onCreate,
   getTracksForLanguage,
@@ -359,6 +411,68 @@ export function JourneysPanel({
     ? availableTracks.filter((t) => regionFamily(t.variant) === pickedRegion)
     : availableTracks;
 
+  /**
+   * Los tracks, agrupados por REGION. Es lo que clasifica: primero eliges el
+   * español (o el portugues) que quieres oir, y dentro de esa region subes de
+   * nivel. Antes salian los seis en una lista plana donde lo unico que los
+   * separaba iba en gris pequeño, y no se veia que Latin America tiene
+   * escalera de cuatro niveles mientras Mexico y Colombia tienen uno.
+   *
+   * Dentro de cada grupo mandan los niveles, de menor a mayor. Primero va la
+   * region generica (la familia que el usuario pico en el paso 1) y despues
+   * los paises, por orden alfabetico.
+   */
+  const regionGroups: Array<{
+    key: string;
+    variant: string | null;
+    label: string;
+    tracks: JourneysPanelTrack[];
+    types: Array<{ label: string; blurb: string | null; tracks: JourneysPanelTrack[] }>;
+  }> = [];
+  for (const track of visibleTracks) {
+    const key = (track.variant ?? "").trim().toLowerCase();
+    let group = regionGroups.find((g) => g.key === key);
+    if (!group) {
+      group = {
+        key,
+        variant: track.variant ?? null,
+        label: formatVariantLabel(track.variant) || pickedLanguage?.name || "",
+        tracks: [],
+        types: [],
+      };
+      regionGroups.push(group);
+    }
+    group.tracks.push(track);
+  }
+  const cefrRank = (t: JourneysPanelTrack) => {
+    const idx = CEFR_ORDER.indexOf((t.levelCode ?? "").trim().toLowerCase());
+    return idx < 0 ? CEFR_ORDER.length : idx;
+  };
+  for (const group of regionGroups) {
+    group.tracks.sort((a, b) => cefrRank(a) - cefrRank(b));
+    // Segundo corte: por TIPO. Una region puede tener dos caminos distintos
+    // (Traveler y Friends) y en una lista sola se leian como una escalera
+    // unica: un C1 de Friends parecia la continuacion del A2 de Traveler.
+    // Dentro de cada tipo mandan los niveles, y los tipos van por el nivel
+    // mas bajo que ofrecen, asi que el camino por el que se entra sale antes.
+    for (const track of group.tracks) {
+      let type = group.types.find((t) => t.label === track.label);
+      if (!type) {
+        type = { label: track.label, blurb: typeBlurb(track.label), tracks: [] };
+        group.types.push(type);
+      }
+      type.tracks.push(track);
+    }
+    group.types.sort((a, b) => cefrRank(a.tracks[0]) - cefrRank(b.tracks[0]));
+  }
+  regionGroups.sort((a, b) => {
+    if (a.key === pickedRegion) return -1;
+    if (b.key === pickedRegion) return 1;
+    return a.label.localeCompare(b.label);
+  });
+
+  const selectedTrack = visibleTracks.find((t) => t.id === pickedTrackId) ?? null;
+
   const headerTitle = mode === "pick-language" ? "Pick a language" : "Pick a journey";
   const headerSub = mode === "pick-language" ? "Step 1 of 2" : "Step 2 of 2";
 
@@ -472,100 +586,116 @@ export function JourneysPanel({
               <LanguageFlag
                 language={pickedLanguage.name}
                 variant={pickedLanguage.variant}
-                size={28}
+                size={22}
               />
-              <Text style={styles.focusContextText}>
-                {pickedLanguage.name}
-                {pickedLanguage.variantLabel ? ` · ${pickedLanguage.variantLabel}` : ""}
-              </Text>
+              <Text style={styles.focusContextText}>{pickedLanguage.name}</Text>
             </View>
-            <Text style={styles.focusPrompt}>Pick a journey</Text>
-            <View style={styles.focusGrid}>
-              {tracksLoading ? (
-                <Text style={styles.focusEmptyText}>
-                  Loading journeys for {pickedLanguage.name}…
-                </Text>
-              ) : visibleTracks.length === 0 ? (
-                <Text style={styles.focusEmptyText}>
-                  No journeys available for {pickedLanguage.name}
-                  {pickedLanguage.variantLabel ? ` (${pickedLanguage.variantLabel})` : ""} yet.
-                </Text>
-              ) : (
-                visibleTracks.map((track) => {
-                  const id = journeyId(
-                    pickedLanguage.name,
-                    track.id,
-                    DEFAULT_NEW_JOURNEY_FOCUS
-                  );
-                  // The journey that already opens this track, if any. The
-                  // id-based check only sees journeys created under the
-                  // current model; `journeyIdByTrack` also covers the older
-                  // ones, which store a region in `variant` instead of the
-                  // track id.
-                  const existingId =
-                    journeyIdByTrack?.[track.id] ?? (existingKeys.has(id) ? id : null);
-                  const alreadyExists = existingId !== null;
-                  const selected = pickedTrackId === track.id;
-                  return (
-                    <Pressable
-                      key={track.id}
-                      onPress={() => {
-                        if (existingId) {
-                          // Tap on an existing combo just activates it.
-                          void onSelect(existingId);
-                          handleClose();
-                          return;
-                        }
-                        setPickedTrackId(track.id);
-                      }}
-                      style={[
-                        styles.focusCard,
-                        selected ? styles.focusCardSelected : null,
-                        alreadyExists ? styles.focusCardDisabled : null,
-                      ]}
-                    >
-                      <View style={styles.focusIconBox}>
-                        <LevelMeter
-                          filled={levelMeterFilled(track.levelCode)}
-                          active={selected}
-                        />
-                      </View>
-                      <View style={{ flex: 1 }}>
-                        <View style={{ flexDirection: "row", alignItems: "center" }}>
-                          <Text style={styles.focusCardTitle}>{track.label}</Text>
-                          {track.variant ? (
-                            <View style={{ marginLeft: 8 }}>
-                              <LanguageFlag
-                                language={pickedLanguage.name}
-                                variant={track.variant}
-                                size={16}
-                              />
-                            </View>
+
+            {tracksLoading ? (
+              <Text style={styles.focusEmptyText}>
+                Loading journeys for {pickedLanguage.name}…
+              </Text>
+            ) : regionGroups.length === 0 ? (
+              <Text style={styles.focusEmptyText}>
+                No journeys available for {pickedLanguage.name}
+                {pickedLanguage.variantLabel ? ` (${pickedLanguage.variantLabel})` : ""} yet.
+              </Text>
+            ) : (
+              regionGroups.map((group) => (
+                <View key={group.key} style={styles.regionBlock}>
+                  <View style={styles.regionHeader}>
+                    <LanguageFlag
+                      language={pickedLanguage.name}
+                      variant={group.variant}
+                      size={20}
+                    />
+                    <Text style={styles.regionName}>{group.label}</Text>
+                  </View>
+
+                  {group.types.map((type) => (
+                  <View key={type.label} style={styles.typeBlock}>
+                  <Text style={styles.typeName}>{type.label.toUpperCase()}</Text>
+                  {type.blurb ? <Text style={styles.typeBlurb}>{type.blurb}</Text> : null}
+                  {type.tracks.map((track) => {
+                    const id = journeyId(
+                      pickedLanguage.name,
+                      track.id,
+                      DEFAULT_NEW_JOURNEY_FOCUS
+                    );
+                    // The journey that already opens this track, if any. The
+                    // id-based check only sees journeys created under the
+                    // current model; `journeyIdByTrack` also covers the older
+                    // ones, which store a region in `variant` instead of the
+                    // track id.
+                    const existingId =
+                      journeyIdByTrack?.[track.id] ?? (existingKeys.has(id) ? id : null);
+                    const alreadyExists = existingId !== null;
+                    const selected = pickedTrackId === track.id;
+                    const recommended =
+                      !alreadyExists &&
+                      placementLevelCode !== null &&
+                      placementLevelCode !== undefined &&
+                      (track.levelCode ?? "").trim().toLowerCase() ===
+                        placementLevelCode.trim().toLowerCase();
+                    const grammar = grammarLine(track.levelCode);
+                    return (
+                      <Pressable
+                        key={track.id}
+                        onPress={() => {
+                          if (existingId) {
+                            // Tap on an existing combo just activates it.
+                            void onSelect(existingId);
+                            handleClose();
+                            return;
+                          }
+                          setPickedTrackId(track.id);
+                        }}
+                        style={[
+                          styles.trackCard,
+                          selected ? styles.trackCardSelected : null,
+                          alreadyExists ? styles.trackCardTaken : null,
+                        ]}
+                      >
+                        {track.coverUrl ? (
+                          <ProgressiveImage
+                            uri={getCoverUrl(track.coverUrl, 256)}
+                            thumbhash={track.coverThumbhash}
+                            style={styles.trackCover}
+                          />
+                        ) : (
+                          <View style={[styles.trackCover, styles.trackCoverFallback]}>
+                            <LanguageFlag
+                              language={pickedLanguage.name}
+                              variant={track.variant}
+                              size={24}
+                            />
+                          </View>
+                        )}
+                        <View style={styles.trackBody}>
+                          <Text style={styles.trackLevel} numberOfLines={1}>
+                            {track.levelLabel ?? track.label}
+                          </Text>
+                          {grammar ? (
+                            <Text style={styles.trackBlurb} numberOfLines={2}>
+                              {grammar}
+                            </Text>
                           ) : null}
                         </View>
-                        {(() => {
-                          // Región junto al nivel para distinguir tracks del mismo
-                          // nombre (Traveler LATAM vs Traveler Mexico). La bandera
-                          // arriba da la señal visual; el texto la nombra.
-                          const region = formatVariantLabel(track.variant);
-                          const hint = [track.levelLabel, region]
-                            .filter(Boolean)
-                            .join("  ·  ");
-                          return hint ? (
-                            <Text style={styles.focusCardHint}>{hint}</Text>
-                          ) : null;
-                        })()}
-                      </View>
-                      {alreadyExists ? (
-                        <Text style={styles.alreadyText}>Already started ›</Text>
-                      ) : selected ? (
-                        <Feather name="check" size={18} color={tokenColor.xp} />
-                      ) : null}
-                    </Pressable>
-                  );
-                })
-              )}
-            </View>
+                        {alreadyExists ? (
+                          <Text style={styles.trackTaken}>Added</Text>
+                        ) : recommended ? (
+                          <Text style={styles.trackForYou}>FOR YOU</Text>
+                        ) : selected ? (
+                          <Feather name="check" size={18} color={tokenColor.xp} />
+                        ) : null}
+                      </Pressable>
+                    );
+                  })}
+                  </View>
+                  ))}
+                </View>
+              ))
+            )}
           </ScrollView>
         ) : null}
 
@@ -579,8 +709,15 @@ export function JourneysPanel({
                 !pickedTrackId || submitting ? styles.startButtonDisabled : null,
               ]}
             >
-              <Text style={styles.startButtonText}>
-                {submitting ? "Adding…" : "Add journey"}
+              <Text style={styles.startButtonText} numberOfLines={1}>
+                {submitting
+                  ? "Adding…"
+                  : selectedTrack
+                    ? // Sin la region delante: "Add Latin America ·
+                      // Pre-Intermediate (A2)" no cabe en el boton, y la
+                      // region ya esta en la cabecera de arriba.
+                      `Add ${selectedTrack.levelLabel ?? selectedTrack.label}`
+                    : "Add journey"}
               </Text>
               <Feather name="arrow-right" size={18} color={tokenBg[1]} />
             </Pressable>
@@ -748,62 +885,96 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "900",
   },
-  focusPrompt: {
-    color: "#ffffff",
-    fontSize: 22,
-    fontWeight: "900",
-    letterSpacing: -0.5,
-    marginTop: 8,
+  typeBlock: {
     marginBottom: 4,
   },
-  focusGrid: {
-    gap: 10,
+  typeName: {
+    color: tokenColor.cyan,
+    fontSize: 11,
+    fontWeight: "900",
+    letterSpacing: 0.6,
+    marginTop: 10,
   },
-  focusCard: {
+  typeBlurb: {
+    color: "rgba(255,255,255,0.45)",
+    fontSize: 11,
+    fontWeight: "700",
+    marginTop: 2,
+    marginBottom: 8,
+  },
+  trackCard: {
     flexDirection: "row",
     alignItems: "center",
     gap: 12,
-    padding: 14,
-    borderRadius: 18,
-    borderWidth: 1.5,
-    borderColor: "rgba(255,255,255,0.1)",
-    backgroundColor: "rgba(255,255,255,0.035)",
+    padding: 8,
+    borderRadius: 14,
+    marginBottom: 8,
+    backgroundColor: "rgba(255,255,255,0.05)",
+    borderWidth: 2,
+    borderColor: "transparent",
   },
-  focusCardSelected: {
-    borderColor: "rgba(252, 211, 77, 0.5)",
-    backgroundColor: "rgba(252, 211, 77, 0.08)",
+  trackCardSelected: {
+    borderColor: tokenColor.cyan,
+    backgroundColor: "rgba(125,211,252,0.10)",
   },
-  focusCardDisabled: {
+  trackCardTaken: {
     opacity: 0.55,
   },
-  focusIconBox: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
+  // Cuadrada. La portada nace en 3:4 y a 52 de ancho el arte quedaba en una
+  // tira estrecha; recortada al centro y a 68 de lado se ve la escena, que es
+  // lo que distingue un journey de otro. La altura de la fila no cambia.
+  trackCover: {
+    width: 68,
+    height: 68,
+    borderRadius: 10,
+  },
+  trackCoverFallback: {
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(125, 211, 252, 0.14)",
+    backgroundColor: "rgba(125,211,252,0.10)",
   },
-  levelMeter: {
-    flexDirection: "row",
-    alignItems: "flex-end",
-    gap: 3,
-    height: 19,
+  trackBody: {
+    flex: 1,
+    minWidth: 0,
   },
-  levelMeterBar: {
-    width: 5,
-    borderRadius: 2,
-  },
-  focusCardTitle: {
+  trackLevel: {
     color: "#ffffff",
     fontSize: 15,
     fontWeight: "900",
+    letterSpacing: -0.2,
   },
-  focusCardHint: {
-    color: "rgba(255,255,255,0.55)",
-    fontSize: 12,
+  trackBlurb: {
+    color: "rgba(255,255,255,0.45)",
+    fontSize: 11,
     fontWeight: "700",
-    marginTop: 2,
+    marginTop: 4,
+  },
+  trackForYou: {
+    color: tokenColor.cyan,
+    fontSize: 10,
+    fontWeight: "900",
+    letterSpacing: 0.3,
+  },
+  trackTaken: {
+    color: "rgba(255,255,255,0.45)",
+    fontSize: 11,
+    fontWeight: "800",
+  },
+  regionBlock: {
+    marginTop: 18,
+  },
+  regionHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    marginBottom: 8,
+    paddingHorizontal: 2,
+  },
+  regionName: {
+    color: "#ffffff",
+    fontSize: 14,
+    fontWeight: "900",
+    letterSpacing: -0.2,
   },
   focusEmptyText: {
     color: "rgba(255,255,255,0.55)",
@@ -811,11 +982,6 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     paddingVertical: 18,
     textAlign: "center",
-  },
-  alreadyText: {
-    color: "rgba(255,255,255,0.55)",
-    fontSize: 11,
-    fontWeight: "800",
   },
   footer: {
     paddingHorizontal: 18,

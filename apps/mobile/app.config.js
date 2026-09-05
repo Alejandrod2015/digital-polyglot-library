@@ -140,7 +140,14 @@ const config = {
     // `autoIncrement: true` NO funciona aquí porque EAS no muta JS.
     // Bumpear manualmente cada release a (max submitted on App Store
     // Connect) + 1.
-    buildNumber: "315",
+    //
+    // El 315 ya estaba SUBIDO a App Store Connect cuando EAS todavia lo
+    // daba por libre: `eas build:list` solo ve lo que sale de EAS, y
+    // Apple cuenta todo lo que ha entrado, venga de donde venga. Nueve
+    // envios murieron ahi con un "something went wrong" sin motivo; el
+    // motivo salio con `xcrun altool --validate-app`, que dice
+    // previousBundleVersion 315. La fuente de verdad es Apple.
+    buildNumber: "316",
     infoPlist: {
       ITSAppUsesNonExemptEncryption: false,
       // Background audio: story playback keeps sounding when the app is
