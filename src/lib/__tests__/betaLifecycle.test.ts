@@ -79,3 +79,37 @@ describe("decideBetaEmail: las peticiones van por uso, no por calendario", () =>
     expect(d).toBeNull();
   });
 });
+
+// El caso de Tom, 2026-09-05: aceptado a las 10:24, encuesta de cierre a las
+// 11:00, respuesta "Not used it yet". La ventana miraba la fecha y nada más.
+describe("decideBetaEmail: la encuesta final tambien pide haber usado la app", () => {
+  const cerrando = { ...rules, betaEndsAt: "2026-09-08T00:00:00.000Z" };
+
+  function enCierre(args: { daysIn: number; stories: number; exercises: number }) {
+    return decideBetaEmail({
+      tester: tester(args.daysIn),
+      now: NOW,
+      rules: cerrando,
+      finalRating: null,
+      storiesFinished: args.stories,
+      exercisesFinished: args.exercises,
+      alreadySent: new Set(),
+    });
+  }
+
+  it("no le llega a quien entro hoy y no ha abierto nada", () => {
+    expect(enCierre({ daysIn: 0, stories: 0, exercises: 0 })).toBeNull();
+  });
+
+  it("tampoco a quien lleva semanas sin terminar una historia", () => {
+    expect(enCierre({ daysIn: 25, stories: 0, exercises: 0 })?.kind).toBe("stuck_ask");
+  });
+
+  it("le llega a quien si la ha usado", () => {
+    expect(enCierre({ daysIn: 12, stories: 4, exercises: 3 })?.kind).toBe("final_survey");
+  });
+
+  it("y gana a la de mitad, que es lo que hace la semana de cierre", () => {
+    expect(enCierre({ daysIn: 12, stories: 4, exercises: 3 })?.kind).not.toBe("mid_survey");
+  });
+});

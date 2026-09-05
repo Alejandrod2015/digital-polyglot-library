@@ -107,19 +107,27 @@ export function decideBetaEmail(args: {
   // Everything below is for testers who are actually in.
   if (tester.status !== "accepted") return null;
 
-  // ── Closing week: the final survey outranks the routine schedule. ──
+  const tenure = daysSince(tester.planGrantedAt ?? tester.invitedAt, now);
+  if (tenure === null) return null;
+
+  // ── Closing week: the final survey outranks the routine schedule, pero pide
+  // opinión como las otras dos, así que pasa por la misma puerta. El 2026-09-05
+  // un tester aceptado a las 10:24 recibió a las 11:00 "the beta is closing,
+  // last ask" y contestó lo único que podía, "Not used it yet". La ventana solo
+  // miraba la fecha de cierre, y la petición es de un solo disparo: esa persona
+  // se quedaba sin turno para cuando tuviera algo que decir. ──
   const untilEnd = daysUntil(rules.betaEndsAt, now);
   if (
     untilEnd !== null &&
     untilEnd <= rules.finalSurveyBeforeEndDays &&
     untilEnd >= -14 &&
+    storiesFinished >= rules.feedbackAskMinStories &&
+    exercisesFinished >= rules.feedbackAskMinExercises &&
+    tenure >= rules.feedbackAskAfterDays &&
     not("final_survey")
   ) {
     return { kind: "final_survey" };
   }
-
-  const tenure = daysSince(tester.planGrantedAt ?? tester.invitedAt, now);
-  if (tenure === null) return null;
 
   // Estos dos piden una OPINIÓN, y sólo puede opinar quien ha usado esto. El
   // resto del calendario va por antigüedad porque son avisos; estos no.
