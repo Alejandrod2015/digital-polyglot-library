@@ -462,6 +462,8 @@ enum BillingSource {
   stripe
   google_play
   app_store
+  // Cortesia sin pago (grupo insider): premium mientras la fila exista.
+  comp
 }
 
 enum BillingStatus {
