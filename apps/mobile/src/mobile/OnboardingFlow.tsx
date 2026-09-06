@@ -113,7 +113,6 @@ type LanguageOption = {
    *  preferredVariant on commit. Only set when the language has more
    *  than one regional flag in the picker (today: English us|uk). */
   variantCode?: string;
-  learners: string;
 };
 
 const LANGUAGE_OPTIONS: LanguageOption[] = [
@@ -123,30 +122,26 @@ const LANGUAGE_OPTIONS: LanguageOption[] = [
   // for LATAM because its tricolor doesn't visually clash with any
   // other flag in our set (vs. Mexico's green-white-red, which is
   // indistinguishable from Italy at coin scale).
-  // `learners` is the row subtitle. It is an honest variant/region
-  // descriptor only; never a fabricated learner/speaker count. Empty
-  // string = no subtitle (the COMING SOON / variant badge carries the
-  // context on its own).
-  { key: "Spanish|es", name: "Spanish", variantLabel: "SPAIN", variantCode: "es", learners: "Castilian Spanish" },
-  { key: "Spanish|latam", name: "Spanish", variantLabel: "LATAM", variantCode: "latam", learners: "Latin American Spanish" },
-  { key: "French", name: "French", learners: "" },
-  { key: "German", name: "German", learners: "" },
-  { key: "Italian", name: "Italian", learners: "" },
+  { key: "Spanish|es", name: "Spanish", variantLabel: "SPAIN", variantCode: "es" },
+  { key: "Spanish|latam", name: "Spanish", variantLabel: "LATAM", variantCode: "latam" },
+  { key: "French", name: "French" },
+  { key: "German", name: "German" },
+  { key: "Italian", name: "Italian" },
   // Portuguese: Brazilian (green field + yellow rhombus + blue circle)
   // is the default, European is the alternative.
-  { key: "Portuguese|br", name: "Portuguese", variantLabel: "BRAZIL", variantCode: "br", learners: "Brazilian Portuguese" },
-  { key: "Portuguese|pt", name: "Portuguese", variantLabel: "PORTUGAL", variantCode: "pt", learners: "European Portuguese" },
-  { key: "Japanese", name: "Japanese", learners: "" },
-  { key: "Korean", name: "Korean", learners: "" },
+  { key: "Portuguese|br", name: "Portuguese", variantLabel: "BRAZIL", variantCode: "br" },
+  { key: "Portuguese|pt", name: "Portuguese", variantLabel: "PORTUGAL", variantCode: "pt" },
+  { key: "Japanese", name: "Japanese" },
+  { key: "Korean", name: "Korean" },
   // Chinese added in build 68; was previously only listed in the
   // Add-journey panel, never in onboarding. Now consistent across
   // both entry points.
-  { key: "Chinese", name: "Chinese", learners: "Mandarin" },
+  { key: "Chinese", name: "Chinese" },
   // English ships two regional flags so users can pick the variant
   // that matches their target audience (US business English vs.
   // UK / Commonwealth English).
-  { key: "English|us", name: "English", variantLabel: "US", variantCode: "us", learners: "American English" },
-  { key: "English|uk", name: "English", variantLabel: "UK", variantCode: "uk", learners: "Commonwealth English" },
+  { key: "English|us", name: "English", variantLabel: "US", variantCode: "us" },
+  { key: "English|uk", name: "English", variantLabel: "UK", variantCode: "uk" },
 ];
 
 type WhyOption = {
@@ -544,9 +539,6 @@ export function OnboardingFlow({
                           </View>
                         ) : null}
                       </View>
-                      {option.learners ? (
-                        <Text style={styles.languageHint}>{option.learners}</Text>
-                      ) : null}
                     </View>
                     <View
                       style={[
@@ -1005,12 +997,6 @@ const styles = StyleSheet.create({
     fontSize: 9,
     fontWeight: "900",
     letterSpacing: 1.2,
-  },
-  languageHint: {
-    color: "rgba(255,255,255,0.5)",
-    fontSize: 12,
-    fontWeight: "700",
-    marginTop: 2,
   },
   radio: {
     width: 24,
