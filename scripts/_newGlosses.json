@@ -751,6 +751,250 @@
   "fixa": {
    "g": "Fixed, always the same from now on (fixo).",
    "t": "adjective"
+  },
+  "cais": {
+   "g": "The stone edge of the town where boats tie up.",
+   "t": "noun"
+  },
+  "pesca": {
+   "g": "Fishes, catches fish (pescar); here before dawn.",
+   "t": "verb"
+  },
+  "ilhas": {
+   "g": "Islands, the land out in the bay (ilha).",
+   "t": "noun"
+  },
+  "vaga": {
+   "g": "A free place, one more seat on the boat.",
+   "t": "noun"
+  },
+  "maresia": {
+   "g": "The salt smell the sea leaves on everything near it.",
+   "t": "noun"
+  },
+  "casco": {
+   "g": "The body of a boat, the part in the water.",
+   "t": "noun"
+  },
+  "encostado": {
+   "g": "Leaning against the pier, resting there and still.",
+   "t": "adjective"
+  },
+  "píer": {
+   "g": "Wooden walkway going out over the water.",
+   "t": "noun"
+  },
+  "cabo": {
+   "g": "Thick rope that holds a boat against the pier.",
+   "t": "noun"
+  },
+  "range": {
+   "g": "Makes a dry rubbing noise (ranger).",
+   "t": "verb"
+  },
+  "calcula": {
+   "g": "Works the numbers out in her head (calcular).",
+   "t": "verb"
+  },
+  "carona": {
+   "g": "A free ride somebody gives you in their boat or car.",
+   "t": "noun"
+  },
+  "enrolando": {
+   "g": "Winding the rope into a coil (enrolar).",
+   "t": "verb"
+  },
+  "âncora": {
+   "g": "Heavy metal hook that holds a boat in one place.",
+   "t": "noun"
+  },
+  "incomodada": {
+   "g": "Uneasy, not comfortable with what just happened.",
+   "t": "adjective"
+  },
+  "travessia": {
+   "g": "The crossing from one shore over to the other.",
+   "t": "noun"
+  },
+  "boia": {
+   "g": "Floating marker showing where the deep water runs.",
+   "t": "noun"
+  },
+  "queixo": {
+   "g": "Chin, used here instead of pointing a finger.",
+   "t": "noun"
+  },
+  "trajeto": {
+   "g": "The way taken from one place to another.",
+   "t": "noun"
+  },
+  "encurta": {
+   "g": "Makes it shorter (encurtar), here the crossing.",
+   "t": "verb"
+  },
+  "dobrados": {
+   "g": "Folded over, the notes kept in a pocket (dobrado).",
+   "t": "adjective"
+  },
+  "canal": {
+   "g": "Channel of water, what the street becomes at high tide.",
+   "t": "noun"
+  },
+  "limo": {
+   "g": "Green slime the water leaves on stone and wood.",
+   "t": "noun"
+  },
+  "ontem": {
+   "g": "Yesterday, the day just before today.",
+   "t": "adverb"
+  },
+  "peguei": {
+   "g": "I caught it (pegar); here, a fish.",
+   "t": "verb"
+  },
+  "robalo": {
+   "g": "Sea bass, the fish these boats bring in at dawn.",
+   "t": "noun"
+  },
+  "venda": {
+   "g": "Small corner shop that sells a bit of everything.",
+   "t": "noun"
+  },
+  "assiste": {
+   "g": "Watches without joining in (assistir).",
+   "t": "verb"
+  },
+  "derrotada": {
+   "g": "Beaten, having given up trying to win (derrotado).",
+   "t": "adjective"
+  },
+  "favor": {
+   "g": "Something helpful done with nothing asked back.",
+   "t": "noun"
+  },
+  "devolver": {
+   "g": "To give a thing back to the person it came from.",
+   "t": "verb"
+  },
+  "presente": {
+   "g": "Something given without being paid for.",
+   "t": "noun"
+  },
+  "retribui": {
+   "g": "Pays a favour back with another favour (retribuir).",
+   "t": "verb"
+  },
+  "esquecer": {
+   "g": "To stop having a thing in your mind at all.",
+   "t": "verb"
+  },
+  "esquece": {
+   "g": "Forgets it (esquecer); here, nobody does.",
+   "t": "verb"
+  },
+  "gentileza": {
+   "g": "A kind act done with nothing asked back.",
+   "t": "noun"
+  },
+  "pescador": {
+   "g": "Man who lives by catching fish from a small boat.",
+   "t": "noun"
+  },
+  "apelido": {
+   "g": "Short name friends use instead of the real one.",
+   "t": "noun"
+  },
+  "rotina": {
+   "g": "The same thing happening again at the same hours.",
+   "t": "noun"
+  },
+  "cobrança": {
+   "g": "Asking somebody for the money that they owe.",
+   "t": "noun"
+  },
+  "deve": {
+   "g": "Owes it still, has not given it back (dever).",
+   "t": "verb"
+  },
+  "esfria": {
+   "g": "Gets cold, the way coffee does when left (esfriar).",
+   "t": "verb"
+  },
+  "torrado": {
+   "g": "Toasted, browned by heat until it is crisp.",
+   "t": "adjective"
+  },
+  "movimento": {
+   "g": "How many customers come into a shop or a hotel.",
+   "t": "noun"
+  },
+  "fraco": {
+   "g": "Weak, with far fewer people than usual.",
+   "t": "adjective"
+  },
+  "maio": {
+   "g": "May, a quiet month between the busy seasons.",
+   "t": "noun"
+  },
+  "planilha": {
+   "g": "Sheet of rows and numbers used to track the money.",
+   "t": "noun"
+  },
+  "ilha": {
+   "g": "Island, the land people cross the bay to reach.",
+   "t": "noun"
+  },
+  "marmita": {
+   "g": "Packed lunch carried in a tin or plastic box.",
+   "t": "noun"
+  },
+  "sublinha": {
+   "g": "Draws a line under it so it stands out (sublinhar).",
+   "t": "verb"
+  },
+  "reserva": {
+   "g": "A place kept for somebody in advance.",
+   "t": "noun"
+  },
+  "falha": {
+   "g": "Lets somebody down, does not turn up (falhar).",
+   "t": "verb"
+  },
+  "compromisso": {
+   "g": "Something promised for an agreed time.",
+   "t": "noun"
+  },
+  "ganho": {
+   "g": "I get in return (ganhar); here, nothing.",
+   "t": "verb"
+  },
+  "caderno": {
+   "g": "Notebook with lined pages for writing things down.",
+   "t": "noun"
+  },
+  "açougueiro": {
+   "g": "The man who cuts and sells the meat in town.",
+   "t": "noun"
+  },
+  "embarque": {
+   "g": "The moment when passengers get onto the plane.",
+   "t": "noun"
+  },
+  "mensagem": {
+   "g": "Short written message sent from one phone to another.",
+   "t": "noun"
+  },
+  "curta": {
+   "g": "Short, said of an answer with very few words.",
+   "t": "adjective"
+  },
+  "pago": {
+   "g": "Paid, settled; here the debt is over.",
+   "t": "adjective"
+  },
+  "sublinhado": {
+   "g": "Underlined, with a line drawn under it.",
+   "t": "adjective"
   }
  }
 }

@@ -170,6 +170,16 @@ export const PORTUGUESE_B1_LEMMAS: ReadonlySet<string> = new Set([
   "tabela","balanca","balança","excesso","despachar","alca","alça","barbante","etiqueta",
   "peso","sacola","esteira","fome","escrito","talher","lacre","volume","franquia","poltrona","tabuleiro","fatia","informar","despacho","importar","ligar","baixar","prateleira","fumaca","fumaça","brasa","tampinha","palavra",
 
+
+  // Quinta tanda, 2026-09-06, tema 4 (Paraty). Mar, marea y el favor que no se
+  // paga con dinero. Mismo criterio: salieron de la escena y son de temario B1.
+  "cais","pier","píer","travessia","enrolar","ranger","calcular","encostado",
+  "ilha","devolver","retribuir","dobrado","assistir","derrotado","presente",
+  "favor","venda","sublinhar","movimento","fraco","embarque","mensagem",
+  "carona","corda","remo","ancora","âncora","boia","leme","casco","maresia","atracar","zarpar","cabo",
+  "incomodado","aliviado","recado","gentileza","planilha","acougueiro","açougueiro","robalo","marmita","caderno",
+  "secar","derrotado","correnteza","queixo","ombro","beira","troca","cobranca","cobrança","pescador","apelido","canal","limo","torrado","esquecer","atravessar","falhar","compromisso",
+
   // Expressoes coloquiais correntes no Brasil
   "dar certo","dar errado","dar um jeito","valer a pena","fazer questao",
   "ter razao","tomar cuidado","prestar atencao","ficar de olho","perder a hora",
