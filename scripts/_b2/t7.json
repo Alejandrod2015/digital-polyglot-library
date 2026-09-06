@@ -6,7 +6,7 @@
     "slug": "pescados-de-dos-metros",
     "arcType": "juxtaposition-discovery",
     "synopsis": "Every evening the porch of Ofelia's guesthouse in Aracataca fills with backpackers, and Baldomero tells them about the two-metre fish of the marsh. Ofelia corrects him with the exact figures, the travellers keep buying the tale anyway, and the evening ends with a bet that costs the storyteller his roofed corner.",
-    "text": "Una tarde cualquiera, el corredor se llena solo: mochileros, guarapo frío con hielo y Baldomero en la mecedora.\n\nLos de afuera se acomodan.\n\nBaldomero es el cuentero de Aracataca, Colombia, y presume de cuarenta años agrandando el pueblo. Quien lleva el orden es Ofelia, dueña del hospedaje: saca la cuenta de todo, paciencia en otra parte, y con los cuentos no hace la vista gorda.\n\n“De la ciénaga sacaban pescados gigantes, de dos metros”, arranca él. “Los cargaban entre cuatro, y camarón de a libra.”\n\n“De medio metro”, corrige Ofelia, como si nada. “Medio metro, y gracias.”\n\n“Por eso el cuento no es suyo”, contesta Baldomero, y agranda el pescado medio metro más, mirándola.\n\nLos mochileros se ríen y piden ronda: nadie viaja hasta acá por medio metro de pescado. La verdad vende menos que el guarapo.\n\n“Apostemos: vamos a subir la apuesta”, dice Ofelia. “La historia que salga cierta le abre el de adentro. Mientras tanto, me cuenta afuera.”\n\n“Trato hecho”, dice él, sin saber qué firma.\n\nEsa noche cuenta desde el andén, sin techo, libreta en rodilla. Echar carreta afuera también es arte; el cielo no avisa.",
+    "text": "Una tarde cualquiera, el corredor se llena solo: mochileros, guarapo frío con hielo y Baldomero en la mecedora.\n\nLos de afuera se acomodan.\n\nBaldomero es el cuentero de Aracataca, Colombia, y presume de cuarenta años agrandando el pueblo. Quien lleva el orden es Ofelia, dueña del hospedaje: saca la cuenta de todo, paciencia en otra parte, y con los cuentos no hace la vista gorda.\n\n“De la ciénaga sacaban pescados gigantes, de dos metros”, arranca él. “Los cargaban entre cuatro, y camarón de a libra.”\n\n“De medio metro”, corrige Ofelia, como si nada. “Medio metro, y gracias.”\n\n“Por eso el cuento no es suyo”, contesta Baldomero, y agranda el pescado medio metro más, mirándola.\n\nLos mochileros se ríen y piden ronda: nadie viaja hasta acá por medio metro de pescado. La verdad vende menos que el guarapo.\n\n“Vamos a subir la apuesta”, dice Ofelia. “La historia que salga cierta le abre el de adentro. Mientras tanto, me cuenta afuera.”\n\n“Apostado”, dice él, sin saber qué firma.\n\nEsa noche cuenta desde el andén, sin techo, libreta en rodilla. Echar carreta afuera también es arte; el cielo no avisa.",
     "vocab": [
       {
         "word": "cuentero",
@@ -82,7 +82,7 @@
       },
       {
         "word": "apostar",
-        "surface": "Apostemos",
+        "surface": "Apostado",
         "type": "verb",
         "definition": "To bet, put something at stake on a result."
       },
