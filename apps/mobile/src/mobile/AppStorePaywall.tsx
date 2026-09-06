@@ -70,8 +70,20 @@ type PlanOption = {
   key: string;
   title: string;
   price: string;
+  /** "7 days free" cuando la suscripcion lleva un introductory offer gratuito. */
+  trial: string | null;
   buy: () => void;
 };
+
+/** "P1W" / unit+count -> "7 days free". Null cuando no hay trial gratuito. */
+function freeTrialLabel(unit: string | null | undefined, count: number): string | null {
+  if (!unit) return null;
+  const days = unit === "day" ? count : unit === "week" ? count * 7 : null;
+  if (days) return `${days} days free`;
+  if (unit === "month") return `${count} month${count > 1 ? "s" : ""} free`;
+  if (unit === "year") return `${count} year${count > 1 ? "s" : ""} free`;
+  return null;
+}
 
 type Props = {
   visible: boolean;
@@ -173,10 +185,23 @@ export function AppStorePaywall({ visible, onClose, apiBaseUrl, sessionToken, on
         // One entry per base plan; skip promo offers layered on the same plan.
         if (!basePlanId || !offerToken || seen.has(basePlanId)) continue;
         seen.add(basePlanId);
+        // Fase gratuita del offer de Play (priceAmountMicros "0"), si existe.
+        // billingPeriod viene en ISO 8601 ("P1W").
+        const freePhase = offer.pricingPhasesAndroid?.pricingPhaseList?.find(
+          (phase) => phase.priceAmountMicros === "0"
+        );
+        const freeMatch = freePhase ? /^P(\d+)([DWMY])$/.exec(freePhase.billingPeriod ?? "") : null;
+        const androidTrial = freeMatch
+          ? freeTrialLabel(
+              { D: "day", W: "week", M: "month", Y: "year" }[freeMatch[2] as "D" | "W" | "M" | "Y"],
+              Number(freeMatch[1]) || 1
+            )
+          : null;
         out.push({
           key: offer.id,
           title: periodLabel(offer.period?.unit, offer.period?.value) ?? basePlanId,
           price: offer.displayPrice,
+          trial: androidTrial,
           buy: () =>
             startPurchase(() =>
               void requestPurchase({
@@ -201,6 +226,13 @@ export function AppStorePaywall({ visible, onClose, apiBaseUrl, sessionToken, on
         key: sub.id,
         title: IOS_SKU_TITLES[sub.id] ?? sub.title ?? sub.id,
         price: sub.displayPrice,
+        trial:
+          sub.platform === "ios" && sub.introductoryPricePaymentModeIOS === "free-trial"
+            ? freeTrialLabel(
+                sub.introductoryPriceSubscriptionPeriodIOS,
+                Number(sub.introductoryPriceNumberOfPeriodsIOS ?? "1") || 1
+              )
+            : null,
         buy: () => startPurchase(() => void requestPurchase({ request: { ios: { sku: sub.id } }, type: "subs" })),
       }));
   }, [subscriptions, requestPurchase, startPurchase]);
@@ -248,7 +280,12 @@ export function AppStorePaywall({ visible, onClose, apiBaseUrl, sessionToken, on
                 >
                   <View style={styles.planText}>
                     <Text style={styles.planTitle}>{opt.title}</Text>
-                    <Text style={styles.planPrice}>{opt.price}</Text>
+                    {opt.trial ? (
+                      <Text style={styles.planTrial}>{opt.trial}</Text>
+                    ) : null}
+                    <Text style={styles.planPrice}>
+                      {opt.trial ? `then ${opt.price}` : opt.price}
+                    </Text>
                   </View>
                   <Text style={styles.planCta}>{busy ? "…" : "Choose"}</Text>
                 </Pressable>
@@ -317,6 +354,7 @@ const styles = StyleSheet.create({
   disabled: { opacity: 0.5 },
   planText: { gap: 2 },
   planTitle: { color: "#fff", fontSize: 16, fontWeight: "700" },
+  planTrial: { color: "#f8c15c", fontSize: 14, fontWeight: "700" },
   planPrice: { color: "rgba(255,255,255,0.7)", fontSize: 14 },
   planCta: { color: "#f8c15c", fontSize: 15, fontWeight: "800" },
   error: { color: "#fca5a5", fontSize: 13 },
