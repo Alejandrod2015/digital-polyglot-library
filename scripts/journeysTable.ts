@@ -13,6 +13,7 @@
  *   npx tsx scripts/journeysTable.ts --journey <id>    uno, por temas y por historias
  *   npx tsx scripts/journeysTable.ts --archived        incluye los archivados
  *   npx tsx scripts/journeysTable.ts --language portugues   solo ese idioma
+ *   npx tsx scripts/journeysTable.ts --crudo           la linea de barras de antes
  *
  * Columnas (catálogo): Estado | Journey | Idioma/Variante | Nivel | Estructura |
  *           Estilo | %Citado | No nativos | Voz narrador | Voz práctica |
@@ -178,6 +179,50 @@ const mode = (arr: (string | null)[]) => {
   return [...m.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? null;
 };
 
+type Cat = {
+  est: string; journey: string; idioma: string; nivel: string; estructura: string;
+  estilo: string; citado: string; noNativos: number; hist: string; narr: number;
+  covers: number; ambient: string; clips: number; vozNarrador: string; vozPractica: string;
+};
+
+/**
+ * COMO SE IMPRIME LA TABLA (2026-09-06). Quince columnas separadas por barras,
+ * sin alinear, se leen fatal: en el chat del usuario la fila se parte por donde
+ * cabe y las cabeceras dejan de estar encima de sus datos. Literal suyo: "esa
+ * es una mierda, a partir de ahora esta prohibido que me des una tabla asi".
+ *
+ * No se pierde ni una columna, se reparten en dos cuadros de markdown, que es
+ * lo que su cliente sabe pintar (las tablas por journey de este mismo fichero
+ * ya iban en markdown; la del catalogo se habia quedado atras):
+ *
+ *   1. CATALOGO: donde esta cada journey (estado, nivel y cuanto lleva hecho).
+ *   2. FORMA Y VOCES: como esta hecho (estructura, estilo, ambient, voces),
+ *      que es donde viven las cadenas largas que reventaban el ancho.
+ *
+ * `--crudo` devuelve la linea de barras de antes, para cuando algo la parsee.
+ */
+function imprimirCatalogo(filas: Cat[]): void {
+  if (flag("crudo")) {
+    console.log("Estado|Journey|Idioma/Var|Nivel|Estructura|Estilo|%Citado|NoNativos|Voz narrador|Voz práctica|Hist.pub|Narr|Covers|Ambient|Clips");
+    for (const f of filas)
+      console.log(`${f.est}|${f.journey}|${f.idioma}|${f.nivel}|${f.estructura}|${f.estilo}|${f.citado}|${f.noNativos}|${f.vozNarrador}|${f.vozPractica}|${f.hist}|${f.narr}|${f.covers}|${f.ambient}|${f.clips}`);
+    return;
+  }
+  if (!filas.length) return;
+
+  console.log("\n**Catálogo**\n");
+  console.log("| Estado | Journey | Idioma/Variante | Nivel | Historias | Narr | Portadas | Clips | % citado |");
+  console.log("|---|---|---|---|---|---|---|---|---|");
+  for (const f of filas)
+    console.log(`| ${f.est} | ${f.journey} | ${f.idioma} | ${f.nivel} | ${f.hist} | ${f.narr} | ${f.covers} | ${f.clips} | ${f.citado} |`);
+
+  console.log("\n**Forma y voces**\n");
+  console.log("| Journey | Idioma/Variante | Nivel | Estructura | Estilo | Ambient | No nativos | Voz narrador | Voz práctica |");
+  console.log("|---|---|---|---|---|---|---|---|---|");
+  for (const f of filas)
+    console.log(`| ${f.journey} | ${f.idioma} | ${f.nivel} | ${f.estructura} | ${f.estilo} | ${f.ambient} | ${f.noNativos} | ${f.vozNarrador} | ${f.vozPractica} |`);
+}
+
 async function main() {
   const js = await p.journey.findMany({
     where: { status: { in: ESTADOS() }, ...filtroIdioma() }, // live + draft; archived solo con --archived
@@ -204,8 +249,8 @@ async function main() {
   if (idioma && js.length === 0) {
     console.log(`(ningun journey live ni draft en ${idioma})`);
   }
-  console.log("Estado|Journey|Idioma/Var|Nivel|Estructura|Estilo|%Citado|NoNativos|Voz narrador|Voz práctica|Hist.pub|Narr|Covers|Ambient|Clips");
   const notas: string[] = [];
+  const filasCat: Cat[] = [];
   for (const j of js) {
     const S = j.stories;
     const pub = S.filter((s) => s.status === "published").length;
@@ -235,8 +280,16 @@ async function main() {
     // El estado desempata las dos filas que comparten tipo, idioma, variante y
     // nivel (los dos Expat alemanes C1: Berlín live, Hamburgo draft).
     if (nn.n) notas.push(`${est} ${j.name} ${j.language}/${j.variant} ${j.levels.join("/")}: ${nn.who}`);
-    console.log(`${est}|${j.name}|${j.language}/${j.variant}|${j.levels.join("/") || "-"}|${estructura}|${estilo}|${citado}|${nn.n}|${vname(mode(S.map((s) => s.voiceId)))}|${vname(mode(S.map((s) => s.practiceVoiceId)))}|${pub}/${S.length}|${narr}|${cov}|${amb}/${S.length}|${clips}`);
+    filasCat.push({
+      est, journey: j.name, idioma: `${j.language}/${j.variant}`,
+      nivel: j.levels.join("/") || "-", estructura, estilo, citado,
+      noNativos: nn.n, hist: `${pub}/${S.length}`, narr, covers: cov,
+      ambient: `${amb}/${S.length}`, clips,
+      vozNarrador: vname(mode(S.map((s) => s.voiceId))),
+      vozPractica: vname(mode(S.map((s) => s.practiceVoiceId))),
+    });
   }
+  imprimirCatalogo(filasCat);
   if (notas.length) {
     console.log(`\nNo nativos (regla dura: el objetivo es 0). Quiénes son:`);
     for (const n of notas) console.log(`  - ${n}`);

@@ -624,7 +624,7 @@
       "id": "feedback_journey_status_table",
       "domain": "cover",
       "rule": "\"Tabla de journeys = correr scripts/journeysTable.ts. Columnas canónicas (2026-08-17): Estado|Journey|Idioma/Var|Nivel|Estilo(narrador/multivoz)|%Citado|No nativos|Voz narrador|Voz práctica|Hist.pu...",
-      "gate": "none",
+      "gate": "scripts/journeysTable.ts",
       "source": "memory:feedback_journey_status_table.md"
     },
     {
@@ -1100,7 +1100,7 @@
       "id": "feedback_dont_chain_new_suggestions",
       "domain": "process",
       "rule": "\"Cerrar con una recomendación no obliga a inventar una; si lo que queda no rompe nada, decir que no queda nada y parar\"",
-      "gate": "none",
+      "gate": "process",
       "source": "memory:feedback_dont_chain_new_suggestions.md"
     },
     {
@@ -1940,7 +1940,7 @@
       "id": "project_tap_glosses_contract",
       "domain": "vocab",
       "rule": "Convención de redacción de las glosas del lookup y el guard que impide que se queden atrás",
-      "gate": "none",
+      "gate": "scripts/checkGlossVariants.ts",
       "source": "memory:project_tap_glosses_contract.md"
     },
     {
