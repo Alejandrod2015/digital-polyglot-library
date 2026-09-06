@@ -467,6 +467,290 @@
   "junho": {
    "g": "June, the middle of the southern winter.",
    "t": "noun"
+  },
+  "serra": {
+   "g": "The cold hill country away from the coast.",
+   "t": "noun"
+  },
+  "recebe": {
+   "g": "Receives, welcomes someone in (receber).",
+   "t": "verb"
+  },
+  "pátio": {
+   "g": "Open yard beside the house, where the fire is lit.",
+   "t": "noun"
+  },
+  "trouxe": {
+   "g": "Brought it with her (trazer).",
+   "t": "verb"
+  },
+  "tabela": {
+   "g": "A sheet with the prices set out in rows.",
+   "t": "noun"
+  },
+  "preços": {
+   "g": "Prices, what each thing costs (preço).",
+   "t": "noun"
+  },
+  "fumaça": {
+   "g": "Grey smoke rising from the fire, carrying the smell.",
+   "t": "noun"
+  },
+  "brasa": {
+   "g": "Red hot coal under the meat, with no flame.",
+   "t": "noun"
+  },
+  "cozinha": {
+   "g": "The room where the food is cooked.",
+   "t": "noun"
+  },
+  "galeto": {
+   "g": "Young chicken grilled on a spit, the Sunday dish here.",
+   "t": "noun"
+  },
+  "gira": {
+   "g": "Turns round and round (girar), here over the fire.",
+   "t": "verb"
+  },
+  "espeto": {
+   "g": "Long metal stick the meat is turned on.",
+   "t": "noun"
+  },
+  "família": {
+   "g": "The people you belong to, here all at one table.",
+   "t": "noun"
+  },
+  "comprida": {
+   "g": "Long, made for many people to sit along (comprido).",
+   "t": "adjective"
+  },
+  "genro": {
+   "g": "The man married to somebody's daughter.",
+   "t": "noun"
+  },
+  "piada": {
+   "g": "Short funny story told to make people laugh.",
+   "t": "noun"
+  },
+  "dialeto": {
+   "g": "The local way of speaking, brought by the old families.",
+   "t": "noun"
+  },
+  "atrasada": {
+   "g": "Late, behind the others by a moment (atrasado).",
+   "t": "adjective"
+  },
+  "percebe": {
+   "g": "Notices something the others do not see (perceber).",
+   "t": "verb"
+  },
+  "entendeu": {
+   "g": "Did you understand? (entender), asked straight out.",
+   "t": "verb"
+  },
+  "palavra": {
+   "g": "A single word, the smallest thing you can say.",
+   "t": "noun"
+  },
+  "admite": {
+   "g": "Says something true that makes her look bad (admitir).",
+   "t": "verb"
+  },
+  "traz": {
+   "g": "Brings it to the table (trazer).",
+   "t": "verb"
+  },
+  "assina": {
+   "g": "Writes her name to agree (assinar).",
+   "t": "verb"
+  },
+  "travessa": {
+   "g": "Wide dish that food is carried to the table in.",
+   "t": "noun"
+  },
+  "prateleira": {
+   "g": "Shelf on the wall where the dishes are kept.",
+   "t": "noun"
+  },
+  "baixado": {
+   "g": "Put down, lowered (baixar); here the knife and fork.",
+   "t": "verb"
+  },
+  "talher": {
+   "g": "Knife, fork and spoon, the tools you eat with.",
+   "t": "noun"
+  },
+  "pouquinho": {
+   "g": "A tiny bit more, said when offering food again.",
+   "t": "noun"
+  },
+  "obrigada": {
+   "g": "Thank you, said by a woman.",
+   "t": "expression"
+  },
+  "sério": {
+   "g": "Honestly, really; she means the no.",
+   "t": "adverb"
+  },
+  "tia": {
+   "g": "Aunt, and any older woman of the family.",
+   "t": "noun"
+  },
+  "frase": {
+   "g": "Sentence, the words somebody says in one go.",
+   "t": "noun"
+  },
+  "molho": {
+   "g": "Thick liquid poured over meat or pasta.",
+   "t": "noun"
+  },
+  "afrouxa": {
+   "g": "Loosens something that got too tight (afrouxar).",
+   "t": "verb"
+  },
+  "cinto": {
+   "g": "Strap around the waist that holds trousers up.",
+   "t": "noun"
+  },
+  "vinho": {
+   "g": "Wine, made here in the valley by the families.",
+   "t": "noun"
+  },
+  "jarra": {
+   "g": "Big open jug that a drink is poured from.",
+   "t": "noun"
+  },
+  "rótulo": {
+   "g": "Paper label on a bottle saying what is inside.",
+   "t": "noun"
+  },
+  "próprio": {
+   "g": "His or her own, belonging to that person.",
+   "t": "adjective"
+  },
+  "aconselha": {
+   "g": "Tells her what she should do (aconselhar).",
+   "t": "verb"
+  },
+  "estava": {
+   "g": "It was, in the past (estar); here, praise for the dish.",
+   "t": "verb"
+  },
+  "ótimo": {
+   "g": "Very good, the word used to praise a dish.",
+   "t": "adjective"
+  },
+  "ofende": {
+   "g": "Hurts somebody's feelings (ofender).",
+   "t": "verb"
+  },
+  "fome": {
+   "g": "The feeling of needing to eat soon.",
+   "t": "noun"
+  },
+  "elogiar": {
+   "g": "To say out loud that something was very good.",
+   "t": "verb"
+  },
+  "colheradas": {
+   "g": "Spoonfuls, as much as a spoon holds (colherada).",
+   "t": "noun"
+  },
+  "elogia": {
+   "g": "Praises it out loud (elogiar).",
+   "t": "verb"
+  },
+  "gesto": {
+   "g": "A movement of the hand or body that says something.",
+   "t": "noun"
+  },
+  "valia": {
+   "g": "Was worth more (valer), counted for more.",
+   "t": "verb"
+  },
+  "escrito": {
+   "g": "Written down, in letters on paper or a lid.",
+   "t": "adjective"
+  },
+  "barbante": {
+   "g": "Thin string used to tie a box shut.",
+   "t": "noun"
+  },
+  "através": {
+   "g": "Through, coming out from the other side.",
+   "t": "adverb"
+  },
+  "protesta": {
+   "g": "Says out loud that it is far too much (protestar).",
+   "t": "verb"
+  },
+  "volto": {
+   "g": "I come back (voltar), said as a promise.",
+   "t": "verb"
+  },
+  "comida": {
+   "g": "Food, what you eat.",
+   "t": "noun"
+  },
+  "salame": {
+   "g": "Dry sausage in thin slices, made in these valleys.",
+   "t": "noun"
+  },
+  "colonial": {
+   "g": "Farm made, the old way of the settler families.",
+   "t": "adjective"
+  },
+  "geleia": {
+   "g": "Sweet fruit spread kept in a glass jar.",
+   "t": "noun"
+  },
+  "tampinha": {
+   "g": "Small lid that screws onto the top of a jar.",
+   "t": "noun"
+  },
+  "cuca": {
+   "g": "Sweet crumb cake from the German and Italian south.",
+   "t": "noun"
+  },
+  "volume": {
+   "g": "How much space a piece of luggage takes up.",
+   "t": "noun"
+  },
+  "quilos": {
+   "g": "Kilos, what the scales count in (quilo).",
+   "t": "noun"
+  },
+  "excesso": {
+   "g": "More weight than the airline allows.",
+   "t": "noun"
+  },
+  "informa": {
+   "g": "Tells her the fact she needs (informar).",
+   "t": "verb"
+  },
+  "despacho": {
+   "g": "Handing luggage over so it flies in the hold.",
+   "t": "noun"
+  },
+  "comissão": {
+   "g": "The part of the sale the seller keeps.",
+   "t": "noun"
+  },
+  "etiqueta": {
+   "g": "Small printed label stuck on a bag before a flight.",
+   "t": "noun"
+  },
+  "alça": {
+   "g": "The handle you hold a bag or a box by.",
+   "t": "noun"
+  },
+  "contar": {
+   "g": "To tell somebody what happened.",
+   "t": "verb"
+  },
+  "fixa": {
+   "g": "Fixed, always the same from now on (fixo).",
+   "t": "adjective"
   }
  }
 }

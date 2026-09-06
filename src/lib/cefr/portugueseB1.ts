@@ -156,6 +156,20 @@ export const PORTUGUESE_B1_LEMMAS: ReadonlySet<string> = new Set([
   "parque","portao","portão","ensinar","aprender","viajar","escrever",
   "agencia","agência","nome","ouvido","degrau","passar","casaco","chave",
 
+
+  // Cuarta tanda, 2026-09-06, tema 3 (Serra Gaucha, la mesa larga). El dominio
+  // de la comida en familia y del trato que se cierra comiendo. Igual que las
+  // anteriores: son de temario B1 y salieron de la escena, no del diccionario.
+  // La realia (galeto, cuca, salame, queijo colonial) va por register cultural.
+  "patio","pátio","serra","comprido","comprida","genro","nora","sogra","sogro",
+  "piada","dialeto","comissao","comissão","travessa","acordo","perceber","atrasado",
+  "assinar","girar","vazio","molho","afrouxar","cinto","jarra","rotulo","rótulo",
+  "aconselhar","ofender","elogiar","colherada","otimo","ótimo","tia","tio","vinho",
+  "geleia","protestar","fixo","fixa","espeto","frase","obrigada","cozinha","familia","família",
+  "toalha","convite","convidar","insistir","recusar","aceitar","agradecer","gesto",
+  "tabela","balanca","balança","excesso","despachar","alca","alça","barbante","etiqueta",
+  "peso","sacola","esteira","fome","escrito","talher","lacre","volume","franquia","poltrona","tabuleiro","fatia","informar","despacho","importar","ligar","baixar","prateleira","fumaca","fumaça","brasa","tampinha","palavra",
+
   // Expressoes coloquiais correntes no Brasil
   "dar certo","dar errado","dar um jeito","valer a pena","fazer questao",
   "ter razao","tomar cuidado","prestar atencao","ficar de olho","perder a hora",

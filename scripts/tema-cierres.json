@@ -567,5 +567,71 @@
         }
       ]
     }
+  },
+  "cmtq5n9a50007j8812p9lzxjr#serra-gaucha": {
+    "cerrado": "2026-09-06T19:37:01.448Z",
+    "hash": "d50c265a030aa86f",
+    "historias": [
+      "serra-gaucha#0 galeto-antes-do-preco",
+      "serra-gaucha#1 mais-um-pouquinho",
+      "serra-gaucha#2 a-caixa-para-a-estrada"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"calido y ruidoso: mesa larga, comida que no para de llegar, gente que insiste hasta que aceptas\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Con la ruta del interior aprende que el trato no se cierra en la oficina sino en la mesa, y eso la obliga a quedarse mas de lo que tenia previsto.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"pergunta\" 22%)",
+      "arranques de parrafo variados (mas repetido \"rosane\", 13%)",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.04 sobre 55 plazas · 51 salen una sola vez | ancladas: 6/61 (10%) | cola: 51/55 portables con un solo encuentro (93%, tope 80%)",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en PT. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "brazil",
+      "registro": "calido y ruidoso: mesa larga, comida que no para de llegar, gente que insiste hasta que aceptas",
+      "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Con la ruta del interior aprende que el trato no se cierra en la oficina sino en la mesa, y eso la obliga a quedarse mas de lo que tenia previsto.",
+      "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "cerrar el acuerdo con la posada y coger el autobus de las dos",
+          "impide": "la duena no habla de precios antes de comer, y ya estan poniendo la mesa",
+          "cuesta": "el autobus de las dos, y con el la noche en su propia cama",
+          "cambia": "entiende que aqui el trato se firma despues del cafe, no antes",
+          "emocion": "prisa disimulada; mira el reloj por debajo de la mesa y se rie de un chiste que no ha entendido"
+        },
+        {
+          "slot": "2",
+          "quiere": "quedar bien sin comer mas, porque lleva dos horas comiendo",
+          "impide": "en esta mesa rechazar un plato es rechazar a quien lo hizo",
+          "cuesta": "la tarde entera y la ropa que le queda apretada para el vuelo",
+          "cambia": "aprende la formula exacta para decir que no sin ofender",
+          "emocion": "agobio con carino; se afloja el cinturon por debajo del mantel y sigue sonriendo"
+        },
+        {
+          "slot": "3",
+          "quiere": "irse con el acuerdo firmado y nada mas",
+          "impide": "la familia le prepara una caja de comida para el camino",
+          "cuesta": "el orgullo de no deber nada: acepta la caja y no puede devolver el gesto",
+          "cambia": "apunta la posada como parada fija de la ruta, no como cliente suelto",
+          "emocion": "verguenza agradecida; carga la caja con las dos manos y no encuentra donde mirar"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
   }
 }
