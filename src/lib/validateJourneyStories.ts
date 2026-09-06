@@ -138,8 +138,11 @@ function castLegacy(stories: JourneyStoryInput[], lang = ""): string[] {
   // reparto pasaban sin medir nada, que es peor que fallar.
   const SOLO_PT = lang === "ES" || lang === "FR" || lang === "IT" ? "" : "|o|a|os|as|um|uma";
   const ART = new RegExp(
-    `\\b(der|die|das|den|dem|des|ein|eine|einen|einem|einer|zum|zur|im|am|beim|vom|` +
-    `le|la|les|un|une|du|el|los|las|il|lo|gli${SOLO_PT})\\s+$`, "i");
+    // (?<!\\p{L}) y no \\b: la frontera ASCII casaba el «o» FINAL de «então»
+    // como articulo y expulsaba del reparto a quien viniera detras (bug PT B1,
+    // 2026-09-06; mismo mal que el detector de presentaciones).
+    `(?<!\\p{L})(der|die|das|den|dem|des|ein|eine|einen|einem|einer|zum|zur|im|am|beim|vom|` +
+    `le|la|les|un|une|du|el|los|las|il|lo|gli${SOLO_PT})\\s+$`, "iu");
   // OJO: aqui van ARTICULOS, no preposiciones. Meter "de", "da", "no"... echa
   // del reparto a cualquiera que aparezca en "a mao de Rafaela" o "a filha da
   // Neide", que es media historia: el 2026-08-23 el reparto salio VACIO y el
@@ -388,7 +391,7 @@ export function validateJourneyStories(
     const formas: string[] = [];
     const malos: string[] = [];
     for (const n of cast) {
-      const primera = stories.find((s) => new RegExp(`\\b${n}\\b`, "u").test(s.text));
+      const primera = stories.find((s) => new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u").test(s.text));
       if (!primera) continue;
       const t = primera.text;
       const forma = FORMAS.find(([, re]) => re(n).test(t));
@@ -766,7 +769,7 @@ export function validateJourneyStories(
     // la memoria ("valen las menciones, no hace falta que hable").
     const nombres = cast;
     const saleEn = (n: string) =>
-      stories.filter((s) => new RegExp(`\\b${n}\\b`, "u").test(s.text));
+      stories.filter((s) => new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u").test(s.text));
     const presencia = new Map(nombres.map((n) => [n, saleEn(n).length]));
     const total = stories.length;
     // FIJO = sale en mas de UN tema. La primera version lo definia por
@@ -839,7 +842,7 @@ export function validateJourneyStories(
       const fueraDeSuTema: string[] = [];
       for (const n of nombres) {
         if (fijos.includes(n)) continue;
-        const i0 = stories.findIndex((s) => new RegExp(`\\b${n}\\b`, "u").test(s.text));
+        const i0 = stories.findIndex((s) => new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u").test(s.text));
         // Si el detector de habla lo vio pero el de mencion no lo encuentra
         // (acentos, forma flexionada), no se puede decir de que tema es.
         if (i0 < 0) continue;
@@ -869,7 +872,7 @@ export function validateJourneyStories(
       // medio escribir; quien es fijo, no: el 2026-09-01, con dos temas de
       // siete, Leandro todavia no habia reaparecido fuera del suyo y el check
       // lo daba por intruso en la historia que protagoniza.
-      const enPrimera = nombres.filter((n) => new RegExp(`\\b${n}\\b`, "u").test(stories[0].text));
+      const enPrimera = nombres.filter((n) => new RegExp(`(?<!\\p{L})${n}(?!\\p{L})`, "u").test(stories[0].text));
       push("journey-cast-first-story-only-fixed", "La primera historia del journey no pasa de dos personajes",
         enPrimera.length <= 2,
         `${enPrimera.length} en la primera (${enPrimera.join(", ")}). La abre el reparto ` +
