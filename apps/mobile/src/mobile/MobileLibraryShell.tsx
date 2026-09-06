@@ -4355,6 +4355,10 @@ export function MobileLibraryShell(args: {
 
   useEffect(() => {
     let cancelled = false;
+    // Al cambiar de cuenta hay que volver a leer, y hay que hacerlo ANTES de
+    // que el efecto de guardado se dispare: mientras esto sea false no escribe,
+    // asi que la lista de la cuenta anterior no acaba en el archivo de la nueva.
+    setDidHydrateState(false);
 
     async function hydratePreviewState() {
       // Misma regla que el estado inicial: instalación nueva es lista vacía,
@@ -4366,7 +4370,9 @@ export function MobileLibraryShell(args: {
         readingProgress: [] as ReadingProgress[],
         savedStoryAt: {} as Record<string, string>,
       };
-      const storedState = stripPersistedSampleSeed(await loadMobilePreviewState(fallback));
+      const storedState = stripPersistedSampleSeed(
+        await loadMobilePreviewState(fallback, sessionUserId),
+      );
       if (cancelled) return;
 
       setSavedBookIds(storedState.savedBookIds);
@@ -4381,7 +4387,7 @@ export function MobileLibraryShell(args: {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [sessionUserId]);
 
   /**
    * Fusión con lo guardado en la CUENTA (2026-08-12).
@@ -4523,13 +4529,16 @@ export function MobileLibraryShell(args: {
   useEffect(() => {
     if (!didHydrateState) return;
 
-    void saveMobilePreviewState({
-      savedBookIds,
-      savedStoryIds,
-      readingProgress,
-      savedStoryAt,
-    });
-  }, [didHydrateState, readingProgress, savedBookIds, savedStoryIds, savedStoryAt]);
+    void saveMobilePreviewState(
+      {
+        savedBookIds,
+        savedStoryIds,
+        readingProgress,
+        savedStoryAt,
+      },
+      sessionUserId,
+    );
+  }, [didHydrateState, readingProgress, savedBookIds, savedStoryIds, savedStoryAt, sessionUserId]);
 
   const handleUnauthorizedSession = useCallback(
     (message = "Your session expired. Please sign in again.") => {
@@ -17542,8 +17551,14 @@ export function MobileLibraryShell(args: {
     // which caused short topics (3 stories) to "return" too early -
     // the third story landed back at the leftmost position even
     // though the second had only just reached the right edge.
-    const STEP_PX = 28;
-    const MAX_WAVE_OFFSET_PX = 112;
+    // El pico de la onda sale del ancho que necesita el TITULO, no al
+    // reves: a 112px el pill se quedaba en ~130px de texto y titulos de 27
+    // caracteres ("Duas moedas para Copacabana") se cortaban con puntos
+    // suspensivos. Con 42 el camino se sigue leyendo como serpentina y el
+    // texto gana casi 70px. STEP y MAX guardan proporcion entera para que
+    // PERIOD siga siendo entero (42/14*2 = 6).
+    const STEP_PX = 14;
+    const MAX_WAVE_OFFSET_PX = 42;
     const PERIOD = (MAX_WAVE_OFFSET_PX / STEP_PX) * 2; // 8 with these values
     const phase = storyIdx % PERIOD;
     const waveOffsetPx =
@@ -17820,7 +17835,7 @@ export function MobileLibraryShell(args: {
               )}
             </View>
             <View style={styles.journeyNodePillTextStack}>
-              <Text style={styles.journeyNodePillLabel} numberOfLines={2}>
+              <Text style={styles.journeyNodePillLabel} numberOfLines={3}>
                 {pillLabel}
               </Text>
               {/* Duración eliminada: el usuario no quiere ver "X min"
@@ -19072,7 +19087,7 @@ export function MobileLibraryShell(args: {
                               <View style={styles.journeyNodePillTextStack}>
                                 <Text
                                   style={[styles.journeyNodePillLabel, styles.journeyNodePillLabelNext]}
-                                  numberOfLines={2}
+                                  numberOfLines={3}
                                 >
                                   {pillLabel}
                                 </Text>
@@ -19171,7 +19186,7 @@ export function MobileLibraryShell(args: {
                             <View style={styles.journeyNodePillTextStack}>
                               <Text
                                 style={styles.journeyNodePillLabel}
-                                numberOfLines={2}
+                                numberOfLines={3}
                               >
                                 {pillLabel}
                               </Text>
