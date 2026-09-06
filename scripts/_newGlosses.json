@@ -995,6 +995,302 @@
   "sublinhado": {
    "g": "Underlined, with a line drawn under it.",
    "t": "adjective"
+  },
+  "folheto": {
+   "g": "Printed sheet an agency uses to sell a trip.",
+   "t": "noun"
+  },
+  "subo": {
+   "g": "I go up (subir), here with the group.",
+   "t": "verb"
+  },
+  "adverte": {
+   "g": "Warns her before it goes wrong (advertir).",
+   "t": "verb"
+  },
+  "cantil": {
+   "g": "Metal water bottle carried on a long walk.",
+   "t": "noun"
+  },
+  "furado": {
+   "g": "Full of holes, so it cannot be trusted.",
+   "t": "adjective"
+  },
+  "lotação": {
+   "g": "The most people a trip can safely take.",
+   "t": "noun"
+  },
+  "posto": {
+   "g": "Small station at the start of the trail.",
+   "t": "noun"
+  },
+  "capacidade": {
+   "g": "How many people it can hold at one time.",
+   "t": "noun"
+  },
+  "pintada": {
+   "g": "Painted on with a brush (pintado).",
+   "t": "adjective"
+  },
+  "descascando": {
+   "g": "Flaking off, the way old paint does (descascar).",
+   "t": "verb"
+  },
+  "autorização": {
+   "g": "Written permission to take groups into the park.",
+   "t": "noun"
+  },
+  "assinada": {
+   "g": "Signed by hand, so it counts (assinado).",
+   "t": "adjective"
+  },
+  "vistoria": {
+   "g": "Official check that everything is as it should be.",
+   "t": "noun"
+  },
+  "norma": {
+   "g": "Rule that everybody working here has to keep.",
+   "t": "noun"
+  },
+  "penalidade": {
+   "g": "What you pay if you break the rule.",
+   "t": "noun"
+  },
+  "exigência": {
+   "g": "Something demanded before you are allowed to go.",
+   "t": "noun"
+  },
+  "pagas": {
+   "g": "Paid for already, by people who are waiting.",
+   "t": "adjective"
+  },
+  "responsabilidade": {
+   "g": "Being the one who answers if things go wrong.",
+   "t": "noun"
+  },
+  "prejuízo": {
+   "g": "Money lost on a deal that did not work.",
+   "t": "noun"
+  },
+  "viva": {
+   "g": "Alive, in one piece at the end of the day.",
+   "t": "adjective"
+  },
+  "estorna": {
+   "g": "Pays the money back for a cancelled booking (estornar).",
+   "t": "verb"
+  },
+  "naquela": {
+   "g": "On that one, in that same afternoon.",
+   "t": "adverb"
+  },
+  "multa": {
+   "g": "Money you must pay for breaking a rule.",
+   "t": "noun"
+  },
+  "cume": {
+   "g": "The very top of the mountain.",
+   "t": "noun"
+  },
+  "animado": {
+   "g": "Cheerful and full of energy at the start.",
+   "t": "adjective"
+  },
+  "pisa": {
+   "g": "Puts her foot down on it (pisar).",
+   "t": "verb"
+  },
+  "raiz": {
+   "g": "Part of a tree that comes up through the path.",
+   "t": "noun"
+  },
+  "ajoelha": {
+   "g": "Goes down on her knees beside her (ajoelhar).",
+   "t": "verb"
+  },
+  "apalpa": {
+   "g": "Feels the hurt place with her fingers (apalpar).",
+   "t": "verb"
+  },
+  "calada": {
+   "g": "Saying nothing on purpose for a while (calado).",
+   "t": "adjective"
+  },
+  "entorse": {
+   "g": "A twisted joint, hurt but with no bone broken.",
+   "t": "noun"
+  },
+  "feias": {
+   "g": "Bad ones, worse than they look (feio).",
+   "t": "adjective"
+  },
+  "incham": {
+   "g": "Swell up after being hurt (inchar).",
+   "t": "verb"
+  },
+  "chia": {
+   "g": "Makes a hissing noise instead of a voice (chiar).",
+   "t": "verb"
+  },
+  "engancha": {
+   "g": "Catches the signal, connects (enganchar).",
+   "t": "verb"
+  },
+  "chamo": {
+   "g": "Shall I call? (chamar), asked in the moment.",
+   "t": "verb"
+  },
+  "socorro": {
+   "g": "Help, called for when somebody is badly hurt.",
+   "t": "noun"
+  },
+  "chamada": {
+   "g": "A call made from a phone or a radio.",
+   "t": "noun"
+  },
+  "resgate": {
+   "g": "A team coming up to carry an injured walker down.",
+   "t": "noun"
+  },
+  "maca": {
+   "g": "Flat bed with handles for carrying a hurt person.",
+   "t": "noun"
+  },
+  "dupla": {
+   "g": "Two people working together on the same job.",
+   "t": "noun"
+  },
+  "improvisa": {
+   "g": "Makes it on the spot from what is there (improvisar).",
+   "t": "verb"
+  },
+  "tala": {
+   "g": "Stiff piece tied on to stop a joint moving.",
+   "t": "noun"
+  },
+  "galhos": {
+   "g": "Branches broken off a tree (galho).",
+   "t": "noun"
+  },
+  "compressa": {
+   "g": "Cold wet cloth pressed onto a swollen place.",
+   "t": "noun"
+  },
+  "repartido": {
+   "g": "Shared out, carried by more than one person.",
+   "t": "adjective"
+  },
+  "inchaço": {
+   "g": "The swelling that comes up after a joint is hurt.",
+   "t": "noun"
+  },
+  "bota": {
+   "g": "Strong closed shoe for walking on wet rock.",
+   "t": "noun"
+  },
+  "enfermaria": {
+   "g": "Small room where hurt people are looked after.",
+   "t": "noun"
+  },
+  "curativo": {
+   "g": "Bandage put on to hold or cover an injury.",
+   "t": "noun"
+  },
+  "pronto": {
+   "g": "Ready, done and in place at last.",
+   "t": "adjective"
+  },
+  "seguro": {
+   "g": "Insurance, what pays when something goes wrong.",
+   "t": "noun"
+  },
+  "apólice": {
+   "g": "The paper that says what the insurance pays for.",
+   "t": "noun"
+  },
+  "alívio": {
+   "g": "The good feeling when a worry goes away.",
+   "t": "noun"
+  },
+  "tornozelo": {
+   "g": "The joint between the leg and the foot.",
+   "t": "noun"
+  },
+  "folha": {
+   "g": "Sheet of paper waiting empty on the table.",
+   "t": "noun"
+  },
+  "passado": {
+   "g": "Just made, poured through the filter (passar).",
+   "t": "adjective"
+  },
+  "dita": {
+   "g": "Says the words out loud for her to write (ditar).",
+   "t": "verb"
+  },
+  "enrola": {
+   "g": "Winds the rope into a coil (enrolar).",
+   "t": "verb"
+  },
+  "rascunho": {
+   "g": "Rough first version written before the final one.",
+   "t": "noun"
+  },
+  "revisão": {
+   "g": "Going over a text again to correct it.",
+   "t": "noun"
+  },
+  "gráfica": {
+   "g": "The shop that prints the sheets and posters.",
+   "t": "noun"
+  },
+  "imprima": {
+   "g": "Let them print it (imprimir).",
+   "t": "verb"
+  },
+  "botar": {
+   "g": "To put a word in, to add it to the text.",
+   "t": "verb"
+  },
+  "cachoeira": {
+   "g": "Falling water on a river, where walkers swim.",
+   "t": "noun"
+  },
+  "aventura": {
+   "g": "Exciting trip with some danger; the word that sold.",
+   "t": "noun"
+  },
+  "gruta": {
+   "g": "Cave in the rock that walkers go into with lamps.",
+   "t": "noun"
+  },
+  "caneta": {
+   "g": "Pen, the one whose ink goes through the paper.",
+   "t": "noun"
+  },
+  "lista": {
+   "g": "Set of short lines written one under the other.",
+   "t": "noun"
+  },
+  "duplo": {
+   "g": "Double, done twice over the very same place.",
+   "t": "adjective"
+  },
+  "impressas": {
+   "g": "Printed onto the paper by a machine (impresso).",
+   "t": "adjective"
+  },
+  "reclamação": {
+   "g": "A customer saying out loud that something was wrong.",
+   "t": "noun"
+  },
+  "esperava": {
+   "g": "Was expecting it to come (esperar).",
+   "t": "verb"
+  },
+  "fechar": {
+   "g": "To close, here the boot over a swollen foot.",
+   "t": "verb"
   }
  }
 }

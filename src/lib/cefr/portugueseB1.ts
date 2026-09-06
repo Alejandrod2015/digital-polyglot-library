@@ -180,6 +180,24 @@ export const PORTUGUESE_B1_LEMMAS: ReadonlySet<string> = new Set([
   "incomodado","aliviado","recado","gentileza","planilha","acougueiro","açougueiro","robalo","marmita","caderno",
   "secar","derrotado","correnteza","queixo","ombro","beira","troca","cobranca","cobrança","pescador","apelido","canal","limo","torrado","esquecer","atravessar","falhar","compromisso",
 
+
+  // Sexta tanda, 2026-09-06, tema 5 (Chapada Diamantina). Trilla, guia y las
+  // reglas que protegen la ruta. Mismo criterio que las anteriores.
+  "gruta","bota","cantil","atalho","cume","raiz","lama","formiga","folego","fôlego",
+  "tontura","curativo","maca","resgate","radio","rádio","autorizacao","autorização",
+  "folheto","limite","guiar","musgo","aventura","torcao","torção","ajoelhar","chiar","quebra",
+  "animado","pisar","pronto","ditar","riscar","viva","botar","duplo","lista","atras","atrás",
+  "descascar","vendido","posto","tinta","firme","responsabilidade","capacidade","lotacao","lotação",
+  "advertencia","advertência","declive","encosta","vale","prejuizo","prejuízo","seguro","cadastro",
+  "fiscal","multa","autorizacao","estornar","tabuleta","furado","calado","advertir","adverter",
+  "enganchar","repartido","repartir","dupla","caneta","reclamacao","reclamação","apalpar",
+  "entorse","assinado","impresso","vista","inchar","escrita","dobrar","adverte","promete",
+  "descem","desce","engancha","empresta","dita","risca","socorro","maca","resgate","muleta",
+  "compressa","tala","enfermaria","inchaco","inchaço","alivio","alívio","atestado","cobertura","apolice","apólice",
+  "vistoria","comprovante","protocolo","penalidade","advertencia","advertência","infracao","infração",
+  "norma","criterio","critério","exigencia","exigência","requisito","clausula","cláusula","rodape","rodapé",
+  "verso","rascunho","emenda","revisao","revisão","tiragem","grafica","gráfica","legenda","destaque",
+
   // Expressoes coloquiais correntes no Brasil
   "dar certo","dar errado","dar um jeito","valer a pena","fazer questao",
   "ter razao","tomar cuidado","prestar atencao","ficar de olho","perder a hora",

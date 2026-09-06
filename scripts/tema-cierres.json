@@ -442,6 +442,68 @@
       ]
     }
   },
+  "cmtq5n9a50007j8812p9lzxjr#chapada-diamantina": {
+    "cerrado": "2026-09-06T20:00:44.751Z",
+    "hash": "d1f6f78c01ed1090",
+    "historias": [
+      "chapada-diamantina#0 oito-nao-quinze",
+      "chapada-diamantina#1 tornozelo-na-subida",
+      "chapada-diamantina#2 regra-no-lugar-da-foto"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"seco y de montana: instrucciones cortas, silencio entre frases, gente que mide el riesgo en voz baja\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Aqui descubre que lo que vende en la agencia y lo que pasa en la trilla no se parecen, y que quien manda en su ruta no es ella.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "arranques de parrafo variados (mas repetido \"rafaela\", 18%)",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.08 sobre 50 plazas · 47 salen una sola vez | ancladas: 10/60 (17%) | cola: 47/50 portables con un solo encuentro (94%, tope 80%)",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en PT. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "brazil",
+      "registro": "seco y de montana: instrucciones cortas, silencio entre frases, gente que mide el riesgo en voz baja",
+      "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo. Aqui descubre que lo que vende en la agencia y lo que pasa en la trilla no se parecen, y que quien manda en su ruta no es ella.",
+      "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "cerrar la trilla para grupos de quince, que es lo que ya vendio en el folleto",
+          "impide": "la guia no sube con mas de ocho y no lo discute",
+          "cuesta": "los siete lugares vendidos, que la agencia tiene que devolver",
+          "cambia": "acepta el tope y entiende que no lo pone la guia, lo pone la piedra mojada",
+          "emocion": "orgullo herido; dobla el folleto en cuatro y se lo guarda sin volver a mirarlo"
+        },
+        {
+          "slot": "2",
+          "quiere": "llegar al mirador con el grupo entero para la foto que promete el folleto",
+          "impide": "una tobillera torcida a mitad de subida y una radio que no engancha",
+          "cuesta": "el mirador: bajan todos, y la foto no existe",
+          "cambia": "ve lo que de verdad esta comprando su cliente, y no es la vista",
+          "emocion": "miedo que no ensena; sostiene la cantimplora con las dos manos para que no le tiemble"
+        },
+        {
+          "slot": "3",
+          "quiere": "irse con una frase buena para el folleto nuevo",
+          "impide": "la guia le dicta reglas, que en un folleto quedan feas",
+          "cuesta": "la palabra aventura, que era lo que mejor vendia",
+          "cambia": "escribe las reglas tal cual y descubre que se vende igual o mejor",
+          "emocion": "resignacion que se vuelve gusto; tacha la palabra dos veces y se rie sola de la tachadura"
+        }
+      ]
+    }
+  },
   "cmtq5n9a50007j8812p9lzxjr#curitiba": {
     "cerrado": "2026-09-06T19:22:05.050Z",
     "hash": "a8a941e0f9e21219",
