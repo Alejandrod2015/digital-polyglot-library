@@ -1,0 +1,438 @@
+{
+ "año": {
+  "es": "el año que falta",
+  "en": "the missing year"
+ },
+ "que": {
+  "es": "el año que falta",
+  "en": "the missing year"
+ },
+ "falta": {
+  "es": "le falta un año entero",
+  "en": "is missing a whole year"
+ },
+ "archivo": {
+  "es": "al archivo le falta",
+  "en": "the archive is missing"
+ },
+ "le": {
+  "es": "le falta un año entero",
+  "en": "is missing a whole year"
+ },
+ "entero": {
+  "es": "un año entero",
+  "en": "a whole year"
+ },
+ "y": {
+  "es": "y claudia lo descubre",
+  "en": "and Claudia discovers it"
+ },
+ "lo": {
+  "es": "claudia lo descubre",
+  "en": "Claudia discovers it"
+ },
+ "descubre": {
+  "es": "claudia lo descubre contando cajas",
+  "en": "Claudia discovers it counting boxes"
+ },
+ "contando": {
+  "es": "contando cajas",
+  "en": "counting boxes"
+ },
+ "cajas": {
+  "es": "contando cajas",
+  "en": "counting boxes"
+ },
+ "quien": {
+  "es": "quien más sabe es hugo",
+  "en": "the one who knows most is Hugo"
+ },
+ "más": {
+  "es": "quien más sabe",
+  "en": "who knows most"
+ },
+ "sabe": {
+  "es": "quien más sabe es hugo",
+  "en": "the one who knows most is Hugo"
+ },
+ "es": {
+  "es": "quien más sabe es hugo",
+  "en": "the one who knows most is Hugo"
+ },
+ "del": {
+  "es": "el del kiosco",
+  "en": "the newsstand man"
+ },
+ "kiosco": {
+  "es": "el del kiosco",
+  "en": "the newsstand man"
+ },
+ "guarda": {
+  "es": "guarda periódicos",
+  "en": "keeps newspapers"
+ },
+ "periódicos": {
+  "es": "guarda periódicos como otros guardan sellos",
+  "en": "keeps newspapers like others keep stamps"
+ },
+ "como": {
+  "es": "como otros guardan sellos",
+  "en": "like others keep stamps"
+ },
+ "otros": {
+  "es": "como otros guardan sellos",
+  "en": "like others keep stamps"
+ },
+ "guardan": {
+  "es": "como otros guardan sellos",
+  "en": "like others keep stamps"
+ },
+ "sellos": {
+  "es": "como otros guardan sellos",
+  "en": "like others keep stamps"
+ },
+ "huele": {
+  "es": "huele a papel recién llegado",
+  "en": "smells of freshly arrived paper"
+ },
+ "a": {
+  "es": "huele a papel",
+  "en": "smells of paper"
+ },
+ "papel": {
+  "es": "huele a papel recién llegado",
+  "en": "smells of freshly arrived paper"
+ },
+ "recién": {
+  "es": "papel recién llegado",
+  "en": "freshly arrived paper"
+ },
+ "llegado": {
+  "es": "papel recién llegado",
+  "en": "freshly arrived paper"
+ },
+ "guardas": {
+  "es": "guardas también los atrasados",
+  "en": "do you keep the back issues too"
+ },
+ "también": {
+  "es": "guardas también los atrasados",
+  "en": "do you keep the back issues too"
+ },
+ "atrasados": {
+  "es": "los atrasados",
+  "en": "the back issues"
+ },
+ "aunque": {
+  "es": "aunque sean de hace mucho",
+  "en": "even if they are very old"
+ },
+ "sean": {
+  "es": "aunque sean de hace mucho",
+  "en": "even if they are very old"
+ },
+ "de": {
+  "es": "de hace mucho",
+  "en": "from long ago"
+ },
+ "hace": {
+  "es": "de hace mucho",
+  "en": "from long ago"
+ },
+ "mucho": {
+  "es": "de hace mucho",
+  "en": "from long ago"
+ },
+ "pregunta": {
+  "es": "pregunta claudia",
+  "en": "asks Claudia"
+ },
+ "con": {
+  "es": "con la fecha subrayada",
+  "en": "with the date underlined"
+ },
+ "fecha": {
+  "es": "la fecha subrayada dos veces",
+  "en": "the date underlined twice"
+ },
+ "subrayada": {
+  "es": "la fecha subrayada dos veces",
+  "en": "the date underlined twice"
+ },
+ "veces": {
+  "es": "subrayada dos veces",
+  "en": "underlined twice"
+ },
+ "mira": {
+  "es": "hugo mira la fecha",
+  "en": "Hugo looks at the date"
+ },
+ "tarda": {
+  "es": "tarda en contestar",
+  "en": "takes a while to answer"
+ },
+ "en": {
+  "es": "tarda en contestar",
+  "en": "takes a while to answer"
+ },
+ "contestar": {
+  "es": "tarda en contestar",
+  "en": "takes a while to answer"
+ },
+ "ese": {
+  "es": "de ese año no queda nada",
+  "en": "nothing is left from that year"
+ },
+ "no": {
+  "es": "no queda nada",
+  "en": "nothing is left"
+ },
+ "queda": {
+  "es": "no queda nada",
+  "en": "nothing is left"
+ },
+ "nada": {
+  "es": "no queda nada",
+  "en": "nothing is left"
+ },
+ "porque": {
+  "es": "no porque se agotara",
+  "en": "not because it sold out"
+ },
+ "se": {
+  "es": "no porque se agotara",
+  "en": "not because it sold out"
+ },
+ "agotara": {
+  "es": "no porque se agotara",
+  "en": "not because it sold out"
+ },
+ "aquí": {
+  "es": "ese año aquí no hubo periódico",
+  "en": "that year there was no paper here"
+ },
+ "hubo": {
+  "es": "no hubo periódico",
+  "en": "there was no newspaper"
+ },
+ "periódico": {
+  "es": "no hubo periódico",
+  "en": "there was no newspaper"
+ },
+ "corta": {
+  "es": "corta, seco",
+  "en": "he cuts her off, curt"
+ },
+ "seco": {
+  "es": "corta, seco",
+  "en": "he cuts her off, curt"
+ },
+ "solo": {
+  "es": "solo busco lo que le falta",
+  "en": "I am only after what is missing"
+ },
+ "busco": {
+  "es": "solo busco lo que le falta",
+  "en": "I am only after what is missing"
+ },
+ "peña": {
+  "es": "lo que le falta a la peña",
+  "en": "what the club is missing"
+ },
+ "explica": {
+  "es": "explica claudia",
+  "en": "Claudia explains"
+ },
+ "ya": {
+  "es": "ya lo sé",
+  "en": "I know"
+ },
+ "sé": {
+  "es": "ya lo sé",
+  "en": "I know"
+ },
+ "por": {
+  "es": "por eso mismo",
+  "en": "for that very reason"
+ },
+ "eso": {
+  "es": "por eso mismo",
+  "en": "for that very reason"
+ },
+ "mismo": {
+  "es": "por eso mismo",
+  "en": "for that very reason"
+ },
+ "contesta": {
+  "es": "contesta hugo",
+  "en": "Hugo answers"
+ },
+ "empieza": {
+  "es": "empieza a recoger montones",
+  "en": "starts gathering up piles"
+ },
+ "recoger": {
+  "es": "empieza a recoger montones",
+  "en": "starts gathering up piles"
+ },
+ "montones": {
+  "es": "empieza a recoger montones",
+  "en": "starts gathering up piles"
+ },
+ "mediodía": {
+  "es": "aunque es mediodía",
+  "en": "though it is midday"
+ },
+ "respuesta": {
+  "es": "la respuesta suena a puerta cerrada",
+  "en": "the answer sounds like a closed door"
+ },
+ "suena": {
+  "es": "suena a puerta cerrada",
+  "en": "sounds like a closed door"
+ },
+ "puerta": {
+  "es": "suena a puerta cerrada",
+  "en": "sounds like a closed door"
+ },
+ "cerrada": {
+  "es": "suena a puerta cerrada",
+  "en": "sounds like a closed door"
+ },
+ "vuelve": {
+  "es": "vuelve el jueves",
+  "en": "come back on Thursday"
+ },
+ "jueves": {
+  "es": "vuelve el jueves",
+  "en": "come back on Thursday"
+ },
+ "primera": {
+  "es": "a primera hora",
+  "en": "first thing in the morning"
+ },
+ "hora": {
+  "es": "a primera hora",
+  "en": "first thing in the morning"
+ },
+ "caja": {
+  "es": "pregunta por la caja azul",
+  "en": "ask for the blue box"
+ },
+ "azul": {
+  "es": "la caja azul",
+  "en": "the blue box"
+ },
+ "suelta": {
+  "es": "suelta al fin",
+  "en": "he lets out at last"
+ },
+ "fin": {
+  "es": "al fin",
+  "en": "at last"
+ },
+ "sin": {
+  "es": "sin mirarla",
+  "en": "without looking at her"
+ },
+ "mirarla": {
+  "es": "sin mirarla",
+  "en": "without looking at her"
+ },
+ "luego": {
+  "es": "luego baja la persiana",
+  "en": "then he rolls down the shutter"
+ },
+ "baja": {
+  "es": "baja la persiana",
+  "en": "rolls down the shutter"
+ },
+ "persiana": {
+  "es": "baja la persiana a media tarde",
+  "en": "rolls down the shutter mid-afternoon"
+ },
+ "media": {
+  "es": "a media tarde",
+  "en": "in the middle of the afternoon"
+ },
+ "tarde": {
+  "es": "a media tarde",
+  "en": "in the middle of the afternoon"
+ },
+ "cosa": {
+  "es": "cosa que nadie le había visto",
+  "en": "something nobody had seen him do"
+ },
+ "nadie": {
+  "es": "que nadie le había visto hacer",
+  "en": "that nobody had seen him do"
+ },
+ "había": {
+  "es": "nadie le había visto hacer",
+  "en": "nobody had seen him do"
+ },
+ "visto": {
+  "es": "nadie le había visto hacer",
+  "en": "nobody had seen him do"
+ },
+ "hacer": {
+  "es": "nadie le había visto hacer",
+  "en": "nobody had seen him do"
+ },
+ "plaza": {
+  "es": "la plaza entera se queda",
+  "en": "the whole square is left"
+ },
+ "entera": {
+  "es": "la plaza entera",
+  "en": "the whole square"
+ },
+ "palabra": {
+  "es": "con la palabra en la boca",
+  "en": "cut off mid-sentence"
+ },
+ "boca": {
+  "es": "con la palabra en la boca",
+  "en": "cut off mid-sentence"
+ },
+ "preguntas": {
+  "es": "con más preguntas que papeles",
+  "en": "with more questions than papers"
+ },
+ "papeles": {
+  "es": "con más preguntas que papeles",
+  "en": "with more questions than papers"
+ },
+ "perdido": {
+  "es": "el año perdido existe",
+  "en": "the lost year exists"
+ },
+ "existe": {
+  "es": "el año perdido existe",
+  "en": "the lost year exists"
+ },
+ "duele": {
+  "es": "le duele a alguien",
+  "en": "it hurts somebody"
+ },
+ "alguien": {
+  "es": "le duele a alguien",
+  "en": "it hurts somebody"
+ },
+ "faltan": {
+  "es": "al jueves le faltan tres días",
+  "en": "Thursday is three days away"
+ },
+ "días": {
+  "es": "le faltan tres días",
+  "en": "three days to go"
+ },
+ "ella": {
+  "es": "y a ella la paciencia",
+  "en": "and she is out of patience"
+ },
+ "paciencia": {
+  "es": "y a ella la paciencia",
+  "en": "and she is out of patience"
+ }
+}

@@ -1,0 +1,442 @@
+{
+ "fecha": {
+  "es": "fecha a lápiz",
+  "en": "a date in pencil"
+ },
+ "a": {
+  "es": "a lápiz",
+  "en": "in pencil"
+ },
+ "lápiz": {
+  "es": "fecha a lápiz",
+  "en": "a date in pencil"
+ },
+ "todavía": {
+  "es": "todavía queda por elegir",
+  "en": "it still remains to be chosen"
+ },
+ "queda": {
+  "es": "queda por elegir",
+  "en": "remains to be chosen"
+ },
+ "por": {
+  "es": "queda por elegir",
+  "en": "remains to be chosen"
+ },
+ "elegir": {
+  "es": "queda por elegir el día",
+  "en": "the day remains to be chosen"
+ },
+ "día": {
+  "es": "el día de la mudanza",
+  "en": "moving day"
+ },
+ "de": {
+  "es": "el día de la mudanza",
+  "en": "moving day"
+ },
+ "mudanza": {
+  "es": "el día de la mudanza",
+  "en": "moving day"
+ },
+ "trae": {
+  "es": "claudia trae tres fechas",
+  "en": "Claudia brings three dates"
+ },
+ "fechas": {
+  "es": "trae tres fechas en bolígrafo",
+  "en": "brings three dates in ink"
+ },
+ "en": {
+  "es": "en bolígrafo",
+  "en": "in pen"
+ },
+ "bolígrafo": {
+  "es": "tres fechas en bolígrafo",
+  "en": "three dates in pen"
+ },
+ "mira": {
+  "es": "marcos las mira",
+  "en": "Marcos looks at them"
+ },
+ "como": {
+  "es": "como quien mira fruta verde",
+  "en": "like someone eyeing unripe fruit"
+ },
+ "quien": {
+  "es": "como quien mira fruta verde",
+  "en": "like someone eyeing unripe fruit"
+ },
+ "fruta": {
+  "es": "como quien mira fruta verde",
+  "en": "like someone eyeing unripe fruit"
+ },
+ "verde": {
+  "es": "fruta verde",
+  "en": "unripe fruit"
+ },
+ "qué": {
+  "es": "qué valiente",
+  "en": "how brave"
+ },
+ "valiente": {
+  "es": "qué valiente",
+  "en": "how brave"
+ },
+ "ha": {
+  "es": "ha venido hoy la de vitoria",
+  "en": "the Vitoria one has come today"
+ },
+ "venido": {
+  "es": "ha venido hoy la de vitoria",
+  "en": "the Vitoria one has come today"
+ },
+ "hoy": {
+  "es": "ha venido hoy",
+  "en": "has come today"
+ },
+ "vitoria": {
+  "es": "la de vitoria",
+  "en": "the one from Vitoria"
+ },
+ "saluda": {
+  "es": "saluda",
+  "en": "he greets her"
+ },
+ "aquí": {
+  "es": "aquí una fecha se escribe a lápiz",
+  "en": "here a date is written in pencil"
+ },
+ "se": {
+  "es": "se escribe a lápiz",
+  "en": "is written in pencil"
+ },
+ "escribe": {
+  "es": "se escribe a lápiz",
+  "en": "is written in pencil"
+ },
+ "hasta": {
+  "es": "hasta oír el parte",
+  "en": "until the forecast is heard"
+ },
+ "oír": {
+  "es": "hasta oír el parte",
+  "en": "until the forecast is heard"
+ },
+ "parte": {
+  "es": "hasta oír el parte",
+  "en": "until the weather report is heard"
+ },
+ "calendario": {
+  "es": "el calendario manda poco",
+  "en": "the calendar has little say"
+ },
+ "manda": {
+  "es": "el calendario manda poco",
+  "en": "the calendar has little say"
+ },
+ "poco": {
+  "es": "manda poco",
+  "en": "has little say"
+ },
+ "explica": {
+  "es": "explica",
+  "en": "he explains"
+ },
+ "y": {
+  "es": "y enciende la radio",
+  "en": "and switches on the radio"
+ },
+ "enciende": {
+  "es": "enciende la radio pequeña",
+  "en": "switches on the little radio"
+ },
+ "radio": {
+  "es": "la radio pequeña del archivo",
+  "en": "the archive's little radio"
+ },
+ "pequeña": {
+  "es": "la radio pequeña",
+  "en": "the little radio"
+ },
+ "archivo": {
+  "es": "la radio pequeña del archivo",
+  "en": "the archive's little radio"
+ },
+ "hombre": {
+  "es": "el hombre del tiempo",
+  "en": "the weatherman"
+ },
+ "del": {
+  "es": "el hombre del tiempo",
+  "en": "the weatherman"
+ },
+ "tiempo": {
+  "es": "el hombre del tiempo",
+  "en": "the weatherman"
+ },
+ "trata": {
+  "es": "trata al levante de vecino difícil",
+  "en": "treats the east wind like a difficult neighbour"
+ },
+ "levante": {
+  "es": "trata al levante de vecino difícil",
+  "en": "treats the east wind like a difficult neighbour"
+ },
+ "vecino": {
+  "es": "de vecino difícil",
+  "en": "like a difficult neighbour"
+ },
+ "difícil": {
+  "es": "de vecino difícil",
+  "en": "like a difficult neighbour"
+ },
+ "escucha": {
+  "es": "claudia escucha a medias",
+  "en": "Claudia half listens"
+ },
+ "medias": {
+  "es": "escucha a medias",
+  "en": "half listens"
+ },
+ "espera": {
+  "es": "escucha a medias y espera",
+  "en": "half listens and waits"
+ },
+ "pronto": {
+  "es": "de pronto entiende",
+  "en": "suddenly she understands"
+ },
+ "entiende": {
+  "es": "de pronto entiende su primera semana",
+  "en": "suddenly she understands her first week"
+ },
+ "su": {
+  "es": "su primera semana",
+  "en": "her first week"
+ },
+ "primera": {
+  "es": "su primera semana",
+  "en": "her first week"
+ },
+ "semana": {
+  "es": "su primera semana",
+  "en": "her first week"
+ },
+ "nadie": {
+  "es": "nadie le daba fechas",
+  "en": "nobody gave her dates"
+ },
+ "le": {
+  "es": "nadie le daba fechas",
+  "en": "nobody gave her dates"
+ },
+ "daba": {
+  "es": "nadie le daba fechas",
+  "en": "nobody gave her dates"
+ },
+ "porque": {
+  "es": "porque las fechas se negocian",
+  "en": "because dates are negotiated"
+ },
+ "negocian": {
+  "es": "las fechas aquí se negocian con el viento",
+  "en": "dates here are negotiated with the wind"
+ },
+ "con": {
+  "es": "se negocian con el viento",
+  "en": "are negotiated with the wind"
+ },
+ "viento": {
+  "es": "se negocian con el viento",
+  "en": "are negotiated with the wind"
+ },
+ "no": {
+  "es": "no era desorden",
+  "en": "it was not disorder"
+ },
+ "era": {
+  "es": "no era desorden",
+  "en": "it was not disorder"
+ },
+ "desorden": {
+  "es": "no era desorden",
+  "en": "it was not disorder"
+ },
+ "otra": {
+  "es": "otra manera de contar el tiempo",
+  "en": "another way of counting time"
+ },
+ "manera": {
+  "es": "otra manera de contar el tiempo",
+  "en": "another way of counting time"
+ },
+ "contar": {
+  "es": "otra manera de contar el tiempo",
+  "en": "another way of counting time"
+ },
+ "semanal": {
+  "es": "su calendario semanal se queda mudo",
+  "en": "her weekly calendar goes silent"
+ },
+ "mudo": {
+  "es": "se queda mudo",
+  "en": "goes silent"
+ },
+ "turista": {
+  "es": "como un turista más",
+  "en": "like one more tourist"
+ },
+ "más": {
+  "es": "como un turista más",
+  "en": "like one more tourist"
+ },
+ "si": {
+  "es": "y si el viernes amanece con poniente",
+  "en": "and if Friday dawns with a west wind"
+ },
+ "viernes": {
+  "es": "si el viernes amanece con poniente",
+  "en": "if Friday dawns with a west wind"
+ },
+ "amanece": {
+  "es": "amanece con poniente",
+  "en": "dawns with a west wind"
+ },
+ "poniente": {
+  "es": "amanece con poniente",
+  "en": "dawns with a west wind"
+ },
+ "pregunta": {
+  "es": "pregunta claudia",
+  "en": "asks Claudia"
+ },
+ "ya": {
+  "es": "ya en el idioma de la casa",
+  "en": "already in the house's language"
+ },
+ "idioma": {
+  "es": "el idioma de la casa",
+  "en": "the house's language"
+ },
+ "casa": {
+  "es": "el idioma de la casa",
+  "en": "the house's language"
+ },
+ "entonces": {
+  "es": "entonces cargamos el viernes",
+  "en": "then we load on Friday"
+ },
+ "cargamos": {
+  "es": "entonces cargamos el viernes",
+  "en": "then we load on Friday"
+ },
+ "pues": {
+  "es": "pues el lunes",
+  "en": "then Monday it is"
+ },
+ "lunes": {
+  "es": "pues el lunes",
+  "en": "then Monday it is"
+ },
+ "que": {
+  "es": "que cádiz seguirá donde está",
+  "en": "Cádiz will still be where it is"
+ },
+ "seguirá": {
+  "es": "cádiz seguirá donde está",
+  "en": "Cádiz will still be where it is"
+ },
+ "donde": {
+  "es": "seguirá donde está",
+  "en": "will still be where it is"
+ },
+ "está": {
+  "es": "seguirá donde está",
+  "en": "will still be where it is"
+ },
+ "nosotros": {
+  "es": "y nosotros también",
+  "en": "and so will we"
+ },
+ "también": {
+  "es": "y nosotros también",
+  "en": "and so will we"
+ },
+ "contesta": {
+  "es": "contesta marcos",
+  "en": "Marcos answers"
+ },
+ "lo": {
+  "es": "lo apuntan en la pizarra",
+  "en": "they write it on the blackboard"
+ },
+ "apuntan": {
+  "es": "lo apuntan en la pizarra",
+  "en": "they write it on the blackboard"
+ },
+ "pizarra": {
+  "es": "lo apuntan en la pizarra",
+  "en": "they write it on the blackboard"
+ },
+ "llega": {
+  "es": "el viernes llega limpio",
+  "en": "Friday arrives clean"
+ },
+ "limpio": {
+  "es": "el viernes llega limpio",
+  "en": "Friday arrives clean"
+ },
+ "oeste": {
+  "es": "el viento del oeste",
+  "en": "the west wind"
+ },
+ "barriendo": {
+  "es": "barriendo el cielo",
+  "en": "sweeping the sky clean"
+ },
+ "cielo": {
+  "es": "barriendo el cielo",
+  "en": "sweeping the sky clean"
+ },
+ "repasa": {
+  "es": "la fecha se repasa con bolígrafo",
+  "en": "the date is gone over in pen"
+ },
+ "media": {
+  "es": "a media mañana",
+  "en": "mid-morning"
+ },
+ "mañana": {
+  "es": "a media mañana",
+  "en": "mid-morning"
+ },
+ "guarda": {
+  "es": "guarda el lápiz en el bolso",
+  "en": "puts the pencil away in her bag"
+ },
+ "bolso": {
+  "es": "el lápiz en el bolso",
+  "en": "the pencil in her bag"
+ },
+ "esta": {
+  "es": "en esta ciudad",
+  "en": "in this city"
+ },
+ "ciudad": {
+  "es": "en esta ciudad",
+  "en": "in this city"
+ },
+ "es": {
+  "es": "es la herramienta seria",
+  "en": "is the serious tool"
+ },
+ "herramienta": {
+  "es": "es la herramienta seria",
+  "en": "is the serious tool"
+ },
+ "seria": {
+  "es": "la herramienta seria",
+  "en": "the serious tool"
+ }
+}

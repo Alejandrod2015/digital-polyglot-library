@@ -1,0 +1,434 @@
+{
+ "decide": {
+  "es": "decide tú lo que se guarda",
+  "en": "you decide what gets kept"
+ },
+ "tú": {
+  "es": "decide tú lo que se guarda",
+  "en": "you decide what gets kept"
+ },
+ "su": {
+  "es": "su caja azul",
+  "en": "her blue box"
+ },
+ "caja": {
+  "es": "su caja azul espera",
+  "en": "her blue box waits"
+ },
+ "azul": {
+  "es": "su caja azul",
+  "en": "her blue box"
+ },
+ "espera": {
+  "es": "espera el jueves",
+  "en": "waits on Thursday"
+ },
+ "jueves": {
+  "es": "espera el jueves",
+  "en": "waits on Thursday"
+ },
+ "sobre": {
+  "es": "sobre el mostrador",
+  "en": "on the counter"
+ },
+ "mostrador": {
+  "es": "sobre el mostrador",
+  "en": "on the counter"
+ },
+ "lo": {
+  "es": "lo que se guarda",
+  "en": "what gets kept"
+ },
+ "que": {
+  "es": "lo que se guarda",
+  "en": "what gets kept"
+ },
+ "se": {
+  "es": "lo que se guarda",
+  "en": "what gets kept"
+ },
+ "guarda": {
+  "es": "lo que se guarda",
+  "en": "what gets kept"
+ },
+ "yo": {
+  "es": "yo ya decidí una vez",
+  "en": "I decided once already"
+ },
+ "ya": {
+  "es": "yo ya decidí una vez",
+  "en": "I decided once already"
+ },
+ "decidí": {
+  "es": "yo ya decidí una vez",
+  "en": "I decided once already"
+ },
+ "vez": {
+  "es": "ya decidí una vez y mira",
+  "en": "I decided once and look"
+ },
+ "y": {
+  "es": "una vez y mira",
+  "en": "once, and look"
+ },
+ "mira": {
+  "es": "una vez y mira",
+  "en": "once, and look"
+ },
+ "dice": {
+  "es": "dice hugo",
+  "en": "says Hugo"
+ },
+ "aparta": {
+  "es": "aparta la vista",
+  "en": "looks away"
+ },
+ "vista": {
+  "es": "aparta la vista",
+  "en": "looks away"
+ },
+ "abre": {
+  "es": "la abre como quien abre",
+  "en": "opens it the way you open"
+ },
+ "como": {
+  "es": "como quien abre una herida",
+  "en": "like someone opening a wound"
+ },
+ "quien": {
+  "es": "como quien abre una herida",
+  "en": "like someone opening a wound"
+ },
+ "herida": {
+  "es": "una herida pequeña",
+  "en": "a small wound"
+ },
+ "pequeña": {
+  "es": "una herida pequeña",
+  "en": "a small wound"
+ },
+ "dentro": {
+  "es": "dentro hay periódicos doblados",
+  "en": "inside there are folded newspapers"
+ },
+ "hay": {
+  "es": "dentro hay periódicos doblados",
+  "en": "inside there are folded newspapers"
+ },
+ "periódicos": {
+  "es": "periódicos doblados",
+  "en": "folded newspapers"
+ },
+ "doblados": {
+  "es": "periódicos doblados",
+  "en": "folded newspapers"
+ },
+ "recortes": {
+  "es": "recortes sueltos",
+  "en": "loose clippings"
+ },
+ "sueltos": {
+  "es": "recortes sueltos",
+  "en": "loose clippings"
+ },
+ "olor": {
+  "es": "un olor a húmedo",
+  "en": "a damp smell"
+ },
+ "a": {
+  "es": "un olor a húmedo",
+  "en": "a damp smell"
+ },
+ "húmedo": {
+  "es": "un olor a húmedo",
+  "en": "a damp smell"
+ },
+ "son": {
+  "es": "son las portadas del año",
+  "en": "they are the year's front pages"
+ },
+ "portadas": {
+  "es": "las portadas del año que falta",
+  "en": "the missing year's front pages"
+ },
+ "del": {
+  "es": "las portadas del año",
+  "en": "the year's front pages"
+ },
+ "año": {
+  "es": "el año que falta",
+  "en": "the missing year"
+ },
+ "falta": {
+  "es": "el año que falta",
+  "en": "the missing year"
+ },
+ "con": {
+  "es": "con la peña partida",
+  "en": "with the club split"
+ },
+ "peña": {
+  "es": "la peña partida en dos bandos",
+  "en": "the club split into two camps"
+ },
+ "partida": {
+  "es": "la peña partida en dos bandos",
+  "en": "the club split into two camps"
+ },
+ "en": {
+  "es": "partida en dos bandos",
+  "en": "split into two camps"
+ },
+ "bandos": {
+  "es": "partida en dos bandos",
+  "en": "split into two camps"
+ },
+ "titulares": {
+  "es": "los titulares no gritan",
+  "en": "the headlines do not shout"
+ },
+ "no": {
+  "es": "los titulares no gritan",
+  "en": "the headlines do not shout"
+ },
+ "gritan": {
+  "es": "los titulares no gritan",
+  "en": "the headlines do not shout"
+ },
+ "señalan": {
+  "es": "no gritan; señalan",
+  "en": "they do not shout; they point"
+ },
+ "bar": {
+  "es": "en el bar",
+  "en": "at the bar"
+ },
+ "confirma": {
+  "es": "confirma la venta del primer local",
+  "en": "confirms the sale of the first clubhouse"
+ },
+ "venta": {
+  "es": "la venta del primer local",
+  "en": "the sale of the first clubhouse"
+ },
+ "local": {
+  "es": "la venta del primer local",
+  "en": "the sale of the first clubhouse"
+ },
+ "sin": {
+  "es": "sin adornos",
+  "en": "without dressing it up"
+ },
+ "adornos": {
+  "es": "sin adornos",
+  "en": "without dressing it up"
+ },
+ "aquel": {
+  "es": "aquel año nos quedamos sin casa",
+  "en": "that year we lost our home"
+ },
+ "nos": {
+  "es": "nos quedamos sin casa",
+  "en": "we were left without a home"
+ },
+ "quedamos": {
+  "es": "nos quedamos sin casa",
+  "en": "we were left without a home"
+ },
+ "casa": {
+  "es": "nos quedamos sin casa",
+  "en": "we were left without a home"
+ },
+ "ánimo": {
+  "es": "sin ánimo de cantar",
+  "en": "without the heart to sing"
+ },
+ "cantar": {
+  "es": "sin ánimo de cantar",
+  "en": "without the heart to sing"
+ },
+ "archivo": {
+  "es": "el archivo calló",
+  "en": "the archive went quiet"
+ },
+ "calló": {
+  "es": "el archivo calló",
+  "en": "the archive went quiet"
+ },
+ "porque": {
+  "es": "porque nosotros callamos",
+  "en": "because we went quiet"
+ },
+ "nosotros": {
+  "es": "porque nosotros callamos",
+  "en": "because we went quiet"
+ },
+ "callamos": {
+  "es": "porque nosotros callamos",
+  "en": "because we went quiet"
+ },
+ "cuenta": {
+  "es": "cuenta, con el vaso quieto",
+  "en": "he tells it, glass untouched"
+ },
+ "vaso": {
+  "es": "con el vaso quieto",
+  "en": "with his glass untouched"
+ },
+ "quieto": {
+  "es": "con el vaso quieto",
+  "en": "with his glass untouched"
+ },
+ "guardamos": {
+  "es": "guardamos lo que nos deja dormir",
+  "en": "we keep what lets us sleep"
+ },
+ "deja": {
+  "es": "lo que nos deja dormir",
+  "en": "what lets us sleep"
+ },
+ "dormir": {
+  "es": "lo que nos deja dormir",
+  "en": "what lets us sleep"
+ },
+ "remata": {
+  "es": "remata",
+  "en": "he caps it"
+ },
+ "entendía": {
+  "es": "claudia entendía el archivo",
+  "en": "Claudia understood the archive"
+ },
+ "máquina": {
+  "es": "una máquina de no perder nada",
+  "en": "a machine for losing nothing"
+ },
+ "de": {
+  "es": "de no perder nada",
+  "en": "for losing nothing"
+ },
+ "perder": {
+  "es": "de no perder nada",
+  "en": "for losing nothing"
+ },
+ "nada": {
+  "es": "de no perder nada",
+  "en": "for losing nothing"
+ },
+ "ahora": {
+  "es": "ahora ve el otro lado",
+  "en": "now she sees the other side"
+ },
+ "ve": {
+  "es": "ahora ve el otro lado",
+  "en": "now she sees the other side"
+ },
+ "otro": {
+  "es": "el otro lado",
+  "en": "the other side"
+ },
+ "lado": {
+  "es": "el otro lado",
+  "en": "the other side"
+ },
+ "mano": {
+  "es": "una mano que elige",
+  "en": "a hand that chooses"
+ },
+ "elige": {
+  "es": "una mano que elige",
+  "en": "a hand that chooses"
+ },
+ "elegir": {
+  "es": "elegir es cuidar",
+  "en": "choosing is caring"
+ },
+ "es": {
+  "es": "elegir es cuidar",
+  "en": "choosing is caring"
+ },
+ "cuidar": {
+  "es": "elegir es cuidar",
+  "en": "choosing is caring"
+ },
+ "malo": {
+  "es": "deja el año malo dentro",
+  "en": "leaves the bad year inside"
+ },
+ "pero": {
+  "es": "pero marca dos portadas",
+  "en": "but marks two front pages"
+ },
+ "marca": {
+  "es": "marca dos portadas",
+  "en": "marks two front pages"
+ },
+ "nota": {
+  "es": "con una nota amable",
+  "en": "with a kind note"
+ },
+ "amable": {
+  "es": "con una nota amable",
+  "en": "with a kind note"
+ },
+ "estas": {
+  "es": "estas dos entran",
+  "en": "these two go in"
+ },
+ "entran": {
+  "es": "estas dos entran",
+  "en": "these two go in"
+ },
+ "para": {
+  "es": "para que el susto no se repita",
+  "en": "so the scare does not happen again"
+ },
+ "susto": {
+  "es": "que el susto no se repita",
+  "en": "the scare does not happen again"
+ },
+ "repita": {
+  "es": "que el susto no se repita",
+  "en": "the scare does not happen again"
+ },
+ "resto": {
+  "es": "el resto descansa",
+  "en": "the rest can rest"
+ },
+ "descansa": {
+  "es": "el resto descansa",
+  "en": "the rest can rest"
+ },
+ "propone": {
+  "es": "propone a marcos",
+  "en": "she proposes to Marcos"
+ },
+ "por": {
+  "es": "por primera vez",
+  "en": "for the first time"
+ },
+ "lee": {
+  "es": "marcos lee la nota",
+  "en": "Marcos reads the note"
+ },
+ "asiente": {
+  "es": "asiente dos veces",
+  "en": "nods twice"
+ },
+ "veces": {
+  "es": "asiente dos veces",
+  "en": "nods twice"
+ },
+ "primera": {
+  "es": "por primera vez",
+  "en": "for the first time"
+ },
+ "parece": {
+  "es": "le parece una casa",
+  "en": "feels like a home to her"
+ },
+ "almacén": {
+  "es": "una casa y no un almacén",
+  "en": "a home and not a warehouse"
+ }
+}

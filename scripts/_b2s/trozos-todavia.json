@@ -1,0 +1,402 @@
+{
+ "este": {
+  "es": "este no, todavía",
+  "en": "not this one, not yet"
+ },
+ "no": {
+  "es": "este no, todavía",
+  "en": "not this one, not yet"
+ },
+ "todavía": {
+  "es": "este no, todavía",
+  "en": "not this one, not yet"
+ },
+ "vuelve": {
+  "es": "claudia vuelve con marcos",
+  "en": "Claudia comes back with Marcos"
+ },
+ "con": {
+  "es": "con una propuesta seria",
+  "en": "with a serious proposal"
+ },
+ "propuesta": {
+  "es": "una propuesta seria",
+  "en": "a serious proposal"
+ },
+ "seria": {
+  "es": "una propuesta seria",
+  "en": "a serious proposal"
+ },
+ "recuperar": {
+  "es": "recuperar la biblioteca",
+  "en": "to get the library back"
+ },
+ "biblioteca": {
+  "es": "recuperar la biblioteca",
+  "en": "to get the library back"
+ },
+ "escucha": {
+  "es": "martina escucha",
+  "en": "Martina listens"
+ },
+ "brazos": {
+  "es": "con los brazos cruzados",
+  "en": "with her arms folded"
+ },
+ "cruzados": {
+  "es": "con los brazos cruzados",
+  "en": "with her arms folded"
+ },
+ "vendo": {
+  "es": "los vendo si vuelven",
+  "en": "I sell them if they go back"
+ },
+ "si": {
+  "es": "si vuelven a estar a la vista",
+  "en": "if they go back on view"
+ },
+ "vuelven": {
+  "es": "si vuelven a estar a la vista",
+  "en": "if they go back on view"
+ },
+ "estar": {
+  "es": "a estar a la vista",
+  "en": "to be on view"
+ },
+ "vista": {
+  "es": "a estar a la vista",
+  "en": "to be on view"
+ },
+ "de": {
+  "es": "de caja a caja",
+  "en": "from box to box"
+ },
+ "caja": {
+  "es": "de caja a caja no salen",
+  "en": "from box to box they do not leave"
+ },
+ "salen": {
+  "es": "no salen de aquí",
+  "en": "they do not leave here"
+ },
+ "aquí": {
+  "es": "no salen de aquí",
+  "en": "they do not leave here"
+ },
+ "avisa": {
+  "es": "avisa",
+  "en": "she warns"
+ },
+ "en": {
+  "es": "en el local nuevo",
+  "en": "in the new clubhouse"
+ },
+ "local": {
+  "es": "el local nuevo",
+  "en": "the new clubhouse"
+ },
+ "nuevo": {
+  "es": "el local nuevo",
+  "en": "the new clubhouse"
+ },
+ "hay": {
+  "es": "hay una pared entera",
+  "en": "there is a whole wall"
+ },
+ "pared": {
+  "es": "una pared entera esperándolos",
+  "en": "a whole wall waiting for them"
+ },
+ "entera": {
+  "es": "una pared entera",
+  "en": "a whole wall"
+ },
+ "esperándolos": {
+  "es": "una pared entera esperándolos",
+  "en": "a whole wall waiting for them"
+ },
+ "promete": {
+  "es": "promete marcos",
+  "en": "Marcos promises"
+ },
+ "y": {
+  "es": "y enseña fotos del hueco",
+  "en": "and shows photos of the space"
+ },
+ "enseña": {
+  "es": "enseña fotos del hueco",
+  "en": "shows photos of the space"
+ },
+ "fotos": {
+  "es": "enseña fotos del hueco",
+  "en": "shows photos of the space"
+ },
+ "del": {
+  "es": "fotos del hueco",
+  "en": "photos of the space"
+ },
+ "hueco": {
+  "es": "fotos del hueco",
+  "en": "photos of the space"
+ },
+ "repasa": {
+  "es": "las repasa con cara de examen",
+  "en": "goes over them with an examiner's look"
+ },
+ "cara": {
+  "es": "con cara de examen",
+  "en": "with an examiner's look"
+ },
+ "examen": {
+  "es": "con cara de examen",
+  "en": "with an examiner's look"
+ },
+ "promesa": {
+  "es": "no es una promesa",
+  "en": "is not a promise"
+ },
+ "es": {
+  "es": "no es una promesa",
+  "en": "is not a promise"
+ },
+ "pero": {
+  "es": "pero se le parece",
+  "en": "but it looks like one"
+ },
+ "se": {
+  "es": "pero se le parece",
+  "en": "but it looks like one"
+ },
+ "le": {
+  "es": "pero se le parece",
+  "en": "but it looks like one"
+ },
+ "parece": {
+  "es": "pero se le parece",
+  "en": "but it looks like one"
+ },
+ "concede": {
+  "es": "concede al fin",
+  "en": "she grants at last"
+ },
+ "fin": {
+  "es": "concede al fin",
+  "en": "she grants at last"
+ },
+ "trato": {
+  "es": "el trato se cierra a la antigua",
+  "en": "the deal closes the old way"
+ },
+ "cierra": {
+  "es": "el trato se cierra",
+  "en": "the deal closes"
+ },
+ "antigua": {
+  "es": "a la antigua",
+  "en": "the old way"
+ },
+ "lista": {
+  "es": "con lista y apretón",
+  "en": "with a list and a handshake"
+ },
+ "apretón": {
+  "es": "con lista y apretón",
+  "en": "with a list and a handshake"
+ },
+ "libros": {
+  "es": "los libros salen por tandas",
+  "en": "the books leave in batches"
+ },
+ "por": {
+  "es": "por tandas",
+  "en": "in batches"
+ },
+ "tandas": {
+  "es": "salen por tandas",
+  "en": "leave in batches"
+ },
+ "envueltos": {
+  "es": "envueltos en papel de periódico",
+  "en": "wrapped in newspaper"
+ },
+ "papel": {
+  "es": "en papel de periódico",
+  "en": "in newspaper"
+ },
+ "periódico": {
+  "es": "en papel de periódico",
+  "en": "in newspaper"
+ },
+ "cuántos": {
+  "es": "cuántos eran",
+  "en": "how many were there"
+ },
+ "eran": {
+  "es": "cuántos eran",
+  "en": "how many were there"
+ },
+ "pregunta": {
+  "es": "pregunta claudia",
+  "en": "asks Claudia"
+ },
+ "conté": {
+  "es": "los conté uno a uno",
+  "en": "I counted them one by one"
+ },
+ "uno": {
+  "es": "uno a uno",
+  "en": "one by one"
+ },
+ "comprarlos": {
+  "es": "al comprarlos",
+  "en": "when I bought them"
+ },
+ "contesta": {
+  "es": "contesta martina",
+  "en": "Martina answers"
+ },
+ "sin": {
+  "es": "sin dar la cifra",
+  "en": "without giving the number"
+ },
+ "dar": {
+  "es": "sin dar la cifra",
+  "en": "without giving the number"
+ },
+ "cifra": {
+  "es": "sin dar la cifra",
+  "en": "without giving the number"
+ },
+ "casi": {
+  "es": "con la caja casi vacía",
+  "en": "with the box almost empty"
+ },
+ "vacía": {
+  "es": "la caja casi vacía",
+  "en": "the box almost empty"
+ },
+ "agacha": {
+  "es": "se agacha y saca un tomo",
+  "en": "bends down and takes out a volume"
+ },
+ "saca": {
+  "es": "saca un tomo aparte",
+  "en": "takes out a separate volume"
+ },
+ "tomo": {
+  "es": "un tomo aparte",
+  "en": "a volume set apart"
+ },
+ "aparte": {
+  "es": "un tomo aparte",
+  "en": "a volume set apart"
+ },
+ "forrado": {
+  "es": "forrado a mano",
+  "en": "covered by hand"
+ },
+ "mano": {
+  "es": "forrado a mano",
+  "en": "covered by hand"
+ },
+ "lo": {
+  "es": "lo abre, lo piensa",
+  "en": "opens it, thinks about it"
+ },
+ "abre": {
+  "es": "lo abre, lo piensa",
+  "en": "opens it, thinks about it"
+ },
+ "piensa": {
+  "es": "lo abre, lo piensa",
+  "en": "opens it, thinks about it"
+ },
+ "cerrar": {
+  "es": "lo vuelve a cerrar",
+  "en": "closes it again"
+ },
+ "fuera": {
+  "es": "fuera, la tarde va cayendo",
+  "en": "outside, the evening is falling"
+ },
+ "tarde": {
+  "es": "la tarde va cayendo",
+  "en": "the evening is falling"
+ },
+ "va": {
+  "es": "la tarde va cayendo",
+  "en": "the evening is falling"
+ },
+ "cayendo": {
+  "es": "la tarde va cayendo",
+  "en": "the evening is falling"
+ },
+ "nadie": {
+  "es": "sin que nadie mire el reloj",
+  "en": "without anyone checking the clock"
+ },
+ "mire": {
+  "es": "sin que nadie mire el reloj",
+  "en": "without anyone checking the clock"
+ },
+ "reloj": {
+  "es": "sin que nadie mire el reloj",
+  "en": "without anyone checking the clock"
+ },
+ "dice": {
+  "es": "dice",
+  "en": "she says"
+ },
+ "lleva": {
+  "es": "se lo lleva al mostrador",
+  "en": "takes it to the counter"
+ },
+ "mostrador": {
+  "es": "al mostrador de dentro",
+  "en": "to the counter at the back"
+ },
+ "dentro": {
+  "es": "al mostrador de dentro",
+  "en": "to the counter at the back"
+ },
+ "ve": {
+  "es": "claudia ve la dedicatoria",
+  "en": "Claudia sees the dedication"
+ },
+ "dedicatoria": {
+  "es": "ve la dedicatoria un segundo",
+  "en": "sees the dedication for a second"
+ },
+ "segundo": {
+  "es": "un segundo",
+  "en": "for one second"
+ },
+ "manuscrita": {
+  "es": "manuscrita y torcida",
+  "en": "handwritten and crooked"
+ },
+ "torcida": {
+  "es": "manuscrita y torcida",
+  "en": "handwritten and crooked"
+ },
+ "palabra": {
+  "es": "la palabra todavía",
+  "en": "the word not-yet"
+ },
+ "queda": {
+  "es": "se queda dando vueltas",
+  "en": "keeps going round her head"
+ },
+ "dando": {
+  "es": "dando vueltas toda la tarde",
+  "en": "going round all afternoon"
+ },
+ "vueltas": {
+  "es": "dando vueltas toda la tarde",
+  "en": "going round all afternoon"
+ },
+ "toda": {
+  "es": "toda la tarde",
+  "en": "all afternoon"
+ }
+}

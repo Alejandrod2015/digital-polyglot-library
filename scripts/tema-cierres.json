@@ -441,5 +441,395 @@
         }
       ]
     }
+  },
+  "cmtplpfum0007j8c6piegwt31#books-and-bookshops": {
+    "cerrado": "2026-09-06T11:20:55.656Z",
+    "hash": "16d0f01fa89e8fce",
+    "historias": [
+      "books-and-bookshops#1 de-trabajo-o-de-vivir",
+      "books-and-bookshops#2 este-no-todavia",
+      "books-and-bookshops#3 los-libros-vuelven-a-casa"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de interior y voz baja: en la libreria las cosas importantes se dicen entre lomos y con la campanilla de testigo\", espina \"en la libreria de la cuesta aparece la biblioteca que la pena vendio el ano malo; recuperarla para el local nuevo es la mejor pieza del archivo, y quien la guardo resulta ser su custodia y no su compradora\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dice\" 25%)",
+      "arranques de parrafo variados (mas repetido \"la\", 20%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: books-and-bookshops (Claudia, Martina)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b2",
+      "variante": "spain",
+      "registro": "de interior y voz baja: en la libreria las cosas importantes se dicen entre lomos y con la campanilla de testigo",
+      "espina": "en la libreria de la cuesta aparece la biblioteca que la pena vendio el ano malo; recuperarla para el local nuevo es la mejor pieza del archivo, y quien la guardo resulta ser su custodia y no su compradora",
+      "recursos": "subtexto de dialogo e ironia de personaje (B2), elipsis temporal (B2, las tandas de libros), simil simple (A2), gancho final literal (A1)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "comprarse una novela de vivir, no de trabajar: una tarde sin encargo",
+          "impide": "al fondo de la libreria, una caja recien llegada lleva el exlibris de la pena: su ocio y su encargo chocan en la misma estanteria",
+          "cuesta": "la novela elegida vuelve a su sitio: el presupuesto es el que es, y el primer libro de la pena lo paga con su dinero de vivir",
+          "cambia": "descubre que la biblioteca vendida el ano malo existe y esta entera en la cuesta; el archivo tiene una pieza nueva que no es de papel escaneado",
+          "emocion": "el respingo de reconocer el escudo como una cara en una foto vieja; se ve cuando pregunta ya sin voz de clienta y sale con el libro bajo el brazo"
+        },
+        {
+          "slot": "2",
+          "quiere": "recuperar la biblioteca entera para la pared del local nuevo",
+          "impide": "Martina no vende a cualquier precio: pone condicion (que vuelvan a estar a la vista) y aparta un tomo que no vende, todavia",
+          "cuesta": "el presupuesto del archivo se va en libros; y el tomo forrado se queda fuera del trato, con su dedicatoria a medio ver",
+          "cambia": "el trato se cierra a la antigua, con lista y apreton; los libros salen por tandas y queda una palabra dando vueltas: todavia",
+          "emocion": "impaciencia contenida ante el tomo que no se vende; se ve en que Marcos no pregunta, que tambien es una manera de preguntar"
+        },
+        {
+          "slot": "3",
+          "quiere": "colocar la biblioteca en el local nuevo y cerrar la historia del ano malo",
+          "impide": "el tomo forrado que faltaba llega en una bolsa aparte, con una dedicatoria que cambia el sentido de toda la compra",
+          "cuesta": "la idea comoda de Martina como vendedora: la custodia callada de anos no se paga con dinero, y la deuda con ella queda",
+          "cambia": "el reveal: la biblioteca nunca se vendio fuera; la compro Martina el ano malo para que no se perdiera, esperando a que alguien volviera a buscarla",
+          "emocion": "gratitud grande dicha en voz normal; se ve cuando Claudia la invita a la primera sobremesa del local nuevo y la balda del medio pasa a llamarse biblioteca"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmtplpfum0007j8c6piegwt31#humour-and-comebacks": {
+    "cerrado": "2026-09-06T10:20:48.031Z",
+    "hash": "197ab6aaf0194a51",
+    "historias": [
+      "humour-and-comebacks#1 la-copla-ya-lo-decia",
+      "humour-and-comebacks#2 la-broma-se-queda-sola",
+      "humour-and-comebacks#3 de-eso-se-rie-marcos"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de guasa abierta y replica rapida: la pena vacila y espera vacile de vuelta\", espina \"Claudia tiene tres meses para digitalizar el archivo antes de la mudanza; este tema le da el idioma del humor local y le revela por que la mudanza duele: al local lo echan, no se van\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"suelta\" 17%)",
+      "arranques de parrafo variados (mas repetido \"en\", 20%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b2",
+      "variante": "spain",
+      "registro": "de guasa abierta y replica rapida: la pena vacila y espera vacile de vuelta",
+      "espina": "Claudia tiene tres meses para digitalizar el archivo antes de la mudanza; este tema le da el idioma del humor local y le revela por que la mudanza duele: al local lo echan, no se van",
+      "recursos": "ironia de personaje y subtexto de dialogo (B2), humor de situacion y gancho final literal (A1), simil simple (A2), cambio de ritmo (B1)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "que dejen de vacilarla mientras trabaja y que Carla la trate como a una companera",
+          "impide": "la pena entera funciona a vacile, y ella lee cada broma como un empujon hacia fuera",
+          "cuesta": "la manana de trabajo que pierde leyendo coplas viejas que no tocaban",
+          "cambia": "descubre que la copla de hace decadas y la guasa de hoy estan cortadas por el mismo patron: aqui se vacila a quien ya esta dentro",
+          "emocion": "pique que se deshace en risa cuando cae en que la broma la cuenta dentro; se ve cuando apunta la broma del domingo en la libreta de las quejas"
+        },
+        {
+          "slot": "2",
+          "quiere": "devolver una broma por primera vez, delante de todos",
+          "impide": "no conoce el mapa de lo que duele: elige justo la mudanza, que es la herida de Marcos",
+          "cuesta": "la ligereza de esa tarde, que ya no vuelve por mucho que dure el cafe",
+          "cambia": "aprende que la regla del vacile tenia un mapa debajo, y que seguirla al pie de la letra sin mapa hace dano",
+          "emocion": "el silencio le cae encima como un mantel mojado, porque ha herido sin querer al que la defendia; se ve cuando apila platos que nadie le ha pedido apilar"
+        },
+        {
+          "slot": "3",
+          "quiere": "arreglar lo de ayer sin convertirlo en un drama",
+          "impide": "no sabe como se pide perdon en el idioma de la guasa",
+          "cuesta": "la inocencia sobre la mudanza: ahora sabe que al local lo echan y que su trabajo corre contra eso",
+          "cambia": "Marcos le devuelve su propia broma sobre el candado y ese vacile vale por un perdon entero: de lo que duele bromea su dueno",
+          "emocion": "alivio con un resto de culpa que se hace pequena cuando la broma vuelve devuelta; se ve cuando se rie con ganas y vuelve al escaner con otra prisa"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmtplpfum0007j8c6piegwt31#locals-and-outsiders": {
+    "cerrado": "2026-09-06T10:04:42.338Z",
+    "hash": "2b6d82429bf63708",
+    "historias": [
+      "locals-and-outsiders#1 las-llaves-de-la-pena",
+      "locals-and-outsiders#2 le-habian-guardado-tomates",
+      "locals-and-outsiders#3 la-sobremesa"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"curioso y con guasa suave: la ciudad pregunta mas de lo que responde, y el narrador toma partido por Claudia\", espina \"Claudia tiene tres meses para digitalizar el archivo de la pena antes de la mudanza del local; lo que de verdad se juega es dejar de ser la de fuera, y cada tema le da un trozo de ciudad y le cobra otro\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"contesta\" 36%)",
+      "arranques de parrafo variados (mas repetido \"claudia\", 13%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: locals-and-outsiders (Marcos, Claudia)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b2",
+      "variante": "spain",
+      "registro": "curioso y con guasa suave: la ciudad pregunta mas de lo que responde, y el narrador toma partido por Claudia",
+      "espina": "Claudia tiene tres meses para digitalizar el archivo de la pena antes de la mudanza del local; lo que de verdad se juega es dejar de ser la de fuera, y cada tema le da un trozo de ciudad y le cobra otro",
+      "recursos": "ironia de personaje y subtexto de dialogo (B2), narrador con opinion (B2), aforismo de personaje con cuentagotas (B2, uno en el tema), reversa cosida y cambio de ritmo (B1), imagen concreta (A0)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "que Marcos le entregue las llaves y el archivo, y empezar a trabajar el primer dia",
+          "impide": "en la pena nadie habla de trabajo: toda la manana es gente preguntandole quien es y de donde viene",
+          "cuesta": "la manana entera y las llaves, que ese dia no llegan",
+          "cambia": "entiende que las preguntas no eran cortesia sino el examen de entrada: aqui el trabajo empieza por dejarse conocer",
+          "emocion": "impaciencia que se agria a verguenza cuando cae en que trataba a la pena como un tramite; se ve cuando se le calienta la cara, tapa el boligrafo y cierra la libreta"
+        },
+        {
+          "slot": "2",
+          "quiere": "hacer la compra en el mercado de abastos como una mas, sin que se le note lo de fuera",
+          "impide": "en una ciudad chica el anonimato no existe: la conocian desde el primer dia, con nombre de ciudad incluido",
+          "cuesta": "la ilusion de camuflarse; el anonimato lo pierde ese dia y no lo recupera",
+          "cambia": "descubre que la trataban bien no porque pareciera de alli sino porque ya sabian quien era; pasar por local nunca fue la puerta",
+          "emocion": "apuro que se vuelve alivio porque la risa gana antes de que ella decida reirse; se ve cuando decide volver manana sin ensayar la frase"
+        },
+        {
+          "slot": "3",
+          "quiere": "quedarse una tarde de sabado en la mesa sin justificar por que no esta trabajando",
+          "impide": "su propio reflejo de irse: lleva semanas midiendo cada hora contra el archivo",
+          "cuesta": "la tarde de trabajo que pensaba adelantar; ese retraso ya no se recupera",
+          "cambia": "acepta el sitio que le guardan: se puede ser de un sitio sin haber nacido en el, y la sobremesa es donde se firma",
+          "emocion": "gratitud con nudo al ver la silla guardada y el vaso lleno; se ve cuando acerca la silla y deja la libreta en el fondo del bolso"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmtplpfum0007j8c6piegwt31#news-and-headlines": {
+    "cerrado": "2026-09-06T10:55:46.122Z",
+    "hash": "2497679e140657e2",
+    "historias": [
+      "news-and-headlines#1 el-ano-que-falta",
+      "news-and-headlines#2 decide-tu",
+      "news-and-headlines#3 una-copla-sin-cantar"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de papel y tinta, con humor seco: las noticias del pueblo caben en un mostrador y las que duelen se guardan en una caja\", espina \"al archivo de la pena le falta un ano entero; el kiosco de Hugo guarda lo que la pena decidio olvidar, y Claudia aprende que archivar tambien es elegir que se guarda\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"pregunta\" 14%)",
+      "arranques de parrafo variados (mas repetido \"claudia\", 20%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 12 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: news-and-headlines (Hugo, Claudia)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b2",
+      "variante": "spain",
+      "registro": "de papel y tinta, con humor seco: las noticias del pueblo caben en un mostrador y las que duelen se guardan en una caja",
+      "espina": "al archivo de la pena le falta un ano entero; el kiosco de Hugo guarda lo que la pena decidio olvidar, y Claudia aprende que archivar tambien es elegir que se guarda",
+      "recursos": "subtexto de dialogo y narrador con opinion (B2), aforismo de personaje con cuentagotas (B2, uno en el tema), elipsis temporal (B2, el salto al jueves), simil simple (A2), causalidad explicita (A1)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "encontrar la cronica del ano que falta en las cajas del archivo",
+          "impide": "Hugo, que guarda periodicos de todo, se cierra en seco justo con ese ano y aplaza la respuesta al jueves",
+          "cuesta": "tres dias de espera sin ninguna forma de acortarlos, con la pregunta abierta delante de toda la plaza",
+          "cambia": "descubre que el hueco del archivo no es un descuido: es un ano que le duele a alguien de carne y hueso",
+          "emocion": "curiosidad que se vuelve respeto cuando la respuesta suena a puerta cerrada; se ve cuando deja de insistir y en que la fecha va subrayada dos veces"
+        },
+        {
+          "slot": "2",
+          "quiere": "que alguien decida por ella que hacer con el ano malo",
+          "impide": "Hugo le planta la caja azul y le pasa la decision: decide tu lo que se guarda",
+          "cuesta": "su idea del archivo como maquina de no perder nada: renuncia a escanearlo todo y deja el resto de portadas fuera",
+          "cambia": "entiende que archivar es elegir y que elegir es cuidar: guarda dos portadas con una nota amable y deja descansar el resto",
+          "emocion": "el peso de decidir sobre heridas ajenas, que se afloja cuando Marcos le da la regla de la casa; se ve en que marca las dos portadas con una nota amable en vez de con una etiqueta"
+        },
+        {
+          "slot": "3",
+          "quiere": "escanear el ano malo a solas y cerrar el hueco del archivo",
+          "impide": "entre las portadas aparece una copla escrita a mano que nunca se canto, sin firma y con dos iniciales",
+          "cuesta": "la distancia comoda del archivero: la copla la obliga a llamar a una puerta con nombre y apellido",
+          "cambia": "el reveal: las iniciales son de Hugo; el kiosquero era de la pena y se fue el ano que los echaron; la copla entra en el archivo con autor y Hugo vuelve a entrar con ella",
+          "emocion": "ternura con cuidado de no romper nada; se ve cuando se la lleva al kiosco con el corazon en un puño y en que no lo dice como pregunta"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmtplpfum0007j8c6piegwt31#rounds-and-regulars": {
+    "cerrado": "2026-09-06T10:39:11.631Z",
+    "hash": "33e9f0767469b66e",
+    "historias": [
+      "rounds-and-regulars#1 lo-de-siempre-cadiz-b2",
+      "rounds-and-regulars#2 aqui-se-apunta",
+      "rounds-and-regulars#3 una-ronda-sin-dueno"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de costumbre y ritual, en voz mas baja que los temas anteriores: lo importante pasa en lo que se repite\", espina \"con la pena a punto de perder su local, el bar de abajo es el otro salon; Claudia gana su sitio de fija: el cafe que no se pide, la deuda apuntada con tiza y la ronda que nadie firma\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"contesta\" 29%)",
+      "arranques de parrafo variados (mas repetido \"claudia\", 20%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: rounds-and-regulars (Pablo, Claudia)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b2",
+      "variante": "spain",
+      "registro": "de costumbre y ritual, en voz mas baja que los temas anteriores: lo importante pasa en lo que se repite",
+      "espina": "con la pena a punto de perder su local, el bar de abajo es el otro salon; Claudia gana su sitio de fija: el cafe que no se pide, la deuda apuntada con tiza y la ronda que nadie firma",
+      "recursos": "subtexto de dialogo y narrador con opinion (B2), aforismo de personaje con cuentagotas (B2, uno en el tema), espejo concreto (A2), repeticion ritmica (A0), cambio de ritmo (B1)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "pedir como los fijos: que su cafe no haga falta pedirlo",
+          "impide": "sigue siendo la de la mesa; a los nuevos se les pregunta todo",
+          "cuesta": "la ronda del estreno, que paga entera el dia que se pasa a la barra; ese dinero no vuelve",
+          "cambia": "pasa de la mesa al taburete y su cafe entra en la lista de lo que no se pregunta",
+          "emocion": "un orgullo tan pequeno que a ella misma le da risa, porque es solo un cafe dado por sabido; se ve cuando confirma lo de siempre como quien firma algo"
+        },
+        {
+          "slot": "2",
+          "quiere": "pagar su ronda al momento y no deber nada a nadie, como ha hecho siempre",
+          "impide": "Pablo no le coge el dinero: aqui a los de la casa se les apunta con tiza y se paga a fin de mes",
+          "cuesta": "su norma de no deber nada, que suelta delante de todos; la independencia de turista no vuelve",
+          "cambia": "descubre que la pizarra es otro archivo: las rayas de tiza guardan confianza como las coplas guardan memoria, y que te fien es un te espero",
+          "emocion": "la incomodidad de deber le pica y se le vuelve ternura cuando ve su nombre debajo de los fijos; se ve cuando deja apuntar el cafe y le sale la voz tranquila"
+        },
+        {
+          "slot": "3",
+          "quiere": "saber quien ha pagado la ronda anonima del viernes",
+          "impide": "nadie se da por aludido: el misterio es parte del regalo",
+          "cuesta": "la cuenta exacta de quien debe que a quien: la pierde y no la recupera, y eso es justo estar dentro",
+          "cambia": "entiende el espejo: el primer dia pago para entrar y lo supo todo el bar; hoy no sabe a quien le debe el cafe, y esa cuenta perdida es la casa",
+          "emocion": "una calma nueva de pertenencia; se ve cuando alza el vaso hacia la barra, a nadie y a todos, y avisa de que la siguiente es suya"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmtplpfum0007j8c6piegwt31#wind-and-plans": {
+    "cerrado": "2026-09-06T11:09:50.359Z",
+    "hash": "e8b8882cc2a56185",
+    "historias": [
+      "wind-and-plans#1 un-barco-para-la-pena",
+      "wind-and-plans#2 el-levante-manda",
+      "wind-and-plans#3 fecha-a-lapiz"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"a la intemperie y con el viento de personaje: los planes se escriben a lapiz y nadie se ofende\", espina \"la mudanza necesita fecha y en esta ciudad las fechas se negocian con el levante; Claudia paga por fin su ronda pendiente y aprende a planear a la gaditana\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"pregunta\" 23%)",
+      "arranques de parrafo variados (mas repetido \"el\", 20%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: wind-and-plans (Marcos, Claudia)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b2",
+      "variante": "spain",
+      "registro": "a la intemperie y con el viento de personaje: los planes se escriben a lapiz y nadie se ofende",
+      "espina": "la mudanza necesita fecha y en esta ciudad las fechas se negocian con el levante; Claudia paga por fin su ronda pendiente y aprende a planear a la gaditana",
+      "recursos": "narrador con opinion (B2), aforismo de personaje con cuentagotas (B2, el refran de la azotea), elipsis temporal (B2, el salto al jueves del levante), simil simple (A2), causalidad explicita (A1)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "organizar ella un plan para toda la pena y pagar la ronda anonima del viernes con una tarde de barco",
+          "impide": "su miedo a quedarse corta: cuenta cabezas, paga la senal sin mirar y necesita que todo salga perfecto",
+          "cuesta": "la senal del barco, pagada de una vez y sin factura pequena; el dinero del agradecimiento no se recupera",
+          "cambia": "la deuda alegre queda pagada: brinda por el que pago la ronda sin nombre y nadie confiesa, que es la respuesta de la casa",
+          "emocion": "orgullo de anfitriona con nervios de estreno; se ve cuando brinda mirando a todos y en que apunta la primera nube en la memoria y no en la libreta"
+        },
+        {
+          "slot": "2",
+          "quiere": "repetir la excursion para los que faltaron",
+          "impide": "el levante llega puntual y Alba no discute con el viento: barco amarrado y tarde aplazada sin fecha",
+          "cuesta": "la tarde de barco perdida, que no vuelve; la excursion pendiente se queda sin fecha",
+          "cambia": "el plan B en la azotea sale mejor que muchos planes A: contra el levante, azotea y paciencia, y Claudia baja despeinada y sin echar de menos el barco",
+          "emocion": "fastidio que se destensa en risa cuando la ciudad entera aguanta el mismo viento; se ve en que baja la ultima, despeinada y contenta"
+        },
+        {
+          "slot": "3",
+          "quiere": "fijar con Marcos la fecha de la mudanza, en boligrafo y por semanas, como en Vitoria",
+          "impide": "aqui una fecha se escribe a lapiz hasta oir el parte: el calendario manda poco y el levante mucho",
+          "cuesta": "su calendario por semanas, que se queda mudo en el fondo del bolso; la seguridad de la fecha fija no existe aqui",
+          "cambia": "el reframe del tema uno: nadie le daba fechas en su primera semana porque las fechas se negocian con el viento; no era desorden, era otra manera de contar el tiempo",
+          "emocion": "alivio de entender por fin la regla que la volvia loca; se ve cuando pregunta por el poniente ya en el idioma de la casa y guarda el lapiz como herramienta seria"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
   }
 }

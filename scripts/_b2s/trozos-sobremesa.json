@@ -1,0 +1,409 @@
+{
+ "sobremesa": {
+  "es": "la sobremesa",
+  "en": "the after-lunch table talk"
+ },
+ "hay": {
+  "es": "hay mesas",
+  "en": "there are tables"
+ },
+ "mesas": {
+  "es": "mesas que no sueltan",
+  "en": "tables that will not let go"
+ },
+ "de": {
+  "es": "de las segundas",
+  "en": "of the second kind"
+ },
+ "que": {
+  "es": "mesas que no sueltan",
+  "en": "tables that will not let go"
+ },
+ "uno": {
+  "es": "uno se levanta pronto",
+  "en": "one gets up early"
+ },
+ "se": {
+  "es": "se levanta pronto",
+  "en": "gets up early"
+ },
+ "levanta": {
+  "es": "uno se levanta pronto",
+  "en": "one gets up early"
+ },
+ "pronto": {
+  "es": "se levanta pronto",
+  "en": "gets up early"
+ },
+ "y": {
+  "es": "y mesas que no sueltan",
+  "en": "and tables that will not let go"
+ },
+ "no": {
+  "es": "que no sueltan",
+  "en": "that do not let go"
+ },
+ "sueltan": {
+  "es": "mesas que no sueltan",
+  "en": "tables that will not let go"
+ },
+ "del": {
+  "es": "la del sábado",
+  "en": "the Saturday one"
+ },
+ "sábado": {
+  "es": "la del sábado",
+  "en": "the Saturday one"
+ },
+ "en": {
+  "es": "en la peña",
+  "en": "at the club"
+ },
+ "peña": {
+  "es": "en la peña",
+  "en": "at the club"
+ },
+ "es": {
+  "es": "es de las segundas",
+  "en": "is the second kind"
+ },
+ "segundas": {
+  "es": "es de las segundas",
+  "en": "is the second kind"
+ },
+ "llega": {
+  "es": "claudia llega con la libreta",
+  "en": "Claudia arrives with her notebook"
+ },
+ "con": {
+  "es": "con la libreta",
+  "en": "with her notebook"
+ },
+ "libreta": {
+  "es": "con la libreta",
+  "en": "with her notebook"
+ },
+ "quiere": {
+  "es": "quiere irse a las cuatro",
+  "en": "wants to leave at four"
+ },
+ "irse": {
+  "es": "quiere irse a las cuatro",
+  "en": "wants to leave at four"
+ },
+ "a": {
+  "es": "a las cuatro",
+  "en": "at four o'clock"
+ },
+ "come": {
+  "es": "se come",
+  "en": "people eat"
+ },
+ "discute": {
+  "es": "se discute despacio",
+  "en": "people argue unhurriedly"
+ },
+ "despacio": {
+  "es": "se discute despacio",
+  "en": "people argue unhurriedly"
+ },
+ "fútbol": {
+  "es": "fútbol",
+  "en": "football"
+ },
+ "obras": {
+  "es": "obras",
+  "en": "roadworks"
+ },
+ "pregón": {
+  "es": "un pregón antiguo",
+  "en": "an old festival speech"
+ },
+ "antiguo": {
+  "es": "un pregón antiguo",
+  "en": "an old festival speech"
+ },
+ "comedor": {
+  "es": "el comedor huele a arroz",
+  "en": "the dining room smells of rice"
+ },
+ "huele": {
+  "es": "huele a arroz",
+  "en": "smells of rice"
+ },
+ "arroz": {
+  "es": "huele a arroz",
+  "en": "smells of rice"
+ },
+ "laurel": {
+  "es": "y a laurel",
+  "en": "and of bay leaf"
+ },
+ "ve": {
+  "es": "la ve mirar el reloj",
+  "en": "sees her look at the clock"
+ },
+ "mirar": {
+  "es": "la ve mirar el reloj",
+  "en": "sees her look at the clock"
+ },
+ "reloj": {
+  "es": "mirar el reloj",
+  "en": "look at the clock"
+ },
+ "dice": {
+  "es": "lo importante se dice",
+  "en": "what matters gets said"
+ },
+ "tú": {
+  "es": "tú come",
+  "en": "you eat"
+ },
+ "archivo": {
+  "es": "el archivo no tiene hambre",
+  "en": "the archive is not hungry"
+ },
+ "tiene": {
+  "es": "no tiene hambre",
+  "en": "is not hungry"
+ },
+ "hambre": {
+  "es": "no tiene hambre",
+  "en": "is not hungry"
+ },
+ "sí": {
+  "es": "y tú sí",
+  "en": "but you are"
+ },
+ "avisa": {
+  "es": "claudia avisa",
+  "en": "Claudia warns"
+ },
+ "me": {
+  "es": "me tendría que ir",
+  "en": "I should leave"
+ },
+ "tendría": {
+  "es": "me tendría que ir",
+  "en": "I should leave"
+ },
+ "ir": {
+  "es": "me tendría que ir",
+  "en": "I should leave"
+ },
+ "tengo": {
+  "es": "tengo la tarde contada",
+  "en": "my afternoon is budgeted out"
+ },
+ "tarde": {
+  "es": "tengo la tarde contada",
+  "en": "my afternoon is budgeted out"
+ },
+ "contada": {
+  "es": "la tarde contada",
+  "en": "the afternoon budgeted out"
+ },
+ "medias": {
+  "es": "el archivo a medias",
+  "en": "the archive half done"
+ },
+ "ya": {
+  "es": "ya estás trabajando",
+  "en": "you are already working"
+ },
+ "estás": {
+  "es": "ya estás trabajando",
+  "en": "you are already working"
+ },
+ "trabajando": {
+  "es": "ya estás trabajando",
+  "en": "you are already working"
+ },
+ "sin": {
+  "es": "sin esta mesa",
+  "en": "without this table"
+ },
+ "esta": {
+  "es": "sin esta mesa",
+  "en": "without this table"
+ },
+ "mesa": {
+  "es": "sin esta mesa",
+  "en": "without this table"
+ },
+ "valga": {
+  "es": "no hay archivo que valga",
+  "en": "no archive worth the name"
+ },
+ "contesta": {
+  "es": "contesta marcos",
+  "en": "Marcos answers"
+ },
+ "sigue": {
+  "es": "sigue allí",
+  "en": "she is still there"
+ },
+ "allí": {
+  "es": "sigue allí",
+  "en": "she is still there"
+ },
+ "aunque": {
+  "es": "aunque le cueste",
+  "en": "even if it hurts"
+ },
+ "le": {
+  "es": "le da igual",
+  "en": "she does not mind"
+ },
+ "cueste": {
+  "es": "aunque le cueste",
+  "en": "even if it hurts"
+ },
+ "aquí": {
+  "es": "aquí lo importante se dice",
+  "en": "here what matters gets said"
+ },
+ "lo": {
+  "es": "lo importante",
+  "en": "what matters"
+ },
+ "importante": {
+  "es": "lo importante",
+  "en": "what matters"
+ },
+ "platos": {
+  "es": "con los platos vacíos",
+  "en": "with the plates empty"
+ },
+ "vacíos": {
+  "es": "los platos vacíos",
+  "en": "the empty plates"
+ },
+ "suelta": {
+  "es": "suelta marcos",
+  "en": "Marcos blurts out"
+ },
+ "cuando": {
+  "es": "cuando recogen la fuente",
+  "en": "when the serving dish is cleared"
+ },
+ "recogen": {
+  "es": "cuando recogen la fuente",
+  "en": "when they clear the serving dish"
+ },
+ "fuente": {
+  "es": "recogen la fuente",
+  "en": "they clear the serving dish",
+  "g": "serving dish, the shared plate at the table"
+ },
+ "sube": {
+  "es": "le sube un nudo",
+  "en": "a lump rises in her throat"
+ },
+ "nudo": {
+  "es": "un nudo agradecido",
+  "en": "a grateful lump"
+ },
+ "agradecido": {
+  "es": "un nudo agradecido",
+  "en": "a grateful lump"
+ },
+ "silla": {
+  "es": "la silla guardada",
+  "en": "the saved chair"
+ },
+ "guardada": {
+  "es": "la silla guardada",
+  "en": "the saved chair"
+ },
+ "vale": {
+  "es": "vale lo mismo",
+  "en": "counts for the same",
+  "g": "is worth, counts for (valer)"
+ },
+ "mismo": {
+  "es": "vale lo mismo",
+  "en": "counts for the same"
+ },
+ "palabras": {
+  "es": "sin palabras",
+  "en": "without words"
+ },
+ "por": {
+  "es": "por una vez",
+  "en": "for once"
+ },
+ "adelantar": {
+  "es": "la tarde por adelantar",
+  "en": "the afternoon still to gain"
+ },
+ "queda": {
+  "es": "se queda en la mesa",
+  "en": "stays at the table"
+ },
+ "deja": {
+  "es": "la deja ir",
+  "en": "lets it go"
+ },
+ "pues": {
+  "es": "pues por una vez",
+  "en": "well, for once"
+ },
+ "vez": {
+  "es": "por una vez",
+  "en": "for once"
+ },
+ "apunto": {
+  "es": "no apunto nada",
+  "en": "I write nothing down"
+ },
+ "nada": {
+  "es": "no apunto nada",
+  "en": "I write nothing down"
+ },
+ "bolso": {
+  "es": "la libreta en el bolso",
+  "en": "the notebook in her bag"
+ },
+ "estira": {
+  "es": "se estira hasta la noche",
+  "en": "stretches into the night"
+ },
+ "hasta": {
+  "es": "hasta la noche",
+  "en": "until nightfall"
+ },
+ "noche": {
+  "es": "hasta la noche",
+  "en": "until nightfall"
+ },
+ "da": {
+  "es": "le da igual",
+  "en": "she does not mind"
+ },
+ "igual": {
+  "es": "le da igual",
+  "en": "she does not mind"
+ },
+ "acerca": {
+  "es": "acerca la silla",
+  "en": "pulls her chair closer",
+  "g": "pulls closer (acercar)"
+ },
+ "está": {
+  "es": "ya está un poco menos",
+  "en": "she is already a little less"
+ },
+ "poco": {
+  "es": "un poco menos",
+  "en": "a little less"
+ },
+ "menos": {
+  "es": "un poco menos de fuera",
+  "en": "a little less of an outsider"
+ },
+ "fuera": {
+  "es": "menos de fuera",
+  "en": "less of an outsider"
+ }
+}

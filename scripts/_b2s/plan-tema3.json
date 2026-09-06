@@ -1,0 +1,34 @@
+{
+  "tipo": "Traveler",
+  "nivel": "b2",
+  "variante": "spain",
+  "registro": "de costumbre y ritual, en voz mas baja que los temas anteriores: lo importante pasa en lo que se repite",
+  "espina": "con la pena a punto de perder su local, el bar de abajo es el otro salon; Claudia gana su sitio de fija: el cafe que no se pide, la deuda apuntada con tiza y la ronda que nadie firma",
+  "recursos": "subtexto de dialogo y narrador con opinion (B2), aforismo de personaje con cuentagotas (B2, uno en el tema), espejo concreto (A2), repeticion ritmica (A0), cambio de ritmo (B1)",
+  "historias": [
+    {
+      "slot": "1",
+      "quiere": "pedir como los fijos: que su cafe no haga falta pedirlo",
+      "impide": "sigue siendo la de la mesa; a los nuevos se les pregunta todo",
+      "cuesta": "la ronda del estreno, que paga entera el dia que se pasa a la barra; ese dinero no vuelve",
+      "cambia": "pasa de la mesa al taburete y su cafe entra en la lista de lo que no se pregunta",
+      "emocion": "un orgullo tan pequeno que a ella misma le da risa, porque es solo un cafe dado por sabido; se ve cuando confirma lo de siempre como quien firma algo"
+    },
+    {
+      "slot": "2",
+      "quiere": "pagar su ronda al momento y no deber nada a nadie, como ha hecho siempre",
+      "impide": "Pablo no le coge el dinero: aqui a los de la casa se les apunta con tiza y se paga a fin de mes",
+      "cuesta": "su norma de no deber nada, que suelta delante de todos; la independencia de turista no vuelve",
+      "cambia": "descubre que la pizarra es otro archivo: las rayas de tiza guardan confianza como las coplas guardan memoria, y que te fien es un te espero",
+      "emocion": "la incomodidad de deber le pica y se le vuelve ternura cuando ve su nombre debajo de los fijos; se ve cuando deja apuntar el cafe y le sale la voz tranquila"
+    },
+    {
+      "slot": "3",
+      "quiere": "saber quien ha pagado la ronda anonima del viernes",
+      "impide": "nadie se da por aludido: el misterio es parte del regalo",
+      "cuesta": "la cuenta exacta de quien debe que a quien: la pierde y no la recupera, y eso es justo estar dentro",
+      "cambia": "entiende el espejo: el primer dia pago para entrar y lo supo todo el bar; hoy no sabe a quien le debe el cafe, y esa cuenta perdida es la casa",
+      "emocion": "una calma nueva de pertenencia; se ve cuando alza el vaso hacia la barra, a nadie y a todos, y avisa de que la siguiente es suya"
+    }
+  ]
+}
