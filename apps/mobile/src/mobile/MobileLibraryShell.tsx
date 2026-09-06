@@ -806,6 +806,9 @@ type MobileStandaloneStory = {
   // missing / corrupt.
   localCoverUri?: string | null;
   localAudioUri?: string | null;
+  // Muro 2026-09: el servidor manda locked=true (y texto en preview, sin
+  // audio) cuando el plan efectivo no alcanza para esta historia.
+  locked?: boolean;
 };
 
 function parseStandaloneVocab(raw?: string | null): VocabItem[] {
@@ -6700,6 +6703,27 @@ export function MobileLibraryShell(args: {
   ]);
 
   function openSelection(selection: ReaderSelection) {
+    // Muro 2026-09: el catalogo de libros (empaquetado en el binario) es
+    // contenido premium. Las historias que vienen del servidor llegan ya
+    // filtradas por plan (flag `locked`, gestionado antes de llegar aqui);
+    // este gate cubre lo que se abre sin pasar por la API. Sin entitlement
+    // remoto hidratado (arranque offline) se deja pasar: bloquear a un
+    // usuario con derecho por no tener red es peor que regalar una lectura
+    // del catalogo congelado.
+    const isServerStory = selection.book.slug === "standalone-stories";
+    if (!isServerStory) {
+      if (!isSignedIn) {
+        onRequestSignIn?.();
+        return;
+      }
+      const remotePlan = remoteEntitlement?.plan ?? null;
+      const remoteSaysLocked =
+        remotePlan === "free" || remotePlan === "basic";
+      if (remoteSaysLocked) {
+        void openPlans();
+        return;
+      }
+    }
     setSelection(selection);
     storyOpenedAtRef.current = Date.now();
     // Warm up the practice items in the background so that hitting
@@ -6776,6 +6800,10 @@ export function MobileLibraryShell(args: {
       });
       const standalone = payload.stories?.[0];
       if (!standalone) return;
+      if (standalone.locked) {
+        void openPlans();
+        return;
+      }
       openSelection(createSelectionFromStandaloneStory(standalone));
     } catch (error) {
       console.error("[mobile explore] failed to open standalone story", error);
@@ -7772,6 +7800,13 @@ export function MobileLibraryShell(args: {
       }
       clearTimeout(skeletonTimer);
       setOpeningStoryId(null);
+      if (standalone.locked) {
+        // Muro 2026-09: el servidor decidio que este plan no lee esta
+        // historia (fuera del tema 1 y de la historia del dia).
+        showDebug("locked by plan");
+        void openPlans();
+        return;
+      }
       showDebug("openSelection (network)");
       openSelection(createSelectionFromStandaloneStory(standalone));
       // If this story is already downloaded offline but was saved before

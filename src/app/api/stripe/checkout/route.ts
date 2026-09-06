@@ -38,7 +38,7 @@ export async function POST(req: Request) {
       line_items: [{ price: priceId, quantity: 1 }],
       client_reference_id: userId,
       subscription_data: {
-        trial_period_days: 14,
+        trial_period_days: 7,
         metadata: {
           clerkUserId: userId,
           checkoutType: "trial_with_pm",
@@ -66,14 +66,14 @@ export async function POST(req: Request) {
           storySlug: "__plans__",
           bookSlug: "billing",
           eventType: "trial_started",
-          value: 14,
+          value: 7,
         },
         {
           userId,
           storySlug: "__plans__",
           bookSlug: "billing",
           eventType: "trial_started_with_pm",
-          value: 14,
+          value: 7,
         },
       ],
     });

@@ -19,6 +19,8 @@ import { getCompletedJourneyStoryKeys } from "@/lib/journeyProgress";
 import { normalizeVariant } from "@/lib/languageVariant";
 import { practiceVoiceId } from "@/lib/practiceVoice";
 import { getMobileSessionFromRequest } from "@/lib/mobileSession";
+import { getEffectivePlanForUserId } from "@/lib/effectiveAccess";
+import { isEntitledPlan } from "@domain/access";
 import { prisma } from "@/lib/prisma";
 
 function getProgressKeyFromSourcePath(sourcePath: string, storySlug: string): string | null {
@@ -51,9 +53,21 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Missing levelId or topicId" }, { status: 400 });
   }
 
+  // Muro 2026-09: la practica exige sesion, y sin plan con derecho solo se
+  // sirve el PRIMER tema del nivel (el suelo de basic).
+  if (!userId) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const source = await buildJourneyTopicPracticeItems(variant ?? undefined, levelId, topicId);
   if (!source) {
     return NextResponse.json({ error: "Topic not found" }, { status: 404 });
+  }
+
+  const effectivePlan = await getEffectivePlanForUserId(userId);
+  const isFirstTopic = source.level.topics[0]?.slug === source.topic.slug;
+  if (!isEntitledPlan(effectivePlan) && !isFirstTopic) {
+    return NextResponse.json({ error: "PLAN_REQUIRED" }, { status: 403 });
   }
 
   const completedStoryKeys = await getCompletedJourneyStoryKeys(userId ?? undefined);

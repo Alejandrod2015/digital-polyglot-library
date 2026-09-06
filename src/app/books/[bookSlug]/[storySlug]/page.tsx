@@ -7,7 +7,6 @@ import OnboardingPlayCoachmark from "@/components/OnboardingPlayCoachmark";
 import StoryAccessInfo from "./StoryAccessInfo";
 import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
 import StoryClientGate from "./StoryClientGate";
-import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import StoryContent from "@/components/StoryContent";
 import HighlightedStoryReader from "@/components/HighlightedStoryReader";
 import { coerceAudioWordTimings } from "@/lib/audioWordTimingsTypes";
@@ -24,7 +23,7 @@ import {
   resolvePublicMediaUrl,
   shouldBypassImageOptimization,
 } from "@/lib/publicMedia";
-import { canAccessStoryContent } from "@domain/access";
+import { canAccessStoryContent, resolveEffectivePlan } from "@domain/access";
 import { getLockedStoryPreviewHtml } from "@domain/lockedStoryPreview";
 import { getCatalogStory } from "@/lib/catalog";
 import GetAppCta from "@/components/GetAppCta";
@@ -97,11 +96,17 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   const hasWordTimings = karaokeGate.usable;
 
   const { userId } = await auth();
-  const [user, featured] = await Promise.all([
-    userId ? currentUser() : Promise.resolve(null),
-    getFeaturedStories(),
-  ]);
+  const user = userId ? await currentUser() : null;
   const userPlan = (user?.publicMetadata?.plan as UserPlan) || "free";
+
+  // Muro 2026-09: los libros son contenido premium (o comprado). La freebie
+  // semanal/diaria del catalogo se retiro; la historia del dia vive ahora en
+  // los journeys.
+  const effectivePlan = resolveEffectivePlan({
+    plan: userPlan,
+    isSignedIn: Boolean(userId),
+    userCreatedAtMs: typeof user?.createdAt === "number" ? user.createdAt : null,
+  });
 
   const booksMeta = user?.publicMetadata?.books;
   const ownedBooks = Array.isArray(booksMeta)
@@ -109,8 +114,6 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
     : [];
   const ownsThisBook = ownedBooks.includes(book.slug);
 
-  const isWeeklyStory = featured.week?.slug === story.slug;
-  const isDailyStory = featured.day?.slug === story.slug;
   const storyIndex = book.stories.findIndex((s) => s.slug === story.slug || s.id === story.id);
   const prevStorySlug = storyIndex > 0 ? book.stories[storyIndex - 1]?.slug ?? null : null;
   const nextStorySlug =
@@ -119,10 +122,8 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
       : null;
 
   const hasFullAccess = canAccessStoryContent({
-    plan: userPlan,
+    plan: effectivePlan,
     ownsBook: ownsThisBook,
-    isWeeklyStory,
-    isDailyStory,
   });
 
   const visibleText = story.text;

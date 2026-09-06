@@ -29,7 +29,29 @@ function Ring() {
   );
 }
 
-export default function LandingPage() {
+export type LandingDailyStory = {
+  language: string;
+  slug: string;
+  title: string;
+  level: string;
+};
+
+function languageLabel(language: string): string {
+  const labels: Record<string, string> = {
+    spanish: "Spanish",
+    portuguese: "Portuguese",
+    french: "French",
+    german: "German",
+    italian: "Italian",
+  };
+  return labels[language] ?? language.charAt(0).toUpperCase() + language.slice(1);
+}
+
+export default function LandingPage({
+  dailyStories = [],
+}: {
+  dailyStories?: LandingDailyStory[];
+}) {
   return (
     <div className={styles.page}>
       <MarketingNav />
@@ -76,6 +98,38 @@ export default function LandingPage() {
           </div>
         </div>
       </header>
+
+      {dailyStories.length > 0 ? (
+        <section className={styles.section} style={{ paddingTop: 24, paddingBottom: 0 }}>
+          <div className={styles.frame}>
+            <div className={styles.sectionHead}>
+              <span className={styles.kicker}>
+                <span className={styles.kickerDot} />
+                Free today
+              </span>
+              <h2 className={styles.sectionTitle}>
+                Read today&apos;s story, <span className={styles.lime}>no account needed.</span>
+              </h2>
+              <p className={styles.sectionLead}>
+                One full story a day per language, narration included. A new one
+                lands every morning.
+              </p>
+            </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>
+              {dailyStories.map((story) => (
+                <Link
+                  key={story.slug}
+                  href={`/stories/${story.slug}`}
+                  onClick={() => track(`daily_story_${story.language}`)}
+                  className={`${styles.btn} ${styles.btnSky}`}
+                >
+                  {languageLabel(story.language)} · {story.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section
         id="features"

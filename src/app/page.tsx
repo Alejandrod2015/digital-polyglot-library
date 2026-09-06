@@ -6,6 +6,7 @@ import { loadJourneyPageProps } from "./journey/journeyPageLoader";
 import LandingPage from "@/components/LandingPage";
 import { getLatestHomeReleases } from "@/lib/homeReleases";
 import { getFeaturedStories } from "@/lib/getFeaturedStory";
+import { getDailyStories } from "@/lib/dailyJourneyStory";
 
 export const dynamic = "force-dynamic";
 
@@ -17,7 +18,10 @@ export default async function HomePage({
   const { userId } = await auth();
 
   if (!userId) {
-    return <LandingPage />;
+    // Muro 2026-09: el visitante sin cuenta recibe la historia del dia (una
+    // por idioma, de journeys vivos) como unica lectura completa.
+    const dailyStories = await getDailyStories().catch(() => []);
+    return <LandingPage dailyStories={dailyStories} />;
   }
 
   // Polyglot users: la home ES el Journey (paridad con mobile). En vez

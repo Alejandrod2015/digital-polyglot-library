@@ -5,6 +5,9 @@ import { getAuth } from "@clerk/nextjs/server";
 import { books } from "@/data/books";
 import { prisma } from "@/lib/prisma";
 import { getMobileSessionFromRequest } from "@/lib/mobileSession";
+import { getEffectivePlanForUserId, isFirstTopicStorySlug } from "@/lib/effectiveAccess";
+import { isDailyStorySlug } from "@/lib/dailyJourneyStory";
+import { isEntitledPlan } from "@domain/access";
 import { getStandaloneStoryBySlug } from "@/lib/standaloneStories";
 import { getJourneyStoryBySlug } from "@/lib/journeyStories";
 import { getCreateStoryMirrorBySlug } from "@/lib/userStories";
@@ -53,6 +56,20 @@ export async function GET(request: NextRequest) {
 
   if (!storySlug) {
     return NextResponse.json({ error: "Missing storySlug" }, { status: 400 });
+  }
+
+  // Muro 2026-09: la practica de una historia solo se sirve si la historia
+  // misma es accesible para el plan efectivo (tema 1, historia del dia, o
+  // plan con derecho).
+  const effectivePlan = await getEffectivePlanForUserId(userId);
+  if (!isEntitledPlan(effectivePlan)) {
+    const [firstTopic, daily] = await Promise.all([
+      isFirstTopicStorySlug(storySlug),
+      isDailyStorySlug(storySlug),
+    ]);
+    if (!firstTopic && !daily) {
+      return NextResponse.json({ error: "PLAN_REQUIRED" }, { status: 403 });
+    }
   }
 
   let storyItems: PracticeFavoriteItem[] = [];

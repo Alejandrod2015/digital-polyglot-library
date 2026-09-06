@@ -47,7 +47,7 @@ function PlansInner() {
   } | null>(null);
   const chargeDate = useMemo(() => {
     const d = new Date();
-    d.setDate(d.getDate() + 14);
+    d.setDate(d.getDate() + 7);
     return new Intl.DateTimeFormat('en-US', {
       year: 'numeric',
       month: 'short',
@@ -435,7 +435,7 @@ function PlansInner() {
       answer:
         billingMode === 'google_play'
           ? 'Google Play controls charge timing, renewals, trial eligibility, and local pricing.'
-          : `After your 14-day free trial, on ${chargeDate}, unless you cancel before then.`,
+          : `After your 7-day free trial, on ${chargeDate}, unless you cancel before then.`,
     },
     {
       question: 'Can I cancel during the trial?',
@@ -539,7 +539,7 @@ function PlansInner() {
           Learn the language people really speak
         </h1>
         <p className="mt-2 text-[14px] sm:text-[15px] text-[var(--muted)]">
-          14-day free trial · cancel anytime.
+          7-day free trial · cancel anytime.
         </p>
       </header>
 

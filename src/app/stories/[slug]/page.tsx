@@ -9,7 +9,8 @@ import Player from "@/components/Player";
 import { notFound, redirect } from "next/navigation";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
-import { getFeaturedStories } from "@/lib/getFeaturedStory";
+import { isDailyStorySlug } from "@/lib/dailyJourneyStory";
+import { isFirstTopicStorySlug } from "@/lib/effectiveAccess";
 import AddStoryToLibraryButton from "@/components/AddStoryToLibraryButton";
 import StoryContent from "@/components/StoryContent";
 import StoryReaderShell from "@/components/StoryReaderShell";
@@ -32,7 +33,7 @@ import {
   resolvePublicMediaUrl,
   shouldBypassImageOptimization,
 } from "@/lib/publicMedia";
-import { canAccessStoryContent } from "@domain/access";
+import { canAccessStoryContent, resolveEffectivePlan } from "@domain/access";
 import StoryClientGate from "@/app/books/[bookSlug]/[storySlug]/StoryClientGate";
 import { getLockedStoryPreviewHtml } from "@domain/lockedStoryPreview";
 import GetAppCta from "@/components/GetAppCta";
@@ -327,10 +328,7 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
   const hasWordTimings = karaokeGate.usable;
 
   const { userId } = await auth();
-  const [user, featured] = await Promise.all([
-    userId ? currentUser() : Promise.resolve(null),
-    getFeaturedStories(),
-  ]);
+  const user = userId ? await currentUser() : null;
   const plan =
     (user?.publicMetadata?.plan as
       | "free"
@@ -339,15 +337,21 @@ export default async function StoryPage({ params, searchParams }: StoryPageProps
       | "polyglot"
       | "owner") || "free";
 
-  const isWeeklyStory = featured.week?.slug === resolvedStory.slug;
-  const isDailyStory = featured.day?.slug === resolvedStory.slug;
+  // Muro 2026-09: plan efectivo (con gracia beta) + tema 1 + historia del dia.
+  const effectivePlan = resolveEffectivePlan({
+    plan,
+    isSignedIn: Boolean(userId),
+    userCreatedAtMs: typeof user?.createdAt === "number" ? user.createdAt : null,
+  });
+  const [isFirstTopicStory, isDailyStory] = await Promise.all([
+    resolvedStory.isJourney ? isFirstTopicStorySlug(resolvedStory.slug) : Promise.resolve(false),
+    isDailyStorySlug(resolvedStory.slug),
+  ]);
 
   const hasFullAccess = canAccessStoryContent({
-    plan,
-    isWeeklyStory,
+    plan: effectivePlan,
+    isFirstTopicStory,
     isDailyStory,
-    isJourneyStory: resolvedStory.isJourney,
-    isSignedIn: Boolean(userId),
   });
 
   const displayText = resolvedStory.text;
