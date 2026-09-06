@@ -1110,6 +1110,111 @@
         "tercera",
         "seis"
       ]
+    },
+    "spanish-traveler-latam-b2": {
+      "articles": [
+        "el",
+        "la",
+        "las",
+        "los",
+        "un",
+        "una",
+        "unas",
+        "unos"
+      ],
+      "characterNames": [
+        "renata",
+        "joaquín",
+        "maricarmen",
+        "aurelio",
+        "marcela",
+        "ignacio",
+        "griselda",
+        "ariel",
+        "jairo",
+        "yamileth",
+        "emiliano",
+        "norma",
+        "baldomero",
+        "ofelia"
+      ],
+      "numerals": [
+        "dos",
+        "tres",
+        "cuatro",
+        "cinco",
+        "cien",
+        "doce",
+        "trescientos",
+        "seiscientos",
+        "seis",
+        "quince",
+        "cuarenta"
+      ],
+      "placeNames": [
+        "ucayali",
+        "valparaíso",
+        "montreal",
+        "jersey",
+        "obrero",
+        "mendoza",
+        "plata",
+        "aracataca"
+      ]
+    },
+    "spanish-traveler-latam-b1": {
+      "articles": [
+        "el",
+        "la",
+        "las",
+        "los",
+        "un",
+        "una",
+        "unas",
+        "unos"
+      ],
+      "characterNames": [
+        "damián",
+        "sosa",
+        "rocío",
+        "esteban",
+        "nicanor",
+        "delia",
+        "ximena",
+        "óscar",
+        "brenda",
+        "hugo",
+        "teresa",
+        "wilson",
+        "silvana",
+        "adrián",
+        "betancur",
+        "quispe",
+        "nico",
+        "nazario"
+      ],
+      "numerals": [
+        "dos",
+        "tres",
+        "cuatro",
+        "cinco",
+        "seis",
+        "siete",
+        "ocho",
+        "nueve",
+        "once",
+        "doce",
+        "veinte",
+        "treinta"
+      ],
+      "placeNames": [
+        "chiloé",
+        "manizales",
+        "ayacucho",
+        "aguascalientes",
+        "popayán",
+        "tucumán"
+      ]
     }
   }
 }
