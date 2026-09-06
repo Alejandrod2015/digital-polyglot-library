@@ -1851,6 +1851,18 @@
   "b": {
    "g": "The letter B, the queue her ticket belongs to.",
    "t": "noun"
+  },
+  "tecla": {
+   "g": "Types on the keyboard (teclar).",
+   "t": "verb"
+  },
+  "dobrado": {
+   "g": "Folded over so it takes less space.",
+   "t": "adjective"
+  },
+  "conferem": {
+   "g": "They check it together (conferir).",
+   "t": "verb"
   }
  }
 }
