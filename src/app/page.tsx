@@ -5,8 +5,8 @@ import JourneyClient from "./journey/JourneyClient";
 import { loadJourneyPageProps } from "./journey/journeyPageLoader";
 import LandingPage from "@/components/LandingPage";
 import { getLatestHomeReleases } from "@/lib/homeReleases";
-import { getFeaturedStories } from "@/lib/getFeaturedStory";
 import { getDailyStories } from "@/lib/dailyJourneyStory";
+import { getAvailableLanguageCodes } from "@/lib/languageAvailability";
 
 export const dynamic = "force-dynamic";
 
@@ -56,18 +56,28 @@ export default async function HomePage({
     return <JourneyClient {...props} />;
   }
 
-  const [{ latestBooks, latestStories, latestPolyglotStories }, featured] = await Promise.all([
-    getLatestHomeReleases({ limit: 10 }),
-    getFeaturedStories(),
-  ]);
+  // El heroe sale de la historia del dia de los journeys, no de la destacada
+  // del catalogo congelado de libros. Aquella salia de un hash sobre
+  // src/data/books, que solo tiene espanol e italiano, y su clave de semana
+  // saltaba con el dia: el sabado 2026-09-05 mandaba a todo el mundo, pidiera
+  // el idioma que pidiera, a una historia italiana de nivel intermedio. Ademas
+  // es la unica que canAccessStoryContent abre de verdad a free y basic, asi
+  // que la etiqueta "Free today" del heroe pasa a ser cierta.
+  const [{ latestBooks, latestStories, latestPolyglotStories }, dailyStories, availableLanguages] =
+    await Promise.all([
+      getLatestHomeReleases({ limit: 10 }),
+      getDailyStories().catch(() => []),
+      // Mismo dato que la app pinta como "Coming soon" en su onboarding.
+      getAvailableLanguageCodes().catch(() => []),
+    ]);
 
   return (
     <HomeClient
       latestBooks={latestBooks}
       latestStories={latestStories}
       latestPolyglotStories={latestPolyglotStories}
-      featuredWeekSlug={featured.week?.slug ?? null}
-      featuredDaySlug={featured.day?.slug ?? null}
+      dailyStories={dailyStories}
+      availableLanguages={availableLanguages}
       initialPlan="free"
       initialTargetLanguages={[]}
       initialInterests={[]}

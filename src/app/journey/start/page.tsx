@@ -3,8 +3,6 @@ import { redirect } from "next/navigation";
 import { buildJourneyVariants } from "../journeyData";
 import { normalizeVariant } from "@/lib/languageVariant";
 import { getJourneyVariantFromPreferences } from "@/lib/onboarding";
-import { getFeaturedStories } from "@/lib/getFeaturedStory";
-import { books } from "@/data/books";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -77,18 +75,14 @@ export default async function JourneyStartPage() {
     redirect(`${firstStory.href}${separator}welcome=onboarding`);
   }
 
-  // Sin journey publicado en su idioma (frances, polaco, coreano, arabe a dia
-  // de hoy). La destacada no sera de su idioma, pero es lo unico reproducible
-  // que hay, y el aviso de que su journey aun no existe vive en la home.
-  const featured = await getFeaturedStories();
-  const weeklySlug = featured.week?.slug ?? null;
-  if (weeklySlug) {
-    for (const book of Object.values(books)) {
-      if (book.stories.some((story) => story.slug === weeklySlug)) {
-        redirect(`/books/${book.slug}/${weeklySlug}?welcome=onboarding`);
-      }
-    }
-  }
-
+  // Sin journey publicado en su idioma. El onboarding de la web ofrece
+  // frances e ingles, y ninguno de los dos tiene journey vivo, asi que esta
+  // rama se pisa de verdad.
+  //
+  // Antes caia en la destacada del catalogo de libros, que solo tiene espanol
+  // e italiano: a quien pedia frances se le abria una historia italiana, y de
+  // ahi salia el patron de "abrio y no le dio al play". Mandarle a la home es
+  // peor de vacio y mejor de honesto; una historia en un idioma que no pidio
+  // no es un respaldo, es una equivocacion con dos minutos de retraso.
   redirect("/");
 }
