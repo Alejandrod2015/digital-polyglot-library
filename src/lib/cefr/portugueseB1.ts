@@ -198,6 +198,35 @@ export const PORTUGUESE_B1_LEMMAS: ReadonlySet<string> = new Set([
   "norma","criterio","critério","exigencia","exigência","requisito","clausula","cláusula","rodape","rodapé",
   "verso","rascunho","emenda","revisao","revisão","tiragem","grafica","gráfica","legenda","destaque",
 
+
+  // Septima tanda, 2026-09-06, temas 6 y 7 (Noronha y Brasilia). Buceo con sus
+  // reglas, y la ventanilla con las suyas. Comprobadas libres una a una contra
+  // las 879 que ya ensenan el A0 y el A1.
+  "mergulho","mergulhar","mergulhador","cilindro","nadadeira","mascara","máscara",
+  "recife","coral","cardume","tartaruga","golfinho","cota","credenciamento","briefing",
+  "profundidade","visibilidade","apneia","descompressao","descompressão","superficie","superfície",
+  "preservacao","preservação","desova","ninho","embarcacao","embarcação","instrutor","instrutora",
+  "reparticao","repartição","senha","formulario","formulário","despachante","procuracao","procuração",
+  "certidao","certidão","autenticacao","autenticação","agendamento","atendimento","servidor","ramal",
+  "elevador","cracha","crachá","pendencia","pendência","indeferido","deferido","triagem","firma",
+  "sorteio","garantido","percevejo","pregado","riscado","alternativo","estado","data","antigo",
+  "prancheta","bolha","proibido","desenhar","testa","corrigir","mencionar","util","útil","apoiado","marcado",
+  "bancada","atendente","pulseira","credencial","mural","aviso","comunicado","edital","convocacao","convocação",
+  "inscricao","inscrição","lote","parapeito","galpao","galpão","mofo","credenciado","cardume","desova",
+
+
+  // Octava tanda, 2026-09-06, tema 7 (Brasilia, la ventanilla). El lexico del
+  // tramite, que es de temario B1 y que el A0 y el A1 no tocan.
+  "painel","processo","renovacao","renovação","registro","baixa","rasgar","vinco","alisar",
+  "publicado","carta","trecho","imprimir","calendario","calendário","contrario","contrário",
+  "apagado","despesa","acertar","risada","fotografar","soar","cartorio","cartório","terreo","térreo",
+  "alvara","alvará","anexo","analise","análise","boleto","chefia","departamento","expediente","feriado",
+  "laudo","negativa","peticao","petição","quitacao","quitação","recolhimento","regularidade","requerimento",
+  "setor","situacao","situação","tramite","trâmite","validade","vencimento","quinta-feira","diario","diário",
+  "recomecar","recomeçar","indeferimento","escritorio","escritório","fichario","fichário",
+  "grampo","clipe","armario","armário","bloco","arquivo","estante","bebedouro","cracha","crachá",
+  "visitante","recepcionista","seguranca","segurança","portaria","saguao","saguão","pilha","guardado","copia","cópia","requentado","mormaco","mormaço","zumbido","reflexo","papelada","relacao","relação",
+
   // Expressoes coloquiais correntes no Brasil
   "dar certo","dar errado","dar um jeito","valer a pena","fazer questao",
   "ter razao","tomar cuidado","prestar atencao","ficar de olho","perder a hora",
