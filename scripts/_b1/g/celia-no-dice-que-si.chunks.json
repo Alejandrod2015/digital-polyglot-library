@@ -1,0 +1,367 @@
+{
+ "no": {
+  "es": "Celia no dice que sí",
+  "en": "Celia does not say yes"
+ },
+ "dice": {
+  "es": "Celia no dice que sí",
+  "en": "Celia does not say yes"
+ },
+ "que": {
+  "es": "Celia no dice que sí",
+  "en": "Celia does not say yes"
+ },
+ "sí": {
+  "es": "Celia no dice que sí",
+  "en": "Celia does not say yes"
+ },
+ "traductora": {
+  "es": "una traductora de Madrid",
+  "en": "a translator from Madrid"
+ },
+ "de": {
+  "es": "una traductora de Madrid",
+  "en": "a translator from Madrid"
+ },
+ "madrid": {
+  "es": "una traductora de Madrid",
+  "en": "a translator from Madrid"
+ },
+ "se": {
+  "es": "se ha mudado a Granada",
+  "en": "has moved to Granada"
+ },
+ "ha": {
+  "es": "se ha mudado a Granada",
+  "en": "has moved to Granada"
+ },
+ "mudado": {
+  "es": "se ha mudado a Granada",
+  "en": "has moved to Granada"
+ },
+ "a": {
+  "es": "se ha mudado a Granada",
+  "en": "has moved to Granada"
+ },
+ "granada": {
+  "es": "se ha mudado a Granada",
+  "en": "has moved to Granada"
+ },
+ "en": {
+  "es": "en el sur de España",
+  "en": "in the south of Spain"
+ },
+ "sur": {
+  "es": "en el sur de España",
+  "en": "in the south of Spain"
+ },
+ "españa": {
+  "es": "en el sur de España",
+  "en": "in the south of Spain"
+ },
+ "habitación": {
+  "es": "la habitación que le han enseñado",
+  "en": "the room they have shown her"
+ },
+ "le": {
+  "es": "la habitación que le han enseñado",
+  "en": "the room they have shown her"
+ },
+ "han": {
+  "es": "la habitación que le han enseñado",
+  "en": "the room they have shown her"
+ },
+ "enseñado": {
+  "es": "la habitación que le han enseñado",
+  "en": "the room they have shown her",
+  "g": "shown"
+ },
+ "cuarto": {
+  "es": "en un cuarto sin ascensor",
+  "en": "on a fourth floor with no lift"
+ },
+ "sin": {
+  "es": "en un cuarto sin ascensor",
+  "en": "on a fourth floor with no lift"
+ },
+ "ascensor": {
+  "es": "en un cuarto sin ascensor",
+  "en": "on a fourth floor with no lift"
+ },
+ "sobre": {
+  "es": "sobre una tienda",
+  "en": "above a shop"
+ },
+ "tienda": {
+  "es": "sobre una tienda",
+  "en": "above a shop"
+ },
+ "casero": {
+  "es": "el casero",
+  "en": "the landlord"
+ },
+ "espera": {
+  "es": "la espera en el umbral",
+  "en": "waits for her in the doorway"
+ },
+ "umbral": {
+  "es": "la espera en el umbral",
+  "en": "waits for her in the doorway"
+ },
+ "mes": {
+  "es": "de mes en mes",
+  "en": "month by month"
+ },
+ "primero": {
+  "es": "el primero por adelantado",
+  "en": "the first one in advance"
+ },
+ "por": {
+  "es": "el primero por adelantado",
+  "en": "the first one in advance"
+ },
+ "adelantado": {
+  "es": "el primero por adelantado",
+  "en": "the first one in advance"
+ },
+ "arriba": {
+  "es": "arriba se oye de todo",
+  "en": "upstairs you hear all sorts"
+ },
+ "oye": {
+  "es": "arriba se oye de todo",
+  "en": "upstairs you hear all sorts"
+ },
+ "todo": {
+  "es": "arriba se oye de todo",
+  "en": "upstairs you hear all sorts"
+ },
+ "ya": {
+  "es": "ya lo irá viendo",
+  "en": "you will see soon enough"
+ },
+ "lo": {
+  "es": "ya lo irá viendo",
+  "en": "you will see soon enough"
+ },
+ "irá": {
+  "es": "ya lo irá viendo",
+  "en": "you will see soon enough"
+ },
+ "viendo": {
+  "es": "ya lo irá viendo",
+  "en": "you will see soon enough"
+ },
+ "añade": {
+  "es": "añade",
+  "en": "he adds"
+ },
+ "comprobado": {
+  "es": "ha comprobado el armario",
+  "en": "has checked the wardrobe"
+ },
+ "armario": {
+  "es": "ha comprobado el armario",
+  "en": "has checked the wardrobe"
+ },
+ "cierra": {
+  "es": "no cierra a la primera",
+  "en": "does not shut first time"
+ },
+ "primera": {
+  "es": "no cierra a la primera",
+  "en": "does not shut first time"
+ },
+ "y": {
+  "es": "y sabe que",
+  "en": "and knows that"
+ },
+ "sabe": {
+  "es": "y sabe que",
+  "en": "and knows that"
+ },
+ "colchón": {
+  "es": "el colchón huele a nuevo",
+  "en": "the mattress smells new"
+ },
+ "huele": {
+  "es": "el colchón huele a nuevo",
+  "en": "the mattress smells new"
+ },
+ "nuevo": {
+  "es": "el colchón huele a nuevo",
+  "en": "the mattress smells new"
+ },
+ "aunque": {
+  "es": "aunque el interruptor no encienda nada",
+  "en": "although the switch turns nothing on"
+ },
+ "interruptor": {
+  "es": "aunque el interruptor no encienda nada",
+  "en": "although the switch turns nothing on"
+ },
+ "encienda": {
+  "es": "aunque el interruptor no encienda nada",
+  "en": "although the switch turns nothing on"
+ },
+ "nada": {
+  "es": "aunque el interruptor no encienda nada",
+  "en": "although the switch turns nothing on"
+ },
+ "mueve": {
+  "es": "mueve un enchufe",
+  "en": "moves a socket"
+ },
+ "enchufe": {
+  "es": "mueve un enchufe",
+  "en": "moves a socket"
+ },
+ "tarda": {
+  "es": "tarda en contestarle",
+  "en": "takes his time answering her"
+ },
+ "contestarle": {
+  "es": "tarda en contestarle",
+  "en": "takes his time answering her"
+ },
+ "ella": {
+  "es": "ella calla",
+  "en": "she says nothing"
+ },
+ "calla": {
+  "es": "ella calla",
+  "en": "she says nothing"
+ },
+ "calefacción": {
+  "es": "la calefacción va por horas",
+  "en": "the heating runs on a timer"
+ },
+ "va": {
+  "es": "la calefacción va por horas",
+  "en": "the heating runs on a timer"
+ },
+ "horas": {
+  "es": "la calefacción va por horas",
+  "en": "the heating runs on a timer"
+ },
+ "enero": {
+  "es": "en enero no subiría hasta aquí",
+  "en": "in January it would not reach up here"
+ },
+ "subiría": {
+  "es": "en enero no subiría hasta aquí",
+  "en": "in January it would not reach up here"
+ },
+ "hasta": {
+  "es": "en enero no subiría hasta aquí",
+  "en": "in January it would not reach up here"
+ },
+ "aquí": {
+  "es": "en enero no subiría hasta aquí",
+  "en": "in January it would not reach up here"
+ },
+ "avisa": {
+  "es": "avisa",
+  "en": "he warns"
+ },
+ "si": {
+  "es": "si le faltara",
+  "en": "if you were short of it"
+ },
+ "faltara": {
+  "es": "si le faltara",
+  "en": "if you were short of it"
+ },
+ "mueble": {
+  "es": "en el mueble del pasillo",
+  "en": "in the hall cupboard"
+ },
+ "del": {
+  "es": "en el mueble del pasillo",
+  "en": "in the hall cupboard"
+ },
+ "pasillo": {
+  "es": "en el mueble del pasillo",
+  "en": "in the hall cupboard"
+ },
+ "hay": {
+  "es": "hay una estufa",
+  "en": "there is a heater"
+ },
+ "estufa": {
+  "es": "hay una estufa",
+  "en": "there is a heater"
+ },
+ "ofrece": {
+  "es": "ofrece",
+  "en": "he offers"
+ },
+ "acepta": {
+  "es": "lo acepta",
+  "en": "she takes it"
+ },
+ "apunta": {
+  "es": "apunta la cifra en el billete",
+  "en": "notes the figure on the banknote"
+ },
+ "cifra": {
+  "es": "apunta la cifra en el billete",
+  "en": "notes the figure on the banknote"
+ },
+ "billete": {
+  "es": "apunta la cifra en el billete",
+  "en": "notes the figure on the banknote"
+ },
+ "sala": {
+  "es": "en la sala",
+  "en": "in the living room"
+ },
+ "mancha": {
+  "es": "una mancha blanda",
+  "en": "a soft stain"
+ },
+ "blanda": {
+  "es": "una mancha blanda",
+  "en": "a soft stain"
+ },
+ "encima": {
+  "es": "encima de la mesa",
+  "en": "above the table"
+ },
+ "mesa": {
+  "es": "encima de la mesa",
+  "en": "above the table"
+ },
+ "mitad": {
+  "es": "la mitad que en Madrid",
+  "en": "half what it is in Madrid"
+ },
+ "cambiará": {
+  "es": "cambiará la cerradura el jueves",
+  "en": "she will change the lock on Thursday"
+ },
+ "cerradura": {
+  "es": "cambiará la cerradura el jueves",
+  "en": "she will change the lock on Thursday"
+ },
+ "jueves": {
+  "es": "cambiará la cerradura el jueves",
+  "en": "she will change the lock on Thursday"
+ },
+ "decide": {
+  "es": "decide",
+  "en": "she decides"
+ },
+ "baja": {
+  "es": "baja los cuatro pisos",
+  "en": "goes down the four floors"
+ },
+ "pisos": {
+  "es": "baja los cuatro pisos",
+  "en": "goes down the four floors"
+ },
+ "decir": {
+  "es": "sin decir nada",
+  "en": "without a word"
+ }
+}

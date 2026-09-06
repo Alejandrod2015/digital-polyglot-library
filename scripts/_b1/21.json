@@ -1,0 +1,2526 @@
+[
+ {
+  "topic": "deals-and-estimates",
+  "slotIndex": 1,
+  "slug": "el-albanil-da-un-numero",
+  "title": "El albañil da un número",
+  "text": "Julián, un albañil de Frigiliana, sube al terrado con Irene. Trae tela de medir, una varilla, un martillo y su cesta. Golpea tres losas, escucha el sonido y hace un gesto lento.\n\n“Esto no es una mancha, guapa, esto es la capa entera”. “Debajo de la baldosa hay cemento viejo, roto, y ya no agarra”. Mide con él y apunta la cifra de centímetros de profundidad.\n\nJulián le enseña el orden de la obra con las manos. Primero levantar el azulejo, luego lijar, luego cemento y ladrillo. Después pulir, esperar dos días y tapar la tapia.\n\n“El fontanero entra un rato y el carpintero ni te cuento”. “Con la sierra hago yo lo que haga falta, guapa”. Ella esperaba un rango de precios y él da un número.\n\nEl nivel del suelo está caído y la mancha viene de ahí. “Y una condición, que si no, no subo: que estemos los cinco”. Baja con el número escrito en la palma de la mano.",
+  "arcType": "juxtaposition-discovery",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "albañil",
+    "definition": "Builder; the worker who lays bricks and mends walls and roofs."
+   },
+   {
+    "type": "noun",
+    "word": "tela",
+    "definition": "Cloth; woven material, here the soft band of the tape measure."
+   },
+   {
+    "type": "noun",
+    "word": "varilla",
+    "definition": "Rod; the thin straight metal stick a builder pokes things with."
+   },
+   {
+    "type": "noun",
+    "word": "martillo",
+    "definition": "Hammer; the tool with a heavy head for hitting nails."
+   },
+   {
+    "type": "noun",
+    "word": "losa",
+    "surface": "losas",
+    "definition": "Slab; the wide flat stone piece that covers a floor or roof."
+   },
+   {
+    "type": "noun",
+    "word": "capa",
+    "definition": "Layer; one flat level of material lying on top of another."
+   },
+   {
+    "type": "noun",
+    "word": "baldosa",
+    "definition": "Floor tile; the square piece that covers a floor or a terrace."
+   },
+   {
+    "type": "noun",
+    "word": "cemento",
+    "definition": "Cement; the grey powder that goes hard and holds stones together."
+   },
+   {
+    "type": "noun",
+    "word": "centímetro",
+    "surface": "centímetros",
+    "definition": "Centimetre; a small unit of length, a hundred of them in a metre."
+   },
+   {
+    "type": "noun",
+    "word": "profundidad",
+    "definition": "Depth; how deep a hole or a layer goes down."
+   },
+   {
+    "type": "noun",
+    "word": "azulejo",
+    "definition": "Wall tile; the shiny square piece that covers a wall."
+   },
+   {
+    "type": "verb",
+    "word": "lijar",
+    "definition": "To sand; to rub a surface with rough paper to make it smooth."
+   },
+   {
+    "type": "noun",
+    "word": "ladrillo",
+    "definition": "Brick; the small hard block of baked clay walls are built with."
+   },
+   {
+    "type": "verb",
+    "word": "pulir",
+    "definition": "To polish; to rub a hard surface until it is smooth and shiny."
+   },
+   {
+    "type": "noun",
+    "word": "tapia",
+    "definition": "Low wall; the wall around a roof terrace or a garden."
+   },
+   {
+    "type": "noun",
+    "word": "fontanero",
+    "definition": "Plumber; the worker who mends pipes and taps."
+   },
+   {
+    "type": "noun",
+    "word": "carpintero",
+    "definition": "Carpenter; the worker who makes and mends things out of wood."
+   },
+   {
+    "type": "noun",
+    "word": "sierra",
+    "definition": "Saw; the tool with sharp teeth for cutting wood or metal."
+   },
+   {
+    "type": "noun",
+    "word": "nivel",
+    "definition": "Level; how flat a surface is, or how high it stands."
+   },
+   {
+    "type": "noun",
+    "word": "rango",
+    "definition": "Range; the space between a lowest price and a highest one."
+   },
+   {
+    "type": "noun",
+    "word": "palma",
+    "definition": "Palm; the inside of your hand, where you can write a number."
+   }
+  ]
+ },
+ {
+  "topic": "deals-and-estimates",
+  "slotIndex": 2,
+  "slug": "cada-uno-dice-lo-suyo",
+  "title": "Cada uno dice lo suyo",
+  "text": "En el bajo de Rosa huele a horno apagado. Marta hace de presidenta y trae el total escrito arriba. Rosa apunta como secretaria en el registro.\n\n“El proveedor nos hace una rebaja si pagamos la mitad ahora, guapa”. “Y el resto en tres plazos, pero sin cheque y sin crédito”. Cada miembro dice por turno su parte, su cuota y su plazo.\n\n“Yo pido un préstamo pequeño y ya está, sin ningún drama”, dice Marta. Rosa no llega, y su porcentaje tendrá que esperar. Nico habla por su madre y hace la resta en voz baja.\n\nEl del ático aparece con el impuesto del año sin pagar. Quique no dice ni una cifra y mira el saldo del móvil. “¿Lo votamos ya, o seguimos negociando y no acabamos?”, pregunta Marta.\n\nLa aprobación sale adelante con una minoría muy corta. La votación no es unánime, pero es votación, con su orden. Irene levanta la mano y se ve dentro de la lista.",
+  "arcType": "recurring-character-callback",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "total",
+    "definition": "Total; the whole amount once everything is added up."
+   },
+   {
+    "type": "noun",
+    "word": "secretaria",
+    "definition": "Secretary; the person who writes down what a meeting decides."
+   },
+   {
+    "type": "noun",
+    "word": "proveedor",
+    "definition": "Supplier; the company that sells you the materials you need."
+   },
+   {
+    "type": "noun",
+    "word": "rebaja",
+    "definition": "Reduction; money taken off a price to make you buy."
+   },
+   {
+    "type": "noun",
+    "word": "cheque",
+    "definition": "Cheque; the signed paper you can use instead of cash."
+   },
+   {
+    "type": "noun",
+    "word": "crédito",
+    "definition": "Credit; money a bank lends you that you pay back slowly."
+   },
+   {
+    "type": "noun",
+    "word": "miembro",
+    "definition": "Member; one of the people who belong to a group."
+   },
+   {
+    "type": "noun",
+    "word": "préstamo",
+    "definition": "Loan; money you borrow now and give back later."
+   },
+   {
+    "type": "noun",
+    "word": "porcentaje",
+    "definition": "Percentage; the share of the total that falls to one person."
+   },
+   {
+    "type": "noun",
+    "word": "resta",
+    "definition": "Subtraction; taking one number away from another to see what is left."
+   },
+   {
+    "type": "noun",
+    "word": "impuesto",
+    "definition": "Tax; the money everybody has to pay to the state."
+   },
+   {
+    "type": "noun",
+    "word": "saldo",
+    "definition": "Balance; the money that is left in an account right now."
+   },
+   {
+    "type": "noun",
+    "word": "aprobación",
+    "definition": "Approval; the moment a group says yes to a plan."
+   },
+   {
+    "type": "noun",
+    "word": "minoría",
+    "definition": "Minority; the smaller group when a vote is counted."
+   },
+   {
+    "type": "verb",
+    "word": "negociar",
+    "surface": "negociando",
+    "definition": "To negotiate; to talk about a price until both sides agree."
+   },
+   {
+    "type": "noun",
+    "word": "votación",
+    "definition": "Vote; the act of counting who is for and who is against."
+   },
+   {
+    "type": "adjective",
+    "word": "unánime",
+    "definition": "Unanimous; with every single person agreeing on the same thing."
+   },
+   {
+    "type": "noun",
+    "word": "presidente",
+    "surface": "presidenta",
+    "definition": "Chair; the person who runs a meeting and gives out the turns."
+   },
+   {
+    "type": "noun",
+    "word": "registro",
+    "definition": "Record book; the book where a group writes down what it decides."
+   },
+   {
+    "type": "noun",
+    "word": "drama",
+    "definition": "Fuss; making a big thing out of something small."
+   }
+  ]
+ },
+ {
+  "topic": "deals-and-estimates",
+  "slotIndex": 3,
+  "slug": "la-suma-no-le-sale",
+  "title": "La suma no le sale",
+  "text": "Irene hace números en la barra fría, con Rocío y una obligación. Con la cuota de cada uno, la obra no empieza. Tiene el resto en una cuenta humilde y no debe nada a nadie.\n\n“Lo pongo yo entero y en mayo me lo devolvéis, sin prisa y sin plazo”. “Y no es caridad ni sacrificio: es que lo tengo quieto”, insiste. Quique deja la copa y no rechaza la oferta.\n\nSe hace un incómodo que ella no sabe dónde poner. Rosa mira a Marta con reserva y Marta mira fuera. El desprecio que esperaba no llega, y la negativa tampoco.\n\n“Guapa, eso no es solidaridad, eso se parece a la compasión”. “Y lo solidario se admite; lo otro, no”, le dice Rocío con un gesto. Lo que hay en la barra es una dignidad callada.\n\nSu oferta rompe una igualdad que nadie nombró en la reunión. Sensata o imprudente, tiene una consecuencia que no calculó. Irene guarda el papel y evita insistir; el privilegio se le queda encima.",
+  "arcType": "daily-encounter",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "obligación",
+    "definition": "Duty; something you feel you have to do for others."
+   },
+   {
+    "type": "adjective",
+    "word": "humilde",
+    "definition": "Modest; small and plain, without anything showy about it."
+   },
+   {
+    "type": "verb",
+    "word": "deber",
+    "surface": "debe",
+    "definition": "To owe; to have to give money or a favour back."
+   },
+   {
+    "type": "noun",
+    "word": "caridad",
+    "definition": "Charity; money given to people you think cannot manage."
+   },
+   {
+    "type": "noun",
+    "word": "sacrificio",
+    "definition": "Sacrifice; giving up something of yours so others are better off."
+   },
+   {
+    "type": "adjective",
+    "word": "quieto",
+    "definition": "Still; not being used and not moving at all."
+   },
+   {
+    "type": "verb",
+    "word": "rechazar",
+    "surface": "rechaza",
+    "definition": "To turn down; to say no to what somebody offers you."
+   },
+   {
+    "type": "noun",
+    "word": "incómodo",
+    "definition": "Awkwardness; the uneasy silence after somebody says the wrong thing."
+   },
+   {
+    "type": "noun",
+    "word": "reserva",
+    "definition": "Reserve; holding back instead of saying what you feel."
+   },
+   {
+    "type": "noun",
+    "word": "desprecio",
+    "definition": "Contempt; the cold way of looking down on somebody."
+   },
+   {
+    "type": "noun",
+    "word": "negativa",
+    "definition": "Refusal; a clear no to what has been offered."
+   },
+   {
+    "type": "noun",
+    "word": "compasión",
+    "definition": "Pity; feeling sorry for somebody who has less than you."
+   },
+   {
+    "type": "adjective",
+    "word": "solidario",
+    "definition": "In solidarity; standing with others as an equal, not above them."
+   },
+   {
+    "type": "verb",
+    "word": "admitir",
+    "surface": "admite",
+    "definition": "To accept; to take what is offered without feeling small."
+   },
+   {
+    "type": "noun",
+    "word": "dignidad",
+    "definition": "Dignity; the quiet pride that stops you taking a hand-out."
+   },
+   {
+    "type": "noun",
+    "word": "igualdad",
+    "definition": "Equality; everybody standing on the same level in a group."
+   },
+   {
+    "type": "adjective",
+    "word": "sensato",
+    "surface": "Sensata",
+    "definition": "Sensible; showing good sense about what will really work."
+   },
+   {
+    "type": "adjective",
+    "word": "imprudente",
+    "definition": "Reckless; done without thinking how it will land on others."
+   },
+   {
+    "type": "noun",
+    "word": "consecuencia",
+    "definition": "Consequence; what happens later because of what you did."
+   },
+   {
+    "type": "verb",
+    "word": "evitar",
+    "surface": "evita",
+    "definition": "To avoid; to keep away from doing a thing on purpose."
+   },
+   {
+    "type": "noun",
+    "word": "privilegio",
+    "definition": "Privilege; an advantage you have and the others do not."
+   }
+  ]
+ },
+ {
+  "topic": "jobs-and-wages",
+  "slotIndex": 1,
+  "slug": "el-ano-tiene-dos-mitades",
+  "title": "El año tiene dos mitades",
+  "text": "El camión deja a Nico y Rocío baja con la manta. Nico trabajaba en una empresa de Málaga y acabó su contrato. Irene nota el peso frío de la cesta.\n\n“Aquí en enero no hay empleo ni para los de siempre”. “La plantilla se queda en casa hasta Semana Santa, sin jornada ni descanso”. Ella cobra igual todo el año, con sus clientes, tarifa y factura.\n\nLe cuenta la carga de las seis y el oficio. Álvaro baja del huerto y dice que él vive de la cebolla, no de agosto. “En otoño el campo pide manos para la aceituna, y luego nada”.\n\n“Nosotros no ahorramos, guapa, nosotros estiramos”, suelta Rocío. Suma lo que gasta y apunta la cifra en una lista. La cantidad se parece a lo que gana Nico.\n\n“¿Y tú en qué trabajas?”, pregunta Nico con un gesto lento. Irene explica su tarea, su plazo y su esfuerzo, con otro tono. El año se parte en dos mitades y le queda una envidia rara.",
+  "arcType": "juxtaposition-discovery",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "empresa",
+    "definition": "Company; a business with workers, an office and people who pay it."
+   },
+   {
+    "type": "noun",
+    "word": "contrato",
+    "definition": "Contract; the paper that says how long you work and for what."
+   },
+   {
+    "type": "noun",
+    "word": "camión",
+    "definition": "Lorry; the big vehicle that carries goods along the road."
+   },
+   {
+    "type": "noun",
+    "word": "peso",
+    "definition": "Weight; how heavy a thing is when you lift it."
+   },
+   {
+    "type": "noun",
+    "word": "empleo",
+    "definition": "Job; paid work that somebody gives you and you go to."
+   },
+   {
+    "type": "noun",
+    "word": "plantilla",
+    "definition": "Staff; all the people who work for one place together."
+   },
+   {
+    "type": "noun",
+    "word": "cliente",
+    "surface": "clientes",
+    "definition": "Customer; the person or company that pays you for your work."
+   },
+   {
+    "type": "noun",
+    "word": "jornada",
+    "definition": "Working day; the hours you work from morning until you stop."
+   },
+   {
+    "type": "noun",
+    "word": "carga",
+    "definition": "Loading; putting boxes or goods into a lorry or a boat."
+   },
+   {
+    "type": "noun",
+    "word": "descanso",
+    "definition": "Break; the time when you stop working and sit down."
+   },
+   {
+    "type": "noun",
+    "word": "otoño",
+    "definition": "Autumn; the season after summer, when the leaves fall down."
+   },
+   {
+    "type": "noun",
+    "word": "campo",
+    "definition": "Countryside; the open land outside town where food is grown."
+   },
+   {
+    "type": "noun",
+    "word": "oficio",
+    "definition": "Trade; the practical job you learn by doing it with your hands."
+   },
+   {
+    "type": "verb",
+    "word": "ahorrar",
+    "surface": "ahorramos",
+    "definition": "To save; to keep money instead of spending it now."
+   },
+   {
+    "type": "verb",
+    "word": "sumar",
+    "surface": "suma",
+    "definition": "To add up; to put numbers together to see the total."
+   },
+   {
+    "type": "verb",
+    "word": "gastar",
+    "surface": "gasta",
+    "definition": "To spend; to use money and not have it any more."
+   },
+   {
+    "type": "noun",
+    "word": "cantidad",
+    "definition": "Amount; how much money or how much of something there is."
+   },
+   {
+    "type": "verb",
+    "word": "ganar",
+    "surface": "gana",
+    "definition": "To earn; to get money because you have done some work."
+   },
+   {
+    "type": "noun",
+    "word": "aceituna",
+    "definition": "Olive; the small green or black fruit picked in autumn."
+   },
+   {
+    "type": "noun",
+    "word": "tarea",
+    "definition": "Task; one piece of work you have to finish."
+   },
+   {
+    "type": "noun",
+    "word": "envidia",
+    "definition": "Envy; the bad feeling when somebody else has what you want."
+   },
+   {
+    "type": "noun",
+    "word": "esfuerzo",
+    "definition": "Effort; the hard work you put in to get something done."
+   }
+  ]
+ },
+ {
+  "topic": "jobs-and-wages",
+  "slotIndex": 2,
+  "slug": "dos-tardes-y-sin-factura",
+  "title": "Dos tardes y sin factura",
+  "text": "Ocho euros la hora es el precio que lleva pensado. Le hace la oferta en el rellano frío, con la nota y el plástico. Nico mira la mancha, calcula el material y pone una condición.\n\n“Eso te lo dejo hecho en dos tardes, material aparte y al contado”. “Sin factura, que para dos tardes no monto un negocio, guapa”. Irene compara esa tarifa con la de una empresa y su cuota.\n\nAcuerdan el pedido y el plazo enseguida. Ella valora el descuento y él no estar sin obra ni herramienta. Cierran el trato y él le pide un secreto.\n\nLo entiende como un compromiso sencillo de deuda y orden. Esa tarde Nico sube con la brocha, la cesta y el cepillo. A media obra baja Rocío y calla en el umbral, sin prisa.\n\n“Te dije que no, Nico, y sabes muy bien por qué”, le interrumpe. “Si lo paga ella, la comunidad no lo paga nunca”. Irene deja el sobre en el armario y el trato le parece vergonzoso.",
+  "arcType": "late-reveal",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "precio",
+    "definition": "Price; the money you have to pay to get something."
+   },
+   {
+    "type": "noun",
+    "word": "oferta",
+    "definition": "Offer; what somebody says they will give you or do for you."
+   },
+   {
+    "type": "noun",
+    "word": "material",
+    "definition": "Materials; the paint, wood or bricks a job needs."
+   },
+   {
+    "type": "noun",
+    "word": "condición",
+    "definition": "Condition; the thing somebody asks for before they say yes."
+   },
+   {
+    "type": "noun",
+    "word": "factura",
+    "definition": "Invoice; the paper that says what you owe for a job."
+   },
+   {
+    "type": "noun",
+    "word": "negocio",
+    "definition": "Business; work you do for money, with clients and papers."
+   },
+   {
+    "type": "verb",
+    "word": "comparar",
+    "surface": "compara",
+    "definition": "To compare; to look at two things and see the difference."
+   },
+   {
+    "type": "noun",
+    "word": "tarifa",
+    "definition": "Rate; the money charged for one hour or one job."
+   },
+   {
+    "type": "noun",
+    "word": "pedido",
+    "definition": "Order; the job or the goods that somebody asks you for."
+   },
+   {
+    "type": "noun",
+    "word": "plazo",
+    "definition": "Deadline; the day by which a thing has to be finished."
+   },
+   {
+    "type": "noun",
+    "word": "contado",
+    "definition": "Cash; money paid at once, right there, and not later."
+   },
+   {
+    "type": "verb",
+    "word": "valorar",
+    "surface": "valora",
+    "definition": "To weigh up; to think about how good or useful a thing is."
+   },
+   {
+    "type": "noun",
+    "word": "descuento",
+    "definition": "Discount; money taken off the price so you pay less."
+   },
+   {
+    "type": "noun",
+    "word": "trato",
+    "definition": "Deal; what two people agree to do for each other."
+   },
+   {
+    "type": "noun",
+    "word": "secreto",
+    "definition": "Secret; a thing you know and must not tell other people."
+   },
+   {
+    "type": "adjective",
+    "word": "sencillo",
+    "definition": "Simple; easy to do, with nothing difficult about it."
+   },
+   {
+    "type": "noun",
+    "word": "compromiso",
+    "definition": "Commitment; a promise that ties you to another person."
+   },
+   {
+    "type": "noun",
+    "word": "deuda",
+    "definition": "Debt; money you owe and have to give back later."
+   },
+   {
+    "type": "verb",
+    "word": "callar",
+    "surface": "calla",
+    "definition": "To keep quiet; to say nothing when you could speak."
+   },
+   {
+    "type": "verb",
+    "word": "interrumpir",
+    "surface": "interrumpe",
+    "definition": "To interrupt; to stop somebody in the middle of what they do."
+   },
+   {
+    "type": "adjective",
+    "word": "vergonzoso",
+    "definition": "Shameful; it makes you feel bad about what you have done."
+   }
+  ]
+ },
+ {
+  "topic": "jobs-and-wages",
+  "slotIndex": 3,
+  "slug": "rosa-cuenta-las-docenas",
+  "title": "Rosa cuenta las docenas",
+  "text": "Rosa, la panadera del bajo, saca los bollos temprano. El azúcar y la levadura van medidos en un molde. Irene espera tras la vitrina con los guantes y una nota.\n\n“En agosto hago treinta docenas y en enero no llego a cuatro”. “Y la leche, los huevos y el gas valen lo mismo los doce meses”. Ella se queda con la cifra, la cantidad y el margen dando vueltas.\n\nRosa le enseña la lista: si sobra pan, el beneficio se va. Por eso hornea la ración justa y cierra a mediodía. El resto del día lo pasa con las cuentas y una factura.\n\n“Un pastel de encargo me da más que una mañana de barras”. Irene compra un bollo salado y saca la tarjeta por costumbre. Rosa señala el aparato roto y hace un gesto lento.\n\nAl salir, Rosa baja el tono sin darle importancia. “Nosotros vamos tirando, pero el bar de mi primo va peor”. Irene sale con el bollo caliente y ese dato en la cabeza.",
+  "arcType": "daily-encounter",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "bollo",
+    "surface": "bollos",
+    "definition": "Bun; the small round soft bread you eat in the morning."
+   },
+   {
+    "type": "noun",
+    "word": "azúcar",
+    "definition": "Sugar; the sweet white powder you put in coffee and cakes."
+   },
+   {
+    "type": "noun",
+    "word": "levadura",
+    "definition": "Yeast; what you add to flour so the bread gets bigger."
+   },
+   {
+    "type": "noun",
+    "word": "molde",
+    "definition": "Mould; the shaped tin you put dough in before baking it."
+   },
+   {
+    "type": "noun",
+    "word": "vitrina",
+    "definition": "Glass case; the shop window where the cakes are on show."
+   },
+   {
+    "type": "noun",
+    "word": "docena",
+    "surface": "docenas",
+    "definition": "Dozen; a group of twelve things counted together."
+   },
+   {
+    "type": "noun",
+    "word": "leche",
+    "definition": "Milk; the white drink that comes from cows every day."
+   },
+   {
+    "type": "noun",
+    "word": "huevo",
+    "surface": "huevos",
+    "definition": "Egg; the oval thing from a hen that you cook and eat."
+   },
+   {
+    "type": "noun",
+    "word": "cifra",
+    "definition": "Figure; a number that says how much or how many."
+   },
+   {
+    "type": "noun",
+    "word": "margen",
+    "definition": "Margin; the money left over once you have paid for everything."
+   },
+   {
+    "type": "verb",
+    "word": "sobrar",
+    "surface": "sobra",
+    "definition": "To be left over; to be more than what people need."
+   },
+   {
+    "type": "noun",
+    "word": "beneficio",
+    "definition": "Profit; the money a shop keeps after paying all its costs."
+   },
+   {
+    "type": "verb",
+    "word": "hornear",
+    "surface": "hornea",
+    "definition": "To bake; to cook bread or cakes with heat in an oven."
+   },
+   {
+    "type": "noun",
+    "word": "ración",
+    "definition": "Portion; the amount of food that is right for one time."
+   },
+   {
+    "type": "noun",
+    "word": "resto",
+    "definition": "Rest; the part of something that is still left over."
+   },
+   {
+    "type": "noun",
+    "word": "pastel",
+    "definition": "Cake; the sweet thing you buy for a birthday or a Sunday."
+   },
+   {
+    "type": "adjective",
+    "word": "salado",
+    "definition": "Savoury; with salt in it, so it is not sweet."
+   },
+   {
+    "type": "noun",
+    "word": "tarjeta",
+    "definition": "Card; the small plastic rectangle you pay with in shops."
+   },
+   {
+    "type": "noun",
+    "word": "aparato",
+    "definition": "Machine; the small thing in a shop that takes card payments."
+   },
+   {
+    "type": "noun",
+    "word": "importancia",
+    "definition": "Importance; how much a thing matters to the people around."
+   },
+   {
+    "type": "noun",
+    "word": "primo",
+    "definition": "Cousin; the son of your mother's or your father's brother."
+   },
+   {
+    "type": "noun",
+    "word": "dato",
+    "definition": "Piece of news; one small fact that somebody drops in passing."
+   }
+  ]
+ },
+ {
+  "topic": "repeating-and-rephrasing",
+  "slotIndex": 1,
+  "slug": "se-le-va-el-hilo",
+  "title": "Se le va el hilo",
+  "text": "Irene entra en la farmacia con su consulta y su solicitud. Quien lleva el segundo del edificio es Marta, y hoy tiene prisa. Detrás del mostrador hay murmullo, fichas y una lista.\n\n“El acuerdo se acabó y la cuota no cubre esa obra”. “Hay que presentar el documento otra vez, con la cifra y la factura”. Irene entiende cada palabra suelta y ninguna oración entera.\n\nEl sentido se le escapa en la parte larga, entre plazo y voto. Nota la confusión y sujeta el papel con los guantes. Antes habría dicho que sí y habría salido igual de perdida.\n\n“Perdona, Marta, ¿me lo puedes repetir por partes?”, pregunta en otro tono. Marta se para, baja la voz y lo cuenta más lento. “O sea: hay que presentarlo, hay que pagarlo y hay que aprobarlo”.\n\nResume en voz alta y Marta hace una señal de alivio. El texto de la reunión sigue confuso, pero el hilo aguanta. Sale con dos preguntas más de las que traía y la gestión empezada.",
+  "arcType": "recurring-character-callback",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "consulta",
+    "definition": "Query; the question you go and ask somebody who knows."
+   },
+   {
+    "type": "noun",
+    "word": "solicitud",
+    "definition": "Application; the paper you fill in to ask an office for something."
+   },
+   {
+    "type": "noun",
+    "word": "murmullo",
+    "definition": "Murmur; the low sound of several people talking at once."
+   },
+   {
+    "type": "noun",
+    "word": "ficha",
+    "surface": "fichas",
+    "definition": "Card; the small stiff card with written details on it."
+   },
+   {
+    "type": "noun",
+    "word": "acuerdo",
+    "definition": "Agreement; what people decide together and then have to keep."
+   },
+   {
+    "type": "verb",
+    "word": "presentar",
+    "definition": "To hand in; to give a paper to an office."
+   },
+   {
+    "type": "noun",
+    "word": "documento",
+    "definition": "Document; an official paper that proves or asks for something."
+   },
+   {
+    "type": "noun",
+    "word": "oración",
+    "definition": "Sentence; a whole idea with a subject and a verb in it."
+   },
+   {
+    "type": "noun",
+    "word": "sentido",
+    "definition": "Meaning; what a group of words is really telling you."
+   },
+   {
+    "type": "noun",
+    "word": "parte",
+    "definition": "Part; one piece of a longer thing, not the whole of it."
+   },
+   {
+    "type": "noun",
+    "word": "confusión",
+    "definition": "Confusion; the feeling of not knowing what is going on."
+   },
+   {
+    "type": "verb",
+    "word": "sujetar",
+    "surface": "sujeta",
+    "definition": "To hold; to keep a thing firmly so it does not move."
+   },
+   {
+    "type": "noun",
+    "word": "tono",
+    "definition": "Tone; the way your voice sounds when you say something."
+   },
+   {
+    "type": "adjective",
+    "word": "lento",
+    "definition": "Slow; taking more time, so people can follow you."
+   },
+   {
+    "type": "expression",
+    "word": "o sea",
+    "definition": "In other words; used to say the same idea more simply."
+   },
+   {
+    "type": "verb",
+    "word": "aprobar",
+    "surface": "aprobarlo",
+    "definition": "To approve; to say yes to a plan in an official way."
+   },
+   {
+    "type": "verb",
+    "word": "resumir",
+    "surface": "resume",
+    "definition": "To sum up; to say the same thing again in fewer words."
+   },
+   {
+    "type": "noun",
+    "word": "señal",
+    "definition": "Sign; a small movement that tells you yes without words."
+   },
+   {
+    "type": "noun",
+    "word": "texto",
+    "definition": "Text; the written words on a page or a screen."
+   },
+   {
+    "type": "noun",
+    "word": "hilo",
+    "definition": "Thread; the line of an idea you follow while you listen."
+   },
+   {
+    "type": "noun",
+    "word": "gestión",
+    "definition": "Procedure; the steps you take at an office to get something done."
+   }
+  ]
+ },
+ {
+  "topic": "repeating-and-rephrasing",
+  "slotIndex": 2,
+  "slug": "entiende-todo-y-no-se-entera",
+  "title": "Entiende todo y no se entera",
+  "text": "Una tarde en el bar y no se le escapa una frase. Quique habla del muelle, Rocío de la obra, y ella sigue el debate. Mete una réplica corta y a Quique se le escapa un silbido.\n\n“Pues eso, que en abril se verá, en cuanto pase lo gordo”. “Sí, hombre, en cuanto pase, guapa, si es que pasa algún día”, contesta. Entiende el vocabulario, el idioma, el tono y el chiste.\n\nAl levantarse percibe que en realidad no sabe nada. No sabe si van a pedir la cuota, ni el plazo, ni la cifra. El contexto se le ha escapado por debajo.\n\nEn casa intenta deducir la decisión y apunta una nota. La traducción sale limpia y, de hecho, el resultado es cero. “¿Y al final qué se decidió?”, le pregunta a Rocío en concreto.\n\nBusca una pista en el argumento y no ve nada. “Nada, mujer, si eso fue hablar por hablar; aquí nunca se vota nada, guapa”. Murmura por dentro la distancia entre entender y enterarse.",
+  "arcType": "juxtaposition-discovery",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "debate",
+    "definition": "Discussion; two or more people giving different views about one thing."
+   },
+   {
+    "type": "noun",
+    "word": "réplica",
+    "definition": "Comeback; the short answer you give to what somebody said."
+   },
+   {
+    "type": "expression",
+    "word": "en cuanto",
+    "definition": "As soon as; at the moment when the other thing happens."
+   },
+   {
+    "type": "noun",
+    "word": "vocabulario",
+    "definition": "Vocabulary; all the words you know in another language."
+   },
+   {
+    "type": "noun",
+    "word": "idioma",
+    "definition": "Language; the words and rules a whole country speaks with."
+   },
+   {
+    "type": "noun",
+    "word": "chiste",
+    "definition": "Joke; the funny thing somebody says to make people laugh."
+   },
+   {
+    "type": "verb",
+    "word": "percibir",
+    "surface": "percibe",
+    "definition": "To notice; to become aware of a thing nobody said out loud."
+   },
+   {
+    "type": "expression",
+    "word": "en realidad",
+    "definition": "Actually; used when the truth is not what it seemed."
+   },
+   {
+    "type": "noun",
+    "word": "contexto",
+    "definition": "Context; everything around the words that helps you understand."
+   },
+   {
+    "type": "verb",
+    "word": "deducir",
+    "definition": "To work out; to reach an idea from the little you already know."
+   },
+   {
+    "type": "noun",
+    "word": "decisión",
+    "definition": "Decision; the thing a group finally chooses to do."
+   },
+   {
+    "type": "noun",
+    "word": "traducción",
+    "definition": "Translation; the same words put into another language."
+   },
+   {
+    "type": "noun",
+    "word": "resultado",
+    "definition": "Result; what you get at the end, after all the work."
+   },
+   {
+    "type": "noun",
+    "word": "pista",
+    "definition": "Clue; a small sign that helps you find out what happened."
+   },
+   {
+    "type": "noun",
+    "word": "argumento",
+    "definition": "Argument; the reasons somebody gives to defend their view."
+   },
+   {
+    "type": "expression",
+    "word": "en concreto",
+    "definition": "Specifically; asking about one exact point and not the whole thing."
+   },
+   {
+    "type": "verb",
+    "word": "murmurar",
+    "surface": "murmura",
+    "definition": "To mutter; to say something in a low voice, almost to yourself."
+   },
+   {
+    "type": "verb",
+    "word": "enterarse",
+    "definition": "To find out; to get to know what is really going on."
+   },
+   {
+    "type": "verb",
+    "word": "escapar",
+    "surface": "escapa",
+    "definition": "To slip away; to get out of your hands without you noticing."
+   },
+   {
+    "type": "noun",
+    "word": "silbido",
+    "definition": "Whistle; the sharp sound you make with your lips."
+   },
+   {
+    "type": "expression",
+    "word": "de hecho",
+    "definition": "In fact; used to add what really happened in the end."
+   }
+  ]
+ },
+ {
+  "topic": "repeating-and-rephrasing",
+  "slotIndex": 3,
+  "slug": "habia-entendido-lo-contrario",
+  "title": "Había entendido lo contrario",
+  "text": "En el rellano frío para a Rocío y saca una nota. Lleva quince días con una explicación fija sobre la obra. La trae a lápiz por detrás de una página vieja.\n\n“A ver si lo he cogido: la cuota la adelanta la comunidad”. “Y luego cada uno devuelve su parte, es decir, en tres plazos”. Rocío hace un comentario corto y suelta un susurro de aviso.\n\n“Mejor dicho: lo pone cada uno y la comunidad devuelve”. Ella se ha equivocado en una sílaba y en quince días. El desacuerdo no era de dinero, sino del orden de la obra.\n\nRepasa la mañana de la farmacia y encuentra el punto exacto. Marta lo contó de una manera y ella infirió otra sin querer. Nadie mintió, nadie se explicó mal, y aun así falló.\n\nRocío le quita hierro y le da un consejo corto, con gesto lento. “Tú repítelo siempre, hija, aunque parezcas tonta, que sale más barato”. Irene subraya esa parte, la aclara y respira con alivio.",
+  "arcType": "late-reveal",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "nota",
+    "definition": "Note; a few words written down so you do not forget."
+   },
+   {
+    "type": "noun",
+    "word": "explicación",
+    "definition": "Explanation; the words somebody uses to make a thing clear."
+   },
+   {
+    "type": "noun",
+    "word": "lápiz",
+    "definition": "Pencil; the wooden stick with grey inside that you write with."
+   },
+   {
+    "type": "noun",
+    "word": "página",
+    "definition": "Page; one side of a sheet in a book or a pad."
+   },
+   {
+    "type": "expression",
+    "word": "es decir",
+    "definition": "That is; used to say the same thing in a clearer way."
+   },
+   {
+    "type": "noun",
+    "word": "comentario",
+    "definition": "Remark; a short thing somebody says about what is going on."
+   },
+   {
+    "type": "noun",
+    "word": "susurro",
+    "definition": "Whisper; words said so quietly that only you hear them."
+   },
+   {
+    "type": "expression",
+    "word": "mejor dicho",
+    "definition": "Or rather; used to correct what you have just said."
+   },
+   {
+    "type": "verb",
+    "word": "equivocarse",
+    "surface": "equivocado",
+    "definition": "To get it wrong; to think one thing when it was another."
+   },
+   {
+    "type": "noun",
+    "word": "sílaba",
+    "definition": "Syllable; one small sound piece that a word is made of."
+   },
+   {
+    "type": "noun",
+    "word": "desacuerdo",
+    "definition": "Disagreement; when two people do not want the same thing."
+   },
+   {
+    "type": "noun",
+    "word": "punto",
+    "definition": "Point; the exact place in a talk where something happened."
+   },
+   {
+    "type": "adjective",
+    "word": "exacto",
+    "definition": "Exact; the very one, and not one near it."
+   },
+   {
+    "type": "verb",
+    "word": "inferir",
+    "surface": "infirió",
+    "definition": "To infer; to take a meaning that nobody actually said."
+   },
+   {
+    "type": "expression",
+    "word": "sin querer",
+    "definition": "By accident; without meaning to do it at all."
+   },
+   {
+    "type": "verb",
+    "word": "mentir",
+    "surface": "mintió",
+    "definition": "To lie; to say something you know is not true."
+   },
+   {
+    "type": "verb",
+    "word": "fallar",
+    "surface": "falló",
+    "definition": "To go wrong; not to work out the way it should."
+   },
+   {
+    "type": "noun",
+    "word": "hierro",
+    "definition": "Iron; the heavy metal, used here for making a thing lighter."
+   },
+   {
+    "type": "noun",
+    "word": "consejo",
+    "definition": "Advice; what somebody tells you to do to help you."
+   },
+   {
+    "type": "adjective",
+    "word": "tonto",
+    "surface": "tonta",
+    "definition": "Silly; looking a bit stupid in front of other people."
+   },
+   {
+    "type": "adjective",
+    "word": "barato",
+    "definition": "Cheap; costing you little money or little trouble."
+   },
+   {
+    "type": "verb",
+    "word": "subrayar",
+    "surface": "subraya",
+    "definition": "To underline; to draw a line under a word so it stands out."
+   },
+   {
+    "type": "verb",
+    "word": "aclarar",
+    "surface": "aclara",
+    "definition": "To clear up; to make a thing easy to understand at last."
+   }
+  ]
+ },
+ {
+  "topic": "sayings-and-nicknames",
+  "slotIndex": 1,
+  "slug": "ya-no-la-llaman-asi",
+  "title": "Ya no la llaman así",
+  "text": "El bar la llama de otra manera hace semanas. Irene lo oye de pie, junto al taburete frío, sin prisa. En la pizarra Quique ha escrito la lista con un rotulador.\n\n“Pregúntale a la del terrado, que esa se entera”, suelta uno. “Y que baje, que aquí se pregunta a la cara”, añade otro, sonriente. Le pone la copa y le cuenta los nombres, con gesto lento.\n\nAl del quiosco lo llaman el Tacaño y no lo es. A un vecino le dicen el Torpe siendo el más hábil. Ninguno de esos nombres es sátira, broma ni nota.\n\n“Esto no es ser maleducado, guapa: es una casilla”, dice Quique. “Yo fui el de la Bici veinte años, ni simpático ni antipático”. En agosto ella era la de Madrid, con un tono más cortés.\n\nLa etiqueta la pone el pueblo y no admite reclamación ni voto. Se busca en esa imagen, en esa parte, y no se ve. “Es como el carnet: te lo dan y ya está”, dice risueño.",
+  "arcType": "reframe-turn",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "taburete",
+    "definition": "Stool; the tall seat with no back that you use at a bar."
+   },
+   {
+    "type": "noun",
+    "word": "pizarra",
+    "definition": "Blackboard; the dark board a bar writes the food on."
+   },
+   {
+    "type": "noun",
+    "word": "rotulador",
+    "definition": "Marker pen; the thick pen with strong colour for writing signs."
+   },
+   {
+    "type": "noun",
+    "word": "lista",
+    "definition": "List; names or things written one under the other."
+   },
+   {
+    "type": "adjective",
+    "word": "sonriente",
+    "definition": "Smiling; with a smile on the face while saying it."
+   },
+   {
+    "type": "noun",
+    "word": "copa",
+    "definition": "Glass; the drink a barman puts in front of you."
+   },
+   {
+    "type": "noun",
+    "word": "quiosco",
+    "definition": "Kiosk; the little street shop that sells papers and sweets."
+   },
+   {
+    "type": "adjective",
+    "word": "tacaño",
+    "definition": "Mean; not wanting to spend or give away any money."
+   },
+   {
+    "type": "adjective",
+    "word": "torpe",
+    "definition": "Clumsy; dropping things and doing them badly with the hands."
+   },
+   {
+    "type": "noun",
+    "word": "sátira",
+    "definition": "Mockery; a joke made to laugh at somebody, not with them."
+   },
+   {
+    "type": "noun",
+    "word": "broma",
+    "definition": "Joke; something said to make people laugh, not to hurt."
+   },
+   {
+    "type": "noun",
+    "word": "casilla",
+    "definition": "Box; one square on a list where a thing is filed."
+   },
+   {
+    "type": "adjective",
+    "word": "maleducado",
+    "definition": "Rude; behaving badly towards the people around you."
+   },
+   {
+    "type": "adjective",
+    "word": "simpático",
+    "definition": "Nice; friendly and easy to get on with."
+   },
+   {
+    "type": "adjective",
+    "word": "antipático",
+    "definition": "Unfriendly; cold with people and hard to like."
+   },
+   {
+    "type": "adjective",
+    "word": "cortés",
+    "definition": "Polite; correct and pleasant, but keeping a certain distance."
+   },
+   {
+    "type": "noun",
+    "word": "etiqueta",
+    "definition": "Label; the short word people stick on you to place you."
+   },
+   {
+    "type": "noun",
+    "word": "reclamación",
+    "definition": "Complaint; the official way you ask for a decision to change."
+   },
+   {
+    "type": "noun",
+    "word": "imagen",
+    "definition": "Image; the picture you have in your head of somebody."
+   },
+   {
+    "type": "noun",
+    "word": "carnet",
+    "definition": "Card; the small official card with your name and photo."
+   },
+   {
+    "type": "adjective",
+    "word": "risueño",
+    "definition": "Cheerful; with a face that looks ready to laugh."
+   }
+  ]
+ },
+ {
+  "topic": "sayings-and-nicknames",
+  "slotIndex": 2,
+  "slug": "un-lema-que-escuece",
+  "title": "Un lema que escuece",
+  "text": "Rocío suelta el lema en el peldaño y sigue. Lo dice sin bajar el tono y sin volver la cabeza. Detrás sube Irene con las orejas de fuera y su nota.\n\n“El que viene de fuera, o trae hambre o trae dinero, guapa”. “Y tú de hambre no tienes cara, hija, eso se ve”. En Madrid esa frase sería grosera y hasta vulgar.\n\nAquí no se gira nadie: ni el portero ni el inquilino de la vivienda. “Pues muy discreta tú, guapa, muchas gracias por el detalle”, contesta. Sospecha que Rocío no quería ofender, ni con la cuota.\n\n“Mujer, si eso se dice de cualquiera, hasta de mi hijo”, responde ella. Entra, echa el cerrojo y se queda en el quicio. Su reacción le parece grande y poco sincera.\n\nToda la tarde le da vueltas al asunto y a si fue honesta. A las nueve alguien mete un papel con un pliegue por el tapete. No es perdón: es la lista de los cinco, con una llamada y un plazo.",
+  "arcType": "mini-cliffhanger",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "lema",
+    "definition": "Saying; a short old line that people here repeat without thinking."
+   },
+   {
+    "type": "noun",
+    "word": "peldaño",
+    "definition": "Step; one of the flat parts of a staircase you tread on."
+   },
+   {
+    "type": "noun",
+    "word": "oreja",
+    "surface": "orejas",
+    "definition": "Ear; what you hear with, wide open when you are listening hard."
+   },
+   {
+    "type": "adjective",
+    "word": "grosero",
+    "surface": "grosera",
+    "definition": "Rude; said in a way that hurts the other person."
+   },
+   {
+    "type": "adjective",
+    "word": "vulgar",
+    "definition": "Coarse; low and not nice, the way you should not talk."
+   },
+   {
+    "type": "noun",
+    "word": "portero",
+    "definition": "Caretaker; the man who looks after a block of flats."
+   },
+   {
+    "type": "noun",
+    "word": "inquilino",
+    "definition": "Tenant; the person who rents a flat instead of owning it."
+   },
+   {
+    "type": "noun",
+    "word": "vivienda",
+    "definition": "Housing; the building or flat where people live."
+   },
+   {
+    "type": "verb",
+    "word": "sospechar",
+    "surface": "sospecha",
+    "definition": "To suspect; to think a thing without being sure of it."
+   },
+   {
+    "type": "verb",
+    "word": "ofender",
+    "definition": "To offend; to say a thing that hurts another person."
+   },
+   {
+    "type": "adjective",
+    "word": "discreto",
+    "surface": "discreta",
+    "definition": "Discreet; careful about what you say in front of others."
+   },
+   {
+    "type": "noun",
+    "word": "cerrojo",
+    "definition": "Bolt; the metal bar you slide across to lock a door."
+   },
+   {
+    "type": "noun",
+    "word": "quicio",
+    "definition": "Door frame; the wooden edge you stand in when you stop there."
+   },
+   {
+    "type": "adjective",
+    "word": "sincero",
+    "surface": "sincera",
+    "definition": "Sincere; saying what you really think, with nothing hidden."
+   },
+   {
+    "type": "adjective",
+    "word": "honesto",
+    "surface": "honesta",
+    "definition": "Honest; straight with people, even when it is not easy."
+   },
+   {
+    "type": "noun",
+    "word": "tapete",
+    "definition": "Mat; the small cloth or rug you put under things by a door."
+   },
+   {
+    "type": "noun",
+    "word": "perdón",
+    "definition": "Sorry; the word people say when they want to be forgiven."
+   },
+   {
+    "type": "noun",
+    "word": "llamada",
+    "definition": "Phone call; when you ring somebody and talk to them."
+   },
+   {
+    "type": "noun",
+    "word": "reacción",
+    "definition": "Reaction; what you feel and do right after something happens."
+   },
+   {
+    "type": "noun",
+    "word": "pliegue",
+    "definition": "Fold; the line left in paper when you bend it over."
+   },
+   {
+    "type": "noun",
+    "word": "asunto",
+    "definition": "Matter; the thing that is being talked about or worried over."
+   }
+  ]
+ },
+ {
+  "topic": "sayings-and-nicknames",
+  "slotIndex": 3,
+  "slug": "le-sale-sola-la-frase",
+  "title": "Le sale sola la frase",
+  "text": "Irene apunta lemas por detrás del sobre hace semanas. Los guarda como una colección prudente que no se atreve a enseñar. En la panadería de Rosa huele a pan a la hora habitual.\n\n“Y encima suben el gas en enero, cuando menos se vende”. “Y esa novedad no la avisa nadie, ni un anuncio ponen”, se queja. Una señora le da la razón desde el fondo, sin levantar el tono.\n\nA Irene le sale la frase sin pensarla y sin ensayo. “Año de nieves, año de bienes, ya verás tú en agosto”. La suelta en la pausa exacta, ni antes ni luego.\n\nRosa se ríe con gracia sobria y sigue cobrando la cuenta. No hay premio, ni nadie la felicita, ni hace falta. El ambiente de la cola no se rompe ni un segundo.\n\n“Anda, si ya hablas igual que el tendero de la verdulería”, le dice Rosa. Sale con una confianza modesta, una nota menos y algo de alivio. El panadero de enfrente la saluda con una cara agradable.",
+  "arcType": "harmonic-close",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "colección",
+    "definition": "Collection; the set of things you keep together on purpose."
+   },
+   {
+    "type": "verb",
+    "word": "quejarse",
+    "surface": "queja",
+    "definition": "To complain; to say out loud that a thing is wrong."
+   },
+   {
+    "type": "noun",
+    "word": "gas",
+    "definition": "Gas; what the bakery burns to heat the oven every day."
+   },
+   {
+    "type": "noun",
+    "word": "novedad",
+    "definition": "New thing; something that was not there until now."
+   },
+   {
+    "type": "noun",
+    "word": "razón",
+    "definition": "Right; when you agree that what somebody says is true."
+   },
+   {
+    "type": "noun",
+    "word": "ensayo",
+    "definition": "Rehearsal; practising a thing before you do it for real."
+   },
+   {
+    "type": "noun",
+    "word": "pausa",
+    "definition": "Pause; the short silence in a talk where a line can fit."
+   },
+   {
+    "type": "noun",
+    "word": "gracia",
+    "definition": "Wit; the funny turn somebody gives to what they say."
+   },
+   {
+    "type": "adjective",
+    "word": "sobrio",
+    "surface": "sobria",
+    "definition": "Sober; quiet and plain, with nothing showy about it."
+   },
+   {
+    "type": "noun",
+    "word": "premio",
+    "definition": "Prize; the reward you get for doing something well."
+   },
+   {
+    "type": "verb",
+    "word": "felicitar",
+    "surface": "felicita",
+    "definition": "To congratulate; to tell somebody they have done well."
+   },
+   {
+    "type": "adjective",
+    "word": "habitual",
+    "definition": "Usual; the way a thing normally happens every day."
+   },
+   {
+    "type": "noun",
+    "word": "tendero",
+    "definition": "Shopkeeper; the person who serves you in a small shop."
+   },
+   {
+    "type": "noun",
+    "word": "verdulería",
+    "definition": "Greengrocer; the shop that sells vegetables and fruit."
+   },
+   {
+    "type": "noun",
+    "word": "confianza",
+    "definition": "Confidence; the calm feeling that you can do a thing."
+   },
+   {
+    "type": "noun",
+    "word": "panadero",
+    "definition": "Baker; the person who makes and sells the bread."
+   },
+   {
+    "type": "adjective",
+    "word": "agradable",
+    "definition": "Pleasant; nice to be with, and easy on the eye."
+   },
+   {
+    "type": "noun",
+    "word": "ambiente",
+    "definition": "Atmosphere; the general feeling of a place at that moment."
+   },
+   {
+    "type": "adjective",
+    "word": "prudente",
+    "definition": "Careful; not going further than is safe or polite."
+   },
+   {
+    "type": "adjective",
+    "word": "modesto",
+    "surface": "modesta",
+    "definition": "Modest; small and quiet, without showing off at all."
+   },
+   {
+    "type": "verb",
+    "word": "atreverse",
+    "surface": "atreve",
+    "definition": "To dare; to be brave enough to do a thing in public."
+   }
+  ]
+ },
+ {
+  "topic": "storms-and-the-sea",
+  "slotIndex": 1,
+  "slug": "el-levante-trae-piedras",
+  "title": "El levante trae piedras",
+  "text": "Hace tres noches que el levante no para y silban los postes. La ráfaga arrastra grava contra la contraventana y el letrero. El golpe la despierta y Rocío ya anda arriba.\n\n“Esto en agosto no lo has visto tú nunca en la vida, guapa”. “El levante deja el paseo lleno de piedras, basura y algas”. En el techo la mancha ya gotea encima del sillón y del armario.\n\nPone la cubeta debajo y cuenta los segundos entre gotas. El agua baja por la tubería y empapa el tabique. Abajo, la marea se ha llevado dos farolas y una valla del malecón.\n\n“Cada febrero una inundación, y cada febrero los arreglos entre todos”. Al amanecer el cielo sale despejado. Queda un chubasco suelto, pero el mar ya no da miedo.\n\nIrene mira el muro roto y la obra que no empieza. El desagüe echa un chorro ruidoso y el terrado sigue igual. “Baja, guapa, que abajo hace falta gente y manos”, le grita con prisa.",
+  "arcType": "reframe-turn",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "levante",
+    "definition": "East wind; the strong wind that hits this coast in winter."
+   },
+   {
+    "type": "noun",
+    "word": "poste",
+    "surface": "postes",
+    "definition": "Post; the tall thin piece of wood or metal in the street."
+   },
+   {
+    "type": "noun",
+    "word": "ráfaga",
+    "definition": "Gust; a short strong push of wind that comes and goes."
+   },
+   {
+    "type": "noun",
+    "word": "grava",
+    "definition": "Gravel; the small loose stones that cover a path or a roof."
+   },
+   {
+    "type": "noun",
+    "word": "golpe",
+    "definition": "Bang; the hard sound one thing makes when it hits another."
+   },
+   {
+    "type": "noun",
+    "word": "basura",
+    "definition": "Rubbish; the things people throw away because nobody wants them."
+   },
+   {
+    "type": "verb",
+    "word": "gotear",
+    "surface": "gotea",
+    "definition": "To drip; to fall in small drops, one after another."
+   },
+   {
+    "type": "noun",
+    "word": "cubeta",
+    "definition": "Tub; the small open plastic box you put under a leak."
+   },
+   {
+    "type": "noun",
+    "word": "tubería",
+    "definition": "Pipe; the long tube that carries water inside a wall."
+   },
+   {
+    "type": "noun",
+    "word": "tabique",
+    "definition": "Partition wall; the thin inside wall between two rooms."
+   },
+   {
+    "type": "noun",
+    "word": "marea",
+    "definition": "Tide; the sea coming up the beach and going back down."
+   },
+   {
+    "type": "noun",
+    "word": "farola",
+    "surface": "farolas",
+    "definition": "Street light; the tall lamp that lights a street at night."
+   },
+   {
+    "type": "noun",
+    "word": "malecón",
+    "definition": "Sea wall; the long wall that holds the sea back from the street."
+   },
+   {
+    "type": "noun",
+    "word": "inundación",
+    "definition": "Flood; water coming into a place where it should not be."
+   },
+   {
+    "type": "noun",
+    "word": "arreglos",
+    "definition": "Repairs; the small jobs people do to put things right again."
+   },
+   {
+    "type": "adjective",
+    "word": "despejado",
+    "definition": "Clear; with no clouds at all in the sky."
+   },
+   {
+    "type": "noun",
+    "word": "chubasco",
+    "definition": "Shower; a short heavy fall of rain that soon stops."
+   },
+   {
+    "type": "adjective",
+    "word": "roto",
+    "definition": "Broken; in pieces, and not working the way it should."
+   },
+   {
+    "type": "adjective",
+    "word": "ruidoso",
+    "definition": "Noisy; loud enough to hear it from the other street."
+   },
+   {
+    "type": "noun",
+    "word": "chorro",
+    "definition": "Jet; a strong line of water coming out of a pipe."
+   },
+   {
+    "type": "noun",
+    "word": "desagüe",
+    "definition": "Drain; the hole and pipe where dirty water goes away."
+   }
+  ]
+ },
+ {
+  "topic": "storms-and-the-sea",
+  "slotIndex": 2,
+  "slug": "el-muelle-sin-barcas",
+  "title": "El muelle sin barcas",
+  "text": "El muelle amanece sin una sola barca en el agua. Las redes, apiladas en el embarcadero, huelen a sardina. Quique baja con Irene a ver los destrozos del levante.\n\n“Con este mar no sale nadie, y la lancha de Paco está dañada”. “Y si no hay pesca, no baja gente al bar, guapa, así de fácil”. Un velero ha roto la valla del faro y una tapia.\n\nToca el nudo de una cuerda hinchada por la espuma. Quique le enseña la caja del hielo, apagada desde noviembre. Reparar la valla cuesta cuatro días, un equipo y material.\n\nSuben por la senda de la ladera, un trecho de lodo y grava. “¿Y el bar cómo va este año?”, le pregunta ella, por decir algo. Quique tarda demasiado y mira el techo, sin gesto.\n\n“Yo el año que viene ya veremos, guapa, no te digo más”. Ella espera el resto de la frase y no llega. Abajo, el faro se enciende con dos horas de retraso.",
+  "arcType": "mini-cliffhanger",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "muelle",
+    "definition": "Quay; the flat stone edge of a port where boats tie up."
+   },
+   {
+    "type": "noun",
+    "word": "red",
+    "surface": "redes",
+    "definition": "Net; the piece of knotted rope a boat catches fish with."
+   },
+   {
+    "type": "noun",
+    "word": "embarcadero",
+    "definition": "Landing stage; the wooden or stone place where boats are loaded."
+   },
+   {
+    "type": "noun",
+    "word": "sardina",
+    "definition": "Sardine; the small silver fish people grill on the beach."
+   },
+   {
+    "type": "noun",
+    "word": "lancha",
+    "definition": "Small boat; a light open boat with a motor at the back."
+   },
+   {
+    "type": "adjective",
+    "word": "dañado",
+    "surface": "dañada",
+    "definition": "Damaged; hurt or broken, but maybe still possible to mend."
+   },
+   {
+    "type": "noun",
+    "word": "velero",
+    "definition": "Sailing boat; the boat that moves with the wind in its cloth."
+   },
+   {
+    "type": "noun",
+    "word": "valla",
+    "definition": "Fence; the line of wood or metal that closes off a place."
+   },
+   {
+    "type": "noun",
+    "word": "faro",
+    "definition": "Lighthouse; the tall tower with a light that guides boats."
+   },
+   {
+    "type": "noun",
+    "word": "nudo",
+    "definition": "Knot; the tight place where a rope is tied to itself."
+   },
+   {
+    "type": "noun",
+    "word": "espuma",
+    "definition": "Foam; the white bubbles the sea leaves on the rocks."
+   },
+   {
+    "type": "noun",
+    "word": "hielo",
+    "definition": "Ice; frozen water, used to keep fish cold in a box."
+   },
+   {
+    "type": "noun",
+    "word": "pesca",
+    "definition": "Fishing; the work of going out to sea to catch fish."
+   },
+   {
+    "type": "verb",
+    "word": "reparar",
+    "definition": "To mend; to fix a broken thing so it works again."
+   },
+   {
+    "type": "noun",
+    "word": "senda",
+    "definition": "Path; the narrow way people walk up a hill or field."
+   },
+   {
+    "type": "noun",
+    "word": "ladera",
+    "definition": "Hillside; the sloping side of a hill above the town."
+   },
+   {
+    "type": "noun",
+    "word": "trecho",
+    "definition": "Stretch; a length of road or path between two points."
+   },
+   {
+    "type": "noun",
+    "word": "retraso",
+    "definition": "Delay; the extra time when a thing happens later than it should."
+   },
+   {
+    "type": "noun",
+    "word": "lodo",
+    "definition": "Mud; the soft wet dirt a storm leaves on a path."
+   },
+   {
+    "type": "noun",
+    "word": "equipo",
+    "definition": "Team; a group of people who work together on one job."
+   },
+   {
+    "type": "adjective",
+    "word": "apagado",
+    "surface": "apagada",
+    "definition": "Switched off; not working, because nobody turned it on."
+   }
+  ]
+ },
+ {
+  "topic": "storms-and-the-sea",
+  "slotIndex": 3,
+  "slug": "media-calle-con-manguera",
+  "title": "Media calle con manguera",
+  "text": "Después del levante, la limpieza empieza antes de las nueve. Rocío reparte guantes y grita quién friega y quién recoge. El lodo y el barro llegan hasta la puerta de la panadería.\n\n“Tú a la manguera, guapa, que eso no tiene ciencia”, le suelta. “Y del cruce para abajo lo hacemos luego”. Irene abre el grifo y frota lo que puede hacia el desagüe.\n\nUn vecino trae detergente y esponja para las farolas. Otro sacude las cortinas y baja la cesta. La papelera se llena de algas, grava y basura enseguida.\n\n“Esto es cada año, y cada año se junta la misma gente en la rotonda”. Nota el apoyo raro de trabajar sin saber para quién. A media mañana sabe de qué casa es cada cubeta.\n\n“Deja el trapeado, anda, y toma un café que aún quema”. El contenedor está lleno y la calle vuelve a verse. Irene sube con las manos moradas, pone en agua las dos semillas de Álvaro y esa colaboración le dura la tarde.",
+  "arcType": "harmonic-close",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "fregar",
+    "surface": "friega",
+    "definition": "To scrub; to clean a floor hard with water and a brush."
+   },
+   {
+    "type": "noun",
+    "word": "manguera",
+    "definition": "Hose; the long rubber tube that carries water to wash things."
+   },
+   {
+    "type": "noun",
+    "word": "grifo",
+    "definition": "Tap; the handle you turn to make water come out."
+   },
+   {
+    "type": "noun",
+    "word": "detergente",
+    "definition": "Detergent; the soap you use to wash floors and clothes."
+   },
+   {
+    "type": "noun",
+    "word": "esponja",
+    "definition": "Sponge; the soft thing full of holes you clean with."
+   },
+   {
+    "type": "verb",
+    "word": "sacudir",
+    "surface": "sacude",
+    "definition": "To shake out; to move a cloth hard so the dust falls."
+   },
+   {
+    "type": "noun",
+    "word": "cortina",
+    "surface": "cortinas",
+    "definition": "Curtain; the cloth you pull across a window to cover it."
+   },
+   {
+    "type": "noun",
+    "word": "papelera",
+    "definition": "Bin; the open box in a street where people put rubbish."
+   },
+   {
+    "type": "noun",
+    "word": "contenedor",
+    "definition": "Skip; the big metal box in a street for heavy rubbish."
+   },
+   {
+    "type": "noun",
+    "word": "apoyo",
+    "definition": "Support; the help other people give you when you need it."
+   },
+   {
+    "type": "noun",
+    "word": "colaboración",
+    "definition": "Team work; a job that many people do together at once."
+   },
+   {
+    "type": "noun",
+    "word": "limpieza",
+    "definition": "Clean-up; the work of making a dirty place clean again."
+   },
+   {
+    "type": "noun",
+    "word": "cruce",
+    "definition": "Crossroads; the place where two streets cross each other."
+   },
+   {
+    "type": "noun",
+    "word": "rotonda",
+    "definition": "Roundabout; the circle of road where cars turn at a junction."
+   },
+   {
+    "type": "verb",
+    "word": "frotar",
+    "surface": "frota",
+    "definition": "To rub; to move a thing hard over a surface to clean it."
+   },
+   {
+    "type": "adjective",
+    "word": "morado",
+    "surface": "moradas",
+    "definition": "Purple; the dark red colour hands go with cold water."
+   },
+   {
+    "type": "noun",
+    "word": "alga",
+    "surface": "algas",
+    "definition": "Seaweed; the green sea plant the waves leave on the sand."
+   },
+   {
+    "type": "noun",
+    "word": "barro",
+    "definition": "Mud; wet earth that sticks to your shoes after the rain."
+   },
+   {
+    "type": "verb",
+    "word": "trapear",
+    "surface": "trapeado",
+    "definition": "To mop; to clean a floor with a wet cloth on a stick."
+   },
+   {
+    "type": "verb",
+    "word": "juntarse",
+    "surface": "junta",
+    "definition": "To gather; to come together in the same place as others."
+   },
+   {
+    "type": "expression",
+    "word": "no tiene ciencia",
+    "definition": "It is not difficult; anybody can do it without being taught."
+   }
+  ]
+ },
+ {
+  "topic": "trust-and-rumours",
+  "slotIndex": 1,
+  "slug": "hay-un-correo-sin-abrir",
+  "title": "Hay un correo sin abrir",
+  "text": "Hay un correo sin abrir en la caja de cerveza de Quique. Él baja al almacén y le pide que vigile la barra. Queda de testigo por casualidad, con el olor a café.\n\nEl papel está de cara y ella no lo toca. Lee la palabra cierre, una fecha, un plazo y una dificultad. “Vaya crisis lleva encima este hombre y no lo cuenta”, piensa.\n\nNo hace falta ser suspicaz para entender la situación. El bar no vence en mayo, vence antes, y él lo sabe. En la reunión no dio ninguna cifra: no es desconfiar, es pena.\n\n“¿Todo bien por aquí, o te he revelado algún secreto gordo?”, bromea. “Todo bien, todo tranquilo, no ha entrado ni una mosca”, miente Irene. Nota que la lealtad tiene dos caras y elige la fiel.\n\n“Pues muchas gracias, guapa, que tú siempre estás cuando hace falta algo”. Sobrellevarlo callada no es ocultar ni esconder, se repite. Sube al piso sin contar nada: confiar aquí es guardar lo privado.",
+  "arcType": "late-reveal",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "correo",
+    "definition": "Post; the letters that arrive for you at your address."
+   },
+   {
+    "type": "noun",
+    "word": "cerveza",
+    "definition": "Beer; the drink a bar keeps in crates behind the counter."
+   },
+   {
+    "type": "noun",
+    "word": "testigo",
+    "definition": "Witness; somebody who happens to see what took place."
+   },
+   {
+    "type": "noun",
+    "word": "casualidad",
+    "definition": "Chance; when a thing happens without anybody planning it."
+   },
+   {
+    "type": "noun",
+    "word": "cierre",
+    "definition": "Closure; when a business shuts its doors for good."
+   },
+   {
+    "type": "noun",
+    "word": "dificultad",
+    "definition": "Difficulty; a problem that makes a thing hard to carry on."
+   },
+   {
+    "type": "noun",
+    "word": "crisis",
+    "definition": "Crisis; a bad stretch when money or work runs out."
+   },
+   {
+    "type": "adjective",
+    "word": "suspicaz",
+    "definition": "Suspicious; quick to think there is something behind things."
+   },
+   {
+    "type": "noun",
+    "word": "situación",
+    "definition": "Situation; how things stand for somebody at this moment."
+   },
+   {
+    "type": "verb",
+    "word": "vencer",
+    "surface": "vence",
+    "definition": "To fall due; to reach the day when a debt has to be paid."
+   },
+   {
+    "type": "verb",
+    "word": "desconfiar",
+    "definition": "To distrust; to think that somebody may not be straight with you."
+   },
+   {
+    "type": "noun",
+    "word": "pena",
+    "definition": "Sorrow; the heavy feeling you get for somebody else's trouble."
+   },
+   {
+    "type": "verb",
+    "word": "revelar",
+    "surface": "revelado",
+    "definition": "To reveal; to tell a thing that was being kept quiet."
+   },
+   {
+    "type": "verb",
+    "word": "mentir",
+    "surface": "miente",
+    "definition": "To lie; to say something you know is not true."
+   },
+   {
+    "type": "noun",
+    "word": "lealtad",
+    "definition": "Loyalty; standing by somebody, even when it costs you."
+   },
+   {
+    "type": "verb",
+    "word": "sobrellevar",
+    "surface": "Sobrellevarlo",
+    "definition": "To bear; to carry on with something heavy inside you."
+   },
+   {
+    "type": "verb",
+    "word": "ocultar",
+    "definition": "To hide; to keep a thing from somebody without saying anything."
+   },
+   {
+    "type": "verb",
+    "word": "esconder",
+    "definition": "To hide away; to put a thing where nobody can find it."
+   },
+   {
+    "type": "verb",
+    "word": "confiar",
+    "definition": "To trust; to believe that somebody will do the right thing."
+   },
+   {
+    "type": "adjective",
+    "word": "privado",
+    "definition": "Private; belonging to one person and not for others to know."
+   },
+   {
+    "type": "adjective",
+    "word": "fiel",
+    "definition": "Faithful; doing the same as always, without letting you down."
+   }
+  ]
+ },
+ {
+  "topic": "trust-and-rumours",
+  "slotIndex": 2,
+  "slug": "tres-segundos-para-contestar",
+  "title": "Tres segundos para contestar",
+  "text": "Una vecina la para en el cruce con la mirada directa. La pregunta no es pregunta: ya trae media respuesta dentro. Aquí no hay prensa, hay esquinas, y una frase se extiende sola.\n\n“Tú que entras al bar, ¿es verdad que Quique cierra en junio?”. “Que lo dice todo el mundo, y yo no quiero criticar a nadie”. Irene tiene tres segundos para elegir su punto de vista.\n\nPuede negar, callar o dar una versión suave. Defender a Quique en voz alta sería peor que difundir el relato. La privacidad de otro no se discute a media calle.\n\n“Yo de eso no sé nada, ni hago juicios”, contesta sin prisa. La vecina persiste con la cara reservada y muy franca. “Mujer, si aquí no se publica nada, si es entre nosotras”.\n\nSigue hacia la panadería con el perjuicio hecho y sin alivio. Al girar por el rincón del cruce la ve hablando con otras dos. Desde allí no oye nada, pero reconoce la señal de transmitir.",
+  "arcType": "mini-cliffhanger",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "mirada",
+    "definition": "Look; the way somebody's eyes rest on you while they speak."
+   },
+   {
+    "type": "adjective",
+    "word": "directo",
+    "surface": "directa",
+    "definition": "Direct; going straight to the point with no soft words."
+   },
+   {
+    "type": "noun",
+    "word": "prensa",
+    "definition": "Press; the newspapers, which here nobody needs to spread news."
+   },
+   {
+    "type": "verb",
+    "word": "extender",
+    "surface": "extiende",
+    "definition": "To spread; to reach further and further on its own."
+   },
+   {
+    "type": "verb",
+    "word": "criticar",
+    "definition": "To criticise; to say out loud what is wrong with somebody."
+   },
+   {
+    "type": "expression",
+    "word": "punto de vista",
+    "definition": "Point of view; the side of a thing that one person takes."
+   },
+   {
+    "type": "verb",
+    "word": "negar",
+    "definition": "To deny; to say that a thing is not true at all."
+   },
+   {
+    "type": "noun",
+    "word": "versión",
+    "definition": "Version; one way of telling a story, out of several."
+   },
+   {
+    "type": "verb",
+    "word": "defender",
+    "definition": "To defend; to speak for somebody who is being attacked."
+   },
+   {
+    "type": "verb",
+    "word": "difundir",
+    "definition": "To spread; to pass news along until everybody has it."
+   },
+   {
+    "type": "noun",
+    "word": "relato",
+    "definition": "Account; the story of what happened, as somebody tells it."
+   },
+   {
+    "type": "noun",
+    "word": "juicio",
+    "definition": "Judgement; deciding whether somebody is right or wrong."
+   },
+   {
+    "type": "verb",
+    "word": "persistir",
+    "surface": "persiste",
+    "definition": "To persist; to keep on asking after being told no."
+   },
+   {
+    "type": "adjective",
+    "word": "reservado",
+    "surface": "reservada",
+    "definition": "Guarded; not showing what you really want or think."
+   },
+   {
+    "type": "adjective",
+    "word": "franco",
+    "surface": "franca",
+    "definition": "Frank; saying things openly, without covering them up."
+   },
+   {
+    "type": "verb",
+    "word": "publicar",
+    "surface": "publica",
+    "definition": "To publish; to make a thing known to everybody."
+   },
+   {
+    "type": "noun",
+    "word": "perjuicio",
+    "definition": "Harm; the damage done to somebody by what is said."
+   },
+   {
+    "type": "verb",
+    "word": "transmitir",
+    "definition": "To pass on; to give a message to the next person."
+   },
+   {
+    "type": "noun",
+    "word": "privacidad",
+    "definition": "Privacy; the right to keep your own business to yourself."
+   },
+   {
+    "type": "noun",
+    "word": "rincón",
+    "definition": "Corner; the small sheltered spot where two walls meet."
+   }
+  ]
+ },
+ {
+  "topic": "trust-and-rumours",
+  "slotIndex": 3,
+  "slug": "el-terrado-ya-no-gotea",
+  "title": "El terrado ya no gotea",
+  "text": "Después de Semana Santa la reforma acaba y la mejora se ve. Julián hace la entrega del terrado y Quique sube a mirar. Marta lo revisa con la varilla y da el visto bueno.\n\n“Esto aguanta veinte años, guapa, y el que venga detrás que lo vea”. “Y la instalación del agua queda reparada, que era lo peor”, añade. En el techo de Irene ya no hay mancha ni cubeta.\n\nPaga su cuota delante de todos y nadie pregunta por el resto. Esa mejora pequeña es su logro y su triunfo callado. Finalizar algo entre cinco le da una tranquilidad nueva, sin deuda.\n\n“Poca cosa, pero hay que festejar lo que acaba bien”, dice Quique. “Y esto ha quedado más que satisfactorio, oye”, se alegra Rosa. Nico sube dos cajas y pone un disco muy bajo.\n\nLa primavera entra por el terrado con un aire sereno. Sale agradecida y más relajada que en enero. Nadie le pone nombre a esa unión, y convivir aquí acaba siendo eso.",
+  "arcType": "harmonic-close",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "reforma",
+    "definition": "Renovation; the work of changing and mending part of a building."
+   },
+   {
+    "type": "noun",
+    "word": "entrega",
+    "definition": "Handover; the moment a worker gives you the finished job."
+   },
+   {
+    "type": "verb",
+    "word": "revisar",
+    "surface": "revisa",
+    "definition": "To check over; to look at a job to see it is well done."
+   },
+   {
+    "type": "noun",
+    "word": "instalación",
+    "definition": "System; the set of pipes that make a building work."
+   },
+   {
+    "type": "adjective",
+    "word": "reparado",
+    "surface": "reparada",
+    "definition": "Mended; put right, so it works properly again."
+   },
+   {
+    "type": "noun",
+    "word": "mejora",
+    "definition": "Improvement; a change that makes a thing better than before."
+   },
+   {
+    "type": "noun",
+    "word": "logro",
+    "definition": "Achievement; a thing you managed to do that was not easy."
+   },
+   {
+    "type": "noun",
+    "word": "triunfo",
+    "definition": "Win; the good end of something you fought hard for."
+   },
+   {
+    "type": "verb",
+    "word": "finalizar",
+    "definition": "To finish; to bring a long job to its end at last."
+   },
+   {
+    "type": "noun",
+    "word": "tranquilidad",
+    "definition": "Peace of mind; the calm you feel when a worry is over."
+   },
+   {
+    "type": "verb",
+    "word": "festejar",
+    "definition": "To celebrate; to mark a good thing with food and drink."
+   },
+   {
+    "type": "adjective",
+    "word": "satisfactorio",
+    "definition": "Satisfactory; good enough to leave everybody happy with it."
+   },
+   {
+    "type": "verb",
+    "word": "alegrarse",
+    "surface": "alegra",
+    "definition": "To be glad; to feel happy about how a thing turned out."
+   },
+   {
+    "type": "noun",
+    "word": "primavera",
+    "definition": "Spring; the season after winter, when the days get warm."
+   },
+   {
+    "type": "adjective",
+    "word": "sereno",
+    "definition": "Calm; quiet and easy, with nothing pushing at you."
+   },
+   {
+    "type": "adjective",
+    "word": "agradecido",
+    "surface": "agradecida",
+    "definition": "Grateful; feeling that other people have been good to you."
+   },
+   {
+    "type": "adjective",
+    "word": "relajado",
+    "surface": "relajada",
+    "definition": "Relaxed; with the tight feeling gone out of your body."
+   },
+   {
+    "type": "verb",
+    "word": "convivir",
+    "definition": "To live together; to share a place with others day by day."
+   },
+   {
+    "type": "noun",
+    "word": "unión",
+    "definition": "Bond; what holds a group of people together as one."
+   },
+   {
+    "type": "expression",
+    "word": "visto bueno",
+    "definition": "The go-ahead; the word that says a job has been accepted."
+   },
+   {
+    "type": "noun",
+    "word": "techo",
+    "definition": "Ceiling; the flat part above your head inside a room."
+   },
+   {
+    "type": "noun",
+    "word": "disco",
+    "definition": "Record; the round black thing that plays music at a party."
+   }
+  ]
+ },
+ {
+  "topic": "winter-and-empty-houses",
+  "slotIndex": 1,
+  "slug": "ya-no-queda-nadie",
+  "title": "Ya no queda nadie",
+  "text": "Irene vive encima de la panadería de Nerja y la mitad de las contraventanas siguen cerradas. Rocío, la vecina de arriba, se limpia los guantes en el felpudo del umbral. El armario del pasillo huele a pintura vieja y a cerrado.\n\n“Enciende la estufa, hija, que el frío se mete en los muebles y en la manta”. “Y comprueba el interruptor, que está roto desde el otoño”. Cuelga las tres llaves de diciembre detrás de la puerta, se sienta en el sillón, bajo la lámpara, y nota una corriente.\n\nEn el techo hay una mancha del tamaño de un plato, blanda al tacto. Pone una cubeta debajo. “Lleva creciendo desde noviembre y yo sin verlo”, dice con prisa.\n\nSube al terrado y encuentra una cadena, un letrero y un anuncio de la comunidad. Rocío la vigila desde el rellano, sin nombrar el papel que rompió en octubre, y le advierte con un gesto lento. “Eso es obra de los cinco, guapa, con su cuota, su reunión y su voto”.",
+  "arcType": "reframe-turn",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "mitad",
+    "definition": "Half; one of the two equal parts of something bigger."
+   },
+   {
+    "type": "noun",
+    "word": "contraventana",
+    "surface": "contraventanas",
+    "definition": "Shutter; the wooden panel you close over a window from outside."
+   },
+   {
+    "type": "noun",
+    "word": "umbral",
+    "definition": "Doorway; the step and frame you cross to enter a home."
+   },
+   {
+    "type": "noun",
+    "word": "felpudo",
+    "definition": "Doormat; the mat at a door where you clean your shoes."
+   },
+   {
+    "type": "noun",
+    "word": "estufa",
+    "definition": "Heater; the small machine that makes a room warm in winter."
+   },
+   {
+    "type": "noun",
+    "word": "mueble",
+    "surface": "muebles",
+    "definition": "Piece of furniture; a table, a chair or a cupboard in a house."
+   },
+   {
+    "type": "noun",
+    "word": "manta",
+    "definition": "Blanket; the warm cloth you put over you when you are cold."
+   },
+   {
+    "type": "verb",
+    "word": "comprobar",
+    "surface": "Comprueba",
+    "definition": "To check; to look at something to be sure it is right."
+   },
+   {
+    "type": "noun",
+    "word": "pasillo",
+    "definition": "Corridor; the long narrow space that joins the rooms of a house."
+   },
+   {
+    "type": "noun",
+    "word": "interruptor",
+    "definition": "Switch; the small button on a wall that turns a light on."
+   },
+   {
+    "type": "noun",
+    "word": "guante",
+    "surface": "guantes",
+    "definition": "Glove; the piece of clothing that keeps one hand warm."
+   },
+   {
+    "type": "noun",
+    "word": "lámpara",
+    "definition": "Lamp; the light you put next to a chair or a bed."
+   },
+   {
+    "type": "noun",
+    "word": "sillón",
+    "definition": "Armchair; the big soft chair with sides for your arms."
+   },
+   {
+    "type": "noun",
+    "word": "mancha",
+    "definition": "Stain; a dark mark on a wall, a cloth or the floor."
+   },
+   {
+    "type": "adjective",
+    "word": "blando",
+    "surface": "blanda",
+    "definition": "Soft; easy to press with a finger, not hard at all."
+   },
+   {
+    "type": "noun",
+    "word": "tamaño",
+    "definition": "Size; how big or how small a thing is."
+   },
+   {
+    "type": "verb",
+    "word": "crecer",
+    "surface": "creciendo",
+    "definition": "To grow; to become bigger little by little over time."
+   },
+   {
+    "type": "noun",
+    "word": "cadena",
+    "definition": "Chain; the line of metal rings that keeps a door shut."
+   },
+   {
+    "type": "noun",
+    "word": "letrero",
+    "definition": "Sign; a board with words on it that tells you something."
+   },
+   {
+    "type": "verb",
+    "word": "vigilar",
+    "surface": "vigila",
+    "definition": "To watch; to keep your eyes on somebody or something."
+   },
+   {
+    "type": "verb",
+    "word": "advertir",
+    "surface": "advierte",
+    "definition": "To warn; to tell somebody about a problem before it happens."
+   }
+  ]
+ },
+ {
+  "topic": "winter-and-empty-houses",
+  "slotIndex": 2,
+  "slug": "el-plastico-no-arregla-nada",
+  "title": "El plástico no arregla nada",
+  "text": "En la ferretería compra plástico, cuerda, alambre y tornillos. Sube los tres pisos con la bolsa, dos clavos y un cepillo duro. El portal está a oscuras y Rocío sale antes de la cerradura.\n\n“¿Y esas herramientas para qué, hija?”, le pregunta desde el umbral. Le señala el techo: arriba no es obra suya. Irene solo quiere tapar la mancha, que ya gotea sobre el sillón.\n\n“Tapar es inútil: el agua se va por la tubería y por el tabique”. “Eso lo paga la comunidad, con su reunión, su cuota y su acuerdo”. Irene no ha puesto ni su nombre ni un sello en nada.\n\nRocío le cuenta el orden, que no cambia nunca. Primero el anuncio en el portal, luego la propuesta, luego la mayoría. Sin los cinco falta un voto, y sin voto no sube ninguna herramienta.\n\nGuarda el plástico y la cuerda en el armario, con la manta. “Hay una dificultad, eso sí”, añade Rocío bajando el tono. “Al del ático no lo ve nadie desde agosto”.",
+  "arcType": "mini-cliffhanger",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "plástico",
+    "definition": "Plastic; the light material of bags, bottles and thin sheets."
+   },
+   {
+    "type": "noun",
+    "word": "cuerda",
+    "definition": "Rope; the long thick string you use to tie things."
+   },
+   {
+    "type": "noun",
+    "word": "alambre",
+    "definition": "Wire; the thin bendy metal line you can twist by hand."
+   },
+   {
+    "type": "noun",
+    "word": "tornillo",
+    "surface": "tornillos",
+    "definition": "Screw; the small metal piece you turn to hold two things."
+   },
+   {
+    "type": "noun",
+    "word": "clavo",
+    "surface": "clavos",
+    "definition": "Nail; the thin metal piece you hit into wood with a hammer."
+   },
+   {
+    "type": "noun",
+    "word": "cerradura",
+    "definition": "Lock; the part of a door where you put the key in."
+   },
+   {
+    "type": "noun",
+    "word": "herramienta",
+    "surface": "herramientas",
+    "definition": "Tool; a thing like a hammer that you work with."
+   },
+   {
+    "type": "noun",
+    "word": "obra",
+    "definition": "Building work; the job of repairing or changing part of a building."
+   },
+   {
+    "type": "verb",
+    "word": "tapar",
+    "surface": "tapar",
+    "definition": "To cover; to put something over a hole so it does not show."
+   },
+   {
+    "type": "adjective",
+    "word": "inútil",
+    "definition": "Useless; it does not work and it helps nobody at all."
+   },
+   {
+    "type": "noun",
+    "word": "comunidad",
+    "definition": "Residents association; all the owners of the flats in one building."
+   },
+   {
+    "type": "noun",
+    "word": "reunión",
+    "definition": "Meeting; when people sit together to talk and decide something."
+   },
+   {
+    "type": "noun",
+    "word": "cuota",
+    "definition": "Fee; the money each owner pays every month for the building."
+   },
+   {
+    "type": "noun",
+    "word": "sello",
+    "definition": "Stamp; the round mark an office puts on an official paper."
+   },
+   {
+    "type": "noun",
+    "word": "orden",
+    "definition": "Order; the way one thing comes after another, step by step."
+   },
+   {
+    "type": "noun",
+    "word": "anuncio",
+    "definition": "Notice; the paper on a wall that tells everybody the news."
+   },
+   {
+    "type": "noun",
+    "word": "propuesta",
+    "definition": "Proposal; the plan that somebody puts on the table to decide."
+   },
+   {
+    "type": "noun",
+    "word": "mayoría",
+    "definition": "Majority; more than half of the people in a group."
+   },
+   {
+    "type": "verb",
+    "word": "faltar",
+    "surface": "falta",
+    "definition": "To be missing; not to be there when it should be."
+   },
+   {
+    "type": "noun",
+    "word": "voto",
+    "definition": "Vote; the yes or no that one person gives in a meeting."
+   },
+   {
+    "type": "noun",
+    "word": "armario",
+    "definition": "Cupboard; the tall piece of furniture with doors where you keep things."
+   }
+  ]
+ },
+ {
+  "topic": "winter-and-empty-houses",
+  "slotIndex": 3,
+  "slug": "el-bar-abre-tres-dias",
+  "title": "El bar abre tres días",
+  "text": "Quien lo abre es Quique, y en enero solo tres días. El bar tiene la mitad de las sillas apiladas y polvo. Irene entra con el abrigo mojado y se acerca a la estufa.\n\n“En agosto te lo dije, guapa: el invierno se hace largo”. Quique le deja delante un pincel viejo, una hoja y un lápiz. “Eso se anota, que estas cosas se ofrecen una vez sola”, añade.\n\nDel armario saca sin prisa la cesta de la brocha. Dentro hay un rodillo duro y un bote con dos clavos. Mira las herramientas sin saber qué hacer con la mancha.\n\nLimpia con el cepillo la grasa y mira la pintura. “En Madrid nadie te presta nada sin dejarlo escrito y con sello”. Promete devolver la cesta en marzo y él se ríe.\n\n“Tú tranquila, que en enero se pinta poco y se espera mucho”. Irene repite esa frase por dentro y hace un gesto de alivio. Deja la cesta en el pasillo y comprueba la cubeta del techo.",
+  "arcType": "harmonic-close",
+  "vocab": [
+   {
+    "type": "verb",
+    "word": "apilar",
+    "surface": "apiladas",
+    "definition": "Stacked; put one on top of another to save space."
+   },
+   {
+    "type": "adjective",
+    "word": "mojado",
+    "definition": "Wet; covered in water, so it needs time to get dry."
+   },
+   {
+    "type": "noun",
+    "word": "pincel",
+    "definition": "Brush; the thin one an artist or a painter holds like a pen."
+   },
+   {
+    "type": "noun",
+    "word": "hoja",
+    "definition": "Sheet; one single piece of paper you can write on."
+   },
+   {
+    "type": "verb",
+    "word": "ofrecer",
+    "surface": "ofrecen",
+    "definition": "To offer; to say that somebody can have or take something."
+   },
+   {
+    "type": "noun",
+    "word": "cesta",
+    "definition": "Basket; the open bag with a handle where you carry things."
+   },
+   {
+    "type": "noun",
+    "word": "brocha",
+    "definition": "Paintbrush; the wide flat one you paint walls and doors with."
+   },
+   {
+    "type": "noun",
+    "word": "rodillo",
+    "definition": "Roller; the round tool you push over a wall to paint it."
+   },
+   {
+    "type": "adjective",
+    "word": "duro",
+    "definition": "Hard; not soft, so you cannot press it with your finger."
+   },
+   {
+    "type": "noun",
+    "word": "cepillo",
+    "definition": "Brush; the one with short stiff hairs for cleaning things."
+   },
+   {
+    "type": "noun",
+    "word": "bote",
+    "definition": "Tin; the small round metal or plastic pot with a lid."
+   },
+   {
+    "type": "noun",
+    "word": "pintura",
+    "definition": "Paint; the liquid colour you put on a wall to cover it."
+   },
+   {
+    "type": "noun",
+    "word": "polvo",
+    "definition": "Dust; the fine grey stuff that sits on things nobody uses."
+   },
+   {
+    "type": "noun",
+    "word": "grasa",
+    "definition": "Grease; the thick oily dirt that sticks to old tools."
+   },
+   {
+    "type": "verb",
+    "word": "prestar",
+    "surface": "presta",
+    "definition": "To lend; to give a thing for a while and want it back."
+   },
+   {
+    "type": "verb",
+    "word": "prometer",
+    "surface": "promete",
+    "definition": "To promise; to say you will really do a thing later."
+   },
+   {
+    "type": "verb",
+    "word": "devolver",
+    "definition": "To give back; to return a thing to the person who lent it."
+   },
+   {
+    "type": "noun",
+    "word": "frase",
+    "definition": "Sentence; a short group of words that says one whole thing."
+   },
+   {
+    "type": "noun",
+    "word": "alivio",
+    "definition": "Relief; the good feeling when a worry finally goes away."
+   },
+   {
+    "type": "noun",
+    "word": "prisa",
+    "definition": "Hurry; the need to do a thing quickly, with no time left."
+   },
+   {
+    "type": "noun",
+    "word": "gesto",
+    "definition": "Gesture; a small movement of the face or hands that says something."
+   }
+  ]
+ }
+]

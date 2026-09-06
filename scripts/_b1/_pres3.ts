@@ -1,0 +1,3 @@
+import { presente } from "../buildGlossForms";
+const V = ["acertar","apretar","atravesar","calentar","cerrar","comenzar","confesar","despertar","empezar","encender","encerrar","entender","helar","herrar","mentir","nevar","pensar","perder","preferir","quebrar","querer","recalentar","sentar","sentir","temblar","errar","acordar","acostar","colgar","contar","costar","devolver","doler","dormir","encontrar","llover","morder","morir","mostrar","mover","poder","probar","recordar","reprobar","rodar","rogar","soltar","sonar","soñar","volar","volver","oler","jugar","conseguir","corregir","elegir","medir","pedir","reir","repetir","seguir","servir","teñir","vestir"];
+for (const v of V) { const p = presente(v, "spain"); console.log(`${v.padEnd(12)} ${p ? p.join(" · ") : "null"}`); }

@@ -1,0 +1,356 @@
+[
+ {
+  "topic": "rooms-and-landlords",
+  "slotIndex": 1,
+  "title": "Celia no dice que sí",
+  "slug": "celia-no-dice-que-si",
+  "arcType": "reframe-turn",
+  "synopsis": "Un alquiler que cuesta la mitad que en Madrid parece una ganga hasta que alguien te lo va enseñando pieza a pieza. Lo que Celia tiene que decidir en veinte minutos no es si la habitación le gusta, sino qué está dispuesta a no preguntar. Sale a la calle sin haber dicho ni sí ni no, y esa es la respuesta.",
+  "text": "Celia, una traductora de Madrid, se ha mudado a Granada, en el sur de España. La habitación que le han enseñado está en un cuarto sin ascensor, sobre una tienda. Emilio, el casero, la espera en el umbral.\n\n“El alquiler es de mes en mes, y el primero por adelantado”, dice Emilio. “Y arriba se oye de todo, ya lo irá viendo”, añade. Celia ha comprobado el armario y sabe que no cierra a la primera.\n\nEl colchón huele a nuevo, aunque el interruptor no encienda nada. Emilio mueve un enchufe y tarda en contestarle. Ella calla.\n\n“La calefacción va por horas y en enero no subiría hasta aquí”, avisa. “Si le faltara, en el mueble del pasillo hay una estufa”, ofrece. Celia lo acepta y apunta la cifra en el billete.\n\nEn la sala hay una mancha blanda encima de la mesa. El alquiler es la mitad que en Madrid y ella lo sabe. Cambiará la cerradura el jueves, decide, y baja los cuatro pisos sin decir nada.",
+  "vocab": [
+   {
+    "word": "alquiler",
+    "type": "noun",
+    "definition": "Rent; the money you pay every month to live in a place."
+   },
+   {
+    "word": "casero",
+    "type": "noun",
+    "definition": "Landlord; the person who owns the flat and rents it to you."
+   },
+   {
+    "word": "habitación",
+    "type": "noun",
+    "definition": "Room; one of the spaces inside a flat, usually with a bed."
+   },
+   {
+    "word": "ascensor",
+    "type": "noun",
+    "definition": "Lift; the small box that carries you up the floors of a building."
+   },
+   {
+    "word": "cerradura",
+    "type": "noun",
+    "definition": "Lock; the part of a door that the key turns inside."
+   },
+   {
+    "word": "colchón",
+    "type": "noun",
+    "definition": "Mattress; the thick soft part of a bed that you lie on."
+   },
+   {
+    "word": "enchufe",
+    "type": "noun",
+    "definition": "Socket; the point in a wall where you plug something in."
+   },
+   {
+    "word": "mudarse",
+    "type": "verb",
+    "surface": "se ha mudado",
+    "definition": "To move house; to leave one home and go to live in another."
+   },
+   {
+    "word": "comprobar",
+    "type": "verb",
+    "surface": "ha comprobado",
+    "definition": "To check; to look at a thing to be sure it works."
+   },
+   {
+    "word": "encender",
+    "type": "verb",
+    "surface": "encienda",
+    "definition": "To switch on; to make a light or a machine start working."
+   },
+   {
+    "word": "tardar",
+    "type": "verb",
+    "surface": "tarda",
+    "definition": "To take time; to be slow in doing or answering something."
+   },
+   {
+    "word": "callar",
+    "type": "verb",
+    "surface": "calla",
+    "definition": "To go quiet; to stop talking or to say nothing at all."
+   },
+   {
+    "word": "aceptar",
+    "type": "verb",
+    "surface": "acepta",
+    "definition": "To accept; to take what you are given without arguing."
+   },
+   {
+    "word": "blando",
+    "type": "adjective",
+    "surface": "blanda",
+    "definition": "Soft; easy to press with a finger, not hard at all."
+   },
+   {
+    "word": "de mes en mes",
+    "type": "expression",
+    "definition": "Month by month; renewed each month, with no long agreement."
+   },
+   {
+    "word": "por adelantado",
+    "type": "expression",
+    "definition": "In advance; paid before you get the thing you are paying for."
+   },
+   {
+    "word": "de todo",
+    "type": "expression",
+    "definition": "All sorts; every kind of thing, good and bad alike."
+   },
+   {
+    "word": "a la primera",
+    "type": "expression",
+    "definition": "First time; working properly on the very first try."
+   },
+   {
+    "word": "sin decir nada",
+    "type": "expression",
+    "definition": "Without a word; leaving or acting and saying nothing at all."
+   },
+   {
+    "word": "nuevo",
+    "type": "adjective",
+    "definition": "New; just made or just bought, and not used before by anybody."
+   }
+  ]
+ },
+ {
+  "topic": "rooms-and-landlords",
+  "slotIndex": 2,
+  "title": "Arriba vive alguien",
+  "slug": "arriba-vive-alguien",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Once normas pegadas en una puerta parecen dirigidas a la nueva, y Celia las lee como quien acepta condiciones. Ninguna de las once habla de lo que de verdad va a marcarle el invierno, que llega a las once de la noche y no está escrito en ninguna parte. Lo apunta ella misma, debajo del arreglo que nadie va a hacer.",
+  "text": "Emilio ha pegado una hoja en la puerta con cinta. Son once normas y la primera es que la lavadora se apunta. Celia la lee entera, poco a poco.\n\n“El reciclaje lo mira el portal, no se escapa nadie”, avisa Emilio. “Y para la antena haría falta permiso de todos, en serio”, añade. Ella ha colgado tres perchas y estira una alfombra que no tapa el suelo.\n\nLa bombilla parpadea y un cable cuelga mojado del techo. Abre la ducha y el agua suena hueca dentro de la pared. Emilio pasa el dedo por el polvo y calla.\n\n“Si le faltara una manta, arriba hay dos en el altillo”, ofrece. “Y el cepillo duro se lo presto, aunque me lo devuelva sin falta”, remata. Celia lo acepta y va a dejarlo junto a la puerta.\n\nA las once alguien ha arrastrado algo arriba, de golpe, y calla. No es ruido de obra: es alguien que vive ahí desde antes que ella. De momento apunta la hora y la herramienta que Emilio promete.",
+  "vocab": [
+   {
+    "word": "norma",
+    "type": "noun",
+    "surface": "normas",
+    "definition": "Rule; a thing you must do or must not do in a place."
+   },
+   {
+    "word": "lavadora",
+    "type": "noun",
+    "definition": "Washing machine; the machine that washes your clothes for you."
+   },
+   {
+    "word": "percha",
+    "type": "noun",
+    "surface": "perchas",
+    "definition": "Hanger; the shaped hook you hang a shirt or a coat on."
+   },
+   {
+    "word": "alfombra",
+    "type": "noun",
+    "definition": "Rug; the piece of thick cloth you lay on a cold floor."
+   },
+   {
+    "word": "bombilla",
+    "type": "noun",
+    "definition": "Bulb; the glass part of a lamp that makes the light."
+   },
+   {
+    "word": "manta",
+    "type": "noun",
+    "definition": "Blanket; the warm cloth you put over you when you are cold."
+   },
+   {
+    "word": "herramienta",
+    "type": "noun",
+    "definition": "Tool; a thing you hold in your hand to fix or to build."
+   },
+   {
+    "word": "colgar",
+    "type": "verb",
+    "surface": "ha colgado",
+    "definition": "To hang; to put a thing on a hook so that it stays up."
+   },
+   {
+    "word": "estirar",
+    "type": "verb",
+    "surface": "estira",
+    "definition": "To stretch out; to pull a thing flat so it covers more."
+   },
+   {
+    "word": "prestar",
+    "type": "verb",
+    "surface": "presto",
+    "definition": "To lend; to give a thing for a while and get it back."
+   },
+   {
+    "word": "devolver",
+    "type": "verb",
+    "surface": "devuelva",
+    "definition": "To give back; to return a thing to the person who lent it."
+   },
+   {
+    "word": "prometer",
+    "type": "verb",
+    "surface": "promete",
+    "definition": "To promise; to say you will certainly do a thing later."
+   },
+   {
+    "word": "mojado",
+    "type": "adjective",
+    "definition": "Wet; covered in water, so that it leaves your hand damp."
+   },
+   {
+    "word": "duro",
+    "type": "adjective",
+    "definition": "Hard; stiff and rough, not soft or gentle at all."
+   },
+   {
+    "word": "poco a poco",
+    "type": "expression",
+    "definition": "Little by little; slowly and in small steps, without hurrying."
+   },
+   {
+    "word": "en serio",
+    "type": "expression",
+    "definition": "Seriously; said to show that this is not a joke."
+   },
+   {
+    "word": "sin falta",
+    "type": "expression",
+    "definition": "Without fail; certainly and on time, with no excuse accepted."
+   },
+   {
+    "word": "de golpe",
+    "type": "expression",
+    "definition": "All at once; suddenly, with no warning of any kind."
+   },
+   {
+    "word": "de momento",
+    "type": "expression",
+    "definition": "For now; true today, though it may change later on."
+   },
+   {
+    "word": "pegar",
+    "type": "verb",
+    "surface": "ha pegado",
+    "definition": "To stick; to fix a paper to a wall so that it stays there."
+   }
+  ]
+ },
+ {
+  "topic": "rooms-and-landlords",
+  "slotIndex": 3,
+  "title": "La mayoría decide el techo",
+  "slug": "la-mayoria-decide-el-techo",
+  "arcType": "harmonic-close",
+  "synopsis": "Celia baja a la reunión con la solución en la mano: pagar ella y que el techo se arregle esta semana. Descubre abajo que en este edificio una cosa no se arregla porque alguien la pague, sino cuando sale por mayoría y alguien la escribe. Lo que la deja tranquila no es el resultado, es dejar de ser la única responsable.",
+  "text": "El anuncio de la reunión lleva tres días en el portal, y huele a cola. Berta, que es la presidenta de la comunidad, ha bajado la primera. Celia baja con el portátil y una copia.\n\n“El orden del día es corto: el techo y poco más”, abre Berta. “Y saldrá o no saldrá por mayoría, no por quien grite”, añade. Luego lo revisa todo en voz alta, sin prisa.\n\nCelia ofrece pagar su parte y la frase le sale corta. Nadie contesta. Emilio levanta la mano y pide que conste su voto.\n\n“Taparlo con plástico es inútil, ya lo hemos probado”, corta Berta. “Hay que firmar los tres y de una vez, para que la obra empiece en abril”, remata. Ella apunta la fecha y busca dónde va la firma.\n\nAl final llega el sello, y Berta les resume el acta a cada uno. La obra ya no depende de ella ni de Emilio por su cuenta. Celia sube los cuatro pisos más tranquila.",
+  "vocab": [
+   {
+    "word": "anuncio",
+    "type": "noun",
+    "definition": "Notice; a paper put up in public so that everyone reads it."
+   },
+   {
+    "word": "reunión",
+    "type": "noun",
+    "definition": "Meeting; when the people of a building sit down to decide."
+   },
+   {
+    "word": "acta",
+    "type": "noun",
+    "definition": "Minutes; the written record of what a meeting decided."
+   },
+   {
+    "word": "mayoría",
+    "type": "noun",
+    "definition": "Majority; more than half of the people, so the vote is carried."
+   },
+   {
+    "word": "voto",
+    "type": "noun",
+    "definition": "Vote; the yes or no that each person gives at a meeting."
+   },
+   {
+    "word": "firma",
+    "type": "noun",
+    "definition": "Signature; your own name written by you to accept a paper."
+   },
+   {
+    "word": "sello",
+    "type": "noun",
+    "definition": "Stamp; the inked mark pressed on a paper to make it official."
+   },
+   {
+    "word": "revisar",
+    "type": "verb",
+    "surface": "revisa",
+    "definition": "To go over; to read a thing again looking for mistakes."
+   },
+   {
+    "word": "resumir",
+    "type": "verb",
+    "surface": "resume",
+    "definition": "To sum up; to say the same thing again in fewer words."
+   },
+   {
+    "word": "ofrecer",
+    "type": "verb",
+    "surface": "ofrece",
+    "definition": "To offer; to say you are willing to give or to do something."
+   },
+   {
+    "word": "tapar",
+    "type": "verb",
+    "surface": "Taparlo",
+    "definition": "To cover; to put a thing over a hole so it stops showing."
+   },
+   {
+    "word": "levantar",
+    "type": "verb",
+    "surface": "levanta",
+    "definition": "To raise; to lift a hand or an object up into the air."
+   },
+   {
+    "word": "inútil",
+    "type": "adjective",
+    "definition": "Useless; of no help at all for the thing you wanted."
+   },
+   {
+    "word": "corto",
+    "type": "adjective",
+    "definition": "Short; ending sooner than you expected it to end."
+   },
+   {
+    "word": "en voz alta",
+    "type": "expression",
+    "definition": "Out loud; loudly enough for the other people to hear you."
+   },
+   {
+    "word": "de una vez",
+    "type": "expression",
+    "definition": "Once and for all; done now and not left for another day."
+   },
+   {
+    "word": "por su cuenta",
+    "type": "expression",
+    "definition": "On their own; alone, without help from anybody else."
+   },
+   {
+    "word": "al final",
+    "type": "expression",
+    "definition": "In the end; after everything else has already happened."
+   },
+   {
+    "word": "poco más",
+    "type": "expression",
+    "definition": "Little else; almost nothing beyond what has just been said."
+   },
+   {
+    "word": "apuntar",
+    "type": "verb",
+    "surface": "apunta",
+    "definition": "To write down; to note a thing quickly so you do not forget it."
+   }
+  ]
+ }
+]

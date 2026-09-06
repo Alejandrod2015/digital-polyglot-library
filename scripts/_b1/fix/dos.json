@@ -1,0 +1,360 @@
+[
+ {
+  "topic": "deals-and-estimates",
+  "slotIndex": 2,
+  "title": "Cada uno dice lo suyo",
+  "slug": "cada-uno-dice-lo-suyo",
+  "arcType": "recurring-character-callback",
+  "synopsis": "La lista de cinco nombres que apareció por debajo de una puerta deja de ser una lista la noche en que las cinco sillas se llenan por primera vez desde el verano. Cada propietario dice en voz alta lo que puede poner y en cuántas veces, y lo que se oye no son cifras sino cinco situaciones distintas. Uno calla y mira su saldo, y ese silencio es el que Irene se lleva a casa.",
+  "text": "En el bajo de Rosa huele a horno apagado. Marta hace de presidenta y trae el total escrito arriba. Rosa apunta como secretaria en el registro.\n\n“El proveedor nos hace una rebaja si pagamos la mitad ahora, guapa”. “Y el resto en tres plazos, pero sin cheque y sin crédito”. Cada miembro dice por turno su parte, su cuota y su plazo.\n\n“Yo pido un préstamo pequeño y ya está, sin ningún drama”, dice Marta. Rosa no llega, y su porcentaje tendrá que esperar. Nico habla por su madre y hace la resta en voz baja.\n\nEl del ático aparece con el impuesto del año sin pagar. Quique no dice ni una cifra y mira el saldo del móvil. “¿Lo votamos ya, o seguimos negociando y no acabamos?”, pregunta Marta.\n\nLa aprobación sale adelante con una minoría muy corta. La votación no es unánime, pero es votación, con su orden. Irene levanta la mano y se ve dentro de la lista.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "total",
+    "definition": "Total; the whole amount once everything is added up."
+   },
+   {
+    "type": "noun",
+    "word": "secretaria",
+    "definition": "Secretary; the person who writes down what a meeting decides."
+   },
+   {
+    "type": "noun",
+    "word": "proveedor",
+    "definition": "Supplier; the company that sells you the materials you need."
+   },
+   {
+    "type": "noun",
+    "word": "rebaja",
+    "definition": "Reduction; money taken off a price to make you buy."
+   },
+   {
+    "type": "noun",
+    "word": "cheque",
+    "definition": "Cheque; the signed paper you can use instead of cash."
+   },
+   {
+    "type": "noun",
+    "word": "crédito",
+    "definition": "Credit; money a bank lends you that you pay back slowly."
+   },
+   {
+    "type": "noun",
+    "word": "miembro",
+    "definition": "Member; one of the people who belong to a group."
+   },
+   {
+    "type": "noun",
+    "word": "préstamo",
+    "definition": "Loan; money you borrow now and give back later."
+   },
+   {
+    "type": "noun",
+    "word": "porcentaje",
+    "definition": "Percentage; the share of the total that falls to one person."
+   },
+   {
+    "type": "noun",
+    "word": "resta",
+    "definition": "Subtraction; taking one number away from another to see what is left."
+   },
+   {
+    "type": "noun",
+    "word": "impuesto",
+    "definition": "Tax; the money everybody has to pay to the state."
+   },
+   {
+    "type": "noun",
+    "word": "saldo",
+    "definition": "Balance; the money that is left in an account right now."
+   },
+   {
+    "type": "noun",
+    "word": "aprobación",
+    "definition": "Approval; the moment a group says yes to a plan."
+   },
+   {
+    "type": "noun",
+    "word": "minoría",
+    "definition": "Minority; the smaller group when a vote is counted."
+   },
+   {
+    "type": "verb",
+    "word": "negociar",
+    "surface": "negociando",
+    "definition": "To negotiate; to talk about a price until both sides agree."
+   },
+   {
+    "type": "noun",
+    "word": "votación",
+    "definition": "Vote; the act of counting who is for and who is against."
+   },
+   {
+    "type": "adjective",
+    "word": "unánime",
+    "definition": "Unanimous; with every single person agreeing on the same thing."
+   },
+   {
+    "type": "noun",
+    "word": "presidente",
+    "surface": "presidenta",
+    "definition": "Chair; the person who runs a meeting and gives out the turns."
+   },
+   {
+    "type": "noun",
+    "word": "registro",
+    "definition": "Record book; the book where a group writes down what it decides."
+   },
+   {
+    "type": "noun",
+    "word": "drama",
+    "definition": "Fuss; making a big thing out of something small."
+   }
+  ]
+ },
+ {
+  "topic": "winter-and-empty-houses",
+  "slotIndex": 2,
+  "title": "El plástico no arregla nada",
+  "slug": "el-plastico-no-arregla-nada",
+  "arcType": "mini-cliffhanger",
+  "synopsis": "Irene baja a la ferretería de la carretera y sube cargada, convencida de que una mancha en el techo se resuelve con plástico y cinta. Rocío la para en el rellano y le explica el orden que en el pueblo no cambia nunca: aviso, propuesta, mayoría y cuota. Cuando Irene ya lo ha entendido, Rocío baja la voz para contarle el problema que falta.",
+  "text": "En la ferretería compra plástico, cuerda, alambre y tornillos. Sube los tres pisos con la bolsa, dos clavos y un cepillo duro. El portal está a oscuras y Rocío sale antes de la cerradura.\n\n“¿Y esas herramientas para qué, hija?”, le pregunta desde el umbral. Le señala el techo: arriba no es obra suya. Irene solo quiere tapar la mancha, que ya gotea sobre el sillón.\n\n“Tapar es inútil: el agua se va por la tubería y por el tabique”. “Eso lo paga la comunidad, con su reunión, su cuota y su acuerdo”. Irene no ha puesto ni su nombre ni un sello en nada.\n\nRocío le cuenta el orden, que no cambia nunca. Primero el anuncio en el portal, luego la propuesta, luego la mayoría. Sin los cinco falta un voto, y sin voto no sube ninguna herramienta.\n\nGuarda el plástico y la cuerda en el armario, con la manta. “Hay una dificultad, eso sí”, añade Rocío bajando el tono. “Al del ático no lo ve nadie desde agosto”.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "plástico",
+    "definition": "Plastic; the light material of bags, bottles and thin sheets."
+   },
+   {
+    "type": "noun",
+    "word": "cuerda",
+    "definition": "Rope; the long thick string you use to tie things."
+   },
+   {
+    "type": "noun",
+    "word": "alambre",
+    "definition": "Wire; the thin bendy metal line you can twist by hand."
+   },
+   {
+    "type": "noun",
+    "word": "tornillo",
+    "surface": "tornillos",
+    "definition": "Screw; the small metal piece you turn to hold two things."
+   },
+   {
+    "type": "noun",
+    "word": "clavo",
+    "surface": "clavos",
+    "definition": "Nail; the thin metal piece you hit into wood with a hammer."
+   },
+   {
+    "type": "noun",
+    "word": "cerradura",
+    "definition": "Lock; the part of a door where you put the key in."
+   },
+   {
+    "type": "noun",
+    "word": "herramienta",
+    "surface": "herramientas",
+    "definition": "Tool; a thing like a hammer that you work with."
+   },
+   {
+    "type": "noun",
+    "word": "obra",
+    "definition": "Building work; the job of repairing or changing part of a building."
+   },
+   {
+    "type": "verb",
+    "word": "tapar",
+    "surface": "tapar",
+    "definition": "To cover; to put something over a hole so it does not show."
+   },
+   {
+    "type": "adjective",
+    "word": "inútil",
+    "definition": "Useless; it does not work and it helps nobody at all."
+   },
+   {
+    "type": "noun",
+    "word": "comunidad",
+    "definition": "Residents association; all the owners of the flats in one building."
+   },
+   {
+    "type": "noun",
+    "word": "reunión",
+    "definition": "Meeting; when people sit together to talk and decide something."
+   },
+   {
+    "type": "noun",
+    "word": "cuota",
+    "definition": "Fee; the money each owner pays every month for the building."
+   },
+   {
+    "type": "noun",
+    "word": "sello",
+    "definition": "Stamp; the round mark an office puts on an official paper."
+   },
+   {
+    "type": "noun",
+    "word": "orden",
+    "definition": "Order; the way one thing comes after another, step by step."
+   },
+   {
+    "type": "noun",
+    "word": "anuncio",
+    "definition": "Notice; the paper on a wall that tells everybody the news."
+   },
+   {
+    "type": "noun",
+    "word": "propuesta",
+    "definition": "Proposal; the plan that somebody puts on the table to decide."
+   },
+   {
+    "type": "noun",
+    "word": "mayoría",
+    "definition": "Majority; more than half of the people in a group."
+   },
+   {
+    "type": "verb",
+    "word": "faltar",
+    "surface": "falta",
+    "definition": "To be missing; not to be there when it should be."
+   },
+   {
+    "type": "noun",
+    "word": "voto",
+    "definition": "Vote; the yes or no that one person gives in a meeting."
+   },
+   {
+    "type": "noun",
+    "word": "armario",
+    "definition": "Cupboard; the tall piece of furniture with doors where you keep things."
+   }
+  ]
+ },
+ {
+  "topic": "winter-and-empty-houses",
+  "slotIndex": 1,
+  "title": "Ya no queda nadie",
+  "slug": "ya-no-queda-nadie",
+  "arcType": "reframe-turn",
+  "synopsis": "Irene estrena con las llaves recién dadas su primer invierno de propietaria, que no se parece nada al otoño en que decidió quedarse. Rocío sube a decirle que el frío no entra por donde ella cree, y ninguna de las dos nombra lo de octubre. Esa noche, debajo de la lámpara, aparece en el techo una mancha blanda que en verano no estaba, y al día siguiente aprende que ni siquiera es suya del todo.",
+  "text": "Irene vive encima de la panadería de Nerja y la mitad de las contraventanas siguen cerradas. Rocío, la vecina de arriba, se limpia los guantes en el felpudo del umbral. El armario del pasillo huele a pintura vieja y a cerrado.\n\n“Enciende la estufa, hija, que el frío se mete en los muebles y en la manta”. “Y comprueba el interruptor, que está roto desde el otoño”. Cuelga las tres llaves de diciembre detrás de la puerta, se sienta en el sillón, bajo la lámpara, y nota una corriente.\n\nEn el techo hay una mancha del tamaño de un plato, blanda al tacto. Pone una cubeta debajo. “Lleva creciendo desde noviembre y yo sin verlo”, dice con prisa.\n\nSube al terrado y encuentra una cadena, un letrero y un anuncio de la comunidad. Rocío la vigila desde el rellano, sin nombrar el papel que rompió en octubre, y le advierte con un gesto lento. “Eso es obra de los cinco, guapa, con su cuota, su reunión y su voto”.",
+  "vocab": [
+   {
+    "type": "noun",
+    "word": "mitad",
+    "definition": "Half; one of the two equal parts of something bigger."
+   },
+   {
+    "type": "noun",
+    "word": "contraventana",
+    "surface": "contraventanas",
+    "definition": "Shutter; the wooden panel you close over a window from outside."
+   },
+   {
+    "type": "noun",
+    "word": "umbral",
+    "definition": "Doorway; the step and frame you cross to enter a home."
+   },
+   {
+    "type": "noun",
+    "word": "felpudo",
+    "definition": "Doormat; the mat at a door where you clean your shoes."
+   },
+   {
+    "type": "noun",
+    "word": "estufa",
+    "definition": "Heater; the small machine that makes a room warm in winter."
+   },
+   {
+    "type": "noun",
+    "word": "mueble",
+    "surface": "muebles",
+    "definition": "Piece of furniture; a table, a chair or a cupboard in a house."
+   },
+   {
+    "type": "noun",
+    "word": "manta",
+    "definition": "Blanket; the warm cloth you put over you when you are cold."
+   },
+   {
+    "type": "verb",
+    "word": "comprobar",
+    "surface": "Comprueba",
+    "definition": "To check; to look at something to be sure it is right."
+   },
+   {
+    "type": "noun",
+    "word": "pasillo",
+    "definition": "Corridor; the long narrow space that joins the rooms of a house."
+   },
+   {
+    "type": "noun",
+    "word": "interruptor",
+    "definition": "Switch; the small button on a wall that turns a light on."
+   },
+   {
+    "type": "noun",
+    "word": "guante",
+    "surface": "guantes",
+    "definition": "Glove; the piece of clothing that keeps one hand warm."
+   },
+   {
+    "type": "noun",
+    "word": "lámpara",
+    "definition": "Lamp; the light you put next to a chair or a bed."
+   },
+   {
+    "type": "noun",
+    "word": "sillón",
+    "definition": "Armchair; the big soft chair with sides for your arms."
+   },
+   {
+    "type": "noun",
+    "word": "mancha",
+    "definition": "Stain; a dark mark on a wall, a cloth or the floor."
+   },
+   {
+    "type": "adjective",
+    "word": "blando",
+    "surface": "blanda",
+    "definition": "Soft; easy to press with a finger, not hard at all."
+   },
+   {
+    "type": "noun",
+    "word": "tamaño",
+    "definition": "Size; how big or how small a thing is."
+   },
+   {
+    "type": "verb",
+    "word": "crecer",
+    "surface": "creciendo",
+    "definition": "To grow; to become bigger little by little over time."
+   },
+   {
+    "type": "noun",
+    "word": "cadena",
+    "definition": "Chain; the line of metal rings that keeps a door shut."
+   },
+   {
+    "type": "noun",
+    "word": "letrero",
+    "definition": "Sign; a board with words on it that tells you something."
+   },
+   {
+    "type": "verb",
+    "word": "vigilar",
+    "surface": "vigila",
+    "definition": "To watch; to keep your eyes on somebody or something."
+   },
+   {
+    "type": "verb",
+    "word": "advertir",
+    "surface": "advierte",
+    "definition": "To warn; to tell somebody about a problem before it happens."
+   }
+  ]
+ }
+]

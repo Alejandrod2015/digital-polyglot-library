@@ -1,0 +1,386 @@
+{
+ "arriba": {
+  "es": "arriba vive alguien",
+  "en": "somebody lives upstairs"
+ },
+ "vive": {
+  "es": "arriba vive alguien",
+  "en": "somebody lives upstairs"
+ },
+ "alguien": {
+  "es": "arriba vive alguien",
+  "en": "somebody lives upstairs"
+ },
+ "ha": {
+  "es": "ha pegado una hoja en la puerta",
+  "en": "has stuck a sheet on the door"
+ },
+ "pegado": {
+  "es": "ha pegado una hoja en la puerta",
+  "en": "has stuck a sheet on the door"
+ },
+ "hoja": {
+  "es": "ha pegado una hoja en la puerta",
+  "en": "has stuck a sheet on the door"
+ },
+ "en": {
+  "es": "ha pegado una hoja en la puerta",
+  "en": "has stuck a sheet on the door"
+ },
+ "puerta": {
+  "es": "ha pegado una hoja en la puerta",
+  "en": "has stuck a sheet on the door"
+ },
+ "con": {
+  "es": "con cinta",
+  "en": "with tape"
+ },
+ "cinta": {
+  "es": "con cinta",
+  "en": "with tape"
+ },
+ "son": {
+  "es": "son once normas",
+  "en": "there are eleven rules"
+ },
+ "normas": {
+  "es": "son once normas",
+  "en": "there are eleven rules"
+ },
+ "lavadora": {
+  "es": "la lavadora se apunta",
+  "en": "you write the washing machine down"
+ },
+ "se": {
+  "es": "la lavadora se apunta",
+  "en": "you write the washing machine down"
+ },
+ "apunta": {
+  "es": "la lavadora se apunta",
+  "en": "you write the washing machine down"
+ },
+ "lee": {
+  "es": "la lee entera",
+  "en": "reads it right through"
+ },
+ "entera": {
+  "es": "la lee entera",
+  "en": "reads it right through"
+ },
+ "poco": {
+  "es": "poco a poco",
+  "en": "little by little"
+ },
+ "a": {
+  "es": "poco a poco",
+  "en": "little by little"
+ },
+ "reciclaje": {
+  "es": "el reciclaje lo mira el portal",
+  "en": "the stairwell watches the recycling"
+ },
+ "lo": {
+  "es": "el reciclaje lo mira el portal",
+  "en": "the stairwell watches the recycling"
+ },
+ "mira": {
+  "es": "el reciclaje lo mira el portal",
+  "en": "the stairwell watches the recycling"
+ },
+ "portal": {
+  "es": "el reciclaje lo mira el portal",
+  "en": "the stairwell watches the recycling"
+ },
+ "no": {
+  "es": "no se escapa nadie",
+  "en": "nobody gets away with it"
+ },
+ "escapa": {
+  "es": "no se escapa nadie",
+  "en": "nobody gets away with it"
+ },
+ "nadie": {
+  "es": "no se escapa nadie",
+  "en": "nobody gets away with it"
+ },
+ "avisa": {
+  "es": "avisa Emilio",
+  "en": "Emilio warns"
+ },
+ "para": {
+  "es": "para la antena",
+  "en": "for the aerial"
+ },
+ "antena": {
+  "es": "para la antena",
+  "en": "for the aerial"
+ },
+ "haría": {
+  "es": "haría falta permiso de todos",
+  "en": "it would take everyone's permission"
+ },
+ "falta": {
+  "es": "haría falta permiso de todos",
+  "en": "it would take everyone's permission"
+ },
+ "permiso": {
+  "es": "haría falta permiso de todos",
+  "en": "it would take everyone's permission"
+ },
+ "de": {
+  "es": "haría falta permiso de todos",
+  "en": "it would take everyone's permission"
+ },
+ "todos": {
+  "es": "haría falta permiso de todos",
+  "en": "it would take everyone's permission"
+ },
+ "serio": {
+  "es": "en serio",
+  "en": "seriously"
+ },
+ "añade": {
+  "es": "añade",
+  "en": "he adds"
+ },
+ "colgado": {
+  "es": "ha colgado tres perchas",
+  "en": "has hung three hangers"
+ },
+ "perchas": {
+  "es": "ha colgado tres perchas",
+  "en": "has hung three hangers"
+ },
+ "estira": {
+  "es": "estira una alfombra",
+  "en": "spreads a rug"
+ },
+ "alfombra": {
+  "es": "estira una alfombra",
+  "en": "spreads a rug"
+ },
+ "que": {
+  "es": "que no tapa el suelo",
+  "en": "that does not cover the floor"
+ },
+ "tapa": {
+  "es": "que no tapa el suelo",
+  "en": "that does not cover the floor"
+ },
+ "suelo": {
+  "es": "que no tapa el suelo",
+  "en": "that does not cover the floor"
+ },
+ "bombilla": {
+  "es": "la bombilla parpadea",
+  "en": "the bulb flickers"
+ },
+ "parpadea": {
+  "es": "la bombilla parpadea",
+  "en": "the bulb flickers"
+ },
+ "cable": {
+  "es": "un cable cuelga mojado del techo",
+  "en": "a wet cable hangs from the ceiling"
+ },
+ "cuelga": {
+  "es": "un cable cuelga mojado del techo",
+  "en": "a wet cable hangs from the ceiling"
+ },
+ "mojado": {
+  "es": "un cable cuelga mojado del techo",
+  "en": "a wet cable hangs from the ceiling"
+ },
+ "del": {
+  "es": "un cable cuelga mojado del techo",
+  "en": "a wet cable hangs from the ceiling"
+ },
+ "techo": {
+  "es": "un cable cuelga mojado del techo",
+  "en": "a wet cable hangs from the ceiling"
+ },
+ "abre": {
+  "es": "abre la ducha",
+  "en": "she turns on the shower"
+ },
+ "ducha": {
+  "es": "abre la ducha",
+  "en": "she turns on the shower"
+ },
+ "agua": {
+  "es": "el agua suena hueca",
+  "en": "the water sounds hollow"
+ },
+ "suena": {
+  "es": "el agua suena hueca",
+  "en": "the water sounds hollow"
+ },
+ "hueca": {
+  "es": "el agua suena hueca",
+  "en": "the water sounds hollow"
+ },
+ "dentro": {
+  "es": "dentro de la pared",
+  "en": "inside the wall"
+ },
+ "pared": {
+  "es": "dentro de la pared",
+  "en": "inside the wall"
+ },
+ "pasa": {
+  "es": "pasa el dedo por el polvo",
+  "en": "runs his finger through the dust"
+ },
+ "dedo": {
+  "es": "pasa el dedo por el polvo",
+  "en": "runs his finger through the dust"
+ },
+ "por": {
+  "es": "pasa el dedo por el polvo",
+  "en": "runs his finger through the dust"
+ },
+ "polvo": {
+  "es": "pasa el dedo por el polvo",
+  "en": "runs his finger through the dust"
+ },
+ "y": {
+  "es": "y calla",
+  "en": "and says nothing"
+ },
+ "calla": {
+  "es": "y calla",
+  "en": "and says nothing"
+ },
+ "si": {
+  "es": "si le faltara una manta",
+  "en": "if you were short of a blanket"
+ },
+ "le": {
+  "es": "si le faltara una manta",
+  "en": "if you were short of a blanket"
+ },
+ "faltara": {
+  "es": "si le faltara una manta",
+  "en": "if you were short of a blanket"
+ },
+ "manta": {
+  "es": "si le faltara una manta",
+  "en": "if you were short of a blanket"
+ },
+ "hay": {
+  "es": "arriba hay dos en el altillo",
+  "en": "there are two up in the top cupboard"
+ },
+ "altillo": {
+  "es": "arriba hay dos en el altillo",
+  "en": "there are two up in the top cupboard"
+ },
+ "ofrece": {
+  "es": "ofrece",
+  "en": "he offers"
+ },
+ "cepillo": {
+  "es": "el cepillo duro se lo presto",
+  "en": "I will lend you the stiff brush"
+ },
+ "duro": {
+  "es": "el cepillo duro se lo presto",
+  "en": "I will lend you the stiff brush"
+ },
+ "presto": {
+  "es": "el cepillo duro se lo presto",
+  "en": "I will lend you the stiff brush"
+ },
+ "aunque": {
+  "es": "aunque me lo devuelva sin falta",
+  "en": "as long as you give it back without fail"
+ },
+ "me": {
+  "es": "aunque me lo devuelva sin falta",
+  "en": "as long as you give it back without fail"
+ },
+ "devuelva": {
+  "es": "aunque me lo devuelva sin falta",
+  "en": "as long as you give it back without fail"
+ },
+ "sin": {
+  "es": "aunque me lo devuelva sin falta",
+  "en": "as long as you give it back without fail"
+ },
+ "remata": {
+  "es": "remata",
+  "en": "he finishes"
+ },
+ "acepta": {
+  "es": "lo acepta",
+  "en": "she takes it"
+ },
+ "va": {
+  "es": "va a dejarlo junto a la puerta",
+  "en": "goes to leave it by the door"
+ },
+ "dejarlo": {
+  "es": "va a dejarlo junto a la puerta",
+  "en": "goes to leave it by the door"
+ },
+ "junto": {
+  "es": "va a dejarlo junto a la puerta",
+  "en": "goes to leave it by the door"
+ },
+ "arrastrado": {
+  "es": "alguien ha arrastrado algo arriba",
+  "en": "somebody has dragged something upstairs"
+ },
+ "algo": {
+  "es": "alguien ha arrastrado algo arriba",
+  "en": "somebody has dragged something upstairs"
+ },
+ "golpe": {
+  "es": "de golpe",
+  "en": "all at once"
+ },
+ "es": {
+  "es": "no es ruido de obra",
+  "en": "it is not the noise of building work"
+ },
+ "ruido": {
+  "es": "no es ruido de obra",
+  "en": "it is not the noise of building work"
+ },
+ "obra": {
+  "es": "no es ruido de obra",
+  "en": "it is not the noise of building work"
+ },
+ "ahí": {
+  "es": "vive ahí desde antes que ella",
+  "en": "has lived there longer than she has"
+ },
+ "desde": {
+  "es": "vive ahí desde antes que ella",
+  "en": "has lived there longer than she has"
+ },
+ "antes": {
+  "es": "vive ahí desde antes que ella",
+  "en": "has lived there longer than she has"
+ },
+ "ella": {
+  "es": "vive ahí desde antes que ella",
+  "en": "has lived there longer than she has"
+ },
+ "momento": {
+  "es": "de momento",
+  "en": "for now"
+ },
+ "hora": {
+  "es": "apunta la hora",
+  "en": "notes the time"
+ },
+ "herramienta": {
+  "es": "la herramienta que Emilio promete",
+  "en": "the tool Emilio promises"
+ },
+ "promete": {
+  "es": "la herramienta que Emilio promete",
+  "en": "the tool Emilio promises"
+ }
+}
