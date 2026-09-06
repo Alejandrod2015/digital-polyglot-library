@@ -12,6 +12,7 @@
  *   npx tsx scripts/journeysTable.ts                   todos los journeys
  *   npx tsx scripts/journeysTable.ts --journey <id>    uno, por temas y por historias
  *   npx tsx scripts/journeysTable.ts --archived        incluye los archivados
+ *   npx tsx scripts/journeysTable.ts --language portugues   solo ese idioma
  *
  * Columnas (catálogo): Estado | Journey | Idioma/Variante | Nivel | Estructura |
  *           Estilo | %Citado | No nativos | Voz narrador | Voz práctica |
@@ -45,6 +46,35 @@ const flag = (n: string) => process.argv.includes(`--${n}`);
 /** live + draft, y archived SOLO si se pide. Regla dura del proyecto. */
 const ESTADOS = (): ("active" | "draft" | "archived")[] =>
   flag("archived") ? ["active", "draft", "archived"] : ["active", "draft"];
+
+/**
+ * Filtro por idioma, para "la tabla de journeys, solo portugues". Se anade el
+ * 2026-09-06 porque el usuario lo pidio dos veces seguidas y la alternativa era
+ * recortar a ojo la salida del generador, que es exactamente lo que prohibe la
+ * seccion "Pedir una vez" de .claude/CLAUDE.md: una tabla filtrada a mano no se
+ * distingue de una inventada. Acepta el nombre tal cual lo guarda la base
+ * ("portuguese") y tambien el castellano corriente ("portugues"), porque quien
+ * pide la tabla no tiene por que saber como se llama la columna.
+ */
+const IDIOMAS: Record<string, string> = {
+  portugues: "portuguese", portugués: "portuguese", pt: "portuguese",
+  espanol: "spanish", español: "spanish", es: "spanish",
+  aleman: "german", alemán: "german", de: "german",
+  italiano: "italian", it: "italian",
+  frances: "french", francés: "french", fr: "french",
+  polaco: "polish", pl: "polish",
+  coreano: "korean", ko: "korean",
+  arabe: "arabic", árabe: "arabic", ar: "arabic",
+};
+const idiomaPedido = (): string | undefined => {
+  const raw = (arg("language") ?? arg("idioma"))?.toLowerCase().trim();
+  if (!raw) return undefined;
+  return IDIOMAS[raw] ?? raw;
+};
+const filtroIdioma = () => {
+  const l = idiomaPedido();
+  return l ? { language: l } : {};
+};
 
 /**
  * Los cuatro estilos de comillas del corpus: angulares «» (ES/IT), bajas
@@ -150,7 +180,7 @@ const mode = (arr: (string | null)[]) => {
 
 async function main() {
   const js = await p.journey.findMany({
-    where: { status: { in: ESTADOS() } }, // live + draft; archived solo con --archived
+    where: { status: { in: ESTADOS() }, ...filtroIdioma() }, // live + draft; archived solo con --archived
     select: {
       id: true, name: true, language: true, variant: true, status: true, levels: true,
       topics: true, storiesPerTopic: true,
@@ -169,6 +199,11 @@ async function main() {
       ? "AVISO: incluye ARCHIVED porque se pidio con --archived. Sin ese flag, solo live + draft."
       : "live + draft (los archivados quedan fuera; --archived los incluye)"
   );
+  const idioma = idiomaPedido();
+  if (idioma) console.log(`filtrado a idioma = ${idioma}`);
+  if (idioma && js.length === 0) {
+    console.log(`(ningun journey live ni draft en ${idioma})`);
+  }
   console.log("Estado|Journey|Idioma/Var|Nivel|Estructura|Estilo|%Citado|NoNativos|Voz narrador|Voz práctica|Hist.pub|Narr|Covers|Ambient|Clips");
   const notas: string[] = [];
   for (const j of js) {
