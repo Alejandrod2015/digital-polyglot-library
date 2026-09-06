@@ -1,0 +1,25 @@
+{
+  "generatedAt": "2026-09-06",
+  "status": {
+    "mobile-sentry": true,
+    "mobile-ota": true,
+    "eas-channels": true,
+    "comms-gate-ota": true,
+    "ci-workflows": false,
+    "cron-env-guard": false,
+    "ignore-build-branch": true,
+    "staging-project": false,
+    "play-staged-rollout": false,
+    "neon-restore-drill": false,
+    "abort-threshold": false,
+    "rolling-releases": false,
+    "feature-flags": false,
+    "e2e-money-paths": false,
+    "min-app-version": false,
+    "public-beta-ring": false,
+    "auto-canary-revert": false,
+    "api-versioning": false,
+    "slo-alerts-status": false,
+    "ci-store-submit": false
+  }
+}

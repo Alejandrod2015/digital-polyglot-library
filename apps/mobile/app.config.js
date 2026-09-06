@@ -73,11 +73,43 @@ const config = {
   // below; gives us `imageWidth` so the wordmark renders at the
   // same width the ExtendedSplash uses, eliminating the "logo size
   // pop" between native and React splashes.)
+  // Actualizaciones OTA (expo-updates). Sin esto, cada fix de JS esperaba
+  // 24-48 horas de revision de tienda tengamos 10 usuarios o 10.000. La URL
+  // es la del proyecto EAS de abajo; el canal lo pone cada perfil de eas.json
+  // (preview / production), y una build solo recibe updates de SU canal.
+  //
+  // `fingerprint`: el runtimeVersion sale de un hash del codigo NATIVO, asi
+  // que un cambio nativo (un plugin, un pod, una permission) cambia el hash y
+  // ninguna build vieja recibe un bundle que no puede correr. Un runtimeVersion
+  // a mano se olvida de subir y corta las updates en silencio.
+  //
+  // `fallbackToCacheTimeout: 0`: arranca con lo que hay en cache y baja la
+  // update en segundo plano; se aplica en el siguiente arranque. Nadie mira
+  // un spinner esperando un bundle.
+  updates: {
+    url: "https://u.expo.dev/9d9393fb-0f04-43fd-83d1-f33ecd82a74e",
+    enabled: true,
+    checkAutomatically: "ON_LOAD",
+    fallbackToCacheTimeout: 0,
+  },
+  runtimeVersion: { policy: "fingerprint" },
   plugins: [
     "expo-secure-store",
     "expo-web-browser",
     "expo-notifications",
     "expo-iap",
+    // Sentry: crashes y release health de la app (el init vive en App.tsx y
+    // solo arranca con `extra.sentryDsn`). El plugin engancha la subida de
+    // source maps al build. OJO: sin SENTRY_AUTH_TOKEN el build FALLA en la
+    // fase "Bundle React Native code and images" (comprobado el 2026-09-06);
+    // para una build local sin token, SENTRY_DISABLE_AUTO_UPLOAD=true en el
+    // entorno de xcodebuild. El proyecto de Sentry
+    // es aparte del de la web para que el crash-free por release sea el de
+    // la APP y no una mezcla con los errores del navegador.
+    [
+      "@sentry/react-native/expo",
+      { organization: "digital-polyglot", project: "digital-polyglot-mobile" },
+    ],
     // Solo hace algo cuando el build apunta a un http:// local; ver el plugin.
     "./plugins/allow-local-cleartext",
     [
@@ -218,6 +250,8 @@ const config = {
   extra: {
     clerkPublishableKey,
     apiBaseUrl,
+    // DSN del proyecto "digital-polyglot-mobile" de Sentry. Vacio = apagado.
+    sentryDsn: process.env.EXPO_PUBLIC_SENTRY_DSN?.trim() ?? "",
     EXPO_PUBLIC_CLERK_GOOGLE_WEB_CLIENT_ID:
       process.env.EXPO_PUBLIC_CLERK_GOOGLE_WEB_CLIENT_ID?.trim() ?? "",
     EXPO_PUBLIC_CLERK_GOOGLE_IOS_CLIENT_ID:

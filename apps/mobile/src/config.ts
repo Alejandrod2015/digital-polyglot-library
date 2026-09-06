@@ -4,6 +4,7 @@ import * as Device from "expo-device";
 type ExtraConfig = {
   clerkPublishableKey?: string;
   apiBaseUrl?: string;
+  sentryDsn?: string;
 };
 
 const extra = (Constants.expoConfig?.extra ?? {}) as ExtraConfig;
@@ -45,4 +46,8 @@ function resolveClerkPublishableKey(): string {
 export const mobileConfig = {
   clerkPublishableKey: resolveClerkPublishableKey(),
   apiBaseUrl: resolvedApiBaseUrl,
+  // Llega por `extra` desde app.config.js (que lee el .env.local de la raiz),
+  // igual que la clave de Clerk: Expo solo inyecta EXPO_PUBLIC_* desde el .env
+  // de apps/mobile, y ese archivo no existe. Vacio = Sentry apagado.
+  sentryDsn: extra.sentryDsn?.trim() ?? "",
 };

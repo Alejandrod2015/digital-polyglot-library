@@ -5,6 +5,8 @@
 import { Resend } from "resend";
 import { createClerkClient } from "@clerk/backend";
 import { prisma } from "@/lib/prisma";
+import { releaseStageReport, type ReleaseStageReport } from "@/lib/releaseStage";
+import releaseReadiness from "@/data/releaseReadiness.json";
 
 const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY ?? "" });
 
@@ -118,6 +120,12 @@ type DigestData = {
   topStories: Array<{ slug: string; title: string; plays: number; completions: number }>;
   newSignupCompletedStory: number; // signups who opened ≥1 story
   internalExcludedCount: number;
+  // Etapa del plan de despliegue (docs/plan-despliegue-por-etapas.md), por
+  // DAU medido: distintos usuarios por dia UTC, promediados sobre la semana.
+  // El plan vive en codigo (releaseStage.ts) y su estado en un JSON que el
+  // pre-push obliga a tener al dia, asi que este bloque no recita nada: mide.
+  avgDailyActiveUsers: number;
+  releaseStage: ReleaseStageReport;
 };
 
 export async function buildWeeklyDigest(now: Date = new Date()): Promise<DigestData> {
@@ -189,6 +197,17 @@ export async function buildWeeklyDigest(now: Date = new Date()): Promise<DigestD
   const vocabClicksThisWeek = events.filter((e) => e.eventType === "vocab_clicked").length;
   const vocabSavesThisWeek = events.filter((e) => e.eventType === "vocab_marked_known").length;
   const activeUsersThisWeek = new Set(events.map((e) => e.userId)).size;
+
+  const usersByDay = new Map<string, Set<string>>();
+  for (const e of events) {
+    const day = fmtDate(e.createdAt);
+    const set = usersByDay.get(day) ?? new Set<string>();
+    set.add(e.userId);
+    usersByDay.set(day, set);
+  }
+  let dauSum = 0;
+  for (const set of usersByDay.values()) dauSum += set.size;
+  const avgDailyActiveUsers = Math.round(dauSum / 7);
 
   const playsPriorWeek = prior.filter((e) => e.eventType === "audio_play").length;
   const completionsPriorWeek = prior.filter((e) => e.eventType === "audio_complete").length;
@@ -272,7 +291,43 @@ export async function buildWeeklyDigest(now: Date = new Date()): Promise<DigestD
     topStories,
     newSignupCompletedStory,
     internalExcludedCount: internalUserIds.length,
+    avgDailyActiveUsers,
+    releaseStage: releaseStageReport(avgDailyActiveUsers, releaseReadiness),
   };
+}
+
+function renderReleaseStageHtml(d: DigestData): string {
+  const r = d.releaseStage;
+  const item = (label: string, kind: string) =>
+    `<div style="margin:0 0 6px;font-size:13px"><span style="color:#9aa7bd;margin-right:6px">·</span>${escapeHtml(label)} <span style="color:#9aa7bd">(${kind})</span></div>`;
+  const pending = [
+    ...r.baselinePending.map((it) => item(it.label, "baseline, " + it.kind)),
+    ...r.currentPending.map((it) => item(it.label, it.kind)),
+  ];
+  const trigger = r.next
+    ? `Next trigger: <strong>${r.next.name}</strong> at ${r.next.minDau} DAU (${r.dauToNext} to go).`
+    : `This is the last stage.`;
+  const pendingBlock = pending.length
+    ? pending.join("")
+    : `<p style="color:#9aa7bd;font-size:13px;margin:0">Nothing pending for this stage.</p>`;
+  return `
+  <h2 style="font-size:15px;margin:24px 0 8px;color:#0b1220">Deployment stage</h2>
+  <p style="margin:0 0 8px;font-size:13px"><strong>${escapeHtml(r.current.name)}</strong> at <strong>${r.dau}</strong> avg DAU. ${trigger}</p>
+  <p style="margin:0 0 6px;font-size:13px;color:#6b7280">Pending pieces (measured from the repo, state as of ${escapeHtml(releaseReadiness.generatedAt)}):</p>
+  ${pendingBlock}
+  <p style="color:#9aa7bd;font-size:11px;margin:8px 0 0">Plan: docs/plan-despliegue-por-etapas.md. Manual pieces get marked in scripts/release-readiness-manual.json with a date and evidence.</p>`;
+}
+
+function renderReleaseStageText(d: DigestData): string[] {
+  const r = d.releaseStage;
+  const trigger = r.next ? `next: ${r.next.name} at ${r.next.minDau} DAU (${r.dauToNext} to go)` : "last stage";
+  return [
+    `DEPLOYMENT STAGE`,
+    `  ${r.current.name}, ${r.dau} avg DAU; ${trigger}`,
+    ...r.baselinePending.map((it) => `  - [baseline] ${it.label} (${it.kind})`),
+    ...r.currentPending.map((it) => `  - ${it.label} (${it.kind})`),
+    ...(r.baselinePending.length + r.currentPending.length === 0 ? ["  nothing pending"] : []),
+  ];
 }
 
 function delta(now: number, prior: number): string {
@@ -352,6 +407,7 @@ function renderHtml(d: DigestData): string {
 
   <h2 style="font-size:15px;margin:24px 0 8px;color:#0b1220">Top stories this week</h2>
   ${topStoriesBlock}
+  ${renderReleaseStageHtml(d)}
 
   <hr style="border:none;border-top:1px solid #e5e7eb;margin:32px 0 16px"/>
   <p style="color:#9aa7bd;font-size:11px;margin:0 0 4px">
@@ -388,6 +444,8 @@ function renderText(d: DigestData): string {
     ...d.topStories.map(
       (s) => `  - ${s.title}: ${s.plays} plays / ${s.completions} completions`,
     ),
+    ``,
+    ...renderReleaseStageText(d),
     ``,
     `Full dashboard: https://www.digitalpolyglot.com/studio/metrics`,
   ].join("\n");

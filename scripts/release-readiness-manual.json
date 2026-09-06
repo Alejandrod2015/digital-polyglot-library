@@ -1,0 +1,13 @@
+{
+  "_why": "Piezas del plan de despliegue (docs/plan-despliegue-por-etapas.md) que no deja rastro en el repo: un ajuste en Play Console, un proyecto en Vercel, un ensayo de restauracion. Se marcan aqui a mano, con fecha y prueba, y scripts/checkReleaseReadiness.ts las funde con las que si detecta. Sin `done: true`, `date` y `evidence` de al menos cuatro palabras, la pieza cuenta como pendiente.",
+  "items": {
+    "staging-project": { "done": false, "date": "", "evidence": "" },
+    "play-staged-rollout": { "done": false, "date": "", "evidence": "" },
+    "neon-restore-drill": { "done": false, "date": "", "evidence": "" },
+    "abort-threshold": { "done": false, "date": "", "evidence": "" },
+    "rolling-releases": { "done": false, "date": "", "evidence": "" },
+    "public-beta-ring": { "done": false, "date": "", "evidence": "" },
+    "auto-canary-revert": { "done": false, "date": "", "evidence": "" },
+    "slo-alerts-status": { "done": false, "date": "", "evidence": "" }
+  }
+}

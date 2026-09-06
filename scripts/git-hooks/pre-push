@@ -116,6 +116,7 @@ checkRulesInventory  -
 checkGlossMoods      db
 checkGlossVariants   db
 checkVocabLayer      db
+checkReleaseReadiness -
 "
 
 # -- Trinquete de enrolamiento ----------------------------------------
@@ -316,6 +317,21 @@ EOM
   formas del verbo, o el `surface` de la forma que aparece en el cuerpo.
 
   Comprueba con:  npm run lint:vocab-layer
+======================================================================
+
+EOM
+      ;;
+    checkReleaseReadiness)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: el estado del plan de despliegue esta desfasado
+
+  Arriba sale que pieza cambio. El digest de los lunes lee
+  src/data/releaseReadiness.json; si no coincide con el repo, el correo
+  miente. Regeneralo y commitealo con el resto:
+
+      npx tsx scripts/checkReleaseReadiness.ts --write
 ======================================================================
 
 EOM

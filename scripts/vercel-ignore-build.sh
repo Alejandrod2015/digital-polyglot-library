@@ -4,10 +4,14 @@
 
 echo "::> Checking if build is needed..."
 
-# 1. Skip builds on non-production branches (development, dev, staging, etc.)
-#    Only build on main branch
-if [ "$VERCEL_GIT_COMMIT_REF" != "main" ]; then
-  echo "::> Branch '$VERCEL_GIT_COMMIT_REF' is not main. Skipping build."
+# 1. Skip builds on any branch that is not this project's deploy branch.
+#    `main` by default; a staging project sets DPL_DEPLOY_BRANCH=staging in its
+#    own Vercel env. Before this was hard-coded to `main`, so a second project
+#    pointed at another branch would have skipped every build, forever, and
+#    read as "nothing to deploy".
+DEPLOY_BRANCH="${DPL_DEPLOY_BRANCH:-main}"
+if [ "$VERCEL_GIT_COMMIT_REF" != "$DEPLOY_BRANCH" ]; then
+  echo "::> Branch '$VERCEL_GIT_COMMIT_REF' is not $DEPLOY_BRANCH. Skipping build."
   exit 0
 fi
 
@@ -47,7 +51,7 @@ fi
 # El clone de Vercel es shallow, asi que el commit desplegado puede no estar en
 # local. Lo traemos; si no se puede, construimos.
 if ! git cat-file -e "${DEPLOYED_SHA}^{commit}" 2>/dev/null; then
-  git fetch --quiet --depth=100 origin main 2>/dev/null || true
+  git fetch --quiet --depth=100 origin "$DEPLOY_BRANCH" 2>/dev/null || true
   if ! git cat-file -e "${DEPLOYED_SHA}^{commit}" 2>/dev/null; then
     git fetch --quiet origin "$DEPLOYED_SHA" 2>/dev/null || true
   fi

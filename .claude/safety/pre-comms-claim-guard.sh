@@ -99,12 +99,31 @@ faltan = {"web", "ios", "android"} - nombres
 if faltan:
     out("BLOCK", "sin respuesta para: " + ", ".join(sorted(faltan)))
 
+# Con OTA (expo-updates en la app), lo que corre el usuario ya no es la build
+# de la tienda a secas: es esa build MAS la ultima update de su canal. La
+# prueba de iOS y Android tiene que citar el id del grupo de update
+# (`eas update:list --channel production`, un UUID), no solo el numero de
+# build; si no, "esta en la tienda" vuelve a no ser "se ve". Sin expo-updates
+# la prueba sigue siendo la build de la tienda y nada mas.
+def hay_ota():
+    try:
+        pkg = json.load(open("apps/mobile/package.json", encoding="utf-8"))
+        return "expo-updates" in (pkg.get("dependencies") or {})
+    except Exception:
+        return False
+
+UUID = re.compile(r"\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b", re.I)
+ota = hay_ota()
+
 for s in sup:
     n = (s.get("name") or "?").lower()
     if not s.get("live"):
         out("BLOCK", "el anuncio no se ve en " + n)
-    if len((s.get("evidence") or "").split()) < 4:
+    ev = s.get("evidence") or ""
+    if len(ev.split()) < 4:
         out("BLOCK", "sin prueba pegada para " + n)
+    if ota and n in ("ios", "android") and not UUID.search(ev):
+        out("BLOCK", "la prueba de " + n + " no cita el id de la update OTA del canal (UUID de `eas update:list`)")
 
 def git(*a):
     try:
@@ -148,7 +167,9 @@ Escribe .claude/safety/comms-claim-check.json asi:
 
 \`live: false\` en cualquiera de las tres BLOQUEA: se arregla la superficie o
 se reescribe el correo para no prometerla. La prueba de iOS y de Android es
-la version que esta EN LA TIENDA, nunca la que tienes instalada a mano.
+la version que esta EN LA TIENDA, nunca la que tienes instalada a mano, y
+con expo-updates ademas el id (UUID) de la ultima update del canal
+\`production\` (\`eas update:list --channel production\`).
 
 Previsualizar sigue libre: _renderBetaEmails.ts y cualquier \`--dry\`.
 MSG

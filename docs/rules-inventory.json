@@ -2043,6 +2043,20 @@
    "fecha": "2026-09-06",
    "why": "El usuario, el 2026-09-06: \"solo traducir lo necesario para que se entienda\". Un trozo que traduce la oracion entera no ensena donde encaja la palabra: repite la historia en ingles. Cuatro comprobaciones mecanicas (subcadena literal de su oracion, contiene la palabra, tope duro 8 y aviso sobre 5, y el ingles acotado al trozo); si el trozo es EL constituyente correcto se lee, no se mide.",
    "linea-base": "scripts/gloss-chunk-baseline.json, trinquete que solo baja (--apretar)"
+  },
+  {
+   "id": "release-stage-measured",
+   "domain": "process",
+   "rule": "El plan de despliegue por etapas (docs/plan-despliegue-por-etapas.md) no se recuerda: se mide. checkReleaseReadiness detecta cada pieza en el repo, el JSON commiteado tiene que coincidir, y el digest semanal imprime etapa, disparador y piezas pendientes",
+   "gate": "npm run lint:release-readiness",
+   "source": "manual"
+  },
+  {
+   "id": "comms-claim-cites-ota-update",
+   "domain": "comms",
+   "rule": "Con expo-updates en la app, la prueba de iOS y Android del gate 6g cita el UUID de la ultima update del canal production, no solo la build de tienda",
+   "gate": "pre-comms-claim-guard.sh",
+   "source": "manual"
   }
  ]
 }
