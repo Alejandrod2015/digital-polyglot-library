@@ -441,5 +441,68 @@
         }
       ]
     }
+  },
+  "cmtq5n9a50007j8812p9lzxjr#sao-paulo": {
+    "cerrado": "2026-09-06T19:04:41.856Z",
+    "hash": "2019e2828476deac",
+    "historias": [
+      "sao-paulo#0 a-caucao-volta-dia-trinta",
+      "sao-paulo#1 chuva-na-marginal",
+      "sao-paulo#2 tchau-no-engarrafamento"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"urbano y seco: ruido de calle, prisa y dinero contado; frases cortas entre dos que se conocen demasiado\", espina \"Rafaela vuelve del mes de viaje y no cabe en la vida que dejo: vende destinos que ahora si ha pisado, y el ano se le parte entre la agencia y los sitios de verdad. En este tema paga la primera factura de haberse ido: no tiene donde dormir.\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"diz\" 20%)",
+      "arranques de parrafo variados (mas repetido \"o\", 20%)",
+      "gate de conjunto sobre el tema: 11/18 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 0.94 sobre 54 plazas · 51 salen una sola vez | ancladas: 6/60 (10%) | cola: 51/54 portables con un solo encuentro (94%, tope 80%)",
+      "journey-vocab-level-floor: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: Sin hilo en 1 tema(s): sao-paulo (a-caucao-volta-dia-trinta, chuva-na-marginal, tchau-no-engarrafamento)",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "brazil",
+      "registro": "urbano y seco: ruido de calle, prisa y dinero contado; frases cortas entre dos que se conocen demasiado",
+      "espina": "Rafaela vuelve del mes de viaje y no cabe en la vida que dejo: vende destinos que ahora si ha pisado, y el ano se le parte entre la agencia y los sitios de verdad. En este tema paga la primera factura de haberse ido: no tiene donde dormir.",
+      "recursos": "B1: reversa cosida y cambio de ritmo. Heredados: repeticion ritmica, contraste con pero e imagen concreta (A0); causalidad explicita, humor de situacion y gancho final literal (A1); simil simple y espejo concreto (A2). Sin ironia, subtexto, aforismo ni elipsis, que son B2.",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "dormir esta noche en su propio cuarto, que subalquilo para pagarse el mes de viaje",
+          "impide": "el contrato de la inquilina corre hasta fin de mes y la inquilina no se mueve",
+          "cuesta": "el deposito con el que contaba, y el cuarto: acaba en el sofa de Matheus, que esta de paso",
+          "cambia": "acepta buscar un cuarto alquilado y deja de repetir que el viaje no le costo nada",
+          "emocion": "verguenza de volver sin sitio delante del hermano que si se mudo a proposito; se le ve en que ordena la mochila que no hace falta ordenar"
+        },
+        {
+          "slot": "2",
+          "quiere": "llegar a la agencia a tiempo para pedir la ruta del Norte, la unica que ahora conoce por dentro",
+          "impide": "dos horas de transito bajo lluvia; entra con la reunion empezada",
+          "cuesta": "la ruta ya esta dada a otro, y con ella el argumento de haber estado alli",
+          "cambia": "se queda con la ruta del interior, que no quiere nadie, y descubre que la prefiere",
+          "emocion": "rabia contenida que no descarga en nadie; aprieta el paraguas mojado contra la pierna y contesta bajito"
+        },
+        {
+          "slot": "3",
+          "quiere": "despedir a Matheus con calma antes de que el vuelva a Manaus",
+          "impide": "el vuelo de el es a las seis y el turno de ella empieza a las siete",
+          "cuesta": "la despedida: se despiden dentro del coche, en un atasco, sin bajarse",
+          "cambia": "le pide sitio en Manaus para diciembre, y el ano partido deja de ser una queja y pasa a ser un plan",
+          "emocion": "alivio y pena a la vez; se rie de algo que no tiene gracia para no decir lo otro"
+        }
+      ]
+    }
   }
 }

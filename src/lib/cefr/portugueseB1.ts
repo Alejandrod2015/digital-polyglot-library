@@ -126,6 +126,22 @@ export const PORTUGUESE_B1_LEMMAS: ReadonlySet<string> = new Set([
   "de vez em quando","na verdade","a princípio","no fundo","por enquanto",
   "de qualquer jeito","por acaso","sem duvida","com certeza","de propósito",
 
+
+  // Segunda tanda, 2026-09-06, escribiendo el tema 1 del B1 (Sao Paulo, la
+  // vuelta y el cuarto alquilado). La lista se escribio a ciegas, antes de que
+  // existiera una sola linea de B1 en portugues, y al medirla contra prosa de
+  // verdad le faltaba justo el vocabulario que hace que un B1 sea B1: el
+  // alquiler, el trafico y el trabajo de oficina. Ninguna de estas es rara ni
+  // literaria; todas son de temario B1 y salen en la escena. Las de realia
+  // brasilena (marginal, motoboy) NO entran aqui: van con register cultural,
+  // que es su via, porque son raras en cualquier corpus por definicion.
+  "caucao","caução","inquilino","inquilina","engarrafamento","acostamento","interior","diaria","diária","estrada",
+  "mochila","arrumar","corredor","tinta","fresco","quebrar","gastar","metro","metrô",
+  "transito","trânsito","retrovisor","encharcado","bainha","pauta","rota","pasta",
+  "guarda-chuva","piscina","mapa","apertar","baixinho","adiante",
+  "caminhao","caminhão","tombar","buzinar","buzina","polegar","despedida","emprestado",
+  "graca","graça","caber","sumir","escada","janela","fila","turno",
+
   // Expressoes coloquiais correntes no Brasil
   "dar certo","dar errado","dar um jeito","valer a pena","fazer questao",
   "ter razao","tomar cuidado","prestar atencao","ficar de olho","perder a hora",
