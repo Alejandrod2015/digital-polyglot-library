@@ -193,7 +193,12 @@ function revisa(fichero: string, bundle: Bundle, textos?: Map<string, string>): 
       if (oraciones && !oraciones.some((o) => o.includes(esN))) {
         fallos.push({ fichero, historia, palabra, motivo: `el trozo no sale tal cual en su oracion: "${es}"` });
       }
-      if (palabras === 1 && !esN.includes(normalizaTrozo(palabra))) {
+      // La clave que NO sale en el texto no es una palabra tocable: es el alias
+      // por el que el panel de vocab busca ("cortarse" cuando el texto trae
+      // "se corta"). A esa no se le puede pedir que salga dentro del trozo; lo
+      // que la ata al texto es la comprobacion de subcadena de arriba.
+      const enElTexto = cuerpo ? normalizaTrozo(cuerpo).includes(normalizaTrozo(palabra)) : true;
+      if (palabras === 1 && enElTexto && !esN.includes(normalizaTrozo(palabra))) {
         fallos.push({ fichero, historia, palabra, motivo: `el trozo no contiene la palabra: "${es}"` });
       }
       const en = String((entrada as { c?: { en?: string } }).c?.en ?? "").trim();

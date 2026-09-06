@@ -5,7 +5,8 @@ import { config } from "dotenv"; config({ path: ".env.local", quiet: true }); co
 import { PrismaClient } from "../../src/generated/prisma";
 const N = (t: string) => t.normalize("NFC").toLowerCase().replace(/[“”"«»().,;:¡!¿?]/g, "").replace(/\s+/g, " ").trim();
 (async () => {
-  const p = new PrismaClient();
+  const prisma = new PrismaClient();
+const p = prisma;
   const B = "spanish-traveler-spain-b1";
   const seco = process.argv.includes("--dry");
   const filas = await p.tapGlossSet.findMany({ where: { bundle: B } });
@@ -24,7 +25,16 @@ const N = (t: string) => t.normalize("NFC").toLowerCase().replace(/[“”"«»(
       if (n.includes(" ")) return t.includes(n);
       return new RegExp(`(^|[^\\p{L}])${n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^\\p{L}]|$)`, "u").test(t);
     };
-    const fuera = Object.keys(g).filter((w) => !hay(w));
+    // NO SE BORRA lo que el vocab necesita. Una plaza de vocab busca por lema
+    // ("cortarse") y por superficie ("se corta"); el lema no sale literal en el
+    // texto y aun asi es la clave por la que el panel entra. Borrarlo dejo 63
+    // plazas sin frase el 2026-09-06, y el lint de la capa lo caza al instante.
+    const delVocab = new Set(
+      ((await prisma.journeyStory.findFirst({ where: { slug: f.slug }, select: { vocab: true } }))?.vocab as any[] ?? [])
+        .flatMap((v: any) => [String(v.word ?? "").toLowerCase(), String(v.surface ?? "").toLowerCase()])
+        .filter(Boolean),
+    );
+    const fuera = Object.keys(g).filter((w) => !hay(w) && !delVocab.has(w.toLowerCase()));
     if (!fuera.length) continue;
     console.log(`${f.slug}: ${fuera.length} muertas · ${fuera.slice(0, 8).join(" ")}`);
     n += fuera.length;
