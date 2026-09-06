@@ -634,7 +634,16 @@ export function validateJourneyStories(
   // Lo que NO es: bajar un liston hasta que pase un texto concreto. El 1,20
   // queda por debajo del 1,30 que ese journey ya da, asi que no se calibro
   // sobre lo que tiene que aprobar. Los suelos A0-A2 no se tocan.
-  const MEDIA_MINIMA: Record<string, number> = { A0: 2.5, A1: 1.6, A2: 1.3, B1: 1.2 };
+  // B2 anadido el 2026-09-06, PROVISIONAL como el B1 y por la misma via: no
+  // hay B2 publicado que medir (el primero es el que esta escribiendose), asi
+  // que 1,20 replica el escalon del B1 sobre la metrica corregida de abajo,
+  // que en el unico B2 existente da 1,20 de media y 86% de cola. ESO ES
+  // EXTRAPOLAR, igual que el parrafo del B1: en cuanto se publique un B2, se
+  // mide con esta formula y se sustituye. La fila de docs/rules-inventory.json
+  // lo lleva marcado `provisional-b2`. Autorizado por el chat de planificacion
+  // el 2026-09-06 con el si literal del usuario ("Sí, aplícalo"); ningun otro
+  // suelo se toca.
+  const MEDIA_MINIMA: Record<string, number> = { A0: 2.5, A1: 1.6, A2: 1.3, B1: 1.2, B2: 1.2 };
   // La media sola se maquilla: una palabra en nueve historias tapa a nueve que
   // salen una vez. Asi que la cola tambien se mide.
   //
@@ -655,7 +664,11 @@ export function validateJourneyStories(
   // B1 (2026-09-05): el par del suelo, con la misma advertencia de arriba. El
   // journey que se esta escribiendo deja el 76% de cola, asi que el tope va por
   // encima, en 0,80, igual que el 0,80 del A2 se puso por encima de su 75%.
-  const TOPE_COLA_POR_NIVEL: Record<string, number> = { A0: 0.30, A1: 0.70, A2: 0.80, B1: 0.80 };
+  // B2 (2026-09-06): tope 0,80 sobre la metrica CORREGIDA (ver el arreglo de
+  // expresiones unas lineas mas abajo), autorizado por el chat de planificacion
+  // con el si del usuario. Mismo caveat que el B1: no hay B2 publicado que
+  // medir; se remide contra el primero que se publique.
+  const TOPE_COLA_POR_NIVEL: Record<string, number> = { A0: 0.30, A1: 0.70, A2: 0.80, B1: 0.80, B2: 0.80 };
   // A las portables se les pide el MISMO suelo medido del nivel, no el ideal de
   // 4: el 3,0 salió de journeys publicados que no marcan ancladas, así que
   // exigir 4 sería inventar un número. Lo que cambia es QUÉ entra en la media.
@@ -670,11 +683,27 @@ export function validateJourneyStories(
   } else {
     const tok = (t: string) => (t.toLowerCase().match(/\p{L}+/gu) ?? []);
     const cuerpos = stories.map((s) => new Set(tok(s.text)));
+    // Las expresiones multi-palabra se miden por SUBCADENA del cuerpo, no por
+    // token (2026-09-06). Era un bug de MEDICION: el set de tokens parte por
+    // palabra, asi que "de una" o "sin chistar" puntuaban 0 encuentros POR
+    // CONSTRUCCION aunque se repitieran literales en cinco cuerpos; medido en
+    // el primer B2, 127 de 342 plazas portables eran expresiones y arrastraban
+    // la media de 1,20 real a 0,80 falso. La correccion vale para TODOS los
+    // niveles: los suelos A0-A2 (y el B1 provisional) quedan INTACTOS y ahora
+    // con margen extra, porque una plaza solo puede subir de cuenta con esto,
+    // nunca bajar. No se recalibra ninguno.
+    const textos = stories.map((s) => s.text.toLowerCase());
     const clave = (v: { word: string; surface?: string | null }) =>
       String(v.surface ?? v.word).toLowerCase().replace(/^(der|die|das|le|la|el|il|o|a)\s+/, "");
+    const encuentros = (v: { word: string; surface?: string | null }): number => {
+      const k = clave(v);
+      if (!k.includes(" ")) return cuerpos.filter((c) => c.has(k)).length;
+      const lema = String(v.word).toLowerCase();
+      return textos.filter((t) => t.includes(k) || t.includes(lema)).length;
+    };
     const todas: Array<{ n: number; anchor: boolean }> = [];
     for (const s of stories) for (const v of s.vocab ?? [])
-      todas.push({ n: cuerpos.filter((c) => c.has(clave(v))).length, anchor: Boolean((v as { anchor?: boolean }).anchor) });
+      todas.push({ n: encuentros(v), anchor: Boolean((v as { anchor?: boolean }).anchor) });
     const marca = todas.some((x) => x.anchor);
     if (!marca) {
       const media = todas.reduce((a, b) => a + b.n, 0) / todas.length;

@@ -1103,7 +1103,9 @@
     "jairo",
     "yamileth",
     "emiliano",
-    "norma"
+    "norma",
+    "baldomero",
+    "ofelia"
    ],
    "numerals": [
     "dos",
@@ -1115,7 +1117,8 @@
     "trescientos",
     "seiscientos",
     "seis",
-    "quince"
+    "quince",
+    "cuarenta"
    ],
    "placeNames": [
     "ucayali",
@@ -1124,7 +1127,62 @@
     "jersey",
     "obrero",
     "mendoza",
-    "plata"
+    "plata",
+    "aracataca"
+   ]
+  },
+  "spanish-traveler-latam-b1": {
+   "articles": [
+    "el",
+    "la",
+    "las",
+    "los",
+    "un",
+    "una",
+    "unas",
+    "unos"
+   ],
+   "characterNames": [
+    "damián",
+    "sosa",
+    "rocío",
+    "esteban",
+    "nicanor",
+    "delia",
+    "ximena",
+    "óscar",
+    "brenda",
+    "hugo",
+    "teresa",
+    "wilson",
+    "silvana",
+    "adrián",
+    "betancur",
+    "quispe",
+    "nico",
+    "nazario"
+   ],
+   "numerals": [
+    "dos",
+    "tres",
+    "cuatro",
+    "cinco",
+    "seis",
+    "siete",
+    "ocho",
+    "nueve",
+    "once",
+    "doce",
+    "veinte",
+    "treinta"
+   ],
+   "placeNames": [
+    "chiloé",
+    "manizales",
+    "ayacucho",
+    "aguascalientes",
+    "popayán",
+    "tucumán"
    ]
   }
  }

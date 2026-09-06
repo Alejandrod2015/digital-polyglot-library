@@ -7895,6 +7895,154 @@
   "colgando": {
    "g": "hanging up (colgar)",
    "t": "verb"
+  },
+  "mochileros": {
+   "g": "backpackers",
+   "t": "noun"
+  },
+  "mecedora": {
+   "g": "rocking chair",
+   "t": "noun"
+  },
+  "acomodan": {
+   "g": "settle in (acomodarse)",
+   "t": "verb"
+  },
+  "cuentero": {
+   "g": "storyteller (Colombian word)",
+   "t": "noun"
+  },
+  "agrandando": {
+   "g": "making bigger (agrandar)",
+   "t": "verb"
+  },
+  "agrandar": {
+   "g": "to make bigger",
+   "t": "verb"
+  },
+  "agranda": {
+   "g": "makes bigger (agrandar)",
+   "t": "verb"
+  },
+  "hospedaje": {
+   "g": "guesthouse",
+   "t": "noun"
+  },
+  "ciénaga": {
+   "g": "marsh",
+   "t": "noun"
+  },
+  "sacaban": {
+   "g": "they pulled out (sacar)",
+   "t": "verb"
+  },
+  "pescados": {
+   "g": "fish (caught)",
+   "t": "noun"
+  },
+  "cargaban": {
+   "g": "they carried (cargar)",
+   "t": "verb"
+  },
+  "libra": {
+   "g": "pound (de a libra, a pound each)",
+   "t": "noun"
+  },
+  "corrige": {
+   "g": "corrects (corregir)",
+   "t": "verb"
+  },
+  "apostemos": {
+   "g": "let us bet (apostar)",
+   "t": "verb"
+  },
+  "cierta": {
+   "g": "true (salir cierta, turn out true)",
+   "t": "adjective"
+  },
+  "carreta": {
+   "g": "yarn-spinning (echar carreta, Colombian)",
+   "t": "noun"
+  },
+  "cielo": {
+   "g": "sky",
+   "t": "noun"
+  },
+  "armada": {
+   "g": "set up (armar)",
+   "t": "adjective"
+  },
+  "seca": {
+   "g": "dries (secar)",
+   "t": "verb"
+  },
+  "techado": {
+   "g": "roofed",
+   "t": "adjective"
+  },
+  "déjenla": {
+   "g": "leave it alone (command of dejar)",
+   "t": "verb"
+  },
+  "plancha": {
+   "g": "iron (for pressing)",
+   "t": "noun"
+  },
+  "resucita": {
+   "g": "brings back to life (resucitar)",
+   "t": "verb"
+  },
+  "toallas": {
+   "g": "towels",
+   "t": "noun"
+  },
+  "gigante": {
+   "g": "giant",
+   "t": "adjective"
+  },
+  "secar": {
+   "g": "to dry",
+   "t": "verb"
+  },
+  "piedritas": {
+   "g": "little stones",
+   "t": "noun"
+  },
+  "desempolvan": {
+   "g": "get dusted off (desempolvar)",
+   "t": "verb"
+  },
+  "álbum": {
+   "g": "photo album",
+   "t": "noun"
+  },
+  "retrato": {
+   "g": "portrait, photograph",
+   "t": "noun"
+  },
+  "amarillento": {
+   "g": "yellowed with age",
+   "t": "adjective"
+  },
+  "cargado": {
+   "g": "loaded (cargar)",
+   "t": "adjective"
+  },
+  "plena": {
+   "g": "full (a plena luz, in full daylight)",
+   "t": "adjective"
+  },
+  "tal": {
+   "g": "such (tal cual, exactly like that)",
+   "t": "adjective"
+  },
+  "mejorada": {
+   "g": "improved (mejorar)",
+   "t": "adjective"
+  },
+  "condición": {
+   "g": "condition, requirement",
+   "t": "noun"
   }
  }
 }

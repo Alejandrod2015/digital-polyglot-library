@@ -819,5 +819,67 @@
         }
       ]
     }
+  },
+  "cmtpls1l20007j8epwgcs6e1h#tales-and-tall-stories": {
+    "cerrado": "2026-09-06T12:09:59.146Z",
+    "hash": "fb3baeab2c74b5bd",
+    "historias": [
+      "tales-and-tall-stories#1 pescados-de-dos-metros",
+      "tales-and-tall-stories#2 el-aguacero",
+      "tales-and-tall-stories#3 tal-cual-la-contaba"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"fabulacion: la mentira que cuenta mas verdad que el dato\", espina \"lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 94% (solo avisa)",
+      "acotacion dominante bajo tope (\"contesta\" 25%)",
+      "arranques de parrafo variados (mas repetido \"los\", 8%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.06 sobre 53 plazas · 50 salen una sola vez | ancladas: 7/60 (12%) | cola: 50/53 portables con un solo encuentro (94%, tope 80%)",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: tales-and-tall-stories (Ofelia, Baldomero)"
+    ],
+    "plan": {
+      "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+      "nivel": "b2",
+      "variante": "LATAM",
+      "registro": "fabulacion: la mentira que cuenta mas verdad que el dato",
+      "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+      "recursos": "aforismo de personaje con cuentagotas (B2), ironia de personaje (B2), narrador con opinion (B2), gancho final literal (A1), cambio de ritmo (B1)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Baldomero quiere la rueda llena en el corredor del hospedaje: mochileros escuchando sus pescados de dos metros",
+          "impide": "Ofelia contradice cada cuento con el dato exacto, delante del publico",
+          "cuesta": "la entrada al corredor techado: Ofelia lo manda a contar afuera, y afuera no hay techo cuando llueve",
+          "cambia": "queda claro el reparto: ella tiene la razon y el tiene al publico, y ninguno de los dos puede comprarle eso al otro",
+          "emocion": "orgullo de artista herido: cuando Ofelia corrige, Baldomero agranda el pescado medio metro mas, mirandola a ella y no a los mochileros"
+        },
+        {
+          "slot": "2",
+          "quiere": "salvar la libreta de cuarenta anos de cuentos del aguacero que lo agarra afuera",
+          "impide": "el corredor de adentro tiene techo, pero desde la apuesta la puerta no es suya",
+          "cuesta": "la libreta entera: la tinta se borra hoja por hoja, y con ella los cuentos que no se sabia de memoria",
+          "cambia": "el anden se queda en silencio por primera vez, y Ofelia descubre que el silencio de Baldomero es peor que sus mentiras",
+          "emocion": "perdida seca: pone las hojas empapadas a secar con piedritas encima, una por una, sin decir palabra, y esa noche no cuenta nada"
+        },
+        {
+          "slot": "3",
+          "quiere": "volver a contar sin libreta, de memoria, y que el corredor vuelva a llenarse",
+          "impide": "sin las hojas, Baldomero duda de sus propios cuentos: ya no sabe cual era verdad",
+          "cuesta": "la inocencia del publico facil: ahora Ofelia sabe la verdad del tren y el cuento ya no es solo suyo",
+          "cambia": "el retrato amarillento del album prueba que su historia mas exagerada era cierta tal cual; Ofelia le abre la puerta de adentro y le encarga la historia del hospedaje",
+          "emocion": "desquite tranquilo del fabulador: recibe el retrato, lo mira largo, y en vez de decir se lo dije, pregunta si se lo puede quedar"
+        }
+      ]
+    }
   }
 }

@@ -1844,7 +1844,8 @@
    "rule": "Cada plaza de vocab se reencuentra: media de 2 apariciones o mas a lo largo del journey",
    "gate": "src/lib/validateJourneyStories.ts#journey-vocab-recirculation",
    "source": "story-rules:journey-vocab-recirculation (project_vocab_recirculation_ladder) + validator:src/lib/validateJourneyStories.ts",
-   "provisional-b1": "remedir contra el primer B1 publicado y sustituir por el numero medido"
+   "provisional-b1": "remedir contra el primer B1 publicado y sustituir por el numero medido",
+   "provisional-b2": "remedir contra el primer B2 publicado y sustituir por el numero medido (suelo 1,2 / cola 80% sobre la metrica corregida de expresiones, autorizado por el chat de planificacion con el si del usuario, 2026-09-06)"
   },
   {
    "id": "project_gloss_mood_layer",
