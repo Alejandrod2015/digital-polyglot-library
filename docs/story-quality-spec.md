@@ -375,6 +375,11 @@ el cierre y el resto avisan, y el aviso no es un aprobado.
    haberla entendido, que es de donde sale que quiera abrir la siguiente; la
    elipsis del final es para nativos y aqui resta engagement [2026-09-05].
 
+La estructura clonada tiene ademas su regla de brief [2026-09-06, de los dos
+B2]: el plan del tema pide variar el numero de parrafos entre las tres
+historias (4 a 6, no las tres iguales). El aviso del cierre lo mide; el brief
+lo previene.
+
 Dos tics mas, que ninguna historia delata sola y que BLOQUEAN el cierre: un
 verbo de acotacion que se lleva mas del 40% de las citas del tema (el
 "añade/remata" que cerraba 8 de 9 historias del B1 de España), y las tres
