@@ -2034,6 +2034,15 @@
    "rule": "Los recursos estilisticos del tema son del nivel o de abajo (escalera 3ter del quality spec); en la duda, un nivel arriba",
    "gate": "scripts/cierraTema.ts",
    "source": "docs/story-quality-spec.md 3ter (calibracion con el usuario 2026-09-05)"
+  },
+  {
+   "id": "gloss-chunk-shape",
+   "titulo": "El trozo de contexto es un constituyente del texto, no un resumen de la frase",
+   "gate": "scripts/checkGlossVariants.ts",
+   "lint": "npm run lint:gloss-variants",
+   "fecha": "2026-09-06",
+   "why": "El usuario, el 2026-09-06: \"solo traducir lo necesario para que se entienda\". Un trozo que traduce la oracion entera no ensena donde encaja la palabra: repite la historia en ingles. Cuatro comprobaciones mecanicas (subcadena literal de su oracion, contiene la palabra, tope duro 8 y aviso sobre 5, y el ingles acotado al trozo); si el trozo es EL constituyente correcto se lee, no se mide.",
+   "linea-base": "scripts/gloss-chunk-baseline.json, trinquete que solo baja (--apretar)"
   }
  ]
 }

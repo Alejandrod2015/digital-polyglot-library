@@ -74,6 +74,14 @@ function leeBaseTrozos(): number {
 
 /** Maximo de palabras del trozo de contexto de una glosa. */
 const TOPE_TROZO = 8;
+/** Aviso, no fallo: el catalogo va en 4 de mediana y por encima de 5 el trozo
+ *  empieza a parecerse a la oracion. */
+const TOPE_TROZO_BLANDO = 5;
+/** Los acentos y la puntuacion no cuentan para decidir si un trozo sale tal
+ *  cual del texto: "«El alquiler es" y "el alquiler es" son el mismo trozo. */
+const normalizaTrozo = (t: string) =>
+  t.normalize("NFC").toLowerCase().replace(/[“”"«»().,;:¡!¿?]/g, "").replace(/\s+/g, " ").trim();
+const avisos: string[] = [];
 
 /** "Marta (name)", "Timo (a name)", "Basti (nickname for Sebastian)": la glosa
  *  repite la palabra y no enseña nada. El contrato ya decía que los personajes
@@ -120,7 +128,7 @@ function esParadigmaEnPresente(filas: Fila[]): boolean {
   return /o$/.test(forma) || ["soy", "estoy", "voy", "doy", "sé", "he"].includes(forma);
 }
 
-function revisa(fichero: string, bundle: Bundle): Fallo[] {
+function revisa(fichero: string, bundle: Bundle, textos?: Map<string, string>): Fallo[] {
   const fallos: Fallo[] = [];
   const variante = (bundle.variant ?? "").trim().toLowerCase();
 
@@ -149,13 +157,53 @@ function revisa(fichero: string, bundle: Bundle): Fallo[] {
   // vaciar. Puesto el 2026-09-04: tocar `esta` en el B1 devolvia "La habitacion
   // que le han ensenado esta en un cuarto sin ascensor", doce palabras, que es
   // la frase entera y no un trozo.
+  // EL TROZO, ENDURECIDO (2026-09-06). Antes solo se miraba el largo. El
+  // usuario, hoy: "solo traducir lo necesario para que se entienda". Un trozo
+  // no es un resumen de la frase: es un CONSTITUYENTE que sale tal cual del
+  // texto, lleva dentro la palabra tocada, y su ingles traduce ESE trozo, no
+  // la oracion. El canonico: "dormido" en "Un perro dormido descansa al lado
+  // del fogon" da "un perro dormido" / "a sleeping dog", no la frase entera.
+  //
+  // Cuatro comprobaciones, y solo las mecanicas: que sea subcadena literal de
+  // su oracion, que contenga la palabra, el largo (duro 8, aviso sobre 5) y
+  // que el ingles no se dispare respecto al trozo, que es el proxy de "me han
+  // traducido la oracion". Lo que no se puede comprobar a maquina (si el
+  // trozo es el constituyente correcto) se lee.
   for (const [historia, entradas] of Object.entries(bundle.byStory ?? {})) {
+    const cuerpo = textos?.get(historia);
+    const oraciones = cuerpo
+      ? cuerpo.split(/(?<=[.?!”])\s+/).map((o) => normalizaTrozo(o))
+      : null;
     for (const [palabra, entrada] of Object.entries(entradas)) {
-      const es = (entrada as { c?: { es?: string } }).c?.es;
+      const es = (entrada as { c?: { es?: string; en?: string } }).c?.es;
       if (!es) continue;
       const n = String(es).trim().split(/\s+/).length;
-      if (n > TOPE_TROZO) {
-        fallos.push({ fichero, historia, palabra, motivo: `trozo de ${n} palabras (tope ${TOPE_TROZO}): "${es}"` });
+      const palabras = palabra.trim().split(/\s+/).length;
+      // Una expresion de varias palabras no puede ser mas corta que ella misma.
+      const topeDuro = Math.max(TOPE_TROZO, palabras);
+      const topeBlando = Math.max(TOPE_TROZO_BLANDO, palabras);
+
+      if (n > topeDuro) {
+        fallos.push({ fichero, historia, palabra, motivo: `trozo de ${n} palabras (tope ${topeDuro}): "${es}"` });
+        continue;
+      }
+      if (n > topeBlando) avisos.push(`${fichero} · ${historia} · ${palabra}: trozo de ${n} palabras (blando ${topeBlando})`);
+
+      const esN = normalizaTrozo(es);
+      if (oraciones && !oraciones.some((o) => o.includes(esN))) {
+        fallos.push({ fichero, historia, palabra, motivo: `el trozo no sale tal cual en su oracion: "${es}"` });
+      }
+      if (palabras === 1 && !esN.includes(normalizaTrozo(palabra))) {
+        fallos.push({ fichero, historia, palabra, motivo: `el trozo no contiene la palabra: "${es}"` });
+      }
+      const en = String((entrada as { c?: { en?: string } }).c?.en ?? "").trim();
+      if (en) {
+        const nEn = en.split(/\s+/).length;
+        // El ingles de un trozo de N palabras no pasa de N+3: por encima, lo
+        // que hay traducido casi siempre es la oracion entera.
+        if (nEn > n + 3) {
+          fallos.push({ fichero, historia, palabra, motivo: `el ingles traduce mas que el trozo (${nEn} vs ${n}): "${en}"` });
+        }
       }
     }
   }
@@ -204,6 +252,15 @@ async function main() {
   // Las glosas viven en dp_tap_glosses_v1 desde el 2026-08-26: una fila por
   // (bundle, historia) y la de slug "" es el mapa global. Aqui se rearman los
   // bundles tal como los esperaba el lint cuando eran ficheros.
+  // Los cuerpos de las historias: sin ellos no se puede decir si un trozo sale
+  // tal cual del texto. Una sola consulta para todo el catalogo.
+  const historias = await prisma.journeyStory.findMany({
+    where: { text: { not: "" } },
+    select: { slug: true, title: true, text: true },
+  });
+  const textos = new Map<string, string>();
+  for (const h of historias) if (h.slug) textos.set(h.slug, `${h.title}. ${h.text}`);
+
   const filas = await prisma.tapGlossSet.findMany({
     select: { bundle: true, slug: true, language: true, variant: true, glosses: true },
   });
@@ -227,7 +284,7 @@ async function main() {
   for (const [nombre, bundle] of bundles) {
     revisados += 1;
     if (bundle.byStory && Object.keys(bundle.byStory).length > 0) conCapa += 1;
-    fallos.push(...revisa(`${nombre}.json`, bundle));
+    fallos.push(...revisa(`${nombre}.json`, bundle, textos));
   }
 
   await prisma.$disconnect();
@@ -237,8 +294,9 @@ async function main() {
   // que sigue en cero. El tope del trozo se puso el 2026-09-04 sobre un
   // catalogo ya escrito y nacio con 672 encima: se congela ahi y solo puede
   // bajar, como la linea base de no-emojis. Lo nuevo bloquea igual.
-  const trozos = fallos.filter((f) => f.motivo.startsWith("trozo de"));
-  const variantes = fallos.filter((f) => !f.motivo.startsWith("trozo de"));
+  const DEUDA = ["trozo de", "el trozo no sale", "el trozo no contiene", "el ingles traduce"];
+  const trozos = fallos.filter((f) => DEUDA.some((d) => f.motivo.startsWith(d)));
+  const variantes = fallos.filter((f) => !DEUDA.some((d) => f.motivo.startsWith(d)));
   const baseTrozos = leeBaseTrozos();
 
   if (process.argv.includes("--apretar")) {
