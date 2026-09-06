@@ -1,77 +1,445 @@
 {
+  "cmt5x67ze000l320cpgunu5vi#deals-and-estimates": {
+    "cerrado": "2026-09-06T02:01:29.836Z",
+    "hash": "ec327b283e3d0119",
+    "historias": [
+      "deals-and-estimates#1 dos-precios-un-techo",
+      "deals-and-estimates#2 en-mano-y-sin-factura",
+      "deals-and-estimates#3 el-papel-donde-se-ve"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de obra y acera: se habla de pie, con el papel en la mano y ruido de calle\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dice\" 22%)",
+      "arranques de parrafo variados (mas repetido \"celia\", 12%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Celia): dos-precios-un-techo, en-mano-y-sin-factura, el-papel-donde-se-ve",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.90 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 53/60 salen una sola vez · sin marcar ancladas",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "spain",
+      "registro": "de obra y acera: se habla de pie, con el papel en la mano y ruido de calle",
+      "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+      "recursos": "Imagen concreta, Contraste con pero, Causalidad explicita, Espejo concreto, Cambio de ritmo, Reversa cosida",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "un precio fiable para arreglar el techo del portal",
+          "impide": "los dos presupuestos que pide se llevan el doble uno del otro y ninguno explica por que",
+          "cuesta": "la mañana de trabajo que pierde esperando a Toño en la acera",
+          "cambia": "deja de comparar solo el total y empieza a leer las partidas",
+          "emocion": "desconfianza que no quiere enseñar: los numeros no le cuadran y le sube el calor a las orejas, asi que baja la voz y pide que se lo desglose"
+        },
+        {
+          "slot": "2",
+          "quiere": "cerrar con el mas barato y acabar de una vez",
+          "impide": "ese le pide el pago en mano y sin factura, y ella firma por tres vecinos",
+          "cuesta": "el ahorro que suponia el presupuesto barato, que ya no puede aceptar",
+          "cambia": "pasa de decidir sola a decir en voz alta lo que no va a firmar",
+          "emocion": "miedo a quedar de rara: es la nueva y esta a punto de tumbar el trato, asi que traga saliva y lo dice mirando el papel"
+        },
+        {
+          "slot": "3",
+          "quiere": "que los tres firmen el presupuesto que si se puede defender",
+          "impide": "Emilio quiere el barato y Berta quiere acabar antes de abril",
+          "cuesta": "cuatrocientos euros mas, repartidos entre los tres",
+          "cambia": "pide su parte por escrito y la consigue sin levantar la voz",
+          "emocion": "alivio con un punto de orgullo: le tiembla el boligrafo al firmar la primera, pero firma antes que nadie y deja el papel donde se ve"
+        }
+      ]
+    }
+  },
   "cmt5x67ze000l320cpgunu5vi#jobs-and-wages": {
-    "cerrado": "2026-09-05T12:37:58.422Z",
-    "hash": "19c9b927e6694d15",
+    "cerrado": "2026-09-06T02:01:06.946Z",
+    "hash": "9cf604326a845e41",
     "historias": [
       "jobs-and-wages#1 nuria-no-negocia",
       "jobs-and-wages#2 la-cuota-no-espera",
       "jobs-and-wages#3 cobrar-es-otro-trabajo"
     ],
     "checks": [
+      "plan del tema completo (registro \"cuentas en voz baja: fechas, importes y plazos dichos sin dramatismo\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dice\" 27%)",
+      "arranques de parrafo variados (mas repetido \"el\", 20%)",
       "gate de conjunto sobre el tema: 11/17 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista ?): nuria-no-negocia, la-cuota-no-espera, cobrar-es-otro-trabajo",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B1; poner uno seria inventarlo.",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.98 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 57/60 salen una sola vez · sin marcar ancladas",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en ES. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "spain",
+      "registro": "cuentas en voz baja: fechas, importes y plazos dichos sin dramatismo",
+      "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+      "recursos": "Imagen concreta, Contraste con pero, Espejo concreto, Reversa cosida",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "trabajo estable y a un precio parecido al de Madrid",
+          "impide": "en la agencia la tarifa es la misma para todos y no se discute",
+          "cuesta": "la diferencia de precio, que no recupera: firma por menos",
+          "cambia": "deja de esperar que el precio se negocie y aprende a mirar el plazo",
+          "emocion": "quiere replicar y no lo hace: suma en la cabeza mientras escucha, y firma sin levantar la voz"
+        },
+        {
+          "slot": "2",
+          "quiere": "saber si el trabajo le da para vivir",
+          "impide": "la cuota y el impuesto se pagan antes de que entre el primer euro",
+          "cuesta": "el ahorro que trajo de Madrid, que se va en el primer mes",
+          "cambia": "entiende que el problema es el orden de los pagos, no la cifra",
+          "emocion": "susto que se calma al verlo escrito: mira el importe sin decir nada, apunta las fechas y respira"
+        },
+        {
+          "slot": "3",
+          "quiere": "cobrar una factura que lleva dos semanas sin respuesta",
+          "impide": "cree que reclamar es pelear y que pelear le cuesta el cliente",
+          "cuesta": "dos semanas de espera que ya no vuelven",
+          "cambia": "reclamar pasa a ser parte del trabajo y no algo posterior",
+          "emocion": "verguenza que se convierte en decision: escribe tres borradores y los borra, y al final manda cuatro lineas"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
   },
   "cmt5x67ze000l320cpgunu5vi#meetings-and-deadlines": {
-    "cerrado": "2026-09-05T13:25:16.403Z",
-    "hash": "b1b00db8499ac09b",
+    "cerrado": "2026-09-06T02:01:12.565Z",
+    "hash": "26e8466846334fae",
     "historias": [
       "meetings-and-deadlines#1 tres-horas-por-un-punto",
       "meetings-and-deadlines#2 el-retraso-no-es-suyo",
       "meetings-and-deadlines#3 reunion-sin-orden-del-dia"
     ],
     "checks": [
+      "plan del tema completo (registro \"sala de oficina: orden del dia, silencios y correos de cuatro lineas\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dice\" 13%)",
+      "arranques de parrafo variados (mas repetido \"el\", 27%)",
       "gate de conjunto sobre el tema: 11/17 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B1; poner uno seria inventarlo.",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.75 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 57/60 salen una sola vez · sin marcar ancladas",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "spain",
+      "registro": "sala de oficina: orden del dia, silencios y correos de cuatro lineas",
+      "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+      "recursos": "Imagen concreta, Cambio de ritmo, Espejo concreto, Gancho final literal",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "salir de la reunion con la fecha de entrega clara",
+          "impide": "la reunion se va en detalles y la fecha no se toca",
+          "cuesta": "tres horas de trabajo que no recupera",
+          "cambia": "habla por primera vez y pregunta la fecha en voz alta",
+          "emocion": "impaciencia que aguanta: mira la hora y hace la cuenta, y solo al final dice lo que necesita"
+        },
+        {
+          "slot": "2",
+          "quiere": "entregar a tiempo el encargo",
+          "impide": "los textos llegan una semana tarde y el plazo sigue igual",
+          "cuesta": "una semana entera de calendario, que nadie le devuelve",
+          "cambia": "pone ella la fecha nueva en vez de esperar a que se la pongan",
+          "emocion": "enfado que no grita: escucha con el cafe frio, y escribe despacio en vez de contestar caliente"
+        },
+        {
+          "slot": "3",
+          "quiere": "saber para que la llaman el viernes",
+          "impide": "el correo no trae orden del dia y nadie en la oficina comenta nada",
+          "cuesta": "la noche del jueves, que pasa sin dormir",
+          "cambia": "pregunta por escrito en vez de esperar callada",
+          "emocion": "miedo que se queda sin respuesta: escribe la pregunta, nadie contesta, y no apaga la luz"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
   },
+  "cmt5x67ze000l320cpgunu5vi#repeating-and-rephrasing": {
+    "cerrado": "2026-09-06T02:01:18.285Z",
+    "hash": "e77f9f9401f96a42",
+    "historias": [
+      "repeating-and-rephrasing#1 el-tecnico-habla-rapido",
+      "repeating-and-rephrasing#2 con-mis-propias-palabras",
+      "repeating-and-rephrasing#3 la-linea-se-corta"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"hablado y con ruido: frases que empiezan dos veces, palabras que vuelven\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"sigue\" 18%)",
+      "arranques de parrafo variados (mas repetido \"perdona\", 13%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.83 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 56/60 salen una sola vez · sin marcar ancladas",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: repeating-and-rephrasing (Celia, Emilio) · presentados tarde: Emilio (aparece en la 2a de repeating-and-rephrasing)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "spain",
+      "registro": "hablado y con ruido: frases que empiezan dos veces, palabras que vuelven",
+      "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+      "recursos": "Repeticion ritmica, Imagen concreta, Contraste con pero, Causalidad explicita, Cambio de ritmo, Reversa cosida",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "entender de una vez como funciona la caldera",
+          "impide": "Quique lo explica en dos minutos, deprisa y de espaldas",
+          "cuesta": "la tarde entera y admitir delante de un desconocido que no le ha entendido",
+          "cambia": "deja de asentir por costumbre y le pide que lo repita",
+          "emocion": "verguenza que se traga: es traductora y no ha cogido la mitad, asi que aprieta el boligrafo y tarda en preguntar"
+        },
+        {
+          "slot": "2",
+          "quiere": "quedar bien en la conversacion del portal sin fingir",
+          "impide": "Berta habla rapido y encadena tres asuntos en una frase",
+          "cuesta": "la comodidad de callarse, que era mas facil",
+          "cambia": "repite en voz alta lo que ha entendido, con sus palabras",
+          "emocion": "alivio pequeño: le sale mal la primera vez, pero Berta le dice que si, y ella se rie sola en la escalera"
+        },
+        {
+          "slot": "3",
+          "quiere": "cerrar por telefono la fecha de la obra con Emilio",
+          "impide": "la linea se corta y cada uno repite media frase",
+          "cuesta": "tres llamadas y la ultima hora de la tarde",
+          "cambia": "deja de pedir perdon por preguntar y pregunta directamente",
+          "emocion": "impaciencia contenida: quiere colgar y no cuelga porque la fecha importa, asi que apoya la frente en la pared y vuelve a marcar"
+        }
+      ]
+    }
+  },
   "cmt5x67ze000l320cpgunu5vi#rooms-and-landlords": {
-    "cerrado": "2026-09-05T12:12:13.213Z",
-    "hash": "3cddd53976aaa90e",
+    "cerrado": "2026-09-06T02:01:01.180Z",
+    "hash": "de53f9d0f3d6d180",
     "historias": [
       "rooms-and-landlords#1 celia-no-dice-que-si",
       "rooms-and-landlords#2 arriba-vive-alguien",
       "rooms-and-landlords#3 la-mayoria-decide-el-techo"
     ],
     "checks": [
+      "plan del tema completo (registro \"seco y de tramite: frases cortas, cifras y condiciones, sin adorno\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
       "validador canonico: 3/3",
       "sin guiones largos ni emojis en el contenido",
       "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dice\" 20%)",
+      "arranques de parrafo variados (mas repetido \"el\", 33%)",
       "gate de conjunto sobre el tema: 11/17 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Emilio): celia-no-dice-que-si, arriba-vive-alguien, la-mayoria-decide-el-techo",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B1; poner uno seria inventarlo.",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.78 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 56/60 salen una sola vez · sin marcar ancladas",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: rooms-and-landlords (Emilio, Celia)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "spain",
+      "registro": "seco y de tramite: frases cortas, cifras y condiciones, sin adorno",
+      "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+      "recursos": "Imagen concreta, Contraste con pero, Causalidad explicita, Cambio de ritmo",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "un sitio donde vivir que pueda pagar",
+          "impide": "el piso tiene fallos y Emilio los cuenta como normales",
+          "cuesta": "el primer mes por adelantado y aceptar un armario que no cierra",
+          "cambia": "decide cambiar la cerradura sin pedirle permiso a nadie",
+          "emocion": "cansancio que no quiere enseñar: calla delante de Emilio y baja los cuatro pisos sin decir nada"
+        },
+        {
+          "slot": "2",
+          "quiere": "entender como funciona la casa antes de instalarse",
+          "impide": "once normas pegadas en la puerta y un ruido arriba que nadie explica",
+          "cuesta": "la tranquilidad de su primera noche, que ya no recupera",
+          "cambia": "deja de preguntar y empieza a apuntar",
+          "emocion": "inquietud contenida: no dice nada del ruido, pero apunta la hora y la herramienta prometida"
+        },
+        {
+          "slot": "3",
+          "quiere": "que se arregle el techo antes del invierno",
+          "impide": "hace falta mayoria y su voz es la mas nueva del portal",
+          "cuesta": "su parte del dinero, que paga sin discutir",
+          "cambia": "firma, y la decision deja de depender de ella sola",
+          "emocion": "alivio fisico: la frase le sale corta al ofrecerse, y sube los cuatro pisos mas tranquila"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
+  },
+  "cmt5x67ze000l320cpgunu5vi#sayings-and-nicknames": {
+    "cerrado": "2026-09-06T02:01:24.164Z",
+    "hash": "93e7d37d992ae551",
+    "historias": [
+      "sayings-and-nicknames#1 por-que-le-dicen-chispa",
+      "sayings-and-nicknames#2 el-horno-y-los-bollos",
+      "sayings-and-nicknames#3 la-nueva-ya-tiene-mote"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de portal y broma: frases hechas que no quieren decir lo que dicen\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"contesta\" 13%)",
+      "arranques de parrafo variados (mas repetido \"de\", 11%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.92 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 53/60 salen una sola vez · sin marcar ancladas",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: sayings-and-nicknames (Celia, Emilio)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "spain",
+      "registro": "de portal y broma: frases hechas que no quieren decir lo que dicen",
+      "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+      "recursos": "Repeticion ritmica, Imagen concreta, Contraste con pero, Humor de situacion, Simil simple, Cambio de ritmo",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "entender por que al vecino del segundo todos lo llaman Chispa",
+          "impide": "nadie explica un mote, porque para ellos es obvio desde hace años",
+          "cuesta": "quedar en evidencia delante de tres vecinos al usarlo mal",
+          "cambia": "deja de deducir por su cuenta y pregunta de frente",
+          "emocion": "apuro que se le sube a la cara: lo dice mal y se le nota, asi que se rie ella primero para que no se rian antes"
+        },
+        {
+          "slot": "2",
+          "quiere": "pedirle un favor a Berta en buen momento",
+          "impide": "Berta le suelta que no esta el horno para bollos y Celia lo entiende al pie de la letra",
+          "cuesta": "el favor, que ya no pide ese dia",
+          "cambia": "aprende que una frase hecha se traduce entera o no se traduce",
+          "emocion": "desconcierto callado: busca el horno con la mirada y entiende tarde, asi que aprieta los labios y anota la frase"
+        },
+        {
+          "slot": "3",
+          "quiere": "que la dejen de llamar la nueva",
+          "impide": "lleva medio año y en el portal el nombre de uno lo ponen los demas",
+          "cuesta": "el nombre que traia de Madrid, que aqui ya no usa nadie",
+          "cambia": "acepta el mote que le ponen y lo usa ella primero",
+          "emocion": "orgullo pequeño y tardio: le molesta que se lo pongan sin permiso, pero cuando Emilio lo dice en voz alta ella contesta a la primera"
+        }
+      ]
+    }
+  },
+  "cmt5x67ze000l320cpgunu5vi#trust-and-rumours": {
+    "cerrado": "2026-09-06T02:01:35.654Z",
+    "hash": "372dc2fea5078967",
+    "historias": [
+      "trust-and-rumours#1 lo-que-corre-por-el-portal",
+      "trust-and-rumours#2 se-lo-digo-yo-primero",
+      "trust-and-rumours#3 eso-no-lo-repito"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"de rellano y media frase: lo que se dice bajito y lo que se calla\", espina \"Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"pregunta\" 25%)",
+      "arranques de parrafo variados (mas repetido \"sole\", 12%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: media 0.83 encuentros por plaza (ideal 4, liston de los buenos 1.2) · 54/60 salen una sola vez · sin marcar ancladas",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: trust-and-rumours (Celia, Sole)"
+    ],
+    "plan": {
+      "tipo": "Traveler",
+      "nivel": "b1",
+      "variante": "spain",
+      "registro": "de rellano y media frase: lo que se dice bajito y lo que se calla",
+      "espina": "Celia aprende a decir lo que quiere en una ciudad donde todo se decide sin ella",
+      "recursos": "Imagen concreta, Contraste con pero, Causalidad explicita, Repeticion ritmica, Espejo concreto, Reversa cosida",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "saber por que en el portal la miran raro desde el lunes",
+          "impide": "nadie se lo dice de frente, y lo que corre es que se va del piso en junio",
+          "cuesta": "la tarde que pierde reconstruyendo quien dijo que",
+          "cambia": "descubre que el rumor sale de una frase suya, dicha sin pensar",
+          "emocion": "vergüenza que se le queda en el estomago: la frase era suya y ahora no la reconoce, asi que se sienta en el escalon y repasa lo que dijo"
+        },
+        {
+          "slot": "2",
+          "quiere": "que Emilio no crea que se marcha sin avisar",
+          "impide": "el se ha enterado por Sole y no por ella, y eso pesa mas que el dato",
+          "cuesta": "la confianza facil que tenian, que ya no vuelve entera",
+          "cambia": "deja de esperar a que le pregunten y va ella a contarlo",
+          "emocion": "prisa nerviosa: sube dos pisos sin ascensor por decirlo antes de que se lo cuenten, y le sale la voz mas rapida de lo que queria"
+        },
+        {
+          "slot": "3",
+          "quiere": "cerrar el año en el portal sin deberle una explicacion a nadie",
+          "impide": "Sole le pide que confirme un rumor sobre Nuria, y confirmarlo seria facil",
+          "cuesta": "quedar bien con Sole, que se va con las manos vacias",
+          "cambia": "dice que no lo sabe y que no lo va a repetir, y lo dice sin adornarlo",
+          "emocion": "calma nueva, que le sorprende: esperaba temblar y no tiembla, asi que se queda un rato mas en el rellano antes de subir"
+        }
+      ]
+    }
   }
 }

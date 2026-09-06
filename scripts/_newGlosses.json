@@ -6377,6 +6377,366 @@
   "abran": {
    "g": "they open (abrir, subjunctive)",
    "t": "verb"
+  },
+  "cinco": {
+   "g": "five",
+   "t": "number"
+  },
+  "técnico": {
+   "g": "technician, who comes to repair a machine",
+   "t": "noun"
+  },
+  "gas": {
+   "g": "gas, the fuel that heats the water",
+   "t": "noun"
+  },
+  "miras": {
+   "g": "you check (mirar)",
+   "t": "verb"
+  },
+  "presión": {
+   "g": "pressure, of the gas or the water",
+   "t": "noun"
+  },
+  "manual": {
+   "g": "manual, the booklet that explains the machine",
+   "t": "noun"
+  },
+  "cogido": {
+   "g": "ha cogido, has caught, has understood (coger)",
+   "t": "verb"
+  },
+  "explicación": {
+   "g": "explanation",
+   "t": "noun"
+  },
+  "insegura": {
+   "g": "unsure of herself (inseguro)",
+   "t": "adjective"
+  },
+  "perdona": {
+   "g": "sorry, excuse me (perdonar)",
+   "t": "expression"
+  },
+  "repites": {
+   "g": "you say it again (repetir)",
+   "t": "verb"
+  },
+  "puesto": {
+   "g": "on, worn (poner)",
+   "t": "adjective"
+  },
+  "murmullo": {
+   "g": "murmur, low voices behind a call",
+   "t": "noun"
+  },
+  "veinte": {
+   "g": "twenty",
+   "t": "number"
+  },
+  "veintiuno": {
+   "g": "twenty one",
+   "t": "number"
+  },
+  "asuntos": {
+   "g": "matters to be dealt with (asunto)",
+   "t": "noun"
+  },
+  "indica": {
+   "g": "points it out (indicar)",
+   "t": "verb"
+  },
+  "lejía": {
+   "g": "bleach, for cleaning stairs and floors",
+   "t": "noun"
+  },
+  "echada": {
+   "g": "recién echada, just poured out (echar)",
+   "t": "adjective"
+  },
+  "suelta": {
+   "g": "comes out with it (soltar)",
+   "t": "verb"
+  },
+  "llevo": {
+   "g": "I take them (llevar)",
+   "t": "verb"
+  },
+  "susurro": {
+   "g": "whisper",
+   "t": "noun"
+  },
+  "deshace": {
+   "g": "se deshace, it comes undone (deshacer)",
+   "t": "verb"
+  },
+  "propias": {
+   "g": "her own (propio)",
+   "t": "adjective"
+  },
+  "diferencia": {
+   "g": "difference",
+   "t": "noun"
+  },
+  "callaba": {
+   "g": "used to keep quiet (callar)",
+   "t": "verb"
+  },
+  "buzón": {
+   "g": "letterboxes, the wall of them in the entrance",
+   "t": "noun"
+  },
+  "chispa": {
+   "g": "spark; here Paco's nickname",
+   "t": "noun"
+  },
+  "dejas": {
+   "g": "te dejas, you are leaving it open (dejarse)",
+   "t": "verb"
+  },
+  "voy": {
+   "g": "ya voy, I am coming (ir)",
+   "t": "verb"
+  },
+  "girarse": {
+   "g": "to turn round (girarse)",
+   "t": "verb"
+  },
+  "simpático": {
+   "g": "friendly, easy to like",
+   "t": "adjective"
+  },
+  "rían": {
+   "g": "they laugh (reír, subjunctive)",
+   "t": "verb"
+  },
+  "mote": {
+   "g": "nickname, the name the neighbours give you",
+   "t": "noun"
+  },
+  "enfadarse": {
+   "g": "to get angry (enfadarse)",
+   "t": "verb"
+  },
+  "enteró": {
+   "g": "se enteró, he found out (enterarse)",
+   "t": "verb"
+  },
+  "preparado": {
+   "g": "ready, thought out in advance",
+   "t": "adjective"
+  },
+  "pensadas": {
+   "g": "thought out beforehand (pensar)",
+   "t": "adjective"
+  },
+  "friega": {
+   "g": "mops the floor (fregar)",
+   "t": "verb"
+  },
+  "horno": {
+   "g": "oven; no está el horno para bollos, it is a bad moment",
+   "t": "noun"
+  },
+  "bollos": {
+   "g": "buns (bollo); in the saying, not real ones",
+   "t": "noun"
+  },
+  "pides": {
+   "g": "you ask for (pedir)",
+   "t": "verb"
+  },
+  "acerque": {
+   "g": "se acerque, comes close to it (acercarse, subjunctive)",
+   "t": "verb"
+  },
+  "viviendo": {
+   "g": "living (vivir)",
+   "t": "verb"
+  },
+  "asomando": {
+   "g": "leaning out (asomar)",
+   "t": "verb"
+  },
+  "fechas": {
+   "g": "dates (fecha)",
+   "t": "noun"
+  },
+  "motes": {
+   "g": "nicknames (mote)",
+   "t": "noun"
+  },
+  "pusieran": {
+   "g": "they gave it to her (poner, past subjunctive)",
+   "t": "verb"
+  },
+  "averiguar": {
+   "g": "to find out (averiguar)",
+   "t": "verb"
+  },
+  "gane": {
+   "g": "I earn (ganar, subjunctive)",
+   "t": "verb"
+  },
+  "separa": {
+   "g": "separates, splits into two (separar)",
+   "t": "verb"
+  },
+  "sienta": {
+   "g": "se sienta, she sits down (sentarse)",
+   "t": "verb"
+  },
+  "tal": {
+   "g": "tal cual, exactly as it is",
+   "t": "expression"
+  },
+  "cual": {
+   "g": "tal cual, just as she heard it",
+   "t": "expression"
+  },
+  "panadería": {
+   "g": "bakery, where bread is baked and sold",
+   "t": "noun"
+  },
+  "albañil": {
+   "g": "builder, who repairs walls and roofs",
+   "t": "noun"
+  },
+  "descarga": {
+   "g": "unloads (descargar)",
+   "t": "verb"
+  },
+  "tejado": {
+   "g": "roof, seen from outside",
+   "t": "noun"
+  },
+  "totales": {
+   "g": "totals, the final figures (total)",
+   "t": "noun"
+  },
+  "divides": {
+   "g": "you split it up (dividir)",
+   "t": "verb"
+  },
+  "seis": {
+   "g": "six",
+   "t": "number"
+  },
+  "comparar": {
+   "g": "to compare (comparar)",
+   "t": "verb"
+  },
+  "ladrillo": {
+   "g": "brick",
+   "t": "noun"
+  },
+  "comercial": {
+   "g": "sales rep, who sells for a company",
+   "t": "noun"
+  },
+  "rebaja": {
+   "g": "discount off the agreed price",
+   "t": "noun"
+  },
+  "ahorras": {
+   "g": "te ahorras, you save yourself (ahorrarse)",
+   "t": "verb"
+  },
+  "rechazar": {
+   "g": "to turn down (rechazar)",
+   "t": "verb"
+  },
+  "enseñar": {
+   "g": "to show it to somebody (enseñar)",
+   "t": "verb"
+  },
+  "pueda": {
+   "g": "I can (poder, subjunctive)",
+   "t": "verb"
+  },
+  "ciento": {
+   "g": "a hundred",
+   "t": "number"
+  },
+  "treinta": {
+   "g": "thirty",
+   "t": "number"
+  },
+  "pensados": {
+   "g": "planned for, thought of in advance (pensar)",
+   "t": "adjective"
+  },
+  "reparte": {
+   "g": "shares it out (repartir)",
+   "t": "verb"
+  },
+  "margen": {
+   "g": "margin, the empty edge of a page",
+   "t": "noun"
+  },
+  "contado": {
+   "g": "se lo ha contado, has told him (contar)",
+   "t": "verb"
+  },
+  "nudillo": {
+   "g": "knuckle, what you knock a door with",
+   "t": "noun"
+  },
+  "sabrá": {
+   "g": "lo sabrá, he will know it (saber)",
+   "t": "verb"
+  },
+  "invitarla": {
+   "g": "to invite her in (invitar)",
+   "t": "verb"
+  },
+  "quedaba": {
+   "g": "se quedaba, he used to stay (quedarse)",
+   "t": "verb"
+  },
+  "afloja": {
+   "g": "softens, lets his face relax (aflojar)",
+   "t": "verb"
+  },
+  "adornarlo": {
+   "g": "sin adornarlo, without dressing it up (adornar)",
+   "t": "verb"
+  },
+  "hablado": {
+   "g": "ha hablado, has spoken (hablar)",
+   "t": "verb"
+  },
+  "reconoce": {
+   "g": "recognises it as her own (reconocer)",
+   "t": "verb"
+  },
+  "oídas": {
+   "g": "de oídas, only by hearsay",
+   "t": "expression"
+  },
+  "trabajas": {
+   "g": "you work (trabajar)",
+   "t": "verb"
+  },
+  "has": {
+   "g": "lo has oído, you have heard it (haber)",
+   "t": "verb"
+  },
+  "enteraré": {
+   "g": "me enteraré, I will find out (enterarse)",
+   "t": "verb"
+  },
+  "encoge": {
+   "g": "se encoge de hombros, she shrugs (encogerse)",
+   "t": "verb"
+  },
+  "temblar": {
+   "g": "to tremble (temblar)",
+   "t": "verb"
+  },
+  "entrando": {
+   "g": "coming in (entrar)",
+   "t": "verb"
   }
  }
 }

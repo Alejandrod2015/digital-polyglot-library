@@ -19,8 +19,13 @@ import { config } from "dotenv";
 config({ path: ".env.local", quiet: true });
 config({ path: ".env", quiet: true });
 
+// `src/lib/prisma` arrastra `server-only`, que revienta fuera de Next. Se
+// neutraliza igual que en scripts/_a2Chunks.ts: el modulo se marca como ya
+// cargado y con exports vacios antes de que nadie lo pida.
+import { createRequire } from "module";
+const __req = createRequire(__filename);
+try { const q = __req.resolve("server-only"); (__req as any).cache[q] = { id: q, filename: q, loaded: true, exports: {} }; } catch {}
 import { PrismaClient } from "../src/generated/prisma";
-import { buildAndPersistStoryPracticeSet } from "../src/lib/storyPracticeSets";
 
 const prisma = new PrismaClient();
 const norm = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
@@ -61,6 +66,7 @@ async function main() {
       console.log(`   lock levantado (la revisión era de la historia anterior)`);
     }
 
+    const { buildAndPersistStoryPracticeSet } = await import("../src/lib/storyPracticeSets");
     const r = await buildAndPersistStoryPracticeSet(story.id, true);
     if (r.status !== "built") { console.log(`   ${r.status}: ${"reason" in r ? r.reason : ""}`); continue; }
 
