@@ -1079,6 +1079,35 @@
     "treinta",
     "quinto"
    ]
+  },
+  "portuguese-traveler-brazil-b1": {
+   "articles": [
+    "a",
+    "as",
+    "o",
+    "os",
+    "um",
+    "uma",
+    "uns",
+    "umas"
+   ],
+   "characterNames": [
+    "rafaela",
+    "matheus",
+    "rafa"
+   ],
+   "numerals": [
+    "dois",
+    "duas",
+    "nove",
+    "onze",
+    "quarenta",
+    "quatro",
+    "seis",
+    "sete",
+    "trinta",
+    "vinte"
+   ]
   }
  }
 }
