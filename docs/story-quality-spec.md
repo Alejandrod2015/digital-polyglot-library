@@ -421,6 +421,15 @@ campo `recursos` cuales usa, contra esta tabla.
 | C2 | Narrador no fiable, registro mezclado, parodia | el texto mismo juega |
 | Nunca | Onomatopeyas, risas escritas, moraleja | el TTS las rompe; la moraleja mata el arco |
 
+**Vocab primero cuando el catalogo del idioma ya es denso** [2026-09-06, del
+PT B1]: si los niveles previos del idioma ya enseñan tanto lexico que el pozo
+libre por historia roza el minimo de plazas (el solape cero manda), se invierte
+el orden del esqueleto: primero las ~20 palabras del nivel comprobadas libres,
+despues la escena montada alrededor. Escribir la escena primero y buscar vocab
+despues obliga a reescribir; el PT B1 escribio asi sus tres ultimos temas y
+pasaron a la primera. Sondas de apoyo en su rama: _ptEnsenadas, _ptCandidatos,
+_ptPropone y _preCheckPT.
+
 Lo que engancha en A0-B1 no son los recursos sino los STAKES, que son gratis
 en inferencia: el recurso es condimento y aligerarlo no cuesta historia.
 
