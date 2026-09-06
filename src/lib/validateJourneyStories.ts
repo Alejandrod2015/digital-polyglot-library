@@ -163,13 +163,20 @@ function castLegacy(stories: JourneyStoryInput[], lang = ""): string[] {
     .map(([w]) => w);
 }
 
+/**
+ * OJO con los bordes de palabra (bug cazado por el chat del PT B1, 2026-09-06):
+ * \b junto a una letra acentuada NO casa, porque \w es ASCII. "é\b" estaba
+ * muerto en portugues, "nació\b" en espanol, y "${n}\b" fallaba con nombres
+ * como Óscar o José. Por eso los bordes pegados a texto que puede llevar
+ * acento van con (?<!\p{L}) y (?!\p{L}), que son \b de verdad en unicode.
+ */
 /** Las tres formas de presentacion aprobadas, en aleman. */
 const DET_DE = "(?:der|die|das|den|ein|eine|einen|einer|ihr|ihre|ihren|sein|seine|seinen)";
 const NUC_DE = "(?:[a-zäöüß]+\\s+){0,2}[A-ZÄÖÜ][a-zäöüß]+";
 const FORMAS_DE: Array<[string, (n: string) => RegExp]> = [
   ["aposicion", (n) => new RegExp(`${n},\\s+${DET_DE}\\s+${NUC_DE}`, "u")],
-  ["titulo y nombre", (n) => new RegExp(`(?:(?:Ihre?|Seine?)\\w*|[A-ZÄÖÜ][a-zäöüß]+s)\\s+\\w+\\s+${n}\\b`, "u")],
-  ["con sein", (n) => new RegExp(`\\b${n}\\s+ist\\s+(?:${DET_DE}\\s+)?${NUC_DE}`, "u")],
+  ["titulo y nombre", (n) => new RegExp(`(?:(?:Ihre?|Seine?)\\w*|[A-ZÄÖÜ][a-zäöüß]+s)\\s+\\w+\\s+${n}(?!\\p{L})`, "u")],
+  ["con sein", (n) => new RegExp(`(?<!\\p{L})${n}\\s+ist\\s+(?:${DET_DE}\\s+)?${NUC_DE}`, "u")],
 ];
 
 /**
@@ -187,8 +194,8 @@ const NUC_PT = "(?:[a-zà-ú]+\\s+){0,3}[a-zà-ú]+";
 const VERBO_SER_PT = "(?:é|foi|era|trabalha|trabalhou|vende|vendia|leva|levava|cuida|cuidava|pinta|pintava|desceu|mora|morava|abre|abria|serve|servia|senta|sentava|nasceu|estuda|estudava|pesca|pescava|sobe|subia)";
 const FORMAS_PT: Array<[string, (n: string) => RegExp]> = [
   ["aposicion", (n) => new RegExp(`${n},\\s+(?:um|uma)\\s+${NUC_PT}`, "iu")],
-  ["quem", (n) => new RegExp(`\\bQuem\\s+[a-zà-ú]+(?:\\s+[a-zà-ú]+)?\\s+é\\s+${n}\\b`, "iu")],
-  ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+(?:${VERBO_SER_PT})\\b`, "iu")],
+  ["quem", (n) => new RegExp(`\\bQuem\\s+[a-zà-ú]+(?:\\s+[a-zà-ú]+)?\\s+é\\s+${n}(?!\\p{L})`, "iu")],
+  ["nombre y oficio", (n) => new RegExp(`(?<!\\p{L})${n}\\s+(?:${VERBO_SER_PT})(?!\\p{L})`, "iu")],
 ];
 
 /**
@@ -203,7 +210,7 @@ const FORMAS_PT: Array<[string, (n: string) => RegExp]> = [
 const NUC_FR = "(?:[a-zà-ÿ']+\\s+){0,3}[a-zà-ÿ']+";
 const FORMAS_FR: Array<[string, (n: string) => RegExp]> = [
   ["aposicion", (n) => new RegExp(`${n},\\s+(?:un|une|le|la|l')\\s*${NUC_FR}`, "iu")],
-  ["s'appeler", (n) => new RegExp(`s'appelle\\s+${n}\\b`, "iu")],
+  ["s'appeler", (n) => new RegExp(`s'appelle\\s+${n}(?!\\p{L})`, "iu")],
   ["con etre", (n) => new RegExp(`\\b${n}\\s+est\\s+(?:un|une)\\s+${NUC_FR}`, "iu")],
 ];
 
@@ -230,8 +237,8 @@ const FORMAS_ES: Array<[string, (n: string) => RegExp]> = [
   // es el caso de libro y el detector lo daba por no presentado porque exigia
   // la coma pegada al nombre de pila (2026-09-01).
   ["aposicion", (n) => new RegExp(`${n}(?:\\s+[A-ZÁ-Ú][a-zá-úñ]+)?,\\s+(?:un|una|el|la)\\s+${NUC_ES}`, "iu")],
-  ["quien", (n) => new RegExp(`\\bQuien\\s+[a-zá-úüñ]+(?:\\s+[a-zá-úüñ]+){0,3}\\s+es\\s+${n}\\b`, "iu")],
-  ["nombre y oficio", (n) => new RegExp(`\\b${n}\\s+${VERBO_SER_ES}\\b`, "iu")],
+  ["quien", (n) => new RegExp(`\\bQuien\\s+[a-zá-úüñ]+(?:\\s+[a-zá-úüñ]+){0,3}\\s+es\\s+${n}(?!\\p{L})`, "iu")],
+  ["nombre y oficio", (n) => new RegExp(`(?<!\\p{L})${n}\\s+${VERBO_SER_ES}(?!\\p{L})`, "iu")],
 ];
 
 const FORMAS_POR_IDIOMA: Record<string, Array<[string, (n: string) => RegExp]>> = {
