@@ -8670,6 +8670,14 @@ export function MobileLibraryShell(args: {
       setPracticeLaunchLoading(false);
       commitStoryPracticeItems(selection, items, exercises);
     } catch (error) {
+      // Muro 2026-09: un 403 significa que el servidor respondio (hay red) y
+      // el plan no alcanza para practicar esta historia. Paywall directo, y
+      // SIN caer al cache: seria servir contenido que el plan ya no cubre.
+      if (isApiErrorStatus(error, 403)) {
+        setPracticeLaunchLoading(false);
+        void openPlans();
+        return;
+      }
       // Sin red, el set cacheado la última vez que se abrió esta historia.
       // Una historia descargada para leer sin conexión llevaba su práctica a
       // un "Network request failure"; ahora, si hay cache, la sesión arranca
@@ -8809,6 +8817,12 @@ export function MobileLibraryShell(args: {
       setWrongMatchWords([]);
       setActiveScreen("practice");
     } catch (error) {
+      // Muro 2026-09: fuera del tema 1 sin plan, el servidor devuelve 403.
+      // Paywall en vez de una pantalla de error, sin salir del journey.
+      if (isApiErrorStatus(error, 403)) {
+        void openPlans();
+        return;
+      }
       setPracticeSeedItems(null);
       setPracticeLoadError(error instanceof Error ? error.message : "Could not load journey practice.");
       setActiveScreen("practice");
