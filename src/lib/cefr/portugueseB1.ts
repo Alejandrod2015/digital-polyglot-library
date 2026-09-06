@@ -142,6 +142,20 @@ export const PORTUGUESE_B1_LEMMAS: ReadonlySet<string> = new Set([
   "caminhao","caminhão","tombar","buzinar","buzina","polegar","despedida","emprestado",
   "graca","graça","caber","sumir","escada","janela","fila","turno",
 
+
+  // Tercera tanda, 2026-09-06, tema 2 (Curitiba). Mismo criterio que la
+  // segunda: lo que salio en prosa de verdad y un temario B1 da por sabido.
+  // Algunas (moeda, cartao, troco, nota, maquina) son de temario A2 y estan
+  // aqui solo porque la lista A1/A2 de portugues no las trae; eso hace que el
+  // suelo de nivel las cuente como "por encima de A1/A2" y por tanto que mida
+  // un poco de mas. Se corrige cuando se remida la lista A1/A2, no antes.
+  "encharcar","ficha","cobradora","cobrador","aparelho","anotar","devagar",
+  "saldo","recarregar","cartao","cartão","moeda","troco","lotado","maquina","máquina",
+  "nota","trocar","quentinho","geada","vapor","assado","endurecer","queimar","soprar",
+  "ligacao","ligação","desligar","praca","praça","esquina","peito","dente","dedo","lago",
+  "parque","portao","portão","ensinar","aprender","viajar","escrever",
+  "agencia","agência","nome","ouvido","degrau","passar","casaco","chave",
+
   // Expressoes coloquiais correntes no Brasil
   "dar certo","dar errado","dar um jeito","valer a pena","fazer questao",
   "ter razao","tomar cuidado","prestar atencao","ficar de olho","perder a hora",
