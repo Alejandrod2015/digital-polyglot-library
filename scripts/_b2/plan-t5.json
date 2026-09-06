@@ -1,0 +1,13 @@
+{
+  "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+  "nivel": "b2",
+  "variante": "LATAM",
+  "registro": "verguenza y paciencia: las palabras que se fueron y vuelven",
+  "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+  "recursos": "elipsis temporal (B2), subtexto de dialogo (B2), narrador con opinion (B2), espejo concreto (A2), causalidad explicita (A1)",
+  "historias": [
+    { "slot": "1", "quiere": "Jairo quiere volver a ser el de antes en su barrio de Cali: el que contaba los cuentos de la mesa", "impide": "quince anos de Nueva Jersey se le meten en la boca: renta por arrienda, parquea por estaciona, y el chiste se le escapa a mitad de camino", "cuesta": "el turno de contar en la mesa: la mesa se rie de el y no con el, y esa noche el turno pasa al siguiente", "cambia": "acepta que su caleno esta oxidado y que Yamileth lo va a corregir cuantas veces haga falta", "emocion": "pena caleña: se queda con el vaso de lulada a medio camino, sonriendo, porque defenderse seria peor que el chiste fallido" },
+    { "slot": "2", "quiere": "arrendar el local de la esquina para el negocio de jugos con Yamileth", "impide": "el dueno remata con un hagale de una, y Jairo ya no sabe que de una significa ya, ahora, sin pensarlo", "cuesta": "el local de la esquina: a los tres dias amanece con trasteo ajeno, y no vuelve", "cambia": "entiende que lo que perdio en quince anos no es vocabulario sino velocidad: los giros que la calle da por sabidos", "emocion": "verguenza seca al ver el trasteo ajeno: guarda el sobre sin contar la plata y deja que Yamileth le traduzca su propia lengua" },
+    { "slot": "3", "quiere": "cerrar el local nuevo y recuperar el turno de contar en la mesa", "impide": "la prueba vuelve sin avisar: el mismo dueno aparece por el puesto con otra oferta y el mismo hagale", "cuesta": "los tres meses de rebusque y de sentirse turista en su propia lengua; esos no se los devuelve nadie", "cambia": "contesta de una antes del punto final, remata con un refran a medias, y la mesa vuelve a reirse con el", "emocion": "orgullo callado: se queda con el vaso en alto un segundo, como quien brinda por dentro, porque celebrarlo en voz alta seria volver a explicarse" }
+  ]
+}

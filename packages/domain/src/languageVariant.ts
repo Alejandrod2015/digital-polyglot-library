@@ -110,6 +110,16 @@ const LATAM_TOPIC_COUNTRY: Record<string, LanguageVariant> = {
   "secrets-and-curiosity": "peru",
   "work-trips-and-meetings": "mexico",
   "local-life-and-routines": "mexico",
+  // Traveler (B2): igual que el A2, el nombre del tema no lleva sitio y el
+  // pais lo pinta el eyebrow. El orden es el de la ruta del brief: Guadalajara,
+  // Lima, Valparaiso, Buenos Aires, Cali, La Plata, Aracataca.
+  "jokes-and-double-meanings": "mexico",
+  "negotiations-and-courtesies": "peru",
+  "secrets-and-silences": "chile",
+  "classes-and-teachers": "argentina",
+  "fluency-and-forgetting": "colombia",
+  "partners-and-in-laws": "argentina",
+  "tales-and-tall-stories": "colombia",
 };
 
 /**

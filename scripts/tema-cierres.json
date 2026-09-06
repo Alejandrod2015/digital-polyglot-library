@@ -441,5 +441,383 @@
         }
       ]
     }
+  },
+  "cmtpls1l20007j8epwgcs6e1h#classes-and-teachers": {
+    "cerrado": "2026-09-06T11:32:44.554Z",
+    "hash": "f150cf0a3995a856",
+    "historias": [
+      "classes-and-teachers#1 nadie-falta-nunca",
+      "classes-and-teachers#2 la-carta-sin-abrir",
+      "classes-and-teachers#3 una-idea-de-ariel"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"orgullo corregido: la que tiene razon y no la pelea\", espina \"lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"contesta\" 38%)",
+      "arranques de parrafo variados (mas repetido \"y\", 12%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: classes-and-teachers (Ariel, Griselda)"
+    ],
+    "plan": {
+      "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+      "nivel": "b2",
+      "variante": "LATAM",
+      "registro": "orgullo corregido: la que tiene razon y no la pelea",
+      "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+      "recursos": "narrador con opinion (B2), ironia de personaje (B2), subtexto de dialogo (B2), cambio de ritmo (B1), humor de situacion (A1)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Griselda quiere defender su hora de cuentos frente a las planillas de Ariel",
+          "impide": "los numeros dicen que su grupo rinde menos, y contra una planilla no se discute con cariño",
+          "cuesta": "la hora de cuentos del viernes sale del horario, y con ese nombre no vuelve",
+          "cambia": "decide no pelear con palabras: lo que tenga que demostrar lo demostrara en el aula",
+          "emocion": "orgullo tragado: no pelea porque pelear seria discutir en el idioma de Ariel; se traga el orgullo, borra el pizarron despacio y guarda el libro en el bolso"
+        },
+        {
+          "slot": "2",
+          "quiere": "sostener a su grupo chico de la noche sin volverse invisible en su propio instituto",
+          "impide": "le quitan el grupo de las mañanas y los modulos avanzan solos en el aula de al lado",
+          "cuesta": "el grupo de las mañanas, que no se lo devuelven; y la carta que podria hablar por ella queda sin abrir",
+          "cambia": "su clase chica se vuelve refugio: consignas por pupitre, la jota deletreada y el pizarron lleno",
+          "emocion": "pesar por el aula de al lado: le duele mas ese silencio con auriculares que su propia perdida; por eso dicta despacio y contesta que los viernes siguen, por si acaso"
+        },
+        {
+          "slot": "3",
+          "quiere": "que el metodo de los cuentos quede demostrado sin tener que pelearlo",
+          "impide": "la prueba duerme en una carta que Ariel tiene sin abrir, tildada como pendiente",
+          "cuesta": "la disculpa con su nombre: no llega nunca; llega disfrazada de idea de Ariel",
+          "cambia": "la hora de cuentos vuelve al horario rebautizada modulo de lectura, y Griselda la acepta sin pelear la autoria",
+          "emocion": "triunfo contenido: se queda de espaldas borrando el pizarron, aguantandose la risa, porque celebrarlo en voz alta seria cobrarselo"
+        }
+      ]
+    }
+  },
+  "cmtpls1l20007j8epwgcs6e1h#fluency-and-forgetting": {
+    "cerrado": "2026-09-06T11:10:22.854Z",
+    "hash": "9bcaec948749f293",
+    "historias": [
+      "fluency-and-forgetting#1 se-le-escapan-las-palabras",
+      "fluency-and-forgetting#2 de-una",
+      "fluency-and-forgetting#3 volvio-a-hablar-caleno"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"verguenza y paciencia: las palabras que se fueron y vuelven\", espina \"lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 88% (solo avisa)",
+      "acotacion dominante bajo tope (\"contesta\" 36%)",
+      "arranques de parrafo variados (mas repetido \"la\", 13%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: fluency-and-forgetting (Jairo, Yamileth)"
+    ],
+    "plan": {
+      "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+      "nivel": "b2",
+      "variante": "LATAM",
+      "registro": "verguenza y paciencia: las palabras que se fueron y vuelven",
+      "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+      "recursos": "elipsis temporal (B2), subtexto de dialogo (B2), narrador con opinion (B2), espejo concreto (A2), causalidad explicita (A1)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Jairo quiere volver a ser el de antes en su barrio de Cali: el que contaba los cuentos de la mesa",
+          "impide": "quince anos de Nueva Jersey se le meten en la boca: renta por arrienda, parquea por estaciona, y el chiste se le escapa a mitad de camino",
+          "cuesta": "el turno de contar en la mesa: la mesa se rie de el y no con el, y esa noche el turno pasa al siguiente",
+          "cambia": "acepta que su caleno esta oxidado y que Yamileth lo va a corregir cuantas veces haga falta",
+          "emocion": "pena caleña: se queda con el vaso de lulada a medio camino, sonriendo, porque defenderse seria peor que el chiste fallido"
+        },
+        {
+          "slot": "2",
+          "quiere": "arrendar el local de la esquina para el negocio de jugos con Yamileth",
+          "impide": "el dueno remata con un hagale de una, y Jairo ya no sabe que de una significa ya, ahora, sin pensarlo",
+          "cuesta": "el local de la esquina: a los tres dias amanece con trasteo ajeno, y no vuelve",
+          "cambia": "entiende que lo que perdio en quince anos no es vocabulario sino velocidad: los giros que la calle da por sabidos",
+          "emocion": "verguenza seca al ver el trasteo ajeno: guarda el sobre sin contar la plata y deja que Yamileth le traduzca su propia lengua"
+        },
+        {
+          "slot": "3",
+          "quiere": "cerrar el local nuevo y recuperar el turno de contar en la mesa",
+          "impide": "la prueba vuelve sin avisar: el mismo dueno aparece por el puesto con otra oferta y el mismo hagale",
+          "cuesta": "los tres meses de rebusque y de sentirse turista en su propia lengua; esos no se los devuelve nadie",
+          "cambia": "contesta de una antes del punto final, remata con un refran a medias, y la mesa vuelve a reirse con el",
+          "emocion": "orgullo callado: se queda con el vaso en alto un segundo, como quien brinda por dentro, porque celebrarlo en voz alta seria volver a explicarse"
+        }
+      ]
+    }
+  },
+  "cmtpls1l20007j8epwgcs6e1h#jokes-and-double-meanings": {
+    "cerrado": "2026-09-06T09:52:53.580Z",
+    "hash": "46f7463c3e73937c",
+    "historias": [
+      "jokes-and-double-meanings#1 se-rieron-antes-que-ella",
+      "jokes-and-double-meanings#2 era-la-lista-del-mandado",
+      "jokes-and-double-meanings#3 el-albur-que-llego-tarde"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"picardia: el duelo de ingenio que es cortejo y ninguno lo nombra\", espina \"lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"contesta\" 39%)",
+      "arranques de parrafo variados (mas repetido \"la\", 11%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: jokes-and-double-meanings (Renata, Joaquín)"
+    ],
+    "plan": {
+      "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+      "nivel": "b2",
+      "variante": "LATAM",
+      "registro": "picardia: el duelo de ingenio que es cortejo y ninguno lo nombra",
+      "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+      "recursos": "ironia de personaje (B2), subtexto de dialogo (B2), cambio de ritmo (B1), simil simple (A2), imagen concreta (A0)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Renata quiere ganarle a Joaquin el duelo de albures delante de su barra llena",
+          "impide": "un doble sentido que no conoce; se rie medio segundo tarde y todos lo notan",
+          "cuesta": "paga la ronda de la apuesta y pierde la fama de invencible en su propia cantina",
+          "cambia": "decide aprender el juego a fondo en vez de fingir que no le importa",
+          "emocion": "verguenza que no quiere mostrar: paga sin quejarse porque quejarse seria confesar que no entendio, y esconde la cara caliente secando un vaso que ya estaba seco"
+        },
+        {
+          "slot": "2",
+          "quiere": "preparar la revancha sin que se sepa, juntando albures ajenos en una libreta",
+          "impide": "en la cantina todo se sabe: Joaquin encuentra la libreta y sube la apuesta",
+          "cuesta": "la propina del dia, apostada de coraje en el ensayo con los del domino; no la recupera",
+          "cambia": "el juego deja de ser secreto: la revancha queda declarada y con fecha",
+          "emocion": "orgullo herido vuelto terquedad: quiere arrancarle la libreta y no lo hace porque seria admitir cuanto le importa; aprieta el lapiz hasta que truena y le sostiene la mirada"
+        },
+        {
+          "slot": "3",
+          "quiere": "ganar la revancha con un albur propio, de su cosecha, no copiado",
+          "impide": "Joaquin juega despacio, dejandose alcanzar, y ella lo nota a mitad del duelo",
+          "cuesta": "la victoria limpia que queria: gana sabiendo que el se dejo, y esa duda se queda",
+          "cambia": "los dos fingen que fue limpia, y en fingirlo juntos queda dicho el afecto que ninguno nombra",
+          "emocion": "triunfo con espina: cobra la apuesta con la risa corta porque celebrar completo seria creerse el regalo, y empuja el caballito hacia el para brindar muy serios"
+        }
+      ]
+    }
+  },
+  "cmtpls1l20007j8epwgcs6e1h#negotiations-and-courtesies": {
+    "cerrado": "2026-09-06T10:41:12.480Z",
+    "hash": "72347eb1a66efa4a",
+    "historias": [
+      "negotiations-and-courtesies#1 lo-conversamos",
+      "negotiations-and-courtesies#2 el-telefono-boca-abajo",
+      "negotiations-and-courtesies#3 una-yapa-para-cerrar"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"cortesia tensa: lo que se dice por no decir que no\", espina \"lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"dice\" 25%)",
+      "arranques de parrafo variados (mas repetido \"le\", 7%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 6 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Maricarmen): lo-conversamos, el-telefono-boca-abajo, una-yapa-para-cerrar",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: negotiations-and-courtesies (Maricarmen, Aurelio)"
+    ],
+    "plan": {
+      "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+      "nivel": "b2",
+      "variante": "LATAM",
+      "registro": "cortesia tensa: lo que se dice por no decir que no",
+      "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+      "recursos": "subtexto de dialogo (B2), ironia de personaje (B2), narrador con opinion (B2), cambio de ritmo (B1), causalidad explicita (A1)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Maricarmen quiere cerrar su primer pedido grande con la tienda de Aurelio en el almuerzo del chifa",
+          "impide": "la cortesia limena: elogios que suenan a si y significan lo conversamos",
+          "cuesta": "el chifa completo que pago por un trato que nunca estuvo en la mesa, y la tarde de taller; no vuelven",
+          "cambia": "aprende a leer el idioma de los tratos: el elogio sin fecha ni garabato es un no",
+          "emocion": "ilusion que se desinfla: en el taller dobla cada tela dos veces, despacio, para que las manos hagan algo mientras el orgullo baja"
+        },
+        {
+          "slot": "2",
+          "quiere": "cumplir el encargo grande a tiempo para ganarse al cliente nuevo",
+          "impide": "la semana no alcanza para los trescientos buzos y para su casera de los jueves a la vez",
+          "cuesta": "la casera de doce anos, que timbra dos veces, no la atienden, y se va a otra costurera; no vuelve",
+          "cambia": "entiende que el precio del cliente grande lo paga alguien que no sale en ninguna factura",
+          "emocion": "culpa tragada: cose de madrugada con el telefono boca abajo, porque contestar seria escuchar lo que ya sabe; suspira y sigue cosiendo"
+        },
+        {
+          "slot": "3",
+          "quiere": "firmar el trato del ano sin regalar el precio del estreno",
+          "impide": "Aurelio regatea con halagos, se hace de rogar y pide todo con cortesia",
+          "cuesta": "las fechas del ano quedan en manos del cliente: las madrugadas que vienen ya estan firmadas",
+          "cambia": "el trato queda cerrado de igual a igual; los halagos dejan de ser peligro y pasan a ser juego",
+          "emocion": "alivio con la guardia alta: cierra con un apreton corto y un brindis, y no celebra de mas porque ya sabe lo que cuestan los elogios"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 10 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmtpls1l20007j8epwgcs6e1h#partners-and-in-laws": {
+    "cerrado": "2026-09-06T11:23:45.235Z",
+    "hash": "da7912c5d75d3ca5",
+    "historias": [
+      "partners-and-in-laws#1 el-vino-equivocado",
+      "partners-and-in-laws#2 la-tanda-quemada",
+      "partners-and-in-laws#3 sabado-de-franco"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"querer pertenecer: el examen que nadie admite estar tomando\", espina \"lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"contesta\" 33%)",
+      "arranques de parrafo variados (mas repetido \"y\", 14%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: partners-and-in-laws (Emiliano, Norma)"
+    ],
+    "plan": {
+      "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+      "nivel": "b2",
+      "variante": "LATAM",
+      "registro": "querer pertenecer: el examen que nadie admite estar tomando",
+      "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+      "recursos": "ironia de personaje (B2), subtexto de dialogo (B2), aforismo de personaje con cuentagotas (B2), humor de situacion (A1), cambio de ritmo (B1)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Emiliano quiere caerle bien a Norma, la duena de la rotiseria, en el primer almuerzo con la familia de su novia",
+          "impide": "el examen que nadie nombra: el vino equivocado, las preguntas de entrevista, la ironia de Norma",
+          "cuesta": "el punto del vino: el malbec que trajo termina en el estante de abajo y ahi se queda; el primer intento de impresionar no vuelve",
+          "cambia": "deja de intentar impresionar y empieza a fijarse: en el estante, en el anillo que Norma hace girar, en lo que la casa premia de verdad",
+          "emocion": "nervios de examen: contesta con la espalda derecha y el vaso sin tocar, como en entrevista, porque relajarse seria dar por ganado lo que no le han dado"
+        },
+        {
+          "slot": "2",
+          "quiere": "aprobar el sabado de trabajo en la rotiseria que el mismo ofrecio",
+          "impide": "la segunda tanda de milanesas se quema por atender dos cosas a la vez",
+          "cuesta": "la plata de la tanda quemada, que sale de su bolsillo y no vuelve",
+          "cambia": "descubre la regla de la casa: los errores se pagan y el delantal se gana; se lleva el delantal doblado",
+          "emocion": "verguenza que se traga sin chistar: paga la tanda mirando la caja y no a Norma, porque discutir el precio seria discutir la casa"
+        },
+        {
+          "slot": "3",
+          "quiere": "que un sabado cualquiera la rotiseria lo trate como de la casa, no como visita",
+          "impide": "la confianza de Norma no se pide: se espera, y nadie avisa cuando llega",
+          "cuesta": "el sabado de descanso que entrega sin que se lo pidan: los francos de Emiliano ya no son suyos",
+          "cambia": "Norma se va de franco por primera vez y le deja la caja; el examen termina sin diploma y sin anuncio",
+          "emocion": "orgullo tranquilo: cierra con llave, cuenta la plata dos veces y le guarda una milanesa a Norma, porque el que ya es de la casa no necesita decirlo"
+        }
+      ]
+    },
+    "avisos": [
+      "estructura clonada: las 3 historias tienen 12 parrafos exactos. Leelas seguidas antes de darlas por buenas."
+    ]
+  },
+  "cmtpls1l20007j8epwgcs6e1h#secrets-and-silences": {
+    "cerrado": "2026-09-06T10:41:36.653Z",
+    "hash": "5c060bcf1558f261",
+    "historias": [
+      "secrets-and-silences#1 un-chirrido-nuevo",
+      "secrets-and-silences#2 la-vista-gorda",
+      "secrets-and-silences#3 la-pared-que-nadie-encargo"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"lo callado pesa: dos que se cuidan sin nombrarlo\", espina \"lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir\")",
+      "validador canonico: 3/3",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 100% (solo avisa)",
+      "acotacion dominante bajo tope (\"pregunta\" 27%)",
+      "arranques de parrafo variados (mas repetido \"y\", 15%)",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El catalogo no da un liston medido para B2; poner uno seria inventarlo.",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: secrets-and-silences (Marcela, Ignacio)"
+    ],
+    "plan": {
+      "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+      "nivel": "b2",
+      "variante": "LATAM",
+      "registro": "lo callado pesa: dos que se cuidan sin nombrarlo",
+      "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+      "recursos": "subtexto de dialogo (B2), narrador con opinion (B2), elipsis temporal (B2), espejo concreto (A2), cambio de ritmo (B1)",
+      "historias": [
+        {
+          "slot": "1",
+          "quiere": "Marcela quiere preguntarle de frente a Ignacio por el chirrido nuevo del engranaje",
+          "impide": "acusar sin saber seria peor, y el maestro contesta con mantencion al dia y pan amasado",
+          "cuesta": "las ganas de subir en el ascensor: desde ese dia baja el cerro a pie, y esa confianza no vuelve",
+          "cambia": "el ruido deja de ser un detalle: ahora los dos saben que los dos lo escucharon",
+          "emocion": "inquietud sin palabras: quiere preguntar de frente y se queda callada porque acusar sin saber seria peor; deja la mano en la mesa, que vibra bajito"
+        },
+        {
+          "slot": "2",
+          "quiere": "ganar la licitacion de pintar la estacion sin delatar a Ignacio en el formulario",
+          "impide": "la mantencion solo se adelanta si alguien deja constancia de la falla, y la unica que la ha visto de cerca es ella",
+          "cuesta": "el encargo sonado: la licitacion queda desierta y ella queda fuera sin competir; no vuelve",
+          "cambia": "el secreto deja de ser solo de Ignacio: ahora tambien es suyo, con formulario en blanco",
+          "emocion": "culpa que arde: no da el paso, entrega el formulario en blanco, y la palabra le arde sin saber si valio la pena"
+        },
+        {
+          "slot": "3",
+          "quiere": "salir entera del ascensor detenido y entender por que Ignacio callaba",
+          "impide": "el freno agarra a media subida, y las cartas selladas del cajon cuentan otra historia que la que ella se habia contado",
+          "cuesta": "la idea comoda que tenia del silencio de Ignacio: el cargo tres anos lo que a ella casi la tumba en una semana",
+          "cambia": "el secreto pesa del lado correcto: el ascensor cierra con aviso, y ella contesta pintando la caseta que nadie encargo",
+          "emocion": "susto que se vuelve verguenza: quiere pedir perdon por lo que penso y no puede decirlo sin confesarlo, asi que lo dice con una pared celeste recien pintada"
+        }
+      ]
+    }
   }
 }

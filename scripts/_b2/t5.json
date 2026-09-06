@@ -1,0 +1,392 @@
+[
+  {
+    "topic": "fluency-and-forgetting",
+    "slotIndex": 1,
+    "title": "Se le escapan las palabras",
+    "slug": "se-le-escapan-las-palabras",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "After fifteen years up north, Jairo comes back to his old neighbourhood in Cali with a business in mind, and the neighbourhood receives him as if he had never left. His words did not: the loan words slip out, the joke that used to close his best story dies halfway, and the table laughs at him instead of with him.",
+    "text": "Jairo, un caleño de vuelta tras quince años en Nueva Jersey, llega al barrio Obrero de Cali, Colombia, con un negocio en mente. El barrio lo recibe como si nada.\n\nLa esquina de siempre, el calor pegado a la espalda.\n\nYamileth, la socia de toda la vida, lo espera con lulada y mecato. “¿Qué más pues? ¿Cómo te fue por allá?”, saluda.\n\n“Quince inviernos, mija. Ni uno más”, contesta.\n\n“Bien. Allá estuve rentando un puesto de comida”, sigue Jairo. “Rentando”, repite Yamileth, sonrisa chueca. “Aquí se dice arrendando, gringo.”\n\nEn la mesa, la familia de Yamileth pone sancocho y preguntas.\n\n“Voy a parquear el carro”, avisa, y lo dice así: parquear. Cuando busca el chiste que cerraba su mejor cuento, el chiste se le escapa: sale la mitad en caleño y la mitad en ninguna parte.\n\nLa mesa se ríe igual, pero de otra cosa. A Jairo le da pena: se queda con el vaso de lulada a medio camino, sonriendo, mientras el turno de contar pasa al siguiente.\n\n“Tranquilo, ve, que el caleño no se olvida”, le dice Yamileth en la puerta. “Está oxidado no más. Eso se desempolva.”",
+    "vocab": [
+      {
+        "word": "lulada",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Cold Cali drink of lulo fruit, ice and lime."
+      },
+      {
+        "word": "mecato",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Snacks, treats; the Colombian word for nibbles between meals."
+      },
+      {
+        "word": "caleño",
+        "type": "adjective",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "From Cali; the way its people speak and are."
+      },
+      {
+        "word": "qué más",
+        "surface": "Qué más",
+        "type": "expression",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "What else is new; the everyday Colombian hello."
+      },
+      {
+        "word": "mija",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "My dear; warm Colombian short form of mi hija."
+      },
+      {
+        "word": "oxidarse",
+        "surface": "oxidado",
+        "type": "verb",
+        "definition": "To rust, get stiff from not being used."
+      },
+      {
+        "word": "escaparse",
+        "surface": "se le escapa",
+        "type": "verb",
+        "definition": "To slip away from you just when you need it."
+      },
+      {
+        "word": "parquear",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To park; loan word many returnees bring back home."
+      },
+      {
+        "word": "rentar",
+        "surface": "rentando",
+        "type": "verb",
+        "register": "colloquial",
+        "definition": "To rent; loan word that Colombia hears as foreign."
+      },
+      {
+        "word": "arrendar",
+        "surface": "arrendando",
+        "type": "verb",
+        "definition": "To rent, lease; the word Colombia actually uses."
+      },
+      {
+        "word": "desempolvar",
+        "surface": "se desempolva",
+        "type": "verb",
+        "definition": "To dust off something stored away too long."
+      },
+      {
+        "word": "dar pena",
+        "surface": "da pena",
+        "type": "expression",
+        "definition": "To embarrass; in Colombia, pena means shame, not sorrow."
+      },
+      {
+        "word": "chueco",
+        "surface": "chueca",
+        "type": "adjective",
+        "definition": "Crooked, lopsided; a smile pulled to one side."
+      },
+      {
+        "word": "socio",
+        "surface": "socia",
+        "type": "noun",
+        "definition": "Business partner; the person who runs it with you."
+      },
+      {
+        "word": "gringo",
+        "type": "noun",
+        "register": "colloquial",
+        "definition": "Foreigner from the north; here, a teasing nickname."
+      },
+      {
+        "word": "pegado",
+        "type": "adjective",
+        "definition": "Stuck to something, pressed close against it all day."
+      },
+      {
+        "word": "a medio camino",
+        "type": "expression",
+        "definition": "Halfway there, stopped before reaching the end of something."
+      },
+      {
+        "word": "como si nada",
+        "type": "expression",
+        "definition": "As if nothing had happened at all in between."
+      },
+      {
+        "word": "de toda la vida",
+        "type": "expression",
+        "definition": "Lifelong; known and trusted since you can remember."
+      },
+      {
+        "word": "en ninguna parte",
+        "type": "expression",
+        "definition": "Nowhere; in no place at all, lost completely."
+      }
+    ]
+  },
+  {
+    "topic": "fluency-and-forgetting",
+    "slotIndex": 2,
+    "title": "De una",
+    "slug": "de-una",
+    "arcType": "late-reveal",
+    "synopsis": "The corner shop by the park has been empty for a month and the juice business needs it, so Jairo arrives with the rent in cash and the guarantor's papers. The owner shows the place and closes with a phrase Jairo no longer knows how to read, and three days later someone else's moving boxes answer for him.",
+    "text": "El local de la esquina lleva un mes desocupado, y el negocio de los jugos lo necesita. Jairo llega con el arriendo en efectivo y los papeles del fiador.\n\nViene decidido, o eso cree.\n\nLa cita es de pocas vueltas: el dueño muestra, dice el precio y remata con un hágale de una que queda flotando.\n\nJairo entiende una: la cifra. Lo demás le suena a apuro. “Está bueno el local. Lo pienso y le aviso mañana”, contesta.\n\nEl dueño lo mira como a un turista y guarda las llaves sin más.\n\nA los tres días, el local amanece con trasteo ajeno: cajas, un letrero nuevo y bombas verdes en la puerta.\n\n“¿Y eso?”, pregunta Jairo.\n\n“Eso era hágale de una”, contesta Yamileth, como quien traduce. “De una es ya, ahora, sin pensarlo. El que duda pierde el local.”\n\n“¿Y por qué no me dijiste?”\n\n“Porque tú antes no preguntabas: hacías. Bienvenido a empezar de nuevo, socio.”\n\nLa palabra no se le había olvidado: nunca la tuvo. Quince años caben en un giro de dos sílabas. El próximo hágale no lo va a agarrar pensando.",
+    "vocab": [
+      {
+        "word": "de una",
+        "type": "expression",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Right away, no hesitation; Colombia's cousin of al tiro."
+      },
+      {
+        "word": "hágale",
+        "type": "expression",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Go ahead, do it; the Colombian push to action."
+      },
+      {
+        "word": "trasteo",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "House move; the Colombian word for moving your things."
+      },
+      {
+        "word": "arriendo",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Rent; the money and the lease, in Colombian."
+      },
+      {
+        "word": "bomba",
+        "surface": "bombas",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Balloon; what Colombian parties tie at the door."
+      },
+      {
+        "word": "fiador",
+        "type": "noun",
+        "definition": "Guarantor; the person who answers for your rent."
+      },
+      {
+        "word": "desocupado",
+        "type": "adjective",
+        "definition": "Empty, vacant; standing there with nobody using it."
+      },
+      {
+        "word": "giro",
+        "type": "noun",
+        "definition": "Turn of phrase; a way of saying that locals share."
+      },
+      {
+        "word": "sílaba",
+        "surface": "sílabas",
+        "type": "noun",
+        "definition": "Syllable; one beat of sound inside a word."
+      },
+      {
+        "word": "flotar",
+        "surface": "flotando",
+        "type": "verb",
+        "definition": "To float, hang in the air without landing."
+      },
+      {
+        "word": "amanecer",
+        "surface": "amanece",
+        "type": "verb",
+        "definition": "To wake up being; to appear when day breaks."
+      },
+      {
+        "word": "negocio",
+        "type": "noun",
+        "definition": "Business; the venture that has to pay its way."
+      },
+      {
+        "word": "cita",
+        "type": "noun",
+        "definition": "Appointment; the agreed time and place to meet someone."
+      },
+      {
+        "word": "dudar",
+        "surface": "duda",
+        "type": "verb",
+        "definition": "To hesitate, stop to think when action was expected."
+      },
+      {
+        "word": "en efectivo",
+        "type": "expression",
+        "definition": "In cash, paid with real bills on the spot."
+      },
+      {
+        "word": "sonar a",
+        "surface": "suena a",
+        "type": "expression",
+        "definition": "To sound like, give the feeling of being something."
+      },
+      {
+        "word": "sin pensarlo",
+        "type": "expression",
+        "definition": "Without thinking it over, right there on the spot."
+      },
+      {
+        "word": "empezar de nuevo",
+        "type": "expression",
+        "definition": "To start over again from the very first step."
+      },
+      {
+        "word": "bienvenido",
+        "surface": "Bienvenido",
+        "type": "expression",
+        "definition": "Welcome; what you say to someone who arrives."
+      },
+      {
+        "word": "sin más",
+        "type": "expression",
+        "definition": "Just like that, without adding another word to it."
+      }
+    ]
+  },
+  {
+    "topic": "fluency-and-forgetting",
+    "slotIndex": 3,
+    "title": "Volvió a hablar caleño",
+    "slug": "volvio-a-hablar-caleno",
+    "arcType": "reframe-turn",
+    "synopsis": "Three months later Jairo no longer translates in his head. The juice stand runs on market mornings, domino afternoons and old radio, and when the same owner appears with another corner and the same phrase, the answer comes out before the sentence ends. That night, at the table, he asks for his turn to tell the story, and this time the table laughs with him.",
+    "text": "Tres meses después, Jairo ya no traduce: piensa en caleño. Fueron meses de rebusque: plaza de mercado, dominó, guayaba pelada.\n\nNadie pregunta ya de dónde viene.\n\nLos jugos salen exprimidos al momento y la licuadora no descansa. Yamileth atiende la caja del local nuevo, a dos cuadras del que el dueño no arrendó.\n\n“Ya tienes caseros, ve”, le dice Yamileth. “Lo que perdiste fue un local, no el año.”\n\nUn sábado, ese dueño aparece por el puesto, prueba la lulada y pide ñapa.\n\n“Tengo otro local, mejor esquina”, dice el dueño, yendo al grano. “Si le interesa, hágale...”\n\n“De una”, contesta Jairo, antes del punto final. “Mañana le llevo el arriendo.”\n\nEl dueño se ríe. “Aprendió rápido, don Jairo. La próxima me deja regatear.”\n\n“Camarón que se duerme...”, contesta Jairo, y el refrán no hace falta terminarlo.\n\nEn la mesa, Jairo pide el turno. “Y yo ahí, contando billetes como turista...”, arranca, y la mesa se ríe con él. Le piden otro.\n\nLas palabras no estaban perdidas: estaban en la gente. Jairo raspa hielo, reparte cholado dulce y levanta el vaso en alto, como quien brinda por dentro.",
+    "vocab": [
+      {
+        "word": "cholado",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Cali dessert of shaved ice, fruit and condensed milk."
+      },
+      {
+        "word": "guayaba",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Guava; the sweet pink fruit of every Colombian patio."
+      },
+      {
+        "word": "plaza de mercado",
+        "type": "expression",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Market hall; where Colombian cities buy their fruit."
+      },
+      {
+        "word": "rebusque",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Hustle; the Colombian art of making a living anyhow."
+      },
+      {
+        "word": "ñapa",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "The little free extra; Colombia's word for the yapa."
+      },
+      {
+        "word": "ir al grano",
+        "surface": "al grano",
+        "type": "expression",
+        "definition": "To get to the point without turning around it."
+      },
+      {
+        "word": "refrán",
+        "type": "noun",
+        "definition": "Proverb; a short saying everyone can finish for you."
+      },
+      {
+        "word": "camarón",
+        "type": "noun",
+        "definition": "Shrimp; star of the proverb about falling asleep.",
+        "surface": "Camarón"
+      },
+      {
+        "word": "punto final",
+        "type": "expression",
+        "definition": "Full stop; the very end of the sentence."
+      },
+      {
+        "word": "exprimir",
+        "surface": "exprimidos",
+        "type": "verb",
+        "definition": "To squeeze the juice out of a fruit."
+      },
+      {
+        "word": "licuadora",
+        "type": "noun",
+        "definition": "Blender; the machine that turns fruit into juice."
+      },
+      {
+        "word": "hielo",
+        "type": "noun",
+        "definition": "Ice; frozen water that keeps a drink cold."
+      },
+      {
+        "word": "al momento",
+        "type": "expression",
+        "definition": "On the spot, made fresh right there for you."
+      },
+      {
+        "word": "pelar",
+        "surface": "pelada",
+        "type": "verb",
+        "definition": "To peel the skin off a fruit before using it."
+      },
+      {
+        "word": "en alto",
+        "type": "expression",
+        "definition": "Raised up high, held above everything else around."
+      },
+      {
+        "word": "por dentro",
+        "type": "expression",
+        "definition": "On the inside, where nobody else can see."
+      },
+      {
+        "word": "dormirse",
+        "surface": "se duerme",
+        "type": "verb",
+        "definition": "To fall asleep, let yourself be caught off guard."
+      },
+      {
+        "word": "aparecer",
+        "surface": "aparece",
+        "type": "verb",
+        "definition": "To show up, arrive somewhere without being announced first."
+      },
+      {
+        "word": "probar",
+        "surface": "prueba",
+        "type": "verb",
+        "definition": "To taste, try a little of something new."
+      },
+      {
+        "word": "traducir",
+        "surface": "traduce",
+        "type": "verb",
+        "definition": "To translate words from one language into another one."
+      }
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+  "nivel": "b2",
+  "variante": "LATAM",
+  "registro": "cortesia tensa: lo que se dice por no decir que no",
+  "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+  "recursos": "subtexto de dialogo (B2), ironia de personaje (B2), narrador con opinion (B2), cambio de ritmo (B1), causalidad explicita (A1)",
+  "historias": [
+    { "slot": "1", "quiere": "Maricarmen quiere cerrar su primer pedido grande con la tienda de Aurelio en el almuerzo del chifa", "impide": "la cortesia limena: elogios que suenan a si y significan lo conversamos", "cuesta": "el chifa completo que pago por un trato que nunca estuvo en la mesa, y la tarde de taller; no vuelven", "cambia": "aprende a leer el idioma de los tratos: el elogio sin fecha ni garabato es un no", "emocion": "ilusion que se desinfla: en el taller dobla cada tela dos veces, despacio, para que las manos hagan algo mientras el orgullo baja" },
+    { "slot": "2", "quiere": "cumplir el encargo grande a tiempo para ganarse al cliente nuevo", "impide": "la semana no alcanza para los trescientos buzos y para su casera de los jueves a la vez", "cuesta": "la casera de doce anos, que timbra dos veces, no la atienden, y se va a otra costurera; no vuelve", "cambia": "entiende que el precio del cliente grande lo paga alguien que no sale en ninguna factura", "emocion": "culpa tragada: cose de madrugada con el telefono boca abajo, porque contestar seria escuchar lo que ya sabe; suspira y sigue cosiendo" },
+    { "slot": "3", "quiere": "firmar el trato del ano sin regalar el precio del estreno", "impide": "Aurelio regatea con halagos, se hace de rogar y pide todo con cortesia", "cuesta": "las fechas del ano quedan en manos del cliente: las madrugadas que vienen ya estan firmadas", "cambia": "el trato queda cerrado de igual a igual; los halagos dejan de ser peligro y pasan a ser juego", "emocion": "alivio con la guardia alta: cierra con un apreton corto y un brindis, y no celebra de mas porque ya sabe lo que cuestan los elogios" }
+  ]
+}

@@ -358,4 +358,52 @@ export const SPANISH_B2_LEMMAS: ReadonlySet<string> = new Set([
   "vistazo","vituperio","vivencia","vocación","vocería","volatilidad","voluntariado","voluptuosidad","voracidad","vorágine",
   "votante","vuelco","vulgaridad","vulnerabilidad","yermo","yugo","zalamería","zancada","zaranda","zarpazo",
   "zona","zozobra",
+
+  // Huecos de la lista, no palabras dificiles (2026-09-06, montando el Traveler
+  // ES/latam B2, el primer B2 del catalogo). Mismo criterio que el bloque
+  // analogo de spanishB1.ts: entran lemas que cualquier temario B2 trae
+  // (presumir de algo, reirse a carcajadas, hojear un libro, un partido
+  // parejo/empatado, madurar, rendirse), NO palabras para que pase una historia
+  // concreta; lo especifico de escena va con `register: "cultural"` y su
+  // exencion, no aqui.
+  "presumir","manso","delatar","carcajada","revancha","hojear","tronar",
+  "parejo","acierto","madurar","rendirse","silbar","silbido",
+  // Segunda tanda (2026-09-06, tema 2 del mismo B2): oficios y objetos de
+  // taller (muestrario, costura, puntada), lexico de trato y regateo (elogio,
+  // halago, regatear, ceder, apreton, brindis, acordar, adelantar) y verbos
+  // corrientes de B2 (apartar, desinflar, estrenar, entallar). Mismo criterio:
+  // lemas de temario, nunca palabras para una historia concreta.
+  "muestrario","elogio","elogiar","costura","palillos","apartar","desinflar",
+  "cortesía","garabato","puntada","encargo","estrenar","adelantar","entallar",
+  "regatear","halago","centavo","apretón","brindis","acordar","ceder",
+  // Tercera tanda (2026-09-06, tema 3): maquinaria y tramite municipal que
+  // cualquier temario B2 de ciudad trae (engranaje, andamio, eje, caseta,
+  // licitacion, presupuesto, tramite, papeleo) y el verbo figurado "arder".
+  "engranaje","andamio","caseta","eje","licitación","presupuesto","arder",
+  "trámite","papeleo",
+  // Cuarta tanda (2026-09-06, tema 3): mecanica cotidiana (freno, manivela,
+  // repuesto, pasamanos), verbos de ruido (crujir, rechinar) y lexico
+  // panlatino corriente (mercaderia, celeste, recien, tumbar, temblon).
+  "freno","manivela","rechinar","pasamanos","crujir","repuesto","mercadería",
+  "celeste","recién","temblón","tumbar",
+  // Quinta tanda (2026-09-06, tema 4): aula y tramite escolar de cualquier
+  // temario (dictar clase, promedio, repaso, recreo, charla, deletrear,
+  // matricula, inscripcion, lectura) y verbos corrientes B2 (disfrazar,
+  // despegar, trabarse, rendir, parecerse).
+  "dictar","promedio","rendir","repaso","recreo","charla","jota","deletrear",
+  "estampilla","pendiente","parecerse","matrícula","ficha","inscripción",
+  "recomendar","lectura","disfrazar","despegar","trabarse","digamos","salvar",
+  "consigna","pupitre","soltarse",
+  // Sexta tanda (2026-09-06, tema 5): vuelta a casa y oficio de jugos
+  // (oxidarse, desempolvar, arrendar, fiador, exprimir, refran) mas adjetivos
+  // y verbos corrientes B2 (chueco, desocupado, flotar).
+  "oxidarse","oxidar","arrendar","desempolvar","chueco","fiador","desocupado",
+  "flotar","refrán","exprimir",
+  // Septima tanda (2026-09-06, tema 6): cocina de rotiseria (tanda, rebozar,
+  // quemarse, consolar, lustrar, cumplido, campanita, desatarse, tapado).
+  "tanda","rebozar","quemarse","consolar","lustrar","lustrado","cumplido",
+  "campanita","desatarse","tapado","doblado","dorado","ganarse","vuelto",
+  // Octava tanda (2026-09-06, tema 7): el corredor caribeño (mecedora,
+  // agrandar, amarillento, manotear, empapado, piedrita).
+  "mecedora","agrandar","amarillento","manotear","empapado","piedrita","techado","resucitar",
 ]);

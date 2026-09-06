@@ -1079,6 +1079,53 @@
     "treinta",
     "quinto"
    ]
+  },
+  "spanish-traveler-latam-b2": {
+   "articles": [
+    "el",
+    "la",
+    "las",
+    "los",
+    "un",
+    "una",
+    "unas",
+    "unos"
+   ],
+   "characterNames": [
+    "renata",
+    "joaquín",
+    "maricarmen",
+    "aurelio",
+    "marcela",
+    "ignacio",
+    "griselda",
+    "ariel",
+    "jairo",
+    "yamileth",
+    "emiliano",
+    "norma"
+   ],
+   "numerals": [
+    "dos",
+    "tres",
+    "cuatro",
+    "cinco",
+    "cien",
+    "doce",
+    "trescientos",
+    "seiscientos",
+    "seis",
+    "quince"
+   ],
+   "placeNames": [
+    "ucayali",
+    "valparaíso",
+    "montreal",
+    "jersey",
+    "obrero",
+    "mendoza",
+    "plata"
+   ]
   }
  }
 }

@@ -1,0 +1,13 @@
+{
+  "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+  "nivel": "b2",
+  "variante": "LATAM",
+  "registro": "lo callado pesa: dos que se cuidan sin nombrarlo",
+  "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+  "recursos": "subtexto de dialogo (B2), narrador con opinion (B2), elipsis temporal (B2), espejo concreto (A2), cambio de ritmo (B1)",
+  "historias": [
+    { "slot": "1", "quiere": "Marcela quiere preguntarle de frente a Ignacio por el chirrido nuevo del engranaje", "impide": "acusar sin saber seria peor, y el maestro contesta con mantencion al dia y pan amasado", "cuesta": "las ganas de subir en el ascensor: desde ese dia baja el cerro a pie, y esa confianza no vuelve", "cambia": "el ruido deja de ser un detalle: ahora los dos saben que los dos lo escucharon", "emocion": "inquietud sin palabras: quiere preguntar de frente y se queda callada porque acusar sin saber seria peor; deja la mano en la mesa, que vibra bajito" },
+    { "slot": "2", "quiere": "ganar la licitacion de pintar la estacion sin delatar a Ignacio en el formulario", "impide": "la mantencion solo se adelanta si alguien deja constancia de la falla, y la unica que la ha visto de cerca es ella", "cuesta": "el encargo sonado: la licitacion queda desierta y ella queda fuera sin competir; no vuelve", "cambia": "el secreto deja de ser solo de Ignacio: ahora tambien es suyo, con formulario en blanco", "emocion": "culpa que arde: no da el paso, entrega el formulario en blanco, y la palabra le arde sin saber si valio la pena" },
+    { "slot": "3", "quiere": "salir entera del ascensor detenido y entender por que Ignacio callaba", "impide": "el freno agarra a media subida, y las cartas selladas del cajon cuentan otra historia que la que ella se habia contado", "cuesta": "la idea comoda que tenia del silencio de Ignacio: el cargo tres anos lo que a ella casi la tumba en una semana", "cambia": "el secreto pesa del lado correcto: el ascensor cierra con aviso, y ella contesta pintando la caseta que nadie encargo", "emocion": "susto que se vuelve verguenza: quiere pedir perdon por lo que penso y no puede decirlo sin confesarlo, asi que lo dice con una pared celeste recien pintada" }
+  ]
+}

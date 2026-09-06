@@ -6738,5 +6738,1163 @@
    "g": "coming in (entrar)",
    "t": "verb"
   }
+ },
+ "spanish-traveler-latam-b2": {
+  "guadalajara": {
+   "g": "Guadalajara (city)",
+   "t": "noun"
+  },
+  "méxico": {
+   "g": "Mexico (country)",
+   "t": "noun"
+  },
+  "callar": {
+   "g": "to be quiet, fall silent",
+   "t": "verb"
+  },
+  "negocio": {
+   "g": "business, shop",
+   "t": "noun"
+  },
+  "birria": {
+   "g": "birria, spicy meat stew from Jalisco",
+   "t": "noun"
+  },
+  "tejuino": {
+   "g": "tejuino, cold fermented corn drink",
+   "t": "noun"
+  },
+  "pocas": {
+   "g": "few",
+   "t": "adjective"
+  },
+  "albur": {
+   "g": "albur, Mexican double-meaning word game",
+   "t": "noun"
+  },
+  "albures": {
+   "g": "albures, Mexican double-meaning word games",
+   "t": "noun"
+  },
+  "patrona": {
+   "g": "boss lady",
+   "t": "noun"
+  },
+  "pierda": {
+   "g": "loses (subjunctive of perder)",
+   "t": "verb"
+  },
+  "empiece": {
+   "g": "start (polite command of empezar)",
+   "t": "verb"
+  },
+  "ingeniosa": {
+   "g": "witty, clever",
+   "t": "adjective"
+  },
+  "empatado": {
+   "g": "tied, level",
+   "t": "adjective"
+  },
+  "voy": {
+   "g": "I go, I am going",
+   "t": "verb"
+  },
+  "calentando": {
+   "g": "warming up",
+   "t": "verb"
+  },
+  "mansa": {
+   "g": "tame, harmless-looking",
+   "t": "adjective"
+  },
+  "suelta": {
+   "g": "lets out",
+   "t": "verb"
+  },
+  "delata": {
+   "g": "gives away, betrays",
+   "t": "verb"
+  },
+  "quejarse": {
+   "g": "to complain",
+   "t": "verb"
+  },
+  "reuniendo": {
+   "g": "gathering, collecting",
+   "t": "verb"
+  },
+  "carnicero": {
+   "g": "butcher",
+   "t": "noun"
+  },
+  "tianguis": {
+   "g": "tianguis, Mexican open-air street market",
+   "t": "noun"
+  },
+  "rebana": {
+   "g": "slices",
+   "t": "verb"
+  },
+  "jícama": {
+   "g": "jicama, crunchy white root vegetable",
+   "t": "noun"
+  },
+  "hojea": {
+   "g": "leafs through",
+   "t": "verb"
+  },
+  "estudiando": {
+   "g": "studying",
+   "t": "verb"
+  },
+  "fui": {
+   "g": "I was, I went (past of ser/ir)",
+   "t": "verb"
+  },
+  "puros": {
+   "g": "nothing but (Mexican use)",
+   "t": "adjective"
+  },
+  "dobles": {
+   "g": "double (plural)",
+   "t": "adjective"
+  },
+  "sentidos": {
+   "g": "meanings, senses",
+   "t": "noun"
+  },
+  "plantea": {
+   "g": "puts forward, proposes",
+   "t": "verb"
+  },
+  "lavo": {
+   "g": "I wash",
+   "t": "verb"
+  },
+  "trastes": {
+   "g": "dishes (Mexican word)",
+   "t": "noun"
+  },
+  "arrancarle": {
+   "g": "to snatch from him/her",
+   "t": "verb"
+  },
+  "admitir": {
+   "g": "to admit",
+   "t": "verb"
+  },
+  "truena": {
+   "g": "cracks, snaps",
+   "t": "verb"
+  },
+  "muina": {
+   "g": "flash of anger (Jalisco word)",
+   "t": "noun"
+  },
+  "desquite": {
+   "g": "payback, rematch",
+   "t": "noun"
+  },
+  "clavo": {
+   "g": "nail (on the wall)",
+   "t": "noun"
+  },
+  "nací": {
+   "g": "I was born",
+   "t": "verb"
+  },
+  "parejos": {
+   "g": "even, level",
+   "t": "adjective"
+  },
+  "lentos": {
+   "g": "slow (plural)",
+   "t": "adjective"
+  },
+  "festeja": {
+   "g": "celebrates",
+   "t": "verb"
+  },
+  "festejar": {
+   "g": "to celebrate",
+   "t": "verb"
+  },
+  "aciertos": {
+   "g": "hits, right answers",
+   "t": "noun"
+  },
+  "cuidando": {
+   "g": "taking care of",
+   "t": "verb"
+  },
+  "dejando": {
+   "g": "letting, leaving",
+   "t": "verb"
+  },
+  "madurado": {
+   "g": "ripened, matured",
+   "t": "adjective"
+  },
+  "rinde": {
+   "g": "gives up (se rinde)",
+   "t": "verb"
+  },
+  "salud": {
+   "g": "cheers; health",
+   "t": "noun"
+  },
+  "campeón": {
+   "g": "champion",
+   "t": "noun"
+  },
+  "jalón": {
+   "g": "pull, gulp (de un jalón, in one go)",
+   "t": "noun"
+  },
+  "creerse": {
+   "g": "to believe oneself, buy into",
+   "t": "verb"
+  },
+  "brindan": {
+   "g": "they toast",
+   "t": "verb"
+  },
+  "serios": {
+   "g": "serious (plural)",
+   "t": "adjective"
+  },
+  "buzos": {
+   "g": "tracksuits (Peruvian word)",
+   "t": "noun"
+  },
+  "buzo": {
+   "g": "tracksuit (Peruvian word)",
+   "t": "noun"
+  },
+  "logo": {
+   "g": "logo",
+   "t": "noun"
+  },
+  "ni": {
+   "g": "not even; nor",
+   "t": "conjunction"
+  },
+  "campaña": {
+   "g": "sales campaign, season",
+   "t": "noun"
+  },
+  "conversamos": {
+   "g": "we talk it over (conversar)",
+   "t": "verb"
+  },
+  "adelanta": {
+   "g": "pays in advance (adelantar)",
+   "t": "verb"
+  },
+  "adelantado": {
+   "g": "paid in advance",
+   "t": "adjective"
+  },
+  "falle": {
+   "g": "fail (subjunctive of fallar)",
+   "t": "verb"
+  },
+  "respondo": {
+   "g": "I answer for it (responder)",
+   "t": "verb"
+  },
+  "fallo": {
+   "g": "I fail (fallar)",
+   "t": "verb"
+  },
+  "casera": {
+   "g": "loyal regular customer (Peru)",
+   "t": "noun"
+  },
+  "timbra": {
+   "g": "rings the doorbell (timbrar)",
+   "t": "verb"
+  },
+  "entallar": {
+   "g": "to take in a garment",
+   "t": "verb"
+  },
+  "arreglos": {
+   "g": "clothing alterations",
+   "t": "noun"
+  },
+  "emoliente": {
+   "g": "warm Peruvian herbal street drink",
+   "t": "noun"
+  },
+  "enfriándose": {
+   "g": "getting cold (enfriarse)",
+   "t": "verb"
+  },
+  "puntada": {
+   "g": "stitch",
+   "t": "noun"
+  },
+  "exigente": {
+   "g": "demanding",
+   "t": "adjective"
+  },
+  "plantada": {
+   "g": "stood up, left waiting (dejar plantado)",
+   "t": "adjective"
+  },
+  "costura": {
+   "g": "sewing",
+   "t": "noun"
+  },
+  "cruzó": {
+   "g": "crossed (cruzar)",
+   "t": "verb"
+  },
+  "muestrario": {
+   "g": "sample book",
+   "t": "noun"
+  },
+  "tratos": {
+   "g": "deals",
+   "t": "noun"
+  },
+  "trato": {
+   "g": "deal",
+   "t": "noun"
+  },
+  "almorzando": {
+   "g": "having lunch (almorzar)",
+   "t": "verb"
+  },
+  "uniformes": {
+   "g": "uniforms",
+   "t": "noun"
+  },
+  "wantán": {
+   "g": "fried wonton (Peruvian-Chinese food)",
+   "t": "noun"
+  },
+  "chifa": {
+   "g": "Peruvian-Chinese restaurant",
+   "t": "noun"
+  },
+  "jirón": {
+   "g": "street (Lima word)",
+   "t": "noun"
+  },
+  "elogia": {
+   "g": "praises (elogiar)",
+   "t": "verb"
+  },
+  "fina": {
+   "g": "fine, high quality",
+   "t": "adjective"
+  },
+  "palillos": {
+   "g": "chopsticks",
+   "t": "noun"
+  },
+  "aparto": {
+   "g": "I set aside (apartar)",
+   "t": "verb"
+  },
+  "té": {
+   "g": "tea",
+   "t": "noun"
+  },
+  "directorio": {
+   "g": "board meeting (Peruvian business word)",
+   "t": "noun"
+  },
+  "ahorita": {
+   "g": "right now, or soon; elastic word",
+   "t": "adverb"
+  },
+  "andamos": {
+   "g": "we are, we go around (andar)",
+   "t": "verb"
+  },
+  "halagos": {
+   "g": "flattery, compliments",
+   "t": "noun"
+  },
+  "halago": {
+   "g": "flattery, a compliment",
+   "t": "noun"
+  },
+  "apuntó": {
+   "g": "wrote down (apuntar)",
+   "t": "verb"
+  },
+  "garabato": {
+   "g": "scribble",
+   "t": "noun"
+  },
+  "elogio": {
+   "g": "praise, compliment",
+   "t": "noun"
+  },
+  "telas": {
+   "g": "fabrics",
+   "t": "noun"
+  },
+  "doblándolas": {
+   "g": "folding them (doblar)",
+   "t": "verb"
+  },
+  "trabajen": {
+   "g": "work (subjunctive of trabajar)",
+   "t": "verb"
+  },
+  "desinfla": {
+   "g": "deflates (desinflarse)",
+   "t": "verb"
+  },
+  "firman": {
+   "g": "they sign (firmar)",
+   "t": "verb"
+  },
+  "mozo": {
+   "g": "waiter",
+   "t": "noun"
+  },
+  "chaufa": {
+   "g": "Peruvian-Chinese fried rice",
+   "t": "noun"
+  },
+  "estreno": {
+   "g": "first use, premiere (de estreno, brand new)",
+   "t": "noun"
+  },
+  "redondeamos": {
+   "g": "we round the number (redondear)",
+   "t": "verb"
+  },
+  "regatean": {
+   "g": "they haggle (regatear)",
+   "t": "verb"
+  },
+  "regatear": {
+   "g": "to haggle over a price",
+   "t": "verb"
+  },
+  "centavo": {
+   "g": "cent, smallest coin",
+   "t": "noun"
+  },
+  "daca": {
+   "g": "give here (toma y daca, give and take)",
+   "t": "noun"
+  },
+  "así": {
+   "g": "like this, this way",
+   "t": "adverb"
+  },
+  "cuida": {
+   "g": "takes care of (cuidar)",
+   "t": "verb"
+  },
+  "cuido": {
+   "g": "I take care of (cuidar)",
+   "t": "verb"
+  },
+  "acuerdan": {
+   "g": "they agree on (acordar)",
+   "t": "verb"
+  },
+  "lapicero": {
+   "g": "pen (Peruvian word)",
+   "t": "noun"
+  },
+  "contestando": {
+   "g": "answering (contestar)",
+   "t": "verb"
+  },
+  "apretón": {
+   "g": "handshake (apretón de manos)",
+   "t": "noun"
+  },
+  "cedió": {
+   "g": "gave in (ceder)",
+   "t": "verb"
+  },
+  "valiera": {
+   "g": "were worth (subjunctive of valer)",
+   "t": "verb"
+  },
+  "colgada": {
+   "g": "hanging (colgar)",
+   "t": "adjective"
+  },
+  "colgar": {
+   "g": "to hang",
+   "t": "verb"
+  },
+  "andamio": {
+   "g": "scaffold",
+   "t": "noun"
+  },
+  "andamios": {
+   "g": "scaffolds",
+   "t": "noun"
+  },
+  "engranaje": {
+   "g": "gear, cogwheel",
+   "t": "noun"
+  },
+  "maquinista": {
+   "g": "machine operator",
+   "t": "noun"
+  },
+  "chirrido": {
+   "g": "squeal of metal",
+   "t": "noun"
+  },
+  "eje": {
+   "g": "axle",
+   "t": "noun"
+  },
+  "mantención": {
+   "g": "maintenance (Chilean word)",
+   "t": "noun"
+  },
+  "falta": {
+   "g": "is missing (faltar)",
+   "t": "verb"
+  },
+  "cacho": {
+   "g": "I know about (cachar, Chilean slang)",
+   "t": "verb"
+  },
+  "fachadas": {
+   "g": "facades, house fronts",
+   "t": "noun"
+  },
+  "amasado": {
+   "g": "kneaded (pan amasado, Chilean bread)",
+   "t": "adjective"
+  },
+  "desgaste": {
+   "g": "wear, worn state",
+   "t": "noun"
+  },
+  "acusar": {
+   "g": "to accuse",
+   "t": "verb"
+  },
+  "baja": {
+   "g": "goes down (bajar)",
+   "t": "verb"
+  },
+  "quitaron": {
+   "g": "took away (quitar)",
+   "t": "verb"
+  },
+  "licitación": {
+   "g": "public tender",
+   "t": "noun"
+  },
+  "pagada": {
+   "g": "paid for",
+   "t": "adjective"
+  },
+  "postula": {
+   "g": "applies (postular)",
+   "t": "verb"
+  },
+  "postular": {
+   "g": "to apply for a contract",
+   "t": "verb"
+  },
+  "postulé": {
+   "g": "I applied (postular)",
+   "t": "verb"
+  },
+  "papeleo": {
+   "g": "paperwork",
+   "t": "noun"
+  },
+  "adjudica": {
+   "g": "is awarded (adjudicar)",
+   "t": "verb"
+  },
+  "constancia": {
+   "g": "written record (dejar constancia)",
+   "t": "noun"
+  },
+  "voces": {
+   "g": "voices (secreto a voces, open secret)",
+   "t": "noun"
+  },
+  "fallas": {
+   "g": "faults, defects",
+   "t": "noun"
+  },
+  "declaradas": {
+   "g": "declared, reported",
+   "t": "adjective"
+  },
+  "declaro": {
+   "g": "I declare (declarar)",
+   "t": "verb"
+  },
+  "presupuesto": {
+   "g": "budget, quote",
+   "t": "noun"
+  },
+  "capas": {
+   "g": "coats, layers",
+   "t": "noun"
+  },
+  "agarrarlo": {
+   "g": "to grab it (agarrar)",
+   "t": "verb"
+  },
+  "revisión": {
+   "g": "inspection",
+   "t": "noun"
+  },
+  "haz": {
+   "g": "do (command of hacer)",
+   "t": "verb"
+  },
+  "gorda": {
+   "g": "fat (hacer la vista gorda, turn a blind eye)",
+   "t": "adjective"
+  },
+  "entrega": {
+   "g": "hands in (entregar)",
+   "t": "verb"
+  },
+  "desierta": {
+   "g": "void, without winner (tender)",
+   "t": "adjective"
+  },
+  "competir": {
+   "g": "to compete",
+   "t": "verb"
+  },
+  "sube": {
+   "g": "goes up (subir)",
+   "t": "verb"
+  },
+  "muevas": {
+   "g": "move (subjunctive of mover)",
+   "t": "verb"
+  },
+  "freno": {
+   "g": "brake",
+   "t": "noun"
+  },
+  "manivela": {
+   "g": "crank handle",
+   "t": "noun"
+  },
+  "rechina": {
+   "g": "grinds, screeches (rechinar)",
+   "t": "verb"
+  },
+  "temblonas": {
+   "g": "shaky, trembling",
+   "t": "adjective"
+  },
+  "trote": {
+   "g": "trot (al trote, racing)",
+   "t": "noun"
+  },
+  "ceder": {
+   "g": "to give way",
+   "t": "verb"
+  },
+  "selladas": {
+   "g": "sealed",
+   "t": "adjective"
+  },
+  "mercadería": {
+   "g": "goods, merchandise",
+   "t": "noun"
+  },
+  "guardó": {
+   "g": "kept (guardar)",
+   "t": "verb"
+  },
+  "pintada": {
+   "g": "painted",
+   "t": "adjective"
+  },
+  "celeste": {
+   "g": "sky blue",
+   "t": "adjective"
+  },
+  "profesora": {
+   "g": "teacher (woman)",
+   "t": "noun"
+  },
+  "instituto": {
+   "g": "language institute",
+   "t": "noun"
+  },
+  "aprenden": {
+   "g": "they learn (aprender)",
+   "t": "verb"
+  },
+  "planillas": {
+   "g": "spreadsheets, forms",
+   "t": "noun"
+  },
+  "subte": {
+   "g": "Buenos Aires underground train",
+   "t": "noun"
+  },
+  "promedio": {
+   "g": "average",
+   "t": "noun"
+  },
+  "tildado": {
+   "g": "ticked, checked off (tildar)",
+   "t": "adjective"
+  },
+  "lapicera": {
+   "g": "pen (Argentine word)",
+   "t": "noun"
+  },
+  "módulos": {
+   "g": "course modules",
+   "t": "noun"
+  },
+  "módulo": {
+   "g": "course module",
+   "t": "noun"
+  },
+  "niveles": {
+   "g": "levels",
+   "t": "noun"
+  },
+  "repaso": {
+   "g": "review session",
+   "t": "noun"
+  },
+  "cuentan": {
+   "g": "they tell (contar)",
+   "t": "verb"
+  },
+  "leerlas": {
+   "g": "to read them (leer)",
+   "t": "verb"
+  },
+  "pizarrón": {
+   "g": "blackboard (Latin American word)",
+   "t": "noun"
+  },
+  "recreo": {
+   "g": "school break",
+   "t": "noun"
+  },
+  "tomés": {
+   "g": "take (voseo subjunctive of tomar)",
+   "t": "verb"
+  },
+  "pecho": {
+   "g": "chest (tomarse a pecho, take to heart)",
+   "t": "noun"
+  },
+  "mejoren": {
+   "g": "improve (subjunctive of mejorar)",
+   "t": "verb"
+  },
+  "reparte": {
+   "g": "hands out (repartir)",
+   "t": "verb"
+  },
+  "consigna": {
+   "g": "task instruction",
+   "t": "noun"
+  },
+  "pupitre": {
+   "g": "school desk",
+   "t": "noun"
+  },
+  "países": {
+   "g": "countries",
+   "t": "noun"
+  },
+  "deletrear": {
+   "g": "to spell out",
+   "t": "verb"
+  },
+  "jota": {
+   "g": "the letter j",
+   "t": "noun"
+  },
+  "cerró": {
+   "g": "closed (cerrar)",
+   "t": "verb"
+  },
+  "avanzan": {
+   "g": "they advance (avanzar)",
+   "t": "verb"
+  },
+  "auriculares": {
+   "g": "headphones",
+   "t": "noun"
+  },
+  "dictás": {
+   "g": "you teach (voseo of dictar)",
+   "t": "verb"
+  },
+  "estampillas": {
+   "g": "postage stamps",
+   "t": "noun"
+  },
+  "matrículas": {
+   "g": "enrolments",
+   "t": "noun"
+  },
+  "inscripción": {
+   "g": "registration",
+   "t": "noun"
+  },
+  "recomendó": {
+   "g": "recommended (recomendar)",
+   "t": "verb"
+  },
+  "escuchá": {
+   "g": "listen (voseo command of escuchar)",
+   "t": "verb"
+  },
+  "curso": {
+   "g": "course",
+   "t": "noun"
+  },
+  "salvó": {
+   "g": "saved (salvar)",
+   "t": "verb"
+  },
+  "hable": {
+   "g": "speak (subjunctive of hablar)",
+   "t": "verb"
+  },
+  "espaldas": {
+   "g": "back (de espaldas, with your back turned)",
+   "t": "noun"
+  },
+  "lectura": {
+   "g": "reading",
+   "t": "noun"
+  },
+  "digamos": {
+   "g": "let us say (softener)",
+   "t": "expression"
+  },
+  "tomás": {
+   "g": "you take (voseo of tomar)",
+   "t": "verb"
+  },
+  "ojalá": {
+   "g": "hopefully, if only",
+   "t": "expression"
+  },
+  "ocurra": {
+   "g": "occurs (subjunctive of ocurrir)",
+   "t": "verb"
+  },
+  "tras": {
+   "g": "after, following",
+   "t": "preposition"
+  },
+  "mente": {
+   "g": "mind (en mente, in mind)",
+   "t": "noun"
+  },
+  "mecato": {
+   "g": "snacks, treats (Colombian word)",
+   "t": "noun"
+  },
+  "rentando": {
+   "g": "renting (rentar, loan word)",
+   "t": "verb"
+  },
+  "puesto": {
+   "g": "stall, stand",
+   "t": "noun"
+  },
+  "arrendando": {
+   "g": "renting (arrendar)",
+   "t": "verb"
+  },
+  "sancocho": {
+   "g": "hearty Colombian stew",
+   "t": "noun"
+  },
+  "parquear": {
+   "g": "to park (loan word)",
+   "t": "verb"
+  },
+  "sonriendo": {
+   "g": "smiling (sonreír)",
+   "t": "verb"
+  },
+  "desempolva": {
+   "g": "dusts off (desempolvar)",
+   "t": "verb"
+  },
+  "escapan": {
+   "g": "they slip away (escaparse)",
+   "t": "verb"
+  },
+  "desocupado": {
+   "g": "empty, vacant",
+   "t": "adjective"
+  },
+  "arriendo": {
+   "g": "rent (Colombian word)",
+   "t": "noun"
+  },
+  "efectivo": {
+   "g": "cash (en efectivo, in cash)",
+   "t": "noun"
+  },
+  "fiador": {
+   "g": "guarantor for a lease",
+   "t": "noun"
+  },
+  "remata": {
+   "g": "finishes off (rematar)",
+   "t": "verb"
+  },
+  "hágale": {
+   "g": "go ahead, do it (Colombian)",
+   "t": "expression"
+  },
+  "trasteo": {
+   "g": "house move (Colombian word)",
+   "t": "noun"
+  },
+  "bombas": {
+   "g": "balloons (Colombian word)",
+   "t": "noun"
+  },
+  "preguntabas": {
+   "g": "you used to ask (preguntar)",
+   "t": "verb"
+  },
+  "hacías": {
+   "g": "you used to do (hacer)",
+   "t": "verb"
+  },
+  "bienvenido": {
+   "g": "welcome",
+   "t": "expression"
+  },
+  "olvidado": {
+   "g": "forgotten (olvidar)",
+   "t": "adjective"
+  },
+  "fueron": {
+   "g": "they were (ser)",
+   "t": "verb"
+  },
+  "rebusque": {
+   "g": "hustle, making a living anyhow (Colombia)",
+   "t": "noun"
+  },
+  "guayaba": {
+   "g": "guava fruit",
+   "t": "noun"
+  },
+  "exprimidos": {
+   "g": "squeezed (exprimir)",
+   "t": "adjective"
+  },
+  "licuadora": {
+   "g": "blender",
+   "t": "noun"
+  },
+  "arrendó": {
+   "g": "rented out (arrendar)",
+   "t": "verb"
+  },
+  "perdiste": {
+   "g": "you lost (perder)",
+   "t": "verb"
+  },
+  "aparece": {
+   "g": "shows up (aparecer)",
+   "t": "verb"
+  },
+  "ñapa": {
+   "g": "the little free extra (Colombian word)",
+   "t": "noun"
+  },
+  "interesa": {
+   "g": "interests (interesar)",
+   "t": "verb"
+  },
+  "llevo": {
+   "g": "I bring (llevar)",
+   "t": "verb"
+  },
+  "terminarlo": {
+   "g": "to finish it (terminar)",
+   "t": "verb"
+  },
+  "perdidas": {
+   "g": "lost (perder)",
+   "t": "adjective"
+  },
+  "franco": {
+   "g": "day off (de franco, Argentina)",
+   "t": "noun"
+  },
+  "abran": {
+   "g": "they open (subjunctive of abrir)",
+   "t": "verb"
+  },
+  "aprobar": {
+   "g": "to pass the test",
+   "t": "verb"
+  },
+  "horno": {
+   "g": "oven",
+   "t": "noun"
+  },
+  "rebozar": {
+   "g": "to coat in flour, egg and breadcrumbs",
+   "t": "verb"
+  },
+  "nene": {
+   "g": "kid, dear (Argentine address)",
+   "t": "noun"
+  },
+  "aprendo": {
+   "g": "I learn (aprender)",
+   "t": "verb"
+  },
+  "rallado": {
+   "g": "grated (pan rallado, breadcrumbs)",
+   "t": "adjective"
+  },
+  "cumplido": {
+   "g": "compliment",
+   "t": "noun"
+  },
+  "vitel": {
+   "g": "veal (vitel toné, cold veal in tuna sauce)",
+   "t": "noun"
+  },
+  "toné": {
+   "g": "tuna sauce (vitel toné)",
+   "t": "noun"
+  },
+  "hornalla": {
+   "g": "stove burner (Argentine word)",
+   "t": "noun"
+  },
+  "consuela": {
+   "g": "comforts (consolar)",
+   "t": "verb"
+  },
+  "saca": {
+   "g": "takes out (sacar)",
+   "t": "verb"
+  },
+  "errores": {
+   "g": "mistakes",
+   "t": "noun"
+  },
+  "salió": {
+   "g": "came out (salir)",
+   "t": "verb"
+  },
+  "quemada": {
+   "g": "burnt (quemarse)",
+   "t": "adjective"
+  },
+  "lustrados": {
+   "g": "polished, shined (lustrar)",
+   "t": "adjective"
+  },
+  "novia": {
+   "g": "girlfriend",
+   "t": "noun"
+  },
+  "practicó": {
+   "g": "practised (practicar)",
+   "t": "verb"
+  },
+  "anillos": {
+   "g": "rings",
+   "t": "noun"
+  },
+  "anillo": {
+   "g": "ring",
+   "t": "noun"
+  },
+  "muchacho": {
+   "g": "young man",
+   "t": "noun"
+  },
+  "alquilás": {
+   "g": "you rent (voseo of alquilar)",
+   "t": "verb"
+  },
+  "derecha": {
+   "g": "straight, upright",
+   "t": "adjective"
+  },
+  "meter": {
+   "g": "to put in (meter la pata, put your foot in it)",
+   "t": "verb"
+  },
+  "grave": {
+   "g": "serious",
+   "t": "adjective"
+  },
+  "sea": {
+   "g": "be (subjunctive of ser; aunque sea, even if only)",
+   "t": "verb"
+  },
+  "pelar": {
+   "g": "to peel (pelar papas, peel potatoes)",
+   "t": "verb"
+  },
+  "papas": {
+   "g": "potatoes (Latin American word)",
+   "t": "noun"
+  },
+  "campanita": {
+   "g": "little bell",
+   "t": "noun"
+  },
+  "desata": {
+   "g": "unties (desatarse)",
+   "t": "verb"
+  },
+  "llamás": {
+   "g": "you call (voseo of llamar)",
+   "t": "verb"
+  },
+  "ganarse": {
+   "g": "to earn, deserve",
+   "t": "verb"
+  },
+  "reboza": {
+   "g": "coats in breadcrumbs (rebozar)",
+   "t": "verb"
+  },
+  "contada": {
+   "g": "counted (contar)",
+   "t": "adjective"
+  },
+  "milanesa": {
+   "g": "breaded fried cutlet",
+   "t": "noun"
+  },
+  "colgando": {
+   "g": "hanging up (colgar)",
+   "t": "verb"
+  }
  }
 }
