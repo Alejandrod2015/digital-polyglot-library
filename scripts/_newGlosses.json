@@ -7731,6 +7731,50 @@
     "sudada": {
       "g": "sweaty (sudado)",
       "t": "adjective"
+    },
+    "estrena": {
+      "g": "opens for the first time (estrenar)",
+      "t": "verb"
+    },
+    "resumen": {
+      "g": "summary",
+      "t": "noun"
+    },
+    "servidos": {
+      "g": "served, poured (servido)",
+      "t": "adjective"
+    },
+    "subiéndose": {
+      "g": "climbing up onto (subirse)",
+      "t": "verb"
+    },
+    "desdoblando": {
+      "g": "unfolding (desdoblar)",
+      "t": "verb"
+    },
+    "reconocerse": {
+      "g": "to recognise yourself",
+      "t": "verb"
+    },
+    "retrata": {
+      "g": "portrays (retratar)",
+      "t": "verb"
+    },
+    "hubiera": {
+      "g": "had, auxiliary (haber)",
+      "t": "verb"
+    },
+    "cantado": {
+      "g": "sung (cantar)",
+      "t": "verb"
+    },
+    "hacerte": {
+      "g": "to make you (hacer)",
+      "t": "verb"
+    },
+    "comité": {
+      "g": "committee; comité de bienvenida means welcome committee",
+      "t": "noun"
     }
   },
   "spanish-traveler-latam-b2": {
