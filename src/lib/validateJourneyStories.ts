@@ -698,7 +698,12 @@ export function validateJourneyStories(
       const media = port.reduce((a, b) => a + b.n, 0) / (port.length || 1);
       const cuota = anc.length / todas.length;
       const pide = suelo;
-      const unaVez = port.filter((x) => x.n <= 1).length;
+      // Nombrar las de un solo encuentro (pedido del chat del PT B1,
+      // 2026-09-06): al borde del tope, la salida es tejer en el cuerpo LAS
+      // QUE SOLO SALEN UNA VEZ, no repetir las repetidas; sin la lista, el
+      // que arregla va a ciegas.
+      const solasLista = port.filter((x) => x.n <= 1).map((x) => x.word);
+      const unaVez = solasLista.length;
       const okMedia = media >= pide;
       const okCuota = cuota <= TOPE_ANCLADAS;
       const cola = port.length ? unaVez / port.length : 0;
@@ -711,6 +716,7 @@ export function validateJourneyStories(
         ` | ancladas: ${anc.length}/${todas.length} (${Math.round(cuota * 100)}%)` +
         ` | cola: ${unaVez}/${port.length} portables con un solo encuentro (${Math.round(cola * 100)}%` +
         `${topeCola === undefined ? ", sin liston medido para este nivel" : `, tope ${Math.round(topeCola * 100)}%`})` +
+        `${unaVez ? ` | de un solo encuentro: ${solasLista.slice(0, 30).join(", ")}${solasLista.length > 30 ? "…" : ""}` : ""}` +
         `${okCuota ? "" : `; pasan del ${Math.round(TOPE_ANCLADAS * 100)}%`}`);
     }
   }
