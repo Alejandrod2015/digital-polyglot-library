@@ -966,8 +966,8 @@
     {
       "id": "topics-grounded",
       "domain": "journey",
-      "rule": "Cada tema cita una motivacion real escrita por un solicitante",
-      "gate": "process",
+      "rule": "Cada tema cita una motivacion real escrita por un solicitante; en un idioma con menos frases de proposito que temas, el porton admite el modo journey-level declarado (minimo 2 citas verbatim de 2 p...",
+      "gate": "pre-topic-guard.sh",
       "source": "story-rules:topics-grounded (project_topic_naming_rule)"
     },
     {

@@ -239,8 +239,9 @@
     {
       "id": "topics-grounded",
       "gate": "hook",
-      "rule": "Cada tema cita una motivacion real escrita por un solicitante",
-      "memory": "project_topic_naming_rule"
+      "rule": "Cada tema cita una motivacion real escrita por un solicitante; en un idioma con menos frases de proposito que temas, el porton admite el modo journey-level declarado (minimo 2 citas verbatim de 2 personas distintas para el journey entero)",
+      "memory": "project_topic_naming_rule",
+      "hook": "pre-topic-guard.sh"
     },
     {
       "id": "canonical-validation-gate",
