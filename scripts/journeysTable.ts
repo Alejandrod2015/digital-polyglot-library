@@ -164,12 +164,25 @@ async function main() {
     },
     orderBy: [{ status: "asc" }, { language: "asc" }, { name: "asc" }],
   });
+  // Orden de lectura (2026-09-06, pedido del usuario): live primero, y dentro
+  // por idioma, variante, nivel ascendente y tipo, para que los niveles de una
+  // misma variante queden contiguos y se vea la escalera del catalogo.
+  const NIVEL = ["a0", "a1", "a2", "b1", "b2", "c1", "c2"];
+  const nivelDe = (l: string[]) =>
+    Math.min(...l.map((x) => (NIVEL.indexOf(x) === -1 ? 99 : NIVEL.indexOf(x))), 99);
+  js.sort((a, b) =>
+    a.status.localeCompare(b.status) ||
+    a.language.localeCompare(b.language) ||
+    a.variant.localeCompare(b.variant) ||
+    a.name.localeCompare(b.name) ||
+    (nivelDe(a.levels) - nivelDe(b.levels))
+  );
   console.log(
     flag("archived")
       ? "AVISO: incluye ARCHIVED porque se pidio con --archived. Sin ese flag, solo live + draft."
       : "live + draft (los archivados quedan fuera; --archived los incluye)"
   );
-  console.log("Estado|Journey|Idioma/Var|Nivel|Estructura|Estilo|%Citado|NoNativos|Voz narrador|Voz práctica|Hist.pub|Narr|Covers|Ambient|Clips");
+  console.log("Estado|Idioma|Variante|Tipo|Nivel|Estructura|Estilo|%Citado|NoNativos|Voz narrador|Voz práctica|Hist.pub|Narr|Covers|Ambient|Clips");
   const notas: string[] = [];
   for (const j of js) {
     const S = j.stories;
@@ -200,7 +213,7 @@ async function main() {
     // El estado desempata las dos filas que comparten tipo, idioma, variante y
     // nivel (los dos Expat alemanes C1: Berlín live, Hamburgo draft).
     if (nn.n) notas.push(`${est} ${j.name} ${j.language}/${j.variant} ${j.levels.join("/")}: ${nn.who}`);
-    console.log(`${est}|${j.name}|${j.language}/${j.variant}|${j.levels.join("/") || "-"}|${estructura}|${estilo}|${citado}|${nn.n}|${vname(mode(S.map((s) => s.voiceId)))}|${vname(mode(S.map((s) => s.practiceVoiceId)))}|${pub}/${S.length}|${narr}|${cov}|${amb}/${S.length}|${clips}`);
+    console.log(`${est}|${j.language}|${j.variant}|${j.name}|${j.levels.join("/") || "-"}|${estructura}|${estilo}|${citado}|${nn.n}|${vname(mode(S.map((s) => s.voiceId)))}|${vname(mode(S.map((s) => s.practiceVoiceId)))}|${pub}/${S.length}|${narr}|${cov}|${amb}/${S.length}|${clips}`);
   }
   if (notas.length) {
     console.log(`\nNo nativos (regla dura: el objetivo es 0). Quiénes son:`);
