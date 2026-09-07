@@ -420,8 +420,8 @@
     {
       "id": "feedback_check_every_email_link",
       "domain": "comms",
-      "rule": "Ningún correo se da por listo sin pedir cada uno de sus enlaces contra producción; el comprobador es scripts/_checkEmailLinks.ts",
-      "gate": "scripts/_checkEmailLinks.ts",
+      "rule": "Ningún correo se da por listo sin pedir cada uno de sus enlaces contra producción; el comprobador es scripts/checkEmailLinks.ts",
+      "gate": "pre-bash-guard.sh",
       "source": "memory:feedback_check_every_email_link.md"
     },
     {
@@ -883,7 +883,7 @@
       "id": "project_journey_ladder_no_gaps",
       "domain": "journey",
       "rule": "\"Prohibido crear un journey que deje un peldano hueco en su escalera (idioma, variante, tipo)\"",
-      "gate": "src/lib/journeyLadder.ts",
+      "gate": "process",
       "source": "memory:project_journey_ladder_no_gaps.md"
     },
     {
@@ -1326,6 +1326,13 @@
       "rule": "Critical differences between @clerk/expo hooks and Clerk REST API that cause silent failures",
       "gate": "none",
       "source": "memory:project_clerk_expo_api_gotchas.md"
+    },
+    {
+      "id": "project_cross_session_delivery",
+      "domain": "process",
+      "rule": "Los mensajes entre sesiones se entregan AL CERRAR el turno del receptor; un ejecutor bloqueado esperando respuesta tiene que cerrar su turno o no la recibira nunca",
+      "gate": "process",
+      "source": "memory:project_cross_session_delivery.md"
     },
     {
       "id": "project_eas_token_and_submit",
