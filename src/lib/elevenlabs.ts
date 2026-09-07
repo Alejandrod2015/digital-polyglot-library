@@ -1318,32 +1318,62 @@ async function ttsSegment(args: {
   // por contenido del TEXTO, así que un fragmento malo cacheado se serviría
   // eternamente (fue el caso de "dobra-se", que volvía toma tras toma).
   const contentGate = args.contentGate === true && canonForContent(args.text).split(" ").length >= 4;
+  // COMPUESTO con el gate de entonación (2026-09-07). La primera versión de
+  // este bloque devolvía la toma en cuanto DECÍA lo correcto, y ese `return`
+  // se saltaba el gate F0 de más abajo: desde que el gate de contenido se
+  // forzó en los renders de narrador (2026-08-17), NINGÚN fragmento de
+  // narrador medía la entonación, y los títulos volvieron a salir preguntando
+  // (el usuario lo oyó en el B1 latam; medido +4.55 st, umbral 4.0). Una toma
+  // buena tiene que decir lo correcto Y cerrar: aquí se exigen las dos cosas
+  // a la vez, con la misma semántica de agotamiento que cada gate tenía solo
+  // (contenido agotado: se apunta para REESCRIBIR; entonación agotada: se
+  // queda la que menos sube, cacheada, como en el bloque de abajo).
+  const uptalkComp = args.antiUptalk === true && isStatementForGate(softened);
   if (contentGate) {
     let ultima: Buffer | null = null;
     let ultimoOido = "";
     let ultimoDetalle = "";
-    for (let intento = 0; intento < CONTENT_GATE_MAX_TAKES; intento++) {
+    let mejorSube: { buf: Buffer; pitch: number } | null = null;
+    let contentOkAlgunaVez = false;
+    const MAX_TOMAS = Math.max(CONTENT_GATE_MAX_TAKES, F0_GATE_MAX_TAKES);
+    for (let intento = 0; intento < MAX_TOMAS; intento++) {
       const buf = intento === 0 ? ((await readCache()) ?? (await renderFresh())) : await renderFresh();
       if (!buf) break;
       ultima = buf;
       const oido = await transcribeSegmentText(buf, args.apiKey, args.language);
-      if (oido === null) return buf; // sin STT no se bloquea nada
-      const div = contentDivergence(args.text, oido);
-      if (!div) {
+      const div = oido === null ? null : contentDivergence(args.text, oido);
+      if (div) {
+        ultimoOido = oido ?? "";
+        ultimoDetalle = div;
+        console.log(`[elevenlabs] contenido: toma ${intento + 1} diverge (${div}) ${cacheKey}`);
+        continue; // una toma que no dice lo suyo no compite, suene como suene
+      }
+      contentOkAlgunaVez = true;
+      if (!uptalkComp) {
         if (intento > 0) await writeCacheBuffer(buf);
         return buf;
       }
-      ultimoOido = oido;
-      ultimoDetalle = div;
-      console.log(`[elevenlabs] contenido: toma ${intento + 1} diverge (${div}) ${cacheKey}`);
+      const pitch = await measureFinalPitchSt(buf);
+      if (pitch === null || pitch < F0_UPTALK_ST) {
+        if (intento > 0) await writeCacheBuffer(buf);
+        return buf;
+      }
+      console.log(`[elevenlabs] anti-uptalk: toma ${intento + 1} dice lo suyo pero sube (+${pitch.toFixed(1)} st), re-tirando ${cacheKey}`);
+      if (!mejorSube || pitch < mejorSube.pitch) mejorSube = { buf, pitch };
     }
-    if (ultima) {
+    if (mejorSube) {
+      await writeCacheBuffer(mejorSube.buf);
+      console.log(`[elevenlabs] anti-uptalk: agotadas las tomas con contenido ok; me quedo con la que menos sube (+${mejorSube.pitch.toFixed(1)} st) ${cacheKey}`);
+      return mejorSube.buf;
+    }
+    if (ultima && !contentOkAlgunaVez) {
       args.contentMisses?.push({
         text: args.text, voiceId: args.voiceId, heard: ultimoOido, detalle: ultimoDetalle,
       });
-      console.log(`[elevenlabs] contenido: AGOTADAS ${CONTENT_GATE_MAX_TAKES} tomas; hay que REESCRIBIR la oración`);
+      console.log(`[elevenlabs] contenido: AGOTADAS ${MAX_TOMAS} tomas; hay que REESCRIBIR la oración`);
       return ultima;
     }
+    if (ultima) return ultima;
   }
 
   // Fast path: no gate → cache read, else one fresh render (unchanged).
