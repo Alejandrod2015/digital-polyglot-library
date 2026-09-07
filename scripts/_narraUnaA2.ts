@@ -24,8 +24,19 @@ import { generateWordTimingsForStory } from "../src/lib/audioWordTimings";
 import * as fs from "fs";
 import * as path from "path";
 
-const JOURNEY = "cmtgelq560007j84n3ujx9bpd";
 import { VOZ_POR_TEMA } from "./_a2Voces";
+import { VOZ_POR_TEMA_B1_LATAM } from "./_b1LatamVoces";
+
+// Ampliado el 2026-09-07 para el B1 latam (pedir-una-vez): --journey b1-latam
+// usa su journey, su mapa de voces y su bundle de glosas; sin flag, el A2.
+const PERFILES: Record<string, { journey: string; voces: Record<string, string>; bundle: string }> = {
+  a2: { journey: "cmtgelq560007j84n3ujx9bpd", voces: VOZ_POR_TEMA, bundle: "spanish-traveler-latam-a2" },
+  "b1-latam": { journey: "cmtmylg7k0007321h6t7njesx", voces: VOZ_POR_TEMA_B1_LATAM, bundle: "spanish-traveler-latam-b1" },
+};
+const pi = process.argv.indexOf("--journey");
+const PERFIL = PERFILES[pi >= 0 ? process.argv[pi + 1] : "a2"];
+if (!PERFIL) throw new Error("perfil desconocido; usa --journey a2 | b1-latam");
+const JOURNEY = PERFIL.journey;
 
 const prisma = new PrismaClient();
 
@@ -43,7 +54,7 @@ const prisma = new PrismaClient();
     throw new Error(`${slug} YA tiene audio; para rehacerlo pasa --rehacer`);
   }
 
-  const voiceId = VOZ_POR_TEMA[s.topic];
+  const voiceId = PERFIL.voces[s.topic];
   if (!voiceId) throw new Error(`sin narrador para el tema ${s.topic}`);
 
   // ORDEN DE NARRACION POR TEMA (regla dura, 2026-09-02). Primero la muestra
@@ -77,7 +88,7 @@ const prisma = new PrismaClient();
   // Ninguna historia se narra con glosas copiadas sin leer: el audio es lo caro
   // y es justo donde el error se vuelve irreversible. Ver checkGlossesReviewed.
   const sets = await prisma.tapGlossSet.findMany({
-    where: { bundle: "spanish-traveler-latam-a2" },
+    where: { bundle: PERFIL.bundle },
     select: { glosses: true },
   });
   const pend = sets.reduce(
@@ -88,7 +99,7 @@ const prisma = new PrismaClient();
   if (pend > 0) {
     throw new Error(
       `${pend} glosas copiadas sin leer en este paquete. Leelas antes de narrar:\n` +
-      `  npx tsx scripts/reviewCopiedGlosses.ts spanish-traveler-latam-a2 --pend`
+      `  npx tsx scripts/reviewCopiedGlosses.ts ${PERFIL.bundle} --pend`
     );
   }
 
