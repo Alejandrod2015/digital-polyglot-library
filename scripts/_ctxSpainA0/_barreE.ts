@@ -18,7 +18,7 @@ const saleLiteral = (texto: string, clave: string) =>
   const hs = await p.journeyStory.findMany({ select: { slug: true, title: true, text: true } });
   const texto = new Map(hs.map((h) => [h.slug, `${h.title}. ${h.text}`.toLowerCase()]));
 
-  const porBundle = new Map<string, { total: number; conteo: Map<string, number> }>();
+  const porBundle = new Map<string, { total: number; conteo: Map<string, number>; porHistoria: Map<string, number> }>();
   for (const f of filas) {
     if (!f.slug) continue;
     const t = texto.get(f.slug);
@@ -26,20 +26,38 @@ const saleLiteral = (texto: string, clave: string) =>
     const enTexto = new Set([...t.matchAll(TOCABLE)].map((m) => m[0]));
     for (const w of Object.keys(f.glosses as object)) {
       if (enTexto.has(w) || saleLiteral(t, w)) continue;
-      const b = porBundle.get(f.bundle) ?? { total: 0, conteo: new Map() };
+      const b = porBundle.get(f.bundle) ?? { total: 0, conteo: new Map(), porHistoria: new Map() };
       b.total++; b.conteo.set(w, (b.conteo.get(w) ?? 0) + 1);
+      b.porHistoria.set(f.slug, (b.porHistoria.get(f.slug) ?? 0) + 1);
       porBundle.set(f.bundle, b);
     }
   }
 
-  let total = 0;
+  // No todo lo que no sale tal cual esta muerto. Una glosa puede estar
+  // guardada en FORMA DE CITA: el infinitivo pronominal ("girarse") cuando el
+  // texto dice "se gira", o una expresion cuyas piezas van separadas ("sonar
+  // a", "hacer una excepcion"). Esas siguen vivas y borrarlas seria el mismo
+  // error que el detector viejo cometia con "em voz alta". Se separan aqui
+  // para que nadie las meta en un borrado masivo.
+  const esCita = (w: string) => /\s/.test(w) || /(?:se|me|te|nos|os)$/.test(w);
+
+  let total = 0, citas = 0;
   const orden = [...porBundle.entries()].sort((a, b) => b[1].total - a[1].total);
   for (const [bundle, b] of orden) {
     total += b.total;
+    const nCitas = [...b.conteo.entries()].filter(([w]) => esCita(w)).reduce((a, [, n]) => a + n, 0);
+    citas += nCitas;
     const top = [...b.conteo.entries()].sort((x, y) => y[1] - x[1]).slice(0, 6)
       .map(([w, n]) => `${w} x${n}`).join(", ");
-    console.log(`${String(b.total).padStart(4)}  ${bundle}\n      ${top}`);
+    console.log(`${String(b.total).padStart(4)}  ${bundle}   (${b.total - nCitas} muertas, ${nCitas} en forma de cita)\n      ${top}`);
+    // Repartidas o concentradas: no es lo mismo deuda de edicion esparcida que
+    // una historia glosada contra un texto que ya no existe.
+    const hist = [...b.porHistoria.entries()].sort((x, y) => y[1] - x[1]);
+    if (b.total >= 10) {
+      console.log(`      en ${hist.length} historias · ${hist.slice(0, 5).map(([s, n]) => `${s} x${n}`).join(", ")}`);
+    }
   }
   console.log(`\nhuerfanas en el catalogo: ${total} en ${porBundle.size} bundles`);
+  console.log(`  ${total - citas} no salen de ninguna forma · ${citas} estan en forma de cita y NO se borran`);
   await p.$disconnect();
 })();
