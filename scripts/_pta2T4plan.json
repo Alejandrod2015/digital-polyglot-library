@@ -1,0 +1,34 @@
+{
+  "tipo": "traveler",
+  "nivel": "a2",
+  "variante": "brazil",
+  "registro": "sobrio y paciente, sin dramatismo",
+  "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+  "recursos": "A2: símil simple (la floresta como una pared, la duna como una montaña de arena) y flashback marcado por el calendario dicho en voz alta (\"isso aqui seca em maio\"). Heredados: repetición rítmica en la cuenta de los días, contraste con pero, causalidad explícita, imagen concreta de remate (el agua hasta la cintura y la hora del autobús). Nada de B1 o superior: el final no queda abierto, se cierra en una hora concreta.",
+  "historias": [
+    {
+      "slot": "lencois-maranhenses#0",
+      "quiere": "Renata quiere que la excursión salga hoy, con tres días de margen y el billete de vuelta comprado.",
+      "impide": "Lleva lloviendo desde la madrugada y en enero nadie puede prometerle nada.",
+      "cuesta": "Pedir la verdad en vez de la esperanza barata, y pagar otra noche sin garantía ninguna.",
+      "cambia": "Deja de contar días y empieza a esperar; por la mañana lo que aparece detrás de la lluvia no es el sol, es Damião con dos remos.",
+      "emocion": "impaciencia que aprende a esperar"
+    },
+    {
+      "slot": "lencois-maranhenses#1",
+      "quiere": "Renata quiere cruzar y llegar a las dunas de una vez.",
+      "impide": "El río va alto y a mitad de la travesía el viento decide por ellos.",
+      "cuesta": "Obedecer sin discutir cuando le gritan que baje, y volver con el día perdido.",
+      "cambia": "Nada se resuelve: vuelven sin hablar y su pregunta sobre mañana se queda sin respuesta.",
+      "emocion": "empuje que se topa con algo que no negocia"
+    },
+    {
+      "slot": "lencois-maranhenses#2",
+      "quiere": "Renata quiere ver la laguna antes de coger el autobús de las dos.",
+      "impide": "Nada, por primera vez en tres días; el obstáculo es que ya casi no queda tiempo.",
+      "cuesta": "Aceptar que lo que ve no es lo que vino a buscar, y que quien se lo enseña lo tiene todos los días.",
+      "cambia": "Se mete en el agua en un miércoles cualquiera y lo aprovecha como si fuera el último; el sitio seguirá igual sin ella.",
+      "emocion": "alegría con fecha de caducidad"
+    }
+  ]
+}
