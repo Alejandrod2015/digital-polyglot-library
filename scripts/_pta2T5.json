@@ -1,0 +1,382 @@
+[
+  {
+    "topic": "campo-grande",
+    "slotIndex": 0,
+    "slug": "tres-guiches-abertos",
+    "title": "Três guichês abertos",
+    "arcType": "late-reveal",
+    "synopsis": "Chega ao guichê com o horário impresso na mão e descobre que aquele papel deixou de valer em maio, sem que ninguém tivesse por que avisá-la. Quem vende as passagens conhece três saídas possíveis e não esconde nenhuma, nem a que pode custar-lhe a conexão da manhã seguinte.",
+    "text": "Na estação de Campo Grande há doze guichês e três abertos. Um alto-falante repete um nome e depois volta o silêncio. Renata chega com o horário impresso na mão. Cleide vende passagens ali desde que a estação abriu.\n\n“O de dez da noite não sai mais”, avisa Cleide. “Mudou em maio.” Renata não sabe o que fazer com um papel que já não vale. “Eu devo estar em Bonito amanhã cedo”, responde ela.\n\n“Então a senhora nunca chega de ônibus direto”, diz Cleide. “O próximo sai às seis. O seguinte, ao meio-dia.” “Mas tem o último de hoje, que passa por Aquidauana.”\n\nRenata quer o de hoje e pergunta quanto custa. Custa mais e chega tarde. “A senhora pode perder a conexão”, avisa Cleide.\n\nUm táxi buzina na porta e um homem apressado corre para o guichê. Renata olha o documento na mão e decide. “Eu vou nesse.”\n\nÀs onze embarca, com o motorista já ao volante. O ônibus sai da cidade e entra na rodovia. Cleide fecha o guichê.",
+    "vocab": [
+      {
+        "word": "estação",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Station, the building where buses arrive and leave."
+      },
+      {
+        "word": "horário",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Timetable, the list of times things leave at."
+      },
+      {
+        "word": "documento",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Official paper that proves who you really are."
+      },
+      {
+        "word": "rodovia",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Highway, the wide road between one city and another."
+      },
+      {
+        "word": "motorista",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Driver, the person at the wheel of a vehicle."
+      },
+      {
+        "word": "táxi",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Taxi, a car you pay to take you somewhere."
+      },
+      {
+        "word": "embarcar",
+        "surface": "embarca",
+        "type": "verb",
+        "definition": "To board, get onto a bus, boat or plane."
+      },
+      {
+        "word": "chegar",
+        "surface": "chega",
+        "type": "verb",
+        "definition": "To arrive, reach the place you were going to."
+      },
+      {
+        "word": "sair",
+        "surface": "sai",
+        "type": "verb",
+        "definition": "To leave, go out from where you were."
+      },
+      {
+        "word": "perder",
+        "type": "verb",
+        "definition": "To miss a connection, or to lose something you had."
+      },
+      {
+        "word": "saber",
+        "surface": "sabe",
+        "type": "verb",
+        "definition": "To know a fact, or to know how to do it."
+      },
+      {
+        "word": "poder",
+        "surface": "pode",
+        "type": "verb",
+        "definition": "To be able to do something, or to be allowed."
+      },
+      {
+        "word": "dever",
+        "surface": "devo",
+        "type": "verb",
+        "definition": "To have to do something you promised or owe."
+      },
+      {
+        "word": "querer",
+        "surface": "quer",
+        "type": "verb",
+        "definition": "To want something, to choose it over the rest."
+      },
+      {
+        "word": "custar",
+        "surface": "custa",
+        "type": "verb",
+        "definition": "To cost a certain amount of money to buy."
+      },
+      {
+        "word": "apressado",
+        "type": "adjective",
+        "definition": "In a hurry, moving faster than the people around."
+      },
+      {
+        "word": "próximo",
+        "type": "adjective",
+        "definition": "Next, the one that comes right after this one."
+      },
+      {
+        "word": "último",
+        "type": "adjective",
+        "definition": "Last, with nothing coming after it that day."
+      },
+      {
+        "word": "seguinte",
+        "type": "adjective",
+        "definition": "The following one, coming after in the same order."
+      },
+      {
+        "word": "nunca",
+        "type": "adverb",
+        "definition": "Never, at no time and in no case."
+      }
+    ]
+  },
+  {
+    "topic": "campo-grande",
+    "slotIndex": 1,
+    "slug": "o-homem-que-ronca-atras",
+    "title": "O homem que ronca",
+    "arcType": "daily-encounter",
+    "synopsis": "Doze horas de estrada numa poltrona estreita, com um desconhecido dormindo ao lado desde antes de a cidade acabar e o corredor cheio de bagagem. Não passa nada digno de contar, e é justamente na conversa do espelho que a noite acaba valendo a pena.",
+    "text": "O ônibus cruza a avenida vazia e para no último semáforo. O motorista liga a seta e ninguém vem atrás. Um automóvel buzina duas vezes, por nada.\n\nA poltrona de Renata é estreita. O corredor é apertado e o homem do lado dorme antes do cruzamento. Ronca a noite inteira.\n\nEla se levanta duas vezes e senta de novo. “Dá licença”, pede, na terceira. O homem se move sem acordar e ela passa.\n\nA estrada é longa e o ônibus vai lento. Renata se segura no encosto e olha abaixo, pela janela. “A senhora não dorme?”, pergunta o motorista no espelho.\n\n“Não consigo”, responde ela. “Vai continuar assim até Aquidauana”, avisa ele. “Depois a estrada abre e eu ganho meia hora.”\n\n“A senhora viaja muito?” “Faz dois meses. E o senhor?” “Faz dezoito anos, três noites por semana.”\n\nO ônibus segue ocupado e escuro. Renata dorme vinte minutos e acorda com a buzina.",
+    "vocab": [
+      {
+        "word": "avenida",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Avenue, a wide street running through a city."
+      },
+      {
+        "word": "semáforo",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Traffic light that tells drivers to stop or go."
+      },
+      {
+        "word": "seta",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Indicator light that shows which way you turn."
+      },
+      {
+        "word": "buzina",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Horn on a vehicle, used to warn other drivers."
+      },
+      {
+        "word": "automóvel",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Motor car, the ordinary vehicle people drive around in."
+      },
+      {
+        "word": "cruzamento",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Crossroads, where two streets cut across each other."
+      },
+      {
+        "word": "roncar",
+        "surface": "Ronca",
+        "type": "verb",
+        "definition": "To snore, breathe loudly while you are asleep."
+      },
+      {
+        "word": "sentar",
+        "surface": "senta",
+        "type": "verb",
+        "definition": "To sit down on a seat or a chair."
+      },
+      {
+        "word": "levantar",
+        "surface": "levanta",
+        "type": "verb",
+        "definition": "To stand up from where you were sitting."
+      },
+      {
+        "word": "segurar",
+        "surface": "segura",
+        "type": "verb",
+        "definition": "To hold on to something so you stay steady."
+      },
+      {
+        "word": "viajar",
+        "surface": "viaja",
+        "type": "verb",
+        "definition": "To travel, go from one place to another."
+      },
+      {
+        "word": "passar",
+        "surface": "passa",
+        "type": "verb",
+        "definition": "To go past somebody or through a narrow space."
+      },
+      {
+        "word": "continuar",
+        "type": "verb",
+        "definition": "To go on the same way without changing anything."
+      },
+      {
+        "word": "mover",
+        "surface": "move",
+        "type": "verb",
+        "definition": "To shift your body or an object a little."
+      },
+      {
+        "word": "apertado",
+        "type": "adjective",
+        "definition": "Tight, with barely enough room to get through."
+      },
+      {
+        "word": "lento",
+        "type": "adjective",
+        "definition": "Slow, taking longer than it normally would take."
+      },
+      {
+        "word": "longo",
+        "surface": "longa",
+        "type": "adjective",
+        "definition": "Long, going on for a great distance or time."
+      },
+      {
+        "word": "estreito",
+        "surface": "estreita",
+        "type": "adjective",
+        "definition": "Narrow, with little width from side to side."
+      },
+      {
+        "word": "ocupado",
+        "type": "adjective",
+        "definition": "Full, with every seat already taken by somebody."
+      },
+      {
+        "word": "abaixo",
+        "type": "adverb",
+        "definition": "Below, lower down than where you are now."
+      }
+    ]
+  },
+  {
+    "topic": "campo-grande",
+    "slotIndex": 2,
+    "slug": "volto-pelo-caderno",
+    "title": "Volto pelo caderno",
+    "arcType": "reframe-turn",
+    "synopsis": "Um caderno de duas páginas por dia não vale nada para ninguém mais, e é a única coisa que ela não pode comprar de novo em nenhuma cidade do caminho. Entre a conexão salva e as três horas de espera há um preço que ela paga sem discutir, e o homem que o recebe acha que é dinheiro demais por sete minutos de rua vazia.",
+    "text": "Renata desce às seis. O caderno ficou na poltrona. Não tem metrô nem trem aqui, e o da garagem sai às nove.\n\nEla corre até a esquina: uma bicicleta, um homem numa moto. “Quanto custa até a garagem?”, pergunta. “Depende da pressa”, responde ele. “Da senhora ou minha?” Ele aponta a motocicleta.\n\nA rua é larga, e o vento da manhã bate na cara. Ele freia na porta em sete minutos. “Foi barato”, diz ela. “Foi curto”, responde ele. Dois homens descarregam malas e carregam outras. “Já limparam aquele?”, pergunta ela.\n\n“Aquele de Campo Grande, das seis?”, pergunta Renata. “Terceiro da fila”, responde um deles. “Já limpamos, mas ninguém mexeu.” Entra no primeiro por engano; o caderno está lá.\n\nFaz dois meses um rapaz escreveu ali a primeira palavra. Aquidauana não é famosa, e ninguém vê o que ela vê. Renata ganha o das nove por doze minutos.\n\n“Valeu mesmo”, diz ao da moto, e paga o dobro. “Não vale o dobro”, responde ele. “Hoje vale”, diz ela. “Estava tudo aqui dentro.”",
+    "vocab": [
+      {
+        "word": "garagem",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Depot where the buses are parked and cleaned."
+      },
+      {
+        "word": "bicicleta",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Bicycle, the two-wheeled vehicle you move by pedalling."
+      },
+      {
+        "word": "moto",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Motorbike, the short everyday word for a motorcycle."
+      },
+      {
+        "word": "motocicleta",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Motorcycle, said in full on signs and documents."
+      },
+      {
+        "word": "metro",
+        "surface": "metrô",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Underground railway that runs beneath a big city."
+      },
+      {
+        "word": "trem",
+        "type": "noun",
+        "anchor": true,
+        "definition": "Train, the line of carriages that runs on rails."
+      },
+      {
+        "word": "descarregar",
+        "surface": "descarregam",
+        "type": "verb",
+        "definition": "To unload, take the bags or goods off something."
+      },
+      {
+        "word": "carregar",
+        "surface": "carregam",
+        "type": "verb",
+        "definition": "To load, put bags or goods onto something."
+      },
+      {
+        "word": "frear",
+        "surface": "freia",
+        "type": "verb",
+        "definition": "To brake, slow a vehicle until it stops."
+      },
+      {
+        "word": "correr",
+        "surface": "corre",
+        "type": "verb",
+        "definition": "To run, move fast on your own feet."
+      },
+      {
+        "word": "ganhar",
+        "surface": "ganha",
+        "type": "verb",
+        "definition": "To catch something just in time, or to win it."
+      },
+      {
+        "word": "entrar",
+        "surface": "entra",
+        "type": "verb",
+        "definition": "To go inside a place or a vehicle."
+      },
+      {
+        "word": "ver",
+        "surface": "vê",
+        "type": "verb",
+        "definition": "To see something with your own two eyes."
+      },
+      {
+        "word": "valer",
+        "surface": "vale",
+        "type": "verb",
+        "definition": "To be worth a certain amount to somebody."
+      },
+      {
+        "word": "apontar",
+        "surface": "aponta",
+        "type": "verb",
+        "definition": "To point at something so the other person looks."
+      },
+      {
+        "word": "primeiro",
+        "type": "adjective",
+        "definition": "First, coming before all the others in order."
+      },
+      {
+        "word": "terceiro",
+        "type": "adjective",
+        "definition": "Third, coming after the first and the second."
+      },
+      {
+        "word": "curto",
+        "type": "adjective",
+        "definition": "Short, less than you had expected it to be."
+      },
+      {
+        "word": "largo",
+        "surface": "larga",
+        "type": "adjective",
+        "definition": "Wide, with plenty of room from side to side."
+      },
+      {
+        "word": "famoso",
+        "surface": "famosa",
+        "type": "adjective",
+        "definition": "Famous, known by people who have never been there."
+      }
+    ]
+  }
+]

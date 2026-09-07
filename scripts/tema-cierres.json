@@ -1779,6 +1779,70 @@
       "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
   },
+  "cmtrcpgso00073232h8vaf7na#campo-grande": {
+    "cerrado": "2026-09-07T19:49:55.898Z",
+    "hash": "df46f46178f8222c",
+    "historias": [
+      "campo-grande#0 tres-guiches-abertos",
+      "campo-grande#1 o-homem-que-ronca-atras",
+      "campo-grande#2 volto-pelo-caderno"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"cansado y atento, con la cortesía de quien pide favores\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 92% (solo avisa)",
+      "acotacion dominante bajo tope (\"responde\" 33%)",
+      "arranques de parrafo variados (mas repetido \"a\", 21%)",
+      "densidad 8.1 palabras por oracion (techo 13 en a2)",
+      "seguidilla 20/54 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 15 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.17 sobre 42 plazas · 35 salen una sola vez | ancladas: 18/60 (30%) | cola: 35/42 portables con un solo encuentro (83%, tope 80%) | de un solo encuentro: embarca, chega, perder, sabe, pode, devo, quer, apressado, próximo, seguinte, nunca, Ronca, senta, levanta, segura, viaja, continuar, move, apertado, lento, longa, estreita, ocupado, abaixo, descarregam, carregam, freia, ganha, vê, aponta…",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: El detector de habla no encontro reparto en PT. Sin nombres no se puede decir quien es el protagonista: arregla HABLA_POR_IDIOMA.",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "traveler",
+      "nivel": "a2",
+      "variante": "brazil",
+      "registro": "cansado y atento, con la cortesía de quien pide favores",
+      "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+      "recursos": "A2: flashback marcado (el caderno abierto devuelve el primer día del viaje) y símil simple. Heredados: repetición rítmica en las tres salidas que Cleide enumera, contraste con pero, causalidad explícita, gancho final literal, imagen concreta de remate. Deliberadamente NO se repite el espejo concreto de los temas 2 y 3: tres temas seguidos con el mismo recurso serían estructura clónica entre temas.",
+      "historias": [
+        {
+          "slot": "campo-grande#0",
+          "quiere": "Renata quiere el autobús de las diez de la noche para llegar a Bonito por la mañana.",
+          "impide": "Ese autobús dejó de existir en mayo y su horario impreso ya no vale nada.",
+          "cuesta": "Elegir entre tres salidas sabiendo que la que le sirve puede costarle la conexión.",
+          "cambia": "Deja de agarrarse al papel y elige con la información que le dan; embarca a las once sin garantía.",
+          "emocion": "prisa que acepta el riesgo"
+        },
+        {
+          "slot": "campo-grande#1",
+          "quiere": "Renata quiere dormir doce horas de carretera en un asiento estrecho.",
+          "impide": "El hombre de al lado ronca desde antes de que acabe la ciudad y el pasillo está lleno.",
+          "cuesta": "Pedir paso tres veces y aguantar despierta lo que nadie va a compensarle.",
+          "cambia": "No cambia nada del viaje: cambia con quién lo pasa, porque la conversación del espejo convierte una noche perdida en una noche acompañada.",
+          "emocion": "incomodidad que se vuelve compañía"
+        },
+        {
+          "slot": "campo-grande#2",
+          "quiere": "Renata quiere recuperar el caderno de dos meses que dejó en la poltrona.",
+          "impide": "No hay metro ni tren y el autobús a la cochera no sale hasta las nueve.",
+          "cuesta": "Pagar el doble a un desconocido por siete minutos de calle vacía.",
+          "cambia": "Lo recupera y paga de más a propósito; lo que valía no era el trayecto, y quien lo cobra lo dice en voz alta.",
+          "emocion": "urgencia que se vuelve gratitud"
+        }
+      ]
+    }
+  },
   "cmtrcpgso00073232h8vaf7na#jericoacoara": {
     "cerrado": "2026-09-07T15:15:26.701Z",
     "hash": "a2a448028e22d678",
