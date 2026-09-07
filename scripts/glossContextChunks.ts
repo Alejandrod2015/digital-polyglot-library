@@ -282,10 +282,17 @@ function saleLiteral(texto: string, clave: string): boolean {
 /** Reescribe el inglés de los trozos QUE YA ESTÁN, sin tocar el resto de la
  *  capa. Es lo que hay que usar cuando un trozo ya escrito se pasa de largo:
  *  `escribe` no pisa lo que ya tiene `c`, y `--rehaz` arrasa tambien la capa
- *  que escribió otra sesión. */
-async function aprieta(bundle: string, dir: string) {
+ *  que escribió otra sesión.
+ *
+ *  POR DEFECTO SOLO TOCA LO QUE INCUMPLE el tope (inglés de más de `nEs + 3`
+ *  palabras, que es lo que mide `checkGlossVariants`). Sin ese freno pisa
+ *  también las traducciones ajenas que estaban bien: en spanish-friends me
+ *  reescribió 27 cuando las mías eran 7, porque un trozo escrito por otra
+ *  sesión puede tener el mismo texto que uno mío. `--todo` levanta el freno,
+ *  y solo vale en un bundle cuya capa entera sea tuya. */
+async function aprieta(bundle: string, dir: string, todo: boolean) {
   const { filas } = await cargar(bundle);
-  let n = 0;
+  let n = 0, respetados = 0;
   for (const f of filas) {
     if (!f.slug) continue;
     const fichero = `${dir}/${f.slug}.json`;
@@ -293,8 +300,10 @@ async function aprieta(bundle: string, dir: string) {
     const EN = JSON.parse(fs.readFileSync(fichero, "utf8")) as Record<string, string>;
     let tocada = false;
     for (const v of Object.values(f.glosses) as Array<{ c?: { es?: string; en?: string } }>) {
-      const es = v?.c?.es;
-      if (!es || !EN[es] || EN[es] === v.c!.en) continue;
+      const es = v?.c?.es, en = v?.c?.en;
+      if (!es || !EN[es] || EN[es] === en) continue;
+      const pasa = (en ?? "").split(/\s+/).filter(Boolean).length > es.split(/\s+/).length + 3;
+      if (!todo && !pasa) { respetados++; continue; }
       v.c!.en = EN[es];
       tocada = true; n++;
     }
@@ -303,7 +312,7 @@ async function aprieta(bundle: string, dir: string) {
       where: { bundle_slug: { bundle, slug: f.slug } }, data: { glosses: f.glosses as never },
     });
   }
-  console.log(`ingleses reescritos en sitio: ${n}`);
+  console.log(`ingleses reescritos en sitio: ${n}${todo ? " (--todo)" : ` · ${respetados} distintos pero dentro del tope, respetados`}`);
 }
 
 /** Las palabras glosadas que NO caen en ningún trozo, cada una con la oración
@@ -380,7 +389,7 @@ if (require.main === module) {
     else if (cmd === "faltan") await faltanCmd(bundle, arg);
     else if (cmd === "escribe") await escribe(bundle, arg, flag("rehaz"));
     else if (cmd === "palabras") await palabras(bundle, arg);
-    else if (cmd === "aprieta") await aprieta(bundle, arg);
+    else if (cmd === "aprieta") await aprieta(bundle, arg, flag("todo"));
     else if (cmd === "sueltas") await sueltas(bundle);
     else if (cmd === "huerfanas") await huerfanas(bundle, flag("fix"));
     else if (cmd === "largos") await largos(bundle);
