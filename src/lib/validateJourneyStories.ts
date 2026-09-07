@@ -716,9 +716,13 @@ export function validateJourneyStories(
       const lema = String(v.word).toLowerCase();
       return textos.filter((t) => t.includes(k) || t.includes(lema)).length;
     };
-    const todas: Array<{ n: number; anchor: boolean }> = [];
+    const todas: Array<{ n: number; anchor: boolean; word: string }> = [];
     for (const s of stories) for (const v of s.vocab ?? [])
-      todas.push({ n: encuentros(v), anchor: Boolean((v as { anchor?: boolean }).anchor) });
+      todas.push({
+        n: encuentros(v),
+        anchor: Boolean((v as { anchor?: boolean }).anchor),
+        word: String(v.surface ?? v.word),
+      });
     const marca = todas.some((x) => x.anchor);
     if (!marca) {
       const media = todas.reduce((a, b) => a + b.n, 0) / todas.length;

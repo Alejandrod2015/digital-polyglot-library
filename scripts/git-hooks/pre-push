@@ -117,6 +117,7 @@ checkGlossMoods      db
 checkGlossVariants   db
 checkVocabLayer      db
 checkReleaseReadiness -
+checkTypes           -
 "
 
 # -- Trinquete de enrolamiento ----------------------------------------
@@ -235,6 +236,19 @@ EOM
 
   Escribe el contexto en la fila de SU historia, no en la global.
   Comprueba con:  npm run lint:gloss-context
+======================================================================
+
+EOM
+      ;;
+    checkTypes)
+      cat >&2 <<'EOM'
+
+======================================================================
+  PUSH BLOCKED: hay errores de tipos que el build de Vercel rechazaria
+
+  Arriba sale el archivo y la linea. Cada build quemado cuesta dinero;
+  este candado corre el mismo typecheck antes de subir.
+  Comprueba con:  npm run lint:types
 ======================================================================
 
 EOM
