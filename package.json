@@ -33,7 +33,8 @@
     "lint:hard-rules": "tsx scripts/checkHardRules.ts",
     "lint:vocab-layer": "tsx scripts/checkVocabLayer.ts",
     "lint:rules-inventory": "tsx scripts/checkRulesInventory.ts",
-    "lint:release-readiness": "tsx scripts/checkReleaseReadiness.ts"
+    "lint:release-readiness": "tsx scripts/checkReleaseReadiness.ts",
+    "lint:email-links": "tsx scripts/checkEmailLinks.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
