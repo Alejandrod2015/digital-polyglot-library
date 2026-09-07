@@ -51,6 +51,47 @@ const TOPE = 8;
 
 const prisma = new PrismaClient();
 
+/** Palabras que ABREN constituyente: preposiciones, relativos, subordinantes.
+ *  Cortar justo delante de una deja las dos mitades enteras. */
+const ARRANQUE = new Set([
+  "a", "ante", "bajo", "con", "contra", "de", "desde", "durante", "en", "entre",
+  "hacia", "hasta", "para", "por", "según", "sin", "sobre", "tras", "al", "del",
+  "que", "quien", "quienes", "donde", "cuando", "como", "cuyo", "cuya", "si",
+  "porque", "aunque", "mientras", "pero", "mas", "sino", "y", "e", "o", "u",
+  "ao", "aos", "da", "das", "do", "dos", "na", "nas", "no", "nos", "pelo",
+  "pela", "para", "com", "sem", "sob", "até", "desde", "entre", "onde",
+  "quando", "porque", "embora", "enquanto", "mas", "que", "se",
+]);
+
+/** Palabras que no pueden QUEDARSE al final de un trozo: articulo, posesivo o
+ *  preposición sueltos piden lo que viene detrás. "para buscar el" no es un
+ *  trozo; es medio sintagma cortado. */
+const COLGANTE = new Set([
+  ...ARRANQUE,
+  "el", "la", "los", "las", "un", "una", "unos", "unas", "lo",
+  "mi", "mis", "tu", "tus", "su", "sus", "nuestro", "nuestra", "este", "esta",
+  "ese", "esa", "aquel", "aquella", "esos", "esas", "estos", "estas",
+  "o", "a", "os", "as", "um", "uma", "uns", "umas", "meu", "minha", "seu",
+  "sua", "esse", "essa", "aquele", "aquela",
+]);
+
+const limpiaPalabra = (w: string) => w.toLowerCase().replace(/[^\p{L}\p{M}]/gu, "");
+
+/** El corte a mano: el más cercano al medio que abra constituyente y no deje
+ *  colgando la pieza de la izquierda. Si no hay ninguno, al menos uno que no
+ *  deje colgando; y solo si tampoco, por la mitad a ciegas. */
+function parteAMano(ws: string[]): [string, string] {
+  const medio = ws.length / 2;
+  const puntua = (i: number) => Math.abs(i - medio);
+  const noCuelga = (i: number) => !COLGANTE.has(limpiaPalabra(ws[i - 1]));
+  const idx = [...ws.keys()].filter((i) => i > 0 && i < ws.length);
+  const abre = idx.filter((i) => ARRANQUE.has(limpiaPalabra(ws[i])) && noCuelga(i));
+  const sanos = idx.filter(noCuelga);
+  const corte = (abre.length ? abre : sanos.length ? sanos : idx)
+    .sort((a, b) => puntua(a) - puntua(b))[0] ?? Math.ceil(medio);
+  return [ws.slice(0, corte).join(" "), ws.slice(corte).join(" ")];
+}
+
 /** Parte una pieza hasta que ninguna pase del tope, de separadores suaves a
  *  duros. El corte por palabras es la última salida y no hace falta si el
  *  texto está puntuado. */
@@ -60,9 +101,8 @@ function apretar(pieza: string, sep: RegExp[]): string[] {
     const partes = pieza.split(sep[i]).map((x) => x.trim()).filter(Boolean);
     if (partes.length > 1) return partes.flatMap((x) => apretar(x, sep.slice(i)));
   }
-  const ws = pieza.split(/\s+/);
-  const mitad = Math.ceil(ws.length / 2);
-  return [ws.slice(0, mitad).join(" "), ws.slice(mitad).join(" ")];
+  const [izq, der] = parteAMano(pieza.split(/\s+/));
+  return [...apretar(izq, sep), ...apretar(der, sep)];
 }
 
 /**
