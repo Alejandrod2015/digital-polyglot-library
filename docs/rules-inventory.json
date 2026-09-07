@@ -880,6 +880,13 @@
       "source": "memory:project_journey_fr_a0_expat_lyon.md"
     },
     {
+      "id": "project_journey_ladder_no_gaps",
+      "domain": "journey",
+      "rule": "\"Prohibido crear un journey que deje un peldano hueco en su escalera (idioma, variante, tipo)\"",
+      "gate": "src/lib/journeyLadder.ts",
+      "source": "memory:project_journey_ladder_no_gaps.md"
+    },
+    {
       "id": "project_journey_level_model",
       "domain": "journey",
       "rule": "\"Un journey contiene un set VARIABLE de niveles (1+), no todos; LATAM A1 y A2 son journeys distintos\"",
