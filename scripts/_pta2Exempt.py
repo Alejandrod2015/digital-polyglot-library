@@ -13,7 +13,7 @@ d["bundles"]["portuguese-traveler-brazil-a2"] = {
     "articles": ["a", "as", "o", "os", "um", "uma", "uns", "umas", "às"],
     # "alegre" es el segundo trozo de Porto Alegre, igual que "noronha" en el
     # B1: nombre propio del mapa, no una palabra que alguien vaya a tocar.
-    "characterNames": ["renata", "gilson", "alegre", "nilza", "edilson", "jericoacoara", "damião", "lençóis", "cleide", "aquidauana", "wilson", "petrópolis"],
+    "characterNames": ["renata", "gilson", "alegre", "nilza", "edilson", "jericoacoara", "damião", "lençóis", "cleide", "aquidauana", "wilson", "petrópolis", "neuza", "gramado"],
     "numerals": ["dez", "dezoito", "dois", "doze", "duas", "nove", "quatro", "quinze", "cinco", "seis", "sete", "três", "vinte"],
 }
 json.dump(d, open(RUTA, "w", encoding="utf-8"), ensure_ascii=False, indent=2)

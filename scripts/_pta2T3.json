@@ -6,7 +6,7 @@
     "title": "Ninguém lava nada aqui",
     "arcType": "juxtaposition-discovery",
     "synopsis": "Depois de semanas comendo na rua, quer cozinhar uma vez em casa e encontra a cozinha coletiva com a pia cheia e um bico de fogão funcionando. Ninguém ali lavou nada desde sábado, e a regra da casa que alguém lhe explica na pia não é a que ela esperava ouvir.",
-    "text": "Na casa coletiva de Jericoacoara a cozinha é de todo mundo. A pia está cheia e os garfos, sujos. Renata mora ali há uma semana e hoje quer cozinhar.\n\nDo fogão de quatro bocas funciona uma. Quem lava os pratos é Edilson, um homem que trabalha na peixaria da esquina. “A pia não é minha”, diz ele, sem parar. “Eu lavo porque prefiro limpo.”\n\nRenata pega a esponja e ajuda. “Qual é a regra aqui?”, pergunta ela, e depois arruma o fogão. “Quem cozinha não lava”, diz Edilson. “Mas ninguém cozinha, então ninguém lava. Faz três dias que essa pia está assim.”\n\nEla guarda os garfos e organiza o espaço que sobrou. Passa a vassoura embaixo da mesa. Coloca a frigideira no bico bom.\n\nCorta o alho devagar, como quem tem tempo. A pia fica vazia e o cheiro sobe logo. “Hoje eu cozinho”, avisa, alto, para a casa inteira ouvir. “E hoje eu não lavo.”",
+    "text": "Na casa coletiva de Jericoacoara a cozinha é de todo mundo. A pia está cheia e os garfos, sujos. Renata mora ali há uma semana e hoje quer cozinhar.\n\nDo fogão de quatro bocas funciona uma. Edilson trabalha na peixaria da esquina e lava os pratos de todo mundo. “A pia não é minha”, diz ele, sem parar. “Eu lavo porque prefiro limpo.”\n\nRenata pega a esponja e ajuda. “Qual é a regra aqui?”, pergunta ela, e depois arruma o fogão. “Quem cozinha não lava”, diz Edilson. “Mas ninguém cozinha, então ninguém lava. Faz três dias que essa pia está assim.”\n\nEla guarda os garfos e organiza o espaço que sobrou. Passa a vassoura embaixo da mesa. Coloca a frigideira no bico bom.\n\nCorta o alho devagar, como quem tem tempo. A pia fica vazia e o cheiro sobe logo. “Hoje eu cozinho”, avisa, alto, para a casa inteira ouvir. “E hoje eu não lavo.”",
     "vocab": [
       {
         "word": "fogão",
@@ -260,7 +260,7 @@
     "title": "A panela que grudou",
     "arcType": "harmonic-close",
     "synopsis": "A regra da casa diz que quem cozinha não lava, e ontem foi ela quem cozinhou. O dia inteiro vira uma pergunta em voz baixa: uma regra dita de passagem na pia vale também quando dá trabalho a quem a disse? Nenhum dos dois cede durante horas, e a resposta aparece de madrugada sem que ninguém precise dizer mais nada.",
-    "text": "A panela passou a noite de molho e o arroz grudou mesmo assim. Sobrou comida para dois dias. Renata não lava nada: a regra é a regra, e Edilson sabe.\n\nNa geladeira ela esvazia um pote velho. “Isso ainda serve?”, pergunta Edilson da porta. “Serve”, responde ela, e escorre o macarrão de ontem.\n\n“E o cogumelo?” “Mole, mas serve.” “E o milho?” “Duro. Fica para depois.”\n\nEla corta a cenoura fina e joga por cima da alface. Rega tudo com vinagre. De tarde a cozinha fica parada.\n\nO ar fica abafado e ninguém encosta na panela. “Você vai lavar”, diz Edilson à noite. “Não vou. Quem cozinha não lava, você mesmo disse.”\n\n“Disse que ninguém cozinha aqui”, ri ele. “E agora alguém cozinhou. A regra vale ou não vale?” “Vale”, responde ele, e solta a mochila no chão.\n\nÀs onze ela desce por água: a panela está limpa, virada para baixo. A gordura do fundo derreteu com água quente. Na bancada, um bilhete de letra grande e gorda: amanhã eu cozinho.",
+    "text": "A panela passou a noite de molho e o arroz grudou mesmo assim. Sobrou comida para dois dias. Renata não lava nada: a regra é a regra, e Edilson sabe.\n\nNa geladeira ela esvazia um pote velho. “Isso ainda serve?”, pergunta Edilson da porta. “Serve”, responde ela, e escorre o macarrão de ontem.\n\n“E o cogumelo?” “Mole, mas serve.” “E o milho?” “Duro. Fica para depois.”\n\nEla corta a cenoura fina e joga por cima da alface. Rega tudo com vinagre. De tarde a cozinha fica parada.\n\nO ar fica abafado e ninguém encosta na panela. “Você vai lavar”, diz Edilson à noite. “Não vou. Quem cozinha não lava, você mesmo disse.”\n\n“Disse que ninguém cozinha aqui”, ri ele. “E agora alguém cozinhou. A regra vale ou não vale?” “Vale”, responde ele, e solta a mochila no chão.\n\nÀs onze ela desce por água: alguém limpou a panela e a deixou virada para baixo. A gordura do fundo derreteu com água quente. Na bancada, um bilhete de letra grande e gorda: amanhã eu cozinho.",
     "vocab": [
       {
         "word": "macarrão",
@@ -374,9 +374,10 @@
         "definition": "Still, with nothing moving or happening in it."
       },
       {
-        "word": "velho",
-        "type": "adjective",
-        "definition": "Old, kept for a long time and past its best."
+        "word": "limpar",
+        "surface": "limpou",
+        "type": "verb",
+        "definition": "To clean something until all the dirt is gone."
       }
     ]
   }
