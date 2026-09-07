@@ -1779,6 +1779,70 @@
       "estructura clonada: las 3 historias tienen 5 parrafos exactos. Leelas seguidas antes de darlas por buenas."
     ]
   },
+  "cmtrcpgso00073232h8vaf7na#jericoacoara": {
+    "cerrado": "2026-09-07T15:15:26.701Z",
+    "hash": "a2a448028e22d678",
+    "historias": [
+      "jericoacoara#0 ninguem-lava-nada-aqui",
+      "jericoacoara#1 feijao-salgado-demais",
+      "jericoacoara#2 a-panela-que-grudou"
+    ],
+    "checks": [
+      "plan del tema completo (registro \"doméstico y algo terco, con humor de convivencia\", espina \"Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.\")",
+      "validador canonico: 3/3 (perfil narrador)",
+      "sin guiones largos ni emojis en el contenido",
+      "acotacion 92% (solo avisa)",
+      "acotacion dominante bajo tope (\"diz\" 31%)",
+      "arranques de parrafo variados (mas repetido \"na\", 11%)",
+      "densidad 8.1 palabras por oracion (techo 13 en a2)",
+      "seguidilla 10/47 oraciones cortas narradas",
+      "gate de conjunto sobre el tema: 11/17 medidos y limpios"
+    ],
+    "pendientesDeConjunto": [
+      "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
+      "escalera de recirculacion del journey (medida sobre las 9 historias escritas, se juzga con el journey completo)",
+      "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.17 sobre 42 plazas · 37 salen una sola vez | ancladas: 18/60 (30%) | cola: 37/42 portables con un solo encuentro (88%, tope 80%) | de un solo encuentro: cozinhar, arruma, guarda, organiza, pega, Coloca, sujos, cheia, vazia, limpo, logo, Prepara, mistura, esquenta, prova, come, bebe, tira, larga, salgado, doce, gostoso, frito, quieto, derreteu, escorre, grudou, esvazia, encosta, solta…",
+      "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
+      "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"
+    ],
+    "plan": {
+      "tipo": "traveler",
+      "nivel": "a2",
+      "variante": "brazil",
+      "registro": "doméstico y algo terco, con humor de convivencia",
+      "espina": "Renata deja de señalar y empieza a resolver hablando; el caderno donde apunta lo que no entiende la acompaña de parada en parada, y cada tema le cobra una conversación corriente que en el A1 hacía otro por ella.",
+      "recursos": "A2: símil simple (cortar el ajo como quien tiene tiempo) y espejo concreto (la regla que él enuncia en la primera se la cobra ella en la tercera). Heredados: repetición rítmica en las réplicas cortas del inventario de la nevera, contraste con pero, causalidad explícita, imagen concreta de remate (el papel en la encimera). Nada de B1 o superior.",
+      "historias": [
+        {
+          "slot": "jericoacoara#0",
+          "quiere": "Renata quiere cocinar una vez en casa después de semanas comiendo en la calle.",
+          "impide": "La cocina es de todos, el fregadero lleva tres días lleno y del fogón funciona un fuego.",
+          "cuesta": "Fregar lo que ensuciaron otros antes de poder empezar lo suyo.",
+          "cambia": "Se entera de la regla de la casa (quien cocina no friega) y la anuncia en voz alta, comprometiéndose delante de todos.",
+          "emocion": "hartazgo que se vuelve decisión"
+        },
+        {
+          "slot": "jericoacoara#1",
+          "quiere": "Renata quiere dar de cenar bien a seis personas que no conoce.",
+          "impide": "Prueba la cuchara tarde, con la mesa puesta, y el feijão está salado de más.",
+          "cuesta": "Aceptar delante del único que se ha dado cuenta que no sabe arreglarlo.",
+          "cambia": "Edilson lo salva con una patata cruda y sin decirlo en la mesa; ella cena la última, con un huevo que no pidió.",
+          "emocion": "vergüenza que se queda en privado"
+        },
+        {
+          "slot": "jericoacoara#2",
+          "quiere": "Renata quiere que la regla que le dijeron valga también cuando le toca a quien la dijo.",
+          "impide": "La olla lleva desde anoche pegada y ninguno de los dos la toca en todo el día.",
+          "cuesta": "Pasar el día entero sin ceder, delante de una cocina parada y cargada.",
+          "cambia": "A las once la olla está limpia y hay un papel con letra gorda en la encimera; la discusión se cierra sin una palabra más.",
+          "emocion": "terquedad que se resuelve en complicidad"
+        }
+      ]
+    }
+  },
   "cmtrcpgso00073232h8vaf7na#recife": {
     "cerrado": "2026-09-07T15:04:31.858Z",
     "hash": "7a43b946344c545a",
