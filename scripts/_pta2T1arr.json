@@ -6,7 +6,7 @@
     "title": "A caixa que não chegou",
     "arcType": "juxtaposition-discovery",
     "synopsis": "A escola do Pelourinho tem cadeiras, tem lousa e não tem um livro sequer, porque a caixa prometida para segunda ainda está em outro estado. A professora que veio do sul pode cancelar a primeira aula ou dar aula com o que existe na sala, e quem lhe mostra o que existe é o rapaz que varre o chão antes de todo mundo chegar.",
-    "text": "Renata, uma professora de Porto Alegre, chega cedo na escola do Pelourinho e a sala tem lousa, cadeiras e nenhum livro. A caixa não chegou. Ela abre o caderno.\n\nQuem varre a sala é Gilson, um rapaz que trabalha ali há anos. “A senhora vai dar aula assim mesmo?”, pergunta ele. “Eu tento”, responde Renata. “Se eu escrevo tudo na lousa, fica mais claro.”\n\nGilson tira um giz do bolso e escreve uma letra enorme. “Assim”, pede ele. “A turma do fundo não enxerga. Eu varro daqui de trás, eu sei.” Renata escuta e repete em voz alta.\n\nEla pega o lápis e chama cada um à frente, de três em três. “Escreve o seu”, ela chama. Ninguém parece à vontade, e Renata acha graça. A aula fica educada.\n\nNo fim, o quadro e o caderno têm as mesmas dezoito palavras. “De pé é mais difícil, mas eles entendem melhor”, diz Gilson. “Amanhã a caixa chega?” “Não sei”, responde Renata. Apaga o quadro e sai.",
+    "text": "Renata, uma professora de Porto Alegre, chega cedo na escola do Pelourinho e a sala tem lousa, cadeiras e nenhum livro. A caixa não chegou. Ela abre o caderno.\n\nQuem varre a sala é Gilson, um rapaz que trabalha ali há anos. “A senhora vai dar aula assim mesmo?”, pergunta ele. “Eu tento”, responde Renata. “Se eu escrevo tudo na lousa, fica mais claro.”\n\nGilson tira um giz do bolso e escreve uma letra enorme. “Assim”, pede ele. “A turma do fundo não enxerga. Eu varro daqui de trás, eu sei.” Renata escuta e repete em voz alta.\n\nEla pega o lápis e chama cada um à frente, de três em três. “Escreve o seu”, pede. Ninguém parece à vontade, e Renata acha graça: escrevem devagar, educados, sem barulho.\n\nNo fim, o quadro e o caderno têm as mesmas dezoito palavras. “De pé é mais difícil, mas eles entendem melhor”, diz Gilson. “Amanhã a caixa chega?” “Não sei”, responde Renata. Apaga o quadro e sai.",
     "vocab": [
       {
         "word": "livro",
@@ -105,7 +105,7 @@
       },
       {
         "word": "educado",
-        "surface": "educada",
+        "surface": "educados",
         "type": "adjective",
         "definition": "Polite, careful not to make anyone else feel bad."
       },

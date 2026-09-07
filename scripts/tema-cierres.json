@@ -1780,8 +1780,8 @@
     ]
   },
   "cmtrcpgso00073232h8vaf7na#campo-grande": {
-    "cerrado": "2026-09-07T20:43:34.545Z",
-    "hash": "8e815553d9f27c3a",
+    "cerrado": "2026-09-07T20:50:34.574Z",
+    "hash": "35efe3ed04c7b27b",
     "historias": [
       "campo-grande#0 tres-guiches-abertos",
       "campo-grande#1 o-homem-que-ronca-atras",
@@ -1795,7 +1795,7 @@
       "acotacion dominante bajo tope (\"responde\" 35%)",
       "arranques de parrafo variados (mas repetido \"a\", 21%)",
       "densidad 8.2 palabras por oracion (techo 13 en a2)",
-      "seguidilla 19/53 oraciones cortas narradas",
+      "seguidilla 19/54 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/17 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -1844,8 +1844,8 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#gramado": {
-    "cerrado": "2026-09-07T20:13:42.841Z",
-    "hash": "e0059496ea42a0a1",
+    "cerrado": "2026-09-07T20:51:36.783Z",
+    "hash": "136669325e5f330e",
     "historias": [
       "gramado#0 nada-aqui-serve",
       "gramado#1 uma-lampada-so",
@@ -1858,8 +1858,8 @@
       "acotacion 88% (solo avisa)",
       "acotacion dominante bajo tope (\"diz\" 40%)",
       "arranques de parrafo variados (mas repetido \"renata\", 12%)",
-      "densidad 9.2 palabras por oracion (techo 13 en a2)",
-      "seguidilla 11/46 oraciones cortas narradas",
+      "densidad 9.1 palabras por oracion (techo 13 en a2)",
+      "seguidilla 11/47 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/17 medidos y limpios"
     ],
     "pendientesDeConjunto": [
@@ -1867,7 +1867,7 @@
       "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: 3/3 (protagonista Renata): nada-aqui-serve, uma-lampada-so, a-ultima-pagina",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.05 sobre 42 plazas · 40 salen una sola vez | ancladas: 18/60 (30%) | cola: 40/42 portables con un solo encuentro (95%, tope 80%) | de un solo encuentro: vestir, despe, pendura, convida, Cansa, Vem, Faz, molhado, seca, marrom, congelada, de repente, acende, Apaga, mora, Permanece, vivem, pensei, alugado, grosso, macia, amarela, roxa, azul, viva, a pé, rindo, canta, dança, brincam…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.05 sobre 42 plazas · 40 salen una sola vez | ancladas: 18/60 (30%) | cola: 40/42 portables con un solo encuentro (95%, tope 80%) | de un solo encuentro: vestir, despe, pendura, convida, Cansa, Vem, Faz, molhado, seca, marrom, congelada, de repente, acende, Apaga, mora, Permanece, vivem, pensei, alugado, grosso, macia, amarela, roxa, azul, vivo, a pé, rindo, canta, dança, brincam…",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: temas con mas de uno: gramado (Renata, Neuza)"
@@ -2036,8 +2036,8 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#petropolis": {
-    "cerrado": "2026-09-07T20:00:20.323Z",
-    "hash": "59ecf2cdec86c32c",
+    "cerrado": "2026-09-07T20:51:30.846Z",
+    "hash": "74d9ec2f1c9b14e3",
     "historias": [
       "petropolis#0 o-carregador-queimou",
       "petropolis#1 quatro-meses-nao-dois",
@@ -2056,7 +2056,7 @@
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 18 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.17 sobre 42 plazas · 35 salen una sola vez | ancladas: 18/60 (30%) | cola: 35/42 portables con un solo encuentro (83%, tope 80%) | de un solo encuentro: funcionar, liga, desliga, compra, recebe, enviava, confere, caro, barato, novo, velho, fechado, conecta, digita, mostra, paga, cobra, escolhe, deixa, agradece, má, rica, pobre, embrulha, Amarra, dobra, empresta, manda, vendo, aberta…",
@@ -2164,8 +2164,8 @@
     }
   },
   "cmtrcpgso00073232h8vaf7na#salvador": {
-    "cerrado": "2026-09-07T14:49:20.524Z",
-    "hash": "f4caa6c9c5d2e28c",
+    "cerrado": "2026-09-07T20:50:28.476Z",
+    "hash": "15c68e22bddd026a",
     "historias": [
       "salvador#0 a-caixa-que-nao-chegou",
       "salvador#1 um-livro-de-contos",
@@ -2178,16 +2178,16 @@
       "acotacion 100% (solo avisa)",
       "acotacion dominante bajo tope (\"responde\" 29%)",
       "arranques de parrafo variados (mas repetido \"renata\", 13%)",
-      "densidad 8.9 palabras por oracion (techo 13 en a2)",
-      "seguidilla 17/45 oraciones cortas narradas",
+      "densidad 9.1 palabras por oracion (techo 13 en a2)",
+      "seguidilla 16/44 oraciones cortas narradas",
       "gate de conjunto sobre el tema: 11/17 medidos y limpios"
     ],
     "pendientesDeConjunto": [
       "solape de vocab contra otros journeys (lo mide saveStory al guardar)",
-      "escalera de recirculacion del journey (medida sobre las 3 historias escritas, se juzga con el journey completo)",
+      "escalera de recirculacion del journey (medida sobre las 21 historias escritas, se juzga con el journey completo)",
       "journey-introduction-form-variety: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-closing-alone: pendiente de conjunto: 3 historia(s) a la vista",
-      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.14 sobre 42 plazas · 38 salen una sola vez | ancladas: 18/60 (30%) | cola: 38/42 portables con un solo encuentro (90%, tope 80%) | de un solo encuentro: escuta, repete, entendem, escrevo, parece, difícil, claro, educada, cedo, chama, tento, leio, conta, explica, insiste, recusa, convence, discute, esperto, teimosos, gentil, fácil, direto, lembra, aprendeu, ensinar, estuda, falo, ouço, esquece…",
+      "journey-vocab-recirculation: pendiente de conjunto: 3 historia(s) a la vista · medida provisional: portables: media 1.14 sobre 42 plazas · 38 salen una sola vez | ancladas: 18/60 (30%) | cola: 38/42 portables con un solo encuentro (90%, tope 80%) | de un solo encuentro: escuta, repete, entendem, escrevo, parece, difícil, claro, educados, cedo, chama, tento, leio, conta, explica, insiste, recusa, convence, discute, esperto, teimosos, gentil, fácil, direto, lembra, aprendeu, ensinar, estuda, falo, ouço, esquece…",
       "journey-cast-fixed-max-two: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-protagonist-in-all: pendiente de conjunto: 3 historia(s) a la vista",
       "journey-cast-one-new-per-topic: pendiente de conjunto: 3 historia(s) a la vista"

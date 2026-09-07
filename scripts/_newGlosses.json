@@ -12517,6 +12517,18 @@
     "ama": {
       "g": "loves it",
       "t": "verb"
+    },
+    "escrevem": {
+      "g": "they write",
+      "t": "verb"
+    },
+    "educados": {
+      "g": "polite, well behaved",
+      "t": "adjective"
+    },
+    "vivo": {
+      "g": "alive, and feeling it",
+      "t": "adjective"
     }
   }
 }

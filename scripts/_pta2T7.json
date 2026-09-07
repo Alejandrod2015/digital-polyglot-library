@@ -134,7 +134,7 @@
     "title": "Uma lâmpada só",
     "arcType": "daily-encounter",
     "synopsis": "Ninguém lhe explicou como se passa uma noite de inverno num quarto que não tem nada dentro, e ela chegou do calor há quatro dias. A receita não se compra em lugar nenhum e cabe em três frases ditas entre duas canecas de chá, antes das seis.",
-    "text": "O quarto alugado tem uma lâmpada só, no teto. A cortina é fina e o tapete não chega até a cama. Às seis Renata desce a pé até a lavanderia.\n\nNeuza serve chá numa caneca macia de tanto uso. “Como é que vocês vivem com esse frio?”, pergunta Renata. “A gente veste tudo o que tem”, responde Neuza.\n\n“Pijama por baixo, suéter grosso por cima.” “E o tapete em cima dos pés.” “A senhora mora aqui há muito tempo?”\n\n“Nasci nesta rua”, diz Neuza. “Já pensei em ir embora, mas aqui eu sei onde tudo está.” Renata anota a receita do frio no caderno.\n\nDe volta, acende a luz e abre a cômoda: não há nada dentro. A fronha está gelada. Ela dobra o tapete azul em dois e põe por cima dos pés.\n\nPermanece assim, sem se mexer, até esquentar. Apaga a luz às nove. No escuro a janela amarela deixa passar uma faixa roxa, e ela dorme bem viva de frio.",
+    "text": "O quarto alugado tem uma lâmpada só, no teto. A cortina é fina e o tapete não chega até a cama. Às seis Renata desce a pé até a lavanderia.\n\nNeuza serve chá numa caneca macia de tanto uso. “Como é que vocês vivem com esse frio?”, pergunta Renata. “A gente veste tudo o que tem”, responde Neuza.\n\n“Pijama por baixo, suéter grosso por cima.” “E o tapete em cima dos pés.” “A senhora mora aqui há muito tempo?”\n\n“Nasci nesta rua”, diz Neuza. “Já pensei em ir embora, mas aqui eu sei onde tudo está.” Renata anota a receita do frio no caderno.\n\nDe volta, acende a luz e abre a cômoda: não há nada dentro. A fronha está gelada. Ela dobra o tapete azul em dois e põe por cima dos pés.\n\nPermanece assim, sem se mexer, até esquentar. Apaga a luz às nove. No escuro a janela amarela deixa passar uma faixa roxa. Ela olha a faixa até dormir, com o nariz vivo de frio.",
     "vocab": [
       {
         "word": "lâmpada",
@@ -244,7 +244,7 @@
       },
       {
         "word": "vivo",
-        "surface": "viva",
+        "surface": "vivo",
         "type": "adjective",
         "definition": "Alive, and feeling everything more sharply than usual."
       },

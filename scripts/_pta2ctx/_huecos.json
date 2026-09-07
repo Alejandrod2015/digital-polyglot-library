@@ -45,10 +45,6 @@
     "volta": {
       "es": "Se ficar pior, volta",
       "en": "If it gets worse, she returns"
-    },
-    "embaixo": {
-      "es": "escreve o nome do remédio e, embaixo",
-      "en": "writes the name of the medicine and, underneath"
     }
   },
   "o-colchao-vence": {
@@ -185,6 +181,12 @@
     "que": {
       "es": "o silêncio dura o que ela não aguenta",
       "en": "the silence lasts longer than she can bear"
+    }
+  },
+  "a-caixa-que-nao-chegou": {
+    "educados": {
+      "es": "escrevem devagar, educados",
+      "en": "they write slowly, politely"
     }
   }
 }
