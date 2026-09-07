@@ -162,6 +162,20 @@
         "/private/tmp/claude-501/-Users-alejandrodelcarpio-digital-polyglot-library--claude-worktrees-nervous-pike-a97800/816d487c-9869-42d0-9769-c2d1506e72b3/scratchpad/practica"
       ],
       "port": 8911
+    },
+    {
+      "_comment": "Puerto propio de esta sesion (worktree vigorous-tharp) para verificar sin chocar.",
+      "name": "next-dev-3009",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev:web",
+        "--",
+        "--port",
+        "3009"
+      ],
+      "port": 3009,
+      "autoPort": false
     }
   ]
 }
