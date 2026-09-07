@@ -1,0 +1,387 @@
+[
+  {
+    "topic": "negotiations-and-courtesies",
+    "slotIndex": 1,
+    "title": "Lo conversamos",
+    "slug": "lo-conversamos",
+    "arcType": "reframe-turn",
+    "synopsis": "Maricarmen crosses Lima with her new sample book, because big deals are closed over lunch, and Aurelio praises every fabric she shows him at the chifa. Nothing gets written down, nobody agrees on anything, and on the combi ride home she understands what the whole polite lunch had actually said: a very courteous no.",
+    "text": "Quien invita es Maricarmen. Su taller de costura cose para medio barrio de Lima, Perú, y cruzó la ciudad con el muestrario nuevo: los tratos grandes se cierran almorzando.\n\nAurelio es el que compra uniformes para una tienda grande. Pidió wantán de memoria, en un chifa del jirón Ucayali, y elogia cada tela: la firme, la suave.\n\n“Qué tela tan fina, señora. Esto en vitrina se vende solo”, suelta Aurelio, con los palillos en alto.\n\n“¿Le aparto cien buzos para marzo, entonces?”, pregunta Maricarmen.\n\n“Está lindo, está lindo. Lo conversamos, señora”, contesta él, y pide más té.\n\n“¿Esta semana, o la que viene?”, insiste ella.\n\n“La que viene tengo directorio. Usted tranquila”, dice él.\n\n“Ahorita andamos con campaña, señora. Pero lo conversamos, ya pues”, promete, y el almuerzo se acaba entre halagos.\n\nEn la combi, a la altura del mercado, cae en cuenta. Nadie apuntó ni un garabato; nadie quedó en nada. El elogio era la manera amable de decir que no.\n\nPagó el chifa completo por la cortesía más cara del mes. Guarda las telas doblándolas dos veces, despacio, para que las manos trabajen mientras el orgullo se desinfla.",
+    "vocab": [
+      {
+        "word": "chifa",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Peruvian-Chinese restaurant, a Lima institution for everyday lunches."
+      },
+      {
+        "word": "wantán",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Fried wonton, the crunchy starter of Peruvian-Chinese food."
+      },
+      {
+        "word": "jirón",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Street; the word Lima uses for its downtown streets."
+      },
+      {
+        "word": "combi",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Small crowded minibus used for everyday transport in Peru."
+      },
+      {
+        "word": "lo conversamos",
+        "surface": "Lo conversamos",
+        "type": "expression",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "We will talk it over; polite Peruvian way of saying no."
+      },
+      {
+        "word": "ya pues",
+        "type": "expression",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Alright then; Peruvian filler that softens and closes a sentence."
+      },
+      {
+        "word": "muestrario",
+        "type": "noun",
+        "definition": "Sample book; the collection a seller shows to clients."
+      },
+      {
+        "word": "elogio",
+        "type": "noun",
+        "definition": "Praise; a compliment said about someone or their work."
+      },
+      {
+        "word": "tela",
+        "type": "noun",
+        "definition": "Fabric; the cloth that clothes are made from."
+      },
+      {
+        "word": "costura",
+        "type": "noun",
+        "definition": "Sewing; the craft of making and mending clothes."
+      },
+      {
+        "word": "palillos",
+        "type": "noun",
+        "definition": "Chopsticks; the two thin sticks used for eating."
+      },
+      {
+        "word": "apartar",
+        "surface": "aparto",
+        "type": "verb",
+        "definition": "To set aside, reserve something for a specific buyer."
+      },
+      {
+        "word": "ahorita",
+        "surface": "Ahorita",
+        "type": "adverb",
+        "register": "cultural",
+        "definition": "Right now, or soon, or someday; famously elastic word."
+      },
+      {
+        "word": "desinflarse",
+        "surface": "se desinfla",
+        "type": "verb",
+        "definition": "To deflate, lose the air of excitement or pride."
+      },
+      {
+        "word": "almorzar",
+        "surface": "almorzando",
+        "type": "verb",
+        "definition": "To have lunch, the main meal of the day."
+      },
+      {
+        "word": "cortesía",
+        "type": "noun",
+        "definition": "Courtesy; the polite forms that dress what people really mean."
+      },
+      {
+        "word": "garabato",
+        "type": "noun",
+        "definition": "Scribble; a quick rough mark made with a pen."
+      },
+      {
+        "word": "directorio",
+        "type": "noun",
+        "register": "cultural",
+        "definition": "Board meeting; Peruvian business word for a directors' meeting."
+      },
+      {
+        "word": "quedar en nada",
+        "surface": "quedó en nada",
+        "type": "expression",
+        "definition": "To come to nothing, end with no result at all."
+      },
+      {
+        "word": "a la altura de",
+        "surface": "a la altura del",
+        "type": "expression",
+        "definition": "At the point of, when passing a certain place."
+      }
+    ]
+  },
+  {
+    "topic": "negotiations-and-courtesies",
+    "slotIndex": 2,
+    "title": "El teléfono, boca abajo",
+    "slug": "el-telefono-boca-abajo",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "The big order finally arrives, three hundred tracksuits with an impossible deadline, and Maricarmen answers with Aurelio's own courtesies before saying yes. To sew it in time she keeps the phone face down all week, and the loyal customer who has brought her alterations for twelve years rings the bell twice and never comes back.",
+    "text": "Desde el lunes hay un solo encargo: trescientos buzos con el logo de la tienda de Aurelio, para el viernes. En el taller de Maricarmen eso no se cose ni de corrido.\n\n“¿Me lo tiene al toque, señora? La campaña no espera”, apura Aurelio por teléfono.\n\n“Lo conversamos”, contesta Maricarmen, estrenando la palabra, “si me adelanta la mitad.”\n\n“Adelantado y con yapa”, se ríe él. “Usted no me falle el viernes, que yo respondo en la tienda.”\n\n“Yo no fallo”, corta ella, y aparta lo demás.\n\nSu casera de los jueves timbra con un vestido para entallar: doce años de arreglos. Maricarmen no abre. El timbre suena dos veces y después nada.\n\nSuspira y cose de madrugada, con el emoliente enfriándose y el teléfono boca abajo. La culpa se queda despierta.\n\nCada puntada a la medida del logo es una puntada que el vestido no recibe.\n\n“¿Vio que sí se podía, señora? Usted es más exigente que yo”, dice Aurelio, y paga con billetes nuevos.\n\nEl jueves siguiente la casera no timbra, ni el otro. Hay una costurera nueva en el mercado. La dejó plantada una vez, la vez equivocada.",
+    "vocab": [
+      {
+        "word": "al toque",
+        "type": "expression",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Right away, this very moment; everyday Peruvian phrase for hurry."
+      },
+      {
+        "word": "casera",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Loyal regular customer; in Peru, a bond of years, not a sale."
+      },
+      {
+        "word": "emoliente",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Warm Peruvian herbal street drink, thick and comforting."
+      },
+      {
+        "word": "buzo",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Tracksuit; the word Peru uses for sports clothing."
+      },
+      {
+        "word": "madrugada",
+        "type": "noun",
+        "definition": "The small hours; the dark stretch before the sun rises."
+      },
+      {
+        "word": "culpa",
+        "type": "noun",
+        "definition": "Guilt; the weight of knowing you caused the harm."
+      },
+      {
+        "word": "puntada",
+        "type": "noun",
+        "definition": "Stitch; one pass of the needle through the fabric."
+      },
+      {
+        "word": "encargo",
+        "type": "noun",
+        "definition": "Order, commission; work someone asks you to produce."
+      },
+      {
+        "word": "exigente",
+        "type": "adjective",
+        "definition": "Demanding; asking for more effort than is comfortable."
+      },
+      {
+        "word": "arreglo",
+        "surface": "arreglos",
+        "type": "noun",
+        "definition": "Alteration; a small fix that makes old clothes fit again."
+      },
+      {
+        "word": "vestido",
+        "type": "noun",
+        "definition": "Dress; the one-piece garment a woman wears for an occasion."
+      },
+      {
+        "word": "apurar",
+        "surface": "apura",
+        "type": "verb",
+        "definition": "To hurry someone, press them to go faster."
+      },
+      {
+        "word": "timbrar",
+        "surface": "timbra",
+        "type": "verb",
+        "register": "cultural",
+        "definition": "To ring the doorbell; the common verb in Peru."
+      },
+      {
+        "word": "suspirar",
+        "surface": "suspira",
+        "type": "verb",
+        "definition": "To sigh, let out a long breath of feeling."
+      },
+      {
+        "word": "estrenar",
+        "surface": "estrenando",
+        "type": "verb",
+        "definition": "To use something for the very first time."
+      },
+      {
+        "word": "adelantar",
+        "surface": "adelanta",
+        "type": "verb",
+        "definition": "To pay in advance, hand over money before the work."
+      },
+      {
+        "word": "entallar",
+        "type": "verb",
+        "definition": "To take in a garment so it fits the body closely."
+      },
+      {
+        "word": "a la medida",
+        "type": "expression",
+        "definition": "Made to measure, cut exactly to the size required."
+      },
+      {
+        "word": "dejar plantado",
+        "surface": "dejó plantada",
+        "type": "expression",
+        "definition": "To stand someone up, fail them when they counted on you."
+      },
+      {
+        "word": "boca abajo",
+        "type": "expression",
+        "definition": "Face down, turned over so the front cannot be seen."
+      }
+    ]
+  },
+  {
+    "topic": "negotiations-and-courtesies",
+    "slotIndex": 3,
+    "title": "Una yapa para cerrar",
+    "slug": "una-yapa-para-cerrar",
+    "arcType": "harmonic-close",
+    "synopsis": "The third lunch at the chifa is the one where they finally sign. Aurelio and Maricarmen haggle for half an hour without ever saying the word, trading compliments instead of numbers, and settle the figure halfway with a short handshake and a toast. Both know exactly who gave in on what, and neither says it out loud.",
+    "text": "Al tercer almuerzo del chifa ya nadie lleva muestrario: hoy Maricarmen y Aurelio firman. El mozo grita el pedido y trae el chaufa sin que nadie lo pida.\n\n“Le firmo seiscientos buzos al año”, dice Aurelio, “si me deja el precio del primer pedido.”\n\n“Ese precio fue de estreno”, contesta Maricarmen. “Para seiscientos, redondeamos para arriba.”\n\nRegatean sin decir la palabra regatear. Él elogia, ella agradece el halago y no suelta un centavo; él se hace de rogar.\n\nUn toma y daca tan educado que parece sobremesa.\n\n“Quedamos así, pues: usted me cuida las fechas y yo le cuido el precio”, propone ella.\n\nAcuerdan la cifra a medias y la sacan en limpio en una servilleta, con el lapicero de ella.\n\n“¿Y mi yapa?”, pregunta Aurelio, mirando de reojo la fuente vacía.\n\n“La yapa es que le sigo contestando el teléfono”, dice Maricarmen, y esta vez se ríe de más él.\n\nCierran el trato con un apretón corto y un brindis. Los dos saben quién cedió en qué; ninguno lo dice. El mozo se lleva la servilleta de la cifra como si no valiera nada.",
+    "vocab": [
+      {
+        "word": "chaufa",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Peruvian-Chinese fried rice, the dish every chifa is judged by."
+      },
+      {
+        "word": "yapa",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "The little extra a seller adds for free to close warmly."
+      },
+      {
+        "word": "mozo",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Waiter; the usual word in South American restaurants."
+      },
+      {
+        "word": "sobremesa",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "The unhurried talk that stays at the table after eating."
+      },
+      {
+        "word": "lapicero",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Pen; the everyday word for a ballpoint in Peru."
+      },
+      {
+        "word": "regatear",
+        "type": "verb",
+        "definition": "To haggle, argue back and forth over a price."
+      },
+      {
+        "word": "halago",
+        "type": "noun",
+        "definition": "Flattery; a compliment used to soften someone up."
+      },
+      {
+        "word": "centavo",
+        "type": "noun",
+        "definition": "Cent; the smallest coin, the last thing you surrender."
+      },
+      {
+        "word": "apretón",
+        "type": "noun",
+        "definition": "Handshake; a firm brief squeeze of hands sealing something."
+      },
+      {
+        "word": "brindis",
+        "type": "noun",
+        "definition": "Toast; raising glasses together to mark an agreement."
+      },
+      {
+        "word": "acordar",
+        "surface": "Acuerdan",
+        "type": "verb",
+        "definition": "To agree on something after talking it through together."
+      },
+      {
+        "word": "redondear",
+        "surface": "redondeamos",
+        "type": "verb",
+        "definition": "To round a number up or down to something cleaner."
+      },
+      {
+        "word": "de reojo",
+        "type": "expression",
+        "definition": "Out of the corner of the eye, without turning the head."
+      },
+      {
+        "word": "cerrar el trato",
+        "surface": "Cierran el trato",
+        "type": "expression",
+        "definition": "To close the deal, make the agreement final."
+      },
+      {
+        "word": "hacerse de rogar",
+        "surface": "se hace de rogar",
+        "type": "expression",
+        "definition": "To play hard to get, make others insist before agreeing."
+      },
+      {
+        "word": "toma y daca",
+        "type": "expression",
+        "definition": "Give and take; trading concessions one for the other."
+      },
+      {
+        "word": "sacar en limpio",
+        "surface": "sacan en limpio",
+        "type": "expression",
+        "definition": "To write out the clean final version of something."
+      },
+      {
+        "word": "a medias",
+        "type": "expression",
+        "definition": "Halfway, split evenly between the two sides involved."
+      },
+      {
+        "word": "de estreno",
+        "type": "expression",
+        "definition": "Brand new, offered or worn for the very first time."
+      },
+      {
+        "word": "para arriba",
+        "type": "expression",
+        "definition": "Upwards; rounding a number to the higher side."
+      }
+    ]
+  }
+]

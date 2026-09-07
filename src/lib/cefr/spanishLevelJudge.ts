@@ -265,8 +265,14 @@ export function extractSpanishContentWords(body: string): string[] {
   // swallowed every accented vowel and ñ (á/é/í/ó/ú/ñ/ü all fall inside it),
   // shredding words like "órale"→"rale", "cámara"→"mara", "güey"→"g ey" and
   // wildly inflating the out-of-level %. Fixed 2026-07-09.
+  // Las comillas CURVAS entran aqui el 2026-09-04 (portado de la rama del B1
+  // latam el 2026-09-06). La clase limpiaba la recta ASCII y se dejaba las
+  // curvas, las simples, las angulares y la baja alemana, que es justo lo que
+  // escribe todo el catalogo desde el 2026-08-17: cada palabra pegada a una
+  // comilla llegaba al juez como token desconocido y contaba como fuera de
+  // nivel. Mismo tipo de bug que el rango de guion de 2026-07-09.
   const rawTokens = body
-    .replace(/[¿¡"'()[\]{}\-–_*]/g, " ")
+    .replace(/[¿¡"'()[\]{}\-–_*“”‘’«»„]/g, " ")
     .split(/[\s.,;:!?"…]+/u)
     .filter(Boolean);
 

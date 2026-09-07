@@ -68,6 +68,11 @@ const FAMILIES: Record<string, string[]> = {
     "spanish-traveler-spain-a1",
     "spanish-traveler-spain-a2",
     "spanish-traveler-spain-b1",
+    // Los tres bundles B nacidos despues de esta tabla (2026-09-06): sin fila
+    // aqui, familyOf devuelve "" y el rebuild no copia NADA de los hermanos,
+    // que es por lo que salian "0 copiadas" con articulos y numeros sin cubrir.
+    "spanish-traveler-latam-b1",
+    "spanish-traveler-latam-b2",
     "spanish-traveler-spain-b2",
   ],
   german: ["german-expat", "german-friends", "german-hamburg", "german-traveler-a0", "german-traveler-a1"],

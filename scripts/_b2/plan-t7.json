@@ -1,0 +1,13 @@
+{
+  "tipo": "Traveler: protagonistas nativos; el narrador mira desde fuera, presenta gente y sitios (Ciudad, pais) y explica lo que un local daria por sabido",
+  "nivel": "b2",
+  "variante": "LATAM",
+  "registro": "fabulacion: la mentira que cuenta mas verdad que el dato",
+  "espina": "lo importante viaja por debajo de lo dicho: cada tema del journey es una forma distinta de decir sin decir",
+  "recursos": "aforismo de personaje con cuentagotas (B2), ironia de personaje (B2), narrador con opinion (B2), gancho final literal (A1), cambio de ritmo (B1)",
+  "historias": [
+    { "slot": "1", "quiere": "Baldomero quiere la rueda llena en el corredor del hospedaje: mochileros escuchando sus pescados de dos metros", "impide": "Ofelia contradice cada cuento con el dato exacto, delante del publico", "cuesta": "la entrada al corredor techado: Ofelia lo manda a contar afuera, y afuera no hay techo cuando llueve", "cambia": "queda claro el reparto: ella tiene la razon y el tiene al publico, y ninguno de los dos puede comprarle eso al otro", "emocion": "orgullo de artista herido: cuando Ofelia corrige, Baldomero agranda el pescado medio metro mas, mirandola a ella y no a los mochileros" },
+    { "slot": "2", "quiere": "salvar la libreta de cuarenta anos de cuentos del aguacero que lo agarra afuera", "impide": "el corredor de adentro tiene techo, pero desde la apuesta la puerta no es suya", "cuesta": "la libreta entera: la tinta se borra hoja por hoja, y con ella los cuentos que no se sabia de memoria", "cambia": "el anden se queda en silencio por primera vez, y Ofelia descubre que el silencio de Baldomero es peor que sus mentiras", "emocion": "perdida seca: pone las hojas empapadas a secar con piedritas encima, una por una, sin decir palabra, y esa noche no cuenta nada" },
+    { "slot": "3", "quiere": "volver a contar sin libreta, de memoria, y que el corredor vuelva a llenarse", "impide": "sin las hojas, Baldomero duda de sus propios cuentos: ya no sabe cual era verdad", "cuesta": "la inocencia del publico facil: ahora Ofelia sabe la verdad del tren y el cuento ya no es solo suyo", "cambia": "el retrato amarillento del album prueba que su historia mas exagerada era cierta tal cual; Ofelia le abre la puerta de adentro y le encarga la historia del hospedaje", "emocion": "desquite tranquilo del fabulador: recibe el retrato, lo mira largo, y en vez de decir se lo dije, pregunta si se lo puede quedar" }
+  ]
+}

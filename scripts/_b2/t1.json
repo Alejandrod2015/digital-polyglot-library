@@ -1,0 +1,399 @@
+[
+  {
+    "topic": "jokes-and-double-meanings",
+    "slotIndex": 1,
+    "title": "Se rieron antes que ella",
+    "slug": "se-rieron-antes-que-ella",
+    "arcType": "juxtaposition-discovery",
+    "synopsis": "Renata runs the bar of a cantina in Guadalajara and has never been left without an answer in her own house. Then a quiet regular lifts his caballito, proposes a duel of albures for a round of drinks, and the whole cantina laughs half a second before she does.",
+    "text": "Renata, la mujer que atiende la barra de una cantina de Guadalajara, México, presume de una sola cosa: nadie la ha hecho callar en su negocio. Contesta sin despeinarse. El local huele a birria desde temprano.\n\nJoaquín, un cliente de los martes, de tejuino y pocas palabras, levanta su caballito. “¿Me aguanta un albur, patrona, o nomás la fama?”, pregunta.\n\n“Los aguanto de dos en dos”, contesta Renata, “y el que pierda paga la ronda de la casa entera.”\n\n“Va que va”, dice él. “Empiece usted, que la ingeniosa aquí es otra.”\n\nEl duelo va empatado tres vueltas. “¿Se cansa tan pronto?”, pregunta Joaquín. “Apenas voy calentando”, contesta ella.\n\nA la cuarta, él deja caer una frase mansa, de doble sentido escondido, y toda la barra suelta la carcajada antes que ella. Renata se ríe medio segundo tarde; ese medio segundo la delata. Paga la ronda sin quejarse, porque sería confesar que no entendió, y esconde la cara secando un vaso que no lo necesita.\n\n“Mañana hay más, patrona”, se despide Joaquín, y deja el doble de propina.",
+    "vocab": [
+      {
+        "word": "cantina",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Traditional Mexican bar serving drinks and snacks, a neighbourhood meeting place."
+      },
+      {
+        "word": "birria",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Slow-cooked spicy meat stew from Jalisco, often eaten since morning."
+      },
+      {
+        "word": "tejuino",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Cold fermented corn drink from western Mexico, sweet and slightly sour."
+      },
+      {
+        "word": "caballito",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Small narrow glass used in Mexico for drinking tequila straight."
+      },
+      {
+        "word": "albur",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Mexican word game where an innocent phrase hides a second meaning."
+      },
+      {
+        "word": "patrona",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Boss lady; playful, respectful way to address the woman in charge."
+      },
+      {
+        "word": "presumir",
+        "surface": "presume",
+        "type": "verb",
+        "definition": "To boast, show pride in something you claim to do well."
+      },
+      {
+        "word": "fama",
+        "type": "noun",
+        "definition": "Reputation; what everyone believes and repeats about a person."
+      },
+      {
+        "word": "ingenio",
+        "surface": "ingeniosa",
+        "type": "noun",
+        "definition": "Wit; the quick clever thinking behind jokes and comebacks."
+      },
+      {
+        "word": "duelo",
+        "type": "noun",
+        "definition": "Duel; a contest between two people measuring their skill."
+      },
+      {
+        "word": "manso",
+        "surface": "mansa",
+        "type": "adjective",
+        "definition": "Tame, gentle looking; here, a phrase that seems completely harmless."
+      },
+      {
+        "word": "delatar",
+        "surface": "delata",
+        "type": "verb",
+        "definition": "To give someone away, reveal what they tried to hide."
+      },
+      {
+        "word": "propina",
+        "type": "noun",
+        "definition": "Tip; extra money left for the person who served you."
+      },
+      {
+        "word": "empatar",
+        "surface": "empatado",
+        "type": "verb",
+        "definition": "To be tied, level in a game with no winner yet."
+      },
+      {
+        "word": "carcajada",
+        "type": "noun",
+        "definition": "Loud open laugh that bursts out and fills the room."
+      },
+      {
+        "word": "dejar caer",
+        "surface": "deja caer",
+        "type": "expression",
+        "definition": "To drop a remark casually, as if it meant nothing."
+      },
+      {
+        "word": "hacer callar",
+        "surface": "hecho callar",
+        "type": "expression",
+        "definition": "To shut someone up, leave them without an answer."
+      },
+      {
+        "word": "va que va",
+        "surface": "Va que va",
+        "type": "expression",
+        "register": "regional",
+        "definition": "Deal; Mexican way of accepting a bet or a plan."
+      },
+      {
+        "word": "sin despeinarse",
+        "type": "expression",
+        "definition": "Without breaking a sweat; doing something difficult with total ease."
+      },
+      {
+        "word": "doble sentido",
+        "type": "expression",
+        "definition": "Double meaning; a phrase saying one thing and hinting another."
+      }
+    ]
+  },
+  {
+    "topic": "jokes-and-double-meanings",
+    "slotIndex": 2,
+    "title": "Era la lista del mandado",
+    "slug": "era-la-lista-del-mandado",
+    "arcType": "mini-cliffhanger",
+    "synopsis": "The rematch is prepared in secret: Renata spends the week collecting borrowed albures from the market and the domino table, writing them in a notebook she keeps under the bar. Joaquín finds it anyway, raises the stakes with a month of dishwashing, and by that evening the tips of the day are already gone.",
+    "text": "La revancha se prepara a escondidas. Renata pasa la semana reuniendo albures ajenos: le pregunta al carnicero del tianguis, escucha a los del dominó y apunta todo en una libreta que guarda bajo la barra.\n\n“Puro apunte del negocio”, contesta Renata si alguien pregunta.\n\nEl jueves, mientras rebana jícama para la botana, Joaquín estira el brazo y hojea la libreta con calma.\n\n“¿Estudiando, patrona?”, pregunta, con cara de yo no fui.\n\n“Es la lista del mandado”, contesta ella, aunque los dos saben leer.\n\n“¿Y qué se compra? ¿Puros dobles sentidos?”, dice él, y la devuelve.\n\n“Vamos a subir la apuesta”, plantea. “Si el viernes me gana con un albur de su cosecha, le lavo los trastes un mes. Si pierde, me invita la comida.” Y le pone fecha: la hora de la comida.\n\nRenata quiere arrancarle la libreta y no lo hace: sería admitir cuánto le importa. Aprieta el lápiz hasta que truena y sostiene la mirada.\n\n“Va”, dice, “pero la libreta se queda conmigo.”\n\nDe pura muina, apuesta la propina del día ensayando con los del dominó, y la pierde. Lo demás se juega el viernes.",
+    "vocab": [
+      {
+        "word": "tianguis",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Open-air street market held in Mexico on fixed days."
+      },
+      {
+        "word": "botana",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Snack served in Mexican bars alongside the drinks."
+      },
+      {
+        "word": "mandado",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Groceries; the everyday shopping for the house in Mexico."
+      },
+      {
+        "word": "trastes",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Dishes; Mexican word for the pots and plates you wash."
+      },
+      {
+        "word": "muina",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Hot flash of anger or spite, a very Jalisco word."
+      },
+      {
+        "word": "jícama",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Crunchy white root vegetable eaten raw with lime and chili."
+      },
+      {
+        "word": "revancha",
+        "type": "noun",
+        "definition": "Rematch; the second chance to win after a defeat."
+      },
+      {
+        "word": "carnicero",
+        "type": "noun",
+        "definition": "Butcher; the person who cuts and sells meat."
+      },
+      {
+        "word": "reunir",
+        "surface": "reuniendo",
+        "type": "verb",
+        "definition": "To gather, collect things little by little in one place."
+      },
+      {
+        "word": "hojear",
+        "surface": "hojea",
+        "type": "verb",
+        "definition": "To leaf through, turn the pages of something quickly."
+      },
+      {
+        "word": "arrancar",
+        "surface": "arrancarle",
+        "type": "verb",
+        "definition": "To snatch, pull something away with one sharp movement."
+      },
+      {
+        "word": "tronar",
+        "surface": "truena",
+        "type": "verb",
+        "definition": "To crack, make a sharp breaking sound under pressure."
+      },
+      {
+        "word": "ensayar",
+        "surface": "ensayando",
+        "type": "verb",
+        "definition": "To rehearse, practise something before doing it for real."
+      },
+      {
+        "word": "plantear",
+        "surface": "plantea",
+        "type": "verb",
+        "definition": "To put forward a plan or problem for discussion."
+      },
+      {
+        "word": "puro",
+        "surface": "Puros",
+        "type": "adjective",
+        "register": "regional",
+        "definition": "Nothing but; Mexican use meaning only that and only that."
+      },
+      {
+        "word": "a escondidas",
+        "type": "expression",
+        "definition": "In secret, hiding what you do from other people."
+      },
+      {
+        "word": "cara de yo no fui",
+        "type": "expression",
+        "register": "regional",
+        "definition": "Innocent face someone puts on after doing exactly that."
+      },
+      {
+        "word": "subir la apuesta",
+        "type": "expression",
+        "definition": "To raise the stakes, make a bet bigger and riskier."
+      },
+      {
+        "word": "sostener la mirada",
+        "surface": "sostiene la mirada",
+        "type": "expression",
+        "definition": "To hold someone's gaze without looking away or backing down."
+      },
+      {
+        "word": "poner fecha",
+        "surface": "pone fecha",
+        "type": "expression",
+        "definition": "To set the date when something is going to happen."
+      }
+    ]
+  },
+  {
+    "topic": "jokes-and-double-meanings",
+    "slotIndex": 3,
+    "title": "El albur que llegó tarde",
+    "slug": "el-albur-que-llego-tarde",
+    "arcType": "late-reveal",
+    "synopsis": "The whole cantina turns up for the rematch at lunchtime. Renata finally wins with an albur of her own, one she has been ripening all week, but halfway through the duel she notices how slowly Joaquín is playing, and the victory she collects is not quite the one she wanted.",
+    "text": "La cantina se llena temprano: hoy, a la hora de la comida, se juega el desquite. Joaquín cuelga el sombrero en el clavo de siempre; Renata ya lo espera.\n\n“¿Lista, patrona? Vengo a lavar trastes”, saluda él.\n\n“Nací lista”, contesta ella. “Nomás que usted no había preguntado.”\n\nVan parejos, y Renata nota la trampa: los albures llegan lentos, y Joaquín festeja los aciertos ajenos antes de tiempo.\n\n“¿Ya se cansó, o me está cuidando el negocio?”, pregunta ella.\n\n“Voy despacio, para que dure”, contesta él. Renata lo entiende: se está dejando ganar.\n\nSuelta uno de su cosecha, madurado con calma, un chiste tan suyo que no se puede repetir sin que pierda la gracia. La barra se viene abajo; de la puerta llega un silbido.\n\n“Me ganó en su casa, y con público”, dice Joaquín, y se rinde sin discutir.\n\n“La casa no invita”, contesta ella, y empuja el caballito. “Pero yo sí, y no es regalo. Salud, campeón.”\n\nJoaquín se lo toma de un jalón. Renata cobra la apuesta con risa corta: festejar sería creerse el regalo. Brindan, muy serios, por la victoria que ninguno se cree.",
+    "vocab": [
+      {
+        "word": "desquite",
+        "type": "noun",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Payback; the chance to even the score after losing."
+      },
+      {
+        "word": "nomás",
+        "surface": "Nomás",
+        "type": "adverb",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Just, only; everyday Mexican word that softens a sentence."
+      },
+      {
+        "word": "la casa invita",
+        "surface": "La casa no invita",
+        "type": "expression",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "It is on the house; the owner pays this round."
+      },
+      {
+        "word": "hora de la comida",
+        "type": "expression",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "Mexican midday meal time, taken seriously and never rushed."
+      },
+      {
+        "word": "de un jalón",
+        "type": "expression",
+        "register": "cultural",
+        "anchor": true,
+        "definition": "In one go, all at once, without stopping halfway."
+      },
+      {
+        "word": "parejo",
+        "surface": "parejos",
+        "type": "adjective",
+        "definition": "Even, level; with neither side ahead of the other."
+      },
+      {
+        "word": "acierto",
+        "surface": "aciertos",
+        "type": "noun",
+        "definition": "Hit, right answer; a move that lands exactly as intended."
+      },
+      {
+        "word": "madurar",
+        "surface": "madurado",
+        "type": "verb",
+        "definition": "To ripen, mature; to let something grow until it is ready."
+      },
+      {
+        "word": "cosecha",
+        "type": "noun",
+        "definition": "Harvest; here, what you produced and can call your own."
+      },
+      {
+        "word": "festejar",
+        "surface": "festeja",
+        "type": "verb",
+        "definition": "To celebrate something with noise, joy and open pleasure."
+      },
+      {
+        "word": "silbido",
+        "type": "noun",
+        "definition": "Whistle; the sharp musical sound made with the lips."
+      },
+      {
+        "word": "chiste",
+        "type": "noun",
+        "definition": "Joke; a short line said to make people laugh."
+      },
+      {
+        "word": "trampa",
+        "type": "noun",
+        "definition": "Trick, trap; a hidden move that breaks the fair rules."
+      },
+      {
+        "word": "serio",
+        "surface": "serios",
+        "type": "adjective",
+        "definition": "Serious; showing no smile, keeping the face grave."
+      },
+      {
+        "word": "apuesta",
+        "type": "noun",
+        "definition": "Bet; the money or promise placed on who wins."
+      },
+      {
+        "word": "rendirse",
+        "surface": "se rinde",
+        "type": "verb",
+        "definition": "To give up, accept that the other side has won."
+      },
+      {
+        "word": "de siempre",
+        "type": "expression",
+        "definition": "The usual one, the same as every other time."
+      },
+      {
+        "word": "dejarse ganar",
+        "surface": "dejando ganar",
+        "type": "expression",
+        "definition": "To let the other player win on purpose, hiding it."
+      },
+      {
+        "word": "venirse abajo",
+        "surface": "se viene abajo",
+        "type": "expression",
+        "definition": "To collapse; here, to burst out laughing all at once."
+      },
+      {
+        "word": "antes de tiempo",
+        "type": "expression",
+        "definition": "Too early, before the moment something was supposed to happen."
+      }
+    ]
+  }
+]

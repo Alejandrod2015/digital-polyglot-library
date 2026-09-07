@@ -378,4 +378,30 @@ export const SPANISH_B1_LEMMAS: ReadonlySet<string> = new Set([
   "ojos","ojeras","oreja","órgano","palma","párpado","pulmón","reumatismo","riñón","rodilla",
   "sangrado","sensibilidad","sequía","sobrepeso","sudor","tendinitis","tobillo","tos","tristeza","úlcera",
   "uretra","vejiga","vértebra","vesícula",
+
+  // Huecos de la lista, no palabras dificiles (2026-09-04, montando el Traveler
+  // ES/latam B1; portado de esa rama el 2026-09-06). El juez marca C2 todo lo
+  // que no esta en la lista ni en la cache, asi que `calcular`, `medir`,
+  // `agregar` o `contratar` salian fuera de nivel en un B1. Entran por estar en
+  // cualquier temario B1; NO entra ninguna palabra para que pase una historia
+  // concreta, y lo especifico de la escena se queda FUERA a proposito: eso va
+  // marcado `register: "cultural"`, que es la exencion que ya existe.
+  "calcular","medir","agregar","contratar","inventar","exigir","confesar",
+  "disculpar","disculpa","justificar","excusarse","adelantarse","madrugar",
+  "armar","pisar","reemplazar","amontonar","tachar","saldar","podar",
+  "atraso","demora","motor","enojo","pretexto","lentitud","hectárea",
+  "agotado","cortante","vendado","lastimado",
+
+  // Mas huecos (2026-09-06, montando el Traveler ES/latam B2): `propina` y
+  // `arrancar` estan en cualquier temario A2/B1 (propinas del restaurante,
+  // arrancar el coche) y salian C2. Mismo criterio que el bloque de arriba.
+  "propina","arrancar",
+  // Tercera tanda de huecos (2026-09-06): numeros compuestos, el apocope
+  // "tercer", oficios corrientes y verbos de tramite que cualquier temario
+  // A2/B1 trae y la lista no tenia.
+  "trescientos","seiscientos","tercer","costurera","firmar","señalar",
+  "agradecer","inexistente",
+  // Adverbios de primer curso que faltaban: aca (la forma LATAM de aqui) y
+  // adelante.
+  "acá","adelante","clienta","contado","parado",
 ]);
